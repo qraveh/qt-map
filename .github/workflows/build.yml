@@ -1,0 +1,22 @@
+name: build
+on:
+  push: { branches: [main] }
+  pull_request:
+  release: { types: [published] }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install markdown
+      - run: python3 build/build.py
+      - name: check the build is committed
+        run: git diff --exit-code -- data/graph.json report/ CHANGELOG.md || (echo "run build/build.py and commit the result" && exit 1)
+      - uses: actions/upload-artifact@v4
+        with: { name: quantum-technology-map, path: dist/*.html }
+      - name: attach to release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with: { files: dist/*.html }

@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use the Quantum Technology Map, please cite the edition you read."
+type: dataset
+title: "Quantum Technology Map"
+version: "2026.09"
+date-released: "2026-09-05"
+authors:
+  - family-names: Neeman
+    given-names: Raveh
+    affiliation: Qodeh
+    orcid: "https://orcid.org/0000-0001-7362-9529"
+license: CC-BY-4.0
+doi: "10.5281/zenodo.XXXXXXX"
+url: "https://qodeh.com/qt-map"
+repository-code: "https://github.com/qraveh/qt-map"
+abstract: "Every quantum-computing platform compared by the goal it serves; a technology graph of 96 self-contained technologies across ten stack layers, seven design coordinates and five edge types, with platforms as paths; a brief on each technology; every figure tagged and traced to a dated primary source. Bilingual EN/RU, published as one interactive document."
+keywords:
+  - quantum computing
+  - quantum error correction
+  - technology landscape
+  - technology graph
+  - superconducting qubits
+  - trapped ions
+  - neutral atoms
+  - photonic quantum computing
+  - spin qubits

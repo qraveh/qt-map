@@ -1,0 +1,46 @@
+{
+  "title": "Quantum Technology Map",
+  "upload_type": "publication",
+  "publication_type": "report",
+  "version": "2026.09",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "Neeman, Raveh",
+      "affiliation": "Qodeh",
+      "orcid": "0000-0001-7362-9529"
+    }
+  ],
+  "description": "<p>Every quantum-computing platform compared by the goal it serves — achievements, justified intentions and the most promising directions — followed by a technology graph of 96 self-contained technologies across ten stack layers (carrier, encoding, gate mechanism, connectivity/transport, control, readout, code, decoder, interconnect, manufacturing), each on seven design coordinates and connected by five edge types (requires/provides, alternatives, conflicts with mechanism–price–mitigation, transfers, dated defines), with platforms as paths through the layers; and 96 technology briefs. Single self-contained interactive HTML document, bilingual EN/RU. Every figure carries an evidence tag and traces to a dated, linked primary source; conflicts between sources are stated, not averaged.</p><p>Editions use calendar versioning; the concept DOI resolves to the newest edition. Data and build: https://github.com/qraveh/qt-map</p>",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "quantum computing",
+    "quantum error correction",
+    "superconducting qubits",
+    "trapped ions",
+    "neutral atoms",
+    "photonic quantum computing",
+    "spin qubits",
+    "bosonic codes",
+    "qLDPC codes",
+    "technology landscape",
+    "technology graph",
+    "SFQ control",
+    "cryo-CMOS",
+    "quantum benchmarking"
+  ],
+  "notes": "Interactive edition published at https://qodeh.com/qt-map. Research and drafting with Claude (Anthropic) under the author's direction and review.",
+  "related_identifiers": [
+    {
+      "identifier": "https://qodeh.com/qt-map",
+      "relation": "isIdenticalTo",
+      "resource_type": "publication-report"
+    },
+    {
+      "identifier": "https://github.com/qraveh/qt-map",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ]
+}

@@ -1,0 +1,482 @@
+{
+ "ro_erasure": {
+  "rank": 1,
+  "score": 20.6,
+  "tier": 1
+ },
+ "cx_lr": {
+  "rank": 2,
+  "score": 18.4,
+  "tier": 1
+ },
+ "code_erasure": {
+  "rank": 3,
+  "score": 18.4,
+  "tier": 1
+ },
+ "fab_cmos": {
+  "rank": 4,
+  "score": 17.9,
+  "tier": 1
+ },
+ "ct_cryocmos": {
+  "rank": 5,
+  "score": 17.6,
+  "tier": 1
+ },
+ "enc_dualrail": {
+  "rank": 6,
+  "score": 16.9,
+  "tier": 1
+ },
+ "code_surface": {
+  "rank": 7,
+  "score": 16.6,
+  "tier": 1
+ },
+ "code_qldpc": {
+  "rank": 8,
+  "score": 16.1,
+  "tier": 1
+ },
+ "enc_omg": {
+  "rank": 9,
+  "score": 15.4,
+  "tier": 1
+ },
+ "code_highrate": {
+  "rank": 10,
+  "score": 14.9,
+  "tier": 1
+ },
+ "code_magic": {
+  "rank": 11,
+  "score": 14.9,
+  "tier": 1
+ },
+ "cx_shuttle": {
+  "rank": 12,
+  "score": 14.4,
+  "tier": 1
+ },
+ "ct_sfq": {
+  "rank": 13,
+  "score": 14.4,
+  "tier": 1
+ },
+ "ic_transducer": {
+  "rank": 14,
+  "score": 14.4,
+  "tier": 1
+ },
+ "g_ryd": {
+  "rank": 15,
+  "score": 13.9,
+  "tier": 1
+ },
+ "dec_nn": {
+  "rank": 16,
+  "score": 13.9,
+  "tier": 1
+ },
+ "ic_mcm": {
+  "rank": 17,
+  "score": 13.9,
+  "tier": 1
+ },
+ "cx_nn": {
+  "rank": 18,
+  "score": 13.4,
+  "tier": 2
+ },
+ "ro_spd": {
+  "rank": 19,
+  "score": 13.2,
+  "tier": 1
+ },
+ "fab_pic": {
+  "rank": 20,
+  "score": 13.2,
+  "tier": 1
+ },
+ "enc_gkp": {
+  "rank": 21,
+  "score": 12.9,
+  "tier": 2
+ },
+ "g_elec": {
+  "rank": 22,
+  "score": 12.9,
+  "tier": 1
+ },
+ "ct_ionmw": {
+  "rank": 23,
+  "score": 12.9,
+  "tier": 1
+ },
+ "code_bosonic": {
+  "rank": 24,
+  "score": 12.9,
+  "tier": 2
+ },
+ "dec_mwpm": {
+  "rank": 25,
+  "score": 12.7,
+  "tier": 2
+ },
+ "code_color": {
+  "rank": 26,
+  "score": 12.4,
+  "tier": 2
+ },
+ "ro_imgfast": {
+  "rank": 27,
+  "score": 12.2,
+  "tier": 2
+ },
+ "ic_cryolink": {
+  "rank": 28,
+  "score": 11.9,
+  "tier": 2
+ },
+ "dec_relaybp": {
+  "rank": 29,
+  "score": 11.7,
+  "tier": 2
+ },
+ "dec_gpu": {
+  "rank": 30,
+  "score": 11.7,
+  "tier": 2
+ },
+ "cx_qccd": {
+  "rank": 31,
+  "score": 11.6,
+  "tier": 2
+ },
+ "code_aft": {
+  "rank": 32,
+  "score": 11.4,
+  "tier": 2
+ },
+ "ct_pic_trap": {
+  "rank": 33,
+  "score": 11.2,
+  "tier": 2
+ },
+ "fab_sc": {
+  "rank": 34,
+  "score": 11.1,
+  "tier": 2
+ },
+ "transmon": {
+  "rank": 35,
+  "score": 10.9,
+  "tier": 1
+ },
+ "ion": {
+  "rank": 36,
+  "score": 10.9,
+  "tier": 1
+ },
+ "cx_aod": {
+  "rank": 37,
+  "score": 10.9,
+  "tier": 2
+ },
+ "ic_ionphoton": {
+  "rank": 38,
+  "score": 10.9,
+  "tier": 2
+ },
+ "fab_trap": {
+  "rank": 39,
+  "score": 10.9,
+  "tier": 2
+ },
+ "majorana": {
+  "rank": 40,
+  "score": 10.7,
+  "tier": 1
+ },
+ "alkali": {
+  "rank": 41,
+  "score": 10.6,
+  "tier": 1
+ },
+ "g_tc": {
+  "rank": 42,
+  "score": 10.6,
+  "tier": 2
+ },
+ "ro_disp": {
+  "rank": 43,
+  "score": 10.4,
+  "tier": 2
+ },
+ "dec_cryo": {
+  "rank": 44,
+  "score": 10.4,
+  "tier": 2
+ },
+ "ic_spinphoton": {
+  "rank": 45,
+  "score": 10.4,
+  "tier": 2
+ },
+ "ct_base": {
+  "rank": 46,
+  "score": 10.2,
+  "tier": 2
+ },
+ "ae_atom": {
+  "rank": 47,
+  "score": 9.9,
+  "tier": 2
+ },
+ "photon": {
+  "rank": 48,
+  "score": 9.9,
+  "tier": 1
+ },
+ "qd_spin": {
+  "rank": 49,
+  "score": 9.9,
+  "tier": 1
+ },
+ "ct_fluxdac": {
+  "rank": 50,
+  "score": 9.7,
+  "tier": 2
+ },
+ "ct_ionlaser": {
+  "rank": 51,
+  "score": 9.7,
+  "tier": 2
+ },
+ "ct_rt": {
+  "rank": 52,
+  "score": 9.4,
+  "tier": 2
+ },
+ "ro_fluor": {
+  "rank": 53,
+  "score": 9.4,
+  "tier": 2
+ },
+ "ic_atomcavity": {
+  "rank": 54,
+  "score": 9.2,
+  "tier": 2
+ },
+ "g_ms": {
+  "rank": 55,
+  "score": 9.1,
+  "tier": 2
+ },
+ "g_exch": {
+  "rank": 56,
+  "score": 9.1,
+  "tier": 2
+ },
+ "fab_optics": {
+  "rank": 57,
+  "score": 8.7,
+  "tier": 2
+ },
+ "g_bos": {
+  "rank": 58,
+  "score": 8.4,
+  "tier": 2
+ },
+ "cx_switch": {
+  "rank": 59,
+  "score": 8.4,
+  "tier": 2
+ },
+ "ct_laser": {
+  "rank": 60,
+  "score": 8.4,
+  "tier": 2
+ },
+ "ro_img": {
+  "rank": 61,
+  "score": 8.4,
+  "tier": 3
+ },
+ "ro_s2c": {
+  "rank": 62,
+  "score": 8.4,
+  "tier": 3
+ },
+ "g_catcnot": {
+  "rank": 63,
+  "score": 8.2,
+  "tier": 3
+ },
+ "src_resource": {
+  "rank": 64,
+  "score": 8.2,
+  "tier": 3
+ },
+ "cavity": {
+  "rank": 65,
+  "score": 7.7,
+  "tier": 3
+ },
+ "g_fusion": {
+  "rank": 66,
+  "score": 7.7,
+  "tier": 3
+ },
+ "dec_corr": {
+  "rank": 67,
+  "score": 7.7,
+  "tier": 3
+ },
+ "enc_cat": {
+  "rank": 68,
+  "score": 7.4,
+  "tier": 3
+ },
+ "dec_fpga": {
+  "rank": 69,
+  "score": 7.4,
+  "tier": 3
+ },
+ "enc_hf": {
+  "rank": 70,
+  "score": 7.2,
+  "tier": 3
+ },
+ "fluxonium": {
+  "rank": 71,
+  "score": 6.7,
+  "tier": 3
+ },
+ "squeezed": {
+  "rank": 72,
+  "score": 6.7,
+  "tier": 3
+ },
+ "fluxq": {
+  "rank": 73,
+  "score": 6.7,
+  "tier": 3
+ },
+ "code_fusion": {
+  "rank": 74,
+  "score": 6.7,
+  "tier": 3
+ },
+ "dec_rl": {
+  "rank": 75,
+  "score": 6.7,
+  "tier": 3
+ },
+ "g_mbq": {
+  "rank": 76,
+  "score": 5.7,
+  "tier": 3
+ },
+ "cx_crossbar": {
+  "rank": 77,
+  "score": 5.7,
+  "tier": 3
+ },
+ "ro_qcap": {
+  "rank": 78,
+  "score": 5.7,
+  "tier": 3
+ },
+ "enc_spin_ld": {
+  "rank": 79,
+  "score": 5.5,
+  "tier": 3
+ },
+ "ct_eo": {
+  "rank": 80,
+  "score": 5.2,
+  "tier": 3
+ },
+ "ic_fibre": {
+  "rank": 81,
+  "score": 5.2,
+  "tier": 3
+ },
+ "fab_3d": {
+  "rank": 82,
+  "score": 5.2,
+  "tier": 3
+ },
+ "donor": {
+  "rank": 83,
+  "score": 4.2,
+  "tier": 3
+ },
+ "defect": {
+  "rank": 84,
+  "score": 4.2,
+  "tier": 3
+ },
+ "enc_bare": {
+  "rank": 85,
+  "score": 4.2,
+  "tier": 3
+ },
+ "enc_eo": {
+  "rank": 86,
+  "score": 4.2,
+  "tier": 3
+ },
+ "enc_parity": {
+  "rank": 87,
+  "score": 4.2,
+  "tier": 3
+ },
+ "g_cr": {
+  "rank": 88,
+  "score": 4.2,
+  "tier": 3
+ },
+ "g_anneal": {
+  "rank": 89,
+  "score": 4.2,
+  "tier": 3
+ },
+ "g_cv": {
+  "rank": 90,
+  "score": 4.2,
+  "tier": 3
+ },
+ "cx_bus": {
+  "rank": 91,
+  "score": 4.2,
+  "tier": 3
+ },
+ "fab_mbe": {
+  "rank": 92,
+  "score": 4.2,
+  "tier": 3
+ },
+ "g_mwspin": {
+  "rank": 93,
+  "score": 1.7,
+  "tier": 3
+ },
+ "fab_stm": {
+  "rank": 94,
+  "score": 1.7,
+  "tier": 3
+ },
+ "fab_diamond": {
+  "rank": 95,
+  "score": 1.7,
+  "tier": 3
+ },
+ "enc_timebin": {
+  "rank": 96,
+  "score": 1.0,
+  "tier": 3
+ }
+}
