@@ -186,7 +186,7 @@ def masthead(cfg):
     doi=cfg['doi_concept']; doiurl='https://doi.org/'+doi
     return f'''<header class="mast">
  <div>
-  <div class="eyebrow"><span class="lang-en">Edition {cfg['edition']} · {cfg['date']} · bilingual EN / RU · open access, CC BY 4.0</span><span class="lang-ru">Издание {cfg['edition']} · {cfg['date']} · двуязычное EN / RU · открытый доступ, CC BY 4.0</span></div>
+  <div class="eyebrow"><span class="lang-en">Edition {cfg['edition']} · {cfg['date']} · English / Russian</span><span class="lang-ru">Издание {cfg['edition']} · {cfg['date']} · English / Русский</span></div>
   <h1 class="title">Quantum Technology Map <span class="yr">{cfg['edition']}</span></h1>
   <p class="subtitle"><span class="lang-en">Every quantum-computing platform compared by the goal it serves — achievements, justified intentions, the most promising directions — a 96-technology graph across ten stack layers that reproduces those directions on its own, and a brief on each technology.</span><span class="lang-ru">Все платформы квантовых компьютеров, сравнённые по целям, которым они служат, — достижения, обоснованные намерения, наиболее перспективные направления, — граф 96 технологий в десяти слоях стека, который воспроизводит эти направления сам, и бриф по каждой технологии.</span></p>
   <p class="author"><span class="lang-en">Author</span><span class="lang-ru">Автор</span> · <b>{cfg['author']}</b></p>
