@@ -57,7 +57,7 @@ T1 (relaxation) and T2* (Ramsey) were measured on the single Φ-DAC-controlled f
 **Money.**
 2026-01-20 · D-Wave · M&A, Quantum Circuits Inc. · $550 M ($300 M stock + $250 M cash) · closed [C][7][G:DWAVE-QCI-2026-01]
 2026-05-21 · D-Wave · CHIPS letter of intent · $100 M · US DoC, $2.013 B package · LOI [G][9][G:CHIPS-LOI-2026-05]
-2026-05-26 · SEEQC · SPAC registration, Allegro Merger Corp. · $75 M offering + $65 M PIPE, ~$1 B EV · filed, not closed [G][8][G:SEEQC-S4-TERMS-2026-05]
+2026-05-26 · SEEQC · SPAC registration, Allegro Merger Corp. · $75 M offering + $65 M PIPE, ~$1 B EV · filed, not closed [G][8][G:SEEQC-S4-TERMS-2026-05]; SPAC merger terminated 2026-08-25 [G:SEEQC-SPAC-TERMINATED-2026-08]
 2026-08-06 · D-Wave · H1-2026 revenue $5.9 M (−67% YoY), cash $546.2 M · reported [C][6][G:DWAVE-FIN-2026]
 
 **Market & supply chain.** The scarce input is multilayer niobium capacity: SkyWater as merchant option (quantum ATS revenue +30% YoY on FY2025 revenue $442.1 M [G][13]), SEEQC's own Elmsford line, JPL as a government facility with no commercial throughput. No $/channel figure is disclosed. G7 pays most directly; G3/G4 only if the fluxonium route generalizes.

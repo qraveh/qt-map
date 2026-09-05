@@ -87,7 +87,7 @@ Conflicts: IBM's 23 mW per qubit [D][2] against 5 mW and under 2 mW [S][6] are d
 - 2025-02-25 · Quantum Machines · Series C · $170 M · PSG Equity · $280 M cumulative [C][21]
 - 2025-11-06 · DARPA QBI Stage B · up to $15 M each · eleven teams incl. IBM, Diraq [G:QBI-STAGEB-2025-11]
 - 2026-05-21 · GlobalFoundries; Diraq · CHIPS letters of intent · $375 M; $38 M · LOI [G:CHIPS-LOI-2026-05]
-- 2026-07-02 · SEEQC · S-1 for Nasdaq beside an Allegro merger · $1 B enterprise value, $65 M PIPE [C][23] [P][24]
+- 2026-07-02 · SEEQC · S-1 for Nasdaq beside an Allegro merger · $1 B enterprise value, $65 M PIPE [C][23] [P][24]; SPAC merger terminated 2026-08-25, S-1 continues [G:SEEQC-SPAC-TERMINATED-2026-08]
 - 2026-07-23 · IBM · acquires HRL Laboratories · undisclosed · closing end Q3 2026 [C][16] [G:IBM-HRL-2026-07]
 
 **Market & supply chain.** Nobody sells a cryo-CMOS controller as of 3 Sep 2026; the layer's revenue is warm racks from Quantum Machines, Zurich Instruments, Keysight and QBLOX, and Quantum Machines alone has raised $280 M [C][21][22]. Cryo-CMOS itself is captive R&D; merchant offers are pre-revenue: SemiQon, FrostByte (€1.3 M) and Rhonexum ($1 M) [C][12][13] [P][14]. G3, G4 and G7 pay for it; G1, G2 and G5 do not.
