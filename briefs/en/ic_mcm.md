@@ -62,7 +62,7 @@ Latency is not the l-coupler's problem — the demonstrated inter-module SWAP is
 
 Three platform paths use it: superconducting transmons, superconducting bosonic cat/GKP, superconducting dual-rail erasure. It requires superconducting-qubit lithography with multilayer routing and flip-chip packaging. It replaces inter-fridge cryogenic links, and the price is thermal: everything shares one cooling budget and one vacuum, so scaling stops at the fridge rather than at the network. Its contribution is manufacturability, not gate physics.
 
-Off-diagonal reading: a fabricated carrier acquiring far-range connectivity through packaging, where atoms and ions acquire it through motion. Derived clock = max(gate, readout, transport) for the path: readout at ~0.5 µs sets it and the < 100 ns inter-module SWAP [D][7] is about 20% of that, so transport does not bind. Neighbouring empty slots: cross-module error correction, and a qLDPC code whose checks span modules — compilation for such machines exists only in simulation [S][14].
+Off-diagonal reading: a fabricated carrier acquiring far-range connectivity through packaging, where atoms and ions acquire it through motion. Derived clock = sum of the syndrome round: gate layers + transport + readout + reset for the path: 0.65 µs, readout at 282 ns its largest term, and the < 100 ns inter-module SWAP [D][7] is under 15% of the round, so transport does not bind. Neighbouring empty slots: cross-module error correction, and a qLDPC code whose checks span modules — compilation for such machines exists only in simulation [S][14].
 
 ## Verification (QCVV)
 

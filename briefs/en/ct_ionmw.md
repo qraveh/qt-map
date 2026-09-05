@@ -52,7 +52,7 @@ At 10³ qubits the binding question is whether an on-chip switch can sit microme
 
 The node sits on the path *Trapped ions — electronic gates, chip control* (IonQ/Oxford Ionics, eleQtron, Quantum Art). It **requires** surface-electrode ion-trap microfabrication, specifically the current-carrying traces; it **provides** the signal sources for the electronic near-field microwave gate; it **replaces** laser control of ions. The switching price is precise: gate lasers go, but cooling, state-preparation and readout lasers stay, so a "laser-free" machine still carries optics, the trap chip becomes a microwave design problem, and the species choice narrows to hyperfine ions with a usable clock transition. The off-diagonal reading is a natural carrier driven by a wholly fabricated control structure — the manufacturing burden moves off the qubit onto the chip around it.
 
-Derived clock = max(gate, readout, transport): ~2.3×10⁻⁴ s per layer with today's electronic gate and no transport, against ~5.5×10⁻² s on a transport-based machine of the Helios type [D][1]. Neighbouring empty slots: cryogenic on-chip microwave synthesis; a trap-qualified on-chip current switch with a published electric-field-noise spectrum; superconducting current traces in an ion trap.
+Derived clock = sum of the syndrome round: gate layers + transport + readout + reset: 1.5×10⁻³ s — seven gate layers of today's electronic gate plus readout and reset, no transport — against ~5.5×10⁻² s on a transport-based machine of the Helios type [D][1]. Neighbouring empty slots: cryogenic on-chip microwave synthesis; a trap-qualified on-chip current switch with a published electric-field-noise spectrum; superconducting current traces in an ion trap.
 
 ## Verification (QCVV)
 
@@ -98,7 +98,7 @@ The 10⁻⁷ figure is a randomised-benchmarking number whose per-Clifford decay
 
 Confirm if a device with ≥8 zones driven by chip-integrated conductors is published with simultaneous-RB crosstalk figures before 2027-12, if IonQ commissions 256 qubits at 99.99% in H1 2027 on full-register rather than pairwise benchmarking, or if eleQtron publishes a QSea II fidelity before 2027-02-28. Demote if no multi-zone device appears by end-2027, or if the first one reports drive-induced heating forcing one source per zone, since the wiring advantage then evaporates. Best case by 2029: a 10³-ion register wired by on-chip switching at ~200 sources, two-qubit error near 10⁻⁴, no gate lasers. Worst case: the records stand, the architecture does not, and microwave control survives as the single-qubit layer of an optically entangled machine.
 
-Open questions. (1) How much anomalous heating do drive currents inject at entangling-gate gradients? (2) Can an on-chip switch operate micrometres from an ion without dielectric charging? (3) Room temperature or 4 K, given that lower heating buys no headroom for parallel drive? (4) Does frequency addressing scale past ~10 ions per chain? (5) In a static register, is the derived clock gate- or cooling-limited?
+Open questions. (1) How much anomalous heating do drive currents inject at entangling-gate gradients? (2) Can an on-chip switch operate micrometres from an ion without dielectric charging? (3) Room temperature or 4 K, given that lower heating buys no headroom for parallel drive? (4) Does frequency addressing scale past ~10 ions per chain? (5) In a static register, is the derived clock gate- or transport-limited?
 
 ## Sources
 

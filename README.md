@@ -22,6 +22,7 @@ Every quantum-computing platform compared by the goal it serves; a technology gr
 |---|---|
 | `data/graph_data.py` | **Source of truth for the graph**: layers, coordinate vocabularies, 96 nodes (coordinates, bilingual descriptions, dated `defines` records with sources), 14 platform paths, edges (requires / alternatives / conflicts with mechanism–price–mitigation–status), derivations (transfers, hubs, off-diagonal, empty slots, derived clock, validity check). Running it writes `data/graph.json`. |
 | `data/graph.json` | Generated machine-readable graph (nodes, edges, paths, vocabularies, validity). Use this if you build on the data. |
+| `data/records.json` | **Standard records** — dated, sourced numbers per node (T1/T2, 1Q gate time, reset, SPAM, feed-forward latency, syndrome-circuit depth, code rate, acceptance, decode latency, transport per layer, yield, spread…); nulls mark quantities that are not published. Feeds the derived clocks (syndrome round, reaction time, operations per coherence). |
 | `data/ranking.json` | Importance score, rank and depth tier of every node (drives brief depth). |
 | `data/facts.json` | Shared dated facts (funding, programmes, M&A, key device facts) behind the linked `[G]` chips in the briefs. |
 | `briefs/en/*.md`, `briefs/ru/*.md` | One brief per technology, YAML front matter + fixed section skeleton; Russian mirrors English section by section. |

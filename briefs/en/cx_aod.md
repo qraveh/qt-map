@@ -46,7 +46,7 @@ The burden is one RF tone per trap per axis, synthesised by AWG; count scales wi
 
 ## Role in the stack
 
-It requires laser plus AOD/SLM optical control and provides for bivariate-bicycle qLDPC codes, high-rate concatenated codes with transversal gates, and algorithmic fault tolerance — none reachable with fixed nearest-neighbour coupling, so it is a prerequisite, not a convenience. Paths served: alkali (Rb/Cs) and alkaline-earth (Yb/Sr) atoms. Nothing replaces or conflicts with it in the graph; pressure comes from other transport physics — the 3,000-qubit continuous system moves atoms 0.5 m on optical-lattice conveyor belts, using tweezers only for local rearrangement [D][2]. Contribution to the derived clock: dominant, at ~1.0×10⁻³ s per move it sets max(gate, readout, transport) for both paths, since CZ runs at 270 ns.
+It requires laser plus AOD/SLM optical control and provides for bivariate-bicycle qLDPC codes, high-rate concatenated codes with transversal gates, and algorithmic fault tolerance — none reachable with fixed nearest-neighbour coupling, so it is a prerequisite, not a convenience. Paths served: alkali (Rb/Cs) and alkaline-earth (Yb/Sr) atoms. Nothing replaces or conflicts with it in the graph; pressure comes from other transport physics — the 3,000-qubit continuous system moves atoms 0.5 m on optical-lattice conveyor belts, using tweezers only for local rearrangement [D][2]. Contribution to the derived clock: dominant, at ~2.0×10⁻⁴ s per move it is 0.80 ms of the 1.31 ms sum of the syndrome round: gate layers + transport + readout + reset on both paths, since CZ runs at 270 ns.
 
 ## Verification (QCVV)
 

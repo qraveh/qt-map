@@ -9,8 +9,8 @@ SITE = 'https://qodeh.com/qt-map'
 
 EDITIONS = [
  {'edition': '2026.09', 'date': '2026-09-05', 'doi': '10.5281/zenodo.XXXXXXX',
-  'en': ['First public edition. Goal-oriented comparison of all platforms (status 4 September 2026); technology graph of 96 nodes in ten layers, seven coordinates, five edge types, 14 platform paths; 96 technology briefs in English and Russian.'],
-  'ru': ['Первое публичное издание. Сравнение всех платформ по целям (состояние на 4 сентября 2026); граф технологий из 96 узлов в десяти слоях, семь координат, пять типов рёбер, 14 путей платформ; 96 брифов по технологиям на английском и русском.']},
+  'en': ['First public edition. Goal-oriented comparison of all platforms (status 4 September 2026); technology graph of 96 nodes in ten layers, seven coordinates, five edge types, 14 platform paths, 230 standard records with derived syndrome-round, reaction-time and operations-per-coherence clocks; 96 technology briefs in English and Russian.'],
+  'ru': ['Первое публичное издание. Сравнение всех платформ по целям (состояние на 4 сентября 2026); граф технологий из 96 узлов в десяти слоях, семь координат, пять типов рёбер, 14 путей платформ, 230 стандартных рекордов с выведенными тактами раунда синдрома, времени реакции и операций на когерентность; 96 брифов по технологиям на английском и русском.']},
 ]
 
 def editions_html(lang):

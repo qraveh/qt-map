@@ -43,8 +43,9 @@ NODES=[]
 NODES += [
 N("transmon",1,"Transmon","Трансмон",1.0,["fab"],-8.0,"det",C("disp",-6.5,False,True),"static","mw","RT",["leak","pauli","burst","coherent"],"sclitho","D",
   "Anharmonic LC oscillator; ~200–300 MHz anharmonicity bounds gates at ~10 ns; T1 ~70–100 µs.","Ангармонический LC-осциллятор; ангармонизм ~200–300 МГц ограничивает гейт снизу ~10 нс; T1 ~70–100 мкс.",
-  [("channel","Willow mean T1 / 2Q error","68 µs / 0.33% CZ (QEC chip)","2024-12","https://www.nature.com/articles/s41586-024-08449-y"),
-   ("channel","correlated burst rate","~1 per hour on 101-qubit Willow","2024-12","https://arxiv.org/abs/2408.13687")],
+  [("channel","Willow mean T1 / T2,CPMG","68 µs / 89 µs (QEC chip)","2024-12","https://www.nature.com/articles/s41586-024-08449-y"),
+   ("channel","Willow mean simultaneous CZ error","0.33 ± 0.18% (spec sheet)","2024-12","https://quantumai.google/static/site-assets/downloads/willow-spec-sheet.pdf"),
+   ("channel","correlated burst rate","~1 per hour on the 72-qubit processor (d=29 repetition code, 3×10⁹ cycles); decay ~400 µs; 10⁻¹⁰ logical floor","2024-12","https://arxiv.org/abs/2408.13687")],
   "Willow 105 q; IBM Heron/Nighthawk 156/120 q; Zuchongzhi 3.x 105–107 q.","Willow 105 q; IBM Heron/Nighthawk 156/120 q; Zuchongzhi 3.x 105–107 q."),
 N("fluxonium",1,"Fluxonium","Флаксониум",1.0,["fab"],-7.3,"det",C("disp",-6.5,False,True),"static","lf","RT",["pauli","coherent"],"sclitho","D",
   "Low-frequency (0.2–1 GHz) superconducting qubit with large anharmonicity; longer T1, flux-biased.","Низкочастотный (0.2–1 ГГц) сверхпроводниковый кубит с большим ангармонизмом; больший T1, смещение потоком.",
@@ -63,7 +64,7 @@ N("ion",1,"Trapped atomic ion","Ион в ловушке",0.0,["nat"],-4.2,"det"
   "Quantinuum Helios 98 q; IonQ Tempo 100 q chain.","Quantinuum Helios 98 q; IonQ Tempo — цепочка 100 q."),
 N("alkali",1,"Alkali atom (Rb/Cs) in tweezer","Щелочной атом (Rb/Cs) в пинцете",0.0,["nat"],-6.6,"det",C("img",-3.3,False,True),"transport","opt","RT",["loss","leak","coherent"],"optics","D",
   "Hyperfine qubit; Rydberg interaction (MHz–GHz) allows sub-µs gates; T2 ~1–13 s; dominant error is atom loss.","Сверхтонкий кубит; ридберговское взаимодействие (МГц–ГГц) допускает суб-мкс гейты; T2 ~1–13 с; доминирующая ошибка — потеря атома.",
-  [("count","atoms with coherence","6,100 Cs atoms, T2 12.6 s (Caltech)","2025-09","https://arxiv.org/abs/2403.12021"),
+  [("count","atoms with coherence","6,100 Cs atoms, T2 12.6(1) s, 23-min trap lifetime (Caltech)","2024-03","https://arxiv.org/abs/2403.12021"),
    ("count","continuous operation","> 3,000 qubits held > 2 h; 300,000 atoms/s reloaded into tweezers, 30,000 initialised qubits/s","2025-09","https://www.nature.com/articles/s41586-025-09596-6"),
    ("count","trapped (no gates)","11,022 Rb atoms in 18,225 metasurface tweezers","2026-06","https://arxiv.org/abs/2606.02715")],
   "Harvard/QuEra 448-atom FT processor; Gemini 260 q.","Процессор Harvard/QuEra на 448 атомах; Gemini 260 q."),
@@ -97,7 +98,7 @@ N("defect",1,"Colour-centre / defect spin (NV, SiV, SnV, T)","Центр окр�
   "QuTech/Fujitsu, Harvard, Photonic Inc (T-centres), Quantum Brilliance. Element Six's DNV-B1 is an NV-*ensemble* sensing grade, not a single-defect node substrate.","QuTech/Fujitsu, Harvard, Photonic Inc (T-центры), Quantum Brilliance. DNV-B1 от Element Six — сенсорный сорт для *ансамблей* NV, а не подложка для узлов на одиночных дефектах."),
 N("majorana",1,"Majorana parity (InAs–Pb tetron)","Майорановская чётность (тетрон InAs–Pb)",1.0,["fab"],-6.0,"det",C("qcap",-4.0,False,True),"static","lf","RT",["unknown"],"mbe","E",
   "Gate-defined nanowire device; only single-wire parity readout demonstrated; topological protection contested.","Затворная нанопроволока; продемонстрировано только считывание чётности одной проволоки; топологическая защита оспаривается.",
-  [("channel","single-nanowire parity switching time","~20 s in one wire of one tetron (not a qubit lifetime), Z only; X loop 14.5 µs (2025)","2026-06","https://arxiv.org/abs/2606.03884")],
+  [("channel","single-nanowire parity switching time","22 ± 1 s Z-parity lifetime in one wire of one tetron (not a qubit lifetime); two-loop device Z 12.4 ms vs X 14.5 µs (2025)","2026-06","https://arxiv.org/abs/2606.03884")],
   "Microsoft; no two-qubit operation, no Bell test. DARPA US2QC: final Validation & Co-Design stage since 2025-02-06 (not QBI Stage B).","Microsoft; нет двухкубитной операции, нет теста Белла. DARPA US2QC: финальная стадия Validation & Co-Design с 2025-02-06 (не QBI Stage B)."),
 N("fluxq",1,"rf-SQUID flux qubit (annealer)","rf-SQUID потоковый кубит (отжигатель)",1.0,["fab"],-8.5,"na",C("disp",-6.0,False,False),"longrange","lf","mK",["pauli","coherent"],"sclitho","D",
   "Analog-Hamiltonian carrier; 4,400+ qubits with 20-way Zephyr coupling; not a gate-model qubit.","Носитель аналогового гамильтониана; 4 400+ кубитов со связностью Zephyr 20; не гейтовый кубит.",
@@ -176,7 +177,7 @@ N("g_exch",3,"Exchange gate (spins; incl. shuttled-spin CZ)","Обменный �
   [("channel","foundry CZ","99.04–99.56% (300 mm)","2025-09","https://www.nature.com/articles/s41586-025-09531-9"),
    ("channel","EO CNOT best / mean","9×10⁻⁴ / 3×10⁻³","2026-07","https://arxiv.org/abs/2604.16216"),
    ("clock","mobile-spin CZ","98.86% in 58 ns","2026-05","https://www.nature.com/articles/s41586-026-10423-9")],
-  "Best exchange gate is HRL's exchange-only CNOT at 9×10⁻⁴; SQC's '99.90% donor nuclear CZ' is not isolable from its abstract, which gives a 99.5–99.99% range and Bell > 99%.","Лучший обменный гейт — exchange-only CNOT у HRL, 9×10⁻⁴; «99.90% ядерный CZ на донорах» у SQC не выделяется из аннотации, где дан диапазон 99.5–99.99% и Bell > 99%."),
+  "Best exchange gate is HRL's exchange-only CNOT at 9×10⁻⁴; SQC (Nature 2025): nuclear CZ 99.90(4)%, 1Q 99.10–99.99%, Bell 91.4–99.5% local and 87.0–97.0% non-local — no Bell > 99%.","Лучший обменный гейт — exchange-only CNOT у HRL, 9×10⁻⁴; SQC (Nature 2025): ядерный CZ 99.90(4)%, 1Q 99.10–99.99%, Bell 91.4–99.5% локально и 87.0–97.0% нелокально — никакого Bell > 99%."),
 N("g_fusion",3,"Linear-optical fusion (heralded)","Линейно-оптический fusion (heralded)",0.25,["pho"],-7.0,"her",None,"flying","eo","RT",["loss"],"pic","D",
   "Probabilistic Bell measurement on photons (50%, 75% boosted); failure is heralded → erasure.","Вероятностное измерение Белла на фотонах (50%, 75% с усилением); неудача heralded → erasure.",
   [("channel","fusion Bell fidelity","99.22%","2025-02","https://www.nature.com/articles/s41586-025-08820-7")],"",""),
@@ -254,8 +255,8 @@ N("ct_sfq",5,"SFQ digital control (millikelvin)","Цифровое SFQ-упра�
   "SEEQC–IBM integration under DARPA QBI (since Jun 2025).","Интеграция SEEQC–IBM в рамках DARPA QBI (с июня 2025)."),
 N("ct_fluxdac",5,"On-chip flux-DAC multiplexing","On-chip мультиплексирование flux-DAC",1.0,["fab"],None,"na",None,"none","lf","mK",["coherent"],"sclitho","D",
   "Annealer-heritage SFQ flux DACs: ~200–300 bias lines for 10⁴ qubits; applied to fluxonium (bump-bonded MCM).","Flux-DAC на SFQ из наследия отжигателей: ~200–300 линий смещения на 10⁴ кубитов; применено к флаксониуму (bump-bonded MCM).",
-  [("path","bias lines per qubits","200 bias wires (press release 2026-01-06) vs ~300 bias lines (whitepaper 2026-01-23) for the same annealer scheme — unreconciled; fluxonium MCM at 10 mK","2026-01","https://www.dwavequantum.com/media/41upubz2/14-1090a-a_fluxonium-dac-control.pdf")],
-  "D-Wave's own figures disagree: 200 bias wires in the 2026-01-06 release against ~300 in the 2026-01-23 whitepaper. NASA JPL fabricated key components of the module.","Собственные данные D-Wave расходятся: 200 линий смещения в релизе 2026-01-06 против ~300 в whitepaper 2026-01-23. Ключевые компоненты модуля изготовлены в NASA JPL."),
+  [("path","bias lines per qubits","~300 bias lines into the QPU, of which ~200 multiplexed lines address ~10⁵ on-chip DACs (whitepaper 2026-01-23); fluxonium MCM at 10 mK","2026-01","https://www.dwavequantum.com/media/41upubz2/14-1090a-a_fluxonium-dac-control.pdf")],
+  "The 200 and 300 in D-Wave's texts count different line sets: ~300 bias lines in total, ~200 multiplexed lines addressing the DAC network (both in the 2026-01-23 whitepaper). NASA JPL fabricated key components of the module.","200 и 300 в текстах D-Wave считают разные наборы линий: ~300 линий смещения всего, ~200 мультиплексированных линий адресуют сеть DAC (обе цифры в whitepaper 2026-01-23). Ключевые компоненты модуля изготовлены в NASA JPL."),
 N("ct_laser",5,"Laser + AOD/SLM optical control (atoms)","Лазер + AOD/SLM оптическое управление (атомы)",0.0,["nat"],None,"na",None,"none","opt","RT",["coherent"],"optics","D",
   "SLM-generated tweezer arrays (12,000 sites), AOD moves, Rydberg lasers; 33 W for 18,225 tweezers; the binding constraint above 10⁴ sites is the AOD time–bandwidth product, not an SLM refresh rate.","Массивы пинцетов от SLM (12 000 сайтов), перемещения AOD, ридберговские лазеры; 33 Вт на 18 225 пинцетов; выше 10⁴ сайтов ограничивает произведение время–полоса у AOD, а не частота обновления SLM.",
   [("count","SLM array","~12,000 sites, 6,100 atoms","2025-09","https://arxiv.org/abs/2403.12021"),
@@ -309,7 +310,7 @@ N("ro_qcap",6,"rf quantum-capacitance parity readout","rf-считывание �
   "The independent replication is van Loo et al., Nature 650 (2026-02-11), on an InSb minimal Kitaev chain; arXiv:2607.09511 is the follow-on coherent parity qubit, a different result.","Независимая репликация — van Loo et al., Nature 650 (2026-02-11), на минимальной цепочке Китаева в InSb; arXiv:2607.09511 — последующий когерентный кубит чётности, другой результат."),
 N("ro_erasure",6,"Mid-circuit erasure check","Проверка erasure в середине схемы",0.5,["fab","nat","pho"],None,"na",C("erasure",-6.4,False,True),"none","mw","RT",["erasure"],"none","D",
   "Ancilla-based detection of leakage/loss without disturbing the code: 384 ns (transmon), 1.8 µs (cavity), 20 µs (Yb atoms).","Детекция утечки/потери через анциллу без возмущения кода: 384 нс (трансмон), 1.8 мкс (полость), 20 мкс (атомы Yb).",
-  [("clock","transmon dual-rail check","384 ns, false-negative ~0.8%","2026-04","https://arxiv.org/abs/2604.16292"),
+  [("clock","transmon dual-rail check","384 ns; FP/FN ≈ separation error 0.8% (SNR 11.6)","2026-04","https://arxiv.org/abs/2604.16292"),
    ("clock","cavity dual-rail check","1.8 µs, FP 0.51% / FN 3.7%","2025-01","https://www.nature.com/articles/s41534-024-00944-4"),
    ("clock","Yb erasure detection","20 µs (1Q) / 420 µs (2Q)","2023-05","https://arxiv.org/abs/2305.05493")],"",""),
 ]
@@ -381,7 +382,7 @@ N("dec_relaybp",8,"Relay-BP for qLDPC (FPGA)","Relay-BP для qLDPC (FPGA)",0.5
   [("clock","FPGA Relay-BP","average < 1 µs per cycle at p < 3×10⁻³ (simulated syndromes)","2025-10","https://arxiv.org/abs/2510.21600")],
   "A '480 ns per 12-cycle window' figure sometimes quoted is ~25× off the paper's average of under 1 µs per cycle. Relay-BP originates with Müller et al., arXiv:2506.01779 (2025-06-02); arXiv:2510.21600 is the FPGA implementation.","Иногда цитируемые «480 нс на окно из 12 циклов» расходятся примерно в 25 раз со средним значением статьи — менее 1 мкс на цикл. Relay-BP берёт начало от Müller et al., arXiv:2506.01779 (2025-06-02); arXiv:2510.21600 — это FPGA-реализация."),
 N("dec_fpga",8,"FPGA real-time decoders (LCD, Deltaflow)","FPGA-декодеры реального времени (LCD, Deltaflow)",0.5,["fab","nat"],None,"na",None,"none","none","none",["pauli"],"none","D",
-  "Local-clustering < 1 µs/round to d=17; Deltaflow 2 16 µs mean latency at d=5 on QPU data (vs Google 63 µs).","Local-clustering < 1 мкс/раунд до d=17; Deltaflow 2 — 16 мкс средней задержки при d=5 на данных QPU (против 63 мкс у Google).",
+  "Local-clustering < 1 µs/round to d=17; Riverlane + Rigetti real-time loop 9.6 µs (6.5 µs decode + 3.1 µs communication, 2×2 stability patch, arXiv:2410.05202) vs Google 63 µs.","Local-clustering < 1 мкс/раунд до d=17; контур реального времени Riverlane + Rigetti 9.6 мкс (6.5 мкс декодирование + 3.1 мкс связь, stability-патч 2×2, arXiv:2410.05202) против 63 мкс у Google.",
   [("clock","Riverlane LCD","< 1 µs/round to d=17","2025-12","https://www.nature.com/articles/s41467-025-66773-x"),
    ("clock","Google real-time at d=5","63 µs latency, Λ=2.0","2024-08","https://arxiv.org/abs/2408.13687")],"",""),
 N("dec_gpu",8,"GPU decoding via NVQLink","GPU-декодирование через NVQLink",0.5,["fab","nat"],None,"na",None,"none","none","none",["pauli"],"none","D",
@@ -393,10 +394,10 @@ N("dec_corr",8,"Correlated / loss-aware decoding (transversal, atom loss)","Ко
   [("channel","loss-aware ML decoding gain","1.73(13)×","2025-11","https://www.nature.com/articles/s41586-025-09848-5")],"",""),
 N("dec_rl",8,"In-loop RL calibration / decoder steering","RL-калибровка в контуре / управление декодером",1.0,["fab"],None,"na",None,"none","none","none",["coherent"],"none","D",
   "Reinforcement learning tunes > 1,000 control parameters during QEC: ~20% extra suppression, 3.5× drift robustness.","Обучение с подкреплением подстраивает > 1 000 параметров управления во время QEC: ~20% дополнительного подавления, 3.5× устойчивость к дрейфу.",
-  [("channel","RL-steered QEC","20% LER cut, 3.5× stability vs drift","2026-07","https://arxiv.org/abs/2511.08493")],"",""),
+  [("channel","RL-steered QEC","20% LER cut, 3.5× stability vs drift; the same Willow d=7 run that yields 7.72(9)×10⁻⁴/cycle (see dec_nn)","2025-11","https://arxiv.org/abs/2511.08493")],"",""),
 N("dec_cryo",8,"Cryogenic / on-chip decoder (SFQ, cryo-CMOS)","Криогенный / on-chip декодер (SFQ, cryo-CMOS)",1.0,["fab"],None,"na",None,"none","mw","mK",["pauli"],"sclitho","X",
   "Designs only: NISQ+ (≤ 20 ns, SFQ), QECOOL (2.8 µW), Pinball/CryoZip (4 K predecoders) — no fabricated decoder chip.","Только дизайны: NISQ+ (≤ 20 нс, SFQ), QECOOL (2.8 мкВт), Pinball/CryoZip (предекодеры при 4 K) — ни одного изготовленного чипа-декодера.",
-  [("clock","QECOOL on-line SFQ decoder (simulation)","2.78 µW at 2 GHz","2021-03","https://arxiv.org/abs/2103.14209"),
+  [("path","QECOOL on-line SFQ decoder (simulation)","2.78 µW at 2 GHz; latency not published","2021-03","https://arxiv.org/abs/2103.14209"),
    ("clock","NISQ+ approximate SFQ decoder (design)","≤ 20 ns latency","2020-04","https://arxiv.org/abs/2004.04794"),
    ("path","cryo-CMOS predecoder (design)","3,780× syndrome-bandwidth reduction at < 0.56 mW","2025-12","https://arxiv.org/abs/2512.09807")],
   "arXiv:2103.14209 is QECOOL — an SFQ decoder, not cryo-CMOS; the ≤ 20 ns latency belongs to NISQ+ (arXiv:2004.04794).","arXiv:2103.14209 — это QECOOL, SFQ-декодер, а не cryo-CMOS; задержка ≤ 20 нс относится к NISQ+ (arXiv:2004.04794)."),
@@ -478,7 +479,7 @@ N("fab_stm",10,"STM hydrogen lithography (donors)","STM-литография (д
   "The ~3 nm figure is the incorporated donor's positional uncertainty from segregation and diffusion during encapsulation — the limiting step is thermal, not lithographic; ~1 nm is not supported.","~3 нм — неопределённость положения встроенного донора из-за сегрегации и диффузии при заращивании: ограничивающая стадия термическая, а не литографическая; ~1 нм не подтверждается."),
 N("fab_diamond",10,"Diamond growth / implantation (NV, SiV, SnV)","Рост / имплантация алмаза (NV, SiV, SnV)",0.5,["int"],None,"na",None,"none","none","none",["pauli"],"diamond","D",
   "Nanocavity yield: 327 SnV devices with cooperativity > 1 on two chips (QuTech); Quantum Brilliance diamond foundry.","Выход нанорезонаторов: 327 SnV-устройств с кооперативностью > 1 на двух чипах (QuTech); алмазная фабрика Quantum Brilliance.",
-  [("path","device yield","327 devices, cooperativity > 1","2026-06","https://qutech.nl/2026/06/25/a-step-toward-faster-quantum-networks/")],
+  [("path","device yield","327 cavities resonance-characterised at room temperature (mean Q 1.1×10⁴); cooperativity > 1 shown on 2","2026-06","https://qutech.nl/2026/06/25/a-step-toward-faster-quantum-networks/")],
   "Element Six's DNV-B1 (2020) is an NV-*ensemble* sensing grade, not a substrate for single-defect network nodes, which need electronic-grade plates.","DNV-B1 от Element Six (2020) — сенсорный сорт для *ансамблей* NV, а не подложка для сетевых узлов на одиночных дефектах, где нужны пластины электронного качества."),
 ]
 # ---------------------------------------------------------------- extra nodes (added while assembling paths)
@@ -492,7 +493,7 @@ N("g_cv",3,"CV Gaussian gates + GKP-assisted non-Gaussian ops","CV гауссо�
 N("g_mwspin",3,"Microwave / optical spin gates (defect centres, 1Q spins)","СВЧ / оптические спиновые гейты (центры окраски, 1Q спины)",0.5,["int","fab"],-6.0,"det",None,"static","mw","RT",["pauli","coherent"],"diamond","D",
   "ESR/EDSR-driven rotations and hyperfine-conditional gates; < 0.1% error on NV electron+nuclear registers.","Вращения на ESR/EDSR и сверхтонко-условные гейты; ошибка < 0.1% на регистрах NV электрон+ядро.",
   [("channel","NV 1Q/2Q (GST)","< 0.1% [P] — press release only, no primary paper","2025-03","https://thequantuminsider.com/2025/03/28/fujitsu-and-qutech-realize-high-precision-quantum-gates/")],
-  "The Fujitsu/QuTech '< 0.1%' figure exists only as a press release [P]; no primary paper has been located.","Значение «< 0.1%» от Fujitsu/QuTech существует только в виде пресс-релиза [P]; первичная статья не найдена."),
+  "The Fujitsu/QuTech '< 0.1%' figure is cited from the press release [P], which names a Phys. Rev. Applied paper (2025-03-21) not yet located by us.","Значение «< 0.1%» от Fujitsu/QuTech цитируется по пресс-релизу [P], который называет статью в Phys. Rev. Applied (2025-03-21), нами пока не найденную."),
 N("g_catcnot",3,"Bias-preserving cat–cat CNOT","Bias-сохраняющий CNOT кошка–кошка",1.0,["fab"],None,"det",None,"bus","mw","RT",["bias"],"sclitho","X",
   "Required by every cat-qubit resource estimate; only a July-2026 theory proposal exists.","Требуется каждой оценкой ресурсов для кошачьих кубитов; существует только теоретическое предложение июля 2026.",
   [("channel","status","no experimental bias-preserving cat–cat CNOT","2026-07","https://arxiv.org/abs/2607.22852")],"",""),
@@ -707,8 +708,32 @@ for e in EDGES:
         if x: e.update(price=dict(en=x["price"][0],ru=x["price"][1]),mitig=dict(en=x["mitig"][0],ru=x["mitig"][1]),status=x["status"],date=x["date"],url=x["url"])
 assert all(e.get("status") for e in EDGES if e["type"]=="conflicts"), "every conflict edge needs CONX detail"
 # ---------------------------------------------------------------- DERIVATIONS (transfers, off-diagonal, empty slots, clock, validity)
-import json, math
+import json, math, os
 NODE={n["id"]:n for n in NODES}
+# ---------------------------------------------------------------- STANDARD RECORDS (dated, sourced; nulls are honest "not published")
+_REC_PATH=os.path.join(os.path.dirname(os.path.abspath(__file__)),"records.json")
+RECORDS=json.load(open(_REC_PATH,encoding="utf-8"))
+RECKEYS={"t1":("T1 relaxation","T1 релаксация"),"t2":("T2 coherence (echo/DD)","T2 когерентность (эхо/DD)"),"t1q":("1Q gate time","время 1Q-гейта"),
+ "idle_err_round":("idle / memory error per round","ошибка простоя/памяти за раунд"),"leak_rate":("leakage per gate","утечка за гейт"),"burst_rate":("correlated-burst rate","частота коррелированных всплесков"),
+ "err_2q_parallel":("2Q error under full-width parallel operation","ошибка 2Q при параллельной работе всей ширины"),"crosstalk":("crosstalk","перекрёстные помехи"),
+ "degree":("connectivity degree","степень связности"),"t_move_round":("transport per round","транспорт за раунд"),"t_move_layer":("transport per gate layer","транспорт за слой гейтов"),
+ "t_ff":("feed-forward latency","задержка feed-forward"),"lines_per_qubit":("control lines per qubit","линий управления на кубит"),"calib_cadence":("recalibration interval","интервал перекалибровки"),
+ "t_reset":("reset / initialisation time","время сброса/инициализации"),"reset_err":("reset error","ошибка сброса"),"spam":("SPAM error","ошибка SPAM"),"qnd":("QND fidelity / survival","QND-верность / выживание"),
+ "d2_layers":("2Q layers per syndrome round","слоёв 2Q за раунд синдрома"),"d1_layers":("1Q layers per round","слоёв 1Q за раунд"),"rate":("code rate k/n","скорость кода k/n"),"accept":("acceptance fraction","доля принятых"),
+ "magic_rate":("magic states per round per factory","магических состояний за раунд на фабрику"),"magic_cost":("qubit·rounds per magic state","кубит·раундов на магическое состояние"),
+ "t_decode":("decode latency per round","задержка декодирования за раунд"),"yield":("device yield","выход годных"),"spread":("parameter spread","разброс параметров")}
+for n in NODES: n["records"]=[]
+for r in RECORDS:
+    assert r["node"] in NODE, r["node"]; assert r["key"] in RECKEYS, r["key"]
+    NODE[r["node"]]["records"].append({k:v for k,v in r.items() if k!="node"})
+def rec(nid,key,prefer=("typical","best","theory"),unit=None):
+    """first numeric record of a node by scope preference; None if unpublished"""
+    rs=[r for r in NODE[nid]["records"] if r["key"]==key and r["num"] is not None and (unit is None or r["unit"]==unit)]
+    for sc in prefer:
+        for r in rs:
+            if r["scope"]==sc: return r
+    return rs[0] if rs else None
+def _pow(x): return None if x is None else 10**x
 LAYER_BY_ID={l[0]:l for l in LAYERS}
 FAMILY_OF={p["id"]:p["family"] for p in PATHS}
 
@@ -785,19 +810,59 @@ def compute():
             ids=p["slots"].get(L,[])
             if not ids: empty_slots.append(dict(path=p["id"],layer=L))
             elif all(NODE[i]["status"]=="X" for i in ids): empty_slots.append(dict(path=p["id"],layer=L,only=ids))
-    # derived clock per path = max(gate, readout, transport)
+    # derived clock per path — syndrome round as the sum of its phases (not max):
+    #   t_round = d2·(t_2Q + t_move_layer) + d1·t_1Q + t_meas + t_reset      (transport only where the connectivity node moves qubits)
+    #   t_react = published measurement→conditioned-operation loop, floor = t_meas + t_decode
+    #   ops_per_coh = T2 / t_2Q ; idle exposure per round = t_round / T2 (compared with the measured idle error where published)
+    HOST_ROUND={"code_erasure":"code_surface"}   # erasure codes reuse the host code's round
+    RESET_AMORTISED={"ro_img","ro_imgfast"}      # atom reload is a reservoir cycle, not a per-round reset
     for p in PATHS:
         def first(L):
             ids=p["slots"].get(L,[]); return NODE[ids[0]] if ids else None
-        g=first(3); r=first(6); c=first(4)
-        tg=g["b"]["t"] if g and g["b"]["t"] is not None else None
-        tr=r["c"]["t"] if r and r["c"] and r["c"]["t"] is not None else None
-        tc=c["b"]["t"] if c and c["b"]["t"] is not None and c["d"] in ("transport",) else None
-        parts={"gate":tg,"readout":tr,"transport":tc}
-        vals=[v for v in parts.values() if v is not None]
-        p["clock_derived"]=max(vals) if vals else None
-        p["clock_parts"]=parts
-        p["clock_limiter"]=max(parts,key=lambda k:(parts[k] if parts[k] is not None else -99)) if vals else None
+        car=first(1); g=first(3); c=first(4); ct=first(5); r=first(6); dec=first(8)
+        notes=[]; parts={}
+        t2q=_pow(g["b"]["t"]) if g and g["b"]["t"] is not None else None
+        tmeas=_pow(r["c"]["t"]) if r and r["c"] and r["c"]["t"] is not None else None
+        # the round is that of the first code on the path that has a published syndrome circuit (erasure codes → host code)
+        code=None; codeid=None; d2r=d1r=None
+        codes=[NODE[i] for i in p["slots"].get(7,[])]
+        for cd in codes:
+            host=HOST_ROUND.get(cd["id"],cd["id"]); rr=rec(host,"d2_layers")
+            if rr: code=cd; codeid=host; d2r=rr; d1r=rec(host,"d1_layers"); break
+        if codes and not code: code=codes[0]; codeid=codes[0]["id"]; notes.append("no published syndrome round for %s"%", ".join(x["id"] for x in codes))
+        elif code and code["id"]!=codes[0]["id"]: notes.append("round of %s (%s has no published syndrome circuit)"%(codeid,codes[0]["id"]))
+        elif code and code["id"] in HOST_ROUND: notes.append("round of the host code (%s)"%codeid)
+        if c and c["d"]=="flying": code=None; d2r=None; notes.append("measurement-driven photonic architecture: no syndrome round; native clock in the measured column")
+        t1qr=(rec(car["id"],"t1q",unit="s") if car else None) or (rec(g["id"],"t1q",unit="s") if g else None)
+        tmove_r=rec(c["id"],"t_move_layer",unit="s") if c and c["d"]=="transport" else None
+        if c and c["d"]=="transport" and not tmove_r: notes.append("transport per layer unpublished for %s"%c["id"])
+        treset_r=rec(r["id"],"t_reset",unit="s") if r and r["id"] not in RESET_AMORTISED else None
+        if r and r["id"] in RESET_AMORTISED: notes.append("reset by optical pumping (unpublished); reload amortised")
+        elif r and not treset_r: notes.append("reset time unpublished for %s"%r["id"])
+        if code and d2r and t2q is not None and tmeas is not None:
+            d2=d2r["num"]; d1=d1r["num"] if d1r else 0
+            parts={"gates":d2*t2q,"transport":(d2*tmove_r["num"] if tmove_r else 0.0),"1q":(d1*t1qr["num"] if t1qr and d1 else 0.0),"readout":tmeas,"reset":(treset_r["num"] if treset_r else 0.0)}
+            total=sum(parts.values()); lim=max(parts,key=parts.get)
+            p["round"]=dict(total=total,parts=parts,limiter=lim,d2=d2,d1=d1,code=HOST_ROUND.get(codeid,codeid),
+                            sources=[x for x in (d2r,d1r,t1qr,tmove_r,treset_r) if x],notes=notes)
+        else:
+            p["round"]=dict(total=None,parts={},limiter=None,notes=notes+([] if code else ["no code on this path"]))
+        # reaction time
+        tff=rec(ct["id"],"t_ff",unit="s") if ct else None; tdec=rec(dec["id"],"t_decode",unit="s") if dec else None
+        floor=(tmeas or 0)+(tdec["num"] if tdec else 0) if (tmeas is not None and tdec) else None
+        p["react"]=dict(loop=(tff["num"] if tff else None),floor=floor,sources=[x for x in (tff,tdec) if x],
+                        note=("published measurement→conditioned-operation loop" if tff else "no published feed-forward loop; floor = readout + decode"))
+        # coherence
+        t2r=rec(car["id"],"t2",unit="s") if car else None; t1r=rec(car["id"],"t1",unit="s") if car else None
+        idle_meas=rec(car["id"],"idle_err_round") if car else None
+        ops=(t2r["num"]/t2q) if (t2r and t2q) else None
+        expo=(p["round"]["total"]/t2r["num"]) if (t2r and p["round"]["total"]) else None
+        p["coh"]=dict(t1=(t1r["num"] if t1r else None),t2=(t2r["num"] if t2r else None),t2_scope=(t2r["scope"] if t2r else None),ops_per_coh=ops,idle_exposure=expo,idle_measured=(idle_meas["num"] if idle_meas else None),
+                      sources=[x for x in (t1r,t2r,idle_meas) if x])
+        # legacy fields kept for the map (log10 seconds)
+        p["clock_derived"]=(math.log10(p["round"]["total"]) if p["round"]["total"] else None)
+        p["clock_parts"]={k:(math.log10(v) if v else None) for k,v in parts.items()}
+        p["clock_limiter"]=p["round"]["limiter"]
     # defines edges flattened
     defines=[dict(type="defines",src=n["id"],dst=d["out"],metric=d["metric"],value=d["value"],date=d["date"],url=d["url"]) for n in NODES for d in n["defines"]]
     # validity check against prose directions
@@ -823,7 +888,7 @@ def compute():
     covered=set(i for ids in DIRECTIONS.values() for i in ids)
     novel=sorted(S-covered)
     validity=dict(directions=report,S_size=len(S),S=sorted(S),novel=novel,diagonal_enablers=DIAGONAL_ENABLERS)
-    return dict(layers=[dict(n=l[0],id=l[1],en=l[2],ru=l[3]) for l in LAYERS],vocab=dict(AFF={('%g'%k):v for k,v in AFF.items()},DET=DET,MECH=MECH,MOB=MOB,MOD=MOD,PLACE=PLACE,ERR=ERR,FAB=FAB,STATUS=STATUS,OUT=OUT,OFFDIAG=OFFDIAG_RULES,CONSTAT=CONSTAT),
+    return dict(layers=[dict(n=l[0],id=l[1],en=l[2],ru=l[3]) for l in LAYERS],vocab=dict(AFF={('%g'%k):v for k,v in AFF.items()},DET=DET,MECH=MECH,MOB=MOB,MOD=MOD,PLACE=PLACE,ERR=ERR,FAB=FAB,STATUS=STATUS,OUT=OUT,OFFDIAG=OFFDIAG_RULES,CONSTAT=CONSTAT,RECKEYS=RECKEYS),
                 nodes=NODES,paths=PATHS,edges=EDGES+transfers+defines,empty_status=empty,empty_slots=empty_slots,validity=validity)
 
 if __name__=="__main__":
@@ -838,7 +903,7 @@ if __name__=="__main__":
         if n["hub"]: print(f"  {n['id']:16s} {'RECENT' if n['hub_recent'] else 'commodity':9s} reach={n['reach']} paths={len(n['paths'])}")
     print("\nEMPTY status:",G["empty_status"]); print("EMPTY slots:",[(e['path'],e['layer'],e.get('only')) for e in G['empty_slots']])
     print("\nCLOCK:")
-    for p in G["paths"]: print(f"  {p['id']:10s} derived=10^{p['clock_derived']} s limiter={p['clock_limiter']} parts={p['clock_parts']} measured={p['cycle']}")
+    for p in G["paths"]: print(f"  {p['id']:10s} round={p['round']['total']} limiter={p['round']['limiter']} parts={ {k:('%.3g'%v) for k,v in p['round']['parts'].items()} } measured={p['cycle']} | react loop={p['react']['loop']} floor={p['react']['floor']} | T2={p['coh']['t2']} ops/coh={p['coh']['ops_per_coh']} idle_exp={p['coh']['idle_exposure']} idle_meas={p['coh']['idle_measured']} | {p['round']['notes']}")
     print("\nVALIDITY:"); 
     for k,v in G["validity"]["directions"].items(): print(f"  {v['coverage']:.2f} {k}  miss={v['miss']}")
     print("  novel (in S, not in prose):",G["validity"]["novel"])

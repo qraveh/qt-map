@@ -62,6 +62,7 @@ def convert(md,lang):
         start=m.end(); t=h.find('<div class="tbl">',start); e=h.find('</div>',t)+6
         return h[:t]+f'<details class="fold big-table"><summary>{label}</summary>'+h[t:e]+'</details>'+h[e:]
     h=fold(h,r'<h3 id="[a-z]+-s\d+-2">[^<]*</h3>','Show table · Показать таблицу' if lang=='en' else 'Показать таблицу · Show table')
+    h=fold(h,r'<h3 id="[a-z]+-s\d+-11">[^<]*</h3>','Show records · Показать рекорды' if lang=='en' else 'Показать рекорды · Show records')
     for lbl in (['<strong>requires / provides</strong>','<strong>alternatives (within layer)</strong>','<strong>conflicts</strong>','<strong>transfers (node → additional platform paths)</strong>','<strong>defines (node → output; every row carries a source, a date and a number)</strong>'] if lang=='en' else
                 ['<strong>требует / обеспечивает</strong>','<strong>альтернативы (внутри слоя)</strong>','<strong>конфликтует</strong>','<strong>переносится (узел → дополнительные платформенные пути)</strong>','<strong>определяет (узел → выход; каждая строка несёт источник, дату и число)</strong>']):
         h=fold(h,re.escape(lbl),re.sub('<[^>]+>','',lbl))

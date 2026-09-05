@@ -55,7 +55,7 @@ The wall moves with N. At 10³ it is drive-source count and optical-table area; 
 
 The carrier feeds two named paths: *Trapped ions — QCCD, laser gates* (Quantinuum, AQT) and *Trapped ions — electronic gates, chip control* (IonQ/Oxford Ionics, eleQtron, Quantum Art). It requires surface-electrode trap microfabrication and optical/mechanical assembly, and is the substrate for the Mølmer–Sørensen gate, the electronic near-field microwave gate, metastable "omg" erasure encoding, shuttling, fluorescence detection and the ion–photon link. It replaces and conflicts with nothing: ions are a self-contained column, which is why switching away is total — nothing above the carrier survives but the compiler.
 
-Derived clock = max(gate, readout, transport). On the QCCD path transport dominates: ≈ 5.5×10⁻² s per full-width layer, ≈ 18 layers/s [D][1][12]. On the electronic-gate path at small ion count the clock is ≈ 2.3×10⁻⁴ s, set by the gate [D][4]. That two-order gap is the platform's defining number. Neighbouring empty slot: a cryogenic chip-integrated drive layer for ion traps — the SFQ/cryo-CMOS analogue — has no product-scale occupant.
+Derived clock = sum of the syndrome round: gate layers + transport + readout + reset. On the QCCD path transport dominates: ≈ 9.7×10⁻³ s per round, 9.0 ms of it transport, against a ≈ 5.5×10⁻² s full-width layer [D][1][12]. On the electronic-gate path the round is ≈ 1.5×10⁻³ s, set by the gate layers [D][4]. That six-fold gap is the platform's defining number. Neighbouring empty slot: a cryogenic chip-integrated drive layer for ion traps — the SFQ/cryo-CMOS analogue — has no product-scale occupant.
 
 ## Verification (QCVV)
 

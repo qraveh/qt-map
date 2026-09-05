@@ -63,7 +63,7 @@ The wall is readout, not gates. At ~6 µs spin-to-charge conversion plus settlin
 
 The node sits on one platform path, **Silicon / germanium quantum-dot spins**. It requires a 300 mm CMOS foundry; it provides the dots consumed by exchange gates, exchange-only and singlet–triplet encoding, conveyor-mode spin shuttling, crossbar shared-line control and spin-to-charge readout. It replaces donor spins (SQC's precision-placed phosphorus), which buy 99.10–99.99% gates on 11 qubits [D][27] at the cost of no foundry path — the switching price in one line.
 
-Derived clock for the path = max(gate, readout, transport) = **6.3 µs**, set entirely by readout. The node is not a hub and has no off-diagonal reach: everything it enables is downstream of itself, so a failure here has no fallback elsewhere. The neighbouring empty slot is fast sensor-free readout — Pauli-spin-blockade below 1 µs at >99.9%; nothing in the graph fills it.
+Derived clock for the path = sum of the syndrome round: gate layers + transport + readout + reset = **8.5 µs**, readout 6.3 µs of it and reset 1 µs. The node is not a hub and has no off-diagonal reach: everything it enables is downstream of itself, so a failure here has no fallback elsewhere. The neighbouring empty slot is fast sensor-free readout — Pauli-spin-blockade below 1 µs at >99.9%; nothing in the graph fills it.
 
 ## Verification (QCVV)
 

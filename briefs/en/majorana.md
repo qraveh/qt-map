@@ -63,7 +63,7 @@ Control is DC-to-low-frequency gate voltages from room-temperature electronics p
 
 The node sits on one platform path, Topological (Majorana), with no off-diagonal reach: it requires III–V MBE heterostructures and provides the physical layer for the measurement-based Majorana gate, the fermion-parity (tetron) encoding and rf quantum-capacitance parity readout. It replaces and conflicts with nothing, because nothing depends on it. That isolation is the strategic fact: failure strands the branch with no partial credit — readout and MBE know-how transfer to hybrid-device physics, the encoding, gate set and error model nowhere.
 
-Derived clock for the path = max(gate, readout, transport) = 1.0 × 10⁻⁴ s, set by the ~100 µs parity measurement, since logic *is* measurement and transport is absent — a design figure, not a demonstrated cycle. Neighbouring empty slots: a two-tetron joint-parity (X-type) measurement, and any decoder for a measured Majorana error model.
+Derived clock for the path = sum of the syndrome round: gate layers + transport + readout + reset: no code runs here, so only the ~100 µs parity-measurement term is defined and reset is unpublished, since logic *is* measurement and transport is absent — a design figure, not a demonstrated round. Neighbouring empty slots: a two-tetron joint-parity (X-type) measurement, and any decoder for a measured Majorana error model.
 
 ## Verification (QCVV)
 

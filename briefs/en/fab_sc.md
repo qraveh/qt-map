@@ -48,7 +48,7 @@ No control or readout of its own; it sets the ceiling others hit, through escape
 
 ## Role in the stack
 
-Root node of the superconducting family: it requires nothing upstream and provides for transmon, fluxonium and the rf-SQUID flux qubit, plus long-range c-couplers, millikelvin SFQ control, flux-DAC multiplexing, multi-chip modules with l-couplers, and cryogenic microwave links. Paths served: transmon, bosonic cat/GKP, dual-rail erasure, annealing. It replaces 3D integration in the planar-versus-stacked trade. Fan-in is zero, so it is no hub, yet its fan-out is the family's widest and every downstream node inherits its spread and yield. It adds nothing to the derived clock (derived clock = max(gate, readout, transport) for the path) but bounds how many qubits reach it.
+Root node of the superconducting family: it requires nothing upstream and provides for transmon, fluxonium and the rf-SQUID flux qubit, plus long-range c-couplers, millikelvin SFQ control, flux-DAC multiplexing, multi-chip modules with l-couplers, and cryogenic microwave links. Paths served: transmon, bosonic cat/GKP, dual-rail erasure, annealing. It replaces 3D integration in the planar-versus-stacked trade. Fan-in is zero, so it is no hub, yet its fan-out is the family's widest and every downstream node inherits its spread and yield. It adds nothing to the derived clock (derived clock = sum of the syndrome round: gate layers + transport + readout + reset, 0.65 µs on the superconducting path) but bounds how many qubits reach it.
 
 ## Verification (QCVV)
 

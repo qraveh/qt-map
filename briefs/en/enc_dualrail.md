@@ -66,7 +66,7 @@ The encoding doubles control fan-out: two drive lines per qubit, or two cavities
 
 Dual-rail sits on two named paths: "Superconducting dual-rail erasure" (Quantum Circuits/D-Wave, AWS, SUSTech) and "Photonic — fusion-based (DV)" (PsiQuantum, Quandela, QuiX). It requires a mid-circuit erasure check and is what that check reads; without one it is merely a lossier qubit. It replaces bare encoding at 2× the modes and conflicts with the plain surface code, which discards heralds. Hence the fabrication↔erasure off-diagonal: buy error *structure* with area, not error *rate* with coherence.
 
-Derived clock = max(gate, readout, transport): 5.0×10⁻⁷ s on the cavity route, set by the CZ [D][11]; 3.8×10⁻⁷ s on the transmon route, set by the check [D][10]. Switching away is cheap in hardware, expensive in software: decoder, calibration and benchmarks assume heralds. Neighbouring empty slots: a dual-rail *logical* memory over repeated rounds, and the erasure-biased code consuming heralds and bias.
+Derived clock = sum of the syndrome round: gate layers + transport + readout + reset: 2.8×10⁻⁶ s on the dual-rail path — four 5.0×10⁻⁷ s CZ layers [D][11] over a 4.0×10⁻⁷ s check [D][10] — gate-set on the cavity and the transmon route alike. Switching away is cheap in hardware, expensive in software: decoder, calibration and benchmarks assume heralds. Neighbouring empty slots: a dual-rail *logical* memory over repeated rounds, and the erasure-biased code consuming heralds and bias.
 
 ## Verification (QCVV)
 
