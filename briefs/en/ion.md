@@ -2,7 +2,6 @@
 id: ion
 name: Trapped atomic ion
 layer: "1 Carrier"
-tier: 1
 status: demonstrated
 since: 1995
 one_line: "Single Yb⁺/Ba⁺/Ca⁺ ions in RF traps, entangled through shared motional modes; the highest-fidelity and slowest qubit in commercial service."

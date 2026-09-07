@@ -2,7 +2,6 @@
 id: cx_lr
 name: Long-range on-chip couplers (c-couplers, mm-scale)
 layer: 4 Connectivity / transport
-tier: 1
 status: emerging
 since: 2023
 one_line: Waveguide- or resonator-extended tunable couplers that entangle fixed superconducting qubits millimetres apart, buying the degree-6 graphs that qLDPC codes need.

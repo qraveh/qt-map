@@ -2,7 +2,6 @@
 id: enc_timebin
 name: Time-bin / path photonic encoding
 layer: "2 Encoding"
-tier: 3
 status: demonstrated
 since: 2001
 one_line: "Photonic dual-rail qubit in arrival-time bins or waveguide path; loss is the error and it is heralded rather than stochastic."

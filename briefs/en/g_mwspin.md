@@ -2,7 +2,6 @@
 id: g_mwspin
 name: Microwave / optical spin gates (defect centres, 1Q spins)
 layer: "3 Gate mechanism"
-tier: 3
 status: demonstrated
 since: 2004
 one_line: Resonant microwave rotation of a defect electron spin, hyperfine-conditional rotation of its neighbouring nuclei, and optical pulses for initialisation and readout.

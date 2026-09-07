@@ -2,7 +2,6 @@
 id: cavity
 name: Bosonic cavity mode
 layer: 1 Carrier
-tier: 3
 status: demonstrated
 since: 2013
 one_line: A harmonic microwave mode of a 3D or planar superconducting resonator used as the qubit carrier; its error is structured photon loss, not generic Pauli noise.

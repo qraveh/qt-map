@@ -2,7 +2,6 @@
 id: photon
 name: Single photon (discrete variable)
 layer: "1 Carrier"
-tier: 1
 status: demonstrated
 since: 2001
 one_line: "A qubit carried by one optical quantum in path, time-bin or polarisation modes; entangling is probabilistic and the only error is loss."

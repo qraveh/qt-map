@@ -2,7 +2,6 @@
 id: code_aft
 name: Algorithmic FT / transversal architectures
 layer: "7 Code"
-tier: 2
 status: emerging
 since: 2025
 one_line: Replacing O(d) syndrome-extraction rounds per logical gate with a constant number, via transversal block-to-block gates plus correlated decoding.

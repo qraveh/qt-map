@@ -2,7 +2,6 @@
 id: cx_qccd
 name: Ion shuttling (QCCD, junctions, grid traps)
 layer: "4 Connectivity / transport"
-tier: 2
 status: demonstrated
 since: 2002
 one_line: Moving trapped ions between zones through junctions or grid traps so a small gate-able crystal inherits all-to-all connectivity.

@@ -2,7 +2,6 @@
 id: ct_fluxdac
 name: On-chip flux-DAC multiplexing
 layer: "5 Control"
-tier: 2
 status: demonstrated
 since: 2026
 one_line: SFQ on-chip flux digital-to-analog converters that hold each qubit's or coupler's DC bias at the mK stage, replacing one room-temperature wire per bias with a multiplexed on-chip network.

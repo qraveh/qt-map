@@ -2,7 +2,6 @@
 id: ro_s2c
 name: Spin-to-charge conversion + rf reflectometry
 layer: "6 Readout"
-tier: 3
 status: demonstrated
 since: 2004
 one_line: Spin converted into a charge-motion event by Pauli blockade or energy-selective tunnelling, then read by an rf-matched charge sensor in microseconds without destroying the qubit.

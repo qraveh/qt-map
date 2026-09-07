@@ -2,7 +2,6 @@
 id: ic_spinphoton
 name: Spin–photon solid-state link (SiV, NV, T-centre)
 layer: "9 Interconnect"
-tier: 2
 status: demonstrated
 since: 2013
 one_line: Heralded photonic entanglement between separated solid-state spin registers — diamond NV and SiV centres, silicon T centres — through deployed telecom fibre.

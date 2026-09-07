@@ -2,7 +2,6 @@
 id: ic_atomcavity
 name: Atom–photon cavity interface
 layer: "9 Interconnect"
-tier: 2
 status: emerging
 since: 2024
 one_line: An optical cavity around tweezer-trapped neutral atoms Purcell-enhances atom–photon coupling so an atom's state can be written onto a flying photon.

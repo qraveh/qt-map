@@ -2,7 +2,6 @@
 id: fab_mbe
 name: III-V MBE heterostructures (InAs–Pb wires, QD sources)
 layer: "10 Manufacturing"
-tier: 3
 status: demonstrated
 since: 2018
 one_line: Molecular-beam epitaxy of III-V nanostructures with vacuum-unbroken superconductor shells for Majorana wires, and of quantum dots for single-photon sources.

@@ -2,7 +2,6 @@
 id: g_ms
 name: Mølmer–Sørensen / light-shift laser gate
 layer: "3 Gate mechanism"
-tier: 2
 status: demonstrated
 since: 2003
 one_line: Bichromatic-laser spin-dependent force that entangles trapped ions through a geometric phase on a shared motional mode, leaving no population in it.

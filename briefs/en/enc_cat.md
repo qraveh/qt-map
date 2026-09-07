@@ -2,7 +2,6 @@
 id: enc_cat
 name: Cat-code encoding (biased noise)
 layer: 2 Encoding
-tier: 3
 status: demonstrated
 since: 2020
 one_line: A two-photon-dissipation-stabilised coherent-state qubit whose bit-flips fall exponentially with photon number while phase-flips rise linearly with it.

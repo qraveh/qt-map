@@ -2,7 +2,6 @@
 id: code_qldpc
 name: Bivariate-bicycle qLDPC (gross) codes
 layer: "7 Code"
-tier: 1
 status: emerging
 since: 2025
 one_line: Sparse high-rate stabiliser codes on a degree-6 torus that cut physical-per-logical overhead roughly tenfold against the surface code.

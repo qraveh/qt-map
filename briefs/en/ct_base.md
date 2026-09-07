@@ -2,7 +2,6 @@
 id: ct_base
 name: Baseband electrical control (spins, Majorana)
 layer: "5 Control"
-tier: 2
 status: demonstrated
 since: 2012
 one_line: DC-to-few-GHz voltage pulses on lithographic gate electrodes drive exchange, tunnelling and parity in spin and Majorana devices, with no resonant drive.

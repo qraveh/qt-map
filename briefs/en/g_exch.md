@@ -2,7 +2,6 @@
 id: g_exch
 name: Exchange gate (spins; incl. shuttled-spin CZ)
 layer: "3 Gate mechanism"
-tier: 2
 status: demonstrated
 since: 2018
 one_line: Voltage-pulsed Heisenberg exchange between neighbouring or shuttled spins in gate-defined dots or donors — the only entangling mechanism that needs nothing but CMOS gate electrodes.

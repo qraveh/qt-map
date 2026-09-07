@@ -2,7 +2,6 @@
 id: cx_bus
 name: Ion-chain motional bus (all-to-all in chain)
 layer: "4 Connectivity / transport"
-tier: 3
 status: demonstrated
 since: 2003
 one_line: A shared collective motional mode entangles any pair in one trap, giving genuine all-to-all connectivity at the price of gate time growing with chain length.

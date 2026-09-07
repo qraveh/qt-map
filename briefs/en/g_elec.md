@@ -2,7 +2,6 @@
 id: g_elec
 name: Electronic near-field microwave gate (ions, laser-free)
 layer: "3 Gate mechanism"
-tier: 1
 status: demonstrated
 since: 2024
 one_line: Currents in a microfabricated trap chip entangle ions through microwave field gradients, with no laser and no ground-state cooling.

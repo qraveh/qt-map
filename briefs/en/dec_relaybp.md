@@ -2,7 +2,6 @@
 id: dec_relaybp
 name: Relay-BP for qLDPC (FPGA)
 layer: "8 Decoder"
-tier: 2
 status: demonstrated
 since: 2025
 one_line: "Belief propagation with disordered, partly negative memory strengths, chained in relay legs, decoding bivariate-bicycle qLDPC syndromes at 24 ns per iteration on an FPGA."

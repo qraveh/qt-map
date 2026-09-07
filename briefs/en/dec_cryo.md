@@ -2,7 +2,6 @@
 id: dec_cryo
 name: Cryogenic / on-chip decoder (SFQ, cryo-CMOS)
 layer: "8 Decoder"
-tier: 2
 status: empty slot
 since: —
 one_line: Syndrome decoding or pre-decoding executed inside the cryostat — SFQ logic at millikelvin, CMOS at 4 K — instead of at room temperature.

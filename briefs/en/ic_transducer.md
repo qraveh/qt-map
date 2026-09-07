@@ -2,7 +2,6 @@
 id: ic_transducer
 name: Microwave–optical transducer (useful efficiency)
 layer: "9 Interconnect"
-tier: 1
 status: empty slot
 since: "—"
 one_line: "A quantum-coherent microwave-to-telecom converter good enough to entangle superconducting processors in separate refrigerators; nothing in 2026 comes close."

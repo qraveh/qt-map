@@ -2,7 +2,6 @@
 id: g_catcnot
 name: Bias-preserving cat–cat CNOT
 layer: 3 Gate mechanism
-tier: 3
 status: empty slot
 since: 2030
 one_line: A direct entangling gate between two dissipative cat qubits that keeps the exponential bit-flip suppression intact through the interaction — theory only.

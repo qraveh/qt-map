@@ -2,7 +2,6 @@
 id: ct_eo
 name: Electro-optic drive + feed-forward electronics (RT)
 layer: "5 Control"
-tier: 3
 status: demonstrated
 since: 2020
 one_line: "Room-temperature modulators driven from detector outcomes inside one optical clock cycle — the feed-forward layer every photonic architecture needs."

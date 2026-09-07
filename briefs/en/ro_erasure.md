@@ -2,7 +2,6 @@
 id: ro_erasure
 name: Mid-circuit erasure check
 layer: 6 Readout
-tier: 1
 status: demonstrated
 since: 2023
 one_line: Ancilla- or fluorescence-based test of whether a qubit is still in its code space, flagging decay/leakage as a located erasure without reading the logical state.

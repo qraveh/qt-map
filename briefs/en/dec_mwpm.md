@@ -2,7 +2,6 @@
 id: dec_mwpm
 name: MWPM / Sparse Blossom (+correlated matching)
 layer: "8 Decoder"
-tier: 2
 status: demonstrated
 since: 2015
 one_line: Graph-matching decoder turning a syndrome round into the likeliest Pauli error chain; the accuracy reference and the shipped real-time decoder for surface codes.

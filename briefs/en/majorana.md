@@ -2,7 +2,6 @@
 id: majorana
 name: Majorana parity (InAs–Pb tetron)
 layer: "1 Carrier"
-tier: 1
 status: emerging
 since: 2025
 one_line: "Fermion parity stored non-locally in a gate-defined semiconductor–superconductor wire pair; only single-wire parity readout has been measured."

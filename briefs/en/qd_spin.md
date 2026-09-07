@@ -2,7 +2,6 @@
 id: qd_spin
 name: Gate-defined quantum-dot spin (Si/SiGe, Si-MOS, Ge)
 layer: "1 Carrier"
-tier: 1
 status: demonstrated
 since: 2012
 one_line: "Electron or hole spin in a lithographically gated dot; exchange gives deterministic ns-scale two-qubit gates on a CMOS die."

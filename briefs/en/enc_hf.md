@@ -2,7 +2,6 @@
 id: enc_hf
 name: Hyperfine / clock-state qubit
 layer: "2 Encoding"
-tier: 3
 status: demonstrated
 since: 1995
 one_line: Two ground-state hyperfine or nuclear-spin sublevels at a field-insensitive clock point, the default qubit for every trapped-ion and neutral-atom vendor.

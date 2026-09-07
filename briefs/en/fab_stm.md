@@ -2,7 +2,6 @@
 id: fab_stm
 name: STM hydrogen lithography (donors)
 layer: "10 Manufacturing"
-tier: 3
 status: demonstrated
 since: 2012
 one_line: A scanning-tunnelling tip desorbs hydrogen from passivated Si(100) to open single sites, phosphine dopes them, and epitaxial silicon buries the donors — atom-precise, serial, and without a foundry equivalent.

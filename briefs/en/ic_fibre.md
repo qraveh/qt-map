@@ -2,7 +2,6 @@
 id: ic_fibre
 name: Fibre links between photonic modules
 layer: "9 Interconnect"
-tier: 3
 status: demonstrated
 since: 2025
 one_line: "Telecom fibre carrying heralded entanglement between photonic chips and racks — priced per connector, not per metre, and with no published rate."

@@ -2,7 +2,6 @@
 id: g_fusion
 name: Linear-optical fusion (heralded)
 layer: "3 Gate mechanism"
-tier: 3
 status: demonstrated
 since: 2005
 one_line: "Probabilistic Bell-basis measurement on two photons — 50% unboosted, 75% with ancillae — whose failure heralds as erasure; the entangling primitive of fusion-based photonics."

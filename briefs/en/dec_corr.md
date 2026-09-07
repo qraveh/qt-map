@@ -2,7 +2,6 @@
 id: dec_corr
 name: Correlated / loss-aware decoding (transversal, atom loss)
 layer: "8 Decoder"
-tier: 3
 status: demonstrated
 since: 2025
 one_line: Decoders that consume atom-loss heralds as located erasures and decode across transversal gate layers instead of round-by-round.

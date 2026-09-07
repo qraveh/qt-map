@@ -2,7 +2,6 @@
 id: dec_fpga
 name: FPGA real-time decoders (LCD, Deltaflow)
 layer: "8 Decoder"
-tier: 3
 status: demonstrated
 since: 2025
 one_line: Room-temperature FPGAs running clustering or matching decoders fast enough to clear surface-code syndromes inside the QEC cycle, ahead of GPU and cryogenic alternatives.

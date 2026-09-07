@@ -2,7 +2,6 @@
 id: ic_mcm
 name: Multi-chip modules / l-couplers (same cryostat)
 layer: "9 Interconnect"
-tier: 1
 status: emerging
 since: 2025
 one_line: Splitting a superconducting processor across several dies inside one cryostat, joined by bump-bonded chiplet links or metre-scale superconducting l-couplers.

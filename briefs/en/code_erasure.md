@@ -2,7 +2,6 @@
 id: code_erasure
 name: Erasure-adapted codes
 layer: 7 Code
-tier: 1
 status: emerging
 since: 2025
 one_line: Surface and block codes decoded with located-error flags; thresholds 4–10% and Λ ≈ 27 in simulation, 1.7–1.9× gains in hardware.

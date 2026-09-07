@@ -2,7 +2,6 @@
 id: fab_optics
 name: Optical / mechanical assembly (lasers, vacuum, objectives)
 layer: "10 Manufacturing"
-tier: 2
 status: demonstrated
 since: 2016
 one_line: The laser, ultra-high-vacuum and imaging-optics stack that traps, cools, addresses and reads out both trapped-ion and neutral-atom qubits — infrastructure, not a qubit.

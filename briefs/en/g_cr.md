@@ -2,7 +2,6 @@
 id: g_cr
 name: Cross-resonance (fixed-frequency, all-microwave)
 layer: "3 Gate mechanism"
-tier: 3
 status: demonstrated
 since: 2011
 one_line: All-microwave entangling gate driving one fixed-frequency transmon at its neighbour's frequency through a static bus; no flux line, no tunable coupler.

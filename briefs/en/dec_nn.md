@@ -2,7 +2,6 @@
 id: dec_nn
 name: Neural decoders (AlphaQubit2, CNN, transformers)
 layer: "8 Decoder"
-tier: 1
 status: demonstrated
 since: 2024
 one_line: "Learned syndrome decoders — recurrent transformers, CNNs, LSTMs, state-space models — that beat matching by absorbing non-Pauli device noise from data."

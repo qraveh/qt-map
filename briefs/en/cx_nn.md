@@ -2,7 +2,6 @@
 id: cx_nn
 name: Static nearest-neighbour lattice
 layer: "4 Connectivity / transport"
-tier: 2
 status: demonstrated
 since: 2014
 one_line: A coupling graph fixed at mask level in which each qubit interacts only with lithographic neighbours; the default topology under every fielded superconducting and spin processor.

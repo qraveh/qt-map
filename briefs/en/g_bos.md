@@ -2,7 +2,6 @@
 id: g_bos
 name: Ancilla-mediated bosonic gates (cat CX, dual-rail CZ, beam-splitter)
 layer: 3 Gate mechanism
-tier: 2
 status: demonstrated
 since: 2018
 one_line: Driven SQUID/SNAIL couplers and transmon ancillas mediate beam-splitter and entangling gates between superconducting bosonic cavity modes, for cat, GKP and dual-rail encodings.

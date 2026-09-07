@@ -2,7 +2,6 @@
 id: code_color
 name: Colour code (transversal Cliffords)
 layer: "7 Code"
-tier: 2
 status: demonstrated
 since: 2024
 one_line: Triangular 2D stabilizer code whose whole Clifford group acts transversally, skipping lattice surgery, at roughly 1.9× the surface code's teraquop footprint.

@@ -2,7 +2,6 @@
 id: enc_parity
 name: Fermion-parity encoding (tetron)
 layer: "2 Encoding"
-tier: 3
 status: theory / design only
 since: 2025
 one_line: One logical qubit in the fermion parity of four Majorana modes on two wires; Z and X are parities of different mode pairs, both non-local.

@@ -6,7 +6,7 @@ Nothing here reads the report markdown or the D3 bundle, so it is safe to import
 """
 import os, re, json, html
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = '/home/claude/qtech-2026'
 BDIR = os.path.join(ROOT, 'briefs')
 EN_DIR = os.path.join(BDIR, 'en')
 RU_DIR = os.path.join(BDIR, 'ru')
@@ -29,7 +29,7 @@ def configure(mode='internal', en_dir=None, ru_dir=None, regmap=None, table_num=
         for k, v in NAV.items():
             v['row'] = v['row'].replace('8.2', TABLE_NUM)
 
-RANKING = json.load(open(os.path.join(ROOT, 'data', 'ranking.json'), encoding='utf-8'))
+RANKING = json.load(open(os.path.join(BDIR, 'meta', 'ranking.json'), encoding='utf-8'))
 
 FM_ORDER = ('id', 'name', 'layer', 'tier', 'status', 'since', 'one_line', 'verdict', 'updated')
 
@@ -67,6 +67,22 @@ FOLD_HEADS = {
 RU_FALLBACK_NOTE = '*Перевод готовится — ниже английский текст брифа.*'
 
 # ---------- preface (deliverable 2c; reused verbatim by the MD bundles)
+PREFACE_PUBLIC = {
+    'en': [
+        'Every technology on the map has a brief, and the depth of each one follows the technology\'s '
+        'centrality in the graph — how many platform families and paths depend on it and how recently it '
+        'reached hardware — so a node a dozen paths run through gets about 2,000 words and a single-platform '
+        'node about 800. Centrality is a statement about the graph, not a verdict on the technology; it is '
+        'shown in each brief\'s header and in the index below.',
+    ],
+    'ru': [
+        'У каждой технологии на карте есть бриф, а его глубина следует центральности технологии в графе — '
+        'сколько семейств платформ и путей от неё зависят и насколько недавно она дошла до железа, — так что '
+        'узел, через который идёт дюжина путей, получает около 2 000 слов, а узел одной платформы — около 800. '
+        'Центральность — утверждение о графе, а не вердикт о технологии; она показана в шапке каждого брифа '
+        'и в индексе ниже.',
+    ],
+}
 PREFACE = {
     'en': [
         'Every technology on the map has a brief, and the depth of each one follows an importance score '
@@ -161,6 +177,8 @@ def load_briefs():
             'en': {'meta': en_meta, 'body': en_body},
             'ru': {'meta': ru_meta, 'body': ru_body},
         })
+    if MODE == 'public':
+        out.sort(key=lambda b: (b['layer'], -b['score'], b['id']))
     return out
 
 
@@ -296,10 +314,10 @@ def inline_html(s, md2html):
 NAV = {
     'en': {'map': '← Map station', 'row': '↑ Table 8.2 row', 'prev': '← Previous brief',
            'next': 'Next brief →', 'close': 'Close ✕', 'verdict': 'Verdict',
-           'layer': 'layer', 'tier': 'Tier', 'rank': 'rank', 'since': 'since', 'updated': 'updated'},
+           'layer': 'layer', 'tier': 'Tier', 'rank': 'rank', 'centrality': 'centrality', 'since': 'since', 'updated': 'updated'},
     'ru': {'map': '← Станция на карте', 'row': '↑ Строка таблицы 8.2', 'prev': '← Предыдущий бриф',
            'next': 'Следующий бриф →', 'close': 'Закрыть ✕', 'verdict': 'Вердикт',
-           'layer': 'слой', 'tier': 'Tier', 'rank': 'ранг', 'since': 'с', 'updated': 'обновлено'},
+           'layer': 'слой', 'tier': 'Tier', 'rank': 'ранг', 'centrality': 'центральность', 'since': 'с', 'updated': 'обновлено'},
 }
 
 
@@ -312,8 +330,8 @@ def _one_lang(b, lang, md2html, prev_id, next_id, colour):
     meta_line = ' · '.join(x for x in [
         '<span class="bid">%s</span>' % html.escape(b['id']),
         '%s %s' % (t['layer'], html.escape(m.get('layer', ''))),
-        '%s %s' % (t['tier'], b['tier']),
-        '%s %d/96' % (t['rank'], b['rank']),
+        ('%s %s' % (t['tier'], b['tier'])) if MODE != 'public' else '',
+        ('%s %d/96' % (t['rank'], b['rank'])) if MODE != 'public' else ('%s %s' % (t['centrality'], ('%g' % b['score']))),
         html.escape(status_label(m, lang)),
         ('%s %s' % (t['since'], html.escape(m.get('since', '')))) if m.get('since') else '',
         '%s %s' % (t['updated'], html.escape(m.get('updated', ''))),
@@ -349,9 +367,25 @@ def brief_section(b, md2html, prev_id, next_id, colour):
 # ---------- index table
 IDX_HEAD = {'en': ('rank', 'id', 'technology', 'layer', 'tier', 'one line'),
             'ru': ('ранг', 'id', 'технология', 'слой', 'tier', 'одной строкой')}
+IDX_HEAD_PUBLIC = {'en': ('layer', 'id', 'technology', 'centrality', 'one line'),
+                   'ru': ('слой', 'id', 'технология', 'центральность', 'одной строкой')}
 
 
 def index_table(briefs, lang, md2html):
+    if MODE == 'public':
+        th = ''.join('<th>%s</th>' % h for h in IDX_HEAD_PUBLIC[lang])
+        rows = []
+        for b in briefs:
+            m = b[lang]['meta']
+            rows.append(
+                '<tr data-brief="%s" class="brow"><td>%s</td>'
+                '<td><a class="bref" href="#brief-%s" data-brief="%s"><code>%s</code></a></td>'
+                '<td><b>%s</b></td><td class="r">%g</td><td class="ol">%s</td></tr>' % (
+                    b['id'], html.escape(m.get('layer', '')), b['id'], b['id'], b['id'],
+                    inline_html(m.get('name', b['id']), md2html), b['score'],
+                    inline_html(m.get('one_line', ''), md2html)))
+        return '<div class="tbl bidx"><table><thead><tr>%s</tr></thead><tbody>%s</tbody></table></div>' % (
+            th, ''.join(rows))
     th = ''.join('<th>%s</th>' % h for h in IDX_HEAD[lang])
     rows = []
     for b in briefs:
@@ -371,7 +405,8 @@ def briefs_section_html(briefs, md2html, colours):
     """The whole '§ Technology briefs' block: heading, preface, index, and 96 hidden sections."""
     langs = []
     for lang in ('en', 'ru'):
-        pref = ''.join('<p>%s</p>' % chip_tags(html.escape(p, quote=False), lang) for p in PREFACE[lang])
+        paras = (PREFACE_PUBLIC[lang] + PREFACE[lang][1:]) if MODE == 'public' else PREFACE[lang]
+        pref = ''.join('<p>%s</p>' % chip_tags(html.escape(p, quote=False), lang) for p in paras)
         langs.append('<div class="lang-%s"><h2><span class="num">%s</span>%s</h2>'
                      '<div class="blede">%s</div>%s</div>' % (
                          lang, 'BR' if lang == 'en' else 'БР', SECTION_TITLE[lang],

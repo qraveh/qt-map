@@ -2,7 +2,6 @@
 id: cx_aod
 name: Atom transport by AOD tweezers (zoned architecture)
 layer: "4 Connectivity / transport"
-tier: 2
 status: demonstrated
 since: 2022
 one_line: "Crossed acousto-optic deflectors move tweezers to shuttle atoms between storage, entangling and readout zones at ~99.95% per move."

@@ -2,7 +2,6 @@
 id: ct_ionlaser
 name: Laser control with integrated photonics (ions)
 layer: "5 Control"
-tier: 2
 status: demonstrated
 since: 2020
 one_line: On-chip waveguides route cooling, gate and readout light to trapped ions, replacing free-space beams with lithographically fixed optical paths.

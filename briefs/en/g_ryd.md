@@ -2,7 +2,6 @@
 id: g_ryd
 name: Rydberg-blockade CZ
 layer: "3 Gate mechanism"
-tier: 1
 status: demonstrated
 since: 2010
 one_line: "Global laser pulses drive neighbouring tweezer-trapped atoms to a Rydberg state whose interaction blocks double excitation, giving a deterministic 270 ns CZ."

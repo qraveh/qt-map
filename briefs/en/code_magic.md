@@ -2,7 +2,6 @@
 id: code_magic
 name: Magic-state factory (cultivation / distillation / code switching)
 layer: "7 Code"
-tier: 1
 status: demonstrated
 since: 2025
 one_line: The subsystem that manufactures non-Clifford resource states so a code with transversal Cliffords can run universal circuits.

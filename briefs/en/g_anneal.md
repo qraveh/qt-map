@@ -2,7 +2,6 @@
 id: g_anneal
 name: Analog annealing evolution
 layer: "3 Gate mechanism"
-tier: 3
 status: demonstrated
 since: 2011
 one_line: Continuous-time Hamiltonian evolution (coherent quench, 3.6–27 ns) driving Ising or Rydberg spins toward a ground state; not a discrete gate.

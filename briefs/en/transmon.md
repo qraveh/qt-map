@@ -2,7 +2,6 @@
 id: transmon
 name: Transmon
 layer: 1 Carrier
-tier: 1
 status: demonstrated
 since: 2007
 one_line: Capacitively shunted Josephson junction (Koch 2007); the carrier behind Willow, Heron/Nighthawk and Zuchongzhi, with the fastest deterministic gate and QEC cycle of any demonstrated qubit.

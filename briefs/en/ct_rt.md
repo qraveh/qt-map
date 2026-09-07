@@ -2,7 +2,6 @@
 id: ct_rt
 name: Room-temperature electronics + per-qubit coax/flex
 layer: "5 Control"
-tier: 2
 status: demonstrated
 since: 2007
 one_line: One coherent line per drive, flux and readout port runs from room-temperature racks through attenuated coax or flex ribbon into the mixing chamber.

@@ -2,7 +2,6 @@
 id: ct_sfq
 name: SFQ digital control (millikelvin)
 layer: "5 Control"
-tier: 1
 status: emerging
 since: 2026
 one_line: "Quantised flux pulses from a niobium digital chip flip-chipped onto the qubit die drive gates at millikelvin, replacing per-qubit microwave coax."

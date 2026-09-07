@@ -2,7 +2,6 @@
 id: fab_diamond
 name: Diamond growth / implantation (NV, SiV, SnV)
 layer: "10 Manufacturing"
-tier: 3
 status: demonstrated
 since: 2010
 one_line: Plasma CVD growth of single-crystal diamond, ion implantation and annealing to form NV, SiV or SnV centres, and undercut etching to build the nanophotonics around them.

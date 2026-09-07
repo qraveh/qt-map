@@ -2,7 +2,6 @@
 id: fab_cmos
 name: 300 mm CMOS foundry (spins, cryo-CMOS, SC wiring)
 layer: 10 Manufacturing
-tier: 1
 status: demonstrated
 since: 2022
 one_line: Industrial 300 mm CMOS lines fabricating quantum-dot spin qubits, cryo-CMOS controllers and superconducting wiring; the only qubit manufacturing route with wafer-scale yield statistics.

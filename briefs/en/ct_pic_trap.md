@@ -2,7 +2,6 @@
 id: ct_pic_trap
 name: PIC-generated tweezers / integrated optics for atoms
 layer: "5 Control"
-tier: 2
 status: emerging
 since: 2026
 one_line: Generating, routing and collecting the light that traps, addresses and images single atoms from a photonic integrated circuit instead of free-space optics.

@@ -2,7 +2,6 @@
 id: ro_imgfast
 name: Fast (≤ 20 µs) atom-array readout
 layer: "6 Readout"
-tier: 2
 status: emerging
 since: 2026
 one_line: Sub-20-microsecond fluorescence imaging of atom-array qubits, replacing millisecond exposures and moving readout out of the neutral-atom QEC cycle's critical path.

@@ -2,7 +2,6 @@
 id: code_fusion
 name: Fusion-based fault tolerance
 layer: "7 Code"
-tier: 3
 status: theory
 since: 2030
 one_line: "A fault-tolerant code assembled from destructive linear-optical fusions on pre-made photonic resource states, tolerating 2.7-17.4% photon loss in theory and never run end-to-end."

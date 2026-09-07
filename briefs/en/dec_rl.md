@@ -2,7 +2,6 @@
 id: dec_rl
 name: In-loop RL calibration / decoder steering
 layer: "8 Decoder"
-tier: 3
 status: demonstrated
 since: 2026
 one_line: Detection events from the running code double as the reward signal for a reinforcement-learning agent that retunes control parameters during QEC, replacing scheduled recalibration.

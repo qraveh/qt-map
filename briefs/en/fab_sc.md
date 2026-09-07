@@ -2,7 +2,6 @@
 id: fab_sc
 name: Superconducting-qubit lithography (Nb/Al JJ, 300 mm)
 layer: "10 Manufacturing"
-tier: 2
 status: demonstrated
 since: 2007
 one_line: "300 mm junction lithography and post-fab trimming set the frequency spread every superconducting path inherits."

@@ -2,7 +2,6 @@
 id: dec_relaybp
 name: Relay-BP для qLDPC (FPGA)
 layer: "8 Декодер"
-tier: 2
 status: demonstrated
 since: 2025
 one_line: "Распространение доверия (belief propagation) с разупорядоченными, частично отрицательными силами памяти, сцепленное в эстафетные участки и декодирующее синдромы qLDPC двумерно-циклического (bivariate-bicycle) семейства за 24 ns на итерацию на FPGA."

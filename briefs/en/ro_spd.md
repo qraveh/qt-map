@@ -2,7 +2,6 @@
 id: ro_spd
 name: Single-photon detection (SNSPD / TES)
 layer: "6 Readout"
-tier: 1
 status: demonstrated
 since: 2001
 one_line: "Cryogenic superconducting detectors that destroy a photon to register it; the shared readout organ of every photonic and photon-linked platform."

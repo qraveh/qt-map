@@ -2,7 +2,6 @@
 id: ae_atom
 name: Alkaline-earth atom (Yb/Sr) — erasure-native
 layer: "1 Carrier"
-tier: 2
 status: demonstrated
 since: 2019
 one_line: Ytterbium/strontium tweezer qubits whose metastable clock manifold makes decay and loss optically detectable, converting physical errors into heralded erasures rather than silent Pauli errors.

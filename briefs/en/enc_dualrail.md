@@ -2,7 +2,6 @@
 id: enc_dualrail
 name: Dual-rail (erasure) encoding
 layer: 2 Encoding
-tier: 1
 status: demonstrated
 since: 2023
 one_line: One excitation shared between two modes; loss leaves the code space and is heralded as a located erasure, not an unknown Pauli.

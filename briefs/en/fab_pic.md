@@ -2,7 +2,6 @@
 id: fab_pic
 name: Photonic IC foundry (SiN, BTO, TFLN, SNSPD on 300 mm)
 layer: "10 Manufacturing"
-tier: 1
 status: demonstrated
 since: 2015
 one_line: A CMOS foundry flow putting low-loss nitride waveguides, electro-optic switches, single-photon detectors and fibre attach on one 300 mm wafer.

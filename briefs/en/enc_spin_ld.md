@@ -2,7 +2,6 @@
 id: enc_spin_ld
 name: Single-spin (Loss–DiVincenzo) / nuclear-spin encoding
 layer: "2 Encoding"
-tier: 3
 status: demonstrated
 since: 1998
 one_line: One qubit per spin-1/2 — a confined electron, hole or nucleus — with no encoded subspace, giving the smallest footprint and no leakage channel.

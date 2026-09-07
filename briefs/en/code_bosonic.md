@@ -2,7 +2,6 @@
 id: code_bosonic
 name: Bosonic concatenation (repetition-cat, LDPC-cat, GKP+qLDPC)
 layer: "7 Code"
-tier: 2
 status: emerging
 since: 2024
 one_line: A discrete outer code — repetition or qLDPC — wrapped around a bosonic inner qubit whose noise is already shaped, so the outer code corrects only one residual channel.

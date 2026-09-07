@@ -2,7 +2,6 @@
 id: fab_3d
 name: 3D machined superconducting cavities
 layer: 10 Manufacturing
-tier: 3
 status: demonstrated
 since: 2013
 one_line: CNC-machined aluminium or niobium resonator bodies with internal Q above 0.5×10⁹; the cm-scale body per mode is the structural cost of cavity-based bosonic codes.

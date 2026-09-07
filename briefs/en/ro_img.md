@@ -2,7 +2,6 @@
 id: ro_img
 name: Fluorescence imaging of atom arrays
 layer: "6 Readout"
-tier: 3
 status: demonstrated
 since: 2016
 one_line: Camera-based fluorescence detection of neutral atoms — non-destructive, mid-circuit, millisecond by default, microsecond in single-group demos.

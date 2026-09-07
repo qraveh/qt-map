@@ -2,7 +2,6 @@
 id: fluxonium
 name: Fluxonium
 layer: 1 Carrier
-tier: 3
 status: demonstrated
 since: 2009
 one_line: Josephson-junction-array-shunted superconducting qubit at 0.2–1 GHz with large anharmonicity and long T1, bought at the price of a flux-bias line per qubit.

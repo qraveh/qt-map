@@ -2,7 +2,6 @@
 id: ro_fluor
 name: Fluorescence state detection (ions)
 layer: "6 Readout"
-tier: 2
 status: demonstrated
 since: 1995
 one_line: State-dependent resonance fluorescence, counted on a PMT, EMCCD, SNSPD or trap-integrated photodiode, is the default non-destructive mid-circuit readout for trapped ions.

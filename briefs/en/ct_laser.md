@@ -2,7 +2,6 @@
 id: ct_laser
 name: Laser + AOD/SLM optical control (atoms)
 layer: 5 Control
-tier: 2
 status: demonstrated
 since: 2016
 one_line: Free-space lasers, holographic modulators and acousto-optic deflectors generate, move, image and drive the optical-tweezer arrays that hold neutral-atom qubits.

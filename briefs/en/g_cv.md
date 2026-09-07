@@ -2,7 +2,6 @@
 id: g_cv
 name: CV Gaussian gates + GKP-assisted non-Gaussian ops
 layer: "3 Gate mechanism"
-tier: 3
 status: demonstrated
 since: 2020
 one_line: "Beam-splitters, squeezers and homodyne feed-forward on optical modes, with GKP grid states supplying the non-Gaussian resource fault tolerance requires."

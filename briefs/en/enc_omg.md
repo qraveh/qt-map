@@ -2,7 +2,6 @@
 id: enc_omg
 name: Metastable ("omg") erasure encoding
 layer: "2 Encoding"
-tier: 1
 status: emerging
 since: 2023
 one_line: "Qubit lives in a metastable manifold so its dominant decay leaves the subspace detectably, converting Pauli errors into located erasures."

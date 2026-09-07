@@ -2,7 +2,6 @@
 id: ro_disp
 name: Dispersive microwave readout (+TWPA, Purcell)
 layer: "6 Readout"
-tier: 2
 status: demonstrated
 since: 2005
 one_line: The qubit state is read as a dispersive shift of a coupled resonator, Purcell-filtered on chip and amplified near the quantum limit before the HEMT.

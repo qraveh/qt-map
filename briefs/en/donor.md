@@ -2,7 +2,6 @@
 id: donor
 name: Donor spin (P in ²⁸Si)
 layer: 1 Carrier
-tier: 3
 status: demonstrated
 since: 2012
 one_line: Phosphorus donors placed by STM lithography in enriched silicon-28, the bound electron giving drive and readout, the ³¹P nucleus the long-lived qubit.

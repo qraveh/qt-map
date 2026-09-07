@@ -2,7 +2,6 @@
 id: code_surface
 name: Rotated surface code (+ yoked variants)
 layer: 7 Code
-tier: 1
 status: demonstrated
 since: 2023
 one_line: Weight-4 CSS stabilizer code on a square lattice; the only code with below-threshold hardware data on three platforms, and the most expensive.

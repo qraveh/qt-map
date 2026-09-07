@@ -2,7 +2,6 @@
 id: enc_gkp
 name: GKP grid encoding
 layer: "2 Encoding"
-tier: 2
 status: emerging
 since: 2020
 one_line: A qubit encoded in periodic grid states of one bosonic mode — microwave cavity or optical — correcting small quadrature shifts and handing the decoder an analogue syndrome.

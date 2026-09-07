@@ -2,7 +2,6 @@
 id: cx_shuttle
 name: Spin shuttling (conveyor mode)
 layer: "4 Connectivity / transport"
-tier: 1
 status: emerging
 since: 2025
 one_line: "Coherent transport of a spin qubit along a gate-defined conveyor, buying distance and layout sparsity with a dephasing budget rather than with wiring."

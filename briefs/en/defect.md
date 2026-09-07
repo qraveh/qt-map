@@ -2,7 +2,6 @@
 id: defect
 name: Colour-centre / defect spin (NV, SiV, SnV, T)
 layer: 1 Carrier
-tier: 3
 status: demonstrated
 since: 2004
 one_line: An optically addressable point-defect spin in diamond or silicon whose electron couples coherently to a photon, making it a network node with a small nuclear register rather than a processor qubit.

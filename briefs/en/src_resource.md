@@ -2,7 +2,6 @@
 id: src_resource
 name: Multi-photon resource-state factory (6-ring etc.)
 layer: "3 Gate mechanism"
-tier: 3
 status: empty slot
 since: 2030
 one_line: "The source-plus-fusion subsystem that must mass-produce encoded multi-photon graph states at code rate to feed fusion-based fault tolerance; nothing runs near that rate."

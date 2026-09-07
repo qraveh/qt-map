@@ -2,7 +2,6 @@
 id: ic_cryolink
 name: Cryogenic microwave link between refrigerators
 layer: "9 Interconnect"
-tier: 2
 status: emerging
 since: 2020
 one_line: "Superconducting waveguide held below 50 mK along its whole length, carrying itinerant 5–7 GHz photons or squeezed states between two independently cooled dilution refrigerators."

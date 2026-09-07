@@ -2,7 +2,6 @@
 id: alkali
 name: Alkali atom (Rb/Cs) in optical tweezer
 layer: "1 Carrier"
-tier: 1
 status: demonstrated
 since: 2016
 one_line: "Hyperfine ground-state qubit in a single rubidium or caesium atom held by a far-detuned optical tweezer, moved on demand."

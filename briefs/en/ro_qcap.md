@@ -2,7 +2,6 @@
 id: ro_qcap
 name: rf quantum-capacitance parity readout
 layer: "6 Readout"
-tier: 3
 status: emerging
 since: 2025
 one_line: Dispersive gate sensing of a Majorana island's quantum capacitance by rf reflectometry, reading fermion parity without charge transfer; non-destructive and mid-circuit.

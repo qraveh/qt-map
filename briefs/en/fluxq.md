@@ -2,7 +2,6 @@
 id: fluxq
 name: rf-SQUID flux qubit (annealer)
 layer: "1 Carrier"
-tier: 3
 status: demonstrated
 since: 2011
 one_line: Superconducting double-well loop used as a programmable Ising spin in D-Wave's annealers; no gate set, no code.

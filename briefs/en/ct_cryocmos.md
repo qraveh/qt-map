@@ -2,7 +2,6 @@
 id: ct_cryocmos
 name: Cryo-CMOS controller (4 K / mK)
 layer: 5 Control
-tier: 1
 status: demonstrated
 since: 2024
 one_line: Commercial CMOS ASICs inside the cryostat that synthesise qubit control waveforms and bias next to the qubits, replacing room-temperature racks and their coaxial lines.

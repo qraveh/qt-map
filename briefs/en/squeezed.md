@@ -2,7 +2,6 @@
 id: squeezed
 name: Squeezed light mode (CV)
 layer: "1 Carrier"
-tier: 3
 status: demonstrated
 since: 2012
 one_line: "A continuous-variable optical mode with one quadrature below vacuum noise; the carrier for GKP and cluster-state photonics, where integration loss, not nonlinearity, sets the ceiling."

@@ -2,7 +2,6 @@
 id: ic_ionphoton
 name: Ion–photon photonic link
 layer: "9 Interconnect"
-tier: 2
 status: demonstrated
 since: 2007
 one_line: "Heralded ion–photon entanglement over fibre links separate ion traps into one machine; best published rate 250 s⁻¹ against a ~10⁴ s⁻¹ need."

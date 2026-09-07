@@ -2,7 +2,6 @@
 id: enc_eo
 name: Exchange-only / singlet-triplet spin encoding
 layer: "2 Encoding"
-tier: 3
 status: demonstrated
 since: 2013
 one_line: One logical qubit in the total-spin subspace of two or three exchange-coupled dots, driven entirely by baseband voltage pulses, with leakage as the price of removing microwave control.

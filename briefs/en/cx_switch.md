@@ -2,7 +2,6 @@
 id: cx_switch
 name: Photonic switching / routing (EO, feed-forward)
 layer: 4 Connectivity / transport
-tier: 2
 status: demonstrated
 since: 2015
 one_line: Electro-optic and MEMS switches route photons between waveguides on a real-time heralding decision, the loss-dominated transport layer every photonic architecture shares.

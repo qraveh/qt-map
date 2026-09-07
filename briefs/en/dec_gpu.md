@@ -2,7 +2,6 @@
 id: dec_gpu
 name: GPU decoding via NVQLink
 layer: "8 Decoder"
-tier: 2
 status: demonstrated
 since: 2025
 one_line: "RoCE link putting a GPU inside the QEC feedback loop at 3.84 µs mean round trip, so decoding runs as CUDA software on GH200-class hardware instead of a fixed FPGA bitstream."

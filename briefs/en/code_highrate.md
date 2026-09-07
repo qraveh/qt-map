@@ -2,7 +2,6 @@
 id: code_highrate
 name: High-rate concatenated codes with transversal gates
 layer: "7 Code"
-tier: 1
 status: demonstrated
 since: 2024
 one_line: "Many logical qubits per block (iceberg, tesseract, concatenated [[4,2,2]]), Clifford gates transversal, paid for with all-to-all connectivity and post-selection."

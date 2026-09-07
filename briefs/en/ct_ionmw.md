@@ -2,7 +2,6 @@
 id: ct_ionmw
 name: Chip-integrated microwave control (ions)
 layer: "5 Control"
-tier: 1
 status: demonstrated
 since: 2024
 one_line: Ion gate drive synthesised as electrical signals and delivered by conductors inside the trap chip instead of by laser beams.

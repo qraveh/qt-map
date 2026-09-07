@@ -2,7 +2,6 @@
 id: g_tc
 name: Tunable-coupler CZ / iSWAP
 layer: "3 Gate mechanism"
-tier: 2
 status: demonstrated
 since: 2014
 one_line: A flux-tuned coupler switches the exchange and ZZ interaction between transmons on and off, giving deterministic 25–70 ns CZ or iSWAP gates.

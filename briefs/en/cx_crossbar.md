@@ -2,7 +2,6 @@
 id: cx_crossbar
 name: Crossbar shared-line control (spins)
 layer: "4 Connectivity / transport"
-tier: 3
 status: emerging
 since: 2024
 one_line: Row- and column-shared plunger and barrier lines address a two-dimensional dot array with line count scaling as the square root of dot count, trading wireability for addressing granularity.

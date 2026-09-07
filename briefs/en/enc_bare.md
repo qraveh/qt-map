@@ -2,7 +2,6 @@
 id: enc_bare
 name: Bare two-level subspace
 layer: 2 Encoding
-tier: 3
 status: demonstrated
 since: 2007
 one_line: The {|0⟩,|1⟩} subspace of a weakly anharmonic Josephson oscillator used directly as the qubit, with no bosonic, erasure or bias structure on top.

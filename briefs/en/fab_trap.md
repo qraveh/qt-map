@@ -2,7 +2,6 @@
 id: fab_trap
 name: Surface-electrode ion-trap microfabrication
 layer: "10 Manufacturing"
-tier: 2
 status: demonstrated
 since: 2006
 one_line: Planar RF/DC electrode chips that confine and shuttle ions, built on MEMS lines or, increasingly, on merchant semiconductor foundry wafers.
