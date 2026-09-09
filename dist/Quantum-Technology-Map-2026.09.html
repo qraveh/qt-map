@@ -193,11 +193,10 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .edge.requires{stroke:var(--ink);opacity:.9}
 .edge.replaces{stroke:var(--ink2);stroke-dasharray:5 4}
 .edge.conflicts{stroke:var(--crit);stroke-dasharray:3 3;stroke-width:2}
-.edge.out{opacity:.35}   /* selection: a toggled relation that reaches outside the selected stations */
 .rel{padding-left:14px;text-indent:-14px;line-height:1.35}
 .badge{stroke:none}
 .hatch{fill:url(#hatch)}
-.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12px;padding:6px 9px;border-radius:6px;max-width:280px;line-height:1.35;box-shadow:var(--shadow);z-index:5;display:none}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12px;padding:6px 9px;border-radius:6px;width:max-content;max-width:280px;line-height:1.35;box-shadow:var(--shadow);z-index:5;display:none}
 
 /* lens */
 .lensed .pathline{stroke:var(--mid) !important;opacity:.28}
@@ -40907,7 +40906,9 @@ function dimming(){ const f=state.focus, iso=state.isolate;
   let keepN=null, keepP=null;
   if(iso){ keepP=new Set([iso]); keepN=new Set(Object.values(PATH[iso].slots).flat()); }
   if(f){ const ps=new Set((prim[f]||[]).concat(alt[f]||[])); keepP=keepP?new Set([...keepP].filter(p=>ps.has(p))):ps; const nb=neighbours(f); keepN=keepN?new Set([...keepN].filter(n=>nb.has(n)||n===f)):nb; keepN.add(f); }
-  if(state.lensFilter!=null){ const lf=new Set(G.nodes.filter(nodeMatchesFilter).map(n=>n.id)); keepN=keepN?new Set([...keepN].filter(x=>lf.has(x))):lf; }
+  if(state.lensFilter!=null){ const lf=new Set(G.nodes.filter(nodeMatchesFilter).map(n=>n.id)); keepN=keepN?new Set([...keepN].filter(x=>lf.has(x))):lf;
+    // a family value keeps that family's own lines on the map; any other lens value has no lines of its own
+    if(state.lens==='family'){ const fp=new Set(G.paths.filter(p=>p.family===state.lensFilter).map(p=>p.id)); keepP=keepP?new Set([...keepP].filter(p=>fp.has(p))):fp; } }
   st.classed('dim',d=>keepN?!keepN.has(d.id):false); st.classed('member',d=>iso?!!(PATH[iso].slots&&Object.values(PATH[iso].slots).flat().includes(d.id)):false);
   const lf=state.lensFilter!=null;   // a lens filter keeps stations, not lines: every line goes quiet unless a path is isolated or a station focused
   svg.classed('iso',!!iso);
@@ -40922,21 +40923,20 @@ function pathMembers(pid){ return new Set(Object.values(PATH[pid].slots).flat())
 // the selection = the isolated path's stations ∩ the lens-filter stations; null when nothing is selected
 function selectedSet(){ const iso=state.isolate, lf=state.lensFilter!=null; if(!iso&&!lf)return null; let S=iso?pathMembers(iso):new Set(G.nodes.map(n=>n.id)); if(lf)S=new Set([...S].filter(id=>nodeMatchesFilter(NODE[id]))); return S; }
 function drawEdges(){ gEdges.selectAll('*').remove(); const f=state.focus, iso=state.isolate;
-  // a selection (isolated path, lens filter, or both) shows every relation among the selected stations (dependencies, alternatives,
-  // conflicts) without any toggle; a toggle then adds that type's relations that reach outside the selection (drawn quieter);
-  // a focused station always shows all of its own
-  const mem=f?null:selectedSet();
+  // the edge toggles decide which relation types are drawn — the same with or without a selection; a selection (isolated path,
+  // lens filter, or both) only narrows the toggled types to the relations among the selected stations. A focused station
+  // always shows all of its own relations.
+  const mem=selectedSet();
   const es=G.edges.filter(e=>{ if(e.type==='defines'||e.type==='transfers')return false;
-    if(f)return (e.src===f||e.dst===f)||(e.type==='conflicts'&&state.showConf)||(e.type==='replaces'&&state.showRep)||(e.type==='requires'&&state.showReq);
+    if(f&&(e.src===f||e.dst===f))return true;
     const on=(e.type==='conflicts'&&state.showConf)||(e.type==='replaces'&&state.showRep)||(e.type==='requires'&&state.showReq);
-    if(!mem)return on;
-    const a=mem.has(e.src), b=mem.has(e.dst); if(a&&b)return true; return on&&(a||b); });
+    return on&&(!mem||(mem.has(e.src)&&mem.has(e.dst))); });
   const ETYPE={requires:['requires','требует'],replaces:['is an alternative to','— альтернатива для'],conflicts:['conflicts with','конфликтует с']};
   const edgeTip=e=>{const L=lang(); const a=NODE[e.src][L], b=NODE[e.dst][L]; let h=`<b>${esc(a)}</b> ${T(...ETYPE[e.type])} <b>${esc(b)}</b>${e.any?' <span style="opacity:.7">('+T('one-of','одно из')+')</span>':''}`;
     if(e[L]) h+=`<br>${esc(e[L])}`;
     if(e.type==='conflicts'&&e.price){ h+=`<br><span class="tk">${T('price','цена')}</span> ${esc(e.price[L])}<br><span class="tk">${T('mitigation','снятие')}</span> ${esc(e.mitig[L])}<br><span class="tk">${T('status','статус')}</span> ${esc(vt('CONSTAT',e.status))} · ${e.date}`; }
     return h; };
-  const g=gEdges.selectAll('g').data(es).join('g').attr('class',e=>'edge '+e.type+(mem&&!(mem.has(e.src)&&mem.has(e.dst))?' out':''));
+  const g=gEdges.selectAll('g').data(es).join('g').attr('class',e=>'edge '+e.type);
   g.append('path').attr('class','hit').attr('d',e=>edgePath(NODE[e.src],NODE[e.dst]));
   g.append('path').attr('class','vis').attr('d',e=>edgePath(NODE[e.src],NODE[e.dst])).attr('marker-end',e=>e.type==='requires'?'url(#arr)':null);
   g.on('mousemove',(ev,e)=>{if(tipPinned)return; tip.style.display='block'; tip.classList.add('wide'); tip.innerHTML=edgeTip(e); placeTip(ev);}).on('mouseleave',()=>{if(!tipPinned)hideTip();})
@@ -40979,7 +40979,7 @@ function inspectPath(p){ const L=lang(); insp.hidden=false;
    ${(R.notes||[]).length?`<dt>${T('notes','примечания')}</dt><dd class="empty">${esc((R.notes||[]).join('; '))}</dd>`:''}
   </dl><div class="empty" style="margin-top:4px">${T('t_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — a sum of the round\'s phases, from the code node, the coordinates and the standard records; the measured cycle is the check.','t_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — сумма фаз раунда из узла кода, координат и стандартных рекордов; измеренный цикл — проверка.')}</div></div>
   <div class="space"><h4>${T('Stations by layer — primary, then alternates','Станции по слоям — основная, затем альтернативы')}</h4><table class="ptab">${rows}</table></div>
-  <div class="space"><h4>${T('Relations within the path — drawn on the map','Связи внутри пути — показаны на карте')}</h4>${relHTML}<div class="empty" style="margin-top:3px">${T('the edge toggles add each type\'s relations that reach outside the selection','переключатели рёбер добавляют связи этого типа, выходящие за пределы выбора')}</div></div>
+  <div class="space"><h4>${T('Relations within the path','Связи внутри пути')}</h4>${relHTML}<div class="empty" style="margin-top:3px">${T('the edge toggles draw each type on the map, among these stations only','переключатели рёбер рисуют каждый тип на карте — только между этими станциями')}</div></div>
   <div class="space"><h4>${T('Reading','Чтение')}</h4><div>◎ ${T('hubs','хабы')}: ${hubs.length?hubs.map(id=>`<a href="#" data-goto="${id}">${esc(NODE[id][L])}</a>`).join(', '):'—'}</div><div>⤢ ${T('off-diagonal','внедиагональные')}: ${offs.length?offs.map(id=>`<a href="#" data-goto="${id}">${esc(NODE[id][L])}</a>`).join(', '):'—'}</div><div>∅ ${T('empty slots','пустые слоты')}: ${empties.length?empties.map(id=>`<a href="#" data-goto="${id}">${esc(NODE[id][L])}</a>`).join(', '):'—'}</div></div>`;
   insp.querySelectorAll('[data-goto]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); select(a.dataset.goto); const m=NODE[a.dataset.goto]; scrollToNode(m);}));
   insp.querySelector('[data-close]').addEventListener('click',()=>{state.isolate=null; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false')); inspectEmpty(); drawEdges(); dimming();}); wireCard();

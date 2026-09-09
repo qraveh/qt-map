@@ -177,11 +177,10 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .edge.requires{stroke:var(--ink);opacity:.9}
 .edge.replaces{stroke:var(--ink2);stroke-dasharray:5 4}
 .edge.conflicts{stroke:var(--crit);stroke-dasharray:3 3;stroke-width:2}
-.edge.out{opacity:.35}   /* selection: a toggled relation that reaches outside the selected stations */
 .rel{padding-left:14px;text-indent:-14px;line-height:1.35}
 .badge{stroke:none}
 .hatch{fill:url(#hatch)}
-.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12px;padding:6px 9px;border-radius:6px;max-width:280px;line-height:1.35;box-shadow:var(--shadow);z-index:5;display:none}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12px;padding:6px 9px;border-radius:6px;width:max-content;max-width:280px;line-height:1.35;box-shadow:var(--shadow);z-index:5;display:none}
 
 /* lens */
 .lensed .pathline{stroke:var(--mid) !important;opacity:.28}
