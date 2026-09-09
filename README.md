@@ -1,6 +1,6 @@
 # Quantum Technology Map
 
-**Edition 2026.09** · published at [qodeh.com/qt-map](https://qodeh.com/qt-map) · archived on Zenodo, DOI [10.5281/zenodo.XXXXXXX](https://doi.org/10.5281/zenodo.XXXXXXX) · CC BY 4.0 · bilingual EN / RU
+**Edition 2026.09 (beta)** · published at [qodeh.com/publications/quantum-technology-map](https://qodeh.com/publications/quantum-technology-map/) · DOI reserved on Zenodo, [10.5281/zenodo.XXXXXXX](https://doi.org/10.5281/zenodo.XXXXXXX) · CC BY 4.0 · bilingual EN / RU
 
 Every quantum-computing platform compared by the goal it serves; a technology graph of 96 self-contained technologies across ten stack layers, seven design coordinates and five edge types; a brief on each technology; every figure tagged and traced to a dated source. This repository holds the data, the briefs and the build that renders the single interactive document.
 
@@ -30,6 +30,7 @@ Every quantum-computing platform compared by the goal it serves; a technology gr
 | `build/` | Build scripts (Python 3.11+, `markdown` package) and the vendored D3 v7 (ISC licence). `python3 build/build.py` regenerates everything into `dist/`. |
 | `dist/` | The single self-contained HTML document of the current edition (the release artefact). |
 | `CHANGELOG.md` | Editions (generated from `build/editions.py`). |
+| `build/release.py` | Stamps an edition's identifiers (concept/version DOI, site URL, beta/release status, date) into `build/editions.py`, `CITATION.cff`, `.zenodo.json` and this README in one go — `python3 build/release.py show` prints the current values. |
 
 ## Build
 
@@ -47,6 +48,13 @@ Editions use calendar versioning (`YYYY.MM`, `.N` for a re-issue within the mont
 > Neeman, R. (2026). *Quantum Technology Map* (Edition 2026.09). Qodeh. https://doi.org/10.5281/zenodo.XXXXXXX
 
 A `CITATION.cff` is included for GitHub's "Cite this repository" and for reference managers.
+
+## Releasing an edition
+
+1. Reserve the DOIs on Zenodo (a new upload → *Reserve DOI*; the concept DOI is the record's "all versions" DOI). Do not publish yet.
+2. `python3 build/release.py stamp --concept 10.5281/zenodo.C --version 10.5281/zenodo.V --status beta --date YYYY-MM-DD --build` — the document now shows the DOI as *reserved*, cites the site, and carries no `citation_doi` meta; `dist/` is rebuilt.
+3. Commit, tag the edition (`git tag -f 2026.09`), push with `--tags`, publish `dist/*.html` on the site.
+4. When the edition is final: upload `dist/*.html` (and the repository archive) to the reserved Zenodo record, publish it, then `python3 build/release.py stamp --status release --build`, commit, re-tag, push, and create the GitHub Release from the tag.
 
 ## Contributing
 

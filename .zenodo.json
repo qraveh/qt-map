@@ -30,10 +30,10 @@
     "cryo-CMOS",
     "quantum benchmarking"
   ],
-  "notes": "Interactive edition published at https://qodeh.com/qt-map. Research and drafting with Claude (Anthropic) under the author's direction and review.",
+  "notes": "Interactive edition published at https://qodeh.com/publications/quantum-technology-map/. Research and drafting with Claude (Anthropic) under the author's direction and review.",
   "related_identifiers": [
     {
-      "identifier": "https://qodeh.com/qt-map",
+      "identifier": "https://qodeh.com/publications/quantum-technology-map/",
       "relation": "isIdenticalTo",
       "resource_type": "publication-report"
     },
@@ -42,5 +42,6 @@
       "relation": "isSupplementTo",
       "resource_type": "software"
     }
-  ]
+  ],
+  "publication_date": "2026-09-05"
 }

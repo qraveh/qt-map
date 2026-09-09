@@ -5,7 +5,8 @@ structurally (node/edge/coordinate), when a verdict changes, or when a headline 
 
 CONCEPT_DOI = '10.5281/zenodo.XXXXXXX'   # fill in after the first Zenodo publication (concept DOI = 'cite all versions')
 REPO = 'https://github.com/qraveh/qt-map'
-SITE = 'https://qodeh.com/qt-map'
+SITE = 'https://qodeh.com/publications/quantum-technology-map/'
+STATUS = 'beta'   # 'beta' (DOI reserved, not yet resolving; cite the site) | 'release' (edition archived on Zenodo, DOI resolves)
 
 EDITIONS = [
  {'edition': '2026.09', 'date': '2026-09-05', 'doi': '10.5281/zenodo.XXXXXXX',
@@ -15,8 +16,12 @@ EDITIONS = [
 
 def editions_html(lang):
     t = {'en': ('Editions', 'Edition', 'Date', 'DOI', 'Changes'), 'ru': ('Издания', 'Издание', 'Дата', 'DOI', 'Изменения')}[lang]
-    rows = ''.join('<tr><td><b>%s</b></td><td>%s</td><td><a href="https://doi.org/%s">%s</a></td><td>%s</td></tr>' % (
-        e['edition'], e['date'], e['doi'], e['doi'], ' '.join(e[lang])) for e in EDITIONS)
+    def doi_cell(e, first):
+        if first and STATUS == 'beta':
+            return '%s · <span title="%s">%s</span>' % (e['doi'], ('reserved on Zenodo; resolves when the edition is released' if lang == 'en' else 'зарезервирован на Zenodo; заработает при выпуске издания'), ('reserved' if lang == 'en' else 'зарезервирован'))
+        return '<a href="https://doi.org/%s">%s</a>' % (e['doi'], e['doi'])
+    rows = ''.join('<tr><td><b>%s</b>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (
+        e['edition'], (' <span class="beta">beta</span>' if (i == 0 and STATUS == 'beta') else ''), e['date'], doi_cell(e, i == 0), ' '.join(e[lang])) for i, e in enumerate(EDITIONS))
     return '<h3>%s</h3><div class="tbl"><table><thead><tr><th>%s</th><th>%s</th><th>%s</th><th>%s</th></tr></thead><tbody>%s</tbody></table></div>' % (t[0], t[1], t[2], t[3], t[4], rows)
 
 def changelog_md():

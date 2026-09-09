@@ -482,4 +482,8 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
 .zoombar.bottom .zoomctl{top:auto;bottom:10px}
 @media (max-width:600px){.zoomctl{right:6px;top:6px;padding:2px}.zoombar.bottom .zoomctl{top:auto;bottom:8px}.zoomctl .zb{height:30px;min-width:30px}.zoomctl .zt span{display:none}.zoomctl .zt{padding:0 5px}}
 
+
+/* beta stamp (editions.py STATUS='beta'): visible but quiet */
+.beta{display:inline-block;padding:0 6px;border-radius:999px;border:1px solid var(--accent);color:var(--accent);font:600 10.5px/16px "JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;vertical-align:1px}
+.pubmeta .doi{font-family:"JetBrains Mono",monospace;color:var(--muted);border-bottom:1px dotted var(--line);cursor:help}
 """

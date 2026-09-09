@@ -8,7 +8,7 @@ from page_css import CSS
 from map_js import JS
 from brief_js import BRIEF_JS
 from labels import SHORT
-from editions import EDITIONS, editions_html, CONCEPT_DOI, REPO, SITE
+from editions import EDITIONS, editions_html, CONCEPT_DOI, REPO, SITE, STATUS
 import briefs as BR
 G=json.load(open(os.path.join(ROOT,'data','graph.json'),encoding='utf-8'))
 
@@ -245,10 +245,12 @@ NAVJS = r"""
 """
 
 def masthead(cfg):
-    doi=cfg['doi_concept']; doiurl='https://doi.org/'+doi
+    doi=cfg['doi_concept']; doiurl='https://doi.org/'+doi; beta=(STATUS=='beta')
+    doi_html=(f'<span class="doi" title="reserved on Zenodo; resolves when the edition is released">{doi}</span> · <span class="beta lang-en">DOI reserved</span><span class="beta lang-ru">DOI зарезервирован</span>' if beta
+              else f'<a href="{doiurl}" target="_blank" rel="noopener">{doi}</a>')
     return f'''<header class="mast">
  <div>
-  <div class="eyebrow"><span class="lang-en">Edition {cfg['edition']} · {cfg['date']} · English / Russian</span><span class="lang-ru">Издание {cfg['edition']} · {cfg['date']} · English / Русский</span></div>
+  <div class="eyebrow"><span class="lang-en">Edition {cfg['edition']}{' · <b class="beta">beta</b>' if beta else ''} · {cfg['date']} · English / Russian</span><span class="lang-ru">Издание {cfg['edition']}{' · <b class="beta">бета</b>' if beta else ''} · {cfg['date']} · English / Русский</span></div>
   <h1 class="title">Quantum Technology Map <span class="yr">{cfg['edition']}</span></h1>
   <p class="subtitle"><span class="lang-en">Every quantum-computing platform compared by the goal it serves — achievements, justified intentions, the most promising directions — a 96-technology graph across ten stack layers that reproduces those directions on its own, and a brief on each technology.</span><span class="lang-ru">Все платформы квантовых компьютеров, сравнённые по целям, которым они служат, — достижения, обоснованные намерения, наиболее перспективные направления, — граф 96 технологий в десяти слоях стека, который воспроизводит эти направления сам, и бриф по каждой технологии.</span></p>
   <p class="author"><span class="lang-en">Author</span><span class="lang-ru">Автор</span> · <b>{cfg['author']}</b></p>
@@ -258,7 +260,7 @@ def masthead(cfg):
   <a class="jump" href="#map"><span class="lang-en">Jump to the map ↓</span><span class="lang-ru">К карте ↓</span></a>
   <div class="pubmeta">
    <div><span class="lang-en">Published by</span><span class="lang-ru">Издатель</span> <a href="https://qodeh.com" target="_blank" rel="noopener">{cfg['publisher']}</a> · <span class="lang-en">data cut-off 4 September 2026</span><span class="lang-ru">данные по состоянию на 4 сентября 2026</span></div>
-   <div>DOI <a href="{doiurl}" target="_blank" rel="noopener">{doi}</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener">CC BY 4.0</a> · <a href="{cfg['repo']}" target="_blank" rel="noopener"><span class="lang-en">data &amp; source</span><span class="lang-ru">данные и исходники</span></a></div>
+   <div>DOI {doi_html} · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener">CC BY 4.0</a> · <a href="{cfg['repo']}" target="_blank" rel="noopener"><span class="lang-en">data &amp; source</span><span class="lang-ru">данные и исходники</span></a></div>
   </div>
  </div>
 </header>'''
@@ -266,8 +268,12 @@ def masthead(cfg):
 def footer(cfg):
     if cfg['mode']=='internal': return ''
     doi=cfg['doi_concept']; doiurl='https://doi.org/'+doi
-    cite_en=f"{cfg['author']} (2026). <i>Quantum Technology Map</i> (Edition {cfg['edition']}). {cfg['publisher']}. <a href=\"{doiurl}\">{doiurl}</a> — the concept DOI resolves to the newest edition; cite the edition you read."
-    cite_ru=f"{cfg['author']} (2026). <i>Quantum Technology Map</i> (издание {cfg['edition']}). {cfg['publisher']}. <a href=\"{doiurl}\">{doiurl}</a> — DOI концепции разрешается в последнее издание; указывайте издание, которое читали."
+    if STATUS=='beta':
+        cite_en=f"{cfg['author']} (2026). <i>Quantum Technology Map</i> (Edition {cfg['edition']}, beta). {cfg['publisher']}. <a href=\"{cfg['url']}\">{cfg['url']}</a> — DOI {doi} is reserved on Zenodo and will resolve when the edition is released; until then cite the site."
+        cite_ru=f"{cfg['author']} (2026). <i>Quantum Technology Map</i> (издание {cfg['edition']}, бета). {cfg['publisher']}. <a href=\"{cfg['url']}\">{cfg['url']}</a> — DOI {doi} зарезервирован на Zenodo и заработает при выпуске издания; до тех пор ссылайтесь на сайт."
+    else:
+        cite_en=f"{cfg['author']} (2026). <i>Quantum Technology Map</i> (Edition {cfg['edition']}). {cfg['publisher']}. <a href=\"{doiurl}\">{doiurl}</a> — the concept DOI resolves to the newest edition; cite the edition you read."
+        cite_ru=f"{cfg['author']} (2026). <i>Quantum Technology Map</i> (издание {cfg['edition']}). {cfg['publisher']}. <a href=\"{doiurl}\">{doiurl}</a> — DOI концепции разрешается в последнее издание; указывайте издание, которое читали."
     return f'''<footer class="colophon">
  <div class="lang-en">
   <p><b>Cite as.</b> {cite_en}</p>
@@ -287,15 +293,15 @@ def footer(cfg):
 
 def head_meta(cfg):
     if cfg['mode']=='internal': return '<meta name="color-scheme" content="light dark">'
-    doi=cfg['doi_concept']; desc='Quantum computing technologies compared by goal: achievements, justified intentions and the most promising directions; a 96-technology graph across ten stack layers with seven design coordinates and five edge types; 96 technology briefs. Bilingual EN/RU, CC BY 4.0.'
+    doi=cfg['doi_concept']; cite_doi=('' if STATUS=='beta' else '<meta name="citation_doi" content="'+doi+'">'); ident=(cfg['url'] if STATUS=='beta' else 'https://doi.org/'+doi); desc='Quantum computing technologies compared by goal: achievements, justified intentions and the most promising directions; a 96-technology graph across ten stack layers with seven design coordinates and five edge types; 96 technology briefs. Bilingual EN/RU, CC BY 4.0.'
     ld={"@context":"https://schema.org","@type":"ScholarlyArticle","name":"Quantum Technology Map","headline":"Quantum Technology Map","version":cfg['edition'],"datePublished":cfg['date'],"codeRepository":cfg.get('repo'),"inLanguage":["en","ru"],
         "author":{"@type":"Person","name":cfg['author']},"publisher":{"@type":"Organization","name":cfg['publisher'],"url":"https://qodeh.com"},
-        "license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":True,"identifier":"https://doi.org/"+doi,"sameAs":"https://doi.org/"+doi,"url":cfg['url'],"description":desc,
+        "license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":True,"identifier":ident,"sameAs":ident,"url":cfg['url'],"description":desc,
         "keywords":["quantum computing","quantum error correction","superconducting qubits","trapped ions","neutral atoms","photonic quantum computing","spin qubits","technology landscape","technology graph"]}
     return ('<meta name="color-scheme" content="light dark">\n<meta name="description" content="'+html.escape(desc)+'">\n'
             f'<meta name="author" content="{cfg["author"]}">\n<meta name="citation_title" content="Quantum Technology Map">\n<meta name="citation_author" content="{cfg["author"]}">\n'
-            f'<meta name="citation_publication_date" content="{cfg["date"].replace("-","/")}">\n<meta name="citation_publisher" content="{cfg["publisher"]}">\n<meta name="citation_doi" content="{doi}">\n<meta name="citation_language" content="en">\n'
-            f'<meta name="DC.title" content="Quantum Technology Map"><meta name="DC.creator" content="{cfg["author"]}"><meta name="DC.publisher" content="{cfg["publisher"]}"><meta name="DC.date" content="{cfg["date"]}"><meta name="DC.identifier" content="https://doi.org/{doi}"><meta name="DC.rights" content="CC BY 4.0"><meta name="DC.language" content="en, ru">\n'
+            f'<meta name="citation_publication_date" content="{cfg["date"].replace("-","/")}">\n<meta name="citation_publisher" content="{cfg["publisher"]}">\n{cite_doi}\n<meta name="citation_language" content="en">\n'
+            f'<meta name="DC.title" content="Quantum Technology Map"><meta name="DC.creator" content="{cfg["author"]}"><meta name="DC.publisher" content="{cfg["publisher"]}"><meta name="DC.date" content="{cfg["date"]}"><meta name="DC.identifier" content="{ident}"><meta name="DC.rights" content="CC BY 4.0"><meta name="DC.language" content="en, ru">\n'
             f'<meta property="og:type" content="article"><meta property="og:title" content="Quantum Technology Map"><meta property="og:description" content="{html.escape(desc)}"><meta property="og:url" content="{cfg["url"]}">\n'
             f'<link rel="license" href="https://creativecommons.org/licenses/by/4.0/"><link rel="canonical" href="{cfg["url"]}">\n'
             '<script type="application/ld+json">'+json.dumps(ld,ensure_ascii=False)+'</script>')
