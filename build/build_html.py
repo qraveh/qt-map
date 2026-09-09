@@ -361,9 +361,9 @@ def build(cfg=PUBLIC):
 <script>{BRIEF_JS}</script>
 <script>if(window.__relabelMap)window.__relabelMap();</script>
 '''
-    open(cfg['out_body'],'w',encoding='utf-8').write(body)
+    open(cfg['out_body'],'w',encoding='utf-8',newline='\n').write(body)
     full=f'<!doctype html>\n<html lang="{dl}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">{head_meta(cfg)}<style>img{{max-width:100%}}[hidden]{{display:none!important}}</style></head><body>'+body+'</body></html>'
-    open(cfg['out_full'],'w',encoding='utf-8').write(full)
+    open(cfg['out_full'],'w',encoding='utf-8',newline='\n').write(full)
     nofb=sum(1 for b in B if b['ru_fallback'])
     print('built', cfg['mode'], len(body)//1024,'KB body;', len(full)//1024,'KB full;',len(B),'briefs;',nofb,'RU fallbacks')
 

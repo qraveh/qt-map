@@ -6,5 +6,5 @@ sys.path.insert(0, os.path.join(ROOT, 'build')); sys.path.insert(0, os.path.join
 runpy.run_path(os.path.join(ROOT, 'build', 'make_sections.py'), run_name='__main__')
 import build_html; build_html.build(build_html.PUBLIC)
 from editions import changelog_md
-open(os.path.join(ROOT, 'CHANGELOG.md'), 'w', encoding='utf-8').write(changelog_md())
+open(os.path.join(ROOT, 'CHANGELOG.md'), 'w', encoding='utf-8', newline='\n').write(changelog_md())
 print('CHANGELOG.md written')

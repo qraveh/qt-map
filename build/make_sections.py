@@ -232,7 +232,7 @@ def sec9(lang):
     o.append("\n")
     return ''.join(o)
 
-json.dump(G,open(os.path.join(ROOT,'data','graph.json'),'w',encoding='utf-8'),ensure_ascii=False)
+json.dump(G,open(os.path.join(ROOT,'data','graph.json'),'w',encoding='utf-8',newline='\n'),ensure_ascii=False)
 # splice the generated graph section (numbered 7 in the public edition) into the reports
 def splice(lang,start,end):
     p=os.path.join(ROOT,'report','report_%s.md'%lang.upper()); s=open(p,encoding='utf-8').read()
@@ -240,6 +240,6 @@ def splice(lang,start,end):
     sec=re.sub(r'(see|см\.) 8\.(\d+)',r'\1 7.\2',sec); sec=re.sub(r'§9(\.\d+)',r'§7\1',sec); sec=re.sub(r'§8(\.\d+)?',lambda m:'§7'+(m.group(1) or ''),sec); sec=re.sub(r'§9(?!\.)','§8',sec)
     i=s.find(start); j=s.find(end); k=s.rfind('\n---\n',i,j)
     if i<0 or j<0: raise SystemExit('report %s: section markers not found'%lang)
-    open(p,'w',encoding='utf-8').write(s[:i]+sec.rstrip()+'\n'+s[k:])
+    open(p,'w',encoding='utf-8',newline='\n').write(s[:i]+sec.rstrip()+'\n'+s[k:])
 splice('en','## 7. The technology graph','## 8. Sources'); splice('ru','## 7. Граф технологий','## 8. Источники')
 print('sec9 written', len(sec9('en').split()), len(sec9('ru').split()))
