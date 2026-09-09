@@ -177,10 +177,13 @@ function relabel(){ st.select('text.l1').text(d=>wrapLabel(SHORT[d.id]?SHORT[d.i
   applyLens(); if(state.focus)inspect(NODE[state.focus]); else if(state.isolate)inspectPath(PATH[state.isolate]); else inspectEmpty(); renderPC();
 }
 function select(id){ state.focus=id; st.classed('sel',d=>d.id===id); drawEdges(); dimming(); if(id){insp.hidden=false; inspect(NODE[id]);} else {insp.hidden=true; insp.innerHTML='';} pcHighlight(id); }
-function neighbours(id){ const s=new Set([id]); G.edges.forEach(e=>{ if(e.type==='defines'||e.type==='transfers')return; if(e.src===id)s.add(e.dst); if(e.dst===id)s.add(e.src); }); return s; }
+function edgeOn(e){ return (e.type==='conflicts'&&state.showConf)||(e.type==='replaces'&&state.showRep)||(e.type==='requires'&&state.showReq); }
+// neighbours through the relation types currently toggled on — the toggles decide which relations exist on the map at all
+function neighbours(id){ const s=new Set([id]); G.edges.forEach(e=>{ if(!edgeOn(e))return; if(e.src===id)s.add(e.dst); if(e.dst===id)s.add(e.src); }); return s; }
 // what stays lit: keepN = stations, keepP = lines; null = everything. One rule for the map and for the edges.
 //   isolated path      -> its stations and its line
-//   focused station    -> its lines in full (every station on every path through it, primary or alternate) plus its graph neighbours
+//   focused station    -> its lines in full (every station on every path through it, primary or alternate) plus its neighbours
+//                         through the toggled relation types
 //   lens value         -> the stations with that value; a family value also keeps that family's lines
 // the three narrow each other (intersection); the focused station itself is always lit
 function litSets(){ const f=state.focus, iso=state.isolate;
@@ -206,14 +209,12 @@ function edgePath(a,b){ const dx=b.cx-a.cx; if(Math.abs(dx)<1){ const x=a.cx+NW/
   const sx=dx>0?a.cx+NW/2:a.cx-NW/2, tx=dx>0?b.cx-NW/2:b.cx+NW/2; const mx=(sx+tx)/2; return `M${sx},${a.cy} C${mx},${a.cy} ${mx},${b.cy} ${tx},${b.cy}`; }
 function pathMembers(pid){ return new Set(Object.values(PATH[pid].slots).flat()); }
 function drawEdges(){ gEdges.selectAll('*').remove(); const f=state.focus;
-  // the edge toggles decide which relation types are drawn — the same with or without a selection; whatever is lit (litSets)
-  // narrows them to the relations among the lit stations. A focused station shows all of its own relations, again only
-  // to lit stations — with a lens value on, that means within the lens.
+  // the edge toggles alone decide which relation types are drawn — with or without a selection, focused station included;
+  // whatever is lit (litSets) narrows them to the relations among the lit stations (with a lens value on: within the lens)
   const lit=litSets().keepN;
   const es=G.edges.filter(e=>{ if(e.type==='defines'||e.type==='transfers')return false;
     if(lit&&!(lit.has(e.src)&&lit.has(e.dst)))return false;
-    if(f&&(e.src===f||e.dst===f))return true;
-    return (e.type==='conflicts'&&state.showConf)||(e.type==='replaces'&&state.showRep)||(e.type==='requires'&&state.showReq); });
+    return edgeOn(e); });
   const ETYPE={requires:['requires','требует'],replaces:['is an alternative to','— альтернатива для'],conflicts:['conflicts with','конфликтует с']};
   const edgeTip=e=>{const L=lang(); const a=NODE[e.src][L], b=NODE[e.dst][L]; let h=`<b>${esc(a)}</b> ${T(...ETYPE[e.type])} <b>${esc(b)}</b>${e.any?' <span style="opacity:.7">('+T('one-of','одно из')+')</span>':''}`;
     if(e[L]) h+=`<br>${esc(e[L])}`;
@@ -302,9 +303,9 @@ const chipsWrap=document.getElementById('pathchips');
 G.paths.forEach(p=>{const b=document.createElement('button'); b.className='chip'; b.dataset.chipPath=p.id; b.setAttribute('aria-pressed','false'); b.innerHTML=`<i class="sw" style="--c:${FAMC[p.family]}"></i><span class="t"></span>`; b.addEventListener('click',()=>{state.isolate=state.isolate===p.id?null:p.id; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.chipPath===state.isolate))); if(state.isolate){ state.focus=null; st.classed('sel',false); inspectPath(p); pcHighlight(null);} else if(!state.focus){ inspectEmpty(); } drawEdges(); dimming();}); chipsWrap.appendChild(b);});
 if(window.__placeZoom)window.__placeZoom();   // the zoom window sits at the end of the paths row (desktop) — chips exist now
 const lensSel=document.getElementById('lens'); Object.keys(LENSES).forEach(k=>{const o=document.createElement('option'); o.value=k; lensSel.appendChild(o);}); lensSel.addEventListener('change',()=>{state.lens=lensSel.value; state.lensFilter=null; applyLens(); drawEdges(); dimming();});
-document.getElementById('tg-conf').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showConf=!state.showConf; ev.currentTarget.setAttribute('aria-pressed',String(state.showConf)); drawEdges();});
-document.getElementById('tg-rep').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showRep=!state.showRep; ev.currentTarget.setAttribute('aria-pressed',String(state.showRep)); drawEdges();});
-document.getElementById('tg-req').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showReq=!state.showReq; ev.currentTarget.setAttribute('aria-pressed',String(state.showReq)); drawEdges();});
+document.getElementById('tg-conf').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showConf=!state.showConf; ev.currentTarget.setAttribute('aria-pressed',String(state.showConf)); drawEdges(); dimming();});
+document.getElementById('tg-rep').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showRep=!state.showRep; ev.currentTarget.setAttribute('aria-pressed',String(state.showRep)); drawEdges(); dimming();});
+document.getElementById('tg-req').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showReq=!state.showReq; ev.currentTarget.setAttribute('aria-pressed',String(state.showReq)); drawEdges(); dimming();});
 document.getElementById('tg-reset').addEventListener('click',()=>{state.isolate=null; state.showConf=state.showRep=state.showReq=false; ['tg-conf','tg-rep','tg-req'].forEach(i=>document.getElementById(i).setAttribute('aria-pressed','false')); chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false')); select(null);});
 // ---------- zoom: rendered width/height only, viewBox untouched (so the map stays crisp and text stays text)
 const ZSTEPS=[0.5,0.6,0.7,0.85,1,1.25,1.5,2];   // the − / + buttons walk these
