@@ -10,10 +10,10 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
-      - run: pip install markdown
+      - run: pip install -r requirements.txt
       - run: python3 build/build.py
-      - name: check the build is committed
-        run: git diff --exit-code -- data/graph.json report/ CHANGELOG.md || (echo "run build/build.py and commit the result" && exit 1)
+      - name: check the build is committed and reproduces byte-for-byte
+        run: git diff --exit-code -- data/graph.json report/ CHANGELOG.md dist/ || (echo "run build/build.py and commit the result; if only dist/ differs, the build is not reproducible on this platform" && exit 1)
       - uses: actions/upload-artifact@v4
         with: { name: quantum-technology-map, path: dist/*.html }
       - name: attach to release

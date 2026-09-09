@@ -4,7 +4,28 @@ import os
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0,os.path.join(ROOT,'data'))
 import graph_data as gd
-G=gd.compute()
+
+SIGDIGITS=6
+def determinize(x,sig=SIGDIGITS):
+    """Round every float to `sig` significant digits so the build is byte-reproducible.
+
+    The derived clocks (t_round and friends) are sums and products of doubles. Their last
+    bit depends on summation order and on the platform's libm, so the same source data
+    yields values one ULP apart on different machines — enough to make dist/ differ and
+    the identity check before publication fail for no substantive reason.
+
+    Six digits sits between the two scales that matter. It discards perturbations of
+    order 1e-16 (the ULP noise) while itself perturbing a value by at most 5e-6 in
+    relative terms, and the document never shows more than three significant digits
+    (%.3g, %.2g, %.1e), i.e. a resolution of 5e-4. So nothing printed can move, and a
+    rounded value can straddle its own boundary only if two platforms disagree at the
+    sixth digit — eleven orders of magnitude beyond the noise they actually produce."""
+    if isinstance(x,float): return x if x!=x or x in (float('inf'),float('-inf')) else float('%.*g'%(sig,x))
+    if isinstance(x,dict): return {k:determinize(v,sig) for k,v in x.items()}
+    if isinstance(x,list): return [determinize(v,sig) for v in x]
+    return x
+
+G=determinize(gd.compute())
 NODE={n['id']:n for n in G['nodes']}
 LAY={l['n']:l for l in G['layers']}
 V=G['vocab']
