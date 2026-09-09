@@ -308,7 +308,7 @@ def head_meta(cfg):
             '<script type="application/ld+json">'+json.dumps(ld,ensure_ascii=False)+'</script>')
 
 def build(cfg=PUBLIC):
-    D3=open('/tmp/d3get/node_modules/d3/dist/d3.min.js',encoding='utf-8').read()
+    D3=open(os.path.join(ROOT,'build','vendor','d3.v7.min.js'),encoding='utf-8').read()
     EN=open(cfg['report_en'],encoding='utf-8').read()
     RU=open(cfg['report_ru'],encoding='utf-8').read()
     regmap=json.load(open(cfg['regmap'],encoding='utf-8')) if cfg.get('regmap') else None

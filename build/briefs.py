@@ -6,7 +6,7 @@ Nothing here reads the report markdown or the D3 bundle, so it is safe to import
 """
 import os, re, json, html
 
-ROOT = '/home/claude/qtech-2026'
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BDIR = os.path.join(ROOT, 'briefs')
 EN_DIR = os.path.join(BDIR, 'en')
 RU_DIR = os.path.join(BDIR, 'ru')
@@ -29,7 +29,7 @@ def configure(mode='internal', en_dir=None, ru_dir=None, regmap=None, table_num=
         for k, v in NAV.items():
             v['row'] = v['row'].replace('8.2', TABLE_NUM)
 
-RANKING = json.load(open(os.path.join(BDIR, 'meta', 'ranking.json'), encoding='utf-8'))
+RANKING = json.load(open(os.path.join(ROOT, 'data', 'ranking.json'), encoding='utf-8'))
 
 FM_ORDER = ('id', 'name', 'layer', 'tier', 'status', 'since', 'one_line', 'verdict', 'updated')
 
