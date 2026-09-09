@@ -178,13 +178,22 @@ function relabel(){ st.select('text.l1').text(d=>wrapLabel(SHORT[d.id]?SHORT[d.i
 }
 function select(id){ state.focus=id; st.classed('sel',d=>d.id===id); drawEdges(); dimming(); if(id){insp.hidden=false; inspect(NODE[id]);} else {insp.hidden=true; insp.innerHTML='';} pcHighlight(id); }
 function neighbours(id){ const s=new Set([id]); G.edges.forEach(e=>{ if(e.type==='defines'||e.type==='transfers')return; if(e.src===id)s.add(e.dst); if(e.dst===id)s.add(e.src); }); return s; }
-function dimming(){ const f=state.focus, iso=state.isolate;
+// what stays lit: keepN = stations, keepP = lines; null = everything. One rule for the map and for the edges.
+//   isolated path      -> its stations and its line
+//   focused station    -> its lines in full (every station on every path through it, primary or alternate) plus its graph neighbours
+//   lens value         -> the stations with that value; a family value also keeps that family's lines
+// the three narrow each other (intersection); the focused station itself is always lit
+function litSets(){ const f=state.focus, iso=state.isolate;
   let keepN=null, keepP=null;
-  if(iso){ keepP=new Set([iso]); keepN=new Set(Object.values(PATH[iso].slots).flat()); }
-  if(f){ const ps=new Set((prim[f]||[]).concat(alt[f]||[])); keepP=keepP?new Set([...keepP].filter(p=>ps.has(p))):ps; const nb=neighbours(f); keepN=keepN?new Set([...keepN].filter(n=>nb.has(n)||n===f)):nb; keepN.add(f); }
+  if(iso){ keepP=new Set([iso]); keepN=pathMembers(iso); }
+  if(f){ const ps=new Set((prim[f]||[]).concat(alt[f]||[])); keepP=keepP?new Set([...keepP].filter(p=>ps.has(p))):ps;
+    const pm=new Set(); ps.forEach(pid=>pathMembers(pid).forEach(x=>pm.add(x))); neighbours(f).forEach(x=>pm.add(x)); pm.add(f);
+    keepN=keepN?new Set([...keepN].filter(n=>pm.has(n))):pm; }
   if(state.lensFilter!=null){ const lf=new Set(G.nodes.filter(nodeMatchesFilter).map(n=>n.id)); keepN=keepN?new Set([...keepN].filter(x=>lf.has(x))):lf;
-    // a family value keeps that family's own lines on the map; any other lens value has no lines of its own
     if(state.lens==='family'){ const fp=new Set(G.paths.filter(p=>p.family===state.lensFilter).map(p=>p.id)); keepP=keepP?new Set([...keepP].filter(p=>fp.has(p))):fp; } }
+  if(f&&keepN)keepN.add(f);
+  return {keepN:keepN,keepP:keepP}; }
+function dimming(){ const f=state.focus, iso=state.isolate; const L=litSets(), keepN=L.keepN, keepP=L.keepP;
   st.classed('dim',d=>keepN?!keepN.has(d.id):false); st.classed('member',d=>iso?!!(PATH[iso].slots&&Object.values(PATH[iso].slots).flat().includes(d.id)):false);
   const lf=state.lensFilter!=null;   // a lens filter keeps stations, not lines: every line goes quiet unless a path is isolated or a station focused
   svg.classed('iso',!!iso);
@@ -196,17 +205,15 @@ function dimming(){ const f=state.focus, iso=state.isolate;
 function edgePath(a,b){ const dx=b.cx-a.cx; if(Math.abs(dx)<1){ const x=a.cx+NW/2; return `M${a.cx+NW/2-2},${a.cy} C${x+22},${a.cy} ${x+22},${b.cy} ${b.cx+NW/2-2},${b.cy}`; }
   const sx=dx>0?a.cx+NW/2:a.cx-NW/2, tx=dx>0?b.cx-NW/2:b.cx+NW/2; const mx=(sx+tx)/2; return `M${sx},${a.cy} C${mx},${a.cy} ${mx},${b.cy} ${tx},${b.cy}`; }
 function pathMembers(pid){ return new Set(Object.values(PATH[pid].slots).flat()); }
-// the selection = the isolated path's stations ∩ the lens-filter stations; null when nothing is selected
-function selectedSet(){ const iso=state.isolate, lf=state.lensFilter!=null; if(!iso&&!lf)return null; let S=iso?pathMembers(iso):new Set(G.nodes.map(n=>n.id)); if(lf)S=new Set([...S].filter(id=>nodeMatchesFilter(NODE[id]))); return S; }
-function drawEdges(){ gEdges.selectAll('*').remove(); const f=state.focus, iso=state.isolate;
-  // the edge toggles decide which relation types are drawn — the same with or without a selection; a selection (isolated path,
-  // lens filter, or both) only narrows the toggled types to the relations among the selected stations. A focused station
-  // always shows all of its own relations.
-  const mem=selectedSet();
+function drawEdges(){ gEdges.selectAll('*').remove(); const f=state.focus;
+  // the edge toggles decide which relation types are drawn — the same with or without a selection; whatever is lit (litSets)
+  // narrows them to the relations among the lit stations. A focused station shows all of its own relations, again only
+  // to lit stations — with a lens value on, that means within the lens.
+  const lit=litSets().keepN;
   const es=G.edges.filter(e=>{ if(e.type==='defines'||e.type==='transfers')return false;
+    if(lit&&!(lit.has(e.src)&&lit.has(e.dst)))return false;
     if(f&&(e.src===f||e.dst===f))return true;
-    const on=(e.type==='conflicts'&&state.showConf)||(e.type==='replaces'&&state.showRep)||(e.type==='requires'&&state.showReq);
-    return on&&(!mem||(mem.has(e.src)&&mem.has(e.dst))); });
+    return (e.type==='conflicts'&&state.showConf)||(e.type==='replaces'&&state.showRep)||(e.type==='requires'&&state.showReq); });
   const ETYPE={requires:['requires','требует'],replaces:['is an alternative to','— альтернатива для'],conflicts:['conflicts with','конфликтует с']};
   const edgeTip=e=>{const L=lang(); const a=NODE[e.src][L], b=NODE[e.dst][L]; let h=`<b>${esc(a)}</b> ${T(...ETYPE[e.type])} <b>${esc(b)}</b>${e.any?' <span style="opacity:.7">('+T('one-of','одно из')+')</span>':''}`;
     if(e[L]) h+=`<br>${esc(e[L])}`;
