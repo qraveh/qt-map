@@ -177,10 +177,15 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .bandl text{fill:var(--muted);font-size:10.5px;font-family:"JetBrains Mono",monospace;letter-spacing:.04em}
 .bandline{stroke:var(--rule);stroke-dasharray:2 4}
 .pathline{fill:none;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;opacity:.85}
-.pathline.dim{opacity:.08}
+.pathline.dim{opacity:.05}
+.iso .pathline.dim{opacity:0}
+.lensed .pathline.dim{opacity:.05}
+.iso.lensed .pathline.dim{opacity:0}
 .pathline.neutral{stroke-dasharray:7 5}
 .altstub{fill:none;stroke-width:1.2;stroke-dasharray:2 3;opacity:.7}
 .altstub.dim{opacity:.05}
+.iso .altstub.dim{opacity:0}
+.lensed .altstub.dim{opacity:.05}
 .edge{fill:none;stroke-width:1.6}
 .edge path.hit{stroke:transparent;stroke-width:14;stroke-dasharray:none;pointer-events:stroke;cursor:pointer}
 .edge:hover path.vis{stroke-width:3}
@@ -196,11 +201,13 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .lensed .pathline{stroke:var(--mid) !important;opacity:.28}
 .lensed .altstub{stroke:var(--mid) !important;opacity:.35}
 .lensed .badge{opacity:.35}
-.legend .lk{appearance:none;border:1px solid var(--rule);background:var(--surface);color:var(--ink);font:inherit;font-size:12.5px;padding:2px 8px 2px 6px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
-.legend .lk .sw{width:10px;height:10px;border-radius:2px;display:inline-block}
-.legend .lk .cnt{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted)}
-.legend .lk[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
-.legend .lk.clear{border-style:dashed}
+.lk{appearance:none;border:1px solid var(--rule);background:var(--surface);color:var(--ink);font:inherit;font-size:12.5px;padding:2px 9px 2px 24px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;position:relative;overflow:hidden}
+.lk .sw{position:absolute;left:0;top:0;bottom:0;width:17px;border-radius:0 !important;border:0 !important;border-right:1px solid rgba(0,0,0,.12) !important;display:block}
+.lk.clear{padding-left:9px}
+.lk .cnt{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted)}
+.lk[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);font-weight:600}
+.lk:hover{background:var(--surface2)}
+.lk.clear{border-style:dashed}
 .mapbar .lenslegend{flex-basis:100%;gap:6px 8px;align-items:center;padding-top:6px;border-top:1px dashed var(--rule)}
 .mapbar .lenslegend:empty{display:none}
 .mapbar .lenslegend .lbl{margin-right:6px}
@@ -510,6 +517,18 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
 /* beta stamp (editions.py STATUS='beta'): visible but quiet */
 .beta{display:inline-block;padding:0 6px;border-radius:999px;border:1px solid var(--accent);color:var(--accent);font:600 10.5px/16px "JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;vertical-align:1px}
 .pubmeta .doi{font-family:"JetBrains Mono",monospace;color:var(--muted);border-bottom:1px dotted var(--line);cursor:help}
+
+/* collapsible map bar: one line (toggle · summary · zoom) when collapsed */
+.bartog{appearance:none;border:1px solid var(--rule);background:var(--surface);color:var(--ink2);border-radius:6px;width:22px;height:22px;padding:0;cursor:pointer;font-size:12px;line-height:1;margin-right:2px;flex:0 0 auto}
+.bartog:hover{background:var(--surface2)}
+.barsum{color:var(--ink2);font-size:12.5px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.barsum b{color:var(--ink);font-weight:600}
+.barsum .sw{display:inline-block;width:9px;height:9px;border-radius:2px;vertical-align:-1px;margin-right:4px}
+.mapbar.collapsed > .grp:not(.chipsrow),.mapbar.collapsed > details,.mapbar.collapsed > #lenslegend{display:none}
+.mapbar.collapsed .chipsrow #pathchips .chip{display:none}
+.mapbar.collapsed .chipsrow{flex:1 1 100%;flex-wrap:nowrap;align-items:center}
+.mapbar.collapsed .chipsrow #pathchips{flex:1 1 auto;justify-content:flex-end}
+.mapbar.collapsed .chipsrow::after{display:none}
 </style>
 <div id="app" data-lang="en">
 <div class="mobilebar" id="mobilebar">
@@ -565,7 +584,7 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
 <p class="lead">Колонки — слои стека; вертикальная позиция — сродство носителя (естественные сверху, изготовленные снизу), так что диагональ естественный/изготовленный видна, а каждая заштрихованная станция — место, где платформа её ломает. Цветные линии — пути платформ через одну станцию на слой; станция на нескольких линиях — хаб переноса (◎); пунктирные полые станции — пустые слоты. Кликните станцию, чтобы увидеть её три пространства; выберите линзу, чтобы перекрасить станции по одной координате; лента ниже показывает полный семикоординатный вектор каждой технологии. Правила построения и выведенные таблицы — в §7.</p>
 </section></div></div>
   <div id="mapbody"><div class="mapfull"><div class="mapbar" id="mapbar">
- <div class="grp chipsrow"><span class="lbl lang-en">paths</span><span class="lbl lang-ru">пути</span><span id="pathchips" class="grp"></span></div>
+ <div class="grp chipsrow"><button type="button" class="bartog" id="bartog" aria-expanded="true" title="collapse / expand the controls"><span class="when-open">▾</span><span class="when-closed" hidden>▸</span></button><span class="lbl lang-en">paths</span><span class="lbl lang-ru">пути</span><span class="barsum" id="barsum" hidden></span><span id="pathchips" class="grp"></span></div>
  <div class="grp"><span class="lbl lang-en">lens</span><span class="lbl lang-ru">линза</span><select id="lens" class="sel" aria-label="colour lens"></select></div>
  <div class="grp"><span class="lbl lang-en">edges</span><span class="lbl lang-ru">рёбра</span>
   <button class="chip tog" id="tg-req" aria-pressed="false"><span class="lang-en">all requires</span><span class="lang-ru">все «требует»</span></button>
@@ -40888,9 +40907,12 @@ function dimming(){ const f=state.focus, iso=state.isolate;
   if(f){ const ps=new Set((prim[f]||[]).concat(alt[f]||[])); keepP=keepP?new Set([...keepP].filter(p=>ps.has(p))):ps; const nb=neighbours(f); keepN=keepN?new Set([...keepN].filter(n=>nb.has(n)||n===f)):nb; keepN.add(f); }
   if(state.lensFilter!=null){ const lf=new Set(G.nodes.filter(nodeMatchesFilter).map(n=>n.id)); keepN=keepN?new Set([...keepN].filter(x=>lf.has(x))):lf; }
   st.classed('dim',d=>keepN?!keepN.has(d.id):false); st.classed('member',d=>iso?!!(PATH[iso].slots&&Object.values(PATH[iso].slots).flat().includes(d.id)):false);
-  pathSel.classed('dim',d=>keepP?!keepP.has(d.id):false);
-  gAlt.selectAll('path').classed('dim',d=>keepP?!keepP.has(d.p.id):false);
-  gPaths.selectAll('circle.emptyslot').attr('opacity',d=>keepP?(keepP.has(d.p.id)?1:.08):1);
+  const lf=state.lensFilter!=null;   // a lens filter keeps stations, not lines: every line goes quiet unless a path is isolated or a station focused
+  svg.classed('iso',!!iso);
+  pathSel.classed('dim',d=>keepP?!keepP.has(d.id):lf);
+  gAlt.selectAll('path').classed('dim',d=>keepP?!keepP.has(d.p.id):lf);
+  gPaths.selectAll('circle.emptyslot').attr('opacity',d=>keepP?(keepP.has(d.p.id)?1:.08):(lf?.08:1));
+  if(window.__barSummary)window.__barSummary();
 }
 function edgePath(a,b){ const dx=b.cx-a.cx; if(Math.abs(dx)<1){ const x=a.cx+NW/2; return `M${a.cx+NW/2-2},${a.cy} C${x+22},${a.cy} ${x+22},${b.cy} ${b.cx+NW/2-2},${b.cy}`; }
   const sx=dx>0?a.cx+NW/2:a.cx-NW/2, tx=dx>0?b.cx-NW/2:b.cx+NW/2; const mx=(sx+tx)/2; return `M${sx},${a.cy} C${mx},${a.cy} ${mx},${b.cy} ${tx},${b.cy}`; }
@@ -40978,9 +41000,9 @@ const chipsWrap=document.getElementById('pathchips');
 G.paths.forEach(p=>{const b=document.createElement('button'); b.className='chip'; b.dataset.chipPath=p.id; b.setAttribute('aria-pressed','false'); b.innerHTML=`<i class="sw" style="--c:${FAMC[p.family]}"></i><span class="t"></span>`; b.addEventListener('click',()=>{state.isolate=state.isolate===p.id?null:p.id; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.chipPath===state.isolate))); if(state.isolate){ state.focus=null; st.classed('sel',false); drawEdges(); inspectPath(p); pcHighlight(null);} else if(!state.focus){ inspectEmpty(); } dimming();}); chipsWrap.appendChild(b);});
 if(window.__placeZoom)window.__placeZoom();   // the zoom window sits at the end of the paths row (desktop) — chips exist now
 const lensSel=document.getElementById('lens'); Object.keys(LENSES).forEach(k=>{const o=document.createElement('option'); o.value=k; lensSel.appendChild(o);}); lensSel.addEventListener('change',()=>{state.lens=lensSel.value; state.lensFilter=null; applyLens(); dimming();});
-document.getElementById('tg-conf').addEventListener('click',ev=>{state.showConf=!state.showConf; ev.currentTarget.setAttribute('aria-pressed',String(state.showConf)); drawEdges();});
-document.getElementById('tg-rep').addEventListener('click',ev=>{state.showRep=!state.showRep; ev.currentTarget.setAttribute('aria-pressed',String(state.showRep)); drawEdges();});
-document.getElementById('tg-req').addEventListener('click',ev=>{state.showReq=!state.showReq; ev.currentTarget.setAttribute('aria-pressed',String(state.showReq)); drawEdges();});
+document.getElementById('tg-conf').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showConf=!state.showConf; ev.currentTarget.setAttribute('aria-pressed',String(state.showConf)); drawEdges();});
+document.getElementById('tg-rep').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showRep=!state.showRep; ev.currentTarget.setAttribute('aria-pressed',String(state.showRep)); drawEdges();});
+document.getElementById('tg-req').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showReq=!state.showReq; ev.currentTarget.setAttribute('aria-pressed',String(state.showReq)); drawEdges();});
 document.getElementById('tg-reset').addEventListener('click',()=>{state.isolate=null; state.showConf=state.showRep=state.showReq=false; ['tg-conf','tg-rep','tg-req'].forEach(i=>document.getElementById(i).setAttribute('aria-pressed','false')); chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false')); select(null);});
 // ---------- zoom: rendered width/height only, viewBox untouched (so the map stays crisp and text stays text)
 const ZSTEPS=[0.5,0.6,0.7,0.85,1,1.25,1.5,2];   // the − / + buttons walk these
@@ -40999,18 +41021,22 @@ function zoomStep(d){ let i=0; for(let k=1;k<ZSTEPS.length;k++){ if(Math.abs(ZST
   if(zo)zo.addEventListener('click',()=>zoomStep(-1));
   // fit width: a first pass can leave a horizontal bar when the vertical scrollbar appears (or vanishes) at the new
   // height and changes clientWidth; measure again after layout and settle on the width that actually fits.
-  function fitWidth(){ for(let k=0;k<3;k++){ applyZoom((wrap.clientWidth-2)/W,true); if(wrap.scrollWidth<=wrap.clientWidth)break; } wrap.scrollLeft=0; }
+  // scrollbar-aware fits: compute from the box that will exist at the target zoom, so pressing again changes nothing
+  function sbSize(){ const d=document.createElement('div'); d.style.cssText='position:absolute;top:-9999px;left:-9999px;width:100px;height:100px;overflow:scroll;visibility:hidden'; document.body.appendChild(d); const r={w:d.offsetWidth-d.clientWidth,h:d.offsetHeight-d.clientHeight}; d.remove(); return r; }
+  function box(){ const cs=getComputedStyle(wrap); const sb=sbSize(); const bw=(parseFloat(cs.borderLeftWidth)||0)+(parseFloat(cs.borderRightWidth)||0), bh=(parseFloat(cs.borderTopWidth)||0)+(parseFloat(cs.borderBottomWidth)||0);
+    const w0=wrap.offsetWidth-bw; let h0=parseFloat(cs.maxHeight); if(!(h0>0))h0=wrap.offsetHeight-bh; return {w0:w0,h0:h0,sb:sb}; }
+  function fitWidth(){ const b=box(); let z=(b.w0-2)/W; if(Math.floor(H*z)>b.h0) z=(b.w0-b.sb.w-2)/W; applyZoom(z,false); wrap.scrollLeft=0; }
   if(zf)zf.addEventListener('click',fitWidth);
-  // fit height: the whole map inside the wrapper's current height (after 'top' that is nearly the full window)
-  function fitHeight(){ for(let k=0;k<3;k++){ applyZoom((wrap.clientHeight-2)/H,true); if(wrap.scrollHeight<=wrap.clientHeight)break; } wrap.scrollTop=0; }
+  function fitHeight(){ const b=box(); let z=(b.h0-2)/H; if(Math.floor(W*z)>b.w0) z=(b.h0-b.sb.h-2)/H; applyZoom(z,false); wrap.scrollTop=0; }
   const zfh=document.getElementById('zoom-fith'); if(zfh)zfh.addEventListener('click',fitHeight);
-  // align top: scroll the page so the map's top edge sits at the top of the window (under the page bar, if any) and let the map
-  // use the full window height; the wrapper keeps that height until the window is resized or the map is collapsed
+  // align top: the map *header* (the bar with the controls and the zoom window) goes to the top of the window and the map
+  // takes the rest of the height; the wrapper keeps that height until the window is resized
   function pageBarH(){ const b=document.querySelector('.mobilebar'); return (b&&getComputedStyle(b).position==='sticky'&&b.offsetParent)?b.offsetHeight:0; }
-  function alignTop(){ const off=pageBarH()+4; wrap.classList.add('tall'); const h=Math.max(300,window.innerHeight-off-4); wrap.style.maxHeight=h+'px';
-    const y=wrap.getBoundingClientRect().top+window.pageYOffset-off; window.scrollTo({top:Math.max(0,y),behavior:'smooth'}); }
+  function tallHeight(){ const off=pageBarH()+4; const bar=document.getElementById('mapbar'); const gap=bar?(wrap.getBoundingClientRect().top-bar.getBoundingClientRect().top):0; return Math.max(300,window.innerHeight-off-gap-6); }
+  function alignTop(){ const off=pageBarH()+4; const bar=document.getElementById('mapbar')||wrap; wrap.classList.add('tall'); wrap.style.maxHeight=tallHeight()+'px';
+    const y=bar.getBoundingClientRect().top+window.pageYOffset-off; window.scrollTo({top:Math.max(0,y),behavior:'smooth'}); }
   const zt=document.getElementById('zoom-top'); if(zt)zt.addEventListener('click',alignTop);
-  window.addEventListener('resize',()=>{ if(wrap.classList.contains('tall')){ const off=pageBarH()+4; wrap.style.maxHeight=Math.max(300,window.innerHeight-off-4)+'px'; } });
+  window.addEventListener('resize',()=>{ if(wrap.classList.contains('tall')){ wrap.style.maxHeight=tallHeight()+'px'; } });
   if(z1)z1.addEventListener('click',()=>applyZoom(1,true));
   const zl=document.getElementById('zoomlvl');
   if(zl){ const commit=()=>{ const v=parseInt(String(zl.value).replace(/[^0-9]/g,''),10); if(!isNaN(v)&&v>0)applyZoom(v/100,true); zl.value=Math.round((state.zoom||1)*100)+'%'; };
@@ -41022,6 +41048,20 @@ function zoomStep(d){ let i=0; for(let k=1;k<ZSTEPS.length;k++){ if(Math.abs(ZST
   let z=1;
   try{ if(window.matchMedia('(max-width:600px)').matches){ const t=wrap.querySelector('g.station text'); const fs=t?(parseFloat(getComputedStyle(t).fontSize)||11):11; z=(fs*0.85>=10)?0.85:1; } }catch(e){}
   applyZoom(z,false); })();
+// collapsible map bar: one line with a summary of the current selection and the zoom window
+(function(){ const bar=document.getElementById('mapbar'), tog=document.getElementById('bartog'), sum=document.getElementById('barsum'); if(!bar||!tog||!sum)return; const KEY='qmap.barcollapsed';
+  function summary(){ const L=lang(); const parts=[];
+    if(state.isolate){ const p=PATH[state.isolate]; parts.push(`<i class="sw" style="background:${FAMC[p.family]}"></i><b>${esc(p[L])}</b>`); } else parts.push(T('all paths','все пути'));
+    if(state.lens&&state.lens!=='family'){ const lz=LENSES[state.lens]; parts.push(T('lens','линза')+': <b>'+esc(lz?(lz[L]||lz.en||state.lens):state.lens)+'</b>'+(state.lensFilter!=null?' = <b>'+esc(String(state.lensFilter))+'</b>':'')); }
+    const ed=[]; if(state.showReq)ed.push(T('requires','требует')); if(state.showRep)ed.push(T('alternatives','альтернативы')); if(state.showConf)ed.push(T('conflicts','конфликты')); if(ed.length)parts.push(T('edges','рёбра')+': '+ed.join(', '));
+    if(state.focus)parts.push(T('station','станция')+': <b>'+esc(NODE[state.focus][L])+'</b>');
+    sum.innerHTML=parts.join(' · '); }
+  function setC(c){ bar.classList.toggle('collapsed',c); tog.setAttribute('aria-expanded',String(!c)); tog.querySelector('.when-open').hidden=c; tog.querySelector('.when-closed').hidden=!c; sum.hidden=!c; if(c)summary(); try{localStorage.setItem(KEY,c?'1':'0');}catch(e){} }
+  window.__barSummary=()=>{ if(bar.classList.contains('collapsed'))summary(); };
+  let c=false; try{c=localStorage.getItem(KEY)==='1';}catch(e){}
+  setC(c); tog.addEventListener('click',()=>setC(!bar.classList.contains('collapsed')));
+  document.querySelectorAll('[data-setlang]').forEach(b=>b.addEventListener('click',()=>setTimeout(()=>{ if(bar.classList.contains('collapsed'))summary(); },0)));
+})();
 // ---------- parallel coordinates
 const pcHost=document.getElementById('pc');
 const PCW=1100, PCH=300, PX0=70, PX1=PCW-30, PY0=34, PY1=PCH-46;

@@ -161,10 +161,15 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .bandl text{fill:var(--muted);font-size:10.5px;font-family:"JetBrains Mono",monospace;letter-spacing:.04em}
 .bandline{stroke:var(--rule);stroke-dasharray:2 4}
 .pathline{fill:none;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;opacity:.85}
-.pathline.dim{opacity:.08}
+.pathline.dim{opacity:.05}
+.iso .pathline.dim{opacity:0}
+.lensed .pathline.dim{opacity:.05}
+.iso.lensed .pathline.dim{opacity:0}
 .pathline.neutral{stroke-dasharray:7 5}
 .altstub{fill:none;stroke-width:1.2;stroke-dasharray:2 3;opacity:.7}
 .altstub.dim{opacity:.05}
+.iso .altstub.dim{opacity:0}
+.lensed .altstub.dim{opacity:.05}
 .edge{fill:none;stroke-width:1.6}
 .edge path.hit{stroke:transparent;stroke-width:14;stroke-dasharray:none;pointer-events:stroke;cursor:pointer}
 .edge:hover path.vis{stroke-width:3}
@@ -180,11 +185,13 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .lensed .pathline{stroke:var(--mid) !important;opacity:.28}
 .lensed .altstub{stroke:var(--mid) !important;opacity:.35}
 .lensed .badge{opacity:.35}
-.legend .lk{appearance:none;border:1px solid var(--rule);background:var(--surface);color:var(--ink);font:inherit;font-size:12.5px;padding:2px 8px 2px 6px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
-.legend .lk .sw{width:10px;height:10px;border-radius:2px;display:inline-block}
-.legend .lk .cnt{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted)}
-.legend .lk[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
-.legend .lk.clear{border-style:dashed}
+.lk{appearance:none;border:1px solid var(--rule);background:var(--surface);color:var(--ink);font:inherit;font-size:12.5px;padding:2px 9px 2px 24px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;position:relative;overflow:hidden}
+.lk .sw{position:absolute;left:0;top:0;bottom:0;width:17px;border-radius:0 !important;border:0 !important;border-right:1px solid rgba(0,0,0,.12) !important;display:block}
+.lk.clear{padding-left:9px}
+.lk .cnt{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted)}
+.lk[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);font-weight:600}
+.lk:hover{background:var(--surface2)}
+.lk.clear{border-style:dashed}
 .mapbar .lenslegend{flex-basis:100%;gap:6px 8px;align-items:center;padding-top:6px;border-top:1px dashed var(--rule)}
 .mapbar .lenslegend:empty{display:none}
 .mapbar .lenslegend .lbl{margin-right:6px}
@@ -494,4 +501,16 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
 /* beta stamp (editions.py STATUS='beta'): visible but quiet */
 .beta{display:inline-block;padding:0 6px;border-radius:999px;border:1px solid var(--accent);color:var(--accent);font:600 10.5px/16px "JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;vertical-align:1px}
 .pubmeta .doi{font-family:"JetBrains Mono",monospace;color:var(--muted);border-bottom:1px dotted var(--line);cursor:help}
+
+/* collapsible map bar: one line (toggle · summary · zoom) when collapsed */
+.bartog{appearance:none;border:1px solid var(--rule);background:var(--surface);color:var(--ink2);border-radius:6px;width:22px;height:22px;padding:0;cursor:pointer;font-size:12px;line-height:1;margin-right:2px;flex:0 0 auto}
+.bartog:hover{background:var(--surface2)}
+.barsum{color:var(--ink2);font-size:12.5px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.barsum b{color:var(--ink);font-weight:600}
+.barsum .sw{display:inline-block;width:9px;height:9px;border-radius:2px;vertical-align:-1px;margin-right:4px}
+.mapbar.collapsed > .grp:not(.chipsrow),.mapbar.collapsed > details,.mapbar.collapsed > #lenslegend{display:none}
+.mapbar.collapsed .chipsrow #pathchips .chip{display:none}
+.mapbar.collapsed .chipsrow{flex:1 1 100%;flex-wrap:nowrap;align-items:center}
+.mapbar.collapsed .chipsrow #pathchips{flex:1 1 auto;justify-content:flex-end}
+.mapbar.collapsed .chipsrow::after{display:none}
 """

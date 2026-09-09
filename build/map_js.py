@@ -184,9 +184,12 @@ function dimming(){ const f=state.focus, iso=state.isolate;
   if(f){ const ps=new Set((prim[f]||[]).concat(alt[f]||[])); keepP=keepP?new Set([...keepP].filter(p=>ps.has(p))):ps; const nb=neighbours(f); keepN=keepN?new Set([...keepN].filter(n=>nb.has(n)||n===f)):nb; keepN.add(f); }
   if(state.lensFilter!=null){ const lf=new Set(G.nodes.filter(nodeMatchesFilter).map(n=>n.id)); keepN=keepN?new Set([...keepN].filter(x=>lf.has(x))):lf; }
   st.classed('dim',d=>keepN?!keepN.has(d.id):false); st.classed('member',d=>iso?!!(PATH[iso].slots&&Object.values(PATH[iso].slots).flat().includes(d.id)):false);
-  pathSel.classed('dim',d=>keepP?!keepP.has(d.id):false);
-  gAlt.selectAll('path').classed('dim',d=>keepP?!keepP.has(d.p.id):false);
-  gPaths.selectAll('circle.emptyslot').attr('opacity',d=>keepP?(keepP.has(d.p.id)?1:.08):1);
+  const lf=state.lensFilter!=null;   // a lens filter keeps stations, not lines: every line goes quiet unless a path is isolated or a station focused
+  svg.classed('iso',!!iso);
+  pathSel.classed('dim',d=>keepP?!keepP.has(d.id):lf);
+  gAlt.selectAll('path').classed('dim',d=>keepP?!keepP.has(d.p.id):lf);
+  gPaths.selectAll('circle.emptyslot').attr('opacity',d=>keepP?(keepP.has(d.p.id)?1:.08):(lf?.08:1));
+  if(window.__barSummary)window.__barSummary();
 }
 function edgePath(a,b){ const dx=b.cx-a.cx; if(Math.abs(dx)<1){ const x=a.cx+NW/2; return `M${a.cx+NW/2-2},${a.cy} C${x+22},${a.cy} ${x+22},${b.cy} ${b.cx+NW/2-2},${b.cy}`; }
   const sx=dx>0?a.cx+NW/2:a.cx-NW/2, tx=dx>0?b.cx-NW/2:b.cx+NW/2; const mx=(sx+tx)/2; return `M${sx},${a.cy} C${mx},${a.cy} ${mx},${b.cy} ${tx},${b.cy}`; }
@@ -274,9 +277,9 @@ const chipsWrap=document.getElementById('pathchips');
 G.paths.forEach(p=>{const b=document.createElement('button'); b.className='chip'; b.dataset.chipPath=p.id; b.setAttribute('aria-pressed','false'); b.innerHTML=`<i class="sw" style="--c:${FAMC[p.family]}"></i><span class="t"></span>`; b.addEventListener('click',()=>{state.isolate=state.isolate===p.id?null:p.id; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.chipPath===state.isolate))); if(state.isolate){ state.focus=null; st.classed('sel',false); drawEdges(); inspectPath(p); pcHighlight(null);} else if(!state.focus){ inspectEmpty(); } dimming();}); chipsWrap.appendChild(b);});
 if(window.__placeZoom)window.__placeZoom();   // the zoom window sits at the end of the paths row (desktop) — chips exist now
 const lensSel=document.getElementById('lens'); Object.keys(LENSES).forEach(k=>{const o=document.createElement('option'); o.value=k; lensSel.appendChild(o);}); lensSel.addEventListener('change',()=>{state.lens=lensSel.value; state.lensFilter=null; applyLens(); dimming();});
-document.getElementById('tg-conf').addEventListener('click',ev=>{state.showConf=!state.showConf; ev.currentTarget.setAttribute('aria-pressed',String(state.showConf)); drawEdges();});
-document.getElementById('tg-rep').addEventListener('click',ev=>{state.showRep=!state.showRep; ev.currentTarget.setAttribute('aria-pressed',String(state.showRep)); drawEdges();});
-document.getElementById('tg-req').addEventListener('click',ev=>{state.showReq=!state.showReq; ev.currentTarget.setAttribute('aria-pressed',String(state.showReq)); drawEdges();});
+document.getElementById('tg-conf').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showConf=!state.showConf; ev.currentTarget.setAttribute('aria-pressed',String(state.showConf)); drawEdges();});
+document.getElementById('tg-rep').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showRep=!state.showRep; ev.currentTarget.setAttribute('aria-pressed',String(state.showRep)); drawEdges();});
+document.getElementById('tg-req').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showReq=!state.showReq; ev.currentTarget.setAttribute('aria-pressed',String(state.showReq)); drawEdges();});
 document.getElementById('tg-reset').addEventListener('click',()=>{state.isolate=null; state.showConf=state.showRep=state.showReq=false; ['tg-conf','tg-rep','tg-req'].forEach(i=>document.getElementById(i).setAttribute('aria-pressed','false')); chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false')); select(null);});
 // ---------- zoom: rendered width/height only, viewBox untouched (so the map stays crisp and text stays text)
 const ZSTEPS=[0.5,0.6,0.7,0.85,1,1.25,1.5,2];   // the − / + buttons walk these
@@ -295,18 +298,22 @@ function zoomStep(d){ let i=0; for(let k=1;k<ZSTEPS.length;k++){ if(Math.abs(ZST
   if(zo)zo.addEventListener('click',()=>zoomStep(-1));
   // fit width: a first pass can leave a horizontal bar when the vertical scrollbar appears (or vanishes) at the new
   // height and changes clientWidth; measure again after layout and settle on the width that actually fits.
-  function fitWidth(){ for(let k=0;k<3;k++){ applyZoom((wrap.clientWidth-2)/W,true); if(wrap.scrollWidth<=wrap.clientWidth)break; } wrap.scrollLeft=0; }
+  // scrollbar-aware fits: compute from the box that will exist at the target zoom, so pressing again changes nothing
+  function sbSize(){ const d=document.createElement('div'); d.style.cssText='position:absolute;top:-9999px;left:-9999px;width:100px;height:100px;overflow:scroll;visibility:hidden'; document.body.appendChild(d); const r={w:d.offsetWidth-d.clientWidth,h:d.offsetHeight-d.clientHeight}; d.remove(); return r; }
+  function box(){ const cs=getComputedStyle(wrap); const sb=sbSize(); const bw=(parseFloat(cs.borderLeftWidth)||0)+(parseFloat(cs.borderRightWidth)||0), bh=(parseFloat(cs.borderTopWidth)||0)+(parseFloat(cs.borderBottomWidth)||0);
+    const w0=wrap.offsetWidth-bw; let h0=parseFloat(cs.maxHeight); if(!(h0>0))h0=wrap.offsetHeight-bh; return {w0:w0,h0:h0,sb:sb}; }
+  function fitWidth(){ const b=box(); let z=(b.w0-2)/W; if(Math.floor(H*z)>b.h0) z=(b.w0-b.sb.w-2)/W; applyZoom(z,false); wrap.scrollLeft=0; }
   if(zf)zf.addEventListener('click',fitWidth);
-  // fit height: the whole map inside the wrapper's current height (after 'top' that is nearly the full window)
-  function fitHeight(){ for(let k=0;k<3;k++){ applyZoom((wrap.clientHeight-2)/H,true); if(wrap.scrollHeight<=wrap.clientHeight)break; } wrap.scrollTop=0; }
+  function fitHeight(){ const b=box(); let z=(b.h0-2)/H; if(Math.floor(W*z)>b.w0) z=(b.h0-b.sb.h-2)/H; applyZoom(z,false); wrap.scrollTop=0; }
   const zfh=document.getElementById('zoom-fith'); if(zfh)zfh.addEventListener('click',fitHeight);
-  // align top: scroll the page so the map's top edge sits at the top of the window (under the page bar, if any) and let the map
-  // use the full window height; the wrapper keeps that height until the window is resized or the map is collapsed
+  // align top: the map *header* (the bar with the controls and the zoom window) goes to the top of the window and the map
+  // takes the rest of the height; the wrapper keeps that height until the window is resized
   function pageBarH(){ const b=document.querySelector('.mobilebar'); return (b&&getComputedStyle(b).position==='sticky'&&b.offsetParent)?b.offsetHeight:0; }
-  function alignTop(){ const off=pageBarH()+4; wrap.classList.add('tall'); const h=Math.max(300,window.innerHeight-off-4); wrap.style.maxHeight=h+'px';
-    const y=wrap.getBoundingClientRect().top+window.pageYOffset-off; window.scrollTo({top:Math.max(0,y),behavior:'smooth'}); }
+  function tallHeight(){ const off=pageBarH()+4; const bar=document.getElementById('mapbar'); const gap=bar?(wrap.getBoundingClientRect().top-bar.getBoundingClientRect().top):0; return Math.max(300,window.innerHeight-off-gap-6); }
+  function alignTop(){ const off=pageBarH()+4; const bar=document.getElementById('mapbar')||wrap; wrap.classList.add('tall'); wrap.style.maxHeight=tallHeight()+'px';
+    const y=bar.getBoundingClientRect().top+window.pageYOffset-off; window.scrollTo({top:Math.max(0,y),behavior:'smooth'}); }
   const zt=document.getElementById('zoom-top'); if(zt)zt.addEventListener('click',alignTop);
-  window.addEventListener('resize',()=>{ if(wrap.classList.contains('tall')){ const off=pageBarH()+4; wrap.style.maxHeight=Math.max(300,window.innerHeight-off-4)+'px'; } });
+  window.addEventListener('resize',()=>{ if(wrap.classList.contains('tall')){ wrap.style.maxHeight=tallHeight()+'px'; } });
   if(z1)z1.addEventListener('click',()=>applyZoom(1,true));
   const zl=document.getElementById('zoomlvl');
   if(zl){ const commit=()=>{ const v=parseInt(String(zl.value).replace(/[^0-9]/g,''),10); if(!isNaN(v)&&v>0)applyZoom(v/100,true); zl.value=Math.round((state.zoom||1)*100)+'%'; };
@@ -318,6 +325,20 @@ function zoomStep(d){ let i=0; for(let k=1;k<ZSTEPS.length;k++){ if(Math.abs(ZST
   let z=1;
   try{ if(window.matchMedia('(max-width:600px)').matches){ const t=wrap.querySelector('g.station text'); const fs=t?(parseFloat(getComputedStyle(t).fontSize)||11):11; z=(fs*0.85>=10)?0.85:1; } }catch(e){}
   applyZoom(z,false); })();
+// collapsible map bar: one line with a summary of the current selection and the zoom window
+(function(){ const bar=document.getElementById('mapbar'), tog=document.getElementById('bartog'), sum=document.getElementById('barsum'); if(!bar||!tog||!sum)return; const KEY='qmap.barcollapsed';
+  function summary(){ const L=lang(); const parts=[];
+    if(state.isolate){ const p=PATH[state.isolate]; parts.push(`<i class="sw" style="background:${FAMC[p.family]}"></i><b>${esc(p[L])}</b>`); } else parts.push(T('all paths','все пути'));
+    if(state.lens&&state.lens!=='family'){ const lz=LENSES[state.lens]; parts.push(T('lens','линза')+': <b>'+esc(lz?(lz[L]||lz.en||state.lens):state.lens)+'</b>'+(state.lensFilter!=null?' = <b>'+esc(String(state.lensFilter))+'</b>':'')); }
+    const ed=[]; if(state.showReq)ed.push(T('requires','требует')); if(state.showRep)ed.push(T('alternatives','альтернативы')); if(state.showConf)ed.push(T('conflicts','конфликты')); if(ed.length)parts.push(T('edges','рёбра')+': '+ed.join(', '));
+    if(state.focus)parts.push(T('station','станция')+': <b>'+esc(NODE[state.focus][L])+'</b>');
+    sum.innerHTML=parts.join(' · '); }
+  function setC(c){ bar.classList.toggle('collapsed',c); tog.setAttribute('aria-expanded',String(!c)); tog.querySelector('.when-open').hidden=c; tog.querySelector('.when-closed').hidden=!c; sum.hidden=!c; if(c)summary(); try{localStorage.setItem(KEY,c?'1':'0');}catch(e){} }
+  window.__barSummary=()=>{ if(bar.classList.contains('collapsed'))summary(); };
+  let c=false; try{c=localStorage.getItem(KEY)==='1';}catch(e){}
+  setC(c); tog.addEventListener('click',()=>setC(!bar.classList.contains('collapsed')));
+  document.querySelectorAll('[data-setlang]').forEach(b=>b.addEventListener('click',()=>setTimeout(()=>{ if(bar.classList.contains('collapsed'))summary(); },0)));
+})();
 // ---------- parallel coordinates
 const pcHost=document.getElementById('pc');
 const PCW=1100, PCH=300, PX0=70, PX1=PCW-30, PY0=34, PY1=PCH-46;
