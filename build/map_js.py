@@ -285,7 +285,7 @@ function applyZoom(z,keepCentre){
   const old=state.zoom||1; let fx=0,fy=0;
   if(keepCentre){ fx=(wrap.scrollLeft+wrap.clientWidth/2)/(W*old); fy=(wrap.scrollTop+wrap.clientHeight/2)/(H*old); }
   state.zoom=z; svg.attr('width',Math.floor(W*z)).attr('height',Math.floor(H*z));
-  const el=document.getElementById('zoomlvl'); if(el)el.textContent=Math.round(z*100)+'%';
+  const el=document.getElementById('zoomlvl'); if(el&&document.activeElement!==el)el.value=Math.round(z*100)+'%';
   if(keepCentre){ wrap.scrollLeft=Math.max(0,fx*W*z-wrap.clientWidth/2); wrap.scrollTop=Math.max(0,fy*H*z-wrap.clientHeight/2); }
 }
 function zoomStep(d){ let i=0; for(let k=1;k<ZSTEPS.length;k++){ if(Math.abs(ZSTEPS[k]-state.zoom)<Math.abs(ZSTEPS[i]-state.zoom))i=k; } applyZoom(ZSTEPS[Math.max(0,Math.min(ZSTEPS.length-1,i+d))],true); }
@@ -297,6 +297,12 @@ function zoomStep(d){ let i=0; for(let k=1;k<ZSTEPS.length;k++){ if(Math.abs(ZST
   function fitWidth(){ for(let k=0;k<3;k++){ applyZoom((wrap.clientWidth-2)/W,true); if(wrap.scrollWidth<=wrap.clientWidth)break; } wrap.scrollLeft=0; }
   if(zf)zf.addEventListener('click',fitWidth);
   if(z1)z1.addEventListener('click',()=>applyZoom(1,true));
+  const zl=document.getElementById('zoomlvl');
+  if(zl){ const commit=()=>{ const v=parseInt(String(zl.value).replace(/[^0-9]/g,''),10); if(!isNaN(v)&&v>0)applyZoom(v/100,true); zl.value=Math.round((state.zoom||1)*100)+'%'; };
+    zl.addEventListener('focus',()=>{ zl.value=String(Math.round((state.zoom||1)*100)); try{zl.select();}catch(e){} });
+    zl.addEventListener('keydown',ev=>{ if(ev.key==='Enter'){ev.preventDefault(); commit(); zl.blur();} else if(ev.key==='Escape'){ev.preventDefault(); zl.value=Math.round((state.zoom||1)*100)+'%'; zl.blur();} else if(ev.key==='ArrowUp'||ev.key==='ArrowDown'){ ev.preventDefault(); const cur=parseInt(String(zl.value).replace(/[^0-9]/g,''),10)||Math.round((state.zoom||1)*100); const nv=Math.max(Math.round(ZMIN*100),Math.min(Math.round(ZMAX*100),cur+(ev.key==='ArrowUp'?5:-5))); applyZoom(nv/100,true); zl.value=String(Math.round((state.zoom||1)*100)); } });
+    zl.addEventListener('input',()=>{ const c=String(zl.value).replace(/[^0-9]/g,''); if(c!==zl.value)zl.value=c; });
+    zl.addEventListener('blur',commit); }
   // phones: 0.85 only if station labels stay ≥ 10 px at that scale, otherwise 1.0
   let z=1;
   try{ if(window.matchMedia('(max-width:600px)').matches){ const t=wrap.querySelector('g.station text'); const fs=t?(parseFloat(getComputedStyle(t).fontSize)||11):11; z=(fs*0.85>=10)?0.85:1; } }catch(e){}

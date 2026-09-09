@@ -8,6 +8,7 @@ CSS = r"""
   --lens1:#CDE2FB; --lens2:#86B6EF; --lens3:#3987E5; --lens4:#1C5CAB;
   --shadow:0 1px 2px rgba(22,32,43,.06), 0 8px 24px rgba(22,32,43,.06);
   --surface-t0:rgba(255,255,255,0);   /* fully transparent twin of --surface (fade masks) */
+  --surface-t85:rgba(255,255,255,.85); /* translucent twin (zoom row) */
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
@@ -19,6 +20,8 @@ CSS = r"""
     --lens1:#184F95; --lens2:#256ABF; --lens3:#5598E7; --lens4:#9EC5F4;
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
     --surface-t0:rgba(21,29,38,0);
+  --surface-t85:rgba(21,29,38,.85);
+    --surface-t85:rgba(21,29,38,.85);
   }
 }
 :root[data-theme="dark"]{
@@ -466,23 +469,23 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
 @media (prefers-reduced-motion:no-preference){.station rect.box,.pathline,.altstub,.pcline{transition:opacity .25s ease}}
 @media print{.mapbar,.controls,.mobilebar,.tocdrawer,.tocbackdrop{display:none}.mapwrap{max-height:none;overflow:visible}#app{max-width:none}}
 
-/* map zoom control — a sticky overlay pinned to the top-right corner of the map viewport (all widths) */
-.zoombar{position:sticky;top:0;left:0;height:0;overflow:visible;z-index:4;pointer-events:none}
-.zoomctl{position:absolute;right:10px;top:10px;display:inline-flex;align-items:center;gap:2px;padding:3px;border:1px solid var(--line);border-radius:9px;background:var(--surface);box-shadow:var(--shadow);pointer-events:auto;opacity:.94}
-.zoomctl:hover{opacity:1}
-@supports (backdrop-filter:blur(6px)) or (-webkit-backdrop-filter:blur(6px)){.zoomctl{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}}
+/* map zoom row — the first line of the map: a translucent strip pinned to the top of the map viewport, controls at the right;
+   it sits over the column-header band, not over the stations; on ≤1024 px it moves to the bottom edge (the page bar covers the top) */
+.zoombar{position:sticky;top:0;left:0;z-index:4;height:34px;display:flex;align-items:center;justify-content:flex-end;padding:0 8px;box-sizing:border-box;background:var(--surface-t85);border-bottom:1px solid var(--rule2);pointer-events:none}
+@supports (backdrop-filter:blur(6px)) or (-webkit-backdrop-filter:blur(6px)){.zoombar{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}}
+.zoombar.bottom{top:auto;bottom:0;border-bottom:0;border-top:1px solid var(--rule2)}
+.zoomctl{display:inline-flex;align-items:center;gap:2px;pointer-events:auto}
 .zoomctl .zb{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:26px;min-width:26px;padding:0 6px;border:0;border-radius:6px;background:transparent;color:var(--ink);font:600 12px/1 "JetBrains Mono",monospace;cursor:pointer}
-.zoomctl .zb:hover{background:var(--bg2,rgba(127,127,127,.14))}
+.zoomctl .zb:hover{background:var(--surface2)}
 .zoomctl .zb:active{transform:translateY(1px)}
-.zoomctl .zb:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.zoomctl .zb:focus-visible,.zoomctl .zlvl:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 .zoomctl .zt{font-weight:500;font-size:11.5px;letter-spacing:.02em}
-.zoomctl .zlvl{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--muted);min-width:3.6em;text-align:center;font-variant-numeric:tabular-nums}
-.zoomctl .zsep{width:1px;height:16px;background:var(--line);margin:0 3px}
-.zoombar.bottom{top:auto;bottom:0}
-.zoombar.bottom .zoomctl{top:auto;bottom:10px}
-@media (max-width:600px){.zoomctl{right:6px;top:6px;padding:2px}.zoombar.bottom .zoomctl{top:auto;bottom:8px}.zoomctl .zb{height:30px;min-width:30px}.zoomctl .zt span{display:none}.zoomctl .zt{padding:0 5px}}
-
-
+.zoomctl .zlvl{width:4.6em;height:24px;padding:0 4px;border:1px solid var(--rule);border-radius:6px;background:var(--surface);color:var(--ink);font:500 11.5px/1 "JetBrains Mono",monospace;text-align:center;font-variant-numeric:tabular-nums;-moz-appearance:textfield}
+.zoomctl .zlvl::-webkit-outer-spin-button,.zoomctl .zlvl::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.zoomctl .zlvl:focus{border-color:var(--accent);outline:none}
+.zoomctl .zsep{width:1px;height:16px;background:var(--rule);margin:0 3px}
+.zoomctl .zhint{font-size:10.5px;color:var(--muted);margin-right:6px;letter-spacing:.04em;text-transform:uppercase}
+@media (max-width:600px){.zoombar{height:38px;padding:0 6px}.zoomctl .zb{height:30px;min-width:30px}.zoomctl .zt span{display:none}.zoomctl .zt{padding:0 5px}.zoomctl .zhint{display:none}}
 /* beta stamp (editions.py STATUS='beta'): visible but quiet */
 .beta{display:inline-block;padding:0 6px;border-radius:999px;border:1px solid var(--accent);color:var(--accent);font:600 10.5px/16px "JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;vertical-align:1px}
 .pubmeta .doi{font-family:"JetBrains Mono",monospace;color:var(--muted);border-bottom:1px dotted var(--line);cursor:help}
