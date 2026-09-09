@@ -193,7 +193,7 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .edge.requires{stroke:var(--ink);opacity:.9}
 .edge.replaces{stroke:var(--ink2);stroke-dasharray:5 4}
 .edge.conflicts{stroke:var(--crit);stroke-dasharray:3 3;stroke-width:2}
-.edge.out{opacity:.35}   /* isolated path: a toggled relation that reaches outside the path */
+.edge.out{opacity:.35}   /* selection: a toggled relation that reaches outside the selected stations */
 .rel{padding-left:14px;text-indent:-14px;line-height:1.35}
 .badge{stroke:none}
 .hatch{fill:url(#hatch)}
@@ -40887,7 +40887,7 @@ function applyLens(){ const k=state.lens; const leg=document.getElementById('len
   pcLines.selectAll('path').attr('stroke',d=>lensed?(lensColor(d,k)||'var(--mid)'):(d._fam?FAMC[d._fam]:'var(--mid)'));
   const items=lensItems(k).filter(it=>it.n>0);
   leg.innerHTML='<span class="lbl">'+T('lens legend · click a value to keep only those stations','легенда линзы · клик по значению оставляет только эти станции')+'</span>'+items.map(it=>`<button type="button" class="k lk" data-lv="${it.v}" aria-pressed="${String(state.lensFilter===it.v)}"><i class="sw" style="background:${it.c||'transparent'};border:1px solid ${it.c?it.c:'var(--mid)'}"></i>${esc(it.t)} <span class="cnt">${it.n}</span></button>`).join('')+(state.lensFilter!=null?`<button type="button" class="k lk clear" data-lv="">${T('clear filter','сбросить фильтр')} ✕</button>`:'');
-  leg.querySelectorAll('[data-lv]').forEach(b=>{ b.addEventListener('click',()=>{ const v=b.dataset.lv; state.lensFilter=(v===''||state.lensFilter===v)?null:v; applyLens(); dimming(); pcHighlight(state.focus); });
+  leg.querySelectorAll('[data-lv]').forEach(b=>{ b.addEventListener('click',()=>{ const v=b.dataset.lv; state.lensFilter=(v===''||state.lensFilter===v)?null:v; applyLens(); drawEdges(); dimming(); pcHighlight(state.focus); });
     b.addEventListener('mouseenter',()=>{ const v=b.dataset.lv; if(v==='')return; st.classed('peek',d=>k==='family'?d._fams.includes(v):lensValue(d,k)===v); });
     b.addEventListener('mouseleave',()=>{ st.classed('peek',false); }); });
   if(state.focus) inspect(NODE[state.focus]);
@@ -40919,10 +40919,13 @@ function dimming(){ const f=state.focus, iso=state.isolate;
 function edgePath(a,b){ const dx=b.cx-a.cx; if(Math.abs(dx)<1){ const x=a.cx+NW/2; return `M${a.cx+NW/2-2},${a.cy} C${x+22},${a.cy} ${x+22},${b.cy} ${b.cx+NW/2-2},${b.cy}`; }
   const sx=dx>0?a.cx+NW/2:a.cx-NW/2, tx=dx>0?b.cx-NW/2:b.cx+NW/2; const mx=(sx+tx)/2; return `M${sx},${a.cy} C${mx},${a.cy} ${mx},${b.cy} ${tx},${b.cy}`; }
 function pathMembers(pid){ return new Set(Object.values(PATH[pid].slots).flat()); }
+// the selection = the isolated path's stations ∩ the lens-filter stations; null when nothing is selected
+function selectedSet(){ const iso=state.isolate, lf=state.lensFilter!=null; if(!iso&&!lf)return null; let S=iso?pathMembers(iso):new Set(G.nodes.map(n=>n.id)); if(lf)S=new Set([...S].filter(id=>nodeMatchesFilter(NODE[id]))); return S; }
 function drawEdges(){ gEdges.selectAll('*').remove(); const f=state.focus, iso=state.isolate;
-  // an isolated path shows every relation among its own stations (dependencies, alternatives, conflicts) without any toggle;
-  // a toggle then adds that type's relations that reach outside the path (drawn quieter); a focused station always shows all of its own
-  const mem=iso&&!f?pathMembers(iso):null;
+  // a selection (isolated path, lens filter, or both) shows every relation among the selected stations (dependencies, alternatives,
+  // conflicts) without any toggle; a toggle then adds that type's relations that reach outside the selection (drawn quieter);
+  // a focused station always shows all of its own
+  const mem=f?null:selectedSet();
   const es=G.edges.filter(e=>{ if(e.type==='defines'||e.type==='transfers')return false;
     if(f)return (e.src===f||e.dst===f)||(e.type==='conflicts'&&state.showConf)||(e.type==='replaces'&&state.showRep)||(e.type==='requires'&&state.showReq);
     const on=(e.type==='conflicts'&&state.showConf)||(e.type==='replaces'&&state.showRep)||(e.type==='requires'&&state.showReq);
@@ -40976,7 +40979,7 @@ function inspectPath(p){ const L=lang(); insp.hidden=false;
    ${(R.notes||[]).length?`<dt>${T('notes','примечания')}</dt><dd class="empty">${esc((R.notes||[]).join('; '))}</dd>`:''}
   </dl><div class="empty" style="margin-top:4px">${T('t_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — a sum of the round\'s phases, from the code node, the coordinates and the standard records; the measured cycle is the check.','t_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — сумма фаз раунда из узла кода, координат и стандартных рекордов; измеренный цикл — проверка.')}</div></div>
   <div class="space"><h4>${T('Stations by layer — primary, then alternates','Станции по слоям — основная, затем альтернативы')}</h4><table class="ptab">${rows}</table></div>
-  <div class="space"><h4>${T('Relations within the path — drawn on the map','Связи внутри пути — показаны на карте')}</h4>${relHTML}<div class="empty" style="margin-top:3px">${T('the edge toggles add each type\'s relations that reach outside the path','переключатели рёбер добавляют связи этого типа, выходящие за пределы пути')}</div></div>
+  <div class="space"><h4>${T('Relations within the path — drawn on the map','Связи внутри пути — показаны на карте')}</h4>${relHTML}<div class="empty" style="margin-top:3px">${T('the edge toggles add each type\'s relations that reach outside the selection','переключатели рёбер добавляют связи этого типа, выходящие за пределы выбора')}</div></div>
   <div class="space"><h4>${T('Reading','Чтение')}</h4><div>◎ ${T('hubs','хабы')}: ${hubs.length?hubs.map(id=>`<a href="#" data-goto="${id}">${esc(NODE[id][L])}</a>`).join(', '):'—'}</div><div>⤢ ${T('off-diagonal','внедиагональные')}: ${offs.length?offs.map(id=>`<a href="#" data-goto="${id}">${esc(NODE[id][L])}</a>`).join(', '):'—'}</div><div>∅ ${T('empty slots','пустые слоты')}: ${empties.length?empties.map(id=>`<a href="#" data-goto="${id}">${esc(NODE[id][L])}</a>`).join(', '):'—'}</div></div>`;
   insp.querySelectorAll('[data-goto]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); select(a.dataset.goto); const m=NODE[a.dataset.goto]; scrollToNode(m);}));
   insp.querySelector('[data-close]').addEventListener('click',()=>{state.isolate=null; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false')); inspectEmpty(); drawEdges(); dimming();}); wireCard();
@@ -41015,7 +41018,7 @@ const bar=document.getElementById('mapbar');
 const chipsWrap=document.getElementById('pathchips');
 G.paths.forEach(p=>{const b=document.createElement('button'); b.className='chip'; b.dataset.chipPath=p.id; b.setAttribute('aria-pressed','false'); b.innerHTML=`<i class="sw" style="--c:${FAMC[p.family]}"></i><span class="t"></span>`; b.addEventListener('click',()=>{state.isolate=state.isolate===p.id?null:p.id; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.chipPath===state.isolate))); if(state.isolate){ state.focus=null; st.classed('sel',false); inspectPath(p); pcHighlight(null);} else if(!state.focus){ inspectEmpty(); } drawEdges(); dimming();}); chipsWrap.appendChild(b);});
 if(window.__placeZoom)window.__placeZoom();   // the zoom window sits at the end of the paths row (desktop) — chips exist now
-const lensSel=document.getElementById('lens'); Object.keys(LENSES).forEach(k=>{const o=document.createElement('option'); o.value=k; lensSel.appendChild(o);}); lensSel.addEventListener('change',()=>{state.lens=lensSel.value; state.lensFilter=null; applyLens(); dimming();});
+const lensSel=document.getElementById('lens'); Object.keys(LENSES).forEach(k=>{const o=document.createElement('option'); o.value=k; lensSel.appendChild(o);}); lensSel.addEventListener('change',()=>{state.lens=lensSel.value; state.lensFilter=null; applyLens(); drawEdges(); dimming();});
 document.getElementById('tg-conf').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showConf=!state.showConf; ev.currentTarget.setAttribute('aria-pressed',String(state.showConf)); drawEdges();});
 document.getElementById('tg-rep').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showRep=!state.showRep; ev.currentTarget.setAttribute('aria-pressed',String(state.showRep)); drawEdges();});
 document.getElementById('tg-req').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showReq=!state.showReq; ev.currentTarget.setAttribute('aria-pressed',String(state.showReq)); drawEdges();});

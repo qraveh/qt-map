@@ -177,7 +177,7 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .edge.requires{stroke:var(--ink);opacity:.9}
 .edge.replaces{stroke:var(--ink2);stroke-dasharray:5 4}
 .edge.conflicts{stroke:var(--crit);stroke-dasharray:3 3;stroke-width:2}
-.edge.out{opacity:.35}   /* isolated path: a toggled relation that reaches outside the path */
+.edge.out{opacity:.35}   /* selection: a toggled relation that reaches outside the selected stations */
 .rel{padding-left:14px;text-indent:-14px;line-height:1.35}
 .badge{stroke:none}
 .hatch{fill:url(#hatch)}
