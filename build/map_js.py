@@ -193,13 +193,22 @@ function dimming(){ const f=state.focus, iso=state.isolate;
 }
 function edgePath(a,b){ const dx=b.cx-a.cx; if(Math.abs(dx)<1){ const x=a.cx+NW/2; return `M${a.cx+NW/2-2},${a.cy} C${x+22},${a.cy} ${x+22},${b.cy} ${b.cx+NW/2-2},${b.cy}`; }
   const sx=dx>0?a.cx+NW/2:a.cx-NW/2, tx=dx>0?b.cx-NW/2:b.cx+NW/2; const mx=(sx+tx)/2; return `M${sx},${a.cy} C${mx},${a.cy} ${mx},${b.cy} ${tx},${b.cy}`; }
-function drawEdges(){ gEdges.selectAll('*').remove(); const f=state.focus; const es=G.edges.filter(e=>{ if(e.type==='defines'||e.type==='transfers')return false; if(e.type==='conflicts'&&state.showConf)return true; if(e.type==='replaces'&&state.showRep)return true; if(e.type==='requires'&&state.showReq)return true; return f&&(e.src===f||e.dst===f); });
+function pathMembers(pid){ return new Set(Object.values(PATH[pid].slots).flat()); }
+function drawEdges(){ gEdges.selectAll('*').remove(); const f=state.focus, iso=state.isolate;
+  // an isolated path shows every relation among its own stations (dependencies, alternatives, conflicts) without any toggle;
+  // a toggle then adds that type's relations that reach outside the path (drawn quieter); a focused station always shows all of its own
+  const mem=iso&&!f?pathMembers(iso):null;
+  const es=G.edges.filter(e=>{ if(e.type==='defines'||e.type==='transfers')return false;
+    if(f)return (e.src===f||e.dst===f)||(e.type==='conflicts'&&state.showConf)||(e.type==='replaces'&&state.showRep)||(e.type==='requires'&&state.showReq);
+    const on=(e.type==='conflicts'&&state.showConf)||(e.type==='replaces'&&state.showRep)||(e.type==='requires'&&state.showReq);
+    if(!mem)return on;
+    const a=mem.has(e.src), b=mem.has(e.dst); if(a&&b)return true; return on&&(a||b); });
   const ETYPE={requires:['requires','требует'],replaces:['is an alternative to','— альтернатива для'],conflicts:['conflicts with','конфликтует с']};
   const edgeTip=e=>{const L=lang(); const a=NODE[e.src][L], b=NODE[e.dst][L]; let h=`<b>${esc(a)}</b> ${T(...ETYPE[e.type])} <b>${esc(b)}</b>${e.any?' <span style="opacity:.7">('+T('one-of','одно из')+')</span>':''}`;
     if(e[L]) h+=`<br>${esc(e[L])}`;
     if(e.type==='conflicts'&&e.price){ h+=`<br><span class="tk">${T('price','цена')}</span> ${esc(e.price[L])}<br><span class="tk">${T('mitigation','снятие')}</span> ${esc(e.mitig[L])}<br><span class="tk">${T('status','статус')}</span> ${esc(vt('CONSTAT',e.status))} · ${e.date}`; }
     return h; };
-  const g=gEdges.selectAll('g').data(es).join('g').attr('class',e=>'edge '+e.type);
+  const g=gEdges.selectAll('g').data(es).join('g').attr('class',e=>'edge '+e.type+(mem&&!(mem.has(e.src)&&mem.has(e.dst))?' out':''));
   g.append('path').attr('class','hit').attr('d',e=>edgePath(NODE[e.src],NODE[e.dst]));
   g.append('path').attr('class','vis').attr('d',e=>edgePath(NODE[e.src],NODE[e.dst])).attr('marker-end',e=>e.type==='requires'?'url(#arr)':null);
   g.on('mousemove',(ev,e)=>{if(tipPinned)return; tip.style.display='block'; tip.classList.add('wide'); tip.innerHTML=edgeTip(e); placeTip(ev);}).on('mouseleave',()=>{if(!tipPinned)hideTip();})
@@ -226,6 +235,10 @@ function inspectPath(p){ const L=lang(); insp.hidden=false;
   const R=p.round||{}, RP=R.parts||{}, RX=p.react||{}, CO=p.coh||{}; const PN={gates:['gates','гейты'],transport:['transport','транспорт'],'1q':['1Q','1Q'],readout:['readout','считывание'],reset:['reset','сброс']};
   const fS=x=>{if(x==null)return '—'; if(x===0)return '0'; return fmtT(Math.log10(x));}; const fE=x=>x==null?'—':x.toExponential(1).replace('e+','e').replace('e-','e−');
   const hubs=[...members].filter(id=>NODE[id].hub), offs=[...members].filter(id=>NODE[id].offdiag&&NODE[id].offdiag.length), empties=[...members].filter(id=>NODE[id].status==='X');
+  const rel=G.edges.filter(e=>members.has(e.src)&&members.has(e.dst)&&(e.type==='requires'||e.type==='replaces'||e.type==='conflicts'));
+  const relRows=(type,head,glyph)=>{ const xs=rel.filter(e=>e.type===type); if(!xs.length)return ''; const nm=id=>`<a href="#" data-goto="${id}" title="${esc(NODE[id][L])}">${esc(SHORT[id]?SHORT[id][L==='en'?0:1]:NODE[id][L])}</a>`;
+    return `<div><span class="tk">${glyph} ${head} · ${xs.length}</span></div>`+xs.map(e=>`<div class="rel ${e.type}">${nm(e.src)} <span class="empty">${type==='requires'?T('requires','требует'):type==='replaces'?T('alternative to','альтернатива для'):T('conflicts with','конфликтует с')}</span> ${nm(e.dst)}${e.any?' <span class="empty">('+T('one-of','одно из')+')</span>':''}${type==='conflicts'&&e.status?' <span class="empty">· '+esc(vt('CONSTAT',e.status))+'</span>':''}</div>`).join(''); };
+  const relHTML=rel.length?relRows('requires',T('dependencies','зависимости'),'→')+relRows('conflicts',T('conflicts','конфликты'),'✕')+relRows('replaces',T('alternatives','альтернативы'),'⇄'):`<div class="empty">${T('no recorded relations among these stations','между этими станциями связей не записано')}</div>`;
   insp.innerHTML=`${gripHTML()}<h3><i class="sw" style="--c:${FAMC[p.family]}"></i> ${esc(p[L])}</h3><div class="meta">${T('platform path','путь платформы')} · ${p.id} · ${members.size} ${T('stations','станций')}</div>
   <div class="space"><h4>${T('Actors & goals','Акторы и цели')}</h4><div>${esc(p.actors)}</div><div class="empty">${T('goals','цели')}: ${esc(p.goals)}</div></div>
   <div class="space"><h4>${T('Derived clocks','Выведенные такты')}</h4><dl>
@@ -238,9 +251,10 @@ function inspectPath(p){ const L=lang(); insp.hidden=false;
    ${(R.notes||[]).length?`<dt>${T('notes','примечания')}</dt><dd class="empty">${esc((R.notes||[]).join('; '))}</dd>`:''}
   </dl><div class="empty" style="margin-top:4px">${T('t_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — a sum of the round\'s phases, from the code node, the coordinates and the standard records; the measured cycle is the check.','t_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — сумма фаз раунда из узла кода, координат и стандартных рекордов; измеренный цикл — проверка.')}</div></div>
   <div class="space"><h4>${T('Stations by layer — primary, then alternates','Станции по слоям — основная, затем альтернативы')}</h4><table class="ptab">${rows}</table></div>
+  <div class="space"><h4>${T('Relations within the path — drawn on the map','Связи внутри пути — показаны на карте')}</h4>${relHTML}<div class="empty" style="margin-top:3px">${T('the edge toggles add each type\'s relations that reach outside the path','переключатели рёбер добавляют связи этого типа, выходящие за пределы пути')}</div></div>
   <div class="space"><h4>${T('Reading','Чтение')}</h4><div>◎ ${T('hubs','хабы')}: ${hubs.length?hubs.map(id=>`<a href="#" data-goto="${id}">${esc(NODE[id][L])}</a>`).join(', '):'—'}</div><div>⤢ ${T('off-diagonal','внедиагональные')}: ${offs.length?offs.map(id=>`<a href="#" data-goto="${id}">${esc(NODE[id][L])}</a>`).join(', '):'—'}</div><div>∅ ${T('empty slots','пустые слоты')}: ${empties.length?empties.map(id=>`<a href="#" data-goto="${id}">${esc(NODE[id][L])}</a>`).join(', '):'—'}</div></div>`;
   insp.querySelectorAll('[data-goto]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); select(a.dataset.goto); const m=NODE[a.dataset.goto]; scrollToNode(m);}));
-  insp.querySelector('[data-close]').addEventListener('click',()=>{state.isolate=null; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false')); inspectEmpty(); dimming();}); wireCard();
+  insp.querySelector('[data-close]').addEventListener('click',()=>{state.isolate=null; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false')); inspectEmpty(); drawEdges(); dimming();}); wireCard();
 }
 function inspectEmpty(){ insp.hidden=true; insp.innerHTML=''; }
 function inspect(n){ const L=lang(); const c=n.c; const rows=[[T('(a) carrier affinity','(a) сродство носителя'),vt('AFF',n.aff),'aff'],
@@ -274,7 +288,7 @@ document.querySelectorAll('#mapbar [data-goto]').forEach(a=>a.addEventListener('
 // ---------- controls
 const bar=document.getElementById('mapbar');
 const chipsWrap=document.getElementById('pathchips');
-G.paths.forEach(p=>{const b=document.createElement('button'); b.className='chip'; b.dataset.chipPath=p.id; b.setAttribute('aria-pressed','false'); b.innerHTML=`<i class="sw" style="--c:${FAMC[p.family]}"></i><span class="t"></span>`; b.addEventListener('click',()=>{state.isolate=state.isolate===p.id?null:p.id; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.chipPath===state.isolate))); if(state.isolate){ state.focus=null; st.classed('sel',false); drawEdges(); inspectPath(p); pcHighlight(null);} else if(!state.focus){ inspectEmpty(); } dimming();}); chipsWrap.appendChild(b);});
+G.paths.forEach(p=>{const b=document.createElement('button'); b.className='chip'; b.dataset.chipPath=p.id; b.setAttribute('aria-pressed','false'); b.innerHTML=`<i class="sw" style="--c:${FAMC[p.family]}"></i><span class="t"></span>`; b.addEventListener('click',()=>{state.isolate=state.isolate===p.id?null:p.id; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.chipPath===state.isolate))); if(state.isolate){ state.focus=null; st.classed('sel',false); inspectPath(p); pcHighlight(null);} else if(!state.focus){ inspectEmpty(); } drawEdges(); dimming();}); chipsWrap.appendChild(b);});
 if(window.__placeZoom)window.__placeZoom();   // the zoom window sits at the end of the paths row (desktop) — chips exist now
 const lensSel=document.getElementById('lens'); Object.keys(LENSES).forEach(k=>{const o=document.createElement('option'); o.value=k; lensSel.appendChild(o);}); lensSel.addEventListener('change',()=>{state.lens=lensSel.value; state.lensFilter=null; applyLens(); dimming();});
 document.getElementById('tg-conf').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showConf=!state.showConf; ev.currentTarget.setAttribute('aria-pressed',String(state.showConf)); drawEdges();});
