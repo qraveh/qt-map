@@ -76,7 +76,14 @@ st.each(function(d){const g=d3.select(this); const fp=[...new Set((prim[d.id]||[
   fa.forEach(f=>{g.append('rect').attr('class','badge').attr('x',x+.5).attr('y',NH-8.5).attr('width',6).attr('height',3).attr('rx',1).attr('fill','none').attr('stroke',FAMC[f]).attr('stroke-width',1); x+=9;}); });
 // tooltip
 const tip=document.getElementById('maptip');
-function placeTip(ev){ const r=wrap.getBoundingClientRect(); let x=ev.clientX-r.left+wrap.scrollLeft+14, y=ev.clientY-r.top+wrap.scrollTop+14; const tw=tip.offsetWidth, th=tip.offsetHeight; if(ev.clientX-r.left+14+tw>wrap.clientWidth) x=ev.clientX-r.left+wrap.scrollLeft-tw-14; if(ev.clientY-r.top+14+th>wrap.clientHeight) y=ev.clientY-r.top+wrap.scrollTop-th-14; tip.style.left=Math.max(wrap.scrollLeft,x)+'px'; tip.style.top=Math.max(wrap.scrollTop,y)+'px'; }
+// ≤1024 the inspector is a bottom sheet lying over the lower part of the map; report its top edge
+function sheetCover(){ const i=document.getElementById('insp'); if(!i||i.hidden)return null;
+  const wr=wrap.getBoundingClientRect(), ir=i.getBoundingClientRect();
+  if(ir.width<10||ir.height<10)return null;
+  return (ir.left<=wr.left+2&&ir.right>=wr.right-2&&ir.top>wr.top&&ir.top<wr.bottom)?ir.top:null; }
+function placeTip(ev){ const r=wrap.getBoundingClientRect(); let x=ev.clientX-r.left+wrap.scrollLeft+14, y=ev.clientY-r.top+wrap.scrollTop+14; const tw=tip.offsetWidth, th=tip.offsetHeight; if(ev.clientX-r.left+14+tw>wrap.clientWidth) x=ev.clientX-r.left+wrap.scrollLeft-tw-14; if(ev.clientY-r.top+14+th>wrap.clientHeight) y=ev.clientY-r.top+wrap.scrollTop-th-14;
+  const sc=sheetCover(); if(sc!=null){ const maxY=sc-r.top+wrap.scrollTop-th-8; if(y>maxY)y=maxY; }
+  tip.style.left=Math.max(wrap.scrollLeft,x)+'px'; tip.style.top=Math.max(wrap.scrollTop,y)+'px'; }
 function stationTip(d){ const L=lang(); const k=state.lens; let h=`<b>${esc(d[L])}</b> <span style="opacity:.7">${d.id}</span><br>${vt('STATUS',d.status)} · ${d.since<2030?d.since:'—'} · ${T('layer','слой')} ${d.layer}`;
   const ps=(prim[d.id]||[]), as=(alt[d.id]||[]);
   if(ps.length||as.length) h+=`<br><span class="tk">${T('lines','линии')}</span> `+ps.map(p=>`<i class="sw" style="background:${FAMC[PATH[p].family]}"></i>${esc(PATH[p][L])}`).concat(as.map(p=>`<i class="sw hollow" style="border-color:${FAMC[PATH[p].family]}"></i>${esc(PATH[p][L])} <span style="opacity:.7">(${T('alternate','альтернатива')})</span>`)).join(' · ');
@@ -84,12 +91,22 @@ function stationTip(d){ const L=lang(); const k=state.lens; let h=`<b>${esc(d[L]
   else { const c=lensColor(d,k); const v=lensValue(d,k); const lab=k==='aff'?vt('AFF',d.aff):(k==='time'?(v==='none'?T('no time','нет времени'):TBINS[+v][1]):catLabel(k,v)); h+=`<br><span class="tk">${T('lens','линза')}</span> ${esc(LENSES[k][L])}: <i class="sw" style="background:${c||'transparent'};border:1px solid ${c||'var(--bg)'}"></i>${esc(lab)}`; }
   const fl=[]; if(d.hub)fl.push('◎ '+T('hub','хаб')); if(d.offdiag&&d.offdiag.length)fl.push('⤢ '+T('off-diagonal','внедиагональный')); if(d.status==='X')fl.push('∅ '+T('empty slot','пустой слот')); if(fl.length)h+=`<br>${fl.join(' · ')}`;
   h+=`<br><span style="opacity:.6">${T('click for the card','клик — карточка')}</span>`; return h; }
-st.on('mousemove',(ev,d)=>{tip.style.display='block'; tip.classList.add('wide'); tip.innerHTML=stationTip(d); placeTip(ev);}).on('mouseleave',()=>{tip.style.display='none'; tip.classList.remove('wide');});
-st.on('click',(ev,d)=>{ev.stopPropagation(); tip.style.display='none'; select(d.id===state.focus?null:d.id);}).on('keydown',(ev,d)=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault(); select(d.id===state.focus?null:d.id);}});
+st.on('mousemove',(ev,d)=>{if(tipPinned)return; tip.style.display='block'; tip.classList.add('wide'); tip.innerHTML=stationTip(d); placeTip(ev);}).on('mouseleave',()=>{if(!tipPinned)hideTip();});
+st.on('click',(ev,d)=>{ev.stopPropagation(); unpinTip(); select(d.id===state.focus?null:d.id);}).on('keydown',(ev,d)=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault(); select(d.id===state.focus?null:d.id);}});
 svg.on('click',()=>select(null));
 document.addEventListener('keydown',ev=>{if(ev.key==='Escape')select(null);});
 // ---------- state & rendering
-const state={focus:null,isolate:null,lens:'family',lensFilter:null,showConf:false,showRep:false,showReq:false};
+const state={focus:null,isolate:null,lens:'family',lensFilter:null,showConf:false,showRep:false,showReq:false,zoom:1};
+// zoom scales the *rendered* SVG only; the viewBox and every node coordinate stay in map units,
+// so anything that scrolls the wrapper to a node must multiply that node's coordinates by state.zoom.
+function scrollToNode(m){ const z=state.zoom||1; wrap.scrollTo({left:Math.max(0,m.x*z-200),top:Math.max(0,m.y*z-200),behavior:'smooth'}); }
+function noHover(){ try{ return window.matchMedia('(hover: none)').matches; }catch(e){ return false; } }
+function hideTip(){ tip.style.display='none'; tip.classList.remove('wide'); }
+// A tip opened by a tap is "pinned": it must survive the synthetic mouse events and the edge redraw
+// that the same tap triggers. Only another tap (outside an edge) or a station click takes it down.
+let tipPinned=false;
+function unpinTip(){ tipPinned=false; hideTip(); }
+document.addEventListener('pointerdown',function(ev){ const t=ev.target; if(t&&t.closest&&t.closest('g.edge'))return; unpinTip(); },true);
 const LENSES={
  family:{en:'Platform family (paths)',ru:'Семейство платформ (пути)'},
  aff:{en:'(a) carrier affinity: natural ↔ fabricated',ru:'(a) сродство носителя: естественный ↔ изготовленный'},
@@ -177,19 +194,31 @@ function drawEdges(){ gEdges.selectAll('*').remove(); const f=state.focus; const
   const g=gEdges.selectAll('g').data(es).join('g').attr('class',e=>'edge '+e.type);
   g.append('path').attr('class','hit').attr('d',e=>edgePath(NODE[e.src],NODE[e.dst]));
   g.append('path').attr('class','vis').attr('d',e=>edgePath(NODE[e.src],NODE[e.dst])).attr('marker-end',e=>e.type==='requires'?'url(#arr)':null);
-  g.on('mousemove',(ev,e)=>{tip.style.display='block'; tip.classList.add('wide'); tip.innerHTML=edgeTip(e); placeTip(ev);}).on('mouseleave',()=>{tip.style.display='none'; tip.classList.remove('wide');})
-   .on('click',(ev,e)=>{ev.stopPropagation(); if(e.type==='conflicts'){ select(state.focus===e.src?e.dst:e.src); }}); }
+  g.on('mousemove',(ev,e)=>{if(tipPinned)return; tip.style.display='block'; tip.classList.add('wide'); tip.innerHTML=edgeTip(e); placeTip(ev);}).on('mouseleave',()=>{if(!tipPinned)hideTip();})
+   .on('click',(ev,e)=>{ev.stopPropagation(); if(e.type==='conflicts'){ select(state.focus===e.src?e.dst:e.src); }})
+   // touch (no hover): a tap on an edge shows its tip at the tap point, clamped by placeTip
+   .on('pointerdown',(ev,e)=>{ if(ev.pointerType==='mouse'&&!noHover())return; ev.stopPropagation(); tipPinned=true; tip.style.display='block'; tip.classList.add('wide'); tip.innerHTML=edgeTip(e); placeTip(ev); }); }
 // ---------- inspector
 const insp=document.getElementById('insp');
 function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
-function lk(s){ return esc(s).replace(/arXiv:\s?((?:\d{4}\.\d{4,5}|[a-z\-]+\/\d{7})(?:v\d+)?)/g,(m,id)=>`<a href="https://arxiv.org/abs/${id}" target="_blank" rel="noopener">${m}</a>`).replace(/\b(10\.\d{4,9}\/[^\s,;)]+)/g,(m,d)=>`<a href="https://doi.org/${d}" target="_blank" rel="noopener">${m}</a>`).replace(/(?<!href=")(https?:\/\/[^\s<)]+)/g,u=>`<a href="${u}" target="_blank" rel="noopener">${u}</a>`); }
+// no negative lookbehind here: Safari before 16.4 throws a SyntaxError on it and would kill the script.
+// Instead match an already-built href="…" first and pass it through unchanged.
+function lk(s){ return esc(s).replace(/arXiv:\s?((?:\d{4}\.\d{4,5}|[a-z\-]+\/\d{7})(?:v\d+)?)/g,(m,id)=>`<a href="https://arxiv.org/abs/${id}" target="_blank" rel="noopener">${m}</a>`).replace(/\b(10\.\d{4,9}\/[^\s,;)]+)/g,(m,d)=>`<a href="https://doi.org/${d}" target="_blank" rel="noopener">${m}</a>`).replace(/href="https?:\/\/[^"]*"|https?:\/\/[^\s<)]+/g,m=>m.indexOf('href="')===0?m:`<a href="${m}" target="_blank" rel="noopener">${m}</a>`); }
+// card header: drag grip + dock buttons on desktop; on ≤ 1024 the card is a bottom sheet,
+// so the dock buttons are hidden by CSS and a ⌃/⌄ button grows the sheet to 90vh instead.
+function gripHTML(){ const sheet=insp.classList.contains('sheet-max');
+  return '<div class="grip" data-grip="1">⠿ <span class="sp"></span>'+
+    '<button type="button" data-dock="left" title="dock left">⇤</button>'+
+    '<button type="button" data-dock="right" title="dock right">⇥</button>'+
+    '<button type="button" data-sheet="1" aria-pressed="'+String(sheet)+'" aria-label="expand card">'+(sheet?'⌄':'⌃')+'</button>'+
+    '<button type="button" data-close="1" aria-label="close">✕</button></div>'; }
 function inspectPath(p){ const L=lang(); insp.hidden=false;
   const members=new Set(Object.values(p.slots).flat());
   const rows=G.layers.map(l=>{const ids=p.slots[String(l.n)]||[]; return `<tr><td class="ln">${l.n} ${esc(l[L])}</td><td>${ids.length?ids.map((id,i)=>`<a href="#" data-goto="${id}" class="${i?'alt':'prim'}">${esc(NODE[id][L])}</a>`).join('<span class="empty"> · </span>'):`<span class="empty">∅ ${T('empty slot','пустой слот')}</span>`}</td></tr>`;}).join('');
   const R=p.round||{}, RP=R.parts||{}, RX=p.react||{}, CO=p.coh||{}; const PN={gates:['gates','гейты'],transport:['transport','транспорт'],'1q':['1Q','1Q'],readout:['readout','считывание'],reset:['reset','сброс']};
   const fS=x=>{if(x==null)return '—'; if(x===0)return '0'; return fmtT(Math.log10(x));}; const fE=x=>x==null?'—':x.toExponential(1).replace('e+','e').replace('e-','e−');
   const hubs=[...members].filter(id=>NODE[id].hub), offs=[...members].filter(id=>NODE[id].offdiag&&NODE[id].offdiag.length), empties=[...members].filter(id=>NODE[id].status==='X');
-  insp.innerHTML=`<div class="grip" data-grip="1">⠿ <span class="sp"></span><button type="button" data-dock="left" title="dock left">⇤</button><button type="button" data-dock="right" title="dock right">⇥</button><button type="button" data-close="1" aria-label="close">✕</button></div><h3><i class="sw" style="--c:${FAMC[p.family]}"></i> ${esc(p[L])}</h3><div class="meta">${T('platform path','путь платформы')} · ${p.id} · ${members.size} ${T('stations','станций')}</div>
+  insp.innerHTML=`${gripHTML()}<h3><i class="sw" style="--c:${FAMC[p.family]}"></i> ${esc(p[L])}</h3><div class="meta">${T('platform path','путь платформы')} · ${p.id} · ${members.size} ${T('stations','станций')}</div>
   <div class="space"><h4>${T('Actors & goals','Акторы и цели')}</h4><div>${esc(p.actors)}</div><div class="empty">${T('goals','цели')}: ${esc(p.goals)}</div></div>
   <div class="space"><h4>${T('Derived clocks','Выведенные такты')}</h4><dl>
    <dt>${T('syndrome round','раунд синдрома')}</dt><dd><b>${fS(R.total)}</b>${R.total?` · ${T('limiter','ограничитель')}: ${T(...(PN[R.limiter]||[R.limiter,R.limiter]))} · ${T('round of','раунд кода')} ${esc(R.code||'')}${R.d2?' (d₂ = '+R.d2+(R.d1?', d₁ = '+R.d1:'')+')':''}`:''}</dd>
@@ -202,7 +231,7 @@ function inspectPath(p){ const L=lang(); insp.hidden=false;
   </dl><div class="empty" style="margin-top:4px">${T('t_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — a sum of the round\'s phases, from the code node, the coordinates and the standard records; the measured cycle is the check.','t_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — сумма фаз раунда из узла кода, координат и стандартных рекордов; измеренный цикл — проверка.')}</div></div>
   <div class="space"><h4>${T('Stations by layer — primary, then alternates','Станции по слоям — основная, затем альтернативы')}</h4><table class="ptab">${rows}</table></div>
   <div class="space"><h4>${T('Reading','Чтение')}</h4><div>◎ ${T('hubs','хабы')}: ${hubs.length?hubs.map(id=>`<a href="#" data-goto="${id}">${esc(NODE[id][L])}</a>`).join(', '):'—'}</div><div>⤢ ${T('off-diagonal','внедиагональные')}: ${offs.length?offs.map(id=>`<a href="#" data-goto="${id}">${esc(NODE[id][L])}</a>`).join(', '):'—'}</div><div>∅ ${T('empty slots','пустые слоты')}: ${empties.length?empties.map(id=>`<a href="#" data-goto="${id}">${esc(NODE[id][L])}</a>`).join(', '):'—'}</div></div>`;
-  insp.querySelectorAll('[data-goto]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); select(a.dataset.goto); const m=NODE[a.dataset.goto]; wrap.scrollTo({left:Math.max(0,m.x-200),top:Math.max(0,m.y-200),behavior:'smooth'});}));
+  insp.querySelectorAll('[data-goto]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); select(a.dataset.goto); const m=NODE[a.dataset.goto]; scrollToNode(m);}));
   insp.querySelector('[data-close]').addEventListener('click',()=>{state.isolate=null; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false')); inspectEmpty(); dimming();}); wireCard();
 }
 function inspectEmpty(){ insp.hidden=true; insp.innerHTML=''; }
@@ -216,7 +245,7 @@ function inspect(n){ const L=lang(); const c=n.c; const rows=[[T('(a) carrier af
   const reqOut=G.edges.filter(e=>e.type==='requires'&&e.src===n.id), reqIn=G.edges.filter(e=>e.type==='requires'&&e.dst===n.id), rep=G.edges.filter(e=>e.type==='replaces'&&(e.src===n.id||e.dst===n.id)), con=G.edges.filter(e=>e.type==='conflicts'&&(e.src===n.id||e.dst===n.id));
   const other=(e)=>e.src===n.id?e.dst:e.src;
   const link=id=>`<a href="#" data-goto="${id}">${esc(NODE[id][L])}</a>`;
-  insp.innerHTML=`<div class="grip" data-grip="1">⠿ <span class="sp"></span><button type="button" data-dock="left" title="dock left">⇤</button><button type="button" data-dock="right" title="dock right">⇥</button><button type="button" data-close="1" aria-label="close">✕</button></div><h3>${esc(n[L])}</h3><div class="meta">${n.id} · ${T('layer','слой')} ${n.layer} ${esc(G.layers[n.layer-1][L])} · ${vt('STATUS',n.status)}${n.since<2030?' · '+T('since','с')+' '+n.since:''}</div>
+  insp.innerHTML=`${gripHTML()}<h3>${esc(n[L])}</h3><div class="meta">${n.id} · ${T('layer','слой')} ${n.layer} ${esc(G.layers[n.layer-1][L])} · ${vt('STATUS',n.status)}${n.since<2030?' · '+T('since','с')+' '+n.since:''}</div>
   <p>${lk(n.desc[L])}</p><div>${flags.join(' ')}</div>
   <button type="button" class="briefbtn" data-brief="${n.id}">${T('Brief →','Бриф →')}</button>
   ${(KEYREFS[n.id]||[]).length?`<div class="space keys"><h4>${T('Key references','Ключевые источники')}</h4>${KEYREFS[n.id].map(r=>`<div class="kr"><a href="${r.url}" target="_blank" rel="noopener">[${r.n}]</a> ${esc(r.label.length>92?r.label.slice(0,90)+'…':r.label)}${r.year?' <span class="empty">· '+r.year+'</span>':''}</div>`).join('')}</div>`:''}
@@ -230,10 +259,10 @@ function inspect(n){ const L=lang(); const c=n.c; const rows=[[T('(a) carrier af
    ${rep.length?`<div><b>${T('alternatives','альтернативы')}:</b> ${rep.map(e=>link(other(e))).join(', ')}</div>`:''}
    ${con.length?`<div><b style="color:var(--crit)">${T('conflicts with','конфликтует с')}:</b></div>`+con.map(e=>`<div class="conf"><div>${link(other(e))} <span class="cst ${e.status}">${esc(vt('CONSTAT',e.status))}</span></div><div class="cm">${lk(e[L])}</div><div class="cm"><span class="tk">${T('price','цена')}</span> ${lk(e.price?e.price[L]:'')}</div><div class="cm"><span class="tk">${T('mitigation','снятие')}</span> ${lk(e.mitig?e.mitig[L]:'')}${e.url?' · <a href="'+e.url+'" target="_blank" rel="noopener">'+e.date+'</a>':''}</div></div>`).join(''):''}
    ${(reqOut.length||reqIn.length||rep.length||con.length)?`<div class="empty" style="margin-top:4px">° ${T('one-of dependency','зависимость «одно из»')}</div>`:`<p class="empty">—</p>`}</div>`;
-  insp.querySelectorAll('[data-goto]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); select(a.dataset.goto); const m=NODE[a.dataset.goto]; wrap.scrollTo({left:Math.max(0,m.x-200),top:Math.max(0,m.y-200),behavior:'smooth'});}));
+  insp.querySelectorAll('[data-goto]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); select(a.dataset.goto); const m=NODE[a.dataset.goto]; scrollToNode(m);}));
   insp.querySelector('[data-close]').addEventListener('click',()=>select(null)); wireCard();
 }
-document.querySelectorAll('#mapbar [data-goto]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); select(a.dataset.goto); const m=NODE[a.dataset.goto]; wrap.scrollTo({left:Math.max(0,m.x-200),top:Math.max(0,m.y-200),behavior:'smooth'}); document.getElementById('mapwrap').scrollIntoView({block:'nearest'});}));
+document.querySelectorAll('#mapbar [data-goto]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); select(a.dataset.goto); const m=NODE[a.dataset.goto]; scrollToNode(m); document.getElementById('mapwrap').scrollIntoView({block:'nearest'});}));
 // ---------- controls
 const bar=document.getElementById('mapbar');
 const chipsWrap=document.getElementById('pathchips');
@@ -243,6 +272,27 @@ document.getElementById('tg-conf').addEventListener('click',ev=>{state.showConf=
 document.getElementById('tg-rep').addEventListener('click',ev=>{state.showRep=!state.showRep; ev.currentTarget.setAttribute('aria-pressed',String(state.showRep)); drawEdges();});
 document.getElementById('tg-req').addEventListener('click',ev=>{state.showReq=!state.showReq; ev.currentTarget.setAttribute('aria-pressed',String(state.showReq)); drawEdges();});
 document.getElementById('tg-reset').addEventListener('click',()=>{state.isolate=null; state.showConf=state.showRep=state.showReq=false; ['tg-conf','tg-rep','tg-req'].forEach(i=>document.getElementById(i).setAttribute('aria-pressed','false')); chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false')); select(null);});
+// ---------- zoom: rendered width/height only, viewBox untouched (so the map stays crisp and text stays text)
+const ZSTEPS=[0.5,0.6,0.7,0.85,1,1.25,1.5,2];   // the − / + buttons walk these
+const ZMIN=0.2, ZMAX=2.5;                        // fit-width on a phone needs to go below ZSTEPS[0]
+function applyZoom(z,keepCentre){
+  z=Math.max(ZMIN,Math.min(ZMAX,z));
+  const old=state.zoom||1; let fx=0,fy=0;
+  if(keepCentre){ fx=(wrap.scrollLeft+wrap.clientWidth/2)/(W*old); fy=(wrap.scrollTop+wrap.clientHeight/2)/(H*old); }
+  state.zoom=z; svg.attr('width',W*z).attr('height',H*z);
+  const el=document.getElementById('zoomlvl'); if(el)el.textContent=Math.round(z*100)+'%';
+  if(keepCentre){ wrap.scrollLeft=Math.max(0,fx*W*z-wrap.clientWidth/2); wrap.scrollTop=Math.max(0,fy*H*z-wrap.clientHeight/2); }
+}
+function zoomStep(d){ let i=0; for(let k=1;k<ZSTEPS.length;k++){ if(Math.abs(ZSTEPS[k]-state.zoom)<Math.abs(ZSTEPS[i]-state.zoom))i=k; } applyZoom(ZSTEPS[Math.max(0,Math.min(ZSTEPS.length-1,i+d))],true); }
+(function(){ const zi=document.getElementById('zoom-in'), zo=document.getElementById('zoom-out'), zf=document.getElementById('zoom-fit'), z1=document.getElementById('zoom-100');
+  if(zi)zi.addEventListener('click',()=>zoomStep(1));
+  if(zo)zo.addEventListener('click',()=>zoomStep(-1));
+  if(zf)zf.addEventListener('click',()=>applyZoom((wrap.clientWidth-2)/W,true));
+  if(z1)z1.addEventListener('click',()=>applyZoom(1,true));
+  // phones: 0.85 only if station labels stay ≥ 10 px at that scale, otherwise 1.0
+  let z=1;
+  try{ if(window.matchMedia('(max-width:600px)').matches){ const t=wrap.querySelector('g.station text'); const fs=t?(parseFloat(getComputedStyle(t).fontSize)||11):11; z=(fs*0.85>=10)?0.85:1; } }catch(e){}
+  applyZoom(z,false); })();
 // ---------- parallel coordinates
 const pcHost=document.getElementById('pc');
 const PCW=1100, PCH=300, PX0=70, PX1=PCW-30, PY0=34, PY1=PCH-46;
@@ -259,13 +309,15 @@ function renderPC(){ pcAxes.selectAll('*').remove();
     ticks.forEach(([y,t])=>{g.append('line').attr('x1',x-3).attr('x2',x+3).attr('y1',y).attr('y2',y); g.append('text').attr('x',x+(i===AXES.length-1?-6:6)).attr('y',y+3.5).attr('text-anchor',i===AXES.length-1?'end':'start').text(t);}); });
   const pl=d3.line().x(d=>d[0]).y(d=>d[1]).curve(d3.curveMonotoneX);
   pcLines.selectAll('path').data(G.nodes,d=>d.id).join('path').attr('class','pcline').attr('stroke',d=>d._fam?FAMC[d._fam]:'var(--mid)').attr('d',d=>pl(AXES.map((a,i)=>[xAx(i),yOf(d,a.k)])))
-    .on('mouseenter',(ev,d)=>{pcHighlight(d.id,true); pcLabel.text(d[lang()]);}).on('mouseleave',()=>{pcHighlight(state.focus); pcLabel.text(state.focus?NODE[state.focus][lang()]:'');}).on('click',(ev,d)=>{select(d.id); wrap.scrollTo({left:Math.max(0,d.x-200),top:Math.max(0,d.y-200),behavior:'smooth'});});
+    .on('mouseenter',(ev,d)=>{pcHighlight(d.id,true); pcLabel.text(d[lang()]);}).on('mouseleave',()=>{pcHighlight(state.focus); pcLabel.text(state.focus?NODE[state.focus][lang()]:'');}).on('click',(ev,d)=>{select(d.id); scrollToNode(d);});
   pcHighlight(state.focus); }
 function pcHighlight(id,hover){ pcLines.selectAll('path').classed('hi',d=>d.id===id).classed('dim',d=>id?d.id!==id:(state.lensFilter!=null?!nodeMatchesFilter(d):false)); if(!hover)pcLabel.text(id?NODE[id][lang()]:''); }
 // ---------- init
 window.__relabelMap=relabel;
+// theme changes must re-resolve the CSS colour tokens; buildScales/applyLens live in this closure
+window.__mapTheme=function(){ buildScales(); applyLens(); };
 // select a station from outside the map (used by the technology briefs)
-window.__selectNode=function(id){ if(!NODE[id])return false; select(id); const m=NODE[id]; wrap.scrollTo({left:Math.max(0,m.x-200),top:Math.max(0,m.y-200),behavior:'smooth'}); return true; };
+window.__selectNode=function(id){ if(!NODE[id])return false; select(id); const m=NODE[id]; scrollToNode(m); return true; };
 relabel(); inspectEmpty(); applyLens(); renderPC();
 })();
 
@@ -282,13 +334,24 @@ relabel(); inspectEmpty(); applyLens(); renderPC();
 const CARDKEY='qmap.card';
 function cardState(){ try{return JSON.parse(localStorage.getItem(CARDKEY)||'{}');}catch(e){return {};} }
 function saveCard(o){ try{localStorage.setItem(CARDKEY,JSON.stringify(o));}catch(e){} }
+// ≤ 1024 the card is a bottom sheet: the stored desktop position is ignored and every inline
+// position style is cleared so the sheet rules in the stylesheet apply.
+function sheetMode(){ try{ return window.matchMedia('(max-width:1024px)').matches; }catch(e){ return false; } }
 function placeCard(){ const o=cardState(); const w=insp.offsetWidth||336; const vw=window.innerWidth, vh=window.innerHeight;
+  if(sheetMode()){ insp.style.left=''; insp.style.right=''; insp.style.top=''; insp.style.width=''; insp.style.height='';
+    insp.querySelectorAll('[data-dock]').forEach(b=>b.setAttribute('aria-pressed','false')); return; }
+  insp.classList.remove('sheet-max');
   if(o.mode==='free'&&o.x!=null){ insp.style.left=Math.max(0,Math.min(vw-w,o.x))+'px'; insp.style.top=Math.max(0,Math.min(vh-80,o.y))+'px'; insp.style.right='auto'; }
   else if(o.mode==='right'){ insp.style.left='auto'; insp.style.right='16px'; insp.style.top=(o.y!=null?Math.max(0,Math.min(vh-80,o.y)):84)+'px'; }
   else { insp.style.left='16px'; insp.style.right='auto'; insp.style.top=(o.y!=null?Math.max(0,Math.min(vh-80,o.y)):84)+'px'; }
   if(o.w){ insp.style.width=Math.min(o.w,vw-32)+'px'; }
   insp.querySelectorAll('[data-dock]').forEach(b=>b.setAttribute('aria-pressed',String((o.mode||'left')===b.dataset.dock))); }
 function wireCard(){ placeCard();
+  const sb=insp.querySelector('[data-sheet]');
+  if(sb) sb.addEventListener('click',function(ev){ ev.stopPropagation(); const on=!insp.classList.contains('sheet-max');
+    if(on) insp.classList.add('sheet-max'); else insp.classList.remove('sheet-max');
+    sb.textContent=on?'⌄':'⌃'; sb.setAttribute('aria-pressed',String(on)); });
+  if(sheetMode()) return;   // no dragging or docking on a bottom sheet
   insp.querySelectorAll('[data-dock]').forEach(b=>b.addEventListener('click',ev=>{ev.stopPropagation(); const o=cardState(); o.mode=b.dataset.dock; saveCard(o); placeCard();}));
   const g=insp.querySelector('[data-grip]'); if(!g)return;
   g.addEventListener('pointerdown',ev=>{ if(ev.target.closest('button'))return; ev.preventDefault(); const r=insp.getBoundingClientRect(); const dx=ev.clientX-r.left, dy=ev.clientY-r.top; insp.classList.add('dragging'); g.setPointerCapture(ev.pointerId);
@@ -296,7 +359,11 @@ function wireCard(){ placeCard();
     const up=e=>{ g.removeEventListener('pointermove',mv); g.removeEventListener('pointerup',up); insp.classList.remove('dragging'); const rr=insp.getBoundingClientRect(); saveCard(Object.assign(cardState(),{mode:'free',x:rr.left,y:rr.top})); };
     g.addEventListener('pointermove',mv); g.addEventListener('pointerup',up); });
 }
-new ResizeObserver(()=>{ if(insp.hidden)return; const o=cardState(); const w=insp.offsetWidth; if(w&&Math.abs((o.w||336)-w)>2){o.w=w; saveCard(o);} }).observe(insp);
+// the sheet is viewport-wide by design — never record that width as the desktop card width
+new ResizeObserver(()=>{ if(insp.hidden||sheetMode())return; const o=cardState(); const w=insp.offsetWidth; if(w&&Math.abs((o.w||336)-w)>2){o.w=w; saveCard(o);} }).observe(insp);
 window.addEventListener('resize',()=>{ if(!insp.hidden)placeCard(); });
-try{ matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{buildScales(); applyLens();}); new MutationObserver(()=>{buildScales(); applyLens();}).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']}); }catch(e){}
+try{ var __th=function(){ if(window.__mapTheme)window.__mapTheme(); };
+  var __mq=matchMedia('(prefers-color-scheme: dark)');
+  if(__mq.addEventListener)__mq.addEventListener('change',__th); else if(__mq.addListener)__mq.addListener(__th);
+  new MutationObserver(__th).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']}); }catch(e){}
 """

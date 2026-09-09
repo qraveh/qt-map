@@ -28,7 +28,12 @@ def tex(s):
     s=re.sub(r'_([A-Za-z0-9])',lambda m:'<sub>'+m.group(1)+'</sub>',s)
     s=re.sub(r'\\([A-Za-z]+)',lambda m:GREEK.get(m.group(1),SYM.get(m.group(1),m.group(0))),s)
     s=s.replace('{','').replace('}','')
-    return '<span class="m">'+s+'</span>'
+    # `.m` is white-space:nowrap so a short formula never breaks. A few `$…$` runs in the reports are
+    # long prose (currency amounts pair up into a false math span), and a nowrap span of that length
+    # pushes the whole document sideways — mark those `long` so the stylesheet lets them wrap.
+    plain=re.sub('<[^>]+>','',s)
+    cls='m long' if len(plain)>50 else 'm'
+    return '<span class="'+cls+'">'+s+'</span>'
 def premath(md):
     md=re.sub(r'\$\$(.+?)\$\$',lambda m:'<div class="m">'+tex(m.group(1))+'</div>',md,flags=re.S)
     return re.sub(r'(?<!\\)\$([^$\n]+?)\$',lambda m:tex(m.group(1)),md)
@@ -116,14 +121,21 @@ def map_block(lang,gsec='8'):
 <p class="lead">{'Columns are the layers of the stack; the vertical position is carrier-nature affinity (natural at the top, fabricated at the bottom), so the natural/fabricated diagonal is visible and every hatched station is a place where a platform breaks it. Coloured lines are platform paths through one station per layer; a station on several lines is a transfer hub (◎); dashed hollow stations are empty slots. Click a station for its three spaces; pick a lens to recolour every station by one coordinate; the strip below shows the full seven-coordinate vector of every technology. Construction rules and derived tables are in §'+gsec+'.' if en else 'Колонки — слои стека; вертикальная позиция — сродство носителя (естественные сверху, изготовленные снизу), так что диагональ естественный/изготовленный видна, а каждая заштрихованная станция — место, где платформа её ломает. Цветные линии — пути платформ через одну станцию на слой; станция на нескольких линиях — хаб переноса (◎); пунктирные полые станции — пустые слоты. Кликните станцию, чтобы увидеть её три пространства; выберите линзу, чтобы перекрасить станции по одной координате; лента ниже показывает полный семикоординатный вектор каждой технологии. Правила построения и выведенные таблицы — в §'+gsec+'.'}</p>
 </section>'''
 MAPUI='''<div class="mapbar" id="mapbar">
- <div class="grp"><span class="lbl lang-en">paths</span><span class="lbl lang-ru">пути</span><span id="pathchips" class="grp"></span></div>
+ <div class="grp chipsrow"><span class="lbl lang-en">paths</span><span class="lbl lang-ru">пути</span><span id="pathchips" class="grp"></span></div>
  <div class="grp"><span class="lbl lang-en">lens</span><span class="lbl lang-ru">линза</span><select id="lens" class="sel" aria-label="colour lens"></select></div>
+ <div class="grp zoomgrp"><span class="lbl lang-en">zoom</span><span class="lbl lang-ru">масштаб</span>
+  <button type="button" class="chip zb" id="zoom-out" aria-label="zoom out">−</button>
+  <span class="zlvl" id="zoomlvl" aria-live="polite">100%</span>
+  <button type="button" class="chip zb" id="zoom-in" aria-label="zoom in">+</button>
+  <button type="button" class="chip" id="zoom-fit"><span class="lang-en">fit width</span><span class="lang-ru">по ширине</span></button>
+  <button type="button" class="chip" id="zoom-100">100%</button></div>
  <div class="grp"><span class="lbl lang-en">edges</span><span class="lbl lang-ru">рёбра</span>
   <button class="chip tog" id="tg-req" aria-pressed="false"><span class="lang-en">all requires</span><span class="lang-ru">все «требует»</span></button>
   <button class="chip tog" id="tg-rep" aria-pressed="false"><span class="lang-en">all alternatives</span><span class="lang-ru">все «альтернативы»</span></button>
   <button class="chip tog" id="tg-conf" aria-pressed="false"><span class="lang-en">all conflicts</span><span class="lang-ru">все «конфликтует»</span></button>
   <button class="chip" id="tg-reset"><span class="lang-en">reset</span><span class="lang-ru">сброс</span></button></div>
- <div class="grp glyphs"><span class="lbl lang-en">legend</span><span class="lbl lang-ru">легенда</span>
+ <details class="glyphs" id="glyphlegend" open><summary><span class="lbl lang-en">legend</span><span class="lbl lang-ru">легенда</span></summary>
+  <div class="glyphlist">
   <span class="gl"><i class="lg hub">◎</i><span class="lang-en">hub</span><span class="lang-ru">хаб</span></span>
   <span class="gl"><i class="lg off">⤢</i><span class="lang-en">off-diagonal</span><span class="lang-ru">внедиагональный</span></span>
   <span class="gl"><i class="lg emp">∅</i><span class="lang-en">empty slot</span><span class="lang-ru">пустой слот</span></span>
@@ -134,7 +146,8 @@ MAPUI='''<div class="mapbar" id="mapbar">
   <span class="gl"><i class="lg badges"><b></b><b></b></i><span class="lang-en">small squares = the platform lines through the station (■ primary, □ alternate)</span><span class="lang-ru">маленькие квадраты = линии платформ через станцию (■ основная, □ альтернатива)</span></span>
   <span class="gl"><i class="lg ax">↕</i><span class="lang-en">rows natural → fabricated · columns = layers · click a station</span><span class="lang-ru">строки естественное → изготовленное · колонки — слои · клик по станции</span></span>
   <span class="gl try"><span class="lang-en">try:</span><span class="lang-ru">попробуйте:</span> <a href="#" data-goto="transmon">Transmon</a> · <a href="#" data-goto="ct_sfq">SFQ</a> · <a href="#" data-goto="ro_erasure"><span class="lang-en">Erasure check</span><span class="lang-ru">Проверка стирания</span></a></span>
- </div>
+  </div>
+ </details>
  <div class="grp lenslegend" id="lenslegend"></div>
 </div>
 <div class="mapgrid"><div class="mapwrap" id="mapwrap"><div class="tip" id="maptip"></div></div><aside class="insp" id="insp" hidden></aside></div>
@@ -183,6 +196,60 @@ PUBLIC=dict(mode='public',
     briefs_en=os.path.join(ROOT,'briefs','en'), briefs_ru=os.path.join(ROOT,'briefs','ru'), regmap=os.path.join(ROOT,'data','facts.json'),
     doi_concept=CONCEPT_DOI, doi_version=EDITIONS[0]['doi'], author='Raveh Neeman', publisher='Qodeh', url=SITE, repo=REPO, date=EDITIONS[0]['date'], edition=EDITIONS[0]['edition'])
 
+def navchrome(cfg):
+    dl=cfg['default_lang']
+    en='true' if dl=='en' else 'false'; ru='true' if dl=='ru' else 'false'
+    return f'''<div class="mobilebar" id="mobilebar">
+ <button type="button" class="mb-btn" id="tocopen" aria-expanded="false" aria-controls="tocdrawer"><span class="lang-en">Contents ☰</span><span class="lang-ru">Содержание ☰</span></button>
+ <a class="mb-btn" href="#map"><span class="lang-en">Map</span><span class="lang-ru">Карта</span></a>
+ <span class="mb-sp"></span>
+ <div class="seg mb-seg" role="group" aria-label="language"><button type="button" data-setlang="en" aria-pressed="{en}">EN</button><button type="button" data-setlang="ru" aria-pressed="{ru}">RU</button></div>
+</div>
+<div class="tocbackdrop" id="tocbackdrop" hidden></div>
+<aside class="tocdrawer" id="tocdrawer" hidden role="dialog" aria-modal="true" aria-label="contents">
+ <div class="td-head"><span><span class="lang-en">Contents</span><span class="lang-ru">Содержание</span></span><button type="button" class="td-close" id="tocclose" aria-label="close">✕</button></div>
+ <div class="td-body" id="tocdrawerbody"></div>
+</aside>'''
+
+NAVJS = r"""
+/* ≤1024: the sidebar TOC is hidden, so the same markup is cloned into a drawer opened from the
+   sticky bar. Closes on link tap, on ✕, on Escape, on backdrop tap; body scroll is locked while open.
+   This listener is registered before the map/brief scripts, so its Escape can stop them from also
+   firing (closing the drawer must not close an open brief or deselect a station). */
+(function(){
+  var drawer=document.getElementById('tocdrawer'), back=document.getElementById('tocbackdrop'),
+      btn=document.getElementById('tocopen'), closeBtn=document.getElementById('tocclose'),
+      host=document.getElementById('tocdrawerbody'), toc=document.querySelector('nav.toc');
+  if(!drawer||!back||!btn||!host||!toc) return;
+  host.innerHTML=toc.innerHTML;
+  var mq=window.matchMedia('(max-width:1024px)');
+  function setOpen(o){
+    drawer.hidden=!o; back.hidden=!o;
+    btn.setAttribute('aria-expanded',String(!!o));
+    if(o){ document.body.classList.add('drawer-open'); if(closeBtn&&closeBtn.focus)closeBtn.focus(); }
+    else { document.body.classList.remove('drawer-open'); }
+  }
+  btn.addEventListener('click',function(){ setOpen(drawer.hidden); });
+  if(closeBtn) closeBtn.addEventListener('click',function(){ setOpen(false); btn.focus(); });
+  back.addEventListener('click',function(){ setOpen(false); });
+  host.addEventListener('click',function(ev){ var t=ev.target; if(t&&t.closest&&t.closest('a')) setOpen(false); });
+  document.addEventListener('keydown',function(ev){
+    if(ev.key==='Escape'&&!drawer.hidden){ ev.stopImmediatePropagation(); setOpen(false); btn.focus(); }
+  });
+  function sync(){ if(!mq.matches&&!drawer.hidden) setOpen(false); }
+  if(mq.addEventListener) mq.addEventListener('change',sync); else if(mq.addListener) mq.addListener(sync);
+  window.addEventListener('resize',sync);
+})();
+/* ≤1024: the glyph legend collapses (it is nine long lines); above 1024 it stays open as before. */
+(function(){
+  var d=document.getElementById('glyphlegend'); if(!d||!window.matchMedia) return;
+  var mq=window.matchMedia('(max-width:1024px)');
+  function sync(){ d.open=!mq.matches; }
+  sync();
+  if(mq.addEventListener) mq.addEventListener('change',sync); else if(mq.addListener) mq.addListener(sync);
+})();
+"""
+
 def masthead(cfg):
     doi=cfg['doi_concept']; doiurl='https://doi.org/'+doi
     return f'''<header class="mast">
@@ -203,6 +270,7 @@ def masthead(cfg):
 </header>'''
 
 def footer(cfg):
+    if cfg['mode']=='internal': return ''
     doi=cfg['doi_concept']; doiurl='https://doi.org/'+doi
     cite_en=f"{cfg['author']} (2026). <i>Quantum Technology Map</i> (Edition {cfg['edition']}). {cfg['publisher']}. <a href=\"{doiurl}\">{doiurl}</a> — the concept DOI resolves to the newest edition; cite the edition you read."
     cite_ru=f"{cfg['author']} (2026). <i>Quantum Technology Map</i> (издание {cfg['edition']}). {cfg['publisher']}. <a href=\"{doiurl}\">{doiurl}</a> — DOI концепции разрешается в последнее издание; указывайте издание, которое читали."
@@ -224,6 +292,7 @@ def footer(cfg):
 </footer>'''
 
 def head_meta(cfg):
+    if cfg['mode']=='internal': return '<meta name="color-scheme" content="light dark">'
     doi=cfg['doi_concept']; desc='Quantum computing technologies compared by goal: achievements, justified intentions and the most promising directions; a 96-technology graph across ten stack layers with seven design coordinates and five edge types; 96 technology briefs. Bilingual EN/RU, CC BY 4.0.'
     ld={"@context":"https://schema.org","@type":"ScholarlyArticle","name":"Quantum Technology Map","headline":"Quantum Technology Map","version":cfg['edition'],"datePublished":cfg['date'],"codeRepository":cfg.get('repo'),"inLanguage":["en","ru"],
         "author":{"@type":"Person","name":cfg['author']},"publisher":{"@type":"Organization","name":cfg['publisher'],"url":"https://qodeh.com"},
@@ -238,7 +307,7 @@ def head_meta(cfg):
             '<script type="application/ld+json">'+json.dumps(ld,ensure_ascii=False)+'</script>')
 
 def build(cfg=PUBLIC):
-    D3=open(os.path.join(ROOT,'build','vendor','d3.v7.min.js'),encoding='utf-8').read()
+    D3=open('/tmp/d3get/node_modules/d3/dist/d3.min.js',encoding='utf-8').read()
     EN=open(cfg['report_en'],encoding='utf-8').read()
     RU=open(cfg['report_ru'],encoding='utf-8').read()
     regmap=json.load(open(cfg['regmap'],encoding='utf-8')) if cfg.get('regmap') else None
@@ -261,6 +330,7 @@ def build(cfg=PUBLIC):
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>{CSS}</style>
 <div id="app" data-lang="{dl}">
+{navchrome(cfg)}
 {masthead(cfg)}
 <div class="page">
  <nav class="toc" aria-label="contents"><div class="lang-en">{toc_html(en_toc,'en',cfg['graph_sec'])}</div><div class="lang-ru">{toc_html(ru_toc,'ru',cfg['graph_sec'])}</div></nav>
@@ -285,6 +355,7 @@ def build(cfg=PUBLIC):
  window.__setLang=setLang; setLang(l);
 }})();
 </script>
+<script>{NAVJS}</script>
 <script>{JS}</script>
 <script>{BRIEF_JS}</script>
 <script>if(window.__relabelMap)window.__relabelMap();</script>

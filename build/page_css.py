@@ -7,6 +7,7 @@ CSS = r"""
   --sc:#2A78D6; --ion:#EB6834; --atom:#1BAF7A; --photon:#4A3AA7; --spin:#E87BA4; --defect:#EDA100; --topo:#6C7684; --anneal:#8D97A3;
   --lens1:#CDE2FB; --lens2:#86B6EF; --lens3:#3987E5; --lens4:#1C5CAB;
   --shadow:0 1px 2px rgba(22,32,43,.06), 0 8px 24px rgba(22,32,43,.06);
+  --surface-t0:rgba(255,255,255,0);   /* fully transparent twin of --surface (fade masks) */
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
@@ -17,6 +18,7 @@ CSS = r"""
     --sc:#3987E5; --ion:#D95926; --atom:#199E70; --photon:#9085E9; --spin:#D55181; --defect:#C98500; --topo:#8A95A3; --anneal:#6F7A88;
     --lens1:#184F95; --lens2:#256ABF; --lens3:#5598E7; --lens4:#9EC5F4;
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+    --surface-t0:rgba(21,29,38,0);
   }
 }
 :root[data-theme="dark"]{
@@ -27,6 +29,7 @@ CSS = r"""
   --sc:#3987E5; --ion:#D95926; --atom:#199E70; --photon:#9085E9; --spin:#D55181; --defect:#C98500; --topo:#8A95A3; --anneal:#6F7A88;
   --lens1:#184F95; --lens2:#256ABF; --lens3:#5598E7; --lens4:#9EC5F4;
   --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+  --surface-t0:rgba(21,29,38,0);
 }
 html,body{background:var(--bg);color:var(--ink);}
 body{margin:0;font-family:"Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;}
@@ -103,14 +106,14 @@ details.fold .tbl{border:0;border-top:1px solid var(--rule);border-radius:0;marg
 .mapsec h2 .num{font-family:"Unbounded",sans-serif;font-weight:500;font-size:15px;color:var(--muted)}
 .mapsec .lead{color:var(--ink2);max-width:80ch;margin:.2em 0 14px;text-wrap:pretty}
 .mapbar{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;padding:10px 12px;border:1px solid var(--rule);border-radius:10px 10px 0 0;background:var(--surface);font-size:13.5px}
-.mapbar .grp{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.mapbar .grp{display:flex;flex-wrap:wrap;gap:6px;align-items:center;min-width:0;max-width:100%}
 .mapbar .lbl{color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-right:2px}
 .chip{appearance:none;border:1px solid var(--rule);background:var(--surface);color:var(--ink);font:inherit;font-size:13px;padding:4px 10px 4px 8px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;line-height:1.2}
 .chip .sw{width:10px;height:10px;border-radius:2px;background:var(--c);display:inline-block}
 .chip[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
 .chip.off{opacity:.45}
 .chip.tog[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
-select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--rule);border-radius:6px;background:var(--surface);color:var(--ink)}
+select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--rule);border-radius:6px;background:var(--surface);color:var(--ink);max-width:100%}
 .mapfull{margin-left:0}
 .mapgrid{position:relative;display:grid;grid-template-columns:minmax(0,1fr);border:1px solid var(--rule);border-top:0;border-radius:0 0 10px 10px;background:var(--surface);overflow:hidden}
 .mapwrap{overflow:auto;max-height:82vh;position:relative}
@@ -127,7 +130,7 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .station.peek rect.box{stroke-width:3;stroke:var(--ink)}
 .tip .sw{display:inline-block;width:9px;height:9px;border-radius:2px;margin:0 3px 0 0;vertical-align:-1px}
 .tip .sw.hollow{background:transparent;border:1.5px solid}
-.mapcol{margin-left:auto;font-size:12px;font-weight:500;align-self:center}
+.mapcol{margin-left:auto;font-size:12px;font-weight:500;align-self:center;flex:0 0 auto;white-space:nowrap}
 #mapbody[hidden]{display:none}
 .insp h3 .sw{width:11px;height:11px;border-radius:3px;background:var(--c);display:inline-block;margin-right:4px}
 .ptab{border-collapse:collapse;width:100%;font-size:12.5px}
@@ -211,7 +214,12 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .cst{font-family:"JetBrains Mono",monospace;font-size:10.5px;padding:1px 6px;border-radius:999px;border:1px solid var(--rule);color:var(--ink2);margin-left:6px}
 .cst.open{border-color:var(--crit);color:var(--crit)}
 .cst.mitigated{border-color:var(--atom);color:var(--atom)}
-.mapbar .glyphs{flex-basis:100%;gap:6px 14px;color:var(--ink2);font-size:12.5px}
+.mapbar .glyphs{flex-basis:100%;color:var(--ink2);font-size:12.5px}
+.mapbar details.glyphs>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px;padding:3px 0}
+.mapbar details.glyphs>summary::-webkit-details-marker{display:none}
+.mapbar details.glyphs>summary::after{content:"▾";color:var(--muted);font-size:11px}
+.mapbar details.glyphs:not([open])>summary::after{content:"▸"}
+.glyphlist{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
 .gl{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
 .lg{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;font-style:normal;font-size:12px;color:var(--ink)}
 .lg.hub{color:var(--accent)}
@@ -311,9 +319,152 @@ a.tag-link{text-decoration:none;border-bottom:1px solid var(--accent);cursor:poi
 a.tag-link:hover{background:var(--accent);color:var(--bg)}
 .bnav{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 2px;padding-top:12px;border-top:1px solid var(--rule)}
 .bnav .chip{font-size:12.5px}
-@media (max-width:900px){.brief{padding:14px 14px 10px}.bidx td.ol{display:none}.bidx th:last-child{display:none}}
-@media (max-width:1100px){.insp{width:min(336px,92%);left:8px;top:64px}}
-@media (max-width:900px){.mapfull{margin-left:0}.page{grid-template-columns:1fr}nav.toc{position:static;max-height:none;display:none}.mast{grid-template-columns:1fr}.controls{align-items:flex-start}}
+/* ================================================================
+   RESPONSIVE / CROSS-BROWSER PASS
+   Breakpoints: phone ≤600 · tablet 601–1024 · desktop >1024 · wide ≥1600.
+   Every block below is labelled with the breakpoint it serves.
+   ================================================================ */
+
+/* [all widths] fluid base size; the desktop value (16px) is reached at ~857px and above */
+body{font-size:clamp(14px,0.35vw + 13px,16px)}
+/* [all widths] measure never exceeds the column (min() keeps the desktop 78ch measure) */
+.prose p,.prose ul,.prose ol,.prose blockquote,.prose dl{max-width:min(78ch,100%)}
+.bone,.bverdict,.blede,.bbody p,.bbody ul,.bbody ol{max-width:min(78ch,100%)}
+/* [all widths] long URLs / identifiers wrap instead of pushing the page wide */
+.prose a,.bbody a,.colophon a,.pubmeta a,.bidx a,.insp a{word-break:break-word;overflow-wrap:anywhere}
+h1.title,.prose h2,.prose h3,.mapsec h2,.briefs h2,.btitle,.bbody h3.bh3,.insp h3{overflow-wrap:break-word}
+/* [all widths] nothing in the grid may establish a min-content floor wider than the viewport */
+main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
+/* [all widths] a nowrap math run longer than ~50 characters must be allowed to wrap */
+.prose .m.long,.bbody .m.long,.m.long{white-space:normal;overflow-wrap:break-word}
+/* [all widths] wide boxes scroll inside themselves, with momentum, without chaining to the page */
+.tbl,.bbody .tbl,.bidx .tbl,details.fold .tbl{-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.mapwrap{-webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:pan-x pan-y pinch-zoom}
+.insp{-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+/* [all widths] vh first, dvh second — browsers without dvh keep the vh line */
+.mapwrap{max-height:82vh}
+.mapwrap{max-height:82dvh}
+/* [all widths] map-bar zoom control */
+.mapbar .zoomgrp .zb{min-width:32px;justify-content:center;font-weight:600;padding:4px 8px}
+.mapbar .zlvl{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--muted);min-width:4.2em;text-align:center}
+/* [all widths] page chrome that only exists below 1025px */
+.mobilebar{display:none}
+.tocdrawer,.tocbackdrop{display:none}
+
+/* [desktop >1024] the glyph legend is always open and needs no summary (unchanged look) */
+@media (min-width:1025px){
+  .mapbar details.glyphs>summary{display:none}
+  .tocdrawer,.tocbackdrop,.mobilebar{display:none !important}
+}
+/* [desktop 1025–1100] narrow desktops: the floating card hugs the left edge (as before) */
+@media (min-width:1025px) and (max-width:1100px){.insp{width:min(336px,92%);left:8px;top:64px}}
+
+/* ---------------- [tablet + phone ≤1024] ---------------- */
+@media (max-width:1024px){
+  /* single-column page; the sidebar TOC is replaced by the sticky bar + drawer below */
+  .page{grid-template-columns:minmax(0,1fr);gap:0}
+  nav.toc{position:static;max-height:none;display:none}
+  .mapfull{margin-left:0}
+  /* masthead: one column, right-aligned meta becomes left-aligned, nothing overflows */
+  .mast{grid-template-columns:minmax(0,1fr);gap:10px;padding:18px 0 16px}
+  .controls{flex-direction:row;flex-wrap:wrap;align-items:center;gap:10px 14px}
+  .controls .seg,.controls .jump{display:none}
+  .pubmeta{text-align:left;margin-top:6px}
+  .eyebrow{white-space:normal}
+  /* sticky navigation bar */
+  .mobilebar{display:flex;position:sticky;top:0;z-index:55;align-items:center;gap:8px;
+    margin:0 -20px;padding:6px 14px;background:var(--surface);border-bottom:1px solid var(--rule)}
+  .mobilebar .mb-btn{appearance:none;border:1px solid var(--rule);background:var(--surface);color:var(--ink);
+    font:inherit;font-size:13.5px;font-weight:500;line-height:1.2;padding:8px 12px;border-radius:999px;
+    cursor:pointer;text-decoration:none;white-space:nowrap}
+  .mobilebar .mb-sp{flex:1}
+  .mobilebar .seg button{padding:7px 10px;font-size:13px}
+  /* TOC drawer */
+  .tocbackdrop{display:block;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,16,22,.45);z-index:70}
+  .tocdrawer{display:flex;flex-direction:column;position:fixed;top:0;left:0;bottom:0;
+    width:86vw;max-width:340px;z-index:71;background:var(--surface);border-right:1px solid var(--rule);
+    box-shadow:0 0 40px rgba(0,0,0,.28)}
+  .tocdrawer .td-head{display:flex;align-items:center;justify-content:space-between;gap:10px;
+    padding:12px 14px;border-bottom:1px solid var(--rule);font-weight:600;flex:0 0 auto}
+  .tocdrawer .td-close{appearance:none;border:1px solid var(--rule);background:var(--surface);color:var(--ink);
+    font:inherit;font-size:15px;line-height:1;padding:7px 11px;border-radius:8px;cursor:pointer}
+  .tocdrawer .td-body{flex:1 1 auto;overflow:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;
+    padding:8px 14px 32px;font-size:14px}
+  .tocdrawer .td-body ol{list-style:none;margin:0;padding:0}
+  .tocdrawer .td-body li{margin:0;padding:0}
+  .tocdrawer .td-body a{color:var(--ink2);text-decoration:none;display:flex;gap:10px;padding:9px 4px;border-radius:6px}
+  .tocdrawer .td-body a .n{font-family:"JetBrains Mono",monospace;color:var(--muted);min-width:1.8em}
+  .tocdrawer .td-body .mapl a{color:var(--accent);font-weight:600}
+  body.drawer-open{overflow:hidden}
+  /* the sticky bar covers anchor targets unless they reserve room for it */
+  :target,#map,#mapbody,#mapbar,#mapwrap,.brief,.briefs,.mapsec,.prose h2,.prose h3{scroll-margin-top:60px}
+  /* map: shorter canvas so the bar, the map and the page all fit */
+  .mapwrap{max-height:70vh}
+  .mapwrap{max-height:70dvh}
+  /* map bar: the 14 path chips become one horizontally scrollable row with a fade affordance */
+  .mapbar{gap:8px 10px;padding:8px 10px}
+  .mapbar .chipsrow{position:relative;flex-basis:100%;flex-wrap:nowrap;align-items:center;min-width:0;gap:6px}
+  .mapbar .chipsrow #pathchips{flex:1 1 auto;flex-wrap:nowrap;overflow-x:auto;min-width:0;
+    -webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:thin;padding:2px 24px 6px 0}
+  .mapbar .chipsrow #pathchips .chip{flex:0 0 auto}
+  .mapbar .chipsrow::after{content:"";position:absolute;right:0;top:0;bottom:6px;width:26px;pointer-events:none;
+    background:linear-gradient(to left,var(--surface),var(--surface-t0))}
+  /* the lens legend and the glyph legend wrap; the glyph legend collapses */
+  .mapbar .lenslegend{gap:6px 8px}
+  /* the wide edge tip must never be wider than the phone */
+  .tip,.tip.wide{max-width:min(320px,86vw)}
+  .gl{white-space:normal}
+  .chip,.legend .lk{min-height:30px}
+  /* inspector becomes a bottom sheet (JS ignores the stored desktop position below 1025px) */
+  .insp{position:fixed;left:0;right:0;bottom:0;top:auto;width:auto;max-width:none;
+    max-height:62vh;border-radius:14px 14px 0 0;border-left:0;border-right:0;border-bottom:0;
+    resize:none;min-width:0;min-height:0;padding:0 14px 18px;z-index:60;
+    box-shadow:0 -10px 34px rgba(0,0,0,.24)}
+  .insp{max-height:62dvh}
+  .insp.sheet-max{max-height:90vh}
+  .insp.sheet-max{max-height:90dvh}
+  .insp .grip{margin:0 -14px 8px;padding:8px 12px}
+  .insp .grip [data-dock]{display:none}
+  .insp .grip button{padding:4px 10px;font-size:12px}
+  /* long inline formulas must be allowed to break rather than widen the page */
+  .prose .m,.bbody .m{white-space:normal}
+  /* briefs */
+  .brief{padding:14px 14px 10px}
+  .bnav{gap:6px}
+}
+
+/* ---------------- [phone ≤600] ---------------- */
+@media (max-width:600px){
+  #app{padding:0 12px 60px}
+  .mobilebar{margin:0 -12px;padding:6px 10px}
+  .mast{padding:14px 0 14px}
+  .prose h2,.mapsec h2,.briefs h2{font-size:20px;gap:10px;flex-wrap:wrap}
+  .prose h3{font-size:16.5px}
+  .thesis{padding:12px 14px;font-size:14.5px}
+  .subtitle{font-size:15.5px}
+  /* tables: 13px on phones, first column pinned so the row is identifiable while scrolling */
+  table{font-size:13px}
+  .big-table table,.bbody table,.bidx table{font-size:12px}
+  th,td{padding:6px 8px}
+  th{white-space:normal}
+  .prose .tbl table th{z-index:2}
+  .prose .tbl table td:first-child,.prose .tbl table th:first-child{position:sticky;left:0}
+  .prose .tbl table td:first-child{background:var(--surface);z-index:1}
+  .prose .tbl table th:first-child{background:var(--surface2);z-index:3}
+  .bidx td.ol{display:none}
+  .bidx th:last-child{display:none}
+  .radars{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+  .insp{font-size:13px}
+  .colophon{font-size:13px}
+}
+
+/* [touch] no hover: tap targets grow, hover-only affordances stay reachable */
+@media (hover:none),(pointer:coarse){
+  .chip,.legend .lk,.seg button,.mobilebar .mb-btn{min-height:32px}
+  .edge path.hit{stroke-width:22}
+  .tip,.tip.wide{max-width:min(320px,86vw)}
+}
+
 @media (prefers-reduced-motion:no-preference){.station rect.box,.pathline,.altstub,.pcline{transition:opacity .25s ease}}
-@media print{.mapbar,.controls{display:none}.mapwrap{max-height:none;overflow:visible}#app{max-width:none}}
+@media print{.mapbar,.controls,.mobilebar,.tocdrawer,.tocbackdrop{display:none}.mapwrap{max-height:none;overflow:visible}#app{max-width:none}}
 """
