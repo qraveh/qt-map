@@ -34,6 +34,11 @@ Object.values(byLayer).forEach(ns=>{
 // ---------- svg
 const wrap=document.getElementById('mapwrap');
 const svg=d3.select(wrap).append('svg').attr('viewBox',`0 0 ${W} ${H}`).attr('width',W).attr('height',H).attr('role','img').attr('aria-label','Technology map: ten stack layers as columns, carrier-nature affinity as rows, platform paths as coloured lines');
+// zoom control: pinned top-right on desktop; on ≤1024 px it moves to the end of the scroller and pins bottom-right
+// (the sticky page bar would otherwise cover it whenever the map's top edge scrolls under the bar)
+(function(){ const zb=wrap.querySelector('.zoombar'); if(!zb)return; let mq=null; try{ mq=window.matchMedia('(max-width:1024px)'); }catch(e){}
+  const place=()=>{ if(mq&&mq.matches){ wrap.appendChild(zb); zb.classList.add('bottom'); } else { wrap.insertBefore(zb,wrap.firstChild); zb.classList.remove('bottom'); } };
+  place(); if(mq){ if(mq.addEventListener)mq.addEventListener('change',place); else if(mq.addListener)mq.addListener(place); } })();
 const defs=svg.append('defs');
 defs.append('pattern').attr('id','hatch').attr('patternUnits','userSpaceOnUse').attr('width',6).attr('height',6).attr('patternTransform','rotate(45)').append('line').attr('x1',0).attr('y1',0).attr('x2',0).attr('y2',6).attr('stroke','var(--nat)').attr('stroke-width',1.2).attr('opacity',.55);
 defs.append('marker').attr('id','arr').attr('viewBox','0 0 10 10').attr('refX',9).attr('refY',5).attr('markerWidth',7).attr('markerHeight',7).attr('orient','auto-start-reverse').append('path').attr('d','M0,0 L10,5 L0,10 z').attr('fill','var(--ink)');
@@ -279,7 +284,7 @@ function applyZoom(z,keepCentre){
   z=Math.max(ZMIN,Math.min(ZMAX,z));
   const old=state.zoom||1; let fx=0,fy=0;
   if(keepCentre){ fx=(wrap.scrollLeft+wrap.clientWidth/2)/(W*old); fy=(wrap.scrollTop+wrap.clientHeight/2)/(H*old); }
-  state.zoom=z; svg.attr('width',W*z).attr('height',H*z);
+  state.zoom=z; svg.attr('width',Math.floor(W*z)).attr('height',Math.floor(H*z));
   const el=document.getElementById('zoomlvl'); if(el)el.textContent=Math.round(z*100)+'%';
   if(keepCentre){ wrap.scrollLeft=Math.max(0,fx*W*z-wrap.clientWidth/2); wrap.scrollTop=Math.max(0,fy*H*z-wrap.clientHeight/2); }
 }
@@ -287,7 +292,10 @@ function zoomStep(d){ let i=0; for(let k=1;k<ZSTEPS.length;k++){ if(Math.abs(ZST
 (function(){ const zi=document.getElementById('zoom-in'), zo=document.getElementById('zoom-out'), zf=document.getElementById('zoom-fit'), z1=document.getElementById('zoom-100');
   if(zi)zi.addEventListener('click',()=>zoomStep(1));
   if(zo)zo.addEventListener('click',()=>zoomStep(-1));
-  if(zf)zf.addEventListener('click',()=>applyZoom((wrap.clientWidth-2)/W,true));
+  // fit width: a first pass can leave a horizontal bar when the vertical scrollbar appears (or vanishes) at the new
+  // height and changes clientWidth; measure again after layout and settle on the width that actually fits.
+  function fitWidth(){ for(let k=0;k<3;k++){ applyZoom((wrap.clientWidth-2)/W,true); if(wrap.scrollWidth<=wrap.clientWidth)break; } wrap.scrollLeft=0; }
+  if(zf)zf.addEventListener('click',fitWidth);
   if(z1)z1.addEventListener('click',()=>applyZoom(1,true));
   // phones: 0.85 only if station labels stay ≥ 10 px at that scale, otherwise 1.0
   let z=1;

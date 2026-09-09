@@ -123,12 +123,6 @@ def map_block(lang,gsec='8'):
 MAPUI='''<div class="mapbar" id="mapbar">
  <div class="grp chipsrow"><span class="lbl lang-en">paths</span><span class="lbl lang-ru">пути</span><span id="pathchips" class="grp"></span></div>
  <div class="grp"><span class="lbl lang-en">lens</span><span class="lbl lang-ru">линза</span><select id="lens" class="sel" aria-label="colour lens"></select></div>
- <div class="grp zoomgrp"><span class="lbl lang-en">zoom</span><span class="lbl lang-ru">масштаб</span>
-  <button type="button" class="chip zb" id="zoom-out" aria-label="zoom out">−</button>
-  <span class="zlvl" id="zoomlvl" aria-live="polite">100%</span>
-  <button type="button" class="chip zb" id="zoom-in" aria-label="zoom in">+</button>
-  <button type="button" class="chip" id="zoom-fit"><span class="lang-en">fit width</span><span class="lang-ru">по ширине</span></button>
-  <button type="button" class="chip" id="zoom-100">100%</button></div>
  <div class="grp"><span class="lbl lang-en">edges</span><span class="lbl lang-ru">рёбра</span>
   <button class="chip tog" id="tg-req" aria-pressed="false"><span class="lang-en">all requires</span><span class="lang-ru">все «требует»</span></button>
   <button class="chip tog" id="tg-rep" aria-pressed="false"><span class="lang-en">all alternatives</span><span class="lang-ru">все «альтернативы»</span></button>
@@ -150,7 +144,7 @@ MAPUI='''<div class="mapbar" id="mapbar">
  </details>
  <div class="grp lenslegend" id="lenslegend"></div>
 </div>
-<div class="mapgrid"><div class="mapwrap" id="mapwrap"><div class="tip" id="maptip"></div></div><aside class="insp" id="insp" hidden></aside></div>
+<div class="mapgrid"><div class="mapwrap" id="mapwrap"><div class="zoombar"><div class="zoomctl" role="group" aria-label="map zoom"><button type="button" class="zb" id="zoom-out" aria-label="zoom out" title="zoom out (−)"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><span class="zlvl" id="zoomlvl" aria-live="polite">100%</span><button type="button" class="zb" id="zoom-in" aria-label="zoom in" title="zoom in (+)"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 8h10M8 3v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><i class="zsep"></i><button type="button" class="zb zt" id="zoom-fit" title="fit width"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M2 8h12M2 8l3-3M2 8l3 3M14 8l-3-3M14 8l-3 3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lang-en">fit</span><span class="lang-ru">вписать</span></button><button type="button" class="zb zt" id="zoom-100" title="actual size">1:1</button></div></div><div class="tip" id="maptip"></div></div><aside class="insp" id="insp" hidden></aside></div>
 <div class="legend">
  <span class="k"><svg viewBox="0 0 26 16"><rect x="1" y="2" width="24" height="12" rx="4" fill="var(--surface)" stroke="var(--sc)" stroke-width="1.5"/></svg><span class="lang-en">demonstrated</span><span class="lang-ru">продемонстрировано</span></span>
  <span class="k"><svg viewBox="0 0 26 16"><rect x="1" y="2" width="24" height="12" rx="4" fill="var(--surface)" stroke="var(--mid)" stroke-width="1.5" stroke-dasharray="3 2"/></svg><span class="lang-en">emerging</span><span class="lang-ru">формируется</span></span>

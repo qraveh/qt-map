@@ -345,8 +345,6 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
 .mapwrap{max-height:82vh}
 .mapwrap{max-height:82dvh}
 /* [all widths] map-bar zoom control */
-.mapbar .zoomgrp .zb{min-width:32px;justify-content:center;font-weight:600;padding:4px 8px}
-.mapbar .zlvl{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--muted);min-width:4.2em;text-align:center}
 /* [all widths] page chrome that only exists below 1025px */
 .mobilebar{display:none}
 .tocdrawer,.tocbackdrop{display:none}
@@ -467,4 +465,21 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
 
 @media (prefers-reduced-motion:no-preference){.station rect.box,.pathline,.altstub,.pcline{transition:opacity .25s ease}}
 @media print{.mapbar,.controls,.mobilebar,.tocdrawer,.tocbackdrop{display:none}.mapwrap{max-height:none;overflow:visible}#app{max-width:none}}
+
+/* map zoom control — a sticky overlay pinned to the top-right corner of the map viewport (all widths) */
+.zoombar{position:sticky;top:0;left:0;height:0;overflow:visible;z-index:4;pointer-events:none}
+.zoomctl{position:absolute;right:10px;top:10px;display:inline-flex;align-items:center;gap:2px;padding:3px;border:1px solid var(--line);border-radius:9px;background:var(--surface);box-shadow:var(--shadow);pointer-events:auto;opacity:.94}
+.zoomctl:hover{opacity:1}
+@supports (backdrop-filter:blur(6px)) or (-webkit-backdrop-filter:blur(6px)){.zoomctl{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}}
+.zoomctl .zb{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:26px;min-width:26px;padding:0 6px;border:0;border-radius:6px;background:transparent;color:var(--ink);font:600 12px/1 "JetBrains Mono",monospace;cursor:pointer}
+.zoomctl .zb:hover{background:var(--bg2,rgba(127,127,127,.14))}
+.zoomctl .zb:active{transform:translateY(1px)}
+.zoomctl .zb:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.zoomctl .zt{font-weight:500;font-size:11.5px;letter-spacing:.02em}
+.zoomctl .zlvl{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--muted);min-width:3.6em;text-align:center;font-variant-numeric:tabular-nums}
+.zoomctl .zsep{width:1px;height:16px;background:var(--line);margin:0 3px}
+.zoombar.bottom{top:auto;bottom:0}
+.zoombar.bottom .zoomctl{top:auto;bottom:10px}
+@media (max-width:600px){.zoomctl{right:6px;top:6px;padding:2px}.zoombar.bottom .zoomctl{top:auto;bottom:8px}.zoomctl .zb{height:30px;min-width:30px}.zoomctl .zt span{display:none}.zoomctl .zt{padding:0 5px}}
+
 """
