@@ -61,7 +61,15 @@ def stamp(a):
     r = re.sub(r'https://qodeh\.com/[^\s)\]]*', site, r)
     r = re.sub(r'qodeh\.com/qt-map', site.replace('https://', '').rstrip('/'), r)
     r = re.sub(r'\*\*Edition [^*]*\*\*', '**Edition %s%s**' % (edition, ' (beta)' if status == 'beta' else ''), r, count=1)
-    r = re.sub(r'archived on Zenodo, DOI', ('DOI reserved on Zenodo,' if status == 'beta' else 'archived on Zenodo, DOI'), r, count=1)
+    r = re.sub(r'(archived on Zenodo, DOI|DOI reserved on Zenodo,)', ('DOI reserved on Zenodo,' if status == 'beta' else 'archived on Zenodo, DOI'), r, count=1)
+    # beta: a reserved DOI does not resolve — print it as text and cite the site; release: link it and cite the DOI
+    doi_link = r'\[(10\.5281/zenodo\.\d+)\]\(https://doi\.org/10\.5281/zenodo\.\d+\)'
+    if status == 'beta':
+        r = re.sub(doi_link, r'\1 (resolves on release)', r)
+        r = re.sub(r'^(> Neeman, R\. \(\d{4}\)\. \*Quantum Technology Map\* \(Edition [^)]*\)\. Qodeh\. ).*$', lambda m: m.group(1).replace('). Qodeh. ', ', beta). Qodeh. ') + site, r, flags=re.M)
+    else:
+        r = re.sub(r'\b(10\.5281/zenodo\.\d+) \(resolves on release\)', r'[\1](https://doi.org/\1)', r)
+        r = re.sub(r'^(> Neeman, R\. \(\d{4}\)\. \*Quantum Technology Map\* \(Edition [^)]*?)(, beta)?\)\. Qodeh\. .*$', lambda m: m.group(1) + '). Qodeh. https://doi.org/' + concept, r, flags=re.M)
     wr('README.md', r)
     print('stamped:', dict(concept=concept, version=version, site=site, status=status, date=date, edition=edition))
     if a.build:

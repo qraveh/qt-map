@@ -2,7 +2,7 @@
 
 Editions use calendar versioning (YYYY.MM, optionally .N for a re-issue within the month). Each edition is archived on Zenodo with its own version DOI; the concept DOI 10.5281/zenodo.22674814 resolves to the newest edition.
 
-## 2026.09 — 2026-09-05
+## 2026.09 — 2026-09-09
 
 DOI: https://doi.org/10.5281/zenodo.22674815
 

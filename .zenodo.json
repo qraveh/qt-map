@@ -2,6 +2,7 @@
   "title": "Quantum Technology Map",
   "upload_type": "publication",
   "publication_type": "report",
+  "imprint_publisher": "Qodeh",
   "version": "2026.09",
   "language": "eng",
   "creators": [
@@ -43,5 +44,5 @@
       "resource_type": "software"
     }
   ],
-  "publication_date": "2026-09-05"
+  "publication_date": "2026-09-09"
 }

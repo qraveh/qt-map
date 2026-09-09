@@ -9,7 +9,7 @@ SITE = 'https://qodeh.com/publications/quantum-technology-map/'
 STATUS = 'beta'   # 'beta' (DOI reserved, not yet resolving; cite the site) | 'release' (edition archived on Zenodo, DOI resolves)
 
 EDITIONS = [
- {'edition': '2026.09', 'date': '2026-09-05', 'doi': '10.5281/zenodo.22674815',
+ {'edition': '2026.09', 'date': '2026-09-09', 'doi': '10.5281/zenodo.22674815',
   'en': ['First public edition. Goal-oriented comparison of all platforms (status 4 September 2026); technology graph of 96 nodes in ten layers, seven coordinates, five edge types, 14 platform paths, 230 standard records with derived syndrome-round, reaction-time and operations-per-coherence clocks; 96 technology briefs in English and Russian.'],
   'ru': ['Первое публичное издание. Сравнение всех платформ по целям (состояние на 4 сентября 2026); граф технологий из 96 узлов в десяти слоях, семь координат, пять типов рёбер, 14 путей платформ, 230 стандартных рекордов с выведенными тактами раунда синдрома, времени реакции и операций на когерентность; 96 брифов по технологиям на английском и русском.']},
 ]

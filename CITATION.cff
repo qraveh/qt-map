@@ -3,7 +3,7 @@ message: "If you use the Quantum Technology Map, please cite the edition you rea
 type: dataset
 title: "Quantum Technology Map"
 version: "2026.09"
-date-released: "2026-09-05"
+date-released: "2026-09-09"
 authors:
   - family-names: Neeman
     given-names: Raveh
