@@ -35,11 +35,18 @@ Every quantum-computing platform compared by the goal it serves; a technology gr
 ## Build
 
 ```bash
-pip install markdown
+pip install -r requirements.txt
 python3 build/build.py          # → data/graph.json, report §7, dist/Quantum-Technology-Map-<edition>.html, CHANGELOG.md
 ```
 
 The document is one HTML file with no runtime dependencies except Google Fonts (optional; system fonts are the fallback). Open `dist/…html` locally or publish it as-is.
+
+The build is reproducible: on any platform it rebuilds `dist/` byte-for-byte, so a clean
+tree after `build.py` means the committed document is the one the sources produce. CI
+checks exactly that on every push. Two things make it hold and are easy to undo by
+accident — the pinned `markdown` version, and rounding derived floats to six significant
+digits in `build/make_sections.py`, without which the last bit of a sum differs between
+platforms.
 
 ## Editions and citation
 
