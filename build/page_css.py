@@ -469,23 +469,28 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
 @media (prefers-reduced-motion:no-preference){.station rect.box,.pathline,.altstub,.pcline{transition:opacity .25s ease}}
 @media print{.mapbar,.controls,.mobilebar,.tocdrawer,.tocbackdrop{display:none}.mapwrap{max-height:none;overflow:visible}#app{max-width:none}}
 
-/* map zoom row — the first line of the map: a translucent strip pinned to the top of the map viewport, controls at the right;
-   it sits over the column-header band, not over the stations; on ≤1024 px it moves to the bottom edge (the page bar covers the top) */
-.zoombar{position:sticky;top:0;left:0;z-index:4;height:34px;display:flex;align-items:center;justify-content:flex-end;padding:0 8px;box-sizing:border-box;background:var(--surface-t85);border-bottom:1px solid var(--rule2);pointer-events:none}
-@supports (backdrop-filter:blur(6px)) or (-webkit-backdrop-filter:blur(6px)){.zoombar{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}}
-.zoombar.bottom{top:auto;bottom:0;border-bottom:0;border-top:1px solid var(--rule2)}
-.zoomctl{display:inline-flex;align-items:center;gap:2px;pointer-events:auto}
+/* map zoom — a translucent window in the top-right corner of the map bar (desktop); the paths row keeps a margin
+   clear of it. On ≤1024 px the same control moves into the scroller and pins to its bottom-right corner. */
+.zoomwin{margin-left:auto;align-self:center}
+#pathchips .zoomwin{margin-left:auto}
+.zoomctl{display:inline-flex;align-items:center;gap:2px;padding:3px;border:1px solid var(--rule);border-radius:9px;background:var(--surface-t85);box-shadow:var(--shadow)}
+@supports (backdrop-filter:blur(6px)) or (-webkit-backdrop-filter:blur(6px)){.zoomctl{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}}
 .zoomctl .zb{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:26px;min-width:26px;padding:0 6px;border:0;border-radius:6px;background:transparent;color:var(--ink);font:600 12px/1 "JetBrains Mono",monospace;cursor:pointer}
 .zoomctl .zb:hover{background:var(--surface2)}
 .zoomctl .zb:active{transform:translateY(1px)}
 .zoomctl .zb:focus-visible,.zoomctl .zlvl:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 .zoomctl .zt{font-weight:500;font-size:11.5px;letter-spacing:.02em}
+.zoomctl .zt span{display:none}
+.zoomctl .zhint{display:none}
 .zoomctl .zlvl{width:4.6em;height:24px;padding:0 4px;border:1px solid var(--rule);border-radius:6px;background:var(--surface);color:var(--ink);font:500 11.5px/1 "JetBrains Mono",monospace;text-align:center;font-variant-numeric:tabular-nums;-moz-appearance:textfield}
 .zoomctl .zlvl::-webkit-outer-spin-button,.zoomctl .zlvl::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
 .zoomctl .zlvl:focus{border-color:var(--accent);outline:none}
 .zoomctl .zsep{width:1px;height:16px;background:var(--rule);margin:0 3px}
-.zoomctl .zhint{font-size:10.5px;color:var(--muted);margin-right:6px;letter-spacing:.04em;text-transform:uppercase}
-@media (max-width:600px){.zoombar{height:38px;padding:0 6px}.zoomctl .zb{height:30px;min-width:30px}.zoomctl .zt span{display:none}.zoomctl .zt{padding:0 5px}.zoomctl .zhint{display:none}}
+.zoomctl .zhint{font-size:10.5px;color:var(--muted);margin:0 6px 0 4px;letter-spacing:.04em;text-transform:uppercase}
+.zoombar{position:sticky;bottom:0;left:0;height:0;overflow:visible;z-index:4;pointer-events:none}
+.zoombar .zoomctl{position:absolute;right:6px;bottom:8px;pointer-events:auto}
+@media (max-width:600px){.zoomctl{padding:2px}.zoomctl .zb{height:30px;min-width:30px}.zoomctl .zt span{display:none}.zoomctl .zt{padding:0 5px}.zoomctl .zhint{display:none}}
+.mapwrap.tall{max-height:none}
 /* beta stamp (editions.py STATUS='beta'): visible but quiet */
 .beta{display:inline-block;padding:0 6px;border-radius:999px;border:1px solid var(--accent);color:var(--accent);font:600 10.5px/16px "JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;vertical-align:1px}
 .pubmeta .doi{font-family:"JetBrains Mono",monospace;color:var(--muted);border-bottom:1px dotted var(--line);cursor:help}

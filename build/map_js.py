@@ -36,9 +36,9 @@ const wrap=document.getElementById('mapwrap');
 const svg=d3.select(wrap).append('svg').attr('viewBox',`0 0 ${W} ${H}`).attr('width',W).attr('height',H).attr('role','img').attr('aria-label','Technology map: ten stack layers as columns, carrier-nature affinity as rows, platform paths as coloured lines');
 // zoom control: pinned top-right on desktop; on ≤1024 px it moves to the end of the scroller and pins bottom-right
 // (the sticky page bar would otherwise cover it whenever the map's top edge scrolls under the bar)
-(function(){ const zb=wrap.querySelector('.zoombar'); if(!zb)return; let mq=null; try{ mq=window.matchMedia('(max-width:1024px)'); }catch(e){}
-  const place=()=>{ if(mq&&mq.matches){ wrap.appendChild(zb); zb.classList.add('bottom'); } else { wrap.insertBefore(zb,wrap.firstChild); zb.classList.remove('bottom'); } };
-  place(); if(mq){ if(mq.addEventListener)mq.addEventListener('change',place); else if(mq.addListener)mq.addListener(place); } })();
+(function(){ const zb=wrap.querySelector('.zoombar'), win=document.querySelector('#mapbar .zoomwin'), ctl=document.querySelector('.zoomctl'); if(!zb||!win||!ctl)return; let mq=null; try{ mq=window.matchMedia('(max-width:1024px)'); }catch(e){}
+  const place=()=>{ if(mq&&mq.matches){ zb.appendChild(ctl); wrap.appendChild(zb); } else { win.appendChild(ctl); const pc=document.getElementById('pathchips'); if(pc)pc.appendChild(win); } };
+  window.__placeZoom=place; place(); if(mq){ if(mq.addEventListener)mq.addEventListener('change',place); else if(mq.addListener)mq.addListener(place); } })();
 const defs=svg.append('defs');
 defs.append('pattern').attr('id','hatch').attr('patternUnits','userSpaceOnUse').attr('width',6).attr('height',6).attr('patternTransform','rotate(45)').append('line').attr('x1',0).attr('y1',0).attr('x2',0).attr('y2',6).attr('stroke','var(--nat)').attr('stroke-width',1.2).attr('opacity',.55);
 defs.append('marker').attr('id','arr').attr('viewBox','0 0 10 10').attr('refX',9).attr('refY',5).attr('markerWidth',7).attr('markerHeight',7).attr('orient','auto-start-reverse').append('path').attr('d','M0,0 L10,5 L0,10 z').attr('fill','var(--ink)');
@@ -272,6 +272,7 @@ document.querySelectorAll('#mapbar [data-goto]').forEach(a=>a.addEventListener('
 const bar=document.getElementById('mapbar');
 const chipsWrap=document.getElementById('pathchips');
 G.paths.forEach(p=>{const b=document.createElement('button'); b.className='chip'; b.dataset.chipPath=p.id; b.setAttribute('aria-pressed','false'); b.innerHTML=`<i class="sw" style="--c:${FAMC[p.family]}"></i><span class="t"></span>`; b.addEventListener('click',()=>{state.isolate=state.isolate===p.id?null:p.id; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.chipPath===state.isolate))); if(state.isolate){ state.focus=null; st.classed('sel',false); drawEdges(); inspectPath(p); pcHighlight(null);} else if(!state.focus){ inspectEmpty(); } dimming();}); chipsWrap.appendChild(b);});
+if(window.__placeZoom)window.__placeZoom();   // the zoom window sits at the end of the paths row (desktop) — chips exist now
 const lensSel=document.getElementById('lens'); Object.keys(LENSES).forEach(k=>{const o=document.createElement('option'); o.value=k; lensSel.appendChild(o);}); lensSel.addEventListener('change',()=>{state.lens=lensSel.value; state.lensFilter=null; applyLens(); dimming();});
 document.getElementById('tg-conf').addEventListener('click',ev=>{state.showConf=!state.showConf; ev.currentTarget.setAttribute('aria-pressed',String(state.showConf)); drawEdges();});
 document.getElementById('tg-rep').addEventListener('click',ev=>{state.showRep=!state.showRep; ev.currentTarget.setAttribute('aria-pressed',String(state.showRep)); drawEdges();});
@@ -296,6 +297,16 @@ function zoomStep(d){ let i=0; for(let k=1;k<ZSTEPS.length;k++){ if(Math.abs(ZST
   // height and changes clientWidth; measure again after layout and settle on the width that actually fits.
   function fitWidth(){ for(let k=0;k<3;k++){ applyZoom((wrap.clientWidth-2)/W,true); if(wrap.scrollWidth<=wrap.clientWidth)break; } wrap.scrollLeft=0; }
   if(zf)zf.addEventListener('click',fitWidth);
+  // fit height: the whole map inside the wrapper's current height (after 'top' that is nearly the full window)
+  function fitHeight(){ for(let k=0;k<3;k++){ applyZoom((wrap.clientHeight-2)/H,true); if(wrap.scrollHeight<=wrap.clientHeight)break; } wrap.scrollTop=0; }
+  const zfh=document.getElementById('zoom-fith'); if(zfh)zfh.addEventListener('click',fitHeight);
+  // align top: scroll the page so the map's top edge sits at the top of the window (under the page bar, if any) and let the map
+  // use the full window height; the wrapper keeps that height until the window is resized or the map is collapsed
+  function pageBarH(){ const b=document.querySelector('.mobilebar'); return (b&&getComputedStyle(b).position==='sticky'&&b.offsetParent)?b.offsetHeight:0; }
+  function alignTop(){ const off=pageBarH()+4; wrap.classList.add('tall'); const h=Math.max(300,window.innerHeight-off-4); wrap.style.maxHeight=h+'px';
+    const y=wrap.getBoundingClientRect().top+window.pageYOffset-off; window.scrollTo({top:Math.max(0,y),behavior:'smooth'}); }
+  const zt=document.getElementById('zoom-top'); if(zt)zt.addEventListener('click',alignTop);
+  window.addEventListener('resize',()=>{ if(wrap.classList.contains('tall')){ const off=pageBarH()+4; wrap.style.maxHeight=Math.max(300,window.innerHeight-off-4)+'px'; } });
   if(z1)z1.addEventListener('click',()=>applyZoom(1,true));
   const zl=document.getElementById('zoomlvl');
   if(zl){ const commit=()=>{ const v=parseInt(String(zl.value).replace(/[^0-9]/g,''),10); if(!isNaN(v)&&v>0)applyZoom(v/100,true); zl.value=Math.round((state.zoom||1)*100)+'%'; };

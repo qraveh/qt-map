@@ -485,23 +485,28 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
 @media (prefers-reduced-motion:no-preference){.station rect.box,.pathline,.altstub,.pcline{transition:opacity .25s ease}}
 @media print{.mapbar,.controls,.mobilebar,.tocdrawer,.tocbackdrop{display:none}.mapwrap{max-height:none;overflow:visible}#app{max-width:none}}
 
-/* map zoom row — the first line of the map: a translucent strip pinned to the top of the map viewport, controls at the right;
-   it sits over the column-header band, not over the stations; on ≤1024 px it moves to the bottom edge (the page bar covers the top) */
-.zoombar{position:sticky;top:0;left:0;z-index:4;height:34px;display:flex;align-items:center;justify-content:flex-end;padding:0 8px;box-sizing:border-box;background:var(--surface-t85);border-bottom:1px solid var(--rule2);pointer-events:none}
-@supports (backdrop-filter:blur(6px)) or (-webkit-backdrop-filter:blur(6px)){.zoombar{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}}
-.zoombar.bottom{top:auto;bottom:0;border-bottom:0;border-top:1px solid var(--rule2)}
-.zoomctl{display:inline-flex;align-items:center;gap:2px;pointer-events:auto}
+/* map zoom — a translucent window in the top-right corner of the map bar (desktop); the paths row keeps a margin
+   clear of it. On ≤1024 px the same control moves into the scroller and pins to its bottom-right corner. */
+.zoomwin{margin-left:auto;align-self:center}
+#pathchips .zoomwin{margin-left:auto}
+.zoomctl{display:inline-flex;align-items:center;gap:2px;padding:3px;border:1px solid var(--rule);border-radius:9px;background:var(--surface-t85);box-shadow:var(--shadow)}
+@supports (backdrop-filter:blur(6px)) or (-webkit-backdrop-filter:blur(6px)){.zoomctl{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}}
 .zoomctl .zb{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:26px;min-width:26px;padding:0 6px;border:0;border-radius:6px;background:transparent;color:var(--ink);font:600 12px/1 "JetBrains Mono",monospace;cursor:pointer}
 .zoomctl .zb:hover{background:var(--surface2)}
 .zoomctl .zb:active{transform:translateY(1px)}
 .zoomctl .zb:focus-visible,.zoomctl .zlvl:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 .zoomctl .zt{font-weight:500;font-size:11.5px;letter-spacing:.02em}
+.zoomctl .zt span{display:none}
+.zoomctl .zhint{display:none}
 .zoomctl .zlvl{width:4.6em;height:24px;padding:0 4px;border:1px solid var(--rule);border-radius:6px;background:var(--surface);color:var(--ink);font:500 11.5px/1 "JetBrains Mono",monospace;text-align:center;font-variant-numeric:tabular-nums;-moz-appearance:textfield}
 .zoomctl .zlvl::-webkit-outer-spin-button,.zoomctl .zlvl::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
 .zoomctl .zlvl:focus{border-color:var(--accent);outline:none}
 .zoomctl .zsep{width:1px;height:16px;background:var(--rule);margin:0 3px}
-.zoomctl .zhint{font-size:10.5px;color:var(--muted);margin-right:6px;letter-spacing:.04em;text-transform:uppercase}
-@media (max-width:600px){.zoombar{height:38px;padding:0 6px}.zoomctl .zb{height:30px;min-width:30px}.zoomctl .zt span{display:none}.zoomctl .zt{padding:0 5px}.zoomctl .zhint{display:none}}
+.zoomctl .zhint{font-size:10.5px;color:var(--muted);margin:0 6px 0 4px;letter-spacing:.04em;text-transform:uppercase}
+.zoombar{position:sticky;bottom:0;left:0;height:0;overflow:visible;z-index:4;pointer-events:none}
+.zoombar .zoomctl{position:absolute;right:6px;bottom:8px;pointer-events:auto}
+@media (max-width:600px){.zoomctl{padding:2px}.zoomctl .zb{height:30px;min-width:30px}.zoomctl .zt span{display:none}.zoomctl .zt{padding:0 5px}.zoomctl .zhint{display:none}}
+.mapwrap.tall{max-height:none}
 /* beta stamp (editions.py STATUS='beta'): visible but quiet */
 .beta{display:inline-block;padding:0 6px;border-radius:999px;border:1px solid var(--accent);color:var(--accent);font:600 10.5px/16px "JetBrains Mono",monospace;letter-spacing:.06em;text-transform:uppercase;vertical-align:1px}
 .pubmeta .doi{font-family:"JetBrains Mono",monospace;color:var(--muted);border-bottom:1px dotted var(--line);cursor:help}
@@ -567,6 +572,7 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
   <button class="chip tog" id="tg-rep" aria-pressed="false"><span class="lang-en">all alternatives</span><span class="lang-ru">все «альтернативы»</span></button>
   <button class="chip tog" id="tg-conf" aria-pressed="false"><span class="lang-en">all conflicts</span><span class="lang-ru">все «конфликтует»</span></button>
   <button class="chip" id="tg-reset"><span class="lang-en">reset</span><span class="lang-ru">сброс</span></button></div>
+ <div class="zoomwin"><div class="zoomctl" role="group" aria-label="map zoom"><span class="zhint lang-en">zoom</span><span class="zhint lang-ru">масштаб</span><button type="button" class="zb" id="zoom-out" aria-label="zoom out" title="zoom out (−)"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><input class="zlvl" id="zoomlvl" type="text" inputmode="numeric" pattern="[0-9]*" value="100%" aria-label="zoom percent — type a number and press Enter" title="type a percentage and press Enter; ↑/↓ = ±5"><button type="button" class="zb" id="zoom-in" aria-label="zoom in" title="zoom in (+)"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 8h10M8 3v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><i class="zsep"></i><button type="button" class="zb zt" id="zoom-fit" title="fit width"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M2 8h12M2 8l3-3M2 8l3 3M14 8l-3-3M14 8l-3 3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lang-en">fit</span><span class="lang-ru">вписать</span></button><button type="button" class="zb zt" id="zoom-fith" title="fit height"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M8 2v12M8 2L5 5M8 2l3 3M8 14l-3-3M8 14l3-3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lang-en">fit</span><span class="lang-ru">вписать</span></button><i class="zsep"></i><button type="button" class="zb zt" id="zoom-top" title="align the map to the top of the window (maximum height)"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 3h10M8 6v8M8 6L5 9M8 6l3 3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lang-en">top</span><span class="lang-ru">вверх</span></button><button type="button" class="zb zt" id="zoom-100" title="actual size">1:1</button></div></div>
  <details class="glyphs" id="glyphlegend" open><summary><span class="lbl lang-en">legend</span><span class="lbl lang-ru">легенда</span></summary>
   <div class="glyphlist">
   <span class="gl"><i class="lg hub">◎</i><span class="lang-en">hub</span><span class="lang-ru">хаб</span></span>
@@ -583,7 +589,7 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
  </details>
  <div class="grp lenslegend" id="lenslegend"></div>
 </div>
-<div class="mapgrid"><div class="mapwrap" id="mapwrap"><div class="zoombar"><div class="zoomctl" role="group" aria-label="map zoom"><span class="zhint lang-en">zoom</span><span class="zhint lang-ru">масштаб</span><button type="button" class="zb" id="zoom-out" aria-label="zoom out" title="zoom out (−)"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><input class="zlvl" id="zoomlvl" type="text" inputmode="numeric" pattern="[0-9]*" value="100%" aria-label="zoom percent — type a number and press Enter" title="type a percentage and press Enter; ↑/↓ = ±5"><button type="button" class="zb" id="zoom-in" aria-label="zoom in" title="zoom in (+)"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 8h10M8 3v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><i class="zsep"></i><button type="button" class="zb zt" id="zoom-fit" title="fit width"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M2 8h12M2 8l3-3M2 8l3 3M14 8l-3-3M14 8l-3 3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lang-en">fit</span><span class="lang-ru">вписать</span></button><button type="button" class="zb zt" id="zoom-100" title="actual size">1:1</button></div></div><div class="tip" id="maptip"></div></div><aside class="insp" id="insp" hidden></aside></div>
+<div class="mapgrid"><div class="mapwrap" id="mapwrap"><div class="zoombar"></div><div class="tip" id="maptip"></div></div><aside class="insp" id="insp" hidden></aside></div>
 <div class="legend">
  <span class="k"><svg viewBox="0 0 26 16"><rect x="1" y="2" width="24" height="12" rx="4" fill="var(--surface)" stroke="var(--sc)" stroke-width="1.5"/></svg><span class="lang-en">demonstrated</span><span class="lang-ru">продемонстрировано</span></span>
  <span class="k"><svg viewBox="0 0 26 16"><rect x="1" y="2" width="24" height="12" rx="4" fill="var(--surface)" stroke="var(--mid)" stroke-width="1.5" stroke-dasharray="3 2"/></svg><span class="lang-en">emerging</span><span class="lang-ru">формируется</span></span>
@@ -40734,9 +40740,9 @@ const wrap=document.getElementById('mapwrap');
 const svg=d3.select(wrap).append('svg').attr('viewBox',`0 0 ${W} ${H}`).attr('width',W).attr('height',H).attr('role','img').attr('aria-label','Technology map: ten stack layers as columns, carrier-nature affinity as rows, platform paths as coloured lines');
 // zoom control: pinned top-right on desktop; on ≤1024 px it moves to the end of the scroller and pins bottom-right
 // (the sticky page bar would otherwise cover it whenever the map's top edge scrolls under the bar)
-(function(){ const zb=wrap.querySelector('.zoombar'); if(!zb)return; let mq=null; try{ mq=window.matchMedia('(max-width:1024px)'); }catch(e){}
-  const place=()=>{ if(mq&&mq.matches){ wrap.appendChild(zb); zb.classList.add('bottom'); } else { wrap.insertBefore(zb,wrap.firstChild); zb.classList.remove('bottom'); } };
-  place(); if(mq){ if(mq.addEventListener)mq.addEventListener('change',place); else if(mq.addListener)mq.addListener(place); } })();
+(function(){ const zb=wrap.querySelector('.zoombar'), win=document.querySelector('#mapbar .zoomwin'), ctl=document.querySelector('.zoomctl'); if(!zb||!win||!ctl)return; let mq=null; try{ mq=window.matchMedia('(max-width:1024px)'); }catch(e){}
+  const place=()=>{ if(mq&&mq.matches){ zb.appendChild(ctl); wrap.appendChild(zb); } else { win.appendChild(ctl); const pc=document.getElementById('pathchips'); if(pc)pc.appendChild(win); } };
+  window.__placeZoom=place; place(); if(mq){ if(mq.addEventListener)mq.addEventListener('change',place); else if(mq.addListener)mq.addListener(place); } })();
 const defs=svg.append('defs');
 defs.append('pattern').attr('id','hatch').attr('patternUnits','userSpaceOnUse').attr('width',6).attr('height',6).attr('patternTransform','rotate(45)').append('line').attr('x1',0).attr('y1',0).attr('x2',0).attr('y2',6).attr('stroke','var(--nat)').attr('stroke-width',1.2).attr('opacity',.55);
 defs.append('marker').attr('id','arr').attr('viewBox','0 0 10 10').attr('refX',9).attr('refY',5).attr('markerWidth',7).attr('markerHeight',7).attr('orient','auto-start-reverse').append('path').attr('d','M0,0 L10,5 L0,10 z').attr('fill','var(--ink)');
@@ -40970,6 +40976,7 @@ document.querySelectorAll('#mapbar [data-goto]').forEach(a=>a.addEventListener('
 const bar=document.getElementById('mapbar');
 const chipsWrap=document.getElementById('pathchips');
 G.paths.forEach(p=>{const b=document.createElement('button'); b.className='chip'; b.dataset.chipPath=p.id; b.setAttribute('aria-pressed','false'); b.innerHTML=`<i class="sw" style="--c:${FAMC[p.family]}"></i><span class="t"></span>`; b.addEventListener('click',()=>{state.isolate=state.isolate===p.id?null:p.id; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.chipPath===state.isolate))); if(state.isolate){ state.focus=null; st.classed('sel',false); drawEdges(); inspectPath(p); pcHighlight(null);} else if(!state.focus){ inspectEmpty(); } dimming();}); chipsWrap.appendChild(b);});
+if(window.__placeZoom)window.__placeZoom();   // the zoom window sits at the end of the paths row (desktop) — chips exist now
 const lensSel=document.getElementById('lens'); Object.keys(LENSES).forEach(k=>{const o=document.createElement('option'); o.value=k; lensSel.appendChild(o);}); lensSel.addEventListener('change',()=>{state.lens=lensSel.value; state.lensFilter=null; applyLens(); dimming();});
 document.getElementById('tg-conf').addEventListener('click',ev=>{state.showConf=!state.showConf; ev.currentTarget.setAttribute('aria-pressed',String(state.showConf)); drawEdges();});
 document.getElementById('tg-rep').addEventListener('click',ev=>{state.showRep=!state.showRep; ev.currentTarget.setAttribute('aria-pressed',String(state.showRep)); drawEdges();});
@@ -40994,6 +41001,16 @@ function zoomStep(d){ let i=0; for(let k=1;k<ZSTEPS.length;k++){ if(Math.abs(ZST
   // height and changes clientWidth; measure again after layout and settle on the width that actually fits.
   function fitWidth(){ for(let k=0;k<3;k++){ applyZoom((wrap.clientWidth-2)/W,true); if(wrap.scrollWidth<=wrap.clientWidth)break; } wrap.scrollLeft=0; }
   if(zf)zf.addEventListener('click',fitWidth);
+  // fit height: the whole map inside the wrapper's current height (after 'top' that is nearly the full window)
+  function fitHeight(){ for(let k=0;k<3;k++){ applyZoom((wrap.clientHeight-2)/H,true); if(wrap.scrollHeight<=wrap.clientHeight)break; } wrap.scrollTop=0; }
+  const zfh=document.getElementById('zoom-fith'); if(zfh)zfh.addEventListener('click',fitHeight);
+  // align top: scroll the page so the map's top edge sits at the top of the window (under the page bar, if any) and let the map
+  // use the full window height; the wrapper keeps that height until the window is resized or the map is collapsed
+  function pageBarH(){ const b=document.querySelector('.mobilebar'); return (b&&getComputedStyle(b).position==='sticky'&&b.offsetParent)?b.offsetHeight:0; }
+  function alignTop(){ const off=pageBarH()+4; wrap.classList.add('tall'); const h=Math.max(300,window.innerHeight-off-4); wrap.style.maxHeight=h+'px';
+    const y=wrap.getBoundingClientRect().top+window.pageYOffset-off; window.scrollTo({top:Math.max(0,y),behavior:'smooth'}); }
+  const zt=document.getElementById('zoom-top'); if(zt)zt.addEventListener('click',alignTop);
+  window.addEventListener('resize',()=>{ if(wrap.classList.contains('tall')){ const off=pageBarH()+4; wrap.style.maxHeight=Math.max(300,window.innerHeight-off-4)+'px'; } });
   if(z1)z1.addEventListener('click',()=>applyZoom(1,true));
   const zl=document.getElementById('zoomlvl');
   if(zl){ const commit=()=>{ const v=parseInt(String(zl.value).replace(/[^0-9]/g,''),10); if(!isNaN(v)&&v>0)applyZoom(v/100,true); zl.value=Math.round((state.zoom||1)*100)+'%'; };
