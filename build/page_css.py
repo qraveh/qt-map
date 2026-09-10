@@ -116,6 +116,10 @@ details.fold .tbl{border:0;border-top:1px solid var(--rule);border-radius:0;marg
 .chip[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
 .chip.off{opacity:.45}
 .chip.tog[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+/* global reset: an action, not a toggle — so not a pill: square corners, dashed outline, icon, muted until hovered */
+.resetbtn{appearance:none;border:1px dashed var(--muted);background:transparent;color:var(--ink2);font:inherit;font-size:12.5px;padding:4px 9px 4px 7px;border-radius:5px;cursor:pointer;display:inline-flex;align-items:center;gap:5px;line-height:1.2}
+.resetbtn:hover,.resetbtn:focus-visible{border-style:solid;border-color:var(--accent);color:var(--accent);outline:none}
+.resetbtn:active{background:var(--surface2)}
 select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--rule);border-radius:6px;background:var(--surface);color:var(--ink);max-width:100%}
 .mapfull{margin-left:0}
 .mapgrid{position:relative;display:grid;grid-template-columns:minmax(0,1fr);border:1px solid var(--rule);border-top:0;border-radius:0 0 10px 10px;background:var(--surface);overflow:hidden}

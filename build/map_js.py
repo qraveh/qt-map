@@ -306,7 +306,9 @@ const lensSel=document.getElementById('lens'); Object.keys(LENSES).forEach(k=>{c
 document.getElementById('tg-conf').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showConf=!state.showConf; ev.currentTarget.setAttribute('aria-pressed',String(state.showConf)); drawEdges(); dimming();});
 document.getElementById('tg-rep').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showRep=!state.showRep; ev.currentTarget.setAttribute('aria-pressed',String(state.showRep)); drawEdges(); dimming();});
 document.getElementById('tg-req').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showReq=!state.showReq; ev.currentTarget.setAttribute('aria-pressed',String(state.showReq)); drawEdges(); dimming();});
-document.getElementById('tg-reset').addEventListener('click',()=>{state.isolate=null; state.showConf=state.showRep=state.showReq=false; ['tg-conf','tg-rep','tg-req'].forEach(i=>document.getElementById(i).setAttribute('aria-pressed','false')); chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false')); select(null);});
+// reset map: the default view — every path, the family lens with no value kept, no edges, nothing isolated or focused (zoom and the bar's collapsed state are view settings and stay)
+document.getElementById('tg-reset').addEventListener('click',()=>{state.isolate=null; state.showConf=state.showRep=state.showReq=false; ['tg-conf','tg-rep','tg-req'].forEach(i=>document.getElementById(i).setAttribute('aria-pressed','false')); chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false'));
+  state.lens='family'; state.lensFilter=null; lensSel.value='family'; applyLens(); select(null);});
 // ---------- zoom: rendered width/height only, viewBox untouched (so the map stays crisp and text stays text)
 const ZSTEPS=[0.5,0.6,0.7,0.85,1,1.25,1.5,2];   // the − / + buttons walk these
 const ZMIN=0.2, ZMAX=2.5;                        // fit-width on a phone needs to go below ZSTEPS[0]
