@@ -237,6 +237,7 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .mapbar details.glyphs:not([open])>summary::after{content:"▸"}
 .glyphlist{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
 .gl{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.gl.long{white-space:normal;max-width:100%} .gl.long .lg{flex:0 0 auto}
 .lg{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;font-style:normal;font-size:12px;color:var(--ink)}
 .lg.hub{color:var(--accent)}
 .lg.off{color:var(--crit)}
