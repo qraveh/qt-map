@@ -1,6 +1,6 @@
 # Quantum Technology Map
 
-**Edition 2026.09 (beta)** · published at [qodeh.com/publications/quantum-technology-map](https://qodeh.com/publications/quantum-technology-map/) · DOI reserved on Zenodo, [10.5281/zenodo.XXXXXXX](https://doi.org/10.5281/zenodo.XXXXXXX) · CC BY 4.0 · bilingual EN / RU
+**Edition 2026.09 (beta)** · published at [qodeh.com/publications/quantum-technology-map](https://qodeh.com/publications/quantum-technology-map/) · DOI reserved on Zenodo, [10.5281/zenodo.22674814](https://doi.org/10.5281/zenodo.22674814) · CC BY 4.0 · bilingual EN / RU
 
 Every quantum-computing platform compared by the goal it serves; a technology graph of 96 self-contained technologies across ten stack layers, seven design coordinates and five edge types; a brief on each technology; every figure tagged and traced to a dated source. This repository holds the data, the briefs and the build that renders the single interactive document.
 
@@ -52,7 +52,7 @@ platforms.
 
 Editions use calendar versioning (`YYYY.MM`, `.N` for a re-issue within the month) and are cut when the graph changes structurally, a verdict changes or a headline number is corrected — otherwise roughly quarterly (3–6 per year). Each edition is a git tag and a Zenodo version with its own DOI; the concept DOI always resolves to the newest edition. Cite the edition you read:
 
-> Neeman, R. (2026). *Quantum Technology Map* (Edition 2026.09). Qodeh. https://doi.org/10.5281/zenodo.XXXXXXX
+> Neeman, R. (2026). *Quantum Technology Map* (Edition 2026.09). Qodeh. https://doi.org/10.5281/zenodo.22674814
 
 A `CITATION.cff` is included for GitHub's "Cite this repository" and for reference managers.
 
