@@ -212,7 +212,8 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .mapbar .lenslegend{flex-basis:100%;gap:6px 8px;align-items:center;padding-top:6px;border-top:1px dashed var(--rule)}
 .mapbar .lenslegend:empty{display:none}
 .mapbar .lenslegend .lbl{margin-right:6px}
-.lg.band{width:16px;height:12px;border:1px solid var(--sc);border-left:4px solid #2FA66A;border-radius:3px;background:rgba(47,166,106,.22)}
+.lg.stn{width:50px;height:16px}   /* two miniature stations: as drawn (outline = family), then with a lens on (tint + left band) */
+.lg.stn svg{display:block}
 .lg.badges{width:18px;height:12px;display:inline-flex;gap:2px;align-items:flex-end}
 .lg.badges b{display:inline-block;width:7px;height:4px;border-radius:1px;background:var(--sc)}
 .lg.badges b+b{background:none;border:1px solid var(--atom)}
@@ -601,7 +602,7 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
   <span class="gl"><i class="lg ed req"></i><span class="lang-en">requires</span><span class="lang-ru">требует</span></span>
   <span class="gl"><i class="lg ed rep"></i><span class="lang-en">alternatives</span><span class="lang-ru">альтернативы</span></span>
   <span class="gl"><i class="lg ed con"></i><span class="lang-en">conflicts — hover for the reason</span><span class="lang-ru">конфликтует — причина по наведению</span></span>
-  <span class="gl"><i class="lg band"></i><span class="lang-en">outline colour = platform family; with a lens on, tint + left band = the lens value (legend below)</span><span class="lang-ru">цвет рамки = семейство платформ; при включённой линзе оттенок + полоса слева = значение линзы (легенда ниже)</span></span>
+  <span class="gl"><i class="lg stn" aria-hidden="true"><svg viewBox="0 0 50 16" width="50" height="16"><rect x="0.6" y="0.6" width="21" height="14.8" rx="3.5" fill="var(--surface)" stroke="var(--sc)" stroke-width="1.2"/><rect x="3.2" y="3.6" width="11" height="1.6" rx="0.8" fill="var(--ink)" opacity="0.8"/><rect x="3.2" y="10.8" width="4" height="2.2" rx="0.6" fill="var(--sc)"/><path d="M23.4 8H27M25.6 6.4L27.2 8L25.6 9.6" fill="none" stroke="var(--muted)" stroke-width="1"/><rect x="28.4" y="0.6" width="21" height="14.8" rx="3.5" fill="rgba(27,175,122,0.22)" stroke="var(--atom)" stroke-width="1.2"/><rect x="28.4" y="0.6" width="3.2" height="14.8" rx="1.4" fill="var(--atom)"/><rect x="33.4" y="3.6" width="11" height="1.6" rx="0.8" fill="var(--ink)" opacity="0.8"/><rect x="33.4" y="10.8" width="4" height="2.2" rx="0.6" fill="var(--sc)"/></svg></i><span class="lang-en">outline colour = platform family; with a lens on, tint + left band = the lens value (legend below)</span><span class="lang-ru">цвет рамки = семейство платформ; при включённой линзе оттенок + полоса слева = значение линзы (легенда ниже)</span></span>
   <span class="gl"><i class="lg badges"><b></b><b></b></i><span class="lang-en">small squares = the platform lines through the station (■ primary, □ alternate)</span><span class="lang-ru">маленькие квадраты = линии платформ через станцию (■ основная, □ альтернатива)</span></span>
   <span class="gl"><i class="lg ax">↕</i><span class="lang-en">rows natural → fabricated · columns = layers · click a station</span><span class="lang-ru">строки естественное → изготовленное · колонки — слои · клик по станции</span></span>
   <span class="gl try"><span class="lang-en">try:</span><span class="lang-ru">попробуйте:</span> <a href="#" data-goto="transmon">Transmon</a> · <a href="#" data-goto="ct_sfq">SFQ</a> · <a href="#" data-goto="ro_erasure"><span class="lang-en">Erasure check</span><span class="lang-ru">Проверка стирания</span></a></span>

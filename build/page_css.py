@@ -196,7 +196,8 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .mapbar .lenslegend{flex-basis:100%;gap:6px 8px;align-items:center;padding-top:6px;border-top:1px dashed var(--rule)}
 .mapbar .lenslegend:empty{display:none}
 .mapbar .lenslegend .lbl{margin-right:6px}
-.lg.band{width:16px;height:12px;border:1px solid var(--sc);border-left:4px solid #2FA66A;border-radius:3px;background:rgba(47,166,106,.22)}
+.lg.stn{width:50px;height:16px}   /* two miniature stations: as drawn (outline = family), then with a lens on (tint + left band) */
+.lg.stn svg{display:block}
 .lg.badges{width:18px;height:12px;display:inline-flex;gap:2px;align-items:flex-end}
 .lg.badges b{display:inline-block;width:7px;height:4px;border-radius:1px;background:var(--sc)}
 .lg.badges b+b{background:none;border:1px solid var(--atom)}
