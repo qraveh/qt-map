@@ -58,6 +58,9 @@ const offsetAt={}; G.nodes.forEach(n=>{const ps=prim[n.id]||[]; ps.forEach((p,k)
 const line=d3.line().x(d=>d.x).y(d=>d.y).curve(d3.curveMonotoneX);
 function pathPoints(p){const pts=[]; for(let L=1;L<=10;L++){const ids=p.slots[L]||[]; if(!ids.length)continue; const n=NODE[ids[0]]; pts.push({x:n.cx,y:n.cy+(offsetAt[p.id+'|'+n.id]||0),L});} return pts;}
 const pathSel=gPaths.selectAll('path').data(G.paths).join('path').attr('class',d=>'pathline'+(NEUTRAL.has(d.family)?' neutral':'')).attr('d',d=>line(pathPoints(d))).attr('stroke',d=>FAMC[d.family]).attr('data-path',d=>d.id);
+// path lines are selectable: a wide invisible twin of each line takes the pointer — hover names the path, click isolates it (same as its chip)
+const gPathHit=svg.insert('g',function(){return gAlt.node();}).attr('class','pathhits');
+const pathHit=gPathHit.selectAll('path').data(G.paths).join('path').attr('class','phit').attr('d',d=>line(pathPoints(d))).attr('data-path',d=>d.id);
 // empty-slot markers on paths
 const emptyMarks=[]; G.paths.forEach(p=>{const pts=pathPoints(p); for(let L=1;L<=10;L++){const ids=p.slots[L]||[]; if(ids.length)continue; const prev=[...pts].reverse().find(q=>q.L<L)||pts[0]; emptyMarks.push({p,L,x:X0+(L-1)*COLW+NW/2,y:prev.y});}});
 gPaths.selectAll('circle.empty').data(emptyMarks).join('circle').attr('class','emptyslot').attr('cx',d=>d.x).attr('cy',d=>d.y).attr('r',5).attr('fill','var(--surface)').attr('stroke',d=>FAMC[d.p.family]).attr('stroke-dasharray','2 2').attr('stroke-width',1.5).attr('data-path',d=>d.p.id).append('title');
@@ -114,6 +117,7 @@ function unpinTip(){ tipPinned=false; hideTip(); }
 document.addEventListener('pointerdown',function(ev){ const t=ev.target; if(t&&t.closest&&t.closest('g.edge'))return; unpinTip(); },true);
 const LENSES={
  family:{en:'Platform family (paths)',ru:'Семейство платформ (пути)'},
+ marks:{en:'Reading marks: hub · off-diagonal · empty slot',ru:'Метки чтения: хаб · off-diagonal · пустой слот'},
  aff:{en:'(a) carrier affinity: natural ↔ fabricated',ru:'(a) сродство носителя: естественный ↔ изготовленный'},
  time:{en:'(b)/(c) characteristic time (gate or readout)',ru:'(b)/(c) характерное время (гейт или считывание)'},
  det:{en:'(b) entangling: deterministic / heralded',ru:'(b) перепутывание: детерминированное / heralded'},
@@ -135,8 +139,11 @@ const CATS={
  det:['det','her','na'], destr:['yes','no','none'], mid:['yes','no','none']};
 const VTAB={mech:'MECH',d:'MOB',mod:'MOD',place:'PLACE',f:'ERR',g:'FAB',status:'STATUS',det:'DET'};
 const YESNO={yes:['yes','да'],no:['no','нет'],none:['no readout','без считывания']};
-function catLabel(k,v){ if(k==='destr'||k==='mid')return T(...YESNO[v]); return vt(VTAB[k],v); }
-function lensValue(n,k){ if(k==='mech')return n.c?n.c.mech:'none'; if(k==='d')return n.d; if(k==='mod')return n.e.mod; if(k==='place')return n.e.place; if(k==='f')return n.f[0]||'none'; if(k==='g')return n.g; if(k==='status')return n.status;
+const MARKC={offd:'#EB6834',hub:'#2A78D6',empty:'#9AA3AD'}, MARKN={offd:['off-diagonal ⤢','off-diagonal ⤢'],hub:['hub ◎','хаб ◎'],empty:['empty slot ∅','пустой слот ∅'],none:['plain station','обычная станция']};
+function marksOf(n){ const m=[]; if(n.offdiag&&n.offdiag.length)m.push('offd'); if(n.hub)m.push('hub'); if(n.status==='X')m.push('empty'); return m.length?m:['none']; }
+function catLabelSafe(k,v){ try{ if(k==='family')return T(...FAMN[v]); if(k==='aff')return vt('AFF',Number(v)); if(k==='time')return v==='none'?'—':TBINS[Number(v)][1]; return catLabel(k,v);}catch(e){return String(v);} }
+function catLabel(k,v){ if(k==='marks')return T(...MARKN[v]); if(k==='destr'||k==='mid')return T(...YESNO[v]); return vt(VTAB[k],v); }
+function lensValue(n,k){ if(k==='marks')return marksOf(n)[0]; if(k==='mech')return n.c?n.c.mech:'none'; if(k==='d')return n.d; if(k==='mod')return n.e.mod; if(k==='place')return n.e.place; if(k==='f')return n.f[0]||'none'; if(k==='g')return n.g; if(k==='status')return n.status;
   if(k==='det')return n.b.det||'na'; if(k==='destr')return n.c?(n.c.destr?'yes':'no'):'none'; if(k==='mid')return n.c?(n.c.mid?'yes':'no'):'none'; if(k==='aff')return String(n.aff); if(k==='time'){const t=timeOf(n); return t==null?'none':timeBin(t);} return null;}
 function timeOf(n){ if(n.b.t!=null)return n.b.t; if(n.c&&n.c.t!=null)return n.c.t; return null; }
 const TBINS=[[-8.5,'≤ 3 ns'],[-7.5,'~30 ns'],[-6.5,'~300 ns'],[-5.5,'~3 µs'],[-4.5,'~30 µs'],[-3.5,'~300 µs'],[-2.5,'≥ 3 ms']];
@@ -144,16 +151,22 @@ function timeBin(t){ let best=0; TBINS.forEach((b,i)=>{ if(Math.abs(b[0]-t)<Math
 // resolve CSS colour tokens at runtime (d3 cannot interpolate var(--x) strings); re-resolved on theme change
 function css(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim()||'#888'; }
 let affScale=null, timeScale=null;
-function buildScales(){ affScale=d3.scaleLinear().domain([0,0.5,1]).range([css('--nat'),css('--mid'),css('--fab')]).interpolate(d3.interpolateRgb); timeScale=d3.scaleLinear().domain([-8.5,-6.5,-4.5,-2.5]).range([css('--lens1'),css('--lens2'),css('--lens3'),css('--lens4')]).interpolate(d3.interpolateRgb).clamp(true); }
+function buildScales(){ affScale=d3.scaleLinear().domain([0,0.5,1]).range([css('--nat'),css('--mid'),css('--fab')]).interpolate(d3.interpolateRgb); timeScale=d3.scaleLinear().domain([-8.5,-6.5,-4.5,-2.5]).range([css('--lens4'),css('--lens3'),css('--lens2'),css('--lens1')]).interpolate(d3.interpolateRgb).clamp(true); }   // fast = the strong end of the ramp, slow = the pale end
 buildScales();
-function lensColor(n,k){ if(k==='family')return null; if(k==='aff')return affScale(n.aff); if(k==='time'){const t=timeOf(n); return t==null?null:timeScale(t);} const v=lensValue(n,k); if(v==null||v==='none')return null; const i=CATS[k].indexOf(v); return i<0?null:LENSPAL[i%LENSPAL.length]; }
+function lensColor(n,k){ if(k==='family')return null; if(k==='marks'){ const m=marksOf(n)[0]; return MARKC[m]||null; } if(k==='aff')return affScale(n.aff); if(k==='time'){const t=timeOf(n); return t==null?null:timeScale(t);} const v=lensValue(n,k); if(v==null||v==='none')return null; const i=CATS[k].indexOf(v); return i<0?null:LENSPAL[i%LENSPAL.length]; }
 function tint(c){ const x=d3.color(c); if(!x)return 'var(--surface)'; x.opacity=0.22; return x.formatRgb(); }
 function lensItems(k){ const count=v=>G.nodes.filter(n=>lensValue(n,k)===v).length;
   if(k==='family') return Object.keys(FAMC).map(f=>({c:FAMC[f],t:T(...FAMN[f]),v:f,n:G.nodes.filter(n=>n._fams.includes(f)).length}));
+  if(k==='marks') return ['offd','hub','empty','none'].map(m=>({c:MARKC[m]||null,t:catLabel('marks',m),v:m,n:G.nodes.filter(n=>marksOf(n).includes(m)).length}));
   if(k==='aff') return [0,0.25,0.5,0.75,1].map(a=>({c:affScale(a),t:vt('AFF',a),v:String(a),n:count(String(a))}));
   if(k==='time') return TBINS.map((b,i)=>({c:timeScale(b[0]),t:b[1],v:String(i),n:count(String(i))})).concat([{c:null,t:T('no time (code, decoder, fab)','нет времени (код, декодер, производство)'),v:'none',n:count('none')}]);
   return CATS[k].map(v=>({c:v==='none'?null:LENSPAL[CATS[k].indexOf(v)%LENSPAL.length],t:catLabel(k,v),v,n:count(v)})); }
-function nodeMatchesFilter(n){ const k=state.lens, v=state.lensFilter; if(v==null)return true; if(k==='family')return n._fams.includes(v); return lensValue(n,k)===v; }
+function nodeMatchesFilter(n){ const k=state.lens, v=state.lensFilter; if(v==null)return true; if(k==='family')return n._fams.some(f=>v.has(f)); if(k==='marks')return marksOf(n).some(m=>v.has(m)); return v.has(lensValue(n,k)); }
+function filterHas(x){ return !!(state.lensFilter&&state.lensFilter.has(x)); }
+// plain click: keep only this value (click again to clear); Ctrl / ⌘ / Shift-click: add or remove this value
+function toggleFilter(v,multi){ if(v===''){ state.lensFilter=null; return; }
+  if(multi){ const st=new Set(state.lensFilter||[]); if(st.has(v))st.delete(v); else st.add(v); state.lensFilter=st.size?st:null; }
+  else state.lensFilter=(state.lensFilter&&state.lensFilter.size===1&&state.lensFilter.has(v))?null:new Set([v]); }
 function applyLens(){ const k=state.lens; const leg=document.getElementById('lenslegend'); const lensed=k!=='family';
   svg.classed('lensed',lensed);
   st.select('rect.box').attr('stroke',d=>{ if(!lensed){ const f=d._fams; return f.length===1?FAMC[f[0]]:(f.length>1?'var(--ink)':'var(--mid)'); } const c=lensColor(d,k); return c||'var(--mid)'; })
@@ -161,8 +174,8 @@ function applyLens(){ const k=state.lens; const leg=document.getElementById('len
   st.select('rect.lensbar').attr('fill',d=>{ if(!lensed)return 'transparent'; return lensColor(d,k)||'transparent'; });
   pcLines.selectAll('path').attr('stroke',d=>lensed?(lensColor(d,k)||'var(--mid)'):(d._fam?FAMC[d._fam]:'var(--mid)'));
   const items=lensItems(k).filter(it=>it.n>0);
-  leg.innerHTML='<span class="lbl">'+T('lens legend · click a value to keep only those stations','легенда линзы · клик по значению оставляет только эти станции')+'</span>'+items.map(it=>`<button type="button" class="k lk" data-lv="${it.v}" aria-pressed="${String(state.lensFilter===it.v)}"><i class="sw" style="background:${it.c||'transparent'};border:1px solid ${it.c?it.c:'var(--mid)'}"></i>${esc(it.t)} <span class="cnt">${it.n}</span></button>`).join('')+(state.lensFilter!=null?`<button type="button" class="k lk clear" data-lv="">${T('clear filter','сбросить фильтр')} ✕</button>`:'');
-  leg.querySelectorAll('[data-lv]').forEach(b=>{ b.addEventListener('click',()=>{ const v=b.dataset.lv; state.lensFilter=(v===''||state.lensFilter===v)?null:v; applyLens(); drawEdges(); dimming(); pcHighlight(state.focus); });
+  leg.innerHTML='<span class="lbl">'+T('lens legend · click a value to keep only those stations · Ctrl-click adds a value','легенда линзы · клик по значению оставляет только эти станции · Ctrl-клик добавляет значение')+'</span>'+items.map(it=>`<button type="button" class="k lk" data-lv="${it.v}" aria-pressed="${String(filterHas(it.v))}"><i class="sw" style="background:${it.c||'transparent'};border:1px solid ${it.c?it.c:'var(--mid)'}"></i>${esc(it.t)} <span class="cnt">${it.n}</span></button>`).join('')+(state.lensFilter!=null?`<button type="button" class="k lk clear" data-lv="">${T('clear filter','сбросить фильтр')} ✕</button>`:'');
+  leg.querySelectorAll('[data-lv]').forEach(b=>{ b.addEventListener('click',ev=>{ toggleFilter(b.dataset.lv,ev.ctrlKey||ev.metaKey||ev.shiftKey); applyLens(); drawEdges(); dimming(); pcHighlight(state.focus); });
     b.addEventListener('mouseenter',()=>{ const v=b.dataset.lv; if(v==='')return; st.classed('peek',d=>k==='family'?d._fams.includes(v):lensValue(d,k)===v); });
     b.addEventListener('mouseleave',()=>{ st.classed('peek',false); }); });
   if(state.focus) inspect(NODE[state.focus]);
@@ -193,14 +206,14 @@ function litSets(){ const f=state.focus, iso=state.isolate;
     const pm=new Set(); ps.forEach(pid=>pathMembers(pid).forEach(x=>pm.add(x))); neighbours(f).forEach(x=>pm.add(x)); pm.add(f);
     keepN=keepN?new Set([...keepN].filter(n=>pm.has(n))):pm; }
   if(state.lensFilter!=null){ const lf=new Set(G.nodes.filter(nodeMatchesFilter).map(n=>n.id)); keepN=keepN?new Set([...keepN].filter(x=>lf.has(x))):lf;
-    if(state.lens==='family'){ const fp=new Set(G.paths.filter(p=>p.family===state.lensFilter).map(p=>p.id)); keepP=keepP?new Set([...keepP].filter(p=>fp.has(p))):fp; } }
+    if(state.lens==='family'){ const fp=new Set(G.paths.filter(p=>state.lensFilter.has(p.family)).map(p=>p.id)); keepP=keepP?new Set([...keepP].filter(p=>fp.has(p))):fp; } }
   if(f&&keepN)keepN.add(f);
   return {keepN:keepN,keepP:keepP}; }
 function dimming(){ const f=state.focus, iso=state.isolate; const L=litSets(), keepN=L.keepN, keepP=L.keepP;
   st.classed('dim',d=>keepN?!keepN.has(d.id):false); st.classed('member',d=>iso?!!(PATH[iso].slots&&Object.values(PATH[iso].slots).flat().includes(d.id)):false);
   const lf=state.lensFilter!=null;   // a lens filter keeps stations, not lines: every line goes quiet unless a path is isolated or a station focused
   svg.classed('iso',!!iso);
-  pathSel.classed('dim',d=>keepP?!keepP.has(d.id):lf);
+  pathSel.classed('dim',d=>keepP?!keepP.has(d.id):lf); pathHit.classed('dim',d=>keepP?!keepP.has(d.id):lf);
   gAlt.selectAll('path').classed('dim',d=>keepP?!keepP.has(d.p.id):lf);
   gPaths.selectAll('circle.emptyslot').attr('opacity',d=>keepP?(keepP.has(d.p.id)?1:.08):(lf?.08:1));
   if(window.__barSummary)window.__barSummary();
@@ -296,11 +309,18 @@ function inspect(n){ const L=lang(); const c=n.c; const rows=[[T('(a) carrier af
   insp.querySelectorAll('[data-goto]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); select(a.dataset.goto); const m=NODE[a.dataset.goto]; scrollToNode(m);}));
   insp.querySelector('[data-close]').addEventListener('click',()=>select(null)); wireCard();
 }
+pathHit.on('mousemove',(ev,p)=>{ if(tipPinned)return; pathSel.classed('hov',d=>d.id===p.id); tip.style.display='block'; tip.classList.remove('wide'); tip.innerHTML=`<i class="sw" style="background:${FAMC[p.family]}"></i><b>${esc(p[lang()])}</b> · ${T('click to isolate this path','клик — изолировать этот путь')}`; placeTip(ev); })
+  .on('mouseleave',()=>{ pathSel.classed('hov',false); if(!tipPinned)hideTip(); })
+  .on('click',(ev,p)=>{ ev.stopPropagation(); hideTip(); pathSel.classed('hov',false); isolatePath(p.id); });
+document.querySelectorAll('#mapbar [data-mark]').forEach(el=>el.addEventListener('click',ev=>{ const v=el.dataset.mark; const multi=ev.ctrlKey||ev.metaKey||ev.shiftKey;
+  if(state.lens!=='marks'){ state.lens='marks'; state.lensFilter=null; lensSel.value='marks'; }
+  toggleFilter(v,multi); applyLens(); drawEdges(); dimming(); pcHighlight(state.focus); }));
 document.querySelectorAll('#mapbar [data-goto]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); select(a.dataset.goto); const m=NODE[a.dataset.goto]; scrollToNode(m); document.getElementById('mapwrap').scrollIntoView({block:'nearest'});}));
 // ---------- controls
 const bar=document.getElementById('mapbar');
 const chipsWrap=document.getElementById('pathchips');
-G.paths.forEach(p=>{const b=document.createElement('button'); b.className='chip'; b.dataset.chipPath=p.id; b.setAttribute('aria-pressed','false'); b.innerHTML=`<i class="sw" style="--c:${FAMC[p.family]}"></i><span class="t"></span>`; b.addEventListener('click',()=>{state.isolate=state.isolate===p.id?null:p.id; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.chipPath===state.isolate))); if(state.isolate){ state.focus=null; st.classed('sel',false); inspectPath(p); pcHighlight(null);} else if(!state.focus){ inspectEmpty(); } drawEdges(); dimming();}); chipsWrap.appendChild(b);});
+function isolatePath(pid){ state.isolate=state.isolate===pid?null:pid; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.chipPath===state.isolate))); if(state.isolate){ state.focus=null; st.classed('sel',false); inspectPath(PATH[pid]); pcHighlight(null);} else if(!state.focus){ inspectEmpty(); } drawEdges(); dimming(); }
+G.paths.forEach(p=>{const b=document.createElement('button'); b.className='chip'; b.dataset.chipPath=p.id; b.setAttribute('aria-pressed','false'); b.innerHTML=`<i class="sw" style="--c:${FAMC[p.family]}"></i><span class="t"></span>`; b.addEventListener('click',()=>isolatePath(p.id)); chipsWrap.appendChild(b);});
 if(window.__placeZoom)window.__placeZoom();   // the zoom window sits at the end of the paths row (desktop) — chips exist now
 const lensSel=document.getElementById('lens'); Object.keys(LENSES).forEach(k=>{const o=document.createElement('option'); o.value=k; lensSel.appendChild(o);}); lensSel.addEventListener('change',()=>{state.lens=lensSel.value; state.lensFilter=null; applyLens(); drawEdges(); dimming();});
 document.getElementById('tg-conf').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showConf=!state.showConf; ev.currentTarget.setAttribute('aria-pressed',String(state.showConf)); drawEdges(); dimming();});
@@ -369,7 +389,7 @@ function zoomStep(d){ let i=0; for(let k=1;k<ZSTEPS.length;k++){ if(Math.abs(ZST
 (function(){ const bar=document.getElementById('mapbar'), tog=document.getElementById('bartog'), sum=document.getElementById('barsum'); if(!bar||!tog||!sum)return; const KEY='qmap.barcollapsed';
   function summary(){ const L=lang(); const parts=[];
     if(state.isolate){ const p=PATH[state.isolate]; parts.push(`<i class="sw" style="background:${FAMC[p.family]}"></i><b>${esc(p[L])}</b>`); } else parts.push(T('all paths','все пути'));
-    if(state.lens&&state.lens!=='family'){ const lz=LENSES[state.lens]; parts.push(T('lens','линза')+': <b>'+esc(lz?(lz[L]||lz.en||state.lens):state.lens)+'</b>'+(state.lensFilter!=null?' = <b>'+esc(String(state.lensFilter))+'</b>':'')); }
+    if(state.lens&&state.lens!=='family'){ const lz=LENSES[state.lens]; parts.push(T('lens','линза')+': <b>'+esc(lz?(lz[L]||lz.en||state.lens):state.lens)+'</b>'+(state.lensFilter!=null?' = <b>'+esc([...state.lensFilter].map(v=>catLabelSafe(state.lens,v)).join(', '))+'</b>':'')); }
     const ed=[]; if(state.showReq)ed.push(T('requires','требует')); if(state.showRep)ed.push(T('alternatives','альтернативы')); if(state.showConf)ed.push(T('conflicts','конфликты')); if(ed.length)parts.push(T('edges','рёбра')+': '+ed.join(', '));
     if(state.focus)parts.push(T('station','станция')+': <b>'+esc(NODE[state.focus][L])+'</b>');
     sum.innerHTML=parts.join(' · '); }

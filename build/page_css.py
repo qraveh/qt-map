@@ -42,7 +42,7 @@ a:hover{text-decoration-color:var(--accent)}
 :focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:3px}
 .mono,code,kbd{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 code{font-size:.85em;background:var(--surface2);padding:.05em .35em;border-radius:3px}
-#app{max-width:1880px;margin:0 auto;padding:0 20px 80px}
+#app{max-width:none;margin:0 auto;padding:0 24px 80px}
 /* language switching */
 #app[data-lang="ru"] .lang-en{display:none !important}
 #app[data-lang="en"] .lang-ru{display:none !important}
@@ -170,6 +170,8 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .lensed .pathline.dim{opacity:.05}
 .iso.lensed .pathline.dim{opacity:0}
 .pathline.neutral{stroke-dasharray:7 5}
+.phit{fill:none;stroke:transparent;stroke-width:14;pointer-events:stroke;cursor:pointer} .phit.dim{pointer-events:none}
+.pathline.hov{stroke-width:5.5;opacity:1}
 .altstub{fill:none;stroke-width:1.2;stroke-dasharray:2 3;opacity:.7}
 .altstub.dim{opacity:.05}
 .iso .altstub.dim{opacity:0}
@@ -187,7 +189,7 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12px;padding:6px 9px;border-radius:6px;width:max-content;max-width:280px;line-height:1.35;box-shadow:var(--shadow);z-index:5;display:none}
 
 /* lens */
-.lensed .pathline{stroke:var(--mid) !important;opacity:.28}
+.lensed .pathline{stroke:var(--mid) !important;opacity:.28} .lensed .pathline.hov{opacity:.9}
 .lensed .altstub{stroke:var(--mid) !important;opacity:.35}
 .lensed .badge{opacity:.35}
 .lk{appearance:none;border:1px solid var(--rule);background:var(--surface);color:var(--ink);font:inherit;font-size:12.5px;padding:2px 9px 2px 24px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;position:relative;overflow:hidden}
@@ -238,6 +240,7 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .glyphlist{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
 .gl{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
 .gl.long{white-space:normal;max-width:100%} .gl.long .lg{flex:0 0 auto}
+.gl.mark{cursor:pointer;border-bottom:1px dotted var(--muted)} .gl.mark:hover{color:var(--accent);border-bottom-color:var(--accent)}
 .lg{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;font-style:normal;font-size:12px;color:var(--ink)}
 .lg.hub{color:var(--accent)}
 .lg.off{color:var(--crit)}
