@@ -8963,125 +8963,125 @@ Classical belief-propagation tensor networks closed most of the 2025 gap; revenu
 <thead>
 <tr>
 <th>Path</th>
-<th>The bet</th>
 <th>Machines</th>
 <th>Devices</th>
 <th>Largest gate-capable device (physical qubits)</th>
 <th>Best 2Q error among devices</th>
+<th>The bet</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Superconducting transmon <code>sc</code></td>
-<td>fast microwave gates on a lithographic lattice; scale by fabrication and, later, by links between chips</td>
 <td>62</td>
 <td>45</td>
 <td>IBM Quantum Osprey — 433</td>
 <td>1.0×10⁻³ (Origin Wukong-180 (4th gen))</td>
+<td>fast microwave gates on a lithographic lattice; scale by fabrication and, later, by links between chips</td>
 </tr>
 <tr>
 <td>Superconducting bosonic (cat / GKP) <code>cat</code></td>
-<td>bias the noise so that one error type dominates, then correct only that type with a cheap code</td>
 <td>7</td>
 <td>6</td>
 <td>Alice &amp; Bob Helium (on-premise system) — 18</td>
 <td>5.8×10⁻² (Alice &amp; Bob Helium 2 ("Galvanic Cat"))</td>
+<td>bias the noise so that one error type dominates, then correct only that type with a cheap code</td>
 </tr>
 <tr>
 <td>Superconducting dual-rail erasure <code>dualrail</code></td>
-<td>turn photon loss into a flagged erasure; erasures cost far fewer qubits to correct than Pauli errors</td>
 <td>5</td>
 <td>3</td>
 <td>OQC GENESIS — 16</td>
 <td>1.0×10⁻³ (Aqumen Seeker)</td>
+<td>turn photon loss into a flagged erasure; erasures cost far fewer qubits to correct than Pauli errors</td>
 </tr>
 <tr>
 <td>Trapped ions — QCCD, laser gates <code>ion_qccd</code></td>
-<td>move the ions, not the information: transport gives all-to-all connectivity at the highest gate fidelities</td>
 <td>10</td>
 <td>8</td>
 <td>Helios — 98</td>
 <td>7.9×10⁻⁴ (Helios)</td>
+<td>move the ions, not the information: transport gives all-to-all connectivity at the highest gate fidelities</td>
 </tr>
 <tr>
 <td>Trapped ions — electronic gates, chip control <code>ion_elec</code></td>
-<td>static chains with electronic or integrated control; scale by photonic links between modules</td>
 <td>11</td>
 <td>7</td>
 <td>iQPU / UQConnect — 64</td>
 <td>4.0×10⁻³ (Aria)</td>
+<td>static chains with electronic or integrated control; scale by photonic links between modules</td>
 </tr>
 <tr>
 <td>Neutral atoms — alkali (Rb/Cs) <code>atom_rb</code></td>
-<td>reconfigurable tweezers make the code geometry programmable and the qubit count cheap; the clock is slow</td>
 <td>14</td>
 <td>9</td>
 <td>448-atom fault-tolerant processor — 448</td>
 <td>1.6×10⁻³ (448-atom fault-tolerant processor)</td>
+<td>reconfigurable tweezers make the code geometry programmable and the qubit count cheap; the clock is slow</td>
 </tr>
 <tr>
 <td>Neutral atoms — alkaline-earth (Yb/Sr), erasure-native <code>atom_ae</code></td>
-<td>alkaline-earth atoms add erasure conversion and continuous reloading to the tweezer bet</td>
 <td>5</td>
 <td>3</td>
 <td>Phoenix (Gen-1) and Gen-2 — 1,180</td>
 <td>4.0×10⁻³ (Phoenix (Gen-1) and Gen-2)</td>
+<td>alkaline-earth atoms add erasure conversion and continuous reloading to the tweezer bet</td>
 </tr>
 <tr>
 <td>Photonic — fusion-based (DV) <code>ph_fusion</code></td>
-<td>make entanglement by measurement: room-temperature photonic fabrication and networking, loss is the enemy</td>
 <td>5</td>
 <td>4</td>
 <td>Lucy — 12</td>
 <td>7.8×10⁻³ (Omega chipset (Moreton Bay / Chicago systems unnamed))</td>
+<td>make entanglement by measurement: room-temperature photonic fabrication and networking, loss is the enemy</td>
 </tr>
 <tr>
 <td>Photonic — continuous-variable / GKP <code>ph_cv</code></td>
+<td>3</td>
+<td>3</td>
+<td>—</td>
+<td>—</td>
 <td>continuous-variable states and GKP encoding on the same photonic chips</td>
-<td>3</td>
-<td>3</td>
-<td>—</td>
-<td>—</td>
 </tr>
 <tr>
 <td>Silicon / germanium quantum-dot spins <code>spin_qd</code></td>
-<td>the foundry: quantum dots in CMOS, density and cold electronics from the semiconductor industry</td>
 <td>7</td>
 <td>4</td>
 <td>Tunnel Falls — 12</td>
 <td>1.1×10⁻² (foundry 8-qubit array)</td>
+<td>the foundry: quantum dots in CMOS, density and cold electronics from the semiconductor industry</td>
 </tr>
 <tr>
 <td>Donor spins in silicon <code>spin_donor</code></td>
-<td>donor spins in isotopically pure silicon: the longest coherence in a solid</td>
 <td>1</td>
 <td>1</td>
 <td>11-qubit donor processor — 11</td>
 <td>3.6×10⁻³ (11-qubit donor processor)</td>
+<td>donor spins in isotopically pure silicon: the longest coherence in a solid</td>
 </tr>
 <tr>
 <td>Defect-spin network nodes (NV/SiV/T) <code>defect</code></td>
-<td>defect spins that work at room temperature and network through photons</td>
 <td>2</td>
 <td>2</td>
 <td>Quoll / QB-QDK 2.0 — 6</td>
 <td>—</td>
+<td>defect spins that work at room temperature and network through photons</td>
 </tr>
 <tr>
 <td>Topological (Majorana) <code>topo</code></td>
-<td>protection in the hardware: a topological gap instead of a code</td>
 <td>1</td>
 <td>0</td>
 <td>—</td>
 <td>—</td>
+<td>protection in the hardware: a topological gap instead of a code</td>
 </tr>
 <tr>
 <td>Quantum annealing <code>anneal</code></td>
-<td>special-purpose scale now: thousands of analog qubits for optimisation and simulation</td>
 <td>3</td>
 <td>2</td>
 <td>Advantage — 5,000</td>
 <td>—</td>
+<td>special-purpose scale now: thousands of analog qubits for optimisation and simulation</td>
 </tr>
 </tbody>
 </table></div>
@@ -9089,7 +9089,56 @@ Classical belief-propagation tensor networks closed most of the 2025 gap; revenu
 <h3 id="en-s12-33">8.4 Trends — eight hypotheses tested on the register</h3>
 <p>Each hypothesis is a falsifiable statement about the population; the test is the computation named with it, run by the build on the register's current rows; the verdict is <em>supported</em>, <em>partly supported</em> or <em>not supported</em>, with the sample size. What each verdict rests on, and what would overturn it, is in §8.6.</p>
 <p><strong>H1 — Physical qubit count has moved to the atoms; superconducting machines no longer compete on count.</strong></p>
-<p><em>Test.</em> Median physical qubits per family over all devices and over gate-capable devices (91 of 97; analog simulators, arrays without an entangling gate and single-qubit testbeds excluded); the largest gate-capable device per family; cohort medians for the two largest families. <em>Result.</em> All devices: atoms 256 (n = 11); superconducting 72 (n = 53); ions 31 (n = 14); photonics 12 (n = 3); spins 9.5 (n = 4). Gate-capable: atoms 120 (n = 8); superconducting 75 (n = 52); ions 30 (n = 13); photonics 12 (n = 2); spins 9.5 (n = 4) — the atoms lead by ×3.6 on all devices and ×1.6 on gate-capable ones. Largest gate-capable device: atoms Phoenix (Gen-1) and Gen-2 1,180; superconducting IBM Quantum Osprey 433; ions Helios 98; largest device of any kind: atoms 6,100-qubit tweezer array 6,100; superconducting IBM Quantum Osprey 433. Cohort medians (gate-capable; n in brackets) — superconducting: 2021 59.5 (4), 2022 72 (3), 2023 108.5 (4), 2024 84 (15), 2025 66 (18), 2026 64 (8); atoms: 2023 640 (2), 2024 140 (1), 2025 180 (4), 2026 20 (1). <em>Verdict:</em> <strong>supported</strong>. The atoms' lead in count is real among processors and much larger among trap arrays: the thousands-of-qubits machines are arrays that do not yet run an entangling gate, while the largest gate-capable tweezer processor and the largest transmon lattice are within a factor of a few of each other. The cohort medians move with who enters the register in a given year (small first chips from new entrants) more than with the leaders, and are too thin per cohort to carry a trend on their own.</p>
+<p><em>Test.</em> Median physical qubits per family over all devices and over gate-capable devices (91 of 97; analog simulators, arrays without an entangling gate and single-qubit testbeds excluded); the largest gate-capable device per family; cohort medians for the two largest families.</p>
+<div class="tbl" data-sort="numeric" data-default="build"><table>
+<thead>
+<tr>
+<th>Family</th>
+<th>Devices: median qubits (n)</th>
+<th>Gate-capable: median qubits (n)</th>
+<th>Largest gate-capable device</th>
+<th>Largest device of any kind</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>atoms</td>
+<td>256 (11)</td>
+<td>120 (8)</td>
+<td>Phoenix (Gen-1) and Gen-2 — 1,180</td>
+<td>6,100-qubit tweezer array — 6,100</td>
+</tr>
+<tr>
+<td>superconducting</td>
+<td>72 (53)</td>
+<td>75 (52)</td>
+<td>IBM Quantum Osprey — 433</td>
+<td>IBM Quantum Osprey — 433</td>
+</tr>
+<tr>
+<td>ions</td>
+<td>31 (14)</td>
+<td>30 (13)</td>
+<td>Helios — 98</td>
+<td>2-D site-resolved ion simulator — 512</td>
+</tr>
+<tr>
+<td>photonics</td>
+<td>12 (3)</td>
+<td>12 (2)</td>
+<td>Lucy — 12</td>
+<td>Lucy — 12</td>
+</tr>
+<tr>
+<td>spins</td>
+<td>9.5 (4)</td>
+<td>9.5 (4)</td>
+<td>Tunnel Falls — 12</td>
+<td>Tunnel Falls — 12</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Result.</em> The atoms lead by ×3.6 on all devices and ×1.6 on gate-capable ones. Cohort medians (gate-capable; n in brackets) — superconducting: 2021 59.5 (4), 2022 72 (3), 2023 108.5 (4), 2024 84 (15), 2025 66 (18), 2026 64 (8); atoms: 2023 640 (2), 2024 140 (1), 2025 180 (4), 2026 20 (1). <em>Verdict:</em> <strong>supported</strong>. The atoms' lead in count is real among processors and much larger among trap arrays: the thousands-of-qubits machines are arrays that do not yet run an entangling gate, while the largest gate-capable tweezer processor and the largest transmon lattice are within a factor of a few of each other. The cohort medians move with who enters the register in a given year (small first chips from new entrants) more than with the leaders, and are too thin per cohort to carry a trend on their own.</p>
 <p><strong>H2 — Two-qubit error is converging across the three large families at the median, while the best single number stays with the ions.</strong></p>
 <p><em>Test.</em> Median and best <code>err_2q_median</code> over devices per family, excluding hero-pair numbers, targets and component demonstrations. <em>Result.</em> superconducting median 4.0×10⁻³, best 1.0×10⁻³ (Aqumen Seeker), n = 24; ions median 3.0×10⁻³, best 7.9×10⁻⁴ (Helios), n = 9; atoms median 4.0×10⁻³, best 1.6×10⁻³ (448-atom fault-tolerant processor), n = 5; photonics median 6.2×10⁻², best 7.8×10⁻³ (Omega chipset (Moreton Bay / Chicago systems unnamed)), n = 3; spins median 1.1×10⁻², best 3.6×10⁻³ (11-qubit donor processor), n = 3. The spread of the three large medians is ×1.3. <em>Verdict:</em> <strong>supported</strong>. A convergence of medians with a persistent gap at the best is what one expects when the median is set by the many second-tier machines and the best by a few labs that have run the same platform for a decade.</p>
 <p><strong>H3 — Control stays external: integrated control is a minority confined to spins, annealers and a few traps; no superconducting device of 100 qubits or more is driven from inside the cryostat.</strong></p>
@@ -17465,125 +17514,125 @@ Erasure-половина семейства (dual-rail на трансмонах
 <thead>
 <tr>
 <th>Путь</th>
-<th>Ставка</th>
 <th>Машин</th>
 <th>Устройств</th>
 <th>Крупнейшее устройство с гейтами (физ. кубитов)</th>
 <th>Лучшая 2Q-ошибка среди устройств</th>
+<th>Ставка</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Сверхпроводниковый трансмон <code>sc</code></td>
-<td>быстрые микроволновые гейты на литографической решётке; масштаб за счёт изготовления и, позже, связей между чипами</td>
 <td>62</td>
 <td>45</td>
 <td>IBM Quantum Osprey — 433</td>
 <td>1.0×10⁻³ (Origin Wukong-180 (4th gen))</td>
+<td>быстрые микроволновые гейты на литографической решётке; масштаб за счёт изготовления и, позже, связей между чипами</td>
 </tr>
 <tr>
 <td>Сверхпроводниковые бозонные (кошки / GKP) <code>cat</code></td>
-<td>сместить шум так, чтобы доминировал один тип ошибок, и исправлять только его дешёвым кодом</td>
 <td>7</td>
 <td>6</td>
 <td>Alice &amp; Bob Helium (on-premise system) — 18</td>
 <td>5.8×10⁻² (Alice &amp; Bob Helium 2 ("Galvanic Cat"))</td>
+<td>сместить шум так, чтобы доминировал один тип ошибок, и исправлять только его дешёвым кодом</td>
 </tr>
 <tr>
 <td>Сверхпроводниковые dual-rail erasure <code>dualrail</code></td>
-<td>превратить потерю фотона в помеченное стирание; стирания исправляются много дешевле паулиевских ошибок</td>
 <td>5</td>
 <td>3</td>
 <td>OQC GENESIS — 16</td>
 <td>1.0×10⁻³ (Aqumen Seeker)</td>
+<td>превратить потерю фотона в помеченное стирание; стирания исправляются много дешевле паулиевских ошибок</td>
 </tr>
 <tr>
 <td>Ионы — QCCD, лазерные гейты <code>ion_qccd</code></td>
-<td>перемещать ионы, а не информацию: транспорт даёт связность «все со всеми» при наивысшей точности гейтов</td>
 <td>10</td>
 <td>8</td>
 <td>Helios — 98</td>
 <td>7.9×10⁻⁴ (Helios)</td>
+<td>перемещать ионы, а не информацию: транспорт даёт связность «все со всеми» при наивысшей точности гейтов</td>
 </tr>
 <tr>
 <td>Ионы — электронные гейты, управление с чипа <code>ion_elec</code></td>
-<td>статические цепочки с электронным или интегрированным управлением; масштаб через фотонные связи между модулями</td>
 <td>11</td>
 <td>7</td>
 <td>iQPU / UQConnect — 64</td>
 <td>4.0×10⁻³ (Aria)</td>
+<td>статические цепочки с электронным или интегрированным управлением; масштаб через фотонные связи между модулями</td>
 </tr>
 <tr>
 <td>Нейтральные атомы — щелочные (Rb/Cs) <code>atom_rb</code></td>
-<td>перестраиваемые пинцеты делают геометрию кода программируемой, а число кубитов дешёвым; такт медленный</td>
 <td>14</td>
 <td>9</td>
 <td>448-atom fault-tolerant processor — 448</td>
 <td>1.6×10⁻³ (448-atom fault-tolerant processor)</td>
+<td>перестраиваемые пинцеты делают геометрию кода программируемой, а число кубитов дешёвым; такт медленный</td>
 </tr>
 <tr>
 <td>Нейтральные атомы — щёлочноземельные (Yb/Sr), erasure-нативные <code>atom_ae</code></td>
-<td>щёлочноземельные атомы добавляют к ставке на пинцеты преобразование в стирания и непрерывную перезагрузку</td>
 <td>5</td>
 <td>3</td>
 <td>Phoenix (Gen-1) and Gen-2 — 1,180</td>
 <td>4.0×10⁻³ (Phoenix (Gen-1) and Gen-2)</td>
+<td>щёлочноземельные атомы добавляют к ставке на пинцеты преобразование в стирания и непрерывную перезагрузку</td>
 </tr>
 <tr>
 <td>Фотоника — fusion-based (DV) <code>ph_fusion</code></td>
-<td>создавать перепутывание измерением: фотонное изготовление и сети при комнатной температуре; враг — потери</td>
 <td>5</td>
 <td>4</td>
 <td>Lucy — 12</td>
 <td>7.8×10⁻³ (Omega chipset (Moreton Bay / Chicago systems unnamed))</td>
+<td>создавать перепутывание измерением: фотонное изготовление и сети при комнатной температуре; враг — потери</td>
 </tr>
 <tr>
 <td>Фотоника — непрерывные переменные / GKP <code>ph_cv</code></td>
+<td>3</td>
+<td>3</td>
+<td>—</td>
+<td>—</td>
 <td>состояния непрерывных переменных и кодирование GKP на тех же фотонных чипах</td>
-<td>3</td>
-<td>3</td>
-<td>—</td>
-<td>—</td>
 </tr>
 <tr>
 <td>Кремниевые / германиевые спины в квантовых точках <code>spin_qd</code></td>
-<td>фабрика: квантовые точки в CMOS, плотность и холодная электроника из полупроводниковой отрасли</td>
 <td>7</td>
 <td>4</td>
 <td>Tunnel Falls — 12</td>
 <td>1.1×10⁻² (foundry 8-qubit array)</td>
+<td>фабрика: квантовые точки в CMOS, плотность и холодная электроника из полупроводниковой отрасли</td>
 </tr>
 <tr>
 <td>Донорные спины в кремнии <code>spin_donor</code></td>
-<td>донорные спины в изотопно чистом кремнии: самая долгая когерентность в твёрдом теле</td>
 <td>1</td>
 <td>1</td>
 <td>11-qubit donor processor — 11</td>
 <td>3.6×10⁻³ (11-qubit donor processor)</td>
+<td>донорные спины в изотопно чистом кремнии: самая долгая когерентность в твёрдом теле</td>
 </tr>
 <tr>
 <td>Узлы сети на дефектных спинах (NV/SiV/T) <code>defect</code></td>
-<td>дефектные спины, работающие при комнатной температуре и связанные через фотоны</td>
 <td>2</td>
 <td>2</td>
 <td>Quoll / QB-QDK 2.0 — 6</td>
 <td>—</td>
+<td>дефектные спины, работающие при комнатной температуре и связанные через фотоны</td>
 </tr>
 <tr>
 <td>Топологические (майорановские) <code>topo</code></td>
-<td>защита в самом устройстве: топологическая щель вместо кода</td>
 <td>1</td>
 <td>0</td>
 <td>—</td>
 <td>—</td>
+<td>защита в самом устройстве: топологическая щель вместо кода</td>
 </tr>
 <tr>
 <td>Квантовый отжиг <code>anneal</code></td>
-<td>специализированный масштаб сейчас: тысячи аналоговых кубитов для оптимизации и симуляции</td>
 <td>3</td>
 <td>2</td>
 <td>Advantage — 5,000</td>
 <td>—</td>
+<td>специализированный масштаб сейчас: тысячи аналоговых кубитов для оптимизации и симуляции</td>
 </tr>
 </tbody>
 </table></div>
@@ -17591,7 +17640,56 @@ Erasure-половина семейства (dual-rail на трансмонах
 <h3 id="ru-s12-33">8.4 Тренды — восемь гипотез, проверенных по реестру</h3>
 <p>Каждая гипотеза — фальсифицируемое утверждение о популяции; проверка — вычисление, названное рядом с ней и выполняемое сборкой по текущим строкам реестра; вердикт — <em>подтверждена</em>, <em>подтверждена частично</em> или <em>не подтверждена</em>, с размером выборки. На чём стоит каждый вердикт и что его опрокинуло бы — в §8.6.</p>
 <p><strong>H1 — Число физических кубитов ушло к атомам; сверхпроводниковые машины больше не соперничают числом.</strong></p>
-<p><em>Проверка.</em> Медиана физических кубитов по семействам для всех устройств и для устройств с гейтами (91 из 97; аналоговые симуляторы, массивы без перепутывающего гейта и однокубитные стенды исключены); крупнейшее устройство с гейтами по семействам; медианы по когортам для двух крупнейших семейств. <em>Результат.</em> Все устройства: атомы 256 (n = 11); сверхпроводниковые 72 (n = 53); ионы 31 (n = 14); фотоника 12 (n = 3); спины 9.5 (n = 4). С гейтами: атомы 120 (n = 8); сверхпроводниковые 75 (n = 52); ионы 30 (n = 13); фотоника 12 (n = 2); спины 9.5 (n = 4) — атомы впереди в ×3.6 по всем устройствам и в ×1.6 по устройствам с гейтами. Крупнейшее устройство с гейтами: атомы Phoenix (Gen-1) and Gen-2 1,180; сверхпроводниковые IBM Quantum Osprey 433; ионы Helios 98; крупнейшее устройство любого рода: атомы 6,100-qubit tweezer array 6,100; сверхпроводниковые IBM Quantum Osprey 433. Медианы по когортам (с гейтами; n в скобках) — сверхпроводниковые: 2021 59.5 (4), 2022 72 (3), 2023 108.5 (4), 2024 84 (15), 2025 66 (18), 2026 64 (8); атомы: 2023 640 (2), 2024 140 (1), 2025 180 (4), 2026 20 (1). <em>Вердикт:</em> <strong>подтверждена</strong>. Лидерство атомов по числу реально среди процессоров и много больше среди массивов ловушек: машины на тысячи кубитов — это массивы, которые пока не выполняют перепутывающий гейт, тогда как крупнейший пинцетный процессор с гейтами и крупнейшая трансмонная решётка отличаются в считанные разы. Медианы когорт движутся вместе с тем, кто входит в реестр в данном году (малые первые чипы новых участников), а не с лидерами, и слишком тонки по когортам, чтобы нести тренд сами по себе.</p>
+<p><em>Проверка.</em> Медиана физических кубитов по семействам для всех устройств и для устройств с гейтами (91 из 97; аналоговые симуляторы, массивы без перепутывающего гейта и однокубитные стенды исключены); крупнейшее устройство с гейтами по семействам; медианы по когортам для двух крупнейших семейств.</p>
+<div class="tbl" data-sort="numeric" data-default="build"><table>
+<thead>
+<tr>
+<th>Семейство</th>
+<th>Устройства: медиана кубитов (n)</th>
+<th>С гейтами: медиана кубитов (n)</th>
+<th>Крупнейшее устройство с гейтами</th>
+<th>Крупнейшее устройство любого рода</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>атомы</td>
+<td>256 (11)</td>
+<td>120 (8)</td>
+<td>Phoenix (Gen-1) and Gen-2 — 1,180</td>
+<td>6,100-qubit tweezer array — 6,100</td>
+</tr>
+<tr>
+<td>сверхпроводниковые</td>
+<td>72 (53)</td>
+<td>75 (52)</td>
+<td>IBM Quantum Osprey — 433</td>
+<td>IBM Quantum Osprey — 433</td>
+</tr>
+<tr>
+<td>ионы</td>
+<td>31 (14)</td>
+<td>30 (13)</td>
+<td>Helios — 98</td>
+<td>2-D site-resolved ion simulator — 512</td>
+</tr>
+<tr>
+<td>фотоника</td>
+<td>12 (3)</td>
+<td>12 (2)</td>
+<td>Lucy — 12</td>
+<td>Lucy — 12</td>
+</tr>
+<tr>
+<td>спины</td>
+<td>9.5 (4)</td>
+<td>9.5 (4)</td>
+<td>Tunnel Falls — 12</td>
+<td>Tunnel Falls — 12</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Результат.</em> Атомы впереди в ×3.6 по всем устройствам и в ×1.6 по устройствам с гейтами. Медианы по когортам (с гейтами; n в скобках) — сверхпроводниковые: 2021 59.5 (4), 2022 72 (3), 2023 108.5 (4), 2024 84 (15), 2025 66 (18), 2026 64 (8); атомы: 2023 640 (2), 2024 140 (1), 2025 180 (4), 2026 20 (1). <em>Вердикт:</em> <strong>подтверждена</strong>. Лидерство атомов по числу реально среди процессоров и много больше среди массивов ловушек: машины на тысячи кубитов — это массивы, которые пока не выполняют перепутывающий гейт, тогда как крупнейший пинцетный процессор с гейтами и крупнейшая трансмонная решётка отличаются в считанные разы. Медианы когорт движутся вместе с тем, кто входит в реестр в данном году (малые первые чипы новых участников), а не с лидерами, и слишком тонки по когортам, чтобы нести тренд сами по себе.</p>
 <p><strong>H2 — Двухкубитная ошибка сходится у трёх больших семейств по медиане, а лучшее единичное число остаётся у ионов.</strong></p>
 <p><em>Проверка.</em> Медиана и лучшее значение <code>err_2q_median</code> по устройствам каждого семейства, исключая рекордные пары, цели и демонстрации компонентов. <em>Результат.</em> сверхпроводниковые: медиана 4.0×10⁻³, лучшее 1.0×10⁻³ (Aqumen Seeker), n = 24; ионы: медиана 3.0×10⁻³, лучшее 7.9×10⁻⁴ (Helios), n = 9; атомы: медиана 4.0×10⁻³, лучшее 1.6×10⁻³ (448-atom fault-tolerant processor), n = 5; фотоника: медиана 6.2×10⁻², лучшее 7.8×10⁻³ (Omega chipset (Moreton Bay / Chicago systems unnamed)), n = 3; спины: медиана 1.1×10⁻², лучшее 3.6×10⁻³ (11-qubit donor processor), n = 3. Разброс трёх больших медиан — ×1.3. <em>Вердикт:</em> <strong>подтверждена</strong>. Сходимость медиан при сохраняющемся разрыве в лучших значениях — то, чего ждёшь, когда медиану задают многочисленные машины второго ряда, а лучшее — несколько лабораторий, десятилетие работающих на одной платформе.</p>
 <p><strong>H3 — Управление остаётся внешним: интегрированное управление — меньшинство, ограниченное спинами, отжигом и несколькими ловушками; ни одно сверхпроводниковое устройство от 100 кубитов не управляется изнутри криостата.</strong></p>

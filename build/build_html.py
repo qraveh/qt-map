@@ -140,7 +140,7 @@ def insert_after_h3_table(h,h3_num,block):
     return h[:t]+block+h[t:]
 # sortable tables (editor's review of 17 Sep 2026, second batch, brief D): tag the nth div.tbl after the h3 numbered h3_num;
 # the JS block `tblsort` in map_js.py reads data-sort (platform-default · numeric · date · centrality) and data-default="build"
-SORT_TABLES=[('3.1','platform-default',1),('7.4','numeric',1),('7.5','numeric',1),('7.6','numeric',2),('7.11','date',1),('7.12','numeric',2),('8.1','numeric',1),('8.2','numeric',1),('8.3','numeric',1)]
+SORT_TABLES=[('3.1','platform-default',1),('7.4','numeric',1),('7.5','numeric',1),('7.6','numeric',2),('7.11','date',1),('7.12','numeric',2),('8.1','numeric',1),('8.2','numeric',1),('8.3','numeric',1),('8.4','numeric',1)]
 def tag_sortable(h,h3_num,kind,nth=1):
     m=re.search(r'<h3 id="[^"]+">'+re.escape(h3_num)+r' ',h)
     if not m: return h

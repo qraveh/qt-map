@@ -1369,22 +1369,22 @@ A machine is an argument: *this* combination of stations will reach the goal bef
 
 **Table 8.3 — paths: the bet, the population, the best numbers**
 
-| Path | The bet | Machines | Devices | Largest gate-capable device (physical qubits) | Best 2Q error among devices |
+| Path | Machines | Devices | Largest gate-capable device (physical qubits) | Best 2Q error among devices | The bet |
 |---|---|---|---|---|---|
-| Superconducting transmon `sc` | fast microwave gates on a lithographic lattice; scale by fabrication and, later, by links between chips | 62 | 45 | IBM Quantum Osprey — 433 | 1.0×10⁻³ (Origin Wukong-180 (4th gen)) |
-| Superconducting bosonic (cat / GKP) `cat` | bias the noise so that one error type dominates, then correct only that type with a cheap code | 7 | 6 | Alice & Bob Helium (on-premise system) — 18 | 5.8×10⁻² (Alice & Bob Helium 2 ("Galvanic Cat")) |
-| Superconducting dual-rail erasure `dualrail` | turn photon loss into a flagged erasure; erasures cost far fewer qubits to correct than Pauli errors | 5 | 3 | OQC GENESIS — 16 | 1.0×10⁻³ (Aqumen Seeker) |
-| Trapped ions — QCCD, laser gates `ion_qccd` | move the ions, not the information: transport gives all-to-all connectivity at the highest gate fidelities | 10 | 8 | Helios — 98 | 7.9×10⁻⁴ (Helios) |
-| Trapped ions — electronic gates, chip control `ion_elec` | static chains with electronic or integrated control; scale by photonic links between modules | 11 | 7 | iQPU / UQConnect — 64 | 4.0×10⁻³ (Aria) |
-| Neutral atoms — alkali (Rb/Cs) `atom_rb` | reconfigurable tweezers make the code geometry programmable and the qubit count cheap; the clock is slow | 14 | 9 | 448-atom fault-tolerant processor — 448 | 1.6×10⁻³ (448-atom fault-tolerant processor) |
-| Neutral atoms — alkaline-earth (Yb/Sr), erasure-native `atom_ae` | alkaline-earth atoms add erasure conversion and continuous reloading to the tweezer bet | 5 | 3 | Phoenix (Gen-1) and Gen-2 — 1,180 | 4.0×10⁻³ (Phoenix (Gen-1) and Gen-2) |
-| Photonic — fusion-based (DV) `ph_fusion` | make entanglement by measurement: room-temperature photonic fabrication and networking, loss is the enemy | 5 | 4 | Lucy — 12 | 7.8×10⁻³ (Omega chipset (Moreton Bay / Chicago systems unnamed)) |
-| Photonic — continuous-variable / GKP `ph_cv` | continuous-variable states and GKP encoding on the same photonic chips | 3 | 3 | — | — |
-| Silicon / germanium quantum-dot spins `spin_qd` | the foundry: quantum dots in CMOS, density and cold electronics from the semiconductor industry | 7 | 4 | Tunnel Falls — 12 | 1.1×10⁻² (foundry 8-qubit array) |
-| Donor spins in silicon `spin_donor` | donor spins in isotopically pure silicon: the longest coherence in a solid | 1 | 1 | 11-qubit donor processor — 11 | 3.6×10⁻³ (11-qubit donor processor) |
-| Defect-spin network nodes (NV/SiV/T) `defect` | defect spins that work at room temperature and network through photons | 2 | 2 | Quoll / QB-QDK 2.0 — 6 | — |
-| Topological (Majorana) `topo` | protection in the hardware: a topological gap instead of a code | 1 | 0 | — | — |
-| Quantum annealing `anneal` | special-purpose scale now: thousands of analog qubits for optimisation and simulation | 3 | 2 | Advantage — 5,000 | — |
+| Superconducting transmon `sc` | 62 | 45 | IBM Quantum Osprey — 433 | 1.0×10⁻³ (Origin Wukong-180 (4th gen)) | fast microwave gates on a lithographic lattice; scale by fabrication and, later, by links between chips |
+| Superconducting bosonic (cat / GKP) `cat` | 7 | 6 | Alice & Bob Helium (on-premise system) — 18 | 5.8×10⁻² (Alice & Bob Helium 2 ("Galvanic Cat")) | bias the noise so that one error type dominates, then correct only that type with a cheap code |
+| Superconducting dual-rail erasure `dualrail` | 5 | 3 | OQC GENESIS — 16 | 1.0×10⁻³ (Aqumen Seeker) | turn photon loss into a flagged erasure; erasures cost far fewer qubits to correct than Pauli errors |
+| Trapped ions — QCCD, laser gates `ion_qccd` | 10 | 8 | Helios — 98 | 7.9×10⁻⁴ (Helios) | move the ions, not the information: transport gives all-to-all connectivity at the highest gate fidelities |
+| Trapped ions — electronic gates, chip control `ion_elec` | 11 | 7 | iQPU / UQConnect — 64 | 4.0×10⁻³ (Aria) | static chains with electronic or integrated control; scale by photonic links between modules |
+| Neutral atoms — alkali (Rb/Cs) `atom_rb` | 14 | 9 | 448-atom fault-tolerant processor — 448 | 1.6×10⁻³ (448-atom fault-tolerant processor) | reconfigurable tweezers make the code geometry programmable and the qubit count cheap; the clock is slow |
+| Neutral atoms — alkaline-earth (Yb/Sr), erasure-native `atom_ae` | 5 | 3 | Phoenix (Gen-1) and Gen-2 — 1,180 | 4.0×10⁻³ (Phoenix (Gen-1) and Gen-2) | alkaline-earth atoms add erasure conversion and continuous reloading to the tweezer bet |
+| Photonic — fusion-based (DV) `ph_fusion` | 5 | 4 | Lucy — 12 | 7.8×10⁻³ (Omega chipset (Moreton Bay / Chicago systems unnamed)) | make entanglement by measurement: room-temperature photonic fabrication and networking, loss is the enemy |
+| Photonic — continuous-variable / GKP `ph_cv` | 3 | 3 | — | — | continuous-variable states and GKP encoding on the same photonic chips |
+| Silicon / germanium quantum-dot spins `spin_qd` | 7 | 4 | Tunnel Falls — 12 | 1.1×10⁻² (foundry 8-qubit array) | the foundry: quantum dots in CMOS, density and cold electronics from the semiconductor industry |
+| Donor spins in silicon `spin_donor` | 1 | 1 | 11-qubit donor processor — 11 | 3.6×10⁻³ (11-qubit donor processor) | donor spins in isotopically pure silicon: the longest coherence in a solid |
+| Defect-spin network nodes (NV/SiV/T) `defect` | 2 | 2 | Quoll / QB-QDK 2.0 — 6 | — | defect spins that work at room temperature and network through photons |
+| Topological (Majorana) `topo` | 1 | 0 | — | — | protection in the hardware: a topological gap instead of a code |
+| Quantum annealing `anneal` | 3 | 2 | Advantage — 5,000 | — | special-purpose scale now: thousands of analog qubits for optimisation and simulation |
 
 Two readings. First, the bets are not symmetric in what they need to prove: the superconducting and tweezer bets are already made by dozens of devices and argue about *rates* (error per gate, qubits per year); the bosonic, topological and donor bets are made by one to seven machines and still argue about *existence* (does the protection hold at the second qubit, at the second module). Second, the best numbers sit on different paths for different quantities — the largest device is a tweezer array, the best two-qubit error is an ion trap, the fastest clock (§7.4) is a transmon lattice — which is the empirical form of the map's claim that no path dominates on all axes.
 
@@ -1394,7 +1394,17 @@ Each hypothesis is a falsifiable statement about the population; the test is the
 
 **H1 — Physical qubit count has moved to the atoms; superconducting machines no longer compete on count.**
 
-*Test.* Median physical qubits per family over all devices and over gate-capable devices (91 of 97; analog simulators, arrays without an entangling gate and single-qubit testbeds excluded); the largest gate-capable device per family; cohort medians for the two largest families. *Result.* All devices: atoms 256 (n = 11); superconducting 72 (n = 53); ions 31 (n = 14); photonics 12 (n = 3); spins 9.5 (n = 4). Gate-capable: atoms 120 (n = 8); superconducting 75 (n = 52); ions 30 (n = 13); photonics 12 (n = 2); spins 9.5 (n = 4) — the atoms lead by ×3.6 on all devices and ×1.6 on gate-capable ones. Largest gate-capable device: atoms Phoenix (Gen-1) and Gen-2 1,180; superconducting IBM Quantum Osprey 433; ions Helios 98; largest device of any kind: atoms 6,100-qubit tweezer array 6,100; superconducting IBM Quantum Osprey 433. Cohort medians (gate-capable; n in brackets) — superconducting: 2021 59.5 (4), 2022 72 (3), 2023 108.5 (4), 2024 84 (15), 2025 66 (18), 2026 64 (8); atoms: 2023 640 (2), 2024 140 (1), 2025 180 (4), 2026 20 (1). *Verdict:* **supported**. The atoms' lead in count is real among processors and much larger among trap arrays: the thousands-of-qubits machines are arrays that do not yet run an entangling gate, while the largest gate-capable tweezer processor and the largest transmon lattice are within a factor of a few of each other. The cohort medians move with who enters the register in a given year (small first chips from new entrants) more than with the leaders, and are too thin per cohort to carry a trend on their own.
+*Test.* Median physical qubits per family over all devices and over gate-capable devices (91 of 97; analog simulators, arrays without an entangling gate and single-qubit testbeds excluded); the largest gate-capable device per family; cohort medians for the two largest families.
+
+| Family | Devices: median qubits (n) | Gate-capable: median qubits (n) | Largest gate-capable device | Largest device of any kind |
+|---|---|---|---|---|
+| atoms | 256 (11) | 120 (8) | Phoenix (Gen-1) and Gen-2 — 1,180 | 6,100-qubit tweezer array — 6,100 |
+| superconducting | 72 (53) | 75 (52) | IBM Quantum Osprey — 433 | IBM Quantum Osprey — 433 |
+| ions | 31 (14) | 30 (13) | Helios — 98 | 2-D site-resolved ion simulator — 512 |
+| photonics | 12 (3) | 12 (2) | Lucy — 12 | Lucy — 12 |
+| spins | 9.5 (4) | 9.5 (4) | Tunnel Falls — 12 | Tunnel Falls — 12 |
+
+*Result.* The atoms lead by ×3.6 on all devices and ×1.6 on gate-capable ones. Cohort medians (gate-capable; n in brackets) — superconducting: 2021 59.5 (4), 2022 72 (3), 2023 108.5 (4), 2024 84 (15), 2025 66 (18), 2026 64 (8); atoms: 2023 640 (2), 2024 140 (1), 2025 180 (4), 2026 20 (1). *Verdict:* **supported**. The atoms' lead in count is real among processors and much larger among trap arrays: the thousands-of-qubits machines are arrays that do not yet run an entangling gate, while the largest gate-capable tweezer processor and the largest transmon lattice are within a factor of a few of each other. The cohort medians move with who enters the register in a given year (small first chips from new entrants) more than with the leaders, and are too thin per cohort to carry a trend on their own.
 
 **H2 — Two-qubit error is converging across the three large families at the median, while the best single number stays with the ions.**
 
