@@ -2,3 +2,4 @@ baseline-*.html
 logs/
 results_smoke*/
 __pycache__/
+run.log
