@@ -66,6 +66,26 @@ class OracleTests(unittest.TestCase):
         for s in states:
             oracle.expected(self.m, s)
 
+    def test_place_list(self):
+        """place is list-valued since 17 Sep 2026: 4K lights ct_cryocmos, ct_sfq and ro_spd; mK lights ct_sfq too; no vac anywhere."""
+        vals = oracle.lens_values(self.m, "place")
+        self.assertEqual(vals, ["4K", "RT", "mK", "none"])
+        self.assertNotIn("vac", vals)
+        self.assertNotIn("vac", self.m.g["vocab"]["PLACE"])
+        for n in self.m.g["nodes"]:
+            self.assertIsInstance(n["e"]["place"], list, n["id"])
+            self.assertTrue(n["e"]["place"], n["id"])
+        s = oracle.default_state()
+        s["lens"], s["values"] = "place", {"4K"}
+        self.assertEqual(oracle.expected(self.m, s)["stations"], {"ct_cryocmos", "ct_sfq", "ro_spd"})
+        s["values"] = {"mK"}
+        r = oracle.expected(self.m, s)["stations"]
+        self.assertIn("ct_sfq", r)
+        self.assertIn("ct_cryocmos", r)
+        self.assertEqual(self.m.nodes["ct_sfq"]["e"]["place"], ["mK", "4K"])
+        self.assertEqual(self.m.nodes["ct_cryocmos"]["e"]["place"], ["4K", "mK"])
+        self.assertEqual(self.m.nodes["ct_ionlaser"]["e"]["place"], ["RT"])
+
     def test_deterministic(self):
         a = [oracle.random_state(self.m, random.Random(7)) for _ in range(3)]
         b = [oracle.random_state(self.m, random.Random(7)) for _ in range(3)]

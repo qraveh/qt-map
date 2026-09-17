@@ -28,13 +28,16 @@ Sources: data/graph.json; editor's rules (programme notes 9–10 Sep 2026; proje
 | mid | `c.mid` (c null → none) | False True none |
 | d | `d` (mobility) | bus flying longrange none shared static transport |
 | mod | `e.mod` | eo lf mw none opt |
-| place | `e.place` | 4K RT mK none vac |
+| place | `e.place` (list, multi; any match — since 17 Sep 2026) | 4K RT mK none |
 | f | `f` (list, multi; any match) | bias burst coherent erasure gauss leak loss pauli unknown |
 | g | `g` (fab) | 3d cmos diamond mbe mems none optics pic sclitho stm |
 | status | `status` | D E T X |
 
 ## Machine term (C2, 17 Sep 2026)
 `machine` (a register machine id from `data/machines.json`, or None) is one more term of the same intersection, never a new mechanism (C2 brief, editor's rule). **M (machine m)** = the machine's real (non-gap) stations on every layer, primary and alternate, i.e. every `layers[*][*].node` that is a graph node (gap nodes `∅…` are not graph nodes and contribute nothing). Lit stations = I ∩ F ∩ L ∩ M; the focused station stays lit (ADJ-3). Lines: the machine keeps exactly its own `map_path` line, like an isolate — lines = (lines by rules 4/ADJ-1/ADJ-2) ∩ {map_path}; a machine counts as a selection for ADJ-1 (a non-family lens value does not remove the line the machine keeps) and for edges (rule 3: edges only between lit stations). Stations the machine uses only as an alternate are marked `altuse` on the page while lit (readout only, not a lit-set term). The card shown is the focused station's if any, else the machine's; reset clears the machine. Since C2 isolating a path no longer clears the focused station (driver state model updated).
+
+## Place (17 Sep 2026)
+place is list-valued since 17 Sep 2026 (ct_sfq mK+4K, ct_cryocmos 4K+mK); 'vac' removed ("in-vacuum integrated" is a location, not a temperature — ct_ionlaser is RT). The first entry is the primary stage (colour, parallel-coordinates axis); the lens term is membership over the list, as `f`; the station card and §7.2 print every stage joined by " / " in the vocabulary's order (RT → 4 K → mK).
 
 ## Metamorphic checks implemented
 M1 adding a lens value never shrinks lit stations; M2 isolate→clear is identity; M3 double toggle is identity; M3b a toggle changes stations/lines only when a focus is set; M4 union over single family values = unfiltered stations (minus path-less stations) and lines; M5 selecting all values of a lens = unfiltered minus stations with no value for it; I1 no edge of an untoggled type.

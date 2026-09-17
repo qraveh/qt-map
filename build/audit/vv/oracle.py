@@ -106,8 +106,9 @@ def _lens_values_of(model, lens, n):
         return {n.get("d") or NONE}
     if lens == "mod":
         return {e.get("mod") or NONE}
-    if lens == "place":
-        return {e.get("place") or NONE}
+    if lens == "place":   # list-valued since 17 Sep 2026 (first entry = primary stage); membership over the list, as f
+        p = e.get("place")
+        return (set(p) if isinstance(p, list) else {p}) - {None} or {NONE}
     if lens == "f":
         return set(n.get("f") or []) or {NONE}
     if lens == "g":

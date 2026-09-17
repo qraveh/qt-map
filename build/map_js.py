@@ -145,15 +145,15 @@ function glyphKeys(){ document.querySelectorAll('#glyphlegend [data-glyph]').for
 const LENSPAL=['#3B6FD4','#E0862B','#2FA66A','#C94C6B','#7C5CC4','#C7A22B','#2AA5B8','#8B6A45','#D07AB5','#6E7F91'];
 const CATS={
  mech:['disp','s2c','qcap','erasure','fluor','img','spd','none'], d:['static','longrange','shared','bus','transport','flying','none'],
- mod:['mw','lf','eo','opt','none'], place:['RT','4K','mK','vac','none'], f:['pauli','coherent','leak','burst','bias','gauss','erasure','loss','unknown','none'],
+ mod:['mw','lf','eo','opt','none'], place:['RT','4K','mK','none'], f:['pauli','coherent','leak','burst','bias','gauss','erasure','loss','unknown','none'],
  g:['sclitho','3d','cmos','mbe','mems','pic','optics','stm','diamond','none'], status:['D','E','T','X'],
  det:['det','her','na'], destr:['yes','no','none'], mid:['yes','no','none']};
 const VTAB={mech:'MECH',d:'MOB',mod:'MOD',place:'PLACE',f:'ERR',g:'FAB',status:'STATUS',det:'DET'};
 const YESNO={yes:['yes','да'],no:['no','нет'],none:['no readout','без считывания']};
 function catLabelSafe(k,v){ try{ if(k==='family')return T(...FAMN[v]); if(k==='aff')return vt('AFF',Number(v)); if(k==='time')return v==='none'?'—':TBINS[Number(v)][1]; return catLabel(k,v);}catch(e){return String(v);} }
 function catLabel(k,v){ if(k==='destr'||k==='mid')return T(...YESNO[v]); return vt(VTAB[k],v); }
-function lensValues(n,k){ if(k==='f')return (n.f&&n.f.length)?n.f:['none']; if(k==='family')return n._fams; return [lensValue(n,k)]; }   // every value a station carries for a lens (f is a list)
-function lensValue(n,k){ if(k==='mech')return n.c?n.c.mech:'none'; if(k==='d')return n.d; if(k==='mod')return n.e.mod; if(k==='place')return n.e.place; if(k==='f')return n.f[0]||'none'; if(k==='g')return n.g; if(k==='status')return n.status;
+function lensValues(n,k){ if(k==='f')return (n.f&&n.f.length)?n.f:['none']; if(k==='place')return (n.e.place&&n.e.place.length)?n.e.place:['none']; if(k==='family')return n._fams; return [lensValue(n,k)]; }   // every value a station carries for a lens (f and place are lists; place since 17 Sep 2026)
+function lensValue(n,k){ if(k==='mech')return n.c?n.c.mech:'none'; if(k==='d')return n.d; if(k==='mod')return n.e.mod; if(k==='place')return (n.e.place&&n.e.place[0])||'none'; if(k==='f')return n.f[0]||'none'; if(k==='g')return n.g; if(k==='status')return n.status;
   if(k==='det')return n.b.det||'na'; if(k==='destr')return n.c?(n.c.destr?'yes':'no'):'none'; if(k==='mid')return n.c?(n.c.mid?'yes':'no'):'none'; if(k==='aff')return String(n.aff); if(k==='time'){const t=timeOf(n); return t==null?'none':timeBin(t);} return null;}
 function timeOf(n){ if(n.b.t!=null)return n.b.t; if(n.c&&n.c.t!=null)return n.c.t; return null; }
 const TBINS=[[-8.5,'≤ 3 ns'],[-7.5,'~30 ns'],[-6.5,'~300 ns'],[-5.5,'~3 µs'],[-4.5,'~30 µs'],[-3.5,'~300 µs'],[-2.5,'≥ 3 ms']];
@@ -163,7 +163,7 @@ function css(v){ return getComputedStyle(document.documentElement).getPropertyVa
 let affScale=null, timeScale=null;
 function buildScales(){ affScale=d3.scaleLinear().domain([0,0.5,1]).range([css('--nat'),css('--mid'),css('--fab')]).interpolate(d3.interpolateRgb); timeScale=d3.scaleLinear().domain([-8.5,-6.5,-4.5,-2.5]).range([css('--lens4'),css('--lens3'),css('--lens2'),css('--lens1')]).interpolate(d3.interpolateRgb).clamp(true); }   // fast = the strong end of the ramp, slow = the pale end
 buildScales();
-function lensColor(n,k){ if(k==='family')return null; if(k==='aff')return affScale(n.aff); if(k==='time'){const t=timeOf(n); return t==null?null:timeScale(t);} let v=lensValue(n,k); if(k==='f'&&state.lensFilter){ const hit=lensValues(n,k).find(x=>state.lensFilter.has(x)); if(hit)v=hit; }   // a multi-value station takes the colour of the value it is lit for
+function lensColor(n,k){ if(k==='family')return null; if(k==='aff')return affScale(n.aff); if(k==='time'){const t=timeOf(n); return t==null?null:timeScale(t);} let v=lensValue(n,k); if((k==='f'||k==='place')&&state.lensFilter){ const hit=lensValues(n,k).find(x=>state.lensFilter.has(x)); if(hit)v=hit; }   // a multi-value station takes the colour of the value it is lit for
   if(v==null||v==='none')return null; const i=CATS[k].indexOf(v); return i<0?null:LENSPAL[i%LENSPAL.length]; }
 function tint(c){ const x=d3.color(c); if(!x)return 'var(--surface)'; x.opacity=0.22; return x.formatRgb(); }
 function lensItems(k){ const count=v=>G.nodes.filter(n=>lensValues(n,k).includes(v)).length;
@@ -336,10 +336,11 @@ function usedByHTML(n){ const L=lang(); const ub=MACH.by_node[n.id]||{primary:[]
   const fams=MACH.families||Object.keys(FAMC); const groups=fams.map(f=>{ const ps=P.filter(id=>MBY[id].family===f), as=A.filter(id=>MBY[id].family===f); if(!ps.length&&!as.length)return '';
     return `<li class="fam"><i class="sw" style="--c:${FAMC[f]||'var(--mid)'}"></i>${T(...(FAMN[f]||[f,f]))} <span class="empty">${ps.length+as.length}</span></li>`+ps.map(id=>li(id,'primary')).join('')+as.map(id=>li(id,'alternate')).join(''); }).join('');
   return `<div class="space useby"><h4>${head}</h4><ul class="useby">${groups}</ul><div class="empty" style="margin-top:4px">${T('click a machine to light its stations on the map · ↗ its register card','клик по машине подсвечивает её станции на карте · ↗ карточка реестра')}</div></div>`; }
+function placeText(n){ const ps=(n.e.place&&n.e.place.length)?n.e.place:['none']; return CATS.place.filter(p=>ps.includes(p)).concat(ps.filter(p=>!CATS.place.includes(p))).map(p=>vt('PLACE',p)).join(' / '); }   // every stage the station carries, in the vocabulary's order (RT → 4 K → mK)
 function inspect(n){ const L=lang(); const c=n.c; const rows=[[T('(a) carrier affinity','(a) сродство носителя'),vt('AFF',n.aff),'aff'],
   [T('(b) time · entangling','(b) время · перепутывание'),(n.b.t!=null?fmtT(n.b.t):'—')+(n.b.det!=='na'?' · '+vt('DET',n.b.det):''),'b'],
   [T('(c) readout','(c) считывание'),c?`${vt('MECH',c.mech)} · ${fmtT(c.t)} · ${c.destr?T('destructive','разрушающее'):T('non-destructive','неразрушающее')} · ${c.mid?'mid-circuit':T('no mid-circuit','без mid-circuit')}`:'—','c'],
-  [T('(d) mobility','(d) подвижность'),vt('MOB',n.d),'d'],[T('(e) control','(e) управление'),n.e.mod==='none'?'—':`${vt('MOD',n.e.mod)} @ ${vt('PLACE',n.e.place)}`,'e'],
+  [T('(d) mobility','(d) подвижность'),vt('MOB',n.d),'d'],[T('(e) control','(e) управление'),n.e.mod==='none'?'—':`${vt('MOD',n.e.mod)} @ ${placeText(n)}`,'e'],
   [T('(f) error structure','(f) структура ошибки'),n.f.map(x=>vt('ERR',x)).join(', '),'f'],[T('(g) manufacturing','(g) производство'),vt('FAB',n.g),'g']];
   const lr=LENSROWS[state.lens]||[];
   // reading marks: one line per badge (hub — the N families beyond its own that require it; off-diagonal — its flag definitions; empty slot)
@@ -475,10 +476,10 @@ const pcHost=document.getElementById('pc');
 const PCW=1100, PCH=300, PX0=70, PX1=PCW-30, PY0=34, PY1=PCH-46;
 const pcsvg=d3.select(pcHost).append('svg').attr('viewBox',`0 0 ${PCW} ${PCH}`).attr('role','img').attr('aria-label','Parallel coordinates of all technologies across the seven design coordinates');
 const AXES=[{k:'aff',en:'(a) carrier',ru:'(a) носитель'},{k:'b',en:'(b) time',ru:'(b) время'},{k:'c',en:'(c) readout',ru:'(c) считывание'},{k:'d',en:'(d) mobility',ru:'(d) подвижность'},{k:'e',en:'(e) control',ru:'(e) управление'},{k:'f',en:'(f) error',ru:'(f) ошибка'},{k:'g',en:'(g) fab',ru:'(g) производство'}];
-const ORD={aff:[0,0.25,0.5,0.75,1],d:['none','static','shared','longrange','bus','transport','flying'],e:['none','lf@RT','mw@RT','eo@RT','opt@RT','opt@vac','mw@4K','lf@mK','mw@mK'],f:['none','pauli','coherent','leak','burst','bias','gauss','erasure','loss','unknown'],g:['none','sclitho','3d','cmos','mbe','mems','pic','optics','stm','diamond'],c:['none','spd','disp','erasure','s2c','qcap','fluor','img']};
+const ORD={aff:[0,0.25,0.5,0.75,1],d:['none','static','shared','longrange','bus','transport','flying'],e:['none','lf@RT','mw@RT','eo@RT','opt@RT','mw@4K','lf@mK','mw@mK'],f:['none','pauli','coherent','leak','burst','bias','gauss','erasure','loss','unknown'],g:['none','sclitho','3d','cmos','mbe','mems','pic','optics','stm','diamond'],c:['none','spd','disp','erasure','s2c','qcap','fluor','img']};
 const xAx=i=>PX0+i*(PX1-PX0)/(AXES.length-1);
 const tScale=d3.scaleLinear().domain([-8.5,-1]).range([PY1,PY0]);
-function yOf(n,k){ if(k==='aff')return PY1-(ORD.aff.indexOf(n.aff))*(PY1-PY0)/4; if(k==='b')return n.b.t==null?PY1+10:tScale(n.b.t); if(k==='c'){const m=n.c?n.c.mech:'none'; const i=ORD.c.indexOf(m); return PY1-i*(PY1-PY0)/(ORD.c.length-1);} if(k==='e'){const key=n.e.mod==='none'?'none':n.e.mod+'@'+n.e.place; let i=ORD.e.indexOf(key); if(i<0)i=0; return PY1-i*(PY1-PY0)/(ORD.e.length-1);} const arr=ORD[k]; const v=k==='f'?(n.f[0]||'none'):n[k]; let i=arr.indexOf(v); if(i<0)i=0; return PY1-i*(PY1-PY0)/(arr.length-1); }
+function yOf(n,k){ if(k==='aff')return PY1-(ORD.aff.indexOf(n.aff))*(PY1-PY0)/4; if(k==='b')return n.b.t==null?PY1+10:tScale(n.b.t); if(k==='c'){const m=n.c?n.c.mech:'none'; const i=ORD.c.indexOf(m); return PY1-i*(PY1-PY0)/(ORD.c.length-1);} if(k==='e'){const key=n.e.mod==='none'?'none':n.e.mod+'@'+((n.e.place&&n.e.place[0])||'none'); let i=ORD.e.indexOf(key); if(i<0)i=0; return PY1-i*(PY1-PY0)/(ORD.e.length-1);} const arr=ORD[k]; const v=k==='f'?(n.f[0]||'none'):n[k]; let i=arr.indexOf(v); if(i<0)i=0; return PY1-i*(PY1-PY0)/(arr.length-1); }
 const pcAxes=pcsvg.append('g'); const pcLines=pcsvg.append('g'); const pcLabel=pcsvg.append('text').attr('x',PX0).attr('y',PCH-8).attr('fill','var(--ink)').attr('font-size',12).attr('font-weight',600);
 function renderPC(){ pcAxes.selectAll('*').remove();
   AXES.forEach((a,i)=>{const g=pcAxes.append('g').attr('class','pc-axis'); const x=xAx(i); g.append('line').attr('x1',x).attr('x2',x).attr('y1',PY0-6).attr('y2',PY1+12); g.append('text').attr('class','t').attr('x',x).attr('y',PY0-14).attr('text-anchor','middle').text(a[lang()]);
