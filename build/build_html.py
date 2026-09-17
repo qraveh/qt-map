@@ -140,7 +140,7 @@ def insert_after_h3_table(h,h3_num,block):
     return h[:t]+block+h[t:]
 # sortable tables (editor's review of 17 Sep 2026, second batch, brief D): tag the nth div.tbl after the h3 numbered h3_num;
 # the JS block `tblsort` in map_js.py reads data-sort (platform-default · numeric · date · centrality) and data-default="build"
-SORT_TABLES=[('3.1','platform-default',1),('7.4','numeric',1),('7.5','numeric',1),('7.6','numeric',2),('7.11','date',1),('7.12','numeric',2)]
+SORT_TABLES=[('3.1','platform-default',1),('7.4','numeric',1),('7.5','numeric',1),('7.6','numeric',2),('7.11','date',1),('7.12','numeric',2),('8.1','numeric',1),('8.2','numeric',1),('8.3','numeric',1)]
 def tag_sortable(h,h3_num,kind,nth=1):
     m=re.search(r'<h3 id="[^"]+">'+re.escape(h3_num)+r' ',h)
     if not m: return h
@@ -210,7 +210,8 @@ def toc_html(toc,lang,gsec='8'):
     def li(i,num,t,lvl):
         sty=' style="padding-left:14px;font-size:12.5px"' if lvl==3 else ''
         return '<li'+sty+'><a href="#'+i+'"><span class="n">'+num+'</span><span>'+html.escape(t)+'</span></a></li>'
-    items=''.join(li(i,num,t,lvl) for i,num,t,lvl in toc if lvl==2 or num.startswith(gsec+'.'))
+    subs=(gsec+'.',str(int(gsec)+1)+'.')   # level-3 entries for the graph section and the machines chapter that follows it
+    items=''.join(li(i,num,t,lvl) for i,num,t,lvl in toc if lvl==2 or num.startswith(subs))
     return f'<ol><li class="mapl"><a href="#map"><span class="n">◎</span><span>{"Technology map" if lang=="en" else "Карта технологий"}</span></a></li>{items}</ol>'
 # find split point: before <h2 id="s3"> in each
 def split_after_s2(h,lang):
@@ -232,7 +233,7 @@ def toc_with_briefs(toc,lang,snum='9'):
 PUBLIC=dict(mode='public',
     report_en=os.path.join(ROOT,'report','report_EN.md'), report_ru=os.path.join(ROOT,'report','report_RU.md'),
     out_body=os.path.join(ROOT,'dist','body.html'), out_full=os.path.join(ROOT,'dist','Quantum-Technology-Map-%s.html'%EDITIONS[0]['edition']),
-    title='Quantum Technology Map', default_lang='en', graph_sec='7', sources_num='8', table_num='7.2', id_sections=('7.2','7.5','7.6','7.7'),
+    title='Quantum Technology Map', default_lang='en', graph_sec='7', sources_num='9', table_num='7.2', id_sections=('7.2','7.5','7.6','7.7'),
     briefs_en=os.path.join(ROOT,'briefs','en'), briefs_ru=os.path.join(ROOT,'briefs','ru'), regmap=os.path.join(ROOT,'data','facts.json'),
     doi_concept=CONCEPT_DOI, doi_version=EDITIONS[0]['doi'], author='Raveh Neeman', publisher='Qodeh', url=SITE, repo=REPO, date=EDITIONS[0]['date'], edition=EDITIONS[0]['edition'])
 

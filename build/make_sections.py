@@ -4,6 +4,8 @@ import os
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0,os.path.join(ROOT,'data'))
 import graph_data as gd
+sys.path.insert(0,os.path.join(ROOT,'build'))
+import machines_chapter as mc
 
 SIGDIGITS=6
 def determinize(x,sig=SIGDIGITS):
@@ -356,9 +358,11 @@ json.dump(G,open(os.path.join(ROOT,'data','graph.json'),'w',encoding='utf-8',new
 def splice(lang,start,end):
     p=os.path.join(ROOT,'report','report_%s.md'%lang.upper()); s=open(p,encoding='utf-8').read()
     sec=sec9(lang); sec=re.sub(r'^(#+ )9(\.\d*)',r'\g<1>7\2',sec,flags=re.M).replace('## 9. ','## 7. ',1)
-    sec=re.sub(r'(see|см\.) 8\.(\d+)',r'\1 7.\2',sec); sec=re.sub(r'§9(\.\d+)',r'§7\1',sec); sec=re.sub(r'§8(\.\d+)?',lambda m:'§7'+(m.group(1) or ''),sec); sec=re.sub(r'§9(?!\.)','§8',sec)
+    sec=re.sub(r'(see|см\.) 8\.(\d+)',r'\1 7.\2',sec); sec=re.sub(r'§9(\.\d+)',r'§7\1',sec); sec=re.sub(r'§8(\.\d+)?',lambda m:'§7'+(m.group(1) or ''),sec)
+    # §8 "Machines" (build/machines_chapter.py) follows the graph section; Sources is §9 in the public edition
+    sec8=mc.sec_machines(lang)
     i=s.find(start); j=s.find(end); k=s.rfind('\n---\n',i,j)
     if i<0 or j<0: raise SystemExit('report %s: section markers not found'%lang)
-    open(p,'w',encoding='utf-8',newline='\n').write(s[:i]+sec.rstrip()+'\n'+s[k:])
-splice('en','## 7. The technology graph','## 8. Sources'); splice('ru','## 7. Граф технологий','## 8. Источники')
-print('sec9 written', len(sec9('en').split()), len(sec9('ru').split()))
+    open(p,'w',encoding='utf-8',newline='\n').write(s[:i]+sec.rstrip()+'\n\n---\n\n'+sec8.rstrip()+'\n'+s[k:])
+splice('en','## 7. The technology graph','## 9. Sources'); splice('ru','## 7. Граф технологий','## 9. Источники')
+print('sec9 written', len(sec9('en').split()), len(sec9('ru').split()), '| sec8 (machines)', len(mc.sec_machines('en').split()), len(mc.sec_machines('ru').split()))

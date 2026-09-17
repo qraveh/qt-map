@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build data/machines.json (SPEC step C2, "machines on the Map") from the machines register.
 
-Inputs : quantum-machines-2026.09/data/{machines,machine-stations-evidence,records-candidates,machine-codes}.csv
+Inputs : quantum-machines-2026.09/data/{machines,machine-stations-evidence,records-candidates,machine-codes,roadmap-feasibility}.csv
          data/graph.json (layers, vocab.RECKEYS)
 Output : data/machines.json  -- deterministic: same inputs give identical bytes.
 
@@ -14,8 +14,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REG = os.environ.get('QT_MACHINES_DIR', '/home/claude/work/QT-Map/quantum-machines-2026.09/data')
 OUT = os.path.join(ROOT, 'data', 'machines.json')
 EDITION = '2026.09'
-SOURCE = {"register": "quantum-machines-2026.09 · 16 Sep 2026",
-          "evidence": "machine-stations-evidence.csv · 16 Sep 2026"}
+SOURCE = {"register": "quantum-machines-2026.09 · 17 Sep 2026",
+          "evidence": "machine-stations-evidence.csv · 17 Sep 2026 (locator passes 1–3)"}
 FAMILY_ORDER = ['SC', 'ION', 'ATOM', 'PHOTON', 'SPIN', 'DEFECT', 'TOPO', 'ANNEAL']
 GAP_PREFIX = '∅'
 
@@ -50,6 +50,19 @@ def int_or_none(s):
     return int(v) if v is not None and v == int(v) else None
 
 
+PROFILE_FIELDS = ('qubit_type', 'gate_mechanism', 'connectivity', 'degree', 'control', 'control_placement', 'readout',
+                  'err_2q_median', 'err_2q_best', 'readout_error', 't1', 't2', 't_2q', 't_meas', 'best_logical',
+                  'decoder', 'realtime', 'roadmap')
+
+
+def profile(m):
+    """Register fields the report's machines chapter reasons about (strings as in machines.csv; numbers parsed)."""
+    p = {k: m.get(k, '') for k in PROFILE_FIELDS}
+    p['err_2q_median_num'] = sig6(num_or_none(m.get('err_2q_median_num')))
+    p['flags'] = sorted(x.strip() for x in m.get('flags', '').split(';') if x.strip())
+    return p
+
+
 def fam_key(m):
     f = m['family']
     return (FAMILY_ORDER.index(f) if f in FAMILY_ORDER else len(FAMILY_ORDER), f, m['id'])
@@ -77,6 +90,11 @@ def build():
         if r['key'] not in reckeys:
             report['dropped_records'].append((r['machine_id'], r['key'])); continue
         rec_by.setdefault(r['machine_id'], []).append(r)
+    road = []
+    for r in rows('roadmap-feasibility.csv'):
+        road.append({k: r.get(k, '') for k in ('roadmap_id', 'org', 'machine_id', 'year', 'q_r', 'eps_r', 'g_r',
+                                                'algorithm_id', 'verdict', 'deficit')})
+    road.sort(key=lambda r: (r['roadmap_id'], r['algorithm_id']))
     codes_by = {}
     for r in rows('machine-codes.csv'):
         if r['machine_id'] not in ids:
@@ -110,10 +128,11 @@ def build():
                     "status": m['status'], "status_date": m['status_date'],
                     "physical_qubits_num": int_or_none(m['physical_qubits_num']), "access": m['access'],
                     "layers": layers, "records": recs, "codes": sorted(codes_by.get(mid, ())),
-                    "evidence_counts": {"verified": ver, "total": tot}})
+                    "evidence_counts": {"verified": ver, "total": tot},
+                    "profile": profile(m)})
     out.sort(key=fam_key)
     bn = {k: {"primary": sorted(v['primary']), "alternate": sorted(v['alternate'])} for k, v in sorted(by_node.items())}
-    doc = {"edition": EDITION, "source": SOURCE, "machines": out, "by_node": bn}
+    doc = {"edition": EDITION, "source": SOURCE, "machines": out, "by_node": bn, "roadmaps": road}
     with open(OUT, 'w', encoding='utf-8', newline='\n') as fh:
         json.dump(doc, fh, ensure_ascii=False, indent=1, sort_keys=False)
         fh.write('\n')

@@ -1320,7 +1320,134 @@ On the map the **Machine selector** is one more term in the intersection isolate
 
 ---
 
-## 8. Sources
+## 8. Machines — 136 attempts, and where the architecture is going
+
+The map's stations are what *can* be built; the machines register says what *has been* built, announced or planned, one row per machine, each joined to the map as a path instance (§7.12). This chapter reads the register as a population: how large it is, which stations it is built from, what idea justifies each attempt, and what the population's trends say about where the architecture is heading. Every count below is computed by the build from `data/machines.json` (quantum-machines-2026.09 · 17 Sep 2026; evidence machine-stations-evidence.csv · 17 Sep 2026 (locator passes 1–3)); a claim is tested against the register, not asserted, and its evidence grade is carried along — the share of the cells behind it that a document was seen to support (✅) rather than a press page or an inference (🔎).
+
+### 8.1 The population
+
+**136 machines, 8 families, 14 paths.** 97 are devices — 57 deployed, 36 demonstrated, 6 retired, less the rows flagged as a target or a component — and 39 are announcements, plans or targets. Access: 57 reachable through a cloud service, 27 sold on-premises, 40 laboratory-only. By country of the operating organisation: USA 44, China 24, France 10, USA/UK 8, Canada 6, Japan 6. By cohort (the year of the status date): 2019 — 2, 2020 — 2, 2021 — 4, 2022 — 7, 2023 — 10, 2024 — 23, 2025 — 43, 2026 — 37, 2027 — 3, 2028 — 1, 2029 — 1, 2030 — 2, 2033 — 1.
+
+**Table 8.1 — families × status (machines); devices; cloud access; evidence grade**
+
+| Family | Machines | Deployed | Demonstrated | Announced | Planned | Retired | Other | Devices | Cloud | Cells ✅ / all | ✅ share |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| superconducting | 74 | 32 | 18 | 8 | 7 | 6 | 3 | 54 | 39 | 353 / 824 | 43 % |
+| ions | 21 | 9 | 6 | 4 | 2 | 0 | 0 | 15 | 8 | 137 / 241 | 57 % |
+| atoms | 19 | 7 | 5 | 5 | 2 | 0 | 0 | 12 | 3 | 103 / 220 | 47 % |
+| photonics | 8 | 4 | 3 | 1 | 0 | 0 | 0 | 7 | 3 | 54 / 97 | 56 % |
+| spins | 8 | 2 | 3 | 2 | 1 | 0 | 0 | 5 | 1 | 26 / 86 | 30 % |
+| defects | 2 | 1 | 1 | 0 | 0 | 0 | 0 | 2 | 1 | 13 / 23 | 57 % |
+| topological | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 8 / 10 | 80 % |
+| annealers | 3 | 2 | 0 | 0 | 1 | 0 | 0 | 2 | 2 | 12 / 32 | 38 % |
+| **all** | 136 | 57 | 36 | 20 | 13 | 6 | 4 | 97 | 57 | 706 / 1533 | 46 % |
+
+Reading the table: the superconducting family is the largest by far and also the only one with retirements; the photonic and spin families are small and mostly at the demonstration stage; the 4 rows in *other* are statuses the register could not reduce to one word (component testbeds, disputed reachability). The evidence grade differs by family because the families publish differently — architecture papers with device figures are the norm for the academic superconducting, ion and atom machines and the exception for commercial photonic and spin announcements.
+
+### 8.2 What the machines are built from
+
+Per layer of the map, the stations the machines actually occupy (primary role), the share of machines whose primary cell is a gap — the map has no station for what the machine runs, or the machine discloses nothing — and the families that share the most-used station. The gap share is the register's disclosure profile: near zero for the carrier, small for gates, connectivity and fabrication, and large for exactly the layers where the field's claims run ahead of its machines — code, decoder, interconnect.
+
+**Table 8.2 — layers: gap share and the most-used stations**
+
+| Layer | Machines with a gap | Gap share | Most-used stations (machines) | Families on the first |
+|---|---|---|---|---|
+| 1 Carrier | 0 | 0 % | Transmon `transmon` (63); Trapped atomic ion `ion` (21); Alkali atom (Rb/Cs) in tweezer `alkali` (14) | superconducting |
+| 2 Encoding | 8 | 6 % | Bare two-level subspace `enc_bare` (62); Hyperfine / clock-state qubit `enc_hf` (36); Single-spin (Loss–DiVincenzo) / nuclear-spin encoding `enc_spin_ld` (10) | superconducting |
+| 3 Gate mechanism | 18 | 13 % | Tunable-coupler CZ / iSWAP `g_tc` (49); Mølmer–Sørensen / light-shift laser gate `g_ms` (15); Rydberg-blockade CZ `g_ryd` (15) | superconducting |
+| 4 Connectivity / transport | 5 | 4 % | Static nearest-neighbour lattice `cx_nn` (77); Atom transport by AOD tweezers (zoned architecture) `cx_aod` (17); Ion-chain motional bus (all-to-all in chain) `cx_bus` (13) | superconducting, spins, defects, topological |
+| 5 Control | 20 | 15 % | Room-temperature electronics + per-qubit coax/flex `ct_rt` (63); Laser + AOD/SLM optical control (atoms) `ct_laser` (19); Electro-optic drive + feed-forward electronics (RT) `ct_eo` (8) | superconducting |
+| 6 Readout | 9 | 7 % | Dispersive microwave readout (+TWPA, Purcell) `ro_disp` (64); Fluorescence state detection (ions) `ro_fluor` (23); Fluorescence imaging of atom arrays `ro_img` (17) | superconducting |
+| 7 Code | 97 | 71 % | Bosonic concatenation (repetition-cat, LDPC-cat, GKP+qLDPC) `code_bosonic` (8); Non-local qLDPC codes (bivariate-bicycle, 'gross') `code_qldpc` (8); High-rate concatenated codes with transversal gates `code_highrate` (7) | superconducting, photonics |
+| 8 Decoder | 107 | 79 % | MWPM / Sparse Blossom (+correlated matching) `dec_mwpm` (12); Correlated / loss-aware decoding (transversal, atom loss) `dec_corr` (5); Relay-BP for qLDPC (FPGA) `dec_relaybp` (5) | superconducting, ions, atoms, photonics |
+| 9 Interconnect | 119 | 88 % | Multi-chip modules / l-couplers (same cryostat) `ic_mcm` (10); Ion–photon photonic link `ic_ionphoton` (3); Fibre links between photonic modules `ic_fibre` (2) | superconducting |
+| 10 Manufacturing | 6 | 4 % | Superconducting-qubit lithography (Nb/Al JJ, 300 mm) `fab_sc` (73); Optical / mechanical assembly (lasers, vacuum, objectives) `fab_optics` (19); Surface-electrode ion-trap microfabrication `fab_trap` (18) | superconducting, annealers |
+
+### 8.3 The idea behind each attempt
+
+A machine is an argument: *this* combination of stations will reach the goal before the others. The argument is made per path, not per machine, so the register is read here by path — the bet in one line, the count of machines and devices that make it, the largest gate-capable device the register holds for it (analog simulators, arrays without an entangling gate and single-qubit testbeds excluded), and the best two-qubit error among its devices (hero pairs, targets and component demonstrations excluded).
+
+**Table 8.3 — paths: the bet, the population, the best numbers**
+
+| Path | The bet | Machines | Devices | Largest gate-capable device (physical qubits) | Best 2Q error among devices |
+|---|---|---|---|---|---|
+| Superconducting transmon `sc` | fast microwave gates on a lithographic lattice; scale by fabrication and, later, by links between chips | 62 | 45 | IBM Quantum Osprey — 433 | 1.0×10^-3 (Origin Wukong-180 (4th gen)) |
+| Superconducting bosonic (cat / GKP) `cat` | bias the noise so that one error type dominates, then correct only that type with a cheap code | 7 | 6 | Alice & Bob Helium (on-premise system) — 18 | 5.8×10^-2 (Alice & Bob Helium 2 ("Galvanic Cat")) |
+| Superconducting dual-rail erasure `dualrail` | turn photon loss into a flagged erasure; erasures cost far fewer qubits to correct than Pauli errors | 5 | 3 | OQC GENESIS — 16 | 1.0×10^-3 (Aqumen Seeker) |
+| Trapped ions — QCCD, laser gates `ion_qccd` | move the ions, not the information: transport gives all-to-all connectivity at the highest gate fidelities | 10 | 8 | Helios — 98 | 7.9×10^-4 (Helios) |
+| Trapped ions — electronic gates, chip control `ion_elec` | static chains with electronic or integrated control; scale by photonic links between modules | 11 | 7 | iQPU / UQConnect — 64 | 4.0×10^-3 (Aria) |
+| Neutral atoms — alkali (Rb/Cs) `atom_rb` | reconfigurable tweezers make the code geometry programmable and the qubit count cheap; the clock is slow | 14 | 9 | 448-atom fault-tolerant processor — 448 | 1.6×10^-3 (448-atom fault-tolerant processor) |
+| Neutral atoms — alkaline-earth (Yb/Sr), erasure-native `atom_ae` | alkaline-earth atoms add erasure conversion and continuous reloading to the tweezer bet | 5 | 3 | Phoenix (Gen-1) and Gen-2 — 1,180 | 4.0×10^-3 (Phoenix (Gen-1) and Gen-2) |
+| Photonic — fusion-based (DV) `ph_fusion` | make entanglement by measurement: room-temperature photonic fabrication and networking, loss is the enemy | 5 | 4 | Lucy — 12 | 7.8×10^-3 (Omega chipset (Moreton Bay / Chicago systems unnamed)) |
+| Photonic — continuous-variable / GKP `ph_cv` | continuous-variable states and GKP encoding on the same photonic chips | 3 | 3 | — | — |
+| Silicon / germanium quantum-dot spins `spin_qd` | the foundry: quantum dots in CMOS, density and cold electronics from the semiconductor industry | 7 | 4 | Tunnel Falls — 12 | 1.1×10^-2 (foundry 8-qubit array) |
+| Donor spins in silicon `spin_donor` | donor spins in isotopically pure silicon: the longest coherence in a solid | 1 | 1 | 11-qubit donor processor — 11 | 3.6×10^-3 (11-qubit donor processor) |
+| Defect-spin network nodes (NV/SiV/T) `defect` | defect spins that work at room temperature and network through photons | 2 | 2 | Quoll / QB-QDK 2.0 — 6 | — |
+| Topological (Majorana) `topo` | protection in the hardware: a topological gap instead of a code | 1 | 0 | — | — |
+| Quantum annealing `anneal` | special-purpose scale now: thousands of analog qubits for optimisation and simulation | 3 | 2 | Advantage — 5,000 | — |
+
+Two readings. First, the bets are not symmetric in what they need to prove: the superconducting and tweezer bets are already made by dozens of devices and argue about *rates* (error per gate, qubits per year); the bosonic, topological and donor bets are made by one to seven machines and still argue about *existence* (does the protection hold at the second qubit, at the second module). Second, the best numbers sit on different paths for different quantities — the largest device is a tweezer array, the best two-qubit error is an ion trap, the fastest clock (§7.4) is a transmon lattice — which is the empirical form of the map's claim that no path dominates on all axes.
+
+### 8.4 Trends — eight hypotheses tested on the register
+
+Each hypothesis is a falsifiable statement about the population; the test is the computation named with it, run by the build on the register's current rows; the verdict is *supported*, *partly supported* or *not supported*, with the sample size. What each verdict rests on, and what would overturn it, is in §8.6.
+
+**H1 — Physical qubit count has moved to the atoms; superconducting machines no longer compete on count.**
+
+*Test.* Median physical qubits per family over all devices and over gate-capable devices (91 of 97; analog simulators, arrays without an entangling gate and single-qubit testbeds excluded); the largest gate-capable device per family; cohort medians for the two largest families. *Result.* All devices: atoms 256 (n = 11); superconducting 72 (n = 53); ions 31 (n = 14); photonics 12 (n = 3); spins 9.5 (n = 4). Gate-capable: atoms 120 (n = 8); superconducting 75 (n = 52); ions 30 (n = 13); photonics 12 (n = 2); spins 9.5 (n = 4) — the atoms lead by ×3.6 on all devices and ×1.6 on gate-capable ones. Largest gate-capable device: atoms Phoenix (Gen-1) and Gen-2 1,180; superconducting IBM Quantum Osprey 433; ions Helios 98; largest device of any kind: atoms 6,100-qubit tweezer array 6,100; superconducting IBM Quantum Osprey 433. Cohort medians (gate-capable; n in brackets) — superconducting: 2021 59.5 (4), 2022 72 (3), 2023 108.5 (4), 2024 84 (15), 2025 66 (18), 2026 64 (8); atoms: 2023 640 (2), 2024 140 (1), 2025 180 (4), 2026 20 (1). *Verdict:* **supported**. The atoms' lead in count is real among processors and much larger among trap arrays: the thousands-of-qubits machines are arrays that do not yet run an entangling gate, while the largest gate-capable tweezer processor and the largest transmon lattice are within a factor of a few of each other. The cohort medians move with who enters the register in a given year (small first chips from new entrants) more than with the leaders, and are too thin per cohort to carry a trend on their own.
+
+**H2 — Two-qubit error is converging across the three large families at the median, while the best single number stays with the ions.**
+
+*Test.* Median and best `err_2q_median` over devices per family, excluding hero-pair numbers, targets and component demonstrations. *Result.* superconducting median 4.0×10^-3, best 1.0×10^-3 (Aqumen Seeker), n = 24; ions median 3.0×10^-3, best 7.9×10^-4 (Helios), n = 9; atoms median 4.0×10^-3, best 1.6×10^-3 (448-atom fault-tolerant processor), n = 5; photonics median 6.2×10^-2, best 7.8×10^-3 (Omega chipset (Moreton Bay / Chicago systems unnamed)), n = 3; spins median 1.1×10^-2, best 3.6×10^-3 (11-qubit donor processor), n = 3. The spread of the three large medians is ×1.3. *Verdict:* **supported**. A convergence of medians with a persistent gap at the best is what one expects when the median is set by the many second-tier machines and the best by a few labs that have run the same platform for a decade.
+
+**H3 — Control stays external: integrated control is a minority confined to spins, annealers and a few traps; no superconducting device of 100 qubits or more is driven from inside the cryostat.**
+
+*Test.* The register's `control_placement` classified as room-temperature electronics, optics, integrated (on-chip microwave, cryo-CMOS, SFQ, flux DACs, 4 K) or undisclosed; the integrated class by family; superconducting devices ≥ 100 qubits with cryogenic control that is not a demo. *Result.* External 115 of 136; integrated 19 (superconducting 6, ions 5, spins 5, annealers 3), of which cryogenic 14; superconducting devices ≥ 100 qubits with non-demo cryogenic control: 0. *Verdict:* **supported**. The station the map calls the slow trend (§7.4: control placement) is slow in the register too: the integrated class is where the physics forces it — flux DACs on annealers, CMOS next to CMOS spins, microwave electrodes in surface traps — and a plan elsewhere.
+
+**H4 — Running a code on the hardware is becoming the entry ticket: the share of new machines that have done so rises by cohort, and closed-loop decoding follows.**
+
+*Test.* Machines with at least one code in the register's code table, by cohort 2023–2026; machines whose decoding is in the loop. *Result.* 47 of 136 machines have run a code (superconducting 28, ions 9, atoms 6, photonics 2, spins 1, defects 1); share by cohort 2023 30 % (3/10), 2024 26 % (6/23), 2025 40 % (17/43), 2026 32 % (12/37); decoding in the loop: 5 (Aurora, Rigetti Ankaa-2, System Model H1 (H1-1), System Model H2 (H2-1, H2-2), Willow). *Verdict:* **partly supported**. The share rises but not monotonically, and the loop is closed on a handful of machines: the entry ticket is a code *demonstration*, not yet a decoder in the cycle.
+
+**H5 — Modularity is a roadmap, not a machine: the interconnect layer is the least populated layer of the register.**
+
+*Test.* Gap share per layer (Table 8.2); machines whose primary interconnect cell is a map station. *Result.* Interconnect gap 119 of 136 (88 %), the largest of the ten layers; 17 machines carry a link station (superconducting 10, ions 3, atoms 1, photonics 2, defects 1). *Verdict:* **supported**. Every roadmap that reaches thousands of qubits assumes a link between modules; the register holds a link on 17 machines, most of them ion or photonic testbeds. The layer where the architecture must go is the layer where it has least been.
+
+**H6 — Roadmaps fall short on the error budget, not on the qubit count.**
+
+*Test.* The register's roadmap-feasibility table (16 roadmaps × the target algorithms): verdicts, and among the SHORT verdicts the deficit's nature. *Result.* FEASIBLE 23, NOT EVALUABLE 40, SHORT 65; of the 65 SHORT verdicts 56 carry an error or gate-budget deficit and 9 a qubit-only deficit. *Verdict:* **supported**. Qubit counts are the roadmaps' own currency and they budget it generously; the logical error per operation and the gate count of the target algorithm are where the same roadmaps miss by one to six orders of magnitude.
+
+**H7 — The announcement gap widens: the newest cohort is increasingly announcements and plans rather than devices.**
+
+*Test.* Share of announced or planned rows per cohort 2023–2026; retirements by family. *Result.* 2023 10 % (1/10), 2024 4 % (1/23), 2025 16 % (7/43), 2026 43 % (16/37); retired: superconducting 6. *Verdict:* **supported** — with the caveat that the newest cohort is a partial year and some of its announcements will become devices; the shape to watch is whether the share falls back as the year closes.
+
+**H8 — The families' ideas converge: a growing set of stations is shared across families.**
+
+*Test.* Stations occupied in the primary role, counted by the number of families that occupy them. *Result.* 86 stations occupied; 20 by two families or more, 3 by three or more (Static nearest-neighbour lattice `cx_nn` — 4, MWPM / Sparse Blossom (+correlated matching) `dec_mwpm` — 4, Baseband electrical control (spins, Majorana) `ct_base` — 3). *Verdict:* **not supported**. The families keep their own toolboxes; what they share is a *role* — mid-circuit readout, erasure conversion, a link between modules — filled by a different station on each path. Convergence, where it exists, is at the level of the map's coordinates (§7), not of its stations.
+
+### 8.5 Where the architecture is going
+
+Of the eight hypotheses, 6 are supported, 1 partly and 1 not. Read together they draw one direction rather than eight. **From count to encoded qubits and links.** The two least populated layers — code/decoder and interconnect — are exactly the two every roadmap depends on (H4, H5, H6): the next generation of machines will be judged by the logical error per cycle and by the link between modules, and the register already shows the count race losing its meaning (H1). **A division of roles between families rather than a winner.** The largest devices are tweezer arrays, the best gate is an ion trap, the fastest clock a transmon lattice and the room-temperature fabrication is photonic; the medians converge (H2) while the extremes stay apart, and the stations do not cross the family lines (H8) — the architecture that reaches the goals of §4 will more likely be a *composition* of paths joined by links than a single path grown large. **The slow variable is control.** Integrated control is a plan for the families that can afford room-temperature racks and a necessity only where the physics forces it (H3); the map's placement coordinate will move last. **The binding constraint is the error budget.** Roadmaps are short by orders of magnitude on error and gate count and rarely on qubits (H6), so the machines that matter next are the ones that move the logical error per operation, whatever their qubit count.
+
+### 8.6 Verification and limits
+
+**Table 8.6 — what each verdict rests on**
+
+| Hypothesis | Verdict | Sample | Filters applied | Evidence grade of the inputs | What would overturn it |
+|---|---|---|---|---|---|
+| H1 | **supported** | 91 gate-capable devices | status ∈ {deployed, demonstrated, retired}; no target/component/analog/no-gate flag | register field `physical_qubits_num` (press-level for most machines) | a superconducting device cohort whose median passes the atoms |
+| H2 | **supported** | superconducting 24, ions 9, atoms 5, photonics 3, spins 3 | devices; hero-pair, target and component numbers excluded | register field `err_2q_median` (paper-level where a figure is cited, else press) | a family median more than ×2 from the others, or a non-ion best |
+| H3 | **supported** | 136 | none (all rows); the ≥ 100-qubit clause on devices | control layer cells: 50 % ✅ (68/136) | integrated control on more than 30 % of machines, or a ≥ 100-qubit superconducting device driven cryogenically |
+| H4 | **partly supported** | 113 machines in cohorts 2023–2026 | cohort = year of the status date | code layer cells: 42 % ✅ (57/136) | a falling share across three cohorts, or ten machines with a decoder in the loop |
+| H5 | **supported** | 136 | primary cells only | interconnect layer cells: 24 % ✅ (33/136) | another layer with a larger gap, or links on a quarter of the machines |
+| H6 | **supported** | 128 roadmap × algorithm rows | verdict = SHORT | register table `roadmap-feasibility` (targets as published by the vendors) | qubit-only deficits above half of the SHORT verdicts |
+| H7 | **supported** | 113 machines in cohorts 2023–2026 | status ∈ {announced, planned} | register field `status` (press-level by nature) | the newest cohort’s share falling to the previous cohorts’ level |
+| H8 | **not supported** | 86 occupied stations | primary role; gaps excluded | all primary cells: 46 % ✅ | half of the occupied stations shared by two families or more |
+
+Limits. The cohort is the year of the register's status date, which mixes first light, general availability and the latest milestone; the classifiers are string rules over free-text fields and are printed at the top of `build/machines_chapter.py` so that a reviewer can object to a rule rather than to a number; the population is the register's, which favours machines with an English-language document. 14 machines have no verified cell at all (press pages only) and enter the counts at press level: Alice & Bob Boson 4, Fujitsu 1,000-qubit machine, Groove Quantum (no named machine), Haituo (Quafu platform), Hanyuan-1, Hanyuan-2, Hitachi x Intel 18A spin programme, KRISS domestic superconducting QPU, Lucy, Qinghe-1, Quantum X Labs neutral-atom platform (50+ qubits, claimed), Quobly (no named machine), Rigetti Ankaa-3, Tianyan-504 / "Xiaohong" chip. Every hypothesis is re-tested by each build; a verdict that flips between editions is itself a finding and will be reported in the changelog.
+
+---
+
+## 9. Sources
 
 **Superconducting [S]**
 [S1] Google Quantum AI, Willow fidelities / verifiable advantage (Oct 2025) — https://blog.google/innovation-and-ai/technology/research/quantum-hardware-verifiable-advantage/ · [S2] "Quantum error correction below the surface code threshold", Nature (2024/25) — https://www.nature.com/articles/s41586-024-08449-y · [S3] IBM Quantum hardware page — https://www.ibm.com/quantum/hardware · [S4] IBM, What's new Q2 2026 — https://www.ibm.com/quantum/blog/whats-new-q2-2026 · [S5] Zuchongzhi 3.0, PRL 134, 090601 — https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.134.090601 · [S6] Rigetti Cepheus-1-108Q GA (Apr 2026) — https://investors.rigetti.com/news-releases/news-release-details/rigetti-announces-general-availability-108-qubit-system · [S7] Toshiba double-transmon coupler, PRX 14, 041050 — https://journals.aps.org/prx/abstract/10.1103/PhysRevX.14.041050 ; IQM CZ 99.93% / readout 99.94% — https://arxiv.org/abs/2508.16437 · [S8] Fluxonium CNOT 99.94% in 60 ns (Manucharyan group), PRX Quantum 6, 010349 — https://arxiv.org/abs/2407.15783 ; MIT fluxonium CZ 99.922%, PRX 13, 031035 — https://journals.aps.org/prx/abstract/10.1103/PhysRevX.13.031035 · [S9] Google colour code, Nature (May 2025) — https://www.nature.com/articles/s41586-025-09061-4 · [S10] Magic-state cultivation — https://arxiv.org/abs/2512.13908 · [S11] Google RL-steered QEC, Nature (Jul 2026) — https://www.nature.com/articles/s41586-026-10759-2 · [S12] Zuchongzhi 3.2 below threshold, PRL (Dec 2025) — https://journals.aps.org/prl/abstract/10.1103/rqkg-dw31 · [S13] USTC logical CNOT — https://arxiv.org/abs/2607.01473 · [S14] Zhejiang lattice surgery — https://arxiv.org/abs/2606.06598 · [S15] IBM "trusted quantum advantage" — https://www.ibm.com/quantum/blog/quantum-advantage ; https://arxiv.org/abs/2607.25941 · [S16] Relay-BP FPGA decoder — https://arxiv.org/abs/2510.21600 · [S17] IBM Nighthawk/Loon (Nov 2025) — https://newsroom.ibm.com/2025-11-12-ibm-delivers-new-quantum-processors,-software,-and-algorithm-breakthroughs-on-path-to-advantage-and-fault-tolerance · [S18] IBM modular cryogenics (Aug 2026) — https://www.ibm.com/quantum/blog/modular-cryogenics · [S19] Fujitsu/RIKEN 256 q — https://info.archives.global.fujitsu/global/about/resources/news/press-releases/2025/0422-01.html ; 10,000-qubit plan — https://quantumcomputingreport.com/fujitsu-to-develop-10000-plus-qubit-superconducting-quantum-computer-for-2030/ · [S20] SEEQC mK SFQ control (Nature Electronics, Mar 2026) — https://quantumcomputingreport.com/seeqc-reports-integrated-qubit-control-logic-operating-at-millikelvin-temperatures/ · [S21] SEEQC–IBM SFQ under QBI — https://quantumcomputingreport.com/seeqc-and-ibm-collaborate-on-sfq-control-integration-under-darpas-quantum-benchmarking-initiative/ · [S22] Atlantic Quantum joins Google — https://thequantuminsider.com/2025/10/03/atlantic-quantum-joins-google-quantum-ai/ · [S23] IBM $10 B — https://www.ibm.com/quantum/blog/10-billion-investment-faq · [S24] IQM Nasdaq listing — https://iqm.tech/press-releases/iqm-quantum-computers-becomes-first-european-quantum-computing-company-listed-on-a-major-u-s-exchange/ · [S25] OQC Series C — https://oqc.tech/company/newsroom/series-c · [S26] Rigetti Q1 2026 — https://investors.rigetti.com/news-releases/news-release-details/rigetti-computing-reports-first-quarter-2026-financial-results · [S27] Willow early access — https://quantumcomputingreport.com/google-quantum-ai-is-now-accepting-proposals-for-early-access-to-their-willow-quantum-processor/ · [S28] DARPA QBI Stage B — https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection ; https://quantumcomputingreport.com/darpas-quantum-benchmarking-initiative-qbi-advances-with-eleven-teams-moving-to-stage-b/ · [S29] IBM Starling/Blue Jay — https://newsroom.ibm.com/2025-06-10-IBM-Sets-the-Course-to-Build-Worlds-First-Large-Scale,-Fault-Tolerant-Quantum-Computer-at-New-IBM-Quantum-Data-Center ; 2023 roadmap — https://quantumcomputingreport.com/ibm-extends-roadmap-up-to-4158-qubits-using-multiprocessing-and-advanced-software/ · [S30] Rigetti 108-q update — https://investors.rigetti.com/news-releases/news-release-details/rigetti-computing-provides-update-108-qubit-system · [S31] IQM roadmap — https://iqm.tech/technology/roadmap ; https://iqm.tech/press-releases/iqm-to-deliver-world-leading-300-qubit-quantum-computer-to-finland/
