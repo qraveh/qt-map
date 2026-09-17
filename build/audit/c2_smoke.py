@@ -102,8 +102,64 @@ def run(pw, w, h):
     return fails
 
 
+TZ = """()=>{
+  const fold=id=>{ let e=document.getElementById(id); while(e&&(e=e.nextElementSibling)){ if(e.matches('.tbl'))return e; const w=e.querySelector&&e.querySelector('.tbl'); if(w)return w; } return null; };
+  const st=w=>{ const t=w&&w.querySelector('table'); if(!t)return null; const m=/scale\\(([\\d.]+)\\)/.exec(t.style.transform||'');
+    return {bar:!!w.querySelector('.tblzoom:not([hidden])'),z:m?parseFloat(m[1]):1,zoomed:w.classList.contains('zoomed'),big:t.offsetWidth>w.clientWidth+8,hscroll:w.scrollWidth>w.clientWidth+1,fits:w.scrollWidth<=w.clientWidth+1}; };
+  const small=[...document.querySelectorAll('#app .prose.lang-en .tbl')].find(w=>!w.closest('details')&&w.clientWidth>0&&w.querySelector('table').scrollWidth<=w.clientWidth);
+  return {node:st(fold('en-s11-19')),edge:st(fold('en-s11-27')),small:small?{bar:!!small.querySelector('.tblzoom:not([hidden])'),zoomed:small.classList.contains('zoomed')}:null,
+    bars:document.querySelectorAll('.tbl .tblzoom:not([hidden])').length,
+    vpover:document.documentElement.scrollWidth>document.documentElement.clientWidth+1,
+    barover:[...document.querySelectorAll('.tblzoom:not([hidden])')].some(b=>b.getBoundingClientRect().right>document.documentElement.clientWidth+1||b.scrollWidth>b.clientWidth+1)};
+}"""
+
+
+def tables(pw, w, h):
+    """Zoom bar for the big tables (editor's review, item 3): §7.2 node table and §7.10 edge list get a bar and are scaled to
+    fit, a small table gets none, 1:1 restores scale 1, 60 + Enter gives 0.6, nothing overflows the viewport, 0 console errors."""
+    fails, errors = [], []
+    b = pw.chromium.launch()
+    ctx = b.new_context(viewport={'width': w, 'height': h})
+    p = ctx.new_page()
+    p.on('console', lambda m: m.type == 'error' and errors.append(m.text))
+    p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
+    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000)
+    p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0", timeout=60000)
+
+    def check(label, cond, detail=''):
+        print(f"  [{'ok' if cond else 'FAIL'}] {label}{(' — ' + str(detail)) if (detail and not cond) else ''}")
+        if not cond: fails.append(label)
+
+    print(f'tables — viewport {w}×{h}')
+    # open every EN fold (the big tables live in closed folds; the bar is measured when a fold opens)
+    p.evaluate("()=>document.querySelectorAll('#app .lang-en details.fold').forEach(d=>{d.open=true;})")
+    p.wait_for_function("()=>{let e=document.getElementById('en-s11-19'); while(e&&(e=e.nextElementSibling)){ if(e.matches('.tbl'))return !!e.querySelector('.tblzoom:not([hidden])'); } return false;}", timeout=20000)
+    p.wait_for_timeout(300)
+    r = p.evaluate(TZ)
+    check('§7.2 node table: bar present, scaled < 1, fits (no horizontal scroll)', r['node'] and r['node']['bar'] and r['node']['z'] < 1 and r['node']['zoomed'] and r['node']['fits'], r['node'])
+    # the edge list has 3 columns and fits its wrapper at 1280 and at 400 px (headers wrap on phones): bar iff big, scaled to fit when big
+    check('§7.10 edge list: bar iff wider than its wrapper; scaled to fit when big', r['edge'] and r['edge']['bar'] == r['edge']['big'] and (not r['edge']['big'] or (r['edge']['z'] < 1 and r['edge']['fits'])), r['edge'])
+    check('a small table gets no bar', r['small'] is not None and not r['small']['bar'] and not r['small']['zoomed'], r['small'])
+    print(f"  bars with every EN fold open: {r['bars']}")
+    node = p.locator('#en-s11-19 ~ div.tbl').first
+    node.locator('[data-tz="one"]').click()
+    p.wait_for_timeout(100)
+    r1 = p.evaluate(TZ)
+    check('1:1 restores scale 1 (sticky rules back on)', r1['node']['z'] == 1 and not r1['node']['zoomed'] and r1['node']['bar'], r1['node'])
+    lvl = node.locator('.zlvl')
+    lvl.click(); lvl.fill('60'); lvl.press('Enter')
+    p.wait_for_timeout(100)
+    r2 = p.evaluate(TZ)
+    check('typing 60 + Enter gives scale 0.6', abs(r2['node']['z'] - 0.6) < 1e-9 and r2['node']['zoomed'] and lvl.evaluate('e=>e.value') == '60%', (r2['node'], lvl.evaluate('e=>e.value')))
+    check('bars exist and nothing overflows the viewport', r2['bars'] >= 2 and not r2['vpover'] and not r2['barover'], (r2['bars'], r2['vpover'], r2['barover']))
+    errs = [e for e in errors if not ('fonts.g' in e and ('ERR_TUNNEL' in e or 'net::' in e)) and 'ERR_TUNNEL' not in e]
+    check('0 console errors', not errs, errs[:3])
+    ctx.close(); b.close()
+    return fails
+
+
 if __name__ == '__main__':
     with sync_playwright() as pw:
-        f = run(pw, 1600, 1000) + run(pw, 400, 800)
+        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800)
     print('RESULT:', 'PASS' if not f else f'FAIL {f}')
     sys.exit(1 if f else 0)

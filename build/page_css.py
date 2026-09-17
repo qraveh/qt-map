@@ -546,4 +546,15 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
 .mapbar.collapsed .chipsrow{flex:1 1 100%;flex-wrap:nowrap;align-items:center}
 .mapbar.collapsed .chipsrow #pathchips{flex:1 1 auto;justify-content:flex-end}
 .mapbar.collapsed .chipsrow::after{display:none}
+/* zoom bar for the big tables (editor's review of 17 Sep 2026, item 3): the bar sits inside the wrapper above the table and
+   stays in view while the wrapper scrolls sideways; the sizer's box follows the scaled table; the sticky header / first
+   column are switched off while the table is scaled (.zoomed) — sticky offsets are computed in unscaled units */
+.tblzoom{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:5px 8px;border-bottom:1px solid var(--rule);background:var(--surface2);position:sticky;left:0;z-index:4;box-sizing:border-box;max-width:100%}
+.tblzoom .zoomctl{flex-wrap:wrap;box-shadow:none;background:var(--surface);max-width:100%}
+.tblzoom .zoomctl .zt span{display:inline}
+.tblzoom .zoomctl .zt .tzi{font-size:13px;margin-right:2px}
+.tblzoom .tzl{font:500 10.5px/1 "JetBrains Mono",monospace;color:var(--muted);margin:0 6px 0 4px;letter-spacing:.04em;text-transform:uppercase}
+.tblsizer{overflow:clip}
+.tblsizer>table{transform-origin:0 0}
+.tbl.zoomed table th,.tbl.zoomed table td:first-child,.tbl.zoomed table th:first-child,.prose .tbl.zoomed table th,.prose .tbl.zoomed table td:first-child,.prose .tbl.zoomed table th:first-child{position:static}
 """

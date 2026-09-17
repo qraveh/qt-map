@@ -119,20 +119,20 @@ function hideTip(){ tip.style.display='none'; tip.classList.remove('wide'); }
 let tipPinned=false;
 function unpinTip(){ tipPinned=false; hideTip(); }
 document.addEventListener('pointerdown',function(ev){ const t=ev.target; if(t&&t.closest&&t.closest('g.edge'))return; unpinTip(); },true);
-const LENSES={
+const LENSES={   // editor's order of 17 Sep 2026: family → manufacturing → error structure → mobility → control (modality, placement) → time → readout (mechanism, destructive, mid-circuit) → entangling → affinity → reading marks → status
  family:{en:'Platform family (paths)',ru:'Семейство платформ (пути)'},
- marks:{en:'Reading marks: hub · off-diagonal · empty slot',ru:'Метки чтения: хаб · off-diagonal · пустой слот'},
- aff:{en:'(a) carrier affinity: natural ↔ fabricated',ru:'(a) сродство носителя: естественный ↔ изготовленный'},
- time:{en:'(b)/(c) characteristic time (gate or readout)',ru:'(b)/(c) характерное время (гейт или считывание)'},
- det:{en:'(b) entangling: deterministic / heralded',ru:'(b) перепутывание: детерминированное / heralded'},
- mech:{en:'(c) readout mechanism',ru:'(c) механизм считывания'},
- destr:{en:'(c) readout destructive?',ru:'(c) считывание разрушающее?'},
- mid:{en:'(c) mid-circuit readout?',ru:'(c) внутрисхемное считывание?'},
+ g:{en:'(g) manufacturing technology',ru:'(g) технология производства'},
+ f:{en:'(f) dominant error structure',ru:'(f) доминирующая структура ошибки'},
  d:{en:'(d) mobility / connectivity',ru:'(d) подвижность / связность'},
  mod:{en:'(e) control modality',ru:'(e) модальность управления'},
  place:{en:'(e) control placement (temperature stage)',ru:'(e) размещение управления (температурная ступень)'},
- f:{en:'(f) dominant error structure',ru:'(f) доминирующая структура ошибки'},
- g:{en:'(g) manufacturing technology',ru:'(g) технология производства'},
+ time:{en:'(b)/(c) characteristic time (gate or readout)',ru:'(b)/(c) характерное время (гейт или считывание)'},
+ mech:{en:'(c) readout mechanism',ru:'(c) механизм считывания'},
+ destr:{en:'(c) readout destructive?',ru:'(c) считывание разрушающее?'},
+ mid:{en:'(c) mid-circuit readout?',ru:'(c) внутрисхемное считывание?'},
+ det:{en:'(b) entangling: deterministic / heralded',ru:'(b) перепутывание: детерминированное / heralded'},
+ aff:{en:'(a) carrier affinity: natural ↔ fabricated',ru:'(a) сродство носителя: естественный ↔ изготовленный'},
+ marks:{en:'Reading marks: hub · off-diagonal · empty slot',ru:'Метки чтения: хаб · off-diagonal · пустой слот'},
  status:{en:'— status (evaluation space)',ru:'— статус (пространство оценки)'}};
 // categorical lens palette (deliberately not the family palette: while a lens is active, path lines turn neutral so colour means the lens value only)
 const LENSPAL=['#3B6FD4','#E0862B','#2FA66A','#C94C6B','#7C5CC4','#C7A22B','#2AA5B8','#8B6A45','#D07AB5','#6E7F91'];
@@ -535,4 +535,65 @@ try{ var __th=function(){ if(window.__mapTheme)window.__mapTheme(); };
   var __mq=matchMedia('(prefers-color-scheme: dark)');
   if(__mq.addEventListener)__mq.addEventListener('change',__th); else if(__mq.addListener)__mq.addListener(__th);
   new MutationObserver(__th).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']}); }catch(e){}
+
+// ---------- zoom bar for the big tables (editor's review of 17 Sep 2026, item 3): fit width · 1:1 · percentage
+// A table is big when its natural width exceeds its wrapper (div.tbl) by more than 8 px. It then gets a small .zoomctl row
+// above it (div.tblzoom) and is scaled with a transform; a sizer (div.tblsizer) keeps the layout box in step with the
+// scaled table, so no dead space and no clipped rows. Default: fit width; the choice is kept per table in memory only.
+// Measuring is driven by a ResizeObserver on every wrapper (load, window resize, fold opened, language switched, brief
+// opened — each changes the wrapper's width from/to 0 or to another value); the work itself runs in the next frame.
+(function(){
+  var ZMIN=0.2, ZMAX=2, SLACK=8;
+  var wraps=[].slice.call(document.querySelectorAll('div.tbl')); if(!wraps.length)return;
+  var ST=new WeakMap();
+  function clamp(z){ return Math.max(ZMIN,Math.min(ZMAX,z)); }
+  function tableOf(w){ var st=ST.get(w); return st?st.t:w.querySelector('table'); }
+  function show(st,force){ if(force||document.activeElement!==st.lvl) st.lvl.value=Math.round(st.z*100)+'%'; }
+  function mk(w,t){
+    var s=document.createElement('div'); s.className='tblsizer'; w.insertBefore(s,t); s.appendChild(t);
+    var bar=document.createElement('div'); bar.className='tblzoom';
+    bar.innerHTML='<div class="zoomctl" role="group" aria-label="table zoom"><span class="tzl"><span class="lang-en">table</span><span class="lang-ru">таблица</span></span>'
+      +'<button type="button" class="zb zt" data-tz="fit" title="fit width"><span class="tzi" aria-hidden="true">⟷</span><span class="lang-en">fit width</span><span class="lang-ru">по ширине</span></button>'
+      +'<button type="button" class="zb zt" data-tz="one" title="actual size">1:1</button>'
+      +'<input class="zlvl" type="text" inputmode="numeric" pattern="[0-9]*" value="100%" aria-label="table zoom percent — type a number (20–200) and press Enter" title="type a percentage (20–200) and press Enter"></div>';
+    w.insertBefore(bar,s);
+    var st={w:w,t:t,s:s,bar:bar,lvl:bar.querySelector('.zlvl'),natW:0,natH:0,z:1,mode:'fit'};
+    ST.set(w,st);
+    bar.querySelector('[data-tz="fit"]').addEventListener('click',function(){ st.mode='fit'; run([w]); });
+    bar.querySelector('[data-tz="one"]').addEventListener('click',function(){ st.mode='one'; run([w]); });
+    var lvl=st.lvl;
+    function commit(){ var v=parseInt(String(lvl.value).replace(/[^0-9]/g,''),10); if(!isNaN(v)&&v>0&&v!==Math.round(st.z*100)){ st.mode='pct'; st.z=clamp(v/100); run([w]); } show(st); }
+    lvl.addEventListener('focus',function(){ lvl.value=String(Math.round(st.z*100)); try{lvl.select();}catch(e){} });
+    lvl.addEventListener('keydown',function(ev){ if(ev.key==='Enter'){ ev.preventDefault(); commit(); lvl.blur(); } else if(ev.key==='Escape'){ ev.preventDefault(); show(st,true); lvl.blur(); } });
+    lvl.addEventListener('input',function(){ var c=String(lvl.value).replace(/[^0-9]/g,''); if(c!==lvl.value)lvl.value=c; });
+    lvl.addEventListener('blur',commit);
+    return st;
+  }
+  // one reflow for all reads: reset every table to its natural box, read, then apply
+  function run(list){
+    var jobs=[];
+    list.forEach(function(w){ var t=tableOf(w); if(!t)return; var st=ST.get(w);
+      t.style.transform=''; t.style.width=''; if(st){ st.s.style.width=''; st.s.style.height=''; } jobs.push([w,t,st]); });
+    var reads=jobs.map(function(j){ var w=j[0], t=j[1]; var cw=w.clientWidth; return {cw:cw,big:cw>0&&t.scrollWidth>cw+SLACK,natW:t.offsetWidth,natH:t.offsetHeight}; });
+    jobs.forEach(function(j,i){ var w=j[0], t=j[1], st=j[2], r=reads[i];
+      if(!r.big){ if(st){ st.bar.hidden=true; w.classList.remove('zoomed'); } return; }
+      if(!st) st=mk(w,t);
+      st.natW=r.natW; st.natH=r.natH;
+      var z=st.mode==='one'?1:(st.mode==='pct'?st.z:clamp(Math.min(1,(r.cw-2)/r.natW)));
+      st.z=z; t.style.width=r.natW+'px'; t.style.transform=z===1?'':'scale('+z+')';
+      st.s.style.width=Math.ceil(r.natW*z)+'px'; st.s.style.height=Math.ceil(r.natH*z)+'px';
+      w.classList.toggle('zoomed',z!==1); st.bar.hidden=false; show(st); });
+  }
+  var pending=[], raf=0;
+  function flush(){ raf=0; var l=pending; pending=[]; run(l); }
+  function schedule(w){ if(pending.indexOf(w)<0)pending.push(w); if(!raf)raf=requestAnimationFrame(flush); }
+  if(typeof ResizeObserver==='function'){
+    var seen=new WeakMap();
+    var ro=new ResizeObserver(function(entries){ entries.forEach(function(e){ var w=e.target, cw=Math.round(e.contentRect.width); if(seen.get(w)===cw)return; seen.set(w,cw); if(cw>0)schedule(w); }); });
+    wraps.forEach(function(w){ ro.observe(w); });
+  } else {
+    var tm=0; var all=function(){ clearTimeout(tm); tm=setTimeout(function(){ run(wraps.filter(function(w){ return w.clientWidth>0; })); },150); };
+    window.addEventListener('resize',all); document.addEventListener('toggle',all,true); all();
+  }
+})();
 """
