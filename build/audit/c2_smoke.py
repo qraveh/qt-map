@@ -12,6 +12,14 @@ MACH = json.load(open(ROOT / 'data' / 'machines.json', encoding='utf-8'))
 WILLOW = next(m for m in MACH['machines'] if m['id'] == 'google-willow')
 WILLOW_NODES = {c['node'] for cells in WILLOW['layers'].values() for c in cells if not c['node'].startswith('∅')}
 WILLOW_ALT = {c['node'] for cells in WILLOW['layers'].values() for c in cells if c['role'] == 'alternate' and not c['node'].startswith('∅')}
+# lens select (brief E, 17 Sep): the editor's order with plain labels, no coordinate letters, no reading-marks lens
+LENS_ORDER = ['family', 'g', 'f', 'd', 'mod', 'place', 'time', 'mech', 'destr', 'mid', 'det', 'aff', 'status']
+LENS_EN = ['Platform family', 'Manufacturing technology', 'Dominant error structure', 'Mobility / connectivity', 'Control: modality',
+           'Control: placement (temperature stage)', 'Characteristic time (gate or readout)', 'Readout: mechanism', 'Readout: destructive?',
+           'Readout: mid-circuit?', 'Entangling: deterministic / heralded', 'Carrier affinity: natural ↔ fabricated', 'Technology status']
+LENS_RU = ['Семейство платформ', 'Технология производства', 'Доминирующая структура ошибок', 'Подвижность / связность', 'Управление: модальность',
+           'Управление: размещение (температурная ступень)', 'Характерное время (гейт или считывание)', 'Считывание: механизм', 'Считывание: разрушающее?',
+           'Считывание: внутрисхемное?', 'Перепутывание: детерминированное / heralded', 'Сродство носителя: естественный ↔ изготовленный', 'Статус технологии']
 
 READ = """()=>({
   lit:[...document.querySelectorAll('#mapwrap g.station:not(.dim)')].map(g=>g.querySelector('text.id').textContent),
@@ -86,11 +94,26 @@ def run(pw, w, h):
     r = read()
     check('reset: 96 lit, 14 lines, no edges, select empty, no altuse, card closed', len(r['lit']) == 96 and len(r['lines']) == 14 and not r['edges'] and r['machine'] == '' and not r['altuse'] and r['card'] == '', (len(r['lit']), r['machine'], r['altuse']))
 
+    # brief E (17 Sep): lens labels, reading marks as badges, static glyph keys
+    opts = p.evaluate("()=>[...document.querySelectorAll('#lens option')].map(o=>[o.value,o.textContent])")
+    check('lens select: 13 options in the editor\'s order, plain EN labels', [o[0] for o in opts] == LENS_ORDER and [o[1] for o in opts] == LENS_EN, opts)
+    click_station('code_surface'); r = read()
+    check('code_surface card: hub badge with family count and names', 'reading marks' in r['card'].lower() and '◎ hub — required by stations of 2 families (' in r['card'], r['card'][:300])
+    click_station('ct_sfq'); r = read()
+    check('ct_sfq card: off-diagonal badge with the flag definition', '⤢ off-diagonal — fabricated carrier + control/decoding in the cold stage' in r['card'], r['card'][:300])
+    p.keyboard.press('Escape')
+    keys = p.evaluate("()=>[...document.querySelectorAll('#glyphlegend [data-glyph]')].map(e=>({k:e.dataset.glyph,n:e.querySelector('.cnt').textContent,title:e.title,role:e.getAttribute('role')}))")
+    check('glyph legend: 3 static keys with counts and definitions, no button role', [k['k'] for k in keys] == ['hub', 'offd', 'empty'] and [k['n'] for k in keys] == ['24', '19', '5'] and all(k['title'] and k['role'] is None for k in keys), keys)
+    p.locator('#glyphlegend [data-glyph="hub"]').dispatch_event('click'); r = read()
+    check('glyph key click: no lens change, nothing dimmed', p.locator('#lens').evaluate('e=>e.value') == 'family' and len(r['lit']) == 96, (p.locator('#lens').evaluate('e=>e.value'), len(r['lit'])))
+
     p.locator('[data-setlang="ru"]').filter(visible=True).first.click()
     p.wait_for_function("document.getElementById('app').getAttribute('data-lang')==='ru'")
     vis = p.evaluate("()=>[...document.querySelectorAll('.machgrp .lbl')].filter(e=>getComputedStyle(e).display!=='none').map(e=>e.textContent)")
     og = p.evaluate("()=>[...document.querySelectorAll('#machine optgroup')].map(o=>o.label)")
     check('RU: machine label and optgroups in Russian', vis == ['машина'] and og[0] == 'сверхпроводники', (vis, og[:2]))
+    opts = p.evaluate("()=>[...document.querySelectorAll('#lens option')].map(o=>o.textContent)")
+    check('RU: lens select labels', opts == LENS_RU, opts)
     p.select_option('#machine', 'google-willow')
     r = read()
     check('RU: machine card in Russian', 'карточка реестра' in r['card'] and 'источники: ✅ 14 / 16' in r['card'], r['card'][:100])
@@ -141,7 +164,7 @@ def tables(pw, w, h):
     check('§7.10 edge list: bar iff wider than its wrapper; scaled to fit when big', r['edge'] and r['edge']['bar'] == r['edge']['big'] and (not r['edge']['big'] or (r['edge']['z'] < 1 and r['edge']['fits'])), r['edge'])
     check('a small table gets no bar', r['small'] is not None and not r['small']['bar'] and not r['small']['zoomed'], r['small'])
     print(f"  bars with every EN fold open: {r['bars']}")
-    node = p.locator('#en-s11-19 ~ div.tbl').first
+    node = p.locator('#en-s11-19 ~ details.fold div.tbl, #en-s11-19 ~ div.tbl').first   # the §7.2 node table lives inside the fold (the same element TZ measures), not among the heading's siblings
     node.locator('[data-tz="one"]').click()
     p.wait_for_timeout(100)
     r1 = p.evaluate(TZ)
@@ -158,8 +181,122 @@ def tables(pw, w, h):
     return fails
 
 
+TS = """(sel)=>{ const w=typeof sel==='string'?document.querySelector(sel):sel; if(!w)return null; const t=w.querySelector('table');
+  const tx=e=>(e.textContent||'').replace(/\\s+/g,' ').trim();
+  const head=[...t.tHead.rows[0].cells];
+  return {cols:head.map(tx),sortable:head.map(h=>!!h.querySelector('.sortbtn')),aria:head.map(h=>h.getAttribute('aria-sort')),
+    rows:[...t.tBodies[0].rows].map(r=>[...r.cells].map(tx)),ncells:[...t.tBodies[0].rows].map(r=>r.cells.length),
+    reset:(()=>{const b=w.querySelector('.tsreset'); return b?{vis:b.offsetParent!==null,idle:b.classList.contains('idle'),inZoom:!!b.closest('.tblzoom')}:null;})(),
+    barover:[...w.querySelectorAll('.tblbar:not([hidden]),.tblzoom:not([hidden])')].some(b=>b.scrollWidth>b.clientWidth+1||b.getBoundingClientRect().right>document.documentElement.clientWidth+1),
+    vpover:document.documentElement.scrollWidth>document.documentElement.clientWidth+1}; }"""
+
+
+def sorting(pw, w, h):
+    """Sortable tables (editor's review, second batch, brief D): §3.1 Maturity index asc → desc, Platform restores; §7.4 a numeric
+    header twice → descending, ↺ restores; §7.11 the ion T2 row has as many cells as the header, date asc, ↺ restores; the brief
+    index sorts by centrality and restores in both languages; nothing overflows; 0 console errors."""
+    fails, errors = [], []
+    b = pw.chromium.launch()
+    ctx = b.new_context(viewport={'width': w, 'height': h})
+    p = ctx.new_page()
+    p.on('console', lambda m: m.type == 'error' and errors.append(m.text))
+    p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
+    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000)
+    p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0 && document.querySelectorAll('div.tbl[data-sort] .sortbtn').length>0", timeout=60000)
+
+    def check(label, cond, detail=''):
+        print(f"  [{'ok' if cond else 'FAIL'}] {label}{(' — ' + str(detail)) if (detail and not cond) else ''}")
+        if not cond: fails.append(label)
+
+    def num(s):
+        import re
+        m = re.search(r'[-−+]?\d[\d,]*(\.\d+)?([eE][-+]?\d+)?', s or '')
+        return float(m.group(0).replace(',', '').replace('−', '-')) if m else None
+
+    def click(loc):
+        try:
+            loc.scroll_into_view_if_needed(timeout=3000); loc.click(timeout=3000)
+        except Exception:
+            loc.dispatch_event('click')
+        p.wait_for_timeout(60)
+
+    def hdr(sel, name):   # the sort button whose header text is `name` (plus an optional ▲/▼ indicator)
+        import re
+        return p.locator(sel).first.locator('thead th .sortbtn').filter(has_text=re.compile('^' + re.escape(name) + r'\s*[▲▼]?$')).first
+
+    def state(sel): return p.evaluate(TS, sel)
+
+    print(f'sorting — viewport {w}×{h}')
+    p.evaluate("()=>document.querySelectorAll('#app .lang-en details.fold').forEach(d=>{d.open=true;})")
+    p.wait_for_timeout(300)
+    EN = '#app .prose.lang-en '
+    # §3.1 — Platform restores, the other columns sort; Maturity index twice → descending
+    s31 = EN + 'div.tbl[data-sort="platform-default"]'
+    o = state(s31)
+    check('§3.1: tagged, Platform + 7 numeric headers sortable, build order first', o and o['sortable'] == [True] * 8 and o['rows'][0][0] == 'Superconducting' and o['reset']['idle'], o and (o['sortable'], o['rows'][0][:1]))
+    click(hdr(s31, 'Maturity index')); a = state(s31)
+    va = [num(r[-1]) for r in a['rows']]; nn = [v for v in va if v is not None]
+    check('§3.1: one click → ascending by Maturity index, n/a last (aria-sort=ascending, ▲)', nn == sorted(nn) and va[:len(nn)] == nn and a['aria'][-1] == 'ascending' and '▲' in a['cols'][-1], (va, a['aria'][-1]))
+    click(hdr(s31, 'Maturity index')); d = state(s31)
+    vd = [num(r[-1]) for r in d['rows']]; nn = [v for v in vd if v is not None]
+    check('§3.1: second click → descending (24 first, n/a last)', nn == sorted(nn, reverse=True) and vd[:len(nn)] == nn and nn[0] == 24 and d['aria'][-1] == 'descending' and not d['reset']['idle'], vd)
+    click(hdr(s31, 'Platform')); r = state(s31)
+    check('§3.1: Platform → build order restored, indicators cleared', r['rows'] == o['rows'] and all(x in (None, 'none') for x in r['aria']) and '▲' not in ''.join(r['cols']) and '▼' not in ''.join(r['cols']) and r['reset']['idle'], [x[0] for x in r['rows']])
+    # §7.4 — numeric columns; a header twice → descending; ↺ → original
+    s74 = EN + 'div.tbl[data-sort="numeric"]'
+    o = state(s74)
+    nsort = sum(o['sortable'])
+    check('§7.4: numeric headers sortable (≥ 8 of 16), Path not sortable', nsort >= 8 and not o['sortable'][0], (nsort, o['sortable']))
+    col = 'T₂'
+    click(hdr(s74, col)); click(hdr(s74, col)); d = state(s74)
+    i = next(k for k, c in enumerate(d['cols']) if c.startswith(col))
+    vals = [num(r[i]) for r in d['rows']]; nn = [v for v in vals if v is not None]
+    check('§7.4: T₂ twice → descending, nulls last', nn == sorted(nn, reverse=True) and vals[:len(nn)] == nn and d['aria'][i] == 'descending', vals)
+    click(p.locator(s74).locator('.tsreset').first); r = state(s74)
+    check('§7.4: ↺ restores the build order', r['rows'] == o['rows'] and all(x in (None, 'none') for x in r['aria']), [x[0] for x in r['rows']][:3])
+    check('§7.4: ↺ sits in the zoom bar iff the table shows one', r['reset']['vis'] and (r['reset']['inZoom'] == bool(p.locator(s74).locator('.tblzoom:not([hidden])').count())), r['reset'])
+    # §7.5 / §7.6 / §7.12 B — tagged, each with ≥ 1 numeric column
+    for k, lab in ((1, '§7.5'), (2, '§7.6'), (3, '§7.12 B')):
+        t = p.evaluate(TS, p.locator(s74).nth(k).element_handle())
+        check(f'{lab}: ≥ 1 numeric column sortable, first column not', t and sum(t['sortable']) >= 1 and not t['sortable'][0], t and (t['cols'], t['sortable']))
+        if lab == '§7.12 B': check('§7.12 B: T1, T2, 1Q, feed-forward, SPAM columns sortable (sparse columns count non-null cells)', all(t['sortable'][3:8]), t['sortable'])
+    # §7.11 — the ion T2 record row is whole; date asc; ↺ restores
+    s711 = EN + 'div.tbl[data-sort="date"]'
+    o = state(s711)
+    ion = next((r for r in o['rows'] if '4,235' in ' '.join(r)), None)
+    check('§7.11: the ion T2 row has as many cells as the header (|0>,|1> no longer splits it)', ion is not None and len(ion) == len(o['cols']) and '|0>,|1>' in ion[2], ion and (len(ion), len(o['cols'])))
+    check('§7.11: only the Date column is sortable', o['sortable'] == [False, False, False, False, True, False], o['sortable'])
+    click(hdr(s711, 'Date')); a = state(s711)
+    check('§7.11: date asc → first row date ≤ last, all rows kept', a['rows'][0][4] <= a['rows'][-1][4] and len(a['rows']) == len(o['rows']) and a['aria'][4] == 'ascending', (a['rows'][0][4], a['rows'][-1][4]))
+    click(p.locator(s711).locator('.tsreset').first); r = state(s711)
+    check('§7.11: ↺ restores the build order', r['rows'] == o['rows'], [x[0] for x in r['rows']][:3])
+    # brief index — centrality asc/desc, ↺ restores, both languages
+    for lang in ('en', 'ru'):
+        if lang == 'ru':
+            p.locator('[data-setlang="ru"]').filter(visible=True).first.click()
+            p.wait_for_function("document.getElementById('app').getAttribute('data-lang')==='ru'")
+        sb = f'#app .lang-{lang} div.tbl.bidx[data-sort="centrality"]'
+        o = state(sb)
+        cname = 'centrality' if lang == 'en' else 'центральность'
+        check(f'brief index {lang}: 96 rows, only centrality sortable, grouped by layer at load', o and len(o['rows']) == 96 and o['sortable'] == [False, False, False, True, False] and o['rows'][0][0].startswith('1 '), o and (len(o['rows']), o['sortable']))
+        click(hdr(sb, cname)); a = state(sb)
+        va = [num(r[3]) for r in a['rows']]
+        check(f'brief index {lang}: centrality asc', va == sorted(va), va[:5])
+        click(hdr(sb, cname)); d = state(sb)
+        vd = [num(r[3]) for r in d['rows']]
+        check(f'brief index {lang}: centrality desc', vd == sorted(vd, reverse=True), vd[:5])
+        click(p.locator(sb).locator('.tsreset').first); r = state(sb)
+        check(f'brief index {lang}: ↺ restores the build order', r['rows'] == o['rows'], [x[1] for x in r['rows']][:4])
+    over = p.evaluate("()=>({vp:document.documentElement.scrollWidth>document.documentElement.clientWidth+1, bars:[...document.querySelectorAll('.tblbar:not([hidden]),.tblzoom:not([hidden])')].filter(b=>b.offsetParent!==null&&(b.scrollWidth>b.clientWidth+1||b.getBoundingClientRect().right>document.documentElement.clientWidth+1)).length})")
+    check('nothing overflows (viewport, bars)', not over['vp'] and over['bars'] == 0, over)
+    errs = [e for e in errors if not ('fonts.g' in e and ('ERR_TUNNEL' in e or 'net::' in e)) and 'ERR_TUNNEL' not in e]
+    check('0 console errors', not errs, errs[:3])
+    ctx.close(); b.close()
+    return fails
+
+
 if __name__ == '__main__':
     with sync_playwright() as pw:
-        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800)
+        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800) + sorting(pw, 1280, 900) + sorting(pw, 400, 800)
     print('RESULT:', 'PASS' if not f else f'FAIL {f}')
     sys.exit(1 if f else 0)

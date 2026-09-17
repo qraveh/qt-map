@@ -1,0 +1,3 @@
+{"agree": true, "dec_cryo": {"unfiltered_has_dec_cryo": false, "union_has_dec_cryo": false}, "key": "meta-1-0", "state": {"focus": "g_bos", "isolate": null, "lens": "time", "machine": "hanyuan-2", "toggles": "rc", "values": [-7, -8]}, "violations": []}
+{"agree": true, "dec_cryo": {"unfiltered_has_dec_cryo": false, "union_has_dec_cryo": false}, "key": "meta-1-1", "state": {"focus": "code_aft", "isolate": null, "lens": "g", "toggles": "a", "values": ["mems"]}, "violations": []}
+{"agree": true, "dec_cryo": {"unfiltered_has_dec_cryo": false, "union_has_dec_cryo": false}, "key": "meta-1-2", "state": {"focus": "cx_switch", "isolate": null, "lens": "det", "toggles": "rac", "values": ["na"]}, "violations": []}

@@ -23,8 +23,6 @@ STEP_TIMEOUT_MS = 8000
 
 # ---------------------------------------------------------------- value mapping (oracle value <-> page data-lv)
 def page_key(lens, v):
-    if lens == 'marks':
-        return {'offdiag': 'offd'}.get(v, v)
     if lens == 'aff':
         return '%g' % float(v)
     if lens == 'time':
@@ -207,7 +205,8 @@ def states_pairs(model, a):
     allf = [(l, v, f) for (l, v) in lv for f in model.station_ids]
     out += [st(l, [v], focus=f) for (l, v, f) in rng.sample(allf, min(a.n or 300, len(allf)))]
     combos = [tuple(t for t, on in zip(TOG, bits) if on) for bits in itertools.product([0, 1], repeat=3)]
-    out += [st('marks', [v], c, isolate=p) for c in combos for p in model.path_ids for v in oracle.lens_values(model, 'marks')]
+    # 17 Sep: the reading-marks lens is gone (RULES.md adjudication 10); the toggle-combination x isolate states use the status lens instead
+    out += [st('status', [v], c, isolate=p) for c in combos for p in model.path_ids for v in oracle.lens_values(model, 'status')]
     seen, uniq = set(), []
     for s in out:
         k = skey(s)
@@ -433,21 +432,16 @@ def run_random(model, a):
                     bad_e = [e for e in r['edges'] if e[0] not in r['stations'] or e[1] not in r['stations']]
                     if bad_e:
                         viol.append({'step': j, 'check': 'edge-touches-unlit', 'edges': sorted(map(list, bad_e))[:10]})
-                    # ADJ-6: only the reading-marks keys are live counts; every other lens legend (family totals included)
-                    # shows static totals by design -> checked against the static total, not against the lit set
+                    # ADJ-6: every lens legend (family totals included) shows static totals by design -> checked against the
+                    # static total, not against the lit set. ADJ-10 (17 Sep): the reading-marks lens is gone; its glyph keys are
+                    # static keys with totals and no longer a lens legend, so the former marks check has nothing to inspect.
                     attr = model.lens_attr.get(ps['lens'], {})
                     for x in r['legend']['lens']:
                         if x['count'] is None or x['key'] == '' or x['key'] not in inv.get(ps['lens'], {}):
                             continue
                         v = inv[ps['lens']][x['key']]
-                        lit_n = sum(1 for sid in r['stations'] if v in attr.get(sid, ()))
                         tot = sum(1 for sid in model.station_ids if v in attr[sid])
-                        if ps['lens'] == 'marks' and x['count'] != lit_n:
-                            # ADJ-9 (17 Sep): marks counts are totals over the graph, not of the lit set -> informational
-                            info.append({'step': j, 'check': 'legend-count-marks-not-live', 'lens': ps['lens'], 'value': x['key'],
-                                         'count': x['count'], 'lit': lit_n, 'total': tot, 'is_total': x['count'] == tot})
-                            break
-                        if ps['lens'] != 'marks' and x['count'] != tot:
+                        if x['count'] != tot:
                             viol.append({'step': j, 'check': 'legend-static-total-mismatch', 'lens': ps['lens'], 'value': x['key'],
                                          'count': x['count'], 'total': tot})
                             break

@@ -30,6 +30,9 @@ NODE={n['id']:n for n in G['nodes']}
 LAY={l['n']:l for l in G['layers']}
 V=G['vocab']
 def t(lang,pair): return pair[0] if lang=='en' else pair[1]
+def mdcell(x):
+    """Free text inside a markdown table cell: a bare `|` (e.g. `|0>,|1>`) would split the row, so escape it as `\\|`."""
+    return str(x).replace('|','\\|') if x is not None else x
 def aff(lang,x): return t(lang,V['AFF']['%g'%x])
 def logt(x):
     if x is None: return '—'
@@ -134,6 +137,27 @@ def sec9(lang):
     o.append("\n")
     # 9.6 off-diagonal
     H("### 9.6 " + ("Off-diagonal nodes — where the natural/fabricated correlation breaks" if en else "Off-diagonal узлы — где ломается корреляция естественный/изготовленный"))
+    # the diagonal on paper (brief E): rows = carrier class of the path (from the paths' `cls`), columns = trait side; the
+    # flagged stations fill the off-diagonal cells by the side their flag names (NAT_* in the natural row, FAB_* in the fabricated row)
+    # a family is fabricated when any of its paths is of class `fab` (spins: quantum dots are `fab`, donors `int`); otherwise natural (`nat`, `pho`, `int`)
+    famcls={}
+    for p in G['paths']:
+        cl=p['cls'] if isinstance(p['cls'],str) else (p['cls'][0] if p['cls'] else 'fab')
+        famcls[p['family']]=famcls.get(p['family'],False) or cl=='fab'
+    order=[f for f in FAMS if f in famcls]
+    natfams=[f for f in order if not famcls[f]]; fabfams=[f for f in order if famcls[f]]
+    FLAGS_NAT=['NAT_MW','NAT_FAST_GATE','NAT_FAST_READ','NAT_FAB']; FLAGS_FAB=['FAB_FAR','FAB_ERASURE','FAB_COLD','FAB_PHOTONIC']
+    def cell(flags):
+        xs=[(n,[f for f in n['offdiag'] if f in flags]) for n in G['nodes']]; xs=[(n,fs) for n,fs in xs if fs]
+        return '; '.join(f"{name(L,n)} `{n['id']}` ({', '.join(f'`{f}`' for f in fs)})" for n,fs in xs) or '—'
+    nnat=sum(1 for n in G['nodes'] if any(f in FLAGS_NAT for f in n['offdiag'])); nfab=sum(1 for n in G['nodes'] if any(f in FLAGS_FAB for f in n['offdiag']))
+    ndiag=len(G['nodes'])-sum(1 for n in G['nodes'] if n['offdiag'])
+    o.append((f"**The diagonal on paper.** Rows are the carrier class of the path a station serves, columns the side its traits come from. Natural-side traits: optical control, µs–ms gates and readout, no semiconductor/photonic-chip fabrication, local connectivity. Fabricated-side traits: microwave control, sub-µs gates, ≤ 10 µs readout, cold electronics at 4 K/mK, transport/long-range connectivity, erasure conversion, photonic interconnect. The diagonal cells hold the stereotype — {ndiag} of {len(G['nodes'])} stations; the off-diagonal cells hold the {nnat + nfab} flagged stations ({nnat} natural-row, {nfab} fabricated-row; one station can carry a flag on each side) with their flags from the `OFFDIAG` vocabulary.\n" if en else
+              f"**Диагональ на бумаге.** Строки — класс носителя пути, которому служит станция, столбцы — сторона, с которой взяты её свойства. Свойства естественной стороны: оптическое управление, гейты и считывание мкс–мс, без полупроводникового/фотонно-чипового производства, локальная связность. Свойства изготовленной стороны: СВЧ-управление, суб-мкс гейты, считывание ≤ 10 мкс, холодная электроника при 4 K/mK, транспортная/дальняя связность, конверсия в erasure, фотонный интерконнект. Диагональные ячейки — стереотип, {ndiag} из {len(G['nodes'])} станций; внедиагональные — {nnat + nfab} помеченных станций ({nnat} в естественной строке, {nfab} в изготовленной; одна станция может нести флаг с каждой стороны) с их флагами из словаря `OFFDIAG`.\n"))
+    H(("| Carrier class of the path | Natural-side traits | Fabricated-side traits |" if en else "| Класс носителя пути | Свойства естественной стороны | Свойства изготовленной стороны |")+"\n|---|---|---|")
+    H(f"| **{'natural' if en else 'естественный'}** ({fams(L,natfams)}) | {'the stereotype — most stations' if en else 'стереотип — большинство станций'} | {cell(FLAGS_NAT)} |")
+    H(f"| **{'fabricated' if en else 'изготовленный'}** ({fams(L,fabfams)}) | {cell(FLAGS_FAB)} | {'the stereotype — most stations' if en else 'стереотип — большинство станций'} |")
+    o.append("\n")
     H(("| Node | Layer | Pattern | In paths | Why it matters |" if en else "| Узел | Слой | Паттерн | В путях | Почему важно |")+"\n|---|---|---|---|---|")
     WHY={'enc_dualrail':("erasure — a natural-world error class — engineered into a fabricated carrier; threshold ×4","erasure — класс ошибок естественного мира — инженерно внесён в изготовленный носитель; порог ×4"),
          'g_ryd':("a natural carrier with a 270 ns gate: the reason atoms compete at all","естественный носитель с гейтом 270 нс: причина, по которой атомы вообще конкурируют"),
@@ -197,12 +221,12 @@ def sec9(lang):
             H(("| From | To | Mechanism | Measured price | Mitigation | Status · source |" if en else "| От | К | Механизм | Измеренная цена | Снятие | Статус · источник |")+"\n|---|---|---|---|---|---|")
             for e in G['edges']:
                 if e['type']==et:
-                    o.append(f"| `{e['src']}` {name(L,NODE[e['src']])} | `{e['dst']}` {name(L,NODE[e['dst']])} | {e[L]} | {e['price'][L]} | {e['mitig'][L]} | {t(L,V['CONSTAT'][e['status']])} · [{e['date']}]({e['url']}) |\n")
+                    o.append(f"| `{e['src']}` {name(L,NODE[e['src']])} | `{e['dst']}` {name(L,NODE[e['dst']])} | {mdcell(e[L])} | {mdcell(e['price'][L])} | {mdcell(e['mitig'][L])} | {t(L,V['CONSTAT'][e['status']])} · [{e['date']}]({e['url']}) |\n")
         else:
             H(("| From | To | Note |" if en else "| От | К | Примечание |")+"\n|---|---|---|")
             for e in G['edges']:
                 if e['type']==et:
-                    o.append(f"| `{e['src']}` {name(L,NODE[e['src']])} | `{e['dst']}` {name(L,NODE[e['dst']])} | {e[L]}{' *(one-of)*' if e.get('any') else ''} |\n")
+                    o.append(f"| `{e['src']}` {name(L,NODE[e['src']])} | `{e['dst']}` {name(L,NODE[e['dst']])} | {mdcell(e[L])}{' *(one-of)*' if e.get('any') else ''} |\n")
         o.append("\n")
     H("**"+("transfers (node → additional platform paths)" if en else "переносится (узел → дополнительные платформенные пути)")+"**\n")
     H(("| Node | Paths |" if en else "| Узел | Пути |")+"\n|---|---|")
@@ -213,7 +237,7 @@ def sec9(lang):
     H(("| Node | Output | Metric | Value | Date | Source |" if en else "| Узел | Выход | Метрика | Значение | Дата | Источник |")+"\n|---|---|---|---|---|---|")
     for e in G['edges']:
         if e['type']=='defines':
-            o.append(f"| `{e['src']}` | {t(L,V['OUT'][e['dst']])} | {e['metric']} | {e['value']} | {e['date']} | {e['url']} |\n")
+            o.append(f"| `{e['src']}` | {t(L,V['OUT'][e['dst']])} | {mdcell(e['metric'])} | {mdcell(e['value'])} | {e['date']} | {e['url']} |\n")
     o.append("\n")
     # 9.11 standard records
     H("### 9.11 " + ("Standard records — the dated numbers behind the derived clocks (nulls are honest: not published)" if en else "Стандартные рекорды — датированные числа за выведенными тактами (пустые — честно: не опубликовано)"))
@@ -228,7 +252,7 @@ def sec9(lang):
         return "%.3g"%r['num']
     for n in G['nodes']:
         for r in n.get('records',[]):
-            o.append(f"| `{n['id']}` | {t(L,RK[r['key']])} | {sv(r)} — {r['text']} | {r['scope']} | {r['date']} | {r['url']} · [{r['tag']}] |\n")
+            o.append(f"| `{n['id']}` | {t(L,RK[r['key']])} | {mdcell(sv(r))} — {mdcell(r['text'])} | {mdcell(r['scope'])} | {r['date']} | {r['url']} · [{r['tag']}] |\n")
     o.append("\n")
     # 9.12 machines as measured paths (register join: data/machines.json)
     M=json.load(open(os.path.join(ROOT,'data','machines.json'),encoding='utf-8'))

@@ -91,8 +91,9 @@ def convert(md,lang):
         if not m: return h
         start=m.end(); t=h.find('<div class="tbl">',start); e=h.find('</div>',t)+6
         return h[:t]+f'<details class="fold big-table"><summary>{label}</summary>'+h[t:e]+'</details>'+h[e:]
-    h=fold(h,r'<h3 id="[a-z]+-s\d+-2">[^<]*</h3>','Show table · Показать таблицу' if lang=='en' else 'Показать таблицу · Show table')
-    h=fold(h,r'<h3 id="[a-z]+-s\d+-11">[^<]*</h3>','Show records · Показать рекорды' if lang=='en' else 'Показать рекорды · Show records')
+    # target the headings by their printed number: the h3 ids carry a running counter, so id-based matching folded §1.2 and §3.1 instead of §7.2 and §7.11 (found 17 Sep 2026)
+    h=fold(h,r'<h3 id="[^"]+">7\.2 [^<]*</h3>','Show table · Показать таблицу' if lang=='en' else 'Показать таблицу · Show table')
+    h=fold(h,r'<h3 id="[^"]+">7\.11 [^<]*</h3>','Show records · Показать рекорды' if lang=='en' else 'Показать рекорды · Show records')
     for lbl in (['<strong>requires / provides</strong>','<strong>alternatives (within layer)</strong>','<strong>conflicts</strong>','<strong>transfers (node → additional platform paths)</strong>','<strong>defines (node → output; every row carries a source, a date and a number)</strong>'] if lang=='en' else
                 ['<strong>требует / обеспечивает</strong>','<strong>альтернативы (внутри слоя)</strong>','<strong>конфликтует</strong>','<strong>переносится (узел → дополнительные платформенные пути)</strong>','<strong>определяет (узел → выход; каждая строка несёт источник, дату и число)</strong>']):
         h=fold(h,re.escape(lbl),re.sub('<[^>]+>','',lbl))
@@ -137,6 +138,22 @@ def radars_block(lang):
 def insert_after_h3_table(h,h3_num,block):
     m=re.search(r'<h3 id="[^"]+">'+re.escape(h3_num)+r' ',h); t=h.find('</div>',h.find('<div class="tbl">',m.end()))+6
     return h[:t]+block+h[t:]
+# sortable tables (editor's review of 17 Sep 2026, second batch, brief D): tag the nth div.tbl after the h3 numbered h3_num;
+# the JS block `tblsort` in map_js.py reads data-sort (platform-default · numeric · date · centrality) and data-default="build"
+SORT_TABLES=[('3.1','platform-default',1),('7.4','numeric',1),('7.5','numeric',1),('7.6','numeric',2),('7.11','date',1),('7.12','numeric',2)]
+def tag_sortable(h,h3_num,kind,nth=1):
+    m=re.search(r'<h3 id="[^"]+">'+re.escape(h3_num)+r' ',h)
+    if not m: return h
+    t=m.end()
+    for _ in range(nth):
+        t=h.find('<div class="tbl">',t)
+        if t<0: return h
+        t+=1
+    t-=1
+    return h[:t]+f'<div class="tbl" data-sort="{kind}" data-default="build">'+h[t+len('<div class="tbl">'):]
+def tag_sortables(h):
+    for num,kind,nth in SORT_TABLES: h=tag_sortable(h,num,kind,nth)
+    return h
 
 # ---------- map section block
 def map_block(lang,gsec='8'):
@@ -158,9 +175,9 @@ MAPUI='''<div class="mapbar" id="mapbar">
  <div class="zoomwin"><div class="zoomctl" role="group" aria-label="map zoom"><span class="zhint lang-en">zoom</span><span class="zhint lang-ru">масштаб</span><button type="button" class="zb" id="zoom-out" aria-label="zoom out" title="zoom out (−)"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><input class="zlvl" id="zoomlvl" type="text" inputmode="numeric" pattern="[0-9]*" value="100%" aria-label="zoom percent — type a number and press Enter" title="type a percentage and press Enter; ↑/↓ = ±5"><button type="button" class="zb" id="zoom-in" aria-label="zoom in" title="zoom in (+)"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 8h10M8 3v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><i class="zsep"></i><button type="button" class="zb zt" id="zoom-fit" title="fit width"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M2 8h12M2 8l3-3M2 8l3 3M14 8l-3-3M14 8l-3 3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lang-en">fit</span><span class="lang-ru">вписать</span></button><button type="button" class="zb zt" id="zoom-fith" title="fit height"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M8 2v12M8 2L5 5M8 2l3 3M8 14l-3-3M8 14l3-3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lang-en">fit</span><span class="lang-ru">вписать</span></button><i class="zsep"></i><button type="button" class="zb zt" id="zoom-top" title="align the map to the top of the window (maximum height)"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 3h10M8 6v8M8 6L5 9M8 6l3 3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lang-en">top</span><span class="lang-ru">вверх</span></button><button type="button" class="zb zt" id="zoom-100" title="actual size">1:1</button></div></div>
  <details class="glyphs" id="glyphlegend" open><summary><span class="lbl lang-en">legend</span><span class="lbl lang-ru">легенда</span></summary>
   <div class="glyphlist">
-  <span class="gl mark" data-mark="hub" role="button" tabindex="0" title="keep only these stations (switches the lens to reading marks; Ctrl-click adds)"><i class="lg hub">◎</i><span class="lang-en">hub</span><span class="lang-ru">хаб</span></span>
-  <span class="gl mark" data-mark="offd" role="button" tabindex="0" title="keep only these stations (switches the lens to reading marks; Ctrl-click adds)"><i class="lg off">⤢</i><span class="lang-en">off-diagonal</span><span class="lang-ru">внедиагональный</span></span>
-  <span class="gl mark" data-mark="empty" role="button" tabindex="0" title="keep only these stations (switches the lens to reading marks; Ctrl-click adds)"><i class="lg emp">∅</i><span class="lang-en">empty slot</span><span class="lang-ru">пустой слот</span></span>
+  <span class="gl mark" data-glyph="hub" title="a station that stations of at least two families (or one family, recently) require — where a fix or a stall propagates across platforms"><i class="lg hub">◎</i><span class="lang-en">hub</span><span class="lang-ru">хаб</span> <span class="cnt"></span></span>
+  <span class="gl mark" data-glyph="offd" title="a station that takes a trait from the other side of the natural/fabricated divide (see §7.6)"><i class="lg off">⤢</i><span class="lang-en">off-diagonal</span><span class="lang-ru">внедиагональный</span> <span class="cnt"></span></span>
+  <span class="gl mark" data-glyph="empty" title="a station with no demonstrated technology yet"><i class="lg emp">∅</i><span class="lang-en">empty slot</span><span class="lang-ru">пустой слот</span> <span class="cnt"></span></span>
   <span class="gl"><i class="lg ed req"></i><span class="lang-en">requires</span><span class="lang-ru">требует</span></span>
   <span class="gl"><i class="lg ed rep"></i><span class="lang-en">alternatives</span><span class="lang-ru">альтернативы</span></span>
   <span class="gl"><i class="lg ed con"></i><span class="lang-en">conflicts — hover for the reason</span><span class="lang-ru">конфликтует — причина по наведению</span></span>
@@ -347,6 +364,7 @@ def build(cfg=PUBLIC):
     briefs_block=BR.briefs_section_html(B,brief_md2html,colours)
     en_html,en_toc=convert(EN,'en'); ru_html,ru_toc=convert(RU,'ru')
     en_html=insert_after_h3_table(en_html,'3.1',radars_block('en')); ru_html=insert_after_h3_table(ru_html,'3.1',radars_block('ru'))
+    en_html=tag_sortables(en_html); ru_html=tag_sortables(ru_html)
     en_html=BR.link_node_ids(en_html,ids); ru_html=BR.link_node_ids(ru_html,ids)
     en_html=BR.autolink(en_html); ru_html=BR.autolink(ru_html)
     mapsec_en=map_block('en',cfg['graph_sec']); mapsec_ru=map_block('ru',cfg['graph_sec'])

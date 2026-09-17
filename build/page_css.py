@@ -259,7 +259,7 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .glyphlist{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
 .gl{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
 .gl.long{white-space:normal;max-width:100%} .gl.long .lg{flex:0 0 auto}
-.gl.mark{cursor:pointer;border-bottom:1px dotted var(--muted)} .gl.mark:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.gl.mark{cursor:help} .gl.mark .cnt{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted)}   /* static keys with counts (brief E): the definition is the title */
 .lg{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;font-style:normal;font-size:12px;color:var(--ink)}
 .lg.hub{color:var(--accent)}
 .lg.off{color:var(--crit)}
@@ -285,6 +285,7 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .insp .flag.off{border-color:var(--nat);color:var(--ink)}
 .insp .flag.hub{border-color:var(--fab)}
 .insp .flag.empty{border-style:dashed}
+.insp .marks{margin:4px 0 2px} .insp .marks>div{margin:2px 0;font-size:12.5px} .insp .marks .tk{display:block;margin-bottom:2px}
 .insp .empty{color:var(--muted)}
 .legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:12.5px;color:var(--ink2);padding:10px 12px;border:1px solid var(--rule);border-top:0;background:var(--surface);border-radius:0 0 10px 10px;margin-top:-1px}
 .legend .k{display:inline-flex;align-items:center;gap:6px}
@@ -557,4 +558,19 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
 .tblsizer{overflow:clip}
 .tblsizer>table{transform-origin:0 0}
 .tbl.zoomed table th,.tbl.zoomed table td:first-child,.tbl.zoomed table th:first-child,.prose .tbl.zoomed table th,.prose .tbl.zoomed table td:first-child,.prose .tbl.zoomed table th:first-child{position:static}
+/* sortable tables (editor's review of 17 Sep 2026, second batch, brief D): the header button looks like the header text; the
+   indicator is muted; the ↺ button sits in the zoom bar when there is one, else in a minimal bar styled like it */
+.sortbtn{appearance:none;background:none;border:0;padding:0;margin:0;font:inherit;color:inherit;text-align:inherit;letter-spacing:inherit;text-transform:inherit;white-space:inherit;cursor:pointer;border-radius:3px}
+.sortbtn:hover{color:var(--accent)}
+.sortbtn:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.sortbtn .sortind{color:var(--muted);font-size:.8em;font-weight:500}
+th[aria-sort="ascending"] .sortbtn,th[aria-sort="descending"] .sortbtn{color:var(--accent)}
+.tblbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:5px 8px;border-bottom:1px solid var(--rule);background:var(--surface2);position:sticky;left:0;z-index:4;box-sizing:border-box;max-width:100%}
+.tsreset{display:inline-flex;align-items:center;gap:4px;height:26px;padding:0 8px;border:1px solid var(--rule);border-radius:6px;background:var(--surface);color:var(--ink);font:500 11.5px/1 "JetBrains Mono",monospace;letter-spacing:.02em;cursor:pointer;white-space:nowrap;max-width:100%}
+.tsreset .tsi{font-size:13px}
+.tsreset:hover{background:var(--surface2)}
+.tsreset:active{transform:translateY(1px)}
+.tsreset:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.tsreset.idle{color:var(--muted)}
+.tblzoom .tsreset{margin-left:2px}
 """

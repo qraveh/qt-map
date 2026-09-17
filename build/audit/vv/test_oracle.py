@@ -62,7 +62,7 @@ class OracleTests(unittest.TestCase):
     def test_all_single_states_and_lens_values(self):
         states = list(oracle.all_single_states(self.m))
         nvals = sum(len(oracle.lens_values(self.m, l)) for l in oracle.LENSES)
-        self.assertEqual(len(states), nvals + 3 + 14 + 96)
+        self.assertEqual(len(states), nvals + 3 + 14 + 96 + len(self.m.machines))   # + every machine alone (C2, 17 Sep 2026)
         for s in states:
             oracle.expected(self.m, s)
 

@@ -9,8 +9,8 @@ import random
 
 TOGGLE_TYPES = {"requires": "requires", "alternatives": "replaces", "conflicts": "conflicts"}
 TOGGLES = ("requires", "alternatives", "conflicts")
-LENSES = ("family", "marks", "aff", "time", "det", "mech", "destr", "mid",
-          "d", "mod", "place", "f", "g", "status")
+LENSES = ("family", "aff", "time", "det", "mech", "destr", "mid",
+          "d", "mod", "place", "f", "g", "status")   # 17 Sep: the reading-marks lens was removed (RULES.md adjudication 10)
 NONE = "none"
 
 
@@ -90,15 +90,6 @@ def _lens_values_of(model, lens, n):
     e = n.get("e") or {}
     if lens == "family":
         return set(n.get("families") or [])
-    if lens == "marks":
-        out = set()
-        if n.get("hub"):
-            out.add("hub")
-        if n.get("offdiag"):
-            out.add("offdiag")
-        if n["id"] in model.empty_status:
-            out.add("empty")
-        return out
     if lens == "aff":
         return {float(n["aff"])}
     if lens == "time":

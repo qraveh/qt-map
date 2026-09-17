@@ -119,21 +119,28 @@ function hideTip(){ tip.style.display='none'; tip.classList.remove('wide'); }
 let tipPinned=false;
 function unpinTip(){ tipPinned=false; hideTip(); }
 document.addEventListener('pointerdown',function(ev){ const t=ev.target; if(t&&t.closest&&t.closest('g.edge'))return; unpinTip(); },true);
-const LENSES={   // editor's order of 17 Sep 2026: family → manufacturing → error structure → mobility → control (modality, placement) → time → readout (mechanism, destructive, mid-circuit) → entangling → affinity → reading marks → status
- family:{en:'Platform family (paths)',ru:'Семейство платформ (пути)'},
- g:{en:'(g) manufacturing technology',ru:'(g) технология производства'},
- f:{en:'(f) dominant error structure',ru:'(f) доминирующая структура ошибки'},
- d:{en:'(d) mobility / connectivity',ru:'(d) подвижность / связность'},
- mod:{en:'(e) control modality',ru:'(e) модальность управления'},
- place:{en:'(e) control placement (temperature stage)',ru:'(e) размещение управления (температурная ступень)'},
- time:{en:'(b)/(c) characteristic time (gate or readout)',ru:'(b)/(c) характерное время (гейт или считывание)'},
- mech:{en:'(c) readout mechanism',ru:'(c) механизм считывания'},
- destr:{en:'(c) readout destructive?',ru:'(c) считывание разрушающее?'},
- mid:{en:'(c) mid-circuit readout?',ru:'(c) внутрисхемное считывание?'},
- det:{en:'(b) entangling: deterministic / heralded',ru:'(b) перепутывание: детерминированное / heralded'},
- aff:{en:'(a) carrier affinity: natural ↔ fabricated',ru:'(a) сродство носителя: естественный ↔ изготовленный'},
- marks:{en:'Reading marks: hub · off-diagonal · empty slot',ru:'Метки чтения: хаб · off-diagonal · пустой слот'},
- status:{en:'— status (evaluation space)',ru:'— статус (пространство оценки)'}};
+const LENSES={   // editor's order of 17 Sep 2026: family → manufacturing → error structure → mobility → control (modality, placement) → time → readout (mechanism, destructive, mid-circuit) → entangling → affinity → status
+ // plain names, no coordinate letters (brief E): the letter stays on the station card's coordinate rows and, muted, in the lens legend's title
+ family:{en:'Platform family',ru:'Семейство платформ'},
+ g:{en:'Manufacturing technology',ru:'Технология производства'},
+ f:{en:'Dominant error structure',ru:'Доминирующая структура ошибок'},
+ d:{en:'Mobility / connectivity',ru:'Подвижность / связность'},
+ mod:{en:'Control: modality',ru:'Управление: модальность'},
+ place:{en:'Control: placement (temperature stage)',ru:'Управление: размещение (температурная ступень)'},
+ time:{en:'Characteristic time (gate or readout)',ru:'Характерное время (гейт или считывание)'},
+ mech:{en:'Readout: mechanism',ru:'Считывание: механизм'},
+ destr:{en:'Readout: destructive?',ru:'Считывание: разрушающее?'},
+ mid:{en:'Readout: mid-circuit?',ru:'Считывание: внутрисхемное?'},
+ det:{en:'Entangling: deterministic / heralded',ru:'Перепутывание: детерминированное / heralded'},
+ aff:{en:'Carrier affinity: natural ↔ fabricated',ru:'Сродство носителя: естественный ↔ изготовленный'},
+ status:{en:'Technology status',ru:'Статус технологии'}};
+const LENSCOORD={g:'(g)',f:'(f)',d:'(d)',mod:'(e)',place:'(e)',time:'(b)/(c)',mech:'(c)',destr:'(c)',mid:'(c)',det:'(b)',aff:'(a)'};   // the report's coordinate letter, shown once as a muted suffix of the lens legend's title
+// reading marks (brief E, editor's decision): no lens — glyphs on the stations, static legend keys with counts, badges on the station card
+const HUBDEF=['a station that stations of at least two families (or one family, recently) require — where a fix or a stall propagates across platforms','станция, которую требуют станции как минимум двух семейств (или одного — недавно): где исправление или застой распространяются на другие платформы'];
+const OFFDEF=['a station that takes a trait from the other side of the natural/fabricated divide (see §7.6)','станция, берущая свойство с другой стороны раздела естественное/изготовленное (см. §7.6)'];
+const EMPTYDEF=['a station with no demonstrated technology yet','станция, для которой технологии ещё нет'];
+const isHub=n=>!!n.hub, isOffd=n=>!!(n.offdiag&&n.offdiag.length), isEmpty=n=>n.status==='X';
+function glyphKeys(){ document.querySelectorAll('#glyphlegend [data-glyph]').forEach(el=>{ const k=el.dataset.glyph; const f=k==='hub'?isHub:(k==='offd'?isOffd:isEmpty); const c=el.querySelector('.cnt'); if(c)c.textContent=G.nodes.filter(f).length; el.title=T(...(k==='hub'?HUBDEF:(k==='offd'?OFFDEF:EMPTYDEF))); }); }
 // categorical lens palette (deliberately not the family palette: while a lens is active, path lines turn neutral so colour means the lens value only)
 const LENSPAL=['#3B6FD4','#E0862B','#2FA66A','#C94C6B','#7C5CC4','#C7A22B','#2AA5B8','#8B6A45','#D07AB5','#6E7F91'];
 const CATS={
@@ -143,12 +150,10 @@ const CATS={
  det:['det','her','na'], destr:['yes','no','none'], mid:['yes','no','none']};
 const VTAB={mech:'MECH',d:'MOB',mod:'MOD',place:'PLACE',f:'ERR',g:'FAB',status:'STATUS',det:'DET'};
 const YESNO={yes:['yes','да'],no:['no','нет'],none:['no readout','без считывания']};
-const MARKC={offd:'#EB6834',hub:'#2A78D6',empty:'#9AA3AD'}, MARKN={offd:['off-diagonal ⤢','off-diagonal ⤢'],hub:['hub ◎','хаб ◎'],empty:['empty slot ∅','пустой слот ∅'],none:['plain station','обычная станция']};
-function marksOf(n){ const m=[]; if(n.offdiag&&n.offdiag.length)m.push('offd'); if(n.hub)m.push('hub'); if(n.status==='X')m.push('empty'); return m.length?m:['none']; }
 function catLabelSafe(k,v){ try{ if(k==='family')return T(...FAMN[v]); if(k==='aff')return vt('AFF',Number(v)); if(k==='time')return v==='none'?'—':TBINS[Number(v)][1]; return catLabel(k,v);}catch(e){return String(v);} }
-function catLabel(k,v){ if(k==='marks')return T(...MARKN[v]); if(k==='destr'||k==='mid')return T(...YESNO[v]); return vt(VTAB[k],v); }
-function lensValues(n,k){ if(k==='f')return (n.f&&n.f.length)?n.f:['none']; if(k==='marks')return marksOf(n); if(k==='family')return n._fams; return [lensValue(n,k)]; }   // every value a station carries for a lens (f and marks are lists)
-function lensValue(n,k){ if(k==='marks')return marksOf(n)[0]; if(k==='mech')return n.c?n.c.mech:'none'; if(k==='d')return n.d; if(k==='mod')return n.e.mod; if(k==='place')return n.e.place; if(k==='f')return n.f[0]||'none'; if(k==='g')return n.g; if(k==='status')return n.status;
+function catLabel(k,v){ if(k==='destr'||k==='mid')return T(...YESNO[v]); return vt(VTAB[k],v); }
+function lensValues(n,k){ if(k==='f')return (n.f&&n.f.length)?n.f:['none']; if(k==='family')return n._fams; return [lensValue(n,k)]; }   // every value a station carries for a lens (f is a list)
+function lensValue(n,k){ if(k==='mech')return n.c?n.c.mech:'none'; if(k==='d')return n.d; if(k==='mod')return n.e.mod; if(k==='place')return n.e.place; if(k==='f')return n.f[0]||'none'; if(k==='g')return n.g; if(k==='status')return n.status;
   if(k==='det')return n.b.det||'na'; if(k==='destr')return n.c?(n.c.destr?'yes':'no'):'none'; if(k==='mid')return n.c?(n.c.mid?'yes':'no'):'none'; if(k==='aff')return String(n.aff); if(k==='time'){const t=timeOf(n); return t==null?'none':timeBin(t);} return null;}
 function timeOf(n){ if(n.b.t!=null)return n.b.t; if(n.c&&n.c.t!=null)return n.c.t; return null; }
 const TBINS=[[-8.5,'≤ 3 ns'],[-7.5,'~30 ns'],[-6.5,'~300 ns'],[-5.5,'~3 µs'],[-4.5,'~30 µs'],[-3.5,'~300 µs'],[-2.5,'≥ 3 ms']];
@@ -158,16 +163,15 @@ function css(v){ return getComputedStyle(document.documentElement).getPropertyVa
 let affScale=null, timeScale=null;
 function buildScales(){ affScale=d3.scaleLinear().domain([0,0.5,1]).range([css('--nat'),css('--mid'),css('--fab')]).interpolate(d3.interpolateRgb); timeScale=d3.scaleLinear().domain([-8.5,-6.5,-4.5,-2.5]).range([css('--lens4'),css('--lens3'),css('--lens2'),css('--lens1')]).interpolate(d3.interpolateRgb).clamp(true); }   // fast = the strong end of the ramp, slow = the pale end
 buildScales();
-function lensColor(n,k){ if(k==='family')return null; if(k==='marks'){ const m=marksOf(n)[0]; return MARKC[m]||null; } if(k==='aff')return affScale(n.aff); if(k==='time'){const t=timeOf(n); return t==null?null:timeScale(t);} let v=lensValue(n,k); if(k==='f'&&state.lensFilter){ const hit=lensValues(n,k).find(x=>state.lensFilter.has(x)); if(hit)v=hit; }   // a multi-value station takes the colour of the value it is lit for
+function lensColor(n,k){ if(k==='family')return null; if(k==='aff')return affScale(n.aff); if(k==='time'){const t=timeOf(n); return t==null?null:timeScale(t);} let v=lensValue(n,k); if(k==='f'&&state.lensFilter){ const hit=lensValues(n,k).find(x=>state.lensFilter.has(x)); if(hit)v=hit; }   // a multi-value station takes the colour of the value it is lit for
   if(v==null||v==='none')return null; const i=CATS[k].indexOf(v); return i<0?null:LENSPAL[i%LENSPAL.length]; }
 function tint(c){ const x=d3.color(c); if(!x)return 'var(--surface)'; x.opacity=0.22; return x.formatRgb(); }
 function lensItems(k){ const count=v=>G.nodes.filter(n=>lensValues(n,k).includes(v)).length;
   if(k==='family') return Object.keys(FAMC).map(f=>({c:FAMC[f],t:T(...FAMN[f]),v:f,n:G.nodes.filter(n=>n._fams.includes(f)).length}));
-  if(k==='marks') return ['offd','hub','empty','none'].map(m=>({c:MARKC[m]||null,t:catLabel('marks',m),v:m,n:G.nodes.filter(n=>marksOf(n).includes(m)).length}));
   if(k==='aff') return [0,0.25,0.5,0.75,1].map(a=>({c:affScale(a),t:vt('AFF',a),v:String(a),n:count(String(a))}));
   if(k==='time') return TBINS.map((b,i)=>({c:timeScale(b[0]),t:b[1],v:String(i),n:count(String(i))})).concat([{c:null,t:T('no time (code, decoder, fab)','нет времени (код, декодер, производство)'),v:'none',n:count('none')}]);
   return CATS[k].map(v=>({c:v==='none'?null:LENSPAL[CATS[k].indexOf(v)%LENSPAL.length],t:catLabel(k,v),v,n:count(v)})); }
-function nodeMatchesFilter(n){ const k=state.lens, v=state.lensFilter; if(v==null)return true; if(k==='family')return n._fams.some(f=>v.has(f)); if(k==='marks')return marksOf(n).some(m=>v.has(m)); return lensValues(n,k).some(x=>v.has(x)); }
+function nodeMatchesFilter(n){ const k=state.lens, v=state.lensFilter; if(v==null)return true; if(k==='family')return n._fams.some(f=>v.has(f)); return lensValues(n,k).some(x=>v.has(x)); }
 function filterHas(x){ return !!(state.lensFilter&&state.lensFilter.has(x)); }
 // plain click: keep only this value (click again to clear); Ctrl / ⌘ / Shift-click: add or remove this value
 function toggleFilter(v,multi){ if(v===''){ state.lensFilter=null; return; }
@@ -180,7 +184,7 @@ function applyLens(){ const k=state.lens; const leg=document.getElementById('len
   st.select('rect.lensbar').attr('fill',d=>{ if(!lensed)return 'transparent'; return lensColor(d,k)||'transparent'; });
   pcLines.selectAll('path').attr('stroke',d=>lensed?(lensColor(d,k)||'var(--mid)'):(d._fam?FAMC[d._fam]:'var(--mid)'));
   const items=lensItems(k).filter(it=>it.n>0);
-  leg.innerHTML='<span class="lbl">'+T('lens legend · click a value to keep only those stations · Ctrl-click adds a value','легенда линзы · клик по значению оставляет только эти станции · Ctrl-клик добавляет значение')+'</span>'+items.map(it=>`<button type="button" class="k lk" data-lv="${it.v}" aria-pressed="${String(filterHas(it.v))}"><i class="sw" style="background:${it.c||'transparent'};border:1px solid ${it.c?it.c:'var(--mid)'}"></i>${esc(it.t)} <span class="cnt">${it.n}</span></button>`).join('')+(state.lensFilter!=null?`<button type="button" class="k lk clear" data-lv="">${T('clear filter','сбросить фильтр')} ✕</button>`:'');
+  leg.innerHTML='<span class="lbl">'+T('lens legend · click a value to keep only those stations · Ctrl-click adds a value','легенда линзы · клик по значению оставляет только эти станции · Ctrl-клик добавляет значение')+(LENSCOORD[k]?' <span class="cnt">'+T('coordinate','координата')+' '+LENSCOORD[k]+'</span>':'')+'</span>'+items.map(it=>`<button type="button" class="k lk" data-lv="${it.v}" aria-pressed="${String(filterHas(it.v))}"><i class="sw" style="background:${it.c||'transparent'};border:1px solid ${it.c?it.c:'var(--mid)'}"></i>${esc(it.t)} <span class="cnt">${it.n}</span></button>`).join('')+(state.lensFilter!=null?`<button type="button" class="k lk clear" data-lv="">${T('clear filter','сбросить фильтр')} ✕</button>`:'');
   leg.querySelectorAll('[data-lv]').forEach(b=>{ b.addEventListener('click',ev=>{ toggleFilter(b.dataset.lv,ev.ctrlKey||ev.metaKey||ev.shiftKey); applyLens(); drawEdges(); dimming(); pcHighlight(state.focus); });
     b.addEventListener('mouseenter',()=>{ const v=b.dataset.lv; if(v==='')return; st.classed('peek',d=>lensValues(d,k).includes(v)); });
     b.addEventListener('mouseleave',()=>{ st.classed('peek',false); }); });
@@ -193,6 +197,7 @@ function relabel(){ st.select('text.l1').text(d=>wrapLabel(SHORT[d.id]?SHORT[d.i
   gPaths.selectAll('circle.emptyslot').select('title').text(d=>T('empty slot: ','пустой слот: ')+d.p[lang()]+' — '+G.layers[d.L-1][lang()]);
   document.querySelectorAll('[data-chip-path]').forEach(b=>{b.querySelector('span.t').textContent=PATH[b.dataset.chipPath][lang()];});
   document.querySelectorAll('#lens option').forEach(o=>{o.textContent=LENSES[o.value][lang()];});
+  glyphKeys();
   document.querySelectorAll('#machine optgroup').forEach(o=>{ if(FAMN[o.dataset.fam])o.label=T(...FAMN[o.dataset.fam]); });
   applyLens(); if(state.focus)inspect(NODE[state.focus]); else if(state.machine&&MBY[state.machine])inspectMachine(MBY[state.machine]); else if(state.isolate)inspectPath(PATH[state.isolate]); else inspectEmpty(); renderPC();
 }
@@ -337,7 +342,13 @@ function inspect(n){ const L=lang(); const c=n.c; const rows=[[T('(a) carrier af
   [T('(d) mobility','(d) подвижность'),vt('MOB',n.d),'d'],[T('(e) control','(e) управление'),n.e.mod==='none'?'—':`${vt('MOD',n.e.mod)} @ ${vt('PLACE',n.e.place)}`,'e'],
   [T('(f) error structure','(f) структура ошибки'),n.f.map(x=>vt('ERR',x)).join(', '),'f'],[T('(g) manufacturing','(g) производство'),vt('FAB',n.g),'g']];
   const lr=LENSROWS[state.lens]||[];
-  const flags=[]; n.offdiag.forEach(o=>flags.push(`<span class="flag off">⤢ ${vt('OFFDIAG',o)}</span>`)); if(n.hub)flags.push(`<span class="flag hub">◎ ${T('hub','хаб')} · ${n.reach.map(f=>T(...FAMN[f])).join(', ')}</span>`); if(n.status==='X')flags.push(`<span class="flag empty">∅ ${vt('STATUS','X')}</span>`);
+  // reading marks: one line per badge (hub — the N families beyond its own that require it; off-diagonal — its flag definitions; empty slot)
+  const marks=[];
+  if(isHub(n)){ const own=n._fam; let names=(n.reach||[]).filter(f=>f!==own); const N=n.reach_degree!=null?n.reach_degree:names.length; if(names.length!==N)names=n.reach||[];
+    marks.push(`<div><span class="flag hub" title="${esc(T(...HUBDEF))}">◎ ${T('hub','хаб')}</span> — ${T('required by stations of','требуется станциям')} ${N} ${T(N===1?'family':'families',N===1?'семейства':'семейств')} (${esc(names.map(f=>T(...(FAMN[f]||[f,f]))).join(', '))})</div>`); }
+  if(isOffd(n)) marks.push(`<div><span class="flag off" title="${esc(T(...OFFDEF))}">⤢ ${T('off-diagonal','внедиагональная')}</span> — ${esc(n.offdiag.map(o=>vt('OFFDIAG',o)).join('; '))}</div>`);
+  if(isEmpty(n)) marks.push(`<div><span class="flag empty" title="${esc(T(...EMPTYDEF))}">∅ ${T('empty slot','пустой слот')}</span></div>`);
+  const flags=marks.length?[`<div class="marks"><span class="tk">${T('Reading marks','Метки чтения')}</span>${marks.join('')}</div>`]:[];
   const reqOut=G.edges.filter(e=>e.type==='requires'&&e.src===n.id), reqIn=G.edges.filter(e=>e.type==='requires'&&e.dst===n.id), rep=G.edges.filter(e=>e.type==='replaces'&&(e.src===n.id||e.dst===n.id)), con=G.edges.filter(e=>e.type==='conflicts'&&(e.src===n.id||e.dst===n.id));
   const other=(e)=>e.src===n.id?e.dst:e.src;
   const link=id=>`<a href="#" data-goto="${id}">${esc(NODE[id][L])}</a>`;
@@ -363,9 +374,6 @@ function inspect(n){ const L=lang(); const c=n.c; const rows=[[T('(a) carrier af
 pathHit.on('mousemove',(ev,p)=>{ if(tipPinned)return; pathSel.classed('hov',d=>d.id===p.id); tip.style.display='block'; tip.classList.remove('wide'); tip.innerHTML=`<i class="sw" style="background:${FAMC[p.family]}"></i><b>${esc(p[lang()])}</b> · ${T('click to isolate this path','клик — изолировать этот путь')}`; placeTip(ev); })
   .on('mouseleave',()=>{ pathSel.classed('hov',false); if(!tipPinned)hideTip(); })
   .on('click',(ev,p)=>{ ev.stopPropagation(); hideTip(); pathSel.classed('hov',false); isolatePath(p.id); });
-document.querySelectorAll('#mapbar [data-mark]').forEach(el=>el.addEventListener('click',ev=>{ const v=el.dataset.mark; const multi=ev.ctrlKey||ev.metaKey||ev.shiftKey;
-  if(state.lens!=='marks'){ state.lens='marks'; state.lensFilter=null; lensSel.value='marks'; }
-  toggleFilter(v,multi); applyLens(); drawEdges(); dimming(); pcHighlight(state.focus); }));
 document.querySelectorAll('#mapbar [data-goto]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); select(a.dataset.goto); const m=NODE[a.dataset.goto]; scrollToNode(m); document.getElementById('mapwrap').scrollIntoView({block:'nearest'});}));
 // ---------- controls
 const bar=document.getElementById('mapbar');
@@ -595,5 +603,99 @@ try{ var __th=function(){ if(window.__mapTheme)window.__mapTheme(); };
     var tm=0; var all=function(){ clearTimeout(tm); tm=setTimeout(function(){ run(wraps.filter(function(w){ return w.clientWidth>0; })); },150); };
     window.addEventListener('resize',all); document.addEventListener('toggle',all,true); all();
   }
+})();
+
+// ---------- sortable tables (editor's review of 17 Sep 2026, second batch, brief D): asc → desc → default order
+// A div.tbl[data-sort] (tagged at build time) remembers its build order per tbody (WeakMap) and moves the same <tr> nodes
+// when a header is clicked. data-sort decides which columns sort: `numeric` — every column where ≥ 60 % of the non-null body cells
+// parse to a number (the first number in the text that is not glued to a letter, so `1Q ×1.0` reads 1.0 and `H2` reads
+// nothing; `—`, `n/a`, `not published`, empty → null, last in both directions); `date` — the column headed date/дата or
+// whose cells look like 2024-12 (also `Dec 2024`); `centrality` — the column headed centrality/центральность;
+// `platform-default` — the first column's header restores the build order, the other columns are numeric.
+// The ↺ button lives in the zoom bar (div.tblzoom) when the table has one showing, otherwise in a minimal bar of its own.
+(function(){
+  var wraps=[].slice.call(document.querySelectorAll('div.tbl[data-sort]')); if(!wraps.length)return;
+  var NUM=/[-−+]?\d[\d,]*(\.\d+)?([eE][-+]?\d+)?/g, LET=/[A-Za-zА-Яа-яЁё]/;
+  var MON={jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12,'янв':1,'фев':2,'мар':3,'апр':4,'май':5,'мая':5,'июн':6,'июл':7,'авг':8,'сен':9,'окт':10,'ноя':11,'дек':12};
+  function txt(el){ return (el.textContent||'').replace(/\s+/g,' ').trim(); }
+  function isNull(s){ return s===''||/^(?:—|–|-|∅|n\/a|na|not published|не опубликовано)(?:$|[\s—–:;,.(])/i.test(s); }
+  function num(s){
+    if(isNull(s))return null; NUM.lastIndex=0; var m;
+    while((m=NUM.exec(s))){ var a=m.index, b=a+m[0].length;
+      if((a>0&&LET.test(s.charAt(a-1)))||(b<s.length&&LET.test(s.charAt(b))))continue;
+      var v=parseFloat(m[0].replace(/,/g,'').replace('−','-')); return isNaN(v)?null:v; }
+    return null;
+  }
+  function date(s){
+    if(isNull(s))return null; var m=/(\d{4})(?:-(\d{1,2}))?(?:-(\d{1,2}))?/.exec(s);
+    if(m) return +m[1]*10000+(+(m[2]||0))*100+(+(m[3]||0));
+    m=/([A-Za-zА-Яа-яЁё]{3})[A-Za-zА-Яа-яЁё.]*\s+(\d{4})/.exec(s); if(m&&MON[m[1].toLowerCase()]) return +m[2]*10000+MON[m[1].toLowerCase()]*100;
+    return null;
+  }
+  function T(en,ru){ return '<span class="lang-en">'+en+'</span><span class="lang-ru">'+ru+'</span>'; }
+  var ORIG=new WeakMap();
+  wraps.forEach(function(w){
+    var t=w.querySelector('table'); if(!t)return;
+    var head=t.tHead&&t.tHead.rows[0]; if(!head)return;
+    var bodies=[].slice.call(t.tBodies); if(!bodies.length)return;
+    bodies.forEach(function(b){ ORIG.set(b,[].slice.call(b.rows)); });
+    var ths=[].slice.call(head.cells), kind=w.getAttribute('data-sort'), n=ths.length;
+    function colCells(i){ var out=[]; bodies.forEach(function(b){ [].forEach.call(b.rows,function(r){ if(r.cells[i]) out.push(r.cells[i]); }); }); return out; }
+    // ≥ 60 % of the non-null body cells (— / n/a / empty do not count, so a sparse column such as 7.12 B's T2 still sorts), and ≥ 2 numbers
+    function numeric(i){ var c=colCells(i), k=0, nn=0; c.forEach(function(x){ var s=txt(x); if(isNull(s))return; nn++; if(num(s)!==null)k++; }); return k>=2&&k>=0.6*nn; }
+    var cols=[];   // per column: null (not sortable) | 'num' | 'date' | 'reset'
+    for(var i=0;i<n;i++){
+      var h=txt(ths[i]).toLowerCase(), c=null;
+      if(kind==='numeric') c=numeric(i)?'num':null;
+      else if(kind==='platform-default') c=i===0?'reset':(numeric(i)?'num':null);
+      else if(kind==='date'){ if(/date|дата/.test(h)) c='date'; else { var cc=colCells(i); var k=0; cc.forEach(function(x){ if(/^\d{4}-\d{2}/.test(txt(x)))k++; }); if(cc.length&&k>=0.6*cc.length)c='date'; } }
+      else if(kind==='centrality') c=/centrality|центральность/.test(h)?'num':null;
+      cols.push(c);
+    }
+    if(!cols.some(function(c){return c;}))return;
+    var state={col:-1,dir:0}, btns=[];
+    ths.forEach(function(th,i){
+      if(!cols[i]){ btns.push(null); return; }
+      var b=document.createElement('button'); b.type='button'; b.className='sortbtn'+(cols[i]==='reset'?' sortreset':'');
+      while(th.firstChild) b.appendChild(th.firstChild);
+      if(cols[i]!=='reset'){ var ind=document.createElement('span'); ind.className='sortind'; ind.setAttribute('aria-hidden','true'); b.appendChild(ind); th.setAttribute('aria-sort','none'); }
+      b.title=cols[i]==='reset'?'default order / исходный порядок':'sort: ascending → descending → default order';
+      th.appendChild(b); btns.push(b);
+      b.addEventListener('click',function(){
+        if(cols[i]==='reset'){ restore(); return; }
+        var dir=state.col===i?(state.dir===1?-1:(state.dir===-1?0:1)):1;
+        if(dir===0) restore(); else sortBy(i,dir);
+      });
+    });
+    function keyOf(cell,i){ var s=txt(cell); return cols[i]==='date'?date(s):num(s); }
+    function sortBy(i,dir){
+      bodies.forEach(function(b){
+        var orig=ORIG.get(b), rows=orig.map(function(r,k){ return {r:r,k:k,v:r.cells[i]?keyOf(r.cells[i],i):null}; });
+        rows.sort(function(a,c){ if(a.v===null&&c.v===null)return a.k-c.k; if(a.v===null)return 1; if(c.v===null)return -1; return a.v===c.v?a.k-c.k:(a.v<c.v?-dir:dir); });
+        rows.forEach(function(x){ b.appendChild(x.r); });
+      });
+      state.col=i; state.dir=dir; paint();
+    }
+    function restore(){ bodies.forEach(function(b){ ORIG.get(b).forEach(function(r){ b.appendChild(r); }); }); state.col=-1; state.dir=0; paint(); }
+    function paint(){
+      ths.forEach(function(th,i){ if(!cols[i]||cols[i]==='reset')return; var on=state.col===i;
+        th.setAttribute('aria-sort',on?(state.dir===1?'ascending':'descending'):'none');
+        var ind=btns[i].querySelector('.sortind'); ind.textContent=on?(state.dir===1?' ▲':' ▼'):''; });
+      w.classList.toggle('sorted',state.col>=0); reset.classList.toggle('idle',state.col<0);
+    }
+    // ↺ default order: in the zoom bar when one is showing, else in a minimal bar of our own
+    var reset=document.createElement('button'); reset.type='button'; reset.className='tsreset idle';
+    reset.innerHTML='<span class="tsi" aria-hidden="true">↺</span> '+T('default order','исходный порядок');
+    reset.addEventListener('click',restore);
+    var bar=document.createElement('div'); bar.className='tblbar'; bar.appendChild(reset); w.insertBefore(bar,w.firstChild);
+    function place(){
+      var z=null; for(var c=w.firstElementChild;c;c=c.nextElementSibling){ if(c.classList.contains('tblzoom')){ z=c; break; } }
+      var host=(z&&!z.hidden)?z:bar;
+      if(reset.parentNode!==host) host.appendChild(reset);
+      if(bar.hidden!==(host!==bar)) bar.hidden=(host!==bar);   // only on change: the observer watches `hidden`
+    }
+    place();
+    if(typeof MutationObserver==='function') new MutationObserver(place).observe(w,{childList:true,attributes:true,attributeFilter:['hidden'],subtree:true});
+  });
 })();
 """
