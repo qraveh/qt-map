@@ -69,10 +69,14 @@ def decoding_class(s):
     return 'none'
 
 
+SUP = str.maketrans('0123456789-', '⁰¹²³⁴⁵⁶⁷⁸⁹⁻')
+
+
 def fmt_e(x):
+    """4.0×10⁻³ — one decimal, Unicode superscript exponent (the report's style for error rates)."""
     if x is None: return '—'
-    s = '%.1e' % x
-    m, e = s.split('e'); return '%s×10^%d' % (m, int(e))
+    m, e = ('%.1e' % x).split('e')
+    return '%s×10%s' % (m, str(int(e)).translate(SUP))
 
 
 def median(xs): return statistics.median(xs) if xs else None

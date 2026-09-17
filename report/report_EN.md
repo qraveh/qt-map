@@ -1371,17 +1371,17 @@ A machine is an argument: *this* combination of stations will reach the goal bef
 
 | Path | The bet | Machines | Devices | Largest gate-capable device (physical qubits) | Best 2Q error among devices |
 |---|---|---|---|---|---|
-| Superconducting transmon `sc` | fast microwave gates on a lithographic lattice; scale by fabrication and, later, by links between chips | 62 | 45 | IBM Quantum Osprey — 433 | 1.0×10^-3 (Origin Wukong-180 (4th gen)) |
-| Superconducting bosonic (cat / GKP) `cat` | bias the noise so that one error type dominates, then correct only that type with a cheap code | 7 | 6 | Alice & Bob Helium (on-premise system) — 18 | 5.8×10^-2 (Alice & Bob Helium 2 ("Galvanic Cat")) |
-| Superconducting dual-rail erasure `dualrail` | turn photon loss into a flagged erasure; erasures cost far fewer qubits to correct than Pauli errors | 5 | 3 | OQC GENESIS — 16 | 1.0×10^-3 (Aqumen Seeker) |
-| Trapped ions — QCCD, laser gates `ion_qccd` | move the ions, not the information: transport gives all-to-all connectivity at the highest gate fidelities | 10 | 8 | Helios — 98 | 7.9×10^-4 (Helios) |
-| Trapped ions — electronic gates, chip control `ion_elec` | static chains with electronic or integrated control; scale by photonic links between modules | 11 | 7 | iQPU / UQConnect — 64 | 4.0×10^-3 (Aria) |
-| Neutral atoms — alkali (Rb/Cs) `atom_rb` | reconfigurable tweezers make the code geometry programmable and the qubit count cheap; the clock is slow | 14 | 9 | 448-atom fault-tolerant processor — 448 | 1.6×10^-3 (448-atom fault-tolerant processor) |
-| Neutral atoms — alkaline-earth (Yb/Sr), erasure-native `atom_ae` | alkaline-earth atoms add erasure conversion and continuous reloading to the tweezer bet | 5 | 3 | Phoenix (Gen-1) and Gen-2 — 1,180 | 4.0×10^-3 (Phoenix (Gen-1) and Gen-2) |
-| Photonic — fusion-based (DV) `ph_fusion` | make entanglement by measurement: room-temperature photonic fabrication and networking, loss is the enemy | 5 | 4 | Lucy — 12 | 7.8×10^-3 (Omega chipset (Moreton Bay / Chicago systems unnamed)) |
+| Superconducting transmon `sc` | fast microwave gates on a lithographic lattice; scale by fabrication and, later, by links between chips | 62 | 45 | IBM Quantum Osprey — 433 | 1.0×10⁻³ (Origin Wukong-180 (4th gen)) |
+| Superconducting bosonic (cat / GKP) `cat` | bias the noise so that one error type dominates, then correct only that type with a cheap code | 7 | 6 | Alice & Bob Helium (on-premise system) — 18 | 5.8×10⁻² (Alice & Bob Helium 2 ("Galvanic Cat")) |
+| Superconducting dual-rail erasure `dualrail` | turn photon loss into a flagged erasure; erasures cost far fewer qubits to correct than Pauli errors | 5 | 3 | OQC GENESIS — 16 | 1.0×10⁻³ (Aqumen Seeker) |
+| Trapped ions — QCCD, laser gates `ion_qccd` | move the ions, not the information: transport gives all-to-all connectivity at the highest gate fidelities | 10 | 8 | Helios — 98 | 7.9×10⁻⁴ (Helios) |
+| Trapped ions — electronic gates, chip control `ion_elec` | static chains with electronic or integrated control; scale by photonic links between modules | 11 | 7 | iQPU / UQConnect — 64 | 4.0×10⁻³ (Aria) |
+| Neutral atoms — alkali (Rb/Cs) `atom_rb` | reconfigurable tweezers make the code geometry programmable and the qubit count cheap; the clock is slow | 14 | 9 | 448-atom fault-tolerant processor — 448 | 1.6×10⁻³ (448-atom fault-tolerant processor) |
+| Neutral atoms — alkaline-earth (Yb/Sr), erasure-native `atom_ae` | alkaline-earth atoms add erasure conversion and continuous reloading to the tweezer bet | 5 | 3 | Phoenix (Gen-1) and Gen-2 — 1,180 | 4.0×10⁻³ (Phoenix (Gen-1) and Gen-2) |
+| Photonic — fusion-based (DV) `ph_fusion` | make entanglement by measurement: room-temperature photonic fabrication and networking, loss is the enemy | 5 | 4 | Lucy — 12 | 7.8×10⁻³ (Omega chipset (Moreton Bay / Chicago systems unnamed)) |
 | Photonic — continuous-variable / GKP `ph_cv` | continuous-variable states and GKP encoding on the same photonic chips | 3 | 3 | — | — |
-| Silicon / germanium quantum-dot spins `spin_qd` | the foundry: quantum dots in CMOS, density and cold electronics from the semiconductor industry | 7 | 4 | Tunnel Falls — 12 | 1.1×10^-2 (foundry 8-qubit array) |
-| Donor spins in silicon `spin_donor` | donor spins in isotopically pure silicon: the longest coherence in a solid | 1 | 1 | 11-qubit donor processor — 11 | 3.6×10^-3 (11-qubit donor processor) |
+| Silicon / germanium quantum-dot spins `spin_qd` | the foundry: quantum dots in CMOS, density and cold electronics from the semiconductor industry | 7 | 4 | Tunnel Falls — 12 | 1.1×10⁻² (foundry 8-qubit array) |
+| Donor spins in silicon `spin_donor` | donor spins in isotopically pure silicon: the longest coherence in a solid | 1 | 1 | 11-qubit donor processor — 11 | 3.6×10⁻³ (11-qubit donor processor) |
 | Defect-spin network nodes (NV/SiV/T) `defect` | defect spins that work at room temperature and network through photons | 2 | 2 | Quoll / QB-QDK 2.0 — 6 | — |
 | Topological (Majorana) `topo` | protection in the hardware: a topological gap instead of a code | 1 | 0 | — | — |
 | Quantum annealing `anneal` | special-purpose scale now: thousands of analog qubits for optimisation and simulation | 3 | 2 | Advantage — 5,000 | — |
@@ -1398,7 +1398,7 @@ Each hypothesis is a falsifiable statement about the population; the test is the
 
 **H2 — Two-qubit error is converging across the three large families at the median, while the best single number stays with the ions.**
 
-*Test.* Median and best `err_2q_median` over devices per family, excluding hero-pair numbers, targets and component demonstrations. *Result.* superconducting median 4.0×10^-3, best 1.0×10^-3 (Aqumen Seeker), n = 24; ions median 3.0×10^-3, best 7.9×10^-4 (Helios), n = 9; atoms median 4.0×10^-3, best 1.6×10^-3 (448-atom fault-tolerant processor), n = 5; photonics median 6.2×10^-2, best 7.8×10^-3 (Omega chipset (Moreton Bay / Chicago systems unnamed)), n = 3; spins median 1.1×10^-2, best 3.6×10^-3 (11-qubit donor processor), n = 3. The spread of the three large medians is ×1.3. *Verdict:* **supported**. A convergence of medians with a persistent gap at the best is what one expects when the median is set by the many second-tier machines and the best by a few labs that have run the same platform for a decade.
+*Test.* Median and best `err_2q_median` over devices per family, excluding hero-pair numbers, targets and component demonstrations. *Result.* superconducting median 4.0×10⁻³, best 1.0×10⁻³ (Aqumen Seeker), n = 24; ions median 3.0×10⁻³, best 7.9×10⁻⁴ (Helios), n = 9; atoms median 4.0×10⁻³, best 1.6×10⁻³ (448-atom fault-tolerant processor), n = 5; photonics median 6.2×10⁻², best 7.8×10⁻³ (Omega chipset (Moreton Bay / Chicago systems unnamed)), n = 3; spins median 1.1×10⁻², best 3.6×10⁻³ (11-qubit donor processor), n = 3. The spread of the three large medians is ×1.3. *Verdict:* **supported**. A convergence of medians with a persistent gap at the best is what one expects when the median is set by the many second-tier machines and the best by a few labs that have run the same platform for a decade.
 
 **H3 — Control stays external: integrated control is a minority confined to spins, annealers and a few traps; no superconducting device of 100 qubits or more is driven from inside the cryostat.**
 
