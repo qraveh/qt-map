@@ -1,0 +1,4 @@
+baseline-*.html
+logs/
+results_smoke*/
+__pycache__/

@@ -230,6 +230,99 @@ def sec9(lang):
         for r in n.get('records',[]):
             o.append(f"| `{n['id']}` | {t(L,RK[r['key']])} | {sv(r)} — {r['text']} | {r['scope']} | {r['date']} | {r['url']} · [{r['tag']}] |\n")
     o.append("\n")
+    # 9.12 machines as measured paths (register join: data/machines.json)
+    M=json.load(open(os.path.join(ROOT,'data','machines.json'),encoding='utf-8'))
+    MS=sorted(M['machines'],key=lambda x:(x['family'],x['name']))
+    FAMN={'SC':('superconducting','сверхпроводниковые'),'ION':('ions','ионы'),'ATOM':('atoms','атомы'),'PHOTON':('photonics','фотоника'),'SPIN':('spins','спины'),'DEFECT':('defects','дефекты'),'TOPO':('topological','топологические'),'ANNEAL':('annealing','отжиг')}
+    H("### 9.12 " + ("Machines as measured paths" if en else "Машины как измеренные пути"))
+    o.append((f"A machine is a *path instance* on the map: one station per layer, primary or alternate, taken from the stations the map already has, and a **gap** (`∅G-…`) wherever the map has no station for what the machine actually runs — no code, no decoder, no interconnect, an unpublished gate mechanism. The {len(MS)} machines of the Quantum Machines Register (edition {M['edition']}; [register](https://claude.ai/artifact/Bfj8NrxCsx8PMdxUCBMBhV), [Technology × Machine page](https://claude.ai/artifact/2EcsTbo9kjAHseEnBxzawp)) are joined to the graph by node id; every cell carries its evidence (verified or inferred) and the machine's own dated records sit beside the standard records of §9.11, never replacing them. Table A condenses the Technology × Machine matrix to one row per layer; Table B puts each machine's published clock numbers against the derived clock of its path (§9.4).\n\n"
+              "On the map the **Machine selector** is one more term in the intersection isolate ∩ focus ∩ lens: choosing a machine keeps its stations along its family's path, dims the rest and marks the layers where the machine has a gap; with a lens the reader sees which coordinate the machine's choices share with the path, with focus which of its stations are interchanges. The register's numbers are evaluation-space attributes — dated, sourced, never used for position." if en else
+              f"Машина — это *экземпляр пути* на карте: по одной станции на слой, основной или альтернативной, из тех станций, что на карте уже есть, и **пробел** (`∅G-…`) там, где у карты нет станции для того, что машина реально делает, — нет кода, нет декодера, нет интерконнекта, механизм гейта не опубликован. {len(MS)} машин Реестра квантовых машин (издание {M['edition']}; [реестр](https://claude.ai/artifact/Bfj8NrxCsx8PMdxUCBMBhV), [страница Технология × Машина](https://claude.ai/artifact/2EcsTbo9kjAHseEnBxzawp)) присоединены к графу по id узла; каждая ячейка несёт своё свидетельство (проверено или выведено), а собственные датированные рекорды машины стоят рядом со стандартными рекордами §9.11, не подменяя их. Таблица A сжимает матрицу Технология × Машина до одной строки на слой; таблица B ставит опубликованные машиной числа такта против выведенного такта её пути (§9.4).\n\n"
+              "На карте **селектор машины** — ещё один член пересечения изоляция ∩ фокус ∩ линза: выбор машины оставляет её станции вдоль пути её семейства, гасит остальные и помечает слои, где у машины пробел; с линзой читатель видит, какую координату выбор машины разделяет с путём, с фокусом — какие из её станций пересадочные. Числа реестра — атрибуты пространства оценки: датированные, с источником, никогда не используемые для позиционирования.")+"\n\n")
+    # Table A — the matrix condensed to one row per layer
+    H("**"+("Table A — the Technology × Machine matrix by layer" if en else "Таблица A — матрица Технология × Машина по слоям")+"**\n")
+    H(("| Layer | Stations used / on the map | Most-used stations (machines, primary) | Primary is a map gap: machines · gap ids |" if en else
+       "| Слой | Станций занято / на карте | Самые занятые станции (машин, основные) | Основная — пробел карты: машин · id пробелов |")+"\n|---|---|---|---|")
+    unknown=set()
+    for l in G['layers']:
+        ln=str(l['n']); used=set(); prim={}; gapm=0; gaps={}
+        for x in MS:
+            for c in x['layers'].get(ln,[]):
+                if c['gap']:
+                    if c['role']=='primary': gapm+=1; gaps[c['node']]=gaps.get(c['node'],0)+1
+                    continue
+                if c['node'] not in NODE: unknown.add(c['node']); continue
+                used.add(c['node'])
+                if c['role']=='primary': prim[c['node']]=prim.get(c['node'],0)+1
+        onmap=sum(1 for n in G['nodes'] if n['layer']==l['n'])
+        top=sorted(prim.items(),key=lambda kv:(-kv[1],kv[0]))[:3]
+        tops='; '.join(f"{name(L,NODE[k])} `{k}` ({v})" for k,v in top) or '—'
+        gs=', '.join(f"`{k}` ({v})" for k,v in sorted(gaps.items(),key=lambda kv:(-kv[1],kv[0]))) if gaps else '—'
+        o.append(f"| {l['n']} {t(L,(l['en'],l['ru']))} | {len(used)} / {onmap} | {tops} | {gapm} · {gs} |\n")
+    o.append("\n")
+    # Table B — machine records vs the path's derived clock
+    BK=('t1','t2','t1q','t2q','t_meas','t_ff','spam')
+    def rec(x,k):
+        rs=[r for r in x.get('records',[]) if r['key']==k and r['num'] is not None]
+        return rs[0] if rs else None
+    def part(p,k):  # path value the machine record is compared with; per gate layer for gates/1Q
+        r=p['round']; pp=r.get('parts') or {}
+        if k=='t2q': v=pp.get('gates'); d=r.get('d2') or 0; return (v/d if v and d else None)
+        if k=='t1q': v=pp.get('1q'); d=r.get('d1') or 0; return (v/d if v and d else None)
+        if k=='t_meas': return pp.get('readout') or None
+        if k=='t_ff': return p['react']['loop'] or p['react']['floor']
+        if k in ('t1','t2'): return p['coh'].get(k)
+        return None
+    CLOCKK=('t2q','t_meas','t1q','t_ff'); CLOCKN={'t2q':('2Q','2Q'),'t_meas':('readout','считывание'),'t1q':('1Q','1Q'),'t_ff':('reaction','реакция')}
+    def verdict(q):
+        if q is None: return '—'
+        return t(L,('faster','быстрее')) if q<0.8 else (t(L,('slower','медленнее')) if q>1.25 else t(L,('on path','на пути')))
+    def rat(q): return ('×%.1f'%q) if q is not None and 0.1<=q<1000 else (('×%.1e'%q) if q is not None else '—')
+    def cell(x,k,p):
+        r=rec(x,k)
+        if not r: return '—'
+        v=st(r['num']) if r['unit']=='s' else '%.2g'%r['num']
+        if k in ('t1','t2'):
+            pv=part(p,k); q=determinize(r['num']/pv) if pv else None
+            return f"{v} ({r['date']}; {rat(q)})" if q is not None else f"{v} ({r['date']})"
+        return f"{v} ({r['date']})"
+    H("**"+("Table B — machines against the derived clock of their path" if en else "Таблица B — машины против выведенного такта их пути")+"**\n")
+    H(("| Machine | Path | Path t_round | T1 (date; ×path) | T2 (date; ×path) | 1Q gate (date) | Feed-forward (date) | SPAM (date) | Clock term ×path | Verdict |" if en else
+       "| Машина | Путь | t_round пути | T1 (дата; ×путь) | T2 (дата; ×путь) | 1Q-гейт (дата) | Feed-forward (дата) | SPAM (дата) | Член такта ×путь | Вердикт |")+"\n|---|---|---|---|---|---|---|---|---|---|")
+    rows=0; none=0; VC={}; CC={}; ext=[]; cext=[]; joined=set(); unjoined=[]
+    for x in MS:
+        if not any(rec(x,k) for k in BK): none+=1; continue
+        rows+=1; p=PATH[x['map_path']]; f=x['family']
+        comp=[]; vd=None
+        for k in CLOCKK:
+            r=rec(x,k)
+            if not r: continue
+            pv=part(p,k)
+            if pv is None: unjoined.append(f"{x['name']} ({t(L,CLOCKN[k])})"); continue
+            q=determinize(r['num']/pv); joined.add(k); comp.append(f"{t(L,CLOCKN[k])} {rat(q)}")
+            if vd is None: vd=q; ext.append((q,x['name']+' ('+x['org']+')',k,r['num'],pv))
+        for k in ('t1','t2'):
+            r=rec(x,k); pv=part(p,k) if r else None
+            if r and pv: q=determinize(r['num']/pv); cext.append((q,x['name']+' ('+x['org']+')',k)); CC.setdefault(f,[0,0,0])[0 if q>1.25 else (2 if q<0.8 else 1)]+=1
+            elif r: unjoined.append(f"{x['name']} ({k.upper()})")
+        vw=verdict(vd); VC.setdefault(f,{})[vw]=VC.setdefault(f,{}).get(vw,0)+1
+        o.append(f"| {x['name']} ({x['org']}) | {p[L]} | {st(p['round']['total'])} | {cell(x,'t1',p)} | {cell(x,'t2',p)} | {cell(x,'t1q',p)} | {cell(x,'t_ff',p)} | {cell(x,'spam',p)} | {'; '.join(comp) or '—'} | {vw} |\n")
+    o.append("\n"+(f"{none} machines publish none of these numbers." if en else f"{none} машин не публикуют ни одного из этих чисел.")+"\n\n")
+    # closing paragraph — computed
+    fam_order=['SC','ION','ATOM','PHOTON','SPIN','DEFECT','TOPO','ANNEAL']
+    def vline(f):
+        d=VC.get(f,{}); return f"{t(L,FAMN[f])} {d.get(t(L,('faster','быстрее')),0)}/{d.get(t(L,('on path','на пути')),0)}/{d.get(t(L,('slower','медленнее')),0)}/{d.get('—',0)}"
+    def cline(f):
+        c=CC.get(f); return f"{t(L,FAMN[f])} {c[0]}/{c[1]}/{c[2]}" if c else None
+    vs='; '.join(vline(f) for f in fam_order if f in VC); cs='; '.join(x for x in (cline(f) for f in fam_order) if x)
+    hi=max(ext,key=lambda e:e[0]) if ext else None; lo=min(ext,key=lambda e:e[0]) if ext else None
+    chi=max(cext,key=lambda e:e[0]) if cext else None; clo=min(cext,key=lambda e:e[0]) if cext else None
+    nj=sum(1 for e in ext); nc=len(cext)
+    uj=(f"published records that did not join: {len(unjoined)} — " if en else f"опубликованных рекордов не соединилось: {len(unjoined)} — ")+('; '.join(unjoined) or '—')
+    ab=', '.join(f"`{k}`" for k in BK if not any(rec(x,k) for x in MS)) or '—'
+    o.append((f"**What the comparison shows.** {rows} machines publish at least one of the seven numbers; only {nj} of them publish a *clock* term the path can be checked against (1Q gate time or feed-forward latency), and {nc} publish a coherence time. Verdicts per family, faster / on path / slower / no join: {vs}. Coherence against the path's T₁ or T₂ (above ×1.25 / within / below ×0.8): {cs}. The extremes are honest about what is being compared: the largest clock ratio is {hi[1]} ({t(L,CLOCKN[hi[2]])} {st(hi[3])} against {st(hi[4])} on its path, {rat(hi[0])}); the smallest is {lo[1]} ({t(L,CLOCKN[lo[2]])} {st(lo[3])} against {st(lo[4])}, {rat(lo[0])}); on coherence {chi[1]} sits at {rat(chi[0])} of its path's {chi[2].upper()} and {clo[1]} at {rat(clo[0])}. A ratio of ×1.0 is often the path's own record seen from the machine side (Willow's T₁/T₂ and 25 ns gate, Aurora's 1 µs loop), not an independent confirmation. Nulls: no machine in the register publishes {ab} — so the two largest terms of the superconducting and spin rounds, the 2Q gate and the readout, cannot be checked against any machine; {uj} — because their path has no derived round (photonic, defect, topological, annealing) or no 1Q layer in its code (cat); the ratios are per gate layer (parts ÷ d₂, d₁), so a machine's single-gate time is compared with a single gate of its path, not with the layer sum." if en else
+              f"**Что показывает сравнение.** {rows} машин публикуют хотя бы одно из семи чисел; лишь {nj} из них публикуют член *такта*, проверяемый против пути (время 1Q-гейта или задержку feed-forward), и {nc} публикуют время когерентности. Вердикты по семействам, быстрее / на пути / медленнее / нет соединения: {vs}. Когерентность против T₁ или T₂ пути (выше ×1.25 / в пределах / ниже ×0.8): {cs}. Крайние случаи честны в том, что именно сравнивается: наибольшее отношение по такту — {hi[1]} ({t(L,CLOCKN[hi[2]])} {st(hi[3])} против {st(hi[4])} на его пути, {rat(hi[0])}); наименьшее — {lo[1]} ({t(L,CLOCKN[lo[2]])} {st(lo[3])} против {st(lo[4])}, {rat(lo[0])}); по когерентности {chi[1]} стоит на {rat(chi[0])} от {chi[2].upper()} своего пути, а {clo[1]} — на {rat(clo[0])}. Отношение ×1.0 — часто собственный рекорд пути, увиденный со стороны машины (T₁/T₂ и 25-нс гейт Willow, 1-мкс контур Aurora), а не независимое подтверждение. Пустые: ни одна машина реестра не публикует {ab} — поэтому два крупнейших члена сверхпроводникового и спинового раундов, 2Q-гейт и считывание, нельзя проверить ни по одной машине; {uj} — потому что у их пути нет выведенного раунда (фотоника, дефекты, топологические, отжиг) или нет слоя 1Q в его коде (кошки); отношения взяты на слой гейтов (части ÷ d₂, d₁), так что время одного гейта машины сравнивается с одним гейтом её пути, а не с суммой слоя.")+"\n\n")
+    if unknown: o.append(("Register node ids not on the map: " if en else "Id узлов реестра, отсутствующие на карте: ")+', '.join(f"`{u}`" for u in sorted(unknown))+"\n\n")
     return ''.join(o)
 
 json.dump(G,open(os.path.join(ROOT,'data','graph.json'),'w',encoding='utf-8',newline='\n'),ensure_ascii=False)

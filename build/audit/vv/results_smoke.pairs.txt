@@ -1,0 +1,1 @@
+pairs: done=20/20 new=20 disagreements=12 seconds=19.4 s/state=0.970

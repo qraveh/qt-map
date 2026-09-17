@@ -1247,6 +1247,70 @@ Options weighed: a force-directed layout (rejected — it destroys the layer sem
 | `ro_imgfast` | QND fidelity / survival | 0.92 — Cavity MCM, 87Rb: adaptive gating 'decreases the atom loss rate from 95% to an average of 8%'; 45 us measure-and-feedforward cycle | typical | 2026-06 | https://arxiv.org/html/2606.24869 · [D] |
 | `ro_imgfast` | QND fidelity / survival | 0.988 — Kyoto fast 174Yb imaging: survival probability 98.80(44)% after the 17.6 us image | best | 2026-05 | https://arxiv.org/html/2605.24175 · [D] |
 
+### 7.12 Machines as measured paths
+A machine is a *path instance* on the map: one station per layer, primary or alternate, taken from the stations the map already has, and a **gap** (`∅G-…`) wherever the map has no station for what the machine actually runs — no code, no decoder, no interconnect, an unpublished gate mechanism. The 136 machines of the Quantum Machines Register (edition 2026.09; [register](https://claude.ai/artifact/Bfj8NrxCsx8PMdxUCBMBhV), [Technology × Machine page](https://claude.ai/artifact/2EcsTbo9kjAHseEnBxzawp)) are joined to the graph by node id; every cell carries its evidence (verified or inferred) and the machine's own dated records sit beside the standard records of §7.11, never replacing them. Table A condenses the Technology × Machine matrix to one row per layer; Table B puts each machine's published clock numbers against the derived clock of its path (§7.4).
+
+On the map the **Machine selector** is one more term in the intersection isolate ∩ focus ∩ lens: choosing a machine keeps its stations along its family's path, dims the rest and marks the layers where the machine has a gap; with a lens the reader sees which coordinate the machine's choices share with the path, with focus which of its stations are interchanges. The register's numbers are evaluation-space attributes — dated, sourced, never used for position.
+
+**Table A — the Technology × Machine matrix by layer**
+
+| Layer | Stations used / on the map | Most-used stations (machines, primary) | Primary is a map gap: machines · gap ids |
+|---|---|---|---|
+| 1 Carrier | 13 / 13 | Transmon `transmon` (63); Trapped atomic ion `ion` (21); Alkali atom (Rb/Cs) in tweezer `alkali` (14) | 0 · — |
+| 2 Encoding | 9 / 10 | Bare two-level subspace `enc_bare` (62); Hyperfine / clock-state qubit `enc_hf` (36); Single-spin (Loss–DiVincenzo) / nuclear-spin encoding `enc_spin_ld` (10) | 8 · `∅G-enc-none` (5), `∅G-enc-gr` (2), `∅G-enc-clock` (1) |
+| 3 Gate mechanism | 14 / 14 | Tunable-coupler CZ / iSWAP `g_tc` (49); Mølmer–Sørensen / light-shift laser gate `g_ms` (15); Rydberg-blockade CZ `g_ryd` (15) | 18 · `∅G-gate-unpub` (9), `∅G-lointer` (3), `∅G-nogate` (2), `∅G-rydanalog` (2), `∅G-isinganalog` (1), `∅G-rip` (1) |
+| 4 Connectivity / transport | 7 / 8 | Static nearest-neighbour lattice `cx_nn` (77); Atom transport by AOD tweezers (zoned architecture) `cx_aod` (17); Ion-chain motional bus (all-to-all in chain) `cx_bus` (13) | 5 · `∅G-bus` (1), `∅G-conveyor` (1), `∅G-crystal` (1), `∅G-lattice` (1), `∅G-optlink` (1) |
+| 5 Control | 10 / 10 | Room-temperature electronics + per-qubit coax/flex `ct_rt` (63); Laser + AOD/SLM optical control (atoms) `ct_laser` (19); Electro-optic drive + feed-forward electronics (RT) `ct_eo` (8) | 20 · `∅G-ionaod` (9), `∅G-vio` (9), `∅G-ctrl-unpub` (1), `∅G-nvroom` (1) |
+| 6 Readout | 8 / 8 | Dispersive microwave readout (+TWPA, Purcell) `ro_disp` (64); Fluorescence state detection (ions) `ro_fluor` (23); Fluorescence imaging of atom arrays `ro_img` (17) | 9 · `∅G-fluxro` (3), `∅G-reset` (3), `∅G-lru` (2), `∅G-homodyne` (1) |
+| 7 Code | 9 / 9 | Bosonic concatenation (repetition-cat, LDPC-cat, GKP+qLDPC) `code_bosonic` (8); Non-local qLDPC codes (bivariate-bicycle, 'gross') `code_qldpc` (8); High-rate concatenated codes with transversal gates `code_highrate` (7) | 97 · `∅G-none7` (85), `∅G-detect7` (5), `∅G-pathcode` (3), `∅G-analogrot` (1), `∅G-mitig` (1), `∅G-subsystem` (1), `∅G-toric` (1) |
+| 8 Decoder | 7 / 8 | MWPM / Sparse Blossom (+correlated matching) `dec_mwpm` (12); Correlated / loss-aware decoding (transversal, atom loss) `dec_corr` (5); Relay-BP for qLDPC (FPGA) `dec_relaybp` (5) | 107 · `∅G-none8` (100), `∅G-auton` (2), `∅G-beam` (2), `∅G-coherent` (1), `∅G-frontier` (1), `∅G-lut` (1) |
+| 9 Interconnect | 5 / 7 | Multi-chip modules / l-couplers (same cryostat) `ic_mcm` (10); Ion–photon photonic link `ic_ionphoton` (3); Fibre links between photonic modules `ic_fibre` (2) | 119 · `∅G-none9` (98), `∅G-multidie` (9), `∅G-spinl9` (8), `∅G-corelink` (3), `∅G-ionmatter` (1) |
+| 10 Manufacturing | 9 / 9 | Superconducting-qubit lithography (Nb/Al JJ, 300 mm) `fab_sc` (73); Optical / mechanical assembly (lasers, vacuum, objectives) `fab_optics` (19); Surface-electrode ion-trap microfabrication `fab_trap` (18) | 6 · `∅G-bulkoptics` (3), `∅G-twofab` (2), `∅G-sicolour` (1) |
+
+**Table B — machines against the derived clock of their path**
+
+| Machine | Path | Path t_round | T1 (date; ×path) | T2 (date; ×path) | 1Q gate (date) | Feed-forward (date) | SPAM (date) | Clock term ×path | Verdict |
+|---|---|---|---|---|---|---|---|---|---|
+| 6,100-qubit tweezer array (Caltech (Endres group)) | Neutral atoms — alkali (Rb/Cs) | 1.31 ms | — | 12.6 s (Sep 2025; ×1.0) | — | — | — | — | — |
+| Gemini-class (QuEra) | Neutral atoms — alkali (Rb/Cs) | 1.31 ms | — | — | — | — | 0.003 (2025) | — | — |
+| MAQCS and DiNAQC (planqc) | Neutral atoms — alkaline-earth (Yb/Sr), erasure-native | 1.3 ms | — | 100 ms (2026; ×1.3e-02) | — | — | — | — | — |
+| Phoenix (Gen-1) and Gen-2 (Atom Computing) | Neutral atoms — alkaline-earth (Yb/Sr), erasure-native | 1.3 ms | — | 40 s (2021; ×5.1) | — | — | — | — | — |
+| 40-ion Ba-133 qLDPC testbed (IonQ) | Trapped ions — electronic gates, chip control | 1.52 ms | — | 3.95 s (Jun 2026; ×9.3e-04) | — | — | — | — | — |
+| Forte / Forte Enterprise (IonQ) | Trapped ions — electronic gates, chip control | 1.52 ms | 10 s (2024; ×8.4e-04) | 1 s (2024; ×2.4e-04) | — | — | — | — | — |
+| Helios (Quantinuum) | Trapped ions — QCCD, laser gates | 9.66 ms | — | — | — | — | 0.00033 (Jun 2026) | — | — |
+| Maryland / Duke Quantum Center (EURIQA lineage) (University of Maryland / Duke University) | Trapped ions — QCCD, laser gates | 9.66 ms | — | — | — | — | 0.006 (Oct 2021) | — | — |
+| System Model H1 (H1-1) (Quantinuum) | Trapped ions — QCCD, laser gates | 9.66 ms | — | — | — | — | 0.003 (Feb 2026) | — | — |
+| Aurora (Xanadu) | Photonic — continuous-variable / GKP | — | — | — | — | 1 µs (Jan 2025) | — | reaction ×1.0 | on path |
+| Omega chipset (Moreton Bay / Chicago systems unnamed) (PsiQuantum) | Photonic — fusion-based (DV) | — | — | — | — | — | 0.0002 (Feb 2025) | — | — |
+| AWS Ocelot (AWS Center for Quantum Computing) | Superconducting bosonic (cat / GKP) | 1.44 µs | 1 ms (Feb 2025; ×3.9e-02) | 27 µs (Feb 2025; ×7.9e-04) | — | — | — | — | — |
+| Academia Sinica 20-qubit superconducting quantum computer (Academia Sinica) | Superconducting transmon | 651 ns | 530 µs (Jan 2026; ×7.8) | — | — | — | — | — | — |
+| Alice & Bob Boson 4 (Alice & Bob) | Superconducting bosonic (cat / GKP) | 1.44 µs | 430 s (May 2024; ×1.7e+04) | — | — | — | — | — | — |
+| Alice & Bob Helium 2 ("Galvanic Cat") (Alice & Bob) | Superconducting bosonic (cat / GKP) | 1.44 µs | 3.6e+03 s (Sep 2025; ×1.4e+05) | — | 26.5 ns (Sep 2025) | — | — | — | — |
+| Aqumen Seeker (Quantum Circuits Inc. (acquired by D-Wave, Jan 2026)) | Superconducting dual-rail erasure | 2.8 µs | 1 ms (2024; ×3.9e-02) | — | — | — | — | — | — |
+| IBM Quantum Heron r3 (ibm_pittsburgh) (IBM) | Superconducting transmon | 651 ns | — | 350 µs (2025; ×3.9) | — | — | 0.013 (Jul 2025) | — | — |
+| IBM Quantum Nighthawk r2 (IBM) | Superconducting transmon | 651 ns | — | 27 µs (Mar 2026; ×0.3) | — | — | — | — | — |
+| IQM Emerald (IQM Quantum Computers) | Superconducting transmon | 651 ns | — | — | — | 4 µs (Mar 2026) | 0.0006 (Aug 2025) | reaction ×6.3e-02 | faster |
+| Nord Quantique single-mode GKP (Nord Quantique) | Superconducting bosonic (cat / GKP) | 1.44 µs | 360 µs (Jul 2026; ×1.4e-02) | 640 µs (Jul 2026; ×1.9e-02) | — | — | 0.0007 (Jul 2026) | — | — |
+| OQC GENESIS (Oxford Quantum Circuits) | Superconducting dual-rail erasure | 2.8 µs | 1 ms (Jun 2025; ×3.9e-02) | — | — | — | — | — | — |
+| Origin Wukong (3rd gen) (Origin Quantum) | Superconducting transmon | 651 ns | 15 µs (2024; ×0.2) | 2.2 µs (2024; ×2.5e-02) | — | — | — | — | — |
+| QpiAI Kaveri (QpiAI) | Superconducting transmon | 651 ns | 100 µs (Feb 2026; ×1.5) | — | — | — | — | — | — |
+| Rigetti Ankaa-2 (Rigetti Computing) | Superconducting transmon | 651 ns | — | — | — | 9.6 µs (Jun 2026) | — | reaction ×0.2 | faster |
+| SUSTech biased-erasure cavity qubit (Southern University of Science and Technology) | Superconducting dual-rail erasure | 2.8 µs | 6.2 ms (Jan 2026; ×0.2) | 3.1 ms (Jan 2026; ×9.1e-02) | — | — | — | — | — |
+| Sycamore (Google Quantum AI) | Superconducting transmon | 651 ns | — | — | 25 ns (Oct 2019) | — | — | 1Q ×1.0 | on path |
+| Tianyan-287 (China Telecom Quantum Group / QuantumCTek / CAS) | Superconducting transmon | 651 ns | — | — | — | — | 0.013 (Dec 2025) | — | — |
+| Toshiba double-transmon coupler (Toshiba + RIKEN RQC + University of Tokyo) | Superconducting transmon | 651 ns | 230 µs (Nov 2024; ×3.4) | 360 µs (Nov 2024; ×4.0) | — | — | — | — | — |
+| Willow (Google Quantum AI) | Superconducting transmon | 651 ns | 68 µs (Dec 2024; ×1.0) | 89 µs (Dec 2024; ×1.0) | 25 ns (Dec 2024) | — | 0.008 (Dec 2024) | 1Q ×1.0 | on path |
+| Zhejiang University 125-qubit surface-code processor (Zhejiang University + CAEP) | Superconducting transmon | 651 ns | — | — | — | — | 0.025 (Jun 2026) | — | — |
+| Zuchongzhi 3.0 (USTC / Hefei National Laboratory) | Superconducting transmon | 651 ns | 72 µs (Mar 2025; ×1.1) | 58 µs (Mar 2025; ×0.7) | 28 ns (Mar 2025) | — | 0.0082 (Mar 2025) | 1Q ×1.1 | on path |
+| Zuchongzhi 3.2 (USTC / Hefei National Laboratory) | Superconducting transmon | 651 ns | — | — | — | — | 0.0095 (Dec 2025) | — | — |
+| 11-qubit donor processor (Silicon Quantum Computing) | Donor spins in silicon | 7.71 µs | — | 660 ms (Feb 2026; ×14.8) | — | — | — | — | — |
+| foundry 8-qubit array (Diraq) | Silicon / germanium quantum-dot spins | 8.51 µs | — | 1.31 ms (Jul 2026; ×0.7) | 2.4 µs (Jul 2026) | — | — | 1Q ×6.0 | slower |
+| Majorana 1 (and Majorana 2) (Microsoft) | Topological (Majorana) | — | 20 s (Jun 2026; ×0.9) | — | — | — | 0.01 (Feb 2025) | — | — |
+
+101 machines publish none of these numbers.
+
+**What the comparison shows.** 35 machines publish at least one of the seven numbers; only 7 of them publish a *clock* term the path can be checked against (1Q gate time or feed-forward latency), and 31 publish a coherence time. Verdicts per family, faster / on path / slower / no join: superconducting 2/3/0/16; ions 0/0/0/5; atoms 0/0/0/4; photonics 0/1/0/1; spins 0/0/1/1; topological 0/0/0/1. Coherence against the path's T₁ or T₂ (above ×1.25 / within / below ×0.8): superconducting 7/3/12; ions 0/0/3; atoms 1/1/1; spins 1/0/1; topological 0/1/0. The extremes are honest about what is being compared: the largest clock ratio is foundry 8-qubit array (Diraq) (1Q 2.4 µs against 400 ns on its path, ×6.0); the smallest is IQM Emerald (IQM Quantum Computers) (reaction 4 µs against 63 µs, ×6.3e-02); on coherence Alice & Bob Helium 2 ("Galvanic Cat") (Alice & Bob) sits at ×1.4e+05 of its path's T1 and Forte / Forte Enterprise (IonQ) at ×2.4e-04. A ratio of ×1.0 is often the path's own record seen from the machine side (Willow's T₁/T₂ and 25 ns gate, Aurora's 1 µs loop), not an independent confirmation. Nulls: no machine in the register publishes `t2q`, `t_meas` — so the two largest terms of the superconducting and spin rounds, the 2Q gate and the readout, cannot be checked against any machine; published records that did not join: 1 — Alice & Bob Helium 2 ("Galvanic Cat") (1Q) — because their path has no derived round (photonic, defect, topological, annealing) or no 1Q layer in its code (cat); the ratios are per gate layer (parts ÷ d₂, d₁), so a machine's single-gate time is compared with a single gate of its path, not with the layer sum.
+
 ---
 
 ## 8. Sources

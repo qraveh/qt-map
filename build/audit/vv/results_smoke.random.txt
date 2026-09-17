@@ -1,0 +1,1 @@
+random: done=20/20 new=20 disagreements=20 seconds=198.7 s/state=9.933

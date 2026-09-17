@@ -1,0 +1,13 @@
+# Brief — Playwright driver for the built Map page (SPEC step D.2; session C1, 16 Sep 2026)
+
+Budget 8 minutes. Working directory /home/claude/qt-map. Target: dist/Quantum-Technology-Map-2026.09.html (8.7 MB; never load it whole into your context — grep/slice it with Python; the map's JS and markup are inside it). You may also read build/map_js.py and build/build_html.py to learn ids, classes and state handling — you are the implementation-side half; the oracle is written separately and must stay independent of you. Playwright for Python is installed with Chromium (PLAYWRIGHT_BROWSERS_PATH is set; do not run `playwright install`).
+
+## Deliverable: build/audit/vv/driver.py
+A class `MapPage` (sync Playwright API) with:
+- `open(viewport=(1600, 1000), theme=None, lang=None)` — loads the file URL, waits for the map to render, records console errors continuously (`errors()` returns them).
+- Controls, each performing the same DOM action a user would (click the actual control; keyboard modifiers for multi-select): `set_lens(name)`, `select_value(value, multi=False)`, `clear_values()`, `toggle(edge_type, on: bool)` for requires/alternatives/conflicts, `isolate(path_id)`, `clear_isolate()`, `focus(node_id)` (click the station), `clear_focus()`, `reset()`, `zoom(percent)`, `fit_width()`, `fit_height()`, `set_theme(light|dark)`, `set_lang(en|ru)`, `set_viewport(w, h)`, `collapse_bar(bool)`.
+- Readers: `read()` → dict with `stations` (set of node ids currently lit/visible per the page's own lit class), `lines` (set of path ids drawn), `edges` (set of (u, v, type) drawn), `legend` (the glyph-legend keys and any counts shown), `path_card` (text of the path/selection card), `selection_summary` (the map bar's selection summary text), `bbox_overflow` (True if any map element lies outside the viewport at the current size), `table_rows()` for the §7.2 node table (visible rows in order, with the sort/filter state).
+- `state()` → the driver's own notion of the current control state in the oracle's format: `{"lens","values","toggles","isolate","focus"}`.
+- Document in `DRIVER.md` how "lit" is detected (class names / attributes) and every control's selector, so a reviewer can check the mapping.
+- `smoke.py`: opens the page, reads the default state, applies one action of each kind, prints the read() sizes after each, exits 0; run it and fix until it passes with 0 console errors.
+Keep every Playwright wait explicit (wait for the class change, not sleep). Reply (≤ 120 words): the lit detection rule, control coverage, smoke results, anything the page exposes that the brief did not anticipate.

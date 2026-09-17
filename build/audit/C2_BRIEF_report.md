@@ -1,0 +1,21 @@
+# C2 brief B — §7.12 "Machines as measured paths" (session C2, 17 Sep 2026)
+
+Budget: 10 minutes of work; report at the end (≤ 150 words). Working directory /home/claude/qt-map (branch c2-machines-2026-09-17). You own: `build/make_sections.py`, `report/report_EN.md`, `report/report_RU.md`, and `build/build.py` only if a hook is unavoidable. Do not touch `build/map_js.py`, `build/page_css.py`, `build/build_html.py`, `data/graph.json`, anything under `build/audit/`. Another agent edits the map UI in parallel.
+
+## How §7 is produced
+`build/make_sections.py::sec9(lang)` generates the §7 subsections (numbered 9.x internally, renumbered to 7.x by `splice`), spliced into `report/report_EN.md` / `report_RU.md` between markers (read `splice` to see them; the current last subsection is 7.11 "Standard records"). All numbers pass through `determinize()` (6 significant digits) — reuse it; the build must be byte-reproducible (run `python3 build/build.py` twice and compare `sha256sum dist/Quantum-Technology-Map-2026.09.html`).
+
+## Data
+- `data/machines.json` (136 machines; see its top-level keys: machines[] with id, name, org, family, map_path, status, layers{"1".."10": [{node, role, gap, evidence{verified,…}}]}, records[] {key, num, unit, text, scope, date, url}, evidence_counts) — built from the machines register by `build/machines_json.py`.
+- `data/graph.json` paths: `round` {total, parts{gates, transport, 1q, readout, reset, …}}, `react` {loop, floor}, `coh` {t1, t2, ops_per_coh}, `clock_derived` (log10 s), `clock_parts`, `clock_limiter` — the Map's derived clock per path (§7.4 explains it; read §7.4 and §7.11 in report_EN.md first so 7.12 uses the same vocabulary and does not repeat them).
+- `/home/claude/work/QT-Map/quantum-machines-2026.09/data/technology-machines.csv` (station → machines using it: node_id, layer, is_gap, n_primary, n_alternate, n_total, n_verified_cells, n_SC … n_ANNEAL).
+
+## Write, as `sec9` subsection 9.12 → "### 7.12 Machines as measured paths" (EN) / "### 7.12 Машины как измеренные пути" (RU)
+1. Two short paragraphs (EN, and a faithful RU translation in the register's own voice — look at §7.4's RU for tone): what a machine is on the Map (a path instance: one station per layer, primary or alternate, with a gap where the Map has no station), where the register lives (Quantum Machines Register, artifact https://claude.ai/artifact/Bfj8NrxCsx8PMdxUCBMBhV; the Technology × Machine page https://claude.ai/artifact/2EcsTbo9kjAHseEnBxzawp) and how the reader uses the Machine selector on the map (one more term in isolate ∩ focus ∩ lens).
+2. **Table A — the matrix, condensed**: one row per Map layer (10 rows): stations used by ≥ 1 machine / stations on the Map for that layer; the three most-used stations with their machine counts (primary); machines whose primary on that layer is a Map gap (count and the gap ids). Computed from machines.json.
+3. **Table B — machines vs. their path's derived clock**: for each machine that has records with keys among {t1, t2, t1q, t2q, t_meas, t_ff, spam} (only those present): machine · path · path `round.total` (s, from graph.json) · machine's t2q / t_meas / t1 as published (num + date) · the ratio machine value ÷ the path's corresponding `round.parts` entry (gates ↔ t2q, readout ↔ t_meas) shown as ×n with one decimal · a one-word verdict: "faster" (< 0.8), "on path" (0.8–1.25), "slower" (> 1.25), "—" when the part is null. Sort by family then machine name. Machines with no such records are counted in one line below the table ("N machines publish none of these numbers"), not listed.
+4. One closing paragraph on what the comparison shows (compute it: how many machines are on/faster/slower than their path per family; name the extreme cases) — findings, not adjectives; nulls are honest.
+5. Update the CHANGELOG entry that `build.py` writes if it enumerates sections (check `build/editions.py` / `build.py`); add "7.12" to any table of contents that lists §7 subsections in both report files.
+
+## Checks before you report
+`python3 build/build.py` twice → identical sha256; `git diff --stat`; the RU build reports "0 RU fallbacks"; grep both report files for "### 7.12". Report: the table sizes (rows), the verdict counts per family, three notable cases, and any record key or path part that did not join.

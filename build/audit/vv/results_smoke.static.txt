@@ -1,0 +1,1 @@
+static: done=6/6 new=6 disagreements=1 seconds=109.3 s/state=18.223

@@ -1,0 +1,36 @@
+SUITE single 25/194 disagreements=0
+SUITE single 50/194 disagreements=0
+SUITE single 75/194 disagreements=0
+SUITE single 100/194 disagreements=0
+SUITE single 125/194 disagreements=0
+SUITE single 150/194 disagreements=0
+SUITE single 175/194 disagreements=0
+SUITE single DONE 194/194 disagreements=0 seconds=168.4
+SUITE metamorphic 25/200 disagreements=0
+SUITE random 25/40 disagreements=12
+SUITE random DONE 40/40 disagreements=19 seconds=297.7
+SUITE metamorphic 50/200 disagreements=0
+SUITE metamorphic 75/200 disagreements=0
+SUITE metamorphic 100/200 disagreements=0
+SUITE metamorphic 125/200 disagreements=0
+SUITE metamorphic 150/200 disagreements=0
+SUITE metamorphic 175/200 disagreements=0
+SUITE metamorphic 200/200 disagreements=0
+SUITE metamorphic DONE 200/200 disagreements=0 seconds=858.9
+SUITE machines 25/936 disagreements=0
+SUITE multi 25/1358 disagreements=0
+SUITE machines 50/936 disagreements=0
+SUITE multi 50/1358 disagreements=0
+SUITE machines 75/936 disagreements=0
+SUITE machines 100/936 disagreements=0
+SUITE multi 75/1358 disagreements=0
+SUITE machines 125/936 disagreements=0
+SUITE multi 100/1358 disagreements=0
+SUITE machines 150/936 disagreements=0
+SUITE machines 175/936 disagreements=0
+SUITE multi 125/1358 disagreements=0
+SUITE machines 200/936 disagreements=0
+SUITE multi 150/1358 disagreements=0
+SUITE machines 225/936 disagreements=0
+SUITE multi 175/1358 disagreements=0
+SUITE machines 250/936 disagreements=0

@@ -145,6 +145,25 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .ptab td.ln{white-space:nowrap;color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:10.5px;padding-right:10px}
 .ptab a.prim{font-weight:600}
 .ptab a.alt{color:var(--ink2)}
+/* machines on the Map (C2): a station the selected machine uses only as an alternate keeps a dashed outline while lit */
+.station.altuse rect.box{stroke-dasharray:4 3}
+#machine{max-width:min(100%,300px);min-width:0}
+.insp .mlinks{margin:-4px 0 8px;font-size:12.5px;display:flex;flex-wrap:wrap;gap:2px 6px}
+.insp .mtab td{min-width:0}
+.insp .mtab td.ln{white-space:normal;width:30%;max-width:104px;line-height:1.25}
+.insp .mtab .mc{margin:1px 0;overflow-wrap:anywhere}
+.insp .mtab .ms{font-size:11.5px;color:var(--ink2);line-height:1.3;margin:1px 0 3px}
+.insp .ev{text-decoration:none;font-size:13px}
+.insp .loc{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted);overflow-wrap:anywhere}
+.insp .vf{font-size:11px}
+.insp .mfoot{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;justify-content:space-between;margin:8px 0 0;font-size:12.5px;color:var(--ink2)}
+.insp ul.useby{list-style:none;margin:0;padding:0}
+.insp ul.useby li{display:flex;flex-wrap:wrap;gap:2px 6px;align-items:baseline;padding:2px 0;border-top:1px dashed var(--rule);font-size:12.5px;min-width:0;overflow-wrap:anywhere}
+.insp ul.useby li.fam{border-top:0;margin-top:5px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.insp ul.useby li.fam .sw{width:10px;height:3px;border-radius:2px;background:var(--c);display:inline-block}
+.insp ul.useby li.cur > a:first-child{font-weight:700;text-decoration:underline}
+.insp ul.useby li.alternate > a:first-child{color:var(--ink2)}
+.insp ul.useby a.reg{text-decoration:none;font-size:11px}
 .insp .keys .kr{margin:3px 0;font-size:12.5px;line-height:1.35}
 .insp .keys a{font-family:"JetBrains Mono",monospace;font-size:11px}
 .bkeys{margin:10px 0 0;font-size:12.5px;color:var(--ink2);display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
@@ -439,6 +458,10 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
     resize:none;min-width:0;min-height:0;padding:0 14px 18px;z-index:60;
     box-shadow:0 -10px 34px rgba(0,0,0,.24)}
   .insp{max-height:62dvh}
+  /* the sheet must not bury the map: it opens at under half the screen and the page gets room to scroll the map above it */
+  .insp{max-height:46vh;max-height:46dvh}
+  body.has-sheet{padding-bottom:48vh;padding-bottom:48dvh}
+  html{scroll-padding-top:60px}
   .insp.sheet-max{max-height:90vh}
   .insp.sheet-max{max-height:90dvh}
   .insp .grip{margin:0 -14px 8px;padding:8px 12px}

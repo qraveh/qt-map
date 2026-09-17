@@ -2,6 +2,10 @@ JS = r"""
 (function(){
 'use strict';
 const KEYREFS=window.__KEYREFS||{}; const G=window.__GRAPH, SHORT=window.__SHORT;
+// machines register (C2): slim copy embedded at build time — machines[], by_node{}, families[], urls{register,tech}
+const MACH=window.__MACH||{machines:[],by_node:{},families:['SC','ION','ATOM','PHOTON','SPIN','DEFECT','TOPO','ANNEAL'],urls:{register:'',tech:''}};
+const MBY=Object.fromEntries(MACH.machines.map(m=>[m.id,m]));
+const REG_URL=id=>(MACH.urls&&MACH.urls.register||'')+id, TECH_URL=id=>(MACH.urls&&MACH.urls.tech||'')+id;
 const app=document.getElementById('app');
 const lang=()=>app.getAttribute('data-lang')||'en';
 const T=(en,ru)=>lang()==='en'?en:ru;
@@ -104,7 +108,7 @@ st.on('click',(ev,d)=>{ev.stopPropagation(); unpinTip(); select(d.id===state.foc
 svg.on('click',()=>select(null));
 document.addEventListener('keydown',ev=>{if(ev.key==='Escape')select(null);});
 // ---------- state & rendering
-const state={focus:null,isolate:null,lens:'family',lensFilter:null,showConf:false,showRep:false,showReq:false,zoom:1};
+const state={focus:null,isolate:null,machine:null,lens:'family',lensFilter:null,showConf:false,showRep:false,showReq:false,zoom:1};
 // zoom scales the *rendered* SVG only; the viewBox and every node coordinate stay in map units,
 // so anything that scrolls the wrapper to a node must multiply that node's coordinates by state.zoom.
 function scrollToNode(m){ const z=state.zoom||1; wrap.scrollTo({left:Math.max(0,m.x*z-200),top:Math.max(0,m.y*z-200),behavior:'smooth'}); }
@@ -143,6 +147,7 @@ const MARKC={offd:'#EB6834',hub:'#2A78D6',empty:'#9AA3AD'}, MARKN={offd:['off-di
 function marksOf(n){ const m=[]; if(n.offdiag&&n.offdiag.length)m.push('offd'); if(n.hub)m.push('hub'); if(n.status==='X')m.push('empty'); return m.length?m:['none']; }
 function catLabelSafe(k,v){ try{ if(k==='family')return T(...FAMN[v]); if(k==='aff')return vt('AFF',Number(v)); if(k==='time')return v==='none'?'—':TBINS[Number(v)][1]; return catLabel(k,v);}catch(e){return String(v);} }
 function catLabel(k,v){ if(k==='marks')return T(...MARKN[v]); if(k==='destr'||k==='mid')return T(...YESNO[v]); return vt(VTAB[k],v); }
+function lensValues(n,k){ if(k==='f')return (n.f&&n.f.length)?n.f:['none']; if(k==='marks')return marksOf(n); if(k==='family')return n._fams; return [lensValue(n,k)]; }   // every value a station carries for a lens (f and marks are lists)
 function lensValue(n,k){ if(k==='marks')return marksOf(n)[0]; if(k==='mech')return n.c?n.c.mech:'none'; if(k==='d')return n.d; if(k==='mod')return n.e.mod; if(k==='place')return n.e.place; if(k==='f')return n.f[0]||'none'; if(k==='g')return n.g; if(k==='status')return n.status;
   if(k==='det')return n.b.det||'na'; if(k==='destr')return n.c?(n.c.destr?'yes':'no'):'none'; if(k==='mid')return n.c?(n.c.mid?'yes':'no'):'none'; if(k==='aff')return String(n.aff); if(k==='time'){const t=timeOf(n); return t==null?'none':timeBin(t);} return null;}
 function timeOf(n){ if(n.b.t!=null)return n.b.t; if(n.c&&n.c.t!=null)return n.c.t; return null; }
@@ -153,15 +158,16 @@ function css(v){ return getComputedStyle(document.documentElement).getPropertyVa
 let affScale=null, timeScale=null;
 function buildScales(){ affScale=d3.scaleLinear().domain([0,0.5,1]).range([css('--nat'),css('--mid'),css('--fab')]).interpolate(d3.interpolateRgb); timeScale=d3.scaleLinear().domain([-8.5,-6.5,-4.5,-2.5]).range([css('--lens4'),css('--lens3'),css('--lens2'),css('--lens1')]).interpolate(d3.interpolateRgb).clamp(true); }   // fast = the strong end of the ramp, slow = the pale end
 buildScales();
-function lensColor(n,k){ if(k==='family')return null; if(k==='marks'){ const m=marksOf(n)[0]; return MARKC[m]||null; } if(k==='aff')return affScale(n.aff); if(k==='time'){const t=timeOf(n); return t==null?null:timeScale(t);} const v=lensValue(n,k); if(v==null||v==='none')return null; const i=CATS[k].indexOf(v); return i<0?null:LENSPAL[i%LENSPAL.length]; }
+function lensColor(n,k){ if(k==='family')return null; if(k==='marks'){ const m=marksOf(n)[0]; return MARKC[m]||null; } if(k==='aff')return affScale(n.aff); if(k==='time'){const t=timeOf(n); return t==null?null:timeScale(t);} let v=lensValue(n,k); if(k==='f'&&state.lensFilter){ const hit=lensValues(n,k).find(x=>state.lensFilter.has(x)); if(hit)v=hit; }   // a multi-value station takes the colour of the value it is lit for
+  if(v==null||v==='none')return null; const i=CATS[k].indexOf(v); return i<0?null:LENSPAL[i%LENSPAL.length]; }
 function tint(c){ const x=d3.color(c); if(!x)return 'var(--surface)'; x.opacity=0.22; return x.formatRgb(); }
-function lensItems(k){ const count=v=>G.nodes.filter(n=>lensValue(n,k)===v).length;
+function lensItems(k){ const count=v=>G.nodes.filter(n=>lensValues(n,k).includes(v)).length;
   if(k==='family') return Object.keys(FAMC).map(f=>({c:FAMC[f],t:T(...FAMN[f]),v:f,n:G.nodes.filter(n=>n._fams.includes(f)).length}));
   if(k==='marks') return ['offd','hub','empty','none'].map(m=>({c:MARKC[m]||null,t:catLabel('marks',m),v:m,n:G.nodes.filter(n=>marksOf(n).includes(m)).length}));
   if(k==='aff') return [0,0.25,0.5,0.75,1].map(a=>({c:affScale(a),t:vt('AFF',a),v:String(a),n:count(String(a))}));
   if(k==='time') return TBINS.map((b,i)=>({c:timeScale(b[0]),t:b[1],v:String(i),n:count(String(i))})).concat([{c:null,t:T('no time (code, decoder, fab)','нет времени (код, декодер, производство)'),v:'none',n:count('none')}]);
   return CATS[k].map(v=>({c:v==='none'?null:LENSPAL[CATS[k].indexOf(v)%LENSPAL.length],t:catLabel(k,v),v,n:count(v)})); }
-function nodeMatchesFilter(n){ const k=state.lens, v=state.lensFilter; if(v==null)return true; if(k==='family')return n._fams.some(f=>v.has(f)); if(k==='marks')return marksOf(n).some(m=>v.has(m)); return v.has(lensValue(n,k)); }
+function nodeMatchesFilter(n){ const k=state.lens, v=state.lensFilter; if(v==null)return true; if(k==='family')return n._fams.some(f=>v.has(f)); if(k==='marks')return marksOf(n).some(m=>v.has(m)); return lensValues(n,k).some(x=>v.has(x)); }
 function filterHas(x){ return !!(state.lensFilter&&state.lensFilter.has(x)); }
 // plain click: keep only this value (click again to clear); Ctrl / ⌘ / Shift-click: add or remove this value
 function toggleFilter(v,multi){ if(v===''){ state.lensFilter=null; return; }
@@ -176,7 +182,7 @@ function applyLens(){ const k=state.lens; const leg=document.getElementById('len
   const items=lensItems(k).filter(it=>it.n>0);
   leg.innerHTML='<span class="lbl">'+T('lens legend · click a value to keep only those stations · Ctrl-click adds a value','легенда линзы · клик по значению оставляет только эти станции · Ctrl-клик добавляет значение')+'</span>'+items.map(it=>`<button type="button" class="k lk" data-lv="${it.v}" aria-pressed="${String(filterHas(it.v))}"><i class="sw" style="background:${it.c||'transparent'};border:1px solid ${it.c?it.c:'var(--mid)'}"></i>${esc(it.t)} <span class="cnt">${it.n}</span></button>`).join('')+(state.lensFilter!=null?`<button type="button" class="k lk clear" data-lv="">${T('clear filter','сбросить фильтр')} ✕</button>`:'');
   leg.querySelectorAll('[data-lv]').forEach(b=>{ b.addEventListener('click',ev=>{ toggleFilter(b.dataset.lv,ev.ctrlKey||ev.metaKey||ev.shiftKey); applyLens(); drawEdges(); dimming(); pcHighlight(state.focus); });
-    b.addEventListener('mouseenter',()=>{ const v=b.dataset.lv; if(v==='')return; st.classed('peek',d=>k==='family'?d._fams.includes(v):lensValue(d,k)===v); });
+    b.addEventListener('mouseenter',()=>{ const v=b.dataset.lv; if(v==='')return; st.classed('peek',d=>lensValues(d,k).includes(v)); });
     b.addEventListener('mouseleave',()=>{ st.classed('peek',false); }); });
   if(state.focus) inspect(NODE[state.focus]);
 }
@@ -187,9 +193,11 @@ function relabel(){ st.select('text.l1').text(d=>wrapLabel(SHORT[d.id]?SHORT[d.i
   gPaths.selectAll('circle.emptyslot').select('title').text(d=>T('empty slot: ','пустой слот: ')+d.p[lang()]+' — '+G.layers[d.L-1][lang()]);
   document.querySelectorAll('[data-chip-path]').forEach(b=>{b.querySelector('span.t').textContent=PATH[b.dataset.chipPath][lang()];});
   document.querySelectorAll('#lens option').forEach(o=>{o.textContent=LENSES[o.value][lang()];});
-  applyLens(); if(state.focus)inspect(NODE[state.focus]); else if(state.isolate)inspectPath(PATH[state.isolate]); else inspectEmpty(); renderPC();
+  document.querySelectorAll('#machine optgroup').forEach(o=>{ if(FAMN[o.dataset.fam])o.label=T(...FAMN[o.dataset.fam]); });
+  applyLens(); if(state.focus)inspect(NODE[state.focus]); else if(state.machine&&MBY[state.machine])inspectMachine(MBY[state.machine]); else if(state.isolate)inspectPath(PATH[state.isolate]); else inspectEmpty(); renderPC();
 }
-function select(id){ state.focus=id; st.classed('sel',d=>d.id===id); drawEdges(); dimming(); if(id){insp.hidden=false; inspect(NODE[id]);} else {insp.hidden=true; insp.innerHTML='';} pcHighlight(id); }
+function select(id){ state.focus=id; st.classed('sel',d=>d.id===id); drawEdges(); dimming(); if(id){insp.hidden=false; inspect(NODE[id]);} else if(state.machine&&MBY[state.machine]){ inspectMachine(MBY[state.machine]); } else {insp.hidden=true; insp.innerHTML='';} pcHighlight(id); sheetRoom(); }
+function sheetRoom(){ try{ document.body.classList.toggle('has-sheet', !insp.hidden && sheetMode()); }catch(e){} }   // room to scroll the map above the bottom sheet (≤ 1024 px)
 function edgeOn(e){ return (e.type==='conflicts'&&state.showConf)||(e.type==='replaces'&&state.showRep)||(e.type==='requires'&&state.showReq); }
 // neighbours through the relation types currently toggled on — the toggles decide which relations exist on the map at all
 function neighbours(id){ const s=new Set([id]); G.edges.forEach(e=>{ if(!edgeOn(e))return; if(e.src===id)s.add(e.dst); if(e.dst===id)s.add(e.src); }); return s; }
@@ -207,16 +215,27 @@ function litSets(){ const f=state.focus, iso=state.isolate;
     keepN=keepN?new Set([...keepN].filter(n=>pm.has(n))):pm; }
   if(state.lensFilter!=null){ const lf=new Set(G.nodes.filter(nodeMatchesFilter).map(n=>n.id)); keepN=keepN?new Set([...keepN].filter(x=>lf.has(x))):lf;
     if(state.lens==='family'){ const fp=new Set(G.paths.filter(p=>state.lensFilter.has(p.family)).map(p=>p.id)); keepP=keepP?new Set([...keepP].filter(p=>fp.has(p))):fp; } }
+  // machine (register): one more term of the same intersection — its real stations on every layer (primary and alternate) and its own path line
+  const mm=state.machine&&MBY[state.machine]; if(mm){ const ms=machNodes(mm).all; keepN=keepN?new Set([...keepN].filter(x=>ms.has(x))):new Set(ms);
+    const mp=new Set([mm.path]); keepP=keepP?new Set([...keepP].filter(p=>mp.has(p))):mp; }
   if(f&&keepN)keepN.add(f);
   return {keepN:keepN,keepP:keepP}; }
+// the machine's stations: all real (non-gap) nodes across the ten layers; alt = used only as an alternate
+function machNodes(m){ if(m._nodes)return m._nodes; const all=new Set(), pr=new Set(), al=new Set();
+  Object.values(m.layers||{}).forEach(cells=>cells.forEach(c=>{ if(!NODE[c[0]])return; all.add(c[0]); (c[1]==='alternate'?al:pr).add(c[0]); }));
+  m._nodes={all:all,alt:new Set([...al].filter(x=>!pr.has(x)))}; return m._nodes; }
+function machCell(m,id){ const n=NODE[id]; if(!n)return null; return ((m.layers||{})[String(n.layer)]||[]).find(c=>c[0]===id)||null; }
 function dimming(){ const f=state.focus, iso=state.isolate; const L=litSets(), keepN=L.keepN, keepP=L.keepP;
-  st.classed('dim',d=>keepN?!keepN.has(d.id):false); st.classed('member',d=>iso?!!(PATH[iso].slots&&Object.values(PATH[iso].slots).flat().includes(d.id)):false);
+  st.classed('dim',d=>keepN?!keepN.has(d.id):false); const mm=state.machine&&MBY[state.machine], ma=mm?machNodes(mm).alt:null;
+  st.classed('altuse',d=>!!(ma&&ma.has(d.id)&&(!keepN||keepN.has(d.id))));   // used by the machine only as an alternate — dashed while lit
+  st.classed('member',d=>iso?!!(PATH[iso].slots&&Object.values(PATH[iso].slots).flat().includes(d.id)):false);
   const lf=state.lensFilter!=null;   // a lens filter keeps stations, not lines: every line goes quiet unless a path is isolated or a station focused
   svg.classed('iso',!!iso);
   pathSel.classed('dim',d=>keepP?!keepP.has(d.id):lf); pathHit.classed('dim',d=>keepP?!keepP.has(d.id):lf);
   gAlt.selectAll('path').classed('dim',d=>keepP?!keepP.has(d.p.id):lf);
   gPaths.selectAll('circle.emptyslot').attr('opacity',d=>keepP?(keepP.has(d.p.id)?1:.08):(lf?.08:1));
   if(window.__barSummary)window.__barSummary();
+  sheetRoom();
 }
 function edgePath(a,b){ const dx=b.cx-a.cx; if(Math.abs(dx)<1){ const x=a.cx+NW/2; return `M${a.cx+NW/2-2},${a.cy} C${x+22},${a.cy} ${x+22},${b.cy} ${b.cx+NW/2-2},${b.cy}`; }
   const sx=dx>0?a.cx+NW/2:a.cx-NW/2, tx=dx>0?b.cx-NW/2:b.cx+NW/2; const mx=(sx+tx)/2; return `M${sx},${a.cy} C${mx},${a.cy} ${mx},${b.cy} ${tx},${b.cy}`; }
@@ -281,7 +300,37 @@ function inspectPath(p){ const L=lang(); insp.hidden=false;
   insp.querySelectorAll('[data-goto]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); select(a.dataset.goto); const m=NODE[a.dataset.goto]; scrollToNode(m);}));
   insp.querySelector('[data-close]').addEventListener('click',()=>{state.isolate=null; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false')); inspectEmpty(); drawEdges(); dimming();}); wireCard();
 }
-function inspectEmpty(){ insp.hidden=true; insp.innerHTML=''; }
+function inspectEmpty(){ insp.hidden=true; insp.innerHTML=''; sheetRoom(); }
+// ---------- machines (register): evidence glyphs, the machine card, the "Used by" block
+const EVG=[[/figure/,'▣'],[/whitepaper/,'▥'],[/paper/,'▤'],[/vendor/,'▦'],[/datasheet/,'▧'],[/press/,'▨']];
+function evGlyph(t){ t=String(t||''); for(const [re,g] of EVG)if(re.test(t))return g; return '◌'; }
+// the glyph is the link to the evidence (title = its type), the locator follows in small type, then ✅ verified / 🔎 not yet
+function evHTML(c){ const g=evGlyph(c[3]); const a=c[4]?`<a class="ev" href="${esc(c[4])}" target="_blank" rel="noreferrer" title="${esc(c[3]||'')}">${g}</a>`:`<span class="ev" title="${esc(c[3]||'')}">${g}</span>`;
+  return a+(c[5]?` <span class="loc">${esc(c[5])}</span>`:'')+` <span class="vf" title="${c[6]?T('verified','проверено'):T('not verified','не проверено')}">${c[6]?'✅':'🔎'}</span>`; }
+function machLabel(m){ return m.name+' · '+m.org; }
+function inspectMachine(m){ const L=lang(); insp.hidden=false; const gaps=m.gaps||{};
+  const rows=G.layers.map(l=>{ const k=String(l.n); const cells=(m.layers||{})[k]||[], gs=gaps[k]||[];
+    const cellHTML=cells.map(c=>{ const n=NODE[c[0]]; const name=n?`<a href="#" data-goto="${c[0]}" class="${c[1]==='alternate'?'alt':'prim'}">${esc(n[L])}</a>`:esc(c[0]);
+      return `<div class="mc">${name} <span class="empty">· ${c[1]==='alternate'?T('alternate','альтернатива'):T('primary','основная')}</span> ${evHTML(c)}${c[2]?`<div class="ms">${lk(c[2])}</div>`:''}</div>`; }).join('');
+    const gapHTML=gs.map(g=>`<div class="mc empty">— (${T('Map gap','пробел Карты')}: ${esc(g)})</div>`).join('');
+    return `<tr><td class="ln">${l.n} ${esc(l[L])}</td><td>${cellHTML+gapHTML||`<span class="empty">—</span>`}</td></tr>`; }).join('');
+  const ev=m.ev||[0,0]; const q=(m.q!=null&&m.q!=='')?`${m.q} ${T('physical qubits','физических кубитов')}`:T('qubits not published','число кубитов не опубликовано');
+  insp.innerHTML=`${gripHTML()}<h3><i class="sw" style="--c:${FAMC[m.family]||'var(--mid)'}"></i> ${esc(m.name)}</h3><div class="meta">${esc(m.org)} · ${T(...(FAMN[m.family]||[m.family,m.family]))} · ${esc(m.status)}${m.status_date?' ('+esc(m.status_date)+')':''} · ${q}</div>
+  <div class="mlinks"><a href="${REG_URL(m.id)}" target="_blank" rel="noreferrer">↗ ${T('register card','карточка реестра')}</a> <span class="empty">· ${T('path','путь')}: ${PATH[m.path]?esc(PATH[m.path][L]):esc(m.path)}</span></div>
+  <div class="space"><h4>${T('Stations by layer — the machine\'s cell per layer','Станции по слоям — ячейка машины на каждом слое')}</h4><table class="ptab mtab">${rows}</table>
+   <div class="empty" style="margin-top:4px">${T('lit on the map: these stations and the machine\'s path line; dashed outline = used only as an alternate','подсвечено на карте: эти станции и линия пути машины; пунктирная рамка = только как альтернатива')}</div></div>
+  <div class="mfoot"><span>${T('evidence','источники')}: ✅ ${ev[0]} / ${ev[1]}</span> <button type="button" class="chip" data-mclose="1">${T('clear machine','снять машину')} ✕</button></div>`;
+  insp.querySelectorAll('[data-goto]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); select(a.dataset.goto); const n=NODE[a.dataset.goto]; if(n)scrollToNode(n);}));
+  insp.querySelectorAll('[data-close],[data-mclose]').forEach(b=>b.addEventListener('click',ev=>{ev.stopPropagation(); setMachine(null);})); wireCard(); sheetRoom();
+}
+// "Used by" — the machines whose register cell on this station's layer is this station (primary first, then alternate, grouped by family)
+function usedByHTML(n){ const L=lang(); const ub=MACH.by_node[n.id]||{primary:[],alternate:[]}; const P=(ub.primary||[]).filter(id=>MBY[id]), A=(ub.alternate||[]).filter(id=>MBY[id]&&!P.includes(id));
+  const N=P.length+A.length; const head=N?`${T('Used by','Используют')} ${N} ${T(N===1?'machine':'machines','машин')} (${P.length} ${T('primary','основная')} · ${A.length} ${T('alternate','альтернатива')})`:T('Used by no registered machine','Не используется ни одной зарегистрированной машиной');
+  if(!N)return `<div class="space useby"><h4>${head}</h4></div>`;
+  const li=(id,role)=>{ const m=MBY[id]; const c=machCell(m,n.id); return `<li class="${role}${state.machine===id?' cur':''}"><a href="#" data-mach="${id}" title="${esc(machLabel(m))}">${esc(m.name)}</a> <span class="empty">${esc(m.org)}</span> <a class="reg" href="${REG_URL(id)}" target="_blank" rel="noreferrer" title="${T('register card','карточка реестра')}">↗</a>${c?' '+evHTML(c):''}${role==='alternate'?` <span class="empty">(${T('alternate','альтернатива')})</span>`:''}</li>`; };
+  const fams=MACH.families||Object.keys(FAMC); const groups=fams.map(f=>{ const ps=P.filter(id=>MBY[id].family===f), as=A.filter(id=>MBY[id].family===f); if(!ps.length&&!as.length)return '';
+    return `<li class="fam"><i class="sw" style="--c:${FAMC[f]||'var(--mid)'}"></i>${T(...(FAMN[f]||[f,f]))} <span class="empty">${ps.length+as.length}</span></li>`+ps.map(id=>li(id,'primary')).join('')+as.map(id=>li(id,'alternate')).join(''); }).join('');
+  return `<div class="space useby"><h4>${head}</h4><ul class="useby">${groups}</ul><div class="empty" style="margin-top:4px">${T('click a machine to light its stations on the map · ↗ its register card','клик по машине подсвечивает её станции на карте · ↗ карточка реестра')}</div></div>`; }
 function inspect(n){ const L=lang(); const c=n.c; const rows=[[T('(a) carrier affinity','(a) сродство носителя'),vt('AFF',n.aff),'aff'],
   [T('(b) time · entangling','(b) время · перепутывание'),(n.b.t!=null?fmtT(n.b.t):'—')+(n.b.det!=='na'?' · '+vt('DET',n.b.det):''),'b'],
   [T('(c) readout','(c) считывание'),c?`${vt('MECH',c.mech)} · ${fmtT(c.t)} · ${c.destr?T('destructive','разрушающее'):T('non-destructive','неразрушающее')} · ${c.mid?'mid-circuit':T('no mid-circuit','без mid-circuit')}`:'—','c'],
@@ -305,8 +354,10 @@ function inspect(n){ const L=lang(); const c=n.c; const rows=[[T('(a) carrier af
    ${reqIn.length?`<div><b>${T('provides for','обеспечивает')}:</b> ${reqIn.map(e=>link(e.src)).join(', ')}</div>`:''}
    ${rep.length?`<div><b>${T('alternatives','альтернативы')}:</b> ${rep.map(e=>link(other(e))).join(', ')}</div>`:''}
    ${con.length?`<div><b style="color:var(--crit)">${T('conflicts with','конфликтует с')}:</b></div>`+con.map(e=>`<div class="conf"><div>${link(other(e))} <span class="cst ${e.status}">${esc(vt('CONSTAT',e.status))}</span></div><div class="cm">${lk(e[L])}</div><div class="cm"><span class="tk">${T('price','цена')}</span> ${lk(e.price?e.price[L]:'')}</div><div class="cm"><span class="tk">${T('mitigation','снятие')}</span> ${lk(e.mitig?e.mitig[L]:'')}${e.url?' · <a href="'+e.url+'" target="_blank" rel="noopener">'+e.date+'</a>':''}</div></div>`).join(''):''}
-   ${(reqOut.length||reqIn.length||rep.length||con.length)?`<div class="empty" style="margin-top:4px">° ${T('one-of dependency','зависимость «одно из»')}</div>`:`<p class="empty">—</p>`}</div>`;
+   ${(reqOut.length||reqIn.length||rep.length||con.length)?`<div class="empty" style="margin-top:4px">° ${T('one-of dependency','зависимость «одно из»')}</div>`:`<p class="empty">—</p>`}</div>
+  ${usedByHTML(n)}`;
   insp.querySelectorAll('[data-goto]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); select(a.dataset.goto); const m=NODE[a.dataset.goto]; scrollToNode(m);}));
+  insp.querySelectorAll('[data-mach]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); setMachine(a.dataset.mach===state.machine?null:a.dataset.mach);}));
   insp.querySelector('[data-close]').addEventListener('click',()=>select(null)); wireCard();
 }
 pathHit.on('mousemove',(ev,p)=>{ if(tipPinned)return; pathSel.classed('hov',d=>d.id===p.id); tip.style.display='block'; tip.classList.remove('wide'); tip.innerHTML=`<i class="sw" style="background:${FAMC[p.family]}"></i><b>${esc(p[lang()])}</b> · ${T('click to isolate this path','клик — изолировать этот путь')}`; placeTip(ev); })
@@ -319,15 +370,26 @@ document.querySelectorAll('#mapbar [data-goto]').forEach(a=>a.addEventListener('
 // ---------- controls
 const bar=document.getElementById('mapbar');
 const chipsWrap=document.getElementById('pathchips');
-function isolatePath(pid){ state.isolate=state.isolate===pid?null:pid; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.chipPath===state.isolate))); if(state.isolate){ state.focus=null; st.classed('sel',false); inspectPath(PATH[pid]); pcHighlight(null);} else if(!state.focus){ inspectEmpty(); } drawEdges(); dimming(); }
+function isolatePath(pid){ state.isolate=state.isolate===pid?null:pid; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.chipPath===state.isolate))); if(state.isolate){ if(!state.focus){ inspectPath(PATH[pid]); pcHighlight(null); } } else if(!state.focus){ inspectEmpty(); } drawEdges(); dimming(); }   // a focused station stays focused: the three terms narrow each other
 G.paths.forEach(p=>{const b=document.createElement('button'); b.className='chip'; b.dataset.chipPath=p.id; b.setAttribute('aria-pressed','false'); b.innerHTML=`<i class="sw" style="--c:${FAMC[p.family]}"></i><span class="t"></span>`; b.addEventListener('click',()=>isolatePath(p.id)); chipsWrap.appendChild(b);});
 if(window.__placeZoom)window.__placeZoom();   // the zoom window sits at the end of the paths row (desktop) — chips exist now
 const lensSel=document.getElementById('lens'); Object.keys(LENSES).forEach(k=>{const o=document.createElement('option'); o.value=k; lensSel.appendChild(o);}); lensSel.addEventListener('change',()=>{state.lens=lensSel.value; state.lensFilter=null; applyLens(); drawEdges(); dimming();});
+// machine selector: one optgroup per family (register order), options "name · org" by name; the machine is one more term of the lit set
+const machSel=document.getElementById('machine');
+if(machSel){ (MACH.families||[]).forEach(f=>{ const ms=MACH.machines.filter(m=>m.family===f).sort((a,b)=>a.name.localeCompare(b.name)||a.org.localeCompare(b.org)); if(!ms.length)return;
+    const og=document.createElement('optgroup'); og.dataset.fam=f; og.label=T(...(FAMN[f]||[f,f])); ms.forEach(m=>{ const o=document.createElement('option'); o.value=m.id; o.textContent=machLabel(m); og.appendChild(o); }); machSel.appendChild(og); });
+  machSel.addEventListener('change',()=>setMachine(machSel.value||null)); }
+function setMachine(id){ state.machine=(id&&MBY[id])?id:null; if(machSel&&machSel.value!==(state.machine||''))machSel.value=state.machine||'';
+  drawEdges(); dimming();
+  if(state.focus)inspect(NODE[state.focus]);                       // a focused station keeps its card; the machine stays a term of the lit set
+  else if(state.machine)inspectMachine(MBY[state.machine]);
+  else if(state.isolate)inspectPath(PATH[state.isolate]); else inspectEmpty(); }
+window.__selectMachine=id=>{ setMachine(id||null); return state.machine; };
 document.getElementById('tg-conf').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showConf=!state.showConf; ev.currentTarget.setAttribute('aria-pressed',String(state.showConf)); drawEdges(); dimming();});
 document.getElementById('tg-rep').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showRep=!state.showRep; ev.currentTarget.setAttribute('aria-pressed',String(state.showRep)); drawEdges(); dimming();});
 document.getElementById('tg-req').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showReq=!state.showReq; ev.currentTarget.setAttribute('aria-pressed',String(state.showReq)); drawEdges(); dimming();});
 // reset map: the default view — every path, the family lens with no value kept, no edges, nothing isolated or focused (zoom and the bar's collapsed state are view settings and stay)
-document.getElementById('tg-reset').addEventListener('click',()=>{state.isolate=null; state.showConf=state.showRep=state.showReq=false; ['tg-conf','tg-rep','tg-req'].forEach(i=>document.getElementById(i).setAttribute('aria-pressed','false')); chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false'));
+document.getElementById('tg-reset').addEventListener('click',()=>{state.isolate=null; state.machine=null; if(machSel)machSel.value=''; st.classed('altuse',false); state.showConf=state.showRep=state.showReq=false; ['tg-conf','tg-rep','tg-req'].forEach(i=>document.getElementById(i).setAttribute('aria-pressed','false')); chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false'));
   state.lens='family'; state.lensFilter=null; lensSel.value='family'; applyLens(); select(null);});
 // ---------- zoom: rendered width/height only, viewBox untouched (so the map stays crisp and text stays text)
 const ZSTEPS=[0.5,0.6,0.7,0.85,1,1.25,1.5,2];   // the − / + buttons walk these
@@ -388,6 +450,7 @@ function zoomStep(d){ let i=0; for(let k=1;k<ZSTEPS.length;k++){ if(Math.abs(ZST
 // collapsible map bar: one line with a summary of the current selection and the zoom window
 (function(){ const bar=document.getElementById('mapbar'), tog=document.getElementById('bartog'), sum=document.getElementById('barsum'); if(!bar||!tog||!sum)return; const KEY='qmap.barcollapsed';
   function summary(){ const L=lang(); const parts=[];
+    if(state.machine&&MBY[state.machine])parts.push(T('machine','машина')+': <b>'+esc(MBY[state.machine].name)+'</b>');
     if(state.isolate){ const p=PATH[state.isolate]; parts.push(`<i class="sw" style="background:${FAMC[p.family]}"></i><b>${esc(p[L])}</b>`); } else parts.push(T('all paths','все пути'));
     if(state.lens&&state.lens!=='family'){ const lz=LENSES[state.lens]; parts.push(T('lens','линза')+': <b>'+esc(lz?(lz[L]||lz.en||state.lens):state.lens)+'</b>'+(state.lensFilter!=null?' = <b>'+esc([...state.lensFilter].map(v=>catLabelSafe(state.lens,v)).join(', '))+'</b>':'')); }
     const ed=[]; if(state.showReq)ed.push(T('requires','требует')); if(state.showRep)ed.push(T('alternatives','альтернативы')); if(state.showConf)ed.push(T('conflicts','конфликты')); if(ed.length)parts.push(T('edges','рёбра')+': '+ed.join(', '));

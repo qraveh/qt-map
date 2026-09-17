@@ -11,6 +11,31 @@ from labels import SHORT
 from editions import EDITIONS, editions_html, CONCEPT_DOI, REPO, SITE, STATUS
 import briefs as BR
 G=json.load(open(os.path.join(ROOT,'data','graph.json'),encoding='utf-8'))
+# ---------- machines on the Map (C2): a slim, deterministic copy of data/machines.json for the page (window.__MACH)
+MACH_PATH=os.path.join(ROOT,'data','machines.json')
+MACH_URLS={'register':'https://claude.ai/artifact/Bfj8NrxCsx8PMdxUCBMBhV#m-','tech':'https://claude.ai/artifact/2EcsTbo9kjAHseEnBxzawp#node-'}
+MACH_FAMILIES=['SC','ION','ATOM','PHOTON','SPIN','DEFECT','TOPO','ANNEAL']
+def mach_slim():
+    """Per machine: id, name, org, family, path, status, status_date, q, layers {L:[[node,role,summary,ev_type,ev_url,ev_locator,verified],…]}
+    (gap cells — node ids starting with ∅, not graph nodes — are left out of `layers`, listed by id in `gaps` {L:[id,…]} and counted in `ev`),
+    ev [verified,total]; plus by_node restricted to graph nodes. Field order fixed, so the same input gives identical bytes."""
+    if not os.path.exists(MACH_PATH): return {'machines':[],'by_node':{},'families':MACH_FAMILIES,'urls':MACH_URLS}
+    M=json.load(open(MACH_PATH,encoding='utf-8'))
+    out=[]
+    for m in M['machines']:
+        layers={}; gaps={}
+        for L in [str(i) for i in range(1,11)]:
+            cells=[]
+            for c in m.get('layers',{}).get(L,[]):
+                if str(c['node']).startswith('∅'): gaps.setdefault(L,[]).append(c['node']); continue
+                e=c.get('evidence') or {}
+                cells.append([c['node'],c.get('role',''),c.get('summary',''),e.get('type',''),e.get('url',''),e.get('locator',''),bool(e.get('verified'))])
+            if cells: layers[L]=cells
+        ec=m.get('evidence_counts') or {}
+        out.append({'id':m['id'],'name':m['name'],'org':m['org'],'family':m['family'],'path':m['map_path'],'status':m['status'],'status_date':m['status_date'],
+                    'q':m.get('physical_qubits_num'),'layers':layers,'gaps':gaps,'ev':[ec.get('verified',0),ec.get('total',0)]})
+    by_node={k:{'primary':list(v.get('primary',[])),'alternate':list(v.get('alternate',[]))} for k,v in M['by_node'].items() if not str(k).startswith('∅')}
+    return {'machines':out,'by_node':by_node,'families':MACH_FAMILIES,'urls':MACH_URLS}
 
 # ---------- math: $...$ → HTML
 GREEK={'Lambda':'Λ','lambda':'λ','mu':'µ','varepsilon':'ε','epsilon':'ε','kappa':'κ','alpha':'α','beta':'β','gamma':'γ','delta':'δ','Delta':'Δ','eta':'η','theta':'θ','sigma':'σ','pi':'π','tau':'τ','omega':'ω','Omega':'Ω','rho':'ρ','phi':'φ','chi':'χ','psi':'ψ','nu':'ν'}
@@ -123,6 +148,7 @@ def map_block(lang,gsec='8'):
 MAPUI='''<div class="mapbar" id="mapbar">
  <div class="grp chipsrow"><button type="button" class="bartog" id="bartog" aria-expanded="true" title="collapse / expand the controls"><span class="when-open">▾</span><span class="when-closed" hidden>▸</span></button><span class="lbl lang-en">paths</span><span class="lbl lang-ru">пути</span><span class="barsum" id="barsum" hidden></span><span id="pathchips" class="grp"></span></div>
  <div class="grp"><span class="lbl lang-en">lens</span><span class="lbl lang-ru">линза</span><select id="lens" class="sel" aria-label="colour lens"></select></div>
+ <div class="grp machgrp"><span class="lbl lang-en">machine</span><span class="lbl lang-ru">машина</span><select id="machine" class="sel" aria-label="machine — one more term of the lit set" title="light only the stations this machine uses (its register cell per layer); intersects with the isolated path, the focused station and the lens value"><option value="">—</option></select></div>
  <div class="grp"><span class="lbl lang-en">edges</span><span class="lbl lang-ru">рёбра</span>
   <button class="chip tog" id="tg-req" aria-pressed="false"><span class="lang-en">all requires</span><span class="lang-ru">все «требует»</span></button>
   <button class="chip tog" id="tg-rep" aria-pressed="false"><span class="lang-en">all alternatives</span><span class="lang-ru">все «альтернативы»</span></button>
@@ -348,7 +374,7 @@ def build(cfg=PUBLIC):
  </main>
 </div>
 </div>
-<script>window.__GRAPH={json.dumps(G,ensure_ascii=False)};window.__SHORT={json.dumps(SHORT,ensure_ascii=False)};window.__KEYREFS={json.dumps(BR.key_refs_all(B),ensure_ascii=False)};</script>
+<script>window.__GRAPH={json.dumps(G,ensure_ascii=False)};window.__MACH={json.dumps(mach_slim(),ensure_ascii=False)};window.__SHORT={json.dumps(SHORT,ensure_ascii=False)};window.__KEYREFS={json.dumps(BR.key_refs_all(B),ensure_ascii=False)};</script>
 <script>{D3}</script>
 <script>
 (function(){{const app=document.getElementById('app');
