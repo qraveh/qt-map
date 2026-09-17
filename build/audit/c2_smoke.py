@@ -64,7 +64,7 @@ def run(pw, w, h):
     r = read()
     check('default: 96 stations lit, 14 lines, no edges, no machine', len(r['lit']) == 96 and len(r['lines']) == 14 and not r['edges'] and r['machine'] == '', (len(r['lit']), len(r['lines'])))
     opt = p.evaluate("()=>[...document.querySelectorAll('#machine optgroup')].map(o=>[o.label,o.children.length])")
-    check('selector: optgroups in family order with 136 machines', [o[0] for o in opt] == ['superconducting', 'ions', 'atoms', 'photonics', 'spins', 'defects', 'topological', 'annealing'] and sum(o[1] for o in opt) == 136, opt)
+    check('selector: optgroups in family order with 136 machines', [o[0] for o in opt] == ['superconducting circuits', 'trapped ions', 'neutral atoms', 'photonics', 'semiconductor spins', 'defect spins', 'topological', 'quantum annealers'] and sum(o[1] for o in opt) == 136, opt)
 
     p.select_option('#machine', 'google-willow')
     r = read()
@@ -129,7 +129,7 @@ def run(pw, w, h):
     p.wait_for_function("document.getElementById('app').getAttribute('data-lang')==='ru'")
     vis = p.evaluate("()=>[...document.querySelectorAll('.machgrp .lbl')].filter(e=>getComputedStyle(e).display!=='none').map(e=>e.textContent)")
     og = p.evaluate("()=>[...document.querySelectorAll('#machine optgroup')].map(o=>o.label)")
-    check('RU: machine label and optgroups in Russian', vis == ['машина'] and og[0] == 'сверхпроводники', (vis, og[:2]))
+    check('RU: machine label and optgroups in Russian', vis == ['машина'] and og[0] == 'сверхпроводниковые схемы', (vis, og[:2]))
     opts = p.evaluate("()=>[...document.querySelectorAll('#lens option')].map(o=>o.textContent)")
     check('RU: lens select labels', opts == LENS_RU, opts)
     p.select_option('#machine', 'google-willow')
@@ -299,12 +299,12 @@ def sorting(pw, w, h):
         o = state(sb)
         cname = 'centrality' if lang == 'en' else 'центральность'
         check(f'brief index {lang}: 96 rows, only centrality sortable, grouped by layer at load', o and len(o['rows']) == 96 and o['sortable'] == [False, False, False, True, False] and o['rows'][0][0].startswith('1 '), o and (len(o['rows']), o['sortable']))
-        click(hdr(sb, cname)); a = state(sb)
-        va = [num(r[3]) for r in a['rows']]
-        check(f'brief index {lang}: centrality asc', va == sorted(va), va[:5])
         click(hdr(sb, cname)); d = state(sb)
         vd = [num(r[3]) for r in d['rows']]
-        check(f'brief index {lang}: centrality desc', vd == sorted(vd, reverse=True), vd[:5])
+        check(f'brief index {lang}: centrality desc on the first click (data-sort-first)', vd == sorted(vd, reverse=True), vd[:5])
+        click(hdr(sb, cname)); a = state(sb)
+        va = [num(r[3]) for r in a['rows']]
+        check(f'brief index {lang}: centrality asc on the second click', va == sorted(va), va[:5])
         click(p.locator(sb).locator('.tsreset').first); r = state(sb)
         check(f'brief index {lang}: ↺ restores the build order', r['rows'] == o['rows'], [x[1] for x in r['rows']][:4])
     over = p.evaluate("()=>({vp:document.documentElement.scrollWidth>document.documentElement.clientWidth+1, bars:[...document.querySelectorAll('.tblbar:not([hidden]),.tblzoom:not([hidden])')].filter(b=>b.offsetParent!==null&&(b.scrollWidth>b.clientWidth+1||b.getBoundingClientRect().right>document.documentElement.clientWidth+1)).length})")
@@ -339,27 +339,32 @@ def chapter8(pw, w, h):
       const idx=(arr,pre)=>arr.findIndex(x=>x.startsWith(pre));
       const tbls=q('#app .prose.lang-en h3').filter(h=>/^8\.[123] /.test(h.textContent)).map(h=>{ let e=h; while(e&&(e=e.nextElementSibling)){ if(e.matches('.tbl'))return {sort:e.getAttribute('data-sort'),btns:e.querySelectorAll('.sortbtn').length,reset:!!e.querySelector('.tsreset')}; } return null; });
       const verdicts=q('#app .prose.lang-en p').filter(p=>/Verdict:/.test(p.textContent)).length;
+      const ledger=q('#app .prose.lang-en h3').filter(h=>/^8\\.5 /.test(h.textContent)).map(h=>{ let e=h; while(e&&(e=e.nextElementSibling)){ if(e.matches('.tbl'))return e.querySelectorAll('tbody tr').length; if(e.matches('h3'))break; } return 0; })[0]||0;
       const verdictsRu=q('#app .prose.lang-ru p').filter(p=>/Вердикт:/.test(p.textContent)).length;
-      return {en8:idx(en,'8'), en9:idx(en,'9'), en7:idx(en,'7'), ru8:idx(ru,'8'), ru9:idx(ru,'9'), h3en:h3('en'), h3ru:h3('ru'), tocEn:toc('en'), tocRu:toc('ru'), tbls, verdicts, verdictsRu,
+      return {en8:idx(en,'8'), en9:idx(en,'9'), en7:idx(en,'7'), ru8:idx(ru,'8'), ru9:idx(ru,'9'), h3en:h3('en'), h3ru:h3('ru'), tocEn:toc('en'), tocRu:toc('ru'), tbls, verdicts, verdictsRu, ledger,
               srcEn:en[idx(en,'9')]||'', srcRu:ru[idx(ru,'9')]||'', macEn:en[idx(en,'8')]||''};
     }""")
     check('§8 follows §7 and precedes §9 (EN and RU)', r['en7'] >= 0 and r['en8'] == r['en7'] + 1 and r['en9'] == r['en8'] + 1 and r['ru8'] == r['en8'] and r['ru9'] == r['en9'], r)
-    check('§8 is the machines chapter; §9 is Sources', r['macEn'].startswith('8Machines') and r['srcEn'].startswith('9Sources') and r['srcRu'].startswith('9Источники'), (r['macEn'][:30], r['srcEn'][:20], r['srcRu'][:20]))
-    check('six subsections 8.1–8.6 in both languages', [x[:3] for x in r['h3en']] == ['8.1', '8.2', '8.3', '8.4', '8.5', '8.6'] and [x[:3] for x in r['h3ru']] == ['8.1', '8.2', '8.3', '8.4', '8.5', '8.6'], (r['h3en'], r['h3ru']))
-    check('TOC lists §8 with 8.1–8.6 (EN and RU)', r['tocEn'] == ['8', '8.1', '8.2', '8.3', '8.4', '8.5', '8.6'] and r['tocRu'] == r['tocEn'], (r['tocEn'], r['tocRu']))
+    check('§8 is the machines chapter; §9 is Sources', r['macEn'].startswith('8Quantum machines') and r['srcEn'].startswith('9Sources') and r['srcRu'].startswith('9Источники'), (r['macEn'][:30], r['srcEn'][:20], r['srcRu'][:20]))
+    SUBS = ['8.1', '8.2', '8.3', '8.4', '8.5', '8.6', '8.7']
+    check('seven subsections 8.1–8.7 in both languages', [x[:3] for x in r['h3en']] == SUBS and [x[:3] for x in r['h3ru']] == SUBS, (r['h3en'], r['h3ru']))
+    check('TOC lists §8 with 8.1–8.7 (EN and RU)', r['tocEn'] == ['8'] + SUBS and r['tocRu'] == r['tocEn'], (r['tocEn'], r['tocRu']))
     check('tables 8.1–8.3 tagged numeric, sortable columns present, ↺ present', len(r['tbls']) == 3 and all(x and x['sort'] == 'numeric' and x['btns'] >= 2 and x['reset'] for x in r['tbls']), r['tbls'])
     check('eight verdict lines in each language', r['verdicts'] == 8 and r['verdictsRu'] == 8, (r['verdicts'], r['verdictsRu']))
+    check('forecast ledger (Table 8.5) has 8 rows', r['ledger'] == 8, r['ledger'])
     # sort table 8.1 by "Machines" twice → descending; ↺ restores
     t = p.evaluate("""()=>{ const h=[...document.querySelectorAll('#app .prose.lang-en h3')].find(x=>x.textContent.startsWith('8.1 ')); let e=h; while(e&&(e=e.nextElementSibling)){ if(e.matches('.tbl')) { e.id=e.id||'smoke-t81'; return e.id; } } return ''; }""")
     sb = '#' + t
     orig = p.evaluate("id=>[...document.querySelector(id).querySelectorAll('tbody tr')].map(r=>r.cells[0].textContent.trim())", sb)
     p.locator(sb).locator('.sortbtn', has_text='Machines').first.click(); p.wait_for_timeout(80)
-    p.locator(sb).locator('.sortbtn', has_text='Machines').first.click(); p.wait_for_timeout(80)
+    p.locator(sb).locator('.sortbtn', has_text='Machines').first.click(); p.wait_for_timeout(80)   # numeric tables sort ascending first; only data-sort-first="desc" tables (the brief index) start descending
     vals = p.evaluate("id=>[...document.querySelector(id).querySelectorAll('tbody tr')].map(r=>parseInt(r.cells[1].textContent.replace(/,/g,''),10))", sb)
     check('table 8.1: Machines column descending after two clicks', vals == sorted(vals, reverse=True), vals)
     p.locator(sb).locator('.tsreset').first.click(); p.wait_for_timeout(80)
     back = p.evaluate("id=>[...document.querySelector(id).querySelectorAll('tbody tr')].map(r=>r.cells[0].textContent.trim())", sb)
     check('table 8.1: ↺ restores the build order', back == orig, back[:4])
+    disc = p.evaluate("()=>({en:!![...document.querySelectorAll('footer.colophon .lang-en p')].find(x=>x.textContent.startsWith('Disclosures.')), ru:!![...document.querySelectorAll('footer.colophon .lang-ru p')].find(x=>x.textContent.startsWith('Раскрытие.'))})")
+    check('Disclosures paragraph in the colophon (EN and RU)', disc['en'] and disc['ru'], disc)
     over = p.evaluate("()=>document.documentElement.scrollWidth>document.documentElement.clientWidth+1")
     check('nothing overflows the viewport', not over)
     errs = [e for e in errors if not ('fonts.g' in e and ('ERR_TUNNEL' in e or 'net::' in e)) and 'ERR_TUNNEL' not in e]

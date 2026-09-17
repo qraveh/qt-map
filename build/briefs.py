@@ -384,7 +384,7 @@ def index_table(briefs, lang, md2html):
                     b['id'], html.escape(m.get('layer', '')), b['id'], b['id'], b['id'],
                     inline_html(m.get('name', b['id']), md2html), b['score'],
                     inline_html(m.get('one_line', ''), md2html)))
-        return '<div class="tbl bidx" data-sort="centrality" data-default="build"><table><thead><tr>%s</tr></thead><tbody>%s</tbody></table></div>' % (
+        return '<div class="tbl bidx" data-sort="centrality" data-sort-first="desc" data-default="build"><table><thead><tr>%s</tr></thead><tbody>%s</tbody></table></div>' % (
             th, ''.join(rows))
     th = ''.join('<th>%s</th>' % h for h in IDX_HEAD[lang])
     rows = []

@@ -10,7 +10,7 @@ const app=document.getElementById('app');
 const lang=()=>app.getAttribute('data-lang')||'en';
 const T=(en,ru)=>lang()==='en'?en:ru;
 const FAMC={SC:'var(--sc)',ION:'var(--ion)',ATOM:'var(--atom)',PHOTON:'var(--photon)',SPIN:'var(--spin)',DEFECT:'var(--defect)',TOPO:'var(--topo)',ANNEAL:'var(--anneal)'};
-const FAMN={SC:['superconducting','сверхпроводники'],ION:['ions','ионы'],ATOM:['atoms','атомы'],PHOTON:['photonics','фотоника'],SPIN:['spins','спины'],DEFECT:['defects','дефекты'],TOPO:['topological','топологические'],ANNEAL:['annealing','отжиг']};
+const FAMN={SC:['superconducting circuits','сверхпроводниковые схемы'],ION:['trapped ions','ионы в ловушках'],ATOM:['neutral atoms','нейтральные атомы'],PHOTON:['photonics','фотоника'],SPIN:['semiconductor spins','полупроводниковые спины'],DEFECT:['defect spins','дефектные спины'],TOPO:['topological','топологические'],ANNEAL:['quantum annealers','квантовый отжиг']};   // full platform names (editor, 17 Sep: "neutral atoms", not "atoms")
 const NEUTRAL=new Set(['TOPO','ANNEAL']);
 const NODE=Object.fromEntries(G.nodes.map(n=>[n.id,n]));
 const PATH=Object.fromEntries(G.paths.map(p=>[p.id,p]));
@@ -664,7 +664,9 @@ try{ var __th=function(){ if(window.__mapTheme)window.__mapTheme(); };
       th.appendChild(b); btns.push(b);
       b.addEventListener('click',function(){
         if(cols[i]==='reset'){ restore(); return; }
-        var dir=state.col===i?(state.dir===1?-1:(state.dir===-1?0:1)):1;
+        // first click: ascending, or descending when the table asks for it (data-sort-first="desc": the brief index's centrality — editor, 17 Sep)
+        var first=w.getAttribute('data-sort-first')==='desc'?-1:1;
+        var dir=state.col===i?(state.dir===first?-first:(state.dir===-first?0:first)):first;
         if(dir===0) restore(); else sortBy(i,dir);
       });
     });

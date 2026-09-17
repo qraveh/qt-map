@@ -16,9 +16,7 @@ import json, os, re, statistics
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FAM_ORDER = ['SC', 'ION', 'ATOM', 'PHOTON', 'SPIN', 'DEFECT', 'TOPO', 'ANNEAL']
-FAMN = {'SC': ('superconducting', 'сверхпроводниковые'), 'ION': ('ions', 'ионы'), 'ATOM': ('atoms', 'атомы'),
-        'PHOTON': ('photonics', 'фотоника'), 'SPIN': ('spins', 'спины'), 'DEFECT': ('defects', 'дефекты'),
-        'TOPO': ('topological', 'топологические'), 'ANNEAL': ('annealers', 'отжиг')}
+FAMN = {'SC': ('superconducting circuits', 'сверхпроводниковые схемы'), 'ION': ('trapped ions', 'ионы в ловушках'), 'ATOM': ('neutral atoms', 'нейтральные атомы'), 'PHOTON': ('photonics', 'фотоника'), 'SPIN': ('semiconductor spins', 'полупроводниковые спины'), 'DEFECT': ('defect spins', 'дефектные спины'), 'TOPO': ('topological', 'топологические'), 'ANNEAL': ('quantum annealers', 'квантовый отжиг')}
 STAT_ORDER = ['DEPLOYED', 'DEMONSTRATED', 'ANNOUNCED', 'PLANNED', 'RETIRED', 'OTHER']
 STATN = {'DEPLOYED': ('deployed', 'в эксплуатации'), 'DEMONSTRATED': ('demonstrated', 'продемонстрирована'),
          'ANNOUNCED': ('announced', 'анонсирована'), 'PLANNED': ('planned', 'запланирована'),
@@ -127,9 +125,12 @@ def sec_machines(lang):
     src = M.get('source', {})
 
     # ---------- 8.1 the population
-    H("## 8. " + ("Machines — 136 attempts, and where the architecture is going" if en else "Машины — 136 попыток, и куда идёт архитектура").replace('136', str(N)))
+    H("## 8. " + (f"Quantum machines — {N} attempts, {len(PATHS)} architectures, and where they are going" if en else f"Квантовые машины — {N} попыток, {len(PATHS)} архитектур, и куда они идут"))
     o.append((f"The map's stations are what *can* be built; the machines register says what *has been* built, announced or planned, one row per machine, each joined to the map as a path instance (§7.12). This chapter reads the register as a population: how large it is, which stations it is built from, what idea justifies each attempt, and what the population's trends say about where the architecture is heading. Every count below is computed by the build from `data/machines.json` ({src.get('register','')}; evidence {src.get('evidence','')}); a claim is tested against the register, not asserted, and its evidence grade is carried along — the share of the cells behind it that a document was seen to support (✅) rather than a press page or an inference (🔎).\n\n" if en else
               f"Станции карты — это то, что *может* быть построено; реестр машин говорит, что *построено*, анонсировано или запланировано: по строке на машину, каждая соединена с картой как экземпляр пути (§7.12). Эта глава читает реестр как популяцию: насколько она велика, из каких станций собрана, какая идея оправдывает каждую попытку и что тренды популяции говорят о том, куда движется архитектура. Каждое число ниже вычислено сборкой из `data/machines.json` ({src.get('register','')}; свидетельства {src.get('evidence','')}); утверждение проверяется по реестру, а не постулируется, и его класс свидетельств указан рядом — доля ячеек за ним, для которых видели подтверждающий документ (✅), а не пресс-релиз или вывод (🔎).\n\n"))
+    ncells = sum(m['evidence_counts']['total'] for m in MS)
+    o.append((f"**Terms used in this chapter.** A *machine* is one row of the register: a named system an organisation has built, announced or planned. Its *family* is its qubit platform ({', '.join(t(L, FAMN[f]) for f in FAM_ORDER)}); its *architecture* is the map path it instantiates — one of the {len(PATHS)} paths of §7.3, i.e. the family plus the choice of encoding, gate and control that defines it (cat qubits and dual-rail erasure are architectures of the superconducting family). A *station* is a technology on the map (a node of the graph); an *evidence cell* is one machine × one layer of the stack — the station the machine uses there, with the document that shows it — so a machine has about a dozen cells and the register holds {ncells:,}. A cell is *documented* (✅) when a paper, whitepaper or figure was seen to show that station in that machine, and *press-level* (🔎) when only a press page or an inference supports it; the *evidence grade* of a count is the documented share of the cells it rests on — it says how much of a claim would survive if press claims were struck. A *device* is a machine whose status is deployed, demonstrated or retired and that is not flagged as a target or a component; a *gate-capable* device additionally runs an entangling gate (analog simulators, tweezer arrays without a gate and single-qubit testbeds are devices but not processors). A *cohort* is the year of the register's status date. *Integrated control* means the qubits are driven by electronics on the chip or inside the cryostat (on-chip microwave electrodes, cryo-CMOS, SFQ, flux DACs) rather than by room-temperature racks or free-space optics; *closed-loop decoding* means the error-correction decoder acts within the cycle. A *link station* is a non-gap entry in the interconnect layer — a demonstrated way of joining modules. A *roadmap verdict* is the register's feasibility check of a published roadmap against its target algorithm (FEASIBLE, SHORT with a deficit, or NOT EVALUABLE).\n\n" if en else
+              f"**Термины этой главы.** *Машина* — одна строка реестра: именованная система, которую организация построила, анонсировала или запланировала. Её *семейство* — кубитная платформа ({', '.join(t(L, FAMN[f]) for f in FAM_ORDER)}); её *архитектура* — путь карты, который она реализует: один из {len(PATHS)} путей §7.3, то есть семейство плюс выбор кодирования, гейта и управления, который его определяет (кошачьи кубиты и двухрельсовое стирание — архитектуры сверхпроводникового семейства). *Станция* — технология на карте (узел графа); *ячейка свидетельств* — одна машина × один слой стека: станция, которую машина там использует, вместе с документом, который это показывает; у машины около дюжины ячеек, в реестре их {ncells:,}. Ячейка *документирована* (✅), когда статья, whitepaper или рисунок были увидены показывающими эту станцию в этой машине, и *на уровне прессы* (🔎), когда её поддерживает только пресс-страница или вывод; *класс свидетельств* числа — документированная доля ячеек, на которых оно стоит: он говорит, какая часть утверждения уцелеет, если вычеркнуть заявления прессы. *Устройство* — машина со статусом «в эксплуатации», «продемонстрирована» или «выведена», не помеченная как цель или компонент; устройство *с гейтами* вдобавок выполняет перепутывающий гейт (аналоговые симуляторы, массивы пинцетов без гейта и однокубитные стенды — устройства, но не процессоры). *Когорта* — год даты статуса в реестре. *Интегрированное управление* — кубиты управляются электроникой на чипе или внутри криостата (микроволновые электроды на чипе, cryo-CMOS, SFQ, потоковые ЦАП), а не стойками при комнатной температуре или оптикой в свободном пространстве; *замкнутое декодирование* — декодер коррекции ошибок действует внутри такта. *Станция связи* — непустая запись в слое межсоединений: продемонстрированный способ соединить модули. *Вердикт дорожной карты* — проверка реестром опубликованной карты на осуществимость её целевого алгоритма (FEASIBLE, SHORT с дефицитом или NOT EVALUABLE).\n\n"))
     H("### 8.1 " + ("The population" if en else "Популяция"))
     nsc = {s: sum(1 for m in MS if m['sc'] == s) for s in STAT_ORDER}
     ncloud = sum(1 for m in MS if m['cloud']); nlab = sum(1 for m in MS if 'lab' in (m.get('access') or '').lower() or 'research' in (m.get('access') or '').lower())
@@ -142,20 +143,20 @@ def sec_machines(lang):
         if m['year']: yrs[m['year']] = yrs.get(m['year'], 0) + 1
     o.append((f"**{N} machines, {len(FAM_ORDER)} families, {len(PATHS)} paths.** {len(dev)} are devices — {nsc['DEPLOYED']} deployed, {nsc['DEMONSTRATED']} demonstrated, {nsc['RETIRED']} retired, less the rows flagged as a target or a component — and {N-len(dev)} are announcements, plans or targets. Access: {ncloud} reachable through a cloud service, {nprem} sold on-premises, {nlab} laboratory-only. By country of the operating organisation: " + ', '.join(f"{c} {n}" for c, n in topc) + f". By cohort (the year of the status date): " + ', '.join(f"{y} — {n}" for y, n in sorted(yrs.items())) + ".\n\n" if en else
               f"**{N} машин, {len(FAM_ORDER)} семейств, {len(PATHS)} путей.** {len(dev)} — устройства ({nsc['DEPLOYED']} в эксплуатации, {nsc['DEMONSTRATED']} продемонстрированы, {nsc['RETIRED']} выведены, за вычетом строк, помеченных как цель или компонент), {N-len(dev)} — анонсы, планы или цели. Доступ: {ncloud} доступны через облачный сервис, {nprem} проданы на площадку заказчика, {nlab} только в лаборатории. По стране организации-оператора: " + ', '.join(f"{c} {n}" for c, n in topc) + f". По когортам (год даты статуса): " + ', '.join(f"{y} — {n}" for y, n in sorted(yrs.items())) + ".\n\n"))
-    H("**" + ("Table 8.1 — families × status (machines); devices; cloud access; evidence grade" if en else "Таблица 8.1 — семейства × статус (машин); устройства; облачный доступ; класс свидетельств") + "**")
-    hdr = ("| Family | Machines | Deployed | Demonstrated | Announced | Planned | Retired | Other | Devices | Cloud | Cells ✅ / all | ✅ share |" if en else
-           "| Семейство | Машин | В эксплуатации | Продемонстрированы | Анонсированы | Запланированы | Выведены | Прочее | Устройства | Облако | Ячеек ✅ / всего | Доля ✅ |")
-    o.append(hdr + "\n|---|---|---|---|---|---|---|---|---|---|---|---|\n")
+    H("**" + ("Table 8.1 — families × status (machines); devices; cloud access; evidence cells and how many of them are documented" if en else "Таблица 8.1 — семейства × статус (машин); устройства; облачный доступ; ячейки свидетельств и сколько из них документировано") + "**")
+    hdr = ("| Family | Machines | Deployed | Demonstrated | Announced | Planned | Retired | Other | Devices | Cloud access | Evidence cells | Documented cells (✅) | Documented, % |" if en else
+           "| Семейство | Машин | В эксплуатации | Продемонстрированы | Анонсированы | Запланированы | Выведены | Прочее | Устройства | Облачный доступ | Ячеек свидетельств | Документировано (✅) | Документировано, % |")
+    o.append(hdr + "\n|---|---|---|---|---|---|---|---|---|---|---|---|---|\n")
     for f in FAM_ORDER:
         fm = byfam[f]
         if not fm: continue
         v = sum(m['evidence_counts']['verified'] for m in fm); a = sum(m['evidence_counts']['total'] for m in fm)
         c = {s: sum(1 for m in fm if m['sc'] == s) for s in STAT_ORDER}
-        o.append(f"| {t(L, FAMN[f])} | {len(fm)} | {c['DEPLOYED']} | {c['DEMONSTRATED']} | {c['ANNOUNCED']} | {c['PLANNED']} | {c['RETIRED']} | {c['OTHER']} | {sum(1 for m in fm if m['device'])} | {sum(1 for m in fm if m['cloud'])} | {v} / {a} | {pct(v, a)} |\n")
+        o.append(f"| {t(L, FAMN[f])} | {len(fm)} | {c['DEPLOYED']} | {c['DEMONSTRATED']} | {c['ANNOUNCED']} | {c['PLANNED']} | {c['RETIRED']} | {c['OTHER']} | {sum(1 for m in fm if m['device'])} | {sum(1 for m in fm if m['cloud'])} | {a} | {v} | {pct(v, a)} |\n")
     vt = sum(m['evidence_counts']['verified'] for m in MS); at = sum(m['evidence_counts']['total'] for m in MS)
-    o.append(f"| **{'all' if en else 'все'}** | {N} | {nsc['DEPLOYED']} | {nsc['DEMONSTRATED']} | {nsc['ANNOUNCED']} | {nsc['PLANNED']} | {nsc['RETIRED']} | {nsc['OTHER']} | {len(dev)} | {ncloud} | {vt} / {at} | {pct(vt, at)} |\n\n")
-    o.append((f"Reading the table: the superconducting family is the largest by far and also the only one with retirements; the photonic and spin families are small and mostly at the demonstration stage; the {nsc['OTHER']} rows in *other* are statuses the register could not reduce to one word (component testbeds, disputed reachability). The evidence grade differs by family because the families publish differently — architecture papers with device figures are the norm for the academic superconducting, ion and atom machines and the exception for commercial photonic and spin announcements.\n\n" if en else
-              f"Чтение таблицы: сверхпроводниковое семейство — самое большое и единственное с выведенными машинами; фотонное и спиновое семейства малы и в основном на стадии демонстрации; {nsc['OTHER']} строк *прочее* — статусы, которые реестр не свёл к одному слову (испытательные стенды компонентов, спорная достижимость). Класс свидетельств различается по семействам, потому что семейства публикуют по-разному: статьи об архитектуре с рисунками устройства — норма для академических сверхпроводниковых, ионных и атомных машин и исключение для коммерческих фотонных и спиновых анонсов.\n\n"))
+    o.append(f"| **{'all' if en else 'все'}** | {N} | {nsc['DEPLOYED']} | {nsc['DEMONSTRATED']} | {nsc['ANNOUNCED']} | {nsc['PLANNED']} | {nsc['RETIRED']} | {nsc['OTHER']} | {len(dev)} | {ncloud} | {at} | {vt} | {pct(vt, at)} |\n\n")
+    o.append((f"Reading the table: the superconducting family is the largest by far and also the only one with retirements; the photonic and spin families are small and mostly at the demonstration stage; the {nsc['OTHER']} rows in *other* are statuses the register could not reduce to one word (component testbeds, disputed reachability). The last three columns are the chapter's evidence grade: of the evidence cells behind a family's rows, how many a document was seen to support. It matters because every count in this chapter inherits it — a family at 30 % rests mostly on press claims and inferences, a family at 57 % mostly on papers — and it differs by family because the families publish differently: architecture papers with device figures are the norm for the academic superconducting, ion and atom machines and the exception for commercial photonic and spin announcements.\n\n" if en else
+              f"Чтение таблицы: сверхпроводниковое семейство — самое большое и единственное с выведенными машинами; фотонное и спиновое семейства малы и в основном на стадии демонстрации; {nsc['OTHER']} строк *прочее* — статусы, которые реестр не свёл к одному слову (испытательные стенды компонентов, спорная достижимость). Последние три столбца — класс свидетельств главы: сколько из ячеек свидетельств за строками семейства подтверждены увиденным документом. Это важно, потому что каждое число главы его наследует — семейство на 30 % стоит в основном на заявлениях прессы и выводах, семейство на 57 % — в основном на статьях, — и он различается по семействам, потому что семейства публикуют по-разному: статьи об архитектуре с рисунками устройства — норма для академических сверхпроводниковых, ионных и атомных машин и исключение для коммерческих фотонных и спиновых анонсов.\n\n"))
 
     # ---------- 8.2 what they are built from
     H("### 8.2 " + ("What the machines are built from" if en else "Из чего собраны машины"))
@@ -181,9 +182,9 @@ def sec_machines(lang):
     o.append("\n")
 
     # ---------- 8.3 the idea behind each attempt
-    H("### 8.3 " + ("The idea behind each attempt" if en else "Идея, стоящая за каждой попыткой"))
-    o.append(("A machine is an argument: *this* combination of stations will reach the goal before the others. The argument is made per path, not per machine, so the register is read here by path — the bet in one line, the count of machines and devices that make it, the largest gate-capable device the register holds for it (analog simulators, arrays without an entangling gate and single-qubit testbeds excluded), and the best two-qubit error among its devices (hero pairs, targets and component demonstrations excluded).\n\n" if en else
-              "Машина — это аргумент: *эта* комбинация станций достигнет цели раньше других. Аргумент делается на уровне пути, а не машины, поэтому реестр читается здесь по путям: ставка в одну строку, число машин и устройств, её делающих, крупнейшее устройство с гейтами, которое реестр держит для неё (аналоговые симуляторы, массивы без перепутывающего гейта и однокубитные стенды исключены), и лучшая двухкубитная ошибка среди её устройств (рекордные пары, цели и демонстрации компонентов исключены).\n\n"))
+    H("### 8.3 " + ("The idea behind each architecture" if en else "Идея, стоящая за каждой архитектурой"))
+    o.append(("A machine is an argument: *this* combination of stations will reach the goal before the others. The argument is made per architecture (a path of the map), not per machine, so the register is read here by path — the bet in one line, the count of machines and devices that make it, the largest gate-capable device the register holds for it (analog simulators, arrays without an entangling gate and single-qubit testbeds excluded), and the best two-qubit error among its devices (hero pairs, targets and component demonstrations excluded).\n\n" if en else
+              "Машина — это аргумент: *эта* комбинация станций достигнет цели раньше других. Аргумент делается на уровне архитектуры (пути карты), а не машины, поэтому реестр читается здесь по путям: ставка в одну строку, число машин и устройств, её делающих, крупнейшее устройство с гейтами, которое реестр держит для неё (аналоговые симуляторы, массивы без перепутывающего гейта и однокубитные стенды исключены), и лучшая двухкубитная ошибка среди её устройств (рекордные пары, цели и демонстрации компонентов исключены).\n\n"))
     BET = {
         'sc': ("fast microwave gates on a lithographic lattice; scale by fabrication and, later, by links between chips", "быстрые микроволновые гейты на литографической решётке; масштаб за счёт изготовления и, позже, связей между чипами"),
         'cat': ("bias the noise so that one error type dominates, then correct only that type with a cheap code", "сместить шум так, чтобы доминировал один тип ошибок, и исправлять только его дешёвым кодом"),
@@ -201,8 +202,8 @@ def sec_machines(lang):
         'anneal': ("special-purpose scale now: thousands of analog qubits for optimisation and simulation", "специализированный масштаб сейчас: тысячи аналоговых кубитов для оптимизации и симуляции"),
     }
     H("**" + ("Table 8.3 — paths: the bet, the population, the best numbers" if en else "Таблица 8.3 — пути: ставка, популяция, лучшие числа") + "**")
-    o.append(("| Path | Machines | Devices | Largest gate-capable device (physical qubits) | Best 2Q error among devices | The bet |" if en else
-              "| Путь | Машин | Устройств | Крупнейшее устройство с гейтами (физ. кубитов) | Лучшая 2Q-ошибка среди устройств | Ставка |") + "\n|---|---|---|---|---|---|\n")
+    o.append(("| Architecture (map path) | Machines | Devices | Largest gate-capable device (physical qubits) | Best 2Q error among devices | The bet |" if en else
+              "| Архитектура (путь карты) | Машин | Устройств | Крупнейшее устройство с гейтами (физ. кубитов) | Лучшая 2Q-ошибка среди устройств | Ставка |") + "\n|---|---|---|---|---|---|\n")
     for pid in [p['id'] for p in G['paths']]:
         pm = [m for m in MS if m['map_path'] == pid]
         if not pm: continue
@@ -216,8 +217,8 @@ def sec_machines(lang):
 
     # ---------- 8.4 hypotheses
     H("### 8.4 " + ("Trends — eight hypotheses tested on the register" if en else "Тренды — восемь гипотез, проверенных по реестру"))
-    o.append(("Each hypothesis is a falsifiable statement about the population; the test is the computation named with it, run by the build on the register's current rows; the verdict is *supported*, *partly supported* or *not supported*, with the sample size. What each verdict rests on, and what would overturn it, is in §8.6.\n\n" if en else
-              "Каждая гипотеза — фальсифицируемое утверждение о популяции; проверка — вычисление, названное рядом с ней и выполняемое сборкой по текущим строкам реестра; вердикт — *подтверждена*, *подтверждена частично* или *не подтверждена*, с размером выборки. На чём стоит каждый вердикт и что его опрокинуло бы — в §8.6.\n\n"))
+    o.append(("Each hypothesis is a falsifiable statement about the population; the test is the computation named with it, run by the build on the register's current rows; the verdict is *supported*, *partly supported* or *not supported*, with the sample size. What each verdict rests on, and what would overturn it, is in §8.7.\n\n" if en else
+              "Каждая гипотеза — фальсифицируемое утверждение о популяции; проверка — вычисление, названное рядом с ней и выполняемое сборкой по текущим строкам реестра; вердикт — *подтверждена*, *подтверждена частично* или *не подтверждена*, с размером выборки. На чём стоит каждый вердикт и что его опрокинуло бы — в §8.7.\n\n"))
     VER = {'yes': ('**supported**', '**подтверждена**'), 'part': ('**partly supported**', '**подтверждена частично**'), 'no': ('**not supported**', '**не подтверждена**')}
     verdicts = {}
 
@@ -341,14 +342,148 @@ def sec_machines(lang):
     o.append((f"*Test.* Stations occupied in the primary role, counted by the number of families that occupy them. *Result.* {n_nodes} stations occupied; {n2} by two families or more, {n3} by three or more (" + ', '.join(f"{nm(k)} `{k}` — {len(fam_by_node[k])}" for k in shared3) + f"). *Verdict:* {t(L, VER[h8])}. The families keep their own toolboxes; what they share is a *role* — mid-circuit readout, erasure conversion, a link between modules — filled by a different station on each path. Convergence, where it exists, is at the level of the map's coordinates (§7), not of its stations.\n\n" if en else
               f"*Проверка.* Станции, занятые в основной роли, посчитанные по числу занимающих их семейств. *Результат.* Занято {n_nodes} станций; {n2} — двумя семействами и более, {n3} — тремя и более (" + ', '.join(f"{nm(k)} `{k}` — {len(fam_by_node[k])}" for k in shared3) + f"). *Вердикт:* {t(L, VER[h8])}. Семейства держат собственные наборы инструментов; общей у них оказывается *роль* — считывание в середине схемы, преобразование в стирания, связь между модулями, — которую на каждом пути заполняет своя станция. Сходимость, где она есть, лежит на уровне координат карты (§7), а не её станций.\n\n"))
 
-    # ---------- 8.5 where the architecture goes
-    H("### 8.5 " + ("Where the architecture is going" if en else "Куда идёт архитектура"))
+    # ---------- 8.5 forecasts (a ledger the next edition scores)
+    H("### 8.5 " + ("Forecasts — what the register predicts, and how the next edition will score them" if en else "Прогнозы — что предсказывает реестр и как их оценит следующее издание"))
+    def frontier(f, pool):
+        fr = {}
+        for m in pool:
+            if m['family'] == f and m['q'] and m['year']: fr[m['year']] = max(fr.get(m['year'], 0), m['q'])
+        run = 0; out = []
+        for y in sorted(fr):
+            run = max(run, fr[y]); out.append((y, run))
+        return out
+    def flat_since(series):
+        if not series: return None
+        top = series[-1][1]
+        for y, v in series:
+            if v == top: return y
+        return None
+    def rate(series):
+        pts = [(y, v) for y, v in series]
+        if len(pts) < 2 or pts[0][1] <= 0 or pts[-1][0] == pts[0][0]: return None
+        return (pts[-1][1] / pts[0][1]) ** (1.0 / (pts[-1][0] - pts[0][0]))
+    fr = {f: frontier(f, gdev) for f in ('SC', 'ION', 'ATOM')}
+    ann = {f: sorted([(m['year'], m['q'], m['name']) for m in MS if m['family'] == f and not m['device'] and m['q'] and m['year'] and m['year'] <= 2028 and m['q'] > (fr[f][-1][1] if fr[f] else 0)]) for f in ('SC', 'ION', 'ATOM')}
+    ion_rate = rate(fr['ION'])
+    ion_2027 = fr['ION'][-1][1] * (ion_rate ** (2027 - fr['ION'][-1][0])) if ion_rate and fr['ION'] else None
+    ion_lo = int(ion_2027 // 10 * 10) if ion_2027 else None; ion_hi = max([q for y, q, n in ann['ION']] + [ion_lo or 0])
+    # error frontier and the median's lag behind it
+    efr = {}
+    for f in ('SC', 'ION', 'ATOM'):
+        d = {}
+        for m in dev:
+            if m['family'] == f and m['err'] is not None and m['year'] and not (m['flags'] & EXCL_ERR_FLAGS): d[m['year']] = min(d.get(m['year'], 1.0), m['err'])
+        run = 1.0; out = []
+        for y in sorted(d):
+            run = min(run, d[y]); out.append((y, run))
+        efr[f] = out
+    def erate(series):
+        if len(series) < 2 or series[-1][0] == series[0][0]: return None
+        return (series[0][1] / series[-1][1]) ** (1.0 / (series[-1][0] - series[0][0]))   # improvement factor per year
+    def lag(f):
+        med = emed.get(f)
+        if med is None: return None
+        for y, v in efr[f]:
+            if v <= med: return 2026 - y
+        return None
+    # QEC adoption, closed-loop decoding, links, control
+    cum = {}; c = 0
+    for y in range(2019, 2027):
+        c += sum(1 for m in MS if m['has_code'] and m['year'] == y); cum[y] = c
+    planned_rt = [m for m in MS if m['dc'] == 'planned']
+    link_dev = [m for m in MS if m['link'] and m['device']]; link_ann = sorted([m for m in MS if m['link'] and not m['device']], key=lambda m: (m['year'] or 9999, m['name']))
+    ctl_cand = [m for m in MS if re.search(r'plan|claim|demo|intend', m['profile'].get('control_placement') or '', re.I)]
+    due = sorted({(r['roadmap_id'], r['year']) for r in R if re.search(r'20(2[5-8])', r['year'] or '') and int(re.search(r'20(2[5-8])', r['year']).group(0)) <= 2028})
+    yr = lambda f: fr[f][-1][0] if fr[f] else None
+    o.append((f"A hypothesis says what the register shows; a forecast says what the next register will show. Each forecast below names its indicator, its value today, the value expected at the next two editions (2027.09 and 2028.09), the basis — the historical series, the register's own announcements, or both — and a confidence; the build writes the same rows to `data/forecast-ledger.json`, and the edition that reaches the date prints the outcome next to the forecast. Two limits govern the confidence: the series are short (five to eight yearly points) and dated by press releases, so the forecasts are directional with ranges rather than point estimates; and announcements are discounted — the register's three named rows that missed their date ({', '.join(mdcell(m['name']) for m in MS if re.search(r'never|not delivered', m['status'], re.I))}) are the reminder that an announced machine is a forecast, not a device.\n\n" if en else
+              f"Гипотеза говорит, что показывает реестр; прогноз — что покажет следующий реестр. Каждый прогноз ниже называет свой индикатор, его значение сегодня, ожидаемое значение к двум следующим изданиям (2027.09 и 2028.09), основание — историческую серию, собственные анонсы реестра или и то и другое — и уверенность; сборка записывает те же строки в `data/forecast-ledger.json`, и издание, дошедшее до даты, печатает итог рядом с прогнозом. Уверенность ограничивают две вещи: серии коротки (пять–восемь годовых точек) и датированы пресс-релизами, так что прогнозы направленные, с диапазонами, а не точечные; и анонсы дисконтированы — три именованные строки реестра, пропустившие свою дату ({', '.join(mdcell(m['name']) for m in MS if re.search(r'never|not delivered', m['status'], re.I))}), напоминают, что анонсированная машина — это прогноз, а не устройство.\n\n"))
+    def fseries(f): return ', '.join(f"{y} {fmt_n(v)}" for y, v in fr[f])
+    def aseries(f): return '; '.join(f"{mdcell(n)} — {fmt_n(q)} ({y})" for y, q, n in ann[f]) or '—'
+    def eseries(f): return ', '.join(f"{y} {fmt_e(v)}" for y, v in efr[f])
+    CONF = {'high': ('high', 'высокая'), 'medium': ('medium', 'средняя'), 'low': ('low', 'низкая')}
+    ledger = []
+    def F(fid, ind, now, f27, f28, basis, conf, falsif):
+        ledger.append({'id': fid, 'indicator': ind, 'now': now, 'e2027': f27, 'e2028': f28, 'basis': basis, 'confidence': conf, 'falsified_if': falsif})
+    # F1 — count frontiers
+    sc_top = fr['SC'][-1][1] if fr['SC'] else None; at_top = fr['ATOM'][-1][1] if fr['ATOM'] else None; io_top = fr['ION'][-1][1] if fr['ION'] else None
+    F('F1a', t(L, ('largest gate-capable superconducting device (physical qubits)', 'крупнейшее сверхпроводниковое устройство с гейтами (физ. кубитов)')),
+      f"{fmt_n(sc_top)} ({t(L, ('flat since', 'без изменений с'))} {flat_since(fr['SC'])})",
+      t(L, (f"≤ 1,121 (no gate-capable device above {fmt_n(sc_top)} delivered)", f"≤ 1 121 (устройство с гейтами крупнее {fmt_n(sc_top)} не поставлено)")),
+      t(L, ("≤ 1,500; the first multi-module lattice (Kookaburra-class) is the only route above it", "≤ 1 500; единственный путь выше — первая многомодульная решётка класса Kookaburra")),
+      t(L, (f"frontier series {fseries('SC')}; announced above the frontier: {aseries('SC')}", f"серия фронта {fseries('SC')}; анонсировано выше фронта: {aseries('SC')}")), 'high',
+      t(L, ("a superconducting device with an entangling gate on more than 1,121 qubits in the 2027.09 register", "сверхпроводниковое устройство с перепутывающим гейтом более чем на 1 121 кубит в реестре 2027.09")))
+    F('F1b', t(L, ('largest gate-capable neutral-atom device', 'крупнейшее нейтрально-атомное устройство с гейтами')),
+      f"{fmt_n(at_top)} ({t(L, ('flat since', 'без изменений с'))} {flat_since(fr['ATOM'])})",
+      t(L, (f"{fmt_n(at_top)}–1,300: one announced candidate above the frontier within the year (see basis); even odds it lands", f"{fmt_n(at_top)}–1 300: один анонсированный кандидат выше фронта в пределах года (см. основание); шансы примерно равные")),
+      t(L, ("1,300–3,000: the 10,000-qubit plans sit at 2028 and are discounted to a third of their count on the register's delivery record", "1 300–3 000: планы на 10 000 кубитов датированы 2028 годом и дисконтированы до трети заявленного по истории поставок в реестре")),
+      t(L, (f"frontier series {fseries('ATOM')}; announced above the frontier: {aseries('ATOM')}", f"серия фронта {fseries('ATOM')}; анонсировано выше фронта: {aseries('ATOM')}")), 'medium',
+      t(L, ("a gate-capable tweezer processor above 3,000 qubits by 2028.09, or none above 1,180 by then", "пинцетный процессор с гейтами более чем на 3 000 кубитов к 2028.09 — или ни одного выше 1 180 к тому времени")))
+    F('F1c', t(L, ('largest gate-capable trapped-ion device', 'крупнейшее ионное устройство с гейтами')),
+      f"{fmt_n(io_top)} ({yr('ION')})",
+      t(L, (f"{ion_lo}–{ion_hi}: the historical ×{ion_rate:.2f}/yr gives ≈{fmt_n(round(ion_2027))} by 2027; the largest announced system ({ion_hi}) caps the range" if ion_rate else "—", f"{ion_lo}–{ion_hi}: историческое ×{ion_rate:.2f}/год даёт ≈{fmt_n(round(ion_2027))} к 2027; крупнейшая анонсированная система ({ion_hi}) ограничивает диапазон сверху" if ion_rate else "—")),
+      t(L, ("200–400", "200–400")),
+      t(L, (f"frontier series {fseries('ION')} — the only family whose frontier still grows year on year; announced: {aseries('ION')}", f"серия фронта {fseries('ION')} — единственное семейство, чей фронт ещё растёт год от года; анонсировано: {aseries('ION')}")), 'medium',
+      t(L, ("a trapped-ion device with entangling gates on more than 260 qubits by 2027.09, or the frontier still at 98", "ионное устройство с перепутывающими гейтами более чем на 260 кубитов к 2027.09 — или фронт всё ещё на 98")))
+    # F2 — error frontier and the median's lag
+    er = {f: erate(efr[f]) for f in ('SC', 'ION', 'ATOM')}; lg = {f: lag(f) for f in ('SC', 'ION', 'ATOM')}
+    def proj(f, years):
+        if not efr[f] or not er[f]: return None
+        return efr[f][-1][1] / (er[f] ** (years))
+    F('F2', t(L, ('best two-qubit error per family (devices; hero pairs excluded) and the family median', 'лучшая двухкубитная ошибка по семействам (устройства; рекордные пары исключены) и медиана семейства')),
+      '; '.join(f"{t(L, FAMN[f])} {fmt_e(efr[f][-1][1])} / {t(L, ('median', 'медиана'))} {fmt_e(emed.get(f))}" for f in ('SC', 'ION', 'ATOM') if efr[f]),
+      '; '.join(f"{t(L, FAMN[f])} ≈ {fmt_e(proj(f, 2027 - efr[f][-1][0]))}" for f in ('SC', 'ION', 'ATOM') if efr[f] and er[f]) + t(L, ("; medians ≈ 2–3×10⁻³ for the three large families", "; медианы ≈ 2–3×10⁻³ у трёх больших семейств")),
+      '; '.join(f"{t(L, FAMN[f])} ≈ {fmt_e(proj(f, 2028 - efr[f][-1][0]))}" for f in ('SC', 'ION', 'ATOM') if efr[f] and er[f]) + t(L, ("; the first family median below 2×10⁻³", "; первая медиана семейства ниже 2×10⁻³")),
+      t(L, ("frontier series " + '; '.join(f"{t(L, FAMN[f])}: {eseries(f)} (×{er[f]:.2f}/yr{', two points only' if len(efr[f]) <= 2 else ''})" for f in ('SC', 'ION', 'ATOM') if efr[f] and er[f]) + "; the median trails the frontier by " + ', '.join(f"{t(L, FAMN[f])} {lg[f]} yr" for f in ('SC', 'ION', 'ATOM') if lg.get(f) is not None) + " (the year the frontier first reached today's median)",
+            "серии фронта " + '; '.join(f"{t(L, FAMN[f])}: {eseries(f)} (×{er[f]:.2f}/год{', всего две точки' if len(efr[f]) <= 2 else ''})" for f in ('SC', 'ION', 'ATOM') if efr[f] and er[f]) + "; медиана отстаёт от фронта на " + ', '.join(f"{t(L, FAMN[f])} {lg[f]} г." for f in ('SC', 'ION', 'ATOM') if lg.get(f) is not None) + " (год, когда фронт впервые достиг сегодняшней медианы)")), 'medium',
+      t(L, ("a family frontier that fails to improve for two editions, or a median that improves faster than the frontier did three years earlier", "фронт семейства, не улучшившийся два издания подряд, или медиана, улучшающаяся быстрее, чем фронт тремя годами ранее")))
+    # F3 — QEC on hardware
+    F('F3', t(L, ('machines that have run a code; decoders in the loop', 'машины, запускавшие код; декодеры в цикле')),
+      f"{len(codem)} / {len(inloop)}",
+      t(L, (f"≥ 55 machines with a code (cumulative series {', '.join(f'{y} {v}' for y, v in cum.items() if y >= 2022)}); 6–8 in the loop", f"≥ 55 машин с кодом (накопленная серия {', '.join(f'{y} {v}' for y, v in cum.items() if y >= 2022)}); 6–8 в цикле")),
+      t(L, (f"≥ 65 with a code; 8–12 in the loop ({len(planned_rt)} machines list real-time decoding as planned or intended: {', '.join(mdcell(m['name']) for m in sorted(planned_rt, key=lambda m: m['name']))}; half on time is the working assumption)", f"≥ 65 с кодом; 8–12 в цикле ({len(planned_rt)} машин заявляют декодирование в реальном времени как план: {', '.join(mdcell(m['name']) for m in sorted(planned_rt, key=lambda m: m['name']))}; рабочее допущение — половина в срок)")),
+      t(L, ("cumulative count of code-running machines by cohort (a doubling every ~2 years since 2023) and the register's planned-decoding rows", "накопленное число машин с кодом по когортам (удвоение каждые ~2 года с 2023) и строки реестра с планируемым декодированием")), 'medium',
+      t(L, ("fewer than 52 machines with a code, or fewer than 6 closed loops, in 2027.09", "менее 52 машин с кодом или менее 6 замкнутых циклов в 2027.09")))
+    # F4 — links
+    F('F4', t(L, ('devices with a demonstrated link station (interconnect layer)', 'устройства с продемонстрированной станцией связи (слой межсоединений)')),
+      f"{len(link_dev)} ({', '.join(t(L, FAMN[f]) + ' ' + str(sum(1 for m in link_dev if m['family'] == f)) for f in FAM_ORDER if any(m['family'] == f for m in link_dev))})",
+      t(L, (f"9–12: of the {len(link_ann)} announced machines that name a link ({', '.join(mdcell(m['name']) + ((' (%s)' % m['year']) if m['year'] else '') for m in link_ann)}), the ones dated 2025–2026 are the candidates", f"9–12: из {len(link_ann)} анонсированных машин, называющих связь ({', '.join(mdcell(m['name']) + ((' (%s)' % m['year']) if m['year'] else '') for m in link_ann)}), кандидаты — датированные 2025–2026")),
+      t(L, ("12–18; the interconnect gap share falls below 85 % only if the multi-module superconducting lattices arrive", "12–18; доля пробелов межсоединения опустится ниже 85 % только с приходом многомодульных сверхпроводниковых решёток")),
+      t(L, ("the register's announced-link rows discounted by the delivery record; the historical series is too short to extrapolate", "анонсированные строки реестра со связью, дисконтированные по истории поставок; историческая серия слишком коротка для экстраполяции")), 'low',
+      t(L, ("fewer than 9 devices with a link in 2027.09, or more than 12", "менее 9 устройств со связью в 2027.09 — или более 12")))
+    # F5 — control
+    F('F5', t(L, ('machines with integrated control; superconducting devices ≥ 100 qubits driven cryogenically', 'машины с интегрированным управлением; сверхпроводниковые устройства ≥ 100 кубитов с криогенным управлением')),
+      f"{len(integ)} / 0",
+      t(L, (f"≤ 25 / 0: the candidates are demos and claims ({', '.join(mdcell(m['name']) for m in sorted(ctl_cand, key=lambda m: m['name']))}); IBM's cryo-CMOS is scheduled with Starling (2029)", f"≤ 25 / 0: кандидаты — демонстрации и заявления ({', '.join(mdcell(m['name']) for m in sorted(ctl_cand, key=lambda m: m['name']))}); cryo-CMOS IBM запланирован вместе со Starling (2029)")),
+      t(L, ("≤ 30 / 0–1", "≤ 30 / 0–1")),
+      t(L, ("H3's mechanism: integration happens where physics forces it (spins, annealers, surface traps) and is a plan elsewhere; the register's control-placement field lists the plans", "механизм H3: интеграция происходит там, где её вынуждает физика (спины, отжиг, поверхностные ловушки), и остаётся планом в остальном; поле размещения управления в реестре перечисляет планы")), 'high',
+      t(L, ("a ≥ 100-qubit superconducting device with production cryogenic control before 2028.09", "сверхпроводниковое устройство ≥ 100 кубитов с серийным криогенным управлением до 2028.09")))
+    # F6 — roadmap checkpoints
+    F('F6', t(L, ('roadmap checkpoints the register can score by 2028', 'контрольные точки дорожных карт, которые реестр сможет оценить к 2028')),
+      f"{len(due)} " + t(L, ('roadmaps dated 2025–2028', 'карт с датами 2025–2028')) + ': ' + ', '.join(f"{rid} ({y})" for rid, y in due),
+      t(L, ("the checkpoints dated 2026–2027 are scored; on H6's distribution (56 of 65 SHORT verdicts on error or gates) the expectation is that they miss on the error budget, not on qubits", "точки, датированные 2026–2027, оцениваются; по распределению H6 (56 из 65 вердиктов SHORT — по ошибке или гейтам) ожидание таково, что они промахнутся по бюджету ошибок, а не по кубитам")),
+      t(L, ("the 2028 checkpoints are scored; at least two of three miss on the logical error per operation", "оцениваются точки 2028 года; как минимум две из трёх промахиваются по логической ошибке на операцию")),
+      t(L, ("the register's roadmap-feasibility verdicts and their dates", "вердикты реестра об осуществимости дорожных карт и их даты")), 'medium',
+      t(L, ("a dated checkpoint met on qubits, error and gate budget together", "датированная точка, выполненная одновременно по кубитам, ошибке и бюджету гейтов")))
+    H("**" + ("Table 8.5 — the forecast ledger (scored by the 2027.09 and 2028.09 editions)" if en else "Таблица 8.5 — реестр прогнозов (оценивается изданиями 2027.09 и 2028.09)") + "**")
+    o.append(("| # | Indicator | Today (2026.09) | Expected at 2027.09 | Expected at 2028.09 | Basis | Confidence | Falsified if |" if en else
+              "| # | Индикатор | Сегодня (2026.09) | Ожидание к 2027.09 | Ожидание к 2028.09 | Основание | Уверенность | Опровергнуто, если |") + "\n|---|---|---|---|---|---|---|---|\n")
+    for r in ledger:
+        o.append(f"| {r['id']} | {mdcell(r['indicator'])} | {mdcell(r['now'])} | {mdcell(r['e2027'])} | {mdcell(r['e2028'])} | {mdcell(r['basis'])} | {t(L, CONF[r['confidence']])} | {mdcell(r['falsified_if'])} |\n")
+    o.append("\n")
+    o.append(("Reading the ledger. The reliable part is the shape, not the digits: the count frontier of the two largest families has not moved for three and four years while the announced frontier runs a decade ahead of it (F1), the error frontier improves by a steady third to a half per year and the medians follow it with a lag of about three years (F2), and the adoption curves — codes on hardware, links, integrated control — are set by the delivery of the machines the register already lists as planned, discounted by how often such rows have slipped (F3–F5). What the ledger cannot do is time a single machine; what it can do is be wrong in public, one edition later.\n\n" if en else
+              "Как читать реестр прогнозов. Надёжна форма, а не цифры: фронт числа кубитов у двух крупнейших семейств не двигался три и четыре года, тогда как анонсированный фронт убегает на десятилетие вперёд (F1); фронт ошибок улучшается на устойчивые треть–половину в год, а медианы следуют за ним с отставанием около трёх лет (F2); кривые принятия — коды на железе, связи, интегрированное управление — задаются поставкой машин, которые реестр уже числит запланированными, с дисконтом на то, как часто такие строки сползали (F3–F5). Чего реестр прогнозов не может — датировать отдельную машину; что может — оказаться неправым публично, одним изданием позже.\n\n"))
+    if en:
+        with open(os.path.join(ROOT, 'data', 'forecast-ledger.json'), 'w', encoding='utf-8', newline='\n') as fh:
+            json.dump({'edition': M.get('edition'), 'written': 'by build/machines_chapter.py from the register of ' + str(src.get('register', '')), 'forecasts': ledger}, fh, ensure_ascii=False, indent=1); fh.write('\n')
+
+    # ---------- 8.6 where the architecture goes
+    H("### 8.6 " + ("Where the architecture is going" if en else "Куда идёт архитектура"))
     nsup = sum(1 for v in verdicts.values() if v == 'yes'); npart = sum(1 for v in verdicts.values() if v == 'part'); nno = sum(1 for v in verdicts.values() if v == 'no')
     o.append((f"Of the eight hypotheses, {nsup} are supported, {npart} partly and {nno} not. Read together they draw one direction rather than eight. **From count to encoded qubits and links.** The two least populated layers — code/decoder and interconnect — are exactly the two every roadmap depends on (H4, H5, H6): the next generation of machines will be judged by the logical error per cycle and by the link between modules, and the register already shows the count race losing its meaning (H1). **A division of roles between families rather than a winner.** The largest devices are tweezer arrays, the best gate is an ion trap, the fastest clock a transmon lattice and the room-temperature fabrication is photonic; the medians converge (H2) while the extremes stay apart, and the stations do not cross the family lines (H8) — the architecture that reaches the goals of §4 will more likely be a *composition* of paths joined by links than a single path grown large. **The slow variable is control.** Integrated control is a plan for the families that can afford room-temperature racks and a necessity only where the physics forces it (H3); the map's placement coordinate will move last. **The binding constraint is the error budget.** Roadmaps are short by orders of magnitude on error and gate count and rarely on qubits (H6), so the machines that matter next are the ones that move the logical error per operation, whatever their qubit count.\n\n" if en else
               f"Из восьми гипотез {nsup} подтверждены, {npart} — частично, {nno} — нет. Вместе они рисуют одно направление, а не восемь. **От числа кубитов — к закодированным кубитам и связям.** Два наименее заполненных слоя — код/декодер и межсоединение — ровно те, от которых зависит каждая дорожная карта (H4, H5, H6): следующее поколение машин будут судить по логической ошибке на цикл и по связи между модулями, и реестр уже показывает, как гонка за числом теряет смысл (H1). **Разделение ролей между семействами, а не победитель.** Крупнейшие устройства — массивы пинцетов, лучший гейт — ионная ловушка, самый быстрый такт — трансмонная решётка, а изготовление при комнатной температуре — фотонное; медианы сходятся (H2), крайние значения остаются врозь, а станции не пересекают границ семейств (H8) — архитектура, которая достигнет целей §4, скорее будет *композицией* путей, соединённых связями, чем одним разросшимся путём. **Медленная переменная — управление.** Интегрированное управление — план для семейств, которым по карману стойки при комнатной температуре, и необходимость только там, где его вынуждает физика (H3); координата размещения на карте сдвинется последней. **Связывающее ограничение — бюджет ошибок.** Дорожные карты не дотягивают на порядки по ошибке и числу гейтов и редко по кубитам (H6), поэтому машины, которые важны дальше, — те, что сдвигают логическую ошибку на операцию, каково бы ни было их число кубитов.\n\n"))
 
-    # ---------- 8.6 verification and limits
-    H("### 8.6 " + ("Verification and limits" if en else "Проверка и границы"))
+    # ---------- 8.7 verification and limits
+    H("### 8.7 " + ("Verification and limits" if en else "Проверка и границы"))
     ev_layer = {}
     for m in MS:
         for ln, cells in m['layers'].items():
@@ -357,7 +492,7 @@ def sec_machines(lang):
                 a = ev_layer.setdefault(ln, [0, 0]); a[1] += 1; a[0] += bool(c['evidence'].get('verified'))
     def eg(ln): a = ev_layer.get(ln, [0, 0]); return f"{pct(a[0], a[1])} ✅ ({a[0]}/{a[1]})"
     pressonly = sorted(m['name'] for m in MS if m['evidence_counts']['verified'] == 0)
-    H("**" + ("Table 8.6 — what each verdict rests on" if en else "Таблица 8.6 — на чём стоит каждый вердикт") + "**")
+    H("**" + ("Table 8.7 — what each verdict rests on" if en else "Таблица 8.7 — на чём стоит каждый вердикт") + "**")
     o.append(("| Hypothesis | Verdict | Sample | Filters applied | Evidence grade of the inputs | What would overturn it |" if en else
               "| Гипотеза | Вердикт | Выборка | Применённые фильтры | Класс свидетельств входов | Что его опрокинуло бы |") + "\n|---|---|---|---|---|---|\n")
     rows = [

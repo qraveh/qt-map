@@ -71,6 +71,10 @@ Corrections and new dated records are welcome as issues or pull requests. What i
 
 Content (report, graph data, briefs, the rendered document): [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) — see `LICENSE`. Build scripts in `build/`: MIT — see `LICENSE-CODE`. Vendored D3: ISC (`build/vendor/D3-LICENSE`). Quoted figures remain the property of their cited sources.
 
+## Disclosures
+
+This is a single-author publication, produced independently — no funding, sponsorship, affiliation, or solicitation. Factual corrections are welcome.
+
 ## Provenance
 
 Research and drafting with Claude (Anthropic) under the author's direction and review; every figure traces to a dated, linked primary source; conflicts between sources are stated, not averaged; open verification items are listed at the end of each brief.

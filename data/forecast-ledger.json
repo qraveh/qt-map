@@ -1,0 +1,86 @@
+{
+ "edition": "2026.09",
+ "written": "by build/machines_chapter.py from the register of quantum-machines-2026.09 · 17 Sep 2026",
+ "forecasts": [
+  {
+   "id": "F1a",
+   "indicator": "largest gate-capable superconducting device (physical qubits)",
+   "now": "433 (flat since 2022)",
+   "e2027": "≤ 1,121 (no gate-capable device above 433 delivered)",
+   "e2028": "≤ 1,500; the first multi-module lattice (Kookaburra-class) is the only route above it",
+   "basis": "frontier series 2019 53, 2021 127, 2022 433, 2023 433, 2024 433, 2025 433, 2026 433; announced above the frontier: IBM Quantum Condor — 1,121 (2023); Tianyan-504 / \"Xiaohong\" chip — 504 (2024); Fujitsu >10,000 physical / ~250 logical (STAR) — 10,000 (2025); QuantWare VIO-40K — 10,000 (2025); Fujitsu 1,000-qubit machine — 1,000 (2026)",
+   "confidence": "high",
+   "falsified_if": "a superconducting device with an entangling gate on more than 1,121 qubits in the 2027.09 register"
+  },
+  {
+   "id": "F1b",
+   "indicator": "largest gate-capable neutral-atom device",
+   "now": "1,180 (flat since 2023)",
+   "e2027": "1,180–1,300: one announced candidate above the frontier within the year (see basis); even odds it lands",
+   "e2028": "1,300–3,000: the 10,000-qubit plans sit at 2028 and are discounted to a third of their count on the register's delivery record",
+   "basis": "frontier series 2023 1,180, 2024 1,180, 2025 1,180, 2026 1,180; announced above the frontier: Magne — 1,225 (2025); Libra — 10,000 (2028)",
+   "confidence": "medium",
+   "falsified_if": "a gate-capable tweezer processor above 3,000 qubits by 2028.09, or none above 1,180 by then"
+  },
+  {
+   "id": "F1c",
+   "indicator": "largest gate-capable trapped-ion device",
+   "now": "98 (2026)",
+   "e2027": "120–256: the historical ×1.30/yr gives ≈128 by 2027; the largest announced system (256) caps the range",
+   "e2028": "200–400",
+   "basis": "frontier series 2020 20, 2021 20, 2022 32, 2023 64, 2024 64, 2025 98, 2026 98 — the only family whose frontier still grows year on year; announced: Tempo — 100 (2025); Superion 256 — 256 (2026)",
+   "confidence": "medium",
+   "falsified_if": "a trapped-ion device with entangling gates on more than 260 qubits by 2027.09, or the frontier still at 98"
+  },
+  {
+   "id": "F2",
+   "indicator": "best two-qubit error per family (devices; hero pairs excluded) and the family median",
+   "now": "superconducting circuits 1.0×10⁻³ / median 4.0×10⁻³; trapped ions 7.9×10⁻⁴ / median 3.0×10⁻³; neutral atoms 1.6×10⁻³ / median 4.0×10⁻³",
+   "e2027": "superconducting circuits ≈ 7.7×10⁻⁴; trapped ions ≈ 6.3×10⁻⁴; neutral atoms ≈ 6.4×10⁻⁴; medians ≈ 2–3×10⁻³ for the three large families",
+   "e2028": "superconducting circuits ≈ 5.9×10⁻⁴; trapped ions ≈ 5.1×10⁻⁴; neutral atoms ≈ 4.0×10⁻⁴; the first family median below 2×10⁻³",
+   "basis": "frontier series superconducting circuits: 2019 6.2×10⁻³, 2021 6.2×10⁻³, 2023 2.5×10⁻³, 2024 1.0×10⁻³, 2025 1.0×10⁻³, 2026 1.0×10⁻³ (×1.30/yr); trapped ions: 2020 3.0×10⁻³, 2021 3.0×10⁻³, 2022 3.0×10⁻³, 2023 1.0×10⁻³, 2024 1.0×10⁻³, 2025 7.9×10⁻⁴, 2026 7.9×10⁻⁴ (×1.25/yr); neutral atoms: 2023 4.0×10⁻³, 2025 1.6×10⁻³ (×1.58/yr, two points only); the median trails the frontier by superconducting circuits 3 yr, trapped ions 6 yr, neutral atoms 3 yr (the year the frontier first reached today's median)",
+   "confidence": "medium",
+   "falsified_if": "a family frontier that fails to improve for two editions, or a median that improves faster than the frontier did three years earlier"
+  },
+  {
+   "id": "F3",
+   "indicator": "machines that have run a code; decoders in the loop",
+   "now": "47 / 5",
+   "e2027": "≥ 55 machines with a code (cumulative series 2022 5, 2023 8, 2024 14, 2025 31, 2026 43); 6–8 in the loop",
+   "e2028": "≥ 65 with a code; 8–12 in the loop (11 machines list real-time decoding as planned or intended: Apollo, IBM Quantum Blue Jay, IBM Quantum Cockatoo, IBM Quantum Kookaburra, IBM Quantum Starling, IQM Halocene, Libra, Magne, Sol, Superion 256, neutral-ytterbium QPU; half on time is the working assumption)",
+   "basis": "cumulative count of code-running machines by cohort (a doubling every ~2 years since 2023) and the register's planned-decoding rows",
+   "confidence": "medium",
+   "falsified_if": "fewer than 52 machines with a code, or fewer than 6 closed loops, in 2027.09"
+  },
+  {
+   "id": "F4",
+   "indicator": "devices with a demonstrated link station (interconnect layer)",
+   "now": "7 (superconducting circuits 3, trapped ions 1, photonics 2, defect spins 1)",
+   "e2027": "9–12: of the 10 announced machines that name a link (Fujitsu >10,000 physical / ~250 logical (STAR) (2025), QuantWare VIO-40K (2025), D-Wave gate-model dual-rail system (2026), IBM Quantum Kookaburra (2026), Superion 256 (2026), IBM Quantum Cockatoo (2027), Libra (2028), IBM Quantum Starling (2029), Apollo (2030), IBM Quantum Blue Jay (2033)), the ones dated 2025–2026 are the candidates",
+   "e2028": "12–18; the interconnect gap share falls below 85 % only if the multi-module superconducting lattices arrive",
+   "basis": "the register's announced-link rows discounted by the delivery record; the historical series is too short to extrapolate",
+   "confidence": "low",
+   "falsified_if": "fewer than 9 devices with a link in 2027.09, or more than 12"
+  },
+  {
+   "id": "F5",
+   "indicator": "machines with integrated control; superconducting devices ≥ 100 qubits driven cryogenically",
+   "now": "19 / 0",
+   "e2027": "≤ 25 / 0: the candidates are demos and claims (Google fluxonium line (ex-Atlantic Quantum), IBM Quantum Heron r2, OQC GENESIS, OQC Toshiko, QuamCore, QuantWare VIO-40K, foundry 8-qubit array); IBM's cryo-CMOS is scheduled with Starling (2029)",
+   "e2028": "≤ 30 / 0–1",
+   "basis": "H3's mechanism: integration happens where physics forces it (spins, annealers, surface traps) and is a plan elsewhere; the register's control-placement field lists the plans",
+   "confidence": "high",
+   "falsified_if": "a ≥ 100-qubit superconducting device with production cryogenic control before 2028.09"
+  },
+  {
+   "id": "F6",
+   "indicator": "roadmap checkpoints the register can score by 2028",
+   "now": "4 roadmaps dated 2025–2028: nordquantique-2029 (2028-2029), oqc-titan (2028), psiquantum-2033 (2028-2033), quera-phase3 (2026-2028)",
+   "e2027": "the checkpoints dated 2026–2027 are scored; on H6's distribution (56 of 65 SHORT verdicts on error or gates) the expectation is that they miss on the error budget, not on qubits",
+   "e2028": "the 2028 checkpoints are scored; at least two of three miss on the logical error per operation",
+   "basis": "the register's roadmap-feasibility verdicts and their dates",
+   "confidence": "medium",
+   "falsified_if": "a dated checkpoint met on qubits, error and gate budget together"
+  }
+ ]
+}
