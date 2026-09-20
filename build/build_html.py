@@ -72,20 +72,26 @@ def convert(md,lang):
     # wrap tables
     h=re.sub(r'<table>',r'<div class="tbl"><table>',h); h=h.replace('</table>','</table></div>')
     # headings: ids and numbering
+    # heading ids follow the printed section number (en-s7, en-s7-2), so they survive an inserted chapter and can be linked to;
+    # the two unnumbered h2 are the subtitle (stripped below) and "About the map" (id en-s-about). Before 20 Sep 2026 the ids
+    # carried a running counter that shifted whenever a heading was added, which broke every hard-coded anchor.
     toc=[]; k=0; j=0
     def h2(m):
         nonlocal k,j; k+=1; j=0; txt=m.group(1); mm=re.match(r'(\d+)\.\s+(.*)',txt)
         num,title=(mm.group(1),mm.group(2)) if mm else ('',txt)
-        toc.append((f'{P}s{k}',num,re.sub('<[^>]+>','',title),2))
-        return f'<h2 id="{P}s{k}">'+(f'<span class="num">{num}</span>' if num else '')+f'{title}</h2>'
+        hid=f'{P}s{num}' if num else (f'{P}s-subtitle' if k==1 else f'{P}s-about')
+        toc.append((hid,num,re.sub('<[^>]+>','',title),2))
+        return f'<h2 id="{hid}">'+(f'<span class="num">{num}</span>' if num else '')+f'{title}</h2>'
     def h3(m):
-        nonlocal k,j; j+=1; txt=m.group(1); mm=re.match(r'(\d+\.\d+)\s+(.*)',txt); num,title=(mm.group(1),mm.group(2)) if mm else ('',txt)
-        toc.append((f'{P}s{k}-{j}',num,re.sub('<[^>]+>','',title),3))
-        return f'<h3 id="{P}s{k}-{j}">{txt}</h3>'
+        nonlocal k,j; j+=1; txt=m.group(1); mm=re.match(r'(\d+)\.(\d+)\s+(.*)',txt)
+        num,title=(mm.group(1)+'.'+mm.group(2),mm.group(3)) if mm else ('',txt)
+        hid=f'{P}s{mm.group(1)}-{mm.group(2)}' if mm else f'{P}s-x{j}'
+        toc.append((hid,num,re.sub('<[^>]+>','',title),3))
+        return f'<h3 id="{hid}">{txt}</h3>'
     h=re.sub(r'<h2>(.*?)</h2>',h2,h); h=re.sub(r'<h3>(.*?)</h3>',h3,h)
     # the first h2 (subtitle line) is actually the subtitle: strip the first h1/h2 pair
     h=re.sub(r'<h1>.*?</h1>\s*','',h,count=1,flags=re.S)
-    h=re.sub(r'<h2 id="'+P+r's1">.*?</h2>\s*','',h,count=1,flags=re.S); toc=[t for t in toc if t[0]!=P+'s1']
+    h=re.sub(r'<h2 id="'+P+r's-subtitle">.*?</h2>\s*','',h,count=1,flags=re.S); toc=[t for t in toc if t[0]!=P+'s-subtitle']
     # fold big tables in §8 (node table, edge lists) and §9 sources
     def fold(h,heading_regex,label):
         m=re.search(heading_regex,h)
@@ -114,7 +120,7 @@ def brief_md2html(md):
     md=re.sub(r'(?<![\w$\\`/])([A-ZΦΩ])_([A-Za-z0-9]{1,2})(?![\w{_])',lambda m:m.group(1)+'<sub>'+m.group(2)+'</sub>',md)
     return markdown.markdown(premath(md),extensions=['tables','sane_lists','nl2br'])
 
-# insert map section after §0 (before <h2 id="s3"> which is "1. Criteria") — s2 is exec summary (s1 stripped)
+# insert map section after §0 (before <h2 id="en-s1">, section 1)
 def insert_after_section(h,sec_id,block):
     i=h.find(f'<h2 id="{sec_id}">'); return h[:i]+block+h[i:]
 
@@ -216,7 +222,7 @@ def toc_html(toc,lang,gsec='8'):
     return f'<ol><li class="mapl"><a href="#map"><span class="n">◎</span><span>{"Technology map" if lang=="en" else "Карта технологий"}</span></a></li>{items}</ol>'
 # find split point: before <h2 id="s3"> in each
 def split_after_s2(h,lang):
-    i=h.find(f'<h2 id="{lang}-s3">'); return h[:i],h[i:]
+    i=h.find(f'<h2 id="{lang}-s1">'); return h[:i],h[i:]   # the map block goes in before section 1
 def split_before_num(h,toc,num):
     """Split a body just before the level-2 heading numbered <num> (e.g. '9. Sources')."""
     sid=next((t[0] for t in toc if t[3]==2 and t[1]==num),None)
