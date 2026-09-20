@@ -56,23 +56,24 @@ def main():
     ids = re.findall(r'<h[23] id="([^"]+)"', h)
     item('heading ids unique', len(ids) == len(set(ids)), [i for i in ids if ids.count(i) > 1][:5])
     item('heading ids follow section numbers (en-s7-2 style)', all(re.match(r'(en|ru)-s(-about|\d+(-\d+)?)$', i) for i in ids), [i for i in ids if not re.match(r'(en|ru)-s(-about|\d+(-\d+)?)$', i)][:5])
-    toc_hrefs = set(re.findall(r'<nav class="toc".*?</nav>', h, flags=re.S)[0] and re.findall(r'href="#((?:en|ru)-s[^"]*)"', re.findall(r'<nav class="toc".*?</nav>', h, flags=re.S)[0]))
-    missing_toc = [i for i in ids if i not in toc_hrefs and not i.endswith('-about')]
-    item('every numbered heading is in the TOC', not missing_toc, missing_toc[:6])
+    nav = re.findall(r'<nav class="toc".*?</nav>', h, flags=re.S)[0]; toc_hrefs = set(re.findall(r'href="#((?:en|ru)-s[^"]*)"', nav))
+    # the TOC lists every h2 and the h3 of the graph and machines chapters (7.x, 8.x) by design
+    must = [i for i in ids if re.match(r'(en|ru)-s\d+$', i) or re.match(r'(en|ru)-s[78]-\d+$', i)]
+    missing_toc = [i for i in must if i not in toc_hrefs]
+    item('every h2 and every 7.x/8.x h3 is in the TOC', not missing_toc, missing_toc[:6])
     secs = set(re.findall(r'<h3 id="en-s(\d+)-(\d+)"', h)); secs = {a + '.' + b for a, b in secs} | set(re.findall(r'<h2 id="en-s(\d+)"', h))
-    refs = set(re.findall(r'§\s?(\d+(?:\.\d+)?)', t))
+    refs = set(re.findall(r'(?<!CFR )§\s?(\d+(?:\.\d+)?)', t))   # "15 CFR §734.7" is a legal citation, not a section
     bad_refs = sorted(x for x in refs if x not in secs and not re.match(r'\d+\.\d+\.\d+', x))
     item('every §x.y reference names an existing section', not bad_refs, bad_refs[:8])
     # 4. sortable-table tags sit on the intended tables (a numeric column exists; the heading before the table matches the tag list)
     from importlib import import_module
     sys.path.insert(0, os.path.join(ROOT, 'build'))
     bh = import_module('build_html')
-    en = h[h.find('<div class="prose lang-en"'):h.find('<div class="prose lang-ru"')]
     problems = []
     for num, kind, nth in bh.SORT_TABLES:
-        m = re.search(r'<h3 id="[^"]+">' + re.escape(num) + r' ', en)
+        m = re.search(r'<h3 id="en-s' + num.replace('.', '-') + r'">', h)   # ids follow the section number
         if not m: problems.append((num, 'heading not found')); continue
-        seg = en[m.end():]; nx = re.search(r'<h3 id=', seg); seg = seg[:nx.start()] if nx else seg
+        seg = h[m.end():]; nx = re.search(r'<h[23] id=', seg); seg = seg[:nx.start()] if nx else seg
         tbls = re.findall(r'<div class="tbl"[^>]*>', seg)
         if len(tbls) < nth or 'data-sort' not in tbls[nth - 1]: problems.append((num, 'tag not on table %d of %d' % (nth, len(tbls))))
     item('sortable-table tags land on the intended tables (by heading number)', not problems, problems)
