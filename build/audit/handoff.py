@@ -87,8 +87,12 @@ def main():
         open(hpath, 'w', encoding='utf-8', newline='\n').write(s2); manifest['handoff'] = hpath
     if rpath:
         s = open(rpath, encoding='utf-8').read()
-        line = 'Current: `%s` (sha256 %s…, %s; branch `%s`, HEAD %s — not yet merged to main).' % (snap, dsha[:32], __import__('datetime').date.today().isoformat(), branch, short)
-        s2 = re.sub(r'^Current: .*$', line, s, count=1, flags=re.M)
+        # the old "Current" becomes "Previous" (one line carries both, so the README never loses the last snapshot's record)
+        pm = re.search(r'^Current: `([^`]+)` \(sha256 ([0-9a-f]+)…, (\d{4}-\d{2}-\d{2})', s, flags=re.M)
+        prev = (' Previous: `%s` (sha256 %s…, %s; superseded by this build).' % pm.groups()) if pm and pm.group(1) != snap else ''
+        if pm and pm.group(1) == snap: prev = re.search(r'^Current: .*?( Previous: .*)?$', s, flags=re.M).group(1) or ''
+        line = 'Current: `%s` (sha256 %s…, %s; branch `%s`, HEAD %s%s — not yet merged to main).%s' % (snap, dsha[:32], __import__('datetime').date.today().isoformat(), branch, short, (', handoff `00_admin/%s`' % os.path.basename(hpath)) if hpath else '', prev)
+        s2 = re.sub(r'^Current: .*$', lambda m: line, s, count=1, flags=re.M)
         open(rpath, 'w', encoding='utf-8', newline='\n').write(s2); manifest['readme'] = rpath
     json.dump(manifest, open(os.path.join(out, 'handoff_manifest.json'), 'w', encoding='utf-8'), indent=1)
     print(acceptance); print('bundle', bundle, bsha[:16], '| snapshot', snap, dsha[:16])
