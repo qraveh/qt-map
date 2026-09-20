@@ -1,5 +1,5 @@
 # Технологии квантовых компьютеров — сравнение по целям
-## Достижения, обоснованные намерения и наиболее перспективные направления (состояние на 4 сентября 2026)
+## Достижения, обоснованные намерения и наиболее перспективные направления (состояние на 4 сентября 2026; крупные анонсы проверены по 20 сентября 2026)
 
 
 
@@ -20,7 +20,7 @@
 ## 0. Резюме
 
 1. **Физика отказоустойчивости продемонстрирована на трёх платформах, и их профили — дополнения, а не соперники.** У сверхпроводниковых схем самый быстрый цикл коррекции ошибок ($\sim 1$ мкс) и посредственный канал в масштабе ($\sim 10^{-3}$ двухкубитная ошибка, $10^{-2}$ считывание); у ионов в ловушках лучший канал в масштабе ($7.9\times10^{-4}$ двухкубитная, $4.8\times10^{-4}$ SPAM на 98 кубитах) при такте миллисекундного класса; у нейтральных атомов наибольшие числа кубитов под контролем качества (448 атомов под полным логическим управлением, тысячи удерживаются с секундной когерентностью) и перестраиваемая связность, тоже при миллисекундном такте. Ни один путь не доминирует по всем осям — реестр машин делает это буквальным: крупнейшее устройство с гейтами — массив пинцетов, лучшая двухкубитная ошибка — ионная ловушка, самый быстрый такт — трансмонная решётка (§8.3).
-2. **Масштабирование подавления ошибок показано один раз, в памяти, на сверхпроводниковом железе** ($\Lambda=2.14$ по d=3→5→7, прогон $10^6$ циклов с декодированием в реальном времени при d=5, лучшая логическая ошибка при d=7 — $7.7\times10^{-4}$ на цикл). Ионы и атомы впереди по *числу* логических кубитов и по логическим *операциям* — трансверсальные гейты, телепортация, дистилляция магических состояний на логических кубитах. Ни одна сторона ещё не показала результат другой; платформа, которая первой покажет оба, задаст ориентир на десятилетие.
+2. **Масштабирование подавления ошибок показано один раз, в памяти, на сверхпроводниковом железе** ($\Lambda=2.14$ по d=3→5→7, прогон $10^6$ циклов с декодированием в реальном времени при d=5, лучшая логическая ошибка при d=7 — $7.7\times10^{-4}$ на цикл). Ионы и атомы впереди по *числу* логических кубитов и по логическим *операциям* — трансверсальные гейты, телепортация, дистилляция магических состояний на логических кубитах — а с сентября 2026 и по ошибке памяти на логический кубит и цикл: $4.6\times10^{-5}$ с кодом $[[20,2,6]]$ на Helios без постселекции, при цикле примерно в тысячу раз длиннее сверхпроводникового (препринт). Ни одна сторона ещё не показала результат другой; платформа, которая первой покажет оба, задаст ориентир на десятилетие.
 3. **Скорость решает судьбу крупномасштабной отказоустойчивости и почти ничего больше.** Оценки ресурсов для химии и криптоанализа меняют время работы на $\sim10^{3}$ между гейтами наносекундного и микросекундного класса, а миллисекундный цикл коррекции добавляет ещё $10^{3}$. Ионам и атомам приходится выкупать это скоростью кода, трансверсальной логикой и параллелизмом — правдоподобно для $10^{2}$–$10^{3}$ логических кубитов, не доказано для алгоритмов на $10^{9}$ гейтов.
 4. **Рычаг, за который тянется вся отрасль, — инженерия структуры ошибок, а не снижение их частоты:** преобразование в стирания (двухрельсовые кубиты, метастабильные Yb/Sr, потеря фотона), смещение шума (кошачьи кубиты), удаление утечек и декодирование в реальном времени. Порог поверхностного кода вырастает примерно вчетверо ($0.94\%\to4.15\%$), когда ошибки становятся стираниями. Именно здесь наборы инструментов семейств действительно расходятся: из 86 станций, занятых зарегистрированными машинами, лишь 20 делят два семейства и 3 — три (§8.4, H8).
 5. **Что говорят 136 зарегистрированных машин.** Гонка за числом кубитов остановилась там, где это важно: крупнейшее сверхпроводниковое устройство с гейтами стоит на 433 кубитах с 2022 года, крупнейший пинцетный процессор с гейтами — на 1 180 с 2023-го, тогда как анонсы убегают на десятилетие вперёд (10 000–22 000 кубитов к 2028–2029); сегодняшние массивы на тысячи атомов ещё не выполняют перепутывающий гейт. Двухкубитная ошибка сходится по медиане у трёх больших семейств (3–4×10⁻³) и улучшается на фронте на треть–половину в год, медиана отстаёт от фронта примерно на три года. Запуск кода на железе становится входным билетом (47 машин это сделали), тогда как декодер замкнут в цикле у 5; слой межсоединений не раскрыт или отсутствует у 119 машин; управление остаётся вне криостата у 115. Каждая опубликованная дорожная карта, которая не дотягивает, не дотягивает по бюджету ошибок, а не по кубитам (56 из 65 недостач) — поэтому дальше важны машины, сдвигающие логическую ошибку на операцию, каково бы ни было их число кубитов (§8.4–8.6).
@@ -308,7 +308,7 @@ Erasure-половина семейства (dual-rail на трансмонах
 | Фотоника | fusion-сеть / многофотонное ресурсное состояние дальше пар Белла; потери в пределах 10× от порога | цель PsiQuantum 2027 формально сдвинута; V&V Stage C отрицательна |
 | Спины | >20 кубитов с 2Q ≥99.5% по всем парам на 300 мм; считывание класса мкс | цифры Diraq на 2029 снова пересмотрены вниз |
 | Топологические | время жизни X ≈ время жизни Z; любая двухкубитная запутанность | ничего из этого к концу 2027 |
-| Внешнее | выбор DARPA QBI Stage C (ожидается Q4 2026) | — |
+| Внешнее | выбор DARPA QBI Stage C (ожидается Q4 2026); конкурс DOE Quantum Genesis Q (сентябрь 2026: $215 млн за системы не менее чем со 100 логическими кубитами) — кто заявится и на какой платформе | — |
 
 Читать вместе с §8.5: реестр машин даёт каждому из этих направлений измеренную базу, а реестр прогнозов — датированное количественное ожидание с уверенностью и опровергающим условием; следующее издание оценит оба списка рядом. Три «понижающих» условия выше уже частично отвечены реестром на срезе 17 сентября 2026: Kookaburra и IQM Halocene записаны как анонсированные, но не поставленные, и каждая опубликованная дорожная карта, которую реестр смог оценить, не дотягивает по бюджету ошибок, а не по числу кубитов (§8.4, H6).
 
@@ -1419,6 +1419,88 @@ Erasure-половина семейства (dual-rail на трансмонах
 **H2 — Двухкубитная ошибка сходится у трёх больших семейств по медиане, а лучшее единичное число остаётся у ионов.**
 
 *Проверка.* Медиана и лучшее значение `err_2q_median` по устройствам каждого семейства, исключая рекордные пары, цели и демонстрации компонентов. *Результат.* сверхпроводниковые схемы: медиана 4.0×10⁻³, лучшее 1.0×10⁻³ (Aqumen Seeker), n = 24; ионы в ловушках: медиана 3.0×10⁻³, лучшее 7.9×10⁻⁴ (Helios), n = 9; нейтральные атомы: медиана 4.0×10⁻³, лучшее 1.6×10⁻³ (448-atom fault-tolerant processor), n = 5; фотоника: медиана 6.2×10⁻², лучшее 7.8×10⁻³ (Omega chipset (Moreton Bay / Chicago systems unnamed)), n = 3; полупроводниковые спины: медиана 1.1×10⁻², лучшее 3.6×10⁻³ (11-qubit donor processor), n = 3. Разброс трёх больших медиан — ×1.3. *Вердикт:* **подтверждена**. Сходимость медиан при сохраняющемся разрыве в лучших значениях — то, чего ждёшь, когда медиану задают многочисленные машины второго ряда, а лучшее — несколько лабораторий, десятилетие работающих на одной платформе.
+
+<figure class="fig81"><svg viewBox="0 0 760 440" role="img" aria-labelledby="fig81t-ru" style="max-width:760px;width:100%;height:auto;display:block">
+<title id="fig81t-ru">Число физических кубитов против медианной двухкубитной ошибки, 47 машин</title>
+<style>.fig81 .gl{stroke:var(--rule);stroke-width:1}.fig81 .ax{fill:var(--muted);font:11px "JetBrains Mono",monospace}.fig81 .lb{fill:var(--ink2);font:11px system-ui,sans-serif}.fig81 .lg{fill:var(--ink2);font:11.5px system-ui,sans-serif}.fig81 .f-SC{fill:#2A78D6;stroke:#2A78D6}.fig81 .f-ION{fill:#D95926;stroke:#D95926}.fig81 .f-ATOM{fill:#199E70;stroke:#199E70}.fig81 .f-PHOTON{fill:#4A3AA7;stroke:#4A3AA7}.fig81 .f-SPIN{fill:#D55181;stroke:#D55181}.fig81 .f-DEFECT{fill:#C98500;stroke:#C98500}@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .fig81 .f-SC{fill:#3987E5;stroke:#3987E5}:root:not([data-theme="light"]) .fig81 .f-ION{fill:#DD5622;stroke:#DD5622}:root:not([data-theme="light"]) .fig81 .f-ATOM{fill:#1BAF7A;stroke:#1BAF7A}:root:not([data-theme="light"]) .fig81 .f-PHOTON{fill:#9085E9;stroke:#9085E9}:root:not([data-theme="light"]) .fig81 .f-SPIN{fill:#D9628F;stroke:#D9628F}:root:not([data-theme="light"]) .fig81 .f-DEFECT{fill:#EDA100;stroke:#EDA100}}:root[data-theme="dark"] .fig81 .f-SC{fill:#3987E5;stroke:#3987E5}:root[data-theme="dark"] .fig81 .f-ION{fill:#DD5622;stroke:#DD5622}:root[data-theme="dark"] .fig81 .f-ATOM{fill:#1BAF7A;stroke:#1BAF7A}:root[data-theme="dark"] .fig81 .f-PHOTON{fill:#9085E9;stroke:#9085E9}:root[data-theme="dark"] .fig81 .f-SPIN{fill:#D9628F;stroke:#D9628F}:root[data-theme="dark"] .fig81 .f-DEFECT{fill:#EDA100;stroke:#EDA100}.fig81 .hollow{fill:var(--surface)!important}.fig81 .mk{stroke-width:1.6}.fig81 .ring{fill:none;stroke:var(--surface);stroke-width:2}</style>
+<line class="gl" x1="62.0" y1="14" x2="62.0" y2="394"/>
+<text class="ax" x="62.0" y="410" text-anchor="middle">1</text>
+<line class="gl" x1="229.0" y1="14" x2="229.0" y2="394"/>
+<text class="ax" x="229.0" y="410" text-anchor="middle">10</text>
+<line class="gl" x1="396.0" y1="14" x2="396.0" y2="394"/>
+<text class="ax" x="396.0" y="410" text-anchor="middle">100</text>
+<line class="gl" x1="563.0" y1="14" x2="563.0" y2="394"/>
+<text class="ax" x="563.0" y="410" text-anchor="middle">1,000</text>
+<line class="gl" x1="730.0" y1="14" x2="730.0" y2="394"/>
+<text class="ax" x="730.0" y="410" text-anchor="middle">10,000</text>
+<line class="gl" x1="62" y1="295.5" x2="730" y2="295.5"/>
+<text class="ax" x="56" y="295.5" text-anchor="end" dominant-baseline="middle">10⁻³</text>
+<line class="gl" x1="62" y1="154.7" x2="730" y2="154.7"/>
+<text class="ax" x="56" y="154.7" text-anchor="end" dominant-baseline="middle">10⁻²</text>
+<line class="gl" x1="62" y1="14.0" x2="730" y2="14.0"/>
+<text class="ax" x="56" y="14.0" text-anchor="end" dominant-baseline="middle">10⁻¹</text>
+<text class="ax" x="396.0" y="434" text-anchor="middle">физических кубитов (лог. шкала)</text>
+<text class="ax" transform="translate(12,204.0) rotate(-90)" text-anchor="middle">медианная двухкубитная ошибка</text>
+<g class="pt"><title>Phoenix (Gen-1) and Gen-2 — Atom Computing · 1,180 кубитов · 4.0×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="575.0" cy="210.7" r="6.2"/><circle class="mk f-ATOM" cx="575.0" cy="210.7" r="4.6"/></g>
+<g class="pt"><title>Hanyuan-1 — Zhongke Kuyuan (Wuhan, CAS) · 100 кубитов · 2.0×10⁻² медианная 2Q-ошибка</title><circle class="ring" cx="396.0" cy="112.4" r="6.2"/><circle class="mk f-ATOM" cx="396.0" cy="112.4" r="4.6"/></g>
+<g class="pt"><title>448-atom fault-tolerant processor — Harvard / MIT / QuEra · 448 кубитов · 1.6×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="504.8" cy="266.8" r="6.2"/><circle class="mk f-ATOM" cx="504.8" cy="266.8" r="4.6"/></g>
+<g class="pt"><title>Sqale — Infleqtion · 100 кубитов · 2.7×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="396.0" cy="234.8" r="6.2"/><circle class="mk f-ATOM" cx="396.0" cy="234.8" r="4.6"/></g>
+<g class="pt"><title>Gemini-class — QuEra · 260 кубитов · 8.0×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="465.3" cy="168.4" r="6.2"/><circle class="mk f-ATOM" cx="465.3" cy="168.4" r="4.6"/></g>
+<g class="pt"><title>IBEX Q1 (Marmot / PINE / LYNX) — Alpine Quantum Technologies · 12 кубитов · 1.3×10⁻² медианная 2Q-ошибка</title><circle class="ring" cx="242.2" cy="138.7" r="6.2"/><circle class="mk f-ION" cx="242.2" cy="138.7" r="4.6"/></g>
+<g class="pt"><title>Aria — IonQ · 32 кубитов · 4.0×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="313.4" cy="210.7" r="6.2"/><circle class="mk f-ION" cx="313.4" cy="210.7" r="4.6"/></g>
+<g class="pt"><title>Forte / Forte Enterprise — IonQ · 30 кубитов · 4.0×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="308.7" cy="210.7" r="6.2"/><circle class="mk f-ION" cx="308.7" cy="210.7" r="4.6"/></g>
+<g class="pt"><title>System Model H1 (H1-1) — Quantinuum · 20 кубитов · 3.0×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="279.3" cy="228.3" r="6.2"/><circle class="mk f-ION" cx="279.3" cy="228.3" r="4.6"/></g>
+<g class="pt"><title>System Model H2 (H2-1, H2-2) — Quantinuum · 56 кубитов · 1.0×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="353.9" cy="295.5" r="6.2"/><circle class="mk f-ION" cx="353.9" cy="295.5" r="4.6"/></g>
+<g class="pt"><title>Helios — Quantinuum · 98 кубитов · 7.9×10⁻⁴ медианная 2Q-ошибка</title><circle class="ring" cx="394.5" cy="309.9" r="6.2"/><circle class="mk f-ION" cx="394.5" cy="309.9" r="4.6"/></g>
+<g class="pt"><title>Helix architecture on Helios — Quantinuum · 20 кубитов · 7.9×10⁻⁴ медианная 2Q-ошибка</title><circle class="ring" cx="279.3" cy="309.9" r="6.2"/><circle class="mk f-ION" cx="279.3" cy="309.9" r="4.6"/></g>
+<g class="pt"><title>University of Innsbruck / IQOQI research trap — University of Innsbruck · 20 кубитов · 2.5×10⁻² медианная 2Q-ошибка</title><circle class="ring" cx="279.3" cy="98.7" r="6.2"/><circle class="mk f-ION" cx="279.3" cy="98.7" r="4.6"/></g>
+<g class="pt"><title>Maryland / Duke Quantum Center (EURIQA lineage) — University of Maryland / Duke University · 13 кубитов · 3.0×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="248.0" cy="228.3" r="6.2"/><circle class="mk f-ION" cx="248.0" cy="228.3" r="4.6"/></g>
+<g class="pt"><title>Belenos — Quandela · 12 кубитов · 6.2×10⁻² медианная 2Q-ошибка</title><circle class="ring" cx="242.2" cy="43.2" r="6.2"/><circle class="mk f-PHOTON" cx="242.2" cy="43.2" r="4.6"/></g>
+<g class="pt"><title>Lucy — Quandela · 12 кубитов · 6.2×10⁻² медианная 2Q-ошибка</title><circle class="ring" cx="242.2" cy="43.2" r="6.2"/><circle class="mk f-PHOTON" cx="242.2" cy="43.2" r="4.6"/></g>
+<g class="pt"><title>Alice &amp; Bob Graphene — Alice &amp; Bob · 758 кубитов · 1.0×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="542.9" cy="295.5" r="6.2"/><circle class="mk f-SC hollow" cx="542.9" cy="295.5" r="4.6"/></g>
+<g class="pt"><title>Alice &amp; Bob Helium 2 (&quot;Galvanic Cat&quot;) — Alice &amp; Bob · 12 кубитов · 5.8×10⁻² медианная 2Q-ошибка</title><circle class="ring" cx="242.2" cy="47.3" r="6.2"/><circle class="mk f-SC" cx="242.2" cy="47.3" r="4.6"/></g>
+<g class="pt"><title>AWS Ocelot — AWS Center for Quantum Computing · 9 кубитов · 9.6×10⁻² медианная 2Q-ошибка</title><circle class="ring" cx="221.4" cy="16.5" r="6.2"/><circle class="mk f-SC" cx="221.4" cy="16.5" r="4.6"/></g>
+<g class="pt"><title>Tianyan-176 (and 24-q sibling) — China Telecom Quantum Group + QuantumCTek · 176 кубитов · 4.0×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="437.0" cy="210.7" r="6.2"/><circle class="mk f-SC" cx="437.0" cy="210.7" r="4.6"/></g>
+<g class="pt"><title>Tianyan-287 — China Telecom Quantum Group / QuantumCTek / CAS · 105 кубитов · 4.4×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="399.5" cy="204.9" r="6.2"/><circle class="mk f-SC" cx="399.5" cy="204.9" r="4.6"/></g>
+<g class="pt"><title>Fujitsu &gt;10,000 physical / ~250 logical (STAR) — Fujitsu + AIST + RIKEN · 10,000 кубитов · 1.0×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="730.0" cy="295.5" r="6.2"/><circle class="mk f-SC hollow" cx="730.0" cy="295.5" r="4.6"/></g>
+<g class="pt"><title>Sycamore — Google Quantum AI · 53 кубитов · 6.2×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="350.0" cy="184.0" r="6.2"/><circle class="mk f-SC" cx="350.0" cy="184.0" r="4.6"/></g>
+<g class="pt"><title>Willow — Google Quantum AI · 105 кубитов · 1.5×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="399.5" cy="270.7" r="6.2"/><circle class="mk f-SC" cx="399.5" cy="270.7" r="4.6"/></g>
+<g class="pt"><title>IBM Quantum Eagle r1-r3 — IBM · 127 кубитов · 7.4×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="413.3" cy="173.1" r="6.2"/><circle class="mk f-SC" cx="413.3" cy="173.1" r="4.6"/></g>
+<g class="pt"><title>IBM Quantum Heron r1 — IBM · 133 кубитов · 2.5×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="416.7" cy="240.5" r="6.2"/><circle class="mk f-SC" cx="416.7" cy="240.5" r="4.6"/></g>
+<g class="pt"><title>IBM Quantum Heron r2 — IBM · 156 кубитов · 2.0×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="428.3" cy="252.2" r="6.2"/><circle class="mk f-SC" cx="428.3" cy="252.2" r="4.6"/></g>
+<g class="pt"><title>IBM Quantum Heron r3 (ibm_pittsburgh) — IBM · 156 кубитов · 1.5×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="428.3" cy="269.9" r="6.2"/><circle class="mk f-SC" cx="428.3" cy="269.9" r="4.6"/></g>
+<g class="pt"><title>IBM Quantum Nighthawk r1 — IBM · 120 кубитов · 3.7×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="409.2" cy="215.5" r="6.2"/><circle class="mk f-SC" cx="409.2" cy="215.5" r="4.6"/></g>
+<g class="pt"><title>IBM Quantum Nighthawk r2 — IBM · 120 кубитов · 3.7×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="409.2" cy="215.5" r="6.2"/><circle class="mk f-SC" cx="409.2" cy="215.5" r="4.6"/></g>
+<g class="pt"><title>IQM Emerald — IQM Quantum Computers · 54 кубитов · 5.0×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="351.3" cy="197.1" r="6.2"/><circle class="mk f-SC" cx="351.3" cy="197.1" r="4.6"/></g>
+<g class="pt"><title>IQM Halocene — IQM Quantum Computers · 150 кубитов · 3.0×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="425.4" cy="228.3" r="6.2"/><circle class="mk f-SC hollow" cx="425.4" cy="228.3" r="4.6"/></g>
+<g class="pt"><title>Origin Wukong-180 (4th gen) — Origin Quantum · 180 кубитов · 1.0×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="438.6" cy="295.5" r="6.2"/><circle class="mk f-SC" cx="438.6" cy="295.5" r="4.6"/></g>
+<g class="pt"><title>Aqumen Seeker — Quantum Circuits Inc. (acquired by D-Wave, Jan 2026) · 8 кубитов · 1.0×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="212.8" cy="295.5" r="6.2"/><circle class="mk f-SC" cx="212.8" cy="295.5" r="4.6"/></g>
+<g class="pt"><title>QpiAI Kaveri — QpiAI · 64 кубитов · 1.0×10⁻² медианная 2Q-ошибка</title><circle class="ring" cx="363.6" cy="154.7" r="6.2"/><circle class="mk f-SC hollow" cx="363.6" cy="154.7" r="4.6"/></g>
+<g class="pt"><title>Rigetti Ankaa-2 — Rigetti Computing · 84 кубитов · 1.0×10⁻² медианная 2Q-ошибка</title><circle class="ring" cx="383.4" cy="154.7" r="6.2"/><circle class="mk f-SC" cx="383.4" cy="154.7" r="4.6"/></g>
+<g class="pt"><title>Rigetti Ankaa-3 — Rigetti Computing · 84 кубитов · 1.0×10⁻² медианная 2Q-ошибка</title><circle class="ring" cx="383.4" cy="154.7" r="6.2"/><circle class="mk f-SC" cx="383.4" cy="154.7" r="4.6"/></g>
+<g class="pt"><title>Rigetti Cepheus-1-108Q — Rigetti Computing · 108 кубитов · 9.0×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="401.6" cy="161.2" r="6.2"/><circle class="mk f-SC" cx="401.6" cy="161.2" r="4.6"/></g>
+<g class="pt"><title>Rigetti Cepheus-1-36Q — Rigetti Computing · 36 кубитов · 5.0×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="321.9" cy="197.1" r="6.2"/><circle class="mk f-SC" cx="321.9" cy="197.1" r="4.6"/></g>
+<g class="pt"><title>SUSTech biased-erasure cavity qubit — Southern University of Science and Technology · 1 кубитов · 2.9×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="62.0" cy="230.4" r="6.2"/><circle class="mk f-SC" cx="62.0" cy="230.4" r="4.6"/></g>
+<g class="pt"><title>Zuchongzhi 2.1 — USTC / Hefei National Laboratory · 66 кубитов · 2.5×10⁻² медианная 2Q-ошибка</title><circle class="ring" cx="365.9" cy="98.7" r="6.2"/><circle class="mk f-SC" cx="365.9" cy="98.7" r="4.6"/></g>
+<g class="pt"><title>Zuchongzhi 3.0 — USTC / Hefei National Laboratory · 105 кубитов · 3.8×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="399.5" cy="213.9" r="6.2"/><circle class="mk f-SC" cx="399.5" cy="213.9" r="4.6"/></g>
+<g class="pt"><title>Zuchongzhi 3.2 — USTC / Hefei National Laboratory · 107 кубитов · 4.0×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="400.9" cy="210.7" r="6.2"/><circle class="mk f-SC" cx="400.9" cy="210.7" r="4.6"/></g>
+<g class="pt"><title>Zhejiang University 125-qubit surface-code processor — Zhejiang University + CAEP · 125 кубитов · 4.0×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="412.2" cy="210.7" r="6.2"/><circle class="mk f-SC" cx="412.2" cy="210.7" r="4.6"/></g>
+<g class="pt"><title>foundry 8-qubit array — Diraq · 8 кубитов · 1.1×10⁻² медианная 2Q-ошибка</title><circle class="ring" cx="212.8" cy="148.9" r="6.2"/><circle class="mk f-SPIN" cx="212.8" cy="148.9" r="4.6"/></g>
+<g class="pt"><title>Bell-1 (UnityQ) — Equal1 · 6 кубитов · 1.6×10⁻² медианная 2Q-ошибка</title><circle class="ring" cx="192.0" cy="126.0" r="6.2"/><circle class="mk f-SPIN" cx="192.0" cy="126.0" r="4.6"/></g>
+<g class="pt"><title>11-qubit donor processor — Silicon Quantum Computing · 11 кубитов · 3.6×10⁻³ медианная 2Q-ошибка</title><circle class="ring" cx="235.9" cy="217.2" r="6.2"/><circle class="mk f-SPIN" cx="235.9" cy="217.2" r="4.6"/></g>
+<circle class="mk f-SC" cx="494" cy="26" r="4.6"/><text class="lg" x="504" y="26" dominant-baseline="middle">сверхпроводниковые схемы</text>
+<circle class="mk f-ION" cx="494" cy="42" r="4.6"/><text class="lg" x="504" y="42" dominant-baseline="middle">ионы в ловушках</text>
+<circle class="mk f-ATOM" cx="494" cy="58" r="4.6"/><text class="lg" x="504" y="58" dominant-baseline="middle">нейтральные атомы</text>
+<circle class="mk f-PHOTON" cx="494" cy="74" r="4.6"/><text class="lg" x="504" y="74" dominant-baseline="middle">фотоника</text>
+<circle class="mk f-SPIN" cx="494" cy="90" r="4.6"/><text class="lg" x="504" y="90" dominant-baseline="middle">полупроводниковые спины</text>
+<circle class="mk f-SC hollow" cx="494" cy="106" r="4.6"/><text class="lg" x="504" y="106" dominant-baseline="middle">пустой: анонс, цель или компонент</text>
+<text class="lb" x="221.8" y="286.5" text-anchor="start">Aqumen Seeker</text>
+<text class="lb" x="403.5" y="324.9" text-anchor="start">Helios</text>
+<text class="lb" x="447.6" y="286.5" text-anchor="start">Origin Wukong-180 (4th gen)</text>
+<text class="lb" x="513.8" y="257.8" text-anchor="start">448-atom fault-tolerant proc</text>
+<text class="lb" x="566.0" y="201.7" text-anchor="end">Phoenix (Gen-1) and Gen-2</text>
+</svg>
+<figcaption><b>Рисунок 8.1 — Число физических кубитов против медианной двухкубитной ошибки</b> для 47 зарегистрированных машин, публикующих обе величины (рекордные пары исключены). Семейства расходятся по оси числа кубитов сильнее, чем по оси ошибки — это чтение, стоящее за H1 и H2; наведите на метку, чтобы увидеть машину.</figcaption></figure>
 
 **H3 — Управление остаётся внешним: интегрированное управление — меньшинство, ограниченное спинами, отжигом и несколькими ловушками; ни одно сверхпроводниковое устройство от 100 кубитов не управляется изнутри криостата.**
 

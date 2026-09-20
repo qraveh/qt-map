@@ -33,7 +33,8 @@ def mach_slim():
             if cells: layers[L]=cells
         ec=m.get('evidence_counts') or {}
         out.append({'id':m['id'],'name':m['name'],'org':m['org'],'family':m['family'],'path':m['map_path'],'status':m['status'],'status_date':m['status_date'],
-                    'q':m.get('physical_qubits_num'),'layers':layers,'gaps':gaps,'ev':[ec.get('verified',0),ec.get('total',0)]})
+                    'q':m.get('physical_qubits_num'),'layers':layers,'gaps':gaps,'ev':[ec.get('verified',0),ec.get('total',0)],
+                    'refs':[[r['kind'],r['url'],r['title']] for r in (m.get('refs') or [])[:3]]})   # up to three attribution-verified links per machine
     by_node={k:{'primary':list(v.get('primary',[])),'alternate':list(v.get('alternate',[]))} for k,v in M['by_node'].items() if not str(k).startswith('∅')}
     return {'machines':out,'by_node':by_node,'families':MACH_FAMILIES,'urls':MACH_URLS}
 

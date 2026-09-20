@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build data/machines.json (SPEC step C2, "machines on the Map") from the machines register.
 
-Inputs : quantum-machines-2026.09/data/{machines,machine-stations-evidence,records-candidates,machine-codes,roadmap-feasibility}.csv
+Inputs : quantum-machines-2026.09/data/{machines,machine-stations-evidence,records-candidates,machine-codes,roadmap-feasibility,machine-refs-verified}.csv
          data/graph.json (layers, vocab.RECKEYS)
 Output : data/machines.json  -- deterministic: same inputs give identical bytes.
 
@@ -95,6 +95,18 @@ def build():
         road.append({k: r.get(k, '') for k in ('roadmap_id', 'org', 'machine_id', 'year', 'q_r', 'eps_r', 'g_r',
                                                 'algorithm_id', 'verdict', 'deficit')})
     road.sort(key=lambda r: (r['roadmap_id'], r['algorithm_id']))
+    KIND_ORDER = ['paper', 'whitepaper', 'product', 'docs', 'blog', 'press', 'other']
+    refs_by = {}
+    try:
+        for r in rows('machine-refs-verified.csv'):   # attribution-verified links (20 Sep 2026): only rows the page was seen to name the machine
+            if r.get('verdict', '').strip() != '✅' or r['machine_id'] not in ids: continue
+            lst = refs_by.setdefault(r['machine_id'], [])
+            if any(x['url'] == r['url'] for x in lst): continue
+            lst.append({'url': r['url'], 'title': (r.get('found_title') or r.get('title') or '').strip()[:140], 'kind': r.get('kind', 'other').strip() or 'other'})
+    except FileNotFoundError:
+        pass
+    for lst in refs_by.values():
+        lst.sort(key=lambda x: (KIND_ORDER.index(x['kind']) if x['kind'] in KIND_ORDER else 99, x['title'], x['url']))
     codes_by = {}
     for r in rows('machine-codes.csv'):
         if r['machine_id'] not in ids:
@@ -129,6 +141,7 @@ def build():
                     "physical_qubits_num": int_or_none(m['physical_qubits_num']), "access": m['access'],
                     "layers": layers, "records": recs, "codes": sorted(codes_by.get(mid, ())),
                     "evidence_counts": {"verified": ver, "total": tot},
+                    "refs": refs_by.get(mid, []),
                     "profile": profile(m)})
     out.sort(key=fam_key)
     bn = {k: {"primary": sorted(v['primary']), "alternate": sorted(v['alternate'])} for k, v in sorted(by_node.items())}

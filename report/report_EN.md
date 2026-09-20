@@ -1,5 +1,5 @@
 # Quantum Computing Technologies — A Goal-Oriented Comparison
-## Achievements, justified intentions, and the most promising directions (status: 4 September 2026)
+## Achievements, justified intentions, and the most promising directions (status: 4 September 2026; major announcements checked through 20 September 2026)
 
 
 
@@ -20,7 +20,7 @@
 ## 0. Executive summary
 
 1. **The physics of fault tolerance is demonstrated on three platforms, and their profiles are complements, not rivals.** Superconducting circuits have the fastest error-correction cycle ($\sim 1\ \mu$s) and a channel that is mediocre at scale ($\sim 10^{-3}$ two-qubit error, $10^{-2}$ readout); trapped ions the best channel at scale ($7.9\times10^{-4}$ two-qubit, $4.8\times10^{-4}$ SPAM over 98 qubits) with a millisecond-class clock; neutral atoms the largest counts under quality (448 atoms under full logical control, thousands held with second-scale coherence) and reconfigurable connectivity, also at a millisecond clock. No path dominates on every axis — the machines register makes this literal: the largest gate-capable device is a tweezer array, the best two-qubit error is an ion trap, the fastest clock is a transmon lattice (§8.3).
-2. **Scaling of error suppression has been shown once, in memory, on superconducting hardware** ($\Lambda=2.14$ across d=3→5→7, a $10^6$-cycle real-time-decoded run at d=5, best d=7 logical error $7.7\times10^{-4}$ per cycle). Ions and atoms lead on the *number* of logical qubits and on logical *operations* — transversal gates, teleportation, magic-state distillation on logical qubits. Neither side has yet shown the other's result; the platform that shows both first sets the reference for the decade.
+2. **Scaling of error suppression has been shown once, in memory, on superconducting hardware** ($\Lambda=2.14$ across d=3→5→7, a $10^6$-cycle real-time-decoded run at d=5, best d=7 logical error $7.7\times10^{-4}$ per cycle). Ions and atoms lead on the *number* of logical qubits and on logical *operations* — transversal gates, teleportation, magic-state distillation on logical qubits — and, since September 2026, on the memory error per logical qubit and cycle: $4.6\times10^{-5}$ with a $[[20,2,6]]$ code on Helios without post-selection, at a cycle roughly a thousand times longer than the superconducting one (preprint). Neither side has yet shown the other's result; the platform that shows both first sets the reference for the decade.
 3. **Speed decides large-scale fault tolerance and almost nothing else.** Resource estimates for chemistry and cryptanalysis change runtime by $\sim10^{3}$ between nanosecond- and microsecond-class gates, and a millisecond QEC cycle adds another $10^{3}$. Ions and atoms must buy this back with encoding rate, transversal logic and parallelism — plausible for $10^{2}$–$10^{3}$ logical qubits, unproven for $10^{9}$-gate algorithms.
 4. **The lever the whole field is reaching for is error-structure engineering, not error-rate reduction:** erasure conversion (dual-rail, metastable Yb/Sr, photon loss), noise bias (cats), leakage removal and real-time decoding. The surface-code threshold roughly quadruples ($0.94\%\to4.15\%$) when errors become erasures. It is also where the families' toolboxes genuinely differ: of the 86 stations occupied by registered machines, only 20 are shared by two families and 3 by three (§8.4, H8).
 5. **What the 136 registered machines say.** The count race has stalled where it counts: the largest gate-capable superconducting device has stood at 433 qubits since 2022 and the largest gate-capable tweezer processor at 1,180 since 2023, while announcements run a decade ahead (10,000–22,000 qubits for 2028–2029); today's thousands-of-atom arrays do not yet run an entangling gate. Two-qubit error converges at the median across the three large families (3–4×10⁻³) and improves at the frontier by a third to a half per year, the median trailing the frontier by about three years. Running a code on the hardware is becoming the entry ticket (47 machines have) while the decoder is in the loop on 5; the interconnect layer is undisclosed or absent on 119 machines; control stays outside the cryostat on 115. Every published roadmap that falls short does so on the error budget, not on qubits (56 of 65 shortfalls) — which is why the machines that matter next are the ones that move the logical error per operation, whatever their qubit count (§8.4–8.6).
@@ -308,7 +308,7 @@ Classical belief-propagation tensor networks closed most of the 2025 gap; revenu
 | Photonic | a fusion network / multi-photon resource state beyond Bell pairs; loss within 10× of threshold | PsiQuantum 2027 target formally moved; Stage C V&V negative |
 | Spin | >20 qubits with all-pairs 2Q ≥99.5% on 300 mm; µs-class readout | Diraq's 2029 numbers revised down again |
 | Topological | X-lifetime ≈ Z-lifetime; any two-qubit entanglement | none of the above by end-2027 |
-| External | DARPA QBI Stage C selections (expected Q4 2026) | — |
+| External | DARPA QBI Stage C selections (expected Q4 2026); the DOE Quantum Genesis Q competition (September 2026: $215 M for systems of at least 100 logical qubits) — who enters, on what platform | — |
 
 Read together with §8.5: the machines register gives each of these directions a measured baseline and the forecast ledger a dated, quantitative expectation with a confidence and a falsifier; the next edition scores both lists side by side. Three of the demote-triggers above are already partly answered by the register at its 17 September 2026 cut: Kookaburra and IQM Halocene are recorded as announced but not delivered, and every published roadmap that the register could evaluate falls short on the error budget rather than on qubit count (§8.4, H6).
 
@@ -1419,6 +1419,88 @@ Each hypothesis is a falsifiable statement about the population; the test is the
 **H2 — Two-qubit error is converging across the three large families at the median, while the best single number stays with the ions.**
 
 *Test.* Median and best `err_2q_median` over devices per family, excluding hero-pair numbers, targets and component demonstrations. *Result.* superconducting circuits median 4.0×10⁻³, best 1.0×10⁻³ (Aqumen Seeker), n = 24; trapped ions median 3.0×10⁻³, best 7.9×10⁻⁴ (Helios), n = 9; neutral atoms median 4.0×10⁻³, best 1.6×10⁻³ (448-atom fault-tolerant processor), n = 5; photonics median 6.2×10⁻², best 7.8×10⁻³ (Omega chipset (Moreton Bay / Chicago systems unnamed)), n = 3; semiconductor spins median 1.1×10⁻², best 3.6×10⁻³ (11-qubit donor processor), n = 3. The spread of the three large medians is ×1.3. *Verdict:* **supported**. A convergence of medians with a persistent gap at the best is what one expects when the median is set by the many second-tier machines and the best by a few labs that have run the same platform for a decade.
+
+<figure class="fig81"><svg viewBox="0 0 760 440" role="img" aria-labelledby="fig81t-en" style="max-width:760px;width:100%;height:auto;display:block">
+<title id="fig81t-en">Physical qubit count against median two-qubit error, 47 machines</title>
+<style>.fig81 .gl{stroke:var(--rule);stroke-width:1}.fig81 .ax{fill:var(--muted);font:11px "JetBrains Mono",monospace}.fig81 .lb{fill:var(--ink2);font:11px system-ui,sans-serif}.fig81 .lg{fill:var(--ink2);font:11.5px system-ui,sans-serif}.fig81 .f-SC{fill:#2A78D6;stroke:#2A78D6}.fig81 .f-ION{fill:#D95926;stroke:#D95926}.fig81 .f-ATOM{fill:#199E70;stroke:#199E70}.fig81 .f-PHOTON{fill:#4A3AA7;stroke:#4A3AA7}.fig81 .f-SPIN{fill:#D55181;stroke:#D55181}.fig81 .f-DEFECT{fill:#C98500;stroke:#C98500}@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .fig81 .f-SC{fill:#3987E5;stroke:#3987E5}:root:not([data-theme="light"]) .fig81 .f-ION{fill:#DD5622;stroke:#DD5622}:root:not([data-theme="light"]) .fig81 .f-ATOM{fill:#1BAF7A;stroke:#1BAF7A}:root:not([data-theme="light"]) .fig81 .f-PHOTON{fill:#9085E9;stroke:#9085E9}:root:not([data-theme="light"]) .fig81 .f-SPIN{fill:#D9628F;stroke:#D9628F}:root:not([data-theme="light"]) .fig81 .f-DEFECT{fill:#EDA100;stroke:#EDA100}}:root[data-theme="dark"] .fig81 .f-SC{fill:#3987E5;stroke:#3987E5}:root[data-theme="dark"] .fig81 .f-ION{fill:#DD5622;stroke:#DD5622}:root[data-theme="dark"] .fig81 .f-ATOM{fill:#1BAF7A;stroke:#1BAF7A}:root[data-theme="dark"] .fig81 .f-PHOTON{fill:#9085E9;stroke:#9085E9}:root[data-theme="dark"] .fig81 .f-SPIN{fill:#D9628F;stroke:#D9628F}:root[data-theme="dark"] .fig81 .f-DEFECT{fill:#EDA100;stroke:#EDA100}.fig81 .hollow{fill:var(--surface)!important}.fig81 .mk{stroke-width:1.6}.fig81 .ring{fill:none;stroke:var(--surface);stroke-width:2}</style>
+<line class="gl" x1="62.0" y1="14" x2="62.0" y2="394"/>
+<text class="ax" x="62.0" y="410" text-anchor="middle">1</text>
+<line class="gl" x1="229.0" y1="14" x2="229.0" y2="394"/>
+<text class="ax" x="229.0" y="410" text-anchor="middle">10</text>
+<line class="gl" x1="396.0" y1="14" x2="396.0" y2="394"/>
+<text class="ax" x="396.0" y="410" text-anchor="middle">100</text>
+<line class="gl" x1="563.0" y1="14" x2="563.0" y2="394"/>
+<text class="ax" x="563.0" y="410" text-anchor="middle">1,000</text>
+<line class="gl" x1="730.0" y1="14" x2="730.0" y2="394"/>
+<text class="ax" x="730.0" y="410" text-anchor="middle">10,000</text>
+<line class="gl" x1="62" y1="295.5" x2="730" y2="295.5"/>
+<text class="ax" x="56" y="295.5" text-anchor="end" dominant-baseline="middle">10⁻³</text>
+<line class="gl" x1="62" y1="154.7" x2="730" y2="154.7"/>
+<text class="ax" x="56" y="154.7" text-anchor="end" dominant-baseline="middle">10⁻²</text>
+<line class="gl" x1="62" y1="14.0" x2="730" y2="14.0"/>
+<text class="ax" x="56" y="14.0" text-anchor="end" dominant-baseline="middle">10⁻¹</text>
+<text class="ax" x="396.0" y="434" text-anchor="middle">physical qubits (log scale)</text>
+<text class="ax" transform="translate(12,204.0) rotate(-90)" text-anchor="middle">median two-qubit error</text>
+<g class="pt"><title>Phoenix (Gen-1) and Gen-2 — Atom Computing · 1,180 qubits · 4.0×10⁻³ median 2Q error</title><circle class="ring" cx="575.0" cy="210.7" r="6.2"/><circle class="mk f-ATOM" cx="575.0" cy="210.7" r="4.6"/></g>
+<g class="pt"><title>Hanyuan-1 — Zhongke Kuyuan (Wuhan, CAS) · 100 qubits · 2.0×10⁻² median 2Q error</title><circle class="ring" cx="396.0" cy="112.4" r="6.2"/><circle class="mk f-ATOM" cx="396.0" cy="112.4" r="4.6"/></g>
+<g class="pt"><title>448-atom fault-tolerant processor — Harvard / MIT / QuEra · 448 qubits · 1.6×10⁻³ median 2Q error</title><circle class="ring" cx="504.8" cy="266.8" r="6.2"/><circle class="mk f-ATOM" cx="504.8" cy="266.8" r="4.6"/></g>
+<g class="pt"><title>Sqale — Infleqtion · 100 qubits · 2.7×10⁻³ median 2Q error</title><circle class="ring" cx="396.0" cy="234.8" r="6.2"/><circle class="mk f-ATOM" cx="396.0" cy="234.8" r="4.6"/></g>
+<g class="pt"><title>Gemini-class — QuEra · 260 qubits · 8.0×10⁻³ median 2Q error</title><circle class="ring" cx="465.3" cy="168.4" r="6.2"/><circle class="mk f-ATOM" cx="465.3" cy="168.4" r="4.6"/></g>
+<g class="pt"><title>IBEX Q1 (Marmot / PINE / LYNX) — Alpine Quantum Technologies · 12 qubits · 1.3×10⁻² median 2Q error</title><circle class="ring" cx="242.2" cy="138.7" r="6.2"/><circle class="mk f-ION" cx="242.2" cy="138.7" r="4.6"/></g>
+<g class="pt"><title>Aria — IonQ · 32 qubits · 4.0×10⁻³ median 2Q error</title><circle class="ring" cx="313.4" cy="210.7" r="6.2"/><circle class="mk f-ION" cx="313.4" cy="210.7" r="4.6"/></g>
+<g class="pt"><title>Forte / Forte Enterprise — IonQ · 30 qubits · 4.0×10⁻³ median 2Q error</title><circle class="ring" cx="308.7" cy="210.7" r="6.2"/><circle class="mk f-ION" cx="308.7" cy="210.7" r="4.6"/></g>
+<g class="pt"><title>System Model H1 (H1-1) — Quantinuum · 20 qubits · 3.0×10⁻³ median 2Q error</title><circle class="ring" cx="279.3" cy="228.3" r="6.2"/><circle class="mk f-ION" cx="279.3" cy="228.3" r="4.6"/></g>
+<g class="pt"><title>System Model H2 (H2-1, H2-2) — Quantinuum · 56 qubits · 1.0×10⁻³ median 2Q error</title><circle class="ring" cx="353.9" cy="295.5" r="6.2"/><circle class="mk f-ION" cx="353.9" cy="295.5" r="4.6"/></g>
+<g class="pt"><title>Helios — Quantinuum · 98 qubits · 7.9×10⁻⁴ median 2Q error</title><circle class="ring" cx="394.5" cy="309.9" r="6.2"/><circle class="mk f-ION" cx="394.5" cy="309.9" r="4.6"/></g>
+<g class="pt"><title>Helix architecture on Helios — Quantinuum · 20 qubits · 7.9×10⁻⁴ median 2Q error</title><circle class="ring" cx="279.3" cy="309.9" r="6.2"/><circle class="mk f-ION" cx="279.3" cy="309.9" r="4.6"/></g>
+<g class="pt"><title>University of Innsbruck / IQOQI research trap — University of Innsbruck · 20 qubits · 2.5×10⁻² median 2Q error</title><circle class="ring" cx="279.3" cy="98.7" r="6.2"/><circle class="mk f-ION" cx="279.3" cy="98.7" r="4.6"/></g>
+<g class="pt"><title>Maryland / Duke Quantum Center (EURIQA lineage) — University of Maryland / Duke University · 13 qubits · 3.0×10⁻³ median 2Q error</title><circle class="ring" cx="248.0" cy="228.3" r="6.2"/><circle class="mk f-ION" cx="248.0" cy="228.3" r="4.6"/></g>
+<g class="pt"><title>Belenos — Quandela · 12 qubits · 6.2×10⁻² median 2Q error</title><circle class="ring" cx="242.2" cy="43.2" r="6.2"/><circle class="mk f-PHOTON" cx="242.2" cy="43.2" r="4.6"/></g>
+<g class="pt"><title>Lucy — Quandela · 12 qubits · 6.2×10⁻² median 2Q error</title><circle class="ring" cx="242.2" cy="43.2" r="6.2"/><circle class="mk f-PHOTON" cx="242.2" cy="43.2" r="4.6"/></g>
+<g class="pt"><title>Alice &amp; Bob Graphene — Alice &amp; Bob · 758 qubits · 1.0×10⁻³ median 2Q error</title><circle class="ring" cx="542.9" cy="295.5" r="6.2"/><circle class="mk f-SC hollow" cx="542.9" cy="295.5" r="4.6"/></g>
+<g class="pt"><title>Alice &amp; Bob Helium 2 (&quot;Galvanic Cat&quot;) — Alice &amp; Bob · 12 qubits · 5.8×10⁻² median 2Q error</title><circle class="ring" cx="242.2" cy="47.3" r="6.2"/><circle class="mk f-SC" cx="242.2" cy="47.3" r="4.6"/></g>
+<g class="pt"><title>AWS Ocelot — AWS Center for Quantum Computing · 9 qubits · 9.6×10⁻² median 2Q error</title><circle class="ring" cx="221.4" cy="16.5" r="6.2"/><circle class="mk f-SC" cx="221.4" cy="16.5" r="4.6"/></g>
+<g class="pt"><title>Tianyan-176 (and 24-q sibling) — China Telecom Quantum Group + QuantumCTek · 176 qubits · 4.0×10⁻³ median 2Q error</title><circle class="ring" cx="437.0" cy="210.7" r="6.2"/><circle class="mk f-SC" cx="437.0" cy="210.7" r="4.6"/></g>
+<g class="pt"><title>Tianyan-287 — China Telecom Quantum Group / QuantumCTek / CAS · 105 qubits · 4.4×10⁻³ median 2Q error</title><circle class="ring" cx="399.5" cy="204.9" r="6.2"/><circle class="mk f-SC" cx="399.5" cy="204.9" r="4.6"/></g>
+<g class="pt"><title>Fujitsu &gt;10,000 physical / ~250 logical (STAR) — Fujitsu + AIST + RIKEN · 10,000 qubits · 1.0×10⁻³ median 2Q error</title><circle class="ring" cx="730.0" cy="295.5" r="6.2"/><circle class="mk f-SC hollow" cx="730.0" cy="295.5" r="4.6"/></g>
+<g class="pt"><title>Sycamore — Google Quantum AI · 53 qubits · 6.2×10⁻³ median 2Q error</title><circle class="ring" cx="350.0" cy="184.0" r="6.2"/><circle class="mk f-SC" cx="350.0" cy="184.0" r="4.6"/></g>
+<g class="pt"><title>Willow — Google Quantum AI · 105 qubits · 1.5×10⁻³ median 2Q error</title><circle class="ring" cx="399.5" cy="270.7" r="6.2"/><circle class="mk f-SC" cx="399.5" cy="270.7" r="4.6"/></g>
+<g class="pt"><title>IBM Quantum Eagle r1-r3 — IBM · 127 qubits · 7.4×10⁻³ median 2Q error</title><circle class="ring" cx="413.3" cy="173.1" r="6.2"/><circle class="mk f-SC" cx="413.3" cy="173.1" r="4.6"/></g>
+<g class="pt"><title>IBM Quantum Heron r1 — IBM · 133 qubits · 2.5×10⁻³ median 2Q error</title><circle class="ring" cx="416.7" cy="240.5" r="6.2"/><circle class="mk f-SC" cx="416.7" cy="240.5" r="4.6"/></g>
+<g class="pt"><title>IBM Quantum Heron r2 — IBM · 156 qubits · 2.0×10⁻³ median 2Q error</title><circle class="ring" cx="428.3" cy="252.2" r="6.2"/><circle class="mk f-SC" cx="428.3" cy="252.2" r="4.6"/></g>
+<g class="pt"><title>IBM Quantum Heron r3 (ibm_pittsburgh) — IBM · 156 qubits · 1.5×10⁻³ median 2Q error</title><circle class="ring" cx="428.3" cy="269.9" r="6.2"/><circle class="mk f-SC" cx="428.3" cy="269.9" r="4.6"/></g>
+<g class="pt"><title>IBM Quantum Nighthawk r1 — IBM · 120 qubits · 3.7×10⁻³ median 2Q error</title><circle class="ring" cx="409.2" cy="215.5" r="6.2"/><circle class="mk f-SC" cx="409.2" cy="215.5" r="4.6"/></g>
+<g class="pt"><title>IBM Quantum Nighthawk r2 — IBM · 120 qubits · 3.7×10⁻³ median 2Q error</title><circle class="ring" cx="409.2" cy="215.5" r="6.2"/><circle class="mk f-SC" cx="409.2" cy="215.5" r="4.6"/></g>
+<g class="pt"><title>IQM Emerald — IQM Quantum Computers · 54 qubits · 5.0×10⁻³ median 2Q error</title><circle class="ring" cx="351.3" cy="197.1" r="6.2"/><circle class="mk f-SC" cx="351.3" cy="197.1" r="4.6"/></g>
+<g class="pt"><title>IQM Halocene — IQM Quantum Computers · 150 qubits · 3.0×10⁻³ median 2Q error</title><circle class="ring" cx="425.4" cy="228.3" r="6.2"/><circle class="mk f-SC hollow" cx="425.4" cy="228.3" r="4.6"/></g>
+<g class="pt"><title>Origin Wukong-180 (4th gen) — Origin Quantum · 180 qubits · 1.0×10⁻³ median 2Q error</title><circle class="ring" cx="438.6" cy="295.5" r="6.2"/><circle class="mk f-SC" cx="438.6" cy="295.5" r="4.6"/></g>
+<g class="pt"><title>Aqumen Seeker — Quantum Circuits Inc. (acquired by D-Wave, Jan 2026) · 8 qubits · 1.0×10⁻³ median 2Q error</title><circle class="ring" cx="212.8" cy="295.5" r="6.2"/><circle class="mk f-SC" cx="212.8" cy="295.5" r="4.6"/></g>
+<g class="pt"><title>QpiAI Kaveri — QpiAI · 64 qubits · 1.0×10⁻² median 2Q error</title><circle class="ring" cx="363.6" cy="154.7" r="6.2"/><circle class="mk f-SC hollow" cx="363.6" cy="154.7" r="4.6"/></g>
+<g class="pt"><title>Rigetti Ankaa-2 — Rigetti Computing · 84 qubits · 1.0×10⁻² median 2Q error</title><circle class="ring" cx="383.4" cy="154.7" r="6.2"/><circle class="mk f-SC" cx="383.4" cy="154.7" r="4.6"/></g>
+<g class="pt"><title>Rigetti Ankaa-3 — Rigetti Computing · 84 qubits · 1.0×10⁻² median 2Q error</title><circle class="ring" cx="383.4" cy="154.7" r="6.2"/><circle class="mk f-SC" cx="383.4" cy="154.7" r="4.6"/></g>
+<g class="pt"><title>Rigetti Cepheus-1-108Q — Rigetti Computing · 108 qubits · 9.0×10⁻³ median 2Q error</title><circle class="ring" cx="401.6" cy="161.2" r="6.2"/><circle class="mk f-SC" cx="401.6" cy="161.2" r="4.6"/></g>
+<g class="pt"><title>Rigetti Cepheus-1-36Q — Rigetti Computing · 36 qubits · 5.0×10⁻³ median 2Q error</title><circle class="ring" cx="321.9" cy="197.1" r="6.2"/><circle class="mk f-SC" cx="321.9" cy="197.1" r="4.6"/></g>
+<g class="pt"><title>SUSTech biased-erasure cavity qubit — Southern University of Science and Technology · 1 qubits · 2.9×10⁻³ median 2Q error</title><circle class="ring" cx="62.0" cy="230.4" r="6.2"/><circle class="mk f-SC" cx="62.0" cy="230.4" r="4.6"/></g>
+<g class="pt"><title>Zuchongzhi 2.1 — USTC / Hefei National Laboratory · 66 qubits · 2.5×10⁻² median 2Q error</title><circle class="ring" cx="365.9" cy="98.7" r="6.2"/><circle class="mk f-SC" cx="365.9" cy="98.7" r="4.6"/></g>
+<g class="pt"><title>Zuchongzhi 3.0 — USTC / Hefei National Laboratory · 105 qubits · 3.8×10⁻³ median 2Q error</title><circle class="ring" cx="399.5" cy="213.9" r="6.2"/><circle class="mk f-SC" cx="399.5" cy="213.9" r="4.6"/></g>
+<g class="pt"><title>Zuchongzhi 3.2 — USTC / Hefei National Laboratory · 107 qubits · 4.0×10⁻³ median 2Q error</title><circle class="ring" cx="400.9" cy="210.7" r="6.2"/><circle class="mk f-SC" cx="400.9" cy="210.7" r="4.6"/></g>
+<g class="pt"><title>Zhejiang University 125-qubit surface-code processor — Zhejiang University + CAEP · 125 qubits · 4.0×10⁻³ median 2Q error</title><circle class="ring" cx="412.2" cy="210.7" r="6.2"/><circle class="mk f-SC" cx="412.2" cy="210.7" r="4.6"/></g>
+<g class="pt"><title>foundry 8-qubit array — Diraq · 8 qubits · 1.1×10⁻² median 2Q error</title><circle class="ring" cx="212.8" cy="148.9" r="6.2"/><circle class="mk f-SPIN" cx="212.8" cy="148.9" r="4.6"/></g>
+<g class="pt"><title>Bell-1 (UnityQ) — Equal1 · 6 qubits · 1.6×10⁻² median 2Q error</title><circle class="ring" cx="192.0" cy="126.0" r="6.2"/><circle class="mk f-SPIN" cx="192.0" cy="126.0" r="4.6"/></g>
+<g class="pt"><title>11-qubit donor processor — Silicon Quantum Computing · 11 qubits · 3.6×10⁻³ median 2Q error</title><circle class="ring" cx="235.9" cy="217.2" r="6.2"/><circle class="mk f-SPIN" cx="235.9" cy="217.2" r="4.6"/></g>
+<circle class="mk f-SC" cx="494" cy="26" r="4.6"/><text class="lg" x="504" y="26" dominant-baseline="middle">superconducting circuits</text>
+<circle class="mk f-ION" cx="494" cy="42" r="4.6"/><text class="lg" x="504" y="42" dominant-baseline="middle">trapped ions</text>
+<circle class="mk f-ATOM" cx="494" cy="58" r="4.6"/><text class="lg" x="504" y="58" dominant-baseline="middle">neutral atoms</text>
+<circle class="mk f-PHOTON" cx="494" cy="74" r="4.6"/><text class="lg" x="504" y="74" dominant-baseline="middle">photonics</text>
+<circle class="mk f-SPIN" cx="494" cy="90" r="4.6"/><text class="lg" x="504" y="90" dominant-baseline="middle">semiconductor spins</text>
+<circle class="mk f-SC hollow" cx="494" cy="106" r="4.6"/><text class="lg" x="504" y="106" dominant-baseline="middle">hollow: announced, target or component</text>
+<text class="lb" x="221.8" y="286.5" text-anchor="start">Aqumen Seeker</text>
+<text class="lb" x="403.5" y="324.9" text-anchor="start">Helios</text>
+<text class="lb" x="447.6" y="286.5" text-anchor="start">Origin Wukong-180 (4th gen)</text>
+<text class="lb" x="513.8" y="257.8" text-anchor="start">448-atom fault-tolerant proc</text>
+<text class="lb" x="566.0" y="201.7" text-anchor="end">Phoenix (Gen-1) and Gen-2</text>
+</svg>
+<figcaption><b>Figure 8.1 — Physical qubit count against median two-qubit error</b>, for the 47 registered machines that publish both (hero-pair numbers excluded). The families separate along the qubit axis more than along the error axis — the reading behind H1 and H2; hover a mark for the machine.</figcaption></figure>
 
 **H3 — Control stays external: integrated control is a minority confined to spins, annealers and a few traps; no superconducting device of 100 qubits or more is driven from inside the cryostat.**
 

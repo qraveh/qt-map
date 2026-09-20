@@ -165,6 +165,8 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .insp ul.useby li.fam .sw{width:10px;height:3px;border-radius:2px;background:var(--c);display:inline-block}
 .insp ul.useby li.cur > a:first-child{font-weight:700;text-decoration:underline}
 .insp ul.useby li.alternate > a:first-child{color:var(--ink2)}
+.insp ul.useby a.mref{font-size:11px;color:var(--muted);text-decoration:none;border:1px solid var(--rule);border-radius:9px;padding:0 6px;margin-left:2px;white-space:nowrap}
+.insp ul.useby a.mref:hover{color:var(--accent);border-color:var(--accent)}
 .insp ul.useby a.reg{text-decoration:none;font-size:11px}
 .insp .keys .kr{margin:3px 0;font-size:12.5px;line-height:1.35}
 .insp .keys a{font-family:"JetBrains Mono",monospace;font-size:11px}
@@ -580,4 +582,8 @@ th[aria-sort="ascending"] .sortbtn,th[aria-sort="descending"] .sortbtn{color:var
 .tsreset:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 .tsreset.idle{color:var(--muted)}
 .tblzoom .tsreset{margin-left:2px}
+/* §8 figure (build/fig81.py): inline SVG that follows the page's ink and surface tokens */
+figure.fig81{margin:1em 0 1.2em;padding:0}
+figure.fig81 figcaption{font-size:13px;color:var(--ink2);margin-top:6px;text-align:left}
+figure.fig81 .pt:hover .mk{stroke-width:2.6}
 """

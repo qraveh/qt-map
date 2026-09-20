@@ -12,7 +12,8 @@ Classifiers (kept simple and visible, so a reviewer can disagree with a line, no
   control class  = integrated (on-chip microwave / cryo-CMOS / SFQ / flux DAC / 4 K), optics, room-temperature electronics, undisclosed
   decoding class = in-loop / offline / planned / none, from the register's `realtime` field
 """
-import json, os, re, statistics
+import json, os, re, statistics, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FAM_ORDER = ['SC', 'ION', 'ATOM', 'PHOTON', 'SPIN', 'DEFECT', 'TOPO', 'ANNEAL']
@@ -266,6 +267,12 @@ def sec_machines(lang):
     o.append((f"*Test.* Median and best `err_2q_median` over devices per family, excluding hero-pair numbers, targets and component demonstrations. *Result.* " + '; '.join(f"{t(L, FAMN[f])} median {fmt_e(emed[f])}, best {fmt_e(ebest[f][0])} ({mdcell(ebest[f][1])}), n = {len(errs[f])}" for f in FAM_ORDER if f in emed) + f". The spread of the three large medians is ×{spread:.1f}. *Verdict:* {t(L, VER[h2])}. A convergence of medians with a persistent gap at the best is what one expects when the median is set by the many second-tier machines and the best by a few labs that have run the same platform for a decade.\n\n" if en else
               f"*Проверка.* Медиана и лучшее значение `err_2q_median` по устройствам каждого семейства, исключая рекордные пары, цели и демонстрации компонентов. *Результат.* " + '; '.join(f"{t(L, FAMN[f])}: медиана {fmt_e(emed[f])}, лучшее {fmt_e(ebest[f][0])} ({mdcell(ebest[f][1])}), n = {len(errs[f])}" for f in FAM_ORDER if f in emed) + f". Разброс трёх больших медиан — ×{spread:.1f}. *Вердикт:* {t(L, VER[h2])}. Сходимость медиан при сохраняющемся разрыве в лучших значениях — то, чего ждёшь, когда медиану задают многочисленные машины второго ряда, а лучшее — несколько лабораторий, десятилетие работающих на одной платформе.\n\n"))
 
+    # Figure 8.1 — count against error (build/fig81.py), placed after H1 and H2, which it illustrates
+    try:
+        import fig81
+        o.append(fig81.build(L)[0] + "\n")
+    except Exception as e:   # the figure is an illustration; a failure here must not take the chapter down
+        o.append(("*(Figure 8.1 could not be generated: %s)*\n\n" % e))
     # H3 — control stays external
     integ = [m for m in MS if m['cc'] == 'integrated']; cryo = [m for m in MS if m['cryo']]
     cc_f = {f: sum(1 for m in integ if m['family'] == f) for f in FAM_ORDER}

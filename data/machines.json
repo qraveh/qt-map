@@ -187,6 +187,13 @@
     "verified": 1,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://www.sinica.edu.tw/en/news_content/55/3655",
+     "title": "Academia Sinica Unveils 20-Qubit Superconducting Quantum Computer: Manufacturing Capabilities Reach Global Top-Tier",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "not published; laser trimming tunes qubit frequencies post-fabrication",
@@ -398,6 +405,13 @@
     "verified": 0,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://alice-bob.com/newsroom/alice-bob-surpasses-bit-flip-stability-record",
+     "title": "Alice & Bob Shares Preliminary Results Vastly Surpassing Previous Bit-Flip Time Record",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "dissipatively stabilised cat qubit",
     "gate_mechanism": "bosonic Z gate",
@@ -610,6 +624,13 @@
     "verified": 8,
     "total": 12
    },
+   "refs": [
+    {
+     "url": "https://alice-bob.com/newsroom/alice-bob-quantum-computing-roadmap/",
+     "title": "Alice & Bob Publishes Quantum Computing Roadmap to 100 Logical Qubits in 2030",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "dissipatively stabilised cat qubits",
     "gate_mechanism": "bias-preserving cat-cat CNOT required but only a Jul 2026 theory proposal exists",
@@ -809,6 +830,18 @@
     "verified": 9,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://alice-bob.com/wp-content/uploads/2024/12/Think-Inside-The-Box-Alice-Bob-Whitepaper.pdf",
+     "title": "Think Inside the Box: Quantum Computing with Cat Qubits",
+     "kind": "whitepaper"
+    },
+    {
+     "url": "https://alice-bob.com/newsroom/alice-bob-quantum-computing-roadmap/",
+     "title": "Alice & Bob Publishes Quantum Computing Roadmap to 100 Logical Qubits in 2030",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "dissipatively stabilised cat qubits",
     "gate_mechanism": "bosonic gates; Felis SDK compiles noise-biased instruction sets",
@@ -1029,6 +1062,13 @@
     "verified": 3,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://alice-bob.com/newsroom/alice-bob-surpasses-bit-flip-stability-record",
+     "title": "Alice & Bob Shares Preliminary Results Vastly Surpassing Previous Bit-Flip Time Record",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "dissipatively stabilised, galvanically coupled, transmon-free cat qubits at n-bar = 11",
     "gate_mechanism": "Z gate 94.2% in 26.5 ns; no cat-cat CNOT anywhere",
@@ -1215,6 +1255,18 @@
     "verified": 1,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://www.anyonsys.com/en",
+     "title": "Anyon Systems | Quantum Computing",
+     "kind": "product"
+    },
+    {
+     "url": "https://www.calculquebec.ca/en/communiques/quantum-computer-monarq/",
+     "title": "A quantum computer named \"MonarQ\"",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "tunable coupler (assumed)",
@@ -1422,6 +1474,13 @@
     "verified": 5,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/html/2604.16292v1",
+     "title": "Fast, High-Fidelity Erasure Detection of Dual-Rail Qubits with Symmetrically Coupled Readout",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "dual rail from two resonantly coupled tunable transmons",
     "gate_mechanism": "ancilla-mediated bosonic gates",
@@ -1660,6 +1719,7 @@
     "verified": 8,
     "total": 11
    },
+   "refs": [],
    "profile": {
     "qubit_type": "dissipatively stabilised cat qubits (two-photon dissipation via buffer modes), best operating point alpha^2 ~ 1.5",
     "gate_mechanism": "noise-biased cat-transmon CX with chi-matching; CX cycle 3 us, QEC cycle 2.8 us",
@@ -1845,6 +1905,13 @@
     "verified": 5,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://www.sciencedirect.com/science/article/pii/S2772830725000572",
+     "title": "Baihua: A 100-qubit scale, high-performance, and open-access quantum cloud platform",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "tunable coupler",
@@ -2031,6 +2098,7 @@
     "verified": 3,
     "total": 10
    },
+   "refs": [],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "tunable coupler",
@@ -2217,6 +2285,7 @@
     "verified": 0,
     "total": 10
    },
+   "refs": [],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "tunable coupler",
@@ -2403,6 +2472,7 @@
     "verified": 3,
     "total": 10
    },
+   "refs": [],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "tunable coupler",
@@ -2589,6 +2659,7 @@
     "verified": 1,
     "total": 10
    },
+   "refs": [],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "coupler type not published",
@@ -2805,6 +2876,13 @@
     "verified": 5,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2512.10504",
+     "title": "[2512.10504] Tianyan: Cloud services with quantum advantage",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "tunable transmon",
     "gate_mechanism": "tunable coupler; explicitly a Zuchongzhi 3.0-like architecture",
@@ -3003,6 +3081,13 @@
     "verified": 0,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://thequantuminsider.com/2026/05/15/10-plus-companies-leading-the-quantum-technologies-race-in-china/",
+     "title": "Top Chinese Quantum Computing Companies in 2026",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "not published",
@@ -3201,6 +3286,13 @@
     "verified": 5,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-charts-a-new-course-to-fault-tolerant-quantum-computing-with-gate-model-roadmap/",
+     "title": "D-Wave Charts a New Course to Fault-Tolerant Quantum Computing with Gate-Model Roadmap",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "dual-rail cavity qubit",
     "gate_mechanism": "bosonic CZ",
@@ -3425,6 +3517,13 @@
     "verified": 5,
     "total": 13
    },
+   "refs": [
+    {
+     "url": "https://thequantuminsider.com/2025/12/08/how-fujitsu-is-tackling-a-10000-qubit-quantum-computer-for-practical-applications/",
+     "title": "How Fujitsu Is Tackling a 10,000-Qubit Quantum Computer for Practical Applications",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "tunable coupler (assumed)",
@@ -3635,6 +3734,7 @@
     "verified": 0,
     "total": 12
    },
+   "refs": [],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "not published",
@@ -3856,6 +3956,7 @@
     "verified": 4,
     "total": 12
    },
+   "refs": [],
    "profile": {
     "qubit_type": "fluxonium",
     "gate_mechanism": "resonator-induced-phase / parametric all-microwave 2Q (academic reference: >99% 2Q, parallel 1Q >99.9%)",
@@ -4070,6 +4171,13 @@
     "verified": 8,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://www.nature.com/articles/s41586-019-1666-5",
+     "title": "Quantum supremacy using a programmable superconducting processor",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "frequency-tunable transmon (asymmetric SQUID, Al junctions)",
     "gate_mechanism": "86 tunable couplers; native iSWAP-like fSim, 12 ns; 1Q 25 ns",
@@ -4323,6 +4431,18 @@
     "verified": 7,
     "total": 13
    },
+   "refs": [
+    {
+     "url": "https://www.nature.com/articles/s41467-024-46623-y",
+     "title": "Optimizing quantum gates towards the scale of logical qubits",
+     "kind": "paper"
+    },
+    {
+     "url": "https://www.nature.com/articles/s41586-022-05434-1",
+     "title": "Suppressing quantum errors by scaling a surface code logical qubit",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "frequency-tunable transmon",
     "gate_mechanism": "tunable coupler CZ, 34 ns; 1Q 25 ns; reset 160 ns; full QEC cycle 921 ns",
@@ -4702,6 +4822,33 @@
     "verified": 14,
     "total": 16
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/html/2604.15427v1",
+     "title": "Tensor Networks with Belief Propagation Cannot Feasibly Simulate Google's Quantum Echoes Experiment",
+     "kind": "paper"
+    },
+    {
+     "url": "https://arxiv.org/abs/2511.08493",
+     "title": "[2511.08493] Reinforcement Learning Control of Quantum Error Correction",
+     "kind": "paper"
+    },
+    {
+     "url": "https://quantumai.google/willowearlyaccess",
+     "title": "Willow Early Access Program | Google Quantum AI",
+     "kind": "product"
+    },
+    {
+     "url": "https://blog.google/innovation-and-ai/technology/research/quantum-echoes-willow-verifiable-quantum-advantage/",
+     "title": "Our Quantum Echoes algorithm is a big step toward real-world applications for quantum computing",
+     "kind": "blog"
+    },
+    {
+     "url": "https://blog.google/innovation-and-ai/technology/research/quantum-hardware-verifiable-advantage/",
+     "title": "Our quantum hardware: the engine for verifiable quantum advantage",
+     "kind": "blog"
+    }
+   ],
    "profile": {
     "qubit_type": "frequency-tunable transmon, participation-ratio engineered",
     "gate_mechanism": "tunable transmon couplers, native CZ 42 ns; 1Q XY 25 ns; QEC cycle 1.1 us",
@@ -4926,6 +5073,13 @@
     "verified": 5,
     "total": 13
    },
+   "refs": [
+    {
+     "url": "https://www.ibm.com/quantum/blog/large-scale-ftqc",
+     "title": "IBM lays out clear path to fault-tolerant quantum computing | IBM Quantum Computing Blog",
+     "kind": "blog"
+    }
+   ],
    "profile": {
     "qubit_type": "fixed-frequency transmon",
     "gate_mechanism": "tunable coupler + l-couplers",
@@ -5123,6 +5277,7 @@
     "verified": 4,
     "total": 10
    },
+   "refs": [],
    "profile": {
     "qubit_type": "fixed-frequency transmon",
     "gate_mechanism": "tunable coupler",
@@ -5319,6 +5474,18 @@
     "verified": 4,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://www.ibm.com/quantum/blog/quantum-roadmap-2033",
+     "title": "IBM Quantum System Two: the era of quantum utility is here | IBM Quantum Computing Blog",
+     "kind": "blog"
+    },
+    {
+     "url": "https://postquantum.com/industry-news/ibm-condor/",
+     "title": "IBM Unveils Condor: 1,121-Qubit Quantum Processor",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "fixed-frequency transmon",
     "gate_mechanism": "cross-resonance",
@@ -5528,6 +5695,28 @@
     "verified": 6,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2306.14887",
+     "title": "Efficient tensor network simulation of IBM's Eagle kicked Ising experiment",
+     "kind": "paper"
+    },
+    {
+     "url": "https://www.nature.com/articles/s41586-023-06096-3",
+     "title": "Evidence for the utility of quantum computing before fault tolerance",
+     "kind": "paper"
+    },
+    {
+     "url": "https://arxiv.org/abs/2306.16372",
+     "title": "Fast classical simulation of evidence for the utility of quantum computing before fault tolerance",
+     "kind": "paper"
+    },
+    {
+     "url": "https://arxiv.org/html/2410.00916v1",
+     "title": "IBM Quantum Computers: Evolution, Performance, and Future Directions",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "fixed-frequency transmon",
     "gate_mechanism": "echoed cross-resonance (ECR)",
@@ -5713,6 +5902,13 @@
     "verified": 1,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://quantum.cloud.ibm.com/docs/en/guides/processor-types",
+     "title": "Processor types | IBM Quantum Documentation",
+     "kind": "docs"
+    }
+   ],
    "profile": {
     "qubit_type": "fixed-frequency transmon",
     "gate_mechanism": "first IBM flux-tunable couplers, native CZ",
@@ -5936,6 +6132,18 @@
     "verified": 8,
     "total": 12
    },
+   "refs": [
+    {
+     "url": "https://www.nature.com/articles/s41467-023-38247-5",
+     "title": "Demonstrating multi-round subsystem quantum error correction using matching and maximum likelihood decoders",
+     "kind": "paper"
+    },
+    {
+     "url": "https://www.ibm.com/quantum/blog/heavy-hex-lattice",
+     "title": "The IBM Quantum heavy hex lattice | IBM Quantum Computing Blog",
+     "kind": "blog"
+    }
+   ],
    "profile": {
     "qubit_type": "fixed-frequency transmon",
     "gate_mechanism": "fixed capacitive bus, CR/CX",
@@ -6131,6 +6339,23 @@
     "verified": 3,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/html/2410.00916v1",
+     "title": "IBM Quantum Computers: Evolution, Performance, and Future Directions",
+     "kind": "paper"
+    },
+    {
+     "url": "https://www.ibm.com/quantum/blog/qdc-2024",
+     "title": "IBM Quantum delivers on 2022 100x100 performance challenge | IBM Quantum Computing Blog",
+     "kind": "blog"
+    },
+    {
+     "url": "https://postquantum.com/industry-news/ibm-heron-r3-pittsburgh/",
+     "title": "IBM Launches Heron R3 (ibm_pittsburgh): ~350 uS T2 and a Quality Upgrade for Its 156-Qubit Platform",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "fixed-frequency transmon + flux-tunable coupler",
     "gate_mechanism": "native CZ, ZZ-free idling",
@@ -6373,6 +6598,23 @@
     "verified": 8,
     "total": 13
    },
+   "refs": [
+    {
+     "url": "https://research.ibm.com/publications/a-cryo-cmos-control-system-for-large-scale-superconducting-qubit-quantum-computing-part-1",
+     "title": "A Cryo-CMOS Control System for Large-Scale Superconducting Qubit Quantum Computing: Part 1",
+     "kind": "paper"
+    },
+    {
+     "url": "https://www.nature.com/articles/s41598-026-40381-1",
+     "title": "Magic state injection on IBM quantum processors above the distillation threshold",
+     "kind": "paper"
+    },
+    {
+     "url": "https://postquantum.com/industry-news/ibm-heron-r3-pittsburgh/",
+     "title": "IBM Launches Heron R3 (ibm_pittsburgh): ~350 uS T2 and a Quality Upgrade for Its 156-Qubit Platform",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "fixed-frequency transmon + flux-tunable coupler",
     "gate_mechanism": "native CZ",
@@ -6388,7 +6630,7 @@
     "t2": "",
     "t_2q": "",
     "t_meas": "",
-    "best_logical": "magic-state injection on ibm_fez: H_L 0.8806(2), T_L 0.8665(3) at 36.28% acceptance",
+    "best_logical": "magic-state injection on ibm_fez: H_L 0.8806(2), T_L 0.8665(3) at 36.28% acceptance; spacetime mitigation of logical errors on ibm_aachen, 22 data + 27 check qubits (arXiv:2609.13108, Sep 2026)",
     "decoder": "none in loop",
     "realtime": "none (replay only)",
     "roadmap": "stable platform under Nighthawk",
@@ -6620,6 +6862,18 @@
     "verified": 6,
     "total": 12
    },
+   "refs": [
+    {
+     "url": "https://www.ibm.com/quantum/blog/qdc-2025",
+     "title": "Scaling for quantum advantage and beyond | IBM Quantum Computing Blog",
+     "kind": "blog"
+    },
+    {
+     "url": "https://postquantum.com/industry-news/ibm-heron-r3-pittsburgh/",
+     "title": "IBM Launches Heron R3 (ibm_pittsburgh): ~350 uS T2 and a Quality Upgrade for Its 156-Qubit Platform",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "fixed-frequency transmon + flux-tunable coupler",
     "gate_mechanism": "native CZ",
@@ -6807,6 +7061,13 @@
     "verified": 4,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://www.ibm.com/roadmaps/quantum/2026/",
+     "title": "Quantum 2026 — IBM Technology Atlas",
+     "kind": "docs"
+    }
+   ],
    "profile": {
     "qubit_type": "fixed-frequency transmon",
     "gate_mechanism": "tunable coupler + c-coupler",
@@ -7038,6 +7299,13 @@
     "verified": 7,
     "total": 13
    },
+   "refs": [
+    {
+     "url": "https://www.ibm.com/quantum/blog/qdc-2025",
+     "title": "Scaling for quantum advantage and beyond | IBM Quantum Computing Blog",
+     "kind": "blog"
+    }
+   ],
    "profile": {
     "qubit_type": "fixed-frequency transmon",
     "gate_mechanism": "tunable couplers",
@@ -7245,6 +7513,23 @@
     "verified": 3,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://www.ibm.com/roadmaps/quantum/2026/",
+     "title": "Quantum 2026 — IBM Technology Atlas",
+     "kind": "docs"
+    },
+    {
+     "url": "https://www.ibm.com/quantum/blog/nighthawk-r2",
+     "title": "IBM Quantum Nighthawk r2—more circuits, faster | IBM Quantum Computing Blog",
+     "kind": "blog"
+    },
+    {
+     "url": "https://www.ibm.com/quantum/blog/qdc-2025",
+     "title": "Scaling for quantum advantage and beyond | IBM Quantum Computing Blog",
+     "kind": "blog"
+    }
+   ],
    "profile": {
     "qubit_type": "fixed-frequency transmon + next-gen tunable coupler",
     "gate_mechanism": "native CZ, \"Heron-class gate fidelity\"",
@@ -7263,7 +7548,7 @@
     "best_logical": "none",
     "decoder": "none",
     "realtime": "none",
-    "roadmap": "r2, then 3-module 360 q",
+    "roadmap": "r2, then 3-module 360 q; a Nighthawk-based IBM Quantum System Two at CSCS Lugano, operational 2027 (announced 10 Sep 2026)",
     "err_2q_median_num": 0.0037,
     "flags": []
    }
@@ -7501,6 +7786,13 @@
     "verified": 7,
     "total": 13
    },
+   "refs": [
+    {
+     "url": "https://www.ibm.com/quantum/blog/nighthawk-r2",
+     "title": "IBM Quantum Nighthawk r2—more circuits, faster | IBM Quantum Computing Blog",
+     "kind": "blog"
+    }
+   ],
    "profile": {
     "qubit_type": "fixed-frequency transmon + next-gen tunable coupler",
     "gate_mechanism": "native CZ",
@@ -7686,6 +7978,18 @@
     "verified": 1,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://www.ibm.com/quantum/blog/next-wave-quantum-centric-supercomputing",
+     "title": "Quantum-centric supercomputing: The next wave of computing | IBM Quantum Computing Blog",
+     "kind": "blog"
+    },
+    {
+     "url": "https://postquantum.com/industry-news/ibm-condor/",
+     "title": "IBM Unveils Condor: 1,121-Qubit Quantum Processor",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "fixed-frequency transmon",
     "gate_mechanism": "CR/ECR",
@@ -7911,6 +8215,13 @@
     "verified": 6,
     "total": 13
    },
+   "refs": [
+    {
+     "url": "https://www.ibm.com/quantum/blog/large-scale-ftqc",
+     "title": "IBM lays out clear path to fault-tolerant quantum computing | IBM Quantum Computing Blog",
+     "kind": "blog"
+    }
+   ],
    "profile": {
     "qubit_type": "fixed-frequency transmon",
     "gate_mechanism": "tunable coupler + c/l-couplers",
@@ -8096,6 +8407,18 @@
     "verified": 1,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://www.i-qcc.com/",
+     "title": "IQCC",
+     "kind": "product"
+    },
+    {
+     "url": "https://i-qcc.com/testbed/",
+     "title": "IQCC | Testbed",
+     "kind": "product"
+    }
+   ],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "tunable coupler",
@@ -8343,6 +8666,7 @@
     "verified": 7,
     "total": 12
    },
+   "refs": [],
    "profile": {
     "qubit_type": "tunable transmon",
     "gate_mechanism": "tunable couplers, native CZ",
@@ -8528,6 +8852,13 @@
     "verified": 6,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2408.12433",
+     "title": "[2408.12433] Technology and Performance Benchmarks of IQM's 20-Qubit Quantum Computer",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "tunable transmon",
     "gate_mechanism": "tunable couplers, native CZ",
@@ -8774,6 +9105,18 @@
     "verified": 9,
     "total": 14
    },
+   "refs": [
+    {
+     "url": "https://quantumcomputingreport.com/lumi-ai-factory-selects-iqms-halocene-roadmap-for-europes-first-superconducting-logical-qubit-system/",
+     "title": "LUMI AI Factory Selects IQM's Halocene Roadmap for Europe's First Superconducting Logical Qubit System",
+     "kind": "press"
+    },
+    {
+     "url": "https://iqm.tech/technology/roadmap/",
+     "title": "Roadmap - IQM Quantum Computers",
+     "kind": "other"
+    }
+   ],
    "profile": {
     "qubit_type": "tunable transmon",
     "gate_mechanism": "tunable couplers, native CZ; the QEC work assumes nearest-neighbour iSWAP",
@@ -8959,6 +9302,13 @@
     "verified": 4,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://iqm.tech/technology/roadmap/",
+     "title": "Roadmap - IQM Quantum Computers",
+     "kind": "other"
+    }
+   ],
    "profile": {
     "qubit_type": "tunable transmon",
     "gate_mechanism": "tunable couplers to a central computational resonator",
@@ -9154,6 +9504,7 @@
     "verified": 0,
     "total": 11
    },
+   "refs": [],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "tunable coupler (assumed)",
@@ -9400,6 +9751,18 @@
     "verified": 7,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/html/2607.06718v1",
+     "title": "Quantum error correction of a grid-state qubit with state preparation and measurement errors below 10^-3",
+     "kind": "paper"
+    },
+    {
+     "url": "https://postquantum.com/quantum-computing-companies/nord-quantique/",
+     "title": "Nord Quantique",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "GKP finite-energy grid state in a superconducting aluminium cavity; device envelope Delta = 0.38, n-bar ~ 2.96",
     "gate_mechanism": "dispersive coupling to an auxiliary transmon; autonomous / measurement-based stabilisation; a claimed GKP-GKP 2Q gate has no paper",
@@ -9619,6 +9982,13 @@
     "verified": 10,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://postquantum.com/quantum-computing-companies/nord-quantique/",
+     "title": "Nord Quantique",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "multimode GKP",
     "gate_mechanism": "autonomous stabilisation; mid-circuit-measurement confidence score for real-time leakage suppression",
@@ -9876,6 +10246,23 @@
     "verified": 9,
     "total": 15
    },
+   "refs": [
+    {
+     "url": "https://oqc.tech/tech/devices/",
+     "title": "Devices – OQC",
+     "kind": "product"
+    },
+    {
+     "url": "https://oqc.tech/tech/technical-roadmap",
+     "title": "Roadmap – OQC",
+     "kind": "product"
+    },
+    {
+     "url": "https://quantumcomputingreport.com/oqc-digital-realty-and-nvidia-launch-first-quantum-ai-data-centre-in-new-york-city/",
+     "title": "OQC, Digital Realty, and NVIDIA Launch First Quantum-AI Data Centre in New York City",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "Dimon - a fixed-frequency multimode transmon (three islands, two junctions) operated as a dual-rail encoded qubit inside the Coaxmon stack",
     "gate_mechanism": "no published entangling gate or gate mechanism",
@@ -10074,6 +10461,13 @@
     "verified": 5,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://oqc.tech/tech/devices/",
+     "title": "Devices – OQC",
+     "kind": "product"
+    }
+   ],
    "profile": {
     "qubit_type": "Coaxmon - patented 3-D out-of-plane coaxial control architecture, no on-chip control wiring",
     "gate_mechanism": "not published - no native 2Q gate name, gate time or degree anywhere in OQC's material",
@@ -10260,6 +10654,7 @@
     "verified": 6,
     "total": 10
    },
+   "refs": [],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "tunable coupler",
@@ -10446,6 +10841,13 @@
     "verified": 4,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://thequantuminsider.com/2026/05/15/10-plus-companies-leading-the-quantum-technologies-race-in-china/",
+     "title": "Top Chinese Quantum Computing Companies in 2026",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "tunable coupler; 251:180 coupler ratio to cut parallel-gate crosstalk",
@@ -10654,6 +11056,13 @@
     "verified": 4,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://www.nature.com/articles/s41534-025-01118-6",
+     "title": "Demonstrating a universal logical gate set in error-detecting surface codes on a superconducting quantum processor",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "tunable coupler",
@@ -10894,6 +11303,7 @@
     "verified": 5,
     "total": 12
    },
+   "refs": [],
    "profile": {
     "qubit_type": "dual-rail cavity qubit with erasure conversion; photon loss is heralded",
     "gate_mechanism": "native sqrt(X), Z, CZ; ~500 ns CZ",
@@ -11091,6 +11501,7 @@
     "verified": 2,
     "total": 11
    },
+   "refs": [],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "tunable coupler",
@@ -11277,6 +11688,13 @@
     "verified": 1,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://www.sify.com/science-tech/qpiai-unveils-kaveri-indias-first-aatmanirbhar-64-qubit-quantum-chip/",
+     "title": "QpiAI Unveils Kaveri, India's First Aatmanirbhar 64-Qubit Quantum Chip - Sify",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "tunable coupler (assumed)",
@@ -11473,6 +11891,13 @@
     "verified": 1,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://www.sify.com/science-tech/qpiai-unveils-kaveri-indias-first-aatmanirbhar-64-qubit-quantum-chip/",
+     "title": "QpiAI Unveils Kaveri, India's First Aatmanirbhar 64-Qubit Quantum Chip - Sify",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "transmon in a grid layout",
     "gate_mechanism": "tunable coupler (assumed); wafer-scale fabrication and flip-chip integration",
@@ -11670,6 +12095,13 @@
     "verified": 2,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://www.quamcore.com/",
+     "title": "Pioneering massive scaling of superconducting quantum computing",
+     "kind": "product"
+    }
+   ],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "not published",
@@ -11883,6 +12315,13 @@
     "verified": 5,
     "total": 12
    },
+   "refs": [
+    {
+     "url": "https://quantware.com/news/introducing-contralto-a-qpu-for-quantum-error-correction",
+     "title": "Introducing Contralto-A: a QPU for quantum error correction | Quantware",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "tunable transmon",
     "gate_mechanism": "flux-tunable couplers and individual Purcell filters (A-line)",
@@ -12081,6 +12520,13 @@
     "verified": 3,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://quantware.com/product/processors/d-line",
+     "title": "D-line QPUs | Build bigger, scale faster",
+     "kind": "product"
+    }
+   ],
    "profile": {
     "qubit_type": "tunable transmon with fixed couplers (D-line)",
     "gate_mechanism": "fixed couplers",
@@ -12289,6 +12735,13 @@
     "verified": 4,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://quantware.com/news/quantware-announces-scaling-breakthrough-with-vio-40k",
+     "title": "QuantWare announces scaling breakthrough with VIO-40K, delivering 10,000 qubit Quantum Processors for the first time",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "tunable transmon",
     "gate_mechanism": "chiplets stitched by \"ultra-high-fidelity chip-to-chip connections\" (no fidelity published)",
@@ -12497,6 +12950,18 @@
     "verified": 7,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/html/2410.05202v1",
+     "title": "Demonstrating real-time and low-latency quantum error correction with superconducting qubits",
+     "kind": "paper"
+    },
+    {
+     "url": "https://www.nature.com/articles/s41467-026-73331-6",
+     "title": "Demonstrating real-time and low-latency quantum error correction with superconducting qubits",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "tunable transmon + tunable couplers",
     "gate_mechanism": "native iSWAP",
@@ -12680,6 +13145,18 @@
     "verified": 0,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://aws.amazon.com/blogs/quantum-computing/amazon-braket-launches-rigetti-cepheus-1-108q-superconducting-device/",
+     "title": "Amazon Braket launches Rigetti Cepheus-1-108Q superconducting device | AWS Quantum Technologies Blog",
+     "kind": "blog"
+    },
+    {
+     "url": "https://postquantum.com/quantum-computing-companies/rigetti/",
+     "title": "Rigetti",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "tunable transmon + tunable couplers",
     "gate_mechanism": "native iSWAP / CZ",
@@ -12903,6 +13380,13 @@
     "verified": 6,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://aws.amazon.com/blogs/quantum-computing/amazon-braket-launches-rigetti-cepheus-1-108q-superconducting-device/",
+     "title": "Amazon Braket launches Rigetti Cepheus-1-108Q superconducting device | AWS Quantum Technologies Blog",
+     "kind": "blog"
+    }
+   ],
    "profile": {
     "qubit_type": "tunable transmon",
     "gate_mechanism": "tunable couplers within chiplets + inter-module couplers (IMCs); adiabatic CZ ~60 ns",
@@ -13100,6 +13584,18 @@
     "verified": 6,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://aws.amazon.com/blogs/quantum-computing/amazon-braket-launches-rigetti-cepheus-1-108q-superconducting-device/",
+     "title": "Amazon Braket launches Rigetti Cepheus-1-108Q superconducting device | AWS Quantum Technologies Blog",
+     "kind": "blog"
+    },
+    {
+     "url": "https://postquantum.com/quantum-computing-companies/rigetti/",
+     "title": "Rigetti",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "tunable transmon",
     "gate_mechanism": "tunable couplers within chiplets + inter-module couplers; adiabatic CZ",
@@ -13307,6 +13803,18 @@
     "verified": 6,
     "total": 12
    },
+   "refs": [
+    {
+     "url": "https://thequantuminsider.com/2025/12/08/how-fujitsu-is-tackling-a-10000-qubit-quantum-computer-for-practical-applications/",
+     "title": "How Fujitsu Is Tackling a 10,000-Qubit Quantum Computer for Practical Applications",
+     "kind": "press"
+    },
+    {
+     "url": "https://group.ntt/en/newsrelease/2023/03/24/230324a.html",
+     "title": "Japanese joint research group launches quantum computing cloud service ... first superconducting quantum computer",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "coupler type not published (fixed vs tunable unresolved)",
@@ -13517,6 +14025,18 @@
     "verified": 2,
     "total": 12
    },
+   "refs": [
+    {
+     "url": "https://www.fujitsu.com/global/about/resources/news/press-releases/2025/0422-01.html",
+     "title": "Fujitsu and RIKEN develop world-leading 256-qubit superconducting quantum computer",
+     "kind": "press"
+    },
+    {
+     "url": "https://thequantuminsider.com/2025/12/08/how-fujitsu-is-tackling-a-10000-qubit-quantum-computer-for-practical-applications/",
+     "title": "How Fujitsu Is Tackling a 10,000-Qubit Quantum Computer for Practical Applications",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "coupler type not published",
@@ -13713,6 +14233,18 @@
     "verified": 5,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2503.09879",
+     "title": "Quantum Computer Controlled by Superconducting Digital Electronics at Millikelvin Temperature",
+     "kind": "paper"
+    },
+    {
+     "url": "https://www.businesswire.com/news/home/20260318263078/en/SEEQC-Reports-First-Quantum-Computer-with-Integrated-Qubit-Control-on-a-Chip-at-Millikelvin-Temperatures",
+     "title": "SEEQC Reports First Quantum Computer with Integrated Qubit Control on a Chip at Millikelvin Temperatures",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "no entangling gate published under SFQ control; single-qubit charge control by SFQ digital pulse trains",
@@ -13910,6 +14442,18 @@
     "verified": 3,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://www.spinq.com/en/products-services/quantum-chip",
+     "title": "SPINQ QPU C Series Superconducting Quantum Processing Unit",
+     "kind": "product"
+    },
+    {
+     "url": "https://thequantuminsider.com/2026/05/15/10-plus-companies-leading-the-quantum-technologies-race-in-china/",
+     "title": "Top Chinese Quantum Computing Companies in 2026",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "tunable coupler",
@@ -14126,6 +14670,13 @@
     "verified": 7,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2601.21616",
+     "title": "A biased-erasure cavity qubit with hardware-efficient quantum error detection",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "vacuum + two-photon encoding in a cavity giving a biased erasure qubit; erasure bias >265",
     "gate_mechanism": "bosonic gates; benchmarked logical gate error 0.29%",
@@ -14346,6 +14897,18 @@
     "verified": 6,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2402.18926",
+     "title": "Realization of High-Fidelity CZ Gate based on a Double-Transmon Coupler",
+     "kind": "paper"
+    },
+    {
+     "url": "https://www.global.toshiba/ww/technology/corporate/rdc/rd/topics/24/2411-03.html",
+     "title": "Toshiba's Proposed Double-Transmon Coupler for Superconducting Quantum Computers Achieves World-Class Two-Qubit Gate Pe…",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "fixed-frequency transmon",
     "gate_mechanism": "double-transmon coupler (two transmons sharing a three-junction loop), external flux switches the interaction; CZ 48 ns",
@@ -14544,6 +15107,13 @@
     "verified": 7,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2505.09684",
+     "title": "Demonstration of low-overhead quantum error correction codes",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "tunable coupler",
@@ -14727,6 +15297,13 @@
     "verified": 8,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2109.03494",
+     "title": "Quantum Computational Advantage via 60-Qubit 24-Cycle Random Circuit Sampling",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "tunable transmon",
     "gate_mechanism": "tunable coupler",
@@ -14981,6 +15558,18 @@
     "verified": 8,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2412.11924",
+     "title": "Establishing a New Benchmark in Quantum Computational Advantage with 105-qubit Zuchongzhi 3.0 Processor",
+     "kind": "paper"
+    },
+    {
+     "url": "https://www.eurekalert.org/news-releases/1076296",
+     "title": "Zuchongzhi-3: A 105-qubit superconducting quantum processor with 10^15 times speedup in circuit sampling",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "tunable transmon, tantalum-aluminium on sapphire",
     "gate_mechanism": "tunable coupler CZ-family; 1Q 28 ns, 2Q 45 ns",
@@ -15233,6 +15822,7 @@
     "verified": 7,
     "total": 13
    },
+   "refs": [],
    "profile": {
     "qubit_type": "tunable transmon + tunable coupler",
     "gate_mechanism": "tunable coupler CZ",
@@ -15416,6 +16006,13 @@
     "verified": 7,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2503.21553",
+     "title": "arXiv:2503.21553 (title not returned by summariser)",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "tunable coupler (assumed)",
@@ -15666,6 +16263,13 @@
     "verified": 5,
     "total": 12
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/html/2606.06598",
+     "title": "A superconducting surface-code processor with lattice-surgery logical operations",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "tunable nearest-neighbour coupling, CZ",
@@ -15894,6 +16498,13 @@
     "verified": 10,
     "total": 12
    },
+   "refs": [
+    {
+     "url": "https://www.aqt.eu/products/ibex-q1/",
+     "title": "19-inch rack-mounted quantum computer",
+     "kind": "product"
+    }
+   ],
    "profile": {
     "qubit_type": "hyperfine qubit",
     "gate_mechanism": "laser Molmer-Sorensen; native RZ, R, RXX; up to 1,000 gates per circuit",
@@ -16079,6 +16690,13 @@
     "verified": 5,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://theroboticsmedia.com/article/julich-eleqtron-jion-trapped-ion-quantum-computer-juniq-nrw-september-3-2026",
+     "title": "Jülich And eleQtron Launch JION, Germany's First Integrated Trapped-Ion Quantum Computer",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "hyperfine qubit",
     "gate_mechanism": "MAGIC (Magnetic Gradient Induced Coupling): microwaves plus a static magnetic-field gradient, no gate lasers, no dilution refrigerator, room temperature",
@@ -16264,6 +16882,7 @@
     "verified": 6,
     "total": 10
    },
+   "refs": [],
    "profile": {
     "qubit_type": "hyperfine qubit",
     "gate_mechanism": "laser Molmer-Sorensen via multi-channel AOM addressing",
@@ -16471,6 +17090,13 @@
     "verified": 6,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://postquantum.com/quantum-research/ionq-qldpc-breakeven-trapped-ion/",
+     "title": "IonQ Hits qLDPC Breakeven — 9× Better Than Superconducting",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "Ba-133 hyperfine",
     "gate_mechanism": "laser Molmer-Sorensen",
@@ -16508,7 +17134,7 @@
    "status": "DEPLOYED",
    "status_date": "available since 2022 (Enterprise 2024-25)",
    "physical_qubits_num": 30,
-   "access": "cloud + on-prem (QuantumBasel, AIST G-QuAT)",
+   "access": "cloud + on-prem (QuantumBasel, AIST G-QuAT); EPB Quantum Center, Chattanooga — Forte Enterprise (#AQ 36) launched 18 Sep 2026",
    "layers": {
     "1": [
      {
@@ -16688,6 +17314,28 @@
     "verified": 6,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2308.05071",
+     "title": "Benchmarking a trapped-ion quantum computer with 30 qubits",
+     "kind": "paper"
+    },
+    {
+     "url": "https://www.ionq.com/quantum-systems/forte",
+     "title": "IonQ Forte: High-Performance Commercial Quantum Computer",
+     "kind": "product"
+    },
+    {
+     "url": "https://www.businesswire.com/news/home/20250609358259/en/IonQ-Speeds-Quantum-Accelerated-Drug-Development-Application-With-AstraZeneca-AWS-and-NVIDIA",
+     "title": "IonQ Speeds Quantum-Accelerated Drug Development Application With AstraZeneca, AWS, and NVIDIA",
+     "kind": "press"
+    },
+    {
+     "url": "https://www.prnewswire.com/news-releases/qc-ware-and-ionq-demonstrate-high-precision-hybrid-quantum-workflow-for-drug-discovery-302866066.html",
+     "title": "QC Ware and IonQ Demonstrate High-Precision Hybrid Quantum Workflow for Drug Discovery",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "Yb-171 hyperfine",
     "gate_mechanism": "laser Molmer-Sorensen; t_2q median 672 us over the 30-ion chain (range 550-880 us)",
@@ -16907,6 +17555,13 @@
     "verified": 6,
     "total": 12
    },
+   "refs": [
+    {
+     "url": "https://quantumcomputingreport.com/oxford-ionics-installs-full-stack-trapped-ion-quantum-computer-at-uks-national-quantum-computing-centre/",
+     "title": "Oxford Ionics Installs Full-Stack Trapped-Ion Quantum Computer at UK's National Quantum Computing Centre",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "hyperfine qubit",
     "gate_mechanism": "Electronic Qubit Control: chip-integrated electronics generate the gate fields, no gate lasers",
@@ -17153,6 +17808,13 @@
     "verified": 9,
     "total": 14
    },
+   "refs": [
+    {
+     "url": "https://www.ionq.com/news/ionq-launches-superion-product-line-industry-leading-upgradeable-platform-designed-to-scale-manufacturable-fault-tolerant-quantum-computing",
+     "title": "IonQ | IonQ Debuts Superion 256 Quantum Computing Platform",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "hyperfine qubit",
     "gate_mechanism": "Electronic Qubit Control, chip-integrated electronics rather than lasers",
@@ -17341,6 +18003,13 @@
     "verified": 1,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://www.ionq.com/quantum-systems/tempo",
+     "title": "IonQ Tempo: 100-Qubit Quantum Computer (#AQ 64)",
+     "kind": "product"
+    }
+   ],
    "profile": {
     "qubit_type": "barium (a species change from Forte's Yb) - the species is not stated on the cited IonQ page - not re-fetched",
     "gate_mechanism": "laser Molmer-Sorensen; the 100-ion all-to-all chain has no published gate time and no per-pair fidelity",
@@ -17551,6 +18220,13 @@
     "verified": 8,
     "total": 12
    },
+   "refs": [
+    {
+     "url": "https://www.quantinuum.com/blog/technical-perspective-by-the-end-of-the-decade-we-will-deliver-universal-fault-tolerant-quantum-computing",
+     "title": "Technical perspective: By the end of the decade, we will deliver universal, fully fault-tolerant quantum computing",
+     "kind": "blog"
+    }
+   ],
    "profile": {
     "qubit_type": "hyperfine clock qubit",
     "gate_mechanism": "laser Molmer-Sorensen; millions of logical operations",
@@ -17794,6 +18470,18 @@
     "verified": 5,
     "total": 13
    },
+   "refs": [
+    {
+     "url": "https://www.quantinuum.com/blog/technical-perspective-by-the-end-of-the-decade-we-will-deliver-universal-fault-tolerant-quantum-computing",
+     "title": "Technical perspective: By the end of the decade, we will deliver universal, fully fault-tolerant quantum computing",
+     "kind": "blog"
+    },
+    {
+     "url": "https://postquantum.com/quantum-computing/quantinuum-helios-architecture/",
+     "title": "Analysis of Quantinuum Helios, a 98-Qubit Trapped-Ion Quantum Computer",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "hyperfine clock qubit",
     "gate_mechanism": "laser Molmer-Sorensen; native RZZ(theta) arbitrary-angle ZZ, general SU(4)",
@@ -18044,6 +18732,38 @@
     "verified": 9,
     "total": 14
    },
+   "refs": [
+    {
+     "url": "https://www.nature.com/articles/s41586-025-08737-1",
+     "title": "Certified randomness using a trapped-ion quantum processor | Nature",
+     "kind": "paper"
+    },
+    {
+     "url": "https://arxiv.org/abs/2506.14169",
+     "title": "Experimental Demonstration of High-Fidelity Logical Magic States from Code Switching",
+     "kind": "paper"
+    },
+    {
+     "url": "https://arxiv.org/html/2603.04584",
+     "title": "Fault-tolerant execution of error-corrected quantum algorithms",
+     "kind": "paper"
+    },
+    {
+     "url": "https://arxiv.org/abs/2404.16728",
+     "title": "High-fidelity and Fault-tolerant Teleportation of a Logical Qubit using Transversal Gates and Lattice Surgery on a Tr...",
+     "kind": "paper"
+    },
+    {
+     "url": "https://arxiv.org/abs/2406.02501",
+     "title": "The computational power of random quantum circuits in arbitrary geometries",
+     "kind": "paper"
+    },
+    {
+     "url": "https://postquantum.com/quantum-computing/quantinuum-helios-architecture/",
+     "title": "Analysis of Quantinuum Helios, a 98-Qubit Trapped-Ion Quantum Computer",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "hyperfine clock qubit",
     "gate_mechanism": "laser Molmer-Sorensen; arbitrary-angle RZZ + SU(4)",
@@ -18335,6 +19055,48 @@
     "verified": 7,
     "total": 14
    },
+   "refs": [
+    {
+     "url": "https://www.nature.com/articles/s41586-026-10676-4",
+     "title": "A 98-qubit trapped-ion quantum computer with all-to-all connectivity | Nature",
+     "kind": "paper"
+    },
+    {
+     "url": "https://arxiv.org/abs/2602.22211",
+     "title": "Computing with many encoded logical qubits beyond break-even",
+     "kind": "paper"
+    },
+    {
+     "url": "https://arxiv.org/abs/2609.03194",
+     "title": "Experimental validation of a compact fault-tolerant architecture for trapped ions",
+     "kind": "paper"
+    },
+    {
+     "url": "https://arxiv.org/html/2511.05465v1",
+     "title": "Helios: A 98-qubit trapped-ion quantum computer",
+     "kind": "paper"
+    },
+    {
+     "url": "https://www.arxiv.org/abs/2511.02125",
+     "title": "Superconducting pairing correlations on a trapped-ion quantum computer",
+     "kind": "paper"
+    },
+    {
+     "url": "https://www.quantinuum.com/blog/helios-delivers-quantum-advantage-with-real-world-impact",
+     "title": "Helios Delivers Quantum Advantage with Real-World Impact",
+     "kind": "blog"
+    },
+    {
+     "url": "https://www.quantinuum.com/blog/introducing-helios-the-most-accurate-quantum-computer-in-the-world",
+     "title": "Introducing Helios: The Most Accurate Quantum Computer in the World",
+     "kind": "blog"
+    },
+    {
+     "url": "https://postquantum.com/quantum-computing/quantinuum-helios-architecture/",
+     "title": "Analysis of Quantinuum Helios, a 98-Qubit Trapped-Ion Quantum Computer",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "hyperfine clock states of Ba-137, chosen because its transitions are visible-wavelength",
     "gate_mechanism": "laser Molmer-Sorensen RZZ(pi/2); arbitrary-angle ZZ; 8 high-fidelity gate zones, up to 8 two-qubit gates in parallel",
@@ -18544,6 +19306,13 @@
     "verified": 5,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2609.03194",
+     "title": "Experimental validation of a compact fault-tolerant architecture for trapped ions",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "hyperfine clock qubit (Helios hardware)",
     "gate_mechanism": "transversal logical Cliffords in depth 1; automorphism gates are free because QCCD transport relabels qubits in software",
@@ -18742,6 +19511,13 @@
     "verified": 6,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://www.quantinuum.com/blog/technical-perspective-by-the-end-of-the-decade-we-will-deliver-universal-fault-tolerant-quantum-computing",
+     "title": "Technical perspective: By the end of the decade, we will deliver universal, fully fault-tolerant quantum computing",
+     "kind": "blog"
+    }
+   ],
    "profile": {
     "qubit_type": "hyperfine clock qubit",
     "gate_mechanism": "laser Molmer-Sorensen; circuits of up to 10,000 quantum operations",
@@ -18939,6 +19715,13 @@
     "verified": 8,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://quantumcomputingreport.com/quantum-art-extends-series-a-to-140m-to-scale-trapped-ion-architecture/",
+     "title": "Quantum Art Extends Series A to $140M to Scale Trapped-Ion Architecture",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "ion species undisclosed",
     "gate_mechanism": "multi-qubit optical gates within a core (company direction); mechanism undisclosed",
@@ -19124,6 +19907,13 @@
     "verified": 3,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://thequantuminsider.com/2026/05/15/10-plus-companies-leading-the-quantum-technologies-race-in-china/",
+     "title": "Top Chinese Quantum Computing Companies in 2026",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "ion (species not disclosed)",
     "gate_mechanism": "not disclosed",
@@ -19310,6 +20100,7 @@
     "verified": 6,
     "total": 10
    },
+   "refs": [],
    "profile": {
     "qubit_type": "hyperfine qubit",
     "gate_mechanism": "Near-Field Quantum Control microwave gates; CMOS-compatible manufacturing",
@@ -19519,6 +20310,18 @@
     "verified": 7,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2311.17163",
+     "title": "A Site-Resolved 2D Quantum Simulator with Hundreds of Trapped Ions",
+     "kind": "paper"
+    },
+    {
+     "url": "https://www.nature.com/articles/s41586-024-07459-0",
+     "title": "A site-resolved two-dimensional quantum simulator with hundreds of trapped ions",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "hyperfine qubit",
     "gate_mechanism": "global laser-driven spin-spin coupling - an analog Ising simulator, not a gate-model machine",
@@ -19755,6 +20558,23 @@
     "verified": 8,
     "total": 14
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2111.12654",
+     "title": "Demonstration of fault-tolerant universal quantum gate operations",
+     "kind": "paper"
+    },
+    {
+     "url": "https://arxiv.org/html/2506.22600",
+     "title": "Demonstration of measurement-free universal fault-tolerant quantum computation",
+     "kind": "paper"
+    },
+    {
+     "url": "https://www.nature.com/articles/s41567-024-02727-2",
+     "title": "Experimental fault-tolerant code switching | Nature Physics",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "hyperfine qubit",
     "gate_mechanism": "laser Molmer-Sorensen",
@@ -19971,6 +20791,18 @@
     "verified": 10,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2009.11482",
+     "title": "Fault-Tolerant Operation of a Quantum Error-Correction Code",
+     "kind": "paper"
+    },
+    {
+     "url": "https://www.nature.com/articles/s41586-021-03928-y",
+     "title": "Fault-tolerant control of an error-corrected qubit | Nature",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "hyperfine qubit",
     "gate_mechanism": "laser Molmer-Sorensen",
@@ -20187,6 +21019,13 @@
     "verified": 6,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://www.quantumway.org/post/universal-quantum-microwave-trapped-ion-chips-modular-scaling-funding-and-2026-2030-roadmap-for",
+     "title": "Universal Quantum: Microwave Trapped-Ion Chips, Modular Scaling, Funding, and 2026–2030 Roadmap for Investors",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "hyperfine qubit",
     "gate_mechanism": "microwave fields coupled through a static magnetic-field gradient, no per-qubit lasers",
@@ -20409,6 +21248,13 @@
     "verified": 1,
     "total": 13
    },
+   "refs": [
+    {
+     "url": "https://quantumcomputingreport.com/denmarks-qunorth-to-acquire-50-logical-qubit-magne-quantum-computer-from-atom-computing-and-microsoft/",
+     "title": "Denmark's QuNorth to Acquire 50-Logical-Qubit Magne Quantum Computer from Atom Computing and Microsoft",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "Yb-171 nuclear-spin qubit",
     "gate_mechanism": "Rydberg-blockade CZ",
@@ -20663,6 +21509,13 @@
     "verified": 10,
     "total": 13
    },
+   "refs": [
+    {
+     "url": "https://www.nextbigfuture.com/2023/10/atom-computing-first-to-exceed-1000-qubits-with-1180-qubit-neutral-atom-quantum-computer.html",
+     "title": "Atom Computing First to Exceed 1,000 Qubits With 1180 Qubit Neutral Atom Quantum Computer",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "Yb-171 nuclear-spin qubits (Gen-1 Phoenix was Sr-87 - a species change across generations)",
     "gate_mechanism": "Rydberg-blockade CZ",
@@ -20859,6 +21712,18 @@
     "verified": 8,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2403.12021",
+     "title": "A tweezer array with 6100 highly coherent atomic qubits",
+     "kind": "paper"
+    },
+    {
+     "url": "https://www.caltech.edu/about/news/caltech-team-sets-record-with-6100-qubit-array",
+     "title": "Caltech Team Sets Record with 6,100-Qubit Array",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "caesium hyperfine qubit",
     "gate_mechanism": "no entangling gate, no Rydberg gate and no two-qubit operation was demonstrated on this array",
@@ -21044,6 +21909,13 @@
     "verified": 0,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://postquantum.com/industry-news/china-neutral-atom-sprint-benchmarks/",
+     "title": "China's Neutral-Atom Quantum Sprint: Speed vs Data",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "Rb hyperfine qubit",
     "gate_mechanism": "Rydberg-blockade CZ",
@@ -21229,6 +22101,13 @@
     "verified": 0,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://postquantum.com/industry-news/china-neutral-atom-sprint-benchmarks/",
+     "title": "China's Neutral-Atom Quantum Sprint: Speed vs Data",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "Rb hyperfine qubit",
     "gate_mechanism": "Rydberg-blockade CZ",
@@ -21508,6 +22387,18 @@
     "verified": 14,
     "total": 15
    },
+   "refs": [
+    {
+     "url": "https://www.nature.com/articles/s41586-025-09848-5",
+     "title": "A fault-tolerant neutral-atom architecture for universal quantum computation",
+     "kind": "paper"
+    },
+    {
+     "url": "https://postquantum.com/quantum-research/harvard-fault-tolerant/",
+     "title": "Harvard's 448-Atom Quantum Computer Achieves Fault-Tolerant Milestone",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "hyperfine clock-state qubit",
     "gate_mechanism": "global Rydberg-blockade CZ (~270 ns) with transversal block-to-block pairing achieved by moving one code block on top of another - free connectivity is the whole architectural thesis",
@@ -21734,6 +22625,18 @@
     "verified": 11,
     "total": 12
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2506.20660",
+     "title": "Continuous operation of a coherent 3,000-qubit system",
+     "kind": "paper"
+    },
+    {
+     "url": "https://arxiv.org/html/2608.05010v1",
+     "title": "Neutral Atom Quantum Computing: Principles, Routes, Progress, and Challenges",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "hyperfine clock-state qubit",
     "gate_mechanism": "no entangling result in this paper - the machine is a continuous-operation enabler",
@@ -21945,6 +22848,13 @@
     "verified": 7,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://thequantuminsider.com/2026/03/16/infleqtion-delivers-the-uks-only-operational-100-qubit-quantum-computing-system-at-the-national-quantum-computing-centre/",
+     "title": "Infleqtion Delivers the UK's Only Operational 100-Qubit Quantum Computing System at the NQCC",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "caesium hyperfine qubit",
     "gate_mechanism": "Rydberg-blockade CZ",
@@ -22166,6 +23076,7 @@
     "verified": 10,
     "total": 13
    },
+   "refs": [],
    "profile": {
     "qubit_type": "ground-Rydberg analog qubit (analog mode); hyperfine (digital mode)",
     "gate_mechanism": "analog Rydberg Hamiltonian evolution, with a digital mode added later",
@@ -22388,6 +23299,18 @@
     "verified": 1,
     "total": 13
    },
+   "refs": [
+    {
+     "url": "https://www.pasqal.com/technology/roadmap/",
+     "title": "Our Quantum Roadmap - Pasqal",
+     "kind": "product"
+    },
+    {
+     "url": "https://postquantum.com/quantum-computing-companies/pasqal/",
+     "title": "Pasqal",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "hyperfine qubit (digital); ground-Rydberg (analog)",
     "gate_mechanism": "Rydberg-blockade CZ (digital); analog Rydberg evolution",
@@ -22574,6 +23497,13 @@
     "verified": 5,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://www.pasqal.com/blog/inside-pasqals-2026-vision-on-quantum-for-industry-and-research/",
+     "title": "Inside Pasqal's 2026 Vision on Quantum for Industry and Research",
+     "kind": "blog"
+    }
+   ],
    "profile": {
     "qubit_type": "hyperfine qubit",
     "gate_mechanism": "Rydberg-blockade CZ; local detuning for per-atom control",
@@ -22782,6 +23712,13 @@
     "verified": 4,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://postquantum.com/quantum-computing-companies/planqc",
+     "title": "Planqc",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "strontium optical clock-transition qubit - coherence 10-100 ms, three orders below the hyperfine figures in the same layer",
     "gate_mechanism": "Rydberg-blockade CZ; >60 coherent Rabi cycles",
@@ -23001,6 +23938,18 @@
     "verified": 9,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/html/2506.13724",
+     "title": "Logical qubits with erasure conversion using metastable neutral atoms",
+     "kind": "paper"
+    },
+    {
+     "url": "https://arxiv.org/abs/2506.13724",
+     "title": "[2506.13724] Logical qubits with erasure conversion using metastable neutral atoms",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "metastable Yb-171 (\"omg\") erasure-converted qubit - the only encoding in this register chosen so that errors announce themselves",
     "gate_mechanism": "Rydberg-blockade CZ; 38(6)% of CZ errors detected as erasures",
@@ -23184,6 +24133,13 @@
     "verified": 0,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://postquantum.com/industry-news/china-neutral-atom-sprint-benchmarks/",
+     "title": "China's Neutral-Atom Quantum Sprint: Speed vs Data",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "Rb hyperfine qubit (assumed)",
     "gate_mechanism": "Rydberg-blockade CZ (assumed)",
@@ -23370,6 +24326,18 @@
     "verified": 9,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2306.11727",
+     "title": "[2306.11727] Aquila: QuEra's 256-qubit neutral-atom quantum computer",
+     "kind": "paper"
+    },
+    {
+     "url": "https://postquantum.com/quantum-computing-companies/quera/",
+     "title": "QuEra Computing",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "ground-Rydberg analog qubit (not a hyperfine ground-state qubit)",
     "gate_mechanism": "analog Hamiltonian simulation: a programmable Rydberg Ising Hamiltonian under global drive with local detuning; it does not run gate circuits",
@@ -23642,6 +24610,18 @@
     "verified": 8,
     "total": 14
    },
+   "refs": [
+    {
+     "url": "https://www.nature.com/articles/s41586-025-09367-3",
+     "title": "Experimental demonstration of logical magic state distillation",
+     "kind": "paper"
+    },
+    {
+     "url": "https://www.quera.com/gemini",
+     "title": "Gemini-Class Gate-Model Quantum Computer",
+     "kind": "product"
+    }
+   ],
    "profile": {
     "qubit_type": "hyperfine clock qubit",
     "gate_mechanism": "Rydberg-blockade CZ; 20 simultaneous two-qubit pairs; repetition rate 1 shot per second",
@@ -23861,6 +24841,13 @@
     "verified": 3,
     "total": 13
    },
+   "refs": [
+    {
+     "url": "https://quantumcomputingreport.com/quera-updates-neutral-atom-quantum-roadmap-with-2028-fault-tolerant-launch-on-amazon-braket/",
+     "title": "QuEra Updates Neutral-Atom Quantum Roadmap with 2028 Fault-Tolerant Launch on Amazon Braket",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "hyperfine clock-state qubit",
     "gate_mechanism": "transversal logical operations; mid-circuit active reloading; parallel atom shuttling",
@@ -24046,6 +25033,18 @@
     "verified": 0,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://www.stocktitan.net/news/QXL/quantum-x-labs-and-iqcc-a-quantum-machines-company-sign-strategic-gssg0rqxumju.html",
+     "title": "Quantum X Labs to test AI error correction with IQCC | QXL Stock News",
+     "kind": "press"
+    },
+    {
+     "url": "https://www.stocktitan.net/sec-filings/QXL/8-k-quantum-x-labs-inc-reports-material-event-fbd25da8a74b.html",
+     "title": "Quantum X Labs launches 50+ qubit platform | QXL 8-K Filing",
+     "kind": "other"
+    }
+   ],
    "profile": {
     "qubit_type": "neutral atom in optical tweezers; species not stated",
     "gate_mechanism": "Rydberg-mediated two-qubit gates (claimed)",
@@ -24249,6 +25248,18 @@
     "verified": 3,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://quantumcomputingreport.com/fujitsu-and-yaqumo-begin-hardware-validation-of-star-architecture-on-neutral-atom-qpus/",
+     "title": "Fujitsu and Yaqumo Begin Hardware Validation of STAR Architecture on Neutral-Atom QPUs - Quantum Computing Report",
+     "kind": "press"
+    },
+    {
+     "url": "https://yaqumo.com/en/news/499/",
+     "title": "Fujitsu and Yaqumo begin testing quantum computing architecture and basic software on neutral-atom quantum computer hard",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "ytterbium neutral-atom qubit",
     "gate_mechanism": "Rydberg-blockade CZ",
@@ -24434,6 +25445,18 @@
     "verified": 2,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://orcacomputing.com/orca-pt-2/",
+     "title": "ORCA PT-2 | ORCA Computing",
+     "kind": "product"
+    },
+    {
+     "url": "https://thequantuminsider.com/2026/07/24/9-quantum-computing-companies-working-with-photonic-technology",
+     "title": "Photonic Quantum Technology Companies in 2026",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "single photons (SPDC sources) in time bins",
     "gate_mechanism": "programmable time-bin interferometer: fibre delay loops + variable beamsplitters; linear-optical interference only, no heralded entangling gate published",
@@ -24675,6 +25698,18 @@
     "verified": 10,
     "total": 12
    },
+   "refs": [
+    {
+     "url": "https://www.psiquantum.com/technology",
+     "title": "Technology — PsiQuantum",
+     "kind": "product"
+    },
+    {
+     "url": "https://www.psiquantum.com/news-import/omega",
+     "title": "PsiQuantum Announces Omega, a Manufacturable Chipset for Photonic Quantum Computing — PsiQuantum",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "single photon, dual-rail (path) encoded, telecom C-band 1550 nm",
     "gate_mechanism": "linear-optical fusion (probabilistic Bell measurement, 50% / 75% boosted); no gates in the circuit-model sense",
@@ -24931,6 +25966,18 @@
     "verified": 10,
     "total": 15
    },
+   "refs": [
+    {
+     "url": "https://www.quandela.com/products-and-services/mosaiq/",
+     "title": "Quandela MosaiQ - The Photonic Quantum Computer",
+     "kind": "product"
+    },
+    {
+     "url": "https://thequantuminsider.com/2026/07/24/9-quantum-computing-companies-working-with-photonic-technology",
+     "title": "Photonic Quantum Technology Companies in 2026",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "single photon from a semiconductor quantum dot in a micropillar cavity",
     "gate_mechanism": "post-selected/heralded linear-optical two-qubit gates in a reconfigurable interferometer mesh",
@@ -25165,6 +26212,13 @@
     "verified": 0,
     "total": 14
    },
+   "refs": [
+    {
+     "url": "https://thequantuminsider.com/2026/07/24/9-quantum-computing-companies-working-with-photonic-technology",
+     "title": "Photonic Quantum Technology Companies in 2026",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "single photon from a semiconductor quantum dot in a micropillar cavity",
     "gate_mechanism": "post-selected/heralded linear-optical two-qubit gates",
@@ -25363,6 +26417,7 @@
     "verified": 6,
     "total": 11
    },
+   "refs": [],
    "profile": {
     "qubit_type": "single photons, dual-rail/path encoded; measurement-based computation",
     "gate_mechanism": "MBQC on photonic cluster states; entangling by linear-optical fusion",
@@ -25580,6 +26635,18 @@
     "verified": 8,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://www.nature.com/articles/s41586-026-10523-6",
+     "title": "Gaussian boson sampling with 1,024 squeezed states in 8,176 modes | Nature",
+     "kind": "paper"
+    },
+    {
+     "url": "https://postquantum.com/industry-news/jiuzhang-4-0",
+     "title": "Jiuzhang 4.0: 3,050 Photons, 25.6 Microseconds, and a Direct Answer to the Algorithm That Threatened Photonic Quantum A…",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "squeezed light (Gaussian boson sampling); no qubit encoding",
     "gate_mechanism": "programmable Gaussian interferometer - 4.0 is programmable where 1.0 was a fixed circuit; MZIs at 99.8% transmission, >40 dB extinction; no homodyne feed-forward and no adaptivity",
@@ -25819,6 +26886,23 @@
     "verified": 11,
     "total": 12
    },
+   "refs": [
+    {
+     "url": "https://www.nature.com/articles/s41586-024-08406-9",
+     "title": "Scaling and networking a modular photonic quantum computer",
+     "kind": "paper"
+    },
+    {
+     "url": "https://quantumzeitgeist.com/xanadu-technical-roadmap-showcase/",
+     "title": "Xanadu Showcases Technical Roadmap And Full-Stack Platform",
+     "kind": "press"
+    },
+    {
+     "url": "https://postquantum.com/quantum-computing-companies/xanadu/",
+     "title": "Xanadu",
+     "kind": "other"
+    }
+   ],
    "profile": {
     "qubit_type": "GKP grid states in optical modes + squeezed vacuum",
     "gate_mechanism": "Gaussian beamsplitters/squeezers + homodyne measurement with feed-forward; measurement-based",
@@ -26029,6 +27113,18 @@
     "verified": 7,
     "total": 12
    },
+   "refs": [
+    {
+     "url": "https://www.nature.com/articles/s41586-022-04725-x",
+     "title": "Quantum computational advantage with a programmable photonic processor",
+     "kind": "paper"
+    },
+    {
+     "url": "https://postquantum.com/quantum-computing-companies/xanadu/",
+     "title": "Xanadu",
+     "kind": "other"
+    }
+   ],
    "profile": {
     "qubit_type": "squeezed vacuum (CV); no qubit encoding at all",
     "gate_mechanism": "programmable beamsplitter/phase-shifter network realised as three variable delay loops; no entangling gate, no feed-forward computation - Gaussian sampling only",
@@ -26280,6 +27376,18 @@
     "verified": 10,
     "total": 13
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2512.10174",
+     "title": "Eight-Qubit Operation of a 300 mm SiMOS Foundry-Fabricated Device",
+     "kind": "paper"
+    },
+    {
+     "url": "https://postquantum.com/industry-news/diraq-eight-qubit-foundry/",
+     "title": "Diraq's Eight-Qubit Foundry Silicon Array, Analyzed",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "Si-MOS electron spin, Loss-DiVincenzo",
     "gate_mechanism": "ESR 1Q by distinct Larmor frequencies (Rabi 141-205 kHz); exchange CZ 2Q - exchange control demonstrated in only one of four qubit pairs",
@@ -26478,6 +27586,18 @@
     "verified": 1,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://www.equal1.com/post/equal1-launches-bell-1-the-first-quantum-system-purpose-built-for-the-hpc-era",
+     "title": "Equal1 Launches Bell-1: The First Quantum System Purpose-Built for the HPC Era",
+     "kind": "press"
+    },
+    {
+     "url": "https://quantumzeitgeist.com/top-silicon-spin-quantum-computing-companies/",
+     "title": "Top Silicon Spin Quantum Computing Companies 2026: Complete Vendor Guide",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "Si gate-defined electron spin",
     "gate_mechanism": "exchange 2Q; ESR 1Q",
@@ -26663,6 +27783,13 @@
     "verified": 0,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://quantumzeitgeist.com/top-silicon-spin-quantum-computing-companies/",
+     "title": "Top Silicon Spin Quantum Computing Companies 2026: Complete Vendor Guide",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "germanium quantum dots (hole spins) on CMOS-compatible processes",
     "gate_mechanism": "all-electrical, faster 1Q gates without micromagnets thanks to stronger spin-orbit coupling; exchange 2Q",
@@ -26848,6 +27975,13 @@
     "verified": 0,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://www.techtimes.com/articles/321867/20260728/hitachi-intel-18a-spin-qubit.htm",
+     "title": "Silicon Spin Qubits Get Foundry Path: Hitachi Banks on Intel 18A Process",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "Si gate-defined electron spin",
     "gate_mechanism": "exchange 2Q",
@@ -27064,6 +28198,28 @@
     "verified": 3,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2410.16583",
+     "title": "[2410.16583] 12-spin-qubit arrays fabricated on a 300 mm semiconductor manufacturing line",
+     "kind": "paper"
+    },
+    {
+     "url": "https://www.techtimes.com/articles/321867/20260728/hitachi-intel-18a-spin-qubit.htm",
+     "title": "Silicon Spin Qubits Get Foundry Path: Hitachi Banks on Intel 18A Process",
+     "kind": "press"
+    },
+    {
+     "url": "https://quantumzeitgeist.com/top-silicon-spin-quantum-computing-companies/",
+     "title": "Top Silicon Spin Quantum Computing Companies 2026: Complete Vendor Guide",
+     "kind": "press"
+    },
+    {
+     "url": "https://postquantum.com/quantum-computing-companies/intel/",
+     "title": "Intel (PostQuantum company profile)",
+     "kind": "other"
+    }
+   ],
    "profile": {
     "qubit_type": "Si/SiGe gate-defined electron spin, Loss-DiVincenzo encoding",
     "gate_mechanism": "EDSR/ESR 1Q + voltage-pulsed exchange 2Q; native CZ",
@@ -27259,6 +28415,7 @@
     "verified": 6,
     "total": 10
    },
+   "refs": [],
    "profile": {
     "qubit_type": "Si-MOS gate-defined electron spin",
     "gate_mechanism": "exchange 2Q, ESR/EDSR 1Q",
@@ -27458,6 +28615,13 @@
     "verified": 0,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://quantumzeitgeist.com/top-silicon-spin-quantum-computing-companies/",
+     "title": "Top Silicon Spin Quantum Computing Companies 2026: Complete Vendor Guide",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "Si FD-SOI gate-defined spin (CEA-Leti lineage)",
     "gate_mechanism": "exchange 2Q",
@@ -27653,6 +28817,18 @@
     "verified": 6,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://www.nature.com/articles/s41586-025-09827-w",
+     "title": "An 11-qubit atom processor in silicon | Nature",
+     "kind": "paper"
+    },
+    {
+     "url": "https://quantumcomputingreport.com/silicon-quantum-computing-sqc-demonstrates-scaling-advantage-with-11-qubit-processor/",
+     "title": "Silicon Quantum Computing (SQC) Demonstrates Scaling Advantage with 11-Qubit Processor",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "P-31 donor nuclear spins in isotopically purified Si-28, STM-placed to a stated 0.13 nm accuracy (not in the cited page - not re-fetched)",
     "gate_mechanism": "hyperfine-conditional rotations through a shared electron; exchange-based CROT in 1.25 us enabling non-local entanglement within a register",
@@ -27864,6 +29040,28 @@
     "verified": 10,
     "total": 12
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2406.01704",
+     "title": "[2406.01704] Distributed Quantum Computing in Silicon",
+     "kind": "paper"
+    },
+    {
+     "url": "https://photonic.com/technology/error-correction/",
+     "title": "Quantum Error Correction with QLDPC | Photonic Inc.",
+     "kind": "product"
+    },
+    {
+     "url": "https://photonic.com/technology/qubit-platform/",
+     "title": "Silicon Spin-Photon Qubit Platform | Photonic Inc.",
+     "kind": "product"
+    },
+    {
+     "url": "https://thequantuminsider.com/2026/02/13/photonic-telus-quantum-teleportation-commercial-fibre/",
+     "title": "Photonic and TELUS Demonstrate Quantum Teleportation Over Commercial Fibre Network",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "silicon T centre - a carbon-hydrogen complex in Si-28 with a native telecom-band optical transition",
     "gate_mechanism": "microwave ESR + hyperfine-conditional nuclear gates locally; entanglement between modules by spin-photon emission and Bell measurement",
@@ -28062,6 +29260,13 @@
     "verified": 3,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://postquantum.com/quantum-computing-companies/quantum-brilliance",
+     "title": "Quantum Brilliance",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "NV centre (electron spin + nearby C-13/N-14 nuclear spins) in synthetic diamond",
     "gate_mechanism": "microwave ESR rotations + hyperfine-conditional nuclear gates; <0.1% error on NV electron+nuclear registers is the platform-level figure",
@@ -28266,6 +29471,13 @@
     "verified": 8,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://quantumzeitgeist.com/microsoft-majorana-qubit-claims/",
+     "title": "Majorana Qubit Claims: The Definitive 2026 Microsoft Dispute",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "Majorana parity in an InAs-Al (M1) / InAs-Pb (M2) gate-defined nanowire tetron",
     "gate_mechanism": "measurement-based braiding by sequences of parity measurements - nothing demonstrated; node status X",
@@ -28474,6 +29686,13 @@
     "verified": 5,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://support.dwavesys.com/hc/en-us/articles/32105885880087-D-Wave-s-Advantage2-Quantum-Computer-Now-Generally-Available",
+     "title": "D-Wave's Advantage2 Quantum Computer Now Generally Available",
+     "kind": "docs"
+    }
+   ],
    "profile": {
     "qubit_type": "rf-SQUID flux qubit (analog Hamiltonian carrier)",
     "gate_mechanism": "analog annealing evolution; not a gate",
@@ -28690,6 +29909,33 @@
     "verified": 5,
     "total": 11
    },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2503.05693",
+     "title": "Dynamics of disordered quantum systems with two- and three-dimensional tensor networks",
+     "kind": "paper"
+    },
+    {
+     "url": "https://support.dwavesys.com/hc/en-us/articles/32105885880087-D-Wave-s-Advantage2-Quantum-Computer-Now-Generally-Available",
+     "title": "D-Wave's Advantage2 Quantum Computer Now Generally Available",
+     "kind": "docs"
+    },
+    {
+     "url": "https://docs.dwavequantum.com/en/latest/quantum_research/topologies.html",
+     "title": "Topologies — D-Wave Quantum Computing Products documentation",
+     "kind": "docs"
+    },
+    {
+     "url": "https://www.dwavequantum.com/company/newsroom/press-release/beyond-classical-d-wave-first-to-demonstrate-quantum-supremacy-on-useful-real-world-problem/",
+     "title": "Beyond Classical: D-Wave First to Demonstrate Quantum Supremacy on Useful, Real-World Problem",
+     "kind": "press"
+    },
+    {
+     "url": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-announces-advancements-in-annealing-and-gate-model-quantum-computing-technologies/",
+     "title": "D-Wave Announces Advancements in Annealing and Gate-Model Quantum Computing Technologies, Furthering Company's Unique Du",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "rf-SQUID flux qubit, sixth-generation annealing processor",
     "gate_mechanism": "coherent quenches 3.6-27 ns on 1,222-5,627 qubits (not in the cited releases - not re-fetched); Multicolor Annealing and Fast-Reverse Anneal added Jan 2026",
@@ -28877,6 +30123,13 @@
     "verified": 2,
     "total": 10
    },
+   "refs": [
+    {
+     "url": "https://link.springer.com/article/10.1140/epjqt/s40507-021-00094-y",
+     "title": "Startup Qilimanjaro—towards a European full-stack coherent quantum annealer platform",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "rf-SQUID flux qubit",
     "gate_mechanism": "analog annealing evolution",
