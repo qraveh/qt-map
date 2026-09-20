@@ -109,8 +109,8 @@ svg.on('click',()=>select(null));
 document.addEventListener('keydown',ev=>{if(ev.key==='Escape')select(null);});
 // ---------- state & rendering
 const state={focus:null,isolate:null,machine:null,lens:'family',lensFilter:null,showConf:false,showRep:false,showReq:false,zoom:1};
-// zoom scales the *rendered* SVG only; the viewBox and every node coordinate stay in map units,
-// so anything that scrolls the wrapper to a node must multiply that node's coordinates by state.zoom.
+// zoom scales the *rendered* SVG only; the viewBox and every node attribute stay in map units,
+// so anything that scrolls the wrapper to a node must multiply that node's attributes by state.zoom.
 function scrollToNode(m){ const z=state.zoom||1; wrap.scrollTo({left:Math.max(0,m.x*z-200),top:Math.max(0,m.y*z-200),behavior:'smooth'}); }
 function noHover(){ try{ return window.matchMedia('(hover: none)').matches; }catch(e){ return false; } }
 function hideTip(){ tip.style.display='none'; tip.classList.remove('wide'); }
@@ -120,7 +120,7 @@ let tipPinned=false;
 function unpinTip(){ tipPinned=false; hideTip(); }
 document.addEventListener('pointerdown',function(ev){ const t=ev.target; if(t&&t.closest&&t.closest('g.edge'))return; unpinTip(); },true);
 const LENSES={   // editor's order of 17 Sep 2026: family → manufacturing → error structure → mobility → control (modality, placement) → time → readout (mechanism, destructive, mid-circuit) → entangling → affinity → status
- // plain names, no coordinate letters (brief E): the letter stays on the station card's coordinate rows and, muted, in the lens legend's title
+ // plain names, no attribute letters (brief E): the letter stays on the station card's attribute rows and, muted, in the lens legend's title
  family:{en:'Platform family',ru:'Семейство платформ'},
  g:{en:'Manufacturing technology',ru:'Технология производства'},
  f:{en:'Dominant error structure',ru:'Доминирующая структура ошибок'},
@@ -134,7 +134,7 @@ const LENSES={   // editor's order of 17 Sep 2026: family → manufacturing → 
  det:{en:'Entangling: deterministic / heralded',ru:'Перепутывание: детерминированное / heralded'},
  aff:{en:'Carrier affinity: natural ↔ fabricated',ru:'Сродство носителя: естественный ↔ изготовленный'},
  status:{en:'Technology status',ru:'Статус технологии'}};
-const LENSCOORD={g:'(g)',f:'(f)',d:'(d)',mod:'(e)',place:'(e)',time:'(b)/(c)',mech:'(c)',destr:'(c)',mid:'(c)',det:'(b)',aff:'(a)'};   // the report's coordinate letter, shown once as a muted suffix of the lens legend's title
+const LENSCOORD={g:'(g)',f:'(f)',d:'(d)',mod:'(e)',place:'(e)',time:'(b)/(c)',mech:'(c)',destr:'(c)',mid:'(c)',det:'(b)',aff:'(a)'};   // the report's attribute letter, shown once as a muted suffix of the lens legend's title
 // reading marks (brief E, editor's decision): no lens — glyphs on the stations, static legend keys with counts, badges on the station card
 const HUBDEF=['a station that stations of at least two families (or one family, recently) require — where a fix or a stall propagates across platforms','станция, которую требуют станции как минимум двух семейств (или одного — недавно): где исправление или застой распространяются на другие платформы'];
 const OFFDEF=['a station that takes a trait from the other side of the natural/fabricated divide (see §7.6)','станция, берущая свойство с другой стороны раздела естественное/изготовленное (см. §7.6)'];
@@ -184,7 +184,7 @@ function applyLens(){ const k=state.lens; const leg=document.getElementById('len
   st.select('rect.lensbar').attr('fill',d=>{ if(!lensed)return 'transparent'; return lensColor(d,k)||'transparent'; });
   pcLines.selectAll('path').attr('stroke',d=>lensed?(lensColor(d,k)||'var(--mid)'):(d._fam?FAMC[d._fam]:'var(--mid)'));
   const items=lensItems(k).filter(it=>it.n>0);
-  leg.innerHTML='<span class="lbl">'+T('lens legend · click a value to keep only those stations · Ctrl-click adds a value','легенда линзы · клик по значению оставляет только эти станции · Ctrl-клик добавляет значение')+(LENSCOORD[k]?' <span class="cnt">'+T('coordinate','координата')+' '+LENSCOORD[k]+'</span>':'')+'</span>'+items.map(it=>`<button type="button" class="k lk" data-lv="${it.v}" aria-pressed="${String(filterHas(it.v))}"><i class="sw" style="background:${it.c||'transparent'};border:1px solid ${it.c?it.c:'var(--mid)'}"></i>${esc(it.t)} <span class="cnt">${it.n}</span></button>`).join('')+(state.lensFilter!=null?`<button type="button" class="k lk clear" data-lv="">${T('clear filter','сбросить фильтр')} ✕</button>`:'');
+  leg.innerHTML='<span class="lbl">'+T('lens legend · click a value to keep only those stations · Ctrl-click adds a value','легенда линзы · клик по значению оставляет только эти станции · Ctrl-клик добавляет значение')+(LENSCOORD[k]?' <span class="cnt">'+T('attribute','атрибут')+' '+LENSCOORD[k]+'</span>':'')+'</span>'+items.map(it=>`<button type="button" class="k lk" data-lv="${it.v}" aria-pressed="${String(filterHas(it.v))}"><i class="sw" style="background:${it.c||'transparent'};border:1px solid ${it.c?it.c:'var(--mid)'}"></i>${esc(it.t)} <span class="cnt">${it.n}</span></button>`).join('')+(state.lensFilter!=null?`<button type="button" class="k lk clear" data-lv="">${T('clear filter','сбросить фильтр')} ✕</button>`:'');
   leg.querySelectorAll('[data-lv]').forEach(b=>{ b.addEventListener('click',ev=>{ toggleFilter(b.dataset.lv,ev.ctrlKey||ev.metaKey||ev.shiftKey); applyLens(); drawEdges(); dimming(); pcHighlight(state.focus); });
     b.addEventListener('mouseenter',()=>{ const v=b.dataset.lv; if(v==='')return; st.classed('peek',d=>lensValues(d,k).includes(v)); });
     b.addEventListener('mouseleave',()=>{ st.classed('peek',false); }); });
@@ -202,7 +202,8 @@ function relabel(){ st.select('text.l1').text(d=>wrapLabel(SHORT[d.id]?SHORT[d.i
   applyLens(); if(state.focus)inspect(NODE[state.focus]); else if(state.machine&&MBY[state.machine])inspectMachine(MBY[state.machine]); else if(state.isolate)inspectPath(PATH[state.isolate]); else inspectEmpty(); renderPC();
 }
 function select(id){ state.focus=id; st.classed('sel',d=>d.id===id); drawEdges(); dimming(); if(id){insp.hidden=false; inspect(NODE[id]);} else if(state.machine&&MBY[state.machine]){ inspectMachine(MBY[state.machine]); } else {insp.hidden=true; insp.innerHTML='';} pcHighlight(id); sheetRoom(); }
-function sheetRoom(){ try{ document.body.classList.toggle('has-sheet', !insp.hidden && sheetMode()); }catch(e){} }   // room to scroll the map above the bottom sheet (≤ 1024 px)
+function sheetRoom(){ try{ document.body.classList.toggle('has-sheet', !insp.hidden && sheetMode()); }catch(e){} }
+window.__sheetRoom=sheetRoom;   // room to scroll the map above the bottom sheet (≤ 1024 px)
 function edgeOn(e){ return (e.type==='conflicts'&&state.showConf)||(e.type==='replaces'&&state.showRep)||(e.type==='requires'&&state.showReq); }
 // neighbours through the relation types currently toggled on — the toggles decide which relations exist on the map at all
 function neighbours(id){ const s=new Set([id]); G.edges.forEach(e=>{ if(!edgeOn(e))return; if(e.src===id)s.add(e.dst); if(e.dst===id)s.add(e.src); }); return s; }
@@ -298,7 +299,7 @@ function inspectPath(p){ const L=lang(); insp.hidden=false;
    <dt>${T('coherence','когерентность')}</dt><dd>T₁ ${fS(CO.t1)} · T₂ ${fS(CO.t2)}${CO.t2_scope&&CO.t2_scope!=='typical'?' ('+CO.t2_scope+')':''} · ${T('ops per coherence','операций на когерентность')} <b>${fE(CO.ops_per_coh)}</b></dd>
    <dt>${T('idle exposure per round','экспозиция простоя за раунд')}</dt><dd>t_round/T₂ = ${fE(CO.idle_exposure)} · ${T('measured idle error','измеренная ошибка простоя')} ${fE(CO.idle_measured)}</dd>
    ${(R.notes||[]).length?`<dt>${T('notes','примечания')}</dt><dd class="empty">${esc((R.notes||[]).join('; '))}</dd>`:''}
-  </dl><div class="empty" style="margin-top:4px">${T('t_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — a sum of the round\'s phases, from the code node, the coordinates and the standard records; the measured cycle is the check.','t_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — сумма фаз раунда из узла кода, координат и стандартных рекордов; измеренный цикл — проверка.')}</div></div>
+  </dl><div class="empty" style="margin-top:4px">${T('t_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — a sum of the round\'s phases, from the code node, the attributes and the standard records; the measured cycle is the check.','t_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — сумма фаз раунда из узла кода, атрибутов и стандартных рекордов; измеренный цикл — проверка.')}</div></div>
   <div class="space"><h4>${T('Stations by layer — primary, then alternates','Станции по слоям — основная, затем альтернативы')}</h4><table class="ptab">${rows}</table></div>
   <div class="space"><h4>${T('Relations within the path','Связи внутри пути')}</h4>${relHTML}<div class="empty" style="margin-top:3px">${T('the edge toggles draw each type on the map, among these stations only','переключатели рёбер рисуют каждый тип на карте — только между этими станциями')}</div></div>
   <div class="space"><h4>${T('Reading','Чтение')}</h4><div>◎ ${T('hubs','хабы')}: ${hubs.length?hubs.map(id=>`<a href="#" data-goto="${id}">${esc(NODE[id][L])}</a>`).join(', '):'—'}</div><div>⤢ ${T('off-diagonal','внедиагональные')}: ${offs.length?offs.map(id=>`<a href="#" data-goto="${id}">${esc(NODE[id][L])}</a>`).join(', '):'—'}</div><div>∅ ${T('empty slots','пустые слоты')}: ${empties.length?empties.map(id=>`<a href="#" data-goto="${id}">${esc(NODE[id][L])}</a>`).join(', '):'—'}</div></div>`;
@@ -357,7 +358,7 @@ function inspect(n){ const L=lang(); const c=n.c; const rows=[[T('(a) carrier af
   <p>${lk(n.desc[L])}</p><div>${flags.join(' ')}</div>
   <button type="button" class="briefbtn" data-brief="${n.id}">${T('Brief →','Бриф →')}</button>
   ${(KEYREFS[n.id]||[]).length?`<div class="space keys"><h4>${T('Key references','Ключевые источники')}</h4>${KEYREFS[n.id].map(r=>`<div class="kr"><a href="${r.url}" target="_blank" rel="noopener">[${r.n}]</a> ${esc(r.label.length>92?r.label.slice(0,90)+'…':r.label)}${r.year?' <span class="empty">· '+r.year+'</span>':''}</div>`).join('')}</div>`:''}
-  <div class="space"><h4>${T('Design space — coordinates','Пространство проектирования — координаты')}</h4><dl>${rows.map(([k,v,key])=>`<dt class="${lr.includes(key)?'lensrow':''}">${k}</dt><dd class="${lr.includes(key)?'lensrow':''}">${esc(v)}</dd>`).join('')}</dl></div>
+  <div class="space"><h4>${T('Design space — attributes','Пространство проектирования — атрибуты')}</h4><dl>${rows.map(([k,v,key])=>`<dt class="${lr.includes(key)?'lensrow':''}">${k}</dt><dd class="${lr.includes(key)?'lensrow':''}">${esc(v)}</dd>`).join('')}</dl></div>
   <div class="space"><h4>${T('Evaluation space — dated attributes','Пространство оценки — датированные атрибуты')}</h4>${n.defines.length?n.defines.map(d=>`<div class="def"><div><span class="k">${esc(d.metric)}</span> → <b>${esc(d.value)}</b></div><div class="d">${T('defines','определяет')}: ${vt('OUT',d.out)} · ${d.date} · <a href="${d.url}" target="_blank" rel="noopener">${T('source','источник')}</a></div></div>`).join(''):`<p class="empty">${T('no dated attribute','нет датированных атрибутов')}</p>`}${n.attrs[L]?`<p style="margin:6px 0 0">${lk(n.attrs[L])}</p>`:''}</div>
   ${(n.records||[]).length?`<div class="space"><h4>${T('Standard records','Стандартные рекорды')}</h4>${n.records.map(r=>{const RK=(G.vocab.RECKEYS||{})[r.key]||[r.key,r.key]; const val=r.num==null?`<span class="empty">${T('not published','не опубликовано')}</span>`:(r.unit==='s'?fmtT(Math.log10(r.num)):(r.unit==='Hz'?r.num.toExponential(1)+' Hz':(r.unit==='count'?String(r.num):(r.num<0.01||r.num>1e4?r.num.toExponential(2):String(+r.num.toPrecision(3)))))); return `<div class="def"><div><span class="k">${esc(T(...RK))}</span> → <b>${val}</b> <span class="empty">· ${r.scope}</span></div><div class="d">${esc(r.text)} · ${r.date} · <a href="${r.url}" target="_blank" rel="noopener">${T('source','источник')}</a> [${r.tag}]${r.note?` <span class="empty" title="${esc(r.note)}">ⓘ</span>`:''}</div></div>`;}).join('')}</div>`:''}
   <div class="space"><h4>${T('Actors & goals — annotations','Акторы и цели — аннотации')}</h4>${(prim[n.id]||[]).concat(alt[n.id]||[]).map(p=>`<div class="pathtag"><i class="sw" style="--c:${FAMC[PATH[p].family]}"></i>${esc(PATH[p][L])}${(alt[n.id]||[]).includes(p)?' <span class="empty">('+T('alternate','альтернатива')+')</span>':''}<span class="empty"> — ${esc(PATH[p].actors)} · ${PATH[p].goals}</span></div>`).join('')||`<p class="empty">${T('not on any platform path','не входит ни в один путь платформы')}</p>`}</div>
@@ -369,7 +370,7 @@ function inspect(n){ const L=lang(); const c=n.c; const rows=[[T('(a) carrier af
    ${(reqOut.length||reqIn.length||rep.length||con.length)?`<div class="empty" style="margin-top:4px">° ${T('one-of dependency','зависимость «одно из»')}</div>`:`<p class="empty">—</p>`}</div>
   ${usedByHTML(n)}`;
   insp.querySelectorAll('[data-goto]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); select(a.dataset.goto); const m=NODE[a.dataset.goto]; scrollToNode(m);}));
-  insp.querySelectorAll('[data-mach]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); setMachine(a.dataset.mach===state.machine?null:a.dataset.mach);}));
+  insp.querySelectorAll('[data-mach]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); showMachine(a.dataset.mach);}));
   insp.querySelector('[data-close]').addEventListener('click',()=>select(null)); wireCard();
 }
 pathHit.on('mousemove',(ev,p)=>{ if(tipPinned)return; pathSel.classed('hov',d=>d.id===p.id); tip.style.display='block'; tip.classList.remove('wide'); tip.innerHTML=`<i class="sw" style="background:${FAMC[p.family]}"></i><b>${esc(p[lang()])}</b> · ${T('click to isolate this path','клик — изолировать этот путь')}`; placeTip(ev); })
@@ -394,6 +395,11 @@ function setMachine(id){ state.machine=(id&&MBY[id])?id:null; if(machSel&&machSe
   else if(state.machine)inspectMachine(MBY[state.machine]);
   else if(state.isolate)inspectPath(PATH[state.isolate]); else inspectEmpty(); }
 window.__selectMachine=id=>{ setMachine(id||null); return state.machine; };
+// a machine chosen from a card (the "Used by" list): the machine becomes the selection — its card, its full lit set (the station focus is
+// released, otherwise the lit set would be the intersection with that station's paths) — and the map is brought into view if it is off-screen
+function showMachine(id){ if(!id||!MBY[id])return; state.focus=null; st.classed('sel',false); setMachine(id); revealMap(); }
+function revealMap(){ try{ const r=wrap.getBoundingClientRect(); const top=(document.querySelector('.mobilebar')||{}).offsetHeight||0; const sheetH=(!insp.hidden&&sheetMode())?insp.getBoundingClientRect().height:0;
+  const room=window.innerHeight-sheetH; if(r.top<top||r.top>room*0.6||r.bottom<top+120){ const y=r.top+window.pageYOffset-top-6; window.scrollTo({top:Math.max(0,y),behavior:'smooth'}); } }catch(e){} }
 document.getElementById('tg-conf').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showConf=!state.showConf; ev.currentTarget.setAttribute('aria-pressed',String(state.showConf)); drawEdges(); dimming();});
 document.getElementById('tg-rep').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showRep=!state.showRep; ev.currentTarget.setAttribute('aria-pressed',String(state.showRep)); drawEdges(); dimming();});
 document.getElementById('tg-req').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showReq=!state.showReq; ev.currentTarget.setAttribute('aria-pressed',String(state.showReq)); drawEdges(); dimming();});
@@ -403,7 +409,7 @@ document.getElementById('tg-reset').addEventListener('click',()=>{state.isolate=
 // ---------- zoom: rendered width/height only, viewBox untouched (so the map stays crisp and text stays text)
 const ZSTEPS=[0.5,0.6,0.7,0.85,1,1.25,1.5,2];   // the − / + buttons walk these
 const ZMIN=0.2, ZMAX=2.5;                        // fit-width on a phone needs to go below ZSTEPS[0]
-function applyZoom(z,keepCentre){
+function applyZoom(z,keepCentre){ if(keepCentre)state.fitMode=null;
   z=Math.max(ZMIN,Math.min(ZMAX,z));
   const old=state.zoom||1; let fx=0,fy=0;
   if(keepCentre){ fx=(wrap.scrollLeft+wrap.clientWidth/2)/(W*old); fy=(wrap.scrollTop+wrap.clientHeight/2)/(H*old); }
@@ -421,13 +427,15 @@ function zoomStep(d){ let i=0; for(let k=1;k<ZSTEPS.length;k++){ if(Math.abs(ZST
   function sbSize(){ const d=document.createElement('div'); d.style.cssText='position:absolute;top:-9999px;left:-9999px;width:100px;height:100px;overflow:scroll;visibility:hidden'; document.body.appendChild(d); const r={w:d.offsetWidth-d.clientWidth,h:d.offsetHeight-d.clientHeight}; d.remove(); return r; }
   function box(){ const cs=getComputedStyle(wrap); const sb=sbSize(); const bw=(parseFloat(cs.borderLeftWidth)||0)+(parseFloat(cs.borderRightWidth)||0), bh=(parseFloat(cs.borderTopWidth)||0)+(parseFloat(cs.borderBottomWidth)||0);
     const w0=wrap.offsetWidth-bw; let h0=parseFloat(cs.maxHeight); if(!(h0>0))h0=wrap.offsetHeight-bh; return {w0:w0,h0:h0,sb:sb}; }
-  function fitWidth(){ const b=box(); let z=(b.w0-2)/W; if(Math.floor(H*z)>b.h0) z=(b.w0-b.sb.w-2)/W; applyZoom(z,false); wrap.scrollLeft=0; }
+  function fitWidth(){ const b=box(); let z=(b.w0-2)/W; if(Math.floor(H*z)>b.h0) z=(b.w0-b.sb.w-2)/W; applyZoom(z,false); wrap.scrollLeft=0; state.fitMode='width'; }
   if(zf)zf.addEventListener('click',fitWidth);
+  // a fitted map stays fitted when the window changes (resize, rotation, browser zoom); any other zoom action clears the mode
+  let rt=null; window.addEventListener('resize',()=>{ if(state.fitMode!=='width')return; clearTimeout(rt); rt=setTimeout(()=>{ if(state.fitMode==='width')fitWidth(); },150); });
   // fit height: the whole map, top to bottom, in the window — so it first does what align-top does (bar to the top of the
   // window, wrapper allowed to take the rest), instantly, then measures the height actually visible below the wrapper's
   // top edge and fits to that; if the page cannot scroll far enough for the bar to reach the top, the smaller visible
   // height wins, so the bottom of the map is never below the window
-  function fitHeight(){ const off=pageBarH()+4; const bar=document.getElementById('mapbar')||wrap;
+  function fitHeight(){ state.fitMode=null; const off=pageBarH()+4; const bar=document.getElementById('mapbar')||wrap;
     wrap.classList.add('tall'); wrap.style.maxHeight=tallHeight()+'px';
     const y=bar.getBoundingClientRect().top+window.pageYOffset-off; window.scrollTo(0,Math.max(0,y));
     const b=box(); const cs=getComputedStyle(wrap); const bh=(parseFloat(cs.borderTopWidth)||0)+(parseFloat(cs.borderBottomWidth)||0);
@@ -474,7 +482,7 @@ function zoomStep(d){ let i=0; for(let k=1;k<ZSTEPS.length;k++){ if(Math.abs(ZST
 // ---------- parallel coordinates
 const pcHost=document.getElementById('pc');
 const PCW=1100, PCH=300, PX0=70, PX1=PCW-30, PY0=34, PY1=PCH-46;
-const pcsvg=d3.select(pcHost).append('svg').attr('viewBox',`0 0 ${PCW} ${PCH}`).attr('role','img').attr('aria-label','Parallel coordinates of all technologies across the seven design coordinates');
+const pcsvg=d3.select(pcHost).append('svg').attr('viewBox',`0 0 ${PCW} ${PCH}`).attr('role','img').attr('aria-label','Parallel coordinates of all technologies across the seven design attributes');
 const AXES=[{k:'aff',en:'(a) carrier',ru:'(a) носитель'},{k:'b',en:'(b) time',ru:'(b) время'},{k:'c',en:'(c) readout',ru:'(c) считывание'},{k:'d',en:'(d) mobility',ru:'(d) подвижность'},{k:'e',en:'(e) control',ru:'(e) управление'},{k:'f',en:'(f) error',ru:'(f) ошибка'},{k:'g',en:'(g) fab',ru:'(g) производство'}];
 const ORD={aff:[0,0.25,0.5,0.75,1],d:['none','static','shared','longrange','bus','transport','flying'],e:['none','lf@RT','mw@RT','eo@RT','opt@RT','mw@4K','lf@mK','mw@mK'],f:['none','pauli','coherent','leak','burst','bias','gauss','erasure','loss','unknown'],g:['none','sclitho','3d','cmos','mbe','mems','pic','optics','stm','diamond'],c:['none','spd','disp','erasure','s2c','qcap','fluor','img']};
 const xAx=i=>PX0+i*(PX1-PX0)/(AXES.length-1);
@@ -514,11 +522,15 @@ function cardState(){ try{return JSON.parse(localStorage.getItem(CARDKEY)||'{}')
 function saveCard(o){ try{localStorage.setItem(CARDKEY,JSON.stringify(o));}catch(e){} }
 // ≤ 1024 the card is a bottom sheet: the stored desktop position is ignored and every inline
 // position style is cleared so the sheet rules in the stylesheet apply.
-function sheetMode(){ try{ return window.matchMedia('(max-width:1024px)').matches; }catch(e){ return false; } }
+const SHEET_MQ='(max-width:700px), ((max-width:1024px) and (pointer:coarse))';   // same expression as the stylesheet: narrow viewports, or touch screens up to 1024px; a mouse laptop keeps the floating card (editor, 20 Sep 2026)
+function sheetMode(){ try{ return window.matchMedia(SHEET_MQ).matches; }catch(e){ return false; } }
+const SHEETKEY='qmap.sheet';
+function sheetHeight(){ try{ const v=parseFloat(localStorage.getItem(SHEETKEY)); return (v>=0.2&&v<=0.9)?v:null; }catch(e){ return null; } }
+function applySheetHeight(){ const v=sheetHeight(); if(sheetMode()&&v&&!insp.classList.contains('sheet-max')){ insp.style.maxHeight=Math.round(v*100)+'vh'; document.body.style.paddingBottom=Math.round(v*100+2)+'vh'; } else { insp.style.maxHeight=''; document.body.style.paddingBottom=''; } }
 function placeCard(){ const o=cardState(); const w=insp.offsetWidth||336; const vw=window.innerWidth, vh=window.innerHeight;
   if(sheetMode()){ insp.style.left=''; insp.style.right=''; insp.style.top=''; insp.style.width=''; insp.style.height='';
-    insp.querySelectorAll('[data-dock]').forEach(b=>b.setAttribute('aria-pressed','false')); return; }
-  insp.classList.remove('sheet-max');
+    insp.querySelectorAll('[data-dock]').forEach(b=>b.setAttribute('aria-pressed','false')); applySheetHeight(); return; }
+  insp.classList.remove('sheet-max'); applySheetHeight();
   if(o.mode==='free'&&o.x!=null){ insp.style.left=Math.max(0,Math.min(vw-w,o.x))+'px'; insp.style.top=Math.max(0,Math.min(vh-80,o.y))+'px'; insp.style.right='auto'; }
   else if(o.mode==='right'){ insp.style.left='auto'; insp.style.right='16px'; insp.style.top=(o.y!=null?Math.max(0,Math.min(vh-80,o.y)):84)+'px'; }
   else { insp.style.left='16px'; insp.style.right='auto'; insp.style.top=(o.y!=null?Math.max(0,Math.min(vh-80,o.y)):84)+'px'; }
@@ -528,8 +540,15 @@ function wireCard(){ placeCard();
   const sb=insp.querySelector('[data-sheet]');
   if(sb) sb.addEventListener('click',function(ev){ ev.stopPropagation(); const on=!insp.classList.contains('sheet-max');
     if(on) insp.classList.add('sheet-max'); else insp.classList.remove('sheet-max');
-    sb.textContent=on?'⌄':'⌃'; sb.setAttribute('aria-pressed',String(on)); });
-  if(sheetMode()) return;   // no dragging or docking on a bottom sheet
+    sb.textContent=on?'⌄':'⌃'; sb.setAttribute('aria-pressed',String(on)); applySheetHeight(); });
+  if(sheetMode()){   // a bottom sheet is not moved; its grip resizes it by a vertical drag (20–90 % of the window), remembered per browser
+    const g=insp.querySelector('[data-grip]'); if(!g)return;
+    g.addEventListener('pointerdown',ev=>{ if(ev.target.closest('button'))return; ev.preventDefault(); insp.classList.remove('sheet-max'); const sb=insp.querySelector('[data-sheet]'); if(sb){ sb.textContent='⌃'; sb.setAttribute('aria-pressed','false'); }
+      const y0=ev.clientY, h0=insp.getBoundingClientRect().height, vh=window.innerHeight; g.setPointerCapture(ev.pointerId); insp.classList.add('dragging');
+      const mv=e=>{ const h=Math.max(0.2*vh,Math.min(0.9*vh,h0+(y0-e.clientY))); insp.style.maxHeight=h+'px'; document.body.style.paddingBottom=(h+16)+'px'; };
+      const up=e=>{ g.removeEventListener('pointermove',mv); g.removeEventListener('pointerup',up); insp.classList.remove('dragging'); const h=insp.getBoundingClientRect().height; try{ localStorage.setItem(SHEETKEY,String(Math.round(h/vh*100)/100)); }catch(x){} applySheetHeight(); };
+      g.addEventListener('pointermove',mv); g.addEventListener('pointerup',up); });
+    return; }
   insp.querySelectorAll('[data-dock]').forEach(b=>b.addEventListener('click',ev=>{ev.stopPropagation(); const o=cardState(); o.mode=b.dataset.dock; saveCard(o); placeCard();}));
   const g=insp.querySelector('[data-grip]'); if(!g)return;
   g.addEventListener('pointerdown',ev=>{ if(ev.target.closest('button'))return; ev.preventDefault(); const r=insp.getBoundingClientRect(); const dx=ev.clientX-r.left, dy=ev.clientY-r.top; insp.classList.add('dragging'); g.setPointerCapture(ev.pointerId);
@@ -539,7 +558,7 @@ function wireCard(){ placeCard();
 }
 // the sheet is viewport-wide by design — never record that width as the desktop card width
 new ResizeObserver(()=>{ if(insp.hidden||sheetMode())return; const o=cardState(); const w=insp.offsetWidth; if(w&&Math.abs((o.w||336)-w)>2){o.w=w; saveCard(o);} }).observe(insp);
-window.addEventListener('resize',()=>{ if(!insp.hidden)placeCard(); });
+window.addEventListener('resize',()=>{ if(!insp.hidden){ placeCard(); wireCard(); } if(window.__sheetRoom)window.__sheetRoom(); });   // the sheet/card mode can flip on a resize (window, rotation, zoom): re-place, re-wire the grip, keep the page room
 try{ var __th=function(){ if(window.__mapTheme)window.__mapTheme(); };
   var __mq=matchMedia('(prefers-color-scheme: dark)');
   if(__mq.addEventListener)__mq.addEventListener('change',__th); else if(__mq.addListener)__mq.addListener(__th);

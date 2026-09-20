@@ -15,7 +15,7 @@ updated: 2026-09-03
 
 A transmon is an Al/AlOx/Al Josephson junction shunted by a large capacitor so that E_J/E_C ≈ 50–100 [D][1]. Charge dispersion falls exponentially in √(8E_J/E_C), removing 1/f charge noise at the price of a weak anharmonicity α ≈ −E_C ≈ −200 to −300 MHz; the qubit is the lowest two levels of a 4–6 GHz oscillator [D][1]. Koch et al. proposed it in 2007 [D][1]; the 3D transmon (2011) [D][2] and the UCSB/Google Xmon (2014) [D][3] fixed the two lineages still in use, fixed-frequency (IBM) and flux-tunable (Google, IQM, USTC).
 
-Coordinates (technology graph):
+Attributes (technology graph):
 - a: affinity 1.0, fabricated (no natural counterpart).
 - b: characteristic time 10⁻⁸ s, deterministic entangling; the 1/α leakage bound puts the pulse floor near 10 ns.
 - c: readout dispersive microwave, 10⁻⁶·⁵ s (≈ 320 ns), non-destructive, mid-circuit capable.

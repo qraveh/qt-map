@@ -17,7 +17,7 @@ This node is a manufacturing regime, not a qubit: 300 mm CMOS production lines m
 
 CEA-Leti opened the route in 2016 with a spin qubit in a 28 nm FD-SOI flow [D][13]. Intel and QuTech made the first all-optically patterned 300 mm qubits in March 2022 [D][3], fixing *since 2022*; Intel added EUV arrays and 1.6 K wafer statistics in 2024 [D][1][2]. imec produced 300 mm transmons in 2024 [D][4] and, with Diraq, unit cells above 99% in 2025 [D][6]. GlobalFoundries' 22FDX became the merchant option in 2025 [D][5], ST started 28Si FD-SOI lots in December 2025 [P][38], and US CHIPS letters of intent followed in May 2026 [G][18].
 
-Coordinates (technology graph):
+Attributes (technology graph):
 a, carrier affinity: fabricated, 1.0; the node is fabrication itself.
 b, characteristic time: none; no gate time or entangling mode.
 c, readout: none.

@@ -13,7 +13,7 @@ updated: 2026-09-03
 
 ## Identity & lineage
 Light for cooling, state preparation, gates and readout runs in single-mode waveguides fabricated into or beside the trap chip, exiting at the ion through grating couplers instead of free-space beams aligned through vacuum viewports. ETH Zürich demonstrated waveguide-delivered multi-ion logic above 99.3% two-qubit fidelity in October 2020 [D][1]. Quantinuum has since taken it to ≥7 wavelengths across 8 zones on Helios [D][2], the photonics coming from Sandia's MESA complex under a four-year CRADA renewed in May 2026 [G][3].
-Coordinates: optical control modality on a natural ion carrier, delivered inside the vacuum system; no intrinsic gate or readout channel.
+Attributes: optical control modality on a natural ion carrier, delivered inside the vacuum system; no intrinsic gate or readout channel.
 Dominant error is coherent — crosstalk, stray-light shifts, phase noise; fabrication is a photonic-IC foundry process (SiN, BTO or thin-film lithium niobate).
 
 ## Physics & limits

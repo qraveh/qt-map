@@ -13,7 +13,7 @@ updated: 2026-09-04
 
 ## Identity & lineage
 Using the lowest two levels of a Josephson circuit directly as a qubit is as old as the Cooper-pair box (Nakamura, 1999); the transmon (Koch et al., 2007) made it the default by buying charge insensitivity with lower anharmonicity — which is what creates the leakage problem.
-Coordinates: it adds no characteristic time, readout, mobility, control or fabrication of its own — each is the carrier's.
+Attributes: it adds no characteristic time, readout, mobility, control or fabrication of its own — each is the carrier's.
 Error structure as the code sees it: unbiased Pauli plus leakage out of the subspace.
 
 ## Physics & limits

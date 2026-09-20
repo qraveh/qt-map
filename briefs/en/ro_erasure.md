@@ -15,7 +15,7 @@ updated: 2026-09-03
 
 A mid-circuit erasure check asks "is this qubit still inside its code space?" and returns a one-bit herald with the qubit's location without disturbing the logical state. It needs an encoding whose dominant decay leaves the code space: dual-rail (one excitation in two transmons or two cavities; loss leaves the detectable vacuum) or a metastable atomic qubit (³P₀ in ¹⁷¹Yb, D₅/₂ in ⁴⁰Ca⁺) whose ground-state decay fluoresces under a beam the qubit does not see. Proposals: Princeton/Yale, 2022-01 — 98% of ¹⁷¹Yb errors convertible, surface-code threshold 0.937%→4.15% [S][4]; AWS dual-rail transmons, 2022-08 [S][5]; Yale cavities, 2022-12 [S][6]. Demonstrations: Princeton ¹⁷¹Yb [D][3] and Caltech ⁸⁸Sr [D][11] in 2023-05; AWS transmons [D][8] and Yale cavities [D][9] in 2023-07.
 
-Coordinates from the technology graph (legend: a affinity natural↔fabricated; b time, deterministic/heralded; c readout mechanism, time, destructive?, mid-circuit?; d mobility; e control @ placement; f error structure; g manufacturing):
+Attributes from the technology graph (legend: a affinity natural↔fabricated; b time, deterministic/heralded; c readout mechanism, time, destructive?, mid-circuit?; d mobility; e control @ placement; f error structure; g manufacturing):
 - a = 0.5, carrier-agnostic.
 - b = n/a.
 - c = ancilla erasure check, 10⁻⁶·⁴ s ≈400 ns, non-destructive, mid-circuit — the transmon record [D][1], not the atomic 20 µs [D][3].

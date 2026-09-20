@@ -17,7 +17,7 @@ An omg encoding places the computational basis inside a long-lived *metastable* 
 
 The name is the ion-side blueprint: *optical–metastable–ground*, three manifolds in one species so one ion serves as qubit, ancilla and coolant (Allcock, Campbell, Chiaverini, Chuang, Hudson, Wineland and colleagues, 2021) [D][1]. Wu, Kolkowitz, Puri and Thompson made it quantitative for neutral atoms: 98% of ¹⁷¹Yb errors convertible, threshold rising from 0.937% under Pauli noise to 4.15% under erasure noise [S][2]. Kang, Campbell and Brown carried it to ions [S][5]. First hardware: Princeton, 2023 [D][3].
 
-Coordinates (technology graph): **a** carrier affinity 0.0, natural carriers. **b** no characteristic time, no entangling mechanism of its own. **c** no readout of its own; it delegates to the mid-circuit erasure check it enables. **d** no mobility. **e** no control modality or placement. **f** error structure as the code sees it: **erasure**. **g** no manufacturing. A hub in the strict sense, reaching both host families.
+Attributes (technology graph): **a** carrier affinity 0.0, natural carriers. **b** no characteristic time, no entangling mechanism of its own. **c** no readout of its own; it delegates to the mid-circuit erasure check it enables. **d** no mobility. **e** no control modality or placement. **f** error structure as the code sees it: **erasure**. **g** no manufacturing. A hub in the strict sense, reaching both host families.
 
 ## Physics & limits
 
@@ -45,7 +45,7 @@ The dominant term is the unconverted residual: half the ≈1.4% raw ⁴⁰Ca⁺ 
 
 ## Manufacturing, materials & supply chain
 
-No fabrication step: the manufacturing coordinate is "none" and the encoding rides whatever trap the host uses. What it changes is optics — a shelving/clock laser (578 nm for ¹⁷¹Yb, 674 nm for Ca⁺, 1762 nm for Ba⁺), repumps out of the manifold, and in Oregon's case a Raman pair at 976 nm detuned −43 THz, bought with power [D][6]. Suppliers are the field's usual set: Toptica, M Squared, Menlo Systems and NKT Photonics for sources; Stable Laser Systems for ultra-low-expansion cavities; Hamamatsu and Andor for check cameras. Single points of failure: the ULE cavity and the clock laser, both sub-ten-vendor markets. Export-control exposure runs through the lasers, not the encoding — Wassenaar Category 6 controls and the US BIS quantum rule of 2024-09-06 apply whichever manifold carries the qubit.
+No fabrication step: the manufacturing attribute is "none" and the encoding rides whatever trap the host uses. What it changes is optics — a shelving/clock laser (578 nm for ¹⁷¹Yb, 674 nm for Ca⁺, 1762 nm for Ba⁺), repumps out of the manifold, and in Oregon's case a Raman pair at 976 nm detuned −43 THz, bought with power [D][6]. Suppliers are the field's usual set: Toptica, M Squared, Menlo Systems and NKT Photonics for sources; Stable Laser Systems for ultra-low-expansion cavities; Hamamatsu and Andor for check cameras. Single points of failure: the ULE cavity and the clock laser, both sub-ten-vendor markets. Export-control exposure runs through the lasers, not the encoding — Wassenaar Category 6 controls and the US BIS quantum rule of 2024-09-06 apply whichever manifold carries the qubit.
 
 ## Control, readout & I/O burden
 

@@ -15,7 +15,7 @@ updated: 2026-09-03
 
 The carrier is the total fermion parity of two hybrid semiconductor–superconductor nanowires (a "tetron"), intended to be held non-locally in Majorana zero modes at the wire ends and so inaccessible to local perturbation. Kitaev proposed the one-dimensional p-wave chain in 2001; the Lutchyn/Oreg proximitised-nanowire recipe (2010) is what every device since has tried to realise; Microsoft's measurement-based architecture, where logic is parity measurement rather than braiding, is what these devices serve. Nothing in the record establishes that the measured parity is topologically protected.
 
-Coordinates (technology graph):
+Attributes (technology graph):
 - a — affinity: fully fabricated (1.0); the object does not exist until an MBE stack and a gate pattern create it.
 - b — characteristic time ≈ 1 µs; entangling operation deterministic (measurement-based, not heralded).
 - c — readout: rf quantum-capacitance parity detection, ~100 µs, non-destructive, mid-circuit capable.

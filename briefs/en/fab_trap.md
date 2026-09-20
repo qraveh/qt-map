@@ -13,7 +13,7 @@ updated: 2026-09-03
 
 ## Identity & lineage
 A surface-electrode trap flattens the Paul trap into one lithographic plane — electrodes side by side, the ion held tens of micrometres above — so trap geometry becomes mask layout. NIST demonstrated it in 2006, holding ²⁴Mg⁺ about 40 µm above planar gold and measuring the heating rate directly [D][1]. It is the layer beneath the ion carrier: it fixes electrode count, zone and junction geometry, and the surface chemistry above it.
-Coordinates: carrier affinity a = 0.0, fully fabricated. Manufacturing g = MEMS lithography moving onto merchant 6–12-inch semiconductor lines [C][7].
+Attributes: carrier affinity a = 0.0, fully fabricated. Manufacturing g = MEMS lithography moving onto merchant 6–12-inch semiconductor lines [C][7].
 
 ## Physics & limits
 The floor is anomalous field noise from the electrode surface, not lithographic resolution. Over ion heights of 30–3,000 µm it falls roughly as d⁻⁴ [D][15]: halving the height to pack zones costs ~16× in heating. Heating becomes gate error, since entangling gates ride a shared motional mode for tens to hundreds of microseconds, and forces re-cooling between transport steps. The noise is an adsorbate layer, not a bulk property: cooling gold traps to 6 K suppressed heating ~7 orders of magnitude [D][5]; argon-ion bombardment cut it 100-fold on an already-clean trap [D][6]. The error structure the code sees is coherent and correlated — stray charge on dielectric gaps gives micromotion and phase drift shared across a zone, and one open electrode kills that zone. What moves the floor: niobium electrodes, in-vacuum cleaning, shielded dielectric, cryogenics by default.

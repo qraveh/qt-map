@@ -13,7 +13,7 @@ updated: 2026-09-04
 
 ## Identity & lineage
 Classical hardware consuming syndrome bits and emitting corrections inside the code cycle. The lineage is the backlog argument: if mean decode time exceeds cycle time, undecoded rounds accumulate without bound and the classical hardware sets the logical error rate. FPGAs won for deterministic latency, not speed.
-Coordinates: a compute module, not a carrier (affinity 0.5); no time, readout, mobility, control or fabrication of its own.
+Attributes: a compute module, not a carrier (affinity 0.5); no time, readout, mobility, control or fabrication of its own.
 Error structure it consumes: Pauli syndromes from the rotated surface code.
 
 ## Physics & limits

@@ -15,7 +15,7 @@ updated: 2026-09-03
 
 Block codes whose rate k/n is a large fraction of unity and whose logical Cliffords run transversally — depth-one layers of two-local physical gates — instead of d rounds of lattice surgery. Four members define the node. The **iceberg code** [[k+2,k,2]] detects any single-qubit error (Quantinuum: Self, Benedetti, Amaro; Nature Physics 20, 219, 2024-07-26) [D][3]. Two-level concatenation gives [[(k₁+2)(k₂+2), k₁k₂, 4]]; **[[80,48,4]]** (k₁=6, k₂=8) is the largest cycle executed anywhere [D][1]. The **tesseract colour code [[16,6,4]]** is a doubly-even self-dual 4D CSS code from the [16,5,8] Reed–Muller code (subsystem variant [[16,4,2,4]]), its logical Clifford group depth-one [D][5]. Goto's **many-hypercube codes** concatenate [[4,2,2]] blocks to ~30% rate [S][7].
 
-Coordinates: no carrier of its own (affinity 0.0), it inherits the platform's; no characteristic time and no entangling determinism here; no readout of its own; mobility by physical transport of the carriers, which supplies the required all-to-all; no control modality, placed nowhere; error structure as the code sees it, depolarising Pauli noise; no manufacturing.
+Attributes: no carrier of its own (affinity 0.0), it inherits the platform's; no characteristic time and no entangling determinism here; no readout of its own; mobility by physical transport of the carriers, which supplies the required all-to-all; no control modality, placed nowhere; error structure as the code sees it, depolarising Pauli noise; no manufacturing.
 
 ## Physics & limits
 

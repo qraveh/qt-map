@@ -13,7 +13,7 @@ updated: 2026-09-03
 
 ## Identity & lineage
 Resonant microwave drive rotates a colour centre's electron spin between ground-state sublevels — 2.87 GHz at zero field for NV, a Zeeman-split pair for the group-IV centres. Hyperfine coupling to ¹³C or ¹⁴N neighbours makes them addressable by conditional rotations — a register from one defect. Optical pulses do the initialisation and readout microwaves cannot. Coherent single-defect Rabi driving dates to 2004; the benchmark is Fujitsu/QuTech gate-set tomography below 0.1% [P][1].
-Coordinates: engineered placement of a natural defect, static, entangling near 1 µs (electron) and milliseconds (nuclear); microwave plus optical control; Pauli and coherent error.
+Attributes: engineered placement of a natural defect, static, entangling near 1 µs (electron) and milliseconds (nuclear); microwave plus optical control; Pauli and coherent error.
 
 ## Physics & limits
 Two rates set the architecture: megahertz electron Rabi gives gates of tens to hundreds of nanoseconds, while hyperfine-conditional nuclear gates run at kilohertz — three orders slower, so the long-lived memory is the slow one. The floor is optical duty cycle, not microwave power: every initialisation or readout pulse drives the defect through an excited state that can ionise it and shifts the local charge environment, so the error of the *next* gate depends on how many photons the last one scattered. Isotopic ¹²C purity lengthens T₂ but does nothing about that; only fewer optical cycles per operation move the floor, which is why Delft's ~10× collection gain is a gate result as much as a link result [D][2].

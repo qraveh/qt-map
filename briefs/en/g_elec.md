@@ -15,7 +15,7 @@ updated: 2026-09-03
 
 An entangling gate on hyperfine ion qubits driven entirely by currents in the trap chip. Oscillating currents in electrodes tens of micrometres from the ion produce a microwave field whose *gradient*, not its amplitude, couples spin to the shared motional mode; a state-dependent force closes a loop in phase space and imprints a geometric phase, as a Mølmer–Sørensen gate does, with a ~10 GHz field replacing two laser beams. Demonstrated at NIST Boulder in 2011 (76(3)%, 20 ns single-qubit pulses) [D][5], brought to useful fidelity at Oxford in 2016 with dynamically decoupled ⁴³Ca⁺ clock qubits [D][4], industrialised by Oxford Ionics — the Ballance/Harty spin-out of that group, part of IonQ since 2025 — as Electronic Qubit Control [C][6]. A parallel lineage at Sussex (Hensinger), its spin-out Universal Quantum, and eleQtron's MAGIC drives global microwave fields across a *static* gradient [P][9][10]; the near-field variant here holds the records.
 
-Coordinates (technology graph):
+Attributes (technology graph):
 - Carrier affinity: fully natural — the qubit is an atomic ion; only the trap is fabricated.
 - Characteristic time: 2×10⁻⁴ s per entangling operation, deterministic, not heralded.
 - Readout: not defined by this node; it inherits the host ion's fluorescence detection.

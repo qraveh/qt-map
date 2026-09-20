@@ -501,7 +501,7 @@
 "date": "2025-09",
 "url": "https://www.nature.com/articles/s41586-025-09531-9",
 "tag": "D",
-"note": "Honest null: the ERR coordinate lists 'leak' for qd_spin but no primary source quantifies it."
+"note": "Honest null: the ERR attribute lists 'leak' for qd_spin but no primary source quantifies it."
 },
 {
 "node": "donor",

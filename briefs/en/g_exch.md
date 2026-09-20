@@ -13,7 +13,7 @@ updated: 2026-09-04
 
 ## Identity & lineage
 A voltage pulse lowers the tunnel barrier between two neighbouring quantum-dot or donor spins, turning on Heisenberg exchange J for a set time to realise a SWAP-family entangler; nothing is radiated, so no antenna, laser or resonator is needed. Loss and DiVincenzo proposed spin qubits on it in 1998; DiVincenzo, Bacon, Kempe, Burkard and Whaley showed in 2000 that exchange alone is universal at ~3× more qubits and ~10× more two-qubit operations — the encoding HRL builds on [S][7]. The shuttled variant moves one electron through a conveyor potential into exchange range with a distant partner.
-Coordinates: fully fabricated carrier; deterministic entangling at ≈10⁻⁷ s (~100 ns), static nearest-neighbour coupling by default.
+Attributes: fully fabricated carrier; deterministic entangling at ≈10⁻⁷ s (~100 ns), static nearest-neighbour coupling by default.
 Baseband voltage control, room temperature but moving cryogenic; error coherent, Pauli, leakage; manufacturing is CMOS.
 
 ## Physics & limits

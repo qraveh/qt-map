@@ -15,7 +15,7 @@ updated: 2026-09-03
 
 A cryo-CMOS controller is a silicon ASIC on a cold plate in the refrigerator, generating microwave, flux and gate-bias waveforms next to the qubits. Nothing quantum happens in it: the gain is thermal and topological. It became hardware with Horse Ridge (Intel/QuTech, 22 nm FinFET, 4 K, 2019–2020) [C][8] and Gooseberry (Microsoft/Sydney, 100 mK) [D][4].
 
-Coordinates (a affinity; b time; c readout; d mobility; e control @ placement; f error structure; g manufacturing):
+Attributes (a affinity; b time; c readout; d mobility; e control @ placement; f error structure; g manufacturing):
 - a = 1.0, wholly fabricated; a foundry part, not a carrier.
 - b = none; it holds no quantum state.
 - c = none; it serves the host's readout.
@@ -58,7 +58,7 @@ HRL removed warm waveform generation, but the cable count did not fall: 296 line
 
 ## Role in the stack
 
-Two paths: superconducting transmons (IBM, Google, IQM) and silicon or germanium quantum-dot spins (Intel, Diraq, Quantum Motion, HRL, Quobly, Equal1). It requires a 300 mm CMOS foundry — a dependency spins already carry, so they get cryo-CMOS as a by-product while superconducting vendors fund it separately. It provides the cold digital substrate a cryogenic decoder needs: a 4 K predecoder costed under 0.56 mW for 3,780× syndrome-bandwidth reduction [S][G:PINBALL-2025-12]. It replaces room-temperature control, the only part of this layer with revenue, and competes with single-flux-quantum control, published above 99% at millikelvin [D][G:SEEQC-2026]; switching buys cold silicon on an 18–24-month tape-out loop, paid for in cooling budget that would otherwise buy qubits. The off-diagonal reading is the cold-fabrication corner: a non-quantum object whose only distinguishing coordinate is placement at 4 K. Derived clock = sum of the syndrome round: gate layers + transport + readout + reset; this node does not bind it — 4.0 ns sequencer granularity [D][1] against a 0.65 µs round whose largest term is 282 ns of readout. Empty slots next door: a cryogenic readout digitiser and a standard cold digital interface.
+Two paths: superconducting transmons (IBM, Google, IQM) and silicon or germanium quantum-dot spins (Intel, Diraq, Quantum Motion, HRL, Quobly, Equal1). It requires a 300 mm CMOS foundry — a dependency spins already carry, so they get cryo-CMOS as a by-product while superconducting vendors fund it separately. It provides the cold digital substrate a cryogenic decoder needs: a 4 K predecoder costed under 0.56 mW for 3,780× syndrome-bandwidth reduction [S][G:PINBALL-2025-12]. It replaces room-temperature control, the only part of this layer with revenue, and competes with single-flux-quantum control, published above 99% at millikelvin [D][G:SEEQC-2026]; switching buys cold silicon on an 18–24-month tape-out loop, paid for in cooling budget that would otherwise buy qubits. The off-diagonal reading is the cold-fabrication corner: a non-quantum object whose only distinguishing attribute is placement at 4 K. Derived clock = sum of the syndrome round: gate layers + transport + readout + reset; this node does not bind it — 4.0 ns sequencer granularity [D][1] against a 0.65 µs round whose largest term is 282 ns of readout. Empty slots next door: a cryogenic readout digitiser and a standard cold digital interface.
 
 ## Verification (QCVV)
 

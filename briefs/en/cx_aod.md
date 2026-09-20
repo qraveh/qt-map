@@ -15,7 +15,7 @@ updated: 2026-09-03
 
 An RF tone in a crystal makes an acoustic grating whose first-order diffraction angle tracks the tone, so sweeping the RF sweeps a tweezer and the atom in it; crossed x/y deflectors turn a comb of tones into a grid of movable traps. The zoned architecture partitions the plane into storage, entangling and readout regions, taking connectivity from moving atoms rather than fixed couplings — introduced by Bluvstein et al.'s 2022 coherent-transport processor (Harvard/MIT).
 
-Coordinates. **Mobility: transport** — atoms relocate hundreds of µm between zones, the platform's only long-range coupling. **Time ~10⁻³ s per move**, classical repositioning, neither deterministic nor heralded entanglement; the error is loss, not phase.
+Attributes. **Mobility: transport** — atoms relocate hundreds of µm between zones, the platform's only long-range coupling. **Time ~10⁻³ s per move**, classical repositioning, neither deterministic nor heralded entanglement; the error is loss, not phase.
 
 ## Physics & limits
 

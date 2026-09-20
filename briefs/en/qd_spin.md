@@ -15,7 +15,7 @@ updated: 2026-09-03
 
 An electron or hole is trapped in an electrostatic well ~50 nm across, formed by metal gates over a Si/SiGe quantum well, a Si-MOS inversion layer, or a Ge/SiGe hole gas. The spin is the computational degree of freedom; the barrier between neighbouring dots sets an exchange coupling J, and pulsing J for ħπ/J gives a deterministic entangling gate. Loss and DiVincenzo proposed the architecture in 1998; the first single-spin and singlet–triplet qubits in silicon appeared 2010–2012, the lineage date used here.
 
-Coordinates, as the graph record records them:
+Attributes, as the graph record records them:
 - **a — affinity:** 1.0, wholly fabricated; every dot is a lithography outcome.
 - **b — characteristic time:** ~50 ns per operation, entangling **deterministic** via exchange, not heralded.
 - **c — readout:** spin-to-charge conversion on an rf charge sensor, ~6 µs, non-destructive, mid-circuit capable.

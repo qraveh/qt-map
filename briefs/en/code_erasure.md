@@ -15,7 +15,7 @@ updated: 2026-09-03
 
 An erasure-adapted code is a stabiliser code whose decoder takes, besides the syndrome, a per-qubit flag saying "this qubit was lost or left the code space here", with layout and schedule chosen for a channel in which located errors dominate. A located error removes the *which* question and leaves only the *what*, so the surface code fails only when erasures percolate — a 50% code-capacity threshold set by square-lattice bond percolation [S][7], against 18.9(3)% for depolarising noise [S][2] — and its distance against erasures is d rather than ⌈d/2⌉. Maximum-likelihood erasure decoding is linear-time peeling on a spanning forest [S][8]; Union-Find extends it to Pauli errors in O(n α(n)) [S][9]. The hardware turn came in 2022: 98% of ¹⁷¹Yb errors convertible, lifting the circuit-level surface-code threshold from 0.937% to 4.15% [S][1], and dual-rail transmons, where at 1% erasure the code tolerates 0.51% Pauli error, 5.2× the standard figure [S][2]; the first full loss-correction cycle had run on five trapped ions in 2020 [D][16]. The flags belong to the *Mid-circuit erasure check* brief (layer 6); this brief covers what the code does with them.
 
-Coordinates (graph record; legend: a affinity natural↔fabricated; b time, deterministic/heralded entangling; c readout; d mobility; e control @ placement; f error structure; g manufacturing):
+Attributes (graph record; legend: a affinity natural↔fabricated; b time, deterministic/heralded entangling; c readout; d mobility; e control @ placement; f error structure; g manufacturing):
 - a = 0.5 — carrier-agnostic; one decoder serves atoms and transmons.
 - b = no time or entangling of its own.
 - c = none — it consumes the check's flag.

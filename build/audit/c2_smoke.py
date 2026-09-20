@@ -373,8 +373,70 @@ def chapter8(pw, w, h):
     return fails
 
 
+def laptop(pw):
+    """Editor's screenshot of 20 Sep (laptop, OS scaling → ~1000 CSS px): a mouse laptop keeps the floating card (no bottom sheet), the card
+    drags by its grip; a phone-width sheet resizes by dragging its grip and remembers the height; a machine clicked in "Used by" becomes the
+    selection (machine card, its stations lit) and the map is scrolled into view; a double click does not undo it; a fitted map stays fitted
+    across a resize and the page keeps room for the sheet; 0 console errors."""
+    fails, errors = [], []
+    b = pw.chromium.launch()
+    def check(label, cond, detail=''):
+        print(f"  [{'ok' if cond else 'FAIL'}] {label}{(' — ' + str(detail)) if (detail and not cond) else ''}")
+        if not cond: fails.append(label)
+    CLICK = "id=>{const g=[...document.querySelectorAll('#mapwrap g.station')].find(g=>g.querySelector('text.id')&&g.querySelector('text.id').textContent===id); g.dispatchEvent(new MouseEvent('click',{bubbles:true}));}"
+    STATE = "()=>{const i=document.getElementById('insp'); const r=i.getBoundingClientRect(); const cs=getComputedStyle(i); const mw=document.getElementById('mapwrap').getBoundingClientRect(); return {hidden:i.hidden, sheet:cs.position==='fixed'&&Math.round(r.left)===0&&Math.round(r.right)===innerWidth, left:Math.round(r.left), top:Math.round(r.top), h:Math.round(r.height), title:(i.querySelector('h3')||{}).textContent||'', lit:[...document.querySelectorAll('#mapwrap g.station')].filter(g=>!g.classList.contains('dim')).length, machine:(document.getElementById('machine')||{}).value||'', mapTop:Math.round(mw.top), mapBottom:Math.round(mw.bottom), svgW:Math.round(document.querySelector('#mapwrap svg').getBoundingClientRect().width), wrapW:document.getElementById('mapwrap').clientWidth, hasSheet:document.body.classList.contains('has-sheet'), vh:innerHeight, vw:innerWidth};}"
+    def drag(p, sel, dx, dy):
+        el = p.locator(sel).first; bb = el.bounding_box()
+        x0, y0 = bb['x'] + min(12, bb['width'] / 2), bb['y'] + bb['height'] / 2
+        p.mouse.move(x0, y0); p.mouse.down(); p.mouse.move(x0 + dx / 2, y0 + dy / 2, steps=4); p.mouse.move(x0 + dx, y0 + dy, steps=4); p.mouse.up(); p.wait_for_timeout(150)
+    print('laptop — 1000×625, mouse')
+    ctx = b.new_context(viewport={'width': 1000, 'height': 625}); p = ctx.new_page()
+    p.on('console', lambda m: m.type == 'error' and errors.append(m.text)); p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
+    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000)
+    p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0 && document.querySelectorAll('#machine option').length>1", timeout=60000)
+    p.evaluate(CLICK, 'ae_atom'); p.wait_for_timeout(400); s0 = p.evaluate(STATE)
+    check('1000 px + mouse: floating card, not a sheet', not s0['hidden'] and not s0['sheet'] and s0['h'] <= s0['vh'] - 90, s0)
+    drag(p, '#insp [data-grip]', 180, 60); s1 = p.evaluate(STATE)
+    check('card drags by its grip', abs(s1['left'] - s0['left'] - 180) <= 6 and abs(s1['top'] - s0['top'] - 60) <= 6, (s0['left'], s0['top'], s1['left'], s1['top']))
+    n = p.evaluate("()=>document.querySelectorAll('#insp [data-mach]').length")
+    first = p.evaluate("()=>{const a=document.querySelector('#insp [data-mach]'); return a?[a.dataset.mach,a.textContent]:null;}")
+    p.locator('#insp [data-mach]').first.click(); p.wait_for_timeout(1200); s2 = p.evaluate(STATE)
+    check('"Used by" click: the machine is selected, its card shows, its stations are lit', n >= 1 and s2['machine'] == first[0] and first[1].strip()[:20] in s2['title'] and 0 < s2['lit'] < 96, (first, s2['machine'], s2['title'][:40], s2['lit']))
+    check('"Used by" click: the map is in view', s2['mapBottom'] > 120 and s2['mapTop'] < s2['vh'] * 0.6, (s2['mapTop'], s2['mapBottom'], s2['vh']))
+    # double click on a machine link inside a station card must not undo the selection
+    p.evaluate(CLICK, 'enc_dualrail'); p.wait_for_timeout(400)
+    tgt = p.evaluate("()=>{const a=document.querySelector('#insp [data-mach]'); return a?a.dataset.mach:null;}")
+    if tgt:
+        p.locator('#insp [data-mach]').first.dblclick(); p.wait_for_timeout(500); s3 = p.evaluate(STATE)
+        check('double click on a machine link keeps the machine selected', s3['machine'] == tgt, (tgt, s3['machine']))
+    # fit stays fitted across a resize
+    p.click('#zoom-fit'); p.wait_for_timeout(300); p.set_viewport_size({'width': 1200, 'height': 700}); p.wait_for_timeout(600); s4 = p.evaluate(STATE)
+    check('fit width follows a resize', s4['svgW'] <= s4['wrapW'] + 2 and s4['svgW'] >= s4['wrapW'] - 40, (s4['svgW'], s4['wrapW']))
+    p.set_viewport_size({'width': 1000, 'height': 625}); p.wait_for_timeout(600); s5 = p.evaluate(STATE)
+    check('fit width follows a resize back', s5['svgW'] <= s5['wrapW'] + 2, (s5['svgW'], s5['wrapW']))
+    ctx.close()
+    print('phone — 400×800, touch: the sheet')
+    ctx = b.new_context(viewport={'width': 400, 'height': 800}, has_touch=True, is_mobile=True); p = ctx.new_page()
+    p.on('console', lambda m: m.type == 'error' and errors.append(m.text)); p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
+    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000)
+    p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0", timeout=60000)
+    p.evaluate(CLICK, 'ae_atom'); p.wait_for_timeout(500); t0 = p.evaluate(STATE)
+    check('400 px: bottom sheet, page has room above it', not t0['hidden'] and t0['sheet'] and t0['hasSheet'] and t0['h'] <= t0['vh'] * 0.5, t0)
+    drag(p, '#insp [data-grip]', 0, -150); t1 = p.evaluate(STATE)
+    check('sheet grip drag makes the sheet taller', t1['h'] >= t0['h'] + 100, (t0['h'], t1['h']))
+    p.reload(wait_until='load'); p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0", timeout=60000)
+    p.evaluate(CLICK, 'ae_atom'); p.wait_for_timeout(500); t2 = p.evaluate(STATE)
+    check('sheet height is remembered after a reload', abs(t2['h'] - t1['h']) <= 12, (t1['h'], t2['h']))
+    p.set_viewport_size({'width': 1000, 'height': 625}); p.wait_for_timeout(600); t3 = p.evaluate(STATE)
+    check('resize to 1000 px on a touch screen keeps the sheet and the page room', t3['sheet'] and t3['hasSheet'], t3)
+    ctx.close(); b.close()
+    errs = [e for e in errors if not ('fonts.g' in e and ('ERR_TUNNEL' in e or 'net::' in e)) and 'ERR_TUNNEL' not in e]
+    check('0 console errors', not errs, errs[:3])
+    return fails
+
+
 if __name__ == '__main__':
     with sync_playwright() as pw:
-        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800) + sorting(pw, 1280, 900) + sorting(pw, 400, 800) + chapter8(pw, 1280, 900) + chapter8(pw, 400, 800)
+        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800) + sorting(pw, 1280, 900) + sorting(pw, 400, 800) + chapter8(pw, 1280, 900) + chapter8(pw, 400, 800) + laptop(pw)
     print('RESULT:', 'PASS' if not f else f'FAIL {f}')
     sys.exit(1 if f else 0)

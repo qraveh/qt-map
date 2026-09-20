@@ -13,7 +13,7 @@ updated: 2026-09-03
 
 ## Identity & lineage
 ¹⁷¹Yb and ⁸⁷Sr have two valence electrons: a seconds-scale ³P₀/³P₂ metastable triplet above the ¹S₀ ground singlet, on a narrow clock line (578 nm Yb, 698 nm Sr). A ground-manifold imaging beam is dark to a metastable-manifold qubit, so decay and loss scatter photons while the code space stays quiet — the "omg" (optical–metastable–ground) scheme, from a 2021 ion-trap blueprint [D][20]. Errors then arrive located, as erasures, not silent Pauli flips. Demonstrated in Yb (Princeton) and Sr (Caltech), May 2023 [D][1][2].
-Coordinates: natural carrier; deterministic Rydberg-blockade entanglement ~250 ns; fluorescence readout ~0.5 ms, non-destructive, mid-circuit-capable.
+Attributes: natural carrier; deterministic Rydberg-blockade entanglement ~250 ns; fluorescence readout ~0.5 ms, non-destructive, mid-circuit-capable.
 Optical control from room temperature; error structure erasure and loss, not native Pauli; manufacture by optical assembly, not lithography.
 
 ## Physics & limits

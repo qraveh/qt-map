@@ -13,7 +13,7 @@ updated: 2026-09-04
 
 ## Identity & lineage
 Driving a control transmon at its neighbour's frequency through a fixed bus produces a ZX interaction; Chow, Córcoles, Gambetta et al. (IBM), 2011 [D][1]. Kandala et al. reached CNOT 99.77(2)% in a single 180 ns pulse in 2021 by suppressing the static ZZ intrinsically, two fixed-frequency coupling elements retuning the dressed levels rather than extra cancellation drives [D][2].
-Coordinates: fabricated carrier, static connectivity, microwave control at room temperature; deterministic entangling at 10^-6.5 s (~320 ns typical, 180 ns best).
+Attributes: fabricated carrier, static connectivity, microwave control at room temperature; deterministic entangling at 10^-6.5 s (~320 ns typical, 180 ns best).
 Coherent plus Pauli error; standard superconducting lithography, no added process.
 
 ## Physics & limits

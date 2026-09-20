@@ -13,7 +13,7 @@ updated: 2026-09-03
 
 ## Identity & lineage
 Plasma CVD grows single-crystal diamond on a seed; nitrogen, silicon or tin is implanted; a high-temperature anneal mobilises vacancies that bind the impurity into a colour centre; the optical structure is then cut from the bulk. That last step is the defining constraint: there is no diamond-on-insulator wafer and no sacrificial layer, so cavities are released by undercut etching of the same crystal that hosts the defect. Implantation-based fabrication matured around 2010; QuTech's 2026 SnV study sets the benchmark [D][1].
-Coordinates: engineered placement of a natural defect, no mobility and no control step, Pauli error once fabricated, diamond fabrication with no CMOS analogue.
+Attributes: engineered placement of a natural defect, no mobility and no control step, Pauli error once fabricated, diamond fabrication with no CMOS analogue.
 
 ## Physics & limits
 Three independent things must go right at one site. The ion must stop where intended: straggle is tens of nanometres, an order worse than STM donor placement. It must convert into an optically good centre — only a fraction take the wanted charge state, and residual damage broadens the line. Then the etched cavity must put its field maximum on that centre: cooperativity goes as g²/κγ, with g set by position inside a mode a few hundred nanometres across. Multiply three partial yields: 2 of 327 devices above cooperativity one [D][1]. Only deterministic single-ion implantation with event detection, or in-growth delta doping with registration, moves that floor; neither exists at device scale.

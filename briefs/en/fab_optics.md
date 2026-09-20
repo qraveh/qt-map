@@ -13,7 +13,7 @@ updated: 2026-09-04
 
 ## Identity & lineage
 The shared laser, ultra-high-vacuum and imaging-optics infrastructure under trapped ions (Quantinuum, AQT, IonQ) and neutral-atom tweezer arrays (Harvard with QuEra, Pasqal, Atom Computing, Infleqtion, Google). It holds no qubit and performs no gate: it supplies cooling and addressing light, vacuum confinement, high-NA objectives and the beam-steering that places atoms. It became a separate discipline with dedicated vendors from about 2016.
-Coordinates: no carrier, no entangling time, no readout channel and no mobility of its own — the physical layer other nodes ride on.
+Attributes: no carrier, no entangling time, no readout channel and no mobility of its own — the physical layer other nodes ride on.
 Manufacturing category optics and mechanical assembly; the error it contributes downstream is coherent — drift, vibration, pointing and frequency noise, not stochastic Pauli noise.
 
 ## Physics & limits

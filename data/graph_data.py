@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Technology graph — single source of truth.
-Nodes = technologies (not platforms). Layers 1..10. Seven coordinates (a..g).
+Nodes = technologies (not platforms). Layers 1..10. Seven attributes (a..g).
 Three spaces kept apart: design (coords), evaluation (dated attrs/defines), actors&goals (annotations).
 """
 LAYERS = [
@@ -15,7 +15,7 @@ LAYERS = [
  (9,"interconnect","Interconnect","Интерконнект"),
  (10,"fab","Manufacturing","Производство"),
 ]
-# coordinate vocabularies (design space) -----------------------------------------
+# attribute vocabularies (design space) -----------------------------------------
 AFF = {0.0:("natural","естественный"),0.25:("photon (natural particle, engineered modes)","фотон (естественная частица, изготовленные моды)"),
        0.5:("intermediate / carrier-agnostic","промежуточный / независим от носителя"),0.75:("hybrid (fabricated host)","гибридный (изготовленная матрица)"),1.0:("fabricated","изготовленный")}
 DET = {"det":("deterministic","детерминированное"),"her":("probabilistic / heralded","вероятностное / heralded"),"na":("n/a","н/п")}
@@ -83,7 +83,7 @@ N("squeezed",1,"Squeezed light mode (CV)","Сжатая световая мод�
   "Continuous-variable modes for GKP/cluster states; needs ~10 dB *effective* squeezing for FT (0.62 dB on chip today); raw on-chip squeezing is a different quantity (1.4 dB measured on TFLN).","Моды непрерывных переменных для GKP/кластерных состояний; для FT нужно ~10 дБ *эффективного* сжатия (сегодня 0.62 дБ на чипе); сырое сжатие на чипе — другая величина (1.4 дБ измерено на TFLN).",
   [("channel","on-chip GKP effective squeezing (Xanadu)","0.62 dB vs ~9.75 dB required","2025-06","https://www.nature.com/articles/s41586-025-09044-5"),
    ("channel","on-chip raw squeezing (poled TFLN)","1.4 dB measured (> 10 dB loss-corrected)","2025-08","https://arxiv.org/abs/2508.08599")],
-  "Xanadu's 0.62 dB is GKP *effective* squeezing, not raw quadrature squeezing — the two are not comparable. The readout coordinate is kept as single-photon detection, but CV practice is homodyne detection.","0.62 дБ у Xanadu — *эффективное* сжатие GKP, а не сырое квадратурное; величины несопоставимы. Координата считывания оставлена как детектирование одиночных фотонов, хотя практика CV — гомодинное детектирование."),
+  "Xanadu's 0.62 dB is GKP *effective* squeezing, not raw quadrature squeezing — the two are not comparable. The readout attribute is kept as single-photon detection, but CV practice is homodyne detection.","0.62 дБ у Xanadu — *эффективное* сжатие GKP, а не сырое квадратурное; величины несопоставимы. Атрибут считывания оставлена как детектирование одиночных фотонов, хотя практика CV — гомодинное детектирование."),
 N("qd_spin",1,"Gate-defined quantum-dot spin (Si/SiGe, Si-MOS, Ge)","Спин в затворной квантовой точке (Si/SiGe, Si-MOS, Ge)",1.0,["fab"],-7.3,"det",C("s2c",-5.2,False,True),"static","lf",["RT"],["coherent","pauli","leak"],"cmos","D",
   "Electron/hole spin in a CMOS-fabricated dot; exchange (10–100 MHz) gives ns–100 ns gates; readout via charge sensor.","Спин электрона/дырки в CMOS-квантовой точке; обмен (10–100 МГц) даёт гейты нс–100 нс; считывание через зарядовый сенсор.",
   [("channel","2Q on 300 mm foundry wafer","99.04–99.56% (Diraq/imec)","2025-09","https://www.nature.com/articles/s41586-025-09531-9"),
@@ -140,7 +140,7 @@ N("enc_eo",2,"Exchange-only / singlet-triplet spin encoding","Exchange-only / с
   [("channel","EO 1Q error (18 qubits)","2×10⁻⁴ mean","2026-07","https://arxiv.org/abs/2604.16216")],"HRL → IBM.","HRL → IBM."),
 N("enc_timebin",2,"Time-bin / path photonic encoding","Time-bin / путевое фотонное кодирование",0.25,["pho"],None,"na",None,"none","none",["none"],["loss"],"none","D",
   "Photonic dual-rail in time or path; loss is the error and it is heralded.","Фотонный dual-rail во времени или пути; ошибка — потеря, и она heralded.",[],
-  "Origin: Brendel, Gisin, Tittel and Zbinden, Phys. Rev. Lett. 82, 2594 (1999). No mobility of its own — the coordinate is 'none', inherited from the host carrier.","Происхождение: Brendel, Gisin, Tittel, Zbinden, Phys. Rev. Lett. 82, 2594 (1999). Собственной подвижности нет — координата «—», наследуется от носителя."),
+  "Origin: Brendel, Gisin, Tittel and Zbinden, Phys. Rev. Lett. 82, 2594 (1999). No mobility of its own — the attribute is 'none', inherited from the host carrier.","Происхождение: Brendel, Gisin, Tittel, Zbinden, Phys. Rev. Lett. 82, 2594 (1999). Собственной подвижности нет — атрибут «—», наследуется от носителя."),
 N("enc_parity",2,"Fermion-parity encoding (tetron)","Кодирование в чётности фермионов (тетрон)",1.0,["fab"],None,"na",None,"none","none",["none"],["unknown"],"none","T",
   "Qubit in joint parity of two Majorana wires; X-measurement lifetime 1000× shorter than Z in 2025 data.","Кубит в совместной чётности двух майорановских проволок; время жизни X-измерения в 1000 раз короче Z (данные 2025).",
   [("channel","Z / X parity lifetimes","12.4 ms / 14.5 µs in the quoted tuning (~9.3 ms / ~4 µs in others; the ~10³ ratio is robust, the point values are not)","2025-07","https://arxiv.org/abs/2507.08795")],

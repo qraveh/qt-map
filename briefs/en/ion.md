@@ -15,7 +15,7 @@ updated: 2026-09-03
 
 A trapped-ion qubit is a single atomic ion — ytterbium, barium, calcium or strontium — confined by RF and static fields above micro-fabricated electrodes, with logic in hyperfine, Zeeman or optical levels. Ions in a chain repel, so they share quantised motional modes; a spin-dependent force on those modes turns motion into a bus that entangles any pair. Cirac and Zoller proposed it in 1995; Wineland's NIST group demonstrated a two-qubit gate the same year. Everything commercial today is that idea plus surface-electrode microfabrication.
 
-Coordinates (technology graph): carrier affinity 0.0 — wholly natural, every ion identical by physical law, no fabrication variance to calibrate out; entangling time 10⁻⁴·² s (≈ 63 µs), deterministic, no heralding; readout by fluorescence on a cycling transition, ≈ 10 µs, non-destructive, mid-circuit capable; mobility by physical transport — ions are shuttled, not wired; control optical, at room temperature; error structure as the code sees it coherent, leakage, Pauli; manufacturing MEMS-class surface-electrode traps.
+Attributes (technology graph): carrier affinity 0.0 — wholly natural, every ion identical by physical law, no fabrication variance to calibrate out; entangling time 10⁻⁴·² s (≈ 63 µs), deterministic, no heralding; readout by fluorescence on a cycling transition, ≈ 10 µs, non-destructive, mid-circuit capable; mobility by physical transport — ions are shuttled, not wired; control optical, at room temperature; error structure as the code sees it coherent, leakage, Pauli; manufacturing MEMS-class surface-electrode traps.
 
 ## Physics & limits
 

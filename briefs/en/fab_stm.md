@@ -13,7 +13,7 @@ updated: 2026-09-03
 
 ## Identity & lineage
 A hydrogen-terminated Si(100) surface is the resist. The tip removes hydrogen from selected dimers by electron-stimulated desorption; phosphine adsorbs only on the bare silicon; an anneal incorporates phosphorus substitutionally; low-temperature epitaxy buries the result. Hydrogen-resist patterning predates its qubit use by two decades; UNSW's Simmons group made a single-atom transistor in 2012 [D][1] and SQC — branding the flow PAQMan — an 11-qubit processor in 2025 [D][2].
-Coordinates: engineered placement of a natural dopant, no mobility and no control step, Pauli error once fabricated, a fabrication class with no CMOS analogue.
+Attributes: engineered placement of a natural dopant, no mobility and no control step, Pauli error once fabricated, a fabrication class with no CMOS analogue.
 
 ## Physics & limits
 Throughput is the floor, structurally: one tip visits one site at a time, so the process scales as O(N) in qubits where photolithography scales as O(1) in wafers. In-plane registration inside the desorption window is near a lattice constant, but the donor's final position carries ~3 nm of uncertainty from segregation and diffusion during incorporation and encapsulation: the limiting step is thermal, not lithographic. Encapsulation temperature is the real trade: hot enough for good epitaxy moves donors, cold enough to freeze them leaves defects that dephase the electron. Only parallel exposure changes the scaling law.

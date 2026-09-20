@@ -13,7 +13,7 @@ updated: 2026-09-03
 
 ## Identity & lineage
 A flux-tunable coupler is a third element — usually a tunable transmon — bridging two data qubits. Its frequency sets an indirect coupling path that interferes with the direct capacitive one, so a bias sweep tunes net exchange through zero: at the off point static ZZ cancels; a pulse away from it drives a deterministic CZ or iSWAP via the |11⟩–|20⟩ crossing. Google/UCSB introduced it as the gmon in 2014, coupling settable to zero at nanosecond resolution without spoiling coherence [D][1].
-Coordinates: carrier affinity a = 1.0, fully fabricated, no natural analogue. Gate time ~10⁻⁷·⁴ s (≈40 ns), deterministic.
+Attributes: carrier affinity a = 1.0, fully fabricated, no natural analogue. Gate time ~10⁻⁷·⁴ s (≈40 ns), deterministic.
 
 ## Physics & limits
 The coupler buys speed and isolation at the cost of a third noisy degree of freedom. Tens of MHz on-coupling sets 25–70 ns gates. Three mechanisms set the floor. Coherence: at 40 ns against Willow's mean T1 of 68 µs, relaxation and dephasing during the pulse already cost a few 10⁻⁴, most of the gap between the 99.88% device mean and unity [D][4] — pulse shaping cannot recover it, only longer T1 or shorter gates. Leakage: the pulse passes near |20⟩ and the coupler's second level, so population leaves the computational space — an unheralded, sticky error to the code. And 1/f flux noise on the bias moves the off point between calibrations, leaving a drifting residual ZZ that appears as coherent, correlated error. What moves the floor: higher T1, larger anharmonicity (fluxonium couplers), shaped flux pulses, and couplers biased at a flux-insensitive point.

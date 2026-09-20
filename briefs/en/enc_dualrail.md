@@ -17,7 +17,7 @@ A dual-rail qubit is one quantum of excitation shared between two modes: |0_L⟩
 
 Dual-rail is the native photonic qubit: Chuang and Yamamoto (1995) called it "a simple form of error correction" [S][1]; Knill, Laflamme and Milburn built linear optics on it in 2000 [S][2]. The superconducting transfer was deliberate — AWS proposed transmon pairs (2022-08) [S][3], Yale cavities (2022-12) [S][4], both demonstrated July 2023 [D][5][6].
 
-Coordinates from the technology graph (a affinity; b time; c readout; d mobility; e control @ placement; f errors; g manufacturing):
+Attributes from the technology graph (a affinity; b time; c readout; d mobility; e control @ placement; f errors; g manufacturing):
 - a = 0.25, fabricated — engineered modes, not natural levels.
 - b = n/a; no gate time of its own.
 - c = none; the check is a separate primitive.

@@ -15,7 +15,7 @@ updated: 2026-09-03
 
 A magic-state factory manufactures the non-Clifford resource states — |T⟩, |H⟩, |CCZ⟩ — that gate teleportation injects to supply the rotation a host code cannot perform transversally. Eastin–Knill forbids a transversal universal gate set on any code with distance, so universality must be bought with space-time volume, and the factory is where that purchase is made. Bravyi and Kitaev showed in 2004–05 that Cliffords plus noisy ancillas give universality, and that ancillas polarised beyond roughly 65% along a magic direction purify asymptotically [S][1]. Three families exist: distillation, code switching, and cultivation — grow and verify one state in place (Gidney, Shutty, Jones, 2024-09) [S][2].
 
-Coordinates. **a — carrier affinity** 0.5: a code-layer construct inheriting whatever carrier hosts it. **b**: no characteristic time of its own, entangling not applicable; it runs at the host's cycle. **c — readout**: none of its own, it consumes the host's mid-circuit measurement. **d — mobility**: static, a fixed tile region. **e — control**: no modality, no placement — compiled, not wired. **f — error structure as the code sees it**: Pauli. **g — manufacturing**: none.
+Attributes. **a — carrier affinity** 0.5: a code-layer construct inheriting whatever carrier hosts it. **b**: no characteristic time of its own, entangling not applicable; it runs at the host's cycle. **c — readout**: none of its own, it consumes the host's mid-circuit measurement. **d — mobility**: static, a fixed tile region. **e — control**: no modality, no placement — compiled, not wired. **f — error structure as the code sees it**: Pauli. **g — manufacturing**: none.
 
 ## Physics & limits
 

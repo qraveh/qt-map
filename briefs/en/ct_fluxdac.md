@@ -13,7 +13,7 @@ updated: 2026-09-03
 
 ## Identity & lineage
 An on-chip flux DAC (Φ-DAC) is an SFQ circuit on the mK stage that latches the DC flux bias of one qubit or coupler. SFQ pulses push flux quanta (Φ₀ = h/2e) into a superconducting storage loop, which holds the bias indefinitely with no static dissipation and no room-temperature wire. D-Wave has shipped this in annealers for over a decade; the first gate-model application, a flip-chip fluxonium module, came in January 2026 [D][1][C][2].
-Coordinates: fabricated control layer with no intrinsic gate or readout channel; low-frequency bias at the mK stage.
+Attributes: fabricated control layer with no intrinsic gate or readout channel; low-frequency bias at the mK stage.
 Error structure is coherent — bias-setting error, crosstalk, drift — not relaxation; fabrication is superconducting multilayer lithography.
 
 ## Physics & limits

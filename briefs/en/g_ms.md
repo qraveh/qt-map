@@ -13,7 +13,7 @@ updated: 2026-09-04
 
 ## Identity & lineage
 Two laser tones detuned symmetrically about a motional sideband drive a spin-dependent force; the pair traces a closed loop in the phase space of a shared vibrational mode and acquires a geometric phase set by the enclosed area, so the spins entangle and the motion returns to its start. The phase depends on loop area, not mode occupation, so a hot bus is tolerated — why this, not Cirac–Zoller, became the production mechanism. Mølmer and Sørensen proposed it in 1999–2000; the light-shift variant, one field detuned against the differential Stark shift, shares the error budget and dates the deployed line to about 2003.
-Coordinates: natural trapped-ion carrier; deterministic entangling at ≈10⁻⁴·² s (≈63 µs) over a shared motional bus.
+Attributes: natural trapped-ion carrier; deterministic entangling at ≈10⁻⁴·² s (≈63 µs) over a shared motional bus.
 Optical control from room temperature; error coherent, leakage, Pauli; manufacturing is optical assembly.
 
 ## Physics & limits

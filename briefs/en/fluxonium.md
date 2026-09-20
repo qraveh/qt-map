@@ -13,7 +13,7 @@ updated: 2026-09-04
 
 ## Identity & lineage
 A superconducting circuit shunted by a large junction-array inductance, putting the 0→1 transition at 0.2–1 GHz with gigahertz anharmonicity; Manucharyan, Koch, Glazman and Devoret, 2009. Charge dispersion vanishes.
-Coordinates: fabricated carrier; deterministic entangling ~50 ns (10^-7.3 s); dispersive readout ~0.3 µs, non-destructive, mid-circuit-capable.
+Attributes: fabricated carrier; deterministic entangling ~50 ns (10^-7.3 s); dispersive readout ~0.3 µs, non-destructive, mid-circuit-capable.
 Static mobility; low-frequency flux control at room temperature; Pauli plus coherent error; superconducting lithography.
 
 ## Physics & limits

@@ -74,7 +74,9 @@ main{min-width:0}
 .prose h2{font-size:24px;font-weight:600;line-height:1.2;margin:2.4em 0 .7em;padding-top:.6em;border-top:1px solid var(--rule);display:flex;gap:14px;align-items:baseline;text-wrap:balance}
 .prose h2 .num{font-family:"Unbounded",sans-serif;font-weight:500;font-size:15px;color:var(--muted);letter-spacing:.02em}
 .prose h3{font-size:18px;font-weight:600;margin:1.8em 0 .5em;text-wrap:balance}
-.prose p{margin:.7em 0;text-wrap:pretty}
+.prose p{margin:.7em 0;text-wrap:pretty;text-align:justify;hyphens:auto;-webkit-hyphens:auto}   /* justified running text with automatic hyphenation (lang attributes on the prose blocks); lists, tables and captions stay left-aligned */
+.prose li p,.prose td p,.prose th p,.prose .empty,.prose p.small{text-align:left}
+@media (max-width:700px){.prose p{text-align:left}}
 .prose ul,.prose ol{padding-left:1.3em}
 .prose li{margin:.3em 0}
 .prose blockquote{margin:1em 0;padding:12px 18px;border-left:3px solid var(--rule);background:var(--surface);border-radius:0 8px 8px 0;color:var(--ink2)}
@@ -236,7 +238,7 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .colophon p{margin:.6em 0;text-wrap:pretty}
 .colophon b{color:var(--ink)}
 /* inspector */
-.insp{position:fixed;top:84px;left:16px;width:336px;max-height:calc(100vh - 100px);border:1px solid var(--rule);border-radius:12px;padding:0 16px 14px;overflow:auto;font-size:13.5px;background:var(--surface);box-shadow:0 12px 36px rgba(0,0,0,.16);z-index:40;resize:both;min-width:280px;min-height:200px}
+.insp{position:fixed;top:84px;left:16px;width:336px;max-height:calc(100vh - 100px);max-height:calc(100dvh - 100px);border:1px solid var(--rule);border-radius:12px;padding:0 16px 14px;overflow:auto;font-size:13.5px;background:var(--surface);box-shadow:0 12px 36px rgba(0,0,0,.16);z-index:40;resize:both;min-width:280px;min-height:200px}
 .insp .grip{position:sticky;top:0;display:flex;align-items:center;gap:6px;margin:0 -16px 8px;padding:6px 10px;background:var(--surface2);border-bottom:1px solid var(--rule);cursor:move;user-select:none;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);z-index:2}
 .insp .grip .sp{flex:1}
 .insp .grip button{appearance:none;border:1px solid var(--rule);background:var(--surface);color:var(--ink);font:inherit;font-size:11px;padding:1px 7px;border-radius:6px;cursor:pointer}
@@ -453,7 +455,15 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
   .tip,.tip.wide{max-width:min(320px,86vw)}
   .gl{white-space:normal}
   .chip,.legend .lk{min-height:30px}
-  /* inspector becomes a bottom sheet (JS ignores the stored desktop position below 1025px) */
+  /* the inspector's bottom-sheet rules live in their own query below (narrow, or touch up to 1024px) */
+  /* long inline formulas must be allowed to break rather than widen the page */
+  .prose .m,.bbody .m{white-space:normal}
+  /* briefs */
+  .brief{padding:14px 14px 10px}
+  .bnav{gap:6px}
+}
+@media (max-width:700px), ((max-width:1024px) and (pointer:coarse)){
+  /* inspector becomes a bottom sheet (JS ignores the stored desktop position in sheet mode: narrow viewports, or touch screens up to 1024px — a mouse laptop keeps the floating card) */
   .insp{position:fixed;left:0;right:0;bottom:0;top:auto;width:auto;max-width:none;
     max-height:62vh;border-radius:14px 14px 0 0;border-left:0;border-right:0;border-bottom:0;
     resize:none;min-width:0;min-height:0;padding:0 14px 18px;z-index:60;
@@ -468,11 +478,8 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
   .insp .grip{margin:0 -14px 8px;padding:8px 12px}
   .insp .grip [data-dock]{display:none}
   .insp .grip button{padding:4px 10px;font-size:12px}
-  /* long inline formulas must be allowed to break rather than widen the page */
-  .prose .m,.bbody .m{white-space:normal}
-  /* briefs */
-  .brief{padding:14px 14px 10px}
-  .bnav{gap:6px}
+  .insp .grip{cursor:ns-resize;touch-action:none}
+  .insp.sheet-max .grip{cursor:default}
 }
 
 /* ---------------- [phone ≤600] ---------------- */

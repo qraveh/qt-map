@@ -15,7 +15,7 @@ updated: 2026-09-03
 
 A discrete-variable photonic qubit encodes one bit in which of two optical modes a single quantum occupies — two waveguides (path/dual-rail), two time slots, or two polarisations. Nothing in it decoheres: at 1550 nm the quantum carries 0.8 eV, four orders above room-temperature thermal energy, so there is no T1 and no T2. The photon either arrives intact or does not, so the error model is erasure with known location and the problem is transport, not isolation. Dual-rail as an error-suppressing encoding dates to Chuang and Yamamoto (1995); the platform starts with Knill, Laflamme and Milburn (2001), who proved linear optics, single-photon detection and feed-forward universal — at the price of making every two-qubit interaction probabilistic [D][1][G:DUALRAIL-LINEAGE].
 
-Coordinates, from the graph record:
+Attributes, from the graph record:
 - **a — affinity:** 0.25, near the fabricated end; the photon is natural, the mode defining the qubit is lithography.
 - **b — time, entangling:** 10⁻⁷ s per layer, heralded — fusion succeeds with probability ≤ 1/2 unless boosted.
 - **c — readout:** single-photon detection, ~10⁻⁸ s, destructive, no mid-circuit measurement.

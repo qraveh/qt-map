@@ -15,7 +15,7 @@ updated: 2026-09-03
 
 An ion decaying from an excited state emits a photon entangled with its qubit state; interfere two such photons from two traps on a beamsplitter and a coincident detection projects the distant ions into a Bell pair — heralded and probabilistic, unlike an in-trap gate, and the only mechanism coupling ions in separate vacuum systems. First shown in 2007 by Monroe's group (Michigan, later Maryland/Duke) — the lineage that holds today's rate record, not the Wineland/NIST line.
 
-Coordinates. **Mobility: flying** — the photon, not the ion, carries entanglement. **Control modality @ placement: optical, room temperature** — collection, interference and detection sit outside the trap's vacuum envelope.
+Attributes. **Mobility: flying** — the photon, not the ion, carries entanglement. **Control modality @ placement: optical, room temperature** — collection, interference and detection sit outside the trap's vacuum envelope.
 
 ## Physics & limits
 

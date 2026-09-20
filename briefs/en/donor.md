@@ -13,7 +13,7 @@ updated: 2026-09-03
 
 ## Identity & lineage
 A single ³¹P donor placed atom-by-atom in enriched ²⁸Si: the bound electron gives drive and spin-to-charge readout, the spin-1/2 ³¹P nucleus the memory. Nuclear qubits inside a register are gated through their hyperfine coupling to a *shared* electron; registers are linked by electron exchange [D][2]. Kane proposed the architecture in 1998; UNSW's Simmons group built the first deterministically placed single-donor device in 2012 [D][1]; SQC, its 2017 spin-out, is the sole operator at device scale as of 4 Sep 2026.
-Coordinates: natural dopant at engineered placement, static, deterministic entangling near 1 µs; spin-to-charge readout ~10 µs, non-destructive and mid-circuit capable; Pauli error; STM fabrication, no foundry equivalent.
+Attributes: natural dopant at engineered placement, static, deterministic entangling near 1 µs; spin-to-charge readout ~10 µs, non-destructive and mid-circuit capable; Pauli error; STM fabrication, no foundry equivalent.
 
 ## Physics & limits
 The qubit is a nucleus, not a confined electron: with no orbital degree of freedom there is no first-order charge-noise coupling — the term that plateaus gate-defined dots at 99.0–99.6%. But every operation routes through the one electron that does couple to charge noise, which is coupler, readout probe and dominant error source at once; the budget is set by electron dephasing during the hyperfine-conditional pulse, not by nuclear coherence. Residual ²⁹Si and the regrown STM interface set that electron's T₂. A sharper tip will not move the floor: exchange varies exponentially with separation, so a donor mis-sited by a few nm gives a dead register.

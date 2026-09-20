@@ -17,7 +17,7 @@ A multi-chip module partitions one processor across several superconducting dies
 
 Lineage: Rigetti entangled qubits across four separate silicon dies in 2021-03, iSWAP 99.1 ± 0.5% and CZ 98.3 ± 0.3%, with a Bell violation between dies [D][5]; SUSTech linked five modules with aluminium coaxial interconnects in 2023-02 [D][6]; IBM says l-couplers were "first demonstrated in 2024" on Flamingo [C][2]. The graph record dates the node to 2025, when tiling became a shipped product rather than a demonstration.
 
-Coordinates. Affinity: fully fabricated, a packaging structure with no natural counterpart. Characteristic time and determinism: not applicable — the node carries no entangling primitive, it inherits the gate it transports. Readout: none. Mobility: long-range, the property it exists to supply. Control: microwave at millikelvin. Error structure as the code sees it: coherent. Manufacturing: superconducting lithography plus packaging steps.
+Attributes. Affinity: fully fabricated, a packaging structure with no natural counterpart. Characteristic time and determinism: not applicable — the node carries no entangling primitive, it inherits the gate it transports. Readout: none. Mobility: long-range, the property it exists to supply. Control: microwave at millikelvin. Error structure as the code sees it: coherent. Manufacturing: superconducting lithography plus packaging steps.
 
 ## Physics & limits
 

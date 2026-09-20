@@ -13,7 +13,7 @@ updated: 2026-09-03
 
 ## Identity & lineage
 A point defect — nitrogen-vacancy, the group-IV silicon- and tin-vacancies in diamond, or silicon's T centre — read by fluorescence and entangled with an emitted photon, nearby nuclei as a small memory. Coherent single-spin control dates to 2004. The split that matters is symmetry: NV is polar and spectrally unstable, unlike SiV, SnV and the T centre.
-Coordinates: natural defect, engineered placement, static host with a flying photon, ~1 µs gates; fluorescence readout ~100 µs, non-destructive and mid-circuit; optical plus microwave control; Pauli and loss error.
+Attributes: natural defect, engineered placement, static host with a flying photon, ~1 µs gates; fluorescence readout ~100 µs, non-destructive and mid-circuit; optical plus microwave control; Pauli and loss error.
 
 ## Physics & limits
 Everything rests on the chance an excited defect puts a usable photon into fibre. NV emits a few per cent into its zero-phonon line and diffuses spectrally under charge switching, so a cavity is mandatory — Delft's fibre microcavity took resonant collection from ~0.05% to ~0.5% at echo coherence above 100 µs [D][3]. Group-IV centres fix the linewidth by symmetry but pay in temperature: SiV below 100 mK, SnV nearer 1–4 K. Heralded rate goes as efficiency squared — 10× optical gain is 100× in rate; link rate, not gate error, is the figure of merit. Loss is heralded, entering the code as erasure — the one structural edge over dot and donor spins.

@@ -15,7 +15,7 @@ updated: 2026-09-03
 
 A Josephson junction is two superconductors across a ~1–2 nm oxide barrier whose area and oxidation fix the critical current and hence the qubit frequency. This node is the process patterning those junctions and their niobium wiring at wafer scale — not a qubit. Lineage: e-beam Dolan-bridge Al/AlOx/Al junctions from the 2007 transmon (Koch et al., Yale), then 193 nm immersion lithography and etch on CMOS lines [D][1].
 
-Coordinates. **Carrier affinity 1.0** — fully fabricated: the manufacturing step itself, with no carrier, mobility, readout or control. **Manufacturing** — Nb wiring and Al/AlOx junctions on 200→300 mm silicon or sapphire; the error passed downstream is coherent (frequency offset, collision), not stochastic.
+Attributes. **Carrier affinity 1.0** — fully fabricated: the manufacturing step itself, with no carrier, mobility, readout or control. **Manufacturing** — Nb wiring and Al/AlOx junctions on 200→300 mm silicon or sapphire; the error passed downstream is coherent (frequency offset, collision), not stochastic.
 
 ## Physics & limits
 
