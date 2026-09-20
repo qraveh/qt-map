@@ -3,3 +3,4 @@ logs/
 results_smoke*/
 __pycache__/
 run.log
+results_release/
