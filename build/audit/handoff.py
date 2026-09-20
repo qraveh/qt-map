@@ -79,8 +79,8 @@ def main():
         s = open(hpath, encoding='utf-8').read()
         s2 = re.sub(r'```\nACCEPTANCE\n.*?\n```', acceptance, s, count=1, flags=re.S)
         s2 = re.sub(r'qt-map-[0-9a-f]{7}\.bundle` \(sha256 [0-9a-f]{16}…\)', 'qt-map-%s.bundle` (sha256 %s…)' % (short, bsha[:16]), s2)
-        s2 = re.sub(r'\$env:USERPROFILE\\Downloads\\qt-map-[0-9a-f]{7}\.bundle', r'$env:USERPROFILE\\Downloads\\qt-map-%s.bundle' % short, s2)
-        s2 = re.sub(r'40_outputs\\Quantum-Technology-Map-[0-9.]+_[a-z]+_[0-9a-f]{7}\.html', '40_outputs\\' + snap, s2)
+        s2 = re.sub(r'\$env:USERPROFILE\\Downloads\\qt-map-[0-9a-f]{7}\.bundle', lambda m: '$env:USERPROFILE\\Downloads\\qt-map-%s.bundle' % short, s2)
+        s2 = re.sub(r'40_outputs\\Quantum-Technology-Map-[0-9.]+_[a-z]+_[0-9a-f]{7}\.html', lambda m: '40_outputs\\' + snap, s2)
         if s2 == s: print('note: HANDOFF file unchanged (no ACCEPTANCE block or names found)')
         open(hpath, 'w', encoding='utf-8', newline='\n').write(s2); manifest['handoff'] = hpath
     if rpath:
