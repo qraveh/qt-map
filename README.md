@@ -2,7 +2,7 @@
 
 **Edition 2026.09 (beta)** · published at [qodeh.com/publications/quantum-technology-map](https://qodeh.com/publications/quantum-technology-map/) · DOI reserved on Zenodo, 10.5281/zenodo.22674814 (resolves on release) · CC BY 4.0 · bilingual EN / RU
 
-Every quantum-computing platform compared by the goal it serves; a technology graph of 96 self-contained technologies across ten stack layers, seven design coordinates and five edge types; a brief on each technology; every figure tagged and traced to a dated source. This repository holds the data, the briefs and the build that renders the single interactive document.
+Every quantum-computing platform compared by the goal it serves; a technology graph of 96 self-contained technologies across ten stack layers, seven design attributes and five edge types; a brief on each technology; every figure tagged and traced to a dated source. This repository holds the data, the briefs and the build that renders the single interactive document.
 
 ## About the map — the five questions
 
@@ -66,7 +66,7 @@ A `CITATION.cff` is included for GitHub's "Cite this repository" and for referen
 
 ## Contributing
 
-Corrections and new dated records are welcome as issues or pull requests. What is open to contribution: records (a new result with its date and primary source), source corrections, actor and money facts, translations. What stays editorial: node admission, coordinates, edges and their prices, verdicts — propose them in an issue with evidence; the rules are stated in the About section and in §7.1 of the report. Every number needs a dated primary source; every claim gets an evidence tag (`[D]` measured / peer-reviewed · `[C]` company claim · `[R]` roadmap · `[S]` simulation or estimate · `[G]` established fact · `[P]` preprint or trade press). Preview your change by running the build; the HTML in `dist/` is the review artefact.
+Corrections and new dated records are welcome as issues or pull requests. What is open to contribution: records (a new result with its date and primary source), source corrections, actor and money facts, translations. What stays editorial: node admission, attributes, edges and their prices, verdicts — propose them in an issue with evidence; the rules are stated in the About section and in §7.1 of the report. Every number needs a dated primary source; every claim gets an evidence tag (`[D]` measured / peer-reviewed · `[C]` company claim · `[R]` roadmap · `[S]` simulation or estimate · `[G]` established fact · `[P]` preprint or trade press). Preview your change by running the build; the HTML in `dist/` is the review artefact.
 
 ## Licence
 
