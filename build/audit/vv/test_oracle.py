@@ -86,6 +86,32 @@ class OracleTests(unittest.TestCase):
         self.assertEqual(self.m.nodes["ct_cryocmos"]["e"]["place"], ["4K", "mK"])
         self.assertEqual(self.m.nodes["ct_ionlaser"]["e"]["place"], ["RT"])
 
+    def test_selections_never_leave_an_empty_picture(self):
+        """ADJ-12: with no lens filter, every combination of isolate x focus (and machine x isolate, machine x focus) lights
+        at least one line and at least one station; a selection that cannot share a line releases the older one."""
+        for pid in self.m.path_ids:
+            for sid in self.m.station_ids:
+                if not self.m.station_paths[sid]:
+                    continue   # dec_cryo lies on no path (ambiguity 10)
+                s = oracle.default_state(); s["isolate"], s["focus"] = pid, sid
+                r = oracle.expected(self.m, s)
+                self.assertGreaterEqual(len(r["lines"]), 1, (pid, sid))
+                self.assertIn(sid, r["stations"])
+                if pid in self.m.station_paths[sid]:
+                    self.assertEqual(r["lines"], {pid})                          # compatible: the intersection
+                else:
+                    self.assertEqual(r["lines"], set(self.m.station_paths[sid]))  # the focus released the isolate
+        if self.m.machines:
+            mid = sorted(self.m.machines)[0]; mach = self.m.machines[mid]
+            other = next(p for p in self.m.path_ids if p != mach.path)
+            s = oracle.default_state(); s["isolate"], s["machine"] = other, mid
+            self.assertEqual(oracle.expected(self.m, s)["lines"], {mach.path})   # the machine released the isolate
+            s = oracle.default_state(); s["isolate"], s["machine"] = mach.path, mid
+            self.assertEqual(oracle.expected(self.m, s)["lines"], {mach.path})
+            off = next(sid for sid in self.m.station_ids if self.m.station_paths[sid] and mach.path not in self.m.station_paths[sid])
+            s = oracle.default_state(); s["machine"], s["focus"] = mid, off
+            self.assertEqual(oracle.expected(self.m, s)["lines"], set(self.m.station_paths[off]))   # the focus released the machine
+
     def test_deterministic(self):
         a = [oracle.random_state(self.m, random.Random(7)) for _ in range(3)]
         b = [oracle.random_state(self.m, random.Random(7)) for _ in range(3)]

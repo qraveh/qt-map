@@ -435,8 +435,60 @@ def laptop(pw):
     return fails
 
 
+def selections(pw):
+    """Editor's reproduction of 21 Sep: click the trapped-ions line, then the dual-rail station — the superconducting path was missing
+    (the lit set was the empty intersection of an isolated path and a station off it). Adjudication 12: a selection that cannot share a line
+    with an older selection releases it. Checks the three pairings in both orders at 1280×800; 0 console errors."""
+    fails, errors = [], []
+    b = pw.chromium.launch(); ctx = b.new_context(viewport={'width': 1280, 'height': 800}); p = ctx.new_page()
+    def check(label, cond, detail=''):
+        print(f"  [{'ok' if cond else 'FAIL'}] {label}{(' — ' + str(detail)) if (detail and not cond) else ''}")
+        if not cond: fails.append(label)
+    CLICK = "id=>{const g=[...document.querySelectorAll('#mapwrap g.station')].find(g=>g.querySelector('text.id')&&g.querySelector('text.id').textContent===id); g.dispatchEvent(new MouseEvent('click',{bubbles:true}));}"
+    LINE = "id=>{const h=document.querySelector('#mapwrap path.phit[data-path=\"'+id+'\"]'); h.dispatchEvent(new MouseEvent('click',{bubbles:true}));}"
+    print('selections — 1280×800')
+    p.on('console', lambda m: m.type == 'error' and errors.append(m.text)); p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
+    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000)
+    p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0", timeout=60000)
+    rd = lambda: p.evaluate(READ)
+    ion = p.evaluate("()=>[...document.querySelectorAll('#pathchips .chip')].map(c=>c.dataset.chipPath).find(x=>x.startsWith('ion'))")
+    pressed = lambda: p.evaluate("()=>[...document.querySelectorAll('#pathchips .chip[aria-pressed=\"true\"]')].map(c=>c.dataset.chipPath)")
+    GR = json.load(open(ROOT / 'data' / 'graph.json', encoding='utf-8'))
+    slots = {q['id']: [x for v in q['slots'].values() for x in v] for q in GR['paths']}
+    dual_paths = {q for q, xs in slots.items() if 'enc_dualrail' in xs}
+    # 1. the editor's steps: isolate the ion path, click dual-rail
+    p.evaluate(LINE, ion); p.wait_for_timeout(300); r0 = rd()
+    check('click on the trapped-ions line isolates it', r0['lines'] == [ion] and pressed() == [ion], (r0['lines'], pressed()))
+    p.evaluate(CLICK, 'enc_dualrail'); p.wait_for_timeout(400); r1 = rd()
+    check('then click on dual-rail: its paths are lit, the ion isolate is released', set(r1['lines']) == dual_paths and pressed() == [] and 'enc_dualrail' in r1['lit'], (r1['lines'], pressed()))
+    check('… and the station card shows', 'dual-rail' in r1['card'].lower() or 'dual' in r1['card'].lower(), r1['card'][:60])
+    # 2. mirror: focus dual-rail, then isolate the ion path -> the focus is released, the ion path stands alone with its card
+    p.keyboard.press('Escape'); p.wait_for_timeout(200); p.evaluate(CLICK, 'enc_dualrail'); p.wait_for_timeout(300)
+    p.evaluate(LINE, ion); p.wait_for_timeout(400); r2 = rd(); sel = p.evaluate("()=>[...document.querySelectorAll('#mapwrap g.station.sel')].length")
+    check('focus dual-rail, then isolate the ion path: the focus is released, the ion line stands alone', r2['lines'] == [ion] and sel == 0 and pressed() == [ion], (r2['lines'], sel, pressed()))
+    # 3. compatible pair keeps the intersection: a station on the isolated path
+    on_ion = slots[ion][0]
+    p.evaluate(CLICK, on_ion); p.wait_for_timeout(300); r3 = rd()
+    check('a station on the isolated path keeps the isolate (intersection)', r3['lines'] == [ion] and pressed() == [ion] and on_ion in r3['lit'], (r3['lines'], pressed()))
+    # 4. machine x isolate: a superconducting machine chosen while the ion path is isolated releases the isolate
+    p.select_option('#machine', 'google-willow'); p.wait_for_timeout(400); r4 = rd()
+    check('a machine on another path releases the isolate', r4['lines'] == [WILLOW['map_path']] and pressed() == [] and r4['machine'] == 'google-willow', (r4['lines'], pressed(), r4['machine']))
+    p.evaluate(LINE, ion); p.wait_for_timeout(400); r5 = rd()
+    check('isolating another path releases the machine', r5['lines'] == [ion] and r5['machine'] == '' and pressed() == [ion], (r5['lines'], r5['machine']))
+    # 5. machine x focus: a station off the machine's path releases the machine; one on it keeps it
+    p.click('#tg-reset'); p.wait_for_timeout(300); p.select_option('#machine', 'google-willow'); p.wait_for_timeout(300)
+    p.evaluate(CLICK, 'transmon'); p.wait_for_timeout(300); r6 = rd()
+    check('a station on the machine\'s path keeps the machine', r6['machine'] == 'google-willow' and r6['lines'] == [WILLOW['map_path']], (r6['machine'], r6['lines']))
+    p.evaluate(CLICK, 'ae_atom'); p.wait_for_timeout(300); r7 = rd()
+    check('a station off the machine\'s path releases the machine and lights its own paths', r7['machine'] == '' and len(r7['lines']) >= 1 and WILLOW['map_path'] not in r7['lines'] and 'ae_atom' in r7['lit'], (r7['machine'], r7['lines']))
+    ctx.close(); b.close()
+    errs = [e for e in errors if not ('fonts.g' in e and ('ERR_TUNNEL' in e or 'net::' in e)) and 'ERR_TUNNEL' not in e]
+    check('0 console errors', not errs, errs[:3])
+    return fails
+
+
 if __name__ == '__main__':
     with sync_playwright() as pw:
-        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800) + sorting(pw, 1280, 900) + sorting(pw, 400, 800) + chapter8(pw, 1280, 900) + chapter8(pw, 400, 800) + laptop(pw)
+        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800) + sorting(pw, 1280, 900) + sorting(pw, 400, 800) + chapter8(pw, 1280, 900) + chapter8(pw, 400, 800) + laptop(pw) + selections(pw)
     print('RESULT:', 'PASS' if not f else f'FAIL {f}')
     sys.exit(1 if f else 0)

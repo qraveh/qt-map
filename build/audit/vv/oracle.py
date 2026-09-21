@@ -158,12 +158,28 @@ def _lens_active(state):
     return bool(state.get("lens")) and bool(state.get("values"))
 
 
+def effective(model, state):
+    """ADJ-12 (21 Sep 2026): the three selections narrow each other only while they can share a line. Applied in the driver's
+    gesture order (isolate, then machine, then focus), a newer selection releases an older one it cannot share a line with:
+    a machine on another path releases the isolate; a focused station releases an isolate whose path does not pass through it
+    and a machine whose path does not pass through it. Returns (isolate, machine_id, focus) as the page ends up holding them."""
+    iso, mid, foc = state.get("isolate"), state.get("machine"), state.get("focus")
+    if mid and iso and model.machines[mid].path != iso:
+        iso = None
+    if foc:
+        if iso and iso not in model.station_paths[foc]:
+            iso = None
+        if mid and model.machines[mid].path not in model.station_paths[foc]:
+            mid = None
+    return iso, mid, foc
+
+
 def expected(model, state):
     all_st = set(model.station_ids)
     on = _on_types(state)
     lens, values = state.get("lens"), set(state.get("values") or ())
-    iso, foc = state.get("isolate"), state.get("focus")
-    mach = model.machines[state["machine"]] if state.get("machine") else None
+    iso, mid, foc = effective(model, state)
+    mach = model.machines[mid] if mid else None
 
     # isolate term
     iso_set = set(model.path_stations[iso]) if iso else all_st

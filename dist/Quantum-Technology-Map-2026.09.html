@@ -43528,7 +43528,15 @@ function relabel(){ st.select('text.l1').text(d=>wrapLabel(SHORT[d.id]?SHORT[d.i
   document.querySelectorAll('#machine optgroup').forEach(o=>{ if(FAMN[o.dataset.fam])o.label=T(...FAMN[o.dataset.fam]); });
   applyLens(); if(state.focus)inspect(NODE[state.focus]); else if(state.machine&&MBY[state.machine])inspectMachine(MBY[state.machine]); else if(state.isolate)inspectPath(PATH[state.isolate]); else inspectEmpty(); renderPC();
 }
-function select(id){ state.focus=id; st.classed('sel',d=>d.id===id); drawEdges(); dimming(); if(id){insp.hidden=false; inspect(NODE[id]);} else if(state.machine&&MBY[state.machine]){ inspectMachine(MBY[state.machine]); } else {insp.hidden=true; insp.innerHTML='';} pcHighlight(id); sheetRoom(); }
+// the three selections (isolated path, focused station, machine) narrow each other only while they can share a line; a new
+// selection that cannot (a station off the isolated path or the machine's path, a path not through the focused station or not the
+// machine's, a machine on another path) releases the older one instead of leaving an empty picture (adjudication 12, 21 Sep 2026)
+function pathsOf(id){ return new Set((prim[id]||[]).concat(alt[id]||[])); }
+function releaseIsolate(){ state.isolate=null; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false')); }
+function releaseFocus(){ state.focus=null; st.classed('sel',false); pcHighlight(null); }
+function releaseMachine(){ state.machine=null; const ms=document.getElementById('machine'); if(ms)ms.value=''; st.classed('altuse',false); }
+function select(id){ if(id){ const ps=pathsOf(id); if(state.isolate&&!ps.has(state.isolate))releaseIsolate(); if(state.machine&&MBY[state.machine]&&!ps.has(MBY[state.machine].path))releaseMachine(); }
+  state.focus=id; st.classed('sel',d=>d.id===id); drawEdges(); dimming(); if(id){insp.hidden=false; inspect(NODE[id]);} else if(state.machine&&MBY[state.machine]){ inspectMachine(MBY[state.machine]); } else {insp.hidden=true; insp.innerHTML='';} pcHighlight(id); sheetRoom(); }
 function sheetRoom(){ try{ document.body.classList.toggle('has-sheet', !insp.hidden && sheetMode()); }catch(e){} }
 window.__sheetRoom=sheetRoom;   // room to scroll the map above the bottom sheet (≤ 1024 px)
 function edgeOn(e){ return (e.type==='conflicts'&&state.showConf)||(e.type==='replaces'&&state.showRep)||(e.type==='requires'&&state.showReq); }
@@ -43709,7 +43717,9 @@ document.querySelectorAll('#mapbar [data-goto]').forEach(a=>a.addEventListener('
 // ---------- controls
 const bar=document.getElementById('mapbar');
 const chipsWrap=document.getElementById('pathchips');
-function isolatePath(pid){ state.isolate=state.isolate===pid?null:pid; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.chipPath===state.isolate))); if(state.isolate){ if(!state.focus){ inspectPath(PATH[pid]); pcHighlight(null); } } else if(!state.focus){ inspectEmpty(); } drawEdges(); dimming(); }   // a focused station stays focused: the three terms narrow each other
+function isolatePath(pid){ state.isolate=state.isolate===pid?null:pid; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.chipPath===state.isolate)));
+  if(state.isolate){ if(state.focus&&!pathsOf(state.focus).has(pid))releaseFocus(); if(state.machine&&MBY[state.machine]&&MBY[state.machine].path!==pid)releaseMachine(); }   // adjudication 12
+  if(state.isolate){ if(!state.focus){ inspectPath(PATH[pid]); pcHighlight(null); } } else if(!state.focus){ if(state.machine&&MBY[state.machine])inspectMachine(MBY[state.machine]); else inspectEmpty(); } drawEdges(); dimming(); }   // a focused station on the path stays focused: the terms narrow each other
 G.paths.forEach(p=>{const b=document.createElement('button'); b.className='chip'; b.dataset.chipPath=p.id; b.setAttribute('aria-pressed','false'); b.innerHTML=`<i class="sw" style="--c:${FAMC[p.family]}"></i><span class="t"></span>`; b.addEventListener('click',()=>isolatePath(p.id)); chipsWrap.appendChild(b);});
 if(window.__placeZoom)window.__placeZoom();   // the zoom window sits at the end of the paths row (desktop) — chips exist now
 const lensSel=document.getElementById('lens'); Object.keys(LENSES).forEach(k=>{const o=document.createElement('option'); o.value=k; lensSel.appendChild(o);}); lensSel.addEventListener('change',()=>{state.lens=lensSel.value; state.lensFilter=null; applyLens(); drawEdges(); dimming();});
@@ -43719,6 +43729,7 @@ if(machSel){ (MACH.families||[]).forEach(f=>{ const ms=MACH.machines.filter(m=>m
     const og=document.createElement('optgroup'); og.dataset.fam=f; og.label=T(...(FAMN[f]||[f,f])); ms.forEach(m=>{ const o=document.createElement('option'); o.value=m.id; o.textContent=machLabel(m); og.appendChild(o); }); machSel.appendChild(og); });
   machSel.addEventListener('change',()=>setMachine(machSel.value||null)); }
 function setMachine(id){ state.machine=(id&&MBY[id])?id:null; if(machSel&&machSel.value!==(state.machine||''))machSel.value=state.machine||'';
+  if(state.machine){ const mp=MBY[state.machine].path; if(state.isolate&&state.isolate!==mp)releaseIsolate(); if(state.focus&&!pathsOf(state.focus).has(mp))releaseFocus(); }   // adjudication 12
   drawEdges(); dimming();
   if(state.focus)inspect(NODE[state.focus]);                       // a focused station keeps its card; the machine stays a term of the lit set
   else if(state.machine)inspectMachine(MBY[state.machine]);

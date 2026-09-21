@@ -252,6 +252,17 @@ def machine_checks(m, model, s, act):
     """Extra assertions of the machines suite (C2 brief §3). Returns the list of failed checks (empty = pass)."""
     fails = []
     mach = model.machines[s['machine']]
+    # ADJ-12: a focused station off the machine's path (or an isolate of another path applied before the machine) releases the machine;
+    # then the page must show no machine at all (selector empty, no machine card, no altuse) and the other checks do not apply
+    iso_e, mid_e, foc_e = oracle.effective(model, s)
+    if mid_e is None:
+        ps = m.page_state()
+        if ps.get('machine') or act['machine_card'] or act['altuse']:
+            fails.append({'check': 'released-machine-still-shown', 'machine_select': ps.get('machine'), 'card': bool(act['machine_card']), 'altuse': sorted(act['altuse'])[:5]})
+        m.reset(); r = m.read()
+        if r['machine_select'] or m.page_state()['machine']:
+            fails.append({'check': 'reset-keeps-machine-select', 'value': r['machine_select']})
+        return fails
     # the machine card is shown unless a station is focused (then the station card wins)
     if s['focus']:
         if act['machine_card']:
@@ -506,10 +517,20 @@ def run_metamorphic(model, a):
                         viol.append({'check': 'M1-add-value-shrank', 'added': jv(v), 'lost': sorted(lost)})
                     apply_state(m, s, fwd)
                 if not s['isolate']:
-                    p = rng.choice(model.path_ids); m.isolate(p); m.clear_isolate(); r2 = rd(m)
-                    if r2 != base:
-                        viol.append({'check': 'M2-isolate-clear-not-identity' + ('-with-focus' if s['focus'] else ''), 'path': p, 'diff': diff(base, r2)})
-                    apply_state(m, s, fwd)
+                    # ADJ-12: isolating a path that cannot share a line with the focused station or the machine releases them, so the
+                    # identity holds only for a compatible path; an incompatible one is a different check (the release is expected)
+                    comp = [q for q in model.path_ids if (not s['focus'] or q in model.station_paths[s['focus']]) and (not s.get('machine') or model.machines[s['machine']].path == q)]
+                    if comp:
+                        p = rng.choice(comp); m.isolate(p); m.clear_isolate(); r2 = rd(m)
+                        if r2 != base:
+                            viol.append({'check': 'M2-isolate-clear-not-identity' + ('-with-focus' if s['focus'] else ''), 'path': p, 'diff': diff(base, r2)})
+                        apply_state(m, s, fwd)
+                    inc = [q for q in model.path_ids if q not in comp]
+                    if inc and (s['focus'] or s.get('machine')):
+                        p = rng.choice(inc); m.isolate(p); ps2 = m.page_state()
+                        if ps2['focus'] or ps2.get('machine') or ps2['isolate'] != p:
+                            viol.append({'check': 'M2b-incompatible-isolate-did-not-release', 'path': p, 'page_state': ser_state(page_to_oracle(ps2, inv)[0])})
+                        apply_state(m, s, fwd)
                 t = rng.choice(TOG); cur = m.state()['toggles'][t]
                 m.toggle(t, not cur); m.toggle(t, cur); r3 = rd(m)
                 if r3 != base:
