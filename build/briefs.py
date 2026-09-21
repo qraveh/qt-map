@@ -281,6 +281,9 @@ def _link_cites(h, bid, lang):
     return ''.join(out)
 
 
+TOOLTIPS = None   # build_html.tooltips, injected at build time
+
+
 def body_html(body, lang, md2html, bid=''):
     h = md2html(body)
     h = h.replace('<table>', '<div class="tbl"><table>').replace('</table>', '</table></div>')
@@ -300,7 +303,8 @@ def body_html(body, lang, md2html, bid=''):
                        % (kind, head_raw, content))
         else:
             out.append('<h3 class="bh3">%s</h3>%s' % (head_raw, _link_cites(content, bid, lang) if bid else content))
-    return chip_tags(autolink(''.join(out)), lang)
+    h = chip_tags(autolink(''.join(out)), lang)
+    return TOOLTIPS(h, lang) if TOOLTIPS else h   # the glossary tooltips of build_html (set by the caller), once per term per brief
 
 
 def inline_html(s, md2html):

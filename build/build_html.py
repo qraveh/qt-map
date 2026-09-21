@@ -4,10 +4,24 @@ import os
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0,os.path.join(ROOT,'build')); sys.path.insert(0,os.path.join(ROOT,'data'))
 import markdown
+import html as html_mod
+import json, os
 from page_css import CSS
 from map_js import JS
 from brief_js import BRIEF_JS
 from labels import SHORT
+# shared tooltip for .tt terms: hover, keyboard focus or a tap shows the explanation below the term, kept inside the viewport
+GTIP_JS=r"""(function(){var tip=document.createElement('div');tip.id='gtip';tip.hidden=true;tip.setAttribute('role','tooltip');document.body.appendChild(tip);var cur=null;
+function show(el){var t=el.getAttribute('data-tip');if(!t){var L=(document.getElementById('app')||{getAttribute:function(){return 'en';}}).getAttribute('data-lang')||'en';var D=(window.__TIPS||{})[L]||{};t=D[el.getAttribute('data-t')]||((window.__TIPS||{}).en||{})[el.getAttribute('data-t')];}if(!t)return;cur=el;tip.textContent=t;tip.hidden=false;var r=el.getBoundingClientRect(),sx=window.scrollX,sy=window.scrollY,vw=document.documentElement.clientWidth;
+ tip.style.left='0px';tip.style.top='0px';var w=tip.offsetWidth,h=tip.offsetHeight;var x=r.left+sx,y=r.bottom+sy+6;if(x+w>sx+vw-12)x=Math.max(sx+12,sx+vw-12-w);if(r.bottom+6+h>window.innerHeight&&r.top-6-h>0)y=r.top+sy-6-h;tip.style.left=x+'px';tip.style.top=y+'px';}
+function hide(){tip.hidden=true;cur=null;}
+document.addEventListener('mouseover',function(ev){var el=ev.target.closest&&ev.target.closest('.tt');if(el&&el!==cur)show(el);});
+document.addEventListener('mouseout',function(ev){var el=ev.target.closest&&ev.target.closest('.tt');if(el&&!(ev.relatedTarget&&el.contains(ev.relatedTarget)))hide();});
+document.addEventListener('focusin',function(ev){var el=ev.target.closest&&ev.target.closest('.tt');if(el)show(el);});
+document.addEventListener('focusout',function(ev){if(ev.target.closest&&ev.target.closest('.tt'))hide();});
+document.addEventListener('click',function(ev){var el=ev.target.closest&&ev.target.closest('.tt');if(!el){if(cur)hide();return;}if(cur===el&&!tip.hidden){hide();}else{show(el);}});
+document.addEventListener('keydown',function(ev){if(ev.key==='Escape')hide();});
+window.addEventListener('scroll',function(){if(cur&&!tip.hidden)show(cur);},{passive:true});})();"""
 from editions import EDITIONS, editions_html, CONCEPT_DOI, REPO, SITE, STATUS
 import briefs as BR
 G=json.load(open(os.path.join(ROOT,'data','graph.json'),encoding='utf-8'))
@@ -43,6 +57,7 @@ GREEK={'Lambda':'Λ','lambda':'λ','mu':'µ','varepsilon':'ε','epsilon':'ε','k
 SYM={'times':'×','sim':'∼','approx':'≈','le':'≤','ge':'≥','leq':'≤','geq':'≥','ll':'≪','gg':'≫','pm':'±','to':'→','rightarrow':'→','infty':'∞','propto':'∝','cdot':'·','diamond':'◇','rangle':'⟩','langle':'⟨','lvert':'|','rvert':'|','ast':'∗','circ':'∘','neq':'≠','ne':'≠','sqrt':'√','in':'∈','cup':'∪','cap':'∩','dots':'…','ldots':'…'}
 def tex(s):
     s=s.replace('\\,',' ').replace('\\ ',' ').replace('\;',' ')
+    s=s.replace('\\%','%').replace('\\$','$').replace('\\_','_').replace('\\&','&amp;').replace('\\hbar','ℏ')   # escaped literals and ℏ
     s=re.sub(r'\\bar\s*([a-zA-Z])',lambda m:m.group(1)+'\u0304',s)
     s=re.sub(r'\\sqrt\{([^}]*)\}',lambda m:'√<span style="text-decoration:overline">'+m.group(1)+'</span>',s)
     s=re.sub(r'\\(text|mathrm)\{([^}]*)\}',lambda m:m.group(2),s)
@@ -57,12 +72,17 @@ def tex(s):
     # `.m` is white-space:nowrap so a short formula never breaks. A few `$…$` runs in the reports are
     # long prose (currency amounts pair up into a false math span), and a nowrap span of that length
     # pushes the whole document sideways — mark those `long` so the stylesheet lets them wrap.
+    s=s.replace('|','&#124;')   # a bar from \lvert inside a markdown table cell would split the cell
     plain=re.sub('<[^>]+>','',s)
     cls='m long' if len(plain)>50 else 'm'
     return '<span class="'+cls+'">'+s+'</span>'
+# a math span opens at a `$` that is not a currency sign ("$10 B", "$1/qubit", "$14–17.6 B", "$/qubit") and closes at the next `$`;
+# before 21 Sep 2026 a currency sign on the same line paired with the next formula's opener and swallowed the prose between
+MATH=re.compile(r'(?<!\\)\$(?!\d[\d,.]*(?:\s|[BMk]\b|/|–|-|\)|$))(?!/)([^$\n]+?)(?<!\\)\$')
 def premath(md):
     md=re.sub(r'\$\$(.+?)\$\$',lambda m:'<div class="m">'+tex(m.group(1))+'</div>',md,flags=re.S)
-    return re.sub(r'(?<!\\)\$([^$\n]+?)\$',lambda m:tex(m.group(1)),md)
+    md=MATH.sub(lambda m:tex(m.group(1)),md)
+    return md.replace('\\$','$').replace('\\%','%')     # literal dollars and percents outside math
 
 # ---------- markdown → html + structure
 def convert(md,lang):
@@ -104,8 +124,177 @@ def convert(md,lang):
     for lbl in (['<strong>requires / provides</strong>','<strong>alternatives (within layer)</strong>','<strong>conflicts</strong>','<strong>transfers (node → additional platform paths)</strong>','<strong>defines (node → output; every row carries a source, a date and a number)</strong>'] if lang=='en' else
                 ['<strong>требует / обеспечивает</strong>','<strong>альтернативы (внутри слоя)</strong>','<strong>конфликтует</strong>','<strong>переносится (узел → дополнительные платформенные пути)</strong>','<strong>определяет (узел → выход; каждая строка несёт источник, дату и число)</strong>']):
         h=fold(h,re.escape(lbl),re.sub('<[^>]+>','',lbl))
-    # split off sources section into a fold
+    h=polish(h,lang)
     return h,toc
+
+# ---------- reader-facing polish (21 Sep 2026, the editor's review): labelled lists, definition-style items, and every
+# reference made clickable — source codes [S1] to their entry in §9, §x.y to the heading, Figure/Table x.y to the figure or the
+# section, hypotheses H1–H8 and forecast rows F1a–F6 to their anchors in §8. Text nodes only: never inside links, code, headings,
+# scripts or SVG.
+SKIP_TAGS={'a','code','pre','script','style','h1','h2','h3','nav','svg','title','summary'}
+def map_text(h,fn):
+    out=[]; stack=[]
+    for tok in re.split(r'(<[^>]+>)',h):
+        if tok.startswith('<'):
+            out.append(tok); m=re.match(r'<(/?)([a-zA-Z0-9]+)',tok)
+            if m and not tok.endswith('/>'):
+                closing,name=m.group(1),m.group(2).lower()
+                if name in SKIP_TAGS:
+                    if closing:
+                        if name in stack: del stack[len(stack)-1-stack[::-1].index(name)]
+                    else: stack.append(name)
+        else: out.append(tok if stack else fn(tok))
+    return ''.join(out)
+CITE=re.compile(r'\[([A-Z]{1,2}\d{1,3})\]')
+def polish(h,lang):
+    P=lang+'-'
+    # 1. lists: "(a) …"/"(i) …" items carry their label as a hanging tag; "**Term** — text" items put the term on its own line
+    h=re.sub(r'<li>\(([a-z]|[ivx]+)\)\s',lambda m:'<li class="lbl"><span class="lb">('+m.group(1)+')</span> ',h)
+    h=re.sub(r'<li>(<p>)?<strong>([^<]{3,120})</strong>\s?—\s(\S)',lambda m:'<li class="def">'+(m.group(1) or '')+'<strong>'+m.group(2)+'</strong>'+m.group(3).upper(),h)
+    # 2. anchors: source entries in §9, hypotheses and forecast rows in §8, Figure 8.1
+    i9=h.find(f'<h2 id="{P}s9">'); i8=h.find(f'<h2 id="{P}s8">')
+    srcs=set()
+    if i9>0:
+        head,src=h[:i9],h[i9:]
+        def anchor_src(t):
+            def rep(m):
+                c=m.group(1)
+                if c in srcs: return m.group(0)
+                srcs.add(c); return f'<span class="src" id="{P}src-{c}">[{c}]</span>'
+            return CITE.sub(rep,t)
+        src=map_text(src,anchor_src); h=head+src
+    h=re.sub(r'<p><strong>(H[1-8]) — ',lambda m:f'<p id="{P}{m.group(1).lower()}"><strong>{m.group(1)} — ',h)
+    h=re.sub(r'<td>(F[1-6][abc]?)</td>',lambda m:f'<td><a class="src" id="{P}{m.group(1).lower()}">{m.group(1)}</a></td>',h)   # an anchor, not a link (never self-linked)
+    h=h.replace('<figure class="fig81">',f'<figure class="fig81" id="{P}fig8-1">')
+    ids=set(re.findall(r' id="([^"]+)"',h))
+    # 3. links in the text
+    def link(t,in_ch8):
+        def cite(m):
+            c=m.group(1); return f'<a class="cite" href="#{P}src-{c}">[{c}]</a>' if c in srcs else m.group(0)
+        t=CITE.sub(cite,t)
+        def sec(m):
+            a,b=m.group(1),m.group(2); tid=f'{P}s{a}'+(f'-{b}' if b else '')
+            return f'<a class="xref" href="#{tid}">{m.group(0)}</a>' if tid in ids else m.group(0)
+        t=re.sub(r'(?<!CFR )§(\d+)(?:\.(\d+))?',sec,t)
+        def figtab(m):
+            word,a,b=m.group(1),m.group(2),m.group(3); low=word.lower()
+            tid=f'{P}fig{a}-{b}' if low in ('figure','рисунок','рис.','fig.') else f'{P}s{a}-{b}'
+            return f'<a class="xref" href="#{tid}">{m.group(0)}</a>' if tid in ids else m.group(0)
+        t=re.sub(r'\b(Figure|Fig\.|Table|Рисунок|Рис\.|Таблица|табл\.)\s(\d)\.(\d+)\b',figtab,t)
+        # hypotheses and forecast rows: after a §8.x reference anywhere; bare tokens only inside the chapter itself
+        # (outside it, H1/H2 are half-years and Quantinuum machines)
+        def hf(m):
+            c=m.group(0); tid=f'{P}{c.lower()}'; return f'<a class="xref" href="#{tid}">{c}</a>' if tid in ids else c
+        t=re.sub(r'(§8\.\d</a>,\s*)((?:[HF]\d[abc]?(?:,\s*|\s*(?:and|и)\s*)?)+)',lambda m:m.group(1)+re.sub(r'\b[HF]\d[abc]?\b',hf,m.group(2)),t)
+        if in_ch8:
+            t=re.sub(r'(?<![\w/\-–])(?<!Quantinuum )(?<!Model )([HF][1-8][abc]?)(?![\w/\-–])(?! — )',lambda m:hf(m),t)   # not the label itself ("H1 — …")
+        return t
+    if i8>0 and i9>i8:
+        h=map_text(h[:i8],lambda t:link(t,False))+map_text(h[i8:i9],lambda t:link(t,True))+map_text(h[i9:],lambda t:link(t,False))
+    else:
+        h=map_text(h,lambda t:link(t,False))
+    h=score_tips(h,lang)
+    h=tooltips(h,lang)
+    return h
+
+# ---------- tooltips (21 Sep 2026): the map's own terms and codes, and the field's abbreviations, explained where they stand.
+# data/glossary-own.json (the report's own definitions) and data/glossary-field.json (standard expansions). Codes, marks and
+# goal ids get a tooltip at every occurrence; words at their first occurrence in each section (h2/h3), so a reader who lands
+# anywhere finds the term explained within the section. Text nodes only; never inside links, code, headings, SVG or math.
+GLOSSARY=None
+def glossary():
+    global GLOSSARY
+    if GLOSSARY is None:
+        GLOSSARY=[]
+        for fn in ('glossary-own.json','glossary-field.json'):
+            GLOSSARY+=json.load(open(os.path.join(ROOT,'data',fn),encoding='utf-8'))
+        for e in GLOSSARY:
+            if e['id'] in ('notation-lambda','notation-code-distance'): e['scope']='first'   # notation: once per section is enough
+    return GLOSSARY
+def tips_dict():
+    return {'en':{e['id']:e['en'] for e in glossary()},'ru':{e['id']:e['ru'] for e in glossary()}}
+def _term_re(forms):
+    alts=[]
+    for f in forms:
+        f=f.strip()
+        if not f: continue
+        esc=re.escape(f)
+        if f[0].isalpha() and f[0].islower(): esc='['+f[0]+f[0].upper()+']'+re.escape(f[1:])   # sentence-initial capital
+        left=r'(?<![\w\-])' if f[0].isalnum() else ''; right=r'(?![\w\-])' if f[-1].isalnum() else ''
+        alts.append(left+esc+right)
+    return '|'.join(alts)
+def tooltips(h,lang):
+    G_=glossary(); items=[]   # (entry, own regex, alternatives)
+    for e in G_:
+        forms=e.get('match_ru' if lang=='ru' else 'match') or []
+        rx=e.get('re') if lang=='en' else None
+        body=_term_re(forms)
+        if rx: body=(rx+'|'+body) if body else rx
+        if not body: continue
+        items.append((e,re.compile(body),body))
+    # one combined regex, longer forms first so "path instance" beats "path"; the entry is identified by a full match afterwards
+    items.sort(key=lambda x:-max(len(f) for f in (x[0].get('match_ru' if lang=='ru' else 'match') or ['']) ) )
+    comb=re.compile('|'.join('(?:'+b+')' for _,_,b in items))
+    def entry_of(txt):
+        for e,rx,_ in items:
+            if rx.fullmatch(txt): return e
+        return None
+    def wrap(e,txt): return '<span class="tt" data-t="'+e['id']+'">'+txt+'</span>'   # the text comes from window.__TIPS[lang][id]
+    def process(segment):
+        seen=set()
+        def fn(t):
+            if not t.strip(): return t
+            out=[]; pos=0
+            while True:
+                m=comb.search(t,pos)
+                while m:
+                    e=entry_of(m.group(0))
+                    if e and not (e['scope']=='first' and e['id'] in seen): break
+                    m=comb.search(t,m.start()+1)
+                if not m: out.append(t[pos:]); break
+                out.append(t[pos:m.start()]); out.append(wrap(e,m.group(0))); pos=m.end()
+                if e['scope']=='first': seen.add(e['id'])
+            return ''.join(out)
+        return map_text(segment,fn)
+    parts=re.split(r'(?=<h[23] id=")',h)
+    return ''.join(process(pt) for pt in parts)
+# §3.1: the axis letters and the scores explained from the §1.2 table itself (what the axis measures and its 5/3/1 anchors)
+def score_tips(h,lang):
+    P=lang+'-'; i12=h.find(f'<h3 id="{P}s1-2">'); i31=h.find(f'<h3 id="{P}s3-1">')
+    if i12<0 or i31<0: return h
+    seg=h[i12:]; tbl=seg[seg.find('<table>'):seg.find('</table>')]
+    axes={}
+    for row in re.findall(r'<tr>(.*?)</tr>',tbl,flags=re.S):
+        cells=[html_mod.unescape(re.sub(r'<[^>]+>','',c)).strip() for c in re.findall(r'<td[^>]*>(.*?)</td>',row,flags=re.S)]
+        if len(cells)==5 and re.match(r'[A-F]\.',cells[0]): axes[cells[0][0]]=cells
+    if len(axes)!=6: return h
+    en=lang=='en'
+    def desc(L):
+        a=axes[L]; return (f'{a[0]} — {a[1]}. Anchors: 5 = {a[2]}; 3 = {a[3]}; 1 = {a[4]}' if en else f'{a[0]} — {a[1]}. Опорные значения: 5 = {a[2]}; 3 = {a[3]}; 1 = {a[4]}')
+    j=h.find('</table>',i31); t31=h[i31:j]
+    def th(m):
+        L=m.group(2); return m.group(1)+'<span class="tt" data-tip="'+html_mod.escape(desc(L),quote=True)+'">'+L+m.group(3)+'</span></th>'
+    t31=re.sub(r'(<th[^>]*>)([A-F])( [^<]+)</th>',th,t31)
+    mi=('Maturity index — the sum of the six axis scores (30 at most): how much of the fault-tolerance stack has been shown to work, not how useful the platform is' if en else
+        'Индекс зрелости — сумма баллов по шести осям (не более 30): какая часть стека отказоустойчивости показана в работе, а не полезность платформы')
+    t31=re.sub(r'<th([^>]*)><strong>([^<]+)</strong></th>',lambda m:'<th'+m.group(1)+'><strong><span class="tt" data-tip="'+html_mod.escape(mi,quote=True)+'">'+m.group(2)+'</span></strong></th>',t31)
+    letters='ABCDEF'
+    def row(m):
+        cells=re.findall(r'<td[^>]*>.*?</td>',m.group(0),flags=re.S)
+        if len(cells)!=8: return m.group(0)
+        out=[cells[0]]
+        for k,c in enumerate(cells[1:7]):
+            L=letters[k]; inner=re.sub(r'^<td[^>]*>|</td>$','',c); txt=html_mod.unescape(re.sub(r'<[^>]+>','',inner)).strip()
+            if re.fullmatch(r'\d',txt): tip=(f'{axes[L][0]} — {txt} of 5. Measures: ' if en else f'{axes[L][0]} — {txt} из 5. Измеряет: ')+desc(L).split(' — ',1)[1]
+            elif txt.startswith('('): tip=(f'{axes[L][0]}: {txt[1:-1]} — the architecture\'s value by design, not a demonstrated one' if en else f'{axes[L][0]}: {txt[1:-1]} — значение по замыслу архитектуры, не продемонстрированное')
+            elif txt=='n/a': tip=(f'{axes[L][0]}: not applicable — annealers run no gate-model error correction, so the axis has no meaning for them' if en else f'{axes[L][0]}: неприменимо — отжигатели не выполняют коррекцию ошибок гейтовой модели, ось для них не имеет смысла')
+            elif txt in ('—','-'): tip=(f'{axes[L][0]}: nothing to score yet' if en else f'{axes[L][0]}: оценивать пока нечего')
+            else: out.append(c); continue
+            out.append(c[:c.find('>')+1]+'<span class="tt" data-tip="'+html_mod.escape(tip,quote=True)+'">'+inner+'</span></td>')
+        out.append(cells[7])
+        return '<tr>\n'+'\n'.join(out)+'\n</tr>'
+    t31=re.sub(r'<tr>\s*<td>.*?</tr>',row,t31,flags=re.S)
+    return h[:i31]+t31+h[j:]
 
 # ---------- brief markdown (same TeX + markdown machinery, line breaks kept)
 def brief_md2html(md):
@@ -188,7 +377,7 @@ MAPUI='''<div class="mapbar" id="mapbar">
   <span class="gl"><i class="lg ed req"></i><span class="lang-en">requires</span><span class="lang-ru">требует</span></span>
   <span class="gl"><i class="lg ed rep"></i><span class="lang-en">alternatives</span><span class="lang-ru">альтернативы</span></span>
   <span class="gl"><i class="lg ed con"></i><span class="lang-en">conflicts — hover for the reason</span><span class="lang-ru">конфликтует — причина по наведению</span></span>
-  <span class="gl long"><i class="lg stn" aria-hidden="true"><svg viewBox="0 0 50 16" width="50" height="16"><rect x="0.6" y="0.6" width="21" height="14.8" rx="3.5" fill="var(--surface)" stroke="var(--ink2)" stroke-width="1.2"/><rect x="3.2" y="3.6" width="11" height="1.6" rx="0.8" fill="var(--ink)" opacity="0.8"/><rect x="3.2" y="10.8" width="4" height="2.2" rx="0.6" fill="var(--sc)"/><path d="M23.4 8H27M25.6 6.4L27.2 8L25.6 9.6" fill="none" stroke="var(--muted)" stroke-width="1"/><rect x="28.400000000000002" y="0.6" width="21" height="14.8" rx="3.5" fill="rgba(27,175,122,0.22)" stroke="var(--atom)" stroke-width="1.2"/><rect x="31.0" y="3.6" width="11" height="1.6" rx="0.8" fill="var(--ink)" opacity="0.8"/><rect x="31.0" y="10.8" width="4" height="2.2" rx="0.6" fill="var(--sc)"/><rect x="28.4" y="0.6" width="3.2" height="14.8" rx="1.4" fill="var(--atom)"/></svg></i><span class="lang-en">outline = family colour (dark: several families); with a attribute lens on (any but “Platform family”): tint + left band = the lens value (legend below)</span><span class="lang-ru">рамка = цвет семейства (тёмная: несколько семейств); при линзе по атрибуту (любой, кроме «семейства платформ»): оттенок + полоса слева = значение линзы (легенда ниже)</span></span>
+  <span class="gl long"><i class="lg stn" aria-hidden="true"><svg viewBox="0 0 50 16" width="50" height="16"><rect x="0.6" y="0.6" width="21" height="14.8" rx="3.5" fill="var(--surface)" stroke="var(--ink2)" stroke-width="1.2"/><rect x="3.2" y="3.6" width="11" height="1.6" rx="0.8" fill="var(--ink)" opacity="0.8"/><rect x="3.2" y="10.8" width="4" height="2.2" rx="0.6" fill="var(--sc)"/><path d="M23.4 8H27M25.6 6.4L27.2 8L25.6 9.6" fill="none" stroke="var(--muted)" stroke-width="1"/><rect x="28.400000000000002" y="0.6" width="21" height="14.8" rx="3.5" fill="rgba(27,175,122,0.22)" stroke="var(--atom)" stroke-width="1.2"/><rect x="31.0" y="3.6" width="11" height="1.6" rx="0.8" fill="var(--ink)" opacity="0.8"/><rect x="31.0" y="10.8" width="4" height="2.2" rx="0.6" fill="var(--sc)"/><rect x="28.4" y="0.6" width="3.2" height="14.8" rx="1.4" fill="var(--atom)"/></svg></i><span class="lang-en">outline = family colour (dark: several families); with an attribute lens on (any but “Platform family”): tint + left band = the lens value (legend below)</span><span class="lang-ru">рамка = цвет семейства (тёмная: несколько семейств); при линзе по атрибуту (любой, кроме «семейства платформ»): оттенок + полоса слева = значение линзы (легенда ниже)</span></span>
   <span class="gl"><i class="lg stn" aria-hidden="true"><svg viewBox="0 0 50 16" width="50" height="16"><rect x="0.6" y="0.6" width="21" height="14.8" rx="3.5" fill="var(--surface)" stroke="var(--ink2)" stroke-width="1.2"/><rect x="3.2" y="3.6" width="11" height="1.6" rx="0.8" fill="var(--ink)" opacity="0.8"/><rect x="3.2" y="10.8" width="4" height="2.2" rx="0.6" fill="var(--sc)"/><path d="M23.4 8H27M25.6 6.4L27.2 8L25.6 9.6" fill="none" stroke="var(--muted)" stroke-width="1"/><rect x="28.400000000000002" y="0.6" width="21" height="14.8" rx="3.5" fill="var(--surface)" stroke="var(--ink)" stroke-width="2.5"/><rect x="31.0" y="3.6" width="11" height="1.6" rx="0.8" fill="var(--ink)" opacity="0.8"/><rect x="31.0" y="10.8" width="4" height="2.2" rx="0.6" fill="var(--sc)"/></svg></i><span class="lang-en">thick outline = the clicked station</span><span class="lang-ru">толстая рамка = выбранная станция</span></span>
   <span class="gl"><i class="lg badges"><b></b><b></b></i><span class="lang-en">small squares = the platform lines through the station (■ primary, □ alternate)</span><span class="lang-ru">маленькие квадраты = линии платформ через станцию (■ основная, □ альтернатива)</span></span>
   <span class="gl"><i class="lg ax">↕</i><span class="lang-en">rows natural → fabricated · columns = layers · click a station</span><span class="lang-ru">строки естественное → изготовленное · колонки — слои · клик по станции</span></span>
@@ -371,6 +560,7 @@ def build(cfg=PUBLIC):
     B=BR.load_briefs()
     ids={b['id'] for b in B}
     colours=BR.family_colours(G)
+    BR.TOOLTIPS=tooltips
     briefs_block=BR.briefs_section_html(B,brief_md2html,colours)
     en_html,en_toc=convert(EN,'en'); ru_html,ru_toc=convert(RU,'ru')
     en_html=insert_after_h3_table(en_html,'3.1',radars_block('en')); ru_html=insert_after_h3_table(ru_html,'3.1',radars_block('ru'))
@@ -415,6 +605,8 @@ def build(cfg=PUBLIC):
 <script>{NAVJS}</script>
 <script>{JS}</script>
 <script>{BRIEF_JS}</script>
+<script>window.__TIPS={json.dumps(tips_dict(),ensure_ascii=False)};</script>
+<script>{GTIP_JS}</script>
 <script>if(window.__relabelMap)window.__relabelMap();</script>
 '''
     open(cfg['out_body'],'w',encoding='utf-8',newline='\n').write(body)

@@ -79,6 +79,25 @@ main{min-width:0}
 @media (max-width:700px){.prose p{text-align:left}}
 .prose ul,.prose ol{padding-left:1.3em}
 .prose li{margin:.3em 0}
+/* labelled items "(a) …", "(i) …" hang their label; definition-style items "Term — text" put the term on its own line (21 Sep 2026) */
+.prose li.lbl{list-style:none;position:relative;padding-left:2.5em}
+.prose li.lbl .lb{position:absolute;left:0;color:var(--muted);font-variant-numeric:tabular-nums}
+.prose ol ol,.prose ol ul,.prose ul ol{margin:.35em 0 .5em}
+.prose li.def>strong,.prose li.def>p>strong{display:block;margin-bottom:.12em}
+.prose li.def{margin:.55em 0}
+/* references: source codes and cross-references are links; a source entry's own code is its anchor */
+.prose a.cite{text-decoration:none;font-variant-numeric:tabular-nums}
+.prose a.cite:hover{text-decoration:underline}
+.prose a.xref{text-decoration:none;border-bottom:1px dotted currentColor}
+.prose a.xref:hover{border-bottom-style:solid}
+.prose .src{font-weight:600;scroll-margin-top:70px}
+/* tooltips on terms: a faint dotted underline marks a term the page explains in place; the text is shown by #gtip (script) */
+.tt{text-decoration:underline dotted;text-decoration-color:var(--muted);text-underline-offset:3px;cursor:help;outline:none}
+.tt:hover,.tt:focus{text-decoration-color:var(--accent)}
+th .tt,td .tt{text-decoration-thickness:1px}
+#gtip{position:absolute;z-index:60;max-width:min(380px,calc(100vw - 24px));padding:.5rem .65rem;border:1px solid var(--rule);border-radius:8px;background:var(--surface);color:var(--ink);font:400 .86rem/1.4 system-ui,sans-serif;text-align:left;box-shadow:0 6px 24px rgba(0,0,0,.14);pointer-events:none;white-space:normal}
+#gtip[hidden]{display:none}
+.prose [id^="en-h"],.prose [id^="ru-h"],.prose td[id],.prose figure[id]{scroll-margin-top:70px}
 .prose blockquote{margin:1em 0;padding:12px 18px;border-left:3px solid var(--rule);background:var(--surface);border-radius:0 8px 8px 0;color:var(--ink2)}
 .prose hr{border:0;border-top:1px solid var(--rule);margin:2em 0}
 .prose strong{font-weight:600}

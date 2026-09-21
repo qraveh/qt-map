@@ -89,6 +89,21 @@ def main():
     mj = open(os.path.join(ROOT, 'build', 'map_js.py'), encoding='utf-8').read(); ms = open(os.path.join(ROOT, 'build', 'make_sections.py'), encoding='utf-8').read(); mc = open(os.path.join(ROOT, 'build', 'machines_chapter.py'), encoding='utf-8').read()
     f1 = dict(re.findall(r"(SC|ION|ATOM|PHOTON|SPIN|DEFECT|TOPO|ANNEAL):\['([^']+)'", mj)); f2 = dict(re.findall(r"'(SC|ION|ATOM|PHOTON|SPIN|DEFECT|TOPO|ANNEAL)':\('([^']+)'", ms)); f3 = dict(re.findall(r"'(SC|ION|ATOM|PHOTON|SPIN|DEFECT|TOPO|ANNEAL)': \('([^']+)'", mc))
     item('family labels agree across the map, §7 and §8', f1 == f2 == f3 and len(f1) == 8, (f1, f2, f3))
+    # 6b. references and tooltips (21 Sep 2026): every citation code in the text has a source anchor; every cross-reference link
+    #     resolves; no TeX remnant or currency-swallowed formula survives; every tooltip key has a text in both languages
+    import html as _html, json as _json
+    cited=set(re.findall(r'\[([A-Z]{1,2}\d{1,3})\]', t))
+    for lang in ('en','ru'):
+        anchored=set(re.findall(r'class="src" id="'+lang+r'-src-([A-Z0-9]+)"', h))
+        item(f'every citation code has a source entry ({lang})', cited <= anchored, sorted(cited-anchored)[:8])
+    remn=re.findall(r'\\(?:%|[A-Za-z]{2,})', t)
+    item('no TeX remnants in the rendered text', not remn, remn[:6])
+    item('no formula span longer than 60 characters (currency signs never open a formula)', 'class="m long"' not in h)
+    tk=set(re.findall(r'data-t="([^"]+)"', h)); i=h.find('window.__TIPS='); j=h.find('</script>', i)
+    tips=_json.loads(h[i+len('window.__TIPS='):j].rstrip(';')) if i>0 else {'en':{},'ru':{}}
+    item('every tooltip key has a text in both languages', tk <= set(tips['en']) and tk <= set(tips['ru']), sorted(tk-set(tips['en']))[:5]+sorted(tk-set(tips['ru']))[:5])
+    xr=[x for x in re.findall(r'<a class="xref" href="#([^"]+)"', h) if f' id="{x}"' not in h]
+    item('every cross-reference (§, Figure, Table, H, F) resolves', not xr, xr[:6])
     # 7. the harness's own self-test and the chapter's classifiers still import
     to = run([sys.executable, 'build/audit/vv/test_oracle.py'])
     item('oracle self-test', to.returncode == 0 and 'OK' in (to.stdout + to.stderr), (to.stdout + to.stderr)[-200:])

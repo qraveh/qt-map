@@ -1,0 +1,1053 @@
+[
+ {
+  "id": "qual-D",
+  "match": [
+   "[D]"
+  ],
+  "match_ru": [
+   "[D]"
+  ],
+  "scope": "all",
+  "en": "Demonstrated: a published or peer-reviewed result as of September 2026, the report evidence grade that carries most weight",
+  "ru": "Продемонстрировано: опубликованный или рецензированный результат на сентябрь 2026 — самая весомая градация свидетельств отчёта",
+  "src": "§1.2 / §2",
+  "confidence": "defined"
+ },
+ {
+  "id": "qual-R",
+  "match": [
+   "[R]"
+  ],
+  "match_ru": [
+   "[R]"
+  ],
+  "scope": "all",
+  "en": "Roadmap: what the published roadmap would deliver by about 2029 if it is held — an intention, not a result",
+  "ru": "Дорожная карта: что она дала бы к 2029 году, если будет выдержана — намерение, а не результат",
+  "src": "§1.2 / §2",
+  "confidence": "defined"
+ },
+ {
+  "id": "qual-C",
+  "match": [
+   "[C]"
+  ],
+  "match_ru": [
+   "[C]"
+  ],
+  "scope": "all",
+  "en": "Company claim: asserted by the vendor without peer-reviewed data behind it",
+  "ru": "Заявление компании: утверждение вендора без рецензированных данных за ним",
+  "src": "§2",
+  "confidence": "defined"
+ },
+ {
+  "id": "mark-documented",
+  "match": [
+   "✅"
+  ],
+  "match_ru": [
+   "✅"
+  ],
+  "scope": "all",
+  "en": "Documented cell: a paper, whitepaper or figure was seen to show that station in that machine",
+  "ru": "Документированная ячейка: статья, whitepaper или рисунок показывают эту станцию в этой машине",
+  "src": "§8",
+  "confidence": "defined"
+ },
+ {
+  "id": "mark-press",
+  "match": [
+   "🔎"
+  ],
+  "match_ru": [
+   "🔎"
+  ],
+  "scope": "all",
+  "en": "Press-level cell: only a press page or an inference supports that station in that machine",
+  "ru": "Ячейка на уровне прессы: станцию в этой машине поддерживает только пресс-страница или вывод",
+  "src": "§8",
+  "confidence": "defined"
+ },
+ {
+  "id": "mark-gap",
+  "match": [
+   "∅"
+  ],
+  "match_ru": [
+   "∅"
+  ],
+  "scope": "all",
+  "en": "Gap: the map has no station for what the machine runs at that layer, or the machine discloses nothing; gap ids begin with ∅G-",
+  "ru": "Пробел: у карты нет станции для того, что машина делает на этом слое, или машина ничего не раскрывает; id пробелов начинаются с ∅G-",
+  "src": "§7.12",
+  "confidence": "defined"
+ },
+ {
+  "id": "verdict-feasible",
+  "match": [
+   "FEASIBLE"
+  ],
+  "match_ru": [
+   "FEASIBLE"
+  ],
+  "scope": "all",
+  "en": "Roadmap verdict: the roadmap reaches its target algorithm on qubits, error and gate budget together",
+  "ru": "Вердикт дорожной карты: она дотягивает до целевого алгоритма одновременно по кубитам, ошибке и бюджету гейтов",
+  "src": "§8",
+  "confidence": "usage"
+ },
+ {
+  "id": "verdict-short",
+  "match": [
+   "SHORT"
+  ],
+  "match_ru": [
+   "SHORT"
+  ],
+  "scope": "all",
+  "en": "Roadmap verdict: the roadmap falls short of its target algorithm, with the deficit named — most often on error or gate budget, rarely on qubits",
+  "ru": "Вердикт дорожной карты: она не дотягивает до целевого алгоритма, дефицит назван — чаще по ошибке или бюджету гейтов, реже по кубитам",
+  "src": "§8 / §8.4 H6",
+  "confidence": "defined"
+ },
+ {
+  "id": "verdict-not-evaluable",
+  "match": [
+   "NOT EVALUABLE"
+  ],
+  "match_ru": [
+   "NOT EVALUABLE"
+  ],
+  "scope": "all",
+  "en": "Roadmap verdict: the roadmap does not publish enough dated numbers to be checked against a target algorithm",
+  "ru": "Вердикт дорожной карты: она не публикует достаточно датированных чисел, чтобы проверить её по целевому алгоритму",
+  "src": "§8",
+  "confidence": "usage"
+ },
+ {
+  "id": "hyp-supported",
+  "match": [
+   "supported"
+  ],
+  "match_ru": [
+   "подтверждена"
+  ],
+  "scope": "all",
+  "en": "Verdict on a hypothesis: the computation the build runs on the register rows bears the statement out",
+  "ru": "Вердикт по гипотезе: расчёт, который сборка проводит по строкам реестра, подтверждает утверждение",
+  "src": "§8.4",
+  "confidence": "usage"
+ },
+ {
+  "id": "hyp-partly",
+  "match": [
+   "partly supported"
+  ],
+  "match_ru": [
+   "подтверждена частично"
+  ],
+  "scope": "all",
+  "en": "Verdict on a hypothesis: the register bears the statement out only in part — the trend holds but not on every test or not monotonically",
+  "ru": "Вердикт по гипотезе: реестр подтверждает утверждение лишь отчасти — тренд есть, но не по каждой проверке или не монотонно",
+  "src": "§8.4",
+  "confidence": "usage"
+ },
+ {
+  "id": "hyp-not-supported",
+  "match": [
+   "not supported"
+  ],
+  "match_ru": [
+   "не подтверждена"
+  ],
+  "scope": "all",
+  "en": "Verdict on a hypothesis: the register own rows contradict the statement",
+  "ru": "Вердикт по гипотезе: строки самого реестра опровергают утверждение",
+  "src": "§8.4",
+  "confidence": "usage"
+ },
+ {
+  "id": "goal-G1",
+  "match": [
+   "G1"
+  ],
+  "match_ru": [
+   "G1"
+  ],
+  "scope": "all",
+  "en": "Goal: analog and NISQ many-body simulation — count, native connectivity and coherence on 10²–10⁴ physical qubits, no error correction",
+  "ru": "Цель: аналоговая и NISQ-симуляция многочастичной физики — число, нативная связность и когерентность на 10²–10⁴ физических кубитах, без QEC",
+  "src": "§1.3",
+  "confidence": "defined"
+ },
+ {
+  "id": "goal-G2",
+  "match": [
+   "G2"
+  ],
+  "match_ru": [
+   "G2"
+  ],
+  "scope": "all",
+  "en": "Goal: error-mitigated utility circuits — 100–150 qubits and 10³–10⁴ two-qubit gates, on channel quality at scale and shot throughput",
+  "ru": "Цель: схемы с error mitigation — 100–150 кубитов и 10³–10⁴ двухкубитных гейтов, на качестве канала в масштабе и пропускной способности по шотам",
+  "src": "§1.3",
+  "confidence": "defined"
+ },
+ {
+  "id": "goal-G3",
+  "match": [
+   "G3"
+  ],
+  "match_ru": [
+   "G3"
+  ],
+  "scope": "all",
+  "en": "Goal: early fault tolerance — 10²–10³ logical qubits and 10⁵–10⁶ Toffolis on 10⁴–10⁵ physical qubits, 2027–2031",
+  "ru": "Цель: ранняя отказоустойчивость — 10²–10³ логических кубитов и 10⁵–10⁶ Тоффоли на 10⁴–10⁵ физических, 2027–2031",
+  "src": "§1.3",
+  "confidence": "defined"
+ },
+ {
+  "id": "goal-G4",
+  "match": [
+   "G4"
+  ],
+  "match_ru": [
+   "G4"
+  ],
+  "scope": "all",
+  "en": "Goal: large-scale fault tolerance — 10³ or more logical qubits and 10⁹–10¹⁰ Toffolis, clock first, on 10⁵–10⁷ physical qubits in the 2030s",
+  "ru": "Цель: крупномасштабная отказоустойчивость — от 10³ логических кубитов и 10⁹–10¹⁰ Тоффоли, такт важнее всего, 10⁵–10⁷ физических в 2030-е",
+  "src": "§1.3",
+  "confidence": "defined"
+ },
+ {
+  "id": "goal-G5",
+  "match": [
+   "G5"
+  ],
+  "match_ru": [
+   "G5"
+  ],
+  "scope": "all",
+  "en": "Goal: heuristic optimization and annealing — available now and contested, with no proven quantum advantage",
+  "ru": "Цель: эвристическая оптимизация и отжиг — доступна сейчас и спорна, доказанного квантового преимущества нет",
+  "src": "§1.3",
+  "confidence": "defined"
+ },
+ {
+  "id": "goal-G6",
+  "match": [
+   "G6"
+  ],
+  "match_ru": [
+   "G6"
+  ],
+  "scope": "all",
+  "en": "Goal: networking and distributed quantum computing — quantum-internet nodes and inter-module links, on photonic interface rate, fidelity and memory",
+  "ru": "Цель: сети и распределённые вычисления — узлы квантового интернета и межмодульные линки, на скорости и fidelity фотонного интерфейса и памяти",
+  "src": "§1.3",
+  "confidence": "defined"
+ },
+ {
+  "id": "goal-G7",
+  "match": [
+   "G7"
+  ],
+  "match_ru": [
+   "G7"
+  ],
+  "scope": "all",
+  "en": "Goal: deployable, sovereign or HPC-embedded systems — racks without a dilution fridge, judged on footprint, power and integration",
+  "ru": "Цель: развёртываемые, суверенные или встраиваемые в HPC системы — стойки без dilution-рефрижератора: габариты, мощность, интеграция",
+  "src": "§1.3",
+  "confidence": "defined"
+ },
+ {
+  "id": "station",
+  "match": [
+   "station",
+   "stations"
+  ],
+  "match_ru": [
+   "станция",
+   "станции",
+   "станций",
+   "станцию",
+   "станцией",
+   "станциями"
+  ],
+  "scope": "first",
+  "en": "A technology as the map draws it: a node of the graph — the same thing the field calls a technology, under one of three names",
+  "ru": "Технология в том виде, как её рисует карта: узел графа — то же самое, что отрасль зовёт технологией",
+  "src": "§8 / About",
+  "confidence": "defined"
+ },
+ {
+  "id": "path",
+  "match": [
+   "path",
+   "paths"
+  ],
+  "match_ru": [
+   "путь",
+   "пути",
+   "путей",
+   "путём",
+   "путям"
+  ],
+  "scope": "first",
+  "en": "A platform drawn as one station per layer through the ten-layer stack; alternates are listed in each slot and the first is the primary",
+  "ru": "Платформа, проведённая по одной станции на слой через десятислойный стек; альтернативы перечислены в слоте, первая — основная",
+  "src": "§7.1",
+  "confidence": "defined"
+ },
+ {
+  "id": "lens",
+  "match": [
+   "lens",
+   "lenses"
+  ],
+  "match_ru": [
+   "линза",
+   "линзы",
+   "линзу",
+   "линзой",
+   "линз"
+  ],
+  "scope": "first",
+  "en": "A view that recolours every station on the map by one attribute at a time, its legend doubling as a filter",
+  "ru": "Режим, в котором карта перекрашивает каждую станцию по одному атрибуту, а легенда служит фильтром",
+  "src": "§7.9 / About",
+  "confidence": "defined"
+ },
+ {
+  "id": "isolate",
+  "match": [
+   "isolate",
+   "isolated",
+   "isolated path"
+  ],
+  "match_ru": [
+   "изоляция",
+   "изоляции",
+   "изолированный путь",
+   "изолированного пути"
+  ],
+  "scope": "first",
+  "en": "Showing one path alone: its stations stay lit and the rest dims — one term of the intersection of path, station, lens value and machine that decides what is lit",
+  "ru": "Показ одного пути: его станции остаются зажжёнными, остальное гаснет — член пересечения пути, станции, значения линзы и машины, решающего, что подсвечено",
+  "src": "§7.12 / About",
+  "confidence": "usage"
+ },
+ {
+  "id": "machine",
+  "match": [
+   "machine",
+   "machines"
+  ],
+  "match_ru": [
+   "машина",
+   "машины",
+   "машин",
+   "машине",
+   "машину"
+  ],
+  "scope": "first",
+  "en": "One row of the register: a named system an organisation has built, announced or planned",
+  "ru": "Одна строка реестра: именованная система, которую организация построила, анонсировала или запланировала",
+  "src": "§8",
+  "confidence": "defined"
+ },
+ {
+  "id": "machines-register",
+  "match": [
+   "machines register",
+   "Quantum Machines Register",
+   "the register",
+   "register"
+  ],
+  "match_ru": [
+   "реестр машин",
+   "Реестр квантовых машин",
+   "реестра",
+   "реестр",
+   "реестре"
+  ],
+  "scope": "first",
+  "en": "The Quantum Machines Register: 136 machines built, announced or planned, each joined to the map as an instance of one path, station by station",
+  "ru": "Реестр квантовых машин: 136 построенных, анонсированных или запланированных машин, каждая присоединена к карте как экземпляр пути, станция за станцией",
+  "src": "§8 / About",
+  "confidence": "defined"
+ },
+ {
+  "id": "path-instance",
+  "match": [
+   "path instance"
+  ],
+  "match_ru": [
+   "экземпляр пути",
+   "экземпляра пути",
+   "экземпляром пути"
+  ],
+  "scope": "first",
+  "en": "A machine placed on the map: one station per layer, primary or alternate, with a gap wherever the map has no station for what it actually runs",
+  "ru": "Машина, размещённая на карте: по станции на слой, основной или альтернативной, и пробел там, где у карты нет станции для того, что машина реально делает",
+  "src": "§7.12",
+  "confidence": "defined"
+ },
+ {
+  "id": "evidence-cell",
+  "match": [
+   "evidence cell",
+   "evidence cells"
+  ],
+  "match_ru": [
+   "ячейка свидетельств",
+   "ячейки свидетельств",
+   "ячеек свидетельств",
+   "ячейках свидетельств"
+  ],
+  "scope": "first",
+  "en": "One machine by one layer of the stack: the station the machine uses there with the document that shows it; a machine has about a dozen",
+  "ru": "Одна машина на один слой стека: станция, которую машина там использует, с документом, который это показывает; у машины их около дюжины",
+  "src": "§8",
+  "confidence": "defined"
+ },
+ {
+  "id": "documented-cell",
+  "match": [
+   "documented",
+   "documented cell"
+  ],
+  "match_ru": [
+   "документирована",
+   "документированная",
+   "документировано",
+   "документированных"
+  ],
+  "scope": "first",
+  "en": "A cell a paper, whitepaper or figure was seen to support (✅), as against a press-level cell backed only by a press page or an inference (🔎)",
+  "ru": "Ячейка, которую подтверждает увиденная статья, whitepaper или рисунок (✅), в отличие от ячейки на уровне прессы (🔎)",
+  "src": "§8",
+  "confidence": "defined"
+ },
+ {
+  "id": "gap",
+  "match": [
+   "gap",
+   "gaps"
+  ],
+  "match_ru": [
+   "пробел",
+   "пробела",
+   "пробелы",
+   "пробелов",
+   "пробелом"
+  ],
+  "scope": "first",
+  "en": "A layer where the map has no station for what the machine actually runs, or where the machine discloses nothing",
+  "ru": "Слой, на котором у карты нет станции под то, что машина реально делает, или машина ничего не раскрывает",
+  "src": "§7.12",
+  "confidence": "defined"
+ },
+ {
+  "id": "gap-share",
+  "match": [
+   "gap share"
+  ],
+  "match_ru": [
+   "доля пробелов",
+   "доли пробелов",
+   "долю пробелов"
+  ],
+  "scope": "first",
+  "en": "The share of machines whose primary cell in a layer is a gap — the register disclosure profile, largest for code, decoder and interconnect",
+  "ru": "Доля машин, у которых основная ячейка слоя — пробел: профиль раскрытия реестра, наибольший для кода, декодера и межсоединения",
+  "src": "§8.2",
+  "confidence": "defined"
+ },
+ {
+  "id": "hero-pair",
+  "match": [
+   "hero pair",
+   "hero pairs",
+   "hero-pair"
+  ],
+  "match_ru": [
+   "рекордная пара",
+   "рекордные пары",
+   "рекордных пар"
+  ],
+  "scope": "first",
+  "en": "A record two-qubit number measured on one hand-picked pair rather than across the device; excluded from the register family medians and bests",
+  "ru": "Рекордное двухкубитное число, измеренное на одной отобранной паре, а не по всему устройству; из медиан и лучших значений семейств исключено",
+  "src": "§8.4 / §8.5",
+  "confidence": "usage"
+ },
+ {
+  "id": "gate-capable",
+  "match": [
+   "gate-capable"
+  ],
+  "match_ru": [
+   "с гейтами",
+   "устройство с гейтами"
+  ],
+  "scope": "first",
+  "en": "A device that additionally runs an entangling gate; analog simulators, tweezer arrays without a gate and single-qubit testbeds are devices but not processors",
+  "ru": "Устройство, которое вдобавок выполняет перепутывающий гейт; аналоговые симуляторы, массивы пинцетов без гейта и однокубитные стенды им не являются",
+  "src": "§8",
+  "confidence": "defined"
+ },
+ {
+  "id": "device",
+  "match": [
+   "device",
+   "devices"
+  ],
+  "match_ru": [
+   "устройство",
+   "устройства",
+   "устройств",
+   "устройстве",
+   "устройству"
+  ],
+  "scope": "first",
+  "en": "A machine whose status is deployed, demonstrated or retired and that is not flagged as a target or a component",
+  "ru": "Машина со статусом в эксплуатации, продемонстрирована или выведена, не помеченная как цель или компонент",
+  "src": "§8",
+  "confidence": "defined"
+ },
+ {
+  "id": "design-attribute",
+  "match": [
+   "design attribute",
+   "design attributes",
+   "seven attributes"
+  ],
+  "match_ru": [
+   "атрибут проектирования",
+   "атрибутами проектирования",
+   "семь атрибутов",
+   "семью атрибутами"
+  ],
+  "scope": "first",
+  "en": "One of seven node properties (a)–(g) that do not move as records improve: carrier affinity, time, measurement, mobility, control, errors, manufacturing",
+  "ru": "Одно из семи свойств узла (a)–(g), которые не сдвигаются с ростом рекордов: сродство носителя, время, измерение, подвижность, управление, ошибки, производство",
+  "src": "§7.1",
+  "confidence": "defined"
+ },
+ {
+  "id": "evaluation-attribute",
+  "match": [
+   "evaluation-space attribute",
+   "evaluation-space attributes"
+  ],
+  "match_ru": [
+   "атрибут пространства оценки",
+   "атрибуты пространства оценки",
+   "атрибутами пространства оценки"
+  ],
+  "scope": "first",
+  "en": "Anything that moves with records — fidelity, Λ, counts, cycle times, QBI stage, funding — dated and sourced, attached to a node, never used for position",
+  "ru": "Всё, что сдвигается с рекордами: fidelity, Λ, счёт, такт, стадия QBI, финансирование — датировано, с источником, для позиционирования не используется",
+  "src": "§7.1",
+  "confidence": "defined"
+ },
+ {
+  "id": "annotation",
+  "match": [
+   "annotation",
+   "annotations"
+  ],
+  "match_ru": [
+   "аннотация",
+   "аннотации",
+   "аннотаций"
+  ],
+  "scope": "first",
+  "en": "Actors and goals attached to a path — the third space, kept apart from design attributes and dated evaluation attributes",
+  "ru": "Акторы и цели, прикреплённые к пути: третье пространство, отделённое от атрибутов проектирования и датированных атрибутов оценки",
+  "src": "§7.1",
+  "confidence": "defined"
+ },
+ {
+  "id": "off-diagonal",
+  "match": [
+   "off-diagonal"
+  ],
+  "match_ru": [
+   "off-diagonal",
+   "внедиагональный"
+  ],
+  "scope": "first",
+  "en": "The map own term: a node that breaks the natural to fabricated correlation in the path that uses it, such as a natural carrier under microwave control",
+  "ru": "Собственный термин карты: узел, ломающий корреляцию естественный–изготовленный в использующем его пути, например естественный носитель под СВЧ-управлением",
+  "src": "§7.1",
+  "confidence": "defined"
+ },
+ {
+  "id": "hub",
+  "match": [
+   "hub",
+   "hubs"
+  ],
+  "match_ru": [
+   "хаб",
+   "хабы",
+   "хаба",
+   "хабов"
+  ],
+  "scope": "first",
+  "en": "A node whose dependency reach spans three or more carrier families — two for a technology that reached hardware in 2023 or later",
+  "ru": "Узел, чей охват зависимостей покрывает не менее трёх семейств носителей — двух для технологии, дошедшей до железа в 2023 году или позже",
+  "src": "§7.1",
+  "confidence": "defined"
+ },
+ {
+  "id": "empty-slot",
+  "match": [
+   "empty slot",
+   "empty slots"
+  ],
+  "match_ru": [
+   "пустой слот",
+   "пустые слоты",
+   "пустых слотов"
+  ],
+  "scope": "first",
+  "en": "A node with no demonstrated technology, or a path slot with nothing in it; drawn as a hollow dashed station",
+  "ru": "Узел без продемонстрированной технологии или слот пути, в котором ничего нет; рисуется пустой пунктирной станцией",
+  "src": "§7.1",
+  "confidence": "defined"
+ },
+ {
+  "id": "forecast-ledger",
+  "match": [
+   "forecast ledger"
+  ],
+  "match_ru": [
+   "реестр прогнозов",
+   "реестра прогнозов"
+  ],
+  "scope": "first",
+  "en": "The table of dated forecasts — indicator, value today, expected values, basis, confidence and falsifier — that the next editions score in public",
+  "ru": "Таблица датированных прогнозов: индикатор, значение сегодня, ожидаемые значения, основание, уверенность и опровергающее условие; их публично оценят следующие издания",
+  "src": "§8.5",
+  "confidence": "defined"
+ },
+ {
+  "id": "roadmap-verdict",
+  "match": [
+   "roadmap verdict",
+   "roadmap feasibility"
+  ],
+  "match_ru": [
+   "вердикт дорожной карты",
+   "осуществимость дорожной карты"
+  ],
+  "scope": "first",
+  "en": "The register feasibility check of a published roadmap against its target algorithm: FEASIBLE, SHORT with a deficit, or NOT EVALUABLE",
+  "ru": "Проверка реестром опубликованной дорожной карты на осуществимость её целевого алгоритма: FEASIBLE, SHORT с дефицитом или NOT EVALUABLE",
+  "src": "§8",
+  "confidence": "defined"
+ },
+ {
+  "id": "maturity-index",
+  "match": [
+   "maturity index"
+  ],
+  "match_ru": [
+   "индекс зрелости",
+   "индекса зрелости"
+  ],
+  "scope": "first",
+  "en": "The sum of the six axis scores — not a ranking of usefulness, which is decided by goal in §4",
+  "ru": "Сумма оценок по шести осям — не рейтинг полезности: полезность решается по целям в §4",
+  "src": "§1.2",
+  "confidence": "defined"
+ },
+ {
+  "id": "count-with-quality",
+  "match": [
+   "count-with-quality",
+   "count with quality",
+   "Scale with quality"
+  ],
+  "match_ru": [
+   "счёт кубитов с качеством",
+   "число кубитов с качеством",
+   "масштаб с качеством"
+  ],
+  "scope": "first",
+  "en": "One of the four outputs a technology choice shifts: how many qubits simultaneously meet the axis-A quality, and with what connectivity",
+  "ru": "Один из четырёх выходов, которые сдвигает выбор технологии: сколько кубитов одновременно удовлетворяют качеству оси A и с какой связностью",
+  "src": "§1.2 / §7.1",
+  "confidence": "defined"
+ },
+ {
+  "id": "channel-quality",
+  "match": [
+   "channel quality",
+   "Channel quality at scale",
+   "error channel"
+  ],
+  "match_ru": [
+   "качество канала",
+   "качества канала",
+   "канал ошибок"
+  ],
+  "scope": "first",
+  "en": "Axis A: two-qubit and SPAM error under full-width parallel operation, together with the structure of the error classes",
+  "ru": "Ось A: двухкубитная ошибка и ошибка SPAM при параллельной работе на полную ширину вместе со структурой классов ошибок",
+  "src": "§1.2",
+  "confidence": "defined"
+ },
+ {
+  "id": "io-wall",
+  "match": [
+   "I/O wall"
+  ],
+  "match_ru": [
+   "стена I/O",
+   "стены I/O",
+   "стена ввода-вывода"
+  ],
+  "scope": "first",
+  "en": "The wiring and connector limit that caps how many qubits one fridge can hold — the binding constraint for superconducting and spin platforms at 10⁴ qubits",
+  "ru": "Предел разводки и разъёмов, ограничивающий число кубитов в одном криостате: связывающее ограничение для сверхпроводников и спинов при 10⁴ кубитов",
+  "src": "§2.1 / §5.1",
+  "confidence": "usage"
+ },
+ {
+  "id": "count-race",
+  "match": [
+   "count race"
+  ],
+  "match_ru": [
+   "гонка за числом",
+   "гонку за числом",
+   "гонки за числом"
+  ],
+  "scope": "first",
+  "en": "The competition on physical qubit count, which the register shows has stalled: the gate-capable frontiers have not moved for three and four years",
+  "ru": "Соревнование по числу физических кубитов, которое, как показывает реестр, застопорилось: фронтиры машин с гейтами не двигались три и четыре года",
+  "src": "§0 / §8.6",
+  "confidence": "usage"
+ },
+ {
+  "id": "announcement-gap",
+  "match": [
+   "announcement gap"
+  ],
+  "match_ru": [
+   "разрыв анонсов",
+   "разрыва анонсов"
+  ],
+  "scope": "first",
+  "en": "The widening share of the newest cohort that is announcements and plans rather than delivered devices — 43 % in 2026 against 4 % in 2024",
+  "ru": "Растущая доля новейшей когорты, приходящаяся на анонсы и планы, а не на поставленные устройства: 43 % в 2026 против 4 % в 2024",
+  "src": "§8.4 H7",
+  "confidence": "defined"
+ },
+ {
+  "id": "cohort",
+  "match": [
+   "cohort",
+   "cohorts"
+  ],
+  "match_ru": [
+   "когорта",
+   "когорты",
+   "когорт",
+   "когорте",
+   "когортам"
+  ],
+  "scope": "first",
+  "en": "The year of the register status date for a machine — it mixes first light, general availability and the latest milestone",
+  "ru": "Год даты статуса машины в реестре — он смешивает первый свет, общедоступность и последнюю веху",
+  "src": "§8 / §8.7",
+  "confidence": "defined"
+ },
+ {
+  "id": "locator",
+  "match": [
+   "locator",
+   "evidence locator"
+  ],
+  "match_ru": [
+   "локатор",
+   "локатора",
+   "локаторов"
+  ],
+  "scope": "first",
+  "en": "The pointer inside a cited document — page, figure or table — that shows the station in that machine; it is printed in small type under the evidence",
+  "ru": "Указатель внутри цитируемого документа — страница, рисунок или таблица, — который показывает станцию в этой машине; печатается мелким шрифтом под свидетельством",
+  "src": "§7.12",
+  "confidence": "usage"
+ },
+ {
+  "id": "evidence-grade",
+  "match": [
+   "evidence grade"
+  ],
+  "match_ru": [
+   "класс свидетельств",
+   "класса свидетельств",
+   "классом свидетельств"
+  ],
+  "scope": "first",
+  "en": "The documented share of the cells a count rests on: how much of the claim would survive if press claims were struck",
+  "ru": "Документированная доля ячеек, на которых стоит число: какая часть утверждения уцелеет, если вычеркнуть заявления прессы",
+  "src": "§8",
+  "confidence": "defined"
+ },
+ {
+  "id": "technology-brief",
+  "match": [
+   "technology brief",
+   "brief",
+   "briefs"
+  ],
+  "match_ru": [
+   "бриф",
+   "брифы",
+   "брифов",
+   "брифе"
+  ],
+  "scope": "first",
+  "en": "The article on one technology, with the same skeleton from identity and physics through manufacturing, verification and actors to outlook, sources and open items",
+  "ru": "Статья об одной технологии с единым скелетом: от идентичности и физики через производство, верификацию и акторов к перспективам, источникам и открытым пунктам",
+  "src": "About",
+  "confidence": "defined"
+ },
+ {
+  "id": "edition",
+  "match": [
+   "edition",
+   "editions"
+  ],
+  "match_ru": [
+   "издание",
+   "издания",
+   "изданий",
+   "издании",
+   "изданиям"
+  ],
+  "scope": "first",
+  "en": "A dated release of the whole map (2026.09), archived with its own DOI; the next edition scores the forecasts of this one",
+  "ru": "Датированный выпуск всей карты (2026.09), архивируемый с собственным DOI; следующее издание оценивает прогнозы предыдущего",
+  "src": "About / §8.5",
+  "confidence": "defined"
+ },
+ {
+  "id": "cut-off",
+  "match": [
+   "cut-off",
+   "cut"
+  ],
+  "match_ru": [
+   "срез",
+   "срезе",
+   "дата среза"
+  ],
+  "scope": "first",
+  "en": "The status date every number is read at: 4 September 2026 for the report and 17 September 2026 for the register, announcements checked to 20 September",
+  "ru": "Дата статуса, на которую читается каждое число: 4 сентября 2026 для отчёта и 17 сентября 2026 для реестра, анонсы проверены по 20 сентября",
+  "src": "Header / §6.1",
+  "confidence": "usage"
+ },
+ {
+  "id": "reading-marks",
+  "match": [
+   "reading marks"
+  ],
+  "match_ru": [
+   "знаки чтения"
+  ],
+  "scope": "first",
+  "en": "The glyphs and badges on a station that mark it as a hub, off-diagonal or an empty slot, with legend keys that count them and no lens of their own",
+  "ru": "Значки на станции, отмечающие её как хаб, off-diagonal или пустой слот, с ключами легенды, которые их считают, и без собственной линзы",
+  "src": "Map rules (build/map_js.py)",
+  "confidence": "usage"
+ },
+ {
+  "id": "primary-alternate",
+  "match": [
+   "primary",
+   "alternate",
+   "alternates"
+  ],
+  "match_ru": [
+   "основная",
+   "основной",
+   "альтернатива",
+   "альтернативы",
+   "альтернативная"
+  ],
+  "scope": "first",
+  "en": "Within a layer slot the first technology listed is the primary, the ones after it the alternates a path may use instead",
+  "ru": "В слоте слоя первая перечисленная технология — основная, следующие за ней — альтернативы, которые путь может использовать вместо неё",
+  "src": "§7.1 / §7.3",
+  "confidence": "defined"
+ },
+ {
+  "id": "layer",
+  "match": [
+   "layer",
+   "layers"
+  ],
+  "match_ru": [
+   "слой",
+   "слоя",
+   "слои",
+   "слоёв",
+   "слое",
+   "слоям"
+  ],
+  "scope": "first",
+  "en": "One of the ten columns of the stack: carrier, encoding, gate mechanism, connectivity, control, readout, code, decoder, interconnect, manufacturing",
+  "ru": "Один из десяти столбцов стека: носитель, кодирование, механизм гейта, связность, управление, считывание, код, декодер, межсоединение, производство",
+  "src": "§7.1",
+  "confidence": "defined"
+ },
+ {
+  "id": "family",
+  "match": [
+   "family",
+   "families"
+  ],
+  "match_ru": [
+   "семейство",
+   "семейства",
+   "семейств",
+   "семействе",
+   "семействам"
+  ],
+  "scope": "first",
+  "en": "A machine qubit platform: superconducting circuits, trapped ions, neutral atoms, photonics, semiconductor spins, defect spins, topological, annealers",
+  "ru": "Кубитная платформа машины: сверхпроводниковые схемы, ионы, нейтральные атомы, фотоника, полупроводниковые и дефектные спины, топологические, отжигатели",
+  "src": "§8",
+  "confidence": "defined"
+ },
+ {
+  "id": "attempt",
+  "match": [
+   "attempt",
+   "attempts"
+  ],
+  "match_ru": [
+   "попытка",
+   "попытки",
+   "попыток"
+  ],
+  "scope": "first",
+  "en": "One machine read as an argument: this combination of stations will reach the goal before the others — the register holds 136 such attempts",
+  "ru": "Одна машина, прочитанная как аргумент: именно это сочетание станций дойдёт до цели раньше других; в реестре 136 таких попыток",
+  "src": "§8 / §8.3",
+  "confidence": "defined"
+ },
+ {
+  "id": "architecture",
+  "match": [
+   "architecture",
+   "architectures"
+  ],
+  "match_ru": [
+   "архитектура",
+   "архитектуры",
+   "архитектур",
+   "архитектуре"
+  ],
+  "scope": "first",
+  "en": "The map path a machine instantiates: its family plus the choice of encoding, gate and control that defines it — the register holds 14",
+  "ru": "Путь карты, который реализует машина: семейство плюс выбор кодирования, гейта и управления, который его определяет; в реестре их 14",
+  "src": "§8",
+  "confidence": "defined"
+ },
+ {
+  "id": "link-station",
+  "match": [
+   "link station",
+   "link stations"
+  ],
+  "match_ru": [
+   "станция связи",
+   "станции связи",
+   "станций связи"
+  ],
+  "scope": "first",
+  "en": "A non-gap entry in the interconnect layer — a demonstrated way of joining modules",
+  "ru": "Непустая запись в слое межсоединений: продемонстрированный способ соединить модули",
+  "src": "§8",
+  "confidence": "defined"
+ },
+ {
+  "id": "integrated-control",
+  "match": [
+   "integrated control"
+  ],
+  "match_ru": [
+   "интегрированное управление",
+   "интегрированного управления"
+  ],
+  "scope": "first",
+  "en": "Qubits driven by electronics on the chip or inside the cryostat rather than by room-temperature racks or free-space optics",
+  "ru": "Кубиты управляются электроникой на чипе или внутри криостата, а не стойками при комнатной температуре и не оптикой в свободном пространстве",
+  "src": "§8",
+  "confidence": "defined"
+ },
+ {
+  "id": "closed-loop-decoding",
+  "match": [
+   "closed-loop decoding",
+   "decoder in the loop"
+  ],
+  "match_ru": [
+   "замкнутое декодирование",
+   "декодер в контуре"
+  ],
+  "scope": "first",
+  "en": "The error-correction decoder acts within the cycle rather than after the run",
+  "ru": "Декодер коррекции ошибок действует внутри такта, а не после прогона",
+  "src": "§8",
+  "confidence": "defined"
+ },
+ {
+  "id": "machine-selector",
+  "match": [
+   "Machine selector",
+   "machine selector"
+  ],
+  "match_ru": [
+   "селектор машины",
+   "селектора машины"
+  ],
+  "scope": "first",
+  "en": "The control that lights one registered machine stations along its family path, dims the rest and marks the layers where that machine has a gap",
+  "ru": "Управление, которое подсвечивает станции одной зарегистрированной машины вдоль пути её семейства, гасит остальные и помечает слои, где у машины пробел",
+  "src": "§7.12",
+  "confidence": "defined"
+ },
+ {
+  "id": "interchange",
+  "match": [
+   "interchange",
+   "interchanges",
+   "transfer hub"
+  ],
+  "match_ru": [
+   "пересадочная",
+   "пересадочные",
+   "хаб переноса"
+  ],
+  "scope": "first",
+  "en": "A station that several platform paths run through — the transfers degree of a node at a glance",
+  "ru": "Станция, через которую проходит несколько путей платформ: степень переносов узла с одного взгляда",
+  "src": "About / §7.9",
+  "confidence": "defined"
+ }
+]
