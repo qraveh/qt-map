@@ -520,10 +520,10 @@
    "отказоустойчивости"
   ],
   "scope": "first",
-  "en": "Fault tolerance: the state in which a machine keeps computing correctly however long the circuit runs, because errors are mended faster than made",
-  "ru": "Отказоустойчивость: состояние, в котором машина считает верно при сколь угодно длинной схеме, потому что ошибки исправляются быстрее, чем возникают",
+  "en": "Fault tolerance: errors, including those made while correcting, are caught faster than they arise, so enlarging the code drives the logical error down — correction is the mechanism, tolerance the property",
+  "ru": "Отказоустойчивость: ошибки, включая допущенные при самой коррекции, ловятся быстрее, чем возникают, и рост кода снижает логическую ошибку — коррекция есть механизм, устойчивость — свойство",
   "src": "standard",
-  "why": "The destination of the whole report, abbreviated to two letters in tables where the manager first meets it"
+  "why": "§0 uses fault tolerance next to error correction and error suppression; the reader needs the three told apart"
  },
  {
   "id": "term-break-even",
@@ -1254,10 +1254,10 @@
    "отжига"
   ],
   "scope": "first",
-  "en": "A special-purpose machine that settles into low-energy solutions by cooling slowly — it runs no gates and corrects no errors",
-  "ru": "Машина специального назначения, которая медленно остывает в решения с низкой энергией: она не выполняет гейтов и не исправляет ошибок",
+  "en": "A special-purpose quantum machine: a problem settles into a low-energy answer as quantum fluctuations are slowly switched off — no gate circuit, no fault-tolerant error correction, only mitigation",
+  "ru": "Специализированная квантовая машина: задача оседает в низкоэнергетический ответ по мере медленного выключения квантовых флуктуаций — без схемы гейтов и без отказоустойчивой коррекции, лишь смягчение ошибок",
   "src": "standard",
-  "why": "The investor knows the vendor and may assume it is a general machine; the two exclusions are the hint"
+  "why": "verified 22 Sep 2026: D-Wave docs describe annealing only; error handling is calibration/drift mitigation plus user-level encodings (QAC), no threshold theorem"
  },
  {
   "id": "abbr-rsa2048",
@@ -1569,5 +1569,86 @@
   "ru": "Распространение доверия: декодер, гоняющий вероятности по сети проверок, пока они не согласуются, — быстрый выбор для плотных кодов",
   "src": "standard",
   "why": "Named beside the matching decoder as the alternative; two letters that otherwise read as an oil company"
+ },
+ {
+  "id": "term-error-suppression",
+  "match": [
+   "below-threshold scaling",
+   "error suppression",
+   "Below-threshold scaling"
+  ],
+  "match_ru": [
+   "масштабирование ниже порога",
+   "подавления ошибок",
+   "Масштабирование ниже порога"
+  ],
+  "scope": "first",
+  "re": null,
+  "en": "The logical error falls each time the code is enlarged — the observable sign that correction is winning on that hardware; its size is the factor Λ per two steps of distance",
+  "ru": "Логическая ошибка падает при каждом увеличении кода — наблюдаемый признак того, что коррекция на этом железе выигрывает; её величина — коэффициент Λ на два шага расстояния",
+  "src": "§0/§2.1",
+  "why": "§0 claim 2 rests on it; readers conflate it with fault tolerance and with error correction"
+ },
+ {
+  "id": "term-memory-experiment",
+  "match": [
+   "stored qubit",
+   "memory experiment",
+   "in memory",
+   "logical memory"
+  ],
+  "match_ru": [
+   "хранимого кубита",
+   "память",
+   "логической памяти",
+   "логическая память"
+  ],
+  "scope": "first",
+  "re": null,
+  "en": "The encoded qubit is only kept — corrected round after round, never operated on; the first and easiest test of a code, and what the scaling result so far covers",
+  "ru": "Закодированный кубит лишь хранят — исправляют раунд за раундом, не выполняя над ним операций; первый и самый лёгкий тест кода, и именно его пока покрывает результат по масштабированию",
+  "src": "§0/§2.1",
+  "why": "\"in memory\" is the load-bearing qualifier of claim 2",
+  "only": [
+   "0",
+   "2",
+   "3"
+  ]
+ },
+ {
+  "id": "term-qec-cycle",
+  "match": [
+   "correction cycle",
+   "QEC cycle",
+   "cycle time",
+   "QEC-cycle"
+  ],
+  "match_ru": [
+   "такт коррекции",
+   "такт QEC",
+   "время такта",
+   "QEC-цикл"
+  ],
+  "scope": "first",
+  "re": null,
+  "en": "One round of error correction — measure all the checks, decode, correct — the clock of protected computation: about a microsecond on superconducting circuits, a millisecond on ions and atoms",
+  "ru": "Один раунд коррекции ошибок: измерить все проверки, декодировать, исправить — такт защищённого вычисления; около микросекунды у сверхпроводниковых схем, миллисекунда у ионов и атомов",
+  "src": "§0/§1.2",
+  "why": "claims 1 and 3 turn on the cycle; \"clock\" and \"cycle\" are used as one thing"
+ },
+ {
+  "id": "helix-code",
+  "match": [
+   "[[20,2,6]]"
+  ],
+  "match_ru": [
+   "[[20,2,6]]"
+  ],
+  "scope": "all",
+  "re": null,
+  "en": "Quantinuum's Helix code: 20 physical ions carrying 2 protected qubits at distance 6 (any error on fewer than 6 ions is detectable) — a preprint of September 2026, not yet peer-reviewed",
+  "ru": "Код Helix от Quantinuum: 20 физических ионов несут 2 защищённых кубита при расстоянии 6, так что любая ошибка менее чем на 6 из них обнаружима — препринт сентября 2026, ещё не рецензирован",
+  "src": "§0/[I28]",
+  "why": "the editor asked for the code to be explained where §0 cites it"
  }
 ]
