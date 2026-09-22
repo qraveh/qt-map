@@ -487,8 +487,49 @@ def selections(pw):
     return fails
 
 
+def hints(pw):
+    """21–22 Sep 2026: term hints. The "Why" paragraph of About and the paragraphs that define terms carry none; a hint shows on hover
+    and stays while the pointer moves into it; a click pins it; its text is selectable; Escape hides it; the hypothesis labels "H1 — …"
+    are anchors, not hinted tokens; every hint key has a text; the masthead title carries no edition."""
+    fails, errors = [], []
+    b = pw.chromium.launch(); ctx = b.new_context(viewport={'width': 1200, 'height': 800}); p = ctx.new_page()
+    def check(label, cond, detail=''):
+        print(f"  [{'ok' if cond else 'FAIL'}] {label}{(' — ' + str(detail)) if (detail and not cond) else ''}")
+        if not cond: fails.append(label)
+    print('hints — 1200×800')
+    p.on('console', lambda m: m.type == 'error' and errors.append(m.text)); p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
+    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000)
+    p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0", timeout=60000)
+    check('title without edition', p.evaluate("()=>document.querySelector('h1.title').textContent.trim()") == 'Quantum Technology Map')
+    why = p.evaluate("()=>{const ps=[...document.querySelectorAll('div.prose.lang-en p')]; const w=ps.find(x=>x.textContent.startsWith('Why a Quantum Technology Map')); return w?w.querySelectorAll('.tt').length:-1;}")
+    check('the "Why" paragraph of About carries no hints', why == 0, why)
+    defs = p.evaluate("()=>[...document.querySelectorAll('div.prose.lang-en p[data-nohint]')].map(x=>[x.textContent.slice(0,30), x.querySelectorAll('.tt').length])")
+    check('definition paragraphs carry no hints (≥ 8 marked, 0 hints)', len(defs) >= 8 and all(n == 0 for _, n in defs), defs[:4])
+    lab = p.evaluate("()=>[...document.querySelectorAll('div.prose.lang-en p[id^=en-h] > strong')].filter(s=>s.querySelector('.tt[data-t=hypothesis-id]')).length")
+    check('the H1–H8 labels themselves are not hinted tokens', lab == 0, lab)
+    keys = p.evaluate("()=>{const T=window.__TIPS||{}; const ks=[...new Set([...document.querySelectorAll('.tt[data-t]')].map(e=>e.dataset.t))]; return [ks.length, ks.filter(k=>!(T.en&&T.en[k])||!(T.ru&&T.ru[k])).length];}")
+    check('every hint key has an EN and a RU text', keys[0] > 100 and keys[1] == 0, keys)
+    el = p.locator('div.prose.lang-en .tt').first; el.scroll_into_view_if_needed(); el.hover(); p.wait_for_timeout(300)
+    vis = p.evaluate("()=>{const t=document.getElementById('gtip'); return !t.hidden && t.textContent.length>20 && getComputedStyle(t).userSelect!=='none';}")
+    check('hover shows the hint with selectable text', vis)
+    # pointer travels into the tip: it stays
+    bb = p.evaluate("()=>{const r=document.getElementById('gtip').getBoundingClientRect(); return [r.left+10, r.top+10];}")
+    p.mouse.move(bb[0], bb[1]); p.wait_for_timeout(400)
+    check('the hint stays while the pointer is inside it', p.evaluate("()=>!document.getElementById('gtip').hidden"))
+    p.mouse.move(5, 5); p.wait_for_timeout(500)
+    check('the hint hides when the pointer leaves', p.evaluate("()=>document.getElementById('gtip').hidden"))
+    el.click(); p.wait_for_timeout(300); p.mouse.move(5, 5); p.wait_for_timeout(500)
+    check('a click pins the hint (it survives the pointer leaving)', p.evaluate("()=>{const t=document.getElementById('gtip'); return !t.hidden && t.classList.contains('pinned');}"))
+    p.keyboard.press('Escape'); p.wait_for_timeout(200)
+    check('Escape hides a pinned hint', p.evaluate("()=>document.getElementById('gtip').hidden"))
+    ctx.close(); b.close()
+    errs = [e for e in errors if not ('fonts.g' in e and ('ERR_TUNNEL' in e or 'net::' in e)) and 'ERR_TUNNEL' not in e]
+    check('0 console errors', not errs, errs[:3])
+    return fails
+
+
 if __name__ == '__main__':
     with sync_playwright() as pw:
-        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800) + sorting(pw, 1280, 900) + sorting(pw, 400, 800) + chapter8(pw, 1280, 900) + chapter8(pw, 400, 800) + laptop(pw) + selections(pw)
+        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800) + sorting(pw, 1280, 900) + sorting(pw, 400, 800) + chapter8(pw, 1280, 900) + chapter8(pw, 400, 800) + laptop(pw) + selections(pw) + hints(pw)
     print('RESULT:', 'PASS' if not f else f'FAIL {f}')
     sys.exit(1 if f else 0)

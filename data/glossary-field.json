@@ -8,10 +8,10 @@
    "2Q"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Two-qubit: a gate acting on two qubits at once, the entangling operation whose error dominates almost every error budget",
-  "ru": "Двухкубитный (2Q) — гейт, действующий сразу на два кубита; именно его ошибка доминирует почти в любом бюджете ошибок",
-  "src": "standard"
+  "en": "Two-qubit: the operation that entangles two qubits — the one whose error usually sets the limit of the whole machine",
+  "ru": "Двухкубитная операция — та, что перепутывает два кубита; именно её ошибка обычно задаёт предел всей машины",
+  "src": "standard",
+  "why": "Manager and investor meet it in every profile table; without it the percentages look interchangeable"
  },
  {
   "id": "abbr-1q",
@@ -22,10 +22,10 @@
    "1Q"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Single-qubit: a gate acting on one qubit, typically 10–100× more accurate than a two-qubit gate",
-  "ru": "Однокубитный (1Q) — гейт, действующий на один кубит; обычно в 10–100 раз точнее двухкубитного",
-  "src": "standard"
+  "en": "Single-qubit: an operation on one qubit, usually ten to a hundred times more accurate than a two-qubit one",
+  "ru": "Однокубитный: операция над одним кубитом, обычно в десятки раз точнее двухкубитной",
+  "src": "standard",
+  "why": "Paired with 2Q in the same rows; the reader needs the scale difference to read the two numbers together"
  },
  {
   "id": "abbr-spam",
@@ -36,10 +36,10 @@
    "SPAM"
   ],
   "scope": "first",
-  "re": null,
-  "en": "State preparation and measurement error — the error of initialising and reading out a qubit, separate from gate error",
-  "ru": "Ошибка подготовки состояния и измерения (SPAM) — ошибка инициализации и считывания кубита, отдельно от ошибки гейта",
-  "src": "standard"
+  "en": "State preparation and measurement: the error of setting a qubit before the circuit and reading it after, counted apart from the gates",
+  "ru": "Подготовка состояния и измерение: ошибка инициализации кубита до схемы и его считывания после, отдельно от ошибок гейтов",
+  "src": "standard",
+  "why": "Looks like the mail word; it is a third error number alongside 1Q and 2Q and is often the worst one"
  },
  {
   "id": "abbr-qec",
@@ -50,10 +50,10 @@
    "QEC"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Quantum error correction — encoding one logical qubit in many physical ones so errors are detected and fixed faster than they accumulate",
-  "ru": "Квантовая коррекция ошибок (QEC) — кодирование одного логического кубита многими физическими, чтобы ошибки выявлялись и исправлялись быстрее, чем накапливаются",
-  "src": "standard"
+  "en": "Quantum error correction: one usable qubit spread over many physical ones, so errors are caught and undone while the computation runs",
+  "ru": "Квантовая коррекция ошибок: один рабочий кубит размазан по многим физическим, чтобы ошибки ловились и исправлялись прямо во время счёта",
+  "src": "standard",
+  "why": "The pivot of the whole report; the manager meets the three letters in §0 before any explanation"
  },
  {
   "id": "abbr-qv",
@@ -64,10 +64,10 @@
    "QV"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Quantum volume — a single benchmark number (a power of 2) for the largest square random circuit a machine can run correctly",
-  "ru": "Квантовый объём (QV) — единый эталонный показатель (степень двойки): наибольшая квадратная случайная схема, которую машина выполняет верно",
-  "src": "standard"
+  "en": "Quantum volume: one number for the largest square random circuit a machine still runs correctly — a whole-machine benchmark, quoted as a power of two",
+  "ru": "Квантовый объём: одно число за наибольшую квадратную случайную схему, которую машина ещё выполняет верно, — бенчмарк всей машины, степень двойки",
+  "src": "standard",
+  "why": "Appears in a profile and in sources; an investor may remember it from press releases as the headline metric"
  },
  {
   "id": "abbr-t1",
@@ -79,9 +79,10 @@
   ],
   "scope": "first",
   "re": "\\bT_?1\\b",
-  "en": "Energy-relaxation time — how long a qubit keeps its excited state before decaying, one of the two basic coherence times",
-  "ru": "Время энергетической релаксации (T1) — как долго кубит удерживает возбуждённое состояние до распада; одно из двух базовых времён когерентности",
-  "src": "standard"
+  "en": "Energy lifetime: how long a qubit holds its excited state before it decays — one of the two clocks every circuit has to fit inside",
+  "ru": "Время энергетической релаксации: как долго кубит удерживает возбуждённое состояние; одни из двух часов, в которые должна уложиться схема",
+  "src": "standard",
+  "why": "Node tables quote T1 with no expansion; the reader must see it is a time budget, not a quality score"
  },
  {
   "id": "abbr-t2",
@@ -92,10 +93,11 @@
    "T2"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Phase-coherence time — how long a qubit keeps the phase relation of a superposition, usually measured with an echo or dynamical decoupling",
-  "ru": "Время фазовой когерентности (T2) — как долго кубит сохраняет фазовое соотношение суперпозиции; обычно измеряется с эхо или динамической развязкой",
-  "src": "standard"
+  "re": "\\bT_?2\\b",
+  "en": "Phase lifetime: how long a qubit keeps the relative phase that carries the quantum part of the information — usually the stricter of the two clocks",
+  "ru": "Время фазовой когерентности: как долго кубит удерживает относительную фазу, в которой и живёт квантовая часть информации; обычно более жёсткие из двух часов",
+  "src": "standard",
+  "why": "Quoted beside T1 everywhere; the difference between the two is what tells the reader which noise dominates"
  },
  {
   "id": "abbr-t2star",
@@ -106,10 +108,10 @@
    "T2*"
   ],
   "scope": "first",
-  "re": "T2\\^?\\*|T_2\\^\\*",
-  "en": "Free-induction (Ramsey) dephasing time — coherence without any echo pulse, so it includes slow drift and is shorter than T2",
-  "ru": "Время свободной расфазировки (T2*, Рамзей) — когерентность без эхо-импульса, включает медленный дрейф и потому короче T2",
-  "src": "standard"
+  "en": "Phase lifetime measured with no corrective pulses — the raw figure; the pulsed number is longer and is the one usually advertised",
+  "ru": "Фазовая когерентность без корректирующих импульсов — «сырая» величина; с импульсами она длиннее, и обычно рекламируют именно её",
+  "src": "standard",
+  "why": "Only in node tables, where T2 and T2* sit in the same row and the star is the whole difference"
  },
  {
   "id": "abbr-eplg",
@@ -120,10 +122,10 @@
    "EPLG"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Error per layered gate — a full-width benchmark of error in a dense layer of two-qubit gates, harder than isolated pairwise numbers",
-  "ru": "Ошибка на слоёный гейт (EPLG) — измерение ошибки в плотном слое двухкубитных гейтов по всей ширине чипа; строже изолированных парных чисел",
-  "src": "standard"
+  "en": "Error per layered gate: the error of a two-qubit layer run across the whole chip at once, instead of one gate measured on its own",
+  "ru": "Ошибка на слой гейтов: ошибка двухкубитного слоя, выполняемого сразу по всему чипу, а не одного гейта в отдельности",
+  "src": "standard",
+  "why": "IBM's fleet number; it is not comparable with the isolated-gate percentages in the same paragraph"
  },
  {
   "id": "abbr-rb",
@@ -134,10 +136,10 @@
    "RB"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Randomized benchmarking — a standard protocol that extracts average gate error from random Clifford sequences of growing length",
-  "ru": "Рандомизированный бенчмаркинг (RB) — стандартный протокол: средняя ошибка гейта извлекается из случайных клиффордовых последовательностей растущей длины",
-  "src": "standard"
+  "en": "Randomized benchmarking: the standard way to measure gate error — run random sequences and watch how fast the result decays",
+  "ru": "Рандомизированный бенчмаркинг: стандартный способ измерить ошибку гейта — прогонять случайные последовательности и смотреть, как быстро падает результат",
+  "src": "standard",
+  "why": "Node tables name the method behind the fidelity numbers; two letters otherwise unreadable"
  },
  {
   "id": "abbr-qcvv",
@@ -148,10 +150,10 @@
    "QCVV"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Quantum characterization, verification and validation — the discipline of measuring what a quantum device actually does, and proving it",
-  "ru": "Характеризация, верификация и валидация квантовых устройств (QCVV) — дисциплина измерения того, что устройство действительно делает, и доказательства этого",
-  "src": "standard"
+  "en": "Characterisation, verification and validation: the craft of measuring what a quantum machine really does and proving the measurement",
+  "ru": "Характеризация, верификация и валидация: ремесло измерения того, что машина делает на самом деле, и доказательства самого измерения",
+  "src": "standard",
+  "why": "Appears once, as the name of a whole direction; four letters with no expansion anywhere on the page"
  },
  {
   "id": "abbr-nisq",
@@ -162,25 +164,25 @@
    "NISQ"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Noisy intermediate-scale quantum — the era of machines too noisy for error correction, run as bare physical qubits",
-  "ru": "Шумные квантовые устройства промежуточного масштаба (NISQ) — эпоха машин, слишком шумных для коррекции ошибок, работающих на голых физических кубитах",
-  "src": "standard"
+  "en": "Noisy intermediate-scale quantum: machines of today's size with no error correction, where the circuit must finish before the noise wins",
+  "ru": "Шумные квантовые машины промежуточного масштаба: нынешние размеры без коррекции ошибок — схема должна кончиться раньше, чем победит шум",
+  "src": "standard",
+  "why": "Used as shorthand for a whole era in the goals table; the manager reads G1 without it otherwise"
  },
  {
   "id": "term-gate-fidelity",
   "match": [
-   "gate fidelity"
+   "fidelity"
   ],
   "match_ru": [
-   "точности гейтов",
-   "точность гейтов"
+   "точность",
+   "точности"
   ],
   "scope": "first",
-  "re": null,
-  "en": "How close a gate is to its ideal operation, as a fraction: 99.9% fidelity means an error of 10⁻³ per gate",
-  "ru": "Точность гейта — насколько операция близка к идеальной, в долях: точность 99,9% означает ошибку 10⁻³ на гейт",
-  "src": "standard"
+  "en": "The share of operations that come out right — one minus the error rate; a single average that hides which errors occur and under what load",
+  "ru": "Доля операций, выполненных верно, — единица минус частота ошибок; одно среднее число, скрывающее, какие ошибки происходят и при какой нагрузке",
+  "src": "§1.1",
+  "why": "The number every press release quotes; §1.1 argues against it, so the reader must first know exactly what it is"
  },
  {
   "id": "term-coherence",
@@ -193,10 +195,10 @@
    "когерентностью"
   ],
   "scope": "first",
-  "re": null,
-  "en": "How long a qubit holds quantum information before noise destroys it; the budget every circuit has to fit inside",
-  "ru": "Когерентность — как долго кубит удерживает квантовую информацию до разрушения шумом; бюджет, в который должна уложиться любая схема",
-  "src": "standard"
+  "en": "How long a qubit holds its state before noise scrambles it — the time budget a circuit has to fit into",
+  "ru": "Как долго кубит удерживает своё состояние, пока шум его не размывает, — временной бюджет, в который должна уложиться схема",
+  "src": "standard",
+  "why": "Used from §0 on as if self-evident; the manager needs it as a budget, not as a physics word"
  },
  {
   "id": "term-readout",
@@ -211,10 +213,10 @@
    "mid-circuit"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Measuring a qubit: destructive readout ends its life, mid-circuit readout measures some qubits while the rest keep computing",
-  "ru": "Считывание — измерение кубита: разрушающее прекращает его жизнь, mid-circuit (в середине схемы) измеряет часть кубитов, пока остальные продолжают счёт",
-  "src": "standard"
+  "en": "Measuring a qubit and getting a 0 or a 1; mid-circuit means doing it partway through and carrying on — what error correction needs",
+  "ru": "Измерение кубита с получением 0 или 1; mid-circuit — сделать это посреди схемы и продолжить счёт, что и нужно коррекции ошибок",
+  "src": "standard",
+  "why": "Readout is a third error source next to gates; mid-circuit is the capability that separates QEC-ready machines"
  },
  {
   "id": "term-connectivity",
@@ -222,15 +224,13 @@
    "all-to-all"
   ],
   "match_ru": [
-   "все со всеми",
-   "всех со всеми",
-   "связность"
+   "все со всеми"
   ],
   "scope": "first",
-  "re": null,
-  "en": "All-to-all connectivity — any qubit can be entangled directly with any other, with no routing overhead of swap chains",
-  "ru": "Связность «все со всеми» — любой кубит можно напрямую запутать с любым другим, без накладных расходов на цепочки обменов",
-  "src": "standard"
+  "en": "Any qubit can be entangled with any other directly, with no chain of swaps in between — it shortens circuits by a large factor",
+  "ru": "Любой кубит можно перепутать с любым напрямую, без цепочки обменов, — это укорачивает схемы в разы",
+  "src": "standard",
+  "why": "The advantage ions and atoms claim over grids; without it the reader cannot weigh a lower qubit count"
  },
  {
   "id": "term-heralded",
@@ -242,10 +242,10 @@
    "геральдированными"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Heralded — the apparatus announces which attempts succeeded, so a probabilistic operation becomes usable by keeping only the flagged ones",
-  "ru": "Heralded (с предвестником) — аппаратура сообщает, какие попытки удались, и вероятностная операция становится пригодной: оставляют только удачные",
-  "src": "standard"
+  "en": "The attempt usually fails, but a signal says when it worked, so only the successes are used — slow on average, still usable",
+  "ru": "Попытка обычно не удаётся, но сигнал сообщает, когда получилось, и в дело идут только удачи: в среднем медленно, но работоспособно",
+  "src": "standard",
+  "why": "Marks the probabilistic half of the entangling flag; reads as a synonym for 'announced' otherwise"
  },
  {
   "id": "term-modality",
@@ -256,10 +256,10 @@
    "модальность"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Control modality — the physical means by which qubits are driven: laser light, microwaves, or electrical voltages",
-  "ru": "Модальность управления — физическое средство воздействия на кубиты: лазерный свет, микроволны или электрические напряжения",
-  "src": "standard"
+  "en": "Which kind of signal drives the qubit — microwave pulses, laser light or voltage on a gate wire",
+  "ru": "Каким сигналом управляют кубитом: СВЧ-импульсами, лазерным светом или напряжением на затворе",
+  "src": "standard",
+  "why": "A vague word doing precise work in the node attributes; naming the three kinds is the whole hint"
  },
  {
   "id": "abbr-qbi",
@@ -270,38 +270,10 @@
    "QBI"
   ],
   "scope": "first",
-  "re": null,
-  "en": "DARPA Quantum Benchmarking Initiative — a US programme that independently tests vendor claims in stages A, B and C, C being full validation",
-  "ru": "Quantum Benchmarking Initiative (QBI) DARPA — программа США, независимо проверяющая заявления вендоров по этапам A, B и C; C — полная валидация",
-  "src": "standard"
- },
- {
-  "id": "abbr-darpa",
-  "match": [
-   "DARPA"
-  ],
-  "match_ru": [
-   "DARPA"
-  ],
-  "scope": "first",
-  "re": null,
-  "en": "Defense Advanced Research Projects Agency — the US defence research agency that funds and independently verifies quantum programmes",
-  "ru": "DARPA — агентство перспективных оборонных исследований США, финансирующее квантовые программы и независимо их проверяющее",
-  "src": "standard"
- },
- {
-  "id": "abbr-doe",
-  "match": [
-   "DOE"
-  ],
-  "match_ru": [
-   "DOE"
-  ],
-  "scope": "first",
-  "re": null,
-  "en": "US Department of Energy — the federal department whose national laboratories fund and host much US quantum hardware",
-  "ru": "Министерство энергетики США (DOE) — федеральное ведомство, чьи национальные лаборатории финансируют и размещают значительную часть квантового железа США",
-  "src": "standard"
+  "en": "Quantum Benchmarking Initiative: a US defence programme that vets companies' claims in stages, so a stage letter reads as outside validation",
+  "ru": "Quantum Benchmarking Initiative: программа Пентагона, которая проверяет заявления компаний по стадиям, так что буква стадии — это внешняя валидация",
+  "src": "standard",
+  "why": "Stage letters carry weight in the roadmap scores; the analyst needs to know who is doing the vetting"
  },
  {
   "id": "term-genesis-q",
@@ -312,10 +284,10 @@
    "Genesis Q"
   ],
   "scope": "first",
-  "re": null,
-  "en": "DOE Quantum Genesis Q — a September 2026 US competition offering $215 M for systems of at least 100 logical qubits",
-  "ru": "Quantum Genesis Q — конкурс Минэнерго США (сентябрь 2026): $215 млн на системы не менее чем со 100 логическими кубитами",
-  "src": "§5.2"
+  "en": "A US Department of Energy competition that funds complete machines of at least 100 logical qubits rather than components",
+  "ru": "Конкурс Министерства энергетики США, финансирующий целые машины не менее чем на 100 логических кубитов, а не компоненты",
+  "src": "§5.2",
+  "why": "Named once in the watch-list as an event to follow; a reader outside the US cannot place it"
  },
  {
   "id": "abbr-imec",
@@ -326,24 +298,10 @@
    "imec"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Interuniversity Microelectronics Centre (Leuven) — a European 300-mm research fab that makes qubit wafers for several groups",
-  "ru": "imec (Лёвен) — европейский исследовательский центр микроэлектроники с 300-мм линией, изготавливающий кубитные пластины для нескольких групп",
-  "src": "standard"
- },
- {
-  "id": "abbr-ipo",
-  "match": [
-   "IPO"
-  ],
-  "match_ru": [
-   "IPO"
-  ],
-  "scope": "first",
-  "re": null,
-  "en": "Initial public offering — a company's first sale of shares on a public exchange",
-  "ru": "IPO — первичное публичное размещение: первая продажа акций компании на бирже",
-  "src": "standard"
+  "en": "A Belgian chip research institute whose industrial silicon line other groups use to make qubits the way processors are made",
+  "ru": "Бельгийский исследовательский центр микроэлектроники: на его промышленной кремниевой линии другие группы делают кубиты как обычные чипы",
+  "src": "standard",
+  "why": "Reads like a typo or a vendor; it is the shared fab behind most of the spin-qubit manufacturing claims"
  },
  {
   "id": "abbr-braket",
@@ -354,10 +312,10 @@
    "Braket"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Amazon Braket — AWS's cloud service that gives access to third-party quantum processors alongside AWS's own hardware",
-  "ru": "Amazon Braket — облачный сервис AWS, дающий доступ к квантовым процессорам сторонних производителей наряду с собственным железом AWS",
-  "src": "standard"
+  "en": "Amazon's cloud service through which other companies' quantum machines are used on demand",
+  "ru": "Облачный сервис Amazon, через который машины других компаний используются по требованию",
+  "src": "standard",
+  "why": "A roadmap promise says a machine will be 'on Braket'; that is a distribution channel, not a technology"
  },
  {
   "id": "abbr-qldpc",
@@ -368,10 +326,10 @@
    "qLDPC"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Quantum low-density parity-check code — a code family needing far fewer physical qubits per logical one than the surface code, at the cost of long-range checks",
-  "ru": "Квантовый код с разреженной проверкой чётности (qLDPC) — семейство кодов, требующее куда меньше физических кубитов на логический, ценой дальнодействующих проверок",
-  "src": "standard"
+  "en": "Quantum low-density parity-check codes: each check touches only a few qubits, buying the same protection for far fewer physical qubits",
+  "ru": "Квантовые LDPC-коды: каждая проверка затрагивает лишь несколько кубитов, что даёт ту же защиту при гораздо меньшем числе физических кубитов",
+  "src": "standard",
+  "why": "The central overhead story of 2026; the manager meets the letters in §0 as a reason costs may fall tenfold"
  },
  {
   "id": "abbr-bb",
@@ -384,10 +342,10 @@
    "bivariate"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Bivariate-bicycle code — the qLDPC family IBM builds on, made from two commuting cyclic shifts, needing roughly 10× fewer qubits than the surface code",
-  "ru": "Бициклический (bivariate-bicycle, BB) код — семейство qLDPC, на которое опирается IBM: строится из двух коммутирующих циклических сдвигов, кубитов нужно примерно в 10 раз меньше",
-  "src": "standard"
+  "en": "Bivariate bicycle: a code layout that protects many qubits with few spares, at the price of check wires that must reach across the chip",
+  "ru": "Bivariate bicycle: раскладка кода, защищающая много кубитов малым числом запасных, ценой проверочных связей через весь чип",
+  "src": "standard",
+  "why": "The named family behind IBM's and others' low-overhead claims; the trade-off is what the reader should carry away"
  },
  {
   "id": "term-gross-code",
@@ -400,10 +358,10 @@
    "«gross»"
   ],
   "scope": "first",
-  "re": null,
-  "en": "The [[144,12,12]] bivariate-bicycle code — 144 physical qubits carrying 12 logical ones, IBM's reference qLDPC instance",
-  "ru": "«Gross»-код — бициклический код [[144,12,12]]: 144 физических кубита несут 12 логических; эталонный qLDPC-экземпляр IBM",
-  "src": "standard"
+  "en": "IBM's bivariate-bicycle code holding twelve protected qubits in 144 physical ones — gross is the old word for 144",
+  "ru": "Код IBM семейства bivariate bicycle: двенадцать защищённых кубитов на 144 физических; gross — старое название числа 144",
+  "src": "standard",
+  "why": "An odd English name used as a product label; the numbers are the definition, not a claim"
  },
  {
   "id": "term-tesseract",
@@ -415,10 +373,10 @@
    "тессеракт"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Tesseract code — a small high-rate error-detecting code used to run short circuits with post-selection rather than full correction",
-  "ru": "Tesseract-код — небольшой код с высокой скоростью, обнаруживающий ошибки; применяется для коротких схем с постселекцией вместо полной коррекции",
-  "src": "standard"
+  "en": "A name carried by three different things here: the [[16,6,4]] block code (Quantinuum, Harvard/QuEra), Nord Quantique's bosonic code, and Google's search-based decoder",
+  "ru": "Имя трёх разных вещей в этом отчёте: блочный код [[16,6,4]] (Quantinuum, Harvard/QuEra), бозонный код Nord Quantique и поисковый декодер Google",
+  "src": "standard",
+  "why": "A geometry word used as a product name by two vendors; the reader should not read it as one shared result"
  },
  {
   "id": "term-surface-code",
@@ -426,14 +384,15 @@
    "surface code"
   ],
   "match_ru": [
-   "поверхностный код",
-   "поверхностного кода"
+   "поверхностного",
+   "поверхностные",
+   "поверхностных"
   ],
   "scope": "first",
-  "re": null,
-  "en": "A two-dimensional code on a grid of neighbouring qubits — the most forgiving error threshold, but the most physical qubits per logical one",
-  "ru": "Поверхностный код — двумерный код на решётке соседних кубитов: самый щадящий порог по ошибкам, но и самый расточительный по числу физических кубитов",
-  "src": "standard"
+  "en": "The standard error-correcting code: qubits on a grid, only neighbours checked — easy to build, expensive in qubits",
+  "ru": "Стандартный код коррекции ошибок: кубиты на решётке, проверяются только соседи — просто в изготовлении, дорого по числу кубитов",
+  "src": "standard",
+  "why": "The baseline every overhead comparison is measured against; the grid-versus-cost trade is the point"
  },
  {
   "id": "term-colour-code",
@@ -441,14 +400,13 @@
    "colour code"
   ],
   "match_ru": [
-   "цветовой код",
-   "цветового кода"
+   "цветового"
   ],
   "scope": "first",
-  "re": null,
-  "en": "A 2D code on a three-colourable lattice: fewer qubits and more transversal gates than the surface code, but a lower error threshold",
-  "ru": "Цветовой код — двумерный код на трёхраскрашиваемой решётке: меньше кубитов и больше трансверсальных гейтов, чем у поверхностного, но ниже порог ошибок",
-  "src": "standard"
+  "en": "A grid code like the surface code — qubits on neighbouring tiles — but with three-coloured tiles: cheaper logical operations, harder decoding",
+  "ru": "Решёточный код вроде поверхностного, но с трёхцветными плитками: логические операции дешевле, декодировать труднее",
+  "src": "standard",
+  "why": "Appears beside the surface code in results; the difference is why a team runs both"
  },
  {
   "id": "term-repetition-code",
@@ -459,10 +417,10 @@
    "repetition"
   ],
   "scope": "first",
-  "re": null,
-  "en": "The simplest code, copying a bit across many qubits; it corrects only one type of error, so it is a test bed rather than a route to fault tolerance",
-  "ru": "Код повторения (repetition) — простейший код, копирующий бит по многим кубитам; исправляет ошибку лишь одного типа, поэтому это полигон, а не путь к отказоустойчивости",
-  "src": "standard"
+  "en": "The simplest code, catching only one kind of error — a test of the machinery, not real protection",
+  "ru": "Простейший код, ловящий лишь один тип ошибок: проверка работоспособности механики, а не настоящая защита",
+  "src": "standard",
+  "why": "Records quoted on it look spectacular; the reader should discount them accordingly"
  },
  {
   "id": "abbr-gkp",
@@ -473,30 +431,25 @@
    "GKP"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Gottesman–Kitaev–Preskill code — a bosonic code storing a qubit in grid-shaped states of one oscillator, so small shifts are correctable",
-  "ru": "Код Готтесмана–Китаева–Прескилла (GKP) — бозонный код, хранящий кубит в решётчатых состояниях одного осциллятора, что позволяет исправлять малые сдвиги",
-  "src": "standard"
+  "en": "A qubit stored in one oscillator as a comb of evenly spaced peaks, so small drifts can be measured and corrected without extra qubits",
+  "ru": "Кубит, записанный в одном осцилляторе гребёнкой равноотстоящих пиков: малые сдвиги можно измерить и исправить, не тратя лишних кубитов",
+  "src": "standard",
+  "why": "Three initials of authors' names, meaningless on sight, used from §0 onward as a whole direction"
  },
  {
   "id": "term-cat-qubit",
   "match": [
-   "cat qubit",
    "cat qubits"
   ],
   "match_ru": [
    "кошачьи",
-   "кошачьих",
-   "Кошачье",
-   "Кошачья",
-   "кошачьем",
-   "кошачьей"
+   "кошачьих"
   ],
   "scope": "first",
-  "re": null,
-  "en": "A qubit stored in two opposite-phase states of a microwave oscillator, which suppresses bit flips and leaves mainly phase errors",
-  "ru": "Кошачий кубит — кубит в двух противофазных когерентных состояниях микроволнового осциллятора; подавляет переворот бита, оставляя переворот фазы",
-  "src": "standard"
+  "en": "A qubit held in a microwave resonator as two opposite-phase waves; flips between them are exponentially rare, so one error type nearly disappears",
+  "ru": "Кубит в СВЧ-резонаторе как две волны в противофазе: переходы между ними экспоненциально редки, поэтому один тип ошибок почти исчезает",
+  "src": "standard",
+  "why": "The name suggests Schrödinger and nothing else; the bias it creates is the reason it is on the map"
  },
  {
   "id": "term-dual-rail",
@@ -507,10 +460,10 @@
    "dual-rail"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Encoding one qubit as a single excitation shared between two modes, so the commonest error — losing it — is detected as an erasure",
-  "ru": "Dual-rail — кодирование кубита одним возбуждением, разделённым между двумя модами: самая частая ошибка (его потеря) обнаруживается как стирание",
-  "src": "standard"
+  "en": "A qubit written as one excitation in one of two resonators: if it leaks away, the empty pair shows it, and that run can be discarded",
+  "ru": "Кубит как одно возбуждение в одном из двух резонаторов: если оно теряется, пустая пара это показывает и прогон можно отбросить",
+  "src": "standard",
+  "why": "Named often in §0 and §5 as an erasure trick; the mechanism is one sentence and explains the claim"
  },
  {
   "id": "notation-nkd",
@@ -521,10 +474,10 @@
    "[[n,k,d]]"
   ],
   "scope": "all",
-  "re": "\\[\\[\\d+,\\d+,\\d+\\]\\]",
-  "en": "Code parameters: n physical qubits carry k logical ones and correct any error on fewer than half of d sites",
-  "ru": "Параметры кода: n физических кубитов несут k логических и исправляют любую ошибку менее чем на половине из d позиций",
-  "src": "standard"
+  "en": "n physical qubits carrying k protected ones; any error touching fewer than d of them is detectable — the standard way to quote a code's size",
+  "ru": "n физических кубитов несут k защищённых; любая ошибка, задевшая меньше d из них, обнаружима — стандартная запись размера кода",
+  "src": "standard",
+  "why": "Pure notation; a reader who has not met it cannot parse any of the bracketed codes in the tables"
  },
  {
   "id": "notation-code-distance",
@@ -534,11 +487,12 @@
   "match_ru": [
    "расстояния кода"
   ],
-  "scope": "all",
-  "re": "\\bd=\\d+",
-  "en": "Code distance d — the smallest number of physical errors that can corrupt a logical qubit undetected; a code corrects (d-1)/2 of them",
-  "ru": "Расстояние кода d — наименьшее число физических ошибок, способных незаметно испортить логический кубит; код исправляет (d-1)/2 таких ошибок",
-  "src": "standard"
+  "scope": "first",
+  "re": "\\bd\\s*=\\s*\\d+|\\bcode distance\\b",
+  "en": "How many single errors it takes to corrupt protected data unnoticed — larger distance, stronger protection, more qubits",
+  "ru": "Сколько одиночных ошибок нужно, чтобы незаметно испортить защищённые данные: больше расстояние — сильнее защита и больше кубитов",
+  "src": "standard",
+  "why": "d=5, d=7 appear in every fault-tolerance result; without the scale the reader cannot tell progress from noise"
  },
  {
   "id": "notation-lambda",
@@ -549,10 +503,10 @@
    "Λ"
   ],
   "scope": "all",
-  "re": "Λ|\\\\Lambda(?![A-Za-z])",
-  "en": "Error-suppression factor — how much the logical error falls when the code distance grows by two; Λ above 1 means correction is winning",
-  "ru": "Коэффициент подавления ошибок Λ — во сколько раз падает логическая ошибка при росте расстояния кода на два; Λ > 1 означает, что коррекция выигрывает",
-  "src": "standard"
+  "en": "How much the logical error falls each time the code distance grows by two — above 1 means a larger code is better; 2 means the error halves at each step",
+  "ru": "Во сколько раз падает логическая ошибка при росте расстояния кода на два — больше 1 значит, что больший код лучше; 2 — ошибка вдвое меньше на каждом шаге",
+  "src": "standard",
+  "why": "The single number that separates a demo from a scaling machine; a bare Greek letter otherwise"
  },
  {
   "id": "abbr-ft",
@@ -566,10 +520,10 @@
    "отказоустойчивости"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Fault tolerance — running a computation on encoded qubits so that errors, including those in the correction itself, stay bounded for arbitrary length",
-  "ru": "Отказоустойчивость (FT) — ведение вычисления на кодированных кубитах так, что ошибки, включая ошибки самой коррекции, остаются ограниченными сколь угодно долго",
-  "src": "standard"
+  "en": "Fault tolerance: the state in which a machine keeps computing correctly however long the circuit runs, because errors are mended faster than made",
+  "ru": "Отказоустойчивость: состояние, в котором машина считает верно при сколь угодно длинной схеме, потому что ошибки исправляются быстрее, чем возникают",
+  "src": "standard",
+  "why": "The destination of the whole report, abbreviated to two letters in tables where the manager first meets it"
  },
  {
   "id": "term-break-even",
@@ -580,10 +534,10 @@
    "break-even"
   ],
   "scope": "first",
-  "re": null,
-  "en": "The point where a logical qubit outlives its best physical constituent — the first proof that correction gains more than it costs",
-  "ru": "Break-even — точка, где логический кубит живёт дольше лучшего из своих физических составляющих: первое доказательство, что коррекция даёт больше, чем стоит",
-  "src": "standard"
+  "en": "The point where a protected qubit finally outlives the best bare qubit in the same machine — the first evidence that coding pays",
+  "ru": "Точка, в которой защищённый кубит наконец живёт дольше лучшего незащищённого в той же машине, — первое свидетельство, что кодирование окупается",
+  "src": "standard",
+  "why": "A finance-sounding phrase used as a hard technical threshold in the score anchors"
  },
  {
   "id": "term-syndrome",
@@ -597,10 +551,10 @@
    "синдромных"
   ],
   "scope": "first",
-  "re": null,
-  "en": "The pattern of parity checks read out each round; syndrome extraction is the repeated measurement cycle that reports errors without reading the data",
-  "ru": "Синдром — набор проверок чётности, считываемых каждый раунд; извлечение синдрома — повторяющийся цикл измерений, сообщающий об ошибках, не читая сами данные",
-  "src": "standard"
+  "en": "The pattern of check results that says an error occurred and where, without revealing the protected data itself",
+  "ru": "Картина результатов проверок, которая говорит, что ошибка была и где, не раскрывая самих защищённых данных",
+  "src": "standard",
+  "why": "A medical-sounding word; that the checks never touch the data is the non-obvious part"
  },
  {
   "id": "term-decoder",
@@ -613,10 +567,10 @@
    "декодера"
   ],
   "scope": "first",
-  "re": null,
-  "en": "The classical algorithm that turns syndrome data into a guess at which errors happened and what correction to apply",
-  "ru": "Декодер — классический алгоритм, превращающий синдромные данные в предположение о произошедших ошибках и в нужную коррекцию",
-  "src": "standard"
+  "en": "The classical software that reads the check results and works out which correction to apply — it has to keep pace with the machine",
+  "ru": "Классическая программа, которая читает результаты проверок и вычисляет нужную поправку, — она обязана успевать за машиной",
+  "src": "standard",
+  "why": "Half the 2026 bottleneck is classical; the reader must see the decoder as a piece of the machine, not an afterthought"
  },
  {
   "id": "abbr-mwpm",
@@ -627,10 +581,10 @@
    "MWPM"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Minimum-weight perfect matching — the reference decoding algorithm that pairs up syndrome defects by the most likely error chains",
-  "ru": "Совершенное паросочетание минимального веса (MWPM) — эталонный алгоритм декодирования, соединяющий дефекты синдрома наиболее вероятными цепочками ошибок",
-  "src": "standard"
+  "en": "Minimum-weight perfect matching: the classic decoding algorithm — it pairs up the alarms by the cheapest explanation",
+  "ru": "Minimum-weight perfect matching: классический алгоритм декодирования — он связывает сработавшие проверки самым дешёвым объяснением",
+  "src": "standard",
+  "why": "Named in node tables as the default decoder; four letters with no expansion on the page"
  },
  {
   "id": "term-realtime-decoding",
@@ -638,14 +592,13 @@
    "real-time decoding"
   ],
   "match_ru": [
-   "декодирование в реальном времени",
-   "декодирование"
+   "декодирование в реальном времени"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Decoding fast enough to feed corrections back within the syndrome cycle, so the backlog never grows — the hard engineering half of error correction",
-  "ru": "Декодирование в реальном времени — достаточно быстрое, чтобы вернуть коррекции в пределах цикла синдрома и не накапливать отставание; трудная инженерная половина коррекции",
-  "src": "standard"
+  "en": "Working out the correction while the circuit is still running, fast enough not to stall it, instead of afterwards in analysis",
+  "ru": "Вычисление поправки, пока схема ещё идёт, достаточно быстро, чтобы её не тормозить, а не потом при разборе",
+  "src": "standard",
+  "why": "Sounds like an implementation detail; it is one of the two gates between a demo and a working machine"
  },
  {
   "id": "term-post-selection",
@@ -658,10 +611,10 @@
    "постселекцией"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Keeping only the runs in which no error was flagged; it raises the reported fidelity but discards most shots, so it does not scale",
-  "ru": "Постселекция — сохранение лишь тех прогонов, где ошибка не была отмечена: поднимает заявленную точность, но отбрасывает большинство выстрелов и не масштабируется",
-  "src": "standard"
+  "en": "Keeping only the runs in which nothing went wrong and discarding the rest — it flatters the numbers, so the share kept matters",
+  "ru": "Оставляют только те прогоны, где ничего не сломалось, остальные выбрасывают: числа от этого красивее, поэтому важна доля оставленного",
+  "src": "standard",
+  "why": "The single most common way a headline result is not what it looks like; the manager needs the caveat, not the method"
  },
  {
   "id": "term-magic-state",
@@ -675,10 +628,10 @@
    "магические состояния"
   ],
   "scope": "first",
-  "re": null,
-  "en": "A prepared resource state that lets a code perform the non-Clifford gates it cannot do directly; distillation purifies many noisy copies into one good state",
-  "ru": "Магическое состояние — заготовленный ресурс, позволяющий коду выполнять неклиффордовы гейты, недоступные напрямую; дистилляция очищает много шумных копий до одной хорошей",
-  "src": "standard"
+  "en": "A specially prepared state that lets a protected machine perform the one operation error correction cannot do by itself — and it is expensive",
+  "ru": "Специально подготовленное состояние, позволяющее защищённой машине выполнить единственную операцию, недоступную самой коррекции, — и стоит оно дорого",
+  "src": "standard",
+  "why": "A whimsical name for the dominant cost of any real algorithm; the reader should read it as overhead"
  },
  {
   "id": "term-cultivation",
@@ -689,10 +642,10 @@
    "культивация"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Magic-state cultivation — growing a good magic state inside a small code and checking it as it grows, far cheaper than distilling many copies",
-  "ru": "Культивация магических состояний — выращивание хорошего магического состояния внутри малого кода с проверкой по ходу роста; много дешевле дистилляции множества копий",
-  "src": "standard"
+  "en": "Growing one good magic state in place, checking as it goes, instead of distilling many poor ones — far cheaper when it works",
+  "ru": "Выращивание одного хорошего магического состояния на месте с проверками по ходу вместо дистилляции многих плохих — заметно дешевле, когда получается",
+  "src": "standard",
+  "why": "A 2025–26 method that changes the cost estimates; the contrast with distillation is what makes the result news"
  },
  {
   "id": "term-lattice-surgery",
@@ -703,10 +656,10 @@
    "lattice surgery"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Performing logical gates by merging and splitting neighbouring code patches, the standard way to entangle surface-code qubits",
-  "ru": "Lattice surgery («хирургия решётки») — логические гейты через слияние и разделение соседних участков кода; стандартный способ запутать кубиты поверхностного кода",
-  "src": "standard"
+  "en": "Operating on protected qubits by merging and splitting their patches on the grid, instead of moving any qubits",
+  "ru": "Операции над защищёнными кубитами через слияние и разделение их участков решётки, без перемещения самих кубитов",
+  "src": "standard",
+  "why": "An alarming phrase; it is the standard way grid codes do logic and the alternative to transversal tricks"
  },
  {
   "id": "term-transversal",
@@ -719,10 +672,10 @@
    "трансверсальной"
   ],
   "scope": "first",
-  "re": null,
-  "en": "A logical gate applied qubit-by-qubit in parallel across a code block, so no single fault spreads into an uncorrectable error",
-  "ru": "Трансверсальный гейт — логический гейт, применяемый покубитно параллельно по блоку кода, так что единичный сбой не разрастается в неисправимую ошибку",
-  "src": "standard"
+  "en": "An operation applied to a whole block qubit by qubit at once, so one fault cannot spread inside the block — fast and cheap when available",
+  "ru": "Операция, применяемая ко всему блоку сразу, кубит к кубиту: единичный сбой не расползается внутри блока — быстро и дёшево, когда доступна",
+  "src": "standard",
+  "why": "One of the two big 2026 overhead stories; appears in §0 before any code has been explained"
  },
  {
   "id": "term-logical-teleportation",
@@ -731,14 +684,14 @@
   ],
   "match_ru": [
    "телепортация",
-   "телепортации",
+   "телепортаций",
    "телепортацию"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Logical teleportation — moving an encoded qubit's state through entanglement and measurement instead of physically transporting it",
-  "ru": "Логическая телепортация — перенос состояния кодированного кубита через запутанность и измерение, без его физического перемещения",
-  "src": "standard"
+  "en": "Moving a protected qubit's state into another block using entanglement and measurement rather than transporting anything",
+  "ru": "Перенос состояния защищённого кубита в другой блок с помощью запутанности и измерений, без перемещения чего-либо",
+  "src": "standard",
+  "why": "The science-fiction word does real work here; saying nothing travels is the whole clarification"
  },
  {
   "id": "term-clifford",
@@ -747,30 +700,29 @@
    "non-Clifford"
   ],
   "match_ru": [
-   "Clifford",
    "Клиффорды",
-   "клиффордов"
+   "Клиффорд",
+   "не-Клиффорд"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Clifford gates are the easy, classically simulable set most codes do transversally; universal computation needs at least one non-Clifford gate on top",
-  "ru": "Клиффордовы гейты — «лёгкий», классически моделируемый набор, который большинство кодов выполняет трансверсально; для универсальности нужен хотя бы один неклиффордов гейт",
-  "src": "standard"
+  "en": "The easy half of quantum operations, which protected machines do cheaply; the non-Clifford one they cannot, and that is where the cost sits",
+  "ru": "Лёгкая половина квантовых операций, которую защищённые машины делают дёшево; не-клиффордовы им не даются — вот где и сидит вся цена",
+  "src": "standard",
+  "why": "A mathematician's name used as a cost boundary; the split explains why magic states dominate budgets"
  },
  {
   "id": "term-toffoli",
   "match": [
-   "Toffoli",
    "Toffolis"
   ],
   "match_ru": [
    "Тоффоли"
   ],
   "scope": "first",
-  "re": null,
-  "en": "A three-qubit controlled-controlled-NOT gate; the count of Toffolis is the standard yardstick for the cost of a fault-tolerant algorithm",
-  "ru": "Гейт Тоффоли — трёхкубитный дважды управляемый NOT; число Тоффоли — стандартная мера стоимости отказоустойчивого алгоритма",
-  "src": "standard"
+  "en": "A three-qubit logic operation that flips the last qubit only when the first two are set — the building block of quantum arithmetic",
+  "ru": "Трёхкубитная логическая операция: последний кубит переворачивается, только если первые два установлены, — кирпич квантовой арифметики",
+  "src": "standard",
+  "why": "Resource estimates are quoted in Toffoli counts; the reader needs a unit, not a biography"
  },
  {
   "id": "term-cz",
@@ -781,10 +733,10 @@
    "CZ"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Controlled-Z — a two-qubit entangling gate that flips the phase only when both qubits are in state 1",
-  "ru": "Управляемый Z (CZ) — двухкубитный запутывающий гейт, меняющий фазу только когда оба кубита в состоянии 1",
-  "src": "standard"
+  "en": "Controlled-Z: a standard two-qubit entangling operation — it flips the sign of the state when both qubits are set",
+  "ru": "Controlled-Z: стандартная двухкубитная перепутывающая операция — меняет знак состояния, когда оба кубита установлены",
+  "src": "standard",
+  "why": "The gate almost every fidelity number is measured on; two letters that otherwise read as a code"
  },
  {
   "id": "term-cnot",
@@ -795,26 +747,24 @@
    "CNOT"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Controlled-NOT — the canonical two-qubit gate, flipping the target qubit when the control qubit is 1",
-  "ru": "Управляемый NOT (CNOT) — канонический двухкубитный гейт: переворачивает целевой кубит, когда управляющий равен 1",
-  "src": "standard"
+  "en": "Controlled-NOT: a two-qubit operation that flips the second qubit when the first is set — the textbook entangling gate",
+  "ru": "Controlled-NOT: двухкубитная операция, переворачивающая второй кубит, если установлен первый, — учебниковый перепутывающий гейт",
+  "src": "standard",
+  "why": "Quoted interchangeably with CZ; the reader should see they are two names for one job"
  },
  {
   "id": "term-ms-gate",
   "match": [
-   "MS gate",
    "MS gates"
   ],
   "match_ru": [
-   "MS-гейты",
-   "MS-гейт"
+   "MS-гейты"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Mølmer–Sørensen gate — the laser-driven entangling gate of trapped ions, mediated by the ions' shared motion",
-  "ru": "Гейт Мёльмера–Сёренсена (MS) — запутывающий гейт захваченных ионов, создаваемый лазером через общее колебательное движение ионов",
-  "src": "standard"
+  "en": "Mølmer–Sørensen: the entangling operation of trapped ions, done through the ions' shared motion rather than by contact",
+  "ru": "Mølmer–Sørensen: перепутывающая операция ионов — через их общее движение, а не через прямой контакт",
+  "src": "standard",
+  "why": "Named once as the ion counterpart of CZ; the letters are two surnames, unguessable"
  },
  {
   "id": "term-erasure",
@@ -827,10 +777,10 @@
    "стираниями"
   ],
   "scope": "first",
-  "re": null,
-  "en": "An error whose location is known, which is far cheaper to correct; erasure conversion deliberately turns ordinary errors into flagged ones",
-  "ru": "Стирание — ошибка с известным местом, исправлять её много дешевле; преобразование в стирания намеренно превращает обычные ошибки в помеченные",
-  "src": "standard"
+  "en": "An error whose place is known because the qubit signals that it was lost — much cheaper to correct than a silent flip",
+  "ru": "Ошибка с известным местом: кубит сам сигнализирует о потере — исправлять такую куда дешевле, чем незаметный переворот",
+  "src": "standard",
+  "why": "The reason several platforms claim an advantage; knowing where the error is, is the entire economy"
  },
  {
   "id": "term-noise-bias",
@@ -843,10 +793,10 @@
    "перекосом"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Noise bias — one error type (usually phase) dominating by orders of magnitude; a bias-preserving gate does not destroy that asymmetry",
-  "ru": "Смещение шума — преобладание одного типа ошибок (обычно фазовых) на порядки; гейт, сохраняющий смещение, не разрушает эту асимметрию",
-  "src": "standard"
+  "en": "When one kind of error is far rarer than the other; a code can exploit the imbalance, but only if the gates do not destroy it",
+  "ru": "Когда один тип ошибок много реже другого; код может использовать этот перекос, но лишь если гейты его не разрушают",
+  "src": "standard",
+  "why": "Explains why cat and similar qubits promise low overhead, and what the 'bias-preserving' qualifier is guarding"
  },
  {
   "id": "term-leakage",
@@ -859,10 +809,10 @@
    "утечке"
   ],
   "scope": "first",
-  "re": null,
-  "en": "A qubit escaping into a state outside the computational 0/1 space, where error correction cannot see it until it is removed",
-  "ru": "Утечка — уход кубита в состояние вне вычислительного пространства 0/1, где коррекция ошибок его не видит, пока он не удалён",
-  "src": "standard"
+  "en": "A qubit slipping out of its two working levels into a third state, where no correction applies until it is reset",
+  "ru": "Кубит уходит из двух рабочих уровней в третье состояние, где никакая коррекция не действует, пока его не сбросят",
+  "src": "standard",
+  "why": "Listed as an error class beside flips; that corrections simply miss it is the point"
  },
  {
   "id": "term-quasiparticle-burst",
@@ -874,10 +824,10 @@
    "квазичастиц"
   ],
   "scope": "first",
-  "re": null,
-  "en": "A shower of broken Cooper pairs, often from a cosmic ray, that corrupts many superconducting qubits at once and beyond any code distance",
-  "ru": "Квазичастичный всплеск — ливень разорванных куперовских пар, часто от космической частицы, портящий сразу много сверхпроводящих кубитов сверх любого расстояния кода",
-  "src": "standard"
+  "en": "Stray charge set loose in a superconducting chip, often by a cosmic ray, knocking out many qubits at once",
+  "ru": "Паразитный заряд, выбитый в сверхпроводящем чипе, часто космической частицей, — гасит сразу много кубитов",
+  "src": "standard",
+  "why": "A rare correlated failure that no per-qubit fidelity shows; the manager should know it is a scaling risk"
  },
  {
   "id": "term-zz",
@@ -888,10 +838,10 @@
    "ZZ"
   ],
   "scope": "first",
-  "re": null,
-  "en": "ZZ crosstalk — an always-on coupling that makes each transmon's frequency depend on its neighbours' states, dephasing idle qubits",
-  "ru": "ZZ-перекрёстные помехи — постоянно включённая связь, из-за которой частота трансмона зависит от состояний соседей и расфазирует простаивающие кубиты",
-  "src": "standard"
+  "en": "Always-on coupling that lets neighbouring qubits shift each other's phase — an error that grows with the number of neighbours",
+  "ru": "Постоянно включённая связь, из-за которой соседние кубиты сдвигают друг другу фазу; ошибка растёт с числом соседей",
+  "src": "standard",
+  "why": "Listed in the error-class table as a coherent error; two letters that look like a code"
  },
  {
   "id": "abbr-qccd",
@@ -902,10 +852,10 @@
    "QCCD"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Quantum charge-coupled device — a trapped-ion architecture that shuttles ions between dedicated storage and gate zones on a chip trap",
-  "ru": "Квантовый прибор с зарядовой связью (QCCD) — архитектура захваченных ионов, перемещающая ионы между зонами хранения и зонами гейтов на чиповой ловушке",
-  "src": "standard"
+  "en": "A trap chip divided into zones with ions shuttled between them, so every gate happens in a small, well-controlled group",
+  "ru": "Ловушечный чип, разделённый на зоны, между которыми перевозят ионы: каждый гейт выполняется в маленькой, хорошо управляемой группе",
+  "src": "standard",
+  "why": "The defining architecture of trapped ions; four letters borrowed from camera sensors and misleading on sight"
  },
  {
   "id": "term-shuttling",
@@ -913,14 +863,13 @@
    "shuttling"
   ],
   "match_ru": [
-   "шаттлинг",
-   "транспорт"
+   "шаттлинг"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Physically moving ions or atoms between zones to create connectivity, instead of routing through chains of neighbouring gates",
-  "ru": "Шаттлинг — физическое перемещение ионов или атомов между зонами ради связности, вместо маршрутизации через цепочки гейтов между соседями",
-  "src": "standard"
+  "en": "Physically carrying qubits — ions in a trap, spins along a channel — to bring partners together instead of wiring them",
+  "ru": "Физическое перемещение кубитов — ионов в ловушке, спинов по каналу — чтобы свести партнёров, а не соединять их проводами",
+  "src": "standard",
+  "why": "Sounds like a metaphor; the reader should picture real movement, which is what costs the time"
  },
  {
   "id": "term-zoned",
@@ -928,15 +877,14 @@
    "zoned"
   ],
   "match_ru": [
-   "зонная архитектура",
-   "зонные",
-   "зонная"
+   "зонная",
+   "зонной"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Zoned architecture — a chip split into separate regions for storage, gates and readout, so measurement light never disturbs idle qubits",
-  "ru": "Зонная архитектура — разделение чипа на области хранения, гейтов и считывания, чтобы свет измерения не тревожил простаивающие кубиты",
-  "src": "standard"
+  "en": "A machine split into areas for storage, gates and measurement, with qubits moved between them, so each area is tuned for one job",
+  "ru": "Машина, разделённая на области хранения, гейтов и измерения, между которыми перемещают кубиты: каждая область настроена под своё дело",
+  "src": "standard",
+  "why": "The word carries an architecture; without it the atom and ion profiles read as lists of unrelated tricks"
  },
  {
   "id": "term-rydberg",
@@ -949,10 +897,10 @@
    "ридберговского"
   ],
   "scope": "first",
-  "re": null,
-  "en": "A hugely inflated atomic state; within a blockade radius one excited atom forbids its neighbour's excitation, which is how neutral atoms entangle",
-  "ru": "Ридберговское состояние — сильно раздутое атомное состояние; в радиусе блокады один возбуждённый атом запрещает возбуждение соседа — так запутываются нейтральные атомы",
-  "src": "standard"
+  "en": "An atom briefly excited into a giant orbit, which makes it interact strongly with a neighbour — how neutral atoms entangle at all",
+  "ru": "Атом, ненадолго переведённый на гигантскую орбиту: так он сильно взаимодействует с соседом — только этим нейтральные атомы и перепутываются",
+  "src": "standard",
+  "why": "A surname used as a mechanism; the reader of the atom profile needs the mechanism to judge the gate error"
  },
  {
   "id": "term-tweezer",
@@ -961,16 +909,16 @@
    "tweezers"
   ],
   "match_ru": [
-   "пинцет",
    "пинцеты",
-   "пинцетами",
-   "пинцетов"
+   "пинцете",
+   "пинцетов",
+   "пинцетах"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Optical tweezer — a tightly focused laser beam that holds a single atom; thousands form the reconfigurable arrays of neutral-atom machines",
-  "ru": "Оптический пинцет — остро сфокусированный лазерный луч, удерживающий один атом; тысячи таких образуют перестраиваемые массивы атомных машин",
-  "src": "standard"
+  "en": "A tightly focused laser beam holding one atom and able to carry it elsewhere — how atom machines build and rearrange their arrays",
+  "ru": "Туго сфокусированный лазерный луч, удерживающий один атом и способный его перенести: так атомные машины строят и перестраивают массивы",
+  "src": "standard",
+  "why": "A household word for a laser trap; the manager should see it as both a holder and a conveyor"
  },
  {
   "id": "term-transmon",
@@ -983,10 +931,10 @@
    "трансмонах"
   ],
   "scope": "first",
-  "re": null,
-  "en": "The dominant superconducting qubit design, a charge-noise-insensitive circuit built from a Josephson junction and a large shunt capacitor",
-  "ru": "Трансмон — доминирующая конструкция сверхпроводящего кубита: нечувствительная к зарядовому шуму цепь из джозефсоновского перехода и большой шунтирующей ёмкости",
-  "src": "standard"
+  "en": "The workhorse superconducting qubit: a small circuit driven by microwave pulses and made by chip lithography",
+  "ru": "Рабочая лошадь сверхпроводников: небольшая схема, управляемая СВЧ-импульсами и изготовленная литографией, как чип",
+  "src": "standard",
+  "why": "Named constantly from §0 on as if it were a common noun; it is one specific qubit design"
  },
  {
   "id": "term-fluxonium",
@@ -998,10 +946,10 @@
    "флаксониум"
   ],
   "scope": "first",
-  "re": null,
-  "en": "A superconducting qubit shunted by a large inductor instead of a capacitor, giving much longer coherence but harder control",
-  "ru": "Флаксониум (fluxonium) — сверхпроводящий кубит, шунтированный большой индуктивностью вместо ёмкости: заметно дольше когерентность, но сложнее управление",
-  "src": "standard"
+  "en": "A superconducting qubit that trades speed for a much longer life and lower error, at the cost of harder control",
+  "ru": "Сверхпроводящий кубит, меняющий скорость на существенно большее время жизни и меньшую ошибку ценой более сложного управления",
+  "src": "standard",
+  "why": "Offered as the alternative to the mainstream design; the trade-off is why it is a watch-list item"
  },
  {
   "id": "abbr-sfq",
@@ -1012,10 +960,10 @@
    "SFQ"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Single flux quantum — superconducting digital logic that generates qubit control pulses next to the qubits, at millikelvin instead of room temperature",
-  "ru": "Одноквантовая логика (SFQ) — сверхпроводящая цифровая логика, формирующая управляющие импульсы рядом с кубитами при милликельвинах, а не при комнатной температуре",
-  "src": "standard"
+  "en": "Single flux quantum: superconducting digital logic that can sit in the cold beside the qubits, replacing bulky room-temperature wiring",
+  "ru": "Single flux quantum: сверхпроводящая цифровая логика, которая работает в холоде рядом с кубитами и заменяет громоздкую проводку из комнаты",
+  "src": "standard",
+  "why": "One of the two answers to the wiring problem; three letters used with no expansion anywhere"
  },
  {
   "id": "abbr-cryo-cmos",
@@ -1026,10 +974,10 @@
    "cryo-CMOS"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Conventional silicon control electronics designed to run inside the cryostat, usually at 4 K, to cut the number of cables to room temperature",
-  "ru": "Cryo-CMOS — обычная кремниевая управляющая электроника, работающая внутри криостата, обычно при 4 К, чтобы сократить число кабелей до комнатной температуры",
-  "src": "standard"
+  "en": "Ordinary chip electronics built to work in the cold next to the qubits — the way out of one cable per qubit to room temperature",
+  "ru": "Обычная чиповая электроника, работающая в холоде рядом с кубитами, — выход из схемы «один кабель на кубит» до комнатной температуры",
+  "src": "standard",
+  "why": "The manager meets it in §0 as a scaling enabler; what it replaces is the useful half of the hint"
  },
  {
   "id": "term-dilution-fridge",
@@ -1042,10 +990,10 @@
    "криостатами"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Dilution refrigerator — the helium-3/helium-4 machine that cools superconducting chips to a few millikelvin; large, power-hungry and hard to deploy",
-  "ru": "Криостат растворения — установка на гелии-3/гелии-4, охлаждающая сверхпроводящие чипы до единиц милликельвин; громоздкая, энергоёмкая и трудная для развёртывания",
-  "src": "standard"
+  "en": "The refrigerator that reaches thousandths of a degree above absolute zero — bulky, power-hungry, and needed by most superconducting machines",
+  "ru": "Криостат растворения, достигающий тысячных долей градуса выше абсолютного нуля: громоздкий, прожорливый и необходимый большинству сверхпроводящих машин",
+  "src": "standard",
+  "why": "A goal is defined as 'no dilution fridge'; the reader must know what is being escaped"
  },
  {
   "id": "term-mk-4k",
@@ -1055,13 +1003,13 @@
   ],
   "match_ru": [
    "мК",
-   "4 К"
+   "4 K"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Temperature stages of a cryostat: millikelvin (mK) where the qubits live, and the 4 K stage where cryogenic electronics can sit",
-  "ru": "Температурные ступени криостата: милликельвины (мК), где живут кубиты, и ступень 4 К, где может размещаться криогенная электроника",
-  "src": "standard"
+  "en": "The two cold stages of a machine: millikelvin, where the qubits live, and 4 K, where electronics can still run",
+  "ru": "Две холодные ступени машины: милликельвины, где живут кубиты, и 4 K, где ещё может работать электроника",
+  "src": "standard",
+  "why": "Temperature stages are an attribute of every node; the two numbers are a hierarchy, not just readings"
  },
  {
   "id": "abbr-snspd",
@@ -1072,10 +1020,10 @@
    "SNSPD"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Superconducting nanowire single-photon detector — the fast, near-unit-efficiency detector that photonic machines depend on",
-  "ru": "Сверхпроводящий нанопроволочный однофотонный детектор (SNSPD) — быстрый детектор с эффективностью, близкой к единице, на котором держатся фотонные машины",
-  "src": "standard"
+  "en": "Superconducting nanowire single-photon detector: the fast, near-perfect photon counter photonic machines depend on — it needs its own cold stage",
+  "ru": "Сверхпроводящий нанопроводниковый детектор одиночных фотонов: быстрый и почти идеальный счётчик, без которого не обходятся фотонные машины; ему нужен свой холод",
+  "src": "standard",
+  "why": "Five letters standing for the component that decides whether photonic machines work at all"
  },
  {
   "id": "abbr-pic",
@@ -1086,10 +1034,10 @@
    "PIC"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Photonic integrated circuit — optical waveguides, switches and sources fabricated on a chip instead of assembled from bulk optics",
-  "ru": "Фотонная интегральная схема (PIC) — оптические волноводы, переключатели и источники, изготовленные на чипе вместо сборки из объёмной оптики",
-  "src": "standard"
+  "en": "Photonic integrated circuit: a chip in which light is routed through waveguides instead of current through wires",
+  "ru": "Фотонная интегральная схема: чип, в котором свет ведут по волноводам вместо тока по проводам",
+  "src": "standard",
+  "why": "Reads as an English word; it is the manufacturing base of every photonic roadmap"
  },
  {
   "id": "abbr-sin",
@@ -1100,10 +1048,10 @@
    "SiN"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Silicon nitride — the low-loss waveguide material of choice for photonic chips, compatible with standard silicon fabs",
-  "ru": "Нитрид кремния (SiN) — материал волноводов с малыми потерями, основной для фотонных чипов и совместимый со стандартными кремниевыми фабриками",
-  "src": "standard"
+  "en": "Silicon nitride: a low-loss, glass-like material for on-chip light paths, made on standard silicon lines",
+  "ru": "Нитрид кремния: материал с малыми потерями для световодов на чипе, изготавливаемый на стандартных кремниевых линиях",
+  "src": "standard",
+  "why": "A formula in node tables; low loss and standard manufacturing is why it is there"
  },
  {
   "id": "abbr-bto",
@@ -1114,10 +1062,10 @@
    "BTO"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Barium titanate — an electro-optic material that makes fast, low-loss on-chip optical switches, the gating element of photonic architectures",
-  "ru": "Титанат бария (BTO) — электрооптический материал для быстрых оптических переключателей на чипе с малыми потерями; ключевой элемент фотонных архитектур",
-  "src": "standard"
+  "en": "Barium titanate: a material for fast, low-power optical switches on a chip — switch speed is what limits photonic machines",
+  "ru": "Титанат бария: материал для быстрых и экономичных оптических переключателей на чипе; именно скорость переключения ограничивает фотонные машины",
+  "src": "standard",
+  "why": "A formula in node tables; the reader needs to know which bottleneck it addresses"
  },
  {
   "id": "term-fusion-based",
@@ -1128,10 +1076,10 @@
    "fusion"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Fusion-based quantum computing — building the computation from probabilistic two-photon measurements (fusions) on small entangled resource states",
-  "ru": "Fusion-based (на слияниях) квантовые вычисления — построение вычисления из вероятностных двухфотонных измерений (слияний) над малыми запутанными ресурсными состояниями",
-  "src": "standard"
+  "en": "Building the computation from many small entangled bundles of photons, joined by measurements that only sometimes succeed",
+  "ru": "Вычисление собирают из множества мелких запутанных пучков фотонов, сшивая их измерениями, которые удаются лишь иногда",
+  "src": "standard",
+  "why": "The architecture behind the main photonic roadmap; 'fusion' otherwise suggests energy or mergers"
  },
  {
   "id": "term-linear-optical",
@@ -1142,10 +1090,10 @@
    "линейно-оптическая"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Linear-optical quantum computing — using only beam splitters, phase shifters and detectors, with measurement supplying the nonlinearity",
-  "ru": "Линейно-оптические квантовые вычисления — только светоделители, фазовращатели и детекторы; нелинейность обеспечивает измерение",
-  "src": "standard"
+  "en": "Computing with photons using only beam splitters, phase shifters and detectors — photons never interact, so gates succeed by chance",
+  "ru": "Вычисления на фотонах с одними делителями, фазовращателями и детекторами: фотоны не взаимодействуют, поэтому гейты срабатывают случайно",
+  "src": "standard",
+  "why": "Explains in one line why photonic machines need so much hardware per useful gate"
  },
  {
   "id": "term-continuous-variable",
@@ -1157,26 +1105,24 @@
    "непрерывных переменных"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Encoding quantum information in the continuous amplitude and phase of light rather than in discrete photon counts",
-  "ru": "Непрерывные переменные — кодирование квантовой информации в непрерывных амплитуде и фазе света, а не в дискретном числе фотонов",
-  "src": "standard"
+  "en": "Encoding in the amplitude and phase of a light beam rather than in single photons — easy to make in bulk, hard to correct",
+  "ru": "Кодирование в амплитуде и фазе светового пучка, а не в отдельных фотонах: легко тиражировать, трудно исправлять ошибки",
+  "src": "standard",
+  "why": "One of the two photonic families; the trade-off is why its qubit counts are huge and its errors stubborn"
  },
  {
   "id": "term-bell-pair",
   "match": [
-   "Bell pair",
    "Bell pairs"
   ],
   "match_ru": [
-   "пара Белла",
    "пар Белла"
   ],
   "scope": "first",
-  "re": null,
-  "en": "A maximally entangled pair of qubits; the unit of currency for links between modules, consumed one per remote gate",
-  "ru": "Пара Белла — максимально запутанная пара кубитов; расчётная единица для связей между модулями, расходуется по одной на удалённый гейт",
-  "src": "standard"
+  "en": "The basic unit of entanglement: two qubits whose measurements agree perfectly — the fuel spent on linking modules",
+  "ru": "Базовая единица запутанности: два кубита с идеально согласованными исходами — топливо, которое тратится на связь модулей",
+  "src": "standard",
+  "why": "Link budgets are counted in Bell pairs per second; the reader needs a unit to read the rate"
  },
  {
   "id": "term-spin-photon",
@@ -1188,10 +1134,10 @@
    "спин-фотонный"
   ],
   "scope": "first",
-  "re": null,
-  "en": "A spin-photon interface converts a stationary spin qubit's state into a flying photon, the basis of optically networked modules",
-  "ru": "Спин-фотонный интерфейс переводит состояние неподвижного спинового кубита в летящий фотон; основа модулей, связанных оптической сетью",
-  "src": "standard"
+  "en": "An interface that turns a stationary qubit's state into a photon and back — how separate modules are joined over fibre",
+  "ru": "Интерфейс, превращающий состояние неподвижного кубита в фотон и обратно, — так отдельные модули связывают по волокну",
+  "src": "standard",
+  "why": "The missing piece in most modular roadmaps; naming what it converts makes the gap concrete"
  },
  {
   "id": "term-si-sige",
@@ -1202,10 +1148,10 @@
    "Si/SiGe"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Silicon/silicon-germanium heterostructure — a layered stack in which electron spin qubits are confined in a strained silicon quantum well",
-  "ru": "Гетероструктура кремний/кремний-германий (Si/SiGe) — слоистая структура, где спиновые кубиты электронов удерживаются в напряжённой кремниевой квантовой яме",
-  "src": "standard"
+  "en": "Spin qubits in a silicon layer sandwiched in silicon-germanium — the cleanest of the semiconductor approaches",
+  "ru": "Спиновые кубиты в кремниевом слое между слоями кремний-германий — самый чистый из полупроводниковых подходов",
+  "src": "standard",
+  "why": "A materials formula in node tables; the reader compares it with the transistor-stack alternative one row down"
  },
  {
   "id": "term-si-mos",
@@ -1216,10 +1162,10 @@
    "Si-MOS"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Silicon metal-oxide-semiconductor — spin qubits made in the same gate-oxide stack as ordinary transistors, the most fab-compatible spin platform",
-  "ru": "Кремниевая структура металл-оксид-полупроводник (Si-MOS) — спиновые кубиты в том же затворном оксиде, что и обычные транзисторы; самая фабрично-совместимая спиновая платформа",
-  "src": "standard"
+  "en": "Spin qubits made in the same transistor stack as ordinary chips — closest to mass manufacturing, noisier at the surface",
+  "ru": "Спиновые кубиты в том же транзисторном стеке, что и обычные чипы: ближе всех к массовому производству, но шумнее у поверхности",
+  "src": "standard",
+  "why": "The manufacturing argument of the spin platform lives in this formula"
  },
  {
   "id": "term-ge-hole",
@@ -1230,10 +1176,10 @@
    "Ge"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Germanium hole-spin qubits — using the absence of an electron, whose strong spin-orbit coupling allows fast all-electrical control",
-  "ru": "Дырочные спиновые кубиты в германии (Ge) — используют отсутствие электрона: сильное спин-орбитальное взаимодействие даёт быстрое полностью электрическое управление",
-  "src": "standard"
+  "en": "Germanium: spin qubits made of holes, which can be steered by voltage alone, without micromagnets on the chip",
+  "ru": "Германий: спиновые кубиты на дырках, которыми можно управлять одним напряжением, без микромагнитов на чипе",
+  "src": "standard",
+  "why": "A chemical symbol standing for a whole sub-platform; the control simplicity is its selling point"
  },
  {
   "id": "term-donor",
@@ -1246,10 +1192,10 @@
    "донорных"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Donor qubit — a single phosphorus atom implanted in silicon, whose electron or nuclear spin gives exceptionally long coherence",
-  "ru": "Донорный кубит — одиночный атом фосфора, имплантированный в кремний; спин его электрона или ядра даёт исключительно долгую когерентность",
-  "src": "standard"
+  "en": "A single dopant atom placed inside silicon and used as a qubit — extremely long-lived, extremely hard to place",
+  "ru": "Одиночный атом примеси, помещённый в кремний и используемый как кубит: живёт очень долго, размещается очень трудно",
+  "src": "standard",
+  "why": "A semiconductor term with a precise meaning here; the two extremes explain its scores"
  },
  {
   "id": "term-t-centre",
@@ -1262,10 +1208,10 @@
    "T-centre"
   ],
   "scope": "first",
-  "re": null,
-  "en": "A luminescent carbon-hydrogen defect in silicon that combines a spin qubit with telecom-wavelength photon emission for networking",
-  "ru": "T-центр — люминесцентный углеродно-водородный дефект в кремнии, сочетающий спиновый кубит с излучением фотонов телеком-диапазона для сетевой связи",
-  "src": "standard"
+  "en": "A light-emitting defect in silicon that both holds a spin and sends a photon, making silicon chips linkable over fibre",
+  "ru": "Светоизлучающий дефект в кремнии, который и хранит спин, и испускает фотон, — так кремниевые чипы можно связать волокном",
+  "src": "standard",
+  "why": "The rare node that bridges two platforms; the dual role is the whole reason it appears"
  },
  {
   "id": "term-majorana",
@@ -1278,10 +1224,10 @@
    "Майорановская"
   ],
   "scope": "first",
-  "re": null,
-  "en": "A quasiparticle that is its own antiparticle; a topological qubit would store information non-locally in a pair of them, making it intrinsically protected",
-  "ru": "Майорановская квазичастица — сама себе античастица; топологический кубит хранил бы информацию нелокально в их паре, что давало бы внутреннюю защиту",
-  "src": "standard"
+  "en": "A half-particle predicted at the end of a special wire; a qubit made from a pair would be protected by its shape — its existence in devices is still contested",
+  "ru": "Полу-частица, предсказанная на конце особого провода; кубит из пары таких был бы защищён самой своей формой — их существование в приборах всё ещё оспаривается",
+  "src": "standard",
+  "why": "The existence question is the point; a hint that states it stops the platform reading as merely early"
  },
  {
   "id": "term-tetron",
@@ -1293,10 +1239,10 @@
    "tetron"
   ],
   "scope": "first",
-  "re": null,
-  "en": "A four-Majorana device, the proposed minimal topological qubit: two nanowires whose combined parity encodes one qubit",
-  "ru": "Тетрон — устройство на четырёх майоранах, предлагаемый минимальный топологический кубит: две нанопроволоки, совместная чётность которых кодирует кубит",
-  "src": "standard"
+  "en": "The four-Majorana device Microsoft builds its qubit from — the smallest unit that can hold one such qubit",
+  "ru": "Устройство из четырёх майорановских мод, из которого Microsoft делает кубит, — наименьшая единица, способная его хранить",
+  "src": "standard",
+  "why": "A coined product word; the reader should see it as a unit cell, not a chip"
  },
  {
   "id": "term-annealing",
@@ -1308,42 +1254,10 @@
    "отжига"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Quantum annealing — a special-purpose analog machine that seeks low-energy solutions to optimisation problems, not a gate-based computer",
-  "ru": "Квантовый отжиг — специализированная аналоговая машина, ищущая низкоэнергетические решения задач оптимизации; это не машина на гейтах",
-  "src": "standard"
- },
- {
-  "id": "term-300mm",
-  "match": [
-   "300 mm",
-   "300-mm"
-  ],
-  "match_ru": [
-   "300 мм",
-   "300-мм"
-  ],
-  "scope": "first",
-  "re": null,
-  "en": "The standard wafer diameter of modern semiconductor manufacturing; making qubits on 300-mm wafers means using volume industry tooling",
-  "ru": "Стандартный диаметр пластины современного полупроводникового производства; изготовление кубитов на 300-мм пластинах означает использование серийного промышленного оборудования",
-  "src": "standard"
- },
- {
-  "id": "term-foundry",
-  "match": [
-   "foundry"
-  ],
-  "match_ru": [
-   "фабрика",
-   "фабрику",
-   "фабрике"
-  ],
-  "scope": "first",
-  "re": null,
-  "en": "A contract semiconductor factory that makes chips to others' designs; foundry access is the difference between lab devices and volume production",
-  "ru": "Фабрика (foundry) — контрактное полупроводниковое производство, изготавливающее чипы по чужим проектам; доступ к ней отделяет лабораторные образцы от серийного выпуска",
-  "src": "standard"
+  "en": "A special-purpose machine that settles into low-energy solutions by cooling slowly — it runs no gates and corrects no errors",
+  "ru": "Машина специального назначения, которая медленно остывает в решения с низкой энергией: она не выполняет гейтов и не исправляет ошибок",
+  "src": "standard",
+  "why": "The investor knows the vendor and may assume it is a general machine; the two exclusions are the hint"
  },
  {
   "id": "abbr-rsa2048",
@@ -1354,10 +1268,10 @@
    "RSA-2048"
   ],
   "scope": "first",
-  "re": null,
-  "en": "The 2048-bit RSA public-key cipher, the standard reference target for cryptographically relevant quantum factoring",
-  "ru": "RSA-2048 — 2048-битный шифр с открытым ключом RSA; стандартная эталонная мишень для криптографически значимой квантовой факторизации",
-  "src": "standard"
+  "en": "The public-key cipher size in wide use today — the standard yardstick for when a quantum computer would break encryption",
+  "ru": "Размер ключа широко применяемого сегодня шифра с открытым ключом — стандартная мерка того, когда квантовый компьютер сломает шифрование",
+  "src": "standard",
+  "why": "The number every cryptography estimate is quoted against; the manager reads resource estimates through it"
  },
  {
   "id": "abbr-ecc256",
@@ -1368,10 +1282,10 @@
    "ECC-256"
   ],
   "scope": "first",
-  "re": null,
-  "en": "256-bit elliptic-curve cryptography, the other standard break-target, cheaper to attack quantumly than RSA-2048",
-  "ru": "ECC-256 — 256-битная криптография на эллиптических кривых; вторая стандартная мишень, квантово атакуемая дешевле, чем RSA-2048",
-  "src": "standard"
+  "en": "The elliptic-curve key size used in most modern systems, including crypto wallets — the second standard breaking target",
+  "ru": "Размер ключа на эллиптических кривых в большинстве современных систем, включая криптокошельки, — вторая стандартная мишень",
+  "src": "standard",
+  "why": "Sits beside RSA in the same estimates; a different cipher family, not a different key length"
  },
  {
   "id": "term-femoco",
@@ -1382,10 +1296,10 @@
    "FeMoco"
   ],
   "scope": "first",
-  "re": null,
-  "en": "The iron-molybdenum cofactor of nitrogenase, the benchmark quantum-chemistry problem for ammonia fixation",
-  "ru": "FeMoco — железо-молибденовый кофактор нитрогеназы; эталонная задача квантовой химии, связанная с фиксацией азота",
-  "src": "standard"
+  "en": "The iron-molybdenum core of the enzyme that fixes nitrogen — the standard example of a molecule classical chemistry cannot settle",
+  "ru": "Железо-молибденовый кофактор фермента, связывающего азот, — хрестоматийный пример молекулы, с которой не справляется классическая химия",
+  "src": "standard",
+  "why": "Used as a unit of ambition in resource estimates; the analyst has no way to place the name"
  },
  {
   "id": "term-p450",
@@ -1396,10 +1310,10 @@
    "P450"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Cytochrome P450, a family of drug-metabolising enzymes used as a benchmark problem for fault-tolerant quantum chemistry",
-  "ru": "Цитохром P450 — семейство ферментов, метаболизирующих лекарства; используется как эталонная задача для отказоустойчивой квантовой химии",
-  "src": "standard"
+  "en": "A family of enzymes the body uses to break down drugs — a standard benchmark molecule for quantum chemistry",
+  "ru": "Семейство ферментов, которыми организм расщепляет лекарства, — стандартная тестовая молекула для квантовой химии",
+  "src": "standard",
+  "why": "Named beside FeMoco as an application target; otherwise reads like a part number"
  },
  {
   "id": "term-hubbard",
@@ -1411,10 +1325,10 @@
    "Хаббард"
   ],
   "scope": "first",
-  "re": null,
-  "en": "The Hubbard model, the minimal lattice model of interacting electrons and the standard benchmark for early fault-tolerant simulation",
-  "ru": "Модель Хаббарда — минимальная решёточная модель взаимодействующих электронов; стандартный эталон для ранней отказоустойчивой симуляции",
-  "src": "standard"
+  "en": "A stripped-down model of electrons hopping on a lattice — the standard hard test for simulating materials",
+  "ru": "Упрощённая модель электронов, прыгающих по решётке, — стандартная трудная проверка для симуляции материалов",
+  "src": "standard",
+  "why": "The benchmark behind most simulation claims; the reader should see it as a test, not an application"
  },
  {
   "id": "abbr-thc",
@@ -1425,10 +1339,10 @@
    "THC"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Tensor hypercontraction — a compression of the electron-interaction integrals that sharply cuts the gate cost of quantum chemistry algorithms",
-  "ru": "Тензорное гиперсжатие (THC) — сжатие интегралов электронного взаимодействия, резко снижающее стоимость в гейтах для алгоритмов квантовой химии",
-  "src": "standard"
+  "en": "Tensor hypercontraction: a technique that cuts the circuit cost of quantum chemistry, and with it the qubit counts quoted for it",
+  "ru": "Тензорная гиперконтракция: приём, снижающий стоимость схем квантовой химии, а с ней и приводимые оценки числа кубитов",
+  "src": "standard",
+  "why": "Explains why chemistry estimates fall by orders of magnitude between papers; the letters otherwise mislead"
  },
  {
   "id": "abbr-otoc",
@@ -1439,10 +1353,10 @@
    "OTOC"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Out-of-time-order correlator — a measure of how fast information scrambles, used as an advantage-candidate benchmark circuit",
-  "ru": "Коррелятор вне временного порядка (OTOC) — мера скорости перемешивания информации; используется как схема-кандидат на демонстрацию преимущества",
-  "src": "standard"
+  "en": "Out-of-time-order correlator: a measure of how fast information scrambles in a quantum system — a favourite advantage benchmark",
+  "ru": "Коррелятор вне временного порядка: мера того, как быстро информация перемешивается в квантовой системе, — любимый тест на преимущество",
+  "src": "standard",
+  "why": "Named as an advantage claim in §4; entirely opaque without expansion"
  },
  {
   "id": "abbr-dqi",
@@ -1453,10 +1367,10 @@
    "DQI"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Decoded quantum interferometry — a quantum optimisation algorithm with a proven speedup, so far only on a purpose-built problem",
-  "ru": "Декодированная квантовая интерферометрия (DQI) — квантовый алгоритм оптимизации с доказанным ускорением, пока лишь на специально построенной задаче",
-  "src": "standard"
+  "en": "Decoded quantum interferometry: a recent algorithm for optimisation problems, one of the few new sources of candidate advantage",
+  "ru": "Декодированная квантовая интерферометрия: свежий алгоритм для задач оптимизации, один из немногих новых источников кандидатного преимущества",
+  "src": "standard",
+  "why": "Appears in the algorithm list; the reader needs to know it is new and what class it addresses"
  },
  {
   "id": "term-certified-randomness",
@@ -1467,10 +1381,10 @@
    "сертифицированная случайность"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Random numbers whose unpredictability is proven by the hardness of simulating the quantum circuit that produced them",
-  "ru": "Сертифицированная случайность — случайные числа, непредсказуемость которых доказана сложностью классической симуляции породившей их квантовой схемы",
-  "src": "standard"
+  "en": "Random numbers with a proof that they are fresh and really came from the quantum machine rather than a classical imitation",
+  "ru": "Случайные числа с доказательством, что они новые и получены именно квантовой машиной, а не классической подделкой",
+  "src": "standard",
+  "why": "The one commercial use running today; the proof, not the randomness, is what is being sold"
  },
  {
   "id": "abbr-rl",
@@ -1481,38 +1395,10 @@
    "RL"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Reinforcement learning — machine learning by trial and reward, used here to tune calibration and control pulses automatically",
-  "ru": "Обучение с подкреплением (RL) — машинное обучение через пробы и вознаграждение; здесь применяется для автоматической подстройки калибровки и управляющих импульсов",
-  "src": "standard"
- },
- {
-  "id": "abbr-fpga",
-  "match": [
-   "FPGA"
-  ],
-  "match_ru": [
-   "FPGA"
-  ],
-  "scope": "first",
-  "re": null,
-  "en": "Field-programmable gate array — a reconfigurable chip used for control and decoding when microsecond-scale latency is required",
-  "ru": "Программируемая логическая матрица (FPGA) — перенастраиваемый чип для управления и декодирования, когда нужна задержка микросекундного масштаба",
-  "src": "standard"
- },
- {
-  "id": "abbr-gpu",
-  "match": [
-   "GPU"
-  ],
-  "match_ru": [
-   "GPU"
-  ],
-  "scope": "first",
-  "re": null,
-  "en": "Graphics processing unit — the parallel processor used for classical simulation and for neural-network decoders",
-  "ru": "Графический процессор (GPU) — параллельный процессор для классической симуляции и для нейросетевых декодеров",
-  "src": "standard"
+  "en": "Reinforcement learning: software that improves a machine's calibration or decoding by trial and error instead of a fixed rule",
+  "ru": "Обучение с подкреплением: программа, улучшающая калибровку или декодирование машины перебором и пробами, а не фиксированным правилом",
+  "src": "standard",
+  "why": "Two letters attached to calibration and decoder results; the contrast with a fixed rule is the content"
  },
  {
   "id": "abbr-qpu",
@@ -1523,24 +1409,10 @@
    "QPU"
   ],
   "scope": "first",
-  "re": null,
-  "en": "Quantum processing unit — the quantum chip itself, as distinct from the control electronics and classical host around it",
-  "ru": "Квантовый процессор (QPU) — собственно квантовый чип, в отличие от управляющей электроники и классического хоста вокруг него",
-  "src": "standard"
- },
- {
-  "id": "abbr-hpc",
-  "match": [
-   "HPC-embedded"
-  ],
-  "match_ru": [
-   "HPC"
-  ],
-  "scope": "first",
-  "re": null,
-  "en": "High-performance computing — the supercomputing centres and their workloads, into which quantum processors are being embedded as accelerators",
-  "ru": "Высокопроизводительные вычисления (HPC) — суперкомпьютерные центры и их задачи, куда квантовые процессоры встраиваются как ускорители",
-  "src": "standard"
+  "en": "Quantum processing unit: the quantum chip itself, as distinct from the control electronics and the classical computer around it",
+  "ru": "Квантовый процессор: сам квантовый чип, в отличие от управляющей электроники и классического компьютера вокруг него",
+  "src": "standard",
+  "why": "Register rows count QPUs; the boundary matters when a machine is one rack of mostly classical equipment"
  },
  {
   "id": "term-nvqlink",
@@ -1551,9 +1423,151 @@
    "NVQLink"
   ],
   "scope": "first",
-  "re": null,
-  "en": "NVIDIA's low-latency interconnect between quantum processors and GPUs, aimed at real-time decoding and hybrid control loops",
-  "ru": "NVQLink — интерконнект NVIDIA с малой задержкой между квантовыми процессорами и GPU, предназначенный для декодирования в реальном времени и гибридных петель управления",
-  "src": "standard"
+  "en": "NVIDIA's link that puts a classical accelerator close enough to a quantum machine to decode its errors while the circuit runs",
+  "ru": "Связка NVIDIA, ставящая классический ускоритель достаточно близко к квантовой машине, чтобы декодировать ошибки прямо во время схемы",
+  "src": "standard",
+  "why": "A vendor product that became a layer of the stack; the reader should see what problem it removes"
+ },
+ {
+  "id": "abbr-aod",
+  "match": [
+   "AOD"
+  ],
+  "match_ru": [
+   "AOD"
+  ],
+  "scope": "first",
+  "en": "Acousto-optic deflector: the steerable beam that picks up single atoms and moves them — how atom machines rearrange qubits mid-run",
+  "ru": "Акустооптический дефлектор: управляемый луч, который подхватывает отдельные атомы и переносит их, — так атомные машины перестраивают кубиты на ходу",
+  "src": "standard",
+  "why": "Used unexpanded in every neutral-atom row; it is the mechanism behind the mobility claims"
+ },
+ {
+  "id": "abbr-slm",
+  "match": [
+   "SLM"
+  ],
+  "match_ru": [
+   "SLM"
+  ],
+  "scope": "first",
+  "en": "Spatial light modulator: optics that splits one laser into a fixed grid of traps — the static counterpart of the steerable beams",
+  "ru": "Пространственный модулятор света: оптика, делящая один лазер на неподвижную сетку ловушек, — статичный напарник управляемых лучей",
+  "src": "standard",
+  "why": "Sits beside AOD in the same rows; the static-versus-steerable split is what the pair means"
+ },
+ {
+  "id": "abbr-qnd",
+  "match": [
+   "QND"
+  ],
+  "match_ru": [
+   "QND"
+  ],
+  "scope": "first",
+  "en": "Quantum non-demolition: a measurement that reads a qubit without destroying it, so it can go on being used",
+  "ru": "Неразрушающее квантовое измерение: считывание кубита, после которого он остаётся пригодным к работе",
+  "src": "standard",
+  "why": "A measurement attribute in node tables; three letters that decide whether error correction is possible at all"
+ },
+ {
+  "id": "abbr-twpa",
+  "match": [
+   "TWPA"
+  ],
+  "match_ru": [
+   "TWPA"
+  ],
+  "scope": "first",
+  "en": "Travelling-wave parametric amplifier: the first and coldest amplifier in the readout chain — it sets how fast and how well a qubit is read",
+  "ru": "Параметрический усилитель бегущей волны: первый и самый холодный усилитель в цепи считывания — от него зависят скорость и качество считывания",
+  "src": "standard",
+  "why": "Unexpanded in superconducting readout rows; it is a component, not a measurement technique"
+ },
+ {
+  "id": "abbr-tfln",
+  "match": [
+   "TFLN"
+  ],
+  "match_ru": [
+   "TFLN"
+  ],
+  "scope": "first",
+  "en": "Thin-film lithium niobate: the material behind fast on-chip light switches and modulators in photonic machines",
+  "ru": "Тонкоплёночный ниобат лития: материал быстрых оптических переключателей и модуляторов на чипе в фотонных машинах",
+  "src": "standard",
+  "why": "A four-letter formula in photonic rows, sitting beside the other switch materials as an alternative"
+ },
+ {
+  "id": "abbr-dd",
+  "match": [
+   "DD"
+  ],
+  "match_ru": [
+   "DD"
+  ],
+  "scope": "first",
+  "en": "Dynamical decoupling: a rhythm of corrective pulses that cancels slow noise and stretches how long a qubit keeps its phase",
+  "ru": "Динамическая развязка: ритм корректирующих импульсов, гасящий медленный шум и удлиняющий удержание фазы кубитом",
+  "src": "standard",
+  "why": "Explains why two coherence numbers differ for the same qubit; two letters, never expanded"
+ },
+ {
+  "id": "abbr-jj",
+  "match": [
+   "JJ"
+  ],
+  "match_ru": [
+   "JJ"
+  ],
+  "scope": "first",
+  "en": "Josephson junction: the thin break in a superconducting loop that makes the circuit behave as a qubit — and the main source of its scatter",
+  "ru": "Джозефсоновский переход: тонкий разрыв в сверхпроводящем контуре, благодаря которому схема ведёт себя как кубит, — и главный источник разброса",
+  "src": "standard",
+  "why": "The single component every superconducting qubit is built around, abbreviated in manufacturing rows"
+ },
+ {
+  "id": "abbr-nv",
+  "match": [
+   "NV"
+  ],
+  "match_ru": [
+   "NV"
+  ],
+  "scope": "first",
+  "en": "Nitrogen-vacancy: a defect in diamond holding a spin that works at room temperature and couples to light",
+  "ru": "Азото-замещённая вакансия: дефект в алмазе со спином, который работает при комнатной температуре и связан со светом",
+  "src": "standard",
+  "why": "Two letters for a whole qubit family; room temperature and optical access are why it appears in link rows"
+ },
+ {
+  "id": "abbr-cv-dv",
+  "match": [
+   "CV",
+   "DV"
+  ],
+  "match_ru": [
+   "CV",
+   "DV"
+  ],
+  "scope": "first",
+  "en": "Continuous- and discrete-variable: whether the information rides on a light beam's amplitude and phase, or on single photons",
+  "ru": "Непрерывные и дискретные переменные: информация записана в амплитуде и фазе светового пучка либо в отдельных фотонах",
+  "src": "standard",
+  "why": "The two-letter tags split the photonic tables in half; the reader cannot follow the rows without the split"
+ },
+ {
+  "id": "abbr-bp",
+  "match": [
+   "BP"
+  ],
+  "match_ru": [
+   "BP"
+  ],
+  "scope": "first",
+  "en": "Belief propagation: a decoder that passes probabilities around the network of checks until they agree — the fast choice for dense codes",
+  "ru": "Распространение доверия: декодер, гоняющий вероятности по сети проверок, пока они не согласуются, — быстрый выбор для плотных кодов",
+  "src": "standard",
+  "why": "Named beside the matching decoder as the alternative; two letters that otherwise read as an oil company"
  }
 ]

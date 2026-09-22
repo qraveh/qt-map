@@ -11,17 +11,17 @@ from map_js import JS
 from brief_js import BRIEF_JS
 from labels import SHORT
 # shared tooltip for .tt terms: hover, keyboard focus or a tap shows the explanation below the term, kept inside the viewport
-GTIP_JS=r"""(function(){var tip=document.createElement('div');tip.id='gtip';tip.hidden=true;tip.setAttribute('role','tooltip');document.body.appendChild(tip);var cur=null;
-function show(el){var t=el.getAttribute('data-tip');if(!t){var L=(document.getElementById('app')||{getAttribute:function(){return 'en';}}).getAttribute('data-lang')||'en';var D=(window.__TIPS||{})[L]||{};t=D[el.getAttribute('data-t')]||((window.__TIPS||{}).en||{})[el.getAttribute('data-t')];}if(!t)return;cur=el;tip.textContent=t;tip.hidden=false;var r=el.getBoundingClientRect(),sx=window.scrollX,sy=window.scrollY,vw=document.documentElement.clientWidth;
- tip.style.left='0px';tip.style.top='0px';var w=tip.offsetWidth,h=tip.offsetHeight;var x=r.left+sx,y=r.bottom+sy+6;if(x+w>sx+vw-12)x=Math.max(sx+12,sx+vw-12-w);if(r.bottom+6+h>window.innerHeight&&r.top-6-h>0)y=r.top+sy-6-h;tip.style.left=x+'px';tip.style.top=y+'px';}
-function hide(){tip.hidden=true;cur=null;}
-document.addEventListener('mouseover',function(ev){var el=ev.target.closest&&ev.target.closest('.tt');if(el&&el!==cur)show(el);});
-document.addEventListener('mouseout',function(ev){var el=ev.target.closest&&ev.target.closest('.tt');if(el&&!(ev.relatedTarget&&el.contains(ev.relatedTarget)))hide();});
-document.addEventListener('focusin',function(ev){var el=ev.target.closest&&ev.target.closest('.tt');if(el)show(el);});
-document.addEventListener('focusout',function(ev){if(ev.target.closest&&ev.target.closest('.tt'))hide();});
-document.addEventListener('click',function(ev){var el=ev.target.closest&&ev.target.closest('.tt');if(!el){if(cur)hide();return;}if(cur===el&&!tip.hidden){hide();}else{show(el);}});
+GTIP_JS=r"""(function(){var tip=document.createElement('div');tip.id='gtip';tip.hidden=true;tip.setAttribute('role','tooltip');document.body.appendChild(tip);var cur=null,pinned=false,timer=null;
+function textOf(el){var t=el.getAttribute('data-tip');if(t)return t;var L=(document.getElementById('app')||{getAttribute:function(){return 'en';}}).getAttribute('data-lang')||'en';var D=(window.__TIPS||{});return (D[L]||{})[el.getAttribute('data-t')]||(D.en||{})[el.getAttribute('data-t')]||'';}
+function place(el){var r=el.getBoundingClientRect(),sx=window.scrollX,sy=window.scrollY,vw=document.documentElement.clientWidth;tip.style.left='0px';tip.style.top='0px';var w=tip.offsetWidth,h=tip.offsetHeight;var x=r.left+sx,y=r.bottom+sy+6;if(x+w>sx+vw-12)x=Math.max(sx+12,sx+vw-12-w);if(r.bottom+6+h>window.innerHeight&&r.top-6-h>0)y=r.top+sy-6-h;tip.style.left=x+'px';tip.style.top=y+'px';}
+function show(el,pin){var t=textOf(el);if(!t)return;if(timer){clearTimeout(timer);timer=null;}cur=el;tip.textContent=t;tip.hidden=false;tip.classList.toggle('pinned',!!pin);place(el);}
+function hide(){if(timer){clearTimeout(timer);timer=null;}tip.hidden=true;tip.classList.remove('pinned');cur=null;pinned=false;}
+function later(){if(pinned)return;if(timer)clearTimeout(timer);timer=setTimeout(function(){if(!pinned)hide();},220);}   /* a short grace so the pointer can travel into the tip and select its text */
+document.addEventListener('mouseover',function(ev){var el=ev.target.closest&&ev.target.closest('.tt');if(el){if(el!==cur&&!pinned)show(el,false);else if(el===cur&&timer){clearTimeout(timer);timer=null;}return;}if(tip.contains(ev.target)&&timer){clearTimeout(timer);timer=null;}});
+document.addEventListener('mouseout',function(ev){var to=ev.relatedTarget;var el=ev.target.closest&&ev.target.closest('.tt');if((el&&el===cur)||tip.contains(ev.target)){if(to&&(tip.contains(to)||(cur&&cur.contains(to))))return;later();}});
+document.addEventListener('click',function(ev){if(tip.contains(ev.target))return;var el=ev.target.closest&&ev.target.closest('.tt');if(!el){if(cur)hide();return;}if(cur===el&&pinned){hide();}else{pinned=true;show(el,true);}});
 document.addEventListener('keydown',function(ev){if(ev.key==='Escape')hide();});
-window.addEventListener('scroll',function(){if(cur&&!tip.hidden)show(cur);},{passive:true});})();"""
+window.addEventListener('scroll',function(){if(cur&&!tip.hidden)place(cur);},{passive:true});})();"""
 from editions import EDITIONS, editions_html, CONCEPT_DOI, REPO, SITE, STATUS
 import briefs as BR
 G=json.load(open(os.path.join(ROOT,'data','graph.json'),encoding='utf-8'))
@@ -133,21 +133,32 @@ def convert(md,lang):
 # scripts or SVG.
 SKIP_TAGS={'a','code','pre','script','style','h1','h2','h3','nav','svg','title','summary'}
 def map_text(h,fn):
-    out=[]; stack=[]
+    """apply fn to the text nodes of h that lie outside SKIP_TAGS elements and outside any element carrying data-nohint"""
+    out=[]; stack=[]   # (tag name, skipping?)
     for tok in re.split(r'(<[^>]+>)',h):
         if tok.startswith('<'):
             out.append(tok); m=re.match(r'<(/?)([a-zA-Z0-9]+)',tok)
             if m and not tok.endswith('/>'):
                 closing,name=m.group(1),m.group(2).lower()
-                if name in SKIP_TAGS:
-                    if closing:
-                        if name in stack: del stack[len(stack)-1-stack[::-1].index(name)]
-                    else: stack.append(name)
-        else: out.append(tok if stack else fn(tok))
+                if closing:
+                    for k in range(len(stack)-1,-1,-1):
+                        if stack[k][0]==name: del stack[k]; break
+                else: stack.append((name,name in SKIP_TAGS or 'data-nohint' in tok))
+        else: out.append(tok if any(f for _,f in stack) else fn(tok))
     return ''.join(out)
+# paragraphs that themselves define terms carry no hints (the definition is the text); the "Why" paragraph of About is narrative
+NOHINT_OPENERS=['Why a Quantum Technology Map','Зачем нужна карта квантовых технологий','Terms used in this chapter','Термины этой главы','Two scores are given where they differ','Там, где оценки расходятся',
+                'Legend:','Легенда:','Nodes are technologies, not platforms','Узлы — технологии, а не платформы','Seven attributes per node','Семь атрибутов узла','Five edge types','Пять типов рёбер',
+                'Clock is not an attribute','Такт — не атрибут','Off-diagonal test','Тест на off-diagonal','Validity criterion','Критерий валидности']
+def mark_nohint(h):
+    def rep(m):
+        plain=html_mod.unescape(re.sub(r'<[^>]+>','',m.group(2))).strip()
+        return m.group(0) if not any(plain.startswith(o) for o in NOHINT_OPENERS) else '<p data-nohint="1"'+m.group(1)+'>'+m.group(2)+'</p>'
+    return re.sub(r'<p((?: [^>]*)?)>(.*?)</p>',rep,h,flags=re.S)
 CITE=re.compile(r'\[([A-Z]{1,2}\d{1,3})\]')
 def polish(h,lang):
     P=lang+'-'
+    h=mark_nohint(h)
     # 1. lists: "(a) …"/"(i) …" items carry their label as a hanging tag; "**Term** — text" items put the term on its own line
     h=re.sub(r'<li>\(([a-z]|[ivx]+)\)\s',lambda m:'<li class="lbl"><span class="lb">('+m.group(1)+')</span> ',h)
     h=re.sub(r'<li>(<p>)?<strong>([^<]{3,120})</strong>\s?—\s(\S)',lambda m:'<li class="def">'+(m.group(1) or '')+'<strong>'+m.group(2)+'</strong>'+m.group(3).upper(),h)
@@ -207,12 +218,26 @@ def glossary():
     if GLOSSARY is None:
         GLOSSARY=[]
         for fn in ('glossary-own.json','glossary-field.json'):
-            GLOSSARY+=json.load(open(os.path.join(ROOT,'data',fn),encoding='utf-8'))
+            part=json.load(open(os.path.join(ROOT,'data',fn),encoding='utf-8'))
+            for e in part: e['own']=(fn=='glossary-own.json')   # the map's own terms are hinted in the report, not in the briefs
+            GLOSSARY+=part
         for e in GLOSSARY:
             if e['id'] in ('notation-lambda','notation-code-distance'): e['scope']='first'   # notation: once per section is enough
     return GLOSSARY
 def tips_dict():
-    return {'en':{e['id']:e['en'] for e in glossary()},'ru':{e['id']:e['ru'] for e in glossary()}}
+    d={'en':{},'ru':{}}
+    for e in glossary():
+        for L in ('en','ru'):
+            d[L][e['id']]=e[L]
+            for k,v in enumerate(e.get('variants') or []): d[L][e['id']+'@'+str(k)]=v[L]
+    return d
+def variant_key(e,secnum):
+    # a variant applies to sections before its "until" (About and §0 count as 0): the reader has not yet met the definition
+    for k,v in enumerate(e.get('variants') or []):
+        try:
+            if secnum<float(v.get('until','0')): return e['id']+'@'+str(k)
+        except ValueError: pass
+    return e['id']
 def _term_re(forms):
     alts=[]
     for f in forms:
@@ -223,13 +248,13 @@ def _term_re(forms):
         left=r'(?<![\w\-])' if f[0].isalnum() else ''; right=r'(?![\w\-])' if f[-1].isalnum() else ''
         alts.append(left+esc+right)
     return '|'.join(alts)
-def tooltips(h,lang):
+def tooltips(h,lang,briefs=False):
     G_=glossary(); items=[]   # (entry, own regex, alternatives)
     for e in G_:
+        if briefs and e.get('own') and not e.get('briefs'): continue   # a brief is a stand-alone article: field terms and the evidence codes only
         forms=e.get('match_ru' if lang=='ru' else 'match') or []
-        rx=e.get('re') if lang=='en' else None
-        body=_term_re(forms)
-        if rx: body=(rx+'|'+body) if body else rx
+        rx=e.get('re') if lang=='en' else e.get('re_ru')
+        body=rx if rx else _term_re(forms)   # a regex replaces the plain forms (it carries the context rules)
         if not body: continue
         items.append((e,re.compile(body),body))
     # one combined regex, longer forms first so "path instance" beats "path"; the entry is identified by a full match afterwards
@@ -239,9 +264,13 @@ def tooltips(h,lang):
         for e,rx,_ in items:
             if rx.fullmatch(txt): return e
         return None
-    def wrap(e,txt): return '<span class="tt" data-t="'+e['id']+'">'+txt+'</span>'   # the text comes from window.__TIPS[lang][id]
     def process(segment):
-        seen=set()
+        seen=set(); mh=re.match(r'<h[23] id="(?:en|ru)-s(\d+)(?:-(\d+))?"',segment)
+        secnum=float(mh.group(1)+'.'+(mh.group(2) or '0')) if mh else 0.0
+        major=str(int(secnum))
+        for e,_,_ in items:                       # entries confined to some sections ("only") are marked seen elsewhere
+            if e.get('only') and major not in e['only']: seen.add(e['id'])
+        def wrap(e,txt): return '<span class="tt" data-t="'+variant_key(e,secnum)+'">'+txt+'</span>'   # the text comes from window.__TIPS[lang][key]
         def fn(t):
             if not t.strip(): return t
             out=[]; pos=0
@@ -249,7 +278,7 @@ def tooltips(h,lang):
                 m=comb.search(t,pos)
                 while m:
                     e=entry_of(m.group(0))
-                    if e and not (e['scope']=='first' and e['id'] in seen): break
+                    if e and not (e['id'] in seen and (e['scope']=='first' or e.get('only'))): break
                     m=comb.search(t,m.start()+1)
                 if not m: out.append(t[pos:]); break
                 out.append(t[pos:m.start()]); out.append(wrap(e,m.group(0))); pos=m.end()
@@ -494,7 +523,7 @@ def masthead(cfg):
     return f'''<header class="mast">
  <div>
   <div class="eyebrow"><span class="lang-en">Edition {cfg['edition']}{' · <b class="beta">beta</b>' if beta else ''} · {cfg['date']} · English / Russian</span><span class="lang-ru">Издание {cfg['edition']}{' · <b class="beta">бета</b>' if beta else ''} · {cfg['date']} · English / Русский</span></div>
-  <h1 class="title">Quantum Technology Map <span class="yr">{cfg['edition']}</span></h1>
+  <h1 class="title">Quantum Technology Map</h1>
   <p class="subtitle"><span class="lang-en">Every quantum-computing platform compared by the goal it serves — achievements, justified intentions, the most promising directions — a 96-technology graph across ten stack layers that reproduces those directions on its own, and a brief on each technology.</span><span class="lang-ru">Все платформы квантовых компьютеров, сравнённые по целям, которым они служат, — достижения, обоснованные намерения, наиболее перспективные направления, — граф 96 технологий в десяти слоях стека, который воспроизводит эти направления сам, и бриф по каждой технологии.</span></p>
   <p class="author"><span class="lang-en">Author</span><span class="lang-ru">Автор</span> · <b>{cfg['author']}</b></p>
  </div>
@@ -560,7 +589,7 @@ def build(cfg=PUBLIC):
     B=BR.load_briefs()
     ids={b['id'] for b in B}
     colours=BR.family_colours(G)
-    BR.TOOLTIPS=tooltips
+    BR.TOOLTIPS=lambda h,lang:tooltips(h,lang,briefs=True)
     briefs_block=BR.briefs_section_html(B,brief_md2html,colours)
     en_html,en_toc=convert(EN,'en'); ru_html,ru_toc=convert(RU,'ru')
     en_html=insert_after_h3_table(en_html,'3.1',radars_block('en')); ru_html=insert_after_h3_table(ru_html,'3.1',radars_block('ru'))

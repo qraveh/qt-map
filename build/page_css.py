@@ -95,7 +95,8 @@ main{min-width:0}
 .tt{text-decoration:underline dotted;text-decoration-color:var(--muted);text-underline-offset:3px;cursor:help;outline:none}
 .tt:hover,.tt:focus{text-decoration-color:var(--accent)}
 th .tt,td .tt{text-decoration-thickness:1px}
-#gtip{position:absolute;z-index:60;max-width:min(380px,calc(100vw - 24px));padding:.5rem .65rem;border:1px solid var(--rule);border-radius:8px;background:var(--surface);color:var(--ink);font:400 .86rem/1.4 system-ui,sans-serif;text-align:left;box-shadow:0 6px 24px rgba(0,0,0,.14);pointer-events:none;white-space:normal}
+#gtip{position:absolute;z-index:60;max-width:min(400px,calc(100vw - 24px));padding:.5rem .65rem;border:1px solid var(--rule);border-radius:8px;background:var(--surface);color:var(--ink);font:400 .86rem/1.45 system-ui,sans-serif;text-align:left;box-shadow:0 6px 24px rgba(0,0,0,.14);white-space:normal;user-select:text;-webkit-user-select:text;cursor:text}
+#gtip.pinned{border-color:var(--accent)}
 #gtip[hidden]{display:none}
 .prose [id^="en-h"],.prose [id^="ru-h"],.prose td[id],.prose figure[id]{scroll-margin-top:70px}
 .prose blockquote{margin:1em 0;padding:12px 18px;border-left:3px solid var(--rule);background:var(--surface);border-radius:0 8px 8px 0;color:var(--ink2)}
