@@ -527,9 +527,13 @@ def run_metamorphic(model, a):
                         apply_state(m, s, fwd)
                     inc = [q for q in model.path_ids if q not in comp]
                     if inc and (s['focus'] or s.get('machine')):
+                        # only the term that cannot share the new line is released: a focus whose station lies on the path stays,
+                        # a machine whose path it is stays (23 Sep 2026: the check was over-strict for the mixed focus + machine case)
                         p = rng.choice(inc); m.isolate(p); ps2 = m.page_state()
-                        if ps2['focus'] or ps2.get('machine') or ps2['isolate'] != p:
-                            viol.append({'check': 'M2b-incompatible-isolate-did-not-release', 'path': p, 'page_state': ser_state(page_to_oracle(ps2, inv)[0])})
+                        exp_focus = s['focus'] if (s['focus'] and p in model.station_paths[s['focus']]) else None
+                        exp_mach = s['machine'] if (s.get('machine') and model.machines[s['machine']].path == p) else None
+                        if (ps2['focus'] or None) != exp_focus or (ps2.get('machine') or None) != exp_mach or ps2['isolate'] != p:
+                            viol.append({'check': 'M2b-incompatible-isolate-did-not-release', 'path': p, 'expected': {'focus': exp_focus, 'machine': exp_mach}, 'page_state': ser_state(page_to_oracle(ps2, inv)[0])})
                         apply_state(m, s, fwd)
                 t = rng.choice(TOG); cur = m.state()['toggles'][t]
                 m.toggle(t, not cur); m.toggle(t, cur); r3 = rd(m)
