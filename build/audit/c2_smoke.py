@@ -502,7 +502,7 @@ def hints(pw):
     p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0", timeout=60000)
     check('title without edition', p.evaluate("()=>document.querySelector('h1.title').textContent.trim()") == 'Quantum Technology Map')
     why = p.evaluate("()=>{const ps=[...document.querySelectorAll('div.prose.lang-en p')]; const w=ps.find(x=>x.textContent.startsWith('Why a Quantum Technology Map')); return w?w.querySelectorAll('.tt').length:-1;}")
-    check('the "Why" paragraph of About carries no hints', why == 0, why)
+    check('the "Why" paragraph of About carries hints on its own terms (editor, 23 Sep)', why >= 1, why)
     defs = p.evaluate("()=>[...document.querySelectorAll('div.prose.lang-en p[data-nohint]')].map(x=>[x.textContent.slice(0,30), x.querySelectorAll('.tt').length])")
     check('definition paragraphs carry no hints (≥ 8 marked, 0 hints)', len(defs) >= 8 and all(n == 0 for _, n in defs), defs[:4])
     lab = p.evaluate("()=>[...document.querySelectorAll('div.prose.lang-en p[id^=en-h] > strong')].filter(s=>s.querySelector('.tt[data-t=hypothesis-id]')).length")
