@@ -542,6 +542,8 @@ def apply_state_via_strip(m, s, fwd, ticks):
     lens = s['lens']
     if lens not in oracle.LENS_AXIS:
         return 'no axis for lens ' + str(lens)
+    if oracle.AXIS_LENS[oracle.LENS_AXIS[lens]] != lens:   # det, destr, mid, place borrow an axis but have no title or tick of their own
+        return 'the strip has no control for lens ' + str(lens)
     vals = sorted(s['values'], key=oracle._sortkey)
     for v in vals:
         if (lens, fwd[lens].get(v, v)) not in ticks:

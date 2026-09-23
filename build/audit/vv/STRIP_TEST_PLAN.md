@@ -31,8 +31,9 @@ records every disagreement. The strip is folded into this method rather than tes
   reset; the same state is applied from the strip where the strip has a control (lens by its axis title, values by its ticks,
   focus by its line; isolate, machine and toggles by the map, which the strip does not control) and read again; the two reads
   (stations, lines, edges, the five pc fields, the shown values, the page's control state) must be identical. States whose
-  lens has no axis of its own (family, status, destructive, mid-circuit, deterministic, placement) are recorded as skipped
-  with the reason. S2: every axis title, clicked from a random state, yields its lens with no filter and the axis mark. S3: for
+  lens has no axis of its own (family, status) or only borrows one for the mark (destructive, mid-circuit, deterministic,
+  placement) are recorded as skipped with the reason. S2: every axis title, clicked from a random state, yields its lens with
+  no filter and the axis mark — also when that lens is already chosen with a filter (the title clears it). S3: for
   a random state and a random station, `focus` from the map and `pc_click` from the strip give identical full reads — this
   includes the ADJ-12 releases, since the strip calls the map's own `select`. 
 - **Hover (R4)** — S4: from a random state, hovering a random line lights exactly that line and that station; hovering the
@@ -64,3 +65,17 @@ release check PASS. A disagreement is a defect or an adjudication to write, neve
     python3 build/audit/vv/runner.py strip --n 300 --out build/audit/vv/results_c2i
     python3 build/audit/vv/runner.py summary     --out build/audit/vv/results_c2i
     python3 build/audit/release_check.py --smoke --vv
+
+## 7. What the first run found (23 Sep 2026)
+The first full run against ebc8883 stopped after 302 single and 31 strip records with six disagreements of three kinds, each
+fixed before the recorded run (results_c2i):
+- **Page (rule violated).** `pcSetLens` returned early when the lens was already chosen, so clicking the title of the active axis
+  left the filter in place; S2 from a state with that lens and a filter caught it. Now the title clears the filter — the lens
+  with no filter, as the rule reads; the lens select cannot express a re-selection, the title can.
+- **Page (mirror incomplete).** The (b) axis had the seven time bins but no row for the stations without a time value, while the
+  time legend has "no time (code, decoder, fab)"; a filter by that value was neither pressed on the strip nor selectable from
+  it (single, `lens=time values=[none]`, expected pressed tick missing). The axis now has a "—" tick at the height where those
+  lines sit.
+- **Driver.** `apply_state_via_strip` clicked the title of a lens that only borrows an axis (det, destr, mid, place — no title
+  of its own), a null-element error in four records. Such states are skipped with the reason, as the plan says for lenses
+  without an axis.

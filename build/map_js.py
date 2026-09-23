@@ -512,19 +512,20 @@ const ORD={aff:[0,0.25,0.5,0.75,1],d:['none','static','shared','longrange','bus'
 // the strip as a control (adjudication 13, 23 Sep 2026): each axis is one design attribute and stands for one lens; a tick on an
 // axis is one value of that lens — clicking the title selects the lens, clicking a tick keeps only the stations with that value
 // (Ctrl-click adds a value), exactly as the lens select and the lens legend do. (e) shows modality@placement; its ticks act on the
-// modality lens. (b) shows the seven time bins of the time lens.
+// modality lens. (b) shows the seven time bins of the time lens and a "—" row for the stations without a time value. Clicking the
+// title of the axis whose lens is already chosen clears its filter (the lens with no filter, as the rule says).
 const AXLENS={aff:'aff',b:'time',c:'mech',d:'d',e:'mod',f:'f',g:'g'};
 const LENSAX={aff:'aff',time:'b',det:'b',mech:'c',destr:'c',mid:'c',d:'d',mod:'e',place:'e',f:'f',g:'g'};
 const xAx=i=>PX0+i*(PX1-PX0)/(AXES.length-1);
 const tScale=d3.scaleLinear().domain([-8.5,-1]).range([PY1,PY0]);
 function yOf(n,k){ if(k==='aff')return PY1-(ORD.aff.indexOf(n.aff))*(PY1-PY0)/4; if(k==='b')return n.b.t==null?PY1+10:tScale(n.b.t); if(k==='c'){const m=n.c?n.c.mech:'none'; const i=ORD.c.indexOf(m); return PY1-i*(PY1-PY0)/(ORD.c.length-1);} if(k==='e'){const key=n.e.mod==='none'?'none':n.e.mod+'@'+((n.e.place&&n.e.place[0])||'none'); let i=ORD.e.indexOf(key); if(i<0)i=0; return PY1-i*(PY1-PY0)/(ORD.e.length-1);} const arr=ORD[k]; const v=k==='f'?(n.f[0]||'none'):n[k]; let i=arr.indexOf(v); if(i<0)i=0; return PY1-i*(PY1-PY0)/(arr.length-1); }
 function axisTicks(a){ const k=a.k; if(k==='aff')return ORD.aff.map(v=>({y:PY1-ORD.aff.indexOf(v)*(PY1-PY0)/4,t:vt('AFF',v).split(' ')[0],lens:'aff',lv:String(v)}));
-  if(k==='b')return TBINS.map((b,i)=>({y:tScale(b[0]),t:b[1],lens:'time',lv:String(i)}));
+  if(k==='b')return TBINS.map((b,i)=>({y:tScale(b[0]),t:b[1],lens:'time',lv:String(i)})).concat([{y:PY1+10,t:'—',lens:'time',lv:'none'}]);   // stations without a time value sit below the axis (yOf); their tick is the legend's "no time"
   if(k==='c')return ORD.c.map((v,i)=>({y:PY1-i*(PY1-PY0)/(ORD.c.length-1),t:v==='none'?'—':vt('MECH',v).split(' ')[0],lens:'mech',lv:v}));
   if(k==='e')return ORD.e.map((v,i)=>({y:PY1-i*(PY1-PY0)/(ORD.e.length-1),t:v==='none'?'—':v,lens:'mod',lv:v==='none'?'none':v.split('@')[0]}));
   const arr=ORD[k], tab={d:'MOB',f:'ERR',g:'FAB'}[k]; return arr.map((v,i)=>({y:PY1-i*(PY1-PY0)/(arr.length-1),t:v==='none'?'—':vt(tab,v).split(' ')[0],lens:k,lv:v})); }
 const pcLines=pcsvg.append('g'); const pcAxes=pcsvg.append('g'); const pcLabel=pcsvg.append('text').attr('x',PX0).attr('y',PCH-8).attr('fill','var(--ink)').attr('font-size',12).attr('font-weight',600);
-function pcSetLens(L){ if(state.lens===L)return; state.lens=L; state.lensFilter=null; const sel=document.getElementById('lens'); if(sel)sel.value=L; applyLens(); drawEdges(); dimming(); }
+function pcSetLens(L){ if(state.lens===L&&state.lensFilter==null)return; state.lens=L; state.lensFilter=null; const sel=document.getElementById('lens'); if(sel)sel.value=L; applyLens(); drawEdges(); dimming(); }
 function pcTick(t,multi){ if(state.lens!==t.lens){ state.lens=t.lens; state.lensFilter=null; const sel=document.getElementById('lens'); if(sel)sel.value=t.lens; } toggleFilter(t.lv,multi); applyLens(); drawEdges(); dimming(); }
 let pcHov=null;
 function renderPC(){ pcAxes.selectAll('*').remove();
