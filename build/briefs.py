@@ -480,7 +480,9 @@ def _sources(body):
         n = int(m.group(1) or m.group(2)); rest = m.group(3)
         u = _URL.search(rest)
         url = u.group(0).rstrip('.,;)') if u else ''
-        label = rest[:u.start()].strip() if u else rest.strip()
+        flat = re.sub(r'\[([^\]]+)\]\(https?://[^)\s]*\)', r'\1', rest)   # a markdown link in the line (e.g. a linked DOI) reads as its text
+        u2 = _URL.search(flat)
+        label = flat[:u2.start()].strip() if u2 else flat.strip()
         label = re.sub(r'\s*[—·-]\s*$', '', label)
         label = re.sub(r'\s*\[(?:REG:[^\]]+|[DCRSGP])\]\s*', ' ', label).strip()
         ys = [y for y in re.findall(r'(?<!\d)((?:19|20)\d\d)(?!\d)', label) if int(y) <= 2026]

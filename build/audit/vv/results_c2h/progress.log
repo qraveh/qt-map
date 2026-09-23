@@ -1,0 +1,9 @@
+SUITE metamorphic 25/200 disagreements=0
+SUITE metamorphic 50/200 disagreements=0
+SUITE metamorphic 75/200 disagreements=0
+SUITE metamorphic 100/200 disagreements=0
+SUITE metamorphic 125/200 disagreements=0
+SUITE metamorphic 150/200 disagreements=0
+SUITE metamorphic 175/200 disagreements=0
+SUITE metamorphic 200/200 disagreements=0
+SUITE metamorphic DONE 200/200 disagreements=0 seconds=949.7
