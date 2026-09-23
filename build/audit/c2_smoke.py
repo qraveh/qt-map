@@ -155,7 +155,7 @@ TZ = """()=>{
   const fold=id=>{ let e=document.getElementById(id); while(e&&(e=e.nextElementSibling)){ if(e.matches('.tbl'))return e; const w=e.querySelector&&e.querySelector('.tbl'); if(w)return w; } return null; };
   const st=w=>{ const t=w&&w.querySelector('table'); if(!t)return null; const m=/scale\\(([\\d.]+)\\)/.exec(t.style.transform||'');
     return {bar:!!w.querySelector('.tblzoom:not([hidden])'),z:m?parseFloat(m[1]):1,zoomed:w.classList.contains('zoomed'),big:t.offsetWidth>w.clientWidth+8,hscroll:w.scrollWidth>w.clientWidth+1,fits:w.scrollWidth<=w.clientWidth+1}; };
-  const small=[...document.querySelectorAll('#app .prose.lang-en .tbl')].find(w=>!w.closest('details')&&w.clientWidth>0&&w.querySelector('table').scrollWidth<=w.clientWidth);
+  const small=[...document.querySelectorAll('#app .prose.lang-en .tbl')].find(w=>!w.closest('details.fold')&&w.clientWidth>0&&w.querySelector('table').scrollWidth<=w.clientWidth);
   return {node:st(fold(h3id('7.2'))),edge:st(fold(h3id('7.10'))),small:small?{bar:!!small.querySelector('.tblzoom:not([hidden])'),zoomed:small.classList.contains('zoomed')}:null,
     bars:document.querySelectorAll('.tbl .tblzoom:not([hidden])').length,
     vpover:document.documentElement.scrollWidth>document.documentElement.clientWidth+1,
@@ -182,7 +182,7 @@ def tables(pw, w, h):
     print(f'tables — viewport {w}×{h}')
     # open every EN fold (the big tables live in closed folds; the bar is measured when a fold opens)
     p.evaluate("()=>document.querySelectorAll('#app .lang-en details.fold').forEach(d=>{d.open=true;})")
-    p.wait_for_function("()=>{const h=[...document.querySelectorAll('#app .lang-en h3')].find(x=>x.textContent.startsWith('7.2 ')); let e=h; while(e&&(e=e.nextElementSibling)){ if(e.matches('.tbl'))return !!e.querySelector('.tblzoom:not([hidden])'); } return false;}", timeout=20000)
+    p.wait_for_function("()=>{const h=[...document.querySelectorAll('#app .lang-en h3')].find(x=>x.textContent.startsWith('7.2 ')); for(const e of ((h&&h.nextElementSibling&&h.nextElementSibling.classList.contains('secbody'))?[...h.nextElementSibling.querySelectorAll('.tbl, h3')]:[])){ if(e.matches('.tbl'))return !!e.querySelector('.tblzoom:not([hidden])'); } return false;}", timeout=20000)
     p.wait_for_timeout(300)
     r = p.evaluate(TZ)
     check('§7.2 node table: bar present, scaled < 1, fits (no horizontal scroll)', r['node'] and r['node']['bar'] and r['node']['z'] < 1 and r['node']['zoomed'] and r['node']['fits'], r['node'])
@@ -191,7 +191,7 @@ def tables(pw, w, h):
     check('a small table gets no bar', r['small'] is not None and not r['small']['bar'] and not r['small']['zoomed'], r['small'])
     print(f"  bars with every EN fold open: {r['bars']}")
     nid = p.evaluate("()=>{const h=[...document.querySelectorAll('#app .lang-en h3')].find(x=>x.textContent.startsWith('7.2 ')); return h?h.id:'';}")
-    node = p.locator(f'#{nid} ~ details.fold div.tbl, #{nid} ~ div.tbl').first   # the §7.2 node table lives inside the fold (the same element TZ measures), not among the heading's siblings
+    node = p.locator(f'.secbody[data-sec="{nid}"] div.tbl').first   # the §7.2 node table lives inside the fold (the same element TZ measures), not among the heading's siblings
     node.locator('[data-tz="one"]').click()
     p.wait_for_timeout(100)
     r1 = p.evaluate(TZ)
@@ -344,9 +344,9 @@ def chapter8(pw, w, h):
       const toc=lang=>q('nav.toc .lang-'+lang+' li a .n').map(x=>x.textContent.trim()).filter(x=>/^8(\.\d)?$/.test(x));
       const en=h2('en'), ru=h2('ru');
       const idx=(arr,pre)=>arr.findIndex(x=>x.startsWith(pre));
-      const tbls=q('#app .prose.lang-en h3').filter(h=>/^8\.[123] /.test(h.textContent)).map(h=>{ let e=h; while(e&&(e=e.nextElementSibling)){ if(e.matches('.tbl'))return {sort:e.getAttribute('data-sort'),btns:e.querySelectorAll('.sortbtn').length,reset:!!e.querySelector('.tsreset')}; } return null; });
+      const tbls=q('#app .prose.lang-en h3').filter(h=>/^8\.[123] /.test(h.textContent)).map(h=>{ for(const e of ((h&&h.nextElementSibling&&h.nextElementSibling.classList.contains('secbody'))?[...h.nextElementSibling.querySelectorAll('.tbl, h3')]:[])){ if(e.matches('.tbl'))return {sort:e.getAttribute('data-sort'),btns:e.querySelectorAll('.sortbtn').length,reset:!!e.querySelector('.tsreset')}; } return null; });
       const verdicts=q('#app .prose.lang-en p').filter(p=>/Verdict:/.test(p.textContent)).length;
-      const ledger=q('#app .prose.lang-en h3').filter(h=>/^8\\.5 /.test(h.textContent)).map(h=>{ let e=h; while(e&&(e=e.nextElementSibling)){ if(e.matches('.tbl'))return e.querySelectorAll('tbody tr').length; if(e.matches('h3'))break; } return 0; })[0]||0;
+      const ledger=q('#app .prose.lang-en h3').filter(h=>/^8\\.5 /.test(h.textContent)).map(h=>{ for(const e of ((h&&h.nextElementSibling&&h.nextElementSibling.classList.contains('secbody'))?[...h.nextElementSibling.querySelectorAll('.tbl, h3')]:[])){ if(e.matches('.tbl'))return e.querySelectorAll('tbody tr').length; if(e.matches('h3'))break; } return 0; })[0]||0;
       const verdictsRu=q('#app .prose.lang-ru p').filter(p=>/Вердикт:/.test(p.textContent)).length;
       return {en8:idx(en,'8'), en9:idx(en,'9'), en7:idx(en,'7'), ru8:idx(ru,'8'), ru9:idx(ru,'9'), h3en:h3('en'), h3ru:h3('ru'), tocEn:toc('en'), tocRu:toc('ru'), tbls, verdicts, verdictsRu, ledger,
               srcEn:en[idx(en,'9')]||'', srcRu:ru[idx(ru,'9')]||'', macEn:en[idx(en,'8')]||''};
@@ -360,7 +360,7 @@ def chapter8(pw, w, h):
     check('eight verdict lines in each language', r['verdicts'] == 8 and r['verdictsRu'] == 8, (r['verdicts'], r['verdictsRu']))
     check('forecast ledger (Table 8.5) has 8 rows', r['ledger'] == 8, r['ledger'])
     # sort table 8.1 by "Machines" twice → descending; ↺ restores
-    t = p.evaluate("""()=>{ const h=[...document.querySelectorAll('#app .prose.lang-en h3')].find(x=>x.textContent.startsWith('8.1 ')); let e=h; while(e&&(e=e.nextElementSibling)){ if(e.matches('.tbl')) { e.id=e.id||'smoke-t81'; return e.id; } } return ''; }""")
+    t = p.evaluate("""()=>{ const h=[...document.querySelectorAll('#app .prose.lang-en h3')].find(x=>x.textContent.startsWith('8.1 ')); for(const e of ((h&&h.nextElementSibling&&h.nextElementSibling.classList.contains('secbody'))?[...h.nextElementSibling.querySelectorAll('.tbl, h3')]:[])){ if(e.matches('.tbl')) { e.id=e.id||'smoke-t81'; return e.id; } } return ''; }""")
     sb = '#' + t
     orig = p.evaluate("id=>[...document.querySelector(id).querySelectorAll('tbody tr')].map(r=>r.cells[0].textContent.trim())", sb)
     p.locator(sb).locator('.sortbtn', has_text='Machines').first.click(); p.wait_for_timeout(80)
@@ -573,7 +573,7 @@ def review23b(pw):
     check('ORCID: the icon is the link, no text, no separator before it', au['icon'] and au['href'] == 'https://orcid.org/0000-0001-7362-9529' and au['text'].endswith('Raveh Neeman') and 'orcid.org' in au['title'], au)
     ld = p.evaluate("()=>{const l=document.querySelector('#mapbody .maplead'); const lg=document.querySelector('#mapbody .legend'); return {below:!!l&&!!lg&&(lg.compareDocumentPosition(l)&Node.DOCUMENT_POSITION_FOLLOWING)>0, top:!!document.querySelector('.mapsec .lead'), links:[...(l?l.querySelectorAll('.lang-en a.xref'):[])].map(a=>a.getAttribute('href')), hub:/hub/.test(l?l.textContent:''), transfer:/transfer hub/.test(l?l.textContent:'')};}")
     check('the caption sits below the map, none above, §-links resolve, "transfer hub" gone', ld['below'] and not ld['top'] and ld['links'] == ['#en-s7-6', '#en-s7'] and ld['hub'] and not ld['transfer'], ld)
-    rf = p.evaluate("()=>{const ol=document.querySelector('#en-s9 ~ ol.refs'); const li=ol?[...ol.querySelectorAll('li')]:[]; const cites=[...document.querySelectorAll('.prose.lang-en a.cite')]; return {n:li.length, first:li[0]?li[0].textContent.slice(0,40):'', numeric:cites.length>100&&cites.every(a=>/^\\[\\d+\\]$/.test(a.textContent)), resolve:cites.every(a=>document.getElementById(a.getAttribute('href').slice(1))), codes:/\\[[A-Z]{1,2}\\d{1,3}\\]/.test(document.querySelector('.prose.lang-en').textContent)};}")
+    rf = p.evaluate("()=>{const ol=document.querySelector('.secbody[data-sec=\"en-s9\"] ol.refs'); const li=ol?[...ol.querySelectorAll('li')]:[]; const cites=[...document.querySelectorAll('.prose.lang-en a.cite')]; return {n:li.length, first:li[0]?li[0].textContent.slice(0,40):'', numeric:cites.length>100&&cites.every(a=>/^\\[\\d+\\]$/.test(a.textContent)), resolve:cites.every(a=>document.getElementById(a.getAttribute('href').slice(1))), codes:/\\[[A-Z]{1,2}\\d{1,3}\\]/.test(document.querySelector('.prose.lang-en').textContent)};}")
     check('§9 is one numbered IEEE list; every citation is a number that resolves; no code left in the text', rf['n'] > 190 and rf['first'].startswith('[1]') and rf['numeric'] and rf['resolve'] and not rf['codes'], rf)
     t85 = p.evaluate("()=>{const a=document.getElementById('en-f1a'); const td=a.closest('td'); const r=a.getBoundingClientRect(); return {h:r.height, one:r.height<30, w:td.getBoundingClientRect().width};}")
     check('Table 8.5: the row code stays on one line', t85['one'] and t85['w'] >= 40, t85)
@@ -616,7 +616,7 @@ def review23c(pw):
     check('the abstract names the 96 technologies and the 136 machines', p.evaluate("()=>{const t=document.querySelector('.mast .subtitle .lang-en').textContent; return /\\(96\\)/.test(t) && /\\(136\\)/.test(t);}"))
     check('§0 is titled "Takeaways"', p.evaluate("()=>document.getElementById('en-s0').textContent.includes('Takeaways') && document.getElementById('ru-s0').textContent.includes('Выводы')"))
     check('§3.1 names the platforms', p.evaluate("()=>document.getElementById('en-s3-1').textContent.startsWith('3.1 Platform scores on the six criteria')"))
-    check('§0 carries no coined terms (physics of fault tolerance, counts under quality, axes)', p.evaluate("()=>{const t=document.querySelector('#en-s0 ~ ol.es').textContent; return !/physics of fault tolerance|counts under quality|different axes/.test(t);}"))
+    check('§0 carries no coined terms (physics of fault tolerance, counts under quality, axes)', p.evaluate("()=>{const t=document.querySelector('.secbody[data-sec=\"en-s0\"] ol.es').textContent; return !/physics of fault tolerance|counts under quality|different axes/.test(t);}"))
     errs = [e for e in errors if 'ERR_TUNNEL' not in e and 'net::' not in e]
     check('0 console errors', not errs, errs[:3])
     ctx.close(); b.close()
@@ -717,10 +717,10 @@ def folds(pw):
     check('choices survive a reload', p.evaluate("()=>document.querySelector('.secbody[data-sec=\"en-s3\"]').hidden && !document.querySelector('.secbody[data-sec=\"en-s3-1\"] details.tblfold').open"))
     bf = p.evaluate("()=>{const s=document.getElementById('brief-transmon'); return {btns:s.querySelectorAll('.foldbtn').length, src:!s.querySelector('.secbody details.fold-src'), en:s.querySelectorAll('.lang-en .foldbtn, [lang=en] .foldbtn').length};}")
     check('a brief\'s sections fold and its sources fold stays outside them', bf['btns'] >= 8 and bf['src'], bf)
-    p.click('#pcwrap-h .foldbtn'); p.wait_for_timeout(200)
+    p.click('#pcwrap .foldbtn[data-sec="pcwrap"]'); p.wait_for_timeout(200)
     pc = p.evaluate("()=>({hidden:document.querySelector('.secbody[data-sec=\"pcwrap\"]').hidden, lines:document.querySelectorAll('#pc path.pcline').length})")
     check('the parallel-coordinates strip folds under its title (the strip itself stays built)', pc['hidden'] and pc['lines'] == 96, pc)
-    p.click('#pcwrap-h .foldbtn'); p.wait_for_timeout(200)
+    p.click('#pcwrap .foldbtn[data-sec="pcwrap"]'); p.wait_for_timeout(200)
     check('and unfolds', p.evaluate("()=>!document.querySelector('.secbody[data-sec=\"pcwrap\"]').hidden"))
     errs = [e for e in errors if 'ERR_TUNNEL' not in e and 'net::' not in e]
     check('0 console errors', not errs, errs[:3])
