@@ -669,19 +669,22 @@ def run_metamorphic(model, a):
                 if not s['isolate']:
                     # ADJ-12: isolating a path that cannot share a line with the focused station or the machine releases them, so the
                     # identity holds only for a compatible path; an incompatible one is a different check (the release is expected)
-                    comp = [q for q in model.path_ids if (not s['focus'] or q in model.station_paths[s['focus']]) and (not s.get('machine') or model.machines[s['machine']].path == q)]
+                    # the page holds the effective selection (ADJ-12, gesture order: isolate, machine, focus) — a machine already
+                    # released by the focus is not there to keep (found by the run of 23 Sep, results_c2i: meta-1-141)
+                    _iso, e_mach, e_focus = oracle.effective(model, s)
+                    comp = [q for q in model.path_ids if (not e_focus or q in model.station_paths[e_focus]) and (not e_mach or model.machines[e_mach].path == q)]
                     if comp:
                         p = rng.choice(comp); m.isolate(p); m.clear_isolate(); r2 = rd(m)
                         if r2 != base:
                             viol.append({'check': 'M2-isolate-clear-not-identity' + ('-with-focus' if s['focus'] else ''), 'path': p, 'diff': diff(base, r2)})
                         apply_state(m, s, fwd)
                     inc = [q for q in model.path_ids if q not in comp]
-                    if inc and (s['focus'] or s.get('machine')):
+                    if inc and (e_focus or e_mach):
                         # only the term that cannot share the new line is released: a focus whose station lies on the path stays,
                         # a machine whose path it is stays (23 Sep 2026: the check was over-strict for the mixed focus + machine case)
                         p = rng.choice(inc); m.isolate(p); ps2 = m.page_state()
-                        exp_focus = s['focus'] if (s['focus'] and p in model.station_paths[s['focus']]) else None
-                        exp_mach = s['machine'] if (s.get('machine') and model.machines[s['machine']].path == p) else None
+                        exp_focus = e_focus if (e_focus and p in model.station_paths[e_focus]) else None
+                        exp_mach = e_mach if (e_mach and model.machines[e_mach].path == p) else None
                         if (ps2['focus'] or None) != exp_focus or (ps2.get('machine') or None) != exp_mach or ps2['isolate'] != p:
                             viol.append({'check': 'M2b-incompatible-isolate-did-not-release', 'path': p, 'expected': {'focus': exp_focus, 'machine': exp_mach}, 'page_state': ser_state(page_to_oracle(ps2, inv)[0])})
                         apply_state(m, s, fwd)
