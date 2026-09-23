@@ -67,6 +67,10 @@ class MapPage:
         if p.locator('#mapbody').count() and p.locator('#mapbody').evaluate('e=>e.hidden'):
             p.locator('[data-mapcollapse]').first.click()
             p.wait_for_function("!document.getElementById('mapbody').hidden")
+        # the controls bar starts collapsed (23 Sep 2026) — the driver works with it open
+        if p.evaluate("()=>document.getElementById('mapbar').classList.contains('collapsed')"):
+            p.locator('#bartog').click()
+            p.wait_for_function("!document.getElementById('mapbar').classList.contains('collapsed')")
         self._state = {'lens': 'family', 'values': set(), 'isolate': None, 'focus': None, 'machine': None,
                        'toggles': {'requires': False, 'alternatives': False, 'conflicts': False}}
         if theme:
@@ -192,7 +196,9 @@ class MapPage:
         zl.click()
         zl.fill(str(int(percent)))
         zl.press('Enter')
-        self.page.wait_for_function("p=>document.getElementById('zoomlvl').value===p+'%'", arg=str(max(20, min(250, int(percent)))))
+        # the percentage is relative to the fitted width (23 Sep 2026); the scale factor is clamped to [0.2, 2.5], so the value
+        # shown is the clamped one
+        self.page.wait_for_function("p=>{const f=window.__fitScale?window.__fitScale():1; const z=Math.max(0.2,Math.min(2.5,p/100*f)); return document.getElementById('zoomlvl').value===Math.round(z/f*100)+'%';}", arg=int(percent))
 
     def _zoom_changed_after(self, sel):
         w0 = self.page.evaluate("()=>document.querySelector('#mapwrap svg').getAttribute('width')")

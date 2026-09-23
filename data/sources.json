@@ -1,0 +1,3782 @@
+{
+ "S1": [
+  {
+   "authors": [
+    "Yu Chen",
+    "Michel Devoret"
+   ],
+   "org": "Google Quantum AI",
+   "title": "Our quantum hardware: the engine for verifiable quantum advantage",
+   "date": "2025-10-22",
+   "kind": "web",
+   "site": "Google Blog",
+   "url": "https://blog.google/innovation-and-ai/technology/research/quantum-hardware-verifiable-advantage/",
+   "hint": "Google Quantum AI, Willow fidelities / verifiable advantage (Oct 2025)",
+   "verified": true
+  }
+ ],
+ "S2": [
+  {
+   "org": "Google Quantum AI and Collaborators",
+   "authors": [],
+   "title": "Quantum error correction below the surface code threshold",
+   "journal": "Nature",
+   "volume": "638",
+   "issue": "8052",
+   "pages": "920-926",
+   "date": "2024-12-09",
+   "doi": "10.1038/s41586-024-08449-y",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-024-08449-y",
+   "hint": "\"Quantum error correction below the surface code threshold\", Nature (2024/25)",
+   "verified": true
+  }
+ ],
+ "S3": [
+  {
+   "org": "IBM",
+   "title": "IBM Quantum Computing — Hardware and roadmap",
+   "kind": "web",
+   "site": "IBM",
+   "url": "https://www.ibm.com/quantum/hardware",
+   "hint": "IBM Quantum hardware page",
+   "verified": true
+  }
+ ],
+ "S4": [
+  {
+   "title": "What's new at IBM Quantum - Q2 2026",
+   "org": "IBM Quantum",
+   "site": "IBM",
+   "kind": "web",
+   "url": "https://www.ibm.com/quantum/blog/whats-new-q2-2026",
+   "hint": "IBM, What's new Q2 2026",
+   "verified": true
+  }
+ ],
+ "S5": [
+  {
+   "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.134.090601",
+   "hint": "Zuchongzhi 3.0, PRL 134, 090601",
+   "verified": true,
+   "kind": "journal",
+   "title": "Establishing a New Benchmark in Quantum Computational Advantage with 105-qubit Zuchongzhi 3.0 Processor",
+   "authors": [
+    "Dongxin Gao",
+    "Daojin Fan",
+    "Chen Zha",
+    "Jiahao Bei",
+    "Guoqing Cai",
+    "Jianbin Cai"
+   ],
+   "n_authors": 154,
+   "journal": "Physical Review Letters",
+   "volume": "134",
+   "pages": "090601",
+   "date": "2025-03",
+   "doi": "10.1103/PhysRevLett.134.090601",
+   "arxiv": "2412.11924",
+   "note": "title and authors from the arXiv record (alphaxiv mirror); volume and article number from the DOI"
+  }
+ ],
+ "S6": [
+  {
+   "org": "Rigetti Computing, Inc.",
+   "title": "Rigetti Announces General Availability of 108-Qubit System",
+   "date": "2026-04-07",
+   "kind": "web",
+   "site": "Rigetti Computing",
+   "url": "https://investors.rigetti.com/news-releases/news-release-details/rigetti-announces-general-availability-108-qubit-system",
+   "hint": "Rigetti Cepheus-1-108Q GA (Apr 2026)",
+   "verified": true
+  }
+ ],
+ "S7": [
+  {
+   "authors": [
+    "Rui Li",
+    "Kentaro Kubo",
+    "Yinghao Ho",
+    "Zhiguang Yan",
+    "Yasunobu Nakamura",
+    "Hayato Goto"
+   ],
+   "n_authors": 6,
+   "title": "Realization of High-Fidelity CZ Gate Based on a Double-Transmon Coupler",
+   "journal": "Physical Review X",
+   "volume": "14",
+   "issue": "4",
+   "pages": "041050",
+   "date": "2024-11-21",
+   "doi": "10.1103/PhysRevX.14.041050",
+   "arxiv": "2402.18926",
+   "kind": "journal",
+   "url": "https://journals.aps.org/prx/abstract/10.1103/PhysRevX.14.041050",
+   "hint": "Toshiba double-transmon coupler, PRX 14, 041050",
+   "verified": true
+  },
+  {
+   "authors": [
+    "Fabian Marxer",
+    "Jakub Mrożek",
+    "Joona Andersson",
+    "Leonid Abdurakhimov",
+    "Janos Adam",
+    "Ville Bergholm"
+   ],
+   "n_authors": 67,
+   "title": "Above 99.9% Fidelity Single-Qubit Gates, Two-Qubit Gates, and Readout in a Single Superconducting Quantum Device",
+   "date": "2025-08-22",
+   "arxiv": "2508.16437",
+   "journal": "PRX Quantum",
+   "volume": "7",
+   "pages": "020333",
+   "doi": "10.1103/n86s-2b88",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2508.16437",
+   "hint": "IQM CZ 99.93% / readout 99.94%",
+   "verified": true,
+   "note": "arXiv page shows Journal-ref 'PRX Quantum 7, 020333 (2026)' and Related DOI 10.1103/n86s-2b88; volume and article number taken from that Journal-ref line",
+   "pubdate": "2026"
+  }
+ ],
+ "S8": [
+  {
+   "authors": [
+    "Wei-Ju Lin",
+    "Hyunheung Cho",
+    "Yinqi Chen",
+    "Maxim G. Vavilov",
+    "Chen Wang",
+    "Vladimir E. Manucharyan"
+   ],
+   "n_authors": 6,
+   "title": "24 days-stable CNOT-gate on fluxonium qubits with over 99.9% fidelity",
+   "date": "2024-07-22",
+   "arxiv": "2407.15783",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2407.15783",
+   "hint": "Fluxonium CNOT 99.94% in 60 ns (Manucharyan group), PRX Quantum 6, 010349",
+   "verified": true,
+   "note": "arXiv abs page (2026-09-23) shows no Journal-ref and no related DOI (only the arXiv DOI); the previous PRX Quantum 6, 010349 fields were not confirmed by the source and were dropped (hint retains them)"
+  },
+  {
+   "authors": [
+    "Leon Ding",
+    "Max Hays",
+    "Youngkyu Sung",
+    "Bharath Kannan",
+    "Junyoung An",
+    "Agustin Di Paolo"
+   ],
+   "n_authors": 19,
+   "title": "High-Fidelity, Frequency-Flexible Two-Qubit Fluxonium Gates with a Transmon Coupler",
+   "journal": "Physical Review X",
+   "volume": "13",
+   "issue": "3",
+   "pages": "031035",
+   "date": "2023-09-25",
+   "doi": "10.1103/PhysRevX.13.031035",
+   "kind": "journal",
+   "url": "https://journals.aps.org/prx/abstract/10.1103/PhysRevX.13.031035",
+   "hint": "MIT fluxonium CZ 99.922%, PRX 13, 031035",
+   "verified": true
+  }
+ ],
+ "S9": [
+  {
+   "authors": [
+    "Nathan Lacroix",
+    "Alexandre Bourassa",
+    "Francisco J. H. Heras",
+    "Lei M. Zhang",
+    "Johannes Bausch",
+    "Andrew W. Senior"
+   ],
+   "n_authors": 283,
+   "title": "Scaling and logic in the color code on a superconducting quantum processor",
+   "journal": "Nature",
+   "volume": "645",
+   "issue": "8081",
+   "pages": "614-619",
+   "date": "2024-12-18",
+   "doi": "10.1038/s41586-025-09061-4",
+   "arxiv": "2412.14256",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-025-09061-4",
+   "hint": "Google colour code, Nature (May 2025)",
+   "verified": true,
+   "note": "published online May 28, 2025 (Nature 645, 614–619); the record date is the arXiv v1 date",
+   "pubdate": "2025-05"
+  }
+ ],
+ "S10": [
+  {
+   "authors": [
+    "Emma Rosenfeld",
+    "Craig Gidney",
+    "Gabrielle Roberts",
+    "Alexis Morvan",
+    "Nathan Lacroix",
+    "Dvir Kafri"
+   ],
+   "n_authors": 392,
+   "title": "Magic state cultivation on a superconducting quantum processor",
+   "date": "2025-12-15",
+   "arxiv": "2512.13908",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2512.13908",
+   "hint": "Magic-state cultivation",
+   "verified": true
+  }
+ ],
+ "S11": [
+  {
+   "authors": [
+    "Volodymyr Sivak",
+    "Alexis Morvan",
+    "Michael Broughton",
+    "Rodrigo G. Cortiñas",
+    "Johannes Bausch",
+    "Andrew W. Senior"
+   ],
+   "title": "Reinforcement learning control of quantum error correction",
+   "journal": "Nature",
+   "volume": "655",
+   "issue": "8124",
+   "pages": "879-884",
+   "date": "2026-07-08",
+   "doi": "10.1038/s41586-026-10759-2",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-026-10759-2",
+   "hint": "Google RL-steered QEC, Nature (Jul 2026)",
+   "verified": true,
+   "note": "Google Quantum AI collaboration paper; Crossref lists individual authors (well over a hundred), so the entry uses et al.",
+   "etal": true
+  }
+ ],
+ "S12": [
+  {
+   "authors": [
+    "Tan He",
+    "Weiping Lin",
+    "Rui Wang",
+    "Yuan Li",
+    "Jiahao Bei",
+    "Jianbin Cai"
+   ],
+   "n_authors": 145,
+   "title": "Experimental Quantum Error Correction below the Surface Code Threshold via All-Microwave Leakage Suppression",
+   "journal": "Physical Review Letters",
+   "volume": "135",
+   "issue": "26",
+   "pages": "260601",
+   "date": "2025-12-22",
+   "doi": "10.1103/rqkg-dw31",
+   "kind": "journal",
+   "url": "https://journals.aps.org/prl/abstract/10.1103/rqkg-dw31",
+   "hint": "Zuchongzhi 3.2 below threshold, PRL (Dec 2025)",
+   "verified": true
+  }
+ ],
+ "S13": [
+  {
+   "title": "Surface code logical operations on a superconducting quantum processor",
+   "authors": [
+    "Weiping Lin",
+    "Shaojun Guo",
+    "Yuwei Ma",
+    "Zhengzhong Yi",
+    "Kai Zhang",
+    "Jiahao Bei"
+   ],
+   "n_authors": 194,
+   "date": "2026-07-01",
+   "arxiv": "2607.01473",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2607.01473",
+   "hint": "USTC logical CNOT",
+   "verified": true
+  }
+ ],
+ "S14": [
+  {
+   "url": "https://arxiv.org/abs/2606.06598",
+   "hint": "Zhejiang lattice surgery",
+   "verified": true,
+   "kind": "preprint",
+   "title": "A superconducting surface-code processor with lattice-surgery logical operations",
+   "authors": [
+    "Yanzhe Wang",
+    "Fanhao Shen",
+    "Haipeng Xie",
+    "Aosai Zhang",
+    "Yu Gao",
+    "Chuanyu Zhang"
+   ],
+   "n_authors": 34,
+   "date": "2026-06",
+   "arxiv": "2606.06598",
+   "note": "title and authors from the arXiv record (alphaxiv mirror); month from the arXiv identifier"
+  }
+ ],
+ "S15": [
+  {
+   "org": "IBM",
+   "authors": [
+    "Abhinav Kandala",
+    "Ali Javadi-Abhari",
+    "Jay Gambetta"
+   ],
+   "n_authors": 3,
+   "title": "Researchers demonstrate quantum advantage through trusted quantum computation",
+   "date": "2026-07-30",
+   "kind": "web",
+   "site": "IBM Quantum Computing Blog",
+   "url": "https://www.ibm.com/quantum/blog/quantum-advantage",
+   "hint": "IBM \"trusted quantum advantage\"",
+   "verified": true
+  },
+  {
+   "url": "https://arxiv.org/abs/2607.25941",
+   "hint": "IBM \"trusted quantum advantage\" — https://www.ibm.com/quantum/blog/quantum-advantage ; https://arxiv.org/abs/2607.25941",
+   "verified": true,
+   "kind": "preprint",
+   "title": "Sampling hard circuits with verifiably high fidelity",
+   "authors": [
+    "Simon Martiel",
+    "Jay-U Chung",
+    "Alireza Seif",
+    "Soumik Ghosh",
+    "Ian Hincks",
+    "Abhinav Deshpande"
+   ],
+   "n_authors": 12,
+   "date": "2026-07",
+   "arxiv": "2607.25941",
+   "note": "title and authors from the arXiv record (alphaxiv mirror); month from the arXiv identifier"
+  }
+ ],
+ "S16": [
+  {
+   "authors": [
+    "Thilo Maurer",
+    "Markus Bühler",
+    "Michael Kröner",
+    "Frank Haverkamp",
+    "Tristan Müller",
+    "Drew Vandeth"
+   ],
+   "n_authors": 7,
+   "title": "Real-time decoding of the gross code memory with FPGAs",
+   "date": "2025-10-24",
+   "arxiv": "2510.21600",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2510.21600",
+   "hint": "Relay-BP FPGA decoder",
+   "verified": true
+  }
+ ],
+ "S17": [
+  {
+   "org": "IBM",
+   "title": "IBM Delivers New Quantum Processors, Software, and Algorithm Breakthroughs on Path to Advantage and Fault Tolerance",
+   "date": "2025-11-12",
+   "kind": "web",
+   "site": "IBM Newsroom",
+   "url": "https://newsroom.ibm.com/2025-11-12-ibm-delivers-new-quantum-processors,-software,-and-algorithm-breakthroughs-on-path-to-advantage-and-fault-tolerance",
+   "hint": "IBM Nighthawk/Loon (Nov 2025)",
+   "verified": true
+  }
+ ],
+ "S18": [
+  {
+   "org": "IBM",
+   "authors": [
+    "Catherine Dundon",
+    "Shawn Hall",
+    "Matthew Hollister",
+    "Allie Lindler"
+   ],
+   "title": "IBM's new modular architecture for cryogenic systems",
+   "date": "2026-08-19",
+   "kind": "web",
+   "site": "IBM Quantum Computing Blog",
+   "url": "https://www.ibm.com/quantum/blog/modular-cryogenics",
+   "hint": "IBM modular cryogenics (Aug 2026)",
+   "verified": true
+  }
+ ],
+ "S19": [
+  {
+   "url": "https://info.archives.global.fujitsu/global/about/resources/news/press-releases/2025/0422-01.html",
+   "title": "Fujitsu and RIKEN develop world-leading 256-qubit superconducting quantum computer",
+   "org": "Fujitsu Limited and RIKEN",
+   "site": "Fujitsu Global",
+   "date": "2025-04-22",
+   "kind": "web",
+   "hint": "Fujitsu/RIKEN 256 q",
+   "verified": true
+  },
+  {
+   "url": "https://quantumcomputingreport.com/fujitsu-to-develop-10000-plus-qubit-superconducting-quantum-computer-for-2030/",
+   "title": "Fujitsu to Develop 10,000-Plus Qubit Superconducting Quantum Computer for 2030",
+   "authors": [
+    "Mohamed Abdel-Kareem"
+   ],
+   "org": "Quantum Computing Report",
+   "site": "Quantum Computing Report",
+   "date": "2025-08-01",
+   "kind": "web",
+   "hint": "10,000-qubit plan",
+   "verified": true
+  }
+ ],
+ "S20": [
+  {
+   "title": "SEEQC Reports Integrated Qubit Control Logic Operating at Millikelvin Temperatures",
+   "authors": [
+    "Mohamed Abdel-Kareem"
+   ],
+   "org": "Quantum Computing Report",
+   "site": "Quantum Computing Report",
+   "date": "2026-03-21",
+   "kind": "web",
+   "url": "https://quantumcomputingreport.com/seeqc-reports-integrated-qubit-control-logic-operating-at-millikelvin-temperatures/",
+   "hint": "SEEQC mK SFQ control (Nature Electronics, Mar 2026)",
+   "verified": true
+  }
+ ],
+ "S21": [
+  {
+   "authors": [
+    "Mohamed Abdel-Kareem"
+   ],
+   "org": "Quantum Computing Report",
+   "title": "SEEQC and IBM Collaborate on SFQ Control Integration Under DARPA's Quantum Benchmarking Initiative",
+   "date": "2025-06-12",
+   "kind": "web",
+   "site": "Quantum Computing Report",
+   "url": "https://quantumcomputingreport.com/seeqc-and-ibm-collaborate-on-sfq-control-integration-under-darpas-quantum-benchmarking-initiative/",
+   "hint": "SEEQC–IBM SFQ under QBI",
+   "verified": true
+  }
+ ],
+ "S22": [
+  {
+   "authors": [
+    "Matt Swayne"
+   ],
+   "org": "The Quantum Insider",
+   "title": "Atlantic Quantum Joins Google Quantum AI",
+   "date": "2025-10-03",
+   "kind": "web",
+   "site": "The Quantum Insider",
+   "url": "https://thequantuminsider.com/2025/10/03/atlantic-quantum-joins-google-quantum-ai/",
+   "hint": "Atlantic Quantum joins Google",
+   "verified": true
+  }
+ ],
+ "S23": [
+  {
+   "org": "IBM Quantum",
+   "title": "Why IBM is investing $10 billion into quantum computing",
+   "date": "2026-06-02",
+   "kind": "web",
+   "site": "IBM",
+   "url": "https://www.ibm.com/quantum/blog/10-billion-investment-faq",
+   "hint": "IBM $10 B",
+   "verified": true
+  }
+ ],
+ "S24": [
+  {
+   "org": "IQM Quantum Computers",
+   "title": "IQM Quantum Computers Becomes First European Quantum Computing Company Listed on a Major U.S. Exchange",
+   "date": "2026-07-02",
+   "kind": "web",
+   "site": "IQM Quantum Computers",
+   "url": "https://iqm.tech/press-releases/iqm-quantum-computers-becomes-first-european-quantum-computing-company-listed-on-a-major-u-s-exchange/",
+   "hint": "IQM Nasdaq listing",
+   "verified": true
+  }
+ ],
+ "S25": [
+  {
+   "authors": [
+    "Abbie Curbison"
+   ],
+   "org": "Oxford Quantum Circuits",
+   "title": "OQC raises £260m in Europe's largest ever private quantum computing funding round",
+   "date": "2026-06-02",
+   "kind": "web",
+   "site": "OQC",
+   "url": "https://oqc.tech/company/newsroom/series-c",
+   "hint": "OQC Series C",
+   "verified": true
+  }
+ ],
+ "S26": [
+  {
+   "org": "Rigetti Computing",
+   "title": "Rigetti Computing Reports First Quarter 2026 Financial Results",
+   "date": "2026-05-11",
+   "kind": "web",
+   "site": "Rigetti Computing",
+   "url": "https://investors.rigetti.com/news-releases/news-release-details/rigetti-computing-reports-first-quarter-2026-financial-results",
+   "hint": "Rigetti Q1 2026",
+   "verified": true
+  }
+ ],
+ "S27": [
+  {
+   "title": "Google Quantum AI is Now Accepting Proposals for Early Access to their Willow Quantum Processor",
+   "authors": [
+    "Doug Finke"
+   ],
+   "org": "Quantum Computing Report",
+   "site": "Quantum Computing Report",
+   "date": "2026-04-19",
+   "kind": "web",
+   "url": "https://quantumcomputingreport.com/google-quantum-ai-is-now-accepting-proposals-for-early-access-to-their-willow-quantum-processor/",
+   "hint": "Willow early access",
+   "verified": true
+  }
+ ],
+ "S28": [
+  {
+   "org": "DARPA",
+   "title": "Stage B selection",
+   "date": "2025-11-06",
+   "kind": "web",
+   "site": "DARPA",
+   "url": "https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection",
+   "hint": "DARPA QBI Stage B",
+   "verified": true,
+   "note": "page shows no publication date; date is the 'As of Nov. 6, 2025' in the body text"
+  },
+  {
+   "authors": [
+    "Doug Finke"
+   ],
+   "org": "Quantum Computing Report",
+   "title": "DARPA's Quantum Benchmarking Initiative (QBI) Advances with Eleven Teams Moving to Stage B",
+   "date": "2025-11-06",
+   "kind": "web",
+   "site": "Quantum Computing Report",
+   "url": "https://quantumcomputingreport.com/darpas-quantum-benchmarking-initiative-qbi-advances-with-eleven-teams-moving-to-stage-b/",
+   "hint": "DARPA QBI Stage B — https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection ; https://quantumcomputingreport.com/darpas-quantum-benchmarking-initiative-qbi-advances-with-eleven-teams-moving-to-stage-b/",
+   "verified": true
+  }
+ ],
+ "S29": [
+  {
+   "org": "IBM",
+   "title": "IBM Sets the Course to Build World's First Large-Scale, Fault-Tolerant Quantum Computer at New IBM Quantum Data Center",
+   "date": "2025-06-10",
+   "kind": "web",
+   "site": "IBM",
+   "url": "https://newsroom.ibm.com/2025-06-10-IBM-Sets-the-Course-to-Build-Worlds-First-Large-Scale,-Fault-Tolerant-Quantum-Computer-at-New-IBM-Quantum-Data-Center",
+   "hint": "IBM Starling/Blue Jay",
+   "verified": true
+  },
+  {
+   "org": "Quantum Computing Report",
+   "authors": [
+    "Doug Finke"
+   ],
+   "n_authors": 1,
+   "title": "IBM Extends Roadmap Up to 4,158 Qubits Using Multiprocessing and Advanced Software",
+   "date": "2022-05-10",
+   "kind": "web",
+   "site": "Quantum Computing Report",
+   "url": "https://quantumcomputingreport.com/ibm-extends-roadmap-up-to-4158-qubits-using-multiprocessing-and-advanced-software/",
+   "hint": "2023 roadmap",
+   "verified": true
+  }
+ ],
+ "S30": [
+  {
+   "url": "https://investors.rigetti.com/news-releases/news-release-details/rigetti-computing-provides-update-108-qubit-system",
+   "title": "Rigetti Computing Provides Update on 108-Qubit System",
+   "venue": "Rigetti Computing",
+   "date": "2026-01-09",
+   "kind": "web",
+   "org": "Rigetti Computing",
+   "site": "Rigetti Computing",
+   "hint": "Rigetti 108-q update",
+   "verified": true
+  }
+ ],
+ "S31": [
+  {
+   "org": "IQM Quantum Computers",
+   "title": "Development Roadmap",
+   "date": "2026-01-05",
+   "kind": "web",
+   "site": "IQM Quantum Computers",
+   "url": "https://iqm.tech/technology/roadmap",
+   "hint": "IQM roadmap",
+   "verified": true,
+   "note": "date is the page's last-modified date; page metadata gives original publication 2025-02-15"
+  },
+  {
+   "org": "IQM Quantum Computers",
+   "title": "IQM to deliver world-leading 300-qubit quantum computer to Finland",
+   "date": "2025-05-20",
+   "kind": "web",
+   "site": "IQM Quantum Computers",
+   "url": "https://iqm.tech/press-releases/iqm-to-deliver-world-leading-300-qubit-quantum-computer-to-finland/",
+   "hint": "IQM roadmap — https://iqm.tech/technology/roadmap ; https://iqm.tech/press-releases/iqm-to-deliver-world-leading-300-qubit-quantum-computer-to-finland/",
+   "verified": true
+  }
+ ],
+ "B1": [
+  {
+   "authors": [
+    "Niccolò Coppola"
+   ],
+   "org": "Alice & Bob",
+   "title": "Alice & Bob Shares Preliminary Results Vastly Surpassing Previous Bit-Flip Time Record",
+   "date": "2025-09-25",
+   "kind": "web",
+   "site": "Alice & Bob",
+   "url": "https://alice-bob.com/newsroom/alice-bob-surpasses-bit-flip-stability-record",
+   "hint": "Alice & Bob bit-flip record",
+   "verified": true
+  }
+ ],
+ "B2": [
+  {
+   "authors": [
+    "Niccolò Coppola"
+   ],
+   "org": "Alice & Bob",
+   "title": "Alice & Bob Improves Error Suppression in Quantum Computers by 'Squeezing' Cat Qubits",
+   "date": "2025-03-11",
+   "kind": "web",
+   "site": "Alice & Bob",
+   "url": "https://alice-bob.com/newsroom/squeezed-cat-qubit/",
+   "hint": "Squeezed cat",
+   "verified": true
+  },
+  {
+   "authors": [
+    "Rémi Rousseau",
+    "Diego Ruiz",
+    "Emanuele Albertinale",
+    "Pol d'Avezac",
+    "Danielius Banys",
+    "Ugo Blandin"
+   ],
+   "n_authors": 43,
+   "title": "Enhancing dissipative cat qubit protection by squeezing",
+   "date": "2025-02-11",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2502.07892",
+   "arxiv": "2502.07892",
+   "hint": "Squeezed cat — https://alice-bob.com/newsroom/squeezed-cat-qubit/ ; https://arxiv.org/abs/2502.07892",
+   "verified": true
+  }
+ ],
+ "B3": [
+  {
+   "authors": [
+    "Harald Putterman",
+    "Kyungjoo Noh",
+    "Connor T. Hann",
+    "Gregory S. MacCabe",
+    "Shahriar Aghaeimeibodi",
+    "Rishi N. Patel"
+   ],
+   "n_authors": 127,
+   "title": "Hardware-efficient quantum error correction via concatenated bosonic qubits",
+   "journal": "Nature",
+   "volume": "638",
+   "issue": "8052",
+   "pages": "927-934",
+   "date": "2025-02-26",
+   "doi": "10.1038/s41586-025-08642-7",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-025-08642-7",
+   "hint": "AWS Ocelot, Nature",
+   "verified": true,
+   "note": "Crossref returned 429 twice; fields taken from the publisher page (nature.com)"
+  }
+ ],
+ "B4": [
+  {
+   "url": "https://arxiv.org/abs/2607.22852",
+   "hint": "AWS cat–cat CNOT proposal",
+   "verified": true,
+   "kind": "preprint",
+   "title": "Bias-preserving cat-cat CNOT gate via vacuum-conditional beam-splitter",
+   "authors": [
+    "Yufeng Ye",
+    "Connor T. Hann",
+    "Kyungjoo Noh",
+    "Harald Putterman",
+    "Ron Belyansky",
+    "Arne L. Grimsmo",
+    "Oskar Painter"
+   ],
+   "n_authors": 7,
+   "date": "2026-07",
+   "arxiv": "2607.22852",
+   "note": "title and authors from the arXiv record (alphaxiv mirror); month from the arXiv identifier"
+  }
+ ],
+ "B5": [
+  {
+   "url": "https://arxiv.org/abs/2607.06718",
+   "hint": "Nord Quantique GKP SPAM",
+   "verified": true,
+   "kind": "preprint",
+   "title": "Quantum error correction of a grid-state qubit with state preparation and measurement errors below 10⁻³",
+   "authors": [
+    "Sara Turcotte",
+    "Lucas St-Jean",
+    "Amélie L. Pessonneaux",
+    "Ross Shillito",
+    "Bohdan Kulchytskyy",
+    "Eliott Ouellet"
+   ],
+   "n_authors": 13,
+   "date": "2026-07",
+   "arxiv": "2607.06718",
+   "note": "title and authors from the arXiv record (alphaxiv mirror); month from the arXiv identifier"
+  }
+ ],
+ "B6": [
+  {
+   "authors": [
+    "Benjamin L. Brock",
+    "Shraddha Singh",
+    "Alec Eickbusch",
+    "Volodymyr V. Sivak",
+    "Andy Z. Ding",
+    "Luigi Frunzio"
+   ],
+   "n_authors": 8,
+   "title": "Quantum error correction of qudits beyond break-even",
+   "journal": "Nature",
+   "volume": "641",
+   "issue": "8063",
+   "pages": "612-618",
+   "date": "2025-05-14",
+   "doi": "10.1038/s41586-025-08899-y",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-025-08899-y",
+   "hint": "GKP qudits beyond break-even, Nature",
+   "verified": true,
+   "note": "Crossref answered 429; fields taken from the publisher page (nature.com) instead"
+  }
+ ],
+ "B7": [
+  {
+   "authors": [
+    "Nitish Mehta",
+    "James D. Teoh",
+    "Taewan Noh",
+    "Ankur Agrawal",
+    "Amos Anderson",
+    "Beau Birdsall"
+   ],
+   "org": "D-Wave Quantum Inc.",
+   "title": "An entangling gate for dual-rail erasure qubits",
+   "journal": "Nature",
+   "volume": "656",
+   "issue": "8126",
+   "pages": "47-53",
+   "date": "2026-08-05",
+   "doi": "10.1038/s41586-026-10822-y",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-026-10822-y",
+   "hint": "Dual-rail cavity CZ, Nature (Aug 2026)",
+   "verified": true,
+   "note": "Crossref lists D-Wave Quantum Inc. as group author and 78 individuals (count read from Crossref; the arXiv v1 lists 73)",
+   "etal": true
+  },
+  {
+   "authors": [
+    "Nitish Mehta",
+    "James D. Teoh",
+    "Taewan Noh",
+    "Ankur Agrawal",
+    "Amos Anderson",
+    "Beau Birdsall"
+   ],
+   "n_authors": 73,
+   "title": "Bias-preserving and error-detectable entangling operations in a superconducting dual-rail system",
+   "date": "2025-03-13",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2503.10935",
+   "arxiv": "2503.10935",
+   "hint": "Dual-rail cavity CZ, Nature (Aug 2026) — https://www.nature.com/articles/s41586-026-10822-y ; https://arxiv.org/abs/2503.10935",
+   "verified": true
+  }
+ ],
+ "B8": [
+  {
+   "url": "https://arxiv.org/abs/2604.16292",
+   "hint": "AWS transmon erasure check",
+   "verified": true,
+   "kind": "preprint",
+   "title": "Fast, High-Fidelity Erasure Detection of Dual-Rail Qubits with Symmetrically Coupled Readout",
+   "authors": [
+    "Jimmy Shih-Chun Hung",
+    "Arbel Haim",
+    "Mouktik Raha",
+    "Gihwan Kim",
+    "Ziwen Huang",
+    "Ming-Han Chou"
+   ],
+   "n_authors": 17,
+   "date": "2026-04",
+   "arxiv": "2604.16292",
+   "note": "title and authors from the arXiv record (alphaxiv mirror); month from the arXiv identifier"
+  }
+ ],
+ "B9": [
+  {
+   "org": "Quantum Circuits",
+   "title": "Quantum Circuits Makes Error-Detecting Qubits",
+   "date": "2024-11-19",
+   "kind": "web",
+   "site": "Quantum Circuits",
+   "url": "https://quantumcircuits.com/resources/quantum-circuits-make-error-detecting-qubits/",
+   "hint": "Aqumen Seeker",
+   "verified": true
+  }
+ ],
+ "B10": [
+  {
+   "title": "Alice & Bob Unveils First Quantum System, Helium",
+   "authors": [
+    "Niccolò Coppola"
+   ],
+   "org": "Alice & Bob",
+   "site": "Alice & Bob",
+   "date": "2026-06-10",
+   "kind": "web",
+   "url": "https://alice-bob.com/newsroom/alice-bob-unveils-first-quantum-system/",
+   "hint": "Alice & Bob Helium",
+   "verified": true
+  },
+  {
+   "title": "Alice & Bob announces Series B Extension",
+   "authors": [
+    "Niccolò Coppola"
+   ],
+   "org": "Alice & Bob",
+   "site": "Alice & Bob",
+   "date": "2026-05-22",
+   "kind": "web",
+   "url": "https://alice-bob.com/newsroom/alice-bob-announces-series-b-extension/",
+   "hint": "Series B extension",
+   "verified": true
+  }
+ ],
+ "B12": [
+  {
+   "org": "Nord Quantique",
+   "title": "Nord Quantique Reaches $1.4 Billion USD Valuation with Latest Investment",
+   "date": "2026-05-18",
+   "kind": "web",
+   "site": "Business Wire",
+   "url": "https://www.businesswire.com/news/home/20260518358351/en/Nord-Quantique-Reaches-$1.4-Billion-USD-Valuation-with-Latest-Investment",
+   "hint": "Nord Quantique valuation",
+   "verified": true
+  },
+  {
+   "org": "HPCwire",
+   "title": "Canada's Nord Quantique Selected for 2nd Phase of DARPA Quantum Benchmarking Initiative",
+   "date": "2025-11-06",
+   "kind": "web",
+   "site": "HPCwire",
+   "url": "https://www.hpcwire.com/off-the-wire/canadas-nord-quantique-selected-for-2nd-phase-of-darpa-quantum-benchmarking-initiative/",
+   "hint": "QBI Stage B",
+   "verified": true,
+   "note": "off-the-wire release issued by Nord Quantique; no personal byline"
+  }
+ ],
+ "B13": [
+  {
+   "org": "D-Wave Quantum Inc.",
+   "title": "D-Wave Announces Agreement to Acquire Quantum Circuits Inc., Establishing World's Leading Quantum Computing Company",
+   "date": "2026-01-07",
+   "kind": "web",
+   "site": "D-Wave Quantum",
+   "url": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-to-acquire-quantum-circuits-inc-establishing-world-s-leading-quantum-computing-company/",
+   "hint": "D-Wave acquires QCI",
+   "verified": true
+  }
+ ],
+ "B14": [
+  {
+   "url": "https://alice-bob.com/roadmap.md",
+   "title": "Alice & Bob: Our Quantum Computing Roadmap",
+   "venue": "Alice & Bob",
+   "date": "2026-06-22",
+   "kind": "web",
+   "org": "Alice & Bob",
+   "site": "Alice & Bob",
+   "hint": "Alice & Bob roadmap",
+   "verified": true
+  }
+ ],
+ "B15": [
+  {
+   "org": "Nord Quantique",
+   "title": "Company website",
+   "kind": "web",
+   "site": "Nord Quantique",
+   "url": "https://www.nordquantique.com/",
+   "hint": "Nord Quantique",
+   "verified": true,
+   "note": "company home page, no single article; page title as printed; no publication date shown (metadata modified date 2026-06-03)"
+  }
+ ],
+ "B16": [
+  {
+   "authors": [
+    "Matt Swayne"
+   ],
+   "org": "The Quantum Insider",
+   "title": "D-Wave's New Gate-Model Roadmap Puts Pin in 2032 For 100 Logical-Qubit System",
+   "date": "2026-06-01",
+   "kind": "web",
+   "site": "The Quantum Insider",
+   "url": "https://thequantuminsider.com/2026/06/01/d-waves-new-gate-model-roadmap-puts-pin-in-2032-for-100-logical-qubit-system/",
+   "hint": "D-Wave gate-model roadmap",
+   "verified": true
+  }
+ ],
+ "B17": [
+  {
+   "authors": [
+    "Élie Gouzien",
+    "Diego Ruiz",
+    "Francois-Marie Le Régent",
+    "Jérémie Guillaud",
+    "Nicolas Sangouard"
+   ],
+   "n_authors": 5,
+   "title": "Performance Analysis of a Repetition Cat Code Architecture: Computing 256-bit Elliptic Curve Logarithm in 9 Hours with 126133 Cat Qubits",
+   "journal": "Phys. Rev. Lett.",
+   "volume": "131",
+   "pages": "040602",
+   "date": "2023-02-13",
+   "arxiv": "2302.06639",
+   "doi": "10.1103/PhysRevLett.131.040602",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2302.06639",
+   "hint": "Gouzien et al., cat-qubit ECC estimate",
+   "verified": true,
+   "pubdate": "2023-07"
+  }
+ ],
+ "B18": [
+  {
+   "authors": [
+    "Diego Ruiz",
+    "Jérémie Guillaud",
+    "Anthony Leverrier",
+    "Mazyar Mirrahimi",
+    "Christophe Vuillot"
+   ],
+   "n_authors": 5,
+   "title": "LDPC-cat codes for low-overhead quantum computing in 2D",
+   "journal": "Nature Communications",
+   "volume": "16",
+   "pages": "1040",
+   "date": "2024-01-17",
+   "doi": "10.1038/s41467-025-56298-8",
+   "arxiv": "2401.09541",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2401.09541",
+   "hint": "LDPC-cat estimate",
+   "verified": true,
+   "pubdate": "2025"
+  }
+ ],
+ "I1": [
+  {
+   "authors": [
+    "Anthony Ransford",
+    "M.S. Allman",
+    "Jake Arkinstall",
+    "J.P. Campora III",
+    "Samuel F. Cooper",
+    "Robert D. Delaney"
+   ],
+   "n_authors": 272,
+   "title": "Helios: A 98-qubit trapped-ion quantum computer",
+   "date": "2025-11-07",
+   "arxiv": "2511.05465",
+   "kind": "preprint",
+   "note": "arXiv abs page shows no journal-ref or related DOI (the Nature version is the next record); n_authors = 186 names printed + 86 'additional authors not shown'",
+   "url": "https://arxiv.org/abs/2511.05465",
+   "hint": "Helios",
+   "verified": true
+  },
+  {
+   "authors": [
+    "Anthony Ransford",
+    "M. S. Allman",
+    "Jake Arkinstall",
+    "J. P. Campora III",
+    "Samuel F. Cooper",
+    "Robert D. Delaney"
+   ],
+   "n_authors": 288,
+   "title": "A 98-qubit trapped-ion quantum computer with all-to-all connectivity",
+   "journal": "Nature",
+   "volume": "655",
+   "issue": "8121",
+   "pages": "81-86",
+   "date": "2026-06-17",
+   "doi": "10.1038/s41586-026-10676-4",
+   "arxiv": "2511.05465",
+   "kind": "journal",
+   "note": "fields from Crossref for the DOI (published online 2026-06-17, print 2026-07-02); Crossref lists no arXiv relation, arxiv kept from the report",
+   "url": "https://www.nature.com/articles/s41586-026-10676-4",
+   "hint": "Nature (Jun 2026)",
+   "verified": true
+  }
+ ],
+ "I2": [
+  {
+   "org": "Quantinuum",
+   "title": "Quantum Volume",
+   "kind": "web",
+   "site": "Quantinuum",
+   "url": "https://www.quantinuum.com/glossary-item/quantum-volume",
+   "hint": "Quantinuum QV",
+   "verified": true,
+   "note": "glossary page shows no publication date; the earlier 2026-09-04 was an access date"
+  }
+ ],
+ "I3": [
+  {
+   "org": "IonQ",
+   "title": "IonQ Forte: High-Performance Commercial Quantum Computer",
+   "kind": "web",
+   "site": "IonQ",
+   "url": "https://www.ionq.com/quantum-systems/forte",
+   "hint": "IonQ Forte",
+   "verified": true,
+   "note": "product page, no publication date shown"
+  }
+ ],
+ "I4": [
+  {
+   "authors": [
+    "A. C. Hughes",
+    "R. Srinivas",
+    "C. M. Löschnauer",
+    "H. M. Knaack",
+    "R. Matt",
+    "C. J. Ballance"
+   ],
+   "n_authors": 9,
+   "title": "Trapped-ion two-qubit gates with >99.99% fidelity without ground-state cooling",
+   "date": "2025-10-20",
+   "arxiv": "2510.17286",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2510.17286",
+   "hint": "99.99% electronic 2Q gate",
+   "verified": true
+  }
+ ],
+ "I5": [
+  {
+   "authors": [
+    "M. C. Smith",
+    "A. D. Leu",
+    "K. Miyanishi",
+    "M. F. Gely",
+    "D. M. Lucas"
+   ],
+   "n_authors": 5,
+   "title": "Single-qubit gates with errors at the 10⁻⁷ level",
+   "journal": "Physical Review Letters",
+   "volume": "134",
+   "issue": "23",
+   "pages": "230601",
+   "date": "2024-12-05",
+   "doi": "10.1103/42w2-6ccy",
+   "arxiv": "2412.04421",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2412.04421",
+   "hint": "Oxford 1Q record",
+   "verified": true,
+   "pubdate": "2025-06"
+  }
+ ],
+ "I6": [
+  {
+   "url": "https://arxiv.org/abs/2008.00251",
+   "hint": "Hour-scale memory",
+   "verified": true,
+   "kind": "journal",
+   "title": "Single ion-qubit exceeding one hour coherence time",
+   "authors": [
+    "Pengfei Wang",
+    "Chun-Yang Luan",
+    "Mu Qiao",
+    "Mark Um",
+    "Junhua Zhang",
+    "Ye Wang"
+   ],
+   "n_authors": 10,
+   "journal": "Nature Communications",
+   "volume": "12",
+   "pages": "233",
+   "date": "2021-01",
+   "doi": "10.1038/s41467-020-20330-w",
+   "arxiv": "2008.00251",
+   "note": "title and authors from the arXiv record (alphaxiv mirror); month from the arXiv identifier"
+  }
+ ],
+ "I7": [
+  {
+   "authors": [
+    "Shival Dasu",
+    "Matthew DeCross",
+    "Andrew Y. Guo",
+    "Ali Lavasani",
+    "Jan Behrends",
+    "Asmae Benhemou"
+   ],
+   "n_authors": 50,
+   "title": "Computing with many encoded logical qubits beyond break-even",
+   "date": "2026-02-25",
+   "arxiv": "2602.22211",
+   "kind": "preprint",
+   "note": "concatenated iceberg codes on Helios",
+   "url": "https://arxiv.org/abs/2602.22211",
+   "hint": "Helios logical qubits",
+   "verified": true
+  }
+ ],
+ "I8": [
+  {
+   "title": "Teleporting to new heights",
+   "org": "Quantinuum",
+   "site": "Quantinuum",
+   "date": "2025-05-27",
+   "kind": "web",
+   "url": "https://www.quantinuum.com/blog/teleporting-to-new-heights",
+   "hint": "Logical teleportation",
+   "verified": true
+  }
+ ],
+ "I9": [
+  {
+   "authors": [
+    "Shival Dasu",
+    "Simon Burton",
+    "Karl Mayer",
+    "David Amaro",
+    "Justin A. Gerber",
+    "Kevin Gilmore"
+   ],
+   "n_authors": 10,
+   "title": "Breaking even with magic: demonstration of a high-fidelity logical non-Clifford gate",
+   "date": "2025-06-17",
+   "arxiv": "2506.14688",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2506.14688",
+   "hint": "Magic states [[6,2,2]]",
+   "verified": true
+  }
+ ],
+ "I10": [
+  {
+   "authors": [
+    "Michael A. Perlin",
+    "Zichang He",
+    "Anthony Alexiades Armenakas",
+    "Pablo Andres-Martinez",
+    "Tianyi Hao",
+    "Dylan Herman"
+   ],
+   "n_authors": 12,
+   "title": "Fault-tolerant execution of error-corrected quantum algorithms",
+   "date": "2026-03-04",
+   "arxiv": "2603.04584",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2603.04584",
+   "hint": "FT QAOA/HHL",
+   "verified": true
+  }
+ ],
+ "I11": [
+  {
+   "url": "https://arxiv.org/abs/2606.06455",
+   "hint": "IonQ qLDPC break-even",
+   "verified": true,
+   "kind": "preprint",
+   "title": "Breakeven demonstration of quantum low-density parity-check codes",
+   "authors": [
+    "Edwin Tham",
+    "Michael L. Goldman",
+    "Shantanu Debnath",
+    "Ashay N. Patel",
+    "Jyothi Saraladevi",
+    "Jason Nguyen"
+   ],
+   "n_authors": 11,
+   "date": "2026-06",
+   "arxiv": "2606.06455",
+   "note": "title and authors from the arXiv record (alphaxiv mirror); month from the arXiv identifier"
+  }
+ ],
+ "I12": [
+  {
+   "authors": [
+    "S. A. Moses",
+    "C. H. Baldwin",
+    "M. S. Allman",
+    "R. Ancona",
+    "L. Ascarrunz",
+    "C. Barnes"
+   ],
+   "n_authors": 113,
+   "title": "A Race Track Trapped-Ion Quantum Processor",
+   "journal": "Phys. Rev. X",
+   "volume": "13",
+   "pages": "041052",
+   "date": "2023-05-05",
+   "doi": "10.1103/PhysRevX.13.041052",
+   "arxiv": "2305.03828",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2305.03828",
+   "hint": "H2",
+   "verified": true,
+   "pubdate": "2023-12"
+  }
+ ],
+ "I13": [
+  {
+   "url": "https://arxiv.org/abs/2608.25027",
+   "hint": "IonQ decoder",
+   "verified": true,
+   "kind": "preprint",
+   "title": "Real-time decoder for a MegaQuOp quantum computer using a single CPU",
+   "authors": [
+    "Min Ye",
+    "Andrii Maksymov",
+    "Nicolas Delfosse"
+   ],
+   "n_authors": 3,
+   "date": "2026-08",
+   "arxiv": "2608.25027",
+   "note": "title and authors from the arXiv record (alphaxiv mirror); month from the arXiv identifier"
+  }
+ ],
+ "I14": [
+  {
+   "url": "https://arxiv.org/abs/2403.00756",
+   "hint": "Grid trap",
+   "verified": true,
+   "kind": "journal",
+   "title": "Scalable Multispecies Ion Transport in a Grid-Based Surface-Electrode Trap",
+   "authors": [
+    "Robert D. Delaney",
+    "Lucas R. Sletten",
+    "Matthew J. Cich",
+    "Brian Estey",
+    "Maya I. Fabrikant",
+    "David Hayes"
+   ],
+   "n_authors": 16,
+   "journal": "Physical Review X",
+   "volume": "14",
+   "pages": "041028",
+   "date": "2024-11",
+   "doi": "10.1103/PhysRevX.14.041028",
+   "arxiv": "2403.00756",
+   "note": "title and authors from the arXiv record (alphaxiv mirror); month from the arXiv identifier"
+  },
+  {
+   "authors": [
+    "William Cody Burton",
+    "Brian Estey",
+    "Ian M. Hoffman",
+    "Abigail R. Perry",
+    "Curtis Volin",
+    "Gabriel Price"
+   ],
+   "n_authors": 6,
+   "title": "Transport of multispecies ion crystals through a junction in an RF Paul trap",
+   "date": "2022-06-23",
+   "arxiv": "2206.11888",
+   "doi": "10.1103/PhysRevLett.130.173202",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2206.11888",
+   "hint": "junction transport",
+   "verified": true,
+   "pubdate": "2023-04",
+   "journal": "Physical Review Letters",
+   "volume": "130",
+   "pages": "173202"
+  }
+ ],
+ "I15": [
+  {
+   "authors": [
+    "D. Main",
+    "P. Drmota",
+    "D. P. Nadlinger",
+    "E. M. Ainley",
+    "A. Agrawal",
+    "B. C. Nichol"
+   ],
+   "n_authors": 9,
+   "title": "Distributed quantum computing across an optical network link",
+   "journal": "Nature",
+   "volume": "638",
+   "issue": "8050",
+   "pages": "383-388",
+   "date": "2025-02-05",
+   "doi": "10.1038/s41586-024-08404-x",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-024-08404-x",
+   "hint": "Oxford distributed QC, Nature",
+   "verified": true
+  }
+ ],
+ "I16": [
+  {
+   "url": "https://arxiv.org/abs/2404.16167",
+   "hint": "Duke/Maryland remote entanglement",
+   "verified": true,
+   "kind": "journal",
+   "title": "Fast photon-mediated entanglement of continuously-cooled trapped ions for quantum networking",
+   "authors": [
+    "Jameson O'Reilly",
+    "George Toh",
+    "Isabella Goetting",
+    "Sagnik Saha",
+    "Mikhail Shalaev",
+    "Allison Carter"
+   ],
+   "n_authors": 11,
+   "journal": "Physical Review Letters",
+   "volume": "133",
+   "pages": "090802",
+   "date": "2024-08",
+   "doi": "10.1103/PhysRevLett.133.090802",
+   "arxiv": "2404.16167",
+   "note": "title and authors from the arXiv record (alphaxiv mirror); month from the arXiv identifier"
+  }
+ ],
+ "I17": [
+  {
+   "authors": [
+    "S.-A. Guo",
+    "Y.-K. Wu",
+    "J. Ye",
+    "L. Zhang",
+    "W.-Q. Lian",
+    "R. Yao"
+   ],
+   "n_authors": 19,
+   "title": "A site-resolved two-dimensional quantum simulator with hundreds of trapped ions",
+   "journal": "Nature",
+   "volume": "630",
+   "issue": "8017",
+   "pages": "613-618",
+   "date": "2024-05-29",
+   "doi": "10.1038/s41586-024-07459-0",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-024-07459-0",
+   "hint": "Tsinghua 512-ion",
+   "verified": true,
+   "note": "Crossref returned 429; fields taken from the publisher page (nature.com); date is the 'Published' date, issue date 2024-06-20"
+  }
+ ],
+ "I18": [
+  {
+   "org": "Honeywell",
+   "title": "Honeywell Announces $600 Million Capital Raise for Quantinuum at $10B Pre-Money Equity Valuation to Advance Quantum Computing at Scale",
+   "date": "2025-09-04",
+   "kind": "web",
+   "site": "Honeywell",
+   "url": "https://www.honeywell.com/us/en/news/press-releases/2025/09/honeywell-announces-600-million-capital-raise-for-quantinuum-at-10b-pre-money-equity-valuation-to-advance-quantum-computing-at-scale",
+   "hint": "Honeywell/Quantinuum $600 M",
+   "verified": true
+  }
+ ],
+ "I19": [
+  {
+   "org": "Quantinuum",
+   "title": "Quantinuum Announces Pricing of Upsized Initial Public Offering",
+   "date": "2026-06-03",
+   "kind": "web",
+   "site": "Quantinuum",
+   "url": "https://www.quantinuum.com/press-releases/quantinuum-announces-pricing-of-upsized-initial-public-offering",
+   "hint": "Quantinuum IPO",
+   "verified": true
+  },
+  {
+   "org": "Quantinuum",
+   "title": "Quantinuum Reports Second Quarter 2026 Results",
+   "date": "2026-08-11",
+   "kind": "web",
+   "site": "Quantinuum",
+   "url": "https://www.quantinuum.com/press-releases/quantinuum-reports-second-quarter-2026-results",
+   "hint": "Q2 2026",
+   "verified": true
+  }
+ ],
+ "I20": [
+  {
+   "org": "IonQ",
+   "title": "IonQ Completes Acquisition of Oxford Ionics, Rapidly Accelerating Its Quantum Computing Roadmap",
+   "date": "2025-09-17",
+   "kind": "web",
+   "site": "IonQ",
+   "url": "https://www.ionq.com/news/ionq-completes-acquisition-of-oxford-ionics-rapidly-accelerating-its-quantum",
+   "hint": "IonQ–Oxford Ionics",
+   "verified": true
+  }
+ ],
+ "I21": [
+  {
+   "org": "IonQ",
+   "title": "IonQ Completes Acquisition of SkyWater Technology",
+   "date": "2026-07-31",
+   "kind": "web",
+   "site": "IonQ",
+   "url": "https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology",
+   "hint": "IonQ–SkyWater",
+   "verified": true
+  }
+ ],
+ "I22": [
+  {
+   "authors": [
+    "Mohamed Abdel-Kareem"
+   ],
+   "org": "Quantum Computing Report",
+   "title": "Quantum Art Extends Series A to $140M to Scale Trapped-Ion Architecture",
+   "date": "2026-04-27",
+   "kind": "web",
+   "site": "Quantum Computing Report",
+   "url": "https://quantumcomputingreport.com/quantum-art-extends-series-a-to-140m-to-scale-trapped-ion-architecture/",
+   "hint": "Quantum Art",
+   "verified": true
+  }
+ ],
+ "I23": [
+  {
+   "org": "Alpine Quantum Technologies GmbH",
+   "title": "AQT Sets New European Industry Standard: Introducing the \"LYNX\" Series with Record-Breaking Quantum Volume",
+   "date": "2026-05-05",
+   "kind": "web",
+   "site": "AQT",
+   "url": "https://www.aqt.eu/lynx-quantum-volume-record/",
+   "hint": "AQT LYNX",
+   "verified": true
+  },
+  {
+   "org": "eleQtron",
+   "authors": [
+    "Arne Cordes"
+   ],
+   "title": "Quantum computing scale-up eleQtron secures €57 million in one of the largest Series A funding rounds worldwide",
+   "date": "2026-05-05",
+   "kind": "web",
+   "site": "eleQtron",
+   "url": "https://eleqtron.com/en/quantum-computing-scale-up-eleqtron-secures-57-million-in-one-of-the-largest-series-a-funding-rounds-worldwide/",
+   "hint": "eleQtron",
+   "verified": true
+  }
+ ],
+ "I24": [
+  {
+   "title": "Quantinuum Unveils Accelerated Roadmap to Achieve Universal, Fully Fault-Tolerant Quantum Computing by 2030",
+   "org": "Quantinuum",
+   "site": "Quantinuum",
+   "date": "2024-09-10",
+   "kind": "web",
+   "url": "https://www.quantinuum.com/press-releases/quantinuum-unveils-accelerated-roadmap-to-achieve-universal-fault-tolerant-quantum-computing-by-2030",
+   "hint": "Quantinuum roadmap",
+   "verified": true
+  }
+ ],
+ "I26": [
+  {
+   "org": "IonQ",
+   "title": "IonQ's Accelerated Roadmap: Turning Quantum Ambition into Reality",
+   "date": "2025-06-13",
+   "kind": "web",
+   "site": "IonQ",
+   "url": "https://www.ionq.com/blog/ionqs-accelerated-roadmap-turning-quantum-ambition-into-reality",
+   "hint": "IonQ roadmap",
+   "verified": true,
+   "note": "byline is 'IonQ Staff' (no personal byline)"
+  },
+  {
+   "authors": [
+    "Marin Ivezic"
+   ],
+   "org": "PostQuantum",
+   "title": "IonQ",
+   "date": "2025-05-22",
+   "kind": "web",
+   "site": "PostQuantum",
+   "url": "https://postquantum.com/quantum-computing-companies/ionq/",
+   "hint": "2020 roadmap record",
+   "verified": true,
+   "note": "company-profile web page (not a journal); published 2025-05-22, last updated 2026-05-27"
+  }
+ ],
+ "N1": [
+  {
+   "authors": [
+    "Simon J. Evered",
+    "Muqing Xu",
+    "Sophie H. Li",
+    "Alexandra A. Geim",
+    "J. Pablo Bonilla Ataides",
+    "Marcin Kalinowski"
+   ],
+   "n_authors": 12,
+   "title": "High-fidelity entangling gates and nonlocal circuits with neutral atoms",
+   "date": "2026-04-28",
+   "arxiv": "2604.25987",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2604.25987",
+   "hint": "Harvard CZ record",
+   "verified": true
+  }
+ ],
+ "N2": [
+  {
+   "authors": [
+    "J. A. Muniz",
+    "M. Stone",
+    "D. T. Stack",
+    "M. Jaffe",
+    "J. M. Kindem",
+    "L. Wadleigh"
+   ],
+   "n_authors": 51,
+   "title": "High-fidelity universal gates in the ¹⁷¹Yb ground state nuclear spin qubit",
+   "date": "2024-11-18",
+   "arxiv": "2411.11708",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2411.11708",
+   "hint": "Atom Computing Yb CZ",
+   "verified": true,
+   "note": "arXiv metadata writes the isotope as $^{171}$Yb; rendered here as superscript; no Journal-ref shown"
+  }
+ ],
+ "N3": [
+  {
+   "authors": [
+    "Richard Bing-Shiun Tsai",
+    "Xiangkai Sun",
+    "Adam L. Shaw",
+    "Ran Finkelstein",
+    "Manuel Endres"
+   ],
+   "n_authors": 5,
+   "title": "Benchmarking and linear response modeling of high-fidelity Rydberg gates",
+   "date": "2024-07-29",
+   "arxiv": "2407.20184",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2407.20184",
+   "hint": "Caltech Sr CZ",
+   "verified": true,
+   "note": "abs page fetched via the v1 URL (the plain abs URL returned no readable metadata)."
+  }
+ ],
+ "N4": [
+  {
+   "org": "QuEra Computing Inc.",
+   "title": "Gemini-Class Gate-Model Quantum Computer",
+   "kind": "web",
+   "site": "QuEra",
+   "url": "https://www.quera.com/gemini",
+   "hint": "QuEra Gemini",
+   "verified": true
+  }
+ ],
+ "N5": [
+  {
+   "authors": [
+    "Dolev Bluvstein",
+    "Alexandra A. Geim",
+    "Sophie H. Li",
+    "Simon J. Evered",
+    "J. Pablo Bonilla Ataides",
+    "Gefen Baranes"
+   ],
+   "n_authors": 23,
+   "title": "Architectural mechanisms of a universal fault-tolerant quantum computer",
+   "date": "2025-06-25",
+   "arxiv": "2506.20661",
+   "doi": "10.1038/s41586-025-09848-5",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2506.20661",
+   "hint": "Harvard 448-atom architecture",
+   "verified": true
+  },
+  {
+   "authors": [
+    "Dolev Bluvstein",
+    "Alexandra A. Geim",
+    "Sophie H. Li",
+    "Simon J. Evered",
+    "J. Pablo Bonilla Ataides",
+    "Gefen Baranes"
+   ],
+   "n_authors": 23,
+   "title": "A fault-tolerant neutral-atom architecture for universal quantum computation",
+   "journal": "Nature",
+   "volume": "649",
+   "issue": "8095",
+   "pages": "39-46",
+   "date": "2025-11-10",
+   "doi": "10.1038/s41586-025-09848-5",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-025-09848-5",
+   "hint": "Nature",
+   "verified": true
+  }
+ ],
+ "N6": [
+  {
+   "title": "A tweezer array with 6100 highly coherent atomic qubits",
+   "authors": [
+    "Hannah J. Manetsch",
+    "Gyohei Nomura",
+    "Elie Bataille",
+    "Kon H. Leung",
+    "Xudong Lv",
+    "Manuel Endres"
+   ],
+   "n_authors": 6,
+   "journal": "Nature",
+   "volume": "647",
+   "pages": "60-67",
+   "date": "2024-03-18",
+   "arxiv": "2403.12021",
+   "doi": "10.1038/s41586-025-09641-4",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2403.12021",
+   "hint": "Caltech 6,100 atoms",
+   "verified": true,
+   "pubdate": "2025"
+  },
+  {
+   "title": "Caltech Team Sets Record with 6,100-Qubit Array",
+   "org": "Caltech",
+   "site": "Caltech",
+   "date": "2025-09-24",
+   "kind": "web",
+   "url": "https://www.caltech.edu/about/news/caltech-team-sets-record-with-6100-qubit-array",
+   "hint": "Caltech 6,100 atoms — https://arxiv.org/abs/2403.12021 ; https://www.caltech.edu/about/news/caltech-team-sets-record-with-6100-qubit-array",
+   "verified": true
+  }
+ ],
+ "N7": [
+  {
+   "url": "https://arxiv.org/abs/2608.05010",
+   "hint": "Rydberg gate review (Aug 2026)",
+   "verified": true,
+   "kind": "preprint",
+   "title": "Neutral Atom Quantum Computing: Principles, Routes, Progress, and Challenges",
+   "authors": [
+    "Junchao Wang",
+    "Zeyuan Wang",
+    "Lei Li",
+    "Feng Wang",
+    "Shibo Liang",
+    "Keduo Yan"
+   ],
+   "n_authors": 6,
+   "date": "2026-08",
+   "arxiv": "2608.05010",
+   "note": "title and authors from the arXiv record (alphaxiv mirror); month from the arXiv identifier"
+  }
+ ],
+ "N8": [
+  {
+   "authors": [
+    "Shuo Ma",
+    "Genyue Liu",
+    "Pai Peng",
+    "Bichen Zhang",
+    "Sven Jandura",
+    "Jahan Claes"
+   ],
+   "n_authors": 10,
+   "title": "High-fidelity gates with mid-circuit erasure conversion in a metastable neutral atom qubit",
+   "date": "2023-05-09",
+   "arxiv": "2305.05493",
+   "journal": "Nature",
+   "volume": "622",
+   "pages": "279",
+   "doi": "10.1038/s41586-023-06438-1",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2305.05493",
+   "hint": "Princeton erasure conversion",
+   "verified": true,
+   "note": "arXiv page shows Journal-ref 'Nature 622, 279 (2023)' and Related DOI 10.1038/s41586-023-06438-1",
+   "pubdate": "2023"
+  },
+  {
+   "authors": [
+    "Bichen Zhang",
+    "Genyue Liu",
+    "Guillaume Bornet",
+    "Sebastian P. Horvath",
+    "Pai Peng",
+    "Shuo Ma"
+   ],
+   "n_authors": 9,
+   "title": "Logical qubits with erasure conversion using metastable neutral atoms",
+   "journal": "Nature Physics",
+   "volume": "22",
+   "issue": "6",
+   "pages": "910-916",
+   "date": "2026-06-12",
+   "doi": "10.1038/s41567-026-03309-0",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41567-026-03309-0",
+   "hint": "Nature Physics (Jun 2026)",
+   "verified": true,
+   "note": "Crossref title differs from the arXiv 2305.05493 paper in the previous record; this is a distinct Nature Physics article (Zhang et al.)"
+  }
+ ],
+ "N9": [
+  {
+   "authors": [
+    "Pascal Scholl",
+    "Adam L. Shaw",
+    "Richard Bing-Shiun Tsai",
+    "Ran Finkelstein",
+    "Joonhee Choi",
+    "Manuel Endres"
+   ],
+   "n_authors": 6,
+   "title": "Erasure conversion in a high-fidelity Rydberg quantum simulator",
+   "journal": "Nature",
+   "volume": "622",
+   "pages": "273",
+   "date": "2023-05-05",
+   "arxiv": "2305.03406",
+   "doi": "10.1038/s41586-023-06516-4",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2305.03406",
+   "hint": "Caltech erasure excision",
+   "verified": true,
+   "note": "journal/volume/pages from the arXiv Journal-ref line 'Nature 622, 273 (2023)'; date is the arXiv v1 date",
+   "pubdate": "2023"
+  }
+ ],
+ "N10": [
+  {
+   "authors": [
+    "Neng-Chun Chiu",
+    "Elias C. Trapp",
+    "Jinen Guo",
+    "Mohamed H. Abobeih",
+    "Luke M. Stewart",
+    "Simon Hollerith"
+   ],
+   "n_authors": 17,
+   "title": "Continuous operation of a coherent 3,000-qubit system",
+   "journal": "Nature",
+   "volume": "646",
+   "issue": "8087",
+   "pages": "1075-1080",
+   "date": "2025-09-15",
+   "doi": "10.1038/s41586-025-09596-6",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-025-09596-6",
+   "hint": "Continuous operation, Nature",
+   "verified": true
+  }
+ ],
+ "N11": [
+  {
+   "authors": [
+    "Yuqing Wang",
+    "Zhongchi Zhang",
+    "Tao Zhang",
+    "Yuxuan Liao",
+    "Hanteng Wang",
+    "Ye Tian"
+   ],
+   "n_authors": 17,
+   "title": "Trapping 11,000 Atoms in a Tweezer Array Generated by a Single Metasurface",
+   "date": "2026-06-01",
+   "arxiv": "2606.02715",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2606.02715",
+   "hint": "Tsinghua 11,000 atoms",
+   "verified": true
+  }
+ ],
+ "N12": [
+  {
+   "authors": [
+    "Pedro Sales Rodriguez",
+    "John M. Robinson",
+    "Paul Niklas Jepsen",
+    "Zhiyang He",
+    "Casey Duckering",
+    "Chen Zhao"
+   ],
+   "n_authors": 75,
+   "title": "Experimental demonstration of logical magic state distillation",
+   "journal": "Nature",
+   "volume": "645",
+   "issue": "8081",
+   "pages": "620-625",
+   "date": "2025-07-14",
+   "doi": "10.1038/s41586-025-09367-3",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-025-09367-3",
+   "hint": "Logical magic-state distillation, Nature",
+   "verified": true
+  }
+ ],
+ "N13": [
+  {
+   "org": "Atom Computing and Collaborators",
+   "authors": [],
+   "title": "Quantum error correction with the toric code",
+   "date": "2026-06-02",
+   "arxiv": "2606.04079",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2606.04079",
+   "hint": "Atom Computing toric code",
+   "verified": true,
+   "note": "arXiv author line is the collaboration name only (printed as 'Atom Computing, Collaborators'); no person names shown"
+  }
+ ],
+ "N14": [
+  {
+   "authors": [
+    "Ben W. Reichardt",
+    "Adam Paetznick",
+    "David Aasen",
+    "Ivan Basov",
+    "Juan M. Bello-Rivas",
+    "Parsa Bonderson"
+   ],
+   "n_authors": 73,
+   "title": "Fault-tolerant quantum computation with a neutral atom processor",
+   "date": "2024-11-18",
+   "arxiv": "2411.11822",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2411.11822",
+   "hint": "Microsoft/Atom logical qubits",
+   "verified": true
+  }
+ ],
+ "N15": [
+  {
+   "authors": [
+    "Lauren Roady"
+   ],
+   "org": "Infleqtion",
+   "title": "Infleqtion Unveils New Architecture to Accelerate Its Quantum Computing Roadmap To Achieve 1000 Logical Qubits by 2030",
+   "date": "2025-09-17",
+   "kind": "web",
+   "site": "Infleqtion",
+   "url": "https://infleqtion.com/infleqtion-unveils-new-architecture-to-accelerate-its-quantum-computing-roadmap-to-achieve-1000-logical-qubits-by-2030/",
+   "hint": "Infleqtion roadmap",
+   "verified": true
+  }
+ ],
+ "N16": [
+  {
+   "authors": [
+    "Hengyun Zhou",
+    "Casey Duckering",
+    "Chen Zhao",
+    "Dolev Bluvstein",
+    "Madelyn Cain",
+    "Aleksander Kubica"
+   ],
+   "n_authors": 8,
+   "title": "Resource Analysis of Low-Overhead Transversal Architectures for Reconfigurable Atom Arrays",
+   "date": "2025-05-21",
+   "doi": "10.1145/3695053.3731039",
+   "arxiv": "2505.15907",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2505.15907",
+   "hint": "Neutral-atom FT architecture study",
+   "verified": true,
+   "note": "ACM DOI 10.1145/3695053.3731039 (ISCA 2025 proceedings; Crossref rate-limited, venue from the arXiv \"Accepted to ISCA 2025\" line)",
+   "journal": "Proc. 52nd Annu. Int. Symp. Comput. Archit. (ISCA)",
+   "pubdate": "2025"
+  }
+ ],
+ "N17": [
+  {
+   "authors": [
+    "Hengyun Zhou",
+    "Chen Zhao",
+    "Madelyn Cain",
+    "Dolev Bluvstein",
+    "Nishad Maskara",
+    "Casey Duckering"
+   ],
+   "n_authors": 10,
+   "title": "Low-Overhead Transversal Fault Tolerance for Universal Quantum Computation",
+   "journal": "Nature",
+   "volume": "646",
+   "issue": "8084",
+   "pages": "303-308",
+   "date": "2024-06-25",
+   "doi": "10.1038/s41586-025-09543-5",
+   "arxiv": "2406.17653",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2406.17653",
+   "hint": "Algorithmic fault tolerance",
+   "verified": true,
+   "pubdate": "2025"
+  }
+ ],
+ "N18": [
+  {
+   "org": "QuEra Computing",
+   "title": "QuEra Expands $230 Million Financing Round Advancing Quantum-Accelerated Supercomputing",
+   "date": "2025-09-09",
+   "kind": "web",
+   "site": "QuEra Computing",
+   "url": "https://www.quera.com/press-releases/quera-expands-230-million-financing-round-advancing-quantum-accelerated-supercomputing",
+   "hint": "QuEra $230 M",
+   "verified": true
+  }
+ ],
+ "N19": [
+  {
+   "org": "Atom Computing",
+   "title": "Atom Computing Raises More Than $300 Million to Accelerate Deployment of Fault-Tolerant, Neutral-Atom Quantum Computers",
+   "date": "2026-06-16",
+   "kind": "web",
+   "site": "PR Newswire",
+   "url": "https://www.prnewswire.com/news-releases/atom-computing-raises-more-than-300-million-to-accelerate-deployment-of-fault-tolerant-neutral-atom-quantum-computers-302800832.html",
+   "hint": "Atom Computing $300 M+",
+   "verified": true
+  }
+ ],
+ "N20": [
+  {
+   "title": "Infleqtion Becomes First Neutral-Atom Quantum Company to Go Public",
+   "authors": [
+    "Lauren Roady"
+   ],
+   "org": "Infleqtion",
+   "site": "Infleqtion",
+   "date": "2026-02-17",
+   "kind": "web",
+   "url": "https://infleqtion.com/infleqtion-becomes-first-neutral-atom-quantum-company-to-go-public/",
+   "hint": "Infleqtion NYSE",
+   "verified": true
+  }
+ ],
+ "N21": [
+  {
+   "authors": [
+    "Matt Swayne"
+   ],
+   "org": "The Quantum Insider",
+   "title": "Pasqal Completes SPAC Merger With $360 Million in Cash",
+   "date": "2026-08-28",
+   "kind": "web",
+   "site": "The Quantum Insider",
+   "url": "https://thequantuminsider.com/2026/08/28/pasqal-completes-spac-merger-with-360-million-in-cash/",
+   "hint": "Pasqal SPAC",
+   "verified": true
+  }
+ ],
+ "N22": [
+  {
+   "org": "Novo Nordisk Foundation",
+   "title": "New quantum computer with great potential to boost Nordic research and innovation",
+   "date": "2025-07-17",
+   "kind": "web",
+   "site": "Novo Nordisk Fonden",
+   "url": "https://novonordiskfonden.dk/en/news/new-quantum-computer-with-great-potential-to-boost-nordic-research-and-innovation/",
+   "hint": "Magne",
+   "verified": true
+  },
+  {
+   "org": "Quantum Computing Report",
+   "authors": [
+    "Mohamed Abdel-Kareem"
+   ],
+   "n_authors": 1,
+   "title": "Denmark's QuNorth to Acquire 50-Logical-Qubit Magne Quantum Computer from Atom Computing and Microsoft",
+   "date": "2025-07-17",
+   "kind": "web",
+   "site": "Quantum Computing Report",
+   "url": "https://quantumcomputingreport.com/denmarks-qunorth-to-acquire-50-logical-qubit-magne-quantum-computer-from-atom-computing-and-microsoft/",
+   "hint": "Magne — https://novonordiskfonden.dk/en/news/new-quantum-computer-with-great-potential-to-boost-nordic-research-and-innovation/ ; https://quantumcomputingreport.com/denmarks-qunorth-to-acquire-50-logical-qubit-magne-quantum-computer-from-atom-computing-and-microsoft/",
+   "verified": true
+  }
+ ],
+ "N23": [
+  {
+   "authors": [
+    "Matt Swayne"
+   ],
+   "org": "The Quantum Insider",
+   "title": "Google Paves a Two-Lane Quantum Roadmap by Adding Neutral Atom Systems",
+   "date": "2026-03-24",
+   "kind": "web",
+   "site": "The Quantum Insider",
+   "url": "https://thequantuminsider.com/2026/03/24/google-paves-a-two-lane-quantum-roadmap-by-adding-neutral-atom-systems/",
+   "hint": "Google neutral-atom track",
+   "verified": true
+  }
+ ],
+ "N24": [
+  {
+   "org": "QuEra Computing",
+   "title": "QuEra Announces 2028 Fault-Tolerant Quantum Computer and Expanded Multi-Year Strategic Collaboration with AWS",
+   "date": "2026-06-15",
+   "kind": "web",
+   "site": "QuEra",
+   "url": "https://www.quera.com/press-releases/quera-announces-2028-fault-tolerant-quantum-computer-and-expanded-multi-year-strategic-collaboration-with-aws",
+   "hint": "QuEra Libra",
+   "verified": true
+  },
+  {
+   "authors": [
+    "Paul James"
+   ],
+   "org": "Quantum Zeitgeist",
+   "title": "QuEra: 100-Qubit Error Correction by 2026",
+   "date": "2024-01-09",
+   "kind": "web",
+   "site": "Quantum Zeitgeist",
+   "url": "https://quantumzeitgeist.com/quera-computing-roadmap-100-logical-qubits/",
+   "hint": "2024 roadmap",
+   "verified": true
+  }
+ ],
+ "N25": [
+  {
+   "org": "Pasqal",
+   "title": "Pasqal Releases 2025 Roadmap Showcasing Upgradable Platform from Today's Quantum Solutions to Tomorrow's Fault-Tolerant Systems",
+   "date": "2025-06-12",
+   "kind": "web",
+   "site": "Pasqal",
+   "url": "https://www.pasqal.com/newsroom/pasqal-releases-2025-roadmap/",
+   "hint": "Pasqal roadmap 2025",
+   "verified": true
+  },
+  {
+   "authors": [
+    "John Russell"
+   ],
+   "org": "HPCwire",
+   "title": "PASQAL Issues Roadmap to 10,000 Qubits in 2026 and Fault Tolerance in 2028",
+   "date": "2024-03-13",
+   "kind": "web",
+   "site": "HPCwire",
+   "url": "https://www.hpcwire.com/2024/03/13/pasqal-issues-roadmap-to-10000-qubits-in-2026-and-fault-tolerance-in-2028/",
+   "hint": "2024",
+   "verified": true
+  }
+ ],
+ "P1": [
+  {
+   "authors": [
+    "Koen Alexander",
+    "Avishai Benyamini",
+    "Dylan Black",
+    "Damien Bonneau",
+    "Stanley Burgos",
+    "Ben Burridge"
+   ],
+   "n_authors": 129,
+   "org": "PsiQuantum team",
+   "title": "A manufacturable platform for photonic quantum computing",
+   "journal": "Nature",
+   "volume": "641",
+   "issue": "8064",
+   "pages": "876-883",
+   "date": "2025-02-26",
+   "doi": "10.1038/s41586-025-08820-7",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-025-08820-7",
+   "hint": "PsiQuantum Omega, Nature",
+   "verified": true
+  }
+ ],
+ "P2": [
+  {
+   "authors": [
+    "Xing Ding",
+    "Yong-Peng Guo",
+    "Mo-Chi Xu",
+    "Run-Ze Liu",
+    "Geng-Yan Zou",
+    "Jun-Yi Zhao"
+   ],
+   "n_authors": 16,
+   "title": "High-efficiency single-photon source above the loss-tolerant threshold for efficient linear optical quantum computing",
+   "date": "2023-11-14",
+   "arxiv": "2311.08347",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2311.08347",
+   "hint": "USTC quantum-dot source",
+   "verified": true
+  }
+ ],
+ "P3": [
+  {
+   "org": "Xanadu",
+   "title": "Xanadu sets new industry benchmark in photonic chip packaging",
+   "date": "2026-06-10",
+   "kind": "web",
+   "site": "PR Newswire",
+   "url": "https://www.prnewswire.com/news-releases/xanadu-sets-new-industry-benchmark-in-photonic-chip-packaging-302796562.html",
+   "hint": "Xanadu packaging",
+   "verified": true
+  }
+ ],
+ "P4": [
+  {
+   "title": "Scaling and networking a modular photonic quantum computer",
+   "authors": [
+    "H. Aghaee Rad",
+    "T. Ainsworth",
+    "R. N. Alexander",
+    "B. Altieri",
+    "M. F. Askarani",
+    "R. Baby"
+   ],
+   "n_authors": 102,
+   "journal": "Nature",
+   "volume": "638",
+   "issue": "8052",
+   "pages": "912-919",
+   "date": "2025-01-22",
+   "doi": "10.1038/s41586-024-08406-9",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-024-08406-9",
+   "hint": "Aurora, Nature",
+   "verified": true
+  }
+ ],
+ "P5": [
+  {
+   "authors": [
+    "M. V. Larsen",
+    "J. E. Bourassa",
+    "S. Kocsis",
+    "J. F. Tasker",
+    "R. S. Chadwick",
+    "C. González-Arciniegas"
+   ],
+   "n_authors": 36,
+   "title": "Integrated photonic source of Gottesman–Kitaev–Preskill qubits",
+   "journal": "Nature",
+   "volume": "642",
+   "issue": "8068",
+   "pages": "587-591",
+   "date": "2025-06-04",
+   "doi": "10.1038/s41586-025-09044-5",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-025-09044-5",
+   "hint": "On-chip GKP, Nature",
+   "verified": true
+  }
+ ],
+ "P6": [
+  {
+   "authors": [
+    "Hua-Liang Liu",
+    "Hao Su",
+    "Si-Qiu Gong",
+    "Yi-Chao Gu",
+    "Hao-Yang Tang",
+    "Meng-Hao Jia"
+   ],
+   "n_authors": 33,
+   "title": "Robust quantum computational advantage with programmable 3050-photon Gaussian boson sampling",
+   "date": "2025-08-12",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2508.09092",
+   "arxiv": "2508.09092",
+   "hint": "Jiuzhang 4.0",
+   "verified": true
+  },
+  {
+   "authors": [
+    "Hua-Liang Liu",
+    "Hao Su",
+    "Yu-Hao Deng",
+    "Si-Qiu Gong",
+    "Yi-Chao Gu",
+    "Hao-Yang Tang"
+   ],
+   "n_authors": 37,
+   "title": "Gaussian boson sampling with 1,024 squeezed states in 8,176 modes",
+   "journal": "Nature",
+   "volume": "653",
+   "issue": "8115",
+   "pages": "687-692",
+   "date": "2026-05-13",
+   "doi": "10.1038/s41586-026-10523-6",
+   "arxiv": "2508.09092",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-026-10523-6",
+   "hint": "Nature",
+   "verified": true,
+   "note": "fields from Crossref for the DOI (the record's url is the Nature article); arxiv kept from the input record, the arXiv 2508.09092 page shows no Journal-ref and Crossref shows no preprint relation"
+  }
+ ],
+ "P7": [
+  {
+   "org": "Quandela",
+   "title": "Quandela delivers Lucy, the most advanced photonic quantum computer worldwide, to EuroHPC and GENCI at CEA's TGCC",
+   "date": "2025-10-23",
+   "kind": "web",
+   "site": "Quandela",
+   "url": "https://www.quandela.com/about-us/newsroom/quandela-delivers-lucy-the-most-advanced-photonic-quantum-computer-worldwide-to-eurohpc-and-genci-at-ceas-tgcc/",
+   "hint": "Quandela Lucy",
+   "verified": true
+  }
+ ],
+ "P8": [
+  {
+   "org": "QuiX Quantum",
+   "title": "QuiX Quantum Delivers Carina Core Hardware Platform to DLR QCI, Advancing Europe's Universal Photonic Quantum Computing Roadmap",
+   "date": "2026-07-14",
+   "kind": "web",
+   "site": "QuiX Quantum",
+   "url": "https://www.quixquantum.com/news/quix-quantum-delivers-carina-core-hardware-platformto-dlr-qci",
+   "hint": "QuiX Carina",
+   "verified": true
+  }
+ ],
+ "P9": [
+  {
+   "org": "Xanadu Quantum Technologies Limited",
+   "title": "Xanadu Charts Path to Over 1,000 Logical Qubits by 2031",
+   "date": "2026-08-31",
+   "kind": "web",
+   "site": "GlobeNewswire",
+   "url": "https://www.globenewswire.com/news-release/2026/08/31/3353211/0/en/xanadu-charts-path-to-over-1-000-logical-qubits-by-2031.html",
+   "hint": "Xanadu roadmap (31 Aug 2026)",
+   "verified": true
+  }
+ ],
+ "P10": [
+  {
+   "title": "Fusion-based quantum computation",
+   "authors": [
+    "Sara Bartolucci",
+    "Patrick Birchall",
+    "Hector Bombín",
+    "Hugo Cable",
+    "Chris Dawson",
+    "Mercedes Gimeno-Segovia"
+   ],
+   "n_authors": 13,
+   "journal": "Nature Communications",
+   "volume": "14",
+   "pages": "912",
+   "date": "2023-02-17",
+   "doi": "10.1038/s41467-023-36493-1",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41467-023-36493-1",
+   "hint": "FBQC thresholds",
+   "verified": true
+  },
+  {
+   "title": "Comparison of schemes for highly loss tolerant photonic fusion based quantum computing",
+   "authors": [
+    "Sara Bartolucci",
+    "Tom Bell",
+    "Hector Bombin",
+    "Patrick Birchall",
+    "Jacob Bulmer",
+    "Christopher Dawson"
+   ],
+   "n_authors": 21,
+   "date": "2025-06-13",
+   "arxiv": "2506.11975",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2506.11975",
+   "hint": "loss-tolerant schemes",
+   "verified": true
+  }
+ ],
+ "P11": [
+  {
+   "url": "https://www.psiquantum.com/news-import",
+   "venue": "PsiQuantum",
+   "kind": "web",
+   "org": "PsiQuantum",
+   "site": "PsiQuantum",
+   "title": "News",
+   "hint": "PsiQuantum newsroom (Series E, CEO change, Griffith lab)",
+   "verified": true,
+   "note": "newsroom index page (multiple dated items); no single publication date"
+  }
+ ],
+ "P12": [
+  {
+   "org": "Quantum Computing Report",
+   "authors": [
+    "Mohamed Abdel-Kareem"
+   ],
+   "n_authors": 1,
+   "title": "PsiQuantum Secures $125 Million Expanded Agreement with DARPA under QBI Program",
+   "date": "2026-07-22",
+   "kind": "web",
+   "site": "Quantum Computing Report",
+   "url": "https://quantumcomputingreport.com/psiquantum-secures-125-million-expanded-agreement-with-darpa-under-qbi-program/",
+   "hint": "PsiQuantum DARPA Stage C",
+   "verified": true
+  }
+ ],
+ "P13": [
+  {
+   "authors": [
+    "Daniel Van Boom"
+   ],
+   "org": "Forbes Australia",
+   "title": "PsiQuantum ditches Brisbane Airport plan in bid to break ground on supercomputer",
+   "date": "2026-05-20",
+   "kind": "web",
+   "site": "Forbes Australia",
+   "url": "https://www.forbes.com.au/news/innovation/psiquantums-stalled-quantum-plant-to-break-ground-after-location-switch/",
+   "hint": "Brisbane site",
+   "verified": true
+  }
+ ],
+ "P14": [
+  {
+   "url": "https://quantumcomputingreport.com/xanadu-to-list-on-nasdaq-and-tsx-following-shareholder-merger-approval/",
+   "authors": [
+    "Mohamed Abdel-Kareem"
+   ],
+   "title": "Xanadu to List on Nasdaq and TSX Following Shareholder Merger Approval",
+   "date": "2026-03-19",
+   "kind": "web",
+   "org": "Quantum Computing Report",
+   "site": "Quantum Computing Report",
+   "hint": "Xanadu listing",
+   "verified": true
+  }
+ ],
+ "P15": [
+  {
+   "authors": [
+    "Mohamed Abdel-Kareem"
+   ],
+   "org": "Quantum Computing Report",
+   "title": "Photonic Inc. Reaches $2B Valuation with $200M Final Close",
+   "date": "2026-05-12",
+   "kind": "web",
+   "site": "Quantum Computing Report",
+   "url": "https://quantumcomputingreport.com/photonic-inc-reaches-2b-valuation-with-200m-final-close/",
+   "hint": "Photonic Inc",
+   "verified": true
+  }
+ ],
+ "P16": [
+  {
+   "org": "The Quantum Insider",
+   "authors": [
+    "Matt Swayne"
+   ],
+   "title": "DARPA Selects Quandela For Stage A of The Quantum Benchmarking Initiative",
+   "date": "2026-06-16",
+   "kind": "web",
+   "site": "The Quantum Insider",
+   "url": "https://thequantuminsider.com/2026/06/16/darpa-selects-quandela-for-stage-a-of-the-quantum-benchmarking-initiative/",
+   "hint": "Quandela QBI Stage A",
+   "verified": true
+  }
+ ],
+ "Q1": [
+  {
+   "authors": [
+    "Paul Steinacker",
+    "Nard Dumoulin Stuyck",
+    "Wee Han Lim",
+    "Tuomo Tanttu",
+    "MengKe Feng",
+    "Santiago Serrano"
+   ],
+   "n_authors": 30,
+   "title": "Industry-compatible silicon spin-qubit unit cells exceeding 99% fidelity",
+   "journal": "Nature",
+   "volume": "646",
+   "issue": "8083",
+   "pages": "81-87",
+   "date": "2025-09-24",
+   "doi": "10.1038/s41586-025-09531-9",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-025-09531-9",
+   "hint": "Diraq/imec 300 mm, Nature",
+   "verified": true
+  }
+ ],
+ "Q2": [
+  {
+   "org": "Members of the HRL Quantum Team and Collaborators",
+   "authors": [],
+   "n_authors": 412,
+   "title": "A digitally controlled silicon quantum processing unit",
+   "date": "2026-04-17",
+   "arxiv": "2604.16216",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2604.16216",
+   "hint": "HRL self-sequenced QPU",
+   "verified": true,
+   "note": "arXiv author line begins with the collaboration label (printed 'Members of the HRL Quantum Team, Collaborators:') followed by person names; first six persons: Michael Abraham, Edwin Acuna, Tower S. Adams, Moonmoon Akmal, Matthew R. Alfaro, I. Alvarado. n_authors derived: 255 person names displayed + 'et al. (157 additional authors not shown)'. No Journal-ref on the arXiv page at fetch time, so the report's Nature/2026-07-29 attribution is not confirmed here"
+  },
+  {
+   "org": "HRL Laboratories",
+   "title": "HRL demonstrates a silicon quantum processor that runs itself",
+   "date": "2026-07-29",
+   "kind": "web",
+   "site": "HRL Laboratories",
+   "url": "https://www.hrl.com/news/2026/07/29/hrl-demonstrates-a-silicon-quantum-processor-that-runs-itself",
+   "hint": "HRL self-sequenced QPU — https://arxiv.org/abs/2604.16216 ; https://www.hrl.com/news/2026/07/29/hrl-demonstrates-a-silicon-quantum-processor-that-runs-itself",
+   "verified": true,
+   "note": "dateline 'MALIBU, Calif., July 29, 2026'; an author name (Elizabeth Maeda) appears only in page metadata, not as a visible byline, so no authors set"
+  }
+ ],
+ "Q3": [
+  {
+   "url": "https://arxiv.org/abs/2506.03567",
+   "hint": "SQC donor qubits",
+   "verified": true,
+   "kind": "preprint",
+   "title": "An 11-qubit atom processor in silicon",
+   "authors": [
+    "Hermann Edlbauer",
+    "Junliang Wang",
+    "A. M. Saffat-Ee Huq",
+    "Ian Thorvaldson",
+    "Michael T. Jones",
+    "Saiful Haque Misha"
+   ],
+   "n_authors": 15,
+   "date": "2025-06",
+   "arxiv": "2506.03567",
+   "note": "title and authors from the arXiv record (alphaxiv mirror); month from the arXiv identifier"
+  }
+ ],
+ "Q4": [
+  {
+   "authors": [
+    "Y. Matsumoto",
+    "M. De Smet",
+    "L. Tryputen",
+    "S. L. de Snoo",
+    "S. V. Amitonov",
+    "A. Sammak"
+   ],
+   "n_authors": 9,
+   "title": "Two-qubit logic and teleportation with mobile spin qubits in silicon",
+   "journal": "Nature",
+   "volume": "653",
+   "issue": "8114",
+   "pages": "391-397",
+   "date": "2026-05-06",
+   "doi": "10.1038/s41586-026-10423-9",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-026-10423-9",
+   "hint": "Delft mobile-spin CZ, Nature",
+   "verified": true
+  }
+ ],
+ "Q5": [
+  {
+   "authors": [
+    "Jonathan Y. Huang",
+    "Rocky Y. Su",
+    "Wee Han Lim",
+    "MengKe Feng",
+    "Barnaby van Straaten",
+    "Brandon Severin"
+   ],
+   "n_authors": 26,
+   "title": "High-fidelity spin qubit operation and algorithmic initialization above 1 K",
+   "journal": "Nature",
+   "volume": "627",
+   "issue": "8005",
+   "pages": "772-777",
+   "date": "2024-03-27",
+   "doi": "10.1038/s41586-024-07160-2",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-024-07160-2",
+   "hint": "Diraq 1 K operation, Nature",
+   "verified": true
+  }
+ ],
+ "Q6": [
+  {
+   "authors": [
+    "J.J. Dijkema",
+    "X. Zhang",
+    "A. Bardakas",
+    "D. Bouman",
+    "A. Cuzzocrea",
+    "D. van Driel"
+   ],
+   "n_authors": 11,
+   "title": "Simultaneous operation of an 18-qubit modular array in germanium",
+   "date": "2026-04-01",
+   "arxiv": "2604.01063",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2604.01063",
+   "hint": "Groove/QuTech 18-qubit Ge",
+   "verified": true
+  },
+  {
+   "authors": [
+    "Maxim De Smet",
+    "Yuta Matsumoto",
+    "Anne-Marije J. Zwerver",
+    "Larysa Tryputen",
+    "Sander L. de Snoo",
+    "Sergey V. Amitonov"
+   ],
+   "n_authors": 15,
+   "title": "High-fidelity single-spin shuttling in silicon",
+   "journal": "Nature Nanotechnology",
+   "volume": "20",
+   "issue": "7",
+   "pages": "866-872",
+   "date": "2025-06-09",
+   "doi": "10.1038/s41565-025-01920-5",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41565-025-01920-5",
+   "hint": "conveyor shuttling",
+   "verified": true
+  }
+ ],
+ "Q7": [
+  {
+   "authors": [
+    "Andreas Nickl",
+    "Nard Dumoulin Stuyck",
+    "Paul Steinacker",
+    "Jesus D. Cifuentes",
+    "Santiago Serrano",
+    "MengKe Feng"
+   ],
+   "n_authors": 27,
+   "title": "Eight-qubit operation of a 300 mm SiMOS foundry-fabricated device",
+   "journal": "Nature Communications",
+   "volume": "17",
+   "issue": "1",
+   "pages": "5878",
+   "date": "2026-07-09",
+   "doi": "10.1038/s41467-026-74597-6",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41467-026-74597-6",
+   "hint": "imec 8-qubit",
+   "verified": true
+  }
+ ],
+ "Q8": [
+  {
+   "authors": [
+    "Chunhui Zhang",
+    "Feng Xu",
+    "Shihang Zhang",
+    "Mingchao Duan",
+    "Dupeng Zhong",
+    "Xuesong Bai"
+   ],
+   "n_authors": 27,
+   "title": "Universal logical operations in a silicon quantum processor",
+   "journal": "Nature Nanotechnology",
+   "volume": "21",
+   "issue": "5",
+   "pages": "635-641",
+   "date": "2026-03-23",
+   "doi": "10.1038/s41565-026-02140-1",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41565-026-02140-1",
+   "hint": "SUSTech donor [[4,2,2]]",
+   "verified": true
+  }
+ ],
+ "Q9": [
+  {
+   "authors": [
+    "Hubert C. George",
+    "Mateusz T. Mądzik",
+    "Eric M. Henry",
+    "Andrew J. Wagner",
+    "Mohammad M. Islam",
+    "Felix Borjans"
+   ],
+   "n_authors": 37,
+   "title": "12-spin-qubit arrays fabricated on a 300 mm semiconductor manufacturing line",
+   "date": "2024-10-22",
+   "arxiv": "2410.16583",
+   "doi": "10.1021/acs.nanolett.4c05205",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2410.16583",
+   "hint": "Intel 300 mm statistics",
+   "verified": true,
+   "journal": "Nano Letters",
+   "volume": "25",
+   "issue": "2",
+   "pages": "793-799",
+   "pubdate": "2024-12-25",
+   "note": "journal fields from Crossref"
+  }
+ ],
+ "Q10": [
+  {
+   "title": "Quantum Motion Delivers the Industry's First Full-Stack Silicon CMOS Quantum Computer",
+   "org": "Quantum Motion",
+   "site": "Quantum Motion",
+   "date": "2025-09-15",
+   "kind": "web",
+   "url": "https://quantummotion.com/quantum-motion-delivers-the-industrys-first-full-stack-silicon-cmos-quantum-computer/",
+   "hint": "Quantum Motion NQCC",
+   "verified": true
+  }
+ ],
+ "Q11": [
+  {
+   "org": "UNSW",
+   "title": "UNSW engineers help crack key challenge in scaling quantum computers",
+   "date": "2025-06-26",
+   "kind": "web",
+   "site": "UNSW",
+   "note": "byline as printed: UNSW Media, Diraq Media",
+   "url": "https://www.unsw.edu.au/newsroom/news/2025/06/unsw-engineers-crack-challenge-scaling-quantum-computers",
+   "hint": "UNSW mK cryo-CMOS",
+   "verified": true
+  }
+ ],
+ "Q12": [
+  {
+   "org": "IBM",
+   "title": "IBM to Acquire HRL Laboratories to Power the Future of Quantum",
+   "date": "2026-07-23",
+   "kind": "web",
+   "site": "IBM Newsroom",
+   "url": "https://newsroom.ibm.com/2026-07-23-ibm-to-acquire-hrl-laboratories-to-power-the-future-of-quantum",
+   "hint": "IBM acquires HRL",
+   "verified": true
+  }
+ ],
+ "Q13": [
+  {
+   "authors": [
+    "Matt Swayne"
+   ],
+   "org": "The Quantum Insider",
+   "title": "Fujitsu And QuTech Realize High-Precision Quantum Gates",
+   "date": "2025-03-28",
+   "kind": "web",
+   "site": "The Quantum Insider",
+   "url": "https://thequantuminsider.com/2025/03/28/fujitsu-and-qutech-realize-high-precision-quantum-gates/",
+   "hint": "Fujitsu/QuTech NV gates",
+   "verified": true,
+   "note": "news article, not a journal paper: kind changed from 'journal' to 'web' and the bogus 'journal' field dropped"
+  },
+  {
+   "authors": [
+    "C. M. Knaut",
+    "A. Suleymanzade",
+    "Y.-C. Wei",
+    "D. R. Assumpcao",
+    "P.-J. Stas",
+    "Y. Q. Huan"
+   ],
+   "n_authors": 17,
+   "title": "Entanglement of nanophotonic quantum memory nodes in a telecom network",
+   "journal": "Nature",
+   "volume": "629",
+   "issue": "8012",
+   "pages": "573-578",
+   "date": "2024-05-15",
+   "doi": "10.1038/s41586-024-07252-z",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-024-07252-z",
+   "hint": "Harvard SiV 35 km",
+   "verified": true
+  }
+ ],
+ "Q14": [
+  {
+   "authors": [
+    "Francesca Elliott"
+   ],
+   "org": "Diraq",
+   "title": "Diraq charts course to utility-scale quantum computing with millions of spin qubits on a single silicon chip",
+   "date": "2026-08-27",
+   "kind": "web",
+   "site": "Diraq",
+   "url": "https://www.diraq.com/newsdesk/diraq-sets-roadmap-for-utility-scale-quantum-computing-with-millions-of-qubits-on-a-single-silicon-chip",
+   "hint": "Diraq roadmap",
+   "verified": true
+  },
+  {
+   "authors": [
+    "Matt Swayne"
+   ],
+   "org": "The Quantum Insider",
+   "title": "Diraq Demonstrates Scaled Foundry-Fabricated Silicon-Based Qubit Array Made at imec",
+   "date": "2026-07-09",
+   "kind": "web",
+   "site": "The Quantum Insider",
+   "url": "https://thequantuminsider.com/2026/07/09/diraq-demonstrates-scaled-foundry-fabricated-silicon-based-qubit-array-made-at-imec/",
+   "hint": "July release",
+   "verified": true
+  }
+ ],
+ "T1": [
+  {
+   "org": "Microsoft Azure Quantum",
+   "authors": [],
+   "title": "Interferometric single-shot parity measurement in InAs–Al hybrid devices",
+   "journal": "Nature",
+   "volume": "638",
+   "issue": "8051",
+   "pages": "651-655",
+   "date": "2025-02-19",
+   "doi": "10.1038/s41586-024-08445-2",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-024-08445-2",
+   "hint": "Microsoft parity readout, Nature (Feb 2025)",
+   "verified": true
+  }
+ ],
+ "T2": [
+  {
+   "authors": [
+    "Philip Ball"
+   ],
+   "n_authors": 1,
+   "title": "Experts Weigh in on Microsoft's Topological Qubit Claim",
+   "journal": "Physics",
+   "volume": "18",
+   "pages": "57",
+   "date": "2025",
+   "kind": "journal",
+   "note": "page date line not extracted; year taken from citation line \"Physics 18, 57\" (vol. 18 = 2025)",
+   "url": "https://physics.aps.org/articles/v18/57",
+   "hint": "APS Physics coverage",
+   "verified": true
+  }
+ ],
+ "T3": [
+  {
+   "title": "Distinct Lifetimes for X and Z Loop Measurements in a Majorana Tetron Device",
+   "authors": [
+    "Morteza Aghaee",
+    "Zulfi Alam",
+    "Rikke Andersen",
+    "Mariusz Andrzejczuk",
+    "Andrey Antipov",
+    "Mikhail Astafev"
+   ],
+   "n_authors": 232,
+   "date": "2025-07-11",
+   "arxiv": "2507.08795",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2507.08795",
+   "hint": "Tetron Z/X lifetimes",
+   "verified": true
+  }
+ ],
+ "T4": [
+  {
+   "authors": [
+    "Morteza Aghaee",
+    "Zulfi Alam",
+    "Mariusz Andrzejczuk",
+    "Andrey Antipov",
+    "Theodora Asimakidis",
+    "Mikhail Astafev"
+   ],
+   "n_authors": 230,
+   "title": "20 Second Parity Lifetime in an InAs--Pb Tetron Device",
+   "date": "2026-06-02",
+   "arxiv": "2606.03884",
+   "kind": "preprint",
+   "note": "InAs–Pb tetron, ~20 s parity switching, no two-qubit operation; n_authors derived: 165 names displayed + 'et al. (65 additional authors not shown)'; title printed with '--' on arXiv",
+   "url": "https://arxiv.org/abs/2606.03884",
+   "hint": "\"Majorana 2\"",
+   "verified": true
+  }
+ ],
+ "T5": [
+  {
+   "org": "Microsoft",
+   "authors": [
+    "Chetan Nayak"
+   ],
+   "n_authors": 1,
+   "title": "Majorana 2 – Microsoft's Scalable Quantum Processor With Reliable, Long-Lasting Qubits",
+   "kind": "web",
+   "site": "Microsoft Quantum",
+   "note": "page shows no publication date (report had 2026-06, dropped per brief); kind changed from journal to web — it is a blog post, byline 'Chetan Nayak, Technical Fellow and Corporate Vice President of Quantum Hardware'",
+   "url": "https://quantum.microsoft.com/en-us/insights/blogs/majorana-2-scalable-quantum-processor",
+   "hint": "Microsoft blog",
+   "verified": true
+  }
+ ],
+ "T6": [
+  {
+   "authors": [
+    "Nick van Loo",
+    "Francesco Zatelli",
+    "Gorm O. Steffensen",
+    "Bart Roovers",
+    "Guanzhong Wang",
+    "Thomas Van Caekenberghe"
+   ],
+   "n_authors": 16,
+   "title": "Single-shot parity readout of a minimal Kitaev chain",
+   "journal": "Nature",
+   "volume": "650",
+   "issue": "8101",
+   "pages": "334-339",
+   "date": "2026-02-11",
+   "doi": "10.1038/s41586-025-09927-7",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-025-09927-7",
+   "hint": "QuTech Kitaev-chain parity readout, Nature",
+   "verified": true
+  }
+ ],
+ "T7": [
+  {
+   "url": "https://arxiv.org/abs/2607.09511",
+   "hint": "QuTech coherent parity qubit",
+   "verified": true,
+   "kind": "preprint",
+   "title": "Majorana parity qubit in coupled minimal Kitaev chains",
+   "authors": [
+    "Francesco Zatelli",
+    "Bart Roovers",
+    "Nick van Loo",
+    "Antonio Lombardi",
+    "Juan D. Torres Luna",
+    "Sebastian Miles"
+   ],
+   "n_authors": 14,
+   "date": "2026-07",
+   "arxiv": "2607.09511",
+   "note": "title and authors from the arXiv record (alphaxiv mirror); month from the arXiv identifier"
+  }
+ ],
+ "T8": [
+  {
+   "url": "https://arxiv.org/abs/2503.08944",
+   "hint": "Legg critique",
+   "verified": true,
+   "kind": "preprint",
+   "title": "Comment on “Interferometric single-shot parity measurement in InAs-Al hybrid devices”, Microsoft Quantum, Nature 638, 651-655 (2025)",
+   "authors": [
+    "Henry F. Legg"
+   ],
+   "n_authors": 1,
+   "date": "2025-03",
+   "arxiv": "2503.08944",
+   "note": "title and authors from the arXiv record (alphaxiv mirror); month from the arXiv identifier"
+  },
+  {
+   "authors": [
+    "Henry F. Legg"
+   ],
+   "n_authors": 1,
+   "title": "On the robustness of topological gap detection via transport",
+   "journal": "Nature",
+   "volume": "654",
+   "issue": "8120",
+   "pages": "E22-E26",
+   "date": "2026-06-24",
+   "doi": "10.1038/s41586-026-10567-8",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-026-10567-8",
+   "hint": "Matters Arising",
+   "verified": true
+  },
+  {
+   "org": "Microsoft Quantum",
+   "authors": [],
+   "title": "Reply to: On the robustness of topological gap detection via transport",
+   "journal": "Nature",
+   "volume": "654",
+   "issue": "8120",
+   "pages": "E27-E28",
+   "date": "2026-06-24",
+   "doi": "10.1038/s41586-026-10568-7",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-026-10568-7",
+   "hint": "Microsoft reply",
+   "verified": true
+  }
+ ],
+ "T9": [
+  {
+   "org": "DARPA",
+   "title": "DARPA selects two discrete utility-scale quantum computing approaches for evaluation",
+   "date": "2025-02-06",
+   "kind": "web",
+   "site": "DARPA",
+   "url": "https://www.darpa.mil/news/2025/quantum-computing-approaches",
+   "hint": "DARPA US2QC",
+   "verified": true
+  }
+ ],
+ "A1": [
+  {
+   "title": "D-Wave Announces General Availability of Advantage2 Quantum Computer",
+   "authors": [
+    "Matt Swayne"
+   ],
+   "org": "The Quantum Insider",
+   "site": "The Quantum Insider",
+   "date": "2025-05-20",
+   "kind": "web",
+   "url": "https://thequantuminsider.com/2025/05/20/d-wave-announces-general-availability-of-advantage2-quantum-computer/",
+   "hint": "Advantage2 GA",
+   "verified": true
+  }
+ ],
+ "A2": [
+  {
+   "authors": [
+    "Andrew D. King",
+    "Alberto Nocera",
+    "Marek M. Rams",
+    "Jacek Dziarmaga",
+    "Roeland Wiersema",
+    "William Bernoudy"
+   ],
+   "n_authors": 64,
+   "title": "Beyond-classical computation in quantum simulation",
+   "journal": "Science",
+   "volume": "388",
+   "pages": "199-204",
+   "doi": "10.1126/science.ado6285",
+   "date": "2024-03-01",
+   "arxiv": "2403.00910",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2403.00910",
+   "hint": "D-Wave beyond-classical",
+   "verified": true,
+   "note": "arXiv Journal-ref: 'Science 388, 199-204 (2025)'; date is the arXiv v1 date",
+   "pubdate": "2025"
+  },
+  {
+   "authors": [
+    "Joseph Tindall",
+    "Antonio Mello",
+    "Matt Fishman",
+    "Miles Stoudenmire",
+    "Dries Sels"
+   ],
+   "n_authors": 5,
+   "title": "Dynamics of disordered quantum systems with two- and three-dimensional tensor networks",
+   "journal": "Science",
+   "volume": "392",
+   "pages": "868-872",
+   "doi": "10.1126/science.adx2728",
+   "date": "2025-03-07",
+   "arxiv": "2503.05693",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2503.05693",
+   "hint": "Tindall et al.",
+   "verified": true,
+   "note": "arXiv Journal-ref: 'Science 392, 868-872 (2026)'; date is the arXiv v1 date",
+   "pubdate": "2026"
+  },
+  {
+   "authors": [
+    "Linda Mauron",
+    "Giuseppe Carleo"
+   ],
+   "n_authors": 2,
+   "title": "Challenging the Quantum Advantage Frontier with Large-Scale Classical Simulations of Annealing Dynamics",
+   "date": "2025-03-11",
+   "arxiv": "2503.08247",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2503.08247",
+   "hint": "Mauron & Carleo",
+   "verified": true
+  }
+ ],
+ "A3": [
+  {
+   "authors": [
+    "Alberto Nocera",
+    "Jack Raymond",
+    "William Bernoudy",
+    "Mohammad H. Amin",
+    "Andrew D. King"
+   ],
+   "n_authors": 5,
+   "title": "Evaluating classical simulations with a quantum processor",
+   "date": "2025-08-21",
+   "arxiv": "2508.15759",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2508.15759",
+   "hint": "D-Wave rebuttal",
+   "verified": true
+  }
+ ],
+ "A4": [
+  {
+   "org": "D-Wave Quantum Inc.",
+   "title": "D-Wave Reports Second Quarter 2026 Results",
+   "date": "2026-08-06",
+   "kind": "web",
+   "site": "D-Wave Quantum Inc.",
+   "url": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-reports-second-quarter-2026-results/",
+   "hint": "D-Wave Q2 2026",
+   "verified": true
+  },
+  {
+   "org": "D-Wave Quantum Inc.",
+   "title": "D-Wave Reports Fourth Quarter and Year-End 2025 Results",
+   "date": "2026-02-26",
+   "kind": "web",
+   "site": "D-Wave Quantum Inc.",
+   "url": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-reports-fourth-quarter-and-year-end-2025-results/",
+   "hint": "FY2025",
+   "verified": true
+  }
+ ],
+ "A5": [
+  {
+   "authors": [
+    "T. I. Andersen",
+    "N. Astrakhantsev",
+    "A. H. Karamlou",
+    "J. Berndtsson",
+    "J. Motruk",
+    "A. Szasz"
+   ],
+   "title": "Thermalization and criticality on an analogue–digital quantum simulator",
+   "journal": "Nature",
+   "volume": "638",
+   "issue": "8049",
+   "pages": "79-85",
+   "date": "2025-02-05",
+   "doi": "10.1038/s41586-024-08460-3",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-024-08460-3",
+   "hint": "Google analog-digital simulator, Nature",
+   "verified": true,
+   "note": "Google Quantum AI collaboration paper; Crossref lists individual authors (well over a hundred), so the entry uses et al.",
+   "etal": true
+  }
+ ],
+ "A6": [
+  {
+   "authors": [
+    "Daniel González-Cuadra",
+    "Majd Hamdan",
+    "Torsten V. Zache",
+    "Boris Braverman",
+    "Milan Kornjača",
+    "Alexander Lukin"
+   ],
+   "n_authors": 13,
+   "title": "Observation of string breaking on a (2 + 1)D Rydberg quantum simulator",
+   "journal": "Nature",
+   "volume": "642",
+   "issue": "8067",
+   "pages": "321-326",
+   "date": "2025-06-04",
+   "doi": "10.1038/s41586-025-09051-6",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-025-09051-6",
+   "hint": "QuEra Aquila string breaking, Nature",
+   "verified": true
+  }
+ ],
+ "A7": [
+  {
+   "authors": [
+    "Reza Haghshenas",
+    "Eli Chertkov",
+    "Michael Mills",
+    "Wilhelm Kadow",
+    "Sheng-Hsuan Lin",
+    "Yi-Hsiang Chen"
+   ],
+   "n_authors": 60,
+   "title": "Digital quantum magnetism on a trapped-ion quantum computer",
+   "journal": "Nature",
+   "volume": "653",
+   "pages": "56-62",
+   "date": "2025-03-26",
+   "doi": "10.1038/s41586-026-10445-3",
+   "arxiv": "2503.20870",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2503.20870",
+   "hint": "Quantinuum digital magnetism",
+   "verified": true,
+   "pubdate": "2026"
+  }
+ ],
+ "X1": [
+  {
+   "authors": [
+    "Craig Gidney"
+   ],
+   "n_authors": 1,
+   "title": "How to factor 2048 bit RSA integers with less than a million noisy qubits",
+   "date": "2025-05-21",
+   "arxiv": "2505.15917",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2505.15917",
+   "hint": "Gidney, RSA-2048 with <1 M qubits (May 2025)",
+   "verified": true
+  }
+ ],
+ "X2": [
+  {
+   "title": "Assessing requirements to scale to practical quantum advantage",
+   "authors": [
+    "Michael E. Beverland",
+    "Prakash Murali",
+    "Matthias Troyer",
+    "Krysta M. Svore",
+    "Torsten Hoefler",
+    "Vadym Kliuchnikov"
+   ],
+   "n_authors": 10,
+   "date": "2022-11-14",
+   "arxiv": "2211.07629",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2211.07629",
+   "hint": "Microsoft resource-estimation model (ns vs µs gates)",
+   "verified": true
+  }
+ ],
+ "X3": [
+  {
+   "url": "https://arxiv.org/abs/2202.01244",
+   "title": "Reliably assessing the electronic structure of cytochrome P450 on today's classical computers and tomorrow's quantum computers",
+   "authors": [
+    "Joshua J. Goings",
+    "Alec White",
+    "Joonho Lee",
+    "Christofer S. Tautermann",
+    "Matthias Degroote",
+    "Craig Gidney"
+   ],
+   "n_authors": 9,
+   "date": "2022-02-02",
+   "doi": "10.1073/pnas.2203533119",
+   "journal": "Proceedings of the National Academy of Sciences",
+   "volume": "119",
+   "issue": "38",
+   "pages": "e2203533119",
+   "kind": "journal",
+   "arxiv": "2202.01244",
+   "note": "arXiv page shows the DOI as 'Related DOI' and no journal-ref; journal, volume, issue and article number from Crossref (published online 2022-09-12)",
+   "hint": "P450 estimate",
+   "verified": true,
+   "pubdate": "2022-09"
+  },
+  {
+   "url": "https://arxiv.org/abs/2011.03494",
+   "title": "Even more efficient quantum computations of chemistry through tensor hypercontraction",
+   "authors": [
+    "Joonho Lee",
+    "Dominic W. Berry",
+    "Craig Gidney",
+    "William J. Huggins",
+    "Jarrod R. McClean",
+    "Nathan Wiebe"
+   ],
+   "n_authors": 7,
+   "date": "2020-11-06",
+   "doi": "10.1103/PRXQuantum.2.030305",
+   "journal": "PRX Quantum",
+   "volume": "2",
+   "issue": "3",
+   "pages": "030305",
+   "kind": "journal",
+   "arxiv": "2011.03494",
+   "note": "arXiv journal-ref 'PRX Quantum 2, 030305 (2021)'; issue from Crossref (published online 2021-07-08)",
+   "hint": "FeMoco THC",
+   "verified": true,
+   "pubdate": "2021-07"
+  }
+ ],
+ "X4": [
+  {
+   "url": "https://arxiv.org/abs/1902.10673",
+   "hint": "Hubbard estimates",
+   "verified": true,
+   "kind": "journal",
+   "title": "Improved Fault-Tolerant Quantum Simulation of Condensed-Phase Correlated Electrons via Trotterization",
+   "authors": [
+    "Ian D. Kivlichan",
+    "Craig Gidney",
+    "Dominic W. Berry",
+    "Nathan Wiebe",
+    "Jarrod McClean",
+    "Wei Sun"
+   ],
+   "n_authors": 12,
+   "journal": "Quantum",
+   "volume": "4",
+   "pages": "296",
+   "date": "2020-07",
+   "doi": "10.22331/q-2020-07-16-296",
+   "arxiv": "1902.10673",
+   "note": "title and authors from the arXiv record (alphaxiv mirror); month from the arXiv identifier"
+  }
+ ],
+ "X5": [
+  {
+   "url": "https://arxiv.org/abs/2306.08585",
+   "authors": [
+    "Daniel Litinski"
+   ],
+   "n_authors": 1,
+   "title": "How to compute a 256-bit elliptic curve private key with only 50 million Toffoli gates",
+   "date": "2023-06-14",
+   "kind": "preprint",
+   "arxiv": "2306.08585",
+   "hint": "Litinski ECC-256",
+   "verified": true
+  }
+ ],
+ "X6": [
+  {
+   "url": "https://arxiv.org/abs/2011.04149",
+   "authors": [
+    "Ryan Babbush",
+    "Jarrod McClean",
+    "Michael Newman",
+    "Craig Gidney",
+    "Sergio Boixo",
+    "Hartmut Neven"
+   ],
+   "n_authors": 6,
+   "title": "Focus beyond quadratic speedups for error-corrected quantum advantage",
+   "venue": "arXiv:2011.04149",
+   "journal": "PRX Quantum",
+   "volume": "2",
+   "pages": "010103",
+   "date": "2020-11-09",
+   "doi": "10.1103/PRXQuantum.2.010103",
+   "kind": "journal",
+   "arxiv": "2011.04149",
+   "hint": "Optimization speedups (Babbush et al.)",
+   "verified": true,
+   "pubdate": "2021"
+  },
+  {
+   "url": "https://arxiv.org/abs/2408.08292",
+   "authors": [
+    "Stephen P. Jordan",
+    "Noah Shutty",
+    "Mary Wootters",
+    "Adam Zalcman",
+    "Alexander Schmidhuber",
+    "Robbie King"
+   ],
+   "n_authors": 9,
+   "title": "Optimization by Decoded Quantum Interferometry",
+   "venue": "arXiv:2408.08292",
+   "journal": "Nature",
+   "volume": "646",
+   "pages": "831-836",
+   "date": "2024-08-15",
+   "doi": "10.1038/s41586-025-09527-5",
+   "kind": "journal",
+   "arxiv": "2408.08292",
+   "hint": "DQI",
+   "verified": true,
+   "pubdate": "2025"
+  }
+ ],
+ "X7": [
+  {
+   "url": "https://www.nature.com/articles/s41586-025-09526-6",
+   "title": "Observation of constructive interference at the edge of quantum ergodicity",
+   "org": "Google Quantum AI and Collaborators",
+   "authors": [],
+   "journal": "Nature",
+   "volume": "646",
+   "issue": "8086",
+   "pages": "825-830",
+   "date": "2025-10-22",
+   "doi": "10.1038/s41586-025-09526-6",
+   "kind": "journal",
+   "hint": "Google OTOC \"Quantum Echoes\", Nature",
+   "verified": true
+  },
+  {
+   "url": "https://www.nature.com/articles/s41586-025-08737-1",
+   "title": "Certified randomness using a trapped-ion quantum processor",
+   "authors": [
+    "Minzhao Liu",
+    "Ruslan Shaydulin",
+    "Pradeep Niroula",
+    "Matthew DeCross",
+    "Shih-Han Hung",
+    "Wen Yu Kon"
+   ],
+   "n_authors": 32,
+   "journal": "Nature",
+   "volume": "640",
+   "issue": "8058",
+   "pages": "343-348",
+   "date": "2025-03-26",
+   "doi": "10.1038/s41586-025-08737-1",
+   "kind": "journal",
+   "note": "Crossref returned 429 twice; fields taken from the publisher page",
+   "hint": "certified randomness, Nature",
+   "verified": true
+  },
+  {
+   "url": "https://arxiv.org/abs/2605.04025",
+   "hint": "Q-CTRL",
+   "verified": true,
+   "kind": "preprint",
+   "title": "Fast, accurate, high-resolution simulation of large-scale Fermi-Hubbard models on a digital quantum processor",
+   "authors": [
+    "Gavin S. Hartnett",
+    "Khadijeh Sona Najafi",
+    "Aleksei Khindanov",
+    "Haoran Liao",
+    "Michael Schutzman",
+    "Michael R. Hush"
+   ],
+   "n_authors": 8,
+   "date": "2026-05",
+   "arxiv": "2605.04025",
+   "note": "title and authors from the arXiv record (alphaxiv mirror); month from the arXiv identifier"
+  },
+  {
+   "url": "https://arxiv.org/abs/2607.24937",
+   "hint": "Qedma cross-platform",
+   "verified": true,
+   "kind": "preprint",
+   "title": "Resolving Structure in Prethermal Floquet Dynamics with Precision Quantum Computation",
+   "authors": [
+    "Eyal Leviatan",
+    "Tasneem Watad",
+    "Roy Perry",
+    "Lukas Broers",
+    "Mohammed Zuhair Mullath",
+    "Ori Alberton"
+   ],
+   "n_authors": 41,
+   "date": "2026-07",
+   "arxiv": "2607.24937",
+   "note": "title and authors from the arXiv record (alphaxiv mirror); month from the arXiv identifier"
+  }
+ ],
+ "X8": [
+  {
+   "title": "Erasure conversion for fault-tolerant quantum computing in alkaline earth Rydberg atom arrays",
+   "authors": [
+    "Yue Wu",
+    "Shimon Kolkowitz",
+    "Shruti Puri",
+    "Jeff D Thompson"
+   ],
+   "n_authors": 4,
+   "journal": "Nature Communications",
+   "volume": "13",
+   "pages": "4657",
+   "date": "2022-01-10",
+   "arxiv": "2201.03540",
+   "doi": "10.1038/s41467-022-32094-6",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2201.03540",
+   "hint": "Erasure-conversion threshold (Wu et al.)",
+   "verified": true,
+   "pubdate": "2022"
+  }
+ ],
+ "X9": [
+  {
+   "authors": [
+    "Abbas B. Ziad",
+    "Ankit Zalawadiya",
+    "Canberk Topal",
+    "Joan Camps",
+    "György P. Gehér",
+    "Matthew P. Stafford"
+   ],
+   "n_authors": 7,
+   "title": "Local clustering decoder as a fast and adaptive hardware decoder for the surface code",
+   "journal": "Nature Communications",
+   "volume": "16",
+   "issue": "1",
+   "pages": "11048",
+   "date": "2025-12-17",
+   "doi": "10.1038/s41467-025-66773-x",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41467-025-66773-x",
+   "hint": "Riverlane FPGA decoder, Nat. Commun.",
+   "verified": true
+  },
+  {
+   "authors": [
+    "Mohamed Abdel-Kareem"
+   ],
+   "org": "Quantum Computing Report",
+   "title": "IQM and Zurich Instruments Develop Real-Time QEC via NVIDIA NVQLink",
+   "date": "2026-03-17",
+   "kind": "web",
+   "site": "Quantum Computing Report",
+   "url": "https://quantumcomputingreport.com/iqm-and-zurich-instruments-develop-real-time-qec-via-nvidia-nvqlink/",
+   "hint": "IQM real-time QEC",
+   "verified": true
+  }
+ ],
+ "S32": [
+  {
+   "org": "IBM",
+   "title": "Quantum Roadmap",
+   "kind": "web",
+   "site": "IBM Technology Atlas",
+   "url": "https://www.ibm.com/roadmaps/quantum/",
+   "hint": "IBM roadmap page (Kookaburra 2026, not delivered as of Sep 2026)",
+   "verified": true,
+   "note": "roadmap page, no publication date shown (page title 'Quantum Roadmap — IBM Technology Atlas')"
+  },
+  {
+   "authors": [
+    "David McKay",
+    "Scott Crowder",
+    "Jerry Chow",
+    "Oliver Dial",
+    "Robert Davis",
+    "Catherine Dundon"
+   ],
+   "org": "IBM",
+   "title": "How to measure the performance of a quantum computer",
+   "date": "2026-07-16",
+   "kind": "web",
+   "site": "IBM",
+   "url": "https://www.ibm.com/quantum/blog/hardware-metrics-2026",
+   "hint": "IBM hardware metrics (Nighthawk r2 expected)",
+   "verified": true
+  },
+  {
+   "authors": [
+    "Ke Wang",
+    "Zhide Lu",
+    "Chuanyu Zhang",
+    "Gongyu Liu",
+    "Jiachen Chen",
+    "Yanzhe Wang"
+   ],
+   "n_authors": 36,
+   "title": "Demonstration of low-overhead quantum error correction codes",
+   "journal": "Nature Physics",
+   "date": "2025-05-14",
+   "arxiv": "2505.09684",
+   "doi": "10.1038/s41567-025-03157-4",
+   "kind": "journal",
+   "url": "https://arxiv.org/html/2505.09684",
+   "hint": "Zhejiang [[18,4,4]] BB code",
+   "verified": true,
+   "note": "journal from the arXiv Journal-ref line 'Nature Physics (2026)'; date is the arXiv v1 date",
+   "pubdate": "2026"
+  }
+ ],
+ "S33": [
+  {
+   "authors": [
+    "Volodymyr Sivak",
+    "Alexis Morvan",
+    "Michael Broughton",
+    "Rodrigo G. Cortiñas",
+    "Johannes Bausch",
+    "Andrew W. Senior"
+   ],
+   "n_authors": 391,
+   "title": "Reinforcement Learning Control of Quantum Error Correction",
+   "journal": "Nature",
+   "volume": "655",
+   "issue": "8124",
+   "pages": "879-884",
+   "date": "2025-11-11",
+   "doi": "10.1038/s41586-026-10759-2",
+   "arxiv": "2511.08493",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2511.08493",
+   "hint": "Google RL-controlled QEC, arXiv version",
+   "verified": true,
+   "note": "title/authors/v1 date from the arXiv abs page, which shows no journal-ref or related DOI; journal, volume, issue, pages and n_authors (391) taken from the Crossref record of the record's DOI (Nature, published online 2026-07-08). The arXiv page shows a partial author list plus 'et al. (199 additional authors not shown)'.",
+   "pubdate": "2026-07"
+  },
+  {
+   "authors": [
+    "Hartmut Neven"
+   ],
+   "org": "Google",
+   "title": "Building superconducting and neutral atom quantum computers",
+   "date": "2026-03-24",
+   "kind": "web",
+   "site": "Google",
+   "url": "https://blog.google/innovation-and-ai/technology/research/neutral-atom-quantum-computers/",
+   "hint": "Google neutral-atom track",
+   "verified": true
+  }
+ ],
+ "S34": [
+  {
+   "org": "Fujitsu",
+   "title": "Fujitsu Quantum",
+   "kind": "web",
+   "site": "Fujitsu",
+   "url": "https://global.fujitsu/en-global/technology/research/quantum",
+   "hint": "Fujitsu quantum research page (1,000-qubit machine, fiscal 2026)",
+   "verified": true
+  },
+  {
+   "org": "Fujitsu Limited",
+   "title": "Fujitsu starts official development of plus-10,000 qubit superconducting quantum computer targeting completion in 2030",
+   "date": "2025-08-01",
+   "kind": "web",
+   "site": "Fujitsu",
+   "url": "https://global.fujitsu/en-global/pr/news/2025/08/01-01-en",
+   "hint": "10,000-qubit programme",
+   "verified": true
+  }
+ ],
+ "I27": [
+  {
+   "title": "Benchmarking a trapped-ion quantum computer with 30 qubits",
+   "authors": [
+    "Jwo-Sy Chen",
+    "Erik Nielsen",
+    "Matthew Ebert",
+    "Volkan Inlek",
+    "Kenneth Wright",
+    "Vandiver Chaplin"
+   ],
+   "n_authors": 11,
+   "journal": "Quantum",
+   "volume": "8",
+   "pages": "1516",
+   "date": "2023-08-09",
+   "arxiv": "2308.05071",
+   "doi": "10.22331/q-2024-11-07-1516",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2308.05071",
+   "hint": "IonQ Forte benchmarking (gate durations)",
+   "verified": true,
+   "pubdate": "2024-11-07"
+  },
+  {
+   "title": "IonQ Tempo: 100-Qubit Quantum Computer (#AQ 64)",
+   "org": "IonQ",
+   "site": "IonQ",
+   "kind": "web",
+   "url": "https://ionq.com/quantum-systems/tempo",
+   "hint": "Tempo page",
+   "verified": true
+  }
+ ],
+ "N26": [
+  {
+   "org": "planqc",
+   "title": "News",
+   "kind": "web",
+   "site": "planqc",
+   "url": "https://planqc.eu/news",
+   "hint": "planqc news",
+   "verified": true,
+   "note": "news index page (multiple dated items); no single publication date"
+  },
+  {
+   "authors": [
+    "Marin Ivezic"
+   ],
+   "org": "PostQuantum",
+   "title": "Planqc",
+   "date": "2025-05-22",
+   "kind": "web",
+   "site": "PostQuantum",
+   "url": "https://postquantum.com/quantum-computing-companies/planqc/",
+   "hint": "profile",
+   "verified": true,
+   "note": "company-profile web page; published 2025-05-22, last updated 2026-05-27"
+  }
+ ],
+ "Q15": [
+  {
+   "org": "Argonne National Laboratory",
+   "authors": [
+    "Leah Hesla"
+   ],
+   "n_authors": 1,
+   "title": "Argonne launches silicon quantum processor collaboration with Intel",
+   "date": "2026-01-06",
+   "kind": "web",
+   "site": "Argonne National Laboratory",
+   "url": "https://www.anl.gov/article/argonne-launches-silicon-quantum-processor-collaboration-with-intel",
+   "hint": "Argonne–Intel 12-qubit deployment",
+   "verified": true
+  }
+ ],
+ "X11": [
+  {
+   "url": "https://arxiv.org/abs/2603.28846",
+   "authors": [
+    "Ryan Babbush",
+    "Adam Zalcman",
+    "Craig Gidney",
+    "Michael Broughton",
+    "Tanuj Khattar",
+    "Hartmut Neven"
+   ],
+   "n_authors": 9,
+   "title": "Securing Elliptic Curve Cryptocurrencies against Quantum Vulnerabilities: Resource Estimates and Mitigations",
+   "venue": "arXiv:2603.28846",
+   "date": "2026-03-30",
+   "kind": "preprint",
+   "arxiv": "2603.28846",
+   "hint": "Google ECDLP-256 estimate",
+   "verified": true
+  }
+ ],
+ "X12": [
+  {
+   "authors": [
+    "Paul Webster",
+    "Lucas Berent",
+    "Omprakash Chandra",
+    "Evan T. Hockings",
+    "Nouédyn Baspin",
+    "Felix Thomsen"
+   ],
+   "n_authors": 8,
+   "title": "The Pinnacle Architecture: Reducing the cost of breaking RSA-2048 to 100 000 physical qubits using quantum LDPC codes",
+   "date": "2026-02-12",
+   "arxiv": "2602.11457",
+   "kind": "preprint",
+   "note": "fault-tolerant architecture",
+   "url": "https://arxiv.org/abs/2602.11457",
+   "hint": "Iceberg Quantum Pinnacle architecture",
+   "verified": true
+  }
+ ],
+ "X13": [
+  {
+   "authors": [
+    "Madelyn Cain",
+    "Qian Xu",
+    "Robbie King",
+    "Lewis R. B. Picard",
+    "Harry Levine",
+    "Manuel Endres"
+   ],
+   "n_authors": 9,
+   "title": "Shor's algorithm is possible with as few as 10,000 reconfigurable atomic qubits",
+   "date": "2026-03-30",
+   "arxiv": "2603.28627",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2603.28627",
+   "hint": "Shor with ~10,000 reconfigurable atoms",
+   "verified": true
+  },
+  {
+   "authors": [
+    "Hengyun Zhou",
+    "Casey Duckering",
+    "Chen Zhao",
+    "Dolev Bluvstein",
+    "Madelyn Cain",
+    "Aleksander Kubica"
+   ],
+   "n_authors": 8,
+   "title": "Resource Analysis of Low-Overhead Transversal Architectures for Reconfigurable Atom Arrays",
+   "journal": "Proc. 52nd Annu. Int. Symp. Comput. Archit. (ISCA)",
+   "date": "2025-05-21",
+   "doi": "10.1145/3695053.3731039",
+   "arxiv": "2505.15907",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2505.15907",
+   "hint": "neutral-atom RSA-2048 architecture",
+   "verified": true,
+   "note": "arXiv Journal-ref line reads 'Accepted to ISCA 2025'; Related DOI 10.1145/3695053.3731039",
+   "pubdate": "2025"
+  }
+ ],
+ "X14": [
+  {
+   "org": "DARPA",
+   "title": "DARPA eyes companies targeting industrially useful quantum computers",
+   "date": "2025-04-03",
+   "kind": "web",
+   "site": "DARPA",
+   "url": "https://www.darpa.mil/news/2025/companies-targeting-quantum-computers",
+   "hint": "DARPA QBI Stage A page ('17 of 18 announced')",
+   "verified": true
+  },
+  {
+   "org": "DARPA",
+   "title": "Quantum Benchmarking Initiative expands quest to separate hype from reality",
+   "date": "2026-03-10",
+   "kind": "web",
+   "site": "DARPA",
+   "url": "https://www.darpa.mil/news/2026/qbi-stage-a-qbit",
+   "hint": "QBIT Stage A",
+   "verified": true
+  },
+  {
+   "org": "DARPA",
+   "title": "Quantum Benchmarking Initiative (QBI) - Q&A",
+   "date": "2025-02-14",
+   "kind": "web",
+   "site": "DARPA",
+   "url": "https://www.darpa.mil/sites/default/files/attachment/2025-04/darpa-qbi-q-a-2025.pdf",
+   "hint": "QBI Q&A (stage durations)",
+   "verified": true,
+   "note": "date = last update shown in the PDF (originally posted 2024-09-06; questions added 2024-09-12/17/18 and 2025-02-14)."
+  }
+ ],
+ "I28": [
+  {
+   "url": "https://arxiv.org/abs/2609.03194",
+   "hint": "Quantinuum \"Helix\" [[20,2,6]] logical memory on Helios (preprint, 2 Sep 2026)",
+   "verified": true,
+   "kind": "preprint",
+   "title": "Experimental validation of a compact fault-tolerant architecture for trapped ions",
+   "authors": [
+    "Noah Berthusen",
+    "Ali Lavasani",
+    "Asmae Benhemou",
+    "M.S. Allman",
+    "Joan Dreiling",
+    "Brian Estey"
+   ],
+   "n_authors": 14,
+   "date": "2026-09",
+   "arxiv": "2609.03194",
+   "note": "title and authors from the arXiv record (alphaxiv mirror); month from the arXiv identifier"
+  }
+ ]
+}

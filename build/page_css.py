@@ -87,9 +87,9 @@ main{min-width:0}
 .prose li.def{margin:.55em 0}
 .prose ol.es>li{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
 @media (max-width:700px){.prose ol.es>li{text-align:left}}
-.mast .author .orcid{display:inline-flex;align-items:center;gap:5px;text-decoration:none;color:var(--ink2);font-size:14px}
-.mast .author .orcid:hover span{text-decoration:underline}
-.mast .author .orcid-id{flex:none;vertical-align:-3px}
+.mast .author .orcid{display:inline-block;line-height:0;margin-left:2px;vertical-align:-3px;border-radius:50%}
+.mast .author .orcid:hover{box-shadow:0 0 0 2px var(--accent)}
+.mast .author .orcid-id{display:block}
 .pubmeta .ghlink{display:inline-flex;align-items:center;gap:4px;text-decoration:none}
 .pubmeta .ghlink:hover span{text-decoration:underline}
 /* references: source codes and cross-references are links; a source entry's own code is its anchor */
@@ -98,6 +98,13 @@ main{min-width:0}
 .prose a.xref{text-decoration:none;border-bottom:1px dotted currentColor}
 .prose a.xref:hover{border-bottom-style:solid}
 .prose .src{font-weight:600;scroll-margin-top:70px}
+/* §9 (23 Sep 2026): one IEEE-numbered list — hanging numbers, entries in a slightly smaller size, long URLs allowed to break */
+.prose ol.refs{list-style:none;padding-left:0;margin:8px 0 0}
+.prose ol.refs li{position:relative;padding-left:3.4em;margin:0 0 7px;font-size:.93em;line-height:1.5;text-align:left;scroll-margin-top:70px}
+.prose ol.refs li .src{position:absolute;left:0;top:0;width:2.9em;text-align:right;font-variant-numeric:tabular-nums}
+.prose ol.refs li:target{background:var(--surface2);box-shadow:0 0 0 4px var(--surface2);border-radius:3px}
+.prose ol.refs li a{overflow-wrap:anywhere}
+.prose .refnote{font-size:.92em;color:var(--muted);margin-top:6px}
 /* tooltips on terms: a faint dotted underline marks a term the page explains in place; the text is shown by #gtip (script) */
 .tt{text-decoration:underline dotted;text-decoration-color:var(--muted);text-underline-offset:3px;cursor:help;outline:none}
 .tt:hover,.tt:focus{text-decoration-color:var(--accent)}
@@ -144,7 +151,6 @@ details.fold .tbl{border:0;border-top:1px solid var(--rule);border-radius:0;marg
 .zoomctl .zfs[aria-pressed="true"]{background:var(--surface2)}
 .mapsec h2{font-size:24px;font-weight:600;margin:0 0 4px;display:flex;gap:14px;align-items:baseline}
 .mapsec h2 .num{font-family:"Unbounded",sans-serif;font-weight:500;font-size:15px;color:var(--muted)}
-.mapsec .lead{color:var(--ink2);max-width:80ch;margin:.2em 0 14px;text-wrap:pretty}
 .mapbar{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;padding:10px 12px;border:1px solid var(--rule);border-radius:10px 10px 0 0;background:var(--surface);font-size:13.5px}
 .mapbar .grp{display:flex;flex-wrap:wrap;gap:6px;align-items:center;min-width:0;max-width:100%}
 .mapbar .lbl{color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-right:2px}
@@ -411,6 +417,7 @@ body{font-size:clamp(14px,0.35vw + 13px,16px)}
 .bone,.bverdict,.blede,.bbody p,.bbody ul,.bbody ol{max-width:min(78ch,100%)}
 /* [all widths] long URLs / identifiers wrap instead of pushing the page wide */
 .prose a,.bbody a,.colophon a,.pubmeta a,.bidx a,.insp a{word-break:break-word;overflow-wrap:anywhere}
+.prose td>a.src,.prose td>a.cite,.prose td>a.xref{word-break:normal;overflow-wrap:normal;white-space:nowrap}   /* a code such as F1a in a narrow first column never breaks inside (Table 8.5, 23 Sep 2026) */
 h1.title,.prose h2,.prose h3,.mapsec h2,.briefs h2,.btitle,.bbody h3.bh3,.insp h3{overflow-wrap:break-word}
 /* [all widths] nothing in the grid may establish a min-content floor wider than the viewport */
 main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
@@ -581,8 +588,14 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
 .pubmeta .doi{font-family:"JetBrains Mono",monospace;color:var(--muted);border-bottom:1px dotted var(--line);cursor:help}
 
 /* collapsible map bar: one line (toggle · summary · zoom) when collapsed */
-.bartog{appearance:none;border:1px solid var(--rule);background:var(--surface);color:var(--ink2);border-radius:6px;width:22px;height:22px;padding:0;cursor:pointer;font-size:12px;line-height:1;margin-right:2px;flex:0 0 auto}
-.bartog:hover{background:var(--surface2)}
+.bartog{appearance:none;display:inline-flex;align-items:center;gap:6px;border:1px solid var(--ink2);background:var(--surface2);color:var(--ink);border-radius:8px;height:30px;padding:0 10px 0 9px;cursor:pointer;font:600 13px/1 "Inter",system-ui,sans-serif;margin-right:4px;flex:0 0 auto}
+.bartog:hover{background:var(--surface);border-color:var(--accent);color:var(--accent)}
+.bartog .when-open,.bartog .when-closed{font-size:11px;color:var(--muted)}
+.bartog:hover .when-open,.bartog:hover .when-closed{color:inherit}
+.mapbar.collapsed .chipsrow > .lbl{display:none}
+.maplead{margin:12px 0 2px}
+.maplead .lead{color:var(--ink2);max-width:100ch;margin:0;font-size:14.5px;line-height:1.55;text-wrap:pretty}
+#mapbody:fullscreen .maplead,#mapbody:-webkit-full-screen .maplead,#mapbody.fsfake .maplead{display:none}
 .barsum{color:var(--ink2);font-size:12.5px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .barsum b{color:var(--ink);font-weight:600}
 .barsum .sw{display:inline-block;width:9px;height:9px;border-radius:2px;vertical-align:-1px;margin-right:4px}

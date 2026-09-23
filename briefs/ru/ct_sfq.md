@@ -121,7 +121,7 @@ updated: 2026-09-03
 [21] HRL Laboratories · 18-qubit SiGe QPU with a 4 K cryo-CMOS controller · arXiv:2604.16216 (Nature 2026-07-29) · https://arxiv.org/abs/2604.16216 [D]
 [22] IBM Research · cryo-CMOS control system, part 2 · APS abstract · 2026-03-16 · https://research.ibm.com/publications/a-cryo-cmos-control-system-for-large-scale-superconducting-qubit-quantum-computing-part-2 [C]
 [23] Google Quantum AI · "Quantum error correction below the surface code threshold" · Nature 638, 920 · 2024-12-09 · https://www.nature.com/articles/s41586-024-08449-y [D]
-[24] Neeman R. · *Superconductor Electronics Monitor 2026* (v1.1, 2026-09-06; до v1.0 — *SFQ Technology Monitor 2026*) · Qodeh · DOI концепции 10.5281/zenodo.21860767 · DOI версии 10.5281/zenodo.22537315 · https://qodeh.com/publications/superconductor-electronics-monitor-2026/ [P]
+[24] R. Neeman, “Superconductor Electronics Monitor,” Qodeh, 2026, doi: [10.5281/zenodo.21860767](https://doi.org/10.5281/zenodo.21860767) [P]
 [25] SeeQC, Inc. · Settlement, Termination and Release Agreement с Allegro Merger Corp. (приложение 2.2 к регистрационному заявлению) · SEC EDGAR · 2026-08-25 · https://www.sec.gov/Archives/edgar/data/1779977/000121390026095175/ea028847004ex2-2.htm [G]
 
 ## Открытые пункты верификации

@@ -92,10 +92,18 @@ def main():
     # 6b. references and tooltips (21 Sep 2026): every citation code in the text has a source anchor; every cross-reference link
     #     resolves; no TeX remnant or currency-swallowed formula survives; every tooltip key has a text in both languages
     import html as _html, json as _json
-    cited=set(re.findall(r'\[([A-Z]{1,2}\d{1,3})\]', t))
+    # 23 Sep 2026: citations are IEEE numbers; a code left in the text means it has no entry in the register
+    cited=set(re.findall(r'(?<![\w\-\[])\[([A-Z]{1,2}\d{1,3})\](?!\])', t))
+    item('every citation code was numbered (no [CODE] token left in the rendered text)', not cited, sorted(cited)[:8])
     for lang in ('en','ru'):
-        anchored=set(re.findall(r'class="src" id="'+lang+r'-src-([A-Z0-9]+)"', h))
-        item(f'every citation code has a source entry ({lang})', cited <= anchored, sorted(cited-anchored)[:8])
+        ol=re.search(r'<ol class="refs"[^>]*>(.*?)</ol>', h[h.find(f'<h2 id="{lang}-s9">'):], flags=re.S)
+        nums=[int(x) for x in re.findall(r' value="(\d+)"', ol.group(1))] if ol else []
+        item(f'§9 is one IEEE list numbered 1..N without gaps ({lang})', bool(nums) and nums == list(range(1, len(nums)+1)), (nums[:3], nums[-3:], len(nums)))
+        cites=re.findall(r'<a class="cite" href="#('+lang+r'-src-[^"]+)"', h)
+        item(f'every in-text citation links to an entry ({lang})', bool(cites) and all(f' id="{c}"' in h for c in set(cites)), [c for c in set(cites) if f' id="{c}"' not in h][:6])
+    sys.path.insert(0, os.path.join(ROOT, 'build')); import sources as _sources
+    probs=[p for p in _sources.check() if not p.startswith('no date')]
+    item('bibliography (data/sources.json) agrees with the register and every record is verified', not probs, probs[:6])
     remn=re.findall(r'\\(?:%|[A-Za-z]{2,})', t)
     item('no TeX remnants in the rendered text', not remn, remn[:6])
     item('no formula span longer than 60 characters (currency signs never open a formula)', 'class="m long"' not in h)

@@ -420,17 +420,22 @@ document.getElementById('tg-req').addEventListener('click',ev=>{ if(window.__bar
 document.getElementById('tg-reset').addEventListener('click',()=>{state.isolate=null; state.machine=null; if(machSel)machSel.value=''; st.classed('altuse',false); state.showConf=state.showRep=state.showReq=false; ['tg-conf','tg-rep','tg-req'].forEach(i=>document.getElementById(i).setAttribute('aria-pressed','false')); chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false'));
   state.lens='family'; state.lensFilter=null; lensSel.value='family'; applyLens(); select(null);});
 // ---------- zoom: rendered width/height only, viewBox untouched (so the map stays crisp and text stays text)
-const ZSTEPS=[0.5,0.6,0.7,0.85,1,1.25,1.5,2];   // the − / + buttons walk these
-const ZMIN=0.2, ZMAX=2.5;                        // fit-width on a phone needs to go below ZSTEPS[0]
+// zoom (23 Sep 2026, the editor's review): 100 % is the map fitted to the width of its frame — the natural reading size on
+// this window — not the drawing's native 1,490 px width. The percentage shown, the − / + steps and a typed value are all
+// relative to that fit, so 100 % means "fills the frame" on every screen; "1:1" is the native size (labels as designed).
+const ZSTEPS=[50,60,70,85,100,125,150,200,300];  // the − / + buttons walk these (percent of the fitted size)
+const ZMIN=0.2, ZMAX=2.5;                        // absolute bounds on the scale factor (fit-width on a phone is ≈ 0.25)
 function applyZoom(z,keepCentre){ if(keepCentre)state.fitMode=null;
   z=Math.max(ZMIN,Math.min(ZMAX,z));
   const old=state.zoom||1; let fx=0,fy=0;
   if(keepCentre){ fx=(wrap.scrollLeft+wrap.clientWidth/2)/(W*old); fy=(wrap.scrollTop+wrap.clientHeight/2)/(H*old); }
   state.zoom=z; svg.attr('width',Math.floor(W*z)).attr('height',Math.floor(H*z));
-  const el=document.getElementById('zoomlvl'); if(el&&document.activeElement!==el)el.value=Math.round(z*100)+'%';
+  const el=document.getElementById('zoomlvl'); if(el&&document.activeElement!==el)el.value=zoomPct(z)+'%';
   if(keepCentre){ wrap.scrollLeft=Math.max(0,fx*W*z-wrap.clientWidth/2); wrap.scrollTop=Math.max(0,fy*H*z-wrap.clientHeight/2); }
 }
-function zoomStep(d){ let i=0; for(let k=1;k<ZSTEPS.length;k++){ if(Math.abs(ZSTEPS[k]-state.zoom)<Math.abs(ZSTEPS[i]-state.zoom))i=k; } applyZoom(ZSTEPS[Math.max(0,Math.min(ZSTEPS.length-1,i+d))],true); }
+function zoomPct(z){ return Math.round((z||1)/(window.__fitScale?window.__fitScale():1)*100); }
+function zoomFromPct(p){ return p/100*(window.__fitScale?window.__fitScale():1); }
+function zoomStep(d){ const cur=zoomPct(state.zoom); let i=0; for(let k=1;k<ZSTEPS.length;k++){ if(Math.abs(ZSTEPS[k]-cur)<Math.abs(ZSTEPS[i]-cur))i=k; } applyZoom(zoomFromPct(ZSTEPS[Math.max(0,Math.min(ZSTEPS.length-1,i+d))]),true); }
 (function(){ const zi=document.getElementById('zoom-in'), zo=document.getElementById('zoom-out'), zf=document.getElementById('zoom-fit'), z1=document.getElementById('zoom-100');
   if(zi)zi.addEventListener('click',()=>zoomStep(1));
   if(zo)zo.addEventListener('click',()=>zoomStep(-1));
@@ -440,10 +445,13 @@ function zoomStep(d){ let i=0; for(let k=1;k<ZSTEPS.length;k++){ if(Math.abs(ZST
   function sbSize(){ const d=document.createElement('div'); d.style.cssText='position:absolute;top:-9999px;left:-9999px;width:100px;height:100px;overflow:scroll;visibility:hidden'; document.body.appendChild(d); const r={w:d.offsetWidth-d.clientWidth,h:d.offsetHeight-d.clientHeight}; d.remove(); return r; }
   function box(){ const cs=getComputedStyle(wrap); const sb=sbSize(); const bw=(parseFloat(cs.borderLeftWidth)||0)+(parseFloat(cs.borderRightWidth)||0), bh=(parseFloat(cs.borderTopWidth)||0)+(parseFloat(cs.borderBottomWidth)||0);
     const w0=wrap.offsetWidth-bw; let h0=parseFloat(cs.maxHeight); if(!(h0>0))h0=wrap.offsetHeight-bh; return {w0:w0,h0:h0,sb:sb}; }
-  function fitWidth(){ const b=box(); let z=(b.w0-2)/W; if(Math.floor(H*z)>b.h0) z=(b.w0-b.sb.w-2)/W; applyZoom(z,false); wrap.scrollLeft=0; state.fitMode='width'; }
+  function fitScale(){ const b=box(); if(!(b.w0>50))return 1; let z=(b.w0-2)/W; if(Math.floor(H*z)>b.h0) z=(b.w0-b.sb.w-2)/W; return z; }
+  window.__fitScale=fitScale;
+  function fitWidth(){ applyZoom(fitScale(),false); wrap.scrollLeft=0; state.fitMode='width'; }
   if(zf)zf.addEventListener('click',fitWidth);
-  // a fitted map stays fitted when the window changes (resize, rotation, browser zoom); any other zoom action clears the mode
-  let rt=null; window.addEventListener('resize',()=>{ if(state.fitMode!=='width')return; clearTimeout(rt); rt=setTimeout(()=>{ if(state.fitMode==='width')fitWidth(); },150); });
+  // a fitted map stays fitted when the window changes (resize, rotation, browser zoom); any other zoom action clears the mode;
+  // the percentage shown is relative to the fit, so it is refreshed on every resize
+  let rt=null; window.addEventListener('resize',()=>{ clearTimeout(rt); rt=setTimeout(()=>{ if(state.fitMode==='width')fitWidth(); else { const el=document.getElementById('zoomlvl'); if(el&&document.activeElement!==el)el.value=zoomPct(state.zoom)+'%'; } },150); });
   window.__refit=()=>{ if(state.fitMode==='width')fitWidth(); };
   // fit height: the whole map, top to bottom, in the window — so it first does what align-top does (bar to the top of the
   // window, wrapper allowed to take the rest), instantly, then measures the height actually visible below the wrapper's
@@ -469,15 +477,16 @@ function zoomStep(d){ let i=0; for(let k=1;k<ZSTEPS.length;k++){ if(Math.abs(ZST
   window.addEventListener('resize',window.__refitTall);
   if(z1)z1.addEventListener('click',()=>applyZoom(1,true));
   const zl=document.getElementById('zoomlvl');
-  if(zl){ const commit=()=>{ const v=parseInt(String(zl.value).replace(/[^0-9]/g,''),10); if(!isNaN(v)&&v>0)applyZoom(v/100,true); zl.value=Math.round((state.zoom||1)*100)+'%'; };
-    zl.addEventListener('focus',()=>{ zl.value=String(Math.round((state.zoom||1)*100)); try{zl.select();}catch(e){} });
-    zl.addEventListener('keydown',ev=>{ if(ev.key==='Enter'){ev.preventDefault(); commit(); zl.blur();} else if(ev.key==='Escape'){ev.preventDefault(); zl.value=Math.round((state.zoom||1)*100)+'%'; zl.blur();} else if(ev.key==='ArrowUp'||ev.key==='ArrowDown'){ ev.preventDefault(); const cur=parseInt(String(zl.value).replace(/[^0-9]/g,''),10)||Math.round((state.zoom||1)*100); const nv=Math.max(Math.round(ZMIN*100),Math.min(Math.round(ZMAX*100),cur+(ev.key==='ArrowUp'?5:-5))); applyZoom(nv/100,true); zl.value=String(Math.round((state.zoom||1)*100)); } });
+  if(zl){ const commit=()=>{ const v=parseInt(String(zl.value).replace(/[^0-9]/g,''),10); if(!isNaN(v)&&v>0)applyZoom(zoomFromPct(v),true); zl.value=zoomPct(state.zoom)+'%'; };
+    zl.addEventListener('focus',()=>{ zl.value=String(zoomPct(state.zoom)); try{zl.select();}catch(e){} });
+    zl.addEventListener('keydown',ev=>{ if(ev.key==='Enter'){ev.preventDefault(); commit(); zl.blur();} else if(ev.key==='Escape'){ev.preventDefault(); zl.value=zoomPct(state.zoom)+'%'; zl.blur();} else if(ev.key==='ArrowUp'||ev.key==='ArrowDown'){ ev.preventDefault(); const cur=parseInt(String(zl.value).replace(/[^0-9]/g,''),10)||zoomPct(state.zoom); const nv=Math.max(10,Math.min(1000,cur+(ev.key==='ArrowUp'?5:-5))); applyZoom(zoomFromPct(nv),true); zl.value=String(zoomPct(state.zoom)); } });
     zl.addEventListener('input',()=>{ const c=String(zl.value).replace(/[^0-9]/g,''); if(c!==zl.value)zl.value=c; });
     zl.addEventListener('blur',commit); }
-  // phones: 0.85 only if station labels stay ≥ 10 px at that scale, otherwise 1.0
-  let z=1;
-  try{ if(window.matchMedia('(max-width:600px)').matches){ const t=wrap.querySelector('g.station text'); const fs=t?(parseFloat(getComputedStyle(t).fontSize)||11):11; z=(fs*0.85>=10)?0.85:1; } }catch(e){}
-  applyZoom(z,false); })();
+  // first view: the map fitted to the frame (100 %); on a phone the fit would make labels unreadable, so the map opens at
+  // a legible scale instead — 0.85 of native if station labels stay ≥ 10 px, otherwise native — and shows its true percentage
+  let phone=false; try{ phone=window.matchMedia('(max-width:600px)').matches; }catch(e){}
+  if(phone){ let z=1; try{ const t=wrap.querySelector('g.station text'); const fs=t?(parseFloat(getComputedStyle(t).fontSize)||11):11; z=(fs*0.85>=10)?0.85:1; }catch(e){} applyZoom(z,false); }
+  else fitWidth(); })();
 // collapsible map bar: one line with a summary of the current selection and the zoom window
 (function(){ const bar=document.getElementById('mapbar'), tog=document.getElementById('bartog'), sum=document.getElementById('barsum'); if(!bar||!tog||!sum)return; const KEY='qmap.barcollapsed';
   function summary(){ const L=lang(); const parts=[];
@@ -489,7 +498,7 @@ function zoomStep(d){ let i=0; for(let k=1;k<ZSTEPS.length;k++){ if(Math.abs(ZST
     sum.innerHTML=parts.join(' · '); }
   function setC(c){ bar.classList.toggle('collapsed',c); tog.setAttribute('aria-expanded',String(!c)); tog.querySelector('.when-open').hidden=c; tog.querySelector('.when-closed').hidden=!c; sum.hidden=!c; if(c)summary(); try{localStorage.setItem(KEY,c?'1':'0');}catch(e){} if(window.__refitTall)window.__refitTall(); }
   window.__barSummary=()=>{ if(bar.classList.contains('collapsed'))summary(); };
-  let c=false; try{c=localStorage.getItem(KEY)==='1';}catch(e){}
+  let c=true; try{const v=localStorage.getItem(KEY); if(v!==null)c=(v==='1');}catch(e){}   // collapsed by default (23 Sep 2026); the reader's last choice is kept
   setC(c); tog.addEventListener('click',()=>setC(!bar.classList.contains('collapsed')));
   document.querySelectorAll('[data-setlang]').forEach(b=>b.addEventListener('click',()=>setTimeout(()=>{ if(bar.classList.contains('collapsed'))summary(); },0)));
 })();

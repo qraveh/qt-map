@@ -34,6 +34,13 @@ READ = """()=>({
 })"""
 
 
+def expand_bar(p):
+    """the controls bar starts collapsed (23 Sep 2026); every section works with it open, and checks the default separately"""
+    p.wait_for_function("document.getElementById('bartog')!==null", timeout=60000)
+    if p.evaluate("()=>document.getElementById('mapbar').classList.contains('collapsed')"):
+        p.locator('#bartog').click()
+        p.wait_for_function("!document.getElementById('mapbar').classList.contains('collapsed')")
+
 def run(pw, w, h):
     fails, errors = [], []
     b = pw.chromium.launch()
@@ -41,7 +48,7 @@ def run(pw, w, h):
     p = ctx.new_page()
     p.on('console', lambda m: m.type == 'error' and errors.append(m.text))
     p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
-    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000)
+    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000); expand_bar(p)
     p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0 && document.querySelectorAll('#machine option').length>1", timeout=60000)
     if p.locator('#mapbody').evaluate('e=>e.hidden'):
         p.locator('[data-mapcollapse]').first.click()
@@ -165,7 +172,7 @@ def tables(pw, w, h):
     p = ctx.new_page()
     p.on('console', lambda m: m.type == 'error' and errors.append(m.text))
     p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
-    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000)
+    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000); expand_bar(p)
     p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0", timeout=60000)
 
     def check(label, cond, detail=''):
@@ -221,7 +228,7 @@ def sorting(pw, w, h):
     p = ctx.new_page()
     p.on('console', lambda m: m.type == 'error' and errors.append(m.text))
     p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
-    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000)
+    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000); expand_bar(p)
     p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0 && document.querySelectorAll('div.tbl[data-sort] .sortbtn').length>0", timeout=60000)
 
     def check(label, cond, detail=''):
@@ -324,7 +331,7 @@ def chapter8(pw, w, h):
     p = ctx.new_page()
     p.on('console', lambda m: m.type == 'error' and errors.append(m.text))
     p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
-    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000)
+    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000); expand_bar(p)
     p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0 && document.querySelectorAll('div.tbl[data-sort] .sortbtn').length>0", timeout=60000)
     def check(label, cond, detail=''):
         print(f"  [{'ok' if cond else 'FAIL'}] {label}{(' — ' + str(detail)) if (detail and not cond) else ''}")
@@ -392,7 +399,7 @@ def laptop(pw):
     print('laptop — 1000×625, mouse')
     ctx = b.new_context(viewport={'width': 1000, 'height': 625}); p = ctx.new_page()
     p.on('console', lambda m: m.type == 'error' and errors.append(m.text)); p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
-    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000)
+    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000); expand_bar(p)
     p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0 && document.querySelectorAll('#machine option').length>1", timeout=60000)
     p.evaluate(CLICK, 'ae_atom'); p.wait_for_timeout(400); s0 = p.evaluate(STATE)
     check('1000 px + mouse: floating card, not a sheet', not s0['hidden'] and not s0['sheet'] and s0['h'] <= s0['vh'] - 90, s0)
@@ -418,7 +425,7 @@ def laptop(pw):
     print('phone — 400×800, touch: the sheet')
     ctx = b.new_context(viewport={'width': 400, 'height': 800}, has_touch=True, is_mobile=True); p = ctx.new_page()
     p.on('console', lambda m: m.type == 'error' and errors.append(m.text)); p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
-    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000)
+    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000); expand_bar(p)
     p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0", timeout=60000)
     p.evaluate(CLICK, 'ae_atom'); p.wait_for_timeout(500); t0 = p.evaluate(STATE)
     check('400 px: bottom sheet, page has room above it', not t0['hidden'] and t0['sheet'] and t0['hasSheet'] and t0['h'] <= t0['vh'] * 0.5, t0)
@@ -448,7 +455,7 @@ def selections(pw):
     LINE = "id=>{const h=document.querySelector('#mapwrap path.phit[data-path=\"'+id+'\"]'); h.dispatchEvent(new MouseEvent('click',{bubbles:true}));}"
     print('selections — 1280×800')
     p.on('console', lambda m: m.type == 'error' and errors.append(m.text)); p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
-    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000)
+    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000); expand_bar(p)
     p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0", timeout=60000)
     rd = lambda: p.evaluate(READ)
     ion = p.evaluate("()=>[...document.querySelectorAll('#pathchips .chip')].map(c=>c.dataset.chipPath).find(x=>x.startsWith('ion'))")
@@ -498,7 +505,7 @@ def hints(pw):
         if not cond: fails.append(label)
     print('hints — 1200×800')
     p.on('console', lambda m: m.type == 'error' and errors.append(m.text)); p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
-    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000)
+    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000); expand_bar(p)
     p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0", timeout=60000)
     check('title without edition', p.evaluate("()=>document.querySelector('h1.title').textContent.trim()") == 'Quantum Technology Map')
     why = p.evaluate("()=>{const ps=[...document.querySelectorAll('div.prose.lang-en p')]; const w=ps.find(x=>x.textContent.startsWith('Why a Quantum Technology Map')); return w?w.querySelectorAll('.tt').length:-1;}")
@@ -528,6 +535,54 @@ def hints(pw):
     return fails
 
 
+def review23b(pw):
+    """23 Sep 2026 (second review): the controls bar starts collapsed behind a labelled "Controls" button and remembers the reader's
+    choice; 100 % is the map fitted to its frame (the first view), 1:1 is the native width and shows its true percentage, a typed
+    value is relative to the fit; the ORCID icon is the link and no separator precedes it; the map's caption sits below the map
+    (linked §-references) and no lead paragraph precedes the map; §9 is one IEEE list and every in-text citation is a number;
+    Table 8.5's first column never breaks a code."""
+    fails, errors = [], []
+    b = pw.chromium.launch(); ctx = b.new_context(viewport={'width': 1280, 'height': 800}); p = ctx.new_page()
+    def check(label, cond, detail=''):
+        print(f"  [{'ok' if cond else 'FAIL'}] {label}{(' — ' + str(detail)) if (detail and not cond) else ''}")
+        if not cond: fails.append(label)
+    print('review of 23 Sep (second) — 1280×800')
+    p.on('console', lambda m: m.type == 'error' and errors.append(m.text)); p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
+    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000)
+    p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0", timeout=60000); p.wait_for_timeout(600)
+    st = p.evaluate("()=>({collapsed:document.getElementById('mapbar').classList.contains('collapsed'), label:document.getElementById('bartog').textContent.replace(/\\s+/g,' ').trim(), h:document.getElementById('bartog').getBoundingClientRect().height, sum:document.getElementById('barsum').textContent.trim(), chips:[...document.querySelectorAll('#pathchips .chip')].some(c=>c.offsetParent!==null), zoomVisible:document.getElementById('zoomlvl').offsetParent!==null})")
+    check('controls bar starts collapsed, chips hidden, zoom window visible', st['collapsed'] and not st['chips'] and st['zoomVisible'], st)
+    check('the toggle is a labelled button ≥ 28 px high', 'Controls' in st['label'] and st['h'] >= 28, st)
+    check('collapsed bar shows the selection summary', 'all paths' in st['sum'], st['sum'])
+    z0 = p.evaluate("()=>({lvl:document.getElementById('zoomlvl').value, svgW:+document.querySelector('#mapwrap svg').getAttribute('width'), wrapW:document.getElementById('mapwrap').clientWidth})")
+    check('first view is the fit (100 %, map fills the frame)', z0['lvl'] == '100%' and z0['wrapW'] - 40 <= z0['svgW'] <= z0['wrapW'], z0)
+    p.click('#zoom-100'); p.wait_for_timeout(300)
+    z1 = p.evaluate("()=>({lvl:document.getElementById('zoomlvl').value, svgW:+document.querySelector('#mapwrap svg').getAttribute('width'), fit:window.__fitScale()})")
+    check('1:1 is the native width and shows its percentage of the fit', z1['svgW'] == 1490 and z1['lvl'] == str(round(1 / z1['fit'] * 100)) + '%', z1)
+    zl = p.locator('#zoomlvl'); zl.click(); zl.fill('50'); zl.press('Enter'); p.wait_for_timeout(300)
+    z2 = p.evaluate("()=>({lvl:document.getElementById('zoomlvl').value, svgW:+document.querySelector('#mapwrap svg').getAttribute('width'), wrapW:document.getElementById('mapwrap').clientWidth})")
+    check('typed 50 = half the frame width', z2['lvl'] == '50%' and abs(z2['svgW'] - z2['wrapW'] / 2) < 30, z2)
+    p.click('#zoom-in'); p.wait_for_timeout(200)
+    check('+ steps to the next relative step (60 %)', p.evaluate("()=>document.getElementById('zoomlvl').value") == '60%')
+    p.click('#bartog'); p.wait_for_timeout(300)
+    st2 = p.evaluate("()=>({collapsed:document.getElementById('mapbar').classList.contains('collapsed'), chips:[...document.querySelectorAll('#pathchips .chip')].some(c=>c.offsetParent!==null), stored:localStorage.getItem('qmap.barcollapsed')})")
+    check('the button expands the bar and the choice is stored', not st2['collapsed'] and st2['chips'] and st2['stored'] == '0', st2)
+    p.reload(wait_until='load'); p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0", timeout=60000); p.wait_for_timeout(400)
+    check('the choice survives a reload', not p.evaluate("()=>document.getElementById('mapbar').classList.contains('collapsed')"))
+    au = p.evaluate("()=>{const p=document.querySelector('.mast .author'); const a=p.querySelector('a.orcid'); return {text:p.textContent.replace(/\\s+/g,' ').trim(), icon:!!a&&!!a.querySelector('svg')&&!a.textContent.trim(), href:a?a.href:'', title:a?a.title:''};}")
+    check('ORCID: the icon is the link, no text, no separator before it', au['icon'] and au['href'] == 'https://orcid.org/0000-0001-7362-9529' and au['text'].endswith('Raveh Neeman') and 'orcid.org' in au['title'], au)
+    ld = p.evaluate("()=>{const l=document.querySelector('#mapbody .maplead'); const lg=document.querySelector('#mapbody .legend'); return {below:!!l&&!!lg&&(lg.compareDocumentPosition(l)&Node.DOCUMENT_POSITION_FOLLOWING)>0, top:!!document.querySelector('.mapsec .lead'), links:[...(l?l.querySelectorAll('.lang-en a.xref'):[])].map(a=>a.getAttribute('href')), hub:/hub/.test(l?l.textContent:''), transfer:/transfer hub/.test(l?l.textContent:'')};}")
+    check('the caption sits below the map, none above, §-links resolve, "transfer hub" gone', ld['below'] and not ld['top'] and ld['links'] == ['#en-s7-6', '#en-s7'] and ld['hub'] and not ld['transfer'], ld)
+    rf = p.evaluate("()=>{const ol=document.querySelector('#en-s9 ~ ol.refs'); const li=ol?[...ol.querySelectorAll('li')]:[]; const cites=[...document.querySelectorAll('.prose.lang-en a.cite')]; return {n:li.length, first:li[0]?li[0].textContent.slice(0,40):'', numeric:cites.length>100&&cites.every(a=>/^\\[\\d+\\]$/.test(a.textContent)), resolve:cites.every(a=>document.getElementById(a.getAttribute('href').slice(1))), codes:/\\[[A-Z]{1,2}\\d{1,3}\\]/.test(document.querySelector('.prose.lang-en').textContent)};}")
+    check('§9 is one numbered IEEE list; every citation is a number that resolves; no code left in the text', rf['n'] > 190 and rf['first'].startswith('[1]') and rf['numeric'] and rf['resolve'] and not rf['codes'], rf)
+    t85 = p.evaluate("()=>{const a=document.getElementById('en-f1a'); const td=a.closest('td'); const r=a.getBoundingClientRect(); return {h:r.height, one:r.height<30, w:td.getBoundingClientRect().width};}")
+    check('Table 8.5: the row code stays on one line', t85['one'] and t85['w'] >= 40, t85)
+    errs = [e for e in errors if 'ERR_TUNNEL' not in e and 'net::' not in e]
+    check('0 console errors', not errs, errs[:3])
+    ctx.close(); b.close()
+    return fails
+
+
 def fullscreen(pw):
     """23 Sep 2026: the map's full-screen mode. The map block takes the screen (Fullscreen API, or the fixed fallback), the wrapper is
     sized to the screen, fit width / fit height / 1:1 keep working on that box, the glyph legend folds and unfolds, leaving restores
@@ -539,7 +594,7 @@ def fullscreen(pw):
         if not cond: fails.append(label)
     print('fullscreen — 1280×800')
     p.on('console', lambda m: m.type == 'error' and errors.append(m.text)); p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
-    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000)
+    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000); expand_bar(p)
     p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0", timeout=60000); p.wait_for_timeout(500)
     order = p.evaluate("()=>{const m=document.getElementById('map'), a=document.querySelector('main .prose'); return m.compareDocumentPosition(a) & Node.DOCUMENT_POSITION_FOLLOWING ? 'map-first' : 'prose-first';}")
     check('the map comes before the prose', order == 'map-first', order)
@@ -571,6 +626,6 @@ def fullscreen(pw):
 
 if __name__ == '__main__':
     with sync_playwright() as pw:
-        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800) + sorting(pw, 1280, 900) + sorting(pw, 400, 800) + chapter8(pw, 1280, 900) + chapter8(pw, 400, 800) + laptop(pw) + selections(pw) + hints(pw) + fullscreen(pw)
+        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800) + sorting(pw, 1280, 900) + sorting(pw, 400, 800) + chapter8(pw, 1280, 900) + chapter8(pw, 400, 800) + laptop(pw) + selections(pw) + hints(pw) + fullscreen(pw) + review23b(pw)
     print('RESULT:', 'PASS' if not f else f'FAIL {f}')
     sys.exit(1 if f else 0)

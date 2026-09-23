@@ -157,24 +157,45 @@ def mark_nohint(h):
         return m.group(0) if not any(plain.startswith(o) for o in NOHINT_OPENERS) else '<p data-nohint="1"'+m.group(1)+'>'+m.group(2)+'</p>'
     return re.sub(r'<p((?: [^>]*)?)>(.*?)</p>',rep,h,flags=re.S)
 CITE=re.compile(r'\[([A-Z]{1,2}\d{1,3})\]')
+CITE_RUN=re.compile(r'\[[A-Z]{1,2}\d{1,3}\](?:(?:,?\s?|\s?[–-]\s?)\[[A-Z]{1,2}\d{1,3}\])*')   # [S3][S4], [S3], [S4], [X1]–[X4]
+REFS=None
+def refs():
+    """The canonical bibliography (build/sources.py): codes → works, IEEE numbers by first citation in the English text."""
+    global REFS
+    if REFS is None:
+        import sources
+        REFS=sources.build()
+    return REFS
+def expand_codes(run):
+    """the codes of a citation run; a range of codes [X1]–[X4] expands to X1, X2, X3, X4"""
+    out=[]
+    for m in re.finditer(r'\[([A-Z]{1,2})(\d{1,3})\](\s?[–-]\s?\[([A-Z]{1,2})(\d{1,3})\])?',run):
+        if m.group(3) and m.group(4)==m.group(1) and int(m.group(5))>int(m.group(2)):
+            out+=[m.group(1)+str(k) for k in range(int(m.group(2)),int(m.group(5))+1)]
+        else:
+            out.append(m.group(1)+m.group(2))
+            if m.group(3): out.append(m.group(4)+m.group(5))
+    return out
 def polish(h,lang):
     P=lang+'-'
     h=mark_nohint(h)
     # 1. lists: "(a) …"/"(i) …" items carry their label as a hanging tag; "**Term** — text" items put the term on its own line
     h=re.sub(r'<li>\(([a-z]|[ivx]+)\)\s',lambda m:'<li class="lbl"><span class="lb">('+m.group(1)+')</span> ',h)
     h=re.sub(r'<li>(<p>)?<strong>([^<]{3,120})</strong>\s?—\s(\S)',lambda m:'<li class="def">'+(m.group(1) or '')+'<strong>'+m.group(2)+'</strong>'+m.group(3).upper(),h)
-    # 2. anchors: source entries in §9, hypotheses and forecast rows in §8, Figure 8.1
+    # 2. §9 is generated (23 Sep 2026, the editor's review): the markdown's register (code → URLs) is replaced by the IEEE list of
+    #    build/sources.py — one numbered entry per work, numbered by first citation in the English text, ids by code — followed by
+    #    the register's closing note(s); anchors for hypotheses and forecast rows in §8, Figure 8.1
     i9=h.find(f'<h2 id="{P}s9">'); i8=h.find(f'<h2 id="{P}s8">')
     srcs=set()
     if i9>0:
-        head,src=h[:i9],h[i9:]
-        def anchor_src(t):
-            def rep(m):
-                c=m.group(1)
-                if c in srcs: return m.group(0)
-                srcs.add(c); return f'<span class="src" id="{P}src-{c}">[{c}]</span>'
-            return CITE.sub(rep,t)
-        src=map_text(src,anchor_src); h=head+src
+        import sources
+        order,works,alias,num,_=refs()
+        e=h.find('</h2>',i9)+5; body=h[e:]
+        keep=[p for p in re.findall(r'<p>.*?</p>',body,flags=re.S) if not CITE.search(p) and not re.search(r'End of (?:the )?\w+ edition|Конец \w+ издания',p)]
+        note=('<p class="refnote">Numbered in order of first citation; the Russian edition uses the same numbers. Online sources were accessed in September 2026.</p>' if lang=='en' else
+              '<p class="refnote">Нумерация — по порядку первого цитирования в английском тексте; русское издание использует те же номера. Онлайн-источники просмотрены в сентябре 2026 г.</p>')
+        h=h[:e]+'\n'+note+'\n'+sources.render_list(lang,order,works,num)+'\n'+'\n'.join(keep)+'\n'
+        srcs=set(num)
     h=re.sub(r'<p><strong>(H[1-8]) — ',lambda m:f'<p id="{P}{m.group(1).lower()}"><strong>{m.group(1)} — ',h)
     h=re.sub(r'<td>(F[1-6][abc]?)</td>',lambda m:f'<td><a class="src" id="{P}{m.group(1).lower()}">{m.group(1)}</a></td>',h)   # an anchor, not a link (never self-linked)
     h=h.replace('<figure class="fig81">',f'<figure class="fig81" id="{P}fig8-1">')
@@ -182,8 +203,12 @@ def polish(h,lang):
     # 3. links in the text
     def link(t,in_ch8):
         def cite(m):
-            c=m.group(1); return f'<a class="cite" href="#{P}src-{c}">[{c}]</a>' if c in srcs else m.group(0)
-        t=CITE.sub(cite,t)
+            codes=expand_codes(m.group(0))
+            if not codes or not all(c in srcs for c in codes): return m.group(0)
+            import sources
+            order,works,alias,num,_=refs()
+            return sources.cite_html(codes,lang,works,num,order)
+        t=CITE_RUN.sub(cite,t)
         def sec(m):
             a,b=m.group(1),m.group(2); tid=f'{P}s{a}'+(f'-{b}' if b else '')
             return f'<a class="xref" href="#{tid}">{m.group(0)}</a>' if tid in ids else m.group(0)
@@ -386,10 +411,16 @@ def map_block(lang,gsec='8'):
     en=lang=='en'
     return f'''<section class="mapsec">
 <div class="maphead"><h2 class="sr-only">{'Quantum Technology Map' if en else 'Карта квантовых технологий'}</h2><button type="button" class="chip mapcol" data-mapcollapse="1" aria-expanded="true"><span class="when-open">{'▾ collapse the map' if en else '▾ свернуть карту'}</span><span class="when-closed" hidden>{'▸ expand the map' if en else '▸ развернуть карту'}</span></button></div>
-<p class="lead">{'Columns are the layers of the stack; the vertical position is carrier-nature affinity (natural at the top, fabricated at the bottom), so the natural/fabricated diagonal is visible and every hatched station is a place where a platform breaks it. Coloured lines are platform paths through one station per layer; a station on several lines is a transfer hub (◎); dashed hollow stations are empty slots. Click a station for its three spaces; pick a lens to recolour every station by one attribute; the strip below shows the full seven-attribute vector of every technology. Construction rules and derived tables are in §'+gsec+'.' if en else 'Колонки — слои стека; вертикальная позиция — сродство носителя (естественные сверху, изготовленные снизу), так что диагональ естественный/изготовленный видна, а каждая заштрихованная станция — место, где платформа её ломает. Цветные линии — пути платформ через одну станцию на слой; станция на нескольких линиях — хаб переноса (◎); пунктирные полые станции — пустые слоты. Кликните станцию, чтобы увидеть её три пространства; выберите линзу, чтобы перекрасить станции по одному атрибуту; лента ниже показывает полный вектор из семи атрибутов каждой технологии. Правила построения и выведенные таблицы — в §'+gsec+'.'}</p>
 </section>'''
+def map_lead(gsec='7'):
+    """The map's caption (23 Sep 2026, the editor's review): below the map, in both languages, with its section references linked."""
+    en='Columns are the ten layers of a quantum-computing stack, from the qubit’s carrier on the left to manufacturing on the right; each column holds the technologies that fill that layer. Within a column a technology sits higher the more natural its carrier is (atoms, ions and photons at the top) and lower the more fabricated (circuits, dots and cavities at the bottom). The order is not decoration: it predicts behaviour — natural carriers are identical and long-lived but slow and optically driven, fabricated ones are fast and wired but differ from unit to unit — and most technologies of a layer follow it. A hatched station breaks the order: a platform borrowing a trait from the other side, which is the map’s test of a genuine move (§7.6). Coloured lines are the fourteen platform paths, one station per layer; a station marked ◎ is a hub — three or more qubit families depend on it (two, if the technology is young) — so a fix or a stall there reaches several platforms at once; dashed hollow stations are slots nobody has filled. Click a station for its brief, pick a lens to recolour the map by one attribute, or choose a machine to light the stations it uses; the strip below shows the seven-attribute vector of every technology. Construction rules and derived tables: §7.'
+    ru='Колонки — десять слоёв стека квантового компьютера, от носителя кубита слева до производства справа; в каждой колонке — технологии, заполняющие этот слой. Внутри колонки технология стоит тем выше, чем естественнее её носитель (атомы, ионы и фотоны — вверху), и тем ниже, чем больше он изготовлен (схемы, квантовые точки и резонаторы — внизу). Этот порядок не украшение: он предсказывает поведение — естественные носители одинаковы и долгоживущи, но медленны и управляются оптически, изготовленные быстры и подключены проводами, но различаются от экземпляра к экземпляру, — и большинство технологий слоя ему следует. Заштрихованная станция порядок нарушает: платформа заимствует свойство с другой стороны — это и есть тест карты на настоящий ход (§7.6). Цветные линии — четырнадцать путей платформ, по одной станции на слой; станция со знаком ◎ — хаб: от неё зависят три семейства кубитов и более (два — если технология молода), так что исправление или заминка в ней достигает сразу нескольких платформ; пунктирные полые станции — слоты, которые никто не заполнил. Кликните станцию, чтобы открыть её бриф; выберите линзу, чтобы перекрасить карту по одному атрибуту, или машину, чтобы подсветить станции, которые она использует; лента ниже показывает вектор из семи атрибутов каждой технологии. Правила построения и выведенные таблицы — в §7.'
+    def link(t,lang):
+        return re.sub(r'§(\d+)(?:\.(\d+))?',lambda m:'<a class="xref" href="#%s-s%s%s">%s</a>'%(lang,m.group(1),('-'+m.group(2)) if m.group(2) else '',m.group(0)),t.replace('§7',"§"+gsec))
+    return '<div class="maplead"><p class="lead lang-en">'+link(en,'en')+'</p><p class="lead lang-ru">'+link(ru,'ru')+'</p></div>'
 MAPUI='''<div class="mapbar" id="mapbar">
- <div class="grp chipsrow"><button type="button" class="bartog" id="bartog" aria-expanded="true" title="collapse / expand the controls"><span class="when-open">▾</span><span class="when-closed" hidden>▸</span></button><span class="lbl lang-en">paths</span><span class="lbl lang-ru">пути</span><span class="barsum" id="barsum" hidden></span><span id="pathchips" class="grp"></span></div>
+ <div class="grp chipsrow"><button type="button" class="bartog" id="bartog" aria-expanded="true" aria-controls="mapbar" title="show or hide the map controls: paths, lens, machine, edges, zoom, legend"><svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="6" cy="4" r="1.9" fill="var(--surface)" stroke="currentColor" stroke-width="1.4"/><circle cx="11" cy="8" r="1.9" fill="var(--surface)" stroke="currentColor" stroke-width="1.4"/><circle cx="5" cy="12" r="1.9" fill="var(--surface)" stroke="currentColor" stroke-width="1.4"/></svg><span class="lang-en">Controls</span><span class="lang-ru">Управление</span><span class="when-open">▾</span><span class="when-closed" hidden>▸</span></button><span class="lbl lang-en">paths</span><span class="lbl lang-ru">пути</span><span class="barsum" id="barsum" hidden></span><span id="pathchips" class="grp"></span></div>
  <div class="grp"><span class="lbl lang-en">lens</span><span class="lbl lang-ru">линза</span><select id="lens" class="sel" aria-label="colour lens"></select></div>
  <div class="grp machgrp"><span class="lbl lang-en">machine</span><span class="lbl lang-ru">машина</span><select id="machine" class="sel" aria-label="machine — one more term of the lit set" title="light only the stations this machine uses (its register cell per layer); intersects with the isolated path, the focused station and the lens value"><option value="">—</option></select></div>
  <div class="grp"><span class="lbl lang-en">edges</span><span class="lbl lang-ru">рёбра</span>
@@ -398,7 +429,7 @@ MAPUI='''<div class="mapbar" id="mapbar">
   <button class="chip tog" id="tg-conf" aria-pressed="false"><span class="lang-en">all conflicts</span><span class="lang-ru">все «конфликтует»</span></button>
 </div>
  <div class="grp"><button type="button" class="resetbtn" id="tg-reset" title="back to the default view: all paths, no lens value, no edges, nothing selected"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M3.5 8a4.5 4.5 0 1 0 1.3-3.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M4.2 1.9v3.2h3.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lang-en">reset map</span><span class="lang-ru">сброс карты</span></button></div>
- <div class="zoomwin"><div class="zoomctl" role="group" aria-label="map zoom"><span class="zhint lang-en">zoom</span><span class="zhint lang-ru">масштаб</span><button type="button" class="zb" id="zoom-out" aria-label="zoom out" title="zoom out (−)"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><input class="zlvl" id="zoomlvl" type="text" inputmode="numeric" pattern="[0-9]*" value="100%" aria-label="zoom percent — type a number and press Enter" title="type a percentage and press Enter; ↑/↓ = ±5"><button type="button" class="zb" id="zoom-in" aria-label="zoom in" title="zoom in (+)"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 8h10M8 3v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><i class="zsep"></i><button type="button" class="zb zt" id="zoom-fit" title="fit width"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M2 8h12M2 8l3-3M2 8l3 3M14 8l-3-3M14 8l-3 3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lang-en">fit</span><span class="lang-ru">вписать</span></button><button type="button" class="zb zt" id="zoom-fith" title="fit height"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M8 2v12M8 2L5 5M8 2l3 3M8 14l-3-3M8 14l3-3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lang-en">fit</span><span class="lang-ru">вписать</span></button><i class="zsep"></i><button type="button" class="zb zt" id="zoom-top" title="align the map to the top of the window (maximum height)"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 3h10M8 6v8M8 6L5 9M8 6l3 3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lang-en">top</span><span class="lang-ru">вверх</span></button><button type="button" class="zb zt" id="zoom-100" title="actual size">1:1</button><i class="zsep"></i><button type="button" class="zb zt zfs" id="zoom-fs" data-mapfs="1" aria-pressed="false" title="full screen — Esc or this button to leave"><i class="fs-on"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lang-en">full screen</span><span class="lang-ru">весь экран</span></i><i class="fs-off" hidden><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M6 2v4H2M14 6h-4V2M10 14v-4h4M2 10h4v4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lang-en">leave</span><span class="lang-ru">выйти</span></i></button></div></div>
+ <div class="zoomwin"><div class="zoomctl" role="group" aria-label="map zoom"><span class="zhint lang-en">zoom</span><span class="zhint lang-ru">масштаб</span><button type="button" class="zb" id="zoom-out" aria-label="zoom out" title="zoom out (−)"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><input class="zlvl" id="zoomlvl" type="text" inputmode="numeric" pattern="[0-9]*" value="100%" aria-label="zoom percent — type a number and press Enter" title="100 % = the map fitted to the width of its frame; type a percentage and press Enter; ↑/↓ = ±5"><button type="button" class="zb" id="zoom-in" aria-label="zoom in" title="zoom in (+)"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 8h10M8 3v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><i class="zsep"></i><button type="button" class="zb zt" id="zoom-fit" title="fit width (= 100 %)"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M2 8h12M2 8l3-3M2 8l3 3M14 8l-3-3M14 8l-3 3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lang-en">fit</span><span class="lang-ru">вписать</span></button><button type="button" class="zb zt" id="zoom-fith" title="fit height"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M8 2v12M8 2L5 5M8 2l3 3M8 14l-3-3M8 14l3-3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lang-en">fit</span><span class="lang-ru">вписать</span></button><i class="zsep"></i><button type="button" class="zb zt" id="zoom-top" title="align the map to the top of the window (maximum height)"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 3h10M8 6v8M8 6L5 9M8 6l3 3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lang-en">top</span><span class="lang-ru">вверх</span></button><button type="button" class="zb zt" id="zoom-100" title="native size — the drawing at its designed 1,490 px width, labels at their designed size">1:1</button><i class="zsep"></i><button type="button" class="zb zt zfs" id="zoom-fs" data-mapfs="1" aria-pressed="false" title="full screen — Esc or this button to leave"><i class="fs-on"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lang-en">full screen</span><span class="lang-ru">весь экран</span></i><i class="fs-off" hidden><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M6 2v4H2M14 6h-4V2M10 14v-4h4M2 10h4v4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lang-en">leave</span><span class="lang-ru">выйти</span></i></button></div></div>
  <details class="glyphs" id="glyphlegend" open><summary><span class="lbl lang-en">legend</span><span class="lbl lang-ru">легенда</span></summary>
   <div class="glyphlist">
   <span class="gl mark" data-glyph="hub" title="a station that stations of at least two families (or one family, recently) require — where a fix or a stall propagates across platforms"><i class="lg hub">◎</i><span class="lang-en">hub</span><span class="lang-ru">хаб</span> <span class="cnt"></span></span>
@@ -427,6 +458,7 @@ MAPUI='''<div class="mapbar" id="mapbar">
  <span class="k"><svg viewBox="0 0 26 16"><line x1="2" y1="8" x2="24" y2="8" stroke="var(--sc)" stroke-width="1.2" stroke-dasharray="2 3"/></svg><span class="lang-en">alternate node in the same slot</span><span class="lang-ru">альтернативный узел в том же слоте</span></span>
  <span class="k"><svg viewBox="0 0 26 16"><rect x="4" y="6" width="7" height="4" rx="1" fill="var(--ion)"/><rect x="14" y="6" width="7" height="4" rx="1" fill="none" stroke="var(--atom)"/></svg><span class="lang-en">line badges: primary ■ / alternate □</span><span class="lang-ru">метки линий: основной ■ / альтернатива □</span></span>
 </div>
+{MAPLEAD}
 <div class="pcwrap" id="pcwrap"><h3 class="lang-en">Technologies across the seven attributes — a parallel-coordinates view</h3><h3 class="lang-ru">Технологии по семи атрибутам — вид в параллельных координатах</h3>
 <p class="lang-en">Each polyline is one technology (a station of the map, a node of the graph — the three words name the same thing in its three homes: the field, the map, the data); the vertical axes are its seven design attributes (a)–(g) of §7.1. Hover to name a line, click to select it on the map. Bundles reveal the diagonal (natural carriers run through optical control and transport; fabricated ones through microwave/electrical control and static wiring); lines that cross the bundles are the off-diagonal technologies.</p>
 <p class="lang-ru">Каждая ломаная — одна технология (станция карты, узел графа — три слова называют одно и то же в трёх его домах: отрасли, карте, данных); вертикальные оси — её семь атрибутов проектирования (a)–(g) из §7.1. Наведите, чтобы назвать линию; кликните, чтобы выбрать её на карте. Пучки показывают диагональ (естественные носители идут через оптическое управление и транспорт; изготовленные — через СВЧ/электрическое управление и статическую разводку); линии, пересекающие пучки, — off-diagonal технологии.</p>
@@ -526,7 +558,7 @@ def masthead(cfg):
   <div class="eyebrow"><span class="lang-en">Edition {cfg['edition']}{' · <b class="beta">beta</b>' if beta else ''} · English / Russian</span><span class="lang-ru">Издание {cfg['edition']}{' · <b class="beta">бета</b>' if beta else ''} · English / Русский</span></div>
   <h1 class="title">Quantum Technology Map</h1>
   <p class="subtitle"><span class="lang-en">Quantum-computing platforms compared by the goal they serve: six criteria with fixed anchors, a map of 96 technologies in ten layers and fourteen platform paths, a register of 136 machines with graded evidence, and a brief on every technology.</span><span class="lang-ru">Платформы квантовых вычислений, сравнённые по цели, которой они служат: шесть критериев с фиксированными опорными значениями, карта из 96 технологий в десяти слоях и четырнадцати путях платформ, реестр 136 машин с градацией свидетельств и бриф по каждой технологии.</span></p>
-  <p class="author"><span class="lang-en">Author</span><span class="lang-ru">Автор</span> · <b>{cfg['author']}</b> · <a class="orcid" href="https://orcid.org/0000-0001-7362-9529" target="_blank" rel="noopener author"><svg class="orcid-id" viewBox="0 0 256 256" width="16" height="16" aria-hidden="true"><path fill="#A6CE39" d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z"/><path fill="#FFF" d="M86.3 186.2H70.9V79.1h15.4v107.1zM108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7 0-21.5-13.7-39.7-43.7-39.7h-23.7v79.4zM88.7 56.8c0 5.5-4.5 10.1-10.1 10.1s-10.1-4.6-10.1-10.1c0-5.6 4.5-10.1 10.1-10.1s10.1 4.6 10.1 10.1z"/></svg><span>https://orcid.org/0000-0001-7362-9529</span></a></p>
+  <p class="author"><span class="lang-en">Author</span><span class="lang-ru">Автор</span> · <b>{cfg['author']}</b> <a class="orcid" href="https://orcid.org/0000-0001-7362-9529" target="_blank" rel="noopener author" title="ORCID iD: https://orcid.org/0000-0001-7362-9529" aria-label="ORCID iD 0000-0001-7362-9529"><svg class="orcid-id" viewBox="0 0 256 256" width="16" height="16" aria-hidden="true"><path fill="#A6CE39" d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z"/><path fill="#FFF" d="M86.3 186.2H70.9V79.1h15.4v107.1zM108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7 0-21.5-13.7-39.7-43.7-39.7h-23.7v79.4zM88.7 56.8c0 5.5-4.5 10.1-10.1 10.1s-10.1-4.6-10.1-10.1c0-5.6 4.5-10.1 10.1-10.1s10.1 4.6 10.1 10.1z"/></svg></a></p>
  </div>
  <div class="controls">
   <div class="seg" role="group" aria-label="language"><button type="button" data-setlang="en" aria-pressed="true">English</button><button type="button" data-setlang="ru" aria-pressed="false">Русский</button></div>
@@ -612,7 +644,7 @@ def build(cfg=PUBLIC):
  <nav class="toc" aria-label="contents"><div class="lang-en">{toc_html(en_toc,'en',cfg['graph_sec'])}</div><div class="lang-ru">{toc_html(ru_toc,'ru',cfg['graph_sec'])}</div></nav>
  <main>
   <div id="map"><div class="lang-en">{mapsec_en}</div><div class="lang-ru">{mapsec_ru}</div></div>
-  <div id="mapbody"><div class="mapfull">{MAPUI}</div></div>
+  <div id="mapbody"><div class="mapfull">{MAPUI.replace("{MAPLEAD}",map_lead(cfg["graph_sec"]))}</div></div>
   <div class="prose lang-en" lang="en">{en_a}</div><div class="prose lang-ru" lang="ru">{ru_a}</div>
   <div class="prose lang-en" lang="en">{en_b1}</div><div class="prose lang-ru" lang="ru">{ru_b1}</div>
   {briefs_block}

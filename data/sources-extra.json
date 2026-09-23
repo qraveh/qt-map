@@ -1,0 +1,232 @@
+{
+ "S19": [
+  {
+   "url": "https://info.archives.global.fujitsu/global/about/resources/news/press-releases/2025/0422-01.html",
+   "author": "Fujitsu and RIKEN",
+   "title": "Fujitsu and RIKEN develop world-leading 256-qubit superconducting quantum computer",
+   "venue": "Fujitsu Global",
+   "date": "2025-04-22",
+   "doi": "",
+   "kind": "web"
+  },
+  {
+   "url": "https://quantumcomputingreport.com/fujitsu-to-develop-10000-plus-qubit-superconducting-quantum-computer-for-2030/",
+   "author": "Quantum Computing Report",
+   "title": "Fujitsu to Develop 10,000-Plus Qubit Superconducting Quantum Computer for 2030",
+   "venue": "Quantum Computing Report",
+   "date": "2025-08-01",
+   "doi": "",
+   "kind": "web"
+  }
+ ],
+ "S26": [
+  {
+   "url": "https://investors.rigetti.com/news-releases/news-release-details/rigetti-computing-reports-first-quarter-2026-financial-results",
+   "author": "Rigetti Computing",
+   "title": "Rigetti Computing Reports First Quarter 2026 Financial Results",
+   "venue": "Rigetti Computing",
+   "date": "2026-05-11",
+   "doi": "",
+   "kind": "web"
+  }
+ ],
+ "S27": [
+  {
+   "url": "https://quantumcomputingreport.com/google-quantum-ai-is-now-accepting-proposals-for-early-access-to-their-willow-quantum-processor/",
+   "author": "Quantum Computing Report",
+   "title": "Google Quantum AI is Now Accepting Proposals for Early Access to their Willow Quantum Processor",
+   "venue": "Quantum Computing Report",
+   "date": "2026-04-18",
+   "doi": "",
+   "kind": "web"
+  }
+ ],
+ "S30": [
+  {
+   "url": "https://investors.rigetti.com/news-releases/news-release-details/rigetti-computing-provides-update-108-qubit-system",
+   "author": "Rigetti Computing",
+   "title": "Rigetti Computing Provides Update on 108-Qubit System",
+   "venue": "Rigetti Computing",
+   "date": "2026-01-09",
+   "doi": "",
+   "kind": "web"
+  }
+ ],
+ "B14": [
+  {
+   "url": "https://alice-bob.com/roadmap.md",
+   "author": "Alice & Bob",
+   "title": "Alice & Bob: Our Quantum Computing Roadmap",
+   "venue": "Alice & Bob",
+   "date": "2026-06-22",
+   "doi": "",
+   "kind": "web"
+  }
+ ],
+ "P11": [
+  {
+   "url": "https://www.psiquantum.com/news-import",
+   "author": "PsiQuantum",
+   "title": "",
+   "venue": "PsiQuantum",
+   "date": "",
+   "doi": "",
+   "kind": "web"
+  }
+ ],
+ "P14": [
+  {
+   "url": "https://quantumcomputingreport.com/xanadu-to-list-on-nasdaq-and-tsx-following-shareholder-merger-approval/",
+   "author": "Quantum Computing Report",
+   "title": "Xanadu to List on Nasdaq and TSX Following Shareholder Merger Approval",
+   "venue": "Quantum Computing Report",
+   "date": "2026-03-19",
+   "doi": "",
+   "kind": "web"
+  }
+ ],
+ "P16": [
+  {
+   "url": "https://thequantuminsider.com/2026/06/16/darpa-selects-quandela-for-stage-a-of-the-quantum-benchmarking-initiative/",
+   "author": "The Quantum Insider",
+   "title": "DARPA Selects Quandela For Stage A of The Quantum Benchmarking Initiative",
+   "venue": "The Quantum Insider",
+   "date": "2026-06-16",
+   "doi": "",
+   "kind": "web"
+  }
+ ],
+ "Q8": [
+  {
+   "url": "https://www.nature.com/articles/s41565-026-02140-1",
+   "author": "C. Zhang et al.",
+   "title": "Universal logical operations in a silicon quantum processor",
+   "venue": "Nature Nanotechnology, vol. 21, no. 5, pp. 635–641",
+   "date": "2026-03-23",
+   "doi": "10.1038/s41565-026-02140-1",
+   "kind": "journal"
+  }
+ ],
+ "X3": [
+  {
+   "url": "https://arxiv.org/abs/2202.01244",
+   "author": "J. J. Goings et al.",
+   "title": "Reliably assessing the electronic structure of cytochrome P450 on today's classical computers and tomorrow's quantum computers",
+   "venue": "arXiv:2202.01244",
+   "date": "2022-02-02",
+   "doi": "10.1073/pnas.2203533119",
+   "kind": "preprint"
+  },
+  {
+   "url": "https://arxiv.org/abs/2011.03494",
+   "author": "J. Lee et al.",
+   "title": "Even more efficient quantum computations of chemistry through tensor hypercontraction",
+   "venue": "arXiv:2011.03494",
+   "date": "2020-11-06",
+   "doi": "10.1103/PRXQuantum.2.030305",
+   "kind": "preprint"
+  }
+ ],
+ "X4": [
+  {
+   "url": "https://arxiv.org/abs/1902.10673",
+   "author": "I. D. Kivlichan et al.",
+   "title": "Improved fault-tolerant quantum simulation of condensed-phase correlated electrons via Trotterization",
+   "venue": "Quantum, vol. 4, p. 296 (arXiv:1902.10673)",
+   "date": "2020-07-16",
+   "doi": "10.22331/q-2020-07-16-296",
+   "kind": "journal"
+  }
+ ],
+ "X5": [
+  {
+   "url": "https://arxiv.org/abs/2306.08585",
+   "author": "D. Litinski",
+   "title": "How to compute a 256-bit elliptic curve private key with only 50 million Toffoli gates",
+   "venue": "arXiv:2306.08585",
+   "date": "2023-06-14",
+   "doi": "",
+   "kind": "preprint"
+  }
+ ],
+ "X6": [
+  {
+   "url": "https://arxiv.org/abs/2011.04149",
+   "author": "R. Babbush et al.",
+   "title": "Focus beyond quadratic speedups for error-corrected quantum advantage",
+   "venue": "arXiv:2011.04149",
+   "date": "2020-11-09",
+   "doi": "10.1103/PRXQuantum.2.010103",
+   "kind": "preprint"
+  },
+  {
+   "url": "https://arxiv.org/abs/2408.08292",
+   "author": "S. P. Jordan et al.",
+   "title": "Optimization by Decoded Quantum Interferometry",
+   "venue": "arXiv:2408.08292",
+   "date": "2024-08-15",
+   "doi": "10.1038/s41586-025-09527-5",
+   "kind": "preprint"
+  }
+ ],
+ "X7": [
+  {
+   "url": "https://www.nature.com/articles/s41586-025-09526-6",
+   "author": "Google Quantum AI and Collaborators",
+   "title": "Observation of constructive interference at the edge of quantum ergodicity",
+   "venue": "Nature, vol. 646, no. 8086, pp. 825–830",
+   "date": "2025-10-22",
+   "doi": "10.1038/s41586-025-09526-6",
+   "kind": "journal"
+  },
+  {
+   "url": "https://www.nature.com/articles/s41586-025-08737-1",
+   "author": "M. Liu et al.",
+   "title": "Certified randomness using a trapped-ion quantum processor",
+   "venue": "Nature, vol. 640, no. 8058, pp. 343–348",
+   "date": "2025-03-26",
+   "doi": "10.1038/s41586-025-08737-1",
+   "kind": "journal"
+  },
+  {
+   "url": "https://arxiv.org/abs/2605.04025",
+   "author": "Q-CTRL (authors not retrieved)",
+   "title": "Fast, accurate, high-resolution simulation of large-scale Fermi-Hubbard models on a digital quantum processor",
+   "venue": "arXiv:2605.04025",
+   "date": "2026-05",
+   "doi": "",
+   "kind": "preprint"
+  },
+  {
+   "url": "https://arxiv.org/abs/2607.24937",
+   "author": "authors not retrieved",
+   "title": "Resolving structure in prethermal Floquet dynamics with precision quantum computation",
+   "venue": "arXiv:2607.24937",
+   "date": "2026-07",
+   "doi": "",
+   "kind": "preprint"
+  }
+ ],
+ "X11": [
+  {
+   "url": "https://arxiv.org/abs/2603.28846",
+   "author": "R. Babbush et al.",
+   "title": "Securing Elliptic Curve Cryptocurrencies against Quantum Vulnerabilities: Resource Estimates and Mitigations",
+   "venue": "arXiv:2603.28846",
+   "date": "2026-03-30",
+   "doi": "",
+   "kind": "preprint"
+  }
+ ],
+ "I28": [
+  {
+   "url": "https://arxiv.org/abs/2609.03194",
+   "author": "Quantinuum (authors not retrieved)",
+   "title": "Experimental validation of a compact fault-tolerant architecture for trapped ions",
+   "venue": "arXiv:2609.03194",
+   "date": "2026-09-02",
+   "doi": "",
+   "kind": "preprint"
+  }
+ ]
+}
