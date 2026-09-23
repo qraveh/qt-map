@@ -520,10 +520,10 @@
    "отказоустойчивости"
   ],
   "scope": "first",
-  "en": "Fault tolerance: errors, including those made while correcting, are caught faster than they arise, so enlarging the code drives the logical error down — correction is the mechanism, tolerance the property",
-  "ru": "Отказоустойчивость: ошибки, включая допущенные при самой коррекции, ловятся быстрее, чем возникают, и рост кода снижает логическую ошибку — коррекция есть механизм, устойчивость — свойство",
+  "en": "Fault tolerance: a way of running the whole computation — state preparation, gates, measurement and the correction cycle itself — on faulty parts so that errors, including those the correction makes, are caught faster than they arise; enlarging the code then drives the logical error down. It concerns every operation, not only a stored qubit",
+  "ru": "Отказоустойчивость: способ выполнять всё вычисление — подготовку состояний, гейты, измерение и сам цикл коррекции — на несовершенных элементах так, чтобы ошибки, включая ошибки самой коррекции, обнаруживались быстрее, чем возникают; тогда рост кода снижает логическую ошибку. Это касается каждой операции, а не только хранимого кубита",
   "src": "standard",
-  "why": "§0 uses fault tolerance next to error correction and error suppression; the reader needs the three told apart"
+  "why": "§0 uses fault tolerance next to error correction; the reader needs to see it is a property of operations, not of a memory alone (editor, 23 Sep)"
  },
  {
   "id": "term-break-even",

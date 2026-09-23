@@ -41,7 +41,7 @@ const svg=d3.select(wrap).append('svg').attr('viewBox',`0 0 ${W} ${H}`).attr('wi
 // zoom control: pinned top-right on desktop; on ≤1024 px it moves to the end of the scroller and pins bottom-right
 // (the sticky page bar would otherwise cover it whenever the map's top edge scrolls under the bar)
 (function(){ const zb=wrap.querySelector('.zoombar'), win=document.querySelector('#mapbar .zoomwin'), ctl=document.querySelector('.zoomctl'); if(!zb||!win||!ctl)return; let mq=null; try{ mq=window.matchMedia('(max-width:1024px)'); }catch(e){}
-  const place=()=>{ if(mq&&mq.matches){ zb.appendChild(ctl); wrap.appendChild(zb); } else { win.appendChild(ctl); const pc=document.getElementById('pathchips'); if(pc)pc.appendChild(win); } };
+  const place=()=>{ if(mq&&mq.matches){ zb.appendChild(ctl); wrap.appendChild(zb); } else { win.appendChild(ctl); const row=document.querySelector('#mapbar .chipsrow'); if(row)row.insertBefore(win,row.firstChild); } };   // first in the row: a float rises to the line it starts on   // desktop: the window floats at the top right of the controls row (23 Sep 2026)
   window.__placeZoom=place; place(); if(mq){ if(mq.addEventListener)mq.addEventListener('change',place); else if(mq.addListener)mq.addListener(place); } })();
 const defs=svg.append('defs');
 defs.append('pattern').attr('id','hatch').attr('patternUnits','userSpaceOnUse').attr('width',6).attr('height',6).attr('patternTransform','rotate(45)').append('line').attr('x1',0).attr('y1',0).attr('x2',0).attr('y2',6).attr('stroke','var(--nat)').attr('stroke-width',1.2).attr('opacity',.55);
@@ -530,6 +530,10 @@ window.__selectNode=function(id){ if(!NODE[id])return false; select(id); const m
 relabel(); inspectEmpty(); applyLens(); renderPC();
 })();
 
+// ---------- the caption below the map folds (23 Sep 2026, second review): closed by default, the reader's choice kept
+(function(){ const d=document.getElementById('maplead'); if(!d)return; const KEY='qmap.lead'; try{ d.open=localStorage.getItem(KEY)==='1'; }catch(e){ d.open=false; }
+  d.addEventListener('toggle',()=>{ try{localStorage.setItem(KEY,d.open?'1':'0');}catch(e){} }); })();
+
 // ---------- collapsible map
 (function(){ const body=document.getElementById('mapbody'); if(!body)return; const KEY='qmap.collapsed';
   function setC(c){ body.hidden=c; document.querySelectorAll('[data-mapcollapse]').forEach(b=>{b.setAttribute('aria-expanded',String(!c)); b.querySelectorAll('.when-open').forEach(x=>x.hidden=c); b.querySelectorAll('.when-closed').forEach(x=>x.hidden=!c);}); try{localStorage.setItem(KEY,c?'1':'0');}catch(e){} }
@@ -546,12 +550,12 @@ relabel(); inspectEmpty(); applyLens(); renderPC();
   const btns=()=>document.querySelectorAll('[data-mapfs]');
   function on(){ return document.fullscreenElement===body||document.webkitFullscreenElement===body||body.classList.contains('fsfake'); }
   function size(){ if(!on())return; const top=wrap.getBoundingClientRect().top-body.getBoundingClientRect().top+body.scrollTop; const h=Math.max(240,body.clientHeight-top-10); wrap.classList.add('tall'); wrap.style.maxHeight=h+'px'; }
-  let glyphWasOpen=null; const gl=document.getElementById('glyphlegend');
+  let glyphWasOpen=null, pageY=null; const gl=document.getElementById('glyphlegend');
   function paint(){ const f=on(); body.classList.toggle('fs',f); btns().forEach(b=>{ b.setAttribute('aria-pressed',String(f)); b.querySelectorAll('.fs-on').forEach(x=>x.hidden=f); b.querySelectorAll('.fs-off').forEach(x=>x.hidden=!f); });
     if(f){ if(gl&&glyphWasOpen===null){ glyphWasOpen=gl.open; gl.open=false; } size(); }   // the glyph legend folds to give the map the height; it reopens on leaving
-    else { wrap.style.maxHeight=''; wrap.classList.remove('tall'); if(gl&&glyphWasOpen!==null){ gl.open=glyphWasOpen; glyphWasOpen=null; } }
+    else { wrap.style.maxHeight=''; wrap.classList.remove('tall'); if(gl&&glyphWasOpen!==null){ gl.open=glyphWasOpen; glyphWasOpen=null; } if(pageY!==null){ const y=pageY; pageY=null; window.scrollTo(0,y); requestAnimationFrame(()=>{ window.scrollTo(0,y); requestAnimationFrame(()=>window.scrollTo(0,y)); }); } }
     if(window.__refit)window.__refit(); if(window.__sheetRoom)window.__sheetRoom(); if(window.__placeZoom)window.__placeZoom(); }
-  function enter(){ if(window.__expandMap)window.__expandMap(); const req=body.requestFullscreen||body.webkitRequestFullscreen; if(req){ try{ const r=req.call(body); if(r&&r.catch)r.catch(()=>{ body.classList.add('fsfake'); paint(); }); return; }catch(e){} } body.classList.add('fsfake'); paint(); }
+  function enter(){ pageY=window.scrollY; if(window.__expandMap)window.__expandMap(); const req=body.requestFullscreen||body.webkitRequestFullscreen; if(req){ try{ const r=req.call(body); if(r&&r.catch)r.catch(()=>{ body.classList.add('fsfake'); paint(); }); return; }catch(e){} } body.classList.add('fsfake'); paint(); }
   function leave(){ if(document.fullscreenElement===body&&document.exitFullscreen)document.exitFullscreen(); else if(document.webkitFullscreenElement===body&&document.webkitExitFullscreen)document.webkitExitFullscreen(); body.classList.remove('fsfake'); paint(); }
   btns().forEach(b=>b.addEventListener('click',()=>on()?leave():enter()));
   document.addEventListener('fullscreenchange',paint); document.addEventListener('webkitfullscreenchange',paint);

@@ -583,6 +583,46 @@ def review23b(pw):
     return fails
 
 
+def review23c(pw):
+    """23 Sep 2026 (third review): leaving full screen after toggling the controls returns to the page position; in full screen
+    the edge toggles follow the machine selector; the zoom toolbar sits at the top of the controls row; the caption folds (closed by
+    default); the author line precedes the abstract; §0 is "Takeaways"; §3.1 names the platforms."""
+    fails, errors = [], []
+    b = pw.chromium.launch(); ctx = b.new_context(viewport={'width': 1990, 'height': 1000}); p = ctx.new_page()
+    def check(label, cond, detail=''):
+        print(f"  [{'ok' if cond else 'FAIL'}] {label}{(' — ' + str(detail)) if (detail and not cond) else ''}")
+        if not cond: fails.append(label)
+    print('review of 23 Sep (third) — 1990×1000')
+    p.on('console', lambda m: m.type == 'error' and errors.append(m.text)); p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
+    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000)
+    p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0", timeout=60000); p.wait_for_timeout(500)
+    p.evaluate("document.getElementById('mapbar').scrollIntoView()"); p.wait_for_timeout(200)
+    y0 = p.evaluate("window.scrollY")
+    p.click('#zoom-fs'); p.wait_for_timeout(600)
+    p.click('#bartog'); p.wait_for_timeout(400)
+    pos = p.evaluate("()=>{const q=s=>document.querySelector(s).getBoundingClientRect(); const m=q('#machine'), e=q('#tg-req'), z=q('.zoomctl'), b=q('#mapbar'), t=q('#bartog'); return {gap:Math.round(e.left-m.right), sameRow:Math.abs(e.top-m.top)<12, zoomTop:Math.abs(z.top-t.top)<16, zoomRight:b.right-z.right<40};}")
+    check('full screen: the edge toggles follow the machine selector on the same row', 0 < pos['gap'] < 80 and pos['sameRow'], pos)
+    check('the zoom toolbar sits at the top right of the controls row', pos['zoomTop'] and pos['zoomRight'], pos)
+    p.click('#bartog'); p.wait_for_timeout(300)
+    p.click('#zoom-fs'); p.wait_for_timeout(900)
+    y1 = p.evaluate("window.scrollY")
+    check('leaving full screen after toggling the controls returns to the page position', abs(y1 - y0) < 4, (y0, y1))
+    ld = p.evaluate("()=>{const d=document.getElementById('maplead'); return {exists:!!d, open:d&&d.open, summary:d?d.querySelector('summary').textContent.trim():''};}")
+    check('the caption folds and starts closed', ld['exists'] and not ld['open'] and 'How to read the map' in ld['summary'], ld)
+    p.click('#maplead summary'); p.wait_for_timeout(200)
+    check('the fold opens on click and the choice is stored', p.evaluate("()=>document.getElementById('maplead').open && localStorage.getItem('qmap.lead')==='1'"))
+    order = p.evaluate("()=>{const a=document.querySelector('.mast .author'), s=document.querySelector('.mast .subtitle'); return a.compareDocumentPosition(s) & Node.DOCUMENT_POSITION_FOLLOWING ? 'author-first' : 'subtitle-first';}")
+    check('the author line precedes the abstract', order == 'author-first', order)
+    check('the abstract names the 96 technologies and the 136 machines', p.evaluate("()=>{const t=document.querySelector('.mast .subtitle .lang-en').textContent; return /\\(96\\)/.test(t) && /\\(136\\)/.test(t);}"))
+    check('§0 is titled "Takeaways"', p.evaluate("()=>document.getElementById('en-s0').textContent.includes('Takeaways') && document.getElementById('ru-s0').textContent.includes('Выводы')"))
+    check('§3.1 names the platforms', p.evaluate("()=>document.getElementById('en-s3-1').textContent.startsWith('3.1 Platform scores on the six criteria')"))
+    check('§0 carries no coined terms (physics of fault tolerance, counts under quality, axes)', p.evaluate("()=>{const t=document.querySelector('#en-s0 ~ ol.es').textContent; return !/physics of fault tolerance|counts under quality|different axes/.test(t);}"))
+    errs = [e for e in errors if 'ERR_TUNNEL' not in e and 'net::' not in e]
+    check('0 console errors', not errs, errs[:3])
+    ctx.close(); b.close()
+    return fails
+
+
 def fullscreen(pw):
     """23 Sep 2026: the map's full-screen mode. The map block takes the screen (Fullscreen API, or the fixed fallback), the wrapper is
     sized to the screen, fit width / fit height / 1:1 keep working on that box, the glyph legend folds and unfolds, leaving restores
@@ -626,6 +666,6 @@ def fullscreen(pw):
 
 if __name__ == '__main__':
     with sync_playwright() as pw:
-        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800) + sorting(pw, 1280, 900) + sorting(pw, 400, 800) + chapter8(pw, 1280, 900) + chapter8(pw, 400, 800) + laptop(pw) + selections(pw) + hints(pw) + fullscreen(pw) + review23b(pw)
+        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800) + sorting(pw, 1280, 900) + sorting(pw, 400, 800) + chapter8(pw, 1280, 900) + chapter8(pw, 400, 800) + laptop(pw) + selections(pw) + hints(pw) + fullscreen(pw) + review23b(pw) + review23c(pw)
     print('RESULT:', 'PASS' if not f else f'FAIL {f}')
     sys.exit(1 if f else 0)

@@ -145,6 +145,7 @@ details.fold .tbl{border:0;border-top:1px solid var(--rule);border-radius:0;marg
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 /* full screen: the map block takes the screen; the wrapper's height is set by script to what is left under the bar */
 #mapbody:fullscreen,#mapbody:-webkit-full-screen,#mapbody.fsfake{background:var(--bg);overflow:auto;padding:8px 12px 12px;box-sizing:border-box}
+#map,#mapbody{overflow-anchor:none}
 #mapbody.fsfake{position:fixed;inset:0;z-index:80;width:100vw;height:100vh;height:100dvh}
 #mapbody.fs .mapgrid{border-radius:0 0 10px 10px}
 .zoomctl .zfs i{display:inline-flex;align-items:center;gap:4px;font-style:normal}
@@ -190,7 +191,7 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .ptab a.alt{color:var(--ink2)}
 /* machines on the Map (C2): a station the selected machine uses only as an alternate keeps a dashed outline while lit */
 .station.altuse rect.box{stroke-dasharray:4 3}
-#machine{max-width:min(100%,300px);min-width:0}
+#machine{width:300px;max-width:100%;min-width:0}
 .insp .mlinks{margin:-4px 0 8px;font-size:12.5px;display:flex;flex-wrap:wrap;gap:2px 6px}
 .insp .mtab td{min-width:0}
 .insp .mtab td.ln{white-space:normal;width:30%;max-width:104px;line-height:1.25}
@@ -272,7 +273,7 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .lg.badges b{display:inline-block;width:7px;height:4px;border-radius:1px;background:var(--sc)}
 .lg.badges b+b{background:none;border:1px solid var(--atom)}
 .insp dl .lensrow{background:var(--surface);box-shadow:inset 3px 0 0 var(--accent);padding-left:6px}
-.mast .author{margin:10px 0 0;font-size:15px;color:var(--ink2)}
+.mast .author{margin:2px 0 10px;font-size:15px;color:var(--ink2)}
 .mast .author b{color:var(--ink);font-weight:600}
 .mast .title .yr{color:var(--muted);font-weight:500}
 .pubmeta{margin-top:12px;font-size:12.5px;color:var(--muted);text-align:right;line-height:1.6}
@@ -565,6 +566,16 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
    clear of it. On ≤1024 px the same control moves into the scroller and pins to its bottom-right corner. */
 .zoomwin{margin-left:auto;align-self:center}
 #pathchips .zoomwin{margin-left:auto}
+@media (min-width:1025px){
+  .mapbar .chipsrow{display:block;flex:1 1 100%;line-height:1.2}
+  .mapbar .chipsrow > .zoomwin{float:right;margin:0 0 6px 10px}
+  .mapbar .chipsrow > .bartog{margin:0 8px 6px 0;vertical-align:middle}
+  .mapbar .chipsrow > .lbl{display:inline-block;margin:0 6px 6px 0;vertical-align:middle}
+  .mapbar .chipsrow > .barsum{display:inline-block;max-width:60%;vertical-align:middle;margin-bottom:6px}
+  .mapbar .chipsrow #pathchips{display:inline}
+  .mapbar .chipsrow #pathchips .chip{margin:0 6px 6px 0;vertical-align:middle}
+  .mapbar.collapsed .chipsrow{display:block}
+}
 .zoomctl{display:inline-flex;align-items:center;gap:2px;padding:3px;border:1px solid var(--rule);border-radius:9px;background:var(--surface-t85);box-shadow:var(--shadow)}
 @supports (backdrop-filter:blur(6px)) or (-webkit-backdrop-filter:blur(6px)){.zoomctl{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}}
 .zoomctl .zb{display:inline-flex;align-items:center;justify-content:center;gap:4px;height:26px;min-width:26px;padding:0 6px;border:0;border-radius:6px;background:transparent;color:var(--ink);font:600 12px/1 "JetBrains Mono",monospace;cursor:pointer}
@@ -593,8 +604,13 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
 .bartog .when-open,.bartog .when-closed{font-size:11px;color:var(--muted)}
 .bartog:hover .when-open,.bartog:hover .when-closed{color:inherit}
 .mapbar.collapsed .chipsrow > .lbl{display:none}
-.maplead{margin:12px 0 2px}
-.maplead .lead{color:var(--ink2);max-width:100ch;margin:0;font-size:14.5px;line-height:1.55;text-wrap:pretty}
+.maplead{margin:10px 0 2px}
+.maplead .lead{color:var(--ink2);max-width:100ch;margin:6px 0 0;font-size:14.5px;line-height:1.55;text-wrap:pretty}
+.maplead details>summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--ink2);padding:2px 0}
+.maplead details>summary::-webkit-details-marker{display:none}
+.maplead details>summary::after{content:"▸";color:var(--muted);font-size:11px}
+.maplead details[open]>summary::after{content:"▾"}
+.maplead details>summary:hover{color:var(--accent)}
 #mapbody:fullscreen .maplead,#mapbody:-webkit-full-screen .maplead,#mapbody.fsfake .maplead{display:none}
 .barsum{color:var(--ink2);font-size:12.5px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .barsum b{color:var(--ink);font-weight:600}

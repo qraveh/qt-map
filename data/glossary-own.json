@@ -1278,64 +1278,6 @@
   "why": "Explains why a reader's newer number may be absent: it is a discipline, not an oversight"
  },
  {
-  "id": "counts-under-quality",
-  "match": [
-   "counts under quality",
-   "largest counts",
-   "counts"
-  ],
-  "match_ru": [
-   "число кубитов при качестве",
-   "наибольшее число кубитов"
-  ],
-  "scope": "first",
-  "re": null,
-  "only": [
-   "0"
-  ],
-  "en": "Numbers of physical qubits that meet the quality bar at the same time — not the number in the box; an array that holds thousands of atoms counts only as many as it can gate",
-  "ru": "Число физических кубитов, одновременно удовлетворяющих планке качества, — не число в установке; массив, удерживающий тысячи атомов, считается лишь на столько, сколько может гейтировать",
-  "src": "§1.2 axis C",
-  "why": "\"counts\" in claim 1 means count-with-quality, which the reader has not met yet"
- },
- {
-  "id": "channel-es",
-  "match": [
-   "channel"
-  ],
-  "match_ru": [
-   "канале",
-   "канал"
-  ],
-  "scope": "first",
-  "re": null,
-  "only": [
-   "0"
-  ],
-  "en": "The quality of the operations themselves — two-qubit gate, preparation and readout errors — measured with the whole device running, not on a hand-picked pair",
-  "ru": "Качество самих операций — ошибки двухкубитного гейта, подготовки и считывания, — измеренное при работе всего устройства, а не на отобранной паре",
-  "src": "§1.2 axis A",
-  "why": "claim 1 opposes \"channel\" to \"cycle\" before §1.2 defines either"
- },
- {
-  "id": "physics-of-ft",
-  "match": [
-   "physics of fault tolerance"
-  ],
-  "match_ru": [
-   "физику отказоустойчивости"
-  ],
-  "scope": "first",
-  "re": null,
-  "only": [
-   "0"
-  ],
-  "en": "What a platform must show on its own hardware: a protected qubit whose error falls as the code grows. Codes and thresholds are platform-independent mathematics; decoders, control and cycle are engineering",
-  "ru": "Что платформа должна показать на своём железе: защищённый кубит, ошибка которого падает с ростом кода. Коды и пороги — математика, не зависящая от платформы; декодеры, управление и такт — инженерия",
-  "src": "§0",
-  "why": "the editor asked what \"physics of fault tolerance\" is, against mathematics and engineering"
- },
- {
   "id": "centrality",
   "match": [
    "centrality"
