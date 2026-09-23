@@ -717,6 +717,11 @@ def folds(pw):
     check('choices survive a reload', p.evaluate("()=>document.querySelector('.secbody[data-sec=\"en-s3\"]').hidden && !document.querySelector('.secbody[data-sec=\"en-s3-1\"] details.tblfold').open"))
     bf = p.evaluate("()=>{const s=document.getElementById('brief-transmon'); return {btns:s.querySelectorAll('.foldbtn').length, src:!s.querySelector('.secbody details.fold-src'), en:s.querySelectorAll('.lang-en .foldbtn, [lang=en] .foldbtn').length};}")
     check('a brief\'s sections fold and its sources fold stays outside them', bf['btns'] >= 8 and bf['src'], bf)
+    p.click('#pcwrap-h .foldbtn'); p.wait_for_timeout(200)
+    pc = p.evaluate("()=>({hidden:document.querySelector('.secbody[data-sec=\"pcwrap\"]').hidden, lines:document.querySelectorAll('#pc path.pcline').length})")
+    check('the parallel-coordinates strip folds under its title (the strip itself stays built)', pc['hidden'] and pc['lines'] == 96, pc)
+    p.click('#pcwrap-h .foldbtn'); p.wait_for_timeout(200)
+    check('and unfolds', p.evaluate("()=>!document.querySelector('.secbody[data-sec=\"pcwrap\"]').hidden"))
     errs = [e for e in errors if 'ERR_TUNNEL' not in e and 'net::' not in e]
     check('0 console errors', not errs, errs[:3])
     ctx.close(); b.close()
