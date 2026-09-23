@@ -282,6 +282,7 @@ def _link_cites(h, bid, lang):
 
 
 TOOLTIPS = None   # build_html.tooltips, injected at build time
+FOLD = None       # build_html.foldable (sections and tables fold), injected at build time
 
 
 def body_html(body, lang, md2html, bid=''):
@@ -304,7 +305,8 @@ def body_html(body, lang, md2html, bid=''):
         else:
             out.append('<h3 class="bh3">%s</h3>%s' % (head_raw, _link_cites(content, bid, lang) if bid else content))
     h = chip_tags(autolink(''.join(out)), lang)
-    return TOOLTIPS(h, lang) if TOOLTIPS else h   # the glossary tooltips of build_html (set by the caller), once per term per brief
+    h = TOOLTIPS(h, lang) if TOOLTIPS else h   # the glossary tooltips of build_html (set by the caller), once per term per brief
+    return FOLD(h, lang, bid or 'x') if FOLD else h
 
 
 def inline_html(s, md2html):

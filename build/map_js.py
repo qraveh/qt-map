@@ -103,7 +103,7 @@ function stationTip(d){ const L=lang(); const k=state.lens; let h=`<b>${esc(d[L]
   else { const c=lensColor(d,k); const v=lensValue(d,k); const lab=k==='aff'?vt('AFF',d.aff):(k==='time'?(v==='none'?T('no time','нет времени'):TBINS[+v][1]):catLabel(k,v)); h+=`<br><span class="tk">${T('lens','линза')}</span> ${esc(LENSES[k][L])}: <i class="sw" style="background:${c||'transparent'};border:1px solid ${c||'var(--bg)'}"></i>${esc(lab)}`; }
   const fl=[]; if(d.hub)fl.push('◎ '+T('hub','хаб')); if(d.offdiag&&d.offdiag.length)fl.push('⤢ '+T('off-diagonal','внедиагональный')); if(d.status==='X')fl.push('∅ '+T('empty slot','пустой слот')); if(fl.length)h+=`<br>${fl.join(' · ')}`;
   h+=`<br><span style="opacity:.6">${T('click for the card','клик — карточка')}</span>`; return h; }
-st.on('mousemove',(ev,d)=>{if(tipPinned)return; tip.style.display='block'; tip.classList.add('wide'); tip.innerHTML=stationTip(d); placeTip(ev);}).on('mouseleave',()=>{if(!tipPinned)hideTip();});
+st.on('mousemove',(ev,d)=>{if(tipPinned)return; tip.style.display='block'; tip.classList.add('wide'); tip.innerHTML=stationTip(d); placeTip(ev);}).on('mouseenter',(ev,d)=>{ if(window.__pcHover)window.__pcHover(d.id,'map'); }).on('mouseleave',()=>{if(!tipPinned)hideTip(); if(window.__pcHover)window.__pcHover(null,'map');});
 st.on('click',(ev,d)=>{ev.stopPropagation(); unpinTip(); select(d.id===state.focus?null:d.id);}).on('keydown',(ev,d)=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault(); select(d.id===state.focus?null:d.id);}});
 svg.on('click',()=>select(null));
 document.addEventListener('keydown',ev=>{if(ev.key==='Escape')select(null);});
@@ -163,7 +163,8 @@ function css(v){ return getComputedStyle(document.documentElement).getPropertyVa
 let affScale=null, timeScale=null;
 function buildScales(){ affScale=d3.scaleLinear().domain([0,0.5,1]).range([css('--nat'),css('--mid'),css('--fab')]).interpolate(d3.interpolateRgb); timeScale=d3.scaleLinear().domain([-8.5,-6.5,-4.5,-2.5]).range([css('--lens4'),css('--lens3'),css('--lens2'),css('--lens1')]).interpolate(d3.interpolateRgb).clamp(true); }   // fast = the strong end of the ramp, slow = the pale end
 buildScales();
-function lensColor(n,k){ if(k==='family')return null; if(k==='aff')return affScale(n.aff); if(k==='time'){const t=timeOf(n); return t==null?null:timeScale(t);} let v=lensValue(n,k); if((k==='f'||k==='place')&&state.lensFilter){ const hit=lensValues(n,k).find(x=>state.lensFilter.has(x)); if(hit)v=hit; }   // a multi-value station takes the colour of the value it is lit for
+function lensShown(n,k){ if(k==='family')return n._fams.length===1?n._fams[0]:(n._fams.length?'multi':'none'); let v=lensValue(n,k); if((k==='f'||k==='place')&&state.lensFilter){ const hit=lensValues(n,k).find(x=>state.lensFilter.has(x)); if(hit)v=hit; } return v; }   // a multi-value station shows the value it is lit for
+function lensColor(n,k){ if(k==='family')return null; if(k==='aff')return affScale(n.aff); if(k==='time'){const t=timeOf(n); return t==null?null:timeScale(t);} let v=lensShown(n,k);   // a multi-value station takes the colour of the value it is lit for
   if(v==null||v==='none')return null; const i=CATS[k].indexOf(v); return i<0?null:LENSPAL[i%LENSPAL.length]; }
 function tint(c){ const x=d3.color(c); if(!x)return 'var(--surface)'; x.opacity=0.22; return x.formatRgb(); }
 function lensItems(k){ const count=v=>G.nodes.filter(n=>lensValues(n,k).includes(v)).length;
@@ -182,10 +183,9 @@ function applyLens(){ const k=state.lens; const leg=document.getElementById('len
   st.select('rect.box').attr('stroke',d=>{ if(!lensed){ const f=d._fams; return f.length===1?FAMC[f[0]]:(f.length>1?'var(--ink)':'var(--mid)'); } const c=lensColor(d,k); return c||'var(--mid)'; })
     .attr('fill',d=>{ if(!lensed)return 'var(--surface)'; const c=lensColor(d,k); return c?tint(c):'var(--surface)'; });
   st.select('rect.lensbar').attr('fill',d=>{ if(!lensed)return 'transparent'; return lensColor(d,k)||'transparent'; });
-  pcLines.selectAll('path').attr('stroke',d=>lensed?(lensColor(d,k)||'var(--mid)'):(d._fam?FAMC[d._fam]:'var(--mid)'));
   const items=lensItems(k).filter(it=>it.n>0);
   leg.innerHTML='<span class="lbl">'+T('lens legend · click a value to keep only those stations · Ctrl-click adds a value','легенда линзы · клик по значению оставляет только эти станции · Ctrl-клик добавляет значение')+(LENSCOORD[k]?' <span class="cnt">'+T('attribute','атрибут')+' '+LENSCOORD[k]+'</span>':'')+'</span>'+items.map(it=>`<button type="button" class="k lk" data-lv="${it.v}" aria-pressed="${String(filterHas(it.v))}"><i class="sw" style="background:${it.c||'transparent'};border:1px solid ${it.c?it.c:'var(--mid)'}"></i>${esc(it.t)} <span class="cnt">${it.n}</span></button>`).join('')+(state.lensFilter!=null?`<button type="button" class="k lk clear" data-lv="">${T('clear filter','сбросить фильтр')} ✕</button>`:'');
-  leg.querySelectorAll('[data-lv]').forEach(b=>{ b.addEventListener('click',ev=>{ toggleFilter(b.dataset.lv,ev.ctrlKey||ev.metaKey||ev.shiftKey); applyLens(); drawEdges(); dimming(); pcHighlight(state.focus); });
+  leg.querySelectorAll('[data-lv]').forEach(b=>{ b.addEventListener('click',ev=>{ toggleFilter(b.dataset.lv,ev.ctrlKey||ev.metaKey||ev.shiftKey); applyLens(); drawEdges(); dimming(); });
     b.addEventListener('mouseenter',()=>{ const v=b.dataset.lv; if(v==='')return; st.classed('peek',d=>lensValues(d,k).includes(v)); });
     b.addEventListener('mouseleave',()=>{ st.classed('peek',false); }); });
   if(state.focus) inspect(NODE[state.focus]);
@@ -206,10 +206,10 @@ function relabel(){ st.select('text.l1').text(d=>wrapLabel(SHORT[d.id]?SHORT[d.i
 // machine's, a machine on another path) releases the older one instead of leaving an empty picture (adjudication 12, 21 Sep 2026)
 function pathsOf(id){ return new Set((prim[id]||[]).concat(alt[id]||[])); }
 function releaseIsolate(){ state.isolate=null; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false')); }
-function releaseFocus(){ state.focus=null; st.classed('sel',false); pcHighlight(null); }
+function releaseFocus(){ state.focus=null; st.classed('sel',false); }
 function releaseMachine(){ state.machine=null; const ms=document.getElementById('machine'); if(ms)ms.value=''; st.classed('altuse',false); }
 function select(id){ if(id){ const ps=pathsOf(id); if(state.isolate&&!ps.has(state.isolate))releaseIsolate(); if(state.machine&&MBY[state.machine]&&!ps.has(MBY[state.machine].path))releaseMachine(); }
-  state.focus=id; st.classed('sel',d=>d.id===id); drawEdges(); dimming(); if(id){insp.hidden=false; inspect(NODE[id]);} else if(state.machine&&MBY[state.machine]){ inspectMachine(MBY[state.machine]); } else {insp.hidden=true; insp.innerHTML='';} pcHighlight(id); sheetRoom(); }
+  state.focus=id; st.classed('sel',d=>d.id===id); drawEdges(); dimming(); if(id){insp.hidden=false; inspect(NODE[id]);} else if(state.machine&&MBY[state.machine]){ inspectMachine(MBY[state.machine]); } else {insp.hidden=true; insp.innerHTML='';} sheetRoom(); }
 function sheetRoom(){ try{ document.body.classList.toggle('has-sheet', !insp.hidden && sheetMode()); }catch(e){} }
 window.__sheetRoom=sheetRoom;   // room to scroll the map above the bottom sheet (≤ 1024 px)
 function edgeOn(e){ return (e.type==='conflicts'&&state.showConf)||(e.type==='replaces'&&state.showRep)||(e.type==='requires'&&state.showReq); }
@@ -249,6 +249,7 @@ function dimming(){ const f=state.focus, iso=state.isolate; const L=litSets(), k
   gAlt.selectAll('path').classed('dim',d=>keepP?!keepP.has(d.p.id):lf);
   gPaths.selectAll('circle.emptyslot').attr('opacity',d=>keepP?(keepP.has(d.p.id)?1:.08):(lf?.08:1));
   if(window.__barSummary)window.__barSummary();
+  if(typeof pcRefresh==='function')pcRefresh();   // the strip mirrors the lit set (adjudication 13)
   sheetRoom();
 }
 function edgePath(a,b){ const dx=b.cx-a.cx; if(Math.abs(dx)<1){ const x=a.cx+NW/2; return `M${a.cx+NW/2-2},${a.cy} C${x+22},${a.cy} ${x+22},${b.cy} ${b.cx+NW/2-2},${b.cy}`; }
@@ -392,7 +393,7 @@ const bar=document.getElementById('mapbar');
 const chipsWrap=document.getElementById('pathchips');
 function isolatePath(pid){ state.isolate=state.isolate===pid?null:pid; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.chipPath===state.isolate)));
   if(state.isolate){ if(state.focus&&!pathsOf(state.focus).has(pid))releaseFocus(); if(state.machine&&MBY[state.machine]&&MBY[state.machine].path!==pid)releaseMachine(); }   // adjudication 12
-  if(state.isolate){ if(!state.focus){ inspectPath(PATH[pid]); pcHighlight(null); } } else if(!state.focus){ if(state.machine&&MBY[state.machine])inspectMachine(MBY[state.machine]); else inspectEmpty(); } drawEdges(); dimming(); }   // a focused station on the path stays focused: the terms narrow each other
+  if(state.isolate){ if(!state.focus){ inspectPath(PATH[pid]); } } else if(!state.focus){ if(state.machine&&MBY[state.machine])inspectMachine(MBY[state.machine]); else inspectEmpty(); } drawEdges(); dimming(); }   // a focused station on the path stays focused: the terms narrow each other
 G.paths.forEach(p=>{const b=document.createElement('button'); b.className='chip'; b.dataset.chipPath=p.id; b.setAttribute('aria-pressed','false'); b.innerHTML=`<i class="sw" style="--c:${FAMC[p.family]}"></i><span class="t"></span>`; b.addEventListener('click',()=>isolatePath(p.id)); chipsWrap.appendChild(b);});
 if(window.__placeZoom)window.__placeZoom();   // the zoom window sits at the end of the paths row (desktop) — chips exist now
 const lensSel=document.getElementById('lens'); Object.keys(LENSES).forEach(k=>{const o=document.createElement('option'); o.value=k; lensSel.appendChild(o);}); lensSel.addEventListener('change',()=>{state.lens=lensSel.value; state.lensFilter=null; applyLens(); drawEdges(); dimming();});
@@ -507,24 +508,53 @@ const pcHost=document.getElementById('pc');
 const PCW=1100, PCH=300, PX0=70, PX1=PCW-30, PY0=34, PY1=PCH-46;
 const pcsvg=d3.select(pcHost).append('svg').attr('viewBox',`0 0 ${PCW} ${PCH}`).attr('role','img').attr('aria-label','Parallel coordinates of all technologies across the seven design attributes');
 const AXES=[{k:'aff',en:'(a) carrier',ru:'(a) носитель'},{k:'b',en:'(b) time',ru:'(b) время'},{k:'c',en:'(c) readout',ru:'(c) считывание'},{k:'d',en:'(d) mobility',ru:'(d) подвижность'},{k:'e',en:'(e) control',ru:'(e) управление'},{k:'f',en:'(f) error',ru:'(f) ошибка'},{k:'g',en:'(g) fab',ru:'(g) производство'}];
-const ORD={aff:[0,0.25,0.5,0.75,1],d:['none','static','shared','longrange','bus','transport','flying'],e:['none','lf@RT','mw@RT','eo@RT','opt@RT','mw@4K','lf@mK','mw@mK'],f:['none','pauli','coherent','leak','burst','bias','gauss','erasure','loss','unknown'],g:['none','sclitho','3d','cmos','mbe','mems','pic','optics','stm','diamond'],c:['none','spd','disp','erasure','s2c','qcap','fluor','img']};
+const ORD={aff:[0,0.25,0.5,0.75,1],d:['none','static','shared','longrange','bus','transport','flying'],e:['none','lf@RT','mw@RT','eo@RT','opt@RT','mw@4K','eo@4K','lf@mK','mw@mK','eo@mK'],f:['none','pauli','coherent','leak','burst','bias','gauss','erasure','loss','unknown'],g:['none','sclitho','3d','cmos','mbe','mems','pic','optics','stm','diamond'],c:['none','spd','disp','erasure','s2c','qcap','fluor','img']};
+// the strip as a control (adjudication 13, 23 Sep 2026): each axis is one design attribute and stands for one lens; a tick on an
+// axis is one value of that lens — clicking the title selects the lens, clicking a tick keeps only the stations with that value
+// (Ctrl-click adds a value), exactly as the lens select and the lens legend do. (e) shows modality@placement; its ticks act on the
+// modality lens. (b) shows the seven time bins of the time lens.
+const AXLENS={aff:'aff',b:'time',c:'mech',d:'d',e:'mod',f:'f',g:'g'};
+const LENSAX={aff:'aff',time:'b',det:'b',mech:'c',destr:'c',mid:'c',d:'d',mod:'e',place:'e',f:'f',g:'g'};
 const xAx=i=>PX0+i*(PX1-PX0)/(AXES.length-1);
 const tScale=d3.scaleLinear().domain([-8.5,-1]).range([PY1,PY0]);
 function yOf(n,k){ if(k==='aff')return PY1-(ORD.aff.indexOf(n.aff))*(PY1-PY0)/4; if(k==='b')return n.b.t==null?PY1+10:tScale(n.b.t); if(k==='c'){const m=n.c?n.c.mech:'none'; const i=ORD.c.indexOf(m); return PY1-i*(PY1-PY0)/(ORD.c.length-1);} if(k==='e'){const key=n.e.mod==='none'?'none':n.e.mod+'@'+((n.e.place&&n.e.place[0])||'none'); let i=ORD.e.indexOf(key); if(i<0)i=0; return PY1-i*(PY1-PY0)/(ORD.e.length-1);} const arr=ORD[k]; const v=k==='f'?(n.f[0]||'none'):n[k]; let i=arr.indexOf(v); if(i<0)i=0; return PY1-i*(PY1-PY0)/(arr.length-1); }
-const pcAxes=pcsvg.append('g'); const pcLines=pcsvg.append('g'); const pcLabel=pcsvg.append('text').attr('x',PX0).attr('y',PCH-8).attr('fill','var(--ink)').attr('font-size',12).attr('font-weight',600);
+function axisTicks(a){ const k=a.k; if(k==='aff')return ORD.aff.map(v=>({y:PY1-ORD.aff.indexOf(v)*(PY1-PY0)/4,t:vt('AFF',v).split(' ')[0],lens:'aff',lv:String(v)}));
+  if(k==='b')return TBINS.map((b,i)=>({y:tScale(b[0]),t:b[1],lens:'time',lv:String(i)}));
+  if(k==='c')return ORD.c.map((v,i)=>({y:PY1-i*(PY1-PY0)/(ORD.c.length-1),t:v==='none'?'—':vt('MECH',v).split(' ')[0],lens:'mech',lv:v}));
+  if(k==='e')return ORD.e.map((v,i)=>({y:PY1-i*(PY1-PY0)/(ORD.e.length-1),t:v==='none'?'—':v,lens:'mod',lv:v==='none'?'none':v.split('@')[0]}));
+  const arr=ORD[k], tab={d:'MOB',f:'ERR',g:'FAB'}[k]; return arr.map((v,i)=>({y:PY1-i*(PY1-PY0)/(arr.length-1),t:v==='none'?'—':vt(tab,v).split(' ')[0],lens:k,lv:v})); }
+const pcLines=pcsvg.append('g'); const pcAxes=pcsvg.append('g'); const pcLabel=pcsvg.append('text').attr('x',PX0).attr('y',PCH-8).attr('fill','var(--ink)').attr('font-size',12).attr('font-weight',600);
+function pcSetLens(L){ if(state.lens===L)return; state.lens=L; state.lensFilter=null; const sel=document.getElementById('lens'); if(sel)sel.value=L; applyLens(); drawEdges(); dimming(); }
+function pcTick(t,multi){ if(state.lens!==t.lens){ state.lens=t.lens; state.lensFilter=null; const sel=document.getElementById('lens'); if(sel)sel.value=t.lens; } toggleFilter(t.lv,multi); applyLens(); drawEdges(); dimming(); }
+let pcHov=null;
 function renderPC(){ pcAxes.selectAll('*').remove();
-  AXES.forEach((a,i)=>{const g=pcAxes.append('g').attr('class','pc-axis'); const x=xAx(i); g.append('line').attr('x1',x).attr('x2',x).attr('y1',PY0-6).attr('y2',PY1+12); g.append('text').attr('class','t').attr('x',x).attr('y',PY0-14).attr('text-anchor','middle').text(a[lang()]);
-    let ticks=[]; if(a.k==='aff')ticks=ORD.aff.map(v=>[PY1-ORD.aff.indexOf(v)*(PY1-PY0)/4,vt('AFF',v).split(' ')[0]]); else if(a.k==='b')ticks=[-8,-7,-6,-5,-4,-3,-2].map(v=>[tScale(v),fmtT(v)]); else if(a.k==='c')ticks=ORD.c.map((v,j)=>[PY1-j*(PY1-PY0)/(ORD.c.length-1),v==='none'?'—':vt('MECH',v).split(' ')[0]]); else if(a.k==='e')ticks=ORD.e.map((v,j)=>[PY1-j*(PY1-PY0)/(ORD.e.length-1),v==='none'?'—':v]); else {const arr=ORD[a.k], tab={d:'MOB',f:'ERR',g:'FAB'}[a.k]; ticks=arr.map((v,j)=>[PY1-j*(PY1-PY0)/(arr.length-1),v==='none'?'—':vt(tab,v).split(' ')[0]]);}
-    ticks.forEach(([y,t])=>{g.append('line').attr('x1',x-3).attr('x2',x+3).attr('y1',y).attr('y2',y); g.append('text').attr('x',x+(i===AXES.length-1?-6:6)).attr('y',y+3.5).attr('text-anchor',i===AXES.length-1?'end':'start').text(t);}); });
+  AXES.forEach((a,i)=>{const g=pcAxes.append('g').attr('class','pc-axis').attr('data-axis',a.k); const x=xAx(i); g.append('line').attr('x1',x).attr('x2',x).attr('y1',PY0-6).attr('y2',PY1+12);
+    g.append('text').attr('class','t').attr('x',x).attr('y',PY0-14).attr('text-anchor','middle').attr('data-lens',AXLENS[a.k]).attr('tabindex',0).attr('role','button').text(a[lang()])
+      .on('click',()=>pcSetLens(AXLENS[a.k])).on('keydown',ev=>{ if(ev.key==='Enter'||ev.key===' '){ ev.preventDefault(); pcSetLens(AXLENS[a.k]); } });
+    axisTicks(a).forEach(t=>{ g.append('line').attr('x1',x-3).attr('x2',x+3).attr('y1',t.y).attr('y2',t.y);
+      g.append('text').attr('class','tick').attr('x',x+(i===AXES.length-1?-6:6)).attr('y',t.y+3.5).attr('text-anchor',i===AXES.length-1?'end':'start').attr('data-lens',t.lens).attr('data-lv',t.lv).attr('tabindex',0).attr('role','button').text(t.t)
+        .on('click',ev=>pcTick(t,ev.ctrlKey||ev.metaKey||ev.shiftKey)).on('keydown',ev=>{ if(ev.key==='Enter'||ev.key===' '){ ev.preventDefault(); pcTick(t,ev.ctrlKey||ev.metaKey||ev.shiftKey); } }); }); });
   const pl=d3.line().x(d=>d[0]).y(d=>d[1]).curve(d3.curveMonotoneX);
-  pcLines.selectAll('path').data(G.nodes,d=>d.id).join('path').attr('class','pcline').attr('stroke',d=>d._fam?FAMC[d._fam]:'var(--mid)').attr('d',d=>pl(AXES.map((a,i)=>[xAx(i),yOf(d,a.k)])))
-    .on('mouseenter',(ev,d)=>{pcHighlight(d.id,true); pcLabel.text(d[lang()]);}).on('mouseleave',()=>{pcHighlight(state.focus); pcLabel.text(state.focus?NODE[state.focus][lang()]:'');}).on('click',(ev,d)=>{select(d.id); scrollToNode(d);});
-  pcHighlight(state.focus); }
-function pcHighlight(id,hover){ pcLines.selectAll('path').classed('hi',d=>d.id===id).classed('dim',d=>id?d.id!==id:(state.lensFilter!=null?!nodeMatchesFilter(d):false)); if(!hover)pcLabel.text(id?NODE[id][lang()]:''); }
+  pcLines.selectAll('path').data(G.nodes,d=>d.id).join('path').attr('class','pcline').attr('data-node',d=>d.id).attr('d',d=>pl(AXES.map((a,i)=>[xAx(i),yOf(d,a.k)])))
+    .on('mouseenter',(ev,d)=>pcHover(d.id,'strip')).on('mouseleave',()=>pcHover(null,'strip')).on('click',(ev,d)=>{select(d.id); scrollToNode(d);});
+  pcRefresh(); }
+function pcStroke(d){ const k=state.lens; if(k==='family')return d._fam?FAMC[d._fam]:'var(--mid)'; return lensColor(d,k)||'var(--mid)'; }
+// the strip mirrors the map (adjudication 13): a line is dim iff its station is dim, thick iff its station is the focus, dashed iff the
+// chosen machine uses the station only as an alternate; its colour and data-lv are the station's lens value; the current lens's
+// axis title and the pressed values are marked
+function pcRefresh(){ const L=litSets(), keepN=L.keepN, f=state.focus, k=state.lens; const mm=state.machine&&MBY[state.machine], ma=mm?machNodes(mm).alt:null;
+  pcLines.selectAll('path').classed('dim',d=>keepN?!keepN.has(d.id):false).classed('hi',d=>d.id===f).classed('altuse',d=>!!(ma&&ma.has(d.id)&&(!keepN||keepN.has(d.id)))).attr('stroke',d=>pcStroke(d)).attr('data-lv',d=>String(lensShown(d,k)));
+  pcAxes.selectAll('text.t').classed('active',function(){ return this.getAttribute('data-lens')===k||LENSAX[k]===this.parentNode.getAttribute('data-axis'); });
+  pcAxes.selectAll('text.tick').classed('pressed',function(){ return this.getAttribute('data-lens')===k&&filterHas(this.getAttribute('data-lv')); });
+  if(!pcHov)pcLabel.text(f?NODE[f][lang()]:''); }
+// hover in either place lights the other (transient; no state)
+function pcHover(id,from){ pcHov=id; pcLines.selectAll('path').classed('hover',d=>d.id===id); if(from==='strip')st.classed('hover',d=>d.id===id); pcLabel.text(id?NODE[id][lang()]:(state.focus?NODE[state.focus][lang()]:'')); }
+window.__pcHover=pcHover;
+function pcHighlight(){ pcRefresh(); }
 // ---------- init
 window.__relabelMap=relabel;
 // theme changes must re-resolve the CSS colour tokens; buildScales/applyLens live in this closure
-window.__mapTheme=function(){ buildScales(); applyLens(); };
+window.__mapTheme=function(){ buildScales(); applyLens(); pcRefresh(); };
 // select a station from outside the map (used by the technology briefs)
 window.__selectNode=function(id){ if(!NODE[id])return false; select(id); const m=NODE[id]; scrollToNode(m); return true; };
 relabel(); inspectEmpty(); applyLens(); renderPC();

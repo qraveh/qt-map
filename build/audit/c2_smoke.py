@@ -623,6 +623,102 @@ def review23c(pw):
     return fails
 
 
+def strip(pw):
+    """23 Sep 2026 (ADJ-13): the parallel-coordinates strip as a second interface — mirror of the lit set, lens colours, axis and tick
+    controls, hover both ways; the (e) axis carries every modality@stage of the graph; the axes sit above the lines; the strip works
+    in full screen and with the bar collapsed; a language switch relabels the axes."""
+    fails, errors = [], []
+    b = pw.chromium.launch(); ctx = b.new_context(viewport={'width': 1400, 'height': 900}); p = ctx.new_page()
+    def check(label, cond, detail=''):
+        print(f"  [{'ok' if cond else 'FAIL'}] {label}{(' — ' + str(detail)) if (detail and not cond) else ''}")
+        if not cond: fails.append(label)
+    print('strip — 1400×900')
+    p.on('console', lambda m: m.type == 'error' and errors.append(m.text)); p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
+    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000); expand_bar(p)
+    p.wait_for_function("document.querySelectorAll('#pc path.pcline').length===96", timeout=60000); p.wait_for_timeout(300)
+    R = """()=>{const L=[...document.querySelectorAll('#pc path.pcline')], S=[...document.querySelectorAll('#mapwrap g.station')]; const id=g=>g.querySelector('text.id').textContent;
+      const set=(a)=>new Set(a); const eq=(a,b)=>a.size===b.size&&[...a].every(x=>b.has(x));
+      return {dimEq:eq(set(S.filter(g=>g.classList.contains('dim')).map(id)),set(L.filter(l=>l.classList.contains('dim')).map(l=>l.dataset.node))),
+        altEq:eq(set(S.filter(g=>g.classList.contains('altuse')).map(id)),set(L.filter(l=>l.classList.contains('altuse')).map(l=>l.dataset.node))),
+        hi:L.filter(l=>l.classList.contains('hi')).map(l=>l.dataset.node), sel:S.filter(g=>g.classList.contains('sel')).map(id),
+        lens:document.getElementById('lens').value, axis:[...document.querySelectorAll('#pc text.t.active')].map(t=>t.parentNode.dataset.axis),
+        pressed:[...document.querySelectorAll('#pc text.tick.pressed')].map(t=>t.dataset.lens+'='+t.dataset.lv), legend:[...document.querySelectorAll('#lenslegend [data-lv][aria-pressed="true"]')].map(b=>b.dataset.lv),
+        strokeEq:document.getElementById('lens').value==='family'||L.every(l=>{const g=S.find(x=>id(x)===l.dataset.node); return g.querySelector('rect.box').getAttribute('stroke')===l.getAttribute('stroke');}),
+        order:(()=>{const gs=[...document.querySelectorAll('#pc svg > g')]; return gs.findIndex(g=>g.querySelector('.pcline'))<gs.findIndex(g=>g.querySelector('.pc-axis'));})(),
+        eRows:document.querySelectorAll('#pc g.pc-axis[data-axis="e"] text.tick').length};}"""
+    r0 = p.evaluate(R)
+    check('axes are drawn above the lines (ticks clickable)', r0['order'])
+    check('the (e) axis carries all ten modality@stage rows', r0['eRows'] == 10, r0['eRows'])
+    p.click('#pathchips .chip[data-chip-path="ion_qccd"]'); p.wait_for_timeout(300); r1 = p.evaluate(R)
+    check('isolated path: the strip dims exactly the map\'s dimmed stations', r1['dimEq'], r1)
+    p.select_option('#machine', 'google-willow'); p.wait_for_timeout(300); r2 = p.evaluate(R)
+    check('machine: dim and dashed (alternate-use) lines follow the map', r2['dimEq'] and r2['altEq'], r2)
+    p.evaluate("window.__selectNode('transmon')"); p.wait_for_timeout(300); r3 = p.evaluate(R)
+    check('focus: the thick line is the selected station', r3['hi'] == ['transmon'] and r3['sel'] == ['transmon'], (r3['hi'], r3['sel']))
+    p.click('#tg-reset'); p.wait_for_timeout(200)
+    p.click('#pc text.t[data-lens="f"]'); p.wait_for_timeout(300); r4 = p.evaluate(R)
+    check('axis title (f) selects the error lens and marks the axis; colours mirror the stations', r4['lens'] == 'f' and r4['axis'] == ['f'] and r4['strokeEq'], r4)
+    p.click('#pc text.tick[data-lens="f"][data-lv="erasure"]'); p.wait_for_timeout(300); r5 = p.evaluate(R)
+    check('a tick presses the value in the legend and on the axis, and filters the map', r5['legend'] == ['erasure'] and r5['pressed'] == ['f=erasure'] and r5['dimEq'], r5)
+    p.click('#pc text.tick[data-lens="f"][data-lv="leak"]', modifiers=['Control']); p.wait_for_timeout(300); r6 = p.evaluate(R)
+    check('Ctrl-click adds a value', sorted(r6['legend']) == ['erasure', 'leak'], r6['legend'])
+    p.click('#pc text.tick[data-lens="mod"][data-lv="mw"]'); p.wait_for_timeout(300); r7 = p.evaluate(R)
+    check('a tick on another axis switches the lens; all ticks of the modality press together', r7['lens'] == 'mod' and r7['legend'] == ['mw'] and len(r7['pressed']) == 3 and r7['axis'] == ['e'], r7)
+    p.evaluate("()=>{const l=document.querySelector('#pc path.pcline[data-node=\"ion\"]'); l.dispatchEvent(new MouseEvent('mouseenter'));}"); p.wait_for_timeout(100)
+    hv = p.evaluate("()=>({st:[...document.querySelectorAll('#mapwrap g.station.hover')].map(g=>g.querySelector('text.id').textContent), ln:[...document.querySelectorAll('#pc path.pcline.hover')].map(l=>l.dataset.node), label:document.querySelector('#pc svg > text').textContent})")
+    check('hovering a line lights its station and names it', hv['st'] == ['ion'] and hv['ln'] == ['ion'] and hv['label'] != '', hv)
+    p.evaluate("()=>{const l=document.querySelector('#pc path.pcline[data-node=\"ion\"]'); l.dispatchEvent(new MouseEvent('mouseleave'));}"); p.wait_for_timeout(100)
+    p.evaluate("()=>{const g=[...document.querySelectorAll('#mapwrap g.station')].find(x=>x.querySelector('text.id').textContent==='alkali'); g.dispatchEvent(new MouseEvent('mouseenter'));}"); p.wait_for_timeout(100)
+    hv2 = p.evaluate("()=>[...document.querySelectorAll('#pc path.pcline.hover')].map(l=>l.dataset.node)")
+    check('hovering a station lights its line', hv2 == ['alkali'], hv2)
+    p.evaluate("()=>{const g=[...document.querySelectorAll('#mapwrap g.station')].find(x=>x.querySelector('text.id').textContent==='alkali'); g.dispatchEvent(new MouseEvent('mouseleave'));}")
+    p.click('#tg-reset'); p.wait_for_timeout(200)
+    p.evaluate("()=>{const l=document.querySelector('#pc path.pcline[data-node=\"ct_sfq\"]'); l.dispatchEvent(new MouseEvent('click',{bubbles:true}));}"); p.wait_for_timeout(400); r8 = p.evaluate(R)
+    check('clicking a line selects the station on the map', r8['sel'] == ['ct_sfq'] and r8['hi'] == ['ct_sfq'], (r8['sel'], r8['hi']))
+    p.click('.mast .seg [data-setlang="ru"]'); p.wait_for_timeout(400)
+    check('a language switch relabels the axes', p.evaluate("()=>document.querySelector('#pc text.t[data-lens=\"aff\"]').textContent") == '(a) носитель')
+    p.click('.mast .seg [data-setlang="en"]'); p.wait_for_timeout(200)
+    p.click('#bartog'); p.wait_for_timeout(200); p.click('#zoom-fs'); p.wait_for_timeout(600)
+    check('the strip stays in the block in full screen and mirrors the map', p.evaluate("()=>document.fullscreenElement===document.getElementById('mapbody')||document.getElementById('mapbody').classList.contains('fsfake')") and p.evaluate(R)['dimEq'])
+    p.click('#zoom-fs'); p.wait_for_timeout(500)
+    errs = [e for e in errors if 'ERR_TUNNEL' not in e and 'net::' not in e]
+    check('0 console errors', not errs, errs[:3])
+    ctx.close(); b.close()
+    return fails
+
+
+def folds(pw):
+    """23 Sep 2026: every titled section and every table folds; defaults as before; a link into a folded section opens it; the choice is
+    remembered; the briefs' sections fold too and their source fold stays outside the last section."""
+    fails, errors = [], []
+    b = pw.chromium.launch(); ctx = b.new_context(viewport={'width': 1300, 'height': 900}); p = ctx.new_page()
+    def check(label, cond, detail=''):
+        print(f"  [{'ok' if cond else 'FAIL'}] {label}{(' — ' + str(detail)) if (detail and not cond) else ''}")
+        if not cond: fails.append(label)
+    print('folds — 1300×900')
+    p.on('console', lambda m: m.type == 'error' and errors.append(m.text)); p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
+    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000)
+    p.wait_for_function("document.querySelectorAll('.foldbtn').length>0", timeout=60000); p.wait_for_timeout(300)
+    c = p.evaluate("()=>({btns:document.querySelectorAll('.foldbtn').length, bodies:document.querySelectorAll('.secbody').length, h:[...document.querySelectorAll('.prose h2, .prose h3, .bbody h3')].filter(h=>!h.querySelector('.foldbtn')).length, tf:document.querySelectorAll('details.tblfold').length, tbl:document.querySelectorAll('.prose div.tbl, .bbody div.tbl').length, unfolded:[...document.querySelectorAll('.prose div.tbl, .bbody div.tbl')].filter(d=>!d.closest('details')).length, big:document.querySelectorAll('details.big-table').length, open:[...document.querySelectorAll('details.tblfold')].filter(d=>d.open).length, nested:document.querySelectorAll('details.tblfold details.tblfold, details.big-table details.tblfold').length, hidden:[...document.querySelectorAll('.secbody')].filter(b=>b.hidden).length})")
+    check('every heading of the report and the briefs folds (one button, one body each)', c['btns'] == c['bodies'] and c['btns'] > 1500 and c['h'] == 0, c)
+    check('every table of the report and the briefs folds once (big tables keep their own fold); all open by default', c['unfolded'] == 0 and c['tf'] + c['big'] == c['tbl'] and c['open'] == c['tf'] and c['nested'] == 0 and c['hidden'] == 0, c)
+    p.click('#en-s3 .foldbtn'); p.wait_for_timeout(200)
+    check('a heading folds its section and the choice is stored', p.evaluate("()=>document.querySelector('.secbody[data-sec=\"en-s3\"]').hidden && JSON.parse(localStorage.getItem('qmap.folds'))['en-s3']===1"))
+    p.evaluate("location.hash='#en-s3-1'"); p.wait_for_timeout(400)
+    check('a link into the folded section opens it', p.evaluate("()=>!document.querySelector('.secbody[data-sec=\"en-s3\"]').hidden && Math.abs(document.getElementById('en-s3-1').getBoundingClientRect().top)<80"))
+    p.click('.secbody[data-sec="en-s3-1"] details.tblfold summary'); p.wait_for_timeout(200)
+    check('a table folds under its caption and the choice is stored', p.evaluate("()=>!document.querySelector('.secbody[data-sec=\"en-s3-1\"] details.tblfold').open && /\"c\"/.test(localStorage.getItem('qmap.tfolds')||'')"))
+    p.evaluate("history.replaceState(null,'',location.pathname)")   # a hash in the URL opens its section on load, by design
+    p.reload(wait_until='load'); p.wait_for_function("document.querySelectorAll('.foldbtn').length>0", timeout=60000); p.wait_for_timeout(300)
+    check('choices survive a reload', p.evaluate("()=>document.querySelector('.secbody[data-sec=\"en-s3\"]').hidden && !document.querySelector('.secbody[data-sec=\"en-s3-1\"] details.tblfold').open"))
+    bf = p.evaluate("()=>{const s=document.getElementById('brief-transmon'); return {btns:s.querySelectorAll('.foldbtn').length, src:!s.querySelector('.secbody details.fold-src'), en:s.querySelectorAll('.lang-en .foldbtn, [lang=en] .foldbtn').length};}")
+    check('a brief\'s sections fold and its sources fold stays outside them', bf['btns'] >= 8 and bf['src'], bf)
+    errs = [e for e in errors if 'ERR_TUNNEL' not in e and 'net::' not in e]
+    check('0 console errors', not errs, errs[:3])
+    ctx.close(); b.close()
+    return fails
+
+
 def fullscreen(pw):
     """23 Sep 2026: the map's full-screen mode. The map block takes the screen (Fullscreen API, or the fixed fallback), the wrapper is
     sized to the screen, fit width / fit height / 1:1 keep working on that box, the glyph legend folds and unfolds, leaving restores
@@ -666,6 +762,6 @@ def fullscreen(pw):
 
 if __name__ == '__main__':
     with sync_playwright() as pw:
-        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800) + sorting(pw, 1280, 900) + sorting(pw, 400, 800) + chapter8(pw, 1280, 900) + chapter8(pw, 400, 800) + laptop(pw) + selections(pw) + hints(pw) + fullscreen(pw) + review23b(pw) + review23c(pw)
+        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800) + sorting(pw, 1280, 900) + sorting(pw, 400, 800) + chapter8(pw, 1280, 900) + chapter8(pw, 400, 800) + laptop(pw) + selections(pw) + hints(pw) + fullscreen(pw) + review23b(pw) + review23c(pw) + strip(pw) + folds(pw)
     print('RESULT:', 'PASS' if not f else f'FAIL {f}')
     sys.exit(1 if f else 0)

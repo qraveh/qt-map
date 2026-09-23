@@ -406,6 +406,69 @@ def tag_sortables(h):
     for num,kind,nth in SORT_TABLES: h=tag_sortable(h,num,kind,nth)
     return h
 
+# ---------- folding (23 Sep 2026, the editor's request): every titled section and every table folds; defaults as before (open,
+# except the two big tables), the reader's choices remembered per browser; a link into a folded section opens it (FOLD_JS)
+FOLD_BTN='<button type="button" class="foldbtn" data-sec="{sid}" aria-expanded="true" title="collapse / expand"></button>'
+def fold_tables(h,lang,idprefix=''):
+    """each div.tbl becomes details.tblfold (open); a bold caption paragraph just before it becomes the summary; a table the
+    build already put behind a big-table fold is left alone"""
+    out=[]; pos=0; k=0; pre_id=idprefix or lang
+    for m in re.finditer(r'<div class="tbl"[^>]*>',h):
+        s=m.start()
+        if s<pos: continue
+        e=h.find('</table></div>',s)
+        if e<0: continue
+        e+=len('</table></div>')
+        pre=h[pos:s]
+        if re.search(r'<details class="fold big-table">\s*<summary>(?:(?!</summary>).)*</summary>\s*$',pre,re.S):
+            out.append(pre+h[s:e]); pos=e; continue
+        cap=re.search(r'<p>(<strong>(?:(?!</strong>).)*</strong>)</p>\s*$',pre,re.S)
+        if cap: summary=cap.group(1); pre=pre[:cap.start()]
+        else: summary='<span class="tlbl">'+('table' if lang=='en' else 'таблица')+'</span>'
+        tid=f'{pre_id}-tbl-{k}'; k+=1
+        out.append(pre+f'<details class="tblfold" id="{tid}" data-def="1" open><summary>{summary}</summary>'+h[s:e]+'</details>'); pos=e
+    out.append(h[pos:]); return ''.join(out)
+def foldable(h,lang,levels=('h2','h3'),idprefix=''):
+    """headings of the given levels get a chevron button; the content up to the next heading of the same or a higher level (or a
+    top-level brief fold) is wrapped in div.secbody[data-sec=id]; headings without an id get one from idprefix"""
+    h=fold_tables(h,lang,idprefix)
+    pat=re.compile(r'<(h2|h3)((?: [^>]*)?)>(.*?)</\1>|<details class="fold bfold[^>]*>',re.S)
+    out=[]; pos=0; open_lv=[]; k=0
+    for m in pat.finditer(h):
+        lv=m.group(1)
+        if lv is None:   # a brief's own fold (sources, open items): a boundary — no section body swallows it
+            out.append(h[pos:m.start()]); pos=m.start()
+            while open_lv: out.append('</div>'); open_lv.pop()
+            continue
+        if lv not in levels: continue
+        attrs=m.group(2) or ''; inner=m.group(3)
+        out.append(h[pos:m.start()]); pos=m.end()
+        while open_lv and open_lv[-1]>=lv: out.append('</div>'); open_lv.pop()
+        idm=re.search(r' id="([^"]+)"',attrs)
+        if idm: sid=idm.group(1)
+        else: sid=f'{idprefix}-sec-{k}'; attrs+=f' id="{sid}"'
+        k+=1
+        out.append(f'<{lv}{attrs}>{inner}{FOLD_BTN.replace("{sid}",sid)}</{lv}><div class="secbody" data-sec="{sid}">'); open_lv.append(lv)
+    out.append(h[pos:])
+    while open_lv: out.append('</div>'); open_lv.pop()
+    return ''.join(out)
+FOLD_JS=r"""(function(){ var KEY='qmap.folds', closed={}; try{ closed=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){}
+function q(sel,id){ return document.querySelector(sel+'[data-sec="'+(window.CSS&&CSS.escape?CSS.escape(id):id)+'"]'); }
+function set(id,open,save){ var b=q('.secbody',id), btn=q('.foldbtn',id); if(!b)return; b.hidden=!open; if(btn){ btn.setAttribute('aria-expanded',String(open)); var hd=btn.closest('h2,h3'); if(hd)hd.classList.toggle('folded',!open); }
+  if(save){ if(open)delete closed[id]; else closed[id]=1; try{ localStorage.setItem(KEY,JSON.stringify(closed)); }catch(e){} } }
+document.querySelectorAll('.foldbtn[data-sec]').forEach(function(btn){ var id=btn.dataset.sec; if(closed[id])set(id,false,false);
+  var hd=btn.closest('h2,h3'); if(!hd)return; hd.classList.add('foldable');
+  hd.addEventListener('click',function(ev){ if(ev.target.closest('a'))return; ev.preventDefault(); var b=q('.secbody',id); if(b)set(id,b.hidden,true); }); });
+function reveal(hash){ if(!hash||hash.length<2)return; var el=null; try{ el=document.getElementById(decodeURIComponent(hash.slice(1))); }catch(e){} if(!el)return;
+  for(var p=el.parentElement;p;p=p.parentElement){ if(p.classList&&p.classList.contains('secbody')&&p.hidden)set(p.dataset.sec,true,false); if(p.tagName==='DETAILS'&&!p.open)p.open=true; }
+  if(el.matches&&el.matches('.secbody[hidden]'))set(el.dataset.sec,true,false); }
+document.addEventListener('click',function(ev){ var a=ev.target.closest&&ev.target.closest('a[href^="#"]'); if(a)reveal(a.getAttribute('href')); },true);
+window.addEventListener('hashchange',function(){ reveal(location.hash); }); reveal(location.hash);
+window.__revealSection=reveal; window.__setFold=set;
+var TK='qmap.tfolds', tf={}; try{ tf=JSON.parse(localStorage.getItem(TK)||'{}')||{}; }catch(e){}
+document.querySelectorAll('details.tblfold[id]').forEach(function(d){ var def=d.getAttribute('data-def')==='1'; if(tf[d.id]==='c')d.open=false; else if(tf[d.id]==='o')d.open=true;
+  d.addEventListener('toggle',function(){ if(d.open===def)delete tf[d.id]; else tf[d.id]=d.open?'o':'c'; try{ localStorage.setItem(TK,JSON.stringify(tf)); }catch(e){} }); });
+})();"""
 # ---------- map section block
 def map_block(lang,gsec='8'):
     en=lang=='en'
@@ -461,8 +524,8 @@ MAPUI='''<div class="mapbar" id="mapbar">
 </div>
 {MAPLEAD}
 <div class="pcwrap" id="pcwrap"><h3 class="lang-en">Technologies across the seven attributes — a parallel-coordinates view</h3><h3 class="lang-ru">Технологии по семи атрибутам — вид в параллельных координатах</h3>
-<p class="lang-en">Each polyline is one technology (a station of the map, a node of the graph — the three words name the same thing in its three homes: the field, the map, the data); the vertical axes are its seven design attributes (a)–(g) of §7.1. Hover to name a line, click to select it on the map. Bundles reveal the diagonal (natural carriers run through optical control and transport; fabricated ones through microwave/electrical control and static wiring); lines that cross the bundles are the off-diagonal technologies.</p>
-<p class="lang-ru">Каждая ломаная — одна технология (станция карты, узел графа — три слова называют одно и то же в трёх его домах: отрасли, карте, данных); вертикальные оси — её семь атрибутов проектирования (a)–(g) из §7.1. Наведите, чтобы назвать линию; кликните, чтобы выбрать её на карте. Пучки показывают диагональ (естественные носители идут через оптическое управление и транспорт; изготовленные — через СВЧ/электрическое управление и статическую разводку); линии, пересекающие пучки, — off-diagonal технологии.</p>
+<p class="lang-en">Each polyline is one technology (a station of the map, a node of the graph — the three words name the same thing in its three homes: the field, the map, the data); the vertical axes are its seven design attributes (a)–(g) of §7.1. Hover to name a line — its station lights on the map, and a hovered station lights its line; click a line to select the station. The axes are the map's lenses: click an axis title to colour the map by that attribute, click a value on an axis to keep only the technologies with it (Ctrl-click adds a value); the lit, dimmed and dashed lines follow the map's selection. Bundles reveal the diagonal (natural carriers run through optical control and transport; fabricated ones through microwave/electrical control and static wiring); lines that cross the bundles are the off-diagonal technologies.</p>
+<p class="lang-ru">Каждая ломаная — одна технология (станция карты, узел графа — три слова называют одно и то же в трёх его домах: отрасли, карте, данных); вертикальные оси — её семь атрибутов проектирования (a)–(g) из §7.1. Наведите на линию, чтобы назвать её — её станция подсветится на карте, а наведение на станцию подсвечивает её линию; клик по линии выбирает станцию. Оси — это линзы карты: клик по заголовку оси раскрашивает карту по этому атрибуту, клик по значению на оси оставляет только технологии с этим значением (Ctrl-клик добавляет значение); подсвеченные, приглушённые и пунктирные линии следуют выбору на карте. Пучки показывают диагональ (естественные носители идут через оптическое управление и транспорт; изготовленные — через СВЧ/электрическое управление и статическую разводку); линии, пересекающие пучки, — off-diagonal технологии.</p>
 <div id="pc"></div></div>'''
 # assemble content with both languages
 def toc_html(toc,lang,gsec='8'):
@@ -623,12 +686,14 @@ def build(cfg=PUBLIC):
     ids={b['id'] for b in B}
     colours=BR.family_colours(G)
     BR.TOOLTIPS=lambda h,lang:tooltips(h,lang,briefs=True)
+    BR.FOLD=lambda h,lang,bid:foldable(h,lang,levels=('h3',),idprefix='brief-'+bid+'-'+lang)
     briefs_block=BR.briefs_section_html(B,brief_md2html,colours)
     en_html,en_toc=convert(EN,'en'); ru_html,ru_toc=convert(RU,'ru')
     en_html=insert_after_h3_table(en_html,'3.1',radars_block('en')); ru_html=insert_after_h3_table(ru_html,'3.1',radars_block('ru'))
     en_html=tag_sortables(en_html); ru_html=tag_sortables(ru_html)
     en_html=BR.link_node_ids(en_html,ids); ru_html=BR.link_node_ids(ru_html,ids)
     en_html=BR.autolink(en_html); ru_html=BR.autolink(ru_html)
+    en_html=foldable(en_html,'en'); ru_html=foldable(ru_html,'ru')
     mapsec_en=map_block('en',cfg['graph_sec']); mapsec_ru=map_block('ru',cfg['graph_sec'])
     en_a,en_b=split_after_s2(en_html,'en'); ru_a,ru_b=split_after_s2(ru_html,'ru')
     en_b1,en_b2=split_before_num(en_b,en_toc,cfg['sources_num']); ru_b1,ru_b2=split_before_num(ru_b,ru_toc,cfg['sources_num'])
@@ -668,7 +733,7 @@ def build(cfg=PUBLIC):
 <script>{JS}</script>
 <script>{BRIEF_JS}</script>
 <script>window.__TIPS={json.dumps(tips_dict(),ensure_ascii=False)};</script>
-<script>{GTIP_JS}</script>
+<script>{GTIP_JS}</script><script>{FOLD_JS}</script>
 <script>if(window.__relabelMap)window.__relabelMap();</script>
 '''
     open(cfg['out_body'],'w',encoding='utf-8',newline='\n').write(body)

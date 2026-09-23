@@ -105,6 +105,21 @@ main{min-width:0}
 .prose ol.refs li:target{background:var(--surface2);box-shadow:0 0 0 4px var(--surface2);border-radius:3px}
 .prose ol.refs li a{overflow-wrap:anywhere}
 .prose .refnote{font-size:.92em;color:var(--muted);margin-top:6px}
+/* folding (23 Sep 2026): headings carry a chevron and toggle their section; tables fold under their caption */
+.foldbtn{appearance:none;border:0;background:transparent;color:var(--muted);width:22px;height:22px;padding:0;margin-left:6px;cursor:pointer;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;flex:none}
+.foldbtn:hover{color:var(--accent);background:var(--surface2)}
+.foldbtn::before{content:"▾";font-size:12px;line-height:1;transition:transform .15s ease}
+.foldbtn[aria-expanded="false"]::before{transform:rotate(-90deg)}
+h2.foldable,h3.foldable{cursor:pointer}
+h2.folded,h3.folded{color:var(--ink2)}
+.secbody[hidden]{display:none}
+details.tblfold>summary{cursor:pointer;list-style:none;display:flex;align-items:baseline;gap:8px;margin:.8em 0 .3em;max-width:78ch;color:var(--ink)}
+details.tblfold>summary::-webkit-details-marker{display:none}
+details.tblfold>summary::before{content:"▾";color:var(--muted);font-size:11px;flex:none;position:relative;top:-1px}
+details.tblfold:not([open])>summary::before{content:"▸"}
+details.tblfold>summary .tlbl{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+details.tblfold>summary:hover{color:var(--accent)}
+details.tblfold>summary:hover .tlbl{color:var(--accent)}
 /* tooltips on terms: a faint dotted underline marks a term the page explains in place; the text is shown by #gtip (script) */
 .tt{text-decoration:underline dotted;text-decoration-color:var(--muted);text-underline-offset:3px;cursor:help;outline:none}
 .tt:hover,.tt:focus{text-decoration-color:var(--accent)}
@@ -342,11 +357,19 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .pcwrap p{margin:0 0 6px;color:var(--ink2);font-size:13px}
 .pcwrap svg{width:100%;height:auto;display:block;font-family:"Golos Text",system-ui,sans-serif}
 .pc-axis line{stroke:var(--rule)}
-.pc-axis text{fill:var(--muted);font-size:10.5px}
-.pc-axis text.t{fill:var(--ink2);font-weight:600;font-size:11.5px}
+.pc-axis text{fill:var(--muted);font-size:10.5px;paint-order:stroke;stroke:var(--surface);stroke-width:3px;stroke-linejoin:round}
+.pc-axis text.t{fill:var(--ink2);font-weight:600;font-size:11.5px;cursor:pointer}
+.pc-axis text.t:hover,.pc-axis text.tick:hover{fill:var(--accent)}
+.pc-axis text.t.active{fill:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.pc-axis text.tick{cursor:pointer}
+.pc-axis text.tick.pressed{fill:var(--accent);font-weight:700}
+.pc-axis text:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
 .pcline{fill:none;stroke-width:1.1;opacity:.45}
-.pcline.hi{stroke-width:2.6;opacity:1}
+.pcline.hi,.pcline.hover{stroke-width:2.6;opacity:1}
 .pcline.dim{opacity:.06}
+.pcline.dim.hover{opacity:.7}
+.pcline.altuse{stroke-dasharray:5 3}
+.station.hover rect.box{stroke-width:2.5}
 /* ---------- technology briefs ---------- */
 [hidden]{display:none !important}
 .insp .briefbtn{display:inline-flex;align-items:center;gap:6px;margin:10px 0 2px;padding:5px 12px;border:1px solid var(--accent);border-radius:999px;background:var(--surface);color:var(--accent);font:inherit;font-size:13px;font-weight:600;cursor:pointer}

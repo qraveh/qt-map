@@ -66,7 +66,51 @@ def diff(exp, act):
         if e != a:
             out[k] = {'missing': sorted(map(list, e - a) if k == 'edges' else e - a),
                       'extra': sorted(map(list, a - e) if k == 'edges' else a - e)}
+    # the strip (ADJ-13): bright = lit, thick = focus, dashed = the machine's alternate-only lit stations, axis mark = the lens's
+    # axis, pressed ticks = the filter values
+    pc = act.get('pc') if isinstance(act, dict) else None
+    if pc is not None and 'pc_bright' in exp:
+        # pressed ticks exist only on the axis that stands for the lens itself (family, status, destr, mid, det, place have none)
+        exp_pressed = {(l, page_key(l, v)) for l, v in exp['pc_pressed'] if oracle.AXIS_LENS.get(oracle.LENS_AXIS.get(l)) == l}
+        for k, e, a in (('pc_bright', set(exp['pc_bright']), set(pc['bright'])), ('pc_alt', set(exp['pc_alt']), set(pc['alt'])), ('pc_pressed', exp_pressed, set(pc['pressed']))):
+            if e != a:
+                out[k] = {'missing': sorted(map(str, e - a)), 'extra': sorted(map(str, a - e))}
+        for k in ('pc_hi', 'pc_axis'):
+            if (exp[k] or None) != (pc[k.split('_')[1]] or None):
+                out[k] = {'expected': exp[k], 'actual': pc[k.split('_')[1]]}
     return out
+
+
+def pc_value_ok(model, state, sid, shown):
+    """the value a line shows for the lens (page key) is one the station carries; under a filter a lit multi-value station shows a
+    value it is lit for; a multi-family station shows 'multi' under the family lens"""
+    lens, values = state.get('lens'), set(state.get('values') or ())
+    vals = {page_key(lens, v) for v in model.lens_attr[lens][sid]}
+    pvals = {page_key(lens, v) for v in values}
+    if shown not in vals and not (lens == 'family' and shown in ('multi', 'none')):
+        return False
+    if pvals and lens in ('f', 'place') and (vals & pvals) and shown not in pvals:
+        return False
+    return True
+
+
+def strip_checks(model, state, act):
+    """page-internal consistency of the strip with the stations: the shown lens value is one the station carries (the lit one
+    under a filter), the line's colour is the station's outline colour under a non-family lens, no hover residue"""
+    fails = []
+    pc = act.get('pc')
+    if not pc:
+        return fails
+    bad = [sid for sid, v in pc['lv'].items() if not pc_value_ok(model, state, sid, v)]
+    if bad:
+        fails.append({'check': 'pc-lens-value', 'stations': bad[:8]})
+    if state.get('lens') not in (None, 'family'):
+        bad = [sid for sid in act['stations'] if pc['stroke'].get(sid) != act['pc']['st_stroke'].get(sid)]
+        if bad:
+            fails.append({'check': 'pc-stroke-vs-station', 'stations': bad[:8]})
+    if pc['hover'] or pc['st_hover']:
+        fails.append({'check': 'pc-hover-residue', 'lines': pc['hover'][:4], 'stations': pc['st_hover'][:4]})
+    return fails
 
 
 def sizes(r):
@@ -163,6 +207,9 @@ def transform(m):
 def compare_record(model, state, act, key, extra=None):
     exp = oracle.expected(model, state)
     d = diff(exp, act)
+    sc = strip_checks(model, state, act) if isinstance(act, dict) and act.get('pc') else []
+    if sc:
+        d['pc_checks'] = sc
     rec = {'key': key, 'state': ser_state(state), 'expected': sizes(exp), 'actual': sizes(act), 'agree': not d}
     if d:
         rec['diff'] = d
@@ -487,6 +534,107 @@ def run_random(model, a):
         m.close(); o.finish()
 
 
+# ---------------------------------------------------------------- the strip as a control (ADJ-13, 23 Sep 2026)
+def apply_state_via_strip(m, s, fwd, ticks):
+    """the same state, driven from the strip where the strip has a control: lens by its axis title, values by ticks, focus by its
+    line; isolate, machine and edge toggles by the map's controls (the strip has none). Returns None, or the reason it cannot."""
+    m.reset()
+    lens = s['lens']
+    if lens not in oracle.LENS_AXIS:
+        return 'no axis for lens ' + str(lens)
+    vals = sorted(s['values'], key=oracle._sortkey)
+    for v in vals:
+        if (lens, fwd[lens].get(v, v)) not in ticks:
+            return 'no tick for %s=%s' % (lens, v)
+    for t in TOG:
+        if s['toggles'].get(t):
+            m.toggle(t, True)
+    m.pc_axis(lens)
+    for i, v in enumerate(vals):
+        m.pc_tick(lens, fwd[lens].get(v, v), multi=(i > 0))
+    if s['isolate']:
+        m.isolate(s['isolate'])
+    if s.get('machine'):
+        m.select_machine(s['machine'])
+    if s['focus']:
+        m.pc_click(s['focus'])
+    return None
+
+
+def full_read(m):
+    r = m.read(); ps = m.page_state()
+    return {'stations': r['stations'], 'lines': r['lines'], 'edges': r['edges'], 'pc_bright': r['pc']['bright'], 'pc_hi': r['pc']['hi'],
+            'pc_alt': r['pc']['alt'], 'pc_axis': r['pc']['axis'], 'pc_pressed': r['pc']['pressed'], 'pc_lv': r['pc']['lv'], 'page': ps}
+
+
+def run_strip(model, a):
+    """S1 control equivalence (map-driven state == strip-driven state); S2 axis titles; S3 strip click == map click, ADJ-12 included;
+    S4 hover is transient both ways. The differential suites carry the mirror checks (pc_* in every record)."""
+    fwd, inv = build_maps(model)
+    n = a.limit or a.n or 300
+    rng = random.Random(a.seed)
+    o = Out(a.out, 'strip', n)
+    m = open_page()
+    ticks = set(m.pc_ticks())
+    try:
+        for i in range(n):
+            k = f'strip-{a.seed}-{i}'
+            if k in o.done_keys:
+                continue
+            s = oracle.random_state(model, rng)
+            viol = []; note = {}
+            try:
+                # S1: the same state from the map and from the strip
+                apply_state(m, s, fwd); A = full_read(m)
+                why = apply_state_via_strip(m, s, fwd, ticks)
+                if why is None:
+                    B = full_read(m)
+                    for key in ('stations', 'lines', 'edges', 'pc_bright', 'pc_alt', 'pc_pressed'):
+                        if set(A[key]) != set(B[key]):
+                            viol.append({'check': 'S1-strip-vs-map-' + key, 'missing': sorted(map(str, set(A[key]) - set(B[key])))[:8], 'extra': sorted(map(str, set(B[key]) - set(A[key])))[:8]})
+                    for key in ('pc_hi', 'pc_axis', 'pc_lv', 'page'):
+                        if A[key] != B[key]:
+                            viol.append({'check': 'S1-strip-vs-map-' + key, 'map': str(A[key])[:200], 'strip': str(B[key])[:200]})
+                    note['s1'] = 'compared'
+                else:
+                    note['s1'] = 'skipped: ' + why
+                # S2: an axis title sets its lens with no filter and marks itself
+                ax = rng.choice(list(oracle.AXIS_LENS))
+                m.pc_axis(oracle.AXIS_LENS[ax]); r2 = m.read(); ps2 = m.page_state()
+                if ps2['lens'] != oracle.AXIS_LENS[ax] or ps2['values'] or r2['pc']['axis'] != ax or r2['pc']['pressed']:
+                    viol.append({'check': 'S2-axis-title', 'axis': ax, 'page': ps2, 'mark': r2['pc']['axis'], 'pressed': sorted(map(str, r2['pc']['pressed']))[:4]})
+                # S3: a strip click is a map click (focus, with the ADJ-12 releases)
+                apply_state(m, s, fwd)
+                x = rng.choice(model.station_ids)
+                m.focus(x); A3 = full_read(m)
+                apply_state(m, s, fwd)
+                m.pc_click(x); B3 = full_read(m)
+                if A3 != B3:
+                    viol.append({'check': 'S3-strip-click-vs-map-click', 'station': x, 'diff': {kk: [str(A3[kk])[:120], str(B3[kk])[:120]] for kk in A3 if A3[kk] != B3[kk]}})
+                # S4: hover is transient — the hovered line and station light, nothing else changes, and nothing remains
+                apply_state(m, s, fwd); before = full_read(m)
+                y = rng.choice(model.station_ids)
+                m.pc_hover(y); h = m.read()
+                if h['pc']['hover'] != [y] or h['pc']['st_hover'] != [y]:
+                    viol.append({'check': 'S4-strip-hover-lights-both', 'station': y, 'line_hover': h['pc']['hover'], 'station_hover': h['pc']['st_hover']})
+                m.pc_unhover(y)
+                m.station_hover(y); h2 = m.read()
+                if h2['pc']['hover'] != [y]:
+                    viol.append({'check': 'S4-station-hover-lights-line', 'station': y, 'line_hover': h2['pc']['hover']})
+                m.station_unhover(y); after = full_read(m)
+                if before != after:
+                    viol.append({'check': 'S4-hover-residue', 'diff': {kk: [str(before[kk])[:120], str(after[kk])[:120]] for kk in before if before[kk] != after[kk]}})
+            except Exception as e:  # noqa: BLE001
+                viol.append({'check': 'action-error', 'error': f'{type(e).__name__}: {str(e)[:300]}'})
+                m.close(); m = open_page(); ticks = set(m.pc_ticks())
+            o.write({'key': k, 'state': ser_state(s), 'agree': not viol, 'violations': viol, 'note': note})
+    finally:
+        errs = m.errors(); m.close()
+        if errs:
+            (pathlib.Path(a.out) / 'strip.console.txt').write_text('\n'.join(errs))
+        o.finish()
+
+
 # ---------------------------------------------------------------- metamorphic (on the page)
 def rd(m):
     r = m.read(); return {'stations': r['stations'], 'lines': r['lines'], 'edges': r['edges']}
@@ -716,7 +864,7 @@ def run_summary(model, a):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('suite', choices=['single', 'pairs', 'multi', 'machines', 'random', 'metamorphic', 'static', 'summary'])
+    ap.add_argument('suite', choices=['single', 'pairs', 'multi', 'machines', 'random', 'metamorphic', 'strip', 'static', 'summary'])
     ap.add_argument('--n', type=int, default=None)
     ap.add_argument('--seed', type=int, default=1)
     ap.add_argument('--out', default=str(HERE / 'results'))
@@ -726,7 +874,7 @@ def main():
     {'single': lambda: run_differential('single', model, a), 'pairs': lambda: run_differential('pairs', model, a),
      'multi': lambda: run_differential('multi', model, a), 'machines': lambda: run_differential('machines', model, a),
      'random': lambda: run_random(model, a),
-     'metamorphic': lambda: run_metamorphic(model, a), 'static': lambda: run_static(model, a),
+     'metamorphic': lambda: run_metamorphic(model, a), 'strip': lambda: run_strip(model, a), 'static': lambda: run_static(model, a),
      'summary': lambda: run_summary(model, a)}[a.suite]()
 
 

@@ -26,7 +26,17 @@ _READ_JS = r"""() => {
     if(r.width===0&&r.height===0)return; if(getComputedStyle(e).display==='none')return;
     for(let a=e.parentElement;a&&a!==document.body;a=a.parentElement){ const ox=getComputedStyle(a).overflowX; if(ox!=='visible'&&ox!=='clip'){ const ar=a.getBoundingClientRect(); if(ar.left>=-1&&ar.right<=vw+1)return; } }
     if(r.left<-1||r.right>vw+1) over.push((e.id||e.className&&e.className.baseVal===undefined&&e.className||e.tagName)+''); });
-  return {stations, lines, edges, legend, altuse, machine_card,
+  // the strip (ADJ-13): every line's classes, colour and shown lens value; the axis marks
+  const pcl=[...document.querySelectorAll('#pc path.pcline')];
+  const pc={bright:pcl.filter(p=>!p.classList.contains('dim')).map(p=>p.dataset.node), hi:pcl.filter(p=>p.classList.contains('hi')).map(p=>p.dataset.node),
+    alt:pcl.filter(p=>p.classList.contains('altuse')).map(p=>p.dataset.node), hover:pcl.filter(p=>p.classList.contains('hover')).map(p=>p.dataset.node),
+    lv:Object.fromEntries(pcl.map(p=>[p.dataset.node,p.dataset.lv])), stroke:Object.fromEntries(pcl.map(p=>[p.dataset.node,p.getAttribute('stroke')])),
+    axis:[...document.querySelectorAll('#pc text.t.active')].map(t=>t.parentNode.getAttribute('data-axis')),
+    pressed:[...document.querySelectorAll('#pc text.tick.pressed')].map(t=>[t.dataset.lens,t.dataset.lv]),
+    label:(document.querySelector('#pc svg > text')||{textContent:''}).textContent,
+    st_hover:st.filter(g=>g.classList.contains('hover')).map(idOf),
+    st_stroke:Object.fromEntries(st.map(g=>[idOf(g),g.querySelector('rect.box').getAttribute('stroke')]))};
+  return {stations, lines, edges, legend, altuse, machine_card, pc,
     machine_select: (document.getElementById('machine')||{value:null}).value||null,
     path_card: insp.hidden?'':insp.innerText.trim(),
     selection_summary: document.getElementById('barsum').hidden?'':(document.getElementById('barsum').innerText||'').trim(),
@@ -246,6 +256,7 @@ class MapPage:
 
     # ---------- readers
     def read(self):
+        self.page.mouse.move(2, 2)   # a read is pointer-free: a click leaves the pointer over its target, which the page lights on hover
         r = self.page.evaluate(_READ_JS)
         r['stations'] = set(r['stations'])
         r['altuse'] = set(r['altuse'])
@@ -253,7 +264,57 @@ class MapPage:
         r['edges'] = {tuple(e) for e in r['edges']}
         r['edges_toggle_names'] = {(u, v, EDGE_TYPE.get(t, t)) for u, v, t in r['edges']}
         r['bbox_overflow'] = bool(r['overflow_elems']) or r['doc_hscroll']
+        pc = r['pc']
+        pc['bright'] = set(pc['bright']); pc['alt'] = set(pc['alt']); pc['hi'] = pc['hi'][0] if pc['hi'] else None
+        pc['pressed'] = {tuple(x) for x in pc['pressed']}; pc['axis'] = pc['axis'][0] if pc['axis'] else None
         return r
+
+    # ---- the strip as a control (ADJ-13): the same page state must follow as from the map's own controls
+    def pc_click(self, node_id):
+        """click the station's line: the station becomes the focus (with ADJ-12 releases), the map scrolls to it"""
+        self.page.evaluate("id=>{const p=document.querySelector('#pc path.pcline[data-node=\"'+id+'\"]'); p.dispatchEvent(new MouseEvent('click',{bubbles:true}));}", node_id)
+        self.page.wait_for_function("id=>{const g=document.querySelector('#mapwrap g.station.sel'); return !!g && g.querySelector('text.id').textContent===id;}", arg=node_id)
+        self._state['focus'] = node_id
+        ps = self.page_state()
+        self._state['isolate'] = ps['isolate']; self._state['machine'] = ps['machine']
+
+    def pc_axis(self, lens):
+        """click an axis title: that lens, no filter"""
+        self.page.evaluate("L=>{const t=document.querySelector('#pc text.t[data-lens=\"'+L+'\"]'); t.dispatchEvent(new MouseEvent('click',{bubbles:true}));}", lens)
+        self.page.wait_for_function("L=>document.getElementById('lens').value===L", arg=lens)
+        self._state['lens'] = lens; self._state['values'] = set()
+
+    def pc_tick(self, lens, value, multi=False):
+        """click a tick on the axis that stands for the lens: keep only the stations with that value (multi = Ctrl-click adds it)"""
+        self.page.evaluate("([L,v,m])=>{const t=document.querySelector('#pc text.tick[data-lens=\"'+L+'\"][data-lv=\"'+v+'\"]'); if(!t)throw new Error('no tick '+L+'='+v); t.dispatchEvent(new MouseEvent('click',{bubbles:true,ctrlKey:m}));}", [lens, value, bool(multi)])
+        self.page.wait_for_function("L=>document.getElementById('lens').value===L", arg=lens)
+        if self._state['lens'] != lens:
+            self._state['lens'] = lens; self._state['values'] = set()
+        vals = set(self._state['values']) if multi else set()
+        if multi and value in vals:
+            vals.discard(value)
+        elif multi:
+            vals.add(value)
+        else:
+            vals = set() if self._state['values'] == {value} else {value}
+        self._state['values'] = vals
+        self.page.wait_for_function("vs=>{const p=[...document.querySelectorAll('#lenslegend [data-lv][aria-pressed=\"true\"]')].map(b=>b.dataset.lv).sort(); return JSON.stringify(p)===JSON.stringify(vs);}", arg=sorted(vals))
+
+    def pc_hover(self, node_id):
+        self.page.evaluate("id=>{const p=document.querySelector('#pc path.pcline[data-node=\"'+id+'\"]'); p.dispatchEvent(new MouseEvent('mouseenter',{bubbles:false}));}", node_id)
+
+    def pc_unhover(self, node_id):
+        self.page.evaluate("id=>{const p=document.querySelector('#pc path.pcline[data-node=\"'+id+'\"]'); p.dispatchEvent(new MouseEvent('mouseleave',{bubbles:false}));}", node_id)
+
+    def station_hover(self, node_id):
+        self.page.evaluate("id=>{const g=[...document.querySelectorAll('#mapwrap g.station')].find(x=>x.querySelector('text.id').textContent===id); g.dispatchEvent(new MouseEvent('mouseenter',{bubbles:false}));}", node_id)
+
+    def station_unhover(self, node_id):
+        self.page.evaluate("id=>{const g=[...document.querySelectorAll('#mapwrap g.station')].find(x=>x.querySelector('text.id').textContent===id); g.dispatchEvent(new MouseEvent('mouseleave',{bubbles:false}));}", node_id)
+
+    def pc_ticks(self):
+        """every tick on the strip: [(lens, value)]"""
+        return [tuple(x) for x in self.page.evaluate("()=>[...document.querySelectorAll('#pc text.tick')].map(t=>[t.dataset.lens,t.dataset.lv])")]
 
     def table_rows(self):
         """§7.2 node table in the current language: visible rows in order. The table is static (no sort/filter UI)."""
