@@ -528,8 +528,49 @@ def hints(pw):
     return fails
 
 
+def fullscreen(pw):
+    """23 Sep 2026: the map's full-screen mode. The map block takes the screen (Fullscreen API, or the fixed fallback), the wrapper is
+    sized to the screen, fit width / fit height / 1:1 keep working on that box, the glyph legend folds and unfolds, leaving restores
+    the page layout; the map comes first on the page, the masthead carries no jump link, the ORCID badge and the GitHub link exist."""
+    fails, errors = [], []
+    b = pw.chromium.launch(); ctx = b.new_context(viewport={'width': 1280, 'height': 800}); p = ctx.new_page()
+    def check(label, cond, detail=''):
+        print(f"  [{'ok' if cond else 'FAIL'}] {label}{(' — ' + str(detail)) if (detail and not cond) else ''}")
+        if not cond: fails.append(label)
+    print('fullscreen — 1280×800')
+    p.on('console', lambda m: m.type == 'error' and errors.append(m.text)); p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
+    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000)
+    p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0", timeout=60000); p.wait_for_timeout(500)
+    order = p.evaluate("()=>{const m=document.getElementById('map'), a=document.querySelector('main .prose'); return m.compareDocumentPosition(a) & Node.DOCUMENT_POSITION_FOLLOWING ? 'map-first' : 'prose-first';}")
+    check('the map comes before the prose', order == 'map-first', order)
+    check('no map subtitle heading is visible', p.evaluate("()=>[...document.querySelectorAll('.mapsec h2')].every(h=>h.classList.contains('sr-only'))"))
+    check('no "Jump to the map" link in the masthead', p.evaluate("()=>!document.querySelector('.mast .jump')"))
+    check('ORCID badge links to the author record', p.evaluate("()=>{const a=document.querySelector('.mast a.orcid'); return !!a && a.href==='https://orcid.org/0000-0001-7362-9529' && !!a.querySelector('svg');}"))
+    check('GitHub link carries the icon', p.evaluate("()=>{const a=document.querySelector('.pubmeta a.ghlink'); return !!a && !!a.querySelector('svg') && /github\\.com/.test(a.href);}"))
+    check('eyebrow has no date', p.evaluate("()=>!/\\d{4}-\\d{2}-\\d{2}/.test(document.querySelector('.mast .eyebrow').textContent)"))
+    p.click('#zoom-fs'); p.wait_for_timeout(600)
+    st = p.evaluate("()=>({on:window.__mapFullscreenOn(), api:document.fullscreenElement===document.getElementById('mapbody'), fake:document.getElementById('mapbody').classList.contains('fsfake'), mh:parseFloat(document.getElementById('mapwrap').style.maxHeight)||0, glyph:document.getElementById('glyphlegend').open, pressed:document.getElementById('zoom-fs').getAttribute('aria-pressed')})")
+    check('the button enters full screen (API or fallback) and sizes the wrapper', st['on'] and (st['api'] or st['fake']) and st['mh'] > 200 and st['pressed'] == 'true', st)
+    check('the glyph legend folds in full screen', st['glyph'] is False, st['glyph'])
+    p.click('#zoom-fit'); p.wait_for_timeout(400)
+    s2 = p.evaluate("()=>{const s=document.querySelector('#mapwrap svg'), w=document.getElementById('mapwrap'); return {svgW:+s.getAttribute('width'), wrapW:w.clientWidth};}")
+    check('fit width fills the full-screen wrapper', abs(s2['svgW'] - s2['wrapW']) <= 3, s2)
+    p.click('#zoom-fith'); p.wait_for_timeout(500)
+    s3 = p.evaluate("()=>{const s=document.querySelector('#mapwrap svg'), w=document.getElementById('mapwrap'); return {svgH:+s.getAttribute('height'), wrapH:w.clientHeight, bottom:Math.round(w.getBoundingClientRect().bottom), vh:innerHeight};}")
+    check('fit height fits the map into the screen', s3['svgH'] <= s3['wrapH'] + 1 and s3['bottom'] <= s3['vh'] + 1, s3)
+    p.click('#zoom-100'); p.wait_for_timeout(300)
+    check('1:1 works in full screen', p.evaluate("()=>+document.querySelector('#mapwrap svg').getAttribute('width')>1400"))
+    p.click('#zoom-fs'); p.wait_for_timeout(500)
+    st4 = p.evaluate("()=>({on:window.__mapFullscreenOn(), mh:document.getElementById('mapwrap').style.maxHeight, glyph:document.getElementById('glyphlegend').open, pressed:document.getElementById('zoom-fs').getAttribute('aria-pressed')})")
+    check('leaving restores the layout and the legend', not st4['on'] and st4['mh'] == '' and st4['glyph'] is True and st4['pressed'] == 'false', st4)
+    ctx.close(); b.close()
+    errs = [e for e in errors if not ('fonts.g' in e and ('ERR_TUNNEL' in e or 'net::' in e)) and 'ERR_TUNNEL' not in e]
+    check('0 console errors', not errs, errs[:3])
+    return fails
+
+
 if __name__ == '__main__':
     with sync_playwright() as pw:
-        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800) + sorting(pw, 1280, 900) + sorting(pw, 400, 800) + chapter8(pw, 1280, 900) + chapter8(pw, 400, 800) + laptop(pw) + selections(pw) + hints(pw)
+        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800) + sorting(pw, 1280, 900) + sorting(pw, 400, 800) + chapter8(pw, 1280, 900) + chapter8(pw, 400, 800) + laptop(pw) + selections(pw) + hints(pw) + fullscreen(pw)
     print('RESULT:', 'PASS' if not f else f'FAIL {f}')
     sys.exit(1 if f else 0)

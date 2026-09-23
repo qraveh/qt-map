@@ -85,6 +85,13 @@ main{min-width:0}
 .prose ol ol,.prose ol ul,.prose ul ol{margin:.35em 0 .5em}
 .prose li.def>strong,.prose li.def>p>strong{display:block;margin-bottom:.12em}
 .prose li.def{margin:.55em 0}
+.prose ol.es>li{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+@media (max-width:700px){.prose ol.es>li{text-align:left}}
+.mast .author .orcid{display:inline-flex;align-items:center;gap:5px;text-decoration:none;color:var(--ink2);font-size:14px}
+.mast .author .orcid:hover span{text-decoration:underline}
+.mast .author .orcid-id{flex:none;vertical-align:-3px}
+.pubmeta .ghlink{display:inline-flex;align-items:center;gap:4px;text-decoration:none}
+.pubmeta .ghlink:hover span{text-decoration:underline}
 /* references: source codes and cross-references are links; a source entry's own code is its anchor */
 .prose a.cite{text-decoration:none;font-variant-numeric:tabular-nums}
 .prose a.cite:hover{text-decoration:underline}
@@ -126,7 +133,15 @@ details.fold .tbl{border:0;border-top:1px solid var(--rule);border-radius:0;marg
 .radar .cap b{color:var(--ink)}
 .figcap{font-size:13px;color:var(--muted);margin:4px 0 14px}
 /* map section */
-.mapsec{margin:34px 0 10px}
+.mapsec{margin:18px 0 10px}
+.maphead{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 6px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* full screen: the map block takes the screen; the wrapper's height is set by script to what is left under the bar */
+#mapbody:fullscreen,#mapbody:-webkit-full-screen,#mapbody.fsfake{background:var(--bg);overflow:auto;padding:8px 12px 12px;box-sizing:border-box}
+#mapbody.fsfake{position:fixed;inset:0;z-index:80;width:100vw;height:100vh;height:100dvh}
+#mapbody.fs .mapgrid{border-radius:0 0 10px 10px}
+.zoomctl .zfs i{display:inline-flex;align-items:center;gap:4px;font-style:normal}
+.zoomctl .zfs[aria-pressed="true"]{background:var(--surface2)}
 .mapsec h2{font-size:24px;font-weight:600;margin:0 0 4px;display:flex;gap:14px;align-items:baseline}
 .mapsec h2 .num{font-family:"Unbounded",sans-serif;font-weight:500;font-size:15px;color:var(--muted)}
 .mapsec .lead{color:var(--ink2);max-width:80ch;margin:.2em 0 14px;text-wrap:pretty}

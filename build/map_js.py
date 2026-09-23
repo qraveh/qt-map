@@ -444,6 +444,7 @@ function zoomStep(d){ let i=0; for(let k=1;k<ZSTEPS.length;k++){ if(Math.abs(ZST
   if(zf)zf.addEventListener('click',fitWidth);
   // a fitted map stays fitted when the window changes (resize, rotation, browser zoom); any other zoom action clears the mode
   let rt=null; window.addEventListener('resize',()=>{ if(state.fitMode!=='width')return; clearTimeout(rt); rt=setTimeout(()=>{ if(state.fitMode==='width')fitWidth(); },150); });
+  window.__refit=()=>{ if(state.fitMode==='width')fitWidth(); };
   // fit height: the whole map, top to bottom, in the window — so it first does what align-top does (bar to the top of the
   // window, wrapper allowed to take the rest), instantly, then measures the height actually visible below the wrapper's
   // top edge and fits to that; if the page cannot scroll far enough for the bar to reach the top, the smaller visible
@@ -527,6 +528,27 @@ relabel(); inspectEmpty(); applyLens(); renderPC();
   setC(c); document.querySelectorAll('[data-mapcollapse]').forEach(b=>b.addEventListener('click',()=>setC(!body.hidden)));
   window.__expandMap=()=>setC(false);
   document.querySelectorAll('a[href="#map"]').forEach(a=>a.addEventListener('click',()=>setC(false)));
+})();
+
+// ---------- full screen (23 Sep 2026): the whole map block (bar, legend, map, card, strip) takes the screen; the map wrapper is
+// sized to the screen height on entry and on every resize, so fit width / fit height / zoom keep working on the real box; the
+// browser's own Escape or the button leaves; where the Fullscreen API is missing (iPhone) a fixed full-window layout stands in
+(function(){ const body=document.getElementById('mapbody'), wrap=document.getElementById('mapwrap'); if(!body||!wrap)return;
+  const btns=()=>document.querySelectorAll('[data-mapfs]');
+  function on(){ return document.fullscreenElement===body||document.webkitFullscreenElement===body||body.classList.contains('fsfake'); }
+  function size(){ if(!on())return; const top=wrap.getBoundingClientRect().top-body.getBoundingClientRect().top+body.scrollTop; const h=Math.max(240,body.clientHeight-top-10); wrap.classList.add('tall'); wrap.style.maxHeight=h+'px'; }
+  let glyphWasOpen=null; const gl=document.getElementById('glyphlegend');
+  function paint(){ const f=on(); body.classList.toggle('fs',f); btns().forEach(b=>{ b.setAttribute('aria-pressed',String(f)); b.querySelectorAll('.fs-on').forEach(x=>x.hidden=f); b.querySelectorAll('.fs-off').forEach(x=>x.hidden=!f); });
+    if(f){ if(gl&&glyphWasOpen===null){ glyphWasOpen=gl.open; gl.open=false; } size(); }   // the glyph legend folds to give the map the height; it reopens on leaving
+    else { wrap.style.maxHeight=''; wrap.classList.remove('tall'); if(gl&&glyphWasOpen!==null){ gl.open=glyphWasOpen; glyphWasOpen=null; } }
+    if(window.__refit)window.__refit(); if(window.__sheetRoom)window.__sheetRoom(); if(window.__placeZoom)window.__placeZoom(); }
+  function enter(){ if(window.__expandMap)window.__expandMap(); const req=body.requestFullscreen||body.webkitRequestFullscreen; if(req){ try{ const r=req.call(body); if(r&&r.catch)r.catch(()=>{ body.classList.add('fsfake'); paint(); }); return; }catch(e){} } body.classList.add('fsfake'); paint(); }
+  function leave(){ if(document.fullscreenElement===body&&document.exitFullscreen)document.exitFullscreen(); else if(document.webkitFullscreenElement===body&&document.webkitExitFullscreen)document.webkitExitFullscreen(); body.classList.remove('fsfake'); paint(); }
+  btns().forEach(b=>b.addEventListener('click',()=>on()?leave():enter()));
+  document.addEventListener('fullscreenchange',paint); document.addEventListener('webkitfullscreenchange',paint);
+  document.addEventListener('keydown',ev=>{ if(ev.key==='Escape'&&body.classList.contains('fsfake'))leave(); });
+  let rt=null; window.addEventListener('resize',()=>{ if(!on())return; clearTimeout(rt); rt=setTimeout(()=>{ size(); if(window.__refit)window.__refit(); },120); });
+  window.__mapFullscreen=(f)=>{ f?enter():leave(); return on(); }; window.__mapFullscreenOn=on;
 })();
 
 // ---------- floating card: drag, dock, remember
