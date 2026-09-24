@@ -10,13 +10,14 @@
     "Isaac L. Chuang"
    ],
    "title": "Suppression of Heating Rates in Cryogenic Surface-Electrode Ion Traps",
-   "journal": "Physical Review Letters",
+   "journal": "Phys. Rev. Lett.",
    "volume": "100",
+   "issue": "1",
    "article": "013001",
-   "date": "2007-06-26",
+   "date": "2008-01-10",
    "doi": "10.1103/PhysRevLett.100.013001",
    "arxiv": "0706.3763",
-   "kind": "preprint",
+   "kind": "journal",
    "url": "https://arxiv.org/abs/0706.3763",
    "verified": true
   },
@@ -27,13 +28,14 @@
     "Chetan Nayak"
    ],
    "title": "Measurement-Only Topological Quantum Computation",
-   "journal": "Physical Review Letters",
+   "journal": "Phys. Rev. Lett.",
    "volume": "101",
+   "issue": "1",
    "article": "010501",
-   "date": "2008-02-03",
+   "date": "2008-06-30",
    "doi": "10.1103/PhysRevLett.101.010501",
    "arxiv": "0802.0279",
-   "kind": "preprint",
+   "kind": "journal",
    "url": "https://arxiv.org/abs/0802.0279",
    "verified": true
   },
@@ -43,14 +45,15 @@
     "Sean D. Barrett",
     "Andrew C. Doherty"
    ],
-   "title": "Thresholds for topological codes in the presence of loss",
-   "journal": "Physical Review Letters",
+   "title": "Thresholds for Topological Codes in the Presence of Loss",
+   "journal": "Phys. Rev. Lett.",
    "volume": "102",
+   "issue": "20",
    "article": "200501",
-   "date": "2009-04-22",
+   "date": "2009-05-18",
    "doi": "10.1103/PhysRevLett.102.200501",
    "arxiv": "0904.3556",
-   "kind": "preprint",
+   "kind": "journal",
    "url": "https://arxiv.org/abs/0904.3556",
    "verified": true
   },
@@ -62,11 +65,12 @@
    "title": "Microwave quantum logic gates for trapped ions",
    "journal": "Nature",
    "volume": "476",
-   "pages": "181",
-   "date": "2011-04-18",
+   "issue": "7359",
+   "pages": "181-184",
+   "date": "2011-08-01",
    "doi": "10.1038/nature10290",
    "arxiv": "1104.3573",
-   "kind": "preprint",
+   "kind": "journal",
    "url": "https://arxiv.org/abs/1104.3573",
    "verified": true
   },
@@ -76,7 +80,7 @@
    ],
    "etal": true,
    "title": "Observation of High Coherence in Josephson Junction Qubits Measured in a Three-Dimensional Circuit QED Architecture",
-   "journal": "Physical Review Letters",
+   "journal": "Phys. Rev. Lett.",
    "volume": "107",
    "issue": "24",
    "article": "240501",
@@ -111,7 +115,7 @@
    ],
    "etal": true,
    "title": "100-Fold Reduction of Electric-Field Noise in an Ion Trap Cleaned with In Situ Argon-Ion-Beam Bombardment",
-   "journal": "Physical Review Letters",
+   "journal": "Phys. Rev. Lett.",
    "volume": "109",
    "issue": "10",
    "article": "103001",
@@ -128,9 +132,11 @@
    ],
    "etal": true,
    "title": "Coherent Diabatic Ion Transport and Separation in a Multi-Zone Trap Array",
-   "journal": "Physical Review Letters",
+   "journal": "Phys. Rev. Lett.",
    "volume": "109",
+   "issue": "8",
    "article": "080502",
+   "date": "2012-08-20",
    "pubdate": "2012",
    "doi": "10.1103/PhysRevLett.109.080502",
    "arxiv": "1206.0780",
@@ -146,7 +152,7 @@
     "Andrew N. Cleland"
    ],
    "title": "Surface codes: Towards practical large-scale quantum computation",
-   "journal": "Physical Review A",
+   "journal": "Phys. Rev. A",
    "volume": "86",
    "issue": "3",
    "article": "032324",
@@ -202,11 +208,13 @@
     "R. Barends"
    ],
    "etal": true,
-   "title": "Logic gates at the surface code threshold: Superconducting qubits poised for fault-tolerant quantum computing",
+   "title": "Superconducting quantum circuits at the surface code threshold for fault tolerance",
    "journal": "Nature",
    "volume": "508",
+   "issue": "7497",
    "pages": "500-503",
-   "pubdate": "2014",
+   "date": "2014-04-01",
+   "pubdate": "2014-04",
    "doi": "10.1038/nature13171",
    "arxiv": "1402.4848",
    "kind": "journal",
@@ -219,13 +227,14 @@
    ],
    "etal": true,
    "title": "Qubit architecture with high coherence and fast tunable coupling",
-   "journal": "Physical Review Letters",
+   "journal": "Phys. Rev. Lett.",
    "volume": "113",
+   "issue": "22",
    "article": "220502",
-   "date": "2014-02-28",
+   "date": "2014-11-26",
    "doi": "10.1103/PhysRevLett.113.220502",
    "arxiv": "1402.7367",
-   "kind": "preprint",
+   "kind": "journal",
    "url": "https://arxiv.org/abs/1402.7367",
    "verified": true
   },
@@ -235,7 +244,7 @@
     "Peter van Loock"
    ],
    "title": "3/4-Efficient Bell Measurement with Passive Linear Optics and Unentangled Ancillae",
-   "journal": "Physical Review Letters",
+   "journal": "Phys. Rev. Lett.",
    "volume": "113",
    "issue": "14",
    "article": "140403",
@@ -254,7 +263,7 @@
     "R. Blatt"
    ],
    "title": "Ion-trap measurements of electric-field noise near surfaces",
-   "journal": "Reviews of Modern Physics",
+   "journal": "Rev. Mod. Phys.",
    "volume": "87",
    "issue": "4",
    "pages": "1419–1482",
@@ -271,9 +280,11 @@
    ],
    "etal": true,
    "title": "Thermal and Residual Excited-State Population in a 3D Transmon Qubit",
-   "journal": "Physical Review Letters",
+   "journal": "Phys. Rev. Lett.",
    "volume": "114",
+   "issue": "24",
    "article": "240501",
+   "date": "2015-06-15",
    "doi": "10.1103/PhysRevLett.114.240501",
    "arxiv": "1412.2772",
    "kind": "journal",
@@ -325,9 +336,11 @@
     "D. M. Lucas"
    ],
    "title": "High-fidelity trapped-ion quantum logic using near-field microwaves",
-   "journal": "Physical Review Letters",
+   "journal": "Phys. Rev. Lett.",
    "volume": "117",
+   "issue": "14",
    "article": "140501",
+   "date": "2016-09-27",
    "doi": "10.1103/PhysRevLett.117.140501",
    "arxiv": "1606.08409",
    "kind": "journal",
@@ -352,7 +365,7 @@
    ],
    "etal": true,
    "title": "Scalable designs for quasiparticle-poisoning-protected topological quantum computation with Majorana zero modes",
-   "journal": "Physical Review B",
+   "journal": "Phys. Rev. B",
    "volume": "95",
    "issue": "23",
    "article": "235305",
@@ -368,14 +381,15 @@
     "Nicolas Delfosse",
     "Gilles Zémor"
    ],
-   "title": "Linear-Time Maximum Likelihood Decoding of Surface Codes over the Quantum Erasure Channel",
-   "journal": "Physical Review Research",
+   "title": "Linear-time maximum likelihood decoding of surface codes over the quantum erasure channel",
+   "journal": "Phys. Rev. Res.",
    "volume": "2",
+   "issue": "3",
    "article": "033042",
-   "date": "2017-03-04",
+   "date": "2020-07-09",
    "doi": "10.1103/PhysRevResearch.2.033042",
    "arxiv": "1703.01517",
-   "kind": "preprint",
+   "kind": "journal",
    "url": "https://arxiv.org/abs/1703.01517",
    "verified": true
   },
@@ -403,10 +417,12 @@
    "title": "Fast quantum logic gates with trapped-ion qubits",
    "journal": "Nature",
    "volume": "555",
-   "date": "2017-09-20",
+   "issue": "7694",
+   "pages": "75-78",
+   "date": "2018-02-27",
    "doi": "10.1038/nature25737",
    "arxiv": "1709.06952",
-   "kind": "preprint",
+   "kind": "journal",
    "url": "https://arxiv.org/abs/1709.06952",
    "verified": true
   },
@@ -416,13 +432,14 @@
    ],
    "etal": true,
    "title": "Programmable interference between two microwave quantum memories",
-   "journal": "Physical Review X",
+   "journal": "Phys. Rev. X",
    "volume": "8",
+   "issue": "2",
    "article": "021073",
-   "date": "2018-02-23",
+   "date": "2018-06-21",
    "doi": "10.1103/PhysRevX.8.021073",
    "arxiv": "1802.08510",
-   "kind": "preprint",
+   "kind": "journal",
    "url": "https://arxiv.org/abs/1802.08510",
    "verified": true
   },
@@ -431,8 +448,12 @@
     "B. A. Korzh"
    ],
    "etal": true,
-   "title": "Demonstrating sub-3 ps temporal resolution in a superconducting nanowire single-photon detector",
-   "journal": "Nature Photonics",
+   "title": "Demonstration of sub-3 ps temporal resolution with a superconducting nanowire single-photon detector",
+   "journal": "Nat. Photon.",
+   "volume": "14",
+   "issue": "4",
+   "pages": "250-255",
+   "date": "2020-03-02",
    "doi": "10.1038/s41566-020-0589-x",
    "arxiv": "1804.06839",
    "kind": "journal",
@@ -463,7 +484,7 @@
    ],
    "etal": true,
    "title": "Digital Coherent Control of a Superconducting Qubit",
-   "journal": "Physical Review Applied",
+   "journal": "Phys. Rev. Appl.",
    "volume": "11",
    "issue": "1",
    "article": "014009",
@@ -494,10 +515,12 @@
     "Harry Levine"
    ],
    "etal": true,
-   "title": "Parallel implementation of high-fidelity multi-qubit gates with neutral atoms",
-   "journal": "Physical Review Letters",
+   "title": "Parallel Implementation of High-Fidelity Multiqubit Gates with Neutral Atoms",
+   "journal": "Phys. Rev. Lett.",
    "volume": "123",
+   "issue": "17",
    "article": "170503",
+   "date": "2019-10-22",
    "doi": "10.1103/PhysRevLett.123.170503",
    "arxiv": "1908.06101",
    "kind": "journal",
@@ -526,25 +549,15 @@
    ],
    "etal": true,
    "title": "Microwave Quantum Link between Superconducting Circuits Housed in Spatially Separated Cryogenic Systems",
-   "journal": "Physical Review Letters",
+   "journal": "Phys. Rev. Lett.",
    "volume": "125",
+   "issue": "26",
    "article": "260502",
+   "date": "2020-12-21",
    "doi": "10.1103/PhysRevLett.125.260502",
    "arxiv": "2008.01642",
    "kind": "journal",
    "url": "https://arxiv.org/abs/2008.01642",
-   "verified": true
-  },
-  "arxiv:2101.09310": {
-   "authors": [
-    "Sara Bartolucci"
-   ],
-   "etal": true,
-   "title": "Fusion-based quantum computation",
-   "date": "2021-01-22",
-   "arxiv": "2101.09310",
-   "kind": "preprint",
-   "url": "https://arxiv.org/abs/2101.09310",
    "verified": true
   },
   "arxiv:2103.14209": {
@@ -556,10 +569,12 @@
     "Yutaka Tabuchi"
    ],
    "title": "QECOOL: On-Line Quantum Error Correction with a Superconducting Decoder for Surface Code",
-   "date": "2021-03-26",
+   "journal": "2021 58th ACM/IEEE Design Automation Conference (DAC)",
+   "pages": "451-456",
+   "date": "2021-11-08",
    "doi": "10.1109/DAC18074.2021.9586326",
    "arxiv": "2103.14209",
-   "kind": "preprint",
+   "kind": "proceedings",
    "url": "https://arxiv.org/abs/2103.14209",
    "verified": true
   },
@@ -569,9 +584,11 @@
    ],
    "etal": true,
    "title": "Resolving catastrophic error bursts from cosmic rays in large arrays of superconducting qubits",
-   "journal": "Nature Physics",
+   "journal": "Nat. Phys.",
    "volume": "18",
-   "pages": "107–111",
+   "issue": "1",
+   "pages": "107-111",
+   "date": "2021-12-13",
    "doi": "10.1038/s41567-021-01432-8",
    "arxiv": "2104.05219",
    "kind": "journal",
@@ -612,10 +629,12 @@
     "D. T. C. Allcock"
    ],
    "etal": true,
-   "title": "Blueprint for trapped ion quantum computing with metastable states",
-   "journal": "Applied Physics Letters",
+   "title": "omg blueprint for trapped ion quantum computing with metastable states",
+   "journal": "Appl. Phys. Lett.",
    "volume": "119",
+   "issue": "21",
    "article": "214002",
+   "date": "2021-11-22",
    "doi": "10.1063/5.0069544",
    "arxiv": "2109.01272",
    "kind": "journal",
@@ -629,7 +648,7 @@
     "Pan Zhang"
    ],
    "title": "Solving the Sampling Problem of the Sycamore Quantum Circuits",
-   "journal": "Physical Review Letters",
+   "journal": "Phys. Rev. Lett.",
    "volume": "129",
    "issue": "9",
    "article": "090502",
@@ -664,13 +683,16 @@
     "Aleksander Kubica",
     "Arbel Haim",
     "Yotam Vaknin",
-    "Fernando Brandão",
+    "Harry Levine",
+    "Fernando G. S. L. Brandão",
     "Alex Retzker"
    ],
-   "title": "Erasure qubits: Overcoming the T₁ limit in superconducting circuits",
-   "journal": "Physical Review X",
+   "title": "Erasure Qubits: Overcoming the T₁ Limit in Superconducting Circuits",
+   "journal": "Phys. Rev. X",
    "volume": "13",
+   "issue": "4",
    "article": "041022",
+   "date": "2023-11-01",
    "doi": "10.1103/PhysRevX.13.041022",
    "arxiv": "2208.05461",
    "kind": "journal",
@@ -683,32 +705,16 @@
    ],
    "etal": true,
    "org": "IQM Quantum Computers",
-   "title": "Long-distance transmon coupler with CZ gate fidelity above 99.8%",
+   "title": "Long-Distance Transmon Coupler with cz-Gate Fidelity above 99.8%",
    "journal": "PRX Quantum",
    "volume": "4",
+   "issue": "1",
    "article": "010314",
-   "pubdate": "2023",
+   "date": "2023-02-06",
    "doi": "10.1103/PRXQuantum.4.010314",
    "arxiv": "2208.09460",
    "kind": "journal",
    "url": "https://arxiv.org/abs/2208.09460",
-   "verified": true
-  },
-  "arxiv:2210.15024": {
-   "authors": [
-    "Mingyu Kang",
-    "Wesley C. Campbell",
-    "Kenneth R. Brown"
-   ],
-   "title": "Quantum Error Correction with Metastable States of Trapped Ions Using Erasure Conversion",
-   "journal": "PRX Quantum",
-   "volume": "4",
-   "article": "020358",
-   "date": "2022-10-26",
-   "doi": "10.1103/PRXQuantum.4.020358",
-   "arxiv": "2210.15024",
-   "kind": "preprint",
-   "url": "https://arxiv.org/abs/2210.15024",
    "verified": true
   },
   "arxiv:2211.06703": {
@@ -717,10 +723,12 @@
     "Marcello Benedetti",
     "David Amaro"
    ],
-   "title": "Protecting Expressive Circuits with a Quantum Error Detection Code",
-   "journal": "Nature Physics",
+   "title": "Protecting expressive circuits with a quantum error detection code",
+   "journal": "Nat. Phys.",
    "volume": "20",
+   "issue": "2",
    "pages": "219–224",
+   "date": "2024-01-05",
    "doi": "10.1038/s41567-023-02282-2",
    "arxiv": "2211.06703",
    "kind": "journal",
@@ -733,9 +741,11 @@
    ],
    "etal": true,
    "title": "Dual-rail encoding with superconducting cavities",
-   "journal": "Proceedings of the National Academy of Sciences",
+   "journal": "Proc. Natl. Acad. Sci. USA",
    "volume": "120",
+   "issue": "41",
    "article": "e2221736120",
+   "date": "2023-10-06",
    "doi": "10.1073/pnas.2221736120",
    "arxiv": "2212.12077",
    "kind": "journal",
@@ -762,7 +772,11 @@
    ],
    "etal": true,
    "title": "Low-loss interconnects for modular superconducting quantum processors",
-   "journal": "Nature Electronics",
+   "journal": "Nat. Electron.",
+   "volume": "6",
+   "issue": "3",
+   "pages": "235-241",
+   "date": "2023-02-16",
    "doi": "10.1038/s41928-023-00925-z",
    "arxiv": "2302.02751",
    "kind": "journal",
@@ -777,10 +791,12 @@
     "Jeff D. Thompson",
     "Shruti Puri"
    ],
-   "title": "High threshold codes for neutral atom qubits with biased erasure errors",
-   "journal": "Physical Review X",
+   "title": "High-Threshold Codes for Neutral-Atom Qubits with Biased Erasure Errors",
+   "journal": "Phys. Rev. X",
    "volume": "13",
+   "issue": "4",
    "article": "041013",
+   "date": "2023-10-24",
    "doi": "10.1103/PhysRevX.13.041013",
    "arxiv": "2302.03063",
    "kind": "journal",
@@ -823,10 +839,12 @@
     "Simon J. Evered"
    ],
    "etal": true,
-   "title": "High-fidelity parallel entangling gates on a neutral atom quantum computer",
+   "title": "High-fidelity parallel entangling gates on a neutral-atom quantum computer",
    "journal": "Nature",
    "volume": "622",
-   "pages": "268–272",
+   "issue": "7982",
+   "pages": "268-272",
+   "date": "2023-10-11",
    "doi": "10.1038/s41586-023-06481-y",
    "arxiv": "2304.05420",
    "kind": "journal",
@@ -874,10 +892,12 @@
     "Miles Stoudenmire",
     "Dries Sels"
    ],
-   "title": "Efficient tensor network simulation of IBM's Eagle kicked Ising experiment",
+   "title": "Efficient Tensor Network Simulation of IBM's Eagle Kicked Ising Experiment",
    "journal": "PRX Quantum",
    "volume": "5",
+   "issue": "1",
    "article": "010308",
+   "date": "2024-01-23",
    "doi": "10.1103/PRXQuantum.5.010308",
    "arxiv": "2306.14887",
    "kind": "journal",
@@ -902,9 +922,11 @@
    ],
    "etal": true,
    "title": "Demonstrating a long-coherence dual-rail erasure qubit using tunable transmons",
-   "journal": "Physical Review X",
+   "journal": "Phys. Rev. X",
    "volume": "14",
+   "issue": "1",
    "article": "011051",
+   "date": "2024-03-20",
    "doi": "10.1103/PhysRevX.14.011051",
    "arxiv": "2307.08737",
    "kind": "journal",
@@ -923,7 +945,9 @@
    "title": "High-threshold and low-overhead fault-tolerant quantum memory",
    "journal": "Nature",
    "volume": "627",
+   "issue": "8005",
    "pages": "778–782",
+   "date": "2024-03-27",
    "doi": "10.1038/s41586-024-07107-7",
    "arxiv": "2308.07915",
    "kind": "journal",
@@ -948,7 +972,7 @@
    ],
    "etal": true,
    "title": "Erasure Detection of a Dual-Rail Qubit Encoded in a Double-Post Superconducting Cavity",
-   "journal": "Physical Review Letters",
+   "journal": "Phys. Rev. Lett.",
    "volume": "132",
    "issue": "18",
    "article": "180601",
@@ -992,13 +1016,34 @@
     "Aleksander Kubica"
    ],
    "title": "Fault-tolerant quantum architectures based on erasure qubits",
-   "journal": "Physical Review Research",
+   "journal": "Phys. Rev. Res.",
    "volume": "7",
+   "issue": "1",
    "article": "013249",
+   "date": "2025-03-06",
    "doi": "10.1103/PhysRevResearch.7.013249",
    "arxiv": "2312.14060",
    "kind": "journal",
    "url": "https://arxiv.org/abs/2312.14060",
+   "verified": true
+  },
+  "arxiv:2402.15644": {
+   "authors": [
+    "Matt McEwen"
+   ],
+   "etal": true,
+   "org": "Google Quantum AI",
+   "title": "Resisting High-Energy Impact Events through Gap Engineering in Superconducting Qubit Arrays",
+   "journal": "Phys. Rev. Lett.",
+   "volume": "133",
+   "issue": "24",
+   "article": "240601",
+   "date": "2024-12-09",
+   "doi": "10.1103/PhysRevLett.133.240601",
+   "arxiv": "2402.15644",
+   "kind": "journal",
+   "publisher": "American Physical Society",
+   "url": "https://arxiv.org/abs/2402.15644",
    "verified": true
   },
   "arxiv:2403.03272": {
@@ -1017,14 +1062,15 @@
    "authors": [
     "Hayato Goto"
    ],
-   "title": "Many-hypercube codes: High-rate quantum error-correcting codes for high-performance fault-tolerant quantum computing",
-   "journal": "Science Advances",
+   "title": "High-performance fault-tolerant quantum computing with many-hypercube codes",
+   "journal": "Sci. Adv.",
    "volume": "10",
+   "issue": "36",
    "article": "eadp6388",
-   "date": "2024-03-24",
+   "date": "2024-09-04",
    "doi": "10.1126/sciadv.adp6388",
    "arxiv": "2403.16054",
-   "kind": "preprint",
+   "kind": "journal",
    "url": "https://arxiv.org/abs/2403.16054",
    "verified": true
   },
@@ -1034,9 +1080,11 @@
    ],
    "etal": true,
    "title": "Metropolitan-scale heralded entanglement of solid-state qubits",
-   "journal": "Science Advances",
+   "journal": "Sci. Adv.",
    "volume": "10",
+   "issue": "44",
    "article": "eadp6442",
+   "date": "2024-10-30",
    "doi": "10.1126/sciadv.adp6442",
    "arxiv": "2404.03723",
    "kind": "journal",
@@ -1083,28 +1131,13 @@
    "title": "A quantum-network register assembled with optical tweezers in an optical cavity",
    "journal": "Science",
    "volume": "385",
-   "pages": "179–183",
+   "issue": "6705",
+   "pages": "179-183",
+   "date": "2024-07-11",
    "doi": "10.1126/science.ado6471",
    "arxiv": "2407.09109",
    "kind": "journal",
    "url": "https://arxiv.org/abs/2407.09109",
-   "verified": true
-  },
-  "arxiv:2408.13687": {
-   "authors": [
-    "Matt McEwen"
-   ],
-   "etal": true,
-   "org": "Google Quantum AI",
-   "title": "Resisting high-energy impact events through gap engineering in superconducting qubit arrays",
-   "journal": "Physical Review Letters",
-   "volume": "133",
-   "article": "240601",
-   "date": "2024-02-27",
-   "doi": "10.1103/physrevlett.133.240601",
-   "arxiv": "2402.15644",
-   "kind": "journal",
-   "url": "https://arxiv.org/abs/2402.15644",
    "verified": true
   },
   "arxiv:2408.16617": {
@@ -1113,13 +1146,14 @@
    ],
    "etal": true,
    "title": "Long-Range ZZ Interaction via Resonator-Induced Phase in Superconducting Qubits",
-   "journal": "Physical Review Letters",
+   "journal": "Phys. Rev. Lett.",
    "volume": "134",
+   "issue": "2",
    "article": "020801",
-   "date": "2024-09-11",
+   "date": "2025-01-16",
    "doi": "10.1103/PhysRevLett.134.020801",
    "arxiv": "2408.16617",
-   "kind": "preprint",
+   "kind": "journal",
    "url": "https://arxiv.org/abs/2408.16617",
    "verified": true
   },
@@ -1170,7 +1204,7 @@
    ],
    "etal": true,
    "title": "High-fidelity entanglement of metastable trapped-ion qubits with integrated erasure conversion",
-   "journal": "Physical Review A",
+   "journal": "Phys. Rev. A",
    "volume": "113",
    "issue": "4",
    "article": "L040601",
@@ -1202,10 +1236,12 @@
     "Gefen Baranes"
    ],
    "etal": true,
-   "title": "Leveraging Qubit Loss Detection in Fault Tolerant Quantum Algorithms",
-   "journal": "Physical Review X",
+   "title": "Leveraging Qubit Loss Detection in Fault-Tolerant Quantum Algorithms",
+   "journal": "Phys. Rev. X",
    "volume": "16",
+   "issue": "1",
    "article": "011002",
+   "date": "2026-01-02",
    "doi": "10.1103/ycwc-3myc",
    "arxiv": "2502.20558",
    "kind": "journal",
@@ -1264,19 +1300,6 @@
    "url": "https://arxiv.org/abs/2503.14798",
    "verified": true
   },
-  "arxiv:2504.12099": {
-   "authors": [
-    "Wenhui Huang"
-   ],
-   "etal": true,
-   "title": "Logical multi-qubit entanglement with dual-rail superconducting qubits",
-   "journal": "Nature Physics",
-   "doi": "10.1038/s41567-026-03211-9",
-   "arxiv": "2504.12099",
-   "kind": "journal",
-   "url": "https://arxiv.org/abs/2504.12099",
-   "verified": true
-  },
   "arxiv:2505.00542": {
    "authors": [
     "M. J. Weaver",
@@ -1297,12 +1320,16 @@
     "Andreas Bauer",
     "Julio C. Magdalena de la Fuente"
    ],
-   "title": "Planar fault-tolerant circuits for non-Clifford gates on the 2D color code",
+   "title": "Planar Fault-Tolerant Circuits for Non-Clifford Gates on the 2D Color Code",
    "journal": "PRX Quantum",
-   "date": "2025-05-08",
+   "volume": "7",
+   "issue": "2",
+   "article": "020367",
+   "date": "2026-06-23",
+   "pubdate": "2026-06",
    "doi": "10.1103/p7c9-x1m9",
    "arxiv": "2505.05175",
-   "kind": "preprint",
+   "kind": "journal",
    "url": "https://arxiv.org/abs/2505.05175",
    "verified": true
   },
@@ -1358,32 +1385,20 @@
    "url": "https://arxiv.org/abs/2506.13632",
    "verified": true
   },
-  "arxiv:2506.13724": {
-   "authors": [
-    "Bichen Zhang"
-   ],
-   "etal": true,
-   "title": "Logical qubits with erasure conversion using metastable neutral atoms",
-   "date": "2026-06-23",
-   "arxiv": "2506.13724",
-   "kind": "preprint",
-   "url": "https://arxiv.org/html/2506.13724v2",
-   "also": [
-    "https://arxiv.org/html/2506.13724",
-    "https://arxiv.org/abs/2506.13724"
-   ],
-   "verified": true
-  },
   "arxiv:2506.14128": {
    "authors": [
     "Jianwen Xu"
    ],
    "etal": true,
-   "title": "Tunable Hybrid-Mode Coupler Enabling Strong Interactions between Transmons at Centimeter-Scale Distance",
-   "date": "2025-06-17",
+   "title": "Tunable hybrid-mode coupler enabling strong interactions between transmons at centimeter-scale distance",
+   "journal": "Phys. Rev. Appl.",
+   "volume": "25",
+   "issue": "1",
+   "article": "014016",
+   "date": "2026-01-07",
    "doi": "10.1103/ls5b-279m",
    "arxiv": "2506.14128",
-   "kind": "preprint",
+   "kind": "journal",
    "url": "https://arxiv.org/abs/2506.14128",
    "verified": true
   },
@@ -1396,9 +1411,11 @@
     "Isaac H. Kim"
    ],
    "title": "Experimental Demonstration of High-Fidelity Logical Magic States from Code Switching",
-   "journal": "Physical Review X",
+   "journal": "Phys. Rev. X",
    "volume": "15",
+   "issue": "4",
    "article": "041008",
+   "date": "2025-10-14",
    "doi": "10.1103/dck4-x9c2",
    "arxiv": "2506.14169",
    "kind": "journal",
@@ -1845,7 +1862,7 @@
    "volume": "449",
    "issue": "7161",
    "pages": "443–447",
-   "pubdate": "2007-09",
+   "date": "2007-09-27",
    "doi": "10.1038/nature06184",
    "kind": "journal",
    "url": "https://www.nature.com/articles/nature06184",
@@ -1874,7 +1891,7 @@
    ],
    "etal": true,
    "title": "A CMOS silicon spin qubit",
-   "journal": "Nature Communications",
+   "journal": "Nat. Commun.",
    "volume": "7",
    "article": "13575",
    "date": "2016-11-24",
@@ -1889,7 +1906,7 @@
    ],
    "etal": true,
    "title": "A single-atom transistor",
-   "journal": "Nature Nanotechnology",
+   "journal": "Nat. Nanotechnol.",
    "volume": "7",
    "issue": "4",
    "pages": "242–246",
@@ -1906,7 +1923,7 @@
    ],
    "etal": true,
    "title": "Ultra-large-scale continuous-variable cluster states multiplexed in the time domain",
-   "journal": "Nature Photonics",
+   "journal": "Nat. Photon.",
    "volume": "7",
    "issue": "12",
    "pages": "982–986",
@@ -1939,7 +1956,7 @@
    ],
    "etal": true,
    "title": "422 Million intrinsic quality factor planar integrated all-waveguide resonator with sub-MHz linewidth",
-   "journal": "Nature Communications",
+   "journal": "Nat. Commun.",
    "volume": "12",
    "issue": "1",
    "article": "934",
@@ -1955,7 +1972,7 @@
    ],
    "etal": true,
    "title": "A high-fidelity quantum matter-link between ion-trap microchip modules",
-   "journal": "Nature Communications",
+   "journal": "Nat. Commun.",
    "volume": "14",
    "issue": "1",
    "article": "531",
@@ -1971,7 +1988,7 @@
    ],
    "etal": true,
    "title": "Coherent spin qubit shuttling through germanium quantum dots",
-   "journal": "Nature Communications",
+   "journal": "Nat. Commun.",
    "volume": "15",
    "article": "5716",
    "date": "2024-07-08",
@@ -1982,21 +1999,24 @@
   },
   "doi:10.1038/s41467-024-50355-4": {
    "authors": [
-    "Menon",
-    "Glachman",
-    "Pompili",
-    "Dibos",
-    "Bernien"
+    "Shankar G. Menon",
+    "Noah Glachman",
+    "Matteo Pompili",
+    "Alan Dibos",
+    "Hannes Bernien"
    ],
+   "org": "University of Chicago; Argonne National Laboratory",
    "title": "An integrated atom array–nanophotonic chip platform with background-free imaging",
    "journal": "Nat. Commun.",
    "volume": "15",
-   "pages": "6156",
+   "issue": "1",
+   "article": "6156",
    "date": "2024-07-22",
    "doi": "10.1038/s41467-024-50355-4",
    "kind": "journal",
+   "publisher": "Nature Portfolio",
    "url": "https://www.nature.com/articles/s41467-024-50355-4",
-   "verified": false
+   "verified": true
   },
   "doi:10.1038/s41467-025-59693-3": {
    "authors": [
@@ -2004,7 +2024,7 @@
    ],
    "etal": true,
    "title": "Deterministic and reconfigurable graph state generation with a single solid-state quantum emitter",
-   "journal": "Nature Communications",
+   "journal": "Nat. Commun.",
    "volume": "16",
    "issue": "1",
    "article": "4337",
@@ -2020,7 +2040,7 @@
    ],
    "etal": true,
    "title": "Baseband control of single-electron silicon spin qubits in two dimensions",
-   "journal": "Nature Communications",
+   "journal": "Nat. Commun.",
    "volume": "16",
    "issue": "1",
    "article": "5605",
@@ -2040,7 +2060,7 @@
     "Ronald Hanson"
    ],
    "title": "Spin-photon correlations from a Purcell-enhanced diamond nitrogen-vacancy center coupled to an open microcavity",
-   "journal": "Nature Communications",
+   "journal": "Nat. Commun.",
    "volume": "16",
    "issue": "1",
    "article": "11680",
@@ -2058,7 +2078,7 @@
     "Jason R. Petta"
    ],
    "title": "Demonstration of an always-on exchange-only spin qubit",
-   "journal": "Nature Communications",
+   "journal": "Nat. Commun.",
    "volume": "17",
    "issue": "1",
    "article": "4794",
@@ -2078,7 +2098,7 @@
     "Ronald Hanson"
    ],
    "title": "Unconditionally teleported quantum gates between remote solid-state qubit registers",
-   "journal": "Nature Communications",
+   "journal": "Nat. Commun.",
    "volume": "17",
    "issue": "1",
    "article": "4694",
@@ -2094,7 +2114,7 @@
    ],
    "etal": true,
    "title": "Entanglement across separate silicon dies in a modular superconducting qubit device",
-   "journal": "npj Quantum Information",
+   "journal": "npj Quantum Inf.",
    "volume": "7",
    "issue": "1",
    "article": "142",
@@ -2114,10 +2134,9 @@
    ],
    "etal": true,
    "title": "A mid-circuit erasure check on a dual-rail cavity qubit using the joint-photon number-splitting regime of circuit QED",
-   "journal": "npj Quantum Information",
+   "journal": "npj Quantum Inf.",
    "volume": "11",
    "issue": "1",
-   "article": "1",
    "date": "2025-01-07",
    "pubdate": "2025-12",
    "doi": "10.1038/s41534-024-00944-4",
@@ -2132,7 +2151,7 @@
    ],
    "etal": true,
    "title": "Cryogenic microwave link for quantum local area networks",
-   "journal": "npj Quantum Information",
+   "journal": "npj Quantum Inf.",
    "volume": "11",
    "issue": "1",
    "article": "87",
@@ -2148,7 +2167,7 @@
    ],
    "etal": true,
    "title": "Shared control of a 16 semiconductor quantum dot crossbar array",
-   "journal": "Nature Nanotechnology",
+   "journal": "Nat. Nanotechnol.",
    "volume": "19",
    "issue": "1",
    "pages": "21-27",
@@ -2165,7 +2184,7 @@
    ],
    "etal": true,
    "title": "High-speed non-volatile barium titanate field-programmable photonic gate array",
-   "journal": "Nature Photonics",
+   "journal": "Nat. Photon.",
    "volume": "20",
    "issue": "8",
    "pages": "932–940",
@@ -2181,8 +2200,12 @@
     "Jurgen Dijkema"
    ],
    "etal": true,
-   "title": "Two-qubit logic between distant spins in silicon",
-   "journal": "Nature Physics",
+   "title": "Cavity-mediated iSWAP oscillations between distant spins",
+   "journal": "Nat. Phys.",
+   "volume": "21",
+   "issue": "1",
+   "pages": "168-174",
+   "date": "2024-12-09",
    "doi": "10.1038/s41567-024-02694-8",
    "arxiv": "2310.16805",
    "kind": "journal",
@@ -2195,7 +2218,7 @@
    ],
    "etal": true,
    "title": "Parallelized telecom quantum networking with an ytterbium-171 atom array",
-   "journal": "Nature Physics",
+   "journal": "Nat. Phys.",
    "volume": "21",
    "issue": "11",
    "pages": "1826–1833",
@@ -2212,7 +2235,11 @@
    ],
    "etal": true,
    "title": "Logical multi-qubit entanglement with dual-rail superconducting qubits",
-   "journal": "Nature Physics",
+   "journal": "Nat. Phys.",
+   "volume": "22",
+   "issue": "4",
+   "pages": "591–597",
+   "date": "2026-03-06",
    "doi": "10.1038/s41567-026-03211-9",
    "arxiv": "2504.12099",
    "kind": "journal",
@@ -2225,7 +2252,7 @@
    ],
    "etal": true,
    "title": "Error correction of a logical qubit encoded in a single atomic ion",
-   "journal": "Nature Physics",
+   "journal": "Nat. Phys.",
    "volume": "22",
    "issue": "9",
    "pages": "1446–1452",
@@ -2531,23 +2558,6 @@
    "url": "https://www.nature.com/articles/s41586-025-09157-x",
    "verified": true
   },
-  "doi:10.1038/s41586-025-09827-w": {
-   "authors": [
-    "H. Edlbauer",
-    "J. Wang",
-    "A. M. S.-E. Huq"
-   ],
-   "etal": true,
-   "title": "An 11-qubit atom processor in silicon",
-   "journal": "Nature",
-   "volume": "648",
-   "pages": "569–575",
-   "date": "2025-12-17",
-   "doi": "10.1038/s41586-025-09827-w",
-   "kind": "journal",
-   "url": "https://www.nature.com/articles/s41586-025-09827-w",
-   "verified": false
-  },
   "doi:10.1038/s41586-026-10628-y": {
    "authors": [
     "A. Paetznick"
@@ -2605,7 +2615,7 @@
    ],
    "etal": true,
    "title": "A cryogenic CMOS chip for generating control signals for multiple qubits",
-   "journal": "Nature Electronics",
+   "journal": "Nat. Electron.",
    "volume": "4",
    "issue": "1",
    "pages": "64–70",
@@ -2621,7 +2631,7 @@
    ],
    "etal": true,
    "title": "Qubits made by advanced semiconductor manufacturing",
-   "journal": "Nature Electronics",
+   "journal": "Nat. Electron.",
    "volume": "5",
    "issue": "3",
    "pages": "184–190",
@@ -2637,7 +2647,7 @@
    ],
    "etal": true,
    "title": "Multiplexed superconducting qubit control at millikelvin temperatures with a low-power cryo-CMOS multiplexer",
-   "journal": "Nature Electronics",
+   "journal": "Nat. Electron.",
    "volume": "6",
    "issue": "11",
    "pages": "900–909",
@@ -2654,7 +2664,7 @@
    ],
    "etal": true,
    "title": "Rapid cryogenic characterization of 1,024 integrated silicon quantum dot devices",
-   "journal": "Nature Electronics",
+   "journal": "Nat. Electron.",
    "volume": "8",
    "issue": "1",
    "pages": "75–83",
@@ -2673,7 +2683,7 @@
     "Wolfgang Pfaff"
    ],
    "title": "A high-efficiency elementary network of interchangeable superconducting qubit devices",
-   "journal": "Nature Electronics",
+   "journal": "Nat. Electron.",
    "volume": "8",
    "issue": "7",
    "pages": "610–619",
@@ -2690,7 +2700,7 @@
    ],
    "etal": true,
    "title": "A crossbar chip for benchmarking semiconductor spin qubits",
-   "journal": "Nature Electronics",
+   "journal": "Nat. Electron.",
    "volume": "9",
    "issue": "3",
    "pages": "324-333",
@@ -2707,7 +2717,7 @@
    ],
    "etal": true,
    "title": "A quantum computer controlled by superconducting digital electronics at millikelvin temperature",
-   "journal": "Nature Electronics",
+   "journal": "Nat. Electron.",
    "volume": "9",
    "issue": "3",
    "pages": "287–294",
@@ -2723,7 +2733,7 @@
    ],
    "etal": true,
    "title": "High-speed low-crosstalk detection of a ¹⁷¹Yb⁺ qubit using superconducting nanowire single photon detectors",
-   "journal": "Communications Physics",
+   "journal": "Commun. Phys.",
    "volume": "2",
    "issue": "1",
    "article": "97",
@@ -2754,7 +2764,7 @@
     "K. D. Irwin"
    ],
    "title": "An application of electrothermal feedback for high resolution cryogenic particle detection",
-   "journal": "Applied Physics Letters",
+   "journal": "Appl. Phys. Lett.",
    "volume": "66",
    "issue": "15",
    "pages": "1998–2000",
@@ -2770,7 +2780,7 @@
    ],
    "etal": true,
    "title": "Picosecond superconducting single-photon optical detector",
-   "journal": "Applied Physics Letters",
+   "journal": "Appl. Phys. Lett.",
    "volume": "79",
    "issue": "6",
    "pages": "705–707",
@@ -2789,7 +2799,7 @@
     "Haifeng Yu"
    ],
    "title": "Tunable coupling of widely separated superconducting qubits: A possible application towards a modular quantum device",
-   "journal": "Applied Physics Letters",
+   "journal": "Appl. Phys. Lett.",
    "doi": "10.1063/5.0097521",
    "arxiv": "2201.03184",
    "kind": "journal",
@@ -2840,7 +2850,7 @@
     "David P. DiVincenzo"
    ],
    "title": "Quantum computation with quantum dots",
-   "journal": "Physical Review A",
+   "journal": "Phys. Rev. A",
    "volume": "57",
    "issue": "1",
    "pages": "120–126",
@@ -2857,7 +2867,7 @@
     "John Preskill"
    ],
    "title": "Encoding a qubit in an oscillator",
-   "journal": "Physical Review A",
+   "journal": "Phys. Rev. A",
    "volume": "64",
    "issue": "1",
    "article": "012310",
@@ -2870,18 +2880,21 @@
   },
   "doi:10.1103/physrevapplied.2.014007": {
    "authors": [
-    "McDermott",
-    "Vavilov"
+    "R. McDermott",
+    "M. G. Vavilov"
    ],
-   "title": "Accurate qubit control with single flux quantum pulses",
-   "journal": "Phys. Rev. Applied",
+   "org": "University of Wisconsin, Madison",
+   "title": "Accurate Qubit Control with Single Flux Quantum Pulses",
+   "journal": "Phys. Rev. Appl.",
    "volume": "2",
-   "pages": "014007",
-   "date": "2014",
+   "issue": "1",
+   "article": "014007",
+   "date": "2014-07-30",
    "doi": "10.1103/PhysRevApplied.2.014007",
    "kind": "journal",
+   "publisher": "American Physical Society",
    "url": "https://journals.aps.org/prapplied/abstract/10.1103/PhysRevApplied.2.014007",
-   "verified": false
+   "verified": true
   },
   "doi:10.1103/physrevb.108.125405": {
    "authors": [
@@ -2889,7 +2902,7 @@
    ],
    "etal": true,
    "title": "Practical strategies for enhancing the valley splitting in Si/SiGe quantum wells",
-   "journal": "Physical Review B",
+   "journal": "Phys. Rev. B",
    "volume": "108",
    "issue": "12",
    "article": "125405",
@@ -2905,7 +2918,7 @@
    ],
    "etal": true,
    "title": "Simple All-Microwave Entangling Gate for Fixed-Frequency Superconducting Qubits",
-   "journal": "Physical Review Letters",
+   "journal": "Phys. Rev. Lett.",
    "volume": "107",
    "issue": "8",
    "article": "080502",
@@ -2924,7 +2937,7 @@
     "Roman Schnabel"
    ],
    "title": "Detection of 15 dB Squeezed States of Light and their Application for the Absolute Calibration of Photoelectric Quantum Efficiency",
-   "journal": "Physical Review Letters",
+   "journal": "Phys. Rev. Lett.",
    "volume": "117",
    "issue": "11",
    "article": "110801",
@@ -2940,7 +2953,7 @@
    ],
    "etal": true,
    "title": "Demonstration of a High-Fidelity CNOT Gate for Fixed-Frequency Transmons with Engineered ZZ Suppression",
-   "journal": "Physical Review Letters",
+   "journal": "Phys. Rev. Lett.",
    "volume": "127",
    "issue": "13",
    "article": "130501",
@@ -2956,7 +2969,7 @@
    ],
    "etal": true,
    "title": "High-Fidelity Ion State Detection Using Trap-Integrated Avalanche Photodiodes",
-   "journal": "Physical Review Letters",
+   "journal": "Phys. Rev. Lett.",
    "volume": "129",
    "issue": "10",
    "article": "100502",
@@ -2968,21 +2981,24 @@
   },
   "doi:10.1103/physrevlett.75.4714": {
    "authors": [
-    "Monroe",
-    "Meekhof",
-    "King",
-    "Itano",
-    "Wineland"
+    "Christopher R. Monroe",
+    "D. M. Meekhof",
+    "B. E. King",
+    "Wayne M. Itano",
+    "David J. Wineland"
    ],
-   "title": "Demonstration of a fundamental quantum logic gate",
+   "org": "National Institute of Standards and Technology",
+   "title": "Demonstration of a Fundamental Quantum Logic Gate",
    "journal": "Phys. Rev. Lett.",
    "volume": "75",
-   "pages": "4714",
+   "issue": "25",
+   "pages": "4714–4717",
    "date": "1995-12-18",
    "doi": "10.1103/PhysRevLett.75.4714",
    "kind": "journal",
+   "publisher": "American Physical Society",
    "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.75.4714",
-   "verified": false
+   "verified": true
   },
   "doi:10.1103/physrevlett.95.010501": {
    "authors": [
@@ -2990,7 +3006,7 @@
     "Terry Rudolph"
    ],
    "title": "Resource-Efficient Linear Optical Quantum Computation",
-   "journal": "Physical Review Letters",
+   "journal": "Phys. Rev. Lett.",
    "volume": "95",
    "issue": "1",
    "article": "010501",
@@ -3007,7 +3023,7 @@
    ],
    "etal": true,
    "title": "Fast High-Fidelity Single-Shot Readout of Spins in Silicon Using a Single-Electron Box",
-   "journal": "Physical Review X",
+   "journal": "Phys. Rev. X",
    "volume": "13",
    "issue": "1",
    "article": "011023",
@@ -3023,7 +3039,7 @@
    ],
    "etal": true,
    "title": "Interference Measurements of Non-Abelian e/4 & Abelian e/2 Quasiparticle Braiding",
-   "journal": "Physical Review X",
+   "journal": "Phys. Rev. X",
    "volume": "13",
    "issue": "1",
    "article": "011028",
@@ -3046,6 +3062,7 @@
    "article": "020358",
    "date": "2023-06-30",
    "doi": "10.1103/PRXQuantum.4.020358",
+   "arxiv": "2210.15024",
    "kind": "journal",
    "url": "https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.4.020358",
    "verified": true
@@ -3104,7 +3121,7 @@
    ],
    "etal": true,
    "title": "Cryo-CMOS Bias-Voltage Generation and Demultiplexing at mK Temperatures for Large-Scale Arrays of Quantum Devices",
-   "journal": "IEEE Transactions on Quantum Engineering",
+   "journal": "IEEE Trans. Quantum Eng.",
    "volume": "6",
    "pages": "1–18",
    "doi": "10.1109/TQE.2025.3580377",
@@ -3143,9 +3160,11 @@
    "volume": "7",
    "issue": "12",
    "pages": "1649",
-   "date": "2020-10-28",
-   "doi": "10.1364/optica.400751",
+   "date": "2020-11-23",
+   "pubdate": "2020-12",
+   "doi": "10.1364/OPTICA.400751",
    "kind": "journal",
+   "publisher": "Optica Publishing Group",
    "url": "https://doi.org/10.1364/optica.400751",
    "verified": true
   },
@@ -3272,21 +3291,6 @@
    "url": "https://arxiv.org/abs/quant-ph/0006088",
    "verified": true
   },
-  "https://arxiv.org/abs/quant-ph/0008040": {
-   "authors": [
-    "Gottesman",
-    "Kitaev",
-    "Preskill"
-   ],
-   "title": "Encoding a qubit in an oscillator",
-   "journal": "Phys. Rev. A",
-   "volume": "64",
-   "pages": "012310",
-   "date": "2001",
-   "kind": "journal",
-   "url": "https://arxiv.org/abs/quant-ph/0008040",
-   "verified": false
-  },
   "https://arxiv.org/abs/quant-ph/0110143": {
    "authors": [
     "Dennis",
@@ -3313,7 +3317,7 @@
     "Alexei Kitaev"
    ],
    "title": "Universal Quantum Computation with ideal Clifford gates and noisy ancillas",
-   "journal": "Physical Review A",
+   "journal": "Phys. Rev. A",
    "volume": "71",
    "pages": "022316",
    "date": "2005",
@@ -3342,7 +3346,7 @@
     "Miguel Angel Martin-Delgado"
    ],
    "title": "Topological Quantum Distillation",
-   "journal": "Physical Review Letters",
+   "journal": "Phys. Rev. Lett.",
    "volume": "97",
    "pages": "180501",
    "date": "2006",
@@ -3374,7 +3378,7 @@
     "Yoshihisa Yamamoto"
    ],
    "title": "Simple quantum computer",
-   "journal": "Physical Review A",
+   "journal": "Phys. Rev. A",
    "volume": "52",
    "pages": "3489",
    "date": "1995",
@@ -4405,18 +4409,6 @@
    "url": "https://thequantuminsider.com/2026/08/26/photonic-shyps-quantum-error-correction-nature-communications/",
    "verified": false
   },
-  "https://thequantuminsider.com/2026/08/26/sparrow-quantum-eurohpc-quantum-grand-challenge-funding": {
-   "org": "The Quantum Insider",
-   "title": "Sparrow EuroHPC EU-SCALE (2026-08-26) ; Quantum Computing Report",
-   "date": "2025-04-10",
-   "kind": "web",
-   "site": "Sparrow Series A",
-   "url": "https://thequantuminsider.com/2026/08/26/sparrow-quantum-eurohpc-quantum-grand-challenge-funding/",
-   "also": [
-    "https://quantumcomputingreport.com/sparrow-quantum-secures-e21-5m-24m-usd-in-series-a-funding-to-advance-photonic-quantum-chip-production/"
-   ],
-   "verified": false
-  },
   "https://www.aimphotonics.com/news": {
    "title": "AIM Photonics newsroom (Assembly Design Kit 2026-05-25; DoD ManTech recognition 2026-02-05), accessed 2026-09-03",
    "kind": "web",
@@ -4925,21 +4917,6 @@
    "url": "https://www.nist.gov/news-events/news/2026/05/department-commerce-announces-letters-intent-9-companies-2-billion",
    "verified": true
   },
-  "https://www.nist.gov/publications/superconducting-nanowire-single-photon-detectors-98-system-detection-efficiency-1550-nm": {
-   "authors": [
-    "Reddy",
-    "Nerem",
-    "Nam",
-    "Mirin",
-    "Verma"
-   ],
-   "title": "Superconducting nanowire single-photon detectors with 98% system detection efficiency at 1550 nm",
-   "journal": "Optica 7(12",
-   "date": "2020-11-23",
-   "kind": "journal",
-   "url": "https://www.nist.gov/publications/superconducting-nanowire-single-photon-detectors-98-system-detection-efficiency-1550-nm",
-   "verified": false
-  },
   "https://www.nokia.com/bell-labs/research/air-lab/data-and-devices/topological-quantum-computing": {
    "org": "Nokia Bell Labs",
    "title": "Topological quantum computing",
@@ -5292,8 +5269,12 @@
    "date": "2025-03-14",
    "kind": "web",
    "site": "SEC EDGAR",
+   "publisher": "D-Wave Quantum Inc.",
    "url": "https://www.sec.gov/Archives/edgar/data/1907982/000190798225000060/qbts-20241231.htm",
-   "verified": false
+   "also": [
+    "https://www.sec.gov/Archives/edgar/data/1907982/000190798225000060/0001907982-25-000060-index.htm"
+   ],
+   "verified": true
   },
   "https://www.sec.gov/archives/edgar/data/1907982/000190798226000026/qbts-20251231.htm": {
    "org": "D-Wave Quantum Inc.",
@@ -5812,7 +5793,7 @@
     "grade": ""
    },
    {
-    "work": "arxiv:2506.13724",
+    "work": "report:N8#1",
     "grade": ""
    },
    {
@@ -5888,15 +5869,11 @@
     "grade": "G"
    },
    {
-    "work": "arxiv:2101.09310",
+    "work": "report:P10#0",
     "grade": ""
    },
    {
-    "work": "arxiv:2210.15024",
-    "grade": ""
-   },
-   {
-    "work": "report:N8#1",
+    "work": "doi:10.1103/prxquantum.4.020358",
     "grade": ""
    },
    {
@@ -5939,10 +5916,6 @@
   "code_fusion": [
    {
     "work": "report:P10#0",
-    "grade": ""
-   },
-   {
-    "work": "report:P10#1",
     "grade": ""
    },
    {
@@ -6090,7 +6063,7 @@
     "grade": ""
    },
    {
-    "work": "report:N5#0",
+    "work": "report:N5#1",
     "grade": ""
    },
    {
@@ -6536,7 +6509,7 @@
     "grade": "D"
    },
    {
-    "work": "report:I1#0",
+    "work": "report:I1#1",
     "grade": "D"
    },
    {
@@ -6610,7 +6583,7 @@
     "grade": "D"
    },
    {
-    "work": "report:I1#0",
+    "work": "report:I1#1",
     "grade": "D"
    },
    {
@@ -6978,7 +6951,7 @@
     "grade": "G"
    },
    {
-    "work": "report:I1#0",
+    "work": "report:I1#1",
     "grade": "D"
    },
    {
@@ -7246,7 +7219,7 @@
     "grade": ""
    },
    {
-    "work": "report:I1#0",
+    "work": "report:I1#1",
     "grade": ""
    },
    {
@@ -7476,7 +7449,7 @@
     "grade": ""
    },
    {
-    "work": "arxiv:2506.13724",
+    "work": "report:N8#1",
     "grade": ""
    },
    {
@@ -8100,7 +8073,7 @@
   ],
   "enc_gkp": [
    {
-    "work": "https://arxiv.org/abs/quant-ph/0008040",
+    "work": "doi:10.1103/physreva.64.012310",
     "grade": ""
    },
    {
@@ -8162,7 +8135,7 @@
     "grade": ""
    },
    {
-    "work": "report:I1#0",
+    "work": "report:I1#1",
     "grade": ""
    },
    {
@@ -8228,7 +8201,7 @@
     "grade": ""
    },
    {
-    "work": "report:I1#0",
+    "work": "report:I1#1",
     "grade": ""
    },
    {
@@ -8514,7 +8487,7 @@
     "grade": ""
    },
    {
-    "work": "doi:10.1038/s41586-025-09827-w",
+    "work": "report:Q3#0",
     "grade": ""
    },
    {
@@ -8644,7 +8617,7 @@
     "grade": "G"
    },
    {
-    "work": "report:I1#0",
+    "work": "report:I1#1",
     "grade": "D"
    },
    {
@@ -8860,7 +8833,7 @@
     "grade": "D"
    },
    {
-    "work": "report:I1#0",
+    "work": "report:I1#1",
     "grade": "D"
    },
    {
@@ -9072,7 +9045,7 @@
     "grade": ""
    },
    {
-    "work": "arxiv:2504.12099",
+    "work": "doi:10.1038/s41567-026-03211-9",
     "grade": ""
    },
    {
@@ -9260,7 +9233,7 @@
     "grade": "G"
    },
    {
-    "work": "report:I1#0",
+    "work": "report:I1#1",
     "grade": ""
    },
    {
@@ -9440,7 +9413,7 @@
     "grade": "S"
    },
    {
-    "work": "report:I1#0",
+    "work": "report:I1#1",
     "grade": "D"
    },
    {
@@ -9580,7 +9553,7 @@
     "grade": "S"
    },
    {
-    "work": "arxiv:2506.13724",
+    "work": "report:N8#1",
     "grade": "D"
    },
    {
@@ -9950,7 +9923,7 @@
     "grade": "D"
    },
    {
-    "work": "report:I1#0",
+    "work": "report:I1#1",
     "grade": "D"
    },
    {
@@ -10104,10 +10077,6 @@
     "grade": ""
    },
    {
-    "work": "report:T8#0",
-    "grade": ""
-   },
-   {
     "work": "report:T8#1",
     "grade": ""
    },
@@ -10198,7 +10167,7 @@
     "grade": "P"
    },
    {
-    "work": "https://thequantuminsider.com/2026/08/26/sparrow-quantum-eurohpc-quantum-grand-challenge-funding",
+    "work": "https://quantumcomputingreport.com/sparrow-quantum-secures-e21-5m-24m-usd-in-series-a-funding-to-advance-photonic-quantum-chip-production",
     "grade": "P"
    },
    {
@@ -10428,7 +10397,7 @@
     "grade": "C"
    },
    {
-    "work": "arxiv:2506.13724",
+    "work": "report:N8#1",
     "grade": ""
    },
    {
@@ -10461,10 +10430,6 @@
    },
    {
     "work": "arxiv:2604.08672",
-    "grade": ""
-   },
-   {
-    "work": "report:N8#1",
     "grade": ""
    },
    {
@@ -10526,7 +10491,7 @@
     "grade": "D"
    },
    {
-    "work": "report:I1#0",
+    "work": "report:I1#1",
     "grade": "D"
    },
    {
@@ -10744,7 +10709,7 @@
     "grade": ""
    },
    {
-    "work": "https://www.nist.gov/publications/superconducting-nanowire-single-photon-detectors-98-system-detection-efficiency-1550-nm",
+    "work": "doi:10.1364/optica.400751",
     "grade": ""
    },
    {
@@ -10860,10 +10825,6 @@
     "grade": ""
    },
    {
-    "work": "report:P10#1",
-    "grade": ""
-   },
-   {
     "work": "arxiv:2606.28490",
     "grade": ""
    },
@@ -10926,7 +10887,7 @@
     "grade": ""
    },
    {
-    "work": "arxiv:2408.13687",
+    "work": "arxiv:2402.15644",
     "grade": ""
    },
    {

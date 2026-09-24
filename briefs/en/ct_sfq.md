@@ -98,7 +98,7 @@ Confirm if by end-2027 a group publishes an SFQ-driven two-qubit gate below 1% e
 
 ## Sources
 
-[1] McDermott and Vavilov, “Accurate qubit control with single flux quantum pulses,” *Phys. Rev. Applied*, vol. 2, Art. no. 014007, 2014, doi: [10.1103/PhysRevApplied.2.014007](https://doi.org/10.1103/PhysRevApplied.2.014007). [S]
+[1] R. McDermott and M. G. Vavilov, “Accurate Qubit Control with Single Flux Quantum Pulses,” *Phys. Rev. Appl.*, vol. 2, no. 1, Art. no. 014007, Jul. 2014, doi: [10.1103/PhysRevApplied.2.014007](https://doi.org/10.1103/PhysRevApplied.2.014007). [S]
 [2] E. Leonard *et al.*, “Digital Coherent Control of a Superconducting Qubit,” *Phys. Rev. Appl.*, vol. 11, no. 1, Art. no. 014009, Jan. 2019, doi: [10.1103/PhysRevApplied.11.014009](https://doi.org/10.1103/PhysRevApplied.11.014009). [arXiv:1806.07930](https://arxiv.org/abs/1806.07930). [D]
 [3] C. Jordan *et al.*, “A quantum computer controlled by superconducting digital electronics at millikelvin temperature,” *Nat. Electron.*, vol. 9, no. 3, pp. 287–294, Mar. 2026, doi: [10.1038/s41928-026-01576-6](https://doi.org/10.1038/s41928-026-01576-6). [D]
 [4] R. Neeman, “Superconductor Electronics Monitor 2026,” Qodeh, Sep. 2026, doi: [10.5281/zenodo.21860767](https://doi.org/10.5281/zenodo.21860767). [P]

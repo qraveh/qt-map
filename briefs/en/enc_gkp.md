@@ -69,7 +69,7 @@ Three quantities are reported as if commensurable. Gain is a ratio of decay rate
 Confirm or demote within 12–24 months: does any GKP demonstration publish an unconditional logical error rate; does Nord Quantique lift combined survival above 10%; does an optical GKP state pass 1 dB effective squeezing. Best case by 2029: a multi-mode GKP logical qubit below break-even without post-selection, under a qLDPC outer code. Worst case: it stays a post-selected memory while cat and erasure encodings carry the bosonic path.
 
 ## Sources
-[1] Gottesman, Kitaev, and Preskill, “Encoding a qubit in an oscillator,” *Phys. Rev. A*, vol. 64, Art. no. 012310, 2001. [Online]. Available: https://arxiv.org/abs/quant-ph/0008040
+[1] D. Gottesman, A. Kitaev, and J. Preskill, “Encoding a qubit in an oscillator,” *Phys. Rev. A*, vol. 64, no. 1, Art. no. 012310, Jun. 2001, doi: [10.1103/PhysRevA.64.012310](https://doi.org/10.1103/PhysRevA.64.012310).
 [2] P. Campagne-Ibarcq *et al.*, “Quantum error correction of a qubit encoded in grid states of an oscillator,” *Nature*, vol. 584, no. 7821, pp. 368–372, Aug. 2020, doi: [10.1038/s41586-020-2603-3](https://doi.org/10.1038/s41586-020-2603-3).
 [3] V. V. Sivak *et al.*, “Real-time quantum error correction beyond break-even,” *Nature*, vol. 616, no. 7955, pp. 50–55, Apr. 2023, doi: [10.1038/s41586-023-05782-6](https://doi.org/10.1038/s41586-023-05782-6).
 [4] B. L. Brock *et al.*, “Quantum error correction of qudits beyond break-even,” *Nature*, vol. 641, no. 8063, pp. 612–618, May 2025, doi: [10.1038/s41586-025-08899-y](https://doi.org/10.1038/s41586-025-08899-y).

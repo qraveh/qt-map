@@ -58,7 +58,7 @@ updated: 2026-09-03
 
 ## Источники
 [1] M. Fuechsle *et al.*, “A single-atom transistor,” *Nat. Nanotechnol.*, vol. 7, no. 4, pp. 242–246, Apr. 2012, doi: [10.1038/nnano.2012.21](https://doi.org/10.1038/nnano.2012.21). [D]
-[2] H. Edlbauer *et al.*, “An 11-qubit atom processor in silicon,” [arXiv:2506.03567](https://arxiv.org/abs/2506.03567), Jun. 2025. [D]
+[2] H. Edlbauer *et al.*, “An 11-qubit atom processor in silicon,” *Nature*, vol. 648, no. 8094, pp. 569–575, Dec. 2025, doi: [10.1038/s41586-025-09827-w](https://doi.org/10.1038/s41586-025-09827-w). [arXiv:2506.03567](https://arxiv.org/abs/2506.03567). [D]
 [3] U.S. Department of Energy, “DOE Advances Domestic Supply of Silicon, Germanium Isotopes for Quantum Computing,” HPCwire, Jul. 16, 2026. [Online]. Available: https://www.hpcwire.com/off-the-wire/doe-advances-domestic-supply-of-silicon-germanium-isotopes-for-quantum-computing/ [P]
 [4] Silicon Quantum Computing, “SkyWater x SQC: Advancing Hybrid Quantum-Classical Computing,” Nov. 20, 2025. [Online]. Available: https://sqc.com/news/skywater-and-sqc-advancing-hybrid-quantum-classical-computing [C]
 [5] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [G]

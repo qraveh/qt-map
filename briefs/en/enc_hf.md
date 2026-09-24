@@ -61,7 +61,7 @@ Confirm if all-electronic control reaches a fleet average below 10⁻⁵ with pu
 
 ## Sources
 [1] P. Wang *et al.*, “Single ion-qubit exceeding one hour coherence time,” *Nat. Commun.*, vol. 12, Art. no. 233, Jan. 2021, doi: [10.1038/s41467-020-20330-w](https://doi.org/10.1038/s41467-020-20330-w). [arXiv:2008.00251](https://arxiv.org/abs/2008.00251).
-[2] Monroe, Meekhof, King, Itano, and Wineland, “Demonstration of a fundamental quantum logic gate,” *Phys. Rev. Lett.*, vol. 75, Art. no. 4714, Dec. 1995, doi: [10.1103/PhysRevLett.75.4714](https://doi.org/10.1103/PhysRevLett.75.4714).
+[2] C. R. Monroe, D. M. Meekhof, B. E. King, W. M. Itano, and D. J. Wineland, “Demonstration of a Fundamental Quantum Logic Gate,” *Phys. Rev. Lett.*, vol. 75, no. 25, pp. 4714–4717, Dec. 1995, doi: [10.1103/PhysRevLett.75.4714](https://doi.org/10.1103/PhysRevLett.75.4714).
 [3] A. C. Hughes *et al.*, “Trapped-ion two-qubit gates with >99.99% fidelity without ground-state cooling,” [arXiv:2510.17286](https://arxiv.org/abs/2510.17286), Oct. 2025.
 [4] M. C. Smith, A. D. Leu, K. Miyanishi, M. F. Gely, and D. M. Lucas, “Single-qubit gates with errors at the 10⁻⁷ level,” *Phys. Rev. Lett.*, vol. 134, no. 23, Art. no. 230601, Jun. 2025, doi: [10.1103/42w2-6ccy](https://doi.org/10.1103/42w2-6ccy). [arXiv:2412.04421](https://arxiv.org/abs/2412.04421).
 [5] A. Ransford *et al.*, “A 98-qubit trapped-ion quantum computer with all-to-all connectivity,” *Nature*, vol. 655, no. 8121, pp. 81–86, Jun. 2026, doi: [10.1038/s41586-026-10676-4](https://doi.org/10.1038/s41586-026-10676-4). [arXiv:2511.05465](https://arxiv.org/abs/2511.05465).

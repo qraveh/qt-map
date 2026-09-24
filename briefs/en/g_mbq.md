@@ -57,7 +57,7 @@ Requires the Majorana-parity carrier (two wires per tetron) and quantum-capacita
 Falsifiable in 12–24 months: a first joint (X-basis) parity measurement with a stated assignment error; any operation or entanglement between two tetrons; a published X/Z ratio below 100×. Confirm on the first two; demote to theory if none lands by end-2027. Best case 2029, measurement-only Cliffords on a small array; worst case, X-basis poisoning is intrinsic to the two-loop geometry and the line closes. Open: is the asymmetry geometric or material; does anyone outside Microsoft attempt a joint measurement.
 
 ## Sources
-[1] P. Bonderson, M. Freedman, and C. Nayak, “Measurement-Only Topological Quantum Computation,” [arXiv:0802.0279](https://arxiv.org/abs/0802.0279), Feb. 2008.
+[1] P. Bonderson, M. Freedman, and C. Nayak, “Measurement-Only Topological Quantum Computation,” *Phys. Rev. Lett.*, vol. 101, no. 1, Art. no. 010501, Jun. 2008, doi: [10.1103/PhysRevLett.101.010501](https://doi.org/10.1103/PhysRevLett.101.010501). [arXiv:0802.0279](https://arxiv.org/abs/0802.0279).
 [2] T. Karzig *et al.*, “Scalable designs for quasiparticle-poisoning-protected topological quantum computation with Majorana zero modes,” *Phys. Rev. B*, vol. 95, no. 23, Art. no. 235305, Jun. 2017, doi: [10.1103/PhysRevB.95.235305](https://doi.org/10.1103/PhysRevB.95.235305). [arXiv:1610.05289](https://arxiv.org/abs/1610.05289).
 [3] M. Aghaee *et al.*, “20 Second Parity Lifetime in an InAs–Pb Tetron Device,” [arXiv:2606.03884](https://arxiv.org/abs/2606.03884), Jun. 2026.
 [4] M. Aghaee *et al.*, “Distinct Lifetimes for X and Z Loop Measurements in a Majorana Tetron Device,” [arXiv:2507.08795](https://arxiv.org/abs/2507.08795), Jul. 2025.

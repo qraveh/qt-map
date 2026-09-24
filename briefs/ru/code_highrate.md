@@ -104,12 +104,12 @@ updated: 2026-09-03
 
 ## Источники
 
-[1] C. N. Self, M. Benedetti, and D. Amaro, “Protecting Expressive Circuits with a Quantum Error Detection Code,” *Nat. Phys.*, vol. 20, pp. 219–224, doi: [10.1038/s41567-023-02282-2](https://doi.org/10.1038/s41567-023-02282-2). [arXiv:2211.06703](https://arxiv.org/abs/2211.06703).
+[1] C. N. Self, M. Benedetti, and D. Amaro, “Protecting expressive circuits with a quantum error detection code,” *Nat. Phys.*, vol. 20, no. 2, pp. 219–224, Jan. 2024, doi: [10.1038/s41567-023-02282-2](https://doi.org/10.1038/s41567-023-02282-2). [arXiv:2211.06703](https://arxiv.org/abs/2211.06703).
 [2] S. Dasu *et al.*, “Computing with many encoded logical qubits beyond break-even,” [arXiv:2602.22211](https://arxiv.org/abs/2602.22211), Feb. 2026.
 [3] Error Correction Zoo, “[[16,6,4]] Tesseract color code,” Jun. 8, 2026. [Online]. Available: https://errorcorrectionzoo.org/c/stab_16_6_4 [P]
-[4] H. Goto, “Many-hypercube codes: High-rate quantum error-correcting codes for high-performance fault-tolerant quantum computing,” [arXiv:2403.16054](https://arxiv.org/abs/2403.16054), Mar. 2024.
+[4] H. Goto, “High-performance fault-tolerant quantum computing with many-hypercube codes,” *Sci. Adv.*, vol. 10, no. 36, Art. no. eadp6388, Sep. 2024, doi: [10.1126/sciadv.adp6388](https://doi.org/10.1126/sciadv.adp6388). [arXiv:2403.16054](https://arxiv.org/abs/2403.16054).
 [5] C. Gidney and C. Jones, “New circuits and an open source decoder for the color code,” [arXiv:2312.08813](https://arxiv.org/abs/2312.08813), Dec. 2023.
-[6] S. Bravyi *et al.*, “High-threshold and low-overhead fault-tolerant quantum memory,” *Nature*, vol. 627, pp. 778–782, doi: [10.1038/s41586-024-07107-7](https://doi.org/10.1038/s41586-024-07107-7). [arXiv:2308.07915](https://arxiv.org/abs/2308.07915).
+[6] S. Bravyi *et al.*, “High-threshold and low-overhead fault-tolerant quantum memory,” *Nature*, vol. 627, no. 8005, pp. 778–782, Mar. 2024, doi: [10.1038/s41586-024-07107-7](https://doi.org/10.1038/s41586-024-07107-7). [arXiv:2308.07915](https://arxiv.org/abs/2308.07915).
 [7] A. Ransford *et al.*, “A 98-qubit trapped-ion quantum computer with all-to-all connectivity,” *Nature*, vol. 655, no. 8121, pp. 81–86, Jun. 2026, doi: [10.1038/s41586-026-10676-4](https://doi.org/10.1038/s41586-026-10676-4). [arXiv:2511.05465](https://arxiv.org/abs/2511.05465).
 [8] S. Dasu *et al.*, “Breaking even with magic: demonstration of a high-fidelity logical non-Clifford gate,” [arXiv:2506.14688](https://arxiv.org/abs/2506.14688), Jun. 2025.
 [9] P. S. Rodriguez *et al.*, “Experimental demonstration of logical magic state distillation,” *Nature*, vol. 645, no. 8081, pp. 620–625, Jul. 2025, doi: [10.1038/s41586-025-09367-3](https://doi.org/10.1038/s41586-025-09367-3).

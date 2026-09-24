@@ -2463,20 +2463,20 @@
    "url": "https://arxiv.org/abs/2506.03567",
    "hint": "SQC donor qubits",
    "verified": true,
-   "kind": "preprint",
+   "kind": "journal",
    "title": "An 11-qubit atom processor in silicon",
    "authors": [
-    "Hermann Edlbauer",
-    "Junliang Wang",
-    "A. M. Saffat-Ee Huq",
-    "Ian Thorvaldson",
-    "Michael T. Jones",
-    "Saiful Haque Misha"
+    "Hermann Edlbauer"
    ],
-   "n_authors": 15,
-   "date": "2025-06",
+   "etal": true,
+   "journal": "Nature",
+   "volume": "648",
+   "issue": "8094",
+   "pages": "569–575",
+   "date": "2025-12-17",
+   "doi": "10.1038/s41586-025-09827-w",
    "arxiv": "2506.03567",
-   "note": "title and authors from the arXiv record (alphaxiv mirror); month from the arXiv identifier"
+   "note": "journal record (Nature 648, 569–575) verified for the briefs, 24 Sep 2026; arXiv id kept from the preprint record"
   }
  ],
  "Q4": [

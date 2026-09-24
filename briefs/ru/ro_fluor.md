@@ -71,7 +71,7 @@ SPAM измеряют, готовя заведомо светлые и тёмн�
 
 ## Источники
 [1] S. Crain *et al.*, “High-speed low-crosstalk detection of a ¹⁷¹Yb⁺ qubit using superconducting nanowire single photon detectors,” *Commun. Phys.*, vol. 2, no. 1, Art. no. 97, Aug. 2019, doi: [10.1038/s42005-019-0195-8](https://doi.org/10.1038/s42005-019-0195-8). [D]
-[2] D. V. Reddy, R. R. Nerem, S. W. Nam, R. P. Mirin, and V. B. Verma, “Superconducting nanowire single-photon detectors with 98% system detection efficiency at 1550 nm,” *Optica*, vol. 7, no. 12, Art. no. 1649, Oct. 2020, doi: [10.1364/optica.400751](https://doi.org/10.1364/optica.400751). [D]
+[2] D. V. Reddy, R. R. Nerem, S. W. Nam, R. P. Mirin, and V. B. Verma, “Superconducting nanowire single-photon detectors with 98% system detection efficiency at 1550 nm,” *Optica*, vol. 7, no. 12, p. 1649, Dec. 2020, doi: [10.1364/OPTICA.400751](https://doi.org/10.1364/OPTICA.400751). [D]
 [3] D. Reens *et al.*, “High-Fidelity Ion State Detection Using Trap-Integrated Avalanche Photodiodes,” *Phys. Rev. Lett.*, vol. 129, no. 10, Art. no. 100502, Sep. 2022, doi: [10.1103/PhysRevLett.129.100502](https://doi.org/10.1103/PhysRevLett.129.100502). [D]
 [4] A. Ransford *et al.*, “A 98-qubit trapped-ion quantum computer with all-to-all connectivity,” *Nature*, vol. 655, no. 8121, pp. 81–86, Jun. 2026, doi: [10.1038/s41586-026-10676-4](https://doi.org/10.1038/s41586-026-10676-4). [arXiv:2511.05465](https://arxiv.org/abs/2511.05465). [D]
 [5] IonQ, “IonQ Forte: High-Performance Commercial Quantum Computer.” [Online]. Available: https://www.ionq.com/quantum-systems/forte [C]

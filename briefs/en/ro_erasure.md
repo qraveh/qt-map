@@ -68,7 +68,7 @@ FP/FN come from preparing |0_L⟩, |1_L⟩ and the erased state and repeating th
 
 Not captured: survival (every headline fidelity is conditioned on "no erasure"; at 2.5% per check, forty checks halve the sample); false negatives, visible only as leakage in a multi-round code; spectator dephasing on shared feedlines, unbenchmarked beyond four qubits; drift (TLS-driven swings over 5–18 days [D][8]); the time tax. Independent replications: AWS (2023, 2026) [D][6], [8], Yale (2023, 2024) [D][7], [9], Quantum Circuits (2026) [D][11], SUSTech (2025) [D][12], UMass (2026) [D][22]; Princeton (2023, 2025) [D][4], [14], Caltech (2023) [D][5], JILA (2025) [D][15]; Oregon (2024) [D][17].
 
-Conflicts. D-Wave says its qubits detect "approximately 90% of errors" [C][18]; at gate level the fraction is 83–94% depending on whether the Pauli residual is the <0.1% bound or the 0.029% fit [D][11]. Atomic two-qubit conversion is 33–38% [D][4], [14] against the proposal's 98% [S][1]. The [[4,2,2]] gain from erasure information is 1.9(4)× in the 2025-06 arXiv text [D][14] but 3.6× as carried in the graph from the 2026-06 Nature Physics version [D][23]; the arXiv value is used pending the published text.
+Conflicts. D-Wave says its qubits detect "approximately 90% of errors" [C][18]; at gate level the fraction is 83–94% depending on whether the Pauli residual is the <0.1% bound or the 0.029% fit [D][11]. Atomic two-qubit conversion is 33–38% [D][4], [14] against the proposal's 98% [S][1]. The [[4,2,2]] gain from erasure information is 1.9(4)× in the 2025-06 arXiv text [D][14] but 3.6× as carried in the graph from the 2026-06 Nature Physics version [D][14]; the arXiv value is used pending the published text.
 
 ## Actors & economics
 
@@ -78,28 +78,28 @@ Conflicts. D-Wave says its qubits detect "approximately 90% of errors" [C][18]; 
 |---|---|---|---|---|
 | Quantum Circuits Inc. | developer | US | Cavity dual-rail qubits; 8-qubit Seeker; 17-qubit system due 2026; D-Wave unit since 2026-01 | [D][11] [C][13] [G:DWAVE-QCI-2026-01] |
 | AWS Center for Quantum Computing | developer | US | 384 ns χ-matched transmon check | [D][6], [8] |
-| Yale University | research | US | Cavity dual-rail origin; ancilla check | [D][7], [9], [24] |
+| Yale University | research | US | Cavity dual-rail origin; ancilla check | [D][7], [9], [23] |
 | SUSTech (Shenzhen) | research | China | Four dual-rail transmon qubits | [D][12] |
 | Princeton University | research | US | ¹⁷¹Yb metastable conversion; [[4,2,2]] | [D][4], [14] |
-| Google Quantum AI | developer | US | Atom track under Kaufman (ex-JILA ¹⁷¹Yb omg), 2026-03 | [G:GOOGLE-ATOMS-2026-03] [P][25] [D][15], [21] |
+| Google Quantum AI | developer | US | Atom track under Kaufman (ex-JILA ¹⁷¹Yb omg), 2026-03 | [G:GOOGLE-ATOMS-2026-03] [P][24] [D][15], [21] |
 | Atom Computing | developer | US | ¹⁷¹Yb 1,225-atom systems; loss by imaging; Magne with Microsoft | [D][16] [G:MAGNE-2025-07] |
 
 **Money.**
-- 2024-05 · Quantum Circuits · Series B extension · $26.5 M · Sequoia · cumulative ≈$84 M · closed [P][26] [G:QCI-FUNDING]
-- 2024-08-15 · Quantum Circuits · Series B close · >$60 M · ARCH, F-Prime, Sequoia, Hither Creek · overlaps the extension · closed [C][27] [G:QCI-FUNDING]
+- 2024-05 · Quantum Circuits · Series B extension · $26.5 M · Sequoia · cumulative ≈$84 M · closed [P][25] [G:QCI-FUNDING]
+- 2024-08-15 · Quantum Circuits · Series B close · >$60 M · ARCH, F-Prime, Sequoia, Hither Creek · overlaps the extension · closed [C][26] [G:QCI-FUNDING]
 - 2025-07-17 · QuNorth · Magne order, 50 logical qubits · €80 M · Atom Computing/Microsoft · ordered [G:MAGNE-2025-07]
-- 2025-11-06 · DARPA QBI Stage B · up to $15 M each · eleven teams, no dual-rail vendor · official [G][28] [G:QBI-STAGEB-2025-11]
-- 2026-01-07 · D-Wave · acquires Quantum Circuits · $550 M ($300 M stock + $250 M cash) · closed 2026-01-19/20 [C][29], [30] [G:DWAVE-QCI-2026-01]
+- 2025-11-06 · DARPA QBI Stage B · up to $15 M each · eleven teams, no dual-rail vendor · official [G][27] [G:QBI-STAGEB-2025-11]
+- 2026-01-07 · D-Wave · acquires Quantum Circuits · $550 M ($300 M stock + $250 M cash) · closed 2026-01-19/20 [C][28], [29] [G:DWAVE-QCI-2026-01]
 - 2026-05-21 · D-Wave; Atom Computing · US DoC CHIPS letters of intent · $100 M each · LOI [G:CHIPS-LOI-2026-05]
-- 2026-06-16 · Atom Computing · Series C · $100 M · Third Point Ventures · >$300 M cumulative · closed [C][31] [G:ATOM-300M-2026-06]
+- 2026-06-16 · Atom Computing · Series C · $100 M · Third Point Ventures · >$300 M cumulative · closed [C][30] [G:ATOM-300M-2026-06]
 - 2026-08-06 · D-Wave · H1-2026 results · revenue $5.9 M (−67% YoY), cash $546.2 M · reported [G:DWAVE-FIN-2026]
 
 **Market & supply chain.** Nobody sells an erasure check; it rides on the amplifiers and refrigerators of dispersive readout (concentrated, BIS-listed [G][19]). Unit economics are unpublished; the structural cost is 2× transmons or two cavities plus an ancilla per qubit, against Quantum Circuits' claim of 10–20 physical per logical instead of ~200 [C][13]. Only G3 and G4 pay, once codes run 10⁵–10⁶ rounds.
 
-**IP & standards.** Amazon Technologies: US 11,748,652 B1, "Heralding of amplitude damping decay noise for quantum error correction" (Kubica, Retzker; filed 2021-12-10, granted 2023-09-05): heralded decay via a level outside the code space, dual-rail included [G][32]. Yale: US 12,288,135, ancilla with an asymmetric error channel (filed 2019-06-28, granted 2025-04-29) [G][33]. The Yale/Quantum Circuits cavity families now sit with D-Wave. No standard; Stim's HERALDED_ERASE instruction [P][34] commoditises the decoding side.
+**IP & standards.** Amazon Technologies: US 11,748,652 B1, "Heralding of amplitude damping decay noise for quantum error correction" (Kubica, Retzker; filed 2021-12-10, granted 2023-09-05): heralded decay via a level outside the code space, dual-rail included [G][31]. Yale: US 12,288,135, ancilla with an asymmetric error channel (filed 2019-06-28, granted 2025-04-29) [G][32]. The Yale/Quantum Circuits cavity families now sit with D-Wave. No standard; Stim's HERALDED_ERASE instruction [P][33] commoditises the decoding side.
 
 **Roadmaps & track record.**
-- D-Wave: promised 2026-01-07 · initial dual-rail system available in 2026 · not delivered as of 2026-09-03 [C][29].
+- D-Wave: promised 2026-01-07 · initial dual-rail system available in 2026 · not delivered as of 2026-09-03 [C][28].
 - D-Wave: promised 2026-06-01 · 17 qubits with logical error 2× below physical (2026), 49 / 20× (2027), 181 / 2,000× (2028), 10 logical (2030), 100 logical (2032), Λ = 10 · pending, no logical data [R][18] [G:DWAVE-QCI-2026-01].
 Credibility: Quantum Circuits/D-Wave high on physics, unproven on dates; AWS publishes results and promises no product; Princeton delivered the single-qubit half of its 2022 proposal [S][1] [D][4]; Atom Computing on schedule, uncommitted to mid-circuit checks.
 
@@ -116,19 +116,19 @@ Open questions: (1) does the 40× bias survive parallel checks on qubits sharing
 ## Sources
 
 [1] Y. Wu, S. Kolkowitz, S. Puri, and J. D. Thompson, “Erasure conversion for fault-tolerant quantum computing in alkaline earth Rydberg atom arrays,” *Nat. Commun.*, vol. 13, Art. no. 4657, 2022, doi: [10.1038/s41467-022-32094-6](https://doi.org/10.1038/s41467-022-32094-6). [arXiv:2201.03540](https://arxiv.org/abs/2201.03540).
-[2] A. Kubica, A. Haim, Y. Vaknin, F. Brandão, and A. Retzker, “Erasure qubits: Overcoming the T₁ limit in superconducting circuits,” *Phys. Rev. X*, vol. 13, Art. no. 041022, 2023, doi: [10.1103/PhysRevX.13.041022](https://doi.org/10.1103/PhysRevX.13.041022). [arXiv:2208.05461](https://arxiv.org/abs/2208.05461).
-[3] J. D. Teoh *et al.*, “Dual-rail encoding with superconducting cavities,” *Proc. Natl. Acad. Sci. USA*, vol. 120, Art. no. e2221736120, doi: [10.1073/pnas.2221736120](https://doi.org/10.1073/pnas.2221736120). [arXiv:2212.12077](https://arxiv.org/abs/2212.12077).
+[2] A. Kubica *et al.*, “Erasure Qubits: Overcoming the T₁ Limit in Superconducting Circuits,” *Phys. Rev. X*, vol. 13, no. 4, Art. no. 041022, Nov. 2023, doi: [10.1103/PhysRevX.13.041022](https://doi.org/10.1103/PhysRevX.13.041022). [arXiv:2208.05461](https://arxiv.org/abs/2208.05461).
+[3] J. D. Teoh *et al.*, “Dual-rail encoding with superconducting cavities,” *Proc. Natl. Acad. Sci. USA*, vol. 120, no. 41, Art. no. e2221736120, Oct. 2023, doi: [10.1073/pnas.2221736120](https://doi.org/10.1073/pnas.2221736120). [arXiv:2212.12077](https://arxiv.org/abs/2212.12077).
 [4] S. Ma *et al.*, “High-fidelity gates with mid-circuit erasure conversion in a metastable neutral atom qubit,” *Nature*, vol. 622, p. 279, 2023, doi: [10.1038/s41586-023-06438-1](https://doi.org/10.1038/s41586-023-06438-1). [arXiv:2305.05493](https://arxiv.org/abs/2305.05493).
 [5] P. Scholl, A. L. Shaw, R. B.-S. Tsai, R. Finkelstein, J. Choi, and M. Endres, “Erasure conversion in a high-fidelity Rydberg quantum simulator,” *Nature*, vol. 622, p. 273, 2023, doi: [10.1038/s41586-023-06516-4](https://doi.org/10.1038/s41586-023-06516-4). [arXiv:2305.03406](https://arxiv.org/abs/2305.03406).
-[6] H. Levine *et al.*, “Demonstrating a long-coherence dual-rail erasure qubit using tunable transmons,” *Phys. Rev. X*, vol. 14, Art. no. 011051, 2024, doi: [10.1103/PhysRevX.14.011051](https://doi.org/10.1103/PhysRevX.14.011051). [arXiv:2307.08737](https://arxiv.org/abs/2307.08737).
+[6] H. Levine *et al.*, “Demonstrating a long-coherence dual-rail erasure qubit using tunable transmons,” *Phys. Rev. X*, vol. 14, no. 1, Art. no. 011051, Mar. 2024, doi: [10.1103/PhysRevX.14.011051](https://doi.org/10.1103/PhysRevX.14.011051). [arXiv:2307.08737](https://arxiv.org/abs/2307.08737).
 [7] K. S. Chou *et al.*, “Demonstrating a superconducting dual-rail cavity qubit with erasure-detected logical measurements,” [arXiv:2307.03169](https://arxiv.org/abs/2307.03169), Jul. 2023.
 [8] J. S.-C. Hung *et al.*, “Fast, High-Fidelity Erasure Detection of Dual-Rail Qubits with Symmetrically Coupled Readout,” [arXiv:2604.16292](https://arxiv.org/abs/2604.16292), Apr. 2026.
-[9] S. J. de Graaf *et al.*, “A mid-circuit erasure check on a dual-rail cavity qubit using the joint-photon number-splitting regime of circuit QED,” *npj Quantum Inf.*, vol. 11, no. 1, Art. no. 1, Dec. 2025, doi: [10.1038/s41534-024-00944-4](https://doi.org/10.1038/s41534-024-00944-4). [arXiv:2406.14621](https://arxiv.org/abs/2406.14621).
-[10] K. Sahay, J. Jin, J. Claes, J. D. Thompson, and S. Puri, “High threshold codes for neutral atom qubits with biased erasure errors,” *Phys. Rev. X*, vol. 13, Art. no. 041013, 2023, doi: [10.1103/PhysRevX.13.041013](https://doi.org/10.1103/PhysRevX.13.041013). [arXiv:2302.03063](https://arxiv.org/abs/2302.03063).
+[9] S. J. de Graaf *et al.*, “A mid-circuit erasure check on a dual-rail cavity qubit using the joint-photon number-splitting regime of circuit QED,” *npj Quantum Inf.*, vol. 11, no. 1, Dec. 2025, doi: [10.1038/s41534-024-00944-4](https://doi.org/10.1038/s41534-024-00944-4). [arXiv:2406.14621](https://arxiv.org/abs/2406.14621).
+[10] K. Sahay, J. Jin, J. Claes, J. D. Thompson, and S. Puri, “High-Threshold Codes for Neutral-Atom Qubits with Biased Erasure Errors,” *Phys. Rev. X*, vol. 13, no. 4, Art. no. 041013, Oct. 2023, doi: [10.1103/PhysRevX.13.041013](https://doi.org/10.1103/PhysRevX.13.041013). [arXiv:2302.03063](https://arxiv.org/abs/2302.03063).
 [11] N. Mehta *et al.*, “An entangling gate for dual-rail erasure qubits,” *Nature*, vol. 656, no. 8126, pp. 47–53, Aug. 2026, doi: [10.1038/s41586-026-10822-y](https://doi.org/10.1038/s41586-026-10822-y). [arXiv:2503.10935](https://arxiv.org/abs/2503.10935).
-[12] W. Huang *et al.*, “Logical multi-qubit entanglement with dual-rail superconducting qubits,” *Nat. Phys.*, doi: [10.1038/s41567-026-03211-9](https://doi.org/10.1038/s41567-026-03211-9). [arXiv:2504.12099](https://arxiv.org/abs/2504.12099).
+[12] W. Huang *et al.*, “Logical multi-qubit entanglement with dual-rail superconducting qubits,” *Nat. Phys.*, vol. 22, no. 4, pp. 591–597, Mar. 2026, doi: [10.1038/s41567-026-03211-9](https://doi.org/10.1038/s41567-026-03211-9). [arXiv:2504.12099](https://arxiv.org/abs/2504.12099).
 [13] Quantum Circuits, “Quantum Circuits Makes Error-Detecting Qubits,” Nov. 19, 2024. [Online]. Available: https://quantumcircuits.com/resources/quantum-circuits-make-error-detecting-qubits/ [C]
-[14] B. Zhang *et al.*, “Logical qubits with erasure conversion using metastable neutral atoms,” [arXiv:2506.13724](https://arxiv.org/abs/2506.13724), Jun. 2026. Also https://arxiv.org/html/2506.13724. Also https://arxiv.org/abs/2506.13724.
+[14] B. Zhang *et al.*, “Logical qubits with erasure conversion using metastable neutral atoms,” *Nat. Phys.*, vol. 22, no. 6, pp. 910–916, Jun. 2026, doi: [10.1038/s41567-026-03309-0](https://doi.org/10.1038/s41567-026-03309-0).
 [15] A. Senoo *et al.*, “High-fidelity entanglement and coherent multi-qubit mapping in an atom array,” [arXiv:2506.13632](https://arxiv.org/abs/2506.13632), Nov. 2025.
 [16] B. W. Reichardt *et al.*, “Fault-tolerant quantum computation with a neutral atom processor,” [arXiv:2411.11822](https://arxiv.org/abs/2411.11822), Nov. 2024.
 [17] A. Quinn *et al.*, “High-fidelity entanglement of metastable trapped-ion qubits with integrated erasure conversion,” *Phys. Rev. A*, vol. 113, no. 4, Art. no. L040601, Apr. 2026, doi: [10.1103/p3cy-8yjk](https://doi.org/10.1103/p3cy-8yjk). [arXiv:2411.12727](https://arxiv.org/abs/2411.12727).
@@ -137,24 +137,23 @@ Open questions: (1) does the 40× bias survive parallel checks on qubits sharing
 [20] R. Yokoyama *et al.*, “Minimally Destructive Fast Imaging of Single Atoms in an Optical Tweezer Array with Coherent Excitation,” [arXiv:2605.24175](https://arxiv.org/abs/2605.24175), Jun. 2026. Also https://arxiv.org/abs/2605.24175.
 [21] J. W. Lis *et al.*, “Mid-circuit operations using the omg-architecture in neutral atom arrays,” [arXiv:2305.19266](https://arxiv.org/abs/2305.19266), May 2023.
 [22] B.-J. Liu *et al.*, “Hardware-Efficient Erasure Qubits With Superconducting Transmon Qutrits,” [arXiv:2604.08672](https://arxiv.org/abs/2604.08672), Apr. 2026.
-[23] B. Zhang *et al.*, “Logical qubits with erasure conversion using metastable neutral atoms,” *Nat. Phys.*, vol. 22, no. 6, pp. 910–916, Jun. 2026, doi: [10.1038/s41567-026-03309-0](https://doi.org/10.1038/s41567-026-03309-0).
-[24] A. Koottandavida *et al.*, “Erasure Detection of a Dual-Rail Qubit Encoded in a Double-Post Superconducting Cavity,” *Phys. Rev. Lett.*, vol. 132, no. 18, Art. no. 180601, May 2024, doi: [10.1103/PhysRevLett.132.180601](https://doi.org/10.1103/PhysRevLett.132.180601). [arXiv:2311.04423](https://arxiv.org/abs/2311.04423).
-[25] M. Swayne, “Google Paves a Two-Lane Quantum Roadmap by Adding Neutral Atom Systems,” The Quantum Insider, Mar. 24, 2026. [Online]. Available: https://thequantuminsider.com/2026/03/24/google-paves-a-two-lane-quantum-roadmap-by-adding-neutral-atom-systems/ [P]
-[26] The Quantum Insider, “Quantum Circuits Inc. Quietly Raises $26.5 Million,” trade press, May 29, 2024. [Online]. Available: https://thequantuminsider.com/2024/05/29/quantum-circuits-inc-quietly-raises-26-5-million/ [P]
-[27] Quantum Circuits, “Quantum Circuits Secures More Than $60 Million in Series B Investment,” PR Newswire, Aug. 15, 2024. [Online]. Available: https://www.prnewswire.com/news-releases/quantum-circuits-secures-more-than-60-million-in-series-b-investment-302221428.html [C]
-[28] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
-[29] D-Wave Quantum Inc., “D-Wave Announces Agreement to Acquire Quantum Circuits Inc., Establishing World's Leading Quantum Computing Company,” Jan. 7, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-to-acquire-quantum-circuits-inc-establishing-world-s-leading-quantum-computing-company/ [C]
-[30] D-Wave Quantum, “D-Wave Completes Acquisition of Quantum Circuits Inc,” Business Wire, Jan. 19, 2026. [Online]. Available: https://www.businesswire.com/news/home/20260119513563/en/D-Wave-Completes-Acquisition-of-Quantum-Circuits-Inc.-Creating-Worlds-Leading-Quantum-Computing-Company [C]
-[31] Atom Computing, “Atom Computing Raises More Than $300 Million to Accelerate Deployment of Fault-Tolerant, Neutral-Atom Quantum Computers,” PR Newswire, Jun. 16, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/atom-computing-raises-more-than-300-million-to-accelerate-deployment-of-fault-tolerant-neutral-atom-quantum-computers-302800832.html [C]
-[32] A. M. Kubica and A. Retzker, “Heralding of amplitude damping decay noise for quantum error correction,” Google Patents, Sep. 5, 2023. [Online]. Available: https://patents.google.com/patent/US11748652B1/en [G]
-[33] Justia, “Shruti PURI Inventions, Patents and Patent Applications - Justia Patents Search.” [Online]. Available: https://patents.justia.com/inventor/shruti-puri [G]
-[34] quantumlib, “Gates supported by Stim,” GitHub. [Online]. Available: https://github.com/quantumlib/Stim/blob/main/doc/gates.md [P]
+[23] A. Koottandavida *et al.*, “Erasure Detection of a Dual-Rail Qubit Encoded in a Double-Post Superconducting Cavity,” *Phys. Rev. Lett.*, vol. 132, no. 18, Art. no. 180601, May 2024, doi: [10.1103/PhysRevLett.132.180601](https://doi.org/10.1103/PhysRevLett.132.180601). [arXiv:2311.04423](https://arxiv.org/abs/2311.04423).
+[24] M. Swayne, “Google Paves a Two-Lane Quantum Roadmap by Adding Neutral Atom Systems,” The Quantum Insider, Mar. 24, 2026. [Online]. Available: https://thequantuminsider.com/2026/03/24/google-paves-a-two-lane-quantum-roadmap-by-adding-neutral-atom-systems/ [P]
+[25] The Quantum Insider, “Quantum Circuits Inc. Quietly Raises $26.5 Million,” trade press, May 29, 2024. [Online]. Available: https://thequantuminsider.com/2024/05/29/quantum-circuits-inc-quietly-raises-26-5-million/ [P]
+[26] Quantum Circuits, “Quantum Circuits Secures More Than $60 Million in Series B Investment,” PR Newswire, Aug. 15, 2024. [Online]. Available: https://www.prnewswire.com/news-releases/quantum-circuits-secures-more-than-60-million-in-series-b-investment-302221428.html [C]
+[27] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
+[28] D-Wave Quantum Inc., “D-Wave Announces Agreement to Acquire Quantum Circuits Inc., Establishing World's Leading Quantum Computing Company,” Jan. 7, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-to-acquire-quantum-circuits-inc-establishing-world-s-leading-quantum-computing-company/ [C]
+[29] D-Wave Quantum, “D-Wave Completes Acquisition of Quantum Circuits Inc,” Business Wire, Jan. 19, 2026. [Online]. Available: https://www.businesswire.com/news/home/20260119513563/en/D-Wave-Completes-Acquisition-of-Quantum-Circuits-Inc.-Creating-Worlds-Leading-Quantum-Computing-Company [C]
+[30] Atom Computing, “Atom Computing Raises More Than $300 Million to Accelerate Deployment of Fault-Tolerant, Neutral-Atom Quantum Computers,” PR Newswire, Jun. 16, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/atom-computing-raises-more-than-300-million-to-accelerate-deployment-of-fault-tolerant-neutral-atom-quantum-computers-302800832.html [C]
+[31] A. M. Kubica and A. Retzker, “Heralding of amplitude damping decay noise for quantum error correction,” Google Patents, Sep. 5, 2023. [Online]. Available: https://patents.google.com/patent/US11748652B1/en [G]
+[32] Justia, “Shruti PURI Inventions, Patents and Patent Applications - Justia Patents Search.” [Online]. Available: https://patents.justia.com/inventor/shruti-puri [G]
+[33] quantumlib, “Gates supported by Stim,” GitHub. [Online]. Available: https://github.com/quantumlib/Stim/blob/main/doc/gates.md [P]
 
 ## Open verification items
 
-- [[4,2,2]] erasure-information gain: 1.9(4)× in arXiv:2506.13724 v1 [D][14] versus 3.6× carried in the graph from the Nature Physics version [D][23]; the published main text could not be read (nature.com shows the abstract only; phys.org returned HTTP 429).
+- [[4,2,2]] erasure-information gain: 1.9(4)× in arXiv:2506.13724 v1 [D][14] versus 3.6× carried in the graph from the Nature Physics version [D][14]; the published main text could not be read (nature.com shows the abstract only; phys.org returned HTTP 429).
 - Quantum Circuits' 2017 Series A amount (reported $18 M, Canaan/Sequoia) not verified from a primary source; omitted.
-- Quantum Circuits' cumulative funding ≈ $84 M to May 2024 is a trade-press figure [P][26]; the company's release states no total.
+- Quantum Circuits' cumulative funding ≈ $84 M to May 2024 is a trade-press figure [P][25]; the company's release states no total.
 - Whether Quantum Circuits was the unnamed 18th DARPA QBI Stage A company: DARPA names 17 of 18 [G:QBI-STAGEA-2025-04]; unresolved.
 - Cost or energy per checked qubit: no actor publishes it.
 - Patent counts for the Yale/Quantum Circuits dual-rail cavity families: not available from a named database; two individual patents cited.

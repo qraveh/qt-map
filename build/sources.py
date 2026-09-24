@@ -41,7 +41,7 @@ SITES = {'quantumcomputingreport.com': 'Quantum Computing Report', 'thequantumin
          'quantum.microsoft.com': 'Microsoft', 'oqc.tech': 'OQC', 'aqt.eu': 'AQT', 'eleqtron.com': 'eleQtron', 'nordquantique.com': 'Nord Quantique',
          'quantumcircuits.com': 'Quantum Circuits', 'quixquantum.com': 'QuiX Quantum', 'forbes.com.au': 'Forbes Australia', 'anl.gov': 'Argonne National Laboratory',
          'planqc.eu': 'planqc', 'newsroom.ibm.com': 'IBM Newsroom', 'investors.rigetti.com': 'Rigetti Computing'}
-JOURNALS = {'PRL': 'Phys. Rev. Lett.', 'PRX': 'Phys. Rev. X', 'PRA': 'Phys. Rev. A', 'PRB': 'Phys. Rev. B', 'PR Applied': 'Phys. Rev. Appl.', 'PRApplied': 'Phys. Rev. Appl.',
+JOURNALS = {'PRL': 'Phys. Rev. Lett.', 'PRX': 'Phys. Rev. X', 'PRA': 'Phys. Rev. A', 'PRB': 'Phys. Rev. B', 'PR Applied': 'Phys. Rev. Appl.', 'Phys. Rev. Applied': 'Phys. Rev. Appl.', 'PRApplied': 'Phys. Rev. Appl.',
             'PRX Quantum': 'PRX Quantum', 'Nature Communications': 'Nat. Commun.', 'Nat. Commun.': 'Nat. Commun.', 'Nature Physics': 'Nat. Phys.', 'Nature Electronics': 'Nat. Electron.',
             'Nature Nanotechnology': 'Nat. Nanotechnol.', 'Nature Photonics': 'Nat. Photon.', 'Nature Materials': 'Nat. Mater.', 'Science Advances': 'Sci. Adv.',
             'npj Quantum Information': 'npj Quantum Inf.', 'PNAS': 'Proc. Natl. Acad. Sci. USA', 'Physical Review Letters': 'Phys. Rev. Lett.', 'Physical Review X': 'Phys. Rev. X',

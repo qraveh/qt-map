@@ -110,8 +110,8 @@ updated: 2026-09-03
 
 ## Источники
 
-[1] C. Ospelkaus *et al.*, “Microwave quantum logic gates for trapped ions,” [arXiv:1104.3573](https://arxiv.org/abs/1104.3573), Apr. 2011.
-[2] T. P. Harty *et al.*, “High-fidelity trapped-ion quantum logic using near-field microwaves,” *Phys. Rev. Lett.*, vol. 117, Art. no. 140501, doi: [10.1103/PhysRevLett.117.140501](https://doi.org/10.1103/PhysRevLett.117.140501). [arXiv:1606.08409](https://arxiv.org/abs/1606.08409).
+[1] C. Ospelkaus *et al.*, “Microwave quantum logic gates for trapped ions,” *Nature*, vol. 476, no. 7359, pp. 181–184, Aug. 2011, doi: [10.1038/nature10290](https://doi.org/10.1038/nature10290). [arXiv:1104.3573](https://arxiv.org/abs/1104.3573).
+[2] T. P. Harty *et al.*, “High-fidelity trapped-ion quantum logic using near-field microwaves,” *Phys. Rev. Lett.*, vol. 117, no. 14, Art. no. 140501, Sep. 2016, doi: [10.1103/PhysRevLett.117.140501](https://doi.org/10.1103/PhysRevLett.117.140501). [arXiv:1606.08409](https://arxiv.org/abs/1606.08409).
 [3] IonQ, “IonQ achieves landmark result, setting new world record in quantum computing,” 99.99% two-qubit fidelity on Oxford Ionics chips from standard semiconductor fabs) · IonQ newsroom, Oct. 2025. [Online]. Available: https://www.ionq.com/news/ionq-achieves-landmark-result-setting-new-world-record-in-quantum-computing [C]
 [4] Quantum Computing Report, “eleQtron Secures €57 Million Series A to Scale MAGIC Trapped-Ion Platform,” May 2026. [Online]. Available: https://quantumcomputingreport.com/eleqtron-secures-e57-million-61-5m-usd-series-a-to-scale-ion-trap-systems/ [P]
 [5] A. Ingall, “German government tasks Sussex spin-out with building a powerful quantum computer in €67M contract,” University of Sussex Broadcast, Nov. 2, 2022. [Online]. Available: https://www.sussex.ac.uk/broadcast/read/59206 [P]

@@ -61,7 +61,7 @@ updated: 2026-09-04
 [1] D. Loss and D. P. DiVincenzo, “Quantum computation with quantum dots,” *Phys. Rev. A*, vol. 57, no. 1, pp. 120–126, Jan. 1998, doi: [10.1103/PhysRevA.57.120](https://doi.org/10.1103/PhysRevA.57.120). [D]
 [2] F. K. Unseld *et al.*, “Baseband control of single-electron silicon spin qubits in two dimensions,” *Nat. Commun.*, vol. 16, no. 1, Art. no. 5605, Jul. 2025, doi: [10.1038/s41467-025-60351-x](https://doi.org/10.1038/s41467-025-60351-x). [D]
 [3] P. Steinacker *et al.*, “Industry-compatible silicon spin-qubit unit cells exceeding 99% fidelity,” *Nature*, vol. 646, no. 8083, pp. 81–87, Sep. 2025, doi: [10.1038/s41586-025-09531-9](https://doi.org/10.1038/s41586-025-09531-9). [D]
-[4] H. Edlbauer *et al.*, “An 11-qubit atom processor in silicon,” [arXiv:2506.03567](https://arxiv.org/abs/2506.03567), Jun. 2025. [D]
+[4] H. Edlbauer *et al.*, “An 11-qubit atom processor in silicon,” *Nature*, vol. 648, no. 8094, pp. 569–575, Dec. 2025, doi: [10.1038/s41586-025-09827-w](https://doi.org/10.1038/s41586-025-09827-w). [arXiv:2506.03567](https://arxiv.org/abs/2506.03567). [D]
 [5] H. C. George *et al.*, “12-spin-qubit arrays fabricated on a 300 mm semiconductor manufacturing line,” *Nano Lett.*, vol. 25, no. 2, pp. 793–799, Dec. 2024, doi: [10.1021/acs.nanolett.4c05205](https://doi.org/10.1021/acs.nanolett.4c05205). [arXiv:2410.16583](https://arxiv.org/abs/2410.16583). [D]
 [6] Members of the HRL Quantum Team and Collaborators, “A digitally controlled silicon quantum processing unit,” [arXiv:2604.16216](https://arxiv.org/abs/2604.16216), Apr. 2026. [D]
 

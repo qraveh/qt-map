@@ -93,7 +93,7 @@ Open questions: (1) what two-qubit fidelity does a millimetre-scale coupler cost
 
 ## Sources
 
-[1] S. Bravyi *et al.*, “High-threshold and low-overhead fault-tolerant quantum memory,” *Nature*, vol. 627, pp. 778–782, doi: [10.1038/s41586-024-07107-7](https://doi.org/10.1038/s41586-024-07107-7). [arXiv:2308.07915](https://arxiv.org/abs/2308.07915).
+[1] S. Bravyi *et al.*, “High-threshold and low-overhead fault-tolerant quantum memory,” *Nature*, vol. 627, no. 8005, pp. 778–782, Mar. 2024, doi: [10.1038/s41586-024-07107-7](https://doi.org/10.1038/s41586-024-07107-7). [arXiv:2308.07915](https://arxiv.org/abs/2308.07915).
 [2] T. Maurer *et al.*, “Real-time decoding of the gross code memory with FPGAs,” [arXiv:2510.21600](https://arxiv.org/abs/2510.21600), Oct. 2025.
 [3] E. Tham *et al.*, “Breakeven demonstration of quantum low-density parity-check codes,” [arXiv:2606.06455](https://arxiv.org/abs/2606.06455), Jun. 2026.
 [4] K. Wang *et al.*, “Demonstration of low-overhead quantum error correction codes,” *Nat. Phys.*, 2026, doi: [10.1038/s41567-025-03157-4](https://doi.org/10.1038/s41567-025-03157-4). [arXiv:2505.09684](https://arxiv.org/abs/2505.09684).

@@ -72,7 +72,7 @@ Confirm by 2028 if any cryogenic predecoder tapes out with measured silicon; dem
 
 ## Sources
 [1] A. Holmes *et al.*, “NISQ+: Boosting quantum computing power by approximating quantum error correction,” [arXiv:2004.04794](https://arxiv.org/abs/2004.04794), Apr. 2020. [S]
-[2] Y. Ueno, M. Kondo, M. Tanaka, Y. Suzuki, and Y. Tabuchi, “QECOOL: On-Line Quantum Error Correction with a Superconducting Decoder for Surface Code,” [arXiv:2103.14209](https://arxiv.org/abs/2103.14209), Mar. 2021. [S]
+[2] Y. Ueno, M. Kondo, M. Tanaka, Y. Suzuki, and Y. Tabuchi, “QECOOL: On-Line Quantum Error Correction with a Superconducting Decoder for Surface Code,” arXiv, Nov. 8, 2021. [Online]. Available: https://arxiv.org/abs/2103.14209 [S]
 [3] A. Knapen *et al.*, “Pinball: A Cryogenic Predecoder for Surface Code Decoding Under Circuit-Level Noise,” [arXiv:2512.09807](https://arxiv.org/abs/2512.09807), Dec. 2025. [S]
 [4] G. Tao *et al.*, “CryoZip: An Efficient Cryogenic Compressor for Quantum Error Correction Syndromes,” [arXiv:2606.30805](https://arxiv.org/abs/2606.30805), Jun. 2026. [S]
 [5] S. Kawabata, “Integration and Resource Estimation of Cryoelectronics for Superconducting Fault-Tolerant Quantum Computers,” [arXiv:2601.03922](https://arxiv.org/abs/2601.03922), Jan. 2026. [S]

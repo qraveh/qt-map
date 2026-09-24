@@ -69,7 +69,7 @@ GKP требует бозонной резонаторной моды в мик�
 Подтвердить или понизить в статусе в течение 12–24 месяцев: опубликует ли хоть одна GKP-демонстрация безусловную частоту логических ошибок; поднимет ли Nord Quantique совокупную выживаемость выше 10%; преодолеет ли оптическое GKP-состояние 1 dB эффективного сжатия. Лучший случай к 2029 году: многомодовый логический GKP-кубит ниже break-even без пост-селекции, под внешним qLDPC-кодом. Худший случай: он остаётся пост-селектированной памятью, а бозонный путь несут кот-коды и кодирования со стиранием (erasure).
 
 ## Источники
-[1] Gottesman, Kitaev, and Preskill, “Encoding a qubit in an oscillator,” *Phys. Rev. A*, vol. 64, Art. no. 012310, 2001. [Online]. Available: https://arxiv.org/abs/quant-ph/0008040
+[1] D. Gottesman, A. Kitaev, and J. Preskill, “Encoding a qubit in an oscillator,” *Phys. Rev. A*, vol. 64, no. 1, Art. no. 012310, Jun. 2001, doi: [10.1103/PhysRevA.64.012310](https://doi.org/10.1103/PhysRevA.64.012310).
 [2] P. Campagne-Ibarcq *et al.*, “Quantum error correction of a qubit encoded in grid states of an oscillator,” *Nature*, vol. 584, no. 7821, pp. 368–372, Aug. 2020, doi: [10.1038/s41586-020-2603-3](https://doi.org/10.1038/s41586-020-2603-3).
 [3] V. V. Sivak *et al.*, “Real-time quantum error correction beyond break-even,” *Nature*, vol. 616, no. 7955, pp. 50–55, Apr. 2023, doi: [10.1038/s41586-023-05782-6](https://doi.org/10.1038/s41586-023-05782-6).
 [4] B. L. Brock *et al.*, “Quantum error correction of qudits beyond break-even,” *Nature*, vol. 641, no. 8063, pp. 612–618, May 2025, doi: [10.1038/s41586-025-08899-y](https://doi.org/10.1038/s41586-025-08899-y).

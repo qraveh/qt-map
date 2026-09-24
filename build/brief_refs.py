@@ -38,6 +38,7 @@ SPLIT = {('ro_fluor', '14'): 'doi:10.1364/optica.400751'}   # Reddy et al. (Opti
 FIX_TO = {'doi:10.1038/s41377-025-02031-5': 'doi:10.1364/optica.400751'}   # the fix record of a split key belongs to the split-off work
 AS_CITED = 'https://www.patsnap.com/resources/blog/rd-blog/quantum-computing-patent-landscape'   # PatSnap "as cited in the main report"
 KINDS = {'article': 'journal'}
+RENAME = {'arxiv:2408.13687': 'arxiv:2402.15644'}   # the key named a different paper (McEwen et al. is arXiv:2402.15644)
 FIELDS = ('authors', 'etal', 'n_authors', 'org', 'title', 'journal', 'volume', 'issue', 'pages', 'article', 'date', 'pubdate', 'doi', 'arxiv',
           'kind', 'site', 'publisher', 'edition', 'section', 'url', 'also', 'retraction', 'verified')
 ENTRY = re.compile(r'^(?:\[(\d{1,3}[a-z]?)\]|(\d{1,3})\.)\s+(.*)$')
@@ -173,6 +174,7 @@ def record_from_lines(lines):
         also = [u for u in urls[1:] if not S.arxiv_of(u) and not (r.get('doi') and 'doi.org' in u)]
         if also: r['also'] = also
     r['kind'] = r.get('kind') or ('journal' if r.get('doi') else 'preprint' if r.get('arxiv') else 'web')
+    if r.get('journal'): r['journal'] = S.JOURNALS.get(r['journal'], r['journal'])
     r['verified'] = False
     return OrderedDict((k, r[k]) for k in FIELDS if k in r)
 
@@ -208,6 +210,8 @@ def entry_html(r):
         if r.get('url'): h += ' [Online]. Available: ' + S._link(r['url'])
         return h
     h = S.ieee(r)
+    if S.journal_name(r) == 'Optica' and re.fullmatch(r'\d+', r.get('pages') or ''):   # page-numbered; only the first page confirmed
+        h = h.replace('Art. no. ' + r['pages'], 'p. ' + r['pages'], 1)
     x = r.get('retraction')
     if x:     # IEEE: the retraction notice follows the retracted work
         h += ' Retracted: <i>%s</i>, vol. %s, p. %s, %s, doi: %s.' % (S.esc(x['journal']), S.esc(x['volume']), S.esc(x['pages']), S.fmt_date(x['date'], day=False),
@@ -269,7 +273,16 @@ def rewrite_section(s, lang, lines):
 
 
 # ---------- migrate
-def migrate(raw_path):
+def migrate(raw_path, vdir=None):
+    """Two passes over the untouched briefs: the first assigns keys and applies the verified records in memory, so that
+    works sharing an identifier across all briefs and §9 are known; the second numbers, renumbers and writes with them."""
+    st, db = _migrate(raw_path, vdir, {}, {}, dry=True)
+    alias = unify(db)
+    enrich = {c: db['works'][c]['arxiv'] for c in set(alias.values()) if c in db['works'] and db['works'][c].get('arxiv')}
+    return _migrate(raw_path, vdir, alias, enrich, dry=False)
+
+
+def _migrate(raw_path, vdir, alias, enrich, dry):
     raw = json.load(open(raw_path, encoding='utf-8'))
     use = {(b, str(n)): w for w in raw for b, n in w['uses']}
     ridx = {}
@@ -316,7 +329,7 @@ def migrate(raw_path):
             else:
                 k = w['key']
                 if k in SAME_WORK: st['same'].append((bid, lab))
-                k = SAME_WORK.get(k, k)
+                k = SAME_WORK.get(k, k); k = RENAME.get(k, k)
                 if k.startswith('nourl:'): k = nourl.setdefault(S.GRADE_RE.sub(' ', line).strip(), k)
             r = (w or {}).get('report')
             ref = ('report:%s#%d' % (r[0], r[1])) if r else next((rep[i] for i in ids if i in rep), None)
@@ -325,6 +338,7 @@ def migrate(raw_path):
             key[lab] = k; lines_of.setdefault(k, [])
             for l in ((w or {}).get('lines') or []) + [line]:
                 if l not in lines_of[k]: lines_of[k].append(l)
+        for lab in key: key[lab] = alias.get(key[lab], key[lab])
         # one work = one entry within the brief: a 'Same work, …' line joins the line above it; lines sharing a DOI, an
         # arXiv id or a URL are one work (the §9 record wins, else the first line's key)
         labs = [l for l, _ in e_en]; txt = dict(e_en)
@@ -368,13 +382,21 @@ def migrate(raw_path):
                     out.append(t[last:a]); out.append(run_text([new[key[l]] for l in labs])); last = b
                 out.append(t[last:]); return ''.join(out)
             s2 = renum(sp[0]) + '\n'.join(sp[1]) + ('\n' if sp[1] else '') + renum(sp[2])
-            write(path(bid, lang), s2)
+            if not dry: write(path(bid, lang), s2)
     for w in raw:
-        if w['key'] in lines_of and not lines_of[w['key']]: lines_of[w['key']] = list(w['lines'])
+        k = RENAME.get(w['key'], w['key'])
+        if k in lines_of and not lines_of[k]: lines_of[k] = list(w['lines'])
     for k, ls in lines_of.items():
         if k in st['new']: db['works'][k] = record_from_lines(ls)
     for k in list(db['works']):
         if not any(e['work'] == k for es in db['briefs'].values() for e in es): del db['works'][k]
+    if vdir: apply_verified(db, vdir)
+    for c, ax in enrich.items():     # the arXiv id a merged-away record held
+        if c in db['works'] and not db['works'][c].get('arxiv'):
+            w = db['works'][c]; w['arxiv'] = ax; db['works'][c] = OrderedDict((f, w[f]) for f in FIELDS if f in w)
+    if dry: return st, db
+    left = unify(db)
+    if left: raise SystemExit('works still to unify after the second pass: %s' % sorted(left.items())[:5])
     save(db)
     write_all(db)
     return st, db
@@ -391,25 +413,112 @@ def write_all(db):
 def merge_verified(d):
     """Fold the verified records into the data file; idempotent. out_id_*/out_web_* first, then out_redo_* (a second pass
     overrides the first), then out_fix.json ({key, record, reason}: the brief cited the wrong paper or DOI, the record
-    replaces the work). A record with verified:false never replaces anything: the brief-line record stays the fallback."""
-    db = load(); n = 0
+    replaces the work), then out_final.json. A record with verified:false never replaces anything: the brief-line record stays the fallback."""
+    db = load(); before = {k: json.dumps(v, sort_keys=True) for k, v in db['works'].items()}; apply_verified(db, d)
+    alias = unify(db)
+    if alias:     # re-point entries; two entries of one brief becoming one work needs the text renumbered: --migrate
+        for bid, es in db['briefs'].items():
+            ws = [alias.get(e['work'], e['work']) for e in es]
+            if len(set(ws)) != len(ws): raise SystemExit('%s: two entries become one work; re-run --migrate from the original briefs' % bid)
+            for e, w in zip(es, ws): e['work'] = w
+        for k in list(db['works']):
+            if not any(e['work'] == k for es in db['briefs'].values() for e in es): del db['works'][k]
+    save(db); write_all(db)
+    return sum(1 for k, v in db['works'].items() if before.get(k) != json.dumps(v, sort_keys=True))   # a no-op run reports 0
+
+
+UNCHECKED = re.compile(r'UNRESOLVED|recollection|from memory|not checked|not re-read', re.I)
+CONFIRMABLE = ('title', 'authors', 'journal', 'volume', 'issue', 'pages', 'article', 'date', 'pubdate', 'doi')
+
+
+def apply_verified(db, d):
+    """Fold the verified records into db (in memory) → number of works whose record changed. A record is applied only when it
+    was read from a primary record: never when its note says a detail is a recollection, from memory or not checked; a
+    PARTIAL record gives only the fields its note says were confirmed; a pubdate inferred from an issue is not applied."""
+    start = {k: json.dumps(v, sort_keys=True) for k, v in db['works'].items()}
     batches = [(p, json.load(open(p, encoding='utf-8'))) for p in sorted(glob.glob(os.path.join(d, 'out_id_*.json'))) + sorted(glob.glob(os.path.join(d, 'out_web_*.json')))
                + sorted(glob.glob(os.path.join(d, 'out_redo_*.json')))]
     fx = os.path.join(d, 'out_fix.json')
     if os.path.exists(fx):
         batches.append((fx, [dict(f['record'], key=FIX_TO.get(f['key'], f['key'])) for f in json.load(open(fx, encoding='utf-8'))]))
+    fn = os.path.join(d, 'out_final.json')     # the last pass of the verification
+    if os.path.exists(fn): batches.append((fn, json.load(open(fn, encoding='utf-8'))))
+    for p in sorted(glob.glob(os.path.join(d, 'out_enrich_*.json'))):     # enrichment of incomplete records
+        batches.append((p, json.load(open(p, encoding='utf-8'))))
     for p, rs in batches:
+        fix = p.endswith('out_fix.json')
         for r in rs:
-            k = r.get('key')
+            k = RENAME.get(r.get('key'), r.get('key'))
             if k not in db['works'] or not r.get('verified'): continue
-            r = dict(r); r['kind'] = KINDS.get(r.get('kind'), r.get('kind'))
+            note = r.get('note', '') or ''
+            enr = os.path.basename(p).startswith('out_enrich_')
+            if enr and UNCHECKED.search(note): continue          # an enrichment the note does not vouch for
+            if enr and note.startswith('PARTIAL'):
+                ok = [f for f in CONFIRMABLE if re.search(r'\b%s\b' % f, note.split('confirmed')[0])]
+                w = OrderedDict(db['works'][k]); w.update((f, r[f]) for f in ok if r.get(f))
+                if w.get('journal'): w['journal'] = S.JOURNALS.get(w['journal'], w['journal'])
+                db['works'][k] = OrderedDict((f, w[f]) for f in FIELDS if f in w); continue
+            r = dict(r)
+            if enr and re.search(r'pubdate inferred', note): r.pop('pubdate', None)
+            r['kind'] = KINDS.get(r.get('kind'), r.get('kind'))
             m = re.search(r'retraction note doi (10\.\S+?) \((.+?) (\d+), (E?\d+), (\d{4}-\d{2}-\d{2})\)', r.get('note', ''))
             if m and re.search(r'\bRETRACTED\b', r.get('note', '')):
                 r['retraction'] = OrderedDict([('journal', m.group(2)), ('volume', m.group(3)), ('pages', m.group(4)), ('date', m.group(5)), ('doi', m.group(1))])
+            if r.get('journal'): r['journal'] = S.JOURNALS.get(r['journal'], r['journal'])
+            if not fix and not r.get('arxiv') and db['works'][k].get('arxiv') and db['works'][k].get('verified'): r['arxiv'] = db['works'][k]['arxiv']
             rec = OrderedDict((f, r[f]) for f in FIELDS if f in r and r[f] not in ('', None, []))
-            if rec != db['works'][k]: db['works'][k] = rec; n += 1
-    save(db); write_all(db)
-    return n
+            db['works'][k] = rec
+    return sum(1 for k, v in db['works'].items() if start.get(k) != json.dumps(v, sort_keys=True))
+
+
+POORER_S9 = set()   # §9 records a brief holds in a richer (e.g. published) form: candidates for updating data/sources.json
+DISTINCT = {frozenset(('doi:10.1364/optica.400751', 'doi:10.1038/s41377-025-02031-5'))}   # a split is never undone
+
+
+def _rich(r):
+    return (bool(r.get('verified')), r.get('kind') == 'journal', bool(r.get('volume')), bool(r.get('pages') or r.get('article')), bool(r.get('arxiv')))
+
+
+def unify(db):
+    """One work, one key, across all briefs and §9 (the richest record carries it — verified, journal form, volume, pages;
+    a §9 record on a tie): works sharing a DOI, an arXiv id, a normalised URL or an also[] URL, or
+    the same title by the same first author, are one work. A §9 record wins (it is reused as it is); otherwise the richest record (verified, journal form, volume,
+    pages) carries the work and takes the arXiv id another holds. → {key: canonical key} for the keys that change."""
+    used = []
+    for es in db['briefs'].values():
+        for e in es:
+            if e['work'] not in used: used.append(e['work'])
+    rec = {k: (report_record(k) if k.startswith('report:') else db['works'][k]) for k in used}
+    par = {k: k for k in used}
+    def find(k):
+        while par[k] != k: par[k] = par[par[k]]; k = par[k]
+        return k
+    owner = {}
+    for k in used:
+        if k.startswith('map:'): continue
+        r = rec[k]; t = S._title_key(r.get('title'))
+        who = S._first_author(r) or re.sub(r'\W+', ' ', (r.get('org') or '').lower()).strip()
+        tid = ['t:%s|%s' % (t, who)] if len(t) > 20 and who else []     # the same title by the same first author: one work
+        for i in ids_of_record(r) + tid:
+            if i in owner:
+                a, b = find(owner[i]), find(k)
+                if a != b and frozenset((a, b)) not in DISTINCT and frozenset((owner[i], k)) not in DISTINCT: par[b] = a
+            else: owner[i] = k
+    groups = {}
+    for k in used: groups.setdefault(find(k), []).append(k)
+    alias = {}
+    for g in groups.values():
+        if len(g) < 2: continue
+        canon = max(g, key=lambda k: (_rich(rec[k]), k.startswith('report:')))   # a §9 record wins a tie
+        POORER_S9.update((k, canon) for k in g if k.startswith('report:') and k != canon)
+        if not canon.startswith('report:'):
+            c = db['works'][canon]
+            ax = next((rec[k].get('arxiv') for k in g if rec[k].get('arxiv')), '')
+            if ax and not c.get('arxiv'):
+                c['arxiv'] = ax; db['works'][canon] = OrderedDict((f, c[f]) for f in FIELDS if f in c)
+        for k in g:
+            if k != canon: alias[k] = canon
+    return alias
 
 
 # ---------- page (build/briefs.py)
@@ -488,10 +597,12 @@ if __name__ == '__main__':
     a = sys.argv[1:]
     if '--migrate' in a:
         raw = a[a.index('--migrate') + 1] if len(a) > a.index('--migrate') + 1 else os.path.join(ROOT, '..', 'refwork', 'works_raw.json')
-        st, db = migrate(raw)
+        vd = os.path.join(ROOT, '..', 'refwork')
+        st, db = migrate(raw, vd if os.path.isdir(vd) else None)
         ws = {e['work'] for v in db['briefs'].values() for e in v}
         print('entries', sum(len(v) for v in db['briefs'].values()), 'works', len(ws), 'reused §9', len({w for w in ws if w.startswith('report:')}),
               'new', len({w for w in ws if not w.startswith(('report:', 'map:'))}), 'map self-refs', len({w for w in ws if w.startswith('map:')}))
+        print('poorer §9 records (a brief holds the richer form):', sorted(POORER_S9))
         for k in ('split', 'same', 'merged', 'dropped', 'missing', 'self', 'as_cited', 'unparsed', 'ru_mismatch', 'extra', 'notraw'):
             v = st[k]; print(k, len(v), v if k != 'notraw' else sorted({b for b, _ in v}))
     elif '--merge-verified' in a:

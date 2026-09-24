@@ -114,7 +114,7 @@ Open questions: what causes the 40-basis-point tiling tax, per-join or per-calib
 ## Sources
 
 [1] A. Gold *et al.*, “Entanglement across separate silicon dies in a modular superconducting qubit device,” *npj Quantum Inf.*, vol. 7, no. 1, Art. no. 142, Sep. 2021, doi: [10.1038/s41534-021-00484-1](https://doi.org/10.1038/s41534-021-00484-1). [arXiv:2102.13293](https://arxiv.org/abs/2102.13293). Also https://arxiv.org/abs/2102.13293. [D]
-[2] J. Niu *et al.*, “Low-loss interconnects for modular superconducting quantum processors,” *Nat. Electron.*, doi: [10.1038/s41928-023-00925-z](https://doi.org/10.1038/s41928-023-00925-z). [arXiv:2302.02751](https://arxiv.org/abs/2302.02751). [D]
+[2] J. Niu *et al.*, “Low-loss interconnects for modular superconducting quantum processors,” *Nat. Electron.*, vol. 6, no. 3, pp. 235–241, Feb. 2023, doi: [10.1038/s41928-023-00925-z](https://doi.org/10.1038/s41928-023-00925-z). [arXiv:2302.02751](https://arxiv.org/abs/2302.02751). [D]
 [3] IBM, “IBM lays out clear path to fault-tolerant quantum computing,” *IBM Quantum blog*, Jun. 2025. [Online]. Available: https://www.ibm.com/quantum/blog/large-scale-ftqc [C]
 [4] M. Field *et al.*, “Modular Superconducting Qubit Architecture with a Multi-chip Tunable Coupler,” [arXiv:2308.09240](https://arxiv.org/abs/2308.09240), Aug. 2023. [D]
 [5] Y. Martin *et al.*, “Mechanically-intermixed indium superconducting connections for microwave quantum interconnects,” [arXiv:2409.04634](https://arxiv.org/abs/2409.04634), Sep. 2024. [D]
