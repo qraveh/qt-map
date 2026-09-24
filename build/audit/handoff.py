@@ -39,7 +39,7 @@ def main():
     rpath = args[args.index('--readme') + 1] if '--readme' in args else None
     if git('status', '--porcelain'): raise SystemExit('working tree not clean — commit first')
     head = git('rev-parse', 'HEAD'); short = head[:7]; subj = git('log', '-1', '--format=%s'); branch = git('rev-parse', '--abbrev-ref', 'HEAD')
-    main_sha = git('rev-parse', '--short', 'main'); tags = git('tag', '--points-at', 'main')
+    main_sha = git('rev-parse', '--short', 'main'); tags = ', '.join('%s -> %s' % (t, git('rev-parse', '--short', t + '^{}')) for t in git('tag', '-l').split()) or '—'   # every tag with the commit it points at (the edition tag need not sit on main)
     os.makedirs(out, exist_ok=True)
     bundle = os.path.join(out, 'qt-map-%s.bundle' % short)
     if os.path.exists(bundle): os.remove(bundle)
@@ -66,7 +66,7 @@ def main():
         '```', 'ACCEPTANCE',
         '  bundle sha256   %s…' % bsha[:16],
         '  HEAD            %s  "%s"' % (head, subj),
-        '  refs            main -> %s (unchanged), %s -> %s, tag %s -> %s' % (main_sha, branch, head, tags or '—', main_sha),
+        '  refs            main -> %s (unchanged), %s -> %s, tag %s' % (main_sha, branch, head, tags),
         '  must exist      build/build.py, build/editions.py, build/machines_json.py, build/machines_chapter.py, data/machines.json, data/forecast-ledger.json, build/audit/vv/runner.py, build/audit/c2_smoke.py, build/audit/release_check.py, requirements.txt',
         '  build cmd       pip install -r requirements.txt && python3 build/build.py',
         '  build says      CHANGELOG.md written        (line before it: "%s")' % buildline,
