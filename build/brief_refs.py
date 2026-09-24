@@ -34,6 +34,7 @@ SAME_WORK = {FR + 'commerce-control-list-additions-and-revisions-implementation-
              FR + 'implementation-of-additional-export-controls-certain-advanced-computing-items-supercomputer-and',
              FR + 'commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies':
              FR + 'implementation-of-additional-export-controls-certain-advanced-computing-items-supercomputer-and'}   # one rule, FR Doc 2024-19633
+SAME_WORK['http://quantumwire.com/article/17731132975802.html'] = 'https://quantumwire.com'   # ct_rt: the same ZQCS news item (Zurich Instruments release, 2026-03-09)
 SPLIT = {('ro_fluor', '14'): 'doi:10.1364/optica.400751'}   # Reddy et al. (Optica 2020) carried Wu et al.'s DOI (ro_spd [1])
 QW_B = 'https://quantware.com/news/quantware-raises-178-million'
 FIX_TO = {'doi:10.1038/s41377-025-02031-5': 'doi:10.1364/optica.400751',

@@ -3162,13 +3162,6 @@
    "url": "https://doi.org/10.5281/zenodo.21860767",
    "verified": true
   },
-  "http://quantumwire.com/article/17731132975802.html": {
-   "title": "Zurich Instruments ZQCS platform launch, QuantumWire, 2026-03-09",
-   "kind": "web",
-   "site": "quantumwire.com",
-   "url": "http://quantumwire.com/article/17731132975802.html",
-   "verified": false
-  },
   "https://alice-bob.com/roadmap": {
    "org": "Alice & Bob",
    "title": "Roadmap",
@@ -6873,7 +6866,7 @@
     "grade": "G"
    },
    {
-    "work": "http://quantumwire.com/article/17731132975802.html",
+    "work": "https://quantumwire.com",
     "grade": "C"
    },
    {
