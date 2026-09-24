@@ -203,6 +203,7 @@ def _a(m):
 
 
 def html_to_md(h):
+    h = h.replace('<wbr>', '')   # break opportunities in link text (sources._link) are presentation, not text
     h = re.sub(r'<a href="([^"]*)"[^>]*>(.*?)</a>', _a, h)
     h = re.sub(r'</?i>', '*', h)
     h = re.sub(r'<[^>]+>', '', h)

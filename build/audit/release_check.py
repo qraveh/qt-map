@@ -118,6 +118,9 @@ def main():
     item('every tooltip key has a text in both languages', tk <= set(tips['en']) and tk <= set(tips['ru']), sorted(tk-set(tips['en']))[:5]+sorted(tk-set(tips['ru']))[:5])
     xr=[x for x in re.findall(r'<a class="xref" href="#([^"]+)"', h) if f' id="{x}"' not in h]
     item('every cross-reference (§, Figure, Table, H, F) resolves', not xr, xr[:6])
+    # 6c. 24 Sep 2026: every reference list on the rendered page — numbering, own-list citations, RU = EN, one work = one entry, forms, anchors
+    rc = run([sys.executable, 'build/audit/refs_check.py', DIST])
+    item('reference lists on the rendered page (refs_check.py): no problems', rc.returncode == 0 and 'problems by class: none' in rc.stdout, (rc.stdout + rc.stderr)[-300:])
     # 7. the harness's own self-test and the chapter's classifiers still import
     to = run([sys.executable, 'build/audit/vv/test_oracle.py'])
     item('oracle self-test', to.returncode == 0 and 'OK' in (to.stdout + to.stderr), (to.stdout + to.stderr)[-200:])
