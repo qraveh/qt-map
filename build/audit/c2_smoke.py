@@ -337,7 +337,7 @@ def chapter8(pw, w, h):
         print(f"  [{'ok' if cond else 'FAIL'}] {label}{(' — ' + str(detail)) if (detail and not cond) else ''}")
         if not cond: fails.append(label)
     print(f'chapter 8 — viewport {w}×{h}')
-    r = p.evaluate("""()=>{
+    r = p.evaluate(r"""()=>{
       const q=s=>[...document.querySelectorAll(s)];
       const h2=lang=>q('#app .prose.lang-'+lang+' h2').map(h=>h.textContent.trim());
       const h3=lang=>q('#app .prose.lang-'+lang+' h3').map(h=>h.textContent.trim()).filter(x=>/^8\.\d/.test(x));
@@ -346,7 +346,7 @@ def chapter8(pw, w, h):
       const idx=(arr,pre)=>arr.findIndex(x=>x.startsWith(pre));
       const tbls=q('#app .prose.lang-en h3').filter(h=>/^8\.[123] /.test(h.textContent)).map(h=>{ for(const e of ((h&&h.nextElementSibling&&h.nextElementSibling.classList.contains('secbody'))?[...h.nextElementSibling.querySelectorAll('.tbl, h3')]:[])){ if(e.matches('.tbl'))return {sort:e.getAttribute('data-sort'),btns:e.querySelectorAll('.sortbtn').length,reset:!!e.querySelector('.tsreset')}; } return null; });
       const verdicts=q('#app .prose.lang-en p').filter(p=>/Verdict:/.test(p.textContent)).length;
-      const ledger=q('#app .prose.lang-en h3').filter(h=>/^8\\.5 /.test(h.textContent)).map(h=>{ for(const e of ((h&&h.nextElementSibling&&h.nextElementSibling.classList.contains('secbody'))?[...h.nextElementSibling.querySelectorAll('.tbl, h3')]:[])){ if(e.matches('.tbl'))return e.querySelectorAll('tbody tr').length; if(e.matches('h3'))break; } return 0; })[0]||0;
+      const ledger=q('#app .prose.lang-en h3').filter(h=>/^8\.5 /.test(h.textContent)).map(h=>{ for(const e of ((h&&h.nextElementSibling&&h.nextElementSibling.classList.contains('secbody'))?[...h.nextElementSibling.querySelectorAll('.tbl, h3')]:[])){ if(e.matches('.tbl'))return e.querySelectorAll('tbody tr').length; if(e.matches('h3'))break; } return 0; })[0]||0;
       const verdictsRu=q('#app .prose.lang-ru p').filter(p=>/Вердикт:/.test(p.textContent)).length;
       return {en8:idx(en,'8'), en9:idx(en,'9'), en7:idx(en,'7'), ru8:idx(ru,'8'), ru9:idx(ru,'9'), h3en:h3('en'), h3ru:h3('ru'), tocEn:toc('en'), tocRu:toc('ru'), tbls, verdicts, verdictsRu, ledger,
               srcEn:en[idx(en,'9')]||'', srcRu:ru[idx(ru,'9')]||'', macEn:en[idx(en,'8')]||''};

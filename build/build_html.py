@@ -56,7 +56,7 @@ def mach_slim():
 GREEK={'Lambda':'Λ','lambda':'λ','mu':'µ','varepsilon':'ε','epsilon':'ε','kappa':'κ','alpha':'α','beta':'β','gamma':'γ','delta':'δ','Delta':'Δ','eta':'η','theta':'θ','sigma':'σ','pi':'π','tau':'τ','omega':'ω','Omega':'Ω','rho':'ρ','phi':'φ','chi':'χ','psi':'ψ','nu':'ν'}
 SYM={'times':'×','sim':'∼','approx':'≈','le':'≤','ge':'≥','leq':'≤','geq':'≥','ll':'≪','gg':'≫','pm':'±','to':'→','rightarrow':'→','infty':'∞','propto':'∝','cdot':'·','diamond':'◇','rangle':'⟩','langle':'⟨','lvert':'|','rvert':'|','ast':'∗','circ':'∘','neq':'≠','ne':'≠','sqrt':'√','in':'∈','cup':'∪','cap':'∩','dots':'…','ldots':'…'}
 def tex(s):
-    s=s.replace('\\,',' ').replace('\\ ',' ').replace('\;',' ')
+    s=s.replace('\\,',' ').replace('\\ ',' ').replace('\\;',' ')
     s=s.replace('\\%','%').replace('\\$','$').replace('\\_','_').replace('\\&','&amp;').replace('\\hbar','ℏ')   # escaped literals and ℏ
     s=re.sub(r'\\bar\s*([a-zA-Z])',lambda m:m.group(1)+'\u0304',s)
     s=re.sub(r'\\sqrt\{([^}]*)\}',lambda m:'√<span style="text-decoration:overline">'+m.group(1)+'</span>',s)
@@ -408,7 +408,7 @@ def tag_sortables(h):
 
 # ---------- folding (23 Sep 2026, the editor's request): every titled section and every table folds; defaults as before (open,
 # except the two big tables), the reader's choices remembered per browser; a link into a folded section opens it (FOLD_JS)
-FOLD_BTN='<button type="button" class="foldbtn" data-sec="{sid}" aria-expanded="true" title="collapse / expand"></button>'
+FOLD_BTN=''   # the chevron buttons are made at load (FOLD_JS) from the section bodies: 1,700 buttons of markup would cost 200 KB
 def fold_tables(h,lang,idprefix=''):
     """each div.tbl becomes details.tblfold (open); a bold caption paragraph just before it becomes the summary; a table the
     build already put behind a big-table fold is left alone"""
@@ -452,7 +452,11 @@ def foldable(h,lang,levels=('h2','h3'),idprefix=''):
     out.append(h[pos:])
     while open_lv: out.append('</div>'); open_lv.pop()
     return ''.join(out)
+TAG_JS=r"""(function(){ var T={en:{D:"[D] measured / peer-reviewed",C:"[C] company claim",R:"[R] roadmap / target",S:"[S] simulation / estimate",G:"[G] established / general fact",P:"[P] preprint / trade press"},ru:{D:"[D] измерено / рецензировано",C:"[C] заявление компании",R:"[R] дорожная карта / цель",S:"[S] симуляция / оценка",G:"[G] установленный / общий факт",P:"[P] препринт / отраслевая пресса"}};
+document.addEventListener('mouseover',function(e){ var t=e.target&&e.target.closest&&e.target.closest('span.tag'); if(!t||t.title)return; var m=/(?:^|\s)tag-([DCRSGP])(?:\s|$)/.exec(t.className); if(!m)return; var L=(document.documentElement.lang||'en').slice(0,2)==='ru'?'ru':'en'; t.title=T[L][m[1]]; },true);
+})();"""
 FOLD_JS=r"""(function(){ var KEY='qmap.folds', closed={}; try{ closed=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){}
+document.querySelectorAll('.secbody[data-sec]').forEach(function(b){ var hd=b.previousElementSibling; if(!hd||!/^H[23]$/.test(hd.tagName)||hd.querySelector('.foldbtn'))return; var btn=document.createElement('button'); btn.type='button'; btn.className='foldbtn'; btn.dataset.sec=b.dataset.sec; btn.setAttribute('aria-expanded','true'); btn.title='collapse / expand'; hd.appendChild(btn); });
 function q(sel,id){ return document.querySelector(sel+'[data-sec="'+(window.CSS&&CSS.escape?CSS.escape(id):id)+'"]'); }
 function set(id,open,save){ var b=q('.secbody',id), btn=q('.foldbtn',id); if(!b)return; b.hidden=!open; if(btn){ btn.setAttribute('aria-expanded',String(open)); var hd=btn.closest('h2,h3'); if(hd)hd.classList.toggle('folded',!open); }
   if(save){ if(open)delete closed[id]; else closed[id]=1; try{ localStorage.setItem(KEY,JSON.stringify(closed)); }catch(e){} } }
@@ -722,7 +726,7 @@ def build(cfg=PUBLIC):
  </main>
 </div>
 </div>
-<script>window.__GRAPH={json.dumps(G,ensure_ascii=False)};window.__MACH={json.dumps(mach_slim(),ensure_ascii=False)};window.__SHORT={json.dumps(SHORT,ensure_ascii=False)};window.__KEYREFS={json.dumps(BR.key_refs_all(B),ensure_ascii=False)};</script>
+<script>window.__GRAPH={json.dumps(G,ensure_ascii=False,separators=(',',':'))};window.__MACH={json.dumps(mach_slim(),ensure_ascii=False,separators=(',',':'))};window.__SHORT={json.dumps(SHORT,ensure_ascii=False,separators=(',',':'))};window.__KEYREFS={json.dumps(BR.key_refs_all(B),ensure_ascii=False)};</script>
 <script>{D3}</script>
 <script>
 (function(){{const app=document.getElementById('app');
@@ -735,8 +739,8 @@ def build(cfg=PUBLIC):
 <script>{NAVJS}</script>
 <script>{JS}</script>
 <script>{BRIEF_JS}</script>
-<script>window.__TIPS={json.dumps(tips_dict(),ensure_ascii=False)};</script>
-<script>{GTIP_JS}</script><script>{FOLD_JS}</script>
+<script>window.__TIPS={json.dumps(tips_dict(),ensure_ascii=False,separators=(',',':'))};</script>
+<script>{GTIP_JS}</script><script>{FOLD_JS}</script><script>{TAG_JS}</script>
 <script>if(window.__relabelMap)window.__relabelMap();</script>
 '''
     open(cfg['out_body'],'w',encoding='utf-8',newline='\n').write(body)

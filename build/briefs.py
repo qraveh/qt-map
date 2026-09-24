@@ -230,10 +230,7 @@ def chip_tags(h, lang):
             lambda m: '<span class="tag tag-reg" title="%s">REG:%s</span>' % (html.escape(REG_TITLE[i]), m.group(1)),
             part)
         part = _GKEY_RE.sub(_gkey_chip, part)
-        part = _TAG_RE.sub(
-            lambda m: '<span class="tag tag-%s" title="[%s] %s">%s</span>'
-                      % (m.group(1), m.group(1), html.escape(TAGS[m.group(1)][i]), m.group(1)),
-            part)
+        part = _TAG_RE.sub(lambda m: '<span class="tag tag-%s">%s</span>' % (m.group(1), m.group(1)), part)   # the title comes on hover (TAG_JS): 10,000 chips, one table
         out.append(part)
     return ''.join(out)
 
