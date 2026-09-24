@@ -17,17 +17,17 @@ A holographic modulator splits one beam into a static lattice of tweezer foci; c
 - d/g: connectivity comes from deflector transport, built of free-space optics.
 
 ## Physics & limits
-Two hard laws govern this layer. Trap power is linear in site count: Tsinghua's 18,225-site array takes 33 W incident, 12.2 W effective, ~0.67 mW per trap [D][2], so 10⁶ sites implies about a kilowatt of trapping light before any imaging or Rydberg beam. And a deflector's resolvable-spot count is its RF bandwidth times the acoustic transit across the beam, while that transit lower-bounds how fast a trap is re-pointed: more sites and faster moves pull against each other in one device. Neither is a "refresh rate"; the report's 10 MHz figure is a proxy. The consequence is the clock: imaging at 0.5–1 ms and transport at hundreds of µs give QEC rounds of 1–4.5 ms against 270 ns gates [D][3]. Failure modes are systematic: trap-depth non-uniformity, pointing drift, tone intermodulation. Faster imaging moves the floor — 17.6 µs readout at 99.89(5)% discrimination on ytterbium [P][6], ~50× off the dominant term.
+Two hard laws govern this layer. Trap power is linear in site count: Tsinghua's 18,225-site array takes 33 W incident, 12.2 W effective, ~0.67 mW per trap [D][2], so 10⁶ sites implies about a kilowatt of trapping light before any imaging or Rydberg beam. And a deflector's resolvable-spot count is its RF bandwidth times the acoustic transit across the beam, while that transit lower-bounds how fast a trap is re-pointed: more sites and faster moves pull against each other in one device. Neither is a "refresh rate"; the report's 10 MHz figure is a proxy. The consequence is the clock: imaging at 0.5–1 ms and transport at hundreds of µs give QEC rounds of 1–4.5 ms against 270 ns gates [D][3]. Failure modes are systematic: trap-depth non-uniformity, pointing drift, tone intermodulation. Faster imaging moves the floor — 17.6 µs readout at 99.89(5)% discrimination on ytterbium [P][4], ~50× off the dominant term.
 
 ## Engineering state of the art
-Largest array: 11,022 rubidium atoms in an 18,225-site grid from a 19.8 mm metasurface outside the vacuum cell — no gates, no coherence, 60.5% filling before rearrangement [D][2]. Best sustained operation: 3,217 atoms at 99.3% filling beyond two hours, reloading 300,000 atoms per second for 30,000 initialised qubits per second, moved by optical-lattice conveyors, not deflectors [D][4]. Typical at scale is far smaller: the 448-atom architecture, where imaging and transport set a 1–4.5 ms round [D][3]. Dominant limit: measurement and motion latency, not trap count or power.
+Largest array: 11,022 rubidium atoms in an 18,225-site grid from a 19.8 mm metasurface outside the vacuum cell — no gates, no coherence, 60.5% filling before rearrangement [D][2]. Best sustained operation: 3,217 atoms at 99.3% filling beyond two hours, reloading 300,000 atoms per second for 30,000 initialised qubits per second, moved by optical-lattice conveyors, not deflectors [D][5]. Typical at scale is far smaller: the 448-atom architecture, where imaging and transport set a 1–4.5 ms round [D][3]. Dominant limit: measurement and motion latency, not trap count or power.
 
 | Year | Figure | Who | Tag+key |
 |---|---|---|---|
-| 2025-09 | 3,217 atoms, >2 h, 30,000 initialised qubits/s | Harvard | [D][4] |
+| 2025-09 | 3,217 atoms, >2 h, 30,000 initialised qubits/s | Harvard | [D][5] |
 | 2026-06 | 18,225 metasurface traps, 11,022 atoms, 0.67 mW/site | Tsinghua | [D][2] |
-| 2026-07 | 2,000 tweezers from 20 W, 3.5 µm pitch, sub-100 nm | Fraunhofer ILT | [P][5] |
-| 2026-08 | 17.6 µs imaging, 99.89(5)% discrimination, 98.80(44)% survival | Kyoto | [P][6] |
+| 2026-07 | 2,000 tweezers from 20 W, 3.5 µm pitch, sub-100 nm | Fraunhofer ILT | [P][6] |
+| 2026-08 | 17.6 µs imaging, 99.89(5)% discrimination, 98.80(44)% survival | Kyoto | [P][4] |
 
 ## Manufacturing, materials & supply chain
 No wafer: commodity and semi-custom free-space optics integrated by hand — yet the concentration is severe. Only two deflector vendors appear in the sourced literature, AA Opto-Electronic (DTSX-400, in the 448-atom system) and Gooch & Housego [D][G:AOD-VENDORS-2026], and Hamamatsu supplies both modulator and camera with no alternative identified [C][G:HAMAMATSU-CAMERA-CONC-2026] — the two real single points of failure. A June-2026 alliance of Hamamatsu, NKT Photonics and Yaqumo is the first attempt to industrialise the tier, aimed at a sensing market projected at $3.5–7.9B [P][7]. Tsinghua's metasurface points the other way: a lithographic element replacing the objective is the one step that could become semiconductor manufacturing [D][2]. No export-control category names tweezer optics; exposure runs via ECCN 4A906 [G:BIS-QUANTUM-ECCN-2024-09].
@@ -39,15 +39,15 @@ One optics chain serves the whole array, so the burden is bandwidth and optical 
 This layer underlies both neutral-atom paths — alkali (QuEra, Pasqal, Infleqtion, Google) and alkaline-earth (Atom Computing/Microsoft, Caltech) — supplying the Rydberg drive and deflector transport that the gate and zoned-connectivity mechanisms consume. It replaces photonic-integrated trap control, trading chip-scale integration for free-space flexibility. Not a hub by reach, but nearly every neutral-atom mechanism sits on it. Derived clock = sum of the syndrome round: gate layers + transport + readout + reset ≈ 1.31 ms, transport 0.80 ms of it, against a measured 1–4.5 ms round — set entirely here. Empty neighbouring slot: an integrated optical control plane keeping deflector flexibility.
 
 ## Verification (QCVV)
-Trap counts and filling come from direct fluorescence imaging and are not disputed, but they are compared across incompatible boundaries: 11,022 trapped atoms and 448 qubits under fault-tolerant control measure different things, and filling is quoted before rearrangement (60.5% [D][2]) or after (99.3% [D][4]) unlabelled. Latency figures are architectural, measured inside one group's system and never reproduced, and the metasurface and 2,000-tweezer results are each single-group.
+Trap counts and filling come from direct fluorescence imaging and are not disputed, but they are compared across incompatible boundaries: 11,022 trapped atoms and 448 qubits under fault-tolerant control measure different things, and filling is quoted before rearrangement (60.5% [D][2]) or after (99.3% [D][5]) unlabelled. Latency figures are architectural, measured inside one group's system and never reproduced, and the metasurface and 2,000-tweezer results are each single-group.
 
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What exactly they do with this technology | Evidence |
 |---|---|---|---|---|
 | QuEra Computing | developer | USA | Sells Gemini: 260 atoms, one shot per second | [C][8] |
-| Atom Computing | developer | USA | Ytterbium platform; builds Magne with Microsoft | [C][10] |
-| Pasqal | developer | France | Rydberg tweezer systems; SPAC-listed Aug 2026 | [P][16] |
+| Atom Computing | developer | USA | Ytterbium platform; builds Magne with Microsoft | [C][9] |
+| Pasqal | developer | France | Rydberg tweezer systems; SPAC-listed Aug 2026 | [P][10] |
 | Hamamatsu Photonics | supplier | Japan | Modulators and qCMOS cameras | [P][7] |
 | AA Opto-Electronic | supplier | France | Crossed AODs for tweezer transport | [D][G:AOD-VENDORS-2026] |
 
@@ -55,10 +55,10 @@ Trap counts and filling come from direct fluorescence imaging and are not disput
 | Date | Actor | Event | Amount | Programme / lead | Status |
 |---|---|---|---|---|---|
 | 2025-07-17 | QuNorth | Magne order, 1,225 physical | €80M | Atom Computing, Microsoft | ordered [C][G:MAGNE-2025-07] |
-| 2025-09-09 | QuEra | financing round | $230M+ | Google, SoftBank Vision Fund 2 | closed [C][9] |
+| 2025-09-09 | QuEra | financing round | $230M+ | Google, SoftBank Vision Fund 2 | closed [C][11] |
 | 2025-11-06 | DARPA | QBI Stage B: Atom Computing, QuEra | ≤$15M | QBI | official [G:QBI-STAGEB-2025-11] |
-| 2026-06-16 | Atom Computing | Series C plus CHIPS LOI | $100M + $100M | Third Point; US Commerce | closed+LOI [C][10] |
-| 2026-08-28 | Pasqal | SPAC close | ~$360M cash, 2025 revenue €16.5M | — | closed [P][16] |
+| 2026-06-16 | Atom Computing | Series C plus CHIPS LOI | $100M + $100M | Third Point; US Commerce | closed+LOI [C][9] |
+| 2026-08-28 | Pasqal | SPAC close | ~$360M cash, 2025 revenue €16.5M | — | closed [P][10] |
 
 **Market & supply chain.** Two deflector vendors and one camera-and-modulator vendor against a laser field with real alternatives (NKT, TOPTICA, Coherent): the concentration sits in deflectors and cameras, small unlisted businesses under four venture-funded platforms. Unit economics are quotable at system level — QuNorth's €80M for 1,225 atoms is ~€65k per atom, two orders below a trapped-ion delivery per ion [P][G:ATOM-OPTICS-UNIT-COST-2026], because tweezer optics amortise across sites. It pays for G1, is a prerequisite for G3, blocks G4 until the millisecond cycle falls.
 
@@ -74,22 +74,17 @@ Trap counts and filling come from direct fluorescence imaging and are not disput
 Confirm/demote in 12–24 months: a QEC round below 1 ms above 10³ sites; a second group replicating the metasurface array or the 17.6 µs imaging; Magne benchmarked at 50 logical qubits. Best case 2029: fast imaging and conveyor transport cut the round to ~100 µs, removing the clock disadvantage. Worst case: latency stays at milliseconds, arrays large, cheap and slow. Open: is the deflector bandwidth-transit trade engineering or a hard limit; can fast imaging survive at 10⁴ sites; will anyone second-source the deflectors. Watch Magne's acceptance tests.
 
 ## Sources
-[1] Endres et al. (Caltech / Harvard) · Cold matter assembled atom-by-atom (100 real-time tweezers) · arXiv:1607.03044 · 2016-07-11 · https://arxiv.org/abs/1607.03044
-[2] Wang, Zhang et al. (Tsinghua University, Qosmos) · Metasurface tweezer array, 18,225 sites, 11,022 atoms · arXiv:2606.02715 · 2026-06-01 · https://arxiv.org/abs/2606.02715
-[3] Harvard / MIT / QuEra · 448-atom fault-tolerant architecture · Nature · 2025-11 · https://www.nature.com/articles/s41586-025-09848-5
-[4] Chiu, Ji, Bluvstein et al. (Harvard / MIT / QuEra) · Continuous operation of a coherent 3,000-qubit system · Nature · 2025-09-15 · https://www.nature.com/articles/s41586-025-09596-6
-[5] Fraunhofer ILT / University of Stuttgart · Laser-optical system for 2,000 Rydberg tweezers · The Quantum Insider · 2026-07-08 · https://thequantuminsider.com/2026/07/08/fraunhofer-ilt-develops-laser-system-for-2000-qubit-neutral-atom-quantum-computer/ [P]
-[6] Yokoyama, Kashimoto, Shibata et al. (Kyoto University, Yaqumo) · 17.6 µs fluorescence imaging of ytterbium atoms · arXiv:2605.24175v2 · 2026-08-24 · https://arxiv.org/html/2605.24175 [P]
-[7] Quantum Computing Report · Hamamatsu Photonics, NKT Photonics and Yaqumo alliance on cold-atom core components · 2026-06-04 · https://quantumcomputingreport.com/hamamatsu-photonics-nkt-photonics-and-yaqumo-form-alliance-to-industrialize-cold-atom-quantum-core-components/ [P]
-[8] QuEra Computing · Gemini product page (260 qubits, 99.2% global 2Q, one shot per second) · company website · accessed 2026-09-03 · https://www.quera.com/gemini [C]
-[9] QuEra Computing · $230M+ financing round · company press release · 2025-09-09 · https://www.quera.com/press-releases/quera-expands-230-million-financing-round-advancing-quantum-accelerated-supercomputing [C]
-[10] Atom Computing · Raises more than $300M including a $100M DoC letter of intent · PR Newswire · 2026-06-16 · https://www.prnewswire.com/news-releases/atom-computing-raises-more-than-300-million-to-accelerate-deployment-of-fault-tolerant-neutral-atom-quantum-computers-302800832.html [C]
-[11] Caltech · 6,100-atom caesium array with 12.6 s coherence · arXiv:2403.12021 · 2025-09 · https://arxiv.org/abs/2403.12021
-[12] Google · Neutral-atom quantum computers: a second hardware track · Google blog · 2026-03-24 · https://blog.google/innovation-and-ai/technology/research/neutral-atom-quantum-computers/ [C]
-[13] Gooch & Housego · Acousto-optic deflectors in Nature neutral-atom papers · company page · accessed 2026-09-04 · https://gandh.com/news-and-resources/g-and-h-acousto-optic-deflectors-in-nature-papers [C]
-[14] US Bureau of Industry and Security · Export controls on quantum computing items (ECCN 4A906) · Federal Register · 2024-09-06 · https://www.federalregister.gov/documents/2024/09/06/2024-19633/implementation-of-additional-export-controls-certain-advanced-computing-items-supercomputer-and
-[15] Infleqtion · First neutral-atom quantum company to go public (NYSE, >$550M gross) · company newsroom · 2026-02-17 · https://infleqtion.com/infleqtion-becomes-first-neutral-atom-quantum-company-to-go-public/ [C]
-[16] The Quantum Insider · Pasqal completes SPAC merger with ~$360M in cash · 2026-08-28 · https://thequantuminsider.com/2026/08/28/pasqal-completes-spac-merger-with-360-million-in-cash/ [P]
+[1] M. Endres *et al.*, “Cold Matter Assembled Atom-by-Atom,” [arXiv:1607.03044](https://arxiv.org/abs/1607.03044), Jul. 2016.
+[2] Y. Wang *et al.*, “Trapping 11,000 Atoms in a Tweezer Array Generated by a Single Metasurface,” [arXiv:2606.02715](https://arxiv.org/abs/2606.02715), Jun. 2026.
+[3] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661).
+[4] R. Yokoyama *et al.*, “Minimally Destructive Fast Imaging of Single Atoms in an Optical Tweezer Array with Coherent Excitation,” [arXiv:2605.24175](https://arxiv.org/abs/2605.24175), Jun. 2026. Also https://arxiv.org/abs/2605.24175. [P]
+[5] N.-C. Chiu *et al.*, “Continuous operation of a coherent 3,000-qubit system,” *Nature*, vol. 646, no. 8087, pp. 1075–1080, Sep. 2025, doi: [10.1038/s41586-025-09596-6](https://doi.org/10.1038/s41586-025-09596-6).
+[6] Fraunhofer ILT / University of Stuttgart, “Laser-optical system for 2,000 Rydberg tweezers,” *The Quantum Insider*, Jul. 2026. [Online]. Available: https://thequantuminsider.com/2026/07/08/fraunhofer-ilt-develops-laser-system-for-2000-qubit-neutral-atom-quantum-computer/ [P]
+[7] M. Abdel-Kareem, “Hamamatsu Photonics, NKT Photonics, and Yaqumo Form Alliance to Industrialize Cold-Atom Quantum Core Components,” Quantum Computing Report, Jun. 4, 2026. [Online]. Available: https://quantumcomputingreport.com/hamamatsu-photonics-nkt-photonics-and-yaqumo-form-alliance-to-industrialize-cold-atom-quantum-core-components/ [P]
+[8] QuEra Computing Inc., “Gemini-Class Gate-Model Quantum Computer.” [Online]. Available: https://www.quera.com/gemini [C]
+[9] Atom Computing, “Atom Computing Raises More Than $300 Million to Accelerate Deployment of Fault-Tolerant, Neutral-Atom Quantum Computers,” PR Newswire, Jun. 16, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/atom-computing-raises-more-than-300-million-to-accelerate-deployment-of-fault-tolerant-neutral-atom-quantum-computers-302800832.html [C]
+[10] M. Swayne, “Pasqal Completes SPAC Merger With $360 Million in Cash,” The Quantum Insider, Aug. 28, 2026. [Online]. Available: https://thequantuminsider.com/2026/08/28/pasqal-completes-spac-merger-with-360-million-in-cash/ [P]
+[11] QuEra Computing, “QuEra Expands $230 Million Financing Round Advancing Quantum-Accelerated Supercomputing,” Sep. 9, 2025. [Online]. Available: https://www.quera.com/press-releases/quera-expands-230-million-financing-round-advancing-quantum-accelerated-supercomputing [C]
 
 ## Open verification items
 The main report's "10 MHz refresh insufficient above ~10⁴ qubits" cannot be attributed to a device or a measurement in any source found; liquid-crystal modulators frame at tens of hertz and deflector reconfiguration is bounded by acoustic transit, so the figure is treated here as a proxy. Institutional affiliation for the 2016 lineage paper was not returned by the arXiv abstract page. Whether the Hamamatsu, NKT Photonics and Yaqumo alliance has signed named customers is undisclosed. Vacuum lifetime and any coherence measurement for the 18,225-site metasurface array are not reported. No cost breakdown exists below system level; the €65k-per-atom figure is derived from one order, not a price list.

@@ -56,11 +56,11 @@ Requires a gate-defined quantum-dot spin carrier; replaces one-line-per-electrod
 Confirm or demote in 12–24 months: two tiles gated independently through one shared line; a published crosstalk figure; a foundry crossbar step by 2027. Best case 2029: on-chip demultiplexing addresses >10⁴ dots with hundreds of lines. Worst case: crossbars stay a wireability demonstration while cold per-qubit multiplexing wins. Open: (1) what fraction of tiles stays addressable as arrays grow; (2) whether row-correlated error breaks decoder assumptions; (3) whether demultiplexers fit the millikelvin power budget.
 
 ## Sources
-[1] F. Borsoi, N. W. Hendrickx, G. Scappucci, M. Veldhorst et al. (QuTech/TU Delft) · "Shared control of a 16 semiconductor quantum dot crossbar array" · Nature Nanotechnology · 2024-01 (online 2023-08-28) · https://www.nature.com/articles/s41565-023-01491-3 [D]
-[2] M. Tosato, S. Elsayed, G. Scappucci et al. (QuTech/TU Delft) · "QARPET: crossbar chip for benchmarking semiconductor spin qubits" · Nature Electronics · 2026-02-12 · https://www.nature.com/articles/s41928-026-01569-5 [D]
-[3] GlobalFoundries · "GlobalFoundries launches Quantum Technology Solutions" · press release · 2026-05-21 · https://gf.com/gf-press-release/globalfoundries-launches-quantum-technology-solutions-to-scale-us-quantum-manufacturing/ [C]
-[4] R. Nickl, T. Dumoulin Stuyck, W. Steinacker et al. (Diraq/imec) · eight-qubit 300 mm SiMOS device, two-qubit gate on one of four pairs · Nature Communications 17, 5878 · 2026-07-09 · https://www.nature.com/articles/s41467-026-74597-6 [D]
-[5] Quantum Machines · "Semiconductor spin qubits" — OPX1000, QDAC-II, QSwitch · company page · accessed 2026-09-04 · https://www.quantum-machines.co/qubit-types/semiconductor-spin-qubits/ [C]
+[1] F. Borsoi *et al.*, “Shared control of a 16 semiconductor quantum dot crossbar array,” *Nat. Nanotechnol.*, vol. 19, no. 1, pp. 21–27, Jan. 2024, doi: [10.1038/s41565-023-01491-3](https://doi.org/10.1038/s41565-023-01491-3). [D]
+[2] A. Tosato *et al.*, “A crossbar chip for benchmarking semiconductor spin qubits,” *Nat. Electron.*, vol. 9, no. 3, pp. 324–333, Mar. 2026, doi: [10.1038/s41928-026-01569-5](https://doi.org/10.1038/s41928-026-01569-5). [D]
+[3] GlobalFoundries, “GlobalFoundries launches Quantum Technology Solutions to scale U.S. quantum manufacturing,” May 21, 2026. [Online]. Available: https://gf.com/gf-press-release/globalfoundries-launches-quantum-technology-solutions-to-scale-us-quantum-manufacturing/ [C]
+[4] A. Nickl *et al.*, “Eight-qubit operation of a 300 mm SiMOS foundry-fabricated device,” *Nat. Commun.*, vol. 17, no. 1, Art. no. 5878, Jul. 2026, doi: [10.1038/s41467-026-74597-6](https://doi.org/10.1038/s41467-026-74597-6). [D]
+[5] Quantum Machines, “Semiconductor Spin Qubits,” Aug. 11, 2026. [Online]. Available: https://www.quantum-machines.co/qubit-types/semiconductor-spin-qubits/ [C]
 
 ## Open verification items
 No crossbar publication gives a two-qubit fidelity or a shared-line crosstalk figure, so the conflict with per-pair exchange calibration is argued from the addressing scheme, not measured. Groove Quantum's investors and round label are not stated in any source consulted here. The QARPET 1,058 figure is a site capacity; the largest measured subset is 40 tiles.

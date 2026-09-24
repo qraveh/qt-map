@@ -23,9 +23,9 @@ The floor is a loss budget, not an infidelity: every interferometer, coupler and
 |---|---|---|---|
 | 2025-02 | Fusion Bell fidelity 99.22 ± 0.12%, chip-to-chip 99.72 ± 0.04% | PsiQuantum | [D][2] |
 | 2025-02 | Single-mode SiN loss 1.8 ± 0.2 dB/m; on-chip SNSPD 93.4% | PsiQuantum | [D][2] |
-| 2026-06-26 | Unencoded 6-ring loss threshold 0.38–0.82% | Löbl et al. | [S][4] |
+| 2026-06-26 | Unencoded 6-ring loss threshold 0.38–0.82% | Löbl et al. | [S][3] |
 
-No logical qubit exists in this encoding, and the threshold it must meet is disputed: 2.7% per photon for a boosted 6-ring and 17.4% for a {7,4}-encoded state [S][3] against 0.38–0.82% unencoded [S][4] — an order of magnitude apart, unreconciled [G:FBQC-THRESHOLD-CONFLICT-2026].
+No logical qubit exists in this encoding, and the threshold it must meet is disputed: 2.7% per photon for a boosted 6-ring and 17.4% for a {7,4}-encoded state [S][4] against 0.38–0.82% unencoded [S][3] — an order of magnitude apart, unreconciled [G:FBQC-THRESHOLD-CONFLICT-2026].
 
 ## Manufacturing, materials & supply chain
 No fabrication step of its own: the encoding rides its host — PsiQuantum's 300 mm silicon nitride, Quandela's III–V quantum dots, QuiX's SiN meshes. Control is inherited: no per-qubit drive line, but every interferometer needs a phase shifter and every output a detector — thousands of cryogenic channels and their fan-out at 10³–10⁴ qubits. Chokepoints are the detector vendors (Single Quantum, ID Quantique, Photon Spot) and the III–V and SiN foundries [P][G:SNSPD-VENDORS-2026]; ECCN 4A906 applies [G:BIS-QUANTUM-2024].
@@ -40,19 +40,19 @@ The encoding under the fusion-based discrete-variable path (PsiQuantum, Quandela
 |---|---|---|---|---|
 | PsiQuantum | developer | US | Path-encoded qubits on Omega | [D][2] |
 | Quandela | developer | FR | Photonic QPUs on quantum-dot sources | [C][G:QUANDELA-LUCY-HPC-2026-04] |
-| QuiX Quantum | developer | NL | Carina core delivered to DLR | [C][7] |
-| Sparrow Quantum | supplier | DK | Only merchant single-photon source vendor | [P][8] |
+| QuiX Quantum | developer | NL | Carina core delivered to DLR | [C][6] |
+| Sparrow Quantum | supplier | DK | Only merchant single-photon source vendor | [P][7] |
 
 **Money.**
-2025-04-10 · Sparrow Quantum · Series A · EUR 21.5 M · lead undisclosed · closed [P][8]
+2025-04-10 · Sparrow Quantum · Series A · EUR 21.5 M · lead undisclosed · closed [P][7]
 2025-09-10 · PsiQuantum · Series E · USD 1 B at USD 7 B · BlackRock, Temasek · closed [C][G:PSIQ-1B-2025-09]
 2026-07-22 · PsiQuantum · DARPA QBI Stage C expansion · USD 125 M · DARPA · announced [P][G:PSIQ-QBI-C-2026-07]
 
-**Market & supply chain.** Sparrow is the only merchant source vendor, shipping 20–35% system efficiency against a 71.2% laboratory record [P][8], so every fusion architecture pays a multiplexing tax set by one supplier's yield. Pays for G1/G2, is PsiQuantum's G3–G4 substrate, and pays separately for G6 through QKD.
+**Market & supply chain.** Sparrow is the only merchant source vendor, shipping 20–35% system efficiency against a 71.2% laboratory record [P][7], so every fusion architecture pays a multiplexing tax set by one supplier's yield. Pays for G1/G2, is PsiQuantum's G3–G4 substrate, and pays separately for G6 through QKD.
 
-**IP & standards.** ORCA holds US 12,437,225 on linear-optical encoded GHZ measurements (granted 2025-10-07), the only photonic dual-rail family a dated search surfaced [G][6]; no computing-side standard exists.
+**IP & standards.** ORCA holds US 12,437,225 on linear-optical encoded GHZ measurements (granted 2025-10-07), the only photonic dual-rail family a dated search surfaced [G][8]; no computing-side standard exists.
 
-**Roadmaps & track record.** PsiQuantum has published no hardware result since Omega, so 2026 progress is legible only through DARPA V&V [P][G:PSIQ-QBI-C-2026-07]. QuiX promised a universal machine for 2026 and delivered the core, not the machine [C][7]. Quandela missed its 2025 first-logical-qubit milestone, still targeting 50 by 2028 [R].
+**Roadmaps & track record.** PsiQuantum has published no hardware result since Omega, so 2026 progress is legible only through DARPA V&V [P][G:PSIQ-QBI-C-2026-07]. QuiX promised a universal machine for 2026 and delivered the core, not the machine [C][6]. Quandela missed its 2025 first-logical-qubit milestone, still targeting 50 by 2028 [R].
 
 **Strategic reading.** Whoever cuts system-level loss wins the fusion race — likely whoever controls detector efficiency and source multiplexing, not whoever designs the encoding, which is free where its host is not. QKD monetises the same physics, so a fusion failure strands PsiQuantum and Quandela but not QKD.
 
@@ -62,15 +62,15 @@ The encoding under the fusion-based discrete-variable path (PsiQuantum, Quandela
 Confirm by 2027: a hardware syndrome cycle consuming heralded loss as an erasure flag; absent that it stays theory. Best case 2029: a small fusion-based logical qubit; worst case, commercially real only in QKD. Open: does anyone reconcile the 0.38% and 2.7% thresholds; can detector efficiency reach herald-trust levels at scale.
 
 ## Sources
-[1] Brendel, Gisin, Tittel, Zbinden (University of Geneva), "Pulsed energy-time entangled twin-photon source for quantum communication," Phys. Rev. Lett. 82, 2594, 1999 [D] — https://arxiv.org/abs/quant-ph/9809034
-[2] PsiQuantum, "A manufacturable platform for photonic quantum computing" (Omega), Nature, 2025-02 [D] — https://www.nature.com/articles/s41586-025-08820-7
-[3] Fusion-based quantum computation loss thresholds, Nature Communications, 2023 [S] — https://www.nature.com/articles/s41467-023-36493-1
-[4] Löbl, Pettersson, Dragašević, Chen, Sandberg (Sparrow Quantum / Center for Hybrid Quantum Networks), "The subthreshold issue of fusion-based quantum computing," arXiv:2606.28490, 2026-06-26 [S] — https://arxiv.org/abs/2606.28490
-[5] Ewert, van Loock, "3/4-efficient Bell measurement with passive linear optics and unentangled ancillae," Phys. Rev. Lett. 113, 140403, arXiv:1403.4841, 2014 [S] — https://arxiv.org/abs/1403.4841
-[6] ORCA Computing Limited, US 12,437,225, "Linear-optical encoded GHZ measurements and fault-tolerant quantum computation and communication," granted 2025-10-07 [G] — https://patents.justia.com/patent/12437225
-[7] QuiX Quantum, Series A announcement, 2025-07-10 [C] — https://www.quixquantum.com/news/quix-quantum-series-a
-[8] Quantum Computing Report, "Sparrow Quantum Secures €21.5M Series A," 2025-04-10 [P] — https://quantumcomputingreport.com/sparrow-quantum-secures-e21-5m-24m-usd-in-series-a-funding-to-advance-photonic-quantum-chip-production/
-[9] Toshiba Europe, quantum technology news (Orange Business 2025-06-11; Quantum Bridge 2026-03-16) [C] — https://www.toshiba.eu/quantum/news/
+[1] Brendel, Gisin, Tittel, and Zbinden, “Pulsed energy-time entangled twin-photon source for quantum communication,” *Phys. Rev. Lett.*, vol. 82, Art. no. 2594, 1999. [Online]. Available: https://arxiv.org/abs/quant-ph/9809034 [D]
+[2] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
+[3] M. C. Löbl, L. A. M. Pettersson, J. Dragašević, S. X. Chen, and O. A. D. Sandberg, “The subthreshold issue of fusion-based quantum computing,” [arXiv:2606.28490](https://arxiv.org/abs/2606.28490), Jun. 2026. [S]
+[4] S. Bartolucci *et al.*, “Fusion-based quantum computation,” *Nat. Commun.*, vol. 14, Art. no. 912, Feb. 2023, doi: [10.1038/s41467-023-36493-1](https://doi.org/10.1038/s41467-023-36493-1). [arXiv:2506.11975](https://arxiv.org/abs/2506.11975). [S]
+[5] F. Ewert and P. van Loock, “3/4-Efficient Bell Measurement with Passive Linear Optics and Unentangled Ancillae,” *Phys. Rev. Lett.*, vol. 113, no. 14, Art. no. 140403, Sep. 2014, doi: [10.1103/PhysRevLett.113.140403](https://doi.org/10.1103/PhysRevLett.113.140403). [arXiv:1403.4841](https://arxiv.org/abs/1403.4841). [S]
+[6] QuiX Quantum, “QuiX Quantum Secures €15 Million to Deliver First-Generation Universal Photonic Quantum Computer,” Jul. 10, 2025. [Online]. Available: https://www.quixquantum.com/news/quix-quantum-series-a [C]
+[7] Quantum Computing Report, “Sparrow Quantum Secures €21.5M Series A,” Apr. 10, 2025. [Online]. Available: https://quantumcomputingreport.com/sparrow-quantum-secures-e21-5m-24m-usd-in-series-a-funding-to-advance-photonic-quantum-chip-production/ [P]
+[8] ORCA Computing Limited, “Linear-optical encoded GHZ measurements and fault-tolerant quantum computation and communication,” Justia Patents, Oct. 7, 2025. [Online]. Available: https://patents.justia.com/patent/12437225 [G]
+[9] “Toshiba Europe, quantum technology news (Orange Business 2025-06-11; Quantum Bridge 2026-03-16),” toshiba.eu. [Online]. Available: https://www.toshiba.eu/quantum/news/ [C]
 
 ## Open verification items
 The main report's "waveguide loss 0.5 dB/m" is not the Omega single-mode SiN figure; 1.8 ± 0.2 dB/m is used here and the discrepancy is unreconciled [G:PSIQ-OMEGA-METRICS-2025]. The arXiv abstract page for quant-ph/9809034 returned the abstract text but not the author list or journal reference; the attribution to Brendel, Gisin, Tittel and Zbinden rests on the identifier. Loss thresholds for 6-ring fusion differ by an order of magnitude between sources with no reconciliation [G:FBQC-THRESHOLD-CONFLICT-2026]. No syndrome-extraction-with-heralded-loss demonstration exists on any platform. Toshiba's public pages do not name "time-bin" for its 2025–26 deployments, so that attribution is not used here beyond the general QKD context [9]. The 0.27 dB per nanosecond of on-chip delay is derived from published loss figures, not measured.

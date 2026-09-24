@@ -26,33 +26,33 @@ Attributes (technology graph):
 
 ## Physics & limits
 
-The intended floor is exponential: a parity error requires a quasiparticle to cross between Majorana modes separated by many coherence lengths, so the rate should fall as exp(−L/ξ). That is the argument, not the demonstration. Two scales govern the devices: the induced gap, which sets the thermal quasiparticle population and is why lead replaced aluminium; and the hybridisation splitting, resolved on InAs–Pb to µeV precision from h/2e-periodic quantum-capacitance shifts [C][4].
+The intended floor is exponential: a parity error requires a quasiparticle to cross between Majorana modes separated by many coherence lengths, so the rate should fall as exp(−L/ξ). That is the argument, not the demonstration. Two scales govern the devices: the induced gap, which sets the thermal quasiparticle population and is why lead replaced aluminium; and the hybridisation splitting, resolved on InAs–Pb to µeV precision from h/2e-periodic quantum-capacitance shifts [C][1].
 
-Failure modes divide into quasiparticle poisoning — one unpaired fermion entering the island flips parity, which is what the ~20 s figure bounds — and dephasing between parity states, which is what an X-loop measures. The published asymmetry is the whole story: Z-loop 12.4 ms against X-loop 14.5 µs, roughly 1000× shorter [D][3]. Long Z with short X is equally consistent with a well-isolated charge island and says nothing about topology. With no X-loop re-measured on InAs–Pb, the physics that would move the floor — larger gap, lower disorder, longer wires — stays untested against the only discriminating observable.
+Failure modes divide into quasiparticle poisoning — one unpaired fermion entering the island flips parity, which is what the ~20 s figure bounds — and dephasing between parity states, which is what an X-loop measures. The published asymmetry is the whole story: Z-loop 12.4 ms against X-loop 14.5 µs, roughly 1000× shorter [D][2]. Long Z with short X is equally consistent with a well-isolated charge island and says nothing about topology. With no X-loop re-measured on InAs–Pb, the physics that would move the floor — larger gap, lower disorder, longer wires — stays untested against the only discriminating observable.
 
 ## Engineering state of the art
 
-Best demonstrated, 2026-06-02: a characteristic parity switching time of ~20 s, "with some instances reaching minute-scale", by interferometric single-shot parity measurement on **one hybrid nanowire of one tetron** in a multi-tetron array, InAs–Pb [C][4]. Typical at scale does not exist: no array yield, no assignment error, no X-loop lifetime, no two-qubit operation, no entanglement, no Bell test, no qubit T₁/T₂ [C][4][G:MSFT-MAJORANA-2026]. Microsoft's blog calls the 20 s a "qubit lifetime"; the preprint claims a parity lifetime in one wire [C][5].
+Best demonstrated, 2026-06-02: a characteristic parity switching time of ~20 s, "with some instances reaching minute-scale", by interferometric single-shot parity measurement on **one hybrid nanowire of one tetron** in a multi-tetron array, InAs–Pb [C][1]. Typical at scale does not exist: no array yield, no assignment error, no X-loop lifetime, no two-qubit operation, no entanglement, no Bell test, no qubit T₁/T₂ [C][1][G:MSFT-MAJORANA-2026]. Microsoft's blog calls the 20 s a "qubit lifetime"; the preprint claims a parity lifetime in one wire [C][3].
 
 **Records timeline**
 
 | Date | Figure | Who | Tag+key |
 |---|---|---|---|
-| 2018-03-28, retracted 2021-03-08 | quantised 2e²/h Majorana conductance; recalibration moved plateaus 8%, points fell outside 2σ | Zhang et al. (Delft, Eindhoven, Microsoft) | [D][12] |
-| 2023-03-01 | e/4 interference with the predicted even–odd effect at ν=5/2 and ν=7/2 | Nokia Bell Labs, PRX 13, 011028 | [D][14] |
-| 2025-02 | single-shot parity readout, 1% assignment error, ms dwell times, InAs–Al | Microsoft, Nature | [D][1] |
-| 2025-07 | tetron Z-loop 12.4 ms vs X-loop 14.5 µs | Microsoft, preprint | [D][3] |
-| 2026 | Kitaev-chain parity readout > 1 ms | QuTech, Nature | [D][6] |
-| 2026-06-02 | ~20 s parity switching, one wire of one InAs–Pb tetron | Microsoft, preprint | [C][4] |
-| 2026-07-10 | coherent parity oscillations in coupled minimal Kitaev chains, "limited protection" | QuTech, preprint | [D][7] |
+| 2018-03-28, retracted 2021-03-08 | quantised 2e²/h Majorana conductance; recalibration moved plateaus 8%, points fell outside 2σ | Zhang et al. (Delft, Eindhoven, Microsoft) | [D][4] |
+| 2023-03-01 | e/4 interference with the predicted even–odd effect at ν=5/2 and ν=7/2 | Nokia Bell Labs, PRX 13, 011028 | [D][5] |
+| 2025-02 | single-shot parity readout, 1% assignment error, ms dwell times, InAs–Al | Microsoft, Nature | [D][6] |
+| 2025-07 | tetron Z-loop 12.4 ms vs X-loop 14.5 µs | Microsoft, preprint | [D][2] |
+| 2026 | Kitaev-chain parity readout > 1 ms | QuTech, Nature | [D][7] |
+| 2026-06-02 | ~20 s parity switching, one wire of one InAs–Pb tetron | Microsoft, preprint | [C][1] |
+| 2026-07-10 | coherent parity oscillations in coupled minimal Kitaev chains, "limited protection" | QuTech, preprint | [D][8] |
 
 Dominant term of the error budget: unquantified. The only channel with a measured rate is the Z-basis parity flip; no budget attributing the X/Z ratio to disorder, hybridisation or readout back-action has been published.
 
 ## Manufacturing, materials & supply chain
 
-The stack is MBE-grown InAs with an in-situ superconductor — now lead — patterned into tetrons by electrostatic gates. It is the least manufacturable process in the carrier layer: MBE throughput is wafers per day; the semiconductor–superconductor interface determines yield and has no published in-line metric; and the device is defined by gate tuning, so "yield" means the fraction of gate settings passing a screen — the contested Topological Gap Protocol [8][9].
+The stack is MBE-grown InAs with an in-situ superconductor — now lead — patterned into tetrons by electrostatic gates. It is the least manufacturable process in the carrier layer: MBE throughput is wafers per day; the semiconductor–superconductor interface determines yield and has no published in-line metric; and the device is defined by gate tuning, so "yield" means the fraction of gate settings passing a screen — the contested Topological Gap Protocol [9], [10].
 
-No yield, uniformity, cost- or energy-per-qubit figure has been published for any Majorana device as of 2026-09-03. Microsoft moved fabrication capacity to Lyngby, Denmark, where the November 2025 opening was reported as enabling "the full fabrication of the Majorana chip core in Denmark", against cumulative Danish quantum-infrastructure investment above DKK 1 bn (≈ USD 156 M) [P][17]. GlobalFoundries lists topological among the modalities its Quantum Technology Solutions unit serves, with Microsoft Quantum named, but gives no wafer size, node or fab [C][19][G:GF-QTS-2026-05] — a captive research fab, not a foundry flow. Single points of failure: MBE tool supply, III–V source material, and the concentration of tetron know-how in one company and two university groups. No ECCN specific to Majorana devices was found.
+No yield, uniformity, cost- or energy-per-qubit figure has been published for any Majorana device as of 2026-09-03. Microsoft moved fabrication capacity to Lyngby, Denmark, where the November 2025 opening was reported as enabling "the full fabrication of the Majorana chip core in Denmark", against cumulative Danish quantum-infrastructure investment above DKK 1 bn (≈ USD 156 M) [P][11]. GlobalFoundries lists topological among the modalities its Quantum Technology Solutions unit serves, with Microsoft Quantum named, but gives no wafer size, node or fab [C][12][G:GF-QTS-2026-05] — a captive research fab, not a foundry flow. Single points of failure: MBE tool supply, III–V source material, and the concentration of tetron know-how in one company and two university groups. No ECCN specific to Majorana devices was found.
 
 ## Control, readout & I/O burden
 
@@ -66,11 +66,11 @@ Derived clock for the path = sum of the syndrome round: gate layers + transport 
 
 ## Verification (QCVV)
 
-The headline 20 s is a switching-time fit to a telegraph signal in one wire, not a randomised-benchmarking number, and has no companion in the conjugate basis: parity lifetime and qubit coherence are different quantities, and only the former was measured [C][4]. The February 2025 Nature paper carries an editor's note stating the results do not by themselves establish the presence of Majorana zero modes in the devices [D][1][2].
+The headline 20 s is a switching-time fit to a telegraph signal in one wire, not a randomised-benchmarking number, and has no companion in the conjugate basis: parity lifetime and qubit coherence are different quantities, and only the former was measured [C][1]. The February 2025 Nature paper carries an editor's note stating the results do not by themselves establish the presence of Majorana zero modes in the devices [D][6], [13].
 
-Independent work does not replicate the claim. QuTech has shown Kitaev-chain parity readout beyond 1 ms [D][6] and, in July 2026, coherent parity oscillations in coupled minimal Kitaev chains while stating that "poor man's" Majoranas carry only limited protection [D][7]: replication of the technique, explicit non-replication of the protection.
+Independent work does not replicate the claim. QuTech has shown Kitaev-chain parity readout beyond 1 ms [D][7] and, in July 2026, coherent parity oscillations in coupled minimal Kitaev chains while stating that "poor man's" Majoranas carry only limited protection [D][8]: replication of the technique, explicit non-replication of the protection.
 
-Legg argues the Topological Gap Protocol can label the same region gapped or gapless depending on analysis choices such as field range and junction transparency, and that the conductance data show no clear gap [8]; it became a Nature Matters Arising in June 2026 with a multi-author Microsoft reply that concedes nothing [9][10]. History is load-bearing: the 2018 "quantized Majorana conductance" Letter was retracted on 2021-03-08 after undisclosed charge-jump corrections, a mislabelled axis, and a recalibration moving plateau values by 8% that left points outside 2σ [D][12]. Only one group reports the headline numbers, so no value conflict arises.
+Legg argues the Topological Gap Protocol can label the same region gapped or gapless depending on analysis choices such as field range and junction transparency, and that the conductance data show no clear gap [9]; it became a Nature Matters Arising in June 2026 with a multi-author Microsoft reply that concedes nothing [10], [14]. History is load-bearing: the 2018 "quantized Majorana conductance" Letter was retracted on 2021-03-08 after undisclosed charge-jump corrections, a mislabelled axis, and a recalibration moving plateau values by 8% that left points outside 2σ [D][4]. Only one group reports the headline numbers, so no value conflict arises.
 
 ## Actors & economics
 
@@ -78,32 +78,32 @@ Legg argues the Topological Gap Protocol can label the same region gapped or gap
 
 | Organisation | Role | Country | What exactly they do | Evidence |
 |---|---|---|---|---|
-| Microsoft Quantum | developer | US | Sole source of tetron devices and of every headline number; measurement-based architecture; 2029 fault-tolerance target | [C][4][5][G:MSFT-MAJORANA-2026] |
-| Microsoft Quantum Lab Lyngby | supplier (captive fab) | DK | Fabrication of the Majorana chip core; opened 2025-11-13 | [P][17] |
-| QuTech | research | NL | Minimal Kitaev chains; independent parity readout and a coherent parity qubit with explicitly limited protection | [D][6][7] |
-| TU Eindhoven | supplier (materials) | NL | InSb/InAs nanowire growth feeding the Kitaev-chain devices | [D][7] |
-| Nokia Bell Labs | developer | US | ν=5/2 fractional quantum Hall in GaAs, ~15×15 µm devices; target end-2026 for a topological qubit in superposition | [D][14][C][13][P][15] |
-| DARPA | funder | US | Microsoft in the final US2QC phase since 2025-02; absent from QBI Stage B | [G][11][G:QBI-STAGEC-2026] |
-| GlobalFoundries | supplier | US | Quantum Technology Solutions covers the topological modality; Microsoft Quantum a named partner | [C][19][G:GF-QTS-2026-05] |
+| Microsoft Quantum | developer | US | Sole source of tetron devices and of every headline number; measurement-based architecture; 2029 fault-tolerance target | [C][1], [3][G:MSFT-MAJORANA-2026] |
+| Microsoft Quantum Lab Lyngby | supplier (captive fab) | DK | Fabrication of the Majorana chip core; opened 2025-11-13 | [P][11] |
+| QuTech | research | NL | Minimal Kitaev chains; independent parity readout and a coherent parity qubit with explicitly limited protection | [D][7], [8] |
+| TU Eindhoven | supplier (materials) | NL | InSb/InAs nanowire growth feeding the Kitaev-chain devices | [D][8] |
+| Nokia Bell Labs | developer | US | ν=5/2 fractional quantum Hall in GaAs, ~15×15 µm devices; target end-2026 for a topological qubit in superposition | [D][5][C][15][P][16] |
+| DARPA | funder | US | Microsoft in the final US2QC phase since 2025-02; absent from QBI Stage B | [G][17][G:QBI-STAGEC-2026] |
+| GlobalFoundries | supplier | US | Quantum Technology Solutions covers the topological modality; Microsoft Quantum a named partner | [C][12][G:GF-QTS-2026-05] |
 | Atom Computing | partner (hedge) | US | Neutral-atom hardware for Microsoft's Magne logical-qubit machine — not topological | [G:MAGNE-2025-07] |
 | QuNorth | user | DK | Bought Magne for €80 M, funded by EIFO and the Novo Nordisk Foundation | [G:MAGNE-2025-07] |
-| H. F. Legg | critic | — | Matters Arising challenging the Topological Gap Protocol | [8][9] |
+| H. F. Legg | critic | — | Matters Arising challenging the Topological Gap Protocol | [9], [10] |
 
 **Money.**
-- 2025-02 · Microsoft · DARPA US2QC final phase (with PsiQuantum only) · amount not disclosed · DARPA · in progress [G][11][G:QBI-STAGEC-2026]
+- 2025-02 · Microsoft · DARPA US2QC final phase (with PsiQuantum only) · amount not disclosed · DARPA · in progress [G][17][G:QBI-STAGEC-2026]
 - 2025-07-17 · QuNorth · order for "Magne", 1,225 physical / 50 logical qubits · €80 M · EIFO + Novo Nordisk Foundation · ordered, delivery around the turn of 2026/27 [G:MAGNE-2025-07]
 - 2025-11-06 · Microsoft · **not** selected for DARPA QBI Stage B (11 companies, up to $15 M each) · n/a · DARPA · confirmed absent [G:QBI-STAGEB-2025-11]
-- 2025-11-13 · Microsoft · Lyngby lab opening; cumulative Danish quantum-infrastructure investment above DKK 1 bn (≈ USD 156 M) · announced [P][17]
+- 2025-11-13 · Microsoft · Lyngby lab opening; cumulative Danish quantum-infrastructure investment above DKK 1 bn (≈ USD 156 M) · announced [P][11]
 - 2026-01-23 · Microsoft · Quantum Pioneers Program 2026, academic grants up to USD 200,000 per proposal, decisions 2026-03-15 · announced [P][18]
 - 2026-05-12 · Microsoft · returning investor in Photonic Inc.'s $200 M round at a $2 B valuation · closed [G:PHOTONIC-200M-2026-05]
-- 2026-05-21 · GlobalFoundries · CHIPS letter of intent covering a unit that lists topological · $375 M · US Dept of Commerce · LOI [C][19][G:GF-QTS-2026-05]
+- 2026-05-21 · GlobalFoundries · CHIPS letter of intent covering a unit that lists topological · $375 M · US Dept of Commerce · LOI [C][12][G:GF-QTS-2026-05]
 - Microsoft's topological R&D spend, headcount and Lyngby capex: not disclosed anywhere found.
 
 **Market & supply chain.** Nobody sells equipment specific to this technology; inputs are general MBE tools, III–V substrates and standard dilution refrigerators. Concentration risk is total: one vendor, one captive fab, no merchant supply. Unit economics are unquotable — no device sold, no cloud access, no attributable revenue. Only G3 and G4 (early and large-scale fault tolerance) would pay for it; G1, G2, G5 and G7 are served by machines Microsoft buys from others, which the Magne order documents [G:MAGNE-2025-07].
 
 **IP & standards.** No topological-specific patent count from a named database was found; the only dated figure is PatSnap's 1,175 Microsoft quantum patent families to 2026-06-30 [P][G:PATSNAP-2026-06], spanning all modalities. No litigation over Majorana device IP was found, and there is no standards body; the only openly published aligned stack is Microsoft's Q#/Azure Quantum Development Kit, whose instruction model presumes the architecture rather than validating it.
 
-**Roadmaps & track record.** (promised on · promised for · status 2026-09-03): 2018-03 · quantised Majorana conductance · retracted 2021-03-08 [D][12]. 2025-02 · topological qubit demonstrated · contested, with a Nature editor's note [D][1][2]. 2025 · "years, not decades" · superseded [C][5]. 2026-06 · 2029 fault tolerance · no two-qubit operation exists [C][5]. Nokia: end-2025 · Pauli-X control result · no publication found; end-2026 · qubit in superposition · outstanding [P][15]. Microsoft delivers excellent measurements on schedule and labels them with claims they do not support — consistent from 2018 to 2026; a 2029 date resting on zero demonstrated two-qubit physics is an intention, not a forecast. QuTech's statements have matched its data. Nokia's roadmap is too thinly published to judge.
+**Roadmaps & track record.** (promised on · promised for · status 2026-09-03): 2018-03 · quantised Majorana conductance · retracted 2021-03-08 [D][4]. 2025-02 · topological qubit demonstrated · contested, with a Nature editor's note [D][6], [13]. 2025 · "years, not decades" · superseded [C][3]. 2026-06 · 2029 fault tolerance · no two-qubit operation exists [C][3]. Nokia: end-2025 · Pauli-X control result · no publication found; end-2026 · qubit in superposition · outstanding [P][16]. Microsoft delivers excellent measurements on schedule and labels them with claims they do not support — consistent from 2018 to 2026; a 2029 date resting on zero demonstrated two-qubit physics is an intention, not a forecast. QuTech's statements have matched its data. Nokia's roadmap is too thinly published to judge.
 
 **Strategic reading.** If it works, Microsoft owns a carrier no competitor can match by engineering alone, devaluing the rival capital stack at the physical layer. If it fails — the base case on today's evidence — Microsoft loses little: its delivery vehicle is other people's hardware plus its own error correction, which is why it bought Magne and invested in Photonic. Substitution runs the other way, as qLDPC codes erode the overhead argument that made topological qubits necessary. Supplier bargaining power is nil; platform-vendor power depends on whether a two-qubit result appears.
 
@@ -111,42 +111,42 @@ Legg argues the Topological Gap Protocol can label the same region gapped or gap
 
 ## Outlook & open questions
 
-Falsifiable within 12–24 months. Confirm: an X-loop or joint-parity lifetime on InAs–Pb within two orders of magnitude of the Z-loop 20 s; any two-tetron measurement-based operation with a reported fidelity; independent reproduction of the InAs–Pb parity lifetime; Nokia publishing a ν=5/2 qubit in superposition, promised for end-2026 [P][15]. Demote: another year of Z-basis single-wire numbers only, or a second Matters Arising surviving reply.
+Falsifiable within 12–24 months. Confirm: an X-loop or joint-parity lifetime on InAs–Pb within two orders of magnitude of the Z-loop 20 s; any two-tetron measurement-based operation with a reported fidelity; independent reproduction of the InAs–Pb parity lifetime; Nokia publishing a ν=5/2 qubit in superposition, promised for end-2026 [P][16]. Demote: another year of Z-basis single-wire numbers only, or a second Matters Arising surviving reply.
 
 Best case 2029: a few tetrons with balanced X/Z lifetimes and a two-qubit parity gate — a research device, not the promised fault-tolerant machine. Worst case: the InAs–Pb signal proves to be trivial Andreev states and the branch closes.
 
-Open questions: why no X-loop number exists for the lead generation; what fraction of tetrons pass screening; how parity lifetime scales with wire length, the measurement that tests exponential protection directly; whether US2QC's final phase can be satisfied by a Z-only result; and whether Nokia's route, with its peer-reviewed non-Abelian interference signature [D][14], is the better-evidenced bet.
+Open questions: why no X-loop number exists for the lead generation; what fraction of tetrons pass screening; how parity lifetime scales with wire length, the measurement that tests exponential protection directly; whether US2QC's final phase can be satisfied by a Z-only result; and whether Nokia's route, with its peer-reviewed non-Abelian interference signature [D][5], is the better-evidenced bet.
 
 ## Sources
 
-[1] Aghaee et al. (Microsoft Azure Quantum), "Interferometric single-shot parity measurement in InAs–Al hybrid devices", Nature, 2025-02-19 (with editorial note) — https://www.nature.com/articles/s41586-024-08445-2
-[2] APS Physics, "Experts weigh in on Microsoft's topological qubit claim", Physics 18, 57 (2025-03-10) — https://physics.aps.org/articles/v18/57
-[3] Microsoft Azure Quantum, tetron Z-loop and X-loop parity lifetimes, arXiv:2507.08795 (2025-07) — https://arxiv.org/abs/2507.08795
-[4] Aghaee, Alam, Andrzejczuk, Antipov, Asimakidis et al. (243 authors, Microsoft), "20 Second Parity Lifetime in an InAs–Pb Tetron Device", arXiv:2606.03884 (2026-06-02) — https://arxiv.org/abs/2606.03884
-[5] [C] Microsoft, "Majorana 2: a scalable quantum processor", Microsoft Quantum blog (2026) — https://quantum.microsoft.com/en-us/insights/blogs/majorana-2-scalable-quantum-processor
-[6] QuTech / TU Delft, minimal Kitaev-chain parity readout beyond 1 ms, Nature (2026) — https://www.nature.com/articles/s41586-025-09927-7
-[7] Zatelli, Roovers, van Loo, Lombardi, Torres Luna, Miles, Sietses, Bennebroek Evertsz', Cova Fariña, Bordin, Badawy, Bakkers, Wimmer, Kouwenhoven (QuTech), "Majorana parity qubit in coupled minimal Kitaev chains", arXiv:2607.09511 (2026-07-10) — https://arxiv.org/abs/2607.09511
-[8] Legg, critique of the Topological Gap Protocol, arXiv:2503.08944 (2025-03) — https://arxiv.org/abs/2503.08944
-[9] Matters Arising on the Microsoft parity-readout paper, Nature (2026-06) — https://www.nature.com/articles/s41586-026-10567-8
-[10] Microsoft reply to the Matters Arising, Nature (2026-06) — https://www.nature.com/articles/s41586-026-10568-7
-[11] [G] DARPA, "Quantum computing approaches" (US2QC final phase: Microsoft and PsiQuantum), 2025-02 — https://www.darpa.mil/news/2025/quantum-computing-approaches
-[12] Zhang, Liu, Gazibegovic et al., retraction note for "Quantized Majorana conductance" (Nature, 2018-03-28), Nature, 2021-03-08 — https://www.nature.com/articles/s41586-021-03373-x
-[13] [C] Nokia Bell Labs, "Topological quantum computing" research page (accessed 2026-09-03) — https://www.nokia.com/bell-labs/research/air-lab/data-and-devices/topological-quantum-computing/
-[14] Willett et al. (Nokia Bell Labs), "Interference measurements of non-Abelian e/4 and Abelian e/2 quasiparticle braiding", Phys. Rev. X 13, 011028 (2023-03-01) — https://journals.aps.org/prx/abstract/10.1103/PhysRevX.13.011028
-[15] [P] The Next Platform, "Bell Labs takes a topological approach to Quantum 2.0", 2025-07-21 — https://www.nextplatform.com/2025/07/21/bell-labs-takes-a-topological-approach-to-quantum-2-0/
-[16] [P] ITPro, "Bell Labs' Michael Eggleston on Nokia's research into topological quantum computing" (2026) — https://www.itpro.com/technology/bell-labs-michael-eggleston-on-nokias-research-into-topological-quantum-computing
-[17] [P] Quantum Computing Report, "Microsoft opens largest quantum lab globally in Denmark to advance topological qubit fabrication", 2025-11-13 — https://quantumcomputingreport.com/microsoft-opens-largest-quantum-lab-globally-in-denmark-to-advance-topological-qubit-fabrication/
-[18] [P] The Quantum Insider, "Microsoft opens 2026 Quantum Pioneers Program for measurement-based topological computing research", 2026-01-23 — https://thequantuminsider.com/2026/01/23/microsoft-2026-quantum-pioneers-program-measurement-based-computing/
-[19] [C] GlobalFoundries, "GlobalFoundries launches Quantum Technology Solutions to scale US quantum manufacturing", 2026-05-21 — https://gf.com/gf-press-release/globalfoundries-launches-quantum-technology-solutions-to-scale-us-quantum-manufacturing/
+[1] M. Aghaee *et al.*, “20 Second Parity Lifetime in an InAs–Pb Tetron Device,” [arXiv:2606.03884](https://arxiv.org/abs/2606.03884), Jun. 2026.
+[2] M. Aghaee *et al.*, “Distinct Lifetimes for X and Z Loop Measurements in a Majorana Tetron Device,” [arXiv:2507.08795](https://arxiv.org/abs/2507.08795), Jul. 2025.
+[3] C. Nayak, “Majorana 2 – Microsoft's Scalable Quantum Processor With Reliable, Long-Lasting Qubits,” Microsoft Quantum. [Online]. Available: https://quantum.microsoft.com/en-us/insights/blogs/majorana-2-scalable-quantum-processor [C]
+[4] H. Zhang *et al.*, “Quantized Majorana conductance,” *Nature*, vol. 556, no. 7699, pp. 74–79, Mar. 2018, doi: [10.1038/nature26142](https://doi.org/10.1038/nature26142). Retracted: *Nature*, vol. 591, p. E30, Mar. 2021, doi: [10.1038/s41586-021-03373-x](https://doi.org/10.1038/s41586-021-03373-x).
+[5] R. L. Willett *et al.*, “Interference Measurements of Non-Abelian e/4 & Abelian e/2 Quasiparticle Braiding,” *Phys. Rev. X*, vol. 13, no. 1, Art. no. 011028, Mar. 2023, doi: [10.1103/PhysRevX.13.011028](https://doi.org/10.1103/PhysRevX.13.011028).
+[6] Microsoft Azure Quantum, “Interferometric single-shot parity measurement in InAs–Al hybrid devices,” *Nature*, vol. 638, no. 8051, pp. 651–655, Feb. 2025, doi: [10.1038/s41586-024-08445-2](https://doi.org/10.1038/s41586-024-08445-2).
+[7] N. van Loo *et al.*, “Single-shot parity readout of a minimal Kitaev chain,” *Nature*, vol. 650, no. 8101, pp. 334–339, Feb. 2026, doi: [10.1038/s41586-025-09927-7](https://doi.org/10.1038/s41586-025-09927-7).
+[8] F. Zatelli *et al.*, “Majorana parity qubit in coupled minimal Kitaev chains,” [arXiv:2607.09511](https://arxiv.org/abs/2607.09511), Jul. 2026.
+[9] H. F. Legg, “On the robustness of topological gap detection via transport,” *Nature*, vol. 654, no. 8120, pp. E22–E26, Jun. 2026, doi: [10.1038/s41586-026-10567-8](https://doi.org/10.1038/s41586-026-10567-8). [arXiv:2503.08944](https://arxiv.org/abs/2503.08944).
+[10] H. F. Legg, “On the robustness of topological gap detection via transport,” *Nature*, vol. 654, no. 8120, pp. E22–E26, Jun. 2026, doi: [10.1038/s41586-026-10567-8](https://doi.org/10.1038/s41586-026-10567-8). [arXiv:2503.08944](https://arxiv.org/abs/2503.08944).
+[11] Quantum Computing Report, “Microsoft opens largest quantum lab globally in Denmark to advance topological qubit fabrication,” Nov. 13, 2025. [Online]. Available: https://quantumcomputingreport.com/microsoft-opens-largest-quantum-lab-globally-in-denmark-to-advance-topological-qubit-fabrication/ [P]
+[12] GlobalFoundries, “GlobalFoundries launches Quantum Technology Solutions to scale U.S. quantum manufacturing,” May 21, 2026. [Online]. Available: https://gf.com/gf-press-release/globalfoundries-launches-quantum-technology-solutions-to-scale-us-quantum-manufacturing/ [C]
+[13] P. Ball, “Experts Weigh in on Microsoft's Topological Qubit Claim,” *Physics*, vol. 18, p. 57, 2025. [Online]. Available: https://physics.aps.org/articles/v18/57
+[14] Microsoft Quantum, “Reply to: On the robustness of topological gap detection via transport,” *Nature*, vol. 654, no. 8120, pp. E27–E28, Jun. 2026, doi: [10.1038/s41586-026-10568-7](https://doi.org/10.1038/s41586-026-10568-7).
+[15] Nokia Bell Labs, “Topological quantum computing,” research page, Sep. 3, 2026. [Online]. Available: https://www.nokia.com/bell-labs/research/air-lab/data-and-devices/topological-quantum-computing/ [C]
+[16] The Next Platform, “Bell Labs takes a topological approach to Quantum 2.0,” nextplatform.com, Jul. 21, 2025. [Online]. Available: https://www.nextplatform.com/2025/07/21/bell-labs-takes-a-topological-approach-to-quantum-2-0/ [P]
+[17] DARPA, “DARPA selects two discrete utility-scale quantum computing approaches for evaluation,” Feb. 6, 2025. [Online]. Available: https://www.darpa.mil/news/2025/quantum-computing-approaches [G]
+[18] The Quantum Insider, “Microsoft opens 2026 Quantum Pioneers Program for measurement-based topological computing research,” Jan. 23, 2026. [Online]. Available: https://thequantuminsider.com/2026/01/23/microsoft-2026-quantum-pioneers-program-measurement-based-computing/ [P]
+[19] ITPro, “Bell Labs' Michael Eggleston on Nokia's research into topological quantum computing,” 2026. [Online]. Available: https://www.itpro.com/technology/bell-labs-michael-eggleston-on-nokias-research-into-topological-quantum-computing [P]
 
 ## Open verification items
 - Affiliation of H. F. Legg not confirmed in the arXiv text consulted; the Matters Arising author list and exact June 2026 day could not be established.
-- The >1 ms figure for [6] is taken from the main report and is not verified against the paper.
-- Assignment error, readout fidelity and device yield for the InAs–Pb generation: not reported in [4]; no source found.
+- The >1 ms figure for [7] is taken from the main report and is not verified against the paper.
+- Assignment error, readout fidelity and device yield for the InAs–Pb generation: not reported in [1]; no source found.
 - X-loop / joint-parity lifetime for InAs–Pb: no measurement published as of 2026-09-03.
-- Microsoft topological R&D spend, Lyngby capex and headcount: not disclosed; the DKK 1 bn in [17] is total Danish quantum-infrastructure investment, not Microsoft's own outlay.
-- DARPA US2QC contract value to Microsoft: not disclosed in [11].
+- Microsoft topological R&D spend, Lyngby capex and headcount: not disclosed; the DKK 1 bn in [11] is total Danish quantum-infrastructure investment, not Microsoft's own outlay.
+- DARPA US2QC contract value to Microsoft: not disclosed in [17].
 - Export-control rules and ECCNs specific to Majorana or III–V superconducting hybrid devices: none identified.
-- Nokia's claimed end-2025 Pauli-X control result: no publication or release found; [15][16] are trade press.
-- Nokia device size "15×15 µm" and the "hours to days" state stability come from [15] and [13], not from a peer-reviewed source.
+- Nokia's claimed end-2025 Pauli-X control result: no publication or release found; [16], [19] are trade press.
+- Nokia device size "15×15 µm" and the "hours to days" state stability come from [16] and [15], not from a peer-reviewed source.
 - MBE tool vendor concentration asserted qualitatively; no dated market-share source consulted.

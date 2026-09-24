@@ -21,9 +21,9 @@ updated: 2026-09-03
 
 Закон масштабирования задаёт ловушка. Удержание лазерно-охлаждённого атома стоит примерно 0.5–1 mW света на 850–1064 nm: массив Tsinghua на 18,225 узлов потребовал 33 W падающей и 12.2 W эффективной удерживающей мощности, ~0.67 mW на узел [D][1]. Мощность удерживающего света растёт строго линейно с числом кубитов: массив из 10⁶ атомов — это оптическая установка киловаттного класса, а не увеличенная версия сегодняшней машины.
 
-Ограничением служит не когерентность. Сверхтонкие «часовые» состояния нечувствительны к магнитному полю в первом порядке: T₂ = 12.6(1) s в массиве из 6,100 атомов Cs [D][3]; T₂ = 1.09(3) s в Rb *при работающей в 0.5 m магнитооптической ловушке*, против 1.34(4) s в экранированном варианте [D][2]. На фоне миллисекундного цикла обе величины огромны.
+Ограничением служит не когерентность. Сверхтонкие «часовые» состояния нечувствительны к магнитному полю в первом порядке: T₂ = 12.6(1) s в массиве из 6,100 атомов Cs [D][2]; T₂ = 1.09(3) s в Rb *при работающей в 0.5 m магнитооптической ловушке*, против 1.34(4) s в экранированном варианте [D][3]. На фоне миллисекундного цикла обе величины огромны.
 
-Пол задаёт потеря атомов. Столкновения с фоновым газом и нагрев от рассеяния фотонов дают ограниченное пинцетом время жизни около 60 s в ячейке комнатной температуры [D][2]; потери идут на уровне ~0.09% на двухкубитный гейт [D][5], а свыше 80% утечки (leakage) в логической схеме — это именно потеря [D][4]. В этом и состоит определяющая асимметрия: доминирующая ошибка сама о себе заявляет. Сдвинуть этот пол можно криогенным вакуумом, дозагрузкой прямо во время вычисления (300,000 атомов в секунду в пинцеты, >30,000 инициализированных кубитов в секунду [D][2]) либо сменой атомного вида — щелочные металлы покупают простейшую лазерную систему и наиболее изученную ридберговскую структуру, но лишены тех мультиплетов, которые делают конверсию в стирание и визуализацию без потерь штатными в Sr/Yb.
+Пол задаёт потеря атомов. Столкновения с фоновым газом и нагрев от рассеяния фотонов дают ограниченное пинцетом время жизни около 60 s в ячейке комнатной температуры [D][3]; потери идут на уровне ~0.09% на двухкубитный гейт [D][4], а свыше 80% утечки (leakage) в логической схеме — это именно потеря [D][5]. В этом и состоит определяющая асимметрия: доминирующая ошибка сама о себе заявляет. Сдвинуть этот пол можно криогенным вакуумом, дозагрузкой прямо во время вычисления (300,000 атомов в секунду в пинцеты, >30,000 инициализированных кубитов в секунду [D][3]) либо сменой атомного вида — щелочные металлы покупают простейшую лазерную систему и наиболее изученную ридберговскую структуру, но лишены тех мультиплетов, которые делают конверсию в стирание и визуализацию без потерь штатными в Sr/Yb.
 
 ## Инженерное состояние (state of the art)
 
@@ -31,8 +31,8 @@ updated: 2026-09-03
 
 | Год | Показатель | Кто | Тег+ключ |
 |---|---|---|---|
-| 2024-03 → 2025-07 | 6,100 атомов Cs в ~12,000 узлах; T₂ 12.6(1) s; выживаемость при визуализации 99.98952(1)% | Caltech | [D][3] |
-| 2025-09-15 | 3,217 атомов Rb за один запуск, >3,000 удерживались >2 h; загрузка 300,000 атомов в секунду; время жизни ~60 s | Harvard/MIT | [D][2] |
+| 2024-03 → 2025-07 | 6,100 атомов Cs в ~12,000 узлах; T₂ 12.6(1) s; выживаемость при визуализации 99.98952(1)% | Caltech | [D][2] |
+| 2025-09-15 | 3,217 атомов Rb за один запуск, >3,000 удерживались >2 h; загрузка 300,000 атомов в секунду; время жизни ~60 s | Harvard/MIT | [D][3] |
 | 2025-11-10 | 448 атомов под отказоустойчивым управлением; 2.14(13)× ниже порога, четыре раунда | Harvard/MIT/QuEra | [D][G:HARVARD-LOSS-QEC-2025] |
 | 2026-06-01 | 11,022 атома Rb в 18,225 метаповерхностных пинцетах, заполнение 60.5%, без гейтов | Tsinghua/Qosmos | [D][1] |
 
@@ -42,13 +42,13 @@ updated: 2026-09-03
 
 Пластины здесь нет. Процесс — оптическая сборка: стеклянная ячейка сверхвысокого вакуума, дозатор щелочного металла, объектив с высокой числовой апертурой — или, как у Tsinghua, метаповерхность из нитрида кремния размером 19.8 mm, вынесенная на 2.5 mm за пределы ячейки и полностью заменяющая объектив [D][1], — SLM для статического массива, скрещённые акустооптические дефлекторы для подвижных пинцетов, научная камера. Однородность здесь — свойство времени исполнения, а не выход годных: стохастическая загрузка заполняет 50–60% узлов, а перестроение чинит массив в каждом запуске. Замена выхода годных сортировкой — структурное преимущество этого носителя перед любым изготавливаемым.
 
-Цепочка поставок — это оптика, сосредоточенная в Европе и Японии [P][9]. Лазеры: TOPTICA (Мюнхен), Exail (в стойках Pasqal), M Squared, а также Menlo Systems и NKT — обе дочерние компании Hamamatsu. SLM: Meadowlark, Hamamatsu LCOS, Holoeye. Акустооптика: AA Opto-Electronic, Gooch & Housego, Isomet. Камеры: Hamamatsu ORCA-Quest qCMOS, выбранная для внутрисхемной (mid-circuit) визуализации в машине Harvard/QuEra. Вакуум: Pfeiffer, Edwards, Kurt J. Lesker, VACOM. Свыше 90% габаритов и стоимости системы — это лазеры и фотоника [P][9]. Аналога «узкого горла» Bluefors здесь нет, но Hamamatsu присутствует одновременно в лазерах, SLM и камерах — единственное имя, обойти которое трудно. Ни один поставщик не раскрывает цену за систему. Экспортная уязвимость проходит через перестраиваемые лазеры и вакуумное оборудование в рамках категорий 6 и 2 Вассенаарских договорённостей и правила BIS США 2024 года по квантовой технике; точные ECCN не верифицированы, см. ниже.
+Цепочка поставок — это оптика, сосредоточенная в Европе и Японии [P][6]. Лазеры: TOPTICA (Мюнхен), Exail (в стойках Pasqal), M Squared, а также Menlo Systems и NKT — обе дочерние компании Hamamatsu. SLM: Meadowlark, Hamamatsu LCOS, Holoeye. Акустооптика: AA Opto-Electronic, Gooch & Housego, Isomet. Камеры: Hamamatsu ORCA-Quest qCMOS, выбранная для внутрисхемной (mid-circuit) визуализации в машине Harvard/QuEra. Вакуум: Pfeiffer, Edwards, Kurt J. Lesker, VACOM. Свыше 90% габаритов и стоимости системы — это лазеры и фотоника [P][6]. Аналога «узкого горла» Bluefors здесь нет, но Hamamatsu присутствует одновременно в лазерах, SLM и камерах — единственное имя, обойти которое трудно. Ни один поставщик не раскрывает цену за систему. Экспортная уязвимость проходит через перестраиваемые лазеры и вакуумное оборудование в рамках категорий 6 и 2 Вассенаарских договорённостей и правила BIS США 2024 года по квантовой технике; точные ECCN не верифицированы, см. ниже.
 
 ## Управление, считывание и нагрузка на ввод-вывод
 
-Нагрузка на ввод-вывод не растёт с N: одна голограмма на SLM формирует статический массив, одна пара дефлекторов адресует то подмножество, над которым выполняется операция. Число проводов — стена для любого твердотельного носителя — заменяется оптической мощностью и полосой. Цена платится временем: визуализация 0.5–1 ms, транспорт 0.1–1 ms, цикл коррекции 1–4.5 ms, что на три порядка медленнее сверхпроводниковых схем, с компенсирующим выигрышем: у декодера реального времени лёгкая цель по задержке (NVQLink 3.84 µs [C][22]).
+Нагрузка на ввод-вывод не растёт с N: одна голограмма на SLM формирует статический массив, одна пара дефлекторов адресует то подмножество, над которым выполняется операция. Число проводов — стена для любого твердотельного носителя — заменяется оптической мощностью и полосой. Цена платится временем: визуализация 0.5–1 ms, транспорт 0.1–1 ms, цикл коррекции 1–4.5 ms, что на три порядка медленнее сверхпроводниковых схем, с компенсирующим выигрышем: у декодера реального времени лёгкая цель по задержке (NVQLink 3.84 µs [C][7]).
 
-На уровне 10³ платформа состоялась. На 10⁴ ограничениями становятся суммарная мощность ловушек (сегодня 12 W на атомах), полоса дефлекторов, время перестроения и поле зрения камеры. На 10⁶ не применимо ничего из продемонстрированного: киловаттный удерживающий свет, отсутствие многоядерного интерконнекта, отсутствие схемы сортировки, укладывающейся в цикл. Предлагаемый ответ — фотонная доставка света, и четыре удерживаемых на чипе атома Rb у Pasqal со временем жизни ~27.5 s (2026-08-10) [C][7] отстоят на три с половиной порядка от практической значимости.
+На уровне 10³ платформа состоялась. На 10⁴ ограничениями становятся суммарная мощность ловушек (сегодня 12 W на атомах), полоса дефлекторов, время перестроения и поле зрения камеры. На 10⁶ не применимо ничего из продемонстрированного: киловаттный удерживающий свет, отсутствие многоядерного интерконнекта, отсутствие схемы сортировки, укладывающейся в цикл. Предлагаемый ответ — фотонная доставка света, и четыре удерживаемых на чипе атома Rb у Pasqal со временем жизни ~27.5 s (2026-08-10) [C][8] отстоят на три с половиной порядка от практической значимости.
 
 ## Роль в стеке
 
@@ -58,7 +58,7 @@ updated: 2026-09-03
 
 Заявляемая когерентность — это T₂ с динамической развязкой, усреднённое по массиву: неоднородность глубины ловушек от узла к узлу оно поглощает импульсной последовательностью, а не сообщает. Выживаемость при визуализации 99.98952(1)% относится к одному изображению при оговоренной экспозиции и ничего не ограничивает в отношении потерь при транспорте или ридберговском возбуждении. Доля заполнения 60.5% — величина до перестроения: «11,022 атома» и «11,022 пригодных кубита» — разные утверждения. Ни один из применяемых здесь протоколов не отделяет потерю от деполяризующей ошибки, поэтому цифры ошибки на клиффорд несопоставимы с твердотельными без соответствующей постселекции.
 
-Расхождения. В аннотации Caltech сказано «более 6,100 атомов примерно в 12,000 узлах»; версии различаются (v1 2024-03, v4 2025-07), а величина 12.6 s принадлежит v4, которой я доверяю [D][3]. Обзор, отстаивающий потолок блокады на уровне 99.9%, приводит в таблице CZ USTC 2025 года с 99.84%, не подтверждённый ни одним первичным источником [P][19].
+Расхождения. В аннотации Caltech сказано «более 6,100 атомов примерно в 12,000 узлах»; версии различаются (v1 2024-03, v4 2025-07), а величина 12.6 s принадлежит v4, которой я доверяю [D][2]. Обзор, отстаивающий потолок блокады на уровне 99.9%, приводит в таблице CZ USTC 2025 года с 99.84%, не подтверждённый ни одним первичным источником [P][9].
 
 ## Акторы и экономика
 
@@ -66,33 +66,33 @@ updated: 2026-09-03
 
 | Организация | Роль | Страна | Что именно делает с технологией | Свидетельство |
 |---|---|---|---|---|
-| QuEra | разработчик | США | массивы Rb; Gemini на 260 кубитов поставляется; Libra обещана на 2028 | [C][10][11] |
-| Harvard/MIT | исследования | США | архитектура на 448 атомов; непрерывный прогон на 3,000 кубитов; рекорд CZ | [D][2][4] |
-| Caltech | исследования | США | массив из 6,100 атомов Cs; T₂ 12.6 s; рекордная выживаемость при визуализации | [D][3] |
-| Pasqal | разработчик | Франция | машины на Rb; захват на чипе; Nasdaq PSQL | [C][7][8] |
-| Infleqtion | разработчик | США | линейка Sqale; NYSE INFQ; система в Иллинойсе в 2027 | [G][6][15] |
+| QuEra | разработчик | США | массивы Rb; Gemini на 260 кубитов поставляется; Libra обещана на 2028 | [C][10], [11] |
+| Harvard/MIT | исследования | США | архитектура на 448 атомов; непрерывный прогон на 3,000 кубитов; рекорд CZ | [D][3], [5] |
+| Caltech | исследования | США | массив из 6,100 атомов Cs; T₂ 12.6 s; рекордная выживаемость при визуализации | [D][2] |
+| Pasqal | разработчик | Франция | машины на Rb; захват на чипе; Nasdaq PSQL | [C][8], [12] |
+| Infleqtion | разработчик | США | линейка Sqale; NYSE INFQ; система в Иллинойсе в 2027 | [G][13], [14] |
 | Tsinghua | исследования | Китай | метаповерхностный массив на 11,022 атома, крупнейший удержанный ансамбль | [D][1] |
-| Google Quantum AI | исследования | США | направление нейтральных атомов открыто 2026-03 под руководством Adam Kaufman | [C][17] |
-| Atom Computing | разработчик | США | конкурент на Yb; Magne совместно с Microsoft; QBI Stage B | [G][21] |
-| planqc | разработчик | Германия | сборки для DLR и LRZ; 1,000 кубитов в LRZ около 2027 | [C][12] |
-| TOPTICA | поставщик | Германия | доминирующий поставщик лазеров охлаждения и захвата для Rb/Cs | [P][9] |
-| Hamamatsu | поставщик | Япония | LCOS-SLM и камеры qCMOS; владеет Menlo и NKT | [P][9] |
+| Google Quantum AI | исследования | США | направление нейтральных атомов открыто 2026-03 под руководством Adam Kaufman | [C][15] |
+| Atom Computing | разработчик | США | конкурент на Yb; Magne совместно с Microsoft; QBI Stage B | [G][16] |
+| planqc | разработчик | Германия | сборки для DLR и LRZ; 1,000 кубитов в LRZ около 2027 | [C][17] |
+| TOPTICA | поставщик | Германия | доминирующий поставщик лазеров охлаждения и захвата для Rb/Cs | [P][6] |
+| Hamamatsu | поставщик | Япония | LCOS-SLM и камеры qCMOS; владеет Menlo и NKT | [P][6] |
 
 **Деньги.**
 
-- 2022-05-04 / 2024-07-08 · planqc · контракт DLR на EUR 29 M; раунд Series A на EUR 50 M · DLR Quantum Computing Initiative; ведущий инвестор не раскрыт · закрыто [C][12]
+- 2022-05-04 / 2024-07-08 · planqc · контракт DLR на EUR 29 M; раунд Series A на EUR 50 M · DLR Quantum Computing Initiative; ведущий инвестор не раскрыт · закрыто [C][17]
 - 2025-07-17 · QuNorth · заказ «Magne» у Atom Computing/Microsoft · EUR 80 M · EIFO + Novo Nordisk Foundation · заказано [G:MAGNE-2025-07]
 - 2025-09-09 · QuEra · раунд финансирования · > USD 230 M · Google, SoftBank Vision Fund 2, NVentures · закрыто [C][G:QUERA-230M-2025]
 - 2025-11-06 · QuEra · DARPA QBI Stage B · до USD 15 M · DARPA · отобрана [G:QBI-STAGEB-2025-11]
 - 2026-02-17 · Infleqtion · листинг на NYSE (INFQ) · > USD 550 M брутто · SPAC · закрыто [G:INFLEQTION-NYSE-2026-02]
 - 2026-05-21 · Infleqtion · письмо о намерениях по программе CHIPS · USD 100 M · Министерство торговли США · LOI (необязывающее) [G:CHIPS-LOI-2026-05]
 - 2026-06-15 · QuEra · дорожная карта Libra на 2028, расширенное сотрудничество с AWS Braket · не раскрыто · AWS · дорожная карта [R][G:QUERA-LIBRA-2026]
-- 2026-08-12 · Infleqtion · результаты II квартала 2026 · выручка USD 12.6 M (+116% г/г), первое полугодие USD 22.094 M, прогноз на 2026 ф.г. ~USD 43 M, чистый убыток за II квартал USD 25.5 M, денежные средства USD 582 M · отчёт опубликован [G][6]
+- 2026-08-12 · Infleqtion · результаты II квартала 2026 · выручка USD 12.6 M (+116% г/г), первое полугодие USD 22.094 M, прогноз на 2026 ф.г. ~USD 43 M, чистый убыток за II квартал USD 25.5 M, денежные средства USD 582 M · отчёт опубликован [G][13]
 - 2026-08-27 · Pasqal · завершение SPAC, Nasdaq PSQL · ~USD 360 M денежными средствами; выручка 2025 EUR 16.5 M · Bleichroeder Acquisition Corp. II · закрыто [G:PASQAL-SPAC-2026-08]
 
-**Рынок и цепочка поставок.** Ключевое оборудование продают фотонные компании, которые были прибыльны ещё до появления квантовой отрасли; концентрация реальна, но размыта, и свыше 90% стоимости системы приходится на лазеры и фотонику [P][9]. Юнит-экономика не раскрывается; единственная цитируемая цифра — 0.67 mW удерживающего света на один пинцет [D][1]. G1 (аналоговое моделирование) — то, за что щелочным массивам действительно платят сегодня; G5 (оптимизация) — то, что продаётся в маркетинге; G3 (ранняя отказоустойчивость) — то, куда уложены все обещания на 2028 год; G4 — тезис, стоящий за оценками компаний. G6 заблокирован на слоте резонаторного интерфейса.
+**Рынок и цепочка поставок.** Ключевое оборудование продают фотонные компании, которые были прибыльны ещё до появления квантовой отрасли; концентрация реальна, но размыта, и свыше 90% стоимости системы приходится на лазеры и фотонику [P][6]. Юнит-экономика не раскрывается; единственная цитируемая цифра — 0.67 mW удерживающего света на один пинцет [D][1]. G1 (аналоговое моделирование) — то, за что щелочным массивам действительно платят сегодня; G5 (оптимизация) — то, что продаётся в маркетинге; G3 (ранняя отказоустойчивость) — то, куда уложены все обещания на 2028 год; G4 — тезис, стоящий за оценками компаний. G6 заблокирован на слоте резонаторного интерфейса.
 
-**ИС и стандарты.** Основополагающие патентные семейства по пинцетным массивам и когерентному транспорту происходят из Harvard/MIT и лицензированы в QuEra; линия CNRS/Institut d'Optique питает Pasqal. Видимый ход — вертикальная интеграция: Pasqal приобрела Aeponyx ради фотоники на нитриде кремния менее чем за 18 месяцев до своего результата августа 2026 года [C][7]. Открытые стеки: Bloqade (QuEra), Pulser (Pasqal), оба с фронтендами аналоговых гамильтонианов, которые не нужны ни одной другой модальности. Судебных споров не найдено; датированного числа патентов из именованной базы нет.
+**ИС и стандарты.** Основополагающие патентные семейства по пинцетным массивам и когерентному транспорту происходят из Harvard/MIT и лицензированы в QuEra; линия CNRS/Institut d'Optique питает Pasqal. Видимый ход — вертикальная интеграция: Pasqal приобрела Aeponyx ради фотоники на нитриде кремния менее чем за 18 месяцев до своего результата августа 2026 года [C][8]. Открытые стеки: Bloqade (QuEra), Pulser (Pasqal), оба с фронтендами аналоговых гамильтонианов, которые не нужны ни одной другой модальности. Судебных споров не найдено; датированного числа патентов из именованной базы нет.
 
 **Дорожные карты и послужной список.** QuEra (обещано 2024-01 · на 2026 · 100 логических кубитов не поставлены по состоянию на 2026-09-03, заменены на Libra с >256 логическими в 2028 — сдвиг на два года). Pasqal (обещано 2024-03 · на 2026 · 10,000 физических сдвинуты на 2028; 100 логических теперь на 2029). Infleqtion (подтверждено 2026-08-12 · на 2026 · 30 логических кубитов, не верифицировано; >50 логических в Иллинойсе в 2027). planqc (обещано 2024-11 · на ~2027 · 1,000 кубитов в LRZ; метрики устройств с тех пор не публиковались). Достоверность: Harvard/MIT обгоняют любую дорожную карту, потому что публикуют, а не обещают; QuEra и Pasqal сдвинули каждая по флагманской цифре на два года и читаются как компании 2029 года; только Infleqtion отчитывается аудированной выручкой против собственных заявлений; у planqc есть контракты, но нет опубликованных метрик.
 
@@ -102,7 +102,7 @@ updated: 2026-09-03
 
 ## Прогноз и открытые вопросы
 
-**Подтвердить**, если бездефектный массив свыше 2,000 атомов будет выполнять гейты к концу 2027 года; если Infleqtion продемонстрирует 30 логических кубитов к 2026-12-31; если пинцетный массив с доставкой света через чип превысит 100 ловушек к концу 2027 года. **Понизить**, если ни одна группа не покажет Λ > 2 на более чем 50 раундах *при* непрерывной дозагрузке к концу 2027 года — прогон тороидального кода у Atom Computing терял подавление ровно тогда, когда в него включали дозагрузку [D][20], и именно это, а не точность гейтов, является несущим вопросом.
+**Подтвердить**, если бездефектный массив свыше 2,000 атомов будет выполнять гейты к концу 2027 года; если Infleqtion продемонстрирует 30 логических кубитов к 2026-12-31; если пинцетный массив с доставкой света через чип превысит 100 ловушек к концу 2027 года. **Понизить**, если ни одна группа не покажет Λ > 2 на более чем 50 раундах *при* непрерывной дозагрузке к концу 2027 года — прогон тороидального кода у Atom Computing терял подавление ровно тогда, когда в него включали дозагрузку [D][18], и именно это, а не точность гейтов, является несущим вопросом.
 
 Лучший случай к 2029 году: системы класса Libra свыше 256 логических кубитов в облаке, чиповая или метаповерхностная оптика, схлопывающая габариты, потеря обрабатывается как стирание сквозным образом. Худший случай: аналоговые симуляторы на 10³ кубитов с несколькими десятками логических кубитов, миллисекундный цикл фатален вне задач моделирования, щелочные проигрывают отказоустойчивость Sr/Yb.
 
@@ -112,28 +112,24 @@ updated: 2026-09-03
 
 ## Источники
 
-[1] Wang, Zhang et al. (Tsinghua University; Qosmos, Beijing) · Metasurface-generated tweezer array: 11,022 ⁸⁷Rb atoms in 18,225 sites · arXiv:2606.02715 · 2026-06-01 · https://arxiv.org/abs/2606.02715
-[2] Harvard/MIT (Lukin, Greiner, Vuletić et al.) · Continuous operation of a 3,000-qubit atom array · Nature 646 (8087) · 2025-09-15 · https://www.nature.com/articles/s41586-025-09596-6
-[3] Manetsch, Nomura, Bataille, Leung, Lv, Endres (Caltech) · A tweezer array with 6,100 highly coherent atomic qubits · arXiv:2403.12021 (v4, 2025-07-29) · https://arxiv.org/abs/2403.12021
-[4] Bluvstein et al. (Harvard/MIT/QuEra) · A fault-tolerant neutral-atom architecture for universal quantum computation · Nature · 2025-11-10 · https://www.nature.com/articles/s41586-025-09848-5
-[5] Evered, Xu, Li et al. (Harvard/MIT) · High-fidelity entangling gates and nonlocal circuits with neutral atoms · arXiv:2604.25987 · 2026-04-28 · https://arxiv.org/abs/2604.25987
-[6] Infleqtion, Inc. (INFQ) · Q2 2026 results: record revenue, raised 2026 outlook · investor-relations release · 2026-08-12 · [G] · https://ir.infleqtion.com/news-events/press-releases/detail/201/infleqtion-reports-record-q2-revenue-raises-2026-outlook-as-quantum-commercialization-accelerates
-[7] Pasqal · Pasqal brings qubit control on-chip · newsroom · 2026-08-10 · [C] · https://www.pasqal.com/news/pasqal-brings-qubit-control-on-chip-advancing-the-path-to-fault-tolerant-quantum-computing-at-scale/
-[8] Pasqal · Newsroom index (SPAC completion 2026-08-27; KACST collaboration 2026-08-31) · [C] · https://www.pasqal.com/newsroom/
-[9] postquantum.com · The tweezer array's hidden supply chain: the neutral-atom quantum ecosystem · accessed 2026-09-03 · [P] · https://postquantum.com/quantum-ecosystem/neutral-atom-quantum-ecosystem/
-[10] QuEra Computing · Gemini product specification · accessed 2026-09-03 · [C] · https://www.quera.com/gemini
-[11] QuEra Computing · 2028 fault-tolerant computer and expanded AWS collaboration · 2026-06-15 · [C] · https://www.quera.com/press-releases/quera-announces-2028-fault-tolerant-quantum-computer-and-expanded-multi-year-strategic-collaboration-with-aws
-[12] planqc · News index (DLR EUR 29 M 2022-05-04; Series A EUR 50 M 2024-07-08; LRZ 1,000 qubits 2024-11-13; EUR 2.3 M 2026-03-19) · [C] · https://planqc.eu/news
-[13] DARPA · Quantum Benchmarking Initiative Stage B selection · 2025-11-06 · [G] · https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection
-[14] NIST / US Department of Commerce · Letters of intent with nine companies, USD 2.013 B · 2026-05-21 · [G] · https://www.nist.gov/news-events/news/2026/05/department-commerce-announces-letters-intent-9-companies-2-billion
-[15] Infleqtion · First neutral-atom quantum company to go public (NYSE, INFQ) · 2026-02-17 · [C] · https://infleqtion.com/infleqtion-becomes-first-neutral-atom-quantum-company-to-go-public/
-[16] The Quantum Insider · Pasqal completes SPAC merger with USD 360 M in cash · 2026-08-28 · [P] · https://thequantuminsider.com/2026/08/28/pasqal-completes-spac-merger-with-360-million-in-cash/
-[17] Google · Neutral-atom quantum computers: a second hardware track · blog · 2026-03-24 · [C] · https://blog.google/innovation-and-ai/technology/research/neutral-atom-quantum-computers/
-[18] QuEra Computing · USD 230 M+ financing round · 2025-09-09 · [C] · https://www.quera.com/press-releases/quera-expands-230-million-financing-round-advancing-quantum-accelerated-supercomputing
-[19] Wang, Wang, Li, Wang, Liang, Yan · Neutral atom quantum computing: principles, routes, progress and challenges · arXiv:2608.05010 · 2026-08-05 · [P] · https://arxiv.org/html/2608.05010v1
-[20] Atom Computing · Toric-code demonstration with continuous reloading · arXiv:2606.04079 · 2026-06 · https://arxiv.org/abs/2606.04079
-[21] Novo Nordisk Foundation · QuNorth orders "Magne" from Atom Computing and Microsoft, EUR 80 M · 2025-07-17 · [C] · https://novonordiskfonden.dk/en/news/new-quantum-computer-with-great-potential-to-boost-nordic-research-and-innovation/
-[22] NVIDIA · NVQLink architecture, 3.84 µs mean round trip · developer blog · 2025-11 · [C] · https://developer.nvidia.com/blog/nvidia-nvqlink-architecture-integrates-accelerated-computing-with-quantum-processors/
+[1] Y. Wang *et al.*, “Trapping 11,000 Atoms in a Tweezer Array Generated by a Single Metasurface,” [arXiv:2606.02715](https://arxiv.org/abs/2606.02715), Jun. 2026.
+[2] H. J. Manetsch, G. Nomura, E. Bataille, K. H. Leung, X. Lv, and M. Endres, “A tweezer array with 6100 highly coherent atomic qubits,” *Nature*, vol. 647, pp. 60–67, 2025, doi: [10.1038/s41586-025-09641-4](https://doi.org/10.1038/s41586-025-09641-4). [arXiv:2403.12021](https://arxiv.org/abs/2403.12021).
+[3] N.-C. Chiu *et al.*, “Continuous operation of a coherent 3,000-qubit system,” *Nature*, vol. 646, no. 8087, pp. 1075–1080, Sep. 2025, doi: [10.1038/s41586-025-09596-6](https://doi.org/10.1038/s41586-025-09596-6).
+[4] S. J. Evered *et al.*, “High-fidelity entangling gates and nonlocal circuits with neutral atoms,” [arXiv:2604.25987](https://arxiv.org/abs/2604.25987), Apr. 2026.
+[5] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661).
+[6] M. Ivezic, “The Tweezer Array's Hidden Supply Chain: Who Really Wins If Neutral-Atom Quantum Computing Wins,” PostQuantum.com, Nov. 17, 2025. [Online]. Available: https://postquantum.com/quantum-ecosystem/neutral-atom-quantum-ecosystem/ [P]
+[7] S. Caldwell *et al.*, “NVIDIA NVQLink Architecture Integrates Accelerated Computing with Quantum Processors,” NVIDIA Technical Blog, Nov. 17, 2025. [Online]. Available: https://developer.nvidia.com/blog/nvidia-nvqlink-architecture-integrates-accelerated-computing-with-quantum-processors/ [C]
+[8] Pasqal, “Pasqal brings qubit control on-chip, advancing the path to fault-tolerant quantum computing at scale,” Aug. 10, 2026. [Online]. Available: https://www.pasqal.com/news/pasqal-brings-qubit-control-on-chip-advancing-the-path-to-fault-tolerant-quantum-computing-at-scale/ [C]
+[9] J. Wang, Z. Wang, L. Li, F. Wang, S. Liang, and K. Yan, “Neutral Atom Quantum Computing: Principles, Routes, Progress, and Challenges,” [arXiv:2608.05010](https://arxiv.org/abs/2608.05010), Aug. 2026. [P]
+[10] QuEra Computing Inc., “Gemini-Class Gate-Model Quantum Computer.” [Online]. Available: https://www.quera.com/gemini [C]
+[11] QuEra Computing, “QuEra Announces 2028 Fault-Tolerant Quantum Computer and Expanded Multi-Year Strategic Collaboration with AWS,” Jun. 15, 2026. [Online]. Available: https://www.quera.com/press-releases/quera-announces-2028-fault-tolerant-quantum-computer-and-expanded-multi-year-strategic-collaboration-with-aws [C]
+[12] Pasqal, “Newsroom.” [Online]. Available: https://www.pasqal.com/newsroom/ [C]
+[13] Infleqtion, “Infleqtion Reports Record Q2 Revenue, Raises 2026 Outlook as Quantum Commercialization Accelerates,” Aug. 12, 2026. [Online]. Available: https://ir.infleqtion.com/news-events/press-releases/detail/201/infleqtion-reports-record-q2-revenue-raises-2026-outlook-as-quantum-commercialization-accelerates [G]
+[14] L. Roady, “Infleqtion Becomes First Neutral-Atom Quantum Company to Go Public,” Infleqtion, Feb. 17, 2026. [Online]. Available: https://infleqtion.com/infleqtion-becomes-first-neutral-atom-quantum-company-to-go-public/ [C]
+[15] H. Neven, “Building superconducting and neutral atom quantum computers,” Google, Mar. 24, 2026. [Online]. Available: https://blog.google/innovation-and-ai/technology/research/neutral-atom-quantum-computers/ [C]
+[16] Novo Nordisk Foundation, “New quantum computer with great potential to boost Nordic research and innovation,” Novo Nordisk Fonden, Jul. 17, 2025. [Online]. Available: https://novonordiskfonden.dk/en/news/new-quantum-computer-with-great-potential-to-boost-nordic-research-and-innovation/ [C]
+[17] planqc, “News.” [Online]. Available: https://planqc.eu/news [C]
+[18] Atom Computing and Collaborators, “Quantum error correction with the toric code,” [arXiv:2606.04079](https://arxiv.org/abs/2606.04079), Jun. 2026.
 
 ## Открытые пункты верификации
 

@@ -58,12 +58,12 @@ The base encoding for the silicon and germanium quantum-dot path, the donor path
 Confirm or demote in 12–24 months: all-pairs fidelities above 12 qubits; baseband control beyond a 2×2 array. Best case 2029: baseband plus 1 K operation removes most microwave I/O at >99.5% two-qubit fidelity. Worst case: the plateau holds. Open: (1) whether hopping-gate control scales past four qubits; (2) whether the calibration-limited diagnosis generalises; (3) which platform shows a below-threshold logical qubit.
 
 ## Sources
-[1] D. Loss, D. P. DiVincenzo · "Quantum computation with quantum dots" · Physical Review A 57, 120 · 1998-01 · https://journals.aps.org/pra/abstract/10.1103/PhysRevA.57.120 [D]
-[2] I. Unseld, B. Undseth, R. Raymenants et al. (QuTech/TU Delft) · "Baseband control of single-electron silicon spin qubits in two dimensions" · Nature Communications · 2025-07-01 · https://www.nature.com/articles/s41467-025-60351-x [D]
-[3] Diraq and imec · 300 mm SiMOS two-qubit fidelity and SPAM · Nature · 2025-09-24 · https://www.nature.com/articles/s41586-025-09531-9 [D]
-[4] H. Edlbauer, Y. Wang, S. Huq et al. (Silicon Quantum Computing) · 11-qubit donor processor in silicon · Nature 648, 569–575 · 2025-12-17 · https://www.nature.com/articles/s41586-025-09827-w [D]
-[5] Intel · 300 mm spin-qubit process statistics, >24,000 devices per wafer · arXiv:2410.16583 · 2024-10 · https://arxiv.org/abs/2410.16583 [D]
-[6] HRL Laboratories · 18 exchange-only qubits, mean single-qubit error 2×10⁻⁴ · arXiv:2604.16216 · 2026-07-29 · https://arxiv.org/abs/2604.16216 [D]
+[1] D. Loss and D. P. DiVincenzo, “Quantum computation with quantum dots,” *Phys. Rev. A*, vol. 57, no. 1, pp. 120–126, Jan. 1998, doi: [10.1103/PhysRevA.57.120](https://doi.org/10.1103/PhysRevA.57.120). [D]
+[2] F. K. Unseld *et al.*, “Baseband control of single-electron silicon spin qubits in two dimensions,” *Nat. Commun.*, vol. 16, no. 1, Art. no. 5605, Jul. 2025, doi: [10.1038/s41467-025-60351-x](https://doi.org/10.1038/s41467-025-60351-x). [D]
+[3] P. Steinacker *et al.*, “Industry-compatible silicon spin-qubit unit cells exceeding 99% fidelity,” *Nature*, vol. 646, no. 8083, pp. 81–87, Sep. 2025, doi: [10.1038/s41586-025-09531-9](https://doi.org/10.1038/s41586-025-09531-9). [D]
+[4] H. Edlbauer *et al.*, “An 11-qubit atom processor in silicon,” [arXiv:2506.03567](https://arxiv.org/abs/2506.03567), Jun. 2025. [D]
+[5] H. C. George *et al.*, “12-spin-qubit arrays fabricated on a 300 mm semiconductor manufacturing line,” *Nano Lett.*, vol. 25, no. 2, pp. 793–799, Dec. 2024, doi: [10.1021/acs.nanolett.4c05205](https://doi.org/10.1021/acs.nanolett.4c05205). [arXiv:2410.16583](https://arxiv.org/abs/2410.16583). [D]
+[6] Members of the HRL Quantum Team and Collaborators, “A digitally controlled silicon quantum processing unit,” [arXiv:2604.16216](https://arxiv.org/abs/2604.16216), Apr. 2026. [D]
 
 ## Open verification items
 The "99.90% donor nuclear CZ" quoted in the main report is not isolable in the SQC abstract and conflicts with the published range 99.10–99.99%. Intel's "scale to hundreds of dots" statement carries no date or milestone.

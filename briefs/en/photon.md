@@ -28,9 +28,9 @@ Attributes, from the graph record:
 
 Two indistinguishable photons meeting on a beamsplitter bunch, and detecting the right output pattern projects the remaining modes into an entangled state. Because the projection succeeds only sometimes, a fusion network must over-attempt and repair failures with redundancy in the resource state.
 
-The floor is a loss budget and every element spends against it. In Omega: fibre-to-chip 52 ± 12 mdB, splitter 0.5 ± 0.2 mdB, barium-titanate switch 100 mdB insertion, single-mode SiN 1.8 ± 0.2 dB/m (0.5 dB/m multimode) [D][3][G:PSIQ-OMEGA-METRICS-2025]. Theory tolerates 2.7% per-photon loss with 6-ring resource states, up to 17% with 168-qubit states nobody can build [S][15]. A photon crossing thirty switches has spent 3 dB — half of itself. Xanadu, on the continuous-variable side but with the same optics, quantifies the gap: 24.1× above threshold in 2026, targeting 1.0× in 2030 [C][16][G:XANADU-SPAC-2026-03].
+The floor is a loss budget and every element spends against it. In Omega: fibre-to-chip 52 ± 12 mdB, splitter 0.5 ± 0.2 mdB, barium-titanate switch 100 mdB insertion, single-mode SiN 1.8 ± 0.2 dB/m (0.5 dB/m multimode) [D][2][G:PSIQ-OMEGA-METRICS-2025]. Theory tolerates 2.7% per-photon loss with 6-ring resource states, up to 17% with 168-qubit states nobody can build [S][3]. A photon crossing thirty switches has spent 3 dB — half of itself. Xanadu, on the continuous-variable side but with the same optics, quantifies the gap: 24.1× above threshold in 2026, targeting 1.0× in 2030 [C][4][G:XANADU-SPAC-2026-03].
 
-The standard fix for probabilistic sources costs the budget it protects: four-wave mixing must run at ~1% heralding probability to suppress multi-photon events, so near-determinism needs multiplexing depth around ten — ten times the switches at 100 mdB each. Deterministic quantum-dot sources break that circle, which is why 71.2% system efficiency, first above the 2/3 loss-tolerance threshold, is the most consequential source number on record [D][2]. Secondary failure modes: distinguishability (mismatch degrades HOM visibility and appears as Pauli rather than erasure error), multi-photon contamination, dark counts, and feed-forward latency — the photon waits in delay while a classical decision is made, and delay is loss.
+The standard fix for probabilistic sources costs the budget it protects: four-wave mixing must run at ~1% heralding probability to suppress multi-photon events, so near-determinism needs multiplexing depth around ten — ten times the switches at 100 mdB each. Deterministic quantum-dot sources break that circle, which is why 71.2% system efficiency, first above the 2/3 loss-tolerance threshold, is the most consequential source number on record [D][5]. Secondary failure modes: distinguishability (mismatch degrades HOM visibility and appears as Pauli rather than erasure error), multi-photon contamination, dark counts, and feed-forward latency — the photon waits in delay while a classical decision is made, and delay is loss.
 
 ## Engineering state of the art
 
@@ -38,25 +38,25 @@ The standard fix for probabilistic sources costs the budget it protects: four-wa
 
 | Year | Figure | Who | Tag+key |
 |---|---|---|---|
-| 2023-11 | QD source system efficiency 71.2% — first above the 2/3 threshold | USTC (Ding et al.) | [D][2] |
-| 2025-02 | Omega: purity 99.5%, HOM 99.5%, fusion Bell 99.22 ± 0.12%, chip-to-chip Bell 99.72 ± 0.04% over 42 m, on-chip SNSPD median efficiency 93.4%, ~2 K, 300 mm | PsiQuantum / GlobalFoundries | [D][3] |
-| 2025 | Commercial QD source S1: 55.3% system efficiency, 26.2 MHz detected rate | Sparrow Quantum | [D][4] |
+| 2023-11 | QD source system efficiency 71.2% — first above the 2/3 threshold | USTC (Ding et al.) | [D][5] |
+| 2025-02 | Omega: purity 99.5%, HOM 99.5%, fusion Bell 99.22 ± 0.12%, chip-to-chip Bell 99.72 ± 0.04% over 42 m, on-chip SNSPD median efficiency 93.4%, ~2 K, 300 mm | PsiQuantum / GlobalFoundries | [D][2] |
+| 2025 | Commercial QD source S1: 55.3% system efficiency, 26.2 MHz detected rate | Sparrow Quantum | [D][6] |
 | 2025-10 | 12-qubit Belenos/Lucy delivered to CEA TGCC | Quandela | [C][7] |
-| 2026 | QD source S3: raw HOM visibility 97.1 ± 0.1%, purity 99.9 ± 0.1% | Sparrow Quantum | [D][4] |
-| 2026-05 | Gaussian boson sampling, 3,050 photon clicks | USTC (Jiuzhang 4.0) | [D][5] |
-| 2026-07 | 8-qubit universal MBQC subsystem (Carina) delivered to DLR QCI | QuiX Quantum | [C][8] |
+| 2026 | QD source S3: raw HOM visibility 97.1 ± 0.1%, purity 99.9 ± 0.1% | Sparrow Quantum | [D][6] |
+| 2026-05 | Gaussian boson sampling, 3,050 photon clicks | USTC (Jiuzhang 4.0) | [D][8] |
+| 2026-07 | 8-qubit universal MBQC subsystem (Carina) delivered to DLR QCI | QuiX Quantum | [C][9] |
 
 Best-demonstrated and typical-at-scale are further apart here than on any other platform: component fidelities are excellent, the largest fielded universal DV machine is twelve qubits [C][7], and no photonic logical qubit exists as of 2026-09-03. The dominant error term is not a fidelity but per-photon survival through the switch network.
 
 ## Manufacturing, materials & supply chain
 
-Foundry detail belongs to the photonic-IC brief; specific to the carrier is that two incompatible source technologies compete. **SFWM** in SiN or Si rings is monolithic with the circuit, CMOS-compatible, III-V-free and runs at 2 K beside the detectors, but is probabilistic and buys determinism with multiplexing switches (PsiQuantum, Xanadu, QuiX). **Quantum dots** (InAs/GaAs in photonic-crystal waveguides) are near-deterministic — 71.2% in the lab [D][2], 55.3% shipped, 20–35% typical [D][4] — but need ~4 K, emit near 900–950 nm rather than telecom, grow at random positions and energies (a yield problem), and must be heterogeneously integrated (Quandela, Sparrow).
+Foundry detail belongs to the photonic-IC brief; specific to the carrier is that two incompatible source technologies compete. **SFWM** in SiN or Si rings is monolithic with the circuit, CMOS-compatible, III-V-free and runs at 2 K beside the detectors, but is probabilistic and buys determinism with multiplexing switches (PsiQuantum, Xanadu, QuiX). **Quantum dots** (InAs/GaAs in photonic-crystal waveguides) are near-deterministic — 71.2% in the lab [D][5], 55.3% shipped, 20–35% typical [D][6] — but need ~4 K, emit near 900–950 nm rather than telecom, grow at random positions and energies (a yield problem), and must be heterogeneously integrated (Quandela, Sparrow).
 
-Single points of failure: one 300 mm line of record [C][G:GF-QTS-2026-05]; one merchant deterministic-source vendor [D][4]; a switch base on two small thin-film-lithium-niobate suppliers [P][G:TFLN-FUNDING-2024-09]. No vendor publishes a per-qubit cost or system price. Export exposure runs through the September 2024 US quantum controls and the EU dual-use list; the exact classification of single-photon sources is unverified.
+Single points of failure: one 300 mm line of record [C][G:GF-QTS-2026-05]; one merchant deterministic-source vendor [D][6]; a switch base on two small thin-film-lithium-niobate suppliers [P][G:TFLN-FUNDING-2024-09]. No vendor publishes a per-qubit cost or system price. Export exposure runs through the September 2024 US quantum controls and the EU dual-use list; the exact classification of single-photon sources is unverified.
 
 ## Control, readout & I/O burden
 
-Drivers are room-temperature electro-optics and the chip sits at ~2 K, where a cryoplant has roughly a thousand times the cooling capacity available at 10 mK — the platform's real scaling advantage. The wall is channel count and latency, not power. Every operation ends in destructive detection, so channels scale with mode count: 10³ modes is ordinary cryogenic wiring, 10⁴ needs multiplexed readout, 10⁶ needs something like the row-column architecture behind the 400,000-pixel SNSPD camera [D][18] plus decision logic inside the cryostat. At 0.5 dB/m multimode SiN, holding a photon 100 ns costs ~20 m of waveguide and 10 dB, so feed-forward must be nanosecond-class. QuiX names fast feed-forward, with sources, as the two problems its 2026 system must solve [C][11].
+Drivers are room-temperature electro-optics and the chip sits at ~2 K, where a cryoplant has roughly a thousand times the cooling capacity available at 10 mK — the platform's real scaling advantage. The wall is channel count and latency, not power. Every operation ends in destructive detection, so channels scale with mode count: 10³ modes is ordinary cryogenic wiring, 10⁴ needs multiplexed readout, 10⁶ needs something like the row-column architecture behind the 400,000-pixel SNSPD camera [D][10] plus decision logic inside the cryostat. At 0.5 dB/m multimode SiN, holding a photon 100 ns costs ~20 m of waveguide and 10 dB, so feed-forward must be nanosecond-class. QuiX names fast feed-forward, with sources, as the two problems its 2026 system must solve [C][11].
 
 ## Role in the stack
 
@@ -66,7 +66,7 @@ The node sits on the fusion-based photonic path (PsiQuantum, Quandela, QuiX). It
 
 HOM visibility, g²(0) by Hanbury Brown–Twiss, and fusion Bell fidelity by tomography on coincidence-post-selected data are the standard instruments. What they do not capture is loss: nearly every photonic fidelity is conditioned on the photons having been detected, so the error that dominates the machine is divided out of the number describing it. "Fusion Bell fidelity 99.22%" and "24× above the loss threshold" describe the same optics; treating the first as the platform's error rate mis-ranks it by two orders of magnitude.
 
-Conflicts. (i) The main report's 0.5 dB/m is the multimode figure; single-mode SiN in Omega is 1.8 ± 0.2 dB/m [D][3][G:PSIQ-OMEGA-METRICS-2025] — both used here, labelled. (ii) QD efficiency 71.2% (lab) vs 55.3% (shipped) vs 20–35% (typical) is a lab-to-product gap; use the product figure [D][2][4]. (iii) Jiuzhang 4.0's advantage is contested by loss-exploiting classical spoofing [D][5]. (iv) Sparrow's "highest HOM visibility to date" is an unreplicated vendor claim [D][4]. Omega has never been independently reproduced.
+Conflicts. (i) The main report's 0.5 dB/m is the multimode figure; single-mode SiN in Omega is 1.8 ± 0.2 dB/m [D][2][G:PSIQ-OMEGA-METRICS-2025] — both used here, labelled. (ii) QD efficiency 71.2% (lab) vs 55.3% (shipped) vs 20–35% (typical) is a lab-to-product gap; use the product figure [D][5], [6]. (iii) Jiuzhang 4.0's advantage is contested by loss-exploiting classical spoofing [D][8]. (iv) Sparrow's "highest HOM visibility to date" is an unreplicated vendor claim [D][6]. Omega has never been independently reproduced.
 
 ## Actors & economics
 
@@ -74,32 +74,32 @@ Conflicts. (i) The main report's 0.5 dB/m is the multimode figure; single-mode S
 
 | Organisation | Role | Country | What exactly they do | Evidence |
 |---|---|---|---|---|
-| PsiQuantum | developer | US / AU | Fusion-based DV on 300 mm GlobalFoundries; Omega chipset; Brisbane, Chicago | [D][3][G:PSIQ-QBI-C-2026-07] |
+| PsiQuantum | developer | US / AU | Fusion-based DV on 300 mm GlobalFoundries; Omega chipset; Brisbane, Chicago | [D][2][G:PSIQ-QBI-C-2026-07] |
 | Quandela | developer | FR | QD sources plus own processors; 12-qubit Lucy at CEA | [C][7][G:QBI-QBIT-2026] |
-| QuiX Quantum | developer | NL | Universal MBQC photonic processors; Carina at DLR | [C][8][C][11] |
-| ORCA Computing | developer | UK | Time-bin boson sampling with Rb memory; nine PT-1 units fielded | [P][9] |
-| Xanadu | developer | CA | CV/squeezed route — the in-platform substitution threat | [C][16][G:XANADU-SPAC-2026-03] |
-| Sparrow Quantum | supplier | DK | Merchant deterministic QD single-photon source chips | [D][4][P][13] |
-| USTC (Pan group) | research | CN | Jiuzhang boson sampling; best QD source efficiency on record | [D][2][D][5] |
-| Photonic Inc. | developer (adjacent) | CA | T-centres in silicon: spin-photon interface, telecom-band links | [P][19][G:PHOTONIC-200M-2026-05] |
+| QuiX Quantum | developer | NL | Universal MBQC photonic processors; Carina at DLR | [C][9][C][11] |
+| ORCA Computing | developer | UK | Time-bin boson sampling with Rb memory; nine PT-1 units fielded | [P][12] |
+| Xanadu | developer | CA | CV/squeezed route — the in-platform substitution threat | [C][4][G:XANADU-SPAC-2026-03] |
+| Sparrow Quantum | supplier | DK | Merchant deterministic QD single-photon source chips | [D][6][P][13] |
+| USTC (Pan group) | research | CN | Jiuzhang boson sampling; best QD source efficiency on record | [D][5][D][8] |
+| Photonic Inc. | developer (adjacent) | CA | T-centres in silicon: spin-photon interface, telecom-band links | [P][14][G:PHOTONIC-200M-2026-05] |
 | GlobalFoundries | supplier | US | 300 mm photonic quantum manufacturing, integrated SNSPD | [C][G:GF-QTS-2026-05] |
 | DARPA | funder | US | QBI Stage A/B/C and US2QC validation money | [G:QBI-STAGEB-2025-11] |
-| CEA/GENCI, DLR QCI | users | FR / DE | Buy and host photonic systems for HPC centres | [C][7][C][8] |
+| CEA/GENCI, DLR QCI | users | FR / DE | Buy and host photonic systems for HPC centres | [C][7][C][9] |
 
 **Money.**
-- 2023-11-07 · Quandela · round, €50 M · Serena, Crédit Mutuel Innovation, EIC Fund, Bpifrance, OMNES, Quantonation; France 2030 · closed [C][10]
-- 2024-04 · PsiQuantum · Australian federal + Queensland commitment, A$940 M · definitive [P][14]
+- 2023-11-07 · Quandela · round, €50 M · Serena, Crédit Mutuel Innovation, EIC Fund, Bpifrance, OMNES, Quantonation; France 2030 · closed [C][15]
+- 2024-04 · PsiQuantum · Australian federal + Queensland commitment, A$940 M · definitive [P][16]
 - 2025-04-10 · Sparrow Quantum · Series A, €21.5 M ($24 M) · lead undisclosed · closed [P][13]
 - 2025-07-10 · QuiX Quantum · Series A, €15 M · Invest-NL and EIC Fund co-lead; PhotonVentures, Oost NL, FORWARD.one · closed [C][11]
 - 2025-09-10 · PsiQuantum · Series E, $1 B at $7 B · BlackRock, Temasek, Baillie Gifford · closed [G:PSIQ-1B-2025-09]
-- 2025-09 · PsiQuantum · DARPA QBI Stage C via US2QC, $31.8 M · announced [P][12]
-- 2026-05-12 · Photonic Inc. · round, $200 M at $2 B, $350 M cumulative · Microsoft among returning investors · closed [P][19]
+- 2025-09 · PsiQuantum · DARPA QBI Stage C via US2QC, $31.8 M · announced [P][17]
+- 2026-05-12 · Photonic Inc. · round, $200 M at $2 B, $350 M cumulative · Microsoft among returning investors · closed [P][14]
 - 2026-05-21 · PsiQuantum · CHIPS letter of intent, $100 M · US Dept of Commerce · LOI, non-binding [G:CHIPS-LOI-2026-05]
 - 2026-06-16 · Quandela · DARPA QBI/QBIT Stage A selection · amount undisclosed · announced [G:QBI-QBIT-2026]
 - 2026-06-19 · Sparrow Quantum · EuroHPC Grand Challenge (EU-SCALE), €300,000 · EuroHPC JU · in preparation [P][13]
 - 2026-07-22 · PsiQuantum · DARPA QBI Stage C expanded agreement, $125 M · announced [G:PSIQ-QBI-C-2026-07]
 
-**Market & supply chain.** The enabling layer is thin: one merchant 300 mm quantum-photonics offering [C][G:GF-QTS-2026-05], one merchant deterministic-source vendor [D][4], a switch base on two small TFLN suppliers [P][G:TFLN-FUNDING-2024-09], with open-access European capacity under PIXEurope (~EUR 400 M, 2024-11-24) [G:PIXEUROPE-2024-11]. Unit economics are unquotable: Quandela's machines for OVHcloud and CEA, QuiX's for DLR and the nine ORCA PT-1 units all sold at undisclosed value. G6 pays today, photons being the only carrier that moves; G1 and G5 pay marginally via sampling and optimisation demos; G4 is the whole PsiQuantum and Quandela thesis but is funded by governments, not customers; G3 pays photonics nothing, there being no logical qubit to sell.
+**Market & supply chain.** The enabling layer is thin: one merchant 300 mm quantum-photonics offering [C][G:GF-QTS-2026-05], one merchant deterministic-source vendor [D][6], a switch base on two small TFLN suppliers [P][G:TFLN-FUNDING-2024-09], with open-access European capacity under PIXEurope (~EUR 400 M, 2024-11-24) [G:PIXEUROPE-2024-11]. Unit economics are unquotable: Quandela's machines for OVHcloud and CEA, QuiX's for DLR and the nine ORCA PT-1 units all sold at undisclosed value. G6 pays today, photons being the only carrier that moves; G1 and G5 pay marginally via sampling and optimisation demos; G4 is the whole PsiQuantum and Quandela thesis but is funded by governments, not customers; G3 pays photonics nothing, there being no logical qubit to sell.
 
 **IP & standards.** The one dated grant surfaced is ORCA Computing US 12,437,225, "Linear-optical encoded GHZ measurements and fault-tolerant quantum computation and communication", filed 2023-10-16, granted 2025-10-07 [G:ORCA-DUALRAIL-PATENT-2025]. No dated patent count from a named database was obtained. Open-source stacks are vendor-led (Quandela's Perceval, Xanadu's PennyLane); no photonic interoperability standard exists.
 
@@ -119,34 +119,27 @@ Open questions. (1) Can QD sources be integrated at foundry scale without breaki
 
 ## Sources
 
-[1] Knill, Laflamme, Milburn — linear-optics universality, Nature 409, 46 (2001-01-04) — https://arxiv.org/abs/quant-ph/0006088
-[2] Ding et al. (USTC) — QD source, 71.2% system efficiency, arXiv:2311.08347 (2023-11) — https://arxiv.org/abs/2311.08347
-[3] PsiQuantum — Omega manufacturable photonic platform, Nature (2025-02) — https://www.nature.com/articles/s41586-025-08820-7
-[4] Sparrow Quantum et al. — deterministic QD sources, specifications, arXiv:2511.23232 (device rows vendor data [C]) — https://arxiv.org/html/2511.23232v1
-[5] USTC — Jiuzhang 4.0, Nature (2026-05); arXiv:2508.09092 — https://www.nature.com/articles/s41586-026-10523-6
-[6] Xanadu — chip packaging, PRNewswire (2026-06) [C] — https://www.prnewswire.com/news-releases/xanadu-sets-new-industry-benchmark-in-photonic-chip-packaging-302796562.html
-[7] Quandela — Lucy delivered to EuroHPC/GENCI at CEA TGCC (2025-10) [C] — https://www.quandela.com/about-us/newsroom/quandela-delivers-lucy-the-most-advanced-photonic-quantum-computer-worldwide-to-eurohpc-and-genci-at-ceas-tgcc/
-[8] QuiX Quantum — Carina delivered to DLR QCI (2026-07) [C] — https://www.quixquantum.com/news/quix-quantum-delivers-carina-core-hardware-platformto-dlr-qci
-[9] postquantum.com — ORCA Computing profile, PT-1/PT-2, GXC acquisition (2026-09-03) [P] — https://postquantum.com/quantum-computing-companies/orca-computing/
-[10] Quandela newsroom — €50 M round (2023-11-07) [C] — https://www.quandela.com/about-us/newsroom/quandela-secures-e50-million-to-support-international-expansion/
-[11] QuiX Quantum newsroom — €15 M Series A (2025-07-10) [C] — https://www.quixquantum.com/news/quix-quantum-series-a
-[12] Quantum Computing Report — PsiQuantum $125 M DARPA QBI expansion (2026-07-22) [P] — https://quantumcomputingreport.com/psiquantum-secures-125-million-expanded-agreement-with-darpa-under-qbi-program/
-[13] The Quantum Insider — Sparrow EuroHPC EU-SCALE (2026-08-26) [P]; Quantum Computing Report — Sparrow Series A (2025-04-10) [P] — https://thequantuminsider.com/2026/08/26/sparrow-quantum-eurohpc-quantum-grand-challenge-funding/ ; https://quantumcomputingreport.com/sparrow-quantum-secures-e21-5m-24m-usd-in-series-a-funding-to-advance-photonic-quantum-chip-production/
-[14] Forbes Australia — PsiQuantum Brisbane site change, A$940 M (2026) [P] — https://www.forbes.com.au/news/innovation/psiquantums-stalled-quantum-plant-to-break-ground-after-location-switch/
-[15] Bartolucci et al. — fusion-based quantum computation, Nature Communications 14, 912 (2023); arXiv:2506.11975 — https://www.nature.com/articles/s41467-023-36493-1
-[16] Xanadu — roadmap to 1,000+ logical qubits (2026-08-31) [C] — https://www.globenewswire.com/news-release/2026/08/31/3353211/0/en/xanadu-charts-path-to-over-1-000-logical-qubits-by-2031.html
-[17] PsiQuantum newsroom — Series E, CEO change [C] — https://www.psiquantum.com/news-import/psiquantum-1b-fundraise
-[18] Oripov et al. (NIST/JPL) — 400,000-pixel SNSPD camera, Nature 622, 730 (2023-10-25) — https://www.nature.com/articles/s41586-023-06550-2
-[19] Quantum Computing Report — Photonic Inc. $200 M at $2 B (2026-05-12) [P] — https://quantumcomputingreport.com/photonic-inc-reaches-2b-valuation-with-200m-final-close/
-[20] DARPA — QBI Stage B selection (2025-11-06) [G] — https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection
-[21] NIST — CHIPS letters of intent (2026-05-21) [G] — https://www.nist.gov/news-events/news/2026/05/department-commerce-announces-letters-intent-9-companies-2-billion
-[22] imec — PIXEurope pilot line selected (2024-11-24) [G] — https://www.imec-int.com/en/press/european-commission-and-chips-ju-select-pixeurope-consortium-lead-european-pilot-line
-[23] Xanadu — on-chip GKP states, Nature (2025) — https://www.nature.com/articles/s41586-025-09044-5
-[24] Xanadu — Aurora, Nature (2025) — https://www.nature.com/articles/s41586-024-08406-9
+[1] E. Knill, R. Laflamme, and G. Milburn, “Efficient Linear Optics Quantum Computation,” *Nature*, vol. 409, pp. 46–52, Jun. 2000, doi: [10.1038/35051009](https://doi.org/10.1038/35051009).
+[2] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7).
+[3] S. Bartolucci *et al.*, “Fusion-based quantum computation,” *Nat. Commun.*, vol. 14, Art. no. 912, Feb. 2023, doi: [10.1038/s41467-023-36493-1](https://doi.org/10.1038/s41467-023-36493-1). [arXiv:2506.11975](https://arxiv.org/abs/2506.11975).
+[4] Xanadu Quantum Technologies Limited, “Xanadu Charts Path to Over 1,000 Logical Qubits by 2031,” GlobeNewswire, Aug. 31, 2026. [Online]. Available: https://www.globenewswire.com/news-release/2026/08/31/3353211/0/en/xanadu-charts-path-to-over-1-000-logical-qubits-by-2031.html [C]
+[5] X. Ding *et al.*, “High-efficiency single-photon source above the loss-tolerant threshold for efficient linear optical quantum computing,” [arXiv:2311.08347](https://arxiv.org/abs/2311.08347), Nov. 2023.
+[6] J. C. Loredo *et al.*, “Deterministic quantum dot single-photon sources: operational principles and state-of-the-art specifications,” [arXiv:2511.23232](https://arxiv.org/abs/2511.23232), Nov. 2025. [C]
+[7] Quandela, “Quandela delivers Lucy, the most advanced photonic quantum computer worldwide, to EuroHPC and GENCI at CEA's TGCC,” Oct. 23, 2025. [Online]. Available: https://www.quandela.com/about-us/newsroom/quandela-delivers-lucy-the-most-advanced-photonic-quantum-computer-worldwide-to-eurohpc-and-genci-at-ceas-tgcc/ [C]
+[8] H.-L. Liu *et al.*, “Gaussian boson sampling with 1,024 squeezed states in 8,176 modes,” *Nature*, vol. 653, no. 8115, pp. 687–692, May 2026, doi: [10.1038/s41586-026-10523-6](https://doi.org/10.1038/s41586-026-10523-6). [arXiv:2508.09092](https://arxiv.org/abs/2508.09092).
+[9] QuiX Quantum, “QuiX Quantum Delivers Carina Core Hardware Platform to DLR QCI, Advancing Europe's Universal Photonic Quantum Computing Roadmap,” Jul. 14, 2026. [Online]. Available: https://www.quixquantum.com/news/quix-quantum-delivers-carina-core-hardware-platformto-dlr-qci [C]
+[10] B. G. Oripov *et al.*, “A superconducting nanowire single-photon camera with 400,000 pixels,” *Nature*, vol. 622, no. 7984, pp. 730–734, Oct. 2023, doi: [10.1038/s41586-023-06550-2](https://doi.org/10.1038/s41586-023-06550-2).
+[11] QuiX Quantum, “QuiX Quantum Secures €15 Million to Deliver First-Generation Universal Photonic Quantum Computer,” Jul. 10, 2025. [Online]. Available: https://www.quixquantum.com/news/quix-quantum-series-a [C]
+[12] postquantum.com, “ORCA Computing profile, PT-1/PT-2, GXC acquisition (2026-09-03).” [Online]. Available: https://postquantum.com/quantum-computing-companies/orca-computing/ [P]
+[13] The Quantum Insider, “Sparrow EuroHPC EU-SCALE (2026-08-26) ; Quantum Computing Report,” Sparrow Series A, Apr. 10, 2025. [Online]. Available: https://thequantuminsider.com/2026/08/26/sparrow-quantum-eurohpc-quantum-grand-challenge-funding/ Also https://quantumcomputingreport.com/sparrow-quantum-secures-e21-5m-24m-usd-in-series-a-funding-to-advance-photonic-quantum-chip-production/. [P]
+[14] M. Abdel-Kareem, “Photonic Inc. Reaches $2B Valuation with $200M Final Close,” Quantum Computing Report, May 12, 2026. [Online]. Available: https://quantumcomputingreport.com/photonic-inc-reaches-2b-valuation-with-200m-final-close/ [P]
+[15] Quandela newsroom, “€50 M round (2023-11-07).” [Online]. Available: https://www.quandela.com/about-us/newsroom/quandela-secures-e50-million-to-support-international-expansion/ [C]
+[16] D. Van Boom, “PsiQuantum ditches Brisbane Airport plan in bid to break ground on supercomputer,” Forbes Australia, May 20, 2026. [Online]. Available: https://www.forbes.com.au/news/innovation/psiquantums-stalled-quantum-plant-to-break-ground-after-location-switch/ [P]
+[17] M. Abdel-Kareem, “PsiQuantum Secures $125 Million Expanded Agreement with DARPA under QBI Program,” Quantum Computing Report, Jul. 22, 2026. [Online]. Available: https://quantumcomputingreport.com/psiquantum-secures-125-million-expanded-agreement-with-darpa-under-qbi-program/ [P]
 
 ## Open verification items
 
-- Exact date and instrument mix (equity vs loan vs grant) of the A$940 M Australian commitment to PsiQuantum; source [14] gives only the total and the two governments.
+- Exact date and instrument mix (equity vs loan vs grant) of the A$940 M Australian commitment to PsiQuantum; source [16] gives only the total and the two governments.
 - Sparrow Quantum Series A lead investor and cumulative funding — primary report paywalled; only date and amount confirmed.
 - ORCA Computing funding history: only a secondary range (~£8–15 M Series A plus 2023–24 capital); no primary release, no cumulative total, no valuation.
 - Export-control classification of single-photon sources and detectors under the September 2024 US quantum rule — ECCN not confirmed, deliberately not stated in the text.

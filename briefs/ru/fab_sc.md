@@ -31,19 +31,19 @@ updated: 2026-09-03
 |---|---|---|---|
 | 2024-08 | Подгонка ABAA: 97.4% попаданий в цель, диапазон перестройки >70% | Rigetti | [D][2] |
 | 2024-09 | Трансмоны оптической литографии на 300 мм: 393/400 работоспособны, медианное $T_1$ 75 мкс, RSD $R_n$ 8% | imec | [D][1] |
-| 2025-11 | Loon на 300-мм линии в Albany: c-каплеры, многослойная малопотерьная разводка | IBM | [C][11] |
-| 2026-02 | Корпус масштаба пластины: >500 кубитов на 3-дюймовом сапфировом кристалле, медиана считывания 97.5% (n=54) | OQC | [P][3] |
-| 2026-05 | Anderon, специализированная 300-мм квантовая фабрика: $1 B по CHIPS + $1 B от IBM | IBM / US DoC | [G][4] |
+| 2025-11 | Loon на 300-мм линии в Albany: c-каплеры, многослойная малопотерьная разводка | IBM | [C][3] |
+| 2026-02 | Корпус масштаба пластины: >500 кубитов на 3-дюймовом сапфировом кристалле, медиана считывания 97.5% (n=54) | OQC | [P][4] |
+| 2026-05 | Anderon, специализированная 300-мм квантовая фабрика: $1 B по CHIPS + $1 B от IBM | IBM / US DoC | [G][5] |
 
 Доминирующее слагаемое ошибки — когерентная ошибка частоты: разброс, коллизии, дрейф. Ограниченное TLS время $T_1$ — то, что техпроцесс убрать не может.
 
 ## Производство, материалы и цепочка поставок
 
-Большинство опубликованных кубитов до сих пор изготавливается теневым напылением через мостик Долана; маршрут CMOS означает литографию 193i, реактивное ионное травление, ниобиевую разводку, сквозные отверстия TSV и столбиковые соединения. Его преимущество — статистика и производительность, а не когерентность: медианное $T_1$ у imec соответствует приборам электронно-лучевой литографии, её метрология — нет. Отраслевая пресса называет прирост выпуска приборов примерно в 30× по сравнению с 200 мм; в собственном релизе IBM никакого множителя не приводится [P][8]. Оборудование ничем не примечательно, поэтому дефицитный актив — рецепт процесса и способность к подгонке; единые точки отказа — мощности по криостатам, высокоомный кремний и сапфир, а также экспертиза травления ниобия, общая с цепочкой SFQ. Стоимость пластины назвать нельзя. Экспортная уязвимость косвенная: правило BIS от 2024-09-06 контролирует криогенные зондовые установки для пластин (3B904), криогенную электронику ниже 4.5 K (3A901) и машины на ≥34 кубита (4A906), но литографию переходов не называет ни один ECCN [G][10].
+Большинство опубликованных кубитов до сих пор изготавливается теневым напылением через мостик Долана; маршрут CMOS означает литографию 193i, реактивное ионное травление, ниобиевую разводку, сквозные отверстия TSV и столбиковые соединения. Его преимущество — статистика и производительность, а не когерентность: медианное $T_1$ у imec соответствует приборам электронно-лучевой литографии, её метрология — нет. Отраслевая пресса называет прирост выпуска приборов примерно в 30× по сравнению с 200 мм; в собственном релизе IBM никакого множителя не приводится [P][6]. Оборудование ничем не примечательно, поэтому дефицитный актив — рецепт процесса и способность к подгонке; единые точки отказа — мощности по криостатам, высокоомный кремний и сапфир, а также экспертиза травления ниобия, общая с цепочкой SFQ. Стоимость пластины назвать нельзя. Экспортная уязвимость косвенная: правило BIS от 2024-09-06 контролирует криогенные зондовые установки для пластин (3B904), криогенную электронику ниже 4.5 K (3A901) и машины на ≥34 кубита (4A906), но литографию переходов не называет ни один ECCN [G][7].
 
 ## Управление, считывание и нагрузка на ввод-вывод
 
-Собственных управления и считывания у узла нет; он задаёт потолок, в который упираются другие, — через плотность вывода трасс (escape density) и точность попадания в частоту. Текущую границу задаёт корпус OQC: >500 кубитов на одном кристалле, коаксиальные выводы из плоскости, ни одной проволочной разварки, 56 ячеек мультиплексирования считывания «девять в один» — и, в той конфигурации, в которой велись измерения, ни одной индивидуальной линии управления на кубит [P][3], так что это результат по корпусированию, а не процессор. При 10³ на кристалл ограничением являются коллизии; при 10⁴ — плотность вывода и разводка, на что и нацелен Loon [C][11]; при 10⁶ изготовленного проекта не существует.
+Собственных управления и считывания у узла нет; он задаёт потолок, в который упираются другие, — через плотность вывода трасс (escape density) и точность попадания в частоту. Текущую границу задаёт корпус OQC: >500 кубитов на одном кристалле, коаксиальные выводы из плоскости, ни одной проволочной разварки, 56 ячеек мультиплексирования считывания «девять в один» — и, в той конфигурации, в которой велись измерения, ни одной индивидуальной линии управления на кубит [P][4], так что это результат по корпусированию, а не процессор. При 10³ на кристалл ограничением являются коллизии; при 10⁴ — плотность вывода и разводка, на что и нацелен Loon [C][3]; при 10⁶ изготовленного проекта не существует.
 
 ## Роль в стеке
 
@@ -51,7 +51,7 @@ updated: 2026-09-03
 
 ## Верификация (QCVV)
 
-Частота предсказывается по сопротивлению перехода через соотношение Амбегаокара — Баратоффа и затем подтверждается спектроскопически после корпусирования, поэтому значимой статистикой является RSD величины $R_n$ — которую не публикует никто, кроме imec [D][1]. RB, XEB и cycle benchmarking измеряют уже откалиброванную решётку и слепы к отбракованным кристаллам и к частоте коллизий до подгонки. Величина 97.4% у ABAA — это доля успешных попаданий в цель в оптимизированном исследовании, а не оценка худшего случая [D][2]. Цифры OQC получены на подвыборке: считывание по 54 позициям из более чем 500, 105/108 работоспособны на охарактеризованном подмножестве [P][3]. Противоречие: приводимая «медиана ~100 мкс» разлагается на $T_1$ ~97 мкс и $T_{2e}$ ~129 мкс, сообщённые по отдельности.
+Частота предсказывается по сопротивлению перехода через соотношение Амбегаокара — Баратоффа и затем подтверждается спектроскопически после корпусирования, поэтому значимой статистикой является RSD величины $R_n$ — которую не публикует никто, кроме imec [D][1]. RB, XEB и cycle benchmarking измеряют уже откалиброванную решётку и слепы к отбракованным кристаллам и к частоте коллизий до подгонки. Величина 97.4% у ABAA — это доля успешных попаданий в цель в оптимизированном исследовании, а не оценка худшего случая [D][2]. Цифры OQC получены на подвыборке: считывание по 54 позициям из более чем 500, 105/108 работоспособны на охарактеризованном подмножестве [P][4]. Противоречие: приводимая «медиана ~100 мкс» разлагается на $T_1$ ~97 мкс и $T_{2e}$ ~129 мкс, сообщённые по отдельности.
 
 ## Акторы и экономика
 
@@ -59,25 +59,25 @@ updated: 2026-09-03
 
 | Организация | Роль | Страна | Что именно делает с технологией | Свидетельство |
 |---|---|---|---|---|
-| Anderon | поставщик | США | Предлагаемая специализированная 300-мм квантовая фабрика пластин | [G][4] |
-| IBM | разработчик | США | Изготавливает Nighthawk и Loon на 300-мм линии в Albany | [C][11] |
+| Anderon | поставщик | США | Предлагаемая специализированная 300-мм квантовая фабрика пластин | [G][5] |
+| IBM | разработчик | США | Изготавливает Nighthawk и Loon на 300-мм линии в Albany | [C][3] |
 | imec | исследования | Бельгия | Трансмоны оптической литографии на 300 мм, опубликованный выход годных | [D][1] |
 | Rigetti | разработчик | США | Подгонка переходов методом ABAA на собственной линии | [D][2] |
-| OQC | разработчик | Великобритания | Корпус масштаба пластины, >500 кубитов на кристалл | [P][3] |
-| GlobalFoundries | поставщик | США | Письмо о намерениях по CHIPS на $375 M, мультимодальная фабрика | [G][5] |
-| US Dept of Commerce | регулятор | США | Письма о намерениях по CHIPS, $2.013 B | [G][5] |
+| OQC | разработчик | Великобритания | Корпус масштаба пластины, >500 кубитов на кристалл | [P][4] |
+| GlobalFoundries | поставщик | США | Письмо о намерениях по CHIPS на $375 M, мультимодальная фабрика | [G][8] |
+| US Dept of Commerce | регулятор | США | Письма о намерениях по CHIPS, $2.013 B | [G][8] |
 
 **Деньги.**
-- 2026-05-21 · Anderon · письмо о намерениях по CHIPS плюс доля IBM · $1 B по CHIPS + $1 B от IBM деньгами и ИС · US Dept of Commerce · в рамках $2.013 B на девять компаний · письмо о намерениях, не исполнено [G][4][G:CHIPS-LOI-2026-05]
-- 2026-05-21 · GlobalFoundries · письмо о намерениях по CHIPS, мультимодальная фабрика · $375 M · US Dept of Commerce · — · письмо о намерениях [G][5]
-- 2026-06-02 · IBM · обязательство по квантовому направлению в целом · >$10 B за 5 лет · — · объявлено [C][6]
-- 2026-08-26 · IBM · завершено поглощение HRL с упоминанием сотрудничества с Anderon · сумма не раскрыта · — · завершено [C][7]
+- 2026-05-21 · Anderon · письмо о намерениях по CHIPS плюс доля IBM · $1 B по CHIPS + $1 B от IBM деньгами и ИС · US Dept of Commerce · в рамках $2.013 B на девять компаний · письмо о намерениях, не исполнено [G][5][G:CHIPS-LOI-2026-05]
+- 2026-05-21 · GlobalFoundries · письмо о намерениях по CHIPS, мультимодальная фабрика · $375 M · US Dept of Commerce · — · письмо о намерениях [G][8]
+- 2026-06-02 · IBM · обязательство по квантовому направлению в целом · >$10 B за 5 лет · — · объявлено [C][9]
+- 2026-08-26 · IBM · завершено поглощение HRL с упоминанием сотрудничества с Anderon · сумма не раскрыта · — · завершено [C][10]
 
-**Рынок и цепочка поставок.** По состоянию на 4 сентября 2026 г. ни одна коммерческая (merchant) фабрика сверхпроводниковых кубитов не работает: каждая 300-мм линия с опубликованными кубитными данными является либо кэптивной (IBM Albany, Google Santa Barbara [P][9]), либо исследовательским пилотом (imec), а предполагаемая коммерческая линия финансируется крупнейшим конкурентом своих будущих заказчиков. Связывающие дефициты — мощности по криостатам и технологическое ноу-хау, а не оборудование; удельную экономику назвать нельзя. Напрямую оплачивают G3 и G4, косвенно — G7; G1, G2, G5 и G6 не финансируют ничего.
+**Рынок и цепочка поставок.** По состоянию на 4 сентября 2026 г. ни одна коммерческая (merchant) фабрика сверхпроводниковых кубитов не работает: каждая 300-мм линия с опубликованными кубитными данными является либо кэптивной (IBM Albany, Google Santa Barbara [P][11]), либо исследовательским пилотом (imec), а предполагаемая коммерческая линия финансируется крупнейшим конкурентом своих будущих заказчиков. Связывающие дефициты — мощности по криостатам и технологическое ноу-хау, а не оборудование; удельную экономику назвать нельзя. Напрямую оплачивают G3 и G4, косвенно — G7; G1, G2, G5 и G6 не финансируют ничего.
 
-**ИС и стандарты.** По подсчётам PatSnap на 2026-06-30 у IBM 783, а у Google 357 патентных семейств в области сверхпроводниковых приборов (МПК H10N 60) [P][G:PATSNAP-2026-06][15]. Ни одно патентное семейство, специфичное именно для литографии переходов на 300 мм, не имеет названного правообладателя и года; никакой орган по стандартизации эти процессы не регулирует.
+**ИС и стандарты.** По подсчётам PatSnap на 2026-06-30 у IBM 783, а у Google 357 патентных семейств в области сверхпроводниковых приборов (МПК H10N 60) [P][G:PATSNAP-2026-06][12]. Ни одно патентное семейство, специфичное именно для литографии переходов на 300 мм, не имеет названного правообладателя и года; никакой орган по стандартизации эти процессы не регулирует.
 
-**Дорожные карты и послужной список.** Anderon (обещано 2026-05-21 · фабрика, обслуживающая вендоров по всему миру · статус на 2026-09-03: только письмо о намерениях, при том что релиз IBM от 2026-08-26 уже называет её «своей квантовой фабрикой пластин») [G][4][C][7]. Rigetti/ABAA (2024-08 · серийное попадание в целевую частоту · применяется в 108-кубитном продукте, у которого целевой показатель двухкубитной точности 99.5% сдвинулся на «более поздний период 2026 года») [D][2][C][14]. Производственные вехи IBM выдерживаются по срокам; у её обещания открытого коммерческого доступа послужного списка нет.
+**Дорожные карты и послужной список.** Anderon (обещано 2026-05-21 · фабрика, обслуживающая вендоров по всему миру · статус на 2026-09-03: только письмо о намерениях, при том что релиз IBM от 2026-08-26 уже называет её «своей квантовой фабрикой пластин») [G][5][C][10]. Rigetti/ABAA (2024-08 · серийное попадание в целевую частоту · применяется в 108-кубитном продукте, у которого целевой показатель двухкубитной точности 99.5% сдвинулся на «более поздний период 2026 года») [D][2][C][13]. Производственные вехи IBM выдерживаются по срокам; у её обещания открытого коммерческого доступа послужного списка нет.
 
 **Стратегическое прочтение.** Если 300-мм производство сверхпроводниковых кубитов масштабируется, IBM выигрывает дважды: как вертикально интегрированный игрок и как арендодатель мощностей для всех остальных. Fabless-вендоры выигрывают лишь при наличии нейтральной фабрики, которой не существует. Проигрывают те вендоры, чьё отличие — мастерство изготовления, а не архитектура. Угроза здесь — захват, а не замещение: этот узел нужен каждому сверхпроводниковому пути платформы, и у поставщиков оборудования нет переговорной силы против его владельца.
 
@@ -89,26 +89,24 @@ updated: 2026-09-03
 
 ## Источники
 
-[1] Van Damme, Massar, Acharya, Ivanov, Perez Lozano, Potočnik, De Greve et al. (imec / KU Leuven) · "Advanced CMOS manufacturing of superconducting qubits on 300 mm wafers" · Nature 634, 74–79 · 2024-09-18 · https://www.nature.com/articles/s41586-024-07941-9 [D]
-[2] Pappas, Field, Kopas et al. (Rigetti) · "Alternating-bias assisted annealing of amorphous oxide tunnel junctions" · Communications Materials 5, 150 · 2024-08-12 · https://www.nature.com/articles/s43246-024-00596-z [D]
-[3] Kennedy, Ahmad, Armstrong, … Shelly (Oxford Quantum Circuits) · "Design and operation of wafer-scale packages containing >500 superconducting qubits" · arXiv:2602.12773 · 2026-02 · https://arxiv.org/abs/2602.12773 [P]
-[4] IBM · "IBM and U.S. Department of Commerce announce America's first purpose-built quantum foundry, supported by proposed $1 billion CHIPS award" · 2026-05-21 · https://newsroom.ibm.com/ibm-and-u-s-department-of-commerce-announce-americas-first-purpose-built-quantum-foundry [C]
-[5] US Dept of Commerce / NIST · CHIPS letters of intent, nine companies, $2.013 B · 2026-05-21 · https://www.nist.gov/news-events/news/2026/05/department-commerce-announces-letters-intent-9-companies-2-billion [G]
-[6] IBM · "$10 billion investment FAQ" · 2026-06-02 · https://www.ibm.com/quantum/blog/10-billion-investment-faq [C]
-[7] IBM · "IBM completes acquisition of HRL Laboratories" · 2026-08-26 · https://newsroom.ibm.com/2026-08-26-ibm-completes-acquisition-of-hrl-laboratories-to-accelerate-the-future-of-quantum [C]
-[8] Tom's Hardware · "IBM spins off America's first quantum chip foundry with $2 billion in federal and private funding" · 2026-05 · https://www.tomshardware.com/tech-industry/quantum-computing/ibm-spins-off-americas-first-quantum-chip-foundry-with-2-billion-in-federal-and-private-funding [P]
-[9] Santa Barbara Independent · "Google buys 83,000-square-foot campus in Goleta for $32.5M" · 2026-08-24 · https://www.independent.com/2026/08/24/google-buys-83000-square-foot-campus-in-goleta-for-32-5m/ [P]
-[10] US BIS · Interim final rule, Commerce Control List additions: quantum computing items (ECCNs 3A901, 3A904, 3B904, 4A906) · 2024-09-06 · https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies-consistent [G]
-[11] IBM · "IBM delivers new quantum processors, software, and algorithm breakthroughs" (Nighthawk, Loon, 300 mm Albany) · 2025-11-12 · https://newsroom.ibm.com/2025-11-12-ibm-delivers-new-quantum-processors,-software,-and-algorithm-breakthroughs-on-path-to-advantage-and-fault-tolerance [C]
-[12] IQM · Nasdaq and Helsinki listing release · 2026-07-02 · https://iqm.tech/press-releases/iqm-quantum-computers-becomes-first-european-quantum-computing-company-listed-on-a-major-u-s-exchange/ [C]
-[13] OQC · Series C, £260 M · 2026-06-03 · https://oqc.tech/company/newsroom/series-c [C]
-[14] Rigetti · General availability of the 108-qubit Cepheus-1 system · 2026-04-07 · https://investors.rigetti.com/news-releases/news-release-details/rigetti-announces-general-availability-108-qubit-system [C]
-[15] PatSnap (secondary database) · quantum patent-family counts to 2026-06-30, superconducting devices IPC H10N 60 · 2026-06-30 · https://www.patsnap.com/resources/blog/articles/quantum-error-correction-patent-landscape-2026/ [P]
+[1] J. Van Damme *et al.*, “Advanced CMOS manufacturing of superconducting qubits on 300 mm wafers,” *Nature*, vol. 634, no. 8032, pp. 74–79, Oct. 2024, doi: [10.1038/s41586-024-07941-9](https://doi.org/10.1038/s41586-024-07941-9). [D]
+[2] D. P. Pappas *et al.*, “Alternating-bias assisted annealing of amorphous oxide tunnel junctions,” *Communications Materials*, vol. 5, no. 1, Art. no. 150, Aug. 2024, doi: [10.1038/s43246-024-00596-z](https://doi.org/10.1038/s43246-024-00596-z). [D]
+[3] IBM, “IBM Delivers New Quantum Processors, Software, and Algorithm Breakthroughs on Path to Advantage and Fault Tolerance,” Nov. 12, 2025. [Online]. Available: https://newsroom.ibm.com/2025-11-12-ibm-delivers-new-quantum-processors,-software,-and-algorithm-breakthroughs-on-path-to-advantage-and-fault-tolerance [C]
+[4] O. W. Kennedy *et al.*, “Design and Operation of Wafer-Scale Packages Containing >500 Superconducting Qubits,” [arXiv:2602.12773](https://arxiv.org/abs/2602.12773), Feb. 2026. [P]
+[5] IBM, “IBM and U.S. Department of Commerce announce America's first purpose-built quantum foundry,” May 21, 2026. [Online]. Available: https://newsroom.ibm.com/ibm-and-u-s-department-of-commerce-announce-americas-first-purpose-built-quantum-foundry [C]
+[6] Tom's Hardware, “IBM spins off America's first quantum chip foundry with $2 billion in federal and private funding,” tomshardware.com, May 2026. [Online]. Available: https://www.tomshardware.com/tech-industry/quantum-computing/ibm-spins-off-americas-first-quantum-chip-foundry-with-2-billion-in-federal-and-private-funding [P]
+[7] US Department of Commerce, Bureau of Industry and Security, “Commerce Control List Additions and Revisions; Implementation of Controls on Advanced Technologies Consistent With Controls Implemented by International Partners,” *Federal Register*, vol. 89, p. 72926, Sep. 6, 2024. [Online]. Available: https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies [G]
+[8] National Institute of Standards and Technology, “Department of Commerce Announces Letters of Intent With 9 Companies for $2 Billion to Accelerate U.S. Leadership in Quantum Computing,” NIST News, May 21, 2026. [Online]. Available: https://www.nist.gov/news-events/news/2026/05/department-commerce-announces-letters-intent-9-companies-2-billion [G]
+[9] IBM Quantum, “Why IBM is investing $10 billion into quantum computing,” Jun. 2, 2026. [Online]. Available: https://www.ibm.com/quantum/blog/10-billion-investment-faq [C]
+[10] IBM Newsroom, “IBM completes acquisition of HRL Laboratories,” Aug. 26, 2026. [Online]. Available: https://newsroom.ibm.com/2026-08-26-ibm-completes-acquisition-of-hrl-laboratories-to-accelerate-the-future-of-quantum [C]
+[11] Santa Barbara Independent, “Google buys 83,000-square-foot campus in Goleta for $32.5M,” independent.com, Aug. 24, 2026. [Online]. Available: https://www.independent.com/2026/08/24/google-buys-83000-square-foot-campus-in-goleta-for-32-5m/ [P]
+[12] PatSnap, “Quantum Error Correction Technology Landscape 2026,” Apr. 22, 2026. [Online]. Available: https://www.patsnap.com/resources/blog/articles/quantum-error-correction-patent-landscape-2026/ [P]
+[13] Rigetti Computing, Inc., “Rigetti Announces General Availability of 108-Qubit System,” Apr. 7, 2026. [Online]. Available: https://investors.rigetti.com/news-releases/news-release-details/rigetti-announces-general-availability-108-qubit-system [C]
 
 ## Открытые пункты верификации
 
 - Договорный статус Anderon: релиз IBM от 2026-05-21 говорит о письме о намерениях, обусловленном подписанием окончательных документов; подписание по состоянию на 4 сентября 2026 г. не подтверждено, при этом релиз IBM по HRL от 2026-08-26 уже называет Anderon «своей квантовой фабрикой пластин».
-- Формулировка «≈30× выпуска приборов по сравнению с 200 мм» встречается только в отраслевой прессе [8]; в собственном релизе IBM никакого множителя нет.
+- Формулировка «≈30× выпуска приборов по сравнению с 200 мм» встречается только в отраслевой прессе [6]; в собственном релизе IBM никакого множителя нет.
 - Ни для одной 300-мм линии сверхпроводниковых кубитов не существует цифры стоимости на пластину или на кубит.
 - Датированного патентного семейства, специфичного именно для литографии переходов Nb/Al на 300 мм, не найдено; подсчёты PatSnap по H10N 60 относятся к портфелю в целом и не имеют собственного публичного URL.
 - Нигде не сказано, что покупка Google в Goleta — это производственные мощности; прочтение «фабрика» является выводом по косвенным признакам.

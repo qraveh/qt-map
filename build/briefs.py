@@ -116,6 +116,8 @@ PREFACE = {
         '[P] препринт или отраслевая пресса.',
     ],
 }
+REFNOTE = {'en': 'Each brief numbers its sources in order of first citation; online sources were accessed in September 2026.',
+           'ru': 'Каждый бриф нумерует свои источники в порядке первого цитирования; онлайн-источники просмотрены в сентябре 2026 г.'}
 SECTION_TITLE = {'en': 'Technology briefs', 'ru': 'Брифы по технологиям'}
 
 
@@ -270,6 +272,17 @@ def _anchor_sources(content, bid, lang):
     return content
 
 
+def _ref_list(body, bid, lang, md2html, content):
+    """The Sources fold: the brief's IEEE list (build/brief_refs.py, the §9 form), then the section's lines that are not entries
+    (research notes such as "[G] …") as they are; a brief without a list in the data file keeps its markdown list."""
+    import brief_refs
+    lst = brief_refs.list_html(bid, lang)
+    if lst is None: return _anchor_sources(content, bid, lang)
+    txt = _section_text(body, 'Sources' if lang == 'en' else 'Источники')
+    ents, extra, _ = brief_refs.entries(txt.split('\n'))
+    return lst + (md2html('\n'.join(extra)) if extra else '')
+
+
 def _link_cites(h, bid, lang):
     """[n] in the body → link to the source entry; skips tags and the sources fold itself."""
     pre = 'brief-%s-%s-src-' % (bid, lang)
@@ -297,7 +310,7 @@ def body_html(body, lang, md2html, bid=''):
         if plain in FOLD_HEADS:
             kind = FOLD_HEADS[plain][1]
             if kind == 'src' and bid:
-                content = _anchor_sources(content, bid, lang)
+                content = _ref_list(body, bid, lang, md2html, content)
             elif bid:
                 content = _link_cites(content, bid, lang)
             out.append('<details class="fold bfold fold-%s"><summary>%s</summary><div class="bfoldin">%s</div></details>'
@@ -359,7 +372,7 @@ def _one_lang(b, lang, md2html, prev_id, next_id, colour):
             '<p class="bverdict"><b>%s.</b> %s</p>%s</div>'
             '<div class="bbody">%s</div>%s</div>') % (
         lang, colour, t['close'], meta_line, name, one, t['verdict'], verdict,
-        key_refs_html(key_refs(b['en']['body']), lang),
+        key_refs_html(key_refs(b['en']['body'], bid=b['id']), lang),
         body_html(b[lang]['body'], lang, md2html, b['id']), nav)
 
 
@@ -412,7 +425,7 @@ def briefs_section_html(briefs, md2html, colours):
     langs = []
     for lang in ('en', 'ru'):
         paras = (PREFACE_PUBLIC[lang] + PREFACE[lang][1:]) if MODE == 'public' else PREFACE[lang]
-        pref = ''.join('<p>%s</p>' % chip_tags(html.escape(p, quote=False), lang) for p in paras)
+        pref = ''.join('<p>%s</p>' % chip_tags(html.escape(p, quote=False), lang) for p in paras) + '<p class="refnote">%s</p>' % REFNOTE[lang]
         langs.append('<div class="lang-%s"><h2><span class="num">%s</span>%s</h2>'
                      '<div class="blede">%s</div>%s</div>' % (
                          lang, 'BR' if lang == 'en' else 'БР', SECTION_TITLE[lang],
@@ -495,16 +508,17 @@ def _sources(body):
     return out
 
 
-def key_refs(body, limit=5):
-    """Ordered, de-duplicated source numbers cited in Identity & lineage, then in the records-timeline table."""
-    srcs = _sources(body)
+def key_refs(body, limit=5, bid=None):
+    """Ordered, de-duplicated source numbers cited in Identity & lineage, then in the records-timeline table; entries from
+    the brief's records (build/brief_refs.py) when it has a list there."""
+    import brief_refs
+    srcs = (brief_refs.key_info(bid) if bid else {}) or _sources(body)
     order = []
     lineage = _section_text(body, 'Identity & lineage')
     eng = _section_text(body, 'Engineering state of the art')
     table = '\n'.join(l for l in eng.split('\n') if l.startswith('|'))
     for chunk in (lineage, table, eng):
-        for m in _CITE.finditer(chunk):
-            n = int(m.group(1))
+        for n in _cite_nums(chunk):
             if n in srcs and n not in order and srcs[n]['url']:
                 order.append(n)
             if len(order) >= limit: break
@@ -512,8 +526,18 @@ def key_refs(body, limit=5):
     return [srcs[n] for n in order]
 
 
+def _cite_nums(t):
+    """cited numbers in order; an IEEE range [a]–[b] stands for a..b"""
+    out, prev = [], None
+    for m in _CITE.finditer(t):
+        n = int(m.group(1))
+        if prev is not None and t[prev.end():m.start()] == '–': out += list(range(int(prev.group(1)) + 1, n))
+        out.append(n); prev = m
+    return out
+
+
 def key_refs_all(briefs, limit=5):
-    return {b['id']: key_refs(b['en']['body'], limit) for b in briefs}
+    return {b['id']: key_refs(b['en']['body'], limit, b['id']) for b in briefs}
 
 
 def key_refs_html(refs, lang):

@@ -23,9 +23,9 @@ updated: 2026-09-03
 |---|---|---|---|
 | 2025-02 | Белловская точность слияния 99.22 ± 0.12%, между кристаллами 99.72 ± 0.04% | PsiQuantum | [D][2] |
 | 2025-02 | Потери в одномодовом SiN 1.8 ± 0.2 дБ/м; интегральный SNSPD 93.4% | PsiQuantum | [D][2] |
-| 2026-06-26 | Порог потерь для некодированного 6-кольца 0.38–0.82% | Löbl et al. | [S][4] |
+| 2026-06-26 | Порог потерь для некодированного 6-кольца 0.38–0.82% | Löbl et al. | [S][3] |
 
-Логического кубита в этом кодировании не существует, а порог, которому оно обязано соответствовать, оспаривается: 2.7% на фотон для усиленного 6-кольца и 17.4% для состояния с кодированием {7,4} [S][3] против 0.38–0.82% для некодированного [S][4] — расхождение на порядок, никем не согласованное [G:FBQC-THRESHOLD-CONFLICT-2026].
+Логического кубита в этом кодировании не существует, а порог, которому оно обязано соответствовать, оспаривается: 2.7% на фотон для усиленного 6-кольца и 17.4% для состояния с кодированием {7,4} [S][4] против 0.38–0.82% для некодированного [S][3] — расхождение на порядок, никем не согласованное [G:FBQC-THRESHOLD-CONFLICT-2026].
 
 ## Производство, материалы и цепочка поставок
 Собственного технологического шага у него нет: кодирование едет на своём носителе — 300-мм нитриде кремния у PsiQuantum, квантовых точках III–V у Quandela, SiN-сетках у QuiX. Управление также унаследованное: отдельной линии возбуждения на кубит нет, но каждому интерферометру нужен фазовращатель, а каждому выходу — детектор, то есть тысячи криогенных каналов и их разветвление при 10³–10⁴ кубитах. Узкие места — поставщики детекторов (Single Quantum, ID Quantique, Photon Spot) и фабрики III–V и SiN [P][G:SNSPD-VENDORS-2026]; применима позиция ECCN 4A906 [G:BIS-QUANTUM-2024].
@@ -40,19 +40,19 @@ updated: 2026-09-03
 |---|---|---|---|---|
 | PsiQuantum | разработчик | США | Кубиты с кодированием по пути на платформе Omega | [D][2] |
 | Quandela | разработчик | Франция | Фотонные QPU на источниках с квантовыми точками | [C][G:QUANDELA-LUCY-HPC-2026-04] |
-| QuiX Quantum | разработчик | Нидерланды | Ядро Carina поставлено в DLR | [C][7] |
-| Sparrow Quantum | поставщик | Дания | Единственный коммерческий поставщик источников одиночных фотонов | [P][8] |
+| QuiX Quantum | разработчик | Нидерланды | Ядро Carina поставлено в DLR | [C][6] |
+| Sparrow Quantum | поставщик | Дания | Единственный коммерческий поставщик источников одиночных фотонов | [P][7] |
 
 **Деньги.**
-2025-04-10 · Sparrow Quantum · Series A · EUR 21.5 M · ведущий инвестор не раскрыт · закрыт [P][8]
+2025-04-10 · Sparrow Quantum · Series A · EUR 21.5 M · ведущий инвестор не раскрыт · закрыт [P][7]
 2025-09-10 · PsiQuantum · Series E · USD 1 B при оценке USD 7 B · BlackRock, Temasek · закрыт [C][G:PSIQ-1B-2025-09]
 2026-07-22 · PsiQuantum · расширение DARPA QBI Stage C · USD 125 M · DARPA · объявлено [P][G:PSIQ-QBI-C-2026-07]
 
-**Рынок и цепочка поставок.** Sparrow — единственный коммерческий поставщик источников, отгружающий системную эффективность 20–35% против лабораторного рекорда 71.2% [P][8], так что любая архитектура на слияниях платит налог на мультиплексирование, ставку которого задаёт выход годных одного-единственного поставщика. Окупается для G1/G2, служит субстратом G3–G4 для PsiQuantum и отдельно окупается в G6 через QKD.
+**Рынок и цепочка поставок.** Sparrow — единственный коммерческий поставщик источников, отгружающий системную эффективность 20–35% против лабораторного рекорда 71.2% [P][7], так что любая архитектура на слияниях платит налог на мультиплексирование, ставку которого задаёт выход годных одного-единственного поставщика. Окупается для G1/G2, служит субстратом G3–G4 для PsiQuantum и отдельно окупается в G6 через QKD.
 
-**ИС и стандарты.** ORCA владеет патентом US 12,437,225 на линейно-оптические кодированные GHZ-измерения (выдан 2025-10-07) — единственное фотонное двухрельсовое семейство, которое обнаружил датированный поиск [G][6]; стандарта со стороны вычислений не существует.
+**ИС и стандарты.** ORCA владеет патентом US 12,437,225 на линейно-оптические кодированные GHZ-измерения (выдан 2025-10-07) — единственное фотонное двухрельсовое семейство, которое обнаружил датированный поиск [G][8]; стандарта со стороны вычислений не существует.
 
-**Дорожные карты и послужной список.** PsiQuantum не опубликовала ни одного аппаратного результата со времён Omega, поэтому её прогресс за 2026 год читается только через V&V по линии DARPA [P][G:PSIQ-QBI-C-2026-07]. QuiX обещала универсальную машину на 2026 год, а поставила ядро, а не машину [C][7]. Quandela не выполнила веху первого логического кубита в 2025 году и по-прежнему целится в 50 к 2028-му [R].
+**Дорожные карты и послужной список.** PsiQuantum не опубликовала ни одного аппаратного результата со времён Omega, поэтому её прогресс за 2026 год читается только через V&V по линии DARPA [P][G:PSIQ-QBI-C-2026-07]. QuiX обещала универсальную машину на 2026 год, а поставила ядро, а не машину [C][6]. Quandela не выполнила веху первого логического кубита в 2025 году и по-прежнему целится в 50 к 2028-му [R].
 
 **Стратегическое прочтение.** Гонку слияний выигрывает тот, кто срежет потери на системном уровне, — а это, скорее всего, тот, кто контролирует эффективность детекторов и мультиплексирование источников, а не тот, кто проектирует само кодирование: кодирование бесплатно там, где его носитель — нет. Ту же физику монетизирует QKD, поэтому провал слияний оставляет на мели PsiQuantum и Quandela, но не QKD.
 
@@ -62,15 +62,15 @@ updated: 2026-09-03
 Подтвердить к 2027 году: аппаратный цикл извлечения синдрома, потребляющий геральдированную потерю как флаг стирания; без этого всё остаётся теорией. Лучший сценарий к 2029 году: небольшой логический кубит на слияниях; худший — коммерческая состоятельность только в QKD. Открытые вопросы: согласует ли кто-нибудь пороги 0.38% и 2.7%; сможет ли эффективность детекторов в масштабе достичь уровня, при котором геральдирующему сигналу можно доверять.
 
 ## Источники
-[1] Brendel, Gisin, Tittel, Zbinden (University of Geneva), "Pulsed energy-time entangled twin-photon source for quantum communication," Phys. Rev. Lett. 82, 2594, 1999 [D] — https://arxiv.org/abs/quant-ph/9809034
-[2] PsiQuantum, "A manufacturable platform for photonic quantum computing" (Omega), Nature, 2025-02 [D] — https://www.nature.com/articles/s41586-025-08820-7
-[3] Fusion-based quantum computation loss thresholds, Nature Communications, 2023 [S] — https://www.nature.com/articles/s41467-023-36493-1
-[4] Löbl, Pettersson, Dragašević, Chen, Sandberg (Sparrow Quantum / Center for Hybrid Quantum Networks), "The subthreshold issue of fusion-based quantum computing," arXiv:2606.28490, 2026-06-26 [S] — https://arxiv.org/abs/2606.28490
-[5] Ewert, van Loock, "3/4-efficient Bell measurement with passive linear optics and unentangled ancillae," Phys. Rev. Lett. 113, 140403, arXiv:1403.4841, 2014 [S] — https://arxiv.org/abs/1403.4841
-[6] ORCA Computing Limited, US 12,437,225, "Linear-optical encoded GHZ measurements and fault-tolerant quantum computation and communication," granted 2025-10-07 [G] — https://patents.justia.com/patent/12437225
-[7] QuiX Quantum, Series A announcement, 2025-07-10 [C] — https://www.quixquantum.com/news/quix-quantum-series-a
-[8] Quantum Computing Report, "Sparrow Quantum Secures €21.5M Series A," 2025-04-10 [P] — https://quantumcomputingreport.com/sparrow-quantum-secures-e21-5m-24m-usd-in-series-a-funding-to-advance-photonic-quantum-chip-production/
-[9] Toshiba Europe, quantum technology news (Orange Business 2025-06-11; Quantum Bridge 2026-03-16) [C] — https://www.toshiba.eu/quantum/news/
+[1] Brendel, Gisin, Tittel, and Zbinden, “Pulsed energy-time entangled twin-photon source for quantum communication,” *Phys. Rev. Lett.*, vol. 82, Art. no. 2594, 1999. [Online]. Available: https://arxiv.org/abs/quant-ph/9809034 [D]
+[2] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
+[3] M. C. Löbl, L. A. M. Pettersson, J. Dragašević, S. X. Chen, and O. A. D. Sandberg, “The subthreshold issue of fusion-based quantum computing,” [arXiv:2606.28490](https://arxiv.org/abs/2606.28490), Jun. 2026. [S]
+[4] S. Bartolucci *et al.*, “Fusion-based quantum computation,” *Nat. Commun.*, vol. 14, Art. no. 912, Feb. 2023, doi: [10.1038/s41467-023-36493-1](https://doi.org/10.1038/s41467-023-36493-1). [arXiv:2506.11975](https://arxiv.org/abs/2506.11975). [S]
+[5] F. Ewert and P. van Loock, “3/4-Efficient Bell Measurement with Passive Linear Optics and Unentangled Ancillae,” *Phys. Rev. Lett.*, vol. 113, no. 14, Art. no. 140403, Sep. 2014, doi: [10.1103/PhysRevLett.113.140403](https://doi.org/10.1103/PhysRevLett.113.140403). [arXiv:1403.4841](https://arxiv.org/abs/1403.4841). [S]
+[6] QuiX Quantum, “QuiX Quantum Secures €15 Million to Deliver First-Generation Universal Photonic Quantum Computer,” Jul. 10, 2025. [Online]. Available: https://www.quixquantum.com/news/quix-quantum-series-a [C]
+[7] Quantum Computing Report, “Sparrow Quantum Secures €21.5M Series A,” Apr. 10, 2025. [Online]. Available: https://quantumcomputingreport.com/sparrow-quantum-secures-e21-5m-24m-usd-in-series-a-funding-to-advance-photonic-quantum-chip-production/ [P]
+[8] ORCA Computing Limited, “Linear-optical encoded GHZ measurements and fault-tolerant quantum computation and communication,” Justia Patents, Oct. 7, 2025. [Online]. Available: https://patents.justia.com/patent/12437225 [G]
+[9] “Toshiba Europe, quantum technology news (Orange Business 2025-06-11; Quantum Bridge 2026-03-16),” toshiba.eu. [Online]. Available: https://www.toshiba.eu/quantum/news/ [C]
 
 ## Открытые пункты верификации
 Приведённые в основном отчёте «потери в волноводе 0.5 дБ/м» не совпадают с цифрой Omega для одномодового SiN; здесь используется 1.8 ± 0.2 дБ/м, и расхождение не устранено [G:PSIQ-OMEGA-METRICS-2025]. Страница аннотации arXiv для quant-ph/9809034 вернула текст аннотации, но не список авторов и не журнальную ссылку; атрибуция Brendel, Gisin, Tittel и Zbinden опирается на идентификатор. Пороги потерь для слияния 6-колец различаются между источниками на порядок и не согласованы [G:FBQC-THRESHOLD-CONFLICT-2026]. Ни на одной платформе не существует демонстрации извлечения синдрома с геральдированной потерей. Публичные страницы Toshiba не называют «time-bin» применительно к её развёртываниям 2025–26 годов, поэтому такая атрибуция здесь не используется за пределами общего контекста QKD [9]. Величина 0.27 дБ на наносекунду задержки на кристалле выведена из опубликованных цифр потерь, а не измерена.

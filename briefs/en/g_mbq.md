@@ -57,15 +57,14 @@ Requires the Majorana-parity carrier (two wires per tetron) and quantum-capacita
 Falsifiable in 12–24 months: a first joint (X-basis) parity measurement with a stated assignment error; any operation or entanglement between two tetrons; a published X/Z ratio below 100×. Confirm on the first two; demote to theory if none lands by end-2027. Best case 2029, measurement-only Cliffords on a small array; worst case, X-basis poisoning is intrinsic to the two-loop geometry and the line closes. Open: is the asymmetry geometric or material; does anyone outside Microsoft attempt a joint measurement.
 
 ## Sources
-[1] Bonderson, Freedman, Nayak — "Measurement-Only Topological Quantum Computation" — Phys. Rev. Lett. 101, 010501 (arXiv:0802.0279) — 2008 — https://arxiv.org/abs/0802.0279
-[2] Karzig et al. — "Scalable designs for quasiparticle-poisoning-protected topological quantum computation with Majorana zero modes" — Phys. Rev. B 95, 235305 (arXiv:1610.05289) — 2017 — https://arxiv.org/abs/1610.05289
-[3] Aghaee et al. (Microsoft Quantum) — "20 Second Parity Lifetime in an InAs–Pb Tetron Device" — arXiv:2606.03884 — 2026-06-02 — https://arxiv.org/abs/2606.03884
-[4] Aghaee et al. (Microsoft Quantum) — tetron Z-loop / X-loop parity lifetimes — arXiv:2507.08795 — 2025-07 — https://arxiv.org/abs/2507.08795
-[5] Microsoft Azure Quantum — "Interferometric single-shot parity measurement in InAs–Al hybrid devices" — Nature 638, 651–655 — 2025-02-19 — https://www.nature.com/articles/s41586-024-08445-2
-[6] Legg — "On the robustness of topological gap detection via transport" — Nature, Matters Arising — 2026-06-24 (Microsoft reply same day, https://www.nature.com/articles/s41586-026-10568-7) — https://www.nature.com/articles/s41586-026-10567-8
-[7] van Loo, Zatelli, Steffensen, Roovers et al. (QuTech/TU Delft) — "Single-shot parity readout of a minimal Kitaev chain" — Nature 650 — 2026-02-11 — https://www.nature.com/articles/s41586-025-09927-7
-[8] Microsoft — "Majorana 2: a scalable, error-corrected quantum processor" — Azure Quantum blog [C] — 2026-06 — https://quantum.microsoft.com/en-us/insights/blogs/majorana-2-scalable-quantum-processor
-[9] DARPA — "Quantum computing approaches" (US2QC) — DARPA news — 2025-02-06 — https://www.darpa.mil/news/2025/quantum-computing-approaches
+[1] P. Bonderson, M. Freedman, and C. Nayak, “Measurement-Only Topological Quantum Computation,” [arXiv:0802.0279](https://arxiv.org/abs/0802.0279), Feb. 2008.
+[2] T. Karzig *et al.*, “Scalable designs for quasiparticle-poisoning-protected topological quantum computation with Majorana zero modes,” *Phys. Rev. B*, vol. 95, no. 23, Art. no. 235305, Jun. 2017, doi: [10.1103/PhysRevB.95.235305](https://doi.org/10.1103/PhysRevB.95.235305). [arXiv:1610.05289](https://arxiv.org/abs/1610.05289).
+[3] M. Aghaee *et al.*, “20 Second Parity Lifetime in an InAs–Pb Tetron Device,” [arXiv:2606.03884](https://arxiv.org/abs/2606.03884), Jun. 2026.
+[4] M. Aghaee *et al.*, “Distinct Lifetimes for X and Z Loop Measurements in a Majorana Tetron Device,” [arXiv:2507.08795](https://arxiv.org/abs/2507.08795), Jul. 2025.
+[5] Microsoft Azure Quantum, “Interferometric single-shot parity measurement in InAs–Al hybrid devices,” *Nature*, vol. 638, no. 8051, pp. 651–655, Feb. 2025, doi: [10.1038/s41586-024-08445-2](https://doi.org/10.1038/s41586-024-08445-2).
+[6] Microsoft Quantum, “Reply to: On the robustness of topological gap detection via transport,” *Nature*, vol. 654, no. 8120, pp. E27–E28, Jun. 2026, doi: [10.1038/s41586-026-10568-7](https://doi.org/10.1038/s41586-026-10568-7).
+[7] N. van Loo *et al.*, “Single-shot parity readout of a minimal Kitaev chain,” *Nature*, vol. 650, no. 8101, pp. 334–339, Feb. 2026, doi: [10.1038/s41586-025-09927-7](https://doi.org/10.1038/s41586-025-09927-7).
+[8] C. Nayak, “Majorana 2 – Microsoft's Scalable Quantum Processor With Reliable, Long-Lasting Qubits,” Microsoft Quantum. [Online]. Available: https://quantum.microsoft.com/en-us/insights/blogs/majorana-2-scalable-quantum-processor [C]
 
 ## Open verification items
 No dollar figure is public for DARPA's US2QC award to Microsoft. The arXiv HTML of [4] also shows X-loop ~4 µs and Z-loop ~9.3 ms for other tunings; the fact-checked 14.5 µs / 12.4 ms are used here and the ~1000× ratio is robust across both readings, the point values are not. No feed-forward latency, dot–wire coupling switching time or projected gate time has been published for this mechanism.

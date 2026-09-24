@@ -29,7 +29,7 @@ a = 1.0, полностью инженерный слой классическо
 Выделенного кремния нет и, в отличие от декодеров на паросочетании или кластеризации, нет заявленного расхода ресурсов FPGA, который можно было бы проверить [G:RIVERLANE-LCD-2025-12]. Стоимость — это трафик плоскости управления: события детектирования наружу, обновления параметров внутрь, по собственному каналу декодера; вендор-нейтральной версией этого служит время кругового обхода NVQLink — 3.84 µs в среднем и 3.96 µs максимум [C][G:NVQLINK-NUMBERS-2025-11]. Обновления идут на медленной временной шкале, вне цикла 1.1 µs, — именно поэтому метод уживается с Willow там, где более тяжёлые вычисления в контуре не ужились бы. Поставки — это мощности GPU/TPU плюс стек управления; отдельного правила экспортного контроля нет.
 
 ## Роль в стеке
-Требует декодера в контуре, относительно которого и ведётся подстройка, — работающего в реальном времени нейросетевого декодера AlphaQubit2, у которого по состоянию на 4 сентября 2026 г. нет отдельной публикации и который существует только внутри работы по RL [G:ALPHAQUBIT2-2026-07]. Только сверхпроводниковые трансмоны; производный раунд не меняется и равен 0.65 µs против измеренного цикла QEC 1.1 µs, ~0.91 MHz. Верификация: для рекордного прогона Λ нет, воспроизведения на второй платформе нет, а единственное живое нейросетевое декодирование в замкнутом контуре где-либо ещё — это демонстрация с d=3 и контуром 550 ns [D][6]. Конфликт значений: 20% и >1,000 параметров идут из отраслевой прессы [P][3], тогда как аннотация даёт 3.5× [D][1]; доверять следует статье.
+Требует декодера в контуре, относительно которого и ведётся подстройка, — работающего в реальном времени нейросетевого декодера AlphaQubit2, у которого по состоянию на 4 сентября 2026 г. нет отдельной публикации и который существует только внутри работы по RL [G:ALPHAQUBIT2-2026-07]. Только сверхпроводниковые трансмоны; производный раунд не меняется и равен 0.65 µs против измеренного цикла QEC 1.1 µs, ~0.91 MHz. Верификация: для рекордного прогона Λ нет, воспроизведения на второй платформе нет, а единственное живое нейросетевое декодирование в замкнутом контуре где-либо ещё — это демонстрация с d=3 и контуром 550 ns [D][3]. Конфликт значений: 20% и >1,000 параметров идут из отраслевой прессы [P][4], тогда как аннотация даёт 3.5× [D][1]; доверять следует статье.
 
 ## Акторы и экономика
 **Кто.**
@@ -37,16 +37,16 @@ a = 1.0, полностью инженерный слой классическо
 | Организация | Роль | Страна | Что именно | Свидетельство |
 |---|---|---|---|---|
 | Google Quantum AI | разработчик | США | Управление на RL, AlphaQubit2, Willow | [D][1] |
-| Google DeepMind | разработчик | Великобритания | Нейросетевые декодеры, линия AlphaQubit | [D][4] |
-| Q-CTRL | поставщик | Австралия | Калибровочное ПО Boulder Opal | [C][5] |
-| IQA Shenzhen | исследования | Китай | Единственное живое нейросетевое декодирование в замкнутом контуре | [D][6] |
+| Google DeepMind | разработчик | Великобритания | Нейросетевые декодеры, линия AlphaQubit | [D][5] |
+| Q-CTRL | поставщик | Австралия | Калибровочное ПО Boulder Opal | [C][6] |
+| IQA Shenzhen | исследования | Китай | Единственное живое нейросетевое декодирование в замкнутом контуре | [D][3] |
 
 **Деньги.**
-2024-10-08 · Q-CTRL · расширенный раунд Series B · USD $113 M (AUD $166 M) · ведущий инвестор GP Bullhound · закрыт [C][5]
+2024-10-08 · Q-CTRL · расширенный раунд Series B · USD $113 M (AUD $166 M) · ведущий инвестор GP Bullhound · закрыт [C][6]
 2025-10-03 · Google Quantum AI · поглотила Atlantic Quantum, управление на холодной ступени · сумма не раскрыта [P][G:GOOGLE-ATLANTIC-2025-10]
 2025-11-06 · DARPA QBI Stage B · IBM — единственный трансмонный вендор, Google отсутствует · ≤$15 M каждому [G:QBI-STAGEB-2025-11]
 
-**Рынок и цепочка поставок.** Рынка компонентов нет; оцениваемый заменитель — калибровочное ПО плюс такты GPU/TPU, которые продаёт только Q-CTRL, на платформах Diraq, Oxford Quantum Circuits и Rigetti [C][5]. Платит по G3/G4.
+**Рынок и цепочка поставок.** Рынка компонентов нет; оцениваемый заменитель — калибровочное ПО плюс такты GPU/TPU, которые продаёт только Q-CTRL, на платформах Diraq, Oxford Quantum Circuits и Rigetti [C][6]. Платит по G3/G4.
 
 **ИС и стандарты.** Датированного патентного семейства по калибровке QEC под управлением RL по состоянию на 4 сентября 2026 г. нет; Google публикует метод и придерживает декодер — вот где защитный ров.
 
@@ -60,12 +60,12 @@ a = 1.0, полностью инженерный слой классическо
 Подтвердить, если калибровка с RL в контуре появится на второй платформе либо будет опубликовано Λ для прогона под управлением RL; понизить в статусе, если она останется привязанной только к Willow. Лучший случай к 2029 году: стандарт во всех сверхпроводниковых отказоустойчивых стеках, продаваемый вендорами систем управления. Худший случай: один невоспроизведённый кристалл. Открыто: переживает ли независимая от размера оптимизация выход за пределы моделирования и можно ли сделать контур независимым от декодера?
 
 ## Источники
-[1] Sivak, Morvan, Broughton, Cortiñas et al. (Google Quantum AI), "Reinforcement learning control of quantum error correction", Nature 655, 2026-07-08 (preprint arXiv:2511.08493, 2025-11-11) — https://www.nature.com/articles/s41586-026-10759-2
-[2] Google Quantum AI, "Quantum error correction below the surface code threshold", Nature 638, 920, 2024-12-09 — https://www.nature.com/articles/s41586-024-08449-y
-[3] "Google uses AI reinforcement learning for quantum error correction", The Next Platform, 2026-07-20 [P] — https://www.nextplatform.com/compute/2026/07/20/google-uses-ai-reinforcement-learning-for-quantum-error-correction/5275023
-[4] Bausch et al. (Google DeepMind / Google Quantum AI), "Learning high-accuracy error decoding for quantum processors", Nature 635, 834–840, 2024-11-20 — https://www.nature.com/articles/s41586-024-08148-8
-[5] Q-CTRL, "Q-CTRL sets global quantum technology fundraising record, increasing Series B to USD $113M, led by GP Bullhound", 2024-10-08 [C] — https://q-ctrl.com/blog/q-ctrl-sets-global-quantum-technology-fundraising-record-increasing-series-b-to-usd-113m-led-by-gp-bullhound
-[6] Yang, Sun, Wu et al. (IQA Shenzhen / SUSTech / Peking University / Hefei), "Real-time surface-code error correction using an FPGA-based neural-network decoder", arXiv:2605.04892, 2026-05-06 — https://arxiv.org/abs/2605.04892
+[1] V. Sivak *et al.*, “Reinforcement learning control of quantum error correction,” *Nature*, vol. 655, no. 8124, pp. 879–884, Jul. 2026, doi: [10.1038/s41586-026-10759-2](https://doi.org/10.1038/s41586-026-10759-2).
+[2] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y).
+[3] X. Yang *et al.*, “Real-time Surface-Code Error Correction Using an FPGA-based Neural-Network Decoder,” [arXiv:2605.04892](https://arxiv.org/abs/2605.04892), May 2026. Also https://arxiv.org/html/2605.04892.
+[4] J. Burt, “Google Uses AI Reinforcement Learning For Quantum Error Correction,” The Next Platform, Jul. 20, 2026. [Online]. Available: https://www.nextplatform.com/compute/2026/07/20/google-uses-ai-reinforcement-learning-for-quantum-error-correction/5275023 [P]
+[5] J. Bausch *et al.*, “Learning high-accuracy error decoding for quantum processors,” *Nature*, vol. 635, no. 8040, pp. 834–840, Nov. 2024, doi: [10.1038/s41586-024-08148-8](https://doi.org/10.1038/s41586-024-08148-8).
+[6] Q-CTRL, “Q-CTRL Sets Global Quantum Technology Fundraising Record, Increasing Series B to USD $113M, Led by GP Bullhound,” Oct. 8, 2024. [Online]. Available: https://q-ctrl.com/blog/q-ctrl-sets-global-quantum-technology-fundraising-record-increasing-series-b-to-usd-113m-led-by-gp-bullhound [C]
 [G] AlphaQubit2 is named and described as "a scalable and real-time neural decoder for topological quantum codes" in Sivak, Morvan, Broughton et al. (Google Quantum AI), "Reinforcement… · 2026-07-08 · https://link.springer.com/article/10.1038/s41586-026-10759-2
 [G] Google Quantum AI, "Quantum error correction below the surface code threshold" (Nature 638, 920; arXiv:2408.13687): the real-time decoder for the distance-5 10^6-cycle run is a spe… · 2024-12-09 · https://arxiv.org/abs/2408.13687
 [G] Ding, Hays, Sung, ... Serniak, Oliver (MIT / MIT Lincoln Laboratory), Phys. Rev. X 13, 031035 (2023-09-25): fluxonium CZ with transmon coupler, peak CZ fidelities 99.85-99.9%, rein… · 2023-09-25 · https://journals.aps.org/prx/abstract/10.1103/PhysRevX.13.031035
@@ -75,7 +75,7 @@ a = 1.0, полностью инженерный слой классическо
 [G] DARPA QBI Stage B (announced 2025-11-06, ~12 months, up to $15 M each): Atom Computing, Diraq, IBM, IonQ, Nord Quantique, Photonic Inc., Quantinuum, Quantum Motion, QuEra, Silicon… · 2025-11-06 · https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection
 ## Открытые пункты верификации
 - Для прогона с d=7 под управлением RL значение Λ не приводится, поэтому влияние на масштабирование по кодовому расстоянию не измерено.
-- Цифры «~20% снижения логической ошибки» и «>1,000 живых параметров управления» встречаются только в отраслевой прессе [3]; аннотация статьи приводит 3.5× и десятки тысяч параметров в моделировании.
+- Цифры «~20% снижения логической ошибки» и «>1,000 живых параметров управления» встречаются только в отраслевой прессе [4]; аннотация статьи приводит 3.5× и десятки тысяч параметров в моделировании.
 - У AlphaQubit2 по состоянию на 4 сентября 2026 г. нет отдельной публикации.
 - Воспроизведения калибровки с RL в контуре на второй платформе не найдено.
 - Раунд Series B у Q-CTRL компания приводит как USD $113 M, а австралийская отраслевая пресса — как «$167 M», что есть пересчёт той же цифры AUD $166 M; преимущество имеет релиз компании.

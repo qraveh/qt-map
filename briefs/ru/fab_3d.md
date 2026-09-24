@@ -27,7 +27,7 @@ updated: 2026-09-04
 Ограничивающий показатель — объём, а не Q: ни выхода годных на корпус, ни стоимости, ни времени подстройки не опубликовано.
 
 ## Производство, материалы и цепочка поставок
-Корпуса вытачиваются на ЧПУ или электроэрозионно из заготовок высокой чистоты, полируются, герметизируются и подстраиваются поштучно. Связывающее ограничение — объём криостата, а не площадь пластины: картина, обратная планарной дорожной карте. Ничто не интегрировано на кристалле, поэтому каждая мода тянет собственный коаксиал до комнатной температуры; на уровне 10³ мод стеной становятся число коаксиалов и площадь холодной плиты, а 10⁴–10⁶ недостижимы. Helium от Alice & Bob на 18 мод потребляет ~40 kW в масштабе всей системы [C][4]. Механическая обработка у каждого поставщика своя, сторонней фабрики (foundry) резонаторов не найдено; единственный названный поблизости внешний поставщик — NASA Jet Propulsion Laboratory — изготавливает криогенный управляющий чип D-Wave, а не корпуса [C][7]. Рефрижераторы сконцентрированы на Bluefors, которой принадлежит и Cryomech [G:BLUEFORS-CRYOMECH-2023]. Правил экспортного контроля, специфичных для корпусов резонаторов, не найдено; экспозиция идёт через общие ограничения на станочное оборудование.
+Корпуса вытачиваются на ЧПУ или электроэрозионно из заготовок высокой чистоты, полируются, герметизируются и подстраиваются поштучно. Связывающее ограничение — объём криостата, а не площадь пластины: картина, обратная планарной дорожной карте. Ничто не интегрировано на кристалле, поэтому каждая мода тянет собственный коаксиал до комнатной температуры; на уровне 10³ мод стеной становятся число коаксиалов и площадь холодной плиты, а 10⁴–10⁶ недостижимы. Helium от Alice & Bob на 18 мод потребляет ~40 kW в масштабе всей системы [C][4]. Механическая обработка у каждого поставщика своя, сторонней фабрики (foundry) резонаторов не найдено; единственный названный поблизости внешний поставщик — NASA Jet Propulsion Laboratory — изготавливает криогенный управляющий чип D-Wave, а не корпуса [C][5]. Рефрижераторы сконцентрированы на Bluefors, которой принадлежит и Cryomech [G:BLUEFORS-CRYOMECH-2023]. Правил экспортного контроля, специфичных для корпусов резонаторов, не найдено; экспозиция идёт через общие ограничения на станочное оборудование.
 
 ## Роль в стеке
 Даёт корпуса для бозонной моды резонатора и, следовательно, для кот- и GKP-кодирований, двухрельсового стирания (erasure) и гейтов через анциллу. Заменяет планарную литографию и конфликтует с плотной 2D-укладкой: сантиметровые корпуса не могут последовать за трансмонами к 10⁴–10⁶ на одном кристалле. В производный такт он не вносит ничего — 1.44 µs производного раунда против измеренных 2.8 µs на кот-пути и 2.8 µs против измеренных ~2 µs на двухрельсовом, — задавая время жизни, а не тайминг. Смежный пустой слот — групповой или пластинный (wafer-scale) техпроцесс изготовления бозонных мод. Верификация: Q 2013 года и время жизни 2023 года — результаты одиночных групп, причём разных; для корпусов λ/4 2026 года добротность не публиковалась [D][3].
@@ -39,12 +39,12 @@ updated: 2026-09-04
 |---|---|---|---|---|
 | Alice & Bob | разработчик | Франция | Сама изготавливает корпуса резонаторов для котов; следующими заявлены чипы на 48 котов | [C][4] |
 | D-Wave | разработчик | США | Участок в New Haven изготавливает коаксиальные двухрельсовые пары λ/4 | [D][3] |
-| NASA JPL | поставщик | США | Изготавливает часть криогенного управляющего чипа D-Wave | [C][7] |
+| NASA JPL | поставщик | США | Изготавливает часть криогенного управляющего чипа D-Wave | [C][5] |
 | Bluefors | поставщик | Финляндия | Рефрижераторы растворения — тот объём, за который борются эти корпуса | [G:BLUEFORS-CRYOMECH-2023] |
 
 **Деньги.**
 2026-01-20 · D-Wave · поглощение Quantum Circuits · $550 M · — · закрыто [G:DWAVE-QCI-2026-01]
-2026-01-06 · D-Wave · кристальное криогенное управление, часть изготовлена JPL · — · объявлено [C][7]
+2026-01-06 · D-Wave · кристальное криогенное управление, часть изготовлена JPL · — · объявлено [C][5]
 2026-08-06 · D-Wave · отчёт за 2-й квартал · заказы за 1-е полугодие $35.5 M, обязательства $40.7 M · отражено в отчётности [G:DWAVE-Q2-2026-GATEMODEL]
 
 **Рынок и цепочка поставок.** Рынка механической обработки резонаторов не существует: у каждого поставщика свой небольшой внутренний участок, и он же — единая точка отказа. Переговорная сила находится у изготовителей криостатов. Платят G1 и G3; G4 не платит.
@@ -61,18 +61,17 @@ updated: 2026-09-04
 Подтвердить к 2028, если какой-либо поставщик опубликует выход годных на корпус или корпус размером меньше сантиметра при сопоставимой Q; понизить оценку, если механические участки будут молчать и дальше, пока планарные кубиты со стиранием масштабируются. Лучший случай, 2029: массивы резонаторов группового изготовления. Худший случай: корпуса ручной обработки бессрочно, что удерживает ветвь на уровне около 10² мод. Открытые вопросы: повышает ли бесшовная обработка Q; какова реальная стоимость одной моды? Следить за чипом Alice & Bob на 48 котов и за DR49 у D-Wave.
 
 ## Источники
-[1] Reagor, Paik, Catelani, Sun, Axline, Holland, Pop, Masluk, Brecht, Frunzio, Devoret, Glazman, Schoelkopf (Yale) · "Reaching 10 ms single photon lifetimes for superconducting aluminum cavities" · arXiv:1302.4408 · 2013-02-18 — https://arxiv.org/abs/1302.4408
-[2] Milul, Guttel, Goldblatt, Hazanov, Joshi, Chausovsky, Kahn, Çiftyürek, Lafont, Rosenblum (Weizmann Institute) · "Superconducting cavity qubit with tens of milliseconds single-photon coherence time" · PRX Quantum 4, 030336 · 2023-09-14 — https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.4.030336
-[3] Quantum Circuits / D-Wave · dual-rail qubits in pairs of 3D λ/4 coaxial microwave cavities · Nature 656, 47 · 2026-08-05 — https://www.nature.com/articles/s41586-026-10822-y
-[4] Alice & Bob · "Alice & Bob unveils first quantum system" (Helium, 18 cat qubits, ~40 kW, 48-cat upgrade claimed) · newsroom · 2026-06-10 [C] — https://alice-bob.com/newsroom/alice-bob-unveils-first-quantum-system/
-[5] Putterman et al. (AWS/Caltech) · "Hardware-efficient quantum error correction using concatenated bosonic qubits" (Ocelot) · Nature 638, 927–934 · 2025-02-26 — https://www.nature.com/articles/s41586-025-08642-7
-[6] Nord Quantique · single-mode GKP characterisation, T1 360 µs · arXiv:2607.06718 · 2026-07 — https://arxiv.org/abs/2607.06718
-[7] D-Wave · "D-Wave Demonstrates First Scalable, On-Chip Cryogenic Control of Gate-Model Qubits" · press release · 2026-01-06 [C] — https://www.dwavequantum.com/company/newsroom/press-release/d-wave-demonstrates-first-scalable-on-chip-cryogenic-control-of-gate-model-qubits/
-[8] D-Wave · "D-Wave to acquire Quantum Circuits Inc." · press release · 2026-01-07 [C] — https://www.dwavequantum.com/company/newsroom/press-release/d-wave-to-acquire-quantum-circuits-inc-establishing-world-s-leading-quantum-computing-company/
+[1] M. Reagor *et al.*, “Reaching 10 ms single photon lifetimes for superconducting aluminum cavities,” [arXiv:1302.4408](https://arxiv.org/abs/1302.4408), Feb. 2013.
+[2] O. Milul *et al.*, “Superconducting Cavity Qubit with Tens of Milliseconds Single-Photon Coherence Time,” *PRX Quantum*, vol. 4, no. 3, Art. no. 030336, Sep. 2023, doi: [10.1103/PRXQuantum.4.030336](https://doi.org/10.1103/PRXQuantum.4.030336).
+[3] N. Mehta *et al.*, “An entangling gate for dual-rail erasure qubits,” *Nature*, vol. 656, no. 8126, pp. 47–53, Aug. 2026, doi: [10.1038/s41586-026-10822-y](https://doi.org/10.1038/s41586-026-10822-y). [arXiv:2503.10935](https://arxiv.org/abs/2503.10935).
+[4] N. Coppola, “Alice & Bob Unveils First Quantum System, Helium,” Alice & Bob, Jun. 10, 2026. [Online]. Available: https://alice-bob.com/newsroom/alice-bob-unveils-first-quantum-system/ [C]
+[5] D-Wave, “D-Wave Demonstrates First Scalable, On-Chip Cryogenic Control of Gate-Model Qubits,” press release, Jan. 6, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-demonstrates-first-scalable-on-chip-cryogenic-control-of-gate-model-qubits/ [C]
+[6] H. Putterman *et al.*, “Hardware-efficient quantum error correction via concatenated bosonic qubits,” *Nature*, vol. 638, no. 8052, pp. 927–934, Feb. 2025, doi: [10.1038/s41586-025-08642-7](https://doi.org/10.1038/s41586-025-08642-7).
+[7] S. Turcotte *et al.*, “Quantum error correction of a grid-state qubit with state preparation and measurement errors below 10⁻³,” [arXiv:2607.06718](https://arxiv.org/abs/2607.06718), Jul. 2026.
 
 ## Открытые пункты верификации
 Показатель 34 ms получен в Weizmann Institute (T1 25.6 ms, T2 34 ms), а не группой из линии Yale, и ни аннотация, ни использованное журнальное изложение не утверждают, что резонатор имеет ниобиевое покрытие.
 Ни у одного поставщика не найдено показателей выхода годных на корпус, времени подстройки или стоимости.
 Независимого воспроизведения ни Q > 0.5×10⁹ 2013 года, ни времени жизни 2023 года не обнаружено; оба результата получены одиночными группами.
-Распространяется ли роль JPL в управляющем чипе D-Wave на механическое изготовление корпусов резонаторов, в источнике [7] не сказано; данная справка исходит из того, что нет.
-AWS [5] и Nord Quantique [6] используют механически изготовленные корпуса, но ничего не публикуют о самом техпроцессе, поэтому они приведены для контекста и не указаны как акторы этого слоя.
+Распространяется ли роль JPL в управляющем чипе D-Wave на механическое изготовление корпусов резонаторов, в источнике [5] не сказано; данная справка исходит из того, что нет.
+AWS [6] и Nord Quantique [7] используют механически изготовленные корпуса, но ничего не публикуют о самом техпроцессе, поэтому они приведены для контекста и не указаны как акторы этого слоя.

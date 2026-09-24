@@ -17,23 +17,23 @@ updated: 2026-09-04
 Структура ошибок, которую он потребляет: паулиевские синдромы повёрнутого поверхностного кода.
 
 ## Физика и пределы
-Пропускная способность обязана разбирать один раунд за цикл — 1.1 µs на аппаратуре класса Willow [D][1], — и декодер кластеризации Riverlane это обеспечивает вплоть до d=17 [D][2]. Задержка реакции ограничивает каждый не-клиффордовский гейт, и измерить её можно только в замкнутом контуре: в Shenzhen контур замкнули за 550 ns при d=3, внутри цикла 1.25 µs [D][4]. За задержку платят точностью: порог LCD составляет 0.55% против 0.7% у программного MWPM [D][2], а на одних и тех же синдромах Willow паросочетание дало Λ = 2.04 там, где нейросетевой декодер дал 2.14 [D][1]. Вторая стена — площадь: LCD при d=17 занимает ~6% кристалла Xilinx VU19P [D][2], то есть несколько десятков логических кубитов на одну микросхему верхнего уровня.
+Пропускная способность обязана разбирать один раунд за цикл — 1.1 µs на аппаратуре класса Willow [D][1], — и декодер кластеризации Riverlane это обеспечивает вплоть до d=17 [D][2]. Задержка реакции ограничивает каждый не-клиффордовский гейт, и измерить её можно только в замкнутом контуре: в Shenzhen контур замкнули за 550 ns при d=3, внутри цикла 1.25 µs [D][3]. За задержку платят точностью: порог LCD составляет 0.55% против 0.7% у программного MWPM [D][2], а на одних и тех же синдромах Willow паросочетание дало Λ = 2.04 там, где нейросетевой декодер дал 2.14 [D][1]. Вторая стена — площадь: LCD при d=17 занимает ~6% кристалла Xilinx VU19P [D][2], то есть несколько десятков логических кубитов на одну микросхему верхнего уровня.
 
 ## Инженерное состояние (state of the art)
 
 | Дата | Показатель | Кто | Тег |
 |---|---|---|---|
-| 2025-02-20 | Точный MWPM за 0.8 µs в среднем, d=13, p=0.1%, 62 MHz | Yale (Micro Blossom) | [D][3] |
+| 2025-02-20 | Точный MWPM за 0.8 µs в среднем, d=13, p=0.1%, 62 MHz | Yale (Micro Blossom) | [D][4] |
 | 2025-12-17 | Кластеризация менее 1 µs на раунд вплоть до d=17 на одной FPGA | Riverlane | [D][2] |
-| 2026-05-06 | Первое декодирование на FPGA в замкнутом контуре на работающем процессоре, 550 ns при d=3 | IQA Shenzhen | [D][4] |
+| 2026-05-06 | Первое декодирование на FPGA в замкнутом контуре на работающем процессоре, 550 ns при d=3 | IQA Shenzhen | [D][3] |
 
 Relay-BP от IBM для gross-кода заявляет итерацию 24 ns и менее 1 µs на цикл при p ниже 3×10⁻³ — на смоделированных синдромах [S][5].
 
 ## Производство, материалы и цепочка поставок
-Собственного производства нет: коммерческая плата FPGA в стойке комнатной температуры. Каждый опубликованный декодер реального времени работает на кремнии AMD/Xilinx (VU19P для LCD [D][2], VMK180 для Micro Blossom [D][3]); единственная коммерческая альтернатива сменила владельца, когда Intel продала 51% Altera фонду Silver Lake при оценке $8.75 B в апреле 2025 года [G][11], — дуополия, одна сторона которой находится под фондом прямых инвестиций. FPGA верхнего уровня попадают в периметр экспортного контроля США. Нагрузка по вводу-выводу — это канал синдромов: на 10³ кубитов она тривиальна, но на 10⁴–10⁶ его скорость вынуждает вводить предварительное декодирование при 4 K либо множество параллельных плат.
+Собственного производства нет: коммерческая плата FPGA в стойке комнатной температуры. Каждый опубликованный декодер реального времени работает на кремнии AMD/Xilinx (VU19P для LCD [D][2], VMK180 для Micro Blossom [D][4]); единственная коммерческая альтернатива сменила владельца, когда Intel продала 51% Altera фонду Silver Lake при оценке $8.75 B в апреле 2025 года [G][6], — дуополия, одна сторона которой находится под фондом прямых инвестиций. FPGA верхнего уровня попадают в периметр экспортного контроля США. Нагрузка по вводу-выводу — это канал синдромов: на 10³ кубитов она тривиальна, но на 10⁴–10⁶ его скорость вынуждает вводить предварительное декодирование при 4 K либо множество параллельных плат.
 
 ## Роль в стеке
-Требует повёрнутого поверхностного кода и даёт поток коррекций, необходимый отказоустойчивости; он вытесняет декодирование на GPU, у которого хвостовая задержка недетерминирована — 3.84 µs в среднем и 3.96 µs максимум только на прохождение NVQLink [C][7]. Его вклад в производный такт — это нижняя граница, а не слагаемое: он обязан укладываться в цикл 1.1 µs, и укладывается. Верификация: это показатели декодера в отрыве от системы, на воспроизведённых или смоделированных синдромах, живым является только контур при d=3; фигурирующие у Micro Blossom 367 ns — цифра из репозитория, не встречающаяся ни в одной статье, тогда как опубликованное значение равно 0.8 µs [D][3].
+Требует повёрнутого поверхностного кода и даёт поток коррекций, необходимый отказоустойчивости; он вытесняет декодирование на GPU, у которого хвостовая задержка недетерминирована — 3.84 µs в среднем и 3.96 µs максимум только на прохождение NVQLink [C][7]. Его вклад в производный такт — это нижняя граница, а не слагаемое: он обязан укладываться в цикл 1.1 µs, и укладывается. Верификация: это показатели декодера в отрыве от системы, на воспроизведённых или смоделированных синдромах, живым является только контур при d=3; фигурирующие у Micro Blossom 367 ns — цифра из репозитория, не встречающаяся ни в одной статье, тогда как опубликованное значение равно 0.8 µs [D][4].
 
 ## Акторы и экономика
 **Кто.**
@@ -42,18 +42,18 @@ Relay-BP от IBM для gross-кода заявляет итерацию 24 ns 
 |---|---|---|---|---|
 | Riverlane | поставщик | Великобритания | LCD и Deltaflow — единственный коммерческий стек QEC | [D][2] |
 | AMD | поставщик | США | Кремний FPGA, на котором работает каждый опубликованный декодер | [D][2] |
-| Google | пользователь | США | Базовые 63 µs при d=5 [D][1], затем нейросетевое декодирование при d=7 | [D][6] |
-| IQA Shenzhen | исследования | Китай | Первое декодирование на FPGA в замкнутом контуре на работающем процессоре | [D][4] |
+| Google | пользователь | США | Базовые 63 µs при d=5 [D][1], затем нейросетевое декодирование при d=7 | [D][8] |
+| IQA Shenzhen | исследования | Китай | Первое декодирование на FPGA в замкнутом контуре на работающем процессоре | [D][3] |
 
 **Деньги.**
-2024-08-06 · Riverlane · Series C · $75 M · лид Planet First Partners · закрыт [C][8][G:RIVERLANE-FUNDING]
-2025-04-14 · Intel/Altera · продажа 51% · оценка предприятия $8.75 B · Silver Lake · объявлено [G][11][G:ALTERA-SILVERLAKE-2025]
+2024-08-06 · Riverlane · Series C · $75 M · лид Planet First Partners · закрыт [C][9][G:RIVERLANE-FUNDING]
+2025-04-14 · Intel/Altera · продажа 51% · оценка предприятия $8.75 B · Silver Lake · объявлено [G][6][G:ALTERA-SILVERLAKE-2025]
 
 **Рынок и цепочка поставок.** Один коммерческий поставщик декодеров, один доминирующий поставщик FPGA и NVIDIA, продвигающая NVQLink как альтернативу, — открытая оконечная точка при ускорителе из единственного источника [C][7]. Стек Riverlane поставляется интегрированным с управляющей аппаратурой Qblox [C][10]. Он оплачивает только G3 и G4.
 
-**ИС и стандарты.** Патент Riverlane GB 2641501 A «Quantum decoder» (опубликован 2025-12-10) заявляет сгруппированные обрабатывающие элементы, выполняющие кластеризацию на декодирующем гиперграфе, — то есть саму архитектуру LCD [G][12]. Стандарта на декодеры не существует.
+**ИС и стандарты.** Патент Riverlane GB 2641501 A «Quantum decoder» (опубликован 2025-12-10) заявляет сгруппированные обрабатывающие элементы, выполняющие кластеризацию на декодирующем гиперграфе, — то есть саму архитектуру LCD [G][11]. Стандарта на декодеры не существует.
 
-**Дорожные карты и послужной список.** Riverlane (2026-03-12 · megaquop до 2030, teraquop с 2033 · LCD опубликован в срок [C][9]). IBM (2025-10 · декодирование gross-кода на FPGA · по состоянию на 2026-09-04 по-прежнему моделирование [S][5]).
+**Дорожные карты и послужной список.** Riverlane (2026-03-12 · megaquop до 2030, teraquop с 2033 · LCD опубликован в срок [C][12]). IBM (2025-10 · декодирование gross-кода на FPGA · по состоянию на 2026-09-04 по-прежнему моделирование [S][5]).
 
 **Стратегическое прочтение.** Тот, кому принадлежит декодер, стоит между любым сверхпроводящим QPU и отказоустойчивостью, — но слой достаточно тонок, чтобы поставщики QPU делали его собственными силами, как поступили IBM и Google. AMD выигрывает в любом случае; угроза в том, что NVQLink обезличит интерфейс до уровня биржевого товара.
 
@@ -63,18 +63,18 @@ Relay-BP от IBM для gross-кода заявляет итерацию 24 ns 
 Подтвердить к концу 2027: декодирование в замкнутом контуре на живых синдромах при d ≥ 7 либо Relay-BP на реальной аппаратуре gross-кода; понизить оценку, если и то и другое останется моделированием. Лучший случай, 2029: переносимый интерфейс с кремнием от второго источника; худший — декодеры под каждого поставщика, которые невозможно сравнивать. Что связывает первым при d=17: задержка реакции или пропускная способность? Переживут ли поставщики декодеров переход поставщиков QPU на собственную разработку? Дотянется ли экспортный контроль до FPGA?
 
 ## Источники
-[1] Google Quantum AI, "Quantum error correction below the surface code threshold", Nature 638, 920, 2024-12-09 (parallel Sparse Blossom, 63 µs mean) — https://www.nature.com/articles/s41586-024-08449-y
-[2] Ziad, Zalawadiya, Topal, Camps, Gehér, Stafford, Turner (Riverlane), "Local clustering decoder as a fast and adaptive hardware decoder for the surface code", Nature Communications 16, 11048, 2025-12-17 — https://www.nature.com/articles/s41467-025-66773-x
-[3] Wu, Liyanage, Zhong (Yale), "Micro Blossom: Accelerated Minimum-Weight Perfect Matching Decoding for Quantum Error Correction", ASPLOS 2025; arXiv:2502.14787, 2025-02-20 — https://arxiv.org/abs/2502.14787
-[4] Yang, Sun, Wu et al. (IQA Shenzhen / SUSTech / Peking / Hefei), "Real-time Surface-Code Error Correction Using an FPGA-based Neural-Network Decoder", arXiv:2605.04892, 2026-05-06 — https://arxiv.org/abs/2605.04892
-[5] Maurer, Buehler, Kroener et al. (IBM), "Real-time decoding of the gross code memory with FPGAs", arXiv:2510.21600, 2025-10-24 [S] — https://arxiv.org/abs/2510.21600
-[6] Sivak, Morvan, Broughton et al. (Google Quantum AI), "Reinforcement learning control of quantum error correction", Nature 655, 2026-07-08 (real-time neural decoding at d=7) — https://www.nature.com/articles/s41586-026-10759-2
-[7] NVIDIA, NVQLink architecture (3.84 µs mean, 3.96 µs maximum round trip; 67 µs median BP-OSD decode), 2025-11-17 [C] — https://developer.nvidia.com/blog/nvidia-nvqlink-architecture-integrates-accelerated-computing-with-quantum-processors/
-[8] Riverlane, Series C release, 2024-08-06 [C] — https://www.riverlane.com/press-release/riverlane-raises-75-million-to-meet-surging-global-demand-for-quantum-error-correction-technology
-[9] Riverlane, QEC technology roadmap and Deltaflow datasheet, 2026-03-12 / 2026-05 [C][R] — https://www.riverlane.com/press-release/riverlane-publishes-qec-technology-roadmap
-[10] Qblox and Riverlane, closed-loop QEC integration (250 physical / 1 logical, sub-µs feedback), 2026-03-17 [C] — https://www.prnewswire.com/news-releases/qblox-and-riverlane-demonstrate-integration-enabling-real-time-quantum-error-correction-302716254.html
-[11] Altera, Silver Lake acquires 51% at an $8.75 B enterprise valuation, 2025-04-14 [G] — https://www.altera.com/newsroom/news/press-release/altera-silver-lake
-[12] Riverlane Ltd, GB 2641501 A "Quantum decoder", published 2025-12-10 [G] — https://patents.google.com/patent/GB2641501A/en
+[1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y).
+[2] A. B. Ziad *et al.*, “Local clustering decoder as a fast and adaptive hardware decoder for the surface code,” *Nat. Commun.*, vol. 16, no. 1, Art. no. 11048, Dec. 2025, doi: [10.1038/s41467-025-66773-x](https://doi.org/10.1038/s41467-025-66773-x).
+[3] X. Yang *et al.*, “Real-time Surface-Code Error Correction Using an FPGA-based Neural-Network Decoder,” [arXiv:2605.04892](https://arxiv.org/abs/2605.04892), May 2026. Also https://arxiv.org/html/2605.04892.
+[4] Y. Wu, N. Liyanage, and L. Zhong, “Micro Blossom: Accelerated Minimum-Weight Perfect Matching Decoding for Quantum Error Correction,” [arXiv:2502.14787](https://arxiv.org/abs/2502.14787), Feb. 2025. Also https://github.com/yuewuo/micro-blossom.
+[5] T. Maurer *et al.*, “Real-time decoding of the gross code memory with FPGAs,” [arXiv:2510.21600](https://arxiv.org/abs/2510.21600), Oct. 2025. [S]
+[6] Altera, “Altera Closes Silver Lake Investment to Become World's Largest Pure-play FPGA Solutions Provider,” Sep. 15, 2025. [Online]. Available: https://www.altera.com/newsroom/news/press-release/altera-silver-lake [G]
+[7] S. Caldwell *et al.*, “NVIDIA NVQLink Architecture Integrates Accelerated Computing with Quantum Processors,” NVIDIA Technical Blog, Nov. 17, 2025. [Online]. Available: https://developer.nvidia.com/blog/nvidia-nvqlink-architecture-integrates-accelerated-computing-with-quantum-processors/ [C]
+[8] V. Sivak *et al.*, “Reinforcement learning control of quantum error correction,” *Nature*, vol. 655, no. 8124, pp. 879–884, Jul. 2026, doi: [10.1038/s41586-026-10759-2](https://doi.org/10.1038/s41586-026-10759-2).
+[9] Riverlane, “Riverlane raises $75 million to meet surging global demand for quantum error correction technology,” company press release, Aug. 6, 2024. [Online]. Available: https://www.riverlane.com/press-release/riverlane-raises-75-million-to-meet-surging-global-demand-for-quantum-error-correction-technology [C]
+[10] Qblox and Riverlane, “Qblox and Riverlane demonstrate integration enabling real-time quantum error correction (250 physical / 1 logical, sub-µs feedback),” PR Newswire, Mar. 17, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/qblox-and-riverlane-demonstrate-integration-enabling-real-time-quantum-error-correction-302716254.html [C]
+[11] UK Intellectual Property Office, “GB 2641501 A, Quantum decoder, Riverlane Ltd (Ziad, Zalawadiya, Barber, Skorić),” patent application, filed · published, May 31, 2024. [Online]. Available: https://patents.google.com/patent/GB2641501A/en [G]
+[12] Riverlane, “Riverlane publishes QEC Technology Roadmap,” company press release, Mar. 12, 2026. [Online]. Available: https://www.riverlane.com/press-release/riverlane-publishes-qec-technology-roadmap [C]
 
 ## Открытые пункты верификации
 367 ns у Micro Blossom — утверждение из репозитория GitHub, не встречающееся ни в одной статье; опубликованный результат ASPLOS 2025 — 0.8 µs в среднем при d=13, p=0.1%.

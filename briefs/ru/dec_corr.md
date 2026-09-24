@@ -37,15 +37,15 @@ f = потери + стирание; a/c/d/e/g = отсутствуют — кл
 
 | Организация | Роль | Страна | Что именно | Свидетельство |
 |---|---|---|---|---|
-| Harvard/MIT | исследования | США | Коррелированное декодирование, суперпроверки, 1.73(13)× | [D][1][2] |
+| Harvard/MIT | исследования | США | Коррелированное декодирование, суперпроверки, 1.73(13)× | [D][1], [2] |
 | QuEra | разработчик | США | Соавтор; Libra 2028 на это рассчитывает | [D][1][C][8] |
-| QPerfect (BTQ) | поставщик | Франция | Декодер коррелированных потерь; цифровой двойник aQCess | [S][5][C][10] |
-| Atom Computing | пользователь | США | Yb с нативным стиранием; контрпример с дозагрузкой | [D][7][C][11] |
+| QPerfect (BTQ) | поставщик | Франция | Декодер коррелированных потерь; цифровой двойник aQCess | [S][5][C][9] |
+| Atom Computing | пользователь | США | Yb с нативным стиранием; контрпример с дозагрузкой | [D][7][C][10] |
 
 **Деньги.**
-2025-04-09 · BTQ Technologies · €2 M в QPerfect при оценке €10 M pre-money (16.67%) · term sheet [P][9]
-2026-07-22 · QPerfect · цифровой двойник aQCess, Equipex+ ANR-21-ESRE-0032 · объявлено [C][10]
-2026-06-16 · Atom Computing · $100 M раунда Series C (Third Point) + LOI по CHIPS на $100 M · закрыт + LOI [C][11][G:ATOM-300M-2026-06]
+2025-04-09 · BTQ Technologies · €2 M в QPerfect при оценке €10 M pre-money (16.67%) · term sheet [P][11]
+2026-07-22 · QPerfect · цифровой двойник aQCess, Equipex+ ANR-21-ESRE-0032 · объявлено [C][9]
+2026-06-16 · Atom Computing · $100 M раунда Series C (Third Point) + LOI по CHIPS на $100 M · закрыт + LOI [C][10][G:ATOM-300M-2026-06]
 2025-11-06 · DARPA QBI Stage B · Atom Computing, QuEra среди одиннадцати · ≤$15 M каждому [G:QBI-STAGEB-2025-11]
 
 **Рынок и цепочка поставок.** Рынка компонентов нет: такты GPU/FPGA уже куплены под паросочетание; риск концентрации лежит выше по цепочке — в визуализации и AOD. Платит только по G3/G4.
@@ -62,18 +62,18 @@ f = потери + стирание; a/c/d/e/g = отсутствуют — кл
 Подтвердить, если декодер QPerfect отработает на реальных синдромах либо второй вендор опубликует собственный выигрыш от учёта потерь; понизить в статусе, если выигрыш умрёт при дозагрузке или за пределами четырёх раундов. Лучший случай к 2029 году: значение по умолчанию во всех отказоустойчивых стеках на нейтральных атомах; худший — архитектура одной группы, никогда не выходящая за 10³ атомов. Открыто: держится ли 1.73× на 10⁴ атомах, на глубинах, где коррелированный граф перерастает память, и на ионах [12]?
 
 ## Источники
-[1] Bluvstein et al. (Harvard/MIT/QuEra), "Architectural mechanisms of a universal fault-tolerant quantum computer", Nature 649, 39, 2025-11-10 (arXiv:2506.20661) — https://www.nature.com/articles/s41586-025-09848-5
-[2] Cain, Zhao, Zhou, Meister, Bonilla Ataides, Jaffe, Bluvstein, Lukin, "Correlated decoding of logical algorithms with transversal gates", arXiv:2403.03272, 2024-03-05 (rev. 2025-04-07) — https://arxiv.org/abs/2403.03272
-[3] Zhou, Zhao, Cain, Bluvstein, Maskara, Duckering, Hu, Wang, Kubica, Lukin, "Low-overhead transversal fault tolerance for universal quantum computation", Nature, 2025, doi 10.1038/s41586-025-09543-5 (arXiv:2406.17653) — https://arxiv.org/abs/2406.17653
-[4] Wu, Kolkowitz, Puri, Thompson, "Erasure conversion for fault-tolerant quantum computing in alkaline earth Rydberg atom arrays", arXiv:2201.03540, 2022-01 — https://arxiv.org/abs/2201.03540
-[5] Perrin, Roger, Pupillo (Univ. Strasbourg/CNRS, QPerfect SAS), "Correlated atom loss as a resource for quantum error correction", arXiv:2603.24237, 2026-03 — https://arxiv.org/html/2603.24237
-[6] Princeton, [[4,2,2]] metastable ¹⁷¹Yb erasure conversion, Nature Physics 22, 910, 2026-06-12 (arXiv:2506.13724v2) — https://arxiv.org/html/2506.13724v2
-[7] Atom Computing/Microsoft, toric code with continuous reloading, arXiv:2606.04079, 2026-06 — https://arxiv.org/abs/2606.04079
-[8] QuEra, $230 M financing round, press release [C] — https://www.quera.com/press-releases/quera-expands-230-million-financing-round-advancing-quantum-accelerated-supercomputing
-[9] The Quantum Insider, "BTQ Technologies to invest over $2 million in QPerfect", 2025-04-09 [P] — https://thequantuminsider.com/2025/04/09/btq-technologies-to-invest-over-2-million-in-qperfect-to-advance-neutral-atom-quantum-computing/
-[10] BTQ Technologies / QPerfect and University of Strasbourg, aQCess partnership, PR Newswire, 2026-07-22 [C] — https://www.prnewswire.com/news-releases/btq-technologies-qperfect-subsidiary-and-the-university-of-strasbourg-partner-to-support-frances-first-public-neutral-atom-quantum-computing-platform-302831874.html
-[11] Atom Computing, raise of more than $300 M including a $100 M DoC letter of intent, 2026-06-16 [C] — https://www.prnewswire.com/news-releases/atom-computing-raises-more-than-300-million-to-accelerate-deployment-of-fault-tolerant-neutral-atom-quantum-computers-302800832.html
-[12] Microsoft Quantum + Quantinuum, [[16,6,4]] tesseract code, Nature 654, 2026-06-10 — https://www.nature.com/articles/s41586-026-10628-y
+[1] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661).
+[2] M. Cain *et al.*, “Correlated decoding of logical algorithms with transversal gates,” [arXiv:2403.03272](https://arxiv.org/abs/2403.03272), Mar. 2024.
+[3] H. Zhou *et al.*, “Low-Overhead Transversal Fault Tolerance for Universal Quantum Computation,” *Nature*, vol. 646, no. 8084, pp. 303–308, 2025, doi: [10.1038/s41586-025-09543-5](https://doi.org/10.1038/s41586-025-09543-5). [arXiv:2406.17653](https://arxiv.org/abs/2406.17653).
+[4] Y. Wu, S. Kolkowitz, S. Puri, and J. D. Thompson, “Erasure conversion for fault-tolerant quantum computing in alkaline earth Rydberg atom arrays,” *Nat. Commun.*, vol. 13, Art. no. 4657, 2022, doi: [10.1038/s41467-022-32094-6](https://doi.org/10.1038/s41467-022-32094-6). [arXiv:2201.03540](https://arxiv.org/abs/2201.03540).
+[5] H. Perrin, G. Roger, and G. Pupillo, “Correlated Atom Loss as a Resource for Quantum Error Correction,” [arXiv:2603.24237](https://arxiv.org/abs/2603.24237), Mar. 2026.
+[6] B. Zhang *et al.*, “Logical qubits with erasure conversion using metastable neutral atoms,” [arXiv:2506.13724](https://arxiv.org/abs/2506.13724), Jun. 2026. Also https://arxiv.org/html/2506.13724. Also https://arxiv.org/abs/2506.13724.
+[7] Atom Computing and Collaborators, “Quantum error correction with the toric code,” [arXiv:2606.04079](https://arxiv.org/abs/2606.04079), Jun. 2026.
+[8] QuEra Computing, “QuEra Expands $230 Million Financing Round Advancing Quantum-Accelerated Supercomputing,” Sep. 9, 2025. [Online]. Available: https://www.quera.com/press-releases/quera-expands-230-million-financing-round-advancing-quantum-accelerated-supercomputing [C]
+[9] BTQ Technologies, “BTQ Technologies' QPerfect Subsidiary and the University of Strasbourg Partner to Support France's First Public Neutral-Atom Quantum Computing Platform,” PR Newswire, Jul. 22, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/btq-technologies-qperfect-subsidiary-and-the-university-of-strasbourg-partner-to-support-frances-first-public-neutral-atom-quantum-computing-platform-302831874.html [C]
+[10] Atom Computing, “Atom Computing Raises More Than $300 Million to Accelerate Deployment of Fault-Tolerant, Neutral-Atom Quantum Computers,” PR Newswire, Jun. 16, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/atom-computing-raises-more-than-300-million-to-accelerate-deployment-of-fault-tolerant-neutral-atom-quantum-computers-302800832.html [C]
+[11] C. Choucair, “BTQ Technologies to Invest Over $2 Million in QPerfect to Advance Neutral Atom Quantum Computing,” The Quantum Insider, Apr. 9, 2025. [Online]. Available: https://thequantuminsider.com/2025/04/09/btq-technologies-to-invest-over-2-million-in-qperfect-to-advance-neutral-atom-quantum-computing/ [P]
+[12] A. Paetznick *et al.*, “Improved quantum processor logical error rates via correction and detection,” *Nature*, vol. 654, no. 8118, pp. 349–355, Jun. 2026, doi: [10.1038/s41586-026-10628-y](https://doi.org/10.1038/s41586-026-10628-y).
 [G] Bluvstein et al. (Harvard/MIT/QuEra), Nature 649, 39 (online 2025-11-10; arXiv:2506.20661, 2025-06-25): surface code on up to 448 atoms, 2.14(13)× below threshold in a four-round c… · 2025-11-10 · https://www.nature.com/articles/s41586-025-09848-5
 [G] Evered, Xu, Li, Geim, Bonilla Ataides, Kalinowski, Bluvstein, Maskara, Kokail, Greiner, Vuletic, Lukin (Harvard/MIT), "High-fidelity entangling gates and nonlocal circuits with neu… · 2026-04-28 · https://arxiv.org/abs/2604.25987
 [G] Perrin, Roger, Pupillo (Univ. Strasbourg/CNRS, QPERFECT SAS), "Correlated Atom Loss as a Resource for Quantum Error Correction", arXiv:2603.24237 (2026-03): fast correlated-loss de… · 2026-03 · https://arxiv.org/html/2603.24237

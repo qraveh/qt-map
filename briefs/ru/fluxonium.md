@@ -17,24 +17,24 @@ updated: 2026-09-04
 Статическая подвижность; низкочастотное управление потоком при комнатной температуре; ошибки Паули плюс когерентные; сверхпроводящая литография.
 
 ## Физика и пределы
-Диэлектрические потери растут с ω, поэтому T1 в 160–260 µs на ~300 MHz — рутина там, где трансмон борется с той же ванной на 5 GHz [D][2]. Но при 20 mK kT/h ≈ 420 MHz: равновесие оставляет десятки процентов населённости в |1⟩, что делает активный сброс (~98% [D][4]) обязательным. Предел задаёт потоковая дефазировка типа 1/f — T2* 20–110 µs против указанных T1 [D][2][5], — второго порядка в «сладкой точке» и не поддающаяся подстройке. В рекордном CNOT доминирует, наоборот, когерентный член: нерезонансные перевороты управляющего кубита, остаточная ошибка ниже 2×10⁻⁴ [D][2]. Предел сдвигает более тихое смещение, формируемое ближе к кристаллу.
+Диэлектрические потери растут с ω, поэтому T1 в 160–260 µs на ~300 MHz — рутина там, где трансмон борется с той же ванной на 5 GHz [D][1]. Но при 20 mK kT/h ≈ 420 MHz: равновесие оставляет десятки процентов населённости в |1⟩, что делает активный сброс (~98% [D][2]) обязательным. Предел задаёт потоковая дефазировка типа 1/f — T2* 20–110 µs против указанных T1 [D][1], [3], — второго порядка в «сладкой точке» и не поддающаяся подстройке. В рекордном CNOT доминирует, наоборот, когерентный член: нерезонансные перевороты управляющего кубита, остаточная ошибка ниже 2×10⁻⁴ [D][1]. Предел сдвигает более тихое смещение, формируемое ближе к кристаллу.
 
 ## Инженерное состояние (state of the art)
 
 | Дата | Показатель | Кто | Тег |
 |---|---|---|---|
-| 2023-09-25 | CZ 99.922 ± 0.009% (среднее при оптимизации методами RL) | MIT / MIT Lincoln Lab | [D][1] |
-| 2024-07-22 | CNOT 99.94% за 60 ns, >99.9% в течение 24 дней без перекалибровки | Maryland–EPFL–UMass–Wisconsin | [D][2] |
-| 2025-01-14 | Однокубитный гейт 99.998% | MIT EQuS | [D][3] |
-| 2026-01-23 | Кристальное управление потоковым ЦАП, T1 ≈ 200 µs сохранён | D-Wave | [D][5] |
+| 2023-09-25 | CZ 99.922 ± 0.009% (среднее при оптимизации методами RL) | MIT / MIT Lincoln Lab | [D][4] |
+| 2024-07-22 | CNOT 99.94% за 60 ns, >99.9% в течение 24 дней без перекалибровки | Maryland–EPFL–UMass–Wisconsin | [D][1] |
+| 2025-01-14 | Однокубитный гейт 99.998% | MIT EQuS | [D][5] |
+| 2026-01-23 | Кристальное управление потоковым ЦАП, T1 ≈ 200 µs сохранён | D-Wave | [D][3] |
 
 Всё это одно- или двухкубитные устройства; по состоянию на 2026-09-04 ни решётки на флаксониумах, ни цикла QEC не существует.
 
 ## Производство, материалы и цепочка поставок
-Та же литография переходов Nb/Al, что и у трансмона, с наследованием его фабрик и его проблемы TLS; рекордные образцы приходят из MIT Lincoln Laboratory, коммерческого поставщика не существует. Цена по вводу-выводу — возбуждение, считывание и линия потока на каждый кубит: криостат несёт несколько сотен линий постоянного смещения, поэтому нагрузка начинает кусаться на 10³, а на 10⁴–10⁶ смещение обязано формироваться в холоде. D-Wave монтирует методом flip-chip кристалл с мультиплексированным Φ-ЦАП через зазор ~7 µm при 10 mK без различимой добавочной декогеренции (T1 ≈ 200 µs [D][5]), ключевые части поступают от NASA JPL [C][6]; Shenzhen пропускает XY и Z по одной тёплой линии на кубит [D][4]. Экспозиция по экспортному контролю общая для сверхпроводников (US EAR ECCN 3A901).
+Та же литография переходов Nb/Al, что и у трансмона, с наследованием его фабрик и его проблемы TLS; рекордные образцы приходят из MIT Lincoln Laboratory, коммерческого поставщика не существует. Цена по вводу-выводу — возбуждение, считывание и линия потока на каждый кубит: криостат несёт несколько сотен линий постоянного смещения, поэтому нагрузка начинает кусаться на 10³, а на 10⁴–10⁶ смещение обязано формироваться в холоде. D-Wave монтирует методом flip-chip кристалл с мультиплексированным Φ-ЦАП через зазор ~7 µm при 10 mK без различимой добавочной декогеренции (T1 ≈ 200 µs [D][3]), ключевые части поступают от NASA JPL [C][6]; Shenzhen пропускает XY и Z по одной тёплой линии на кубит [D][2]. Экспозиция по экспортному контролю общая для сверхпроводников (US EAR ECCN 3A901).
 
 ## Роль в стеке
-Прямая замена на слое 1 в рамках сверхпроводящего пути платформы: вытесняет трансмон там, где когерентность важнее простоты управления; ничто ниже по стеку его не требует. Его гейт длительностью 60 ns производный такт не задаёт — такт задаёт дисперсионное считывание за ~0.3 µs, как и у трансмона, — так что флаксониум покупает ошибку, а не скорость. Верификация: заголовочные цифры суть средние по RB на изолированных парах, слепые к перекрёстным наводкам в решётке, дрейфу потока и утечке (leakage) флюксонов, и 99.94% не воспроизведены; рекорд 99.92% [D][1], фигурировавший в основном отчёте, ими перекрыт, а сами 99.922% — это среднее при оптимизации методами RL (без такой помощи пики составляют 99.85–99.9%).
+Прямая замена на слое 1 в рамках сверхпроводящего пути платформы: вытесняет трансмон там, где когерентность важнее простоты управления; ничто ниже по стеку его не требует. Его гейт длительностью 60 ns производный такт не задаёт — такт задаёт дисперсионное считывание за ~0.3 µs, как и у трансмона, — так что флаксониум покупает ошибку, а не скорость. Верификация: заголовочные цифры суть средние по RB на изолированных парах, слепые к перекрёстным наводкам в решётке, дрейфу потока и утечке (leakage) флюксонов, и 99.94% не воспроизведены; рекорд 99.92% [D][4], фигурировавший в основном отчёте, ими перекрыт, а сами 99.922% — это среднее при оптимизации методами RL (без такой помощи пики составляют 99.85–99.9%).
 
 ## Акторы и экономика
 **Кто.**
@@ -42,9 +42,9 @@ updated: 2026-09-04
 | Организация | Роль | Страна | Что именно делает с технологией | Свидетельство |
 |---|---|---|---|---|
 | Google | разработчик | США | Поглотила команду по флаксониуму из Atlantic Quantum; с тех пор молчит | [P][7] |
-| D-Wave | разработчик | США | Кристальное управление флаксониумом через Φ-ЦАП | [D][5] |
-| University of Maryland | исследования | США | CNOT 99.94% в группе Manucharyan | [D][2] |
-| S Lab, Shenzhen | исследования | Китай | Единая одноканальная архитектура управления потоком | [D][4] |
+| D-Wave | разработчик | США | Кристальное управление флаксониумом через Φ-ЦАП | [D][3] |
+| University of Maryland | исследования | США | CNOT 99.94% в группе Manucharyan | [D][1] |
+| S Lab, Shenzhen | исследования | Китай | Единая одноканальная архитектура управления потоком | [D][2] |
 
 **Деньги.**
 2025-10-03 · Google · приобретение Atlantic Quantum · условия не раскрыты · закрыто [P][7][G:GOOGLE-ATLANTIC-2025-10]
@@ -65,18 +65,18 @@ updated: 2026-09-04
 Подтвердить к концу 2027: флаксониум на ≥ 4 кубита под кристальным управлением потоком с опубликованными двухкубитными RB либо воспроизведение 99.94%; понизить оценку, если не появится ни того, ни другого. Лучший случай, 2029: двухкубитная ошибка около 10⁻⁴ сокращает бюджет поверхностного кода при заданном Λ; худший — коммутационный шум с управляющего кристалла съедает выигрыш по когерентности. Переживёт ли предел по потоковому шуму мультиплексирование? Способно ли считывание в диапазоне 0.2–1 GHz достичь 99.5% в решётке? Что стало с командой Atlantic Quantum?
 
 ## Источники
-[1] Ding, Hays, Sung, Kannan, … Serniak, Oliver (MIT / MIT Lincoln Laboratory), "High-Fidelity, Frequency-Flexible Two-Qubit Fluxonium Gates with a Transmon Coupler", Phys. Rev. X 13, 031035, 2023-09-25 — https://journals.aps.org/prx/abstract/10.1103/PhysRevX.13.031035
-[2] Lin, Cho, Chen, Vavilov, Wang, Manucharyan (Maryland, Wisconsin, UMass Amherst, EPFL), "24 days-stable CNOT-gate on fluxonium qubits with over 99.9% fidelity", PRX Quantum 6, 010349 (2025); arXiv:2407.15783, 2024-07-22 — https://arxiv.org/abs/2407.15783
-[3] MIT News, "Fast control methods enable record-setting fidelity in superconducting qubit" (MIT EQuS, "Suppressing Counter-Rotating Errors for Fast Single-Qubit Gates with Fluxonium", PRX Quantum), 2025-01-14 — https://news.mit.edu/2025/fast-control-methods-enable-record-setting-fidelity-superconducting-qubit-0114
-[4] Pan, Wang, Zhou, Deng, Wang et al. (S Lab, Quantum Science Center of Guangdong–Hong Kong–Macao Greater Bay Area), "Unified Flux Control Architecture for Fluxonium Qubits", arXiv:2605.25948, 2026-05-26 — https://arxiv.org/html/2605.25948v1
-[5] D-Wave, whitepaper 14-1090A-A, "Digital Control of High-Coherence Fluxonium Qubits", 2026-01-23 [C] — https://www.dwavequantum.com/media/41upubz2/14-1090a-a_fluxonium-dac-control.pdf
-[6] D-Wave, "D-Wave Demonstrates First Scalable, On-Chip Cryogenic Control of Gate-Model Qubits", press release, 2026-01-06 [C] — https://www.dwavequantum.com/company/newsroom/press-release/d-wave-demonstrates-first-scalable-on-chip-cryogenic-control-of-gate-model-qubits/
-[7] The Quantum Insider, "Atlantic Quantum Joins Google Quantum AI", 2025-10-03 [P] — https://thequantuminsider.com/2025/10/03/atlantic-quantum-joins-google-quantum-ai/
-[8] D-Wave, Q2-2026 financial results, 2026-08-06 [C] — https://www.dwavequantum.com/company/newsroom/press-release/d-wave-reports-second-quarter-2026-results/
-[9] Toshiba, double-transmon coupler CZ 99.90% in 48 ns, Phys. Rev. X 14, 041050 — https://journals.aps.org/prx/abstract/10.1103/PhysRevX.14.041050
+[1] W.-J. Lin, H. Cho, Y. Chen, M. G. Vavilov, C. Wang, and V. E. Manucharyan, “24 days-stable CNOT-gate on fluxonium qubits with over 99.9% fidelity,” [arXiv:2407.15783](https://arxiv.org/abs/2407.15783), Jul. 2024.
+[2] X. Pan *et al.*, “Unified Flux Control Architecture for Fluxonium Qubits,” [arXiv:2605.25948](https://arxiv.org/abs/2605.25948), May 2026.
+[3] D-Wave, “Digital Control of High-Coherence Fluxonium Qubits,” technical whitepaper 14-1090A-A, Jan. 23, 2026. [Online]. Available: https://www.dwavequantum.com/media/41upubz2/14-1090a-a_fluxonium-dac-control.pdf [C]
+[4] L. Ding *et al.*, “High-Fidelity, Frequency-Flexible Two-Qubit Fluxonium Gates with a Transmon Coupler,” *Phys. Rev. X*, vol. 13, no. 3, Art. no. 031035, Sep. 2023, doi: [10.1103/PhysRevX.13.031035](https://doi.org/10.1103/PhysRevX.13.031035).
+[5] MIT News, “Fast control methods enable record-setting fidelity in superconducting qubit,” *MIT EQuS, "Suppressing Counter-Rotating Errors for Fast Single-Qubit Gates with Fluxonium", PRX Quantum*, Jan. 2025. [Online]. Available: https://news.mit.edu/2025/fast-control-methods-enable-record-setting-fidelity-superconducting-qubit-0114
+[6] D-Wave, “D-Wave Demonstrates First Scalable, On-Chip Cryogenic Control of Gate-Model Qubits,” press release, Jan. 6, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-demonstrates-first-scalable-on-chip-cryogenic-control-of-gate-model-qubits/ [C]
+[7] M. Swayne, “Atlantic Quantum Joins Google Quantum AI,” The Quantum Insider, Oct. 3, 2025. [Online]. Available: https://thequantuminsider.com/2025/10/03/atlantic-quantum-joins-google-quantum-ai/ [P]
+[8] D-Wave Quantum Inc., “D-Wave Reports Second Quarter 2026 Results,” Aug. 6, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-reports-second-quarter-2026-results/ [C]
+[9] R. Li, K. Kubo, Y. Ho, Z. Yan, Y. Nakamura, and H. Goto, “Realization of High-Fidelity CZ Gate Based on a Double-Transmon Coupler,” *Phys. Rev. X*, vol. 14, no. 4, Art. no. 041050, Nov. 2024, doi: [10.1103/PhysRevX.14.041050](https://doi.org/10.1103/PhysRevX.14.041050). [arXiv:2402.18926](https://arxiv.org/abs/2402.18926).
 
 ## Открытые пункты верификации
 Длительность гейта для CZ 99.922% от MIT: запись графа указывает 50 ns; в аннотации PRX она не приведена. Не разрешено.
-Дата публикации источника [2] в PRX Quantum не подтверждена (есть только том и номер статьи); используется дата arXiv.
+Дата публикации источника [1] в PRX Quantum не подтверждена (есть только том и номер статьи); используется дата arXiv.
 D-Wave приводит 200 проводов смещения (2026-01-06) и ~300 линий смещения (2026-01-23) для одной и той же схемы отжигателя; расхождение не устранено [G:DWAVE-FLUXDAC-LINECOUNT-CONFLICT].
 Патентного семейства с датой, специфичного для флаксониума, не найдено.

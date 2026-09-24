@@ -12,16 +12,16 @@ updated: 2026-09-03
 Λ = коэффициент подавления ошибки на шаг кодового расстояния; QBI = DARPA Quantum Benchmarking Initiative (стадия A — концепция → B — план НИОКР → C — государственная верификация и валидация); G1–G7 = классы целей настоящего отчёта (см. «Акторы и экономика»).
 
 ## Идентичность и происхождение
-Два сверхтонких (или ядерно-спиновых) подуровня основного состояния при том подмагничивающем поле, где зеемановский сдвиг первого порядка обращается в ноль и остаётся лишь квадратичный член: когерентность от секунд до часов, причём одноионные памяти достигают часового масштаба [2]. Происхождение здесь — происхождение самой области: первый логический гейт в ионной ловушке у NIST хранил кубит во внутренних состояниях одного лазерно-охлаждённого иона (Monroe, Meekhof, King, Itano, Wineland, PRL 75, 4714, 1995) [1], и с тех пор это выбор по умолчанию для ионов, а позже и для атомов.
+Два сверхтонких (или ядерно-спиновых) подуровня основного состояния при том подмагничивающем поле, где зеемановский сдвиг первого порядка обращается в ноль и остаётся лишь квадратичный член: когерентность от секунд до часов, причём одноионные памяти достигают часового масштаба [1]. Происхождение здесь — происхождение самой области: первый логический гейт в ионной ловушке у NIST хранил кубит во внутренних состояниях одного лазерно-охлаждённого иона (Monroe, Meekhof, King, Itano, Wineland, PRL 75, 4714, 1995) [2], и с тех пор это выбор по умолчанию для ионов, а позже и для атомов.
 f = Паули + утечка (leakage) — утечка на соседние подуровни, невидимая для паулевского декодера; охват: четыре пути платформы — ионы QCCD и ионы с электронными гейтами, щелочные и щёлочноземельные атомы [запись графа].
 
 ## Физика и пределы
-Часовая точка убивает чувствительность к полю в первом порядке; остаются квадратичный зеемановский член и *градиенты* поля по регистру, так что память деградирует с ростом размера регистра, а не только со временем. Ограничением служит не память, а возбуждение. Рамановские гейты несут ошибку спонтанного рассеяния, спадающую лишь как ~1/Δ, и рассеянный фотон обычно уводит систему за пределы кубитного многообразия: это утечка, а не ошибка Паули. Убрать лазер — значит убрать и этот член: 2Q 99.97(1)%, 1Q 99.99916(7)% на десятикубитной семизонной ловушке [D][G:OXIONICS-ALLELEC-2024-07], 8.4×10⁻⁵ без охлаждения до основного состояния [D][4]. Предел двигает способ управления, а не кодирование.
+Часовая точка убивает чувствительность к полю в первом порядке; остаются квадратичный зеемановский член и *градиенты* поля по регистру, так что память деградирует с ростом размера регистра, а не только со временем. Ограничением служит не память, а возбуждение. Рамановские гейты несут ошибку спонтанного рассеяния, спадающую лишь как ~1/Δ, и рассеянный фотон обычно уводит систему за пределы кубитного многообразия: это утечка, а не ошибка Паули. Убрать лазер — значит убрать и этот член: 2Q 99.97(1)%, 1Q 99.99916(7)% на десятикубитной семизонной ловушке [D][G:OXIONICS-ALLELEC-2024-07], 8.4×10⁻⁵ без охлаждения до основного состояния [D][3]. Предел двигает способ управления, а не кодирование.
 
 ## Инженерное состояние (state of the art)
 | Дата | Показатель | Кто | Тег+ключ |
 |---|---|---|---|
-| 2024-12-05 | Часовой кубит ⁴³Ca⁺, микроволновый резонатор на кристалле, комнатная температура, без экранирования: 1.5(4)×10⁻⁷ на клиффорд, T₂ ≈ 70 s | Oxford | [D][3][G:OXFORD-1Q-1E-7-2024-12] |
+| 2024-12-05 | Часовой кубит ⁴³Ca⁺, микроволновый резонатор на кристалле, комнатная температура, без экранирования: 1.5(4)×10⁻⁷ на клиффорд, T₂ ≈ 70 s | Oxford | [D][4][G:OXFORD-1Q-1E-7-2024-12] |
 | 2025-11 | Парк Helios (98 Ba⁺): 1Q 2.5×10⁻⁵, 2Q 7.9×10⁻⁴, утечка 1.1×10⁻⁵ на клиффорд | Quantinuum | [D][5] |
 
 На атомах сверхтонкое T₂ у Cs составляет 12.6 s в массиве из 6,100 атомов [D][6]. Член масштаба парка машин — утечка на двухкубитном гейте: ~10⁻⁵ на клиффорд на ионах против ~10⁻⁴ на атом на гейт в массивах.
@@ -38,8 +38,8 @@ f = Паули + утечка (leakage) — утечка на соседние �
 | Организация | Роль | Страна | Что именно | Свидетельство |
 |---|---|---|---|---|
 | Quantinuum | разработчик | США | Helios, 98 кубитов Ba⁺ | [D][5] |
-| IonQ | разработчик | США | Электронные гейты, собственное производство ловушек | [D][4][C][7] |
-| University of Oxford | исследования | Великобритания | Однокубитный рекорд на ⁴³Ca⁺ | [D][3] |
+| IonQ | разработчик | США | Электронные гейты, собственное производство ловушек | [D][3][C][7] |
+| University of Oxford | исследования | Великобритания | Однокубитный рекорд на ⁴³Ca⁺ | [D][4] |
 | Atom Computing | разработчик | США | Часовые кубиты на ядерном спине Yb | [C][9] |
 
 **Деньги.**
@@ -60,16 +60,16 @@ f = Паули + утечка (leakage) — утечка на соседние �
 Подтвердить, если полностью электронное управление выйдет на среднее по парку ниже 10⁻⁵ с опубликованной утечкой либо вторая группа воспроизведёт 8.4×10⁻⁵; понизить в статусе, если оно останется результатом на десяти кубитах. Лучший случай к 2029 году: сверхтонкие кубиты с микроволновым возбуждением становятся выбором по умолчанию. Худший случай: ограниченная градиентами утечка удерживает ионы вблизи 10⁻⁵, а базу забирает omg.
 
 ## Источники
-[1] Monroe, Meekhof, King, Itano, Wineland (NIST Boulder), "Demonstration of a fundamental quantum logic gate", Phys. Rev. Lett. 75, 4714, 1995-12-18 — https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.75.4714
-[2] Wang et al. (Tsinghua), "Single ion qubit with estimated coherence time exceeding one hour", arXiv:2008.00251, 2020-08 — https://arxiv.org/abs/2008.00251
-[3] Smith, Leu, Miyanishi, Gely, Lucas (Oxford), "Single-qubit gates with errors at the 10⁻⁷ level", arXiv:2412.04421, 2024-12-05 — https://arxiv.org/abs/2412.04421
-[4] IonQ / Oxford Ionics, two-qubit electronic gate at 8.4×10⁻⁵, arXiv:2510.17286, 2025-10 — https://arxiv.org/abs/2510.17286
-[5] Quantinuum, "Helios", arXiv:2511.05465, 2025-11; Nature 2026-06 — https://arxiv.org/abs/2511.05465
-[6] Caltech, 6,100-atom Cs array with 12.6 s hyperfine coherence, arXiv:2403.12021 — https://arxiv.org/abs/2403.12021
-[7] IonQ, completion of the SkyWater Technology acquisition, 2026-07-31 [C] — https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology
-[8] eleQtron, €57 M Series A (MAGIC microwave ion control), 2026-05-05 [C] — https://eleqtron.com/en/quantum-computing-scale-up-eleqtron-secures-57-million-in-one-of-the-largest-series-a-funding-rounds-worldwide/
-[9] Atom Computing, raise of more than $300 M including a $100 M DoC letter of intent, 2026-06-16 [C] — https://www.prnewswire.com/news-releases/atom-computing-raises-more-than-300-million-to-accelerate-deployment-of-fault-tolerant-neutral-atom-quantum-computers-302800832.html
-[10] PatSnap Eureka, "Trapped ion quantum computing 2026" [P] — https://www.patsnap.com/resources/blog/rd-blog/trapped-ion-quantum-computing-2026-patsnap-eureka/
+[1] P. Wang *et al.*, “Single ion-qubit exceeding one hour coherence time,” *Nat. Commun.*, vol. 12, Art. no. 233, Jan. 2021, doi: [10.1038/s41467-020-20330-w](https://doi.org/10.1038/s41467-020-20330-w). [arXiv:2008.00251](https://arxiv.org/abs/2008.00251).
+[2] Monroe, Meekhof, King, Itano, and Wineland, “Demonstration of a fundamental quantum logic gate,” *Phys. Rev. Lett.*, vol. 75, Art. no. 4714, Dec. 1995, doi: [10.1103/PhysRevLett.75.4714](https://doi.org/10.1103/PhysRevLett.75.4714).
+[3] A. C. Hughes *et al.*, “Trapped-ion two-qubit gates with >99.99% fidelity without ground-state cooling,” [arXiv:2510.17286](https://arxiv.org/abs/2510.17286), Oct. 2025.
+[4] M. C. Smith, A. D. Leu, K. Miyanishi, M. F. Gely, and D. M. Lucas, “Single-qubit gates with errors at the 10⁻⁷ level,” *Phys. Rev. Lett.*, vol. 134, no. 23, Art. no. 230601, Jun. 2025, doi: [10.1103/42w2-6ccy](https://doi.org/10.1103/42w2-6ccy). [arXiv:2412.04421](https://arxiv.org/abs/2412.04421).
+[5] A. Ransford *et al.*, “A 98-qubit trapped-ion quantum computer with all-to-all connectivity,” *Nature*, vol. 655, no. 8121, pp. 81–86, Jun. 2026, doi: [10.1038/s41586-026-10676-4](https://doi.org/10.1038/s41586-026-10676-4). [arXiv:2511.05465](https://arxiv.org/abs/2511.05465).
+[6] H. J. Manetsch, G. Nomura, E. Bataille, K. H. Leung, X. Lv, and M. Endres, “A tweezer array with 6100 highly coherent atomic qubits,” *Nature*, vol. 647, pp. 60–67, 2025, doi: [10.1038/s41586-025-09641-4](https://doi.org/10.1038/s41586-025-09641-4). [arXiv:2403.12021](https://arxiv.org/abs/2403.12021).
+[7] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [C]
+[8] A. Cordes, “Quantum computing scale-up eleQtron secures €57 million in one of the largest Series A funding rounds worldwide,” eleQtron, May 5, 2026. [Online]. Available: https://eleqtron.com/en/quantum-computing-scale-up-eleqtron-secures-57-million-in-one-of-the-largest-series-a-funding-rounds-worldwide/ [C]
+[9] Atom Computing, “Atom Computing Raises More Than $300 Million to Accelerate Deployment of Fault-Tolerant, Neutral-Atom Quantum Computers,” PR Newswire, Jun. 16, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/atom-computing-raises-more-than-300-million-to-accelerate-deployment-of-fault-tolerant-neutral-atom-quantum-computers-302800832.html [C]
+[10] PatSnap Eureka, “Trapped Ion Quantum Computing 2026,” patent landscape, 2026. [Online]. Available: https://www.patsnap.com/resources/blog/rd-blog/trapped-ion-quantum-computing-2026-patsnap-eureka/ [P]
 [G] Smith, Leu, Miyanishi, Gely, Lucas (Oxford), "Single-qubit gates with errors at the 10^-7 level", arXiv:2412.04421 (2024-12-05, rev 2025-05-28): 43Ca+ hyperfine clock qubit in a mi… · 2024-12-05 · https://arxiv.org/abs/2412.04421
 [G] Loschnauer, Mosca Toba, Hughes, King, Weber, Srinivas, Matt, Nourshargh, Allcock, Ballance, Matthiesen, Malinowski, Harty, "Scalable, high-fidelity all-electronic control of trappe… · 2024-07-10 · https://arxiv.org/abs/2407.07694
 [G] Allcock, Campbell, Chiaverini, Chuang, Hudson, Moore, Ransford, Roman, Sage, Wineland, "omg blueprint for trapped ion quantum computing with metastable states", Applied Physics Let… · 2021 · https://cua.mit.edu/dev_site/publications/omg-blueprint-for-trapped-ion-quantum-computing-with-metastable-states

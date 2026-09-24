@@ -15,31 +15,31 @@ updated: 2026-09-03
 An optical mode whose vacuum fluctuations are redistributed between conjugate quadratures by parametric down-conversion in a χ⁽²⁾ medium: one quadrature drops below vacuum noise, the other rises. Predicted in the 1970s, first observed in 1985; the lineage that matters is waveguide squeezers feeding CV cluster states and GKP encoding. Attributes: flying carrier, heralded generation at ~1 µs; readout by single-photon detection at ~10 ns, destructive, not mid-circuit; electro-optic room-temperature control, Gaussian-plus-loss errors, photonic-IC fabrication.
 
 ## Physics & limits
-Squeezing is a loss thermometer: the medium can produce arbitrarily strong quadrature reduction, but every dB of loss between generation and detection pulls the measured value toward vacuum, so the number describes the optical path, not the squeezer. Hence 15 dB in bulk optics [D][2] against 1.4 dB measured on chip, over 10 dB once a 4 dB homodyne loss budget is subtracted [D][5]. Do not conflate raw quadrature squeezing with the *effective* squeezing of a GKP grid state, which folds in non-Gaussian preparation fidelity as well as loss: fault tolerance prices the latter at ~9.75 dB against 0.62 dB on chip [D][1]. Only lower loss, better coupling and higher detection efficiency move it.
+Squeezing is a loss thermometer: the medium can produce arbitrarily strong quadrature reduction, but every dB of loss between generation and detection pulls the measured value toward vacuum, so the number describes the optical path, not the squeezer. Hence 15 dB in bulk optics [D][1] against 1.4 dB measured on chip, over 10 dB once a 4 dB homodyne loss budget is subtracted [D][2]. Do not conflate raw quadrature squeezing with the *effective* squeezing of a GKP grid state, which folds in non-Gaussian preparation fidelity as well as loss: fault tolerance prices the latter at ~9.75 dB against 0.62 dB on chip [D][3]. Only lower loss, better coupling and higher detection efficiency move it.
 
 ## Engineering state of the art
 
 | Date | Figure | Who | Tag |
 |---|---|---|---|
-| 2016 | 15 dB squeezing, bulk optics | Vahlbruch et al., Hannover | [D][2] |
-| 2025-06 | On-chip GKP effective squeezing 0.62 dB vs ~9.75 dB required | Xanadu | [D][1] |
-| 2025-08 | 1.4 dB measured on poled TFLN, >10 dB inferred at 62 mW pump | Shi et al. | [D][5] |
-| 2026-08 | Loss 24.1× above threshold, 1.0× targeted 2030 | Xanadu | [R][3][G:XANADU-SPAC-2026-03] |
+| 2016 | 15 dB squeezing, bulk optics | Vahlbruch et al., Hannover | [D][1] |
+| 2025-06 | On-chip GKP effective squeezing 0.62 dB vs ~9.75 dB required | Xanadu | [D][3] |
+| 2025-08 | 1.4 dB measured on poled TFLN, >10 dB inferred at 62 mW pump | Shi et al. | [D][2] |
+| 2026-08 | Loss 24.1× above threshold, 1.0× targeted 2030 | Xanadu | [R][4][G:XANADU-SPAC-2026-03] |
 
 The on-chip-to-bulk gap is ~13 dB, the GKP gap ~9 dB.
 
 ## Manufacturing, materials & supply chain
-Squeezers ride the CV photonic-IC line — SiN and thin-film lithium niobate with periodic poling. Merchant TFLN supply is thin: HyperLight (USD 37 M Series B, 2024-09) and Lightium (USD 7 M seed) [P][G:TFLN-FUNDING-2024-09], plus the PIXEurope pilot line [G:PIXEUROPE-2024-11]. Xanadu builds rather than buys; no cost per squeezer is public. Poling uniformity and waveguide loss are the yield-limiting defects, both acting on the headline dB. I/O is one pump and one homodyne chain per mode plus phase locking; Aurora ran 35 chips at 12 modes on a 1 MHz cycle [D][4]. At 10³ modes the wall is pump distribution and phase stability; at 10⁴–10⁶, detector and DAC channel count. No ECCN names squeezers; 4A906 catches the machine [G:BIS-QUANTUM-ECCN-2024-09].
+Squeezers ride the CV photonic-IC line — SiN and thin-film lithium niobate with periodic poling. Merchant TFLN supply is thin: HyperLight (USD 37 M Series B, 2024-09) and Lightium (USD 7 M seed) [P][G:TFLN-FUNDING-2024-09], plus the PIXEurope pilot line [G:PIXEUROPE-2024-11]. Xanadu builds rather than buys; no cost per squeezer is public. Poling uniformity and waveguide loss are the yield-limiting defects, both acting on the headline dB. I/O is one pump and one homodyne chain per mode plus phase locking; Aurora ran 35 chips at 12 modes on a 1 MHz cycle [D][5]. At 10³ modes the wall is pump distribution and phase stability; at 10⁴–10⁶, detector and DAC channel count. No ECCN names squeezers; 4A906 catches the machine [G:BIS-QUANTUM-ECCN-2024-09].
 
 ## Role in the stack
-Requires a photonic-IC foundry; provides the modes for CV Gaussian gates with GKP-assisted non-Gaussian operations and for GKP grid encoding on Xanadu's path. It replaces discrete photons as carrier — DV trades erasure-dominated errors for Gaussian-plus-loss ones, and switching costs the whole detector chain. Squeezing level sets the error floor of every CV operation, bounding the derived clock indirectly rather than contributing a gate time. Verification: 0.62 dB is single-source and unreplicated; the independent TFLN result measures raw squeezing, and its ">10 dB" is inferred by subtracting detection loss [D][5].
+Requires a photonic-IC foundry; provides the modes for CV Gaussian gates with GKP-assisted non-Gaussian operations and for GKP grid encoding on Xanadu's path. It replaces discrete photons as carrier — DV trades erasure-dominated errors for Gaussian-plus-loss ones, and switching costs the whole detector chain. Squeezing level sets the error floor of every CV operation, bounding the derived clock indirectly rather than contributing a gate time. Verification: 0.62 dB is single-source and unreplicated; the independent TFLN result measures raw squeezing, and its ">10 dB" is inferred by subtracting detection loss [D][2].
 
 ## Actors & economics
 **Who.**
 
 | Organisation | Role | Country | What they do | Evidence |
 |---|---|---|---|---|
-| Xanadu | developer | CA | Only actor fielding on-chip CV/GKP systems | [D][1] |
+| Xanadu | developer | CA | Only actor fielding on-chip CV/GKP systems | [D][3] |
 | HyperLight, Lightium | supplier | US, CH | TFLN chips and foundry service | [P][G:TFLN-FUNDING-2024-09] |
 | DARPA | investor | US | QBI Stage B, up to USD 15 M | [G:QBI-STAGEB-2025-11] |
 | Government of Canada | investor | CA | CAD 195 M, Toronto factory | [G:XANADU-LIQUIDITY-2026-06] |
@@ -63,16 +63,14 @@ Requires a photonic-IC foundry; provides the modes for CV Gaussian gates with GK
 Confirm by 2028: on-chip GKP effective squeezing above 2 dB with its loss budget; demote if still below 1 dB. Best case 2029: a second group publishes a competing GKP figure. Worst case: integration loss pins it near 1 dB and CV/GKP stays a research path. Open: does loss fall as the roadmap claims; can poled TFLN reach GKP-grade fidelity.
 
 ## Sources
-[1] Xanadu, "Generation of a squeezed GKP state on an integrated photonic chip," Nature, 2025-06 — https://www.nature.com/articles/s41586-025-09044-5
-[2] Vahlbruch, Mehmet, Danzmann, Schnabel, "Detection of 15 dB squeezed states of light," Phys. Rev. Lett. 117, 110801, 2016 — https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.117.110801
-[3] Xanadu, "Xanadu charts path to over 1,000 logical qubits by 2031," GlobeNewswire [C], 2026-08-31 — https://www.globenewswire.com/news-release/2026/08/31/3353211/0/en/xanadu-charts-path-to-over-1-000-logical-qubits-by-2031.html
-[4] Xanadu, "Scaling and networking a modular photonic quantum computer" (Aurora), Nature, 2025-01 — https://www.nature.com/articles/s41586-024-08406-9
-[5] Shi, Baiju, Chen, Mohanraj, Wang, Dhyani, Shajilal, Zhao, Yang, Li, Wu, Hao, Leong, Lam, Zhu, "Squeezed light generation in periodically poled thin-film lithium niobate waveguides," Nanophotonics / arXiv:2508.08599, 2025-08-12 (v2 2025-10-29) — https://arxiv.org/abs/2508.08599
-[6] optics.org [P], "Lithium niobate in vogue as thin-film developers raise cash," 2024-09 — https://optics.org/news/lithium-niobate-in-vogue-as-thin-film-developers-raise-cash
-[7] imec / European Commission, PIXEurope pilot-line selection, 2024-11-24 — https://www.imec-int.com/en/press/european-commission-and-chips-ju-select-pixeurope-consortium-lead-european-pilot-line
+[1] H. Vahlbruch, M. Mehmet, K. Danzmann, and R. Schnabel, “Detection of 15 dB Squeezed States of Light and their Application for the Absolute Calibration of Photoelectric Quantum Efficiency,” *Phys. Rev. Lett.*, vol. 117, no. 11, Art. no. 110801, Sep. 2016, doi: [10.1103/PhysRevLett.117.110801](https://doi.org/10.1103/PhysRevLett.117.110801).
+[2] X. Shi *et al.*, “Squeezed Light Generation in Periodically Poled Thin-Film Lithium Niobate Waveguides,” [arXiv:2508.08599](https://arxiv.org/abs/2508.08599), Aug. 2025.
+[3] M. V. Larsen *et al.*, “Integrated photonic source of Gottesman–Kitaev–Preskill qubits,” *Nature*, vol. 642, no. 8068, pp. 587–591, Jun. 2025, doi: [10.1038/s41586-025-09044-5](https://doi.org/10.1038/s41586-025-09044-5).
+[4] Xanadu Quantum Technologies Limited, “Xanadu Charts Path to Over 1,000 Logical Qubits by 2031,” GlobeNewswire, Aug. 31, 2026. [Online]. Available: https://www.globenewswire.com/news-release/2026/08/31/3353211/0/en/xanadu-charts-path-to-over-1-000-logical-qubits-by-2031.html [C]
+[5] H. A. Rad *et al.*, “Scaling and networking a modular photonic quantum computer,” *Nature*, vol. 638, no. 8052, pp. 912–919, Jan. 2025, doi: [10.1038/s41586-024-08406-9](https://doi.org/10.1038/s41586-024-08406-9).
 
 ## Open verification items
-An independent on-chip squeezing number does exist: Shi et al. report 1.4 dB measured on PPLN TFLN [5]. What remains single-source is the *GKP effective* squeezing of 0.62 dB (Xanadu only).
+An independent on-chip squeezing number does exist: Shi et al. report 1.4 dB measured on PPLN TFLN [2]. What remains single-source is the *GKP effective* squeezing of 0.62 dB (Xanadu only).
 The ">10 dB" TFLN figure is loss-corrected, not measured, and is stated at one pump power; it is not comparable with the 15 dB bulk-optics measurement.
 The ~9.75 dB fault-tolerance requirement comes from the graph record's fact-checked entry; the main report rounds it to ~10 dB. No conflict of substance, but no single primary source could be consulted directly (nature.com returned 502 on 4 Sep 2026).
 The "since 2012" front-matter year comes from the graph record and is not anchored to a specific paper.

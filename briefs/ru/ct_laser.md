@@ -17,17 +17,17 @@ updated: 2026-09-04
 - d/g: связность даёт транспорт на дефлекторах, построенный на оптике свободного пространства.
 
 ## Физика и пределы
-Этим слоем правят два жёстких закона. Мощность удержания линейна по числу позиций: массив Tsinghua на 18,225 позиций забирает 33 W падающей мощности и 12.2 W эффективной, ~0.67 mW на ловушку [D][2], так что 10⁶ позиций означают около киловатта удерживающего света ещё до всякой съёмки и ридберговского пучка. А число разрешимых пятен дефлектора есть произведение его ВЧ-полосы на время пробега акустической волны поперёк пучка, причём это же время снизу ограничивает скорость перенаведения ловушки: больше позиций и более быстрые перемещения тянут в разные стороны внутри одного прибора. Ни то, ни другое не является «частотой обновления»; цифра 10 MHz из отчёта — суррогатный показатель. Следствие — такт: съёмка за 0.5–1 ms и транспорт за сотни µs дают раунды QEC в 1–4.5 ms против гейтов в 270 ns [D][3]. Режимы отказа систематические: неоднородность глубины ловушек, дрейф наведения, интермодуляция тонов. Нижний предел сдвигает более быстрая съёмка — считывание за 17.6 µs при различении 99.89(5)% на иттербии [P][6], что примерно в ~50× меньше доминирующего члена.
+Этим слоем правят два жёстких закона. Мощность удержания линейна по числу позиций: массив Tsinghua на 18,225 позиций забирает 33 W падающей мощности и 12.2 W эффективной, ~0.67 mW на ловушку [D][2], так что 10⁶ позиций означают около киловатта удерживающего света ещё до всякой съёмки и ридберговского пучка. А число разрешимых пятен дефлектора есть произведение его ВЧ-полосы на время пробега акустической волны поперёк пучка, причём это же время снизу ограничивает скорость перенаведения ловушки: больше позиций и более быстрые перемещения тянут в разные стороны внутри одного прибора. Ни то, ни другое не является «частотой обновления»; цифра 10 MHz из отчёта — суррогатный показатель. Следствие — такт: съёмка за 0.5–1 ms и транспорт за сотни µs дают раунды QEC в 1–4.5 ms против гейтов в 270 ns [D][3]. Режимы отказа систематические: неоднородность глубины ловушек, дрейф наведения, интермодуляция тонов. Нижний предел сдвигает более быстрая съёмка — считывание за 17.6 µs при различении 99.89(5)% на иттербии [P][4], что примерно в ~50× меньше доминирующего члена.
 
 ## Инженерное состояние (state of the art)
-Крупнейший массив: 11,022 атома рубидия в сетке из 18,225 позиций, сформированной метаповерхностью 19.8 mm вне вакуумной ячейки — без гейтов, без когерентности, заполнение 60.5% до перестроения [D][2]. Лучшая длительная работа: 3,217 атомов при заполнении 99.3% дольше двух часов, с перезагрузкой 300,000 атомов в секунду ради 30,000 инициализированных кубитов в секунду, причём перемещение выполняют конвейеры на оптических решётках, а не дефлекторы [D][4]. Типичное в масштабе гораздо скромнее: 448-атомная архитектура, где съёмка и транспорт задают раунд в 1–4.5 ms [D][3]. Доминирующее ограничение — задержка измерения и движения, а не число ловушек и не мощность.
+Крупнейший массив: 11,022 атома рубидия в сетке из 18,225 позиций, сформированной метаповерхностью 19.8 mm вне вакуумной ячейки — без гейтов, без когерентности, заполнение 60.5% до перестроения [D][2]. Лучшая длительная работа: 3,217 атомов при заполнении 99.3% дольше двух часов, с перезагрузкой 300,000 атомов в секунду ради 30,000 инициализированных кубитов в секунду, причём перемещение выполняют конвейеры на оптических решётках, а не дефлекторы [D][5]. Типичное в масштабе гораздо скромнее: 448-атомная архитектура, где съёмка и транспорт задают раунд в 1–4.5 ms [D][3]. Доминирующее ограничение — задержка измерения и движения, а не число ловушек и не мощность.
 
 | Год | Показатель | Кто | Тег+ключ |
 |---|---|---|---|
-| 2025-09 | 3,217 атомов, >2 h, 30,000 инициализированных кубитов/s | Harvard | [D][4] |
+| 2025-09 | 3,217 атомов, >2 h, 30,000 инициализированных кубитов/s | Harvard | [D][5] |
 | 2026-06 | 18,225 метаповерхностных ловушек, 11,022 атома, 0.67 mW на позицию | Tsinghua | [D][2] |
-| 2026-07 | 2,000 пинцетов из 20 W, шаг 3.5 µm, менее 100 nm | Fraunhofer ILT | [P][5] |
-| 2026-08 | Съёмка 17.6 µs, различение 99.89(5)%, выживание 98.80(44)% | Kyoto | [P][6] |
+| 2026-07 | 2,000 пинцетов из 20 W, шаг 3.5 µm, менее 100 nm | Fraunhofer ILT | [P][6] |
+| 2026-08 | Съёмка 17.6 µs, различение 99.89(5)%, выживание 98.80(44)% | Kyoto | [P][4] |
 
 ## Производство, материалы и цепочка поставок
 Пластины нет: товарная и полукастомная оптика свободного пространства, интегрируемая вручную, — и тем не менее концентрация тяжёлая. В просмотренной литературе фигурируют лишь два поставщика дефлекторов — AA Opto-Electronic (DTSX-400, в 448-атомной системе) и Gooch & Housego [D][G:AOD-VENDORS-2026], — а Hamamatsu поставляет и модулятор, и камеру, причём альтернатива не установлена [C][G:HAMAMATSU-CAMERA-CONC-2026]: вот две настоящие единые точки отказа. Альянс Hamamatsu, NKT Photonics и Yaqumo от июня 2026 г. — первая попытка индустриализировать этот уровень, нацеленная на рынок сенсорики с прогнозом $3.5–7.9B [P][7]. Метаповерхность Tsinghua указывает в другую сторону: литографический элемент, заменяющий объектив, — единственный шаг, который может стать полупроводниковым производством [D][2]. Ни одна категория экспортного контроля пинцетную оптику не называет; уязвимость идёт через ECCN 4A906 [G:BIS-QUANTUM-ECCN-2024-09].
@@ -39,15 +39,15 @@ updated: 2026-09-04
 Этот слой лежит под обоими нейтрально-атомными путями платформы — щелочным (QuEra, Pasqal, Infleqtion, Google) и щёлочноземельным (Atom Computing/Microsoft, Caltech), — поставляя ридберговское возбуждение и транспорт на дефлекторах, которые потребляют механизмы гейта и зонированной связности. Он заменяет управление ловушками через фотонную интеграцию, разменивая интеграцию масштаба чипа на гибкость свободного пространства. По охвату это не хаб, но на нём сидит почти каждый нейтрально-атомный механизм. Производный такт = сумма раунда синдрома: слои гейтов + транспорт + считывание + сброс ≈ 1.31 ms, из них 0.80 ms транспорта, против измеренного раунда 1–4.5 ms — и задаётся целиком здесь. Соседний пустой слот: интегрированная плоскость оптического управления, сохраняющая гибкость дефлекторов.
 
 ## Верификация (QCVV)
-Число ловушек и заполнение получают прямой флуоресцентной съёмкой, и под сомнение они не ставятся, но сравнивают их поверх несовместимых границ: 11,022 захваченных атома и 448 кубитов под отказоустойчивым управлением измеряют разные вещи, а заполнение приводят то до перестроения (60.5% [D][2]), то после (99.3% [D][4]) — без пометки. Цифры задержек архитектурны, измерены внутри системы одной группы и ни разу не воспроизведены, а результаты по метаповерхности и по 2,000 пинцетам каждый получен одной группой.
+Число ловушек и заполнение получают прямой флуоресцентной съёмкой, и под сомнение они не ставятся, но сравнивают их поверх несовместимых границ: 11,022 захваченных атома и 448 кубитов под отказоустойчивым управлением измеряют разные вещи, а заполнение приводят то до перестроения (60.5% [D][2]), то после (99.3% [D][5]) — без пометки. Цифры задержек архитектурны, измерены внутри системы одной группы и ни разу не воспроизведены, а результаты по метаповерхности и по 2,000 пинцетам каждый получен одной группой.
 
 ## Акторы и экономика
 **Кто.**
 | Организация | Роль | Страна | Что именно делает с технологией | Свидетельство |
 |---|---|---|---|---|
 | QuEra Computing | разработчик | США | Продаёт Gemini: 260 атомов, один выстрел в секунду | [C][8] |
-| Atom Computing | разработчик | США | Иттербиевая платформа; строит Magne вместе с Microsoft | [C][10] |
-| Pasqal | разработчик | Франция | Ридберговские пинцетные системы; листинг через SPAC в августе 2026 г. | [P][16] |
+| Atom Computing | разработчик | США | Иттербиевая платформа; строит Magne вместе с Microsoft | [C][9] |
+| Pasqal | разработчик | Франция | Ридберговские пинцетные системы; листинг через SPAC в августе 2026 г. | [P][10] |
 | Hamamatsu Photonics | поставщик | Япония | Модуляторы и камеры qCMOS | [P][7] |
 | AA Opto-Electronic | поставщик | Франция | Скрещённые AOD для транспорта пинцетов | [D][G:AOD-VENDORS-2026] |
 
@@ -55,10 +55,10 @@ updated: 2026-09-04
 | Дата | Актор | Событие | Сумма | Программа / лид | Статус |
 |---|---|---|---|---|---|
 | 2025-07-17 | QuNorth | заказ Magne, 1,225 физических | €80M | Atom Computing, Microsoft | заказано [C][G:MAGNE-2025-07] |
-| 2025-09-09 | QuEra | раунд финансирования | $230M+ | Google, SoftBank Vision Fund 2 | закрыто [C][9] |
+| 2025-09-09 | QuEra | раунд финансирования | $230M+ | Google, SoftBank Vision Fund 2 | закрыто [C][11] |
 | 2025-11-06 | DARPA | QBI Stage B: Atom Computing, QuEra | ≤$15M | QBI | официально [G:QBI-STAGEB-2025-11] |
-| 2026-06-16 | Atom Computing | Series C плюс LOI по CHIPS | $100M + $100M | Third Point; Минторг США | закрыто+LOI [C][10] |
-| 2026-08-28 | Pasqal | закрытие SPAC | ~$360M наличными, выручка 2025 г. €16.5M | — | закрыто [P][16] |
+| 2026-06-16 | Atom Computing | Series C плюс LOI по CHIPS | $100M + $100M | Third Point; Минторг США | закрыто+LOI [C][9] |
+| 2026-08-28 | Pasqal | закрытие SPAC | ~$360M наличными, выручка 2025 г. €16.5M | — | закрыто [P][10] |
 
 **Рынок и цепочка поставок.** Два поставщика дефлекторов и один поставщик камер и модуляторов против лазерного поля с реальными альтернативами (NKT, TOPTICA, Coherent): концентрация сидит в дефлекторах и камерах — небольших непубличных компаниях, под которыми стоят четыре платформы на венчурном финансировании. Удельная экономика цитируема на уровне системы: €80M у QuNorth за 1,225 атомов — это ~€65k на атом, на два порядка ниже поставки ионной системы в пересчёте на ион [P][G:ATOM-OPTICS-UNIT-COST-2026], поскольку пинцетная оптика амортизируется по позициям. Уровень окупается на G1, является предпосылкой для G3 и блокирует G4, пока не упадёт миллисекундный цикл.
 
@@ -74,22 +74,17 @@ updated: 2026-09-04
 Подтвердить/понизить в течение 12–24 месяцев: раунд QEC ниже 1 ms при более чем 10³ позициях; вторую группу, воспроизводящую метаповерхностный массив или съёмку за 17.6 µs; Magne, оттестированную на 50 логических кубитах. Лучший случай к 2029 г.: быстрая съёмка и конвейерный транспорт сокращают раунд до ~100 µs, снимая отставание по такту. Худший случай: задержка остаётся на миллисекундах, а массивы — большими, дешёвыми и медленными. Открыто: является ли размен «полоса против времени пробега» в дефлекторе инженерной задачей или жёстким пределом; выживет ли быстрая съёмка на 10⁴ позициях; появится ли у дефлекторов второй источник. Следить за приёмочными испытаниями Magne.
 
 ## Источники
-[1] Endres et al. (Caltech / Harvard) · Cold matter assembled atom-by-atom (100 real-time tweezers) · arXiv:1607.03044 · 2016-07-11 · https://arxiv.org/abs/1607.03044
-[2] Wang, Zhang et al. (Tsinghua University, Qosmos) · Metasurface tweezer array, 18,225 sites, 11,022 atoms · arXiv:2606.02715 · 2026-06-01 · https://arxiv.org/abs/2606.02715
-[3] Harvard / MIT / QuEra · 448-atom fault-tolerant architecture · Nature · 2025-11 · https://www.nature.com/articles/s41586-025-09848-5
-[4] Chiu, Ji, Bluvstein et al. (Harvard / MIT / QuEra) · Continuous operation of a coherent 3,000-qubit system · Nature · 2025-09-15 · https://www.nature.com/articles/s41586-025-09596-6
-[5] Fraunhofer ILT / University of Stuttgart · Laser-optical system for 2,000 Rydberg tweezers · The Quantum Insider · 2026-07-08 · https://thequantuminsider.com/2026/07/08/fraunhofer-ilt-develops-laser-system-for-2000-qubit-neutral-atom-quantum-computer/ [P]
-[6] Yokoyama, Kashimoto, Shibata et al. (Kyoto University, Yaqumo) · 17.6 µs fluorescence imaging of ytterbium atoms · arXiv:2605.24175v2 · 2026-08-24 · https://arxiv.org/html/2605.24175 [P]
-[7] Quantum Computing Report · Hamamatsu Photonics, NKT Photonics and Yaqumo alliance on cold-atom core components · 2026-06-04 · https://quantumcomputingreport.com/hamamatsu-photonics-nkt-photonics-and-yaqumo-form-alliance-to-industrialize-cold-atom-quantum-core-components/ [P]
-[8] QuEra Computing · Gemini product page (260 qubits, 99.2% global 2Q, one shot per second) · company website · accessed 2026-09-03 · https://www.quera.com/gemini [C]
-[9] QuEra Computing · $230M+ financing round · company press release · 2025-09-09 · https://www.quera.com/press-releases/quera-expands-230-million-financing-round-advancing-quantum-accelerated-supercomputing [C]
-[10] Atom Computing · Raises more than $300M including a $100M DoC letter of intent · PR Newswire · 2026-06-16 · https://www.prnewswire.com/news-releases/atom-computing-raises-more-than-300-million-to-accelerate-deployment-of-fault-tolerant-neutral-atom-quantum-computers-302800832.html [C]
-[11] Caltech · 6,100-atom caesium array with 12.6 s coherence · arXiv:2403.12021 · 2025-09 · https://arxiv.org/abs/2403.12021
-[12] Google · Neutral-atom quantum computers: a second hardware track · Google blog · 2026-03-24 · https://blog.google/innovation-and-ai/technology/research/neutral-atom-quantum-computers/ [C]
-[13] Gooch & Housego · Acousto-optic deflectors in Nature neutral-atom papers · company page · accessed 2026-09-04 · https://gandh.com/news-and-resources/g-and-h-acousto-optic-deflectors-in-nature-papers [C]
-[14] US Bureau of Industry and Security · Export controls on quantum computing items (ECCN 4A906) · Federal Register · 2024-09-06 · https://www.federalregister.gov/documents/2024/09/06/2024-19633/implementation-of-additional-export-controls-certain-advanced-computing-items-supercomputer-and
-[15] Infleqtion · First neutral-atom quantum company to go public (NYSE, >$550M gross) · company newsroom · 2026-02-17 · https://infleqtion.com/infleqtion-becomes-first-neutral-atom-quantum-company-to-go-public/ [C]
-[16] The Quantum Insider · Pasqal completes SPAC merger with ~$360M in cash · 2026-08-28 · https://thequantuminsider.com/2026/08/28/pasqal-completes-spac-merger-with-360-million-in-cash/ [P]
+[1] M. Endres *et al.*, “Cold Matter Assembled Atom-by-Atom,” [arXiv:1607.03044](https://arxiv.org/abs/1607.03044), Jul. 2016.
+[2] Y. Wang *et al.*, “Trapping 11,000 Atoms in a Tweezer Array Generated by a Single Metasurface,” [arXiv:2606.02715](https://arxiv.org/abs/2606.02715), Jun. 2026.
+[3] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661).
+[4] R. Yokoyama *et al.*, “Minimally Destructive Fast Imaging of Single Atoms in an Optical Tweezer Array with Coherent Excitation,” [arXiv:2605.24175](https://arxiv.org/abs/2605.24175), Jun. 2026. Also https://arxiv.org/abs/2605.24175. [P]
+[5] N.-C. Chiu *et al.*, “Continuous operation of a coherent 3,000-qubit system,” *Nature*, vol. 646, no. 8087, pp. 1075–1080, Sep. 2025, doi: [10.1038/s41586-025-09596-6](https://doi.org/10.1038/s41586-025-09596-6).
+[6] Fraunhofer ILT / University of Stuttgart, “Laser-optical system for 2,000 Rydberg tweezers,” *The Quantum Insider*, Jul. 2026. [Online]. Available: https://thequantuminsider.com/2026/07/08/fraunhofer-ilt-develops-laser-system-for-2000-qubit-neutral-atom-quantum-computer/ [P]
+[7] M. Abdel-Kareem, “Hamamatsu Photonics, NKT Photonics, and Yaqumo Form Alliance to Industrialize Cold-Atom Quantum Core Components,” Quantum Computing Report, Jun. 4, 2026. [Online]. Available: https://quantumcomputingreport.com/hamamatsu-photonics-nkt-photonics-and-yaqumo-form-alliance-to-industrialize-cold-atom-quantum-core-components/ [P]
+[8] QuEra Computing Inc., “Gemini-Class Gate-Model Quantum Computer.” [Online]. Available: https://www.quera.com/gemini [C]
+[9] Atom Computing, “Atom Computing Raises More Than $300 Million to Accelerate Deployment of Fault-Tolerant, Neutral-Atom Quantum Computers,” PR Newswire, Jun. 16, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/atom-computing-raises-more-than-300-million-to-accelerate-deployment-of-fault-tolerant-neutral-atom-quantum-computers-302800832.html [C]
+[10] M. Swayne, “Pasqal Completes SPAC Merger With $360 Million in Cash,” The Quantum Insider, Aug. 28, 2026. [Online]. Available: https://thequantuminsider.com/2026/08/28/pasqal-completes-spac-merger-with-360-million-in-cash/ [P]
+[11] QuEra Computing, “QuEra Expands $230 Million Financing Round Advancing Quantum-Accelerated Supercomputing,” Sep. 9, 2025. [Online]. Available: https://www.quera.com/press-releases/quera-expands-230-million-financing-round-advancing-quantum-accelerated-supercomputing [C]
 
 ## Открытые пункты верификации
 Тезис основного отчёта «обновления в 10 MHz недостаточно выше ~10⁴ кубитов» ни в одном найденном источнике не удаётся привязать к прибору или к измерению; жидкокристаллические модуляторы обновляют кадр на десятках герц, а перестроение дефлектора ограничено временем пробега акустической волны, поэтому здесь эта цифра трактуется как суррогатный показатель. Институциональную принадлежность для работы 2016 года, стоящей в начале родословной, страница аннотации arXiv не вернула. Есть ли у альянса Hamamatsu, NKT Photonics и Yaqumo подписанные поимённо заказчики — не раскрывается. Ни вакуумное время жизни, ни какое-либо измерение когерентности для метаповерхностного массива на 18,225 позиций не сообщаются. Разбивки затрат ниже уровня системы не существует; цифра ~€65k на атом выведена из одного заказа, а не из прайс-листа.

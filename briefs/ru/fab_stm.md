@@ -27,7 +27,7 @@ updated: 2026-09-03
 Доминирующий член: число изготовленных приборов. Каждое донорное устройство на STM изготавливается поштучно; параллельного процесса не существует ни в каком масштабе, а распределение выхода годных по размещению не опубликовано.
 
 ## Производство, материалы и цепочка поставок
-Установку для размещения доноров «под ключ» не продаёт никто: оборудование (STM в сверхвысоком вакууме, обращение с фосфином, эпитаксия) рыночное, а рецепт — нет, поэтому второй источник закупить негде. Исходное сырьё больше не в дефиците: обогащённый ²⁸Si от ASP Isotopes и, с 2026-07-16, силан US DOE с чистотой 99.9999% по ²⁸Si [P][8]. SkyWater поставляет резонаторы и корпусирование в США (2025-11-20) [C][4], а IonQ, поставщик конкурирующей платформы, 2026-07-31 закрыла приобретение SkyWater примерно за USD 1.8 B [G][5] — самый острый риск поставок здесь. Экспортный контроль не срабатывает: STM-литография не покрыта ни одним ECCN, а 4A906 начинается с 34 кубитов [G][7]. Нагрузка при масштабировании неизвестна — устройств более чем на одиннадцать кубитов не существует.
+Установку для размещения доноров «под ключ» не продаёт никто: оборудование (STM в сверхвысоком вакууме, обращение с фосфином, эпитаксия) рыночное, а рецепт — нет, поэтому второй источник закупить негде. Исходное сырьё больше не в дефиците: обогащённый ²⁸Si от ASP Isotopes и, с 2026-07-16, силан US DOE с чистотой 99.9999% по ²⁸Si [P][3]. SkyWater поставляет резонаторы и корпусирование в США (2025-11-20) [C][4], а IonQ, поставщик конкурирующей платформы, 2026-07-31 закрыла приобретение SkyWater примерно за USD 1.8 B [G][5] — самый острый риск поставок здесь. Экспортный контроль не срабатывает: STM-литография не покрыта ни одним ECCN, а 4A906 начинается с 34 кубитов [G][6]. Нагрузка при масштабировании неизвестна — устройств более чем на одиннадцать кубитов не существует.
 
 ## Роль в стеке
 Предоставляет носитель «донорный спин», а через него — регистры с гейтами по сверхтонкой связи и спин-зарядовое считывание; на шаге размещения замещает фабричный CMOS, разменивая производительность по пластинам на непревзойдённую точность позиционирования. Больше ничто в стеке его не требует — в этом и стратегическая слабость: дефект здесь нельзя обойти маршрутом, а прогресс в нём не даёт выигрыша ни одному другому узлу. Верификация: точности (fidelity) на 11 кубитах происходят из одной статьи единственной группы, практикующей этот процесс [D][2] — второго изготовителя нет, а формулировок точности три: в препринте, в журнале и в основном отчёте.
@@ -39,15 +39,15 @@ updated: 2026-09-03
 | SQC | разработчик | Австралия | Единственный практик STM-размещения доноров | [D][2] |
 | SkyWater Technology | поставщик | США | Резонаторы и корпусирование | [C][4] |
 | IonQ | поставщик | США | Владеет SkyWater с 2026-07-31 | [G][5] |
-| NVIDIA | поставщик | США | Интерконнект NVQLink, SQC среди 17 разработчиков | [C][6] |
+| NVIDIA | поставщик | США | Интерконнект NVQLink, SQC среди 17 разработчиков | [C][7] |
 
-**Деньги.** 2025-11-06 · SQC · QBI Stage B · до USD 15 M · DARPA · присуждён [G:QBI-STAGEB-2025-11]. 2026-03-24 и 2026-06-11 · SQC · вхождение в капитал · A$60 M суммарно · Australia's NRFC · закрыто [G:SQC-NRFC-2026]. 2026-06-11 · SQC · инвестиция · сумма не раскрыта · Firgun Ventures · объявлено [C][3]. 2026-07-31 · IonQ · приобретение поставщика SkyWater · ~USD 1.8 B · закрыто [G][5].
+**Деньги.** 2025-11-06 · SQC · QBI Stage B · до USD 15 M · DARPA · присуждён [G:QBI-STAGEB-2025-11]. 2026-03-24 и 2026-06-11 · SQC · вхождение в капитал · A$60 M суммарно · Australia's NRFC · закрыто [G:SQC-NRFC-2026]. 2026-06-11 · SQC · инвестиция · сумма не раскрыта · Firgun Ventures · объявлено [C][8]. 2026-07-31 · IonQ · приобретение поставщика SkyWater · ~USD 1.8 B · закрыто [G][5].
 
 **Рынок и цепочка поставок.** Рынка нет: один оператор, рыночного процесса не существует. Стоимость одного размещённого донора не публикуется, поэтому юнит-экономику невозможно сверить с целью на 2033 год. Финансирует G2 и G3; для G4 нужно распараллеливание, которого нет.
 
 **ИС и стандарты.** Базовые патенты восходят к линии UNSW/Simmons; датированного подсчёта семейств по поименованной базе по состоянию на 4 сентября 2026 г. нет, и размещение с атомарной точностью не покрыто ни одним стандартом.
 
-**Дорожные карты и послужной список.** SQC (2026-06 · коммерческий масштаб к 2033 [R][G:SQC-NRFC-2026] · не выполнено, опубликовано одиннадцать кубитов). «Непрерывное масштабирование» и «миллион кубитов» фигурируют в материалах компании без опубликованного механизма [C][3], так что цель скорее нефальсифицируема, чем амбициозна.
+**Дорожные карты и послужной список.** SQC (2026-06 · коммерческий масштаб к 2033 [R][G:SQC-NRFC-2026] · не выполнено, опубликовано одиннадцать кубитов). «Непрерывное масштабирование» и «миллион кубитов» фигурируют в материалах компании без опубликованного механизма [C][8], так что цель скорее нефальсифицируема, чем амбициозна.
 
 **Стратегическое прочтение.** Если схема параллельной записи появится, десятилетие накопленного знания рецептов сложится в настоящий защитный ров. Без неё та самая точность, которая делает процесс привлекательным, его же и ограничивает, а стоимость мигрирует к тому, кто встроит доноры в фабричный маршрут.
 
@@ -57,14 +57,14 @@ updated: 2026-09-03
 Подтвердить/понизить (12–24 месяца): датированный анонс параллельного изготовления или устройство более чем на одиннадцать кубитов подтверждают наличие пути за пределы штучного масштаба; отсутствие того и другого к 2028 году понижает технологию до физического инструмента. Лучший случай к 2029: свыше пятидесяти доноров с опубликованным выходом годных. Худший случай: возможность, замкнутая на одну лабораторию. Открыто: (1) осуществима ли экспозиция несколькими остриями или по шаблону; (2) сохранит ли новый владелец SkyWater эти отношения; (3) опубликует ли кто-нибудь распределение выхода годных по размещению.
 
 ## Источники
-[1] Fuechsle, Miwa, Mahapatra, Ryu, Lee, Warschkow, Hollenberg, Klimeck, Simmons (UNSW) · "A single-atom transistor" · Nature Nanotechnology 7, 242–246 · 2012 · https://www.nature.com/articles/nnano.2012.21 [D]
-[2] Edlbauer, Wang, Huq et al. (SQC) · "An 11-qubit atom processor in silicon" · Nature 648, 569–575; preprint arXiv:2506.03567 · 2025-12-17 · https://www.nature.com/articles/s41586-025-09827-w [D]
-[3] SQC · newsroom and technology pages (Bluefors 2025-09-29, AMD 2026-04-07, Firgun Ventures 2026-06-11, PAQMan process) · company pages · accessed 2026-09-04 · https://sqc.com/news/ [C]
-[4] SQC · "SkyWater x SQC: Advancing Hybrid Quantum-Classical Computing" · company release · 2025-11-20 · https://sqc.com/news/skywater-and-sqc-advancing-hybrid-quantum-classical-computing [C]
-[5] IonQ · "IonQ Completes Acquisition of SkyWater Technology" · company release · 2026-07-31 · https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [G]
-[6] NVIDIA · "NVIDIA NVQLink connects quantum and GPU computing" (17 QPU builders incl. SQC) · newsroom · 2025-10-28 · https://nvidianews.nvidia.com/news/nvidia-nvqlink-quantum-gpu-computing [C]
-[7] US Bureau of Industry and Security · "Implementation of Additional Export Controls: Quantum Computing Items" (ECCN 4A906, 3A904) · Federal Register · 2024-09-06 · https://www.federalregister.gov/documents/2024/09/06/2024-19633/implementation-of-additional-export-controls-certain-advanced-computing-items-supercomputer-and [G]
-[8] US DOE Office of Isotope R&D and Production, via HPCwire · "DOE Advances Domestic Supply of Silicon, Germanium Isotopes for Quantum Computing" · 2026-07-16 · https://www.hpcwire.com/off-the-wire/doe-advances-domestic-supply-of-silicon-germanium-isotopes-for-quantum-computing/ [P]
+[1] M. Fuechsle *et al.*, “A single-atom transistor,” *Nat. Nanotechnol.*, vol. 7, no. 4, pp. 242–246, Apr. 2012, doi: [10.1038/nnano.2012.21](https://doi.org/10.1038/nnano.2012.21). [D]
+[2] H. Edlbauer *et al.*, “An 11-qubit atom processor in silicon,” [arXiv:2506.03567](https://arxiv.org/abs/2506.03567), Jun. 2025. [D]
+[3] U.S. Department of Energy, “DOE Advances Domestic Supply of Silicon, Germanium Isotopes for Quantum Computing,” HPCwire, Jul. 16, 2026. [Online]. Available: https://www.hpcwire.com/off-the-wire/doe-advances-domestic-supply-of-silicon-germanium-isotopes-for-quantum-computing/ [P]
+[4] Silicon Quantum Computing, “SkyWater x SQC: Advancing Hybrid Quantum-Classical Computing,” Nov. 20, 2025. [Online]. Available: https://sqc.com/news/skywater-and-sqc-advancing-hybrid-quantum-classical-computing [C]
+[5] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [G]
+[6] US Department of Commerce, Bureau of Industry and Security, “Commerce Control List Additions and Revisions; Implementation of Controls on Advanced Technologies Consistent With Controls Implemented by International Partners,” *Federal Register*, vol. 89, p. 72926, Sep. 6, 2024. [Online]. Available: https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies [G]
+[7] NVIDIA, “NVIDIA Introduces NVQLink — Connecting Quantum and GPU Computing for 17 Quantum Builders and Nine Scientific Labs,” Oct. 28, 2025. [Online]. Available: https://nvidianews.nvidia.com/news/nvidia-nvqlink-quantum-gpu-computing [C]
+[8] Silicon Quantum Computing, “Silicon Quantum Computing — News,” sqc.com. [Online]. Available: https://sqc.com/news/ [C]
 
 ## Открытые пункты верификации
 - Точность размещения: первичного измерения распределения положений встроенных доноров найти не удалось, поэтому используется ~3 nm, а само распределение помечено как неопубликованное.

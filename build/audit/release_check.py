@@ -104,6 +104,12 @@ def main():
     sys.path.insert(0, os.path.join(ROOT, 'build')); import sources as _sources
     probs=[p for p in _sources.check() if not p.startswith('no date')]
     item('bibliography (data/sources.json) agrees with the register and every record is verified', not probs, probs[:6])
+    # 24 Sep 2026: the briefs' references on the same canon (build/brief_refs.py): lists == data, every citation resolves,
+    # every entry cited, numbered by first citation, RU == EN; and on the page every brief citation link resolves
+    brc = run([sys.executable, 'build/brief_refs.py', '--check'])
+    item('brief references agree with data/brief-sources.json (brief_refs.py --check)', brc.returncode == 0, (brc.stdout + brc.stderr)[-300:])
+    bc = set(re.findall(r'<a class="cite" href="#(brief-[^"]+-src-\d+)"', h))
+    item('every brief citation links to an entry of its list', bool(bc) and all(f' id="{c}"' in h for c in bc), [c for c in bc if f' id="{c}"' not in h][:6])
     remn=re.findall(r'\\(?:%|[A-Za-z]{2,})', t)
     item('no TeX remnants in the rendered text', not remn, remn[:6])
     item('no formula span longer than 60 characters (currency signs never open a formula)', 'class="m long"' not in h)

@@ -38,7 +38,7 @@ Baseband control costs about one line per gate and two to four gates per dot, so
 This is a hub. It requires nothing upstream, provides the exchange gate directly, and reaches three qubit families: quantum-dot spins (Intel, Diraq, Quantum Motion, HRL/IBM, QuTech, Quobly, Equal1), donor spins (Silicon Quantum Computing) and Majorana devices, where gate voltages tune the dots that report parity. It competes with microwave and electric-dipole spin resonance, which buys frequency selectivity at the price of antennas and heating. Its clock contribution is negligible: exchange gates run at ~58 ns [D][G:SHUTTLE-CZ-DELFT-2026-05] against 6.3 µs readout, so derived clock = sum of the syndrome round: gate layers + transport + readout + reset ≈ 8.5 µs here, set by readout with reset next.
 
 ## Verification (QCVV)
-Fidelities come from randomised benchmarking and gate-set tomography, and the headline QuTech number is a lower bound, not a point estimate [D][G:QUTECH-BASEBAND-2025-07]. The 80% extrinsic share deserves most scrutiny: it is inferred from measured error against a modelled noise budget, not independently partitioned, and unreplicated. No spin device above 12 qubits has published all-pairs two-qubit fidelities, so simultaneous-operation crosstalk — this node's own failure mode — is uncharacterised at scale. HRL's Λ₅/₃ = 4.7 is a repetition code, bit-flip only, not below-threshold evidence, and its [[4,2,2]] fidelity of 0.95 is post-selected [D][G:HRL-2026]. On the Majorana side the control works but the qubit does not exist: parity readout is real, X-loop lifetimes ran ~1,000× shorter than Z-loop, no two-qubit operation [D][11].
+Fidelities come from randomised benchmarking and gate-set tomography, and the headline QuTech number is a lower bound, not a point estimate [D][G:QUTECH-BASEBAND-2025-07]. The 80% extrinsic share deserves most scrutiny: it is inferred from measured error against a modelled noise budget, not independently partitioned, and unreplicated. No spin device above 12 qubits has published all-pairs two-qubit fidelities, so simultaneous-operation crosstalk — this node's own failure mode — is uncharacterised at scale. HRL's Λ₅/₃ = 4.7 is a repetition code, bit-flip only, not below-threshold evidence, and its [[4,2,2]] fidelity of 0.95 is post-selected [D][G:HRL-2026]. On the Majorana side the control works but the qubit does not exist: parity readout is real, X-loop lifetimes ran ~1,000× shorter than Z-loop, no two-qubit operation [D][4].
 
 ## Actors & economics
 **Who.**
@@ -48,7 +48,7 @@ Fidelities come from randomised benchmarking and gate-set tomography, and the he
 | Diraq | Developer | Australia | SiMOS exchange qubits on imec's 300 mm line | [D][G:DIRAQ-8Q-2026-07] |
 | Quantum Motion | Developer | UK | Full-stack 300 mm CMOS system at the UK NQCC | [C][G:QM-160M-2026-05] |
 | QuTech | Research | Netherlands | Microwave-free hopping control, 2D array | [D][G:QUTECH-BASEBAND-2025-07] |
-| Microsoft | Developer | USA | Gate-voltage-tuned parity measurement in tetrons | [D][11] |
+| Microsoft | Developer | USA | Gate-voltage-tuned parity measurement in tetrons | [D][4] |
 
 **Money.** 2025-11-06 · Diraq, Quantum Motion, Silicon Quantum Computing · DARPA QBI Stage B · up to $15 M USD each · programme [G:QBI-STAGEB-2025-11]. 2026-05-07 · Quantum Motion · Series C · $160 M USD · DCVC, Kembara · closed [C][G:QM-160M-2026-05]. 2026-05-21 · Diraq · CHIPS letter of intent · up to $38 M USD · US Commerce · non-binding [G:CHIPS-LOI-2026-05]. 2026-06-03 · Quobly · Series A · €115 M · Bpifrance, SEALSQ, STMicro · €134 M cumulative · closed [C][G:QUOBLY-115M-2026-06]. 2026-07-23 · IBM · acquires HRL · undisclosed · announced [C][G:IBM-HRL-2026-07].
 
@@ -66,20 +66,10 @@ Fidelities come from randomised benchmarking and gate-set tomography, and the he
 Confirm by 2027 if any developer publishes all-pairs two-qubit fidelities above 12 qubits, or an independent group reproduces the extrinsic/intrinsic split; demote if crosstalk caps arrays at ≤20 qubits through 2028. Best case 2029: cold self-sequenced control becomes default and two-qubit errors move from 3×10⁻³ toward 10⁻⁴. Worst case: calibration overhead outruns qubit count and the CMOS argument stalls at demonstration scale. Open questions: does the 80% figure survive independent measurement; can per-qubit DAC counts fall an order of magnitude; does recalibration keep pace with array size; does Majorana control ever get a qubit.
 
 ## Sources
-[1] DiVincenzo, Bacon, Kempe, Burkard, Whaley · "Universal quantum computation with the exchange interaction" · Nature 408, 339; arXiv:quant-ph/0005116 · 2000 [S] — https://arxiv.org/abs/quant-ph/0005116
-[2] Neyens et al. (Intel) · 300 mm quantum-dot device statistics (>24,000 devices/wafer, 96% tune-up yield) · arXiv:2410.16583 · 2024-10 [D] — https://arxiv.org/abs/2410.16583
-[3] Quantum Motion · full-stack silicon CMOS quantum computer delivered to the UK NQCC · 2025-09-15 [C] — https://quantummotion.com/quantum-motion-delivers-the-industrys-first-full-stack-silicon-cmos-quantum-computer/
-[4] HRL Laboratories · 18-qubit exchange-only SiGe processor with a 4 K cryo-CMOS controller · arXiv:2604.16216; Nature · 2026-07-29 [D] — https://arxiv.org/abs/2604.16216
-[5] Unseld, Undseth, Raymenants et al. (QuTech/Delft) · "Baseband control of single-electron silicon spin qubits in two dimensions" · Nature Communications · 2025-07-01 [D] — https://www.nature.com/articles/s41467-025-60351-x
-[6] Nickl, Dumoulin Stuyck, Steinacker et al. (Diraq/imec) · eight-qubit 300 mm SiMOS device · Nature Communications 17, 5878 · 2026-07-09 [D] — https://www.nature.com/articles/s41467-026-74597-6
-[7] Matsumoto et al. (Vandersypen group, QuTech/Delft) · controlled-phase gate between shuttled spins, 58 ns at 1.8 m/s · Nature 653 · 2026-05-06 [D] — https://www.nature.com/articles/s41586-026-10423-9
-[8] IBM Newsroom · "IBM to Acquire HRL Laboratories" · 2026-07-23 [C] — https://newsroom.ibm.com/2026-07-23-ibm-to-acquire-hrl-laboratories-to-power-the-future-of-quantum
-[9] DARPA · QBI Stage B selection · 2025-11-06 [G] — https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection
-[10] Diraq · utility-scale roadmap release · 2026-08-27 [C] — https://www.diraq.com/newsdesk/diraq-sets-roadmap-for-utility-scale-quantum-computing-with-millions-of-qubits-on-a-single-silicon-chip
-[11] Microsoft Azure Quantum · single-shot interferometric parity measurement in InAs–Al tetrons · Nature 638 · 2025-02-19 [D] — https://www.nature.com/articles/s41586-024-08445-2
-[12] Microsoft Azure Quantum · "Majorana 2" InAs–Pb tetron, ~20 s parity switching, no two-qubit operation · arXiv:2606.03884 · 2026-06 [P] — https://arxiv.org/abs/2606.03884
-[13] US Bureau of Industry and Security · interim final rule creating ECCN 3A901.a · Federal Register · 2024-09-06 [G] — https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies-consistent
-[14] Quantum Machines · Series C press release ($170 M, PSG Equity lead) · 2025-02-25 [C] — https://www.quantum-machines.co/press-release/quantum-machines-raises-170-million-in-series-c-funding/
+[1] D. P. DiVincenzo, D. Bacon, J. Kempe, G. Burkard, and K. B. Whaley, “Universal quantum computation with the exchange interaction,” *Nature*, vol. 408, p. 339, Nov. 2000. [Online]. Available: https://arxiv.org/abs/quant-ph/0005116 [S]
+[2] H. C. George *et al.*, “12-spin-qubit arrays fabricated on a 300 mm semiconductor manufacturing line,” *Nano Lett.*, vol. 25, no. 2, pp. 793–799, Dec. 2024, doi: [10.1021/acs.nanolett.4c05205](https://doi.org/10.1021/acs.nanolett.4c05205). [arXiv:2410.16583](https://arxiv.org/abs/2410.16583). [D]
+[3] Quantum Motion, “Quantum Motion Delivers the Industry's First Full-Stack Silicon CMOS Quantum Computer,” Sep. 15, 2025. [Online]. Available: https://quantummotion.com/quantum-motion-delivers-the-industrys-first-full-stack-silicon-cmos-quantum-computer/ [C]
+[4] Microsoft Azure Quantum, “Interferometric single-shot parity measurement in InAs–Al hybrid devices,” *Nature*, vol. 638, no. 8051, pp. 651–655, Feb. 2025, doi: [10.1038/s41586-024-08445-2](https://doi.org/10.1038/s41586-024-08445-2). [D]
 
 ## Open verification items
 The 80% extrinsic share of CNOT error is a modelled inference from HRL's noise budget, not an independent partition, and has no second-group replication.

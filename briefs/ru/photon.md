@@ -28,9 +28,9 @@ updated: 2026-09-03
 
 Два неразличимых фотона, встречаясь на светоделителе, группируются, и регистрация нужной картины на выходе проецирует оставшиеся моды в запутанное состояние. Поскольку проекция удаётся лишь иногда, сеть слияний вынуждена делать попытки с запасом и залечивать отказы избыточностью ресурсного состояния.
 
-Полом служит бюджет потерь, и каждый элемент его расходует. В Omega: ввод из волокна в чип 52 ± 12 mdB, разветвитель 0.5 ± 0.2 mdB, вносимые потери ключа на титанате бария 100 mdB, одномодовый SiN 1.8 ± 0.2 dB/m (0.5 dB/m в многомодовом варианте) [D][3][G:PSIQ-OMEGA-METRICS-2025]. Теория терпит 2.7% потерь на фотон при ресурсных состояниях из 6-кольца и до 17% при 168-кубитных состояниях, которые никто не умеет построить [S][15]. Фотон, прошедший тридцать ключей, израсходовал 3 dB — половину самого себя. Xanadu, находясь на стороне непрерывных переменных, но с той же оптикой, оцифровывает разрыв: 24.1× выше порога в 2026 году при цели 1.0× в 2030-м [C][16][G:XANADU-SPAC-2026-03].
+Полом служит бюджет потерь, и каждый элемент его расходует. В Omega: ввод из волокна в чип 52 ± 12 mdB, разветвитель 0.5 ± 0.2 mdB, вносимые потери ключа на титанате бария 100 mdB, одномодовый SiN 1.8 ± 0.2 dB/m (0.5 dB/m в многомодовом варианте) [D][2][G:PSIQ-OMEGA-METRICS-2025]. Теория терпит 2.7% потерь на фотон при ресурсных состояниях из 6-кольца и до 17% при 168-кубитных состояниях, которые никто не умеет построить [S][3]. Фотон, прошедший тридцать ключей, израсходовал 3 dB — половину самого себя. Xanadu, находясь на стороне непрерывных переменных, но с той же оптикой, оцифровывает разрыв: 24.1× выше порога в 2026 году при цели 1.0× в 2030-м [C][4][G:XANADU-SPAC-2026-03].
 
-Стандартное лекарство от вероятностных источников тратит тот самый бюджет, который защищает: четырёхволновое смешение приходится вести при вероятности геральдирования ~1%, чтобы подавить многофотонные события, поэтому близость к детерминизму требует глубины мультиплексирования порядка десяти — вдесятеро больше ключей по 100 mdB каждый. Детерминированные источники на квантовых точках разрывают этот круг, и именно поэтому системная эффективность 71.2%, впервые превысившая порог устойчивости к потерям 2/3, — самая значимая зафиксированная цифра по источникам [D][2]. Вторичные механизмы отказа: различимость (рассогласование ухудшает видность HOM и проявляется как ошибка Паули, а не как стирание), многофотонное загрязнение, тёмные отсчёты и задержка feed-forward — фотон ждёт в линии задержки, пока принимается классическое решение, а задержка есть потеря.
+Стандартное лекарство от вероятностных источников тратит тот самый бюджет, который защищает: четырёхволновое смешение приходится вести при вероятности геральдирования ~1%, чтобы подавить многофотонные события, поэтому близость к детерминизму требует глубины мультиплексирования порядка десяти — вдесятеро больше ключей по 100 mdB каждый. Детерминированные источники на квантовых точках разрывают этот круг, и именно поэтому системная эффективность 71.2%, впервые превысившая порог устойчивости к потерям 2/3, — самая значимая зафиксированная цифра по источникам [D][5]. Вторичные механизмы отказа: различимость (рассогласование ухудшает видность HOM и проявляется как ошибка Паули, а не как стирание), многофотонное загрязнение, тёмные отсчёты и задержка feed-forward — фотон ждёт в линии задержки, пока принимается классическое решение, а задержка есть потеря.
 
 ## Инженерное состояние (state of the art)
 
@@ -38,25 +38,25 @@ updated: 2026-09-03
 
 | Год | Показатель | Кто | Тег+ключ |
 |---|---|---|---|
-| 2023-11 | системная эффективность источника на квантовой точке 71.2% — впервые выше порога 2/3 | USTC (Ding et al.) | [D][2] |
-| 2025-02 | Omega: чистота 99.5%, HOM 99.5%, белловское состояние слияния 99.22 ± 0.12%, межчиповое белловское 99.72 ± 0.04% на 42 m, медианная эффективность SNSPD на чипе 93.4%, ~2 K, 300 mm | PsiQuantum / GlobalFoundries | [D][3] |
-| 2025 | коммерческий источник на квантовой точке S1: системная эффективность 55.3%, регистрируемый темп 26.2 MHz | Sparrow Quantum | [D][4] |
+| 2023-11 | системная эффективность источника на квантовой точке 71.2% — впервые выше порога 2/3 | USTC (Ding et al.) | [D][5] |
+| 2025-02 | Omega: чистота 99.5%, HOM 99.5%, белловское состояние слияния 99.22 ± 0.12%, межчиповое белловское 99.72 ± 0.04% на 42 m, медианная эффективность SNSPD на чипе 93.4%, ~2 K, 300 mm | PsiQuantum / GlobalFoundries | [D][2] |
+| 2025 | коммерческий источник на квантовой точке S1: системная эффективность 55.3%, регистрируемый темп 26.2 MHz | Sparrow Quantum | [D][6] |
 | 2025-10 | 12-кубитная Belenos/Lucy поставлена в CEA TGCC | Quandela | [C][7] |
-| 2026 | источник на квантовой точке S3: сырая видность HOM 97.1 ± 0.1%, чистота 99.9 ± 0.1% | Sparrow Quantum | [D][4] |
-| 2026-05 | гауссов бозонный сэмплинг, 3,050 фотонных отсчётов | USTC (Jiuzhang 4.0) | [D][5] |
-| 2026-07 | 8-кубитная универсальная подсистема MBQC (Carina) поставлена в DLR QCI | QuiX Quantum | [C][8] |
+| 2026 | источник на квантовой точке S3: сырая видность HOM 97.1 ± 0.1%, чистота 99.9 ± 0.1% | Sparrow Quantum | [D][6] |
+| 2026-05 | гауссов бозонный сэмплинг, 3,050 фотонных отсчётов | USTC (Jiuzhang 4.0) | [D][8] |
+| 2026-07 | 8-кубитная универсальная подсистема MBQC (Carina) поставлена в DLR QCI | QuiX Quantum | [C][9] |
 
 Лучший продемонстрированный результат и типичный при масштабировании разведены здесь дальше, чем на любой другой платформе: покомпонентные точности (fidelity) превосходны, крупнейшая эксплуатируемая универсальная DV-машина насчитывает двенадцать кубитов [C][7], а фотонного логического кубита по состоянию на 2026-09-03 не существует. Доминирующий член ошибки — не точность, а выживаемость фотона при прохождении коммутационной сети.
 
 ## Производство, материалы и цепочка поставок
 
-Детали фабрики (foundry) относятся к брифу по фотонным ИС; специфично для носителя то, что здесь конкурируют две несовместимые технологии источников. **SFWM** в кольцах из SiN или Si монолитно со схемой, совместимо с CMOS, свободно от III-V и работает при 2 K рядом с детекторами, но вероятностно и покупает детерминизм ключами мультиплексирования (PsiQuantum, Xanadu, QuiX). **Квантовые точки** (InAs/GaAs в волноводах на фотонных кристаллах) почти детерминированы — 71.2% в лаборатории [D][2], 55.3% в поставке, 20–35% типично [D][4], — но требуют ~4 K, излучают вблизи 900–950 nm, а не в телеком-диапазоне, растут в случайных позициях и со случайными энергиями (проблема выхода годных) и требуют гетерогенной интеграции (Quandela, Sparrow).
+Детали фабрики (foundry) относятся к брифу по фотонным ИС; специфично для носителя то, что здесь конкурируют две несовместимые технологии источников. **SFWM** в кольцах из SiN или Si монолитно со схемой, совместимо с CMOS, свободно от III-V и работает при 2 K рядом с детекторами, но вероятностно и покупает детерминизм ключами мультиплексирования (PsiQuantum, Xanadu, QuiX). **Квантовые точки** (InAs/GaAs в волноводах на фотонных кристаллах) почти детерминированы — 71.2% в лаборатории [D][5], 55.3% в поставке, 20–35% типично [D][6], — но требуют ~4 K, излучают вблизи 900–950 nm, а не в телеком-диапазоне, растут в случайных позициях и со случайными энергиями (проблема выхода годных) и требуют гетерогенной интеграции (Quandela, Sparrow).
 
-Единые точки отказа: одна известная 300 mm линия [C][G:GF-QTS-2026-05]; один рыночный поставщик детерминированных источников [D][4]; коммутационная база на двух небольших поставщиках тонкоплёночного ниобата лития [P][G:TFLN-FUNDING-2024-09]. Ни один поставщик не публикует стоимость на кубит или цену системы. Экспортная уязвимость проходит через квантовые ограничения США от сентября 2024 года и список товаров двойного назначения ЕС; точная классификация однофотонных источников не верифицирована.
+Единые точки отказа: одна известная 300 mm линия [C][G:GF-QTS-2026-05]; один рыночный поставщик детерминированных источников [D][6]; коммутационная база на двух небольших поставщиках тонкоплёночного ниобата лития [P][G:TFLN-FUNDING-2024-09]. Ни один поставщик не публикует стоимость на кубит или цену системы. Экспортная уязвимость проходит через квантовые ограничения США от сентября 2024 года и список товаров двойного назначения ЕС; точная классификация однофотонных источников не верифицирована.
 
 ## Управление, считывание и нагрузка на ввод-вывод
 
-Драйверы — электрооптика при комнатной температуре, а чип находится при ~2 K, где холодильная установка располагает примерно в тысячу раз большей хладопроизводительностью, чем доступна на 10 mK; это и есть реальное преимущество платформы при масштабировании. Стена здесь — число каналов и задержка, а не мощность. Каждая операция заканчивается разрушающим детектированием, поэтому каналы масштабируются вместе с числом мод: 10³ мод — обычная криогенная разводка, 10⁴ требует мультиплексированного считывания, 10⁶ — чего-то вроде строчно-столбцовой архитектуры, стоящей за SNSPD-камерой на 400,000 пикселей [D][18], плюс логики принятия решений внутри криостата. При 0.5 dB/m в многомодовом SiN удержание фотона на 100 ns стоит ~20 m волновода и 10 dB, поэтому feed-forward обязан быть наносекундного класса. QuiX называет быстрый feed-forward — вместе с источниками — двумя задачами, которые должна решить её система 2026 года [C][11].
+Драйверы — электрооптика при комнатной температуре, а чип находится при ~2 K, где холодильная установка располагает примерно в тысячу раз большей хладопроизводительностью, чем доступна на 10 mK; это и есть реальное преимущество платформы при масштабировании. Стена здесь — число каналов и задержка, а не мощность. Каждая операция заканчивается разрушающим детектированием, поэтому каналы масштабируются вместе с числом мод: 10³ мод — обычная криогенная разводка, 10⁴ требует мультиплексированного считывания, 10⁶ — чего-то вроде строчно-столбцовой архитектуры, стоящей за SNSPD-камерой на 400,000 пикселей [D][10], плюс логики принятия решений внутри криостата. При 0.5 dB/m в многомодовом SiN удержание фотона на 100 ns стоит ~20 m волновода и 10 dB, поэтому feed-forward обязан быть наносекундного класса. QuiX называет быстрый feed-forward — вместе с источниками — двумя задачами, которые должна решить её система 2026 года [C][11].
 
 ## Роль в стеке
 
@@ -66,7 +66,7 @@ updated: 2026-09-03
 
 Стандартный инструментарий — видность HOM, g²(0) по схеме Hanbury Brown–Twiss и точность белловского состояния слияния из томографии по данным, постселектированным по совпадениям. Чего они не схватывают, так это потерь: почти любая фотонная точность обусловлена тем, что фотоны были зарегистрированы, поэтому ошибка, доминирующая в машине, вынесена за скобки того числа, которое её описывает. «Точность белловского состояния слияния 99.22%» и «24× выше порога по потерям» описывают одну и ту же оптику; принять первое за уровень ошибок платформы — значит ошибиться в её ранжировании на два порядка.
 
-Расхождения. (i) Фигурирующие в основном отчёте 0.5 dB/m — многомодовая величина; одномодовый SiN в Omega даёт 1.8 ± 0.2 dB/m [D][3][G:PSIQ-OMEGA-METRICS-2025] — здесь используются обе, с указанием какая. (ii) Эффективность квантовых точек 71.2% (лаборатория) против 55.3% (поставка) против 20–35% (типично) — это разрыв между лабораторией и продуктом; используется продуктовая цифра [D][2][4]. (iii) Преимущество Jiuzhang 4.0 оспаривается классическим спуфингом, эксплуатирующим потери [D][5]. (iv) «Наивысшая видность HOM на сегодня» у Sparrow — невоспроизведённое заявление поставщика [D][4]. Omega ни разу не воспроизводилась независимо.
+Расхождения. (i) Фигурирующие в основном отчёте 0.5 dB/m — многомодовая величина; одномодовый SiN в Omega даёт 1.8 ± 0.2 dB/m [D][2][G:PSIQ-OMEGA-METRICS-2025] — здесь используются обе, с указанием какая. (ii) Эффективность квантовых точек 71.2% (лаборатория) против 55.3% (поставка) против 20–35% (типично) — это разрыв между лабораторией и продуктом; используется продуктовая цифра [D][5], [6]. (iii) Преимущество Jiuzhang 4.0 оспаривается классическим спуфингом, эксплуатирующим потери [D][8]. (iv) «Наивысшая видность HOM на сегодня» у Sparrow — невоспроизведённое заявление поставщика [D][6]. Omega ни разу не воспроизводилась независимо.
 
 ## Акторы и экономика
 
@@ -74,32 +74,32 @@ updated: 2026-09-03
 
 | Организация | Роль | Страна | Что именно делает с технологией | Свидетельство |
 |---|---|---|---|---|
-| PsiQuantum | разработчик | США / Австралия | DV на слияниях на 300 mm GlobalFoundries; чипсет Omega; Brisbane, Chicago | [D][3][G:PSIQ-QBI-C-2026-07] |
+| PsiQuantum | разработчик | США / Австралия | DV на слияниях на 300 mm GlobalFoundries; чипсет Omega; Brisbane, Chicago | [D][2][G:PSIQ-QBI-C-2026-07] |
 | Quandela | разработчик | Франция | источники на квантовых точках плюс собственные процессоры; 12-кубитная Lucy в CEA | [C][7][G:QBI-QBIT-2026] |
-| QuiX Quantum | разработчик | Нидерланды | универсальные фотонные MBQC-процессоры; Carina в DLR | [C][8][C][11] |
-| ORCA Computing | разработчик | Великобритания | бозонный сэмплинг во временных модах с памятью на Rb; девять поставленных установок PT-1 | [P][9] |
-| Xanadu | разработчик | Канада | маршрут непрерывных переменных/сжатого света — угроза замещения внутри платформы | [C][16][G:XANADU-SPAC-2026-03] |
-| Sparrow Quantum | поставщик | Дания | рыночные чипы детерминированных однофотонных источников на квантовых точках | [D][4][P][13] |
-| USTC (группа Pan) | исследования | Китай | бозонный сэмплинг Jiuzhang; лучшая зафиксированная эффективность источника на квантовой точке | [D][2][D][5] |
-| Photonic Inc. | разработчик (смежный) | Канада | T-центры в кремнии: спин-фотонный интерфейс, каналы в телеком-диапазоне | [P][19][G:PHOTONIC-200M-2026-05] |
+| QuiX Quantum | разработчик | Нидерланды | универсальные фотонные MBQC-процессоры; Carina в DLR | [C][9][C][11] |
+| ORCA Computing | разработчик | Великобритания | бозонный сэмплинг во временных модах с памятью на Rb; девять поставленных установок PT-1 | [P][12] |
+| Xanadu | разработчик | Канада | маршрут непрерывных переменных/сжатого света — угроза замещения внутри платформы | [C][4][G:XANADU-SPAC-2026-03] |
+| Sparrow Quantum | поставщик | Дания | рыночные чипы детерминированных однофотонных источников на квантовых точках | [D][6][P][13] |
+| USTC (группа Pan) | исследования | Китай | бозонный сэмплинг Jiuzhang; лучшая зафиксированная эффективность источника на квантовой точке | [D][5][D][8] |
+| Photonic Inc. | разработчик (смежный) | Канада | T-центры в кремнии: спин-фотонный интерфейс, каналы в телеком-диапазоне | [P][14][G:PHOTONIC-200M-2026-05] |
 | GlobalFoundries | поставщик | США | производство квантовой фотоники на 300 mm, встроенные SNSPD | [C][G:GF-QTS-2026-05] |
 | DARPA | финансирующая сторона | США | деньги QBI Stage A/B/C и валидация US2QC | [G:QBI-STAGEB-2025-11] |
-| CEA/GENCI, DLR QCI | пользователи | Франция / Германия | покупают и размещают фотонные системы для центров HPC | [C][7][C][8] |
+| CEA/GENCI, DLR QCI | пользователи | Франция / Германия | покупают и размещают фотонные системы для центров HPC | [C][7][C][9] |
 
 **Деньги.**
-- 2023-11-07 · Quandela · раунд, €50 M · Serena, Crédit Mutuel Innovation, EIC Fund, Bpifrance, OMNES, Quantonation; France 2030 · закрыт [C][10]
-- 2024-04 · PsiQuantum · обязательства федерального правительства Австралии и штата Queensland, A$940 M · окончательные [P][14]
+- 2023-11-07 · Quandela · раунд, €50 M · Serena, Crédit Mutuel Innovation, EIC Fund, Bpifrance, OMNES, Quantonation; France 2030 · закрыт [C][15]
+- 2024-04 · PsiQuantum · обязательства федерального правительства Австралии и штата Queensland, A$940 M · окончательные [P][16]
 - 2025-04-10 · Sparrow Quantum · Series A, €21.5 M ($24 M) · ведущий инвестор не раскрыт · закрыт [P][13]
 - 2025-07-10 · QuiX Quantum · Series A, €15 M · соведущие Invest-NL и EIC Fund; PhotonVentures, Oost NL, FORWARD.one · закрыт [C][11]
 - 2025-09-10 · PsiQuantum · Series E, $1 B при оценке $7 B · BlackRock, Temasek, Baillie Gifford · закрыт [G:PSIQ-1B-2025-09]
-- 2025-09 · PsiQuantum · DARPA QBI Stage C через US2QC, $31.8 M · объявлено [P][12]
-- 2026-05-12 · Photonic Inc. · раунд, $200 M при оценке $2 B, $350 M накопленным итогом · среди вернувшихся инвесторов Microsoft · закрыт [P][19]
+- 2025-09 · PsiQuantum · DARPA QBI Stage C через US2QC, $31.8 M · объявлено [P][17]
+- 2026-05-12 · Photonic Inc. · раунд, $200 M при оценке $2 B, $350 M накопленным итогом · среди вернувшихся инвесторов Microsoft · закрыт [P][14]
 - 2026-05-21 · PsiQuantum · письмо о намерениях по программе CHIPS, $100 M · Министерство торговли США · LOI, необязывающее [G:CHIPS-LOI-2026-05]
 - 2026-06-16 · Quandela · отбор в DARPA QBI/QBIT Stage A · сумма не раскрыта · объявлено [G:QBI-QBIT-2026]
 - 2026-06-19 · Sparrow Quantum · EuroHPC Grand Challenge (EU-SCALE), €300,000 · EuroHPC JU · в подготовке [P][13]
 - 2026-07-22 · PsiQuantum · расширенное соглашение DARPA QBI Stage C, $125 M · объявлено [G:PSIQ-QBI-C-2026-07]
 
-**Рынок и цепочка поставок.** Обеспечивающий слой тонок: одно рыночное предложение квантовой фотоники на 300 mm [C][G:GF-QTS-2026-05], один рыночный поставщик детерминированных источников [D][4], коммутационная база на двух небольших поставщиках TFLN [P][G:TFLN-FUNDING-2024-09] при европейских мощностях открытого доступа в рамках PIXEurope (~EUR 400 M, 2024-11-24) [G:PIXEUROPE-2024-11]. Юнит-экономику процитировать нечем: машины Quandela для OVHcloud и CEA, машины QuiX для DLR и все девять установок ORCA PT-1 проданы по нераскрытой стоимости. Сегодня платит G6 — фотон единственный носитель, который движется; G1 и G5 платят маргинально, через демонстрации сэмплинга и оптимизации; G4 — это весь тезис PsiQuantum и Quandela, но финансируется он государствами, а не заказчиками; G3 не платит фотонике ничего, поскольку продавать нечего: логического кубита нет.
+**Рынок и цепочка поставок.** Обеспечивающий слой тонок: одно рыночное предложение квантовой фотоники на 300 mm [C][G:GF-QTS-2026-05], один рыночный поставщик детерминированных источников [D][6], коммутационная база на двух небольших поставщиках TFLN [P][G:TFLN-FUNDING-2024-09] при европейских мощностях открытого доступа в рамках PIXEurope (~EUR 400 M, 2024-11-24) [G:PIXEUROPE-2024-11]. Юнит-экономику процитировать нечем: машины Quandela для OVHcloud и CEA, машины QuiX для DLR и все девять установок ORCA PT-1 проданы по нераскрытой стоимости. Сегодня платит G6 — фотон единственный носитель, который движется; G1 и G5 платят маргинально, через демонстрации сэмплинга и оптимизации; G4 — это весь тезис PsiQuantum и Quandela, но финансируется он государствами, а не заказчиками; G3 не платит фотонике ничего, поскольку продавать нечего: логического кубита нет.
 
 **ИС и стандарты.** Единственный всплывший датированный патент — US 12,437,225 компании ORCA Computing, «Linear-optical encoded GHZ measurements and fault-tolerant quantum computation and communication», подан 2023-10-16, выдан 2025-10-07 [G:ORCA-DUALRAIL-PATENT-2025]. Датированного числа патентов из именованной базы получить не удалось. Открытые стеки ведутся поставщиками (Perceval у Quandela, PennyLane у Xanadu); стандарта фотонной интероперабельности не существует.
 
@@ -119,34 +119,27 @@ updated: 2026-09-03
 
 ## Источники
 
-[1] Knill, Laflamme, Milburn — linear-optics universality, Nature 409, 46 (2001-01-04) — https://arxiv.org/abs/quant-ph/0006088
-[2] Ding et al. (USTC) — QD source, 71.2% system efficiency, arXiv:2311.08347 (2023-11) — https://arxiv.org/abs/2311.08347
-[3] PsiQuantum — Omega manufacturable photonic platform, Nature (2025-02) — https://www.nature.com/articles/s41586-025-08820-7
-[4] Sparrow Quantum et al. — deterministic QD sources, specifications, arXiv:2511.23232 (device rows vendor data [C]) — https://arxiv.org/html/2511.23232v1
-[5] USTC — Jiuzhang 4.0, Nature (2026-05); arXiv:2508.09092 — https://www.nature.com/articles/s41586-026-10523-6
-[6] Xanadu — chip packaging, PRNewswire (2026-06) [C] — https://www.prnewswire.com/news-releases/xanadu-sets-new-industry-benchmark-in-photonic-chip-packaging-302796562.html
-[7] Quandela — Lucy delivered to EuroHPC/GENCI at CEA TGCC (2025-10) [C] — https://www.quandela.com/about-us/newsroom/quandela-delivers-lucy-the-most-advanced-photonic-quantum-computer-worldwide-to-eurohpc-and-genci-at-ceas-tgcc/
-[8] QuiX Quantum — Carina delivered to DLR QCI (2026-07) [C] — https://www.quixquantum.com/news/quix-quantum-delivers-carina-core-hardware-platformto-dlr-qci
-[9] postquantum.com — ORCA Computing profile, PT-1/PT-2, GXC acquisition (2026-09-03) [P] — https://postquantum.com/quantum-computing-companies/orca-computing/
-[10] Quandela newsroom — €50 M round (2023-11-07) [C] — https://www.quandela.com/about-us/newsroom/quandela-secures-e50-million-to-support-international-expansion/
-[11] QuiX Quantum newsroom — €15 M Series A (2025-07-10) [C] — https://www.quixquantum.com/news/quix-quantum-series-a
-[12] Quantum Computing Report — PsiQuantum $125 M DARPA QBI expansion (2026-07-22) [P] — https://quantumcomputingreport.com/psiquantum-secures-125-million-expanded-agreement-with-darpa-under-qbi-program/
-[13] The Quantum Insider — Sparrow EuroHPC EU-SCALE (2026-08-26) [P]; Quantum Computing Report — Sparrow Series A (2025-04-10) [P] — https://thequantuminsider.com/2026/08/26/sparrow-quantum-eurohpc-quantum-grand-challenge-funding/ ; https://quantumcomputingreport.com/sparrow-quantum-secures-e21-5m-24m-usd-in-series-a-funding-to-advance-photonic-quantum-chip-production/
-[14] Forbes Australia — PsiQuantum Brisbane site change, A$940 M (2026) [P] — https://www.forbes.com.au/news/innovation/psiquantums-stalled-quantum-plant-to-break-ground-after-location-switch/
-[15] Bartolucci et al. — fusion-based quantum computation, Nature Communications 14, 912 (2023); arXiv:2506.11975 — https://www.nature.com/articles/s41467-023-36493-1
-[16] Xanadu — roadmap to 1,000+ logical qubits (2026-08-31) [C] — https://www.globenewswire.com/news-release/2026/08/31/3353211/0/en/xanadu-charts-path-to-over-1-000-logical-qubits-by-2031.html
-[17] PsiQuantum newsroom — Series E, CEO change [C] — https://www.psiquantum.com/news-import/psiquantum-1b-fundraise
-[18] Oripov et al. (NIST/JPL) — 400,000-pixel SNSPD camera, Nature 622, 730 (2023-10-25) — https://www.nature.com/articles/s41586-023-06550-2
-[19] Quantum Computing Report — Photonic Inc. $200 M at $2 B (2026-05-12) [P] — https://quantumcomputingreport.com/photonic-inc-reaches-2b-valuation-with-200m-final-close/
-[20] DARPA — QBI Stage B selection (2025-11-06) [G] — https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection
-[21] NIST — CHIPS letters of intent (2026-05-21) [G] — https://www.nist.gov/news-events/news/2026/05/department-commerce-announces-letters-intent-9-companies-2-billion
-[22] imec — PIXEurope pilot line selected (2024-11-24) [G] — https://www.imec-int.com/en/press/european-commission-and-chips-ju-select-pixeurope-consortium-lead-european-pilot-line
-[23] Xanadu — on-chip GKP states, Nature (2025) — https://www.nature.com/articles/s41586-025-09044-5
-[24] Xanadu — Aurora, Nature (2025) — https://www.nature.com/articles/s41586-024-08406-9
+[1] E. Knill, R. Laflamme, and G. Milburn, “Efficient Linear Optics Quantum Computation,” *Nature*, vol. 409, pp. 46–52, Jun. 2000, doi: [10.1038/35051009](https://doi.org/10.1038/35051009).
+[2] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7).
+[3] S. Bartolucci *et al.*, “Fusion-based quantum computation,” *Nat. Commun.*, vol. 14, Art. no. 912, Feb. 2023, doi: [10.1038/s41467-023-36493-1](https://doi.org/10.1038/s41467-023-36493-1). [arXiv:2506.11975](https://arxiv.org/abs/2506.11975).
+[4] Xanadu Quantum Technologies Limited, “Xanadu Charts Path to Over 1,000 Logical Qubits by 2031,” GlobeNewswire, Aug. 31, 2026. [Online]. Available: https://www.globenewswire.com/news-release/2026/08/31/3353211/0/en/xanadu-charts-path-to-over-1-000-logical-qubits-by-2031.html [C]
+[5] X. Ding *et al.*, “High-efficiency single-photon source above the loss-tolerant threshold for efficient linear optical quantum computing,” [arXiv:2311.08347](https://arxiv.org/abs/2311.08347), Nov. 2023.
+[6] J. C. Loredo *et al.*, “Deterministic quantum dot single-photon sources: operational principles and state-of-the-art specifications,” [arXiv:2511.23232](https://arxiv.org/abs/2511.23232), Nov. 2025. [C]
+[7] Quandela, “Quandela delivers Lucy, the most advanced photonic quantum computer worldwide, to EuroHPC and GENCI at CEA's TGCC,” Oct. 23, 2025. [Online]. Available: https://www.quandela.com/about-us/newsroom/quandela-delivers-lucy-the-most-advanced-photonic-quantum-computer-worldwide-to-eurohpc-and-genci-at-ceas-tgcc/ [C]
+[8] H.-L. Liu *et al.*, “Gaussian boson sampling with 1,024 squeezed states in 8,176 modes,” *Nature*, vol. 653, no. 8115, pp. 687–692, May 2026, doi: [10.1038/s41586-026-10523-6](https://doi.org/10.1038/s41586-026-10523-6). [arXiv:2508.09092](https://arxiv.org/abs/2508.09092).
+[9] QuiX Quantum, “QuiX Quantum Delivers Carina Core Hardware Platform to DLR QCI, Advancing Europe's Universal Photonic Quantum Computing Roadmap,” Jul. 14, 2026. [Online]. Available: https://www.quixquantum.com/news/quix-quantum-delivers-carina-core-hardware-platformto-dlr-qci [C]
+[10] B. G. Oripov *et al.*, “A superconducting nanowire single-photon camera with 400,000 pixels,” *Nature*, vol. 622, no. 7984, pp. 730–734, Oct. 2023, doi: [10.1038/s41586-023-06550-2](https://doi.org/10.1038/s41586-023-06550-2).
+[11] QuiX Quantum, “QuiX Quantum Secures €15 Million to Deliver First-Generation Universal Photonic Quantum Computer,” Jul. 10, 2025. [Online]. Available: https://www.quixquantum.com/news/quix-quantum-series-a [C]
+[12] postquantum.com, “ORCA Computing profile, PT-1/PT-2, GXC acquisition (2026-09-03).” [Online]. Available: https://postquantum.com/quantum-computing-companies/orca-computing/ [P]
+[13] The Quantum Insider, “Sparrow EuroHPC EU-SCALE (2026-08-26) ; Quantum Computing Report,” Sparrow Series A, Apr. 10, 2025. [Online]. Available: https://thequantuminsider.com/2026/08/26/sparrow-quantum-eurohpc-quantum-grand-challenge-funding/ Also https://quantumcomputingreport.com/sparrow-quantum-secures-e21-5m-24m-usd-in-series-a-funding-to-advance-photonic-quantum-chip-production/. [P]
+[14] M. Abdel-Kareem, “Photonic Inc. Reaches $2B Valuation with $200M Final Close,” Quantum Computing Report, May 12, 2026. [Online]. Available: https://quantumcomputingreport.com/photonic-inc-reaches-2b-valuation-with-200m-final-close/ [P]
+[15] Quandela newsroom, “€50 M round (2023-11-07).” [Online]. Available: https://www.quandela.com/about-us/newsroom/quandela-secures-e50-million-to-support-international-expansion/ [C]
+[16] D. Van Boom, “PsiQuantum ditches Brisbane Airport plan in bid to break ground on supercomputer,” Forbes Australia, May 20, 2026. [Online]. Available: https://www.forbes.com.au/news/innovation/psiquantums-stalled-quantum-plant-to-break-ground-after-location-switch/ [P]
+[17] M. Abdel-Kareem, “PsiQuantum Secures $125 Million Expanded Agreement with DARPA under QBI Program,” Quantum Computing Report, Jul. 22, 2026. [Online]. Available: https://quantumcomputingreport.com/psiquantum-secures-125-million-expanded-agreement-with-darpa-under-qbi-program/ [P]
 
 ## Открытые пункты верификации
 
-- Точная дата и структура инструментов (капитал против займа против гранта) австралийских обязательств на A$940 M перед PsiQuantum; источник [14] даёт только итог и два правительства.
+- Точная дата и структура инструментов (капитал против займа против гранта) австралийских обязательств на A$940 M перед PsiQuantum; источник [16] даёт только итог и два правительства.
 - Ведущий инвестор раунда Series A компании Sparrow Quantum и накопленный объём финансирования — первичный отчёт за платным доступом; подтверждены только дата и сумма.
 - История финансирования ORCA Computing: только вторичный диапазон (~£8–15 M в Series A плюс капитал 2023–24 годов); ни первичного релиза, ни накопленного итога, ни оценки.
 - Экспортно-контрольная классификация однофотонных источников и детекторов по квантовому правилу США от сентября 2024 года — ECCN не подтверждён, в тексте намеренно не указан.
