@@ -74,18 +74,24 @@ main{min-width:0}
 .prose h2{font-size:24px;font-weight:600;line-height:1.2;margin:2.4em 0 .7em;padding-top:.6em;border-top:1px solid var(--rule);display:flex;gap:14px;align-items:baseline;text-wrap:balance}
 .prose h2 .num{font-family:"Unbounded",sans-serif;font-weight:500;font-size:15px;color:var(--muted);letter-spacing:.02em}
 .prose h3{font-size:18px;font-weight:600;margin:1.8em 0 .5em;text-wrap:balance}
-.prose p{margin:.7em 0;text-wrap:pretty;text-align:justify;hyphens:auto;-webkit-hyphens:auto}   /* justified running text with automatic hyphenation (lang attributes on the prose blocks); lists, tables and captions stay left-aligned */
+.prose p{margin:.85em 0;text-wrap:pretty;text-align:justify;hyphens:auto;-webkit-hyphens:auto}   /* justified running text with automatic hyphenation (lang attributes on the prose blocks); lists, tables and captions stay left-aligned */
 .prose li p,.prose td p,.prose th p,.prose .empty,.prose p.small{text-align:left}
 @media (max-width:700px){.prose p{text-align:left}}
-.prose ul,.prose ol{padding-left:1.3em}
-.prose li{margin:.3em 0}
+/* lists (24 Sep 2026): room for two-digit markers, air between items, more between the long items of the takeaways and
+   the definition items, a little less inside nested lists; the same rules serve the briefs below */
+.prose ul,.prose ol{padding-left:1.6em;margin:.7em 0}
+.prose li{margin:.45em 0}
+.prose li>ul,.prose li>ol{margin:.35em 0 .45em;padding-left:1.4em}
+.prose li>ul>li,.prose li>ol>li{margin:.3em 0}
+.prose li>p:first-child{margin-top:0}
+.prose li>p:last-child{margin-bottom:0}
 /* labelled items "(a) …", "(i) …" hang their label; definition-style items "Term — text" put the term on its own line (21 Sep 2026) */
 .prose li.lbl{list-style:none;position:relative;padding-left:2.5em}
 .prose li.lbl .lb{position:absolute;left:0;color:var(--muted);font-variant-numeric:tabular-nums}
 .prose ol ol,.prose ol ul,.prose ul ol{margin:.35em 0 .5em}
 .prose li.def>strong,.prose li.def>p>strong{display:block;margin-bottom:.12em}
-.prose li.def{margin:.55em 0}
-.prose ol.es>li{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.prose li.def{margin:.75em 0}
+.prose ol.es>li{text-align:justify;hyphens:auto;-webkit-hyphens:auto;margin:.9em 0}
 @media (max-width:700px){.prose ol.es>li{text-align:left}}
 .mast .author .orcid{display:inline-block;line-height:0;margin-left:2px;vertical-align:-3px;border-radius:50%}
 .mast .author .orcid:hover{box-shadow:0 0 0 2px var(--accent)}
@@ -98,12 +104,14 @@ main{min-width:0}
 .prose a.xref{text-decoration:none;border-bottom:1px dotted currentColor}
 .prose a.xref:hover{border-bottom-style:solid}
 .prose .src{font-weight:600;scroll-margin-top:70px}
-/* §9 (23 Sep 2026): one IEEE-numbered list — hanging numbers, entries in a slightly smaller size, long URLs allowed to break */
-.prose ol.refs{list-style:none;padding-left:0;margin:8px 0 0}
-.prose ol.refs li{position:relative;padding-left:3.4em;margin:0 0 7px;font-size:.93em;line-height:1.5;text-align:left;scroll-margin-top:70px}
-.prose ol.refs li .src{position:absolute;left:0;top:0;width:2.9em;text-align:right;font-variant-numeric:tabular-nums}
-.prose ol.refs li:target{background:var(--surface2);box-shadow:0 0 0 4px var(--surface2);border-radius:3px}
-.prose ol.refs li a{overflow-wrap:anywhere}
+/* reference lists (23–24 Sep 2026): one style for §9 and for every brief — hanging numbers in a column, entries set apart in a
+   slightly smaller size, long identifiers and URLs break at their own slashes and dots rather than inside a word */
+ol.refs{list-style:none;padding-left:0;margin:8px 0 0}
+ol.refs>li{position:relative;padding-left:3.4em;margin:0 0 9px;font-size:.93em;line-height:1.5;text-align:left;scroll-margin-top:70px;max-width:none}
+ol.refs>li .src{position:absolute;left:0;top:0;width:2.9em;text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+ol.refs>li:target{background:var(--surface2);box-shadow:0 0 0 4px var(--surface2);border-radius:3px}
+ol.refs>li a{overflow-wrap:break-word;word-break:normal}
+ol.refs>li .tag{margin-left:2px}
 .prose .refnote{font-size:.92em;color:var(--muted);margin-top:6px}
 /* folding (23 Sep 2026): headings carry a chevron and toggle their section; tables fold under their caption */
 .foldbtn{appearance:none;border:0;background:transparent;color:var(--muted);width:22px;height:22px;padding:0;margin-left:6px;cursor:pointer;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;flex:none}
@@ -418,9 +426,12 @@ tr.rowflash>td{background:color-mix(in srgb,var(--focus) 20%,transparent)}
 .bbody{max-width:none}
 .bbody p,.bbody ul,.bbody ol{max-width:78ch}
 .bbody h3.bh3{font-size:17px;font-weight:600;margin:1.7em 0 .5em;padding-top:.7em;border-top:1px solid var(--rule2);text-wrap:balance}
-.bbody p{margin:.7em 0;text-wrap:pretty}
-.bbody ul,.bbody ol{padding-left:1.3em}
-.bbody li{margin:.25em 0}
+.bbody p{margin:.8em 0;text-wrap:pretty;text-align:justify;hyphens:auto;-webkit-hyphens:auto}   /* the briefs read like the report: justified running text, left-aligned lists and tables */
+.bbody li p,.bbody td p,.bbody th p{text-align:left}
+@media (max-width:700px){.bbody p{text-align:left}}
+.bbody ul,.bbody ol{padding-left:1.6em;margin:.7em 0}
+.bbody li{margin:.4em 0}
+.bbody li>ul,.bbody li>ol{margin:.3em 0 .4em;padding-left:1.4em}
 .bbody .m{font-family:"JetBrains Mono",monospace;font-size:.92em;white-space:nowrap}
 .bbody sup,.bbody sub{line-height:0}
 .bbody .tbl{max-width:100%;overflow-x:auto}

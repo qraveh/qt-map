@@ -393,7 +393,10 @@ def title_text(r):
 
 
 def _link(u, text=None):
-    return '<a href="%s" target="_blank" rel="noopener">%s</a>' % (esc(u), esc(text or u))
+    """A bare URL as link text gets a break opportunity after every slash, so a long address wraps at its own joints."""
+    t = esc(text or u)
+    if text is None or text == u: t = re.sub(r'(/)(?=.)', r'\1<wbr>', t.replace('://', '\x00')).replace('\x00', '://')
+    return '<a href="%s" target="_blank" rel="noopener">%s</a>' % (esc(u), t)
 
 
 def ieee(r):

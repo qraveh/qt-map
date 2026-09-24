@@ -117,7 +117,7 @@ WEB = re.compile(r'^' + A_ + T_ + r'(?: [^<]*?' + D_ + r'\.| [^<]+?\.)? \[Online
 kinds = collections.Counter()
 for scope, items in lists.items():
     for n, v, r, t, l in items:
-        r = r.strip()
+        r = r.strip().replace('<wbr>', '')   # break opportunities inside link text are not part of the form
         if JOUR.match(r): kinds['journal'] += 1
         elif PRE.match(r): kinds['preprint'] += 1
         elif WEB.match(r): kinds['web'] += 1
