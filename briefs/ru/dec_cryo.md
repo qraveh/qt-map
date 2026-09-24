@@ -78,7 +78,7 @@ updated: 2026-09-04
 [5] S. Kawabata, “Integration and Resource Estimation of Cryoelectronics for Superconducting Fault-Tolerant Quantum Computers,” [arXiv:2601.03922](https://arxiv.org/abs/2601.03922), Jan. 2026. [S]
 [6] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [7] Y. Wu, N. Liyanage, and L. Zhong, “Micro Blossom: Accelerated Minimum-Weight Perfect Matching Decoding for Quantum Error Correction,” [arXiv:2502.14787](https://arxiv.org/abs/2502.14787), Feb. 2025. Also https://github.com/yuewuo/micro-blossom. [D]
-[8] “SEEQC / Allegro Merger Corp., SEC registration statement, filed 2026-05-26,” sec.gov, May 26, 2026. [Online]. Available: https://www.sec.gov/Archives/edgar/data/1779977/000121390026061108/ea0278139-04.htm [G]
+[8] SeeQC, Inc., “Form S-4 Registration Statement (SeeQC, Inc. / Allegro Merger Corp.),” U.S. Securities and Exchange Commission, May 2026. [Online]. Available: https://www.sec.gov/Archives/edgar/data/1779977/000121390026061108/ea0278139-04.htm [G]
 
 ## Открытые пункты верификации
 Грант DOE ARQC DE-SC0025633 упомянут в благодарностях статьи CryoZip, но ни в одном использованном источнике сумма в долларах не приводится; считается неопределённой количественно.

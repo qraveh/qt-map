@@ -69,7 +69,7 @@ Confirm by 2027: a loop under 200 ns above 32 channels, or a system cycle faster
 [3] QuiX Quantum, “QuiX Quantum Installs Real-Time Control Component for Universal Photonic Quantum Computer,” Jun. 2, 2026. [Online]. Available: https://www.quixquantum.com/news/quix-quantum-installs-real-time-control-component-for-universal-photonic-quantum-computer [C]
 [4] D. Duggan *et al.*, “FPGA Based Feedforward System for Photonic Quantum Computing Applications,” [arXiv:2606.03500](https://arxiv.org/abs/2606.03500), Jun. 2026. [P]
 [5] C. Català-Lahoz *et al.*, “High-speed non-volatile barium titanate field-programmable photonic gate array,” *Nat. Photon.*, vol. 20, no. 8, pp. 932–940, Aug. 2026, doi: [10.1038/s41566-026-01934-y](https://doi.org/10.1038/s41566-026-01934-y). [D]
-[6] optics.org, “Lithium niobate in vogue as thin-film developers raise cash,” Sep. 2024. [Online]. Available: https://optics.org/news/lithium-niobate-in-vogue-as-thin-film-developers-raise-cash [P]
+[6] optics.org, “Lithium niobate in vogue as thin-film developers raise cash,” Sep. 24, 2024. [Online]. Available: https://optics.org/news/lithium-niobate-in-vogue-as-thin-film-developers-raise-cash [P]
 [7] Xanadu, “Xanadu sets new industry benchmark in photonic chip packaging,” PR Newswire, Jun. 10, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/xanadu-sets-new-industry-benchmark-in-photonic-chip-packaging-302796562.html [C]
 [8] M. Abdel-Kareem, “PsiQuantum Secures $125 Million Expanded Agreement with DARPA under QBI Program,” Quantum Computing Report, Jul. 22, 2026. [Online]. Available: https://quantumcomputingreport.com/psiquantum-secures-125-million-expanded-agreement-with-darpa-under-qbi-program/ [P]
 

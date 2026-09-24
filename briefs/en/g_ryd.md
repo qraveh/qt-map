@@ -102,7 +102,7 @@ Open questions. Does the loss channel scale with array density and transport, or
 
 ## Sources
 
-[1] Jaksch *et al.*, “Fast quantum gates for neutral atoms,” *Phys. Rev. Lett.*, vol. 85, Art. no. 2208, 2000. [Online]. Available: https://arxiv.org/abs/quant-ph/0004038 [D]
+[1] D. Jaksch *et al.*, “Fast Quantum Gates for Neutral Atoms,” *Phys. Rev. Lett.*, vol. 85, no. 10, pp. 2208–2211, Sep. 2000, doi: [10.1103/PhysRevLett.85.2208](https://doi.org/10.1103/PhysRevLett.85.2208). [arXiv:quant-ph/0004038](https://arxiv.org/abs/quant-ph/0004038). [D]
 [2] J. Wang, Z. Wang, L. Li, F. Wang, S. Liang, and K. Yan, “Neutral Atom Quantum Computing: Principles, Routes, Progress, and Challenges,” [arXiv:2608.05010](https://arxiv.org/abs/2608.05010), Aug. 2026. [P]
 [3] H. Levine *et al.*, “Parallel Implementation of High-Fidelity Multiqubit Gates with Neutral Atoms,” *Phys. Rev. Lett.*, vol. 123, no. 17, Art. no. 170503, Oct. 2019, doi: [10.1103/PhysRevLett.123.170503](https://doi.org/10.1103/PhysRevLett.123.170503). [arXiv:1908.06101](https://arxiv.org/abs/1908.06101). [D]
 [4] S. J. Evered *et al.*, “High-fidelity entangling gates and nonlocal circuits with neutral atoms,” [arXiv:2604.25987](https://arxiv.org/abs/2604.25987), Apr. 2026. [D]

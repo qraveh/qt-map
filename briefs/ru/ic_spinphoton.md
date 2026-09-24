@@ -72,7 +72,7 @@ updated: 2026-09-04
 [2] A. J. Stolk *et al.*, “Metropolitan-scale heralded entanglement of solid-state qubits,” *Sci. Adv.*, vol. 10, no. 44, Art. no. eadp6442, Oct. 2024, doi: [10.1126/sciadv.adp6442](https://doi.org/10.1126/sciadv.adp6442). [arXiv:2404.03723](https://arxiv.org/abs/2404.03723). [D]
 [3] C. M. Knaut *et al.*, “Entanglement of nanophotonic quantum memory nodes in a telecom network,” *Nature*, vol. 629, no. 8012, pp. 573–578, May 2024, doi: [10.1038/s41586-024-07252-z](https://doi.org/10.1038/s41586-024-07252-z). [D]
 [4] F. Afzal *et al.*, “Distributed Quantum Computing in Silicon,” [arXiv:2406.01704](https://arxiv.org/abs/2406.01704), Jun. 2024. [P]
-[5] PostQuantum, “Photonic Inc. company profile (Microsoft partnership Nov 2023, ~1.5–4 K operation, 200 kHz / 99.8% target),” accessed, Sep. 4, 2026. [Online]. Available: https://postquantum.com/quantum-computing-companies/photonic-inc/ [P]
+[5] M. Ivezic, “Photonic Inc,” PostQuantum.com, Nov. 13, 2025. [Online]. Available: https://postquantum.com/quantum-computing-companies/photonic-inc/ [P]
 
 ## Открытые пункты верификации
 У последовательности телепортированного CNOT компании Photonic Inc. нет ни опубликованной точности гейта, ни журнальной публикации; показателем качества для tCNOT служит таблица истинности в выбранном базисе, полученная с постселекцией по срабатыванию детектора фотона.

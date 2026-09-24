@@ -35,12 +35,18 @@ SAME_WORK = {FR + 'commerce-control-list-additions-and-revisions-implementation-
              FR + 'commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies':
              FR + 'implementation-of-additional-export-controls-certain-advanced-computing-items-supercomputer-and'}   # one rule, FR Doc 2024-19633
 SPLIT = {('ro_fluor', '14'): 'doi:10.1364/optica.400751'}   # Reddy et al. (Optica 2020) carried Wu et al.'s DOI (ro_spd [1])
-FIX_TO = {'doi:10.1038/s41377-025-02031-5': 'doi:10.1364/optica.400751'}   # the fix record of a split key belongs to the split-off work
+QW_B = 'https://quantware.com/news/quantware-raises-178-million'
+FIX_TO = {'doi:10.1038/s41377-025-02031-5': 'doi:10.1364/optica.400751',
+          'https://quantware.com/product/peripherals': QW_B}   # the fix record of a split key belongs to the split-off work
 AS_CITED = 'https://www.patsnap.com/resources/blog/rd-blog/quantum-computing-patent-landscape'   # PatSnap "as cited in the main report"
-KINDS = {'article': 'journal'}
+KINDS = {'article': 'journal', 'press': 'web', 'software': 'web'}
+CITE_SPLIT = {('ro_disp', '6'): (re.compile(r'Series B|\$178'), '6s', QW_B)}   # the Series B row cites the release, the TWPA sentence the product page
 RECORD_FIX = {   # values the independent re-check read from OpenAlex (24 Sep 2026); None removes the field
     'doi:10.1038/s41534-024-00944-4': {'date': '2025-01-07', 'pubdate': None},   # de Graaf, npj Quantum Inf. 11 (1): Jan. 2025
     'doi:10.1109/tqe.2025.3580377': {'date': '2025'},                           # van Staveren, IEEE TQE 6, 1-18: 2025
+    # the product page read by the web pass (out_web_8: Crescendo TWPA confirmed); its one unconfirmed claim, the Series B,
+    # now cites the QuantWare release (CITE_SPLIT), so the page record stands for the TWPA sentence
+    'https://quantware.com/product/peripherals': {'title': 'Peripherals | Crescendo TWPA', 'site': 'QuantWare', 'verified': True},
 }
 RENAME = {'arxiv:2408.13687': 'arxiv:2402.15644'}   # the key named a different paper (McEwen et al. is arXiv:2402.15644)
 FIELDS = ('authors', 'etal', 'n_authors', 'org', 'title', 'journal', 'volume', 'issue', 'pages', 'article', 'date', 'pubdate', 'doi', 'arxiv',
@@ -304,6 +310,13 @@ def _migrate(raw_path, vdir, alias, enrich, dry):
         sp_en, sp_ru = split(s_en, 'en'), split(s_ru, 'ru')
         if not sp_en or not sp_ru: st['unparsed'].append(bid); continue
         e_en, x_en, _ = entries(sp_en[1]); e_ru, x_ru, _ = entries(sp_ru[1])
+        split_cites = {}
+        for (b_, lab_), (rx, new_lab, new_key) in CITE_SPLIT.items():
+            if b_ != bid: continue
+            def sub(t):
+                return '\n'.join(re.sub(r'(?<![\[\w:])\[%s\](?![\](])' % lab_, '[%s]' % new_lab, l) if rx.search(l) else l for l in t.split('\n'))
+            sp_en = (sub(sp_en[0]), sp_en[1], sub(sp_en[2])); sp_ru = (sub(sp_ru[0]), sp_ru[1], sub(sp_ru[2]))
+            split_cites[new_lab] = (lab_, new_key); st['split'].append((bid, lab_ + '→' + new_lab, new_key))
         if x_en: st['extra'].append((bid, len(x_en)))
         if [l for l, _ in e_en] != [l for l, _ in e_ru] or any(set(map(S.norm, re.findall(r'https?://\S+', a))) != set(map(S.norm, re.findall(r'https?://\S+', b)))
                                                               for (_, a), (_, b) in zip(e_en, e_ru)):
@@ -343,6 +356,9 @@ def _migrate(raw_path, vdir, alias, enrich, dry):
             for l in ((w or {}).get('lines') or []) + [line]:
                 if l not in lines_of[k]: lines_of[k].append(l)
         for lab in key: key[lab] = alias.get(key[lab], key[lab])
+        for new_lab, (lab_, new_key) in split_cites.items():
+            key[new_lab] = new_key; grade[new_lab] = grade.get(lab_, ''); txt_ = dict(e_en)[lab_]
+            lines_of.setdefault(new_key, [txt_])
         # one work = one entry within the brief: a 'Same work, …' line joins the line above it; lines sharing a DOI, an
         # arXiv id or a URL are one work (the §9 record wins, else the first line's key)
         labs = [l for l, _ in e_en]; txt = dict(e_en)
@@ -371,6 +387,7 @@ def _migrate(raw_path, vdir, alias, enrich, dry):
             elif key[lab] not in new: st['missing'].append((bid, 'ru-only', lab))
         byk = {}
         for lab, _ in e_en: byk.setdefault(key[lab], []).append(lab)
+        for new_lab in split_cites: byk.setdefault(key[new_lab], []).append(new_lab)
         for k, labs in byk.items():
             if len(labs) > 1: st['merged'].append((bid, labs))
             if k not in new: st['dropped'].append((bid, labs))
@@ -459,12 +476,15 @@ def apply_verified(db, d):
     fx = os.path.join(d, 'out_fix.json')
     if os.path.exists(fx):
         batches.append((fx, [dict(f['record'], key=FIX_TO.get(f['key'], f['key'])) for f in json.load(open(fx, encoding='utf-8'))]))
+    fx2 = os.path.join(d, 'out_fix2.json')      # re-pointings of the web triage (a homepage or listing → the release it meant)
+    if os.path.exists(fx2):
+        batches.append((fx2, [dict(f['record'], key=FIX_TO.get(f['key'], f['key'])) for f in json.load(open(fx2, encoding='utf-8'))]))
     fn = os.path.join(d, 'out_final.json')     # the last pass of the verification
     if os.path.exists(fn): batches.append((fn, json.load(open(fn, encoding='utf-8'))))
     for p in sorted(glob.glob(os.path.join(d, 'out_enrich_*.json'))):     # enrichment of incomplete records
         batches.append((p, json.load(open(p, encoding='utf-8'))))
     for p, rs in batches:
-        fix = p.endswith('out_fix.json')
+        fix = os.path.basename(p).startswith('out_fix')
         for r in rs:
             k = RENAME.get(r.get('key'), r.get('key'))
             if k not in db['works'] or not r.get('verified'): continue
@@ -483,6 +503,10 @@ def apply_verified(db, d):
             if m and re.search(r'\bRETRACTED\b', r.get('note', '')):
                 r['retraction'] = OrderedDict([('journal', m.group(2)), ('volume', m.group(3)), ('pages', m.group(4)), ('date', m.group(5)), ('doi', m.group(1))])
             if r.get('journal'): r['journal'] = S.JOURNALS.get(r['journal'], r['journal'])
+            if not r.get('arxiv'):     # an old-style arXiv id (quant-ph/0601173) the URL carries
+                m = re.search(r'arxiv\.org/(?:abs|pdf)/([a-z\-]+(?:\.[A-Z]{2})?/\d{7})', r.get('url', '') or '')
+                if m: r['arxiv'] = m.group(1)
+            if r.get('moved_to'): r['url'] = r['moved_to']     # a moved page: its new URL (verified records only reach here)
             if not fix and not r.get('arxiv') and db['works'][k].get('arxiv') and db['works'][k].get('verified'): r['arxiv'] = db['works'][k]['arxiv']
             rec = OrderedDict((f, r[f]) for f in FIELDS if f in r and r[f] not in ('', None, []))
             db['works'][k] = rec

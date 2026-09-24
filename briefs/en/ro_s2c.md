@@ -60,10 +60,10 @@ Confirm or demote in 12–24 months: ≥99.9% below 20 µs on a foundry device; 
 ## Sources
 [1] G. A. Oakes *et al.*, “Fast High-Fidelity Single-Shot Readout of Spins in Silicon Using a Single-Electron Box,” *Phys. Rev. X*, vol. 13, no. 1, Art. no. 011023, Feb. 2023, doi: [10.1103/PhysRevX.13.011023](https://doi.org/10.1103/PhysRevX.13.011023). [D]
 [2] P. Steinacker *et al.*, “Industry-compatible silicon spin-qubit unit cells exceeding 99% fidelity,” *Nature*, vol. 646, no. 8083, pp. 81–87, Sep. 2025, doi: [10.1038/s41586-025-09531-9](https://doi.org/10.1038/s41586-025-09531-9). [D]
-[3] Zurich Instruments, “SHFQC-LRT Long Readout Time option,” product release, Jan. 30, 2025. [Online]. Available: https://www.zhinst.com/en/products/shfqc-lrt-long-readout-time [C]
+[3] Zurich Instruments, “SHFQC-LRT Long Readout Time,” Jan. 30, 2025. [Online]. Available: https://www.zhinst.com/en/products/shfqc-lrt-long-readout-time [C]
 [4] Quantum Machines, “Semiconductor Spin Qubits,” Aug. 11, 2026. [Online]. Available: https://www.quantum-machines.co/qubit-types/semiconductor-spin-qubits/ [C]
 [5] Members of the HRL Quantum Team and Collaborators, “A digitally controlled silicon quantum processing unit,” [arXiv:2604.16216](https://arxiv.org/abs/2604.16216), Apr. 2026. [D]
-[6] Zurich Instruments, “ZQCS quantum control platform launch, >1,000 channels per rack,” trade press, Mar. 9, 2026. [Online]. Available: http://quantumwire.com/articles/zurich-instruments-zqcs [P]
+[6] Zurich Instruments, “Zurich Instruments Launches the ZQCS Quantum Control System to Master the Long-Lived Logical Qubit Challenge,” Mar. 9, 2026. [Online]. Available: https://www.zhinst.com/americas/en/news/zurich-instruments-launches-zqcs-quantum-control-system-master-long-lived-logical-qubit/ [P]
 
 ## Open verification items
 The multimode-reflectometry preprint arXiv:2512.05087 (98% in 8 µs to 2 GHz) is not included in the records table: its authors and institution could not be resolved (the abstract page returns no metadata; the arXiv export API is robots-disallowed). The ZQCS channel count is a trade-press restatement of a vendor launch, not a primary release. No source gives an RB-separated readout-only fidelity for the Diraq/imec 99.9%, quoted as SPAM.

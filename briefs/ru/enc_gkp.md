@@ -69,7 +69,7 @@ GKP требует бозонной резонаторной моды в мик�
 Подтвердить или понизить в статусе в течение 12–24 месяцев: опубликует ли хоть одна GKP-демонстрация безусловную частоту логических ошибок; поднимет ли Nord Quantique совокупную выживаемость выше 10%; преодолеет ли оптическое GKP-состояние 1 dB эффективного сжатия. Лучший случай к 2029 году: многомодовый логический GKP-кубит ниже break-even без пост-селекции, под внешним qLDPC-кодом. Худший случай: он остаётся пост-селектированной памятью, а бозонный путь несут кот-коды и кодирования со стиранием (erasure).
 
 ## Источники
-[1] D. Gottesman, A. Kitaev, and J. Preskill, “Encoding a qubit in an oscillator,” *Phys. Rev. A*, vol. 64, no. 1, Art. no. 012310, Jun. 2001, doi: [10.1103/PhysRevA.64.012310](https://doi.org/10.1103/PhysRevA.64.012310).
+[1] D. Gottesman, A. Kitaev, and J. Preskill, “Encoding a qubit in an oscillator,” *Phys. Rev. A*, vol. 64, no. 1, Art. no. 012310, Jun. 2001, doi: [10.1103/PhysRevA.64.012310](https://doi.org/10.1103/PhysRevA.64.012310). [arXiv:quant-ph/0008040](https://arxiv.org/abs/quant-ph/0008040).
 [2] P. Campagne-Ibarcq *et al.*, “Quantum error correction of a qubit encoded in grid states of an oscillator,” *Nature*, vol. 584, no. 7821, pp. 368–372, Aug. 2020, doi: [10.1038/s41586-020-2603-3](https://doi.org/10.1038/s41586-020-2603-3).
 [3] V. V. Sivak *et al.*, “Real-time quantum error correction beyond break-even,” *Nature*, vol. 616, no. 7955, pp. 50–55, Apr. 2023, doi: [10.1038/s41586-023-05782-6](https://doi.org/10.1038/s41586-023-05782-6).
 [4] B. L. Brock *et al.*, “Quantum error correction of qudits beyond break-even,” *Nature*, vol. 641, no. 8063, pp. 612–618, May 2025, doi: [10.1038/s41586-025-08899-y](https://doi.org/10.1038/s41586-025-08899-y).
@@ -78,7 +78,7 @@ GKP требует бозонной резонаторной моды в мик�
 [7] US Department of Commerce, Bureau of Industry and Security, “Commerce Control List Additions and Revisions; Implementation of Controls on Advanced Technologies Consistent With Controls Implemented by International Partners,” *Federal Register*, vol. 89, p. 72926, Sep. 6, 2024. [Online]. Available: https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies
 [8] H. A. Rad *et al.*, “Scaling and networking a modular photonic quantum computer,” *Nature*, vol. 638, no. 8052, pp. 912–919, Jan. 2025, doi: [10.1038/s41586-024-08406-9](https://doi.org/10.1038/s41586-024-08406-9).
 [9] X. Shi *et al.*, “Squeezed Light Generation in Periodically Poled Thin-Film Lithium Niobate Waveguides,” [arXiv:2508.08599](https://arxiv.org/abs/2508.08599), Aug. 2025.
-[10] PatSnap, “Quantum computing patent landscape (data to 2026-06-30),” Jul. 2026. [Online]. Available: https://www.patsnap.com/resources/blog/rd-blog/quantum-computing-patent-landscape/ [P]
+[10] PatSnap, “Quantum Computing Patent Landscape 2026,” Jun. 30, 2026. [Online]. Available: https://www.patsnap.com/resources/blog/rd-blog/quantum-computing-patent-landscape/ [P]
 [11] Nord Quantique, “Company website.” [Online]. Available: https://www.nordquantique.com/ [C]
 
 ## Открытые пункты верификации

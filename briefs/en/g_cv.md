@@ -62,7 +62,7 @@ The continuous-variable path's gate layer, requiring squeezed sources and room-t
 Confirm by 2027: effective squeezing above 3 dB on chip; demote the 2028–29 milestone if it stays below 1 dB. Best case 2029: a small GKP logical qubit at low distance. Worst case: uncorrected demonstrations continue and the schedule slips as the financing did. Open: how much of the gap is loss versus fabrication; do homodyne front-ends scale.
 
 ## Sources
-[1] D. Gottesman, A. Kitaev, and J. Preskill, “Encoding a qubit in an oscillator,” *Phys. Rev. A*, vol. 64, no. 1, Art. no. 012310, Jun. 2001, doi: [10.1103/PhysRevA.64.012310](https://doi.org/10.1103/PhysRevA.64.012310). [S]
+[1] D. Gottesman, A. Kitaev, and J. Preskill, “Encoding a qubit in an oscillator,” *Phys. Rev. A*, vol. 64, no. 1, Art. no. 012310, Jun. 2001, doi: [10.1103/PhysRevA.64.012310](https://doi.org/10.1103/PhysRevA.64.012310). [arXiv:quant-ph/0008040](https://arxiv.org/abs/quant-ph/0008040). [S]
 [2] S. Yokoyama *et al.*, “Ultra-large-scale continuous-variable cluster states multiplexed in the time domain,” *Nat. Photon.*, vol. 7, no. 12, pp. 982–986, Dec. 2013, doi: [10.1038/nphoton.2013.287](https://doi.org/10.1038/nphoton.2013.287). [D]
 [3] H. A. Rad *et al.*, “Scaling and networking a modular photonic quantum computer,” *Nature*, vol. 638, no. 8052, pp. 912–919, Jan. 2025, doi: [10.1038/s41586-024-08406-9](https://doi.org/10.1038/s41586-024-08406-9). [D]
 [4] M. V. Larsen *et al.*, “Integrated photonic source of Gottesman–Kitaev–Preskill qubits,” *Nature*, vol. 642, no. 8068, pp. 587–591, Jun. 2025, doi: [10.1038/s41586-025-09044-5](https://doi.org/10.1038/s41586-025-09044-5). [D]
@@ -70,7 +70,7 @@ Confirm by 2027: effective squeezing above 3 dB on chip; demote the 2028–29 mi
 [6] D. Duggan *et al.*, “FPGA Based Feedforward System for Photonic Quantum Computing Applications,” [arXiv:2606.03500](https://arxiv.org/abs/2606.03500), Jun. 2026. [P]
 [7] Xanadu, “Xanadu sets new industry benchmark in photonic chip packaging,” PR Newswire, Jun. 10, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/xanadu-sets-new-industry-benchmark-in-photonic-chip-packaging-302796562.html [C]
 [8] X. Shi *et al.*, “Squeezed Light Generation in Periodically Poled Thin-Film Lithium Niobate Waveguides,” [arXiv:2508.08599](https://arxiv.org/abs/2508.08599), Aug. 2025. [P]
-[9] HPCwire, “Xanadu Unveils 1st On-Chip Error-Resistant Photonic Qubit,” Jun. 5, 2025. [Online]. Available: https://www.hpcwire.com/off-the-wire/xanadu-unveils-1st-on-chip-error-resistant-photonic-qubit/ [P]
+[9] Xanadu, “Xanadu Unveils 1st On-Chip Error-Resistant Photonic Qubit,” HPCwire, Jun. 5, 2025. [Online]. Available: https://www.hpcwire.com/off-the-wire/xanadu-unveils-1st-on-chip-error-resistant-photonic-qubit/ [P]
 
 ## Open verification items
 The nature.com page for the GKP source could not be consulted; its date, platform and room-temperature operation are taken from the publisher's press coverage [9], and the 0.62 dB figure from the main report. The ~10 dB threshold is the main report's figure; published GKP threshold estimates vary with decoder and architecture and no single authoritative value was verified here. The 0.87→0.10 variance conversion is derived here, not quoted. Xanadu's 24.1× loss factor and the 0.62 dB effective squeezing are different quantities that no source reconciles. Affiliations for arXiv:2606.03500 and arXiv:2508.08599 were not confirmed from their abstract pages. No independent replication of the 0.62 dB result exists.

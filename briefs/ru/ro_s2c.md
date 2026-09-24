@@ -60,10 +60,10 @@ updated: 2026-09-04
 ## Источники
 [1] G. A. Oakes *et al.*, “Fast High-Fidelity Single-Shot Readout of Spins in Silicon Using a Single-Electron Box,” *Phys. Rev. X*, vol. 13, no. 1, Art. no. 011023, Feb. 2023, doi: [10.1103/PhysRevX.13.011023](https://doi.org/10.1103/PhysRevX.13.011023). [D]
 [2] P. Steinacker *et al.*, “Industry-compatible silicon spin-qubit unit cells exceeding 99% fidelity,” *Nature*, vol. 646, no. 8083, pp. 81–87, Sep. 2025, doi: [10.1038/s41586-025-09531-9](https://doi.org/10.1038/s41586-025-09531-9). [D]
-[3] Zurich Instruments, “SHFQC-LRT Long Readout Time option,” product release, Jan. 30, 2025. [Online]. Available: https://www.zhinst.com/en/products/shfqc-lrt-long-readout-time [C]
+[3] Zurich Instruments, “SHFQC-LRT Long Readout Time,” Jan. 30, 2025. [Online]. Available: https://www.zhinst.com/en/products/shfqc-lrt-long-readout-time [C]
 [4] Quantum Machines, “Semiconductor Spin Qubits,” Aug. 11, 2026. [Online]. Available: https://www.quantum-machines.co/qubit-types/semiconductor-spin-qubits/ [C]
 [5] Members of the HRL Quantum Team and Collaborators, “A digitally controlled silicon quantum processing unit,” [arXiv:2604.16216](https://arxiv.org/abs/2604.16216), Apr. 2026. [D]
-[6] Zurich Instruments, “ZQCS quantum control platform launch, >1,000 channels per rack,” trade press, Mar. 9, 2026. [Online]. Available: http://quantumwire.com/articles/zurich-instruments-zqcs [P]
+[6] Zurich Instruments, “Zurich Instruments Launches the ZQCS Quantum Control System to Master the Long-Lived Logical Qubit Challenge,” Mar. 9, 2026. [Online]. Available: https://www.zhinst.com/americas/en/news/zurich-instruments-launches-zqcs-quantum-control-system-master-long-lived-logical-qubit/ [P]
 
 ## Открытые пункты верификации
 Препринт по многомодовой рефлектометрии arXiv:2512.05087 (98% за 8 µs, до 2 GHz) не включён в таблицу рекордов: его авторов и организацию установить не удалось (страница аннотации не содержит метаданных, экспортный API arXiv закрыт robots). Число каналов ZQCS — это пересказ вендорского анонса отраслевой прессой, а не первичный релиз. Ни один источник не даёт для цифры 99.9% от Diraq/imec, приводимой как SPAM, отдельной точности только считывания, выделенной методом RB.

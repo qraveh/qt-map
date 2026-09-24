@@ -119,7 +119,7 @@ updated: 2026-09-03
 
 ## Источники
 
-[1] E. Knill, R. Laflamme, and G. Milburn, “Efficient Linear Optics Quantum Computation,” *Nature*, vol. 409, pp. 46–52, Jun. 2000, doi: [10.1038/35051009](https://doi.org/10.1038/35051009).
+[1] E. Knill, R. Laflamme, and G. Milburn, “Efficient Linear Optics Quantum Computation,” *Nature*, vol. 409, pp. 46–52, Jun. 2000, doi: [10.1038/35051009](https://doi.org/10.1038/35051009). [arXiv:quant-ph/0006088](https://arxiv.org/abs/quant-ph/0006088).
 [2] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7).
 [3] S. Bartolucci *et al.*, “Fusion-based quantum computation,” *Nat. Commun.*, vol. 14, Art. no. 912, Feb. 2023, doi: [10.1038/s41467-023-36493-1](https://doi.org/10.1038/s41467-023-36493-1). [arXiv:2506.11975](https://arxiv.org/abs/2506.11975).
 [4] Xanadu Quantum Technologies Limited, “Xanadu Charts Path to Over 1,000 Logical Qubits by 2031,” GlobeNewswire, Aug. 31, 2026. [Online]. Available: https://www.globenewswire.com/news-release/2026/08/31/3353211/0/en/xanadu-charts-path-to-over-1-000-logical-qubits-by-2031.html [C]
@@ -130,10 +130,10 @@ updated: 2026-09-03
 [9] QuiX Quantum, “QuiX Quantum Delivers Carina Core Hardware Platform to DLR QCI, Advancing Europe's Universal Photonic Quantum Computing Roadmap,” Jul. 14, 2026. [Online]. Available: https://www.quixquantum.com/news/quix-quantum-delivers-carina-core-hardware-platformto-dlr-qci [C]
 [10] B. G. Oripov *et al.*, “A superconducting nanowire single-photon camera with 400,000 pixels,” *Nature*, vol. 622, no. 7984, pp. 730–734, Oct. 2023, doi: [10.1038/s41586-023-06550-2](https://doi.org/10.1038/s41586-023-06550-2).
 [11] QuiX Quantum, “QuiX Quantum Secures €15 Million to Deliver First-Generation Universal Photonic Quantum Computer,” Jul. 10, 2025. [Online]. Available: https://www.quixquantum.com/news/quix-quantum-series-a [C]
-[12] postquantum.com, “ORCA Computing profile, PT-1/PT-2, GXC acquisition (2026-09-03).” [Online]. Available: https://postquantum.com/quantum-computing-companies/orca-computing/ [P]
-[13] Quantum Computing Report, “Sparrow Quantum Secures €21.5M Series A,” Apr. 10, 2025. [Online]. Available: https://quantumcomputingreport.com/sparrow-quantum-secures-e21-5m-24m-usd-in-series-a-funding-to-advance-photonic-quantum-chip-production/ [P]
+[12] M. Ivezic, “ORCA Computing,” PostQuantum.com, May 22, 2025. [Online]. Available: https://postquantum.com/quantum-computing-companies/orca-computing/ [P]
+[13] M. Abdel-Kareem, “Sparrow Quantum Secures €21.5M ($24M USD) in Series A Funding to Advance Photonic Quantum Chip Production,” Quantum Computing Report, Apr. 10, 2025. [Online]. Available: https://quantumcomputingreport.com/sparrow-quantum-secures-e21-5m-24m-usd-in-series-a-funding-to-advance-photonic-quantum-chip-production/ [P]
 [14] M. Abdel-Kareem, “Photonic Inc. Reaches $2B Valuation with $200M Final Close,” Quantum Computing Report, May 12, 2026. [Online]. Available: https://quantumcomputingreport.com/photonic-inc-reaches-2b-valuation-with-200m-final-close/ [P]
-[15] Quandela newsroom, “€50 M round (2023-11-07).” [Online]. Available: https://www.quandela.com/about-us/newsroom/quandela-secures-e50-million-to-support-international-expansion/ [C]
+[15] Quandela, “Quandela secures €50 million to support international expansion,” Nov. 7, 2023. [Online]. Available: https://www.quandela.com/about-us/newsroom/quandela-secures-e50-million-to-support-international-expansion/ [C]
 [16] D. Van Boom, “PsiQuantum ditches Brisbane Airport plan in bid to break ground on supercomputer,” Forbes Australia, May 20, 2026. [Online]. Available: https://www.forbes.com.au/news/innovation/psiquantums-stalled-quantum-plant-to-break-ground-after-location-switch/ [P]
 [17] M. Abdel-Kareem, “PsiQuantum Secures $125 Million Expanded Agreement with DARPA under QBI Program,” Quantum Computing Report, Jul. 22, 2026. [Online]. Available: https://quantumcomputingreport.com/psiquantum-secures-125-million-expanded-agreement-with-darpa-under-qbi-program/ [P]
 

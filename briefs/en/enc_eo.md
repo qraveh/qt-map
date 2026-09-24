@@ -57,7 +57,7 @@ Requires a gate-defined quantum-dot carrier at three dots per qubit, in the sili
 Confirm or demote in 12–24 months: a second laboratory reproducing the 18-qubit result; a full code below threshold; a dated IBM milestone. Best case 2029: IBM folds the cold sequencer into a foundry-scale device with unconditional performance. Worst case: a single-laboratory result. Open: (1) whether controller power per qubit falls two orders; (2) whether leakage stays flat as arrays grow; (3) whether always-on pulsing becomes the standard.
 
 ## Sources
-[1] D. P. DiVincenzo, D. Bacon, J. Kempe, G. Burkard, and K. B. Whaley, “Universal quantum computation with the exchange interaction,” *Nature*, vol. 408, p. 339, Nov. 2000. [Online]. Available: https://arxiv.org/abs/quant-ph/0005116 [S]
+[1] D. P. DiVincenzo, D. Bacon, J. Kempe, G. Burkard, and K. B. Whaley, “Universal quantum computation with the exchange interaction,” *Nature*, vol. 408, no. 6810, pp. 339–342, 2000, doi: [10.1038/35042541](https://doi.org/10.1038/35042541). [arXiv:quant-ph/0005116](https://arxiv.org/abs/quant-ph/0005116). [S]
 [2] J. D. Broz, J. C. Hoke, E. Acuna, and J. R. Petta, “Demonstration of an always-on exchange-only spin qubit,” *Nat. Commun.*, vol. 17, no. 1, Art. no. 4794, Apr. 2026, doi: [10.1038/s41467-026-70943-w](https://doi.org/10.1038/s41467-026-70943-w). [D]
 [3] Members of the HRL Quantum Team and Collaborators, “A digitally controlled silicon quantum processing unit,” [arXiv:2604.16216](https://arxiv.org/abs/2604.16216), Apr. 2026. [D]
 

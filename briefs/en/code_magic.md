@@ -93,7 +93,7 @@ Confirm, within 12–24 months, if a cultivated state is consumed by a logical a
 
 ## Sources
 
-[1] S. Bravyi and A. Kitaev, “Universal Quantum Computation with ideal Clifford gates and noisy ancillas,” *Phys. Rev. A*, vol. 71, Art. no. 022316, 2005, doi: [10.1103/PhysRevA.71.022316](https://doi.org/10.1103/PhysRevA.71.022316).
+[1] S. Bravyi and A. Kitaev, “Universal Quantum Computation with ideal Clifford gates and noisy ancillas,” *Phys. Rev. A*, vol. 71, Art. no. 022316, 2005, doi: [10.1103/PhysRevA.71.022316](https://doi.org/10.1103/PhysRevA.71.022316). [arXiv:quant-ph/0403025](https://arxiv.org/abs/quant-ph/0403025).
 [2] C. Gidney, N. Shutty, and C. Jones, “Magic state cultivation: growing T states as cheap as CNOT gates,” [arXiv:2409.17595](https://arxiv.org/abs/2409.17595), Sep. 2024.
 [3] E. Rosenfeld *et al.*, “Magic state cultivation on a superconducting quantum processor,” [arXiv:2512.13908](https://arxiv.org/abs/2512.13908), Dec. 2025.
 [4] S. Dasu *et al.*, “Breaking even with magic: demonstration of a high-fidelity logical non-Clifford gate,” [arXiv:2506.14688](https://arxiv.org/abs/2506.14688), Jun. 2025.
@@ -104,7 +104,7 @@ Confirm, within 12–24 months, if a cultivated state is consumed by a logical a
 [9] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y).
 [10] A. B. Ziad *et al.*, “Local clustering decoder as a fast and adaptive hardware decoder for the surface code,” *Nat. Commun.*, vol. 16, no. 1, Art. no. 11048, Dec. 2025, doi: [10.1038/s41467-025-66773-x](https://doi.org/10.1038/s41467-025-66773-x).
 [11] S. Caldwell *et al.*, “NVIDIA NVQLink Architecture Integrates Accelerated Computing with Quantum Processors,” NVIDIA Technical Blog, Nov. 17, 2025. [Online]. Available: https://developer.nvidia.com/blog/nvidia-nvqlink-architecture-integrates-accelerated-computing-with-quantum-processors/ [P]
-[12] Wan, Zhong, and Zapirain, “Simulating magic state cultivation with few Clifford terms,” *Quantum*, vol. 10, Art. no. 2134, Jun. 2026. [Online]. Available: https://quantum-journal.org/papers/q-2026-06-12-2134/
+[12] K. H. Wan, Z. Zhong, and A. Zapirain, “Simulating magic state cultivation with few Clifford terms,” *Quantum*, vol. 10, Art. no. 2134, Jun. 2026, doi: [10.22331/q-2026-06-12-2134](https://doi.org/10.22331/q-2026-06-12-2134).
 [13] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661).
 [14] IBM, “IBM Sets the Course to Build World's First Large-Scale, Fault-Tolerant Quantum Computer at New IBM Quantum Data Center,” Jun. 10, 2025. [Online]. Available: https://newsroom.ibm.com/2025-06-10-IBM-Sets-the-Course-to-Build-Worlds-First-Large-Scale,-Fault-Tolerant-Quantum-Computer-at-New-IBM-Quantum-Data-Center [C]
 [15] Quantinuum, “A Quantinuum-led team has built the quantum programming tools for real-time magic state distillation on a quantum computer,” Oct. 24, 2023. [Online]. Available: https://www.quantinuum.com/blog/a-quantinuum-led-team-has-built-the-quantum-programming-tools-for-real-time-magic-state-distillation-on-a-quantum-computer [C]

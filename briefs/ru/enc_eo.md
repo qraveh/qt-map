@@ -57,7 +57,7 @@ updated: 2026-09-04
 Подтвердить или понизить в статусе за 12–24 месяца: вторая лаборатория, воспроизводящая результат на 18 кубитах; полноценный код ниже порога; датированная веха от IBM. Лучший случай к 2029: IBM встраивает холодный секвенсор в устройство фабричного масштаба с безусловными характеристиками. Худший случай: результат остаётся достоянием одной лаборатории. Открыто: (1) упадёт ли мощность контроллера на кубит на два порядка; (2) останется ли утечка неизменной по мере роста массивов; (3) станет ли постоянно включённая импульсная накачка стандартом.
 
 ## Источники
-[1] D. P. DiVincenzo, D. Bacon, J. Kempe, G. Burkard, and K. B. Whaley, “Universal quantum computation with the exchange interaction,” *Nature*, vol. 408, p. 339, Nov. 2000. [Online]. Available: https://arxiv.org/abs/quant-ph/0005116 [S]
+[1] D. P. DiVincenzo, D. Bacon, J. Kempe, G. Burkard, and K. B. Whaley, “Universal quantum computation with the exchange interaction,” *Nature*, vol. 408, no. 6810, pp. 339–342, 2000, doi: [10.1038/35042541](https://doi.org/10.1038/35042541). [arXiv:quant-ph/0005116](https://arxiv.org/abs/quant-ph/0005116). [S]
 [2] J. D. Broz, J. C. Hoke, E. Acuna, and J. R. Petta, “Demonstration of an always-on exchange-only spin qubit,” *Nat. Commun.*, vol. 17, no. 1, Art. no. 4794, Apr. 2026, doi: [10.1038/s41467-026-70943-w](https://doi.org/10.1038/s41467-026-70943-w). [D]
 [3] Members of the HRL Quantum Team and Collaborators, “A digitally controlled silicon quantum processing unit,” [arXiv:2604.16216](https://arxiv.org/abs/2604.16216), Apr. 2026. [D]
 

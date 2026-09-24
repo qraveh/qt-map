@@ -102,7 +102,7 @@ Open questions. (1) How much anomalous heating do drive currents inject at entan
 ## Sources
 
 [1] M. C. Smith, A. D. Leu, K. Miyanishi, M. F. Gely, and D. M. Lucas, “Single-qubit gates with errors at the 10⁻⁷ level,” *Phys. Rev. Lett.*, vol. 134, no. 23, Art. no. 230601, Jun. 2025, doi: [10.1103/42w2-6ccy](https://doi.org/10.1103/42w2-6ccy). [arXiv:2412.04421](https://arxiv.org/abs/2412.04421). [D]
-[2] NXP Semiconductors, “NXP, eleQtron and ParityQC reveal their first quantum computing demonstrator,” newsroom, May 30, 2024. [Online]. Available: https://www.nxp.com/company/about-nxp/newsroom/NW-NXP-ELEQTRON-AND-PARITYQC-FIRST-QUANTUM [C]
+[2] NXP Semiconductors, “NXP, eleQtron and ParityQC Reveal their First Quantum Computing Demonstrator for the DLR Quantum Computing Initiative,” NXP Newsroom, May 30, 2024. [Online]. Available: https://www.nxp.com/company/about-nxp/newsroom/NW-NXP-ELEQTRON-AND-PARITYQC-FIRST-QUANTUM [C]
 [3] M. Malinowski, D. Allcock, and C. Ballance, “How to Wire a 1000-Qubit Trapped-Ion Quantum Computer,” *PRX Quantum*, vol. 4, no. 4, Art. no. 040313, Oct. 2023, doi: [10.1103/PRXQuantum.4.040313](https://doi.org/10.1103/PRXQuantum.4.040313). [arXiv:2305.12773](https://arxiv.org/abs/2305.12773). [S]
 [4] A. C. Hughes *et al.*, “Trapped-ion two-qubit gates with >99.99% fidelity without ground-state cooling,” [arXiv:2510.17286](https://arxiv.org/abs/2510.17286), Oct. 2025. [D]
 [5] A. Ransford *et al.*, “A 98-qubit trapped-ion quantum computer with all-to-all connectivity,” *Nature*, vol. 655, no. 8121, pp. 81–86, Jun. 2026, doi: [10.1038/s41586-026-10676-4](https://doi.org/10.1038/s41586-026-10676-4). [arXiv:2511.05465](https://arxiv.org/abs/2511.05465). [D]

@@ -51,7 +51,7 @@ Three quantities circulate as "readout fidelity" and are not interchangeable: as
 | QuantumCore | supplier | Canada | TWPA development with IQC Waterloo | [P][10] |
 
 **Money.**
-- 2026-05-05 · QuantWare · Series B · $178 M (€152 M) · Intel Capital, In-Q-Tel, ETF Partners · closed [C][9][G:QUANTWARE-SERIESB-2026-05]
+- 2026-05-05 · QuantWare · Series B · $178 M (€152 M) · Intel Capital, In-Q-Tel, ETF Partners · closed [C][13][G:QUANTWARE-SERIESB-2026-05]
 - 2026-04-25 · QuantumCore · listing (CSE: QNCR, 2026-04-14) plus NSERC Alliance grant · $10.7 M raised, $1.7 M grant · NSERC/IQC · closed [P][10]
 - 2026-01 · D-Wave · M&A (Quantum Circuits) · $550 M · — · announced [C][5]
 
@@ -69,18 +69,19 @@ Three quantities circulate as "readout fidelity" and are not interchangeable: as
 Confirm or demote within 12–24 months: does any vendor publish a fleet-average QNDness; does fleet readout error fall below 5×10⁻³. Best case by 2029: shelving-free discrimination and on-chip isolation take fleet readout error toward 10⁻³ without slowing the cycle. Worst case: measurement-induced leakage holds QNDness near 99.3% whatever the amplifier does, and readout stays the term that caps Λ. Open questions: how the fleet 1% decomposes; how many tones one TWPA carries before compression.
 
 ## Sources
-[1] Wallraff *et al.*, “Circuit QED: strong coupling of a single photon to a superconducting qubit, establishing dispersive readout,” *Nature*, vol. 431, p. 162, 2004. [Online]. Available: https://arxiv.org/abs/cond-mat/0407325 [D]
+[1] A. Wallraff *et al.*, “Strong coupling of a single photon to a superconducting qubit using circuit quantum electrodynamics,” *Nature*, vol. 431, no. 7005, pp. 162–167, Sep. 2004, doi: [10.1038/nature02851](https://doi.org/10.1038/nature02851). [arXiv:cond-mat/0407325](https://arxiv.org/abs/cond-mat/0407325). [D]
 [2] T. C. White *et al.*, “Traveling wave parametric amplifier with Josephson junctions using minimal resonator phase matching,” [arXiv:1503.04364](https://arxiv.org/abs/1503.04364), Mar. 2015. [D]
 [3] F. Marxer *et al.*, “Above 99.9% Fidelity Single-Qubit Gates, Two-Qubit Gates, and Readout in a Single Superconducting Quantum Device,” *PRX Quantum*, vol. 7, Art. no. 020333, 2026, doi: [10.1103/n86s-2b88](https://doi.org/10.1103/n86s-2b88). [arXiv:2508.16437](https://arxiv.org/abs/2508.16437). [D]
 [4] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [5] N. Mehta *et al.*, “An entangling gate for dual-rail erasure qubits,” *Nature*, vol. 656, no. 8126, pp. 47–53, Aug. 2026, doi: [10.1038/s41586-026-10822-y](https://doi.org/10.1038/s41586-026-10822-y). [arXiv:2503.10935](https://arxiv.org/abs/2503.10935). [D]
 [6] IBM, “IBM Quantum Computing — Hardware and roadmap.” [Online]. Available: https://www.ibm.com/quantum/hardware [C]
 [7] D. Gao *et al.*, “Establishing a New Benchmark in Quantum Computational Advantage with 105-qubit Zuchongzhi 3.0 Processor,” *Phys. Rev. Lett.*, vol. 134, Art. no. 090601, Mar. 2025, doi: [10.1103/PhysRevLett.134.090601](https://doi.org/10.1103/PhysRevLett.134.090601). [arXiv:2412.11924](https://arxiv.org/abs/2412.11924). [D]
-[8] Silent Waves, “TWPA product line Argo, Carthago and Zephyr (launched 2026-03-13); customers Rigetti, Alice & Bob, Qilimanjaro, QphoX, CEA,” company site, Mar. 13, 2026. [Online]. Available: https://www.silent-waves.com/ [C]
-[9] QuantWare, “Crescendo TWPA and peripherals; $178 M Series B 2026-05-05,” company product page, 2026. [Online]. Available: https://quantware.com/product/peripherals [C]
-[10] Quantum Computing Report, “QuantumCore Partners with IQC and NSERC in $1.7M TWPA Development Initiative,” trade press, Apr. 25, 2026. [Online]. Available: https://quantumcomputingreport.com/quantumcore-partners-with-iqc-and-nserc-in-1-7m-traveling-wave-parametric-amplifier-twpa-development-initiative/ [P]
+[8] Silent Waves, “Silent Waves - Traveling-Wave Parametric Amplifiers (TWPAs),” Mar. 13, 2026. [Online]. Available: https://www.silent-waves.com/ [C]
+[9] QuantWare, “Peripherals — Crescendo TWPA,” 2026. [Online]. Available: https://quantware.com/product/peripherals [C]
+[10] D. Finke, “QuantumCore Secures $1.7M NSERC Grant to Advance Superconducting Amplifiers,” Quantum Computing Report, Apr. 25, 2026. [Online]. Available: https://quantumcomputingreport.com/quantumcore-partners-with-iqc-and-nserc-in-1-7m-traveling-wave-parametric-amplifier-twpa-development-initiative/ [P]
 [11] US Department of Commerce, Bureau of Industry and Security, “Commerce Control List Additions and Revisions; Implementation of Controls on Advanced Technologies Consistent With Controls Implemented by International Partners,” *Federal Register*, vol. 89, p. 72926, Sep. 6, 2024. [Online]. Available: https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies [G]
-[12] Zurich Instruments, “ZQCS quantum control platform, over 1,000 channels per rack,” product announcement, Mar. 9, 2026. [Online]. Available: https://quantumwire.com [C]
+[12] Zurich Instruments, “Zurich Instruments Launches the ZQCS Quantum Control System to Master the Long-Lived Logical Qubit Challenge,” Mar. 9, 2026. [Online]. Available: https://www.zhinst.com/americas/en/news/zurich-instruments-launches-zqcs-quantum-control-system-master-long-lived-logical-qubit/ [C]
+[13] QuantWare, “QuantWare Raises $178 Million to Build World’s Most Powerful Quantum Processors at an Industrial Scale,” May 5, 2026. [Online]. Available: https://quantware.com/news/quantware-raises-178-million [C]
 General facts cited above: [G:QUANTWARE-SERIESB-2026-05], [G:IBM-10B-2026-06].
 
 ## Open verification items

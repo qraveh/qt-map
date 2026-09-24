@@ -62,7 +62,7 @@ updated: 2026-09-03
 Подтвердить к 2027 году: эффективное сжатие выше 3 дБ на кристалле; понизить в ранге веху 2028–29 годов, если оно останется ниже 1 дБ. Лучший сценарий к 2029 году: небольшой логический кубит GKP при малом расстоянии. Худший сценарий: демонстрации без коррекции ошибок продолжаются, а график срывается так же, как сорвалось финансирование. Открытые вопросы: какая часть разрыва приходится на потери, а какая на изготовление; масштабируются ли гомодинные входные тракты.
 
 ## Источники
-[1] D. Gottesman, A. Kitaev, and J. Preskill, “Encoding a qubit in an oscillator,” *Phys. Rev. A*, vol. 64, no. 1, Art. no. 012310, Jun. 2001, doi: [10.1103/PhysRevA.64.012310](https://doi.org/10.1103/PhysRevA.64.012310). [S]
+[1] D. Gottesman, A. Kitaev, and J. Preskill, “Encoding a qubit in an oscillator,” *Phys. Rev. A*, vol. 64, no. 1, Art. no. 012310, Jun. 2001, doi: [10.1103/PhysRevA.64.012310](https://doi.org/10.1103/PhysRevA.64.012310). [arXiv:quant-ph/0008040](https://arxiv.org/abs/quant-ph/0008040). [S]
 [2] S. Yokoyama *et al.*, “Ultra-large-scale continuous-variable cluster states multiplexed in the time domain,” *Nat. Photon.*, vol. 7, no. 12, pp. 982–986, Dec. 2013, doi: [10.1038/nphoton.2013.287](https://doi.org/10.1038/nphoton.2013.287). [D]
 [3] H. A. Rad *et al.*, “Scaling and networking a modular photonic quantum computer,” *Nature*, vol. 638, no. 8052, pp. 912–919, Jan. 2025, doi: [10.1038/s41586-024-08406-9](https://doi.org/10.1038/s41586-024-08406-9). [D]
 [4] M. V. Larsen *et al.*, “Integrated photonic source of Gottesman–Kitaev–Preskill qubits,” *Nature*, vol. 642, no. 8068, pp. 587–591, Jun. 2025, doi: [10.1038/s41586-025-09044-5](https://doi.org/10.1038/s41586-025-09044-5). [D]
@@ -70,7 +70,7 @@ updated: 2026-09-03
 [6] D. Duggan *et al.*, “FPGA Based Feedforward System for Photonic Quantum Computing Applications,” [arXiv:2606.03500](https://arxiv.org/abs/2606.03500), Jun. 2026. [P]
 [7] Xanadu, “Xanadu sets new industry benchmark in photonic chip packaging,” PR Newswire, Jun. 10, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/xanadu-sets-new-industry-benchmark-in-photonic-chip-packaging-302796562.html [C]
 [8] X. Shi *et al.*, “Squeezed Light Generation in Periodically Poled Thin-Film Lithium Niobate Waveguides,” [arXiv:2508.08599](https://arxiv.org/abs/2508.08599), Aug. 2025. [P]
-[9] HPCwire, “Xanadu Unveils 1st On-Chip Error-Resistant Photonic Qubit,” Jun. 5, 2025. [Online]. Available: https://www.hpcwire.com/off-the-wire/xanadu-unveils-1st-on-chip-error-resistant-photonic-qubit/ [P]
+[9] Xanadu, “Xanadu Unveils 1st On-Chip Error-Resistant Photonic Qubit,” HPCwire, Jun. 5, 2025. [Online]. Available: https://www.hpcwire.com/off-the-wire/xanadu-unveils-1st-on-chip-error-resistant-photonic-qubit/ [P]
 
 ## Открытые пункты верификации
 Страница nature.com для источника GKP оказалась недоступна; её дата, платформа и работа при комнатной температуре взяты из освещения издателя в прессе [9], а цифра 0.62 дБ — из основного отчёта. Порог ~10 дБ — цифра основного отчёта; опубликованные оценки порога GKP меняются в зависимости от декодера и архитектуры, и единого авторитетного значения здесь не верифицировано. Пересчёт дисперсии 0.87→0.10 выведен здесь, а не процитирован. Превышение порога по потерям в 24.1× у Xanadu и эффективное сжатие 0.62 дБ — разные величины, которые ни один источник не согласует. Аффилиации для arXiv:2606.03500 и arXiv:2508.08599 по страницам их аннотаций не подтверждены. Независимого воспроизведения результата 0.62 дБ не существует.

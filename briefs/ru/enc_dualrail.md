@@ -121,8 +121,8 @@ Dual-rail лежит на двух именованных путях платф�
 
 ## Источники
 
-[1] I. L. Chuang and Y. Yamamoto, “Simple quantum computer,” *Phys. Rev. A*, vol. 52, Art. no. 3489, 1995, doi: [10.1103/PhysRevA.52.3489](https://doi.org/10.1103/PhysRevA.52.3489).
-[2] E. Knill, R. Laflamme, and G. Milburn, “Efficient Linear Optics Quantum Computation,” *Nature*, vol. 409, pp. 46–52, Jun. 2000, doi: [10.1038/35051009](https://doi.org/10.1038/35051009).
+[1] I. L. Chuang and Y. Yamamoto, “Simple quantum computer,” *Phys. Rev. A*, vol. 52, Art. no. 3489, 1995, doi: [10.1103/PhysRevA.52.3489](https://doi.org/10.1103/PhysRevA.52.3489). [arXiv:quant-ph/9505011](https://arxiv.org/abs/quant-ph/9505011).
+[2] E. Knill, R. Laflamme, and G. Milburn, “Efficient Linear Optics Quantum Computation,” *Nature*, vol. 409, pp. 46–52, Jun. 2000, doi: [10.1038/35051009](https://doi.org/10.1038/35051009). [arXiv:quant-ph/0006088](https://arxiv.org/abs/quant-ph/0006088).
 [3] A. Kubica *et al.*, “Erasure Qubits: Overcoming the T₁ Limit in Superconducting Circuits,” *Phys. Rev. X*, vol. 13, no. 4, Art. no. 041022, Nov. 2023, doi: [10.1103/PhysRevX.13.041022](https://doi.org/10.1103/PhysRevX.13.041022). [arXiv:2208.05461](https://arxiv.org/abs/2208.05461).
 [4] J. D. Teoh *et al.*, “Dual-rail encoding with superconducting cavities,” *Proc. Natl. Acad. Sci. USA*, vol. 120, no. 41, Art. no. e2221736120, Oct. 2023, doi: [10.1073/pnas.2221736120](https://doi.org/10.1073/pnas.2221736120). [arXiv:2212.12077](https://arxiv.org/abs/2212.12077).
 [5] H. Levine *et al.*, “Demonstrating a long-coherence dual-rail erasure qubit using tunable transmons,” *Phys. Rev. X*, vol. 14, no. 1, Art. no. 011051, Mar. 2024, doi: [10.1103/PhysRevX.14.011051](https://doi.org/10.1103/PhysRevX.14.011051). [arXiv:2307.08737](https://arxiv.org/abs/2307.08737).
@@ -146,7 +146,7 @@ Dual-rail лежит на двух именованных путях платф�
 [23] quantumlib, “Gates supported by Stim,” GitHub. [Online]. Available: https://github.com/quantumlib/Stim/blob/main/doc/gates.md [P]
 [24] M. Abdel-Kareem, “D-Wave Demonstrates Two-Qubit Gate Breakthrough for Dual-Rail Erasure Qubits in Nature,” Quantum Computing Report, Aug. 6, 2026. [Online]. Available: https://quantumcomputingreport.com/d-wave-demonstrates-two-qubit-gate-breakthrough-for-dual-rail-erasure-qubits-in-nature/ [P]
 [25] D. Biswas *et al.*, “Bias-Preserving Gates and Quantum Error Correction With Dual-Rail Cat Codes,” [arXiv:2607.00786](https://arxiv.org/abs/2607.00786), Jul. 2026.
-[26] Quantum Circuits, “What are Quantum Circuits' dual-rail qubits and why are they a breakthrough?,” company page, Sep. 17, 2024. [Online]. Available: https://quantumcircuits.com/dual-resonator-qubits-breakthrough/ [C]
+[26] Quantum Circuits, “What are Quantum Circuits' Dual-Rail Qubits and Why are They a Breakthrough?,” Sep. 17, 2024. [Online]. Available: https://quantumcircuits.com/dual-resonator-qubits-breakthrough/ [C]
 
 ## Открытые пункты верификации
 

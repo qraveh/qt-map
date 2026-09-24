@@ -70,7 +70,7 @@ updated: 2026-09-04
 [4] C. Kim, J. Kang, and Y. Kwon, “Lattice patch structure for fixed-frequency transmon quantum computer with high-fidelity CNOT gates,” [arXiv:2606.27017](https://arxiv.org/abs/2606.27017), Jun. 2026. [S]
 [5] IBM Quantum, “What's new at IBM Quantum - Q2 2026.” [Online]. Available: https://www.ibm.com/quantum/blog/whats-new-q2-2026
 [6] IBM, “Quantum Roadmap.” [Online]. Available: https://www.ibm.com/roadmaps/quantum/ [C]
-[7] “Oxford (Leek Lab) / OQC, fixed-coupling CZ at 99.8% in 25 ns, 2025-03-21,” OQC, Mar. 21, 2025. [Online]. Available: https://oqc.tech/company/newsroom/oxford-research-group-demonstrate-fundamental-speed-up-of-two-qubit-gate [C]
+[7] A. Curbison, “Oxford research group demonstrate fundamental speed-up of two-qubit gate,” OQC, Mar. 21, 2025. [Online]. Available: https://oqc.tech/company/newsroom/oxford-research-group-demonstrate-fundamental-speed-up-of-two-qubit-gate [C]
 [8] IBM Quantum, “Why IBM is investing $10 billion into quantum computing,” Jun. 2, 2026. [Online]. Available: https://www.ibm.com/quantum/blog/10-billion-investment-faq
 [9] A. Curbison, “OQC raises £260m in Europe's largest ever private quantum computing funding round,” OQC, Jun. 2, 2026. [Online]. Available: https://oqc.tech/company/newsroom/series-c [C]
 

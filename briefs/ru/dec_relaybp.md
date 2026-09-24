@@ -74,9 +74,9 @@ updated: 2026-09-04
 [6] E. Tham *et al.*, “Breakeven demonstration of quantum low-density parity-check codes,” [arXiv:2606.06455](https://arxiv.org/abs/2606.06455), Jun. 2026.
 [7] Altera, “Altera Closes Silver Lake Investment to Become World's Largest Pure-play FPGA Solutions Provider,” Sep. 15, 2025. [Online]. Available: https://www.altera.com/newsroom/news/press-release/altera-silver-lake [G]
 [8] A. Woodie, “IBM Touts Affordable Quantum Error Correction on AMD FPGAs,” HPCwire, Oct. 28, 2025. [Online]. Available: https://www.hpcwire.com/2025/10/28/ibm-touts-affordable-quantum-error-correction-on-amd-fpgas/ [P]
-[9] Qblox and Riverlane, “Qblox and Riverlane demonstrate integration enabling real-time quantum error correction (250 physical / 1 logical, sub-µs feedback),” PR Newswire, Mar. 17, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/qblox-and-riverlane-demonstrate-integration-enabling-real-time-quantum-error-correction-302716254.html [C]
+[9] Qblox; Riverlane, “Qblox and Riverlane Demonstrate Integration Enabling Real-Time Quantum Error Correction,” PR Newswire, Mar. 17, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/qblox-and-riverlane-demonstrate-integration-enabling-real-time-quantum-error-correction-302716254.html [C]
 [10] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
-[11] Riverlane, “Riverlane raises $75 million to meet surging global demand for quantum error correction technology,” company press release, Aug. 6, 2024. [Online]. Available: https://www.riverlane.com/press-release/riverlane-raises-75-million-to-meet-surging-global-demand-for-quantum-error-correction-technology [C]
+[11] Riverlane, “Riverlane raises $75 million to meet surging global demand for quantum error correction technology,” Aug. 6, 2024. [Online]. Available: https://www.riverlane.com/press-release/riverlane-raises-75-million-to-meet-surging-global-demand-for-quantum-error-correction-technology [C]
 
 ## Открытые пункты верификации
 Ни в одной из аннотаций не указаны ни конкретный кристалл FPGA, ни расход LUT/памяти, ни разрядность арифметики; отнесение к AMD опирается на отраслевую прессу [8], страница которой не загружается (цикл переадресаций).

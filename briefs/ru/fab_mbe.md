@@ -61,7 +61,7 @@ e нет · f доминирует беспорядок · g молекуляр�
 [3] H. F. Legg, “On the robustness of topological gap detection via transport,” *Nature*, vol. 654, no. 8120, pp. E22–E26, Jun. 2026, doi: [10.1038/s41586-026-10567-8](https://doi.org/10.1038/s41586-026-10567-8). [arXiv:2503.08944](https://arxiv.org/abs/2503.08944).
 [4] Microsoft Azure Quantum, “Interferometric single-shot parity measurement in InAs–Al hybrid devices,” *Nature*, vol. 638, no. 8051, pp. 651–655, Feb. 2025, doi: [10.1038/s41586-024-08445-2](https://doi.org/10.1038/s41586-024-08445-2).
 [5] N. van Loo *et al.*, “Single-shot parity readout of a minimal Kitaev chain,” *Nature*, vol. 650, no. 8101, pp. 334–339, Feb. 2026, doi: [10.1038/s41586-025-09927-7](https://doi.org/10.1038/s41586-025-09927-7).
-[6] Arnold and Porter, “Commerce Implements Export Controls on Semiconductor, Additive Manufacturing, and Quantum Computing Items,” arnoldporter.com, Sep. 2024. [Online]. Available: https://www.arnoldporter.com/en/perspectives/advisories/2024/09/semiconductor-additive-manufacturing-and-quantum-computing [P]
+[6] J. P. Barker *et al.*, “Commerce Implements Export Controls on Semiconductor, Additive Manufacturing, and Quantum Computing Items,” Arnold & Porter, Sep. 10, 2024. [Online]. Available: https://www.arnoldporter.com/en/perspectives/advisories/2024/09/semiconductor-additive-manufacturing-and-quantum-computing [P]
 [7] C. Nayak, “Majorana 2 – Microsoft's Scalable Quantum Processor With Reliable, Long-Lasting Qubits,” Microsoft Quantum. [Online]. Available: https://quantum.microsoft.com/en-us/insights/blogs/majorana-2-scalable-quantum-processor [C]
 
 ## Открытые пункты верификации

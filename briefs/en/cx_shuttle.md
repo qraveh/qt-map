@@ -104,10 +104,10 @@ Open questions. (1) Is benchmarking of a shuttle a meaningful fidelity, or an ar
 [10] Members of the HRL Quantum Team and Collaborators, “A digitally controlled silicon quantum processing unit,” [arXiv:2604.16216](https://arxiv.org/abs/2604.16216), Apr. 2026.
 [11] Forschungszentrum Jülich, “Jülich-Aachen Start-up Paves the Way for Scalable Quantum Computers,” fz-juelich.de, Apr. 8, 2026. [Online]. Available: https://www.fz-juelich.de/en/news/archive/press-release/2026/julich-aachen-start-up-arque-systems [C]
 [12] IBM, “IBM to Acquire HRL Laboratories to Power the Future of Quantum,” Jul. 23, 2026. [Online]. Available: https://newsroom.ibm.com/2026-07-23-ibm-to-acquire-hrl-laboratories-to-power-the-future-of-quantum [G]
-[13] Quantum Motion, “$160 M Series C; full-stack CMOS system at NQCC,” May 7, 2026. [Online]. Available: https://quantummotion.com/quantum-motion-raises-160-million-series-c-to-deliver-quantum-computings-transistor-moment/ [C]
+[13] Quantum Motion, “Quantum Motion Raises $160 Million Series C to Deliver Quantum Computing's "Transistor Moment,” May 7, 2026. [Online]. Available: https://quantummotion.com/quantum-motion-raises-160-million-series-c-to-deliver-quantum-computings-transistor-moment/ [C]
 [14] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
 [15] National Institute of Standards and Technology, “Department of Commerce Announces Letters of Intent With 9 Companies for $2 Billion to Accelerate U.S. Leadership in Quantum Computing,” NIST News, May 21, 2026. [Online]. Available: https://www.nist.gov/news-events/news/2026/05/department-commerce-announces-letters-intent-9-companies-2-billion [G]
-[16] Quobly, “€115 M Series A; enriched-silicon FD-SOI lots at ST Crolles,” quobly.io, Jun. 3, 2026. [Online]. Available: https://www.quobly.io/ [C]
+[16] Quobly, “Quobly secures €115 million Series A to bring silicon-based quantum computers to market,” Jun. 3, 2026. [Online]. Available: https://www.quobly.io/press-releases/quobly-secures-e115-million-series-a-to-bring-silicon-based-quantum-computers-to-market [C]
 
 ## Open verification items
 
