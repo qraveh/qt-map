@@ -93,30 +93,30 @@ Open questions: (1) what two-qubit fidelity does a millimetre-scale coupler cost
 
 ## Sources
 
-[1] S. Bravyi *et al.*, “High-threshold and low-overhead fault-tolerant quantum memory,” *Nature*, vol. 627, no. 8005, pp. 778–782, Mar. 2024, doi: [10.1038/s41586-024-07107-7](https://doi.org/10.1038/s41586-024-07107-7). [arXiv:2308.07915](https://arxiv.org/abs/2308.07915).
-[2] T. Maurer *et al.*, “Real-time decoding of the gross code memory with FPGAs,” [arXiv:2510.21600](https://arxiv.org/abs/2510.21600), Oct. 2025.
-[3] E. Tham *et al.*, “Breakeven demonstration of quantum low-density parity-check codes,” [arXiv:2606.06455](https://arxiv.org/abs/2606.06455), Jun. 2026.
-[4] K. Wang *et al.*, “Demonstration of low-overhead quantum error correction codes,” *Nat. Phys.*, 2026, doi: [10.1038/s41567-025-03157-4](https://doi.org/10.1038/s41567-025-03157-4). [arXiv:2505.09684](https://arxiv.org/abs/2505.09684).
-[5] T. J. Yoder *et al.*, “Tour de gross: A modular quantum computer based on bivariate bicycle codes,” [arXiv:2506.03094](https://arxiv.org/abs/2506.03094), Jun. 2025.
+[1] S. Bravyi *et al.*, “High-threshold and low-overhead fault-tolerant quantum memory,” *Nature*, vol. 627, no. 8005, pp. 778–782, Mar. 2024, doi: [10.1038/s41586-024-07107-7](https://doi.org/10.1038/s41586-024-07107-7). [arXiv:2308.07915](https://arxiv.org/abs/2308.07915). [D]
+[2] T. Maurer *et al.*, “Real-time decoding of the gross code memory with FPGAs,” [arXiv:2510.21600](https://arxiv.org/abs/2510.21600), Oct. 2025. [S]
+[3] E. Tham *et al.*, “Breakeven demonstration of quantum low-density parity-check codes,” [arXiv:2606.06455](https://arxiv.org/abs/2606.06455), Jun. 2026. [D]
+[4] K. Wang *et al.*, “Demonstration of low-overhead quantum error correction codes,” *Nat. Phys.*, 2026, doi: [10.1038/s41567-025-03157-4](https://doi.org/10.1038/s41567-025-03157-4). [arXiv:2505.09684](https://arxiv.org/abs/2505.09684). [D]
+[5] T. J. Yoder *et al.*, “Tour de gross: A modular quantum computer based on bivariate bicycle codes,” [arXiv:2506.03094](https://arxiv.org/abs/2506.03094), Jun. 2025. [S]
 [6] IBM, “IBM Delivers New Quantum Processors, Software, and Algorithm Breakthroughs on Path to Advantage and Fault Tolerance,” Nov. 12, 2025. [Online]. Available: https://newsroom.ibm.com/2025-11-12-ibm-delivers-new-quantum-processors,-software,-and-algorithm-breakthroughs-on-path-to-advantage-and-fault-tolerance [C]
 [7] F. Vigneau, “IQM Constellation: A New Quantum Processor Architecture for Scalable Error Correction,” IQM Quantum Computers, Sep. 30, 2025. [Online]. Available: https://iqm.tech/blog/iqm-constellation-a-new-quantum-processor-architecture-for-scalable-error-correction/ [C]
 [8] S. Caldwell *et al.*, “NVIDIA NVQLink Architecture Integrates Accelerated Computing with Quantum Processors,” NVIDIA Technical Blog, Nov. 17, 2025. [Online]. Available: https://developer.nvidia.com/blog/nvidia-nvqlink-architecture-integrates-accelerated-computing-with-quantum-processors/ [P]
-[9] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y).
-[10] S. Martiel *et al.*, “Sampling hard circuits with verifiably high fidelity,” [arXiv:2607.25941](https://arxiv.org/abs/2607.25941), Jul. 2026.
+[9] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
+[10] S. Martiel *et al.*, “Sampling hard circuits with verifiably high fidelity,” [arXiv:2607.25941](https://arxiv.org/abs/2607.25941), Jul. 2026. [D]
 [11] Photonic Inc., “Photonic accelerates the timeline to useful quantum computing with breakthrough results in error correction,” Feb. 11, 2025. [Online]. Available: https://photonic.com/news/shyps-codes-announcement/ [C]
 [12] M. U. Rehman, “Photonic Publishes SHYPS QLDPC Code Results in Nature Communications,” The Quantum Insider, Aug. 26, 2026. [Online]. Available: https://thequantuminsider.com/2026/08/26/photonic-shyps-quantum-error-correction-nature-communications/ [P]
-[13] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection
+[13] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
 [14] M. Abdel-Kareem, “Photonic Inc. Reaches $2B Valuation with $200M Final Close,” Quantum Computing Report, May 12, 2026. [Online]. Available: https://quantumcomputingreport.com/photonic-inc-reaches-2b-valuation-with-200m-final-close/ [P]
-[15] National Institute of Standards and Technology, “Department of Commerce Announces Letters of Intent With 9 Companies for $2 Billion to Accelerate U.S. Leadership in Quantum Computing,” NIST News, May 21, 2026. [Online]. Available: https://www.nist.gov/news-events/news/2026/05/department-commerce-announces-letters-intent-9-companies-2-billion
+[15] National Institute of Standards and Technology, “Department of Commerce Announces Letters of Intent With 9 Companies for $2 Billion to Accelerate U.S. Leadership in Quantum Computing,” NIST News, May 21, 2026. [Online]. Available: https://www.nist.gov/news-events/news/2026/05/department-commerce-announces-letters-intent-9-companies-2-billion [G]
 [16] IBM Quantum, “Why IBM is investing $10 billion into quantum computing,” Jun. 2, 2026. [Online]. Available: https://www.ibm.com/quantum/blog/10-billion-investment-faq [C]
 [17] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [C]
-[18] Justia Patents, “quantum error-correction parity-check index,” patents.justia.com, Sep. 3, 2026. [Online]. Available: https://patents.justia.com/search?q=%22parity+check%22+quantum+error+correction+code [P]
-[19] Justia Patents, “long-range coupler patents (IBM US 12,517,856; US 12,587,192),” patents.justia.com, 2026. [Online]. Available: https://patents.justia.com/search?q=%22long-range+coupler%22+qubit [P]
-[20] R. Mandelbaum *et al.*, “How IBM will build the world's first large-scale, fault-tolerant quantum computer,” IBM Quantum Computing Blog, Jun. 10, 2025. [Online]. Available: https://www.ibm.com/quantum/blog/large-scale-ftqc [C]
-[21] IBM, “Quantum Roadmap.” [Online]. Available: https://www.ibm.com/roadmaps/quantum/ [C]
+[18] Justia Patents, “Patent search: ‘parity check’ quantum error correction code (results as of Sep. 3, 2026).” [Online]. Available: https://patents.justia.com/search?q=%22parity+check%22+quantum+error+correction+code Also https://patents.google.com/patent/US12346774B2/en. [P]
+[19] Justia Patents, “Patent search: ‘long-range coupler’ qubit (results as of Sep. 3, 2026).” [Online]. Available: https://patents.justia.com/search?q=%22long-range+coupler%22+qubit Also https://patents.google.com/patent/US12517856B2/en. Also https://patents.google.com/patent/US12587192B2/en. [G]
+[20] R. Mandelbaum *et al.*, “How IBM will build the world's first large-scale, fault-tolerant quantum computer,” IBM Quantum Computing Blog, Jun. 10, 2025. [Online]. Available: https://www.ibm.com/quantum/blog/large-scale-ftqc [R]
+[21] IBM, “Quantum Roadmap.” [Online]. Available: https://www.ibm.com/roadmaps/quantum/ [R]
 [22] J. Gambetta, “Expanding the IBM Quantum roadmap to anticipate the future of quantum-centric supercomputing,” IBM Quantum Blog, May 10, 2022. [Online]. Available: https://www.ibm.com/quantum/blog/ibm-quantum-roadmap-2025 [C]
-[23] P. Webster *et al.*, “The Pinnacle Architecture: Reducing the cost of breaking RSA-2048 to 100 000 physical qubits using quantum LDPC codes,” [arXiv:2602.11457](https://arxiv.org/abs/2602.11457), Feb. 2026.
-[24] C. Gidney, “How to factor 2048 bit RSA integers with less than a million noisy qubits,” [arXiv:2505.15917](https://arxiv.org/abs/2505.15917), May 2025.
+[23] P. Webster *et al.*, “The Pinnacle Architecture: Reducing the cost of breaking RSA-2048 to 100 000 physical qubits using quantum LDPC codes,” [arXiv:2602.11457](https://arxiv.org/abs/2602.11457), Feb. 2026. [S]
+[24] C. Gidney, “How to factor 2048 bit RSA integers with less than a million noisy qubits,” [arXiv:2505.15917](https://arxiv.org/abs/2505.15917), May 2025. [S]
 
 ## Open verification items
 

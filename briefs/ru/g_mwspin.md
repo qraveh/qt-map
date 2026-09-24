@@ -63,7 +63,7 @@ updated: 2026-09-03
 [2] J. Fischer *et al.*, “Spin-photon correlations from a Purcell-enhanced diamond nitrogen-vacancy center coupled to an open microcavity,” *Nat. Commun.*, vol. 16, no. 1, Art. no. 11680, Nov. 2025, doi: [10.1038/s41467-025-66722-8](https://doi.org/10.1038/s41467-025-66722-8). [D]
 [3] M. Iuliano *et al.*, “Unconditionally teleported quantum gates between remote solid-state qubit registers,” *Nat. Commun.*, vol. 17, no. 1, Art. no. 4694, May 2026, doi: [10.1038/s41467-026-72818-6](https://doi.org/10.1038/s41467-026-72818-6). [D]
 [4] F. Afzal *et al.*, “Distributed Quantum Computing in Silicon,” [arXiv:2406.01704](https://arxiv.org/abs/2406.01704), Jun. 2024. [P]
-[5] Quantum Brilliance, “news and deployments (Oak Ridge, Fraunhofer IAF, Pawsey; dates not stated),” company page · accessed, Sep. 4, 2026. [Online]. Available: https://quantumbrilliance.com/news [P]
+[5] Oak Ridge National Laboratory, “Quantum Brilliance, ORNL pioneer quantum-classical hybrid computing,” ORNL News, Sep. 2, 2025. [Online]. Available: https://www.ornl.gov/news/quantum-brilliance-ornl-pioneer-quantum-classical-hybrid-computing Also https://www.iaf.fraunhofer.de/en/media-library/press-releases/first-room-temperature-quantum-accelerator-in-europe.html. Also https://quantumbrilliance.com/news/supercomputer-with-quantum-accelerator-pawsey-commissions-first-room-temperature-on-premises-quantum-computer-in-supercomputing-center/. [P]
 [6] M. U. Rehman, “Top Diamond NV-Centre Quantum Computing Companies in 2026,” The Quantum Insider, Jul. 10, 2026. [Online]. Available: https://thequantuminsider.com/2026/07/10/8-quantum-computing-companies-working-with-nv-centre-in-diamond-technology/ [P]
 
 ## Открытые пункты верификации

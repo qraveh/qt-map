@@ -63,13 +63,13 @@ updated: 2026-09-04
 Подтвердить к 2028, если измеренный гейт между двумя котами удерживает время переворота бита в пределах 10× от значения в покое; понизить оценку, если 2028 пройдёт при наличии одних лишь гейтов через анциллу, поскольку ступень 2030 и класс оценок на 126,133 кота теряют свою посылку [S][2]. Лучший случай, 2029: асимметрия выше 10³ под воздействием. Худший случай: логика на кот-кубитах бессрочно идёт через анциллы. Открытые вопросы: переживёт ли схема разброс нелинейности переходов; можно ли охарактеризовать гейт без загрязнения со стороны анциллы; кто первым попробует это в аппаратуре? Следить за продолжениями Ocelot и чипом Lithium.
 
 ## Источники
-[1] Y. Ye *et al.*, “Bias-preserving cat-cat CNOT gate via vacuum-conditional beam-splitter,” [arXiv:2607.22852](https://arxiv.org/abs/2607.22852), Jul. 2026.
-[2] É. Gouzien, D. Ruiz, F.-M. Le Régent, J. Guillaud, and N. Sangouard, “Performance Analysis of a Repetition Cat Code Architecture: Computing 256-bit Elliptic Curve Logarithm in 9 Hours with 126133 Cat Qubits,” *Phys. Rev. Lett.*, vol. 131, Art. no. 040602, Jul. 2023, doi: [10.1103/PhysRevLett.131.040602](https://doi.org/10.1103/PhysRevLett.131.040602). [arXiv:2302.06639](https://arxiv.org/abs/2302.06639).
-[3] H. Putterman *et al.*, “Hardware-efficient quantum error correction via concatenated bosonic qubits,” *Nature*, vol. 638, no. 8052, pp. 927–934, Feb. 2025, doi: [10.1038/s41586-025-08642-7](https://doi.org/10.1038/s41586-025-08642-7).
-[4] Alice & Bob, “Roadmap,” Jun. 23, 2026. [Online]. Available: https://alice-bob.com/roadmap/ [C]
+[1] Y. Ye *et al.*, “Bias-preserving cat-cat CNOT gate via vacuum-conditional beam-splitter,” [arXiv:2607.22852](https://arxiv.org/abs/2607.22852), Jul. 2026. [S]
+[2] É. Gouzien, D. Ruiz, F.-M. Le Régent, J. Guillaud, and N. Sangouard, “Performance Analysis of a Repetition Cat Code Architecture: Computing 256-bit Elliptic Curve Logarithm in 9 Hours with 126133 Cat Qubits,” *Phys. Rev. Lett.*, vol. 131, Art. no. 040602, Jul. 2023, doi: [10.1103/PhysRevLett.131.040602](https://doi.org/10.1103/PhysRevLett.131.040602). [arXiv:2302.06639](https://arxiv.org/abs/2302.06639). [S]
+[3] H. Putterman *et al.*, “Hardware-efficient quantum error correction via concatenated bosonic qubits,” *Nature*, vol. 638, no. 8052, pp. 927–934, Feb. 2025, doi: [10.1038/s41586-025-08642-7](https://doi.org/10.1038/s41586-025-08642-7). [D]
+[4] Alice & Bob, “Roadmap,” Jun. 23, 2026. [Online]. Available: https://alice-bob.com/roadmap/ [R]
 [5] N. Coppola, “Alice & Bob announces Series B Extension,” Alice & Bob, May 22, 2026. [Online]. Available: https://alice-bob.com/newsroom/alice-bob-announces-series-b-extension/ [C]
 [6] N. Coppola, “Alice & Bob Unveils First Quantum System, Helium,” Alice & Bob, Jun. 10, 2026. [Online]. Available: https://alice-bob.com/newsroom/alice-bob-unveils-first-quantum-system/ [C]
-[7] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection
+[7] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
 [8] Nord Quantique, “Nord Quantique Reaches $1.4 Billion USD Valuation with Latest Investment,” Business Wire, May 18, 2026. [Online]. Available: https://www.businesswire.com/news/home/20260518358351/en/Nord-Quantique-Reaches-$1.4-Billion-USD-Valuation-with-Latest-Investment [C]
 
 ## Открытые пункты верификации

@@ -57,13 +57,13 @@ d транспорта нет · e радиочастотная рефлекто
 Фальсифицируемо за 12–24 месяца: третья группа, публикующая считывание чётности; ошибка отнесения ниже 1% от кого угодно, кроме Microsoft; напрямую измеренная скорость отравления. Подтверждение, если сбудутся два пункта; понижение, если к 2028 году это останется результатом двух лабораторий. Лучший случай — считывание перестаёт быть открытой переменной; худший — τ на совместной петле остаётся в десятках µs. Открытые вопросы: работает ли мультиплексированное считывание множества тетронов; воспроизводим ли 1% вне приборов Microsoft.
 
 ## Источники
-[1] Microsoft Azure Quantum, “Interferometric single-shot parity measurement in InAs–Al hybrid devices,” *Nature*, vol. 638, no. 8051, pp. 651–655, Feb. 2025, doi: [10.1038/s41586-024-08445-2](https://doi.org/10.1038/s41586-024-08445-2).
-[2] M. Aghaee *et al.*, “Distinct Lifetimes for X and Z Loop Measurements in a Majorana Tetron Device,” [arXiv:2507.08795](https://arxiv.org/abs/2507.08795), Jul. 2025.
-[3] M. Aghaee *et al.*, “20 Second Parity Lifetime in an InAs–Pb Tetron Device,” [arXiv:2606.03884](https://arxiv.org/abs/2606.03884), Jun. 2026.
+[1] Microsoft Azure Quantum, “Interferometric single-shot parity measurement in InAs–Al hybrid devices,” *Nature*, vol. 638, no. 8051, pp. 651–655, Feb. 2025, doi: [10.1038/s41586-024-08445-2](https://doi.org/10.1038/s41586-024-08445-2). [D]
+[2] M. Aghaee *et al.*, “Distinct Lifetimes for X and Z Loop Measurements in a Majorana Tetron Device,” [arXiv:2507.08795](https://arxiv.org/abs/2507.08795), Jul. 2025. [D]
+[3] M. Aghaee *et al.*, “20 Second Parity Lifetime in an InAs–Pb Tetron Device,” [arXiv:2606.03884](https://arxiv.org/abs/2606.03884), Jun. 2026. [D]
 [4] P. Ball, “Experts Weigh in on Microsoft's Topological Qubit Claim,” *Physics*, vol. 18, p. 57, 2025. [Online]. Available: https://physics.aps.org/articles/v18/57 [P]
-[5] N. van Loo *et al.*, “Single-shot parity readout of a minimal Kitaev chain,” *Nature*, vol. 650, no. 8101, pp. 334–339, Feb. 2026, doi: [10.1038/s41586-025-09927-7](https://doi.org/10.1038/s41586-025-09927-7).
-[6] F. Zatelli *et al.*, “Majorana parity qubit in coupled minimal Kitaev chains,” [arXiv:2607.09511](https://arxiv.org/abs/2607.09511), Jul. 2026.
-[7] H. F. Legg, “On the robustness of topological gap detection via transport,” *Nature*, vol. 654, no. 8120, pp. E22–E26, Jun. 2026, doi: [10.1038/s41586-026-10567-8](https://doi.org/10.1038/s41586-026-10567-8). [arXiv:2503.08944](https://arxiv.org/abs/2503.08944).
+[5] N. van Loo *et al.*, “Single-shot parity readout of a minimal Kitaev chain,” *Nature*, vol. 650, no. 8101, pp. 334–339, Feb. 2026, doi: [10.1038/s41586-025-09927-7](https://doi.org/10.1038/s41586-025-09927-7). [D]
+[6] F. Zatelli *et al.*, “Majorana parity qubit in coupled minimal Kitaev chains,” [arXiv:2607.09511](https://arxiv.org/abs/2607.09511), Jul. 2026. [D]
+[7] H. F. Legg, “On the robustness of topological gap detection via transport,” *Nature*, vol. 654, no. 8120, pp. E22–E26, Jun. 2026, doi: [10.1038/s41586-026-10567-8](https://doi.org/10.1038/s41586-026-10567-8). [arXiv:2503.08944](https://arxiv.org/abs/2503.08944). [D]
 [8] C. Nayak, “Majorana 2 – Microsoft's Scalable Quantum Processor With Reliable, Long-Lasting Qubits,” Microsoft Quantum. [Online]. Available: https://quantum.microsoft.com/en-us/insights/blogs/majorana-2-scalable-quantum-processor [C]
 
 ## Открытые пункты верификации

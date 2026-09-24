@@ -58,11 +58,11 @@ e управления нет · f асимметричен, доминируе�
 Фальсифицируемо за 12–24 месяца: любое измерение чётности в X-базисе с заявленной ошибкой отнесения; отношение X/Z ниже 100×; совместное измерение по двум тетронам. Подтверждение — по первым двум пунктам; понижение до теории, если ничего не появится к концу 2027 года. Лучший случай — перепроектирование петли и увеличенная щель выводят X в миллисекунды; худший — отравление X-петли внутренне присуще, и конструкция забрасывается. Открытые вопросы: асимметрия геометрическая или внутренне присущая; строит ли кто-нибудь тетрон вне Microsoft.
 
 ## Источники
-[1] T. Karzig *et al.*, “Scalable designs for quasiparticle-poisoning-protected topological quantum computation with Majorana zero modes,” *Phys. Rev. B*, vol. 95, no. 23, Art. no. 235305, Jun. 2017, doi: [10.1103/PhysRevB.95.235305](https://doi.org/10.1103/PhysRevB.95.235305). [arXiv:1610.05289](https://arxiv.org/abs/1610.05289).
-[2] M. Aghaee *et al.*, “20 Second Parity Lifetime in an InAs–Pb Tetron Device,” [arXiv:2606.03884](https://arxiv.org/abs/2606.03884), Jun. 2026.
-[3] M. Aghaee *et al.*, “Distinct Lifetimes for X and Z Loop Measurements in a Majorana Tetron Device,” [arXiv:2507.08795](https://arxiv.org/abs/2507.08795), Jul. 2025.
-[4] H. F. Legg, “On the robustness of topological gap detection via transport,” *Nature*, vol. 654, no. 8120, pp. E22–E26, Jun. 2026, doi: [10.1038/s41586-026-10567-8](https://doi.org/10.1038/s41586-026-10567-8). [arXiv:2503.08944](https://arxiv.org/abs/2503.08944).
-[5] F. Zatelli *et al.*, “Majorana parity qubit in coupled minimal Kitaev chains,” [arXiv:2607.09511](https://arxiv.org/abs/2607.09511), Jul. 2026.
+[1] T. Karzig *et al.*, “Scalable designs for quasiparticle-poisoning-protected topological quantum computation with Majorana zero modes,” *Phys. Rev. B*, vol. 95, no. 23, Art. no. 235305, Jun. 2017, doi: [10.1103/PhysRevB.95.235305](https://doi.org/10.1103/PhysRevB.95.235305). [arXiv:1610.05289](https://arxiv.org/abs/1610.05289). [S]
+[2] M. Aghaee *et al.*, “20 Second Parity Lifetime in an InAs–Pb Tetron Device,” [arXiv:2606.03884](https://arxiv.org/abs/2606.03884), Jun. 2026. [D]
+[3] M. Aghaee *et al.*, “Distinct Lifetimes for X and Z Loop Measurements in a Majorana Tetron Device,” [arXiv:2507.08795](https://arxiv.org/abs/2507.08795), Jul. 2025. [D]
+[4] H. F. Legg, “On the robustness of topological gap detection via transport,” *Nature*, vol. 654, no. 8120, pp. E22–E26, Jun. 2026, doi: [10.1038/s41586-026-10567-8](https://doi.org/10.1038/s41586-026-10567-8). [arXiv:2503.08944](https://arxiv.org/abs/2503.08944). [D]
+[5] F. Zatelli *et al.*, “Majorana parity qubit in coupled minimal Kitaev chains,” [arXiv:2607.09511](https://arxiv.org/abs/2607.09511), Jul. 2026. [D]
 [6] C. Nayak, “Majorana 2 – Microsoft's Scalable Quantum Processor With Reliable, Long-Lasting Qubits,” Microsoft Quantum. [Online]. Available: https://quantum.microsoft.com/en-us/insights/blogs/majorana-2-scalable-quantum-processor [C]
 
 ## Открытые пункты верификации

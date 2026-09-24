@@ -17,6 +17,7 @@ numbered entries (research notes such as "[G] …", "General facts cited above: 
     python3 build/brief_refs.py --migrate           # one-time: works, renumbering of EN+RU text, data file, md lists
     python3 build/brief_refs.py --merge-verified [DIR]   # fold verified records (DIR/out_*.json) into the data file
     python3 build/brief_refs.py --write             # regenerate every md Sources list from the data file
+    python3 build/brief_refs.py --regrade           # entry grades from the text's own citation tags (one rule for all briefs), then --write
     python3 build/brief_refs.py --check             # lists == data, citations == entries, numbering, RU == EN
 """
 import glob, json, os, re, sys
@@ -258,6 +259,42 @@ def md_lines(bid, db):
 
 def load():
     with open(DATA, encoding='utf-8') as f: return json.load(f, object_pairs_hook=OrderedDict)
+
+
+TAGCITE = re.compile(r'\[([DCSGPR])\]((?:\[(?:\d{1,3})\](?:, |–)?)+)')   # "[D][3], [5]–[7]": the fact's grade, then its citations
+
+
+def text_grades(bid):
+    """entry number → the grade the English text attaches to it: the majority of the tags written before its citations
+    (a range [a]–[b] counts for every number in it); ties go to the tag seen first. Entries the text cites without a tag
+    are absent."""
+    path = os.path.join(ROOT, 'briefs', 'en', bid + '.md')
+    if not os.path.exists(path): return {}
+    t = open(path, encoding='utf-8').read(); i = t.find('\n' + HEAD['en']); body = t[:i] if i > 0 else t
+    seen = {}
+    for m in TAGCITE.finditer(body):
+        g, run = m.group(1), m.group(2)
+        nums = []; prev = None; rng = False
+        for tok in re.finditer(r'\[(\d{1,3})\]|(–)', run):
+            if tok.group(2): rng = True; continue
+            n = int(tok.group(1))
+            if rng and prev is not None: nums += list(range(prev + 1, n))
+            nums.append(n); prev = n; rng = False
+        for n in nums:
+            c = seen.setdefault(n, OrderedDict()); c[g] = c.get(g, 0) + 1
+    return {n: max(c.items(), key=lambda kv: kv[1])[0] for n, c in seen.items()}   # max keeps the first of equal counts
+
+
+def regrade(db):
+    """One rule for every brief: an entry's grade is the grade its text gives it (text_grades); the recorded grade stays only
+    where the text cites the entry without a tag. Returns the number of entries changed."""
+    changed = 0
+    for bid, items in db['briefs'].items():
+        tg = text_grades(bid)
+        for n, e in enumerate(items, 1):
+            g = tg.get(n) or e.get('grade') or ''
+            if g != (e.get('grade') or ''): e['grade'] = g; changed += 1
+    return changed
 
 
 def save(db):
@@ -589,8 +626,10 @@ def list_html(bid, lang, chip=lambda g: ' [%s]' % g):
     if bid not in db['briefs']: return None
     out = ['<ol class="refs" data-nohint="1">']
     for n, e in enumerate(db['briefs'][bid], 1):
+        h = entry_html(record_of(e['work'], db))
+        h = re.sub(r'§(\d+)\.(\d+)\.$', lambda m: '<a class="xref" href="#%s-s%s-%s">§%s.%s</a>.' % (lang, m.group(1), m.group(2), m.group(1), m.group(2)), h)   # the Map's own section, linked
         out.append('<li id="brief-%s-%s-src-%d" value="%d"><span class="src">[%d]</span> <span class="ref">%s</span>%s</li>'
-                   % (bid, lang, n, n, n, entry_html(record_of(e['work'], db)), chip(e['grade']) if e.get('grade') else ''))
+                   % (bid, lang, n, n, n, h, chip(e['grade']) if e.get('grade') else ''))
     out.append('</ol>')
     return '\n'.join(out)
 
@@ -605,7 +644,8 @@ def key_info(bid):
         short = (S.initials(au[0]).split()[-1] if au else (r.get('org') or '')).strip()
         if len(short) > 26: short = short[:24].rstrip() + '…'
         m = re.match(r'(\d{4})', r.get('pubdate') or r.get('date') or '')
-        out[n] = {'n': n, 'label': re.sub(r'\s+', ' ', html_to_md(entry_html(r)).replace('*', '')), 'url': url, 'year': m.group(1) if m else None, 'short': short}
+        label = re.sub(r'\[([^\]]+)\]\((?:https?://[^)\s]*)\)', r'\1', html_to_md(entry_html(r)).replace('*', ''))   # a tooltip is plain text
+        out[n] = {'n': n, 'label': re.sub(r'\s+', ' ', label), 'url': url, 'year': m.group(1) if m else None, 'short': short}
     return out
 
 
@@ -661,6 +701,10 @@ if __name__ == '__main__':
     elif '--merge-verified' in a:
         i = a.index('--merge-verified'); d = a[i + 1] if len(a) > i + 1 else os.path.join(ROOT, '..', 'refwork')
         print('records updated', merge_verified(d))
+    elif '--regrade' in a:
+        db = load(); n = regrade(db)
+        write(DATA, json.dumps(db, ensure_ascii=False, indent=1) + '\n')
+        write_all(db); print('grades changed:', n)
     elif '--write' in a:
         write_all(load())
     elif '--check' in a:

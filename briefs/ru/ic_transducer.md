@@ -106,11 +106,11 @@ updated: 2026-09-03
 
 ## Источники
 
-[1] T. A. Aditto, J. S. Ifty, and K. Zahin, “Toward Scalable Heterogeneous Quantum Networks: Microwave-Optical Transduction Across Platforms,” [arXiv:2605.26976](https://arxiv.org/abs/2605.26976), May 2026.
-[2] M. J. Weaver, G. Arnold, H. Weaver, S. Gröblacher, and R. Stockill, “Scalable Quantum Computing with Optical Links,” [arXiv:2505.00542](https://arxiv.org/abs/2505.00542), May 2025.
-[3] N. Dirnegger *et al.*, “Distilled remote entanglement between superconducting qubits across optical channels,” [arXiv:2503.10842](https://arxiv.org/abs/2503.10842), Mar. 2025.
+[1] T. A. Aditto, J. S. Ifty, and K. Zahin, “Toward Scalable Heterogeneous Quantum Networks: Microwave-Optical Transduction Across Platforms,” [arXiv:2605.26976](https://arxiv.org/abs/2605.26976), May 2026. [D]
+[2] M. J. Weaver, G. Arnold, H. Weaver, S. Gröblacher, and R. Stockill, “Scalable Quantum Computing with Optical Links,” [arXiv:2505.00542](https://arxiv.org/abs/2505.00542), May 2025. [D]
+[3] N. Dirnegger *et al.*, “Distilled remote entanglement between superconducting qubits across optical channels,” [arXiv:2503.10842](https://arxiv.org/abs/2503.10842), Mar. 2025. [S]
 [4] Rigetti Computing, “Research from QphoX, Rigetti, and Qblox Demonstrating Optical Readout Technique for Superconducting Qubits Published in Nature Physics,” Rigetti Investor Relations, Feb. 11, 2025. [Online]. Available: https://investors.rigetti.com/news-releases/news-release-details/research-qphox-rigetti-and-qblox-demonstrating-optical-readout [C]
-[5] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7).
+[5] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
 [6] C. Dundon, S. Hall, M. Hollister, and A. Lindler, “IBM's new modular architecture for cryogenic systems,” IBM Quantum Computing Blog, Aug. 19, 2026. [Online]. Available: https://www.ibm.com/quantum/blog/modular-cryogenics [C]
 [7] QphoX, “QphoX raises €8m to bring quantum modem technology to market, building towards the quantum internet,” Jan. 17, 2024. [Online]. Available: https://qphox.eu/news/qphox-raises-e8m-to-bring-quantum-modem-technology-to-market-building-towards-the-quantum-internet/ [C]
 [8] Rigetti Computing, “QphoX, Rigetti and the NQCC Announce Collaboration on Multi-Channel Optical Readout of Quantum Processors,” Rigetti Investor Relations, May 6, 2025. [Online]. Available: https://investors.rigetti.com/news-releases/news-release-details/qphox-rigetti-and-nqcc-announce-collaboration-multi-channel [C]

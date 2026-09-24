@@ -64,11 +64,11 @@ updated: 2026-09-03
 Подтвердить к 2028 году: сквозная демонстрация решётки слияний при любом кодовом расстоянии с измеренными потерями и логической ошибкой; понизить в ранге, если сохранятся только покомпонентные цифры. Лучший сценарий к 2029 году: небольшая работающая решётка. Худший сценарий: схема остаётся статьёй, а наследуют её гибриды с излучателями. Открытые вопросы: опровергнет ли кто-нибудь критику 2026 года; какой порог переживёт встречу с оборудованием; опубликует ли Stage C хоть одну цифру уровня кода.
 
 ## Источники
-[1] S. Bartolucci *et al.*, “Fusion-based quantum computation,” *Nat. Commun.*, vol. 14, Art. no. 912, Feb. 2023, doi: [10.1038/s41467-023-36493-1](https://doi.org/10.1038/s41467-023-36493-1). [arXiv:2506.11975](https://arxiv.org/abs/2506.11975).
-[2] M. C. Löbl, L. A. M. Pettersson, J. Dragašević, S. X. Chen, and O. A. D. Sandberg, “The subthreshold issue of fusion-based quantum computing,” [arXiv:2606.28490](https://arxiv.org/abs/2606.28490), Jun. 2026.
-[3] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7).
-[4] R. Neeman, “Quantum Technology Map,” ed. 2026.09 (beta), Qodeh, Sep. 2026, §3.2.
-[5] P. Thomas, L. Ruscio, O. Morin, and G. Rempe, “Fusion of deterministically generated photonic graph states,” *Nature*, vol. 629, no. 8012, pp. 567–572, May 2024, doi: [10.1038/s41586-024-07357-5](https://doi.org/10.1038/s41586-024-07357-5).
+[1] S. Bartolucci *et al.*, “Fusion-based quantum computation,” *Nat. Commun.*, vol. 14, Art. no. 912, Feb. 2023, doi: [10.1038/s41467-023-36493-1](https://doi.org/10.1038/s41467-023-36493-1). [arXiv:2101.09310](https://arxiv.org/abs/2101.09310). [S]
+[2] M. C. Löbl, L. A. M. Pettersson, J. Dragašević, S. X. Chen, and O. A. D. Sandberg, “The subthreshold issue of fusion-based quantum computing,” [arXiv:2606.28490](https://arxiv.org/abs/2606.28490), Jun. 2026. [S]
+[3] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
+[4] R. Neeman, “Quantum Technology Map,” ed. 2026.09 (beta), Qodeh, Sep. 2026, §3.2. [D]
+[5] P. Thomas, L. Ruscio, O. Morin, and G. Rempe, “Fusion of deterministically generated photonic graph states,” *Nature*, vol. 629, no. 8012, pp. 567–572, May 2024, doi: [10.1038/s41586-024-07357-5](https://doi.org/10.1038/s41586-024-07357-5). [D]
 
 ## Открытые пункты верификации
 Конфликт источников по порогу потерь для 6-кольца: статья об архитектурах, устойчивых к потерям, даёт 2.7% на фотон для *усиленного* 6-кольца [1], тогда как переанализ Sparrow 2026 года даёт 0.38–0.82% (статический перекос) для *некодированного* 6-кольца [2]. Допущения различаются (усиление, модель перекоса, декодер), поэтому величины напрямую несопоставимы; здесь приводятся обе, без попытки их согласовать.

@@ -62,12 +62,12 @@ updated: 2026-09-04
 Подтвердить к 2028, если работающее многомодовое устройство удержит время жизни фотона выше 1 ms; понизить оценку, если эксплуатационные времена жизни останутся около 10² µs, а планарные кубиты со стиранием сократят разрыв. Лучший случай, 2029: мультиплексированное управление, корпуса меньше сантиметра; худший — бессрочные демонстраторы с числом мод в пределах десятка. Открытые вопросы: какая доля эксплуатационной дефазировки обусловлена анциллой; опубликует ли кто-нибудь Q для корпусов λ/4? Следить за данными логического уровня Alice & Bob и за DR49.
 
 ## Источники
-[1] M. Reagor *et al.*, “Reaching 10 ms single photon lifetimes for superconducting aluminum cavities,” [arXiv:1302.4408](https://arxiv.org/abs/1302.4408), Feb. 2013.
-[2] O. Milul *et al.*, “Superconducting Cavity Qubit with Tens of Milliseconds Single-Photon Coherence Time,” *PRX Quantum*, vol. 4, no. 3, Art. no. 030336, Sep. 2023, doi: [10.1103/PRXQuantum.4.030336](https://doi.org/10.1103/PRXQuantum.4.030336).
-[3] S. Turcotte *et al.*, “Quantum error correction of a grid-state qubit with state preparation and measurement errors below 10⁻³,” [arXiv:2607.06718](https://arxiv.org/abs/2607.06718), Jul. 2026.
-[4] N. Mehta *et al.*, “An entangling gate for dual-rail erasure qubits,” *Nature*, vol. 656, no. 8126, pp. 47–53, Aug. 2026, doi: [10.1038/s41586-026-10822-y](https://doi.org/10.1038/s41586-026-10822-y). [arXiv:2503.10935](https://arxiv.org/abs/2503.10935).
+[1] M. Reagor *et al.*, “Reaching 10 ms single photon lifetimes for superconducting aluminum cavities,” [arXiv:1302.4408](https://arxiv.org/abs/1302.4408), Feb. 2013. [D]
+[2] O. Milul *et al.*, “Superconducting Cavity Qubit with Tens of Milliseconds Single-Photon Coherence Time,” *PRX Quantum*, vol. 4, no. 3, Art. no. 030336, Sep. 2023, doi: [10.1103/PRXQuantum.4.030336](https://doi.org/10.1103/PRXQuantum.4.030336). [D]
+[3] S. Turcotte *et al.*, “Quantum error correction of a grid-state qubit with state preparation and measurement errors below 10⁻³,” [arXiv:2607.06718](https://arxiv.org/abs/2607.06718), Jul. 2026. [D]
+[4] N. Mehta *et al.*, “An entangling gate for dual-rail erasure qubits,” *Nature*, vol. 656, no. 8126, pp. 47–53, Aug. 2026, doi: [10.1038/s41586-026-10822-y](https://doi.org/10.1038/s41586-026-10822-y). [arXiv:2503.10935](https://arxiv.org/abs/2503.10935). [D]
 [5] N. Coppola, “Alice & Bob Unveils First Quantum System, Helium,” Alice & Bob, Jun. 10, 2026. [Online]. Available: https://alice-bob.com/newsroom/alice-bob-unveils-first-quantum-system/ [C]
-[6] H. Putterman *et al.*, “Hardware-efficient quantum error correction via concatenated bosonic qubits,” *Nature*, vol. 638, no. 8052, pp. 927–934, Feb. 2025, doi: [10.1038/s41586-025-08642-7](https://doi.org/10.1038/s41586-025-08642-7).
+[6] H. Putterman *et al.*, “Hardware-efficient quantum error correction via concatenated bosonic qubits,” *Nature*, vol. 638, no. 8052, pp. 927–934, Feb. 2025, doi: [10.1038/s41586-025-08642-7](https://doi.org/10.1038/s41586-025-08642-7). [D]
 [7] Nord Quantique, “Nord Quantique Reaches $1.4 Billion USD Valuation with Latest Investment,” Business Wire, May 18, 2026. [Online]. Available: https://www.businesswire.com/news/home/20260518358351/en/Nord-Quantique-Reaches-$1.4-Billion-USD-Valuation-with-Latest-Investment [C]
 
 ## Открытые пункты верификации

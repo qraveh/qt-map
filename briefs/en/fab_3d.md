@@ -61,13 +61,13 @@ Provides the bodies for the bosonic cavity mode and hence cat and GKP encodings,
 Confirm by 2028 if a vendor publishes a per-body yield figure or a sub-cm body at comparable Q; demote if the bench stays silent while planar erasure qubits scale. Best case 2029: batch-fabricated cavity arrays. Worst case: hand-machined bodies indefinitely, capping the branch near 10² modes. Open: does seamless machining raise Q; what is the real cost per mode? Watch Alice & Bob's 48-cat chip and D-Wave's DR49.
 
 ## Sources
-[1] M. Reagor *et al.*, “Reaching 10 ms single photon lifetimes for superconducting aluminum cavities,” [arXiv:1302.4408](https://arxiv.org/abs/1302.4408), Feb. 2013.
-[2] O. Milul *et al.*, “Superconducting Cavity Qubit with Tens of Milliseconds Single-Photon Coherence Time,” *PRX Quantum*, vol. 4, no. 3, Art. no. 030336, Sep. 2023, doi: [10.1103/PRXQuantum.4.030336](https://doi.org/10.1103/PRXQuantum.4.030336).
-[3] N. Mehta *et al.*, “An entangling gate for dual-rail erasure qubits,” *Nature*, vol. 656, no. 8126, pp. 47–53, Aug. 2026, doi: [10.1038/s41586-026-10822-y](https://doi.org/10.1038/s41586-026-10822-y). [arXiv:2503.10935](https://arxiv.org/abs/2503.10935).
+[1] M. Reagor *et al.*, “Reaching 10 ms single photon lifetimes for superconducting aluminum cavities,” [arXiv:1302.4408](https://arxiv.org/abs/1302.4408), Feb. 2013. [D]
+[2] O. Milul *et al.*, “Superconducting Cavity Qubit with Tens of Milliseconds Single-Photon Coherence Time,” *PRX Quantum*, vol. 4, no. 3, Art. no. 030336, Sep. 2023, doi: [10.1103/PRXQuantum.4.030336](https://doi.org/10.1103/PRXQuantum.4.030336). [D]
+[3] N. Mehta *et al.*, “An entangling gate for dual-rail erasure qubits,” *Nature*, vol. 656, no. 8126, pp. 47–53, Aug. 2026, doi: [10.1038/s41586-026-10822-y](https://doi.org/10.1038/s41586-026-10822-y). [arXiv:2503.10935](https://arxiv.org/abs/2503.10935). [D]
 [4] N. Coppola, “Alice & Bob Unveils First Quantum System, Helium,” Alice & Bob, Jun. 10, 2026. [Online]. Available: https://alice-bob.com/newsroom/alice-bob-unveils-first-quantum-system/ [C]
 [5] D-Wave, “D-Wave Demonstrates First Scalable, On-Chip Cryogenic Control of Gate-Model Qubits,” Jan. 6, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-demonstrates-first-scalable-on-chip-cryogenic-control-of-gate-model-qubits/ [C]
-[6] H. Putterman *et al.*, “Hardware-efficient quantum error correction via concatenated bosonic qubits,” *Nature*, vol. 638, no. 8052, pp. 927–934, Feb. 2025, doi: [10.1038/s41586-025-08642-7](https://doi.org/10.1038/s41586-025-08642-7).
-[7] S. Turcotte *et al.*, “Quantum error correction of a grid-state qubit with state preparation and measurement errors below 10⁻³,” [arXiv:2607.06718](https://arxiv.org/abs/2607.06718), Jul. 2026.
+[6] H. Putterman *et al.*, “Hardware-efficient quantum error correction via concatenated bosonic qubits,” *Nature*, vol. 638, no. 8052, pp. 927–934, Feb. 2025, doi: [10.1038/s41586-025-08642-7](https://doi.org/10.1038/s41586-025-08642-7). [D]
+[7] S. Turcotte *et al.*, “Quantum error correction of a grid-state qubit with state preparation and measurement errors below 10⁻³,” [arXiv:2607.06718](https://arxiv.org/abs/2607.06718), Jul. 2026. [D]
 
 ## Open verification items
 The 34 ms figure is from the Weizmann Institute (T1 25.6 ms, T2 34 ms), not a Yale-lineage group, and neither the abstract nor the journal summary consulted states that the cavity is niobium-coated.

@@ -64,11 +64,11 @@ Requires linear-optical fusion and a resource-state factory, neither at code-rel
 Confirm by 2028: an end-to-end fusion-lattice demonstration at any code distance with measured loss and logical error; demote if only component numbers persist. Best case 2029: a small working lattice. Worst case: it stays a paper and emitter hybrids inherit it. Open: does anyone rebut the 2026 critique; which threshold survives hardware; does Stage C publish a code-level number.
 
 ## Sources
-[1] S. Bartolucci *et al.*, “Fusion-based quantum computation,” *Nat. Commun.*, vol. 14, Art. no. 912, Feb. 2023, doi: [10.1038/s41467-023-36493-1](https://doi.org/10.1038/s41467-023-36493-1). [arXiv:2506.11975](https://arxiv.org/abs/2506.11975).
-[2] M. C. Löbl, L. A. M. Pettersson, J. Dragašević, S. X. Chen, and O. A. D. Sandberg, “The subthreshold issue of fusion-based quantum computing,” [arXiv:2606.28490](https://arxiv.org/abs/2606.28490), Jun. 2026.
-[3] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7).
-[4] R. Neeman, “Quantum Technology Map,” ed. 2026.09 (beta), Qodeh, Sep. 2026, §3.2.
-[5] P. Thomas, L. Ruscio, O. Morin, and G. Rempe, “Fusion of deterministically generated photonic graph states,” *Nature*, vol. 629, no. 8012, pp. 567–572, May 2024, doi: [10.1038/s41586-024-07357-5](https://doi.org/10.1038/s41586-024-07357-5).
+[1] S. Bartolucci *et al.*, “Fusion-based quantum computation,” *Nat. Commun.*, vol. 14, Art. no. 912, Feb. 2023, doi: [10.1038/s41467-023-36493-1](https://doi.org/10.1038/s41467-023-36493-1). [arXiv:2101.09310](https://arxiv.org/abs/2101.09310). [S]
+[2] M. C. Löbl, L. A. M. Pettersson, J. Dragašević, S. X. Chen, and O. A. D. Sandberg, “The subthreshold issue of fusion-based quantum computing,” [arXiv:2606.28490](https://arxiv.org/abs/2606.28490), Jun. 2026. [S]
+[3] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
+[4] R. Neeman, “Quantum Technology Map,” ed. 2026.09 (beta), Qodeh, Sep. 2026, §3.2. [D]
+[5] P. Thomas, L. Ruscio, O. Morin, and G. Rempe, “Fusion of deterministically generated photonic graph states,” *Nature*, vol. 629, no. 8012, pp. 567–572, May 2024, doi: [10.1038/s41586-024-07357-5](https://doi.org/10.1038/s41586-024-07357-5). [D]
 
 ## Open verification items
 Source conflict on the 6-ring loss threshold: the loss-tolerant-architecture paper gives 2.7% per photon for a *boosted* 6-ring [1], while the 2026 Sparrow re-analysis gives 0.38–0.82% (static bias) for an *unencoded* 6-ring [2]. The assumptions differ (boosting, bias model, decoder), so the two are not directly comparable; both are stated here rather than reconciled.

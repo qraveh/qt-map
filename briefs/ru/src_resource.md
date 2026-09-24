@@ -63,11 +63,11 @@ updated: 2026-09-03
 Подтвердить к 2028 году: опубликованное слитое состояние более чем из 16 фотонов с указанием точности и темпа; понизить в ранге, если число фотонов останется однозначным. Лучший сценарий к 2029 году: коммерческие излучатели вместе со слиянием на кристалле выходят на ≥10³ состояний/с. Худший сценарий: подпороговый пол подтверждается, и от чисто линейно-оптических 6-колец отказываются. Открытые вопросы: смогут ли мультиплексированные источники обойти излучатели в пересчёте на одно полезное состояние; закроет ли Sparrow разрыв между 20–35% и 55%. Следить: любая цифра по темпу в материалах государственной V&V на DARPA Stage C.
 
 ## Источники
-[1] S. Bartolucci *et al.*, “Fusion-based quantum computation,” *Nat. Commun.*, vol. 14, Art. no. 912, Feb. 2023, doi: [10.1038/s41467-023-36493-1](https://doi.org/10.1038/s41467-023-36493-1). [arXiv:2506.11975](https://arxiv.org/abs/2506.11975).
-[2] P. Thomas, L. Ruscio, O. Morin, and G. Rempe, “Fusion of deterministically generated photonic graph states,” *Nature*, vol. 629, no. 8012, pp. 567–572, May 2024, doi: [10.1038/s41586-024-07357-5](https://doi.org/10.1038/s41586-024-07357-5).
-[3] M. C. Löbl, L. A. M. Pettersson, J. Dragašević, S. X. Chen, and O. A. D. Sandberg, “The subthreshold issue of fusion-based quantum computing,” [arXiv:2606.28490](https://arxiv.org/abs/2606.28490), Jun. 2026.
-[4] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7).
-[5] H. Huet *et al.*, “Deterministic and reconfigurable graph state generation with a single solid-state quantum emitter,” *Nat. Commun.*, vol. 16, no. 1, Art. no. 4337, May 2025, doi: [10.1038/s41467-025-59693-3](https://doi.org/10.1038/s41467-025-59693-3).
+[1] S. Bartolucci *et al.*, “Fusion-based quantum computation,” *Nat. Commun.*, vol. 14, Art. no. 912, Feb. 2023, doi: [10.1038/s41467-023-36493-1](https://doi.org/10.1038/s41467-023-36493-1). [arXiv:2101.09310](https://arxiv.org/abs/2101.09310). [S]
+[2] P. Thomas, L. Ruscio, O. Morin, and G. Rempe, “Fusion of deterministically generated photonic graph states,” *Nature*, vol. 629, no. 8012, pp. 567–572, May 2024, doi: [10.1038/s41586-024-07357-5](https://doi.org/10.1038/s41586-024-07357-5). [D]
+[3] M. C. Löbl, L. A. M. Pettersson, J. Dragašević, S. X. Chen, and O. A. D. Sandberg, “The subthreshold issue of fusion-based quantum computing,” [arXiv:2606.28490](https://arxiv.org/abs/2606.28490), Jun. 2026. [S]
+[4] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
+[5] H. Huet *et al.*, “Deterministic and reconfigurable graph state generation with a single solid-state quantum emitter,” *Nat. Commun.*, vol. 16, no. 1, Art. no. 4337, May 2025, doi: [10.1038/s41467-025-59693-3](https://doi.org/10.1038/s41467-025-59693-3). [D]
 
 ## Открытые пункты верификации
 Точность слитых 8-фотонных состояний лежит в диапазоне 0.34–0.85 в зависимости от типа графа, согласованного итогового значения нет — трактовать как диапазон, а не как точечную оценку.

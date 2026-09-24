@@ -71,7 +71,7 @@ Confirm or demote by end-2027: does a SkyWater-fabricated trap hold ions in a sh
 
 ## Sources
 [1] S. Seidelin *et al.*, “Microfabricated Surface-Electrode Ion Trap for Scalable Quantum Information Processing,” *Phys. Rev. Lett.*, vol. 96, no. 25, Art. no. 253003, Jun. 2006, doi: [10.1103/PhysRevLett.96.253003](https://doi.org/10.1103/PhysRevLett.96.253003). [arXiv:quant-ph/0601173](https://arxiv.org/abs/quant-ph/0601173). [D]
-[2] “Infineon Technologies, trapped-ion QPU platform (Villach), company page accessed 2026-09-03,” infineon.com, Sep. 4, 2026. [Online]. Available: https://www.infineon.com/promo/trapped-ions [C]
+[2] Infineon Technologies AG, “Trapped ion quantum computing.” [Online]. Available: https://www.infineon.com/promo/trapped-ions [C]
 [3] M. Brownnutt, M. Kumph, P. Rabl, and R. Blatt, “Ion-trap measurements of electric-field noise near surfaces,” *Rev. Mod. Phys.*, vol. 87, no. 4, pp. 1419–1482, Dec. 2015, doi: [10.1103/RevModPhys.87.1419](https://doi.org/10.1103/RevModPhys.87.1419). [arXiv:1409.6572](https://arxiv.org/abs/1409.6572). [D]
 [4] J. Labaziewicz *et al.*, “Suppression of Heating Rates in Cryogenic Surface-Electrode Ion Traps,” *Phys. Rev. Lett.*, vol. 100, no. 1, Art. no. 013001, Jan. 2008, doi: [10.1103/PhysRevLett.100.013001](https://doi.org/10.1103/PhysRevLett.100.013001). [arXiv:0706.3763](https://arxiv.org/abs/0706.3763). [D]
 [5] D. A. Hite *et al.*, “100-Fold Reduction of Electric-Field Noise in an Ion Trap Cleaned with In Situ Argon-Ion-Beam Bombardment,” *Phys. Rev. Lett.*, vol. 109, no. 10, Art. no. 103001, Sep. 2012, doi: [10.1103/PhysRevLett.109.103001](https://doi.org/10.1103/PhysRevLett.109.103001). [arXiv:1112.5419](https://arxiv.org/abs/1112.5419). [D]

@@ -66,15 +66,15 @@ updated: 2026-09-04
 Фальсифицируемо (12–24 месяца): подтвердить, если Kookaburra будет поставлен и память на gross-коде будет декодирована в реальном времени до конца 2027 г.; понизить, если к тому же сроку Relay-BP не обработает ни одного аппаратного синдрома. Лучший случай к 2029 г.: декодирование класса Relay-BP внутри стека IBM Starling с продемонстрированной задержкой. Худший случай: оборудование под gross-код продолжает сдвигаться, а установленную базу забирают декодеры на GPU или на паросочетании. Открытые вопросы: задержка на уровне 99.9-го процентиля, а не среднее; выживает ли точность при утечке и коррелированных всплесках; построит ли кто-нибудь декодерную ASIC. За чем следить: поставка Kookaburra, любое декодирование живого синдрома, первая гистограмма задержки.
 
 ## Источники
-[1] T. Müller *et al.*, “Improved belief propagation is sufficient for real-time decoding of quantum memory,” [arXiv:2506.01779](https://arxiv.org/abs/2506.01779), Jun. 2025.
-[2] T. Maurer *et al.*, “Real-time decoding of the gross code memory with FPGAs,” [arXiv:2510.21600](https://arxiv.org/abs/2510.21600), Oct. 2025.
-[3] A. B. Ziad *et al.*, “Local clustering decoder as a fast and adaptive hardware decoder for the surface code,” *Nat. Commun.*, vol. 16, no. 1, Art. no. 11048, Dec. 2025, doi: [10.1038/s41467-025-66773-x](https://doi.org/10.1038/s41467-025-66773-x).
-[4] IBM, “Quantum Roadmap.” [Online]. Available: https://www.ibm.com/roadmaps/quantum/ [R]
-[5] S. Bravyi *et al.*, “High-threshold and low-overhead fault-tolerant quantum memory,” *Nature*, vol. 627, no. 8005, pp. 778–782, Mar. 2024, doi: [10.1038/s41586-024-07107-7](https://doi.org/10.1038/s41586-024-07107-7). [arXiv:2308.07915](https://arxiv.org/abs/2308.07915).
-[6] E. Tham *et al.*, “Breakeven demonstration of quantum low-density parity-check codes,” [arXiv:2606.06455](https://arxiv.org/abs/2606.06455), Jun. 2026.
+[1] T. Müller *et al.*, “Improved belief propagation is sufficient for real-time decoding of quantum memory,” [arXiv:2506.01779](https://arxiv.org/abs/2506.01779), Jun. 2025. [D]
+[2] T. Maurer *et al.*, “Real-time decoding of the gross code memory with FPGAs,” [arXiv:2510.21600](https://arxiv.org/abs/2510.21600), Oct. 2025. [D]
+[3] A. B. Ziad *et al.*, “Local clustering decoder as a fast and adaptive hardware decoder for the surface code,” *Nat. Commun.*, vol. 16, no. 1, Art. no. 11048, Dec. 2025, doi: [10.1038/s41467-025-66773-x](https://doi.org/10.1038/s41467-025-66773-x). [D]
+[4] IBM, “Quantum Roadmap.” [Online]. Available: https://www.ibm.com/roadmaps/quantum/ [D]
+[5] S. Bravyi *et al.*, “High-threshold and low-overhead fault-tolerant quantum memory,” *Nature*, vol. 627, no. 8005, pp. 778–782, Mar. 2024, doi: [10.1038/s41586-024-07107-7](https://doi.org/10.1038/s41586-024-07107-7). [arXiv:2308.07915](https://arxiv.org/abs/2308.07915). [D]
+[6] E. Tham *et al.*, “Breakeven demonstration of quantum low-density parity-check codes,” [arXiv:2606.06455](https://arxiv.org/abs/2606.06455), Jun. 2026. [D]
 [7] Altera, “Altera Closes Silver Lake Investment to Become World's Largest Pure-play FPGA Solutions Provider,” Sep. 15, 2025. [Online]. Available: https://www.altera.com/newsroom/news/press-release/altera-silver-lake [G]
 [8] A. Woodie, “IBM Touts Affordable Quantum Error Correction on AMD FPGAs,” HPCwire, Oct. 28, 2025. [Online]. Available: https://www.hpcwire.com/2025/10/28/ibm-touts-affordable-quantum-error-correction-on-amd-fpgas/ [P]
-[9] Qblox; Riverlane, “Qblox and Riverlane Demonstrate Integration Enabling Real-Time Quantum Error Correction,” PR Newswire, Mar. 17, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/qblox-and-riverlane-demonstrate-integration-enabling-real-time-quantum-error-correction-302716254.html [C]
+[9] Qblox; Riverlane, “Qblox and Riverlane Demonstrate Integration Enabling Real-Time Quantum Error Correction,” PR Newswire, Mar. 17, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/qblox-and-riverlane-demonstrate-integration-enabling-real-time-quantum-error-correction-302716254.html [D]
 [10] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
 [11] Riverlane, “Riverlane raises $75 million to meet surging global demand for quantum error correction technology,” Aug. 6, 2024. [Online]. Available: https://www.riverlane.com/press-release/riverlane-raises-75-million-to-meet-surging-global-demand-for-quantum-error-correction-technology [C]
 

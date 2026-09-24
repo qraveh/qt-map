@@ -92,16 +92,16 @@ Open questions. (1) Is benchmarking of a shuttle a meaningful fidelity, or an ar
 
 ## Sources
 
-[1] I. Seidler *et al.*, “Conveyor-mode single-electron shuttling in Si/SiGe for a scalable quantum computing architecture,” [arXiv:2108.00879](https://arxiv.org/abs/2108.00879), Aug. 2021.
-[2] M. De Smet *et al.*, “High-fidelity single-spin shuttling in silicon,” *Nat. Nanotechnol.*, vol. 20, no. 7, pp. 866–872, Jun. 2025, doi: [10.1038/s41565-025-01920-5](https://doi.org/10.1038/s41565-025-01920-5).
-[3] Y. Matsumoto *et al.*, “Two-qubit logic and teleportation with mobile spin qubits in silicon,” *Nature*, vol. 653, no. 8114, pp. 391–397, May 2026, doi: [10.1038/s41586-026-10423-9](https://doi.org/10.1038/s41586-026-10423-9).
+[1] I. Seidler *et al.*, “Conveyor-mode single-electron shuttling in Si/SiGe for a scalable quantum computing architecture,” [arXiv:2108.00879](https://arxiv.org/abs/2108.00879), Aug. 2021. [D]
+[2] M. De Smet *et al.*, “High-fidelity single-spin shuttling in silicon,” *Nat. Nanotechnol.*, vol. 20, no. 7, pp. 866–872, Jun. 2025, doi: [10.1038/s41565-025-01920-5](https://doi.org/10.1038/s41565-025-01920-5). [D]
+[3] Y. Matsumoto *et al.*, “Two-qubit logic and teleportation with mobile spin qubits in silicon,” *Nature*, vol. 653, no. 8114, pp. 391–397, May 2026, doi: [10.1038/s41586-026-10423-9](https://doi.org/10.1038/s41586-026-10423-9). [D]
 [4] N. Ciroth *et al.*, “Numerical simulation of coherent spin-shuttling in a QuBus with charged defects,” [arXiv:2512.03588](https://arxiv.org/abs/2512.03588), Dec. 2025. [S]
-[5] F. van Riggelen *et al.*, “Coherent spin qubit shuttling through germanium quantum dots,” *Nat. Commun.*, vol. 15, Art. no. 5716, Jul. 2024, doi: [10.1038/s41467-024-49358-y](https://doi.org/10.1038/s41467-024-49358-y).
+[5] F. van Riggelen *et al.*, “Coherent spin qubit shuttling through germanium quantum dots,” *Nat. Commun.*, vol. 15, Art. no. 5716, Jul. 2024, doi: [10.1038/s41467-024-49358-y](https://doi.org/10.1038/s41467-024-49358-y). [D]
 [6] D. Q. L. Nguyen, M. Rimbach-Russ, and S. Bosco, “Suppressing spin qubit decoherence during shuttling via confinement modulation,” [arXiv:2605.00611](https://arxiv.org/abs/2605.00611), May 2026. [S]
 [7] B. Yenilen, A. Sala, H. Bluhm, M. Müller, and M. Rispler, “Performance of the spin qubit shuttling architecture for a surface code implementation,” [arXiv:2503.10601](https://arxiv.org/abs/2503.10601), Mar. 2025. [S]
-[8] B. Undseth *et al.*, “Weight-four parity checks in a spin-shuttling architecture,” *Nature*, vol. 655, no. 8125, pp. 1160–1166, Jul. 2026, doi: [10.1038/s41586-026-10766-3](https://doi.org/10.1038/s41586-026-10766-3).
-[9] P. Steinacker *et al.*, “Industry-compatible silicon spin-qubit unit cells exceeding 99% fidelity,” *Nature*, vol. 646, no. 8083, pp. 81–87, Sep. 2025, doi: [10.1038/s41586-025-09531-9](https://doi.org/10.1038/s41586-025-09531-9).
-[10] Members of the HRL Quantum Team and Collaborators, “A digitally controlled silicon quantum processing unit,” [arXiv:2604.16216](https://arxiv.org/abs/2604.16216), Apr. 2026.
+[8] B. Undseth *et al.*, “Weight-four parity checks in a spin-shuttling architecture,” *Nature*, vol. 655, no. 8125, pp. 1160–1166, Jul. 2026, doi: [10.1038/s41586-026-10766-3](https://doi.org/10.1038/s41586-026-10766-3). [D]
+[9] P. Steinacker *et al.*, “Industry-compatible silicon spin-qubit unit cells exceeding 99% fidelity,” *Nature*, vol. 646, no. 8083, pp. 81–87, Sep. 2025, doi: [10.1038/s41586-025-09531-9](https://doi.org/10.1038/s41586-025-09531-9). [D]
+[10] Members of the HRL Quantum Team and Collaborators, “A digitally controlled silicon quantum processing unit,” [arXiv:2604.16216](https://arxiv.org/abs/2604.16216), Apr. 2026. [D]
 [11] Forschungszentrum Jülich, “Jülich-Aachen Start-up Paves the Way for Scalable Quantum Computers,” fz-juelich.de, Apr. 8, 2026. [Online]. Available: https://www.fz-juelich.de/en/news/archive/press-release/2026/julich-aachen-start-up-arque-systems [C]
 [12] IBM, “IBM to Acquire HRL Laboratories to Power the Future of Quantum,” Jul. 23, 2026. [Online]. Available: https://newsroom.ibm.com/2026-07-23-ibm-to-acquire-hrl-laboratories-to-power-the-future-of-quantum [G]
 [13] Quantum Motion, “Quantum Motion Raises $160 Million Series C to Deliver Quantum Computing's "Transistor Moment,” May 7, 2026. [Online]. Available: https://quantummotion.com/quantum-motion-raises-160-million-series-c-to-deliver-quantum-computings-transistor-moment/ [C]

@@ -85,7 +85,7 @@ T1 (релаксация) и T2* (Рамзи) измерены на единст
 [10] SeeQC, Inc., “Form S-4 Registration Statement (SeeQC, Inc. / Allegro Merger Corp.),” U.S. Securities and Exchange Commission, May 2026. [Online]. Available: https://www.sec.gov/Archives/edgar/data/1779977/000121390026061108/ea0278139-04.htm [G]
 [11] D-Wave Quantum Inc., “D-Wave Reports Second Quarter 2026 Results,” Aug. 6, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-reports-second-quarter-2026-results/ [C]
 [12] SkyWater Technology, “SkyWater Technology Reports Fourth Quarter and Full Fiscal Year 2025 Results,” U.S. Securities and Exchange Commission, Feb. 2026. [Online]. Available: https://www.sec.gov/Archives/edgar/data/1819974/000181997426000005/skyt-20251228xex991.htm [G]
-[13] M. Swayne, “D-Wave Announces General Availability of Advantage2 Quantum Computer,” The Quantum Insider, May 20, 2025. [Online]. Available: https://thequantuminsider.com/2025/05/20/d-wave-announces-general-availability-of-advantage2-quantum-computer/ [P]
+[13] M. Swayne, “D-Wave Announces General Availability of Advantage2 Quantum Computer,” The Quantum Insider, May 20, 2025. [Online]. Available: https://thequantuminsider.com/2025/05/20/d-wave-announces-general-availability-of-advantage2-quantum-computer/ [C]
 [14] X. Pan *et al.*, “Unified Flux Control Architecture for Fluxonium Qubits,” [arXiv:2605.25948](https://arxiv.org/abs/2605.25948), May 2026. [D]
 
 ## Открытые пункты верификации

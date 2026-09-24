@@ -2299,7 +2299,8 @@
    "kind": "journal",
    "url": "https://www.nature.com/articles/s41467-023-36493-1",
    "hint": "FBQC thresholds",
-   "verified": true
+   "verified": true,
+   "arxiv": "2101.09310"
   },
   {
    "title": "Comparison of schemes for highly loss tolerant photonic fusion based quantum computing",

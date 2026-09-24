@@ -63,11 +63,11 @@ updated: 2026-09-03
 Подтвердить к 2028 году: эффективное сжатие GKP на кристалле выше 2 дБ с приведённым бюджетом потерь; понизить в ранге, если оно останется ниже 1 дБ. Лучший сценарий к 2029 году: вторая группа публикует конкурирующий показатель GKP. Худший сценарий: потери интеграции удерживают его вблизи 1 дБ, и CV/GKP остаётся исследовательским путём платформы. Открытые вопросы: снижаются ли потери так, как заявляет дорожная карта; способен ли поляризованный TFLN обеспечить точность уровня GKP.
 
 ## Источники
-[1] H. Vahlbruch, M. Mehmet, K. Danzmann, and R. Schnabel, “Detection of 15 dB Squeezed States of Light and their Application for the Absolute Calibration of Photoelectric Quantum Efficiency,” *Phys. Rev. Lett.*, vol. 117, no. 11, Art. no. 110801, Sep. 2016, doi: [10.1103/PhysRevLett.117.110801](https://doi.org/10.1103/PhysRevLett.117.110801).
-[2] X. Shi *et al.*, “Squeezed Light Generation in Periodically Poled Thin-Film Lithium Niobate Waveguides,” [arXiv:2508.08599](https://arxiv.org/abs/2508.08599), Aug. 2025.
-[3] M. V. Larsen *et al.*, “Integrated photonic source of Gottesman–Kitaev–Preskill qubits,” *Nature*, vol. 642, no. 8068, pp. 587–591, Jun. 2025, doi: [10.1038/s41586-025-09044-5](https://doi.org/10.1038/s41586-025-09044-5).
-[4] Xanadu Quantum Technologies Limited, “Xanadu Charts Path to Over 1,000 Logical Qubits by 2031,” GlobeNewswire, Aug. 31, 2026. [Online]. Available: https://www.globenewswire.com/news-release/2026/08/31/3353211/0/en/xanadu-charts-path-to-over-1-000-logical-qubits-by-2031.html [C]
-[5] H. A. Rad *et al.*, “Scaling and networking a modular photonic quantum computer,” *Nature*, vol. 638, no. 8052, pp. 912–919, Jan. 2025, doi: [10.1038/s41586-024-08406-9](https://doi.org/10.1038/s41586-024-08406-9).
+[1] H. Vahlbruch, M. Mehmet, K. Danzmann, and R. Schnabel, “Detection of 15 dB Squeezed States of Light and their Application for the Absolute Calibration of Photoelectric Quantum Efficiency,” *Phys. Rev. Lett.*, vol. 117, no. 11, Art. no. 110801, Sep. 2016, doi: [10.1103/PhysRevLett.117.110801](https://doi.org/10.1103/PhysRevLett.117.110801). [D]
+[2] X. Shi *et al.*, “Squeezed Light Generation in Periodically Poled Thin-Film Lithium Niobate Waveguides,” [arXiv:2508.08599](https://arxiv.org/abs/2508.08599), Aug. 2025. [D]
+[3] M. V. Larsen *et al.*, “Integrated photonic source of Gottesman–Kitaev–Preskill qubits,” *Nature*, vol. 642, no. 8068, pp. 587–591, Jun. 2025, doi: [10.1038/s41586-025-09044-5](https://doi.org/10.1038/s41586-025-09044-5). [D]
+[4] Xanadu Quantum Technologies Limited, “Xanadu Charts Path to Over 1,000 Logical Qubits by 2031,” GlobeNewswire, Aug. 31, 2026. [Online]. Available: https://www.globenewswire.com/news-release/2026/08/31/3353211/0/en/xanadu-charts-path-to-over-1-000-logical-qubits-by-2031.html [R]
+[5] H. A. Rad *et al.*, “Scaling and networking a modular photonic quantum computer,” *Nature*, vol. 638, no. 8052, pp. 912–919, Jan. 2025, doi: [10.1038/s41586-024-08406-9](https://doi.org/10.1038/s41586-024-08406-9). [D]
 
 ## Открытые пункты верификации
 Независимая цифра по сжатию на кристалле существует: Shi и соавт. сообщают о 1.4 дБ, измеренных на PPLN TFLN [2]. На единственном источнике остаётся *эффективное сжатие GKP* 0.62 дБ (только Xanadu).

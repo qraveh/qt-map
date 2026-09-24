@@ -119,19 +119,19 @@ Legg утверждает, что протокол топологической 
 
 ## Источники
 
-[1] M. Aghaee *et al.*, “20 Second Parity Lifetime in an InAs–Pb Tetron Device,” [arXiv:2606.03884](https://arxiv.org/abs/2606.03884), Jun. 2026.
-[2] M. Aghaee *et al.*, “Distinct Lifetimes for X and Z Loop Measurements in a Majorana Tetron Device,” [arXiv:2507.08795](https://arxiv.org/abs/2507.08795), Jul. 2025.
+[1] M. Aghaee *et al.*, “20 Second Parity Lifetime in an InAs–Pb Tetron Device,” [arXiv:2606.03884](https://arxiv.org/abs/2606.03884), Jun. 2026. [C]
+[2] M. Aghaee *et al.*, “Distinct Lifetimes for X and Z Loop Measurements in a Majorana Tetron Device,” [arXiv:2507.08795](https://arxiv.org/abs/2507.08795), Jul. 2025. [D]
 [3] C. Nayak, “Majorana 2 – Microsoft's Scalable Quantum Processor With Reliable, Long-Lasting Qubits,” Microsoft Quantum. [Online]. Available: https://quantum.microsoft.com/en-us/insights/blogs/majorana-2-scalable-quantum-processor [C]
-[4] H. Zhang *et al.*, “Quantized Majorana conductance,” *Nature*, vol. 556, no. 7699, pp. 74–79, Mar. 2018, doi: [10.1038/nature26142](https://doi.org/10.1038/nature26142). Retracted: *Nature*, vol. 591, p. E30, Mar. 2021, doi: [10.1038/s41586-021-03373-x](https://doi.org/10.1038/s41586-021-03373-x).
-[5] R. L. Willett *et al.*, “Interference Measurements of Non-Abelian e/4 & Abelian e/2 Quasiparticle Braiding,” *Phys. Rev. X*, vol. 13, no. 1, Art. no. 011028, Mar. 2023, doi: [10.1103/PhysRevX.13.011028](https://doi.org/10.1103/PhysRevX.13.011028).
-[6] Microsoft Azure Quantum, “Interferometric single-shot parity measurement in InAs–Al hybrid devices,” *Nature*, vol. 638, no. 8051, pp. 651–655, Feb. 2025, doi: [10.1038/s41586-024-08445-2](https://doi.org/10.1038/s41586-024-08445-2).
-[7] N. van Loo *et al.*, “Single-shot parity readout of a minimal Kitaev chain,” *Nature*, vol. 650, no. 8101, pp. 334–339, Feb. 2026, doi: [10.1038/s41586-025-09927-7](https://doi.org/10.1038/s41586-025-09927-7).
-[8] F. Zatelli *et al.*, “Majorana parity qubit in coupled minimal Kitaev chains,” [arXiv:2607.09511](https://arxiv.org/abs/2607.09511), Jul. 2026.
-[9] H. F. Legg, “On the robustness of topological gap detection via transport,” *Nature*, vol. 654, no. 8120, pp. E22–E26, Jun. 2026, doi: [10.1038/s41586-026-10567-8](https://doi.org/10.1038/s41586-026-10567-8). [arXiv:2503.08944](https://arxiv.org/abs/2503.08944).
+[4] H. Zhang *et al.*, “Quantized Majorana conductance,” *Nature*, vol. 556, no. 7699, pp. 74–79, Mar. 2018, doi: [10.1038/nature26142](https://doi.org/10.1038/nature26142). Retracted: *Nature*, vol. 591, p. E30, Mar. 2021, doi: [10.1038/s41586-021-03373-x](https://doi.org/10.1038/s41586-021-03373-x). [D]
+[5] R. L. Willett *et al.*, “Interference Measurements of Non-Abelian e/4 & Abelian e/2 Quasiparticle Braiding,” *Phys. Rev. X*, vol. 13, no. 1, Art. no. 011028, Mar. 2023, doi: [10.1103/PhysRevX.13.011028](https://doi.org/10.1103/PhysRevX.13.011028). [D]
+[6] Microsoft Azure Quantum, “Interferometric single-shot parity measurement in InAs–Al hybrid devices,” *Nature*, vol. 638, no. 8051, pp. 651–655, Feb. 2025, doi: [10.1038/s41586-024-08445-2](https://doi.org/10.1038/s41586-024-08445-2). [D]
+[7] N. van Loo *et al.*, “Single-shot parity readout of a minimal Kitaev chain,” *Nature*, vol. 650, no. 8101, pp. 334–339, Feb. 2026, doi: [10.1038/s41586-025-09927-7](https://doi.org/10.1038/s41586-025-09927-7). [D]
+[8] F. Zatelli *et al.*, “Majorana parity qubit in coupled minimal Kitaev chains,” [arXiv:2607.09511](https://arxiv.org/abs/2607.09511), Jul. 2026. [D]
+[9] H. F. Legg, “On the robustness of topological gap detection via transport,” *Nature*, vol. 654, no. 8120, pp. E22–E26, Jun. 2026, doi: [10.1038/s41586-026-10567-8](https://doi.org/10.1038/s41586-026-10567-8). [arXiv:2503.08944](https://arxiv.org/abs/2503.08944). [D]
 [10] M. Abdel-Kareem, “Microsoft Opens Largest Quantum Lab Globally in Denmark to Advance Topological Qubit Fabrication,” Quantum Computing Report, Nov. 13, 2025. [Online]. Available: https://quantumcomputingreport.com/microsoft-opens-largest-quantum-lab-globally-in-denmark-to-advance-topological-qubit-fabrication/ [P]
 [11] GlobalFoundries, “GlobalFoundries launches Quantum Technology Solutions to scale U.S. quantum manufacturing,” May 21, 2026. [Online]. Available: https://gf.com/gf-press-release/globalfoundries-launches-quantum-technology-solutions-to-scale-us-quantum-manufacturing/ [C]
-[12] P. Ball, “Experts Weigh in on Microsoft's Topological Qubit Claim,” *Physics*, vol. 18, p. 57, 2025. [Online]. Available: https://physics.aps.org/articles/v18/57
-[13] Microsoft Quantum, “Reply to: On the robustness of topological gap detection via transport,” *Nature*, vol. 654, no. 8120, pp. E27–E28, Jun. 2026, doi: [10.1038/s41586-026-10568-7](https://doi.org/10.1038/s41586-026-10568-7).
+[12] P. Ball, “Experts Weigh in on Microsoft's Topological Qubit Claim,” *Physics*, vol. 18, p. 57, 2025. [Online]. Available: https://physics.aps.org/articles/v18/57 [D]
+[13] Microsoft Quantum, “Reply to: On the robustness of topological gap detection via transport,” *Nature*, vol. 654, no. 8120, pp. E27–E28, Jun. 2026, doi: [10.1038/s41586-026-10568-7](https://doi.org/10.1038/s41586-026-10568-7). [D]
 [14] Nokia Bell Labs, “Topological Quantum Computing,” Nokia.com, Feb. 24, 2025. [Online]. Available: https://www.nokia.com/bell-labs/research/air-lab/data-and-devices/topological-quantum-computing/ [C]
 [15] J. Burt, “Bell Labs Takes A Topological Approach To Quantum 2.0,” The Next Platform, Jul. 21, 2025. [Online]. Available: https://www.nextplatform.com/2025/07/21/bell-labs-takes-a-topological-approach-to-quantum-2-0/ [P]
 [16] DARPA, “DARPA selects two discrete utility-scale quantum computing approaches for evaluation,” Feb. 6, 2025. [Online]. Available: https://www.darpa.mil/news/2025/quantum-computing-approaches [G]

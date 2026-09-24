@@ -63,11 +63,11 @@ In the photonic fusion-based path (PsiQuantum, Quandela, QuiX): requires linear-
 Confirm by 2028: a fused state above 16 photons published with fidelity and rate; demote if still single digits. Best case 2029: merchant emitters plus on-chip fusion reach ≥10³ states/s. Worst case: the subthreshold floor holds and all-linear-optics 6-rings are abandoned. Open: can multiplexed sources beat emitters per useful state; does Sparrow close its 20–35%-to-55% gap. Watch: any rate figure in DARPA Stage C V&V.
 
 ## Sources
-[1] S. Bartolucci *et al.*, “Fusion-based quantum computation,” *Nat. Commun.*, vol. 14, Art. no. 912, Feb. 2023, doi: [10.1038/s41467-023-36493-1](https://doi.org/10.1038/s41467-023-36493-1). [arXiv:2506.11975](https://arxiv.org/abs/2506.11975).
-[2] P. Thomas, L. Ruscio, O. Morin, and G. Rempe, “Fusion of deterministically generated photonic graph states,” *Nature*, vol. 629, no. 8012, pp. 567–572, May 2024, doi: [10.1038/s41586-024-07357-5](https://doi.org/10.1038/s41586-024-07357-5).
-[3] M. C. Löbl, L. A. M. Pettersson, J. Dragašević, S. X. Chen, and O. A. D. Sandberg, “The subthreshold issue of fusion-based quantum computing,” [arXiv:2606.28490](https://arxiv.org/abs/2606.28490), Jun. 2026.
-[4] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7).
-[5] H. Huet *et al.*, “Deterministic and reconfigurable graph state generation with a single solid-state quantum emitter,” *Nat. Commun.*, vol. 16, no. 1, Art. no. 4337, May 2025, doi: [10.1038/s41467-025-59693-3](https://doi.org/10.1038/s41467-025-59693-3).
+[1] S. Bartolucci *et al.*, “Fusion-based quantum computation,” *Nat. Commun.*, vol. 14, Art. no. 912, Feb. 2023, doi: [10.1038/s41467-023-36493-1](https://doi.org/10.1038/s41467-023-36493-1). [arXiv:2101.09310](https://arxiv.org/abs/2101.09310). [S]
+[2] P. Thomas, L. Ruscio, O. Morin, and G. Rempe, “Fusion of deterministically generated photonic graph states,” *Nature*, vol. 629, no. 8012, pp. 567–572, May 2024, doi: [10.1038/s41586-024-07357-5](https://doi.org/10.1038/s41586-024-07357-5). [D]
+[3] M. C. Löbl, L. A. M. Pettersson, J. Dragašević, S. X. Chen, and O. A. D. Sandberg, “The subthreshold issue of fusion-based quantum computing,” [arXiv:2606.28490](https://arxiv.org/abs/2606.28490), Jun. 2026. [S]
+[4] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
+[5] H. Huet *et al.*, “Deterministic and reconfigurable graph state generation with a single solid-state quantum emitter,” *Nat. Commun.*, vol. 16, no. 1, Art. no. 4337, May 2025, doi: [10.1038/s41467-025-59693-3](https://doi.org/10.1038/s41467-025-59693-3). [D]
 
 ## Open verification items
 Fidelity of the 8-photon fused states spans 0.34–0.85 by graph type with no reconciled headline value — treat as a range, not a point estimate.

@@ -3491,12 +3491,12 @@
   },
   "https://docs.q-ctrl.com/boulder-opal/toolkit/apply/trapped-ion-quantum-computing/learn-to-optimize-molmer-sorensen-gates-for-trapped-ions": {
    "org": "Q-CTRL",
-   "title": "Learn to Optimize Mølmer–Sørensen Gates for Trapped Ions",
-   "date": "2026-09-04",
+   "title": "Learn to optimize Mølmer–Sørensen gates for trapped ions",
    "kind": "web",
-   "site": "Boulder Opal documentation · accessed",
+   "site": "Q-CTRL Documentation (Boulder Opal)",
    "url": "https://docs.q-ctrl.com/boulder-opal/toolkit/apply/trapped-ion-quantum-computing/learn-to-optimize-molmer-sorensen-gates-for-trapped-ions",
-   "verified": false
+   "verified": true,
+   "note": "verified 24 Sep 2026 (undated tutorial page)"
   },
   "https://downloads.regulations.gov/bis-2024-0020-0001/content.htm": {
    "org": "Bureau of Industry and Security, U.S. Department of Commerce",
@@ -3856,30 +3856,41 @@
   },
   "https://patents.justia.com/search?q=%22long-range+coupler%22+qubit": {
    "org": "Justia Patents",
-   "title": "long-range coupler patents (IBM US 12,517,856; US 12,587,192)",
-   "date": "2026",
+   "title": "Patent search: “long-range coupler” qubit (results as of Sep. 3, 2026)",
    "kind": "web",
-   "site": "patents.justia.com",
+   "site": "Justia",
    "url": "https://patents.justia.com/search?q=%22long-range+coupler%22+qubit",
-   "verified": false
+   "verified": true,
+   "also": [
+    "https://patents.google.com/patent/US12517856B2/en",
+    "https://patents.google.com/patent/US12587192B2/en"
+   ],
+   "note": "verified 24 Sep 2026; US 12,517,856 B2 “Modular quantum system with discrete levels of connectivity” (IBM, granted 2026-01-06) and US 12,587,192 B2 “Mediating coupling of quantum bits using chains of resonators and tunable inductive couplers” (IBM, granted 2026-03-24) checked on Google Patents"
   },
   "https://patents.justia.com/search?q=%22parity+check%22+quantum+error+correction+code": {
    "org": "Justia Patents",
-   "title": "quantum error-correction parity-check index",
-   "date": "2026-09-03",
+   "title": "Patent search: “parity check” quantum error correction code (results as of Sep. 3, 2026)",
    "kind": "web",
-   "site": "patents.justia.com",
+   "site": "Justia",
    "url": "https://patents.justia.com/search?q=%22parity+check%22+quantum+error+correction+code",
-   "verified": false
+   "verified": true,
+   "also": [
+    "https://patents.google.com/patent/US12346774B2/en"
+   ],
+   "note": "verified 24 Sep 2026; a live listing (no total count); KAIST US 12,346,774 B2 “Apparatus and method for decoding quantum low-density parity-check code” (granted 2025-07-01) checked on Google Patents"
   },
   "https://patents.justia.com/search?q=%22surface+code%22+quantum+error+correction&company=google": {
-   "org": "USPTO",
-   "title": "US 12,518,194, Surface codes with densely packed gauge operators, Google LLC",
-   "date": "2023-11-20",
+   "org": "Google LLC",
+   "title": "Surface codes with densely packed gauge operators",
+   "date": "2026-01-06",
    "kind": "web",
-   "site": "patent, filed · granted",
-   "url": "https://patents.justia.com/search?q=%22surface+code%22+quantum+error+correction&company=Google",
-   "verified": false
+   "site": "U.S. Patent 12,518,194 B2",
+   "url": "https://patents.google.com/patent/US12518194B2/en",
+   "verified": true,
+   "also": [
+    "https://patents.justia.com/search?q=%22surface+code%22+quantum+error+correction&company=google"
+   ],
+   "note": "verified 24 Sep 2026 on Google Patents: inventor N. C. Jones; filed 2023-11-20 (the earlier record date), granted 2026-01-06; the Justia listing kept as the second link"
   },
   "https://photonic.com/news/shyps-codes-announcement": {
    "org": "Photonic Inc.",
@@ -3990,13 +4001,13 @@
    "verified": true
   },
   "https://qci.dlr.de/en/qsea-i": {
-   "org": "DLR Quantum Computing Initiative",
-   "title": "QSea I project page",
-   "date": "2026-09-03",
+   "org": "German Aerospace Center (DLR)",
+   "title": "QSea I – Quantum computer demonstrator with 10 ion trap qubits",
    "kind": "web",
-   "site": "accessed",
+   "site": "DLR Quantum Computing Initiative",
    "url": "https://qci.dlr.de/en/qsea-i/",
-   "verified": false
+   "verified": true,
+   "note": "verified 24 Sep 2026 (undated project page; project 2023-03-01 to 2027-02-28; consortium eleQtron, ParityQC, NXP)"
   },
   "https://qphox.eu/news/qphox-raises-e8m-to-bring-quantum-modem-technology-to-market-building-towards-the-quantum-internet": {
    "org": "QphoX",
@@ -4026,13 +4037,18 @@
    "verified": true
   },
   "https://quantumbrilliance.com/news": {
-   "org": "Quantum Brilliance",
-   "title": "news and deployments (Oak Ridge, Fraunhofer IAF, Pawsey; dates not stated)",
-   "date": "2026-09-04",
+   "org": "Oak Ridge National Laboratory",
+   "title": "Quantum Brilliance, ORNL pioneer quantum-classical hybrid computing",
+   "date": "2025-09-02",
    "kind": "web",
-   "site": "company page · accessed",
-   "url": "https://quantumbrilliance.com/news",
-   "verified": false
+   "site": "ORNL News",
+   "url": "https://www.ornl.gov/news/quantum-brilliance-ornl-pioneer-quantum-classical-hybrid-computing",
+   "verified": true,
+   "also": [
+    "https://www.iaf.fraunhofer.de/en/media-library/press-releases/first-room-temperature-quantum-accelerator-in-europe.html",
+    "https://quantumbrilliance.com/news/supercomputer-with-quantum-accelerator-pawsey-commissions-first-room-temperature-on-premises-quantum-computer-in-supercomputing-center/"
+   ],
+   "note": "verified 24 Sep 2026: the three deployments are three pages — ORNL (2025-09-02), Fraunhofer IAF go-live (2025-06-05), Pawsey (2022-05-31); the news archive page cited before named none of them"
   },
   "https://quantumcircuits.com/dual-resonator-qubits-breakthrough": {
    "org": "Quantum Circuits",
@@ -4201,12 +4217,12 @@
   },
   "https://quantumledger.report/darpa-qbi": {
    "org": "Quantum Ledger",
-   "title": "DARPA QBI tracker (rosters, 2026-03 solicitation, Stage C timing)",
-   "date": "2026-03",
+   "title": "DARPA QBI Tracker",
    "kind": "web",
-   "site": "secondary database",
+   "site": "Quantum Ledger",
    "url": "https://quantumledger.report/darpa-qbi",
-   "verified": false
+   "verified": true,
+   "note": "verified 24 Sep 2026 (undated independent tracker; content to about March 2026)"
   },
   "https://quantummotion.com/partnership-with-globalfoundries/": {
    "authors": [
@@ -4679,12 +4695,12 @@
   },
   "https://www.equal1.com/technology": {
    "org": "Equal1",
-   "title": "UnityQ technology page",
-   "date": "2026-09-03",
+   "title": "UnityQ",
    "kind": "web",
-   "site": "company website, accessed",
+   "site": "Equal1",
    "url": "https://www.equal1.com/technology",
-   "verified": false
+   "verified": true,
+   "note": "verified 24 Sep 2026 (undated page: CryoCMOS, UnityQ quantum system-on-chip)"
   },
   "https://www.federalregister.gov/documents/2024/09/06/2024-19633/implementation-of-additional-export-controls-certain-advanced-computing-items-supercomputer-and": {
    "org": "US Department of Commerce, Bureau of Industry and Security",
@@ -4894,12 +4910,13 @@
    "verified": true
   },
   "https://www.infineon.com/promo/trapped-ions": {
-   "title": "Infineon Technologies, trapped-ion QPU platform (Villach), company page accessed 2026-09-03",
-   "date": "2026-09-04",
+   "title": "Trapped ion quantum computing",
    "kind": "web",
-   "site": "infineon.com",
+   "site": "Infineon Technologies",
    "url": "https://www.infineon.com/promo/trapped-ions",
-   "verified": false
+   "verified": true,
+   "org": "Infineon Technologies AG",
+   "note": "verified 24 Sep 2026 (undated page; Villach fab, Gen.3 traps, partners named)"
   },
   "https://www.intc.com/news-events/press-releases/detail/1429/intel-debuts-2nd-gen-horse-ridge-cryogenic-quantum-control": {
    "org": "Intel Corporation",
@@ -5113,12 +5130,13 @@
     "Pasqal",
     "Orion quantum-computing processor brochure"
    ],
-   "title": "company brochure",
-   "date": "2025-11",
+   "title": "The Power of Neutral Atom Quantum Processors by Pasqal — Unlock Quantum Computing for Real-World Solutions",
    "kind": "web",
-   "site": "Pasqal",
+   "site": "Pasqal, product brochure (PDF)",
    "url": "https://www.pasqal.com/wp-content/uploads/2025/11/2509_Pasqal_Quantum-Computing-Processor_Brochure-RVB-V8.pdf",
-   "verified": false
+   "verified": true,
+   "org": "Pasqal",
+   "note": "verified 24 Sep 2026 (no printed date; file name 2509…v8, uploaded Nov. 2025; Orion Gamma 140+ qubits, Vela 200+ on pre-order for 2027)"
   },
   "https://www.patsnap.com/resources/blog/articles/cryo-cmos-technology-landscape-2026": {
    "org": "PatSnap",
@@ -5422,12 +5440,12 @@
   },
   "https://www.semiqon.com/technology/semiqon-cryo-cmos": {
    "org": "SemiQon",
-   "title": "SemiQon Cryo-CMOS",
-   "date": "2026-09-03",
+   "title": "SemiQon Cryo-CMOS™",
    "kind": "web",
-   "site": "company technology page, accessed",
+   "site": "SemiQon",
    "url": "https://www.semiqon.com/technology/semiqon-cryo-cmos",
-   "verified": false
+   "verified": true,
+   "note": "verified 24 Sep 2026 (undated page)"
   },
   "https://www.silent-waves.com": {
    "org": "Silent Waves",
@@ -5551,19 +5569,19 @@
   "ae_atom": [
    {
     "work": "arxiv:2109.01272",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N8#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N9#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2208.05461",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N7#0",
@@ -5571,19 +5589,19 @@
    },
    {
     "work": "report:N5#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N3#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N2#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N8#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2605.24175",
@@ -5619,15 +5637,15 @@
    },
    {
     "work": "report:N24#0",
-    "grade": "C"
+    "grade": "R"
    },
    {
     "work": "report:N21#0",
-    "grade": "P"
+    "grade": "R"
    },
    {
     "work": "report:N13#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S33#1",
@@ -5637,23 +5655,23 @@
   "alkali": [
    {
     "work": "report:N11#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N6#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N10#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N1#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N5#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://postquantum.com/quantum-ecosystem/neutral-atom-quantum-ecosystem",
@@ -5689,7 +5707,7 @@
    },
    {
     "work": "report:N20#0",
-    "grade": "C"
+    "grade": "G"
    },
    {
     "work": "report:S33#1",
@@ -5697,7 +5715,7 @@
    },
    {
     "work": "report:N22#0",
-    "grade": "C"
+    "grade": "G"
    },
    {
     "work": "report:N26#0",
@@ -5705,25 +5723,25 @@
    },
    {
     "work": "report:N13#0",
-    "grade": ""
+    "grade": "D"
    }
   ],
   "cavity": [
    {
     "work": "arxiv:1302.4408",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1103/prxquantum.4.030336",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:B5#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:B7#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:B10#0",
@@ -5731,7 +5749,7 @@
    },
    {
     "work": "report:B3#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:B12#0",
@@ -5741,23 +5759,23 @@
   "code_aft": [
    {
     "work": "report:N17#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:X13#1",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:N5#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:X13#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "doi:10.1038/s41586-026-10628-y",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://developer.nvidia.com/blog/nvidia-nvqlink-architecture-integrates-accelerated-computing-with-quantum-processors",
@@ -5765,7 +5783,7 @@
    },
    {
     "work": "report:N13#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S33#1",
@@ -5773,49 +5791,49 @@
    },
    {
     "work": "report:N18#0",
-    "grade": "C"
+    "grade": "G"
    },
    {
     "work": "report:S28#0",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "report:N20#0",
-    "grade": "C"
+    "grade": "G"
    },
    {
     "work": "https://www.nist.gov/news-events/news/2026/05/department-commerce-announces-letters-intent-9-companies-2-billion",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "report:N19#0",
-    "grade": "C"
+    "grade": "G"
    },
    {
     "work": "report:N21#0",
-    "grade": "P"
+    "grade": "G"
    },
    {
     "work": "report:N24#0",
-    "grade": "C"
+    "grade": "R"
    }
   ],
   "code_bosonic": [
    {
     "work": "report:B17#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:B18#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:B3#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:B4#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:B10#0",
@@ -5823,11 +5841,11 @@
    },
    {
     "work": "https://www.federalregister.gov/documents/2024/09/06/2024-19633/implementation-of-additional-export-controls-certain-advanced-computing-items-supercomputer-and",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "report:S2#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://alice-bob.com/roadmap",
@@ -5835,17 +5853,17 @@
    },
    {
     "work": "report:B5#0",
-    "grade": ""
+    "grade": "D"
    }
   ],
   "code_color": [
    {
     "work": "https://arxiv.org/abs/quant-ph/0605138",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S9#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2312.08813",
@@ -5861,27 +5879,27 @@
    },
    {
     "work": "report:S2#0",
-    "grade": "G"
+    "grade": "D"
    },
    {
     "work": "report:S11#0",
-    "grade": "G"
+    "grade": "D"
    },
    {
     "work": "report:N12#0",
-    "grade": "G"
+    "grade": "D"
    },
    {
     "work": "report:S10#0",
-    "grade": "G"
+    "grade": "D"
    },
    {
     "work": "arxiv:2506.14169",
-    "grade": "G"
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41586-026-10628-y",
-    "grade": "G"
+    "grade": "D"
    },
    {
     "work": "report:N18#0",
@@ -5907,79 +5925,79 @@
   "code_erasure": [
    {
     "work": "arxiv:0904.3556",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "arxiv:2208.05461",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "arxiv:1703.01517",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "arxiv:1709.06218",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:X8#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "doi:10.1038/s41586-020-2667-0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N8#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N8#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2302.03063",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "doi:10.1103/985g-58gd",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "doi:10.1103/d1v7-nctj",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "arxiv:2312.14060",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:B7#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:S2#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:B8#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2502.20558",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:N5#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N14#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41567-026-03211-9",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:B9#0",
@@ -5987,19 +6005,19 @@
    },
    {
     "work": "arxiv:2212.12077",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:B16#0",
-    "grade": "P"
+    "grade": "R"
    },
    {
     "work": "arxiv:2305.19266",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2301.08419",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://github.com/quantumlib/stim/blob/main/doc/gates.md",
@@ -6011,11 +6029,11 @@
    },
    {
     "work": "report:P10#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "doi:10.1103/prxquantum.4.020358",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:A4#0",
@@ -6027,11 +6045,11 @@
    },
    {
     "work": "report:N24#0",
-    "grade": "C"
+    "grade": "R"
    },
    {
     "work": "report:N9#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.energy.gov/articles/energy-department-announces-625-million-advance-next-phase-national-quantum-information",
@@ -6057,89 +6075,89 @@
   "code_fusion": [
    {
     "work": "report:P10#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "arxiv:2606.28490",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:P1#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "map:§3.2",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41586-024-07357-5",
-    "grade": ""
+    "grade": "D"
    }
   ],
   "code_highrate": [
    {
     "work": "arxiv:2211.06703",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:I7#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://errorcorrectionzoo.org/c/stab_16_6_4",
-    "grade": "P"
+    "grade": "D"
    },
    {
     "work": "arxiv:2403.16054",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "arxiv:2312.08813",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "arxiv:2308.07915",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:I1#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:I9#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N12#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N17#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "doi:10.1038/s41586-026-10628-y",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N5#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:I24#0",
-    "grade": ""
+    "grade": "R"
    },
    {
     "work": "report:X12#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:I11#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:X1#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "https://www.iceberg-quantum.com",
@@ -6157,27 +6175,27 @@
   "code_magic": [
    {
     "work": "https://arxiv.org/abs/quant-ph/0403025",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "arxiv:2409.17595",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:S10#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:I9#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2506.14169",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N12#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S1#0",
@@ -6185,15 +6203,15 @@
    },
    {
     "work": "arxiv:2312.08813",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:S2#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:X9#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://developer.nvidia.com/blog/nvidia-nvqlink-architecture-integrates-accelerated-computing-with-quantum-processors",
@@ -6201,15 +6219,15 @@
    },
    {
     "work": "https://quantum-journal.org/papers/q-2026-06-12-2134",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N5#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S29#0",
-    "grade": "C"
+    "grade": "R"
    },
    {
     "work": "https://www.quantinuum.com/blog/a-quantinuum-led-team-has-built-the-quantum-programming-tools-for-real-time-magic-state-distillation-on-a-quantum-computer",
@@ -6223,23 +6241,23 @@
   "code_qldpc": [
    {
     "work": "arxiv:2308.07915",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S16#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:I11#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S32#2",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2506.03094",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:S17#0",
@@ -6255,11 +6273,11 @@
    },
    {
     "work": "report:S2#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S15#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://photonic.com/news/shyps-codes-announcement",
@@ -6271,7 +6289,7 @@
    },
    {
     "work": "report:S28#0",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "report:P15#0",
@@ -6279,7 +6297,7 @@
    },
    {
     "work": "https://www.nist.gov/news-events/news/2026/05/department-commerce-announces-letters-intent-9-companies-2-billion",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "report:S23#0",
@@ -6295,15 +6313,15 @@
    },
    {
     "work": "https://patents.justia.com/search?q=%22long-range+coupler%22+qubit",
-    "grade": "P"
+    "grade": "G"
    },
    {
     "work": "https://www.ibm.com/quantum/blog/large-scale-ftqc",
-    "grade": "C"
+    "grade": "R"
    },
    {
     "work": "report:S32#0",
-    "grade": "C"
+    "grade": "R"
    },
    {
     "work": "https://www.ibm.com/quantum/blog/ibm-quantum-roadmap-2025",
@@ -6311,77 +6329,77 @@
    },
    {
     "work": "report:X12#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:X1#0",
-    "grade": ""
+    "grade": "S"
    }
   ],
   "code_surface": [
    {
     "work": "https://arxiv.org/abs/quant-ph/9707021",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "https://arxiv.org/abs/quant-ph/0110143",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "https://arxiv.org/abs/quant-ph/0703272",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "arxiv:1111.4022",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "arxiv:1208.0928",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "arxiv:2312.04522",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:X8#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:X9#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S11#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2312.08813",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:S2#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S13#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N5#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41586-022-05434-1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S12#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S9#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://patents.justia.com/search?q=%22surface+code%22+quantum+error+correction&company=google",
@@ -6389,15 +6407,15 @@
    },
    {
     "work": "report:S10#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41586-024-08148-8",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2308.07915",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.riverlane.com/press-release/riverlane-publishes-qec-technology-roadmap",
@@ -6405,7 +6423,7 @@
    },
    {
     "work": "report:S14#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.prnewswire.com/news-releases/qblox-and-riverlane-demonstrate-integration-enabling-real-time-quantum-error-correction-302716254.html",
@@ -6457,19 +6475,19 @@
    },
    {
     "work": "doi:10.1038/s41928-020-00528-y",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2601.03922",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "doi:10.1103/prxquantum.5.010326",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41586-025-09157-x",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1109/tqe.2025.3580377",
@@ -6481,7 +6499,7 @@
    },
    {
     "work": "report:Q2#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://research.ibm.com/publications/a-cryo-cmos-control-system-for-large-scale-superconducting-qubit-quantum-computing-part-2",
@@ -6637,7 +6655,7 @@
    },
    {
     "work": "report:A1#0",
-    "grade": "P"
+    "grade": "C"
    },
    {
     "work": "arxiv:2605.25948",
@@ -6703,7 +6721,7 @@
    },
    {
     "work": "report:I24#0",
-    "grade": "C"
+    "grade": "R"
    }
   ],
   "ct_ionmw": [
@@ -6747,15 +6765,15 @@
   "ct_laser": [
    {
     "work": "arxiv:1607.03044",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N11#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N5#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2605.24175",
@@ -6763,7 +6781,7 @@
    },
    {
     "work": "report:N10#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://thequantuminsider.com/2026/07/08/fraunhofer-ilt-develops-laser-system-for-2000-qubit-neutral-atom-quantum-computer",
@@ -6797,23 +6815,23 @@
    },
    {
     "work": "doi:10.1038/s41467-024-50355-4",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2608.15637",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://thequantuminsider.com/2026/08/10/pasqal-photonic-chip-control-neutral-atom-quantum-computers",
-    "grade": "P"
+    "grade": "C"
    },
    {
     "work": "https://www.imec-int.com/en/press/european-commission-and-chips-ju-select-pixeurope-consortium-lead-european-pilot-line",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "https://gf.com/gf-press-release/globalfoundries-launches-quantum-technology-solutions-to-scale-us-quantum-manufacturing",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "https://optics.org/news/lithium-niobate-in-vogue-as-thin-film-developers-raise-cash",
@@ -6821,15 +6839,15 @@
    },
    {
     "work": "https://www.sandia.gov/labnews/2026/08/27/in-the-mountain-west-a-quantum-computing-collaboration-announces-major-results",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "report:N5#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N21#0",
-    "grade": "P"
+    "grade": "R"
    }
   ],
   "ct_rt": [
@@ -6917,7 +6935,7 @@
    },
    {
     "work": "report:S20#0",
-    "grade": "P"
+    "grade": "C"
    },
    {
     "work": "doi:10.1103/prxquantum.4.030310",
@@ -7137,23 +7155,23 @@
   "cx_lr": [
    {
     "work": "doi:10.1038/nature06184",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41586-020-2529-9",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2206.12803",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2208.09460",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.ibm.com/quantum/blog/large-scale-ftqc",
-    "grade": "C"
+    "grade": "R"
    },
    {
     "work": "report:S17#0",
@@ -7161,23 +7179,23 @@
    },
    {
     "work": "arxiv:2506.14128",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2604.12261",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "arxiv:2408.16617",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "doi:10.1063/5.0097521",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "arxiv:2308.07915",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.ibm.com/quantum/blog/qdc-2025",
@@ -7189,7 +7207,7 @@
    },
    {
     "work": "arxiv:2503.12869",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.dwavequantum.com/media/2uznec4s/14-1056a-a_zephyr_topology_of_d-wave_quantum_processors.pdf",
@@ -7225,11 +7243,11 @@
    },
    {
     "work": "arxiv:2506.03094",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "doi:10.1038/s41567-024-02694-8",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S31#0",
@@ -7271,11 +7289,11 @@
   "cx_nn": [
    {
     "work": "arxiv:1402.4848",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:1907.09528",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:S17#0",
@@ -7283,23 +7301,23 @@
    },
    {
     "work": "report:S2#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S7#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S3#0",
-    "grade": "C"
+    "grade": "D"
    },
    {
     "work": "report:S9#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:Q1#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S6#0",
@@ -7307,15 +7325,15 @@
    },
    {
     "work": "report:Q9#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:Q7#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.federalregister.gov/documents/2024/09/06/2024-19633/implementation-of-additional-export-controls-certain-advanced-computing-items-supercomputer-and",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "report:S18#0",
@@ -7323,11 +7341,11 @@
    },
    {
     "work": "doi:10.1038/s41928-026-01576-6",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:Q2#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.patsnap.com/resources/blog/rd-blog/quantum-computing-patent-landscape",
@@ -7337,35 +7355,35 @@
   "cx_qccd": [
    {
     "work": "doi:10.1038/nature00784",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:I14#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41467-022-35285-3",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:1206.0780",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:I4#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:I14#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:I1#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:I12#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:I19#1",
@@ -7377,11 +7395,11 @@
    },
    {
     "work": "report:I21#0",
-    "grade": "C"
+    "grade": "G"
    },
    {
     "work": "https://www.sandia.gov/labnews/2026/08/27/in-the-mountain-west-a-quantum-computing-collaboration-announces-major-results",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "https://www.aqt.eu/aqt-lands-million-euro-contract",
@@ -7393,11 +7411,11 @@
    },
    {
     "work": "https://www.federalregister.gov/documents/2024/09/06/2024-19633/implementation-of-additional-export-controls-certain-advanced-computing-items-supercomputer-and",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "arxiv:2305.12773",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:I23#0",
@@ -7413,15 +7431,15 @@
    },
    {
     "work": "report:I18#0",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "report:I23#1",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "report:I20#0",
-    "grade": "C"
+    "grade": "G"
    },
    {
     "work": "https://www.patsnap.com/resources/blog/rd-blog/trapped-ion-quantum-computing-2026-patsnap-eureka",
@@ -7429,11 +7447,11 @@
    },
    {
     "work": "report:I24#0",
-    "grade": ""
+    "grade": "R"
    },
    {
     "work": "report:I26#0",
-    "grade": "C"
+    "grade": "R"
    },
    {
     "work": "https://quantumcomputingreport.com/universal-quantum-and-atlas-copco-partner-to-industrialize-vacuum-systems-for-scalable-quantum-computers",
@@ -7443,15 +7461,15 @@
   "cx_shuttle": [
    {
     "work": "arxiv:2108.00879",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:Q6#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:Q4#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2512.03588",
@@ -7459,7 +7477,7 @@
    },
    {
     "work": "doi:10.1038/s41467-024-49358-y",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2605.00611",
@@ -7471,15 +7489,15 @@
    },
    {
     "work": "doi:10.1038/s41586-026-10766-3",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:Q1#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:Q2#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.fz-juelich.de/en/news/archive/press-release/2026/julich-aachen-start-up-arque-systems",
@@ -7509,23 +7527,23 @@
   "cx_switch": [
    {
     "work": "arxiv:1505.01182",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:P4#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:P10#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:P1#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41566-026-01934-y",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2608.03146",
@@ -7571,31 +7589,31 @@
   "dec_corr": [
    {
     "work": "report:N5#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2403.03272",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N17#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:X8#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "arxiv:2603.24237",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:N8#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N13#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N18#0",
@@ -7615,7 +7633,7 @@
    },
    {
     "work": "doi:10.1038/s41586-026-10628-y",
-    "grade": ""
+    "grade": "D"
    }
   ],
   "dec_cryo": [
@@ -7655,19 +7673,19 @@
   "dec_fpga": [
    {
     "work": "report:S2#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:X9#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2605.04892",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2502.14787",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S16#0",
@@ -7683,7 +7701,7 @@
    },
    {
     "work": "report:S11#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.riverlane.com/press-release/riverlane-raises-75-million-to-meet-surging-global-demand-for-quantum-error-correction-technology",
@@ -7713,7 +7731,7 @@
    },
    {
     "work": "report:S2#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:X9#1",
@@ -7721,15 +7739,15 @@
    },
    {
     "work": "report:I7#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S16#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:X9#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S28#0",
@@ -7743,43 +7761,43 @@
   "dec_mwpm": [
    {
     "work": "https://arxiv.org/abs/quant-ph/0110143",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:1307.1740",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2303.15933",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S2#0",
-    "grade": "G"
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41586-024-08148-8",
-    "grade": "G"
+    "grade": "D"
    },
    {
     "work": "arxiv:2502.14787",
-    "grade": "G"
+    "grade": "D"
    },
    {
     "work": "https://github.com/oscarhiggott/pymatching",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "report:X9#0",
-    "grade": "G"
+    "grade": "D"
    },
    {
     "work": "arxiv:2605.04892",
-    "grade": "G"
+    "grade": "D"
    },
    {
     "work": "report:S16#0",
-    "grade": "G"
+    "grade": "P"
    },
    {
     "work": "https://www.federalregister.gov/documents/2024/09/06/2024-19633/implementation-of-additional-export-controls-certain-advanced-computing-items-supercomputer-and",
@@ -7803,37 +7821,37 @@
    },
    {
     "work": "https://www.riverlane.com/press-release/riverlane-publishes-qec-technology-roadmap",
-    "grade": "C"
+    "grade": "R"
    }
   ],
   "dec_nn": [
    {
     "work": "doi:10.1038/s41586-024-08148-8",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S11#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S2#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/alphaqubit-quantum-error-correction",
-    "grade": "C"
+    "grade": "D"
    },
    {
     "work": "arxiv:2510.22724",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:X9#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2605.04892",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://developer.nvidia.com/blog/nvidia-nvqlink-architecture-integrates-accelerated-computing-with-quantum-processors",
@@ -7841,7 +7859,7 @@
    },
    {
     "work": "arxiv:2512.09807",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "https://www.riverlane.com/press-release/riverlane-raises-75-million-to-meet-surging-global-demand-for-quantum-error-correction-technology",
@@ -7849,7 +7867,7 @@
    },
    {
     "work": "https://www.riverlane.com/press-release/riverlane-publishes-qec-technology-roadmap",
-    "grade": "C"
+    "grade": "R"
    },
    {
     "work": "https://www.prnewswire.com/news-releases/qblox-and-riverlane-demonstrate-integration-enabling-real-time-quantum-error-correction-302716254.html",
@@ -7857,15 +7875,15 @@
    },
    {
     "work": "report:S16#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:S28#0",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "https://patents.google.com/patent/gb2641501a/en",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "report:X9#1",
@@ -7875,27 +7893,27 @@
   "dec_relaybp": [
    {
     "work": "arxiv:2506.01779",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S16#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:X9#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S32#0",
-    "grade": "R"
+    "grade": "D"
    },
    {
     "work": "arxiv:2308.07915",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:I11#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.altera.com/newsroom/news/press-release/altera-silver-lake",
@@ -7907,7 +7925,7 @@
    },
    {
     "work": "https://www.prnewswire.com/news-releases/qblox-and-riverlane-demonstrate-integration-enabling-real-time-quantum-error-correction-302716254.html",
-    "grade": "C"
+    "grade": "D"
    },
    {
     "work": "report:S28#0",
@@ -7921,15 +7939,15 @@
   "dec_rl": [
    {
     "work": "report:S11#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S2#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2605.04892",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.nextplatform.com/compute/2026/07/20/google-uses-ai-reinforcement-learning-for-quantum-error-correction/5275023",
@@ -7937,7 +7955,7 @@
    },
    {
     "work": "doi:10.1038/s41586-024-08148-8",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://q-ctrl.com/blog/q-ctrl-sets-global-quantum-technology-fundraising-record-increasing-series-b-to-usd-113m-led-by-gp-bullhound",
@@ -8015,23 +8033,23 @@
   "enc_bare": [
    {
     "work": "report:S2#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S12#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S11#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S7#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S4#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S6#0",
@@ -8039,15 +8057,15 @@
    },
    {
     "work": "report:B8#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:B7#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:S23#0",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "report:S24#0",
@@ -8057,19 +8075,19 @@
   "enc_cat": [
    {
     "work": "report:B3#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:B17#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "doi:10.1103/prxquantum.4.030336",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:B2#0",
-    "grade": "C"
+    "grade": "D"
    },
    {
     "work": "report:B1#0",
@@ -8085,57 +8103,57 @@
    },
    {
     "work": "report:B18#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:S28#0",
-    "grade": ""
+    "grade": "G"
    }
   ],
   "enc_dualrail": [
    {
     "work": "https://arxiv.org/abs/quant-ph/9505011",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "https://arxiv.org/abs/quant-ph/0006088",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "arxiv:2208.05461",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "arxiv:2212.12077",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "arxiv:2307.08737",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2307.03169",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2601.02183",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "arxiv:2311.04423",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41534-024-00944-4",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2604.08672",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:B7#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:B9#0",
@@ -8143,15 +8161,15 @@
    },
    {
     "work": "doi:10.1038/s41567-026-03211-9",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:B8#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:P1#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.federalregister.gov/documents/2024/09/06/2024-19633/implementation-of-additional-export-controls-certain-advanced-computing-items-supercomputer-and",
@@ -8187,11 +8205,11 @@
    },
    {
     "work": "https://quantumcomputingreport.com/d-wave-demonstrates-two-qubit-gate-breakthrough-for-dual-rail-erasure-qubits-in-nature",
-    "grade": "P"
+    "grade": "R"
    },
    {
     "work": "arxiv:2607.00786",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "https://quantumcircuits.com/dual-resonator-qubits-breakthrough",
@@ -8215,39 +8233,39 @@
   "enc_gkp": [
    {
     "work": "https://arxiv.org/abs/quant-ph/0008040",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "doi:10.1038/s41586-020-2603-3",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41586-023-05782-6",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:B6#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:B5#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:P5#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.federalregister.gov/documents/2024/09/06/2024-19633/implementation-of-additional-export-controls-certain-advanced-computing-items-supercomputer-and",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "report:P4#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2508.08599",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.patsnap.com/resources/blog/rd-blog/quantum-computing-patent-landscape",
@@ -8255,33 +8273,33 @@
    },
    {
     "work": "report:B15#0",
-    "grade": "C"
+    "grade": "R"
    }
   ],
   "enc_hf": [
    {
     "work": "report:I6#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1103/physrevlett.75.4714",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:I4#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:I5#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:I1#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N6#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:I21#0",
@@ -8303,63 +8321,63 @@
   "enc_omg": [
    {
     "work": "arxiv:2109.01272",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:X8#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "doi:10.1103/prxquantum.4.020358",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:N8#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2411.12727",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N8#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2208.05461",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:N9#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2608.13181",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N5#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:I1#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:X13#1",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "doi:10.1103/d1v7-nctj",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "doi:10.1038/s41567-026-03315-2",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:I4#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:I22#0",
@@ -8371,11 +8389,11 @@
    },
    {
     "work": "report:I19#0",
-    "grade": "C"
+    "grade": "G"
    },
    {
     "work": "report:I21#0",
-    "grade": "C"
+    "grade": "G"
    },
    {
     "work": "report:N21#0",
@@ -8389,23 +8407,23 @@
   "enc_parity": [
    {
     "work": "arxiv:1610.05289",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:T4#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:T3#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:T8#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:T7#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:T5#0",
@@ -8479,15 +8497,15 @@
   "fab_3d": [
    {
     "work": "arxiv:1302.4408",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1103/prxquantum.4.030336",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:B7#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:B10#0",
@@ -8499,41 +8517,41 @@
    },
    {
     "work": "report:B3#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:B5#0",
-    "grade": ""
+    "grade": "D"
    }
   ],
   "fab_cmos": [
    {
     "work": "doi:10.1038/ncomms13575",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41928-022-00727-9",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:Q9#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41586-024-07275-6",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41586-024-07941-9",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:Q1#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41928-024-01304-y",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://itbrief.asia/story/quobly-runs-silicon-28-quantum-wafers-through-st-fab",
@@ -8545,19 +8563,19 @@
    },
    {
     "work": "report:Q7#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s43246-024-00596-z",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:Q2#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1103/physrevb.108.125405",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "https://www.equal1.com/post/commercial_cmos_process",
@@ -8569,7 +8587,7 @@
    },
    {
     "work": "report:Q14#0",
-    "grade": "C"
+    "grade": "R"
    },
    {
     "work": "report:Q10#0",
@@ -8613,23 +8631,23 @@
    },
    {
     "work": "doi:10.1038/s41928-023-01033-8",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41586-025-09157-x",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1103/prxquantum.5.010326",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41565-023-01491-3",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:Q3#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.ionq.com/news/ionq-achieves-landmark-result-setting-new-world-record-in-quantum-computing",
@@ -8637,11 +8655,11 @@
    },
    {
     "work": "report:Q6#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2512.09807",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:Q15#0",
@@ -8689,23 +8707,23 @@
   "fab_mbe": [
    {
     "work": "report:T4#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41586-021-03373-x",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:T8#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:T1#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:T6#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.arnoldporter.com/en/perspectives/advisories/2024/09/semiconductor-additive-manufacturing-and-quantum-computing",
@@ -8879,7 +8897,7 @@
    },
    {
     "work": "https://newsroom.ibm.com/ibm-and-u-s-department-of-commerce-announce-americas-first-purpose-built-quantum-foundry",
-    "grade": "C"
+    "grade": "G"
    },
    {
     "work": "https://www.tomshardware.com/tech-industry/quantum-computing/ibm-spins-off-americas-first-quantum-chip-foundry-with-2-billion-in-federal-and-private-funding",
@@ -9025,23 +9043,23 @@
   "fluxonium": [
    {
     "work": "report:S8#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2605.25948",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.dwavequantum.com/media/41upubz2/14-1090a-a_fluxonium-dac-control.pdf",
-    "grade": "C"
+    "grade": "D"
    },
    {
     "work": "report:S8#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://news.mit.edu/2025/fast-control-methods-enable-record-setting-fidelity-superconducting-qubit-0114",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-demonstrates-first-scalable-on-chip-cryogenic-control-of-gate-model-qubits",
@@ -9057,7 +9075,7 @@
    },
    {
     "work": "report:S7#0",
-    "grade": ""
+    "grade": "D"
    }
   ],
   "fluxq": [
@@ -9067,19 +9085,19 @@
    },
    {
     "work": "report:A2#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:A2#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:A2#2",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.federalregister.gov/documents/2024/09/06/2024-19633/implementation-of-additional-export-controls-certain-advanced-computing-items-supercomputer-and",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-demonstrates-first-scalable-on-chip-cryogenic-control-of-gate-model-qubits",
@@ -9105,27 +9123,27 @@
   "g_anneal": [
    {
     "work": "report:A2#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:A2#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:A2#2",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:A5#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:A6#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:A7#0",
-    "grade": "P"
+    "grade": "D"
    },
    {
     "work": "report:A3#0",
@@ -9147,15 +9165,15 @@
   "g_bos": [
    {
     "work": "arxiv:1802.08510",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2303.00959",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:B7#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2601.02183",
@@ -9171,11 +9189,11 @@
    },
    {
     "work": "report:B8#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.federalregister.gov/documents/2024/09/06/2024-19633/implementation-of-additional-export-controls-certain-advanced-computing-items-supercomputer-and",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "arxiv:2604.08672",
@@ -9183,11 +9201,11 @@
    },
    {
     "work": "doi:10.1103/d1v7-nctj",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41567-026-03211-9",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:B13#0",
@@ -9203,11 +9221,11 @@
    },
    {
     "work": "https://www.energy.gov/articles/energy-department-announces-625-million-advance-next-phase-national-quantum-information",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "report:S28#0",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "report:A4#0",
@@ -9215,25 +9233,25 @@
    },
    {
     "work": "https://patents.google.com/patent/us11748652b1/en",
-    "grade": ""
+    "grade": "G"
    }
   ],
   "g_catcnot": [
    {
     "work": "report:B4#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:B17#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:B3#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://alice-bob.com/roadmap",
-    "grade": "C"
+    "grade": "R"
    },
    {
     "work": "report:B10#1",
@@ -9245,7 +9263,7 @@
    },
    {
     "work": "report:S28#0",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "report:B12#0",
@@ -9255,15 +9273,15 @@
   "g_cr": [
    {
     "work": "doi:10.1103/physrevlett.107.080502",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1103/physrevlett.127.130501",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s43246-024-00596-z",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2606.27017",
@@ -9271,7 +9289,7 @@
    },
    {
     "work": "report:S4#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S32#0",
@@ -9283,7 +9301,7 @@
    },
    {
     "work": "report:S23#0",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "report:S25#0",
@@ -9331,11 +9349,11 @@
   "g_elec": [
    {
     "work": "arxiv:1104.3573",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:1606.08409",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.ionq.com/news/ionq-achieves-landmark-result-setting-new-world-record-in-quantum-computing",
@@ -9351,15 +9369,15 @@
    },
    {
     "work": "report:I4#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2407.07694",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:I5#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:I21#0",
@@ -9375,7 +9393,7 @@
    },
    {
     "work": "report:I1#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:I23#1",
@@ -9487,53 +9505,53 @@
   "g_fusion": [
    {
     "work": "doi:10.1103/physrevlett.95.010501",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "arxiv:1403.4841",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:P1#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2606.28490",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:P4#0",
-    "grade": ""
+    "grade": "D"
    }
   ],
   "g_mbq": [
    {
     "work": "arxiv:0802.0279",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "arxiv:1610.05289",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:T4#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:T3#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:T1#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:T8#2",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:T6#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:T5#0",
@@ -9821,19 +9839,19 @@
   "ic_cryolink": [
    {
     "work": "arxiv:2008.01642",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41586-023-05885-0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2604.15971",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41534-025-01046-5",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://bluefors.com/press-releases/bluefors-closes-the-acquisition-of-cryomech",
@@ -9879,7 +9897,7 @@
    },
    {
     "work": "https://thequantuminsider.com/2026/04/14/quandela-photonic-quantum-hpc",
-    "grade": "P"
+    "grade": "C"
    }
   ],
   "ic_ionphoton": [
@@ -10003,15 +10021,15 @@
   "ic_transducer": [
    {
     "work": "arxiv:2605.26976",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2505.00542",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2503.10842",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "https://investors.rigetti.com/news-releases/news-release-details/research-qphox-rigetti-and-qblox-demonstrating-optical-readout",
@@ -10019,7 +10037,7 @@
    },
    {
     "work": "report:P1#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S18#0",
@@ -10093,7 +10111,7 @@
    },
    {
     "work": "report:I19#0",
-    "grade": "G"
+    "grade": "C"
    },
    {
     "work": "https://www.quantinuum.com/press-releases/infineon-and-quantinuum-announce-partnership-to-accelerate-quantum-computing-towards-meaningful-real-world-applications",
@@ -10145,7 +10163,7 @@
    },
    {
     "work": "report:I18#0",
-    "grade": "G"
+    "grade": "C"
    },
    {
     "work": "https://qci.dlr.de/en/qsea-i",
@@ -10181,17 +10199,17 @@
    },
    {
     "work": "report:I26#0",
-    "grade": "R"
+    "grade": "P"
    }
   ],
   "majorana": [
    {
     "work": "report:T4#0",
-    "grade": ""
+    "grade": "C"
    },
    {
     "work": "report:T3#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:T5#0",
@@ -10199,27 +10217,27 @@
    },
    {
     "work": "doi:10.1038/s41586-021-03373-x",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1103/physrevx.13.011028",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:T1#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:T6#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:T7#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:T8#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://quantumcomputingreport.com/microsoft-opens-largest-quantum-lab-globally-in-denmark-to-advance-topological-qubit-fabrication",
@@ -10231,11 +10249,11 @@
    },
    {
     "work": "report:T2#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:T8#2",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.nokia.com/bell-labs/research/air-lab/data-and-devices/topological-quantum-computing",
@@ -10261,15 +10279,15 @@
   "photon": [
    {
     "work": "https://arxiv.org/abs/quant-ph/0006088",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:P1#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:P10#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:P9#0",
@@ -10277,11 +10295,11 @@
    },
    {
     "work": "report:P2#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2511.23232",
-    "grade": "C"
+    "grade": "D"
    },
    {
     "work": "report:P7#0",
@@ -10289,7 +10307,7 @@
    },
    {
     "work": "report:P6#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:P8#0",
@@ -10297,7 +10315,7 @@
    },
    {
     "work": "doi:10.1038/s41586-023-06550-2",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.quixquantum.com/news/quix-quantum-series-a",
@@ -10331,35 +10349,35 @@
   "qd_spin": [
    {
     "work": "report:Q7#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:Q2#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:Q1#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:Q6#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2107.00628",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:Q5#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:Q4#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:Q9#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:Q10#0",
@@ -10375,15 +10393,15 @@
    },
    {
     "work": "report:Q11#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:Q3#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:Q14#0",
-    "grade": "C"
+    "grade": "R"
    },
    {
     "work": "https://newsroom.ibm.com/2026-08-26-ibm-completes-acquisition-of-hrl-laboratories-to-accelerate-the-future-of-quantum",
@@ -10395,7 +10413,7 @@
    },
    {
     "work": "doi:10.1038/s41586-026-10766-3",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.quobly.io",
@@ -10491,51 +10509,51 @@
   "ro_erasure": [
    {
     "work": "report:X8#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "arxiv:2208.05461",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "arxiv:2212.12077",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:N8#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N9#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2307.08737",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2307.03169",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:B8#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41534-024-00944-4",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2302.03063",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:B7#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41567-026-03211-9",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:B9#0",
@@ -10543,23 +10561,23 @@
    },
    {
     "work": "report:N8#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2506.13632",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N14#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2411.12727",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:B16#0",
-    "grade": "P"
+    "grade": "R"
    },
    {
     "work": "https://www.federalregister.gov/documents/2024/09/06/2024-19633/implementation-of-additional-export-controls-certain-advanced-computing-items-supercomputer-and",
@@ -10567,19 +10585,19 @@
    },
    {
     "work": "arxiv:2605.24175",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2305.19266",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2604.08672",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2311.04423",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:N23#0",
@@ -10729,15 +10747,15 @@
   "ro_imgfast": [
    {
     "work": "report:N5#1",
-    "grade": "G"
+    "grade": "D"
    },
    {
     "work": "arxiv:2605.24175",
-    "grade": "G"
+    "grade": "D"
    },
    {
     "work": "arxiv:2608.17189",
-    "grade": "G"
+    "grade": "D"
    },
    {
     "work": "https://www.quantum-machines.co/resources/blog/classically-accelerated-readout-neutral-atoms-cpu-gpu-readout",
@@ -10773,7 +10791,7 @@
    },
    {
     "work": "report:N22#0",
-    "grade": "G"
+    "grade": "R"
    },
    {
     "work": "report:N24#0",
@@ -10783,15 +10801,15 @@
   "ro_qcap": [
    {
     "work": "report:T1#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:T3#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:T4#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:T2#0",
@@ -10799,15 +10817,15 @@
    },
    {
     "work": "report:T6#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:T7#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:T8#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:T5#0",
@@ -10843,31 +10861,31 @@
   "ro_spd": [
    {
     "work": "doi:10.1063/1.1388868",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1063/1.113674",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41377-025-02031-5",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1364/optica.400751",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:1804.06839",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:P1#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:P10#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "https://www.photonspot.com",
@@ -10879,11 +10897,11 @@
    },
    {
     "work": "doi:10.1364/oe.16.003032",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41586-023-06550-2",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.federalregister.gov/documents/2024/09/06/2024-19633/implementation-of-additional-export-controls-certain-advanced-computing-items-supercomputer-and",
@@ -10899,19 +10917,19 @@
    },
    {
     "work": "report:I15#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:I16#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:P4#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:P5#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.tipranks.com/news/private-companies/single-quantum-hits-400-system-milestone-as-it-deepens-european-quantum-partnerships",
@@ -10941,71 +10959,71 @@
   "squeezed": [
    {
     "work": "doi:10.1103/physrevlett.117.110801",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2508.08599",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:P5#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:P9#0",
-    "grade": "C"
+    "grade": "R"
    },
    {
     "work": "report:P4#0",
-    "grade": ""
+    "grade": "D"
    }
   ],
   "src_resource": [
    {
     "work": "report:P10#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "doi:10.1038/s41586-024-07357-5",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2606.28490",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:P1#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41467-025-59693-3",
-    "grade": ""
+    "grade": "D"
    }
   ],
   "transmon": [
    {
     "work": "https://arxiv.org/abs/cond-mat/0703002",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:1105.4652",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:1402.4848",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:1412.2772",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S7#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S2#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://thequantuminsider.com/2025/03/26/oxford-researchers-demonstrate-fast-99-8-fidelity-two-qubit-gate-using-simplified-circuit-design",
@@ -11013,31 +11031,31 @@
    },
    {
     "work": "doi:10.1103/physrevlett.127.130501",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2503.14798",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S12#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S11#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2104.05219",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2402.15644",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S7#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S1#0",
@@ -11049,11 +11067,11 @@
    },
    {
     "work": "report:S5#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41586-019-1666-5",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.ibm.com/quantum/blog/quantum-roadmap-2033",
@@ -11061,15 +11079,15 @@
    },
    {
     "work": "report:S9#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41586-024-07941-9",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s43246-024-00596-z",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://www.investing.com/news/company-news/iqm-q2-2026-slides-backlog-surges-52-revenue-up-47-in-h1-93ch-4834587",
@@ -11077,15 +11095,15 @@
    },
    {
     "work": "doi:10.1103/prxquantum.5.010326",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S21#0",
-    "grade": "P"
+    "grade": "C"
    },
    {
     "work": "https://www.gao.gov/products/gao-11-472",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "https://postquantum.com/industry-news/quantware-178m-series-b-qoa",
@@ -11097,11 +11115,11 @@
    },
    {
     "work": "https://www.nist.gov/news-events/news/2026/05/department-commerce-announces-letters-intent-9-companies-2-billion",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "https://downloads.regulations.gov/bis-2024-0020-0001/content.htm",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "https://thequantuminsider.com/2026/05/15/10-plus-companies-leading-the-quantum-technologies-race-in-china",
@@ -11109,11 +11127,11 @@
    },
    {
     "work": "report:S16#0",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "arxiv:2308.07915",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "https://bluefors.com/products/kide-cryogenic-platform",
@@ -11121,11 +11139,11 @@
    },
    {
     "work": "report:Q2#0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41928-026-01576-6",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S18#0",
@@ -11133,31 +11151,31 @@
    },
    {
     "work": "doi:10.1038/s41586-023-05885-0",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1103/prxquantum.4.030310",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2503.10842",
-    "grade": ""
+    "grade": "S"
    },
    {
     "work": "report:S15#1",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2111.03011",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "doi:10.1038/s41586-023-06096-3",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "arxiv:2306.14887",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S29#0",
@@ -11173,7 +11191,7 @@
    },
    {
     "work": "report:S28#0",
-    "grade": ""
+    "grade": "G"
    },
    {
     "work": "report:B13#0",
@@ -11189,7 +11207,7 @@
    },
    {
     "work": "arxiv:2602.12773",
-    "grade": ""
+    "grade": "D"
    },
    {
     "work": "report:S25#0",
@@ -11205,11 +11223,11 @@
    },
    {
     "work": "report:S32#0",
-    "grade": "C"
+    "grade": "R"
    },
    {
     "work": "report:S34#0",
-    "grade": "C"
+    "grade": "R"
    },
    {
     "work": "report:S22#0",

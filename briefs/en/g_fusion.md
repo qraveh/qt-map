@@ -64,11 +64,11 @@ Requires single photons, single-photon detection for heralding and electro-optic
 Confirm by 2027: a published network of ≥3 chained fusions with end-to-end success rate and erasure statistics; demote if only single-fusion figures exist by 2028. Best case 2029: boosted fusion above 75% on chip. Worst case: the zero-loss failure floor holds and linear-optical fusion survives only inside emitter hybrids. Open: how correlated failures are across a chip; whether 93%-efficient number resolution supports boosting.
 
 ## Sources
-[1] D. E. Browne and T. Rudolph, “Resource-Efficient Linear Optical Quantum Computation,” *Phys. Rev. Lett.*, vol. 95, no. 1, Art. no. 010501, Jun. 2005, doi: [10.1103/PhysRevLett.95.010501](https://doi.org/10.1103/PhysRevLett.95.010501).
-[2] F. Ewert and P. van Loock, “3/4-Efficient Bell Measurement with Passive Linear Optics and Unentangled Ancillae,” *Phys. Rev. Lett.*, vol. 113, no. 14, Art. no. 140403, Sep. 2014, doi: [10.1103/PhysRevLett.113.140403](https://doi.org/10.1103/PhysRevLett.113.140403). [arXiv:1403.4841](https://arxiv.org/abs/1403.4841).
-[3] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7).
-[4] M. C. Löbl, L. A. M. Pettersson, J. Dragašević, S. X. Chen, and O. A. D. Sandberg, “The subthreshold issue of fusion-based quantum computing,” [arXiv:2606.28490](https://arxiv.org/abs/2606.28490), Jun. 2026.
-[5] H. A. Rad *et al.*, “Scaling and networking a modular photonic quantum computer,” *Nature*, vol. 638, no. 8052, pp. 912–919, Jan. 2025, doi: [10.1038/s41586-024-08406-9](https://doi.org/10.1038/s41586-024-08406-9).
+[1] D. E. Browne and T. Rudolph, “Resource-Efficient Linear Optical Quantum Computation,” *Phys. Rev. Lett.*, vol. 95, no. 1, Art. no. 010501, Jun. 2005, doi: [10.1103/PhysRevLett.95.010501](https://doi.org/10.1103/PhysRevLett.95.010501). [S]
+[2] F. Ewert and P. van Loock, “3/4-Efficient Bell Measurement with Passive Linear Optics and Unentangled Ancillae,” *Phys. Rev. Lett.*, vol. 113, no. 14, Art. no. 140403, Sep. 2014, doi: [10.1103/PhysRevLett.113.140403](https://doi.org/10.1103/PhysRevLett.113.140403). [arXiv:1403.4841](https://arxiv.org/abs/1403.4841). [S]
+[3] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
+[4] M. C. Löbl, L. A. M. Pettersson, J. Dragašević, S. X. Chen, and O. A. D. Sandberg, “The subthreshold issue of fusion-based quantum computing,” [arXiv:2606.28490](https://arxiv.org/abs/2606.28490), Jun. 2026. [S]
+[5] H. A. Rad *et al.*, “Scaling and networking a modular photonic quantum computer,” *Nature*, vol. 638, no. 8052, pp. 912–919, Jan. 2025, doi: [10.1038/s41586-024-08406-9](https://doi.org/10.1038/s41586-024-08406-9). [D]
 
 ## Open verification items
 No second group has replicated PsiQuantum's 99.22%/99.72% fusion fidelities as of 4 Sep 2026.

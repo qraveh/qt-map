@@ -64,14 +64,14 @@ No funding event or QBI stage names cross-resonance.
 Confirm by 2028: a fabricated fixed-frequency processor above eight qubits with CR fidelity published under simultaneous operation, or the Hanyang patch measured above 98%; else demote to legacy. Best case 2029: a cheap fixed-frequency chiplet; worst case, CR survives only as a Qiskit compilation target. Does anyone outside IBM run CR in production? Does frequency targeting reach collision-free yield past ~100 qubits? Would a foundry pick CR on cost rather than physics?
 
 ## Sources
-[1] J. M. Chow *et al.*, “Simple All-Microwave Entangling Gate for Fixed-Frequency Superconducting Qubits,” *Phys. Rev. Lett.*, vol. 107, no. 8, Art. no. 080502, Aug. 2011, doi: [10.1103/PhysRevLett.107.080502](https://doi.org/10.1103/PhysRevLett.107.080502).
-[2] A. Kandala *et al.*, “Demonstration of a High-Fidelity CNOT Gate for Fixed-Frequency Transmons with Engineered ZZ Suppression,” *Phys. Rev. Lett.*, vol. 127, no. 13, Art. no. 130501, Sep. 2021, doi: [10.1103/PhysRevLett.127.130501](https://doi.org/10.1103/PhysRevLett.127.130501).
-[3] D. P. Pappas *et al.*, “Alternating-bias assisted annealing of amorphous oxide tunnel junctions,” *Communications Materials*, vol. 5, no. 1, Art. no. 150, Aug. 2024, doi: [10.1038/s43246-024-00596-z](https://doi.org/10.1038/s43246-024-00596-z).
+[1] J. M. Chow *et al.*, “Simple All-Microwave Entangling Gate for Fixed-Frequency Superconducting Qubits,” *Phys. Rev. Lett.*, vol. 107, no. 8, Art. no. 080502, Aug. 2011, doi: [10.1103/PhysRevLett.107.080502](https://doi.org/10.1103/PhysRevLett.107.080502). [D]
+[2] A. Kandala *et al.*, “Demonstration of a High-Fidelity CNOT Gate for Fixed-Frequency Transmons with Engineered ZZ Suppression,” *Phys. Rev. Lett.*, vol. 127, no. 13, Art. no. 130501, Sep. 2021, doi: [10.1103/PhysRevLett.127.130501](https://doi.org/10.1103/PhysRevLett.127.130501). [D]
+[3] D. P. Pappas *et al.*, “Alternating-bias assisted annealing of amorphous oxide tunnel junctions,” *Communications Materials*, vol. 5, no. 1, Art. no. 150, Aug. 2024, doi: [10.1038/s43246-024-00596-z](https://doi.org/10.1038/s43246-024-00596-z). [D]
 [4] C. Kim, J. Kang, and Y. Kwon, “Lattice patch structure for fixed-frequency transmon quantum computer with high-fidelity CNOT gates,” [arXiv:2606.27017](https://arxiv.org/abs/2606.27017), Jun. 2026. [S]
-[5] IBM Quantum, “What's new at IBM Quantum - Q2 2026.” [Online]. Available: https://www.ibm.com/quantum/blog/whats-new-q2-2026
+[5] IBM Quantum, “What's new at IBM Quantum - Q2 2026.” [Online]. Available: https://www.ibm.com/quantum/blog/whats-new-q2-2026 [D]
 [6] IBM, “Quantum Roadmap.” [Online]. Available: https://www.ibm.com/roadmaps/quantum/ [C]
 [7] A. Curbison, “Oxford research group demonstrate fundamental speed-up of two-qubit gate,” OQC, Mar. 21, 2025. [Online]. Available: https://oqc.tech/company/newsroom/oxford-research-group-demonstrate-fundamental-speed-up-of-two-qubit-gate [C]
-[8] IBM Quantum, “Why IBM is investing $10 billion into quantum computing,” Jun. 2, 2026. [Online]. Available: https://www.ibm.com/quantum/blog/10-billion-investment-faq
+[8] IBM Quantum, “Why IBM is investing $10 billion into quantum computing,” Jun. 2, 2026. [Online]. Available: https://www.ibm.com/quantum/blog/10-billion-investment-faq [G]
 [9] A. Curbison, “OQC raises £260m in Europe's largest ever private quantum computing funding round,” OQC, Jun. 2, 2026. [Online]. Available: https://oqc.tech/company/newsroom/series-c [C]
 
 ## Open verification items
