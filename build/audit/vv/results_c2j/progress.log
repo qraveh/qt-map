@@ -1,0 +1,13 @@
+SUITE strip 25/300 disagreements=0
+SUITE strip 50/300 disagreements=0
+SUITE strip 75/300 disagreements=0
+SUITE strip 100/300 disagreements=0
+SUITE strip 125/300 disagreements=0
+SUITE strip 150/300 disagreements=0
+SUITE strip 175/300 disagreements=0
+SUITE strip 200/300 disagreements=0
+SUITE strip 225/300 disagreements=0
+SUITE strip 250/300 disagreements=0
+SUITE strip 275/300 disagreements=0
+SUITE strip 300/300 disagreements=0
+SUITE strip DONE 300/300 disagreements=0 seconds=1765.4
