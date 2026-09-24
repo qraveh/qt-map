@@ -38,6 +38,10 @@ SPLIT = {('ro_fluor', '14'): 'doi:10.1364/optica.400751'}   # Reddy et al. (Opti
 FIX_TO = {'doi:10.1038/s41377-025-02031-5': 'doi:10.1364/optica.400751'}   # the fix record of a split key belongs to the split-off work
 AS_CITED = 'https://www.patsnap.com/resources/blog/rd-blog/quantum-computing-patent-landscape'   # PatSnap "as cited in the main report"
 KINDS = {'article': 'journal'}
+RECORD_FIX = {   # values the independent re-check read from OpenAlex (24 Sep 2026); None removes the field
+    'doi:10.1038/s41534-024-00944-4': {'date': '2025-01-07', 'pubdate': None},   # de Graaf, npj Quantum Inf. 11 (1): Jan. 2025
+    'doi:10.1109/tqe.2025.3580377': {'date': '2025'},                           # van Staveren, IEEE TQE 6, 1-18: 2025
+}
 RENAME = {'arxiv:2408.13687': 'arxiv:2402.15644'}   # the key named a different paper (McEwen et al. is arXiv:2402.15644)
 FIELDS = ('authors', 'etal', 'n_authors', 'org', 'title', 'journal', 'volume', 'issue', 'pages', 'article', 'date', 'pubdate', 'doi', 'arxiv',
           'kind', 'site', 'publisher', 'edition', 'section', 'url', 'also', 'retraction', 'verified')
@@ -395,7 +399,7 @@ def _migrate(raw_path, vdir, alias, enrich, dry):
         if c in db['works'] and not db['works'][c].get('arxiv'):
             w = db['works'][c]; w['arxiv'] = ax; db['works'][c] = OrderedDict((f, w[f]) for f in FIELDS if f in w)
     if dry: return st, db
-    left = unify(db)
+    left = unify(db); s9_arxiv()
     if left: raise SystemExit('works still to unify after the second pass: %s' % sorted(left.items())[:5])
     save(db)
     write_all(db)
@@ -415,7 +419,7 @@ def merge_verified(d):
     overrides the first), then out_fix.json ({key, record, reason}: the brief cited the wrong paper or DOI, the record
     replaces the work), then out_final.json. A record with verified:false never replaces anything: the brief-line record stays the fallback."""
     db = load(); before = {k: json.dumps(v, sort_keys=True) for k, v in db['works'].items()}; apply_verified(db, d)
-    alias = unify(db)
+    alias = unify(db); s9_arxiv()
     if alias:     # re-point entries; two entries of one brief becoming one work needs the text renumbered: --migrate
         for bid, es in db['briefs'].items():
             ws = [alias.get(e['work'], e['work']) for e in es]
@@ -429,6 +433,20 @@ def merge_verified(d):
 
 UNCHECKED = re.compile(r'UNRESOLVED|recollection|from memory|not checked|not re-read', re.I)
 CONFIRMABLE = ('title', 'authors', 'journal', 'volume', 'issue', 'pages', 'article', 'date', 'pubdate', 'doi')
+
+
+def s9_arxiv():
+    """write the arXiv ids unify() found for §9 records into data/sources.json (nothing else of a §9 record changes)"""
+    if not S9_ARXIV: return
+    data = S.load_json(); n = 0
+    for ref, ax in sorted(S9_ARXIV.items()):
+        c, i = ref[len('report:'):].split('#'); r = data[c][int(i)]
+        if not r.get('arxiv'):
+            items = list(r.items()); j = next((q + 1 for q, (f, _) in enumerate(items) if f == 'doi'), len(items))
+            data[c][int(i)] = OrderedDict(items[:j] + [('arxiv', ax)] + items[j:]); n += 1
+    if n:
+        write(S.JSON, json.dumps(data, ensure_ascii=False, indent=1)); _REPORT.clear()
+    print('§9 records given an arXiv id:', sorted(S9_ARXIV.items()))
 
 
 def apply_verified(db, d):
@@ -468,9 +486,17 @@ def apply_verified(db, d):
             if not fix and not r.get('arxiv') and db['works'][k].get('arxiv') and db['works'][k].get('verified'): r['arxiv'] = db['works'][k]['arxiv']
             rec = OrderedDict((f, r[f]) for f in FIELDS if f in r and r[f] not in ('', None, []))
             db['works'][k] = rec
+    for k, fx in RECORD_FIX.items():
+        if k in db['works']:
+            w = OrderedDict(db['works'][k])
+            for f, v in fx.items():
+                if v is None: w.pop(f, None)
+                else: w[f] = v
+            db['works'][k] = OrderedDict((f, w[f]) for f in FIELDS if f in w)
     return sum(1 for k, v in db['works'].items() if start.get(k) != json.dumps(v, sort_keys=True))
 
 
+S9_ARXIV = {}       # §9 record → the arXiv id a verified brief record of the same work holds
 POORER_S9 = set()   # §9 records a brief holds in a richer (e.g. published) form: candidates for updating data/sources.json
 DISTINCT = {frozenset(('doi:10.1364/optica.400751', 'doi:10.1038/s41377-025-02031-5'))}   # a split is never undone
 
@@ -511,11 +537,13 @@ def unify(db):
         if len(g) < 2: continue
         canon = max(g, key=lambda k: (_rich(rec[k]), k.startswith('report:')))   # a §9 record wins a tie
         POORER_S9.update((k, canon) for k in g if k.startswith('report:') and k != canon)
+        ax = next((rec[k].get('arxiv') for k in g if rec[k].get('arxiv') and rec[k].get('verified')), '')
         if not canon.startswith('report:'):
             c = db['works'][canon]
-            ax = next((rec[k].get('arxiv') for k in g if rec[k].get('arxiv')), '')
             if ax and not c.get('arxiv'):
                 c['arxiv'] = ax; db['works'][canon] = OrderedDict((f, c[f]) for f in FIELDS if f in c)
+        elif ax and not rec[canon].get('arxiv'):     # the §9 record takes the arXiv id too (data/sources.json, the id only)
+            S9_ARXIV[canon] = ax
         for k in g:
             if k != canon: alias[k] = canon
     return alias
