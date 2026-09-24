@@ -354,6 +354,23 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 /* parallel coordinates */
 .pcwrap{margin-top:14px;border:1px solid var(--rule);border-radius:10px;background:var(--surface);padding:10px 12px 4px}
 .pcwrap h3{margin:0 0 4px;font-size:15px}
+/* the strip's header: title with its fold, and the toolbar for the map-and-strip modes (24 Sep 2026) */
+.pchead{display:flex;align-items:flex-start;justify-content:space-between;gap:8px 12px;flex-wrap:wrap}
+.pchead h3{flex:1 1 auto;min-width:0}
+.pctools{flex:0 0 auto;box-shadow:none;background:var(--surface2)}
+.pclead>summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--ink2);padding:2px 0;margin:0 0 4px}
+.pclead>summary::-webkit-details-marker{display:none}
+.pclead>summary::after{content:"▸";color:var(--muted);font-size:11px}
+.pclead[open]>summary::after{content:"▾"}
+/* map and strip together (fit height, full screen): the map's footer legend, the caption fold, the strip's title and its
+   header legend give way; the strip is capped so the map keeps most of the height; no frames between the two */
+#mapbody.both .legend,#mapbody.both .maplead,#mapbody.both .pchead h3,#mapbody.both #pclead{display:none}
+#mapbody.both .pchead{justify-content:flex-end;margin:0}
+#mapbody.both .pcwrap{margin-top:4px;padding:2px 8px 0;border-color:transparent;background:transparent}
+#mapbody.both #pc svg{max-height:34vh;max-height:34dvh;width:auto;max-width:100%;margin:0 auto}
+#mapbody.both .mapgrid{border-radius:0 0 4px 4px}
+#mapbody.both.fs .mapgrid,#mapbody.both.fs .mapbar{border-color:transparent}
+#mapbody.both .secbody[data-sec="pcwrap"][hidden]{display:block}
 .pcwrap p{margin:0 0 6px;color:var(--ink2);font-size:13px}
 .pcwrap svg{width:100%;height:auto;display:block;font-family:"Golos Text",system-ui,sans-serif}
 .pc-axis line{stroke:var(--rule)}

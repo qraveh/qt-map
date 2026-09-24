@@ -728,6 +728,59 @@ def folds(pw):
     return fails
 
 
+def stripmodes(pw):
+    """24 Sep 2026: the map's scroll escape (two more wheel notches at the bottom hand over to the page), the strip's header legend
+    fold, and the two map-and-strip modes (fit height, full screen) with what they hide and restore."""
+    fails, errors = [], []
+    b = pw.chromium.launch(); ctx = b.new_context(viewport={'width': 1300, 'height': 820}); p = ctx.new_page()
+    def check(label, cond, detail=''):
+        print(f"  [{'ok' if cond else 'FAIL'}] {label}{(' — ' + str(detail)) if (detail and not cond) else ''}")
+        if not cond: fails.append(label)
+    print('strip modes — 1300×820')
+    p.on('console', lambda m: m.type == 'error' and errors.append(m.text)); p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
+    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000)
+    p.wait_for_function("document.querySelectorAll('#pc path.pcline').length===96", timeout=60000); p.wait_for_timeout(400)
+    # scroll escape
+    p.click('#bartog'); p.wait_for_timeout(200); p.click('#zoom-in'); p.click('#zoom-in'); p.wait_for_timeout(300)
+    r = p.evaluate("""()=>{const w=document.getElementById('mapwrap'); w.scrollTop=w.scrollHeight; const ev=()=>w.dispatchEvent(new WheelEvent('wheel',{deltaY:100,bubbles:true,cancelable:true})); const y0=window.scrollY; ev(); const y1=window.scrollY; ev(); return {scrollable:w.scrollHeight>w.clientHeight+1, y0, y1};}""")
+    p.wait_for_timeout(900)
+    r2 = p.evaluate("()=>({y:window.scrollY, legendBottom:document.querySelector('#mapbody .legend').getBoundingClientRect().bottom})")
+    check('at the map\'s bottom the first extra wheel notch does nothing, the second scrolls the page past the map', r['scrollable'] and r['y1'] == r['y0'] and r2['y'] > 400 and r2['legendBottom'] <= 4, (r, r2))
+    r3 = p.evaluate("""()=>{const w=document.getElementById('mapwrap'); w.scrollTop=0; window.scrollTo(0,0); const y0=window.scrollY; w.dispatchEvent(new WheelEvent('wheel',{deltaY:100,bubbles:true,cancelable:true})); w.dispatchEvent(new WheelEvent('wheel',{deltaY:100,bubbles:true,cancelable:true})); return {y0, y1:window.scrollY};}""")
+    p.wait_for_timeout(300)
+    check('away from the bottom the wheel never hands over', p.evaluate("()=>window.scrollY") == 0, r3)
+    p.click('#bartog'); p.wait_for_timeout(200)
+    # header legend fold
+    f = p.evaluate("()=>{const d=document.getElementById('pclead'); const was=d.open; d.open=false; d.dispatchEvent(new Event('toggle')); return {was, now:d.open, stored:localStorage.getItem('qmap.pclead')};}")
+    check('the strip\'s header legend folds under its summary and the choice is stored', f['was'] and not f['now'] and f['stored'] == '0', f)
+    p.evaluate("()=>{const d=document.getElementById('pclead'); d.open=true; d.dispatchEvent(new Event('toggle'));}")
+    # fit height: map and strip together
+    p.click('#bartog'); p.wait_for_timeout(200)   # expanded bar: the mode folds it and restores it
+    p.click('#pc-fith'); p.wait_for_timeout(700)
+    vis = "const vis=el=>{const r=el.getBoundingClientRect(); return r.width>0&&r.height>0&&getComputedStyle(el).display!=='none';};"
+    g = p.evaluate("()=>{" + vis + """const b=document.getElementById('mapbody'), w=document.getElementById('mapwrap'), pc=document.querySelector('#pc svg'), bar=document.getElementById('mapbar');
+      return {both:b.classList.contains('both'), barTop:Math.round(bar.getBoundingClientRect().top), barCollapsed:bar.classList.contains('collapsed'), wrapTop:Math.round(w.getBoundingClientRect().top), stripBottom:Math.round(pc.getBoundingClientRect().bottom), inner:window.innerHeight,
+        hidden:[document.querySelector('#mapbody .legend'),document.querySelector('.maplead'),document.querySelector('.pchead h3'),document.getElementById('pclead')].map(e=>!vis(e)), mapWhole:w.scrollHeight<=w.clientHeight+1, pressed:document.getElementById('pc-fith').getAttribute('aria-pressed')};}""")
+    check('fit height: bar at the top, map whole and strip below it within the window, controls folded', g['both'] and g['barTop'] <= 8 and g['barCollapsed'] and g['mapWhole'] and g['stripBottom'] <= g['inner'] and g['pressed'] == 'true', g)
+    check('fit height hides the footer legend, the caption fold, the strip title and its header legend', all(g['hidden']), g['hidden'])
+    p.click('#pc-fith'); p.wait_for_timeout(500)
+    h = p.evaluate("()=>{" + vis + "return {both:document.getElementById('mapbody').classList.contains('both'), shown:vis(document.querySelector('#mapbody .legend'))&&vis(document.querySelector('.pchead h3')), barBack:!document.getElementById('mapbar').classList.contains('collapsed')};}")
+    check('leaving fit height restores the legend, the title and the controls bar', not h['both'] and h['shown'] and h['barBack'], h)
+    p.click('#bartog'); p.wait_for_timeout(200)
+    # full screen: map and strip together
+    p.click('#pc-fs'); p.wait_for_timeout(900)
+    k = p.evaluate("()=>{" + vis + """const b=document.getElementById('mapbody'), w=document.getElementById('mapwrap'), pc=document.querySelector('#pc svg');
+      return {fs:b.classList.contains('fs'), both:b.classList.contains('both'), mapWhole:w.scrollHeight<=w.clientHeight+1, stripBottom:Math.round(pc.getBoundingClientRect().bottom), bodyH:b.clientHeight, legendHidden:!vis(document.querySelector('#mapbody .legend')), pressed:document.getElementById('pc-fs').getAttribute('aria-pressed')};}""")
+    check('full screen: the block takes the screen, map whole and strip below it, legend hidden', k['fs'] and k['both'] and k['mapWhole'] and k['stripBottom'] <= k['bodyH'] and k['legendHidden'] and k['pressed'] == 'true', k)
+    p.click('#pc-fs'); p.wait_for_timeout(700)
+    m = p.evaluate("()=>({fs:document.getElementById('mapbody').classList.contains('fs'), both:document.getElementById('mapbody').classList.contains('both'), pressed:document.getElementById('pc-fs').getAttribute('aria-pressed')})")
+    check('the button leaves full screen and the mode', not m['fs'] and not m['both'] and m['pressed'] == 'false', m)
+    errs = [e for e in errors if 'ERR_TUNNEL' not in e and 'net::' not in e]
+    check('0 console errors', not errs, errs[:3])
+    ctx.close(); b.close()
+    return fails
+
+
 def fullscreen(pw):
     """23 Sep 2026: the map's full-screen mode. The map block takes the screen (Fullscreen API, or the fixed fallback), the wrapper is
     sized to the screen, fit width / fit height / 1:1 keep working on that box, the glyph legend folds and unfolds, leaving restores
@@ -771,6 +824,6 @@ def fullscreen(pw):
 
 if __name__ == '__main__':
     with sync_playwright() as pw:
-        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800) + sorting(pw, 1280, 900) + sorting(pw, 400, 800) + chapter8(pw, 1280, 900) + chapter8(pw, 400, 800) + laptop(pw) + selections(pw) + hints(pw) + fullscreen(pw) + review23b(pw) + review23c(pw) + strip(pw) + folds(pw)
+        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800) + sorting(pw, 1280, 900) + sorting(pw, 400, 800) + chapter8(pw, 1280, 900) + chapter8(pw, 400, 800) + laptop(pw) + selections(pw) + hints(pw) + fullscreen(pw) + review23b(pw) + review23c(pw) + strip(pw) + folds(pw) + stripmodes(pw)
     print('RESULT:', 'PASS' if not f else f'FAIL {f}')
     sys.exit(1 if f else 0)

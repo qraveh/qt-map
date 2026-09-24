@@ -463,13 +463,17 @@ function zoomStep(d){ const cur=zoomPct(state.zoom); let i=0; for(let k=1;k<ZSTE
     const y=bar.getBoundingClientRect().top+window.pageYOffset-off; window.scrollTo(0,Math.max(0,y));
     const b=box(); const cs=getComputedStyle(wrap); const bh=(parseFloat(cs.borderTopWidth)||0)+(parseFloat(cs.borderBottomWidth)||0);
     const top=wrap.getBoundingClientRect().top; const avail=Math.max(200,Math.min(b.h0,window.innerHeight-top-6));
-    wrap.style.maxHeight=avail+'px';
+    fitTo(avail); }
+  // the whole map, top to bottom, in a box of the given height (the wrapper takes that height; the zoom follows)
+  function fitTo(avail){ state.fitMode=null; wrap.classList.add('tall'); wrap.style.maxHeight=avail+'px'; const b=box(); const cs=getComputedStyle(wrap); const bh=(parseFloat(cs.borderTopWidth)||0)+(parseFloat(cs.borderBottomWidth)||0);
     const inner=avail-bh; let z=(inner-1)/H; if(Math.floor(W*z)>b.w0) z=(inner-b.sb.h-1)/H;
     applyZoom(z,false); wrap.scrollTop=0; }
+  window.__fitHeightTo=fitTo; window.__fitWidth=fitWidth; window.__fitModeIsWidth=()=>state.fitMode==='width';
   const zfh=document.getElementById('zoom-fith'); if(zfh)zfh.addEventListener('click',fitHeight);
   // align top: the map *header* (the bar with the controls and the zoom window) goes to the top of the window and the map
   // takes the rest of the height; the wrapper keeps that height until the window is resized
   function pageBarH(){ const b=document.querySelector('.mobilebar'); return (b&&getComputedStyle(b).position==='sticky'&&b.offsetParent)?b.offsetHeight:0; }
+  window.__pageBarH=pageBarH;
   function tallHeight(){ const off=pageBarH()+4; const bar=document.getElementById('mapbar'); const gap=bar?(wrap.getBoundingClientRect().top-bar.getBoundingClientRect().top):0; return Math.max(300,window.innerHeight-off-gap-6); }
   function alignTop(){ const off=pageBarH()+4; const bar=document.getElementById('mapbar')||wrap; wrap.classList.add('tall'); wrap.style.maxHeight=tallHeight()+'px';
     const y=bar.getBoundingClientRect().top+window.pageYOffset-off; window.scrollTo({top:Math.max(0,y),behavior:'smooth'}); }
@@ -499,6 +503,7 @@ function zoomStep(d){ const cur=zoomPct(state.zoom); let i=0; for(let k=1;k<ZSTE
     sum.innerHTML=parts.join(' · '); }
   function setC(c){ bar.classList.toggle('collapsed',c); tog.setAttribute('aria-expanded',String(!c)); tog.querySelector('.when-open').hidden=c; tog.querySelector('.when-closed').hidden=!c; sum.hidden=!c; if(c)summary(); try{localStorage.setItem(KEY,c?'1':'0');}catch(e){} if(window.__refitTall)window.__refitTall(); }
   window.__barSummary=()=>{ if(bar.classList.contains('collapsed'))summary(); };
+  window.__barCollapsed=()=>bar.classList.contains('collapsed'); window.__setBarCollapsed=setC;
   let c=true; try{const v=localStorage.getItem(KEY); if(v!==null)c=(v==='1');}catch(e){}   // collapsed by default (23 Sep 2026); the reader's last choice is kept
   setC(c); tog.addEventListener('click',()=>setC(!bar.classList.contains('collapsed')));
   document.querySelectorAll('[data-setlang]').forEach(b=>b.addEventListener('click',()=>setTimeout(()=>{ if(bar.classList.contains('collapsed'))summary(); },0)));
@@ -583,16 +588,60 @@ relabel(); inspectEmpty(); applyLens(); renderPC();
   function size(){ if(!on())return; const top=wrap.getBoundingClientRect().top-body.getBoundingClientRect().top+body.scrollTop; const h=Math.max(240,body.clientHeight-top-10); wrap.classList.add('tall'); wrap.style.maxHeight=h+'px'; }
   let glyphWasOpen=null, pageY=null; const gl=document.getElementById('glyphlegend');
   function paint(){ const f=on(); body.classList.toggle('fs',f); btns().forEach(b=>{ b.setAttribute('aria-pressed',String(f)); b.querySelectorAll('.fs-on').forEach(x=>x.hidden=f); b.querySelectorAll('.fs-off').forEach(x=>x.hidden=!f); });
-    if(f){ if(gl&&glyphWasOpen===null){ glyphWasOpen=gl.open; gl.open=false; } size(); }   // the glyph legend folds to give the map the height; it reopens on leaving
-    else { wrap.style.maxHeight=''; wrap.classList.remove('tall'); if(gl&&glyphWasOpen!==null){ gl.open=glyphWasOpen; glyphWasOpen=null; } if(pageY!==null){ const y=pageY; pageY=null; window.scrollTo(0,y); requestAnimationFrame(()=>{ window.scrollTo(0,y); requestAnimationFrame(()=>window.scrollTo(0,y)); }); } }
+    if(f){ if(gl&&glyphWasOpen===null){ glyphWasOpen=gl.open; gl.open=false; } if(body.classList.contains('both')&&window.__fitBoth)window.__fitBoth(); else size(); }   // the glyph legend folds to give the map the height; it reopens on leaving
+    else { if(body.classList.contains('both')&&window.__stripModeOff)window.__stripModeOff(true); wrap.style.maxHeight=''; wrap.classList.remove('tall'); if(gl&&glyphWasOpen!==null){ gl.open=glyphWasOpen; glyphWasOpen=null; } if(pageY!==null){ const y=pageY; pageY=null; window.scrollTo(0,y); requestAnimationFrame(()=>{ window.scrollTo(0,y); requestAnimationFrame(()=>window.scrollTo(0,y)); }); } }
     if(window.__refit)window.__refit(); if(window.__sheetRoom)window.__sheetRoom(); if(window.__placeZoom)window.__placeZoom(); }
   function enter(){ pageY=window.scrollY; if(window.__expandMap)window.__expandMap(); const req=body.requestFullscreen||body.webkitRequestFullscreen; if(req){ try{ const r=req.call(body); if(r&&r.catch)r.catch(()=>{ body.classList.add('fsfake'); paint(); }); return; }catch(e){} } body.classList.add('fsfake'); paint(); }
   function leave(){ if(document.fullscreenElement===body&&document.exitFullscreen)document.exitFullscreen(); else if(document.webkitFullscreenElement===body&&document.webkitExitFullscreen)document.webkitExitFullscreen(); body.classList.remove('fsfake'); paint(); }
   btns().forEach(b=>b.addEventListener('click',()=>on()?leave():enter()));
   document.addEventListener('fullscreenchange',paint); document.addEventListener('webkitfullscreenchange',paint);
   document.addEventListener('keydown',ev=>{ if(ev.key==='Escape'&&body.classList.contains('fsfake'))leave(); });
-  let rt=null; window.addEventListener('resize',()=>{ if(!on())return; clearTimeout(rt); rt=setTimeout(()=>{ size(); if(window.__refit)window.__refit(); },120); });
+  let rt=null; window.addEventListener('resize',()=>{ if(!on())return; clearTimeout(rt); rt=setTimeout(()=>{ if(body.classList.contains('both')&&window.__fitBoth)window.__fitBoth(); else { size(); if(window.__refit)window.__refit(); } },120); });
   window.__mapFullscreen=(f)=>{ f?enter():leave(); return on(); }; window.__mapFullscreenOn=on;
+})();
+
+// ---------- the map and the strip together (24 Sep 2026): "fit height" puts the map's bar at the top of the window and
+// shares the height between the map and the strip; "full screen" does the same on the whole screen. Both hide the map's
+// footer legend, the caption fold, the strip's title and its header legend; the strip keeps at most a third of the height.
+(function(){ const body=document.getElementById('mapbody'), wrap=document.getElementById('mapwrap'), pcw=document.getElementById('pcwrap'); if(!body||!wrap||!pcw)return;
+  const bFit=document.getElementById('pc-fith'), bFs=document.getElementById('pc-fs'); let mode=null, savedMax='', wasWidth=false;
+  function fitBoth(){ if(!mode)return; const fs=!!(window.__mapFullscreenOn&&window.__mapFullscreenOn()); const off=fs?0:((window.__pageBarH?window.__pageBarH():0)+4);
+    const bar=document.getElementById('mapbar')||wrap;
+    if(!fs){ const y=bar.getBoundingClientRect().top+window.pageYOffset-off; window.scrollTo(0,Math.max(0,y)); }
+    const origin=fs?body.getBoundingClientRect().top:0; const limit=fs?body.clientHeight:window.innerHeight;
+    const top=wrap.getBoundingClientRect().top-origin; const strip=pcw.getBoundingClientRect().height;
+    const avail=Math.max(200,limit-top-strip-10);
+    if(window.__fitHeightTo)window.__fitHeightTo(avail); }
+  function paint(){ body.classList.toggle('both',!!mode); if(bFit)bFit.setAttribute('aria-pressed',String(mode==='fit')); if(bFs)bFs.setAttribute('aria-pressed',String(mode==='fs'));
+    if(bFs){ bFs.querySelectorAll('.fs-on').forEach(x=>x.hidden=(mode==='fs')); bFs.querySelectorAll('.fs-off').forEach(x=>x.hidden=(mode!=='fs')); } }
+  let barWas=null;
+  function tuck(){ if(barWas===null&&window.__barCollapsed){ barWas=window.__barCollapsed(); if(!barWas&&window.__setBarCollapsed)window.__setBarCollapsed(true); } }   // the controls bar folds to its summary line; the reader's state returns on leaving
+  function untuck(){ if(barWas!==null){ if(!barWas&&window.__setBarCollapsed)window.__setBarCollapsed(false); barWas=null; } }
+  function enterFit(){ if(mode==='fs'){ if(window.__mapFullscreen)window.__mapFullscreen(false); } mode='fit'; savedMax=wrap.style.maxHeight; wasWidth=!!(window.__fitModeIsWidth&&window.__fitModeIsWidth()); tuck(); paint(); fitBoth(); }
+  function off(fromFs){ if(!mode)return; const was=mode; mode=null; paint(); untuck(); wrap.style.maxHeight=savedMax; if(!savedMax)wrap.classList.remove('tall'); if(wasWidth&&window.__fitWidth)window.__fitWidth();
+    if(was==='fs'&&!fromFs&&window.__mapFullscreenOn&&window.__mapFullscreenOn()&&window.__mapFullscreen)window.__mapFullscreen(false); }
+  function enterFs(){ mode='fs'; savedMax=wrap.style.maxHeight; wasWidth=!!(window.__fitModeIsWidth&&window.__fitModeIsWidth()); tuck(); paint(); if(window.__mapFullscreen)window.__mapFullscreen(true); if(window.__mapFullscreenOn&&window.__mapFullscreenOn())fitBoth(); }
+  if(bFit)bFit.addEventListener('click',()=>mode==='fit'?off(false):enterFit());
+  if(bFs)bFs.addEventListener('click',()=>mode==='fs'?off(false):enterFs());
+  let rt=null; window.addEventListener('resize',()=>{ if(mode!=='fit')return; clearTimeout(rt); rt=setTimeout(fitBoth,150); });
+  window.__fitBoth=fitBoth; window.__stripModeOff=off; window.__stripMode=()=>mode;
+  // the strip's header legend folds like the map's caption; the reader's choice is kept
+  const d=document.getElementById('pclead'); if(d){ const KEY='qmap.pclead'; try{ const v=localStorage.getItem(KEY); if(v!==null)d.open=(v==='1'); }catch(e){} d.addEventListener('toggle',()=>{ try{localStorage.setItem(KEY,d.open?'1':'0');}catch(e){} }); }
+})();
+
+// ---------- the map scrolls on its own; at its bottom, two more wheel notches (or two clicks on the scrollbar's down arrow)
+// hand over to the page, which scrolls until the map has left the window (24 Sep 2026)
+(function(){ const wrap=document.getElementById('mapwrap'), body=document.getElementById('mapbody'); if(!wrap||!body)return; let n=0, t=null;
+  const atBottom=()=>wrap.scrollHeight>wrap.clientHeight+1&&wrap.scrollTop+wrap.clientHeight>=wrap.scrollHeight-1;
+  function bump(ev){ n++; clearTimeout(t); t=setTimeout(()=>{n=0;},1500); if(n>=2){ n=0; if(ev&&ev.cancelable)ev.preventDefault(); go(); } }
+  function go(){ const fs=!!(window.__mapFullscreenOn&&window.__mapFullscreenOn()); const end=document.querySelector('#mapbody .legend')||wrap;
+    if(fs){ const y=end.getBoundingClientRect().bottom-body.getBoundingClientRect().top+body.scrollTop-2; body.scrollTo({top:y,behavior:'smooth'}); }
+    else { const off=(window.__pageBarH?window.__pageBarH():0); const y=end.getBoundingClientRect().bottom+window.pageYOffset-off+2; window.scrollTo({top:Math.max(0,y),behavior:'smooth'}); } }
+  wrap.addEventListener('wheel',ev=>{ if(ev.deltaY<=0){ n=0; return; } if(!atBottom()){ n=0; return; } bump(ev); },{passive:false});
+  wrap.addEventListener('mousedown',ev=>{ const r=wrap.getBoundingClientRect(); const x=ev.clientX-r.left, y=ev.clientY-r.top; const sbw=wrap.offsetWidth-wrap.clientWidth;
+    if(sbw>0&&x>=wrap.clientWidth&&y>=wrap.clientHeight-20&&atBottom())bump(null); });
+  wrap.addEventListener('scroll',()=>{ if(!atBottom())n=0; },{passive:true});
+  window.__mapScrollEscape=go; window.__mapScrollBump=()=>bump(null);
 })();
 
 // ---------- floating card: drag, dock, remember

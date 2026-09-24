@@ -370,6 +370,23 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 /* parallel coordinates */
 .pcwrap{margin-top:14px;border:1px solid var(--rule);border-radius:10px;background:var(--surface);padding:10px 12px 4px}
 .pcwrap h3{margin:0 0 4px;font-size:15px}
+/* the strip's header: title with its fold, and the toolbar for the map-and-strip modes (24 Sep 2026) */
+.pchead{display:flex;align-items:flex-start;justify-content:space-between;gap:8px 12px;flex-wrap:wrap}
+.pchead h3{flex:1 1 auto;min-width:0}
+.pctools{flex:0 0 auto;box-shadow:none;background:var(--surface2)}
+.pclead>summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--ink2);padding:2px 0;margin:0 0 4px}
+.pclead>summary::-webkit-details-marker{display:none}
+.pclead>summary::after{content:"▸";color:var(--muted);font-size:11px}
+.pclead[open]>summary::after{content:"▾"}
+/* map and strip together (fit height, full screen): the map's footer legend, the caption fold, the strip's title and its
+   header legend give way; the strip is capped so the map keeps most of the height; no frames between the two */
+#mapbody.both .legend,#mapbody.both .maplead,#mapbody.both .pchead h3,#mapbody.both #pclead{display:none}
+#mapbody.both .pchead{justify-content:flex-end;margin:0}
+#mapbody.both .pcwrap{margin-top:4px;padding:2px 8px 0;border-color:transparent;background:transparent}
+#mapbody.both #pc svg{max-height:34vh;max-height:34dvh;width:auto;max-width:100%;margin:0 auto}
+#mapbody.both .mapgrid{border-radius:0 0 4px 4px}
+#mapbody.both.fs .mapgrid,#mapbody.both.fs .mapbar{border-color:transparent}
+#mapbody.both .secbody[data-sec="pcwrap"][hidden]{display:block}
 .pcwrap p{margin:0 0 6px;color:var(--ink2);font-size:13px}
 .pcwrap svg{width:100%;height:auto;display:block;font-family:"Golos Text",system-ui,sans-serif}
 .pc-axis line{stroke:var(--rule)}
@@ -765,10 +782,12 @@ figure.fig81 .pt:hover .mk{stroke-width:2.6}
  <span class="k"><svg viewBox="0 0 26 16"><rect x="4" y="6" width="7" height="4" rx="1" fill="var(--ion)"/><rect x="14" y="6" width="7" height="4" rx="1" fill="none" stroke="var(--atom)"/></svg><span class="lang-en">line badges: primary ■ / alternate □</span><span class="lang-ru">метки линий: основной ■ / альтернатива □</span></span>
 </div>
 <div class="maplead"><details id="maplead"><summary><span class="lang-en">How to read the map</span><span class="lang-ru">Как читать карту</span></summary><p class="lead lang-en">Columns are the ten layers of a quantum-computing stack, from the qubit’s carrier on the left to manufacturing on the right; each column holds the technologies that fill that layer. Within a column a technology sits higher the more natural its carrier is (atoms, ions and photons at the top) and lower the more fabricated (circuits, dots and cavities at the bottom). The order is not decoration: it predicts behaviour — natural carriers are identical and long-lived but slow and optically driven, fabricated ones are fast and wired but differ from unit to unit — and most technologies of a layer follow it. A hatched station breaks the order: a platform borrowing a trait from the other side, which is the map’s test of a genuine move (<a class="xref" href="#en-s7-6">§7.6</a>). Coloured lines are the fourteen platform paths, one station per layer; a station marked ◎ is a hub — three or more qubit families depend on it (two, if the technology is young) — so a fix or a stall there reaches several platforms at once; dashed hollow stations are slots nobody has filled. Click a station for its brief, pick a lens to recolour the map by one attribute, or choose a machine to light the stations it uses; the strip below shows the seven-attribute vector of every technology. Construction rules and derived tables: <a class="xref" href="#en-s7">§7</a>.</p><p class="lead lang-ru">Колонки — десять слоёв стека квантового компьютера, от носителя кубита слева до производства справа; в каждой колонке — технологии, заполняющие этот слой. Внутри колонки технология стоит тем выше, чем естественнее её носитель (атомы, ионы и фотоны — вверху), и тем ниже, чем больше он изготовлен (схемы, квантовые точки и резонаторы — внизу). Этот порядок не украшение: он предсказывает поведение — естественные носители одинаковы и долгоживущи, но медленны и управляются оптически, изготовленные быстры и подключены проводами, но различаются от экземпляра к экземпляру, — и большинство технологий слоя ему следует. Заштрихованная станция порядок нарушает: платформа заимствует свойство с другой стороны — это и есть тест карты на настоящий ход (<a class="xref" href="#ru-s7-6">§7.6</a>). Цветные линии — четырнадцать путей платформ, по одной станции на слой; станция со знаком ◎ — хаб: от неё зависят три семейства кубитов и более (два — если технология молода), так что исправление или заминка в ней достигает сразу нескольких платформ; пунктирные полые станции — слоты, которые никто не заполнил. Кликните станцию, чтобы открыть её бриф; выберите линзу, чтобы перекрасить карту по одному атрибуту, или машину, чтобы подсветить станции, которые она использует; лента ниже показывает вектор из семи атрибутов каждой технологии. Правила построения и выведенные таблицы — в <a class="xref" href="#ru-s7">§7</a>.</p></details></div>
-<div class="pcwrap" id="pcwrap"><h3><span class="lang-en">Technologies across the seven attributes — a parallel-coordinates view</span><span class="lang-ru">Технологии по семи атрибутам — вид в параллельных координатах</span><button type="button" class="foldbtn" data-sec="pcwrap" aria-expanded="true" title="collapse / expand"></button></h3>
+<div class="pcwrap" id="pcwrap"><div class="pchead"><h3><span class="lang-en">Technologies across the seven attributes — a parallel-coordinates view</span><span class="lang-ru">Технологии по семи атрибутам — вид в параллельных координатах</span><button type="button" class="foldbtn" data-sec="pcwrap" aria-expanded="true" title="collapse / expand"></button></h3><div class="zoomctl pctools" role="group" aria-label="map and strip together"><button type="button" class="zb zt" id="pc-fith" aria-pressed="false" title="fit height: the map and this view together in the window; again to leave"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M8 2v12M8 2L5 5M8 2l3 3M8 14l-3-3M8 14l3-3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lang-en">fit height</span><span class="lang-ru">по высоте</span></button><button type="button" class="zb zt zfs" id="pc-fs" aria-pressed="false" title="full screen: the map and this view together — Esc or this button to leave"><i class="fs-on"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lang-en">full screen</span><span class="lang-ru">весь экран</span></i><i class="fs-off" hidden><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M6 2v4H2M14 6h-4V2M10 14v-4h4M2 10h4v4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lang-en">leave</span><span class="lang-ru">выйти</span></i></button></div></div>
 <div class="secbody" data-sec="pcwrap">
+<details class="pclead" id="pclead" open><summary><span class="lang-en">How to read this view</span><span class="lang-ru">Как читать этот вид</span></summary>
 <p class="lang-en">Each polyline is one technology (a station of the map, a node of the graph — the three words name the same thing in its three homes: the field, the map, the data); the vertical axes are its seven design attributes (a)–(g) of §7.1. Hover to name a line — its station lights on the map, and a hovered station lights its line; click a line to select the station. The axes are the map's lenses: click an axis title to colour the map by that attribute (a second click clears the chosen values), click a value on an axis to keep only the technologies with it (Ctrl-click adds a value); the lit, dimmed and dashed lines follow the map's selection. Bundles reveal the diagonal (natural carriers run through optical control and transport; fabricated ones through microwave/electrical control and static wiring); lines that cross the bundles are the off-diagonal technologies.</p>
 <p class="lang-ru">Каждая ломаная — одна технология (станция карты, узел графа — три слова называют одно и то же в трёх его домах: отрасли, карте, данных); вертикальные оси — её семь атрибутов проектирования (a)–(g) из §7.1. Наведите на линию, чтобы назвать её — её станция подсветится на карте, а наведение на станцию подсвечивает её линию; клик по линии выбирает станцию. Оси — это линзы карты: клик по заголовку оси раскрашивает карту по этому атрибуту (повторный клик снимает выбранные значения), клик по значению на оси оставляет только технологии с этим значением (Ctrl-клик добавляет значение); подсвеченные, приглушённые и пунктирные линии следуют выбору на карте. Пучки показывают диагональ (естественные носители идут через оптическое управление и транспорт; изготовленные — через СВЧ/электрическое управление и статическую разводку); линии, пересекающие пучки, — off-diagonal технологии.</p>
+</details>
 <div id="pc"></div></div></div></div></div>
   <div class="prose lang-en" lang="en"><h2 id="en-s-about">About the map<button type="button" class="foldbtn" data-sec="en-s-about" aria-expanded="true" title="collapse / expand"></button></h2><div class="secbody" data-sec="en-s-about">
 <p><strong>Why a Quantum Technology Map.</strong> Quantum computing has no universally best technology, because it has no single goal. Every platform presents a computation with an error channel, a clock (its error-correction <span class="tt" data-t="term-qec-cycle">cycle time</span>), a qubit count and a scaling path, and every goal weighs the four differently: a cryptanalytic machine is a fast clock on ~10³ logical qubits; a lattice-gauge simulator wants many qubits, rich connectivity and high-dimensional local degrees of freedom, and tolerates a slow clock; a network node cannot be built from superconducting qubits at all — the only carrier that leaves the cryostat is a photon. Comparisons are nevertheless made at the level of <em>platforms</em> — superconducting versus ions versus atoms — although a platform is an assembly of separable technologies, and the decisions that matter (what to research, what to build, whom to partner with, what to buy) are made one technology at a time. The material that exists today comes in three kinds, each blind in its own way: vendor roadmaps (intentions, not results), market monitors (money, not engineering) and academic reviews (engineering, not economics, and dated on arrival). The map exists so that every technology in the quantum-computing stack can be read on the same attributes, against dated evidence, with its conflicts and its economics in one place — and so that the picture is refreshed several times a year rather than once.</p>
@@ -43894,13 +43913,17 @@ function zoomStep(d){ const cur=zoomPct(state.zoom); let i=0; for(let k=1;k<ZSTE
     const y=bar.getBoundingClientRect().top+window.pageYOffset-off; window.scrollTo(0,Math.max(0,y));
     const b=box(); const cs=getComputedStyle(wrap); const bh=(parseFloat(cs.borderTopWidth)||0)+(parseFloat(cs.borderBottomWidth)||0);
     const top=wrap.getBoundingClientRect().top; const avail=Math.max(200,Math.min(b.h0,window.innerHeight-top-6));
-    wrap.style.maxHeight=avail+'px';
+    fitTo(avail); }
+  // the whole map, top to bottom, in a box of the given height (the wrapper takes that height; the zoom follows)
+  function fitTo(avail){ state.fitMode=null; wrap.classList.add('tall'); wrap.style.maxHeight=avail+'px'; const b=box(); const cs=getComputedStyle(wrap); const bh=(parseFloat(cs.borderTopWidth)||0)+(parseFloat(cs.borderBottomWidth)||0);
     const inner=avail-bh; let z=(inner-1)/H; if(Math.floor(W*z)>b.w0) z=(inner-b.sb.h-1)/H;
     applyZoom(z,false); wrap.scrollTop=0; }
+  window.__fitHeightTo=fitTo; window.__fitWidth=fitWidth; window.__fitModeIsWidth=()=>state.fitMode==='width';
   const zfh=document.getElementById('zoom-fith'); if(zfh)zfh.addEventListener('click',fitHeight);
   // align top: the map *header* (the bar with the controls and the zoom window) goes to the top of the window and the map
   // takes the rest of the height; the wrapper keeps that height until the window is resized
   function pageBarH(){ const b=document.querySelector('.mobilebar'); return (b&&getComputedStyle(b).position==='sticky'&&b.offsetParent)?b.offsetHeight:0; }
+  window.__pageBarH=pageBarH;
   function tallHeight(){ const off=pageBarH()+4; const bar=document.getElementById('mapbar'); const gap=bar?(wrap.getBoundingClientRect().top-bar.getBoundingClientRect().top):0; return Math.max(300,window.innerHeight-off-gap-6); }
   function alignTop(){ const off=pageBarH()+4; const bar=document.getElementById('mapbar')||wrap; wrap.classList.add('tall'); wrap.style.maxHeight=tallHeight()+'px';
     const y=bar.getBoundingClientRect().top+window.pageYOffset-off; window.scrollTo({top:Math.max(0,y),behavior:'smooth'}); }
@@ -43930,6 +43953,7 @@ function zoomStep(d){ const cur=zoomPct(state.zoom); let i=0; for(let k=1;k<ZSTE
     sum.innerHTML=parts.join(' · '); }
   function setC(c){ bar.classList.toggle('collapsed',c); tog.setAttribute('aria-expanded',String(!c)); tog.querySelector('.when-open').hidden=c; tog.querySelector('.when-closed').hidden=!c; sum.hidden=!c; if(c)summary(); try{localStorage.setItem(KEY,c?'1':'0');}catch(e){} if(window.__refitTall)window.__refitTall(); }
   window.__barSummary=()=>{ if(bar.classList.contains('collapsed'))summary(); };
+  window.__barCollapsed=()=>bar.classList.contains('collapsed'); window.__setBarCollapsed=setC;
   let c=true; try{const v=localStorage.getItem(KEY); if(v!==null)c=(v==='1');}catch(e){}   // collapsed by default (23 Sep 2026); the reader's last choice is kept
   setC(c); tog.addEventListener('click',()=>setC(!bar.classList.contains('collapsed')));
   document.querySelectorAll('[data-setlang]').forEach(b=>b.addEventListener('click',()=>setTimeout(()=>{ if(bar.classList.contains('collapsed'))summary(); },0)));
@@ -44014,16 +44038,60 @@ relabel(); inspectEmpty(); applyLens(); renderPC();
   function size(){ if(!on())return; const top=wrap.getBoundingClientRect().top-body.getBoundingClientRect().top+body.scrollTop; const h=Math.max(240,body.clientHeight-top-10); wrap.classList.add('tall'); wrap.style.maxHeight=h+'px'; }
   let glyphWasOpen=null, pageY=null; const gl=document.getElementById('glyphlegend');
   function paint(){ const f=on(); body.classList.toggle('fs',f); btns().forEach(b=>{ b.setAttribute('aria-pressed',String(f)); b.querySelectorAll('.fs-on').forEach(x=>x.hidden=f); b.querySelectorAll('.fs-off').forEach(x=>x.hidden=!f); });
-    if(f){ if(gl&&glyphWasOpen===null){ glyphWasOpen=gl.open; gl.open=false; } size(); }   // the glyph legend folds to give the map the height; it reopens on leaving
-    else { wrap.style.maxHeight=''; wrap.classList.remove('tall'); if(gl&&glyphWasOpen!==null){ gl.open=glyphWasOpen; glyphWasOpen=null; } if(pageY!==null){ const y=pageY; pageY=null; window.scrollTo(0,y); requestAnimationFrame(()=>{ window.scrollTo(0,y); requestAnimationFrame(()=>window.scrollTo(0,y)); }); } }
+    if(f){ if(gl&&glyphWasOpen===null){ glyphWasOpen=gl.open; gl.open=false; } if(body.classList.contains('both')&&window.__fitBoth)window.__fitBoth(); else size(); }   // the glyph legend folds to give the map the height; it reopens on leaving
+    else { if(body.classList.contains('both')&&window.__stripModeOff)window.__stripModeOff(true); wrap.style.maxHeight=''; wrap.classList.remove('tall'); if(gl&&glyphWasOpen!==null){ gl.open=glyphWasOpen; glyphWasOpen=null; } if(pageY!==null){ const y=pageY; pageY=null; window.scrollTo(0,y); requestAnimationFrame(()=>{ window.scrollTo(0,y); requestAnimationFrame(()=>window.scrollTo(0,y)); }); } }
     if(window.__refit)window.__refit(); if(window.__sheetRoom)window.__sheetRoom(); if(window.__placeZoom)window.__placeZoom(); }
   function enter(){ pageY=window.scrollY; if(window.__expandMap)window.__expandMap(); const req=body.requestFullscreen||body.webkitRequestFullscreen; if(req){ try{ const r=req.call(body); if(r&&r.catch)r.catch(()=>{ body.classList.add('fsfake'); paint(); }); return; }catch(e){} } body.classList.add('fsfake'); paint(); }
   function leave(){ if(document.fullscreenElement===body&&document.exitFullscreen)document.exitFullscreen(); else if(document.webkitFullscreenElement===body&&document.webkitExitFullscreen)document.webkitExitFullscreen(); body.classList.remove('fsfake'); paint(); }
   btns().forEach(b=>b.addEventListener('click',()=>on()?leave():enter()));
   document.addEventListener('fullscreenchange',paint); document.addEventListener('webkitfullscreenchange',paint);
   document.addEventListener('keydown',ev=>{ if(ev.key==='Escape'&&body.classList.contains('fsfake'))leave(); });
-  let rt=null; window.addEventListener('resize',()=>{ if(!on())return; clearTimeout(rt); rt=setTimeout(()=>{ size(); if(window.__refit)window.__refit(); },120); });
+  let rt=null; window.addEventListener('resize',()=>{ if(!on())return; clearTimeout(rt); rt=setTimeout(()=>{ if(body.classList.contains('both')&&window.__fitBoth)window.__fitBoth(); else { size(); if(window.__refit)window.__refit(); } },120); });
   window.__mapFullscreen=(f)=>{ f?enter():leave(); return on(); }; window.__mapFullscreenOn=on;
+})();
+
+// ---------- the map and the strip together (24 Sep 2026): "fit height" puts the map's bar at the top of the window and
+// shares the height between the map and the strip; "full screen" does the same on the whole screen. Both hide the map's
+// footer legend, the caption fold, the strip's title and its header legend; the strip keeps at most a third of the height.
+(function(){ const body=document.getElementById('mapbody'), wrap=document.getElementById('mapwrap'), pcw=document.getElementById('pcwrap'); if(!body||!wrap||!pcw)return;
+  const bFit=document.getElementById('pc-fith'), bFs=document.getElementById('pc-fs'); let mode=null, savedMax='', wasWidth=false;
+  function fitBoth(){ if(!mode)return; const fs=!!(window.__mapFullscreenOn&&window.__mapFullscreenOn()); const off=fs?0:((window.__pageBarH?window.__pageBarH():0)+4);
+    const bar=document.getElementById('mapbar')||wrap;
+    if(!fs){ const y=bar.getBoundingClientRect().top+window.pageYOffset-off; window.scrollTo(0,Math.max(0,y)); }
+    const origin=fs?body.getBoundingClientRect().top:0; const limit=fs?body.clientHeight:window.innerHeight;
+    const top=wrap.getBoundingClientRect().top-origin; const strip=pcw.getBoundingClientRect().height;
+    const avail=Math.max(200,limit-top-strip-10);
+    if(window.__fitHeightTo)window.__fitHeightTo(avail); }
+  function paint(){ body.classList.toggle('both',!!mode); if(bFit)bFit.setAttribute('aria-pressed',String(mode==='fit')); if(bFs)bFs.setAttribute('aria-pressed',String(mode==='fs'));
+    if(bFs){ bFs.querySelectorAll('.fs-on').forEach(x=>x.hidden=(mode==='fs')); bFs.querySelectorAll('.fs-off').forEach(x=>x.hidden=(mode!=='fs')); } }
+  let barWas=null;
+  function tuck(){ if(barWas===null&&window.__barCollapsed){ barWas=window.__barCollapsed(); if(!barWas&&window.__setBarCollapsed)window.__setBarCollapsed(true); } }   // the controls bar folds to its summary line; the reader's state returns on leaving
+  function untuck(){ if(barWas!==null){ if(!barWas&&window.__setBarCollapsed)window.__setBarCollapsed(false); barWas=null; } }
+  function enterFit(){ if(mode==='fs'){ if(window.__mapFullscreen)window.__mapFullscreen(false); } mode='fit'; savedMax=wrap.style.maxHeight; wasWidth=!!(window.__fitModeIsWidth&&window.__fitModeIsWidth()); tuck(); paint(); fitBoth(); }
+  function off(fromFs){ if(!mode)return; const was=mode; mode=null; paint(); untuck(); wrap.style.maxHeight=savedMax; if(!savedMax)wrap.classList.remove('tall'); if(wasWidth&&window.__fitWidth)window.__fitWidth();
+    if(was==='fs'&&!fromFs&&window.__mapFullscreenOn&&window.__mapFullscreenOn()&&window.__mapFullscreen)window.__mapFullscreen(false); }
+  function enterFs(){ mode='fs'; savedMax=wrap.style.maxHeight; wasWidth=!!(window.__fitModeIsWidth&&window.__fitModeIsWidth()); tuck(); paint(); if(window.__mapFullscreen)window.__mapFullscreen(true); if(window.__mapFullscreenOn&&window.__mapFullscreenOn())fitBoth(); }
+  if(bFit)bFit.addEventListener('click',()=>mode==='fit'?off(false):enterFit());
+  if(bFs)bFs.addEventListener('click',()=>mode==='fs'?off(false):enterFs());
+  let rt=null; window.addEventListener('resize',()=>{ if(mode!=='fit')return; clearTimeout(rt); rt=setTimeout(fitBoth,150); });
+  window.__fitBoth=fitBoth; window.__stripModeOff=off; window.__stripMode=()=>mode;
+  // the strip's header legend folds like the map's caption; the reader's choice is kept
+  const d=document.getElementById('pclead'); if(d){ const KEY='qmap.pclead'; try{ const v=localStorage.getItem(KEY); if(v!==null)d.open=(v==='1'); }catch(e){} d.addEventListener('toggle',()=>{ try{localStorage.setItem(KEY,d.open?'1':'0');}catch(e){} }); }
+})();
+
+// ---------- the map scrolls on its own; at its bottom, two more wheel notches (or two clicks on the scrollbar's down arrow)
+// hand over to the page, which scrolls until the map has left the window (24 Sep 2026)
+(function(){ const wrap=document.getElementById('mapwrap'), body=document.getElementById('mapbody'); if(!wrap||!body)return; let n=0, t=null;
+  const atBottom=()=>wrap.scrollHeight>wrap.clientHeight+1&&wrap.scrollTop+wrap.clientHeight>=wrap.scrollHeight-1;
+  function bump(ev){ n++; clearTimeout(t); t=setTimeout(()=>{n=0;},1500); if(n>=2){ n=0; if(ev&&ev.cancelable)ev.preventDefault(); go(); } }
+  function go(){ const fs=!!(window.__mapFullscreenOn&&window.__mapFullscreenOn()); const end=document.querySelector('#mapbody .legend')||wrap;
+    if(fs){ const y=end.getBoundingClientRect().bottom-body.getBoundingClientRect().top+body.scrollTop-2; body.scrollTo({top:y,behavior:'smooth'}); }
+    else { const off=(window.__pageBarH?window.__pageBarH():0); const y=end.getBoundingClientRect().bottom+window.pageYOffset-off+2; window.scrollTo({top:Math.max(0,y),behavior:'smooth'}); } }
+  wrap.addEventListener('wheel',ev=>{ if(ev.deltaY<=0){ n=0; return; } if(!atBottom()){ n=0; return; } bump(ev); },{passive:false});
+  wrap.addEventListener('mousedown',ev=>{ const r=wrap.getBoundingClientRect(); const x=ev.clientX-r.left, y=ev.clientY-r.top; const sbw=wrap.offsetWidth-wrap.clientWidth;
+    if(sbw>0&&x>=wrap.clientWidth&&y>=wrap.clientHeight-20&&atBottom())bump(null); });
+  wrap.addEventListener('scroll',()=>{ if(!atBottom())n=0; },{passive:true});
+  window.__mapScrollEscape=go; window.__mapScrollBump=()=>bump(null);
 })();
 
 // ---------- floating card: drag, dock, remember
