@@ -749,6 +749,10 @@ def stripmodes(pw):
     r3 = p.evaluate("""()=>{const w=document.getElementById('mapwrap'); w.scrollTop=0; window.scrollTo(0,0); const y0=window.scrollY; w.dispatchEvent(new WheelEvent('wheel',{deltaY:100,bubbles:true,cancelable:true})); w.dispatchEvent(new WheelEvent('wheel',{deltaY:100,bubbles:true,cancelable:true})); return {y0, y1:window.scrollY};}""")
     p.wait_for_timeout(300)
     check('away from the bottom the wheel never hands over', p.evaluate("()=>window.scrollY") == 0, r3)
+    r4 = p.evaluate("""()=>{const w=document.getElementById('mapwrap'); w.scrollTop=0; const top=document.getElementById('mapbody').getBoundingClientRect().top+window.pageYOffset; window.scrollTo(0,top); const y0=window.scrollY;
+      const ev=()=>w.dispatchEvent(new WheelEvent('wheel',{deltaY:-100,bubbles:true,cancelable:true})); ev(); const y1=window.scrollY; ev(); return {y0, y1};}""")
+    p.wait_for_timeout(900)
+    check('at the map\'s top the second extra notch upward scrolls the page up (to the page top here: the masthead is shorter than the window)', r4['y0'] > 200 and r4['y1'] == r4['y0'] and p.evaluate("()=>window.scrollY") == 0, r4)
     p.click('#bartog'); p.wait_for_timeout(200)
     # header legend fold
     f = p.evaluate("()=>{const d=document.getElementById('pclead'); const was=d.open; d.open=false; d.dispatchEvent(new Event('toggle')); return {was, now:d.open, stored:localStorage.getItem('qmap.pclead')};}")

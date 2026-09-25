@@ -44093,18 +44093,25 @@ relabel(); inspectEmpty(); applyLens(); renderPC();
 })();
 
 // ---------- the map scrolls on its own; at its bottom, two more wheel notches (or two clicks on the scrollbar's down arrow)
-// hand over to the page, which scrolls until the map has left the window (24 Sep 2026)
-(function(){ const wrap=document.getElementById('mapwrap'), body=document.getElementById('mapbody'); if(!wrap||!body)return; let n=0, t=null;
-  const atBottom=()=>wrap.scrollHeight>wrap.clientHeight+1&&wrap.scrollTop+wrap.clientHeight>=wrap.scrollHeight-1;
-  function bump(ev){ n++; clearTimeout(t); t=setTimeout(()=>{n=0;},1500); if(n>=2){ n=0; if(ev&&ev.cancelable)ev.preventDefault(); go(); } }
-  function go(){ const fs=!!(window.__mapFullscreenOn&&window.__mapFullscreenOn()); const end=document.querySelector('#mapbody .legend')||wrap;
-    if(fs){ const y=end.getBoundingClientRect().bottom-body.getBoundingClientRect().top+body.scrollTop-2; body.scrollTo({top:y,behavior:'smooth'}); }
+// hand over to the page, which scrolls until the map has left the window; at its top the same two notches upward hand over
+// the other way — the page scrolls up until the map is below the window (or to the top of the page) (24–25 Sep 2026)
+(function(){ const wrap=document.getElementById('mapwrap'), body=document.getElementById('mapbody'); if(!wrap||!body)return; let n=0, dir=0, t=null;
+  const scrollable=()=>wrap.scrollHeight>wrap.clientHeight+1;
+  const atBottom=()=>scrollable()&&wrap.scrollTop+wrap.clientHeight>=wrap.scrollHeight-1;
+  const atTop=()=>scrollable()&&wrap.scrollTop<=0;
+  function bump(d,ev){ if(d!==dir){ dir=d; n=0; } n++; clearTimeout(t); t=setTimeout(()=>{n=0;},1500); if(n>=2){ n=0; if(ev&&ev.cancelable)ev.preventDefault(); d>0?goDown():goUp(); } }
+  function fs(){ return !!(window.__mapFullscreenOn&&window.__mapFullscreenOn()); }
+  function goDown(){ const end=document.querySelector('#mapbody .legend')||wrap;
+    if(fs()){ const y=end.getBoundingClientRect().bottom-body.getBoundingClientRect().top+body.scrollTop-2; body.scrollTo({top:y,behavior:'smooth'}); }
     else { const off=(window.__pageBarH?window.__pageBarH():0); const y=end.getBoundingClientRect().bottom+window.pageYOffset-off+2; window.scrollTo({top:Math.max(0,y),behavior:'smooth'}); } }
-  wrap.addEventListener('wheel',ev=>{ if(ev.deltaY<=0){ n=0; return; } if(!atBottom()){ n=0; return; } bump(ev); },{passive:false});
-  wrap.addEventListener('mousedown',ev=>{ const r=wrap.getBoundingClientRect(); const x=ev.clientX-r.left, y=ev.clientY-r.top; const sbw=wrap.offsetWidth-wrap.clientWidth;
-    if(sbw>0&&x>=wrap.clientWidth&&y>=wrap.clientHeight-20&&atBottom())bump(null); });
-  wrap.addEventListener('scroll',()=>{ if(!atBottom())n=0; },{passive:true});
-  window.__mapScrollEscape=go; window.__mapScrollBump=()=>bump(null);
+  function goUp(){ if(fs()){ body.scrollTo({top:0,behavior:'smooth'}); return; }
+    const top=body.getBoundingClientRect().top+window.pageYOffset; const y=top-window.innerHeight-2;   // the map's top edge just below the window
+    window.scrollTo({top:Math.max(0,y),behavior:'smooth'}); }
+  wrap.addEventListener('wheel',ev=>{ if(ev.deltaY>0){ if(atBottom())bump(1,ev); else n=0; } else if(ev.deltaY<0){ if(atTop())bump(-1,ev); else n=0; } },{passive:false});
+  wrap.addEventListener('mousedown',ev=>{ const r=wrap.getBoundingClientRect(); const x=ev.clientX-r.left, y=ev.clientY-r.top; const sbw=wrap.offsetWidth-wrap.clientWidth; if(!(sbw>0&&x>=wrap.clientWidth))return;
+    if(y>=wrap.clientHeight-20&&atBottom())bump(1,null); else if(y<=20&&atTop())bump(-1,null); });
+  wrap.addEventListener('scroll',()=>{ if(!atBottom()&&!atTop())n=0; },{passive:true});
+  window.__mapScrollEscape=goDown; window.__mapScrollEscapeUp=goUp; window.__mapScrollBump=(d)=>bump(d||1,null);
 })();
 
 // ---------- floating card: drag, dock, remember
