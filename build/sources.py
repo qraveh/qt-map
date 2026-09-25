@@ -437,7 +437,7 @@ def ieee(r):
         if r.get('date'): seg.append(fmt_date(r['date'], day=False))
         parts.append(', '.join(seg) + ('.' if not doi else ','))
         if doi: parts.append('doi: ' + _link('https://doi.org/' + doi, doi) + '.')
-        elif url: parts.append('[Online]. Available: ' + _link(url))
+        if url and not (doi and 'doi.org/' in url): parts.append('[Online]. Available: ' + _link(url))   # a report with a page of its own shows it beside the DOI
     else:
         site = (r.get('site') or r.get('venue') or host(url)).strip(); seg = []
         if site and (r.get('authors') or not _same_name(site, r.get('org') or '')): seg.append(esc(site))

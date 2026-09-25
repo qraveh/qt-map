@@ -112,7 +112,7 @@ L_ = r'<a href="[^"]+"[^>]*>[^<]+</a>'
 D_ = r'(?:(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\.? (?:\d{1,2}, )?)?\d{4}'
 JOUR = re.compile(r'^' + A_ + T_ + r' <i>[^<]+</i>(?:, vol\. [^,]+)?(?:, no\. [^,]+)?(?:, (?:pp\. [^,]+|Art\. no\. [^,]+|p\. [^,]+))?(?:, ' + D_ + r')?(?:, doi: ' + L_ + r'\.|\.(?: \[Online\]\. Available: ' + L_ + r')?)(?: ' + L_ + r'\.)?(?: Also ' + L_ + r'\.)*$')
 PRE = re.compile(r'^' + A_ + T_ + r' ' + L_ + r'(?:, ' + D_ + r')?\.(?: Also ' + L_ + r'\.)*$')
-REP = re.compile(r'^' + A_ + T_ + r'(?: [^<]+?)?(?:, ' + D_ + r')?(?:, doi: ' + L_ + r'\.|\.(?: \[Online\]\. Available: ' + L_ + r')?)(?: Also ' + L_ + r'\.)*$')
+REP = re.compile(r'^' + A_ + T_ + r'(?: [^<]+?)?(?:, ' + D_ + r')?(?:, doi: ' + L_ + r'\.(?: \[Online\]\. Available: ' + L_ + r')?|\.(?: \[Online\]\. Available: ' + L_ + r')?)(?: Also ' + L_ + r'\.)*$')
 WEB = re.compile(r'^' + A_ + T_ + r'(?: [^<]*?' + D_ + r'\.| [^<]+?\.)? \[Online\]\. Available: ' + L_ + r'(?: Also ' + L_ + r'\.)*$')
 kinds = collections.Counter()
 for scope, items in lists.items():

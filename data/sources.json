@@ -3780,5 +3780,35 @@
    "arxiv": "2609.03194",
    "note": "title and authors from the arXiv record (alphaxiv mirror); month from the arXiv identifier"
   }
+ ],
+ "X15": [
+  {
+   "authors": [
+    "Raveh Neeman"
+   ],
+   "title": "Superconductor Electronics Monitor",
+   "date": "2026",
+   "kind": "report",
+   "publisher": "Qodeh",
+   "doi": "10.5281/zenodo.21860767",
+   "url": "https://qodeh.com/publications/superconductor-electronics-monitor-2026/",
+   "hint": "the author's Superconductor Electronics Monitor",
+   "note": "the editor's canonical form (24 Sep 2026): title without the year, Qodeh, 2026, the site page and the DOI; DataCite titles the record \"Superconductor Electronics Monitor 2026\", issued 2026-09-06",
+   "verified": true
+  },
+  {
+   "authors": [
+    "Raveh Neeman"
+   ],
+   "title": "Superconductor Electronics Monitor",
+   "date": "2026",
+   "kind": "report",
+   "publisher": "Qodeh",
+   "doi": "10.5281/zenodo.21860767",
+   "url": "https://doi.org/10.5281/zenodo.21860767",
+   "hint": "the Monitor on Zenodo (DOI)",
+   "note": "the editor's canonical form (24 Sep 2026): title without the year, Qodeh, 2026, the site page and the DOI; DataCite titles the record \"Superconductor Electronics Monitor 2026\", issued 2026-09-06",
+   "verified": true
+  }
  ]
 }

@@ -3150,18 +3150,6 @@
    "url": "https://doi.org/10.1364/optica.400751",
    "verified": true
   },
-  "doi:10.5281/zenodo.21860767": {
-   "authors": [
-    "Raveh Neeman"
-   ],
-   "title": "Superconductor Electronics Monitor 2026",
-   "date": "2026-09-06",
-   "doi": "10.5281/zenodo.21860767",
-   "kind": "report",
-   "publisher": "Qodeh",
-   "url": "https://doi.org/10.5281/zenodo.21860767",
-   "verified": true
-  },
   "https://alice-bob.com/roadmap": {
    "org": "Alice & Bob",
    "title": "Roadmap",
@@ -6930,7 +6918,7 @@
     "grade": "D"
    },
    {
-    "work": "doi:10.5281/zenodo.21860767",
+    "work": "report:X15#0",
     "grade": "P"
    },
    {
