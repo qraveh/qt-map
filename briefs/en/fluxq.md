@@ -12,7 +12,7 @@ updated: 2026-09-04
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-A superconducting loop with a compound Josephson junction: flux bias sets barrier and tilt; the two circulating-current states are an Ising spin. D-Wave's line, D-Wave One (2011) through Advantage2 (GA 2025-05-20: 4,400+ qubits, Zephyr degree-20, 12.5 kW) [P][1], rests on it. No gate set, only a programmable transverse-field Ising Hamiltonian, sampled.
+A superconducting loop with a compound Josephson junction: flux bias sets barrier and tilt; the two circulating-current states are an Ising spin. D-Wave's line, D-Wave One (2011) through Advantage2 (GA 2025-05-20: 4,400+ qubits, Zephyr degree-20, 12.5 kW) [P][185], rests on it. No gate set, only a programmable transverse-field Ising Hamiltonian, sampled.
 Fabricated carrier; ~3 ns characteristic time, no deterministic entangling operation; dispersive readout ~1 µs, non-destructive, not mid-circuit.
 Degree-20 coupling; low-frequency flux control at mK; Pauli plus coherent error; superconducting lithography.
 
@@ -23,35 +23,35 @@ Tunnelling amplitude and persistent current set the well. Landau–Zener demands
 | Year | Figure | Who | Tag+key |
 |---|---|---|---|
 | 2021-09 | Zephyr topology, degree 20 | D-Wave | [G:DWAVE-ZEPHYR-2021] |
-| 2025-03 | Beyond-classical claim — quench dynamics, not optimisation | D-Wave | [D][2] |
-| 2025-05-20 | Advantage2 GA: 4,400+ qubits, 12.5 kW | D-Wave | [P][1] |
-| 2025–26 | Eroded by belief-propagation tensor networks; t-VMC | Tindall et al.; Mauron & Carleo | [D][3]; [D][4] |
+| 2025-03 | Beyond-classical claim — quench dynamics, not optimisation | D-Wave | [D][186] |
+| 2025-05-20 | Advantage2 GA: 4,400+ qubits, 12.5 kW | D-Wave | [P][185] |
+| 2025–26 | Eroded by belief-propagation tensor networks; t-VMC | Tindall et al.; Mauron & Carleo | [D][187]; [D][188] |
 
 Dominant error: thermal excitation near the minimum gap.
 
 ## Manufacturing, materials & supply chain
-Nb/Al multilayer superconducting lithography, the transmon fabs' family. The FY2024 10-K cites third-party foundries with a demonstrated second source; EDGAR returns nine SkyWater mentions in D-Wave 10-Ks 2023–26 [G:DWAVE-FAB-10K], and SkyWater is IonQ-owned since 2026-07-31 [G:IONQ-SKYWATER-2026] — that source sits inside a competitor. The real asset is I/O: multiplexed on-chip flux DACs hold room-temperature line count at O(100) for tens of thousands of qubits and couplers, versus O(qubits) for gate machines — though D-Wave quotes 200 bias wires (2026-01-06) and ~300 (whitepaper, 2026-01-23), unreconciled [C][G:DWAVE-FLUXDAC-LINECOUNT-CONFLICT]. The wall at 10⁴–10⁶ spins is minor-embedding overhead and the 12.5 kW cryoplant, not wiring. ECCN 4A906 keys on two-qubit gate error, undefined here; 3A904 refrigerators bite instead [G][5].
+Nb/Al multilayer superconducting lithography, the transmon fabs' family. The FY2024 10-K cites third-party foundries with a demonstrated second source; EDGAR returns nine SkyWater mentions in D-Wave 10-Ks 2023–26 [G:DWAVE-FAB-10K], and SkyWater is IonQ-owned since 2026-07-31 [G:IONQ-SKYWATER-2026] — that source sits inside a competitor. The real asset is I/O: multiplexed on-chip flux DACs hold room-temperature line count at O(100) for tens of thousands of qubits and couplers, versus O(qubits) for gate machines — though D-Wave quotes 200 bias wires (2026-01-06) and ~300 (whitepaper, 2026-01-23), unreconciled [C][G:DWAVE-FLUXDAC-LINECOUNT-CONFLICT]. The wall at 10⁴–10⁶ spins is minor-embedding overhead and the 12.5 kW cryoplant, not wiring. ECCN 4A906 keys on two-qubit gate error, undefined here; 3A904 refrigerators bite instead [G][225].
 
 ## Role in the stack
-Serves the annealing path only and feeds no gate-model path: D-Wave's gate roadmap runs on acquired Quantum Circuits dual-rail hardware, a different carrier [C][G:DWAVE-QCI-2026-01]. The transfer runs the other way: the flux-DAC chip now drives fluxonium, key parts made at NASA JPL [C][6]. No derived clock applies, nor randomized benchmarking or quantum volume, so every headline is time-to-solution against a classical solver. The March 2025 claim was eroded within weeks [3], [4]; D-Wave's counter (arXiv:2508.15759) inverts the burden, using the QPU as ground truth to argue tensor-network scaling extrapolations are unreliable [P][7]. Unresolved as of 4 Sep 2026.
+Serves the annealing path only and feeds no gate-model path: D-Wave's gate roadmap runs on acquired Quantum Circuits dual-rail hardware, a different carrier [C][G:DWAVE-QCI-2026-01]. The transfer runs the other way: the flux-DAC chip now drives fluxonium, key parts made at NASA JPL [C][245]. No derived clock applies, nor randomized benchmarking or quantum volume, so every headline is time-to-solution against a classical solver. The March 2025 claim was eroded within weeks [187], [188]; D-Wave's counter (arXiv:2508.15759) inverts the burden, using the QPU as ground truth to argue tensor-network scaling extrapolations are unreliable [P][189]. Unresolved as of 4 Sep 2026.
 
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What they do | Evidence |
 |---|---|---|---|---|
-| D-Wave Quantum | developer | US/Canada | Sole annealer vendor; Advantage2, Leap | [C][8] |
+| D-Wave Quantum | developer | US/Canada | Sole annealer vendor; Advantage2, Leap | [C][15] |
 | US Dept of Commerce | investor | US | $100 M CHIPS letter of intent | [G:CHIPS-LOI-2026-05] |
 | Anduril Industries | user | US | Stride solver on Advantage2 | [P][G:DWAVE-FAU-ANDURIL-2026-01] |
-| Florida Atlantic University | user | US | $20 M campus Advantage2 | [P][9] |
-| NASA JPL | supplier | US | Made flux-DAC chip parts | [C][6] |
+| Florida Atlantic University | user | US | $20 M campus Advantage2 | [P][304] |
+| NASA JPL | supplier | US | Made flux-DAC chip parts | [C][245] |
 
-**Money.** 2026-01-20 · D-Wave · M&A, Quantum Circuits · $550 M USD · closed [C][G:DWAVE-QCI-2026-01]. 2026-01-27 · FAU sale · $20 M USD · announced [P][9]. 2026-01-27 · QCaaS, Fortune 100 · $10 M USD · announced [C][10]. 2026-05-21 · CHIPS LOI · $100 M USD · Commerce · non-binding [G:CHIPS-LOI-2026-05]. 2026-08-06 · H1-2026 · revenue $5.9 M (−67% YoY), bookings $35.5 M (+1,120%), RPO $40.7 M · reported [C][8].
+**Money.** 2026-01-20 · D-Wave · M&A, Quantum Circuits · $550 M USD · closed [C][G:DWAVE-QCI-2026-01]. 2026-01-27 · FAU sale · $20 M USD · announced [P][304]. 2026-01-27 · QCaaS, Fortune 100 · $10 M USD · announced [C][305]. 2026-05-21 · CHIPS LOI · $100 M USD · Commerce · non-binding [G:CHIPS-LOI-2026-05]. 2026-08-06 · H1-2026 · revenue $5.9 M (−67% YoY), bookings $35.5 M (+1,120%), RPO $40.7 M · reported [C][15].
 
 **Market & supply chain.** One vendor, one carrier, one cryoplant class; foundry capacity shared with gate-model lines. Only G1 and parts of G5 pay for it; G3/G4 cannot, absent a code layer.
 
 **IP & standards.** 975 D-Wave quantum patent families as of 2026-06-30 [P][G:PATSNAP-2026-06]; no annealing-specific litigation or standard found.
 
-**Roadmaps & track record.** (2025-05 · for 2029/2031 · 20,000 then 100,000 qubits · open) [R][8]. Scale milestones land on schedule; claims do not survive classical solvers; revenue collapsed while bookings and RPO rose, so monetisation is deferred, not lost.
+**Roadmaps & track record.** (2025-05 · for 2029/2031 · 20,000 then 100,000 qubits · open) [R][15]. Scale milestones land on schedule; claims do not survive classical solvers; revenue collapsed while bookings and RPO rose, so monetisation is deferred, not lost.
 
 **Strategic reading.** D-Wave wins if buyers keep paying for good-enough sampling on cheap I/O, loses if error-mitigated gate machines take the optimisation budget — which is why it bought a gate carrier. Pricing power over customers, none over foundries.
 
@@ -61,16 +61,16 @@ Serves the annealing path only and feeds no gate-model path: D-Wave's gate roadm
 Confirm if a claim on a scientifically posed instance class survives a classical round through 2027; demote if erosion repeats. Best case 2029: 20,000 qubits and a defended claim; worst case, the line freezes at Advantage2 while the gate pivot absorbs the cash. Open: does any instance resist belief propagation and t-VMC?
 
 ## Sources
-[1] M. Swayne, “D-Wave Announces General Availability of Advantage2 Quantum Computer,” The Quantum Insider, May 20, 2025. [Online]. Available: https://thequantuminsider.com/2025/05/20/d-wave-announces-general-availability-of-advantage2-quantum-computer/ [P]
-[2] A. D. King *et al.*, “Beyond-classical computation in quantum simulation,” *Science*, vol. 388, pp. 199–204, 2025, doi: [10.1126/science.ado6285](https://doi.org/10.1126/science.ado6285). [arXiv:2403.00910](https://arxiv.org/abs/2403.00910). [D]
-[3] J. Tindall, A. Mello, M. Fishman, M. Stoudenmire, and D. Sels, “Dynamics of disordered quantum systems with two- and three-dimensional tensor networks,” *Science*, vol. 392, pp. 868–872, 2026, doi: [10.1126/science.adx2728](https://doi.org/10.1126/science.adx2728). [arXiv:2503.05693](https://arxiv.org/abs/2503.05693). [D]
-[4] L. Mauron and G. Carleo, “Challenging the Quantum Advantage Frontier with Large-Scale Classical Simulations of Annealing Dynamics,” [arXiv:2503.08247](https://arxiv.org/abs/2503.08247), Mar. 2025. [D]
-[5] US Department of Commerce, Bureau of Industry and Security, “Commerce Control List Additions and Revisions; Implementation of Controls on Advanced Technologies Consistent With Controls Implemented by International Partners,” *Federal Register*, vol. 89, p. 72926, Sep. 6, 2024. [Online]. Available: https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies [G]
-[6] D-Wave, “D-Wave Demonstrates First Scalable, On-Chip Cryogenic Control of Gate-Model Qubits,” Jan. 6, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-demonstrates-first-scalable-on-chip-cryogenic-control-of-gate-model-qubits/ [C]
-[7] A. Nocera, J. Raymond, W. Bernoudy, M. H. Amin, and A. D. King, “Evaluating classical simulations with a quantum processor,” [arXiv:2508.15759](https://arxiv.org/abs/2508.15759), Aug. 2025. [P]
-[8] D-Wave Quantum Inc., “D-Wave Reports Second Quarter 2026 Results,” Aug. 6, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-reports-second-quarter-2026-results/ [C]
-[9] M. Abdel-Kareem, “D-Wave Announces HQ Relocation, $20M System Sale, $10M Fortune 100 Deal, and Dual-Platform Advancements,” Quantum Computing Report, Jan. 27, 2026. [Online]. Available: https://quantumcomputingreport.com/d-wave-announces-hq-relocation-20m-system-sale-and-defense-performance-breakthroughs/ [P]
-[10] D-Wave Quantum, “D-Wave Announces $10 Million, Two-Year Enterprise QCaaS Agreement with Fortune 100 Company,” Jan. 27, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-announces-10-million-two-year-enterprise-qcaas-agreement-with-fortune-100-company/ [C]
+[15] D-Wave Quantum Inc., “D-Wave Reports Second Quarter 2026 Results,” Aug. 6, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-reports-second-quarter-2026-results/ [C]
+[185] M. Swayne, “D-Wave Announces General Availability of Advantage2 Quantum Computer,” The Quantum Insider, May 20, 2025. [Online]. Available: https://thequantuminsider.com/2025/05/20/d-wave-announces-general-availability-of-advantage2-quantum-computer/ [P]
+[186] A. D. King *et al.*, “Beyond-classical computation in quantum simulation,” *Science*, vol. 388, pp. 199–204, 2025, doi: [10.1126/science.ado6285](https://doi.org/10.1126/science.ado6285). [arXiv:2403.00910](https://arxiv.org/abs/2403.00910). [D]
+[187] J. Tindall, A. Mello, M. Fishman, M. Stoudenmire, and D. Sels, “Dynamics of disordered quantum systems with two- and three-dimensional tensor networks,” *Science*, vol. 392, pp. 868–872, 2026, doi: [10.1126/science.adx2728](https://doi.org/10.1126/science.adx2728). [arXiv:2503.05693](https://arxiv.org/abs/2503.05693). [D]
+[188] L. Mauron and G. Carleo, “Challenging the Quantum Advantage Frontier with Large-Scale Classical Simulations of Annealing Dynamics,” [arXiv:2503.08247](https://arxiv.org/abs/2503.08247), Mar. 2025. [D]
+[189] A. Nocera, J. Raymond, W. Bernoudy, M. H. Amin, and A. D. King, “Evaluating classical simulations with a quantum processor,” [arXiv:2508.15759](https://arxiv.org/abs/2508.15759), Aug. 2025. [P]
+[225] US Department of Commerce, Bureau of Industry and Security, “Commerce Control List Additions and Revisions; Implementation of Controls on Advanced Technologies Consistent With Controls Implemented by International Partners,” *Federal Register*, vol. 89, p. 72926, Sep. 6, 2024. [Online]. Available: https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies [G]
+[245] D-Wave, “D-Wave Demonstrates First Scalable, On-Chip Cryogenic Control of Gate-Model Qubits,” Jan. 6, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-demonstrates-first-scalable-on-chip-cryogenic-control-of-gate-model-qubits/ [C]
+[304] M. Abdel-Kareem, “D-Wave Announces HQ Relocation, $20M System Sale, $10M Fortune 100 Deal, and Dual-Platform Advancements,” Quantum Computing Report, Jan. 27, 2026. [Online]. Available: https://quantumcomputingreport.com/d-wave-announces-hq-relocation-20m-system-sale-and-defense-performance-breakthroughs/ [P]
+[305] D-Wave Quantum, “D-Wave Announces $10 Million, Two-Year Enterprise QCaaS Agreement with Fortune 100 Company,” Jan. 27, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-announces-10-million-two-year-enterprise-qcaas-agreement-with-fortune-100-company/ [C]
 
 ## Open verification items
 Bias-wire count: 200 (release 2026-01-06) vs ~300 (whitepaper 14-1090A-A, 2026-01-23) — unreconciled; the whitepaper figure is tied to a described array. Exact scope of the SkyWater relationship in D-Wave's 10-Ks (nine hits, sentences not extracted). Identity of the Fortune-100 QCaaS customer and of the defence end-customer behind the Anduril/Davidson study. Whether an annealer falls inside ECCN 4A906 when the threshold is stated in two-qubit gate error — no ruling found.

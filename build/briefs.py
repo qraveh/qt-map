@@ -116,8 +116,8 @@ PREFACE = {
         '[P] препринт или отраслевая пресса.',
     ],
 }
-REFNOTE = {'en': 'Each brief numbers its sources in order of first citation; online sources were accessed in September 2026.',
-           'ru': 'Каждый бриф нумерует свои источники в порядке первого цитирования; онлайн-источники просмотрены в сентябре 2026 г.'}
+REFNOTE = {'en': 'Numbers are the Map’s: a work has the same number here, in §9 and in every other brief; online sources were accessed in September 2026.',
+           'ru': 'Номера общие для всей Карты: у работы один и тот же номер здесь, в §9 и в любом другом брифе; онлайн-источники просмотрены в сентябре 2026 г.'}
 SECTION_TITLE = {'en': 'Technology briefs', 'ru': 'Брифы по технологиям'}
 
 

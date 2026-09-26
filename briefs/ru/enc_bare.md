@@ -17,36 +17,36 @@ updated: 2026-09-04
 Структура ошибок, как её видит код: симметричные ошибки Паули плюс утечка за пределы подпространства.
 
 ## Физика и пределы
-Определяющий масштаб — α ≈ −E_C ≈ 2π × 200–300 MHz: он задаёт минимальное время гейта и утечку на один гейт, которую DRAG подавляет, но устранить не может. Повышение α оплачивается зарядовой дисперсией, растущей как exp(−√(8E_J/E_C)); именно этот размен здесь и является пределом. Утечка живёт там, где ошибка Паули не выживает: второй возбуждённый уровень переживает десятки циклов QEC при цикле Willow в 1.1 µs [D][1], подавая декодеру коррелированные ложные синдромы. Отсюда выделенные механизмы удаления: полностью микроволновая схема USTC подавляет утечку в 72×, до остаточных 6.4(5)×10⁻⁴ после 40 циклов [D][2]. Предел сдвигают декодирование с учётом утечки и более быстрый сброс многоуровневых состояний.
+Определяющий масштаб — α ≈ −E_C ≈ 2π × 200–300 MHz: он задаёт минимальное время гейта и утечку на один гейт, которую DRAG подавляет, но устранить не может. Повышение α оплачивается зарядовой дисперсией, растущей как exp(−√(8E_J/E_C)); именно этот размен здесь и является пределом. Утечка живёт там, где ошибка Паули не выживает: второй возбуждённый уровень переживает десятки циклов QEC при цикле Willow в 1.1 µs [D][1], подавая декодеру коррелированные ложные синдромы. Отсюда выделенные механизмы удаления: полностью микроволновая схема USTC подавляет утечку в 72×, до остаточных 6.4(5)×10⁻⁴ после 40 циклов [D][3]. Предел сдвигают декодирование с учётом утечки и более быстрый сброс многоуровневых состояний.
 
 ## Инженерное состояние (state of the art)
 
 | Дата | Показатель | Кто | Тег |
 |---|---|---|---|
 | 2024-12-09 | Поверхностный код d=7, Λ = 2.14 ± 0.02 | Google (Willow) | [D][1] |
-| 2025-12-22 | Утечка подавлена в 72×, Λ = 1.40(6) при d=7 | USTC | [D][2] |
-| 2026-07-08 | Логическая ошибка при d=7: 7.72×10⁻⁴ за цикл | Google | [D][3] |
+| 2025-12-22 | Утечка подавлена в 72×, Λ = 1.40(6) при d=7 | USTC | [D][3] |
+| 2026-07-08 | Логическая ошибка при d=7: 7.72×10⁻⁴ за цикл | Google | [D][2] |
 
-Лучшее в классе — одна охарактеризованная пара IQM, CZ 99.93% на протяжении 40 h [D][4]; типичное на масштабе — EPLG парка IBM 3.7×10⁻³, лучший показатель 1.9×10⁻³ [D][5], и медиана 99.1% на 108-кубитной машине Rigetti [C][6].
+Лучшее в классе — одна охарактеризованная пара IQM, CZ 99.93% на протяжении 40 h [D][37]; типичное на масштабе — EPLG парка IBM 3.7×10⁻³, лучший показатель 1.9×10⁻³ [D][33], и медиана 99.1% на 108-кубитной машине Rigetti [C][35].
 
 ## Производство, материалы и цепочка поставок
-Собственного нет ничего: наследуются литография Nb/Al на пластинах 300 mm, разброс выхода годных и по одной линии возбуждения плюс одной линии считывания на кубит. В этом и состоит весь коммерческий аргумент: двухрельсовое стирание добавляет по рельсу и по проверке на кубит (384 ns, стирание 2.54×10⁻² [D][7]), кот-коды — накачку и буферную моду. Стена по вводу-выводу принадлежит носителю: коаксиал на кубит, ~10³ кубитов на криостат. На уровне 10⁴–10⁶ это кодирование добавляет удаление утечки внутри каждого цикла 1.1 µs и требуемую для этого полосу декодера. Экспозиция по экспортному контролю — носителя (US EAR ECCN 3A901).
+Собственного нет ничего: наследуются литография Nb/Al на пластинах 300 mm, разброс выхода годных и по одной линии возбуждения плюс одной линии считывания на кубит. В этом и состоит весь коммерческий аргумент: двухрельсовое стирание добавляет по рельсу и по проверке на кубит (384 ns, стирание 2.54×10⁻² [D][80]), кот-коды — накачку и буферную моду. Стена по вводу-выводу принадлежит носителю: коаксиал на кубит, ~10³ кубитов на криостат. На уровне 10⁴–10⁶ это кодирование добавляет удаление утечки внутри каждого цикла 1.1 µs и требуемую для этого полосу декодера. Экспозиция по экспортному контролю — носителя (US EAR ECCN 3A901).
 
 ## Роль в стеке
-Кодирование слоя 2 по умолчанию на каждом магистральном трансмонном пути платформы (IBM, Google, Rigetti, IQM, OQC, USTC/Zhejiang, Fujitsu). Его вытесняют двухрельсовое стирание или кот-кодирование, когда поставщик меняет сложность управления на более дружественную структуру ошибок: Alice & Bob, AWS и D-Wave/Quantum Circuits это сделали, IBM и Google — нет. Цена поддаётся счёту: измеренные ошибки двухрельсовых гейтов дают в моделировании Λ ≈ 27 против 14 при 0.1% деполяризующего шума [S][8], тогда как для этого кодирования измеряются 2.14 и 1.40(6) [D][1], [2]. В производный такт оно не добавляет ничего: раунд остаётся 0.65 µs внутри измеренного цикла носителя 1.1 µs. Верификация: 72× — это одно невоспроизведённое устройство USTC, а утечка декларируется самими авторами при отсутствии межвендорного протокола.
+Кодирование слоя 2 по умолчанию на каждом магистральном трансмонном пути платформы (IBM, Google, Rigetti, IQM, OQC, USTC/Zhejiang, Fujitsu). Его вытесняют двухрельсовое стирание или кот-кодирование, когда поставщик меняет сложность управления на более дружественную структуру ошибок: Alice & Bob, AWS и D-Wave/Quantum Circuits это сделали, IBM и Google — нет. Цена поддаётся счёту: измеренные ошибки двухрельсовых гейтов дают в моделировании Λ ≈ 27 против 14 при 0.1% деполяризующего шума [S][79], тогда как для этого кодирования измеряются 2.14 и 1.40(6) [D][1], [3]. В производный такт оно не добавляет ничего: раунд остаётся 0.65 µs внутри измеренного цикла носителя 1.1 µs. Верификация: 72× — это одно невоспроизведённое устройство USTC, а утечка декларируется самими авторами при отсутствии межвендорного протокола.
 
 ## Акторы и экономика
 **Кто.**
 
 | Организация | Роль | Страна | Что именно делает с технологией | Свидетельство |
 |---|---|---|---|---|
-| IBM | разработчик | США | Весь парк машин и дорожная карта Starling — на голых трансмонах | [D][5] |
+| IBM | разработчик | США | Весь парк машин и дорожная карта Starling — на голых трансмонах | [D][33] |
 | Google | разработчик | США | QEC на Willow и рекорд логической ошибки при d=7 | [D][1] |
-| USTC | исследования | Китай | Подпороговый d=7 за счёт подавления утечки | [D][2] |
+| USTC | исследования | Китай | Подпороговый d=7 за счёт подавления утечки | [D][3] |
 
 **Деньги.**
-2026-06-02 · IBM · инвестиционное обязательство · > $10 B в течение пяти лет · объявлено [G][9][G:IBM-10B-2026-06]
-2026-07-02 · IQM · листинг на Nasdaq и в Helsinki · денежные средства pro forma €337 M · закрыт [C][10][G:IQM-LISTING-2026-07]
+2026-06-02 · IBM · инвестиционное обязательство · > $10 B в течение пяти лет · объявлено [G][55][G:IBM-10B-2026-06]
+2026-07-02 · IQM · листинг на Nasdaq и в Helsinki · денежные средства pro forma €337 M · закрыт [C][56][G:IQM-LISTING-2026-07]
 
 **Рынок и цепочка поставок.** Собственной цепочки поставок нет; концентрация лежит слоем ниже — в литографии Nb/Al и рефрижераторах растворения. Будучи бесплатным, оно и есть то, что покупает любой бюджет G1–G4 на этом пути платформы.
 
@@ -63,15 +63,15 @@ updated: 2026-09-04
 
 ## Источники
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
-[2] T. He *et al.*, “Experimental Quantum Error Correction below the Surface Code Threshold via All-Microwave Leakage Suppression,” *Phys. Rev. Lett.*, vol. 135, no. 26, Art. no. 260601, Dec. 2025, doi: [10.1103/rqkg-dw31](https://doi.org/10.1103/rqkg-dw31). [D]
-[3] V. Sivak *et al.*, “Reinforcement learning control of quantum error correction,” *Nature*, vol. 655, no. 8124, pp. 879–884, Jul. 2026, doi: [10.1038/s41586-026-10759-2](https://doi.org/10.1038/s41586-026-10759-2). [D]
-[4] F. Marxer *et al.*, “Above 99.9% Fidelity Single-Qubit Gates, Two-Qubit Gates, and Readout in a Single Superconducting Quantum Device,” *PRX Quantum*, vol. 7, Art. no. 020333, 2026, doi: [10.1103/n86s-2b88](https://doi.org/10.1103/n86s-2b88). [arXiv:2508.16437](https://arxiv.org/abs/2508.16437). [D]
-[5] IBM Quantum, “What's new at IBM Quantum - Q2 2026.” [Online]. Available: https://www.ibm.com/quantum/blog/whats-new-q2-2026 [D]
-[6] Rigetti Computing, Inc., “Rigetti Announces General Availability of 108-Qubit System,” Apr. 7, 2026. [Online]. Available: https://investors.rigetti.com/news-releases/news-release-details/rigetti-announces-general-availability-108-qubit-system [C]
-[7] J. S.-C. Hung *et al.*, “Fast, High-Fidelity Erasure Detection of Dual-Rail Qubits with Symmetrically Coupled Readout,” [arXiv:2604.16292](https://arxiv.org/abs/2604.16292), Apr. 2026. [D]
-[8] N. Mehta *et al.*, “An entangling gate for dual-rail erasure qubits,” *Nature*, vol. 656, no. 8126, pp. 47–53, Aug. 2026, doi: [10.1038/s41586-026-10822-y](https://doi.org/10.1038/s41586-026-10822-y). [arXiv:2503.10935](https://arxiv.org/abs/2503.10935). [S]
-[9] IBM Quantum, “Why IBM is investing $10 billion into quantum computing,” Jun. 2, 2026. [Online]. Available: https://www.ibm.com/quantum/blog/10-billion-investment-faq [G]
-[10] IQM Quantum Computers, “IQM Quantum Computers Becomes First European Quantum Computing Company Listed on a Major U.S. Exchange,” Jul. 2, 2026. [Online]. Available: https://iqm.tech/press-releases/iqm-quantum-computers-becomes-first-european-quantum-computing-company-listed-on-a-major-u-s-exchange/ [C]
+[2] V. Sivak *et al.*, “Reinforcement learning control of quantum error correction,” *Nature*, vol. 655, no. 8124, pp. 879–884, Jul. 2026, doi: [10.1038/s41586-026-10759-2](https://doi.org/10.1038/s41586-026-10759-2). [D]
+[3] T. He *et al.*, “Experimental Quantum Error Correction below the Surface Code Threshold via All-Microwave Leakage Suppression,” *Phys. Rev. Lett.*, vol. 135, no. 26, Art. no. 260601, Dec. 2025, doi: [10.1103/rqkg-dw31](https://doi.org/10.1103/rqkg-dw31). [D]
+[33] IBM Quantum, “What's new at IBM Quantum - Q2 2026.” [Online]. Available: https://www.ibm.com/quantum/blog/whats-new-q2-2026 [D]
+[35] Rigetti Computing, Inc., “Rigetti Announces General Availability of 108-Qubit System,” Apr. 7, 2026. [Online]. Available: https://investors.rigetti.com/news-releases/news-release-details/rigetti-announces-general-availability-108-qubit-system [C]
+[37] F. Marxer *et al.*, “Above 99.9% Fidelity Single-Qubit Gates, Two-Qubit Gates, and Readout in a Single Superconducting Quantum Device,” *PRX Quantum*, vol. 7, Art. no. 020333, 2026, doi: [10.1103/n86s-2b88](https://doi.org/10.1103/n86s-2b88). [arXiv:2508.16437](https://arxiv.org/abs/2508.16437). [D]
+[55] IBM Quantum, “Why IBM is investing $10 billion into quantum computing,” Jun. 2, 2026. [Online]. Available: https://www.ibm.com/quantum/blog/10-billion-investment-faq [G]
+[56] IQM Quantum Computers, “IQM Quantum Computers Becomes First European Quantum Computing Company Listed on a Major U.S. Exchange,” Jul. 2, 2026. [Online]. Available: https://iqm.tech/press-releases/iqm-quantum-computers-becomes-first-european-quantum-computing-company-listed-on-a-major-u-s-exchange/ [C]
+[79] N. Mehta *et al.*, “An entangling gate for dual-rail erasure qubits,” *Nature*, vol. 656, no. 8126, pp. 47–53, Aug. 2026, doi: [10.1038/s41586-026-10822-y](https://doi.org/10.1038/s41586-026-10822-y). [arXiv:2503.10935](https://arxiv.org/abs/2503.10935). [S]
+[80] J. S.-C. Hung *et al.*, “Fast, High-Fidelity Erasure Detection of Dual-Rail Qubits with Symmetrically Coupled Readout,” [arXiv:2604.16292](https://arxiv.org/abs/2604.16292), Apr. 2026. [D]
 
 ## Открытые пункты верификации
 Подавление утечки в 72× и остаточные 6.4(5)×10⁻⁴ получены на одном устройстве USTC; независимого воспроизведения по состоянию на 2026-09-04 не найдено.

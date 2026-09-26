@@ -13,7 +13,7 @@ updated: 2026-09-03
 
 ## Identity & lineage
 
-A cryo-CMOS controller is a silicon ASIC on a cold plate in the refrigerator, generating microwave, flux and gate-bias waveforms next to the qubits. Nothing quantum happens in it: the gain is thermal and topological. It became hardware with Horse Ridge (Intel/QuTech, 22 nm FinFET, 4 K, 2019–2020) [C][1] and Gooseberry (Microsoft/Sydney, 100 mK) [D][2].
+A cryo-CMOS controller is a silicon ASIC on a cold plate in the refrigerator, generating microwave, flux and gate-bias waveforms next to the qubits. Nothing quantum happens in it: the gain is thermal and topological. It became hardware with Horse Ridge (Intel/QuTech, 22 nm FinFET, 4 K, 2019–2020) [C][416] and Gooseberry (Microsoft/Sydney, 100 mK) [D][417].
 
 Attributes (a affinity; b time; c readout; d mobility; e control @ placement; f error structure; g manufacturing):
 - a = 1.0, wholly fabricated; a foundry part, not a carrier.
@@ -28,45 +28,45 @@ Rank 5 of 96; a hub reaching superconducting and spin paths.
 
 ## Physics & limits
 
-The floor is a heat budget, not a coherence time. Plants are small: 2 W at 4 K (Bluefors XLD1000sl), 24 W (IBM Goldeneye concept), 200 W (Fermilab Colossus) [S][3]. The only power attached to a working two-qubit gate is IBM's 23 mW per qubit [D][4]; the same review's optimistic case is 5 mW, its lowest demonstrations under 2 mW [S][3]. A 2 W plant thus holds ~87 qubits at 23 mW, ~1,000 at 2 mW.
+The floor is a heat budget, not a coherence time. Plants are small: 2 W at 4 K (Bluefors XLD1000sl), 24 W (IBM Goldeneye concept), 200 W (Fermilab Colossus) [S][418]. The only power attached to a working two-qubit gate is IBM's 23 mW per qubit [D][220]; the same review's optimistic case is 5 mW, its lowest demonstrations under 2 mW [S][418]. A 2 W plant thus holds ~87 qubits at 23 mW, ~1,000 at 2 mW.
 
-At millikelvin the regime changes kind: baseband, duty-cycled cells that hold a gate voltage and refresh it — 18 nW per cell for 100 mV pulses at 100 mK [D][2], ~20 nW MHz⁻¹ per cell at 7 mK [D][5].
+At millikelvin the regime changes kind: baseband, duty-cycled cells that hold a gate voltage and refresh it — 18 nW per cell for 100 mV pulses at 100 mK [D][417], ~20 nW MHz⁻¹ per cell at 7 mK [D][419].
 
-Failure is coherent: drift and quantisation become rotation-angle error — a Delft converter drifted 60 µV/s to 18 mV/s [C][6] — jitter becomes over-rotation, finite isolation crosstalk. The stochastic channel is back-action, worth 0.07% of single-qubit fidelity [D][5]. The floor moves with a cold-characterised process [C][7] or superconducting logic at ~1.6 µW/qubit [S][3].
+Failure is coherent: drift and quantisation become rotation-angle error — a Delft converter drifted 60 µV/s to 18 mV/s [C][420] — jitter becomes over-rotation, finite isolation crosstalk. The stochastic channel is back-action, worth 0.07% of single-qubit fidelity [D][419]. The floor moves with a cold-characterised process [C][421] or superconducting logic at ~1.6 µW/qubit [S][418].
 
 ## Engineering state of the art
 
-Best demonstrated: HRL's 130 nm RF CMOS controller at 4 K — ≤3.5 W, 366 DACs, a 250 MHz sequencer — driving 54 dots as 18 exchange-only qubits at mean single-qubit error 2×10⁻⁴ and mean CNOT 3×10⁻³ (best reproducible 9×10⁻⁴), closing a distance-5 repetition code at 5.0×10⁻³ over 200 rounds, Λ₅/₃ = 4.7, with nothing warm in the loop [D][8] [G:HRL-2026]. IBM ran 14 nm flux-bias ASICs on a 156-qubit Heron R2 at median two-qubit error ≈2.3×10⁻³, parity with warm electronics on the same processor [C][9]. Typical at scale: none — everything above ~10 qubits runs from warm racks [D][G:SEEQC-2026].
+Best demonstrated: HRL's 130 nm RF CMOS controller at 4 K — ≤3.5 W, 366 DACs, a 250 MHz sequencer — driving 54 dots as 18 exchange-only qubits at mean single-qubit error 2×10⁻⁴ and mean CNOT 3×10⁻³ (best reproducible 9×10⁻⁴), closing a distance-5 repetition code at 5.0×10⁻³ over 200 rounds, Λ₅/₃ = 4.7, with nothing warm in the loop [D][163] [G:HRL-2026]. IBM ran 14 nm flux-bias ASICs on a 156-qubit Heron R2 at median two-qubit error ≈2.3×10⁻³, parity with warm electronics on the same processor [C][411]. Typical at scale: none — everything above ~10 qubits runs from warm racks [D][G:SEEQC-2026].
 
 | Year | Figure | Who | Tag | Src |
 |---|---|---|---|---|
-| 2021-01-25 | 100 mK, 18 nW/cell, 100 mV pulses | Microsoft | [D] | [2] |
-| 2024-02-14 | Gate from 4 K: 23 mW/qubit, 1Q 8×10⁻⁴ | IBM | [D] | [4] |
-| 2025-06-25 | 7 mK, ~20 nW MHz⁻¹/cell, 0.07% fidelity cost | Sydney | [D] | [5] |
-| 2026-03-16 | Flux ASICs, 156 qubits, median 2Q 2.3×10⁻³ | IBM | [C] | [9] |
-| 2026-07-29 | ≤3.5 W, 366 DACs, 18 qubits, Λ₅/₃ = 4.7 | HRL | [D] | [8] |
+| 2021-01-25 | 100 mK, 18 nW/cell, 100 mV pulses | Microsoft | [D] | [417] |
+| 2024-02-14 | Gate from 4 K: 23 mW/qubit, 1Q 8×10⁻⁴ | IBM | [D] | [220] |
+| 2025-06-25 | 7 mK, ~20 nW MHz⁻¹/cell, 0.07% fidelity cost | Sydney | [D] | [419] |
+| 2026-03-16 | Flux ASICs, 156 qubits, median 2Q 2.3×10⁻³ | IBM | [C] | [411] |
+| 2026-07-29 | ≤3.5 W, 366 DACs, 18 qubits, Λ₅/₃ = 4.7 | HRL | [D] | [163] |
 
-Dominant term: channel-to-channel non-uniformity — mean CNOT 3×10⁻³ against best reproducible 9×10⁻⁴, ~80% of it extrinsic, from control and calibration [D][8].
+Dominant term: channel-to-channel non-uniformity — mean CNOT 3×10⁻³ against best reproducible 9×10⁻⁴, ~80% of it extrinsic, from control and calibration [D][163].
 
 ## Manufacturing, materials & supply chain
 
-No exotic process; the difficulty is a commercial node run 300 K outside its qualified range: 130 nm RF CMOS (HRL) [D][8], 14 nm FinFET (IBM) [D][4], 22 nm FinFET (Horse Ridge, Delft converters) [C][1], [6], 28 nm FDSOI (Gooseberry, Sydney) [D][2], [5], 22FDX (Equal1) [C][10]. The scarce input is the model, not the wafer: design kits stop at −40 °C, so actors keep private cryogenic models or buy a cryo-optimised process — SemiQon quotes 0.32 mV/dec subthreshold swing at 420 mK against ~60 mV/dec at 300 K [C][7]. Yield and cost per channel are unpublished. Concentration sits in foundries willing to run unqualified corners and in dilution refrigerators [C][G:BLUEFORS-KIDE]. Export exposure is direct: the BIS rule of 2024-09-06 created ECCN 3A901.a for CMOS circuits "designed to operate at an ambient temperature equal to or less (better) than 4.5 K", catching this node by design intent rather than performance, beside controls on refrigerators and cryogenic probers [G][11] [G:BIS-QUANTUM-2024]. The controlled item can therefore be a design file.
+No exotic process; the difficulty is a commercial node run 300 K outside its qualified range: 130 nm RF CMOS (HRL) [D][163], 14 nm FinFET (IBM) [D][220], 22 nm FinFET (Horse Ridge, Delft converters) [C][416], [420], 28 nm FDSOI (Gooseberry, Sydney) [D][417], [419], 22FDX (Equal1) [C][422]. The scarce input is the model, not the wafer: design kits stop at −40 °C, so actors keep private cryogenic models or buy a cryo-optimised process — SemiQon quotes 0.32 mV/dec subthreshold swing at 420 mK against ~60 mV/dec at 300 K [C][421]. Yield and cost per channel are unpublished. Concentration sits in foundries willing to run unqualified corners and in dilution refrigerators [C][G:BLUEFORS-KIDE]. Export exposure is direct: the BIS rule of 2024-09-06 created ECCN 3A901.a for CMOS circuits "designed to operate at an ambient temperature equal to or less (better) than 4.5 K", catching this node by design intent rather than performance, beside controls on refrigerators and cryogenic probers [G][225] [G:BIS-QUANTUM-2024]. The controlled item can therefore be a design file.
 
 ## Control, readout & I/O burden
 
-HRL removed warm waveform generation, but the cable count did not fall: 296 lines for 18 qubits, ~16 each — the win was the rack, not the wiring [D][8]. The wiring win is a millikelvin one, where demultiplexing turns N terminals into ~log N inputs: Pando Tree's 64 terminals at 10–20 mK [C][12], Delft's 648 devices from 96 voltages under 120 µW [C][6]. Latency is the second argument: 200 code rounds closed with nothing warm in the loop [D][8], against 3.84 µs mean round trip on a warm GPU link [G:NVQLINK-2025]. The walls follow the heat budget: 10³ qubits needs the sub-2 mW class on a 2 W plant; 10⁴ needs Goldeneye- or Colossus-class cooling at ≤5 mW/qubit; 10⁶ means ~90 modules of 10,000 qubits dissipating 50 W each at 4 K — outside anything sold in 2026 [S][3].
+HRL removed warm waveform generation, but the cable count did not fall: 296 lines for 18 qubits, ~16 each — the win was the rack, not the wiring [D][163]. The wiring win is a millikelvin one, where demultiplexing turns N terminals into ~log N inputs: Pando Tree's 64 terminals at 10–20 mK [C][423], Delft's 648 devices from 96 voltages under 120 µW [C][420]. Latency is the second argument: 200 code rounds closed with nothing warm in the loop [D][163], against 3.84 µs mean round trip on a warm GPU link [G:NVQLINK-2025]. The walls follow the heat budget: 10³ qubits needs the sub-2 mW class on a 2 W plant; 10⁴ needs Goldeneye- or Colossus-class cooling at ≤5 mW/qubit; 10⁶ means ~90 modules of 10,000 qubits dissipating 50 W each at 4 K — outside anything sold in 2026 [S][418].
 
 ## Role in the stack
 
-Two paths: superconducting transmons (IBM, Google, IQM) and silicon or germanium quantum-dot spins (Intel, Diraq, Quantum Motion, HRL, Quobly, Equal1). It requires a 300 mm CMOS foundry — a dependency spins already carry, so they get cryo-CMOS as a by-product while superconducting vendors fund it separately. It provides the cold digital substrate a cryogenic decoder needs: a 4 K predecoder costed under 0.56 mW for 3,780× syndrome-bandwidth reduction [S][G:PINBALL-2025-12]. It replaces room-temperature control, the only part of this layer with revenue, and competes with single-flux-quantum control, published above 99% at millikelvin [D][G:SEEQC-2026]; switching buys cold silicon on an 18–24-month tape-out loop, paid for in cooling budget that would otherwise buy qubits. The off-diagonal reading is the cold-fabrication corner: a non-quantum object whose only distinguishing attribute is placement at 4 K. Derived clock = sum of the syndrome round: gate layers + transport + readout + reset; this node does not bind it — 4.0 ns sequencer granularity [D][8] against a 0.65 µs round whose largest term is 282 ns of readout. Empty slots next door: a cryogenic readout digitiser and a standard cold digital interface.
+Two paths: superconducting transmons (IBM, Google, IQM) and silicon or germanium quantum-dot spins (Intel, Diraq, Quantum Motion, HRL, Quobly, Equal1). It requires a 300 mm CMOS foundry — a dependency spins already carry, so they get cryo-CMOS as a by-product while superconducting vendors fund it separately. It provides the cold digital substrate a cryogenic decoder needs: a 4 K predecoder costed under 0.56 mW for 3,780× syndrome-bandwidth reduction [S][G:PINBALL-2025-12]. It replaces room-temperature control, the only part of this layer with revenue, and competes with single-flux-quantum control, published above 99% at millikelvin [D][G:SEEQC-2026]; switching buys cold silicon on an 18–24-month tape-out loop, paid for in cooling budget that would otherwise buy qubits. The off-diagonal reading is the cold-fabrication corner: a non-quantum object whose only distinguishing attribute is placement at 4 K. Derived clock = sum of the syndrome round: gate layers + transport + readout + reset; this node does not bind it — 4.0 ns sequencer granularity [D][163] against a 0.65 µs round whose largest term is 282 ns of readout. Empty slots next door: a cryogenic readout digitiser and a standard cold digital interface.
 
 ## Verification (QCVV)
 
-Every headline number is measured through the qubit, never on the controller: interleaved randomized benchmarking, whose 1.71 and 17.51 instructions per Clifford (single- and two-qubit) must accompany any comparison [D][4]; repetition-code Λ scaling across distances 3 and 5 for HRL [D][8]; and, for IBM's 2026 flux result, an A/B comparison against warm electronics on the same processor — the right design, and the rarest.
+Every headline number is measured through the qubit, never on the controller: interleaved randomized benchmarking, whose 1.71 and 17.51 instructions per Clifford (single- and two-qubit) must accompany any comparison [D][220]; repetition-code Λ scaling across distances 3 and 5 for HRL [D][163]; and, for IBM's 2026 flux result, an A/B comparison against warm electronics on the same processor — the right design, and the rarest.
 
-Randomized benchmarking averages over Cliffords and is blind to slow coherent drift, so converter drift [C][6] appears in no RB number; back-action, duty-cycle transients, channel non-uniformity and cold reliability need bespoke measurements [D][5]. Replication is reasonable at 4 K (IBM, HRL) and at millikelvin (Microsoft, Sydney, Delft, QuTech [C][13]).
+Randomized benchmarking averages over Cliffords and is blind to slow coherent drift, so converter drift [C][420] appears in no RB number; back-action, duty-cycle transients, channel non-uniformity and cold reliability need bespoke measurements [D][419]. Replication is reasonable at 4 K (IBM, HRL) and at millikelvin (Microsoft, Sydney, Delft, QuTech [C][424]).
 
-Conflicts: IBM's 23 mW per qubit [D][4] against 5 mW and under 2 mW [S][3] are different quantities — active versus idle, drive-only versus full chain — with no common definition; 23 mW is used here as the only figure tied to a working gate. Equal1's fidelity figures are product-page claims [C][10] against a published six-qubit device at 0.3 K [G:EQUAL1-60M-2026-01].
+Conflicts: IBM's 23 mW per qubit [D][220] against 5 mW and under 2 mW [S][418] are different quantities — active versus idle, drive-only versus full chain — with no common definition; 23 mW is used here as the only figure tied to a working gate. Equal1's fidelity figures are product-page claims [C][422] against a published six-qubit device at 0.3 K [G:EQUAL1-60M-2026-01].
 
 ## Actors & economics
 
@@ -74,33 +74,33 @@ Conflicts: IBM's 23 mW per qubit [D][4] against 5 mW and under 2 mW [S][3] are d
 
 | Organisation | Role | Country | What exactly they do with it | Evidence |
 |---|---|---|---|---|
-| HRL Laboratories | developer | US | 4 K controller sequencing 18 qubits | [D][8] [G:HRL-2026] |
-| IBM Quantum | developer | US | 14 nm flux ASICs; buying HRL | [D][4] [C][9], [14] |
-| Intel | developer | US | Horse Ridge, Pando Tree | [C][12] [G:INTEL-2026] |
-| Microsoft | research | US | Gooseberry at 100 mK; charge-lock patent | [D][2] [G][15] |
-| University of Sydney | research | AU | mK CMOS driving Diraq spins | [D][5] |
-| Equal1 | developer | IE | Qubits and control on one die | [C][10] [G:EQUAL1-60M-2026-01] |
-| Quantum Machines | supplier | IL | Warm racks this node displaces | [C][16] |
+| HRL Laboratories | developer | US | 4 K controller sequencing 18 qubits | [D][163] [G:HRL-2026] |
+| IBM Quantum | developer | US | 14 nm flux ASICs; buying HRL | [D][220] [C][10], [411] |
+| Intel | developer | US | Horse Ridge, Pando Tree | [C][423] [G:INTEL-2026] |
+| Microsoft | research | US | Gooseberry at 100 mK; charge-lock patent | [D][417] [G][425] |
+| University of Sydney | research | AU | mK CMOS driving Diraq spins | [D][419] |
+| Equal1 | developer | IE | Qubits and control on one die | [C][422] [G:EQUAL1-60M-2026-01] |
+| Quantum Machines | supplier | IL | Warm racks this node displaces | [C][412] |
 
 **Money.**
-- 2025-02-25 · Quantum Machines · Series C · $170 M · PSG Equity · $280 M cumulative [C][16]
+- 2025-02-25 · Quantum Machines · Series C · $170 M · PSG Equity · $280 M cumulative [C][412]
 - 2025-11-06 · DARPA QBI Stage B · up to $15 M each · eleven teams incl. IBM, Diraq [G:QBI-STAGEB-2025-11]
 - 2026-05-21 · GlobalFoundries; Diraq · CHIPS letters of intent · $375 M; $38 M · LOI [G:CHIPS-LOI-2026-05]
-- 2026-07-02 · SEEQC · S-1 for Nasdaq beside an Allegro merger · $1 B enterprise value, $65 M PIPE [C][17] [P][18]; SPAC merger terminated 2026-08-25, S-1 continues [G:SEEQC-SPAC-TERMINATED-2026-08]
-- 2026-07-23 · IBM · acquires HRL Laboratories · undisclosed · closing end Q3 2026 [C][14] [G:IBM-HRL-2026-07]
+- 2026-07-02 · SEEQC · S-1 for Nasdaq beside an Allegro merger · $1 B enterprise value, $65 M PIPE [C][426] [P][427]; SPAC merger terminated 2026-08-25, S-1 continues [G:SEEQC-SPAC-TERMINATED-2026-08]
+- 2026-07-23 · IBM · acquires HRL Laboratories · undisclosed · closing end Q3 2026 [C][10] [G:IBM-HRL-2026-07]
 
-**Market & supply chain.** Nobody sells a cryo-CMOS controller as of 3 Sep 2026; the layer's revenue is warm racks from Quantum Machines, Zurich Instruments, Keysight and QBLOX, and Quantum Machines alone has raised $280 M [C][16], [19]. Cryo-CMOS itself is captive R&D; merchant offers are pre-revenue: SemiQon, FrostByte (€1.3 M) and Rhonexum ($1 M) [C][7], [20] [P][21]. G3, G4 and G7 pay for it; G1, G2 and G5 do not.
+**Market & supply chain.** Nobody sells a cryo-CMOS controller as of 3 Sep 2026; the layer's revenue is warm racks from Quantum Machines, Zurich Instruments, Keysight and QBLOX, and Quantum Machines alone has raised $280 M [C][412], [428]. Cryo-CMOS itself is captive R&D; merchant offers are pre-revenue: SemiQon, FrostByte (€1.3 M) and Rhonexum ($1 M) [C][421], [429] [P][430]. G3, G4 and G7 pay for it; G1, G2 and G5 do not.
 
-**IP & standards.** Microsoft Technology Licensing holds US 11,838,022 on the cryogenic-CMOS qubit interface (granted 2023-12-05), the charge-lock architecture behind Gooseberry [G][15]; MIT holds US 12,705,525 on baseband pulsing (2026-08-11) [G][22]; Intel's closed-loop calibration filing is an application only [G][23]. No database publishes a dated family count [P][24]. Standards: none, and no agreed power-per-qubit definition.
+**IP & standards.** Microsoft Technology Licensing holds US 11,838,022 on the cryogenic-CMOS qubit interface (granted 2023-12-05), the charge-lock architecture behind Gooseberry [G][425]; MIT holds US 12,705,525 on baseband pulsing (2026-08-11) [G][431]; Intel's closed-loop calibration filing is an application only [G][432]. No database publishes a dated family count [P][433]. Standards: none, and no agreed power-per-qubit definition.
 
 **Roadmaps & track record.**
 - Intel: 2020-12-03 · Horse Ridge II for scaled spin systems · no successor [G:INTEL-2026].
-- Microsoft: 2021-01-27 · Gooseberry to "thousands of qubits" · not delivered [C][25].
-- IBM: 2024-02-14 · cryo-CMOS as the route to scalable control · partly delivered, flux only [D][4] [C][9].
-- HRL: 2026-04-17 · a processor with no warm waveform generators · delivered [D][8].
+- Microsoft: 2021-01-27 · Gooseberry to "thousands of qubits" · not delivered [C][434].
+- IBM: 2024-02-14 · cryo-CMOS as the route to scalable control · partly delivered, flux only [D][220] [C][411].
+- HRL: 2026-04-17 · a processor with no warm waveform generators · delivered [D][163].
 Credibility: HRL alone named a dated deliverable and shipped it, and IBM bought it; IBM publishes A/B comparisons, not headline claims; Intel has no peer-reviewed fidelity on a Horse Ridge part; Microsoft's line is five years dormant.
 
-**Strategic reading.** Winners if cold control becomes standard: integrated CMOS houses — IBM with HRL, Intel if it re-engages — and spin companies whose qubits and controllers share a line. Losers: warm-rack vendors, protected only while nobody below a thousand qubits needs an ASIC. The substitution threat is single-flux-quantum control, three orders cheaper per qubit [S][3] and now financing itself publicly at $1 B [P][18]. Bargaining power stays with platform vendors; the scarce supplier is the refrigerator maker.
+**Strategic reading.** Winners if cold control becomes standard: integrated CMOS houses — IBM with HRL, Intel if it re-engages — and spin companies whose qubits and controllers share a line. Losers: warm-rack vendors, protected only while nobody below a thousand qubits needs an ASIC. The substitution threat is single-flux-quantum control, three orders cheaper per qubit [S][418] and now financing itself publicly at $1 B [P][427]. Bargaining power stays with platform vendors; the scarce supplier is the refrigerator maker.
 
 *Open niche:* the missing instrument is controller-side QCVV. Every number above is measured through the qubit, so no protocol separates the controller's drift from the qubit's own; a small QCVV/SFQ company could sell cold-controller characterisation — converter drift, channel amplitude and phase non-uniformity, back-action heating against duty cycle, and the controller's share of the error budget.
 
@@ -112,42 +112,42 @@ Open questions: (1) a defensible power-per-qubit definition? (2) will a foundry 
 
 ## Sources
 
-[1] Intel Corporation, “Intel Debuts 2nd-Gen Horse Ridge Cryogenic Quantum Control Chip,” Dec. 3, 2020. [Online]. Available: https://www.intc.com/news-events/press-releases/detail/1429/intel-debuts-2nd-gen-horse-ridge-cryogenic-quantum-control [C]
-[2] S. J. Pauka *et al.*, “A cryogenic CMOS chip for generating control signals for multiple qubits,” *Nat. Electron.*, vol. 4, no. 1, pp. 64–70, Jan. 2021, doi: [10.1038/s41928-020-00528-y](https://doi.org/10.1038/s41928-020-00528-y). [D]
-[3] S. Kawabata, “Integration and Resource Estimation of Cryoelectronics for Superconducting Fault-Tolerant Quantum Computers,” [arXiv:2601.03922](https://arxiv.org/abs/2601.03922), Jan. 2026. [S]
-[4] D. Underwood *et al.*, “Using Cryogenic CMOS Control Electronics to Enable a Two-Qubit Cross-Resonance Gate,” *PRX Quantum*, vol. 5, no. 1, Art. no. 010326, Feb. 2024, doi: [10.1103/PRXQuantum.5.010326](https://doi.org/10.1103/PRXQuantum.5.010326). [D]
-[5] S. K. Bartee *et al.*, “Spin-qubit control with a milli-kelvin CMOS chip,” *Nature*, vol. 643, no. 8071, pp. 382–387, Jul. 2025, doi: [10.1038/s41586-025-09157-x](https://doi.org/10.1038/s41586-025-09157-x). [D]
-[6] J. van Staveren *et al.*, “Cryo-CMOS Bias-Voltage Generation and Demultiplexing at mK Temperatures for Large-Scale Arrays of Quantum Devices,” *IEEE Trans. Quantum Eng.*, vol. 6, pp. 1–18, 2025, doi: [10.1109/TQE.2025.3580377](https://doi.org/10.1109/TQE.2025.3580377). [C]
-[7] SemiQon, “SemiQon Cryo-CMOS™.” [Online]. Available: https://www.semiqon.com/technology/semiqon-cryo-cmos [C]
-[8] Members of the HRL Quantum Team and Collaborators, “A digitally controlled silicon quantum processing unit,” [arXiv:2604.16216](https://arxiv.org/abs/2604.16216), Apr. 2026. [D]
-[9] A. Noori *et al.*, “A Cryo-CMOS Control System for Large-Scale Superconducting Qubit Quantum Computing: Part 2,” IBM Research, Mar. 16, 2026. [Online]. Available: https://research.ibm.com/publications/a-cryo-cmos-control-system-for-large-scale-superconducting-qubit-quantum-computing-part-2 [C]
-[10] Equal1, “UnityQ.” [Online]. Available: https://www.equal1.com/technology [C]
-[11] US Department of Commerce, Bureau of Industry and Security, “Commerce Control List Additions and Revisions; Implementation of Controls on Advanced Technologies Consistent With Controls Implemented by International Partners,” *Federal Register*, vol. 89, p. 72926, Sep. 6, 2024. [Online]. Available: https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies [G]
-[12] S. Subramanian and S. Pellerano, “Intel's Millikelvin Quantum Research Control Chip Provides Denser Integration with Qubits,” Intel Community, Jun. 20, 2024. [Online]. Available: https://community.intel.com/t5/Blogs/Tech-Innovation/Data-Center/Intel-s-Millikelvin-Quantum-Research-Control-Chip-Provides/post/1608558 [C]
-[13] QuTech, “Scalable diamond Quantum Computing with cryogenic chip integration,” Feb. 17, 2026. [Online]. Available: https://qutech.nl/2026/02/17/scalable-diamond-quantum-computing-with-cryogenic-chip-integration/ [C]
-[14] IBM, “IBM to Acquire HRL Laboratories to Power the Future of Quantum,” Jul. 23, 2026. [Online]. Available: https://newsroom.ibm.com/2026-07-23-ibm-to-acquire-hrl-laboratories-to-power-the-future-of-quantum [C]
-[15] Microsoft Technology Licensing, LLC, “Cryogenic-CMOS interface for controlling qubits,” USPTO, Dec. 2023. [Online]. Available: https://patents.justia.com/patent/11838022 [G]
-[16] Quantum Machines, “Quantum Machines Raises $170M as Its Customer Base Exceeds 50% of Companies Developing Quantum Computers,” Feb. 25, 2025. [Online]. Available: https://www.quantum-machines.co/press-release/quantum-machines-raises-170-million-in-series-c-funding/ [C]
-[17] SEEQC, “SEEQC Files Registration Statement for Proposed Initial Public Offering,” Business Wire, Jun. 29, 2026. [Online]. Available: https://www.businesswire.com/news/home/20260629077919/en/SEEQC-Files-Registration-Statement-for-Proposed-Initial-Public-Offering [C]
-[18] M. Abdel-Kareem, “SEEQC Files Form S-1 for Nasdaq IPO Parallel to Ongoing Allegro Merger Process,” Quantum Computing Report, Jul. 2, 2026. [Online]. Available: https://quantumcomputingreport.com/seeqc-files-form-s-1-for-nasdaq-ipo-parallel-to-ongoing-allegro-merger-process/ [P]
-[19] Quantum Machines, “Quantum Machines Makes Second European Acquisition in Six Weeks as Quantum Closes In on Real-World Advantage,” Jun. 17, 2026. [Online]. Available: https://www.quantum-machines.co/press-release/quantum-machines-acquisition-pcb-engineering/ [C]
-[20] QuTech, “QuTech spinoff FrostByte raises €1.3 million for cryo-electronics for scalable quantum computers,” May 11, 2026. [Online]. Available: https://qutech.nl/2026/05/11/qutech-spinoff-frostbyte-raises-e1-3-million-for-cryo-electronics-for-scalable-quantum-computers/ [C]
-[21] M. Abdel-Kareem, “Rhonexum Raises $1M Pre-Seed to Solve the Quantum Cabling Bottleneck via Cryo-CMOS,” Quantum Computing Report, Mar. 18, 2026. [Online]. Available: https://quantumcomputingreport.com/rhonexum-raises-1m-pre-seed-to-solve-the-quantum-cabling-bottleneck-via-cryo-cmos/ [P]
-[22] W. D. Oliver and S. Gustavsson, “Scalable control of quantum bits using baseband pulsing,” USPTO, Aug. 2026. [Online]. Available: https://patents.justia.com/patent/12705525 [G]
-[23] Intel Corporation, “Technologies for Closed-Loop Qubit Calibration,” USPTO, Jul. 2026. [Online]. Available: https://patents.justia.com/patent/20260187510 [G]
-[24] PatSnap, “Cryogenic CMOS Circuit Technology Landscape 2026,” Apr. 20, 2026. [Online]. Available: https://www.patsnap.com/resources/blog/articles/cryo-cmos-technology-landscape-2026/ [P]
-[25] C. Nayak, “Full stack ahead: Pioneering quantum hardware allows for controlling up to thousands of qubits at cryogenic temperatures,” Microsoft Research Blog, Jan. 27, 2021. [Online]. Available: https://www.microsoft.com/en-us/research/blog/full-stack-ahead-pioneering-quantum-hardware-allows-for-controlling-up-to-thousands-of-qubits-at-cryogenic-temperatures/ [C]
+[10] IBM, “IBM to Acquire HRL Laboratories to Power the Future of Quantum,” Jul. 23, 2026. [Online]. Available: https://newsroom.ibm.com/2026-07-23-ibm-to-acquire-hrl-laboratories-to-power-the-future-of-quantum [C]
+[163] Members of the HRL Quantum Team and Collaborators, “A digitally controlled silicon quantum processing unit,” [arXiv:2604.16216](https://arxiv.org/abs/2604.16216), Apr. 2026. [D]
+[220] D. Underwood *et al.*, “Using Cryogenic CMOS Control Electronics to Enable a Two-Qubit Cross-Resonance Gate,” *PRX Quantum*, vol. 5, no. 1, Art. no. 010326, Feb. 2024, doi: [10.1103/PRXQuantum.5.010326](https://doi.org/10.1103/PRXQuantum.5.010326). [D]
+[225] US Department of Commerce, Bureau of Industry and Security, “Commerce Control List Additions and Revisions; Implementation of Controls on Advanced Technologies Consistent With Controls Implemented by International Partners,” *Federal Register*, vol. 89, p. 72926, Sep. 6, 2024. [Online]. Available: https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies [G]
+[411] A. Noori *et al.*, “A Cryo-CMOS Control System for Large-Scale Superconducting Qubit Quantum Computing: Part 2,” IBM Research, Mar. 16, 2026. [Online]. Available: https://research.ibm.com/publications/a-cryo-cmos-control-system-for-large-scale-superconducting-qubit-quantum-computing-part-2 [C]
+[412] Quantum Machines, “Quantum Machines Raises $170M as Its Customer Base Exceeds 50% of Companies Developing Quantum Computers,” Feb. 25, 2025. [Online]. Available: https://www.quantum-machines.co/press-release/quantum-machines-raises-170-million-in-series-c-funding/ [C]
+[416] Intel Corporation, “Intel Debuts 2nd-Gen Horse Ridge Cryogenic Quantum Control Chip,” Dec. 3, 2020. [Online]. Available: https://www.intc.com/news-events/press-releases/detail/1429/intel-debuts-2nd-gen-horse-ridge-cryogenic-quantum-control [C]
+[417] S. J. Pauka *et al.*, “A cryogenic CMOS chip for generating control signals for multiple qubits,” *Nat. Electron.*, vol. 4, no. 1, pp. 64–70, Jan. 2021, doi: [10.1038/s41928-020-00528-y](https://doi.org/10.1038/s41928-020-00528-y). [D]
+[418] S. Kawabata, “Integration and Resource Estimation of Cryoelectronics for Superconducting Fault-Tolerant Quantum Computers,” [arXiv:2601.03922](https://arxiv.org/abs/2601.03922), Jan. 2026. [S]
+[419] S. K. Bartee *et al.*, “Spin-qubit control with a milli-kelvin CMOS chip,” *Nature*, vol. 643, no. 8071, pp. 382–387, Jul. 2025, doi: [10.1038/s41586-025-09157-x](https://doi.org/10.1038/s41586-025-09157-x). [D]
+[420] J. van Staveren *et al.*, “Cryo-CMOS Bias-Voltage Generation and Demultiplexing at mK Temperatures for Large-Scale Arrays of Quantum Devices,” *IEEE Trans. Quantum Eng.*, vol. 6, pp. 1–18, 2025, doi: [10.1109/TQE.2025.3580377](https://doi.org/10.1109/TQE.2025.3580377). [C]
+[421] SemiQon, “SemiQon Cryo-CMOS™.” [Online]. Available: https://www.semiqon.com/technology/semiqon-cryo-cmos [C]
+[422] Equal1, “UnityQ.” [Online]. Available: https://www.equal1.com/technology [C]
+[423] S. Subramanian and S. Pellerano, “Intel's Millikelvin Quantum Research Control Chip Provides Denser Integration with Qubits,” Intel Community, Jun. 20, 2024. [Online]. Available: https://community.intel.com/t5/Blogs/Tech-Innovation/Data-Center/Intel-s-Millikelvin-Quantum-Research-Control-Chip-Provides/post/1608558 [C]
+[424] QuTech, “Scalable diamond Quantum Computing with cryogenic chip integration,” Feb. 17, 2026. [Online]. Available: https://qutech.nl/2026/02/17/scalable-diamond-quantum-computing-with-cryogenic-chip-integration/ [C]
+[425] Microsoft Technology Licensing, LLC, “Cryogenic-CMOS interface for controlling qubits,” USPTO, Dec. 2023. [Online]. Available: https://patents.justia.com/patent/11838022 [G]
+[426] SEEQC, “SEEQC Files Registration Statement for Proposed Initial Public Offering,” Business Wire, Jun. 29, 2026. [Online]. Available: https://www.businesswire.com/news/home/20260629077919/en/SEEQC-Files-Registration-Statement-for-Proposed-Initial-Public-Offering [C]
+[427] M. Abdel-Kareem, “SEEQC Files Form S-1 for Nasdaq IPO Parallel to Ongoing Allegro Merger Process,” Quantum Computing Report, Jul. 2, 2026. [Online]. Available: https://quantumcomputingreport.com/seeqc-files-form-s-1-for-nasdaq-ipo-parallel-to-ongoing-allegro-merger-process/ [P]
+[428] Quantum Machines, “Quantum Machines Makes Second European Acquisition in Six Weeks as Quantum Closes In on Real-World Advantage,” Jun. 17, 2026. [Online]. Available: https://www.quantum-machines.co/press-release/quantum-machines-acquisition-pcb-engineering/ [C]
+[429] QuTech, “QuTech spinoff FrostByte raises €1.3 million for cryo-electronics for scalable quantum computers,” May 11, 2026. [Online]. Available: https://qutech.nl/2026/05/11/qutech-spinoff-frostbyte-raises-e1-3-million-for-cryo-electronics-for-scalable-quantum-computers/ [C]
+[430] M. Abdel-Kareem, “Rhonexum Raises $1M Pre-Seed to Solve the Quantum Cabling Bottleneck via Cryo-CMOS,” Quantum Computing Report, Mar. 18, 2026. [Online]. Available: https://quantumcomputingreport.com/rhonexum-raises-1m-pre-seed-to-solve-the-quantum-cabling-bottleneck-via-cryo-cmos/ [P]
+[431] W. D. Oliver and S. Gustavsson, “Scalable control of quantum bits using baseband pulsing,” USPTO, Aug. 2026. [Online]. Available: https://patents.justia.com/patent/12705525 [G]
+[432] Intel Corporation, “Technologies for Closed-Loop Qubit Calibration,” USPTO, Jul. 2026. [Online]. Available: https://patents.justia.com/patent/20260187510 [G]
+[433] PatSnap, “Cryogenic CMOS Circuit Technology Landscape 2026,” Apr. 20, 2026. [Online]. Available: https://www.patsnap.com/resources/blog/articles/cryo-cmos-technology-landscape-2026/ [P]
+[434] C. Nayak, “Full stack ahead: Pioneering quantum hardware allows for controlling up to thousands of qubits at cryogenic temperatures,” Microsoft Research Blog, Jan. 27, 2021. [Online]. Available: https://www.microsoft.com/en-us/research/blog/full-stack-ahead-pioneering-quantum-hardware-allows-for-controlling-up-to-thousands-of-qubits-at-cryogenic-temperatures/ [C]
 
 ## Open verification items
 
-- Power per qubit at 4 K: IBM's measured 23 mW under active control [D][4] against "optimistic 5 mW" and "below 2 mW" in the resource review [S][3]; definitions differ (active vs idle, drive-only vs full chain) and none is published. 23 mW used.
-- Gooseberry's 18 nW per cell [D][2] and the Sydney chip's ~20 nW MHz⁻¹ per cell [D][5] are quoted interchangeably in secondary sources; different quantities, not reconciled.
-- Cooling powers for the Bluefors XLD1000sl, IBM Goldeneye and Fermilab Colossus come from the resource review [S][3]; the Bluefors XLD product page returned HTTP 404 on 2026-09-03 and the primary specification is unconfirmed.
-- IBM's 2026 cryo-CMOS flux result exists only as conference abstracts [C][9]; no preprint or paper as of 2026-09-03, and the 14 nm FinFET attribution rests on the abstract text. IBM's modular-cryogenics blog (2026-08) gives cell wiring area and vacuum volume but no cooling power at 4 K.
-- Equal1's 99.9% / 99.3% / 99% fidelities and "35 monolithic quantum cells" are product-page claims [C][10] with no paper or dated release.
+- Power per qubit at 4 K: IBM's measured 23 mW under active control [D][220] against "optimistic 5 mW" and "below 2 mW" in the resource review [S][418]; definitions differ (active vs idle, drive-only vs full chain) and none is published. 23 mW used.
+- Gooseberry's 18 nW per cell [D][417] and the Sydney chip's ~20 nW MHz⁻¹ per cell [D][419] are quoted interchangeably in secondary sources; different quantities, not reconciled.
+- Cooling powers for the Bluefors XLD1000sl, IBM Goldeneye and Fermilab Colossus come from the resource review [S][418]; the Bluefors XLD product page returned HTTP 404 on 2026-09-03 and the primary specification is unconfirmed.
+- IBM's 2026 cryo-CMOS flux result exists only as conference abstracts [C][411]; no preprint or paper as of 2026-09-03, and the 14 nm FinFET attribution rests on the abstract text. IBM's modular-cryogenics blog (2026-08) gives cell wiring area and vacuum volume but no cooling power at 4 K.
+- Equal1's 99.9% / 99.3% / 99% fidelities and "35 monolithic quantum cells" are product-page claims [C][422] with no paper or dated release.
 - SemiQon's process node, fab location and the size of its 2026-07 PostScriptum investment are undisclosed.
-- SEEQC's revenue, cash and offering size appear in neither the filing announcement nor the trade-press summary [C][17] [P][18]; the $1 B enterprise value and $65 M PIPE are trade-press figures and the S-1 itself was not read.
-- Quantum Machines' revenue is undisclosed and its ">50% of companies developing quantum computers" customer share is a company claim [C][16]; Zurich Instruments, Keysight and QBLOX publish nothing comparable, so the warm-control market this node would displace cannot be sized.
-- The QuTech/Fujitsu diamond cryo-CMOS ISSCC 2026 paper's power, channel count and process node were not obtainable; only the institutional release [C][13].
-- Cryo-CMOS patent-family counts: no named database publishes a dated count; PatSnap gives only regional "key result" tallies with a completeness disclaimer [P][24].
-- HRL's controller cost, tape-out schedule and whether IBM retains the 130 nm design are unstated in the acquisition release [C][14]; the acquisition was not confirmed closed as of 2026-09-03.
+- SEEQC's revenue, cash and offering size appear in neither the filing announcement nor the trade-press summary [C][426] [P][427]; the $1 B enterprise value and $65 M PIPE are trade-press figures and the S-1 itself was not read.
+- Quantum Machines' revenue is undisclosed and its ">50% of companies developing quantum computers" customer share is a company claim [C][412]; Zurich Instruments, Keysight and QBLOX publish nothing comparable, so the warm-control market this node would displace cannot be sized.
+- The QuTech/Fujitsu diamond cryo-CMOS ISSCC 2026 paper's power, channel count and process node were not obtainable; only the institutional release [C][424].
+- Cryo-CMOS patent-family counts: no named database publishes a dated count; PatSnap gives only regional "key result" tallies with a completeness disclaimer [P][433].
+- HRL's controller cost, tape-out schedule and whether IBM retains the 130 nm design are unstated in the acquisition release [C][10]; the acquisition was not confirmed closed as of 2026-09-03.

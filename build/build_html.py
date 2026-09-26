@@ -192,8 +192,8 @@ def polish(h,lang):
         order,works,alias,num,_=refs()
         e=h.find('</h2>',i9)+5; body=h[e:]
         keep=[p for p in re.findall(r'<p>.*?</p>',body,flags=re.S) if not CITE.search(p) and not re.search(r'End of (?:the )?\w+ edition|Конец \w+ издания',p)]
-        note=('<p class="refnote">Numbered in order of first citation. Online sources were accessed in September 2026.</p>' if lang=='en' else
-              '<p class="refnote">Нумерация — по порядку первого цитирования. Онлайн-источники просмотрены в сентябре 2026 г.</p>')
+        note=('<p class="refnote">A number stands for one work throughout the Map — here, in every technology brief and in later editions. Online sources were accessed in September 2026.</p>' if lang=='en' else
+              '<p class="refnote">Номер обозначает одну работу во всей Карте — здесь, в каждом брифе по технологии и в последующих изданиях. Онлайн-источники просмотрены в сентябре 2026 г.</p>')
         h=h[:e]+'\n'+note+'\n'+sources.render_list(lang,order,works,num)+'\n'+'\n'.join(keep)+'\n'
         srcs=set(num)
     h=re.sub(r'<p><strong>(H[1-8]) — ',lambda m:f'<p id="{P}{m.group(1).lower()}"><strong>{m.group(1)} — ',h)

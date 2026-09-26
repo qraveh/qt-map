@@ -12,40 +12,40 @@ updated: 2026-09-03
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-Not hardware, a decoding discipline. Loss-aware decoding consumes the herald: a missing atom is an erasure at a known site, so stabilizers touching the vacancy multiply into higher-weight *supercheck* operators that still commute with the surviving code [1]. Correlated decoding solves the joint syndrome history across transversal (block-to-block) layers rather than block-by-block; Cain et al. (Harvard, 2024-03-05) showed the rounds between Clifford gates drop O(d)→O(1) [2], generalised as algorithmic fault tolerance (Nature 2025) [3].
+Not hardware, a decoding discipline. Loss-aware decoding consumes the herald: a missing atom is an erasure at a known site, so stabilizers touching the vacancy multiply into higher-weight *supercheck* operators that still commute with the surviving code [4]. Correlated decoding solves the joint syndrome history across transversal (block-to-block) layers rather than block-by-block; Cain et al. (Harvard, 2024-03-05) showed the rounds between Clifford gates drop O(d)→O(1) [546], generalised as algorithmic fault tolerance (Nature 2025) [136].
 f = loss + erasure; a/c/d/e/g = none — classical compute, no fab or placement [graph].
 
 ## Physics & limits
-The herald is the asset: >80% of Rydberg-array leakage is atom loss, and imaging finds it [1]. A located erasure costs the decoder only the Pauli frame, not the position — why erasure conversion lifts circuit-level thresholds 3–4× at fixed gate physics [4]. The price is distance: each supercheck is a product of two stabilizers, so every vacancy locally thins the code. Correlated decoding pays differently: transversal CNOTs propagate errors between blocks, so the graph grows with circuit depth, not d. Nothing moves the floor — the unheralded residual is untouched, m_F leakage 0.008(1)% per atom per gate against atom loss 0.087(5)% [G:HARVARD-CZ-2026-04].
+The herald is the asset: >80% of Rydberg-array leakage is atom loss, and imaging finds it [4]. A located erasure costs the decoder only the Pauli frame, not the position — why erasure conversion lifts circuit-level thresholds 3–4× at fixed gate physics [8]. The price is distance: each supercheck is a product of two stabilizers, so every vacancy locally thins the code. Correlated decoding pays differently: transversal CNOTs propagate errors between blocks, so the graph grows with circuit depth, not d. Nothing moves the floor — the unheralded residual is untouched, m_F leakage 0.008(1)% per atom per gate against atom loss 0.087(5)% [G:HARVARD-CZ-2026-04].
 ## Engineering state of the art
 | Date | Figure | Who | Tag+key |
 |---|---|---|---|
-| 2025-11-10 | 1.73(13)× gain from loss flags + ML over conventional decoding, same 448-atom data | Harvard/MIT/QuEra | [D][1][G:HARVARD-LOSS-QEC-2025] |
-| 2026-03 | Correlated-loss decoder: 4% threshold vs 3.2% assuming independent loss; 144 µs/round; simulation | QPerfect | [S][5][G:QPERFECT-CORRLOSS-2026-03] |
-| 2026-06-12 | [[4,2,2]] ¹⁷¹Yb: unconditional decay 1.9(4)× slower with erasure information (3.6(1)× is the post-selected hold) | Princeton | [D][6][G:PRINCETON-ERASURE-RESOLVED-2026-09] |
+| 2025-11-10 | 1.73(13)× gain from loss flags + ML over conventional decoding, same 448-atom data | Harvard/MIT/QuEra | [D][4][G:HARVARD-LOSS-QEC-2025] |
+| 2026-03 | Correlated-loss decoder: 4% threshold vs 3.2% assuming independent loss; 144 µs/round; simulation | QPerfect | [S][547][G:QPERFECT-CORRLOSS-2026-03] |
+| 2026-06-12 | [[4,2,2]] ¹⁷¹Yb: unconditional decay 1.9(4)× slower with erasure information (3.6(1)× is the post-selected hold) | Princeton | [D][128][G:PRINCETON-ERASURE-RESOLVED-2026-09] |
 
 Same circuit: 2.14(13)×, d=3→5, four rounds. Dominant term: atom loss, not Pauli error.
 
 ## Manufacturing, materials & supply chain
-No fab: classical compute already bought for matching. Latency sets scope: 144 µs/round fits a 1–4.5 ms atom cycle with 7–30× margin [5] but is ~130× over a 1.1 µs superconducting cycle — why this stays atom-specific. Loss-flag bandwidth is one bit per site per round, so the wall at 10³–10⁴ atoms is the ~0.5–1 ms imaging and a decode window scaling with logical depth, not the link. Inherited single points of failure: Hamamatsu qCMOS imaging [G:HAMAMATSU-CAMERA-CONC-2026] and two AOD vendors [G:AOD-VENDORS-2026].
+No fab: classical compute already bought for matching. Latency sets scope: 144 µs/round fits a 1–4.5 ms atom cycle with 7–30× margin [547] but is ~130× over a 1.1 µs superconducting cycle — why this stays atom-specific. Loss-flag bandwidth is one bit per site per round, so the wall at 10³–10⁴ atoms is the ~0.5–1 ms imaging and a decode window scaling with logical depth, not the link. Inherited single points of failure: Hamamatsu qCMOS imaging [G:HAMAMATSU-CAMERA-CONC-2026] and two AOD vendors [G:AOD-VENDORS-2026].
 
 ## Role in the stack
-Requires high-rate concatenated codes with transversal gates; provides the decoding half of algorithmic fault tolerance, whose constant-round claim is otherwise unbacked on hardware. Derived clock = sum of the syndrome round (gates 1 µs, transport 800 µs, 1Q 10 µs, readout 501 µs) ≈ 1.3 ms, ~0.76 kHz; the decoder must return inside it, not set it. Verification: 1.73× is a decoder-vs-decoder ratio on one lab's data, unreplicated; 4% is simulation [5].  Four rounds test neither drift nor reloading; Atom Computing's toric code is the control, suppression vanishing with reloading (0.63% vs 0.64% per cycle) [7]. Princeton's 1.9(4)×/3.6(1)× discrepancy is resolved: one paper, two quantities [G:PRINCETON-ERASURE-RESOLVED-2026-09].
+Requires high-rate concatenated codes with transversal gates; provides the decoding half of algorithmic fault tolerance, whose constant-round claim is otherwise unbacked on hardware. Derived clock = sum of the syndrome round (gates 1 µs, transport 800 µs, 1Q 10 µs, readout 501 µs) ≈ 1.3 ms, ~0.76 kHz; the decoder must return inside it, not set it. Verification: 1.73× is a decoder-vs-decoder ratio on one lab's data, unreplicated; 4% is simulation [547].  Four rounds test neither drift nor reloading; Atom Computing's toric code is the control, suppression vanishing with reloading (0.63% vs 0.64% per cycle) [133]. Princeton's 1.9(4)×/3.6(1)× discrepancy is resolved: one paper, two quantities [G:PRINCETON-ERASURE-RESOLVED-2026-09].
 
 ## Actors & economics
 **Who.**
 
 | Organisation | Role | Country | What exactly | Evidence |
 |---|---|---|---|---|
-| Harvard/MIT | research | US | Correlated decoding, superchecks, 1.73(13)× | [D][1], [2] |
-| QuEra | developer | US | Co-author; Libra 2028 assumes it | [D][1][C][8] |
-| QPerfect (BTQ) | supplier | FR | Correlated-loss decoder; aQCess twin | [S][5][C][9] |
-| Atom Computing | user | US | Erasure-native Yb; reloading counter-example | [D][7][C][10] |
+| Harvard/MIT | research | US | Correlated decoding, superchecks, 1.73(13)× | [D][4], [546] |
+| QuEra | developer | US | Co-author; Libra 2028 assumes it | [D][4][C][137] |
+| QPerfect (BTQ) | supplier | FR | Correlated-loss decoder; aQCess twin | [S][547][C][548] |
+| Atom Computing | user | US | Erasure-native Yb; reloading counter-example | [D][133][C][138] |
 
 **Money.**
-2025-04-09 · BTQ Technologies · €2 M into QPerfect at €10 M pre-money (16.67%) · term sheet [P][11]
-2026-07-22 · QPerfect · aQCess twin, Equipex+ ANR-21-ESRE-0032 · announced [C][9]
-2026-06-16 · Atom Computing · $100 M Series C (Third Point) + $100 M CHIPS LOI · closed + LOI [C][10][G:ATOM-300M-2026-06]
+2025-04-09 · BTQ Technologies · €2 M into QPerfect at €10 M pre-money (16.67%) · term sheet [P][549]
+2026-07-22 · QPerfect · aQCess twin, Equipex+ ANR-21-ESRE-0032 · announced [C][548]
+2026-06-16 · Atom Computing · $100 M Series C (Third Point) + $100 M CHIPS LOI · closed + LOI [C][138][G:ATOM-300M-2026-06]
 2025-11-06 · DARPA QBI Stage B · Atom Computing, QuEra among eleven · ≤$15 M each [G:QBI-STAGEB-2025-11]
 
 **Market & supply chain.** No component market: GPU/FPGA cycles already bought for matching; concentration risk sits upstream, in imaging and AODs. Pays G3/G4 only.
@@ -59,21 +59,21 @@ Requires high-rate concatenated codes with transversal gates; provides the decod
 *Open niche:* both headline numbers are ratios against a baseline the same team chose; a QCVV shop with no atom hardware can re-derive the 1.73× against an optimal loss-blind decoder on published syndrome data and stress the 4% threshold under reloading.
 
 ## Outlook & open questions
-Confirm if the QPerfect decoder runs on real syndromes or a second vendor publishes its own loss-aware gain; demote if the gain dies under reloading or past four rounds. Best case 2029: default across neutral-atom FT stacks; worst case, one group's architecture, never past 10³ atoms. Open: does 1.73× hold at 10⁴ atoms, at depths where the correlated graph outgrows memory, and on ions [12]?
+Confirm if the QPerfect decoder runs on real syndromes or a second vendor publishes its own loss-aware gain; demote if the gain dies under reloading or past four rounds. Best case 2029: default across neutral-atom FT stacks; worst case, one group's architecture, never past 10³ atoms. Open: does 1.73× hold at 10⁴ atoms, at depths where the correlated graph outgrows memory, and on ions [506]?
 
 ## Sources
-[1] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
-[2] M. Cain *et al.*, “Correlated decoding of logical algorithms with transversal gates,” [arXiv:2403.03272](https://arxiv.org/abs/2403.03272), Mar. 2024. [D]
-[3] H. Zhou *et al.*, “Low-Overhead Transversal Fault Tolerance for Universal Quantum Computation,” *Nature*, vol. 646, no. 8084, pp. 303–308, 2025, doi: [10.1038/s41586-025-09543-5](https://doi.org/10.1038/s41586-025-09543-5). [arXiv:2406.17653](https://arxiv.org/abs/2406.17653). [S]
-[4] Y. Wu, S. Kolkowitz, S. Puri, and J. D. Thompson, “Erasure conversion for fault-tolerant quantum computing in alkaline earth Rydberg atom arrays,” *Nat. Commun.*, vol. 13, Art. no. 4657, 2022, doi: [10.1038/s41467-022-32094-6](https://doi.org/10.1038/s41467-022-32094-6). [arXiv:2201.03540](https://arxiv.org/abs/2201.03540). [S]
-[5] H. Perrin, G. Roger, and G. Pupillo, “Correlated Atom Loss as a Resource for Quantum Error Correction,” [arXiv:2603.24237](https://arxiv.org/abs/2603.24237), Mar. 2026. [S]
-[6] B. Zhang *et al.*, “Logical qubits with erasure conversion using metastable neutral atoms,” *Nat. Phys.*, vol. 22, no. 6, pp. 910–916, Jun. 2026, doi: [10.1038/s41567-026-03309-0](https://doi.org/10.1038/s41567-026-03309-0). [arXiv:2506.13724](https://arxiv.org/abs/2506.13724). [D]
-[7] Atom Computing and Collaborators, “Quantum error correction with the toric code,” [arXiv:2606.04079](https://arxiv.org/abs/2606.04079), Jun. 2026. [D]
-[8] QuEra Computing, “QuEra Expands $230 Million Financing Round Advancing Quantum-Accelerated Supercomputing,” Sep. 9, 2025. [Online]. Available: https://www.quera.com/press-releases/quera-expands-230-million-financing-round-advancing-quantum-accelerated-supercomputing [C]
-[9] BTQ Technologies, “BTQ Technologies' QPerfect Subsidiary and the University of Strasbourg Partner to Support France's First Public Neutral-Atom Quantum Computing Platform,” PR Newswire, Jul. 22, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/btq-technologies-qperfect-subsidiary-and-the-university-of-strasbourg-partner-to-support-frances-first-public-neutral-atom-quantum-computing-platform-302831874.html [C]
-[10] Atom Computing, “Atom Computing Raises More Than $300 Million to Accelerate Deployment of Fault-Tolerant, Neutral-Atom Quantum Computers,” PR Newswire, Jun. 16, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/atom-computing-raises-more-than-300-million-to-accelerate-deployment-of-fault-tolerant-neutral-atom-quantum-computers-302800832.html [C]
-[11] C. Choucair, “BTQ Technologies to Invest Over $2 Million in QPerfect to Advance Neutral Atom Quantum Computing,” The Quantum Insider, Apr. 9, 2025. [Online]. Available: https://thequantuminsider.com/2025/04/09/btq-technologies-to-invest-over-2-million-in-qperfect-to-advance-neutral-atom-quantum-computing/ [P]
-[12] A. Paetznick *et al.*, “Improved quantum processor logical error rates via correction and detection,” *Nature*, vol. 654, no. 8118, pp. 349–355, Jun. 2026, doi: [10.1038/s41586-026-10628-y](https://doi.org/10.1038/s41586-026-10628-y). [D]
+[4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
+[8] Y. Wu, S. Kolkowitz, S. Puri, and J. D. Thompson, “Erasure conversion for fault-tolerant quantum computing in alkaline earth Rydberg atom arrays,” *Nat. Commun.*, vol. 13, Art. no. 4657, 2022, doi: [10.1038/s41467-022-32094-6](https://doi.org/10.1038/s41467-022-32094-6). [arXiv:2201.03540](https://arxiv.org/abs/2201.03540). [S]
+[128] B. Zhang *et al.*, “Logical qubits with erasure conversion using metastable neutral atoms,” *Nat. Phys.*, vol. 22, no. 6, pp. 910–916, Jun. 2026, doi: [10.1038/s41567-026-03309-0](https://doi.org/10.1038/s41567-026-03309-0). [arXiv:2506.13724](https://arxiv.org/abs/2506.13724). [D]
+[133] Atom Computing and Collaborators, “Quantum error correction with the toric code,” [arXiv:2606.04079](https://arxiv.org/abs/2606.04079), Jun. 2026. [D]
+[136] H. Zhou *et al.*, “Low-Overhead Transversal Fault Tolerance for Universal Quantum Computation,” *Nature*, vol. 646, no. 8084, pp. 303–308, 2025, doi: [10.1038/s41586-025-09543-5](https://doi.org/10.1038/s41586-025-09543-5). [arXiv:2406.17653](https://arxiv.org/abs/2406.17653). [S]
+[137] QuEra Computing, “QuEra Expands $230 Million Financing Round Advancing Quantum-Accelerated Supercomputing,” Sep. 9, 2025. [Online]. Available: https://www.quera.com/press-releases/quera-expands-230-million-financing-round-advancing-quantum-accelerated-supercomputing [C]
+[138] Atom Computing, “Atom Computing Raises More Than $300 Million to Accelerate Deployment of Fault-Tolerant, Neutral-Atom Quantum Computers,” PR Newswire, Jun. 16, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/atom-computing-raises-more-than-300-million-to-accelerate-deployment-of-fault-tolerant-neutral-atom-quantum-computers-302800832.html [C]
+[506] A. Paetznick *et al.*, “Improved quantum processor logical error rates via correction and detection,” *Nature*, vol. 654, no. 8118, pp. 349–355, Jun. 2026, doi: [10.1038/s41586-026-10628-y](https://doi.org/10.1038/s41586-026-10628-y). [D]
+[546] M. Cain *et al.*, “Correlated decoding of logical algorithms with transversal gates,” [arXiv:2403.03272](https://arxiv.org/abs/2403.03272), Mar. 2024. [D]
+[547] H. Perrin, G. Roger, and G. Pupillo, “Correlated Atom Loss as a Resource for Quantum Error Correction,” [arXiv:2603.24237](https://arxiv.org/abs/2603.24237), Mar. 2026. [S]
+[548] BTQ Technologies, “BTQ Technologies' QPerfect Subsidiary and the University of Strasbourg Partner to Support France's First Public Neutral-Atom Quantum Computing Platform,” PR Newswire, Jul. 22, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/btq-technologies-qperfect-subsidiary-and-the-university-of-strasbourg-partner-to-support-frances-first-public-neutral-atom-quantum-computing-platform-302831874.html [C]
+[549] C. Choucair, “BTQ Technologies to Invest Over $2 Million in QPerfect to Advance Neutral Atom Quantum Computing,” The Quantum Insider, Apr. 9, 2025. [Online]. Available: https://thequantuminsider.com/2025/04/09/btq-technologies-to-invest-over-2-million-in-qperfect-to-advance-neutral-atom-quantum-computing/ [P]
 [G] Bluvstein et al. (Harvard/MIT/QuEra), Nature 649, 39 (online 2025-11-10; arXiv:2506.20661, 2025-06-25): surface code on up to 448 atoms, 2.14(13)× below threshold in a four-round c… · 2025-11-10 · https://www.nature.com/articles/s41586-025-09848-5
 [G] Evered, Xu, Li, Geim, Bonilla Ataides, Kalinowski, Bluvstein, Maskara, Kokail, Greiner, Vuletic, Lukin (Harvard/MIT), "High-fidelity entangling gates and nonlocal circuits with neu… · 2026-04-28 · https://arxiv.org/abs/2604.25987
 [G] Perrin, Roger, Pupillo (Univ. Strasbourg/CNRS, QPERFECT SAS), "Correlated Atom Loss as a Resource for Quantum Error Correction", arXiv:2603.24237 (2026-03): fast correlated-loss de… · 2026-03 · https://arxiv.org/html/2603.24237

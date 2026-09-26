@@ -12,22 +12,22 @@ updated: 2026-09-03
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-Two hyperfine (or nuclear-spin) ground-state sublevels at a bias field where the first-order Zeeman shift vanishes, leaving only the quadratic term: coherence in seconds to hours, with single-ion memories reaching hour scale [1]. The lineage is the field's own: NIST's first ion-trap logic gate stored a qubit in the internal states of one laser-cooled ion (Monroe, Meekhof, King, Itano, Wineland, PRL 75, 4714, 1995) [2], the default for ions and later atoms ever since.
+Two hyperfine (or nuclear-spin) ground-state sublevels at a bias field where the first-order Zeeman shift vanishes, leaving only the quadratic term: coherence in seconds to hours, with single-ion memories reaching hour scale [98]. The lineage is the field's own: NIST's first ion-trap logic gate stored a qubit in the internal states of one laser-cooled ion (Monroe, Meekhof, King, Itano, Wineland, PRL 75, 4714, 1995) [306], the default for ions and later atoms ever since.
 f = Pauli + leakage — leakage into neighbouring sublevels, invisible to a Pauli decoder; reach: four paths, QCCD and electronic-gate ions, alkali and alkaline-earth atoms [graph].
 
 ## Physics & limits
-The clock point kills first-order field sensitivity; what remains is the quadratic Zeeman term plus field *gradients* across the register, so memory degrades with register size, not only time. The memory is not the limit — the drive is. Raman gates carry a spontaneous-scattering error falling only as ~1/Δ, and the scattered photon usually lands outside the qubit manifold: leakage, not Pauli error. Deleting the laser deletes that term — 2Q 99.97(1)%, 1Q 99.99916(7)% on a ten-qubit seven-zone trap [D][G:OXIONICS-ALLELEC-2024-07], 8.4×10⁻⁵ without ground-state cooling [D][3]. The control modality moves the floor, not the encoding.
+The clock point kills first-order field sensitivity; what remains is the quadratic Zeeman term plus field *gradients* across the register, so memory degrades with register size, not only time. The memory is not the limit — the drive is. Raman gates carry a spontaneous-scattering error falling only as ~1/Δ, and the scattered photon usually lands outside the qubit manifold: leakage, not Pauli error. Deleting the laser deletes that term — 2Q 99.97(1)%, 1Q 99.99916(7)% on a ten-qubit seven-zone trap [D][G:OXIONICS-ALLELEC-2024-07], 8.4×10⁻⁵ without ground-state cooling [D][96]. The control modality moves the floor, not the encoding.
 
 ## Engineering state of the art
 | Date | Figure | Who | Tag+key |
 |---|---|---|---|
-| 2024-12-05 | ⁴³Ca⁺ clock qubit, chip microwave resonator, room temperature, unshielded: 1.5(4)×10⁻⁷ per Clifford, T₂ ≈ 70 s | Oxford | [D][4][G:OXFORD-1Q-1E-7-2024-12] |
-| 2025-11 | Helios fleet (98 Ba⁺): 1Q 2.5×10⁻⁵, 2Q 7.9×10⁻⁴, leakage 1.1×10⁻⁵ per Clifford | Quantinuum | [D][5] |
+| 2024-12-05 | ⁴³Ca⁺ clock qubit, chip microwave resonator, room temperature, unshielded: 1.5(4)×10⁻⁷ per Clifford, T₂ ≈ 70 s | Oxford | [D][97][G:OXFORD-1Q-1E-7-2024-12] |
+| 2025-11 | Helios fleet (98 Ba⁺): 1Q 2.5×10⁻⁵, 2Q 7.9×10⁻⁴, leakage 1.1×10⁻⁵ per Clifford | Quantinuum | [D][91] |
 
-On atoms, Cs hyperfine T₂ = 12.6 s in a 6,100-atom array [D][6]. Fleet-scale term: two-qubit-gate leakage, ~10⁻⁵ per Clifford on ions against ~10⁻⁴ per atom per gate on arrays.
+On atoms, Cs hyperfine T₂ = 12.6 s in a 6,100-atom array [D][124]. Fleet-scale term: two-qubit-gate leakage, ~10⁻⁵ per Clifford on ions against ~10⁻⁴ per atom per gate on arrays.
 
 ## Manufacturing, materials & supply chain
-No dedicated process; the encoding rides whatever surrounds the species (Ba⁺, Yb⁺, Ca⁺, Cs, Rb, Sr). Two control families, two supply chains: Raman gates need the optical stack — Helios runs seven-plus wavelengths across 1,228 electrodes — while chip microwave traces delete it and move the burden to trap fabrication, internalised by IonQ's SkyWater purchase [C][7]; eleQtron sells the same idea as MAGIC [C][8]. Enriched ¹³⁷Ba and ¹⁷¹Yb are the plausible chokepoint, but no dated supplier fact was found; no specific ECCN.
+No dedicated process; the encoding rides whatever surrounds the species (Ba⁺, Yb⁺, Ca⁺, Cs, Rb, Sr). Two control families, two supply chains: Raman gates need the optical stack — Helios runs seven-plus wavelengths across 1,228 electrodes — while chip microwave traces delete it and move the burden to trap fabrication, internalised by IonQ's SkyWater purchase [C][18]; eleQtron sells the same idea as MAGIC [C][116]. Enriched ¹³⁷Ba and ¹⁷¹Yb are the plausible chokepoint, but no dated supplier fact was found; no specific ECCN.
 
 ## Role in the stack
 Requires nothing — the base encoding, the most reused node in the tree. Its "replaces" edge to omg is an extension: omg keeps these ground states and adds a metastable manifold so one species supplies qubit, ancilla and coolant [G:OMG-BLUEPRINT-2021]. It adds nothing to the derived clock, set on the QCCD path by transport — a 9.66 ms round against the measured ~55 ms full-width layer (≈18 layers/s) and a 70 µs gate. Verification: Oxford's 1.5(4)×10⁻⁷ is one qubit in a dedicated apparatus, Quantinuum's 2.5×10⁻⁵ a 98-ion fleet average — three orders apart; only the fleet number is an architectural input.
@@ -37,10 +37,10 @@ Requires nothing — the base encoding, the most reused node in the tree. Its "r
 
 | Organisation | Role | Country | What exactly | Evidence |
 |---|---|---|---|---|
-| Quantinuum | developer | US | Helios, 98 Ba⁺ qubits | [D][5] |
-| IonQ | developer | US | Electronic gates, own trap fab | [D][3][C][7] |
-| University of Oxford | research | UK | ⁴³Ca⁺ single-qubit record | [D][4] |
-| Atom Computing | developer | US | Yb nuclear-spin clock qubits | [C][9] |
+| Quantinuum | developer | US | Helios, 98 Ba⁺ qubits | [D][91] |
+| IonQ | developer | US | Electronic gates, own trap fab | [D][96][C][18] |
+| University of Oxford | research | UK | ⁴³Ca⁺ single-qubit record | [D][97] |
+| Atom Computing | developer | US | Yb nuclear-spin clock qubits | [C][138] |
 
 **Money.**
 2026-06-03 · Quantinuum · IPO, Nasdaq QNT, after a Sep-2025 round at $10 B pre-money · $1.68 B gross · closed [C][G:QTM-IPO-2026-06][G:QTM-600M-2025-09]
@@ -48,7 +48,7 @@ Requires nothing — the base encoding, the most reused node in the tree. Its "r
 
 **Market & supply chain.** Nothing is sold as "hyperfine encoding": the money is in the drive, laser chains against microwave traps. Concentration is low in optics, rising in traps now IonQ owns a fab. Pays G3/G4/G7, the substrate under nearly every logical qubit yet demonstrated.
 
-**IP & standards.** PatSnap Eureka (2026) ranks IonQ first among named assignees, 9+ records (5 JP, 2 EP, 2 IL pending) on gate pulses and motional modes; the count mixes patents with papers [P][10].
+**IP & standards.** PatSnap Eureka (2026) ranks IonQ first among named assignees, 9+ records (5 JP, 2 EP, 2 IL pending) on gate pulses and motional modes; the count mixes patents with papers [P][307].
 
 **Roadmaps & track record.** Quantinuum: Sol 2027, Apollo 2029 (promised 2024-09-10); Helios on schedule 2025-11-05, 10×/year quantum volume held. IonQ: 256 qubits at 99.99% slipped to H1 2027, and 4,000 qubits by 2026 (promised 2020) missed ~40×. Quantinuum delivers dates, IonQ physics.
 
@@ -60,16 +60,16 @@ Requires nothing — the base encoding, the most reused node in the tree. Its "r
 Confirm if all-electronic control reaches a fleet average below 10⁻⁵ with published leakage, or a second group replicates 8.4×10⁻⁵; demote if it stays a ten-qubit result. Best case 2029: microwave-driven hyperfine qubits the default. Worst case: gradient-limited leakage caps ions near 10⁻⁵ and omg takes the base.
 
 ## Sources
-[1] P. Wang *et al.*, “Single ion-qubit exceeding one hour coherence time,” *Nat. Commun.*, vol. 12, Art. no. 233, Jan. 2021, doi: [10.1038/s41467-020-20330-w](https://doi.org/10.1038/s41467-020-20330-w). [arXiv:2008.00251](https://arxiv.org/abs/2008.00251). [D]
-[2] C. R. Monroe, D. M. Meekhof, B. E. King, W. M. Itano, and D. J. Wineland, “Demonstration of a Fundamental Quantum Logic Gate,” *Phys. Rev. Lett.*, vol. 75, no. 25, pp. 4714–4717, Dec. 1995, doi: [10.1103/PhysRevLett.75.4714](https://doi.org/10.1103/PhysRevLett.75.4714). [D]
-[3] A. C. Hughes *et al.*, “Trapped-ion two-qubit gates with >99.99% fidelity without ground-state cooling,” [arXiv:2510.17286](https://arxiv.org/abs/2510.17286), Oct. 2025. [D]
-[4] M. C. Smith, A. D. Leu, K. Miyanishi, M. F. Gely, and D. M. Lucas, “Single-qubit gates with errors at the 10⁻⁷ level,” *Phys. Rev. Lett.*, vol. 134, no. 23, Art. no. 230601, Jun. 2025, doi: [10.1103/42w2-6ccy](https://doi.org/10.1103/42w2-6ccy). [arXiv:2412.04421](https://arxiv.org/abs/2412.04421). [D]
-[5] A. Ransford *et al.*, “A 98-qubit trapped-ion quantum computer with all-to-all connectivity,” *Nature*, vol. 655, no. 8121, pp. 81–86, Jun. 2026, doi: [10.1038/s41586-026-10676-4](https://doi.org/10.1038/s41586-026-10676-4). [arXiv:2511.05465](https://arxiv.org/abs/2511.05465). [D]
-[6] H. J. Manetsch, G. Nomura, E. Bataille, K. H. Leung, X. Lv, and M. Endres, “A tweezer array with 6100 highly coherent atomic qubits,” *Nature*, vol. 647, pp. 60–67, 2025, doi: [10.1038/s41586-025-09641-4](https://doi.org/10.1038/s41586-025-09641-4). [arXiv:2403.12021](https://arxiv.org/abs/2403.12021). [D]
-[7] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [C]
-[8] A. Cordes, “Quantum computing scale-up eleQtron secures €57 million in one of the largest Series A funding rounds worldwide,” eleQtron, May 5, 2026. [Online]. Available: https://eleqtron.com/en/quantum-computing-scale-up-eleqtron-secures-57-million-in-one-of-the-largest-series-a-funding-rounds-worldwide/ [C]
-[9] Atom Computing, “Atom Computing Raises More Than $300 Million to Accelerate Deployment of Fault-Tolerant, Neutral-Atom Quantum Computers,” PR Newswire, Jun. 16, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/atom-computing-raises-more-than-300-million-to-accelerate-deployment-of-fault-tolerant-neutral-atom-quantum-computers-302800832.html [C]
-[10] PatSnap, “Trapped Ion Quantum Computing: Technology Landscape 2026,” Apr. 23, 2026. [Online]. Available: https://www.patsnap.com/resources/blog/rd-blog/trapped-ion-quantum-computing-2026-patsnap-eureka/ [P]
+[18] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [C]
+[91] A. Ransford *et al.*, “A 98-qubit trapped-ion quantum computer with all-to-all connectivity,” *Nature*, vol. 655, no. 8121, pp. 81–86, Jun. 2026, doi: [10.1038/s41586-026-10676-4](https://doi.org/10.1038/s41586-026-10676-4). [arXiv:2511.05465](https://arxiv.org/abs/2511.05465). [D]
+[96] A. C. Hughes *et al.*, “Trapped-ion two-qubit gates with >99.99% fidelity without ground-state cooling,” [arXiv:2510.17286](https://arxiv.org/abs/2510.17286), Oct. 2025. [D]
+[97] M. C. Smith, A. D. Leu, K. Miyanishi, M. F. Gely, and D. M. Lucas, “Single-qubit gates with errors at the 10⁻⁷ level,” *Phys. Rev. Lett.*, vol. 134, no. 23, Art. no. 230601, Jun. 2025, doi: [10.1103/42w2-6ccy](https://doi.org/10.1103/42w2-6ccy). [arXiv:2412.04421](https://arxiv.org/abs/2412.04421). [D]
+[98] P. Wang *et al.*, “Single ion-qubit exceeding one hour coherence time,” *Nat. Commun.*, vol. 12, Art. no. 233, Jan. 2021, doi: [10.1038/s41467-020-20330-w](https://doi.org/10.1038/s41467-020-20330-w). [arXiv:2008.00251](https://arxiv.org/abs/2008.00251). [D]
+[116] A. Cordes, “Quantum computing scale-up eleQtron secures €57 million in one of the largest Series A funding rounds worldwide,” eleQtron, May 5, 2026. [Online]. Available: https://eleqtron.com/en/quantum-computing-scale-up-eleqtron-secures-57-million-in-one-of-the-largest-series-a-funding-rounds-worldwide/ [C]
+[124] H. J. Manetsch, G. Nomura, E. Bataille, K. H. Leung, X. Lv, and M. Endres, “A tweezer array with 6100 highly coherent atomic qubits,” *Nature*, vol. 647, pp. 60–67, 2025, doi: [10.1038/s41586-025-09641-4](https://doi.org/10.1038/s41586-025-09641-4). [arXiv:2403.12021](https://arxiv.org/abs/2403.12021). [D]
+[138] Atom Computing, “Atom Computing Raises More Than $300 Million to Accelerate Deployment of Fault-Tolerant, Neutral-Atom Quantum Computers,” PR Newswire, Jun. 16, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/atom-computing-raises-more-than-300-million-to-accelerate-deployment-of-fault-tolerant-neutral-atom-quantum-computers-302800832.html [C]
+[306] C. R. Monroe, D. M. Meekhof, B. E. King, W. M. Itano, and D. J. Wineland, “Demonstration of a Fundamental Quantum Logic Gate,” *Phys. Rev. Lett.*, vol. 75, no. 25, pp. 4714–4717, Dec. 1995, doi: [10.1103/PhysRevLett.75.4714](https://doi.org/10.1103/PhysRevLett.75.4714). [D]
+[307] PatSnap, “Trapped Ion Quantum Computing: Technology Landscape 2026,” Apr. 23, 2026. [Online]. Available: https://www.patsnap.com/resources/blog/rd-blog/trapped-ion-quantum-computing-2026-patsnap-eureka/ [P]
 [G] Smith, Leu, Miyanishi, Gely, Lucas (Oxford), "Single-qubit gates with errors at the 10^-7 level", arXiv:2412.04421 (2024-12-05, rev 2025-05-28): 43Ca+ hyperfine clock qubit in a mi… · 2024-12-05 · https://arxiv.org/abs/2412.04421
 [G] Loschnauer, Mosca Toba, Hughes, King, Weber, Srinivas, Matt, Nourshargh, Allcock, Ballance, Matthiesen, Malinowski, Harty, "Scalable, high-fidelity all-electronic control of trappe… · 2024-07-10 · https://arxiv.org/abs/2407.07694
 [G] Allcock, Campbell, Chiaverini, Chuang, Hudson, Moore, Ransford, Roman, Sage, Wineland, "omg blueprint for trapped ion quantum computing with metastable states", Applied Physics Let… · 2021 · https://cua.mit.edu/dev_site/publications/omg-blueprint-for-trapped-ion-quantum-computing-with-metastable-states

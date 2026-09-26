@@ -1,0 +1,5214 @@
+{
+ "next": 622,
+ "works": [
+  {
+   "n": 1,
+   "ids": [
+    "doi:10.1038/s41586-024-08449-y",
+    "u:nature:s41586-024-08449-y",
+    "t:quantum error correction below the surface code threshold"
+   ]
+  },
+  {
+   "n": 2,
+   "ids": [
+    "doi:10.1038/s41586-026-10759-2",
+    "u:nature:s41586-026-10759-2",
+    "t:reinforcement learning control of quantum error correction",
+    "arxiv:2511.08493",
+    "u:arxiv:2511.08493"
+   ],
+   "label": "SMB+26"
+  },
+  {
+   "n": 3,
+   "ids": [
+    "doi:10.1103/rqkg-dw31",
+    "u:https://journals.aps.org/prl/abstract/10.1103/rqkg-dw31",
+    "t:experimental quantum error correction below the surface code"
+   ],
+   "label": "HLW+25"
+  },
+  {
+   "n": 4,
+   "ids": [
+    "doi:10.1038/s41586-025-09848-5",
+    "arxiv:2506.20661",
+    "u:nature:s41586-025-09848-5",
+    "t:a fault tolerant neutral atom architecture for universal qua"
+   ],
+   "label": "BGL+25"
+  },
+  {
+   "n": 5,
+   "ids": [
+    "arxiv:2609.03194",
+    "u:arxiv:2609.03194",
+    "t:experimental validation of a compact fault tolerant architec"
+   ],
+   "label": "BLB+26"
+  },
+  {
+   "n": 6,
+   "ids": [
+    "arxiv:2211.07629",
+    "u:arxiv:2211.07629",
+    "t:assessing requirements to scale to practical quantum advanta"
+   ],
+   "label": "BMT+22"
+  },
+  {
+   "n": 7,
+   "ids": [
+    "arxiv:2505.15917",
+    "u:arxiv:2505.15917",
+    "t:how to factor 2048 bit rsa integers with less than a million"
+   ],
+   "label": "Gid25"
+  },
+  {
+   "n": 8,
+   "ids": [
+    "doi:10.1038/s41467-022-32094-6",
+    "arxiv:2201.03540",
+    "u:arxiv:2201.03540",
+    "t:erasure conversion for fault tolerant quantum computing in a"
+   ],
+   "label": "WKPT22"
+  },
+  {
+   "n": 9,
+   "ids": [
+    "u:https://blog.google/innovation-and-ai/technology/research/neutral-atom-quantum-computers",
+    "t:building superconducting and neutral atom quantum computers"
+   ],
+   "label": "Nev26"
+  },
+  {
+   "n": 10,
+   "ids": [
+    "u:https://newsroom.ibm.com/2026-07-23-ibm-to-acquire-hrl-laboratories-to-power-the-future-of-quantum",
+    "t:ibm to acquire hrl laboratories to power the future of quant"
+   ]
+  },
+  {
+   "n": 11,
+   "ids": [
+    "u:https://novonordiskfonden.dk/en/news/new-quantum-computer-with-great-potential-to-boost-nordic-research-and-innovation",
+    "t:new quantum computer with great potential to boost nordic re"
+   ]
+  },
+  {
+   "n": 12,
+   "ids": [
+    "u:https://quantumcomputingreport.com/denmarks-qunorth-to-acquire-50-logical-qubit-magne-quantum-computer-from-atom-computing-and-microsoft",
+    "t:denmark s qunorth to acquire 50 logical qubit magne quantum "
+   ],
+   "label": "Abd25"
+  },
+  {
+   "n": 13,
+   "ids": [
+    "doi:10.1038/s41586-024-08445-2",
+    "u:nature:s41586-024-08445-2",
+    "t:interferometric single shot parity measurement in inas al hy"
+   ]
+  },
+  {
+   "n": 14,
+   "ids": [
+    "u:https://www.dwavequantum.com/company/newsroom/press-release/d-wave-to-acquire-quantum-circuits-inc-establishing-world-s-leading-quantum-computing-company",
+    "t:d wave announces agreement to acquire quantum circuits inc e"
+   ]
+  },
+  {
+   "n": 15,
+   "ids": [
+    "u:https://www.dwavequantum.com/company/newsroom/press-release/d-wave-reports-second-quarter-2026-results",
+    "t:d wave reports second quarter 2026 results"
+   ]
+  },
+  {
+   "n": 16,
+   "ids": [
+    "u:https://www.dwavequantum.com/company/newsroom/press-release/d-wave-reports-fourth-quarter-and-year-end-2025-results",
+    "t:d wave reports fourth quarter and year end 2025 results"
+   ]
+  },
+  {
+   "n": 17,
+   "ids": [
+    "u:https://www.ionq.com/news/ionq-completes-acquisition-of-oxford-ionics-rapidly-accelerating-its-quantum",
+    "t:ionq completes acquisition of oxford ionics rapidly accelera"
+   ]
+  },
+  {
+   "n": 18,
+   "ids": [
+    "u:https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology",
+    "t:ionq completes acquisition of skywater technology"
+   ]
+  },
+  {
+   "n": 19,
+   "ids": [
+    "arxiv:2507.08795",
+    "u:arxiv:2507.08795",
+    "t:distinct lifetimes for x and z loop measurements in a majora"
+   ],
+   "label": "AAA+25"
+  },
+  {
+   "n": 20,
+   "ids": [
+    "arxiv:2606.03884",
+    "u:arxiv:2606.03884",
+    "t:20 second parity lifetime in an inas pb tetron device"
+   ],
+   "label": "AAA+26"
+  },
+  {
+   "n": 21,
+   "ids": [
+    "doi:10.1038/s41586-026-10567-8",
+    "arxiv:2503.08944",
+    "u:nature:s41586-026-10567-8",
+    "t:on the robustness of topological gap detection via transport"
+   ],
+   "label": "Leg26"
+  },
+  {
+   "n": 22,
+   "ids": [
+    "doi:10.1038/s41586-026-10568-7",
+    "u:nature:s41586-026-10568-7",
+    "t:reply to on the robustness of topological gap detection via "
+   ]
+  },
+  {
+   "n": 23,
+   "ids": [
+    "doi:10.1073/pnas.2203533119",
+    "arxiv:2202.01244",
+    "u:arxiv:2202.01244",
+    "t:reliably assessing the electronic structure of cytochrome p4"
+   ],
+   "label": "GWL+22"
+  },
+  {
+   "n": 24,
+   "ids": [
+    "doi:10.1103/prxquantum.2.030305",
+    "arxiv:2011.03494",
+    "u:arxiv:2011.03494",
+    "t:even more efficient quantum computations of chemistry throug"
+   ],
+   "label": "LBG+21"
+  },
+  {
+   "n": 25,
+   "ids": [
+    "doi:10.22331/q-2020-07-16-296",
+    "arxiv:1902.10673",
+    "u:arxiv:1902.10673",
+    "t:improved fault tolerant quantum simulation of condensed phas"
+   ],
+   "label": "KGB+20"
+  },
+  {
+   "n": 26,
+   "ids": [
+    "arxiv:2306.08585",
+    "u:arxiv:2306.08585",
+    "t:how to compute a 256 bit elliptic curve private key with onl"
+   ],
+   "label": "Lit23"
+  },
+  {
+   "n": 27,
+   "ids": [
+    "arxiv:2603.28846",
+    "u:arxiv:2603.28846",
+    "t:securing elliptic curve cryptocurrencies against quantum vul"
+   ],
+   "label": "BZG+26"
+  },
+  {
+   "n": 28,
+   "ids": [
+    "arxiv:2602.11457",
+    "u:arxiv:2602.11457",
+    "t:the pinnacle architecture reducing the cost of breaking rsa "
+   ],
+   "label": "WBC+26"
+  },
+  {
+   "n": 29,
+   "ids": [
+    "arxiv:2603.28627",
+    "u:arxiv:2603.28627",
+    "t:shor s algorithm is possible with as few as 10 000 reconfigu"
+   ],
+   "label": "CXK+26"
+  },
+  {
+   "n": 30,
+   "ids": [
+    "doi:10.1145/3695053.3731039",
+    "arxiv:2505.15907",
+    "u:arxiv:2505.15907",
+    "t:resource analysis of low overhead transversal architectures "
+   ],
+   "label": "ZDZ+25"
+  },
+  {
+   "n": 31,
+   "ids": [
+    "u:https://blog.google/innovation-and-ai/technology/research/quantum-hardware-verifiable-advantage",
+    "t:our quantum hardware the engine for verifiable quantum advan"
+   ],
+   "label": "CD25"
+  },
+  {
+   "n": 32,
+   "ids": [
+    "u:https://www.ibm.com/quantum/hardware",
+    "t:ibm quantum computing hardware and roadmap"
+   ]
+  },
+  {
+   "n": 33,
+   "ids": [
+    "u:https://www.ibm.com/quantum/blog/whats-new-q2-2026",
+    "t:what s new at ibm quantum q2 2026"
+   ]
+  },
+  {
+   "n": 34,
+   "ids": [
+    "doi:10.1103/physrevlett.134.090601",
+    "arxiv:2412.11924",
+    "u:https://journals.aps.org/prl/abstract/10.1103/physrevlett.134.090601",
+    "t:establishing a new benchmark in quantum computational advant"
+   ],
+   "label": "GFZ+25"
+  },
+  {
+   "n": 35,
+   "ids": [
+    "u:https://investors.rigetti.com/news-releases/news-release-details/rigetti-announces-general-availability-108-qubit-system",
+    "t:rigetti announces general availability of 108 qubit system"
+   ]
+  },
+  {
+   "n": 36,
+   "ids": [
+    "doi:10.1103/physrevx.14.041050",
+    "arxiv:2402.18926",
+    "u:https://journals.aps.org/prx/abstract/10.1103/physrevx.14.041050",
+    "t:realization of high fidelity cz gate based on a double trans"
+   ],
+   "label": "LKH+24"
+  },
+  {
+   "n": 37,
+   "ids": [
+    "doi:10.1103/n86s-2b88",
+    "arxiv:2508.16437",
+    "u:arxiv:2508.16437",
+    "t:above 99 9 fidelity single qubit gates two qubit gates and r"
+   ],
+   "label": "MMA+26"
+  },
+  {
+   "n": 38,
+   "ids": [
+    "arxiv:2407.15783",
+    "u:arxiv:2407.15783",
+    "t:24 days stable cnot gate on fluxonium qubits with over 99 9 "
+   ],
+   "label": "LCC+24"
+  },
+  {
+   "n": 39,
+   "ids": [
+    "doi:10.1103/physrevx.13.031035",
+    "u:https://journals.aps.org/prx/abstract/10.1103/physrevx.13.031035",
+    "t:high fidelity frequency flexible two qubit fluxonium gates w"
+   ],
+   "label": "DHS+23"
+  },
+  {
+   "n": 40,
+   "ids": [
+    "doi:10.1038/s41586-025-09061-4",
+    "arxiv:2412.14256",
+    "u:nature:s41586-025-09061-4",
+    "t:scaling and logic in the color code on a superconducting qua"
+   ],
+   "label": "LBH+25"
+  },
+  {
+   "n": 41,
+   "ids": [
+    "arxiv:2512.13908",
+    "u:arxiv:2512.13908",
+    "t:magic state cultivation on a superconducting quantum process"
+   ],
+   "label": "RGR+25"
+  },
+  {
+   "n": 42,
+   "ids": [
+    "arxiv:2607.01473",
+    "u:arxiv:2607.01473",
+    "t:surface code logical operations on a superconducting quantum"
+   ],
+   "label": "LGM+26"
+  },
+  {
+   "n": 43,
+   "ids": [
+    "arxiv:2606.06598",
+    "u:arxiv:2606.06598",
+    "t:a superconducting surface code processor with lattice surger"
+   ],
+   "label": "WSX+26"
+  },
+  {
+   "n": 44,
+   "ids": [
+    "u:https://www.ibm.com/quantum/blog/quantum-advantage",
+    "t:researchers demonstrate quantum advantage through trusted qu"
+   ],
+   "label": "KJG26"
+  },
+  {
+   "n": 45,
+   "ids": [
+    "arxiv:2607.25941",
+    "u:arxiv:2607.25941",
+    "t:sampling hard circuits with verifiably high fidelity"
+   ],
+   "label": "MCS+26"
+  },
+  {
+   "n": 46,
+   "ids": [
+    "arxiv:2510.21600",
+    "u:arxiv:2510.21600",
+    "t:real time decoding of the gross code memory with fpgas"
+   ],
+   "label": "MBK+25"
+  },
+  {
+   "n": 47,
+   "ids": [
+    "u:https://newsroom.ibm.com/2025-11-12-ibm-delivers-new-quantum-processors,-software,-and-algorithm-breakthroughs-on-path-to-advantage-and-fault-tolerance",
+    "t:ibm delivers new quantum processors software and algorithm b"
+   ]
+  },
+  {
+   "n": 48,
+   "ids": [
+    "u:https://www.ibm.com/quantum/blog/modular-cryogenics",
+    "t:ibm s new modular architecture for cryogenic systems"
+   ],
+   "label": "DHHL26"
+  },
+  {
+   "n": 49,
+   "ids": [
+    "u:https://info.archives.global.fujitsu/global/about/resources/news/press-releases/2025/0422-01.html",
+    "t:fujitsu and riken develop world leading 256 qubit supercondu"
+   ]
+  },
+  {
+   "n": 50,
+   "ids": [
+    "u:https://quantumcomputingreport.com/fujitsu-to-develop-10000-plus-qubit-superconducting-quantum-computer-for-2030",
+    "t:fujitsu to develop 10 000 plus qubit superconducting quantum"
+   ],
+   "label": "Abd25a"
+  },
+  {
+   "n": 51,
+   "ids": [
+    "u:https://quantumcomputingreport.com/seeqc-reports-integrated-qubit-control-logic-operating-at-millikelvin-temperatures",
+    "t:seeqc reports integrated qubit control logic operating at mi"
+   ],
+   "label": "Abd26"
+  },
+  {
+   "n": 52,
+   "ids": [
+    "u:https://quantumcomputingreport.com/seeqc-and-ibm-collaborate-on-sfq-control-integration-under-darpas-quantum-benchmarking-initiative",
+    "t:seeqc and ibm collaborate on sfq control integration under d"
+   ],
+   "label": "Abd25b"
+  },
+  {
+   "n": 53,
+   "ids": [
+    "u:https://thequantuminsider.com/2025/10/03/atlantic-quantum-joins-google-quantum-ai",
+    "t:atlantic quantum joins google quantum ai"
+   ],
+   "label": "Swa25"
+  },
+  {
+   "n": 54,
+   "ids": [
+    "doi:10.5281/zenodo.21860767",
+    "u:https://qodeh.com/publications/superconductor-electronics-monitor-2026",
+    "t:superconductor electronics monitor"
+   ],
+   "label": "Nee26"
+  },
+  {
+   "n": 55,
+   "ids": [
+    "u:https://www.ibm.com/quantum/blog/10-billion-investment-faq",
+    "t:why ibm is investing 10 billion into quantum computing"
+   ]
+  },
+  {
+   "n": 56,
+   "ids": [
+    "u:https://iqm.tech/press-releases/iqm-quantum-computers-becomes-first-european-quantum-computing-company-listed-on-a-major-u-s-exchange",
+    "t:iqm quantum computers becomes first european quantum computi"
+   ]
+  },
+  {
+   "n": 57,
+   "ids": [
+    "u:https://oqc.tech/company/newsroom/series-c",
+    "t:oqc raises 260m in europe s largest ever private quantum com"
+   ],
+   "label": "Cur26"
+  },
+  {
+   "n": 58,
+   "ids": [
+    "u:https://investors.rigetti.com/news-releases/news-release-details/rigetti-computing-reports-first-quarter-2026-financial-results",
+    "t:rigetti computing reports first quarter 2026 financial resul"
+   ]
+  },
+  {
+   "n": 59,
+   "ids": [
+    "u:https://quantumcomputingreport.com/google-quantum-ai-is-now-accepting-proposals-for-early-access-to-their-willow-quantum-processor",
+    "t:google quantum ai is now accepting proposals for early acces"
+   ],
+   "label": "Fin26"
+  },
+  {
+   "n": 60,
+   "ids": [
+    "u:https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection",
+    "t:stage b selection"
+   ]
+  },
+  {
+   "n": 61,
+   "ids": [
+    "u:https://quantumcomputingreport.com/darpas-quantum-benchmarking-initiative-qbi-advances-with-eleven-teams-moving-to-stage-b",
+    "t:darpa s quantum benchmarking initiative qbi advances with el"
+   ],
+   "label": "Fin25"
+  },
+  {
+   "n": 62,
+   "ids": [
+    "u:https://newsroom.ibm.com/2025-06-10-ibm-sets-the-course-to-build-worlds-first-large-scale,-fault-tolerant-quantum-computer-at-new-ibm-quantum-data-center",
+    "t:ibm sets the course to build world s first large scale fault"
+   ]
+  },
+  {
+   "n": 63,
+   "ids": [
+    "u:https://quantumcomputingreport.com/ibm-extends-roadmap-up-to-4158-qubits-using-multiprocessing-and-advanced-software",
+    "t:ibm extends roadmap up to 4 158 qubits using multiprocessing"
+   ],
+   "label": "Fin22"
+  },
+  {
+   "n": 64,
+   "ids": [
+    "u:https://investors.rigetti.com/news-releases/news-release-details/rigetti-computing-provides-update-108-qubit-system",
+    "t:rigetti computing provides update on 108 qubit system"
+   ]
+  },
+  {
+   "n": 65,
+   "ids": [
+    "u:https://iqm.tech/technology/roadmap",
+    "t:development roadmap"
+   ]
+  },
+  {
+   "n": 66,
+   "ids": [
+    "u:https://iqm.tech/press-releases/iqm-to-deliver-world-leading-300-qubit-quantum-computer-to-finland",
+    "t:iqm to deliver world leading 300 qubit quantum computer to f"
+   ]
+  },
+  {
+   "n": 67,
+   "ids": [
+    "u:https://www.ibm.com/roadmaps/quantum",
+    "t:quantum roadmap"
+   ]
+  },
+  {
+   "n": 68,
+   "ids": [
+    "u:https://www.ibm.com/quantum/blog/hardware-metrics-2026",
+    "t:how to measure the performance of a quantum computer"
+   ],
+   "label": "MCC+26"
+  },
+  {
+   "n": 69,
+   "ids": [
+    "doi:10.1038/s41567-025-03157-4",
+    "arxiv:2505.09684",
+    "u:arxiv:2505.09684",
+    "t:demonstration of low overhead quantum error correction codes"
+   ],
+   "label": "WLZ+26"
+  },
+  {
+   "n": 70,
+   "ids": [
+    "u:https://global.fujitsu/en-global/technology/research/quantum",
+    "t:fujitsu quantum"
+   ]
+  },
+  {
+   "n": 71,
+   "ids": [
+    "u:https://global.fujitsu/en-global/pr/news/2025/08/01-01-en",
+    "t:fujitsu starts official development of plus 10 000 qubit sup"
+   ]
+  },
+  {
+   "n": 72,
+   "ids": [
+    "u:https://alice-bob.com/newsroom/alice-bob-surpasses-bit-flip-stability-record",
+    "t:alice bob shares preliminary results vastly surpassing previ"
+   ],
+   "label": "Cop25"
+  },
+  {
+   "n": 73,
+   "ids": [
+    "u:https://alice-bob.com/newsroom/squeezed-cat-qubit",
+    "t:alice bob improves error suppression in quantum computers by"
+   ],
+   "label": "Cop25a"
+  },
+  {
+   "n": 74,
+   "ids": [
+    "arxiv:2502.07892",
+    "u:arxiv:2502.07892",
+    "t:enhancing dissipative cat qubit protection by squeezing"
+   ],
+   "label": "RRA+25"
+  },
+  {
+   "n": 75,
+   "ids": [
+    "doi:10.1038/s41586-025-08642-7",
+    "u:nature:s41586-025-08642-7",
+    "t:hardware efficient quantum error correction via concatenated"
+   ],
+   "label": "PNH+25"
+  },
+  {
+   "n": 76,
+   "ids": [
+    "arxiv:2607.22852",
+    "u:arxiv:2607.22852",
+    "t:bias preserving cat cat cnot gate via vacuum conditional bea"
+   ],
+   "label": "YHN+26"
+  },
+  {
+   "n": 77,
+   "ids": [
+    "arxiv:2607.06718",
+    "u:arxiv:2607.06718",
+    "t:quantum error correction of a grid state qubit with state pr"
+   ],
+   "label": "TSP+26"
+  },
+  {
+   "n": 78,
+   "ids": [
+    "doi:10.1038/s41586-025-08899-y",
+    "u:nature:s41586-025-08899-y",
+    "t:quantum error correction of qudits beyond break even"
+   ],
+   "label": "BSE+25"
+  },
+  {
+   "n": 79,
+   "ids": [
+    "doi:10.1038/s41586-026-10822-y",
+    "arxiv:2503.10935",
+    "u:nature:s41586-026-10822-y",
+    "t:an entangling gate for dual rail erasure qubits"
+   ],
+   "label": "MTN+26"
+  },
+  {
+   "n": 80,
+   "ids": [
+    "arxiv:2604.16292",
+    "u:arxiv:2604.16292",
+    "t:fast high fidelity erasure detection of dual rail qubits wit"
+   ],
+   "label": "HHR+26"
+  },
+  {
+   "n": 81,
+   "ids": [
+    "u:https://quantumcircuits.com/resources/quantum-circuits-make-error-detecting-qubits",
+    "t:quantum circuits makes error detecting qubits"
+   ]
+  },
+  {
+   "n": 82,
+   "ids": [
+    "u:https://alice-bob.com/newsroom/alice-bob-unveils-first-quantum-system",
+    "t:alice bob unveils first quantum system helium"
+   ],
+   "label": "Cop26"
+  },
+  {
+   "n": 83,
+   "ids": [
+    "u:https://alice-bob.com/newsroom/alice-bob-announces-series-b-extension",
+    "t:alice bob announces series b extension"
+   ],
+   "label": "Cop26a"
+  },
+  {
+   "n": 84,
+   "ids": [
+    "u:https://www.businesswire.com/news/home/20260518358351/en/nord-quantique-reaches-$1.4-billion-usd-valuation-with-latest-investment",
+    "t:nord quantique reaches 1 4 billion usd valuation with latest"
+   ]
+  },
+  {
+   "n": 85,
+   "ids": [
+    "u:https://www.hpcwire.com/off-the-wire/canadas-nord-quantique-selected-for-2nd-phase-of-darpa-quantum-benchmarking-initiative",
+    "t:canada s nord quantique selected for 2nd phase of darpa quan"
+   ]
+  },
+  {
+   "n": 86,
+   "ids": [
+    "u:https://alice-bob.com/roadmap.md",
+    "t:alice bob our quantum computing roadmap"
+   ]
+  },
+  {
+   "n": 87,
+   "ids": [
+    "u:https://www.nordquantique.com",
+    "t:company website"
+   ]
+  },
+  {
+   "n": 88,
+   "ids": [
+    "u:https://thequantuminsider.com/2026/06/01/d-waves-new-gate-model-roadmap-puts-pin-in-2032-for-100-logical-qubit-system",
+    "t:d wave s new gate model roadmap puts pin in 2032 for 100 log"
+   ],
+   "label": "Swa26"
+  },
+  {
+   "n": 89,
+   "ids": [
+    "doi:10.1103/physrevlett.131.040602",
+    "arxiv:2302.06639",
+    "u:arxiv:2302.06639",
+    "t:performance analysis of a repetition cat code architecture c"
+   ],
+   "label": "GRR+23"
+  },
+  {
+   "n": 90,
+   "ids": [
+    "doi:10.1038/s41467-025-56298-8",
+    "arxiv:2401.09541",
+    "u:arxiv:2401.09541",
+    "t:ldpc cat codes for low overhead quantum computing in 2d"
+   ],
+   "label": "RGL+25"
+  },
+  {
+   "n": 91,
+   "ids": [
+    "doi:10.1038/s41586-026-10676-4",
+    "arxiv:2511.05465",
+    "u:nature:s41586-026-10676-4",
+    "t:a 98 qubit trapped ion quantum computer with all to all conn"
+   ],
+   "label": "RAA+26"
+  },
+  {
+   "n": 92,
+   "ids": [
+    "u:https://www.quantinuum.com/glossary-item/quantum-volume",
+    "t:quantum volume"
+   ]
+  },
+  {
+   "n": 93,
+   "ids": [
+    "u:https://www.ionq.com/quantum-systems/forte",
+    "t:ionq forte high performance commercial quantum computer"
+   ]
+  },
+  {
+   "n": 94,
+   "ids": [
+    "doi:10.22331/q-2024-11-07-1516",
+    "arxiv:2308.05071",
+    "u:arxiv:2308.05071",
+    "t:benchmarking a trapped ion quantum computer with 30 qubits"
+   ],
+   "label": "CNE+24"
+  },
+  {
+   "n": 95,
+   "ids": [
+    "u:https://ionq.com/quantum-systems/tempo",
+    "t:ionq tempo 100 qubit quantum computer aq 64"
+   ]
+  },
+  {
+   "n": 96,
+   "ids": [
+    "arxiv:2510.17286",
+    "u:arxiv:2510.17286",
+    "t:trapped ion two qubit gates with 99 99 fidelity without grou"
+   ],
+   "label": "HSL+25"
+  },
+  {
+   "n": 97,
+   "ids": [
+    "doi:10.1103/42w2-6ccy",
+    "arxiv:2412.04421",
+    "u:arxiv:2412.04421",
+    "t:single qubit gates with errors at the 10 ⁷ level"
+   ],
+   "label": "SLM+25"
+  },
+  {
+   "n": 98,
+   "ids": [
+    "doi:10.1038/s41467-020-20330-w",
+    "arxiv:2008.00251",
+    "u:arxiv:2008.00251",
+    "t:single ion qubit exceeding one hour coherence time"
+   ],
+   "label": "WLQ+21"
+  },
+  {
+   "n": 99,
+   "ids": [
+    "arxiv:2602.22211",
+    "u:arxiv:2602.22211",
+    "t:computing with many encoded logical qubits beyond break even"
+   ],
+   "label": "DDG+26"
+  },
+  {
+   "n": 100,
+   "ids": [
+    "u:https://www.quantinuum.com/blog/teleporting-to-new-heights",
+    "t:teleporting to new heights"
+   ]
+  },
+  {
+   "n": 101,
+   "ids": [
+    "arxiv:2506.14688",
+    "u:arxiv:2506.14688",
+    "t:breaking even with magic demonstration of a high fidelity lo"
+   ],
+   "label": "DBM+25"
+  },
+  {
+   "n": 102,
+   "ids": [
+    "arxiv:2603.04584",
+    "u:arxiv:2603.04584",
+    "t:fault tolerant execution of error corrected quantum algorith"
+   ],
+   "label": "PHA+26"
+  },
+  {
+   "n": 103,
+   "ids": [
+    "arxiv:2606.06455",
+    "u:arxiv:2606.06455",
+    "t:breakeven demonstration of quantum low density parity check "
+   ],
+   "label": "TGD+26"
+  },
+  {
+   "n": 104,
+   "ids": [
+    "doi:10.1103/physrevx.13.041052",
+    "arxiv:2305.03828",
+    "u:arxiv:2305.03828",
+    "t:a race track trapped ion quantum processor"
+   ],
+   "label": "MBA+23"
+  },
+  {
+   "n": 105,
+   "ids": [
+    "arxiv:2608.25027",
+    "u:arxiv:2608.25027",
+    "t:real time decoder for a megaquop quantum computer using a si"
+   ],
+   "label": "YMD26"
+  },
+  {
+   "n": 106,
+   "ids": [
+    "doi:10.1103/physrevx.14.041028",
+    "arxiv:2403.00756",
+    "u:arxiv:2403.00756",
+    "t:scalable multispecies ion transport in a grid based surface "
+   ],
+   "label": "DSC+24"
+  },
+  {
+   "n": 107,
+   "ids": [
+    "doi:10.1103/physrevlett.130.173202",
+    "arxiv:2206.11888",
+    "u:arxiv:2206.11888",
+    "t:transport of multispecies ion crystals through a junction in"
+   ],
+   "label": "BEH+23"
+  },
+  {
+   "n": 108,
+   "ids": [
+    "doi:10.1038/s41586-024-08404-x",
+    "u:nature:s41586-024-08404-x",
+    "t:distributed quantum computing across an optical network link"
+   ],
+   "label": "MDN+25"
+  },
+  {
+   "n": 109,
+   "ids": [
+    "doi:10.1103/physrevlett.133.090802",
+    "arxiv:2404.16167",
+    "u:arxiv:2404.16167",
+    "t:fast photon mediated entanglement of continuously cooled tra"
+   ],
+   "label": "OTG+24"
+  },
+  {
+   "n": 110,
+   "ids": [
+    "doi:10.1038/s41586-024-07459-0",
+    "u:nature:s41586-024-07459-0",
+    "t:a site resolved two dimensional quantum simulator with hundr"
+   ],
+   "label": "GWY+24"
+  },
+  {
+   "n": 111,
+   "ids": [
+    "u:https://www.honeywell.com/us/en/news/press-releases/2025/09/honeywell-announces-600-million-capital-raise-for-quantinuum-at-10b-pre-money-equity-valuation-to-advance-quantum-computing-at-scale",
+    "t:honeywell announces 600 million capital raise for quantinuum"
+   ]
+  },
+  {
+   "n": 112,
+   "ids": [
+    "u:https://www.quantinuum.com/press-releases/quantinuum-announces-pricing-of-upsized-initial-public-offering",
+    "t:quantinuum announces pricing of upsized initial public offer"
+   ]
+  },
+  {
+   "n": 113,
+   "ids": [
+    "u:https://www.quantinuum.com/press-releases/quantinuum-reports-second-quarter-2026-results",
+    "t:quantinuum reports second quarter 2026 results"
+   ]
+  },
+  {
+   "n": 114,
+   "ids": [
+    "u:https://quantumcomputingreport.com/quantum-art-extends-series-a-to-140m-to-scale-trapped-ion-architecture",
+    "t:quantum art extends series a to 140m to scale trapped ion ar"
+   ],
+   "label": "Abd26a"
+  },
+  {
+   "n": 115,
+   "ids": [
+    "u:https://www.aqt.eu/lynx-quantum-volume-record",
+    "t:aqt sets new european industry standard introducing the lynx"
+   ]
+  },
+  {
+   "n": 116,
+   "ids": [
+    "u:https://eleqtron.com/en/quantum-computing-scale-up-eleqtron-secures-57-million-in-one-of-the-largest-series-a-funding-rounds-worldwide",
+    "t:quantum computing scale up eleqtron secures 57 million in on"
+   ],
+   "label": "Cor26"
+  },
+  {
+   "n": 117,
+   "ids": [
+    "u:https://www.quantinuum.com/press-releases/quantinuum-unveils-accelerated-roadmap-to-achieve-universal-fault-tolerant-quantum-computing-by-2030",
+    "t:quantinuum unveils accelerated roadmap to achieve universal "
+   ]
+  },
+  {
+   "n": 118,
+   "ids": [
+    "u:https://www.ionq.com/blog/ionqs-accelerated-roadmap-turning-quantum-ambition-into-reality",
+    "t:ionq s accelerated roadmap turning quantum ambition into rea"
+   ]
+  },
+  {
+   "n": 119,
+   "ids": [
+    "u:https://postquantum.com/quantum-computing-companies/ionq"
+   ],
+   "label": "Ive25"
+  },
+  {
+   "n": 120,
+   "ids": [
+    "arxiv:2604.25987",
+    "u:arxiv:2604.25987",
+    "t:high fidelity entangling gates and nonlocal circuits with ne"
+   ],
+   "label": "EXL+26"
+  },
+  {
+   "n": 121,
+   "ids": [
+    "arxiv:2411.11708",
+    "u:arxiv:2411.11708",
+    "t:high fidelity universal gates in the ¹⁷¹yb ground state nucl"
+   ],
+   "label": "MSS+24"
+  },
+  {
+   "n": 122,
+   "ids": [
+    "arxiv:2407.20184",
+    "u:arxiv:2407.20184",
+    "t:benchmarking and linear response modeling of high fidelity r"
+   ],
+   "label": "TSS+24"
+  },
+  {
+   "n": 123,
+   "ids": [
+    "u:https://www.quera.com/gemini",
+    "t:gemini class gate model quantum computer"
+   ]
+  },
+  {
+   "n": 124,
+   "ids": [
+    "doi:10.1038/s41586-025-09641-4",
+    "arxiv:2403.12021",
+    "u:arxiv:2403.12021",
+    "t:a tweezer array with 6100 highly coherent atomic qubits"
+   ],
+   "label": "MNB+25"
+  },
+  {
+   "n": 125,
+   "ids": [
+    "u:https://www.caltech.edu/about/news/caltech-team-sets-record-with-6100-qubit-array",
+    "t:caltech team sets record with 6 100 qubit array"
+   ]
+  },
+  {
+   "n": 126,
+   "ids": [
+    "arxiv:2608.05010",
+    "u:arxiv:2608.05010",
+    "t:neutral atom quantum computing principles routes progress an"
+   ],
+   "label": "WWL+26"
+  },
+  {
+   "n": 127,
+   "ids": [
+    "doi:10.1038/s41586-023-06438-1",
+    "arxiv:2305.05493",
+    "u:arxiv:2305.05493",
+    "t:high fidelity gates with mid circuit erasure conversion in a"
+   ],
+   "label": "MLP+23"
+  },
+  {
+   "n": 128,
+   "ids": [
+    "doi:10.1038/s41567-026-03309-0",
+    "arxiv:2506.13724",
+    "u:nature:s41567-026-03309-0",
+    "t:logical qubits with erasure conversion using metastable neut"
+   ],
+   "label": "ZLB+26"
+  },
+  {
+   "n": 129,
+   "ids": [
+    "doi:10.1038/s41586-023-06516-4",
+    "arxiv:2305.03406",
+    "u:arxiv:2305.03406",
+    "t:erasure conversion in a high fidelity rydberg quantum simula"
+   ],
+   "label": "SST+23"
+  },
+  {
+   "n": 130,
+   "ids": [
+    "doi:10.1038/s41586-025-09596-6",
+    "u:nature:s41586-025-09596-6",
+    "t:continuous operation of a coherent 3 000 qubit system"
+   ],
+   "label": "CTG+25"
+  },
+  {
+   "n": 131,
+   "ids": [
+    "arxiv:2606.02715",
+    "u:arxiv:2606.02715",
+    "t:trapping 11 000 atoms in a tweezer array generated by a sing"
+   ],
+   "label": "WZZ+26"
+  },
+  {
+   "n": 132,
+   "ids": [
+    "doi:10.1038/s41586-025-09367-3",
+    "u:nature:s41586-025-09367-3",
+    "t:experimental demonstration of logical magic state distillati"
+   ],
+   "label": "RRJ+25"
+  },
+  {
+   "n": 133,
+   "ids": [
+    "arxiv:2606.04079",
+    "u:arxiv:2606.04079",
+    "t:quantum error correction with the toric code"
+   ]
+  },
+  {
+   "n": 134,
+   "ids": [
+    "arxiv:2411.11822",
+    "u:arxiv:2411.11822",
+    "t:fault tolerant quantum computation with a neutral atom proce"
+   ],
+   "label": "RPA+24"
+  },
+  {
+   "n": 135,
+   "ids": [
+    "u:https://infleqtion.com/infleqtion-unveils-new-architecture-to-accelerate-its-quantum-computing-roadmap-to-achieve-1000-logical-qubits-by-2030",
+    "t:infleqtion unveils new architecture to accelerate its quantu"
+   ],
+   "label": "Roa25"
+  },
+  {
+   "n": 136,
+   "ids": [
+    "doi:10.1038/s41586-025-09543-5",
+    "arxiv:2406.17653",
+    "u:arxiv:2406.17653",
+    "t:low overhead transversal fault tolerance for universal quant"
+   ],
+   "label": "ZZC+25"
+  },
+  {
+   "n": 137,
+   "ids": [
+    "u:https://www.quera.com/press-releases/quera-expands-230-million-financing-round-advancing-quantum-accelerated-supercomputing",
+    "t:quera expands 230 million financing round advancing quantum "
+   ]
+  },
+  {
+   "n": 138,
+   "ids": [
+    "u:https://www.prnewswire.com/news-releases/atom-computing-raises-more-than-300-million-to-accelerate-deployment-of-fault-tolerant-neutral-atom-quantum-computers-302800832.html",
+    "t:atom computing raises more than 300 million to accelerate de"
+   ]
+  },
+  {
+   "n": 139,
+   "ids": [
+    "u:https://infleqtion.com/infleqtion-becomes-first-neutral-atom-quantum-company-to-go-public",
+    "t:infleqtion becomes first neutral atom quantum company to go "
+   ],
+   "label": "Roa26"
+  },
+  {
+   "n": 140,
+   "ids": [
+    "u:https://thequantuminsider.com/2026/08/28/pasqal-completes-spac-merger-with-360-million-in-cash",
+    "t:pasqal completes spac merger with 360 million in cash"
+   ],
+   "label": "Swa26a"
+  },
+  {
+   "n": 141,
+   "ids": [
+    "u:https://thequantuminsider.com/2026/03/24/google-paves-a-two-lane-quantum-roadmap-by-adding-neutral-atom-systems",
+    "t:google paves a two lane quantum roadmap by adding neutral at"
+   ],
+   "label": "Swa26b"
+  },
+  {
+   "n": 142,
+   "ids": [
+    "u:https://www.quera.com/press-releases/quera-announces-2028-fault-tolerant-quantum-computer-and-expanded-multi-year-strategic-collaboration-with-aws",
+    "t:quera announces 2028 fault tolerant quantum computer and exp"
+   ]
+  },
+  {
+   "n": 143,
+   "ids": [
+    "u:https://quantumzeitgeist.com/quera-computing-roadmap-100-logical-qubits",
+    "t:quera 100 qubit error correction by 2026"
+   ],
+   "label": "Jam24"
+  },
+  {
+   "n": 144,
+   "ids": [
+    "u:https://www.pasqal.com/newsroom/pasqal-releases-2025-roadmap",
+    "t:pasqal releases 2025 roadmap showcasing upgradable platform "
+   ]
+  },
+  {
+   "n": 145,
+   "ids": [
+    "u:https://www.hpcwire.com/2024/03/13/pasqal-issues-roadmap-to-10000-qubits-in-2026-and-fault-tolerance-in-2028",
+    "t:pasqal issues roadmap to 10 000 qubits in 2026 and fault tol"
+   ],
+   "label": "Rus24"
+  },
+  {
+   "n": 146,
+   "ids": [
+    "doi:10.1038/s41586-025-08820-7",
+    "u:nature:s41586-025-08820-7",
+    "t:a manufacturable platform for photonic quantum computing"
+   ],
+   "label": "ABB+25"
+  },
+  {
+   "n": 147,
+   "ids": [
+    "arxiv:2311.08347",
+    "u:arxiv:2311.08347",
+    "t:high efficiency single photon source above the loss tolerant"
+   ],
+   "label": "DGX+23"
+  },
+  {
+   "n": 148,
+   "ids": [
+    "u:https://www.prnewswire.com/news-releases/xanadu-sets-new-industry-benchmark-in-photonic-chip-packaging-302796562.html",
+    "t:xanadu sets new industry benchmark in photonic chip packagin"
+   ]
+  },
+  {
+   "n": 149,
+   "ids": [
+    "doi:10.1038/s41586-024-08406-9",
+    "u:nature:s41586-024-08406-9",
+    "t:scaling and networking a modular photonic quantum computer"
+   ],
+   "label": "RAA+25"
+  },
+  {
+   "n": 150,
+   "ids": [
+    "doi:10.1038/s41586-025-09044-5",
+    "u:nature:s41586-025-09044-5",
+    "t:integrated photonic source of gottesman kitaev preskill qubi"
+   ],
+   "label": "LBK+25"
+  },
+  {
+   "n": 151,
+   "ids": [
+    "doi:10.1038/s41586-026-10523-6",
+    "arxiv:2508.09092",
+    "u:nature:s41586-026-10523-6",
+    "t:gaussian boson sampling with 1 024 squeezed states in 8 176 "
+   ],
+   "label": "LSD+26"
+  },
+  {
+   "n": 152,
+   "ids": [
+    "u:https://www.quandela.com/about-us/newsroom/quandela-delivers-lucy-the-most-advanced-photonic-quantum-computer-worldwide-to-eurohpc-and-genci-at-ceas-tgcc",
+    "t:quandela delivers lucy the most advanced photonic quantum co"
+   ]
+  },
+  {
+   "n": 153,
+   "ids": [
+    "u:https://www.quixquantum.com/news/quix-quantum-delivers-carina-core-hardware-platformto-dlr-qci",
+    "t:quix quantum delivers carina core hardware platform to dlr q"
+   ]
+  },
+  {
+   "n": 154,
+   "ids": [
+    "u:https://www.globenewswire.com/news-release/2026/08/31/3353211/0/en/xanadu-charts-path-to-over-1-000-logical-qubits-by-2031.html",
+    "t:xanadu charts path to over 1 000 logical qubits by 2031"
+   ]
+  },
+  {
+   "n": 155,
+   "ids": [
+    "doi:10.1038/s41467-023-36493-1",
+    "arxiv:2101.09310",
+    "u:nature:s41467-023-36493-1",
+    "t:fusion based quantum computation"
+   ],
+   "label": "BBB+23"
+  },
+  {
+   "n": 156,
+   "ids": [
+    "u:https://www.psiquantum.com/news-import"
+   ]
+  },
+  {
+   "n": 157,
+   "ids": [
+    "u:https://quantumcomputingreport.com/psiquantum-secures-125-million-expanded-agreement-with-darpa-under-qbi-program",
+    "t:psiquantum secures 125 million expanded agreement with darpa"
+   ],
+   "label": "Abd26b"
+  },
+  {
+   "n": 158,
+   "ids": [
+    "u:https://www.forbes.com.au/news/innovation/psiquantums-stalled-quantum-plant-to-break-ground-after-location-switch",
+    "t:psiquantum ditches brisbane airport plan in bid to break gro"
+   ],
+   "label": "Boo26"
+  },
+  {
+   "n": 159,
+   "ids": [
+    "u:https://quantumcomputingreport.com/xanadu-to-list-on-nasdaq-and-tsx-following-shareholder-merger-approval",
+    "t:xanadu to list on nasdaq and tsx following shareholder merge"
+   ],
+   "label": "Abd26c"
+  },
+  {
+   "n": 160,
+   "ids": [
+    "u:https://quantumcomputingreport.com/photonic-inc-reaches-2b-valuation-with-200m-final-close",
+    "t:photonic inc reaches 2b valuation with 200m final close"
+   ],
+   "label": "Abd26d"
+  },
+  {
+   "n": 161,
+   "ids": [
+    "u:https://thequantuminsider.com/2026/06/16/darpa-selects-quandela-for-stage-a-of-the-quantum-benchmarking-initiative",
+    "t:darpa selects quandela for stage a of the quantum benchmarki"
+   ],
+   "label": "Swa26c"
+  },
+  {
+   "n": 162,
+   "ids": [
+    "doi:10.1038/s41586-025-09531-9",
+    "u:nature:s41586-025-09531-9",
+    "t:industry compatible silicon spin qubit unit cells exceeding "
+   ],
+   "label": "SSL+25"
+  },
+  {
+   "n": 163,
+   "ids": [
+    "arxiv:2604.16216",
+    "u:arxiv:2604.16216",
+    "t:a digitally controlled silicon quantum processing unit"
+   ]
+  },
+  {
+   "n": 164,
+   "ids": [
+    "u:https://www.hrl.com/news/2026/07/29/hrl-demonstrates-a-silicon-quantum-processor-that-runs-itself",
+    "t:hrl demonstrates a silicon quantum processor that runs itsel"
+   ]
+  },
+  {
+   "n": 165,
+   "ids": [
+    "doi:10.1038/s41586-025-09827-w",
+    "arxiv:2506.03567",
+    "u:arxiv:2506.03567",
+    "t:an 11 qubit atom processor in silicon"
+   ],
+   "label": "E+25"
+  },
+  {
+   "n": 166,
+   "ids": [
+    "doi:10.1038/s41586-026-10423-9",
+    "u:nature:s41586-026-10423-9",
+    "t:two qubit logic and teleportation with mobile spin qubits in"
+   ],
+   "label": "MST+26"
+  },
+  {
+   "n": 167,
+   "ids": [
+    "doi:10.1038/s41586-024-07160-2",
+    "u:nature:s41586-024-07160-2",
+    "t:high fidelity spin qubit operation and algorithmic initializ"
+   ],
+   "label": "HSL+24"
+  },
+  {
+   "n": 168,
+   "ids": [
+    "arxiv:2604.01063",
+    "u:arxiv:2604.01063",
+    "t:simultaneous operation of an 18 qubit modular array in germa"
+   ],
+   "label": "DZB+26"
+  },
+  {
+   "n": 169,
+   "ids": [
+    "doi:10.1038/s41565-025-01920-5",
+    "u:nature:s41565-025-01920-5",
+    "t:high fidelity single spin shuttling in silicon"
+   ],
+   "label": "SMZ+25"
+  },
+  {
+   "n": 170,
+   "ids": [
+    "doi:10.1038/s41467-026-74597-6",
+    "u:nature:s41467-026-74597-6",
+    "t:eight qubit operation of a 300 mm simos foundry fabricated d"
+   ],
+   "label": "NSS+26"
+  },
+  {
+   "n": 171,
+   "ids": [
+    "doi:10.1038/s41565-026-02140-1",
+    "u:nature:s41565-026-02140-1",
+    "t:universal logical operations in a silicon quantum processor"
+   ],
+   "label": "ZXZ+26"
+  },
+  {
+   "n": 172,
+   "ids": [
+    "doi:10.1021/acs.nanolett.4c05205",
+    "arxiv:2410.16583",
+    "u:arxiv:2410.16583",
+    "t:12 spin qubit arrays fabricated on a 300 mm semiconductor ma"
+   ],
+   "label": "GMH+24"
+  },
+  {
+   "n": 173,
+   "ids": [
+    "u:https://quantummotion.com/quantum-motion-delivers-the-industrys-first-full-stack-silicon-cmos-quantum-computer",
+    "t:quantum motion delivers the industry s first full stack sili"
+   ]
+  },
+  {
+   "n": 174,
+   "ids": [
+    "u:https://www.unsw.edu.au/newsroom/news/2025/06/unsw-engineers-crack-challenge-scaling-quantum-computers",
+    "t:unsw engineers help crack key challenge in scaling quantum c"
+   ]
+  },
+  {
+   "n": 175,
+   "ids": [
+    "u:https://www.anl.gov/article/argonne-launches-silicon-quantum-processor-collaboration-with-intel",
+    "t:argonne launches silicon quantum processor collaboration wit"
+   ],
+   "label": "Hes26"
+  },
+  {
+   "n": 176,
+   "ids": [
+    "u:https://thequantuminsider.com/2025/03/28/fujitsu-and-qutech-realize-high-precision-quantum-gates",
+    "t:fujitsu and qutech realize high precision quantum gates"
+   ],
+   "label": "Swa25a"
+  },
+  {
+   "n": 177,
+   "ids": [
+    "doi:10.1038/s41586-024-07252-z",
+    "u:nature:s41586-024-07252-z",
+    "t:entanglement of nanophotonic quantum memory nodes in a telec"
+   ],
+   "label": "KSW+24"
+  },
+  {
+   "n": 178,
+   "ids": [
+    "u:https://www.diraq.com/newsdesk/diraq-sets-roadmap-for-utility-scale-quantum-computing-with-millions-of-qubits-on-a-single-silicon-chip",
+    "t:diraq charts course to utility scale quantum computing with "
+   ],
+   "label": "Ell26"
+  },
+  {
+   "n": 179,
+   "ids": [
+    "u:https://thequantuminsider.com/2026/07/09/diraq-demonstrates-scaled-foundry-fabricated-silicon-based-qubit-array-made-at-imec",
+    "t:diraq demonstrates scaled foundry fabricated silicon based q"
+   ],
+   "label": "Swa26d"
+  },
+  {
+   "n": 180,
+   "ids": [
+    "u:https://physics.aps.org/articles/v18/57",
+    "t:experts weigh in on microsoft s topological qubit claim"
+   ],
+   "label": "Bal25"
+  },
+  {
+   "n": 181,
+   "ids": [
+    "u:https://quantum.microsoft.com/en-us/insights/blogs/majorana-2-scalable-quantum-processor",
+    "t:majorana 2 microsoft s scalable quantum processor with relia"
+   ],
+   "label": "Nay"
+  },
+  {
+   "n": 182,
+   "ids": [
+    "doi:10.1038/s41586-025-09927-7",
+    "u:nature:s41586-025-09927-7",
+    "t:single shot parity readout of a minimal kitaev chain"
+   ],
+   "label": "LZS+26"
+  },
+  {
+   "n": 183,
+   "ids": [
+    "arxiv:2607.09511",
+    "u:arxiv:2607.09511",
+    "t:majorana parity qubit in coupled minimal kitaev chains"
+   ],
+   "label": "ZRL+26"
+  },
+  {
+   "n": 184,
+   "ids": [
+    "u:https://www.darpa.mil/news/2025/quantum-computing-approaches",
+    "t:darpa selects two discrete utility scale quantum computing a"
+   ]
+  },
+  {
+   "n": 185,
+   "ids": [
+    "u:https://thequantuminsider.com/2025/05/20/d-wave-announces-general-availability-of-advantage2-quantum-computer",
+    "t:d wave announces general availability of advantage2 quantum "
+   ],
+   "label": "Swa25b"
+  },
+  {
+   "n": 186,
+   "ids": [
+    "doi:10.1126/science.ado6285",
+    "arxiv:2403.00910",
+    "u:arxiv:2403.00910",
+    "t:beyond classical computation in quantum simulation"
+   ],
+   "label": "KNR+25"
+  },
+  {
+   "n": 187,
+   "ids": [
+    "doi:10.1126/science.adx2728",
+    "arxiv:2503.05693",
+    "u:arxiv:2503.05693",
+    "t:dynamics of disordered quantum systems with two and three di"
+   ],
+   "label": "TMF+26"
+  },
+  {
+   "n": 188,
+   "ids": [
+    "arxiv:2503.08247",
+    "u:arxiv:2503.08247",
+    "t:challenging the quantum advantage frontier with large scale "
+   ],
+   "label": "MC25"
+  },
+  {
+   "n": 189,
+   "ids": [
+    "arxiv:2508.15759",
+    "u:arxiv:2508.15759",
+    "t:evaluating classical simulations with a quantum processor"
+   ],
+   "label": "NRB+25"
+  },
+  {
+   "n": 190,
+   "ids": [
+    "doi:10.1038/s41586-024-08460-3",
+    "u:nature:s41586-024-08460-3",
+    "t:thermalization and criticality on an analogue digital quantu"
+   ],
+   "label": "AAK+25"
+  },
+  {
+   "n": 191,
+   "ids": [
+    "doi:10.1038/s41586-025-09051-6",
+    "u:nature:s41586-025-09051-6",
+    "t:observation of string breaking on a 2 1 d rydberg quantum si"
+   ],
+   "label": "GHZ+25"
+  },
+  {
+   "n": 192,
+   "ids": [
+    "doi:10.1038/s41586-026-10445-3",
+    "arxiv:2503.20870",
+    "u:arxiv:2503.20870",
+    "t:digital quantum magnetism on a trapped ion quantum computer"
+   ],
+   "label": "HCM+26"
+  },
+  {
+   "n": 193,
+   "ids": [
+    "doi:10.1038/s41586-025-09526-6",
+    "u:nature:s41586-025-09526-6",
+    "t:observation of constructive interference at the edge of quan"
+   ]
+  },
+  {
+   "n": 194,
+   "ids": [
+    "doi:10.1038/s41586-025-08737-1",
+    "u:nature:s41586-025-08737-1",
+    "t:certified randomness using a trapped ion quantum processor"
+   ],
+   "label": "LSN+25"
+  },
+  {
+   "n": 195,
+   "ids": [
+    "arxiv:2605.04025",
+    "u:arxiv:2605.04025",
+    "t:fast accurate high resolution simulation of large scale ferm"
+   ],
+   "label": "HNK+26"
+  },
+  {
+   "n": 196,
+   "ids": [
+    "arxiv:2607.24937",
+    "u:arxiv:2607.24937",
+    "t:resolving structure in prethermal floquet dynamics with prec"
+   ],
+   "label": "LWP+26"
+  },
+  {
+   "n": 197,
+   "ids": [
+    "doi:10.1103/prxquantum.2.010103",
+    "arxiv:2011.04149",
+    "u:arxiv:2011.04149",
+    "t:focus beyond quadratic speedups for error corrected quantum "
+   ],
+   "label": "BMN+21"
+  },
+  {
+   "n": 198,
+   "ids": [
+    "doi:10.1038/s41586-025-09527-5",
+    "arxiv:2408.08292",
+    "u:arxiv:2408.08292",
+    "t:optimization by decoded quantum interferometry"
+   ],
+   "label": "JSW+25"
+  },
+  {
+   "n": 199,
+   "ids": [
+    "doi:10.1038/s41467-025-66773-x",
+    "u:nature:s41467-025-66773-x",
+    "t:local clustering decoder as a fast and adaptive hardware dec"
+   ],
+   "label": "ZZT+25"
+  },
+  {
+   "n": 200,
+   "ids": [
+    "u:https://quantumcomputingreport.com/iqm-and-zurich-instruments-develop-real-time-qec-via-nvidia-nvqlink",
+    "t:iqm and zurich instruments develop real time qec via nvidia "
+   ],
+   "label": "Abd26e"
+  },
+  {
+   "n": 201,
+   "ids": [
+    "u:https://www.darpa.mil/news/2025/companies-targeting-quantum-computers",
+    "t:darpa eyes companies targeting industrially useful quantum c"
+   ]
+  },
+  {
+   "n": 202,
+   "ids": [
+    "u:https://www.darpa.mil/news/2026/qbi-stage-a-qbit",
+    "t:quantum benchmarking initiative expands quest to separate hy"
+   ]
+  },
+  {
+   "n": 203,
+   "ids": [
+    "u:https://www.darpa.mil/sites/default/files/attachment/2025-04/darpa-qbi-q-a-2025.pdf",
+    "t:quantum benchmarking initiative qbi q a"
+   ]
+  },
+  {
+   "n": 204,
+   "ids": [
+    "u:https://planqc.eu/news"
+   ]
+  },
+  {
+   "n": 205,
+   "ids": [
+    "u:https://postquantum.com/quantum-computing-companies/planqc"
+   ],
+   "label": "Ive25a"
+  },
+  {
+   "n": 206,
+   "ids": [
+    "doi:10.1103/physreva.76.042319",
+    "arxiv:cond-mat/0703002",
+    "u:https://arxiv.org/abs/cond-mat/0703002",
+    "t:charge insensitive qubit design derived from the cooper pair"
+   ],
+   "label": "K+07"
+  },
+  {
+   "n": 207,
+   "ids": [
+    "doi:10.1103/physrevlett.107.240501",
+    "arxiv:1105.4652",
+    "u:arxiv:1105.4652",
+    "t:observation of high coherence in josephson junction qubits m"
+   ],
+   "label": "P+11"
+  },
+  {
+   "n": 208,
+   "ids": [
+    "doi:10.1038/nature13171",
+    "arxiv:1402.4848",
+    "u:arxiv:1402.4848",
+    "t:superconducting quantum circuits at the surface code thresho"
+   ],
+   "label": "B+14"
+  },
+  {
+   "n": 209,
+   "ids": [
+    "doi:10.1103/physrevlett.114.240501",
+    "arxiv:1412.2772",
+    "u:arxiv:1412.2772",
+    "t:thermal and residual excited state population in a 3d transm"
+   ],
+   "label": "J+15"
+  },
+  {
+   "n": 210,
+   "ids": [
+    "u:https://thequantuminsider.com/2025/03/26/oxford-researchers-demonstrate-fast-99-8-fidelity-two-qubit-gate-using-simplified-circuit-design",
+    "t:oxford researchers demonstrate fast 99 8 fidelity two qubit "
+   ],
+   "label": "Cho25"
+  },
+  {
+   "n": 211,
+   "ids": [
+    "doi:10.1103/physrevlett.127.130501",
+    "u:https://journals.aps.org/prl/abstract/10.1103/physrevlett.127.130501",
+    "t:demonstration of a high fidelity cnot gate for fixed frequen"
+   ],
+   "label": "K+21"
+  },
+  {
+   "n": 212,
+   "ids": [
+    "arxiv:2503.14798",
+    "u:arxiv:2503.14798",
+    "t:2d transmons with lifetimes and coherence times exceeding 1 "
+   ],
+   "label": "B+25"
+  },
+  {
+   "n": 213,
+   "ids": [
+    "doi:10.1038/s41567-021-01432-8",
+    "arxiv:2104.05219",
+    "u:arxiv:2104.05219",
+    "t:resolving catastrophic error bursts from cosmic rays in larg"
+   ],
+   "label": "M+21"
+  },
+  {
+   "n": 214,
+   "ids": [
+    "doi:10.1103/physrevlett.133.240601",
+    "arxiv:2402.15644",
+    "u:arxiv:2402.15644",
+    "t:resisting high energy impact events through gap engineering "
+   ],
+   "label": "M+24"
+  },
+  {
+   "n": 215,
+   "ids": [
+    "doi:10.1038/s41586-019-1666-5",
+    "u:nature:s41586-019-1666-5",
+    "t:quantum supremacy using a programmable superconducting proce"
+   ],
+   "label": "A+19"
+  },
+  {
+   "n": 216,
+   "ids": [
+    "u:https://www.ibm.com/quantum/blog/quantum-roadmap-2033",
+    "t:the hardware and software for the era of quantum utility is "
+   ],
+   "label": "Gam23"
+  },
+  {
+   "n": 217,
+   "ids": [
+    "doi:10.1038/s41586-024-07941-9",
+    "u:nature:s41586-024-07941-9",
+    "t:advanced cmos manufacturing of superconducting qubits on 300"
+   ],
+   "label": "D+24"
+  },
+  {
+   "n": 218,
+   "ids": [
+    "doi:10.1038/s43246-024-00596-z",
+    "u:nature:s43246-024-00596-z",
+    "t:alternating bias assisted annealing of amorphous oxide tunne"
+   ],
+   "label": "P+24"
+  },
+  {
+   "n": 219,
+   "ids": [
+    "u:https://www.investing.com/news/company-news/iqm-q2-2026-slides-backlog-surges-52-revenue-up-47-in-h1-93ch-4834587",
+    "t:iqm q2 2026 slides backlog surges 52 revenue up 47 in h1"
+   ]
+  },
+  {
+   "n": 220,
+   "ids": [
+    "doi:10.1103/prxquantum.5.010326",
+    "u:https://journals.aps.org/prxquantum/abstract/10.1103/prxquantum.5.010326",
+    "t:using cryogenic cmos control electronics to enable a two qub"
+   ],
+   "label": "U+24"
+  },
+  {
+   "n": 221,
+   "ids": [
+    "u:https://www.gao.gov/products/gao-11-472",
+    "t:managing critical isotopes weaknesses in doe s management of"
+   ]
+  },
+  {
+   "n": 222,
+   "ids": [
+    "u:https://postquantum.com/industry-news/quantware-178m-series-b-qoa",
+    "t:quantware raises 178m series b what it means for quantum ope"
+   ],
+   "label": "Ive26"
+  },
+  {
+   "n": 223,
+   "ids": [
+    "u:https://www.tomshardware.com/tech-industry/quantum-computing/ibm-spins-off-americas-first-quantum-chip-foundry-with-2-billion-in-federal-and-private-funding",
+    "t:ibm spins off america s first quantum chip foundry with 2 bi"
+   ],
+   "label": "Jam26"
+  },
+  {
+   "n": 224,
+   "ids": [
+    "u:https://www.nist.gov/news-events/news/2026/05/department-commerce-announces-letters-intent-9-companies-2-billion",
+    "t:department of commerce announces letters of intent with 9 co"
+   ]
+  },
+  {
+   "n": 225,
+   "ids": [
+    "u:https://downloads.regulations.gov/bis-2024-0020-0001/content.htm",
+    "t:commerce control list additions and revisions implementation",
+    "u:https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies",
+    "u:https://www.govinfo.gov/content/pkg/fr-2024-09-06/html/2024-19633.htm"
+   ]
+  },
+  {
+   "n": 226,
+   "ids": [
+    "u:https://thequantuminsider.com/2026/05/15/10-plus-companies-leading-the-quantum-technologies-race-in-china",
+    "t:top chinese quantum computing companies in 2026"
+   ],
+   "label": "Reh26"
+  },
+  {
+   "n": 227,
+   "ids": [
+    "doi:10.1038/s41586-024-07107-7",
+    "arxiv:2308.07915",
+    "u:arxiv:2308.07915",
+    "t:high threshold and low overhead fault tolerant quantum memor"
+   ],
+   "label": "BCG+24"
+  },
+  {
+   "n": 228,
+   "ids": [
+    "u:https://bluefors.com/products/kide-cryogenic-platform",
+    "t:kide cryogenic platform for large scale quantum computing"
+   ]
+  },
+  {
+   "n": 229,
+   "ids": [
+    "doi:10.1038/s41928-026-01576-6",
+    "u:nature:s41928-026-01576-6",
+    "t:a quantum computer controlled by superconducting digital ele"
+   ],
+   "label": "J+26"
+  },
+  {
+   "n": 230,
+   "ids": [
+    "doi:10.1038/s41586-023-05885-0",
+    "u:nature:s41586-023-05885-0",
+    "t:loophole free bell inequality violation with superconducting"
+   ],
+   "label": "S+23"
+  },
+  {
+   "n": 231,
+   "ids": [
+    "doi:10.1103/prxquantum.4.030310",
+    "u:https://journals.aps.org/prxquantum/abstract/10.1103/prxquantum.4.030310",
+    "t:single flux quantum based digital control of superconducting"
+   ],
+   "label": "L+23"
+  },
+  {
+   "n": 232,
+   "ids": [
+    "arxiv:2503.10842",
+    "u:arxiv:2503.10842",
+    "t:distilled remote entanglement between superconducting qubits"
+   ],
+   "label": "D+25"
+  },
+  {
+   "n": 233,
+   "ids": [
+    "doi:10.1103/physrevlett.129.090502",
+    "arxiv:2111.03011",
+    "u:arxiv:2111.03011",
+    "t:solving the sampling problem of the sycamore quantum circuit"
+   ],
+   "label": "PCZ22"
+  },
+  {
+   "n": 234,
+   "ids": [
+    "doi:10.1038/s41586-023-06096-3",
+    "u:nature:s41586-023-06096-3",
+    "t:evidence for the utility of quantum computing before fault t"
+   ],
+   "label": "K+23"
+  },
+  {
+   "n": 235,
+   "ids": [
+    "doi:10.1103/prxquantum.5.010308",
+    "arxiv:2306.14887",
+    "u:arxiv:2306.14887",
+    "t:efficient tensor network simulation of ibm s eagle kicked is"
+   ],
+   "label": "TFSS24"
+  },
+  {
+   "n": 236,
+   "ids": [
+    "u:https://investors.rigetti.com/news-releases/news-release-details/rigetti-computing-reports-second-quarter-2026-financial-results",
+    "t:rigetti computing reports second quarter 2026 financial resu"
+   ]
+  },
+  {
+   "n": 237,
+   "ids": [
+    "u:https://newsroom.ibm.com/2026-06-02-ibm-commits-more-than-10-billion-to-quantum-computing,-funding-its-roadmap-from-todays-leading-systems-to-the-worlds-first-fault-tolerant-quantum-computers",
+    "t:ibm commits more than 10 billion to quantum computing fundin"
+   ]
+  },
+  {
+   "n": 238,
+   "ids": [
+    "arxiv:2602.12773",
+    "u:arxiv:2602.12773",
+    "t:design and operation of wafer scale packages containing 500 "
+   ],
+   "label": "K+26"
+  },
+  {
+   "n": 239,
+   "ids": [
+    "u:https://www.patsnap.com/resources/blog/rd-blog/quantum-computing-patent-landscape",
+    "t:quantum computing patent landscape 2026"
+   ]
+  },
+  {
+   "n": 240,
+   "ids": [
+    "u:https://www.ibm.com/quantum/blog/ibm-quantum-roadmap-2025",
+    "t:expanding the ibm quantum roadmap to anticipate the future o"
+   ],
+   "label": "Gam22"
+  },
+  {
+   "n": 241,
+   "ids": [
+    "u:https://quantumledger.report/darpa-qbi",
+    "t:darpa qbi tracker"
+   ]
+  },
+  {
+   "n": 242,
+   "ids": [
+    "arxiv:2605.25948",
+    "u:arxiv:2605.25948",
+    "t:unified flux control architecture for fluxonium qubits"
+   ],
+   "label": "P+26"
+  },
+  {
+   "n": 243,
+   "ids": [
+    "u:https://www.dwavequantum.com/media/41upubz2/14-1090a-a_fluxonium-dac-control.pdf",
+    "t:digital control of a high coherence fluxonium qubit"
+   ]
+  },
+  {
+   "n": 244,
+   "ids": [
+    "u:https://news.mit.edu/2025/fast-control-methods-enable-record-setting-fidelity-superconducting-qubit-0114",
+    "t:fast control methods enable record setting fidelity in super"
+   ],
+   "label": "Mil25"
+  },
+  {
+   "n": 245,
+   "ids": [
+    "u:https://www.dwavequantum.com/company/newsroom/press-release/d-wave-demonstrates-first-scalable-on-chip-cryogenic-control-of-gate-model-qubits",
+    "t:d wave demonstrates first scalable on chip cryogenic control"
+   ]
+  },
+  {
+   "n": 246,
+   "ids": [
+    "arxiv:1302.4408",
+    "u:arxiv:1302.4408",
+    "t:reaching 10 ms single photon lifetimes for superconducting a"
+   ],
+   "label": "R+13"
+  },
+  {
+   "n": 247,
+   "ids": [
+    "doi:10.1103/prxquantum.4.030336",
+    "u:https://journals.aps.org/prxquantum/abstract/10.1103/prxquantum.4.030336",
+    "t:superconducting cavity qubit with tens of milliseconds singl"
+   ],
+   "label": "M+23"
+  },
+  {
+   "n": 248,
+   "ids": [
+    "doi:10.1103/h4wk-v31j",
+    "arxiv:2407.07694",
+    "u:arxiv:2407.07694",
+    "t:scalable high fidelity all electronic control of trapped ion"
+   ],
+   "label": "L+25"
+  },
+  {
+   "n": 249,
+   "ids": [
+    "u:https://www.infineon.com/promo/trapped-ions",
+    "t:trapped ion quantum computing"
+   ]
+  },
+  {
+   "n": 250,
+   "ids": [
+    "u:https://www.quantinuum.com/press-releases/infineon-and-quantinuum-announce-partnership-to-accelerate-quantum-computing-towards-meaningful-real-world-applications",
+    "t:infineon and quantinuum announce partnership to accelerate q"
+   ]
+  },
+  {
+   "n": 251,
+   "ids": [
+    "u:https://postquantum.com/quantum-ecosystem/trapped-ion-quantum-ecosystem",
+    "t:the optical table s hidden supply chain who really wins if t"
+   ],
+   "label": "Ive26a"
+  },
+  {
+   "n": 252,
+   "ids": [
+    "u:https://www.aqt.eu/aqt-lands-million-euro-contract",
+    "t:aqt lands million euro contract"
+   ]
+  },
+  {
+   "n": 253,
+   "ids": [
+    "u:https://developer.nvidia.com/blog/nvidia-nvqlink-architecture-integrates-accelerated-computing-with-quantum-processors",
+    "t:nvidia nvqlink architecture integrates accelerated computing"
+   ],
+   "label": "C+25"
+  },
+  {
+   "n": 254,
+   "ids": [
+    "doi:10.1103/prxquantum.4.040313",
+    "arxiv:2305.12773",
+    "u:arxiv:2305.12773",
+    "t:how to wire a 1000 qubit trapped ion quantum computer"
+   ],
+   "label": "MAB23"
+  },
+  {
+   "n": 255,
+   "ids": [
+    "u:https://www.ionq.com/news/ionq-announces-record-second-quarter-2026-revenues-growing-287-yoy",
+    "t:ionq announces record second quarter 2026 revenues growing 2"
+   ]
+  },
+  {
+   "n": 256,
+   "ids": [
+    "u:https://qci.dlr.de/en/qsea-i",
+    "t:qsea i quantum computer demonstrator with 10 ion trap qubits"
+   ]
+  },
+  {
+   "n": 257,
+   "ids": [
+    "u:https://www.sussex.ac.uk/broadcast/read/59206",
+    "t:german government tasks sussex spin out with building a powe"
+   ],
+   "label": "Ing22"
+  },
+  {
+   "n": 258,
+   "ids": [
+    "u:https://postquantum.com/quantum-ecosystem/neutral-atom-quantum-ecosystem",
+    "t:the tweezer array s hidden supply chain who really wins if n"
+   ],
+   "label": "Ive25b"
+  },
+  {
+   "n": 259,
+   "ids": [
+    "u:https://www.pasqal.com/news/pasqal-brings-qubit-control-on-chip-advancing-the-path-to-fault-tolerant-quantum-computing-at-scale",
+    "t:pasqal brings qubit control on chip advancing the path to fa"
+   ]
+  },
+  {
+   "n": 260,
+   "ids": [
+    "u:https://www.pasqal.com/newsroom"
+   ]
+  },
+  {
+   "n": 261,
+   "ids": [
+    "u:https://ir.infleqtion.com/news-events/press-releases/detail/201/infleqtion-reports-record-q2-revenue-raises-2026-outlook-as-quantum-commercialization-accelerates",
+    "t:infleqtion reports record q2 revenue raises 2026 outlook as "
+   ]
+  },
+  {
+   "n": 262,
+   "ids": [
+    "doi:10.1063/5.0069544",
+    "arxiv:2109.01272",
+    "u:arxiv:2109.01272",
+    "t:omg blueprint for trapped ion quantum computing with metasta"
+   ],
+   "label": "A+21"
+  },
+  {
+   "n": 263,
+   "ids": [
+    "doi:10.1103/physrevx.13.041022",
+    "arxiv:2208.05461",
+    "u:arxiv:2208.05461",
+    "t:erasure qubits overcoming the t₁ limit in superconducting ci"
+   ],
+   "label": "KHV+23"
+  },
+  {
+   "n": 264,
+   "ids": [
+    "arxiv:2605.24175",
+    "u:arxiv:2605.24175",
+    "t:minimally destructive fast imaging of single atoms in an opt"
+   ],
+   "label": "Y+26"
+  },
+  {
+   "n": 265,
+   "ids": [
+    "u:https://quantumcomputingreport.com/hamamatsu-photonics-nkt-photonics-and-yaqumo-form-alliance-to-industrialize-cold-atom-quantum-core-components",
+    "t:hamamatsu photonics nkt photonics and yaqumo form alliance t"
+   ],
+   "label": "Abd26f"
+  },
+  {
+   "n": 266,
+   "ids": [
+    "u:https://patents.google.com/patent/us11748652b1/en",
+    "t:heralding of amplitude damping decay noise for quantum error"
+   ],
+   "label": "KR23"
+  },
+  {
+   "n": 267,
+   "ids": [
+    "doi:10.1038/35051009",
+    "arxiv:quant-ph/0006088",
+    "u:https://arxiv.org/abs/quant-ph/0006088",
+    "t:efficient linear optics quantum computation"
+   ],
+   "label": "KLM00"
+  },
+  {
+   "n": 268,
+   "ids": [
+    "arxiv:2511.23232",
+    "u:arxiv:2511.23232",
+    "t:deterministic quantum dot single photon sources operational "
+   ],
+   "label": "L+25a"
+  },
+  {
+   "n": 269,
+   "ids": [
+    "doi:10.1038/s41586-023-06550-2",
+    "u:nature:s41586-023-06550-2",
+    "t:a superconducting nanowire single photon camera with 400 000"
+   ],
+   "label": "O+23"
+  },
+  {
+   "n": 270,
+   "ids": [
+    "u:https://www.quixquantum.com/news/quix-quantum-series-a",
+    "t:quix quantum secures 15 million to deliver first generation "
+   ]
+  },
+  {
+   "n": 271,
+   "ids": [
+    "u:https://postquantum.com/quantum-computing-companies/orca-computing",
+    "t:orca computing"
+   ],
+   "label": "Ive25c"
+  },
+  {
+   "n": 272,
+   "ids": [
+    "u:https://quantumcomputingreport.com/sparrow-quantum-secures-e21-5m-24m-usd-in-series-a-funding-to-advance-photonic-quantum-chip-production",
+    "t:sparrow quantum secures 21 5m 24m usd in series a funding to"
+   ],
+   "label": "Abd25c"
+  },
+  {
+   "n": 273,
+   "ids": [
+    "u:https://www.quandela.com/about-us/newsroom/quandela-secures-e50-million-to-support-international-expansion",
+    "t:quandela secures 50 million to support international expansi"
+   ]
+  },
+  {
+   "n": 274,
+   "ids": [
+    "doi:10.1103/physrevlett.117.110801",
+    "u:https://journals.aps.org/prl/abstract/10.1103/physrevlett.117.110801",
+    "t:detection of 15 db squeezed states of light and their applic"
+   ],
+   "label": "VMDS16"
+  },
+  {
+   "n": 275,
+   "ids": [
+    "arxiv:2508.08599",
+    "u:arxiv:2508.08599",
+    "t:squeezed light generation in periodically poled thin film li"
+   ],
+   "label": "S+25"
+  },
+  {
+   "n": 276,
+   "ids": [
+    "doi:10.1038/s41586-021-04273-w",
+    "arxiv:2107.00628",
+    "u:arxiv:2107.00628",
+    "t:quantum logic with spin qubits crossing the surface code thr"
+   ],
+   "label": "X+22"
+  },
+  {
+   "n": 277,
+   "ids": [
+    "u:https://ir.aspisotopes.com/news-events/press-releases/detail/56/asp-isotopes-inc-commences-commercial-production-of",
+    "t:asp isotopes inc commences commercial production of enriched"
+   ]
+  },
+  {
+   "n": 278,
+   "ids": [
+    "u:https://www.hpcwire.com/off-the-wire/doe-advances-domestic-supply-of-silicon-germanium-isotopes-for-quantum-computing",
+    "t:doe advances domestic supply of silicon germanium isotopes f"
+   ]
+  },
+  {
+   "n": 279,
+   "ids": [
+    "u:https://newsroom.ibm.com/2026-08-26-ibm-completes-acquisition-of-hrl-laboratories-to-accelerate-the-future-of-quantum",
+    "t:ibm completes acquisition of hrl laboratories to accelerate "
+   ]
+  },
+  {
+   "n": 280,
+   "ids": [
+    "doi:10.1038/s41586-026-10766-3",
+    "u:nature:s41586-026-10766-3",
+    "t:weight four parity checks in a spin shuttling architecture"
+   ],
+   "label": "U+26"
+  },
+  {
+   "n": 281,
+   "ids": [
+    "u:https://www.quobly.io/press-releases/quobly-secures-e115-million-series-a-to-bring-silicon-based-quantum-computers-to-market",
+    "t:quobly secures 115 million series a to bring silicon based q"
+   ]
+  },
+  {
+   "n": 282,
+   "ids": [
+    "u:https://www.equal1.com/insights/equal1-raises-60m-to-accelerate-quantum-computing-using-existing-semiconductor-manufacturing",
+    "t:equal1 raises 60m to accelerate quantum computing using exis"
+   ]
+  },
+  {
+   "n": 283,
+   "ids": [
+    "u:https://thequantuminsider.com/2026/07/03/postscriptum-invests-in-quantum-hardware-developer-semiqon",
+    "t:postscriptum invests in quantum hardware developer semiqon"
+   ],
+   "label": "Swa26e"
+  },
+  {
+   "n": 284,
+   "ids": [
+    "u:https://gf.com/gf-press-release/globalfoundries-launches-quantum-technology-solutions-to-scale-us-quantum-manufacturing",
+    "t:globalfoundries launches quantum technology solutions to sca",
+    "u:https://investors.gf.com/news-releases/news-release-details/globalfoundries-launches-quantum-technology-solutions-scale-us"
+   ]
+  },
+  {
+   "n": 285,
+   "ids": [
+    "u:https://quantumcomputingreport.com/semiqon-secures-e17-5m-18-3m-usd-to-develop-cryogenic-cmos-technology-for-quantum-systems",
+    "t:semiqon secures 17 5m 18 3m usd to develop cryogenic cmos te"
+   ],
+   "label": "Abd25d"
+  },
+  {
+   "n": 286,
+   "ids": [
+    "u:https://quantummotion.com/quantum-motion-raises-160-million-series-c-to-deliver-quantum-computings-transistor-moment",
+    "t:quantum motion raises 160 million series c to deliver quantu"
+   ]
+  },
+  {
+   "n": 287,
+   "ids": [
+    "u:https://www.patsnap.com/resources/blog/rd-blog/spin-qubit-silicon-quantum-dot-arrays-2026-patsnap-eureka",
+    "t:spin qubit silicon quantum dot arrays 2026 patsnap eureka"
+   ]
+  },
+  {
+   "n": 288,
+   "ids": [
+    "doi:10.1038/nnano.2012.21",
+    "doi:10.1038/nnano",
+    "u:nature:nnano",
+    "t:a single atom transistor"
+   ],
+   "label": "F+12"
+  },
+  {
+   "n": 289,
+   "ids": [
+    "u:https://sqc.com/news/skywater-and-sqc-advancing-hybrid-quantum-classical-computing",
+    "t:skywater x sqc advancing hybrid quantum classical computing"
+   ]
+  },
+  {
+   "n": 290,
+   "ids": [
+    "u:https://sqc.com/news",
+    "t:silicon quantum computing news"
+   ]
+  },
+  {
+   "n": 291,
+   "ids": [
+    "doi:10.1038/s41467-025-66722-8",
+    "u:nature:s41467-025-66722-8",
+    "t:spin photon correlations from a purcell enhanced diamond nit"
+   ],
+   "label": "FHW+25"
+  },
+  {
+   "n": 292,
+   "ids": [
+    "doi:10.1038/s41467-026-72818-6",
+    "u:nature:s41467-026-72818-6",
+    "t:unconditionally teleported quantum gates between remote soli"
+   ],
+   "label": "IDO+26"
+  },
+  {
+   "n": 293,
+   "ids": [
+    "u:https://www.e6.com/en/about/news/dnv-b1-launch",
+    "t:element six launches dnv b1 its first commercially available"
+   ]
+  },
+  {
+   "n": 294,
+   "ids": [
+    "u:https://qutech.nl/2026/06/25/a-step-toward-faster-quantum-networks",
+    "t:coherent coupling of diamond colour centre to a nanocavity"
+   ]
+  },
+  {
+   "n": 295,
+   "ids": [
+    "arxiv:2406.01704",
+    "u:arxiv:2406.01704",
+    "t:distributed quantum computing in silicon"
+   ],
+   "label": "A+24"
+  },
+  {
+   "n": 296,
+   "ids": [
+    "u:https://thequantuminsider.com/2026/07/10/8-quantum-computing-companies-working-with-nv-centre-in-diamond-technology",
+    "t:top diamond nv centre quantum computing companies in 2026"
+   ],
+   "label": "Reh26a"
+  },
+  {
+   "n": 297,
+   "ids": [
+    "doi:10.1038/nature26142",
+    "u:nature:nature26142",
+    "t:quantized majorana conductance"
+   ],
+   "label": "ZLG+18"
+  },
+  {
+   "n": 298,
+   "ids": [
+    "doi:10.1103/physrevx.13.011028",
+    "u:https://journals.aps.org/prx/abstract/10.1103/physrevx.13.011028",
+    "t:interference measurements of non abelian e 4 abelian e 2 qua"
+   ],
+   "label": "W+23"
+  },
+  {
+   "n": 299,
+   "ids": [
+    "u:https://quantumcomputingreport.com/microsoft-opens-largest-quantum-lab-globally-in-denmark-to-advance-topological-qubit-fabrication",
+    "t:microsoft opens largest quantum lab globally in denmark to a"
+   ],
+   "label": "Abd25e"
+  },
+  {
+   "n": 300,
+   "ids": [
+    "u:https://www.nokia.com/bell-labs/research/air-lab/data-and-devices/topological-quantum-computing",
+    "t:topological quantum computing"
+   ]
+  },
+  {
+   "n": 301,
+   "ids": [
+    "u:https://www.nextplatform.com/2025/07/21/bell-labs-takes-a-topological-approach-to-quantum-2-0",
+    "t:bell labs takes a topological approach to quantum 2 0"
+   ],
+   "label": "Bur25"
+  },
+  {
+   "n": 302,
+   "ids": [
+    "u:https://thequantuminsider.com/2026/01/23/microsoft-2026-quantum-pioneers-program-measurement-based-computing",
+    "t:microsoft opens 2026 quantum pioneers program for measuremen"
+   ],
+   "label": "Reh26b"
+  },
+  {
+   "n": 303,
+   "ids": [
+    "u:https://www.itpro.com/technology/bell-labs-michael-eggleston-on-nokias-research-into-topological-quantum-computing",
+    "t:bell labs michael eggleston on nokia s research into topolog"
+   ],
+   "label": "All26"
+  },
+  {
+   "n": 304,
+   "ids": [
+    "u:https://quantumcomputingreport.com/d-wave-announces-hq-relocation-20m-system-sale-and-defense-performance-breakthroughs",
+    "t:d wave announces hq relocation 20m system sale 10m fortune 1"
+   ],
+   "label": "Abd26g"
+  },
+  {
+   "n": 305,
+   "ids": [
+    "u:https://www.dwavequantum.com/company/newsroom/press-release/d-wave-announces-10-million-two-year-enterprise-qcaas-agreement-with-fortune-100-company",
+    "t:d wave announces 10 million two year enterprise qcaas agreem"
+   ]
+  },
+  {
+   "n": 306,
+   "ids": [
+    "doi:10.1103/physrevlett.75.4714",
+    "u:https://journals.aps.org/prl/abstract/10.1103/physrevlett.75.4714",
+    "t:demonstration of a fundamental quantum logic gate"
+   ],
+   "label": "MMK+95"
+  },
+  {
+   "n": 307,
+   "ids": [
+    "u:https://www.patsnap.com/resources/blog/rd-blog/trapped-ion-quantum-computing-2026-patsnap-eureka",
+    "t:trapped ion quantum computing technology landscape 2026"
+   ]
+  },
+  {
+   "n": 308,
+   "ids": [
+    "doi:10.1103/prxquantum.4.020358",
+    "arxiv:2210.15024",
+    "u:https://journals.aps.org/prxquantum/abstract/10.1103/prxquantum.4.020358",
+    "t:quantum error correction with metastable states of trapped i"
+   ],
+   "label": "KCB23"
+  },
+  {
+   "n": 309,
+   "ids": [
+    "doi:10.1103/p3cy-8yjk",
+    "arxiv:2411.12727",
+    "u:arxiv:2411.12727",
+    "t:high fidelity entanglement of metastable trapped ion qubits "
+   ],
+   "label": "Q+26"
+  },
+  {
+   "n": 310,
+   "ids": [
+    "arxiv:2608.13181",
+    "u:arxiv:2608.13181",
+    "t:mid circuit ground state cooling and ancilla readout in the "
+   ],
+   "label": "B+26"
+  },
+  {
+   "n": 311,
+   "ids": [
+    "doi:10.1103/d1v7-nctj",
+    "u:https://journals.aps.org/prxquantum/abstract/10.1103/d1v7-nctj",
+    "t:surface code with imperfect erasure checks"
+   ],
+   "label": "CSC+25"
+  },
+  {
+   "n": 312,
+   "ids": [
+    "doi:10.1038/s41567-026-03315-2",
+    "u:nature:s41567-026-03315-2",
+    "t:error correction of a logical qubit encoded in a single atom"
+   ],
+   "label": "D+26"
+  },
+  {
+   "n": 313,
+   "ids": [
+    "u:https://github.com/quantumlib/stim/blob/main/doc/gates.md",
+    "t:gates supported by stim"
+   ]
+  },
+  {
+   "n": 314,
+   "ids": [
+    "doi:10.1103/physreva.52.3489",
+    "arxiv:quant-ph/9505011",
+    "u:https://arxiv.org/abs/quant-ph/9505011",
+    "t:simple quantum computer"
+   ],
+   "label": "CY95"
+  },
+  {
+   "n": 315,
+   "ids": [
+    "doi:10.1073/pnas.2221736120",
+    "arxiv:2212.12077",
+    "u:arxiv:2212.12077",
+    "t:dual rail encoding with superconducting cavities"
+   ],
+   "label": "T+23"
+  },
+  {
+   "n": 316,
+   "ids": [
+    "doi:10.1103/physrevx.14.011051",
+    "arxiv:2307.08737",
+    "u:arxiv:2307.08737",
+    "t:demonstrating a long coherence dual rail erasure qubit using"
+   ],
+   "label": "L+24"
+  },
+  {
+   "n": 317,
+   "ids": [
+    "arxiv:2307.03169",
+    "u:arxiv:2307.03169",
+    "t:demonstrating a superconducting dual rail cavity qubit with "
+   ],
+   "label": "C+23"
+  },
+  {
+   "n": 318,
+   "ids": [
+    "arxiv:2601.02183",
+    "u:arxiv:2601.02183",
+    "t:developments in superconducting erasure qubits for hardware "
+   ],
+   "label": "VHW+26"
+  },
+  {
+   "n": 319,
+   "ids": [
+    "doi:10.1103/physrevlett.132.180601",
+    "arxiv:2311.04423",
+    "u:arxiv:2311.04423",
+    "t:erasure detection of a dual rail qubit encoded in a double p"
+   ],
+   "label": "K+24"
+  },
+  {
+   "n": 320,
+   "ids": [
+    "doi:10.1038/s41534-024-00944-4",
+    "arxiv:2406.14621",
+    "u:nature:s41534-024-00944-4",
+    "t:a mid circuit erasure check on a dual rail cavity qubit usin"
+   ],
+   "label": "G+25"
+  },
+  {
+   "n": 321,
+   "ids": [
+    "arxiv:2604.08672",
+    "u:arxiv:2604.08672",
+    "t:hardware efficient erasure qubits with superconducting trans"
+   ],
+   "label": "LWW+26"
+  },
+  {
+   "n": 322,
+   "ids": [
+    "doi:10.1038/s41567-026-03211-9",
+    "arxiv:2504.12099",
+    "u:arxiv:2504.12099",
+    "t:logical multi qubit entanglement with dual rail superconduct"
+   ],
+   "label": "H+26"
+  },
+  {
+   "n": 323,
+   "ids": [
+    "u:https://patents.justia.com/patent/12437225",
+    "t:linear optical encoded ghz measurements and fault tolerant q"
+   ]
+  },
+  {
+   "n": 324,
+   "ids": [
+    "u:https://patents.justia.com/inventor/shruti-puri",
+    "t:shruti puri inventions patents and patent applications justi"
+   ]
+  },
+  {
+   "n": 325,
+   "ids": [
+    "u:https://quantumcomputingreport.com/d-wave-demonstrates-two-qubit-gate-breakthrough-for-dual-rail-erasure-qubits-in-nature",
+    "t:d wave demonstrates two qubit gate breakthrough for dual rai"
+   ],
+   "label": "Abd26h"
+  },
+  {
+   "n": 326,
+   "ids": [
+    "arxiv:2607.00786",
+    "u:arxiv:2607.00786",
+    "t:bias preserving gates and quantum error correction with dual"
+   ],
+   "label": "B+26a"
+  },
+  {
+   "n": 327,
+   "ids": [
+    "u:https://quantumcircuits.com/dual-resonator-qubits-breakthrough",
+    "t:what are quantum circuits dual rail qubits and why are they "
+   ]
+  },
+  {
+   "n": 328,
+   "ids": [
+    "u:https://alice-bob.com/roadmap"
+   ]
+  },
+  {
+   "n": 329,
+   "ids": [
+    "doi:10.1103/physreva.64.012310",
+    "arxiv:quant-ph/0008040",
+    "u:https://arxiv.org/abs/quant-ph/0008040",
+    "t:encoding a qubit in an oscillator"
+   ],
+   "label": "GKP01"
+  },
+  {
+   "n": 330,
+   "ids": [
+    "doi:10.1038/s41586-020-2603-3",
+    "u:nature:s41586-020-2603-3",
+    "t:quantum error correction of a qubit encoded in grid states o"
+   ],
+   "label": "C+20"
+  },
+  {
+   "n": 331,
+   "ids": [
+    "doi:10.1038/s41586-023-05782-6",
+    "u:nature:s41586-023-05782-6",
+    "t:real time quantum error correction beyond break even"
+   ],
+   "label": "S+23a"
+  },
+  {
+   "n": 332,
+   "ids": [
+    "doi:10.1038/35042541",
+    "arxiv:quant-ph/0005116",
+    "u:https://arxiv.org/abs/quant-ph/0005116",
+    "t:universal quantum computation with the exchange interaction"
+   ],
+   "label": "DBK+00"
+  },
+  {
+   "n": 333,
+   "ids": [
+    "doi:10.1038/s41467-026-70943-w",
+    "u:nature:s41467-026-70943-w",
+    "t:demonstration of an always on exchange only spin qubit"
+   ],
+   "label": "BHAP26"
+  },
+  {
+   "n": 334,
+   "ids": [
+    "doi:10.1103/physrevlett.82.2594",
+    "arxiv:quant-ph/9809034",
+    "u:https://arxiv.org/abs/quant-ph/9809034",
+    "t:pulsed energy time entangled twin photon source for quantum "
+   ],
+   "label": "BGTZ99"
+  },
+  {
+   "n": 335,
+   "ids": [
+    "arxiv:2606.28490",
+    "u:arxiv:2606.28490",
+    "t:the subthreshold issue of fusion based quantum computing"
+   ],
+   "label": "LPD+26"
+  },
+  {
+   "n": 336,
+   "ids": [
+    "doi:10.1103/physrevlett.113.140403",
+    "arxiv:1403.4841",
+    "u:arxiv:1403.4841",
+    "t:3 4 efficient bell measurement with passive linear optics an"
+   ],
+   "label": "EL14"
+  },
+  {
+   "n": 337,
+   "ids": [
+    "u:https://www.toshiba.eu/quantum/news",
+    "t:news hub the latest quantum security news from toshiba"
+   ]
+  },
+  {
+   "n": 338,
+   "ids": [
+    "doi:10.1103/physrevb.95.235305",
+    "arxiv:1610.05289",
+    "u:arxiv:1610.05289",
+    "t:scalable designs for quasiparticle poisoning protected topol"
+   ],
+   "label": "K+17"
+  },
+  {
+   "n": 339,
+   "ids": [
+    "doi:10.1103/physrevlett.113.220502",
+    "arxiv:1402.7367",
+    "u:arxiv:1402.7367",
+    "t:qubit architecture with high coherence and fast tunable coup"
+   ],
+   "label": "C+14"
+  },
+  {
+   "n": 340,
+   "ids": [
+    "u:https://oqc.tech/company/newsroom/oxford-research-group-demonstrate-fundamental-speed-up-of-two-qubit-gate",
+    "t:oxford research group demonstrate fundamental speed up of tw"
+   ],
+   "label": "Cur25"
+  },
+  {
+   "n": 341,
+   "ids": [
+    "u:https://patents.google.com/patent/us11727297/en",
+    "t:tunable quantum coupler facilitating a quantum gate between "
+   ],
+   "label": "SUZS23"
+  },
+  {
+   "n": 342,
+   "ids": [
+    "doi:10.1103/physrevlett.107.080502",
+    "u:https://journals.aps.org/prl/abstract/10.1103/physrevlett.107.080502",
+    "t:simple all microwave entangling gate for fixed frequency sup"
+   ],
+   "label": "C+11"
+  },
+  {
+   "n": 343,
+   "ids": [
+    "arxiv:2606.27017",
+    "u:arxiv:2606.27017",
+    "t:lattice patch structure for fixed frequency transmon quantum"
+   ],
+   "label": "KKK26"
+  },
+  {
+   "n": 344,
+   "ids": [
+    "doi:10.1103/physrevlett.85.2208",
+    "arxiv:quant-ph/0004038",
+    "u:https://arxiv.org/abs/quant-ph/0004038",
+    "t:fast quantum gates for neutral atoms"
+   ],
+   "label": "JCZ+00"
+  },
+  {
+   "n": 345,
+   "ids": [
+    "doi:10.1103/physrevlett.123.170503",
+    "arxiv:1908.06101",
+    "u:arxiv:1908.06101",
+    "t:parallel implementation of high fidelity multiqubit gates wi"
+   ],
+   "label": "L+19"
+  },
+  {
+   "n": 346,
+   "ids": [
+    "doi:10.1038/s41586-023-06481-y",
+    "arxiv:2304.05420",
+    "u:arxiv:2304.05420",
+    "t:high fidelity parallel entangling gates on a neutral atom qu"
+   ],
+   "label": "E+23"
+  },
+  {
+   "n": 347,
+   "ids": [
+    "doi:10.1038/nature25737",
+    "arxiv:1709.06952",
+    "u:arxiv:1709.06952",
+    "t:fast quantum logic gates with trapped ion qubits"
+   ],
+   "label": "S+18"
+  },
+  {
+   "n": 348,
+   "ids": [
+    "arxiv:2606.23951",
+    "u:arxiv:2606.23951",
+    "t:mølmer sørensen gates in trapped ions chains in the presence"
+   ],
+   "label": "DALL26"
+  },
+  {
+   "n": 349,
+   "ids": [
+    "u:https://docs.q-ctrl.com/boulder-opal/toolkit/apply/trapped-ion-quantum-computing/learn-to-optimize-molmer-sorensen-gates-for-trapped-ions",
+    "t:learn to optimize mølmer sørensen gates for trapped ions"
+   ]
+  },
+  {
+   "n": 350,
+   "ids": [
+    "doi:10.1038/nature10290",
+    "arxiv:1104.3573",
+    "u:arxiv:1104.3573",
+    "t:microwave quantum logic gates for trapped ions"
+   ],
+   "label": "O+11"
+  },
+  {
+   "n": 351,
+   "ids": [
+    "doi:10.1103/physrevlett.117.140501",
+    "arxiv:1606.08409",
+    "u:arxiv:1606.08409",
+    "t:high fidelity trapped ion quantum logic using near field mic"
+   ],
+   "label": "HSA+16"
+  },
+  {
+   "n": 352,
+   "ids": [
+    "u:https://www.ionq.com/news/ionq-achieves-landmark-result-setting-new-world-record-in-quantum-computing",
+    "t:ionq achieves landmark result setting new world record in qu"
+   ]
+  },
+  {
+   "n": 353,
+   "ids": [
+    "u:https://quantumcomputingreport.com/eleqtron-secures-e57-million-61-5m-usd-series-a-to-scale-ion-trap-systems",
+    "t:eleqtron secures 57 million 61 5m usd series a to scale magi"
+   ],
+   "label": "Fin26a"
+  },
+  {
+   "n": 354,
+   "ids": [
+    "u:https://www.oxionics.com/announcements/oxford-ionics-selected-for-quantum-missions-pilot-to-upgrade-nqcc-testbed-with-advanced-2d-ion-traps",
+    "t:oxford ionics selected for quantum missions pilot to upgrade"
+   ]
+  },
+  {
+   "n": 355,
+   "ids": [
+    "u:https://www.quantum-machines.co/qubit-types/semiconductor-spin-qubits",
+    "t:semiconductor spin qubits"
+   ]
+  },
+  {
+   "n": 356,
+   "ids": [
+    "doi:10.1038/d41586-026-02357-z",
+    "u:nature:d41586-026-02357-z",
+    "t:underdog spin qubits leap forward in race to a useful quantu"
+   ],
+   "label": "Gar26"
+  },
+  {
+   "n": 357,
+   "ids": [
+    "doi:10.1103/physrevlett.95.010501",
+    "u:https://journals.aps.org/prl/abstract/10.1103/physrevlett.95.010501",
+    "t:resource efficient linear optical quantum computation"
+   ],
+   "label": "BR05"
+  },
+  {
+   "n": 358,
+   "ids": [
+    "doi:10.1103/physrevx.8.021073",
+    "arxiv:1802.08510",
+    "u:arxiv:1802.08510",
+    "t:programmable interference between two microwave quantum memo"
+   ],
+   "label": "G+18"
+  },
+  {
+   "n": 359,
+   "ids": [
+    "arxiv:2303.00959",
+    "u:arxiv:2303.00959",
+    "t:high fidelity parametric beamsplitting with a parity protect"
+   ],
+   "label": "L+23a"
+  },
+  {
+   "n": 360,
+   "ids": [
+    "u:https://www.dwavequantum.com/learn/blog/posts/why-d-wave-s-new-two-qubit-gate-is-a-breakthrough-for-quantum-error-correction",
+    "t:why d wave s new two qubit gate is a breakthrough for quantu"
+   ],
+   "label": "CTM26"
+  },
+  {
+   "n": 361,
+   "ids": [
+    "u:https://www.energy.gov/articles/energy-department-announces-625-million-advance-next-phase-national-quantum-information",
+    "t:energy department announces 625 million to advance the next "
+   ]
+  },
+  {
+   "n": 362,
+   "ids": [
+    "doi:10.1103/physrevlett.101.010501",
+    "arxiv:0802.0279",
+    "u:arxiv:0802.0279",
+    "t:measurement only topological quantum computation"
+   ],
+   "label": "BFN08"
+  },
+  {
+   "n": 363,
+   "ids": [
+    "arxiv:1907.09528",
+    "u:arxiv:1907.09528",
+    "t:topological and subsystem codes on low degree graphs with fl"
+   ],
+   "label": "CZY+19"
+  },
+  {
+   "n": 364,
+   "ids": [
+    "doi:10.1038/nature06184",
+    "u:nature:nature06184",
+    "t:coupling superconducting qubits via a cavity bus"
+   ],
+   "label": "M+07"
+  },
+  {
+   "n": 365,
+   "ids": [
+    "doi:10.1038/s41586-020-2529-9",
+    "u:nature:s41586-020-2529-9",
+    "t:waveguide quantum electrodynamics with superconducting artif"
+   ],
+   "label": "K+20"
+  },
+  {
+   "n": 366,
+   "ids": [
+    "doi:10.1126/science.ade7651",
+    "arxiv:2206.12803",
+    "u:arxiv:2206.12803",
+    "t:a scalable superconducting quantum simulator with long range"
+   ],
+   "label": "ZKM+22"
+  },
+  {
+   "n": 367,
+   "ids": [
+    "doi:10.1103/prxquantum.4.010314",
+    "arxiv:2208.09460",
+    "u:arxiv:2208.09460",
+    "t:long distance transmon coupler with cz gate fidelity above 9"
+   ],
+   "label": "M+23a"
+  },
+  {
+   "n": 368,
+   "ids": [
+    "u:https://www.ibm.com/quantum/blog/large-scale-ftqc",
+    "t:how ibm will build the world s first large scale fault toler"
+   ],
+   "label": "M+25"
+  },
+  {
+   "n": 369,
+   "ids": [
+    "doi:10.1103/ls5b-279m",
+    "arxiv:2506.14128",
+    "u:arxiv:2506.14128",
+    "t:tunable hybrid mode coupler enabling strong interactions bet"
+   ],
+   "label": "X+26"
+  },
+  {
+   "n": 370,
+   "ids": [
+    "arxiv:2604.12261",
+    "u:arxiv:2604.12261",
+    "t:long range tunable coupler for modular fluxonium quantum pro"
+   ],
+   "label": "ZXX26"
+  },
+  {
+   "n": 371,
+   "ids": [
+    "doi:10.1103/physrevlett.134.020801",
+    "arxiv:2408.16617",
+    "u:arxiv:2408.16617",
+    "t:long range zz interaction via resonator induced phase in sup"
+   ],
+   "label": "D+25a"
+  },
+  {
+   "n": 372,
+   "ids": [
+    "doi:10.1063/5.0097521",
+    "arxiv:2201.03184",
+    "u:arxiv:2201.03184",
+    "t:tunable coupling of widely separated superconducting qubits "
+   ],
+   "label": "ZZX+"
+  },
+  {
+   "n": 373,
+   "ids": [
+    "u:https://www.ibm.com/quantum/blog/qdc-2025",
+    "t:scaling for quantum advantage and beyond"
+   ],
+   "label": "Man25"
+  },
+  {
+   "n": 374,
+   "ids": [
+    "u:https://iqm.tech/blog/iqm-constellation-a-new-quantum-processor-architecture-for-scalable-error-correction",
+    "t:iqm constellation a new quantum processor architecture for s"
+   ],
+   "label": "Vig25"
+  },
+  {
+   "n": 375,
+   "ids": [
+    "arxiv:2503.12869",
+    "u:arxiv:2503.12869",
+    "t:quantum error detection in qubit resonator star architecture"
+   ],
+   "label": "V+25"
+  },
+  {
+   "n": 376,
+   "ids": [
+    "u:https://www.dwavequantum.com/media/2uznec4s/14-1056a-a_zephyr_topology_of_d-wave_quantum_processors.pdf",
+    "t:zephyr topology of d wave quantum processors"
+   ],
+   "label": "BKR21"
+  },
+  {
+   "n": 377,
+   "ids": [
+    "u:https://www.sec.gov/archives/edgar/data/1907982/000190798226000026/qbts-20251231.htm",
+    "t:form 10 k for the fiscal year ended december 31 2025"
+   ]
+  },
+  {
+   "n": 378,
+   "ids": [
+    "u:https://www.sec.gov/archives/edgar/data/1907982/000190798225000060/qbts-20241231.htm",
+    "u:https://www.sec.gov/archives/edgar/data/1907982/000190798225000060/0001907982-25-000060-index.htm",
+    "t:form 10 k for fiscal year 2024"
+   ]
+  },
+  {
+   "n": 379,
+   "ids": [
+    "u:https://efts.sec.gov/latest/search-index?q=%22skywater%22&forms=10-k&ciks=0001907982",
+    "t:edgar full text search skywater in d wave quantum inc 10 k f"
+   ]
+  },
+  {
+   "n": 380,
+   "ids": [
+    "u:https://investors.ionq.com/news/news-details/2026/ionq-to-acquire-skywater-technology-creating-the-only-vertically-integrated-full-stack-quantum-platform-company/default.aspx",
+    "t:ionq to acquire skywater technology creating the only vertic"
+   ]
+  },
+  {
+   "n": 381,
+   "ids": [
+    "u:https://iqm.tech/blog/jumping-off-the-grid-in-quantum-processor-innovation-introducing-iqm-star",
+    "t:jumping off the grid in quantum processor innovation introdu"
+   ],
+   "label": "Stu25"
+  },
+  {
+   "n": 382,
+   "ids": [
+    "u:https://quantumcomputingreport.com/quantware-debuts-vio-40k-architecture-to-enable-10000-qubit-superconducting-processors",
+    "t:quantware debuts vio 40k architecture to enable 10 000 qubit"
+   ],
+   "label": "Abd25f"
+  },
+  {
+   "n": 383,
+   "ids": [
+    "arxiv:2506.03094",
+    "u:arxiv:2506.03094",
+    "t:tour de gross a modular quantum computer based on bivariate "
+   ],
+   "label": "Y+25"
+  },
+  {
+   "n": 384,
+   "ids": [
+    "doi:10.1038/s41567-024-02694-8",
+    "arxiv:2310.16805",
+    "u:arxiv:2310.16805",
+    "t:cavity mediated iswap oscillations between distant spins"
+   ],
+   "label": "D+24a"
+  },
+  {
+   "n": 385,
+   "ids": [
+    "u:https://patents.justia.com/search?q=%22long-range+coupler%22+qubit",
+    "u:https://patents.google.com/patent/us12517856b2/en",
+    "u:https://patents.google.com/patent/us12587192b2/en",
+    "t:patent search long range coupler qubit results as of sep 3 2"
+   ]
+  },
+  {
+   "n": 386,
+   "ids": [
+    "doi:10.1038/nature00784",
+    "u:nature:nature00784",
+    "t:architecture for a large scale ion trap quantum computer"
+   ],
+   "label": "KMW02"
+  },
+  {
+   "n": 387,
+   "ids": [
+    "doi:10.1038/s41467-022-35285-3",
+    "u:nature:s41467-022-35285-3",
+    "t:a high fidelity quantum matter link between ion trap microch"
+   ],
+   "label": "A+23"
+  },
+  {
+   "n": 388,
+   "ids": [
+    "doi:10.1103/physrevlett.109.080502",
+    "arxiv:1206.0780",
+    "u:arxiv:1206.0780",
+    "t:coherent diabatic ion transport and separation in a multi zo"
+   ],
+   "label": "B+12"
+  },
+  {
+   "n": 389,
+   "ids": [
+    "u:https://www.sandia.gov/labnews/2026/08/27/in-the-mountain-west-a-quantum-computing-collaboration-announces-major-results",
+    "t:in the mountain west a quantum computing collaboration annou"
+   ],
+   "label": "Rum26"
+  },
+  {
+   "n": 390,
+   "ids": [
+    "u:https://quantumcomputingreport.com/universal-quantum-and-atlas-copco-partner-to-industrialize-vacuum-systems-for-scalable-quantum-computers",
+    "t:universal quantum and atlas copco partner to industrialize v"
+   ],
+   "label": "Abd25g"
+  },
+  {
+   "n": 391,
+   "ids": [
+    "arxiv:2510.09398",
+    "u:arxiv:2510.09398",
+    "t:acousto optic lens for 3d shuttling of atoms in a neutral at"
+   ],
+   "label": "GHVK25"
+  },
+  {
+   "n": 392,
+   "ids": [
+    "u:https://gandh.com/news-and-resources/g-and-h-acousto-optic-deflectors-in-nature-papers",
+    "t:g h acousto optic deflectors referenced in nature papers dem"
+   ]
+  },
+  {
+   "n": 393,
+   "ids": [
+    "arxiv:2108.00879",
+    "u:arxiv:2108.00879",
+    "t:conveyor mode single electron shuttling in si sige for a sca"
+   ],
+   "label": "S+21"
+  },
+  {
+   "n": 394,
+   "ids": [
+    "arxiv:2512.03588",
+    "u:arxiv:2512.03588",
+    "t:numerical simulation of coherent spin shuttling in a qubus w"
+   ],
+   "label": "C+25a"
+  },
+  {
+   "n": 395,
+   "ids": [
+    "doi:10.1038/s41467-024-49358-y",
+    "u:nature:s41467-024-49358-y",
+    "t:coherent spin qubit shuttling through germanium quantum dots"
+   ],
+   "label": "R+24"
+  },
+  {
+   "n": 396,
+   "ids": [
+    "arxiv:2605.00611",
+    "u:arxiv:2605.00611",
+    "t:suppressing spin qubit decoherence during shuttling via conf"
+   ],
+   "label": "NRB26"
+  },
+  {
+   "n": 397,
+   "ids": [
+    "arxiv:2503.10601",
+    "u:arxiv:2503.10601",
+    "t:performance of the spin qubit shuttling architecture for a s"
+   ],
+   "label": "YSB+25"
+  },
+  {
+   "n": 398,
+   "ids": [
+    "u:https://www.fz-juelich.de/en/news/archive/press-release/2026/julich-aachen-start-up-arque-systems",
+    "t:jülich aachen start up paves the way for scalable quantum co"
+   ]
+  },
+  {
+   "n": 399,
+   "ids": [
+    "arxiv:1505.01182",
+    "u:arxiv:1505.01182",
+    "t:universal linear optics"
+   ],
+   "label": "C+15"
+  },
+  {
+   "n": 400,
+   "ids": [
+    "doi:10.1038/s41566-026-01934-y",
+    "u:nature:s41566-026-01934-y",
+    "t:high speed non volatile barium titanate field programmable p"
+   ],
+   "label": "C+26"
+  },
+  {
+   "n": 401,
+   "ids": [
+    "arxiv:2608.03146",
+    "u:arxiv:2608.03146",
+    "t:zero change foundry compatible silicon photonics mems optica"
+   ],
+   "label": "RKL+26"
+  },
+  {
+   "n": 402,
+   "ids": [
+    "u:https://optics.org/news/lithium-niobate-in-vogue-as-thin-film-developers-raise-cash",
+    "t:lithium niobate in vogue as thin film developers raise cash"
+   ]
+  },
+  {
+   "n": 403,
+   "ids": [
+    "u:https://www.psiquantum.com/news-import/psiquantum-1b-fundraise",
+    "t:psiquantum raises 1 billion to build million qubit scale fau"
+   ]
+  },
+  {
+   "n": 404,
+   "ids": [
+    "doi:10.1038/s41565-023-01491-3",
+    "u:nature:s41565-023-01491-3",
+    "t:shared control of a 16 semiconductor quantum dot crossbar ar"
+   ],
+   "label": "B+24"
+  },
+  {
+   "n": 405,
+   "ids": [
+    "doi:10.1038/s41928-026-01569-5",
+    "u:nature:s41928-026-01569-5",
+    "t:a crossbar chip for benchmarking semiconductor spin qubits"
+   ],
+   "label": "T+26"
+  },
+  {
+   "n": 406,
+   "ids": [
+    "doi:10.1140/epjqt/s40507-019-0072-0",
+    "arxiv:1806.07862",
+    "u:https://link.springer.com/article/10.1140/epjqt/s40507-019-0072-0",
+    "t:engineering cryogenic setups for 100 qubit scale superconduc"
+   ],
+   "label": "K+19"
+  },
+  {
+   "n": 407,
+   "ids": [
+    "u:https://physicsworld.com/a/delft-circuits-bluefors-the-engine-room-driving-joined-up-quantum-innovation",
+    "t:delft circuits bluefors the engine room driving joined up qu"
+   ]
+  },
+  {
+   "n": 408,
+   "ids": [
+    "u:https://bluefors.com/press-releases/bluefors-closes-the-acquisition-of-cryomech",
+    "t:bluefors closes the acquisition of cryomech"
+   ]
+  },
+  {
+   "n": 409,
+   "ids": [
+    "u:https://www.nasdaq.com/press-release/ulvac-developing-next-generation-dilution-refrigerator-quantum-computing-2026-2025-03",
+    "t:ulvac developing next generation dilution refrigerator for q"
+   ]
+  },
+  {
+   "n": 410,
+   "ids": [
+    "u:https://www.zhinst.com/americas/en/news/zurich-instruments-launches-zqcs-quantum-control-system-master-long-lived-logical-qubit",
+    "t:zurich instruments launches the zqcs quantum control system "
+   ]
+  },
+  {
+   "n": 411,
+   "ids": [
+    "u:https://research.ibm.com/publications/a-cryo-cmos-control-system-for-large-scale-superconducting-qubit-quantum-computing-part-2",
+    "t:a cryo cmos control system for large scale superconducting q"
+   ],
+   "label": "N+26"
+  },
+  {
+   "n": 412,
+   "ids": [
+    "u:https://www.quantum-machines.co/press-release/quantum-machines-raises-170-million-in-series-c-funding",
+    "t:quantum machines raises 170m as its customer base exceeds 50"
+   ]
+  },
+  {
+   "n": 413,
+   "ids": [
+    "u:https://qblox.com/newsroom/qblox-secures-series-a-funding-quantum-control-stack-development",
+    "t:qblox secures series a funding to accelerate quantum control"
+   ],
+   "label": "Fli24"
+  },
+  {
+   "n": 414,
+   "ids": [
+    "u:https://thequantuminsider.com/2025/12/03/delft-circuits-new-ceo-financing",
+    "t:delft circuits names martin danoesastro ceo and extends fund"
+   ],
+   "label": "Reh25"
+  },
+  {
+   "n": 415,
+   "ids": [
+    "u:https://nvidianews.nvidia.com/news/nvidia-nvqlink-quantum-gpu-computing",
+    "t:nvidia introduces nvqlink connecting quantum and gpu computi"
+   ]
+  },
+  {
+   "n": 416,
+   "ids": [
+    "u:https://www.intc.com/news-events/press-releases/detail/1429/intel-debuts-2nd-gen-horse-ridge-cryogenic-quantum-control",
+    "t:intel debuts 2nd gen horse ridge cryogenic quantum control c"
+   ]
+  },
+  {
+   "n": 417,
+   "ids": [
+    "doi:10.1038/s41928-020-00528-y",
+    "u:nature:s41928-020-00528-y",
+    "t:a cryogenic cmos chip for generating control signals for mul"
+   ],
+   "label": "P+21"
+  },
+  {
+   "n": 418,
+   "ids": [
+    "arxiv:2601.03922",
+    "u:arxiv:2601.03922",
+    "t:integration and resource estimation of cryoelectronics for s"
+   ],
+   "label": "Kaw26"
+  },
+  {
+   "n": 419,
+   "ids": [
+    "doi:10.1038/s41586-025-09157-x",
+    "u:nature:s41586-025-09157-x",
+    "t:spin qubit control with a milli kelvin cmos chip"
+   ],
+   "label": "B+25a"
+  },
+  {
+   "n": 420,
+   "ids": [
+    "doi:10.1109/tqe.2025.3580377",
+    "u:https://bluefors.com/news/researchers-develop-millikelvin-cryo-cmos-system-for-large-scale-quantum-devices",
+    "t:cryo cmos bias voltage generation and demultiplexing at mk t"
+   ],
+   "label": "S+25a"
+  },
+  {
+   "n": 421,
+   "ids": [
+    "u:https://www.semiqon.com/technology/semiqon-cryo-cmos",
+    "t:semiqon cryo cmos"
+   ]
+  },
+  {
+   "n": 422,
+   "ids": [
+    "u:https://www.equal1.com/technology"
+   ]
+  },
+  {
+   "n": 423,
+   "ids": [
+    "u:https://community.intel.com/t5/blogs/tech-innovation/data-center/intel-s-millikelvin-quantum-research-control-chip-provides/post/1608558",
+    "t:intel s millikelvin quantum research control chip provides d"
+   ],
+   "label": "SP24"
+  },
+  {
+   "n": 424,
+   "ids": [
+    "u:https://qutech.nl/2026/02/17/scalable-diamond-quantum-computing-with-cryogenic-chip-integration",
+    "t:scalable diamond quantum computing with cryogenic chip integ"
+   ]
+  },
+  {
+   "n": 425,
+   "ids": [
+    "u:https://patents.justia.com/patent/11838022",
+    "t:cryogenic cmos interface for controlling qubits"
+   ]
+  },
+  {
+   "n": 426,
+   "ids": [
+    "u:https://www.businesswire.com/news/home/20260629077919/en/seeqc-files-registration-statement-for-proposed-initial-public-offering",
+    "t:seeqc files registration statement for proposed initial publ"
+   ]
+  },
+  {
+   "n": 427,
+   "ids": [
+    "u:https://quantumcomputingreport.com/seeqc-files-form-s-1-for-nasdaq-ipo-parallel-to-ongoing-allegro-merger-process",
+    "t:seeqc files form s 1 for nasdaq ipo parallel to ongoing alle"
+   ],
+   "label": "Abd26i"
+  },
+  {
+   "n": 428,
+   "ids": [
+    "u:https://www.quantum-machines.co/press-release/quantum-machines-acquisition-pcb-engineering",
+    "t:quantum machines makes second european acquisition in six we"
+   ]
+  },
+  {
+   "n": 429,
+   "ids": [
+    "u:https://qutech.nl/2026/05/11/qutech-spinoff-frostbyte-raises-e1-3-million-for-cryo-electronics-for-scalable-quantum-computers",
+    "t:qutech spinoff frostbyte raises 1 3 million for cryo electro"
+   ]
+  },
+  {
+   "n": 430,
+   "ids": [
+    "u:https://quantumcomputingreport.com/rhonexum-raises-1m-pre-seed-to-solve-the-quantum-cabling-bottleneck-via-cryo-cmos",
+    "t:rhonexum raises 1m pre seed to solve the quantum cabling bot"
+   ],
+   "label": "Abd26j"
+  },
+  {
+   "n": 431,
+   "ids": [
+    "u:https://patents.justia.com/patent/12705525",
+    "t:scalable control of quantum bits using baseband pulsing"
+   ],
+   "label": "OG26"
+  },
+  {
+   "n": 432,
+   "ids": [
+    "u:https://patents.justia.com/patent/20260187510",
+    "t:technologies for closed loop qubit calibration"
+   ]
+  },
+  {
+   "n": 433,
+   "ids": [
+    "u:https://www.patsnap.com/resources/blog/articles/cryo-cmos-technology-landscape-2026",
+    "t:cryogenic cmos circuit technology landscape 2026"
+   ]
+  },
+  {
+   "n": 434,
+   "ids": [
+    "u:https://www.microsoft.com/en-us/research/blog/full-stack-ahead-pioneering-quantum-hardware-allows-for-controlling-up-to-thousands-of-qubits-at-cryogenic-temperatures",
+    "t:full stack ahead pioneering quantum hardware allows for cont"
+   ],
+   "label": "Nay21"
+  },
+  {
+   "n": 435,
+   "ids": [
+    "doi:10.1103/physrevapplied.2.014007",
+    "u:https://journals.aps.org/prapplied/abstract/10.1103/physrevapplied.2.014007",
+    "t:accurate qubit control with single flux quantum pulses"
+   ],
+   "label": "MV14"
+  },
+  {
+   "n": 436,
+   "ids": [
+    "doi:10.1103/physrevapplied.11.014009",
+    "arxiv:1806.07930",
+    "u:arxiv:1806.07930",
+    "t:digital coherent control of a superconducting qubit"
+   ],
+   "label": "L+19a"
+  },
+  {
+   "n": 437,
+   "ids": [
+    "doi:10.1109/tasc.2014.2318294",
+    "arxiv:1401.5504",
+    "u:arxiv:1401.5504",
+    "t:architectural considerations in the design of a superconduct"
+   ],
+   "label": "B+14a"
+  },
+  {
+   "n": 438,
+   "ids": [
+    "u:https://www.nec.com/en/press/202406/global_20240603_02.html",
+    "t:successful demonstration of a superconducting circuit for qu"
+   ]
+  },
+  {
+   "n": 439,
+   "ids": [
+    "arxiv:2603.13175",
+    "u:arxiv:2603.13175",
+    "t:fluxon time delay readout of a superconducting qubit protect"
+   ],
+   "label": "KTTY26"
+  },
+  {
+   "n": 440,
+   "ids": [
+    "arxiv:1602.03546",
+    "u:arxiv:1602.03546",
+    "t:superconductor digital electronics scalability and energy ef"
+   ],
+   "label": "Tol16"
+  },
+  {
+   "n": 441,
+   "ids": [
+    "u:https://www.ll.mit.edu/r-d/projects/squill-foundry",
+    "t:squill foundry"
+   ]
+  },
+  {
+   "n": 442,
+   "ids": [
+    "doi:10.1038/s41598-025-20666-7",
+    "u:nature:s41598-025-20666-7",
+    "t:rapid single flux quantum and adiabatic quantum flux paramet"
+   ],
+   "label": "YHN+25"
+  },
+  {
+   "n": 443,
+   "ids": [
+    "u:https://seeqc.com/resources/seeqc-secures-22.4-million-in-series-a-round-strategic-investment-led-by-eqt-ventures",
+    "t:seeqc secures 22 4 million in series a round strategic inves"
+   ]
+  },
+  {
+   "n": 444,
+   "ids": [
+    "u:https://www.prweb.com/releases/sip-global-partners-participates-in-30m-round-for-seeqc-developer-of-the-worlds-first-full-stack-processor-for-quantum-computers-302352970.html",
+    "t:sip global partners participates in 30m round for seeqc deve"
+   ]
+  },
+  {
+   "n": 445,
+   "ids": [
+    "u:https://www.sec.gov/archives/edgar/data/1779977/000121390026095175/ea028847004ex2-2.htm",
+    "t:settlement termination and release agreement"
+   ]
+  },
+  {
+   "n": 446,
+   "ids": [
+    "u:https://www.sec.gov/archives/edgar/data/1779977/000121390026061108/ea0278139-04.htm",
+    "t:form s 4 registration statement seeqc inc allegro merger cor"
+   ]
+  },
+  {
+   "n": 447,
+   "ids": [
+    "u:https://www.sec.gov/archives/edgar/data/1819974/000181997426000005/skyt-20251228xex991.htm",
+    "t:skywater technology reports fourth quarter and full fiscal y"
+   ]
+  },
+  {
+   "n": 448,
+   "ids": [
+    "arxiv:1607.03044",
+    "u:arxiv:1607.03044",
+    "t:cold matter assembled atom by atom"
+   ],
+   "label": "E+16"
+  },
+  {
+   "n": 449,
+   "ids": [
+    "u:https://thequantuminsider.com/2026/07/08/fraunhofer-ilt-develops-laser-system-for-2000-qubit-neutral-atom-quantum-computer",
+    "t:fraunhofer ilt develops laser system for 2 000 qubit neutral"
+   ],
+   "label": "Swa26f"
+  },
+  {
+   "n": 450,
+   "ids": [
+    "doi:10.1038/s41467-024-50355-4",
+    "u:nature:s41467-024-50355-4",
+    "t:an integrated atom array nanophotonic chip platform with bac"
+   ],
+   "label": "MGP+24"
+  },
+  {
+   "n": 451,
+   "ids": [
+    "arxiv:2608.15637",
+    "u:arxiv:2608.15637",
+    "t:a scalable chip integrated single photon source array based "
+   ],
+   "label": "H+26a"
+  },
+  {
+   "n": 452,
+   "ids": [
+    "u:https://thequantuminsider.com/2026/08/10/pasqal-photonic-chip-control-neutral-atom-quantum-computers",
+    "t:pasqal demonstrates photonic chip based control for neutral "
+   ],
+   "label": "Reh26c"
+  },
+  {
+   "n": 453,
+   "ids": [
+    "u:https://www.imec-int.com/en/press/european-commission-and-chips-ju-select-pixeurope-consortium-lead-european-pilot-line",
+    "t:the european commission and chips ju select the pixeurope co"
+   ]
+  },
+  {
+   "n": 454,
+   "ids": [
+    "doi:10.1038/s41586-020-2823-6",
+    "u:nature:s41586-020-2823-6",
+    "t:integrated optical multi ion quantum logic"
+   ],
+   "label": "MZM+20"
+  },
+  {
+   "n": 455,
+   "ids": [
+    "u:https://www.ionq.com/news/ionq-and-sandia-national-laboratories-sign-mou-to-accelerate-quantum-co-design-for-national-security-applications",
+    "t:ionq and sandia national laboratories sign mou to accelerate"
+   ]
+  },
+  {
+   "n": 456,
+   "ids": [
+    "u:https://www.nxp.com/company/about-nxp/newsroom/nw-nxp-eleqtron-and-parityqc-first-quantum",
+    "t:nxp eleqtron and parityqc reveal their first quantum computi"
+   ]
+  },
+  {
+   "n": 457,
+   "ids": [
+    "doi:10.1038/nature02851",
+    "arxiv:cond-mat/0407325",
+    "u:https://arxiv.org/abs/cond-mat/0407325",
+    "t:strong coupling of a single photon to a superconducting qubi"
+   ],
+   "label": "W+04"
+  },
+  {
+   "n": 458,
+   "ids": [
+    "arxiv:1503.04364",
+    "u:arxiv:1503.04364",
+    "t:traveling wave parametric amplifier with josephson junctions"
+   ],
+   "label": "W+15"
+  },
+  {
+   "n": 459,
+   "ids": [
+    "u:https://www.silent-waves.com",
+    "t:silent waves traveling wave parametric amplifiers twpas"
+   ]
+  },
+  {
+   "n": 460,
+   "ids": [
+    "u:https://quantware.com/product/peripherals",
+    "t:peripherals crescendo twpa"
+   ]
+  },
+  {
+   "n": 461,
+   "ids": [
+    "u:https://quantumcomputingreport.com/quantumcore-partners-with-iqc-and-nserc-in-1-7m-traveling-wave-parametric-amplifier-twpa-development-initiative",
+    "t:quantumcore secures 1 7m nserc grant to advance superconduct"
+   ],
+   "label": "Fin26b"
+  },
+  {
+   "n": 462,
+   "ids": [
+    "u:https://quantware.com/news/quantware-raises-178-million",
+    "t:quantware raises 178 million to build world s most powerful "
+   ]
+  },
+  {
+   "n": 463,
+   "ids": [
+    "doi:10.1038/s42005-019-0195-8",
+    "u:nature:s42005-019-0195-8",
+    "t:high speed low crosstalk detection of a ¹⁷¹yb qubit using su"
+   ],
+   "label": "C+19"
+  },
+  {
+   "n": 464,
+   "ids": [
+    "doi:10.1364/optica.400751",
+    "u:https://doi.org/10.1364/optica.400751",
+    "t:superconducting nanowire single photon detectors with 98 sys"
+   ],
+   "label": "RNN+20"
+  },
+  {
+   "n": 465,
+   "ids": [
+    "doi:10.1103/physrevlett.129.100502",
+    "u:https://journals.aps.org/prl/abstract/10.1103/physrevlett.129.100502",
+    "t:high fidelity ion state detection using trap integrated aval"
+   ],
+   "label": "R+22"
+  },
+  {
+   "n": 466,
+   "ids": [
+    "u:https://www.hamamatsu.com/us/en/news/events/2026/aps-damop-2026.html",
+    "t:aps damop 2026"
+   ]
+  },
+  {
+   "n": 467,
+   "ids": [
+    "u:https://www.tipranks.com/news/private-companies/single-quantum-hits-400-system-milestone-as-it-deepens-european-quantum-partnerships",
+    "t:single quantum hits 400 system milestone as it deepens europ"
+   ]
+  },
+  {
+   "n": 468,
+   "ids": [
+    "u:https://www.startupticker.ch/en/news/us-based-company-acquires-id-quantique",
+    "t:us based company acquires id quantique"
+   ]
+  },
+  {
+   "n": 469,
+   "ids": [
+    "arxiv:2608.17189",
+    "u:arxiv:2608.17189",
+    "t:fast nondestructive readout for high clock rate atom array q"
+   ],
+   "label": "Z+26"
+  },
+  {
+   "n": 470,
+   "ids": [
+    "doi:10.1103/physrevx.13.011023",
+    "u:https://journals.aps.org/prx/abstract/10.1103/physrevx.13.011023",
+    "t:fast high fidelity single shot readout of spins in silicon u"
+   ],
+   "label": "O+23a"
+  },
+  {
+   "n": 471,
+   "ids": [
+    "u:https://www.zhinst.com/en/products/shfqc-lrt-long-readout-time",
+    "t:shfqc lrt long readout time"
+   ]
+  },
+  {
+   "n": 472,
+   "ids": [
+    "doi:10.1063/1.1388868",
+    "u:https://doi.org/10.1063/1.1388868",
+    "t:picosecond superconducting single photon optical detector"
+   ],
+   "label": "G+01"
+  },
+  {
+   "n": 473,
+   "ids": [
+    "doi:10.1063/1.113674",
+    "u:https://doi.org/10.1063/1.113674",
+    "t:an application of electrothermal feedback for high resolutio"
+   ],
+   "label": "Irw95"
+  },
+  {
+   "n": 474,
+   "ids": [
+    "doi:10.1038/s41377-025-02031-5",
+    "u:nature:s41377-025-02031-5",
+    "t:surpassing 99 detection efficiency by cascading two supercon"
+   ],
+   "label": "L+25b"
+  },
+  {
+   "n": 475,
+   "ids": [
+    "doi:10.1038/s41566-020-0589-x",
+    "arxiv:1804.06839",
+    "u:arxiv:1804.06839",
+    "t:demonstration of sub 3 ps temporal resolution with a superco"
+   ],
+   "label": "K+20a"
+  },
+  {
+   "n": 476,
+   "ids": [
+    "u:https://www.photonspot.com",
+    "t:photon spot cryogenic quantum detection systems"
+   ]
+  },
+  {
+   "n": 477,
+   "ids": [
+    "u:https://www.quantumopus.com",
+    "t:world class photon detection simplified"
+   ]
+  },
+  {
+   "n": 478,
+   "ids": [
+    "doi:10.1364/oe.16.003032",
+    "u:https://doi.org/10.1364/oe.16.003032",
+    "t:counting near infrared single photons with 95 efficiency"
+   ],
+   "label": "LMN08"
+  },
+  {
+   "n": 479,
+   "ids": [
+    "u:https://investors.ionq.com/news/news-details/2025/ionq-completes-acquisition-of-id-quantique-cementing-leadership-in-quantum-networking-and-secure-communications/default.aspx",
+    "t:ionq completes acquisition of id quantique cementing leaders"
+   ]
+  },
+  {
+   "n": 480,
+   "ids": [
+    "u:https://www.scontel.ru",
+    "t:scontel sspd snspd heb cryogenics detect everything you want"
+   ]
+  },
+  {
+   "n": 481,
+   "ids": [
+    "doi:10.1103/physrevx.13.041013",
+    "arxiv:2302.03063",
+    "u:arxiv:2302.03063",
+    "t:high threshold codes for neutral atom qubits with biased era"
+   ],
+   "label": "SJC+23"
+  },
+  {
+   "n": 482,
+   "ids": [
+    "arxiv:2506.13632",
+    "u:arxiv:2506.13632",
+    "t:high fidelity entanglement and coherent multi qubit mapping "
+   ],
+   "label": "S+25b"
+  },
+  {
+   "n": 483,
+   "ids": [
+    "arxiv:2305.19266",
+    "u:arxiv:2305.19266",
+    "t:mid circuit operations using the omg architecture in neutral"
+   ],
+   "label": "LSM+23"
+  },
+  {
+   "n": 484,
+   "ids": [
+    "u:https://thequantuminsider.com/2024/05/29/quantum-circuits-inc-quietly-raises-26-5-million",
+    "t:quantum circuits inc quietly raises 26 5 million"
+   ],
+   "label": "Swa24"
+  },
+  {
+   "n": 485,
+   "ids": [
+    "u:https://www.prnewswire.com/news-releases/quantum-circuits-secures-more-than-60-million-in-series-b-investment-302221428.html",
+    "t:quantum circuits secures more than 60 million in series b in"
+   ]
+  },
+  {
+   "n": 486,
+   "ids": [
+    "u:https://www.businesswire.com/news/home/20260119513563/en/d-wave-completes-acquisition-of-quantum-circuits-inc.-creating-worlds-leading-quantum-computing-company",
+    "t:d wave completes acquisition of quantum circuits inc creatin"
+   ]
+  },
+  {
+   "n": 487,
+   "ids": [
+    "doi:10.1016/s0003-4916(02)00018-0",
+    "arxiv:quant-ph/9707021",
+    "u:https://arxiv.org/abs/quant-ph/9707021",
+    "t:fault tolerant quantum computation by anyons"
+   ],
+   "label": "Kit03"
+  },
+  {
+   "n": 488,
+   "ids": [
+    "doi:10.1063/1.1499754",
+    "arxiv:quant-ph/0110143",
+    "u:https://arxiv.org/abs/quant-ph/0110143",
+    "t:topological quantum memory"
+   ],
+   "label": "DKLP02"
+  },
+  {
+   "n": 489,
+   "ids": [
+    "doi:10.1103/physreva.76.012305",
+    "arxiv:quant-ph/0703272",
+    "u:https://arxiv.org/abs/quant-ph/0703272",
+    "t:optimal resources for topological two dimensional stabilizer"
+   ],
+   "label": "BM07"
+  },
+  {
+   "n": 490,
+   "ids": [
+    "doi:10.1088/1367-2630/14/12/123011",
+    "arxiv:1111.4022",
+    "u:arxiv:1111.4022",
+    "t:surface code quantum computing by lattice surgery"
+   ],
+   "label": "HFDM11"
+  },
+  {
+   "n": 491,
+   "ids": [
+    "doi:10.1103/physreva.86.032324",
+    "arxiv:1208.0928",
+    "u:arxiv:1208.0928",
+    "t:surface codes towards practical large scale quantum computat"
+   ],
+   "label": "FMMC12"
+  },
+  {
+   "n": 492,
+   "ids": [
+    "arxiv:2312.04522",
+    "u:arxiv:2312.04522",
+    "t:yoked surface codes"
+   ],
+   "label": "GNBJ23"
+  },
+  {
+   "n": 493,
+   "ids": [
+    "arxiv:2312.08813",
+    "u:arxiv:2312.08813",
+    "t:new circuits and an open source decoder for the color code"
+   ],
+   "label": "GJ23"
+  },
+  {
+   "n": 494,
+   "ids": [
+    "doi:10.1038/s41586-022-05434-1",
+    "u:nature:s41586-022-05434-1",
+    "t:suppressing quantum errors by scaling a surface code logical"
+   ],
+   "label": "A+23a"
+  },
+  {
+   "n": 495,
+   "ids": [
+    "u:https://patents.google.com/patent/us12518194b2/en",
+    "u:https://patents.justia.com/search?q=%22surface+code%22+quantum+error+correction&company=google",
+    "t:surface codes with densely packed gauge operators"
+   ]
+  },
+  {
+   "n": 496,
+   "ids": [
+    "doi:10.1038/s41586-024-08148-8",
+    "u:nature:s41586-024-08148-8",
+    "t:learning high accuracy error decoding for quantum processors"
+   ],
+   "label": "B+24a"
+  },
+  {
+   "n": 497,
+   "ids": [
+    "u:https://www.riverlane.com/press-release/riverlane-publishes-qec-technology-roadmap",
+    "t:riverlane publishes qec technology roadmap that can accelera"
+   ]
+  },
+  {
+   "n": 498,
+   "ids": [
+    "u:https://www.prnewswire.com/news-releases/qblox-and-riverlane-demonstrate-integration-enabling-real-time-quantum-error-correction-302716254.html",
+    "t:qblox and riverlane demonstrate integration enabling real ti"
+   ]
+  },
+  {
+   "n": 499,
+   "ids": [
+    "u:https://www.riverlane.com/press-release/riverlane-awarded-2-1m-by-horizon-europe-to-develop-the-next-generation-of-its-quantum-error-correction-decoder",
+    "t:riverlane awarded 2 1m by horizon europe to develop the next"
+   ]
+  },
+  {
+   "n": 500,
+   "ids": [
+    "u:https://www.riverlane.com/press-release/riverlane-raises-75-million-to-meet-surging-global-demand-for-quantum-error-correction-technology",
+    "t:riverlane raises 75 million to meet surging global demand fo"
+   ]
+  },
+  {
+   "n": 501,
+   "ids": [
+    "u:https://patents.google.com/patent/gb2641501a/en",
+    "t:quantum decoder"
+   ],
+   "label": "BZBS25"
+  },
+  {
+   "n": 502,
+   "ids": [
+    "doi:10.1103/physrevlett.97.180501",
+    "arxiv:quant-ph/0605138",
+    "u:https://arxiv.org/abs/quant-ph/0605138",
+    "t:topological quantum distillation"
+   ],
+   "label": "BM06"
+  },
+  {
+   "n": 503,
+   "ids": [
+    "u:https://research.google/blog/a-colorful-quantum-future",
+    "t:a colorful quantum future"
+   ],
+   "label": "BS25"
+  },
+  {
+   "n": 504,
+   "ids": [
+    "arxiv:2603.28852",
+    "u:arxiv:2603.28852",
+    "t:color code off the hook avoiding hook errors with a single a"
+   ],
+   "label": "KF26"
+  },
+  {
+   "n": 505,
+   "ids": [
+    "doi:10.1103/dck4-x9c2",
+    "arxiv:2506.14169",
+    "u:arxiv:2506.14169",
+    "t:experimental demonstration of high fidelity logical magic st"
+   ],
+   "label": "DBB+25"
+  },
+  {
+   "n": 506,
+   "ids": [
+    "doi:10.1038/s41586-026-10628-y",
+    "u:nature:s41586-026-10628-y",
+    "t:improved quantum processor logical error rates via correctio"
+   ],
+   "label": "P+26a"
+  },
+  {
+   "n": 507,
+   "ids": [
+    "u:https://www.patsnap.com/resources/blog/articles/quantum-error-correction-patent-landscape-2026",
+    "t:quantum error correction technology landscape 2026"
+   ]
+  },
+  {
+   "n": 508,
+   "ids": [
+    "doi:10.1103/p7c9-x1m9",
+    "arxiv:2505.05175",
+    "u:arxiv:2505.05175",
+    "t:planar fault tolerant circuits for non clifford gates on the"
+   ],
+   "label": "BF26"
+  },
+  {
+   "n": 509,
+   "ids": [
+    "u:https://photonic.com/news/shyps-codes-announcement",
+    "t:photonic accelerates the timeline to useful quantum computin"
+   ]
+  },
+  {
+   "n": 510,
+   "ids": [
+    "u:https://thequantuminsider.com/2026/08/26/photonic-shyps-quantum-error-correction-nature-communications",
+    "t:photonic publishes shyps qldpc code results in nature commun"
+   ],
+   "label": "Reh26d"
+  },
+  {
+   "n": 511,
+   "ids": [
+    "u:https://patents.justia.com/search?q=%22parity+check%22+quantum+error+correction+code",
+    "u:https://patents.google.com/patent/us12346774b2/en",
+    "t:patent search parity check quantum error correction code res"
+   ]
+  },
+  {
+   "n": 512,
+   "ids": [
+    "doi:10.1038/s41567-023-02282-2",
+    "arxiv:2211.06703",
+    "u:arxiv:2211.06703",
+    "t:protecting expressive circuits with a quantum error detectio"
+   ],
+   "label": "SBA24"
+  },
+  {
+   "n": 513,
+   "ids": [
+    "u:https://errorcorrectionzoo.org/c/stab_16_6_4",
+    "t:16 6 4 tesseract color code"
+   ]
+  },
+  {
+   "n": 514,
+   "ids": [
+    "doi:10.1126/sciadv.adp6388",
+    "arxiv:2403.16054",
+    "u:arxiv:2403.16054",
+    "t:high performance fault tolerant quantum computing with many "
+   ],
+   "label": "Got24"
+  },
+  {
+   "n": 515,
+   "ids": [
+    "u:https://www.iceberg-quantum.com",
+    "t:iceberg quantum home"
+   ]
+  },
+  {
+   "n": 516,
+   "ids": [
+    "u:https://thequantuminsider.com/2026/02/13/trifecta-iceberg-quantum-unveils-pinnacle-architecture-claims-sub-100000-qubits-could-break-rsa-2048-and-raises-6-million-seed-round",
+    "t:trifecta iceberg quantum unveils pinnacle architecture claim"
+   ],
+   "label": "Swa26g"
+  },
+  {
+   "n": 517,
+   "ids": [
+    "u:https://www.hpcwire.com/off-the-wire/iceberg-quantum-launches-with-2m-and-psiquantum-partnership",
+    "t:iceberg quantum launches with 2m and psiquantum partnership"
+   ]
+  },
+  {
+   "n": 518,
+   "ids": [
+    "doi:10.1103/physrevlett.102.200501",
+    "arxiv:0904.3556",
+    "u:arxiv:0904.3556",
+    "t:thresholds for topological codes in the presence of loss"
+   ],
+   "label": "SBD09"
+  },
+  {
+   "n": 519,
+   "ids": [
+    "doi:10.1103/physrevresearch.2.033042",
+    "arxiv:1703.01517",
+    "u:arxiv:1703.01517",
+    "t:linear time maximum likelihood decoding of surface codes ove"
+   ],
+   "label": "DZ20"
+  },
+  {
+   "n": 520,
+   "ids": [
+    "doi:10.22331/q-2021-12-02-595",
+    "arxiv:1709.06218",
+    "u:arxiv:1709.06218",
+    "t:almost linear time decoding algorithm for topological codes"
+   ],
+   "label": "DN21"
+  },
+  {
+   "n": 521,
+   "ids": [
+    "doi:10.1038/s41586-020-2667-0",
+    "arxiv:2002.09532",
+    "u:nature:s41586-020-2667-0",
+    "t:experimental deterministic correction of qubit loss"
+   ],
+   "label": "S+20"
+  },
+  {
+   "n": 522,
+   "ids": [
+    "doi:10.1103/985g-58gd",
+    "u:https://journals.aps.org/prxquantum/abstract/10.1103/985g-58gd",
+    "t:optimizing quantum error correction protocols with erasure q"
+   ],
+   "label": "GVRK25"
+  },
+  {
+   "n": 523,
+   "ids": [
+    "doi:10.1103/physrevresearch.7.013249",
+    "arxiv:2312.14060",
+    "u:arxiv:2312.14060",
+    "t:fault tolerant quantum architectures based on erasure qubits"
+   ],
+   "label": "GRK25"
+  },
+  {
+   "n": 524,
+   "ids": [
+    "doi:10.1103/ycwc-3myc",
+    "arxiv:2502.20558",
+    "u:arxiv:2502.20558",
+    "t:leveraging qubit loss detection in fault tolerant quantum al"
+   ],
+   "label": "B+26b"
+  },
+  {
+   "n": 525,
+   "ids": [
+    "arxiv:2301.08419",
+    "u:arxiv:2301.08419",
+    "t:scalable quantum error correction for surface codes using fp"
+   ],
+   "label": "LWDZ23"
+  },
+  {
+   "n": 526,
+   "ids": [
+    "u:https://www.bnl.gov/newsroom/news.php?a=122687",
+    "t:doe renews brookhaven lab led quantum research center"
+   ]
+  },
+  {
+   "n": 527,
+   "ids": [
+    "map:§3.2",
+    "t:quantum technology map"
+   ],
+   "label": "Nee26a"
+  },
+  {
+   "n": 528,
+   "ids": [
+    "doi:10.1038/s41586-024-07357-5",
+    "u:nature:s41586-024-07357-5",
+    "t:fusion of deterministically generated photonic graph states"
+   ],
+   "label": "TRMR24"
+  },
+  {
+   "n": 529,
+   "ids": [
+    "doi:10.1103/physreva.71.022316",
+    "arxiv:quant-ph/0403025",
+    "u:https://arxiv.org/abs/quant-ph/0403025",
+    "t:universal quantum computation with ideal clifford gates and "
+   ],
+   "label": "BK05"
+  },
+  {
+   "n": 530,
+   "ids": [
+    "arxiv:2409.17595",
+    "u:arxiv:2409.17595",
+    "t:magic state cultivation growing t states as cheap as cnot ga"
+   ],
+   "label": "GSJ24"
+  },
+  {
+   "n": 531,
+   "ids": [
+    "doi:10.22331/q-2026-06-12-2134",
+    "u:https://quantum-journal.org/papers/q-2026-06-12-2134",
+    "t:simulating magic state cultivation with few clifford terms"
+   ],
+   "label": "WZZ26"
+  },
+  {
+   "n": 532,
+   "ids": [
+    "u:https://www.quantinuum.com/blog/a-quantinuum-led-team-has-built-the-quantum-programming-tools-for-real-time-magic-state-distillation-on-a-quantum-computer",
+    "t:a quantinuum led team has built the quantum programming tool"
+   ]
+  },
+  {
+   "n": 533,
+   "ids": [
+    "arxiv:1307.1740",
+    "u:arxiv:1307.1740",
+    "t:minimum weight perfect matching of fault tolerant topologica"
+   ],
+   "label": "Fow13"
+  },
+  {
+   "n": 534,
+   "ids": [
+    "doi:10.22331/q-2025-01-20-1600",
+    "arxiv:2303.15933",
+    "u:https://quantum-journal.org/papers/q-2025-01-20-1600",
+    "u:arxiv:2303.15933",
+    "t:sparse blossom correcting a million errors per core second w"
+   ],
+   "label": "HG25"
+  },
+  {
+   "n": 535,
+   "ids": [
+    "arxiv:2502.14787",
+    "u:arxiv:2502.14787",
+    "u:https://github.com/yuewuo/micro-blossom",
+    "t:micro blossom accelerated minimum weight perfect matching de"
+   ],
+   "label": "WLZ25"
+  },
+  {
+   "n": 536,
+   "ids": [
+    "u:https://github.com/oscarhiggott/pymatching"
+   ],
+   "label": "Hig"
+  },
+  {
+   "n": 537,
+   "ids": [
+    "arxiv:2605.04892",
+    "u:arxiv:2605.04892",
+    "t:real time surface code error correction using an fpga based "
+   ],
+   "label": "Y+26a"
+  },
+  {
+   "n": 538,
+   "ids": [
+    "u:https://www.globenewswire.com/news-release/2026/07/24/3332879/0/en/quantum-x-labs-reports-meaningful-error-correction-decoder-results-with-nvidia-cuda-q-qec.html",
+    "t:quantum x labs reports meaningful error correction decoder r"
+   ]
+  },
+  {
+   "n": 539,
+   "ids": [
+    "u:https://blog.google/innovation-and-ai/models-and-research/google-deepmind/alphaqubit-quantum-error-correction",
+    "t:alphaqubit tackles one of quantum computing s biggest challe"
+   ]
+  },
+  {
+   "n": 540,
+   "ids": [
+    "arxiv:2510.22724",
+    "u:arxiv:2510.22724",
+    "t:scalable neural decoders for practical real time quantum err"
+   ],
+   "label": "LHP25"
+  },
+  {
+   "n": 541,
+   "ids": [
+    "arxiv:2512.09807",
+    "u:arxiv:2512.09807",
+    "t:pinball a cryogenic predecoder for surface code decoding und"
+   ],
+   "label": "K+25"
+  },
+  {
+   "n": 542,
+   "ids": [
+    "arxiv:2506.01779",
+    "u:arxiv:2506.01779",
+    "t:improved belief propagation is sufficient for real time deco"
+   ],
+   "label": "M+25a"
+  },
+  {
+   "n": 543,
+   "ids": [
+    "u:https://www.altera.com/newsroom/news/press-release/altera-silver-lake",
+    "t:altera closes silver lake investment to become world s large"
+   ]
+  },
+  {
+   "n": 544,
+   "ids": [
+    "u:https://www.hpcwire.com/2025/10/28/ibm-touts-affordable-quantum-error-correction-on-amd-fpgas",
+    "t:ibm touts affordable quantum error correction on amd fpgas"
+   ],
+   "label": "Woo25"
+  },
+  {
+   "n": 545,
+   "ids": [
+    "u:https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+    "t:nvidia announces financial results for second quarter fiscal"
+   ]
+  },
+  {
+   "n": 546,
+   "ids": [
+    "arxiv:2403.03272",
+    "u:arxiv:2403.03272",
+    "t:correlated decoding of logical algorithms with transversal g"
+   ],
+   "label": "C+24"
+  },
+  {
+   "n": 547,
+   "ids": [
+    "arxiv:2603.24237",
+    "u:arxiv:2603.24237",
+    "t:correlated atom loss as a resource for quantum error correct"
+   ],
+   "label": "PRP26"
+  },
+  {
+   "n": 548,
+   "ids": [
+    "u:https://www.prnewswire.com/news-releases/btq-technologies-qperfect-subsidiary-and-the-university-of-strasbourg-partner-to-support-frances-first-public-neutral-atom-quantum-computing-platform-302831874.html",
+    "t:btq technologies qperfect subsidiary and the university of s"
+   ]
+  },
+  {
+   "n": 549,
+   "ids": [
+    "u:https://thequantuminsider.com/2025/04/09/btq-technologies-to-invest-over-2-million-in-qperfect-to-advance-neutral-atom-quantum-computing",
+    "t:btq technologies to invest over 2 million in qperfect to adv"
+   ],
+   "label": "Cho25a"
+  },
+  {
+   "n": 550,
+   "ids": [
+    "u:https://www.nextplatform.com/compute/2026/07/20/google-uses-ai-reinforcement-learning-for-quantum-error-correction/5275023",
+    "t:google uses ai reinforcement learning for quantum error corr"
+   ],
+   "label": "Bur26"
+  },
+  {
+   "n": 551,
+   "ids": [
+    "u:https://q-ctrl.com/blog/q-ctrl-sets-global-quantum-technology-fundraising-record-increasing-series-b-to-usd-113m-led-by-gp-bullhound",
+    "t:q ctrl sets global quantum technology fundraising record inc"
+   ]
+  },
+  {
+   "n": 552,
+   "ids": [
+    "arxiv:2004.04794",
+    "u:arxiv:2004.04794",
+    "t:nisq boosting quantum computing power by approximating quant"
+   ],
+   "label": "HJP+20"
+  },
+  {
+   "n": 553,
+   "ids": [
+    "doi:10.1109/dac18074.2021.9586326",
+    "arxiv:2103.14209",
+    "u:arxiv:2103.14209",
+    "t:qecool on line quantum error correction with a superconducti"
+   ],
+   "label": "UKT+21"
+  },
+  {
+   "n": 554,
+   "ids": [
+    "arxiv:2606.30805",
+    "u:arxiv:2606.30805",
+    "t:cryozip an efficient cryogenic compressor for quantum error "
+   ],
+   "label": "T+26a"
+  },
+  {
+   "n": 555,
+   "ids": [
+    "doi:10.1038/s41534-021-00484-1",
+    "arxiv:2102.13293",
+    "u:nature:s41534-021-00484-1",
+    "u:arxiv:2102.13293",
+    "t:entanglement across separate silicon dies in a modular super"
+   ],
+   "label": "G+21"
+  },
+  {
+   "n": 556,
+   "ids": [
+    "doi:10.1038/s41928-023-00925-z",
+    "arxiv:2302.02751",
+    "u:arxiv:2302.02751",
+    "t:low loss interconnects for modular superconducting quantum p"
+   ],
+   "label": "N+23"
+  },
+  {
+   "n": 557,
+   "ids": [
+    "arxiv:2308.09240",
+    "u:arxiv:2308.09240",
+    "t:modular superconducting qubit architecture with a multi chip"
+   ],
+   "label": "F+23"
+  },
+  {
+   "n": 558,
+   "ids": [
+    "arxiv:2409.04634",
+    "u:arxiv:2409.04634",
+    "t:mechanically intermixed indium superconducting connections f"
+   ],
+   "label": "M+24a"
+  },
+  {
+   "n": 559,
+   "ids": [
+    "u:https://investors.rigetti.com/news-releases/news-release-details/rigetti-demonstrates-industrys-largest-multi-chip-quantum",
+    "t:rigetti demonstrates industry s largest multi chip quantum c"
+   ]
+  },
+  {
+   "n": 560,
+   "ids": [
+    "doi:10.1038/s41928-025-01404-3",
+    "u:nature:s41928-025-01404-3",
+    "t:a high efficiency elementary network of interchangeable supe"
+   ],
+   "label": "MIC+25"
+  },
+  {
+   "n": 561,
+   "ids": [
+    "arxiv:2505.09036",
+    "u:arxiv:2505.09036",
+    "t:hardware aware compilation for chip to chip coupler connecte"
+   ],
+   "label": "DKS+25"
+  },
+  {
+   "n": 562,
+   "ids": [
+    "doi:10.1103/physrevlett.125.260502",
+    "arxiv:2008.01642",
+    "u:arxiv:2008.01642",
+    "t:microwave quantum link between superconducting circuits hous"
+   ],
+   "label": "M+20"
+  },
+  {
+   "n": 563,
+   "ids": [
+    "arxiv:2604.15971",
+    "u:arxiv:2604.15971",
+    "t:a modular cryogenic link for microwave quantum communication"
+   ],
+   "label": "S+26"
+  },
+  {
+   "n": 564,
+   "ids": [
+    "doi:10.1038/s41534-025-01046-5",
+    "u:nature:s41534-025-01046-5",
+    "t:cryogenic microwave link for quantum local area networks"
+   ],
+   "label": "Y+25a"
+  },
+  {
+   "n": 565,
+   "ids": [
+    "arxiv:2605.26976",
+    "u:arxiv:2605.26976",
+    "t:toward scalable heterogeneous quantum networks microwave opt"
+   ],
+   "label": "AIZ26"
+  },
+  {
+   "n": 566,
+   "ids": [
+    "u:https://www.ionq.com/news/ionq-completes-acquisition-of-lightsynq-accelerating-quantum-computing-and",
+    "t:ionq completes acquisition of lightsynq accelerating quantum"
+   ]
+  },
+  {
+   "n": 567,
+   "ids": [
+    "u:https://www.ionq.com/news/ionq-achieves-key-photonic-interconnect-milestone-demonstrating-networked-quantum-systems-using-entanglement",
+    "t:ionq achieves key photonic interconnect milestone demonstrat"
+   ]
+  },
+  {
+   "n": 568,
+   "ids": [
+    "doi:10.1126/science.ado6471",
+    "arxiv:2407.09109",
+    "u:arxiv:2407.09109",
+    "t:a quantum network register assembled with optical tweezers i"
+   ],
+   "label": "HSW+24"
+  },
+  {
+   "n": 569,
+   "ids": [
+    "doi:10.1038/s41567-025-03022-4",
+    "u:nature:s41567-025-03022-4",
+    "t:parallelized telecom quantum networking with an ytterbium 17"
+   ],
+   "label": "L+25c"
+  },
+  {
+   "n": 570,
+   "ids": [
+    "u:https://www.techtimes.com/articles/326188/20260901/neutral-atom-quantum-processors-get-chip-scale-photonic-link-osaka-hits-10-channels.htm",
+    "t:neutral atom quantum processors get chip scale photonic link"
+   ],
+   "label": "Pit26"
+  },
+  {
+   "n": 571,
+   "ids": [
+    "u:https://thequantuminsider.com/2026/06/17/atom-computing-and-nu-quantum-partner-to-scale-neutral-atom-quantum-computers",
+    "t:atom computing and nu quantum partner to scale neutral atom "
+   ],
+   "label": "Swa26h"
+  },
+  {
+   "n": 572,
+   "ids": [
+    "u:https://www.nu-quantum.com/news/nu-quantum-raises-60m-series-a-in-largest-financing-round-for-quantum-computer-networking",
+    "t:nu quantum raises 60m series a in largest financing round fo"
+   ]
+  },
+  {
+   "n": 573,
+   "ids": [
+    "u:https://thequantuminsider.com/2026/03/25/atom-computing-cisco-distributed-quantum-collaboration",
+    "t:cisco and atom computing partner on quantum networking for s"
+   ],
+   "label": "Reh26e"
+  },
+  {
+   "n": 574,
+   "ids": [
+    "doi:10.1038/nature12016",
+    "u:nature:nature12016",
+    "t:heralded entanglement between solid state qubits separated b"
+   ],
+   "label": "B+13"
+  },
+  {
+   "n": 575,
+   "ids": [
+    "doi:10.1126/sciadv.adp6442",
+    "arxiv:2404.03723",
+    "u:arxiv:2404.03723",
+    "t:metropolitan scale heralded entanglement of solid state qubi"
+   ],
+   "label": "S+24"
+  },
+  {
+   "n": 576,
+   "ids": [
+    "u:https://postquantum.com/quantum-computing-companies/photonic-inc"
+   ],
+   "label": "Ive25d"
+  },
+  {
+   "n": 577,
+   "ids": [
+    "arxiv:2505.00542",
+    "u:arxiv:2505.00542",
+    "t:scalable quantum computing with optical links"
+   ],
+   "label": "WAW+25"
+  },
+  {
+   "n": 578,
+   "ids": [
+    "u:https://investors.rigetti.com/news-releases/news-release-details/research-qphox-rigetti-and-qblox-demonstrating-optical-readout",
+    "t:research from qphox rigetti and qblox demonstrating optical "
+   ]
+  },
+  {
+   "n": 579,
+   "ids": [
+    "u:https://qphox.eu/news/qphox-raises-e8m-to-bring-quantum-modem-technology-to-market-building-towards-the-quantum-internet",
+    "t:qphox raises 8m to bring quantum modem technology to market "
+   ]
+  },
+  {
+   "n": 580,
+   "ids": [
+    "u:https://investors.rigetti.com/news-releases/news-release-details/qphox-rigetti-and-nqcc-announce-collaboration-multi-channel",
+    "t:qphox rigetti and the nqcc announce collaboration on multi c"
+   ]
+  },
+  {
+   "n": 581,
+   "ids": [
+    "u:https://quantumcomputingreport.com/qphox-rigetti-and-qblox-demonstrate-optical-readout-technique-for-superconducting-qubits",
+    "t:qphox rigetti and qblox demonstrate optical readout techniqu"
+   ],
+   "label": "Abd25h"
+  },
+  {
+   "n": 582,
+   "ids": [
+    "arxiv:2409.17558",
+    "u:arxiv:2409.17558",
+    "t:entanglement distribution over 155 km metropolitan fiber usi"
+   ],
+   "label": "DZC+24"
+  },
+  {
+   "n": 583,
+   "ids": [
+    "u:https://thequantuminsider.com/2026/04/14/quandela-photonic-quantum-hpc",
+    "t:quandela deploys photonic quantum computer integrated with h"
+   ],
+   "label": "Reh26f"
+  },
+  {
+   "n": 584,
+   "ids": [
+    "doi:10.1038/ncomms13575",
+    "u:nature:ncomms13575",
+    "t:a cmos silicon spin qubit"
+   ],
+   "label": "M+16"
+  },
+  {
+   "n": 585,
+   "ids": [
+    "doi:10.1038/s41928-022-00727-9",
+    "u:nature:s41928-022-00727-9",
+    "t:qubits made by advanced semiconductor manufacturing"
+   ],
+   "label": "Z+22"
+  },
+  {
+   "n": 586,
+   "ids": [
+    "doi:10.1038/s41586-024-07275-6",
+    "u:nature:s41586-024-07275-6",
+    "t:probing single electrons across 300 mm spin qubit wafers"
+   ],
+   "label": "N+24"
+  },
+  {
+   "n": 587,
+   "ids": [
+    "doi:10.1038/s41928-024-01304-y",
+    "u:nature:s41928-024-01304-y",
+    "t:rapid cryogenic characterization of 1 024 integrated silicon"
+   ],
+   "label": "T+25"
+  },
+  {
+   "n": 588,
+   "ids": [
+    "u:https://itbrief.asia/story/quobly-runs-silicon-28-quantum-wafers-through-st-fab",
+    "t:quobly runs silicon 28 quantum wafers through st fab"
+   ],
+   "label": "Kno25"
+  },
+  {
+   "n": 589,
+   "ids": [
+    "doi:10.1103/physrevb.108.125405",
+    "u:https://journals.aps.org/prb/abstract/10.1103/physrevb.108.125405",
+    "t:practical strategies for enhancing the valley splitting in s"
+   ],
+   "label": "L+23b"
+  },
+  {
+   "n": 590,
+   "ids": [
+    "u:https://www.equal1.com/post/commercial_cmos_process",
+    "t:equal1 advances scalable quantum computing with cmos compati"
+   ]
+  },
+  {
+   "n": 591,
+   "ids": [
+    "u:https://www.ucd.ie/innovation/news-and-events/2026/equal1-announces-funding-round",
+    "t:equal1 announces 60 million in funding to accelerate quantum"
+   ]
+  },
+  {
+   "n": 592,
+   "ids": [
+    "u:https://www.imec-int.com/en/press/semiconductor-based-quantum-pilot-line-spins-launched-eu-support",
+    "t:quantum pilot line spins launched with eu support"
+   ]
+  },
+  {
+   "n": 593,
+   "ids": [
+    "u:https://newsroom.ibm.com/ibm-and-u-s-department-of-commerce-announce-americas-first-purpose-built-quantum-foundry",
+    "t:ibm and u s department of commerce announce america s first "
+   ]
+  },
+  {
+   "n": 594,
+   "ids": [
+    "u:https://www.silex.com.au/silex-technology/silex-zs-si-production-for-quantum-computing",
+    "t:silex quantum silicon q si production for quantum computing"
+   ]
+  },
+  {
+   "n": 595,
+   "ids": [
+    "u:https://bluefors.com/products/cryogenic-wafer-prober",
+    "t:cryogenic wafer prober under 2 k with 300 mm wafers"
+   ]
+  },
+  {
+   "n": 596,
+   "ids": [
+    "u:https://www.formfactor.com/product/quantum-cryo/quantum-wafer-multi-chip-cryogenic/iq3000",
+    "t:hpd iq3000 4 k cryogenic probe station"
+   ]
+  },
+  {
+   "n": 597,
+   "ids": [
+    "doi:10.1038/s41928-023-01033-8",
+    "u:nature:s41928-023-01033-8",
+    "t:multiplexed superconducting qubit control at millikelvin tem"
+   ],
+   "label": "A+23b"
+  },
+  {
+   "n": 598,
+   "ids": [
+    "u:https://quantummotion.com/partnership-with-globalfoundries",
+    "t:quantum motion announces record integration of quantum devic"
+   ],
+   "label": "Ben25"
+  },
+  {
+   "n": 599,
+   "ids": [
+    "u:https://www.hpcwire.com/off-the-wire/quobly-raises-e115m-series-a-to-industrialize-silicon-quantum-computing",
+    "t:quobly raises 115m series a to industrialize silicon quantum"
+   ]
+  },
+  {
+   "n": 600,
+   "ids": [
+    "u:https://www.independent.com/2026/08/24/google-buys-83000-square-foot-campus-in-goleta-for-32-5m",
+    "t:google buys 83 000 square foot campus in goleta for 32 5m"
+   ],
+   "label": "Ham26"
+  },
+  {
+   "n": 601,
+   "ids": [
+    "doi:10.1103/physrevlett.96.253003",
+    "arxiv:quant-ph/0601173",
+    "u:https://arxiv.org/abs/quant-ph/0601173",
+    "t:microfabricated surface electrode ion trap for scalable quan"
+   ],
+   "label": "S+06"
+  },
+  {
+   "n": 602,
+   "ids": [
+    "doi:10.1103/revmodphys.87.1419",
+    "arxiv:1409.6572",
+    "u:arxiv:1409.6572",
+    "t:ion trap measurements of electric field noise near surfaces"
+   ],
+   "label": "BKRB15"
+  },
+  {
+   "n": 603,
+   "ids": [
+    "doi:10.1103/physrevlett.100.013001",
+    "arxiv:0706.3763",
+    "u:arxiv:0706.3763",
+    "t:suppression of heating rates in cryogenic surface electrode "
+   ],
+   "label": "LGA+08"
+  },
+  {
+   "n": 604,
+   "ids": [
+    "doi:10.1103/physrevlett.109.103001",
+    "arxiv:1112.5419",
+    "u:arxiv:1112.5419",
+    "t:100 fold reduction of electric field noise in an ion trap cl"
+   ],
+   "label": "H+12"
+  },
+  {
+   "n": 605,
+   "ids": [
+    "doi:10.1038/s41467-021-21205-4",
+    "u:nature:s41467-021-21205-4",
+    "t:422 million intrinsic quality factor planar integrated all w"
+   ],
+   "label": "P+21a"
+  },
+  {
+   "n": 606,
+   "ids": [
+    "doi:10.1038/s41586-018-0551-y",
+    "u:nature:s41586-018-0551-y",
+    "t:integrated lithium niobate electro optic modulators operatin"
+   ],
+   "label": "W+18"
+  },
+  {
+   "n": 607,
+   "ids": [
+    "u:https://www.ligentec.com/about-our-story",
+    "t:about us_2026 ligentec"
+   ]
+  },
+  {
+   "n": 608,
+   "ids": [
+    "u:https://picmagazine.net/article/123220/eu_to_establish_%e2%82%ac380_million_pilot_line_for_photonic_integrated_circuits",
+    "t:eu to establish 380 million pilot line for photonic integrat"
+   ]
+  },
+  {
+   "n": 609,
+   "ids": [
+    "u:https://www.aimphotonics.com/news",
+    "t:news aim photonics"
+   ]
+  },
+  {
+   "n": 610,
+   "ids": [
+    "u:https://www.pasqal.com/wp-content/uploads/2025/11/2509_pasqal_quantum-computing-processor_brochure-rvb-v8.pdf",
+    "t:the power of neutral atom quantum processors by pasqal unloc"
+   ],
+   "label": "PB"
+  },
+  {
+   "n": 611,
+   "ids": [
+    "u:https://www.toptica.com/company",
+    "t:about the toptica group"
+   ]
+  },
+  {
+   "n": 612,
+   "ids": [
+    "u:https://www.arnoldporter.com/en/perspectives/advisories/2024/09/semiconductor-additive-manufacturing-and-quantum-computing",
+    "t:commerce implements export controls on semiconductor additiv"
+   ],
+   "label": "B+24b"
+  },
+  {
+   "n": 613,
+   "ids": [
+    "doi:10.1103/physreva.57.120",
+    "u:https://journals.aps.org/pra/abstract/10.1103/physreva.57.120",
+    "t:quantum computation with quantum dots"
+   ],
+   "label": "LD98"
+  },
+  {
+   "n": 614,
+   "ids": [
+    "doi:10.1038/s41467-025-60351-x",
+    "u:nature:s41467-025-60351-x",
+    "t:baseband control of single electron silicon spin qubits in t"
+   ],
+   "label": "U+25"
+  },
+  {
+   "n": 615,
+   "ids": [
+    "doi:10.1038/nphoton.2013.287",
+    "doi:10.1038/nphoton",
+    "u:nature:nphoton",
+    "t:ultra large scale continuous variable cluster states multipl"
+   ],
+   "label": "Y+13"
+  },
+  {
+   "n": 616,
+   "ids": [
+    "arxiv:2606.03500",
+    "u:arxiv:2606.03500",
+    "t:fpga based feedforward system for photonic quantum computing"
+   ],
+   "label": "DFB+26"
+  },
+  {
+   "n": 617,
+   "ids": [
+    "u:https://www.hpcwire.com/off-the-wire/xanadu-unveils-1st-on-chip-error-resistant-photonic-qubit",
+    "t:xanadu unveils 1st on chip error resistant photonic qubit"
+   ]
+  },
+  {
+   "n": 618,
+   "ids": [
+    "u:https://www.ornl.gov/news/quantum-brilliance-ornl-pioneer-quantum-classical-hybrid-computing",
+    "u:https://www.iaf.fraunhofer.de/en/media-library/press-releases/first-room-temperature-quantum-accelerator-in-europe.html",
+    "u:https://quantumbrilliance.com/news/supercomputer-with-quantum-accelerator-pawsey-commissions-first-room-temperature-on-premises-quantum-computer-in-supercomputing-center",
+    "t:quantum brilliance ornl pioneer quantum classical hybrid com"
+   ]
+  },
+  {
+   "n": 619,
+   "ids": [
+    "doi:10.1038/s41467-025-59693-3",
+    "u:nature:s41467-025-59693-3",
+    "t:deterministic and reconfigurable graph state generation with"
+   ],
+   "label": "H+25"
+  },
+  {
+   "n": 620,
+   "ids": [
+    "u:https://www.quixquantum.com/news/quix-quantum-installs-real-time-control-component-for-universal-photonic-quantum-computer",
+    "t:quix quantum installs real time control component for univer"
+   ]
+  },
+  {
+   "n": 621,
+   "ids": [
+    "u:https://www.quantum-machines.co/resources/blog/classically-accelerated-readout-neutral-atoms-cpu-gpu-readout",
+    "t:classically accelerated readout for neutral atoms with cpu g"
+   ],
+   "label": "Akh26"
+  }
+ ]
+}

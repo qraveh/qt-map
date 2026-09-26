@@ -17,40 +17,40 @@ updated: 2026-09-04
 Ни собственной модальности управления, ни собственного считывания; ошибка когерентная — адресация мод и нагрев, а не потери.
 
 ## Физика и пределы
-N ионов несут N колебательных мод в фиксированной полосе, поэтому расстояние между модами падает как ~1/N: гейт обязан либо разрешить одну моду спектрально, платя за это временем, либо замкнуть все моды формованными импульсами, платя мощностью и калибровкой. Поэтому время гейта растёт с длиной цепочки — 550–883 µs, медиана 672 µs, на цепочке из 30 ионов против 110 µs для одного кубита [D][1]. Шум электродов нагревает общую моду, и ошибка растёт с N, поскольку каждая пара занимает одно и то же возбуждение. Выше критической анизотропии цепочка теряет устойчивость и сворачивается в зигзаг: длинные цепочки требуют слабого аксиального удержания, а значит более низких частот и более медленных гейтов. Пол сдвигают безлазерные электронные гейты (2Q 8.4×10⁻⁵ [D][2]) и формованные импульсы.
+N ионов несут N колебательных мод в фиксированной полосе, поэтому расстояние между модами падает как ~1/N: гейт обязан либо разрешить одну моду спектрально, платя за это временем, либо замкнуть все моды формованными импульсами, платя мощностью и калибровкой. Поэтому время гейта растёт с длиной цепочки — 550–883 µs, медиана 672 µs, на цепочке из 30 ионов против 110 µs для одного кубита [D][94]. Шум электродов нагревает общую моду, и ошибка растёт с N, поскольку каждая пара занимает одно и то же возбуждение. Выше критической анизотропии цепочка теряет устойчивость и сворачивается в зигзаг: длинные цепочки требуют слабого аксиального удержания, а значит более низких частот и более медленных гейтов. Пол сдвигают безлазерные электронные гейты (2Q 8.4×10⁻⁵ [D][96]) и формованные импульсы.
 
 ## Инженерное состояние (state of the art)
 | Дата | Показатель | Кто | Тег+ключ |
 |---|---|---|---|
-| 2023-08 | Цепочка из 30 ионов, бенчмарк по 435 парам; MS 550–883 µs | IonQ Forte | [D][1] |
-| 2024 | 2D-кристалл из 512 ионов, только аналоговый режим | Tsinghua | [D][3] |
-| 2025-10 | Ошибка 2Q 8.4×10⁻⁵, электронный гейт, без охлаждения | IonQ/Oxford Ionics | [D][2] |
-| 2026-06 | Безубыточность (break-even) qLDPC-памяти [[18,4,3]], 3.95±0.68 s против 3.3±0.9 s | IonQ | [D][4] |
+| 2023-08 | Цепочка из 30 ионов, бенчмарк по 435 парам; MS 550–883 µs | IonQ Forte | [D][94] |
+| 2024 | 2D-кристалл из 512 ионов, только аналоговый режим | Tsinghua | [D][110] |
+| 2025-10 | Ошибка 2Q 8.4×10⁻⁵, электронный гейт, без охлаждения | IonQ/Oxford Ionics | [D][96] |
+| 2026-06 | Безубыточность (break-even) qLDPC-памяти [[18,4,3]], 3.95±0.68 s против 3.3±0.9 s | IonQ | [D][103] |
 
-Tempo: 100 ионов, #AQ 64, времени гейта нет [C][5]. Доминирующий член: время гейта, а не точность (fidelity).
+Tempo: 100 ионов, #AQ 64, времени гейта нет [C][95]. Доминирующий член: время гейта, а не точность (fidelity).
 
 ## Производство, материалы и цепочка поставок
-IonQ закрыла сделку по приобретению SkyWater 2026-07-31, назвав фабрики микроизготовленных ловушек в Миннесоте, Флориде и Техасе, без раскрытия размера пластины и техпроцесса [C][G:IONQ-SKYWATER-FAB-2026]. Управление разветвляется надвое: лазерные MS-гейты требуют нескольких длин волн и оптики на каждый ион; электронные гейты используют токовые и микроволновые линии на кристалле. При 10³ ионах стеной становится спектр мод, а не разводка: ответ — множество коротких цепочек, соединённых перемещением ионов (shuttling) или фотоникой; первое запутывание IonQ между двумя системами (2026-04-14) не раскрыло ни скорости, ни точности [C][G:IONQ-PHOTONIC-INTERCONNECT-2026-04]. Экспортная уязвимость определяется числом кубитов по ECCN 4A906; ионные ловушки не названы ни в одном правиле [G][6].
+IonQ закрыла сделку по приобретению SkyWater 2026-07-31, назвав фабрики микроизготовленных ловушек в Миннесоте, Флориде и Техасе, без раскрытия размера пластины и техпроцесса [C][G:IONQ-SKYWATER-FAB-2026]. Управление разветвляется надвое: лазерные MS-гейты требуют нескольких длин волн и оптики на каждый ион; электронные гейты используют токовые и микроволновые линии на кристалле. При 10³ ионах стеной становится спектр мод, а не разводка: ответ — множество коротких цепочек, соединённых перемещением ионов (shuttling) или фотоникой; первое запутывание IonQ между двумя системами (2026-04-14) не раскрыло ни скорости, ни точности [C][G:IONQ-PHOTONIC-INTERCONNECT-2026-04]. Экспортная уязвимость определяется числом кубитов по ECCN 4A906; ионные ловушки не названы ни в одном правиле [G][225].
 
 ## Роль в стеке
-Не требует ничего; обеспечивает те нелокальные проверки, которые предполагают двумерные велосипедные (bivariate bicycle) qLDPC и высокоскоростные коды с трансверсальными гейтами, что и показывает безубыточная память [[18,4,3]] от IonQ [D][4]. Он конкурирует с перемещением ионов в QCCD, которое покупает длину цепочки временем транспорта: Helios получает полную связность из кольца и соединительного узла при ~55 ms на слой полной ширины, причём транспорт занимает ~60% времени работы H2 [D][7]. Производный такт = сумма раунда синдрома: слои гейтов + транспорт + считывание + сброс ≈ 1.5×10⁻³ s, из них 1.4 ms — слои гейтов. Верификация: показатель Forte — это бенчмарк по всем 435 парам, поэтому позиционные эффекты видны; для Tempo публикуются #AQ 64 и «точность 99.9%» без времени гейта и без данных по парам — это пробел в раскрытии, а не спор.
+Не требует ничего; обеспечивает те нелокальные проверки, которые предполагают двумерные велосипедные (bivariate bicycle) qLDPC и высокоскоростные коды с трансверсальными гейтами, что и показывает безубыточная память [[18,4,3]] от IonQ [D][103]. Он конкурирует с перемещением ионов в QCCD, которое покупает длину цепочки временем транспорта: Helios получает полную связность из кольца и соединительного узла при ~55 ms на слой полной ширины, причём транспорт занимает ~60% времени работы H2 [D][91]. Производный такт = сумма раунда синдрома: слои гейтов + транспорт + считывание + сброс ≈ 1.5×10⁻³ s, из них 1.4 ms — слои гейтов. Верификация: показатель Forte — это бенчмарк по всем 435 парам, поэтому позиционные эффекты видны; для Tempo публикуются #AQ 64 и «точность 99.9%» без времени гейта и без данных по парам — это пробел в раскрытии, а не спор.
 
 ## Акторы и экономика
 **Кто.**
 | Организация | Роль | Страна | Что делают | Свидетельство |
 |---|---|---|---|---|
-| IonQ | разработчик | США | Цепочки Forte и Tempo; владеет SkyWater | [C][5] |
-| Oxford Ionics | разработчик | Великобритания | Электронные безлазерные гейты; подразделение IonQ | [D][2] |
-| Quantinuum | разработчик | США/Великобритания | Конкурирующая транспортная архитектура | [D][7] |
-| eleQtron | разработчик | Германия | Микроволновое управление ионами MAGIC | [C][8] |
+| IonQ | разработчик | США | Цепочки Forte и Tempo; владеет SkyWater | [C][95] |
+| Oxford Ionics | разработчик | Великобритания | Электронные безлазерные гейты; подразделение IonQ | [D][96] |
+| Quantinuum | разработчик | США/Великобритания | Конкурирующая транспортная архитектура | [D][91] |
+| eleQtron | разработчик | Германия | Микроволновое управление ионами MAGIC | [C][116] |
 
-**Деньги.** 2025-09-17 · IonQ · сделка M&A, Oxford Ionics · $1.075 B USD · закрыта [G:IONQ-OXIONICS-2025]. 2025-10-12 · IonQ · размещение акций · $2.0 B USD по $93/share · закрыто [G:IONQ-EQUITY-2025]. 2025-11-06 · DARPA · QBI Stage B · до $15 M каждому · IonQ и Quantinuum среди одиннадцати [G][9]. 2026-05-05 · eleQtron · раунд A · €57 M · закрыт [C][8]. 2026-07-31 · IonQ · сделка M&A, SkyWater · ~$1.8 B USD · закрыта [G:IONQ-SKYWATER-2026]. 2026-08 · IonQ · выручка за 2-й квартал 2026 $80.1 M (+287% г/г), денежные средства $3.0 B [C][10].
+**Деньги.** 2025-09-17 · IonQ · сделка M&A, Oxford Ionics · $1.075 B USD · закрыта [G:IONQ-OXIONICS-2025]. 2025-10-12 · IonQ · размещение акций · $2.0 B USD по $93/share · закрыто [G:IONQ-EQUITY-2025]. 2025-11-06 · DARPA · QBI Stage B · до $15 M каждому · IonQ и Quantinuum среди одиннадцати [G][60]. 2026-05-05 · eleQtron · раунд A · €57 M · закрыт [C][116]. 2026-07-31 · IonQ · сделка M&A, SkyWater · ~$1.8 B USD · закрыта [G:IONQ-SKYWATER-2026]. 2026-08 · IonQ · выручка за 2-й квартал 2026 $80.1 M (+287% г/г), денежные средства $3.0 B [C][255].
 
 **Рынок и цепочка поставок.** Шина покупает чип ловушки, лазеры или микроволновые линии и одну вакуумную систему; риск концентрации лежит на поставщиках узкополосных лазеров и AOM, которых электронные гейты устраняют. Работает на G3 и G5.
 
 **ИС и стандарты.** PatSnap называет IonQ лидером по числу заявок в области инженерии колебательных мод [P][G:PATSNAP-IONQ-PATENTS-2026]; органа стандартизации нет.
 
-**Дорожные карты и послужной список.** (2025-06 · на 2026 г. · 256 кубитов с точностью 99.99% · сдвинуто на H1 2027); (на 2027 г. · 10,000 на одном чипе · данных по нагреву нет); (на 2030 г. · 2 M физических) [R][11]. Заявления по точности сбываются, сроки по масштабу — нет: дорожная карта 2020 года обещала 4,000 кубитов к 2026 году, промах примерно в 40 раз.
+**Дорожные карты и послужной список.** (2025-06 · на 2026 г. · 256 кубитов с точностью 99.99% · сдвинуто на H1 2027); (на 2027 г. · 10,000 на одном чипе · данных по нагреву нет); (на 2030 г. · 2 M физических) [R][118]. Заявления по точности сбываются, сроки по масштабу — нет: дорожная карта 2020 года обещала 4,000 кубитов к 2026 году, промах примерно в 40 раз.
 
 **Стратегическое прочтение.** Если полная связность в цепочке удержится до нескольких сотен ионов, ионные поставщики сохранят преимущество по связности, которое делает высокоскоростные коды дешёвыми, а собственные фабрики IonQ ускорят итерации по ловушкам. Если нет, шина становится внутримодульной деталью, и стоимость перемещается в интерконнекты.
 
@@ -60,17 +60,17 @@ IonQ закрыла сделку по приобретению SkyWater 2026-07-
 Подтверждение, если IonQ опубликует времена гейтов Tempo и точности по парам либо поставит 256 кубитов в H1 2027; понижение, если раскрытие останется на уровне заголовков. Лучший случай к 2029: электронные гейты на ловушках собственного производства выводят цепочки за 100 ионов. Худший случай: цепочки застревают на 30–50 ионах. Открытый вопрос: как масштабируется нагрев мод при 100 ионах?
 
 ## Источники
-[1] J.-S. Chen *et al.*, “Benchmarking a trapped-ion quantum computer with 30 qubits,” *Quantum*, vol. 8, Art. no. 1516, Nov. 2024, doi: [10.22331/q-2024-11-07-1516](https://doi.org/10.22331/q-2024-11-07-1516). [arXiv:2308.05071](https://arxiv.org/abs/2308.05071). [D]
-[2] A. C. Hughes *et al.*, “Trapped-ion two-qubit gates with >99.99% fidelity without ground-state cooling,” [arXiv:2510.17286](https://arxiv.org/abs/2510.17286), Oct. 2025. [D]
-[3] S.-A. Guo *et al.*, “A site-resolved two-dimensional quantum simulator with hundreds of trapped ions,” *Nature*, vol. 630, no. 8017, pp. 613–618, May 2024, doi: [10.1038/s41586-024-07459-0](https://doi.org/10.1038/s41586-024-07459-0). [D]
-[4] E. Tham *et al.*, “Breakeven demonstration of quantum low-density parity-check codes,” [arXiv:2606.06455](https://arxiv.org/abs/2606.06455), Jun. 2026. [D]
-[5] IonQ, “IonQ Tempo: 100-Qubit Quantum Computer (#AQ 64).” [Online]. Available: https://ionq.com/quantum-systems/tempo [C]
-[6] US Department of Commerce, Bureau of Industry and Security, “Commerce Control List Additions and Revisions; Implementation of Controls on Advanced Technologies Consistent With Controls Implemented by International Partners,” *Federal Register*, vol. 89, p. 72926, Sep. 6, 2024. [Online]. Available: https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies [G]
-[7] A. Ransford *et al.*, “A 98-qubit trapped-ion quantum computer with all-to-all connectivity,” *Nature*, vol. 655, no. 8121, pp. 81–86, Jun. 2026, doi: [10.1038/s41586-026-10676-4](https://doi.org/10.1038/s41586-026-10676-4). [arXiv:2511.05465](https://arxiv.org/abs/2511.05465). [D]
-[8] A. Cordes, “Quantum computing scale-up eleQtron secures €57 million in one of the largest Series A funding rounds worldwide,” eleQtron, May 5, 2026. [Online]. Available: https://eleqtron.com/en/quantum-computing-scale-up-eleqtron-secures-57-million-in-one-of-the-largest-series-a-funding-rounds-worldwide/ [C]
-[9] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
-[10] IonQ, “IonQ Announces Record Second Quarter 2026 Revenues, Growing 287% YoY,” Aug. 5, 2026. [Online]. Available: https://www.ionq.com/news/ionq-announces-record-second-quarter-2026-revenues-growing-287-yoy [C]
-[11] IonQ, “IonQ's Accelerated Roadmap: Turning Quantum Ambition into Reality,” Jun. 13, 2025. [Online]. Available: https://www.ionq.com/blog/ionqs-accelerated-roadmap-turning-quantum-ambition-into-reality [R]
+[60] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
+[91] A. Ransford *et al.*, “A 98-qubit trapped-ion quantum computer with all-to-all connectivity,” *Nature*, vol. 655, no. 8121, pp. 81–86, Jun. 2026, doi: [10.1038/s41586-026-10676-4](https://doi.org/10.1038/s41586-026-10676-4). [arXiv:2511.05465](https://arxiv.org/abs/2511.05465). [D]
+[94] J.-S. Chen *et al.*, “Benchmarking a trapped-ion quantum computer with 30 qubits,” *Quantum*, vol. 8, Art. no. 1516, Nov. 2024, doi: [10.22331/q-2024-11-07-1516](https://doi.org/10.22331/q-2024-11-07-1516). [arXiv:2308.05071](https://arxiv.org/abs/2308.05071). [D]
+[95] IonQ, “IonQ Tempo: 100-Qubit Quantum Computer (#AQ 64).” [Online]. Available: https://ionq.com/quantum-systems/tempo [C]
+[96] A. C. Hughes *et al.*, “Trapped-ion two-qubit gates with >99.99% fidelity without ground-state cooling,” [arXiv:2510.17286](https://arxiv.org/abs/2510.17286), Oct. 2025. [D]
+[103] E. Tham *et al.*, “Breakeven demonstration of quantum low-density parity-check codes,” [arXiv:2606.06455](https://arxiv.org/abs/2606.06455), Jun. 2026. [D]
+[110] S.-A. Guo *et al.*, “A site-resolved two-dimensional quantum simulator with hundreds of trapped ions,” *Nature*, vol. 630, no. 8017, pp. 613–618, May 2024, doi: [10.1038/s41586-024-07459-0](https://doi.org/10.1038/s41586-024-07459-0). [D]
+[116] A. Cordes, “Quantum computing scale-up eleQtron secures €57 million in one of the largest Series A funding rounds worldwide,” eleQtron, May 5, 2026. [Online]. Available: https://eleqtron.com/en/quantum-computing-scale-up-eleqtron-secures-57-million-in-one-of-the-largest-series-a-funding-rounds-worldwide/ [C]
+[118] IonQ, “IonQ's Accelerated Roadmap: Turning Quantum Ambition into Reality,” Jun. 13, 2025. [Online]. Available: https://www.ionq.com/blog/ionqs-accelerated-roadmap-turning-quantum-ambition-into-reality [R]
+[225] US Department of Commerce, Bureau of Industry and Security, “Commerce Control List Additions and Revisions; Implementation of Controls on Advanced Technologies Consistent With Controls Implemented by International Partners,” *Federal Register*, vol. 89, p. 72926, Sep. 6, 2024. [Online]. Available: https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies [G]
+[255] IonQ, “IonQ Announces Record Second Quarter 2026 Revenues, Growing 287% YoY,” Aug. 5, 2026. [Online]. Available: https://www.ionq.com/news/ionq-announces-record-second-quarter-2026-revenues-growing-287-yoy [C]
 
 ## Открытые пункты верификации
 Время 2Q-гейта и точности по парам для Tempo не опубликованы; есть только #AQ 64 и заголовочная «точность 99.9%». Сумма контракта KISTI на Tempo-100 в найденных источниках не раскрыта, поэтому это внедрение в перечень сделок не внесено. Ни одни опубликованные данные по нагреву, спектру мод или интерконнектам не согласуют цель IonQ «10,000 ионов на одном чипе» к 2027 году с компромиссом по длине цепочки. Цепочка Tempo из 100 ионов — заявление компании; крупнейшей независимо протестированной цепочкой остаются 30 ионов.

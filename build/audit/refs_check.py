@@ -5,8 +5,11 @@
     python3 build/audit/refs_check.py [dist.html]        # exit 1 on any defect; prints one line per class
 
 Reads the rendered page, not the data files, so it catches what the reader sees. Checks:
-  numbering   each list is 1..N without gaps or repeats; every in-text citation [n] links to entry n of ITS OWN list; every
-              entry is cited at least once from its own text (an uncited entry is dead weight); no bare "[n]" left as text
+  numbering   numbers are the Map's permanent work numbers: each list ascends without repeats (gaps are normal — a brief shows
+              its subset of the bibliography); every in-text citation [n] links to entry n of ITS OWN list; every entry is
+              cited at least once from its own text (an uncited entry is dead weight); no bare "[n]" left as text
+  one number  the same work (DOI, arXiv id or URL) carries the same number in §9 and in every brief, and one number never
+              stands for two works
   ru = en     the Russian list of a brief has the same entries, in the same order, as the English one (a bibliography is not
               translated); the multiset of citation numbers in the RU text equals the EN one
   one work    the same work (DOI, arXiv id or URL) prints the same entry everywhere — in §9 and in every brief; a work with
@@ -59,7 +62,7 @@ for m in RANGE.finditer(h):
     if scope: cites[scope] += list(range(a + 1, b))
 for scope, items in lists.items():
     ns = [n for n, v, r, t, l in items]
-    if ns != list(range(1, len(ns) + 1)): prob('numbering', '%s: numbers %s…' % (scope, ns[:8]))
+    if ns != sorted(set(ns)): prob('numbering', '%s: numbers not ascending or repeated: %s…' % (scope, ns[:8]))
     for n, v, r, t, l in items:
         if n != v: prob('numbering', '%s: [%d] has value=%d' % (scope, n, v))
     used = set(cites.get(scope, []))
@@ -89,7 +92,7 @@ def key_of(ref_html):
     if m: return 'arxiv:' + m.group(1).lower()
     m = re.search(r'Available: <a href="([^"]+)"', ref_html)
     if m: return 'url:' + m.group(1).rstrip('/').lower()
-    m = re.search(r'href="([^"]+)"', ref_html)
+    m = re.search(r'href="([^"#]+)"', ref_html)   # an in-page link (the Map citing its own section) is no identity
     return ('url:' + m.group(1).rstrip('/').lower()) if m else None
 forms = collections.defaultdict(dict)   # key -> {entry text: [scopes]}
 nokey = []
@@ -103,6 +106,17 @@ for scope, items in lists.items():
 for k, d in forms.items():
     if len(d) > 1:
         prob('one-work', '%s has %d entry forms: %s' % (k, len(d), ' || '.join('%r @ %s' % (f[:110], s[:3]) for f, s in d.items())))
+# one number per work, one work per number — across §9 and every brief
+num_of = collections.defaultdict(set); key_of_num = collections.defaultdict(set)
+for scope, items in lists.items():
+    for n, v, r, t, l in items:
+        k = key_of(r)
+        if not k: continue
+        num_of[k].add(n); key_of_num[n].add(k)
+for k, ns in num_of.items():
+    if len(ns) > 1: prob('one-number', '%s carries numbers %s' % (k, sorted(ns)))
+for n, ks in key_of_num.items():
+    if len(ks) > 1: prob('one-number', '[%d] stands for %d works: %s' % (n, len(ks), sorted(ks)[:3]))
 if nokey: prob('formatting', '%d entries carry no identifier or link, e.g. %s' % (len(nokey), nokey[:3]))
 
 # ---------- formatting
@@ -135,7 +149,7 @@ for m in re.finditer(r'<div class="bkeys">.*?</div>', h, flags=re.S):
     for t in re.findall(r'title="([^"]*)"', m.group(0)):
         if '](http' in t: prob('formatting', 'key-reference tooltip carries markdown: %s' % H.unescape(t)[:100])
 # bare [n] left in the prose of the briefs and the report (a citation not linked)
-bare = re.findall(r'(?<![\w\[>])\[(\d{1,3})\](?![\]\(<])', re.sub(r'<script.*?</script>|<style.*?</style>', '', h, flags=re.S))
+bare = re.findall(r'(?<![\w\[>])\[(\d{1,4})\](?![\]\(<])', re.sub(r'<script.*?</script>|<style.*?</style>', '', h, flags=re.S))
 if bare: prob('numbering', 'bare [n] tokens in the rendered text (unlinked citations): %d, e.g. %s' % (len(bare), bare[:6]))
 # anchors
 for m in re.finditer(r'href="#((?:en|ru)-src-[^"]+|brief-[^"]+-src-\d+)"', h):

@@ -6,10 +6,11 @@ Two files describe the sources:
     URLs they stand for — the codes are what the text cites and what the ids of the rendered entries keep;
   - data/sources.json is the BIBLIOGRAPHY: one record per URL of the register (author list or organisation, title, venue,
     volume/issue/pages, date, DOI, arXiv id), verified against arXiv, Crossref or the page itself.
-The page renders §9 as one IEEE-numbered list, numbered in order of first citation in the English text (the Russian edition
-uses the same numbers: a bibliography is not translated), and every in-text [CODE] becomes its number(s), linked.
-A code whose URLs are different works spans consecutive numbers; a preprint and its published version are one work; a work
-cited under two codes keeps its first number.
+The page renders §9 as one IEEE-numbered list and every in-text [CODE] becomes its number(s), linked. Numbers are permanent
+and Map-wide (build/worknum.py, data/work-numbers.json): a work has one number in §9, in every technology brief and in every
+later edition; the list is in number order, which for the first 205 entries is the order of first citation in the English
+text of the 2026.09 edition. A code whose URLs are different works spans several numbers; a preprint and its published
+version are one work; a work cited under two codes has one number.
 
 Forms (IEEE Reference Guide, 2024):
   journal   A. B. Author, C. Author, and D. Author, “Title,” Journal, vol. v, no. n, pp. x–y, Mon. year, doi: …
@@ -295,6 +296,24 @@ def _ids(r):
     return ids
 
 
+def all_ids(r):
+    """every identity a record is known by: DOI, arXiv id, the normalised URL and also-URLs (strong), the title key (weak)"""
+    ids = []
+    if r.get('doi'): ids.append('doi:' + r['doi'].lower().rstrip('.'))
+    if r.get('arxiv'): ids.append('arxiv:' + r['arxiv'])
+    for u in [r.get('url', '')] + list(r.get('also', [])):
+        if not u: continue
+        if doi_of(u): ids.append('doi:' + doi_of(u).lower().rstrip('.'))
+        if arxiv_of(u): ids.append('arxiv:' + arxiv_of(u))
+        ids.append('u:' + norm(u))
+    t = _title_key(r.get('title'))
+    if t and len(t) > 12: ids.append('t:' + t)
+    out = []
+    for i in ids:
+        if i not in out: out.append(i)
+    return out
+
+
 def build():
     """→ (order, works, alias, num, unverified): order = codes by first citation in the EN text; works[code] = [record…]
     (a preprint merged with its published version); num[code] = [number…] (one per work, dedupe across codes)."""
@@ -326,16 +345,18 @@ def build():
         c = alias.get(c, c)
         if c in works and c not in order: order.append(c)
     order += sorted(c for c in works if c not in order)
-    num, seen, k = {}, {}, 1
+    # permanent numbers (build/worknum.py): a work keeps its number in every edition and in every brief; the table was
+    # seeded in this very order (codes by first citation), so the first 205 numbers are the ones the 2026.09 edition printed
+    import worknum
+    W = worknum.numbers(); num, seen = {}, set()
     for c in order:
         nums = []
         for r in works[c]:
-            hit = next((seen[i] for i in _ids(r) if i in seen), None)
-            if hit: nums.append(hit); r['dup'] = True
-            else:
-                for i in _ids(r): seen[i] = k
-                nums.append(k); k += 1
+            n = W.number(all_ids(r), worknum.alpha_label(r))
+            if n in seen: r['dup'] = True
+            seen.add(n); nums.append(n)
         num[c] = nums
+    W.save()
     for a, t in alias.items(): num[a] = num.get(t, [0])
     unverified = [(c, r.get('url')) for c in works for r in works[c] if not r.get('verified')]
     return order, works, alias, num, unverified
@@ -451,17 +472,17 @@ def ieee(r):
 
 
 def render_list(lang, order, works, num):
-    """§9 as one numbered list; ids keep the register codes (en-src-S2, en-src-S7-2 …) so in-text links and the release check
-    address entries by code."""
-    P = lang + '-'; out = ['<ol class="refs" data-nohint="1">']; done = set()
+    """§9 as one list in number order; ids keep the register codes (en-src-S2, en-src-S7-2 …) so in-text links and the
+    release check address entries by code. Numbers are permanent, so the list has the order of first entry into the Map's
+    bibliography — the 2026.09 order for the first 205, later works after them."""
+    P = lang + '-'; rows = []; done = set()
     for c in order:
         for i, r in enumerate(works[c]):
             n = num[c][i]
             if n in done: continue
             done.add(n); rid = P + 'src-' + c + ('' if i == 0 else '-%d' % (i + 1))
-            out.append('<li id="%s" value="%d"><span class="src">[%d]</span> <span class="ref">%s</span></li>' % (rid, n, n, ieee(r)))
-    out.append('</ol>')
-    return '\n'.join(out)
+            rows.append((n, '<li id="%s" value="%d"><span class="src">[%d]</span> <span class="ref">%s</span></li>' % (rid, n, n, ieee(r))))
+    return '\n'.join(['<ol class="refs" data-nohint="1">'] + [row for n, row in sorted(rows)] + ['</ol>'])
 
 
 def anchor_for(code, works, num, order):

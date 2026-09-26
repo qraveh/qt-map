@@ -12,41 +12,41 @@ updated: 2026-09-04
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-Driving a control transmon at its neighbour's frequency through a fixed bus produces a ZX interaction; Chow, Córcoles, Gambetta et al. (IBM), 2011 [D][1]. Kandala et al. reached CNOT 99.77(2)% in a single 180 ns pulse in 2021 by suppressing the static ZZ intrinsically, two fixed-frequency coupling elements retuning the dressed levels rather than extra cancellation drives [D][2].
+Driving a control transmon at its neighbour's frequency through a fixed bus produces a ZX interaction; Chow, Córcoles, Gambetta et al. (IBM), 2011 [D][342]. Kandala et al. reached CNOT 99.77(2)% in a single 180 ns pulse in 2021 by suppressing the static ZZ intrinsically, two fixed-frequency coupling elements retuning the dressed levels rather than extra cancellation drives [D][211].
 Attributes: fabricated carrier, static connectivity, microwave control at room temperature; deterministic entangling at 10^-6.5 s (~320 ns typical, 180 ns best).
 Coherent plus Pauli error; standard superconducting lithography, no added process.
 
 ## Physics & limits
-The ZX rate is second order, ∝ JΩ/(Δ(Δ+α)), fastest in the straddling regime −α < Δ < 0, so the detuning must sit inside a band of order the anharmonicity, ~300 MHz. The static ZZ, ∝ 2J²α/(Δ(Δ+α)), never switches off, so coherent error dominates the budget. The floor is not one pair but frequency targeting: every neighbour adds a collision constraint inside that band, and junction spread as fabricated is of order a per cent, so collision-free yield collapses with lattice size. What moves the floor is post-fabrication trimming — annealing junctions to target, 97.4% success [D][3] — not better pulses.
+The ZX rate is second order, ∝ JΩ/(Δ(Δ+α)), fastest in the straddling regime −α < Δ < 0, so the detuning must sit inside a band of order the anharmonicity, ~300 MHz. The static ZZ, ∝ 2J²α/(Δ(Δ+α)), never switches off, so coherent error dominates the budget. The floor is not one pair but frequency targeting: every neighbour adds a collision constraint inside that band, and junction spread as fabricated is of order a per cent, so collision-free yield collapses with lattice size. What moves the floor is post-fabrication trimming — annealing junctions to target, 97.4% success [D][218] — not better pulses.
 
 ## Engineering state of the art
 
 | Date | Figure | Who | Tag |
 |---|---|---|---|
-| 2011 | First all-microwave CR entangling gate | IBM | [D][1] |
-| 2021-09-22 | CNOT 99.77(2)% in a single 180 ns pulse | IBM | [D][2] |
-| 2026-06-25 | Fixed-frequency lattice patch, CNOT > 98% simulated | Hanyang University | [S][4] |
+| 2011 | First all-microwave CR entangling gate | IBM | [D][342] |
+| 2021-09-22 | CNOT 99.77(2)% in a single 180 ns pulse | IBM | [D][211] |
+| 2026-06-25 | Fixed-frequency lattice patch, CNOT > 98% simulated | Hanyang University | [S][343] |
 
-No fleet-average CR number was ever published; IBM's EPLG today (3.7×10⁻³ [D][5]) is Heron hardware, which replaced CR in 2023-12 [C][6]. The painful reference is Oxford/OQC's fixed-coupling CZ, 99.8% in 25 ns [C][7] — no coupler control either, seven times faster.
+No fleet-average CR number was ever published; IBM's EPLG today (3.7×10⁻³ [D][33]) is Heron hardware, which replaced CR in 2023-12 [C][67]. The painful reference is Oxford/OQC's fixed-coupling CZ, 99.8% in 25 ns [C][340] — no coupler control either, seven times faster.
 
 ## Manufacturing, materials & supply chain
-No process of its own. The cost lands in binning and trimming: a collision cannot be detuned away after fabrication, only masked in software or annealed out, so frequency targeting — laser annealing at IBM, alternating-bias annealing at Rigetti [D][3] — is the supply-chain item CR drives. Its advantage is the I/O ledger: one drive line per qubit and nothing per coupler, where tunable couplers add a flux line and a DAC channel each, roughly 1.5–2× the lines. At 10³ that is a crowded fridge against an impossible one; at 10⁴–10⁶ it is the whole wiring budget. Export exposure is the carrier's (ECCN 3A901).
+No process of its own. The cost lands in binning and trimming: a collision cannot be detuned away after fabrication, only masked in software or annealed out, so frequency targeting — laser annealing at IBM, alternating-bias annealing at Rigetti [D][218] — is the supply-chain item CR drives. Its advantage is the I/O ledger: one drive line per qubit and nothing per coupler, where tunable couplers add a flux line and a DAC channel each, roughly 1.5–2× the lines. At 10³ that is a crowded fridge against an impossible one; at 10⁴–10⁶ it is the whole wiring budget. Export exposure is the carrier's (ECCN 3A901).
 
 ## Role in the stack
-The fixed-frequency branch of the superconducting-transmon path — IBM Falcon through Condor, 2019–2023 [C][6] — providing entanglement with no coupler control; its alternative is the tunable coupler, and switching is a chip redesign, not firmware. On the derived clock it loses: 180–500 ns against ~50 ns for a tunable-coupler CZ, so every QEC cycle pays 3–7× on the gate layer. Verification: 99.77% is interleaved RB on an isolated pair, blind to spectators; CR error is coherent, so RB understates it and gate-set tomography is the honest measurement.
+The fixed-frequency branch of the superconducting-transmon path — IBM Falcon through Condor, 2019–2023 [C][67] — providing entanglement with no coupler control; its alternative is the tunable coupler, and switching is a chip redesign, not firmware. On the derived clock it loses: 180–500 ns against ~50 ns for a tunable-coupler CZ, so every QEC cycle pays 3–7× on the gate layer. Verification: 99.77% is interleaved RB on an isolated pair, blind to spectators; CR error is coherent, so RB understates it and gate-set tomography is the honest measurement.
 
 ## Actors & economics
 **Who.**
 
 | Organisation | Role | Country | What exactly they do | Evidence |
 |---|---|---|---|---|
-| IBM | developer (ex-user) | US | Invented and scaled CR to Condor; retired it at Heron | [D][2] |
-| Hanyang University | research | KR | Fixed-frequency lattice-patch design reviving CR | [S][4] |
-| OQC | developer | UK | Fixed-frequency coaxmons with a fixed-coupling CZ, not CR | [C][7] |
+| IBM | developer (ex-user) | US | Invented and scaled CR to Condor; retired it at Heron | [D][211] |
+| Hanyang University | research | KR | Fixed-frequency lattice-patch design reviving CR | [S][343] |
+| OQC | developer | UK | Fixed-frequency coaxmons with a fixed-coupling CZ, not CR | [C][340] |
 
 **Money.**
-2026-06-02 · IBM · investment commitment · > $10 B over five years · announced [G][8][G:IBM-10B-2026-06]
-2026-06-03 · OQC · Series C · £260 M · Bullhound lead · closed [C][9][G:OQC-SERIESC-2026-06]
+2026-06-02 · IBM · investment commitment · > $10 B over five years · announced [G][55][G:IBM-10B-2026-06]
+2026-06-03 · OQC · Series C · £260 M · Bullhound lead · closed [C][57][G:OQC-SERIESC-2026-06]
 
 No funding event or QBI stage names cross-resonance.
 
@@ -64,15 +64,15 @@ No funding event or QBI stage names cross-resonance.
 Confirm by 2028: a fabricated fixed-frequency processor above eight qubits with CR fidelity published under simultaneous operation, or the Hanyang patch measured above 98%; else demote to legacy. Best case 2029: a cheap fixed-frequency chiplet; worst case, CR survives only as a Qiskit compilation target. Does anyone outside IBM run CR in production? Does frequency targeting reach collision-free yield past ~100 qubits? Would a foundry pick CR on cost rather than physics?
 
 ## Sources
-[1] J. M. Chow *et al.*, “Simple All-Microwave Entangling Gate for Fixed-Frequency Superconducting Qubits,” *Phys. Rev. Lett.*, vol. 107, no. 8, Art. no. 080502, Aug. 2011, doi: [10.1103/PhysRevLett.107.080502](https://doi.org/10.1103/PhysRevLett.107.080502). [D]
-[2] A. Kandala *et al.*, “Demonstration of a High-Fidelity CNOT Gate for Fixed-Frequency Transmons with Engineered ZZ Suppression,” *Phys. Rev. Lett.*, vol. 127, no. 13, Art. no. 130501, Sep. 2021, doi: [10.1103/PhysRevLett.127.130501](https://doi.org/10.1103/PhysRevLett.127.130501). [D]
-[3] D. P. Pappas *et al.*, “Alternating-bias assisted annealing of amorphous oxide tunnel junctions,” *Communications Materials*, vol. 5, no. 1, Art. no. 150, Aug. 2024, doi: [10.1038/s43246-024-00596-z](https://doi.org/10.1038/s43246-024-00596-z). [D]
-[4] C. Kim, J. Kang, and Y. Kwon, “Lattice patch structure for fixed-frequency transmon quantum computer with high-fidelity CNOT gates,” [arXiv:2606.27017](https://arxiv.org/abs/2606.27017), Jun. 2026. [S]
-[5] IBM Quantum, “What's new at IBM Quantum - Q2 2026.” [Online]. Available: https://www.ibm.com/quantum/blog/whats-new-q2-2026 [D]
-[6] IBM, “Quantum Roadmap.” [Online]. Available: https://www.ibm.com/roadmaps/quantum/ [C]
-[7] A. Curbison, “Oxford research group demonstrate fundamental speed-up of two-qubit gate,” OQC, Mar. 21, 2025. [Online]. Available: https://oqc.tech/company/newsroom/oxford-research-group-demonstrate-fundamental-speed-up-of-two-qubit-gate [C]
-[8] IBM Quantum, “Why IBM is investing $10 billion into quantum computing,” Jun. 2, 2026. [Online]. Available: https://www.ibm.com/quantum/blog/10-billion-investment-faq [G]
-[9] A. Curbison, “OQC raises £260m in Europe's largest ever private quantum computing funding round,” OQC, Jun. 2, 2026. [Online]. Available: https://oqc.tech/company/newsroom/series-c [C]
+[33] IBM Quantum, “What's new at IBM Quantum - Q2 2026.” [Online]. Available: https://www.ibm.com/quantum/blog/whats-new-q2-2026 [D]
+[55] IBM Quantum, “Why IBM is investing $10 billion into quantum computing,” Jun. 2, 2026. [Online]. Available: https://www.ibm.com/quantum/blog/10-billion-investment-faq [G]
+[57] A. Curbison, “OQC raises £260m in Europe's largest ever private quantum computing funding round,” OQC, Jun. 2, 2026. [Online]. Available: https://oqc.tech/company/newsroom/series-c [C]
+[67] IBM, “Quantum Roadmap.” [Online]. Available: https://www.ibm.com/roadmaps/quantum/ [C]
+[211] A. Kandala *et al.*, “Demonstration of a High-Fidelity CNOT Gate for Fixed-Frequency Transmons with Engineered ZZ Suppression,” *Phys. Rev. Lett.*, vol. 127, no. 13, Art. no. 130501, Sep. 2021, doi: [10.1103/PhysRevLett.127.130501](https://doi.org/10.1103/PhysRevLett.127.130501). [D]
+[218] D. P. Pappas *et al.*, “Alternating-bias assisted annealing of amorphous oxide tunnel junctions,” *Communications Materials*, vol. 5, no. 1, Art. no. 150, Aug. 2024, doi: [10.1038/s43246-024-00596-z](https://doi.org/10.1038/s43246-024-00596-z). [D]
+[340] A. Curbison, “Oxford research group demonstrate fundamental speed-up of two-qubit gate,” OQC, Mar. 21, 2025. [Online]. Available: https://oqc.tech/company/newsroom/oxford-research-group-demonstrate-fundamental-speed-up-of-two-qubit-gate [C]
+[342] J. M. Chow *et al.*, “Simple All-Microwave Entangling Gate for Fixed-Frequency Superconducting Qubits,” *Phys. Rev. Lett.*, vol. 107, no. 8, Art. no. 080502, Aug. 2011, doi: [10.1103/PhysRevLett.107.080502](https://doi.org/10.1103/PhysRevLett.107.080502). [D]
+[343] C. Kim, J. Kang, and Y. Kwon, “Lattice patch structure for fixed-frequency transmon quantum computer with high-fidelity CNOT gates,” [arXiv:2606.27017](https://arxiv.org/abs/2606.27017), Jun. 2026. [S]
 
 ## Open verification items
 No fleet-average CR fidelity for IBM's pre-Heron generations (Falcon–Condor) was ever published; only the isolated-pair 99.77(2)% is sourced.

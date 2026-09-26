@@ -15,46 +15,46 @@ updated: 2026-09-03
 The 300 K layer that drives photonic qubits and closes the measurement loop: pump lasers, thin-film lithium-niobate (TFLN) or barium-titanate (BTO) modulators, and electronics turning a detector click or homodyne quadrature into a drive voltage before the next photon arrives. Alone among control nodes it has no cryogenic variant: electronics at 300 K read detectors near 2 K, so every loop crosses that boundary twice. Attributes: no carrier of its own, immobile, loss-dominated error; electro-optic modality at room temperature, photonic-IC fabrication.
 
 ## Physics & limits
-Modulator bandwidth is not the constraint. What binds is detector rise, discrimination, decision and driver settling, which must fit inside optical delay you can afford. Holding a photon 100 ns in silicon nitride costs ~15 m of waveguide; at PsiQuantum's measured 1.8 ± 0.2 dB/m single-mode SiN loss that is ~27 dB against a per-photon budget near 0.5 dB. The same delay in fibre costs ~4 mdB plus two fibre-to-chip transitions at 52 ± 12 mdB [D][1]. Feed-forward delay must live off-chip; its loss price is packaging, not waveguide [S]. Past ~1 GHz the wall becomes SNSPD dead time.
+Modulator bandwidth is not the constraint. What binds is detector rise, discrimination, decision and driver settling, which must fit inside optical delay you can afford. Holding a photon 100 ns in silicon nitride costs ~15 m of waveguide; at PsiQuantum's measured 1.8 ± 0.2 dB/m single-mode SiN loss that is ~27 dB against a per-photon budget near 0.5 dB. The same delay in fibre costs ~4 mdB plus two fibre-to-chip transitions at 52 ± 12 mdB [D][146]. Feed-forward delay must live off-chip; its loss price is packaging, not waveguide [S]. Past ~1 GHz the wall becomes SNSPD dead time.
 
 ## Engineering state of the art
 
 | Date | Figure | Who | Tag |
 |---|---|---|---|
-| 2025-01 | Feed-forward in one 1 MHz cycle, 35 chips | Xanadu | [D][2] |
-| 2026-06-02 | ~150 ns detector-in to settled drive | QuiX Quantum | [C][3] |
-| 2026-06-02 | 196 ns continuous-variable loop | Duggan et al. | [P][4] |
-| 2026-06-04 | Non-volatile BTO array, 80 ns | Lumiphase | [D][5] |
+| 2025-01 | Feed-forward in one 1 MHz cycle, 35 chips | Xanadu | [D][149] |
+| 2026-06-02 | ~150 ns detector-in to settled drive | QuiX Quantum | [C][620] |
+| 2026-06-02 | 196 ns continuous-variable loop | Duggan et al. | [P][616] |
+| 2026-06-04 | Non-volatile BTO array, 80 ns | Lumiphase | [D][400] |
 
-June 2026 reset the arithmetic: 80 ns against a 1 µs cycle is ~12×, and rack electronics at 150–196 ns cut it to ~2×. That array's zero static power costs 1.48 dB per cell, ~15× PsiQuantum's 100 mdB in-line switch [D][1], [5] — routing plane, not fusion plane.
+June 2026 reset the arithmetic: 80 ns against a 1 µs cycle is ~12×, and rack electronics at 150–196 ns cut it to ~2×. That array's zero static power costs 1.48 dB per cell, ~15× PsiQuantum's 100 mdB in-line switch [D][146], [400] — routing plane, not fusion plane.
 
 ## Manufacturing, materials & supply chain
-TFLN comes from two merchant vendors, HyperLight and Lightium [P][6]; volume BTO only from PsiQuantum's 300 mm GlobalFoundries flow [D][1] and Lumiphase's pilot [D][5]; Xanadu's 0.085 dB/facet coupling used Corning and DISCO [C][7]. No cost per channel is public. I/O burden is this node: a driver and DAC per modulator, a coax and discriminator per detector. QuiX's unit is 32×32 [C][3], so 10³ modes is ~30 racks; at 10⁴ the wall is inter-rack clock skew, at 10⁶ nothing scales. The machine falls under BIS ECCN 4A906 [G:BIS-QUANTUM-2024].
+TFLN comes from two merchant vendors, HyperLight and Lightium [P][402]; volume BTO only from PsiQuantum's 300 mm GlobalFoundries flow [D][146] and Lumiphase's pilot [D][400]; Xanadu's 0.085 dB/facet coupling used Corning and DISCO [C][148]. No cost per channel is public. I/O burden is this node: a driver and DAC per modulator, a coax and discriminator per detector. QuiX's unit is 32×32 [C][620], so 10³ modes is ~30 racks; at 10⁴ the wall is inter-rack clock skew, at 10⁶ nothing scales. The machine falls under BIS ECCN 4A906 [G:BIS-QUANTUM-2024].
 
 ## Role in the stack
-A hub, not a path choice: it drives the fusion path (PsiQuantum, Quandela, QuiX) and the continuous-variable/GKP path (Xanadu) identically, and sets the derived clock wherever fusions or homodyne measurements iterate — 1.0 MHz at system scale, 5–7 MHz at unit scale. Verification: the figures sit at three reference planes. QuiX's ~150 ns is detector-to-drive [C][3]; 196 ns a full CV loop [P][4]; Aurora's 1 MHz a cycle time, not a latency [D][2].
+A hub, not a path choice: it drives the fusion path (PsiQuantum, Quandela, QuiX) and the continuous-variable/GKP path (Xanadu) identically, and sets the derived clock wherever fusions or homodyne measurements iterate — 1.0 MHz at system scale, 5–7 MHz at unit scale. Verification: the figures sit at three reference planes. QuiX's ~150 ns is detector-to-drive [C][620]; 196 ns a full CV loop [P][616]; Aurora's 1 MHz a cycle time, not a latency [D][149].
 
 ## Actors & economics
 **Who.**
 
 | Organisation | Role | Country | What they do | Evidence |
 |---|---|---|---|---|
-| Xanadu | developer | CA | Only system-scale single-cycle feed-forward | [D][2] |
-| PsiQuantum | developer | US | 300 mm BTO switches, DARPA V&V | [D][1] |
-| QuiX Quantum | developer | NL | Rack feed-forward unit, ~150 ns | [C][3] |
-| Lumiphase | supplier | CH | Non-volatile BTO array | [D][5] |
+| Xanadu | developer | CA | Only system-scale single-cycle feed-forward | [D][149] |
+| PsiQuantum | developer | US | 300 mm BTO switches, DARPA V&V | [D][146] |
+| QuiX Quantum | developer | NL | Rack feed-forward unit, ~150 ns | [C][620] |
+| Lumiphase | supplier | CH | Non-volatile BTO array | [D][400] |
 
 **Money.**
-2024-09 · HyperLight · Series B · USD 37 M · Summit Partners · closed [P][6]
+2024-09 · HyperLight · Series B · USD 37 M · Summit Partners · closed [P][402]
 2025-07-10 · QuiX · Series A · EUR 15 M · Invest-NL, EIC · closed [C][G:QUIX-SERIESA-2025-07]
 2026-05-21 · GlobalFoundries · CHIPS LOI · USD 375 M · US Commerce [G:CHIPS-LOI-2026-05]
-2026-07-22 · PsiQuantum · QBI Stage C, BTO-switch V&V · USD 125 M · DARPA [P][8]
+2026-07-22 · PsiQuantum · QBI Stage C, BTO-switch V&V · USD 125 M · DARPA [P][157]
 
 **Market & supply chain.** Two TFLN vendors, one volume BTO line, and no merchant vendor of low-latency feed-forward at all — each firm builds its own. The scarce input is the deterministic sub-200 ns detector-to-driver path, not the modulator. Pays for G3/G4, G6.
 
-**IP & standards.** No feed-forward patent family surfaced from a dated database as of 2026-09-04; the BTO gate array is the dated advance [D][5].
+**IP & standards.** No feed-forward patent family surfaced from a dated database as of 2026-09-04; the BTO gate array is the dated advance [D][400].
 
-**Roadmaps & track record.** Xanadu 1 MHz (delivered 2025-01, unimproved) [D][2]; QuiX named fast feed-forward a 2026 blocker in 2025-07 and installed the unit 2026-06-02 [C][3]; PsiQuantum published no 2026 hardware result [P][8]. QuiX alone shipped what it named.
+**Roadmaps & track record.** Xanadu 1 MHz (delivered 2025-01, unimproved) [D][149]; QuiX named fast feed-forward a 2026 blocker in 2025-07 and installed the unit 2026-06-02 [C][620]; PsiQuantum published no 2026 hardware result [P][157]. QuiX alone shipped what it named.
 
 **Strategic reading.** If sub-200 ns loops generalise, the bottleneck migrates to detector dead time and the fibre delay lines holding photons during the decision — favouring owners of packaging and detector supply over FPGA vendors. A merchant feed-forward box would commoditise a layer three firms treat as differentiation.
 
@@ -64,14 +64,14 @@ A hub, not a path choice: it drives the fusion path (PsiQuantum, Quandela, QuiX)
 Confirm by 2027: a loop under 200 ns above 32 channels, or a system cycle faster than 1 MHz; demote if Aurora's 1 MHz still stands in 2028. Best case 2029: ~10 MHz rack-scale. Worst case: unit latency never couples to scale. Open: does 150 ns hold under 32-channel load; does non-volatile BTO reach usable in-line loss.
 
 ## Sources
-[1] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
-[2] H. A. Rad *et al.*, “Scaling and networking a modular photonic quantum computer,” *Nature*, vol. 638, no. 8052, pp. 912–919, Jan. 2025, doi: [10.1038/s41586-024-08406-9](https://doi.org/10.1038/s41586-024-08406-9). [D]
-[3] QuiX Quantum, “QuiX Quantum Installs Real-Time Control Component for Universal Photonic Quantum Computer,” Jun. 2, 2026. [Online]. Available: https://www.quixquantum.com/news/quix-quantum-installs-real-time-control-component-for-universal-photonic-quantum-computer [C]
-[4] D. Duggan *et al.*, “FPGA Based Feedforward System for Photonic Quantum Computing Applications,” [arXiv:2606.03500](https://arxiv.org/abs/2606.03500), Jun. 2026. [P]
-[5] C. Català-Lahoz *et al.*, “High-speed non-volatile barium titanate field-programmable photonic gate array,” *Nat. Photon.*, vol. 20, no. 8, pp. 932–940, Aug. 2026, doi: [10.1038/s41566-026-01934-y](https://doi.org/10.1038/s41566-026-01934-y). [D]
-[6] optics.org, “Lithium niobate in vogue as thin-film developers raise cash,” Sep. 24, 2024. [Online]. Available: https://optics.org/news/lithium-niobate-in-vogue-as-thin-film-developers-raise-cash [P]
-[7] Xanadu, “Xanadu sets new industry benchmark in photonic chip packaging,” PR Newswire, Jun. 10, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/xanadu-sets-new-industry-benchmark-in-photonic-chip-packaging-302796562.html [C]
-[8] M. Abdel-Kareem, “PsiQuantum Secures $125 Million Expanded Agreement with DARPA under QBI Program,” Quantum Computing Report, Jul. 22, 2026. [Online]. Available: https://quantumcomputingreport.com/psiquantum-secures-125-million-expanded-agreement-with-darpa-under-qbi-program/ [P]
+[146] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
+[148] Xanadu, “Xanadu sets new industry benchmark in photonic chip packaging,” PR Newswire, Jun. 10, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/xanadu-sets-new-industry-benchmark-in-photonic-chip-packaging-302796562.html [C]
+[149] H. A. Rad *et al.*, “Scaling and networking a modular photonic quantum computer,” *Nature*, vol. 638, no. 8052, pp. 912–919, Jan. 2025, doi: [10.1038/s41586-024-08406-9](https://doi.org/10.1038/s41586-024-08406-9). [D]
+[157] M. Abdel-Kareem, “PsiQuantum Secures $125 Million Expanded Agreement with DARPA under QBI Program,” Quantum Computing Report, Jul. 22, 2026. [Online]. Available: https://quantumcomputingreport.com/psiquantum-secures-125-million-expanded-agreement-with-darpa-under-qbi-program/ [P]
+[400] C. Català-Lahoz *et al.*, “High-speed non-volatile barium titanate field-programmable photonic gate array,” *Nat. Photon.*, vol. 20, no. 8, pp. 932–940, Aug. 2026, doi: [10.1038/s41566-026-01934-y](https://doi.org/10.1038/s41566-026-01934-y). [D]
+[402] optics.org, “Lithium niobate in vogue as thin-film developers raise cash,” Sep. 24, 2024. [Online]. Available: https://optics.org/news/lithium-niobate-in-vogue-as-thin-film-developers-raise-cash [P]
+[616] D. Duggan *et al.*, “FPGA Based Feedforward System for Photonic Quantum Computing Applications,” [arXiv:2606.03500](https://arxiv.org/abs/2606.03500), Jun. 2026. [P]
+[620] QuiX Quantum, “QuiX Quantum Installs Real-Time Control Component for Universal Photonic Quantum Computer,” Jun. 2, 2026. [Online]. Available: https://www.quixquantum.com/news/quix-quantum-installs-real-time-control-component-for-universal-photonic-quantum-computer [C]
 
 ## Open verification items
 Institutional affiliations for arXiv:2606.03500 are not on the retrievable abstract page; the author list points to the DTU group but is unconfirmed. The three 2026 latency figures sit at different reference planes and no source reconciles them. The 27 dB on-chip versus 4 mdB in-fibre delay comparison is derived here from published loss figures, not measured. No cost per modulator or feed-forward channel is public.

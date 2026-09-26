@@ -3486,20 +3486,6 @@
    "verified": true,
    "note": "verified 24 Sep 2026 (undated tutorial page)"
   },
-  "https://downloads.regulations.gov/bis-2024-0020-0001/content.htm": {
-   "org": "Bureau of Industry and Security, U.S. Department of Commerce",
-   "title": "Commerce Control List Additions and Revisions; Implementation of Controls on Advanced Technologies Consistent With Controls Implemented by International Partners",
-   "journal": "Federal Register",
-   "volume": "89",
-   "issue": "173",
-   "pages": "72926-72956",
-   "date": "2024-09-06",
-   "kind": "report",
-   "site": "Regulations.gov",
-   "publisher": "Federal Register (U.S. Government Publishing Office)",
-   "url": "https://downloads.regulations.gov/BIS-2024-0020-0001/content.htm",
-   "verified": true
-  },
   "https://efts.sec.gov/latest/search-index?q=%22skywater%22&forms=10-k&ciks=0001907982": {
    "org": "U.S. Securities and Exchange Commission",
    "title": "EDGAR full-text search: \"SkyWater\" in D-Wave Quantum Inc. 10-K filings",
@@ -3534,6 +3520,9 @@
    "kind": "web",
    "site": "GlobalFoundries (gf.com) press release",
    "url": "https://gf.com/gf-press-release/globalfoundries-launches-quantum-technology-solutions-to-scale-us-quantum-manufacturing/",
+   "also": [
+    "https://investors.gf.com/news-releases/news-release-details/globalfoundries-launches-quantum-technology-solutions-scale-us"
+   ],
    "verified": true
   },
   "https://github.com/oscarhiggott/pymatching": {
@@ -3552,15 +3541,6 @@
    "kind": "web",
    "site": "GitHub",
    "url": "https://github.com/quantumlib/Stim/blob/main/doc/gates.md",
-   "verified": true
-  },
-  "https://investors.gf.com/news-releases/news-release-details/globalfoundries-launches-quantum-technology-solutions-scale-us": {
-   "org": "GlobalFoundries Inc.",
-   "title": "GlobalFoundries launches Quantum Technology Solutions to scale U.S. quantum manufacturing",
-   "date": "2026-05-21",
-   "kind": "web",
-   "site": "investors.gf.com",
-   "url": "https://investors.gf.com/news-releases/news-release-details/globalfoundries-launches-quantum-technology-solutions-scale-us",
    "verified": true
   },
   "https://investors.ionq.com/news/news-details/2025/ionq-completes-acquisition-of-id-quantique-cementing-leadership-in-quantum-networking-and-secure-communications/default.aspx": {
@@ -4702,6 +4682,10 @@
    "site": "Federal Register",
    "publisher": "Office of the Federal Register",
    "url": "https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies",
+   "also": [
+    "https://downloads.regulations.gov/bis-2024-0020-0001/content.htm",
+    "https://www.govinfo.gov/content/pkg/FR-2024-09-06/html/2024-19633.htm"
+   ],
    "verified": true
   },
   "https://www.formfactor.com/product/quantum-cryo/quantum-wafer-multi-chip-cryogenic/iq3000/": {
@@ -4739,18 +4723,6 @@
    "kind": "web",
    "site": "GlobeNewswire",
    "url": "https://www.globenewswire.com/news-release/2026/07/24/3332879/0/en/quantum-x-labs-reports-meaningful-error-correction-decoder-results-with-nvidia-cuda-q-qec.html",
-   "verified": true
-  },
-  "https://www.govinfo.gov/content/pkg/FR-2024-09-06/html/2024-19633.htm": {
-   "org": "Bureau of Industry and Security, Department of Commerce",
-   "title": "Commerce Control List Additions and Revisions; Implementation of Controls on Advanced Technologies Consistent With Controls Implemented by International Partners",
-   "journal": "Federal Register",
-   "volume": "89",
-   "pages": "72926",
-   "date": "2024-09-06",
-   "kind": "report",
-   "publisher": "U.S. Government Publishing Office",
-   "url": "https://www.govinfo.gov/content/pkg/FR-2024-09-06/html/2024-19633.htm",
    "verified": true
   },
   "https://www.hamamatsu.com/us/en/news/events/2026/aps-damop-2026.html": {
@@ -8594,7 +8566,7 @@
     "grade": "G"
    },
    {
-    "work": "https://investors.gf.com/news-releases/news-release-details/globalfoundries-launches-quantum-technology-solutions-scale-us",
+    "work": "https://gf.com/gf-press-release/globalfoundries-launches-quantum-technology-solutions-to-scale-us-quantum-manufacturing",
     "grade": "C"
    },
    {
@@ -8614,7 +8586,7 @@
     "grade": "C"
    },
    {
-    "work": "https://www.govinfo.gov/content/pkg/FR-2024-09-06/html/2024-19633.htm",
+    "work": "https://www.federalregister.gov/documents/2024/09/06/2024-19633/implementation-of-additional-export-controls-certain-advanced-computing-items-supercomputer-and",
     "grade": "G"
    },
    {
@@ -11106,7 +11078,7 @@
     "grade": "G"
    },
    {
-    "work": "https://downloads.regulations.gov/bis-2024-0020-0001/content.htm",
+    "work": "https://www.federalregister.gov/documents/2024/09/06/2024-19633/implementation-of-additional-export-controls-certain-advanced-computing-items-supercomputer-and",
     "grade": "G"
    },
    {

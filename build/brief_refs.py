@@ -1,30 +1,33 @@
 # -*- coding: utf-8 -*-
 """References of the 96 technology briefs, on the report's canon (build/sources.py, report §9).
 
-Each brief keeps its own list: IEEE entries numbered in order of first citation in the English brief text (all text outside
-the Sources list, the sections after it included); the Russian brief uses the same numbers and the same entries (a
-bibliography is not translated). One work = one entry (a preprint and its published version, a work listed twice); an
-entry never cited is dropped. A work already in the report's bibliography (data/sources.json) is referenced there
-("report:CODE#i"), never copied; every other work has its record in data/brief-sources.json:
+Each brief keeps its own list of IEEE entries; the numbers are the Map's permanent work numbers (build/worknum.py): the
+same work carries the same number in §9, in every brief and in every later edition, so a brief's list shows its subset of
+the bibliography in ascending order, with gaps. The Russian brief uses the same numbers and the same entries (a bibliography
+is not translated). One work = one entry (a preprint and its published version, a work listed twice); an entry never cited
+is dropped. A work already in the report's bibliography (data/sources.json) is referenced there ("report:CODE#i"), never
+copied; every other work has its record in data/brief-sources.json:
 
     {"works":  {key: record},                         # same schema as data/sources.json
-     "briefs": {bid: [{"work": key | "report:S2#0", "grade": "D"}, ...]}}   # in number order: entry n = item n-1
+     "briefs": {bid: [{"work": key | "report:S2#0", "grade": "D"}, ...]}}   # in order of first citation in the English text
 
-The md Sources section is derived from those records: plain-text IEEE lines "[n] … [grade]" (the text form of
-sources.ieee(): journal names in *italics*, DOI and arXiv ids as links, URLs bare). Lines of a Sources section that are not
-numbered entries (research notes such as "[G] …", "General facts cited above: …") are kept as they are, after the list.
+The md Sources section is derived from those records: plain-text IEEE lines "[n] … [grade]" in number order (the text form
+of sources.ieee(): journal names in *italics*, DOI and arXiv ids as links, URLs bare). Lines of a Sources section that are
+not numbered entries (research notes such as "[G] …", "General facts cited above: …") are kept as they are, after the list.
 
     python3 build/brief_refs.py --migrate           # one-time: works, renumbering of EN+RU text, data file, md lists
     python3 build/brief_refs.py --merge-verified [DIR]   # fold verified records (DIR/out_*.json) into the data file
     python3 build/brief_refs.py --write             # regenerate every md Sources list from the data file
     python3 build/brief_refs.py --regrade           # entry grades from the text's own citation tags (one rule for all briefs), then --write
     python3 build/brief_refs.py --check             # lists == data, citations == entries, numbering, RU == EN
+    python3 build/brief_refs.py --absolute          # one-time (26 Sep 2026): seed the permanent numbers, renumber every brief's text and list
 """
 import glob, json, os, re, sys
 from collections import OrderedDict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sources as S
+import worknum
 
 ROOT = S.ROOT
 DATA = os.path.join(ROOT, 'data', 'brief-sources.json')
@@ -53,8 +56,8 @@ RECORD_FIX = {   # values the independent re-check read from OpenAlex (24 Sep 20
 RENAME = {'arxiv:2408.13687': 'arxiv:2402.15644'}   # the key named a different paper (McEwen et al. is arXiv:2402.15644)
 FIELDS = ('authors', 'etal', 'n_authors', 'org', 'title', 'journal', 'volume', 'issue', 'pages', 'article', 'date', 'pubdate', 'doi', 'arxiv',
           'kind', 'site', 'publisher', 'edition', 'section', 'url', 'also', 'retraction', 'verified')
-ENTRY = re.compile(r'^(?:\[(\d{1,3}[a-z]?)\]|(\d{1,3})\.)\s+(.*)$')
-CITE = re.compile(r'(?<![\[\w:])\[(\d{1,3}[a-z]?)\](?![\](])')   # a bare [n]: not [[4,2,2]], not [G:…], not a md link
+ENTRY = re.compile(r'^(?:\[(\d{1,4}[a-z]?)\]|(\d{1,4})\.)\s+(.*)$')
+CITE = re.compile(r'(?<![\[\w:])\[(\d{1,4}[a-z]?)\](?![\](])')   # a bare [n]: not [[4,2,2]], not [G:…], not a md link
 MAP = OrderedDict([('authors', ['R. Neeman']), ('title', 'Quantum Technology Map'), ('kind', 'report'), ('edition', '2026.09 (beta)'),
                    ('publisher', 'Qodeh'), ('date', '2026-09')])
 
@@ -132,15 +135,7 @@ def ids_of_line(rec):
 
 
 def ids_of_record(r):
-    ids = []
-    if r.get('doi'): ids.append('doi:' + r['doi'].lower().rstrip('.'))
-    if r.get('arxiv'): ids.append('arxiv:' + r['arxiv'])
-    for u in [r.get('url', '')] + list(r.get('also', [])):
-        if not u: continue
-        ids.append('u:' + S.norm(u))
-        if S.arxiv_of(u): ids.append('arxiv:' + S.arxiv_of(u))
-        if S.doi_of(u): ids.append('doi:' + S.doi_of(u).lower())
-    return ids
+    return S.all_ids(r)
 
 
 def report_index():
@@ -251,9 +246,26 @@ def record_of(work, db):
     return report_record(work) if work.startswith('report:') else db['works'][work]
 
 
+def work_ids(key, db):
+    """the identities the number table knows a brief entry's work by (a self-reference to the Map by its own key)"""
+    r = record_of(key, db)
+    return ([key] if key.startswith('map:') else []) + ids_of_record(r)
+
+
+def number_of(key, db):
+    return worknum.numbers().number(work_ids(key, db), worknum.alpha_label(record_of(key, db)))
+
+
+def numbers_of(bid, db):
+    """the permanent number of each entry of a brief, in the entries' order (order of first citation)"""
+    ns = [number_of(e['work'], db) for e in db['briefs'][bid]]
+    worknum.flush()
+    return ns
+
+
 def md_lines(bid, db):
     out = []
-    for n, e in enumerate(db['briefs'][bid], 1):
+    for n, e in sorted(zip(numbers_of(bid, db), db['briefs'][bid]), key=lambda x: x[0]):
         out.append('[%d] %s%s' % (n, html_to_md(entry_html(record_of(e['work'], db))), (' [%s]' % e['grade']) if e.get('grade') else ''))
     return out
 
@@ -262,7 +274,7 @@ def load():
     with open(DATA, encoding='utf-8') as f: return json.load(f, object_pairs_hook=OrderedDict)
 
 
-TAGCITE = re.compile(r'\[([DCSGPR])\]((?:\[(?:\d{1,3})\](?:, |–)?)+)')   # "[D][3], [5]–[7]": the fact's grade, then its citations
+TAGCITE = re.compile(r'\[([DCSGPR])\]((?:\[(?:\d{1,4})\](?:, |–)?)+)')   # "[D][3], [5]–[7]": the fact's grade, then its citations
 
 
 def text_grades(bid):
@@ -276,7 +288,7 @@ def text_grades(bid):
     for m in TAGCITE.finditer(body):
         g, run = m.group(1), m.group(2)
         nums = []; prev = None; rng = False
-        for tok in re.finditer(r'\[(\d{1,3})\]|(–)', run):
+        for tok in re.finditer(r'\[(\d{1,4})\]|(–)', run):
             if tok.group(2): rng = True; continue
             n = int(tok.group(1))
             if rng and prev is not None: nums += list(range(prev + 1, n))
@@ -292,7 +304,7 @@ def regrade(db):
     changed = 0
     for bid, items in db['briefs'].items():
         tg = text_grades(bid)
-        for n, e in enumerate(items, 1):
+        for n, e in zip(numbers_of(bid, db), items):
             g = tg.get(n) or e.get('grade') or ''
             if g != (e.get('grade') or ''): e['grade'] = g; changed += 1
     return changed
@@ -626,7 +638,7 @@ def list_html(bid, lang, chip=lambda g: ' [%s]' % g):
     db = db_cached()
     if bid not in db['briefs']: return None
     out = ['<ol class="refs" data-nohint="1">']
-    for n, e in enumerate(db['briefs'][bid], 1):
+    for n, e in sorted(zip(numbers_of(bid, db), db['briefs'][bid]), key=lambda x: x[0]):
         h = entry_html(record_of(e['work'], db))
         h = re.sub(r'§(\d+)\.(\d+)\.$', lambda m: '<a class="xref" href="#%s-s%s-%s">§%s.%s</a>.' % (lang, m.group(1), m.group(2), m.group(1), m.group(2)), h)   # the Map's own section, linked
         out.append('<li id="brief-%s-%s-src-%d" value="%d"><span class="src">[%d]</span> <span class="ref">%s</span>%s</li>'
@@ -638,7 +650,7 @@ def list_html(bid, lang, chip=lambda g: ' [%s]' % g):
 def key_info(bid):
     """n → {'n', 'label', 'url', 'year', 'short'} for the brief's key references (from the records, not the md line)."""
     db = db_cached(); out = {}
-    for n, e in enumerate(db['briefs'].get(bid, []), 1):
+    for n, e in zip(numbers_of(bid, db), db['briefs'].get(bid, [])) if bid in db['briefs'] else []:
         r = record_of(e['work'], db)
         url = r.get('url') or (('https://doi.org/' + r['doi']) if r.get('doi') else ('https://arxiv.org/abs/' + r['arxiv']) if r.get('arxiv') else '')
         au = r.get('authors') or []
@@ -650,12 +662,58 @@ def key_info(bid):
     return out
 
 
+# ---------- the one-time move to permanent numbers (26 Sep 2026)
+def clusters(text):
+    """maximal clusters of citations in IEEE form — [3], [5]–[7], [9] — as (start, end, [label…]); a range stands for a..b"""
+    ms = list(CITE.finditer(text)); out = []
+    for m in ms:
+        gap = text[out[-1][1]:m.start()] if out else None
+        if out and gap in ('', ', ', '–'):
+            if gap == '–' and out[-1][2] and out[-1][2][-1].isdigit() and m.group(1).isdigit():
+                out[-1][2] += [str(k) for k in range(int(out[-1][2][-1]) + 1, int(m.group(1)))]
+            out[-1][1] = m.end(); out[-1][2].append(m.group(1))
+        else: out.append([m.start(), m.end(), [m.group(1)]])
+    return out
+
+
+def renumber_text(text, local, missing):
+    out, pos = [], 0
+    for a, b, labs in clusters(text):
+        out.append(text[pos:a]); pos = b
+        if all(l in local for l in labs): out.append(run_text([local[l] for l in labs]))
+        else: missing.append(''.join('[%s]' % l for l in labs)); out.append(text[a:b])
+    out.append(text[pos:])
+    return ''.join(out)
+
+
+def absolute():
+    """Seed data/work-numbers.json (§9 first — sources.build() has done it — then the briefs walked in map order), then
+    rewrite every brief's citations from its local numbers to the permanent ones and regenerate the lists."""
+    db = load(); G = json.load(open(os.path.join(ROOT, 'data', 'graph.json'), encoding='utf-8'))
+    S.build()
+    for bid in [n['id'] for n in G['nodes']]:
+        if bid in db['briefs']: numbers_of(bid, db)
+    worknum.flush()
+    missing, files = [], 0
+    for bid in brief_ids():
+        local = {str(i + 1): n for i, n in enumerate(numbers_of(bid, db))}
+        for lang in ('en', 'ru'):
+            p = path(bid, lang); s = read(p); sp = split(s, lang)
+            if not sp: continue
+            pre, body, post = sp
+            s2 = renumber_text(pre, local, missing) + '\n'.join(body) + ('\n' if body else '') + renumber_text(post, local, missing)
+            if s2 != s: write(p, s2); files += 1
+    write_all(db)
+    return files, missing
+
+
 # ---------- check
 def check():
     db = load(); probs = []
     for bid in brief_ids():
         if bid not in db['briefs']: probs.append('%s: no list in the data file' % bid); continue
-        want = md_lines(bid, db); n = len(want)
+        nums = numbers_of(bid, db); want = md_lines(bid, db)
+        if len(set(nums)) != len(nums): probs.append('%s: two entries share a number (%s)' % (bid, [n for n in nums if nums.count(n) > 1]))
         for e in db['briefs'][bid]:
             w = e['work']
             if w.startswith('report:'):
@@ -672,15 +730,9 @@ def check():
             if have != want: probs.append('%s/%s: Sources list differs from the data file' % (bid, lang))
             cs = cites(sp[0] + sp[2])
             for l in cs:
-                if not l.isdigit() or not 1 <= int(l) <= n: probs.append('%s/%s: cites [%s], not in the list' % (bid, lang, l))
-            for k in range(1, n + 1):
+                if not l.isdigit() or int(l) not in nums: probs.append('%s/%s: cites [%s], not in the list' % (bid, lang, l))
+            for k in nums:
                 if str(k) not in cs: probs.append('%s/%s: entry [%d] never cited' % (bid, lang, k))
-            if lang == 'en':
-                first = []
-                for l in cs:
-                    if l not in first: first.append(l)
-                if [x for x in first if x.isdigit()] != [str(k) for k in range(1, len(first) + 1)]:
-                    probs.append('%s: numbers do not ascend by first citation' % bid)
             for a, b, labs in runs(sp[0] + sp[2]):
                 if len(labs) > 1: probs.append('%s/%s: adjacent citations not in IEEE run form: %s' % (bid, lang, ''.join('[%s]' % l for l in labs)))
     unv = sorted({e['work'] for es in db['briefs'].values() for e in es if not e['work'].startswith('report:') and not db['works'].get(e['work'], {}).get('verified')})
@@ -708,6 +760,9 @@ if __name__ == '__main__':
         write_all(db); print('grades changed:', n)
     elif '--write' in a:
         write_all(load())
+    elif '--absolute' in a:
+        files, missing = absolute()
+        t = worknum.load(); print('files rewritten', files, '| works numbered', len(t['works']), '| next', t['next'], '| clusters left as they were', missing[:10])
     elif '--check' in a:
         ps, unv = check()
         for p in ps: print(p)

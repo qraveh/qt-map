@@ -12,34 +12,34 @@ updated: 2026-09-03
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-A fault-tolerant architecture with no deterministic two-qubit gate: pre-made photonic resource states are consumed by destructive linear-optical fusions, and the code lives in the pattern of which fusions succeeded, failed or reported loss. Bartolucci, Birchall, Bombín and colleagues at PsiQuantum formalised it with thresholds in 2023 [S][1]. It replaces GKP-bosonic concatenation as photonics' route to fault tolerance. Attributes: flying photons, no native control modality and no clock of its own; pure-loss errors, no manufacturing precursor beyond fusion and resource-state generation.
+A fault-tolerant architecture with no deterministic two-qubit gate: pre-made photonic resource states are consumed by destructive linear-optical fusions, and the code lives in the pattern of which fusions succeeded, failed or reported loss. Bartolucci, Birchall, Bombín and colleagues at PsiQuantum formalised it with thresholds in 2023 [S][155]. It replaces GKP-bosonic concatenation as photonics' route to fault tolerance. Attributes: flying photons, no native control modality and no clock of its own; pure-loss errors, no manufacturing precursor beyond fusion and resource-state generation.
 
 ## Physics & limits
-Loss is the design variable: a lost photon heralds a fusion failure, that failure is an erasure with a known location, and the decoder routes around it. Hence unusually high tolerances — 2.7% loss per photon with a boosted 6-ring, 17.4% with a {7,4}-encoded state of ~168 photons nobody can make [S][1]. The catch sits below threshold. A 2026 re-analysis shows fusion failure alone, at zero physical loss, leaves a logical-error floor shrinking only with code distance, so being under threshold says nothing about the overhead for 10⁻¹⁰; emitter-mediated fusion raises the threshold to 7.0–7.3% against an unencoded 6-ring's 0.38–0.82% [S][2][G:SPARROW-SUBTHRESHOLD-2026-06]. Moving the floor takes lower-loss photonics, boosted fusion, or emitters.
+Loss is the design variable: a lost photon heralds a fusion failure, that failure is an erasure with a known location, and the decoder routes around it. Hence unusually high tolerances — 2.7% loss per photon with a boosted 6-ring, 17.4% with a {7,4}-encoded state of ~168 photons nobody can make [S][155]. The catch sits below threshold. A 2026 re-analysis shows fusion failure alone, at zero physical loss, leaves a logical-error floor shrinking only with code distance, so being under threshold says nothing about the overhead for 10⁻¹⁰; emitter-mediated fusion raises the threshold to 7.0–7.3% against an unencoded 6-ring's 0.38–0.82% [S][335][G:SPARROW-SUBTHRESHOLD-2026-06]. Moving the floor takes lower-loss photonics, boosted fusion, or emitters.
 
 ## Engineering state of the art
 
 | Date | Figure | Who | Tag |
 |---|---|---|---|
-| 2023-02 | FBQC framework and thresholds derived | Bartolucci et al., PsiQuantum | [S][1] |
-| 2025-02 | Component fusion Bell fidelity 99.22% | PsiQuantum | [D][3] |
-| 2025-06 | Loss threshold 2.7% (boosted 6-ring) to 17.4% ({7,4}) | theory | [S][1] |
-| 2026-06 | Fusion-failure floor at zero loss; 7.0–7.3% emitter threshold | Sparrow | [S][2] |
+| 2023-02 | FBQC framework and thresholds derived | Bartolucci et al., PsiQuantum | [S][155] |
+| 2025-02 | Component fusion Bell fidelity 99.22% | PsiQuantum | [D][146] |
+| 2025-06 | Loss threshold 2.7% (boosted 6-ring) to 17.4% ({7,4}) | theory | [S][155] |
+| 2026-06 | Fusion-failure floor at zero loss; 7.0–7.3% emitter threshold | Sparrow | [S][335] |
 
-On the report's cross-platform table photonics scores zero on every fault-tolerance primitive: no below-threshold scaling, no logical qubit past break-even, no logical two-qubit gate, detection-only decoding [D][4].
+On the report's cross-platform table photonics scores zero on every fault-tolerance primitive: no below-threshold scaling, no logical qubit past break-even, no logical two-qubit gate, detection-only decoding [D][527].
 
 ## Manufacturing, materials & supply chain
-Nothing is manufactured for this code; it inherits the photonic-IC stack of its inputs (300 mm silicon at GlobalFoundries) [C][G:GF-QTS-2026-05]. No yield, cost or energy figure exists because nothing runs it. The burden it imposes is synchronisation: a {7,4}-encoded state means ~168 photons per round, each with a source, switch path and detector channel, against a record of 8 fused photons at 0.4–2.3 per minute [D][5]. At 10³ fusions/s the constraint is switch loss; at the 10⁶ a useful machine needs, cryogenic detector channels and GHz feed-forward, neither built. ECCN 4A906 covers the assembled machine [G:BIS-QUANTUM-ECCN-2024-09].
+Nothing is manufactured for this code; it inherits the photonic-IC stack of its inputs (300 mm silicon at GlobalFoundries) [C][G:GF-QTS-2026-05]. No yield, cost or energy figure exists because nothing runs it. The burden it imposes is synchronisation: a {7,4}-encoded state means ~168 photons per round, each with a source, switch path and detector channel, against a record of 8 fused photons at 0.4–2.3 per minute [D][528]. At 10³ fusions/s the constraint is switch loss; at the 10⁶ a useful machine needs, cryogenic detector channels and GHz feed-forward, neither built. ECCN 4A906 covers the assembled machine [G:BIS-QUANTUM-ECCN-2024-09].
 
 ## Role in the stack
-Requires linear-optical fusion and a resource-state factory, neither at code-relevant scale, and provides nothing downstream — it tops the photonic fusion path (PsiQuantum, Quandela, QuiX). It replaces GKP-bosonic concatenation, and the switch is total: different carrier, detectors, error model. Its MHz cycle is a design claim, not a measurement: the real cycle is resource-state supply, ~0.4–2.3 per minute [D][5]. Verification: the thresholds are decoder simulations under stated noise models, never measured or independently reproduced; the 2026 re-analysis is the first published challenge to the framework's relevance, unanswered as of 4 Sep 2026.
+Requires linear-optical fusion and a resource-state factory, neither at code-relevant scale, and provides nothing downstream — it tops the photonic fusion path (PsiQuantum, Quandela, QuiX). It replaces GKP-bosonic concatenation, and the switch is total: different carrier, detectors, error model. Its MHz cycle is a design claim, not a measurement: the real cycle is resource-state supply, ~0.4–2.3 per minute [D][528]. Verification: the thresholds are decoder simulations under stated noise models, never measured or independently reproduced; the 2026 re-analysis is the first published challenge to the framework's relevance, unanswered as of 4 Sep 2026.
 
 ## Actors & economics
 **Who.**
 
 | Organisation | Role | Country | What they do | Evidence |
 |---|---|---|---|---|
-| PsiQuantum | developer | US | Originated FBQC; sole roadmap bet on it | [S][1] |
+| PsiQuantum | developer | US | Originated FBQC; sole roadmap bet on it | [S][155] |
 | Quandela | developer | FR | Fields compatible linear-optical hardware | [C][G:QUANDELA-LUCY-HPC-2026-04] |
 | Sparrow Quantum | research | DK | Published the 2026 subthreshold critique | [S][G:SPARROW-SUBTHRESHOLD-2026-06] |
 | DARPA | investor | US | QBI Stage C V&V of PsiQuantum's stack | [G:PSIQ-QBI-C-2026-07] |
@@ -64,14 +64,14 @@ Requires linear-optical fusion and a resource-state factory, neither at code-rel
 Confirm by 2028: an end-to-end fusion-lattice demonstration at any code distance with measured loss and logical error; demote if only component numbers persist. Best case 2029: a small working lattice. Worst case: it stays a paper and emitter hybrids inherit it. Open: does anyone rebut the 2026 critique; which threshold survives hardware; does Stage C publish a code-level number.
 
 ## Sources
-[1] S. Bartolucci *et al.*, “Fusion-based quantum computation,” *Nat. Commun.*, vol. 14, Art. no. 912, Feb. 2023, doi: [10.1038/s41467-023-36493-1](https://doi.org/10.1038/s41467-023-36493-1). [arXiv:2101.09310](https://arxiv.org/abs/2101.09310). [S]
-[2] M. C. Löbl, L. A. M. Pettersson, J. Dragašević, S. X. Chen, and O. A. D. Sandberg, “The subthreshold issue of fusion-based quantum computing,” [arXiv:2606.28490](https://arxiv.org/abs/2606.28490), Jun. 2026. [S]
-[3] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
-[4] R. Neeman, “Quantum Technology Map,” ed. 2026.09 (beta), Qodeh, Sep. 2026, §3.2. [D]
-[5] P. Thomas, L. Ruscio, O. Morin, and G. Rempe, “Fusion of deterministically generated photonic graph states,” *Nature*, vol. 629, no. 8012, pp. 567–572, May 2024, doi: [10.1038/s41586-024-07357-5](https://doi.org/10.1038/s41586-024-07357-5). [D]
+[146] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
+[155] S. Bartolucci *et al.*, “Fusion-based quantum computation,” *Nat. Commun.*, vol. 14, Art. no. 912, Feb. 2023, doi: [10.1038/s41467-023-36493-1](https://doi.org/10.1038/s41467-023-36493-1). [arXiv:2101.09310](https://arxiv.org/abs/2101.09310). [S]
+[335] M. C. Löbl, L. A. M. Pettersson, J. Dragašević, S. X. Chen, and O. A. D. Sandberg, “The subthreshold issue of fusion-based quantum computing,” [arXiv:2606.28490](https://arxiv.org/abs/2606.28490), Jun. 2026. [S]
+[527] R. Neeman, “Quantum Technology Map,” ed. 2026.09 (beta), Qodeh, Sep. 2026, §3.2. [D]
+[528] P. Thomas, L. Ruscio, O. Morin, and G. Rempe, “Fusion of deterministically generated photonic graph states,” *Nature*, vol. 629, no. 8012, pp. 567–572, May 2024, doi: [10.1038/s41586-024-07357-5](https://doi.org/10.1038/s41586-024-07357-5). [D]
 
 ## Open verification items
-Source conflict on the 6-ring loss threshold: the loss-tolerant-architecture paper gives 2.7% per photon for a *boosted* 6-ring [1], while the 2026 Sparrow re-analysis gives 0.38–0.82% (static bias) for an *unencoded* 6-ring [2]. The assumptions differ (boosting, bias model, decoder), so the two are not directly comparable; both are stated here rather than reconciled.
+Source conflict on the 6-ring loss threshold: the loss-tolerant-architecture paper gives 2.7% per photon for a *boosted* 6-ring [155], while the 2026 Sparrow re-analysis gives 0.38–0.82% (static bias) for an *unencoded* 6-ring [335]. The assumptions differ (boosting, bias model, decoder), so the two are not directly comparable; both are stated here rather than reconciled.
 The high threshold appears both as "17.4% ({7,4} encoded)" and as "up to 17% with 168-qubit resource states"; the photon count for the {7,4} encoding was not re-derived from the source.
 All thresholds are simulation, never measured, and no independent group has reproduced them.
 PsiQuantum has published no response to the 2026-06 subthreshold critique as of 4 Sep 2026, and no 2026 hardware result at all — progress is visible only through DARPA V&V contracting.
