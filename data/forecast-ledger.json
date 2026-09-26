@@ -44,9 +44,9 @@
   },
   {
    "id": "F3",
-   "indicator": "machines that have run a code; decoders in the loop",
+   "indicator": "machines that list a code (run, or named in the roadmap); decoders in the loop",
    "now": "47 / 5",
-   "e2027": "≥ 55 machines with a code (cumulative series 2022 5, 2023 8, 2024 14, 2025 31, 2026 43); 6–8 in the loop",
+   "e2027": "≥ 55 machines with a code (cumulative series by cohort year 2022 5, 2023 8, 2024 14, 2025 31, 2026 43; 4 planned machines dated after 2026 lie outside it); 6–8 in the loop",
    "e2028": "≥ 65 with a code; 8–12 in the loop (11 machines list real-time decoding as planned or intended: Apollo, IBM Quantum Blue Jay, IBM Quantum Cockatoo, IBM Quantum Kookaburra, IBM Quantum Starling, IQM Halocene, Libra, Magne, Sol, Superion 256, neutral-ytterbium QPU; half on time is the working assumption)",
    "basis": "cumulative count of code-running machines by cohort (a doubling every ~2 years since 2023) and the register's planned-decoding rows",
    "confidence": "medium",
