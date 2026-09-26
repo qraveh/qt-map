@@ -657,6 +657,7 @@ def footer(cfg):
   {editions_html('en')}
   <p><b>Disclosures.</b> This is a single-author publication, produced independently — no funding, sponsorship, affiliation, or solicitation. Factual corrections are welcome.</p>
   <p><b>Provenance.</b> Research and drafting with Claude (Anthropic); every figure traces to a dated, linked primary source, and every claim carries an evidence tag ([D] measured / peer-reviewed, [C] company claim, [R] roadmap, [S] simulation or estimate, [G] established fact, [P] preprint or trade press). Known conflicts between sources are stated, not averaged. Open verification items are listed at the end of each brief. Data cut-off: 4 September 2026.</p>
+  <p><b>Sharing image.</b> The picture shown when this page is shared: Raveh Neeman, <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>; a collage of photographs by OJB Quantum (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>), Steve Jurvetson (<a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>) and the U.S. National Institute of Standards and Technology (public domain) — <a href="{OG_CREDITS_URL}">full list of works</a>.</p>
  </div>
  <div class="lang-ru">
   <p><b>Как цитировать.</b> {cite_ru}</p>
@@ -665,21 +666,59 @@ def footer(cfg):
   {editions_html('ru')}
   <p><b>Раскрытие.</b> Это публикация одного автора, подготовленная независимо — без финансирования, спонсорства, аффилиации и заказа. Фактические поправки приветствуются.</p>
   <p><b>Происхождение.</b> Исследование и написание — совместно с Claude (Anthropic); каждая цифра прослеживается к датированному первоисточнику по ссылке, каждое утверждение несёт тег свидетельства ([D] измерено / рецензировано, [C] заявление компании, [R] дорожная карта, [S] симуляция или оценка, [G] установленный факт, [P] препринт или отраслевая пресса). Расхождения между источниками названы, а не усреднены. Открытые пункты верификации перечислены в конце каждого брифа. Данные по состоянию на 4 сентября 2026.</p>
+  <p><b>Изображение для ссылок.</b> Картинка, которую показывают, когда этой страницей делятся: Raveh Neeman, <a href="https://creativecommons.org/licenses/by/4.0/deed.ru" rel="license">CC BY 4.0</a>; коллаж из фотографий OJB Quantum (<a href="https://creativecommons.org/licenses/by/4.0/deed.ru">CC BY 4.0</a>), Steve Jurvetson (<a href="https://creativecommons.org/licenses/by/2.0/deed.ru">CC BY 2.0</a>) и Национального института стандартов и технологий США (общественное достояние) — <a href="{OG_CREDITS_URL}">полный список работ</a>.</p>
  </div>
 </footer>'''
+
+# ---------- sharing image (og:image / twitter:image)
+# The picture social platforms show when the page is shared. Chosen by the editor on 2026-09-26 from the
+# media register (SP08, 40_outputs/og-image, one of thirteen variants); a composite of photographs, no
+# generative model. build/social/CREDITS.md is the register's credit file, copied as is, and the colophon
+# links to it: several of the source photographs are CC BY, whose attribution is a licence condition.
+OG_IMAGE_FILE = os.path.join(ROOT, 'build', 'social', 'og-image_quantum-technology-map.jpg')
+OG_IMAGE_URL = 'https://qodeh.com/images/og-image_quantum-technology-map.jpg'
+OG_IMAGE_ALT = 'A night sky of quantum hardware: a dilution refrigerator, a crystal of trapped ions, laser light, trapped-ion stars and qubit chips'
+OG_CREDITS_URL = 'https://github.com/qraveh/qt-map/blob/main/build/social/CREDITS.md'
+
+def og_image_size():
+    """(width, height) read from the JPEG itself, so og:image:width/height cannot drift from the file
+    when the image is replaced. Parses the SOFn marker; stdlib only, the pinned build gains no dependency.
+    A missing or unreadable file stops the build: og:image pointing at nothing is worse than no build."""
+    if not os.path.exists(OG_IMAGE_FILE):
+        raise SystemExit('sharing image missing: ' + OG_IMAGE_FILE)
+    data = open(OG_IMAGE_FILE, 'rb').read()
+    if data[:2] != bytes([0xFF, 0xD8]):
+        raise SystemExit('sharing image is not a JPEG: ' + OG_IMAGE_FILE)
+    sof = {0xC0, 0xC1, 0xC2, 0xC3, 0xC5, 0xC6, 0xC7, 0xC9, 0xCA, 0xCB, 0xCD, 0xCE, 0xCF}
+    i = 2
+    while i + 9 < len(data):
+        if data[i] != 0xFF:
+            i += 1
+            continue
+        m = data[i + 1]
+        if m in sof:
+            return int.from_bytes(data[i + 7:i + 9], 'big'), int.from_bytes(data[i + 5:i + 7], 'big')
+        if m == 0xFF or m == 0x01 or 0xD0 <= m <= 0xD8:
+            i += 2 if m != 0xFF else 1
+            continue
+        i += 2 + int.from_bytes(data[i + 2:i + 4], 'big')
+    raise SystemExit('no SOF marker in the sharing image: ' + OG_IMAGE_FILE)
 
 def head_meta(cfg):
     if cfg['mode']=='internal': return '<meta name="color-scheme" content="light dark">'
     doi=cfg['doi_concept']; cite_doi=('' if STATUS=='beta' else '<meta name="citation_doi" content="'+doi+'">'); ident=(cfg['url'] if STATUS=='beta' else 'https://doi.org/'+doi); desc='Every quantum-computing technology (96) and every quantum machine built, announced or planned (136): analysed and summarised, partitioned by seven invariant design attributes, compared and combined in dozens of ways — with a brief on every technology and a card on every machine. Bilingual EN/RU, CC BY 4.0.'
+    ogw, ogh = og_image_size()
     ld={"@context":"https://schema.org","@type":"ScholarlyArticle","name":"Quantum Technology Map","headline":"Quantum Technology Map","version":cfg['edition'],"datePublished":cfg['date'],"codeRepository":cfg.get('repo'),"inLanguage":["en","ru"],
         "author":{"@type":"Person","name":cfg['author']},"publisher":{"@type":"Organization","name":cfg['publisher'],"url":"https://qodeh.com"},
-        "license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":True,"identifier":ident,"sameAs":ident,"url":cfg['url'],"description":desc,
+        "license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":True,"identifier":ident,"sameAs":ident,"url":cfg['url'],"image":OG_IMAGE_URL,"description":desc,
         "keywords":["quantum computing","quantum error correction","superconducting qubits","trapped ions","neutral atoms","photonic quantum computing","spin qubits","technology landscape","technology graph"]}
     return ('<meta name="color-scheme" content="light dark">\n<meta name="description" content="'+html.escape(desc)+'">\n'
             f'<meta name="author" content="{cfg["author"]}">\n<meta name="citation_title" content="Quantum Technology Map">\n<meta name="citation_author" content="{cfg["author"]}">\n'
             f'<meta name="citation_publication_date" content="{cfg["date"].replace("-","/")}">\n<meta name="citation_publisher" content="{cfg["publisher"]}">\n{cite_doi}\n<meta name="citation_language" content="en">\n'
             f'<meta name="DC.title" content="Quantum Technology Map"><meta name="DC.creator" content="{cfg["author"]}"><meta name="DC.publisher" content="{cfg["publisher"]}"><meta name="DC.date" content="{cfg["date"]}"><meta name="DC.identifier" content="{ident}"><meta name="DC.rights" content="CC BY 4.0"><meta name="DC.language" content="en, ru">\n'
             f'<meta property="og:type" content="article"><meta property="og:title" content="Quantum Technology Map"><meta property="og:description" content="{html.escape(desc)}"><meta property="og:url" content="{cfg["url"]}">\n'
+            # og:image:* attach to the most recently seen og:image, so they follow it here and nowhere else
+            f'<meta property="og:image" content="{OG_IMAGE_URL}"><meta property="og:image:width" content="{ogw}"><meta property="og:image:height" content="{ogh}"><meta property="og:image:alt" content="{html.escape(OG_IMAGE_ALT)}"><meta name="twitter:card" content="summary_large_image">\n'
             f'<link rel="license" href="https://creativecommons.org/licenses/by/4.0/"><link rel="canonical" href="{cfg["url"]}">\n'
             '<script type="application/ld+json">'+json.dumps(ld,ensure_ascii=False)+'</script>')
 
