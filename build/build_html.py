@@ -803,7 +803,8 @@ def build(cfg=PUBLIC):
 <script>{NAVJS}</script>
 <script>{JS}</script>
 <script>{BRIEF_JS}</script>
-<script>window.__TIPS={json.dumps(tips_dict(),ensure_ascii=False,separators=(',',':'))};window.__GTIPS={json.dumps(BR.GTIPS,ensure_ascii=False,separators=(',',':'),sort_keys=True)};</script>
+<script>window.__TIPS={json.dumps(tips_dict(),ensure_ascii=False,separators=(',',':'))};</script>
+<script>window.__GTIPS={json.dumps(BR.GTIPS,ensure_ascii=False,separators=(',',':'),sort_keys=True)};</script>
 <script>(function(){{var T=window.__GTIPS||{{}};var as=document.querySelectorAll('a.tag-link[data-g]');for(var i=0;i<as.length;i++){{var c=as[i].getAttribute('data-g');if(T[c])as[i].setAttribute('title',T[c]);as[i].removeAttribute('data-g');}}}})();{GTIP_JS}</script><script>{FOLD_JS}</script><script>{TAG_JS}</script>
 <script>{FEEDBACK_JS}</script>
 <script>if(window.__relabelMap)window.__relabelMap();</script>

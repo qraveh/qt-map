@@ -242,8 +242,8 @@ def expand_page(h):
     h = brief_refs.expand_clones(h)
     k = h.find('window.__KEYREFS='); k2 = h.find('</script>', k)
     if k > 0: h = expand_keys(h, _json.loads(h[k + len('window.__KEYREFS='):k2].rstrip(';')))
-    g = h.find('window.__GTIPS='); g2 = h.find(';</script>', g)
-    if g > 0: h = expand_gtips(h, _json.loads(h[g + len('window.__GTIPS='):g2]))
+    g = h.find('window.__GTIPS='); g2 = h.find('</script>', g)
+    if g > 0: h = expand_gtips(h, _json.loads(h[g + len('window.__GTIPS='):g2].rstrip(';')))
     return h
 
 
