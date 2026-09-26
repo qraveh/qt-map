@@ -9,6 +9,12 @@ from playwright.sync_api import sync_playwright
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PAGE = ROOT / 'dist' / 'Quantum-Technology-Map-2026.09.html'
 MACH = json.load(open(ROOT / 'data' / 'machines.json', encoding='utf-8'))
+GRAPH = json.load(open(ROOT / 'data' / 'graph.json', encoding='utf-8'))
+NN = len(GRAPH['nodes']); NP = len(GRAPH['paths']); NM = len(MACH['machines'])          # 110 stations, 17 paths, 153 machines since 26 Sep 2026 — read from the data
+FAM_COUNT = {f: sum(1 for m in MACH['machines'] if m['family'] == f) for f in ['SC', 'ION', 'ATOM', 'PHOTON', 'SPIN', 'DEFECT', 'TOPO', 'ANNEAL']}
+def place_count(v): return sum(1 for n in GRAPH['nodes'] if v in n['e']['place'])
+PLACE_4K = sorted(n['id'] for n in GRAPH['nodes'] if '4K' in n['e']['place'])
+GLYPH_N = [str(sum(1 for n in GRAPH['nodes'] if n['hub'])), str(sum(1 for n in GRAPH['nodes'] if n['offdiag'])), str(len(GRAPH['empty_status']))]
 WILLOW = next(m for m in MACH['machines'] if m['id'] == 'google-willow')
 WILLOW_NODES = {c['node'] for cells in WILLOW['layers'].values() for c in cells if c.get('state', 'station') == 'station'}   # gaps and the cell values none / undisclosed are not nodes
 WILLOW_ALT = {c['node'] for cells in WILLOW['layers'].values() for c in cells if c['role'] == 'alternate' and c.get('state', 'station') == 'station'}
@@ -69,9 +75,9 @@ def run(pw, w, h):
 
     print(f'viewport {w}×{h}')
     r = read()
-    check('default: 96 stations lit, 14 lines, no edges, no machine', len(r['lit']) == 96 and len(r['lines']) == 14 and not r['edges'] and r['machine'] == '', (len(r['lit']), len(r['lines'])))
+    check(f'default: {NN} stations lit, {NP} lines, no edges, no machine', len(r['lit']) == NN and len(r['lines']) == NP and not r['edges'] and r['machine'] == '', (len(r['lit']), len(r['lines'])))
     opt = p.evaluate("()=>[...document.querySelectorAll('#machine optgroup')].map(o=>[o.label,o.children.length])")
-    check('selector: optgroups in family order with 136 machines', [o[0] for o in opt] == ['superconducting circuits', 'trapped ions', 'neutral atoms', 'photonics', 'semiconductor spins', 'defect spins', 'topological', 'quantum annealers'] and sum(o[1] for o in opt) == 136, opt)
+    check(f'selector: optgroups in family order with {NM} machines', [o[0] for o in opt] == ['superconducting circuits', 'trapped ions', 'neutral atoms', 'photonics', 'semiconductor spins', 'defect spins', 'topological', 'quantum annealers'] and sum(o[1] for o in opt) == NM, opt)
 
     p.select_option('#machine', 'google-willow')
     r = read()
@@ -99,7 +105,7 @@ def run(pw, w, h):
 
     p.locator('#tg-reset').click()
     r = read()
-    check('reset: 96 lit, 14 lines, no edges, select empty, no altuse, card closed', len(r['lit']) == 96 and len(r['lines']) == 14 and not r['edges'] and r['machine'] == '' and not r['altuse'] and r['card'] == '', (len(r['lit']), r['machine'], r['altuse']))
+    check(f'reset: {NN} lit, {NP} lines, no edges, select empty, no altuse, card closed', len(r['lit']) == NN and len(r['lines']) == NP and not r['edges'] and r['machine'] == '' and not r['altuse'] and r['card'] == '', (len(r['lit']), r['machine'], r['altuse']))
 
     # brief E (17 Sep): lens labels, reading marks as badges, static glyph keys
     opts = p.evaluate("()=>[...document.querySelectorAll('#lens option')].map(o=>[o.value,o.textContent])")
@@ -112,25 +118,25 @@ def run(pw, w, h):
     # brief F (17 Sep): place is a list — 4 K lights ct_cryocmos, ct_sfq, ro_spd; mK lights ct_sfq too; no 'vac' anywhere; the card joins the stages
     p.select_option('#lens', 'place'); p.wait_for_function("document.querySelectorAll('#lenslegend [data-lv]').length>0")
     lv = p.evaluate("()=>[...document.querySelectorAll('#lenslegend [data-lv]')].map(b=>[b.dataset.lv,b.querySelector('.cnt')?b.querySelector('.cnt').textContent:''])")
-    check('place lens: values RT / 4K / mK / none with counts 45 / 3 / 9 / 41, no vac', lv == [['RT', '45'], ['4K', '3'], ['mK', '9'], ['none', '41']], lv)
+    check('place lens: values RT / 4K / mK / none with the graph\'s counts, no vac', lv == [['RT', str(place_count('RT'))], ['4K', str(place_count('4K'))], ['mK', str(place_count('mK'))], ['none', str(place_count('none'))]], lv)
     p.locator('#lenslegend [data-lv="4K"]').dispatch_event('click'); r = read()
-    check('place = 4 K stage lights ct_cryocmos, ct_sfq and ro_spd', set(r['lit']) == {'ct_cryocmos', 'ct_sfq', 'ro_spd'}, sorted(r['lit']))
+    check('place = 4 K stage lights exactly the stations whose place holds 4K (ct_cryocmos, ct_sfq, ro_spd, ic_fanout)', sorted(r['lit']) == PLACE_4K, sorted(r['lit']))
     p.locator('#lenslegend [data-lv="4K"]').dispatch_event('click')
     p.locator('#lenslegend [data-lv="mK"]').dispatch_event('click'); r = read()
-    check('place = millikelvin stage lights ct_sfq (and ct_cryocmos), 9 stations', 'ct_sfq' in r['lit'] and 'ct_cryocmos' in r['lit'] and len(r['lit']) == 9, sorted(r['lit']))
+    check(f'place = millikelvin stage lights ct_sfq (and ct_cryocmos), {place_count("mK")} stations', 'ct_sfq' in r['lit'] and 'ct_cryocmos' in r['lit'] and len(r['lit']) == place_count('mK'), sorted(r['lit']))
     click_station('ct_sfq'); r = read()
     check('ct_sfq card: (e) control shows every stage — "microwave @ 4 K stage / millikelvin stage"', 'microwave @ 4 K stage / millikelvin stage' in r['card'], r['card'][:300])
     click_station('ct_cryocmos'); r = read()
     check('ct_cryocmos card: "microwave @ 4 K stage / millikelvin stage"', 'microwave @ 4 K stage / millikelvin stage' in r['card'], r['card'][:300])
     p.keyboard.press('Escape')
     p.select_option('#lens', 'family'); r = read()   # a lens change clears the value filter
-    check('back to the family lens: 96 lit', len(r['lit']) == 96, len(r['lit']))
+    check(f'back to the family lens: {NN} lit', len(r['lit']) == NN, len(r['lit']))
     novac = p.evaluate("()=>{const h=document.documentElement.outerHTML; return !document.querySelector('[data-lv=\"vac\"]') && h.indexOf('\"vac\"')<0 && h.indexOf(\"'vac'\")<0 && h.indexOf('@vac')<0 && h.indexOf('in-vacuum integrated')<0;}")
     check('no value "vac" anywhere in the DOM', novac)
     keys = p.evaluate("()=>[...document.querySelectorAll('#glyphlegend [data-glyph]')].map(e=>({k:e.dataset.glyph,n:e.querySelector('.cnt').textContent,title:e.title,role:e.getAttribute('role')}))")
-    check('glyph legend: 3 static keys with counts and definitions, no button role', [k['k'] for k in keys] == ['hub', 'offd', 'empty'] and [k['n'] for k in keys] == ['24', '19', '5'] and all(k['title'] and k['role'] is None for k in keys), keys)
+    check('glyph legend: 3 static keys with counts and definitions, no button role', [k['k'] for k in keys] == ['hub', 'offd', 'empty'] and [k['n'] for k in keys] == GLYPH_N and all(k['title'] and k['role'] is None for k in keys), keys)
     p.locator('#glyphlegend [data-glyph="hub"]').dispatch_event('click'); r = read()
-    check('glyph key click: no lens change, nothing dimmed', p.locator('#lens').evaluate('e=>e.value') == 'family' and len(r['lit']) == 96, (p.locator('#lens').evaluate('e=>e.value'), len(r['lit'])))
+    check('glyph key click: no lens change, nothing dimmed', p.locator('#lens').evaluate('e=>e.value') == 'family' and len(r['lit']) == NN, (p.locator('#lens').evaluate('e=>e.value'), len(r['lit'])))
 
     p.locator('[data-setlang="ru"]').filter(visible=True).first.click()
     p.wait_for_function("document.getElementById('app').getAttribute('data-lang')==='ru'")
@@ -305,7 +311,7 @@ def sorting(pw, w, h):
         sb = f'#app .lang-{lang} div.tbl.bidx[data-sort="centrality"]'
         o = state(sb)
         cname = 'centrality' if lang == 'en' else 'центральность'
-        check(f'brief index {lang}: 96 rows, only centrality sortable, grouped by layer at load', o and len(o['rows']) == 96 and o['sortable'] == [False, False, False, True, False] and o['rows'][0][0].startswith('1 '), o and (len(o['rows']), o['sortable']))
+        check(f'brief index {lang}: {NN} rows, only centrality sortable, grouped by layer at load', o and len(o['rows']) == NN and o['sortable'] == [False, False, False, True, False] and o['rows'][0][0].startswith('1 '), o and (len(o['rows']), o['sortable']))
         click(hdr(sb, cname)); d = state(sb)
         vd = [num(r[3]) for r in d['rows']]
         check(f'brief index {lang}: centrality desc on the first click (data-sort-first)', vd == sorted(vd, reverse=True), vd[:5])
@@ -408,7 +414,7 @@ def laptop(pw):
     n = p.evaluate("()=>document.querySelectorAll('#insp [data-mach]').length")
     first = p.evaluate("()=>{const a=document.querySelector('#insp [data-mach]'); return a?[a.dataset.mach,a.textContent]:null;}")
     p.locator('#insp [data-mach]').first.click(); p.wait_for_timeout(1200); s2 = p.evaluate(STATE)
-    check('"Used by" click: the machine is selected, its card shows, its stations are lit', n >= 1 and s2['machine'] == first[0] and first[1].strip()[:20] in s2['title'] and 0 < s2['lit'] < 96, (first, s2['machine'], s2['title'][:40], s2['lit']))
+    check('"Used by" click: the machine is selected, its card shows, its stations are lit', n >= 1 and s2['machine'] == first[0] and first[1].strip()[:20] in s2['title'] and 0 < s2['lit'] < NN, (first, s2['machine'], s2['title'][:40], s2['lit']))
     check('"Used by" click: the map is in view', s2['mapBottom'] > 120 and s2['mapTop'] < s2['vh'] * 0.6, (s2['mapTop'], s2['mapBottom'], s2['vh']))
     # double click on a machine link inside a station card must not undo the selection
     p.evaluate(CLICK, 'enc_dualrail'); p.wait_for_timeout(400)
@@ -635,7 +641,7 @@ def strip(pw):
     print('strip — 1400×900')
     p.on('console', lambda m: m.type == 'error' and errors.append(m.text)); p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
     p.goto(PAGE.as_uri(), wait_until='load', timeout=120000); expand_bar(p)
-    p.wait_for_function("document.querySelectorAll('#pc path.pcline').length===96", timeout=60000); p.wait_for_timeout(300)
+    p.wait_for_function(f"document.querySelectorAll('#pc path.pcline').length==={NN}", timeout=60000); p.wait_for_timeout(300)
     R = """()=>{const L=[...document.querySelectorAll('#pc path.pcline')], S=[...document.querySelectorAll('#mapwrap g.station')]; const id=g=>g.querySelector('text.id').textContent;
       const set=(a)=>new Set(a); const eq=(a,b)=>a.size===b.size&&[...a].every(x=>b.has(x));
       return {dimEq:eq(set(S.filter(g=>g.classList.contains('dim')).map(id)),set(L.filter(l=>l.classList.contains('dim')).map(l=>l.dataset.node))),
@@ -719,7 +725,7 @@ def folds(pw):
     check('a brief\'s sections fold and its sources fold stays outside them', bf['btns'] >= 8 and bf['src'], bf)
     p.click('#pcwrap .foldbtn[data-sec="pcwrap"]'); p.wait_for_timeout(200)
     pc = p.evaluate("()=>({hidden:document.querySelector('.secbody[data-sec=\"pcwrap\"]').hidden, lines:document.querySelectorAll('#pc path.pcline').length})")
-    check('the parallel-coordinates strip folds under its title (the strip itself stays built)', pc['hidden'] and pc['lines'] == 96, pc)
+    check('the parallel-coordinates strip folds under its title (the strip itself stays built)', pc['hidden'] and pc['lines'] == NN, pc)
     p.click('#pcwrap .foldbtn[data-sec="pcwrap"]'); p.wait_for_timeout(200)
     check('and unfolds', p.evaluate("()=>!document.querySelector('.secbody[data-sec=\"pcwrap\"]').hidden"))
     errs = [e for e in errors if 'ERR_TUNNEL' not in e and 'net::' not in e]
@@ -739,7 +745,7 @@ def stripmodes(pw):
     print('strip modes — 1300×820')
     p.on('console', lambda m: m.type == 'error' and errors.append(m.text)); p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
     p.goto(PAGE.as_uri(), wait_until='load', timeout=120000)
-    p.wait_for_function("document.querySelectorAll('#pc path.pcline').length===96", timeout=60000); p.wait_for_timeout(400)
+    p.wait_for_function(f"document.querySelectorAll('#pc path.pcline').length==={NN}", timeout=60000); p.wait_for_timeout(400)
     # scroll escape
     p.click('#bartog'); p.wait_for_timeout(200); p.click('#zoom-in'); p.click('#zoom-in'); p.wait_for_timeout(300)
     r = p.evaluate("""()=>{const w=document.getElementById('mapwrap'); w.scrollTop=w.scrollHeight; const ev=()=>w.dispatchEvent(new WheelEvent('wheel',{deltaY:100,bubbles:true,cancelable:true})); const y0=window.scrollY; ev(); const y1=window.scrollY; ev(); return {scrollable:w.scrollHeight>w.clientHeight+1, y0, y1};}""")

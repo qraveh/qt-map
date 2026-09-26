@@ -18,8 +18,8 @@ class OracleTests(unittest.TestCase):
 
     def test_default_state(self):
         r = oracle.expected(self.m, oracle.default_state())
-        self.assertEqual(len(r["stations"]), 96)
-        self.assertEqual(len(r["lines"]), 14)
+        self.assertEqual(len(r["stations"]), len(self.m.nodes))    # every station lit (110 since 26 Sep 2026)
+        self.assertEqual(len(r["lines"]), len(self.m.path_ids))     # every path line (17 since 26 Sep 2026)
         self.assertEqual(r["edges"], set())
 
     def test_isolations(self):
@@ -57,17 +57,17 @@ class OracleTests(unittest.TestCase):
             s["toggles"][t] = True
             r = oracle.expected(self.m, s)
             self.assertEqual(r["edges"], {e for e in self.m.rel_edges if e[2] == ty})
-            self.assertEqual(len(r["stations"]), 96)
+            self.assertEqual(len(r["stations"]), len(self.m.nodes))
 
     def test_all_single_states_and_lens_values(self):
         states = list(oracle.all_single_states(self.m))
         nvals = sum(len(oracle.lens_values(self.m, l)) for l in oracle.LENSES)
-        self.assertEqual(len(states), nvals + 3 + 14 + 96 + len(self.m.machines))   # + every machine alone (C2, 17 Sep 2026)
+        self.assertEqual(len(states), nvals + 3 + len(self.m.path_ids) + len(self.m.nodes) + len(self.m.machines))   # + every machine alone (C2, 17 Sep 2026)
         for s in states:
             oracle.expected(self.m, s)
 
     def test_place_list(self):
-        """place is list-valued since 17 Sep 2026: 4K lights ct_cryocmos, ct_sfq and ro_spd; mK lights ct_sfq too; no vac anywhere."""
+        """place is list-valued since 17 Sep 2026: 4K lights ct_cryocmos, ct_sfq, ro_spd and (since 26 Sep 2026) ic_fanout; mK lights ct_sfq too; no vac anywhere."""
         vals = oracle.lens_values(self.m, "place")
         self.assertEqual(vals, ["4K", "RT", "mK", "none"])
         self.assertNotIn("vac", vals)
@@ -77,7 +77,7 @@ class OracleTests(unittest.TestCase):
             self.assertTrue(n["e"]["place"], n["id"])
         s = oracle.default_state()
         s["lens"], s["values"] = "place", {"4K"}
-        self.assertEqual(oracle.expected(self.m, s)["stations"], {"ct_cryocmos", "ct_sfq", "ro_spd"})
+        self.assertEqual(oracle.expected(self.m, s)["stations"], {"ct_cryocmos", "ct_sfq", "ro_spd", "ic_fanout"})   # ic_fanout (26 Sep 2026) sits at mK and 4 K
         s["values"] = {"mK"}
         r = oracle.expected(self.m, s)["stations"]
         self.assertIn("ct_sfq", r)

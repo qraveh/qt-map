@@ -1152,6 +1152,202 @@
    }
   },
   {
+   "id": "amaravati-ibm-tcs",
+   "name": "IBM Quantum System Two at Amaravati Quantum Valley Tech Park",
+   "org": "IBM with TCS and the Government of Andhra Pradesh",
+   "org_id": "IBM",
+   "country": "India",
+   "family": "SC",
+   "map_path": "sc",
+   "status": "ANNOUNCED (commissioning targeted Sep 2026)",
+   "status_date": "May 2025",
+   "physical_qubits_num": 156,
+   "access": "n/a (not yet commissioned)",
+   "layers": {
+    "1": [
+     {
+      "node": "transmon",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "transmon qubits of the announced 156-qubit Heron processor (not yet installed)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://quantumcomputingreport.com/ibm-to-commission-one-of-indias-first-physical-quantum-computers-in-amaravati-by-september-2026/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_bare",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "bare transmon two-level subspace (family-determined)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://quantumcomputingreport.com/ibm-to-commission-one-of-indias-first-physical-quantum-computers-in-amaravati-by-september-2026/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "g_tc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "tunable-coupler CZ of the Heron family assumed for the announced system",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://quantumcomputingreport.com/ibm-to-commission-one-of-indias-first-physical-quantum-computers-in-amaravati-by-september-2026/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "cx_nn",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "heavy-hex nearest-neighbour lattice of the Heron family assumed",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://quantumcomputingreport.com/ibm-to-commission-one-of-indias-first-physical-quantum-computers-in-amaravati-by-september-2026/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_rt",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "room-temperature RF control of an IBM Quantum System Two assumed",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://quantumcomputingreport.com/ibm-to-commission-one-of-indias-first-physical-quantum-computers-in-amaravati-by-september-2026/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_disp",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "dispersive readout (family-determined)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://quantumcomputingreport.com/ibm-to-commission-one-of-indias-first-physical-quantum-computers-in-amaravati-by-september-2026/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no QEC code announced for the site",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://quantumcomputingreport.com/ibm-to-commission-one-of-indias-first-physical-quantum-computers-in-amaravati-by-september-2026/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder; no QEC announced",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://quantumcomputingreport.com/ibm-to-commission-one-of-indias-first-physical-quantum-computers-in-amaravati-by-september-2026/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "one Heron processor announced; no inter-module link",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://quantumcomputingreport.com/ibm-to-commission-one-of-indias-first-physical-quantum-computers-in-amaravati-by-september-2026/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_sc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "IBM superconducting-qubit fabrication (family-determined)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://quantumcomputingreport.com/ibm-to-commission-one-of-indias-first-physical-quantum-computers-in-amaravati-by-september-2026/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 0,
+    "total": 10
+   },
+   "refs": [],
+   "profile": {
+    "qubit_type": "transmon (Heron family)",
+    "gate_mechanism": "tunable-coupler CZ (Heron family)",
+    "connectivity": "heavy-hex (Heron family)",
+    "degree": "",
+    "control": "room-temperature RF (Heron family)",
+    "control_placement": "room-temp",
+    "readout": "dispersive (Heron family)",
+    "err_2q_median": "none (not yet a device)",
+    "err_2q_best": "",
+    "readout_error": "",
+    "t1": "",
+    "t2": "",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "Quantum Valley Tech Park, Uddandarayunipalem; commissioning targeted by Sep 2026",
+    "err_2q_median_num": null,
+    "flags": [
+     "target-not-device"
+    ]
+   }
+  },
+  {
    "id": "anyon-monarq-24",
    "name": "Anyon MonarQ",
    "org": "Anyon Systems",
@@ -2627,6 +2823,595 @@
    }
   },
   {
+   "id": "basq-system-two",
+   "name": "IBM Quantum System Two, Donostia-San Sebastian",
+   "org": "Basque Government (BasQ) - IBM-Euskadi Quantum Computational Center",
+   "org_id": "ab-es-dipc",
+   "country": "Spain",
+   "family": "SC",
+   "map_path": "sc",
+   "status": "DEPLOYED",
+   "status_date": "Oct 2025",
+   "physical_qubits_num": 156,
+   "access": "members of the IBM-Euskadi Quantum Computational Center",
+   "layers": {
+    "1": [
+     {
+      "node": "transmon",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "156-qubit IBM Quantum Heron processor in a System Two; transmon not stated in the opened source",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://newsroom.ibm.com/2025-10-14-the-basque-government-and-ibm-inaugurate-europes-first-ibm-quantum-system-two-in-donostia-san-sebastian",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_bare",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "bare transmon two-level subspace",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://newsroom.ibm.com/2025-10-14-the-basque-government-and-ibm-inaugurate-europes-first-ibm-quantum-system-two-in-donostia-san-sebastian",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "g_tc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "Heron generation: tunable-coupler gates (family-determined; not stated in the opened source)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://newsroom.ibm.com/2025-10-14-the-basque-government-and-ibm-inaugurate-europes-first-ibm-quantum-system-two-in-donostia-san-sebastian",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "cx_nn",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "static nearest-neighbour lattice (Heron; not stated in the opened source)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://newsroom.ibm.com/2025-10-14-the-basque-government-and-ibm-inaugurate-europes-first-ibm-quantum-system-two-in-donostia-san-sebastian",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_rt",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "room-temperature electronics (family-determined)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://newsroom.ibm.com/2025-10-14-the-basque-government-and-ibm-inaugurate-europes-first-ibm-quantum-system-two-in-donostia-san-sebastian",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_disp",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "dispersive readout (family-determined)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://newsroom.ibm.com/2025-10-14-the-basque-government-and-ibm-inaugurate-europes-first-ibm-quantum-system-two-in-donostia-san-sebastian",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no QEC code run on this machine located",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://newsroom.ibm.com/2025-10-14-the-basque-government-and-ibm-inaugurate-europes-first-ibm-quantum-system-two-in-donostia-san-sebastian",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder; no QEC run",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://newsroom.ibm.com/2025-10-14-the-basque-government-and-ibm-inaugurate-europes-first-ibm-quantum-system-two-in-donostia-san-sebastian",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "one Heron processor; multi-processor integration only planned",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://newsroom.ibm.com/2025-10-14-the-basque-government-and-ibm-inaugurate-europes-first-ibm-quantum-system-two-in-donostia-san-sebastian",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_sc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "IBM superconducting-qubit fabrication (family-determined)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://newsroom.ibm.com/2025-10-14-the-basque-government-and-ibm-inaugurate-europes-first-ibm-quantum-system-two-in-donostia-san-sebastian",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 0,
+    "total": 10
+   },
+   "refs": [],
+   "profile": {
+    "qubit_type": "",
+    "gate_mechanism": "",
+    "connectivity": "",
+    "degree": "",
+    "control": "",
+    "control_placement": "",
+    "readout": "",
+    "err_2q_median": "",
+    "err_2q_best": "",
+    "readout_error": "",
+    "t1": "",
+    "t2": "",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "regional programme (BasQ); System Two designed to integrate multiple processors",
+    "err_2q_median_num": null,
+    "flags": [
+     "no-published-error-rates"
+    ]
+   }
+  },
+  {
+   "id": "bsc-quantum-spain",
+   "name": "Quantum Spain quantum computer at BSC",
+   "org": "Barcelona Supercomputing Center (Quantum Spain; installed by Qilimanjaro-GMV)",
+   "org_id": "Barcelona Supercomputing Center",
+   "country": "Spain",
+   "family": "SC",
+   "map_path": "sc",
+   "status": "DEPLOYED (expanded to 35 qubits)",
+   "status_date": "May 2026",
+   "physical_qubits_num": 35,
+   "access": "national allocation (open access via RES)",
+   "layers": {
+    "1": [
+     {
+      "node": "transmon",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "superconducting gate-based processor, 5 to 35 qubits (May 2026); qubit type not published",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://www.hpcwire.com/off-the-wire/bsc-expands-its-quantum-computer-capacity-and-consolidates-open-access-infrastructure/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_bare",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "bare two-level subspace assumed (family-determined)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.hpcwire.com/off-the-wire/bsc-expands-its-quantum-computer-capacity-and-consolidates-open-access-infrastructure/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "undisclosed",
+      "role": "primary",
+      "gap": false,
+      "state": "undisclosed",
+      "summary": "gate mechanism and fidelities not published",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://www.hpcwire.com/off-the-wire/bsc-expands-its-quantum-computer-capacity-and-consolidates-open-access-infrastructure/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "cx_nn",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "topology not published; static nearest-neighbour on-chip coupling assumed",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.hpcwire.com/off-the-wire/bsc-expands-its-quantum-computer-capacity-and-consolidates-open-access-infrastructure/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_rt",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "room-temperature RF control assumed (family-determined)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.hpcwire.com/off-the-wire/bsc-expands-its-quantum-computer-capacity-and-consolidates-open-access-infrastructure/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_disp",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "dispersive readout assumed (family-determined)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.hpcwire.com/off-the-wire/bsc-expands-its-quantum-computer-capacity-and-consolidates-open-access-infrastructure/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no QEC code reported; NISQ access through RES calls",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://www.hpcwire.com/off-the-wire/bsc-expands-its-quantum-computer-capacity-and-consolidates-open-access-infrastructure/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder; no QEC run",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.hpcwire.com/off-the-wire/bsc-expands-its-quantum-computer-capacity-and-consolidates-open-access-infrastructure/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "one processor coupled to MareNostrum 5; no inter-module quantum link",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.hpcwire.com/off-the-wire/bsc-expands-its-quantum-computer-capacity-and-consolidates-open-access-infrastructure/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_sc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "superconducting-qubit fabrication (family-determined); chip maker not named",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.hpcwire.com/off-the-wire/bsc-expands-its-quantum-computer-capacity-and-consolidates-open-access-infrastructure/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 0,
+    "total": 10
+   },
+   "refs": [],
+   "profile": {
+    "qubit_type": "superconducting, gate-based (qubit type not published)",
+    "gate_mechanism": "not published",
+    "connectivity": "not published",
+    "degree": "",
+    "control": "not published",
+    "control_placement": "",
+    "readout": "not published",
+    "err_2q_median": "none published",
+    "err_2q_best": "",
+    "readout_error": "",
+    "t1": "",
+    "t2": "",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "35 qubits is the final Quantum Spain milestone; coupled to MareNostrum 5",
+    "err_2q_median_num": null,
+    "flags": [
+     "no-published-error-rates",
+     "spec-absent"
+    ]
+   }
+  },
+  {
+   "id": "chalmers-wacqt-25q",
+   "name": "WACQT quantum computer (Chalmers 25-qubit flip-chip processor)",
+   "org": "Chalmers University of Technology (WACQT)",
+   "org_id": "ab-se-chalmers",
+   "country": "Sweden",
+   "family": "SC",
+   "map_path": "sc",
+   "status": "DEMONSTRATED (testbed access for algorithms announced for 2025)",
+   "status_date": "2023-2024",
+   "physical_qubits_num": 25,
+   "access": "testbed for Swedish industry and academia (Chalmers Next Labs)",
+   "layers": {
+    "1": [
+     {
+      "node": "transmon",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "25 fixed-frequency transmon (Xmon) qubits on the qubit chip of a flip-chip module",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2403.00285",
+       "locator": "abstract",
+       "verified": true
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_bare",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "bare transmon two-level subspace; no encoding beyond the physical qubit",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://arxiv.org/abs/2403.00285",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "g_tc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "parametric CZ and iSWAP driven through 40 frequency-tunable couplers",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2403.00285",
+       "locator": "abstract",
+       "verified": true
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "cx_nn",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "static on-chip lattice: 25 qubits joined by 40 tunable couplers",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2403.00285",
+       "locator": "abstract",
+       "verified": true
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_rt",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "room-temperature electronics assumed (family); control lines routed on the control chip",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://arxiv.org/abs/2403.00285",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_disp",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "dispersive readout via quarter-wavelength resonators",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2403.00285",
+       "locator": "abstract",
+       "verified": true
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no QEC code run located for the 25-qubit machine",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.chalmers.se/en/current/news/wacqt-new-swedish-quantum-computer-to-be-made-available-to-industry/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder; no QEC run",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.chalmers.se/en/current/news/wacqt-new-swedish-quantum-computer-to-be-made-available-to-industry/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "ic_multidie",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "two-tier flip-chip module: qubit chip (Q-chip) bonded to a control chip (C-chip); no inter-module link",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2403.00285",
+       "locator": "abstract",
+       "verified": true
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_sc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "superconducting-qubit lithography; Chalmers builds the machine in-house (fab site not stated in the opened sources)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.chalmers.se/en/current/news/wacqt-new-swedish-quantum-computer-to-be-made-available-to-industry/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 5,
+    "total": 10
+   },
+   "refs": [],
+   "profile": {
+    "qubit_type": "fixed-frequency transmon (Xmon)",
+    "gate_mechanism": "parametric CZ and iSWAP via frequency-tunable couplers",
+    "connectivity": "25 qubits with 40 frequency-tunable couplers",
+    "degree": "",
+    "control": "control lines on a separate control chip (flip-chip C-chip)",
+    "control_placement": "",
+    "readout": "dispersive, quarter-wavelength resonators",
+    "err_2q_median": "",
+    "err_2q_best": "",
+    "readout_error": "",
+    "t1": "",
+    "t2": "",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "40 qubits within a couple of years; 100 qubits by 2029",
+    "err_2q_median_num": null,
+    "flags": [
+     "no-published-error-rates"
+    ]
+   }
+  },
+  {
    "id": "ctqg-tianyan-176",
    "name": "Tianyan-176 (and 24-q sibling)",
    "org": "China Telecom Quantum Group + QuantumCTek",
@@ -3274,6 +4059,203 @@
    }
   },
   {
+   "id": "drdo-tifr-tcs-6q",
+   "name": "6-qubit superconducting quantum processor",
+   "org": "DRDO DYSL-QT with TIFR and TCS",
+   "org_id": "Tata Institute of Fundamental Research",
+   "country": "India",
+   "family": "SC",
+   "map_path": "sc",
+   "status": "DEMONSTRATED (end-to-end test)",
+   "status_date": "28 Aug 2024",
+   "physical_qubits_num": 6,
+   "access": "cloud interface (TCS) for education, research and testing",
+   "layers": {
+    "1": [
+     {
+      "node": "transmon",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "superconducting-circuit qubits designed and fabricated at TIFR; the release does not name the qubit type",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2049356",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_bare",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "bare two-level subspace assumed; no encoding beyond the physical qubit",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2049356",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "undisclosed",
+      "role": "primary",
+      "gap": false,
+      "state": "undisclosed",
+      "summary": "two-qubit gate mechanism and fidelities not published",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2049356",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "∅G-bus",
+      "role": "primary",
+      "gap": true,
+      "state": "gap",
+      "summary": "ring-resonator design invented at TIFR: qubits sit around one shared ring resonator used as a multi-path coupler (architecture paper: up to 12 qubits, each linked to 9 others)",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2049356",
+       "locator": "",
+       "verified": true
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_rt",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "control and measurement apparatus built by DYSL-QT from commercial off-the-shelf electronics and custom-programmed development boards; TCS cloud interface submits circuits",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2049356",
+       "locator": "",
+       "verified": true
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_disp",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "dispersive readout assumed (family-determined); not described",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2049356",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no QEC code run; end-to-end cloud-to-hardware test only",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2049356",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder; no QEC run",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2049356",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "single 6-qubit processor; no inter-module link described",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2049356",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_sc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "qubits designed and fabricated in-house at TIFR, Mumbai",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2049356",
+       "locator": "",
+       "verified": true
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 3,
+    "total": 10
+   },
+   "refs": [],
+   "profile": {
+    "qubit_type": "superconducting-circuit qubit (type not published)",
+    "gate_mechanism": "not published",
+    "connectivity": "TIFR ring-resonator architecture (shared multi-path coupling resonator)",
+    "degree": "",
+    "control": "commercial off-the-shelf electronics plus custom-programmed development boards (DYSL-QT)",
+    "control_placement": "room-temp",
+    "readout": "not published",
+    "err_2q_median": "none published",
+    "err_2q_best": "",
+    "readout_error": "",
+    "t1": "",
+    "t2": "",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "scale-up planned; no qubit target published",
+    "err_2q_median_num": null,
+    "flags": [
+     "no-published-error-rates",
+     "press-only"
+    ]
+   }
+  },
+  {
    "id": "dwave-dualrail-17",
    "name": "D-Wave gate-model dual-rail system",
    "org": "D-Wave Quantum",
@@ -3486,6 +4468,399 @@
     "flags": [
      "no-code-named",
      "target-not-device"
+    ]
+   }
+  },
+  {
+   "id": "ethz-surface17",
+   "name": "Surface-17",
+   "org": "ETH Zurich (Quantum Device Lab)",
+   "org_id": "ETH Zurich",
+   "country": "Switzerland",
+   "family": "SC",
+   "map_path": "sc",
+   "status": "DEMONSTRATED",
+   "status_date": "2022-2025",
+   "physical_qubits_num": 17,
+   "access": "lab-only",
+   "layers": {
+    "1": [
+     {
+      "node": "transmon",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "17 flux-tunable transmons with asymmetric SQUIDs: 9 data + 8 auxiliary; mean T1 32.5 µs",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2112.03708",
+       "locator": "Fig. 1b-c; Methods A; Table I",
+       "verified": true
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_bare",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "bare transmon two-level subspace; the third level is read only to flag leakage",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://arxiv.org/abs/2112.03708",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "g_tc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "CZ by tuning adjacent data/auxiliary pairs into resonance with net-zero flux pulses on individual flux lines; average CZ error 1.5(1.0)%, best 0.6%",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2112.03708",
+       "locator": "Methods A; Appendix B (Fig. 5); Appendix C (Fig. 6a)",
+       "verified": false
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "cx_nn",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "static diagonal planar square lattice; each auxiliary couples to up to four data qubits",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2112.03708",
+       "locator": "Fig. 1a-b",
+       "verified": true
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_rt",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "room-temperature AWGs (2.4 GSa/s) for flux, UHFQA (1.8 GSa/s) for readout, IQ up/down-conversion with FPGA demodulation",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2112.03708",
+       "locator": "Appendix D (Fig. 9)",
+       "verified": true
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_disp",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "frequency-multiplexed dispersive readout through a readout resonator + Purcell filter per qubit and a TWPA; 0.9% mean two-state error",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2112.03708",
+       "locator": "Fig. 1b,d; Methods B; Appendix F; Table I",
+       "verified": true
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "code_surface",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "distance-3 rotated surface code (Surface-17): 1.1 µs cycles, 3.2(1)% logical error per cycle with leakage rejection (Nature 2022); later split by lattice surgery into two d=3 repetition codes (arXiv Jan 2025)",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2112.03708",
+       "locator": "Fig. 1a; Fig. 3a; Fig. 4c",
+       "verified": true
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "dec_mwpm",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "minimum-weight perfect matching with weights from syndrome correlations (error-model-free); corrections applied in post-processing",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2112.03708",
+       "locator": "Abstract; Appendix L",
+       "verified": true
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "single 17-qubit chip; no inter-module link",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2112.03708",
+       "locator": "Fig. 1b; Appendix A",
+       "verified": true
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_sc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "150 nm Nb on high-resistivity Si (photolithography + reactive-ion etching), Al Josephson junctions by e-beam lithography, Al-Ti-Al airbridges",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2112.03708",
+       "locator": "Appendix A",
+       "verified": true
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [
+    "rotated_surface"
+   ],
+   "evidence_counts": {
+    "verified": 8,
+    "total": 10
+   },
+   "refs": [],
+   "profile": {
+    "qubit_type": "flux-tunable transmon (asymmetric SQUID)",
+    "gate_mechanism": "flux-pulsed CZ between directly coupled neighbours (no tunable coupler)",
+    "connectivity": "diagonal planar square lattice, nearest-neighbour",
+    "degree": "4",
+    "control": "room-temperature AWGs and UHFQA; IQ up/down-conversion; FPGA demodulation",
+    "control_placement": "room-temp",
+    "readout": "frequency-multiplexed dispersive; readout resonator + Purcell filter per qubit; TWPA; three-state discrimination flags leakage",
+    "err_2q_median": "1.5(1.0)e-2 average CZ error (average, not median)",
+    "err_2q_best": "6e-3",
+    "readout_error": "9e-3 mean two-state (2.2e-2 three-state)",
+    "t1": "32.5 µs (mean)",
+    "t2": "T2* 37.5 µs; T2 echo 47.0 µs (means)",
+    "t_2q": "~98 ns including buffers",
+    "t_meas": "400 ns integration (200-300 ns pulses)",
+    "best_logical": "d=3 rotated surface code: 3.2(1)% logical error per 1.1 µs cycle with leakage rejection, logical T1 16.4(8) µs (2022); lattice surgery splitting the d=3 surface-code qubit into two d=3 repetition codes, decoded ZZ better than unencoded (Jan 2025)",
+    "decoder": "MWPM with error-model-free weights, applied in post-processing",
+    "realtime": "offline",
+    "roadmap": "academic",
+    "err_2q_median_num": 0.015,
+    "flags": []
+   }
+  },
+  {
+   "id": "fraunhofer-ehningen",
+   "name": "IBM Quantum System One, Ehningen",
+   "org": "Fraunhofer-Gesellschaft",
+   "org_id": "ab-de-fraunhofer",
+   "country": "Germany",
+   "family": "SC",
+   "map_path": "sc",
+   "status": "DEPLOYED (2021; 2026 processor generation unverified)",
+   "status_date": "Jun 2021",
+   "physical_qubits_num": 27,
+   "access": "Fraunhofer Quantum Computing Competence Network (companies and research organisations)",
+   "layers": {
+    "1": [
+     {
+      "node": "transmon",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "27-qubit IBM Falcon processor at launch (2021); transmon not stated in the opened sources",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://www.datacenterdynamics.com/en/news/ibm-installs-on-premise-quantum-computer-at-fraunhofer-society-germany/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_bare",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "bare transmon two-level subspace",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.datacenterdynamics.com/en/news/ibm-installs-on-premise-quantum-computer-at-fraunhofer-society-germany/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "g_cr",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "Falcon generation: fixed-frequency cross-resonance gates (family-determined; not stated in the opened sources)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.ibm.com/quantum/blog/fraunhofer-quantum-system-one",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "cx_nn",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "static nearest-neighbour lattice (Falcon; not stated in the opened sources)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.ibm.com/quantum/blog/fraunhofer-quantum-system-one",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_rt",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "room-temperature electronics (family-determined)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.ibm.com/quantum/blog/fraunhofer-quantum-system-one",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_disp",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "dispersive readout (family-determined)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.ibm.com/quantum/blog/fraunhofer-quantum-system-one",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no QEC code run on this machine located",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.datacenterdynamics.com/en/news/ibm-installs-on-premise-quantum-computer-at-fraunhofer-society-germany/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder; no QEC run",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.datacenterdynamics.com/en/news/ibm-installs-on-premise-quantum-computer-at-fraunhofer-society-germany/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "single-processor System One; no interconnect",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.ibm.com/quantum/blog/fraunhofer-quantum-system-one",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_sc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "IBM superconducting-qubit fabrication (family-determined)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.ibm.com/quantum/blog/fraunhofer-quantum-system-one",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 0,
+    "total": 10
+   },
+   "refs": [],
+   "profile": {
+    "qubit_type": "",
+    "gate_mechanism": "",
+    "connectivity": "",
+    "degree": "",
+    "control": "",
+    "control_placement": "",
+    "readout": "",
+    "err_2q_median": "",
+    "err_2q_best": "",
+    "readout_error": "",
+    "t1": "",
+    "t2": "",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "national",
+    "err_2q_median_num": null,
+    "flags": [
+     "no-published-error-rates",
+     "source-not-confirmed"
     ]
    }
   },
@@ -9807,6 +11182,202 @@
    }
   },
   {
+   "id": "it4i-vlq",
+   "name": "VLQ",
+   "org": "IT4Innovations National Supercomputing Center (VSB - Technical University of Ostrava)",
+   "org_id": "ab-cz-it4i",
+   "country": "Czechia",
+   "family": "SC",
+   "map_path": "sc",
+   "status": "DEPLOYED",
+   "status_date": "Sep 2025",
+   "physical_qubits_num": 24,
+   "access": "national allocation (EuroHPC JU access; integrated with the KAROLINA supercomputer)",
+   "layers": {
+    "1": [
+     {
+      "node": "transmon",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "24 superconducting qubits supplied by IQM; transmon type not stated",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://www.it4i.cz/en/infrastructure/vlq-quantum-computer",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_bare",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "bare two-level subspace; no encoding beyond the physical qubit",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.it4i.cz/en/infrastructure/vlq-quantum-computer",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "undisclosed",
+      "role": "primary",
+      "gap": false,
+      "state": "undisclosed",
+      "summary": "gate mechanism between qubits and the central resonator not stated by IT4I or IQM for VLQ",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://iqm.tech/press-releases/lumi-q-consortium-unveils-the-vlq-quantum-computer-for-the-czech-and-european-science-community/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "∅G-bus",
+      "role": "primary",
+      "gap": true,
+      "state": "gap",
+      "summary": "star topology: 24 qubits connected to one central resonator, all-to-all through it",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://www.it4i.cz/en/infrastructure/vlq-quantum-computer",
+       "locator": "",
+       "verified": true
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_rt",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "control electronics not published; room-temperature electronics assumed (family)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.it4i.cz/en/infrastructure/vlq-quantum-computer",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_disp",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "dispersive readout assumed (family); no readout data published",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.it4i.cz/en/infrastructure/vlq-quantum-computer",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no QEC code run",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.it4i.cz/en/infrastructure/vlq-quantum-computer",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder; no QEC run",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.it4i.cz/en/infrastructure/vlq-quantum-computer",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "single 24-qubit QPU; no interconnect",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.it4i.cz/en/infrastructure/vlq-quantum-computer",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_sc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "superconducting chip supplied by IQM; fab site not stated",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://iqm.tech/press-releases/lumi-q-consortium-unveils-the-vlq-quantum-computer-for-the-czech-and-european-science-community/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 1,
+    "total": 10
+   },
+   "refs": [],
+   "profile": {
+    "qubit_type": "superconducting (type not stated)",
+    "gate_mechanism": "not published",
+    "connectivity": "star: 24 qubits connected to a central resonator",
+    "degree": "",
+    "control": "",
+    "control_placement": "",
+    "readout": "",
+    "err_2q_median": "",
+    "err_2q_best": "",
+    "readout_error": "",
+    "t1": "",
+    "t2": "",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "national (LUMI-Q consortium)",
+    "err_2q_median_num": null,
+    "flags": [
+     "no-published-error-rates"
+    ]
+   }
+  },
+  {
    "id": "kriss-20q",
    "name": "KRISS domestic superconducting QPU",
    "org": "Korea Research Institute of Standards and Science",
@@ -10014,6 +11585,397 @@
      "no-published-error-rates",
      "source-not-confirmed"
     ]
+   }
+  },
+  {
+   "id": "kriss-50q",
+   "name": "KRISS 50-qubit-class superconducting system",
+   "org": "Korea Research Institute of Standards and Science",
+   "org_id": "KRISS",
+   "country": "South Korea",
+   "family": "SC",
+   "map_path": "sc",
+   "status": "PLANNED (next target after the 20-qubit class)",
+   "status_date": "Mar 2026",
+   "physical_qubits_num": 50,
+   "access": "n/a",
+   "layers": {
+    "1": [
+     {
+      "node": "transmon",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "superconducting track named for the 50-qubit-class target; qubit type not published",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://en.sedaily.com/technology/2026/03/23/korea-builds-quantum-fabs-targets-second-gen-quantum",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_bare",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "bare two-level subspace assumed (family-determined)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://en.sedaily.com/technology/2026/03/23/korea-builds-quantum-fabs-targets-second-gen-quantum",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "undisclosed",
+      "role": "primary",
+      "gap": false,
+      "state": "undisclosed",
+      "summary": "no gate mechanism or fidelity published for the target",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://en.sedaily.com/technology/2026/03/23/korea-builds-quantum-fabs-targets-second-gen-quantum",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "cx_nn",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "topology not published; static nearest-neighbour on-chip coupling assumed",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://en.sedaily.com/technology/2026/03/23/korea-builds-quantum-fabs-targets-second-gen-quantum",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_rt",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "room-temperature RF control assumed (family-determined)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://en.sedaily.com/technology/2026/03/23/korea-builds-quantum-fabs-targets-second-gen-quantum",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_disp",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "dispersive readout assumed (family-determined)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://en.sedaily.com/technology/2026/03/23/korea-builds-quantum-fabs-targets-second-gen-quantum",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no QEC code planned for the 50-qubit class in the source",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://en.sedaily.com/technology/2026/03/23/korea-builds-quantum-fabs-targets-second-gen-quantum",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder; no QEC planned",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://en.sedaily.com/technology/2026/03/23/korea-builds-quantum-fabs-targets-second-gen-quantum",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no inter-module link described",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://en.sedaily.com/technology/2026/03/23/korea-builds-quantum-fabs-targets-second-gen-quantum",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_sc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "superconducting-qubit fabrication assumed (family-determined)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://en.sedaily.com/technology/2026/03/23/korea-builds-quantum-fabs-targets-second-gen-quantum",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 0,
+    "total": 10
+   },
+   "refs": [],
+   "profile": {
+    "qubit_type": "not published",
+    "gate_mechanism": "not published",
+    "connectivity": "not published",
+    "degree": "",
+    "control": "not published",
+    "control_placement": "",
+    "readout": "not published",
+    "err_2q_median": "none published",
+    "err_2q_best": "",
+    "readout_error": "",
+    "t1": "",
+    "t2": "",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "100-qubit superconducting systems by 2029; the 1,000-qubit-class target is on the Yb neutral-atom track",
+    "err_2q_median_num": null,
+    "flags": [
+     "spec-absent",
+     "target-not-device"
+    ]
+   }
+  },
+  {
+   "id": "lbnl-aqt",
+   "name": "Advanced Quantum Testbed (AQT)",
+   "org": "Lawrence Berkeley National Laboratory",
+   "org_id": "ab-us-lbnl",
+   "country": "USA",
+   "family": "SC",
+   "map_path": "sc",
+   "status": "DEPLOYED (open testbed)",
+   "status_date": "2018-2026",
+   "physical_qubits_num": 8,
+   "access": "open user testbed (no cost for non-proprietary work that will be published; DOE ASCR)",
+   "layers": {
+    "1": [
+     {
+      "node": "transmon",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "eight fixed-frequency transmons in a ring (primary QPU); 9-qubit flux-tunable MIT-LL chip also offered",
+      "evidence": {
+       "type": "vendor-architecture-page",
+       "url": "https://aqt.lbl.gov/about-aqt/collaborate-with-us/aqt-capabilities/",
+       "locator": "",
+       "verified": true
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_bare",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "bare transmon levels; three-state (qutrit) operation also offered",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://aqt.lbl.gov/about-aqt/collaborate-with-us/aqt-capabilities/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "g_cr",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "cross-resonance CNOT between fixed-frequency nearest neighbours, error 1-4%; all-microwave CZ 0.5-1%",
+      "evidence": {
+       "type": "vendor-architecture-page",
+       "url": "https://aqt.lbl.gov/about-aqt/collaborate-with-us/aqt-capabilities/",
+       "locator": "",
+       "verified": true
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "cx_nn",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "ring with nearest-neighbour connectivity",
+      "evidence": {
+       "type": "vendor-architecture-page",
+       "url": "https://aqt.lbl.gov/about-aqt/collaborate-with-us/aqt-capabilities/",
+       "locator": "",
+       "verified": true
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_rt",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "room-temperature QubiC 2.0 RFSoC controller and Zurich Instruments electronics; mid-circuit measurement and fast feedback",
+      "evidence": {
+       "type": "vendor-architecture-page",
+       "url": "https://aqt.lbl.gov/about-aqt/collaborate-with-us/aqt-capabilities/",
+       "locator": "",
+       "verified": true
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_disp",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "multiplexed dispersive readout with TWPA; three-state readout fidelity >95%",
+      "evidence": {
+       "type": "vendor-architecture-page",
+       "url": "https://aqt.lbl.gov/about-aqt/collaborate-with-us/aqt-capabilities/",
+       "locator": "",
+       "verified": true
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no QEC code as a machine feature; open testbed for control and QCVV methods",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://aqt.lbl.gov/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://aqt.lbl.gov/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "single-chip QPU; no interconnect",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://aqt.lbl.gov/about-aqt/collaborate-with-us/aqt-capabilities/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_sc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "superconducting-qubit lithography; primary chip fab site not stated (9-qubit chip from MIT-LL)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://aqt.lbl.gov/about-aqt/collaborate-with-us/aqt-capabilities/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 5,
+    "total": 10
+   },
+   "refs": [],
+   "profile": {
+    "qubit_type": "fixed-frequency transmon (5.2-5.8 GHz, ~250 MHz anharmonicity); qutrit operation",
+    "gate_mechanism": "cross-resonance between fixed-frequency qubits; all-microwave CZ; parametric fSim",
+    "connectivity": "ring, nearest-neighbour",
+    "degree": "2",
+    "control": "QubiC 2.0 (Xilinx ZCU216 RFSoC + custom analog front end); Zurich Instruments HDAWG/UHFQA/PQSC",
+    "control_placement": "room-temp",
+    "readout": "multiplexed dispersive readout with TWPA; three-state readout fidelity >95%",
+    "err_2q_median": "CR CNOT error 1-4%; CZ error 0.5-1% (ranges as published)",
+    "err_2q_best": "5e-3 (CZ, low end of published range)",
+    "readout_error": "below 5% (three-state readout fidelity >95%)",
+    "t1": "~100 µs",
+    "t2": "~100 µs (T2 echo)",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "national (DOE open testbed)",
+    "err_2q_median_num": null,
+    "flags": []
    }
   },
   {
@@ -16649,6 +18611,202 @@
    }
   },
   {
+   "id": "vtt-q50",
+   "name": "VTT Q50",
+   "org": "VTT Technical Research Centre of Finland",
+   "org_id": "ab-fi-vtt",
+   "country": "Finland",
+   "family": "SC",
+   "map_path": "sc",
+   "status": "DEPLOYED",
+   "status_date": "Mar 2025",
+   "physical_qubits_num": 50,
+   "access": "cloud service (VTT QX) for companies and research institutions; connected to the LUMI supercomputer",
+   "layers": {
+    "1": [
+     {
+      "node": "transmon",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "superconducting flux-tunable qubits, 50 (53 on the infrastructure page), co-developed with IQM; transmon type not stated",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://www.vttresearch.com/en/technology-infrastructures/quantum-computers",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_bare",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "bare two-level subspace; no encoding beyond the physical qubit",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.vttresearch.com/en/technology-infrastructures/quantum-computers",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "g_tc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "flux-tunable couplers between flux-tunable qubits; 2Q gate type not stated",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://www.vttresearch.com/en/technology-infrastructures/quantum-computers",
+       "locator": "VTT Q50 section",
+       "verified": true
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "cx_nn",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "qubits arranged in a lattice topology with fixed tunable couplers",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://www.vttresearch.com/en/technology-infrastructures/quantum-computers",
+       "locator": "VTT Q50 section",
+       "verified": true
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_rt",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "control electronics not published; room-temperature electronics assumed (family)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.vttresearch.com/en/technology-infrastructures/quantum-computers",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_disp",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "dispersive readout assumed (family); no readout data published",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.vttresearch.com/en/technology-infrastructures/quantum-computers",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no QEC code run; QEC is a target of the planned 300-qubit system",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://www.vttresearch.com/en/ourservices/quantum-technology",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder; no QEC run",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.vttresearch.com/en/ourservices/quantum-technology",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "single QPU in one cryostat; no inter-module link published",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.vttresearch.com/en/news-and-ideas/vtt-and-iqm-launch-first-50-qubit-quantum-computer-developed-europe",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_sc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "superconducting chip; machine sits at VTT Micronova (Espoo) with in-house cleanroom; chip fab site not stated",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://www.vttresearch.com/en/news-and-ideas/vtt-and-iqm-launch-first-50-qubit-quantum-computer-developed-europe",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 2,
+    "total": 10
+   },
+   "refs": [],
+   "profile": {
+    "qubit_type": "flux-tunable superconducting qubits (transmon type not stated)",
+    "gate_mechanism": "not published; flux-tunable couplers",
+    "connectivity": "lattice topology",
+    "degree": "",
+    "control": "",
+    "control_placement": "",
+    "readout": "",
+    "err_2q_median": "",
+    "err_2q_best": "",
+    "readout_error": "",
+    "t1": "",
+    "t2": "",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "150- and 300-qubit systems planned; the 300-qubit one for materials modelling and quantum error correction",
+    "err_2q_median_num": null,
+    "flags": [
+     "no-published-error-rates"
+    ]
+   }
+  },
+  {
    "id": "zhuangzi-2.0",
    "name": "Zhuangzi 2.0",
    "org": "CAS / Peking University",
@@ -18950,6 +21108,202 @@
    }
   },
   {
+   "id": "psnc-piast-q",
+   "name": "PIAST-Q",
+   "org": "Poznan Supercomputing and Networking Center (PCSS)",
+   "org_id": "ab-pl-psnc",
+   "country": "Poland",
+   "family": "ION",
+   "map_path": "ion_chain",
+   "status": "DEPLOYED",
+   "status_date": "Jun 2025",
+   "physical_qubits_num": 20,
+   "access": "national allocation (EuroHPC JU access for European users)",
+   "layers": {
+    "1": [
+     {
+      "node": "ion",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "20 trapped ions manipulated by high-precision lasers; AQT system, species not stated",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://www.pcss.pl/en/piast-q/",
+       "locator": "",
+       "verified": true
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_hf",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "family-assigned; qubit states not stated by PCSS or AQT",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.pcss.pl/en/piast-q/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "g_ms",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "laser-driven universal gate set (family-determined); gate mechanism not named",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.aqt.eu/wp-content/uploads/2025/06/PA_PIAST-Q-quantum-computer_F2-2025-06-EN.pdf",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "cx_bus",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "all-to-all qubit connectivity among the 20 ions",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://www.aqt.eu/wp-content/uploads/2025/06/PA_PIAST-Q-quantum-computer_F2-2025-06-EN.pdf",
+       "locator": "",
+       "verified": true
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_ionaod",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "laser control; addressing optics not stated (family-determined)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.pcss.pl/en/piast-q/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_fluor",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "fluorescence detection (family-determined)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.pcss.pl/en/piast-q/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no QEC code run",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.pcss.pl/en/piast-q/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder; no QEC run",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.pcss.pl/en/piast-q/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "single trap module in two 19-inch racks; no interconnect",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.aqt.eu/wp-content/uploads/2025/06/PA_PIAST-Q-quantum-computer_F2-2025-06-EN.pdf",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_trap",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "ion-trap fabrication (family-determined)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.aqt.eu/wp-content/uploads/2025/06/PA_PIAST-Q-quantum-computer_F2-2025-06-EN.pdf",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 2,
+    "total": 10
+   },
+   "refs": [],
+   "profile": {
+    "qubit_type": "trapped ion (species not stated)",
+    "gate_mechanism": "laser-driven universal gates (mechanism not stated)",
+    "connectivity": "all-to-all",
+    "degree": "19",
+    "control": "lasers",
+    "control_placement": "room-temp (two 19-inch racks, air-cooled, under 2 kW)",
+    "readout": "",
+    "err_2q_median": "not published (PCSS: gate fidelity >99%, gate type unspecified)",
+    "err_2q_best": "",
+    "readout_error": "",
+    "t1": "",
+    "t2": "10-100 ms (coherence time, PCSS page)",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "national",
+    "err_2q_median_num": null,
+    "flags": [
+     "no-published-error-rates"
+    ]
+   }
+  },
+  {
    "id": "quantinuum-apollo",
    "name": "Apollo",
    "org": "Quantinuum",
@@ -21144,6 +23498,398 @@
      "snippet-only",
      "source-not-confirmed"
     ]
+   }
+  },
+  {
+   "id": "rqc-ion-50q",
+   "name": "50-qubit ion quantum computer (Rosatom roadmap)",
+   "org": "Lebedev Physical Institute (FIAN) and the Russian Quantum Center, Rosatom roadmap",
+   "org_id": "Russian Quantum Center",
+   "country": "Russia",
+   "family": "ION",
+   "map_path": "ion_chain",
+   "status": "ANNOUNCED (claimed; no paper)",
+   "status_date": "Sep 2024",
+   "physical_qubits_num": 50,
+   "access": "not disclosed",
+   "layers": {
+    "1": [
+     {
+      "node": "ion",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "cold Yb ions (claimed 50-qubit machine; tests of one- and two-qubit operations and qudit coherence reported Jul 2024)",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://tass.com/science/1983479",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_hf",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "qudit encoding per ion; levels and qubit mapping not published",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://tass.com/science/1983479",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "g_ms",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "laser entangling gate assumed (family-determined); mechanism not published",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://postquantum.com/quantum-computing/quantum-russia/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "cx_bus",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "linear-chain motional bus assumed; trap layout not published",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://postquantum.com/quantum-computing/quantum-russia/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_ionaod",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "free-space laser addressing assumed; not described",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://postquantum.com/quantum-computing/quantum-russia/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_fluor",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "fluorescence state detection (family-determined)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://postquantum.com/quantum-computing/quantum-russia/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no QEC code reported",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://postquantum.com/quantum-computing/quantum-russia/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder; no QEC run",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://postquantum.com/quantum-computing/quantum-russia/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no inter-module link reported",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://postquantum.com/quantum-computing/quantum-russia/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_trap",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "ion-trap fabrication (family-determined); trap type not published",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://postquantum.com/quantum-computing/quantum-russia/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 0,
+    "total": 10
+   },
+   "refs": [],
+   "profile": {
+    "qubit_type": "Yb ion qudit (levels per ion not published)",
+    "gate_mechanism": "not published",
+    "connectivity": "not published",
+    "degree": "",
+    "control": "not published",
+    "control_placement": "",
+    "readout": "not published",
+    "err_2q_median": "none published",
+    "err_2q_best": "",
+    "readout_error": "",
+    "t1": "",
+    "t2": "",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "~75-qubit machine targeted for 2025",
+    "err_2q_median_num": null,
+    "flags": [
+     "no-published-error-rates",
+     "press-only",
+     "source-not-confirmed"
+    ]
+   }
+  },
+  {
+   "id": "sandia-qscout",
+   "name": "QSCOUT (Quantum Scientific Computing Open User Testbed)",
+   "org": "Sandia National Laboratories",
+   "org_id": "ab-us-sandia",
+   "country": "USA",
+   "family": "ION",
+   "map_path": "ion_chain",
+   "status": "DEPLOYED (open user testbed; to be discontinued by end of FY2026)",
+   "status_date": "2021-2026",
+   "physical_qubits_num": 6,
+   "access": "open user testbed (DOE-funded; calls for proposals)",
+   "layers": {
+    "1": [
+     {
+      "node": "ion",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "171Yb+ ions in a linear chain, 6 qubits",
+      "evidence": {
+       "type": "vendor-architecture-page",
+       "url": "https://www.sandia.gov/quantum/quantum-information-sciences/projects/qscout/",
+       "locator": "",
+       "verified": true
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_hf",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "qubits encoded in the hyperfine clock states of each 171Yb+ ion",
+      "evidence": {
+       "type": "vendor-architecture-page",
+       "url": "https://www.sandia.gov/quantum/quantum-information-sciences/projects/qscout/",
+       "locator": "",
+       "verified": true
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "g_ms",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "Molmer-Sorensen 2Q gates via 355 nm pulsed-laser Raman transitions; fidelity ~0.95-0.99",
+      "evidence": {
+       "type": "vendor-architecture-page",
+       "url": "https://www.sandia.gov/quantum/quantum-information-sciences/projects/qscout/",
+       "locator": "",
+       "verified": true
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "cx_bus",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "linear ion chain with all-to-all connectivity",
+      "evidence": {
+       "type": "vendor-architecture-page",
+       "url": "https://www.sandia.gov/quantum/quantum-information-sciences/projects/qscout/",
+       "locator": "",
+       "verified": true
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_ionaod",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "individual addressing by imaging an AOM array onto the ion chain; pulse-level user access",
+      "evidence": {
+       "type": "vendor-architecture-page",
+       "url": "https://www.sandia.gov/quantum/quantum-information-sciences/projects/qscout/",
+       "locator": "",
+       "verified": true
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_fluor",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "fluorescence detection: chain imaged onto multimode fibres feeding individual PMTs",
+      "evidence": {
+       "type": "vendor-architecture-page",
+       "url": "https://www.sandia.gov/quantum/quantum-information-sciences/projects/qscout/",
+       "locator": "",
+       "verified": true
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no QEC code as a machine feature; open testbed for user experiments",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.sandia.gov/quantum/quantum-information-sciences/projects/qscout/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.sandia.gov/quantum/quantum-information-sciences/projects/qscout/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "single surface trap; no interconnect",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.sandia.gov/quantum/quantum-information-sciences/projects/qscout/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_trap",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "Sandia-fabricated surface ion trap with wide optical access",
+      "evidence": {
+       "type": "vendor-architecture-page",
+       "url": "https://www.sandia.gov/quantum/quantum-information-sciences/projects/qscout/",
+       "locator": "",
+       "verified": true
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 7,
+    "total": 10
+   },
+   "refs": [],
+   "profile": {
+    "qubit_type": "hyperfine clock-state qubit (171Yb+)",
+    "gate_mechanism": "Raman transitions with a 355 nm pulsed laser; Molmer-Sorensen 2Q gates",
+    "connectivity": "linear ion chain, all-to-all",
+    "degree": "5",
+    "control": "individual addressing by imaging an AOM array onto the chain; pulse-level access (Jaqal)",
+    "control_placement": "room-temp + free-space optics",
+    "readout": "fluorescence: chain imaged onto a multimode-fibre array with individual photomultiplier tubes",
+    "err_2q_median": "MS gate fidelity ~0.95-0.99 (as published)",
+    "err_2q_best": "1e-2 (fidelity ~0.99)",
+    "readout_error": "",
+    "t1": "",
+    "t2": "",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "national (DOE open testbed; discontinued by end of FY2026)",
+    "err_2q_median_num": null,
+    "flags": []
    }
   },
   {
@@ -23811,6 +26557,203 @@
    }
   },
   {
+   "id": "icfo-quione",
+   "name": "QUIONE",
+   "org": "ICFO - Institut de Ciencies Fotoniques",
+   "org_id": "ab-es-icfo",
+   "country": "Spain",
+   "family": "ATOM",
+   "map_path": "atom_analog",
+   "status": "DEMONSTRATED",
+   "status_date": "Apr 2024",
+   "physical_qubits_num": null,
+   "access": "lab-only",
+   "layers": {
+    "1": [
+     {
+      "node": "ae_atom",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "84Sr bosonic quantum gas (alkaline-earth) in a Hubbard-regime optical lattice",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2312.14818",
+       "locator": "abstract",
+       "verified": true
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no qubit encoding: the machine images a many-body quantum gas site by site",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2312.14818",
+       "locator": "abstract",
+       "verified": true
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no gates; analog Bose-Hubbard evolution (superfluid observed with single-atom resolution)",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2312.14818",
+       "locator": "abstract",
+       "verified": true
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "∅G-lattice",
+      "role": "primary",
+      "gap": true,
+      "state": "gap",
+      "summary": "atoms held in a 2-D in-plane optical lattice plus light sheet at 813.4 nm; no per-atom moves",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2312.14818",
+       "locator": "abstract",
+       "verified": true
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_laser",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "laser control: 813.4 nm lattice and light sheet, 689 nm Sisyphus cooling during imaging",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2312.14818",
+       "locator": "abstract",
+       "verified": true
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_img",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "site-resolved fluorescence imaging on the 461 nm transition; imaging fidelity above 94%",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2312.14818",
+       "locator": "abstract",
+       "verified": true
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no QEC code; analog simulator",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://arxiv.org/abs/2312.14818",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder; no QEC run",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://arxiv.org/abs/2312.14818",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "single vacuum apparatus; no interconnect",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.icfo.eu/news/2328/quione-announcing-the-birth-of-a-unique-analog-quantum-processor-in-the-world-/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_optics",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "optical / vacuum assembly (lasers, lattice optics, microscope objective) (family-determined)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.icfo.eu/news/2328/quione-announcing-the-birth-of-a-unique-analog-quantum-processor-in-the-world-/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 6,
+    "total": 10
+   },
+   "refs": [],
+   "profile": {
+    "qubit_type": "none (analog quantum-gas simulator; no qubit encoding)",
+    "gate_mechanism": "analog Bose-Hubbard dynamics in an optical lattice; no entangling gate",
+    "connectivity": "2-D in-plane optical lattice plus light sheet at the 813.4 nm clock-magic wavelength",
+    "degree": "",
+    "control": "lasers: 813.4 nm lattice and light sheet, 461 nm imaging, 689 nm Sisyphus cooling",
+    "control_placement": "optics (room temperature)",
+    "readout": "site-resolved fluorescence imaging on the 461 nm transition, imaging fidelity above 94%",
+    "err_2q_median": "n/a (analog)",
+    "err_2q_best": "",
+    "readout_error": "below 6% (imaging fidelity above 94%)",
+    "t1": "",
+    "t2": "",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "academic",
+    "err_2q_median_num": null,
+    "flags": [
+     "analog-only",
+     "no-entangling-gate"
+    ]
+   }
+  },
+  {
    "id": "infleqtion-sqale",
    "name": "Sqale",
    "org": "Infleqtion",
@@ -24036,6 +26979,205 @@
     "err_2q_median_num": 0.0027,
     "flags": [
      "conflicting-count"
+    ]
+   }
+  },
+  {
+   "id": "msu-rb-50q",
+   "name": "50-qubit neutral-atom quantum computer prototype",
+   "org": "Lomonosov Moscow State University with the Russian Quantum Center",
+   "org_id": "Moscow State University",
+   "country": "Russia",
+   "family": "ATOM",
+   "map_path": "atom_rb",
+   "status": "ANNOUNCED (claimed prototype; no paper)",
+   "status_date": "Dec 2024",
+   "physical_qubits_num": 50,
+   "access": "not disclosed",
+   "layers": {
+    "1": [
+     {
+      "node": "alkali",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "single neutral Rb atoms held in optical tweezers; 50-atom ordered register (claimed Dec 2024)",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://thequantuminsider.com/2024/12/29/russia-unveils-its-first-50-qubit-quantum-computer-prototype/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_hf",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "Rb hyperfine qubit assumed (family-determined); qubit states not published",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://thequantuminsider.com/2024/12/29/russia-unveils-its-first-50-qubit-quantum-computer-prototype/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "operations on single qubits reported; no entangling gate claimed",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://thequantuminsider.com/2024/12/29/russia-unveils-its-first-50-qubit-quantum-computer-prototype/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "cx_aod",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "ordered 50-atom array implies tweezer rearrangement; transport not described",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://thequantuminsider.com/2024/12/29/russia-unveils-its-first-50-qubit-quantum-computer-prototype/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_laser",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "optical tweezers (highly focused laser beams) trap and address the atoms",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://thequantuminsider.com/2024/12/29/russia-unveils-its-first-50-qubit-quantum-computer-prototype/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_img",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "fluorescence imaging of the array assumed (family-determined)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://thequantuminsider.com/2024/12/29/russia-unveils-its-first-50-qubit-quantum-computer-prototype/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no QEC code reported",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://thequantuminsider.com/2024/12/29/russia-unveils-its-first-50-qubit-quantum-computer-prototype/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder; no QEC run",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://thequantuminsider.com/2024/12/29/russia-unveils-its-first-50-qubit-quantum-computer-prototype/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "single register; no inter-module link reported",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://thequantuminsider.com/2024/12/29/russia-unveils-its-first-50-qubit-quantum-computer-prototype/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_optics",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "optical/vacuum assembly (family-determined)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://thequantuminsider.com/2024/12/29/russia-unveils-its-first-50-qubit-quantum-computer-prototype/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 0,
+    "total": 10
+   },
+   "refs": [],
+   "profile": {
+    "qubit_type": "Rb atom (qubit states not published)",
+    "gate_mechanism": "single-qubit operations reported; no entangling gate published",
+    "connectivity": "ordered 50-atom tweezer array",
+    "degree": "",
+    "control": "optical tweezers (focused laser beams)",
+    "control_placement": "optics (room temperature)",
+    "readout": "not published",
+    "err_2q_median": "none published",
+    "err_2q_best": "",
+    "readout_error": "",
+    "t1": "",
+    "t2": "",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "~75-qubit machine targeted for 2025 (Rosatom roadmap)",
+    "err_2q_median_num": null,
+    "flags": [
+     "no-entangling-gate",
+     "no-published-error-rates",
+     "press-only",
+     "source-not-confirmed"
     ]
    }
   },
@@ -26564,6 +29706,202 @@
     "decoder": "PyMatching v2 (MWPM), inherited from STAR",
     "realtime": "planned",
     "roadmap": "more than several hundred qubits with QEC by FY2027",
+    "err_2q_median_num": null,
+    "flags": [
+     "no-published-error-rates"
+    ]
+   }
+  },
+  {
+   "id": "etri-8photon",
+   "name": "ETRI 8-photon silicon-photonic qubit chip",
+   "org": "ETRI (with KAIST and the University of Trento)",
+   "org_id": "ETRI",
+   "country": "South Korea",
+   "family": "PHOTON",
+   "map_path": "ph_fusion",
+   "status": "DEMONSTRATED (chip level)",
+   "status_date": "Nov 2024",
+   "physical_qubits_num": 8,
+   "access": "lab-only",
+   "layers": {
+    "1": [
+     {
+      "node": "photon",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "single photons from 8 on-chip photon sources; 8 photons controlled on one chip",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://www.eurekalert.org/news-releases/1064647",
+       "locator": "",
+       "verified": true
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_dualrail",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "path-encoded qubits: a 4-qubit circuit uses 8 propagation paths, i.e. two paths per qubit",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://thequantuminsider.com/2024/11/15/south-koreas-etri-6-qubit-silicon-photonic-quantum-circuit-for-scalable-quantum-computing/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "g_fusion",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "about half of the ~40 switches act as linear-optic quantum gates; 6-qubit entangled state generated",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://thequantuminsider.com/2024/11/15/south-koreas-etri-6-qubit-silicon-photonic-quantum-circuit-for-scalable-quantum-computing/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "cx_switch",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "~40 on-chip optical switches set the photon propagation paths",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://www.eurekalert.org/news-releases/1064647",
+       "locator": "",
+       "verified": true
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_eo",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "room-temperature drive of the on-chip switches; drive technology not described",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.eurekalert.org/news-releases/1064647",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_spd",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "final states measured with highly sensitive single-photon detectors",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://www.eurekalert.org/news-releases/1064647",
+       "locator": "",
+       "verified": true
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no QEC code; multiphoton state generation and interference experiments",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.eurekalert.org/news-releases/1064647",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder; no QEC run",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.eurekalert.org/news-releases/1064647",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "single 10 mm x 5 mm chip; no fibre link between modules",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://thequantuminsider.com/2024/11/15/south-koreas-etri-6-qubit-silicon-photonic-quantum-circuit-for-scalable-quantum-computing/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_pic",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "silicon-photonic integrated-circuit chip with sources and switches on one die",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://www.eurekalert.org/news-releases/1064647",
+       "locator": "",
+       "verified": true
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 4,
+    "total": 10
+   },
+   "refs": [],
+   "profile": {
+    "qubit_type": "path-encoded (dual-rail) photonic qubit",
+    "gate_mechanism": "linear-optic quantum gates formed by about half of the on-chip switches (probabilistic linear-optical entangling)",
+    "connectivity": "programmable switch mesh routing photon paths",
+    "degree": "",
+    "control": "on-chip optical switch drive (switch technology not stated)",
+    "control_placement": "room-temp",
+    "readout": "single-photon detectors (type not stated)",
+    "err_2q_median": "none published",
+    "err_2q_best": "",
+    "readout_error": "",
+    "t1": "",
+    "t2": "",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "16-qubit chips, then 32 qubits; cloud-based quantum computing service",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates"
@@ -31696,6 +35034,7 @@
    "primary": [
     "atom-computing-magne",
     "atom-computing-phoenix",
+    "icfo-quione",
     "planqc-maqcs",
     "princeton-yb-erasure",
     "yaqumo-yb"
@@ -31710,6 +35049,7 @@
     "harvard-448",
     "harvard-continuous-3000",
     "infleqtion-sqale",
+    "msu-rb-50q",
     "pasqal-fresnel",
     "pasqal-orion",
     "pasqal-vela",
@@ -31872,6 +35212,7 @@
   },
   "code_surface": {
    "primary": [
+    "ethz-surface17",
     "google-sycamore-72",
     "google-willow",
     "ustc-zuchongzhi-3.2",
@@ -31921,6 +35262,7 @@
   },
   "ct_eo": {
    "primary": [
+    "etri-8photon",
     "orca-pt2",
     "psiquantum-omega",
     "quandela-belenos",
@@ -31949,7 +35291,10 @@
     "ionq-ba133-qldpc-testbed",
     "ionq-forte",
     "ionq-tempo",
+    "psnc-piast-q",
     "qudoor-abaq",
+    "rqc-ion-50q",
+    "sandia-qscout",
     "tsinghua-512-ion",
     "uibk-innsbruck-ion",
     "umd-duke-ion"
@@ -31986,7 +35331,9 @@
     "hanyuan-2",
     "harvard-448",
     "harvard-continuous-3000",
+    "icfo-quione",
     "infleqtion-sqale",
+    "msu-rb-50q",
     "pasqal-fresnel",
     "pasqal-orion",
     "pasqal-vela",
@@ -32015,6 +35362,7 @@
     "aliceandbob-graphene",
     "aliceandbob-helium",
     "aliceandbob-helium-2",
+    "amaravati-ibm-tcs",
     "anyon-monarq-24",
     "aws-dualrail",
     "aws-ocelot",
@@ -32022,10 +35370,16 @@
     "baqis-dongling-130",
     "baqis-haituo-117",
     "baqis-scq136",
+    "basq-system-two",
+    "bsc-quantum-spain",
+    "chalmers-wacqt-25q",
     "ctqg-tianyan-176",
     "ctqg-tianyan-287",
     "ctqg-tianyan-504",
+    "drdo-tifr-tcs-6q",
     "dwave-dualrail-17",
+    "ethz-surface17",
+    "fraunhofer-ehningen",
     "google-fluxonium",
     "google-sycamore-54",
     "google-sycamore-72",
@@ -32050,7 +35404,10 @@
     "iqm-garnet-20",
     "iqm-halocene-150",
     "iqm-star-24",
+    "it4i-vlq",
     "kriss-20q",
+    "kriss-50q",
+    "lbnl-aqt",
     "nordquantique-gkp",
     "nordquantique-tesseract",
     "originq-wukong-102",
@@ -32071,6 +35428,7 @@
     "ustc-zuchongzhi-2.1",
     "ustc-zuchongzhi-3.0",
     "ustc-zuchongzhi-3.2",
+    "vtt-q50",
     "zhuangzi-2.0",
     "zju-125q"
    ],
@@ -32117,6 +35475,7 @@
     "hanyuan-2",
     "harvard-448",
     "infleqtion-sqale",
+    "msu-rb-50q",
     "pasqal-fresnel",
     "pasqal-orion",
     "pasqal-vela",
@@ -32142,9 +35501,12 @@
     "ionq-oxford-quartet",
     "ionq-superion-256",
     "ionq-tempo",
+    "psnc-piast-q",
     "quantum-art-multicore",
     "qudoor-abaq",
     "qudora-nfqc",
+    "rqc-ion-50q",
+    "sandia-qscout",
     "uibk-innsbruck-ion",
     "umd-duke-ion"
    ],
@@ -32171,6 +35533,7 @@
     "aliceandbob-graphene",
     "aliceandbob-helium",
     "aliceandbob-helium-2",
+    "amaravati-ibm-tcs",
     "anyon-monarq-24",
     "aws-dualrail",
     "aws-ocelot",
@@ -32178,12 +35541,17 @@
     "baqis-dongling-130",
     "baqis-haituo-117",
     "baqis-scq136",
+    "basq-system-two",
+    "bsc-quantum-spain",
+    "chalmers-wacqt-25q",
     "ctqg-tianyan-176",
     "ctqg-tianyan-287",
     "ctqg-tianyan-504",
     "diraq-imec-8q",
     "dwave-dualrail-17",
     "equal1-bell-1",
+    "ethz-surface17",
+    "fraunhofer-ehningen",
     "fujitsu-10000q",
     "fujitsu-1000q",
     "google-fluxonium",
@@ -32208,6 +35576,8 @@
     "iqm-garnet-20",
     "iqm-halocene-150",
     "kriss-20q",
+    "kriss-50q",
+    "lbnl-aqt",
     "microsoft-majorana-1",
     "nordquantique-gkp",
     "nordquantique-tesseract",
@@ -32241,6 +35611,7 @@
     "ustc-zuchongzhi-2.1",
     "ustc-zuchongzhi-3.0",
     "ustc-zuchongzhi-3.2",
+    "vtt-q50",
     "zhuangzi-2.0",
     "zju-125q"
    ],
@@ -32279,6 +35650,7 @@
   },
   "cx_switch": {
    "primary": [
+    "etri-8photon",
     "orca-pt2",
     "psiquantum-omega",
     "quandela-belenos",
@@ -32323,6 +35695,7 @@
    "primary": [
     "atom-computing-phoenix",
     "aws-ocelot",
+    "ethz-surface17",
     "fujitsu-10000q",
     "google-sycamore-72",
     "google-willow",
@@ -32387,14 +35760,21 @@
   "enc_bare": {
    "primary": [
     "academia-sinica-20q",
+    "amaravati-ibm-tcs",
     "anyon-monarq-24",
     "baqis-baihua-156",
     "baqis-dongling-130",
     "baqis-haituo-117",
     "baqis-scq136",
+    "basq-system-two",
+    "bsc-quantum-spain",
+    "chalmers-wacqt-25q",
     "ctqg-tianyan-176",
     "ctqg-tianyan-287",
     "ctqg-tianyan-504",
+    "drdo-tifr-tcs-6q",
+    "ethz-surface17",
+    "fraunhofer-ehningen",
     "fujitsu-10000q",
     "fujitsu-1000q",
     "google-fluxonium",
@@ -32421,7 +35801,10 @@
     "iqm-garnet-20",
     "iqm-halocene-150",
     "iqm-star-24",
+    "it4i-vlq",
     "kriss-20q",
+    "kriss-50q",
+    "lbnl-aqt",
     "oqc-toshiko-32",
     "originq-wukong-102",
     "originq-wukong-180",
@@ -32446,6 +35829,7 @@
     "ustc-zuchongzhi-2.1",
     "ustc-zuchongzhi-3.0",
     "ustc-zuchongzhi-3.2",
+    "vtt-q50",
     "zhuangzi-2.0",
     "zju-125q"
    ],
@@ -32465,6 +35849,7 @@
    "primary": [
     "aws-dualrail",
     "dwave-dualrail-17",
+    "etri-8photon",
     "oqc-genesis-16",
     "psiquantum-omega",
     "qci-seeker-8",
@@ -32511,8 +35896,10 @@
     "ionq-oxford-quartet",
     "ionq-superion-256",
     "ionq-tempo",
+    "msu-rb-50q",
     "pasqal-orion",
     "pasqal-vela",
+    "psnc-piast-q",
     "qinghe-1",
     "quantinuum-apollo",
     "quantinuum-h1",
@@ -32526,6 +35913,8 @@
     "quera-gemini",
     "quera-libra",
     "qxl-neutral-atom-50",
+    "rqc-ion-50q",
+    "sandia-qscout",
     "tsinghua-512-ion",
     "uibk-innsbruck-ion",
     "umd-duke-ion",
@@ -32647,7 +36036,9 @@
     "hanyuan-2",
     "harvard-448",
     "harvard-continuous-3000",
+    "icfo-quione",
     "infleqtion-sqale",
+    "msu-rb-50q",
     "pasqal-fresnel",
     "pasqal-orion",
     "pasqal-vela",
@@ -32671,6 +36062,7 @@
   },
   "fab_pic": {
    "primary": [
+    "etri-8photon",
     "psiquantum-omega",
     "quix-carina",
     "xanadu-aurora"
@@ -32687,6 +36079,7 @@
     "aliceandbob-graphene",
     "aliceandbob-helium",
     "aliceandbob-helium-2",
+    "amaravati-ibm-tcs",
     "anyon-monarq-24",
     "aws-dualrail",
     "aws-ocelot",
@@ -32694,12 +36087,18 @@
     "baqis-dongling-130",
     "baqis-haituo-117",
     "baqis-scq136",
+    "basq-system-two",
+    "bsc-quantum-spain",
+    "chalmers-wacqt-25q",
     "ctqg-tianyan-176",
     "ctqg-tianyan-287",
     "ctqg-tianyan-504",
+    "drdo-tifr-tcs-6q",
     "dwave-advantage",
     "dwave-advantage2",
     "dwave-dualrail-17",
+    "ethz-surface17",
+    "fraunhofer-ehningen",
     "fujitsu-10000q",
     "fujitsu-1000q",
     "google-fluxonium",
@@ -32726,7 +36125,10 @@
     "iqm-garnet-20",
     "iqm-halocene-150",
     "iqm-star-24",
+    "it4i-vlq",
     "kriss-20q",
+    "kriss-50q",
+    "lbnl-aqt",
     "oqc-genesis-16",
     "oqc-toshiko-32",
     "originq-wukong-102",
@@ -32753,6 +36155,7 @@
     "ustc-zuchongzhi-2.1",
     "ustc-zuchongzhi-3.0",
     "ustc-zuchongzhi-3.2",
+    "vtt-q50",
     "zhuangzi-2.0",
     "zju-125q"
    ],
@@ -32777,6 +36180,7 @@
     "ionq-forte",
     "ionq-oxford-quartet",
     "ionq-tempo",
+    "psnc-piast-q",
     "quantinuum-h1",
     "quantinuum-h2",
     "quantinuum-helios",
@@ -32785,6 +36189,8 @@
     "quantum-art-multicore",
     "qudoor-abaq",
     "qudora-nfqc",
+    "rqc-ion-50q",
+    "sandia-qscout",
     "tsinghua-512-ion",
     "uibk-innsbruck-ion",
     "umd-duke-ion"
@@ -32843,10 +36249,12 @@
   },
   "g_cr": {
    "primary": [
+    "fraunhofer-ehningen",
     "ibm-condor",
     "ibm-eagle",
     "ibm-falcon",
-    "ibm-osprey"
+    "ibm-osprey",
+    "lbnl-aqt"
    ],
    "alternate": []
   },
@@ -32884,6 +36292,7 @@
   },
   "g_fusion": {
    "primary": [
+    "etri-8photon",
     "psiquantum-omega",
     "quandela-belenos",
     "quandela-lucy",
@@ -32912,6 +36321,7 @@
     "ionq-ba133-qldpc-testbed",
     "ionq-forte",
     "ionq-tempo",
+    "psnc-piast-q",
     "quantinuum-apollo",
     "quantinuum-h1",
     "quantinuum-h2",
@@ -32920,6 +36330,8 @@
     "quantinuum-sol",
     "quantum-art-multicore",
     "qudoor-abaq",
+    "rqc-ion-50q",
+    "sandia-qscout",
     "uibk-innsbruck-ion",
     "umd-duke-ion"
    ],
@@ -32966,13 +36378,17 @@
   },
   "g_tc": {
    "primary": [
+    "amaravati-ibm-tcs",
     "anyon-monarq-24",
     "baqis-baihua-156",
     "baqis-dongling-130",
     "baqis-haituo-117",
     "baqis-scq136",
+    "basq-system-two",
+    "chalmers-wacqt-25q",
     "ctqg-tianyan-176",
     "ctqg-tianyan-287",
+    "ethz-surface17",
     "fujitsu-10000q",
     "google-sycamore-54",
     "google-sycamore-72",
@@ -33013,6 +36429,7 @@
     "ustc-zuchongzhi-2.1",
     "ustc-zuchongzhi-3.0",
     "ustc-zuchongzhi-3.2",
+    "vtt-q50",
     "zhuangzi-2.0",
     "zju-125q"
    ],
@@ -33082,6 +36499,7 @@
    "primary": [
     "academia-sinica-20q",
     "aws-ocelot",
+    "chalmers-wacqt-25q",
     "ctqg-tianyan-287",
     "google-sycamore-54",
     "google-sycamore-72",
@@ -33108,6 +36526,7 @@
     "ionq-oxford-quartet",
     "ionq-superion-256",
     "ionq-tempo",
+    "psnc-piast-q",
     "quantinuum-apollo",
     "quantinuum-h1",
     "quantinuum-h2",
@@ -33117,6 +36536,8 @@
     "quantum-art-multicore",
     "qudoor-abaq",
     "qudora-nfqc",
+    "rqc-ion-50q",
+    "sandia-qscout",
     "tsinghua-512-ion",
     "uibk-innsbruck-ion",
     "umd-duke-ion",
@@ -33132,6 +36553,7 @@
   },
   "photon": {
    "primary": [
+    "etri-8photon",
     "orca-pt2",
     "psiquantum-omega",
     "quandela-belenos",
@@ -33159,15 +36581,22 @@
     "aliceandbob-graphene",
     "aliceandbob-helium",
     "aliceandbob-helium-2",
+    "amaravati-ibm-tcs",
     "anyon-monarq-24",
     "aws-ocelot",
     "baqis-baihua-156",
     "baqis-dongling-130",
     "baqis-haituo-117",
     "baqis-scq136",
+    "basq-system-two",
+    "bsc-quantum-spain",
+    "chalmers-wacqt-25q",
     "ctqg-tianyan-176",
     "ctqg-tianyan-287",
     "ctqg-tianyan-504",
+    "drdo-tifr-tcs-6q",
+    "ethz-surface17",
+    "fraunhofer-ehningen",
     "fujitsu-10000q",
     "fujitsu-1000q",
     "google-fluxonium",
@@ -33190,7 +36619,10 @@
     "iqm-garnet-20",
     "iqm-halocene-150",
     "iqm-star-24",
+    "it4i-vlq",
     "kriss-20q",
+    "kriss-50q",
+    "lbnl-aqt",
     "nordquantique-gkp",
     "nordquantique-tesseract",
     "oqc-toshiko-32",
@@ -33216,6 +36648,7 @@
     "tsinghua-kunlun-32",
     "ustc-zuchongzhi-2.1",
     "ustc-zuchongzhi-3.0",
+    "vtt-q50",
     "zhuangzi-2.0",
     "zju-125q"
    ],
@@ -33256,6 +36689,7 @@
     "ionq-superion-256",
     "ionq-tempo",
     "photonic-inc",
+    "psnc-piast-q",
     "quantinuum-apollo",
     "quantinuum-h1",
     "quantinuum-h2",
@@ -33266,6 +36700,8 @@
     "quantum-brilliance-quoll",
     "qudoor-abaq",
     "qudora-nfqc",
+    "rqc-ion-50q",
+    "sandia-qscout",
     "tsinghua-512-ion",
     "uibk-innsbruck-ion",
     "umd-duke-ion",
@@ -33298,7 +36734,9 @@
     "hanyuan-2",
     "harvard-448",
     "harvard-continuous-3000",
+    "icfo-quione",
     "infleqtion-sqale",
+    "msu-rb-50q",
     "pasqal-fresnel",
     "pasqal-orion",
     "pasqal-vela",
@@ -33354,6 +36792,7 @@
   },
   "ro_spd": {
    "primary": [
+    "etri-8photon",
     "orca-pt2",
     "psiquantum-omega",
     "quandela-belenos",
@@ -33384,15 +36823,22 @@
   "transmon": {
    "primary": [
     "academia-sinica-20q",
+    "amaravati-ibm-tcs",
     "anyon-monarq-24",
     "aws-dualrail",
     "baqis-baihua-156",
     "baqis-dongling-130",
     "baqis-haituo-117",
     "baqis-scq136",
+    "basq-system-two",
+    "bsc-quantum-spain",
+    "chalmers-wacqt-25q",
     "ctqg-tianyan-176",
     "ctqg-tianyan-287",
     "ctqg-tianyan-504",
+    "drdo-tifr-tcs-6q",
+    "ethz-surface17",
+    "fraunhofer-ehningen",
     "fujitsu-10000q",
     "fujitsu-1000q",
     "google-sycamore-54",
@@ -33418,7 +36864,10 @@
     "iqm-garnet-20",
     "iqm-halocene-150",
     "iqm-star-24",
+    "it4i-vlq",
     "kriss-20q",
+    "kriss-50q",
+    "lbnl-aqt",
     "oqc-genesis-16",
     "oqc-toshiko-32",
     "originq-wukong-102",
@@ -33444,6 +36893,7 @@
     "ustc-zuchongzhi-2.1",
     "ustc-zuchongzhi-3.0",
     "ustc-zuchongzhi-3.2",
+    "vtt-q50",
     "zhuangzi-2.0",
     "zju-125q"
    ],

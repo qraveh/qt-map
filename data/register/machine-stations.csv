@@ -1532,3 +1532,173 @@ qxl-neutral-atom-50,code,none,primary,no code run on this hardware; decoder test
 qxl-neutral-atom-50,decoder,dec_nn,primary,planned — AI transformer decoder claimed; not demonstrated on this hardware
 qxl-neutral-atom-50,interconnect,none,primary,single module
 qxl-neutral-atom-50,fab,fab_optics,primary,assumed room-temperature optical assembly; builder not stated
+vtt-q50,carrier,transmon,primary,
+vtt-q50,encoding,enc_bare,primary,
+vtt-q50,gate,g_tc,primary,
+vtt-q50,connect,cx_nn,primary,
+vtt-q50,control,ct_rt,primary,
+vtt-q50,readout,ro_disp,primary,
+vtt-q50,code,none,primary,no code (NISQ)
+vtt-q50,decoder,none,primary,"no decoder, and no deployment-mode axis"
+vtt-q50,interconnect,none,primary,"monolithic, single module"
+vtt-q50,fab,fab_sc,primary,
+chalmers-wacqt-25q,carrier,transmon,primary,
+chalmers-wacqt-25q,encoding,enc_bare,primary,
+chalmers-wacqt-25q,gate,g_tc,primary,
+chalmers-wacqt-25q,connect,cx_nn,primary,
+chalmers-wacqt-25q,control,ct_rt,primary,
+chalmers-wacqt-25q,readout,ro_disp,primary,
+chalmers-wacqt-25q,code,none,primary,no code (NISQ)
+chalmers-wacqt-25q,decoder,none,primary,"no decoder, and no deployment-mode axis"
+chalmers-wacqt-25q,interconnect,ic_multidie,primary,multi-die packaging inside one qubit module
+chalmers-wacqt-25q,fab,fab_sc,primary,
+icfo-quione,carrier,ae_atom,primary,alkaline-earth strontium held in a lattice (not a tweezer)
+icfo-quione,encoding,none,primary,analog quantum gas; no qubit encoding
+icfo-quione,gate,none,primary,no entangling gate: analog Hubbard dynamics
+icfo-quione,connect,∅G-lattice,primary,optical-lattice site grid with sequential reloading
+icfo-quione,control,ct_laser,primary,
+icfo-quione,readout,ro_img,primary,
+icfo-quione,code,none,primary,"no code; analog device, QEC not applicable"
+icfo-quione,decoder,none,primary,"no decoder, and no deployment-mode axis"
+icfo-quione,interconnect,none,primary,"monolithic, single module"
+icfo-quione,fab,fab_optics,primary,
+psnc-piast-q,carrier,ion,primary,
+psnc-piast-q,encoding,enc_hf,primary,
+psnc-piast-q,gate,g_ms,primary,
+psnc-piast-q,connect,cx_bus,primary,
+psnc-piast-q,control,ct_ionaod,primary,
+psnc-piast-q,readout,ro_fluor,primary,
+psnc-piast-q,code,none,primary,no code (NISQ)
+psnc-piast-q,decoder,none,primary,"no decoder, and no deployment-mode axis"
+psnc-piast-q,interconnect,none,primary,"monolithic, single module"
+psnc-piast-q,fab,fab_trap,primary,
+it4i-vlq,carrier,transmon,primary,
+it4i-vlq,encoding,enc_bare,primary,
+it4i-vlq,gate,undisclosed,primary,gate mechanism not published
+it4i-vlq,connect,∅G-bus,primary,central computational bus resonator
+it4i-vlq,control,ct_rt,primary,
+it4i-vlq,readout,ro_disp,primary,
+it4i-vlq,code,none,primary,no code (NISQ)
+it4i-vlq,decoder,none,primary,"no decoder, and no deployment-mode axis"
+it4i-vlq,interconnect,none,primary,"monolithic, single module"
+it4i-vlq,fab,fab_sc,primary,
+fraunhofer-ehningen,carrier,transmon,primary,
+fraunhofer-ehningen,encoding,enc_bare,primary,
+fraunhofer-ehningen,gate,g_cr,primary,
+fraunhofer-ehningen,connect,cx_nn,primary,
+fraunhofer-ehningen,control,ct_rt,primary,
+fraunhofer-ehningen,readout,ro_disp,primary,
+fraunhofer-ehningen,code,none,primary,no code (NISQ)
+fraunhofer-ehningen,decoder,none,primary,"no decoder, and no deployment-mode axis"
+fraunhofer-ehningen,interconnect,none,primary,"monolithic, single module"
+fraunhofer-ehningen,fab,fab_sc,primary,
+basq-system-two,carrier,transmon,primary,
+basq-system-two,encoding,enc_bare,primary,
+basq-system-two,gate,g_tc,primary,
+basq-system-two,connect,cx_nn,primary,
+basq-system-two,control,ct_rt,primary,
+basq-system-two,readout,ro_disp,primary,
+basq-system-two,code,none,primary,no code (NISQ)
+basq-system-two,decoder,none,primary,"no decoder, and no deployment-mode axis"
+basq-system-two,interconnect,none,primary,"monolithic, single module"
+basq-system-two,fab,fab_sc,primary,
+sandia-qscout,carrier,ion,primary,
+sandia-qscout,encoding,enc_hf,primary,
+sandia-qscout,gate,g_ms,primary,
+sandia-qscout,connect,cx_bus,primary,
+sandia-qscout,control,ct_ionaod,primary,free-space AOM/AOD laser addressing for ions
+sandia-qscout,readout,ro_fluor,primary,
+sandia-qscout,code,none,primary,no code (NISQ)
+sandia-qscout,decoder,none,primary,"no decoder, and no deployment-mode axis"
+sandia-qscout,interconnect,none,primary,"monolithic, single module"
+sandia-qscout,fab,fab_trap,primary,
+lbnl-aqt,carrier,transmon,primary,
+lbnl-aqt,encoding,enc_bare,primary,bare levels; qutrit operation also used
+lbnl-aqt,gate,g_cr,primary,
+lbnl-aqt,connect,cx_nn,primary,
+lbnl-aqt,control,ct_rt,primary,
+lbnl-aqt,readout,ro_disp,primary,
+lbnl-aqt,code,none,primary,no code (NISQ)
+lbnl-aqt,decoder,none,primary,"no decoder, and no deployment-mode axis"
+lbnl-aqt,interconnect,none,primary,"monolithic, single module"
+lbnl-aqt,fab,fab_sc,primary,
+ethz-surface17,carrier,transmon,primary,
+ethz-surface17,encoding,enc_bare,primary,
+ethz-surface17,gate,g_tc,primary,flux-pulsed CZ on directly coupled tunable transmons; no tunable coupler (closest station)
+ethz-surface17,connect,cx_nn,primary,
+ethz-surface17,control,ct_rt,primary,
+ethz-surface17,readout,ro_disp,primary,
+ethz-surface17,code,code_surface,primary,
+ethz-surface17,decoder,dec_mwpm,primary,"offline, post-processing"
+ethz-surface17,interconnect,none,primary,"monolithic, single module"
+ethz-surface17,fab,fab_sc,primary,
+drdo-tifr-tcs-6q,carrier,transmon,primary,qubit type not published; transmon assumed
+drdo-tifr-tcs-6q,encoding,enc_bare,primary,
+drdo-tifr-tcs-6q,gate,undisclosed,primary,gate mechanism not published
+drdo-tifr-tcs-6q,connect,∅G-bus,primary,shared ring-resonator coupling bus (not a computational memory); closest open gap
+drdo-tifr-tcs-6q,control,ct_rt,primary,
+drdo-tifr-tcs-6q,readout,ro_disp,primary,
+drdo-tifr-tcs-6q,code,none,primary,no code (NISQ)
+drdo-tifr-tcs-6q,decoder,none,primary,"no decoder, and no deployment-mode axis"
+drdo-tifr-tcs-6q,interconnect,none,primary,"monolithic, single module"
+drdo-tifr-tcs-6q,fab,fab_sc,primary,
+etri-8photon,carrier,photon,primary,
+etri-8photon,encoding,enc_dualrail,primary,path (dual-rail) encoding: two waveguide paths per qubit
+etri-8photon,gate,g_fusion,primary,probabilistic linear-optical entangling gates in the switch mesh; closest station
+etri-8photon,connect,cx_switch,primary,
+etri-8photon,control,ct_eo,primary,switch drive technology (thermo- or electro-optic) not stated
+etri-8photon,readout,ro_spd,primary,
+etri-8photon,code,none,primary,no code (NISQ)
+etri-8photon,decoder,none,primary,"no decoder, and no deployment-mode axis"
+etri-8photon,interconnect,none,primary,"monolithic, single module"
+etri-8photon,fab,fab_pic,primary,
+kriss-50q,carrier,transmon,primary,qubit type not published; transmon assumed
+kriss-50q,encoding,enc_bare,primary,
+kriss-50q,gate,undisclosed,primary,gate mechanism not published
+kriss-50q,connect,cx_nn,primary,
+kriss-50q,control,ct_rt,primary,
+kriss-50q,readout,ro_disp,primary,
+kriss-50q,code,none,primary,no code (NISQ)
+kriss-50q,decoder,none,primary,"no decoder, and no deployment-mode axis"
+kriss-50q,interconnect,none,primary,"monolithic, single module"
+kriss-50q,fab,fab_sc,primary,
+rqc-ion-50q,carrier,ion,primary,
+rqc-ion-50q,encoding,enc_hf,primary,"qudit (multi-level) encoding in Yb ions; no qudit station, closest station; a qudit-encoding gap may be needed"
+rqc-ion-50q,gate,g_ms,primary,
+rqc-ion-50q,connect,cx_bus,primary,
+rqc-ion-50q,control,ct_ionaod,primary,
+rqc-ion-50q,readout,ro_fluor,primary,
+rqc-ion-50q,code,none,primary,no code (NISQ)
+rqc-ion-50q,decoder,none,primary,"no decoder, and no deployment-mode axis"
+rqc-ion-50q,interconnect,none,primary,"monolithic, single module"
+rqc-ion-50q,fab,fab_trap,primary,
+msu-rb-50q,carrier,alkali,primary,
+msu-rb-50q,encoding,enc_hf,primary,
+msu-rb-50q,gate,none,primary,no entangling gate published; only single-qubit operations reported
+msu-rb-50q,connect,cx_aod,primary,
+msu-rb-50q,control,ct_laser,primary,
+msu-rb-50q,readout,ro_img,primary,
+msu-rb-50q,code,none,primary,no code (NISQ)
+msu-rb-50q,decoder,none,primary,"no decoder, and no deployment-mode axis"
+msu-rb-50q,interconnect,none,primary,"monolithic, single module"
+msu-rb-50q,fab,fab_optics,primary,
+amaravati-ibm-tcs,carrier,transmon,primary,
+amaravati-ibm-tcs,encoding,enc_bare,primary,
+amaravati-ibm-tcs,gate,g_tc,primary,Heron-family tunable-coupler CZ; not yet a device
+amaravati-ibm-tcs,connect,cx_nn,primary,
+amaravati-ibm-tcs,control,ct_rt,primary,
+amaravati-ibm-tcs,readout,ro_disp,primary,
+amaravati-ibm-tcs,code,none,primary,no code (NISQ)
+amaravati-ibm-tcs,decoder,none,primary,"no decoder, and no deployment-mode axis"
+amaravati-ibm-tcs,interconnect,none,primary,"monolithic, single module"
+amaravati-ibm-tcs,fab,fab_sc,primary,
+bsc-quantum-spain,carrier,transmon,primary,qubit type not published; transmon assumed
+bsc-quantum-spain,encoding,enc_bare,primary,
+bsc-quantum-spain,gate,undisclosed,primary,gate mechanism not published
+bsc-quantum-spain,connect,cx_nn,primary,
+bsc-quantum-spain,control,ct_rt,primary,
+bsc-quantum-spain,readout,ro_disp,primary,
+bsc-quantum-spain,code,none,primary,no code (NISQ)
+bsc-quantum-spain,decoder,none,primary,"no decoder, and no deployment-mode axis"
+bsc-quantum-spain,interconnect,none,primary,"monolithic, single module"
+bsc-quantum-spain,fab,fab_sc,primary,
