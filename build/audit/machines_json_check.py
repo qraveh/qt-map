@@ -3,7 +3,8 @@
 import csv, collections, json, os, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-REG = os.environ.get('QT_MACHINES_DIR', '/home/claude/work/QT-Map/quantum-machines/data')
+_SNAP = os.path.join(ROOT, 'data', 'register'); _LIVE = '/home/claude/work/QT-Map/quantum-machines/data'
+REG = os.environ.get('QT_MACHINES_DIR') or (_LIVE if os.path.isdir(_LIVE) else _SNAP)   # as build/machines_json.py
 fails, notes = [], []
 
 

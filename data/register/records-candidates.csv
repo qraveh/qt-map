@@ -1,0 +1,158 @@
+key,num,unit,scope,date,machine_id,url,note
+degree,3,neighbours,max (2.3 heavy-hex mean),2022,ibm-falcon,https://www.ibm.com/quantum/blog/heavy-hex-lattice,heavy-hex lattice
+err_2q_parallel,7.4e-3,dimensionless,"typical (median ECR, ibm_sherbrooke)",Oct 2024,ibm-eagle,https://arxiv.org/html/2410.00916v1,Eagle r3 fleet spans 7.1e-3 to 1.24e-2
+lines_per_qubit,1,lines/qubit,"best-of-era (~1 mile of flex at 1,121 q)",Dec 2023,ibm-condor,https://postquantum.com/industry-news/ibm-condor/,the clearest published statement of the I/O wall
+err_2q_parallel,1.52e-3,dimensionless,best (median CZ),Jul 2025,ibm-heron-r3,https://postquantum.com/industry-news/ibm-heron-r3-pittsburgh/,
+spam,1.3e-2,dimensionless,typical (median readout error),Jul 2025,ibm-heron-r3,https://postquantum.com/industry-news/ibm-heron-r3-pittsburgh/,
+t2,3.5e-4,s,typical,2025,ibm-heron-r3,https://postquantum.com/industry-news/ibm-heron-r3-pittsburgh/,
+accept,5.9e-4,fraction,best (spacetime detection code),Jul 2026,ibm-heron-r3,"https://newsroom.ibm.com/2026-07-30-ibm-and-the-university-of-chicago-demonstrate-quantum-advantage,-establishing-trusted-quantum-computation-on-logical-circuits","2,051 accepted samples in 16.1 min of QPU time"
+accept,3.628e-1,fraction,best (magic-state injection),2026,ibm-heron-r2,https://www.nature.com/articles/s41598-026-40381-1,
+degree,2.3,neighbours,"typical (heavy-hex mean, max 3)",2024,ibm-heron-r2,https://www.ibm.com/quantum/blog/heavy-hex-lattice,
+t_reset,2.5e-8,s,best (effective T1 on demand),Aug 2026,ibm-nighthawk-r2,https://www.ibm.com/quantum/blog/nighthawk-r2,high-dynamic-range coupler to a cold bath
+reset_err,4e-2,relative,best (initialisation error divided by 25; absolute not published),Aug 2026,ibm-nighthawk-r2,https://www.ibm.com/quantum/blog/nighthawk-r2,relative figure only
+degree,4,neighbours,best for superconducting 2026,Dec 2025,ibm-nighthawk-r1,https://www.ibm.com/quantum/blog/nighthawk-r2,IBM's first departure from heavy-hex since 2021
+t2,2.7e-5,s,typical (median effective as delivered),Mar 2026,ibm-nighthawk-r2,https://q-ctrl.com/blog/unlocking-peak-performance-on-ibm-quantum-nighthawk-devices-with-crosstalk-suppression,1.6e-4 s with software crosstalk suppression
+d2_layers,7.5e3,gates,best (2Q gates with accurate observable estimation),Aug 2026,ibm-nighthawk-r2,https://www.ibm.com/quantum/blog/nighthawk-r2,
+degree,6,neighbours,best (on-chip c-couplers),Nov 2025,ibm-loon,https://www.ibm.com/quantum/blog/qdc-2025,"exactly what [[144,12,12]] needs"
+err_2q_parallel,3.5e-2,dimensionless,"best benchmarked l-coupler error per gate, 235 ns",Nov 2024,ibm-cockatoo,https://www.ibm.com/quantum/blog/qdc-2024,the 99.3% Aug-2026 l-coupler figure is not in the cited release - not re-fetched
+err_2q_parallel,6.2e-3,dimensionless,typical (0.62% simultaneous),Oct 2019,google-sycamore-54,https://www.nature.com/articles/s41586-019-1666-5,
+t1q,2.5e-8,s,best,Oct 2019,google-sycamore-54,https://www.nature.com/articles/s41586-019-1666-5,
+lines_per_qubit,5.2,lines/qubit,typical (277 DACs / 53 q),2019,google-sycamore-54,https://www.nature.com/articles/s41586-019-1666-5,
+t_reset,1.6e-7,s,typical,2022,google-sycamore-72,https://www.nature.com/articles/s41586-022-05434-1,
+idle_err_round,2.914e-2,dimensionless,typical (logical error per cycle at d=5),2022,google-sycamore-72,https://www.nature.com/articles/s41586-022-05434-1,
+burst_rate,1.7e-6,per round,typical (d=25 repetition floor; 1.6e-7 excluding one high-energy event),2022,google-sycamore-72,https://www.nature.com/articles/s41586-022-05434-1,
+t1,6.8e-5,s,typical (mean),Dec 2024,google-willow,https://arxiv.org/abs/2408.13687,
+t2,8.9e-5,s,typical (CPMG),Dec 2024,google-willow,https://arxiv.org/abs/2408.13687,
+t1q,2.5e-8,s,best,Dec 2024,google-willow,https://arxiv.org/abs/2408.13687,
+err_2q_parallel,1.5e-3,dimensionless,best (median; 1.2e-3 mean),Oct 2025,google-willow,https://blog.google/innovation-and-ai/technology/research/quantum-hardware-verifiable-advantage/,
+spam,8e-3,dimensionless,typical (readout error),Dec 2024,google-willow,https://arxiv.org/abs/2408.13687,
+degree,3.47,neighbours,typical (average; 4 interior),Dec 2024,google-willow,https://arxiv.org/abs/2408.13687,
+idle_err_round,7.72e-4,dimensionless,best in the world for superconducting (logical error per cycle at d=7),Jul 2026,google-willow,https://arxiv.org/abs/2511.08493,
+t_decode,6.3e-5,s,best-in-loop 2024 (mean at d=5); under 1e-6 s per cycle at d=11 in 2026,Dec 2024,google-willow,https://arxiv.org/abs/2408.13687,
+burst_rate,3.3e-10,per cycle,"typical (~1 correlated event per hour, ~1 per 3e9 cycles)",2024,google-willow,https://arxiv.org/abs/2408.13687,
+accept,8e-2,fraction,best (magic-state cultivation),Dec 2025,google-willow,https://arxiv.org/abs/2512.13908,
+magic_cost,1e-4,dimensionless,best (T-state error at 8% acceptance),Dec 2025,google-willow,https://arxiv.org/abs/2512.13908,~2 extra cultivation rounds + 3 QEC cycles
+spread,4e1,ratio,best (narrowing of the cycle-error distribution after Snake optimisation),Mar 2024,google-willow,https://www.nature.com/articles/s41467-024-46623-y,
+crosstalk,5.5e-4,dimensionless,"typical (fitted component of the error budget, not a direct measurement)",Dec 2024,google-willow,https://arxiv.org/abs/2408.13687,
+err_2q_parallel,1e-2,dimensionless,best-for-fluxonium (>99% RIP 2Q on a degree-4 cell),Aug 2026,google-fluxonium,https://arxiv.org/abs/2608.25503,"academic device, not a Google product"
+err_2q_parallel,3.8e-3,dimensionless,typical (99.62% parallel 2Q),Mar 2025,ustc-zuchongzhi-3.0,https://www.eurekalert.org/news-releases/1076296,
+t1q,2.8e-8,s,best,Mar 2025,ustc-zuchongzhi-3.0,https://www.eurekalert.org/news-releases/1076296,
+t1,7.2e-5,s,typical,Mar 2025,ustc-zuchongzhi-3.0,https://www.eurekalert.org/news-releases/1076296,
+t2,5.8e-5,s,typical,Mar 2025,ustc-zuchongzhi-3.0,https://www.eurekalert.org/news-releases/1076296,
+spam,8.2e-3,dimensionless,typical (readout error; sources give 8.2e-3 and 8.7e-3),Mar 2025,ustc-zuchongzhi-3.0,https://www.eurekalert.org/news-releases/1076296,
+degree,3.5,neighbours,typical (mean),Mar 2025,ustc-zuchongzhi-3.0,https://www.eurekalert.org/news-releases/1076296,
+leak_rate,6.4e-4,population,"best in the field (leakage after 40 cycles, 72x suppression)",Dec 2025,ustc-zuchongzhi-3.2,https://journals.aps.org/prl/abstract/10.1103/rqkg-dw31,"all-microwave LRU, no extra DC lines"
+spam,9.5e-3,dimensionless,typical (readout error in a 300 ns window),Dec 2025,ustc-zuchongzhi-3.2,https://journals.aps.org/prl/abstract/10.1103/rqkg-dw31,
+d2_layers,4e1,cycles,best (QEC cycles at d=7),Dec 2025,ustc-zuchongzhi-3.2,https://journals.aps.org/prl/abstract/10.1103/rqkg-dw31,
+idle_err_round,2.4e-2,dimensionless,typical (data-qubit idle error per cycle),Jun 2026,zju-125q,https://arxiv.org/html/2606.06598,
+err_2q_parallel,4e-3,dimensionless,typical (99.6% median CZ),Jun 2026,zju-125q,https://arxiv.org/html/2606.06598,
+spam,2.5e-2,dimensionless,typical (two-state; 4.9e-2 three-state),Jun 2026,zju-125q,https://arxiv.org/html/2606.06598,
+accept,6e-4,fraction,worst published (0.06% retention on the balanced Deutsch-Jozsa instance),Jun 2026,zju-125q,https://arxiv.org/html/2606.06598,17.6% of runs survive leakage rejection
+idle_err_round,8.91e-2,dimensionless,the only on-hardware bivariate-bicycle measurement (logical error per cycle at d=4),May 2025,tsinghua-kunlun-32,https://arxiv.org/abs/2505.09684,
+err_2q_parallel,4.4e-3,dimensionless,typical,Dec 2025,ctqg-tianyan-287,https://arxiv.org/abs/2512.10504,
+spam,1.3e-2,dimensionless,typical,Dec 2025,ctqg-tianyan-287,https://arxiv.org/abs/2512.10504,
+t1,1.5e-5,s,typical (the only published Origin coherence pair),2024,originq-wukong-72,https://www.nature.com/articles/s41534-025-01118-6,not re-fetched
+t2,2.2e-6,s,typical,2024,originq-wukong-72,https://www.nature.com/articles/s41534-025-01118-6,not re-fetched
+err_2q_parallel,1.0e-3,dimensionless,best-of-line (99.90% CZ averaged over 12 h on a 2-qubit device),Nov 2024,toshiba-dtc,https://www.global.toshiba/ww/technology/corporate/rdc/rd/topics/24/2411-03.html,
+crosstalk,6e3,Hz,best published for superconducting (residual ZZ in the off state),Nov 2024,toshiba-dtc,https://www.global.toshiba/ww/technology/corporate/rdc/rd/topics/24/2411-03.html,
+t1,2.3e-4,s,best,Nov 2024,toshiba-dtc,https://www.global.toshiba/ww/technology/corporate/rdc/rd/topics/24/2411-03.html,
+t2,3.6e-4,s,best,Nov 2024,toshiba-dtc,https://www.global.toshiba/ww/technology/corporate/rdc/rd/topics/24/2411-03.html,
+t1,1e-4,s,scope unstated (best or median not distinguished),Feb 2026,qpiai-kaveri-64,https://www.sify.com/science-tech/qpiai-unveils-kaveri-indias-first-aatmanirbhar-64-qubit-quantum-chip/,
+t1,5.3e-4,s,claimed best - flag heavily,Jan 2026,academia-sinica-20q,https://www.sinica.edu.tw/en/news_content/55/3655,"at or beyond the world record for multi-qubit transmon processors, with no accompanying gate fidelity"
+t_decode,4.4e-7,s,best in-loop for a non-Google superconducting machine (per round; range 0.44-0.79 us),Jun 2026,rigetti-ankaa-2,https://www.nature.com/articles/s41467-026-73331-6,
+t_ff,9.6e-6,s,best measured superconducting reaction time (9 rounds),Jun 2026,rigetti-ankaa-2,https://www.nature.com/articles/s41467-026-73331-6,6.5 us decode + 3.1 us communication
+err_2q_parallel,9e-3,dimensionless,"typical (median 2Q at 108 q, 99.1%)",Apr 2026,rigetti-cepheus-1-108q,https://aws.amazon.com/blogs/quantum-computing/amazon-braket-launches-rigetti-cepheus-1-108q-superconducting-device/,
+spread,9.9e-1,ratio,"measured fidelity-versus-tiling degradation (99.8% at 9 q, 99.6% at 36 q, 99.1% at 108 q)",Apr 2026,rigetti-cepheus-1-108q,https://aws.amazon.com/blogs/quantum-computing/amazon-braket-launches-rigetti-cepheus-1-108q-superconducting-device/,the most useful public datum about chiplet scaling
+yield,9.74e-1,fraction,best (frequency-targeting success via ABAA),Aug 2024,rigetti-cepheus-1-108q,https://postquantum.com/quantum-computing-companies/rigetti/,
+err_2q_parallel,5e-3,dimensionless,"typical (median 2Q at 54 q, 99.5%)",Jul 2025,iqm-emerald-54,https://iqm.tech/technology/roadmap/,not on the cited roadmap page - not re-fetched
+err_2q_parallel,7e-4,dimensionless,best (99.93% CZ over 40 h on a 2-qubit test chip),Aug 2025,iqm-emerald-54,https://arxiv.org/abs/2508.16437,"test chip, not a system median"
+spam,6e-4,dimensionless,best published superconducting readout (>99.94% in 240 ns),Aug 2025,iqm-emerald-54,https://arxiv.org/abs/2508.16437,
+t_ff,4e-6,s,"best for a European superconducting vendor (end-to-end real-time QEC loop, 20 q)",Mar 2026,iqm-emerald-54,https://quantumcomputingreport.com/iqm-and-zurich-instruments-develop-real-time-qec-via-nvidia-nvqlink/,
+rate,3e1,circuit qubits per logical qubit,"best layouts (directional tile codes, theory)",Jun 2026,iqm-halocene-150,https://arxiv.org/abs/2606.19482,
+t1,1e-3,s,"best-of-line (error-detected logical lifetime, stable over 50 h)",Jun 2025,oqc-genesis-16,https://oqc.tech/resources/beyond-the-bit/dual-rail-dimon-research/,
+lines_per_qubit,4,lines/qubit,"2028 target specification, not a built device",Dec 2025,quantware-vio-40k,https://quantware.com/news/quantware-announces-scaling-breakthrough-with-vio-40k,"40,000 I/O for 10,000 qubits"
+lines_per_qubit,1,lines/qubit,best (digital demultiplexing at mK; exact ratio not published),Mar 2026,seeqc-sfq-5q,https://www.businesswire.com/news/home/20260318263078/en/SEEQC-Reports-First-Quantum-Computer-with-Integrated-Qubit-Control-on-a-Chip-at-Millikelvin-Temperatures,power ~1e-9 W per qubit at mK
+t1,1e-3,s,best-of-line (cat bit-flip time at photon number 2),Feb 2025,aws-ocelot,https://www.nature.com/articles/s41586-025-08642-7,
+t2,2.7e-5,s,"typical (phase-flip time, 27-33 us)",Feb 2025,aws-ocelot,https://www.nature.com/articles/s41586-025-08642-7,
+idle_err_round,1.75e-2,dimensionless,"typical (d=3; d=5 gives 1.65e-2, so Lambda ~1.06)",Feb 2025,aws-ocelot,https://www.nature.com/articles/s41586-025-08642-7,the only published two-distance bosonic-concatenated result
+err_2q_parallel,9.6e-2,dimensionless,"typical (CX phase-flip per cycle; bit-flip 3.5e-3, bias >25)",Feb 2025,aws-ocelot,https://www.nature.com/articles/s41586-025-08642-7,
+qnd,9.994e-1,fraction,best (residual logical error 6.0e-4 per erasure check),Apr 2026,aws-dualrail,https://arxiv.org/html/2604.16292v1,erasure check in 384 ns
+err_2q_parallel,7.2e-5,dimensionless,best superconducting gate error published at any encoding,Apr 2026,aws-dualrail,https://arxiv.org/html/2604.16292v1,"with continuous parallel erasure detection, overhead <1e-5"
+t1,3.6e3,s,"best in the world, any modality (cat bit-flip time at photon number 11)",Sep 2025,aliceandbob-helium-2,https://alice-bob.com/newsroom/alice-bob-surpasses-bit-flip-stability-record,"33-60 min, 95% CI; phase-flip time at the same point is not published"
+t1,4.3e2,s,"best-2024 (Boson 4, transmon-free)",May 2024,aliceandbob-boson-4,https://alice-bob.com/newsroom/alice-bob-surpasses-bit-flip-stability-record,
+t1q,2.65e-8,s,typical (Z gate at 94.2% fidelity),Sep 2025,aliceandbob-helium-2,https://alice-bob.com/newsroom/alice-bob-surpasses-bit-flip-stability-record,
+spam,7e-4,dimensionless,best for any bosonic qubit (cardinal states),Jul 2026,nordquantique-gkp,https://arxiv.org/html/2607.06718v1,
+idle_err_round,8.1e-3,dimensionless,"best-of-line (logical error per round, selection-free)",Jul 2026,nordquantique-gkp,https://arxiv.org/html/2607.06718v1,
+accept,2.4e-1,fraction,"typical (cardinal states, 24-39%; 16% for magic states)",Jul 2026,nordquantique-gkp,https://arxiv.org/html/2607.06718v1,
+t1,3.6e-4,s,best-of-line (storage mode),Jul 2026,nordquantique-gkp,https://arxiv.org/html/2607.06718v1,
+t2,6.4e-4,s,best-of-line (storage mode),Jul 2026,nordquantique-gkp,https://arxiv.org/html/2607.06718v1,
+d2_layers,3.2e1,cycles,best (consecutive QEC cycles with no measurable decay),May 2025,nordquantique-tesseract,https://arxiv.org/html/2607.06718v1,12.6% of runs discarded per round
+accept,8.74e-1,fraction,"per round (12.6% discard, Tesseract)",Oct 2025,nordquantique-tesseract,https://arxiv.org/html/2607.06718v1,
+err_2q_parallel,2.9e-4,dimensionless,"best-of-line (post-selected CZ infidelity; erasure ~5e-3 per gate, bit-flip ~1e-6)",Aug 2026,qci-seeker-8,https://www.nature.com/articles/s41586-026-10822-y,
+t1,1e-3,s,best,2024,qci-seeker-8,https://www.nature.com/articles/s41586-026-10822-y,
+qnd,9.0e-1,fraction,best (erasure detection efficiency),2024,qci-seeker-8,https://www.nature.com/articles/s41586-026-10822-y,
+t1,6.2e-3,s,best-of-line (logical),Jan 2026,sustc-biased-erasure,https://arxiv.org/abs/2601.21616,
+t2,3.1e-3,s,best-of-line (logical),Jan 2026,sustc-biased-erasure,https://arxiv.org/abs/2601.21616,
+qnd,9.93e-1,fraction,best (leakage-to-erasure conversion),Jan 2026,sustc-biased-erasure,https://arxiv.org/abs/2601.21616,
+spam,3e-3,dimensionless,"typical (Azure emulator parameter, not a device median)",Feb 2026,quantinuum-h1,https://learn.microsoft.com/en-us/azure/quantum/provider-quantinuum,
+lines_per_qubit,10,lines/qubit,typical,2025,quantinuum-h1,https://postquantum.com/quantum-computing/quantinuum-helios-architecture/,the highest of the H-series
+lines_per_qubit,4.8,lines/qubit,typical,2025,quantinuum-h2,https://postquantum.com/quantum-computing/quantinuum-helios-architecture/,
+spam,3.3e-4,dimensionless,best,Jun 2026,quantinuum-helios,https://www.nature.com/articles/s41586-026-10676-4,a secondary analysis gives 4.8e-4
+lines_per_qubit,2.79,lines/qubit,typical (273 voltages / 98 qubits),Nov 2025,quantinuum-helios,https://postquantum.com/quantum-computing/quantinuum-helios-architecture/,"1,228 trap electrodes"
+t_move_layer,5.5e-2,s,typical (average time per circuit layer),Jun 2026,quantinuum-helios,https://www.nature.com/articles/s41586-026-10676-4,~5e4x a superconducting 1.1 us cycle; not re-fetched
+degree,97,neighbours,best (all-to-all by transport),Nov 2025,quantinuum-helios,https://www.nature.com/articles/s41586-026-10676-4,
+err_2q_parallel,7.9e-4,dimensionless,typical across all pairs with 8 zones active,Jun 2026,quantinuum-helios,https://www.nature.com/articles/s41586-026-10676-4,
+t_decode,6.7e-5,s,typical (BP-OSD median on a GH200 over NVQLink),2026,quantinuum-helios,https://www.nature.com/articles/s41586-026-10676-4,5.4x LER gain; not re-fetched
+idle_err_round,4.6e-5,dimensionless,"best (per logical qubit per cycle, no post-selection)",Sep 2026,quantinuum-helix,https://arxiv.org/abs/2609.03194,9.3e-5 per round for the 2-logical block
+accept,9.95e-1,fraction,best (0.5% forced-gap discard),Sep 2026,quantinuum-helix,https://arxiv.org/abs/2609.03194,
+t1,1e1,s,typical (10-100 s),2024,ionq-forte,https://www.ionq.com/quantum-systems/forte,
+t2,1,s,typical,2024,ionq-forte,https://www.ionq.com/quantum-systems/forte,
+err_2q_parallel,1e-4,dimensionless,best (99.99% two-qubit fidelity),Oct 2025,ionq-oxford-quartet,https://www.oxionics.com/announcements/ionq-achieves-landmark-result-setting-new-world-record-in-quantum-computing-performance/,"a hero-pair record, not a system median"
+t2,3.95,s,"best (logical lifetime, GB4 [[26,2,5]])",Jun 2026,ionq-ba133-qldpc-testbed,https://arxiv.org/abs/2606.06455,physical baseline on the same device is 1.1 s
+accept,2.5e-1,fraction,typical for the larger codes (~75% rejection),Jun 2026,ionq-ba133-qldpc-testbed,https://arxiv.org/abs/2606.06455,
+magic_cost,4.0e7,Toffoli,"blueprint, not measured (ECDLP-256 end to end)",Sep 2026,ionq-superion-256,https://arxiv.org/abs/2609.05625,"19,397 physical ions, 25.7 days, 63% success"
+crosstalk,1.0e-2,dimensionless,typical (nearest neighbour),2025,aqt-ibex-q1,https://www.aqt.eu/products/ibex-q1/,not re-fetched
+rate,5.6,circuits/s,"typical (>20,000 circuits per hour)",2025,aqt-ibex-q1,https://www.aqt.eu/products/ibex-q1/,
+rate,2.424e3,transfers/s,best (inter-module ion transfer),2026,universal-quantum-iqpu,https://www.quantumway.org/post/universal-quantum-microwave-trapped-ion-chips-modular-scaling-funding-and-2026-2030-roadmap-for,qubit-loss infidelity below 7e-8 per transfer
+yield,1,fraction,best (qubit-loss infidelity 7e-8 per inter-module transfer),2026,universal-quantum-iqpu,https://www.quantumway.org/post/universal-quantum-microwave-trapped-ion-chips-modular-scaling-funding-and-2026-2030-roadmap-for,
+spam,6e-3,dimensionless,typical,Oct 2021,umd-duke-ion,https://www.nature.com/articles/s41586-021-03928-y,
+rate,2.5e2,per s,"best (remote ion-ion Bell pairs, 94-97% fidelity)",2026,umd-duke-ion,https://www.nature.com/articles/s41586-021-03928-y,against a requirement of at least 1e4 per second
+degree,511,neighbours,best (power-law all-to-all in a 2-D crystal),May 2024,tsinghua-512-ion,https://www.nature.com/articles/s41586-024-07459-0,
+spam,3e-3,dimensionless,typical,2025,quera-gemini,https://www.quera.com/gemini,
+err_2q_parallel,8e-3,dimensionless,typical with 20 pairs active,2025,quera-gemini,https://www.quera.com/gemini,
+rate,1,shots/s,typical (repetition rate),2025,quera-gemini,https://www.quera.com/gemini,
+degree,259,neighbours,best (all-to-all by rearrangement),2025,quera-gemini,https://www.quera.com/gemini,
+idle_err_round,6.2e-3,dimensionless,typical (per round at d=5; ~1e-3 on loss-free shots),Nov 2025,harvard-448,https://www.nature.com/articles/s41586-025-09848-5,
+spread,2.14,ratio,best (below-threshold factor),Nov 2025,harvard-448,https://www.nature.com/articles/s41586-025-09848-5,
+d2_layers,2.7e1,layers,best (deepest logical circuit),Nov 2025,harvard-448,https://www.nature.com/articles/s41586-025-09848-5,
+rate,3e5,atoms/s,best (reload into tweezers),Aug 2026,harvard-continuous-3000,https://arxiv.org/html/2608.05010v1,"30,000 initialised qubits per second"
+t_move_layer,6e-2,s,"typical (defect-free 2,024-atom array assembly)",Aug 2026,harvard-continuous-3000,https://arxiv.org/html/2608.05010v1,
+t2,4e1,s,best,2021,atom-computing-phoenix,https://www.nextbigfuture.com/2023/10/atom-computing-first-to-exceed-1000-qubits-with-1180-qubit-neutral-atom-quantum-computer.html,
+d2_layers,9e1,rounds,best (successive syndrome-extraction rounds),Jun 2026,atom-computing-phoenix,https://arxiv.org/abs/2606.04079,"no Lambda, no logical error per round and no acceptance fraction published"
+yield,9.63e-1,fraction,"typical (1,180 of 1,225 sites filled)",Oct 2023,atom-computing-phoenix,https://www.nextbigfuture.com/2023/10/atom-computing-first-to-exceed-1000-qubits-with-1180-qubit-neutral-atom-quantum-computer.html,
+err_2q_parallel,2.7e-3,dimensionless,best on a deployed atom system,Dec 2025,infleqtion-sqale,https://thequantuminsider.com/2026/03/16/infleqtion-delivers-the-uks-only-operational-100-qubit-quantum-computing-system-at-the-national-quantum-computing-centre/,
+t2,1e-1,s,typical (upper end of 10-100 ms for a clock qubit),2026,planqc-maqcs,https://postquantum.com/quantum-computing-companies/planqc,three orders below the hyperfine figures in the same layer
+t2,1.26e1,s,best (largest-array coherence),Sep 2025,caltech-6100,https://www.caltech.edu/about/news/caltech-team-sets-record-with-6100-qubit-array,
+leak_rate,3.8e-1,fraction,best (fraction of CZ errors converted to erasures),Jun 2026,princeton-yb-erasure,https://arxiv.org/html/2506.13724,threshold rises from 0.94% to 1.45%
+accept,1,fraction,best (the 1.9(4)x decoding gain is unconditional),Jun 2026,princeton-yb-erasure,https://arxiv.org/html/2506.13724,the post-selected 3.6(1)x is not the architecturally relevant number
+spam,2.0e-4,dimensionless,"best (SPAM error, 99.98 +- 0.01%)",Feb 2025,psiquantum-omega,https://www.psiquantum.com/news-import/omega,
+crosstalk,1.0e-5,dimensionless,best (1 - interferometer fidelity 99.999%),Feb 2025,psiquantum-omega,https://www.psiquantum.com/news-import/omega,
+yield,9.34e-1,fraction,typical (median on-chip SNSPD efficiency),Feb 2025,psiquantum-omega,https://www.psiquantum.com/news-import/omega,supersedes the 98.9% figure sometimes quoted
+t_decode,1e-6,s,best (real-time decoding at the 1 MHz clock),Jan 2025,xanadu-aurora,https://www.nature.com/articles/s41586-024-08406-9,the only in-loop decoder in photonics
+t_ff,1e-6,s,typical (one clock cycle),Jan 2025,xanadu-aurora,https://www.nature.com/articles/s41586-024-08406-9,
+rate,1e6,Hz,typical (clock),Jan 2025,xanadu-aurora,https://www.nature.com/articles/s41586-024-08406-9,
+err_2q_parallel,6.2e-2,dimensionless,"typical (1 - 0.938, Ascella)",Jun 2023,quandela-belenos,https://arxiv.org/abs/2306.00874,
+rate,3.9e4,Hz,best (1 / 25.6 us sampling rate),May 2026,ustc-jiuzhang4,https://www.nature.com/articles/s41586-026-10523-6,
+yield,5.1e-1,fraction,typical (overall system efficiency),May 2026,ustc-jiuzhang4,https://www.nature.com/articles/s41586-026-10523-6,
+yield,9.6e-1,fraction,"typical (full 12-dot device yield; ~95% wafer yield, >24,000 devices per wafer)",2024,intel-tunnel-falls,https://postquantum.com/quantum-computing-companies/intel/,
+lines_per_qubit,1.56e-2,lines/qubit,"best (design: Pando Tree, one router to 64 channels)",2025,intel-tunnel-falls,https://postquantum.com/quantum-computing-companies/intel/,
+t2,1.31e-3,s,best (Hahn echo across the chain),Jul 2026,diraq-imec-8q,https://postquantum.com/industry-news/diraq-eight-qubit-foundry/,
+spread,2.17e-3,dimensionless,typical (g-factor spread across 8 qubits),Jul 2026,diraq-imec-8q,https://postquantum.com/industry-news/diraq-eight-qubit-foundry/,
+t1q,2.4e-6,s,best (pi-pulse at 205 kHz Rabi),Jul 2026,diraq-imec-8q,https://postquantum.com/industry-news/diraq-eight-qubit-foundry/,
+qnd,9.92e-1,fraction,best (rf single-electron-box readout in under 6 us),2023,quantum-motion-qm-one,https://journals.aps.org/prx/abstract/10.1103/PhysRevX.13.011023,
+t2,6.6e-1,s,best (nuclear-spin Hahn echo),Feb 2026,sqc-11q,https://quantumcomputingreport.com/silicon-quantum-computing-sqc-demonstrates-scaling-advantage-with-11-qubit-processor/,
+spam,1.0e-2,dimensionless,best (parity assignment error),Feb 2025,microsoft-majorana-1,https://quantumzeitgeist.com/microsoft-majorana-qubit-claims/,single-wire parity only
+t1,2.0e1,s,"best (mean parity lifetime, preprint, single wire)",Jun 2026,microsoft-majorana-1,https://quantumzeitgeist.com/microsoft-majorana-qubit-claims/,"no X-direction measurement, so still not a qubit"
+degree,20,neighbours,best (Zephyr),May 2025,dwave-advantage2,https://support.dwavesys.com/hc/en-us/articles/32105885880087-D-Wave-s-Advantage2-Quantum-Computer-Now-Generally-Available,
+degree,15,neighbours,typical (Pegasus),Sep 2020,dwave-advantage,https://support.dwavesys.com/hc/en-us/articles/32105885880087-D-Wave-s-Advantage2-Quantum-Computer-Now-Generally-Available,
+lines_per_qubit,3e-2,lines/qubit,best (~300 bias lines for ~1e4 qubits),Jan 2026,dwave-advantage2,https://www.dwavequantum.com/company/newsroom/press-release/d-wave-announces-advancements-in-annealing-and-gate-model-quantum-computing-technologies/,the most transferable piece of D-Wave engineering

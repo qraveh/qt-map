@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Build data/machines.json (SPEC step C2, "machines on the Map") from the machines register.
 
-Inputs : quantum-machines/data/{machines,machine-stations-evidence,records-candidates,machine-codes,roadmap-feasibility,machine-refs-verified}.csv
+Inputs : the machines register's CSVs — QT_MACHINES_DIR if set, else the live register folder when this machine has it, else the
+         snapshot data/register/ that this script copies after every run (so the repository carries the exact inputs of machines.json)
          data/graph.json (layers, vocab.RECKEYS)
 Output : data/machines.json  -- deterministic: same inputs give identical bytes.
 
@@ -14,7 +15,11 @@ data/graph_data.py or build/*.py, so the rule is implemented here (sig6).
 import csv, json, math, os, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-REG = os.environ.get('QT_MACHINES_DIR', '/home/claude/work/QT-Map/quantum-machines/data')
+SNAP = os.path.join(ROOT, 'data', 'register')   # the register's input files as read for the committed machines.json (published with the repo, 26 Sep 2026)
+INPUTS = ('machines.csv', 'machine-stations.csv', 'machine-stations-evidence.csv', 'records-candidates.csv', 'machine-codes.csv',
+          'roadmap-feasibility.csv', 'machine-refs-verified.csv', 'map-gaps.csv')
+_REG_LIVE = '/home/claude/work/QT-Map/quantum-machines/data'
+REG = os.environ.get('QT_MACHINES_DIR') or (_REG_LIVE if os.path.isdir(_REG_LIVE) else SNAP)   # the live register when present, else the snapshot
 OUT = os.path.join(ROOT, 'data', 'machines.json')
 EDITION = '2026.09'
 SOURCE = {"register": "quantum-machines · 17 Sep 2026, re-cut 26 Sep 2026 (three ion paths, two analog paths, 14 gaps → stations, sentinels → cell values)",
@@ -169,8 +174,18 @@ def build():
     return doc, report
 
 
+def snapshot():
+    """copy the input files into data/register so the repository carries the exact inputs of data/machines.json"""
+    import shutil
+    if os.path.abspath(REG) == os.path.abspath(SNAP): return
+    os.makedirs(SNAP, exist_ok=True)
+    for n in INPUTS:
+        src = os.path.join(REG, n)
+        if os.path.exists(src): shutil.copyfile(src, os.path.join(SNAP, n))
+
+
 if __name__ == '__main__':
-    doc, rep = build()
+    doc, rep = build(); snapshot()
     print('wrote %s: %d machines, %d nodes, %d bytes' % (os.path.relpath(OUT, ROOT), len(doc['machines']),
           len(doc['by_node']), os.path.getsize(OUT)))
     for k, v in rep.items():
