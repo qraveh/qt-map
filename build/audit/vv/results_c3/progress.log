@@ -10,4 +10,4 @@ SUITE strip 225/300 disagreements=0
 SUITE strip 250/300 disagreements=0
 SUITE strip 275/300 disagreements=0
 SUITE strip 300/300 disagreements=0
-SUITE strip DONE 300/300 disagreements=0 seconds=1788.7
+SUITE strip DONE 300/300 disagreements=0 seconds=1495.8
