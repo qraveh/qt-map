@@ -47848,7 +47848,7 @@ function glyphKeys(){ document.querySelectorAll('#glyphlegend [data-glyph]').for
 // categorical lens palette (deliberately not the family palette: while a lens is active, path lines turn neutral so colour means the lens value only)
 const LENSPAL=['#3B6FD4','#E0862B','#2FA66A','#C94C6B','#7C5CC4','#C7A22B','#2AA5B8','#8B6A45','#D07AB5','#6E7F91'];
 const CATS={
- mech:['disp','s2c','qcap','erasure','fluor','img','spd','none'], d:['static','longrange','shared','bus','transport','flying','none'],
+ mech:['disp','s2c','qcap','erasure','fluor','img','spd','flux','homodyne','none'], d:['static','longrange','shared','bus','transport','flying','none'],
  mod:['mw','lf','eo','opt','none'], place:['RT','4K','mK','none'], f:['pauli','coherent','leak','burst','bias','gauss','erasure','loss','unknown','none'],
  g:['sclitho','3d','cmos','mbe','mems','pic','optics','stm','diamond','none'], status:['D','E','T','X'],
  det:['det','her','na'], destr:['yes','no','none'], mid:['yes','no','none']};
@@ -48222,7 +48222,7 @@ const pcHost=document.getElementById('pc');
 const PCW=1100, PCH=300, PX0=70, PX1=PCW-30, PY0=34, PY1=PCH-46;
 const pcsvg=d3.select(pcHost).append('svg').attr('viewBox',`0 0 ${PCW} ${PCH}`).attr('role','img').attr('aria-label','Parallel coordinates of all technologies across the seven design attributes');
 const AXES=[{k:'aff',en:'(a) carrier',ru:'(a) носитель'},{k:'b',en:'(b) time',ru:'(b) время'},{k:'c',en:'(c) readout',ru:'(c) считывание'},{k:'d',en:'(d) mobility',ru:'(d) подвижность'},{k:'e',en:'(e) control',ru:'(e) управление'},{k:'f',en:'(f) error',ru:'(f) ошибка'},{k:'g',en:'(g) fab',ru:'(g) производство'}];
-const ORD={aff:[0,0.25,0.5,0.75,1],d:['none','static','shared','longrange','bus','transport','flying'],e:['none','lf@RT','mw@RT','eo@RT','opt@RT','mw@4K','eo@4K','lf@mK','mw@mK','eo@mK'],f:['none','pauli','coherent','leak','burst','bias','gauss','erasure','loss','unknown'],g:['none','sclitho','3d','cmos','mbe','mems','pic','optics','stm','diamond'],c:['none','spd','disp','erasure','s2c','qcap','fluor','img']};
+const ORD={aff:[0,0.25,0.5,0.75,1],d:['none','static','shared','longrange','bus','transport','flying'],e:['none','lf@RT','mw@RT','eo@RT','opt@RT','mw@4K','eo@4K','lf@mK','mw@mK','eo@mK'],f:['none','pauli','coherent','leak','burst','bias','gauss','erasure','loss','unknown'],g:['none','sclitho','3d','cmos','mbe','mems','pic','optics','stm','diamond'],c:['none','spd','disp','erasure','s2c','qcap','fluor','img','flux','homodyne']};
 // the strip as a control (adjudication 13, 23 Sep 2026): each axis is one design attribute and stands for one lens; a tick on an
 // axis is one value of that lens — clicking the title selects the lens, clicking a tick keeps only the stations with that value
 // (Ctrl-click adds a value), exactly as the lens select and the lens legend do. (e) shows modality@placement; its ticks act on the
