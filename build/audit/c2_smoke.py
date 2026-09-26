@@ -10,8 +10,8 @@ ROOT = pathlib.Path(__file__).resolve().parents[2]
 PAGE = ROOT / 'dist' / 'Quantum-Technology-Map-2026.09.html'
 MACH = json.load(open(ROOT / 'data' / 'machines.json', encoding='utf-8'))
 WILLOW = next(m for m in MACH['machines'] if m['id'] == 'google-willow')
-WILLOW_NODES = {c['node'] for cells in WILLOW['layers'].values() for c in cells if not c['node'].startswith('∅')}
-WILLOW_ALT = {c['node'] for cells in WILLOW['layers'].values() for c in cells if c['role'] == 'alternate' and not c['node'].startswith('∅')}
+WILLOW_NODES = {c['node'] for cells in WILLOW['layers'].values() for c in cells if c.get('state', 'station') == 'station'}   # gaps and the cell values none / undisclosed are not nodes
+WILLOW_ALT = {c['node'] for cells in WILLOW['layers'].values() for c in cells if c['role'] == 'alternate' and c.get('state', 'station') == 'station'}
 # lens select (brief E, 17 Sep): the editor's order with plain labels, no coordinate letters, no reading-marks lens
 LENS_ORDER = ['family', 'g', 'f', 'd', 'mod', 'place', 'time', 'mech', 'destr', 'mid', 'det', 'aff', 'status']
 LENS_EN = ['Platform family', 'Manufacturing technology', 'Dominant error structure', 'Mobility / connectivity', 'Control: modality',
@@ -826,8 +826,40 @@ def fullscreen(pw):
     return fails
 
 
+def feedback(pw):
+    """Send feedback (26 Sep 2026): the fixed button opens a sheet whose context names the edition, the language and the place
+    (the open brief, or the section in view, or the map's selection); the GitHub-issue link and the mail link carry that context;
+    a brief open and a machine chosen appear in it; Escape closes; RU labels; the button is hidden in print (CSS only)."""
+    fails, errors = [], []
+    b = pw.chromium.launch(); ctx = b.new_context(viewport={'width': 1280, 'height': 900}); p = ctx.new_page()
+    p.on('console', lambda m: m.type == 'error' and errors.append(m.text)); p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
+    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000); expand_bar(p)
+    p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0 && document.querySelectorAll('#machine option').length>1", timeout=60000)
+    def check(label, cond, detail=''):
+        print(f"  [{'ok' if cond else 'FAIL'}] {label}{(' — ' + str(detail)) if (detail and not cond) else ''}")
+        if not cond: fails.append(label)
+    check('the feedback button is on the page, closed, with its tooltip text in both languages', p.evaluate("()=>{const b=document.getElementById('fbkbtn'), t=document.querySelector('#fbk .fbktip'); return !!b && document.getElementById('fbkpop').hidden && b.getAttribute('aria-expanded')==='false' && t.textContent.includes('Send feedback') && t.textContent.includes('Отправить отзыв');}"))
+    p.select_option('#machine', 'google-willow'); p.wait_for_timeout(300)
+    p.click('#fbkbtn'); p.wait_for_timeout(200)
+    r = p.evaluate("()=>({open:!document.getElementById('fbkpop').hidden, ctx:document.getElementById('fbkctx').textContent, gh:document.getElementById('fbkgh').href, mail:document.getElementById('fbkmail').href, exp:document.getElementById('fbkbtn').getAttribute('aria-expanded')})")
+    check('the sheet opens with the edition, the language and the chosen machine in the context', r['open'] and r['exp'] == 'true' and 'edition: 2026.09' in r['ctx'] and 'language: en' in r['ctx'] and 'machine: google-willow' in r['ctx'], r['ctx'])
+    check('the GitHub link is a prefilled new issue carrying the context', r['gh'].startswith('https://github.com/qraveh/qt-map/issues/new?title=Feedback') and 'google-willow' in r['gh'])
+    check('the mail link carries the subject and the context', r['mail'].startswith('mailto:') and 'subject=' in r['mail'] and 'google-willow' in r['mail'])
+    p.keyboard.press('Escape'); p.wait_for_timeout(150)
+    check('Escape closes the sheet', p.evaluate("()=>document.getElementById('fbkpop').hidden && document.getElementById('fbkbtn').getAttribute('aria-expanded')==='false'"))
+    p.evaluate("()=>window.__setLang('ru')"); p.evaluate("()=>location.hash='#brief-transmon'"); p.wait_for_timeout(400)
+    p.click('#fbkbtn'); p.wait_for_timeout(200)
+    r2 = p.evaluate("()=>({ctx:document.getElementById('fbkctx').textContent, gh:decodeURIComponent(document.getElementById('fbkgh').href), vis:getComputedStyle(document.querySelector('#fbkh .lang-ru')).display!=='none' && getComputedStyle(document.querySelector('#fbkh .lang-en')).display==='none'})")
+    check('in Russian with a brief open: RU labels, the brief in the context, a Russian issue title', r2['vis'] and 'language: ru' in r2['ctx'] and 'location: brief-transmon' in r2['ctx'] and 'title=Отзыв: brief-transmon' in r2['gh'], (r2['ctx'][:120], r2['gh'][:120]))
+    p.evaluate("()=>window.__setLang('en')")
+    ctx.close(); b.close()
+    errs = [e for e in errors if not ('fonts.g' in e and ('ERR_TUNNEL' in e or 'net::' in e)) and 'ERR_TUNNEL' not in e]
+    check('0 console errors', not errs, errs[:3])
+    return fails
+
+
 if __name__ == '__main__':
     with sync_playwright() as pw:
-        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800) + sorting(pw, 1280, 900) + sorting(pw, 400, 800) + chapter8(pw, 1280, 900) + chapter8(pw, 400, 800) + laptop(pw) + selections(pw) + hints(pw) + fullscreen(pw) + review23b(pw) + review23c(pw) + strip(pw) + folds(pw) + stripmodes(pw)
+        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800) + sorting(pw, 1280, 900) + sorting(pw, 400, 800) + chapter8(pw, 1280, 900) + chapter8(pw, 400, 800) + laptop(pw) + selections(pw) + hints(pw) + fullscreen(pw) + review23b(pw) + review23c(pw) + strip(pw) + folds(pw) + stripmodes(pw) + feedback(pw)
     print('RESULT:', 'PASS' if not f else f'FAIL {f}')
     sys.exit(1 if f else 0)

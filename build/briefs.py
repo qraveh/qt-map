@@ -4,7 +4,7 @@
 Shared by build_html.py (page integration) and briefs_bundle.py (MD bundles).
 Nothing here reads the report markdown or the D3 bundle, so it is safe to import.
 """
-import os, re, json, html
+import os, re, json, html, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BDIR = os.path.join(ROOT, 'briefs')
@@ -162,9 +162,11 @@ def _ru_from_en(en_meta):
 
 
 def load_briefs():
-    """All 96 briefs ordered by rank. RU falls back to the EN body when the file is missing."""
+    """All briefs (one per node of data/ranking.json) ordered by rank. RU falls back to the EN body when the file is missing."""
     out = []
     for bid, r in sorted(RANKING.items(), key=lambda kv: kv[1]['rank']):
+        if not os.path.exists(os.path.join(EN_DIR, bid + '.md')):
+            sys.stderr.write('briefs: no English brief for %s yet — skipped\n' % bid); continue   # release_check counts briefs against nodes
         en_meta, en_body = parse_brief(os.path.join(EN_DIR, bid + '.md'))
         ru_path = os.path.join(RU_DIR, bid + '.md')
         if os.path.exists(ru_path):
@@ -209,13 +211,40 @@ _REG_RE = re.compile(r'\[REG:([A-Za-z0-9._\-]+)\]')
 _GKEY_RE = re.compile(r'\[G:([A-Za-z0-9._\-]+)\]')
 
 
+GTIPS = {}   # [G:CODE] chip tooltips, one per code (window.__GTIPS): brief_js sets the title at load — the same 200-byte tip
+             # would otherwise stand once per chip, in both languages (0.3 MB over the briefs)
+
+
+def gkey_tip(code):
+    r = REGMAP.get(code)
+    return '%s · %s' % (r['text'][:220], r['date']) if r and r.get('url') else None
+
+
 def _gkey_chip(m):
     r = REGMAP.get(m.group(1))
     lab = TAGS['G'][0 if MODE == 'internal' else 0]
     if r and r.get('url'):
-        tip = '%s · %s' % (r['text'][:220], r['date'])
-        return '<a class="tag tag-G tag-link" href="%s" target="_blank" rel="noopener" title="%s">G</a>' % (html.escape(r['url']), html.escape(tip))
+        GTIPS[m.group(1)] = gkey_tip(m.group(1))
+        return '<a class="tag tag-G tag-link" href="%s" target="_blank" rel="noopener" data-g="%s">G</a>' % (html.escape(r['url']), html.escape(m.group(1)))
     return '<span class="tag tag-G" title="[G] %s">G</span>' % html.escape(lab)
+
+
+def expand_gtips(h, gtips=None):
+    """the page as the browser shows it: the [G] chips' tooltips set from window.__GTIPS (for the static checkers)"""
+    T = gtips if gtips is not None else GTIPS
+    return re.sub(r'(<a class="tag tag-G tag-link" href="[^"]*" target="_blank" rel="noopener") data-g="([^"]+)">G</a>',
+                  lambda m: '%s title="%s">G</a>' % (m.group(1), html.escape(T.get(html.unescape(m.group(2))) or '')), h)
+
+
+def expand_page(h):
+    """every load-time expansion the static checkers must see: RU Sources lists, key-reference chips, [G] chip tooltips"""
+    import brief_refs, json as _json
+    h = brief_refs.expand_clones(h)
+    k = h.find('window.__KEYREFS='); k2 = h.find('</script>', k)
+    if k > 0: h = expand_keys(h, _json.loads(h[k + len('window.__KEYREFS='):k2].rstrip(';')))
+    g = h.find('window.__GTIPS='); g2 = h.find(';</script>', g)
+    if g > 0: h = expand_gtips(h, _json.loads(h[g + len('window.__GTIPS='):g2]))
+    return h
 
 
 def chip_tags(h, lang):
@@ -347,7 +376,7 @@ def _one_lang(b, lang, md2html, prev_id, next_id, colour):
         '<span class="bid">%s</span>' % html.escape(b['id']),
         '%s %s' % (t['layer'], html.escape(m.get('layer', ''))),
         ('%s %s' % (t['tier'], b['tier'])) if MODE != 'public' else '',
-        ('%s %d/96' % (t['rank'], b['rank'])) if MODE != 'public' else ('%s %s' % (t['centrality'], ('%g' % b['score']))),
+        ('%s %d/%d' % (t['rank'], b['rank'], len(RANKING))) if MODE != 'public' else ('%s %s' % (t['centrality'], ('%g' % b['score']))),
         html.escape(status_label(m, lang)),
         ('%s %s' % (t['since'], html.escape(m.get('since', '')))) if m.get('since') else '',
         '%s %s' % (t['updated'], html.escape(m.get('updated', ''))),
@@ -369,7 +398,7 @@ def _one_lang(b, lang, md2html, prev_id, next_id, colour):
             '<p class="bverdict"><b>%s.</b> %s</p>%s</div>'
             '<div class="bbody">%s</div>%s</div>') % (
         lang, colour, t['close'], meta_line, name, one, t['verdict'], verdict,
-        key_refs_html(key_refs(b['en']['body'], bid=b['id']), lang),
+        key_refs_html(key_refs(b['en']['body'], bid=b['id']), lang, b['id']),
         body_html(b[lang]['body'], lang, md2html, b['id']), nav)
 
 
@@ -418,7 +447,7 @@ def index_table(briefs, lang, md2html):
 
 
 def briefs_section_html(briefs, md2html, colours):
-    """The whole '§ Technology briefs' block: heading, preface, index, and 96 hidden sections."""
+    """The whole '§ Technology briefs' block: heading, preface, index, and one hidden section per brief."""
     langs = []
     for lang in ('en', 'ru'):
         paras = (PREFACE_PUBLIC[lang] + PREFACE[lang][1:]) if MODE == 'public' else PREFACE[lang]
@@ -537,9 +566,22 @@ def key_refs_all(briefs, limit=5):
     return {b['id']: key_refs(b['en']['body'], limit, b['id']) for b in briefs}
 
 
-def key_refs_html(refs, lang):
+def key_refs_html(refs, lang, bid=None):
+    """The key-references chips of a brief header. With a brief id the block is a placeholder that brief_js fills at load from
+    window.__KEYREFS (the same records the station cards use) — the chips and their IEEE tooltips would otherwise stand in the
+    file twice per brief (0.27 MB over the briefs); the static form is kept for the md bundles and for expand_keys()."""
     if not refs: return ''
     t = 'Key references' if lang == 'en' else 'Ключевые источники'
-    items = ''.join('<a href="%s" target="_blank" rel="noopener" title="%s">[%d] %s%s</a>' % (
+    if bid: return '<div class="bkeys" data-keys="%s"><span class="tk">%s</span></div>' % (bid, t)
+    return '<div class="bkeys"><span class="tk">%s</span> %s</div>' % (t, key_refs_items(refs))
+
+
+def key_refs_items(refs):
+    return ''.join('<a href="%s" target="_blank" rel="noopener" title="%s">[%d] %s%s</a>' % (
         html.escape(r['url']), html.escape(r['label']), r['n'], html.escape(r.get('short') or ''), (' ' + r['year']) if r['year'] else '') for r in refs)
-    return '<div class="bkeys"><span class="tk">%s</span> %s</div>' % (t, items)
+
+
+def expand_keys(h, keyrefs):
+    """the page as the browser shows it: the key-reference placeholders filled (for the static checkers)"""
+    return re.sub(r'<div class="bkeys" data-keys="([^"]+)"><span class="tk">([^<]*)</span></div>',
+                  lambda m: '<div class="bkeys"><span class="tk">%s</span> %s</div>' % (m.group(2), key_refs_items(keyrefs.get(m.group(1), []))), h)

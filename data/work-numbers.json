@@ -1,5 +1,5 @@
 {
- "next": 622,
+ "next": 640,
  "works": [
   {
    "n": 1,
@@ -5209,6 +5209,168 @@
     "t:classically accelerated readout for neutral atoms with cpu g"
    ],
    "label": "Akh26"
+  },
+  {
+   "n": 622,
+   "ids": [
+    "arxiv:2306.11727",
+    "u:arxiv:2306.11727",
+    "t:aquila quera s 256 qubit neutral atom quantum computer"
+   ],
+   "label": "WBB+23"
+  },
+  {
+   "n": 623,
+   "ids": [
+    "doi:10.1038/nature24622",
+    "arxiv:1707.04344",
+    "u:arxiv:1707.04344",
+    "t:probing many body dynamics on a 51 atom quantum simulator"
+   ],
+   "label": "BSK+17"
+  },
+  {
+   "n": 624,
+   "ids": [
+    "doi:10.22331/q-2020-09-21-327",
+    "arxiv:2006.12326",
+    "u:arxiv:2006.12326",
+    "t:quantum computing with neutral atoms"
+   ],
+   "label": "HBS+20"
+  },
+  {
+   "n": 625,
+   "ids": [
+    "u:https://pulser.readthedocs.io/en/stable/conventions.html",
+    "t:conventions pulser 1 9 1 documentation"
+   ]
+  },
+  {
+   "n": 626,
+   "ids": [
+    "doi:10.1103/physreva.79.052504",
+    "arxiv:0810.0339",
+    "u:arxiv:0810.0339",
+    "t:quasiclassical calculations of blackbody radiation induced d"
+   ],
+   "label": "BRTE09"
+  },
+  {
+   "n": 627,
+   "ids": [
+    "doi:10.1103/physrevlett.121.123603",
+    "arxiv:1806.04682",
+    "u:arxiv:1806.04682",
+    "t:high fidelity control and entanglement of rydberg atom qubit"
+   ],
+   "label": "LKO+18"
+  },
+  {
+   "n": 628,
+   "ids": [
+    "doi:10.1103/physreva.97.053803",
+    "arxiv:1802.10424",
+    "u:arxiv:1802.10424",
+    "t:analysis of imperfections in the coherent optical excitation"
+   ],
+   "label": "LBL+18"
+  },
+  {
+   "n": 629,
+   "ids": [
+    "u:https://www.pasqal.com/blog/inside-pasqals-2026-vision-on-quantum-for-industry-and-research",
+    "t:inside pasqal s 2026 vision on quantum for industry and rese"
+   ],
+   "label": "Gar26a"
+  },
+  {
+   "n": 630,
+   "ids": [
+    "u:https://docs.aws.amazon.com/braket/latest/developerguide/braket-access-local-detuning.html",
+    "t:explore experimental capabilities amazon braket"
+   ]
+  },
+  {
+   "n": 631,
+   "ids": [
+    "doi:10.1103/physrevresearch.5.043277",
+    "arxiv:2307.09442",
+    "u:arxiv:2307.09442",
+    "t:hardness of the maximum independent set problem on unit disk"
+   ],
+   "label": "ASM+23"
+  },
+  {
+   "n": 632,
+   "ids": [
+    "doi:10.1038/s41586-021-03582-4",
+    "arxiv:2012.12281",
+    "u:arxiv:2012.12281",
+    "t:quantum phases of matter on a 256 atom programmable quantum "
+   ],
+   "label": "EWL+21"
+  },
+  {
+   "n": 633,
+   "ids": [
+    "doi:10.1038/s41586-021-03585-1",
+    "arxiv:2012.12268",
+    "u:arxiv:2012.12268",
+    "t:programmable quantum simulation of 2d antiferromagnets with "
+   ],
+   "label": "SSW+21"
+  },
+  {
+   "n": 634,
+   "ids": [
+    "doi:10.1126/science.abi8794",
+    "arxiv:2104.04119",
+    "u:arxiv:2104.04119",
+    "t:probing topological spin liquids on a programmable quantum s"
+   ],
+   "label": "SLK+21"
+  },
+  {
+   "n": 635,
+   "ids": [
+    "doi:10.1126/science.abo6587",
+    "arxiv:2202.09372",
+    "u:arxiv:2202.09372",
+    "t:quantum optimization of maximum independent set using rydber"
+   ],
+   "label": "EKC+22"
+  },
+  {
+   "n": 636,
+   "ids": [
+    "doi:10.1038/s41586-024-07173-x",
+    "arxiv:2308.07914",
+    "u:arxiv:2308.07914",
+    "t:benchmarking highly entangled states on a 60 atom analog qua"
+   ],
+   "label": "SCC+24"
+  },
+  {
+   "n": 637,
+   "ids": [
+    "u:https://www.pasqal.com/newsroom/pasqals-neutral-atom-quantum-computer-available-on-google-cloud-marketplace",
+    "t:pasqal s neutral atom quantum computer available on google c"
+   ]
+  },
+  {
+   "n": 638,
+   "ids": [
+    "u:https://www.quera.com/press-releases/local-qubit-control-brings-new-capabilities-to-queras-quantum-computer",
+    "t:local qubit control brings new capabilities to quera s quant"
+   ]
+  },
+  {
+   "n": 639,
+   "ids": [
+    "u:https://aws.amazon.com/about-aws/whats-new/2024/04/amazon-braket-experimental-capabilities-quera-device-braket-direct",
+    "t:local detuning now available on quera s aquila device with b"
+   ]
   }
  ]
 }

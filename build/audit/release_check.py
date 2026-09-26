@@ -46,7 +46,7 @@ def main():
     st = run(['git', 'status', '--porcelain']).stdout.strip()
     item('working tree clean after the build (dist committed)', st == '', st[:300])
     h = open(DIST, encoding='utf-8').read()
-    sys.path.insert(0, os.path.join(ROOT, 'build')); import brief_refs as _BRX; h = _BRX.expand_clones(h)   # RU Sources lists as filled at load
+    sys.path.insert(0, os.path.join(ROOT, 'build')); import briefs as _BFX; h = _BFX.expand_page(h)   # as the browser shows it: RU Sources lists, key-reference chips, [G] tooltips filled at load
     t = text_of(h)
     # 2. rendered-markdown integrity
     raw_rows = re.findall(r'<p>\|[^<]{0,200}', h)

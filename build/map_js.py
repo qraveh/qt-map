@@ -567,6 +567,7 @@ window.__relabelMap=relabel;
 // theme changes must re-resolve the CSS colour tokens; buildScales/applyLens live in this closure
 window.__mapTheme=function(){ buildScales(); applyLens(); pcRefresh(); };
 // select a station from outside the map (used by the technology briefs)
+window.__mapContext=function(){ return {focus:state.focus,isolate:state.isolate,machine:state.machine,lens:state.lens}; };
 window.__selectNode=function(id){ if(!NODE[id])return false; select(id); const m=NODE[id]; scrollToNode(m); return true; };
 relabel(); inspectEmpty(); applyLens(); renderPC();
 })();

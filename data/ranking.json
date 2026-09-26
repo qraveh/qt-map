@@ -319,163 +319,233 @@
   "score": 8.2,
   "tier": 3
  },
- "cavity": {
+ "code_detect": {
   "rank": 65,
-  "score": 7.7,
+  "score": 8.0,
   "tier": 3
  },
- "g_fusion": {
+ "cx_reload": {
   "rank": 66,
-  "score": 7.7,
+  "score": 7.9,
   "tier": 3
  },
- "dec_corr": {
+ "cavity": {
   "rank": 67,
   "score": 7.7,
   "tier": 3
  },
- "enc_cat": {
+ "g_fusion": {
   "rank": 68,
+  "score": 7.7,
+  "tier": 3
+ },
+ "dec_corr": {
+  "rank": 69,
+  "score": 7.7,
+  "tier": 3
+ },
+ "enc_cat": {
+  "rank": 70,
   "score": 7.4,
   "tier": 3
  },
  "dec_fpga": {
-  "rank": 69,
+  "rank": 71,
   "score": 7.4,
   "tier": 3
  },
  "enc_hf": {
-  "rank": 70,
+  "rank": 72,
   "score": 7.2,
   "tier": 3
  },
  "fluxonium": {
-  "rank": 71,
-  "score": 6.7,
-  "tier": 3
- },
- "squeezed": {
-  "rank": 72,
-  "score": 6.7,
-  "tier": 3
- },
- "fluxq": {
   "rank": 73,
   "score": 6.7,
   "tier": 3
  },
- "code_fusion": {
+ "squeezed": {
   "rank": 74,
   "score": 6.7,
   "tier": 3
  },
- "dec_rl": {
+ "fluxq": {
   "rank": 75,
   "score": 6.7,
   "tier": 3
  },
- "g_mbq": {
+ "code_fusion": {
   "rank": 76,
+  "score": 6.7,
+  "tier": 3
+ },
+ "dec_rl": {
+  "rank": 77,
+  "score": 6.7,
+  "tier": 3
+ },
+ "ic_fanout": {
+  "rank": 78,
+  "score": 6.6,
+  "tier": 3
+ },
+ "ct_vio": {
+  "rank": 79,
+  "score": 6.4,
+  "tier": 3
+ },
+ "ct_ionaod": {
+  "rank": 80,
+  "score": 6.2,
+  "tier": 3
+ },
+ "ic_multidie": {
+  "rank": 81,
+  "score": 5.8,
+  "tier": 3
+ },
+ "g_mbq": {
+  "rank": 82,
   "score": 5.7,
   "tier": 3
  },
  "cx_crossbar": {
-  "rank": 77,
+  "rank": 83,
   "score": 5.7,
   "tier": 3
  },
  "ro_qcap": {
-  "rank": 78,
+  "rank": 84,
   "score": 5.7,
   "tier": 3
  },
+ "ro_reset": {
+  "rank": 85,
+  "score": 5.6,
+  "tier": 3
+ },
  "enc_spin_ld": {
-  "rank": 79,
+  "rank": 86,
   "score": 5.5,
   "tier": 3
  },
  "ct_eo": {
-  "rank": 80,
+  "rank": 87,
   "score": 5.2,
   "tier": 3
  },
  "ic_fibre": {
-  "rank": 81,
+  "rank": 88,
   "score": 5.2,
   "tier": 3
  },
  "fab_3d": {
-  "rank": 82,
+  "rank": 89,
   "score": 5.2,
   "tier": 3
  },
+ "code_mitig": {
+  "rank": 90,
+  "score": 5.0,
+  "tier": 3
+ },
+ "g_rydanalog": {
+  "rank": 91,
+  "score": 4.6,
+  "tier": 3
+ },
+ "ro_homodyne": {
+  "rank": 92,
+  "score": 4.5,
+  "tier": 3
+ },
+ "g_lointer": {
+  "rank": 93,
+  "score": 4.4,
+  "tier": 3
+ },
  "donor": {
-  "rank": 83,
+  "rank": 94,
   "score": 4.2,
   "tier": 3
  },
  "defect": {
-  "rank": 84,
+  "rank": 95,
   "score": 4.2,
   "tier": 3
  },
  "enc_bare": {
-  "rank": 85,
+  "rank": 96,
   "score": 4.2,
   "tier": 3
  },
  "enc_eo": {
-  "rank": 86,
+  "rank": 97,
   "score": 4.2,
   "tier": 3
  },
  "enc_parity": {
-  "rank": 87,
+  "rank": 98,
   "score": 4.2,
   "tier": 3
  },
  "g_cr": {
-  "rank": 88,
+  "rank": 99,
   "score": 4.2,
   "tier": 3
  },
  "g_anneal": {
-  "rank": 89,
+  "rank": 100,
   "score": 4.2,
   "tier": 3
  },
  "g_cv": {
-  "rank": 90,
+  "rank": 101,
   "score": 4.2,
   "tier": 3
  },
  "cx_bus": {
-  "rank": 91,
+  "rank": 102,
   "score": 4.2,
   "tier": 3
  },
  "fab_mbe": {
-  "rank": 92,
+  "rank": 103,
   "score": 4.2,
   "tier": 3
  },
+ "enc_gr": {
+  "rank": 104,
+  "score": 4.2,
+  "tier": 3
+ },
+ "fab_bulk": {
+  "rank": 105,
+  "score": 4.2,
+  "tier": 3
+ },
+ "ro_fluxro": {
+  "rank": 106,
+  "score": 3.0,
+  "tier": 3
+ },
  "g_mwspin": {
-  "rank": 93,
+  "rank": 107,
   "score": 1.7,
   "tier": 3
  },
  "fab_stm": {
-  "rank": 94,
+  "rank": 108,
   "score": 1.7,
   "tier": 3
  },
  "fab_diamond": {
-  "rank": 95,
+  "rank": 109,
   "score": 1.7,
   "tier": 3
  },
  "enc_timebin": {
-  "rank": 96,
+  "rank": 110,
   "score": 1.0,
   "tier": 3
  }

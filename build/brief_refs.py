@@ -478,7 +478,9 @@ def write_all(db):
     for bid, es in db['briefs'].items():
         ls = md_lines(bid, db)
         for lang in ('en', 'ru'):
-            p = path(bid, lang); s = read(p); s2 = rewrite_section(s, lang, ls)
+            p = path(bid, lang)
+            if not os.path.exists(p): continue   # a brief whose translation is not written yet
+            s = read(p); s2 = rewrite_section(s, lang, ls)
             if s2 != s: write(p, s2)
 
 
@@ -741,6 +743,7 @@ def check():
         works = [e['work'] for e in db['briefs'][bid]]
         if len(set(works)) != len(works): probs.append('%s: a work listed twice' % bid)
         for lang in ('en', 'ru'):
+            if lang == 'ru' and not os.path.exists(path(bid, lang)): continue   # translation pending (the build falls back to EN)
             sp = split(read(path(bid, lang)), lang)
             if not sp: probs.append('%s/%s: no Sources section' % (bid, lang)); continue
             ents, extra, _ = entries(sp[1])

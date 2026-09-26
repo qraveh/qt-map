@@ -648,6 +648,36 @@ def masthead(cfg):
  </div>
 </header>'''
 
+BUG_SVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2l1.9 2.2M16 2l-1.9 2.2"/><path d="M9 6.5h6a3 3 0 0 1 3 3V14a6 6 0 0 1-12 0V9.5a3 3 0 0 1 3-3z"/><path d="M12 6.5V20M3 13h3M18 13h3M4.5 8.5L7 10M19.5 8.5L17 10M4.5 18.5L7 16.5M19.5 18.5L17 16.5"/></svg>'
+def feedback_html(cfg):
+    """Send feedback (the editor's request of 26 Sep 2026): a fixed button with a bug icon and a tooltip; a click opens a small
+    sheet showing the context the reader is looking at (edition, build, language, section or brief, the map's selection) and
+    two channels — a GitHub issue prefilled with that context, and an e-mail to the editor (address assembled at click time)."""
+    return f'''<div class="fbk" id="fbk"><button type="button" class="fbkbtn" id="fbkbtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="fbkpop" aria-label="Send feedback">{BUG_SVG}</button><span class="fbktip" role="tooltip"><span class="lang-en">Send feedback</span><span class="lang-ru">Отправить отзыв</span></span></div>
+<div class="fbkpop" id="fbkpop" role="dialog" aria-labelledby="fbkh" hidden>
+ <h4 id="fbkh"><span class="lang-en">Send feedback</span><span class="lang-ru">Отправить отзыв</span></h4>
+ <p><span class="lang-en">A wrong number, a missing station, a broken control — say what and where; the context below is attached.</span><span class="lang-ru">Неверное число, пропущенная станция, сломанный элемент управления — скажите, что и где; контекст ниже прилагается.</span></p>
+ <pre class="ctx" id="fbkctx"></pre>
+ <div class="acts"><a class="chip" id="fbkgh" href="{cfg['repo']}/issues/new" target="_blank" rel="noopener"><span class="lang-en">Open a GitHub issue</span><span class="lang-ru">Открыть issue на GitHub</span></a><a class="chip" id="fbkmail" href="#"><span class="lang-en">E-mail the editor</span><span class="lang-ru">Написать редактору</span></a><button type="button" class="chip" id="fbkclose"><span class="lang-en">Close</span><span class="lang-ru">Закрыть</span> ✕</button></div>
+</div>'''
+
+
+FEEDBACK_JS=r"""(function(){var btn=document.getElementById('fbkbtn'),pop=document.getElementById('fbkpop'),wrap=document.getElementById('fbk');if(!btn||!pop)return;
+function lang(){return (document.getElementById('app')||{}).getAttribute?document.getElementById('app').getAttribute('data-lang')||'en':'en';}
+function where(){var h=location.hash||'';if(h.indexOf('#brief-')===0)return h.slice(1);var best=null,top=window.scrollY+80;var hs=document.querySelectorAll('main h2[id],main h3[id],main h4[id]');for(var i=0;i<hs.length;i++){var r=hs[i].getBoundingClientRect().top+window.scrollY;if(r<=top)best=hs[i];else break;}return best?(best.id+' — '+best.textContent.trim().slice(0,80)):(h?h.slice(1):'top');}
+function context(){var m=(window.__mapContext&&window.__mapContext())||{};var L=lang();var app=document.getElementById('app');var lines=['page: '+(document.title||'Quantum Technology Map'),'edition: '+((app&&app.getAttribute('data-edition'))||''),'language: '+L,'location: '+where()];if(m.focus)lines.push('station: '+m.focus);if(m.isolate)lines.push('path: '+m.isolate);if(m.machine)lines.push('machine: '+m.machine);if(m.lens)lines.push('lens: '+m.lens);lines.push('url: '+location.href.split('#')[0]+(location.hash||''));lines.push('date: '+new Date().toISOString().slice(0,10));return lines.join('\n');}
+function fill(){var c=context();document.getElementById('fbkctx').textContent=c;var L=lang();var loc=where();var title=(L==='ru'?'Отзыв: ':'Feedback: ')+loc.slice(0,60);var body=(L==='ru'?'Что не так и где:\n\n\n---\nКонтекст (прилагается автоматически):\n':'What is wrong and where:\n\n\n---\nContext (attached automatically):\n')+c;
+ var gh=document.getElementById('fbkgh');gh.href=gh.href.split('?')[0]+'?title='+encodeURIComponent(title)+'&body='+encodeURIComponent(body);
+ var m=document.getElementById('fbkmail');m.href='mailto:'+['raveh','qodeh.com'].join('@')+'?subject='+encodeURIComponent('[QT Map] '+title)+'&body='+encodeURIComponent(body);}
+function open(){fill();pop.hidden=false;wrap.classList.add('open');btn.setAttribute('aria-expanded','true');}
+function close(){pop.hidden=true;wrap.classList.remove('open');btn.setAttribute('aria-expanded','false');}
+btn.addEventListener('click',function(){pop.hidden?open():close();});
+document.getElementById('fbkclose').addEventListener('click',close);
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!pop.hidden)close();});
+document.addEventListener('click',function(e){if(!pop.hidden&&!pop.contains(e.target)&&!wrap.contains(e.target))close();});
+window.__feedbackContext=context;})();"""
+
+
 def footer(cfg):
     if cfg['mode']=='internal': return ''
     NN,NM=_counts()
@@ -719,7 +749,7 @@ def build(cfg=PUBLIC):
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>{CSS}</style>
-<div id="app" data-lang="{dl}">
+<div id="app" data-lang="{dl}" data-edition="{cfg['edition']}{' beta' if STATUS=='beta' else ''}">
 {navchrome(cfg)}
 {masthead(cfg)}
 <div class="page">
@@ -734,6 +764,7 @@ def build(cfg=PUBLIC):
   {footer(cfg)}
  </main>
 </div>
+{feedback_html(cfg)}
 </div>
 <script>window.__GRAPH={json.dumps(G,ensure_ascii=False,separators=(',',':'))};window.__MACH={json.dumps(mach_slim(),ensure_ascii=False,separators=(',',':'))};window.__SHORT={json.dumps(SHORT,ensure_ascii=False,separators=(',',':'))};window.__KEYREFS={json.dumps(BR.key_refs_all(B),ensure_ascii=False)};</script>
 <script>{D3}</script>
@@ -748,8 +779,9 @@ def build(cfg=PUBLIC):
 <script>{NAVJS}</script>
 <script>{JS}</script>
 <script>{BRIEF_JS}</script>
-<script>window.__TIPS={json.dumps(tips_dict(),ensure_ascii=False,separators=(',',':'))};</script>
-<script>{GTIP_JS}</script><script>{FOLD_JS}</script><script>{TAG_JS}</script>
+<script>window.__TIPS={json.dumps(tips_dict(),ensure_ascii=False,separators=(',',':'))};window.__GTIPS={json.dumps(BR.GTIPS,ensure_ascii=False,separators=(',',':'),sort_keys=True)};</script>
+<script>(function(){{var T=window.__GTIPS||{{}};var as=document.querySelectorAll('a.tag-link[data-g]');for(var i=0;i<as.length;i++){{var c=as[i].getAttribute('data-g');if(T[c])as[i].setAttribute('title',T[c]);as[i].removeAttribute('data-g');}}}})();{GTIP_JS}</script><script>{FOLD_JS}</script><script>{TAG_JS}</script>
+<script>{FEEDBACK_JS}</script>
 <script>if(window.__relabelMap)window.__relabelMap();</script>
 '''
     open(cfg['out_body'],'w',encoding='utf-8',newline='\n').write(body)

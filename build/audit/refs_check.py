@@ -25,7 +25,8 @@ PAGE = sys.argv[1] if len(sys.argv) > 1 else 'dist/Quantum-Technology-Map-2026.0
 h = open(PAGE, encoding='utf-8').read()
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'build'))
 import brief_refs as _BR
-h = _BR.expand_clones(h)   # the Russian briefs' Sources lists as the browser fills them (placeholders cloned from the English lists)
+import briefs as _BF
+h = _BF.expand_page(h)   # the page as the browser shows it: RU Sources lists cloned, key-reference chips and [G] tooltips filled at load
 P = []   # problems
 def prob(kind, msg): P.append((kind, msg))
 

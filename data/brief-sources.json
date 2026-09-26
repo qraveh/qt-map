@@ -39,6 +39,26 @@
    "url": "https://arxiv.org/abs/0802.0279",
    "verified": true
   },
+  "arxiv:0810.0339": {
+   "authors": [
+    "I. I. Beterov",
+    "I. I. Ryabtsev",
+    "D. B. Tretyakov",
+    "V. M. Entin"
+   ],
+   "n_authors": 4,
+   "title": "Quasiclassical calculations of blackbody-radiation-induced depopulation rates and effective lifetimes of Rydberg nS, nP, and nD alkali-metal atoms with n ≤ 80",
+   "journal": "Phys. Rev. A",
+   "volume": "79",
+   "issue": "5",
+   "article": "052504",
+   "date": "2009",
+   "doi": "10.1103/PhysRevA.79.052504",
+   "arxiv": "0810.0339",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/0810.0339",
+   "verified": true
+  },
   "arxiv:0904.3556": {
    "authors": [
     "Thomas M. Stace",
@@ -393,6 +413,28 @@
    "url": "https://arxiv.org/abs/1703.01517",
    "verified": true
   },
+  "arxiv:1707.04344": {
+   "authors": [
+    "Hannes Bernien",
+    "Sylvain Schwartz",
+    "Alexander Keesling",
+    "Harry Levine",
+    "Ahmed Omran",
+    "Hannes Pichler"
+   ],
+   "etal": true,
+   "n_authors": 12,
+   "title": "Probing many-body dynamics on a 51-atom quantum simulator",
+   "journal": "Nature",
+   "volume": "551",
+   "pages": "579–584",
+   "date": "2017-11",
+   "doi": "10.1038/nature24622",
+   "arxiv": "1707.04344",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/1707.04344",
+   "verified": true
+  },
   "arxiv:1709.06218": {
    "authors": [
     "Nicolas Delfosse",
@@ -443,6 +485,27 @@
    "url": "https://arxiv.org/abs/1802.08510",
    "verified": true
   },
+  "arxiv:1802.10424": {
+   "authors": [
+    "Sylvain de Léséleuc",
+    "Daniel Barredo",
+    "Vincent Lienhard",
+    "Antoine Browaeys",
+    "Thierry Lahaye"
+   ],
+   "n_authors": 5,
+   "title": "Analysis of imperfections in the coherent optical excitation of single atoms to Rydberg states",
+   "journal": "Phys. Rev. A",
+   "volume": "97",
+   "issue": "5",
+   "article": "053803",
+   "date": "2018-05",
+   "doi": "10.1103/PhysRevA.97.053803",
+   "arxiv": "1802.10424",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/1802.10424",
+   "verified": false
+  },
   "arxiv:1804.06839": {
    "authors": [
     "B. A. Korzh"
@@ -458,6 +521,29 @@
    "arxiv": "1804.06839",
    "kind": "journal",
    "url": "https://arxiv.org/abs/1804.06839",
+   "verified": true
+  },
+  "arxiv:1806.04682": {
+   "authors": [
+    "Harry Levine",
+    "Alexander Keesling",
+    "Ahmed Omran",
+    "Hannes Bernien",
+    "Sylvain Schwartz",
+    "Alexander S. Zibrov"
+   ],
+   "etal": true,
+   "n_authors": 10,
+   "title": "High-fidelity control and entanglement of Rydberg-atom qubits",
+   "journal": "Phys. Rev. Lett.",
+   "volume": "121",
+   "issue": "12",
+   "article": "123603",
+   "date": "2018-09",
+   "doi": "10.1103/PhysRevLett.121.123603",
+   "arxiv": "1806.04682",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/1806.04682",
    "verified": true
   },
   "arxiv:1806.07862": {
@@ -543,6 +629,28 @@
    "url": "https://arxiv.org/abs/2004.04794",
    "verified": true
   },
+  "arxiv:2006.12326": {
+   "authors": [
+    "Loïc Henriet",
+    "Lucas Beguin",
+    "Adrien Signoles",
+    "Thierry Lahaye",
+    "Antoine Browaeys",
+    "Georges-Olivier Reymond"
+   ],
+   "etal": true,
+   "n_authors": 7,
+   "title": "Quantum computing with neutral atoms",
+   "journal": "Quantum",
+   "volume": "4",
+   "article": "327",
+   "date": "2020-09-21",
+   "doi": "10.22331/q-2020-09-21-327",
+   "arxiv": "2006.12326",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2006.12326",
+   "verified": true
+  },
   "arxiv:2008.01642": {
    "authors": [
     "Paul Magnard"
@@ -558,6 +666,50 @@
    "arxiv": "2008.01642",
    "kind": "journal",
    "url": "https://arxiv.org/abs/2008.01642",
+   "verified": true
+  },
+  "arxiv:2012.12268": {
+   "authors": [
+    "Pascal Scholl",
+    "Michael Schuler",
+    "Hannah J. Williams",
+    "Alexander A. Eberharter",
+    "Daniel Barredo",
+    "Kai-Niklas Schymik"
+   ],
+   "etal": true,
+   "n_authors": 12,
+   "title": "Programmable quantum simulation of 2D antiferromagnets with hundreds of Rydberg atoms",
+   "journal": "Nature",
+   "volume": "595",
+   "pages": "233",
+   "date": "2021-07",
+   "doi": "10.1038/s41586-021-03585-1",
+   "arxiv": "2012.12268",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2012.12268",
+   "verified": true
+  },
+  "arxiv:2012.12281": {
+   "authors": [
+    "Sepehr Ebadi",
+    "Tout T. Wang",
+    "Harry Levine",
+    "Alexander Keesling",
+    "Giulia Semeghini",
+    "Ahmed Omran"
+   ],
+   "etal": true,
+   "n_authors": 15,
+   "title": "Quantum Phases of Matter on a 256-Atom Programmable Quantum Simulator",
+   "journal": "Nature",
+   "volume": "595",
+   "pages": "227",
+   "date": "2021-07",
+   "doi": "10.1038/s41586-021-03582-4",
+   "arxiv": "2012.12281",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2012.12281",
    "verified": true
   },
   "arxiv:2103.14209": {
@@ -576,6 +728,28 @@
    "arxiv": "2103.14209",
    "kind": "proceedings",
    "url": "https://arxiv.org/abs/2103.14209",
+   "verified": true
+  },
+  "arxiv:2104.04119": {
+   "authors": [
+    "Giulia Semeghini",
+    "Harry Levine",
+    "Alexander Keesling",
+    "Sepehr Ebadi",
+    "Tout T. Wang",
+    "Dolev Bluvstein"
+   ],
+   "etal": true,
+   "n_authors": 16,
+   "title": "Probing Topological Spin Liquids on a Programmable Quantum Simulator",
+   "journal": "Science",
+   "volume": "374",
+   "pages": "1242",
+   "date": "2021-12",
+   "doi": "10.1126/science.abi8794",
+   "arxiv": "2104.04119",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2104.04119",
    "verified": true
   },
   "arxiv:2104.05219": {
@@ -657,6 +831,28 @@
    "arxiv": "2111.03011",
    "kind": "journal",
    "url": "https://arxiv.org/abs/2111.03011",
+   "verified": true
+  },
+  "arxiv:2202.09372": {
+   "authors": [
+    "Sepehr Ebadi",
+    "Alexander Keesling",
+    "Madelyn Cain",
+    "Tout T. Wang",
+    "Harry Levine",
+    "Dolev Bluvstein"
+   ],
+   "etal": true,
+   "n_authors": 24,
+   "title": "Quantum Optimization of Maximum Independent Set using Rydberg Atom Arrays",
+   "journal": "Science",
+   "volume": "376",
+   "pages": "1209",
+   "date": "2022-06",
+   "doi": "10.1126/science.abo6587",
+   "arxiv": "2202.09372",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2202.09372",
    "verified": true
   },
   "arxiv:2206.12803": {
@@ -885,6 +1081,24 @@
    "url": "https://arxiv.org/abs/2305.19266",
    "verified": true
   },
+  "arxiv:2306.11727": {
+   "authors": [
+    "Jonathan Wurtz",
+    "Alexei Bylinskii",
+    "Boris Braverman",
+    "Jesse Amato-Grill",
+    "Sergio H. Cantu",
+    "Florian Huber"
+   ],
+   "etal": true,
+   "n_authors": 13,
+   "title": "Aquila: QuEra's 256-qubit neutral-atom quantum computer",
+   "date": "2023-06-20",
+   "arxiv": "2306.11727",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2306.11727",
+   "verified": true
+  },
   "arxiv:2306.14887": {
    "authors": [
     "Joseph Tindall",
@@ -931,6 +1145,51 @@
    "arxiv": "2307.08737",
    "kind": "journal",
    "url": "https://arxiv.org/abs/2307.08737",
+   "verified": true
+  },
+  "arxiv:2307.09442": {
+   "authors": [
+    "Ruben S. Andrist",
+    "Martin J. A. Schuetz",
+    "Pierre Minssen",
+    "Romina Yalovetzky",
+    "Shouvanik Chakrabarti",
+    "Dylan Herman"
+   ],
+   "etal": true,
+   "n_authors": 12,
+   "title": "Hardness of the Maximum Independent Set Problem on Unit-Disk Graphs and Prospects for Quantum Speedups",
+   "journal": "Phys. Rev. Research",
+   "volume": "5",
+   "issue": "4",
+   "article": "043277",
+   "date": "2023",
+   "doi": "10.1103/PhysRevResearch.5.043277",
+   "arxiv": "2307.09442",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2307.09442",
+   "verified": true
+  },
+  "arxiv:2308.07914": {
+   "authors": [
+    "Adam L. Shaw",
+    "Zhuo Chen",
+    "Joonhee Choi",
+    "Daniel K. Mark",
+    "Pascal Scholl",
+    "Ran Finkelstein"
+   ],
+   "etal": true,
+   "n_authors": 9,
+   "title": "Benchmarking highly entangled states on a 60-atom analog quantum simulator",
+   "journal": "Nature",
+   "volume": "628",
+   "pages": "71–77",
+   "date": "2024",
+   "doi": "10.1038/s41586-024-07173-x",
+   "arxiv": "2308.07914",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2308.07914",
    "verified": true
   },
   "arxiv:2308.07915": {
@@ -3415,6 +3674,15 @@
    "url": "https://arxiv.org/abs/quant-ph/9809034",
    "verified": true
   },
+  "https://aws.amazon.com/about-aws/whats-new/2024/04/amazon-braket-experimental-capabilities-quera-device-braket-direct": {
+   "org": "Amazon Web Services",
+   "title": "Local detuning now available on QuEra's Aquila device with Braket Direct",
+   "date": "2024-04-11",
+   "kind": "web",
+   "site": "AWS What's New",
+   "url": "https://aws.amazon.com/about-aws/whats-new/2024/04/amazon-braket-experimental-capabilities-quera-device-braket-direct/",
+   "verified": true
+  },
   "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/alphaqubit-quantum-error-correction": {
    "org": "Google DeepMind and Google Quantum AI",
    "title": "AlphaQubit tackles one of quantum computing's biggest challenges",
@@ -3475,6 +3743,14 @@
    "kind": "web",
    "site": "NVIDIA Technical Blog",
    "url": "https://developer.nvidia.com/blog/nvidia-nvqlink-architecture-integrates-accelerated-computing-with-quantum-processors/",
+   "verified": true
+  },
+  "https://docs.aws.amazon.com/braket/latest/developerguide/braket-access-local-detuning.html": {
+   "org": "Amazon Web Services",
+   "title": "Explore Experimental Capabilities - Amazon Braket",
+   "kind": "web",
+   "site": "Amazon Braket Developer Guide",
+   "url": "https://docs.aws.amazon.com/braket/latest/developerguide/braket-access-local-detuning.html",
    "verified": true
   },
   "https://docs.q-ctrl.com/boulder-opal/toolkit/apply/trapped-ion-quantum-computing/learn-to-optimize-molmer-sorensen-gates-for-trapped-ions": {
@@ -3945,6 +4221,14 @@
    "kind": "web",
    "site": "PostQuantum.com",
    "url": "https://postquantum.com/quantum-ecosystem/trapped-ion-quantum-ecosystem/",
+   "verified": true
+  },
+  "https://pulser.readthedocs.io/en/stable/conventions.html": {
+   "org": "Pasqal (Pulser open-source project)",
+   "title": "Conventions — Pulser 1.9.1 documentation",
+   "kind": "web",
+   "site": "Pulser documentation",
+   "url": "https://pulser.readthedocs.io/en/stable/conventions.html",
    "verified": true
   },
   "https://q-ctrl.com/blog/q-ctrl-sets-global-quantum-technology-fundraising-record-increasing-series-b-to-usd-113m-led-by-gp-bullhound": {
@@ -5068,6 +5352,18 @@
    "url": "https://www.oxionics.com/announcements/oxford-ionics-selected-for-quantum-missions-pilot-to-upgrade-nqcc-testbed-with-advanced-2d-ion-traps/",
    "verified": true
   },
+  "https://www.pasqal.com/blog/inside-pasqals-2026-vision-on-quantum-for-industry-and-research": {
+   "authors": [
+    "Lucia Garbini"
+   ],
+   "org": "Pasqal",
+   "title": "Inside Pasqal's 2026 Vision on Quantum for Industry and Research",
+   "date": "2026-01-29",
+   "kind": "web",
+   "site": "Pasqal",
+   "url": "https://www.pasqal.com/blog/inside-pasqals-2026-vision-on-quantum-for-industry-and-research/",
+   "verified": true
+  },
   "https://www.pasqal.com/news/pasqal-brings-qubit-control-on-chip-advancing-the-path-to-fault-tolerant-quantum-computing-at-scale": {
    "org": "Pasqal",
    "title": "Pasqal brings qubit control on-chip, advancing the path to fault-tolerant quantum computing at scale",
@@ -5083,6 +5379,15 @@
    "kind": "web",
    "site": "Pasqal",
    "url": "https://www.pasqal.com/newsroom/",
+   "verified": true
+  },
+  "https://www.pasqal.com/newsroom/pasqals-neutral-atom-quantum-computer-available-on-google-cloud-marketplace": {
+   "org": "Pasqal",
+   "title": "Pasqal's Neutral-Atom Quantum Computer Available on Google Cloud Marketplace",
+   "date": "2025-05-13",
+   "kind": "web",
+   "site": "Pasqal",
+   "url": "https://www.pasqal.com/newsroom/pasqals-neutral-atom-quantum-computer-available-on-google-cloud-marketplace/",
    "verified": true
   },
   "https://www.pasqal.com/wp-content/uploads/2025/11/2509_pasqal_quantum-computing-processor_brochure-rvb-v8.pdf": {
@@ -5268,6 +5573,15 @@
    "kind": "web",
    "site": "Quantum Opus",
    "url": "https://www.quantumopus.com/",
+   "verified": true
+  },
+  "https://www.quera.com/press-releases/local-qubit-control-brings-new-capabilities-to-queras-quantum-computer": {
+   "org": "QuEra Computing",
+   "title": "Local Qubit Control Brings New Capabilities to QuEra's Quantum Computer",
+   "date": "2024-04-17",
+   "kind": "web",
+   "site": "QuEra Computing",
+   "url": "https://www.quera.com/press-releases/local-qubit-control-brings-new-capabilities-to-queras-quantum-computer",
    "verified": true
   },
   "https://www.quixquantum.com/news/quix-quantum-installs-real-time-control-component-for-universal-photonic-quantum-computer": {
@@ -8236,6 +8550,60 @@
     "grade": "R"
    }
   ],
+  "enc_gr": [
+   {
+    "work": "arxiv:2306.11727",
+    "grade": "C"
+   },
+   {
+    "work": "arxiv:1707.04344",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2006.12326",
+    "grade": "C"
+   },
+   {
+    "work": "https://pulser.readthedocs.io/en/stable/conventions.html",
+    "grade": "C"
+   },
+   {
+    "work": "arxiv:0810.0339",
+    "grade": "S"
+   },
+   {
+    "work": "arxiv:1806.04682",
+    "grade": "D"
+   },
+   {
+    "work": "report:N6#0",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:1802.10424",
+    "grade": "D"
+   },
+   {
+    "work": "report:N9#0",
+    "grade": "D"
+   },
+   {
+    "work": "report:A6#0",
+    "grade": "D"
+   },
+   {
+    "work": "https://www.pasqal.com/blog/inside-pasqals-2026-vision-on-quantum-for-industry-and-research",
+    "grade": "R"
+   },
+   {
+    "work": "report:N4#0",
+    "grade": "C"
+   },
+   {
+    "work": "arxiv:2304.05420",
+    "grade": "D"
+   }
+  ],
   "enc_hf": [
    {
     "work": "report:I6#0",
@@ -9682,6 +10050,96 @@
    {
     "work": "report:N13#0",
     "grade": "D"
+   }
+  ],
+  "g_rydanalog": [
+   {
+    "work": "arxiv:2306.11727",
+    "grade": "C"
+   },
+   {
+    "work": "https://docs.aws.amazon.com/braket/latest/developerguide/braket-access-local-detuning.html",
+    "grade": "C"
+   },
+   {
+    "work": "arxiv:1401.5504",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2307.09442",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:1707.04344",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2006.12326",
+    "grade": "D"
+   },
+   {
+    "work": "report:N9#0",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2012.12281",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2012.12268",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2104.04119",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2202.09372",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2308.07914",
+    "grade": "D"
+   },
+   {
+    "work": "report:A6#0",
+    "grade": "D"
+   },
+   {
+    "work": "https://www.pasqal.com/newsroom/pasqals-neutral-atom-quantum-computer-available-on-google-cloud-marketplace",
+    "grade": "C"
+   },
+   {
+    "work": "https://www.pasqal.com/wp-content/uploads/2025/11/2509_pasqal_quantum-computing-processor_brochure-rvb-v8.pdf",
+    "grade": "C"
+   },
+   {
+    "work": "https://www.quera.com/press-releases/local-qubit-control-brings-new-capabilities-to-queras-quantum-computer",
+    "grade": "C"
+   },
+   {
+    "work": "https://www.pasqal.com/blog/inside-pasqals-2026-vision-on-quantum-for-industry-and-research",
+    "grade": "C"
+   },
+   {
+    "work": "report:N24#0",
+    "grade": "C"
+   },
+   {
+    "work": "https://aws.amazon.com/about-aws/whats-new/2024/04/amazon-braket-experimental-capabilities-quera-device-braket-direct",
+    "grade": "C"
+   },
+   {
+    "work": "report:N18#0",
+    "grade": "C"
+   },
+   {
+    "work": "report:N21#0",
+    "grade": "P"
+   },
+   {
+    "work": "report:N25#1",
+    "grade": "R"
    }
   ],
   "g_tc": [

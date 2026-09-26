@@ -305,6 +305,22 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .colophon p{margin:.6em 0;text-wrap:pretty}
 .colophon b{color:var(--ink)}
 /* inspector */
+/* Send feedback — a fixed button (bug icon) with a tooltip, opening a small sheet with the page context and two channels (26 Sep 2026) */
+.fbk{position:fixed;right:18px;bottom:18px;z-index:75;display:flex;flex-direction:column;align-items:center;gap:8px}
+.fbk .fbkbtn{appearance:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--rule);background:var(--surface);color:var(--ink);cursor:pointer;display:grid;place-items:center;box-shadow:0 2px 10px rgba(10,16,22,.10);padding:0}
+.fbk .fbkbtn:hover,.fbk .fbkbtn:focus-visible{border-color:var(--ink);outline:none}
+.fbk .fbkbtn svg{width:22px;height:22px;display:block}
+.fbk .fbktip{position:absolute;bottom:54px;right:0;background:#111;color:#fff;font:500 15px/1.2 "Golos Text",system-ui,sans-serif;padding:9px 16px;border-radius:10px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .12s}
+.fbk .fbkbtn:hover + .fbktip,.fbk .fbkbtn:focus-visible + .fbktip{opacity:1}
+.fbk.open .fbktip{opacity:0 !important}
+.fbkpop{position:fixed;right:18px;bottom:72px;z-index:76;width:min(360px,calc(100vw - 36px));background:var(--surface);border:1px solid var(--rule);border-radius:12px;box-shadow:0 8px 30px rgba(10,16,22,.18);padding:14px 16px 12px;font-size:13.5px}
+.fbkpop[hidden]{display:none}
+.fbkpop h4{margin:0 0 6px;font-size:14px}
+.fbkpop p{margin:0 0 8px;color:var(--ink2)}
+.fbkpop .ctx{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--muted);white-space:pre-wrap;border:1px dashed var(--rule);border-radius:8px;padding:6px 8px;margin:0 0 10px;max-height:120px;overflow:auto}
+.fbkpop .acts{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.fbkpop .acts a{text-decoration:none}
+@media print{.fbk,.fbkpop{display:none}}
 .insp{position:fixed;top:84px;left:16px;width:336px;max-height:calc(100vh - 100px);max-height:calc(100dvh - 100px);border:1px solid var(--rule);border-radius:12px;padding:0 16px 14px;overflow:auto;font-size:13.5px;background:var(--surface);box-shadow:0 12px 36px rgba(0,0,0,.16);z-index:40;resize:both;min-width:280px;min-height:200px}
 .insp .grip{position:sticky;top:0;display:flex;align-items:center;gap:6px;margin:0 -16px 8px;padding:6px 10px;background:var(--surface2);border-bottom:1px solid var(--rule);cursor:move;user-select:none;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);z-index:2}
 .insp .grip .sp{flex:1}
