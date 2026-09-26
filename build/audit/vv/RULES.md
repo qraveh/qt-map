@@ -23,7 +23,7 @@ Sources: data/graph.json; editor's rules (programme notes 9–10 Sep 2026; proje
 | aff | `aff` | 0.0 0.25 0.5 0.75 1.0 |
 | time | `floor(b.t)`, else `floor(c.t)`; neither → none (log10 s decade) | -9 … -3, none |
 | det | `b.det` | det her na |
-| mech | `c.mech` (c null → none) | disp erasure fluor img none qcap s2c spd |
+| mech | `c.mech` (c null → none) | disp erasure fluor flux homodyne img none qcap s2c spd |
 | destr | `c.destr` (c null → none) | False True none |
 | mid | `c.mid` (c null → none) | False True none |
 | d | `d` (mobility) | bus flying longrange none shared static transport |
@@ -34,7 +34,7 @@ Sources: data/graph.json; editor's rules (programme notes 9–10 Sep 2026; proje
 | status | `status` | D E T X |
 
 ## Machine term (C2, 17 Sep 2026)
-`machine` (a register machine id from `data/machines.json`, or None) is one more term of the same intersection, never a new mechanism (C2 brief, editor's rule). **M (machine m)** = the machine's real (non-gap) stations on every layer, primary and alternate, i.e. every `layers[*][*].node` that is a graph node (gap nodes `∅…` are not graph nodes and contribute nothing). Lit stations = I ∩ F ∩ L ∩ M; the focused station stays lit (ADJ-3). Lines: the machine keeps exactly its own `map_path` line, like an isolate — lines = (lines by rules 4/ADJ-1/ADJ-2) ∩ {map_path}; a machine counts as a selection for ADJ-1 (a non-family lens value does not remove the line the machine keeps) and for edges (rule 3: edges only between lit stations). Stations the machine uses only as an alternate are marked `altuse` on the page while lit (readout only, not a lit-set term). The card shown is the focused station's if any, else the machine's; reset clears the machine. Since C2 isolating a path no longer clears the focused station (driver state model updated).
+`machine` (a register machine id from `data/machines.json`, or None) is one more term of the same intersection, never a new mechanism (C2 brief, editor's rule). **M (machine m)** = the machine's real (non-gap) stations on every layer, primary and alternate, i.e. every `layers[*][*].node` that is a graph node (gap nodes `∅…` and, since 26 Sep 2026, the register's cell values `none` / `undisclosed` are not graph nodes and contribute nothing). Lit stations = I ∩ F ∩ L ∩ M; the focused station stays lit (ADJ-3). Lines: the machine keeps exactly its own `map_path` line, like an isolate — lines = (lines by rules 4/ADJ-1/ADJ-2) ∩ {map_path}; a machine counts as a selection for ADJ-1 (a non-family lens value does not remove the line the machine keeps) and for edges (rule 3: edges only between lit stations). Stations the machine uses only as an alternate are marked `altuse` on the page while lit (readout only, not a lit-set term). The card shown is the focused station's if any, else the machine's; reset clears the machine. Since C2 isolating a path no longer clears the focused station (driver state model updated).
 
 ## Place (17 Sep 2026)
 place is list-valued since 17 Sep 2026 (ct_sfq mK+4K, ct_cryocmos 4K+mK); 'vac' removed ("in-vacuum integrated" is a location, not a temperature — ct_ionlaser is RT). The first entry is the primary stage (colour, parallel-coordinates axis); the lens term is membership over the list, as `f`; the station card and §7.2 print every stage joined by " / " in the vocabulary's order (RT → 4 K → mK).
