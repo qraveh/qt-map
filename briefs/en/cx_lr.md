@@ -23,7 +23,7 @@ Attributes (legend: a = affinity natural↔fabricated; b = time, deterministic/h
 - e = no control modality at no placement: the flux line is booked under the qubits joined.
 - f = coherent: residual ZZ, phase miscalibration, crosstalk.
 - g = superconducting lithography.
-Rank 2 of 96; a hub reaching the superconducting and annealing paths; off-diagonal reading: a fabricated carrier with far-range mobility.
+Rank 2 of 110; a hub reaching the superconducting and annealing paths; off-diagonal reading: a fabricated carrier with far-range mobility.
 
 ## Physics & limits
 

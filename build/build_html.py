@@ -652,6 +652,22 @@ NAVJS = r"""
 
 def _counts():
     return len(G['nodes']), len(json.load(open(os.path.join(ROOT,'data','machines.json'),encoding='utf-8'))['machines'])
+NUMWORD_EN_SMALL={0:'no',1:'one',2:'two',3:'three',4:'four',5:'five',6:'six',7:'seven',8:'eight',9:'nine',10:'ten',11:'eleven',12:'twelve',13:'thirteen',14:'fourteen',15:'fifteen',16:'sixteen',17:'seventeen',18:'eighteen',19:'nineteen',20:'twenty',21:'twenty-one',22:'twenty-two',23:'twenty-three',24:'twenty-four',25:'twenty-five',26:'twenty-six',27:'twenty-seven',28:'twenty-eight',29:'twenty-nine',30:'thirty'}
+NUMWORD_RU_SMALL={0:'ни одной',1:'одна',2:'две',3:'три',4:'четыре',5:'пять',6:'шесть',7:'семь',8:'восемь',9:'девять',10:'десять',11:'одиннадцать',12:'двенадцать',13:'тринадцать',14:'четырнадцать',15:'пятнадцать',16:'шестнадцать',17:'семнадцать',18:'восемнадцать',19:'девятнадцать',20:'двадцать',21:'двадцать одна',22:'двадцать две',23:'двадцать три',24:'двадцать четыре',25:'двадцать пять',26:'двадцать шесть',27:'двадцать семь',28:'двадцать восемь',29:'двадцать девять',30:'тридцать'}
+def report_numbers(text,lang):
+    """The hand-written report names the data's counts through placeholders filled here (26 Sep 2026): {{N_NODES}} stations,
+    {{N_PATHS}} paths, {{N_MACHINES}} machines, {{N_CELLS}} evidence cells, {{N_PRESSONLY_WORD}} machines with no verified cell —
+    so the text never carries a stale 96 / 14 / 136 / 1,533 again."""
+    M=json.load(open(os.path.join(ROOT,'data','machines.json'),encoding='utf-8'))
+    nm=len(M['machines']); cells=sum(m['evidence_counts']['total'] for m in M['machines']); press=sum(1 for m in M['machines'] if m['evidence_counts']['verified']==0)
+    thou=(lambda n: f'{n:,}') if lang=='en' else (lambda n: f'{n:,}'.replace(',','\u00a0'))
+    vals={'N_NODES':str(len(G['nodes'])),'N_PATHS':str(len(G['paths'])),'N_PATHS_WORD':(NUMWORD_EN if lang=='en' else NUMWORD_RU).get(len(G['paths']),str(len(G['paths']))),
+          'N_MACHINES':str(nm),'N_CELLS':thou(cells),'N_PRESSONLY':str(press),'N_PRESSONLY_WORD':(NUMWORD_EN_SMALL if lang=='en' else NUMWORD_RU_SMALL).get(press,str(press))}
+    vals['N_PRESSONLY_WORD_CAP']=vals['N_PRESSONLY_WORD'][:1].upper()+vals['N_PRESSONLY_WORD'][1:]
+    out=re.sub(r'\{\{(N_[A-Z_]+)\}\}',lambda m: vals.get(m.group(1),m.group(0)),text)
+    left=re.findall(r'\{\{N_[A-Z_]+\}\}',out)
+    if left: raise SystemExit('report placeholders without a value: %s'%sorted(set(left)))
+    return out
 def masthead(cfg):
     doi=cfg['doi_concept']; doiurl='https://doi.org/'+doi; beta=(STATUS=='beta'); NN,NM=_counts()
     doi_html=(f'<span class="doi" title="reserved on Zenodo; resolves when the edition is released">{doi}</span> · <span class="beta lang-en">DOI reserved</span><span class="beta lang-ru">DOI зарезервирован</span>' if beta
@@ -661,7 +677,7 @@ def masthead(cfg):
   <div class="eyebrow"><span class="lang-en">Edition {cfg['edition']}{' · <b class="beta">beta</b>' if beta else ''} · English / Russian</span><span class="lang-ru">Издание {cfg['edition']}{' · <b class="beta">бета</b>' if beta else ''} · English / Русский</span></div>
   <h1 class="title">Quantum Technology Map</h1>
   <p class="author"><span class="lang-en">Author</span><span class="lang-ru">Автор</span> · <b>{cfg['author']}</b> <a class="orcid" href="https://orcid.org/0000-0001-7362-9529" target="_blank" rel="noopener author" title="ORCID iD: https://orcid.org/0000-0001-7362-9529" aria-label="ORCID iD 0000-0001-7362-9529"><svg class="orcid-id" viewBox="0 0 256 256" width="16" height="16" aria-hidden="true"><path fill="#A6CE39" d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z"/><path fill="#FFF" d="M86.3 186.2H70.9V79.1h15.4v107.1zM108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7 0-21.5-13.7-39.7-43.7-39.7h-23.7v79.4zM88.7 56.8c0 5.5-4.5 10.1-10.1 10.1s-10.1-4.6-10.1-10.1c0-5.6 4.5-10.1 10.1-10.1s10.1 4.6 10.1 10.1z"/></svg></a></p>
-  <p class="subtitle"><span class="lang-en">Every quantum-computing technology ({NN}) and every quantum machine built, announced or planned ({NM}): analysed and summarised, partitioned by seven invariant design attributes, compared and combined in dozens of ways — with a brief on every technology and a card on every machine.</span><span class="lang-ru">Все технологии квантовых вычислений ({NN}) и все построенные, объявленные или запланированные квантовые машины (136): проанализированы и сведены, разбиты по семи неизменным атрибутам конструкции, сопоставлены и скомбинированы десятками способов — с брифом на каждую технологию и карточкой на каждую машину.</span></p>
+  <p class="subtitle"><span class="lang-en">Every quantum-computing technology ({NN}) and every quantum machine built, announced or planned ({NM}): analysed and summarised, partitioned by seven invariant design attributes, compared and combined in dozens of ways — with a brief on every technology and a card on every machine.</span><span class="lang-ru">Все технологии квантовых вычислений ({NN}) и все построенные, объявленные или запланированные квантовые машины ({NM}): проанализированы и сведены, разбиты по семи неизменным атрибутам конструкции, сопоставлены и скомбинированы десятками способов — с брифом на каждую технологию и карточкой на каждую машину.</span></p>
  </div>
  <div class="controls">
   <div class="seg" role="group" aria-label="language"><button type="button" data-setlang="en" aria-pressed="true">English</button><button type="button" data-setlang="ru" aria-pressed="false">Русский</button></div>
@@ -792,8 +808,8 @@ def head_meta(cfg):
 
 def build(cfg=PUBLIC):
     D3=open(os.path.join(ROOT,'build','vendor','d3.v7.min.js'),encoding='utf-8').read()
-    EN=open(cfg['report_en'],encoding='utf-8').read()
-    RU=open(cfg['report_ru'],encoding='utf-8').read()
+    EN=report_numbers(open(cfg['report_en'],encoding='utf-8').read(),'en')
+    RU=report_numbers(open(cfg['report_ru'],encoding='utf-8').read(),'ru')
     regmap=json.load(open(cfg['regmap'],encoding='utf-8')) if cfg.get('regmap') else None
     BR.configure(cfg['mode'],en_dir=cfg.get('briefs_en'),ru_dir=cfg.get('briefs_ru'),regmap=regmap,table_num=cfg['table_num'],id_sections=cfg['id_sections'])
     B=BR.load_briefs()

@@ -89,7 +89,7 @@ PREFACE = {
         'derived from the graph itself — how far a node reaches across platform families (hub reach), how '
         'many platform paths run through it, and how recent it is. Tier 1 is the 27 most important '
         'technologies at roughly 1,600–2,400 words; Tier 2 is 33 technologies at roughly 1,300 words; '
-        'Tier 3 is 36 technologies at roughly 800 words. The tier is a statement about the graph, not a '
+        'Tier 3 is 50 technologies at roughly 800–1,100 words. The tier is a statement about the graph, not a '
         'judgement of the technology.',
         'Every brief carries the same section skeleton — identity and lineage, physics and limits, '
         'engineering state of the art, manufacturing and supply chain, role in the stack, actors and '
@@ -104,7 +104,7 @@ PREFACE = {
         'У каждой технологии на карте есть бриф, а его глубина определяется оценкой важности, выведенной '
         'из самого графа: насколько узел дотягивается до разных семейств платформ (охват хаба), сколько '
         'путей платформ через него проходит и насколько он свеж. Tier 1 — 27 самых важных технологий, '
-        'примерно 1 600–2 400 слов; Tier 2 — 33 технологии, примерно 1 300 слов; Tier 3 — 36 технологий, '
+        'примерно 1 600–2 400 слов; Tier 2 — 33 технологии, примерно 1 300 слов; Tier 3 — 50 технологий, '
         'примерно 800 слов. Tier — утверждение о графе, а не оценка технологии.',
         'Все брифы построены по одному скелету разделов — идентичность и происхождение, физика и пределы, '
         'инженерное состояние, производство и цепочка поставок, роль в стеке, акторы и экономика, прогноз '

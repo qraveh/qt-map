@@ -23,7 +23,7 @@ Attributes (graph record; legend: a affinity natural↔fabricated; b time, deter
 - e = no control modality, no placement.
 - f = erasure — located loss dominant, small Pauli residual.
 - g = none — layout and software.
-Rank 3 of 96; a hub reaching the neutral-atom and superconducting families; its off-diagonal cell pairs a fabricated carrier with an erasure error structure.
+Rank 3 of 110; a hub reaching the neutral-atom and superconducting families; its off-diagonal cell pairs a fabricated carrier with an erasure error structure.
 
 ## Physics & limits
 
