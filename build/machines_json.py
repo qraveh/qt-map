@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """Build data/machines.json (SPEC step C2, "machines on the Map") from the machines register.
 
-Inputs : quantum-machines-2026.09/data/{machines,machine-stations-evidence,records-candidates,machine-codes,roadmap-feasibility,machine-refs-verified}.csv
+Inputs : quantum-machines/data/{machines,machine-stations-evidence,records-candidates,machine-codes,roadmap-feasibility,machine-refs-verified}.csv
          data/graph.json (layers, vocab.RECKEYS)
 Output : data/machines.json  -- deterministic: same inputs give identical bytes.
+
+Every cell carries "state": station | gap | none | undisclosed (see cell_state); "gap" is kept as a boolean for the consumers
+that predate the register schema of 26 Sep 2026. Cells whose node is not in graph.json are reported (unknown_nodes).
 
 Record numbers are rounded to 6 significant digits. No existing determinize rule was found in
 data/graph_data.py or build/*.py, so the rule is implemented here (sig6).
@@ -11,13 +14,23 @@ data/graph_data.py or build/*.py, so the rule is implemented here (sig6).
 import csv, json, math, os, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-REG = os.environ.get('QT_MACHINES_DIR', '/home/claude/work/QT-Map/quantum-machines-2026.09/data')
+REG = os.environ.get('QT_MACHINES_DIR', '/home/claude/work/QT-Map/quantum-machines/data')
 OUT = os.path.join(ROOT, 'data', 'machines.json')
 EDITION = '2026.09'
-SOURCE = {"register": "quantum-machines-2026.09 · 17 Sep 2026",
+SOURCE = {"register": "quantum-machines · 17 Sep 2026, re-cut 26 Sep 2026 (three ion paths, two analog paths, 14 gaps → stations, sentinels → cell values)",
           "evidence": "machine-stations-evidence.csv · 17 Sep 2026 (locator passes 1–3)"}
 FAMILY_ORDER = ['SC', 'ION', 'ATOM', 'PHOTON', 'SPIN', 'DEFECT', 'TOPO', 'ANNEAL']
 GAP_PREFIX = '∅'
+# A cell's node is one of four things (register schema of 26 Sep 2026, decision D5): a Map station; a gap `∅G-…` (the Map has
+# no station for what the machine runs); `none` (nothing in this layer — no code, no decoder, no interconnect, no encoding
+# layer, no entangling gate); `undisclosed` (the machine has something here but publishes nothing). Only the first is a node.
+SENTINELS = ('none', 'undisclosed')
+
+
+def cell_state(node):
+    if node.startswith(GAP_PREFIX): return 'gap'
+    if node in SENTINELS: return node
+    return 'station'
 
 
 def rows(name):
@@ -72,7 +85,8 @@ def build():
     G = json.load(open(os.path.join(ROOT, 'data', 'graph.json'), encoding='utf-8'))
     layer_no = {l['id']: str(l['n']) for l in G['layers']}
     reckeys = set(G['vocab']['RECKEYS'])
-    report = {'dropped_records': [], 'unknown_layers': [], 'no_primary': [], 'orphan_rows': []}
+    report = {'dropped_records': [], 'unknown_layers': [], 'no_primary': [], 'orphan_rows': [], 'unknown_nodes': [], 'unknown_paths': []}
+    node_ids = {n['id'] for n in G['nodes']}; path_ids = {p['id'] for p in G['paths']}
 
     machines = rows('machines.csv')
     ids = {m['machine_id'] for m in machines}
@@ -116,18 +130,21 @@ def build():
     out, by_node = [], {}
     for m in machines:
         mid = m['machine_id']
+        if m['map_path'] not in path_ids: report['unknown_paths'].append((mid, m['map_path']))
         layers = {str(n): [] for n in range(1, 11)}
         ver = tot = 0
         for r in ev_by.get(mid, []):
             node = r['node_id']
+            if cell_state(node) == 'station' and node not in node_ids: report['unknown_nodes'].append((mid, node))
             v = r['verification'].strip() == '✅'
             ver += v; tot += 1
             layers[layer_no[r['layer']]].append({
-                "node": node, "role": r['role'], "gap": node.startswith(GAP_PREFIX),
+                "node": node, "role": r['role'], "gap": node.startswith(GAP_PREFIX), "state": cell_state(node),
                 "summary": r['usage_summary'],
                 "evidence": {"type": r['evidence_type'], "url": r['evidence_url'],
                              "locator": r['evidence_locator'], "verified": v}})
-            by_node.setdefault(node, {"primary": set(), "alternate": set()})[r['role']].add(mid)
+            if cell_state(node) == 'station':   # by_node indexes Map stations only; gaps and cell values are counted per machine
+                by_node.setdefault(node, {"primary": set(), "alternate": set()})[r['role']].add(mid)
         for k, lst in layers.items():
             lst.sort(key=lambda s: (s['role'] != 'primary', s['node'], s['evidence']['url'], s['summary']))
             if not any(s['role'] == 'primary' for s in lst):

@@ -3,7 +3,7 @@
 import csv, collections, json, os, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-REG = os.environ.get('QT_MACHINES_DIR', '/home/claude/work/QT-Map/quantum-machines-2026.09/data')
+REG = os.environ.get('QT_MACHINES_DIR', '/home/claude/work/QT-Map/quantum-machines/data')
 fails, notes = [], []
 
 
@@ -15,24 +15,33 @@ def rows(name):
 M = json.load(open(os.path.join(ROOT, 'data', 'machines.json'), encoding='utf-8'))
 G = json.load(open(os.path.join(ROOT, 'data', 'graph.json'), encoding='utf-8'))
 node_layer = {n['id']: n['layer'] for n in G['nodes']}
-gaps = {'∅' + r['gap_id'] for r in rows('map-gaps.csv')}
+gaprows = rows('map-gaps.csv')
+gaps = {'∅' + r['gap_id'] for r in gaprows}
+open_gaps = {'∅' + r['gap_id'] for r in gaprows if not r.get('resolved')}   # a resolved gap (station or cell value since 26 Sep 2026) must not appear in a cell
+SENTINELS = ('none', 'undisclosed')                                        # the register's cell values: not nodes, not gaps
 reckeys = set(G['vocab']['RECKEYS'])
 
-# 1. every node id exists in graph.json (and sits on the right layer) or is a map gap
+# 1. every node id exists in graph.json (and sits on the right layer), or is an open map gap, or is a cell value with the matching state
 for m in M['machines']:
     for L, sts in m['layers'].items():
         for s in sts:
             nid = s['node']
             if s['gap'] != nid.startswith('∅'):
                 fails.append('%s L%s %s: gap flag wrong' % (m['id'], L, nid))
+            want = 'gap' if nid.startswith('∅') else (nid if nid in SENTINELS else 'station')
+            if s.get('state') != want:
+                fails.append('%s L%s %s: state %s, expected %s' % (m['id'], L, nid, s.get('state'), want))
             if nid.startswith('∅'):
                 if nid not in gaps: fails.append('%s L%s %s: gap id not in map-gaps.csv' % (m['id'], L, nid))
+                elif nid not in open_gaps: fails.append('%s L%s %s: gap resolved in map-gaps.csv but still in a cell' % (m['id'], L, nid))
+            elif nid in SENTINELS:
+                pass
             elif nid not in node_layer:
                 fails.append('%s L%s %s: node not in graph.json' % (m['id'], L, nid))
             elif str(node_layer[nid]) != L:
                 fails.append('%s L%s %s: node is on layer %s in graph.json' % (m['id'], L, nid, node_layer[nid]))
 for nid in M['by_node']:
-    if not (nid in node_layer or nid in gaps): fails.append('by_node %s unknown' % nid)
+    if nid not in node_layer: fails.append('by_node %s is not a graph node (gaps and cell values are not indexed)' % nid)
 
 # 2. every machine has 10 layers with >= 1 primary
 for m in M['machines']:
@@ -52,8 +61,11 @@ eq('station rows', sum(len(s) for m in M['machines'] for s in m['layers'].values
 eq('verified rows', sum(m['evidence_counts']['verified'] for m in M['machines']), sum(r['verification'].strip() == '✅' for r in ev))
 eq('evidence_counts.total', sum(m['evidence_counts']['total'] for m in M['machines']), len(ev))
 eq('primary rows', sum(s['role'] == 'primary' for m in M['machines'] for L in m['layers'].values() for s in L), sum(r['role'] == 'primary' for r in ev))
-eq('by_node memberships', sum(len(v['primary']) + len(v['alternate']) for v in M['by_node'].values()),
-   len({(r['node_id'], r['role'], r['machine_id']) for r in ev}))
+eq('by_node memberships (stations only)', sum(len(v['primary']) + len(v['alternate']) for v in M['by_node'].values()),
+   len({(r['node_id'], r['role'], r['machine_id']) for r in ev if not r['node_id'].startswith('∅') and r['node_id'] not in SENTINELS}))
+st = collections.Counter(s['state'] for m in M['machines'] for L in m['layers'].values() for s in L)
+notes.append('cell states: %s' % dict(st))
+eq('map_path is a graph path', sorted({m['map_path'] for m in M['machines']} - {p['id'] for p in G['paths']}), [])
 kept = [r for r in rc if r['key'] in reckeys]
 eq('records (vocab keys)', sum(len(m['records']) for m in M['machines']), len(kept))
 if len(kept) != len(rc): notes.append('records dropped (key not in RECKEYS): %d' % (len(rc) - len(kept)))

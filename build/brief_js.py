@@ -4,6 +4,9 @@ BRIEF_JS = r"""
 var app=document.getElementById('app');
 var openId=null, prevY=0;
 function sec(id){ return document.getElementById('brief-'+id); }
+// a Russian brief's Sources list is cloned from the English one (same works, same numbers, English entries): ids and §-links switch to ru
+(function(){ var ols=document.querySelectorAll('ol.refs[data-clone]'); for(var i=0;i<ols.length;i++){ var src=document.getElementById(ols[i].getAttribute('data-clone')); if(!src) continue;
+  ols[i].innerHTML=src.innerHTML.replace(/-en-src-/g,'-ru-src-').replace(/href="#en-s/g,'href="#ru-s'); ols[i].removeAttribute('data-clone'); } })();
 function setHash(h){ try{ history.replaceState(null,'',h); }catch(e){ location.hash=h; } }
 function closeBrief(restore){
   if(!openId) return;

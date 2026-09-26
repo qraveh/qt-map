@@ -45,7 +45,9 @@ def main():
     item('build is byte-reproducible (two runs, one sha256)', s1 and s1 == s2, (s1, s2))
     st = run(['git', 'status', '--porcelain']).stdout.strip()
     item('working tree clean after the build (dist committed)', st == '', st[:300])
-    h = open(DIST, encoding='utf-8').read(); t = text_of(h)
+    h = open(DIST, encoding='utf-8').read()
+    sys.path.insert(0, os.path.join(ROOT, 'build')); import brief_refs as _BRX; h = _BRX.expand_clones(h)   # RU Sources lists as filled at load
+    t = text_of(h)
     # 2. rendered-markdown integrity
     raw_rows = re.findall(r'<p>\|[^<]{0,200}', h)
     item('no markdown table rows rendered as paragraphs', not raw_rows, raw_rows[:2])

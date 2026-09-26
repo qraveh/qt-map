@@ -31,23 +31,27 @@ MACH_URLS={'register':'https://claude.ai/artifact/Bfj8NrxCsx8PMdxUCBMBhV#m-','te
 MACH_FAMILIES=['SC','ION','ATOM','PHOTON','SPIN','DEFECT','TOPO','ANNEAL']
 def mach_slim():
     """Per machine: id, name, org, family, path, status, status_date, q, layers {L:[[node,role,summary,ev_type,ev_url,ev_locator,verified],…]}
-    (gap cells — node ids starting with ∅, not graph nodes — are left out of `layers`, listed by id in `gaps` {L:[id,…]} and counted in `ev`),
-    ev [verified,total]; plus by_node restricted to graph nodes. Field order fixed, so the same input gives identical bytes."""
+    (gap cells — node ids starting with ∅, not graph nodes — are left out of `layers`, listed by id in `gaps` {L:[id,…]}; the register's
+    cell values `none` / `undisclosed` (schema of 26 Sep 2026) likewise in `na` {L:[value,…]}; both counted in `ev`),
+    ev [verified,total], prof (the register's variant attributes: qubit type, gate mechanism, connectivity, control, control placement,
+    readout); plus by_node restricted to graph nodes. Field order fixed, so the same input gives identical bytes."""
     if not os.path.exists(MACH_PATH): return {'machines':[],'by_node':{},'families':MACH_FAMILIES,'urls':MACH_URLS}
     M=json.load(open(MACH_PATH,encoding='utf-8'))
     out=[]
     for m in M['machines']:
-        layers={}; gaps={}
+        layers={}; gaps={}; na={}
         for L in [str(i) for i in range(1,11)]:
             cells=[]
             for c in m.get('layers',{}).get(L,[]):
                 if str(c['node']).startswith('∅'): gaps.setdefault(L,[]).append(c['node']); continue
+                if c.get('state') in ('none','undisclosed') or str(c['node']) in ('none','undisclosed'): na.setdefault(L,[]).append(str(c['node'])); continue
                 e=c.get('evidence') or {}
                 cells.append([c['node'],c.get('role',''),c.get('summary',''),e.get('type',''),e.get('url',''),e.get('locator',''),bool(e.get('verified'))])
             if cells: layers[L]=cells
         ec=m.get('evidence_counts') or {}
         out.append({'id':m['id'],'name':m['name'],'org':m['org'],'family':m['family'],'path':m['map_path'],'status':m['status'],'status_date':m['status_date'],
-                    'q':m.get('physical_qubits_num'),'layers':layers,'gaps':gaps,'ev':[ec.get('verified',0),ec.get('total',0)],
+                    'q':m.get('physical_qubits_num'),'layers':layers,'gaps':gaps,'na':na,'ev':[ec.get('verified',0),ec.get('total',0)],
+                    'prof':[str((m.get('profile') or {}).get(k) or '') for k in ('qubit_type','gate_mechanism','connectivity','control','control_placement','readout')],
                     'refs':[[r['kind'],r['url'],r['title']] for r in (m.get('refs') or [])[:3]]})   # up to three attribution-verified links per machine
     by_node={k:{'primary':list(v.get('primary',[])),'alternate':list(v.get('alternate',[]))} for k,v in M['by_node'].items() if not str(k).startswith('∅')}
     return {'machines':out,'by_node':by_node,'families':MACH_FAMILIES,'urls':MACH_URLS}
@@ -479,10 +483,12 @@ def map_block(lang,gsec='8'):
     return f'''<section class="mapsec">
 <div class="maphead"><h2 class="sr-only">{'Quantum Technology Map' if en else 'Карта квантовых технологий'}</h2><button type="button" class="chip mapcol" data-mapcollapse="1" aria-expanded="true"><span class="when-open">{'▾ collapse the map' if en else '▾ свернуть карту'}</span><span class="when-closed" hidden>{'▸ expand the map' if en else '▸ развернуть карту'}</span></button></div>
 </section>'''
+NUMWORD_EN={14:'fourteen',15:'fifteen',16:'sixteen',17:'seventeen',18:'eighteen',19:'nineteen',20:'twenty'}
+NUMWORD_RU={14:'четырнадцать',15:'пятнадцать',16:'шестнадцать',17:'семнадцать',18:'восемнадцать',19:'девятнадцать',20:'двадцать'}
 def map_lead(gsec='7'):
     """The map's caption (23 Sep 2026, the editor's review): below the map, in both languages, with its section references linked."""
-    en='Columns are the ten layers of a quantum-computing stack, from the qubit’s carrier on the left to manufacturing on the right; each column holds the technologies that fill that layer. Within a column a technology sits higher the more natural its carrier is (atoms, ions and photons at the top) and lower the more fabricated (circuits, dots and cavities at the bottom). The order is not decoration: it predicts behaviour — natural carriers are identical and long-lived but slow and optically driven, fabricated ones are fast and wired but differ from unit to unit — and most technologies of a layer follow it. A hatched station breaks the order: a platform borrowing a trait from the other side, which is the map’s test of a genuine move (§7.6). Coloured lines are the fourteen platform paths, one station per layer; a station marked ◎ is a hub — three or more qubit families depend on it (two, if the technology is young) — so a fix or a stall there reaches several platforms at once; dashed hollow stations are slots nobody has filled. Click a station for its brief, pick a lens to recolour the map by one attribute, or choose a machine to light the stations it uses; the strip below shows the seven-attribute vector of every technology. Construction rules and derived tables: §7.'
-    ru='Колонки — десять слоёв стека квантового компьютера, от носителя кубита слева до производства справа; в каждой колонке — технологии, заполняющие этот слой. Внутри колонки технология стоит тем выше, чем естественнее её носитель (атомы, ионы и фотоны — вверху), и тем ниже, чем больше он изготовлен (схемы, квантовые точки и резонаторы — внизу). Этот порядок не украшение: он предсказывает поведение — естественные носители одинаковы и долгоживущи, но медленны и управляются оптически, изготовленные быстры и подключены проводами, но различаются от экземпляра к экземпляру, — и большинство технологий слоя ему следует. Заштрихованная станция порядок нарушает: платформа заимствует свойство с другой стороны — это и есть тест карты на настоящий ход (§7.6). Цветные линии — четырнадцать путей платформ, по одной станции на слой; станция со знаком ◎ — хаб: от неё зависят три семейства кубитов и более (два — если технология молода), так что исправление или заминка в ней достигает сразу нескольких платформ; пунктирные полые станции — слоты, которые никто не заполнил. Кликните станцию, чтобы открыть её бриф; выберите линзу, чтобы перекрасить карту по одному атрибуту, или машину, чтобы подсветить станции, которые она использует; лента ниже показывает вектор из семи атрибутов каждой технологии. Правила построения и выведенные таблицы — в §7.'
+    en='Columns are the ten layers of a quantum-computing stack, from the qubit’s carrier on the left to manufacturing on the right; each column holds the technologies that fill that layer. Within a column a technology sits higher the more natural its carrier is (atoms, ions and photons at the top) and lower the more fabricated (circuits, dots and cavities at the bottom). The order is not decoration: it predicts behaviour — natural carriers are identical and long-lived but slow and optically driven, fabricated ones are fast and wired but differ from unit to unit — and most technologies of a layer follow it. A hatched station breaks the order: a platform borrowing a trait from the other side, which is the map’s test of a genuine move (§7.6). Coloured lines are the '+NUMWORD_EN[len(G['paths'])]+' platform paths, one station per layer; a station marked ◎ is a hub — three or more qubit families depend on it (two, if the technology is young) — so a fix or a stall there reaches several platforms at once; dashed hollow stations are slots nobody has filled. Click a station for its brief, pick a lens to recolour the map by one attribute, or choose a machine to light the stations it uses; the strip below shows the seven-attribute vector of every technology. Construction rules and derived tables: §7.'
+    ru='Колонки — десять слоёв стека квантового компьютера, от носителя кубита слева до производства справа; в каждой колонке — технологии, заполняющие этот слой. Внутри колонки технология стоит тем выше, чем естественнее её носитель (атомы, ионы и фотоны — вверху), и тем ниже, чем больше он изготовлен (схемы, квантовые точки и резонаторы — внизу). Этот порядок не украшение: он предсказывает поведение — естественные носители одинаковы и долгоживущи, но медленны и управляются оптически, изготовленные быстры и подключены проводами, но различаются от экземпляра к экземпляру, — и большинство технологий слоя ему следует. Заштрихованная станция порядок нарушает: платформа заимствует свойство с другой стороны — это и есть тест карты на настоящий ход (§7.6). Цветные линии — '+NUMWORD_RU[len(G['paths'])]+' путей платформ, по одной станции на слой; станция со знаком ◎ — хаб: от неё зависят три семейства кубитов и более (два — если технология молода), так что исправление или заминка в ней достигает сразу нескольких платформ; пунктирные полые станции — слоты, которые никто не заполнил. Кликните станцию, чтобы открыть её бриф; выберите линзу, чтобы перекрасить карту по одному атрибуту, или машину, чтобы подсветить станции, которые она использует; лента ниже показывает вектор из семи атрибутов каждой технологии. Правила построения и выведенные таблицы — в §7.'
     def link(t,lang):
         return re.sub(r'§(\d+)(?:\.(\d+))?',lambda m:'<a class="xref" href="#%s-s%s%s">%s</a>'%(lang,m.group(1),('-'+m.group(2)) if m.group(2) else '',m.group(0)),t.replace('§7',"§"+gsec))
     return ('<div class="maplead"><details id="maplead"><summary><span class="lang-en">How to read the map</span><span class="lang-ru">Как читать карту</span></summary>'
@@ -620,8 +626,10 @@ NAVJS = r"""
 })();
 """
 
+def _counts():
+    return len(G['nodes']), len(json.load(open(os.path.join(ROOT,'data','machines.json'),encoding='utf-8'))['machines'])
 def masthead(cfg):
-    doi=cfg['doi_concept']; doiurl='https://doi.org/'+doi; beta=(STATUS=='beta')
+    doi=cfg['doi_concept']; doiurl='https://doi.org/'+doi; beta=(STATUS=='beta'); NN,NM=_counts()
     doi_html=(f'<span class="doi" title="reserved on Zenodo; resolves when the edition is released">{doi}</span> · <span class="beta lang-en">DOI reserved</span><span class="beta lang-ru">DOI зарезервирован</span>' if beta
               else f'<a href="{doiurl}" target="_blank" rel="noopener">{doi}</a>')
     return f'''<header class="mast">
@@ -629,7 +637,7 @@ def masthead(cfg):
   <div class="eyebrow"><span class="lang-en">Edition {cfg['edition']}{' · <b class="beta">beta</b>' if beta else ''} · English / Russian</span><span class="lang-ru">Издание {cfg['edition']}{' · <b class="beta">бета</b>' if beta else ''} · English / Русский</span></div>
   <h1 class="title">Quantum Technology Map</h1>
   <p class="author"><span class="lang-en">Author</span><span class="lang-ru">Автор</span> · <b>{cfg['author']}</b> <a class="orcid" href="https://orcid.org/0000-0001-7362-9529" target="_blank" rel="noopener author" title="ORCID iD: https://orcid.org/0000-0001-7362-9529" aria-label="ORCID iD 0000-0001-7362-9529"><svg class="orcid-id" viewBox="0 0 256 256" width="16" height="16" aria-hidden="true"><path fill="#A6CE39" d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z"/><path fill="#FFF" d="M86.3 186.2H70.9V79.1h15.4v107.1zM108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7 0-21.5-13.7-39.7-43.7-39.7h-23.7v79.4zM88.7 56.8c0 5.5-4.5 10.1-10.1 10.1s-10.1-4.6-10.1-10.1c0-5.6 4.5-10.1 10.1-10.1s10.1 4.6 10.1 10.1z"/></svg></a></p>
-  <p class="subtitle"><span class="lang-en">Every quantum-computing technology (96) and every quantum machine built, announced or planned (136): analysed and summarised, partitioned by seven invariant design attributes, compared and combined in dozens of ways — with a brief on every technology and a card on every machine.</span><span class="lang-ru">Все технологии квантовых вычислений (96) и все построенные, объявленные или запланированные квантовые машины (136): проанализированы и сведены, разбиты по семи неизменным атрибутам конструкции, сопоставлены и скомбинированы десятками способов — с брифом на каждую технологию и карточкой на каждую машину.</span></p>
+  <p class="subtitle"><span class="lang-en">Every quantum-computing technology ({NN}) and every quantum machine built, announced or planned ({NM}): analysed and summarised, partitioned by seven invariant design attributes, compared and combined in dozens of ways — with a brief on every technology and a card on every machine.</span><span class="lang-ru">Все технологии квантовых вычислений ({NN}) и все построенные, объявленные или запланированные квантовые машины (136): проанализированы и сведены, разбиты по семи неизменным атрибутам конструкции, сопоставлены и скомбинированы десятками способов — с брифом на каждую технологию и карточкой на каждую машину.</span></p>
  </div>
  <div class="controls">
   <div class="seg" role="group" aria-label="language"><button type="button" data-setlang="en" aria-pressed="true">English</button><button type="button" data-setlang="ru" aria-pressed="false">Русский</button></div>
@@ -642,6 +650,7 @@ def masthead(cfg):
 
 def footer(cfg):
     if cfg['mode']=='internal': return ''
+    NN,NM=_counts()
     doi=cfg['doi_concept']; doiurl='https://doi.org/'+doi
     if STATUS=='beta':
         cite_en=f"{cfg['author']} (2026). <i>Quantum Technology Map</i> (Edition {cfg['edition']}, beta). {cfg['publisher']}. <a href=\"{cfg['url']}\">{cfg['url']}</a> — DOI {doi} is reserved on Zenodo and will resolve when the edition is released; until then cite the site."
@@ -652,7 +661,7 @@ def footer(cfg):
     return f'''<footer class="colophon">
  <div class="lang-en">
   <p><b>Cite as.</b> {cite_en}</p>
-  <p><b>License.</b> This work is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International License</a>: you may share and adapt it for any purpose, including commercially, provided you give appropriate credit, link to the license and indicate any changes. The interactive document, its technology graph (96 nodes, edges and attributes) and the 96 technology briefs are all covered. Quoted figures remain the property of their cited sources.</p>
+  <p><b>License.</b> This work is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International License</a>: you may share and adapt it for any purpose, including commercially, provided you give appropriate credit, link to the license and indicate any changes. The interactive document, its technology graph ({NN} nodes, edges and attributes) and the {NN} technology briefs are all covered. Quoted figures remain the property of their cited sources.</p>
   <p><b>Data and source.</b> The graph (nodes, attributes, edges, dated records), the briefs and the build that renders this page are maintained at <a href="{cfg['repo']}">{cfg['repo'].replace('https://','')}</a>; corrections and new records are welcome as issues or pull requests; each edition is a tagged release archived on Zenodo.</p>
   {editions_html('en')}
   <p><b>Disclosures.</b> This is a single-author publication, produced independently — no funding, sponsorship, affiliation, or solicitation. Factual corrections are welcome.</p>
@@ -660,7 +669,7 @@ def footer(cfg):
  </div>
  <div class="lang-ru">
   <p><b>Как цитировать.</b> {cite_ru}</p>
-  <p><b>Лицензия.</b> Работа распространяется по лицензии <a href="https://creativecommons.org/licenses/by/4.0/deed.ru" rel="license">Creative Commons Attribution 4.0 International</a>: её можно распространять и перерабатывать в любых целях, включая коммерческие, при условии указания авторства, ссылки на лицензию и обозначения внесённых изменений. Лицензия покрывает интерактивный документ, граф технологий (96 узлов, рёбра и атрибуты) и 96 брифов. Цитируемые цифры остаются собственностью указанных источников.</p>
+  <p><b>Лицензия.</b> Работа распространяется по лицензии <a href="https://creativecommons.org/licenses/by/4.0/deed.ru" rel="license">Creative Commons Attribution 4.0 International</a>: её можно распространять и перерабатывать в любых целях, включая коммерческие, при условии указания авторства, ссылки на лицензию и обозначения внесённых изменений. Лицензия покрывает интерактивный документ, граф технологий ({NN} узлов, рёбра и атрибуты) и {NN} брифов. Цитируемые цифры остаются собственностью указанных источников.</p>
   <p><b>Данные и исходники.</b> Граф (узлы, атрибуты, рёбра, датированные рекорды), брифы и сборка, порождающая эту страницу, ведутся в <a href="{cfg['repo']}">{cfg['repo'].replace('https://','')}</a>; исправления и новые рекорды принимаются как issue или pull request; каждое издание — тегированный релиз, архивируемый на Zenodo.</p>
   {editions_html('ru')}
   <p><b>Раскрытие.</b> Это публикация одного автора, подготовленная независимо — без финансирования, спонсорства, аффилиации и заказа. Фактические поправки приветствуются.</p>
@@ -670,7 +679,7 @@ def footer(cfg):
 
 def head_meta(cfg):
     if cfg['mode']=='internal': return '<meta name="color-scheme" content="light dark">'
-    doi=cfg['doi_concept']; cite_doi=('' if STATUS=='beta' else '<meta name="citation_doi" content="'+doi+'">'); ident=(cfg['url'] if STATUS=='beta' else 'https://doi.org/'+doi); desc='Every quantum-computing technology (96) and every quantum machine built, announced or planned (136): analysed and summarised, partitioned by seven invariant design attributes, compared and combined in dozens of ways — with a brief on every technology and a card on every machine. Bilingual EN/RU, CC BY 4.0.'
+    doi=cfg['doi_concept']; cite_doi=('' if STATUS=='beta' else '<meta name="citation_doi" content="'+doi+'">'); ident=(cfg['url'] if STATUS=='beta' else 'https://doi.org/'+doi); NN,NM=_counts(); desc=f'Every quantum-computing technology ({NN}) and every quantum machine built, announced or planned ({NM}): analysed and summarised, partitioned by seven invariant design attributes, compared and combined in dozens of ways — with a brief on every technology and a card on every machine. Bilingual EN/RU, CC BY 4.0.'
     ld={"@context":"https://schema.org","@type":"ScholarlyArticle","name":"Quantum Technology Map","headline":"Quantum Technology Map","version":cfg['edition'],"datePublished":cfg['date'],"codeRepository":cfg.get('repo'),"inLanguage":["en","ru"],
         "author":{"@type":"Person","name":cfg['author']},"publisher":{"@type":"Organization","name":cfg['publisher'],"url":"https://qodeh.com"},
         "license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":True,"identifier":ident,"sameAs":ident,"url":cfg['url'],"description":desc,

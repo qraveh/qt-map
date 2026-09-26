@@ -19,10 +19,13 @@ Reads the rendered page, not the data files, so it catches what the reader sees.
               key-reference tooltips carry no markdown link syntax; the grade tag (D/C/S/G/P/R) follows a brief entry
   anchors     every href="#…src-n" resolves; every entry id is unique
 """
-import collections, html as H, re, sys
+import collections, html as H, os, re, sys
 
 PAGE = sys.argv[1] if len(sys.argv) > 1 else 'dist/Quantum-Technology-Map-2026.09.html'
 h = open(PAGE, encoding='utf-8').read()
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'build'))
+import brief_refs as _BR
+h = _BR.expand_clones(h)   # the Russian briefs' Sources lists as the browser fills them (placeholders cloned from the English lists)
 P = []   # problems
 def prob(kind, msg): P.append((kind, msg))
 

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""References of the 96 technology briefs, on the report's canon (build/sources.py, report §9).
+"""References of the technology briefs (one per station), on the report's canon (build/sources.py, report §9).
 
 Each brief keeps its own list of IEEE entries; the numbers are the Map's permanent work numbers (build/worknum.py): the
 same work carries the same number in §9, in every brief and in every later edition, so a brief's list shows its subset of
@@ -633,11 +633,29 @@ def db_cached():
     return _DB['db']
 
 
+CLONE = re.compile(r'<ol class="refs" data-nohint="1" data-clone="([^"]+)"></ol>')
+
+
+def expand_clones(h):
+    """The page as the browser shows it: a Russian brief's Sources list is a placeholder (data-clone) that brief_js fills at load
+    from the English list with the ids and §-links switched to ru — the two lists are the same works in the same numbers, and the
+    entries are English in both editions. The static checkers (refs_check, release_check) expand the placeholders the same way."""
+    lists = {m.group(1): m.group(2) for m in re.finditer(r'<ol class="refs" data-nohint="1" id="([^"]+)">(.*?)</ol>', h, flags=re.S)}
+    def sub(m):
+        src = lists.get(m.group(1))
+        if src is None: return m.group(0)
+        return '<ol class="refs" data-nohint="1">' + src.replace('-en-src-', '-ru-src-').replace('href="#en-s', 'href="#ru-s') + '</ol>'
+    return CLONE.sub(sub, h)
+
+
 def list_html(bid, lang, chip=lambda g: ' [%s]' % g):
-    """A brief's list as the page renders it: the §9 IEEE entries, ids brief-<bid>-<lang>-src-<n>, the grade tag after the entry."""
+    """A brief's list as the page renders it: the §9 IEEE entries, ids brief-<bid>-<lang>-src-<n>, the grade tag after the entry.
+    The English list carries id brief-<bid>-en-refs; the Russian one is a placeholder cloned from it at load (see expand_clones) —
+    the same entries would otherwise stand twice in the file (0.7 MB over 96 briefs)."""
     db = db_cached()
     if bid not in db['briefs']: return None
-    out = ['<ol class="refs" data-nohint="1">']
+    if lang == 'ru': return '<ol class="refs" data-nohint="1" data-clone="brief-%s-en-refs"></ol>' % bid
+    out = ['<ol class="refs" data-nohint="1" id="brief-%s-en-refs">' % bid]
     for n, e in sorted(zip(numbers_of(bid, db), db['briefs'][bid]), key=lambda x: x[0]):
         h = entry_html(record_of(e['work'], db))
         h = re.sub(r'§(\d+)\.(\d+)\.$', lambda m: '<a class="xref" href="#%s-s%s-%s">§%s.%s</a>.' % (lang, m.group(1), m.group(2), m.group(1), m.group(2)), h)   # the Map's own section, linked

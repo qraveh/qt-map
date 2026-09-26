@@ -613,7 +613,7 @@ def review23c(pw):
     check('the fold opens on click and the choice is stored', p.evaluate("()=>document.getElementById('maplead').open && localStorage.getItem('qmap.lead')==='1'"))
     order = p.evaluate("()=>{const a=document.querySelector('.mast .author'), s=document.querySelector('.mast .subtitle'); return a.compareDocumentPosition(s) & Node.DOCUMENT_POSITION_FOLLOWING ? 'author-first' : 'subtitle-first';}")
     check('the author line precedes the abstract', order == 'author-first', order)
-    check('the abstract names the 96 technologies and the 136 machines', p.evaluate("()=>{const t=document.querySelector('.mast .subtitle .lang-en').textContent; return /\\(96\\)/.test(t) && /\\(136\\)/.test(t);}"))
+    check('the abstract names the technology and machine counts of the data', p.evaluate("()=>{const t=document.querySelector('.mast .subtitle .lang-en').textContent; const n=Object.keys(window.__GRAPH.nodes||{}).length||window.__GRAPH.nodes.length; const m=(window.__MACH.machines||window.__MACH).length; return t.includes('('+n+')') && t.includes('('+m+')');}"))
     check('§0 is titled "Takeaways"', p.evaluate("()=>document.getElementById('en-s0').textContent.includes('Takeaways') && document.getElementById('ru-s0').textContent.includes('Выводы')"))
     check('§3.1 names the platforms', p.evaluate("()=>document.getElementById('en-s3-1').textContent.startsWith('3.1 Platform scores on the six criteria')"))
     check('§0 carries no coined terms (physics of fault tolerance, counts under quality, axes)', p.evaluate("()=>{const t=document.querySelector('.secbody[data-sec=\"en-s0\"] ol.es').textContent; return !/physics of fault tolerance|counts under quality|different axes/.test(t);}"))

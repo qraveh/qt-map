@@ -234,7 +234,7 @@ function litSets(){ const f=state.focus, iso=state.isolate;
     const mp=new Set([mm.path]); keepP=keepP?new Set([...keepP].filter(p=>mp.has(p))):mp; }
   if(f&&keepN)keepN.add(f);
   return {keepN:keepN,keepP:keepP}; }
-// the machine's stations: all real (non-gap) nodes across the ten layers; alt = used only as an alternate
+// the machine's stations: all real nodes across the ten layers (gaps and the none/undisclosed cell values are not nodes); alt = used only as an alternate
 function machNodes(m){ if(m._nodes)return m._nodes; const all=new Set(), pr=new Set(), al=new Set();
   Object.values(m.layers||{}).forEach(cells=>cells.forEach(c=>{ if(!NODE[c[0]])return; all.add(c[0]); (c[1]==='alternate'?al:pr).add(c[0]); }));
   m._nodes={all:all,alt:new Set([...al].filter(x=>!pr.has(x)))}; return m._nodes; }
@@ -323,15 +323,20 @@ function evGlyph(t){ t=String(t||''); for(const [re,g] of EVG)if(re.test(t))retu
 function evHTML(c){ const g=evGlyph(c[3]); const a=c[4]?`<a class="ev" href="${esc(c[4])}" target="_blank" rel="noreferrer" title="${esc(c[3]||'')}">${g}</a>`:`<span class="ev" title="${esc(c[3]||'')}">${g}</span>`;
   return a+(c[5]?` <span class="loc">${esc(c[5])}</span>`:'')+` <span class="vf" title="${c[6]?T('verified','проверено'):T('not verified','не проверено')}">${c[6]?'✅':'🔎'}</span>`; }
 function machLabel(m){ return m.name+' · '+m.org; }
-function inspectMachine(m){ const L=lang(); insp.hidden=false; const gaps=m.gaps||{};
-  const rows=G.layers.map(l=>{ const k=String(l.n); const cells=(m.layers||{})[k]||[], gs=gaps[k]||[];
+const NA_T={none:['none — nothing in this layer','none — в этом слое ничего нет'],undisclosed:['undisclosed — exists, nothing published','undisclosed — есть, но не опубликовано']};
+const PROF_T=[['qubit type','тип кубита'],['gate mechanism','механизм гейта'],['connectivity','связность'],['control','управление'],['control placement','размещение управления'],['readout','считывание']];
+function inspectMachine(m){ const L=lang(); insp.hidden=false; const gaps=m.gaps||{}, na=m.na||{};
+  const rows=G.layers.map(l=>{ const k=String(l.n); const cells=(m.layers||{})[k]||[], gs=gaps[k]||[], ns=na[k]||[];
     const cellHTML=cells.map(c=>{ const n=NODE[c[0]]; const name=n?`<a href="#" data-goto="${c[0]}" class="${c[1]==='alternate'?'alt':'prim'}">${esc(n[L])}</a>`:esc(c[0]);
       return `<div class="mc">${name} <span class="empty">· ${c[1]==='alternate'?T('alternate','альтернатива'):T('primary','основная')}</span> ${evHTML(c)}${c[2]?`<div class="ms">${lk(c[2])}</div>`:''}</div>`; }).join('');
     const gapHTML=gs.map(g=>`<div class="mc empty">— (${T('Map gap','пробел Карты')}: ${esc(g)})</div>`).join('');
-    return `<tr><td class="ln">${l.n} ${esc(l[L])}</td><td>${cellHTML+gapHTML||`<span class="empty">—</span>`}</td></tr>`; }).join('');
+    const naHTML=ns.map(v=>`<div class="mc empty">— ${esc(T(...(NA_T[v]||[v,v])))}</div>`).join('');
+    return `<tr><td class="ln">${l.n} ${esc(l[L])}</td><td>${cellHTML+gapHTML+naHTML||`<span class="empty">—</span>`}</td></tr>`; }).join('');
+  const prof=(m.prof||[]).map((v,i)=>v?`<div class="mc"><span class="empty">${T(...PROF_T[i])}:</span> ${esc(v)}</div>`:'').join('');
   const ev=m.ev||[0,0]; const q=(m.q!=null&&m.q!=='')?`${m.q} ${T('physical qubits','физических кубитов')}`:T('qubits not published','число кубитов не опубликовано');
   insp.innerHTML=`${gripHTML()}<h3><i class="sw" style="--c:${FAMC[m.family]||'var(--mid)'}"></i> ${esc(m.name)}</h3><div class="meta">${esc(m.org)} · ${T(...(FAMN[m.family]||[m.family,m.family]))} · ${esc(m.status)}${m.status_date?' ('+esc(m.status_date)+')':''} · ${q}</div>
   <div class="mlinks"><a href="${REG_URL(m.id)}" target="_blank" rel="noreferrer">↗ ${T('register card','карточка реестра')}</a> <span class="empty">· ${T('path','путь')}: ${PATH[m.path]?esc(PATH[m.path][L]):esc(m.path)}</span></div>
+  ${prof?`<div class="space"><h4>${T('Register profile — the machine\'s variant of its architecture','Профиль реестра — вариант архитектуры у этой машины')}</h4>${prof}</div>`:''}
   <div class="space"><h4>${T('Stations by layer — the machine\'s cell per layer','Станции по слоям — ячейка машины на каждом слое')}</h4><table class="ptab mtab">${rows}</table>
    <div class="empty" style="margin-top:4px">${T('lit on the map: these stations and the machine\'s path line; dashed outline = used only as an alternate','подсвечено на карте: эти станции и линия пути машины; пунктирная рамка = только как альтернатива')}</div></div>
   <div class="mfoot"><span>${T('evidence','источники')}: ✅ ${ev[0]} / ${ev[1]}</span> <button type="button" class="chip" data-mclose="1">${T('clear machine','снять машину')} ✕</button></div>`;
