@@ -1,5 +1,5 @@
 {
- "next": 640,
+ "next": 768,
  "works": [
   {
    "n": 1,
@@ -5370,6 +5370,1143 @@
    "ids": [
     "u:https://aws.amazon.com/about-aws/whats-new/2024/04/amazon-braket-experimental-capabilities-quera-device-braket-direct",
     "t:local detuning now available on quera s aquila device with b"
+   ]
+  },
+  {
+   "n": 640,
+   "ids": [
+    "doi:10.1103/physrevlett.73.58",
+    "u:https://doi.org/10.1103/physrevlett.73.58",
+    "t:experimental realization of any discrete unitary operator"
+   ],
+   "label": "RZBB94"
+  },
+  {
+   "n": 641,
+   "ids": [
+    "doi:10.1364/optica.3.001460",
+    "arxiv:1603.08788",
+    "u:arxiv:1603.08788",
+    "t:optimal design for universal multiport interferometers"
+   ],
+   "label": "CHM+16"
+  },
+  {
+   "n": 642,
+   "ids": [
+    "doi:10.1103/physrevlett.113.120501",
+    "arxiv:1403.4007",
+    "u:arxiv:1403.4007",
+    "t:scalable boson sampling with time bin encoding using a loop "
+   ],
+   "label": "MGDR14"
+  },
+  {
+   "n": 643,
+   "ids": [
+    "doi:10.4086/toc.2013.v009a004",
+    "arxiv:1011.3245",
+    "u:arxiv:1011.3245",
+    "t:the computational complexity of linear optics"
+   ],
+   "label": "AA13"
+  },
+  {
+   "n": 644,
+   "ids": [
+    "doi:10.1103/physrevlett.119.170501",
+    "arxiv:1612.01199",
+    "u:arxiv:1612.01199",
+    "t:gaussian boson sampling"
+   ],
+   "label": "HKS+17"
+  },
+  {
+   "n": 645,
+   "ids": [
+    "doi:10.1038/s41586-022-04725-x",
+    "u:nature:s41586-022-04725-x",
+    "t:quantum computational advantage with a programmable photonic"
+   ],
+   "label": "MLA+22"
+  },
+  {
+   "n": 646,
+   "ids": [
+    "doi:10.1007/s003400000484",
+    "arxiv:quant-ph/0007058",
+    "u:https://arxiv.org/abs/quant-ph/0007058",
+    "t:maximum efficiency of a linear optical bell state analyzer"
+   ],
+   "label": "CL01"
+  },
+  {
+   "n": 647,
+   "ids": [
+    "doi:10.1103/physrevlett.124.100502",
+    "arxiv:1905.12075",
+    "u:arxiv:1905.12075",
+    "t:regimes of classical simulability for noisy gaussian boson s"
+   ],
+   "label": "QBQG20"
+  },
+  {
+   "n": 648,
+   "ids": [
+    "doi:10.1103/physreva.108.052604",
+    "arxiv:2301.12814",
+    "u:arxiv:2301.12814",
+    "t:simulating lossy gaussian boson sampling with matrix product"
+   ],
+   "label": "LOL+23"
+  },
+  {
+   "n": 649,
+   "ids": [
+    "doi:10.1103/physrevlett.120.220502",
+    "arxiv:1707.02793",
+    "u:arxiv:1707.02793",
+    "t:efficient classical algorithm for boson sampling with partia"
+   ],
+   "label": "RMC+18"
+  },
+  {
+   "n": 650,
+   "ids": [
+    "doi:10.1126/science.abe8770",
+    "arxiv:2012.01625",
+    "u:arxiv:2012.01625",
+    "t:quantum computational advantage using photons"
+   ],
+   "label": "ZWD+20"
+  },
+  {
+   "n": 651,
+   "ids": [
+    "arxiv:2109.11525",
+    "u:arxiv:2109.11525",
+    "t:efficient approximation of experimental gaussian boson sampl"
+   ],
+   "label": "VNL+21"
+  },
+  {
+   "n": 652,
+   "ids": [
+    "doi:10.1103/physrevlett.131.150601",
+    "arxiv:2304.12240",
+    "u:arxiv:2304.12240",
+    "t:gaussian boson sampling with pseudo photon number resolving "
+   ],
+   "label": "DGL+23"
+  },
+  {
+   "n": 653,
+   "ids": [
+    "doi:10.1038/s41567-024-02535-8",
+    "arxiv:2306.03709",
+    "u:arxiv:2306.03709",
+    "t:classical algorithm for simulating experimental gaussian bos"
+   ],
+   "label": "OLA+24"
+  },
+  {
+   "n": 654,
+   "ids": [
+    "u:https://orcacomputing.com/technology",
+    "t:technology orca computing"
+   ]
+  },
+  {
+   "n": 655,
+   "ids": [
+    "u:https://orcacomputing.com/orca-pt-2",
+    "t:orca pt 2 orca computing"
+   ]
+  },
+  {
+   "n": 656,
+   "ids": [
+    "arxiv:2605.30935",
+    "u:arxiv:2605.30935",
+    "t:benchmarking the orca pt 2 boson sampler using minimum domin"
+   ],
+   "label": "PSD26"
+  },
+  {
+   "n": 657,
+   "ids": [
+    "arxiv:2510.08274",
+    "u:arxiv:2510.08274",
+    "t:a binary optimisation algorithm for near term photonic quant"
+   ],
+   "label": "MSG+25"
+  },
+  {
+   "n": 658,
+   "ids": [
+    "u:https://www.nqcc.ac.uk/updates/science-minister-andrew-griffith-announces-the-results-of-the-30m-quantum-computing-testbed-competition",
+    "t:science minister andrew griffith announces the results of th"
+   ]
+  },
+  {
+   "n": 659,
+   "ids": [
+    "u:https://orcacomputing.com/montana-state-university-selects-orca-computing",
+    "t:montana state university selects orca computing to advance d"
+   ]
+  },
+  {
+   "n": 660,
+   "ids": [
+    "u:https://orcacomputing.com/installation-marks-key-milestone-in-the-uks-121m-quantum-initiative-advancing-practical-quantum-research",
+    "t:orca computing delivers first photonic quantum computing sys"
+   ]
+  },
+  {
+   "n": 661,
+   "ids": [
+    "u:https://www.techjournal.uk/p/orca-aims-to-beat-classical-computers",
+    "t:orca aims to beat classical computers with pt 3 quantum syst"
+   ]
+  },
+  {
+   "n": 662,
+   "ids": [
+    "doi:10.1103/prxquantum.5.030316",
+    "arxiv:2401.16177",
+    "u:arxiv:2401.16177",
+    "t:iterative assembly of ¹⁷¹yb atom arrays with cavity enhanced"
+   ],
+   "label": "NKC+24"
+  },
+  {
+   "n": 663,
+   "ids": [
+    "arxiv:2506.15633",
+    "u:arxiv:2506.15633",
+    "t:fast continuous and coherent atom replacement in a neutral a"
+   ],
+   "label": "LBP+25"
+  },
+  {
+   "n": 664,
+   "ids": [
+    "doi:10.1103/physrevapplied.16.034013",
+    "arxiv:2106.07414",
+    "u:arxiv:2106.07414",
+    "t:single atoms with 6000 second trapping lifetimes in optical "
+   ],
+   "label": "SPN+21"
+  },
+  {
+   "n": 665,
+   "ids": [
+    "doi:10.1103/45t1-vl5y",
+    "arxiv:2604.07205",
+    "u:arxiv:2604.07205",
+    "t:defect free arrays at the thousand atom scale in a 4 k cryog"
+   ],
+   "label": "LMP+26"
+  },
+  {
+   "n": 666,
+   "ids": [
+    "doi:10.1103/physrevresearch.6.033104",
+    "arxiv:2402.04994",
+    "u:arxiv:2402.04994",
+    "t:continuous operation of large scale atom arrays in optical l"
+   ],
+   "label": "GAT+24"
+  },
+  {
+   "n": 667,
+   "ids": [
+    "u:https://www.quera.com/our-quantum-roadmap",
+    "t:our quantum roadmap"
+   ]
+  },
+  {
+   "n": 668,
+   "ids": [
+    "doi:10.1038/nature18648",
+    "arxiv:1603.04512",
+    "u:arxiv:1603.04512",
+    "t:demonstration of a small programmable quantum computer with "
+   ],
+   "label": "DLF+16"
+  },
+  {
+   "n": 669,
+   "ids": [
+    "doi:10.1038/s41467-019-13534-2",
+    "arxiv:1903.08181",
+    "u:arxiv:1903.08181",
+    "t:benchmarking an 11 qubit quantum computer"
+   ],
+   "label": "WBD+19"
+  },
+  {
+   "n": 670,
+   "ids": [
+    "doi:10.1103/prxquantum.2.020343",
+    "arxiv:2101.11390",
+    "u:arxiv:2101.11390",
+    "t:compact ion trap quantum computing demonstrator"
+   ],
+   "label": "PFM+21"
+  },
+  {
+   "n": 671,
+   "ids": [
+    "doi:10.1038/s41586-021-03928-y",
+    "arxiv:2009.11482",
+    "u:arxiv:2009.11482",
+    "t:fault tolerant control of an error corrected qubit"
+   ],
+   "label": "EDN+21"
+  },
+  {
+   "n": 672,
+   "ids": [
+    "arxiv:2601.01647",
+    "u:arxiv:2601.01647",
+    "t:design and characterization of compact acousto optic deflect"
+   ],
+   "label": "YRH+26"
+  },
+  {
+   "n": 673,
+   "ids": [
+    "u:https://www.rp-photonics.com/acousto_optic_deflectors.html",
+    "t:acousto optic deflectors"
+   ],
+   "label": "Pas"
+  },
+  {
+   "n": 674,
+   "ids": [
+    "u:https://www.aqt.eu/products/ibex-q1",
+    "t:19 inch rack mounted quantum computer"
+   ]
+  },
+  {
+   "n": 675,
+   "ids": [
+    "doi:10.1038/s41586-022-04721-1",
+    "arxiv:2111.12654",
+    "u:arxiv:2111.12654",
+    "t:demonstration of fault tolerant universal quantum gate opera"
+   ],
+   "label": "PHP+22"
+  },
+  {
+   "n": 676,
+   "ids": [
+    "doi:10.1103/physrevapplied.6.044010",
+    "arxiv:1606.00063",
+    "u:arxiv:1606.00063",
+    "t:the quantum socket three dimensional wiring for extensible q"
+   ],
+   "label": "BMR+16"
+  },
+  {
+   "n": 677,
+   "ids": [
+    "doi:10.1063/1.4984299",
+    "arxiv:1703.05828",
+    "u:arxiv:1703.05828",
+    "t:double sided coaxial circuit qed with out of plane wiring"
+   ],
+   "label": "RBP+17"
+  },
+  {
+   "n": 678,
+   "ids": [
+    "u:https://www.riken.jp/en/news_pubs/research_news/rr/20200703_2/index.html",
+    "t:wiring a new path to scalable quantum computing"
+   ]
+  },
+  {
+   "n": 679,
+   "ids": [
+    "doi:10.1587/transele.2021sep0007",
+    "u:https://www.jstage.jst.go.jp/article/transele/e105.c/6/e105.c_2021sep0007/_article",
+    "t:toward realization of scalable packaging and wiring for larg"
+   ],
+   "label": "TTN22"
+  },
+  {
+   "n": 680,
+   "ids": [
+    "u:https://quantware.com/news/quantware-announces-scaling-breakthrough-with-vio-40k",
+    "t:quantware announces scaling breakthrough with vio 40k delive"
+   ]
+  },
+  {
+   "n": 681,
+   "ids": [
+    "u:https://quantware.com/technology",
+    "t:technology vio 3d scaling architecture"
+   ]
+  },
+  {
+   "n": 682,
+   "ids": [
+    "doi:10.1126/sciadv.abl6698",
+    "arxiv:2107.11140",
+    "u:arxiv:2107.11140",
+    "t:high coherence and low cross talk in a tileable 3d integrate"
+   ],
+   "label": "SCT+22"
+  },
+  {
+   "n": 683,
+   "ids": [
+    "arxiv:1708.02226",
+    "u:arxiv:1708.02226",
+    "t:superconducting through silicon vias for quantum integrated "
+   ],
+   "label": "VOW+17"
+  },
+  {
+   "n": 684,
+   "ids": [
+    "doi:10.1038/s41534-020-00289-8",
+    "arxiv:1912.10942",
+    "u:arxiv:1912.10942",
+    "t:solid state qubits integrated with superconducting through s"
+   ],
+   "label": "YSM+20"
+  },
+  {
+   "n": 685,
+   "ids": [
+    "u:https://www.ibm.com/quantum/blog/127-qubit-quantum-processor-eagle",
+    "t:ibm quantum breaks the 100 qubit processor barrier"
+   ],
+   "label": "CDG21"
+  },
+  {
+   "n": 686,
+   "ids": [
+    "u:https://group.ntt/en/newsrelease/2023/03/24/230324a.html",
+    "t:japanese joint research group launches quantum computing clo"
+   ]
+  },
+  {
+   "n": 687,
+   "ids": [
+    "u:https://oqc.tech/tech/devices"
+   ]
+  },
+  {
+   "n": 688,
+   "ids": [
+    "arxiv:2506.15420",
+    "u:arxiv:2506.15420",
+    "t:error detected coherence metrology of a dual rail encoded fi"
+   ],
+   "label": "WHV25"
+  },
+  {
+   "n": 689,
+   "ids": [
+    "u:https://quantware.com/news/introducing-contralto-a-qpu-for-quantum-error-correction",
+    "t:introducing contralto a a qpu for quantum error correction"
+   ]
+  },
+  {
+   "n": 690,
+   "ids": [
+    "u:https://quantware.com/product/processors/d-line",
+    "t:d line qpus build bigger scale faster"
+   ]
+  },
+  {
+   "n": 691,
+   "ids": [
+    "u:https://thequantuminsider.com/2025/12/08/how-fujitsu-is-tackling-a-10000-qubit-quantum-computer-for-practical-applications",
+    "t:how fujitsu is tackling a 10 000 qubit quantum computer for "
+   ],
+   "label": "Swa25c"
+  },
+  {
+   "n": 692,
+   "ids": [
+    "doi:10.1103/physrevlett.121.060502",
+    "arxiv:1801.07689",
+    "u:arxiv:1801.07689",
+    "t:fast and unconditional all microwave reset of a superconduct"
+   ],
+   "label": "MKR+18"
+  },
+  {
+   "n": 693,
+   "ids": [
+    "doi:10.1038/s41467-021-21982-y",
+    "arxiv:2102.06131",
+    "u:arxiv:2102.06131",
+    "t:removing leakage induced correlated errors in superconductin"
+   ],
+   "label": "MKC+21"
+  },
+  {
+   "n": 694,
+   "ids": [
+    "arxiv:2409.16748",
+    "u:arxiv:2409.16748",
+    "t:fast unconditional reset and leakage reduction in fixed freq"
+   ],
+   "label": "CFY+24"
+  },
+  {
+   "n": 695,
+   "ids": [
+    "doi:10.1038/s41467-021-26205-y",
+    "u:nature:s41467-021-26205-y",
+    "t:rapid and unconditional parametric reset protocol for tunabl"
+   ],
+   "label": "ZZY+21"
+  },
+  {
+   "n": 696,
+   "ids": [
+    "arxiv:2411.02950",
+    "u:arxiv:2411.02950",
+    "t:fast unconditional reset and leakage reduction of a tunable "
+   ],
+   "label": "KBF+24"
+  },
+  {
+   "n": 697,
+   "ids": [
+    "u:https://www.ibm.com/quantum/blog/nighthawk-r2",
+    "t:ibm quantum nighthawk r2 more circuits faster"
+   ],
+   "label": "HMD26"
+  },
+  {
+   "n": 698,
+   "ids": [
+    "u:https://postquantum.com/quantum-research/zuchongzhi-3-2-belowthreshold",
+    "t:china s zuchongzhi 3 2 crosses the error correction threshol"
+   ],
+   "label": "Ive25e"
+  },
+  {
+   "n": 699,
+   "ids": [
+    "doi:10.1038/s41567-023-02226-w",
+    "u:nature:s41567-023-02226-w",
+    "t:overcoming leakage in quantum error correction"
+   ],
+   "label": "MMA+23"
+  },
+  {
+   "n": 700,
+   "ids": [
+    "u:https://thequantuminsider.com/2025/12/26/china-demonstrates-quantum-error-correction-using-microwaves-narrowing-gap-with-google",
+    "t:china demonstrates quantum error correction using microwaves"
+   ],
+   "label": "Swa25d"
+  },
+  {
+   "n": 701,
+   "ids": [
+    "u:https://quantum.cloud.ibm.com/docs/en/guides/repetition-rate-execution",
+    "t:qubit initialization"
+   ]
+  },
+  {
+   "n": 702,
+   "ids": [
+    "arxiv:2108.02322",
+    "u:arxiv:2108.02322",
+    "t:architectural considerations in the design of a third genera"
+   ],
+   "label": "BEL+21"
+  },
+  {
+   "n": 703,
+   "ids": [
+    "arxiv:0905.0891",
+    "u:arxiv:0905.0891",
+    "t:a scalable readout system for a superconducting adiabatic qu"
+   ],
+   "label": "BJB+10"
+  },
+  {
+   "n": 704,
+   "ids": [
+    "doi:10.1103/physrevb.81.134510",
+    "u:https://doi.org/10.1103/physrevb.81.134510",
+    "t:experimental demonstration of a robust and scalable flux qub"
+   ],
+   "label": "HJB+10"
+  },
+  {
+   "n": 705,
+   "ids": [
+    "u:https://docs.dwavequantum.com/en/latest/quantum_research/solver_parameters.html",
+    "t:qpu solver parameters d wave quantum computing products docu"
+   ]
+  },
+  {
+   "n": 706,
+   "ids": [
+    "doi:10.1103/prxquantum.1.020314",
+    "arxiv:2006.10817",
+    "u:arxiv:2006.10817",
+    "t:fast lifetime preserving readout for high coherence quantum "
+   ],
+   "label": "GBM+20"
+  },
+  {
+   "n": 707,
+   "ids": [
+    "arxiv:1509.05811",
+    "u:arxiv:1509.05811",
+    "t:a frequency and sensitivity tunable microresonator array for"
+   ],
+   "label": "WSV+15"
+  },
+  {
+   "n": 708,
+   "ids": [
+    "u:https://docs.dwavequantum.com/en/latest/quantum_research/solver_properties_specific.html",
+    "t:per qpu solver properties and schedules d wave quantum compu"
+   ]
+  },
+  {
+   "n": 709,
+   "ids": [
+    "u:https://docs.dwavequantum.com/en/latest/quantum_research/operation_timing.html",
+    "t:operation and timing d wave quantum computing products docum"
+   ]
+  },
+  {
+   "n": 710,
+   "ids": [
+    "u:https://qilimanjaro.tech/towards-a-european-full-stack-coherent-quantum-annealer-platform",
+    "t:towards a european full stack coherent quantum annealer plat"
+   ]
+  },
+  {
+   "n": 711,
+   "ids": [
+    "u:https://support.dwavesys.com/hc/en-us/articles/32105885880087-d-wave-s-advantage2-quantum-computer-now-generally-available",
+    "t:d wave s advantage2 quantum computer now generally available"
+   ]
+  },
+  {
+   "n": 712,
+   "ids": [
+    "doi:10.1126/science.aay2645",
+    "arxiv:1903.03918",
+    "u:arxiv:1903.03918",
+    "t:time domain multiplexed 2 dimensional cluster state universa"
+   ],
+   "label": "ASY+19"
+  },
+  {
+   "n": 713,
+   "ids": [
+    "doi:10.1126/science.aay4354",
+    "arxiv:1906.08709",
+    "u:arxiv:1906.08709",
+    "t:deterministic generation of a two dimensional cluster state"
+   ],
+   "label": "LGB+19"
+  },
+  {
+   "n": 714,
+   "ids": [
+    "doi:10.1103/prxquantum.2.040353",
+    "arxiv:2104.03241",
+    "u:arxiv:2104.03241",
+    "t:fault tolerant quantum computation with static linear optics"
+   ],
+   "label": "TMA+21"
+  },
+  {
+   "n": 715,
+   "ids": [
+    "doi:10.1038/s41566-020-00715-5",
+    "arxiv:2009.14318",
+    "u:arxiv:2009.14318",
+    "t:silicon photonics interfaced with integrated electronics for"
+   ],
+   "label": "TFF+21"
+  },
+  {
+   "n": 716,
+   "ids": [
+    "doi:10.1364/optica.420973",
+    "u:https://doi.org/10.1364/optica.420973",
+    "t:integrated balanced homodyne photonic electronic detector fo"
+   ],
+   "label": "B+21"
+  },
+  {
+   "n": 717,
+   "ids": [
+    "doi:10.1063/5.0137641",
+    "arxiv:2205.14061",
+    "u:arxiv:2205.14061",
+    "t:toward a multi core ultra fast optical quantum processor 43 "
+   ],
+   "label": "IKY+23"
+  },
+  {
+   "n": 718,
+   "ids": [
+    "arxiv:2608.13218",
+    "u:arxiv:2608.13218",
+    "t:heterogeneously integrated squeezed light generation and det"
+   ],
+   "label": "CWT+26"
+  },
+  {
+   "n": 719,
+   "ids": [
+    "u:https://quantum.cloud.ibm.com/docs/en/guides/error-mitigation-and-suppression-techniques",
+    "t:error mitigation and suppression techniques"
+   ]
+  },
+  {
+   "n": 720,
+   "ids": [
+    "doi:10.1103/physrevlett.119.180509",
+    "arxiv:1612.02058",
+    "u:arxiv:1612.02058",
+    "t:error mitigation for short depth quantum circuits"
+   ],
+   "label": "TBG17"
+  },
+  {
+   "n": 721,
+   "ids": [
+    "doi:10.1103/physrevx.7.021050",
+    "arxiv:1611.09301",
+    "u:arxiv:1611.09301",
+    "t:efficient variational quantum simulator incorporating active"
+   ],
+   "label": "LB17"
+  },
+  {
+   "n": 722,
+   "ids": [
+    "doi:10.1038/s41586-019-1040-7",
+    "arxiv:1805.04492",
+    "u:arxiv:1805.04492",
+    "t:error mitigation extends the computational reach of a noisy "
+   ],
+   "label": "KTC+19"
+  },
+  {
+   "n": 723,
+   "ids": [
+    "arxiv:2307.11740",
+    "u:arxiv:2307.11740",
+    "t:scalable tensor network error mitigation for near term quant"
+   ],
+   "label": "FLRG23"
+  },
+  {
+   "n": 724,
+   "ids": [
+    "arxiv:2607.25998",
+    "u:arxiv:2607.25998",
+    "t:observable estimation in the absence of classical verificati"
+   ],
+   "label": "BMT+26"
+  },
+  {
+   "n": 725,
+   "ids": [
+    "doi:10.1038/s41534-022-00618-z",
+    "arxiv:2109.04457",
+    "u:arxiv:2109.04457",
+    "t:fundamental limits of quantum error mitigation"
+   ],
+   "label": "TEMG22"
+  },
+  {
+   "n": 726,
+   "ids": [
+    "doi:10.1103/physrevlett.131.210602",
+    "arxiv:2208.09178",
+    "u:arxiv:2208.09178",
+    "t:universal sampling lower bounds for quantum error mitigation"
+   ],
+   "label": "TTG23"
+  },
+  {
+   "n": 727,
+   "ids": [
+    "doi:10.1038/s41567-024-02536-7",
+    "arxiv:2210.11505",
+    "u:arxiv:2210.11505",
+    "t:exponentially tighter bounds on limitations of quantum error"
+   ],
+   "label": "QFK+24"
+  },
+  {
+   "n": 728,
+   "ids": [
+    "doi:10.1038/s41567-023-02042-2",
+    "arxiv:2201.09866",
+    "u:arxiv:2201.09866",
+    "t:probabilistic error cancellation with sparse pauli lindblad "
+   ],
+   "label": "BMKT23"
+  },
+  {
+   "n": 729,
+   "ids": [
+    "arxiv:2306.16372",
+    "u:arxiv:2306.16372",
+    "t:fast classical simulation of evidence for the utility of qua"
+   ],
+   "label": "BC23"
+  },
+  {
+   "n": 730,
+   "ids": [
+    "doi:10.1126/sciadv.adk4321",
+    "arxiv:2308.05077",
+    "u:arxiv:2308.05077",
+    "t:fast and converged classical simulations of evidence for the"
+   ],
+   "label": "BGC24"
+  },
+  {
+   "n": 731,
+   "ids": [
+    "u:https://www.prnewswire.com/news-releases/qedma-raises-26m-with-participation-from-ibm-to-tackle-quantum-computing-errors-and-accelerate-pace-to-quantum-advantage-302497701.html",
+    "t:qedma raises 26m with participation from ibm to tackle quant"
+   ]
+  },
+  {
+   "n": 732,
+   "ids": [
+    "u:https://www.algorithmiq.fi/news/press-release-tem-ibm-qiskit-functions",
+    "t:algorithmiq launches high performing error mitigation soluti"
+   ]
+  },
+  {
+   "n": 733,
+   "ids": [
+    "u:https://postquantum.com/industry-news/ibm-heron-r3-pittsburgh",
+    "t:ibm launches heron r3 ibm_pittsburgh 350 us t2 and a quality"
+   ],
+   "label": "Ive25f"
+  },
+  {
+   "n": 734,
+   "ids": [
+    "arxiv:2512.10504",
+    "u:arxiv:2512.10504",
+    "t:tianyan cloud services with quantum advantage"
+   ],
+   "label": "Gro25"
+  },
+  {
+   "n": 735,
+   "ids": [
+    "u:https://algorithmiq.fi/news/algorithmiq-establishes-milan-headquarters-and-raises-18m-to-position-europe-as-the-future-of-quantum-software",
+    "t:algorithmiq establishes milan headquarters and raises 18m to"
+   ]
+  },
+  {
+   "n": 736,
+   "ids": [
+    "arxiv:2304.05943",
+    "u:arxiv:2304.05943",
+    "t:spacetime codes of clifford circuits"
+   ],
+   "label": "DP23"
+  },
+  {
+   "n": 737,
+   "ids": [
+    "doi:10.1126/sciadv.1701074",
+    "arxiv:1611.06946",
+    "u:arxiv:1611.06946",
+    "t:fault tolerant quantum error detection"
+   ],
+   "label": "LGL+17"
+  },
+  {
+   "n": 738,
+   "ids": [
+    "arxiv:1705.08957",
+    "u:arxiv:1705.08957",
+    "t:is error detection helpful on ibm 5q chips"
+   ],
+   "label": "Vui18"
+  },
+  {
+   "n": 739,
+   "ids": [
+    "doi:10.1038/s41567-020-0920-y",
+    "arxiv:1912.09410",
+    "u:arxiv:1912.09410",
+    "t:repeated quantum error detection in a surface code"
+   ],
+   "label": "ARL+20"
+  },
+  {
+   "n": 740,
+   "ids": [
+    "doi:10.1038/s41567-021-01423-9",
+    "arxiv:2102.13071",
+    "u:arxiv:2102.13071",
+    "t:logical qubit operations in an error detecting surface code"
+   ],
+   "label": "MVM+22"
+  },
+  {
+   "n": 741,
+   "ids": [
+    "doi:10.1038/s41586-021-03588-y",
+    "u:nature:s41586-021-03588-y",
+    "t:exponential suppression of bit or phase errors with cyclic e"
+   ],
+   "label": "CSA+21"
+  },
+  {
+   "n": 742,
+   "ids": [
+    "doi:10.1038/s41586-023-06846-3",
+    "arxiv:2305.13581",
+    "u:arxiv:2305.13581",
+    "t:encoding a magic state with beyond break even fidelity"
+   ],
+   "label": "GSA+24"
+  },
+  {
+   "n": 743,
+   "ids": [
+    "arxiv:2504.15725",
+    "u:arxiv:2504.15725",
+    "t:low overhead error detection with spacetime codes"
+   ],
+   "label": "MJ25"
+  },
+  {
+   "n": 744,
+   "ids": [
+    "doi:10.1038/nature03350",
+    "arxiv:quant-ph/0410199",
+    "u:https://arxiv.org/abs/quant-ph/0410199",
+    "t:quantum computing with realistically noisy devices"
+   ],
+   "label": "Kni05"
+  },
+  {
+   "n": 745,
+   "ids": [
+    "doi:10.1103/physrevlett.122.080504",
+    "arxiv:1806.02359",
+    "u:arxiv:1806.02359",
+    "t:fault tolerant logical gates in the ibm quantum experience"
+   ],
+   "label": "HF19"
+  },
+  {
+   "n": 746,
+   "ids": [
+    "doi:10.1038/s41534-025-01118-6",
+    "u:nature:s41534-025-01118-6",
+    "t:demonstrating a universal logical gate set in error detectin"
+   ],
+   "label": "ZCW+25"
+  },
+  {
+   "n": 747,
+   "ids": [
+    "doi:10.1038/s41598-026-40381-1",
+    "arxiv:2412.01446",
+    "u:nature:s41598-026-40381-1",
+    "t:magic state injection on ibm quantum processors above the di"
+   ],
+   "label": "KSU26"
+  },
+  {
+   "n": 748,
+   "ids": [
+    "doi:10.1038/s41467-023-38247-5",
+    "u:nature:s41467-023-38247-5",
+    "t:demonstrating multi round subsystem quantum error correction"
+   ],
+   "label": "SYK+23"
+  },
+  {
+   "n": 749,
+   "ids": [
+    "doi:10.1038/s41467-026-73331-6",
+    "arxiv:2410.05202",
+    "u:arxiv:2410.05202",
+    "t:demonstrating real time and low latency quantum error correc"
+   ],
+   "label": "CSB+26"
+  },
+  {
+   "n": 750,
+   "ids": [
+    "doi:10.1038/s42005-025-02136-8",
+    "arxiv:2409.12104",
+    "u:arxiv:2409.12104",
+    "t:performance of quantum approximate optimization with quantum"
+   ],
+   "label": "HASP25"
+  },
+  {
+   "n": 751,
+   "ids": [
+    "arxiv:2608.13110",
+    "u:arxiv:2608.13110",
+    "t:classical simulation and design frontiers for ibm s doped cl"
+   ],
+   "label": "MGP26"
+  },
+  {
+   "n": 752,
+   "ids": [
+    "doi:10.1038/s41534-017-0044-0",
+    "arxiv:1706.04116",
+    "u:nature:s41534-017-0044-0",
+    "t:3d integrated superconducting qubits"
+   ],
+   "label": "RKD+17"
+  },
+  {
+   "n": 753,
+   "ids": [
+    "doi:10.1088/2058-9565/ac734b",
+    "arxiv:2112.02717",
+    "u:arxiv:2112.02717",
+    "t:building blocks of a flip chip integrated superconducting qu"
+   ],
+   "label": "KLR+22"
+  },
+  {
+   "n": 754,
+   "ids": [
+    "doi:10.1088/2058-9565/aa94fc",
+    "arxiv:1708.04270",
+    "u:arxiv:1708.04270",
+    "t:qubit compatible superconducting interconnects"
+   ],
+   "label": "FML+17"
+  },
+  {
+   "n": 755,
+   "ids": [
+    "arxiv:2608.07306",
+    "u:arxiv:2608.07306",
+    "t:flip chip integrated superconducting qubits using electropla"
+   ],
+   "label": "SGK+26"
+  },
+  {
+   "n": 756,
+   "ids": [
+    "u:https://www.ibm.com/quantum/blog/eagle-quantum-processor-performance",
+    "t:eagle s quantum performance progress"
+   ],
+   "label": "Dia22"
+  },
+  {
+   "n": 757,
+   "ids": [
+    "u:https://www.sinica.edu.tw/en/news_content/55/3655",
+    "t:academia sinica unveils 20 qubit superconducting quantum com"
+   ]
+  },
+  {
+   "n": 758,
+   "ids": [
+    "u:https://www.sify.com/science-tech/qpiai-unveils-kaveri-indias-first-aatmanirbhar-64-qubit-quantum-chip",
+    "t:qpiai unveils kaveri india s first aatmanirbhar 64 qubit qua"
+   ],
+   "label": "Per26"
+  },
+  {
+   "n": 759,
+   "ids": [
+    "doi:10.1038/s41534-017-0038-y",
+    "u:nature:s41534-017-0038-y",
+    "t:interfacing spin qubits in quantum dots and donors hot dense"
+   ],
+   "label": "VBC+17"
+  },
+  {
+   "n": 760,
+   "ids": [
+    "doi:10.1126/sciadv.aar3960",
+    "arxiv:1711.03807",
+    "u:arxiv:1711.03807",
+    "t:a crossbar network for silicon quantum dot qubits"
+   ],
+   "label": "LPF+18"
+  },
+  {
+   "n": 761,
+   "ids": [
+    "doi:10.1038/s41928-019-0259-5",
+    "arxiv:1809.03894",
+    "u:arxiv:1809.03894",
+    "t:a cmos dynamic random access architecture for radio frequenc"
+   ],
+   "label": "SRC+19"
+  },
+  {
+   "n": 762,
+   "ids": [
+    "doi:10.1038/s41534-020-0274-4",
+    "u:nature:s41534-020-0274-4",
+    "t:multiplexed quantum transport using commercial off the shelf"
+   ],
+   "label": "WBY+20"
+  },
+  {
+   "n": 763,
+   "ids": [
+    "doi:10.1016/j.micpro.2019.02.006",
+    "u:https://doi.org/10.1016/j.micpro.2019.02.006",
+    "t:rent s rule and extensibility in quantum computing"
+   ],
+   "label": "FCVV19"
+  },
+  {
+   "n": 764,
+   "ids": [
+    "u:https://www.equal1.com/post/equal1-launches-bell-1-the-first-quantum-system-purpose-built-for-the-hpc-era",
+    "t:equal1 launches bell 1 the first quantum system purpose buil"
+   ]
+  },
+  {
+   "n": 765,
+   "ids": [
+    "u:https://www.techtimes.com/articles/321867/20260728/hitachi-intel-18a-spin-qubit.htm",
+    "t:silicon spin qubits get foundry path hitachi banks on intel "
+   ],
+   "label": "Rut26"
+  },
+  {
+   "n": 766,
+   "ids": [
+    "u:https://www.corning.com/media/worldwide/coc/documents/fiber/product-information-sheets/pi-1424-aen.pdf",
+    "t:corning smf 28 ultra optical fiber product information pi 14"
+   ]
+  },
+  {
+   "n": 767,
+   "ids": [
+    "u:https://tech.eu/2024/01/30/orca-computing-acquires-gxcs-integrated-photonics-division",
+    "t:orca computing acquires gxc s integrated photonics division"
    ]
   }
  ]

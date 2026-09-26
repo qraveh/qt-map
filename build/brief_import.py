@@ -77,6 +77,8 @@ def import_brief(bid, side_dir, db):
         if rec and not rec.get('known'):
             cands += [i for i in S.all_ids(new_record(rec)) if not i.startswith('t:')]
         hit = next((idx[c] for c in cands if c in idx), None)
+        kk = rec.get('known_key') if rec else None   # a sidecar may name the known work's key directly
+        if hit is None and kk and (kk in db['works'] or kk.startswith('report:')): hit = kk
         if hit is None:
             if not rec or rec.get('known'):
                 raise SystemExit('%s: %s is not a known work and the sidecar has no record for it' % (bid, key))
