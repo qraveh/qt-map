@@ -1,5 +1,5 @@
 {
- "next": 768,
+ "next": 833,
  "works": [
   {
    "n": 1,
@@ -490,7 +490,8 @@
    "n": 58,
    "ids": [
     "u:https://investors.rigetti.com/news-releases/news-release-details/rigetti-computing-reports-first-quarter-2026-financial-results",
-    "t:rigetti computing reports first quarter 2026 financial resul"
+    "t:rigetti computing reports first quarter 2026 financial resul",
+    "t:rigetti q1 2026"
    ]
   },
   {
@@ -1909,7 +1910,8 @@
     "doi:10.1038/s41586-024-07107-7",
     "arxiv:2308.07915",
     "u:arxiv:2308.07915",
-    "t:high threshold and low overhead fault tolerant quantum memor"
+    "t:high threshold and low overhead fault tolerant quantum memor",
+    "u:nature:s41586-024-07107-7"
    ],
    "label": "BCG+24"
   },
@@ -1943,7 +1945,9 @@
    "ids": [
     "doi:10.1103/prxquantum.4.030310",
     "u:https://journals.aps.org/prxquantum/abstract/10.1103/prxquantum.4.030310",
-    "t:single flux quantum based digital control of superconducting"
+    "t:single flux quantum based digital control of superconducting",
+    "arxiv:2301.05696",
+    "u:arxiv:2301.05696"
    ],
    "label": "L+23"
   },
@@ -5417,7 +5421,8 @@
     "doi:10.1103/physrevlett.119.170501",
     "arxiv:1612.01199",
     "u:arxiv:1612.01199",
-    "t:gaussian boson sampling"
+    "t:gaussian boson sampling",
+    "u:https://doi.org/10.1103/physrevlett.119.170501"
    ],
    "label": "HKS+17"
   },
@@ -5446,7 +5451,8 @@
     "doi:10.1103/physrevlett.124.100502",
     "arxiv:1905.12075",
     "u:arxiv:1905.12075",
-    "t:regimes of classical simulability for noisy gaussian boson s"
+    "t:regimes of classical simulability for noisy gaussian boson s",
+    "u:https://doi.org/10.1103/physrevlett.124.100502"
    ],
    "label": "QBQG20"
   },
@@ -5661,7 +5667,8 @@
     "doi:10.1038/s41586-021-03928-y",
     "arxiv:2009.11482",
     "u:arxiv:2009.11482",
-    "t:fault tolerant control of an error corrected qubit"
+    "t:fault tolerant control of an error corrected qubit",
+    "t:fault tolerant operation of a quantum error correction code"
    ],
    "label": "EDN+21"
   },
@@ -5804,7 +5811,8 @@
    "ids": [
     "arxiv:2506.15420",
     "u:arxiv:2506.15420",
-    "t:error detected coherence metrology of a dual rail encoded fi"
+    "t:error detected coherence metrology of a dual rail encoded fi",
+    "u:https://oqc.tech/resources/beyond-the-bit/dual-rail-dimon-research"
    ],
    "label": "WHV25"
   },
@@ -6507,6 +6515,536 @@
    "ids": [
     "u:https://tech.eu/2024/01/30/orca-computing-acquires-gxcs-integrated-photonics-division",
     "t:orca computing acquires gxc s integrated photonics division"
+   ]
+  },
+  {
+   "n": 768,
+   "ids": [
+    "u:https://www.hpcwire.com/off-the-wire/iqm-to-deliver-its-1st-quantum-computer-in-south-america-to-brazils-eldorado-research-institute",
+    "t:iqm to deliver its 1st quantum computer in south america to "
+   ]
+  },
+  {
+   "n": 769,
+   "ids": [
+    "u:https://www.nist.gov/news-events/news/2026/09/department-commerce-announces-finalization-chips-rd-award-rigetti",
+    "t:department of commerce announces finalization of chips r d a",
+    "u:https://www.nist.gov/news-events/news/2026/09/department-commerce-announces-finalization-chips-rd-award-psiquantum"
+   ]
+  },
+  {
+   "n": 770,
+   "ids": [
+    "u:https://www.globenewswire.com/news-release/2026/09/08/3357469/0/en/rigetti-signs-definitive-agreement-for-100m-with-u-s-government-to-accelerate-r-d-for-superconducting-quantum-computing.html",
+    "t:rigetti signs definitive agreement for 100m with u s governm"
+   ]
+  },
+  {
+   "n": 771,
+   "ids": [
+    "u:https://www.dwavequantum.com/company/newsroom/press-release/d-wave-finalizes-agreement-with-u-s-department-of-commerce-for-up-to-100-million",
+    "t:d wave finalizes agreement with u s department of commerce f"
+   ]
+  },
+  {
+   "n": 772,
+   "ids": [
+    "arxiv:2609.05625",
+    "u:arxiv:2609.05625",
+    "t:computing 256 bit elliptic curve discrete logarithms in 26 d"
+   ],
+   "label": "HTY+26"
+  },
+  {
+   "n": 773,
+   "ids": [
+    "u:https://ir.quantinuum.com/news-releases/news-release-details/quantinuum-finalizes-100-million-chips-rd-award-us-department",
+    "t:quantinuum finalizes 100 million chips r d award with u s de"
+   ]
+  },
+  {
+   "n": 774,
+   "ids": [
+    "u:https://quantumcomputingreport.com/german-government-selects-qudora-led-consortium-for-e122-million-138-8-usd-nfqc-1k-trapped-ion-quantum-computer-project",
+    "t:german government selects qudora led consortium for 122 mill"
+   ]
+  },
+  {
+   "n": 775,
+   "ids": [
+    "u:https://quantumspectator.com/six-consortia-selected-to-compete-in-germanys-quantum-computing-competition-with-e640-million-in-planned-funding",
+    "t:six consortia selected to compete in germany s quantum compu"
+   ]
+  },
+  {
+   "n": 776,
+   "ids": [
+    "u:https://www.ionq.com/news/ionq-launches-superion-product-line-industry-leading-upgradeable-platform-designed-to-scale-manufacturable-fault-tolerant-quantum-computing",
+    "t:ionq launches superion product line industry leading upgrade"
+   ]
+  },
+  {
+   "n": 777,
+   "ids": [
+    "u:https://www.ionq.com/news/ionq-to-advance-quantum-supercomputing-by-bringing-first-qpu-to-nvidia-accelerated-quantum-research-center",
+    "t:ionq superion 256 to power nvidia quantum research center"
+   ]
+  },
+  {
+   "n": 778,
+   "ids": [
+    "u:https://thequantuminsider.com/2026/09/24/ionq-superion-256-florida-international-university",
+    "t:ionq to deploy superion 256 quantum computer at florida inte"
+   ]
+  },
+  {
+   "n": 779,
+   "ids": [
+    "u:https://infleqtion.com/demonstration-of-30-logical-qubits-on-sqale",
+    "t:demonstration of 30 logical qubits on sqale"
+   ]
+  },
+  {
+   "n": 780,
+   "ids": [
+    "u:https://www.pasqal.com/newsroom/pasqal-reports-first-half-2026-financial-results",
+    "t:pasqal reports first half 2026 financial results"
+   ]
+  },
+  {
+   "n": 781,
+   "ids": [
+    "u:https://thequantuminsider.com/2026/07/07/oratomic-raises-300-million-series-a",
+    "t:oratomic raises 300 million series a"
+   ]
+  },
+  {
+   "n": 782,
+   "ids": [
+    "u:https://planqc.eu/news/planqc-selected-for-germany-s-quantum-computing-competition-with-logiqc",
+    "t:planqc selected for germany s quantum computing competition "
+   ]
+  },
+  {
+   "n": 783,
+   "ids": [
+    "u:https://planqc.eu/news/maqcs-takes-shape-as-first-quantum-computing-hardware-arrives-at-lrz",
+    "t:maqcs takes shape as first quantum computing hardware arrive"
+   ]
+  },
+  {
+   "n": 784,
+   "ids": [
+    "u:https://qunorth.com/magne"
+   ]
+  },
+  {
+   "n": 785,
+   "ids": [
+    "u:https://thequantuminsider.com/2026/09/02/qunorth-clears-facility-milestone-for-magne-quantum-computer",
+    "t:qunorth clears facility milestone for magne quantum computer"
+   ]
+  },
+  {
+   "n": 786,
+   "ids": [
+    "u:https://infleqtion.com/infleqtion-achieves-30-entangled-logical-qubits-on-its-sqale-quantum-computer",
+    "t:infleqtion achieves 30 entangled logical qubits on its sqale"
+   ]
+  },
+  {
+   "n": 787,
+   "ids": [
+    "arxiv:2609.05387",
+    "u:arxiv:2609.05387",
+    "t:a photonic source with half a ghz single photon flux"
+   ],
+   "label": "ZHP+26"
+  },
+  {
+   "n": 788,
+   "ids": [
+    "u:https://gf.com/news-and-events/news/globalfoundries-and-us-department-of-commerce-finalize-375m-r-and-d-award-to-advance-american-quantum-leadership",
+    "t:globalfoundries and u s department of commerce finalize 375m"
+   ]
+  },
+  {
+   "n": 789,
+   "ids": [
+    "u:https://www.globenewswire.com/news-release/2026/09/09/3358504/0/en/xanadu-and-asml-announce-collaboration-to-advance-lithography-for-photonic-quantum-hardware.html",
+    "t:xanadu and asml announce collaboration to advance lithograph"
+   ]
+  },
+  {
+   "n": 790,
+   "ids": [
+    "u:https://photonic.com/news/photonic-inc-unveils-project-vanguard",
+    "t:photonic inc unveils project vanguard a proposal for a 500m "
+   ]
+  },
+  {
+   "n": 791,
+   "ids": [
+    "u:https://www.quobly.io/press-releases/quobly-demonstrates-key-quantum-operations-on-single-industrial-silicon-chip-advancing-toward-large-scale-quantum-computing",
+    "t:quobly demonstrates key quantum operations on single industr"
+   ]
+  },
+  {
+   "n": 792,
+   "ids": [
+    "arxiv:2609.20043",
+    "u:arxiv:2609.20043",
+    "t:highly uniform first electron position in qubit arrays fabri"
+   ],
+   "label": "PPE+26"
+  },
+  {
+   "n": 793,
+   "ids": [
+    "u:https://quantummotion.com/quantum-motion-secures-additional-investment-to-accelerate-scalable-silicon-quantum-computing",
+    "t:quantum motion secures additional investment to accelerate s"
+   ]
+  },
+  {
+   "n": 794,
+   "ids": [
+    "u:https://newsroom.equinix.com/2026-09-01-diraq-and-equinix-to-deploy-australias-first-quantum-computer-inside-a-data-centre",
+    "t:diraq and equinix to deploy australia s first quantum comput"
+   ]
+  },
+  {
+   "n": 795,
+   "ids": [
+    "u:https://global.fujitsu/en-global/pr/news/2026/09/08-01",
+    "t:fujitsu develops diamond spin quantum computer prototype"
+   ]
+  },
+  {
+   "n": 796,
+   "ids": [
+    "u:https://www.diraq.com/newsdesk/iceberg-quantum-and-diraq-confirm-pinnacles-logical-advantage-for-spin-qubits-using-nvidia-cuda-q-logical",
+    "t:iceberg quantum and diraq confirm pinnacle s logical advanta"
+   ]
+  },
+  {
+   "n": 797,
+   "ids": [
+    "u:https://infleqtion.com/infleqtion-and-cisco-announce-collaboration-to-advance-networked-quantum-technology",
+    "t:infleqtion and cisco announce collaboration to advance netwo"
+   ]
+  },
+  {
+   "n": 798,
+   "ids": [
+    "u:https://www.equal1.com/insights/equal1-unveils-worlds-first-hybrid-rack-mounted-silicon-spin-quantum-computer",
+    "t:equal1 unveils world s first hybrid rack mounted silicon spi"
+   ]
+  },
+  {
+   "n": 799,
+   "ids": [
+    "u:https://www.ibm.com/quantum/blog/swiss-innovation-hub",
+    "t:switzerland s first ibm quantum system two",
+    "t:ibm switzerland s first ibm quantum system two nighthawk r2 "
+   ]
+  },
+  {
+   "n": 800,
+   "ids": [
+    "u:https://www.etvbharat.com/en/state/amaravati-quantum-computing-centre-nears-completion-ibm-quantum-computer-to-be-installed-by-year-end-enn26080405623",
+    "t:amaravati quantum computing centre nears completion ibm quan",
+    "t:etv bharat amaravati quantum centre building due 15 oct 2026"
+   ]
+  },
+  {
+   "n": 801,
+   "ids": [
+    "doi:10.1016/j.supcon.2025.100206",
+    "u:https://www.sciencedirect.com/science/article/pii/s2772830725000572",
+    "t:baihua a 100 qubit scale high performance and open access qu",
+    "t:baqis liu et al baihua cloud platform 111 available qubits m"
+   ],
+   "label": "LZT+25"
+  },
+  {
+   "n": 802,
+   "ids": [
+    "u:https://www.hpcwire.com/off-the-wire/iqm-sets-three-stage-upgrade-path-for-lumi-iq-quantum-system",
+    "t:iqm sets three stage upgrade path for lumi iq quantum system",
+    "t:iqm three stage lumi iq path halocene h4 150 q in 2027 h5 in"
+   ]
+  },
+  {
+   "n": 803,
+   "ids": [
+    "u:https://www.dwavequantum.com/company/newsroom/press-release/d-wave-announces-the-resignation-of-chief-financial-officer",
+    "t:d wave announces the resignation of chief financial officer"
+   ]
+  },
+  {
+   "n": 804,
+   "ids": [
+    "u:https://ionq.com/news/ionqs-superion-256-platform-selected-by-florida-international-university-for-flagship-deployment",
+    "t:ionq s superion 256 platform selected by florida internation"
+   ]
+  },
+  {
+   "n": 805,
+   "ids": [
+    "u:https://quantum.microsoft.com/en-us/insights/blogs/microsoft-quantum-research-center-maryland",
+    "t:microsoft s quantum research center is open for discovery in"
+   ],
+   "label": "Tah26"
+  },
+  {
+   "n": 806,
+   "ids": [
+    "u:https://newsroom.ibm.com/2026-09-16-anderon,-an-ibm-company,-finalizes-agreement-with-the-u-s-department-of-commerce-for-a-1-billion-chips-award-to-accelerate-r-d-for-u-s-based-pure-play-quantum-foundry",
+    "u:h",
+    "u:t",
+    "u:p",
+    "u:s",
+    "u::",
+    "u:",
+    "u:q",
+    "u:u",
+    "u:a",
+    "u:n",
+    "u:m",
+    "u:c",
+    "u:o",
+    "u:i",
+    "u:g",
+    "u:r",
+    "u:e",
+    "u:d",
+    "u:-",
+    "u:f",
+    "u:l",
+    "u:z",
+    "u:1",
+    "u:b",
+    "u:w",
+    "u:3",
+    "u:0",
+    "u:y",
+    "t:anderon an ibm company finalizes agreement with the u s depa",
+    "u:https://quantumcomputingreport.com/anderon-finalizes-1-billion-chips-act-award-to-scale-300mm-pure-play-quantum-wafer-foundry"
+   ]
+  },
+  {
+   "n": 807,
+   "ids": [
+    "u:https://nvidianews.nvidia.com/news/nvidia-expands-open-source-cuda-q-platform-for-fault-tolerant-quantum-computing",
+    "t:nvidia expands open source cuda q platform for fault toleran"
+   ]
+  },
+  {
+   "n": 808,
+   "ids": [
+    "u:https://ionq.com/news/ionq-demonstrates-industrys-first-end-to-end-real-time-quantum-error-decoder",
+    "t:ionq demonstrates industry s first end to end real time quan"
+   ]
+  },
+  {
+   "n": 809,
+   "ids": [
+    "arxiv:2609.20549",
+    "u:arxiv:2609.20549",
+    "t:scalable logical qubits"
+   ],
+   "label": "TNM26"
+  },
+  {
+   "n": 810,
+   "ids": [
+    "u:https://www.energy.gov/science/articles/doe-launches-competition-accelerate-development-worlds-first-fault-tolerant",
+    "t:doe launches competition to accelerate development of world "
+   ]
+  },
+  {
+   "n": 811,
+   "ids": [
+    "doi:10.1038/nature01494",
+    "u:nature:nature01494",
+    "t:realization of the cirac zoller controlled not quantum gate"
+   ],
+   "label": "SHR+03"
+  },
+  {
+   "n": 812,
+   "ids": [
+    "doi:10.1103/physreva.72.012509",
+    "u:https://doi.org/10.1103/physreva.72.012509",
+    "t:lifetime measurement of the metastable 4d ²d₅ ₂ state in ⁸⁸s"
+   ],
+   "label": "LWGS05"
+  },
+  {
+   "n": 813,
+   "ids": [
+    "arxiv:1904.10934",
+    "u:arxiv:1904.10934",
+    "t:seconds scale coherence on an optical clock transition in a "
+   ],
+   "label": "NYE+19"
+  },
+  {
+   "n": 814,
+   "ids": [
+    "doi:10.1038/s41567-020-0903-z",
+    "arxiv:2001.04455",
+    "u:arxiv:2001.04455",
+    "t:high fidelity entanglement and detection of alkaline earth r"
+   ],
+   "label": "MCS+20"
+  },
+  {
+   "n": 815,
+   "ids": [
+    "doi:10.1038/s41567-022-01678-w",
+    "arxiv:2111.14653",
+    "u:arxiv:2111.14653",
+    "t:long lived bell states in an array of optical clock qubits"
+   ],
+   "label": "SYE+22"
+  },
+  {
+   "n": 816,
+   "ids": [
+    "doi:10.1038/s41586-024-08005-8",
+    "u:nature:s41586-024-08005-8",
+    "t:universal quantum operations and ancilla based read out for "
+   ],
+   "label": "FTS+24"
+  },
+  {
+   "n": 817,
+   "ids": [
+    "u:https://www.aqt.eu/products",
+    "t:quantum computer products built for performance"
+   ]
+  },
+  {
+   "n": 818,
+   "ids": [
+    "arxiv:2601.21616",
+    "u:arxiv:2601.21616",
+    "t:a biased erasure cavity qubit with hardware efficient quantu"
+   ],
+   "label": "MLD+26"
+  },
+  {
+   "n": 819,
+   "ids": [
+    "arxiv:1208.0391",
+    "u:arxiv:1208.0391",
+    "t:large scale modular quantum computer architecture with atomi"
+   ],
+   "label": "MRR+12"
+  },
+  {
+   "n": 820,
+   "ids": [
+    "arxiv:2311.01168",
+    "u:arxiv:2311.01168",
+    "t:scalable architecture for trapped ion quantum computing usin"
+   ],
+   "label": "S+23b"
+  },
+  {
+   "n": 821,
+   "ids": [
+    "u:https://theroboticsmedia.com/article/julich-eleqtron-jion-trapped-ion-quantum-computer-juniq-nrw-september-3-2026",
+    "t:jülich and eleqtron launch jion germany s first integrated t"
+   ],
+   "label": "Tnm26"
+  },
+  {
+   "n": 822,
+   "ids": [
+    "u:https://yaqumo.com/en/news/499",
+    "t:fujitsu and yaqumo begin testing quantum computing architect"
+   ]
+  },
+  {
+   "n": 823,
+   "ids": [
+    "arxiv:2312.14818",
+    "u:arxiv:2312.14818",
+    "t:a strontium quantum gas microscope"
+   ],
+   "label": "BHM+"
+  },
+  {
+   "n": 824,
+   "ids": [
+    "arxiv:2306.00874",
+    "u:arxiv:2306.00874",
+    "t:a general purpose single photon based quantum computing plat"
+   ],
+   "label": "M+23b"
+  },
+  {
+   "n": 825,
+   "ids": [
+    "arxiv:2311.05605",
+    "u:arxiv:2311.05605",
+    "t:a spin optical quantum computing architecture"
+   ]
+  },
+  {
+   "n": 826,
+   "ids": [
+    "arxiv:2010.02905",
+    "u:arxiv:2010.02905",
+    "t:blueprint for a scalable photonic fault tolerant quantum com"
+   ],
+   "label": "BAV+21"
+  },
+  {
+   "n": 827,
+   "ids": [
+    "u:https://quantumzeitgeist.com/top-silicon-spin-quantum-computing-companies",
+    "t:top silicon spin quantum computing companies 2026 complete v"
+   ],
+   "label": "Don26"
+  },
+  {
+   "n": 828,
+   "ids": [
+    "u:https://quantumcomputingreport.com/silicon-quantum-computing-sqc-demonstrates-scaling-advantage-with-11-qubit-processor",
+    "t:silicon quantum computing sqc demonstrates scaling advantage"
+   ]
+  },
+  {
+   "n": 829,
+   "ids": [
+    "u:https://sqc.com/news/automating-atomic-precision-semiconductor-manufacturing",
+    "t:hours to minutes automating atomic precision semiconductor m"
+   ]
+  },
+  {
+   "n": 830,
+   "ids": [
+    "u:https://postquantum.com/quantum-computing-companies/quantum-brilliance",
+    "t:quantum brilliance"
+   ],
+   "label": "Ive25g"
+  },
+  {
+   "n": 831,
+   "ids": [
+    "u:https://thequantuminsider.com/2026/02/13/photonic-telus-quantum-teleportation-commercial-fibre",
+    "t:photonic and telus demonstrate quantum teleportation over co"
+   ],
+   "label": "Reh26g"
+  },
+  {
+   "n": 832,
+   "ids": [
+    "u:https://photonic.com/technology/error-correction",
+    "t:quantum error correction with qldpc photonic inc"
    ]
   }
  ]

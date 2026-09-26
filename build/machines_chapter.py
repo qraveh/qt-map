@@ -117,7 +117,7 @@ def prep():
         x['cloud'] = 'cloud' in (m.get('access') or '').lower()
         # annealers, analog simulators and samplers run no entangling gate whatever their flags say; nor does a machine whose gate cell is `none`
         prim3 = [c for c in m['layers'].get('3', []) if c['role'] == 'primary']
-        x['gatedev'] = x['device'] and not (x['flags'] & NON_GATE_FLAGS) and m.get('map_path') not in NON_GATE_PATHS and not (prim3 and prim3[0].get('state') == 'none')
+        x['gatedev'] = x['device'] and not (x['flags'] & NON_GATE_FLAGS) and m.get('map_path') not in NON_GATE_PATHS and not (prim3 and prim3[0].get('state', 'station') != 'station')
         ms.append(x)
     return M, G, node, layers, paths, ms
 
@@ -204,15 +204,15 @@ def sec_machines(lang):
         'ion_qccd': ("move the ions, not the information: transport between trap zones gives all-to-all connectivity at the highest gate fidelities", "перемещать ионы, а не информацию: транспорт между зонами ловушки даёт связность «все со всеми» при наивысшей точности гейтов"),
         'ion_chain': ("one static chain, every pair coupled through the shared motion, each ion addressed by its own laser beam; scale by more chains and photonic links", "одна статическая цепочка, каждая пара связана через общее движение, каждый ион адресуется своим лазерным лучом; масштаб — больше цепочек и фотонные связи"),
         'ion_elec': ("gates driven by microwaves and currents in the trap chip, no laser at the gate: control that scales like electronics", "гейты, управляемые микроволнами и токами в чипе ловушки, без лазера на гейте: управление, масштабируемое как электроника"),
-        'atom_analog': ("no gates at all: programme the Hamiltonian of a Rydberg array and let it evolve — simulation and optimisation now, at hundreds of atoms", "вовсе без гейтов: задать гамильтониан ридберговского массива и дать ему эволюционировать — симуляция и оптимизация уже сейчас, на сотнях атомов"),
+        'atom_analog': ("no gates at all: programme the Hamiltonian of a Rydberg array or a lattice gas and let it evolve — simulation and optimisation now, at hundreds of atoms", "вовсе без гейтов: задать гамильтониан ридберговского массива или решёточного газа и дать ему эволюционировать — симуляция и оптимизация уже сейчас, на сотнях атомов"),
         'ph_sampler': ("sample from a linear-optical network of squeezed or single photons: a quantum-advantage experiment, not a programmable computer", "выбирать из линейно-оптической сети сжатых или одиночных фотонов: эксперимент квантового преимущества, а не программируемый компьютер"),
         'atom_rb': ("reconfigurable tweezers make the code geometry programmable and the qubit count cheap; the clock is slow", "перестраиваемые пинцеты делают геометрию кода программируемой, а число кубитов дешёвым; такт медленный"),
-        'atom_ae': ("alkaline-earth atoms add erasure conversion and continuous reloading to the tweezer bet", "щёлочноземельные атомы добавляют к ставке на пинцеты преобразование в стирания и непрерывную перезагрузку"),
+        'atom_ae': ("a two-electron atom whose metastable qubit flags its own decay as an erasure, paid for with a worse CZ; the clock qubit and continuous reloading come with the carrier", "двухэлектронный атом, чей метастабильный кубит сам помечает свой распад как стирание — ценой худшего CZ; часовой кубит и непрерывная перезагрузка идут вместе с носителем"),
         'ph_fusion': ("make entanglement by measurement: room-temperature photonic fabrication and networking, loss is the enemy", "создавать перепутывание измерением: фотонное изготовление и сети при комнатной температуре; враг — потери"),
         'ph_cv': ("continuous-variable states and GKP encoding on the same photonic chips", "состояния непрерывных переменных и кодирование GKP на тех же фотонных чипах"),
         'spin_qd': ("the foundry: quantum dots in CMOS, density and cold electronics from the semiconductor industry", "фабрика: квантовые точки в CMOS, плотность и холодная электроника из полупроводниковой отрасли"),
         'spin_donor': ("donor spins in isotopically pure silicon: the longest coherence in a solid", "донорные спины в изотопно чистом кремнии: самая долгая когерентность в твёрдом теле"),
-        'defect': ("defect spins that work at room temperature and network through photons", "дефектные спины, работающие при комнатной температуре и связанные через фотоны"),
+        'defect': ("defect spins as network nodes: few-qubit registers joined by heralded photons", "дефектные спины как узлы сети: регистры из нескольких кубитов, соединённые heralded-фотонами"),
         'topo': ("protection in the hardware: a topological gap instead of a code", "защита в самом устройстве: топологическая щель вместо кода"),
         'anneal': ("special-purpose scale now: thousands of analog qubits for optimisation and simulation", "специализированный масштаб сейчас: тысячи аналоговых кубитов для оптимизации и симуляции"),
     }
@@ -229,6 +229,50 @@ def sec_machines(lang):
     o.append("\n")
     o.append(("Two readings. First, the bets are not symmetric in what they need to prove: the superconducting and tweezer bets are already made by dozens of devices and argue about *rates* (error per gate, qubits per year); the bosonic, topological and donor bets are made by one to seven machines and still argue about *existence* (does the protection hold at the second qubit, at the second module). Second, the best numbers sit on different paths for different quantities — the largest device is a tweezer array, the best two-qubit error is an ion trap, the fastest clock (§7.4) is a transmon lattice — which is the empirical form of the map's claim that no path dominates on all axes.\n\n" if en else
               "Два прочтения. Во-первых, ставки несимметричны в том, что им нужно доказать: сверхпроводниковая и пинцетная ставки уже сделаны десятками устройств и спорят о *темпах* (ошибка на гейт, кубиты в год); бозонные, топологическая и донорная сделаны одной–семью машинами и всё ещё спорят о *существовании* (держится ли защита на втором кубите, на втором модуле). Во-вторых, лучшие числа лежат на разных путях для разных величин — крупнейшее устройство это массив пинцетов, лучшая двухкубитная ошибка — ионная ловушка, самый быстрый такт (§7.4) — трансмонная решётка, — что есть эмпирическая форма утверждения карты: ни один путь не доминирует по всем осям.\n\n"))
+
+    # ---------- 8.3.k the seventeen architectures, one narrative each (report/paths/<pid>.<lang>.md, written 26 Sep 2026) + the register's block
+    o.append(("**The seventeen architectures, one by one.** Each subsection below is the argument of one path in five parts — the idea, what it needs, where it stands in the register, its exceptions and borrowings, and the next test — followed by the register's own block: the machines on the path grouped by organisation, and every cell that falls outside the path's slots (an alternate borrowed from another path, a Map gap, or `undisclosed` where the path expects a station). The short name in the heading is the nickname the map's chips use.\n\n" if en else
+              "**Семнадцать архитектур, одна за другой.** Каждый подраздел ниже — аргумент одного пути в пяти частях: идея, что ему нужно, где он стоит по реестру, его исключения и заимствования, следующая проверка — и за ним блок реестра: машины пути по организациям и каждая ячейка вне слотов пути (альтернатива, заимствованная у другого пути, пробел карты или `undisclosed` там, где путь ожидает станцию). Короткое имя в заголовке — прозвище, которым пользуются чипы карты.\n\n"))
+    LAYNAME = {str(l['n']): l for l in G['layers']}
+    for k, p in enumerate(G['paths'], 1):
+        pid = p['id']; pm = [m for m in MS if m['map_path'] == pid]
+        short = (p.get('short') or {}).get(L) or p[L]
+        H(f"#### 8.3.{k} {short} — {p[L]} (`{pid}`)")
+        pf = os.path.join(ROOT, 'report', 'paths', f'{pid}.{L}.md')
+        if not os.path.exists(pf) and not en: pf = os.path.join(ROOT, 'report', 'paths', f'{pid}.en.md')
+        if os.path.exists(pf):
+            prose = open(pf, encoding='utf-8').read().strip()
+            if '[@' in prose: raise SystemExit(f'report/paths/{pid}: unresolved citation placeholder — run build/paths_import.py')
+            o.append(prose + "\n\n")
+        else:
+            o.append(("*(narrative pending)*\n\n" if en else "*(текст готовится)*\n\n"))
+        # the register's block
+        slots = {str(kk): set(v) for kk, v in p['slots'].items()}
+        byorg = {}
+        for m in sorted(pm, key=lambda m: (m['org'], -(m['q'] or 0), m['name'])): byorg.setdefault(m['org'], []).append(m)
+        def mtag(m):
+            sc = t(L, STATN.get(m['sc'], (m['sc'].lower(), m['sc'].lower())))
+            q = f", {fmt_n(m['q'])}" if m['q'] else ''
+            return f"{mdcell(m['name'])} ({sc}{q})"
+        orgs = '; '.join(f"**{mdcell(org)}** — " + ', '.join(mtag(m) for m in ms_) for org, ms_ in sorted(byorg.items(), key=lambda kv: (-len(kv[1]), kv[0])))
+        ndev = sum(1 for m in pm if m['device']); ngate = sum(1 for m in pm if m['gatedev'])
+        o.append((f"**Machines on this path (register: {len(pm)}, of them {ndev} devices, {ngate} gate-capable).** {orgs}.\n\n" if en else
+                  f"**Машины на этом пути (реестр: {len(pm)}, из них {ndev} устройств, {ngate} с гейтами).** {orgs}.\n\n"))
+        exc = []
+        for m in pm:
+            for ln, cells in sorted(m['layers'].items(), key=lambda kv: int(kv[0])):
+                for c in cells:
+                    stt = c.get('state', 'station'); n = c['node']
+                    if stt == 'station' and n not in slots.get(ln, set()):
+                        exc.append(f"{mdcell(m['name'])}: L{ln} {nm(n)} (`{n}`, " + t(L, ('alternate borrowed from another path', 'альтернатива с другого пути') if c['role'] != 'primary' else ('primary off the path\'s slots', 'основная вне слотов пути')) + ")")
+                    elif stt == 'gap':
+                        exc.append(f"{mdcell(m['name'])}: L{ln} `{n}` (" + t(L, ('Map gap', 'пробел карты')) + (f" — {mdcell(c.get('summary', ''))[:90]}" if c.get('summary') else '') + ")")
+                    elif stt == 'undisclosed' and slots.get(ln) and c['role'] == 'primary':
+                        exc.append(f"{mdcell(m['name'])}: L{ln} " + t(L, ('undisclosed where the path expects a station', 'undisclosed там, где путь ожидает станцию')))
+        if exc:
+            o.append((f"*Cells outside the path's slots ({len(exc)}).* " if en else f"*Ячейки вне слотов пути ({len(exc)}).* ") + '; '.join(exc) + ".\n\n")
+        else:
+            o.append(("*Cells outside the path's slots:* none — every cell of every machine sits in a slot of the path.\n\n" if en else "*Ячеек вне слотов пути нет* — каждая ячейка каждой машины сидит в слоте пути.\n\n"))
 
     # ---------- 8.4 hypotheses
     H("### 8.4 " + ("Trends — eight hypotheses tested on the register" if en else "Тренды — восемь гипотез, проверенных по реестру"))

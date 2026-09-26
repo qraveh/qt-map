@@ -516,18 +516,6 @@
    "verified": true
   }
  ],
- "S26": [
-  {
-   "org": "Rigetti Computing",
-   "title": "Rigetti Computing Reports First Quarter 2026 Financial Results",
-   "date": "2026-05-11",
-   "kind": "web",
-   "site": "Rigetti Computing",
-   "url": "https://investors.rigetti.com/news-releases/news-release-details/rigetti-computing-reports-first-quarter-2026-financial-results",
-   "hint": "Rigetti Q1 2026",
-   "verified": true
-  }
- ],
  "S27": [
   {
    "title": "Google Quantum AI is Now Accepting Proposals for Early Access to their Willow Quantum Processor",
@@ -3063,6 +3051,15 @@
    "url": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-reports-fourth-quarter-and-year-end-2025-results/",
    "hint": "FY2025",
    "verified": true
+  },
+  {
+   "org": "D-Wave Quantum",
+   "title": "D-Wave Announces the Resignation of Chief Financial Officer",
+   "date": "2026-08-25",
+   "kind": "web",
+   "site": "dwavequantum.com",
+   "url": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-announces-the-resignation-of-chief-financial-officer/",
+   "verified": true
   }
  ],
  "A5": [
@@ -3808,6 +3805,1197 @@
    "url": "https://doi.org/10.5281/zenodo.21860767",
    "hint": "the Monitor on Zenodo (DOI)",
    "note": "the editor's canonical form (24 Sep 2026): title without the year, Qodeh, 2026, the site page and the DOI; DataCite titles the record \"Superconductor Electronics Monitor 2026\", issued 2026-09-06",
+   "verified": true
+  }
+ ],
+ "S35": [
+  {
+   "authors": [
+    "Hidetaka Manabe",
+    "Hanfeng Gu",
+    "Feng Pan"
+   ],
+   "title": "Classical Simulation and Design Frontiers for IBM's Doped Clifford Sampling Experiment",
+   "date": "2026-08-13",
+   "arxiv": "2608.13110",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2608.13110",
+   "verified": true
+  }
+ ],
+ "S36": [
+  {
+   "org": "IQM Quantum Computers",
+   "title": "IQM to Deliver Its 1st Quantum Computer in South America to Brazil's Eldorado Research Institute",
+   "date": "2026-09-18",
+   "kind": "web",
+   "site": "HPCwire (press release)",
+   "url": "https://www.hpcwire.com/off-the-wire/iqm-to-deliver-its-1st-quantum-computer-in-south-america-to-brazils-eldorado-research-institute/",
+   "verified": true
+  }
+ ],
+ "S37": [
+  {
+   "org": "Rigetti Computing",
+   "title": "Rigetti Computing Reports Second Quarter 2026 Financial Results",
+   "date": "2026-08-06",
+   "kind": "web",
+   "site": "Rigetti Investor Relations",
+   "url": "https://investors.rigetti.com/news-releases/news-release-details/rigetti-computing-reports-second-quarter-2026-financial-results",
+   "verified": true
+  }
+ ],
+ "S38": [
+  {
+   "org": "NIST / U.S. Department of Commerce",
+   "title": "Department of Commerce Announces Finalization of CHIPS R&D Award with Rigetti",
+   "date": "2026-09-08",
+   "kind": "web",
+   "site": "NIST",
+   "url": "https://www.nist.gov/news-events/news/2026/09/department-commerce-announces-finalization-chips-rd-award-rigetti",
+   "verified": true
+  }
+ ],
+ "S39": [
+  {
+   "org": "Rigetti Computing",
+   "title": "Rigetti Signs Definitive Agreement for $100M with U.S. Government to Accelerate R&D for Superconducting Quantum Computing",
+   "date": "2026-09-08",
+   "kind": "web",
+   "site": "GlobeNewswire",
+   "url": "https://www.globenewswire.com/news-release/2026/09/08/3357469/0/en/rigetti-signs-definitive-agreement-for-100m-with-u-s-government-to-accelerate-r-d-for-superconducting-quantum-computing.html",
+   "verified": true
+  }
+ ],
+ "I29": [
+  {
+   "authors": [
+    "Thomas Häner",
+    "Felix Tripier",
+    "Jacob Young",
+    "Michael Naehrig",
+    "Maksymov",
+    "Alam",
+    "Maslov",
+    "Parrott",
+    "de Sereville",
+    "Sullivan",
+    "Webster",
+    "Nicolas Delfosse",
+    "John Gamble",
+    "Martin Roetteler"
+   ],
+   "etal": true,
+   "n_authors": 14,
+   "org": "IonQ",
+   "title": "Computing 256-bit elliptic curve discrete logarithms in 26 days on a fault-tolerant trapped-ion quantum computer with 20,000 qubits",
+   "date": "2026-09-04",
+   "arxiv": "2609.05625",
+   "kind": "preprint",
+   "site": "arXiv",
+   "url": "https://arxiv.org/abs/2609.05625",
+   "verified": true
+  }
+ ],
+ "I30": [
+  {
+   "org": "IonQ",
+   "title": "IonQ Launches Superion Product Line: Industry-Leading, Upgradeable Platform Designed to Scale Manufacturable Fault Tolerant Quantum Computing",
+   "date": "2026-09-08",
+   "kind": "web",
+   "site": "ionq.com",
+   "url": "https://www.ionq.com/news/ionq-launches-superion-product-line-industry-leading-upgradeable-platform-designed-to-scale-manufacturable-fault-tolerant-quantum-computing",
+   "verified": true
+  }
+ ],
+ "I31": [
+  {
+   "org": "IonQ",
+   "title": "IonQ Superion 256 to Power NVIDIA Quantum Research Center",
+   "date": "2026-09-23",
+   "kind": "web",
+   "site": "ionq.com",
+   "url": "https://www.ionq.com/news/ionq-to-advance-quantum-supercomputing-by-bringing-first-qpu-to-nvidia-accelerated-quantum-research-center",
+   "verified": true
+  }
+ ],
+ "I32": [
+  {
+   "org": "IonQ",
+   "title": "IonQ's Superion 256 Platform Selected by Florida International University for Flagship Deployment",
+   "date": "2026-09-22",
+   "pubdate": "2026-09-24",
+   "kind": "web",
+   "site": "ionq.com",
+   "url": "https://ionq.com/news/ionqs-superion-256-platform-selected-by-florida-international-university-for-flagship-deployment",
+   "hint": "dateline 22 Sep 2026, posted 24 Sep; install expected late 2027",
+   "verified": true
+  }
+ ],
+ "I33": [
+  {
+   "org": "Quantinuum",
+   "title": "Quantinuum Finalizes $100 Million CHIPS R&D Award with U.S. Department of Commerce to Advance Trapped-Ion Quantum Computer Manufacturing in the US",
+   "date": "2026-09-08",
+   "kind": "web",
+   "site": "ir.quantinuum.com",
+   "url": "https://ir.quantinuum.com/news-releases/news-release-details/quantinuum-finalizes-100-million-chips-rd-award-us-department",
+   "verified": true
+  }
+ ],
+ "I34": [
+  {
+   "org": "Quantum Computing Report",
+   "title": "German Government Selects QUDORA-Led Consortium for €122 Million ($138.8 USD) NFQC-1k Trapped-Ion Quantum Computer Project",
+   "date": "2026-09-23",
+   "kind": "web",
+   "site": "quantumcomputingreport.com",
+   "url": "https://quantumcomputingreport.com/german-government-selects-qudora-led-consortium-for-e122-million-138-8-usd-nfqc-1k-trapped-ion-quantum-computer-project/",
+   "verified": true
+  }
+ ],
+ "I35": [
+  {
+   "org": "Quantum Spectator",
+   "title": "Six consortia selected to compete in Germany's Quantum Computing Competition with €640 million in planned funding",
+   "date": "2026-09-23",
+   "kind": "web",
+   "site": "quantumspectator.com",
+   "url": "https://quantumspectator.com/six-consortia-selected-to-compete-in-germanys-quantum-computing-competition-with-e640-million-in-planned-funding/",
+   "verified": true
+  }
+ ],
+ "N27": [
+  {
+   "org": "Infleqtion",
+   "title": "Infleqtion Achieves 30 Entangled Logical Qubits on Its Sqale Quantum Computer",
+   "date": "2026-09-24",
+   "kind": "web",
+   "site": "infleqtion.com",
+   "url": "https://infleqtion.com/infleqtion-achieves-30-entangled-logical-qubits-on-its-sqale-quantum-computer/",
+   "verified": true
+  }
+ ],
+ "N28": [
+  {
+   "org": "Infleqtion",
+   "title": "Demonstration of 30 Logical Qubits on Sqale",
+   "date": "2026-09-24",
+   "kind": "web",
+   "site": "infleqtion.com",
+   "url": "https://infleqtion.com/demonstration-of-30-logical-qubits-on-sqale/",
+   "verified": true
+  }
+ ],
+ "N29": [
+  {
+   "org": "QuNorth",
+   "title": "Magne",
+   "kind": "web",
+   "site": "qunorth.com",
+   "url": "https://qunorth.com/magne",
+   "verified": true
+  }
+ ],
+ "N30": [
+  {
+   "org": "The Quantum Insider",
+   "title": "QuNorth Clears Facility Milestone for MAGNE Quantum Computer",
+   "date": "2026-09-02",
+   "kind": "web",
+   "site": "thequantuminsider.com",
+   "url": "https://thequantuminsider.com/2026/09/02/qunorth-clears-facility-milestone-for-magne-quantum-computer/",
+   "verified": true
+  }
+ ],
+ "N31": [
+  {
+   "org": "Pasqal",
+   "title": "Pasqal Reports First Half 2026 Financial Results",
+   "date": "2026-09-24",
+   "kind": "web",
+   "site": "pasqal.com",
+   "url": "https://www.pasqal.com/newsroom/pasqal-reports-first-half-2026-financial-results/",
+   "verified": true
+  }
+ ],
+ "N32": [
+  {
+   "authors": [
+    "Desiree Lim",
+    "Hadriel Mamann",
+    "Grégoire Pichard",
+    "Lilian Bourachot",
+    "Arvid Lindberg",
+    "Clotilde Hamot"
+   ],
+   "etal": true,
+   "n_authors": 21,
+   "title": "Defect-free arrays at the thousand-atom scale in a 4-K cryogenic environment",
+   "journal": "PRX Quantum",
+   "volume": "7",
+   "article": "033032",
+   "date": "2026-04-08",
+   "doi": "10.1103/45t1-vl5y",
+   "arxiv": "2604.07205",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2604.07205",
+   "verified": true
+  }
+ ],
+ "N33": [
+  {
+   "org": "planqc",
+   "title": "MAQCS takes shape as first quantum computing hardware arrives at LRZ",
+   "date": "2026-09-09",
+   "kind": "web",
+   "site": "planqc.eu",
+   "url": "https://planqc.eu/news/maqcs-takes-shape-as-first-quantum-computing-hardware-arrives-at-lrz",
+   "verified": true
+  }
+ ],
+ "N34": [
+  {
+   "org": "planqc",
+   "title": "planqc selected for Germany's Quantum Computing Competition with LOGIQC",
+   "date": "2026-09-22",
+   "kind": "web",
+   "site": "planqc.eu",
+   "url": "https://planqc.eu/news/planqc-selected-for-germany-s-quantum-computing-competition-with-logiqc",
+   "verified": true
+  }
+ ],
+ "N35": [
+  {
+   "org": "The Quantum Insider",
+   "title": "Oratomic Raises $300 Million Series A",
+   "date": "2026-07-07",
+   "kind": "web",
+   "site": "thequantuminsider.com",
+   "url": "https://thequantuminsider.com/2026/07/07/oratomic-raises-300-million-series-a/",
+   "verified": true
+  }
+ ],
+ "N36": [
+  {
+   "org": "Infleqtion",
+   "title": "Infleqtion and Cisco Announce Collaboration to Advance Networked Quantum Technology",
+   "date": "2026-09-10",
+   "kind": "web",
+   "site": "infleqtion.com",
+   "url": "https://infleqtion.com/infleqtion-and-cisco-announce-collaboration-to-advance-networked-quantum-technology/",
+   "verified": true
+  }
+ ],
+ "B19": [
+  {
+   "org": "D-Wave Quantum Inc.",
+   "title": "D-Wave Finalizes Agreement with U.S. Department of Commerce for Up to $100 Million",
+   "date": "2026-09-08",
+   "kind": "web",
+   "site": "dwavequantum.com",
+   "url": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-finalizes-agreement-with-u-s-department-of-commerce-for-up-to-100-million/",
+   "verified": true
+  }
+ ],
+ "P17": [
+  {
+   "authors": [
+    "P. Zahalka",
+    "S. Huijser",
+    "A. Pancaldi",
+    "S. Kruger",
+    "X. Zhao"
+   ],
+   "etal": true,
+   "org": "Sparrow Quantum ApS; Ruhr-Universität Bochum",
+   "title": "A photonic source with half-a-GHz single-photon flux",
+   "date": "2026-09",
+   "arxiv": "2609.05387",
+   "kind": "preprint",
+   "site": "arxiv.org",
+   "url": "https://arxiv.org/html/2609.05387v1",
+   "verified": true
+  }
+ ],
+ "P18": [
+  {
+   "org": "National Institute of Standards and Technology (US Department of Commerce)",
+   "title": "Department of Commerce Announces Finalization of CHIPS R&D Award with PsiQuantum",
+   "date": "2026-09-08",
+   "kind": "web",
+   "site": "nist.gov",
+   "url": "https://www.nist.gov/news-events/news/2026/09/department-commerce-announces-finalization-chips-rd-award-psiquantum",
+   "verified": true
+  }
+ ],
+ "P19": [
+  {
+   "org": "GlobalFoundries",
+   "title": "GlobalFoundries and U.S. Department of Commerce finalize $375M R&D award to advance American quantum leadership",
+   "date": "2026-09-08",
+   "kind": "web",
+   "site": "gf.com",
+   "url": "https://gf.com/news-and-events/news/globalfoundries-and-us-department-of-commerce-finalize-375m-r-and-d-award-to-advance-american-quantum-leadership/",
+   "verified": true
+  }
+ ],
+ "P20": [
+  {
+   "org": "Xanadu Quantum Technologies; ASML",
+   "title": "Xanadu and ASML Announce Collaboration to Advance Lithography for Photonic Quantum Hardware",
+   "date": "2026-09-09",
+   "kind": "web",
+   "site": "globenewswire.com",
+   "url": "https://www.globenewswire.com/news-release/2026/09/09/3358504/0/en/xanadu-and-asml-announce-collaboration-to-advance-lithography-for-photonic-quantum-hardware.html",
+   "verified": true
+  }
+ ],
+ "P21": [
+  {
+   "org": "Photonic Inc.",
+   "title": "Photonic Inc. unveils Project VANGUARD, a proposal for a $500M specialized semiconductor manufacturing facility to accelerate commercialization of quantum, AI and defence innovation in Canada",
+   "date": "2026-09-14",
+   "kind": "web",
+   "site": "photonic.com",
+   "url": "https://photonic.com/news/photonic-inc-unveils-project-vanguard/",
+   "verified": true
+  }
+ ],
+ "Q16": [
+  {
+   "org": "Quobly",
+   "title": "Quobly demonstrates key quantum operations on single industrial silicon chip, advancing toward large-scale quantum computing",
+   "date": "2026-09-16",
+   "kind": "web",
+   "site": "quobly.io",
+   "url": "https://www.quobly.io/press-releases/quobly-demonstrates-key-quantum-operations-on-single-industrial-silicon-chip-advancing-toward-large-scale-quantum-computing/",
+   "verified": true
+  }
+ ],
+ "Q17": [
+  {
+   "authors": [
+    "Johan Pelloux-Prayer",
+    "Elise Prin",
+    "Giselle A. Elbaz",
+    "Pierre-Louis Julliard",
+    "Amaryllis Comiti",
+    "Clément Nguyen",
+    "Sylvain Martin",
+    "Patrick Torresani",
+    "Renan Lethiecq",
+    "Carlos Augusto Suarez Segovia",
+    "Franck Arnaud",
+    "Etienne Nowak",
+    "Tristan Meunier",
+    "Bruna Cardoso Paz"
+   ],
+   "etal": true,
+   "n_authors": 14,
+   "org": "QSOI® platform (Quobly); affiliations not shown on the abstract page",
+   "title": "Highly uniform first-electron position in qubit arrays fabricated on dedicated QSOI(R) 300mm commercial platform",
+   "date": "2026-09-17",
+   "arxiv": "2609.20043",
+   "kind": "preprint",
+   "site": "arxiv.org",
+   "url": "https://arxiv.org/abs/2609.20043",
+   "verified": true
+  }
+ ],
+ "Q18": [
+  {
+   "org": "IBM",
+   "title": "IBM Completes Acquisition of HRL Laboratories to Accelerate the Future of Quantum",
+   "date": "2026-08-26",
+   "kind": "web",
+   "site": "IBM Newsroom",
+   "url": "https://newsroom.ibm.com/2026-08-26-ibm-completes-acquisition-of-hrl-laboratories-to-accelerate-the-future-of-quantum",
+   "verified": true
+  }
+ ],
+ "Q19": [
+  {
+   "org": "Quantum Motion",
+   "title": "Quantum Motion secures additional investment to accelerate scalable silicon quantum computing",
+   "date": "2026-09-03",
+   "kind": "web",
+   "site": "quantummotion.com",
+   "url": "https://quantummotion.com/quantum-motion-secures-additional-investment-to-accelerate-scalable-silicon-quantum-computing/",
+   "verified": true
+  }
+ ],
+ "Q20": [
+  {
+   "org": "Equinix; Diraq",
+   "title": "Diraq and Equinix to Deploy Australia's First Quantum Computer Inside a Data Centre",
+   "date": "2026-08-31",
+   "kind": "web",
+   "site": "newsroom.equinix.com",
+   "url": "https://newsroom.equinix.com/2026-09-01-Diraq-and-Equinix-to-Deploy-Australias-First-Quantum-Computer-Inside-a-Data-Centre",
+   "verified": true
+  }
+ ],
+ "Q21": [
+  {
+   "org": "Fujitsu",
+   "title": "Fujitsu develops diamond-spin quantum computer prototype",
+   "date": "2026-09-08",
+   "kind": "web",
+   "site": "global.fujitsu",
+   "url": "https://global.fujitsu/en-global/pr/news/2026/09/08-01",
+   "verified": true
+  }
+ ],
+ "Q22": [
+  {
+   "org": "Diraq; Iceberg Quantum",
+   "title": "Iceberg Quantum and Diraq Confirm Pinnacle's Logical Advantage for Spin Qubits Using NVIDIA CUDA-Q Logical",
+   "date": "2026-09-14",
+   "kind": "web",
+   "site": "diraq.com",
+   "url": "https://www.diraq.com/newsdesk/iceberg-quantum-and-diraq-confirm-pinnacles-logical-advantage-for-spin-qubits-using-nvidia-cuda-q-logical",
+   "verified": true
+  }
+ ],
+ "Q23": [
+  {
+   "org": "Equal1",
+   "title": "Equal1 Unveils World's First Hybrid Rack-Mounted Silicon-Spin Quantum Computer",
+   "date": "2026-05-14",
+   "kind": "web",
+   "site": "equal1.com",
+   "url": "https://www.equal1.com/insights/equal1-unveils-worlds-first-hybrid-rack-mounted-silicon-spin-quantum-computer",
+   "verified": true
+  }
+ ],
+ "I36": [
+  {
+   "authors": [
+    "M. Akhtar",
+    "F. Bonus",
+    "F. R. Lebrun-Gallagher"
+   ],
+   "etal": true,
+   "n_authors": 9,
+   "org": "Universal Quantum / University of Sussex",
+   "title": "A high-fidelity quantum matter-link between ion-trap microchip modules",
+   "journal": "Nat. Commun.",
+   "volume": "14",
+   "article": "531",
+   "date": "2023-02-08",
+   "pubdate": "2023-02-08",
+   "doi": "10.1038/s41467-022-35285-3",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41467-022-35285-3",
+   "verified": true,
+   "issue": "1"
+  }
+ ],
+ "T10": [
+  {
+   "authors": [
+    "Charles Tahan"
+   ],
+   "n_authors": 1,
+   "org": "Microsoft Quantum",
+   "title": "Microsoft's quantum research center is open for discovery in Maryland",
+   "date": "2026-09-22",
+   "kind": "web",
+   "site": "Microsoft Quantum blog",
+   "url": "https://quantum.microsoft.com/en-us/insights/blogs/microsoft-quantum-research-center-maryland",
+   "verified": true
+  }
+ ],
+ "X16": [
+  {
+   "org": "IonQ",
+   "title": "IonQ Demonstrates Industry's First End-to-End Real-Time Quantum Error Decoder",
+   "date": "2026-09-22",
+   "kind": "web",
+   "site": "ionq.com",
+   "url": "https://ionq.com/news/ionq-demonstrates-industrys-first-end-to-end-real-time-quantum-error-decoder",
+   "verified": true
+  }
+ ],
+ "X17": [
+  {
+   "authors": [
+    "Matthias Troyer",
+    "Chetan Nayak",
+    "John Martinis"
+   ],
+   "n_authors": 3,
+   "org": "Microsoft Quantum; QOLAB",
+   "title": "Scalable logical qubits",
+   "journal": "arXiv preprint",
+   "date": "2026-09",
+   "arxiv": "2609.20549",
+   "kind": "preprint",
+   "site": "arxiv.org",
+   "url": "https://arxiv.org/abs/2609.20549",
+   "verified": true
+  }
+ ],
+ "X18": [
+  {
+   "org": "NVIDIA",
+   "title": "NVIDIA Expands Open Source CUDA-Q Platform for Fault-Tolerant Quantum Computing",
+   "date": "2026-09-14",
+   "kind": "web",
+   "site": "nvidianews.nvidia.com",
+   "url": "https://nvidianews.nvidia.com/news/nvidia-expands-open-source-cuda-q-platform-for-fault-tolerant-quantum-computing",
+   "verified": true
+  }
+ ],
+ "X19": [
+  {
+   "org": "U.S. Department of Energy, Office of Science",
+   "title": "DOE Launches Competition to Accelerate Development of World's First Fault-Tolerant Quantum Computer",
+   "date": "2026-09-17",
+   "kind": "web",
+   "site": "energy.gov",
+   "url": "https://www.energy.gov/science/articles/doe-launches-competition-accelerate-development-worlds-first-fault-tolerant",
+   "verified": true
+  }
+ ],
+ "X20": [
+  {
+   "org": "IBM / Anderon",
+   "title": "Anderon, an IBM Company, Finalizes Agreement with the U.S. Department of Commerce for a $1 Billion CHIPS Award to Accelerate R&D for U.S.-Based Pure-Play Quantum Foundry",
+   "date": "2026-09-16",
+   "kind": "web",
+   "site": "newsroom.ibm.com",
+   "url": "https://newsroom.ibm.com/2026-09-16-anderon,-an-ibm-company,-finalizes-agreement-with-the-u-s-department-of-commerce-for-a-1-billion-chips-award-to-accelerate-r-d-for-u-s-based-pure-play-quantum-foundry",
+   "also": [
+    "https://quantumcomputingreport.com/anderon-finalizes-1-billion-chips-act-award-to-scale-300mm-pure-play-quantum-wafer-foundry/"
+   ],
+   "verified": true
+  }
+ ],
+ "A8": [
+  {
+   "org": "D-Wave",
+   "title": "D-Wave Demonstrates First Scalable, On-Chip Cryogenic Control of Gate-Model Qubits",
+   "date": "2026-01-06",
+   "kind": "web",
+   "site": "D-Wave Newsroom",
+   "url": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-demonstrates-first-scalable-on-chip-cryogenic-control-of-gate-model-qubits/",
+   "verified": true
+  }
+ ],
+ "N37": [
+  {
+   "authors": [
+    "Flavien Gyger",
+    "Maximilian Ammenwerth",
+    "Renhao Tao",
+    "Hendrik Timme",
+    "Stepan Snigirev",
+    "Immanuel Bloch"
+   ],
+   "etal": true,
+   "n_authors": 7,
+   "title": "Continuous operation of large-scale atom arrays in optical lattices",
+   "journal": "Phys. Rev. Research",
+   "volume": "6",
+   "issue": "3",
+   "article": "033104",
+   "date": "2024-02-07",
+   "doi": "10.1103/PhysRevResearch.6.033104",
+   "arxiv": "2402.04994",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2402.04994",
+   "verified": true
+  }
+ ],
+ "N38": [
+  {
+   "org": "Yaqumo",
+   "date": "2026-09-09",
+   "kind": "web",
+   "site": "yaqumo.com",
+   "url": "https://yaqumo.com/en/news/499/",
+   "verified": true,
+   "title": "Fujitsu and Yaqumo begin testing quantum computing architecture and basic software on neutral-atom quantum computer hardware"
+  }
+ ],
+ "N39": [
+  {
+   "authors": [
+    "Rei Yokoyama"
+   ],
+   "etal": true,
+   "title": "Minimally Destructive Fast Imaging of Single Atoms in an Optical Tweezer Array with Coherent Excitation",
+   "date": "2026-06-04",
+   "arxiv": "2605.24175",
+   "kind": "preprint",
+   "url": "https://arxiv.org/html/2605.24175",
+   "also": [
+    "https://arxiv.org/abs/2605.24175"
+   ],
+   "verified": true,
+   "org": "Kyoto University",
+   "site": "arXiv"
+  }
+ ],
+ "N40": [
+  {
+   "authors": [
+    "Jonathan Wurtz",
+    "Alexei Bylinskii",
+    "Boris Braverman",
+    "Jesse Amato-Grill",
+    "Sergio H. Cantu",
+    "Florian Huber"
+   ],
+   "etal": true,
+   "n_authors": 13,
+   "title": "Aquila: QuEra's 256-qubit neutral-atom quantum computer",
+   "date": "2023-06-20",
+   "arxiv": "2306.11727",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2306.11727",
+   "verified": true,
+   "org": "QuEra Computing",
+   "site": "arXiv"
+  }
+ ],
+ "N41": [
+  {
+   "authors": [
+    "Sandra Buob",
+    "Jonatan Höschele",
+    "Vasiliy Makhalov",
+    "Antonio Rubio-Abadal",
+    "Leticia Tarruell"
+   ],
+   "org": "ICFO – Institut de Ciències Fotòniques",
+   "title": "A strontium quantum-gas microscope",
+   "journal": "PRX Quantum",
+   "volume": "5",
+   "article": "020316",
+   "arxiv": "2312.14818",
+   "kind": "journal",
+   "site": "arXiv",
+   "url": "https://arxiv.org/abs/2312.14818",
+   "verified": true
+  }
+ ],
+ "Q24": [
+  {
+   "authors": [
+    "M. Ivezic"
+   ],
+   "org": "PostQuantum.com",
+   "title": "Quantum Brilliance",
+   "date": "2025-07-04",
+   "kind": "web",
+   "site": "PostQuantum.com",
+   "url": "https://postquantum.com/quantum-computing-companies/quantum-brilliance",
+   "verified": true
+  }
+ ],
+ "Q25": [
+  {
+   "authors": [
+    "M. U. Rehman"
+   ],
+   "org": "The Quantum Insider",
+   "title": "Photonic and TELUS Demonstrate Quantum Teleportation Over Commercial Fibre Network",
+   "date": "2026-02-13",
+   "kind": "web",
+   "site": "The Quantum Insider",
+   "url": "https://thequantuminsider.com/2026/02/13/photonic-telus-quantum-teleportation-commercial-fibre/",
+   "verified": true
+  }
+ ],
+ "Q26": [
+  {
+   "org": "Photonic Inc.",
+   "title": "Quantum Error Correction with QLDPC | Photonic Inc.",
+   "kind": "web",
+   "site": "photonic.com",
+   "url": "https://photonic.com/technology/error-correction/",
+   "verified": true
+  }
+ ],
+ "S40": [
+  {
+   "authors": [
+    "James Wills",
+    "Mohammad Tasnimul Haque",
+    "Brian Vlastakis"
+   ],
+   "n_authors": 3,
+   "title": "Error-detected coherence metrology of a dual-rail encoded fixed-frequency multimode superconducting qubit",
+   "date": "2025-06-18",
+   "arxiv": "2506.15420",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2506.15420",
+   "verified": true
+  }
+ ],
+ "S41": [
+  {
+   "authors": [
+    "Jiasheng Mai",
+    "Qiyu Liu",
+    "Xiaowei Deng",
+    "Yanyan Cai",
+    "Zhongchu Ni"
+   ],
+   "etal": true,
+   "org": "Southern University of Science and Technology",
+   "title": "A biased-erasure cavity qubit with hardware-efficient quantum error detection",
+   "date": "2026-01-29",
+   "arxiv": "2601.21616",
+   "kind": "preprint",
+   "site": "arXiv",
+   "url": "https://arxiv.org/abs/2601.21616",
+   "verified": true
+  }
+ ],
+ "I37": [
+  {
+   "authors": [
+    "C. Monroe",
+    "R. Raussendorf",
+    "A. Ruthven",
+    "K. R. Brown",
+    "P. Maunz",
+    "L.-M. Duan",
+    "J. Kim"
+   ],
+   "title": "Large Scale Modular Quantum Computer Architecture with Atomic Memory and Photonic Interconnects",
+   "journal": "Phys. Rev. A",
+   "volume": "89",
+   "article": "022317",
+   "date": "2012-08-02",
+   "arxiv": "1208.0391",
+   "kind": "journal",
+   "site": "arXiv",
+   "url": "https://arxiv.org/abs/1208.0391",
+   "verified": true
+  }
+ ],
+ "I38": [
+  {
+   "authors": [
+    "Laird Egan",
+    "Dripto M. Debroy",
+    "Crystal Noel",
+    "Andrew Risinger",
+    "Daiwei Zhu",
+    "Debopriyo Biswas"
+   ],
+   "etal": true,
+   "n_authors": 11,
+   "title": "Fault-tolerant control of an error-corrected qubit",
+   "journal": "Nature",
+   "volume": "598",
+   "issue": "7880",
+   "pages": "281–286",
+   "date": "2021-10-04",
+   "doi": "10.1038/s41586-021-03928-y",
+   "arxiv": "2009.11482",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2009.11482",
+   "verified": true,
+   "org": "University of Maryland / Duke University",
+   "site": "arXiv"
+  }
+ ],
+ "I39": [
+  {
+   "authors": [
+    "I. Pogorelov",
+    "T. Feldker",
+    "Ch. D. Marciniak",
+    "L. Postler",
+    "G. Jacob",
+    "O. Krieglsteiner"
+   ],
+   "etal": true,
+   "n_authors": 16,
+   "title": "Compact Ion-Trap Quantum Computing Demonstrator",
+   "journal": "PRX Quantum",
+   "volume": "2",
+   "issue": "2",
+   "article": "020343",
+   "date": "2021-06-17",
+   "doi": "10.1103/PRXQuantum.2.020343",
+   "arxiv": "2101.11390",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2101.11390",
+   "verified": true,
+   "org": "University of Innsbruck / Alpine Quantum Technologies",
+   "site": "arXiv"
+  }
+ ],
+ "I40": [
+  {
+   "authors": [
+    "Lukas Postler",
+    "Sascha Heußen",
+    "Ivan Pogorelov",
+    "Manuel Rispler",
+    "Thomas Feldker",
+    "Michael Meth"
+   ],
+   "etal": true,
+   "n_authors": 13,
+   "title": "Demonstration of fault-tolerant universal quantum gate operations",
+   "journal": "Nature",
+   "volume": "605",
+   "pages": "675–680",
+   "date": "2022",
+   "doi": "10.1038/s41586-022-04721-1",
+   "arxiv": "2111.12654",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2111.12654",
+   "verified": true,
+   "org": "University of Innsbruck / RWTH Aachen",
+   "site": "arXiv"
+  }
+ ],
+ "I41": [
+  {
+   "authors": [
+    "D. Schwerdt"
+   ],
+   "etal": true,
+   "org": "Quantum Art",
+   "title": "Scalable Architecture for Trapped-Ion Quantum Computing Using rf Traps and Dynamic Optical Potentials",
+   "journal": "Phys. Rev. X",
+   "volume": "14",
+   "article": "041017",
+   "date": "2023-11",
+   "arxiv": "2311.01168",
+   "kind": "journal",
+   "site": "arXiv",
+   "url": "https://arxiv.org/abs/2311.01168",
+   "verified": true
+  }
+ ],
+ "I42": [
+  {
+   "authors": [
+    "C.M. Löschnauer"
+   ],
+   "etal": true,
+   "title": "Scalable, High-Fidelity All-Electronic Control of Trapped-Ion Qubits",
+   "journal": "PRX Quantum",
+   "volume": "6",
+   "issue": "4",
+   "article": "040313",
+   "date": "2025-10-20",
+   "doi": "10.1103/h4wk-v31j",
+   "arxiv": "2407.07694",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2407.07694",
+   "verified": true,
+   "org": "Oxford Ionics",
+   "site": "arxiv.org"
+  }
+ ],
+ "I43": [
+  {
+   "authors": [
+    "Kaan Tınmaz"
+   ],
+   "org": "The Robotics Media",
+   "title": "Jülich And eleQtron Launch JION, Germany's First Integrated Trapped-Ion Quantum Computer",
+   "date": "2026-09-08",
+   "kind": "web",
+   "site": "theroboticsmedia.com",
+   "url": "https://theroboticsmedia.com/article/julich-eleqtron-jion-trapped-ion-quantum-computer-juniq-nrw-september-3-2026",
+   "verified": true
+  }
+ ],
+ "P22": [
+  {
+   "authors": [
+    "J. E. Bourassa",
+    "R. N. Alexander",
+    "M. Vasmer",
+    "A. Patil",
+    "I. Tzitrin",
+    "T. Matsuura",
+    "D. Su",
+    "B. Q. Baragiola",
+    "S. Guha",
+    "G. Dauphinais",
+    "K. K. Sabapathy",
+    "N. C. Menicucci",
+    "I. Dhand"
+   ],
+   "org": "Xanadu",
+   "title": "Blueprint for a Scalable Photonic Fault-Tolerant Quantum Computer",
+   "journal": "Quantum",
+   "volume": "5",
+   "article": "392",
+   "date": "2021-02-02",
+   "arxiv": "2010.02905",
+   "kind": "journal",
+   "site": "arXiv",
+   "url": "https://arxiv.org/abs/2010.02905",
+   "verified": true
+  }
+ ],
+ "P23": [
+  {
+   "authors": [
+    "Matthias C. Löbl",
+    "Love A. M. Pettersson",
+    "Jan Dragašević",
+    "Susan X. Chen",
+    "Oliver A. D. Sandberg"
+   ],
+   "title": "The subthreshold issue of fusion-based quantum computing",
+   "date": "2026-06-26",
+   "arxiv": "2606.28490",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2606.28490",
+   "verified": true,
+   "org": "Sparrow Quantum",
+   "site": "arXiv"
+  }
+ ],
+ "P24": [
+  {
+   "authors": [
+    "Nicolas Maring",
+    "Andreas Fyrillas",
+    "Mathias Pont"
+   ],
+   "etal": true,
+   "org": "Quandela",
+   "title": "A general-purpose single-photon-based quantum computing platform",
+   "date": "2023-06-02",
+   "arxiv": "2306.00874",
+   "kind": "preprint",
+   "site": "arXiv",
+   "url": "https://arxiv.org/abs/2306.00874",
+   "verified": true,
+   "n_authors": 27
+  }
+ ],
+ "P25": [
+  {
+   "etal": true,
+   "org": "Quandela",
+   "title": "A Spin-Optical Quantum Computing Architecture",
+   "date": "2023-11-09",
+   "arxiv": "2311.05605",
+   "kind": "preprint",
+   "site": "arXiv",
+   "url": "https://arxiv.org/abs/2311.05605",
+   "verified": true
+  }
+ ],
+ "P26": [
+  {
+   "authors": [
+    "Jessica Park",
+    "Susan Stepney",
+    "Irene D'Amico"
+   ],
+   "title": "Benchmarking the ORCA PT-2 Boson Sampler using Minimum Dominating Set Problems",
+   "date": "2026-05",
+   "arxiv": "2605.30935",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2605.30935",
+   "verified": true,
+   "org": "University of York",
+   "site": "arXiv"
+  }
+ ],
+ "P27": [
+  {
+   "authors": [
+    "Lars S. Madsen",
+    "Fabian Laudenbach",
+    "Mohsen Falamarzi Askarani",
+    "Fabien Rortais",
+    "Trevor Vincent",
+    "Jacob F. F. Bulmer"
+   ],
+   "etal": true,
+   "n_authors": 21,
+   "title": "Quantum computational advantage with a programmable photonic processor",
+   "journal": "Nature",
+   "volume": "606",
+   "issue": "7912",
+   "pages": "75–81",
+   "date": "2022-06-01",
+   "doi": "10.1038/s41586-022-04725-x",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-022-04725-x",
+   "verified": true,
+   "org": "Xanadu",
+   "site": "nature.com"
+  }
+ ],
+ "P28": [
+  {
+   "authors": [
+    "Craig S. Hamilton",
+    "Regina Kruse",
+    "Linda Sansoni",
+    "Sonja Barkhofen",
+    "Christine Silberhorn",
+    "Igor Jex"
+   ],
+   "title": "Gaussian Boson Sampling",
+   "journal": "Phys. Rev. Lett.",
+   "volume": "119",
+   "issue": "17",
+   "article": "170501",
+   "date": "2017-10-23",
+   "doi": "10.1103/PhysRevLett.119.170501",
+   "arxiv": "1612.01199",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/1612.01199",
+   "verified": true,
+   "site": "journals.aps.org"
+  }
+ ],
+ "P29": [
+  {
+   "authors": [
+    "Haoyu Qi",
+    "Daniel J. Brod",
+    "Nicolás Quesada",
+    "Raúl García-Patrón"
+   ],
+   "title": "Regimes of Classical Simulability for Noisy Gaussian Boson Sampling",
+   "journal": "Phys. Rev. Lett.",
+   "volume": "124",
+   "issue": "10",
+   "article": "100502",
+   "date": "2020-03-13",
+   "doi": "10.1103/PhysRevLett.124.100502",
+   "arxiv": "1905.12075",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/1905.12075",
+   "verified": true,
+   "site": "journals.aps.org"
+  }
+ ],
+ "S42": [
+  {
+   "authors": [
+    "Sergey Bravyi",
+    "Andrew W. Cross",
+    "Jay M. Gambetta",
+    "Dmitri Maslov",
+    "Patrick Rall",
+    "Theodore J. Yoder"
+   ],
+   "title": "High-threshold and low-overhead fault-tolerant quantum memory",
+   "journal": "Nature",
+   "volume": "627",
+   "issue": "8005",
+   "pages": "778–782",
+   "date": "2024-03-27",
+   "doi": "10.1038/s41586-024-07107-7",
+   "arxiv": "2308.07915",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2308.07915",
+   "verified": true,
+   "org": "IBM Quantum",
+   "site": "nature.com"
+  }
+ ],
+ "S43": [
+  {
+   "authors": [
+    "C.H. Liu"
+   ],
+   "etal": true,
+   "title": "Single Flux Quantum-Based Digital Control of Superconducting Qubits in a Multichip Module",
+   "journal": "PRX Quantum",
+   "volume": "4",
+   "issue": "3",
+   "article": "030310",
+   "date": "2023-07-24",
+   "doi": "10.1103/PRXQuantum.4.030310",
+   "kind": "journal",
+   "url": "https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.4.030310",
+   "verified": true,
+   "site": "arXiv"
+  }
+ ],
+ "Q27": [
+  {
+   "org": "Quantum Computing Report",
+   "title": "Silicon Quantum Computing (SQC) Demonstrates Scaling Advantage with 11-Qubit Processor",
+   "kind": "web",
+   "site": "quantumcomputingreport.com",
+   "url": "https://quantumcomputingreport.com/silicon-quantum-computing-sqc-demonstrates-scaling-advantage-with-11-qubit-processor/",
+   "verified": true,
+   "date": "2026-02-04"
+  }
+ ],
+ "Q28": [
+  {
+   "org": "Silicon Quantum Computing",
+   "title": "SkyWater x SQC: Advancing Hybrid Quantum-Classical Computing",
+   "date": "2025-11-20",
+   "kind": "web",
+   "site": "Silicon Quantum Computing",
+   "url": "https://sqc.com/news/skywater-and-sqc-advancing-hybrid-quantum-classical-computing",
+   "verified": true
+  }
+ ],
+ "Q29": [
+  {
+   "org": "Silicon Quantum Computing",
+   "title": "Hours to Minutes: Automating Atomic-Precision Semiconductor Manufacturing",
+   "date": "2026-09-09",
+   "kind": "web",
+   "site": "sqc.com",
+   "url": "https://sqc.com/news/automating-atomic-precision-semiconductor-manufacturing",
+   "verified": true
+  }
+ ],
+ "Q30": [
+  {
+   "authors": [
+    "Sushil Subramanian",
+    "Stefano Pellerano"
+   ],
+   "org": "Intel Corporation",
+   "title": "Intel's Millikelvin Quantum Research Control Chip Provides Denser Integration with Qubits",
+   "date": "2024-06-20",
+   "kind": "web",
+   "site": "Intel Community",
+   "url": "https://community.intel.com/t5/Blogs/Tech-Innovation/Data-Center/Intel-s-Millikelvin-Quantum-Research-Control-Chip-Provides/post/1608558",
+   "verified": true
+  }
+ ],
+ "Q31": [
+  {
+   "org": "Equal1",
+   "title": "UnityQ",
+   "kind": "web",
+   "site": "equal1.com",
+   "url": "https://www.equal1.com/technology",
+   "verified": true
+  }
+ ],
+ "Q32": [
+  {
+   "authors": [
+    "Dr. Donovan"
+   ],
+   "org": "Quantum Zeitgeist",
+   "title": "Top Silicon Spin Quantum Computing Companies 2026: Complete Vendor Guide",
+   "date": "2026-06-09",
+   "kind": "web",
+   "site": "quantumzeitgeist.com",
+   "url": "https://quantumzeitgeist.com/top-silicon-spin-quantum-computing-companies/",
    "verified": true
   }
  ]

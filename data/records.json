@@ -2866,5 +2866,29 @@
   "url": "https://arxiv.org/abs/2106.07414",
   "tag": "D",
   "note": "cryogenic; the 2026 Pasqal/IOGS 1,024-atom system reports ~5,000 s (arXiv:2604.07205)."
+ },
+ {
+  "node": "enc_gr",
+  "key": "t2",
+  "num": 1.14e-05,
+  "unit": "s",
+  "text": "Aquila (QuEra): T2* 5.8 µs, T2 with echo 11.4 µs on the ground–Rydberg qubit; analog programs capped at 4 µs",
+  "scope": "typical",
+  "date": "2023-06",
+  "url": "https://arxiv.org/abs/2306.11727",
+  "tag": "C",
+  "note": "The encoding's own coherence: the Rydberg level cannot be shelved, so the path's T2 is this, not the carrier's hyperfine record."
+ },
+ {
+  "node": "enc_gr",
+  "key": "t2",
+  "num": 3.2e-05,
+  "unit": "s",
+  "text": "Harvard/MIT (2018): T2* 4.5(1) µs, spin-echo T2 32(6) µs on a ground–Rydberg atom qubit",
+  "scope": "best",
+  "date": "2018-09",
+  "url": "https://arxiv.org/abs/1806.04682",
+  "tag": "D",
+  "note": ""
  }
 ]

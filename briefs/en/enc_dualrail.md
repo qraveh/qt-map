@@ -25,7 +25,7 @@ Attributes from the technology graph (a affinity; b time; c readout; d mobility;
 - e = none @ none.
 - f = erasure: located, heralded loss.
 - g = none; a wiring choice, not an object.
-Rank 6 of 110; a hub across photonics and superconductors.
+Rank 6 of 111; a hub across photonics and superconductors.
 
 ## Physics & limits
 

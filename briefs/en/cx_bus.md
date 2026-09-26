@@ -25,7 +25,7 @@ N ions carry N motional modes in a fixed bandwidth, so mode spacing falls as ~1/
 | 2023-08 | 30-ion chain, 435 pairs benchmarked; MS 550–883 µs | IonQ Forte | [D][94] |
 | 2024 | 512-ion 2D crystal, analog only | Tsinghua | [D][110] |
 | 2025-10 | 2Q error 8.4×10⁻⁵, electronic gate, no cooling | IonQ/Oxford Ionics | [D][96] |
-| 2026-06 | [[18,4,3]] qLDPC memory break-even, 3.95±0.68 s vs 3.3±0.9 s | IonQ | [D][103] |
+| 2026-06 | qLDPC memory break-even within error bars, 3.95±0.68 s (one code) vs 3.84±0.48 s physical (revised Sep 2026) | IonQ | [D][103] |
 
 Tempo: 100 ions, #AQ 64, no gate time [C][95]. Dominant term: gate time, not fidelity.
 

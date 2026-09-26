@@ -34,7 +34,7 @@ Best-demonstrated and typical-at-scale have converged unusually far: Helios runs
 | 2025-11 | Helios 98 Ba⁺: 2Q 7.9×10⁻⁴, SPAM 3.3–4.8×10⁻⁴, leakage 1.1×10⁻⁵/Clifford | Quantinuum | [D][91] |
 | 2026-02 | 48 corrected logical qubits ([[80,48,4]]), logical gate infidelity 1.0–1.2×10⁻⁴ | Quantinuum | [D][99][G:HELIOS-ICEBERG-2026-02] |
 | 2026-05 | Quantum volume 32,768, rack-mounted LYNX | AQT | [C][115] |
-| 2026-06 | qLDPC memory break-even: [[18,4,3]] 3.95 ± 0.68 s vs 3.3 ± 0.9 s | IonQ | [D][103][G:IONQ-QLDPC-BREAKEVEN-2026-06] |
+| 2026-06 | qLDPC memory break-even within error bars: 3.95 ± 0.68 s (one code) vs 3.84 ± 0.48 s physical (revised Sep 2026) | IonQ | [D][103][G:IONQ-QLDPC-BREAKEVEN-2026-06] |
 
 The dominant error term at scale is not the gate: it is the cost of moving ions — transport excitation, re-cooling, re-ordering — plus leakage the decoder cannot absorb. High-rate code demonstrations discard 75–97% of shots at depth [D][99].
 

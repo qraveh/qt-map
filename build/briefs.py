@@ -236,10 +236,16 @@ def expand_gtips(h, gtips=None):
                   lambda m: '%s title="%s">G</a>' % (m.group(1), html.escape(T.get(html.unescape(m.group(2))) or '')), h)
 
 
+def expand_ulinks(h):
+    """self-labelled links carry no href in the file (sources._link): the page sets href = text at load; the checkers see the same"""
+    return re.sub(r'<a class="u"( target="_blank" rel="noopener")>((?:[^<]|<wbr>)+)</a>', lambda m: '<a href="%s" class="u"%s>%s</a>' % (m.group(2).replace('<wbr>', ''), m.group(1), m.group(2)), h)
+
+
 def expand_page(h):
     """every load-time expansion the static checkers must see: RU Sources lists, key-reference chips, [G] chip tooltips"""
     import brief_refs, json as _json
     h = brief_refs.expand_clones(h)
+    h = expand_ulinks(h)
     k = h.find('window.__KEYREFS='); k2 = h.find('</script>', k)
     if k > 0: h = expand_keys(h, _json.loads(h[k + len('window.__KEYREFS='):k2].rstrip(';')))
     g = h.find('window.__GTIPS='); g2 = h.find('</script>', g)

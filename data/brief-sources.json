@@ -1066,6 +1066,25 @@
    "url": "https://arxiv.org/abs/1903.08181",
    "verified": true
   },
+  "arxiv:1904.10934": {
+   "authors": [
+    "Matthew A. Norcia",
+    "Aaron W. Young",
+    "William J. Eckner",
+    "Eric Oelker",
+    "Jun Ye",
+    "Adam M. Kaufman"
+   ],
+   "title": "Seconds-scale coherence on an optical clock transition in a tweezer array",
+   "journal": "Science",
+   "volume": "366",
+   "pages": "93",
+   "date": "2019",
+   "arxiv": "1904.10934",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/1904.10934",
+   "verified": false
+  },
   "arxiv:1905.12075": {
    "authors": [
     "Haoyu Qi",
@@ -1180,6 +1199,28 @@
    "arxiv": "1912.10942",
    "kind": "journal",
    "url": "https://arxiv.org/abs/1912.10942",
+   "verified": true
+  },
+  "arxiv:2001.04455": {
+   "authors": [
+    "Ivaylo S. Madjarov",
+    "Jacob P. Covey",
+    "Adam L. Shaw",
+    "Joonhee Choi",
+    "Anant Kale",
+    "Alexandre Cooper"
+   ],
+   "etal": true,
+   "n_authors": 10,
+   "title": "High-fidelity entanglement and detection of alkaline-earth Rydberg atoms",
+   "journal": "Nat. Phys.",
+   "volume": "16",
+   "pages": "857–861",
+   "date": "2020-05-25",
+   "doi": "10.1038/s41567-020-0903-z",
+   "arxiv": "2001.04455",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2001.04455",
    "verified": true
   },
   "arxiv:2004.04794": {
@@ -1702,6 +1743,25 @@
    "arxiv": "2111.12654",
    "kind": "journal",
    "url": "https://arxiv.org/abs/2111.12654",
+   "verified": true
+  },
+  "arxiv:2111.14653": {
+   "authors": [
+    "Nathan Schine",
+    "Aaron W. Young",
+    "William J. Eckner",
+    "Michael J. Martin",
+    "Adam M. Kaufman"
+   ],
+   "title": "Long-lived Bell states in an array of optical clock qubits",
+   "journal": "Nat. Phys.",
+   "volume": "18",
+   "pages": "1067–1073",
+   "date": "2022-08-08",
+   "doi": "10.1038/s41567-022-01678-w",
+   "arxiv": "2111.14653",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2111.14653",
    "verified": true
   },
   "arxiv:2112.02717": {
@@ -3603,6 +3663,27 @@
    "url": "https://www.nature.com/articles/nature00784",
    "verified": true
   },
+  "doi:10.1038/nature01494": {
+   "authors": [
+    "Ferdinand Schmidt-Kaler",
+    "Hartmut Häffner",
+    "Mark Riebe",
+    "Stephan Gulde",
+    "Gavin P. T. Lancaster",
+    "Thomas Deuschle"
+   ],
+   "etal": true,
+   "n_authors": 10,
+   "title": "Realization of the Cirac–Zoller controlled-NOT quantum gate",
+   "journal": "Nature",
+   "volume": "422",
+   "pages": "408–411",
+   "date": "2003-03-27",
+   "doi": "10.1038/nature01494",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/nature01494",
+   "verified": true
+  },
   "doi:10.1038/nature06184": {
    "authors": [
     "Johannes Majer"
@@ -3740,7 +3821,9 @@
   },
   "doi:10.1038/s41467-022-35285-3": {
    "authors": [
-    "M. Akhtar"
+    "M. Akhtar",
+    "F. Bonus",
+    "F. R. Lebrun-Gallagher"
    ],
    "etal": true,
    "title": "A high-fidelity quantum matter-link between ion-trap microchip modules",
@@ -3752,7 +3835,8 @@
    "doi": "10.1038/s41467-022-35285-3",
    "kind": "journal",
    "url": "https://www.nature.com/articles/s41467-022-35285-3",
-   "verified": true
+   "verified": true,
+   "n_authors": 9
   },
   "doi:10.1038/s41467-023-38247-5": {
    "authors": [
@@ -4441,6 +4525,27 @@
    "url": "https://www.nature.com/articles/s41586-024-07941-9",
    "verified": true
   },
+  "doi:10.1038/s41586-024-08005-8": {
+   "authors": [
+    "Ran Finkelstein",
+    "Richard Bing-Shiun Tsai",
+    "Xiangkai Sun",
+    "Pascal Scholl",
+    "Su Direkci",
+    "Tuvia Gefen"
+   ],
+   "etal": true,
+   "n_authors": 9,
+   "title": "Universal quantum operations and ancilla-based read-out for tweezer clocks",
+   "journal": "Nature",
+   "volume": "634",
+   "pages": "321–327",
+   "date": "2024-10-09",
+   "doi": "10.1038/s41586-024-08005-8",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-024-08005-8",
+   "verified": true
+  },
   "doi:10.1038/s41586-024-08148-8": {
    "authors": [
     "Johannes Bausch"
@@ -4775,6 +4880,23 @@
    "doi": "10.1103/PhysRevA.57.120",
    "kind": "journal",
    "url": "https://journals.aps.org/pra/abstract/10.1103/PhysRevA.57.120",
+   "verified": true
+  },
+  "doi:10.1103/physreva.72.012509": {
+   "authors": [
+    "V. Letchumanan",
+    "M. A. Wilson",
+    "P. Gill",
+    "A. G. Sinclair"
+   ],
+   "title": "Lifetime measurement of the metastable 4d ²D₅/₂ state in ⁸⁸Sr⁺ using a single trapped ion",
+   "journal": "Phys. Rev. A",
+   "volume": "72",
+   "article": "012509",
+   "date": "2005-07-13",
+   "doi": "10.1103/PhysRevA.72.012509",
+   "kind": "journal",
+   "url": "https://doi.org/10.1103/PhysRevA.72.012509",
    "verified": true
   },
   "doi:10.1103/physrevapplied.2.014007": {
@@ -6761,6 +6883,14 @@
    "kind": "web",
    "site": "AQT – Alpine Quantum Technologies",
    "url": "https://www.aqt.eu/aqt-lands-million-euro-contract/",
+   "verified": true
+  },
+  "https://www.aqt.eu/products": {
+   "org": "Alpine Quantum Technologies (AQT)",
+   "title": "Quantum computer products built for performance",
+   "kind": "web",
+   "site": "AQT",
+   "url": "https://www.aqt.eu/products/",
    "verified": true
   },
   "https://www.aqt.eu/products/ibex-q1": {
@@ -11254,6 +11384,64 @@
    },
    {
     "work": "https://github.com/quantumlib/stim/blob/main/doc/gates.md",
+    "grade": "C"
+   }
+  ],
+  "enc_opt": [
+   {
+    "work": "arxiv:2101.11390",
+    "grade": "D"
+   },
+   {
+    "work": "doi:10.1038/nature01494",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2111.12654",
+    "grade": "D"
+   },
+   {
+    "work": "doi:10.1103/physreva.72.012509",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:1904.10934",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2001.04455",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2111.14653",
+    "grade": "D"
+   },
+   {
+    "work": "doi:10.1038/s41586-024-08005-8",
+    "grade": "D"
+   },
+   {
+    "work": "report:I23#0",
+    "grade": "C"
+   },
+   {
+    "work": "https://www.aqt.eu/products/ibex-q1",
+    "grade": "C"
+   },
+   {
+    "work": "https://www.aqt.eu/products",
+    "grade": "C"
+   },
+   {
+    "work": "arxiv:2109.01272",
+    "grade": "S"
+   },
+   {
+    "work": "report:N26#1",
+    "grade": "P"
+   },
+   {
+    "work": "report:N33#0",
     "grade": "C"
    }
   ],

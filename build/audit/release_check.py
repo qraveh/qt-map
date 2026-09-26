@@ -100,7 +100,9 @@ def main():
     for lang in ('en','ru'):
         ol=re.search(r'<ol class="refs"[^>]*>(.*?)</ol>', h[h.find(f'<h2 id="{lang}-s9">'):], flags=re.S)
         nums=[int(x) for x in re.findall(r' value="(\d+)"', ol.group(1))] if ol else []
-        item(f'§9 is one IEEE list numbered 1..N without gaps ({lang})', bool(nums) and nums == list(range(1, len(nums)+1)), (nums[:3], nums[-3:], len(nums)))
+        # 26 Sep 2026: numbers are permanent Map-wide (worknum) — a work added to §9 after the briefs took theirs keeps the next free number,
+        # so the list is strictly increasing and unique, not 1..N
+        item(f'§9 is one IEEE list in strictly increasing unique numbers ({lang})', bool(nums) and nums == sorted(set(nums)), (nums[:3], nums[-3:], len(nums)))
         cites=re.findall(r'<a class="cite" href="#('+lang+r'-src-[^"]+)"', h)
         item(f'every in-text citation links to an entry ({lang})', bool(cites) and all(f' id="{c}"' in h for c in set(cites)), [c for c in set(cites) if f' id="{c}"' not in h][:6])
     sys.path.insert(0, os.path.join(ROOT, 'build')); import sources as _sources

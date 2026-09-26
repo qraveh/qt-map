@@ -416,7 +416,11 @@ def title_text(r):
 def _link(u, text=None):
     """A bare URL as link text gets a break opportunity after every slash, so a long address wraps at its own joints."""
     t = esc(text or u)
-    if text is None or text == u: t = re.sub(r'(/)(?=.)', r'\1<wbr>', t.replace('://', '\x00')).replace('\x00', '://')
+    if text is None or text == u:
+        # a self-labelled link carries no href in the file: the page sets it from the text at load (brief_js), the checkers
+        # through briefs.expand_page — 2,000 addresses written once instead of twice (26 Sep 2026, the 10 MB ceiling)
+        t = re.sub(r'(/)(?=.)', r'\1<wbr>', t.replace('://', '\x00')).replace('\x00', '://')
+        return '<a class="u" target="_blank" rel="noopener">%s</a>' % t
     return '<a href="%s" target="_blank" rel="noopener">%s</a>' % (esc(u), t)
 
 

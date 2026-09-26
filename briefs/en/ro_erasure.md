@@ -23,7 +23,7 @@ Attributes from the technology graph (legend: a affinity natural↔fabricated; b
 - e = microwave @ room temperature (atoms: optical).
 - f = erasure-convertible (located, heralded loss).
 - g = none (a protocol, not an object).
-Rank 1 of 110; a hub.
+Rank 1 of 111; a hub.
 
 ## Physics & limits
 

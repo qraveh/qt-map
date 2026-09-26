@@ -459,93 +459,98 @@
   "score": 4.5,
   "tier": 3
  },
- "g_lointer": {
+ "enc_opt": {
   "rank": 93,
   "score": 4.4,
   "tier": 3
  },
- "donor": {
+ "g_lointer": {
   "rank": 94,
-  "score": 4.2,
+  "score": 4.4,
   "tier": 3
  },
- "defect": {
+ "donor": {
   "rank": 95,
   "score": 4.2,
   "tier": 3
  },
- "enc_bare": {
+ "defect": {
   "rank": 96,
   "score": 4.2,
   "tier": 3
  },
- "enc_eo": {
+ "enc_bare": {
   "rank": 97,
   "score": 4.2,
   "tier": 3
  },
- "enc_parity": {
+ "enc_eo": {
   "rank": 98,
   "score": 4.2,
   "tier": 3
  },
- "g_cr": {
+ "enc_parity": {
   "rank": 99,
   "score": 4.2,
   "tier": 3
  },
- "g_anneal": {
+ "g_cr": {
   "rank": 100,
   "score": 4.2,
   "tier": 3
  },
- "g_cv": {
+ "g_anneal": {
   "rank": 101,
   "score": 4.2,
   "tier": 3
  },
- "cx_bus": {
+ "g_cv": {
   "rank": 102,
   "score": 4.2,
   "tier": 3
  },
- "fab_mbe": {
+ "cx_bus": {
   "rank": 103,
   "score": 4.2,
   "tier": 3
  },
- "enc_gr": {
+ "fab_mbe": {
   "rank": 104,
   "score": 4.2,
   "tier": 3
  },
- "fab_bulk": {
+ "enc_gr": {
   "rank": 105,
   "score": 4.2,
   "tier": 3
  },
- "ro_fluxro": {
+ "fab_bulk": {
   "rank": 106,
+  "score": 4.2,
+  "tier": 3
+ },
+ "ro_fluxro": {
+  "rank": 107,
   "score": 3.0,
   "tier": 3
  },
  "g_mwspin": {
-  "rank": 107,
-  "score": 1.7,
-  "tier": 3
- },
- "fab_stm": {
   "rank": 108,
   "score": 1.7,
   "tier": 3
  },
- "fab_diamond": {
+ "fab_stm": {
   "rank": 109,
   "score": 1.7,
   "tier": 3
  },
- "enc_timebin": {
+ "fab_diamond": {
   "rank": 110,
+  "score": 1.7,
+  "tier": 3
+ },
+ "enc_timebin": {
+  "rank": 111,
   "score": 1.0,
   "tier": 3
  }

@@ -195,7 +195,7 @@ function relabel(){ st.select('text.l1').text(d=>wrapLabel(SHORT[d.id]?SHORT[d.i
   laneHead.each(function(d){const s=lang()==='en'?d.en:d.ru; let a=s,b=''; if(s.length>16){ const i=s.indexOf(' / ')>0?s.indexOf(' / '):s.lastIndexOf(' '); a=s.slice(0,i); b=s.slice(i).replace(/^ \/ /,'/ ').trim(); } d3.select(this).select('text.t:not(.t2)').text(a); d3.select(this).select('text.t2').text(b);});
   bandLabel.selectAll('*').remove(); BANDS.forEach((b,bi)=>{ if(!maxc[bi])return; const y=bandTop[bi]+(maxc[bi]*ROWH)/2; bandLabel.append('text').attr('x',X0-30).attr('y',y).attr('text-anchor','middle').attr('transform',`rotate(-90 ${X0-30} ${y})`).text(vt('AFF',b).split(' ')[0].toUpperCase()); });
   gPaths.selectAll('circle.emptyslot').select('title').text(d=>T('empty slot: ','пустой слот: ')+d.p[lang()]+' — '+G.layers[d.L-1][lang()]);
-  document.querySelectorAll('[data-chip-path]').forEach(b=>{b.querySelector('span.t').textContent=PATH[b.dataset.chipPath][lang()];});
+  document.querySelectorAll('[data-chip-path]').forEach(b=>{const p=PATH[b.dataset.chipPath]; b.querySelector('span.t').textContent=(p.short&&p.short[lang()])||p[lang()]; b.title=p[lang()];});
   document.querySelectorAll('#lens option').forEach(o=>{o.textContent=LENSES[o.value][lang()];});
   glyphKeys();
   document.querySelectorAll('#machine optgroup').forEach(o=>{ if(FAMN[o.dataset.fam])o.label=T(...FAMN[o.dataset.fam]); });

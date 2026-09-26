@@ -24,7 +24,7 @@ Attributes (a affinity; b time; c readout; d mobility; e control @ placement; f 
 - f = coherent: amplitude, phase, timing, crosstalk.
 - g = CMOS, 130 nm to 14 nm.
 
-Rank 5 of 110; a hub reaching superconducting and spin paths.
+Rank 5 of 111; a hub reaching superconducting and spin paths.
 
 ## Physics & limits
 
