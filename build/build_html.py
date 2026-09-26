@@ -675,6 +675,11 @@ def footer(cfg):
 # media register (SP08, 40_outputs/og-image, one of thirteen variants); a composite of photographs, no
 # generative model. build/social/CREDITS.md is the register's credit file, copied as is, and the colophon
 # links to it: several of the source photographs are CC BY, whose attribution is a licence condition.
+# The JPEG here is not the register's file byte for byte: it is a web derivative of the register's 4800 x 2520
+# master (2026-09-26, drawn anew from the originals, not enlarged), downscaled to 2400 x 1260 with Lanczos and
+# encoded once as a baseline JPEG at quality 66 = 289,604 B. The register's own 2400 x 1260 is 676,616 B — over
+# WhatsApp's documented 600 KB, and WhatsApp drops preview images well below that in practice (~300 KB), then caches
+# the failure for about a week. WhatsApp is where this site's readers come from, so the size is the constraint.
 OG_IMAGE_FILE = os.path.join(ROOT, 'build', 'social', 'og-image_quantum-technology-map.jpg')
 OG_IMAGE_URL = 'https://qodeh.com/images/og-image_quantum-technology-map.jpg'
 OG_IMAGE_ALT = 'A night sky of quantum hardware: a dilution refrigerator, a crystal of trapped ions, laser light, trapped-ion stars and qubit chips'

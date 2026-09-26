@@ -1,8 +1,9 @@
 # og:image of the Quantum Technology Map — photo collage
 
     programme   QT-Map · subproject media-register (SP08) · tier 40_outputs · 2026-09-26
-    files       og-image_quantum-technology-map.jpg (1200 × 630, for og:image / twitter:image)
+    files       og-image_quantum-technology-map.jpg (2400 × 1260, for og:image / twitter:image)
                 og-image_quantum-technology-map_titled.jpg (the same with the title, for places that show no title)
+                og-image_quantum-technology-map_4800.jpg, …_4800_titled.jpg (4800 × 2520 master)
     licence     CC BY 4.0 — Raveh Neeman (Qodeh), incorporating the works below
     kind        composite of photographs and micrographs (IPTC digital source type: composite); no generative model
 
@@ -37,7 +38,10 @@ Title type: Cormorant SC SemiBold (SIL Open Font Licence; github.com/google/font
 
 ## Rebuild
 
-`python3 build/og_image/build_collage.py <folder of the register's local picture copies> <outdir>` — reproduces
-the chosen collage pixel for pixel from the register's local copies (`build/og_image/compose.py`), crops it to
-1200 × 630 and writes both JPEGs (quality 88). The title needs `CormorantSC.ttf` (from the font repository
-above) beside the script or in `FONT`.
+`python3 build/og_image/build_collage.py <pictures> <outdir> <scale>` draws the composition anew at 1200 × 630
+times the scale (1, 2 or 4) — not an enlargement: each picture is cut from its original at the size it needs.
+`<pictures>` holds the nine works as `<asset_id>.jpg`: the full-size originals from the Commons pages above for
+scales 2 and 4 (the 4800 master uses every original at or below its own size, except the three beryllium ions,
+a 1,020-pixel camera image, enlarged about 1.5 times); at scale 1 the register's local copies reproduce the
+collage the editor chose pixel for pixel. JPEG quality 90. The title needs `CormorantSC.ttf` (from the font
+repository above) beside the script or in `FONT`.
