@@ -932,8 +932,14 @@ def compute():
         if code and d2r and t2q is not None and tmeas is not None:
             d2=d2r["num"]; d1=d1r["num"] if d1r else 0
             parts={"gates":d2*t2q,"transport":(d2*tmove_r["num"] if tmove_r else 0.0),"1q":(d1*t1qr["num"] if t1qr and d1 else 0.0),"readout":tmeas,"reset":(treset_r["num"] if treset_r else 0.0)}
+            # a term the path needs but no record publishes enters as 0 and is named in `missing`: the total is then a partial sum,
+            # a lower bound the tables print as "≥" (Codex review, 26 Sep 2026: no silent zero substitution)
+            missing=[]
+            if c and c["d"]=="transport" and not tmove_r: missing.append("transport")
+            if d1 and not t1qr: missing.append("1q")
+            if r and r["id"] not in RESET_AMORTISED and not treset_r: missing.append("reset")
             total=sum(parts.values()); lim=max(parts,key=parts.get)
-            p["round"]=dict(total=total,parts=parts,limiter=lim,d2=d2,d1=d1,code=HOST_ROUND.get(codeid,codeid),
+            p["round"]=dict(total=total,parts=parts,limiter=lim,d2=d2,d1=d1,code=HOST_ROUND.get(codeid,codeid),missing=missing,
                             sources=[x for x in (d2r,d1r,t1qr,tmove_r,treset_r) if x],notes=notes)
         else:
             p["round"]=dict(total=None,parts={},limiter=None,notes=notes+([] if code else ["no code on this path"]))

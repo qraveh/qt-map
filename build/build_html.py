@@ -325,11 +325,14 @@ def score_tips(h,lang):
     axes={}
     for row in re.findall(r'<tr>(.*?)</tr>',tbl,flags=re.S):
         cells=[html_mod.unescape(re.sub(r'<[^>]+>','',c)).strip() for c in re.findall(r'<td[^>]*>(.*?)</td>',row,flags=re.S)]
-        if len(cells)==5 and re.match(r'[A-F]\.',cells[0]): axes[cells[0][0]]=cells
+        if len(cells) in (5,7) and re.match(r'[A-F]\.',cells[0]): axes[cells[0][0]]=cells
     if len(axes)!=6: return h
     en=lang=='en'
     def desc(L):
-        a=axes[L]; return (f'{a[0]} — {a[1]}. Anchors: 5 = {a[2]}; 3 = {a[3]}; 1 = {a[4]}' if en else f'{a[0]} — {a[1]}. Опорные значения: 5 = {a[2]}; 3 = {a[3]}; 1 = {a[4]}')
+        a=axes[L]
+        if len(a)==7: anch=f'5 = {a[2]}; 4 = {a[3]}; 3 = {a[4]}; 2 = {a[5]}; 1 = {a[6]}'   # the intermediate anchors were added on 26 Sep 2026 (Codex review, item 5)
+        else: anch=f'5 = {a[2]}; 3 = {a[3]}; 1 = {a[4]}'
+        return (f'{a[0]} — {a[1]}. Anchors: {anch}' if en else f'{a[0]} — {a[1]}. Опорные значения: {anch}')
     j=h.find('</table>',i31); t31=h[i31:j]
     def th(m):
         L=m.group(2); return m.group(1)+'<span class="tt" data-tip="'+html_mod.escape(desc(L),quote=True)+'">'+L+m.group(3)+'</span></th>'
@@ -373,7 +376,28 @@ def insert_after_section(h,sec_id,block):
     i=h.find(f'<h2 id="{sec_id}">'); return h[:i]+block+h[i:]
 
 # ---------- radars for §3.1
-SCORES=[('Superconducting','Сверхпроводники','SC',[3,5,4,4,4,4]),('Neutral atoms','Нейтральные атомы','ATOM',[4,2,4,4,4,3]),('Trapped ions','Ионы','ION',[5,2,3,4,3,3]),('Bosonic SC','Бозонные SC','SC',[2,5,1,2,3,2]),('Spin qubits','Спиновые кубиты','SPIN',[2,3,2,2,3,3]),('Photonic','Фотоника','PHOTON',[2,4,1,1,3,2]),('Topological','Топологические','TOPO',[1,0,1,1,1,1])]
+SCORES_META=[('Superconducting','Сверхпроводники','SC'),('Neutral atoms','Нейтральные атомы','ATOM'),('Trapped ions','Ионы','ION'),('Bosonic (cat/GKP/dual-rail)','Бозонные SC','SC'),('Spin qubits (Si/Ge)','Спиновые кубиты','SPIN'),('Photonic','Фотоника','PHOTON'),('Topological','Топологические','TOPO')]
+def scores_from_report():
+    """the §3.1 scores read from report_EN.md (the radars were hard-coded until 26 Sep 2026 and drifted from the table): row label → six scores; a
+    '(4 design)' cell reads as its number, '—' as 0"""
+    t=open(os.path.join(ROOT,'report','report_EN.md'),encoding='utf-8').read(); i=t.find('### 3.1'); j=t.find('### 3.2',i); seg=t[i:j]
+    out={}
+    for line in seg.split('\n'):
+        if not line.startswith('| ') or line.startswith('| Platform') or line.startswith('|---'): continue
+        cells=[c.strip() for c in line.strip().strip('|').split('|')]
+        if len(cells)<8: continue
+        vals=[]
+        for c in cells[1:7]:
+            m=re.search(r'\d',c.replace('*','')); vals.append(int(m.group(0)) if m else 0)
+        out[cells[0].replace('*','').strip()]=vals
+    return out
+def SCORES():
+    sc=scores_from_report(); res=[]
+    for n,r,f in SCORES_META:
+        key=next((k for k in sc if k.startswith(n.split(' (')[0])),None)
+        if key is None: raise SystemExit('§3.1 scores: no row for '+n)
+        res.append((n.split(' (')[0],r,f,sc[key]))
+    return res
 AXL=['A','B','C','D','E','F']
 import math
 def radar(name,fam,vals):
@@ -388,7 +412,7 @@ def radar(name,fam,vals):
     return f'<svg viewBox="0 0 140 140" role="img" aria-label="{name} profile A–F">{grid}{spokes}{labels}{poly}{dots}</svg>'
 def radars_block(lang):
     cap={'en':'Profiles by axis (A channel · B clock · C scale · D FT progress · E scaling path · F roadmap credibility). The shape is the information: superconducting is round, ions are tall on A and short on B, atoms mirror ions on C/D, bosonic and photonic are B-only spikes.','ru':'Профили по осям (A канал · B такт · C масштаб · D прогресс FT · E путь масштабирования · F правдоподобие карты). Информация — в форме: сверхпроводники круглые, ионы высокие по A и низкие по B, атомы зеркалят ионы по C/D, бозонные и фотоника — пики только по B.'}[lang]
-    cards=''.join(f'<div class="radar">{radar(n if lang=="en" else r,f,v)}<div class="cap"><b>{n if lang=="en" else r}</b> · {sum(v)}</div></div>' for n,r,f,v in SCORES)
+    cards=''.join(f'<div class="radar">{radar(n if lang=="en" else r,f,v)}<div class="cap"><b>{n if lang=="en" else r}</b> · {sum(v)}</div></div>' for n,r,f,v in SCORES())
     return f'<div class="radars">{cards}</div><p class="figcap">{cap}</p>'
 def insert_after_h3_table(h,h3_num,block):
     m=re.search(r'<h3 id="[^"]+">'+re.escape(h3_num)+r' ',h); t=h.find('</div>',h.find('<div class="tbl">',m.end()))+6

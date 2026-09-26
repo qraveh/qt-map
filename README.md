@@ -21,7 +21,7 @@ Every quantum-computing platform compared by the goal it serves; a technology gr
 
 | Path | What it is |
 |---|---|
-| `data/graph_data.py` | **Source of truth for the graph**: layers, attribute vocabularies, 110 nodes (attributes, bilingual descriptions, dated `defines` records with sources), 14 platform paths, edges (requires / alternatives / conflicts with mechanism–price–mitigation–status), derivations (transfers, hubs, off-diagonal, empty slots, derived clock, validity check). Running it writes `data/graph.json`. |
+| `data/graph_data.py` | **Source of truth for the graph**: layers, attribute vocabularies, 110 nodes (attributes, bilingual descriptions, dated `defines` records with sources), 17 platform paths, edges (requires / alternatives / conflicts with mechanism–price–mitigation–status), derivations (transfers, hubs, off-diagonal, empty slots, derived clock, validity check). Running it writes `data/graph.json`. |
 | `data/graph.json` | Generated machine-readable graph (nodes, edges, paths, vocabularies, validity). Use this if you build on the data. |
 | `data/records.json` | **Standard records** — dated, sourced numbers per node (T1/T2, 1Q gate time, reset, SPAM, feed-forward latency, syndrome-circuit depth, code rate, acceptance, decode latency, transport per layer, yield, spread…); nulls mark quantities that are not published. Feeds the derived clocks (syndrome round, reaction time, operations per coherence). |
 | `data/ranking.json` | Graph centrality of every node (families and paths that depend on it, recency) — shown in each brief's header and index; the `tier` field is the build's word budget for brief depth, not a reader-facing label. |
