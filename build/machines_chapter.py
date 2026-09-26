@@ -8,7 +8,7 @@ Classifiers (kept simple and visible, so a reviewer can disagree with a line, no
   status class   = first word of the register's status (DEPLOYED / DEMONSTRATED / ANNOUNCED / PLANNED / RETIRED / OTHER)
   cohort year    = first four-digit year in status_date
   device         = status class in {DEPLOYED, DEMONSTRATED, RETIRED} and no flag in {target-not-device, component-only}
-  gate-capable   = device without a flag in {analog-only, no-entangling-gate, 1q-only, enabler-only, detection-only, not-a-qubit}
+  gate-capable   = device without a flag in {analog-only, no-entangling-gate, 1q-only, enabler-only, detection-only, not-a-qubit}, and not on the annealing path
   control class  = integrated (on-chip microwave / cryo-CMOS / SFQ / flux DAC / 4 K), optics, room-temperature electronics, undisclosed
   decoding class = in-loop / offline / planned / none, from the register's `realtime` field
 """
@@ -110,7 +110,8 @@ def prep():
         prim9 = [c for c in m['layers'].get('9', []) if c['role'] == 'primary']
         x['link'] = bool(prim9) and not prim9[0]['gap']
         x['cloud'] = 'cloud' in (m.get('access') or '').lower()
-        x['gatedev'] = x['device'] and not (x['flags'] & NON_GATE_FLAGS)
+        # annealers run no entangling gate whatever their flags say, so the annealing path is never gate-capable
+        x['gatedev'] = x['device'] and not (x['flags'] & NON_GATE_FLAGS) and m.get('map_path') != 'anneal'
         ms.append(x)
     return M, G, node, layers, paths, ms
 
