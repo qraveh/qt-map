@@ -58,7 +58,7 @@ FIELDS = ('authors', 'etal', 'n_authors', 'org', 'title', 'journal', 'volume', '
           'kind', 'site', 'publisher', 'edition', 'section', 'url', 'also', 'retraction', 'verified')
 ENTRY = re.compile(r'^(?:\[(\d{1,4}[a-z]?)\]|(\d{1,4})\.)\s+(.*)$')
 CITE = re.compile(r'(?<![\[\w:])\[(\d{1,4}[a-z]?)\](?![\](])')   # a bare [n]: not [[4,2,2]], not [G:…], not a md link
-MAP = OrderedDict([('authors', ['R. Neeman']), ('title', 'Quantum Technology Map'), ('kind', 'report'), ('edition', '2026.09 (beta)'),
+MAP = OrderedDict([('authors', ['R. Neeman']), ('title', 'Quantum Technology Map'), ('kind', 'report'), ('edition', '2026.09'),
                    ('publisher', 'Qodeh'), ('date', '2026-09')])
 
 

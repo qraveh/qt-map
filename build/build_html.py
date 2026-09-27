@@ -669,12 +669,13 @@ def report_numbers(text,lang):
     if left: raise SystemExit('report placeholders without a value: %s'%sorted(set(left)))
     return out
 def masthead(cfg):
-    doi=cfg['doi_concept']; doiurl='https://doi.org/'+doi; beta=(STATUS=='beta'); NN,NM=_counts()
-    doi_html=(f'<span class="doi" title="reserved on Zenodo; resolves when the edition is released">{doi}</span> · <span class="beta lang-en">DOI reserved</span><span class="beta lang-ru">DOI зарезервирован</span>' if beta
-              else f'<a href="{doiurl}" target="_blank" rel="noopener">{doi}</a>')
+    # The page is the publication artefact and names the work by its concept DOI whatever the repository's release stamp
+    # (editions.STATUS governs CITATION.cff and the README only — the editor's word of 27 Sep 2026: no "beta", no "reserved").
+    doi=cfg['doi_concept']; doiurl='https://doi.org/'+doi; NN,NM=_counts()
+    doi_html=f'<a href="{doiurl}" target="_blank" rel="noopener">{doi}</a>'
     return f'''<header class="mast">
  <div>
-  <div class="eyebrow"><span class="lang-en">Edition {cfg['edition']}{' · <b class="beta">beta</b>' if beta else ''} · English / Russian</span><span class="lang-ru">Издание {cfg['edition']}{' · <b class="beta">бета</b>' if beta else ''} · English / Русский</span></div>
+  <div class="eyebrow"><span class="lang-en">Edition {cfg['edition']} · English / Russian</span><span class="lang-ru">Издание {cfg['edition']} · English / Русский</span></div>
   <h1 class="title">Quantum Technology Map</h1>
   <p class="author"><span class="lang-en">Author</span><span class="lang-ru">Автор</span> · <b>{cfg['author']}</b> <a class="orcid" href="https://orcid.org/0000-0001-7362-9529" target="_blank" rel="noopener author" title="ORCID iD: https://orcid.org/0000-0001-7362-9529" aria-label="ORCID iD 0000-0001-7362-9529"><svg class="orcid-id" viewBox="0 0 256 256" width="16" height="16" aria-hidden="true"><path fill="#A6CE39" d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z"/><path fill="#FFF" d="M86.3 186.2H70.9V79.1h15.4v107.1zM108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7 0-21.5-13.7-39.7-43.7-39.7h-23.7v79.4zM88.7 56.8c0 5.5-4.5 10.1-10.1 10.1s-10.1-4.6-10.1-10.1c0-5.6 4.5-10.1 10.1-10.1s10.1 4.6 10.1 10.1z"/></svg></a></p>
   <p class="subtitle"><span class="lang-en">Every quantum-computing technology ({NN}) and every quantum machine built, announced or planned ({NM}): analysed and summarised, partitioned by seven invariant design attributes, compared and combined in dozens of ways — with a brief on every technology and a card on every machine.</span><span class="lang-ru">Все технологии квантовых вычислений ({NN}) и все построенные, объявленные или запланированные квантовые машины ({NM}): проанализированы и сведены, разбиты по семи неизменным атрибутам конструкции, сопоставлены и скомбинированы десятками способов — с брифом на каждую технологию и карточкой на каждую машину.</span></p>
@@ -723,12 +724,10 @@ def footer(cfg):
     if cfg['mode']=='internal': return ''
     NN,NM=_counts()
     doi=cfg['doi_concept']; doiurl='https://doi.org/'+doi
-    if STATUS=='beta':
-        cite_en=f"{cfg['author']} (2026). <i>Quantum Technology Map</i> (Edition {cfg['edition']}, beta). {cfg['publisher']}. <a href=\"{cfg['url']}\">{cfg['url']}</a> — DOI {doi} is reserved on Zenodo and will resolve when the edition is released; until then cite the site."
-        cite_ru=f"{cfg['author']} (2026). <i>Quantum Technology Map</i> (издание {cfg['edition']}, бета). {cfg['publisher']}. <a href=\"{cfg['url']}\">{cfg['url']}</a> — DOI {doi} зарезервирован на Zenodo и заработает при выпуске издания; до тех пор ссылайтесь на сайт."
-    else:
-        cite_en=f"{cfg['author']} (2026). <i>Quantum Technology Map</i> (Edition {cfg['edition']}). {cfg['publisher']}. <a href=\"{doiurl}\">{doiurl}</a> — the concept DOI resolves to the newest edition; cite the edition you read."
-        cite_ru=f"{cfg['author']} (2026). <i>Quantum Technology Map</i> (издание {cfg['edition']}). {cfg['publisher']}. <a href=\"{doiurl}\">{doiurl}</a> — DOI концепции разрешается в последнее издание; указывайте издание, которое читали."
+    # the citation names the work, not an edition (the editor, 27 Sep 2026): the concept DOI is the work's identifier and
+    # always resolves to its newest edition; the edition read is dated in the Editions table below
+    cite_en=f"{cfg['author']} (2026). <i>Quantum Technology Map</i>. {cfg['publisher']}. <a href=\"{doiurl}\">{doiurl}</a> — the DOI names the work as a whole and always resolves to its newest edition; each edition has its own DOI in the table below."
+    cite_ru=f"{cfg['author']} (2026). <i>Quantum Technology Map</i>. {cfg['publisher']}. <a href=\"{doiurl}\">{doiurl}</a> — DOI именует работу в целом и всегда ведёт на её последнее издание; у каждого издания свой DOI в таблице ниже."
     return f'''<footer class="colophon">
  <div class="lang-en">
   <p><b>Cite as.</b> {cite_en}</p>
@@ -736,7 +735,7 @@ def footer(cfg):
   <p><b>Data and source.</b> The graph (nodes, attributes, edges, dated records), the briefs and the build that renders this page are maintained at <a href="{cfg['repo']}">{cfg['repo'].replace('https://','')}</a>; corrections and new records are welcome as issues or pull requests; each edition is a tagged release archived on Zenodo.</p>
   {editions_html('en')}
   <p><b>Disclosures.</b> This is a single-author publication, produced independently — no funding, sponsorship, affiliation, or solicitation. Factual corrections are welcome.</p>
-  <p><b>Provenance.</b> Research and drafting with Claude (Anthropic); every figure traces to a dated, linked primary source, and every claim carries an evidence tag ([D] measured / peer-reviewed, [C] company claim, [R] roadmap, [S] simulation or estimate, [G] established fact, [P] preprint or trade press). Known conflicts between sources are stated, not averaged. Open verification items are listed at the end of each brief. Data cut-off: 4 September 2026.</p>
+  <p><b>Provenance.</b> Research and drafting with Claude (Anthropic); every figure traces to a dated, linked primary source, and every claim carries an evidence tag ([D] measured / peer-reviewed, [C] company claim, [R] roadmap, [S] simulation or estimate, [G] established fact, [P] preprint or trade press). Known conflicts between sources are stated, not averaged. Open verification items are listed at the end of each brief. Data cut-off: 26 September 2026 (the report and the register); a brief's own “as of” date says when that brief was last researched.</p>
   <p><b>Sharing image.</b> The picture shown when this page is shared: Raveh Neeman, <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>; a collage of photographs by OJB Quantum (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>), Steve Jurvetson (<a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>) and the U.S. National Institute of Standards and Technology (public domain) — <a href="{OG_CREDITS_URL}">full list of works</a>.</p>
  </div>
  <div class="lang-ru">
@@ -745,7 +744,7 @@ def footer(cfg):
   <p><b>Данные и исходники.</b> Граф (узлы, атрибуты, рёбра, датированные рекорды), брифы и сборка, порождающая эту страницу, ведутся в <a href="{cfg['repo']}">{cfg['repo'].replace('https://','')}</a>; исправления и новые рекорды принимаются как issue или pull request; каждое издание — тегированный релиз, архивируемый на Zenodo.</p>
   {editions_html('ru')}
   <p><b>Раскрытие.</b> Это публикация одного автора, подготовленная независимо — без финансирования, спонсорства, аффилиации и заказа. Фактические поправки приветствуются.</p>
-  <p><b>Происхождение.</b> Исследование и написание — совместно с Claude (Anthropic); каждая цифра прослеживается к датированному первоисточнику по ссылке, каждое утверждение несёт тег свидетельства ([D] измерено / рецензировано, [C] заявление компании, [R] дорожная карта, [S] симуляция или оценка, [G] установленный факт, [P] препринт или отраслевая пресса). Расхождения между источниками названы, а не усреднены. Открытые пункты верификации перечислены в конце каждого брифа. Данные по состоянию на 4 сентября 2026.</p>
+  <p><b>Происхождение.</b> Исследование и написание — совместно с Claude (Anthropic); каждая цифра прослеживается к датированному первоисточнику по ссылке, каждое утверждение несёт тег свидетельства ([D] измерено / рецензировано, [C] заявление компании, [R] дорожная карта, [S] симуляция или оценка, [G] установленный факт, [P] препринт или отраслевая пресса). Расхождения между источниками названы, а не усреднены. Открытые пункты верификации перечислены в конце каждого брифа. Данные по состоянию на 26 сентября 2026 (отчёт и реестр); дата «по состоянию на» внутри брифа говорит, когда этот бриф исследовался в последний раз.</p>
   <p><b>Изображение для ссылок.</b> Картинка, которую показывают, когда этой страницей делятся: Raveh Neeman, <a href="https://creativecommons.org/licenses/by/4.0/deed.ru" rel="license">CC BY 4.0</a>; коллаж из фотографий OJB Quantum (<a href="https://creativecommons.org/licenses/by/4.0/deed.ru">CC BY 4.0</a>), Steve Jurvetson (<a href="https://creativecommons.org/licenses/by/2.0/deed.ru">CC BY 2.0</a>) и Национального института стандартов и технологий США (общественное достояние) — <a href="{OG_CREDITS_URL}">полный список работ</a>.</p>
  </div>
 </footer>'''
@@ -791,7 +790,7 @@ def og_image_size():
 
 def head_meta(cfg):
     if cfg['mode']=='internal': return '<meta name="color-scheme" content="light dark">'
-    doi=cfg['doi_concept']; cite_doi=('' if STATUS=='beta' else '<meta name="citation_doi" content="'+doi+'">'); ident=(cfg['url'] if STATUS=='beta' else 'https://doi.org/'+doi); NN,NM=_counts(); desc=f'Every quantum-computing technology ({NN}) and every quantum machine built, announced or planned ({NM}): analysed and summarised, partitioned by seven invariant design attributes, compared and combined in dozens of ways — with a brief on every technology and a card on every machine. Bilingual EN/RU, CC BY 4.0.'
+    doi=cfg['doi_concept']; cite_doi='<meta name="citation_doi" content="'+doi+'">'; ident='https://doi.org/'+doi; NN,NM=_counts(); desc=f'Every quantum-computing technology ({NN}) and every quantum machine built, announced or planned ({NM}): analysed and summarised, partitioned by seven invariant design attributes, compared and combined in dozens of ways — with a brief on every technology and a card on every machine. Bilingual EN/RU, CC BY 4.0.'
     ogw, ogh = og_image_size()
     ld={"@context":"https://schema.org","@type":"ScholarlyArticle","name":"Quantum Technology Map","headline":"Quantum Technology Map","version":cfg['edition'],"datePublished":cfg['date'],"codeRepository":cfg.get('repo'),"inLanguage":["en","ru"],
         "author":{"@type":"Person","name":cfg['author']},"publisher":{"@type":"Organization","name":cfg['publisher'],"url":"https://qodeh.com"},
@@ -834,7 +833,7 @@ def build(cfg=PUBLIC):
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>{CSS}</style>
-<div id="app" data-lang="{dl}" data-edition="{cfg['edition']}{' beta' if STATUS=='beta' else ''}">
+<div id="app" data-lang="{dl}" data-edition="{cfg['edition']}">
 {navchrome(cfg)}
 {masthead(cfg)}
 <div class="page">

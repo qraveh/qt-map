@@ -67,7 +67,7 @@ Confirm by 2028: an end-to-end fusion-lattice demonstration at any code distance
 [146] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
 [155] S. Bartolucci *et al.*, “Fusion-based quantum computation,” *Nat. Commun.*, vol. 14, Art. no. 912, Feb. 2023, doi: [10.1038/s41467-023-36493-1](https://doi.org/10.1038/s41467-023-36493-1). [arXiv:2101.09310](https://arxiv.org/abs/2101.09310). [S]
 [335] M. C. Löbl, L. A. M. Pettersson, J. Dragašević, S. X. Chen, and O. A. D. Sandberg, “The subthreshold issue of fusion-based quantum computing,” [arXiv:2606.28490](https://arxiv.org/abs/2606.28490), Jun. 2026. [S]
-[527] R. Neeman, “Quantum Technology Map,” ed. 2026.09 (beta), Qodeh, Sep. 2026, §3.2. [D]
+[527] R. Neeman, “Quantum Technology Map,” ed. 2026.09, Qodeh, Sep. 2026, §3.2. [D]
 [528] P. Thomas, L. Ruscio, O. Morin, and G. Rempe, “Fusion of deterministically generated photonic graph states,” *Nature*, vol. 629, no. 8012, pp. 567–572, May 2024, doi: [10.1038/s41586-024-07357-5](https://doi.org/10.1038/s41586-024-07357-5). [D]
 
 ## Open verification items
