@@ -1,6 +1,6 @@
 ---
 id: ic_ionphoton
-name: Ion–photon photonic link
+name: Ion–photon link
 layer: "9 Interconnect"
 status: demonstrated
 since: 2007

@@ -25,7 +25,7 @@ LENS_EN = ['Platform family', 'Manufacturing technology', 'Dominant error struct
            'Readout: mid-circuit?', 'Entangling: deterministic / heralded', 'Carrier affinity: natural ↔ fabricated', 'Technology status']
 LENS_RU = ['Семейство платформ', 'Технология производства', 'Доминирующая структура ошибок', 'Подвижность / связность', 'Управление: модальность',
            'Управление: размещение (температурная ступень)', 'Характерное время (гейт или считывание)', 'Считывание: механизм', 'Считывание: разрушающее?',
-           'Считывание: внутрисхемное?', 'Перепутывание: детерминированное / heralded', 'Сродство носителя: естественный ↔ изготовленный', 'Статус технологии']
+           'Считывание: внутрисхемное?', 'Перепутывание: детерминированное / геральдированное (heralded)', 'Сродство носителя: естественный ↔ изготовленный', 'Статус технологии']
 
 READ = """()=>({
   lit:[...document.querySelectorAll('#mapwrap g.station:not(.dim)')].map(g=>g.querySelector('text.id').textContent),
@@ -91,7 +91,7 @@ def run(pw, w, h):
     check('willow: lit stations == its non-gap nodes', set(r['lit']) == WILLOW_NODES, (sorted(set(r['lit']) ^ WILLOW_NODES)))
     check('willow: only path sc lit', set(r['lines']) == {'sc'}, r['lines'])
     check('willow: altuse == nodes used only as alternate', set(r['altuse']) == WILLOW_ALT, (r['altuse'], sorted(WILLOW_ALT)))
-    check('willow: machine card shown (title, register link, evidence footer)', 'Willow' in r['card'] and 'register card' in r['card'] and '✅ 14 / 16' in r['card'], r['card'][:120])
+    check('willow: machine card shown (title, page link, evidence footer)', 'Willow' in r['card'] and 'page ↗' in r['card'] and '✅ 14 / 16' in r['card'], r['card'][:120])
     check('willow: card shows the Atlas gaps', 'Atlas gap: ∅G-lru' in r['card'], '')
     check('willow: no horizontal overflow', not r['hscroll'] and not r['inspOver'], (r['hscroll'], r['inspOver']))
     p.locator('#bartog').click()
@@ -154,7 +154,7 @@ def run(pw, w, h):
     check('RU: lens select labels', opts == LENS_RU, opts)
     p.select_option('#machine', 'google-willow')
     r = read()
-    check('RU: machine card in Russian', 'карточка реестра' in r['card'] and 'источники: ✅ 14 / 16' in r['card'], r['card'][:100])
+    check('RU: machine card in Russian', 'страница ↗' in r['card'] and 'источники: ✅ 14 / 16' in r['card'], r['card'][:100])
     p.locator('[data-setlang="en"]').filter(visible=True).first.click()
 
     errs = [e for e in errors if not ('fonts.g' in e and ('ERR_TUNNEL' in e or 'net::' in e)) and 'ERR_TUNNEL' not in e]

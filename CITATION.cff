@@ -12,7 +12,7 @@ authors:
 license: CC-BY-4.0
 url: "https://qodeh.com/publications/quantum-technology-atlas/"
 repository-code: "https://github.com/qraveh/qt-map"
-abstract: "Every quantum-computing technology and every quantum machine built, announced or planned: a goal-oriented comparison of the platforms; a technology graph of self-contained technologies across ten stack layers, each on seven design attributes and connected by five edge types, with the platform architectures as paths through the layers; a brief on each technology; a register of machines as architecture instances with graded evidence in every cell; every figure tagged and traced to a dated primary source. Bilingual EN/RU, published as one interactive document."
+abstract: "Every quantum-computing technology and every quantum machine built, announced or planned: a goal-oriented comparison of the platforms; a technology graph of self-contained technologies across ten stack layers, each on seven design attributes and connected by five edge types, with the platform architectures as paths through the layers; a brief on each technology; a register of machines as architecture instances with graded evidence in every cell; figures tagged by evidence grade and traced to dated sources. Bilingual EN/RU, published as an interactive web edition with a page for every record."
 keywords:
   - quantum computing
   - quantum error correction

@@ -6,7 +6,7 @@ status: demonstrated
 since: 2015
 one_line: Graph-matching decoder turning a syndrome round into the likeliest Pauli error chain; the accuracy reference and the shipped real-time decoder for surface codes.
 verdict: Matching stays the surface-code default through 2026 — Google's own below-threshold run decodes with Sparse Blossom. Demote if a live-hardware, same-syndrome test shows a non-matching decoder beating it on accuracy and latency together by end-2027.
-updated: 2026-09-03
+updated: 2026-09-26
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).

@@ -25,6 +25,7 @@ Signal accumulates as √t while parity survives only until a quasiparticle arri
 | 2025-02 | 1% assignment error, SNR 1 in 3.6 µs, dwell >1 ms, InAs–Al | Microsoft Azure Quantum | [D][13] |
 | 2026-02 | Independent single-shot parity readout, ~1.85 ms switching, InSb Kitaev chain | QuTech | [D][182] |
 | 2026-06 | ~20 s parity switching in one InAs–Pb wire, same readout family | Microsoft Quantum | [D][20] |
+
 Typical at scale is undefined: no multiplexed multi-tetron readout is published; the 2026 device came up one wire at a time [D][20].
 
 ## Manufacturing, materials & supply chain

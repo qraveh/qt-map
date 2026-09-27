@@ -12,7 +12,7 @@ that predate the register schema of 26 Sep 2026. Cells whose node is not in grap
 Record numbers are rounded to 6 significant digits. No existing determinize rule was found in
 data/graph_data.py or build/*.py, so the rule is implemented here (sig6).
 """
-import csv, json, math, os, sys
+import re, csv, json, math, os, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SNAP = os.path.join(ROOT, 'data', 'register')   # the register's input files as read for the committed machines.json (published with the repo, 26 Sep 2026)
@@ -84,6 +84,28 @@ def profile(m):
 def fam_key(m):
     f = m['family']
     return (FAMILY_ORDER.index(f) if f in FAMILY_ORDER else len(FAMILY_ORDER), f, m['id'])
+
+
+def _clean_curator(v):
+    v2 = re.sub(r'\s*[-–—;,]\s*not re-fetched\b\.?', '', v)     # "x - not re-fetched" → "x"
+    v2 = re.sub(r'\(\s*not re-fetched\s*\)', '', v2)             # "(not re-fetched)" → ""
+    v2 = re.sub(r'\bnot re-fetched\b[.;]?\s*', '', v2)            # bare
+    return re.sub(r'\s{2,}', ' ', v2).strip(' ;,-')
+
+
+def strip_curator_notes(x):
+    """Remove the register's verification remark "not re-fetched" from every string of the document, in place; return the count.
+    What stays is the substance the remark qualified ("the 94.9% GHZ figure is not in the cited sources"), which a reader can use."""
+    n = 0
+    if isinstance(x, dict):
+        for k, v in x.items():
+            if isinstance(v, str):
+                if 'not re-fetched' in v: x[k] = _clean_curator(v); n += 1
+            else:
+                n += strip_curator_notes(v)
+    elif isinstance(x, list):
+        for v in x: n += strip_curator_notes(v)
+    return n
 
 
 def build():
@@ -168,6 +190,8 @@ def build():
     out.sort(key=fam_key)
     bn = {k: {"primary": sorted(v['primary']), "alternate": sorted(v['alternate'])} for k, v in sorted(by_node.items())}
     doc = {"edition": EDITION, "source": SOURCE, "machines": out, "by_node": bn, "roadmaps": road}
+    n_cur = strip_curator_notes(doc)   # the cataloguer's working remarks ("not re-fetched") never reach a reader (27 Sep 2026: 31 did)
+    report['curator_notes_stripped'] = n_cur
     with open(OUT, 'w', encoding='utf-8', newline='\n') as fh:
         json.dump(doc, fh, ensure_ascii=False, indent=1, sort_keys=False)
         fh.write('\n')

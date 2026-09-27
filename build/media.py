@@ -191,6 +191,7 @@ def pick(target_key, n=3, kinds=None):
     for t in S['targets'].get(target_key, ()):
         a = t['asset']
         if a in seen or a not in A or (kinds and t['kind'] not in kinds): continue
+        if A[a].get('verdict') == 'LINK-OUT' and A[a].get('kind') == 'document-page': continue   # a pointer to where pictures may be found (a media-kit folder, a press page), not an illustration (27 Sep 2026)
         seen.add(a)
         d = dict(A[a], asset=a)
         d.update((k, t[k]) for k in ('role', 'how', 'confidence', 'real'))
@@ -233,8 +234,37 @@ def licence_name(spdx):
     return s
 
 
+_SCRAPE_RE = re.compile(r'<!--.*?(?:-->|$)|<[^>]+>|You must enable JavaScript[^.]*\.|\(\d+ additional authors not shown\)', re.S)
+MAX_AUTHORS = 6
+
+
+def clean_text(text):
+    """A register text field as the page may print it: cut at an HTML comment, drop tags and the scraped arXiv boilerplate
+    (two credits of 26 Sep 2026 carried a toggleAuthorList() script after 200 author names), collapse whitespace."""
+    t = _SCRAPE_RE.sub(' ', text or '')
+    for _ in range(3):   # LaTeX source doubled next to its rendering in scraped captions: "|0⟩\\ket{0}" → "|0⟩"
+        t2 = re.sub(r'\\[A-Za-z]+(?:\{[^{}]*\})*(?:[_^](?:\{[^{}]*\}|\w))*', '', t)
+        if t2 == t: break
+        t = t2
+    t = re.sub(r'[_^]\{[^{}]*\}|\{\}', '', t)
+    t = re.sub(r'“([^”]{100,})”', lambda m: '“' + (m.group(1) if m.group(1).rstrip()[-1:] in '.!?)' else m.group(1)[:m.group(1).rfind(' ')].rstrip(' ,;:') + '…') + '”', t)   # a title cut mid-word by the register ends at a word
+    return re.sub(r'\s+', ' ', t).strip(' ,;')
+
+
+def shorten_authors(text):
+    """An author run of more than MAX_AUTHORS comma-separated names — after ' by ' in an attribution, or a bare creator list —
+    becomes 'first author et al.'; the linked source names them all. Runs of six or fewer print in full."""
+    def cut(run):
+        names = [n.strip() for n in run.split(',') if n.strip()]
+        return run if len(names) <= MAX_AUTHORS else names[0] + ' et al.'
+    m = re.search(r'(?<=\bby )([^\n]*?)(?=,? ?https?://|$)', text)
+    if m: return text[:m.start()] + cut(m.group(1)) + text[m.end():]
+    return cut(text) if text.count(',') >= MAX_AUTHORS and not re.search(r'https?://', text) else text
+
+
 def _credit_parts(a):
-    who = a.get('attribution') or ' · '.join(dict.fromkeys(x for x in (a.get('creator'), a.get('rights_holder')) if x))
+    who = clean_text(a.get('attribution')) or ' · '.join(dict.fromkeys(x for x in (clean_text(a.get('creator')), clean_text(a.get('rights_holder'))) if x))
+    who = shorten_authors(who)
     spdx, url = a.get('license') or '', a.get('license_url') or ''
     return who, ('' if names_licence(who, spdx, url) else licence_name(spdx)), _href(url)
 
@@ -282,10 +312,10 @@ def figure_html(a, lang, base):
     aid = a.get('asset') or (thumb[:-4] if thumb.endswith('.jpg') else '')
     cls = ' '.join(['media'] + ([] if thumb else ['linkout']) + ([('real' if a['real'] else 'drawing')] if 'real' in a else []))
     head = '<figure class="%s"%s>' % (cls, ' data-asset="%s"' % _e(aid) if aid else '')
-    story = a.get('story') or a.get('title') or ''
+    story = clean_text(a.get('story') or a.get('title') or '')
     if thumb:
         wh = ' width="%d" height="%d"' % (a['width'], a['height']) if a.get('width') and a.get('height') else ''
-        pic = '<img src="%smedia/%s" alt="%s" loading="lazy"%s>' % (_e(base), _e(thumb), _e(_alt(a.get('title'))), wh)
+        pic = '<img src="%smedia/%s" alt="%s" loading="lazy"%s>' % (_e(base), _e(thumb), _e(_alt(clean_text(a.get('title')))), wh)
         url = _href(a.get('source_page_url'))
         if url: pic = _a(url, pic)
         return head + ('%s<figcaption><span class="story">%s</span> <span class="credit">%s</span></figcaption></figure>'
@@ -293,7 +323,7 @@ def figure_html(a, lang, base):
     url = _href(a.get('file_url')) or _href(a.get('source_page_url'))
     if not url: return ''
     return head + ('%s <span class="credit">%s</span><figcaption>%s</figcaption></figure>'
-                   % (_a(url, _e(a.get('title'))), _e(LINKOUT['en' if lang == 'en' else 'ru']), _e(story)))
+                   % (_a(url, _e(clean_text(a.get('title')))), _e(LINKOUT['en' if lang == 'en' else 'ru']), _e(story)))
 
 
 def gallery_html(target_key, lang, base, n=3, kinds=None):
@@ -337,6 +367,9 @@ def check(thumbs_dir=None):
             problems.append('%s: link-out without an http(s) link' % a)
     for k, ts in sorted(T.items()):
         problems += ['%s: asset %s is not in the snapshot' % (k, t['asset']) for t in ts if t['asset'] not in A]
+    # register data notes (not problems: the renderer cleans them — clean_text): scraped markup or LaTeX source in a text field
+    notes = [(a, f) for a, e in sorted(A.items()) for f in ('title', 'creator', 'attribution', 'story') if re.search(r'<|\\[A-Za-z]', e.get(f) or '')]
+    print('register text fields with markup or LaTeX source (cleaned at render time): %d — %s' % (len(notes), ', '.join('%s.%s' % n for n in notes[:12]) + (' …' if len(notes) > 12 else '')))
     if thumbs_dir is None:
         print('thumbnails: not checked (no --thumbs DIR)')
     elif not os.path.isdir(thumbs_dir):

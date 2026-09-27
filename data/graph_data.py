@@ -18,7 +18,7 @@ LAYERS = [
 # attribute vocabularies (design space) -----------------------------------------
 AFF = {0.0:("natural","естественный"),0.25:("photon (natural particle, engineered modes)","фотон (естественная частица, изготовленные моды)"),
        0.5:("intermediate / carrier-agnostic","промежуточный / независим от носителя"),0.75:("hybrid (fabricated host)","гибридный (изготовленная матрица)"),1.0:("fabricated","изготовленный")}
-DET = {"det":("deterministic","детерминированное"),"her":("probabilistic / heralded","вероятностное / heralded"),"na":("n/a","н/п")}
+DET = {"det":("deterministic","детерминированное"),"her":("probabilistic / heralded","вероятностное / геральдированное (heralded)"),"na":("n/a","н/п")}
 MECH = {"disp":("dispersive microwave","дисперсионное СВЧ"),"fluor":("fluorescence (PMT/SNSPD)","рассеяние фотонов (ФЭУ/SNSPD)"),"img":("fluorescence imaging (camera)","флуоресцентный imaging (камера)"),
         "s2c":("spin-to-charge + rf reflectometry","спин-в-заряд + rf-рефлектометрия"),"spd":("single-photon detection","детектирование одиночных фотонов"),"qcap":("rf quantum capacitance (parity)","rf квантовая ёмкость (чётность)"),
         "erasure":("ancilla erasure check","проверка erasure через анциллу"),"flux":("flux latch (QFP/SQUID)","защёлка потока (QFP/SQUID)"),"homodyne":("homodyne quadrature","гомодинная квадратура"),"none":("—","—")}
@@ -316,7 +316,7 @@ N("ro_reset",6,"Fast unconditional / dissipative qubit reset","Быстрый б
 N("ro_fluxro",6,"Flux readout via QFP / SQUID shift registers (annealers)","Считывание потока через QFP / SQUID и сдвиговые регистры (отжигатели)",1.0,["fab"],None,"na",C("flux",-4.0,True,False),"none","lf",["mK"],["pauli"],"sclitho","D",
   "The annealer's own readout: the final flux state of each qubit is latched by a quantum-flux-parametron and clocked out through on-chip shift registers to a handful of lines — thousands of qubits read per anneal; no qubit is coupled to a resonator (the shift registers end in frequency-multiplexed microresonators at the chip edge).","Собственное считывание отжигателя: конечное состояние потока каждого кубита защёлкивается квантовым потоковым параметроном и выводится сдвиговыми регистрами на чипе по нескольким линиям — тысячи кубитов за один отжиг; ни один кубит не связан с резонатором (сдвиговые регистры оканчиваются частотно-мультиплексированными микрорезонаторами на краю чипа).",
   (),"A read of the whole chip takes 17–235 µs and ends the sample; it is not a mid-circuit measurement.","Считывание всего чипа занимает 17–235 мкс и завершает выборку; это не измерение внутри схемы."),
-N("ro_fluor",6,"Fluorescence state detection (ions)","Флуоресцентное определение состояния (ионы)",0.0,["nat"],None,"na",C("fluor",-4.0,False,True),"none","opt",["RT"],["pauli"],"optics","D",
+N("ro_fluor",6,"Fluorescence state detection (ions, defects)","Флуоресцентное определение состояния (ионы, дефекты)",0.0,["nat"],None,"na",C("fluor",-4.0,False,True),"none","opt",["RT"],["pauli"],"optics","D",
   "State-dependent scattering counted by PMT/SNSPD; 11 µs at 99.93% record; SPAM 4.8×10⁻⁴ on Helios.","Зависимое от состояния рассеяние, считаемое ФЭУ/SNSPD; рекорд 11 мкс при 99.93%; SPAM 4.8×10⁻⁴ на Helios.",
   [("clock","fastest ion readout","11 µs at 99.931% (¹⁷¹Yb⁺, MoSi SNSPD)","2019","https://www.nature.com/articles/s42005-019-0195-8"),
    ("channel","Helios SPAM","4.8×10⁻⁴","2025-11","https://arxiv.org/abs/2511.05465")],
@@ -336,7 +336,7 @@ N("ro_spd",6,"Single-photon detection (SNSPD / TES)","Детектировани
    ("channel","best on-chip efficiency (laboratory device)","99.73%","2025-10","https://www.nature.com/articles/s41377-025-02031-5")],
   "The '98.9% median (PsiQuantum)' sometimes quoted is superseded: the Omega paper gives 93.4% median on-chip efficiency — 0.30 dB per detection rather than 0.05 dB.","Иногда цитируемая «98.9% медиана (PsiQuantum)» вытеснена: статья по Omega даёт 93.4% медианной эффективности на чипе — 0.30 дБ на детектирование вместо 0.05 дБ."),
 N("ro_homodyne",6,"Homodyne quadrature detection (CV)","Гомодинное детектирование квадратур (CV)",0.25,["pho"],None,"na",C("homodyne",-6.0,True,True),"none","eo",["RT"],["gauss"],"pic","D",
-  "Measurement of a field quadrature against a shared local oscillator — the computational measurement of continuous-variable and GKP machines (Borealis, Aurora); photon counting remains the heralding path.","Измерение квадратуры поля относительно общего гетеродина — вычислительное измерение машин на непрерывных переменных и GKP (Borealis, Aurora); счёт фотонов остаётся каналом heralding.",
+  "Measurement of a field quadrature against a shared local oscillator — the computational measurement of continuous-variable and GKP machines (Aurora); photon counting remains the heralding path, and the samplers (Borealis, Jiuzhang) count photons.","Измерение квадратуры поля относительно общего гетеродина — вычислительное измерение машин на непрерывных переменных и GKP (Aurora); счёт фотонов остаётся каналом heralding, а сэмплеры (Borealis, Jiuzhang) считают фотоны.",
   (),"Detector efficiency and electronic noise set the effective squeezing; at the 1 MHz clock the detection is not the bottleneck.","Эффективность детектора и электронный шум определяют эффективное сжатие; при такте 1 МГц детектирование не является узким местом."),
 N("ro_qcap",6,"rf quantum-capacitance parity readout","rf-считывание чётности по квантовой ёмкости",1.0,["fab"],None,"na",C("qcap",-4.0,False,True),"none","lf",["RT"],["unknown"],"mbe","E",
   "Interferometric parity readout of a Majorana wire; 1% assignment error, SNR 1 in 3.6 µs.","Интерферометрическое считывание чётности майорановской проволоки; 1% ошибка присвоения, SNR 1 за 3.6 мкс.",
@@ -460,7 +460,7 @@ N("ic_cryolink",9,"Cryogenic microwave link between refrigerators","Криоге
   [("channel","30 m link Bell fidelity / rate","80.4% / 12.5 kHz","2023-05","https://www.nature.com/articles/s41586-023-05885-0"),
    ("path","2026 modular link","waveguide loss < 0.03 dB/30 m; end-to-end transfer loss 0.55–0.65 dB, i.e. 86–88% transmission","2026-04","https://arxiv.org/html/2604.15971v1")],
   "ETH Zürich. A '75–79% transfer efficiency' sometimes quoted is not implied by 0.55–0.65 dB, which is 86–88% transmission; the ETH paper attributes the loss to the 26 demountable module joints, and any residue would be node emission/absorption efficiency.","ETH Zürich. Иногда цитируемая «эффективность передачи 75–79%» не следует из 0.55–0.65 дБ, что соответствует пропусканию 86–88%; статья ETH относит потери к 26 разъёмным стыкам модулей, а остаток пришёлся бы на эффективность излучения/поглощения в узлах."),
-N("ic_ionphoton",9,"Ion–photon photonic link","Ион-фотонный фотонный линк",0.0,["nat"],None,"na",None,"flying","opt",["RT"],["loss"],"optics","D",
+N("ic_ionphoton",9,"Ion–photon link","Ион-фотонный линк",0.0,["nat"],None,"na",None,"flying","opt",["RT"],["loss"],"optics","D",
   "Remote Bell pairs at 9.7–250 s⁻¹ with 94–97% fidelity; teleported CZ 86%; needs ≥ 10⁴ s⁻¹.","Удалённые пары Белла при 9.7–250 с⁻¹ с fidelity 94–97%; телепортированный CZ 86%; нужно ≥ 10⁴ с⁻¹.",
   [("channel","distributed CZ (Oxford)","remote Bell 96.9% at 9.7 s⁻¹; teleported CZ 86.2%","2025-02","https://www.nature.com/articles/s41586-024-08404-x"),
    ("clock","entanglement rate record","250 s⁻¹ at F > 94%","2024","https://arxiv.org/abs/2404.16167")],
@@ -545,7 +545,7 @@ N("g_mwspin",3,"Microwave / optical spin gates (defect centres, 1Q spins)","СВ
   [("channel","NV 1Q/2Q (GST)","< 0.1% [P] — press release only, no primary paper","2025-03","https://thequantuminsider.com/2025/03/28/fujitsu-and-qutech-realize-high-precision-quantum-gates/")],
   "The Fujitsu/QuTech '< 0.1%' figure is cited from the press release [P], which names a Phys. Rev. Applied paper (2025-03-21) not yet located by us.","Значение «< 0.1%» от Fujitsu/QuTech цитируется по пресс-релизу [P], который называет статью в Phys. Rev. Applied (2025-03-21), нами пока не найденную."),
 N("g_catcnot",3,"Bias-preserving cat–cat CNOT","Bias-сохраняющий CNOT кошка–кошка",1.0,["fab"],None,"det",None,"bus","mw",["RT"],["bias"],"sclitho","X",
-  "Required by every cat-qubit resource estimate; only a July-2026 theory proposal exists.","Требуется каждой оценкой ресурсов для кошачьих кубитов; существует только теоретическое предложение июля 2026.",
+  "Required by every cat-qubit resource estimate; proposed since 2019 (Guillaud–Mirrahimi) and 2020 (Puri et al.), the first unitary scheme in July 2026; no demonstration.","Требуется каждой оценкой ресурсов для кошачьих кубитов; предложен с 2019 (Guillaud–Mirrahimi) и 2020 (Puri et al.), первая унитарная схема — июль 2026; демонстрации нет.",
   [("channel","status","no experimental bias-preserving cat–cat CNOT","2026-07","https://arxiv.org/abs/2607.22852")],"",""),
 N("src_resource",3,"Multi-photon resource-state factory (6-ring etc.)","Фабрика многофотонных ресурсных состояний (6-ring и т.п.)",0.25,["pho"],None,"her",None,"flying","eo",["RT"],["loss"],"pic","X",
   "Fusion-based FT needs 24–168-photon encoded resource states at high rate; largest fused deterministic-emitter graph states are 8 photons at < 1 Hz.","Fusion-based FT нужны кодированные ресурсные состояния из 24–168 фотонов с высокой скоростью; крупнейшие слитые графовые состояния — 8 фотонов при < 1 Гц.",
@@ -606,7 +606,7 @@ P("ph_cv","Continuous-variable photonic — GKP","Фотоника на непр
   {1:["squeezed"],2:["enc_gkp"],3:["g_cv","g_fusion"],4:["cx_switch"],5:["ct_eo"],6:["ro_homodyne","ro_spd"],7:["code_bosonic","code_qldpc"],8:["dec_relaybp","dec_mwpm"],9:["ic_fibre"],10:["fab_pic"]},
   "Xanadu (Aurora)","1 MHz clock (Aurora); no logical cycle","G4 G6"),
 P("ph_sampler","Boson sampler","Бозонный сэмплер","PHOTON","pho",
-  {1:["squeezed","photon"],2:[],3:["g_lointer"],4:["cx_switch"],5:["ct_eo"],6:["ro_spd","ro_homodyne"],7:[],8:[],9:[],10:["fab_bulk","fab_pic"]},
+  {1:["squeezed","photon"],2:[],3:["g_lointer"],4:["cx_switch"],5:["ct_eo"],6:["ro_spd"],7:[],8:[],9:[],10:["fab_bulk","fab_pic"]},
   "USTC (Jiuzhang), Xanadu (Borealis), ORCA","n/a — sampling; MHz-class clock, no cycle","G1"),
 P("spin_qd","Silicon / germanium quantum-dot spins","Кремниевые / германиевые спины в квантовых точках","SPIN","fab",
   {1:["qd_spin"],2:["enc_eo","enc_spin_ld"],3:["g_exch","g_mwspin"],4:["cx_nn","cx_shuttle","cx_crossbar"],5:["ct_base","ct_cryocmos","ct_rt"],6:["ro_s2c"],7:["code_surface","code_qldpc"],8:["dec_mwpm"],9:["ic_fanout"],10:["fab_cmos"]},
@@ -615,7 +615,7 @@ P("spin_donor","Donor spins in silicon","Донорные спины в крем
   {1:["donor"],2:["enc_spin_ld"],3:["g_exch","g_mwspin"],4:["cx_nn"],5:["ct_base","ct_rt"],6:["ro_s2c"],7:["code_surface"],8:["dec_mwpm"],9:[],10:["fab_stm"]},
   "SQC","~ms (nuclear-spin gates µs, readout 100 µs)","G7"),
 P("defect","Colour-centre spins — network nodes (NV/SiV/T)","Спины центров окраски — узлы сети (NV/SiV/T)","DEFECT","int",
-  {1:["defect"],2:["enc_spin_ld"],3:["g_mwspin"],4:["cx_nn"],5:["ct_base"],6:["ro_fluor"],7:["code_qldpc"],8:[],9:["ic_spinphoton"],10:["fab_diamond"]},
+  {1:["defect"],2:["enc_spin_ld"],3:["g_mwspin"],4:["cx_nn"],5:["ct_base","ct_rt"],6:["ro_fluor"],7:["code_qldpc"],8:[],9:["ic_spinphoton"],10:["fab_diamond","fab_pic"]},
   "QuTech/Fujitsu, Harvard, Photonic Inc, Quantum Brilliance","n/a (network node)","G6"),
 P("topo","Topological — tetron (Majorana)","Топологические — тетрон (майорановские)","TOPO","fab",
   {1:["majorana"],2:["enc_parity"],3:["g_mbq"],4:["cx_nn"],5:["ct_base"],6:["ro_qcap"],7:[],8:[],9:[],10:["fab_mbe"]},
@@ -634,6 +634,14 @@ SHORT_PATH={"sc":("Transmon lattice","Решётка трансмонов"),"cat
  "spin_qd":("CMOS spin qubits","КМОП-спиновые кубиты"),"spin_donor":("Donor spins","Донорные спины"),"defect":("Spin–photon nodes","Спин-фотонные узлы"),
  "topo":("Majorana parity","Майорановская чётность"),"anneal":("Flux-qubit annealer","Потоковый отжигатель")}
 for _p in PATHS: _p["short"]={"en":SHORT_PATH[_p["id"]][0],"ru":SHORT_PATH[_p["id"]][1]}
+# slots an architecture leaves empty by design — not a missing technology but a layer its mode of operation has no use for
+# (27 Sep 2026: the analog simulator's "∅ empty slot" in the code layer read as a gap). Other empty slots stay gaps.
+NA_SLOTS={
+ "atom_analog":{7:("no code — analog operation","нет кода — аналоговый режим"),8:("no decoder — analog operation","нет декодера — аналоговый режим"),9:("no interconnect — a single array","нет межсоединения — один массив")},
+ "anneal":{2:("no encoding layer — the flux qubit is the annealer's variable","нет слоя кодирования — потоковый кубит и есть переменная отжига"),7:("no code — annealing","нет кода — отжиг"),8:("no decoder — annealing","нет декодера — отжиг"),9:("no interconnect — one QPU","нет межсоединения — один QPU")},
+ "ph_sampler":{2:("no encoding layer — photon-number sampling","нет слоя кодирования — выборка числа фотонов"),7:("no code — sampling","нет кода — сэмплирование"),8:("no decoder — sampling","нет декодера — сэмплирование"),9:("no interconnect — one interferometer","нет межсоединения — один интерферометр")},
+}
+for _p in PATHS: _p["na"]={str(k):list(v) for k,v in NA_SLOTS.get(_p["id"],{}).items()}
 EDGES=[]
 REQ=[
 ("g_tc","transmon","flux-tunable coupler between transmons","перестраиваемый coupler между трансмонами"),
@@ -714,12 +722,18 @@ REQ=[
 ("code_qldpc","ic_spinphoton","non-local checks over spin–photon links between nodes","нелокальные проверки по спин-фотонным линкам между узлами"),("code_qldpc","cx_shuttle","non-local checks by spin shuttling","нелокальные проверки через транспорт спинов"),("code_qldpc","cx_switch","non-local checks by photonic switching","нелокальные проверки через фотонную коммутацию"),
 ("enc_dualrail","ro_spd","photon loss heralded at detection","потеря фотона геральдируется при детекции"),("g_fusion","squeezed","fusion of GKP-encoded modes by beam splitters and homodyne readout","fusion GKP-кодированных мод светоделителями и гомодинным считыванием"),
 ("ro_disp","fluxq","dispersive shift of a resonator by the latched flux state (via a QFP)","дисперсионный сдвиг резонатора защёлкнутым потоковым состоянием (через QFP)"),
+("g_mwspin","ct_base","microwave and baseband pulses on the spin","СВЧ- и низкочастотные импульсы на спине"),("g_mwspin","ct_rt","microwave drive from room temperature","СВЧ-накачка с комнатной температуры"),
+("g_mbq","ct_base","gate voltages that set the measurement","затворные напряжения, задающие измерение"),("g_catcnot","ct_rt","microwave drives of the cat modes","СВЧ-накачки мод кошачьих кубитов"),
+("ct_eo","fab_bulk","fibre-coupled modulators and free-space optics","волоконные модуляторы и свободнопространственная оптика"),
 ]
 # One-of groups (27 Sep 2026): a requires edge with a group is satisfied by any member of its (src, group) set; a group has >= 2
 # members; a source may carry several groups (g_tc: carrier and control). Strength: hard = the source cannot exist without it,
 # soft = the usual route (counts toward reach only where the architecture holds it, like a group member). Scope link = the need belongs
 # to the link, not to the path's readout slot (the slot check exempts it).
 GROUP={}
+GROUP_LABEL={"carrier":("one carrier of several","один из носителей"),"encoding":("one encoding of several","одно из кодирований"),"control":("one control route of several","один из способов управления"),
+ "connectivity":("one connectivity of several","одна из связностей"),"measurement":("one readout of several","одно из считываний"),"code":("one code of several","один из кодов"),
+ "decoder":("one decoder of several","один из декодеров"),"fab":("one manufacturing route of several","один из способов изготовления")}   # how a one-of group reads in the tables (27 Sep 2026)
 def _grp(src,name,*dsts):
     assert len(dsts)>=2,(src,name)
     for d in dsts: GROUP[(src,d)]=name
@@ -731,8 +745,8 @@ _grp("code_bosonic","encoding","enc_cat","enc_gkp"); _grp("code_magic","code","c
 _grp("dec_cryo","control","ct_sfq","ct_cryocmos"); _grp("ic_atomcavity","carrier","alkali","ae_atom")
 _grp("enc_hf","carrier","ion","alkali","ae_atom"); _grp("enc_spin_ld","carrier","qd_spin","donor","defect"); _grp("enc_dualrail","carrier","cavity","transmon","photon"); _grp("cx_aod","carrier","alkali","ae_atom")
 _grp("g_tc","control","ct_rt","ct_cryocmos"); _grp("g_tc","carrier","transmon","fluxonium"); _grp("g_cr","control","ct_rt","ct_cryocmos"); _grp("g_mwspin","carrier","defect","qd_spin","donor"); _grp("enc_bare","carrier","transmon","fluxonium")
-_grp("cavity","fab","fab_3d","fab_sc"); _grp("photon","fab","fab_pic","fab_mbe"); _grp("squeezed","fab","fab_pic","fab_bulk")
-SOFT={("g_bos","transmon"),("dec_fpga","code_surface"),("dec_nn","code_surface"),("ct_fluxdac","ct_sfq"),("donor","fab_stm"),("defect","fab_diamond"),("dec_rl","dec_nn"),
+_grp("cavity","fab","fab_3d","fab_sc"); _grp("photon","fab","fab_pic","fab_mbe"); _grp("squeezed","fab","fab_pic","fab_bulk"); _grp("ct_eo","fab","fab_pic","fab_bulk"); _grp("g_mwspin","control","ct_base","ct_rt")
+SOFT={("g_lointer","ct_eo"),("qd_spin","fab_cmos"),("g_bos","transmon"),("dec_fpga","code_surface"),("dec_nn","code_surface"),("ct_fluxdac","ct_sfq"),("donor","fab_stm"),("defect","fab_diamond"),("dec_rl","dec_nn"),
       ("dec_mwpm","code_surface"),("dec_mwpm","code_bosonic"),("dec_mwpm","code_fusion"),("dec_mwpm","code_erasure")}   # matching's positive need is usual, not absolute; its impossibilities are the colour-code and qLDPC conflicts
 SCOPE_LINK={("ic_ionphoton","ro_spd"),("ic_spinphoton","ro_spd"),("ic_transducer","ro_spd"),("ic_transducer","fab_pic")}
 _LAYER_OF={}
@@ -821,7 +835,7 @@ CONX={
   status="bypass",date="2025-06",url="https://arxiv.org/abs/2506.01779"),
 ("g_cr","code_surface"):dict(
   price=("a cross-resonance lattice avoids frequency collisions by keeping the degree at 2–3 (heavy-hex); the surface code's weight-4 checks then need flag qubits, a longer syndrome circuit and a lower threshold than on a degree-4 lattice","решётка cross-resonance избегает частотных столкновений, держа степень 2–3 (heavy-hex); проверки веса 4 surface code тогда требуют флаговых кубитов, более длинной схемы синдрома и дают порог ниже, чем на решётке степени 4"),
-  mitig=("tunable couplers (g_tc) on a degree-4 lattice — IBM's move from Eagle to Heron; heavy-hex codes on the cross-resonance lattice","перестраиваемые каплеры (g_tc) на решётке степени 4 — переход IBM от Eagle к Heron; heavy-hex-коды на решётке cross-resonance"),
+  mitig=("tunable couplers (g_tc) — IBM's move from Eagle's cross-resonance to Heron's tunable couplers, still on heavy-hex; the degree-4 square lattice came with Nighthawk (2025); or heavy-hex codes on the cross-resonance lattice","перестраиваемые каплеры (g_tc) — переход IBM от cross-resonance у Eagle к перестраиваемым каплерам Heron, ещё на heavy-hex; квадратная решётка степени 4 пришла с Nighthawk (2025); либо heavy-hex-коды на решётке cross-resonance"),
   status="bypass",date="2020-01",url="https://arxiv.org/abs/1907.09528"),
 ("ro_img","enc_hf"):dict(
   price=("a mid-circuit image of one atom scatters resonant light that the stored hyperfine qubits absorb; without separation or shelving the data qubits decohere during every measurement","imaging одного атома в середине схемы рассеивает резонансный свет, который поглощают хранимые сверхтонкие кубиты; без разделения или укрытия кубиты данных декогерируют при каждом измерении"),
@@ -832,23 +846,23 @@ CONX={
   mitig=("zoned QCCD traps that move the measured ion away (cx_qccd), a second species, or metastable shelving (enc_omg)","зонированные QCCD-ловушки, уносящие измеряемый ион (cx_qccd), второй вид ионов или укрытие в метастабильных уровнях (enc_omg)"),
   status="mitigated",date="2021-04",url="https://arxiv.org/abs/2003.01293"),
 ("ic_transducer","transmon"):dict(
-  price=("the optical pump that drives the conversion sits at the mixing chamber: its stray light breaks Cooper pairs and heats the stage, so the first qubit-to-photon transduction ran the pump pulsed at a low duty cycle","оптическая накачка, ведущая преобразование, стоит на камере смешения: её рассеянный свет разрывает куперовские пары и греет ступень, поэтому первая трансдукция кубит → фотон работала импульсной накачкой с малой скважностью"),
-  mitig=("pulsed, low-duty-cycle pumping; the transducer on a separate chip or module with filtered optical access","импульсная накачка с малой скважностью; трансдьюсер на отдельном чипе или модуле с фильтрованным оптическим доступом"),
+  price=("the optical pump light that drives the conversion reaches the mixing chamber: its stray light breaks Cooper pairs and heats the stage, so the first qubit-to-photon transduction ran the pump pulsed at a low duty cycle","оптическая накачка, ведущая преобразование, стоит на камере смешения: её рассеянный свет разрывает куперовские пары и греет ступень, поэтому первая трансдукция кубит → фотон работала импульсной накачкой с малым коэффициентом заполнения"),
+  mitig=("pulsed, low-duty-cycle pumping; the transducer on a separate chip or module with filtered optical access","импульсная накачка с малым коэффициентом заполнения; трансдьюсер на отдельном чипе или модуле с фильтрованным оптическим доступом"),
   status="open",date="2020-12",url="https://arxiv.org/abs/2004.04838"),
 ("ct_cryocmos","transmon"):dict(
-  price=("a CMOS controller dissipates milliwatts; the mixing chamber of a dilution refrigerator offers tens of microwatts, so the controller cannot sit beside the transmons — at 3–4 K it can (< 2 mW per channel set, 2019)","КМОП-контроллер рассеивает милливатты; камера смешения растворительного криостата даёт десятки микроватт, поэтому контроллер не может стоять рядом с трансмонами — на 3–4 K может (< 2 мВт на набор каналов, 2019)"),
-  mitig=("the controller at the 4 K stage with wiring down to the qubits; spin qubits operated at ~1 K do not see the conflict","контроллер на ступени 4 K с разводкой вниз к кубитам; спиновые кубиты при ~1 K конфликта не видят"),
+  price=("a full CMOS controller dissipates milliwatts; the mixing chamber of a dilution refrigerator offers tens of microwatts, so the controller sits at 3–4 K (< 2 mW per channel set, 2019) and only microwatt-class parts — multiplexers, switches — go beside the transmons","полный КМОП-контроллер рассеивает милливатты; камера смешения растворительного криостата даёт десятки микроватт, поэтому контроллер стоит на ступени 3–4 K (< 2 мВт на набор каналов, 2019), а рядом с трансмонами — только микроваттные части: мультиплексоры, переключатели"),
+  mitig=("the controller at the 4 K stage with wiring down to the qubits; a millikelvin multiplexer that routes pulses without generating them; spin qubits operated at ~1 K do not see the conflict","контроллер на ступени 4 K с разводкой вниз к кубитам; милликельвиновый мультиплексор, который проводит импульсы, не порождая их; спиновые кубиты при ~1 K конфликта не видят"),
   status="mitigated",date="2019-11",url="https://arxiv.org/abs/1902.10864"),
 ("ct_sfq","fluxonium"):dict(
-  price=("inferred from the transmon case: the same aluminium junctions, the same pair-breaking photons; no fluxonium driven by SFQ pulses has been reported","выведено из случая трансмона: те же алюминиевые переходы, те же разрывающие пары фотоны; флаксониум, управляемый SFQ-импульсами, не сообщался"),
+  price=("inferred from the transmon case: the same aluminium junctions, the same pair-breaking photons; no fluxonium driven by SFQ pulses has been reported, and a fluxonium biased at half flux is less sensitive to quasiparticle tunnelling than a transmon (Pop et al. 2014), so the price may be lower","выведено из случая трансмона: те же алюминиевые переходы, те же разрывающие пары фотоны; флаксониум, управляемый SFQ-импульсами, не сообщался, а флаксониум при половине кванта потока менее чувствителен к туннелированию квазичастиц, чем трансмон (Pop et al. 2014), так что цена может быть ниже"),
   mitig=("as for the transmon: the driver on a separate die, bandwidth limiting, quasiparticle traps, shielding","как для трансмона: драйвер на отдельном кристалле, ограничение полосы, ловушки квазичастиц, экранирование"),
   status="open",date="2023-09",url="https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.4.030310"),
 ("squeezed","cx_switch"):dict(
-  price=("the fault-tolerance threshold of a GKP architecture is stated as ~10 dB of effective squeezing; every 1 dB of switch loss on the route caps the reachable squeezing at ~7 dB, so the switch budget is the tightest number of the architecture","порог отказоустойчивости архитектуры на GKP задан как ~10 дБ эффективного сжатия; каждый 1 дБ потерь переключателя на маршруте ограничивает достижимое сжатие ~7 дБ, поэтому бюджет переключателя — самое жёсткое число архитектуры"),
+  price=("the fault-tolerance threshold of a GKP architecture is stated as ~10 dB of effective squeezing; a total loss of 1 dB on the route (η = 0.79) caps the reachable squeezing at 6.9 dB and 0.46 dB (η = 0.9) at 10 dB, so the switch budget is the tightest number of the architecture","порог отказоустойчивости архитектуры на GKP задан как ~10 дБ эффективного сжатия; суммарные потери 1 дБ на маршруте (η = 0,79) ограничивают достижимое сжатие 6,9 дБ, а 0,46 дБ (η = 0,9) — 10 дБ, поэтому бюджет переключателя — самое жёсткое число архитектуры"),
   mitig=("loss budgets per mode and switch, the lowest-loss switch technologies (BTO, MEMS), or a discrete-variable encoding where loss is a heralded erasure","бюджет потерь на моду и переключатель, переключатели с наименьшими потерями (BTO, MEMS) или дискретное кодирование, где потеря — геральдированное стирание"),
   status="open",date="2021-02",url="https://arxiv.org/abs/2010.02905"),
 ("code_highrate","cx_nn"):dict(
-  price=("no nearest-neighbour device has run a high-rate code; on a static lattice the non-local checks need SWAP networks whose depth grows with the check span, and errors accumulate with it","ни одно NN-устройство не запускало код высокой скорости; на статической решётке нелокальные проверки требуют SWAP-сетей, глубина которых растёт с размахом проверки, и ошибки накапливаются вместе с ней"),
+  price=("no nearest-neighbour device has run a high-rate code beyond the four-qubit [[4,2,2]] detection code; on a static lattice the non-local checks need SWAP networks whose depth grows with the check span, and errors accumulate with it","ни одно NN-устройство не запускало код высокой скорости крупнее четырёхкубитного кода обнаружения [[4,2,2]]; на статической решётке нелокальные проверки требуют SWAP-сетей, глубина которых растёт с размахом проверки, и ошибки накапливаются вместе с ней"),
   mitig=("long-range on-chip couplers (IBM c-couplers, Loon 2025-11) or physical transport (atoms, ions)","дальние on-chip каплеры (IBM c-couplers, Loon 2025-11) или физический транспорт (атомы, ионы)"),
   status="open",date="2025-06",url="https://arxiv.org/abs/2506.03094"),
 ("code_qldpc","cx_nn"):dict(
@@ -896,7 +910,7 @@ CONX={
   mitig=("driver on a separate die, pulse-bandwidth limiting (projected 0.1%), quasiparticle traps / gap engineering, mm-wave shielding; SEEQC 2026 reports no detectable poisoning at 5 qubits","драйвер на отдельном кристалле, ограничение полосы импульсов (прогноз 0.1%), ловушки квазичастиц / инженерия щели, мм-волновое экранирование; SEEQC 2026 сообщает об отсутствии детектируемого отравления на 5 кубитах"),
   status="mitigated",date="2023-09",url="https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.4.030310"),
 }
-CONSTAT={"open":("open — no mitigation shown at scale","открыт — снятие в масштабе не показано"),"mitigated":("mitigated at small scale","снят в малом масштабе"),"bypass":("bypassed by a different node in a third layer","обходится выбором другого узла в третьем слое")}
+CONSTAT={"open":("open — no mitigation shown at scale","открыт — снятие в масштабе не показано"),"mitigated":("mitigated at small scale","снят в малом масштабе"),"bypass":("bypassed by choosing another station in place of one of the two","обходится выбором другой станции вместо одной из двух")}
 for e in EDGES:
     if e["type"]=="conflicts":
         x=CONX.get((e["src"],e["dst"]))
@@ -908,7 +922,7 @@ NODE={n["id"]:n for n in NODES}
 # ---------------------------------------------------------------- STANDARD RECORDS (dated, sourced; nulls are honest "not published")
 _REC_PATH=os.path.join(os.path.dirname(os.path.abspath(__file__)),"records.json")
 RECORDS=json.load(open(_REC_PATH,encoding="utf-8"))
-RECKEYS={"t1":("T1 relaxation","T1 релаксация"),"t2":("T2 coherence (echo/DD)","T2 когерентность (эхо/DD)"),"t1q":("1Q gate time","время 1Q-гейта"),
+RECKEYS={"t1":("T1 relaxation","T1 релаксация"),"parity_life":("parity lifetime (single wire, not a qubit T1)","время жизни чётности (одна проволока, не T1 кубита)"),"t_bitflip":("bit-flip time (cat qubit, protected axis)","время битового переворота (кот-кубит, защищённая ось)"),"t2":("T2 coherence (echo/DD)","T2 когерентность (эхо/DD)"),"t1q":("1Q gate time","время 1Q-гейта"),
  "idle_err_round":("idle / memory error per round","ошибка простоя/памяти за раунд"),"leak_rate":("leakage per gate","утечка за гейт"),"burst_rate":("correlated-burst rate","частота коррелированных всплесков"),
  "err_2q_parallel":("2Q error under full-width parallel operation","ошибка 2Q при параллельной работе всей ширины"),"crosstalk":("crosstalk","перекрёстные помехи"),
  "degree":("connectivity degree","степень связности"),"t_move_round":("transport per round","транспорт за раунд"),"t_move_layer":("transport per gate layer","транспорт за слой гейтов"),
@@ -1004,7 +1018,9 @@ def compute():
     for p in PATHS:
         for L in range(1,11):
             ids=p["slots"].get(L,[])
-            if not ids: empty_slots.append(dict(path=p["id"],layer=L))
+            if not ids:
+                if str(L) in p.get("na",{}): continue          # empty by design (NA_SLOTS), not a gap
+                empty_slots.append(dict(path=p["id"],layer=L))
             elif all(NODE[i]["status"]=="X" for i in ids): empty_slots.append(dict(path=p["id"],layer=L,only=ids))
     # derived clock per path — syndrome round as the sum of its phases (not max):
     #   t_round = d2·(t_2Q + t_move_layer) + d1·t_1Q + t_meas + t_reset      (transport only where the connectivity node moves qubits)
@@ -1016,7 +1032,7 @@ def compute():
         def first(L):
             ids=p["slots"].get(L,[]); return NODE[ids[0]] if ids else None
         car=first(1); g=first(3); c=first(4); ct=first(5); r=first(6); dec=first(8)
-        notes=[]; parts={}
+        notes=[]; parts={}; link_round=False
         t2q=_pow(g["b"]["t"]) if g and g["b"]["t"] is not None else None
         tmeas=_pow(r["c"]["t"]) if r and r["c"] and r["c"]["t"] is not None else None
         # the round is that of the first code on the architecture that has a published syndrome circuit (erasure codes → host code)
@@ -1029,6 +1045,14 @@ def compute():
         elif code and code["id"]!=codes[0]["id"]: notes.append("round of %s (%s has no published syndrome circuit)"%(codeid,codes[0]["id"]))
         elif code and code["id"] in HOST_ROUND: notes.append("round of the host code (%s)"%codeid)
         if c and c["d"]=="flying": code=None; d2r=None; notes.append("measurement-driven photonic architecture: no syndrome round; native clock in the measured column")
+        # a network-node architecture (27 Sep 2026): the code's non-local checks run over an inter-node link, so the round is set by
+        # the link rate, not by the local gates — no derived round (the physicist's review of the defect page: 127 µs was four
+        # orders of magnitude off the 0.02–1 Hz link)
+        if code:
+            pn=set(i for ids in p["slots"].values() for i in ids)
+            conn=[e["dst"] for e in EDGES if e["type"]=="requires" and e["src"]==code["id"] and e.get("group")=="connectivity" and e["dst"] in pn]
+            if conn and all(NODE[x]["layer"]==9 for x in conn):
+                notes.append("network-node architecture: the code's checks run over the %s link, whose rate (see its records) sets the round — no derived round"%conn[0]); code=None; d2r=None; link_round=True
         t1qr=(rec(car["id"],"t1q",unit="s") if car else None) or (rec(g["id"],"t1q",unit="s") if g else None)
         tmove_r=rec(c["id"],"t_move_layer",unit="s") if c and c["d"]=="transport" else None
         if c and c["d"]=="transport" and not tmove_r: notes.append("transport per layer unpublished for %s"%c["id"])
@@ -1042,13 +1066,14 @@ def compute():
             # a lower bound the tables print as "≥" (Codex review, 26 Sep 2026: no silent zero substitution)
             missing=[]
             if c and c["d"]=="transport" and not tmove_r: missing.append("transport")
+            if c and c["id"]=="cx_bus": missing.append("serial gates"); notes.append("on one chain the gates of a layer run largely one at a time: d₂ layers assume parallel gates, so the total is a lower bound")
             if d1 and not t1qr: missing.append("1q")
             if r and r["id"] not in RESET_AMORTISED and not treset_r: missing.append("reset")
             total=sum(parts.values()); lim=max(parts,key=parts.get)
             p["round"]=dict(total=total,parts=parts,limiter=lim,d2=d2,d1=d1,code=HOST_ROUND.get(codeid,codeid),missing=missing,
                             sources=[x for x in (d2r,d1r,t1qr,tmove_r,treset_r) if x],notes=notes)
         else:
-            p["round"]=dict(total=None,parts={},limiter=None,notes=notes+([] if code else ["no code on this architecture"]))
+            p["round"]=dict(total=None,parts={},limiter=None,notes=notes+([] if (code or link_round) else ["no code on this architecture"]))
         # reaction time
         tff=rec(ct["id"],"t_ff",unit="s") if ct else None; tdec=rec(dec["id"],"t_decode",unit="s") if dec else None
         floor=(tmeas or 0)+(tdec["num"] if tdec else 0) if (tmeas is not None and tdec) else None
@@ -1091,7 +1116,7 @@ def compute():
     covered=set(i for ids in DIRECTIONS.values() for i in ids)
     novel=sorted(S-covered)
     validity=dict(directions=report,S_size=len(S),S=sorted(S),novel=novel,diagonal_enablers=DIAGONAL_ENABLERS)
-    return dict(layers=[dict(n=l[0],id=l[1],en=l[2],ru=l[3]) for l in LAYERS],vocab=dict(AFF={('%g'%k):v for k,v in AFF.items()},DET=DET,MECH=MECH,MOB=MOB,MOD=MOD,PLACE=PLACE,ERR=ERR,FAB=FAB,STATUS=STATUS,OUT=OUT,OFFDIAG=OFFDIAG_RULES,CONSTAT=CONSTAT,RECKEYS=RECKEYS,EDGE_KIND=EDGE_KIND),
+    return dict(layers=[dict(n=l[0],id=l[1],en=l[2],ru=l[3]) for l in LAYERS],vocab=dict(AFF={('%g'%k):v for k,v in AFF.items()},DET=DET,MECH=MECH,MOB=MOB,MOD=MOD,PLACE=PLACE,ERR=ERR,FAB=FAB,STATUS=STATUS,OUT=OUT,OFFDIAG=OFFDIAG_RULES,CONSTAT=CONSTAT,RECKEYS=RECKEYS,EDGE_KIND=EDGE_KIND,GROUP_LABEL=GROUP_LABEL),
                 nodes=NODES,paths=PATHS,edges=EDGES+transfers+defines,empty_status=empty,empty_slots=empty_slots,validity=validity)
 
 if __name__=="__main__":

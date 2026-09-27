@@ -8,7 +8,7 @@ String(), toFixed, toPrecision and toExponential are reproduced exactly). No Jav
     a station       → {base}technology/{id}.html       "Open on the map" → {base}#station-{id}
     a machine       → {base}machine/{id}.html          "Open on the map" → {base}#machine-{id}
     an architecture → {base}architecture/{pid}.html    "Open on the map" → {base}#architecture-{pid}
-    "Brief →"       → #brief (the brief is on the station's own page); a register card → MACH_URLS['register'] + id
+    "Brief →"       → #brief (the brief is on the station's own page); a machine → its own page machine/<id>.html
 What only the live map can do is left out: the drag grip and dock buttons, "clear machine", the lens-row highlight and the hints
 that describe clicks on the map (the "Used by" hint keeps its other clauses). EXTRAS (default True) adds what the spec lists
 beyond the map's cards: the machine's access, codes, flags and standard records, and the summary and evidence of its gap / none /
@@ -21,6 +21,7 @@ undisclosed cells; the architecture's machines. cards.EXTRAS = False renders the
     cards.architecture_card_html(path_id, lang, base)
 """
 import html, json, math, os, re, sys
+import regvocab
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BUILD = os.path.join(ROOT, 'build')
@@ -73,7 +74,7 @@ def _mach_urls():
         d = dict(re.findall(r"'(register|tech)'\s*:\s*'([^']*)'", re.search(r'MACH_URLS\s*=\s*\{[^}]*\}', s).group(0)))
         if d.get('register'): return d
     except Exception: pass
-    return {'register': 'https://claude.ai/artifact/Bfj8NrxCsx8PMdxUCBMBhV#m-', 'tech': 'https://claude.ai/artifact/2EcsTbo9kjAHseEnBxzawp#node-'}
+    return {'register': 'machine/', 'tech': 'technology/'}
 
 
 def _keyrefs():
@@ -223,11 +224,9 @@ def _st(base, nid, L, cls=None, title=None, text=None):
 def _arch(base, pid, L): return '<a href="%sarchitecture/%s.html">%s</a>' % (ea(base), ea(pid), esc(PATH[pid][L]))
 
 
-def _maplink(base, kind, i, L): return '<a class="maplink" href="%s#%s-%s">%s</a>' % (ea(base), kind, ea(i), esc(T(L, *MAP_LINK)))
-
-
-def _reg(L, mid):
-    return '<a class="reg" href="%s" target="_blank" rel="noreferrer" title="%s">↗</a>' % (ea(URLS['register'] + mid), ea(T(L, 'register card', 'карточка реестра')))
+def _maplink(base, kind, i, L):
+    # the main page of the record's own language, by its default document (index.html), so that the link also works from a folder on disk
+    return '<a class="maplink" href="%s%sindex.html#%s-%s">%s</a>' % (ea(base), '' if L == 'en' else 'ru/', kind, ea(i), esc(T(L, *MAP_LINK)))
 
 
 def _mrefs(L, m):
@@ -237,8 +236,8 @@ def _mrefs(L, m):
 
 def _mli(L, mid, base, role, tail=''):
     m = MACH[mid]
-    return '<li%s><a href="%smachine/%s.html" title="%s">%s</a> <span class="empty">%s</span> %s %s%s</li>' % (
-        (' class="%s"' % role) if role else '', ea(base), ea(mid), ea(m['name'] + ' · ' + m['org']), esc(m['name']), esc(m['org']), _reg(L, mid), _mrefs(L, m), tail)
+    return '<li%s><a href="%smachine/%s.html" title="%s">%s</a> <span class="empty">%s</span> %s%s</li>' % (
+        (' class="%s"' % role) if role else '', ea(base), ea(mid), ea(m['name'] + ' · ' + m['org']), esc(m['name']), esc(m['org']), _mrefs(L, m), tail)
 
 
 # ---------- machines: the cells of machines.json as mach_slim reads them
@@ -309,7 +308,7 @@ def _records(L, recs, machine=False):
     for r in recs:
         d = [esc(r.get('text')), esc(r.get('date')), '<a href="%s" target="_blank" rel="noopener">%s</a>' % (ea(r.get('url')), esc(T(L, 'source', 'источник')))]
         out.append('<div class="def"><div><span class="k">%s</span> → <b>%s</b> <span class="empty">· %s</span></div><div class="d">%s%s%s</div></div>' % (
-            esc(T(L, *(rk.get(r['key']) or (r['key'], r['key']))[:2])), _rec_val(L, r, machine), esc(r.get('scope')),
+            esc(T(L, *(rk.get(r['key']) or (r['key'], r['key']))[:2])), _rec_val(L, r, machine), esc(T(L, *regvocab.SCOPE.get(r.get('scope') or '', (r.get('scope') or '',) * 2))),
             ' · '.join(x for x in d if x or not machine), (' [%s]' % esc(r.get('tag'))) if r.get('tag') or not machine else '',
             (' <span class="empty" title="%s">ⓘ</span>' % ea(r['note'])) if r.get('note') else ''))
     return '<div class="space"><h4>%s</h4>%s</div>' % (esc(T(L, 'Standard records', 'Стандартные рекорды')), ''.join(out))
@@ -445,19 +444,19 @@ def machine_card_html(mid, lang, base=''):
     if EXTRAS:
         for lab, tip, vals in ((('codes', 'коды'), ('error-correcting codes the codes register links to this machine', 'коды коррекции ошибок, которые реестр кодов связывает с этой машиной'), m.get('codes')),
                                (('flags', 'флаги'), ("the register's caveats on this machine's data", 'оговорки реестра к данным этой машины'), pf.get('flags'))):
-            if vals: prof += '<div class="mc"><span class="empty" title="%s">%s:</span> %s</div>' % (ea(T(L, *tip)), t(*lab), esc(', '.join(vals)))
+            if vals: prof += '<div class="mc"><span class="empty" title="%s">%s:</span> %s</div>' % (ea(T(L, *tip)), t(*lab), esc(', '.join((regvocab.flag_words(v, L) if lab[0] == 'flags' else v) for v in vals)))
     fam, q, sd, ec = m['family'], m.get('physical_qubits_num'), m.get('status_date'), m.get('evidence_counts') or {}
-    meta = '%s · %s · %s%s · %s' % (esc(m['org']), t(*FAMN.get(fam, (fam, fam))), esc(m['status']), (' (%s)' % esc(sd)) if sd else '',
-                                    ('%s %s' % (js_str(q), t('physical qubits', 'физических кубитов'))) if q is not None and q != '' else t('qubits not published', 'число кубитов не опубликовано'))
-    if EXTRAS and m.get('access'): meta += ' · %s: %s' % (t('access', 'доступ'), esc(m['access']))
+    meta = '%s · %s · %s%s · %s' % (esc(m['org']), t(*FAMN.get(fam, (fam, fam))), esc(m['status'] if L == 'en' else regvocab.status_ru(m['status'])), (' (%s)' % esc(sd)) if sd else '',
+                                    ('%s %s' % (js_str(q), 'physical qubits' if L == 'en' else regvocab.ru_plural(q, regvocab.PLURAL['qubits']))) if q is not None and q != '' else t('qubits not published', 'число кубитов не опубликовано'))
+    if EXTRAS and m.get('access'): meta += ' · %s: %s' % (t('access', 'доступ'), esc(m['access'] if L == 'en' else regvocab.access_ru(m['access'])))
     pid = m['map_path']
     return _wrap('machine', [
         '<h3><i class="sw" style="--c:%s"></i> %s</h3>' % (FAMC.get(fam, 'var(--mid)'), esc(m['name'])),
         '<div class="meta">%s</div>' % meta,
-        '<div class="mlinks"><a href="%s" target="_blank" rel="noreferrer">↗ %s</a> <span class="empty">· %s: %s</span> <span class="empty">·</span> %s</div>' % (
-            ea(URLS['register'] + mid), t('register card', 'карточка реестра'), t('architecture', 'архитектура'), _arch(base, pid, L) if pid in PATH else esc(pid),
+        '<div class="mlinks"><span class="empty">%s:</span> %s <span class="empty">·</span> %s</div>' % (
+            t('architecture', 'архитектура'), _arch(base, pid, L) if pid in PATH else esc(pid),
             _maplink(base, 'machine', mid, L)),
-        ('<div class="space"><h4>%s</h4>%s</div>' % (t("Register profile — the machine's variant of its architecture", 'Профиль реестра — вариант архитектуры у этой машины'), prof)) if prof else '',
+        ('<div class="space"><h4>%s</h4>%s</div>' % (t("Register profile — the machine's variant of its architecture", 'Профиль реестра — вариант архитектуры у этой машины (поля реестра — на английском)'), prof)) if prof else '',
         '<div class="space"><h4>%s</h4><table class="ptab mtab">%s</table></div>' % (t("Stations by layer — the machine's cell per layer", 'Станции по слоям — ячейка машины на каждом слое'), rows),
         _records(L, m['records'], True) if EXTRAS and m.get('records') else '',
         '<div class="mfoot"><span>%s: ✅ %s / %s</span></div>' % (t('evidence', 'источники'), js_str(ec.get('verified', 0)), js_str(ec.get('total', 0)))])
@@ -468,7 +467,7 @@ def architecture_card_html(pid, lang, base=''):
     L, p = lang, PATH[pid]; t = lambda en, ru: esc(T(L, en, ru)); sl = p.get('slots') or {}
     members = list(dict.fromkeys(i for k in _okeys(sl) for i in sl[k])); mset = set(members)
     rows = ''.join('<tr><td class="ln">%s %s</td><td>%s</td></tr>' % (l['n'], esc(l[L]), '<span class="empty"> · </span>'.join(
-        _st(base, i, L, 'alt' if j else 'prim') for j, i in enumerate(sl.get(str(l['n'])) or [])) or '<span class="empty">∅ %s</span>' % t('empty slot', 'пустой слот'))
+        _st(base, i, L, 'alt' if j else 'prim') for j, i in enumerate(sl.get(str(l['n'])) or [])) or (('<span class="empty">— %s</span>' % esc(T(L, *p['na'][str(l['n'])]))) if str(l['n']) in (p.get('na') or {}) else '<span class="empty">∅ %s</span>' % t('empty slot', 'пустой слот')))
         for l in G['layers'])
     R = p.get('round') or {}; RP = R.get('parts') or {}; RX = p.get('react') or {}; CO = p.get('coh') or {}; pn = dict(PN)
     fS = lambda x: '—' if x is None else ('0' if x == 0 else fmt_t(js_log10(x)))
@@ -510,7 +509,7 @@ def architecture_card_html(pid, lang, base=''):
             '<ul class="useby">%s</ul><div class="empty" style="margin-top:4px">%s</div>' % (''.join(_mli(L, i, base, '') for i in mids), t(*USEBY_HINT))) if mids else '')
     return _wrap('architecture', [
         '<h3><i class="sw" style="--c:%s"></i> %s</h3>' % (FAMC.get(p['family']), esc(p[L])),
-        '<div class="meta">%s · %s · %d %s</div>' % (t('architecture', 'архитектура'), esc(pid), len(members), t('stations', 'станций')),
+        '<div class="meta">%s · %s · %s</div>' % (t('architecture', 'архитектура'), esc(pid), ('10 layers · %d stations counting alternates' % len(members)) if L == 'en' else ('10 слоёв · %d %s с учётом альтернатив' % (len(members), regvocab.ru_plural(len(members), regvocab.PLURAL['stations'])))),
         '<div class="mlinks">%s</div>' % _maplink(base, 'architecture', pid, L),
         '<div class="space"><h4>%s</h4><div>%s</div><div class="empty">%s: %s</div></div>' % (t('Actors & goals', 'Акторы и цели'), esc(p.get('actors')), t('goals', 'цели'), esc(p.get('goals'))),
         '<div class="space"><h4>%s</h4><dl>%s</dl><div class="empty" style="margin-top:4px">%s</div></div>' % (t('Derived clocks', 'Выведенные такты'), clocks, t(

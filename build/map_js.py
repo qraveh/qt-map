@@ -7,7 +7,13 @@ function krLabel(sid,n){ const el=document.getElementById('brief-'+sid+'-en-src-
 // machines register (C2): slim copy embedded at build time — machines[], by_node{}, families[], urls{register,tech}
 const MACH=window.__MACH||{machines:[],by_node:{},families:['SC','ION','ATOM','PHOTON','SPIN','DEFECT','TOPO','ANNEAL'],urls:{register:'',tech:''}};
 const MBY=Object.fromEntries(MACH.machines.map(m=>[m.id,m]));
-const REG_URL=id=>(MACH.urls&&MACH.urls.register||'')+id, TECH_URL=id=>(MACH.urls&&MACH.urls.tech||'')+id;
+const REG_URL=id=>`machine/${id}.html`, TECH_URL=id=>`technology/${id}.html`;
+const RT=MACH.t||{};   // the register's enumerations in Russian (build/regvocab.py, embedded with the machines)
+function ruPlural(n,f){n=Math.abs(parseInt(n,10)||0); if(n%10===1&&n%100!==11)return f[0]; if(n%10>=2&&n%10<=4&&!(n%100>=12&&n%100<=14))return f[1]; return f[2];}
+function statusT(s){ s=s||''; if(lang()==='en')return s; const i=s.indexOf('('); const head=i<0?s:s.slice(0,i), tail=i<0?'':' '+s.slice(i); return head.split('/').map(w=>(RT.status||{})[w.trim()]||w.trim()).filter(Boolean).join(' / ')+tail; }
+function scopeT(x){ return lang()==='en'?x:((RT.scope||{})[x]||x); }
+function qubitsT(q){ return lang()==='en'?`${q} physical qubits`:`${q} ${ruPlural(q,(RT.plural||{}).qubits||['физический кубит','физических кубита','физических кубитов'])}`; }
+function stationsT(n){ return lang()==='en'?`10 layers · ${n} stations counting alternates`:`10 слоёв · ${n} ${ruPlural(n,(RT.plural||{}).stations||['станция','станции','станций'])} с учётом альтернатив`; }   // every record has its own page since 27 Sep 2026 (the register's private working pages are no longer linked)
 const app=document.getElementById('app');
 const lang=()=>app.getAttribute('data-lang')||'en';
 const T=(en,ru)=>lang()==='en'?en:ru;
@@ -136,7 +142,7 @@ const LENSES={   // editor's order of 17 Sep 2026: family → manufacturing → 
  mech:{en:'Readout: mechanism',ru:'Считывание: механизм'},
  destr:{en:'Readout: destructive?',ru:'Считывание: разрушающее?'},
  mid:{en:'Readout: mid-circuit?',ru:'Считывание: внутрисхемное?'},
- det:{en:'Entangling: deterministic / heralded',ru:'Перепутывание: детерминированное / heralded'},
+ det:{en:'Entangling: deterministic / heralded',ru:'Перепутывание: детерминированное / геральдированное (heralded)'},
  aff:{en:'Carrier affinity: natural ↔ fabricated',ru:'Сродство носителя: естественный ↔ изготовленный'},
  status:{en:'Technology status',ru:'Статус технологии'}};
 const LENSCOORD={g:'(g)',f:'(f)',d:'(d)',mod:'(e)',place:'(e)',time:'(b)/(c)',mech:'(c)',destr:'(c)',mid:'(c)',det:'(b)',aff:'(a)'};   // the report's attribute letter, shown once as a muted suffix of the lens legend's title
@@ -196,7 +202,7 @@ function applyLens(){ const k=state.lens; const leg=document.getElementById('len
   if(state.focus) inspect(NODE[state.focus]);
 }
 const LENSROWS={aff:['aff'],time:['b','c'],det:['b'],mech:['c'],destr:['c'],mid:['c'],d:['d'],mod:['e'],place:['e'],f:['f'],g:['g']};
-function relabel(){ st.select('text.l1').text(d=>wrapLabel(SHORT[d.id]?SHORT[d.id][lang()==='en'?0:1]:d.id)[0]); st.select('text.l2').text(d=>wrapLabel(SHORT[d.id]?SHORT[d.id][lang()==='en'?0:1]:d.id)[1]||'');
+function relabel(){ st.attr('aria-label',d=>d[lang()]+' · '+T('layer','слой')+' '+d.layer); st.select('text.l1').text(d=>wrapLabel(SHORT[d.id]?SHORT[d.id][lang()==='en'?0:1]:d.id)[0]); st.select('text.l2').text(d=>wrapLabel(SHORT[d.id]?SHORT[d.id][lang()==='en'?0:1]:d.id)[1]||'');
   laneHead.each(function(d){const s=lang()==='en'?d.en:d.ru; let a=s,b=''; if(s.length>16){ const i=s.indexOf(' / ')>0?s.indexOf(' / '):s.lastIndexOf(' '); a=s.slice(0,i); b=s.slice(i).replace(/^ \/ /,'/ ').trim(); } d3.select(this).select('text.t:not(.t2)').text(a); d3.select(this).select('text.t2').text(b);});
   bandLabel.selectAll('*').remove(); BANDS.forEach((b,bi)=>{ if(!maxc[bi])return; const y=bandTop[bi]+(maxc[bi]*ROWH)/2; bandLabel.append('text').attr('x',X0-30).attr('y',y).attr('text-anchor','middle').attr('transform',`rotate(-90 ${X0-30} ${y})`).text(vt('AFF',b).split(' ')[0].toUpperCase()); });
   gPaths.selectAll('circle.emptyslot').select('title').text(d=>{ const L=lang(), nm=(d.p.short&&d.p.short[L])||d.p[L], ly=G.layers[d.L-1][L]; return L==='en'?`${nm}: no technology in layer ${d.L} (${ly}) — the line skips this layer`:`${nm}: в слое ${d.L} (${ly}) у этой архитектуры нет технологии — линия пропускает слой`; });
@@ -315,7 +321,7 @@ function gripHTML(){ const sheet=insp.classList.contains('sheet-max');
     '<button type="button" data-close="1" aria-label="close">✕</button></div>'; }
 function inspectPath(p){ const L=lang(); insp.hidden=false;
   const members=new Set(Object.values(p.slots).flat());
-  const rows=G.layers.map(l=>{const ids=p.slots[String(l.n)]||[]; return `<tr><td class="ln">${l.n} ${esc(l[L])}</td><td>${ids.length?ids.map((id,i)=>`<a href="#" data-goto="${id}" class="${i?'alt':'prim'}">${esc(NODE[id][L])}</a>`).join('<span class="empty"> · </span>'):`<span class="empty">∅ ${T('empty slot','пустой слот')}</span>`}</td></tr>`;}).join('');
+  const rows=G.layers.map(l=>{const ids=p.slots[String(l.n)]||[]; return `<tr><td class="ln">${l.n} ${esc(l[L])}</td><td>${ids.length?ids.map((id,i)=>`<a href="#" data-goto="${id}" class="${i?'alt':'prim'}">${esc(NODE[id][L])}</a>`).join('<span class="empty"> · </span>'):((p.na||{})[String(l.n)]?`<span class="empty">— ${esc(T(...p.na[String(l.n)]))}</span>`:`<span class="empty">∅ ${T('empty slot','пустой слот')}</span>`)}</td></tr>`;}).join('');
   const R=p.round||{}, RP=R.parts||{}, RX=p.react||{}, CO=p.coh||{}; const PN={gates:['gates','гейты'],transport:['transport','транспорт'],'1q':['1Q','1Q'],readout:['readout','считывание'],reset:['reset','сброс']};
   const fS=x=>{if(x==null)return '—'; if(x===0)return '0'; return fmtT(Math.log10(x));}; const fE=x=>x==null?'—':x.toExponential(1).replace('e+','e').replace('e-','e−');
   const hubs=[...members].filter(id=>NODE[id].hub), offs=[...members].filter(id=>NODE[id].offdiag&&NODE[id].offdiag.length), empties=[...members].filter(id=>NODE[id].status==='X');
@@ -325,7 +331,7 @@ function inspectPath(p){ const L=lang(); insp.hidden=false;
       ?`<div class="rel requires">${nm(e.dst)} <span class="empty">${e.strength==='soft'?T('is the usual route for','обычно служит станции'):T('is needed by','требуется станции')}</span> ${nm(e.src)}${e.any?' <span class="empty">('+T('or an alternative','или альтернатива')+')</span>':''}</div>`
       :`<div class="rel ${e.type}">${nm(e.src)} <span class="empty">${type==='replaces'?T('alternative to','альтернатива для'):T('conflicts with','конфликтует с')}</span> ${nm(e.dst)}${type==='conflicts'&&e.status?' <span class="empty">· '+esc(vt('CONSTAT',e.status))+'</span>':''}</div>`).join(''); };
   const relHTML=rel.length?relRows('requires',T('dependencies','зависимости'),'→')+relRows('conflicts',T('conflicts','конфликты'),'✕')+relRows('replaces',T('alternatives','альтернативы'),'⇄'):`<div class="empty">${T('no recorded relations among these stations','между этими станциями связей не записано')}</div>`;
-  insp.innerHTML=`${gripHTML()}<h3><i class="sw" style="--c:${FAMC[p.family]}"></i> ${esc(p[L])}</h3><div class="meta">${T('architecture','архитектура')} · ${p.id} · ${members.size} ${T('stations','станций')} · ${pageLink('architecture',p.id)}</div>
+  insp.innerHTML=`${gripHTML()}<h3><i class="sw" style="--c:${FAMC[p.family]}"></i> ${esc(p[L])}</h3><div class="meta">${T('architecture','архитектура')} · ${p.id} · ${stationsT(members.size)} · ${pageLink('architecture',p.id)}</div>
   <div class="space"><h4>${T('Actors & goals','Акторы и цели')}</h4><div>${esc(p.actors)}</div><div class="empty">${T('goals','цели')}: ${esc(p.goals)}</div></div>
   <div class="space"><h4>${T('Derived clocks','Выведенные такты')}</h4><dl>
    <dt>${T('syndrome round','раунд синдрома')}</dt><dd><b>${fS(R.total)}</b>${R.total?` · ${T('limiter','ограничитель')}: ${T(...(PN[R.limiter]||[R.limiter,R.limiter]))} · ${T('round of','раунд кода')} ${esc(R.code||'')}${R.d2?' (d₂ = '+R.d2+(R.d1?', d₁ = '+R.d1:'')+')':''}`:''}</dd>
@@ -360,15 +366,17 @@ function inspectMachine(m){ const L=lang(); insp.hidden=false; const gaps=m.gaps
     const naHTML=ns.map(v=>`<div class="mc empty">— ${esc(T(...(NA_T[v]||[v,v])))}</div>`).join('');
     return `<tr><td class="ln">${l.n} ${esc(l[L])}</td><td>${cellHTML+gapHTML+naHTML||`<span class="empty">—</span>`}</td></tr>`; }).join('');
   const prof=(m.prof||[]).map((v,i)=>v?`<div class="mc"><span class="empty">${T(...PROF_T[i])}:</span> ${esc(v)}</div>`:'').join('');
-  const ev=m.ev||[0,0]; const q=(m.q!=null&&m.q!=='')?`${m.q} ${T('physical qubits','физических кубитов')}`:T('qubits not published','число кубитов не опубликовано');
-  insp.innerHTML=`${gripHTML()}<h3><i class="sw" style="--c:${FAMC[m.family]||'var(--mid)'}"></i> ${esc(m.name)}</h3><div class="meta">${esc(m.org)} · ${T(...(FAMN[m.family]||[m.family,m.family]))} · ${esc(m.status)}${m.status_date?' ('+esc(m.status_date)+')':''} · ${q}</div>
-  <div class="mlinks">${pageLink('machine',m.id)} <a href="${REG_URL(m.id)}" target="_blank" rel="noreferrer">↗ ${T('register card','карточка реестра')}</a> <span class="empty">· ${T('architecture','архитектура')}: ${PATH[m.path]?esc(PATH[m.path][L]):esc(m.path)}</span></div>
-  ${prof?`<div class="space"><h4>${T('Register profile — the machine\'s variant of its architecture','Профиль реестра — вариант архитектуры у этой машины')}</h4>${prof}</div>`:''}
+  const ev=m.ev||[0,0]; const q=(m.q!=null&&m.q!=='')?qubitsT(m.q):T('qubits not published','число кубитов не опубликовано');
+  insp.innerHTML=`${gripHTML()}<h3><i class="sw" style="--c:${FAMC[m.family]||'var(--mid)'}"></i> ${esc(m.name)}</h3><div class="meta">${esc(m.org)} · ${T(...(FAMN[m.family]||[m.family,m.family]))} · ${esc(statusT(m.status))}${m.status_date?' ('+esc(m.status_date)+')':''} · ${q}</div>
+  <div class="mlinks">${pageLink('machine',m.id)} <span class="empty">${T('architecture','архитектура')}:</span> <a href="#" class="archlink" data-arch="${esc(m.path)}" title="${T('isolate this architecture on the map','выделить эту архитектуру на карте')}">${PATH[m.path]?esc(PATH[m.path][L]):esc(m.path)}</a></div>
+  ${prof?`<div class="space"><h4>${T('Register profile — the machine\'s variant of its architecture','Профиль реестра — вариант архитектуры у этой машины (поля реестра — на английском)')}</h4>${prof}</div>`:''}
   <div class="space"><h4>${T('Stations by layer — the machine\'s cell per layer','Станции по слоям — ячейка машины на каждом слое')}</h4><table class="ptab mtab">${rows}</table>
    <div class="empty" style="margin-top:4px">${T('lit on the map: these stations and the machine\'s architecture line; dashed outline = used only as an alternate','подсвечено на карте: эти станции и линия архитектуры машины; пунктирная рамка = только как альтернатива')}</div></div>
   <div class="mfoot"><span>${T('evidence','источники')}: ✅ ${ev[0]} / ${ev[1]}</span> <button type="button" class="chip" data-mclose="1">${T('clear machine','снять машину')} ✕</button></div>`;
   insp.querySelectorAll('[data-goto]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); select(a.dataset.goto); const n=NODE[a.dataset.goto]; if(n)scrollToNode(n);}));
-  insp.querySelectorAll('[data-close],[data-mclose]').forEach(b=>b.addEventListener('click',ev=>{ev.stopPropagation(); setMachine(null);})); wireCard(); sheetRoom();
+  insp.querySelectorAll('[data-close],[data-mclose]').forEach(b=>b.addEventListener('click',ev=>{ev.stopPropagation(); setMachine(null);}));
+  insp.querySelectorAll('a.archlink[data-arch]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); const pid=a.dataset.arch; if(!PATH[pid])return; if(state.isolate!==pid)isolatePath(pid); else {pushHist(); inspectPath(PATH[pid]);} }));   // the machine's architecture, isolated and shown; ← returns to the machine
+  wireCard(); sheetRoom();
 }
 // "Used by" — the machines whose register cell on this station's layer is this station (primary first, then alternate, grouped by family)
 function usedByHTML(n){ const L=lang(); const ub=MACH.by_node[n.id]||{primary:[],alternate:[]}; const P=(ub.primary||[]).filter(id=>MBY[id]), A=(ub.alternate||[]).filter(id=>MBY[id]&&!P.includes(id));
@@ -376,10 +384,10 @@ function usedByHTML(n){ const L=lang(); const ub=MACH.by_node[n.id]||{primary:[]
   if(!N)return `<div class="space useby"><h4>${head}</h4></div>`;
   const KIND={paper:['paper','статья'],whitepaper:['whitepaper','whitepaper'],product:['product page','страница продукта'],docs:['docs','документация'],blog:['blog','блог'],press:['press','пресса'],other:['link','ссылка']};
   const refsHTML=m=>(m.refs||[]).map(r=>`<a class="mref" href="${esc(r[1])}" target="_blank" rel="noreferrer" title="${esc(r[2]||r[1])}">${T(...(KIND[r[0]]||KIND.other))}</a>`).join(' ');
-  const li=(id,role)=>{ const m=MBY[id]; const c=machCell(m,n.id); return `<li class="${role}${state.machine===id?' cur':''}"><a href="#" data-mach="${id}" title="${esc(machLabel(m))}">${esc(m.name)}</a> <span class="empty">${esc(m.org)}</span> <a class="reg" href="${REG_URL(id)}" target="_blank" rel="noreferrer" title="${T('register card','карточка реестра')}">↗</a> ${refsHTML(m)}${c?' '+evHTML(c):''}${role==='alternate'?` <span class="empty">(${T('alternate','альтернатива')})</span>`:''}</li>`; };
+  const li=(id,role)=>{ const m=MBY[id]; const c=machCell(m,n.id); return `<li class="${role}${state.machine===id?' cur':''}"><a href="#" data-mach="${id}" title="${esc(machLabel(m))}">${esc(m.name)}</a> <span class="empty">${esc(m.org)}</span> <a class="reg" href="${REG_URL(id)}" title="${T('the machine\'s page','страница машины')}">↗</a> ${refsHTML(m)}${c?' '+evHTML(c):''}${role==='alternate'?` <span class="empty">(${T('alternate','альтернатива')})</span>`:''}</li>`; };
   const fams=MACH.families||Object.keys(FAMC); const groups=fams.map(f=>{ const ps=P.filter(id=>MBY[id].family===f), as=A.filter(id=>MBY[id].family===f); if(!ps.length&&!as.length)return '';
     return `<li class="fam"><i class="sw" style="--c:${FAMC[f]||'var(--mid)'}"></i>${T(...(FAMN[f]||[f,f]))} <span class="empty">${ps.length+as.length}</span></li>`+ps.map(id=>li(id,'primary')).join('')+as.map(id=>li(id,'alternate')).join(''); }).join('');
-  return `<div class="space useby"><h4>${head}</h4><ul class="useby">${groups}</ul><div class="empty" style="margin-top:4px">${T('click a machine to light its stations on the map · ↗ its register card · paper / product / press: links that name the machine (attribution checked on 20 Sep 2026)','клик по машине подсвечивает её станции на карте · ↗ карточка реестра · статья / продукт / пресса: ссылки, где машина названа (атрибуция проверена 20 сентября 2026)')}</div></div>`; }
+  return `<div class="space useby"><h4>${head}</h4><ul class="useby">${groups}</ul><div class="empty" style="margin-top:4px">${T('click a machine to light its stations on the map · ↗ its page · paper / product / press: links that name the machine (attribution checked on 20 Sep 2026)','клик по машине подсвечивает её станции на карте · ↗ её страница · статья / продукт / пресса: ссылки, где машина названа (атрибуция проверена 20 сентября 2026)')}</div></div>`; }
 function placeText(n){ const ps=(n.e.place&&n.e.place.length)?n.e.place:['none']; return CATS.place.filter(p=>ps.includes(p)).concat(ps.filter(p=>!CATS.place.includes(p))).map(p=>vt('PLACE',p)).join(' / '); }   // every stage the station carries, in the vocabulary's order (RT → 4 K → mK)
 function inspect(n){ const L=lang(); const c=n.c; const rows=[[T('(a) carrier affinity','(a) сродство носителя'),vt('AFF',n.aff),'aff'],
   [T('(b) time · entangling','(b) время · перепутывание'),(n.b.t!=null?fmtT(n.b.t):'—')+(n.b.det!=='na'?' · '+vt('DET',n.b.det):''),'b'],
@@ -403,7 +411,7 @@ function inspect(n){ const L=lang(); const c=n.c; const rows=[[T('(a) carrier af
   ${(KEYREFS[n.id]||[]).length?`<div class="space keys"><h4>${T('Key references','Ключевые источники')}</h4>${KEYREFS[n.id].map(r=>{const lab=krLabel(n.id,r.n)||r.label||''; return `<div class="kr"><a href="${r.url}" target="_blank" rel="noopener">[${r.n}]</a> ${esc(lab.length>92?lab.slice(0,90)+'…':lab)}${r.year?' <span class="empty">· '+r.year+'</span>':''}</div>`;}).join('')}</div>`:''}
   <div class="space"><h4>${T('Design space — attributes','Пространство проектирования — атрибуты')}</h4><dl>${rows.map(([k,v,key])=>`<dt class="${lr.includes(key)?'lensrow':''}">${k}</dt><dd class="${lr.includes(key)?'lensrow':''}">${esc(v)}</dd>`).join('')}</dl></div>
   <div class="space"><h4>${T('Evaluation space — dated attributes','Пространство оценки — датированные атрибуты')}</h4>${n.defines.length?n.defines.map(d=>`<div class="def"><div><span class="k">${esc(d.metric)}</span> → <b>${esc(d.value)}</b></div><div class="d">${T('defines','определяет')}: ${vt('OUT',d.out)} · ${d.date} · <a href="${d.url}" target="_blank" rel="noopener">${T('source','источник')}</a></div></div>`).join(''):`<p class="empty">${T('no dated attribute','нет датированных атрибутов')}</p>`}${n.attrs[L]?`<p style="margin:6px 0 0">${lk(n.attrs[L])}</p>`:''}</div>
-  ${(n.records||[]).length?`<div class="space"><h4>${T('Standard records','Стандартные рекорды')}</h4>${n.records.map(r=>{const RK=(G.vocab.RECKEYS||{})[r.key]||[r.key,r.key]; const val=r.num==null?`<span class="empty">${T('not published','не опубликовано')}</span>`:(r.unit==='s'?fmtT(Math.log10(r.num)):(r.unit==='Hz'?r.num.toExponential(1)+' Hz':(r.unit==='count'?String(r.num):(r.num<0.01||r.num>1e4?r.num.toExponential(2):String(+r.num.toPrecision(3)))))); return `<div class="def"><div><span class="k">${esc(T(...RK))}</span> → <b>${val}</b> <span class="empty">· ${r.scope}</span></div><div class="d">${esc(r.text)} · ${r.date} · <a href="${r.url}" target="_blank" rel="noopener">${T('source','источник')}</a> [${r.tag}]${r.note?` <span class="empty" title="${esc(r.note)}">ⓘ</span>`:''}</div></div>`;}).join('')}</div>`:''}
+  ${(n.records||[]).length?`<div class="space"><h4>${T('Standard records','Стандартные рекорды')}</h4>${n.records.map(r=>{const RK=(G.vocab.RECKEYS||{})[r.key]||[r.key,r.key]; const val=r.num==null?`<span class="empty">${T('not published','не опубликовано')}</span>`:(r.unit==='s'?fmtT(Math.log10(r.num)):(r.unit==='Hz'?r.num.toExponential(1)+' Hz':(r.unit==='count'?String(r.num):(r.num<0.01||r.num>1e4?r.num.toExponential(2):String(+r.num.toPrecision(3)))))); return `<div class="def"><div><span class="k">${esc(T(...RK))}</span> → <b>${val}</b> <span class="empty">· ${esc(scopeT(r.scope))}</span></div><div class="d">${esc(r.text)} · ${r.date} · <a href="${r.url}" target="_blank" rel="noopener">${T('source','источник')}</a> [${r.tag}]${r.note?` <span class="empty" title="${esc(r.note)}">ⓘ</span>`:''}</div></div>`;}).join('')}</div>`:''}
   <div class="space"><h4>${T('Actors & goals — annotations','Акторы и цели — аннотации')}</h4>${(prim[n.id]||[]).concat(alt[n.id]||[]).map(p=>`<div class="pathtag"><i class="sw" style="--c:${FAMC[PATH[p].family]}"></i>${esc(PATH[p][L])}${(alt[n.id]||[]).includes(p)?' <span class="empty">('+T('alternate','альтернатива')+')</span>':''}<span class="empty"> — ${esc(PATH[p].actors)} · ${PATH[p].goals}</span></div>`).join('')||`<p class="empty">${T('on no architecture','не входит ни в одну архитектуру')}</p>`}</div>
   <div class="space"><h4>${T('Edges','Рёбра')}</h4>
    ${reqOut.length?`<div><b>${T('needs','нужно')}:</b> ${reqOut.map(e=>link(e.dst)+(e.any?'<span class="empty">°</span>':'')+(e.strength==='soft'?'<span class="empty">·</span>':'')).join(', ')}</div>`:''}
@@ -514,7 +522,7 @@ function zoomStep(d){ const cur=zoomPct(state.zoom); let i=0; for(let k=1;k<ZSTE
   window.addEventListener('resize',window.__refitTall);
   if(z1)z1.addEventListener('click',()=>applyZoom(1,true));
   const zl=document.getElementById('zoomlvl');
-  if(zl){ const commit=()=>{ const v=parseInt(String(zl.value).replace(/[^0-9]/g,''),10); if(!isNaN(v)&&v>0)applyZoom(zoomFromPct(v),true); zl.value=zoomPct(state.zoom)+'%'; };
+  if(zl){ const commit=()=>{ const v=parseInt(String(zl.value).replace(/[^0-9]/g,''),10); if(!isNaN(v)&&v>=10&&v<=1000)applyZoom(zoomFromPct(v),true); zl.value=zoomPct(state.zoom)+'%'; };   // outside 10–1000 % (or not a number): the previous value stays
     zl.addEventListener('focus',()=>{ zl.value=String(zoomPct(state.zoom)); try{zl.select();}catch(e){} });
     zl.addEventListener('keydown',ev=>{ if(ev.key==='Enter'){ev.preventDefault(); commit(); zl.blur();} else if(ev.key==='Escape'){ev.preventDefault(); zl.value=zoomPct(state.zoom)+'%'; zl.blur();} else if(ev.key==='ArrowUp'||ev.key==='ArrowDown'){ ev.preventDefault(); const cur=parseInt(String(zl.value).replace(/[^0-9]/g,''),10)||zoomPct(state.zoom); const nv=Math.max(10,Math.min(1000,cur+(ev.key==='ArrowUp'?5:-5))); applyZoom(zoomFromPct(nv),true); zl.value=String(zoomPct(state.zoom)); } });
     zl.addEventListener('input',()=>{ const c=String(zl.value).replace(/[^0-9]/g,''); if(c!==zl.value)zl.value=c; });
@@ -602,6 +610,7 @@ window.__deepLink=function(h){ let m; h=h||location.hash||'';
   if((m=/^#station-(\w+)$/.exec(h))&&NODE[m[1]]){ select(m[1]); scrollToNode(NODE[m[1]]); revealMap(); return true; }
   if((m=/^#machine-([\w.-]+)$/.exec(h))&&MBY[m[1]]){ showMachine(m[1]); return true; }
   if((m=/^#architecture-(\w+)$/.exec(h))&&PATH[m[1]]){ if(state.isolate!==m[1])isolatePath(m[1]); revealMap(); return true; }
+  if((m=/^#(station|machine|architecture)-([\w.-]+)$/.exec(h))){ insp.hidden=false; insp.innerHTML=`${gripHTML()}<h3>${T('Not in this edition','Нет в этом издании')}</h3><p class="empty">${T('No '+m[1]+' with the id','Нет записи вида '+m[1]+' с идентификатором')} <code>${esc(m[2])}</code>. ${T('Renamed or removed records are listed in the','Переименованные и удалённые записи перечислены в')} <a href='#editions-${lang()}'>${T('Editions table','таблице изданий')}</a>.</p>`; wireCard(); revealMap(); return false; }
   return false; };
 window.addEventListener('hashchange',()=>window.__deepLink());
 relabel(); inspectEmpty(); applyLens(); renderPC(); window.__deepLink();

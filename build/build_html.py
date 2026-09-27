@@ -27,7 +27,7 @@ import briefs as BR
 G=json.load(open(os.path.join(ROOT,'data','graph.json'),encoding='utf-8'))
 # ---------- machines on the Atlas (C2): a slim, deterministic copy of data/machines.json for the page (window.__MACH)
 MACH_PATH=os.path.join(ROOT,'data','machines.json')
-MACH_URLS={'register':'https://claude.ai/artifact/Bfj8NrxCsx8PMdxUCBMBhV#m-','tech':'https://claude.ai/artifact/2EcsTbo9kjAHseEnBxzawp#node-'}
+MACH_URLS={'register':'machine/','tech':'technology/'}   # the machine's and the technology's own pages (relative to the page's language root); the register's private working pages are no longer linked (27 Sep 2026)
 MACH_FAMILIES=['SC','ION','ATOM','PHOTON','SPIN','DEFECT','TOPO','ANNEAL']
 def mach_slim():
     """Per machine: id, name, org, family, path, status, status_date, q, layers {L:[[node,role,summary,ev_type,ev_url,ev_locator,verified],…]}
@@ -54,7 +54,8 @@ def mach_slim():
                     'prof':[str((m.get('profile') or {}).get(k) or '') for k in ('qubit_type','gate_mechanism','connectivity','control','control_placement','readout')],
                     'refs':[[r['kind'],r['url'],r['title']] for r in (m.get('refs') or [])[:3]]})   # up to three attribution-verified links per machine
     by_node={k:{'primary':list(v.get('primary',[])),'alternate':list(v.get('alternate',[]))} for k,v in M['by_node'].items() if not str(k).startswith('∅')}
-    return {'machines':out,'by_node':by_node,'families':MACH_FAMILIES,'urls':MACH_URLS}
+    import regvocab
+    return {'machines':out,'by_node':by_node,'families':MACH_FAMILIES,'urls':MACH_URLS,'t':regvocab.TABLE}   # t: the register's enumerations in Russian (build/regvocab.py)
 
 # ---------- math: $...$ → HTML
 GREEK={'Lambda':'Λ','lambda':'λ','mu':'µ','varepsilon':'ε','epsilon':'ε','kappa':'κ','alpha':'α','beta':'β','gamma':'γ','delta':'δ','Delta':'Δ','eta':'η','theta':'θ','sigma':'σ','pi':'π','tau':'τ','omega':'ω','Omega':'Ω','rho':'ρ','phi':'φ','chi':'χ','psi':'ψ','nu':'ν'}
@@ -123,8 +124,8 @@ def convert(md,lang):
         start=m.end(); t=h.find('<div class="tbl">',start); e=h.find('</div>',t)+6
         return h[:t]+f'<details class="fold big-table"><summary>{label}</summary>'+h[t:e]+'</details>'+h[e:]
     # target the headings by their printed number: the h3 ids carry a running counter, so id-based matching folded §1.2 and §3.1 instead of §7.2 and §7.11 (found 17 Sep 2026)
-    h=fold(h,r'<h3 id="[^"]+">7\.2 [^<]*</h3>','Show table · Показать таблицу' if lang=='en' else 'Показать таблицу · Show table')
-    h=fold(h,r'<h3 id="[^"]+">7\.11 [^<]*</h3>','Show records · Показать рекорды' if lang=='en' else 'Показать рекорды · Show records')
+    h=fold(h,r'<h3 id="[^"]+">7\.2 [^<]*</h3>','Show table' if lang=='en' else 'Показать таблицу')     # one language per label since 27 Sep 2026 (the page is monolingual)
+    h=fold(h,r'<h3 id="[^"]+">7\.11 [^<]*</h3>','Show records' if lang=='en' else 'Показать рекорды')
     for lbl in (['<strong>requires / provides</strong>','<strong>alternatives (within layer)</strong>','<strong>conflicts</strong>','<strong>transfers (node → additional architectures)</strong>','<strong>defines (node → output; every row carries a source, a date and a number)</strong>'] if lang=='en' else
                 ['<strong>требует / обеспечивает</strong>','<strong>альтернативы (внутри слоя)</strong>','<strong>конфликтует</strong>','<strong>переносится (узел → дополнительные архитектуры)</strong>','<strong>определяет (узел → выход; каждая строка несёт источник, дату и число)</strong>']):
         h=fold(h,re.escape(lbl),re.sub('<[^>]+>','',lbl))
@@ -253,6 +254,10 @@ def glossary():
             GLOSSARY+=part
         for e in GLOSSARY:
             if e['id'] in ('notation-lambda','notation-code-distance'): e['scope']='first'   # notation: once per section is enough
+            for L in ('en','ru'):   # the definitions name the data's counts through the same placeholders as the report (27 Sep 2026: a tooltip said 14 architectures, 136 machines)
+                if '{{' in e[L]: e[L]=report_numbers(e[L],L)
+                for v in e.get('variants') or []:
+                    if '{{' in v.get(L,''): v[L]=report_numbers(v[L],L)
     return GLOSSARY
 def tips_dict():
     d={'en':{},'ru':{}}
@@ -414,6 +419,24 @@ def radars_block(lang):
     cap={'en':'Profiles by axis (A channel · B clock · C scale · D FT progress · E scaling path · F roadmap credibility). The shape is the information: superconducting is round, ions are tall on A and short on B, atoms mirror ions on C/D, bosonic and photonic are B-only spikes.','ru':'Профили по осям (A канал · B такт · C масштаб · D прогресс FT · E путь масштабирования · F правдоподобие карты). Информация — в форме: сверхпроводники круглые, ионы высокие по A и низкие по B, атомы зеркалят ионы по C/D, бозонные и фотоника — пики только по B.'}[lang]
     cards=''.join(f'<div class="radar">{radar(n if lang=="en" else r,f,v)}<div class="cap"><b>{n if lang=="en" else r}</b> · {sum(v)}</div></div>' for n,r,f,v in SCORES())
     return f'<div class="radars">{cards}</div><p class="figcap">{cap}</p>'
+def glossary_html(lang):
+    """The tooltip dictionary as a browsable Glossary at the end of About (27 Sep 2026: 178 definitions existed only on hover, which a phone
+    cannot show): the Atlas's own terms first, then the field's terms and abbreviations, each alphabetical in the page's language."""
+    L=lang; own=[e for e in glossary() if e['own']]; fld=[e for e in glossary() if not e['own']]
+    def label(e):
+        m=(e.get('match_ru') if L=='ru' else e.get('match')) or e.get('match') or [e['id']]
+        t=m[0].strip(); return t[:1].upper()+t[1:] if t[:1].isalpha() else t
+    def block(title,entries):
+        rows=sorted(((label(e),e[L]) for e in entries if e.get(L)),key=lambda x:(x[0].strip('[]∅✅🔎◎⤢ ').casefold(),x[0]))
+        return f'<div class="glossary-h" role="heading" aria-level="3">{title}</div><dl class="glossary">'+''.join(f'<dt>{html_mod.escape(k)}</dt><dd>{html_mod.escape(v)}</dd>' for k,v in rows)+'</dl>'
+    n=len(own)+len(fld)
+    return (f'<details class="fold glossary-fold"><summary>{"Glossary — %d terms as this Atlas uses them" % n if L=="en" else "Глоссарий — %d терминов в том смысле, в каком их употребляет Атлас" % n}</summary>'
+            + block('Terms of the Atlas' if L=='en' else 'Термины Атласа', own)
+            + block('Terms and abbreviations of the field' if L=='en' else 'Термины и сокращения области', fld) + '</details>')
+def insert_before_h2(h,h2_id,block):
+    m=re.search(r'<h2 id="'+re.escape(h2_id)+r'"',h)
+    if not m: return h
+    return h[:m.start()]+block+h[m.start():]
 def insert_after_h3_table(h,h3_num,block):
     m=re.search(r'<h3 id="[^"]+">'+re.escape(h3_num)+r' ',h); t=h.find('</div>',h.find('<div class="tbl">',m.end()))+6
     return h[:t]+block+h[t:]
@@ -539,6 +562,7 @@ MAPUI='''<div class="mapbar" id="mapbar">
   <span class="gl mark" data-glyph="offd" title="a station that takes a trait from the other side of the natural/fabricated divide (see §7.6)"><i class="lg off">⤢</i><span class="lang-en">off-diagonal</span><span class="lang-ru">внедиагональный</span> <span class="cnt"></span></span>
   <span class="gl mark" data-glyph="empty" title="a station with no demonstrated technology yet"><i class="lg emp">∅</i><span class="lang-en">empty slot</span><span class="lang-ru">пустой слот</span> <span class="cnt"></span></span>
   <span class="gl" title="a dependency: the arrowhead sits at the station that needs the other one — read it as ‘B is needed by A’"><i class="lg ed req"></i><span class="lang-en">is needed by →</span><span class="lang-ru">требуется станции →</span></span>
+  <span class="gl" title="a soft dependency: B is the usual route, not a strict need — drawn dotted; a one-of dependency (any of a group would do) is marked ° in the station card"><i class="lg ed soft"></i><span class="lang-en">usual route, not a strict need</span><span class="lang-ru">обычный путь, не строгая нужда</span></span>
   <span class="gl"><i class="lg ed rep"></i><span class="lang-en">alternatives</span><span class="lang-ru">альтернативы</span></span>
   <span class="gl"><i class="lg ed con"></i><span class="lang-en">conflicts — hover for the reason</span><span class="lang-ru">конфликтует — причина по наведению</span></span>
   <span class="gl long"><i class="lg stn" aria-hidden="true"><svg viewBox="0 0 50 16" width="50" height="16"><rect x="0.6" y="0.6" width="21" height="14.8" rx="3.5" fill="var(--surface)" stroke="var(--ink2)" stroke-width="1.2"/><rect x="3.2" y="3.6" width="11" height="1.6" rx="0.8" fill="var(--ink)" opacity="0.8"/><rect x="3.2" y="10.8" width="4" height="2.2" rx="0.6" fill="var(--sc)"/><path d="M23.4 8H27M25.6 6.4L27.2 8L25.6 9.6" fill="none" stroke="var(--muted)" stroke-width="1"/><rect x="28.400000000000002" y="0.6" width="21" height="14.8" rx="3.5" fill="rgba(27,175,122,0.22)" stroke="var(--atom)" stroke-width="1.2"/><rect x="31.0" y="3.6" width="11" height="1.6" rx="0.8" fill="var(--ink)" opacity="0.8"/><rect x="31.0" y="10.8" width="4" height="2.2" rx="0.6" fill="var(--sc)"/><rect x="28.4" y="0.6" width="3.2" height="14.8" rx="1.4" fill="var(--atom)"/></svg></i><span class="lang-en">outline = family colour (dark: several families); with an attribute lens on (any but “Platform family”): tint + left band = the lens value (legend below)</span><span class="lang-ru">рамка = цвет семейства (тёмная: несколько семейств); при линзе по атрибуту (любой, кроме «семейства платформ»): оттенок + полоса слева = значение линзы (легенда ниже)</span></span>
@@ -597,7 +621,7 @@ def toc_with_briefs(toc,lang,snum='9'):
 
 PUBLIC=dict(mode='public',
     report_en=os.path.join(ROOT,'report','report_EN.md'), report_ru=os.path.join(ROOT,'report','report_RU.md'),
-    out_body=os.path.join(ROOT,'dist','body.html'), out_full=os.path.join(ROOT,'dist','Quantum-Technology-Atlas-%s.html'%EDITIONS[0]['edition']),
+    out_body=os.path.join(ROOT,'build','_out','body.html'), out_full=os.path.join(ROOT,'dist','Quantum-Technology-Atlas-%s.html'%EDITIONS[0]['edition']),
     title='Quantum Technology Atlas', default_lang='en', graph_sec='7', sources_num='9', table_num='7.2', id_sections=('7.2','7.5','7.6','7.7'),
     briefs_en=os.path.join(ROOT,'briefs','en'), briefs_ru=os.path.join(ROOT,'briefs','ru'), regmap=os.path.join(ROOT,'data','facts.json'),
     doi_concept=CONCEPT_DOI, doi_version=EDITIONS[0]['doi'], author='Raveh Neeman', publisher='Qodeh', url=SITE, repo=REPO, date=EDITIONS[0]['date'], edition=EDITIONS[0]['edition'])
@@ -670,6 +694,8 @@ def report_numbers(text,lang):
     vals={'N_NODES':str(len(G['nodes'])),'N_PATHS':str(len(G['paths'])),'N_PATHS_WORD':(NUMWORD_EN if lang=='en' else NUMWORD_RU).get(len(G['paths']),str(len(G['paths']))),
           'N_MACHINES':str(nm),'N_CELLS':thou(cells),'N_PRESSONLY':str(press),'N_PRESSONLY_WORD':(NUMWORD_EN_SMALL if lang=='en' else NUMWORD_RU_SMALL).get(press,str(press))}
     vals['N_PRESSONLY_WORD_CAP']=vals['N_PRESSONLY_WORD'][:1].upper()+vals['N_PRESSONLY_WORD'][1:]
+    import machines_chapter as _mc                      # §8's headline figures: {{N_CODE_RUN}}, {{N_IC_NONE_OR_UNDISC}}, {{N_CTRL_EXT}}, {{N_OCC}} … (27 Sep 2026)
+    vals.update({'N_'+k:str(v) for k,v in _mc.figures().items()})
     out=re.sub(r'\{\{(N_[A-Z_]+)\}\}',lambda m: vals.get(m.group(1),m.group(0)),text)
     left=re.findall(r'\{\{N_[A-Z_]+\}\}',out)
     if left: raise SystemExit('report placeholders without a value: %s'%sorted(set(left)))
@@ -684,7 +710,7 @@ def masthead(cfg):
   <div class="eyebrow"><span class="lang-en">Edition {cfg['edition']} · English / Russian</span><span class="lang-ru">Издание {cfg['edition']} · English / Русский</span></div>
   <h1 class="title">Quantum Technology Atlas</h1>
   <p class="author"><span class="lang-en">Author</span><span class="lang-ru">Автор</span> · <b>{cfg['author']}</b> <a class="orcid" href="https://orcid.org/0000-0001-7362-9529" target="_blank" rel="noopener author" title="ORCID iD: https://orcid.org/0000-0001-7362-9529" aria-label="ORCID iD 0000-0001-7362-9529"><svg class="orcid-id" viewBox="0 0 256 256" width="16" height="16" aria-hidden="true"><path fill="#A6CE39" d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z"/><path fill="#FFF" d="M86.3 186.2H70.9V79.1h15.4v107.1zM108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7 0-21.5-13.7-39.7-43.7-39.7h-23.7v79.4zM88.7 56.8c0 5.5-4.5 10.1-10.1 10.1s-10.1-4.6-10.1-10.1c0-5.6 4.5-10.1 10.1-10.1s10.1 4.6 10.1 10.1z"/></svg></a></p>
-  <p class="subtitle"><span class="lang-en">Every quantum-computing technology ({NN}) and every quantum machine built, announced or planned ({NM}): analysed and summarised, partitioned by seven invariant design attributes, compared and combined in dozens of ways — with a brief on every technology and a card on every machine.</span><span class="lang-ru">Все технологии квантовых вычислений ({NN}) и все построенные, объявленные или запланированные квантовые машины ({NM}): проанализированы и сведены, разбиты по семи неизменным атрибутам конструкции, сопоставлены и скомбинированы десятками способов — с брифом на каждую технологию и карточкой на каждую машину.</span></p>
+  <p class="subtitle"><span class="lang-en">Every quantum-computing technology ({NN}) and every quantum machine built, announced or planned ({NM}): analysed and summarised, partitioned by seven stable design attributes, compared and combined in dozens of ways — with a brief on every technology and a card on every machine.</span><span class="lang-ru">Все технологии квантовых вычислений ({NN}) и все построенные, объявленные или запланированные квантовые машины ({NM}): проанализированы и сведены, разбиты по семи устойчивым атрибутам конструкции, сопоставлены и скомбинированы десятками способов — с брифом на каждую технологию и карточкой на каждую машину.</span></p>
  </div>
  <div class="controls">
   <div class="seg" role="group" aria-label="language"><button type="button" data-setlang="en" aria-pressed="true">English</button><button type="button" data-setlang="ru" aria-pressed="false">Русский</button></div>
@@ -712,7 +738,7 @@ def feedback_html(cfg):
 FEEDBACK_JS=r"""(function(){var btn=document.getElementById('fbkbtn'),pop=document.getElementById('fbkpop'),wrap=document.getElementById('fbk');if(!btn||!pop)return;
 function lang(){return (document.getElementById('app')||{}).getAttribute?document.getElementById('app').getAttribute('data-lang')||'en':'en';}
 function htext(el){var en=document.getElementById(el.id.replace(/^ru-/,'en-'));if(!en&&/^ru-/.test(el.id)){var S=window.__SECTITLES||{};var t=S[el.id.replace(/^ru-/,'')];var n0=el.querySelector('.num');var num0=n0?n0.textContent.trim():'';if(t)return (num0?('§'+num0+' '):'')+t;}en=en||el;var n=en.querySelector('.num');var num=n?n.textContent.trim():'';var rest=en.textContent.trim();if(num&&rest.indexOf(num)===0)rest=rest.slice(num.length).trim();return (num?('§'+num+' '):'')+rest;}
-function where(){var h=location.hash||'';if(h.indexOf('#brief-')===0)return 'brief '+h.slice(7).replace(/^(en|ru)-/,'');var best=null,top=window.scrollY+80;var hs=document.querySelectorAll('main h2[id],main h3[id],main h4[id]');for(var i=0;i<hs.length;i++){var r=hs[i].getBoundingClientRect().top+window.scrollY;if(r<=top)best=hs[i];else break;}return best?htext(best).slice(0,90):(h?h.slice(1):'top');}
+function where(){var h=location.hash||'';if(h.indexOf('#brief-')===0)return 'brief '+h.slice(7).replace(/^(en|ru)-/,'');var best=null,top=window.scrollY+80;var hs=document.querySelectorAll('main h2[id],main h3[id],main h4[id]');for(var i=0;i<hs.length;i++){if(!hs[i].getClientRects().length)continue;var r=hs[i].getBoundingClientRect().top+window.scrollY;if(r<=top)best=hs[i];else break;}return best?htext(best).slice(0,90):(h?h.slice(1):'top');}   // hidden headings (the other language's blocks) have no rect and are skipped (27 Sep 2026)
 function context(){var m=(window.__mapContext&&window.__mapContext())||{};var L=lang();var app=document.getElementById('app');var lines=['page: '+(document.title||'Quantum Technology Atlas'),'edition: '+((app&&app.getAttribute('data-edition'))||''),'language: '+L,'location: '+where()];if(m.focus)lines.push('station: '+m.focus);if(m.isolate)lines.push('architecture: '+m.isolate);if(m.machine)lines.push('machine: '+m.machine);if(m.lens)lines.push('lens: '+m.lens);lines.push('url: '+location.href.split('#')[0]+(location.hash||''));lines.push('date: '+new Date().toISOString().slice(0,10));return lines.join('\n');}
 function fill(){var c=context();document.getElementById('fbkctx').textContent=c;var loc=where();var title='Feedback: '+loc.slice(0,60);var body='What is wrong and where:\n\n\n---\nContext (attached automatically):\n'+c;   // the issue and the mail are English whatever the page's language (26 Sep 2026)
  var gh=document.getElementById('fbkgh');gh.href=gh.href.split('?')[0]+'?title='+encodeURIComponent(title)+'&body='+encodeURIComponent(body);
@@ -740,8 +766,8 @@ def footer(cfg):
   <p><b>License.</b> This work is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International License</a>: you may share and adapt it for any purpose, including commercially, provided you give appropriate credit, link to the license and indicate any changes. The interactive document, its technology graph ({NN} nodes, edges and attributes) and the {NN} technology briefs are all covered. Quoted figures remain the property of their cited sources.</p>
   <p><b>Data and source.</b> The graph (nodes, attributes, edges, dated records), the briefs and the build that renders this page are maintained at <a href="{cfg['repo']}">{cfg['repo'].replace('https://','')}</a>; corrections and new records are welcome as issues or pull requests; each edition is a tagged release archived on Zenodo.</p>
   {editions_html('en')}
-  <p><b>Disclosures.</b> This is a single-author publication, produced independently — no funding, sponsorship, affiliation, or solicitation. Factual corrections are welcome.</p>
-  <p><b>Provenance.</b> Research and drafting with Claude (Anthropic); every figure traces to a dated, linked primary source, and every claim carries an evidence tag ([D] measured / peer-reviewed, [C] company claim, [R] roadmap, [S] simulation or estimate, [G] established fact, [P] preprint or trade press). Known conflicts between sources are stated, not averaged. Open verification items are listed at the end of each brief. Data cut-off: 26 September 2026 (the report and the register); a brief's own “as of” date says when that brief was last researched.</p>
+  <p><b>Disclosures.</b> This is a single-author publication, produced independently and published under the author's own imprint, Qodeh — no external funding, sponsorship or solicitation, and no affiliation with any vendor or laboratory named in it. Factual corrections are welcome.</p>
+  <p><b>Provenance.</b> Research and drafting with Claude (Anthropic) under the author's direction and review. In the comparison (§2–§3), the graph section (§7), the machines chapter (§8) and the briefs, figures carry an evidence tag ([D] measured / peer-reviewed, [C] company claim, [R] roadmap, [S] simulation or estimate, [G] established fact, [P] preprint or trade press) and trace to a dated, linked source; where only a secondary source exists, the text says so. Known conflicts between sources are stated, not averaged. Open verification items are listed at the end of each brief. Data cut-off: 26 September 2026 (the report and the register); a brief's own “as of” date says when that brief was last researched.</p>
   <p><b>Sharing image.</b> The picture shown when this page is shared: Raveh Neeman, <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>; a collage of photographs by OJB Quantum (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>), Steve Jurvetson (<a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>) and the U.S. National Institute of Standards and Technology (public domain) — <a href="{OG_CREDITS_URL}">full list of works</a>.</p>
  </div>
  <div class="lang-ru">
@@ -749,8 +775,8 @@ def footer(cfg):
   <p><b>Лицензия.</b> Работа распространяется по лицензии <a href="https://creativecommons.org/licenses/by/4.0/deed.ru" rel="license">Creative Commons Attribution 4.0 International</a>: её можно распространять и перерабатывать в любых целях, включая коммерческие, при условии указания авторства, ссылки на лицензию и обозначения внесённых изменений. Лицензия покрывает интерактивный документ, граф технологий ({NN} узлов, рёбра и атрибуты) и {NN} брифов. Цитируемые цифры остаются собственностью указанных источников.</p>
   <p><b>Данные и исходники.</b> Граф (узлы, атрибуты, рёбра, датированные рекорды), брифы и сборка, порождающая эту страницу, ведутся в <a href="{cfg['repo']}">{cfg['repo'].replace('https://','')}</a>; исправления и новые рекорды принимаются как issue или pull request; каждое издание — тегированный релиз, архивируемый на Zenodo.</p>
   {editions_html('ru')}
-  <p><b>Раскрытие.</b> Это публикация одного автора, подготовленная независимо — без финансирования, спонсорства, аффилиации и заказа. Фактические поправки приветствуются.</p>
-  <p><b>Происхождение.</b> Исследование и написание — совместно с Claude (Anthropic); каждая цифра прослеживается к датированному первоисточнику по ссылке, каждое утверждение несёт тег свидетельства ([D] измерено / рецензировано, [C] заявление компании, [R] дорожная карта, [S] симуляция или оценка, [G] установленный факт, [P] препринт или отраслевая пресса). Расхождения между источниками названы, а не усреднены. Открытые пункты верификации перечислены в конце каждого брифа. Данные по состоянию на 26 сентября 2026 (отчёт и реестр); дата «по состоянию на» внутри брифа говорит, когда этот бриф исследовался в последний раз.</p>
+  <p><b>Раскрытие.</b> Это публикация одного автора, подготовленная независимо и изданная под собственным импринтом автора, Qodeh — без внешнего финансирования, спонсорства и заказа, без аффилиации с какими-либо названными в ней компаниями и лабораториями. Фактические поправки приветствуются.</p>
+  <p><b>Происхождение.</b> Исследование и написание — совместно с Claude (Anthropic) под руководством и с проверкой автора. В сравнении (§2–§3), разделе графа (§7), главе о машинах (§8) и брифах цифры несут тег свидетельства ([D] измерено / рецензировано, [C] заявление компании, [R] дорожная карта, [S] симуляция или оценка, [G] установленный факт, [P] препринт или отраслевая пресса) и прослеживаются к датированному источнику по ссылке; где есть только вторичный источник, текст говорит об этом. Расхождения между источниками названы, а не усреднены. Открытые пункты верификации перечислены в конце каждого брифа. Данные по состоянию на 26 сентября 2026 (отчёт и реестр); дата «по состоянию на» внутри брифа говорит, когда этот бриф исследовался в последний раз.</p>
   <p><b>Изображение для ссылок.</b> Картинка, которую показывают, когда этой страницей делятся: Raveh Neeman, <a href="https://creativecommons.org/licenses/by/4.0/deed.ru" rel="license">CC BY 4.0</a>; коллаж из фотографий OJB Quantum (<a href="https://creativecommons.org/licenses/by/4.0/deed.ru">CC BY 4.0</a>), Steve Jurvetson (<a href="https://creativecommons.org/licenses/by/2.0/deed.ru">CC BY 2.0</a>) и Национального института стандартов и технологий США (общественное достояние) — <a href="{OG_CREDITS_URL}">полный список работ</a>.</p>
  </div>
 </footer>'''
@@ -797,8 +823,8 @@ def og_image_size():
 def head_meta(cfg):
     if cfg['mode']=='internal': return '<meta name="color-scheme" content="light dark">'
     doi=cfg['doi_concept']; cite_doi='<meta name="citation_doi" content="'+doi+'">'; ident='https://doi.org/'+doi; NN,NM=_counts(); pl=cfg.get('page_lang','en')
-    desc=(f'Every quantum-computing technology ({NN}) and every quantum machine built, announced or planned ({NM}): analysed and summarised, partitioned by seven invariant design attributes, compared and combined in dozens of ways — with a brief on every technology and a card on every machine. Bilingual EN/RU, CC BY 4.0.' if pl=='en'
-          else f'Все технологии квантовых вычислений ({NN}) и все построенные, объявленные или запланированные квантовые машины ({NM}): проанализированы и сведены, разбиты по семи неизменным атрибутам конструкции, сопоставлены и скомбинированы десятками способов — с брифом на каждую технологию и карточкой на каждую машину. Двуязычно EN/RU, CC BY 4.0.')
+    desc=(f'Every quantum-computing technology ({NN}) and every quantum machine built, announced or planned ({NM}): analysed and summarised, partitioned by seven stable design attributes, compared and combined in dozens of ways — with a brief on every technology and a card on every machine. Bilingual EN/RU, CC BY 4.0.' if pl=='en'
+          else f'Все технологии квантовых вычислений ({NN}) и все построенные, объявленные или запланированные квантовые машины ({NM}): проанализированы и сведены, разбиты по семи устойчивым атрибутам конструкции, сопоставлены и скомбинированы десятками способов — с брифом на каждую технологию и карточкой на каждую машину. Двуязычно EN/RU, CC BY 4.0.')
     # one page per language (27 Sep 2026): the alternates name every language page, x-default the English one
     site=cfg.get('site',SITE); alts=''.join(f'<link rel="alternate" hreflang="{L}" href="{site}{"" if L=="en" else L+"/"}">' for L in PAGE_LANGS)+f'<link rel="alternate" hreflang="x-default" href="{site}">'
     ogw, ogh = og_image_size()
@@ -850,7 +876,13 @@ def lang_split(blocks_by_lang, briefs_block, page_lang):
 LANG_JS=r"""(function(){var app=document.getElementById('app');if(!app)return;var PL=app.getAttribute('data-page-lang')||'en';var OTHERS=[];try{OTHERS=JSON.parse(app.getAttribute('data-other-langs')||'[]');}catch(e){}var BASE=app.getAttribute('data-lang-base')||'lang/';
 var loaded={},loading={};loaded[PL]=true;
 function fill(L){var F=(window.__LANGFRAG||{})[L];if(!F)return false;var slots=document.querySelectorAll('[data-lang-slot^="'+L+':"]');for(var i=0;i<slots.length;i++){var ph=slots[i];var html=F[ph.getAttribute('data-lang-slot').slice(L.length+1)];if(html==null)continue;var t=document.createElement('template');t.innerHTML=html;var nodes=[].slice.call(t.content.childNodes);ph.replaceWith.apply(ph,nodes);for(var k=0;k<nodes.length;k++){if(nodes[k].nodeType===1&&window.__hydrate)window.__hydrate(nodes[k]);}}loaded[L]=true;document.documentElement.classList.remove('lang-loading');if(window.__relabelMap)window.__relabelMap();var h=location.hash||'';if(h.indexOf('#brief-')!==0&&h.length>1&&window.__revealHash)window.__revealHash(h);return true;}
-function load(L,cb){if(loaded[L]||OTHERS.indexOf(L)<0){if(cb)cb();return;}if(loading[L]){loading[L].push(cb);return;}loading[L]=[cb];var s=document.createElement('script');s.src=BASE+L+'.js';s.async=true;s.onload=function(){fill(L);var q=loading[L]||[];delete loading[L];for(var i=0;i<q.length;i++){if(q[i])q[i]();}};s.onerror=function(){delete loading[L];document.documentElement.classList.remove('lang-loading');};document.head.appendChild(s);}
+function load(L,cb){if(loaded[L]||OTHERS.indexOf(L)<0){if(cb)cb();return;}if(loading[L]){loading[L].push(cb);return;}loading[L]=[cb];var s=document.createElement('script');s.src=BASE+L+'.js';s.async=true;s.onload=function(){fill(L);var q=loading[L]||[];delete loading[L];for(var i=0;i<q.length;i++){if(q[i])q[i]();}};s.onerror=function(){var q=loading[L]||[];delete loading[L];document.documentElement.classList.remove('lang-loading');failed(L);for(var i=0;i<q.length;i++){if(q[i])q[i]();}};document.head.appendChild(s);}
+// the fragment did not arrive (offline copy without lang/, a blocked request): every waiting slot says so once and points at the page
+// that carries this language in full; a retry link tries the fragment again (27 Sep 2026)
+var FAILMSG={en:'The English text did not load. <a href="%P">Open the English page</a> or <a href="#" data-langretry="en">try again</a>.',ru:'Русский текст не загрузился. <a href="%P">Открыть русскую страницу</a> или <a href="#" data-langretry="ru">повторить</a>.'};
+function pageOf(L){var up=BASE.replace(/lang\/$/,'');return up+(L==='en'?'':L+'/')+'index.html';}
+function failed(L){var msg=(FAILMSG[L]||FAILMSG.en).replace('%P',pageOf(L));var slots=document.querySelectorAll('[data-lang-slot^="'+L+':"] .langwait');for(var i=0;i<slots.length;i++){slots[i].innerHTML=msg;slots[i].classList.add('langfail');}}
+document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[data-langretry]'):null;if(!a)return;e.preventDefault();var L=a.getAttribute('data-langretry');var slots=document.querySelectorAll('[data-lang-slot^="'+L+':"] .langwait');for(var i=0;i<slots.length;i++){slots[i].classList.remove('langfail');slots[i].textContent=(L==='ru'?'Русский текст загружается…':'English text is loading…');}document.documentElement.classList.add('lang-loading');load(L);});
 window.__loadLang=load;window.__langLoaded=function(L){return !!loaded[L];};
 window.__langReady=function(L){return new Promise(function(res){load(L,res);});};
 var idle=window.requestIdleCallback||function(f){setTimeout(f,800);};
@@ -866,6 +898,7 @@ def compose(cfg,page_lang,prose,briefs_page,tocs,mapsecs,B,others,lang_base):
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>{CSS}</style>
 <div id="app" data-lang="{dl}" data-page-lang="{dl}" data-other-langs='{json.dumps(others)}' data-lang-base="{lang_base}" data-edition="{cfg['edition']}">
+<a class="skip" href="#map">{'Skip to the map' if dl=='en' else 'К карте'}</a>
 {navchrome(dict(cfg,default_lang=dl))}
 {masthead(cfg)}
 <div class="page">
@@ -918,6 +951,7 @@ def build(cfg=PUBLIC):
     briefs_block=BR.briefs_section_html(B,brief_md2html,colours)
     en_html,en_toc=convert(EN,'en'); ru_html,ru_toc=convert(RU,'ru')
     en_html=insert_after_h3_table(en_html,'3.1',radars_block('en')); ru_html=insert_after_h3_table(ru_html,'3.1',radars_block('ru'))
+    en_html=insert_before_h2(en_html,'en-s0',glossary_html('en')); ru_html=insert_before_h2(ru_html,'ru-s0',glossary_html('ru'))   # the Glossary closes About
     en_html=tag_sortables(en_html); ru_html=tag_sortables(ru_html)
     en_html=BR.link_node_ids(en_html,ids); ru_html=BR.link_node_ids(ru_html,ids)
     en_html=BR.autolink(en_html); ru_html=BR.autolink(ru_html)
@@ -943,7 +977,11 @@ def build(cfg=PUBLIC):
         full=f'<!doctype html>\n<html lang="{pl}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">{head_meta(pcfg)}<style>img{{max-width:100%}}[hidden]{{display:none!important}}</style></head><body>'+body+'</body></html>'
         open(out_full,'w',encoding='utf-8',newline='\n').write(full)
         page_html[pl]=full
-        if pl=='en': open(cfg['out_body'],'w',encoding='utf-8',newline='\n').write(body)
+        if pl=='en':
+            os.makedirs(os.path.dirname(cfg['out_body']),exist_ok=True); open(cfg['out_body'],'w',encoding='utf-8',newline='\n').write(body)
+        # the directory's default document: the public address is the directory (…/quantum-technology-atlas/, …/ru/), the record
+        # pages link to index.html so that the links also work from a folder on disk; a copy, not committed (27 Sep 2026)
+        open(os.path.join(outdir,'index.html'),'w',encoding='utf-8',newline='\n').write(full)
         for L,F in frags.items():
             # the fragment of language L as the page of pl needs it: the same for every page (the slots are keyed by language)
             fp=os.path.join(ROOT,'dist','lang',L+'.js')
@@ -955,7 +993,20 @@ def build(cfg=PUBLIC):
     site=pages.Site(dict(cfg,og_image=OG_IMAGE_URL),G,json.load(open(MACH_PATH,encoding='utf-8')),B,BR,brief_md2html,colours,page_html,CSS,
                     json.dumps(tips_dict(),ensure_ascii=False,separators=(',',':')),GTIP_JS,TAG_JS,BR.key_refs_all(B))
     npages=site.build(PAGE_LANGS)
+    if cfg['mode']=='public': sync_readme(EN)
     print('built', cfg['mode'], '; '.join(sizes),';',len(B),'briefs;',nofb,'RU fallbacks;',npages,'record pages')
+
+
+def sync_readme(report_en):
+    """README.md carries the report's About paragraphs between <!-- about:begin --> and <!-- about:end --> (the GitHub landing text
+    drifted from the page until 27 Sep 2026: it still denied the superconducting network node the page had granted)."""
+    m=re.search(r'^## About the Atlas\n(.*?)(?=^## )',report_en,flags=re.M|re.S)
+    if not m: raise SystemExit('README sync: the report has no "## About the Atlas" section')
+    about='## About the Atlas — the five questions\n\n'+m.group(1).strip()+'\n'
+    rp=os.path.join(ROOT,'README.md'); r=open(rp,encoding='utf-8').read()
+    new=re.sub(r'(<!-- about:begin[^>]*-->\n).*?(<!-- about:end -->)',lambda mm: mm.group(1)+about+mm.group(2),r,count=1,flags=re.S)
+    if new==r and about not in r: raise SystemExit('README sync: markers not found')
+    if new!=r: open(rp,'w',encoding='utf-8',newline='\n').write(new)
 
 if __name__=='__main__':
     build(PUBLIC)

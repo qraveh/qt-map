@@ -25,6 +25,7 @@ Fidelity is joint-measurement time over the lifetime of the basis projected, and
 | 2025-02 | Single-wire parity readout, 1% assignment error, dwell >1 ms | Microsoft Azure Quantum | [D][13] |
 | 2025-07 | Tetron Z-loop 12.4 ms vs X-loop 14.5 µs | Microsoft Quantum | [D][19] |
 | 2026-06 | ~20 s parity switching, one wire of one InAs–Pb tetron | Microsoft Quantum | [D][20] |
+
 No row is a gate: the 2026 result measured one nanowire of a multi-tetron array: no braid, no joint parity, no two-qubit operation, no entanglement, no T₁/T₂ [D][20].
 
 ## Manufacturing, materials & supply chain

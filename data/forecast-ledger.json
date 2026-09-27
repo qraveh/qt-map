@@ -26,9 +26,9 @@
    "id": "F1c",
    "indicator": "largest gate-capable trapped-ion device",
    "now": "98 (2026)",
-   "e2027": "120–10000: the historical ×1.30/yr gives ≈128 by 2027; the largest announced system (10000) caps the range",
+   "e2027": "120–260: the historical ×1.30/yr gives ≈128 by 2027; the first announced system above it caps the range at 260",
    "e2028": "200–400",
-   "basis": "frontier series 2020 20, 2021 20, 2022 32, 2023 64, 2024 64, 2025 98, 2026 98 — the only family whose frontier still grows year on year; announced: Tempo — 100 (2025); Superion 256 — 256 (2026); NFQC-1k — 1,000 (2026); IonQ Superion 10K — 10,000 (2026)",
+   "basis": "frontier series 2020 20, 2021 20, 2022 32, 2023 64, 2024 64, 2025 98, 2026 98 — the family whose frontier last grew (2023, 2025); announced: Tempo — 100 (2025); Superion 256 — 256 (2026); NFQC-1k — 1,000 (2026); IonQ Superion 10K — 10,000 (2026)",
    "confidence": "medium",
    "falsified_if": "a trapped-ion device with entangling gates on more than 260 qubits by 2027.09, or the frontier still at 98"
   },
@@ -75,7 +75,7 @@
   {
    "id": "F6",
    "indicator": "roadmap checkpoints the register can score by 2028",
-   "now": "4 roadmaps dated 2025–2028: nordquantique-2029 (2028-2029), oqc-titan (2028), psiquantum-2033 (2028-2033), quera-phase3 (2026-2028)",
+   "now": "4 roadmaps dated 2025–2028: Nord Quantique — nordquantique-2029 (2028-2029), OQC — oqc-titan (2028), PsiQuantum — psiquantum-2033 (2028-2033), QuEra — quera-phase3 (2026-2028)",
    "e2027": "the checkpoints dated 2026–2027 are scored; on H6's distribution (56 of 65 SHORT verdicts on error or gates) the expectation is that they miss on the error budget, not on qubits",
    "e2028": "the 2028 checkpoints are scored; at least two of three miss on the logical error per operation",
    "basis": "the register's roadmap-feasibility verdicts and their dates",

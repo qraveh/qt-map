@@ -53,8 +53,8 @@
    "✅"
   ],
   "scope": "all",
-  "en": "A paper, whitepaper or figure was seen to show this technology in this machine — not inferred from a press page",
-  "ru": "Статья, whitepaper или рисунок показывают эту технологию в этой машине — не вывод из пресс-страницы",
+  "en": "Verified: the cited source — a paper, a whitepaper, a product page or a technical press release — was opened and seen to show this technology in this machine",
+  "ru": "Проверено: источник — статья, whitepaper, страница продукта или технический пресс-релиз — был открыт, и в нём увидена эта технология в этой машине",
   "src": "§8",
   "why": "The tick looks like a pass mark; it actually says what kind of document was seen"
  },
@@ -67,8 +67,8 @@
    "🔎"
   ],
   "scope": "all",
-  "en": "Only a press page or an inference supports this — the claim is plausible but no document was seen showing it",
-  "ru": "Это поддерживает только пресс-страница или вывод — утверждение правдоподобно, но документ, который это показывает, не найден",
+  "en": "Unverified: the cited source was not re-opened, or the cell is an inference — the claim is plausible but was not checked against its source",
+  "ru": "Не проверено: источник не открывался заново, или ячейка — вывод; утверждение правдоподобно, но по источнику не проверено",
   "src": "§8",
   "why": "The magnifier is easily read as 'verified'; it means the opposite end of the evidence scale"
  },
@@ -309,8 +309,8 @@
    "H8"
   ],
   "scope": "all",
-  "en": "One of the eight statements about the field that this edition tested against the 136 registered machines, rather than asserting",
-  "ru": "Одно из восьми утверждений об отрасли, которые это издание проверило по 136 машинам реестра, а не просто заявило",
+  "en": "One of the eight statements about the field that this edition tested against the {{N_MACHINES}} registered machines, rather than asserting",
+  "ru": "Одно из восьми утверждений об отрасли, которые это издание проверило по {{N_MACHINES}} машинам реестра, а не просто заявило",
   "src": "§8.4",
   "why": "Cited bare in §0 and §8.6 as (H1), (H8) by readers who never opened §8.4",
   "only": [
@@ -582,8 +582,8 @@
    "полоса"
   ],
   "scope": "first",
-  "en": "The band under the map that draws all 96 technologies at once, each as a line across the seven properties, so outliers stand out",
-  "ru": "Полоса под картой, рисующая все 96 технологий сразу — каждую линией по семи свойствам, так что выбросы видны",
+  "en": "The band under the map that draws all {{N_NODES}} technologies at once, each as a line across the seven attributes, so outliers stand out",
+  "ru": "Полоса под картой, рисующая все {{N_NODES}} технологий сразу — каждую линией по семи атрибутам, так что выбросы видны",
   "src": "About / §7.9",
   "why": "Mentioned in About as if the reader has the map in front of them; many are reading the text alone",
   "only": [
@@ -736,15 +736,15 @@
    "Хабы"
   ],
   "scope": "first",
-  "en": "A technology that several qubit families depend on, directly or through what they need — so work on it pays off in more than one place",
-  "ru": "Технология, от которой зависит несколько кубитных семейств — прямо или через то, что им нужно; работа над ней окупается не в одном месте",
+  "en": "A technology that three or more qubit families depend on (two, if it is young), directly or through what they need — so work on it pays off in more than one place",
+  "ru": "Технология, от которой зависят три и более кубитных семейства (два, если она молода) — прямо или через то, что им нужно; работа над ней окупается не в одном месте",
   "src": "§7.1",
   "why": "Read as 'popular node'; the page means reach across families, which is why hubs are where leverage is",
   "variants": [
    {
     "until": "7",
-    "en": "A technology that several different kinds of qubit depend on — directly, or through something they need — so improving it moves more than one platform at once",
-    "ru": "Технология, от которой зависит несколько разных типов кубитов — прямо или через то, что им нужно; улучшив её, двигаешь сразу несколько платформ"
+    "en": "A technology that three or more kinds of qubit depend on (two, if it is young) — directly, or through something they need — so improving it moves more than one platform at once",
+    "ru": "Технология, от которой зависят три и более типов кубитов (два, если она молода) — прямо или через то, что им нужно; улучшив её, двигаешь сразу несколько платформ"
    }
   ]
  },
@@ -894,8 +894,8 @@
    "ячейка"
   ],
   "scope": "first",
-  "en": "One machine at one layer of the stack: what it uses there, plus the document that shows it — a machine has about a dozen, the register 1,533",
-  "ru": "Одна машина на одном слое стека: что она там использует, плюс документ, который это показывает; у машины их около дюжины, в реестре 1,533",
+  "en": "One machine at one layer of the stack: what it uses there, plus the document that shows it — a machine has about a dozen, the register {{N_CELLS}}",
+  "ru": "Одна машина на одном слое стека: что она там использует, плюс документ, который это показывает; у машины их около дюжины, в реестре {{N_CELLS}}",
   "src": "§8",
   "why": "The unit every count and every evidence share in the chapter is computed over",
   "only": [
@@ -1086,8 +1086,8 @@
    "архитектурой"
   ],
   "scope": "first",
-  "en": "A machine's platform plus the choices of encoding, gate and control that define it — 14 such combinations carry the 136 machines",
-  "ru": "Платформа машины плюс выбор кодирования, гейта и управления, который её определяет: 136 машин укладываются в 14 таких комбинаций",
+  "en": "A platform drawn as one line through the stack, one station per layer — {{N_PATHS}} such lines carry the {{N_MACHINES}} registered machines",
+  "ru": "Платформа, проведённая одной линией через стек, по одной станции на слой: {{N_PATHS}} таких линий несут {{N_MACHINES}} машин реестра",
   "src": "§8",
   "why": "Finer than family, coarser than a single machine; the chapter argues by architecture, not by company",
   "only": [
@@ -1121,8 +1121,8 @@
    "станция связи"
   ],
   "scope": "first",
-  "en": "A demonstrated way of joining one module to another — the layer that is blank on 119 of the 136 machines",
-  "ru": "Продемонстрированный способ соединить один модуль с другим — слой, пустой у 119 из 136 машин",
+  "en": "A demonstrated way of joining one module to another — the layer that is absent or undisclosed on {{N_IC_NONE_OR_UNDISC}} of the {{N_MACHINES}} machines",
+  "ru": "Продемонстрированный способ соединить один модуль с другим — слой, отсутствующий или не раскрытый у {{N_IC_NONE_OR_UNDISC}} из {{N_MACHINES}} машин",
   "src": "§8",
   "why": "Every modular roadmap depends on this one entry, which is why its emptiness is a headline",
   "only": [

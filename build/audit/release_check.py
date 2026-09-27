@@ -57,7 +57,7 @@ def main():
     # 3. headings and ids: numbered, unique, in the TOC; §x.y references resolve
     ids = re.findall(r'<h[23] id="([^"]+)"', h)
     item('heading ids unique', len(ids) == len(set(ids)), [i for i in ids if ids.count(i) > 1][:5])
-    item('heading ids follow section numbers (en-s7-2 style)', all(re.match(r'(en|ru)-s(-about|\d+(-\d+)?)$', i) for i in ids), [i for i in ids if not re.match(r'(en|ru)-s(-about|\d+(-\d+)?)$', i)][:5])
+    item('heading ids follow section numbers (en-s7-2 style)', all(re.match(r'(en|ru)-s(-about|\d+(-\d+)?)$|editions-(en|ru)$', i) for i in ids), [i for i in ids if not re.match(r'(en|ru)-s(-about|\d+(-\d+)?)$|editions-(en|ru)$', i)][:5])
     nav = re.findall(r'<nav class="toc".*?</nav>', h, flags=re.S)[0]; toc_hrefs = set(re.findall(r'href="#((?:en|ru)-s[^"]*)"', nav))
     # the TOC lists every h2 and the h3 of the graph and machines chapters (7.x, 8.x) by design
     must = [i for i in ids if re.match(r'(en|ru)-s\d+$', i) or re.match(r'(en|ru)-s[78]-\d+$', i)]

@@ -25,6 +25,7 @@ Protection is a length and a gap: parity splitting falls exponentially with leng
 | 2017 | Tetron and hexon layouts defined; measurement-only Cliffords | Microsoft | [S][338] |
 | 2025-07 | Z loop 12.4 ms vs X loop 14.5 µs, one tetron | Microsoft Quantum | [D][19] |
 | 2026-06 | One wire of one tetron in an array; no joint parity | Microsoft Quantum | [D][20] |
+
 No logical state prepared, no X measurement, no coherence time or logical error rate for a tetron [D][20].
 
 ## Manufacturing, materials & supply chain

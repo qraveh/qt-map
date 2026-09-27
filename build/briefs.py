@@ -161,6 +161,16 @@ def _ru_from_en(en_meta):
     return ru
 
 
+_NODES = None
+def _node(bid):
+    """the graph's record of a station (data/graph.json, written by make_sections before the briefs are rendered)"""
+    global _NODES
+    if _NODES is None:
+        try: _NODES = {n['id']: n for n in json.load(open(os.path.join(ROOT, 'data', 'graph.json'), encoding='utf-8'))['nodes']}
+        except (OSError, ValueError): _NODES = {}
+    return _NODES.get(bid)
+
+
 def load_briefs():
     """All briefs (one per node of data/ranking.json) ordered by rank. RU falls back to the EN body when the file is missing."""
     out = []
@@ -175,6 +185,13 @@ def load_briefs():
         else:
             ru_meta, ru_body = _ru_from_en(en_meta), RU_FALLBACK_NOTE + '\n\n' + en_body
             fallback = True
+        # one name per station: the brief's title and its "since" are the graph's (the front matter keeps the author's wording
+        # for the record; build/audit/briefs_meta_check.py lists the divergences — 97 of 222 names differed on 27 Sep 2026)
+        node = _node(bid)
+        if node:
+            for lang, meta in (('en', en_meta), ('ru', ru_meta)):
+                meta['brief_name'] = meta.get('name', ''); meta['name'] = node[lang]
+                meta['since'] = str(node['since']) if node.get('since') is not None and node['since'] < 2030 else ''
         out.append({
             'id': bid, 'rank': r['rank'], 'tier': r['tier'], 'score': r['score'],
             'layer': layer_num(en_meta), 'ru_fallback': fallback,
@@ -220,20 +237,24 @@ def gkey_tip(code):
     return '%s · %s' % (r['text'][:220], r['date']) if r and r.get('url') else None
 
 
-def _gkey_chip(m):
+FACT_CHIP = ('fact', 'факт')   # a [G:KEY] chip links a dated entry of the shared fact ledger (data/facts.json); until 27 Sep 2026 it was drawn as
+                                # the [G] "established fact" grade, which 548 of 816 ledger links to company pages and trade press did not deserve
+
+
+def _gkey_chip(m, lang='en'):
     r = REGMAP.get(m.group(1))
-    lab = TAGS['G'][0 if MODE == 'internal' else 0]
+    lab = FACT_CHIP[0 if lang == 'en' else 1]
     if r and r.get('url'):
         GTIPS[m.group(1)] = gkey_tip(m.group(1))
-        return '<a class="tag tag-G tag-link" href="%s" target="_blank" rel="noopener" data-g="%s">G</a>' % (html.escape(r['url']), html.escape(m.group(1)))
-    return '<span class="tag tag-G" title="[G] %s">G</span>' % html.escape(lab)
+        return '<a class="tag tag-fact tag-link" href="%s" target="_blank" rel="noopener" data-g="%s">%s</a>' % (html.escape(r['url']), html.escape(m.group(1)), lab)
+    return '<span class="tag tag-fact" title="%s">%s</span>' % (html.escape(TAGS['G'][0 if lang == 'en' else 1]), lab)
 
 
 def expand_gtips(h, gtips=None):
     """the page as the browser shows it: the [G] chips' tooltips set from window.__GTIPS (for the static checkers)"""
     T = gtips if gtips is not None else GTIPS
-    return re.sub(r'(<a class="tag tag-G tag-link" href="[^"]*" target="_blank" rel="noopener") data-g="([^"]+)">G</a>',
-                  lambda m: '%s title="%s">G</a>' % (m.group(1), html.escape(T.get(html.unescape(m.group(2))) or '')), h)
+    return re.sub(r'(<a class="tag tag-fact tag-link" href="[^"]*" target="_blank" rel="noopener") data-g="([^"]+)">(fact|факт)</a>',
+                  lambda m: '%s title="%s">%s</a>' % (m.group(1), html.escape(T.get(html.unescape(m.group(2))) or ''), m.group(3)), h)
 
 
 def expand_ulinks(h):
@@ -291,7 +312,7 @@ def chip_tags(h, lang):
         part = _REG_RE.sub(
             lambda m: '<span class="tag tag-reg" title="%s">REG:%s</span>' % (html.escape(REG_TITLE[i]), m.group(1)),
             part)
-        part = _GKEY_RE.sub(_gkey_chip, part)
+        part = _GKEY_RE.sub(lambda m: _gkey_chip(m, lang), part)
         part = _TAG_RE.sub(lambda m: '<span class="tag tag-%s">%s</span>' % (m.group(1), m.group(1)), part)   # the title comes on hover (TAG_JS): 10,000 chips, one table
         out.append(part)
     return ''.join(out)
@@ -357,7 +378,23 @@ TOOLTIPS = None   # build_html.tooltips, injected at build time
 FOLD = None       # build_html.foldable (sections and tables fold), injected at build time
 
 
+_PATENT_RE = re.compile(r'\b(US|EP|WO|CN|JP|KR)\s?\d{1,2}(?:,\d{3}){2}\b')
+
+
+def ru_numbers(text):
+    """Russian number style for a brief body (27 Sep 2026): the English thousands comma becomes a no-break space (1,121 → 1 121;
+    387 places), except in code parameters [[144,12,12]] and patent numbers (US 11,748,652 B1), which keep their commas. Decimal
+    points are left alone: a global point→comma rule would also hit DOIs, arXiv ids, versions and URLs."""
+    keep = []
+    def hold(m): keep.append(m.group(0)); return '\x00%d\x00' % (len(keep) - 1)
+    t = _PATENT_RE.sub(hold, text)
+    t = re.sub(r'\[\[[^\]]*\]\]', hold, t)
+    t = re.sub(r'(?<=\d),(?=\d{3}\b)', '\u00a0', t)
+    return re.sub(r'\x00(\d+)\x00', lambda m: keep[int(m.group(1))], t)
+
+
 def body_html(body, lang, md2html, bid=''):
+    if lang == 'ru': body = ru_numbers(body)
     h = md2html(body)
     h = h.replace('<table>', '<div class="tbl"><table>').replace('</table>', '</table></div>')
     parts = _H2_SPLIT.split(h)
@@ -403,8 +440,8 @@ def _one_lang(b, lang, md2html, prev_id, next_id, colour):
     m = b[lang]['meta']
     t = NAV[lang]
     name = inline_html(m.get('name', b['id']), md2html)
-    one = inline_html(m.get('one_line', ''), md2html)
-    verdict = inline_html(m.get('verdict', ''), md2html)
+    one = inline_html(ru_numbers(m.get('one_line', '')) if lang == 'ru' else m.get('one_line', ''), md2html)
+    verdict = inline_html(ru_numbers(m.get('verdict', '')) if lang == 'ru' else m.get('verdict', ''), md2html)
     meta_line = ' · '.join(x for x in [
         '<span class="bid">%s</span>' % html.escape(b['id']),
         '%s %s' % (t['layer'], html.escape(m.get('layer', ''))),

@@ -613,7 +613,7 @@
  },
  {
   "node": "majorana",
-  "key": "t1",
+  "key": "parity_life",
   "num": 22,
   "unit": "s",
   "text": "InAs-Pb tetron, single wire: Z-parity lifetime 22 +/- 1 s (Poissonian fit, 200 ms integration, 324 dwell intervals)",
@@ -1060,12 +1060,12 @@
   "key": "err_2q_parallel",
   "num": null,
   "unit": "fraction",
-  "text": "The '<0.1%' NV GST figure is a press release with no primary paper; no parallel or simultaneous measurement exists",
+  "text": "The '<0.1%' NV gate figure (QuTech/Fujitsu, March 2025) is a press-release number for single gates; no parallel or simultaneous multi-qubit measurement is published",
   "scope": "typical",
   "date": "2025-03",
   "url": "https://thequantuminsider.com/2025/03/28/fujitsu-and-qutech-realize-high-precision-quantum-gates/",
   "tag": "P",
-  "note": "Honest null [P]. The release does cite a primary paper: Phys. Rev. Applied, 21 Mar 2025 - node attrs say none exists."
+  "note": ""
  },
  {
   "node": "g_mwspin",

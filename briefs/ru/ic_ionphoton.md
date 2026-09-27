@@ -1,6 +1,6 @@
 ---
 id: ic_ionphoton
-name: Фотонная связь ион — фотон
+name: Ион-фотонный линк
 layer: "9 Интерконнект"
 status: demonstrated
 since: 2007

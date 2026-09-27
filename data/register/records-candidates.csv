@@ -27,7 +27,7 @@ t1q,2.5e-8,s,best,Dec 2024,google-willow,https://arxiv.org/abs/2408.13687,
 err_2q_parallel,1.5e-3,dimensionless,best (median; 1.2e-3 mean),Oct 2025,google-willow,https://blog.google/innovation-and-ai/technology/research/quantum-hardware-verifiable-advantage/,
 spam,8e-3,dimensionless,typical (readout error),Dec 2024,google-willow,https://arxiv.org/abs/2408.13687,
 degree,3.47,neighbours,typical (average; 4 interior),Dec 2024,google-willow,https://arxiv.org/abs/2408.13687,
-idle_err_round,7.72e-4,dimensionless,best in the world for superconducting (logical error per cycle at d=7),Jul 2026,google-willow,https://arxiv.org/abs/2511.08493,
+idle_err_round,7.72e-4,dimensionless,best published superconducting logical error per cycle at d=7 (Jul 2026),Jul 2026,google-willow,https://arxiv.org/abs/2511.08493,
 t_decode,6.3e-5,s,best-in-loop 2024 (mean at d=5); under 1e-6 s per cycle at d=11 in 2026,Dec 2024,google-willow,https://arxiv.org/abs/2408.13687,
 burst_rate,3.3e-10,per cycle,"typical (~1 correlated event per hour, ~1 per 3e9 cycles)",2024,google-willow,https://arxiv.org/abs/2408.13687,
 accept,8e-2,fraction,best (magic-state cultivation),Dec 2025,google-willow,https://arxiv.org/abs/2512.13908,
@@ -58,7 +58,7 @@ crosstalk,6e3,Hz,best published for superconducting (residual ZZ in the off stat
 t1,2.3e-4,s,best,Nov 2024,toshiba-dtc,https://www.global.toshiba/ww/technology/corporate/rdc/rd/topics/24/2411-03.html,
 t2,3.6e-4,s,best,Nov 2024,toshiba-dtc,https://www.global.toshiba/ww/technology/corporate/rdc/rd/topics/24/2411-03.html,
 t1,1e-4,s,scope unstated (best or median not distinguished),Feb 2026,qpiai-kaveri-64,https://www.sify.com/science-tech/qpiai-unveils-kaveri-indias-first-aatmanirbhar-64-qubit-quantum-chip/,
-t1,5.3e-4,s,claimed best - flag heavily,Jan 2026,academia-sinica-20q,https://www.sinica.edu.tw/en/news_content/55/3655,"at or beyond the world record for multi-qubit transmon processors, with no accompanying gate fidelity"
+t1,5.3e-4,s,best (claimed),Jan 2026,academia-sinica-20q,https://www.sinica.edu.tw/en/news_content/55/3655,"a company release with no accompanying gate fidelity; the release calls it at or beyond the record for multi-qubit transmon processors"
 t_decode,4.4e-7,s,best in-loop for a non-Google superconducting machine (per round; range 0.44-0.79 us),Jun 2026,rigetti-ankaa-2,https://www.nature.com/articles/s41467-026-73331-6,
 t_ff,9.6e-6,s,best measured superconducting reaction time (9 rounds),Jun 2026,rigetti-ankaa-2,https://www.nature.com/articles/s41467-026-73331-6,6.5 us decode + 3.1 us communication
 err_2q_parallel,9e-3,dimensionless,"typical (median 2Q at 108 q, 99.1%)",Apr 2026,rigetti-cepheus-1-108q,https://aws.amazon.com/blogs/quantum-computing/amazon-braket-launches-rigetti-cepheus-1-108q-superconducting-device/,
@@ -78,7 +78,7 @@ idle_err_round,1.75e-2,dimensionless,"typical (d=3; d=5 gives 1.65e-2, so Lambda
 err_2q_parallel,9.6e-2,dimensionless,"typical (CX phase-flip per cycle; bit-flip 3.5e-3, bias >25)",Feb 2025,aws-ocelot,https://www.nature.com/articles/s41586-025-08642-7,
 qnd,9.994e-1,fraction,best (residual logical error 6.0e-4 per erasure check),Apr 2026,aws-dualrail,https://arxiv.org/html/2604.16292v1,erasure check in 384 ns
 err_1q,7.2e-5,dimensionless,best (single-qubit gate error with parallel erasure detection; filed as 2Q until 26 Sep 2026),Apr 2026,aws-dualrail,https://arxiv.org/html/2604.16292v1,"with continuous parallel erasure detection, overhead <1e-5"
-t1,3.6e3,s,"best in the world, any modality (cat bit-flip time at photon number 11)",Sep 2025,aliceandbob-helium-2,https://alice-bob.com/newsroom/alice-bob-surpasses-bit-flip-stability-record,"33-60 min, 95% CI; phase-flip time at the same point is not published"
+t_bitflip,3.6e3,s,"cat bit-flip time at photon number 11 (the protected axis of a cat qubit, not a T1; the top of the quoted interval)",Sep 2025,aliceandbob-helium-2,https://alice-bob.com/newsroom/alice-bob-surpasses-bit-flip-stability-record,"33-60 min, 95% CI, company release; phase-flip time at the same point is not published"
 t1,4.3e2,s,"best-2024 (Boson 4, transmon-free)",May 2024,aliceandbob-boson-4,https://alice-bob.com/newsroom/alice-bob-surpasses-bit-flip-stability-record,
 t1q,2.65e-8,s,typical (Z gate at 94.2% fidelity),Sep 2025,aliceandbob-helium-2,https://alice-bob.com/newsroom/alice-bob-surpasses-bit-flip-stability-record,
 spam,7e-4,dimensionless,best for any bosonic qubit (cardinal states),Jul 2026,nordquantique-gkp,https://arxiv.org/html/2607.06718v1,

@@ -16,7 +16,7 @@ import html, json, os, re, sys, unicodedata
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'build')); sys.path.insert(0, os.path.join(ROOT, 'data'))
-import cards, media, orgs
+import cards, media, orgs, regvocab
 from editions import EDITIONS, CONCEPT_DOI, SITE, REPO
 
 KINDS = ('technology', 'machine', 'architecture', 'organisation')
@@ -26,12 +26,13 @@ T = {
             index='Index', edition='Edition', part='part of the', licence='CC BY 4.0', prev='← previous', next='next →',
             tech_one='technology', mach_one='machine', arch_one='architecture', org_one='organisation',
             narrative='The architecture in the report (§8.3)', machines_of='Machines of this architecture', by_layer='by layer',
-            no_pictures='No picture in the media register yet.', story_note='Every picture carries the story of what it shows and its credit line.'),
+            no_pictures='No picture in the media register yet.', story_note='Every picture carries the story of what it shows and its credit line.',
+            chip='on the map bar: %s'),
  'ru': dict(atlas='Quantum Technology Atlas', back='← Quantum Technology Atlas', map='Открыть на карте', tech='Технологии', mach='Машины',
             arch='Архитектуры', org='Организации', brief='Бриф', pictures='Иллюстрации', cite='Как цитировать', lang='English', twin='en',
             index='Указатель', edition='Издание', part='часть издания', licence='CC BY 4.0', prev='← предыдущая', next='следующая →',
             tech_one='технология', mach_one='машина', arch_one='архитектура', org_one='организация',
-            narrative='Архитектура в отчёте (§8.3)', machines_of='Машины этой архитектуры', by_layer='по слоям',
+            narrative='Архитектура в отчёте (§8.3)', machines_of='Машины этой архитектуры', by_layer='по слоям', chip='на панели карты: %s',
             no_pictures='В медиа-реестре пока нет иллюстрации.', story_note='У каждой иллюстрации — рассказ о том, что на ней, и строка авторства.'),
 }
 KIND_T = {'technology': 'tech', 'machine': 'mach', 'architecture': 'arch', 'organisation': 'org'}
@@ -107,7 +108,7 @@ class Site:
                 f'<link rel="stylesheet" href="{base}assets/atlas.css"><link rel="stylesheet" href="{base}assets/cards.css"><link rel="stylesheet" href="{base}assets/record.css">'
                 f'<meta name="color-scheme" content="light dark"><script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script></head>\n')
         twin_link = f'<a class="rb-lang" href="{self.href(kind, ident, other, lang)}" hreflang="{other}">{t["lang"]}</a>' if twin else ''
-        bar = (f'<div class="recbar"><a class="rb-home" href="{base}{"" if lang == "en" else "ru/"}{os.path.basename(self.cfg["out_full"])}">{t["back"]}</a>'
+        bar = (f'<div class="recbar"><a class="rb-home" href="{base}{"" if lang == "en" else "ru/"}index.html">{t["back"]}</a>'
                f'<span class="rb-kinds">{nav_kinds}</span><span class="rb-sp"></span>{twin_link}</div>')
         foot = (f'<footer class="recfoot"><p><b>{t["cite"]}.</b> {html.escape(self.cfg["author"])} (2026). <i>Quantum Technology Atlas</i>. {html.escape(self.cfg["publisher"])}. '
                 f'<a href="https://doi.org/{CONCEPT_DOI}">https://doi.org/{CONCEPT_DOI}</a> — {t["edition"]} {self.edition} · <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">{t["licence"]}</a> · '
@@ -118,7 +119,7 @@ class Site:
 
     def fix_links(self, page, lang):
         """a fragment link whose target is not on this page goes to the main page's anchor; buttons of the brief become links"""
-        base = self.rel(lang); main = base + ('' if lang == 'en' else 'ru/') + os.path.basename(self.cfg['out_full'])
+        base = self.rel(lang); main = base + ('' if lang == 'en' else 'ru/') + 'index.html'
         ids = set(re.findall(r'\sid="([^"]+)"', page))
         def sub(m):
             frag = m.group(1)
@@ -152,7 +153,7 @@ class Site:
             brief = re.sub(r'<button type="button" class="chip" data-brief="(\w+)">([^<]*)</button>', lambda m: '<a class="chip" href="%s">%s</a>' % (self.href('technology', m.group(1), lang), m.group(2)), brief)
             brief = re.sub(r'<button type="button" class="chip bclose" data-briefclose="1">[^<]*</button>', '', brief)
             brief = re.sub(r'<button type="button" class="chip" data-briefclose="1">[^<]*</button>', '', brief)
-            mainp = base + ('' if lang == 'en' else 'ru/') + os.path.basename(self.cfg['out_full'])
+            mainp = base + ('' if lang == 'en' else 'ru/') + 'index.html'
             brief = re.sub(r'<button type="button" class="chip" data-mapstation="(\w+)">([^<]*)</button>', lambda m: '<a class="chip" href="%s#station-%s">%s</a>' % (mainp, m.group(1), m.group(2)), brief)
             brief = re.sub(r'<button type="button" class="chip" data-tablerow="(\w+)">([^<]*)</button>', lambda m: '<a class="chip" href="%s#%s-s7-2">%s</a>' % (mainp, lang, m.group(2)), brief)
             brief = re.sub(r'<a class="chip" href="#" data-goto="(\w+)"([^>]*)>', lambda m: '<a class="chip" href="%s#station-%s"%s>' % (mainp, m.group(1), m.group(2)), brief)
@@ -191,9 +192,9 @@ class Site:
                 block = H[m.start():(m.end() + j.start()) if j else m.end() + 200000]
                 block = re.sub(r'<button type="button" class="foldbtn"[^>]*></button>', '', block)
                 narr = f'<section class="recnarr"><h2>{t["narrative"]}</h2>{block}</section>'
-            name = (p.get('short') or {}).get(lang) or p[lang]
+            name = p[lang]; short = (p.get('short') or {}).get(lang) or ''      # one name per architecture: the full one; the map bar's short label is a note
             desc = '%s — %s' % (p[lang], p.get('actors', ''))
-            body = f'<h1 class="rectitle">{html.escape(name)} <span class="recid">{html.escape(p[lang])}</span></h1>{card}{narr}'
+            body = f'<h1 class="rectitle">{html.escape(name)}' + (f' <span class="recid">{html.escape(t["chip"] % short)}</span>' if short and short != name else '') + f'</h1>{card}{narr}'
             self.write('architecture', pid, lang, name, desc[:300], body)
 
     # ---------- organisation pages
@@ -225,9 +226,17 @@ class Site:
         for m in self.mach.values(): fams.setdefault(m['family'], []).append(m)
         rows = []
         for f, ms in sorted(fams.items(), key=lambda kv: -len(kv[1])):
-            rows.append('<h3>%s · %d</h3><ul>%s</ul>' % (html.escape(f), len(ms), ''.join('<li><a href="%s">%s</a> — %s; %s%s</li>' % (self.href('machine', m['id'], lang), html.escape(m['name']), html.escape(m['org']), html.escape(m['status'].lower()), (', %s q' % m['physical_qubits_num']) if m.get('physical_qubits_num') else '') for m in sorted(ms, key=lambda m: m['name']))))
+            def mrow(m):   # name — org; status, qubits; access · ✅ verified/total cells (27 Sep 2026: the index showed no access and no evidence grade)
+                ec = m.get('evidence_counts') or {}
+                st = m['status'] if lang == 'en' else regvocab.status_ru(m['status'])
+                acc = (m.get('access') or '') if lang == 'en' else regvocab.access_ru(m.get('access') or '')
+                return '<li><a href="%s">%s</a> — %s; %s%s%s <span class="recid">✅ %s/%s</span></li>' % (
+                    self.href('machine', m['id'], lang), html.escape(m['name']), html.escape(m['org']), html.escape(st.lower()),
+                    (', %s q' % m['physical_qubits_num']) if m.get('physical_qubits_num') else '', ('; %s' % html.escape(acc)) if acc and acc != 'n/a' else '',
+                    ec.get('verified', 0), ec.get('total', 0))
+            rows.append('<h3>%s · %d</h3><ul>%s</ul>' % (html.escape(f), len(ms), ''.join(mrow(m) for m in sorted(ms, key=lambda m: m['name']))))
         self.write('machine', 'index', lang, t['mach'], t['mach'] + ' — Quantum Technology Atlas', f'<h1 class="rectitle">{t["mach"]} · {len(self.mach)}</h1>' + ''.join(rows))
-        rows = ''.join('<li><a href="%s">%s</a> — %s</li>' % (self.href('architecture', p['id'], lang), html.escape((p.get('short') or {}).get(lang) or p[lang]), html.escape(p[lang])) for p in self.G['paths'])
+        rows = ''.join('<li><a href="%s">%s</a>%s</li>' % (self.href('architecture', p['id'], lang), html.escape(p[lang]), (' — %s' % html.escape(t['chip'] % (p.get('short') or {}).get(lang))) if (p.get('short') or {}).get(lang) else '') for p in self.G['paths'])
         self.write('architecture', 'index', lang, t['arch'], t['arch'] + ' — Quantum Technology Atlas', f'<h1 class="rectitle">{t["arch"]} · {len(self.G["paths"])}</h1><ul>{rows}</ul>')
         rows = ''.join('<li><a href="%s">%s</a> — %s%s</li>' % (self.href('organisation', o['slug'], lang), html.escape(o['name']), html.escape(o.get('country', '') or ''), (' · %d %s' % (len(o['machines']), t['mach'].lower())) if o.get('machines') else '') for o in self.orgs)
         self.write('organisation', 'index', lang, t['org'], t['org'] + ' — Quantum Technology Atlas', f'<h1 class="rectitle">{t["org"]} · {len(self.orgs)}</h1><ul>{rows}</ul>')
@@ -253,6 +262,7 @@ class Site:
         p = self.out_path(kind, ident, lang); os.makedirs(os.path.dirname(p), exist_ok=True)
         open(p, 'w', encoding='utf-8', newline='\n').write(page); self.written += 1
         self.urls.append((lang, kind, ident))
+        self.media_used.update(re.findall(r'media/([A-Za-z0-9_.\-]+\.jpg)', page))   # the pictures this page shows (src and og:image)
 
     def assets(self):
         d = os.path.join(self.dist, 'assets'); os.makedirs(d, exist_ok=True)
@@ -260,13 +270,17 @@ class Site:
         open(os.path.join(d, 'cards.css'), 'w', encoding='utf-8', newline='\n').write(cards_css(self.CSS))
         open(os.path.join(d, 'record.css'), 'w', encoding='utf-8', newline='\n').write(RECORD_CSS)
         open(os.path.join(d, 'tips.js'), 'w', encoding='utf-8', newline='\n').write('window.__TIPS=%s;\n' % self.tips)   # the hints' texts, one shared file
-        open(os.path.join(self.dist, 'media-files.txt'), 'w', encoding='utf-8', newline='\n').write('\n'.join(media.hosted_files()) + '\n')
 
     def build(self, langs=('en', 'ru')):
-        self.assets()
+        self.assets(); self.media_used = set()
         for lang in langs:
             self.technology(lang); self.machine(lang); self.architecture(lang); self.organisation(lang); self.indexes(lang)
         self.sitemap()
+        # the pictures the deploy must copy from the media register's thumbs: only those a page shows (289 of 706 hosted on 27 Sep 2026)
+        hosted = set(media.hosted_files()); used = sorted(self.media_used & hosted)
+        unknown = sorted(self.media_used - hosted)
+        if unknown: raise SystemExit('pages: pictures referenced but not hosted by the media register: %s' % ', '.join(unknown[:10]))
+        open(os.path.join(self.dist, 'media-files.txt'), 'w', encoding='utf-8', newline='\n').write('\n'.join(used) + '\n')
         return self.written
 
 

@@ -13,10 +13,25 @@ jobs:
       - run: pip install -r requirements.txt
       - run: python3 build/build.py
       - name: check the build is committed and reproduces byte-for-byte
-        run: git diff --exit-code -- data/graph.json report/ CHANGELOG.md dist/ || (echo "run build/build.py and commit the result; if only dist/ differs, the build is not reproducible on this platform" && exit 1)
+        run: |
+          git diff --exit-code -- data/graph.json report/ README.md CHANGELOG.md dist/ || (echo "run build/build.py and commit the result; if only dist/ differs, the build is not reproducible on this platform" && exit 1)
+          test -z "$(git status --porcelain --ignored=no dist/)" || (echo "untracked files in dist/ — commit or ignore them" && git status --porcelain dist/ && exit 1)
+      - name: consistency checks
+        run: |
+          python3 build/audit/edges_check.py
+          python3 build/audit/links_check.py
+          python3 build/audit/links_check.py --records
+          python3 build/audit/briefs_meta_check.py --quiet
+          python3 build/audit/records_check.py
+          python3 build/audit/text_lint.py
+          python3 build/media.py --check
+      - name: package the site
+        # the deployable tree: both main pages (also as index.html), the language fragments, the assets, every record page, the
+        # sitemap and the list of pictures the deploy copies from the media register (build/DEPLOY.md); body.html never enters dist/
+        run: (cd dist && zip -qr ../quantum-technology-atlas-site.zip . -x 'media/*') && ls -l quantum-technology-atlas-site.zip
       - uses: actions/upload-artifact@v4
-        with: { name: quantum-technology-atlas, path: dist/ }
+        with: { name: quantum-technology-atlas, path: quantum-technology-atlas-site.zip }
       - name: attach to release
         if: github.event_name == 'release'
         uses: softprops/action-gh-release@v2
-        with: { files: dist/*.html }   # the English page; the site takes the whole dist/ tree (ru/, lang/, the record pages)
+        with: { files: quantum-technology-atlas-site.zip }   # the whole site; the same zip goes to the Zenodo record

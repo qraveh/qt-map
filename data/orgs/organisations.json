@@ -20,6 +20,7 @@
    "machines": [
     "academia-sinica-20q"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -82,6 +83,7 @@
     "aliceandbob-helium-2",
     "aliceandbob-graphene"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -168,6 +170,7 @@
    "machines": [
     "aqt-ibex-q1"
    ],
+   "co_machines": [],
    "families": [
     "ION"
    ],
@@ -243,6 +246,7 @@
     "aws-dualrail",
     "aws-ocelot"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -349,6 +353,7 @@
    "machines": [
     "anyon-monarq-24"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -413,6 +418,7 @@
     "atom-computing-phoenix",
     "atom-computing-magne"
    ],
+   "co_machines": [],
    "families": [
     "ATOM"
    ],
@@ -516,6 +522,7 @@
    "machines": [
     "bsc-quantum-spain"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -572,6 +579,7 @@
     "baqis-haituo-117",
     "baqis-scq136"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -630,6 +638,7 @@
    "machines": [
     "caltech-6100"
    ],
+   "co_machines": [],
    "families": [
     "ATOM"
    ],
@@ -703,6 +712,7 @@
    "machines": [
     "chalmers-wacqt-25q"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -773,6 +783,7 @@
     "qci-seeker-8",
     "dwave-dualrail-17"
    ],
+   "co_machines": [],
    "families": [
     "SC",
     "ANNEAL"
@@ -887,6 +898,7 @@
     "diraq-imec-8q",
     "diraq-equinix-sydney"
    ],
+   "co_machines": [],
    "families": [
     "SPIN"
    ],
@@ -975,6 +987,7 @@
    "machines": [
     "basq-system-two"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -1033,6 +1046,7 @@
    "machines": [
     "umd-duke-ion"
    ],
+   "co_machines": [],
    "families": [
     "ION"
    ],
@@ -1104,6 +1118,7 @@
    "machines": [
     "eleqtron-jion"
    ],
+   "co_machines": [],
    "families": [
     "ION"
    ],
@@ -1180,6 +1195,7 @@
    "machines": [
     "equal1-bell-1"
    ],
+   "co_machines": [],
    "families": [
     "SPIN"
    ],
@@ -1248,6 +1264,9 @@
    "note": "",
    "machines": [
     "ethz-surface17"
+   ],
+   "co_machines": [
+    "ibm-system-two-cscs"
    ],
    "families": [
     "SC"
@@ -1318,6 +1337,7 @@
    "machines": [
     "etri-8photon"
    ],
+   "co_machines": [],
    "families": [
     "PHOTON"
    ],
@@ -1375,6 +1395,7 @@
    "machines": [
     "fraunhofer-ehningen"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -1437,6 +1458,10 @@
     "fujitsu-snv-prototype",
     "fujitsu-10000q",
     "fujitsu-1000q"
+   ],
+   "co_machines": [
+    "riken-64q",
+    "yaqumo-yb"
    ],
    "families": [
     "SC",
@@ -1543,6 +1568,7 @@
     "google-fluxonium",
     "google-sycamore-54"
    ],
+   "co_machines": [],
    "families": [
     "SC",
     "ATOM"
@@ -1669,6 +1695,7 @@
    "machines": [
     "groove-quantum"
    ],
+   "co_machines": [],
    "families": [
     "SPIN"
    ],
@@ -1730,6 +1757,9 @@
    "note": "",
    "machines": [
     "harvard-continuous-3000"
+   ],
+   "co_machines": [
+    "harvard-448"
    ],
    "families": [
     "ATOM",
@@ -1819,6 +1849,7 @@
    "machines": [
     "hitachi-intel18a"
    ],
+   "co_machines": [],
    "families": [
     "SPIN"
    ],
@@ -1883,6 +1914,7 @@
    "machines": [
     "hrl-eo-18q"
    ],
+   "co_machines": [],
    "families": [
     "SPIN"
    ],
@@ -1983,6 +2015,7 @@
     "ibm-falcon",
     "ibm-osprey"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -2125,6 +2158,7 @@
    "machines": [
     "icfo-quione"
    ],
+   "co_machines": [],
    "families": [
     "ATOM"
    ],
@@ -2172,6 +2206,7 @@
    "machines": [
     "infleqtion-sqale"
    ],
+   "co_machines": [],
    "families": [
     "ATOM"
    ],
@@ -2259,6 +2294,9 @@
    "note": "",
    "machines": [
     "intel-tunnel-falls"
+   ],
+   "co_machines": [
+    "hitachi-intel18a"
    ],
    "families": [
     "SPIN"
@@ -2352,6 +2390,7 @@
     "ionq-superion-256",
     "ionq-superion-10k"
    ],
+   "co_machines": [],
    "families": [
     "ION"
    ],
@@ -2474,6 +2513,7 @@
     "iqm-halocene-150",
     "iqm-spark-eldorado"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -2576,6 +2616,7 @@
    "machines": [
     "iqcc-facility"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -2638,6 +2679,7 @@
    "machines": [
     "it4i-vlq"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -2688,6 +2730,7 @@
     "kriss-50q",
     "kriss-20q"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -2749,6 +2792,7 @@
    "machines": [
     "lbnl-aqt"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -2804,6 +2848,10 @@
    "url": "equs.mit.edu",
    "note": "",
    "machines": [],
+   "co_machines": [
+    "harvard-448",
+    "harvard-continuous-3000"
+   ],
    "families": [
     "ATOM"
    ],
@@ -2846,6 +2894,9 @@
    "note": "",
    "machines": [
     "microsoft-majorana-1"
+   ],
+   "co_machines": [
+    "atom-computing-magne"
    ],
    "families": [
     "ATOM",
@@ -2944,6 +2995,7 @@
    "machines": [
     "msu-rb-50q"
    ],
+   "co_machines": [],
    "families": [
     "ATOM"
    ],
@@ -3001,6 +3053,7 @@
    "machines": [
     "riken-64q"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -3071,6 +3124,7 @@
     "nordquantique-gkp",
     "nordquantique-tesseract"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -3149,6 +3203,9 @@
    "machines": [
     "orca-pt2"
    ],
+   "co_machines": [
+    "iqcc-facility"
+   ],
    "families": [
     "PHOTON"
    ],
@@ -3224,6 +3281,7 @@
     "originq-wukong-102",
     "originq-wukong-180"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -3289,6 +3347,7 @@
     "oqc-genesis-16",
     "oqc-toshiko-32"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -3388,6 +3447,7 @@
     "pasqal-orion",
     "pasqal-vela"
    ],
+   "co_machines": [],
    "families": [
     "ATOM"
    ],
@@ -3485,6 +3545,7 @@
    "machines": [
     "zhuangzi-2.0"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -3543,6 +3604,7 @@
    "machines": [
     "photonic-inc"
    ],
+   "co_machines": [],
    "families": [
     "DEFECT"
    ],
@@ -3615,6 +3677,7 @@
    "machines": [
     "planqc-maqcs"
    ],
+   "co_machines": [],
    "families": [
     "ATOM"
    ],
@@ -3677,6 +3740,7 @@
    "machines": [
     "psnc-piast-q"
    ],
+   "co_machines": [],
    "families": [
     "ION"
    ],
@@ -3735,6 +3799,7 @@
    "machines": [
     "princeton-yb-erasure"
    ],
+   "co_machines": [],
    "families": [
     "ATOM"
    ],
@@ -3814,6 +3879,7 @@
    "machines": [
     "psiquantum-omega"
    ],
+   "co_machines": [],
    "families": [
     "PHOTON"
    ],
@@ -3911,6 +3977,7 @@
    "machines": [
     "qilimanjaro"
    ],
+   "co_machines": [],
    "families": [
     "ANNEAL"
    ],
@@ -3953,6 +4020,9 @@
    "note": "",
    "machines": [
     "qolab-iqcc"
+   ],
+   "co_machines": [
+    "iqcc-facility"
    ],
    "families": [
     "SC"
@@ -4021,6 +4091,7 @@
     "qpiai-indus-25",
     "qpiai-kaveri-64"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -4084,6 +4155,7 @@
    "machines": [
     "quamcore"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -4142,6 +4214,7 @@
     "quandela-belenos",
     "quandela-lucy"
    ],
+   "co_machines": [],
    "families": [
     "PHOTON"
    ],
@@ -4238,6 +4311,7 @@
     "quantinuum-apollo",
     "quantinuum-sol"
    ],
+   "co_machines": [],
    "families": [
     "ION"
    ],
@@ -4342,6 +4416,7 @@
    "machines": [
     "quantum-art-multicore"
    ],
+   "co_machines": [],
    "families": [
     "ION"
    ],
@@ -4406,6 +4481,7 @@
    "machines": [
     "quantum-brilliance-quoll"
    ],
+   "co_machines": [],
    "families": [
     "DEFECT"
    ],
@@ -4472,6 +4548,7 @@
    "machines": [
     "quantum-motion-qm-one"
    ],
+   "co_machines": [],
    "families": [
     "SPIN"
    ],
@@ -4550,6 +4627,7 @@
    "machines": [
     "qxl-neutral-atom-50"
    ],
+   "co_machines": [],
    "families": [
     "ATOM"
    ],
@@ -4617,6 +4695,7 @@
     "ctqg-tianyan-287",
     "ctqg-tianyan-504"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -4692,6 +4771,9 @@
     "quantware-vio-40k",
     "quantware-contralto-a17",
     "quantware-tenor-d64"
+   ],
+   "co_machines": [
+    "iqcc-facility"
    ],
    "families": [
     "SC"
@@ -4775,6 +4857,7 @@
    "machines": [
     "qudoor-abaq"
    ],
+   "co_machines": [],
    "families": [
     "ION"
    ],
@@ -4834,6 +4917,7 @@
     "qudora-nfqc",
     "qudora-nfqc-1k"
    ],
+   "co_machines": [],
    "families": [
     "ION"
    ],
@@ -4897,6 +4981,7 @@
     "harvard-448",
     "quera-libra"
    ],
+   "co_machines": [],
    "families": [
     "ATOM"
    ],
@@ -5012,6 +5097,7 @@
    "machines": [
     "quix-carina"
    ],
+   "co_machines": [],
    "families": [
     "PHOTON"
    ],
@@ -5090,6 +5176,7 @@
    "machines": [
     "quobly"
    ],
+   "co_machines": [],
    "families": [
     "SPIN"
    ],
@@ -5157,6 +5244,9 @@
    "url": "qutech.nl",
    "note": "",
    "machines": [],
+   "co_machines": [
+    "fujitsu-snv-prototype"
+   ],
    "families": [
     "SPIN",
     "DEFECT"
@@ -5213,6 +5303,7 @@
     "rigetti-cepheus-1-108q",
     "rigetti-cepheus-1-36q"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -5297,6 +5388,11 @@
    "url": "",
    "note": "",
    "machines": [],
+   "co_machines": [
+    "riken-64q",
+    "fujitsu-10000q",
+    "fujitsu-1000q"
+   ],
    "families": [
     "SC"
    ],
@@ -5330,6 +5426,7 @@
    "machines": [
     "rqc-ion-50q"
    ],
+   "co_machines": [],
    "families": [
     "ION"
    ],
@@ -5387,6 +5484,7 @@
    "machines": [
     "sandia-qscout"
    ],
+   "co_machines": [],
    "families": [
     "ION"
    ],
@@ -5447,6 +5545,7 @@
    "machines": [
     "seeqc-sfq-5q"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -5517,6 +5616,7 @@
    "machines": [
     "sqc-11q"
    ],
+   "co_machines": [],
    "families": [
     "SPIN"
    ],
@@ -5590,6 +5690,7 @@
    "machines": [
     "sustc-biased-erasure"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -5654,6 +5755,7 @@
    "machines": [
     "spinq-ursa-major"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -5715,6 +5817,7 @@
    "machines": [
     "drdo-tifr-tcs-6q"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -5764,6 +5867,7 @@
    "machines": [
     "toshiba-dtc"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -5828,6 +5932,7 @@
     "tsinghua-512-ion",
     "tsinghua-kunlun-32"
    ],
+   "co_machines": [],
    "families": [
     "SC",
     "ION"
@@ -5910,6 +6015,7 @@
    "machines": [
     "universal-quantum-iqpu"
    ],
+   "co_machines": [],
    "families": [
     "ION"
    ],
@@ -5981,6 +6087,7 @@
    "machines": [
     "uibk-innsbruck-ion"
    ],
+   "co_machines": [],
    "families": [
     "ION"
    ],
@@ -6062,6 +6169,9 @@
    "url": "quantum.umd.edu",
    "note": "",
    "machines": [],
+   "co_machines": [
+    "umd-duke-ion"
+   ],
    "families": [
     "ION"
    ],
@@ -6100,6 +6210,7 @@
     "ustc-zuchongzhi-3.2",
     "ustc-zuchongzhi-2.1"
    ],
+   "co_machines": [],
    "families": [
     "SC",
     "PHOTON"
@@ -6210,6 +6321,7 @@
    "machines": [
     "vtt-q50"
    ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -6268,6 +6380,7 @@
     "xanadu-borealis",
     "xanadu-aurora"
    ],
+   "co_machines": [],
    "families": [
     "PHOTON"
    ],
@@ -6362,6 +6475,7 @@
    "machines": [
     "yaqumo-yb"
    ],
+   "co_machines": [],
    "families": [
     "ATOM"
    ],
@@ -6437,6 +6551,9 @@
    "note": "",
    "machines": [
     "zju-125q"
+   ],
+   "co_machines": [
+    "tsinghua-kunlun-32"
    ],
    "families": [
     "SC"
@@ -6517,6 +6634,7 @@
     "hanyuan-1",
     "hanyuan-2"
    ],
+   "co_machines": [],
    "families": [
     "ATOM"
    ],
@@ -6579,6 +6697,7 @@
    "machines": [
     "qinghe-1"
    ],
+   "co_machines": [],
    "families": [
     "ATOM"
    ],

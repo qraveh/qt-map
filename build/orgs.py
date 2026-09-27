@@ -116,6 +116,7 @@ GUARD_WORDS = ('Computation', 'Computing', 'computing', 'computation')
 
 HEAD = {'en': ('Machines in the Atlas', 'Technologies its machines use', 'Architectures', 'Mentioned in the briefs of'),
         'ru': ('Машины в Атласе', 'Технологии её машин', 'Архитектуры', 'Упоминается в брифах')}
+HEAD_CO = {'en': 'Machines it co-developed (filed under another organisation)', 'ru': 'Машины, созданные с её участием (учтены за другой организацией)'}
 RULES = [('1', 'org_id is a register name'),
          ('1*', 'org_id is an id form of a register name (case, first word)'),
          ('2', 'org_id is an academic body of academic-bodies.csv'),
@@ -665,8 +666,31 @@ def build(reg_dir=None):
         c = per.get(rec['slug'], Counter())
         rec['mentions'] = {'briefs': sorted(c, key=lambda b: (-c[b], node_layer.get(b, 99), node_ix.get(b, 10 ** 6), b)),
                            'count': sum(c.values())}
+    # co-developers: every organisation the register names in a machine's org string beside the builder the machine is filed
+    # under ("Harvard / MIT / QuEra", "RIKEN with AIST, NICT, …") — the machine is listed on their pages too (27 Sep 2026)
+    slug_of_machine = {i: rec['slug'] for rec in recs for i in rec['machines']}
+    by_term = {}
+    for rec in recs:
+        for t_ in [rec['name']] + list(rec['aliases']):
+            by_term.setdefault(t_.casefold(), rec['slug'])
+    def co_slug(tok):
+        k = tok.casefold()
+        if k in by_term: return by_term[k]
+        hits = {rec['slug'] for rec in recs if rec['name'].casefold().startswith(k + ',') or rec['name'].casefold().startswith(k + ' (')}
+        return hits.pop() if len(hits) == 1 else None
+    co = defaultdict(list)
+    for m in machines:
+        org = _ws(m.get('org')).replace('(', ',').replace(')', ',')
+        for tok in re.split(r',|;|/| with | and |\+', org):
+            tok = tok.strip(' .')
+            slug = co_slug(tok) if tok else None
+            if slug and slug != slug_of_machine.get(m['id']) and m['id'] not in co[slug]:
+                co[slug].append(m['id'])
+    for rec in recs:
+        rec['co_machines'] = sorted(co.get(rec['slug'], []), key=lambda i: (STAT_ORDER.index(status_class(mby[i].get('status'))),
+                                                                          _ws(mby[i].get('name')).casefold(), i))
 
-    fields = ('slug', 'name', 'aliases', 'tier', 'segment', 'country', 'city', 'url', 'note', 'machines', 'families',
+    fields = ('slug', 'name', 'aliases', 'tier', 'segment', 'country', 'city', 'url', 'note', 'machines', 'co_machines', 'families',
               'architectures', 'stations', 'hosts', 'mentions')
     out = [{k: rec[k] for k in fields} for rec in sorted(recs, key=lambda r: r['slug'])]
     imported = datetime.datetime.fromtimestamp(R.mtime, datetime.timezone.utc).strftime('%Y-%m-%d')
@@ -839,6 +863,11 @@ def profile_html(o, lang, base, machines_by_id, node_by_id, path_by_id):
             lis.append('<li><a href="%smachine/%s.html">%s</a>%s</li>'
                        % (b, e(m['id']), e(m.get('name') or m['id']), (' — ' + ', '.join(bits)) if bits else ''))
         out.append('<h3>%s (%d)</h3><ul>%s</ul>' % (h_m, len(ms), ''.join(lis)))
+    cms = [machines_by_id[i] for i in o.get('co_machines') or [] if i in machines_by_id]
+    if cms:
+        out.append('<h3>%s (%d)</h3><ul>%s</ul>' % (HEAD_CO[L], len(cms), ''.join(
+            '<li><a href="%smachine/%s.html">%s</a> — %s</li>' % (b, e(m['id']), e(m.get('name') or m['id']), e(m.get('org') or ''))
+            for m in cms)))
     if o.get('stations'):
         out.append('<h3>%s</h3><ul>%s</ul>' % (h_t, ''.join(
             '<li><a href="%stechnology/%s.html">%s</a> · %d</li>' % (b, e(s['id']), node_name(s['id']), s['machines'])
@@ -846,7 +875,7 @@ def profile_html(o, lang, base, machines_by_id, node_by_id, path_by_id):
     if o.get('architectures'):
         def short(p):
             pr = path_by_id.get(p) or {}
-            return e((pr.get('short') or {}).get(L) or pr.get(L) or (pr.get('short') or {}).get('en') or p)
+            return e(pr.get(L) or (pr.get('short') or {}).get(L) or pr.get('en') or p)   # the full name (one name per architecture, 27 Sep 2026)
         out.append('<h3>%s</h3><ul>%s</ul>' % (h_a, ''.join(
             '<li><a href="%sarchitecture/%s.html">%s</a></li>' % (b, e(p), short(p)) for p in o['architectures'])))
     briefs = (o.get('mentions') or {}).get('briefs') or []

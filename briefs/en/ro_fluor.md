@@ -1,6 +1,6 @@
 ---
 id: ro_fluor
-name: Fluorescence state detection (ions)
+name: Fluorescence state detection (ions, defects)
 layer: "6 Readout"
 status: demonstrated
 since: 1995

@@ -25,6 +25,7 @@ The floor is disorder. Unintentional doping, interface roughness and shell strai
 | 2018 | Quantized-conductance Majorana claim; retracted 2021-03-08 | Delft (Kouwenhoven et al.) | [D][297] |
 | 2025-02 | InAs–Al stack supports 1% parity assignment error | Microsoft Azure Quantum | [D][13] |
 | 2026-06 | InAs–Pb stack, higher-gap shell, ~20 s parity switching, one wire | Microsoft Quantum | [D][20] |
+
 No yield, uniformity or disorder figure is published; the only public scaling aid is an rf method resolving wire-end-state splitting to µeV for per-device bring-up [D][20].
 
 ## Manufacturing, materials & supply chain

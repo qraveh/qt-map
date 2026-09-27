@@ -355,6 +355,7 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .lg.emp{color:var(--muted)}
 .lg.ed{width:22px;height:0;border-top:2px solid var(--ink)}
 .lg.ed.rep{border-top-style:dashed;border-color:var(--ink2)}
+.lg.ed.soft{border-top-style:dotted;border-color:var(--ink)}
 .lg.ed.con{border-top-style:dotted;border-color:var(--crit)}
 .gl.try a{color:var(--accent)}
 .insp h3{margin:0 0 2px;font-size:17px;line-height:1.25;text-wrap:balance}
@@ -470,6 +471,7 @@ tr.rowflash>td{background:color-mix(in srgb,var(--focus) 20%,transparent)}
 .tag-R{border-color:var(--warn);color:var(--warn)}
 .tag-S{border-color:var(--photon);color:var(--photon)}
 .tag-G{border-color:var(--mid);color:var(--ink2)}
+.tag-fact{border-color:var(--mid);color:var(--ink2);font-style:italic;text-transform:none}
 .tag-P{border-color:var(--spin);color:var(--spin)}
 .tag-reg{border-style:dashed;border-color:var(--rule);color:var(--muted);background:transparent}
 a.tag-link{text-decoration:none;border-bottom:1px solid var(--accent);cursor:pointer}
@@ -588,6 +590,7 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
   /* the sheet must not bury the map: it opens at under half the screen and the page gets room to scroll the map above it */
   .insp{max-height:46vh;max-height:46dvh}
   body.has-sheet{padding-bottom:48vh;padding-bottom:48dvh}
+  body.has-sheet .fbk{display:none}   /* the feedback button would sit over the sheet's text (27 Sep 2026) */
   html{scroll-padding-top:60px}
   .insp.sheet-max{max-height:90vh}
   .insp.sheet-max{max-height:90dvh}
@@ -631,7 +634,7 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
 }
 
 @media (prefers-reduced-motion:no-preference){.station rect.box,.pathline,.altstub,.pcline{transition:opacity .25s ease}}
-@media print{.mapbar,.controls,.mobilebar,.tocdrawer,.tocbackdrop{display:none}.mapwrap{max-height:none;overflow:visible}#app{max-width:none}}
+@media print{.mapbar,.controls,.mobilebar,.tocdrawer,.tocbackdrop,.insp{display:none}.mapwrap{max-height:none;overflow:visible}.mapwrap svg{max-width:100%!important;height:auto!important}#app{max-width:none}.mapwrap,.tbl{break-inside:avoid}}
 
 /* map zoom — a translucent window in the top-right corner of the map bar (desktop); the paths row keeps a margin
    clear of it. On ≤1024 px the same control moves into the scroller and pins to its bottom-right corner. */
@@ -720,6 +723,9 @@ figure.fig81{margin:1em 0 1.2em;padding:0}
 figure.fig81 figcaption{font-size:13px;color:var(--ink2);margin-top:6px;text-align:left}
 figure.fig81 .pt:hover .mk{stroke-width:2.6}
 /* one page per language (27 Sep 2026): a block of the other language waits for its fragment; a short notice stands in its place */
+dl.glossary{columns:2;column-gap:28px;margin:6px 0 14px;font-size:14px} dl.glossary dt{font-weight:600;break-after:avoid} dl.glossary dd{margin:0 0 8px;color:var(--ink2)} .glossary-h{margin:14px 0 4px;font-size:15px;font-weight:600} @media (max-width:760px){dl.glossary{columns:1}}
+.skip{position:absolute;left:8px;top:-40px;z-index:200;padding:6px 10px;background:var(--ink);color:var(--bg);border-radius:6px;text-decoration:none} .skip:focus{top:8px}
 .langwait{margin:24px 0;padding:10px 14px;border:1px dashed var(--mid);border-radius:8px;color:var(--ink2);font-size:14px}
+.langwait.langfail{border-style:solid;border-color:#c0504d;color:var(--ink)} .langwait.langfail a{color:var(--accent,#1f5fbf)}
 html.lang-loading .mast .seg [aria-pressed="true"]{opacity:.6}
 """
