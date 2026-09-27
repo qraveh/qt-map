@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Permanent reference numbers — one integer per work, the same everywhere in the Map (editor's decision of 26 Sep 2026).
+"""Permanent reference numbers — one integer per work, the same everywhere in the Atlas (editor's decision of 26 Sep 2026).
 
 data/work-numbers.json is the table:  {"next": N, "works": [{"n": 54, "ids": [...], "label": "Nee26"}, ...]}
   n       the number the page prints, in §9, in every technology brief and in the station cards; never reused, never moved

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""References of the Quantum Technology Map, canonised in IEEE style (editor's review of 23 Sep 2026).
+"""References of the Quantum Technology Atlas, canonised in IEEE style (editor's review of 23 Sep 2026).
 
 Two files describe the sources:
   - the report's §9 (report/report_EN.md, mirrored in report_RU.md) is the REGISTER: stable codes ([S2], [X11] …) with the
@@ -477,7 +477,7 @@ def ieee(r):
 
 def render_list(lang, order, works, num):
     """§9 as one list in number order; ids keep the register codes (en-src-S2, en-src-S7-2 …) so in-text links and the
-    release check address entries by code. Numbers are permanent, so the list has the order of first entry into the Map's
+    release check address entries by code. Numbers are permanent, so the list has the order of first entry into the Atlas's
     bibliography — the 2026.09 order for the first 205, later works after them."""
     P = lang + '-'; rows = []; done = set()
     for c in order:

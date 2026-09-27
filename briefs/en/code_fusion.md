@@ -32,7 +32,7 @@ On the report's cross-platform table photonics scores zero on every fault-tolera
 Nothing is manufactured for this code; it inherits the photonic-IC stack of its inputs (300 mm silicon at GlobalFoundries) [C][G:GF-QTS-2026-05]. No yield, cost or energy figure exists because nothing runs it. The burden it imposes is synchronisation: a {7,4}-encoded state means ~168 photons per round, each with a source, switch path and detector channel, against a record of 8 fused photons at 0.4–2.3 per minute [D][528]. At 10³ fusions/s the constraint is switch loss; at the 10⁶ a useful machine needs, cryogenic detector channels and GHz feed-forward, neither built. ECCN 4A906 covers the assembled machine [G:BIS-QUANTUM-ECCN-2024-09].
 
 ## Role in the stack
-Requires linear-optical fusion and a resource-state factory, neither at code-relevant scale, and provides nothing downstream — it tops the photonic fusion path (PsiQuantum, Quandela, QuiX). It replaces GKP-bosonic concatenation, and the switch is total: different carrier, detectors, error model. Its MHz cycle is a design claim, not a measurement: the real cycle is resource-state supply, ~0.4–2.3 per minute [D][528]. Verification: the thresholds are decoder simulations under stated noise models, never measured or independently reproduced; the 2026 re-analysis is the first published challenge to the framework's relevance, unanswered as of 4 Sep 2026.
+Requires linear-optical fusion and a resource-state factory, neither at code-relevant scale, and provides nothing downstream — it tops the photonic fusion architecture (PsiQuantum, Quandela, QuiX). It replaces GKP-bosonic concatenation, and the switch is total: different carrier, detectors, error model. Its MHz cycle is a design claim, not a measurement: the real cycle is resource-state supply, ~0.4–2.3 per minute [D][528]. Verification: the thresholds are decoder simulations under stated noise models, never measured or independently reproduced; the 2026 re-analysis is the first published challenge to the framework's relevance, unanswered as of 4 Sep 2026.
 
 ## Actors & economics
 **Who.**
@@ -67,7 +67,7 @@ Confirm by 2028: an end-to-end fusion-lattice demonstration at any code distance
 [146] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
 [155] S. Bartolucci *et al.*, “Fusion-based quantum computation,” *Nat. Commun.*, vol. 14, Art. no. 912, Feb. 2023, doi: [10.1038/s41467-023-36493-1](https://doi.org/10.1038/s41467-023-36493-1). [arXiv:2101.09310](https://arxiv.org/abs/2101.09310). [S]
 [335] M. C. Löbl, L. A. M. Pettersson, J. Dragašević, S. X. Chen, and O. A. D. Sandberg, “The subthreshold issue of fusion-based quantum computing,” [arXiv:2606.28490](https://arxiv.org/abs/2606.28490), Jun. 2026. [S]
-[527] R. Neeman, “Quantum Technology Map,” ed. 2026.09, Qodeh, Sep. 2026, §3.2. [D]
+[527] R. Neeman, “Quantum Technology Atlas,” ed. 2026.09, Qodeh, Sep. 2026, §3.2. [D]
 [528] P. Thomas, L. Ruscio, O. Morin, and G. Rempe, “Fusion of deterministically generated photonic graph states,” *Nature*, vol. 629, no. 8012, pp. 567–572, May 2024, doi: [10.1038/s41586-024-07357-5](https://doi.org/10.1038/s41586-024-07357-5). [D]
 
 ## Open verification items

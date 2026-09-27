@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""C2 smoke — machines on the Map (sync Playwright API). Runs the same script at 1600×1000 and 400×800:
+"""C2 smoke — machines on the Atlas (sync Playwright API). Runs the same script at 1600×1000 and 400×800:
 default 96 stations lit → select google-willow (lit = its non-gap nodes, only path `sc` lit) → requires on (edges only among lit)
 → click transmon (lit ⊆ machine ∪ {transmon}; station card has "Used by" with ≥ 10 machines) → reset (96 lit, select empty,
 no altuse) → RU labels. Exit 0 iff every check passes and there are 0 console errors (Google Fonts ERR_TUNNEL ignored)."""
@@ -7,7 +7,7 @@ import json, pathlib, sys
 from playwright.sync_api import sync_playwright
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-PAGE = ROOT / 'dist' / 'Quantum-Technology-Map-2026.09.html'
+PAGE = ROOT / 'dist' / 'Quantum-Technology-Atlas-2026.09.html'
 MACH = json.load(open(ROOT / 'data' / 'machines.json', encoding='utf-8'))
 GRAPH = json.load(open(ROOT / 'data' / 'graph.json', encoding='utf-8'))
 NN = len(GRAPH['nodes']); NP = len(GRAPH['paths']); NM = len(MACH['machines'])          # 110 stations, 17 paths, 153 machines since 26 Sep 2026 — read from the data
@@ -85,7 +85,7 @@ def run(pw, w, h):
     check('willow: only path sc lit', set(r['lines']) == {'sc'}, r['lines'])
     check('willow: altuse == nodes used only as alternate', set(r['altuse']) == WILLOW_ALT, (r['altuse'], sorted(WILLOW_ALT)))
     check('willow: machine card shown (title, register link, evidence footer)', 'Willow' in r['card'] and 'register card' in r['card'] and '✅ 14 / 16' in r['card'], r['card'][:120])
-    check('willow: card shows the Map gaps', 'Map gap: ∅G-lru' in r['card'], '')
+    check('willow: card shows the Atlas gaps', 'Atlas gap: ∅G-lru' in r['card'], '')
     check('willow: no horizontal overflow', not r['hscroll'] and not r['inspOver'], (r['hscroll'], r['inspOver']))
     p.locator('#bartog').click()
     check('bar summary names the machine', 'machine: Willow' in p.locator('#barsum').inner_text())
@@ -513,8 +513,8 @@ def hints(pw):
     p.on('console', lambda m: m.type == 'error' and errors.append(m.text)); p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
     p.goto(PAGE.as_uri(), wait_until='load', timeout=120000); expand_bar(p)
     p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0", timeout=60000)
-    check('title without edition', p.evaluate("()=>document.querySelector('h1.title').textContent.trim()") == 'Quantum Technology Map')
-    why = p.evaluate("()=>{const ps=[...document.querySelectorAll('div.prose.lang-en p')]; const w=ps.find(x=>x.textContent.startsWith('Why a Quantum Technology Map')); return w?w.querySelectorAll('.tt').length:-1;}")
+    check('title without edition', p.evaluate("()=>document.querySelector('h1.title').textContent.trim()") == 'Quantum Technology Atlas')
+    why = p.evaluate("()=>{const ps=[...document.querySelectorAll('div.prose.lang-en p')]; const w=ps.find(x=>x.textContent.startsWith('Why a Quantum Technology Atlas')); return w?w.querySelectorAll('.tt').length:-1;}")
     check('the "Why" paragraph of About carries hints on its own terms (editor, 23 Sep)', why >= 1, why)
     defs = p.evaluate("()=>[...document.querySelectorAll('div.prose.lang-en p[data-nohint]')].map(x=>[x.textContent.slice(0,30), x.querySelectorAll('.tt').length])")
     check('definition paragraphs carry no hints (≥ 8 marked, 0 hints)', len(defs) >= 8 and all(n == 0 for _, n in defs), defs[:4])
@@ -861,7 +861,7 @@ def feedback(pw):
     p.evaluate("()=>{location.hash=''; document.getElementById('ru-s9').scrollIntoView();}"); p.wait_for_timeout(300)
     p.keyboard.press('Escape'); p.click('#fbkbtn'); p.wait_for_timeout(200)
     r3 = p.evaluate("()=>({ctx:document.getElementById('fbkctx').textContent, mail:decodeURIComponent(document.getElementById('fbkmail').href)})")
-    check('the location is the English section title (§9 Sources), the mail goes to Raveh Neeman', 'location: §9 Sources' in r3['ctx'] and 'ru-s9' not in r3['ctx'] and r3['mail'].startswith('mailto:raveh.neeman@qodeh.com?subject=[QT Map] Feedback: §9 Sources'), (r3['ctx'][:160], r3['mail'][:120]))
+    check('the location is the English section title (§9 Sources), the mail goes to Raveh Neeman', 'location: §9 Sources' in r3['ctx'] and 'ru-s9' not in r3['ctx'] and r3['mail'].startswith('mailto:raveh.neeman@qodeh.com?subject=[QT Atlas] Feedback: §9 Sources'), (r3['ctx'][:160], r3['mail'][:120]))
     p.evaluate("()=>window.__setLang('en')")
     ctx.close(); b.close()
     errs = [e for e in errors if not ('fonts.g' in e and ('ERR_TUNNEL' in e or 'net::' in e)) and 'ERR_TUNNEL' not in e]

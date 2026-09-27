@@ -13,7 +13,7 @@ updated: 2026-09-03
 
 ## Identity & lineage
 Two hyperfine (or nuclear-spin) ground-state sublevels at a bias field where the first-order Zeeman shift vanishes, leaving only the quadratic term: coherence in seconds to hours, with single-ion memories reaching hour scale [98]. The lineage is the field's own: NIST's first ion-trap logic gate stored a qubit in the internal states of one laser-cooled ion (Monroe, Meekhof, King, Itano, Wineland, PRL 75, 4714, 1995) [306], the default for ions and later atoms ever since.
-f = Pauli + leakage — leakage into neighbouring sublevels, invisible to a Pauli decoder; reach: four paths, QCCD and electronic-gate ions, alkali and alkaline-earth atoms [graph].
+f = Pauli + leakage — leakage into neighbouring sublevels, invisible to a Pauli decoder; reach: four architectures, QCCD and electronic-gate ions, alkali and alkaline-earth atoms [graph].
 
 ## Physics & limits
 The clock point kills first-order field sensitivity; what remains is the quadratic Zeeman term plus field *gradients* across the register, so memory degrades with register size, not only time. The memory is not the limit — the drive is. Raman gates carry a spontaneous-scattering error falling only as ~1/Δ, and the scattered photon usually lands outside the qubit manifold: leakage, not Pauli error. Deleting the laser deletes that term — 2Q 99.97(1)%, 1Q 99.99916(7)% on a ten-qubit seven-zone trap [D][G:OXIONICS-ALLELEC-2024-07], 8.4×10⁻⁵ without ground-state cooling [D][96]. The control modality moves the floor, not the encoding.
@@ -30,7 +30,7 @@ On atoms, Cs hyperfine T₂ = 12.6 s in a 6,100-atom array [D][124]. Fleet-scale
 No dedicated process; the encoding rides whatever surrounds the species (Ba⁺, Yb⁺, Ca⁺, Cs, Rb, Sr). Two control families, two supply chains: Raman gates need the optical stack — Helios runs seven-plus wavelengths across 1,228 electrodes — while chip microwave traces delete it and move the burden to trap fabrication, internalised by IonQ's SkyWater purchase [C][18]; eleQtron sells the same idea as MAGIC [C][116]. Enriched ¹³⁷Ba and ¹⁷¹Yb are the plausible chokepoint, but no dated supplier fact was found; no specific ECCN.
 
 ## Role in the stack
-Requires nothing — the base encoding, the most reused node in the tree. Its "replaces" edge to omg is an extension: omg keeps these ground states and adds a metastable manifold so one species supplies qubit, ancilla and coolant [G:OMG-BLUEPRINT-2021]. It adds nothing to the derived clock, set on the QCCD path by transport — a 9.66 ms round against the measured ~55 ms full-width layer (≈18 layers/s) and a 70 µs gate. Verification: Oxford's 1.5(4)×10⁻⁷ is one qubit in a dedicated apparatus, Quantinuum's 2.5×10⁻⁵ a 98-ion fleet average — three orders apart; only the fleet number is an architectural input.
+Requires nothing — the base encoding, the most reused node in the tree. Its "replaces" edge to omg is an extension: omg keeps these ground states and adds a metastable manifold so one species supplies qubit, ancilla and coolant [G:OMG-BLUEPRINT-2021]. It adds nothing to the derived clock, set on the QCCD architecture by transport — a 9.66 ms round against the measured ~55 ms full-width layer (≈18 layers/s) and a 70 µs gate. Verification: Oxford's 1.5(4)×10⁻⁷ is one qubit in a dedicated apparatus, Quantinuum's 2.5×10⁻⁵ a 98-ion fleet average — three orders apart; only the fleet number is an architectural input.
 
 ## Actors & economics
 **Who.**
@@ -54,7 +54,7 @@ Requires nothing — the base encoding, the most reused node in the tree. Its "r
 
 **Strategic reading.** Universality is the point: everyone uses it, so it is neither moat nor lock-out. The contest is the drive. If all-electronic control scales past ten qubits the laser chain becomes a liability for Quantinuum and every atom vendor; if not, IonQ bought a foundry for a lab result.
 
-*Open niche:* leakage out of the manifold is the error this encoding contributes, invisible to standard randomised benchmarking and reported in non-comparable units — per Clifford by Quantinuum, per atom per gate by the atom groups. One definition serves all four paths, and no vendor will define it against itself.
+*Open niche:* leakage out of the manifold is the error this encoding contributes, invisible to standard randomised benchmarking and reported in non-comparable units — per Clifford by Quantinuum, per atom per gate by the atom groups. One definition serves all four architectures, and no vendor will define it against itself.
 
 ## Outlook & open questions
 Confirm if all-electronic control reaches a fleet average below 10⁻⁵ with published leakage, or a second group replicates 8.4×10⁻⁵; demote if it stays a ten-qubit result. Best case 2029: microwave-driven hyperfine qubits the default. Worst case: gradient-limited leakage caps ions near 10⁻⁵ and omg takes the base.

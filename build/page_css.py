@@ -212,7 +212,7 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .ptab td.ln{white-space:nowrap;color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:10.5px;padding-right:10px}
 .ptab a.prim{font-weight:600}
 .ptab a.alt{color:var(--ink2)}
-/* machines on the Map (C2): a station the selected machine uses only as an alternate keeps a dashed outline while lit */
+/* machines on the Atlas (C2): a station the selected machine uses only as an alternate keeps a dashed outline while lit */
 .station.altuse rect.box{stroke-dasharray:4 3}
 #machine{width:300px;max-width:100%;min-width:0}
 .insp .mlinks{margin:-4px 0 8px;font-size:12.5px;display:flex;flex-wrap:wrap;gap:2px 6px}

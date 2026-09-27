@@ -1,5 +1,5 @@
 {
-  "title": "Quantum Technology Map",
+  "title": "Quantum Technology Atlas",
   "upload_type": "publication",
   "publication_type": "report",
   "imprint_publisher": "Qodeh",
@@ -31,10 +31,10 @@
     "cryo-CMOS",
     "quantum benchmarking"
   ],
-  "notes": "Interactive edition published at https://qodeh.com/publications/quantum-technology-map/. Research and drafting with Claude (Anthropic) under the author's direction and review.",
+  "notes": "Interactive edition published at https://qodeh.com/publications/quantum-technology-atlas/. Research and drafting with Claude (Anthropic) under the author's direction and review.",
   "related_identifiers": [
     {
-      "identifier": "https://qodeh.com/publications/quantum-technology-map/",
+      "identifier": "https://qodeh.com/publications/quantum-technology-atlas/",
       "relation": "isIdenticalTo",
       "resource_type": "publication-report"
     },

@@ -33,7 +33,7 @@ Best in class is one characterised IQM pair, CZ 99.93% over 40 h [D][37]; typica
 Nothing of its own: it inherits the carrier's 300 mm Nb/Al lithography, yield spread and one drive plus one readout line per qubit. That is the whole commercial argument — dual-rail erasure adds a rail and a check per qubit (384 ns, 2.54×10⁻² erasure [D][80]), cat codes a pump and buffer mode. The I/O wall is the carrier's: coax per qubit, ~10³ qubits per fridge. What this encoding adds at 10⁴–10⁶ is leakage removal inside every 1.1 µs cycle and the decoder bandwidth to use it. Export exposure is the carrier's (US EAR ECCN 3A901).
 
 ## Role in the stack
-The default Layer-2 encoding on every mainstream transmon path (IBM, Google, Rigetti, IQM, OQC, USTC/Zhejiang, Fujitsu). Dual-rail erasure or cat encoding replaces it when a vendor trades control complexity for a friendlier error structure: Alice & Bob, AWS and D-Wave/Quantum Circuits have, IBM and Google have not. The price is quantifiable: measured dual-rail gate errors simulate to Λ ≈ 27 against 14 for 0.1% depolarising noise [S][79], where this encoding measures 2.14 and 1.40(6) [D][1], [3]. It adds nothing to the derived clock, which stays the carrier's 0.65 µs round inside its measured 1.1 µs cycle. Verification: the 72× is one unreplicated USTC device, and leakage is self-reported with no cross-vendor protocol.
+The default Layer-2 encoding on every mainstream transmon architecture (IBM, Google, Rigetti, IQM, OQC, USTC/Zhejiang, Fujitsu). Dual-rail erasure or cat encoding replaces it when a vendor trades control complexity for a friendlier error structure: Alice & Bob, AWS and D-Wave/Quantum Circuits have, IBM and Google have not. The price is quantifiable: measured dual-rail gate errors simulate to Λ ≈ 27 against 14 for 0.1% depolarising noise [S][79], where this encoding measures 2.14 and 1.40(6) [D][1], [3]. It adds nothing to the derived clock, which stays the carrier's 0.65 µs round inside its measured 1.1 µs cycle. Verification: the 72× is one unreplicated USTC device, and leakage is self-reported with no cross-vendor protocol.
 
 ## Actors & economics
 **Who.**
@@ -48,7 +48,7 @@ The default Layer-2 encoding on every mainstream transmon path (IBM, Google, Rig
 2026-06-02 · IBM · investment commitment · > $10 B over five years · announced [G][55][G:IBM-10B-2026-06]
 2026-07-02 · IQM · Nasdaq and Helsinki listing · pro-forma cash €337 M · closed [C][56][G:IQM-LISTING-2026-07]
 
-**Market & supply chain.** No supply chain of its own; concentration sits one layer down, in Nb/Al lithography and dilution refrigerators. Being free, it is what every G1–G4 budget on this path buys.
+**Market & supply chain.** No supply chain of its own; concentration sits one layer down, in Nb/Al lithography and dilution refrigerators. Being free, it is what every G1–G4 budget on this architecture buys.
 
 **IP & standards.** No dated patent family found for bare-subspace leakage mitigation as of 2026-09-04; PatSnap's 2026-06-30 counts are not encoding-specific [P][G:PATSNAP-2026-06].
 

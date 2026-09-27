@@ -3,7 +3,7 @@
 
 A new brief is written with citation placeholders — `[D][@arxiv:2306.11727]`, `[C][@u:https://…]`, `[D][@doi:10.…]` — and a
 sidecar `<bid>.sources.json` ([{key, grade, record}] in order of first citation, record in the data/brief-sources.json schema).
-This script resolves every key to a work the Map already knows (the report's bibliography data/sources.json → "report:CODE#i";
+This script resolves every key to a work the Atlas already knows (the report's bibliography data/sources.json → "report:CODE#i";
 data/brief-sources.json by DOI, arXiv id or normalised URL) or adds the sidecar's record; fills data/brief-sources.json
 `briefs[bid]` in order of first citation; takes the permanent numbers (build/worknum.py — a new work gets the next number);
 replaces the placeholders by `[n]` in the English and, if present, the Russian text; and regenerates the md Sources lists

@@ -31,7 +31,7 @@ No logical qubit exists in this encoding, and the threshold it must meet is disp
 No fabrication step of its own: the encoding rides its host — PsiQuantum's 300 mm silicon nitride, Quandela's III–V quantum dots, QuiX's SiN meshes. Control is inherited: no per-qubit drive line, but every interferometer needs a phase shifter and every output a detector — thousands of cryogenic channels and their fan-out at 10³–10⁴ qubits. Chokepoints are the detector vendors (Single Quantum, ID Quantique, Photon Spot) and the III–V and SiN foundries [P][G:SNSPD-VENDORS-2026]; ECCN 4A906 applies [G:BIS-QUANTUM-2024].
 
 ## Role in the stack
-The encoding under the fusion-based discrete-variable path (PsiQuantum, Quandela, QuiX); it needs only a single-photon source and has no rival there. Swapping path for time-bin trades interferometer phase stability for delay-line loss, unaffordable on chip. It also caps fusion: passive linear-optical Bell measurement on a dual-rail qubit succeeds at 50%, at least 75% with unentangled ancillae [S][336]. Verification: no group has run a syndrome cycle using heralded loss as an erasure flag, so the advantage is a design argument, not a measurement.
+The encoding under the fusion-based discrete-variable architecture (PsiQuantum, Quandela, QuiX); it needs only a single-photon source and has no rival there. Swapping path for time-bin trades interferometer phase stability for delay-line loss, unaffordable on chip. It also caps fusion: passive linear-optical Bell measurement on a dual-rail qubit succeeds at 50%, at least 75% with unentangled ancillae [S][336]. Verification: no group has run a syndrome cycle using heralded loss as an erasure flag, so the advantage is a design argument, not a measurement.
 
 ## Actors & economics
 **Who.**

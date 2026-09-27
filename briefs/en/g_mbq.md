@@ -31,7 +31,7 @@ No row is a gate: the 2026 result measured one nanowire of a multi-tetron array:
 Nothing is fabricated for this mechanism alone: it consumes the InAs–Pb stack and the readout below it. The unbuilt part is control: per-tetron tunable dot–wire couplings, an rf loop per measurable parity, and a demodulator-to-bias path that must resolve inside the X window. At 10³ tetrons the line budget resembles transmon readout; the wall is latency, unquantified because no adaptive sequence has been attempted.
 
 ## Role in the stack
-Requires the Majorana-parity carrier (two wires per tetron) and quantum-capacitance readout; it would supply the topological path's entire Clifford layer. The only substitute is braiding in T-junction networks, geometry nobody is building. No derived clock: with no gate operated and no code on the path, sum of the syndrome round: gate layers + transport + readout + reset reduces to its readout term, ~3.6 µs [D][13], reset unpublished. Verification is telegraph statistics, not benchmarks: no randomized benchmarking, tomography or Bell test exists. QuTech's independent single-shot parity readout (Nature 650, 2026-02-11) replicates the method on InSb dot chains, limited protection stated [D][182]; Legg's Matters Arising (2026-06-24) argues the readout regions are disordered and gapless, so the signals may be trivial, and Microsoft's same-day reply concedes nothing [D][22].
+Requires the Majorana-parity carrier (two wires per tetron) and quantum-capacitance readout; it would supply the topological architecture's entire Clifford layer. The only substitute is braiding in T-junction networks, geometry nobody is building. No derived clock: with no gate operated and no code on the architecture, sum of the syndrome round: gate layers + transport + readout + reset reduces to its readout term, ~3.6 µs [D][13], reset unpublished. Verification is telegraph statistics, not benchmarks: no randomized benchmarking, tomography or Bell test exists. QuTech's independent single-shot parity readout (Nature 650, 2026-02-11) replicates the method on InSb dot chains, limited protection stated [D][182]; Legg's Matters Arising (2026-06-24) argues the readout regions are disordered and gapless, so the signals may be trivial, and Microsoft's same-day reply concedes nothing [D][22].
 
 ## Actors & economics
 **Who.**
@@ -49,7 +49,7 @@ Requires the Majorana-parity carrier (two wires per tetron) and quantum-capacita
 
 **Roadmaps & track record.** ("years not decades", promised 2025-02, for fault tolerance → restated as 2029 in 2026-06; status 4 Sep 2026: no joint measurement, no gate) [C][181]; DARPA's utility-scale horizon is 2033 [G:QBI-STAGEC-2026]. Every annual Microsoft result has been readout; 2029 carries no X-measurement milestone.
 
-**Strategic reading.** If measurement-only Cliffords work, Microsoft skips T-junction fabrication and owns the path; if not, the encoding, readout and epitaxy nodes below lose their only consumer.
+**Strategic reading.** If measurement-only Cliffords work, Microsoft skips T-junction fabrication and owns the architecture; if not, the encoding, readout and epitaxy nodes below lose their only consumer.
 
 *Open niche:* Designing the QCVV test that separates a topological joint-parity projection from a trivial two-level one, on published telegraph data, needs no device access.
 

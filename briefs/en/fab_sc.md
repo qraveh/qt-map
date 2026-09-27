@@ -4,7 +4,7 @@ name: Superconducting-qubit lithography (Nb/Al JJ, 300 mm)
 layer: "10 Manufacturing"
 status: demonstrated
 since: 2007
-one_line: "300 mm junction lithography and post-fab trimming set the frequency spread every superconducting path inherits."
+one_line: "300 mm junction lithography and post-fab trimming set the frequency spread every superconducting architecture inherits."
 verdict: "Real: 300 mm optical lithography yields 393/400 qubits at ~8% junction-resistance spread; trimming lands 97.4% on target. Anderon is an LOI — demote if no non-IBM wafer ships by end-2027."
 updated: 2026-09-03
 ---
@@ -47,7 +47,7 @@ No control or readout of its own; it sets the ceiling others hit, through escape
 
 ## Role in the stack
 
-Root node of the superconducting family: it requires nothing upstream and provides for transmon, fluxonium and the rf-SQUID flux qubit, plus long-range c-couplers, millikelvin SFQ control, flux-DAC multiplexing, multi-chip modules with l-couplers, and cryogenic microwave links. Paths served: transmon, bosonic cat/GKP, dual-rail erasure, annealing. It replaces 3D integration in the planar-versus-stacked trade. Fan-in is zero, so it is no hub, yet its fan-out is the family's widest and every downstream node inherits its spread and yield. It adds nothing to the derived clock (derived clock = sum of the syndrome round: gate layers + transport + readout + reset, 0.65 µs on the superconducting path) but bounds how many qubits reach it.
+Root node of the superconducting family: it requires nothing upstream and provides for transmon, fluxonium and the rf-SQUID flux qubit, plus long-range c-couplers, millikelvin SFQ control, flux-DAC multiplexing, multi-chip modules with l-couplers, and cryogenic microwave links. Architectures served: transmon, bosonic cat/GKP, dual-rail erasure, annealing. It replaces 3D integration in the planar-versus-stacked trade. Fan-in is zero, so it is no hub, yet its fan-out is the family's widest and every downstream node inherits its spread and yield. It adds nothing to the derived clock (derived clock = sum of the syndrome round: gate layers + transport + readout + reset, 0.65 µs on the superconducting architecture) but bounds how many qubits reach it.
 
 ## Verification (QCVV)
 
@@ -79,7 +79,7 @@ Frequency is predicted from junction resistance via Ambegaokar–Baratoff, then 
 
 **Roadmaps & track record.** Anderon (promised 2026-05-21 · foundry serving vendors worldwide · status 2026-09-03: LOI only, yet IBM's 2026-08-26 release calls it "its quantum wafer foundry") [G][593][C][279]. Rigetti/ABAA (2024-08 · production frequency targeting · in use under the 108-qubit product, whose 99.5% two-qubit target slipped to "later 2026") [D][218][C][35]. IBM's fabrication milestones land on schedule; its merchant-access promise has no record.
 
-**Strategic reading.** If 300 mm superconducting fab scales, IBM wins twice — vertically integrated, and landlord to everyone else's capacity. Fabless vendors win only with a neutral foundry, which does not exist. Losers are vendors whose differentiator is fabrication skill, not architecture. The threat is capture, not substitution: every superconducting path needs this node, and equipment suppliers have no bargaining power against its owner.
+**Strategic reading.** If 300 mm superconducting fab scales, IBM wins twice — vertically integrated, and landlord to everyone else's capacity. Fabless vendors win only with a neutral foundry, which does not exist. Losers are vendors whose differentiator is fabrication skill, not architecture. The threat is capture, not substitution: every superconducting architecture needs this node, and equipment suppliers have no bargaining power against its owner.
 
 *Open niche:* a small QCVV/SFQ research company can plug in at the measurement nobody publishes — cross-line frequency targeting and collision statistics. Verifying ABAA-class claims and comparing $R_n$ RSD across foundries needs metrology, not fab access.
 

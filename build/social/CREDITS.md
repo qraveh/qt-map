@@ -1,4 +1,4 @@
-# og:image of the Quantum Technology Map — photo collage
+# og:image of the Quantum Technology Atlas — photo collage
 
     programme   QT-Map · subproject media-register (SP08) · tier 40_outputs · 2026-09-26
     files       og-image_quantum-technology-map.jpg (2400 × 1260, for og:image / twitter:image)

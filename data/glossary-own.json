@@ -383,22 +383,24 @@
  {
   "id": "path",
   "match": [
-   "path",
-   "paths"
+   "architecture",
+   "architectures"
   ],
   "match_ru": [
-   "путь",
-   "пути",
-   "путей",
-   "путём",
-   "путям",
-   "путях",
-   "Путь",
-   "Пути"
+   "архитектура",
+   "архитектуры",
+   "архитектур",
+   "архитектурой",
+   "архитектурам",
+   "архитектурах",
+   "архитектуру",
+   "архитектуре",
+   "Архитектура",
+   "Архитектуры"
   ],
   "scope": "first",
-  "en": "A platform drawn as a line through the stack: one technology chosen per layer, with the alternatives listed beside it",
-  "ru": "Платформа, проведённая линией через стек: по одной технологии на слой, рядом перечислены альтернативы",
+  "en": "A platform drawn as a line through the stack: one technology chosen per layer, with the alternatives listed beside it; a machine is an instance of one",
+  "ru": "Платформа, проведённая линией через стек: по одной технологии на слой, рядом перечислены альтернативы; машина — экземпляр одной из них",
   "src": "§7.1",
   "why": "The report's central move — platforms are not compared as wholes but as chains of separable choices",
   "variants": [
@@ -493,8 +495,8 @@
   "id": "isolate",
   "match": [
    "isolate",
-   "isolated path",
-   "isolating a path"
+   "isolated architecture",
+   "isolating an architecture"
   ],
   "match_ru": [
    "изолированного",
@@ -866,11 +868,11 @@
  {
   "id": "path-instance",
   "match": [
-   "path instance"
+   "architecture instance"
   ],
   "match_ru": [
-   "экземпляр пути",
-   "экземпляр одного пути",
+   "экземпляр архитектуры",
+   "экземпляр одной архитектуры",
    "экземпляры"
   ],
   "scope": "first",
@@ -1057,7 +1059,7 @@
   "en": "A machine's qubit platform: superconducting circuits, trapped ions, neutral atoms, photonics, semiconductor or defect spins, topological, annealers",
   "ru": "Кубитная платформа машины: сверхпроводниковые схемы, ионы в ловушках, нейтральные атомы, фотоника, полупроводниковые или дефектные спины, топологические, отжиг",
   "src": "§8",
-  "why": "Family, architecture and path name three different groupings in the same chapter; this is the coarsest",
+  "why": "Family and architecture name two different groupings in the same chapter; this is the coarsest",
   "variants": [
    {
     "until": "8",
@@ -1288,8 +1290,8 @@
   ],
   "scope": "first",
   "re": null,
-  "en": "How much rests on a technology in the graph — how many platform families and paths depend on it, and how recently it reached hardware; it sets a brief's depth, not a verdict",
-  "ru": "Сколько всего опирается на технологию в графе: сколько семейств платформ и путей от неё зависят и насколько недавно она дошла до железа — задаёт глубину брифа, а не оценку технологии",
+  "en": "How much rests on a technology in the graph — how many platform families and architectures depend on it, and how recently it reached hardware; it sets a brief's depth, not a verdict",
+  "ru": "Сколько всего опирается на технологию в графе: сколько семейств платформ и архитектур от неё зависят и насколько недавно она дошла до железа — задаёт глубину брифа, а не оценку технологии",
   "src": "About / briefs preface",
   "why": "About and the brief index use the word before the preface defines it"
  }

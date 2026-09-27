@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build data/machines.json (SPEC step C2, "machines on the Map") from the machines register.
+"""Build data/machines.json (SPEC step C2, "machines on the Atlas") from the machines register.
 
 Inputs : the machines register's CSVs — QT_MACHINES_DIR if set, else the live register folder when this machine has it, else the
          snapshot data/register/ that this script copies after every run (so the repository carries the exact inputs of machines.json)
@@ -26,7 +26,7 @@ SOURCE = {"register": "quantum-machines · 17 Sep 2026, re-cut 26 Sep 2026 (thre
           "evidence": "machine-stations-evidence.csv · 17 Sep 2026 (locator passes 1–3)"}
 FAMILY_ORDER = ['SC', 'ION', 'ATOM', 'PHOTON', 'SPIN', 'DEFECT', 'TOPO', 'ANNEAL']
 GAP_PREFIX = '∅'
-# A cell's node is one of four things (register schema of 26 Sep 2026, decision D5): a Map station; a gap `∅G-…` (the Map has
+# A cell's node is one of four things (register schema of 26 Sep 2026, decision D5): an Atlas station; a gap `∅G-…` (the Atlas has
 # no station for what the machine runs); `none` (nothing in this layer — no code, no decoder, no interconnect, no encoding
 # layer, no entangling gate); `undisclosed` (the machine has something here but publishes nothing). Only the first is a node.
 SENTINELS = ('none', 'undisclosed')
@@ -148,7 +148,7 @@ def build():
                 "summary": r['usage_summary'],
                 "evidence": {"type": r['evidence_type'], "url": r['evidence_url'],
                              "locator": r['evidence_locator'], "verified": v}})
-            if cell_state(node) == 'station':   # by_node indexes Map stations only; gaps and cell values are counted per machine
+            if cell_state(node) == 'station':   # by_node indexes Atlas stations only; gaps and cell values are counted per machine
                 by_node.setdefault(node, {"primary": set(), "alternate": set()})[r['role']].add(mid)
         for k, lst in layers.items():
             lst.sort(key=lambda s: (s['role'] != 'primary', s['node'], s['evidence']['url'], s['summary']))

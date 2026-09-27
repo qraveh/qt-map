@@ -1,4 +1,4 @@
-"""Independent oracle for the Map's lit-set rules (SPEC step D.1).
+"""Independent oracle for the Atlas's lit-set rules (SPEC step D.1).
 
 Pure Python, stdlib only. Built from data/graph.json and the editor's written
 rules (see RULES.md); it never reads the implementation.

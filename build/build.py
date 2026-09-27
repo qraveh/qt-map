@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""One-shot build: graph → data/graph.json + §7 of the reports → dist/Quantum-Technology-Map-<edition>.html + CHANGELOG.md"""
+"""One-shot build: graph → data/graph.json + §7 of the reports → dist/Quantum-Technology-Atlas-<edition>.html + CHANGELOG.md"""
 import os, sys, runpy
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'build')); sys.path.insert(0, os.path.join(ROOT, 'data'))

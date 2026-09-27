@@ -2,7 +2,7 @@
 """Stamp the edition's identifiers into every file that carries them, then (optionally) build.
 
     python3 build/release.py stamp --concept 10.5281/zenodo.C --version 10.5281/zenodo.V \
-        [--site https://qodeh.com/publications/quantum-technology-map/] [--date YYYY-MM-DD] [--edition 2026.09] \
+        [--site https://qodeh.com/publications/quantum-technology-atlas/] [--date YYYY-MM-DD] [--edition 2026.09] \
         --status beta|release [--build]
     python3 build/release.py show
 
@@ -65,13 +65,13 @@ def stamp(a):
     # beta: a reserved DOI does not resolve — print it as text and cite the site; release: link it and cite the DOI.
     # The citation names the work, never an edition (27 Sep 2026): the concept DOI resolves to the newest edition.
     doi_link = r'\[(10\.5281/zenodo\.\d+)\]\(https://doi\.org/10\.5281/zenodo\.\d+\)'
-    cite = r'^> Neeman, R\. \((\d{4})\)\. \*Quantum Technology Map\*(?: \([^)]*\))?\. Qodeh\. .*$'
+    cite = r'^> Neeman, R\. \((\d{4})\)\. \*Quantum Technology Atlas\*(?: \([^)]*\))?\. Qodeh\. .*$'
     if status == 'beta':
         r = re.sub(doi_link, r'\1 (resolves on release)', r)
-        r = re.sub(cite, lambda m: '> Neeman, R. (%s). *Quantum Technology Map*. Qodeh. %s' % (m.group(1), site), r, flags=re.M)
+        r = re.sub(cite, lambda m: '> Neeman, R. (%s). *Quantum Technology Atlas*. Qodeh. %s' % (m.group(1), site), r, flags=re.M)
     else:
         r = re.sub(r'\b(10\.5281/zenodo\.\d+) \(resolves on release\)', r'[\1](https://doi.org/\1)', r)
-        r = re.sub(cite, lambda m: '> Neeman, R. (%s). *Quantum Technology Map*. Qodeh. https://doi.org/%s' % (m.group(1), concept), r, flags=re.M)
+        r = re.sub(cite, lambda m: '> Neeman, R. (%s). *Quantum Technology Atlas*. Qodeh. https://doi.org/%s' % (m.group(1), concept), r, flags=re.M)
     wr('README.md', r)
     print('stamped:', dict(concept=concept, version=version, site=site, status=status, date=date, edition=edition))
     if a.build:

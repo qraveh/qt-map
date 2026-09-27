@@ -5,7 +5,7 @@
     python3 build/audit/refs_check.py [dist.html]        # exit 1 on any defect; prints one line per class
 
 Reads the rendered page, not the data files, so it catches what the reader sees. Checks:
-  numbering   numbers are the Map's permanent work numbers: each list ascends without repeats (gaps are normal — a brief shows
+  numbering   numbers are the Atlas's permanent work numbers: each list ascends without repeats (gaps are normal — a brief shows
               its subset of the bibliography); every in-text citation [n] links to entry n of ITS OWN list; every entry is
               cited at least once from its own text (an uncited entry is dead weight); no bare "[n]" left as text
   one number  the same work (DOI, arXiv id or URL) carries the same number in §9 and in every brief, and one number never
@@ -21,7 +21,7 @@ Reads the rendered page, not the data files, so it catches what the reader sees.
 """
 import collections, html as H, os, re, sys
 
-PAGE = sys.argv[1] if len(sys.argv) > 1 else 'dist/Quantum-Technology-Map-2026.09.html'
+PAGE = sys.argv[1] if len(sys.argv) > 1 else 'dist/Quantum-Technology-Atlas-2026.09.html'
 h = open(PAGE, encoding='utf-8').read()
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'build'))
 import brief_refs as _BR
@@ -96,7 +96,7 @@ def key_of(ref_html):
     if m: return 'arxiv:' + m.group(1).lower()
     m = re.search(r'Available: <a href="([^"]+)"', ref_html)
     if m: return 'url:' + m.group(1).rstrip('/').lower()
-    m = re.search(r'href="([^"#]+)"', ref_html)   # an in-page link (the Map citing its own section) is no identity
+    m = re.search(r'href="([^"#]+)"', ref_html)   # an in-page link (the Atlas citing its own section) is no identity
     return ('url:' + m.group(1).rstrip('/').lower()) if m else None
 forms = collections.defaultdict(dict)   # key -> {entry text: [scopes]}
 nokey = []
@@ -140,7 +140,7 @@ for scope, items in lists.items():
         elif PRE.match(r): kinds['preprint'] += 1
         elif WEB.match(r): kinds['web'] += 1
         elif REP.match(r): kinds['report/other'] += 1
-        elif re.match(r'^R\. Neeman, “Quantum Technology Map,”.*<a class="xref"', r): kinds['self'] += 1
+        elif re.match(r'^R\. Neeman, “Quantum Technology Atlas,”.*<a class="xref"', r): kinds['self'] += 1
         elif ' Retracted: <i>' in r and JOUR.match(r.split(' Retracted: ')[0]): kinds['journal (retracted)'] += 1
         else: kinds['UNMATCHED'] += 1; prob('formatting', '%s[%d]: form not recognised: %s' % (scope.replace('-src', ''), n, text(r)[:140]))
         tx = text(r)

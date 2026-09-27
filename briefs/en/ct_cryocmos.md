@@ -24,7 +24,7 @@ Attributes (a affinity; b time; c readout; d mobility; e control @ placement; f 
 - f = coherent: amplitude, phase, timing, crosstalk.
 - g = CMOS, 130 nm to 14 nm.
 
-Rank 5 of 111; a hub reaching superconducting and spin paths.
+Rank 5 of 111; a hub reaching superconducting and spin architectures.
 
 ## Physics & limits
 
@@ -58,7 +58,7 @@ HRL removed warm waveform generation, but the cable count did not fall: 296 line
 
 ## Role in the stack
 
-Two paths: superconducting transmons (IBM, Google, IQM) and silicon or germanium quantum-dot spins (Intel, Diraq, Quantum Motion, HRL, Quobly, Equal1). It requires a 300 mm CMOS foundry — a dependency spins already carry, so they get cryo-CMOS as a by-product while superconducting vendors fund it separately. It provides the cold digital substrate a cryogenic decoder needs: a 4 K predecoder costed under 0.56 mW for 3,780× syndrome-bandwidth reduction [S][G:PINBALL-2025-12]. It replaces room-temperature control, the only part of this layer with revenue, and competes with single-flux-quantum control, published above 99% at millikelvin [D][G:SEEQC-2026]; switching buys cold silicon on an 18–24-month tape-out loop, paid for in cooling budget that would otherwise buy qubits. The off-diagonal reading is the cold-fabrication corner: a non-quantum object whose only distinguishing attribute is placement at 4 K. Derived clock = sum of the syndrome round: gate layers + transport + readout + reset; this node does not bind it — 4.0 ns sequencer granularity [D][163] against a 0.65 µs round whose largest term is 282 ns of readout. Empty slots next door: a cryogenic readout digitiser and a standard cold digital interface.
+Two architectures: superconducting transmons (IBM, Google, IQM) and silicon or germanium quantum-dot spins (Intel, Diraq, Quantum Motion, HRL, Quobly, Equal1). It requires a 300 mm CMOS foundry — a dependency spins already carry, so they get cryo-CMOS as a by-product while superconducting vendors fund it separately. It provides the cold digital substrate a cryogenic decoder needs: a 4 K predecoder costed under 0.56 mW for 3,780× syndrome-bandwidth reduction [S][G:PINBALL-2025-12]. It replaces room-temperature control, the only part of this layer with revenue, and competes with single-flux-quantum control, published above 99% at millikelvin [D][G:SEEQC-2026]; switching buys cold silicon on an 18–24-month tape-out loop, paid for in cooling budget that would otherwise buy qubits. The off-diagonal reading is the cold-fabrication corner: a non-quantum object whose only distinguishing attribute is placement at 4 K. Derived clock = sum of the syndrome round: gate layers + transport + readout + reset; this node does not bind it — 4.0 ns sequencer granularity [D][163] against a 0.65 µs round whose largest term is 282 ns of readout. Empty slots next door: a cryogenic readout digitiser and a standard cold digital interface.
 
 ## Verification (QCVV)
 
@@ -106,7 +106,7 @@ Credibility: HRL alone named a dated deliverable and shipped it, and IBM bought 
 
 ## Outlook & open questions
 
-Confirm within 12–24 months if IBM publishes a peer-reviewed full chain — drive, flux and readout — on ≥100 superconducting qubits at warm-rack parity; if the HRL controller reappears inside IBM above 18 qubits; if anyone reports a defined power per qubit below 5 mW at 4 K under load. Demote if by end-2027 nothing drives more than about fifty qubits end-to-end in a peer-reviewed result and Heron-class systems still ship warm racks. Best case by 2029: cold control standard on spin machines and IBM's flux path, a 10,000-qubit module on one 4 K plant at ≤5 mW/qubit. Worst case: the budget stays binding, single-flux-quantum logic takes the superconducting path, and cryo-CMOS survives only as millikelvin biasing for spins.
+Confirm within 12–24 months if IBM publishes a peer-reviewed full chain — drive, flux and readout — on ≥100 superconducting qubits at warm-rack parity; if the HRL controller reappears inside IBM above 18 qubits; if anyone reports a defined power per qubit below 5 mW at 4 K under load. Demote if by end-2027 nothing drives more than about fifty qubits end-to-end in a peer-reviewed result and Heron-class systems still ship warm racks. Best case by 2029: cold control standard on spin machines and IBM's flux path, a 10,000-qubit module on one 4 K plant at ≤5 mW/qubit. Worst case: the budget stays binding, single-flux-quantum logic takes the superconducting architecture, and cryo-CMOS survives only as millikelvin biasing for spins.
 
 Open questions: (1) a defensible power-per-qubit definition? (2) will a foundry qualify a cryogenic corner? (3) does controller drift dominate below 10⁻⁴ qubit error? (4) must per-qubit power fall, or can the plant grow tenfold? (5) will IBM keep HRL's 130 nm design? Watch ISSCC 2027, IBM's post-acquisition disclosures, and any 4 K plant marketed above 20 W.
 

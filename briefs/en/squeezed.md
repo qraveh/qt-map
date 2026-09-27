@@ -32,7 +32,7 @@ The on-chip-to-bulk gap is ~13 dB, the GKP gap ~9 dB.
 Squeezers ride the CV photonic-IC line — SiN and thin-film lithium niobate with periodic poling. Merchant TFLN supply is thin: HyperLight (USD 37 M Series B, 2024-09) and Lightium (USD 7 M seed) [P][G:TFLN-FUNDING-2024-09], plus the PIXEurope pilot line [G:PIXEUROPE-2024-11]. Xanadu builds rather than buys; no cost per squeezer is public. Poling uniformity and waveguide loss are the yield-limiting defects, both acting on the headline dB. I/O is one pump and one homodyne chain per mode plus phase locking; Aurora ran 35 chips at 12 modes on a 1 MHz cycle [D][149]. At 10³ modes the wall is pump distribution and phase stability; at 10⁴–10⁶, detector and DAC channel count. No ECCN names squeezers; 4A906 catches the machine [G:BIS-QUANTUM-ECCN-2024-09].
 
 ## Role in the stack
-Requires a photonic-IC foundry; provides the modes for CV Gaussian gates with GKP-assisted non-Gaussian operations and for GKP grid encoding on Xanadu's path. It replaces discrete photons as carrier — DV trades erasure-dominated errors for Gaussian-plus-loss ones, and switching costs the whole detector chain. Squeezing level sets the error floor of every CV operation, bounding the derived clock indirectly rather than contributing a gate time. Verification: 0.62 dB is single-source and unreplicated; the independent TFLN result measures raw squeezing, and its ">10 dB" is inferred by subtracting detection loss [D][275].
+Requires a photonic-IC foundry; provides the modes for CV Gaussian gates with GKP-assisted non-Gaussian operations and for GKP grid encoding on Xanadu's architecture. It replaces discrete photons as carrier — DV trades erasure-dominated errors for Gaussian-plus-loss ones, and switching costs the whole detector chain. Squeezing level sets the error floor of every CV operation, bounding the derived clock indirectly rather than contributing a gate time. Verification: 0.62 dB is single-source and unreplicated; the independent TFLN result measures raw squeezing, and its ">10 dB" is inferred by subtracting detection loss [D][275].
 
 ## Actors & economics
 **Who.**
@@ -60,7 +60,7 @@ Requires a photonic-IC foundry; provides the modes for CV Gaussian gates with GK
 *Open niche:* a standardised homodyne benchmark for effective squeezing, raw and loss-corrected reported apart, is a clean QCVV product.
 
 ## Outlook & open questions
-Confirm by 2028: on-chip GKP effective squeezing above 2 dB with its loss budget; demote if still below 1 dB. Best case 2029: a second group publishes a competing GKP figure. Worst case: integration loss pins it near 1 dB and CV/GKP stays a research path. Open: does loss fall as the roadmap claims; can poled TFLN reach GKP-grade fidelity.
+Confirm by 2028: on-chip GKP effective squeezing above 2 dB with its loss budget; demote if still below 1 dB. Best case 2029: a second group publishes a competing GKP figure. Worst case: integration loss pins it near 1 dB and CV/GKP stays a research architecture. Open: does loss fall as the roadmap claims; can poled TFLN reach GKP-grade fidelity.
 
 ## Sources
 [149] H. A. Rad *et al.*, “Scaling and networking a modular photonic quantum computer,” *Nature*, vol. 638, no. 8052, pp. 912–919, Jan. 2025, doi: [10.1038/s41586-024-08406-9](https://doi.org/10.1038/s41586-024-08406-9). [D]

@@ -453,7 +453,7 @@ N("ic_multidie",9,"Multi-die packaging in one module (flip-chip, bump-bonded con
   "A qubit die flip-chipped to a wiring or control die inside one package — Sycamore, Zuchongzhi, Ocelot, the SFQ flip-chip module: the interconnect below the module scale, which the multi-chip-module node does not cover.","Кристалл с кубитами, соединённый flip-chip с кристаллом разводки или управления внутри одного корпуса — Sycamore, Zuchongzhi, Ocelot, SFQ-модуль flip-chip: интерконнект ниже масштаба модуля, который узел многочиповых модулей не описывает.",
   (),"Bump yield and thermal mismatch are the limits; it moves the wiring wall, not the module wall.","Пределы — выход годных bump-соединений и тепловое рассогласование; сдвигает стену разводки, а не стену модулей."),
 N("ic_fanout",9,"Cryogenic signal fan-out for spin arrays (router die, 3-D stacked wiring)","Криогенная разводка сигналов для спиновых массивов (кристалл-маршрутизатор, 3-D многослойная разводка)",1.0,["fab"],None,"na",None,"static","lf",["mK","4K"],["coherent"],"cmos","E",
-  "A millikelvin router (Intel's Pando Tree fanning out to 64 channels), 3-D stacked cryogenic wiring or on-die routing that takes a spin array from tens to thousands of gate lines — the interconnect layer the spin paths had no slot for.","Милликельвиновый маршрутизатор (Pando Tree Intel с разводкой на 64 канала), 3-D многослойная криогенная разводка или маршрутизация на кристалле, ведущие спиновый массив от десятков к тысячам линий затворов — слой интерконнекта, для которого у спиновых путей не было слота.",
+  "A millikelvin router (Intel's Pando Tree fanning out to 64 channels), 3-D stacked cryogenic wiring or on-die routing that takes a spin array from tens to thousands of gate lines — the interconnect layer the spin architectures had no slot for.","Милликельвиновый маршрутизатор (Pando Tree Intel с разводкой на 64 канала), 3-D многослойная криогенная разводка или маршрутизация на кристалле, ведущие спиновый массив от десятков к тысячам линий затворов — слой интерконнекта, для которого у спиновых путей не было слота.",
   (),"Channel count per die and heat load per line are the figures of merit; no inter-module link yet.","Показатели — число каналов на кристалл и тепловая нагрузка на линию; межмодульной связи пока нет."),
 N("ic_cryolink",9,"Cryogenic microwave link between refrigerators","Криогенный СВЧ-линк между криостатами",1.0,["fab"],None,"na",None,"longrange","mw",["mK"],["loss","coherent"],"sclitho","E",
   "30 m superconducting waveguide at < 50 mK; Bell fidelity 80.4% at 12.5 kHz; 0.55–0.65 dB total loss.","30-м сверхпроводящий волновод при < 50 мК; fidelity Bell 80.4% при 12.5 кГц; суммарные потери 0.55–0.65 дБ.",
@@ -717,7 +717,7 @@ REQ=[
 ]
 # One-of groups (27 Sep 2026): a requires edge with a group is satisfied by any member of its (src, group) set; a group has >= 2
 # members; a source may carry several groups (g_tc: carrier and control). Strength: hard = the source cannot exist without it,
-# soft = the usual route (counts toward reach only where the path holds it, like a group member). Scope link = the need belongs
+# soft = the usual route (counts toward reach only where the architecture holds it, like a group member). Scope link = the need belongs
 # to the link, not to the path's readout slot (the slot check exempts it).
 GROUP={}
 def _grp(src,name,*dsts):
@@ -844,7 +844,7 @@ CONX={
   mitig=("as for the transmon: the driver on a separate die, bandwidth limiting, quasiparticle traps, shielding","как для трансмона: драйвер на отдельном кристалле, ограничение полосы, ловушки квазичастиц, экранирование"),
   status="open",date="2023-09",url="https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.4.030310"),
 ("squeezed","cx_switch"):dict(
-  price=("the fault-tolerance threshold of a GKP architecture is stated as ~10 dB of effective squeezing; every 1 dB of switch loss on the route caps the reachable squeezing at ~7 dB, so the switch budget is the tightest number of the path","порог отказоустойчивости архитектуры на GKP задан как ~10 дБ эффективного сжатия; каждый 1 дБ потерь переключателя на маршруте ограничивает достижимое сжатие ~7 дБ, поэтому бюджет переключателя — самое жёсткое число пути"),
+  price=("the fault-tolerance threshold of a GKP architecture is stated as ~10 dB of effective squeezing; every 1 dB of switch loss on the route caps the reachable squeezing at ~7 dB, so the switch budget is the tightest number of the architecture","порог отказоустойчивости архитектуры на GKP задан как ~10 дБ эффективного сжатия; каждый 1 дБ потерь переключателя на маршруте ограничивает достижимое сжатие ~7 дБ, поэтому бюджет переключателя — самое жёсткое число архитектуры"),
   mitig=("loss budgets per mode and switch, the lowest-loss switch technologies (BTO, MEMS), or a discrete-variable encoding where loss is a heralded erasure","бюджет потерь на моду и переключатель, переключатели с наименьшими потерями (BTO, MEMS) или дискретное кодирование, где потеря — геральдированное стирание"),
   status="open",date="2021-02",url="https://arxiv.org/abs/2010.02905"),
 ("code_highrate","cx_nn"):dict(
@@ -1019,7 +1019,7 @@ def compute():
         notes=[]; parts={}
         t2q=_pow(g["b"]["t"]) if g and g["b"]["t"] is not None else None
         tmeas=_pow(r["c"]["t"]) if r and r["c"] and r["c"]["t"] is not None else None
-        # the round is that of the first code on the path that has a published syndrome circuit (erasure codes → host code)
+        # the round is that of the first code on the architecture that has a published syndrome circuit (erasure codes → host code)
         code=None; codeid=None; d2r=d1r=None
         codes=[NODE[i] for i in p["slots"].get(7,[])]
         for cd in codes:
@@ -1048,7 +1048,7 @@ def compute():
             p["round"]=dict(total=total,parts=parts,limiter=lim,d2=d2,d1=d1,code=HOST_ROUND.get(codeid,codeid),missing=missing,
                             sources=[x for x in (d2r,d1r,t1qr,tmove_r,treset_r) if x],notes=notes)
         else:
-            p["round"]=dict(total=None,parts={},limiter=None,notes=notes+([] if code else ["no code on this path"]))
+            p["round"]=dict(total=None,parts={},limiter=None,notes=notes+([] if code else ["no code on this architecture"]))
         # reaction time
         tff=rec(ct["id"],"t_ff",unit="s") if ct else None; tdec=rec(dec["id"],"t_decode",unit="s") if dec else None
         floor=(tmeas or 0)+(tdec["num"] if tdec else 0) if (tmeas is not None and tdec) else None

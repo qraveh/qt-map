@@ -51,9 +51,9 @@ Per channel: a bias current, an amplifier, a coaxial line from 1–4 K to room t
 
 ## Role in the stack
 
-The node sits on the fusion-based discrete-variable path (PsiQuantum, Quandela, QuiX) and the continuous-variable/GKP path (Xanadu). It requires single photons and provides heralding for linear-optical fusion plus photon detection for the ion–photon and spin–photon interconnects — the hub reading: one part is the readout organ for three otherwise unrelated modalities. Derived clock = sum of the syndrome round: gate layers + transport + readout + reset — no such round on a photonic path; the detector contributes ~1.0×10⁻⁸ s, so it is never the slow term for ion or defect links (rates 10–250 s⁻¹ [D][108], [109]) and only marginally so for fusion, where feed-forward latency dominates.
+The node sits on the fusion-based discrete-variable architecture (PsiQuantum, Quandela, QuiX) and the continuous-variable/GKP architecture (Xanadu). It requires single photons and provides heralding for linear-optical fusion plus photon detection for the ion–photon and spin–photon interconnects — the hub reading: one part is the readout organ for three otherwise unrelated modalities. Derived clock = sum of the syndrome round: gate layers + transport + readout + reset — no such round on a photonic architecture; the detector contributes ~1.0×10⁻⁸ s, so it is never the slow term for ion or defect links (rates 10–250 s⁻¹ [D][108], [109]) and only marginally so for fusion, where feed-forward latency dominates.
 
-It conflicts with the surface code specifically: destructive detection precludes repeated syndrome extraction on the same photon, so photonic QEC must regenerate carriers between rounds. Switching away is asymmetric — Xanadu's CV path uses room-temperature homodyne for most measurements and needs number resolution only for GKP preparation [D][149], [150]. Neighbouring empty slots: a room-temperature >99% number-resolving detector, and any non-destructive telecom photon counter, which would dissolve the conflict above.
+It conflicts with the surface code specifically: destructive detection precludes repeated syndrome extraction on the same photon, so photonic QEC must regenerate carriers between rounds. Switching away is asymmetric — Xanadu's CV architecture uses room-temperature homodyne for most measurements and needs number resolution only for GKP preparation [D][149], [150]. Neighbouring empty slots: a room-temperature >99% number-resolving detector, and any non-destructive telecom photon counter, which would dissolve the conflict above.
 
 ## Verification (QCVV)
 
@@ -76,7 +76,7 @@ Conflict. A "98.9% median (PsiQuantum)" figure is quoted elsewhere; the Omega pa
 | NIST Boulder | research | US | 98.0% efficiency record, WSi films, 400 kpixel camera, calibration | [D][269], [464] |
 | JPL | research | US | 2.7 ps jitter record; deep-space optical-comms arrays | [D][475] |
 | Nanjing University | research | CN | 99.73% cascaded on-chip efficiency | [D][474] |
-| Xanadu | user | CA | CV path leans on homodyne; number resolution only for GKP | [D][149] |
+| Xanadu | user | CA | CV architecture leans on homodyne; number resolution only for GKP | [D][149] |
 | Bluefors | supplier | FI | Cryogenic platforms; KIDE, nine pulse-tube coolers, >4,000 RF lines | [C][228] |
 
 **Money.**
@@ -99,7 +99,7 @@ No detector vendor appears in that ledger with a disclosed round: the merchant s
 
 **Roadmaps & track record.** PsiQuantum (promised since 2021 · useful system by end-2027 · at risk: Brisbane groundbreaking only 2026-06, cryoplant 2H 2027, no 2026 hardware demonstration published) [P][157]. Xanadu (promised 2026-08-31 · loss 24.1× above threshold in 2026 → 1.0× in 2030, 1,000+ logical qubits by 2031 · paper roadmap only) [C][154]. Single Quantum (no public roadmap; 400 delivered systems is the only dated metric) [P][467]. Credibility: the detector vendors under-promise and ship; PsiQuantum's detector physics is credible and its schedule is not; Xanadu's roadmap is three weeks old and untested.
 
-**Strategic reading.** If fusion-based photonic computing scales, detectors per machine go from 10² to 10⁶ and merchant vendors must become foundry-integrated IP licensors or be displaced by in-house monolithic detectors — PsiQuantum has already chosen the second outcome for itself. Supplier bargaining power is weak against platform vendors and strong only in QKD and space communications, where volumes are real and integration is not. The substitution threat is homodyne detection on the CV path: cheap and room-temperature. The quiet winner in every scenario is the cryocooler industry.
+**Strategic reading.** If fusion-based photonic computing scales, detectors per machine go from 10² to 10⁶ and merchant vendors must become foundry-integrated IP licensors or be displaced by in-house monolithic detectors — PsiQuantum has already chosen the second outcome for itself. Supplier bargaining power is weak against platform vendors and strong only in QKD and space communications, where volumes are real and integration is not. The substitution threat is homodyne detection on the CV architecture: cheap and room-temperature. The quiet winner in every scenario is the cryocooler industry.
 
 *Open niche:* a small QCVV/SFQ research company has two entry points. First, detector metrology as a service: efficiency, jitter, afterpulsing and dark-count characterisation are done by each vendor against its own attenuator chain at 2–5% power-meter uncertainty [D][474], and nobody publishes wafer-level joint distributions. Second, SFQ readout: a single-flux-quantum comparator and demultiplexer per channel at 2–4 K attacks exactly the 10³→10⁴ channel wall above, and is a superconducting-electronics problem rather than a photonics one.
 

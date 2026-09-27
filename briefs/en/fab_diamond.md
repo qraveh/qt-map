@@ -31,7 +31,7 @@ Dominant term: device yield. The fibre microcavity is a fabrication answer as mu
 Element Six is the only named merchant supplier, selling plates by catalogue; its DNV-B1 grade (2020-06-15) targets NV *ensembles*, while single-defect work needs electronic-grade single crystal [C][293]. Growth capacity sits in the UK and California, no second source found [C][293]. Implantation runs on general-purpose accelerators; ¹²C-enriched growth costs more. Nothing is on a 300 mm path: millimetre-scale plates processed individually, with no published wafer count, cost or throughput. No ECCN names diamond growth or colour centres, so export exposure is nil. Burden passed upward: a laser and a detector per site.
 
 ## Role in the stack
-Provides the host crystal colour-centre spins and their gates require, hence the defect-node path. It is the counterpart of STM hydrogen lithography, not a substitute: implantation buys area throughput at two orders of placement precision, and neither route publishes a yield distribution. Verification: the 327-device figure is one institution, in a news release rather than a peer-reviewed paper as of 4 Sep 2026, with nothing to replicate it against.
+Provides the host crystal colour-centre spins and their gates require, hence the defect-node architecture. It is the counterpart of STM hydrogen lithography, not a substitute: implantation buys area throughput at two orders of placement precision, and neither route publishes a yield distribution. Verification: the 327-device figure is one institution, in a news release rather than a peer-reviewed paper as of 4 Sep 2026, with nothing to replicate it against.
 
 ## Actors & economics
 **Who.**

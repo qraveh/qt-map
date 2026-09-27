@@ -1,7 +1,7 @@
 cff-version: 1.2.0
-message: "If you use the Quantum Technology Map, please cite the work by its concept DOI, which resolves to the newest edition."
+message: "If you use the Quantum Technology Atlas, please cite the work by its concept DOI, which resolves to the newest edition."
 type: dataset
-title: "Quantum Technology Map"
+title: "Quantum Technology Atlas"
 version: "2026.09"
 date-released: "2026-09-09"
 authors:
@@ -10,7 +10,7 @@ authors:
     affiliation: Qodeh
     orcid: "https://orcid.org/0000-0001-7362-9529"
 license: CC-BY-4.0
-url: "https://qodeh.com/publications/quantum-technology-map/"
+url: "https://qodeh.com/publications/quantum-technology-atlas/"
 repository-code: "https://github.com/qraveh/qt-map"
 abstract: "Every quantum-computing technology and every quantum machine built, announced or planned: a goal-oriented comparison of the platforms; a technology graph of self-contained technologies across ten stack layers, each on seven design attributes and connected by five edge types, with the platform architectures as paths through the layers; a brief on each technology; a register of machines as architecture instances with graded evidence in every cell; every figure tagged and traced to a dated primary source. Bilingual EN/RU, published as one interactive document."
 keywords:

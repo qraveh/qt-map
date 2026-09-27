@@ -62,7 +62,7 @@ Crosstalk is quoted as Rabi ratio, intensity ratio (ε²) or spectator error —
 - 2023-12-05 · AQT · 20-qubit two-rack computer for LRZ and Munich Quantum Valley, Bavarian funding · ~EUR 9.8 M · contracted [C][252]
 - 2025-09-17 · IonQ · acquisition of Oxford Ionics (chip-manufactured traps) · not stated in the release · closed [C][17]
 
-**Market & supply chain.** Lasers, acousto-optics, objectives and RF are merchant parts; ytterbium's UV lines demand expensive, power-limited lasers [P][251]. Both paths serve G2, G3, G6 and G7.
+**Market & supply chain.** Lasers, acousto-optics, objectives and RF are merchant parts; ytterbium's UV lines demand expensive, power-limited lasers [P][251]. Both architectures serve G2, G3, G6 and G7.
 
 **IP & standards.** IonQ filings on compensating Raman beam-geometry errors (JP 2024, EP 2025) [P][307]; no crosstalk-reporting standard found as of 2026-09-26.
 

@@ -23,7 +23,7 @@ Attributes (legend: a = affinity natural↔fabricated; b = time, deterministic/h
 - e = no control modality at no placement: the flux line is booked under the qubits joined.
 - f = coherent: residual ZZ, phase miscalibration, crosstalk.
 - g = superconducting lithography.
-Rank 2 of 111; a hub reaching the superconducting and annealing paths; off-diagonal reading: a fabricated carrier with far-range mobility.
+Rank 2 of 111; a hub reaching the superconducting and annealing architectures; off-diagonal reading: a fabricated carrier with far-range mobility.
 
 ## Physics & limits
 
@@ -58,7 +58,7 @@ A tunable long-range coupler needs one flux line and a 22 ns-class flux pulse [D
 
 ## Role in the stack
 
-Two platform paths: superconducting transmons and quantum annealing. It requires superconducting lithography with multilayer routing and provides the degree-6 long-range checks bivariate-bicycle codes consume: 12 logical qubits in 288 physical where a surface code needs "nearly 3000" at 0.1% physical error [D][227], and 121 logical qubits from a 5,000-qubit gross system at p = 10⁻³ in IBM's architecture study, whose degree "does not exceed seven" [S][383]. It replaces nearest-neighbour couplers at the price of one junction and flux line per added edge, two or more routing layers, and a coupler whose T₁ and spurious modes enter the budget — paid per design, not per gate. Hub reading: a fabricated carrier that buys in lithography the far-range mobility atoms and ions get from motion. Derived clock = sum of the syndrome round: gate layers + transport + readout + reset for the path: on the transmon path the round is 0.65 µs with readout 282 ns its largest term, and the 33 ns long-range CZ [D][367] is 5% of the round, binding only if a MOVE–CZ–MOVE sequence outruns the readout term; on the annealing path the anneal schedule is the clock. Neighbouring empty slots: the chip-to-chip l-coupler promised for IBM's Cockatoo in 2027 [R][368], and the spin-qubit resonator link, where Delft showed iSWAP oscillations between spins 250 µm apart [D][384] without a gate fidelity.
+Two architectures: superconducting transmons and quantum annealing. It requires superconducting lithography with multilayer routing and provides the degree-6 long-range checks bivariate-bicycle codes consume: 12 logical qubits in 288 physical where a surface code needs "nearly 3000" at 0.1% physical error [D][227], and 121 logical qubits from a 5,000-qubit gross system at p = 10⁻³ in IBM's architecture study, whose degree "does not exceed seven" [S][383]. It replaces nearest-neighbour couplers at the price of one junction and flux line per added edge, two or more routing layers, and a coupler whose T₁ and spurious modes enter the budget — paid per design, not per gate. Hub reading: a fabricated carrier that buys in lithography the far-range mobility atoms and ions get from motion. Derived clock = sum of the syndrome round: gate layers + transport + readout + reset for the architecture: on the transmon architecture the round is 0.65 µs with readout 282 ns its largest term, and the 33 ns long-range CZ [D][367] is 5% of the round, binding only if a MOVE–CZ–MOVE sequence outruns the readout term; on the annealing architecture the anneal schedule is the clock. Neighbouring empty slots: the chip-to-chip l-coupler promised for IBM's Cockatoo in 2027 [R][368], and the spin-qubit resonator link, where Delft showed iSWAP oscillations between spins 250 µm apart [D][384] without a gate fidelity.
 
 ## Verification (QCVV)
 
@@ -90,7 +90,7 @@ Not captured: crosstalk on shared extenders when several couplers of one vertex 
 - 2026-07-31 · IonQ · acquisition of SkyWater · ~$1.8 B · closed [C][18] [G:IONQ-SKYWATER-2026]
 - 2026-08-06 · D-Wave · H1-2026 results · revenue $5.9 M, cash $546.2 M · reported [C][15] [G:DWAVE-FIN-2026]
 
-**Market & supply chain.** Nobody sells a long-range coupler; it is a design block inside a vendor's chip, and the market is the three or four fabs that can print it — Albany [C][47], IQM's own [D][367], D-Wave's third-party foundries [G][378], [379], GlobalFoundries under its LOI [G:CHIPS-LOI-2026-05] — plus QuantWare as the only merchant seller of 3D-routed chips [P][382]. The structural cost is 1.5–3 extra couplers per qubit against a 10× saving in physical qubits per logical qubit [D][227]. Who pays: G4 (IBM's Starling), G3 if Kookaburra runs, G5 on the annealing path [C][376], G1/G2 through fewer SWAPs on Star hubs [C][381].
+**Market & supply chain.** Nobody sells a long-range coupler; it is a design block inside a vendor's chip, and the market is the three or four fabs that can print it — Albany [C][47], IQM's own [D][367], D-Wave's third-party foundries [G][378], [379], GlobalFoundries under its LOI [G:CHIPS-LOI-2026-05] — plus QuantWare as the only merchant seller of 3D-routed chips [P][382]. The structural cost is 1.5–3 extra couplers per qubit against a 10× saving in physical qubits per logical qubit [D][227]. Who pays: G4 (IBM's Starling), G3 if Kookaburra runs, G5 on the annealing architecture [C][376], G1/G2 through fewer SWAPs on Star hubs [C][381].
 
 **IP & standards.** IBM: US 12,517,856 (filed 2022-09-28, granted 2026-01-06) on modular connectivity levels, US 12,587,192 (granted 2026-03-24) on resonator chains with tunable inductive couplers, US 2024/0169232 A1 (filed 2022-11-18) on fluxonium long-range coupling [G][385]. D-Wave: US 10,268,622 (granted 2019-04-23), US 11,507,871 and US 11,494,683 (both 2022-11) on long-range couplers [G][385]. No litigation found; no standard. PatSnap to 2026-06-30 counts IBM at 4,388 quantum families, 783 in superconducting devices [P][G:PATSNAP-2026-06]; no count exists for long-range couplers.
 
@@ -154,7 +154,7 @@ Open questions: (1) does a qubit's T₁ survive the flux points six couplers for
 - Degree 6 [D][227] versus "does not exceed seven" [S][383]: reconciled here as memory-only versus memory-plus-logic-unit; the seventh edge's assignment is this brief's reading, not the papers' wording.
 - IQM arXiv:2503.12869: author list and exact submission day not extracted (organisation cited); Constellation's "above 99.3%" carries no protocol or error bar [C][374].
 - Nanjing's 1 cm coupler: XX 23.5 MHz is measured; the 100 MHz ZZ is stated without saying whether measured or simulated [D][369]; treated as a design value.
-- The 282 ns readout used for the derived clock is the superconducting path's graph record value, not a figure specific to long-range couplers.
+- The 282 ns readout used for the derived clock is the superconducting architecture's graph record value, not a figure specific to long-range couplers.
 - Cost, energy and yield per coupler: no actor publishes them.
 - Patent metadata for [385] comes from Justia's index, not USPTO full-text records; no family count exists for long-range couplers specifically.
 - Whether IQM's shipped Crystal products use the 2 mm extended coupler of [367] is not stated by the company.

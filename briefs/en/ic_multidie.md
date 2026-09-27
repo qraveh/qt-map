@@ -63,7 +63,7 @@ Coherence under a cap is shown at few-qubit scale [D][752][D][753]; stack gate d
 
 **Money.** No dated, sourced financial item specific to multi-die packaging was found as of 2026-09-26.
 
-**Market & supply chain.** Every documented stack is built by its processor's developer or lab [S]. Pays into G2–G4 on the transmon path, G3–G4 on the cat path.
+**Market & supply chain.** Every documented stack is built by its processor's developer or lab [S]. Pays into G2–G4 on the transmon architecture, G3–G4 on the cat architecture.
 
 **IP & standards.** No patent count from a named database is given here; no source opened names a bonding standard, as of 2026-09-26.
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """References of the technology briefs (one per station), on the report's canon (build/sources.py, report §9).
 
-Each brief keeps its own list of IEEE entries; the numbers are the Map's permanent work numbers (build/worknum.py): the
+Each brief keeps its own list of IEEE entries; the numbers are the Atlas's permanent work numbers (build/worknum.py): the
 same work carries the same number in §9, in every brief and in every later edition, so a brief's list shows its subset of
 the bibliography in ascending order, with gaps. The Russian brief uses the same numbers and the same entries (a bibliography
 is not translated). One work = one entry (a preprint and its published version, a work listed twice); an entry never cited
@@ -58,7 +58,7 @@ FIELDS = ('authors', 'etal', 'n_authors', 'org', 'title', 'journal', 'volume', '
           'kind', 'site', 'publisher', 'edition', 'section', 'url', 'also', 'retraction', 'verified')
 ENTRY = re.compile(r'^(?:\[(\d{1,4}[a-z]?)\]|(\d{1,4})\.)\s+(.*)$')
 CITE = re.compile(r'(?<![\[\w:])\[(\d{1,4}[a-z]?)\](?![\](])')   # a bare [n]: not [[4,2,2]], not [G:…], not a md link
-MAP = OrderedDict([('authors', ['R. Neeman']), ('title', 'Quantum Technology Map'), ('kind', 'report'), ('edition', '2026.09'),
+MAP = OrderedDict([('authors', ['R. Neeman']), ('title', 'Quantum Technology Atlas'), ('kind', 'report'), ('edition', '2026.09'),
                    ('publisher', 'Qodeh'), ('date', '2026-09')])
 
 
@@ -206,7 +206,7 @@ def html_to_md(h):
 
 
 def entry_html(r):
-    """IEEE entry (HTML) of a record; the Map's self-reference carries its edition and section."""
+    """IEEE entry (HTML) of a record; the Atlas's self-reference carries its edition and section."""
     if r.get('kind') == 'report' and r.get('section'):
         sec = r['section']
         return '%s, “%s,” ed. %s, %s, %s, §%s.' % (S.author_text(r), S.title_text(r), S.esc(r.get('edition', '')), S.esc(r.get('publisher', '')),
@@ -247,7 +247,7 @@ def record_of(work, db):
 
 
 def work_ids(key, db):
-    """the identities the number table knows a brief entry's work by (a self-reference to the Map by its own key)"""
+    """the identities the number table knows a brief entry's work by (a self-reference to the Atlas by its own key)"""
     r = record_of(key, db)
     return ([key] if key.startswith('map:') else []) + ids_of_record(r)
 
@@ -660,7 +660,7 @@ def list_html(bid, lang, chip=lambda g: ' [%s]' % g):
     out = ['<ol class="refs" data-nohint="1" id="brief-%s-en-refs">' % bid]
     for n, e in sorted(zip(numbers_of(bid, db), db['briefs'][bid]), key=lambda x: x[0]):
         h = entry_html(record_of(e['work'], db))
-        h = re.sub(r'§(\d+)\.(\d+)\.$', lambda m: '<a class="xref" href="#%s-s%s-%s">§%s.%s</a>.' % (lang, m.group(1), m.group(2), m.group(1), m.group(2)), h)   # the Map's own section, linked
+        h = re.sub(r'§(\d+)\.(\d+)\.$', lambda m: '<a class="xref" href="#%s-s%s-%s">§%s.%s</a>.' % (lang, m.group(1), m.group(2), m.group(1), m.group(2)), h)   # the Atlas's own section, linked
         out.append('<li id="brief-%s-%s-src-%d" value="%d"><span class="src">[%d]</span> <span class="ref">%s</span>%s</li>'
                    % (bid, lang, n, n, n, h, chip(e['grade']) if e.get('grade') else ''))
     out.append('</ol>')

@@ -46,7 +46,7 @@ Per link: one collection channel per ion, two detectors, a phase-stable optical 
 
 ## Role in the stack
 
-It requires the trapped atomic ion and single-photon detection (SNSPD/TES) and provides for nothing downstream: a terminal capability, the exit from single-trap scaling. Paths served: QCCD laser-gate ions (Quantinuum, AQT) and electronic-gate, chip-controlled ions (IonQ/Oxford Ionics, eleQtron, Quantum Art). The graph lists no replacement or conflict, but in-trap transport is the functional rival and currently wins. Derived-clock contribution: dominant where used — at 250 s⁻¹ one inter-module pair costs 4.0×10⁻³ s, comparable to a full-width ion layer; at 9.7 s⁻¹ it is 1.0×10⁻¹ s.
+It requires the trapped atomic ion and single-photon detection (SNSPD/TES) and provides for nothing downstream: a terminal capability, the exit from single-trap scaling. Architectures served: QCCD laser-gate ions (Quantinuum, AQT) and electronic-gate, chip-controlled ions (IonQ/Oxford Ionics, eleQtron, Quantum Art). The graph lists no replacement or conflict, but in-trap transport is the functional rival and currently wins. Derived-clock contribution: dominant where used — at 250 s⁻¹ one inter-module pair costs 4.0×10⁻³ s, comparable to a full-width ion layer; at 9.7 s⁻¹ it is 1.0×10⁻¹ s.
 
 ## Verification (QCVV)
 

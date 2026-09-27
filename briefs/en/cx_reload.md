@@ -45,7 +45,7 @@ Reload closes the loop erasure conversion opens: converting 98 % of ¹⁷¹Yb er
 Register: one machine, harvard-continuous-3000 (Harvard/MIT, primary, demonstrated Aug 2026), cell ✅ verified (arXiv:2506.20660, Fig. 1a); two-qubit error n/a — an enabler without an entangling result.
 
 ## Verification (QCVV)
-The discriminating test is stored-qubit coherence with reload on versus off. Harvard (Rb, XY16): T2 1.34(4) s reference, 1.15(3) s with the MOT, 1.09(3) s adding imaging and shielding [D][130] — 14–19 % lower, ~4–5σ [S]. Princeton (Yb): echo T2 5.4(9) versus 7(1) s, T2* 0.73(2) versus 0.69(2) s, unchanged within 1.5σ [D][663]. No gate fidelity on stored qubits during reload is published, as of 2026-09-26. The one logical figure: 0.63(3) % and 0.64(4) % error per cycle over up to 90 cycles with reloading, on 32- and 64-atom toric codes, cycle time unstated [D][133]. Flux is quoted as atoms, initialised or sorted qubits, a tenfold spread; the Map uses initialised qubits/s.
+The discriminating test is stored-qubit coherence with reload on versus off. Harvard (Rb, XY16): T2 1.34(4) s reference, 1.15(3) s with the MOT, 1.09(3) s adding imaging and shielding [D][130] — 14–19 % lower, ~4–5σ [S]. Princeton (Yb): echo T2 5.4(9) versus 7(1) s, T2* 0.73(2) versus 0.69(2) s, unchanged within 1.5σ [D][663]. No gate fidelity on stored qubits during reload is published, as of 2026-09-26. The one logical figure: 0.63(3) % and 0.64(4) % error per cycle over up to 90 cycles with reloading, on 32- and 64-atom toric codes, cycle time unstated [D][133]. Flux is quoted as atoms, initialised or sorted qubits, a tenfold spread; the Atlas uses initialised qubits/s.
 
 ## Actors & economics
 **Who.**
@@ -67,7 +67,7 @@ The discriminating test is stored-qubit coherence with reload on versus off. Har
 
 **Roadmaps & track record.** (for 2028 · QuEra Libra · >10,000 physical, 256 logical qubits at 10⁻⁶, fresh qubits loaded "mid-circuit from Libra's reloading reservoir") [R][667]; Chiu et al.: ~99.9 % fidelity with 80,000 qubits/s could run several hundred surface-code logical qubits at 10⁻⁸ [S][130]. Flux is ahead of plan; integration is behind — gates plus reload are published only at 64 atoms.
 
-**Strategic reading.** Reload makes loss the cheapest error to correct, as both atom paths' QEC plans assume. The flux record comes from a group whose senior authors co-founded QuEra [D][130]; only Atom Computing's reservoir has run inside QEC. If coherence and gate fidelity hold under reload at 10³–10⁴ atoms, depth stops being the atom platform's weakness; if not, runs stay bounded by τ/N.
+**Strategic reading.** Reload makes loss the cheapest error to correct, as both atom architectures' QEC plans assume. The flux record comes from a group whose senior authors co-founded QuEra [D][130]; only Atom Computing's reservoir has run inside QEC. If coherence and gate fidelity hold under reload at 10³–10⁴ atoms, depth stops being the atom platform's weakness; if not, runs stay bounded by τ/N.
 
 *Open niche:* a reload-aware benchmark — stored-qubit T2 and two-qubit randomised benchmarking with reload on versus off, and logical error against reload cadence — has no owner.
 

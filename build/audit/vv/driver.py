@@ -1,9 +1,9 @@
-"""Playwright driver for the built Map page (SPEC step D.2). Implementation-side half; see DRIVER.md."""
+"""Playwright driver for the built Atlas page (SPEC step D.2). Implementation-side half; see DRIVER.md."""
 import pathlib
 from playwright.sync_api import sync_playwright
 
 ROOT = pathlib.Path(__file__).resolve().parents[3]
-PAGE = ROOT / 'dist' / 'Quantum-Technology-Map-2026.09.html'
+PAGE = ROOT / 'dist' / 'Quantum-Technology-Atlas-2026.09.html'
 TOGGLE_ID = {'requires': 'tg-req', 'alternatives': 'tg-rep', 'conflicts': 'tg-conf'}
 EDGE_TYPE = {'requires': 'requires', 'replaces': 'alternatives', 'conflicts': 'conflicts'}  # page/graph type -> toggle name
 

@@ -70,15 +70,15 @@ RU_FALLBACK_NOTE = '*Перевод готовится — ниже англий
 PREFACE_PUBLIC = {
     'en': [
         'Every technology on the map has a brief, and the depth of each one follows the technology\'s '
-        'centrality in the graph — how many platform families and paths depend on it and how recently it '
-        'reached hardware — so a node a dozen paths run through gets about 2,000 words and a single-platform '
+        'centrality in the graph — how many platform families and architectures depend on it and how recently it '
+        'reached hardware — so a node a dozen architectures run through gets about 2,000 words and a single-platform '
         'node about 800. Centrality is a statement about the graph, not a verdict on the technology; it is '
         'shown in each brief\'s header and in the index below.',
     ],
     'ru': [
         'У каждой технологии на карте есть бриф, а его глубина следует центральности технологии в графе — '
-        'сколько семейств платформ и путей от неё зависят и насколько недавно она дошла до железа, — так что '
-        'узел, через который идёт дюжина путей, получает около 2 000 слов, а узел одной платформы — около 800. '
+        'сколько семейств платформ и архитектур от неё зависят и насколько недавно она дошла до железа, — так что '
+        'узел, через который идёт дюжина архитектур, получает около 2 000 слов, а узел одной платформы — около 800. '
         'Центральность — утверждение о графе, а не вердикт о технологии; она показана в шапке каждого брифа '
         'и в индексе ниже.',
     ],
@@ -87,7 +87,7 @@ PREFACE = {
     'en': [
         'Every technology on the map has a brief, and the depth of each one follows an importance score '
         'derived from the graph itself — how far a node reaches across platform families (hub reach), how '
-        'many platform paths run through it, and how recent it is. Tier 1 is the 27 most important '
+        'many architectures run through it, and how recent it is. Tier 1 is the 27 most important '
         'technologies at roughly 1,600–2,400 words; Tier 2 is 33 technologies at roughly 1,300 words; '
         'Tier 3 is 50 technologies at roughly 800–1,100 words. The tier is a statement about the graph, not a '
         'judgement of the technology.',
@@ -103,7 +103,7 @@ PREFACE = {
     'ru': [
         'У каждой технологии на карте есть бриф, а его глубина определяется оценкой важности, выведенной '
         'из самого графа: насколько узел дотягивается до разных семейств платформ (охват хаба), сколько '
-        'путей платформ через него проходит и насколько он свеж. Tier 1 — 27 самых важных технологий, '
+        'архитектур через него проходит и насколько он свеж. Tier 1 — 27 самых важных технологий, '
         'примерно 1 600–2 400 слов; Tier 2 — 33 технологии, примерно 1 300 слов; Tier 3 — 50 технологий, '
         'примерно 800 слов. Tier — утверждение о графе, а не оценка технологии.',
         'Все брифы построены по одному скелету разделов — идентичность и происхождение, физика и пределы, '
@@ -116,8 +116,8 @@ PREFACE = {
         '[P] препринт или отраслевая пресса.',
     ],
 }
-REFNOTE = {'en': 'Numbers are the Map’s: a work has the same number here, in §9 and in every other brief; online sources were accessed in September 2026.',
-           'ru': 'Номера общие для всей Карты: у работы один и тот же номер здесь, в §9 и в любом другом брифе; онлайн-источники просмотрены в сентябре 2026 г.'}
+REFNOTE = {'en': 'Numbers are the Atlas’s: a work has the same number here, in §9 and in every other brief; online sources were accessed in September 2026.',
+           'ru': 'Номера общие для всего Атласа: у работы один и тот же номер здесь, в §9 и в любом другом брифе; онлайн-источники просмотрены в сентябре 2026 г.'}
 SECTION_TITLE = {'en': 'Technology briefs', 'ru': 'Брифы по технологиям'}
 
 
@@ -186,7 +186,7 @@ def load_briefs():
     return out
 
 
-# ---------- family colours (same rule as map_js.py: first path a node belongs to)
+# ---------- family colours (same rule as map_js.py: first architecture a node belongs to)
 FAMVAR = {'SC': 'var(--sc)', 'ION': 'var(--ion)', 'ATOM': 'var(--atom)', 'PHOTON': 'var(--photon)',
           'SPIN': 'var(--spin)', 'DEFECT': 'var(--defect)', 'TOPO': 'var(--topo)', 'ANNEAL': 'var(--anneal)'}
 
@@ -363,7 +363,7 @@ def inline_html(s, md2html):
 
 # ---------- one brief section
 NAV = {
-    'en': {'map': '← Map station', 'row': '↑ Table 8.2 row', 'prev': '← Previous brief',
+    'en': {'map': '← Station on the map', 'row': '↑ Table 8.2 row', 'prev': '← Previous brief',
            'next': 'Next brief →', 'close': 'Close ✕', 'verdict': 'Verdict',
            'layer': 'layer', 'tier': 'Tier', 'rank': 'rank', 'centrality': 'centrality', 'since': 'since', 'updated': 'updated'},
     'ru': {'map': '← Станция на карте', 'row': '↑ Строка таблицы 8.2', 'prev': '← Предыдущий бриф',

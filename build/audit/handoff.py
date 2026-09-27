@@ -8,7 +8,7 @@ What it does (the protocol of 00_admin/Cloud-Local-Protocol.md, mechanised):
   1. refuses if the working tree is not clean;
   2. `git bundle create` for HEAD + the current branch + main + tags, `git bundle verify`, sha256;
   3. clean-room clone of the bundle, `build/build.py`, sha256 of dist — must equal the committed dist byte for byte;
-  4. copies the bundle and the built document (named Quantum-Technology-Map-<edition>_<status>_<sha>.html, the
+  4. copies the bundle and the built document (named Quantum-Technology-Atlas-<edition>_<status>_<sha>.html, the
      programme's "one file per handed-over build") into --out and writes handoff_manifest.json with the device paths
      (Downloads for the bundle, 40_outputs for the snapshot);
   5. rewrites the ACCEPTANCE block of the HANDOFF file (between the ``` fences) and the "Current:" line of the
@@ -17,7 +17,7 @@ Prints the ACCEPTANCE block. Exit 1 on any failure. Nothing here pushes, deletes
 import hashlib, json, os, re, shutil, subprocess, sys, tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-DIST_NAME = 'Quantum-Technology-Map-2026.09.html'
+DIST_NAME = 'Quantum-Technology-Atlas-2026.09.html'
 DEV_DOWNLOADS = r'C:\Users\raveh\Downloads'
 DEV_OUTPUTS = r'C:\MyDrive\QT-Map\40_outputs'
 
@@ -60,7 +60,7 @@ def main():
     # snapshot named by status and sha
     sys.path.insert(0, os.path.join(ROOT, 'build')); import editions as ed
     status = getattr(ed, 'STATUS', 'beta'); edition = ed.EDITIONS[0]['edition']
-    snap = 'Quantum-Technology-Map-%s_%s_%s.html' % (edition, status, short)
+    snap = 'Quantum-Technology-Atlas-%s_%s_%s.html' % (edition, status, short)
     shutil.copyfile(os.path.join(ROOT, 'dist', DIST_NAME), os.path.join(out, snap))
     acceptance = '\n'.join([
         '```', 'ACCEPTANCE',
@@ -81,7 +81,7 @@ def main():
         s2 = re.sub(r'qt-map-[0-9a-f]{7}\.bundle` \(sha256 [0-9a-f]{16}…\)', 'qt-map-%s.bundle` (sha256 %s…)' % (short, bsha[:16]), s2)
         s2 = re.sub(r'\$env:USERPROFILE\\Downloads\\qt-map-[0-9a-f]{7}\.bundle', lambda m: '$env:USERPROFILE\\Downloads\\qt-map-%s.bundle' % short, s2)
         # only the "Built document at this commit" line names the current snapshot; the "Obsolete drops" line names the old ones
-        s2 = re.sub(r'(Built document at this commit: `[^`]*40_outputs\\)Quantum-Technology-Map-[0-9.]+_[a-z]+_[0-9a-f]{7}\.html', lambda m: m.group(1) + snap, s2)
+        s2 = re.sub(r'(Built document at this commit: `[^`]*40_outputs\\)Quantum-Technology-Atlas-[0-9.]+_[a-z]+_[0-9a-f]{7}\.html', lambda m: m.group(1) + snap, s2)
         s2 = re.sub(r'\(= `dist/` of [0-9a-f]{7};', lambda m: '(= `dist/` of %s;' % short, s2)
         if s2 == s: print('note: HANDOFF file unchanged (no ACCEPTANCE block or names found)')
         open(hpath, 'w', encoding='utf-8', newline='\n').write(s2); manifest['handoff'] = hpath

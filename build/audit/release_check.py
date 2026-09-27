@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Release checklist for the Quantum Technology Map — one command, one PASS/FAIL per item.
+"""Release checklist for the Quantum Technology Atlas — one command, one PASS/FAIL per item.
 
     python3 build/audit/release_check.py            # static checks (≈ 3 min: builds twice)
     python3 build/audit/release_check.py --smoke    # + the Playwright smoke suite (≈ 6 min)
@@ -14,7 +14,7 @@ The static checks encode the bug classes that came back during September 2026 so
 import hashlib, html, os, re, subprocess, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-DIST = os.path.join(ROOT, 'dist', 'Quantum-Technology-Map-2026.09.html')
+DIST = os.path.join(ROOT, 'dist', 'Quantum-Technology-Atlas-2026.09.html')
 R = []
 
 
