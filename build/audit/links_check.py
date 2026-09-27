@@ -9,7 +9,7 @@ Checks, on the page as the browser sees it (briefs.expand_page — the load-time
   4. the page's own absolute links (site, DOI, repository, register pages, og:image) carry the current names — no old
      "quantum-technology-map" path except the sharing-image file, whose name is an asset the site keeps;
   5. external links are counted per host (not fetched) so that a rename that broke a host shows up as a count change.
-Usage: python3 build/audit/links_check.py [dist/Quantum-Technology-Atlas-2026.09.html]   (exit 1 on any failure)
+Usage: python3 build/audit/links_check.py [dist/Quantum-Technology-Atlas-2026.09.html] | --records   (exit 1 on any failure)
 """
 import collections, json, os, re, sys
 
@@ -17,7 +17,52 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 sys.path.insert(0, os.path.join(ROOT, 'build'))
 
 
+def records():
+    """Every record page (dist/<kind>/*.html and dist/ru/<kind>/*.html): each relative link resolves to a file of the dist tree,
+    each link into a main page names an anchor that page has (after its language fragments), each record has its twin."""
+    import glob
+    dist = os.path.join(ROOT, 'dist')
+    import briefs
+    main_ids = {}
+    for lang, rel in (('en', 'Quantum-Technology-Atlas-2026.09.html'), ('ru', os.path.join('ru', 'Quantum-Technology-Atlas-2026.09.html'))):
+        p = os.path.join(dist, rel)
+        if os.path.exists(p):
+            h = briefs.expand_page(open(p, encoding='utf-8').read(), p)
+            main_ids[os.path.normpath(p)] = set(re.findall(r'\sid="([^"]+)"', h)) | {'map', 'briefs', 'top'}
+    files = []
+    for kind in ('technology', 'machine', 'architecture', 'organisation'):
+        files += glob.glob(os.path.join(dist, kind, '*.html')) + glob.glob(os.path.join(dist, 'ru', kind, '*.html'))
+    fails = collections.Counter(); nlinks = 0; nfiles = 0
+    for f in sorted(files):
+        nfiles += 1
+        h = open(f, encoding='utf-8').read()
+        h = re.sub(r'<script.*?</script>', '', h, flags=re.S)
+        ids = set(re.findall(r'\sid="([^"]+)"', h))
+        for href in re.findall(r'href="([^"]+)"', h) + re.findall(r'src="([^"]+)"', h):
+            nlinks += 1
+            if href.startswith(('http://', 'https://', 'mailto:', 'data:')): continue
+            path, _, frag = href.partition('#')
+            if not path:
+                if frag and frag not in ids: fails['own anchor missing: %s' % frag] += 1
+                continue
+            target = os.path.normpath(os.path.join(os.path.dirname(f), path))
+            if not os.path.exists(target):
+                if '/media/' in target.replace('\\', '/'): fails['media file not present locally (the deploy copies them)'] += 1
+                else: fails['missing file: %s (from %s)' % (os.path.relpath(target, dist), os.path.relpath(f, dist))] += 1
+                continue
+            if frag and target in main_ids and frag not in main_ids[target] and not re.match(r'(station|machine|architecture)-', frag):
+                fails['anchor missing on the main page: #%s (from %s)' % (frag, os.path.relpath(f, dist))] += 1
+    print('record pages: %d files, %d links checked' % (nfiles, nlinks))
+    for k, n in fails.most_common(30):
+        if 'media file' in k: print('note', k, n)
+        else: print('FAIL', k, n)
+    hard = [k for k in fails if 'media file' not in k]
+    print('records_check: %s' % ('PASS' if not hard else '%d failure kind(s)' % len(hard)))
+    return 1 if hard else 0
+
+
 def main():
+    if '--records' in sys.argv: sys.exit(records())
     page = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, 'dist', 'Quantum-Technology-Atlas-2026.09.html')
     h = open(page, encoding='utf-8').read()
     import briefs

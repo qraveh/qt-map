@@ -930,7 +930,7 @@ def build(cfg=PUBLIC):
     import brief_refs as _bref
     briefs_full=_bref.expand_clones(briefs_block)   # a page whose own language is Russian carries its Sources lists in full
     os.makedirs(os.path.join(ROOT,'dist','lang'),exist_ok=True)
-    sizes=[]
+    sizes=[]; page_html={}
     for pl in PAGE_LANGS:
         others=[L for L in PAGE_LANGS if L!=pl]
         prose,briefs_page,frags=lang_split(blocks,briefs_full if pl!='en' else briefs_block,pl)
@@ -942,6 +942,7 @@ def build(cfg=PUBLIC):
         pcfg=dict(cfg,url=cfg['url']+sub,page_lang=pl)
         full=f'<!doctype html>\n<html lang="{pl}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">{head_meta(pcfg)}<style>img{{max-width:100%}}[hidden]{{display:none!important}}</style></head><body>'+body+'</body></html>'
         open(out_full,'w',encoding='utf-8',newline='\n').write(full)
+        page_html[pl]=full
         if pl=='en': open(cfg['out_body'],'w',encoding='utf-8',newline='\n').write(body)
         for L,F in frags.items():
             # the fragment of language L as the page of pl needs it: the same for every page (the slots are keyed by language)
@@ -949,7 +950,12 @@ def build(cfg=PUBLIC):
             open(fp,'w',encoding='utf-8',newline='\n').write('window.__LANGFRAG=window.__LANGFRAG||{};window.__LANGFRAG[%s]=%s;\n'%(json.dumps(L),json.dumps(F,ensure_ascii=False,separators=(',',':'))))
         sizes.append('%s %d KB'%(pl,len(full)//1024))
     nofb=sum(1 for b in B if b['ru_fallback'])
-    print('built', cfg['mode'], '; '.join(sizes),';',len(B),'briefs;',nofb,'RU fallbacks')
+    # every record at its own address (build/pages.py): the cards, the briefs, the narratives, the organisations, the pictures
+    import pages
+    site=pages.Site(dict(cfg,og_image=OG_IMAGE_URL),G,json.load(open(MACH_PATH,encoding='utf-8')),B,BR,brief_md2html,colours,page_html,CSS,
+                    json.dumps(tips_dict(),ensure_ascii=False,separators=(',',':')),GTIP_JS,TAG_JS,BR.key_refs_all(B))
+    npages=site.build(PAGE_LANGS)
+    print('built', cfg['mode'], '; '.join(sizes),';',len(B),'briefs;',nofb,'RU fallbacks;',npages,'record pages')
 
 if __name__=='__main__':
     build(PUBLIC)

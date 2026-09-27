@@ -345,6 +345,8 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .insp .grip .sp{flex:1}
 .insp .grip button{appearance:none;border:1px solid var(--rule);background:var(--surface);color:var(--ink);font:inherit;font-size:11px;padding:1px 7px;border-radius:6px;cursor:pointer}
 .insp .grip button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.insp .grip button[data-back]{font-weight:700} .insp .grip button[data-back][disabled]{opacity:.35;cursor:default}
+.insp .pagelink{font-size:12px;font-weight:600;text-decoration:none;border:1px solid var(--rule);border-radius:999px;padding:1px 8px;margin-left:4px;white-space:nowrap}
 .insp.dragging{opacity:.92}
 .insp[hidden]{display:none}
 .insp .iclose{display:none}
@@ -26482,7 +26484,7 @@ function pathsOf(id){ return new Set((prim[id]||[]).concat(alt[id]||[])); }
 function releaseIsolate(){ state.isolate=null; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false')); }
 function releaseFocus(){ state.focus=null; st.classed('sel',false); }
 function releaseMachine(){ state.machine=null; const ms=document.getElementById('machine'); if(ms)ms.value=''; st.classed('altuse',false); }
-function select(id){ if(id){ const ps=pathsOf(id); if(state.isolate&&!ps.has(state.isolate))releaseIsolate(); if(state.machine&&MBY[state.machine]&&!ps.has(MBY[state.machine].path))releaseMachine(); }
+function select(id){ if(id&&id!==state.focus)pushHist(); if(id){ const ps=pathsOf(id); if(state.isolate&&!ps.has(state.isolate))releaseIsolate(); if(state.machine&&MBY[state.machine]&&!ps.has(MBY[state.machine].path))releaseMachine(); }
   state.focus=id; st.classed('sel',d=>d.id===id); drawEdges(); dimming(); if(id){insp.hidden=false; inspect(NODE[id]);} else if(state.machine&&MBY[state.machine]){ inspectMachine(MBY[state.machine]); } else {insp.hidden=true; insp.innerHTML='';} sheetRoom(); }
 function sheetRoom(){ try{ document.body.classList.toggle('has-sheet', !insp.hidden && sheetMode()); }catch(e){} }
 window.__sheetRoom=sheetRoom;   // room to scroll the map above the bottom sheet (≤ 1024 px)
@@ -26564,8 +26566,20 @@ function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>
 function lk(s){ return esc(s).replace(/arXiv:\s?((?:\d{4}\.\d{4,5}|[a-z\-]+\/\d{7})(?:v\d+)?)/g,(m,id)=>`<a href="https://arxiv.org/abs/${id}" target="_blank" rel="noopener">${m}</a>`).replace(/\b(10\.\d{4,9}\/[^\s,;)]+)/g,(m,d)=>`<a href="https://doi.org/${d}" target="_blank" rel="noopener">${m}</a>`).replace(/href="https?:\/\/[^"]*"|https?:\/\/[^\s<)]+/g,m=>m.indexOf('href="')===0?m:`<a href="${m}" target="_blank" rel="noopener">${m}</a>`); }
 // card header: drag grip + dock buttons on desktop; on ≤ 1024 the card is a bottom sheet,
 // so the dock buttons are hidden by CSS and a ⌃/⌄ button grows the sheet to 90vh instead.
+// "go backward" (the editor's item 15, 27 Sep 2026): every change of the card's subject — a station, an architecture, a
+// machine — pushes the previous selection; ← restores it (the lens and its filter included). The record pages are the same
+// cards at their own addresses: every card links to its page (technology/<id>.html …), relative to the page's language folder.
+const HIST=[]; function snapshot(){ return {focus:state.focus,isolate:state.isolate,machine:state.machine,lens:state.lens,lensFilter:state.lensFilter?new Set(state.lensFilter):null}; }
+function pushHist(){ const s=snapshot(); const last=HIST[HIST.length-1]; if(last&&last.focus===s.focus&&last.isolate===s.isolate&&last.machine===s.machine)return; HIST.push(s); if(HIST.length>40)HIST.shift(); }
+function applySnapshot(s){ state.focus=s.focus; state.isolate=s.isolate; state.machine=(s.machine&&MBY[s.machine])?s.machine:null; state.lens=s.lens||'family'; state.lensFilter=s.lensFilter?new Set(s.lensFilter):null;
+  chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.chipPath===state.isolate))); if(machSel)machSel.value=state.machine||''; st.classed('sel',d=>d.id===state.focus);
+  const sel=document.getElementById('lens'); if(sel)sel.value=state.lens; applyLens(); drawEdges(); dimming();
+  if(state.focus){ inspect(NODE[state.focus]); insp.hidden=false; } else if(state.machine){ inspectMachine(MBY[state.machine]); } else if(state.isolate){ inspectPath(PATH[state.isolate]); } else inspectEmpty(); sheetRoom(); }
+function goBack(){ const s=HIST.pop(); if(s)applySnapshot(s); } window.__goBack=goBack;
+function pageLink(kind,id){ return `<a class="pagelink" href="${kind}/${id}.html" title="${T('this record at its own address','эта запись на своём адресе')}">${T('page ↗','страница ↗')}</a>`; }
 function gripHTML(){ const sheet=insp.classList.contains('sheet-max');
   return '<div class="grip" data-grip="1">⠿ <span class="sp"></span>'+
+    '<button type="button" data-back="1" title="'+T('back to the previous card','к предыдущей карточке')+'" aria-label="back"'+(HIST.length?'':' disabled')+'>←</button>'+
     '<button type="button" data-dock="left" title="dock left">⇤</button>'+
     '<button type="button" data-dock="right" title="dock right">⇥</button>'+
     '<button type="button" data-sheet="1" aria-pressed="'+String(sheet)+'" aria-label="expand card">'+(sheet?'⌄':'⌃')+'</button>'+
@@ -26582,7 +26596,7 @@ function inspectPath(p){ const L=lang(); insp.hidden=false;
       ?`<div class="rel requires">${nm(e.dst)} <span class="empty">${e.strength==='soft'?T('is the usual route for','обычно служит станции'):T('is needed by','требуется станции')}</span> ${nm(e.src)}${e.any?' <span class="empty">('+T('or an alternative','или альтернатива')+')</span>':''}</div>`
       :`<div class="rel ${e.type}">${nm(e.src)} <span class="empty">${type==='replaces'?T('alternative to','альтернатива для'):T('conflicts with','конфликтует с')}</span> ${nm(e.dst)}${type==='conflicts'&&e.status?' <span class="empty">· '+esc(vt('CONSTAT',e.status))+'</span>':''}</div>`).join(''); };
   const relHTML=rel.length?relRows('requires',T('dependencies','зависимости'),'→')+relRows('conflicts',T('conflicts','конфликты'),'✕')+relRows('replaces',T('alternatives','альтернативы'),'⇄'):`<div class="empty">${T('no recorded relations among these stations','между этими станциями связей не записано')}</div>`;
-  insp.innerHTML=`${gripHTML()}<h3><i class="sw" style="--c:${FAMC[p.family]}"></i> ${esc(p[L])}</h3><div class="meta">${T('architecture','архитектура')} · ${p.id} · ${members.size} ${T('stations','станций')}</div>
+  insp.innerHTML=`${gripHTML()}<h3><i class="sw" style="--c:${FAMC[p.family]}"></i> ${esc(p[L])}</h3><div class="meta">${T('architecture','архитектура')} · ${p.id} · ${members.size} ${T('stations','станций')} · ${pageLink('architecture',p.id)}</div>
   <div class="space"><h4>${T('Actors & goals','Акторы и цели')}</h4><div>${esc(p.actors)}</div><div class="empty">${T('goals','цели')}: ${esc(p.goals)}</div></div>
   <div class="space"><h4>${T('Derived clocks','Выведенные такты')}</h4><dl>
    <dt>${T('syndrome round','раунд синдрома')}</dt><dd><b>${fS(R.total)}</b>${R.total?` · ${T('limiter','ограничитель')}: ${T(...(PN[R.limiter]||[R.limiter,R.limiter]))} · ${T('round of','раунд кода')} ${esc(R.code||'')}${R.d2?' (d₂ = '+R.d2+(R.d1?', d₁ = '+R.d1:'')+')':''}`:''}</dd>
@@ -26619,7 +26633,7 @@ function inspectMachine(m){ const L=lang(); insp.hidden=false; const gaps=m.gaps
   const prof=(m.prof||[]).map((v,i)=>v?`<div class="mc"><span class="empty">${T(...PROF_T[i])}:</span> ${esc(v)}</div>`:'').join('');
   const ev=m.ev||[0,0]; const q=(m.q!=null&&m.q!=='')?`${m.q} ${T('physical qubits','физических кубитов')}`:T('qubits not published','число кубитов не опубликовано');
   insp.innerHTML=`${gripHTML()}<h3><i class="sw" style="--c:${FAMC[m.family]||'var(--mid)'}"></i> ${esc(m.name)}</h3><div class="meta">${esc(m.org)} · ${T(...(FAMN[m.family]||[m.family,m.family]))} · ${esc(m.status)}${m.status_date?' ('+esc(m.status_date)+')':''} · ${q}</div>
-  <div class="mlinks"><a href="${REG_URL(m.id)}" target="_blank" rel="noreferrer">↗ ${T('register card','карточка реестра')}</a> <span class="empty">· ${T('architecture','архитектура')}: ${PATH[m.path]?esc(PATH[m.path][L]):esc(m.path)}</span></div>
+  <div class="mlinks">${pageLink('machine',m.id)} <a href="${REG_URL(m.id)}" target="_blank" rel="noreferrer">↗ ${T('register card','карточка реестра')}</a> <span class="empty">· ${T('architecture','архитектура')}: ${PATH[m.path]?esc(PATH[m.path][L]):esc(m.path)}</span></div>
   ${prof?`<div class="space"><h4>${T('Register profile — the machine\'s variant of its architecture','Профиль реестра — вариант архитектуры у этой машины')}</h4>${prof}</div>`:''}
   <div class="space"><h4>${T('Stations by layer — the machine\'s cell per layer','Станции по слоям — ячейка машины на каждом слое')}</h4><table class="ptab mtab">${rows}</table>
    <div class="empty" style="margin-top:4px">${T('lit on the map: these stations and the machine\'s architecture line; dashed outline = used only as an alternate','подсвечено на карте: эти станции и линия архитектуры машины; пунктирная рамка = только как альтернатива')}</div></div>
@@ -26656,7 +26670,7 @@ function inspect(n){ const L=lang(); const c=n.c; const rows=[[T('(a) carrier af
   const link=id=>`<a href="#" data-goto="${id}">${esc(NODE[id][L])}</a>`;
   insp.innerHTML=`${gripHTML()}<h3>${esc(n[L])}</h3><div class="meta">${n.id} · ${T('layer','слой')} ${n.layer} ${esc(G.layers[n.layer-1][L])} · ${vt('STATUS',n.status)}${n.since<2030?' · '+T('since','с')+' '+n.since:''}</div>
   <p>${lk(n.desc[L])}</p><div>${flags.join(' ')}</div>
-  <button type="button" class="briefbtn" data-brief="${n.id}">${T('Brief →','Бриф →')}</button>
+  <button type="button" class="briefbtn" data-brief="${n.id}">${T('Brief →','Бриф →')}</button> ${pageLink('technology',n.id)}
   ${(KEYREFS[n.id]||[]).length?`<div class="space keys"><h4>${T('Key references','Ключевые источники')}</h4>${KEYREFS[n.id].map(r=>{const lab=krLabel(n.id,r.n)||r.label||''; return `<div class="kr"><a href="${r.url}" target="_blank" rel="noopener">[${r.n}]</a> ${esc(lab.length>92?lab.slice(0,90)+'…':lab)}${r.year?' <span class="empty">· '+r.year+'</span>':''}</div>`;}).join('')}</div>`:''}
   <div class="space"><h4>${T('Design space — attributes','Пространство проектирования — атрибуты')}</h4><dl>${rows.map(([k,v,key])=>`<dt class="${lr.includes(key)?'lensrow':''}">${k}</dt><dd class="${lr.includes(key)?'lensrow':''}">${esc(v)}</dd>`).join('')}</dl></div>
   <div class="space"><h4>${T('Evaluation space — dated attributes','Пространство оценки — датированные атрибуты')}</h4>${n.defines.length?n.defines.map(d=>`<div class="def"><div><span class="k">${esc(d.metric)}</span> → <b>${esc(d.value)}</b></div><div class="d">${T('defines','определяет')}: ${vt('OUT',d.out)} · ${d.date} · <a href="${d.url}" target="_blank" rel="noopener">${T('source','источник')}</a></div></div>`).join(''):`<p class="empty">${T('no dated attribute','нет датированных атрибутов')}</p>`}${n.attrs[L]?`<p style="margin:6px 0 0">${lk(n.attrs[L])}</p>`:''}</div>
@@ -26680,7 +26694,7 @@ document.querySelectorAll('#mapbar [data-goto]').forEach(a=>a.addEventListener('
 // ---------- controls
 const bar=document.getElementById('mapbar');
 const chipsWrap=document.getElementById('pathchips');
-function isolatePath(pid){ state.isolate=state.isolate===pid?null:pid; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.chipPath===state.isolate)));
+function isolatePath(pid){ if(state.isolate!==pid)pushHist(); state.isolate=state.isolate===pid?null:pid; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.chipPath===state.isolate)));
   if(state.isolate){ if(state.focus&&!pathsOf(state.focus).has(pid))releaseFocus(); if(state.machine&&MBY[state.machine]&&MBY[state.machine].path!==pid)releaseMachine(); }   // adjudication 12
   if(state.isolate){ if(!state.focus){ inspectPath(PATH[pid]); } } else if(!state.focus){ if(state.machine&&MBY[state.machine])inspectMachine(MBY[state.machine]); else inspectEmpty(); } drawEdges(); dimming(); }   // a focused station on the path stays focused: the terms narrow each other
 G.paths.forEach(p=>{const b=document.createElement('button'); b.className='chip'; b.dataset.chipPath=p.id; b.setAttribute('aria-pressed','false'); b.innerHTML=`<i class="sw" style="--c:${FAMC[p.family]}"></i><span class="t"></span>`; b.addEventListener('click',()=>isolatePath(p.id)); chipsWrap.appendChild(b);});
@@ -26691,7 +26705,7 @@ const machSel=document.getElementById('machine');
 if(machSel){ (MACH.families||[]).forEach(f=>{ const ms=MACH.machines.filter(m=>m.family===f).sort((a,b)=>a.name.localeCompare(b.name)||a.org.localeCompare(b.org)); if(!ms.length)return;
     const og=document.createElement('optgroup'); og.dataset.fam=f; og.label=T(...(FAMN[f]||[f,f])); ms.forEach(m=>{ const o=document.createElement('option'); o.value=m.id; o.textContent=machLabel(m); og.appendChild(o); }); machSel.appendChild(og); });
   machSel.addEventListener('change',()=>setMachine(machSel.value||null)); }
-function setMachine(id){ state.machine=(id&&MBY[id])?id:null; if(machSel&&machSel.value!==(state.machine||''))machSel.value=state.machine||'';
+function setMachine(id,nopush){ if(!nopush&&id&&MBY[id]&&id!==state.machine)pushHist(); state.machine=(id&&MBY[id])?id:null; if(machSel&&machSel.value!==(state.machine||''))machSel.value=state.machine||'';
   if(state.machine){ const mp=MBY[state.machine].path; if(state.isolate&&state.isolate!==mp)releaseIsolate(); if(state.focus&&!pathsOf(state.focus).has(mp))releaseFocus(); }   // adjudication 12
   drawEdges(); dimming();
   if(state.focus)inspect(NODE[state.focus]);                       // a focused station keeps its card; the machine stays a term of the lit set
@@ -26700,7 +26714,7 @@ function setMachine(id){ state.machine=(id&&MBY[id])?id:null; if(machSel&&machSe
 window.__selectMachine=id=>{ setMachine(id||null); return state.machine; };
 // a machine chosen from a card (the "Used by" list): the machine becomes the selection — its card, its full lit set (the station focus is
 // released, otherwise the lit set would be the intersection with that station's paths) — and the map is brought into view if it is off-screen
-function showMachine(id){ if(!id||!MBY[id])return; state.focus=null; st.classed('sel',false); setMachine(id); revealMap(); }
+function showMachine(id){ if(!id||!MBY[id])return; if(id!==state.machine)pushHist(); state.focus=null; st.classed('sel',false); setMachine(id,true); revealMap(); }
 function revealMap(){ try{ const r=wrap.getBoundingClientRect(); const top=(document.querySelector('.mobilebar')||{}).offsetHeight||0; const sheetH=(!insp.hidden&&sheetMode())?insp.getBoundingClientRect().height:0;
   const room=window.innerHeight-sheetH; if(r.top<top||r.top>room*0.6||r.bottom<top+120){ const y=r.top+window.pageYOffset-top-6; window.scrollTo({top:Math.max(0,y),behavior:'smooth'}); } }catch(e){} }
 document.getElementById('tg-conf').addEventListener('click',ev=>{ if(window.__barSummary)setTimeout(window.__barSummary,0);state.showConf=!state.showConf; ev.currentTarget.setAttribute('aria-pressed',String(state.showConf)); drawEdges(); dimming();});
@@ -26853,7 +26867,15 @@ window.__mapTheme=function(){ buildScales(); applyLens(); pcRefresh(); };
 // select a station from outside the map (used by the technology briefs)
 window.__mapContext=function(){ return {focus:state.focus,isolate:state.isolate,machine:state.machine,lens:state.lens}; };
 window.__selectNode=function(id){ if(!NODE[id])return false; select(id); const m=NODE[id]; scrollToNode(m); return true; };
-relabel(); inspectEmpty(); applyLens(); renderPC();
+// deep links from the record pages and elsewhere (27 Sep 2026): #station-<id> focuses a station, #machine-<id> chooses a
+// machine, #architecture-<pid> isolates an architecture — at load and on every hash change; the map is brought into view
+window.__deepLink=function(h){ let m; h=h||location.hash||'';
+  if((m=/^#station-(\w+)$/.exec(h))&&NODE[m[1]]){ select(m[1]); scrollToNode(NODE[m[1]]); revealMap(); return true; }
+  if((m=/^#machine-([\w.-]+)$/.exec(h))&&MBY[m[1]]){ showMachine(m[1]); return true; }
+  if((m=/^#architecture-(\w+)$/.exec(h))&&PATH[m[1]]){ if(state.isolate!==m[1])isolatePath(m[1]); revealMap(); return true; }
+  return false; };
+window.addEventListener('hashchange',()=>window.__deepLink());
+relabel(); inspectEmpty(); applyLens(); renderPC(); window.__deepLink();
 })();
 
 // ---------- the caption below the map folds (23 Sep 2026, second review): closed by default, the reader's choice kept
@@ -26962,6 +26984,7 @@ function placeCard(){ const o=cardState(); const w=insp.offsetWidth||336; const 
   if(o.w){ insp.style.width=Math.min(o.w,vw-32)+'px'; }
   insp.querySelectorAll('[data-dock]').forEach(b=>b.setAttribute('aria-pressed',String((o.mode||'left')===b.dataset.dock))); }
 function wireCard(){ placeCard();
+  const bk=insp.querySelector('[data-back]'); if(bk)bk.addEventListener('click',ev=>{ ev.stopPropagation(); if(window.__goBack)window.__goBack(); });
   const sb=insp.querySelector('[data-sheet]');
   if(sb) sb.addEventListener('click',function(ev){ ev.stopPropagation(); const on=!insp.classList.contains('sheet-max');
     if(on) insp.classList.add('sheet-max'); else insp.classList.remove('sheet-max');
@@ -27145,6 +27168,7 @@ try{ var __th=function(){ if(window.__mapTheme)window.__mapTheme(); };
     if(typeof MutationObserver==='function') new MutationObserver(place).observe(w,{childList:true,attributes:true,attributeFilter:['hidden'],subtree:true});
   });
 })();
+
 </script>
 <script>
 (function(){

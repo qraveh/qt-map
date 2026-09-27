@@ -1,0 +1,6625 @@
+{
+ "source": {
+  "register": "quantum-register (SP04)",
+  "imported": "2026-09-27",
+  "organisations": 89
+ },
+ "organisations": [
+  {
+   "slug": "academia-sinica",
+   "name": "Academia Sinica",
+   "aliases": [
+    "Academia Sinica"
+   ],
+   "tier": "academic-body",
+   "segment": "research-org",
+   "country": "Taiwan",
+   "city": "Taipei",
+   "url": "https://www.sinica.edu.tw/en",
+   "note": "",
+   "machines": [
+    "academia-sinica-20q"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 1
+    },
+    {
+     "id": "enc_bare",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_rt",
+     "machines": 1
+    },
+    {
+     "id": "ro_disp",
+     "machines": 1
+    },
+    {
+     "id": "ic_multidie",
+     "machines": 1
+    },
+    {
+     "id": "fab_sc",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "ic_multidie"
+    ],
+    "count": 5
+   }
+  },
+  {
+   "slug": "alice-bob",
+   "name": "Alice & Bob",
+   "aliases": [
+    "Alice & Bob"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "France",
+   "city": "Paris",
+   "url": "https://alice-bob.com/",
+   "note": "",
+   "machines": [
+    "aliceandbob-helium",
+    "aliceandbob-boson-4",
+    "aliceandbob-helium-2",
+    "aliceandbob-graphene"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "cat"
+   ],
+   "stations": [
+    {
+     "id": "cavity",
+     "machines": 4
+    },
+    {
+     "id": "enc_cat",
+     "machines": 4
+    },
+    {
+     "id": "g_bos",
+     "machines": 4
+    },
+    {
+     "id": "cx_nn",
+     "machines": 4
+    },
+    {
+     "id": "ct_rt",
+     "machines": 4
+    },
+    {
+     "id": "ro_disp",
+     "machines": 4
+    },
+    {
+     "id": "fab_sc",
+     "machines": 4
+    },
+    {
+     "id": "fab_3d",
+     "machines": 4
+    },
+    {
+     "id": "code_bosonic",
+     "machines": 3
+    },
+    {
+     "id": "g_catcnot",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "aliceandbob-helium",
+     "host_org": "Alice & Bob (vendor) + first on-prem cabinet Jun 2026; GENCI 18-cat-qubit unit for CEA TGCC, Bruyeres-le-Chatel, France, operational 2027"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "enc_cat",
+     "g_catcnot",
+     "code_bosonic",
+     "g_bos",
+     "fab_3d",
+     "cavity",
+     "dec_gpu",
+     "enc_bare",
+     "enc_gkp",
+     "ro_disp"
+    ],
+    "count": 59
+   }
+  },
+  {
+   "slug": "alpine-quantum-technologies",
+   "name": "Alpine Quantum Technologies",
+   "aliases": [
+    "Alpine Quantum Technologies",
+    "AQT"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "Austria",
+   "city": "Innsbruck",
+   "url": "https://www.aqt.eu/",
+   "note": "",
+   "machines": [
+    "aqt-ibex-q1"
+   ],
+   "families": [
+    "ION"
+   ],
+   "architectures": [
+    "ion_chain"
+   ],
+   "stations": [
+    {
+     "id": "ion",
+     "machines": 1
+    },
+    {
+     "id": "enc_opt",
+     "machines": 1
+    },
+    {
+     "id": "g_ms",
+     "machines": 1
+    },
+    {
+     "id": "cx_bus",
+     "machines": 1
+    },
+    {
+     "id": "ct_ionaod",
+     "machines": 1
+    },
+    {
+     "id": "ro_fluor",
+     "machines": 1
+    },
+    {
+     "id": "fab_trap",
+     "machines": 1
+    },
+    {
+     "id": "fab_optics",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "enc_opt",
+     "ct_ionaod",
+     "g_ms",
+     "ion",
+     "cx_qccd",
+     "ct_ionlaser",
+     "fab_optics",
+     "fab_trap",
+     "code_highrate",
+     "code_magic",
+     "ic_ionphoton"
+    ],
+    "count": 92
+   }
+  },
+  {
+   "slug": "amazon-web-services",
+   "name": "Amazon Web Services",
+   "aliases": [
+    "AWS",
+    "AWS Center for Quantum Computing"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-software",
+   "country": "United States",
+   "city": "Seattle, WA",
+   "url": "aws.amazon.com/braket",
+   "note": "",
+   "machines": [
+    "aws-dualrail",
+    "aws-ocelot"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "cat",
+    "dualrail"
+   ],
+   "stations": [
+    {
+     "id": "g_bos",
+     "machines": 2
+    },
+    {
+     "id": "cx_nn",
+     "machines": 2
+    },
+    {
+     "id": "ct_rt",
+     "machines": 2
+    },
+    {
+     "id": "fab_sc",
+     "machines": 2
+    },
+    {
+     "id": "transmon",
+     "machines": 1
+    },
+    {
+     "id": "cavity",
+     "machines": 1
+    },
+    {
+     "id": "enc_dualrail",
+     "machines": 1
+    },
+    {
+     "id": "enc_cat",
+     "machines": 1
+    },
+    {
+     "id": "ro_disp",
+     "machines": 1
+    },
+    {
+     "id": "ro_erasure",
+     "machines": 1
+    },
+    {
+     "id": "code_erasure",
+     "machines": 1
+    },
+    {
+     "id": "code_bosonic",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "aws-ocelot",
+     "host_org": "AWS Center for Quantum Computing, on the Caltech campus - lab only"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "ro_erasure",
+     "enc_dualrail",
+     "code_erasure",
+     "g_bos",
+     "g_rydanalog",
+     "code_bosonic",
+     "alkali",
+     "enc_cat",
+     "g_catcnot",
+     "ic_multidie",
+     "cavity",
+     "ae_atom",
+     "enc_bare",
+     "enc_omg",
+     "enc_gkp",
+     "g_ryd",
+     "g_anneal",
+     "cx_aod",
+     "ro_imgfast",
+     "code_aft",
+     "fab_3d",
+     "fab_optics"
+    ],
+    "count": 77
+   }
+  },
+  {
+   "slug": "anyon-systems",
+   "name": "Anyon Systems",
+   "aliases": [
+    "Anyon Systems"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "Canada",
+   "city": "Montreal",
+   "url": "www.anyonsys.com",
+   "note": "",
+   "machines": [
+    "anyon-monarq-24"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 1
+    },
+    {
+     "id": "enc_bare",
+     "machines": 1
+    },
+    {
+     "id": "g_tc",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_rt",
+     "machines": 1
+    },
+    {
+     "id": "ro_disp",
+     "machines": 1
+    },
+    {
+     "id": "fab_sc",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "anyon-monarq-24",
+     "host_org": "Calcul Quebec / Ecole de technologie superieure - public research access; vendor HQ Montreal"
+    }
+   ],
+   "mentions": {
+    "briefs": [],
+    "count": 0
+   }
+  },
+  {
+   "slug": "atom-computing",
+   "name": "Atom Computing",
+   "aliases": [
+    "Atom Computing",
+    "Atom Computing + Microsoft, for QuNorth"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "United States",
+   "city": "Berkeley, CA",
+   "url": "atom-computing.com",
+   "note": "",
+   "machines": [
+    "atom-computing-phoenix",
+    "atom-computing-magne"
+   ],
+   "families": [
+    "ATOM"
+   ],
+   "architectures": [
+    "atom_ae"
+   ],
+   "stations": [
+    {
+     "id": "ae_atom",
+     "machines": 2
+    },
+    {
+     "id": "enc_hf",
+     "machines": 2
+    },
+    {
+     "id": "g_ryd",
+     "machines": 2
+    },
+    {
+     "id": "cx_aod",
+     "machines": 2
+    },
+    {
+     "id": "ct_laser",
+     "machines": 2
+    },
+    {
+     "id": "ro_img",
+     "machines": 2
+    },
+    {
+     "id": "ro_erasure",
+     "machines": 2
+    },
+    {
+     "id": "code_surface",
+     "machines": 2
+    },
+    {
+     "id": "dec_mwpm",
+     "machines": 2
+    },
+    {
+     "id": "dec_corr",
+     "machines": 2
+    },
+    {
+     "id": "fab_optics",
+     "machines": 2
+    },
+    {
+     "id": "cx_reload",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "atom-computing-magne",
+     "host_org": "QuNorth - Danish-owned, due end-2026; built by Atom Computing (Berkeley/Boulder) with Microsoft"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "g_ryd",
+     "ae_atom",
+     "ic_atomcavity",
+     "cx_reload",
+     "dec_corr",
+     "enc_omg",
+     "ro_erasure",
+     "code_aft",
+     "cx_aod",
+     "ct_laser",
+     "code_erasure",
+     "ro_imgfast",
+     "fab_optics",
+     "alkali",
+     "ro_img",
+     "enc_hf",
+     "code_highrate",
+     "majorana",
+     "ct_pic_trap",
+     "dec_rl"
+    ],
+    "count": 142
+   }
+  },
+  {
+   "slug": "barcelona-supercomputing-center",
+   "name": "Barcelona Supercomputing Center",
+   "aliases": [
+    "Barcelona Supercomputing Center (Quantum Spain; installed by Qilimanjaro-GMV)"
+   ],
+   "tier": "research",
+   "segment": "research-org",
+   "country": "Spain",
+   "city": "Barcelona",
+   "url": "https://www.bsc.es/",
+   "note": "",
+   "machines": [
+    "bsc-quantum-spain"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 1
+    },
+    {
+     "id": "enc_bare",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_rt",
+     "machines": 1
+    },
+    {
+     "id": "ro_disp",
+     "machines": 1
+    },
+    {
+     "id": "fab_sc",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [],
+    "count": 0
+   }
+  },
+  {
+   "slug": "beijing-academy-of-quantum-information-sciences",
+   "name": "Beijing Academy of Quantum Information Sciences",
+   "aliases": [
+    "Beijing Academy of Quantum Information Sciences"
+   ],
+   "tier": "research",
+   "segment": "research-org",
+   "country": "China",
+   "city": "Beijing",
+   "url": "baqis.ac.cn",
+   "note": "",
+   "machines": [
+    "baqis-baihua-156",
+    "baqis-dongling-130",
+    "baqis-haituo-117",
+    "baqis-scq136"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 4
+    },
+    {
+     "id": "enc_bare",
+     "machines": 4
+    },
+    {
+     "id": "g_tc",
+     "machines": 4
+    },
+    {
+     "id": "cx_nn",
+     "machines": 4
+    },
+    {
+     "id": "ct_rt",
+     "machines": 4
+    },
+    {
+     "id": "ro_disp",
+     "machines": 4
+    },
+    {
+     "id": "fab_sc",
+     "machines": 4
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [],
+    "count": 0
+   }
+  },
+  {
+   "slug": "california-institute-of-technology",
+   "name": "California Institute of Technology",
+   "aliases": [
+    "Caltech",
+    "Caltech (Endres group)"
+   ],
+   "tier": "research",
+   "segment": "research-org",
+   "country": "United States",
+   "city": "Pasadena, CA",
+   "url": "iqim.caltech.edu",
+   "note": "",
+   "machines": [
+    "caltech-6100"
+   ],
+   "families": [
+    "ATOM"
+   ],
+   "architectures": [
+    "atom_rb",
+    "atom_ae"
+   ],
+   "stations": [
+    {
+     "id": "alkali",
+     "machines": 1
+    },
+    {
+     "id": "enc_hf",
+     "machines": 1
+    },
+    {
+     "id": "cx_aod",
+     "machines": 1
+    },
+    {
+     "id": "ct_laser",
+     "machines": 1
+    },
+    {
+     "id": "ro_img",
+     "machines": 1
+    },
+    {
+     "id": "fab_optics",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "ae_atom",
+     "g_ryd",
+     "alkali",
+     "cx_reload",
+     "ro_erasure",
+     "enc_opt",
+     "enc_omg",
+     "cx_aod",
+     "code_erasure",
+     "enc_gr",
+     "g_rydanalog",
+     "g_catcnot",
+     "code_bosonic",
+     "code_aft",
+     "enc_cat",
+     "cx_lr",
+     "ct_laser",
+     "fab_optics"
+    ],
+    "count": 52
+   }
+  },
+  {
+   "slug": "chalmers-university-of-technology",
+   "name": "Chalmers University of Technology",
+   "aliases": [
+    "Chalmers University of Technology (WACQT)"
+   ],
+   "tier": "academic",
+   "segment": "",
+   "country": "Sweden",
+   "city": "Gothenburg",
+   "url": "https://www.chalmers.se/en/",
+   "note": "",
+   "machines": [
+    "chalmers-wacqt-25q"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 1
+    },
+    {
+     "id": "enc_bare",
+     "machines": 1
+    },
+    {
+     "id": "g_tc",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_rt",
+     "machines": 1
+    },
+    {
+     "id": "ro_disp",
+     "machines": 1
+    },
+    {
+     "id": "ic_multidie",
+     "machines": 1
+    },
+    {
+     "id": "fab_sc",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "ic_multidie"
+    ],
+    "count": 1
+   }
+  },
+  {
+   "slug": "d-wave-quantum",
+   "name": "D-Wave Quantum",
+   "aliases": [
+    "D-Wave",
+    "D-Wave Quantum",
+    "QCI",
+    "Quantum Circuits Inc.",
+    "Quantum Circuits Inc. (acquired by D-Wave, Jan 2026)"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "Canada",
+   "city": "Burnaby/Vancouver, BC",
+   "url": "dwavesys.com",
+   "note": "",
+   "machines": [
+    "dwave-advantage",
+    "dwave-advantage2",
+    "qci-seeker-8",
+    "dwave-dualrail-17"
+   ],
+   "families": [
+    "SC",
+    "ANNEAL"
+   ],
+   "architectures": [
+    "dualrail",
+    "anneal"
+   ],
+   "stations": [
+    {
+     "id": "fab_sc",
+     "machines": 4
+    },
+    {
+     "id": "ct_fluxdac",
+     "machines": 3
+    },
+    {
+     "id": "ro_disp",
+     "machines": 3
+    },
+    {
+     "id": "cavity",
+     "machines": 2
+    },
+    {
+     "id": "fluxq",
+     "machines": 2
+    },
+    {
+     "id": "enc_dualrail",
+     "machines": 2
+    },
+    {
+     "id": "g_bos",
+     "machines": 2
+    },
+    {
+     "id": "g_anneal",
+     "machines": 2
+    },
+    {
+     "id": "cx_nn",
+     "machines": 2
+    },
+    {
+     "id": "cx_lr",
+     "machines": 2
+    },
+    {
+     "id": "ct_rt",
+     "machines": 2
+    },
+    {
+     "id": "ro_fluxro",
+     "machines": 2
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "dwave-advantage",
+     "host_org": "D-Wave (Leap cloud); on-prem at Forschungszentrum Juelich, Germany and other customer sites"
+    },
+    {
+     "machine": "dwave-advantage2",
+     "host_org": "D-Wave (Leap); on-prem sold incl. Davidson Technologies, Huntsville AL and Juelich, Germany"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "ct_fluxdac",
+     "ro_fluxro",
+     "fluxq",
+     "ro_erasure",
+     "code_erasure",
+     "cx_lr",
+     "g_bos",
+     "fluxonium",
+     "enc_dualrail",
+     "g_anneal",
+     "fab_3d",
+     "ct_sfq",
+     "transmon",
+     "cavity",
+     "photon",
+     "g_tc",
+     "code_bosonic",
+     "ae_atom",
+     "enc_bare",
+     "cx_switch",
+     "ct_ionmw",
+     "ro_disp",
+     "fab_pic"
+    ],
+    "count": 249
+   }
+  },
+  {
+   "slug": "diraq",
+   "name": "Diraq",
+   "aliases": [
+    "Diraq",
+    "Diraq (with Equinix)"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "Australia",
+   "city": "Sydney",
+   "url": "diraq.com",
+   "note": "",
+   "machines": [
+    "diraq-imec-8q",
+    "diraq-equinix-sydney"
+   ],
+   "families": [
+    "SPIN"
+   ],
+   "architectures": [
+    "spin_qd"
+   ],
+   "stations": [
+    {
+     "id": "qd_spin",
+     "machines": 2
+    },
+    {
+     "id": "enc_spin_ld",
+     "machines": 2
+    },
+    {
+     "id": "g_exch",
+     "machines": 2
+    },
+    {
+     "id": "cx_nn",
+     "machines": 2
+    },
+    {
+     "id": "ro_s2c",
+     "machines": 2
+    },
+    {
+     "id": "fab_cmos",
+     "machines": 2
+    },
+    {
+     "id": "cx_shuttle",
+     "machines": 1
+    },
+    {
+     "id": "ct_cryocmos",
+     "machines": 1
+    },
+    {
+     "id": "ct_base",
+     "machines": 1
+    },
+    {
+     "id": "code_qldpc",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "diraq-imec-8q",
+     "host_org": "Diraq at UNSW Sydney; devices fabricated at imec, Leuven, Belgium - lab only"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "qd_spin",
+     "g_exch",
+     "fab_cmos",
+     "ic_fanout",
+     "ct_base",
+     "cx_shuttle",
+     "ro_s2c",
+     "ct_cryocmos",
+     "enc_spin_ld",
+     "cx_nn",
+     "dec_rl",
+     "cx_crossbar",
+     "dec_corr"
+    ],
+    "count": 90
+   }
+  },
+  {
+   "slug": "donostia-international-physics-center",
+   "name": "Donostia International Physics Center",
+   "aliases": [
+    "Basque Government (BasQ) - IBM-Euskadi Quantum Computational Center"
+   ],
+   "tier": "academic",
+   "segment": "",
+   "country": "Spain",
+   "city": "San Sebastián",
+   "url": "https://dipc.ehu.es/",
+   "note": "",
+   "machines": [
+    "basq-system-two"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 1
+    },
+    {
+     "id": "enc_bare",
+     "machines": 1
+    },
+    {
+     "id": "g_tc",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_rt",
+     "machines": 1
+    },
+    {
+     "id": "ro_disp",
+     "machines": 1
+    },
+    {
+     "id": "fab_sc",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [],
+    "count": 0
+   }
+  },
+  {
+   "slug": "duke-university",
+   "name": "Duke University",
+   "aliases": [
+    "Duke",
+    "University of Maryland / Duke University"
+   ],
+   "tier": "research",
+   "segment": "research-org",
+   "country": "United States",
+   "city": "Durham, NC",
+   "url": "quantum.duke.edu",
+   "note": "",
+   "machines": [
+    "umd-duke-ion"
+   ],
+   "families": [
+    "ION"
+   ],
+   "architectures": [
+    "ion_chain"
+   ],
+   "stations": [
+    {
+     "id": "ion",
+     "machines": 1
+    },
+    {
+     "id": "enc_hf",
+     "machines": 1
+    },
+    {
+     "id": "g_ms",
+     "machines": 1
+    },
+    {
+     "id": "cx_bus",
+     "machines": 1
+    },
+    {
+     "id": "ct_ionaod",
+     "machines": 1
+    },
+    {
+     "id": "ro_fluor",
+     "machines": 1
+    },
+    {
+     "id": "dec_mwpm",
+     "machines": 1
+    },
+    {
+     "id": "ic_ionphoton",
+     "machines": 1
+    },
+    {
+     "id": "fab_trap",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "ct_ionaod",
+     "ic_ionphoton",
+     "enc_omg",
+     "ro_fluor",
+     "code_erasure"
+    ],
+    "count": 13
+   }
+  },
+  {
+   "slug": "eleqtron",
+   "name": "eleQtron",
+   "aliases": [
+    "eleQtron + Forschungszentrum Julich"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "Germany",
+   "city": "Siegen",
+   "url": "https://www.eleqtron.com/en/",
+   "note": "",
+   "machines": [
+    "eleqtron-jion"
+   ],
+   "families": [
+    "ION"
+   ],
+   "architectures": [
+    "ion_elec"
+   ],
+   "stations": [
+    {
+     "id": "ion",
+     "machines": 1
+    },
+    {
+     "id": "enc_hf",
+     "machines": 1
+    },
+    {
+     "id": "g_elec",
+     "machines": 1
+    },
+    {
+     "id": "cx_bus",
+     "machines": 1
+    },
+    {
+     "id": "ct_ionmw",
+     "machines": 1
+    },
+    {
+     "id": "ro_fluor",
+     "machines": 1
+    },
+    {
+     "id": "fab_trap",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "eleqtron-jion",
+     "host_org": "Juelich Supercomputing Centre / JUNIQ, coupled to JUPITER (3 Sep 2026)"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "ct_ionmw",
+     "g_elec",
+     "ion",
+     "cx_qccd",
+     "fab_trap",
+     "cx_bus",
+     "enc_hf",
+     "ic_ionphoton",
+     "enc_omg",
+     "g_ms",
+     "ct_ionlaser",
+     "ro_fluor",
+     "code_highrate"
+    ],
+    "count": 53
+   }
+  },
+  {
+   "slug": "equal1",
+   "name": "Equal1",
+   "aliases": [
+    "Equal1"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "Ireland",
+   "city": "Dublin",
+   "url": "https://www.equal1.com/",
+   "note": "",
+   "machines": [
+    "equal1-bell-1"
+   ],
+   "families": [
+    "SPIN"
+   ],
+   "architectures": [
+    "spin_qd"
+   ],
+   "stations": [
+    {
+     "id": "qd_spin",
+     "machines": 1
+    },
+    {
+     "id": "enc_spin_ld",
+     "machines": 1
+    },
+    {
+     "id": "g_exch",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_cryocmos",
+     "machines": 1
+    },
+    {
+     "id": "ro_s2c",
+     "machines": 1
+    },
+    {
+     "id": "ic_fanout",
+     "machines": 1
+    },
+    {
+     "id": "fab_cmos",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "ic_fanout",
+     "fab_cmos",
+     "qd_spin",
+     "ct_cryocmos",
+     "g_exch",
+     "ct_base",
+     "ro_s2c"
+    ],
+    "count": 38
+   }
+  },
+  {
+   "slug": "eth-zurich",
+   "name": "ETH Zurich",
+   "aliases": [
+    "ETH Zurich (Quantum Device Lab)"
+   ],
+   "tier": "research",
+   "segment": "research-org",
+   "country": "Switzerland",
+   "city": "Zurich",
+   "url": "comp.phys.ethz.ch",
+   "note": "",
+   "machines": [
+    "ethz-surface17"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 1
+    },
+    {
+     "id": "enc_bare",
+     "machines": 1
+    },
+    {
+     "id": "g_tc",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_rt",
+     "machines": 1
+    },
+    {
+     "id": "ro_disp",
+     "machines": 1
+    },
+    {
+     "id": "code_surface",
+     "machines": 1
+    },
+    {
+     "id": "dec_mwpm",
+     "machines": 1
+    },
+    {
+     "id": "fab_sc",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "code_detect",
+     "fab_trap",
+     "ion"
+    ],
+    "count": 5
+   }
+  },
+  {
+   "slug": "etri",
+   "name": "ETRI",
+   "aliases": [
+    "ETRI (with KAIST and the University of Trento)"
+   ],
+   "tier": "research",
+   "segment": "research-org",
+   "country": "South Korea",
+   "city": "Daejeon",
+   "url": "etri.re.kr",
+   "note": "",
+   "machines": [
+    "etri-8photon"
+   ],
+   "families": [
+    "PHOTON"
+   ],
+   "architectures": [
+    "ph_fusion"
+   ],
+   "stations": [
+    {
+     "id": "photon",
+     "machines": 1
+    },
+    {
+     "id": "enc_dualrail",
+     "machines": 1
+    },
+    {
+     "id": "g_fusion",
+     "machines": 1
+    },
+    {
+     "id": "cx_switch",
+     "machines": 1
+    },
+    {
+     "id": "ct_eo",
+     "machines": 1
+    },
+    {
+     "id": "ro_spd",
+     "machines": 1
+    },
+    {
+     "id": "fab_pic",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [],
+    "count": 0
+   }
+  },
+  {
+   "slug": "fraunhofer-gesellschaft-iaf-iao-ipms",
+   "name": "Fraunhofer-Gesellschaft (IAF, IAO, IPMS)",
+   "aliases": [
+    "Fraunhofer-Gesellschaft"
+   ],
+   "tier": "academic",
+   "segment": "",
+   "country": "Germany",
+   "city": "Freiburg (IAF), Stuttgart (IAO), Dresden (IPMS)",
+   "url": "https://www.iaf.fraunhofer.de/en.html",
+   "note": "",
+   "machines": [
+    "fraunhofer-ehningen"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 1
+    },
+    {
+     "id": "enc_bare",
+     "machines": 1
+    },
+    {
+     "id": "g_cr",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_rt",
+     "machines": 1
+    },
+    {
+     "id": "ro_disp",
+     "machines": 1
+    },
+    {
+     "id": "fab_sc",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [],
+    "count": 0
+   }
+  },
+  {
+   "slug": "fujitsu",
+   "name": "Fujitsu",
+   "aliases": [
+    "Fujitsu (+ RIKEN)",
+    "Fujitsu (with TU Delft and QuTech)",
+    "Fujitsu + AIST + RIKEN",
+    "RIKEN RQC + Fujitsu"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "Japan",
+   "city": "Tokyo",
+   "url": "",
+   "note": "",
+   "machines": [
+    "riken-fujitsu-256q",
+    "fujitsu-snv-prototype",
+    "fujitsu-10000q",
+    "fujitsu-1000q"
+   ],
+   "families": [
+    "SC",
+    "DEFECT"
+   ],
+   "architectures": [
+    "sc",
+    "defect"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 3
+    },
+    {
+     "id": "enc_bare",
+     "machines": 3
+    },
+    {
+     "id": "g_tc",
+     "machines": 3
+    },
+    {
+     "id": "cx_nn",
+     "machines": 3
+    },
+    {
+     "id": "ro_disp",
+     "machines": 3
+    },
+    {
+     "id": "fab_sc",
+     "machines": 3
+    },
+    {
+     "id": "ct_rt",
+     "machines": 2
+    },
+    {
+     "id": "ct_vio",
+     "machines": 2
+    },
+    {
+     "id": "defect",
+     "machines": 1
+    },
+    {
+     "id": "enc_spin_ld",
+     "machines": 1
+    },
+    {
+     "id": "g_mwspin",
+     "machines": 1
+    },
+    {
+     "id": "ro_fluor",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "riken-fujitsu-256q",
+     "host_org": "RIKEN RQC; a unit delivered to AIST G-QuAT, Tsukuba, Japan (Mar 2025)"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "ct_vio",
+     "g_mwspin",
+     "transmon",
+     "defect",
+     "ic_spinphoton",
+     "enc_bare",
+     "g_tc",
+     "cx_nn",
+     "ct_rt",
+     "ct_cryocmos",
+     "ct_sfq",
+     "code_magic",
+     "dec_nn",
+     "ic_cryolink",
+     "ic_transducer"
+    ],
+    "count": 41
+   }
+  },
+  {
+   "slug": "google-quantum-ai",
+   "name": "Google Quantum AI",
+   "aliases": [
+    "Google",
+    "Google Quantum AI",
+    "Google Quantum AI (ex-Atlantic Quantum)"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "United States",
+   "city": "Mountain View, CA",
+   "url": "google.com",
+   "note": "",
+   "machines": [
+    "google-sycamore-72",
+    "google-willow",
+    "google-fluxonium",
+    "google-sycamore-54"
+   ],
+   "families": [
+    "SC",
+    "ATOM"
+   ],
+   "architectures": [
+    "sc",
+    "atom_rb"
+   ],
+   "stations": [
+    {
+     "id": "enc_bare",
+     "machines": 4
+    },
+    {
+     "id": "g_tc",
+     "machines": 4
+    },
+    {
+     "id": "cx_nn",
+     "machines": 4
+    },
+    {
+     "id": "ct_rt",
+     "machines": 4
+    },
+    {
+     "id": "ro_disp",
+     "machines": 4
+    },
+    {
+     "id": "fab_sc",
+     "machines": 4
+    },
+    {
+     "id": "transmon",
+     "machines": 3
+    },
+    {
+     "id": "code_surface",
+     "machines": 2
+    },
+    {
+     "id": "dec_mwpm",
+     "machines": 2
+    },
+    {
+     "id": "dec_nn",
+     "machines": 2
+    },
+    {
+     "id": "ic_multidie",
+     "machines": 2
+    },
+    {
+     "id": "fluxonium",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "transmon",
+     "dec_nn",
+     "code_surface",
+     "dec_rl",
+     "code_color",
+     "code_magic",
+     "cx_nn",
+     "g_tc",
+     "dec_mwpm",
+     "enc_bare",
+     "ro_reset",
+     "code_erasure",
+     "ro_erasure",
+     "g_ryd",
+     "ro_disp",
+     "alkali",
+     "ae_atom",
+     "enc_gkp",
+     "g_anneal",
+     "dec_fpga",
+     "fab_sc",
+     "fluxonium",
+     "cx_aod",
+     "ct_laser",
+     "code_aft",
+     "ic_multidie",
+     "g_rydanalog",
+     "g_lointer",
+     "g_bos",
+     "ct_sfq",
+     "dec_gpu",
+     "enc_dualrail",
+     "g_elec",
+     "cx_lr",
+     "ct_rt",
+     "ct_cryocmos",
+     "ro_img",
+     "code_qldpc",
+     "code_highrate",
+     "code_bosonic",
+     "code_detect",
+     "dec_cryo",
+     "ic_cryolink",
+     "ic_transducer",
+     "fab_optics"
+    ],
+    "count": 249
+   }
+  },
+  {
+   "slug": "groove-quantum",
+   "name": "Groove Quantum",
+   "aliases": [
+    "Groove",
+    "Groove Quantum"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "Netherlands",
+   "city": "Delft",
+   "url": "",
+   "note": "",
+   "machines": [
+    "groove-quantum"
+   ],
+   "families": [
+    "SPIN"
+   ],
+   "architectures": [
+    "spin_qd"
+   ],
+   "stations": [
+    {
+     "id": "qd_spin",
+     "machines": 1
+    },
+    {
+     "id": "enc_spin_ld",
+     "machines": 1
+    },
+    {
+     "id": "g_exch",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_base",
+     "machines": 1
+    },
+    {
+     "id": "ro_s2c",
+     "machines": 1
+    },
+    {
+     "id": "fab_cmos",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "qd_spin",
+     "cx_crossbar",
+     "ic_fanout"
+    ],
+    "count": 9
+   }
+  },
+  {
+   "slug": "harvard-university",
+   "name": "Harvard University",
+   "aliases": [
+    "Harvard",
+    "Harvard / MIT"
+   ],
+   "tier": "research",
+   "segment": "research-org",
+   "country": "United States",
+   "city": "Cambridge, MA",
+   "url": "quantum.harvard.edu",
+   "note": "",
+   "machines": [
+    "harvard-continuous-3000"
+   ],
+   "families": [
+    "ATOM",
+    "DEFECT"
+   ],
+   "architectures": [
+    "atom_rb",
+    "defect"
+   ],
+   "stations": [
+    {
+     "id": "alkali",
+     "machines": 1
+    },
+    {
+     "id": "enc_hf",
+     "machines": 1
+    },
+    {
+     "id": "g_ryd",
+     "machines": 1
+    },
+    {
+     "id": "cx_aod",
+     "machines": 1
+    },
+    {
+     "id": "cx_reload",
+     "machines": 1
+    },
+    {
+     "id": "ct_laser",
+     "machines": 1
+    },
+    {
+     "id": "ro_img",
+     "machines": 1
+    },
+    {
+     "id": "fab_optics",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "g_ryd",
+     "cx_reload",
+     "code_erasure",
+     "alkali",
+     "dec_corr",
+     "enc_gr",
+     "g_rydanalog",
+     "cx_aod",
+     "code_aft",
+     "code_highrate",
+     "code_magic",
+     "ic_spinphoton",
+     "ro_img",
+     "code_surface",
+     "fab_optics",
+     "defect",
+     "enc_omg",
+     "ro_imgfast",
+     "code_qldpc",
+     "fab_pic",
+     "fab_diamond",
+     "ct_laser",
+     "dec_nn",
+     "ic_ionphoton"
+    ],
+    "count": 110
+   }
+  },
+  {
+   "slug": "hitachi",
+   "name": "Hitachi",
+   "aliases": [
+    "Hitachi + Intel"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "Japan",
+   "city": "Tokyo",
+   "url": "hitachi.com",
+   "note": "",
+   "machines": [
+    "hitachi-intel18a"
+   ],
+   "families": [
+    "SPIN"
+   ],
+   "architectures": [
+    "spin_qd"
+   ],
+   "stations": [
+    {
+     "id": "qd_spin",
+     "machines": 1
+    },
+    {
+     "id": "enc_spin_ld",
+     "machines": 1
+    },
+    {
+     "id": "g_exch",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_cryocmos",
+     "machines": 1
+    },
+    {
+     "id": "ro_s2c",
+     "machines": 1
+    },
+    {
+     "id": "ic_fanout",
+     "machines": 1
+    },
+    {
+     "id": "fab_cmos",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "ic_fanout"
+    ],
+    "count": 10
+   }
+  },
+  {
+   "slug": "hrl-laboratories-ibm",
+   "name": "HRL Laboratories (IBM)",
+   "aliases": [
+    "HRL",
+    "HRL Laboratories (IBM since 26 Aug 2026)"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "United States",
+   "city": "Malibu, CA",
+   "url": "hrl.com",
+   "note": "",
+   "machines": [
+    "hrl-eo-18q"
+   ],
+   "families": [
+    "SPIN"
+   ],
+   "architectures": [
+    "spin_qd"
+   ],
+   "stations": [
+    {
+     "id": "qd_spin",
+     "machines": 1
+    },
+    {
+     "id": "enc_eo",
+     "machines": 1
+    },
+    {
+     "id": "g_exch",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_cryocmos",
+     "machines": 1
+    },
+    {
+     "id": "ct_base",
+     "machines": 1
+    },
+    {
+     "id": "ro_s2c",
+     "machines": 1
+    },
+    {
+     "id": "code_detect",
+     "machines": 1
+    },
+    {
+     "id": "fab_cmos",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "g_exch",
+     "ct_cryocmos",
+     "qd_spin",
+     "enc_eo",
+     "ct_base",
+     "fab_cmos",
+     "cx_shuttle",
+     "ro_s2c",
+     "dec_cryo",
+     "cx_nn",
+     "ct_rt",
+     "fab_sc",
+     "transmon",
+     "enc_spin_ld",
+     "ct_sfq",
+     "ct_fluxdac"
+    ],
+    "count": 116
+   }
+  },
+  {
+   "slug": "ibm",
+   "name": "IBM",
+   "aliases": [
+    "IBM",
+    "IBM with ETH Zurich (CSCS) and Lockheed Martin",
+    "IBM with TCS and the Government of Andhra Pradesh"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "United States",
+   "city": "Yorktown Heights, NY",
+   "url": "ibm.com",
+   "note": "",
+   "machines": [
+    "ibm-heron-r1",
+    "ibm-heron-r2",
+    "ibm-heron-r3",
+    "ibm-nighthawk-r1",
+    "ibm-nighthawk-r2",
+    "ibm-loon",
+    "ibm-condor",
+    "amaravati-ibm-tcs",
+    "ibm-system-two-cscs",
+    "ibm-bluejay",
+    "ibm-cockatoo",
+    "ibm-kookaburra",
+    "ibm-starling",
+    "ibm-eagle",
+    "ibm-egret",
+    "ibm-falcon",
+    "ibm-osprey"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 17
+    },
+    {
+     "id": "enc_bare",
+     "machines": 17
+    },
+    {
+     "id": "ct_rt",
+     "machines": 17
+    },
+    {
+     "id": "ro_disp",
+     "machines": 17
+    },
+    {
+     "id": "fab_sc",
+     "machines": 17
+    },
+    {
+     "id": "g_tc",
+     "machines": 13
+    },
+    {
+     "id": "cx_nn",
+     "machines": 12
+    },
+    {
+     "id": "cx_lr",
+     "machines": 5
+    },
+    {
+     "id": "code_qldpc",
+     "machines": 5
+    },
+    {
+     "id": "dec_relaybp",
+     "machines": 5
+    },
+    {
+     "id": "ic_mcm",
+     "machines": 5
+    },
+    {
+     "id": "g_cr",
+     "machines": 4
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "ibm-heron-r2",
+     "host_org": "IBM (vendor DC) + EU fleet DC Ehningen, Germany; System Two on-prem at RIKEN, Kobe JP and BasQ/Ikerbasque, San Sebastian ES - both unverified"
+    },
+    {
+     "machine": "ibm-nighthawk-r2",
+     "host_org": "IBM (vendor DC); first unit outside IBM at Yonsei University, Songdo, Incheon, South Korea (Nov 2026)"
+    },
+    {
+     "machine": "ibm-system-two-cscs",
+     "host_org": "ETH Zurich (CSCS)"
+    },
+    {
+     "machine": "ibm-eagle",
+     "host_org": "IBM (vendor fleet); six customer System One sites: Rensselaer Polytechnic Institute, Troy NY; Cleveland Clinic, Cleveland OH; PINQ2, Bromont QC; Fraunhofer, Ehningen DE; University of Tokyo / Kawasaki JP; Yonsei University, Songdo KR"
+    },
+    {
+     "machine": "ibm-falcon",
+     "host_org": "IBM Quantum Data Center (vendor); Fraunhofer IAO, Ehningen, Germany - System One, generation unverified"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "transmon",
+     "cx_lr",
+     "ct_cryocmos",
+     "code_qldpc",
+     "fab_sc",
+     "code_mitig",
+     "ic_mcm",
+     "cx_nn",
+     "dec_relaybp",
+     "g_cr",
+     "g_tc",
+     "ic_transducer",
+     "ro_reset",
+     "code_magic",
+     "enc_bare",
+     "code_detect",
+     "g_exch",
+     "fab_cmos",
+     "qd_spin",
+     "ct_sfq",
+     "ic_cryolink",
+     "enc_eo",
+     "ct_rt",
+     "code_surface",
+     "cx_shuttle",
+     "ct_vio",
+     "ro_disp",
+     "ct_base",
+     "code_highrate",
+     "dec_nn",
+     "dec_cryo",
+     "ct_fluxdac",
+     "dec_fpga",
+     "ic_multidie",
+     "code_erasure",
+     "dec_mwpm",
+     "dec_rl",
+     "enc_gkp",
+     "g_bos",
+     "code_color",
+     "dec_gpu",
+     "dec_corr"
+    ],
+    "count": 493
+   }
+  },
+  {
+   "slug": "icfo-institut-de-ciencies-fotoniques",
+   "name": "ICFO — Institut de Ciències Fotòniques",
+   "aliases": [
+    "ICFO",
+    "ICFO - Institut de Ciencies Fotoniques"
+   ],
+   "tier": "academic",
+   "segment": "",
+   "country": "Spain",
+   "city": "Castelldefels (Barcelona)",
+   "url": "https://www.icfo.eu/",
+   "note": "",
+   "machines": [
+    "icfo-quione"
+   ],
+   "families": [
+    "ATOM"
+   ],
+   "architectures": [
+    "atom_analog"
+   ],
+   "stations": [
+    {
+     "id": "ae_atom",
+     "machines": 1
+    },
+    {
+     "id": "ct_laser",
+     "machines": 1
+    },
+    {
+     "id": "ro_img",
+     "machines": 1
+    },
+    {
+     "id": "fab_optics",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "fab_pic"
+    ],
+    "count": 1
+   }
+  },
+  {
+   "slug": "infleqtion",
+   "name": "Infleqtion",
+   "aliases": [
+    "Infleqtion"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "sensing",
+   "country": "United States",
+   "city": "Boulder, CO",
+   "url": "infleqtion.com",
+   "note": "",
+   "machines": [
+    "infleqtion-sqale"
+   ],
+   "families": [
+    "ATOM"
+   ],
+   "architectures": [
+    "atom_rb"
+   ],
+   "stations": [
+    {
+     "id": "alkali",
+     "machines": 1
+    },
+    {
+     "id": "enc_hf",
+     "machines": 1
+    },
+    {
+     "id": "g_ryd",
+     "machines": 1
+    },
+    {
+     "id": "cx_aod",
+     "machines": 1
+    },
+    {
+     "id": "ct_laser",
+     "machines": 1
+    },
+    {
+     "id": "ro_img",
+     "machines": 1
+    },
+    {
+     "id": "code_highrate",
+     "machines": 1
+    },
+    {
+     "id": "dec_nn",
+     "machines": 1
+    },
+    {
+     "id": "dec_gpu",
+     "machines": 1
+    },
+    {
+     "id": "fab_optics",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "infleqtion-sqale",
+     "host_org": "National Quantum Computing Centre (NQCC) - the UK's only operational 100-qubit system; vendor HQ Boulder, CO"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "alkali",
+     "g_ryd",
+     "code_aft",
+     "cx_aod",
+     "enc_omg",
+     "ro_img",
+     "ct_laser",
+     "ct_pic_trap",
+     "code_highrate",
+     "code_magic",
+     "dec_nn",
+     "dec_corr",
+     "fab_optics"
+    ],
+    "count": 47
+   }
+  },
+  {
+   "slug": "intel",
+   "name": "Intel",
+   "aliases": [
+    "Intel"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "United States",
+   "city": "Santa Clara, CA",
+   "url": "intel.com",
+   "note": "",
+   "machines": [
+    "intel-tunnel-falls"
+   ],
+   "families": [
+    "SPIN"
+   ],
+   "architectures": [
+    "spin_qd"
+   ],
+   "stations": [
+    {
+     "id": "qd_spin",
+     "machines": 1
+    },
+    {
+     "id": "enc_spin_ld",
+     "machines": 1
+    },
+    {
+     "id": "g_exch",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_rt",
+     "machines": 1
+    },
+    {
+     "id": "ct_cryocmos",
+     "machines": 1
+    },
+    {
+     "id": "ro_s2c",
+     "machines": 1
+    },
+    {
+     "id": "ic_fanout",
+     "machines": 1
+    },
+    {
+     "id": "fab_cmos",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "ic_fanout",
+     "fab_cmos",
+     "ct_cryocmos",
+     "qd_spin",
+     "enc_spin_ld",
+     "g_exch",
+     "cx_shuttle",
+     "cx_nn",
+     "dec_relaybp",
+     "ct_base",
+     "dec_fpga",
+     "dec_gpu",
+     "transmon",
+     "g_tc",
+     "ct_vio",
+     "ro_disp",
+     "ro_s2c",
+     "ic_mcm"
+    ],
+    "count": 91
+   }
+  },
+  {
+   "slug": "ionq",
+   "name": "IonQ",
+   "aliases": [
+    "IonQ",
+    "Oxford Ionics",
+    "Oxford Ionics (IonQ)"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "United States",
+   "city": "College Park, MD",
+   "url": "ionq.com",
+   "note": "",
+   "machines": [
+    "ionq-aria",
+    "ionq-forte",
+    "ionq-oxford-quartet",
+    "ionq-tempo",
+    "ionq-ba133-qldpc-testbed",
+    "ionq-superion-256",
+    "ionq-superion-10k"
+   ],
+   "families": [
+    "ION"
+   ],
+   "architectures": [
+    "ion_chain",
+    "ion_elec"
+   ],
+   "stations": [
+    {
+     "id": "ion",
+     "machines": 7
+    },
+    {
+     "id": "enc_hf",
+     "machines": 7
+    },
+    {
+     "id": "ro_fluor",
+     "machines": 7
+    },
+    {
+     "id": "fab_trap",
+     "machines": 7
+    },
+    {
+     "id": "cx_bus",
+     "machines": 6
+    },
+    {
+     "id": "g_ms",
+     "machines": 4
+    },
+    {
+     "id": "ct_ionaod",
+     "machines": 4
+    },
+    {
+     "id": "g_elec",
+     "machines": 3
+    },
+    {
+     "id": "ct_ionmw",
+     "machines": 3
+    },
+    {
+     "id": "code_qldpc",
+     "machines": 2
+    },
+    {
+     "id": "fab_cmos",
+     "machines": 2
+    },
+    {
+     "id": "cx_qccd",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "ionq-forte",
+     "host_org": "IonQ (vendor); Forte Enterprise on-prem at QuantumBasel, Arlesheim (Basel), Switzerland and AIST G-QuAT, Tsukuba, Japan"
+    },
+    {
+     "machine": "ionq-oxford-quartet",
+     "host_org": "National Quantum Computing Centre (NQCC) quantum data centre, installed 13 Aug 2025; built by Oxford Ionics, Oxford"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "g_elec",
+     "ion",
+     "ic_ionphoton",
+     "ct_ionmw",
+     "cx_bus",
+     "fab_trap",
+     "g_ms",
+     "ct_ionaod",
+     "ct_ionlaser",
+     "cx_qccd",
+     "ro_fluor",
+     "code_qldpc",
+     "enc_hf",
+     "code_highrate",
+     "fab_cmos",
+     "enc_omg",
+     "cx_lr",
+     "ro_spd",
+     "donor",
+     "ct_sfq",
+     "fab_stm",
+     "fab_bulk",
+     "ic_mcm",
+     "fluxq",
+     "dec_relaybp",
+     "dec_corr",
+     "dec_rl",
+     "ic_spinphoton",
+     "fab_optics"
+    ],
+    "count": 422
+   }
+  },
+  {
+   "slug": "iqm",
+   "name": "IQM",
+   "aliases": [
+    "IQM Quantum Computers",
+    "IQM Quantum Computers with Instituto de Pesquisas Eldorado"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "Finland",
+   "city": "Espoo",
+   "url": "https://iqm.tech/",
+   "note": "",
+   "machines": [
+    "iqm-emerald-54",
+    "iqm-garnet-20",
+    "iqm-star-24",
+    "iqm-halocene-150",
+    "iqm-spark-eldorado"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 5
+    },
+    {
+     "id": "enc_bare",
+     "machines": 5
+    },
+    {
+     "id": "g_tc",
+     "machines": 5
+    },
+    {
+     "id": "ct_rt",
+     "machines": 5
+    },
+    {
+     "id": "ro_disp",
+     "machines": 5
+    },
+    {
+     "id": "fab_sc",
+     "machines": 5
+    },
+    {
+     "id": "cx_nn",
+     "machines": 4
+    },
+    {
+     "id": "code_qldpc",
+     "machines": 2
+    },
+    {
+     "id": "dec_gpu",
+     "machines": 2
+    },
+    {
+     "id": "code_surface",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "iqm-emerald-54",
+     "host_org": "Leibniz Supercomputing Centre (LRZ) - Euro-Q-Exa, live 11 Feb 2026; vendor unit also at IQM Espoo, Finland"
+    },
+    {
+     "machine": "iqm-star-24",
+     "host_org": "IQM (vendor DC, IQM Resonance); LUMI-Q / VLQ unit hosted at IT4Innovations, Ostrava CZ - vendor unconfirmed"
+    },
+    {
+     "machine": "iqm-halocene-150",
+     "host_org": "CSC - LUMI AI Factory (2027), announced, not delivered"
+    },
+    {
+     "machine": "iqm-spark-eldorado",
+     "host_org": "Instituto de Pesquisas Eldorado"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "cx_lr",
+     "transmon",
+     "code_qldpc",
+     "g_tc",
+     "enc_bare",
+     "dec_gpu",
+     "cx_nn",
+     "dec_nn",
+     "ro_disp",
+     "code_detect",
+     "ct_cryocmos",
+     "ct_sfq",
+     "code_magic",
+     "ic_cryolink",
+     "ic_transducer"
+    ],
+    "count": 84
+   }
+  },
+  {
+   "slug": "israeli-quantum-computing-center",
+   "name": "Israeli Quantum Computing Center",
+   "aliases": [
+    "Israeli Quantum Computing Center (Quantum Machines + QuantWare + Qolab + ORCA)"
+   ],
+   "tier": "research",
+   "segment": "research-org",
+   "country": "Israel",
+   "city": "Tel Aviv",
+   "url": "i-qcc.com",
+   "note": "",
+   "machines": [
+    "iqcc-facility"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 1
+    },
+    {
+     "id": "enc_bare",
+     "machines": 1
+    },
+    {
+     "id": "g_tc",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_rt",
+     "machines": 1
+    },
+    {
+     "id": "ro_disp",
+     "machines": 1
+    },
+    {
+     "id": "fab_sc",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "iqcc-facility",
+     "host_org": "Tel Aviv University - IQCC; Quantum Machines OPX1000 + NVIDIA DGX Quantum; QPUs from QuantWare, Qolab, ORCA"
+    }
+   ],
+   "mentions": {
+    "briefs": [],
+    "count": 0
+   }
+  },
+  {
+   "slug": "it4innovations-national-supercomputing-center-vsb-tu-ostrava",
+   "name": "IT4Innovations National Supercomputing Center (VSB – TU Ostrava)",
+   "aliases": [
+    "IT4Innovations National Supercomputing Center (VSB - Technical University of Ostrava)"
+   ],
+   "tier": "academic",
+   "segment": "",
+   "country": "Czechia",
+   "city": "Ostrava",
+   "url": "https://www.it4i.cz/en",
+   "note": "",
+   "machines": [
+    "it4i-vlq"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 1
+    },
+    {
+     "id": "enc_bare",
+     "machines": 1
+    },
+    {
+     "id": "ct_rt",
+     "machines": 1
+    },
+    {
+     "id": "ro_disp",
+     "machines": 1
+    },
+    {
+     "id": "fab_sc",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [],
+    "count": 0
+   }
+  },
+  {
+   "slug": "kriss",
+   "name": "KRISS",
+   "aliases": [
+    "Korea Research Institute of Standards and Science"
+   ],
+   "tier": "research",
+   "segment": "research-org",
+   "country": "South Korea",
+   "city": "Daejeon",
+   "url": "kriss.re.kr",
+   "note": "",
+   "machines": [
+    "kriss-50q",
+    "kriss-20q"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 2
+    },
+    {
+     "id": "enc_bare",
+     "machines": 2
+    },
+    {
+     "id": "cx_nn",
+     "machines": 2
+    },
+    {
+     "id": "ct_rt",
+     "machines": 2
+    },
+    {
+     "id": "ro_disp",
+     "machines": 2
+    },
+    {
+     "id": "fab_sc",
+     "machines": 2
+    },
+    {
+     "id": "g_tc",
+     "machines": 1
+    },
+    {
+     "id": "fab_cmos",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [],
+    "count": 0
+   }
+  },
+  {
+   "slug": "lawrence-berkeley-national-laboratory",
+   "name": "Lawrence Berkeley National Laboratory",
+   "aliases": [
+    "Lawrence Berkeley National Laboratory"
+   ],
+   "tier": "academic",
+   "segment": "",
+   "country": "United States",
+   "city": "Berkeley, CA",
+   "url": "https://quantumsystemsaccelerator.org/",
+   "note": "",
+   "machines": [
+    "lbnl-aqt"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 1
+    },
+    {
+     "id": "enc_bare",
+     "machines": 1
+    },
+    {
+     "id": "g_cr",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_rt",
+     "machines": 1
+    },
+    {
+     "id": "ro_disp",
+     "machines": 1
+    },
+    {
+     "id": "fab_sc",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [],
+    "count": 0
+   }
+  },
+  {
+   "slug": "massachusetts-institute-of-technology",
+   "name": "Massachusetts Institute of Technology",
+   "aliases": [
+    "MIT"
+   ],
+   "tier": "research",
+   "segment": "research-org",
+   "country": "United States",
+   "city": "Cambridge, MA",
+   "url": "equs.mit.edu",
+   "note": "",
+   "machines": [],
+   "families": [
+    "ATOM"
+   ],
+   "architectures": [
+    "atom_rb"
+   ],
+   "stations": [],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "fluxonium",
+     "ic_multidie",
+     "ct_vio",
+     "ct_sfq",
+     "ro_fluor",
+     "code_magic",
+     "dec_rl",
+     "qd_spin",
+     "enc_omg",
+     "cx_lr",
+     "cx_reload",
+     "ct_cryocmos",
+     "dec_corr",
+     "fab_trap"
+    ],
+    "count": 30
+   }
+  },
+  {
+   "slug": "microsoft",
+   "name": "Microsoft",
+   "aliases": [
+    "Microsoft"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "United States",
+   "city": "Redmond, WA",
+   "url": "microsoft.com",
+   "note": "",
+   "machines": [
+    "microsoft-majorana-1"
+   ],
+   "families": [
+    "ATOM",
+    "TOPO"
+   ],
+   "architectures": [
+    "atom_ae",
+    "topo"
+   ],
+   "stations": [
+    {
+     "id": "majorana",
+     "machines": 1
+    },
+    {
+     "id": "enc_parity",
+     "machines": 1
+    },
+    {
+     "id": "g_mbq",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_base",
+     "machines": 1
+    },
+    {
+     "id": "ro_qcap",
+     "machines": 1
+    },
+    {
+     "id": "fab_mbe",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "microsoft-majorana-1",
+     "host_org": "Microsoft + Station Q, Santa Barbara CA + Microsoft Quantum Labs Delft NL / Copenhagen DK / Purdue IN - lab only, contested"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "majorana",
+     "g_mbq",
+     "fab_mbe",
+     "enc_parity",
+     "ro_qcap",
+     "ct_cryocmos",
+     "code_erasure",
+     "g_ryd",
+     "code_highrate",
+     "ct_laser",
+     "ae_atom",
+     "ct_base",
+     "ro_img",
+     "ro_erasure",
+     "ic_spinphoton",
+     "alkali",
+     "enc_omg",
+     "cx_aod",
+     "cx_reload",
+     "fab_optics",
+     "transmon",
+     "photon",
+     "defect",
+     "g_mwspin",
+     "ro_imgfast",
+     "code_color",
+     "code_qldpc",
+     "code_aft",
+     "code_magic",
+     "code_detect",
+     "ic_atomcavity",
+     "ic_transducer"
+    ],
+    "count": 163
+   }
+  },
+  {
+   "slug": "moscow-state-university",
+   "name": "Moscow State University",
+   "aliases": [
+    "Lomonosov Moscow State University with the Russian Quantum Center"
+   ],
+   "tier": "research",
+   "segment": "research-org",
+   "country": "Russia",
+   "city": "Moscow",
+   "url": "quantum.msu.ru",
+   "note": "",
+   "machines": [
+    "msu-rb-50q"
+   ],
+   "families": [
+    "ATOM"
+   ],
+   "architectures": [
+    "atom_rb"
+   ],
+   "stations": [
+    {
+     "id": "alkali",
+     "machines": 1
+    },
+    {
+     "id": "enc_hf",
+     "machines": 1
+    },
+    {
+     "id": "g_ryd",
+     "machines": 1
+    },
+    {
+     "id": "cx_aod",
+     "machines": 1
+    },
+    {
+     "id": "ct_laser",
+     "machines": 1
+    },
+    {
+     "id": "ro_img",
+     "machines": 1
+    },
+    {
+     "id": "fab_optics",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [],
+    "count": 0
+   }
+  },
+  {
+   "slug": "nict",
+   "name": "NICT",
+   "aliases": [
+    "RIKEN with AIST, NICT, Osaka University, Fujitsu, NTT"
+   ],
+   "tier": "research",
+   "segment": "research-org",
+   "country": "Japan",
+   "city": "Tokyo",
+   "url": "",
+   "note": "",
+   "machines": [
+    "riken-64q"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 1
+    },
+    {
+     "id": "enc_bare",
+     "machines": 1
+    },
+    {
+     "id": "g_tc",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_rt",
+     "machines": 1
+    },
+    {
+     "id": "ct_vio",
+     "machines": 1
+    },
+    {
+     "id": "ro_disp",
+     "machines": 1
+    },
+    {
+     "id": "fab_sc",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "riken-64q",
+     "host_org": "RIKEN Center for Quantum Computing (RQC)"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "ic_atomcavity",
+     "ct_vio"
+    ],
+    "count": 3
+   }
+  },
+  {
+   "slug": "nord-quantique",
+   "name": "Nord Quantique",
+   "aliases": [
+    "Nord Quantique"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "Canada",
+   "city": "Sherbrooke, QC",
+   "url": "https://nordquantique.com/",
+   "note": "",
+   "machines": [
+    "nordquantique-gkp",
+    "nordquantique-tesseract"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "cat"
+   ],
+   "stations": [
+    {
+     "id": "cavity",
+     "machines": 2
+    },
+    {
+     "id": "enc_gkp",
+     "machines": 2
+    },
+    {
+     "id": "g_bos",
+     "machines": 2
+    },
+    {
+     "id": "cx_nn",
+     "machines": 2
+    },
+    {
+     "id": "ct_rt",
+     "machines": 2
+    },
+    {
+     "id": "ro_disp",
+     "machines": 2
+    },
+    {
+     "id": "fab_sc",
+     "machines": 2
+    },
+    {
+     "id": "fab_3d",
+     "machines": 2
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "nordquantique-gkp",
+     "host_org": "Nord Quantique (vendor lab), DistriQ innovation zone"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "enc_gkp",
+     "cavity",
+     "g_bos",
+     "g_catcnot",
+     "code_bosonic",
+     "transmon",
+     "enc_cat",
+     "dec_corr",
+     "dec_rl",
+     "fab_3d"
+    ],
+    "count": 40
+   }
+  },
+  {
+   "slug": "orca-computing",
+   "name": "ORCA Computing",
+   "aliases": [
+    "ORCA",
+    "ORCA Computing"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "components-supply-chain",
+   "country": "United Kingdom",
+   "city": "London",
+   "url": "https://www.orcacomputing.com/",
+   "note": "",
+   "machines": [
+    "orca-pt2"
+   ],
+   "families": [
+    "PHOTON"
+   ],
+   "architectures": [
+    "ph_sampler"
+   ],
+   "stations": [
+    {
+     "id": "squeezed",
+     "machines": 1
+    },
+    {
+     "id": "g_lointer",
+     "machines": 1
+    },
+    {
+     "id": "cx_switch",
+     "machines": 1
+    },
+    {
+     "id": "ct_eo",
+     "machines": 1
+    },
+    {
+     "id": "ro_spd",
+     "machines": 1
+    },
+    {
+     "id": "fab_bulk",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "orca-pt2",
+     "host_org": "NQCC, Harwell UK; PSNC, Poznan PL; UK MoD / Digital Catapult, London - vendor HQ London"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "g_lointer",
+     "fab_bulk",
+     "photon",
+     "enc_dualrail",
+     "enc_timebin",
+     "g_fusion",
+     "src_resource",
+     "cx_switch",
+     "code_fusion",
+     "fab_pic",
+     "alkali",
+     "g_bos",
+     "ro_img",
+     "dec_corr"
+    ],
+    "count": 66
+   }
+  },
+  {
+   "slug": "origin-quantum",
+   "name": "Origin Quantum",
+   "aliases": [
+    "Origin Quantum"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "China",
+   "city": "Hefei",
+   "url": "originqc.com.cn",
+   "note": "",
+   "machines": [
+    "originq-wukong-72",
+    "originq-wukong-102",
+    "originq-wukong-180"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 3
+    },
+    {
+     "id": "enc_bare",
+     "machines": 3
+    },
+    {
+     "id": "g_tc",
+     "machines": 3
+    },
+    {
+     "id": "cx_nn",
+     "machines": 3
+    },
+    {
+     "id": "ct_rt",
+     "machines": 3
+    },
+    {
+     "id": "ro_disp",
+     "machines": 3
+    },
+    {
+     "id": "fab_sc",
+     "machines": 3
+    },
+    {
+     "id": "code_detect",
+     "machines": 2
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "code_detect"
+    ],
+    "count": 1
+   }
+  },
+  {
+   "slug": "oxford-quantum-circuits-oqc",
+   "name": "Oxford Quantum Circuits (OQC)",
+   "aliases": [
+    "OQC",
+    "Oxford Quantum Circuits"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "United Kingdom",
+   "city": "Reading",
+   "url": "https://oxfordquantumcircuits.com/",
+   "note": "",
+   "machines": [
+    "oqc-genesis-16",
+    "oqc-toshiko-32"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc",
+    "dualrail"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 2
+    },
+    {
+     "id": "cx_nn",
+     "machines": 2
+    },
+    {
+     "id": "ct_rt",
+     "machines": 2
+    },
+    {
+     "id": "ct_vio",
+     "machines": 2
+    },
+    {
+     "id": "ro_disp",
+     "machines": 2
+    },
+    {
+     "id": "fab_sc",
+     "machines": 2
+    },
+    {
+     "id": "enc_bare",
+     "machines": 1
+    },
+    {
+     "id": "enc_dualrail",
+     "machines": 1
+    },
+    {
+     "id": "g_bos",
+     "machines": 1
+    },
+    {
+     "id": "ro_erasure",
+     "machines": 1
+    },
+    {
+     "id": "code_erasure",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "oqc-genesis-16",
+     "host_org": "Digital Realty JFK10 data centre (with NVIDIA GH200)"
+    },
+    {
+     "machine": "oqc-toshiko-32",
+     "host_org": "Colocation, not a vendor lab: CentreSquare, London UK; CESGA, Santiago de Compostela ES; Equinix TY11, Tokyo JP"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "ct_vio",
+     "enc_dualrail",
+     "g_cr",
+     "fab_sc",
+     "transmon",
+     "g_tc",
+     "dec_nn",
+     "enc_bare",
+     "ct_sfq",
+     "code_magic",
+     "dec_rl",
+     "ic_cryolink",
+     "ic_transducer"
+    ],
+    "count": 52
+   }
+  },
+  {
+   "slug": "pasqal",
+   "name": "Pasqal",
+   "aliases": [
+    "Pasqal"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "France",
+   "city": "Massy",
+   "url": "https://pasqal.io/",
+   "note": "",
+   "machines": [
+    "pasqal-fresnel",
+    "pasqal-orion",
+    "pasqal-vela"
+   ],
+   "families": [
+    "ATOM"
+   ],
+   "architectures": [
+    "atom_rb",
+    "atom_analog"
+   ],
+   "stations": [
+    {
+     "id": "alkali",
+     "machines": 3
+    },
+    {
+     "id": "enc_hf",
+     "machines": 3
+    },
+    {
+     "id": "g_ryd",
+     "machines": 3
+    },
+    {
+     "id": "cx_aod",
+     "machines": 3
+    },
+    {
+     "id": "ct_laser",
+     "machines": 3
+    },
+    {
+     "id": "ro_img",
+     "machines": 3
+    },
+    {
+     "id": "fab_optics",
+     "machines": 3
+    },
+    {
+     "id": "enc_gr",
+     "machines": 2
+    },
+    {
+     "id": "g_rydanalog",
+     "machines": 2
+    },
+    {
+     "id": "ct_pic_trap",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "pasqal-fresnel",
+     "host_org": "GENCI / CEA TGCC (EuroHPC)"
+    },
+    {
+     "machine": "pasqal-orion",
+     "host_org": "Five customer sites: GENCI/CEA TGCC (FR); Forschungszentrum Juelich (DE); Saudi Aramco, Dhahran (SA); CINECA, Bologna (IT); DistriQ, Sherbrooke QC (CA)"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "ct_pic_trap",
+     "g_rydanalog",
+     "alkali",
+     "fab_optics",
+     "enc_gr",
+     "g_anneal",
+     "g_ryd",
+     "cx_aod",
+     "ct_laser",
+     "code_aft",
+     "ae_atom",
+     "enc_omg",
+     "cx_reload",
+     "code_highrate",
+     "code_magic",
+     "dec_nn",
+     "dec_corr"
+    ],
+    "count": 118
+   }
+  },
+  {
+   "slug": "peking-university",
+   "name": "Peking University",
+   "aliases": [
+    "CAS / Peking University"
+   ],
+   "tier": "academic-body",
+   "segment": "research-org",
+   "country": "China",
+   "city": "Beijing",
+   "url": "https://english.pku.edu.cn",
+   "note": "",
+   "machines": [
+    "zhuangzi-2.0"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 1
+    },
+    {
+     "id": "enc_bare",
+     "machines": 1
+    },
+    {
+     "id": "g_tc",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_rt",
+     "machines": 1
+    },
+    {
+     "id": "ro_disp",
+     "machines": 1
+    },
+    {
+     "id": "fab_sc",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [],
+    "count": 0
+   }
+  },
+  {
+   "slug": "photonic-inc",
+   "name": "Photonic Inc.",
+   "aliases": [
+    "Photonic Inc",
+    "Photonic Inc."
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "Canada",
+   "city": "Burnaby",
+   "url": "photonic.com",
+   "note": "",
+   "machines": [
+    "photonic-inc"
+   ],
+   "families": [
+    "DEFECT"
+   ],
+   "architectures": [
+    "defect"
+   ],
+   "stations": [
+    {
+     "id": "defect",
+     "machines": 1
+    },
+    {
+     "id": "enc_spin_ld",
+     "machines": 1
+    },
+    {
+     "id": "g_mwspin",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_base",
+     "machines": 1
+    },
+    {
+     "id": "ro_fluor",
+     "machines": 1
+    },
+    {
+     "id": "code_qldpc",
+     "machines": 1
+    },
+    {
+     "id": "ic_spinphoton",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "ic_spinphoton",
+     "defect",
+     "code_qldpc",
+     "photon",
+     "g_mwspin",
+     "ic_transducer",
+     "ro_spd",
+     "majorana",
+     "dec_corr",
+     "dec_rl"
+    ],
+    "count": 39
+   }
+  },
+  {
+   "slug": "planqc",
+   "name": "planqc",
+   "aliases": [
+    "planqc"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "Germany",
+   "city": "Garching",
+   "url": "https://planqc.eu",
+   "note": "",
+   "machines": [
+    "planqc-maqcs"
+   ],
+   "families": [
+    "ATOM"
+   ],
+   "architectures": [
+    "atom_ae"
+   ],
+   "stations": [
+    {
+     "id": "ae_atom",
+     "machines": 1
+    },
+    {
+     "id": "enc_opt",
+     "machines": 1
+    },
+    {
+     "id": "g_ryd",
+     "machines": 1
+    },
+    {
+     "id": "ct_laser",
+     "machines": 1
+    },
+    {
+     "id": "ro_img",
+     "machines": 1
+    },
+    {
+     "id": "fab_optics",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "planqc-maqcs",
+     "host_org": "Leibniz Supercomputing Centre (LRZ) - MAQCS, under construction; DiNAQC at the DLR Innovation Centre, Ulm, Germany (spring 2027)"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "enc_opt",
+     "alkali",
+     "code_erasure"
+    ],
+    "count": 22
+   }
+  },
+  {
+   "slug": "poznan-supercomputing-and-networking-center-pcss",
+   "name": "Poznań Supercomputing and Networking Center (PCSS)",
+   "aliases": [
+    "Poznan Supercomputing and Networking Center (PCSS)"
+   ],
+   "tier": "academic",
+   "segment": "",
+   "country": "Poland",
+   "city": "Poznań",
+   "url": "https://www.psnc.pl/",
+   "note": "",
+   "machines": [
+    "psnc-piast-q"
+   ],
+   "families": [
+    "ION"
+   ],
+   "architectures": [
+    "ion_chain"
+   ],
+   "stations": [
+    {
+     "id": "ion",
+     "machines": 1
+    },
+    {
+     "id": "enc_opt",
+     "machines": 1
+    },
+    {
+     "id": "g_ms",
+     "machines": 1
+    },
+    {
+     "id": "cx_bus",
+     "machines": 1
+    },
+    {
+     "id": "ct_ionaod",
+     "machines": 1
+    },
+    {
+     "id": "ro_fluor",
+     "machines": 1
+    },
+    {
+     "id": "fab_trap",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [],
+    "count": 0
+   }
+  },
+  {
+   "slug": "princeton-university",
+   "name": "Princeton University",
+   "aliases": [
+    "Princeton",
+    "Princeton (Thompson group)"
+   ],
+   "tier": "research",
+   "segment": "research-org",
+   "country": "United States",
+   "city": "Princeton, NJ",
+   "url": "quantum.princeton.edu",
+   "note": "",
+   "machines": [
+    "princeton-yb-erasure"
+   ],
+   "families": [
+    "ATOM"
+   ],
+   "architectures": [
+    "atom_ae"
+   ],
+   "stations": [
+    {
+     "id": "ae_atom",
+     "machines": 1
+    },
+    {
+     "id": "enc_omg",
+     "machines": 1
+    },
+    {
+     "id": "g_ryd",
+     "machines": 1
+    },
+    {
+     "id": "cx_aod",
+     "machines": 1
+    },
+    {
+     "id": "ct_laser",
+     "machines": 1
+    },
+    {
+     "id": "ro_img",
+     "machines": 1
+    },
+    {
+     "id": "ro_erasure",
+     "machines": 1
+    },
+    {
+     "id": "code_erasure",
+     "machines": 1
+    },
+    {
+     "id": "dec_corr",
+     "machines": 1
+    },
+    {
+     "id": "fab_optics",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "code_erasure",
+     "ae_atom",
+     "enc_omg",
+     "ro_erasure",
+     "cx_reload",
+     "dec_corr",
+     "g_ryd",
+     "transmon",
+     "code_qldpc"
+    ],
+    "count": 56
+   }
+  },
+  {
+   "slug": "psiquantum",
+   "name": "PsiQuantum",
+   "aliases": [
+    "PsiQuantum"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "United States",
+   "city": "Palo Alto, CA",
+   "url": "psiquantum.com",
+   "note": "",
+   "machines": [
+    "psiquantum-omega"
+   ],
+   "families": [
+    "PHOTON"
+   ],
+   "architectures": [
+    "ph_fusion"
+   ],
+   "stations": [
+    {
+     "id": "photon",
+     "machines": 1
+    },
+    {
+     "id": "enc_dualrail",
+     "machines": 1
+    },
+    {
+     "id": "enc_timebin",
+     "machines": 1
+    },
+    {
+     "id": "g_fusion",
+     "machines": 1
+    },
+    {
+     "id": "src_resource",
+     "machines": 1
+    },
+    {
+     "id": "cx_switch",
+     "machines": 1
+    },
+    {
+     "id": "ct_eo",
+     "machines": 1
+    },
+    {
+     "id": "ro_spd",
+     "machines": 1
+    },
+    {
+     "id": "code_fusion",
+     "machines": 1
+    },
+    {
+     "id": "dec_mwpm",
+     "machines": 1
+    },
+    {
+     "id": "ic_fibre",
+     "machines": 1
+    },
+    {
+     "id": "fab_pic",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "psiquantum-omega",
+     "host_org": "PsiQuantum HQ; Omega wafers fabricated at GlobalFoundries, Malta NY; utility-scale sites under construction at Moreton Bay (Brisbane), Australia and the Illinois Quantum & Microelectronics Park, Chicago IL"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "ro_spd",
+     "photon",
+     "cx_switch",
+     "fab_pic",
+     "enc_timebin",
+     "code_fusion",
+     "ic_fibre",
+     "enc_dualrail",
+     "g_fusion",
+     "ct_eo",
+     "src_resource",
+     "majorana",
+     "code_highrate",
+     "ic_transducer"
+    ],
+    "count": 141
+   }
+  },
+  {
+   "slug": "qilimanjaro-quantum-tech",
+   "name": "Qilimanjaro Quantum Tech",
+   "aliases": [
+    "Qilimanjaro Quantum Tech"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "Spain",
+   "city": "Barcelona",
+   "url": "qilimanjaro.tech",
+   "note": "",
+   "machines": [
+    "qilimanjaro"
+   ],
+   "families": [
+    "ANNEAL"
+   ],
+   "architectures": [
+    "anneal"
+   ],
+   "stations": [
+    {
+     "id": "fluxq",
+     "machines": 1
+    },
+    {
+     "id": "g_anneal",
+     "machines": 1
+    },
+    {
+     "id": "fab_sc",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "ro_fluxro"
+    ],
+    "count": 2
+   }
+  },
+  {
+   "slug": "qolab",
+   "name": "Qolab",
+   "aliases": [
+    "Qolab"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "United States",
+   "city": "Ann Arbor, MI",
+   "url": "qolab.ai",
+   "note": "",
+   "machines": [
+    "qolab-iqcc"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 1
+    },
+    {
+     "id": "enc_bare",
+     "machines": 1
+    },
+    {
+     "id": "g_tc",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_rt",
+     "machines": 1
+    },
+    {
+     "id": "ro_disp",
+     "machines": 1
+    },
+    {
+     "id": "fab_cmos",
+     "machines": 1
+    },
+    {
+     "id": "fab_sc",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "qolab-iqcc",
+     "host_org": "Israeli Quantum Computing Center at Tel Aviv University (since Dec 2025); Qolab labs Madison WI and Santa Barbara CA"
+    }
+   ],
+   "mentions": {
+    "briefs": [],
+    "count": 0
+   }
+  },
+  {
+   "slug": "qpiai",
+   "name": "QpiAI",
+   "aliases": [
+    "QpiAI"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "India",
+   "city": "Bengaluru",
+   "url": "https://www.qpiai.tech/",
+   "note": "",
+   "machines": [
+    "qpiai-indus-25",
+    "qpiai-kaveri-64"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 2
+    },
+    {
+     "id": "enc_bare",
+     "machines": 2
+    },
+    {
+     "id": "g_tc",
+     "machines": 2
+    },
+    {
+     "id": "cx_nn",
+     "machines": 2
+    },
+    {
+     "id": "ct_rt",
+     "machines": 2
+    },
+    {
+     "id": "ro_disp",
+     "machines": 2
+    },
+    {
+     "id": "fab_sc",
+     "machines": 2
+    },
+    {
+     "id": "ic_multidie",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "ic_multidie"
+    ],
+    "count": 2
+   }
+  },
+  {
+   "slug": "quamcore",
+   "name": "QuamCore",
+   "aliases": [
+    "QuamCore"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "Israel",
+   "city": "Haifa",
+   "url": "quamcore.com",
+   "note": "",
+   "machines": [
+    "quamcore"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 1
+    },
+    {
+     "id": "enc_bare",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_cryocmos",
+     "machines": 1
+    },
+    {
+     "id": "ct_sfq",
+     "machines": 1
+    },
+    {
+     "id": "ro_disp",
+     "machines": 1
+    },
+    {
+     "id": "fab_sc",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [],
+    "count": 0
+   }
+  },
+  {
+   "slug": "quandela",
+   "name": "Quandela",
+   "aliases": [
+    "Quandela"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "France",
+   "city": "Massy",
+   "url": "https://www.quandela.com/",
+   "note": "",
+   "machines": [
+    "quandela-belenos",
+    "quandela-lucy"
+   ],
+   "families": [
+    "PHOTON"
+   ],
+   "architectures": [
+    "ph_fusion"
+   ],
+   "stations": [
+    {
+     "id": "photon",
+     "machines": 2
+    },
+    {
+     "id": "enc_dualrail",
+     "machines": 2
+    },
+    {
+     "id": "enc_timebin",
+     "machines": 2
+    },
+    {
+     "id": "g_fusion",
+     "machines": 2
+    },
+    {
+     "id": "cx_switch",
+     "machines": 2
+    },
+    {
+     "id": "ct_eo",
+     "machines": 2
+    },
+    {
+     "id": "ro_spd",
+     "machines": 2
+    },
+    {
+     "id": "ic_fibre",
+     "machines": 2
+    },
+    {
+     "id": "fab_pic",
+     "machines": 2
+    },
+    {
+     "id": "fab_mbe",
+     "machines": 2
+    },
+    {
+     "id": "src_resource",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "quandela-lucy",
+     "host_org": "CEA TGCC - on the Joliot-Curie HPC system since 14 Apr 2026 (EuroHPC/GENCI)"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "photon",
+     "enc_timebin",
+     "g_fusion",
+     "cx_switch",
+     "src_resource",
+     "fab_pic",
+     "ro_spd",
+     "ic_fibre",
+     "enc_dualrail",
+     "code_fusion",
+     "ct_eo",
+     "fab_mbe"
+    ],
+    "count": 51
+   }
+  },
+  {
+   "slug": "quantinuum",
+   "name": "Quantinuum",
+   "aliases": [
+    "Quantinuum"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "United States",
+   "city": "Broomfield, CO",
+   "url": "quantinuum.com",
+   "note": "",
+   "machines": [
+    "quantinuum-helios",
+    "quantinuum-h1",
+    "quantinuum-h2",
+    "quantinuum-helix",
+    "quantinuum-apollo",
+    "quantinuum-sol"
+   ],
+   "families": [
+    "ION"
+   ],
+   "architectures": [
+    "ion_qccd"
+   ],
+   "stations": [
+    {
+     "id": "ion",
+     "machines": 6
+    },
+    {
+     "id": "enc_hf",
+     "machines": 6
+    },
+    {
+     "id": "g_ms",
+     "machines": 6
+    },
+    {
+     "id": "cx_qccd",
+     "machines": 6
+    },
+    {
+     "id": "ct_ionlaser",
+     "machines": 6
+    },
+    {
+     "id": "ro_fluor",
+     "machines": 6
+    },
+    {
+     "id": "code_highrate",
+     "machines": 6
+    },
+    {
+     "id": "fab_trap",
+     "machines": 6
+    },
+    {
+     "id": "code_magic",
+     "machines": 4
+    },
+    {
+     "id": "code_color",
+     "machines": 3
+    },
+    {
+     "id": "dec_gpu",
+     "machines": 3
+    },
+    {
+     "id": "fab_optics",
+     "machines": 3
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "ion",
+     "code_highrate",
+     "g_ms",
+     "cx_qccd",
+     "ct_ionlaser",
+     "code_magic",
+     "ic_ionphoton",
+     "ro_fluor",
+     "enc_hf",
+     "fab_trap",
+     "code_color",
+     "dec_gpu",
+     "code_detect",
+     "enc_omg",
+     "code_aft",
+     "cx_bus",
+     "fab_optics",
+     "g_elec",
+     "g_anneal",
+     "ct_pic_trap",
+     "ct_ionmw",
+     "code_mitig",
+     "dec_mwpm",
+     "dec_nn",
+     "dec_corr",
+     "dec_rl"
+    ],
+    "count": 188
+   }
+  },
+  {
+   "slug": "quantum-art",
+   "name": "Quantum Art",
+   "aliases": [
+    "Quantum Art"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "Israel",
+   "city": "Ness Ziona",
+   "url": "quantum-art.tech",
+   "note": "",
+   "machines": [
+    "quantum-art-multicore"
+   ],
+   "families": [
+    "ION"
+   ],
+   "architectures": [
+    "ion_chain"
+   ],
+   "stations": [
+    {
+     "id": "ion",
+     "machines": 1
+    },
+    {
+     "id": "enc_hf",
+     "machines": 1
+    },
+    {
+     "id": "g_ms",
+     "machines": 1
+    },
+    {
+     "id": "cx_bus",
+     "machines": 1
+    },
+    {
+     "id": "ro_fluor",
+     "machines": 1
+    },
+    {
+     "id": "fab_trap",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "ion",
+     "enc_omg",
+     "g_ms",
+     "g_elec",
+     "cx_qccd",
+     "fab_trap",
+     "ct_ionmw",
+     "ro_fluor",
+     "code_highrate",
+     "ic_ionphoton"
+    ],
+    "count": 22
+   }
+  },
+  {
+   "slug": "quantum-brilliance",
+   "name": "Quantum Brilliance",
+   "aliases": [
+    "Quantum Brilliance"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "Germany",
+   "city": "Stuttgart",
+   "url": "quantumbrilliance.com",
+   "note": "",
+   "machines": [
+    "quantum-brilliance-quoll"
+   ],
+   "families": [
+    "DEFECT"
+   ],
+   "architectures": [
+    "defect"
+   ],
+   "stations": [
+    {
+     "id": "defect",
+     "machines": 1
+    },
+    {
+     "id": "enc_spin_ld",
+     "machines": 1
+    },
+    {
+     "id": "g_mwspin",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_base",
+     "machines": 1
+    },
+    {
+     "id": "ro_fluor",
+     "machines": 1
+    },
+    {
+     "id": "fab_diamond",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "quantum-brilliance-quoll",
+     "host_org": "Customer sites, room temperature: Oak Ridge National Laboratory, TN (3 QDKs, 2 Sep 2025); Pawsey Supercomputing Centre, Perth AU; Fraunhofer IAF, Freiburg DE; vendor Stuttgart/Canberra"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "g_mwspin",
+     "defect",
+     "fab_diamond"
+    ],
+    "count": 11
+   }
+  },
+  {
+   "slug": "quantum-motion",
+   "name": "Quantum Motion",
+   "aliases": [
+    "Quantum Motion"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "United Kingdom",
+   "city": "London",
+   "url": "quantummotion.tech",
+   "note": "",
+   "machines": [
+    "quantum-motion-qm-one"
+   ],
+   "families": [
+    "SPIN"
+   ],
+   "architectures": [
+    "spin_qd"
+   ],
+   "stations": [
+    {
+     "id": "qd_spin",
+     "machines": 1
+    },
+    {
+     "id": "enc_spin_ld",
+     "machines": 1
+    },
+    {
+     "id": "g_exch",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_cryocmos",
+     "machines": 1
+    },
+    {
+     "id": "ro_s2c",
+     "machines": 1
+    },
+    {
+     "id": "ic_fanout",
+     "machines": 1
+    },
+    {
+     "id": "fab_cmos",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "quantum-motion-qm-one",
+     "host_org": "National Quantum Computing Centre (NQCC) testbed programme; vendor HQ London"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "fab_cmos",
+     "ic_fanout",
+     "qd_spin",
+     "ct_base",
+     "g_exch",
+     "cx_shuttle",
+     "ro_s2c",
+     "cx_nn",
+     "ct_cryocmos",
+     "dec_corr",
+     "dec_rl"
+    ],
+    "count": 71
+   }
+  },
+  {
+   "slug": "quantum-x-labs",
+   "name": "Quantum X Labs",
+   "aliases": [
+    "Quantum X Labs Inc. (Nasdaq: QXL)"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-software",
+   "country": "Israel",
+   "city": "Tel Aviv",
+   "url": "quantumxlabs.xyz",
+   "note": "",
+   "machines": [
+    "qxl-neutral-atom-50"
+   ],
+   "families": [
+    "ATOM"
+   ],
+   "architectures": [
+    "atom_rb"
+   ],
+   "stations": [
+    {
+     "id": "alkali",
+     "machines": 1
+    },
+    {
+     "id": "enc_hf",
+     "machines": 1
+    },
+    {
+     "id": "g_ryd",
+     "machines": 1
+    },
+    {
+     "id": "cx_aod",
+     "machines": 1
+    },
+    {
+     "id": "ct_laser",
+     "machines": 1
+    },
+    {
+     "id": "ro_img",
+     "machines": 1
+    },
+    {
+     "id": "dec_nn",
+     "machines": 1
+    },
+    {
+     "id": "fab_optics",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "dec_mwpm"
+    ],
+    "count": 4
+   }
+  },
+  {
+   "slug": "quantumctek",
+   "name": "QuantumCTek",
+   "aliases": [
+    "China Telecom Quantum Group + CAS + QuantumCTek",
+    "China Telecom Quantum Group + QuantumCTek",
+    "China Telecom Quantum Group / QuantumCTek / CAS"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "communications-QKD",
+   "country": "China",
+   "city": "Hefei",
+   "url": "quantumctek.com",
+   "note": "",
+   "machines": [
+    "ctqg-tianyan-176",
+    "ctqg-tianyan-287",
+    "ctqg-tianyan-504"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 3
+    },
+    {
+     "id": "enc_bare",
+     "machines": 3
+    },
+    {
+     "id": "g_tc",
+     "machines": 3
+    },
+    {
+     "id": "cx_nn",
+     "machines": 3
+    },
+    {
+     "id": "ct_rt",
+     "machines": 3
+    },
+    {
+     "id": "ro_disp",
+     "machines": 3
+    },
+    {
+     "id": "fab_sc",
+     "machines": 3
+    },
+    {
+     "id": "ic_multidie",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "ctqg-tianyan-176",
+     "host_org": "China Telecom Quantum Group - Tianyan cloud DC; chips from QuantumCTek/CAS"
+    },
+    {
+     "machine": "ctqg-tianyan-287",
+     "host_org": "China Telecom Quantum Group"
+    },
+    {
+     "machine": "ctqg-tianyan-504",
+     "host_org": "China Telecom Quantum Group; 'Xiaohong' chip from CAS Institute of Physics, Beijing; reachability disputed"
+    }
+   ],
+   "mentions": {
+    "briefs": [],
+    "count": 0
+   }
+  },
+  {
+   "slug": "quantware",
+   "name": "QuantWare",
+   "aliases": [
+    "QuantWare"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "components-supply-chain",
+   "country": "Netherlands",
+   "city": "Delft",
+   "url": "quantware.com",
+   "note": "",
+   "machines": [
+    "quantware-vio-40k",
+    "quantware-contralto-a17",
+    "quantware-tenor-d64"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 3
+    },
+    {
+     "id": "enc_bare",
+     "machines": 3
+    },
+    {
+     "id": "g_tc",
+     "machines": 3
+    },
+    {
+     "id": "cx_nn",
+     "machines": 3
+    },
+    {
+     "id": "ct_rt",
+     "machines": 3
+    },
+    {
+     "id": "ro_disp",
+     "machines": 3
+    },
+    {
+     "id": "fab_sc",
+     "machines": 3
+    },
+    {
+     "id": "ct_vio",
+     "machines": 1
+    },
+    {
+     "id": "code_surface",
+     "machines": 1
+    },
+    {
+     "id": "ic_mcm",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "quantware-contralto-a17",
+     "host_org": "QuantWare (vendor) - QPU components shipped to integrators"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "ct_vio",
+     "ic_mcm",
+     "g_tc",
+     "ro_disp",
+     "cx_lr",
+     "transmon"
+    ],
+    "count": 50
+   }
+  },
+  {
+   "slug": "qudoor",
+   "name": "QUDOOR",
+   "aliases": [
+    "Qudoor",
+    "Qudoor (Guokaike)"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "communications-QKD",
+   "country": "China",
+   "city": "",
+   "url": "https://www.qudoor.com",
+   "note": "",
+   "machines": [
+    "qudoor-abaq"
+   ],
+   "families": [
+    "ION"
+   ],
+   "architectures": [
+    "ion_chain"
+   ],
+   "stations": [
+    {
+     "id": "ion",
+     "machines": 1
+    },
+    {
+     "id": "enc_hf",
+     "machines": 1
+    },
+    {
+     "id": "g_ms",
+     "machines": 1
+    },
+    {
+     "id": "cx_bus",
+     "machines": 1
+    },
+    {
+     "id": "ro_fluor",
+     "machines": 1
+    },
+    {
+     "id": "fab_trap",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "ct_ionaod",
+     "ion"
+    ],
+    "count": 6
+   }
+  },
+  {
+   "slug": "qudora-technologies",
+   "name": "Qudora Technologies",
+   "aliases": [
+    "QUDORA",
+    "QUDORA Technologies",
+    "QUDORA Technologies-led consortium (TU Braunschweig, Leibniz University Hannover, PTB, Forschungszentrum Jülich, NXP Semiconductors Germany, AQT Germany)"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "Germany",
+   "city": "Braunschweig",
+   "url": "https://qudora.com/",
+   "note": "",
+   "machines": [
+    "qudora-nfqc",
+    "qudora-nfqc-1k"
+   ],
+   "families": [
+    "ION"
+   ],
+   "architectures": [
+    "ion_elec"
+   ],
+   "stations": [
+    {
+     "id": "ion",
+     "machines": 2
+    },
+    {
+     "id": "enc_hf",
+     "machines": 2
+    },
+    {
+     "id": "g_elec",
+     "machines": 2
+    },
+    {
+     "id": "ct_ionmw",
+     "machines": 2
+    },
+    {
+     "id": "ro_fluor",
+     "machines": 2
+    },
+    {
+     "id": "fab_trap",
+     "machines": 2
+    },
+    {
+     "id": "fab_cmos",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "ion"
+    ],
+    "count": 1
+   }
+  },
+  {
+   "slug": "quera-computing",
+   "name": "QuEra Computing",
+   "aliases": [
+    "Harvard / MIT / QuEra",
+    "QuEra"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "United States",
+   "city": "Boston, MA",
+   "url": "quera.com",
+   "note": "",
+   "machines": [
+    "quera-aquila",
+    "quera-gemini",
+    "harvard-448",
+    "quera-libra"
+   ],
+   "families": [
+    "ATOM"
+   ],
+   "architectures": [
+    "atom_rb",
+    "atom_analog"
+   ],
+   "stations": [
+    {
+     "id": "alkali",
+     "machines": 4
+    },
+    {
+     "id": "cx_aod",
+     "machines": 4
+    },
+    {
+     "id": "ct_laser",
+     "machines": 4
+    },
+    {
+     "id": "ro_img",
+     "machines": 4
+    },
+    {
+     "id": "fab_optics",
+     "machines": 4
+    },
+    {
+     "id": "enc_hf",
+     "machines": 3
+    },
+    {
+     "id": "g_ryd",
+     "machines": 3
+    },
+    {
+     "id": "code_highrate",
+     "machines": 3
+    },
+    {
+     "id": "dec_corr",
+     "machines": 3
+    },
+    {
+     "id": "code_color",
+     "machines": 2
+    },
+    {
+     "id": "code_aft",
+     "machines": 2
+    },
+    {
+     "id": "code_magic",
+     "machines": 2
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "quera-gemini",
+     "host_org": "QuEra (vendor) + on-prem units incl. AIST G-QuAT, Tsukuba, Japan"
+    },
+    {
+     "machine": "harvard-448",
+     "host_org": "Harvard University (Lukin group), with MIT; QuEra is the commercialisation path"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "g_rydanalog",
+     "alkali",
+     "code_aft",
+     "g_ryd",
+     "dec_corr",
+     "enc_gr",
+     "g_anneal",
+     "code_magic",
+     "cx_aod",
+     "ct_laser",
+     "code_color",
+     "code_erasure",
+     "ro_img",
+     "code_highrate",
+     "fab_optics",
+     "cx_reload",
+     "ro_imgfast",
+     "ae_atom",
+     "enc_omg",
+     "code_surface",
+     "code_qldpc",
+     "ct_pic_trap",
+     "dec_nn",
+     "dec_gpu",
+     "dec_rl",
+     "ic_atomcavity"
+    ],
+    "count": 186
+   }
+  },
+  {
+   "slug": "quix-quantum",
+   "name": "QuiX Quantum",
+   "aliases": [
+    "QuiX",
+    "QuiX Quantum"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "Netherlands",
+   "city": "Enschede",
+   "url": "quixquantum.com",
+   "note": "",
+   "machines": [
+    "quix-carina"
+   ],
+   "families": [
+    "PHOTON"
+   ],
+   "architectures": [
+    "ph_fusion"
+   ],
+   "stations": [
+    {
+     "id": "photon",
+     "machines": 1
+    },
+    {
+     "id": "enc_dualrail",
+     "machines": 1
+    },
+    {
+     "id": "g_fusion",
+     "machines": 1
+    },
+    {
+     "id": "cx_switch",
+     "machines": 1
+    },
+    {
+     "id": "ct_eo",
+     "machines": 1
+    },
+    {
+     "id": "ro_spd",
+     "machines": 1
+    },
+    {
+     "id": "code_fusion",
+     "machines": 1
+    },
+    {
+     "id": "fab_pic",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "quix-carina",
+     "host_org": "QuiX Quantum (vendor); core hardware delivered to the DLR Quantum Computing Initiative, Germany"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "photon",
+     "ct_eo",
+     "enc_timebin",
+     "cx_switch",
+     "fab_pic",
+     "g_fusion",
+     "enc_dualrail",
+     "src_resource",
+     "ro_spd",
+     "code_fusion",
+     "ic_fibre"
+    ],
+    "count": 50
+   }
+  },
+  {
+   "slug": "quobly",
+   "name": "Quobly",
+   "aliases": [
+    "Quobly"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "France",
+   "city": "Grenoble",
+   "url": "https://www.quobly.io/",
+   "note": "",
+   "machines": [
+    "quobly"
+   ],
+   "families": [
+    "SPIN"
+   ],
+   "architectures": [
+    "spin_qd"
+   ],
+   "stations": [
+    {
+     "id": "qd_spin",
+     "machines": 1
+    },
+    {
+     "id": "enc_spin_ld",
+     "machines": 1
+    },
+    {
+     "id": "g_exch",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_cryocmos",
+     "machines": 1
+    },
+    {
+     "id": "ct_base",
+     "machines": 1
+    },
+    {
+     "id": "ro_s2c",
+     "machines": 1
+    },
+    {
+     "id": "fab_cmos",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "fab_cmos",
+     "qd_spin",
+     "cx_shuttle",
+     "ct_base",
+     "enc_spin_ld",
+     "g_exch",
+     "ic_fanout",
+     "cx_nn",
+     "ct_cryocmos"
+    ],
+    "count": 28
+   }
+  },
+  {
+   "slug": "qutech",
+   "name": "QuTech",
+   "aliases": [],
+   "tier": "research",
+   "segment": "research-org",
+   "country": "Netherlands",
+   "city": "Delft",
+   "url": "qutech.nl",
+   "note": "",
+   "machines": [],
+   "families": [
+    "SPIN",
+    "DEFECT"
+   ],
+   "architectures": [
+    "spin_qd",
+    "defect"
+   ],
+   "stations": [],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "defect",
+     "cx_shuttle",
+     "g_mwspin",
+     "ic_spinphoton",
+     "ct_cryocmos",
+     "fab_diamond",
+     "majorana",
+     "cx_crossbar",
+     "qd_spin",
+     "ct_base",
+     "ro_qcap",
+     "enc_spin_ld",
+     "g_exch",
+     "ic_fanout",
+     "enc_parity",
+     "g_mbq",
+     "fab_cmos",
+     "cx_lr",
+     "code_detect",
+     "ic_atomcavity",
+     "fab_mbe"
+    ],
+    "count": 85
+   }
+  },
+  {
+   "slug": "rigetti-computing",
+   "name": "Rigetti Computing",
+   "aliases": [
+    "Rigetti",
+    "Rigetti Computing"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "United States",
+   "city": "Berkeley, CA",
+   "url": "rigetti.com",
+   "note": "",
+   "machines": [
+    "rigetti-ankaa-2",
+    "rigetti-ankaa-3",
+    "rigetti-cepheus-1-108q",
+    "rigetti-cepheus-1-36q"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 4
+    },
+    {
+     "id": "enc_bare",
+     "machines": 4
+    },
+    {
+     "id": "g_tc",
+     "machines": 4
+    },
+    {
+     "id": "cx_nn",
+     "machines": 4
+    },
+    {
+     "id": "ct_rt",
+     "machines": 4
+    },
+    {
+     "id": "ro_disp",
+     "machines": 4
+    },
+    {
+     "id": "fab_sc",
+     "machines": 4
+    },
+    {
+     "id": "ic_mcm",
+     "machines": 2
+    },
+    {
+     "id": "code_surface",
+     "machines": 1
+    },
+    {
+     "id": "dec_fpga",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "ic_mcm",
+     "ic_transducer",
+     "transmon",
+     "cx_nn",
+     "fab_sc",
+     "enc_bare",
+     "ct_vio",
+     "g_tc",
+     "dec_nn",
+     "g_cr",
+     "g_bos",
+     "ct_sfq",
+     "ro_disp",
+     "code_magic",
+     "dec_rl",
+     "ic_cryolink"
+    ],
+    "count": 88
+   }
+  },
+  {
+   "slug": "riken-center-for-quantum-computing",
+   "name": "RIKEN Center for Quantum Computing",
+   "aliases": [
+    "RIKEN"
+   ],
+   "tier": "research",
+   "segment": "research-org",
+   "country": "Japan",
+   "city": "Wako",
+   "url": "",
+   "note": "",
+   "machines": [],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "ct_vio",
+     "transmon",
+     "ct_rt",
+     "code_mitig"
+    ],
+    "count": 19
+   }
+  },
+  {
+   "slug": "russian-quantum-center",
+   "name": "Russian Quantum Center",
+   "aliases": [
+    "Lebedev Physical Institute (FIAN) and the Russian Quantum Center, Rosatom roadmap"
+   ],
+   "tier": "research",
+   "segment": "research-org",
+   "country": "Russia",
+   "city": "Moscow",
+   "url": "",
+   "note": "",
+   "machines": [
+    "rqc-ion-50q"
+   ],
+   "families": [
+    "ION"
+   ],
+   "architectures": [
+    "ion_chain"
+   ],
+   "stations": [
+    {
+     "id": "ion",
+     "machines": 1
+    },
+    {
+     "id": "enc_hf",
+     "machines": 1
+    },
+    {
+     "id": "g_ms",
+     "machines": 1
+    },
+    {
+     "id": "cx_bus",
+     "machines": 1
+    },
+    {
+     "id": "ct_ionaod",
+     "machines": 1
+    },
+    {
+     "id": "ro_fluor",
+     "machines": 1
+    },
+    {
+     "id": "fab_trap",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [],
+    "count": 0
+   }
+  },
+  {
+   "slug": "sandia-national-laboratories",
+   "name": "Sandia National Laboratories",
+   "aliases": [
+    "Sandia National Laboratories"
+   ],
+   "tier": "academic",
+   "segment": "",
+   "country": "United States",
+   "city": "Albuquerque, NM",
+   "url": "https://www.sandia.gov/quantum/",
+   "note": "",
+   "machines": [
+    "sandia-qscout"
+   ],
+   "families": [
+    "ION"
+   ],
+   "architectures": [
+    "ion_chain"
+   ],
+   "stations": [
+    {
+     "id": "ion",
+     "machines": 1
+    },
+    {
+     "id": "enc_hf",
+     "machines": 1
+    },
+    {
+     "id": "g_ms",
+     "machines": 1
+    },
+    {
+     "id": "cx_bus",
+     "machines": 1
+    },
+    {
+     "id": "ct_ionaod",
+     "machines": 1
+    },
+    {
+     "id": "ro_fluor",
+     "machines": 1
+    },
+    {
+     "id": "fab_trap",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "ct_ionlaser",
+     "fab_trap"
+    ],
+    "count": 3
+   }
+  },
+  {
+   "slug": "seeqc",
+   "name": "SEEQC",
+   "aliases": [
+    "SEEQC"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "United States",
+   "city": "Elmsford, NY",
+   "url": "seeqc.com",
+   "note": "",
+   "machines": [
+    "seeqc-sfq-5q"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 1
+    },
+    {
+     "id": "enc_bare",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_sfq",
+     "machines": 1
+    },
+    {
+     "id": "ro_disp",
+     "machines": 1
+    },
+    {
+     "id": "ic_multidie",
+     "machines": 1
+    },
+    {
+     "id": "fab_sc",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "ct_sfq",
+     "ct_fluxdac",
+     "dec_cryo",
+     "ct_cryocmos",
+     "ic_multidie",
+     "transmon",
+     "ct_rt",
+     "cx_lr",
+     "ic_mcm",
+     "cx_nn",
+     "code_magic"
+    ],
+    "count": 86
+   }
+  },
+  {
+   "slug": "silicon-quantum-computing",
+   "name": "Silicon Quantum Computing",
+   "aliases": [
+    "Silicon Quantum Computing",
+    "SQC"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "Australia",
+   "city": "Sydney",
+   "url": "sqc.com.au",
+   "note": "",
+   "machines": [
+    "sqc-11q"
+   ],
+   "families": [
+    "SPIN"
+   ],
+   "architectures": [
+    "spin_donor"
+   ],
+   "stations": [
+    {
+     "id": "donor",
+     "machines": 1
+    },
+    {
+     "id": "enc_spin_ld",
+     "machines": 1
+    },
+    {
+     "id": "g_exch",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_base",
+     "machines": 1
+    },
+    {
+     "id": "ro_s2c",
+     "machines": 1
+    },
+    {
+     "id": "fab_stm",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "sqc-11q",
+     "host_org": "Silicon Quantum Computing at UNSW Sydney; a rack-mounted system has been delivered to the Australian Defence sector"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "donor",
+     "fab_stm",
+     "g_exch",
+     "qd_spin",
+     "enc_spin_ld",
+     "fab_cmos",
+     "ct_base",
+     "ro_s2c",
+     "ic_fanout"
+    ],
+    "count": 60
+   }
+  },
+  {
+   "slug": "southern-university-of-science-and-technology",
+   "name": "Southern University of Science and Technology",
+   "aliases": [
+    "Southern University of Science and Technology",
+    "SUSTech"
+   ],
+   "tier": "academic-body",
+   "segment": "research-org",
+   "country": "China",
+   "city": "Shenzhen",
+   "url": "https://www.sustech.edu.cn/en/",
+   "note": "",
+   "machines": [
+    "sustc-biased-erasure"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "dualrail"
+   ],
+   "stations": [
+    {
+     "id": "cavity",
+     "machines": 1
+    },
+    {
+     "id": "g_bos",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_rt",
+     "machines": 1
+    },
+    {
+     "id": "ro_erasure",
+     "machines": 1
+    },
+    {
+     "id": "code_erasure",
+     "machines": 1
+    },
+    {
+     "id": "fab_3d",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "enc_dualrail",
+     "ro_erasure",
+     "ic_mcm",
+     "cavity",
+     "code_erasure",
+     "g_bos"
+    ],
+    "count": 20
+   }
+  },
+  {
+   "slug": "spinq-technology",
+   "name": "SpinQ Technology",
+   "aliases": [
+    "SpinQ Technology"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "China",
+   "city": "Shenzhen",
+   "url": "spinquanta.com",
+   "note": "",
+   "machines": [
+    "spinq-ursa-major"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 1
+    },
+    {
+     "id": "enc_bare",
+     "machines": 1
+    },
+    {
+     "id": "g_tc",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_rt",
+     "machines": 1
+    },
+    {
+     "id": "ro_disp",
+     "machines": 1
+    },
+    {
+     "id": "code_surface",
+     "machines": 1
+    },
+    {
+     "id": "fab_sc",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [],
+    "count": 0
+   }
+  },
+  {
+   "slug": "tata-institute-of-fundamental-research",
+   "name": "Tata Institute of Fundamental Research",
+   "aliases": [
+    "DRDO DYSL-QT with TIFR and TCS"
+   ],
+   "tier": "research",
+   "segment": "research-org",
+   "country": "India",
+   "city": "Mumbai",
+   "url": "tifr.res.in",
+   "note": "",
+   "machines": [
+    "drdo-tifr-tcs-6q"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 1
+    },
+    {
+     "id": "enc_bare",
+     "machines": 1
+    },
+    {
+     "id": "ct_rt",
+     "machines": 1
+    },
+    {
+     "id": "ro_disp",
+     "machines": 1
+    },
+    {
+     "id": "fab_sc",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [],
+    "count": 0
+   }
+  },
+  {
+   "slug": "toshiba",
+   "name": "Toshiba",
+   "aliases": [
+    "Toshiba + RIKEN RQC + University of Tokyo"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "communications-QKD",
+   "country": "Japan",
+   "city": "Tokyo",
+   "url": "toshiba.com",
+   "note": "",
+   "machines": [
+    "toshiba-dtc"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 1
+    },
+    {
+     "id": "enc_bare",
+     "machines": 1
+    },
+    {
+     "id": "g_tc",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_rt",
+     "machines": 1
+    },
+    {
+     "id": "ro_disp",
+     "machines": 1
+    },
+    {
+     "id": "fab_sc",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "enc_timebin",
+     "g_tc",
+     "transmon",
+     "fluxonium"
+    ],
+    "count": 8
+   }
+  },
+  {
+   "slug": "tsinghua-university",
+   "name": "Tsinghua University",
+   "aliases": [
+    "Tsinghua University (Duan group)",
+    "Zhejiang University (H. Wang group) with Tsinghua University IIIS (D.-L. Deng)"
+   ],
+   "tier": "research",
+   "segment": "research-org",
+   "country": "China",
+   "city": "Beijing",
+   "url": "cqi.tsinghua.edu.cn",
+   "note": "",
+   "machines": [
+    "tsinghua-512-ion",
+    "tsinghua-kunlun-32"
+   ],
+   "families": [
+    "SC",
+    "ION"
+   ],
+   "architectures": [
+    "sc",
+    "ion_chain"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 1
+    },
+    {
+     "id": "ion",
+     "machines": 1
+    },
+    {
+     "id": "enc_bare",
+     "machines": 1
+    },
+    {
+     "id": "enc_hf",
+     "machines": 1
+    },
+    {
+     "id": "g_tc",
+     "machines": 1
+    },
+    {
+     "id": "cx_lr",
+     "machines": 1
+    },
+    {
+     "id": "ct_rt",
+     "machines": 1
+    },
+    {
+     "id": "ct_ionaod",
+     "machines": 1
+    },
+    {
+     "id": "ro_disp",
+     "machines": 1
+    },
+    {
+     "id": "ro_fluor",
+     "machines": 1
+    },
+    {
+     "id": "code_qldpc",
+     "machines": 1
+    },
+    {
+     "id": "fab_sc",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "ion",
+     "ct_ionaod"
+    ],
+    "count": 2
+   }
+  },
+  {
+   "slug": "universal-quantum",
+   "name": "Universal Quantum",
+   "aliases": [
+    "Universal Quantum"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "United Kingdom",
+   "city": "Haywards Heath",
+   "url": "https://universalquantum.com/",
+   "note": "",
+   "machines": [
+    "universal-quantum-iqpu"
+   ],
+   "families": [
+    "ION"
+   ],
+   "architectures": [
+    "ion_qccd",
+    "ion_elec"
+   ],
+   "stations": [
+    {
+     "id": "ion",
+     "machines": 1
+    },
+    {
+     "id": "enc_hf",
+     "machines": 1
+    },
+    {
+     "id": "g_elec",
+     "machines": 1
+    },
+    {
+     "id": "cx_qccd",
+     "machines": 1
+    },
+    {
+     "id": "ct_ionmw",
+     "machines": 1
+    },
+    {
+     "id": "ro_fluor",
+     "machines": 1
+    },
+    {
+     "id": "fab_cmos",
+     "machines": 1
+    },
+    {
+     "id": "fab_trap",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "g_elec",
+     "cx_qccd",
+     "ion",
+     "fab_optics",
+     "ct_ionmw",
+     "ct_ionlaser",
+     "ic_ionphoton"
+    ],
+    "count": 27
+   }
+  },
+  {
+   "slug": "university-of-innsbruck",
+   "name": "University of Innsbruck",
+   "aliases": [
+    "Innsbruck",
+    "University of Innsbruck"
+   ],
+   "tier": "research",
+   "segment": "research-org",
+   "country": "Austria",
+   "city": "Innsbruck",
+   "url": "uibk.ac.at",
+   "note": "",
+   "machines": [
+    "uibk-innsbruck-ion"
+   ],
+   "families": [
+    "ION"
+   ],
+   "architectures": [
+    "ion_chain"
+   ],
+   "stations": [
+    {
+     "id": "ion",
+     "machines": 1
+    },
+    {
+     "id": "enc_opt",
+     "machines": 1
+    },
+    {
+     "id": "g_ms",
+     "machines": 1
+    },
+    {
+     "id": "cx_qccd",
+     "machines": 1
+    },
+    {
+     "id": "cx_bus",
+     "machines": 1
+    },
+    {
+     "id": "ct_ionaod",
+     "machines": 1
+    },
+    {
+     "id": "ro_fluor",
+     "machines": 1
+    },
+    {
+     "id": "code_color",
+     "machines": 1
+    },
+    {
+     "id": "code_highrate",
+     "machines": 1
+    },
+    {
+     "id": "code_magic",
+     "machines": 1
+    },
+    {
+     "id": "fab_trap",
+     "machines": 1
+    },
+    {
+     "id": "fab_optics",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "ct_ionaod",
+     "enc_opt",
+     "ion",
+     "cx_qccd",
+     "fab_trap"
+    ],
+    "count": 12
+   }
+  },
+  {
+   "slug": "university-of-maryland-college-park",
+   "name": "University of Maryland, College Park",
+   "aliases": [
+    "Maryland"
+   ],
+   "tier": "research",
+   "segment": "research-org",
+   "country": "United States",
+   "city": "College Park, MD",
+   "url": "quantum.umd.edu",
+   "note": "",
+   "machines": [],
+   "families": [
+    "ION"
+   ],
+   "architectures": [
+    "ion_chain"
+   ],
+   "stations": [],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "ct_ionaod",
+     "fluxonium",
+     "ic_ionphoton",
+     "code_detect"
+    ],
+    "count": 10
+   }
+  },
+  {
+   "slug": "university-of-science-and-technology-of-china",
+   "name": "University of Science and Technology of China",
+   "aliases": [
+    "USTC",
+    "USTC (Pan Jianwei group)",
+    "USTC / Hefei National Laboratory"
+   ],
+   "tier": "research",
+   "segment": "research-org",
+   "country": "China",
+   "city": "Hefei",
+   "url": "quantum.ustc.edu.cn",
+   "note": "",
+   "machines": [
+    "ustc-jiuzhang4",
+    "ustc-zuchongzhi-3.0",
+    "ustc-zuchongzhi-3.2",
+    "ustc-zuchongzhi-2.1"
+   ],
+   "families": [
+    "SC",
+    "PHOTON"
+   ],
+   "architectures": [
+    "sc",
+    "ph_sampler"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 3
+    },
+    {
+     "id": "enc_bare",
+     "machines": 3
+    },
+    {
+     "id": "g_tc",
+     "machines": 3
+    },
+    {
+     "id": "cx_nn",
+     "machines": 3
+    },
+    {
+     "id": "ct_rt",
+     "machines": 3
+    },
+    {
+     "id": "ro_disp",
+     "machines": 3
+    },
+    {
+     "id": "fab_sc",
+     "machines": 3
+    },
+    {
+     "id": "ic_multidie",
+     "machines": 2
+    },
+    {
+     "id": "squeezed",
+     "machines": 1
+    },
+    {
+     "id": "g_lointer",
+     "machines": 1
+    },
+    {
+     "id": "g_cv",
+     "machines": 1
+    },
+    {
+     "id": "cx_switch",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "ustc-jiuzhang4",
+     "host_org": "USTC (Pan Jianwei group) - lab only"
+    },
+    {
+     "machine": "ustc-zuchongzhi-3.2",
+     "host_org": "USTC / Hefei National Laboratory"
+    }
+   ],
+   "mentions": {
+    "briefs": [
+     "enc_bare",
+     "g_lointer",
+     "ro_imgfast",
+     "fab_bulk",
+     "ro_reset",
+     "code_surface",
+     "transmon",
+     "ct_pic_trap",
+     "photon",
+     "ro_img",
+     "ic_multidie",
+     "alkali",
+     "g_ryd",
+     "g_tc",
+     "src_resource",
+     "ct_sfq",
+     "ct_ionaod",
+     "code_magic",
+     "dec_nn",
+     "ic_cryolink",
+     "ic_transducer"
+    ],
+    "count": 73
+   }
+  },
+  {
+   "slug": "vtt-technical-research-centre-of-finland",
+   "name": "VTT Technical Research Centre of Finland",
+   "aliases": [
+    "VTT Technical Research Centre of Finland"
+   ],
+   "tier": "academic",
+   "segment": "",
+   "country": "Finland",
+   "city": "Espoo",
+   "url": "https://www.vttresearch.com/en/ourservices/quantum-technology",
+   "note": "",
+   "machines": [
+    "vtt-q50"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 1
+    },
+    {
+     "id": "enc_bare",
+     "machines": 1
+    },
+    {
+     "id": "g_tc",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_rt",
+     "machines": 1
+    },
+    {
+     "id": "ro_disp",
+     "machines": 1
+    },
+    {
+     "id": "fab_sc",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [],
+    "count": 0
+   }
+  },
+  {
+   "slug": "xanadu",
+   "name": "Xanadu",
+   "aliases": [
+    "Xanadu"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "Canada",
+   "city": "Toronto, ON",
+   "url": "xanadu.ai",
+   "note": "",
+   "machines": [
+    "xanadu-borealis",
+    "xanadu-aurora"
+   ],
+   "families": [
+    "PHOTON"
+   ],
+   "architectures": [
+    "ph_cv",
+    "ph_sampler"
+   ],
+   "stations": [
+    {
+     "id": "squeezed",
+     "machines": 2
+    },
+    {
+     "id": "g_cv",
+     "machines": 2
+    },
+    {
+     "id": "cx_switch",
+     "machines": 2
+    },
+    {
+     "id": "ct_eo",
+     "machines": 2
+    },
+    {
+     "id": "ro_spd",
+     "machines": 2
+    },
+    {
+     "id": "enc_gkp",
+     "machines": 1
+    },
+    {
+     "id": "g_lointer",
+     "machines": 1
+    },
+    {
+     "id": "ro_homodyne",
+     "machines": 1
+    },
+    {
+     "id": "code_bosonic",
+     "machines": 1
+    },
+    {
+     "id": "dec_mwpm",
+     "machines": 1
+    },
+    {
+     "id": "dec_relaybp",
+     "machines": 1
+    },
+    {
+     "id": "ic_fibre",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "g_cv",
+     "cx_switch",
+     "squeezed",
+     "enc_gkp",
+     "ro_spd",
+     "fab_pic",
+     "photon",
+     "ic_fibre",
+     "ct_eo",
+     "ro_homodyne",
+     "fab_bulk",
+     "code_bosonic",
+     "g_lointer",
+     "g_fusion",
+     "code_erasure"
+    ],
+    "count": 129
+   }
+  },
+  {
+   "slug": "yaqumo",
+   "name": "Yaqumo",
+   "aliases": [
+    "Yaqumo (+ Fujitsu)"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "Japan",
+   "city": "Tokyo",
+   "url": "yaqumo.com",
+   "note": "",
+   "machines": [
+    "yaqumo-yb"
+   ],
+   "families": [
+    "ATOM"
+   ],
+   "architectures": [
+    "atom_ae"
+   ],
+   "stations": [
+    {
+     "id": "ae_atom",
+     "machines": 1
+    },
+    {
+     "id": "enc_hf",
+     "machines": 1
+    },
+    {
+     "id": "g_ryd",
+     "machines": 1
+    },
+    {
+     "id": "cx_aod",
+     "machines": 1
+    },
+    {
+     "id": "ct_laser",
+     "machines": 1
+    },
+    {
+     "id": "ro_img",
+     "machines": 1
+    },
+    {
+     "id": "ro_imgfast",
+     "machines": 1
+    },
+    {
+     "id": "code_surface",
+     "machines": 1
+    },
+    {
+     "id": "dec_mwpm",
+     "machines": 1
+    },
+    {
+     "id": "fab_optics",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "ct_laser",
+     "ro_img",
+     "ae_atom",
+     "ro_fluor",
+     "ro_imgfast"
+    ],
+    "count": 10
+   }
+  },
+  {
+   "slug": "zhejiang-university",
+   "name": "Zhejiang University",
+   "aliases": [
+    "Zhejiang",
+    "Zhejiang University + CAEP"
+   ],
+   "tier": "research",
+   "segment": "research-org",
+   "country": "China",
+   "city": "Hangzhou",
+   "url": "zju.edu.cn",
+   "note": "",
+   "machines": [
+    "zju-125q"
+   ],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 1
+    },
+    {
+     "id": "enc_bare",
+     "machines": 1
+    },
+    {
+     "id": "g_tc",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_rt",
+     "machines": 1
+    },
+    {
+     "id": "ro_disp",
+     "machines": 1
+    },
+    {
+     "id": "code_surface",
+     "machines": 1
+    },
+    {
+     "id": "code_magic",
+     "machines": 1
+    },
+    {
+     "id": "dec_mwpm",
+     "machines": 1
+    },
+    {
+     "id": "fab_sc",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "code_qldpc",
+     "code_surface",
+     "enc_bare",
+     "ct_sfq",
+     "code_magic",
+     "dec_nn",
+     "ic_cryolink",
+     "ic_transducer"
+    ],
+    "count": 13
+   }
+  },
+  {
+   "slug": "zhongke-kuyuan",
+   "name": "Zhongke Kuyuan",
+   "aliases": [
+    "Zhongke Kuyuan (Wuhan, CAS)"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "China",
+   "city": "Wuhan",
+   "url": "",
+   "note": "",
+   "machines": [
+    "hanyuan-1",
+    "hanyuan-2"
+   ],
+   "families": [
+    "ATOM"
+   ],
+   "architectures": [
+    "atom_rb"
+   ],
+   "stations": [
+    {
+     "id": "alkali",
+     "machines": 2
+    },
+    {
+     "id": "enc_hf",
+     "machines": 2
+    },
+    {
+     "id": "g_ryd",
+     "machines": 2
+    },
+    {
+     "id": "cx_aod",
+     "machines": 2
+    },
+    {
+     "id": "ct_laser",
+     "machines": 2
+    },
+    {
+     "id": "ro_img",
+     "machines": 2
+    },
+    {
+     "id": "fab_optics",
+     "machines": 2
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "hanyuan-1",
+     "host_org": "Zhongke Kuyuan (CAS Wuhan spin-off); delivered to a China Mobile subsidiary; a unit exported to Pakistan"
+    }
+   ],
+   "mentions": {
+    "briefs": [],
+    "count": 0
+   }
+  },
+  {
+   "slug": "zhongqi-wuliang",
+   "name": "Zhongqi Wuliang",
+   "aliases": [
+    "Zhongqi Wuliang (Shanghai, CAS SIOM spin-off)"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "China",
+   "city": "Shanghai",
+   "url": "",
+   "note": "",
+   "machines": [
+    "qinghe-1"
+   ],
+   "families": [
+    "ATOM"
+   ],
+   "architectures": [
+    "atom_rb"
+   ],
+   "stations": [
+    {
+     "id": "alkali",
+     "machines": 1
+    },
+    {
+     "id": "enc_hf",
+     "machines": 1
+    },
+    {
+     "id": "g_ryd",
+     "machines": 1
+    },
+    {
+     "id": "cx_aod",
+     "machines": 1
+    },
+    {
+     "id": "ct_laser",
+     "machines": 1
+    },
+    {
+     "id": "ro_img",
+     "machines": 1
+    },
+    {
+     "id": "fab_optics",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [],
+    "count": 0
+   }
+  }
+ ]
+}

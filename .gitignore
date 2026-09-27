@@ -2,3 +2,14 @@ __pycache__/
 *.pyc
 dist/body.html
 .DS_Store
+# record pages (build/pages.py) are generated at deploy from the committed data — 760 files, ~90 MB per build; the main pages,
+# the language fragments, the sitemap and the assets stay committed for the reproducibility check
+dist/technology/
+dist/machine/
+dist/architecture/
+dist/organisation/
+dist/ru/technology/
+dist/ru/machine/
+dist/ru/architecture/
+dist/ru/organisation/
+dist/media/

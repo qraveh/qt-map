@@ -1,4 +1,4 @@
-CSS = r"""
+
 :root{
   color-scheme: light;
   --bg:#F3F5F8; --surface:#FFFFFF; --surface2:#EEF2F6; --ink:#16202B; --ink2:#46525F; --muted:#76838F; --rule:#D6DDE5; --rule2:#E7ECF1;
@@ -722,4 +722,3 @@ figure.fig81 .pt:hover .mk{stroke-width:2.6}
 /* one page per language (27 Sep 2026): a block of the other language waits for its fragment; a short notice stands in its place */
 .langwait{margin:24px 0;padding:10px 14px;border:1px dashed var(--mid);border-radius:8px;color:var(--ink2);font-size:14px}
 html.lang-loading .mast .seg [aria-pressed="true"]{opacity:.6}
-"""

@@ -1,0 +1,61 @@
+.card h3 .sw{width:11px;height:11px;border-radius:3px;background:var(--c);display:inline-block;margin-right:4px}
+.card .mlinks{margin:-4px 0 8px;font-size:12.5px;display:flex;flex-wrap:wrap;gap:2px 6px}
+.card .mtab td{min-width:0}
+.card .mtab td.ln{white-space:normal;width:30%;max-width:104px;line-height:1.25}
+.card .mtab .mc{margin:1px 0;overflow-wrap:anywhere}
+.card .mtab .ms{font-size:11.5px;color:var(--ink2);line-height:1.3;margin:1px 0 3px}
+.card .ev{text-decoration:none;font-size:13px}
+.card .loc{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted);overflow-wrap:anywhere}
+.card .vf{font-size:11px}
+.card .mfoot{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;justify-content:space-between;margin:8px 0 0;font-size:12.5px;color:var(--ink2)}
+.card ul.useby{list-style:none;margin:0;padding:0}
+.card ul.useby li{display:flex;flex-wrap:wrap;gap:2px 6px;align-items:baseline;padding:2px 0;border-top:1px dashed var(--rule);font-size:12.5px;min-width:0;overflow-wrap:anywhere}
+.card ul.useby li.fam{border-top:0;margin-top:5px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.card ul.useby li.fam .sw{width:10px;height:3px;border-radius:2px;background:var(--c);display:inline-block}
+.card ul.useby li.cur > a:first-child{font-weight:700;text-decoration:underline}
+.card ul.useby li.alternate > a:first-child{color:var(--ink2)}
+.card ul.useby a.mref{font-size:11px;color:var(--muted);text-decoration:none;border:1px solid var(--rule);border-radius:9px;padding:0 6px;margin-left:2px;white-space:nowrap}
+.card ul.useby a.mref:hover{color:var(--accent);border-color:var(--accent)}
+.card ul.useby a.reg{text-decoration:none;font-size:11px}
+.card .keys .kr{margin:3px 0;font-size:12.5px;line-height:1.35}
+.card .keys a{font-family:"JetBrains Mono",monospace;font-size:11px}
+.card dl .lensrow{background:var(--surface);box-shadow:inset 3px 0 0 var(--accent);padding-left:6px}
+.card .grip{position:sticky;top:0;display:flex;align-items:center;gap:6px;margin:0 -16px 8px;padding:6px 10px;background:var(--surface2);border-bottom:1px solid var(--rule);cursor:move;user-select:none;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);z-index:2}
+.card .grip .sp{flex:1}
+.card .grip button{appearance:none;border:1px solid var(--rule);background:var(--surface);color:var(--ink);font:inherit;font-size:11px;padding:1px 7px;border-radius:6px;cursor:pointer}
+.card .grip button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.card .grip button[data-back]{font-weight:700}
+.card .grip button[data-back][disabled]{opacity:.35;cursor:default}
+.card .pagelink{font-size:12px;font-weight:600;text-decoration:none;border:1px solid var(--rule);border-radius:999px;padding:1px 8px;margin-left:4px;white-space:nowrap}
+.card .iclose{display:none}
+.card .conf{margin:6px 0 8px;padding:6px 8px;border-left:2px solid var(--crit);background:var(--surface)}
+.card .conf .cm{color:var(--ink2);margin-top:2px}
+.card h3{margin:0 0 2px;font-size:17px;line-height:1.25;text-wrap:balance}
+.card .meta{color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:11.5px;margin-bottom:10px}
+.card .space{margin:12px 0;padding:10px 12px;border-radius:8px;background:var(--surface2)}
+.card .space h4{margin:0 0 6px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-family:"JetBrains Mono",monospace}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;margin:0}
+.card dt{color:var(--muted);white-space:nowrap}
+.card dd{margin:0}
+.card .def{border-top:1px dashed var(--rule);padding:6px 0}
+.card .def:first-of-type{border-top:0}
+.card .def .k{color:var(--ink2)}
+.card .def .d{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted)}
+.card .pathtag{display:inline-flex;align-items:center;gap:6px;margin:2px 6px 2px 0}
+.card .pathtag .sw{width:10px;height:3px;border-radius:2px;background:var(--c);display:inline-block}
+.card .flag{display:inline-block;padding:1px 7px;border-radius:999px;font-size:12px;border:1px solid var(--rule);margin:2px 4px 2px 0}
+.card .flag.off{border-color:var(--nat);color:var(--ink)}
+.card .flag.hub{border-color:var(--fab)}
+.card .flag.empty{border-style:dashed}
+.card .marks{margin:4px 0 2px}
+.card .marks>div{margin:2px 0;font-size:12.5px}
+.card .marks .tk{display:block;margin-bottom:2px}
+.card .empty{color:var(--muted)}
+.card .briefbtn{display:inline-flex;align-items:center;gap:6px;margin:10px 0 2px;padding:5px 12px;border:1px solid var(--accent);border-radius:999px;background:var(--surface);color:var(--accent);font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.card .briefbtn:hover{background:var(--accent);color:var(--bg)}
+.card a{word-break:break-word;overflow-wrap:anywhere}
+.card h3{overflow-wrap:break-word}
+.card .grip{margin:0 -14px 8px;padding:8px 12px}
+.card .grip [data-dock]{display:none}
+.card .grip button{padding:4px 10px;font-size:12px}
+.card .grip{cursor:ns-resize;touch-action:none}

@@ -72,6 +72,8 @@ class MapPage:
             route.fulfill(status=200, body='', content_type='text/css' if 'css' in route.request.url else 'application/octet-stream')
         p.route(lambda url: not url.startswith('file:') and not url.startswith('data:'), _ext)
         p.goto(PAGE.as_uri(), wait_until='load', timeout=120000)
+        try: p.evaluate("() => (window.__langReady ? Promise.all((JSON.parse(document.getElementById('app').getAttribute('data-other-langs')||'[]')).map(l => window.__langReady(l))) : true)")   # the other language's fragment (27 Sep 2026)
+        except Exception: pass
         p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0 && document.querySelectorAll('#pathchips .chip').length>0", timeout=60000)
         # the map may start collapsed (stored preference) — expand it
         if p.locator('#mapbody').count() and p.locator('#mapbody').evaluate('e=>e.hidden'):
