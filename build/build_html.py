@@ -484,22 +484,27 @@ TAG_JS=r"""(function(){ var T={en:{D:"[D] measured / peer-reviewed",C:"[C] compa
 document.addEventListener('mouseover',function(e){ var t=e.target&&e.target.closest&&e.target.closest('span.tag'); if(!t||t.title)return; var m=/(?:^|\s)tag-([DCRSGP])(?:\s|$)/.exec(t.className); if(!m)return; var L=(document.documentElement.lang||'en').slice(0,2)==='ru'?'ru':'en'; t.title=T[L][m[1]]; },true);
 })();"""
 FOLD_JS=r"""(function(){ var KEY='qmap.folds', closed={}; try{ closed=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){}
-document.querySelectorAll('.secbody[data-sec]').forEach(function(b){ var hd=b.previousElementSibling; if(!hd||!/^H[23]$/.test(hd.tagName)||hd.querySelector('.foldbtn'))return; var btn=document.createElement('button'); btn.type='button'; btn.className='foldbtn'; btn.dataset.sec=b.dataset.sec; btn.setAttribute('aria-expanded','true'); btn.title='collapse / expand'; hd.appendChild(btn); });
 function q(sel,id){ return document.querySelector(sel+'[data-sec="'+(window.CSS&&CSS.escape?CSS.escape(id):id)+'"]'); }
 function set(id,open,save){ var b=q('.secbody',id), btn=q('.foldbtn',id); if(!b)return; b.hidden=!open; if(btn){ btn.setAttribute('aria-expanded',String(open)); var hd=btn.closest('h2,h3'); if(hd)hd.classList.toggle('folded',!open); }
   if(save){ if(open)delete closed[id]; else closed[id]=1; try{ localStorage.setItem(KEY,JSON.stringify(closed)); }catch(e){} } }
-document.querySelectorAll('.foldbtn[data-sec]').forEach(function(btn){ var id=btn.dataset.sec; if(closed[id])set(id,false,false);
-  var hd=btn.closest('h2,h3'); if(!hd)return; hd.classList.add('foldable');
-  hd.addEventListener('click',function(ev){ if(ev.target.closest('a'))return; ev.preventDefault(); var b=q('.secbody',id); if(b)set(id,b.hidden,true); }); });
+var TK='qmap.tfolds', tf={}; try{ tf=JSON.parse(localStorage.getItem(TK)||'{}')||{}; }catch(e){}
+// the fold buttons, the remembered folds and the table folds — run at load and on every block a language fragment brings in
+function run(root){ root=root||document;
+  root.querySelectorAll('.secbody[data-sec]').forEach(function(b){ var hd=b.previousElementSibling; if(!hd||!/^H[23]$/.test(hd.tagName)||hd.querySelector('.foldbtn'))return; var btn=document.createElement('button'); btn.type='button'; btn.className='foldbtn'; btn.dataset.sec=b.dataset.sec; btn.setAttribute('aria-expanded','true'); btn.title='collapse / expand'; hd.appendChild(btn); });
+  root.querySelectorAll('.foldbtn[data-sec]').forEach(function(btn){ if(btn.dataset.wired)return; btn.dataset.wired='1'; var id=btn.dataset.sec; if(closed[id])set(id,false,false);
+    var hd=btn.closest('h2,h3'); if(!hd)return; hd.classList.add('foldable');
+    hd.addEventListener('click',function(ev){ if(ev.target.closest('a'))return; ev.preventDefault(); var b=q('.secbody',id); if(b)set(id,b.hidden,true); }); });
+  root.querySelectorAll('details.tblfold[id]').forEach(function(d){ if(d.dataset.wired)return; d.dataset.wired='1'; var def=d.getAttribute('data-def')==='1'; if(tf[d.id]==='c')d.open=false; else if(tf[d.id]==='o')d.open=true;
+    d.addEventListener('toggle',function(){ if(d.open===def)delete tf[d.id]; else tf[d.id]=d.open?'o':'c'; try{ localStorage.setItem(TK,JSON.stringify(tf)); }catch(e){} }); }); }
+run(document); (window.__hydrators=window.__hydrators||[]).push(run);
 function reveal(hash){ if(!hash||hash.length<2)return; var el=null; try{ el=document.getElementById(decodeURIComponent(hash.slice(1))); }catch(e){} if(!el)return;
   for(var p=el.parentElement;p;p=p.parentElement){ if(p.classList&&p.classList.contains('secbody')&&p.hidden)set(p.dataset.sec,true,false); if(p.tagName==='DETAILS'&&!p.open)p.open=true; }
   if(el.matches&&el.matches('.secbody[hidden]'))set(el.dataset.sec,true,false); }
 document.addEventListener('click',function(ev){ var a=ev.target.closest&&ev.target.closest('a[href^="#"]'); if(a)reveal(a.getAttribute('href')); },true);
 window.addEventListener('hashchange',function(){ reveal(location.hash); }); reveal(location.hash);
 window.__revealSection=reveal; window.__setFold=set;
-var TK='qmap.tfolds', tf={}; try{ tf=JSON.parse(localStorage.getItem(TK)||'{}')||{}; }catch(e){}
-document.querySelectorAll('details.tblfold[id]').forEach(function(d){ var def=d.getAttribute('data-def')==='1'; if(tf[d.id]==='c')d.open=false; else if(tf[d.id]==='o')d.open=true;
-  d.addEventListener('toggle',function(){ if(d.open===def)delete tf[d.id]; else tf[d.id]=d.open?'o':'c'; try{ localStorage.setItem(TK,JSON.stringify(tf)); }catch(e){} }); });
+// a link into a block that a language fragment has not brought in yet: scroll there once it is (LANG_JS calls __revealHash)
+window.__revealHash=function(h){ reveal(h); var el=null; try{ el=document.getElementById(decodeURIComponent(h.slice(1))); }catch(e){} if(el&&!el.closest('[data-lang-slot]'))el.scrollIntoView(); };
 })();"""
 # ---------- map section block
 def map_block(lang,gsec='8'):
@@ -706,7 +711,7 @@ def feedback_html(cfg):
 
 FEEDBACK_JS=r"""(function(){var btn=document.getElementById('fbkbtn'),pop=document.getElementById('fbkpop'),wrap=document.getElementById('fbk');if(!btn||!pop)return;
 function lang(){return (document.getElementById('app')||{}).getAttribute?document.getElementById('app').getAttribute('data-lang')||'en':'en';}
-function htext(el){var en=document.getElementById(el.id.replace(/^ru-/,'en-'))||el;var n=en.querySelector('.num');var num=n?n.textContent.trim():'';var rest=en.textContent.trim();if(num&&rest.indexOf(num)===0)rest=rest.slice(num.length).trim();return (num?('§'+num+' '):'')+rest;}
+function htext(el){var en=document.getElementById(el.id.replace(/^ru-/,'en-'));if(!en&&/^ru-/.test(el.id)){var S=window.__SECTITLES||{};var t=S[el.id.replace(/^ru-/,'')];var n0=el.querySelector('.num');var num0=n0?n0.textContent.trim():'';if(t)return (num0?('§'+num0+' '):'')+t;}en=en||el;var n=en.querySelector('.num');var num=n?n.textContent.trim():'';var rest=en.textContent.trim();if(num&&rest.indexOf(num)===0)rest=rest.slice(num.length).trim();return (num?('§'+num+' '):'')+rest;}
 function where(){var h=location.hash||'';if(h.indexOf('#brief-')===0)return 'brief '+h.slice(7).replace(/^(en|ru)-/,'');var best=null,top=window.scrollY+80;var hs=document.querySelectorAll('main h2[id],main h3[id],main h4[id]');for(var i=0;i<hs.length;i++){var r=hs[i].getBoundingClientRect().top+window.scrollY;if(r<=top)best=hs[i];else break;}return best?htext(best).slice(0,90):(h?h.slice(1):'top');}
 function context(){var m=(window.__mapContext&&window.__mapContext())||{};var L=lang();var app=document.getElementById('app');var lines=['page: '+(document.title||'Quantum Technology Atlas'),'edition: '+((app&&app.getAttribute('data-edition'))||''),'language: '+L,'location: '+where()];if(m.focus)lines.push('station: '+m.focus);if(m.isolate)lines.push('architecture: '+m.isolate);if(m.machine)lines.push('machine: '+m.machine);if(m.lens)lines.push('lens: '+m.lens);lines.push('url: '+location.href.split('#')[0]+(location.hash||''));lines.push('date: '+new Date().toISOString().slice(0,10));return lines.join('\n');}
 function fill(){var c=context();document.getElementById('fbkctx').textContent=c;var loc=where();var title='Feedback: '+loc.slice(0,60);var body='What is wrong and where:\n\n\n---\nContext (attached automatically):\n'+c;   // the issue and the mail are English whatever the page's language (26 Sep 2026)
@@ -791,7 +796,11 @@ def og_image_size():
 
 def head_meta(cfg):
     if cfg['mode']=='internal': return '<meta name="color-scheme" content="light dark">'
-    doi=cfg['doi_concept']; cite_doi='<meta name="citation_doi" content="'+doi+'">'; ident='https://doi.org/'+doi; NN,NM=_counts(); desc=f'Every quantum-computing technology ({NN}) and every quantum machine built, announced or planned ({NM}): analysed and summarised, partitioned by seven invariant design attributes, compared and combined in dozens of ways — with a brief on every technology and a card on every machine. Bilingual EN/RU, CC BY 4.0.'
+    doi=cfg['doi_concept']; cite_doi='<meta name="citation_doi" content="'+doi+'">'; ident='https://doi.org/'+doi; NN,NM=_counts(); pl=cfg.get('page_lang','en')
+    desc=(f'Every quantum-computing technology ({NN}) and every quantum machine built, announced or planned ({NM}): analysed and summarised, partitioned by seven invariant design attributes, compared and combined in dozens of ways — with a brief on every technology and a card on every machine. Bilingual EN/RU, CC BY 4.0.' if pl=='en'
+          else f'Все технологии квантовых вычислений ({NN}) и все построенные, объявленные или запланированные квантовые машины ({NM}): проанализированы и сведены, разбиты по семи неизменным атрибутам конструкции, сопоставлены и скомбинированы десятками способов — с брифом на каждую технологию и карточкой на каждую машину. Двуязычно EN/RU, CC BY 4.0.')
+    # one page per language (27 Sep 2026): the alternates name every language page, x-default the English one
+    site=cfg.get('site',SITE); alts=''.join(f'<link rel="alternate" hreflang="{L}" href="{site}{"" if L=="en" else L+"/"}">' for L in PAGE_LANGS)+f'<link rel="alternate" hreflang="x-default" href="{site}">'
     ogw, ogh = og_image_size()
     ld={"@context":"https://schema.org","@type":"ScholarlyArticle","name":"Quantum Technology Atlas","headline":"Quantum Technology Atlas","version":cfg['edition'],"datePublished":cfg['date'],"codeRepository":cfg.get('repo'),"inLanguage":["en","ru"],
         "author":{"@type":"Person","name":cfg['author']},"publisher":{"@type":"Organization","name":cfg['publisher'],"url":"https://qodeh.com"},
@@ -799,16 +808,104 @@ def head_meta(cfg):
         "keywords":["quantum computing","quantum error correction","superconducting qubits","trapped ions","neutral atoms","photonic quantum computing","spin qubits","technology landscape","technology graph"]}
     return ('<meta name="color-scheme" content="light dark">\n<meta name="description" content="'+html.escape(desc)+'">\n'
             f'<meta name="author" content="{cfg["author"]}">\n<meta name="citation_title" content="Quantum Technology Atlas">\n<meta name="citation_author" content="{cfg["author"]}">\n'
-            f'<meta name="citation_publication_date" content="{cfg["date"].replace("-","/")}">\n<meta name="citation_publisher" content="{cfg["publisher"]}">\n{cite_doi}\n<meta name="citation_language" content="en">\n'
+            f'<meta name="citation_publication_date" content="{cfg["date"].replace("-","/")}">\n<meta name="citation_publisher" content="{cfg["publisher"]}">\n{cite_doi}\n<meta name="citation_language" content="{pl}">\n'
             f'<meta name="DC.title" content="Quantum Technology Atlas"><meta name="DC.creator" content="{cfg["author"]}"><meta name="DC.publisher" content="{cfg["publisher"]}"><meta name="DC.date" content="{cfg["date"]}"><meta name="DC.identifier" content="{ident}"><meta name="DC.rights" content="CC BY 4.0"><meta name="DC.language" content="en, ru">\n'
             f'<meta property="og:type" content="article"><meta property="og:title" content="Quantum Technology Atlas"><meta property="og:description" content="{html.escape(desc)}"><meta property="og:url" content="{cfg["url"]}">\n'
             # og:image:* attach to the most recently seen og:image, so they follow it here and nowhere else
             f'<meta property="og:image" content="{OG_IMAGE_URL}"><meta property="og:image:width" content="{ogw}"><meta property="og:image:height" content="{ogh}"><meta property="og:image:alt" content="{html.escape(OG_IMAGE_ALT)}"><meta name="twitter:card" content="summary_large_image">\n'
-            f'<link rel="license" href="https://creativecommons.org/licenses/by/4.0/"><link rel="canonical" href="{cfg["url"]}">\n'
+            f'<link rel="license" href="https://creativecommons.org/licenses/by/4.0/"><link rel="canonical" href="{cfg["url"]}">{alts}\n'
             '<script type="application/ld+json">'+json.dumps(ld,ensure_ascii=False)+'</script>')
 
-def build(cfg=PUBLIC):
+PAGE_LANGS=('en','ru')   # one page per language (27 Sep 2026); every other language's large blocks are fetched on demand
+LANG_WAIT={'en':'The English text is loading…','ru':'Русский текст загружается…'}
+
+def lang_split(blocks_by_lang, briefs_block, page_lang):
+    """The page of one language: its own prose and brief halves inline; every other language's prose and brief halves
+    replaced by placeholders (data-lang-slot) and collected into fragments {lang: {slot: html}} that dist/lang/<lang>.js
+    carries and the page fetches after its first paint (the language switch stays instant once the fragment is there).
+    The briefs' index and every short inline pair (UI strings, headings' twins) stay in the page."""
+    frags={L:{} for L in PAGE_LANGS if L!=page_lang}
+    prose={}
+    for L,parts in blocks_by_lang.items():
+        for k,html_ in parts.items():
+            if L==page_lang: prose[(L,k)]='<div class="prose lang-%s" lang="%s">%s</div>'%(L,L,html_)
+            else:
+                frags[L]['prose:'+k]='<div class="prose lang-%s" lang="%s">%s</div>'%(L,L,html_)
+                prose[(L,k)]='<div class="prose lang-%s" lang="%s" data-lang-slot="%s:prose:%s"><p class="langwait">%s</p></div>'%(L,L,L,k,LANG_WAIT[L])
+    def sec(m):
+        bid=m.group(1); inner=m.group(2)
+        halves=re.split(r'(?=<div class="bl lang-(?:en|ru)">)',inner)
+        halves=[x for x in halves if x]
+        out=[]
+        for x in halves:
+            L=re.match(r'<div class="bl lang-(en|ru)">',x).group(1)
+            if L==page_lang: out.append(x)
+            else:
+                frags[L]['brief:'+bid]=x
+                out.append('<div class="bl lang-%s" data-lang-slot="%s:brief:%s"><p class="langwait">%s</p></div>'%(L,L,bid,LANG_WAIT[L]))
+        return '<section class="brief" id="brief-%s" hidden>%s</section>'%(bid,''.join(out))
+    briefs_page=re.sub(r'<section class="brief" id="brief-(\w+)" hidden>(.*?)</section>',sec,briefs_block,flags=re.S)
+    return prose,briefs_page,frags
+
+LANG_JS=r"""(function(){var app=document.getElementById('app');if(!app)return;var PL=app.getAttribute('data-page-lang')||'en';var OTHERS=[];try{OTHERS=JSON.parse(app.getAttribute('data-other-langs')||'[]');}catch(e){}var BASE=app.getAttribute('data-lang-base')||'lang/';
+var loaded={},loading={};loaded[PL]=true;
+function fill(L){var F=(window.__LANGFRAG||{})[L];if(!F)return false;var slots=document.querySelectorAll('[data-lang-slot^="'+L+':"]');for(var i=0;i<slots.length;i++){var ph=slots[i];var html=F[ph.getAttribute('data-lang-slot').slice(L.length+1)];if(html==null)continue;var t=document.createElement('template');t.innerHTML=html;var nodes=[].slice.call(t.content.childNodes);ph.replaceWith.apply(ph,nodes);for(var k=0;k<nodes.length;k++){if(nodes[k].nodeType===1&&window.__hydrate)window.__hydrate(nodes[k]);}}loaded[L]=true;document.documentElement.classList.remove('lang-loading');if(window.__relabelMap)window.__relabelMap();var h=location.hash||'';if(h.indexOf('#brief-')!==0&&h.length>1&&window.__revealHash)window.__revealHash(h);return true;}
+function load(L,cb){if(loaded[L]||OTHERS.indexOf(L)<0){if(cb)cb();return;}if(loading[L]){loading[L].push(cb);return;}loading[L]=[cb];var s=document.createElement('script');s.src=BASE+L+'.js';s.async=true;s.onload=function(){fill(L);var q=loading[L]||[];delete loading[L];for(var i=0;i<q.length;i++){if(q[i])q[i]();}};s.onerror=function(){delete loading[L];document.documentElement.classList.remove('lang-loading');};document.head.appendChild(s);}
+window.__loadLang=load;window.__langLoaded=function(L){return !!loaded[L];};
+window.__langReady=function(L){return new Promise(function(res){load(L,res);});};
+var idle=window.requestIdleCallback||function(f){setTimeout(f,800);};
+window.addEventListener('load',function(){idle(function(){for(var i=0;i<OTHERS.length;i++)load(OTHERS[i]);});});
+})();"""
+
+def compose(cfg,page_lang,prose,briefs_page,tocs,mapsecs,B,others,lang_base):
+    dl=page_lang
     D3=open(os.path.join(ROOT,'build','vendor','d3.v7.min.js'),encoding='utf-8').read()
+    sectitles={h[0].replace('en-',''):h[2] for h in tocs['en'] if h and len(h)>2}
+    body=f"""<title>{cfg['title']}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>{CSS}</style>
+<div id="app" data-lang="{dl}" data-page-lang="{dl}" data-other-langs='{json.dumps(others)}' data-lang-base="{lang_base}" data-edition="{cfg['edition']}">
+{navchrome(dict(cfg,default_lang=dl))}
+{masthead(cfg)}
+<div class="page">
+ <nav class="toc" aria-label="contents"><div class="lang-en">{toc_html(tocs['en'],'en',cfg['graph_sec'])}</div><div class="lang-ru">{toc_html(tocs['ru'],'ru',cfg['graph_sec'])}</div></nav>
+ <main>
+  <div id="map"><div class="lang-en">{mapsecs['en']}</div><div class="lang-ru">{mapsecs['ru']}</div></div>
+  <div id="mapbody"><div class="mapfull">{MAPUI.replace("{MAPLEAD}",map_lead(cfg["graph_sec"]))}</div></div>
+  {prose[('en','a')]}{prose[('ru','a')]}
+  {prose[('en','b1')]}{prose[('ru','b1')]}
+  {briefs_page}
+  {prose[('en','b2')]}{prose[('ru','b2')]}
+  {footer(cfg)}
+ </main>
+</div>
+{feedback_html(cfg)}
+</div>
+<script>window.__GRAPH={json.dumps(G,ensure_ascii=False,separators=(',',':'))};window.__MACH={json.dumps(mach_slim(),ensure_ascii=False,separators=(',',':'))};window.__SHORT={json.dumps(SHORT,ensure_ascii=False,separators=(',',':'))};window.__KEYREFS={json.dumps(BR.key_refs_slim(BR.key_refs_all(B)),ensure_ascii=False,separators=(',',':'))}</script>
+<script>window.__SECTITLES={json.dumps(sectitles,ensure_ascii=False,separators=(',',':'))};</script>
+<script>{D3}</script>
+<script>{LANG_JS}</script>
+<script>
+(function(){{const app=document.getElementById('app');
+ function setLang(l){{app.setAttribute('data-lang',l); document.querySelectorAll('[data-setlang]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.setlang===l))); document.documentElement.lang=l; try{{localStorage.setItem('qtech-lang',l);}}catch(e){{}} if(window.__langLoaded&&!window.__langLoaded(l)){{document.documentElement.classList.add('lang-loading'); if(window.__loadLang)window.__loadLang(l);}} if(window.__relabelMap)window.__relabelMap();}}
+ let l='{dl}'; try{{l=localStorage.getItem('qtech-lang')||((navigator.language||'').toLowerCase().startsWith('ru')?'ru':'{dl}');}}catch(e){{}}
+ document.querySelectorAll('[data-setlang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.setlang)));
+ window.__setLang=setLang; setLang(l);
+}})();
+</script>
+<script>{NAVJS}</script>
+<script>{JS}</script>
+<script>{BRIEF_JS}</script>
+<script>window.__TIPS={json.dumps(tips_dict(),ensure_ascii=False,separators=(',',':'))};</script>
+<script>window.__GTIPS={json.dumps(BR.GTIPS,ensure_ascii=False,separators=(',',':'),sort_keys=True)};</script>
+<script>(function(){{var T=window.__GTIPS||{{}};function run(root){{var as=(root||document).querySelectorAll('a.tag-link[data-g]');for(var i=0;i<as.length;i++){{var c=as[i].getAttribute('data-g');if(T[c])as[i].setAttribute('title',T[c]);as[i].removeAttribute('data-g');}}}}run(document);(window.__hydrators=window.__hydrators||[]).push(run);}})();{GTIP_JS}</script><script>{FOLD_JS}</script><script>{TAG_JS}</script>
+<script>{FEEDBACK_JS}</script>
+<script>window.__hydrate=function(root){{var hs=window.__hydrators||[];for(var i=0;i<hs.length;i++){{try{{hs[i](root);}}catch(e){{}}}}}};if(window.__relabelMap)window.__relabelMap();</script>
+"""
+    return body
+
+def build(cfg=PUBLIC):
     EN=report_numbers(open(cfg['report_en'],encoding='utf-8').read(),'en')
     RU=report_numbers(open(cfg['report_ru'],encoding='utf-8').read(),'ru')
     regmap=json.load(open(cfg['regmap'],encoding='utf-8')) if cfg.get('regmap') else None
@@ -825,56 +922,34 @@ def build(cfg=PUBLIC):
     en_html=BR.link_node_ids(en_html,ids); ru_html=BR.link_node_ids(ru_html,ids)
     en_html=BR.autolink(en_html); ru_html=BR.autolink(ru_html)
     en_html=foldable(en_html,'en'); ru_html=foldable(ru_html,'ru')
-    mapsec_en=map_block('en',cfg['graph_sec']); mapsec_ru=map_block('ru',cfg['graph_sec'])
+    mapsecs={'en':map_block('en',cfg['graph_sec']),'ru':map_block('ru',cfg['graph_sec'])}
     en_a,en_b=split_after_s2(en_html,'en'); ru_a,ru_b=split_after_s2(ru_html,'ru')
     en_b1,en_b2=split_before_num(en_b,en_toc,cfg['sources_num']); ru_b1,ru_b2=split_before_num(ru_b,ru_toc,cfg['sources_num'])
-    en_toc=toc_with_briefs(en_toc,'en',cfg['sources_num']); ru_toc=toc_with_briefs(ru_toc,'ru',cfg['sources_num'])
-    dl=cfg['default_lang']
-    body=f'''<title>{cfg['title']}</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
-<style>{CSS}</style>
-<div id="app" data-lang="{dl}" data-edition="{cfg['edition']}">
-{navchrome(cfg)}
-{masthead(cfg)}
-<div class="page">
- <nav class="toc" aria-label="contents"><div class="lang-en">{toc_html(en_toc,'en',cfg['graph_sec'])}</div><div class="lang-ru">{toc_html(ru_toc,'ru',cfg['graph_sec'])}</div></nav>
- <main>
-  <div id="map"><div class="lang-en">{mapsec_en}</div><div class="lang-ru">{mapsec_ru}</div></div>
-  <div id="mapbody"><div class="mapfull">{MAPUI.replace("{MAPLEAD}",map_lead(cfg["graph_sec"]))}</div></div>
-  <div class="prose lang-en" lang="en">{en_a}</div><div class="prose lang-ru" lang="ru">{ru_a}</div>
-  <div class="prose lang-en" lang="en">{en_b1}</div><div class="prose lang-ru" lang="ru">{ru_b1}</div>
-  {briefs_block}
-  <div class="prose lang-en" lang="en">{en_b2}</div><div class="prose lang-ru" lang="ru">{ru_b2}</div>
-  {footer(cfg)}
- </main>
-</div>
-{feedback_html(cfg)}
-</div>
-<script>window.__GRAPH={json.dumps(G,ensure_ascii=False,separators=(',',':'))};window.__MACH={json.dumps(mach_slim(),ensure_ascii=False,separators=(',',':'))};window.__SHORT={json.dumps(SHORT,ensure_ascii=False,separators=(',',':'))};window.__KEYREFS={json.dumps(BR.key_refs_slim(BR.key_refs_all(B)),ensure_ascii=False,separators=(',',':'))};</script>
-<script>{D3}</script>
-<script>
-(function(){{const app=document.getElementById('app');
- function setLang(l){{app.setAttribute('data-lang',l); document.querySelectorAll('[data-setlang]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.setlang===l))); document.documentElement.lang=l; try{{localStorage.setItem('qtech-lang',l);}}catch(e){{}} if(window.__relabelMap)window.__relabelMap();}}
- let l='{dl}'; try{{l=localStorage.getItem('qtech-lang')||((navigator.language||'').toLowerCase().startsWith('ru')?'ru':'{dl}');}}catch(e){{}}
- document.querySelectorAll('[data-setlang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.setlang)));
- window.__setLang=setLang; setLang(l);
-}})();
-</script>
-<script>{NAVJS}</script>
-<script>{JS}</script>
-<script>{BRIEF_JS}</script>
-<script>window.__TIPS={json.dumps(tips_dict(),ensure_ascii=False,separators=(',',':'))};</script>
-<script>window.__GTIPS={json.dumps(BR.GTIPS,ensure_ascii=False,separators=(',',':'),sort_keys=True)};</script>
-<script>(function(){{var T=window.__GTIPS||{{}};var as=document.querySelectorAll('a.tag-link[data-g]');for(var i=0;i<as.length;i++){{var c=as[i].getAttribute('data-g');if(T[c])as[i].setAttribute('title',T[c]);as[i].removeAttribute('data-g');}}}})();{GTIP_JS}</script><script>{FOLD_JS}</script><script>{TAG_JS}</script>
-<script>{FEEDBACK_JS}</script>
-<script>if(window.__relabelMap)window.__relabelMap();</script>
-'''
-    open(cfg['out_body'],'w',encoding='utf-8',newline='\n').write(body)
-    full=f'<!doctype html>\n<html lang="{dl}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">{head_meta(cfg)}<style>img{{max-width:100%}}[hidden]{{display:none!important}}</style></head><body>'+body+'</body></html>'
-    open(cfg['out_full'],'w',encoding='utf-8',newline='\n').write(full)
+    tocs={'en':toc_with_briefs(en_toc,'en',cfg['sources_num']),'ru':toc_with_briefs(ru_toc,'ru',cfg['sources_num'])}
+    blocks={'en':dict(a=en_a,b1=en_b1,b2=en_b2),'ru':dict(a=ru_a,b1=ru_b1,b2=ru_b2)}
+    import brief_refs as _bref
+    briefs_full=_bref.expand_clones(briefs_block)   # a page whose own language is Russian carries its Sources lists in full
+    os.makedirs(os.path.join(ROOT,'dist','lang'),exist_ok=True)
+    sizes=[]
+    for pl in PAGE_LANGS:
+        others=[L for L in PAGE_LANGS if L!=pl]
+        prose,briefs_page,frags=lang_split(blocks,briefs_full if pl!='en' else briefs_block,pl)
+        sub='' if pl=='en' else pl+'/'
+        lang_base='lang/' if pl=='en' else '../lang/'
+        body=compose(cfg,pl,prose,briefs_page,tocs,mapsecs,B,others,lang_base)
+        outdir=os.path.join(ROOT,'dist',pl) if pl!='en' else os.path.join(ROOT,'dist'); os.makedirs(outdir,exist_ok=True)
+        out_full=os.path.join(outdir,os.path.basename(cfg['out_full']))
+        pcfg=dict(cfg,url=cfg['url']+sub,page_lang=pl)
+        full=f'<!doctype html>\n<html lang="{pl}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">{head_meta(pcfg)}<style>img{{max-width:100%}}[hidden]{{display:none!important}}</style></head><body>'+body+'</body></html>'
+        open(out_full,'w',encoding='utf-8',newline='\n').write(full)
+        if pl=='en': open(cfg['out_body'],'w',encoding='utf-8',newline='\n').write(body)
+        for L,F in frags.items():
+            # the fragment of language L as the page of pl needs it: the same for every page (the slots are keyed by language)
+            fp=os.path.join(ROOT,'dist','lang',L+'.js')
+            open(fp,'w',encoding='utf-8',newline='\n').write('window.__LANGFRAG=window.__LANGFRAG||{};window.__LANGFRAG[%s]=%s;\n'%(json.dumps(L),json.dumps(F,ensure_ascii=False,separators=(',',':'))))
+        sizes.append('%s %d KB'%(pl,len(full)//1024))
     nofb=sum(1 for b in B if b['ru_fallback'])
-    print('built', cfg['mode'], len(body)//1024,'KB body;', len(full)//1024,'KB full;',len(B),'briefs;',nofb,'RU fallbacks')
+    print('built', cfg['mode'], '; '.join(sizes),';',len(B),'briefs;',nofb,'RU fallbacks')
 
 if __name__=='__main__':
     build(PUBLIC)

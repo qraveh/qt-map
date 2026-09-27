@@ -5,17 +5,24 @@ var app=document.getElementById('app');
 var openId=null, prevY=0;
 function sec(id){ return document.getElementById('brief-'+id); }
 // the key-reference chips of every brief header are made at load from window.__KEYREFS (the station cards' records): [n] short year, the IEEE entry as the tooltip
+// load-time work on the page's text, re-run on every block a language fragment brings in (window.__hydrate, 27 Sep 2026)
+var H=(window.__hydrators=window.__hydrators||[]);
 (function(){ var K=window.__KEYREFS||{}; function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-  // the IEEE text of work n is the brief's own Sources entry (the records carry no label since 27 Sep 2026)
-  window.__keyLabel=function(sid,n){ var el=document.getElementById('brief-'+sid+'-en-src-'+n); var r=el&&el.querySelector('.ref'); return r?r.textContent.trim():''; };
-  var ds=document.querySelectorAll('.bkeys[data-keys]'); for(var i=0;i<ds.length;i++){ var sid=ds[i].getAttribute('data-keys'); var rs=K[sid]||[]; var out='';
+  // the IEEE text of work n is the brief's own Sources entry (the records carry no label since 27 Sep 2026); the page's own
+  // language's list first, the English list as the fallback (a Russian page carries its lists in full)
+  var PL=(document.getElementById('app')||{getAttribute:function(){return 'en';}}).getAttribute('data-page-lang')||'en';
+  window.__keyLabel=function(sid,n){ var el=document.getElementById('brief-'+sid+'-'+PL+'-src-'+n)||document.getElementById('brief-'+sid+'-en-src-'+n); var r=el&&el.querySelector('.ref'); return r?r.textContent.trim():''; };
+  function run(root){ var ds=(root||document).querySelectorAll('.bkeys[data-keys]'); for(var i=0;i<ds.length;i++){ var sid=ds[i].getAttribute('data-keys'); var rs=K[sid]||[]; var out='';
     for(var j=0;j<rs.length;j++){ var r=rs[j]; out+='<a href="'+esc(r.url)+'" target="_blank" rel="noopener" title="'+esc(window.__keyLabel(sid,r.n))+'">['+r.n+'] '+esc(r.short||'')+(r.year?' '+r.year:'')+'</a>'; }
-    ds[i].insertAdjacentHTML('beforeend',' '+out); ds[i].removeAttribute('data-keys'); } })();
+    ds[i].insertAdjacentHTML('beforeend',' '+out); ds[i].removeAttribute('data-keys'); } }
+  run(document); H.push(run); })();
 // a Russian brief's Sources list is cloned from the English one (same works, same numbers, English entries): ids and §-links switch to ru
-(function(){ var ols=document.querySelectorAll('ol.refs[data-clone]'); for(var i=0;i<ols.length;i++){ var src=document.getElementById(ols[i].getAttribute('data-clone')); if(!src) continue;
-  ols[i].innerHTML=src.innerHTML.split('-en-src-').join('-ru-src-').split('#en-s').join('#ru-s'); ols[i].removeAttribute('data-clone'); } })();
+(function(){ function run(root){ var ols=(root||document).querySelectorAll('ol.refs[data-clone]'); for(var i=0;i<ols.length;i++){ var src=document.getElementById(ols[i].getAttribute('data-clone')); if(!src) continue;
+  ols[i].innerHTML=src.innerHTML.split('-en-src-').join('-ru-src-').split('#en-s').join('#ru-s'); ols[i].removeAttribute('data-clone'); } }
+  run(document); H.push(run); })();
 // a self-labelled link (class u) is written without href: the address is its text (sources._link)
-(function(){ var as=document.querySelectorAll('a.u:not([href])'); for(var i=0;i<as.length;i++){ as[i].setAttribute('href',as[i].textContent); } })();
+(function(){ function run(root){ var as=(root||document).querySelectorAll('a.u:not([href])'); for(var i=0;i<as.length;i++){ as[i].setAttribute('href',as[i].textContent); } }
+  run(document); H.push(run); })();
 function setHash(h){ try{ history.replaceState(null,'',h); }catch(e){ location.hash=h; } }
 function closeBrief(restore){
   if(!openId) return;

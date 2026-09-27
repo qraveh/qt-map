@@ -15,8 +15,8 @@ jobs:
       - name: check the build is committed and reproduces byte-for-byte
         run: git diff --exit-code -- data/graph.json report/ CHANGELOG.md dist/ || (echo "run build/build.py and commit the result; if only dist/ differs, the build is not reproducible on this platform" && exit 1)
       - uses: actions/upload-artifact@v4
-        with: { name: quantum-technology-atlas, path: dist/*.html }
+        with: { name: quantum-technology-atlas, path: dist/ }
       - name: attach to release
         if: github.event_name == 'release'
         uses: softprops/action-gh-release@v2
-        with: { files: dist/*.html }
+        with: { files: dist/*.html }   # the English page; the site takes the whole dist/ tree (ru/, lang/, the record pages)

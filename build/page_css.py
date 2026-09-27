@@ -717,4 +717,7 @@ th[aria-sort="ascending"] .sortbtn,th[aria-sort="descending"] .sortbtn{color:var
 figure.fig81{margin:1em 0 1.2em;padding:0}
 figure.fig81 figcaption{font-size:13px;color:var(--ink2);margin-top:6px;text-align:left}
 figure.fig81 .pt:hover .mk{stroke-width:2.6}
+/* one page per language (27 Sep 2026): a block of the other language waits for its fragment; a short notice stands in its place */
+.langwait{margin:24px 0;padding:10px 14px;border:1px dashed var(--mid);border-radius:8px;color:var(--ink2);font-size:14px}
+html.lang-loading .mast .seg [aria-pressed="true"]{opacity:.6}
 """

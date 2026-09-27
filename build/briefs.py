@@ -241,9 +241,36 @@ def expand_ulinks(h):
     return re.sub(r'<a class="u"( target="_blank" rel="noopener")>((?:[^<]|<wbr>)+)</a>', lambda m: '<a href="%s" class="u"%s>%s</a>' % (m.group(2).replace('<wbr>', ''), m.group(1), m.group(2)), h)
 
 
-def expand_page(h):
-    """every load-time expansion the static checkers must see: RU Sources lists, key-reference chips, [G] chip tooltips"""
+def expand_langs(h, page_path=None):
+    """One page per language (27 Sep 2026): the other languages' prose and brief halves are placeholders (data-lang-slot) that
+    the page fills at load from dist/lang/<lang>.js. The static checkers see the whole document: the fragments are read from
+    beside the page (or from dist/lang when no path is given) and put into their slots the way the browser does."""
+    import json as _json
+    slots = re.findall(r'<div class="(?:prose|bl) lang-(\w+)"[^>]*data-lang-slot="([^"]+)"><p class="langwait">[^<]*</p></div>', h)
+    if not slots: return h
+    base = os.path.join(ROOT, 'dist', 'lang')
+    if page_path:
+        d = os.path.dirname(os.path.abspath(page_path))
+        for cand in (os.path.join(d, 'lang'), os.path.join(os.path.dirname(d), 'lang')):
+            if os.path.isdir(cand): base = cand; break
+    frags = {}
+    for lang in sorted({l for l, _ in slots}):
+        fp = os.path.join(base, lang + '.js')
+        if not os.path.exists(fp): continue
+        t = open(fp, encoding='utf-8').read()
+        i = t.index('=', t.index('window.__LANGFRAG[')); frags[lang] = _json.loads(t[i + 1:].rstrip().rstrip(';'))
+    def sub(m):
+        lang, key = m.group(1), m.group(2)
+        F = frags.get(lang, {})
+        return F.get(key[len(lang) + 1:], m.group(0))
+    return re.sub(r'<div class="(?:prose|bl) lang-(\w+)"[^>]*data-lang-slot="([^"]+)"><p class="langwait">[^<]*</p></div>', sub, h)
+
+
+def expand_page(h, page_path=None):
+    """every load-time expansion the static checkers must see: the other language's blocks, RU Sources lists, key-reference
+    chips, [G] chip tooltips"""
     import brief_refs, json as _json
+    h = expand_langs(h, page_path)
     h = brief_refs.expand_clones(h)
     h = expand_ulinks(h)
     k = h.find('window.__KEYREFS='); k2 = h.find('</script>', k)

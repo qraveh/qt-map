@@ -21,7 +21,7 @@ def main():
     page = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, 'dist', 'Quantum-Technology-Atlas-2026.09.html')
     h = open(page, encoding='utf-8').read()
     import briefs
-    h = briefs.expand_page(h)
+    h = briefs.expand_page(h, page)
     h = re.sub(r'<script.*?</script>', '', h, flags=re.S)   # attributes inside the scripts are JS templates, not links
     G = json.load(open(os.path.join(ROOT, 'data', 'graph.json'), encoding='utf-8'))
     nodes = {n['id'] for n in G['nodes']}; paths = {p['id'] for p in G['paths']}
