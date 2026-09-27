@@ -559,7 +559,7 @@ def review23b(pw):
     st = p.evaluate("()=>({collapsed:document.getElementById('mapbar').classList.contains('collapsed'), label:document.getElementById('bartog').textContent.replace(/\\s+/g,' ').trim(), h:document.getElementById('bartog').getBoundingClientRect().height, sum:document.getElementById('barsum').textContent.trim(), chips:[...document.querySelectorAll('#pathchips .chip')].some(c=>c.offsetParent!==null), zoomVisible:document.getElementById('zoomlvl').offsetParent!==null})")
     check('controls bar starts collapsed, chips hidden, zoom window visible', st['collapsed'] and not st['chips'] and st['zoomVisible'], st)
     check('the toggle is a labelled button ≥ 28 px high', 'Controls' in st['label'] and st['h'] >= 28, st)
-    check('collapsed bar shows the selection summary', 'all paths' in st['sum'], st['sum'])
+    check('collapsed bar shows the selection summary', 'all architectures' in st['sum'], st['sum'])
     z0 = p.evaluate("()=>({lvl:document.getElementById('zoomlvl').value, svgW:+document.querySelector('#mapwrap svg').getAttribute('width'), wrapW:document.getElementById('mapwrap').clientWidth})")
     check('first view is the fit (100 %, map fills the frame)', z0['lvl'] == '100%' and z0['wrapW'] - 40 <= z0['svgW'] <= z0['wrapW'], z0)
     p.click('#zoom-100'); p.wait_for_timeout(300)

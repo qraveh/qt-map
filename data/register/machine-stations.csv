@@ -5,7 +5,7 @@ ibm-falcon,gate,g_cr,primary,
 ibm-falcon,connect,cx_nn,primary,
 ibm-falcon,control,ct_rt,primary,
 ibm-falcon,readout,ro_disp,primary,
-ibm-falcon,code,code_detect,primary,error-detection-only codes on the sc path
+ibm-falcon,code,code_detect,primary,error-detection-only codes on the sc architecture
 ibm-falcon,code,code_surface,alternate,
 ibm-falcon,decoder,dec_mwpm,primary,
 ibm-falcon,decoder,none,alternate,"no decoder, and no deployment-mode axis"
@@ -69,7 +69,7 @@ ibm-heron-r2,connect,cx_nn,primary,
 ibm-heron-r2,control,ct_rt,primary,
 ibm-heron-r2,control,ct_cryocmos,alternate,
 ibm-heron-r2,readout,ro_disp,primary,
-ibm-heron-r2,code,code_detect,primary,error-detection-only codes on the sc path
+ibm-heron-r2,code,code_detect,primary,error-detection-only codes on the sc architecture
 ibm-heron-r2,code,code_magic,alternate,
 ibm-heron-r2,decoder,none,primary,"no decoder, and no deployment-mode axis"
 ibm-heron-r2,interconnect,none,primary,"monolithic, single module"
@@ -81,7 +81,7 @@ ibm-heron-r3,gate,g_tc,primary,
 ibm-heron-r3,connect,cx_nn,primary,
 ibm-heron-r3,control,ct_rt,primary,
 ibm-heron-r3,readout,ro_disp,primary,
-ibm-heron-r3,code,code_detect,primary,error-detection-only codes on the sc path
+ibm-heron-r3,code,code_detect,primary,error-detection-only codes on the sc architecture
 ibm-heron-r3,code,code_mitig,alternate,error mitigation as the occupant of the code slot
 ibm-heron-r3,code,code_magic,alternate,
 ibm-heron-r3,decoder,none,primary,"no decoder, and no deployment-mode axis"
@@ -312,7 +312,7 @@ originq-wukong-72,gate,g_tc,primary,
 originq-wukong-72,connect,cx_nn,primary,
 originq-wukong-72,control,ct_rt,primary,
 originq-wukong-72,readout,ro_disp,primary,
-originq-wukong-72,code,code_detect,primary,error-detection-only codes on the sc path
+originq-wukong-72,code,code_detect,primary,error-detection-only codes on the sc architecture
 originq-wukong-72,decoder,none,primary,"no decoder, and no deployment-mode axis"
 originq-wukong-72,interconnect,none,primary,"monolithic, single module"
 originq-wukong-72,fab,fab_sc,primary,
@@ -503,7 +503,7 @@ rigetti-ankaa-2,gate,g_tc,primary,
 rigetti-ankaa-2,connect,cx_nn,primary,
 rigetti-ankaa-2,control,ct_rt,primary,
 rigetti-ankaa-2,readout,ro_disp,primary,
-rigetti-ankaa-2,code,code_surface,primary,error-detection-only codes on the sc path
+rigetti-ankaa-2,code,code_surface,primary,error-detection-only codes on the sc architecture
 rigetti-ankaa-2,decoder,dec_fpga,primary,
 rigetti-ankaa-2,interconnect,none,primary,"monolithic, single module"
 rigetti-ankaa-2,fab,fab_sc,primary,
@@ -807,7 +807,7 @@ dwave-dualrail-17,decoder,none,primary,"no decoder, and no deployment-mode axis"
 dwave-dualrail-17,interconnect,ic_mcm,primary,
 dwave-dualrail-17,fab,fab_sc,primary,
 sustc-biased-erasure,carrier,cavity,primary,
-sustc-biased-erasure,encoding,∅G-fock02,primary,single-cavity 0/2 Fock erasure encoding — no Map station (gap G-fock02)
+sustc-biased-erasure,encoding,∅G-fock02,primary,single-cavity 0/2 Fock erasure encoding — no Atlas station (gap G-fock02)
 sustc-biased-erasure,gate,g_bos,primary,
 sustc-biased-erasure,connect,cx_nn,primary,
 sustc-biased-erasure,control,ct_rt,primary,
@@ -839,7 +839,7 @@ quantinuum-h2,readout,ro_fluor,primary,
 quantinuum-h2,code,code_highrate,primary,
 quantinuum-h2,code,code_color,alternate,
 quantinuum-h2,code,code_magic,alternate,
-quantinuum-h2,decoder,∅G-lut,primary,real-time lookup-table decoding (paper §I) — no Map station (gap G-lut)
+quantinuum-h2,decoder,∅G-lut,primary,real-time lookup-table decoding (paper §I) — no Atlas station (gap G-lut)
 quantinuum-h2,interconnect,none,primary,"monolithic, single module"
 quantinuum-h2,fab,fab_trap,primary,
 quantinuum-h2,fab,fab_optics,alternate,
@@ -1365,7 +1365,7 @@ intel-tunnel-falls,control,ct_rt,alternate,
 intel-tunnel-falls,readout,ro_s2c,primary,
 intel-tunnel-falls,code,none,primary,no code (NISQ)
 intel-tunnel-falls,decoder,none,primary,"no decoder, and no deployment-mode axis"
-intel-tunnel-falls,interconnect,ic_fanout,primary,the spin paths have no L9 slot at all
+intel-tunnel-falls,interconnect,ic_fanout,primary,the spin architectures have no L9 slot at all
 intel-tunnel-falls,fab,fab_cmos,primary,
 diraq-imec-8q,carrier,qd_spin,primary,
 diraq-imec-8q,encoding,enc_spin_ld,primary,
@@ -1385,11 +1385,11 @@ quantum-motion-qm-one,encoding,enc_spin_ld,primary,
 quantum-motion-qm-one,gate,g_exch,primary,
 quantum-motion-qm-one,connect,cx_nn,primary,
 quantum-motion-qm-one,control,ct_cryocmos,primary,
-quantum-motion-qm-one,control,∅G-qsoc,alternate,integrated cryo-CMOS on the qubit die (register cell) — no Map station (gap G-qsoc)
+quantum-motion-qm-one,control,∅G-qsoc,alternate,integrated cryo-CMOS on the qubit die (register cell) — no Atlas station (gap G-qsoc)
 quantum-motion-qm-one,readout,ro_s2c,primary,
 quantum-motion-qm-one,code,none,primary,no code (NISQ)
 quantum-motion-qm-one,decoder,none,primary,"no decoder, and no deployment-mode axis"
-quantum-motion-qm-one,interconnect,ic_fanout,primary,the spin paths have no L9 slot at all
+quantum-motion-qm-one,interconnect,ic_fanout,primary,the spin architectures have no L9 slot at all
 quantum-motion-qm-one,fab,fab_cmos,primary,
 sqc-11q,carrier,donor,primary,
 sqc-11q,encoding,enc_spin_ld,primary,
@@ -1410,7 +1410,7 @@ equal1-bell-1,control,∅G-qsoc,alternate,qubits and controller on one die
 equal1-bell-1,readout,ro_s2c,primary,
 equal1-bell-1,code,none,primary,no code (NISQ)
 equal1-bell-1,decoder,none,primary,"no decoder, and no deployment-mode axis"
-equal1-bell-1,interconnect,ic_fanout,primary,the spin paths have no L9 slot at all
+equal1-bell-1,interconnect,ic_fanout,primary,the spin architectures have no L9 slot at all
 equal1-bell-1,fab,fab_cmos,primary,
 quobly,carrier,qd_spin,primary,
 quobly,encoding,enc_spin_ld,primary,
@@ -1431,7 +1431,7 @@ hitachi-intel18a,control,ct_cryocmos,primary,
 hitachi-intel18a,readout,ro_s2c,primary,
 hitachi-intel18a,code,none,primary,no code (NISQ)
 hitachi-intel18a,decoder,none,primary,"no decoder, and no deployment-mode axis"
-hitachi-intel18a,interconnect,ic_fanout,primary,the spin paths have no L9 slot at all
+hitachi-intel18a,interconnect,ic_fanout,primary,the spin architectures have no L9 slot at all
 hitachi-intel18a,fab,fab_cmos,primary,
 groove-quantum,carrier,qd_spin,primary,
 groove-quantum,encoding,enc_spin_ld,primary,
@@ -1750,7 +1750,7 @@ fujitsu-snv-prototype,code,none,primary,no code (NISQ)
 fujitsu-snv-prototype,decoder,none,primary,"no decoder, and no deployment-mode axis"
 fujitsu-snv-prototype,interconnect,none,primary,"monolithic, single module"
 fujitsu-snv-prototype,fab,fab_diamond,primary,
-fujitsu-snv-prototype,fab,fab_pic,alternate,second L10 node (∅G-twofab); fab_pic is not on the defect path
+fujitsu-snv-prototype,fab,fab_pic,alternate,second L10 node (∅G-twofab); fab_pic is not on the defect architecture
 hrl-eo-18q,carrier,qd_spin,primary,
 hrl-eo-18q,encoding,enc_eo,primary,
 hrl-eo-18q,gate,g_exch,primary,
@@ -1759,7 +1759,7 @@ hrl-eo-18q,control,ct_cryocmos,primary,4 K cryo-CMOS controller generates every 
 hrl-eo-18q,control,ct_base,alternate,baseband voltage pulses
 hrl-eo-18q,readout,ro_s2c,primary,Pauli spin blockade + dot charge sensor read by a 4 K TIA; not rf reflectometry
 hrl-eo-18q,code,code_detect,primary,"closest station: the [[4,2,2]] error-detection run; the headline d=5 bit-flip repetition code has no station (new gap needed: repetition code)"
-hrl-eo-18q,code,∅G-repetition,alternate,"d=5 bit-flip repetition code on 7 EO qubits, Λ5/3 = 4.7 over up to 200 rounds — no Map station (gap G-repetition)"
-hrl-eo-18q,decoder,∅G-parity,primary,offline parity-check (majority) decoder for the repetition code — no Map station (gap G-parity); no real-time decoding
+hrl-eo-18q,code,∅G-repetition,alternate,"d=5 bit-flip repetition code on 7 EO qubits, Λ5/3 = 4.7 over up to 200 rounds — no Atlas station (gap G-repetition)"
+hrl-eo-18q,decoder,∅G-parity,primary,offline parity-check (majority) decoder for the repetition code — no Atlas station (gap G-parity); no real-time decoding
 hrl-eo-18q,interconnect,none,primary,"monolithic, single module"
 hrl-eo-18q,fab,fab_cmos,primary,"controller from a commercial 130-nm RF CMOS process; qubit chip on 200 mm wafers by a proprietary process, not a 300 mm foundry"

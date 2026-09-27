@@ -13198,7 +13198,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "Coaxmon out-of-plane I/O: control and readout enter perpendicular to the chip plane; no Map station",
+      "summary": "Coaxmon out-of-plane I/O: control and readout enter perpendicular to the chip plane; no Atlas station",
       "evidence": {
        "type": "architecture-paper-figure",
        "url": "https://arxiv.org/abs/2107.11140",
@@ -19454,7 +19454,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "belief-matching decoder run offline; MWPM is the nearest Map node (no belief-matching node)",
+      "summary": "belief-matching decoder run offline; MWPM is the nearest Atlas node (no belief-matching node)",
       "evidence": {
        "type": "architecture-paper",
        "url": "https://arxiv.org/html/2606.06598",
@@ -19467,7 +19467,7 @@
       "role": "alternate",
       "gap": false,
       "state": "none",
-      "summary": "belief-matching, offline: no Map node for belief-matching and no real-time decoding",
+      "summary": "belief-matching, offline: no Atlas node for belief-matching and no real-time decoding",
       "evidence": {
        "type": "architecture-paper",
        "url": "https://arxiv.org/html/2606.06598",
@@ -20340,7 +20340,7 @@
       "role": "primary",
       "gap": true,
       "state": "gap",
-      "summary": "beam-search decoder (Delfosse) for the qLDPC codes, run offline; no Map node for search decoders",
+      "summary": "beam-search decoder (Delfosse) for the qLDPC codes, run offline; no Atlas node for search decoders",
       "evidence": {
        "type": "architecture-paper",
        "url": "https://arxiv.org/abs/2606.06455",
@@ -20769,7 +20769,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "chip-integrated electronic (microwave) control; 1Q gate error 1.5e-7 without magnetic shielding per Map ct_ionmw attrs, not on the cited page",
+      "summary": "chip-integrated electronic (microwave) control; 1Q gate error 1.5e-7 without magnetic shielding per Atlas ct_ionmw attrs, not on the cited page",
       "evidence": {
        "type": "architecture-paper-figure",
        "url": "https://arxiv.org/abs/2407.07694",
@@ -20844,7 +20844,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "trap chips from standard semiconductor fabs (Map fab_trap attrs); moving to SkyWater in-house",
+      "summary": "trap chips from standard semiconductor fabs (Atlas fab_trap attrs); moving to SkyWater in-house",
       "evidence": {
        "type": "architecture-paper",
        "url": "https://arxiv.org/abs/2407.07694",
@@ -22146,7 +22146,7 @@
       "role": "primary",
       "gap": true,
       "state": "gap",
-      "summary": "real-time lookup-table decoding of Steane [[7,1,3]] in-loop since 2021; no LUT node among the Map's dec_* nodes",
+      "summary": "real-time lookup-table decoding of Steane [[7,1,3]] in-loop since 2021; no LUT node among the Atlas's dec_* nodes",
       "evidence": {
        "type": "architecture-paper-figure",
        "url": "https://arxiv.org/abs/2107.07505",
@@ -25928,7 +25928,7 @@
       "role": "alternate",
       "gap": false,
       "state": "station",
-      "summary": "toric = periodic-boundary surface code; Map code_surface is the rotated variant; also stab_4_2_2 and bacon_shor_9 with Microsoft (Nov 2024)",
+      "summary": "toric = periodic-boundary surface code; Atlas code_surface is the rotated variant; also stab_4_2_2 and bacon_shor_9 with Microsoft (Nov 2024)",
       "evidence": {
        "type": "architecture-paper-figure",
        "url": "https://arxiv.org/abs/2606.04079",
@@ -28605,7 +28605,7 @@
       "role": "primary",
       "gap": true,
       "state": "gap",
-      "summary": "no Map node: optical-lattice grid ('egg carton made of light'), no per-atom tweezer moves; 1,200-atom register ran >1 h continuously (Oct 2024)",
+      "summary": "no Atlas node: optical-lattice grid ('egg carton made of light'), no per-atom tweezer moves; 1,200-atom register ran >1 h continuously (Oct 2024)",
       "evidence": {
        "type": "press-technical",
        "url": "https://postquantum.com/quantum-computing-companies/planqc",
@@ -29230,7 +29230,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "no Map node: ground–Rydberg (|g⟩,|r⟩) analog qubit; computational states are not hyperfine",
+      "summary": "no Atlas node: ground–Rydberg (|g⟩,|r⟩) analog qubit; computational states are not hyperfine",
       "evidence": {
        "type": "architecture-paper-figure",
        "url": "https://arxiv.org/abs/2306.11727",
@@ -29245,7 +29245,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "no Map node: analog Rydberg Ising Hamiltonian evolution under global drive + local detuning; does not run gate circuits",
+      "summary": "no Atlas node: analog Rydberg Ising Hamiltonian evolution under global drive + local detuning; does not run gate circuits",
       "evidence": {
        "type": "architecture-paper-figure",
        "url": "https://arxiv.org/abs/2306.11727",
@@ -31210,7 +31210,7 @@
       "role": "primary",
       "gap": true,
       "state": "gap",
-      "summary": "needs two L10 nodes: SiN/silica interferometer meshes (fab_pic) plus GaAs quantum-dot source (fab_mbe); the Map allows one",
+      "summary": "needs two L10 nodes: SiN/silica interferometer meshes (fab_pic) plus GaAs quantum-dot source (fab_mbe); the Atlas allows one",
       "evidence": {
        "type": "architecture-paper",
        "url": "https://arxiv.org/abs/2306.00874",
@@ -31480,7 +31480,7 @@
       "role": "primary",
       "gap": true,
       "state": "gap",
-      "summary": "needs two L10 nodes: SiN/silica interferometer meshes (fab_pic) plus GaAs quantum-dot source (fab_mbe); the Map allows one",
+      "summary": "needs two L10 nodes: SiN/silica interferometer meshes (fab_pic) plus GaAs quantum-dot source (fab_mbe); the Atlas allows one",
       "evidence": {
        "type": "inferred",
        "url": "https://www.quandela.com/products-and-services/mosaiq/",
@@ -35059,7 +35059,7 @@
       "role": "primary",
       "gap": false,
       "state": "none",
-      "summary": "no decoder published; the defect path has an empty L8",
+      "summary": "no decoder published; the defect architecture has an empty L8",
       "evidence": {
        "type": "vendor-architecture-page",
        "url": "https://photonic.com/technology/error-correction/",
@@ -35145,7 +35145,7 @@
     "t_2q": "",
     "t_meas": "",
     "best_logical": "none on hardware: no logical qubit, no decoder, no logical error rate. SHYPS qLDPC (subsystem hypergraph product x simplex codes, weight-3 gauge generators) claims 20x fewer physical qubits per logical qubit and one error check per logical operation (30x runtime reduction) vs surface codes",
-    "decoder": "none published; the defect path has an empty L8",
+    "decoder": "none published; the defect architecture has an empty L8",
     "realtime": "none",
     "roadmap": "4 logical qubits near term; utility scale 2033",
     "err_2q_median_num": null,
@@ -35464,7 +35464,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "rf quantum-capacitance interferometric parity readout: ~1% assignment error, SNR 1 in 3.6 µs; X lifetime ~1000× shorter than Z (2025); figures from Map ro_qcap, not this page",
+      "summary": "rf quantum-capacitance interferometric parity readout: ~1% assignment error, SNR 1 in 3.6 µs; X lifetime ~1000× shorter than Z (2025); figures from Atlas ro_qcap, not this page",
       "evidence": {
        "type": "architecture-paper-figure",
        "url": "https://www.nature.com/articles/s41586-024-08445-2",
@@ -35479,7 +35479,7 @@
       "role": "primary",
       "gap": true,
       "state": "gap",
-      "summary": "empty L7 on topo path; MS 4D geometric codes [[96,6,8]] need all-to-all, not a tetron lattice; honeycomb_floquet is the natural fit and not on the topo path",
+      "summary": "empty L7 on topo architecture; MS 4D geometric codes [[96,6,8]] need all-to-all, not a tetron lattice; honeycomb_floquet is the natural fit and not on the topo architecture",
       "evidence": {
        "type": "architecture-paper-figure",
        "url": "https://arxiv.org/abs/2502.12252",
@@ -35494,7 +35494,7 @@
       "role": "primary",
       "gap": false,
       "state": "none",
-      "summary": "no decoder; empty L8 slot on the topo path",
+      "summary": "no decoder; empty L8 slot on the topo architecture",
       "evidence": {
        "type": "press-technical",
        "url": "https://quantumzeitgeist.com/microsoft-majorana-qubit-claims/",
@@ -35509,7 +35509,7 @@
       "role": "primary",
       "gap": false,
       "state": "none",
-      "summary": "no interconnect; empty L9 slot on the topo path",
+      "summary": "no interconnect; empty L9 slot on the topo architecture",
       "evidence": {
        "type": "inferred",
        "url": "https://quantumzeitgeist.com/microsoft-majorana-qubit-claims/",
@@ -35573,7 +35573,7 @@
     "t_2q": "",
     "t_meas": "",
     "best_logical": "none; not a qubit. Microsoft's own 4D geometric codes [[96,6,8]] require all-to-all connectivity and are therefore not a code for the tetron lattice; honeycomb-Floquet is the natural tetron code and no logical demonstration exists anywhere",
-    "decoder": "none; the topo path has empty L7, L8 and L9 slots",
+    "decoder": "none; the topo architecture has empty L7, L8 and L9 slots",
     "realtime": "none",
     "roadmap": "scalable system timeline accelerated from 2029",
     "err_2q_median_num": null,
@@ -35617,7 +35617,7 @@
       "role": "primary",
       "gap": false,
       "state": "none",
-      "summary": "analog annealer has no encoding layer; the anneal path declares an empty L2",
+      "summary": "analog annealer has no encoding layer; the anneal architecture declares an empty L2",
       "evidence": {
        "type": "inferred",
        "url": "https://support.dwavesys.com/hc/en-us/articles/32105885880087-D-Wave-s-Advantage2-Quantum-Computer-Now-Generally-Available",
@@ -35842,7 +35842,7 @@
       "role": "primary",
       "gap": false,
       "state": "none",
-      "summary": "analog annealer has no encoding layer; the anneal path declares an empty L2",
+      "summary": "analog annealer has no encoding layer; the anneal architecture declares an empty L2",
       "evidence": {
        "type": "inferred",
        "url": "https://support.dwavesys.com/hc/en-us/articles/32105885880087-D-Wave-s-Advantage2-Quantum-Computer-Now-Generally-Available",
@@ -35857,7 +35857,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "analog anneal; Multicolor Annealing (mid-anneal projection) and Fast-Reverse Anneal added 27 Jan 2026; coherent quenches 3.6–27 ns on 1,222–5,627 q (Map g_anneal)",
+      "summary": "analog anneal; Multicolor Annealing (mid-anneal projection) and Fast-Reverse Anneal added 27 Jan 2026; coherent quenches 3.6–27 ns on 1,222–5,627 q (Atlas g_anneal)",
       "evidence": {
        "type": "architecture-paper-figure",
        "url": "https://arxiv.org/abs/2403.00910",
@@ -36098,7 +36098,7 @@
       "role": "primary",
       "gap": false,
       "state": "none",
-      "summary": "analog annealer has no encoding layer; the anneal path declares an empty L2",
+      "summary": "analog annealer has no encoding layer; the anneal architecture declares an empty L2",
       "evidence": {
        "type": "inferred",
        "url": "https://www.dwavequantum.com/beyond-classical/",
