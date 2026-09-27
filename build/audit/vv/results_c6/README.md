@@ -1,0 +1,13 @@
+# results_c6 — three suites on the build of 27 Sep 2026 (evening): the Atlas renamed, one page per language, record pages, the edges redrawn, the review before publication taken in
+
+Run on the dist of commit eac86dc (`VV_PAGE=<abs path>/dist/Quantum-Technology-Atlas-2026.09.html python3 build/audit/vv/runner.py <suite> --out build/audit/vv/results_c6`); the machines suite then re-run for 29 states on the dist of the following commit (see below).
+
+| suite | states | disagreements / violations | seconds | note |
+|---|---|---|---|---|
+| single | 370 | 0 | 335 | every lens value, every architecture, every station, every machine alone (111 stations, 17 architectures, 160 machines — counted from the data) |
+| machines | 1,080 | 0 | 1,562 + 41 | the machine term with isolate / focus / lens; 29 states first disagreed on `lines` (below), 0 after the fix |
+| strip | 300 | 0 violations | 2,445 | S1 compared 161 states, skipped 139 by rule (no strip control for the place / mid / destr / det lenses; no axis for status and family) |
+
+**The 29 disagreements and the fix.** Every one was a machine with a non-family lens value that lit none of the machine's stations (e.g. `baqis-scq136` with manufacturing = MBE): the oracle keeps the machine's architecture line ("a lens value never removes a line that an isolated path, a focused station or a machine keeps" — adjudication 14, 27 Sep), the page drew none, because `litSets()` derived the kept lines from the lens value before the machine term ran and the machine's line was not among them. The page now derives lines from a lens value only when no isolate, focus or machine sets them (`map_js.py litSets`); the 29 states re-run on the corrected build: 0 disagreements. The single suite has no machine states and the strip suite compares two drivings of the same page, so neither is affected by the rule.
+
+The oracle self-test (`test_oracle.py`, 9 tests, counts from the graph) passes; `release_check.py --smoke` PASS on the final tree. The metamorphic suite was not re-run: the edge model changed (groups, strength, kinds) but the metamorphic relations concern lit sets under lens/isolate/focus, which the single and machines suites cover directly on the new data. What changed in the map script since results_c5: the arrow direction and soft/one-of rendering of edges, the lens filter's line rule (adjudication 14), the skipped-layer markers, card history (← back), deep links, page links, the machine card's architecture link, register enumerations in Russian (`__MACH.t`), the unknown-deep-link notice, the zoom bounds and station aria-labels — none of them touches the lit sets; the line rule did, and was tested above.

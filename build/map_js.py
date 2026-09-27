@@ -243,7 +243,7 @@ function litSets(){ const f=state.focus, iso=state.isolate;
     keepN=keepN?new Set([...keepN].filter(n=>pm.has(n))):pm; }
   if(state.lensFilter!=null){ const lf=new Set(G.nodes.filter(nodeMatchesFilter).map(n=>n.id)); keepN=keepN?new Set([...keepN].filter(x=>lf.has(x))):lf;
     if(state.lens==='family'){ const fp=new Set(G.paths.filter(p=>state.lensFilter.has(p.family)).map(p=>p.id)); keepP=keepP?new Set([...keepP].filter(p=>fp.has(p))):fp; }
-    else if(!keepP){ keepP=new Set(G.paths.filter(p=>[...pathMembers(p.id)].some(x=>lf.has(x))).map(p=>p.id)); } }
+    else if(!keepP&&!(state.machine&&MBY[state.machine])){ keepP=new Set(G.paths.filter(p=>[...pathMembers(p.id)].some(x=>lf.has(x))).map(p=>p.id)); } }   // a lens value never removes a line an isolate, a focus or a machine keeps (adjudication 14; the machine term below sets keepP)
   // machine (register): one more term of the same intersection — its real stations on every layer (primary and alternate) and its own path line
   const mm=state.machine&&MBY[state.machine]; if(mm){ const ms=machNodes(mm).all; keepN=keepN?new Set([...keepN].filter(x=>ms.has(x))):new Set(ms);
     const mp=new Set([mm.path]); keepP=keepP?new Set([...keepP].filter(p=>mp.has(p))):mp; }

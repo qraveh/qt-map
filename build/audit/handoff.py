@@ -71,6 +71,8 @@ def main():
         '  build cmd       pip install -r requirements.txt && python3 build/build.py',
         '  build says      CHANGELOG.md written        (line before it: "%s")' % buildline,
         '  dist sha256     %s…   (produced in a clean room from this bundle; cloud Linux/CPython 3.12 — msi Windows/CPython 3.14 and CI ubuntu/3.12 must agree)' % dsha[:16],
+        '  dist bytes      %s (English page) · %s (Russian page, dist/ru/)' % ('{:,}'.format(os.path.getsize(os.path.join(ROOT, 'dist', DIST_NAME))), '{:,}'.format(os.path.getsize(os.path.join(ROOT, 'dist', 'ru', DIST_NAME)))),
+        '  full sha256     bundle %s · dist %s' % (bsha, dsha),
         '  tree after      git status --porcelain -> empty',
         '  origin/main at handout   %s' % main_sha, '```'])
     manifest = {'head': head, 'short': short, 'branch': branch, 'subject': subj, 'bundle': {'file': bundle, 'sha256': bsha, 'device': DEV_DOWNLOADS + '\\' + os.path.basename(bundle)},
