@@ -522,7 +522,7 @@ MAPUI='''<div class="mapbar" id="mapbar">
  <div class="grp"><span class="lbl lang-en">lens</span><span class="lbl lang-ru">линза</span><select id="lens" class="sel" aria-label="colour lens"></select></div>
  <div class="grp machgrp"><span class="lbl lang-en">machine</span><span class="lbl lang-ru">машина</span><select id="machine" class="sel" aria-label="machine — one more term of the lit set" title="light only the stations this machine uses (its register cell per layer); intersects with the isolated path, the focused station and the lens value"><option value="">—</option></select></div>
  <div class="grp"><span class="lbl lang-en">edges</span><span class="lbl lang-ru">рёбра</span>
-  <button class="chip tog" id="tg-req" aria-pressed="false"><span class="lang-en">all requires</span><span class="lang-ru">все «требует»</span></button>
+  <button class="chip tog" id="tg-req" aria-pressed="false"><span class="lang-en">all dependencies</span><span class="lang-ru">все зависимости</span></button>
   <button class="chip tog" id="tg-rep" aria-pressed="false"><span class="lang-en">all alternatives</span><span class="lang-ru">все «альтернативы»</span></button>
   <button class="chip tog" id="tg-conf" aria-pressed="false"><span class="lang-en">all conflicts</span><span class="lang-ru">все «конфликтует»</span></button>
 </div>
@@ -533,7 +533,7 @@ MAPUI='''<div class="mapbar" id="mapbar">
   <span class="gl mark" data-glyph="hub" title="a station that stations of at least two families (or one family, recently) require — where a fix or a stall propagates across platforms"><i class="lg hub">◎</i><span class="lang-en">hub</span><span class="lang-ru">хаб</span> <span class="cnt"></span></span>
   <span class="gl mark" data-glyph="offd" title="a station that takes a trait from the other side of the natural/fabricated divide (see §7.6)"><i class="lg off">⤢</i><span class="lang-en">off-diagonal</span><span class="lang-ru">внедиагональный</span> <span class="cnt"></span></span>
   <span class="gl mark" data-glyph="empty" title="a station with no demonstrated technology yet"><i class="lg emp">∅</i><span class="lang-en">empty slot</span><span class="lang-ru">пустой слот</span> <span class="cnt"></span></span>
-  <span class="gl"><i class="lg ed req"></i><span class="lang-en">requires</span><span class="lang-ru">требует</span></span>
+  <span class="gl" title="a dependency: the arrowhead sits at the station that needs the other one — read it as ‘B is needed by A’"><i class="lg ed req"></i><span class="lang-en">is needed by →</span><span class="lang-ru">требуется станции →</span></span>
   <span class="gl"><i class="lg ed rep"></i><span class="lang-en">alternatives</span><span class="lang-ru">альтернативы</span></span>
   <span class="gl"><i class="lg ed con"></i><span class="lang-en">conflicts — hover for the reason</span><span class="lang-ru">конфликтует — причина по наведению</span></span>
   <span class="gl long"><i class="lg stn" aria-hidden="true"><svg viewBox="0 0 50 16" width="50" height="16"><rect x="0.6" y="0.6" width="21" height="14.8" rx="3.5" fill="var(--surface)" stroke="var(--ink2)" stroke-width="1.2"/><rect x="3.2" y="3.6" width="11" height="1.6" rx="0.8" fill="var(--ink)" opacity="0.8"/><rect x="3.2" y="10.8" width="4" height="2.2" rx="0.6" fill="var(--sc)"/><path d="M23.4 8H27M25.6 6.4L27.2 8L25.6 9.6" fill="none" stroke="var(--muted)" stroke-width="1"/><rect x="28.400000000000002" y="0.6" width="21" height="14.8" rx="3.5" fill="rgba(27,175,122,0.22)" stroke="var(--atom)" stroke-width="1.2"/><rect x="31.0" y="3.6" width="11" height="1.6" rx="0.8" fill="var(--ink)" opacity="0.8"/><rect x="31.0" y="10.8" width="4" height="2.2" rx="0.6" fill="var(--sc)"/><rect x="28.4" y="0.6" width="3.2" height="14.8" rx="1.4" fill="var(--atom)"/></svg></i><span class="lang-en">outline = family colour (dark: several families); with an attribute lens on (any but “Platform family”): tint + left band = the lens value (legend below)</span><span class="lang-ru">рамка = цвет семейства (тёмная: несколько семейств); при линзе по атрибуту (любой, кроме «семейства платформ»): оттенок + полоса слева = значение линзы (легенда ниже)</span></span>
@@ -851,7 +851,7 @@ def build(cfg=PUBLIC):
 </div>
 {feedback_html(cfg)}
 </div>
-<script>window.__GRAPH={json.dumps(G,ensure_ascii=False,separators=(',',':'))};window.__MACH={json.dumps(mach_slim(),ensure_ascii=False,separators=(',',':'))};window.__SHORT={json.dumps(SHORT,ensure_ascii=False,separators=(',',':'))};window.__KEYREFS={json.dumps(BR.key_refs_all(B),ensure_ascii=False)};</script>
+<script>window.__GRAPH={json.dumps(G,ensure_ascii=False,separators=(',',':'))};window.__MACH={json.dumps(mach_slim(),ensure_ascii=False,separators=(',',':'))};window.__SHORT={json.dumps(SHORT,ensure_ascii=False,separators=(',',':'))};window.__KEYREFS={json.dumps(BR.key_refs_slim(BR.key_refs_all(B)),ensure_ascii=False,separators=(',',':'))};</script>
 <script>{D3}</script>
 <script>
 (function(){{const app=document.getElementById('app');

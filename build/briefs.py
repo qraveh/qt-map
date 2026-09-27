@@ -247,7 +247,7 @@ def expand_page(h):
     h = brief_refs.expand_clones(h)
     h = expand_ulinks(h)
     k = h.find('window.__KEYREFS='); k2 = h.find('</script>', k)
-    if k > 0: h = expand_keys(h, _json.loads(h[k + len('window.__KEYREFS='):k2].rstrip(';')))
+    if k > 0: h = expand_keys(h, fill_key_labels(h, _json.loads(h[k + len('window.__KEYREFS='):k2].rstrip(';'))))
     g = h.find('window.__GTIPS='); g2 = h.find('</script>', g)
     if g > 0: h = expand_gtips(h, _json.loads(h[g + len('window.__GTIPS='):g2].rstrip(';')))
     return h
@@ -580,6 +580,27 @@ def key_refs_html(refs, lang, bid=None):
     t = 'Key references' if lang == 'en' else 'Ключевые источники'
     if bid: return '<div class="bkeys" data-keys="%s"><span class="tk">%s</span></div>' % (bid, t)
     return '<div class="bkeys"><span class="tk">%s</span> %s</div>' % (t, key_refs_items(refs))
+
+
+def key_refs_slim(keyrefs):
+    """the page's embedded form (27 Sep 2026): no label — the IEEE text of work n stands in the brief's own Sources list
+    (li#brief-<sid>-en-src-<n> span.ref); brief_js and the station card read it from there (90 KB saved, one text per work)"""
+    return {sid: [{k: v for k, v in r.items() if k != 'label'} for r in refs] for sid, refs in keyrefs.items()}
+
+
+def fill_key_labels(h, keyrefs):
+    """the labels the slim form left out, read back from the page's brief Sources lists (for the static checkers)"""
+    out = {}
+    for sid, refs in keyrefs.items():
+        rs = []
+        for r in refs:
+            r = dict(r)
+            if not r.get('label'):
+                m = re.search(r'<li id="brief-%s-en-src-%d"[^>]*>.*?<span class="ref">(.*?)</span>' % (re.escape(sid), int(r['n'])), h, flags=re.S)
+                r['label'] = html.unescape(re.sub(r'<[^>]+>', '', m.group(1))).strip() if m else ''
+            rs.append(r)
+        out[sid] = rs
+    return out
 
 
 def key_refs_items(refs):

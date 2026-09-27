@@ -6,8 +6,10 @@ var openId=null, prevY=0;
 function sec(id){ return document.getElementById('brief-'+id); }
 // the key-reference chips of every brief header are made at load from window.__KEYREFS (the station cards' records): [n] short year, the IEEE entry as the tooltip
 (function(){ var K=window.__KEYREFS||{}; function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-  var ds=document.querySelectorAll('.bkeys[data-keys]'); for(var i=0;i<ds.length;i++){ var rs=K[ds[i].getAttribute('data-keys')]||[]; var out='';
-    for(var j=0;j<rs.length;j++){ var r=rs[j]; out+='<a href="'+esc(r.url)+'" target="_blank" rel="noopener" title="'+esc(r.label)+'">['+r.n+'] '+esc(r.short||'')+(r.year?' '+r.year:'')+'</a>'; }
+  // the IEEE text of work n is the brief's own Sources entry (the records carry no label since 27 Sep 2026)
+  window.__keyLabel=function(sid,n){ var el=document.getElementById('brief-'+sid+'-en-src-'+n); var r=el&&el.querySelector('.ref'); return r?r.textContent.trim():''; };
+  var ds=document.querySelectorAll('.bkeys[data-keys]'); for(var i=0;i<ds.length;i++){ var sid=ds[i].getAttribute('data-keys'); var rs=K[sid]||[]; var out='';
+    for(var j=0;j<rs.length;j++){ var r=rs[j]; out+='<a href="'+esc(r.url)+'" target="_blank" rel="noopener" title="'+esc(window.__keyLabel(sid,r.n))+'">['+r.n+'] '+esc(r.short||'')+(r.year?' '+r.year:'')+'</a>'; }
     ds[i].insertAdjacentHTML('beforeend',' '+out); ds[i].removeAttribute('data-keys'); } })();
 // a Russian brief's Sources list is cloned from the English one (same works, same numbers, English entries): ids and §-links switch to ru
 (function(){ var ols=document.querySelectorAll('ol.refs[data-clone]'); for(var i=0;i<ols.length;i++){ var src=document.getElementById(ols[i].getAttribute('data-clone')); if(!src) continue;

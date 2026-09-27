@@ -269,6 +269,7 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .edge:hover path.vis{stroke-width:3}
 .tip.wide{max-width:440px}
 .edge.requires{stroke:var(--ink);opacity:.9}
+.edge.requires path.vis.soft{stroke-dasharray:1.5 3.5;stroke-linecap:round;opacity:.75}   /* a soft dependency (the usual route, not a strict need) */
 .edge.replaces{stroke:var(--ink2);stroke-dasharray:5 4}
 .edge.conflicts{stroke:var(--crit);stroke-dasharray:3 3;stroke-width:2}
 .rel{padding-left:14px;text-indent:-14px;line-height:1.35}
