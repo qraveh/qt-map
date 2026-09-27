@@ -278,6 +278,7 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 
 /* lens */
 .lensed .pathline{stroke:var(--mid) !important;opacity:.28} .lensed .pathline.hov{opacity:.9}
+.lensed.filtered .pathline:not(.dim){opacity:.6}   /* a lens value chosen: the lines through the kept stations read clearly (27 Sep 2026) */
 .lensed .altstub{stroke:var(--mid) !important;opacity:.35}
 .lensed .badge{opacity:.35}
 .lk{appearance:none;border:1px solid var(--rule);background:var(--surface);color:var(--ink);font:inherit;font-size:12.5px;padding:2px 9px 2px 24px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;position:relative;overflow:hidden}

@@ -208,10 +208,11 @@ def expected(model, state):
     if foc:
         lit.add(foc)   # ADJ-3 (ORACLE-FIX): the clicked station is always lit (rule 2)
 
-    # lines -- ADJ-1/ADJ-2 (DESIGN-GAP, page behaviour as de-facto rule):
+    # lines -- ADJ-1/ADJ-2 (DESIGN-GAP, page behaviour as de-facto rule), ADJ-1 decided by the editor on 27 Sep 2026 (ADJ-14):
     #   isolate/focus set -> the isolated line / the focused station's lines (intersection), narrowed by a family value;
     #                        a non-family lens value does not narrow them;
-    #   else a family value -> that family's lines; any other lens value -> no line; no lens value -> every line.
+    #   else a family value -> that family's lines; any other lens value -> the lines with >= 1 lit station (written rule 4);
+    #   no lens value -> every line.
     #   a machine (C2) keeps exactly its own path line, like an isolate (intersection with {map_path}).
     lines = set()
     for pid in model.path_ids:
@@ -225,7 +226,7 @@ def expected(model, state):
             if lens == "family":
                 if model.paths[pid]["family"] not in values:
                     continue
-            elif not (iso or foc or mach):
+            elif not (iso or foc or mach) and not (model.path_stations[pid] & lit):
                 continue
         lines.add(pid)
 

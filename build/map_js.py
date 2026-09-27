@@ -65,8 +65,11 @@ const pathSel=gPaths.selectAll('path').data(G.paths).join('path').attr('class',d
 // path lines are selectable: a wide invisible twin of each line takes the pointer — hover names the path, click isolates it (same as its chip)
 const gPathHit=svg.insert('g',function(){return gAlt.node();}).attr('class','pathhits');
 const pathHit=gPathHit.selectAll('path').data(G.paths).join('path').attr('class','phit').attr('d',d=>line(pathPoints(d))).attr('data-path',d=>d.id);
-// empty-slot markers on paths
-const emptyMarks=[]; G.paths.forEach(p=>{const pts=pathPoints(p); for(let L=1;L<=10;L++){const ids=p.slots[L]||[]; if(ids.length)continue; const prev=[...pts].reverse().find(q=>q.L<L)||pts[0]; emptyMarks.push({p,L,x:X0+(L-1)*COLW+NW/2,y:prev.y});}});
+// skipped-layer markers: a dotted circle on a path's line in every layer where the architecture has no technology (the line
+// jumps the column); the marker sits on the drawn curve (its y read off the rendered path at the column's x), so it is seen
+// as part of its line and not of a neighbouring station (the editor's question of 27 Sep 2026)
+function yOnPath(el,x){ const len=el.getTotalLength(); if(!(len>0))return null; const p0=el.getPointAtLength(0), p1=el.getPointAtLength(len); if(x<=p0.x)return p0.y; if(x>=p1.x)return p1.y; let lo=0,hi=len; for(let i=0;i<26;i++){ const m=(lo+hi)/2; if(el.getPointAtLength(m).x<x)lo=m; else hi=m; } return el.getPointAtLength((lo+hi)/2).y; }
+const emptyMarks=[]; pathSel.each(function(p){ const pts=pathPoints(p); for(let L=1;L<=10;L++){ const ids=p.slots[L]||[]; if(ids.length)continue; const x=X0+(L-1)*COLW+NW/2; let y=null; try{ y=yOnPath(this,x); }catch(e){} if(y==null){ const prev=[...pts].reverse().find(q=>q.L<L)||pts[0]; y=prev.y; } emptyMarks.push({p,L,x,y}); } });
 gPaths.selectAll('circle.empty').data(emptyMarks).join('circle').attr('class','emptyslot').attr('cx',d=>d.x).attr('cy',d=>d.y).attr('r',5).attr('fill','var(--surface)').attr('stroke',d=>FAMC[d.p.family]).attr('stroke-dasharray','2 2').attr('stroke-width',1.5).attr('data-path',d=>d.p.id).append('title');
 // alternates stubs
 const stubs=[]; G.paths.forEach(p=>{Object.entries(p.slots).forEach(([L,ids])=>{if(ids.length<2)return; const a=NODE[ids[0]]; ids.slice(1).forEach(id=>{const b=NODE[id]; stubs.push({p,a,b});});});});
@@ -194,7 +197,7 @@ const LENSROWS={aff:['aff'],time:['b','c'],det:['b'],mech:['c'],destr:['c'],mid:
 function relabel(){ st.select('text.l1').text(d=>wrapLabel(SHORT[d.id]?SHORT[d.id][lang()==='en'?0:1]:d.id)[0]); st.select('text.l2').text(d=>wrapLabel(SHORT[d.id]?SHORT[d.id][lang()==='en'?0:1]:d.id)[1]||'');
   laneHead.each(function(d){const s=lang()==='en'?d.en:d.ru; let a=s,b=''; if(s.length>16){ const i=s.indexOf(' / ')>0?s.indexOf(' / '):s.lastIndexOf(' '); a=s.slice(0,i); b=s.slice(i).replace(/^ \/ /,'/ ').trim(); } d3.select(this).select('text.t:not(.t2)').text(a); d3.select(this).select('text.t2').text(b);});
   bandLabel.selectAll('*').remove(); BANDS.forEach((b,bi)=>{ if(!maxc[bi])return; const y=bandTop[bi]+(maxc[bi]*ROWH)/2; bandLabel.append('text').attr('x',X0-30).attr('y',y).attr('text-anchor','middle').attr('transform',`rotate(-90 ${X0-30} ${y})`).text(vt('AFF',b).split(' ')[0].toUpperCase()); });
-  gPaths.selectAll('circle.emptyslot').select('title').text(d=>T('empty slot: ','пустой слот: ')+d.p[lang()]+' — '+G.layers[d.L-1][lang()]);
+  gPaths.selectAll('circle.emptyslot').select('title').text(d=>{ const L=lang(), nm=(d.p.short&&d.p.short[L])||d.p[L], ly=G.layers[d.L-1][L]; return L==='en'?`${nm}: no technology in layer ${d.L} (${ly}) — the line skips this layer`:`${nm}: в слое ${d.L} (${ly}) у этой архитектуры нет технологии — линия пропускает слой`; });
   document.querySelectorAll('[data-chip-path]').forEach(b=>{const p=PATH[b.dataset.chipPath]; b.querySelector('span.t').textContent=(p.short&&p.short[lang()])||p[lang()]; b.title=p[lang()];});
   document.querySelectorAll('#lens option').forEach(o=>{o.textContent=LENSES[o.value][lang()];});
   glyphKeys();
@@ -219,7 +222,10 @@ function neighbours(id){ const s=new Set([id]); G.edges.forEach(e=>{ if(!edgeOn(
 //   isolated path      -> its stations and its line
 //   focused station    -> its lines in full (every station on every path through it, primary or alternate) plus its neighbours
 //                         through the toggled relation types
-//   lens value         -> the stations with that value; a family value also keeps that family's lines
+//   lens value         -> the stations with that value; a family value also keeps that family's lines; any other value keeps
+//                         the lines through at least one kept station (the editor, 27 Sep 2026 — until then every line went
+//                         quiet under a non-family value unless a path was isolated or a station focused); a value never
+//                         removes a line that an isolated path, a focused station or a machine keeps
 // the three narrow each other (intersection); the focused station itself is always lit
 function litSets(){ const f=state.focus, iso=state.isolate;
   let keepN=null, keepP=null;
@@ -228,7 +234,8 @@ function litSets(){ const f=state.focus, iso=state.isolate;
     const pm=new Set(); ps.forEach(pid=>pathMembers(pid).forEach(x=>pm.add(x))); neighbours(f).forEach(x=>pm.add(x)); pm.add(f);
     keepN=keepN?new Set([...keepN].filter(n=>pm.has(n))):pm; }
   if(state.lensFilter!=null){ const lf=new Set(G.nodes.filter(nodeMatchesFilter).map(n=>n.id)); keepN=keepN?new Set([...keepN].filter(x=>lf.has(x))):lf;
-    if(state.lens==='family'){ const fp=new Set(G.paths.filter(p=>state.lensFilter.has(p.family)).map(p=>p.id)); keepP=keepP?new Set([...keepP].filter(p=>fp.has(p))):fp; } }
+    if(state.lens==='family'){ const fp=new Set(G.paths.filter(p=>state.lensFilter.has(p.family)).map(p=>p.id)); keepP=keepP?new Set([...keepP].filter(p=>fp.has(p))):fp; }
+    else if(!keepP){ keepP=new Set(G.paths.filter(p=>[...pathMembers(p.id)].some(x=>lf.has(x))).map(p=>p.id)); } }
   // machine (register): one more term of the same intersection — its real stations on every layer (primary and alternate) and its own path line
   const mm=state.machine&&MBY[state.machine]; if(mm){ const ms=machNodes(mm).all; keepN=keepN?new Set([...keepN].filter(x=>ms.has(x))):new Set(ms);
     const mp=new Set([mm.path]); keepP=keepP?new Set([...keepP].filter(p=>mp.has(p))):mp; }
@@ -243,11 +250,10 @@ function dimming(){ const f=state.focus, iso=state.isolate; const L=litSets(), k
   st.classed('dim',d=>keepN?!keepN.has(d.id):false); const mm=state.machine&&MBY[state.machine], ma=mm?machNodes(mm).alt:null;
   st.classed('altuse',d=>!!(ma&&ma.has(d.id)&&(!keepN||keepN.has(d.id))));   // used by the machine only as an alternate — dashed while lit
   st.classed('member',d=>iso?!!(PATH[iso].slots&&Object.values(PATH[iso].slots).flat().includes(d.id)):false);
-  const lf=state.lensFilter!=null;   // a lens filter keeps stations, not lines: every line goes quiet unless a path is isolated or a station focused
-  svg.classed('iso',!!iso);
-  pathSel.classed('dim',d=>keepP?!keepP.has(d.id):lf); pathHit.classed('dim',d=>keepP?!keepP.has(d.id):lf);
-  gAlt.selectAll('path').classed('dim',d=>keepP?!keepP.has(d.p.id):lf);
-  gPaths.selectAll('circle.emptyslot').attr('opacity',d=>keepP?(keepP.has(d.p.id)?1:.08):(lf?.08:1));
+  svg.classed('iso',!!iso); svg.classed('filtered',state.lensFilter!=null);   // the lines follow litSets().keepP (a lens value keeps the lines through its stations — 27 Sep 2026)
+  pathSel.classed('dim',d=>keepP?!keepP.has(d.id):false); pathHit.classed('dim',d=>keepP?!keepP.has(d.id):false);
+  gAlt.selectAll('path').classed('dim',d=>keepP?!keepP.has(d.p.id):false);
+  gPaths.selectAll('circle.emptyslot').attr('opacity',d=>keepP?(keepP.has(d.p.id)?1:.08):1);
   if(window.__barSummary)window.__barSummary();
   if(typeof pcRefresh==='function')pcRefresh();   // the strip mirrors the lit set (adjudication 13)
   sheetRoom();
