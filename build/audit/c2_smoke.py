@@ -856,7 +856,12 @@ def feedback(pw):
     p.evaluate("()=>window.__setLang('ru')"); p.evaluate("()=>location.hash='#brief-transmon'"); p.wait_for_timeout(400)
     p.click('#fbkbtn'); p.wait_for_timeout(200)
     r2 = p.evaluate("()=>({ctx:document.getElementById('fbkctx').textContent, gh:decodeURIComponent(document.getElementById('fbkgh').href), vis:getComputedStyle(document.querySelector('#fbkh .lang-ru')).display!=='none' && getComputedStyle(document.querySelector('#fbkh .lang-en')).display==='none'})")
-    check('in Russian with a brief open: RU labels, the brief in the context, a Russian issue title', r2['vis'] and 'language: ru' in r2['ctx'] and 'location: brief-transmon' in r2['ctx'] and 'title=Отзыв: brief-transmon' in r2['gh'], (r2['ctx'][:120], r2['gh'][:120]))
+    check('in Russian with a brief open: RU labels, the brief in the context, the issue title still English (the channel is English whatever the page language)', r2['vis'] and 'language: ru' in r2['ctx'] and 'location: brief transmon' in r2['ctx'] and 'title=Feedback: brief transmon' in r2['gh'], (r2['ctx'][:120], r2['gh'][:120]))
+    # a section heading in Russian mode is reported by its English title with a § number, never by an element id
+    p.evaluate("()=>{location.hash=''; document.getElementById('ru-s9').scrollIntoView();}"); p.wait_for_timeout(300)
+    p.keyboard.press('Escape'); p.click('#fbkbtn'); p.wait_for_timeout(200)
+    r3 = p.evaluate("()=>({ctx:document.getElementById('fbkctx').textContent, mail:decodeURIComponent(document.getElementById('fbkmail').href)})")
+    check('the location is the English section title (§9 Sources), the mail goes to Raveh Neeman', 'location: §9 Sources' in r3['ctx'] and 'ru-s9' not in r3['ctx'] and r3['mail'].startswith('mailto:raveh.neeman@qodeh.com?subject=[QT Map] Feedback: §9 Sources'), (r3['ctx'][:160], r3['mail'][:120]))
     p.evaluate("()=>window.__setLang('en')")
     ctx.close(); b.close()
     errs = [e for e in errors if not ('fonts.g' in e and ('ERR_TUNNEL' in e or 'net::' in e)) and 'ERR_TUNNEL' not in e]
