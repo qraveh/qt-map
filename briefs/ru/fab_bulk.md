@@ -85,7 +85,6 @@ OPO = оптический параметрический генератор (op
 [633] IonQ, “IonQ Completes Acquisition of ID Quantique, Cementing Leadership in Quantum Networking and Secure Communications,” May 6, 2025. [Online]. Available: https://investors.ionq.com/news/news-details/2025/IonQ-Completes-Acquisition-of-ID-Quantique-Cementing-Leadership-in-Quantum-Networking-and-Secure-Communications/default.aspx [C]
 [816] Corning Incorporated, “Corning® SMF-28® Ultra Optical Fiber — Product Information (PI-1424-AEN),” Jul. 2025. [Online]. Available: https://www.corning.com/media/worldwide/coc/documents/Fiber/product-information-sheets/PI-1424-AEN.pdf [G]
 [817] Tech.eu, “ORCA Computing acquires GXC's integrated photonics division,” Jan. 30, 2024. [Online]. Available: https://tech.eu/2024/01/30/orca-computing-acquires-gxcs-integrated-photonics-division/ [P]
-(generated)
 
 ## Открытые пункты верификации
 - Пропускание отдельных петель Borealis: не указано в тексте Nature, просмотренном 2026-09-26 (только ~33% суммарно, ~20% — набор фильтров, ~15% — демультиплексор, ввод в волокно выше 97%), поэтому цифра в dB на петлю не приводится.

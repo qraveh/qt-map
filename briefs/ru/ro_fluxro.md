@@ -78,7 +78,6 @@ D-Wave публикует ошибку считывания как оценку 
 [614] D-Wave Quantum Inc., “Operation and Timing — D-Wave Quantum Computing Products documentation.” [Online]. Available: https://docs.dwavequantum.com/en/latest/quantum_research/operation_timing.html [C]
 [615] Qilimanjaro Quantum Tech, “Towards a European full-stack coherent quantum annealer platform,” Mar. 2, 2021. [Online]. Available: https://qilimanjaro.tech/towards-a-european-full-stack-coherent-quantum-annealer-platform/ [C]
 [616] D-Wave Quantum Inc., “D‑Wave's Advantage2 Quantum Computer Now Generally Available,” D-Wave Support, May 14, 2025. [Online]. Available: https://support.dwavesys.com/hc/en-us/articles/32105885880087-D-Wave-s-Advantage2-Quantum-Computer-Now-Generally-Available [C]
-(generated)
 
 ## Открытые пункты верификации
 - 2026-09-26: статья в EPJ Quantum Technology об отжигателе Qilimanjaro (doi:10.1140/epjqt/s40507-021-00094-y) была отклонена прокси загрузки (HTTP 429); его цепочка считывания не верифицирована.

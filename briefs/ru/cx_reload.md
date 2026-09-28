@@ -86,7 +86,6 @@ Harvard/MIT сортируют 15,000 кубитов/s партиями по 600
 [507] K.-N. Schymik *et al.*, “Single Atoms with 6000-Second Trapping Lifetimes in Optical-Tweezer Arrays at Cryogenic Temperatures,” *Phys. Rev. Appl.*, vol. 16, no. 3, Art. no. 034013, Jun. 2021, doi: [10.1103/PhysRevApplied.16.034013](https://doi.org/10.1103/PhysRevApplied.16.034013). [arXiv:2106.07414](https://arxiv.org/abs/2106.07414). [D]
 [508] G. Baranes *et al.*, “Leveraging Qubit Loss Detection in Fault-Tolerant Quantum Algorithms,” *Phys. Rev. X*, vol. 16, no. 1, Art. no. 011002, Jan. 2026, doi: [10.1103/ycwc-3myc](https://doi.org/10.1103/ycwc-3myc). [arXiv:2502.20558](https://arxiv.org/abs/2502.20558). [S]
 [509] QuEra Computing, “Our Quantum Roadmap,” Sep. 15, 2026. [Online]. Available: https://www.quera.com/our-quantum-roadmap [R]
-(generated)
 
 ## Открытые пункты верификации
 - 2026-09-26: ритм партий Harvard/MIT выведен из потока и размера партии, а не процитирован; цифры прочитаны из arXiv:2506.20660 (HTML, v2 от 2026-05-21), а не из версии в Nature.

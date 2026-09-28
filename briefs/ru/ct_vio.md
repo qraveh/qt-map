@@ -98,7 +98,6 @@ TSV = сквозное переходное отверстие в кремнии
 [545] QuantWare, “D-line QPUs — Build bigger, scale faster.” [Online]. Available: https://quantware.com/product/processors/d-line [C]
 [546] M. Swayne, “How Fujitsu Is Tackling a 10,000-Qubit Quantum Computer for Practical Applications,” The Quantum Insider, Dec. 8, 2025. [Online]. Available: https://thequantuminsider.com/2025/12/08/how-fujitsu-is-tackling-a-10000-qubit-quantum-computer-for-practical-applications/ [P]
 [547] QuantWare, “QuantWare Raises $178 Million to Build World’s Most Powerful Quantum Processors at an Industrial Scale,” May 5, 2026. [Online]. Available: https://quantware.com/news/quantware-raises-178-million [C]
-(generated)
 
 ## Открытые пункты верификации
 - arXiv:2407.02769, названная в запросе на бриф как Tamate et al. 2024, — посторонняя статья о классификации изображений (проверено 2026-09-26); обзор RIKEN — это Tamate, Tabuchi и Nakamura, IEICE Trans. Electron. E105.C (2022), полный текст которого был заблокирован, поэтому ни одна из его цифр не используется.

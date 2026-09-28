@@ -93,7 +93,6 @@ PEC несмещённа и даёт планки погрешностей, ес
 [707] M. Ivezic, “IBM Launches Heron R3 (ibm_pittsburgh): ~350 uS T2 and a Quality Upgrade for Its 156-Qubit Platform,” PostQuantum.com, Aug. 1, 2025. [Online]. Available: https://postquantum.com/industry-news/ibm-heron-r3-pittsburgh/ [P]
 [708] T. Q. Group, “Tianyan: Cloud services with quantum advantage,” [arXiv:2512.10504](https://arxiv.org/abs/2512.10504), Dec. 2025. [D]
 [709] Algorithmiq, “Algorithmiq Establishes Milan Headquarters and raises €18m to Position Europe as the Future of Quantum Software,” May 11, 2026. [Online]. Available: https://algorithmiq.fi/news/algorithmiq-establishes-milan-headquarters-and-raises-18m-to-position-europe-as-the-future-of-quantum-software/ [C]
-(generated)
 
 ## Открытые пункты верификации
 - Заявленное IBM сокращение накладных расходов PEC в 100× с помощью samplomatic (2025-11-12) — утверждение из блога; статьи с указанием базового уровня или класса схем не найдено (попытка 2026-09-26).

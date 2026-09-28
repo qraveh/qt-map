@@ -93,7 +93,6 @@ updated: 2026-09-26
 [722] N. Sundaresan *et al.*, “Demonstrating multi-round subsystem quantum error correction using matching and maximum likelihood decoders,” *Nat. Commun.*, vol. 14, Art. no. 2852, May 2023, doi: [10.1038/s41467-023-38247-5](https://doi.org/10.1038/s41467-023-38247-5). [D]
 [723] L. Caune *et al.*, “Demonstrating real-time and low-latency quantum error correction with superconducting qubits,” *Nat. Commun.*, vol. 17, Art. no. 7383, Jun. 2026, doi: [10.1038/s41467-026-73331-6](https://doi.org/10.1038/s41467-026-73331-6). [arXiv:2410.05202](https://arxiv.org/abs/2410.05202). [D]
 [724] Z. He, D. Amaro, R. Shaydulin, and M. Pistoia, “Performance of quantum approximate optimization with quantum error detection,” *Commun. Phys.*, vol. 8, Art. no. 217, May 2025, doi: [10.1038/s42005-025-02136-8](https://doi.org/10.1038/s42005-025-02136-8). [arXiv:2409.12104](https://arxiv.org/abs/2409.12104). [D]
-(generated)
 
 ## Открытые пункты верификации
 - Ячейка Heron r3 (70 кубитов данных + 27 синдромных, 2,869 CZ, граница 0.284 при доле принятых прогонов 0.059%): цифры 70 кубитов и 0.284 подтверждены только через статью о классическом моделировании (arXiv:2608.13110); число CZ, долю принятых прогонов 0.059% и название процессора (ibm_pittsburgh в реестре) не удалось прочитать ни в одной версии arXiv:2607.25941 — отобразились только аннотация и оглавление (попытка 2026-09-26).

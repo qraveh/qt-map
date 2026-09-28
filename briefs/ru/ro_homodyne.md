@@ -82,7 +82,6 @@ LO = локальный осциллятор (local oscillator); GKP = решё�
 [640] A. Inoue *et al.*, “Toward a multi-core ultra-fast optical quantum processor: 43-GHz bandwidth real-time amplitude measurement of 5-dB squeezed light using modularized optical parametric amplifier with 5G technology,” *Appl. Phys. Lett.*, vol. 122, Art. no. 104001, 2023, doi: [10.1063/5.0137641](https://doi.org/10.1063/5.0137641). [arXiv:2205.14061](https://arxiv.org/abs/2205.14061). [D]
 [641] H. Chen *et al.*, “Heterogeneously Integrated Squeezed-Light Generation and Detection on a Single Photonic Chip,” [arXiv:2608.13218](https://arxiv.org/abs/2608.13218), Aug. 2026. [D]
 [642] Xanadu, “Xanadu Unveils 1st On-Chip Error-Resistant Photonic Qubit,” HPCwire, Jun. 5, 2025. [Online]. Available: https://www.hpcwire.com/off-the-wire/xanadu-unveils-1st-on-chip-error-resistant-photonic-qubit/ [P]
-(generated)
 
 ## Открытые пункты верификации
 - 2026-09-26: статью об интегрированном источнике GKP (doi:10.1038/s41586-025-09044-5) открыть не удалось — nature.com дважды вернул 502, Europe PMC ограничил частоту запросов (429), PMC выдал капчу; цифра 0.62 dB перенесена из записи Атласа, а не перечитана.

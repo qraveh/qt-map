@@ -91,7 +91,6 @@ In = индий; TSV = сквозное отверстие в кремнии (th
 [758] O. Dial, “Eagle's quantum performance progress,” IBM Quantum Computing Blog, Mar. 23, 2022. [Online]. Available: https://www.ibm.com/quantum/blog/eagle-quantum-processor-performance [C]
 [759] Academia Sinica, “Academia Sinica Unveils 20-Qubit Superconducting Quantum Computer: Manufacturing Capabilities Reach Global Top-Tier,” Jan. 29, 2026. [Online]. Available: https://www.sinica.edu.tw/en/news_content/55/3655 [C]
 [760] N. Pereira, “QpiAI Unveils Kaveri, India's First Aatmanirbhar 64-Qubit Quantum Chip,” Sify, Feb. 26, 2026. [Online]. Available: https://www.sify.com/science-tech/qpiai-unveils-kaveri-indias-first-aatmanirbhar-64-qubit-quantum-chip/ [P]
-(generated)
 
 ## Открытые пункты верификации
 - Tianyan-287: полный текст на arXiv вернул HTTP 429 2026-09-26; в аннотации корпусирование не названо, так что ячейка опирается только на «подобный Zuchongzhi 3.0».

@@ -96,7 +96,6 @@ Pando Tree подаёт «как постоянное напряжение см�
 [769] M. Rutherford, “Silicon Spin Qubits Get Foundry Path: Hitachi Banks on Intel 18A Process,” Tech Times, Jul. 28, 2026. [Online]. Available: https://www.techtimes.com/articles/321867/20260728/hitachi-intel-18a-spin-qubit.htm [P]
 [770] imec, “Quantum pilot line 'SPINS' launched with EU support,” Apr. 3, 2026. [Online]. Available: https://www.imec-int.com/en/press/semiconductor-based-quantum-pilot-line-spins-launched-eu-support [C]
 [771] University College Dublin, “Equal1 Announces $60 million in Funding to Accelerate Quantum Computing using Existing Semiconductor Manufacturing,” UCD Innovation, Jan. 15, 2026. [Online]. Available: https://www.ucd.ie/innovation/news-and-events/2026/equal1-announces-funding-round/ [C]
-(generated)
 
 ## Открытые пункты верификации
 - «3–5 линий затворов на кубит» и разводка imec/Diraq в слоях металлизации (back-end-of-line), обе названные в запросе на справку, ни в одном открытом источнике не найдены; вместо них использованы t = 2 из Franke et al. и шаг затворов Diraq 90 nm (2026-09-26).

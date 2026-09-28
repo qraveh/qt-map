@@ -82,7 +82,6 @@ Aquila подаёт один глобальный набор Ω(t), Δ(t), φ(t)
 [389] S. de Léséleuc, D. Barredo, V. Lienhard, A. Browaeys, and T. Lahaye, “Analysis of imperfections in the coherent optical excitation of single atoms to Rydberg states,” *Phys. Rev. A*, vol. 97, no. 5, Art. no. 053803, May 2018, doi: [10.1103/PhysRevA.97.053803](https://doi.org/10.1103/PhysRevA.97.053803). [arXiv:1802.10424](https://arxiv.org/abs/1802.10424). [D]
 [390] L. Garbini, “Inside Pasqal's 2026 Vision on Quantum for Industry and Research,” Pasqal, Jan. 29, 2026. [Online]. Available: https://www.pasqal.com/blog/inside-pasqals-2026-vision-on-quantum-for-industry-and-research/ [R]
 [391] S. J. Evered *et al.*, “High-fidelity parallel entangling gates on a neutral-atom quantum computer,” *Nature*, vol. 622, no. 7982, pp. 268–272, Oct. 2023, doi: [10.1038/s41586-023-06481-y](https://doi.org/10.1038/s41586-023-06481-y). [arXiv:2304.05420](https://arxiv.org/abs/2304.05420). [D]
-(generated)
 
 ## Открытые пункты верификации
 - 2026-09-26: страница arXiv для 1802.10424 (v2) была отклонена прокси загрузки (HTTP 429); запись о ней опирается на аннотацию v1 и результаты поиска APS/ADS, авторы после первых двух не подтверждены.

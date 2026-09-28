@@ -93,7 +93,6 @@ Aquila: Ω ≤ 15.8 rad/µs, |Δ| ≤ 125 rad/µs, $C_6$ = 5,420,503 µm⁶ rad/
 [438] Pasqal and O. Q.-C. P. brochure, “The Power of Neutral Atom Quantum Processors by Pasqal — Unlock Quantum Computing for Real-World Solutions,” Pasqal, product brochure (PDF). [Online]. Available: https://www.pasqal.com/wp-content/uploads/2025/11/2509_Pasqal_Quantum-Computing-Processor_Brochure-RVB-V8.pdf [C]
 [439] QuEra Computing, “Local Qubit Control Brings New Capabilities to QuEra's Quantum Computer,” Apr. 17, 2024. [Online]. Available: https://www.quera.com/press-releases/local-qubit-control-brings-new-capabilities-to-queras-quantum-computer [C]
 [440] Amazon Web Services, “Local detuning now available on QuEra's Aquila device with Braket Direct,” AWS What's New, Apr. 11, 2024. [Online]. Available: https://aws.amazon.com/about-aws/whats-new/2024/04/amazon-braket-experimental-capabilities-quera-device-braket-direct/ [C]
-(generated)
 
 ## Открытые пункты верификации
 - Пределы локальной отстройки у Aquila (величина, разрешение, ошибка калибровки по позициям) доступны только через свойства устройства в Braket SDK и здесь не прочитаны; аппаратный механизм (пучок светового сдвига или иной) в релизе QuEra не описан (попытка 2026-09-26).

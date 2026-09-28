@@ -83,7 +83,6 @@ T₂ = время фазовой когерентности по Рамзи; MS 
 [381] R. Finkelstein *et al.*, “Universal quantum operations and ancilla-based read-out for tweezer clocks,” *Nature*, vol. 634, pp. 321–327, Oct. 2024, doi: [10.1038/s41586-024-08005-8](https://doi.org/10.1038/s41586-024-08005-8). [D]
 [382] Alpine Quantum Technologies, “19-inch rack-mounted quantum computer,” AQT. [Online]. Available: https://www.aqt.eu/products/ibex-q1/ [C]
 [383] Alpine Quantum Technologies (AQT), “Quantum computer products built for performance,” AQT. [Online]. Available: https://www.aqt.eu/products/ [C]
-(generated)
 
 ## Открытые пункты верификации
 - 2026-09-26: arxiv.org (аннотация 2111.14653v2) и api.semanticscholar.org вернули HTTP 429; статья Schine et al. прочитана вместо этого на nature.com.

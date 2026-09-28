@@ -97,7 +97,6 @@ Borealis настраивает каждый петлевой светодели
 [468] ORCA Computing, “Montana State University Selects ORCA Computing to Advance Distributed Quantum Computing and Communications,” Jun. 5, 2024. [Online]. Available: https://orcacomputing.com/montana-state-university-selects-orca-computing/ [C]
 [469] ORCA Computing, “ORCA Computing Delivers First Photonic Quantum Computing System to UK's National Quantum Computing Centre,” Jun. 11, 2025. [Online]. Available: https://orcacomputing.com/installation-marks-key-milestone-in-the-uks-121m-quantum-initiative-advancing-practical-quantum-research/ [C]
 [470] Tech Journal UK, “ORCA aims to beat classical computers with PT-3 quantum system,” Jul. 1, 2026. [Online]. Available: https://www.techjournal.uk/p/orca-aims-to-beat-classical-computers [R]
-(generated)
 
 ## Открытые пункты верификации
 - Страницы аннотаций arXiv для 2605.30935 и 2109.11525 не отобразились 2026-09-26; месяцы взяты из идентификаторов, названия и авторы — из полнотекстового HTML.

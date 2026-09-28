@@ -80,7 +80,6 @@ Sycamore тратил 660 из 921 ns (72%) на измерение и сбро�
 [604] K. C. Miao *et al.*, “Overcoming leakage in quantum error correction,” *Nat. Phys.*, vol. 19, pp. 1780–1786, Oct. 2023, doi: [10.1038/s41567-023-02226-w](https://doi.org/10.1038/s41567-023-02226-w). [D]
 [605] M. Swayne, “China Demonstrates Quantum Error Correction Using Microwaves, Narrowing Gap With Google,” The Quantum Insider, Dec. 26, 2025. [Online]. Available: https://thequantuminsider.com/2025/12/26/china-demonstrates-quantum-error-correction-using-microwaves-narrowing-gap-with-google/ [P]
 [606] IBM, “Qubit initialization.” [Online]. Available: https://quantum.cloud.ibm.com/docs/en/guides/repetition-rate-execution [C]
-(generated)
 
 ## Открытые пункты верификации
 - Статья PRL о Zuchongzhi 3.2 (journals.aps.org) вернула 403 на 2026-09-26; Europe PMC и phys.org ограничили частоту запросов (429). Цифры 72×, 6.4×10⁻⁴, d = 7 и Λ взяты из анализа в прессе; длительность сброса и остаток у USTC не найдены.

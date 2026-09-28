@@ -97,7 +97,6 @@ AOD. θ = λf/v; разрешение равно произведению апе
 [587] J. Yu *et al.*, “Design and Characterization of Compact Acousto-Optic-Deflector Individual Addressing System for Trapped-Ion Quantum Computing,” [arXiv:2601.01647](https://arxiv.org/abs/2601.01647), Jan. 2026. [D]
 [588] R. Paschotta, “Acousto-optic Deflectors,” RP Photonics Encyclopedia. [Online]. Available: https://www.rp-photonics.com/acousto_optic_deflectors.html [G]
 [589] IonQ, “IonQ Achieves Key Photonic Interconnect Milestone, Demonstrating Networked Quantum Systems Using Entanglement,” Apr. 14, 2026. [Online]. Available: https://www.ionq.com/news/ionq-achieves-key-photonic-interconnect-milestone-demonstrating-networked-quantum-systems-using-entanglement [C]
-(generated)
 
 ## Открытые пункты верификации
 - Fang et al., PRL 129, 240504 (2022), arXiv:2206.02703, о подавлении перекрёстных помех в индивидуально адресуемых гейтах: не прочитана, Crossref и PubMed ограничили частоту запросов (2026-09-26); не цитируется.
