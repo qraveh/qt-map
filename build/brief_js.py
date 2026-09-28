@@ -41,6 +41,7 @@ function openBrief(id,noscroll){
   if(!noscroll) s.scrollIntoView({block:'start',behavior:'smooth'});
   return true;
 }
+window.__openBrief=openBrief; window.__closeBrief=closeBrief;
 function gotoMap(id){
   closeBrief(false);
   if(window.__expandMap) window.__expandMap();

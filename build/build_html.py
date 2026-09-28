@@ -9,6 +9,7 @@ import json, os
 from page_css import CSS
 from map_js import JS
 from brief_js import BRIEF_JS
+from find_js import FIND_JS, FIND_HTML
 from labels import SHORT
 # shared tooltip for .tt terms: hover, keyboard focus or a tap shows the explanation below the term, kept inside the viewport
 GTIP_JS=r"""(function(){var tip=document.createElement('div');tip.id='gtip';tip.hidden=true;tip.setAttribute('role','tooltip');document.body.appendChild(tip);var cur=null,pinned=false,timer=null;
@@ -31,6 +32,23 @@ if _nolabel: raise SystemExit('build/labels.py: every technology needs a short m
 MACH_PATH=os.path.join(ROOT,'data','machines.json')
 MACH_URLS={'register':'machine/','tech':'technology/'}   # the machine's and the technology's own pages (relative to the page's language root); the register's private working pages are no longer linked (27 Sep 2026)
 MACH_FAMILIES=['SC','ION','ATOM','PHOTON','SPIN','DEFECT','TOPO','ANNEAL']
+def pics_slim():
+    """One hosted picture per technology and per machine for the map's in-page cards (the editor, 28 Sep 2026): the same
+    first pick the record pages show (build/media.py, so the deploy already hosts it under media/). {'node':{id:{t,s,c,u,w,h}},
+    'machine':{...}} — t thumbnail file, s story, c credit (HTML), u source page, w/h pixel size when known."""
+    import media; media.load()
+    M=json.load(open(MACH_PATH,encoding='utf-8'))
+    out={'node':{},'machine':{}}
+    for kind,ids in (('node',[n['id'] for n in G['nodes']]),('machine',[m['id'] for m in M['machines']])):
+        for i in ids:
+            ps=media.pick('%s:%s'%(kind,i),n=1)
+            if not ps or not ps[0].get('thumb'): continue
+            a=ps[0]; d={'t':a['thumb'],'s':media.clean_text(a.get('story') or a.get('title') or ''),'c':media.credit_html(a),'u':a.get('source_page_url') or ''}
+            try:
+                if int(a.get('width') or 0) and int(a.get('height') or 0): d['w']=int(a['width']); d['h']=int(a['height'])
+            except (TypeError,ValueError): pass
+            out[kind][i]=d
+    return out
 def mach_slim():
     """Per machine: id, name, org, family, path, status, status_date, q, layers {L:[[node,role,summary,ev_type,ev_url,ev_locator,verified],…]}
     (gap cells — node ids starting with ∅, not graph nodes — are left out of `layers`, listed by id in `gaps` {L:[id,…]}; the register's
@@ -634,6 +652,7 @@ def navchrome(cfg):
     return f'''<div class="mobilebar" id="mobilebar">
  <button type="button" class="mb-btn" id="tocopen" aria-expanded="false" aria-controls="tocdrawer"><span class="lang-en">Contents ☰</span><span class="lang-ru">Содержание ☰</span></button>
  <a class="mb-btn" href="#map"><span class="lang-en">Map</span><span class="lang-ru">Карта</span></a>
+ <button type="button" class="mb-btn findopen" data-findopen="1" aria-label="find in the Atlas" title="find in the Atlas (/)"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 10l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="lang-en">Find</span><span class="lang-ru">Поиск</span></button>
  <span class="mb-sp"></span>
  <div class="seg mb-seg" role="group" aria-label="language"><button type="button" data-setlang="en" aria-pressed="{en}">EN</button><button type="button" data-setlang="ru" aria-pressed="{ru}">RU</button></div>
 </div>
@@ -641,7 +660,8 @@ def navchrome(cfg):
 <aside class="tocdrawer" id="tocdrawer" hidden role="dialog" aria-modal="true" aria-label="contents">
  <div class="td-head"><span><span class="lang-en">Contents</span><span class="lang-ru">Содержание</span></span><button type="button" class="td-close" id="tocclose" aria-label="close">✕</button></div>
  <div class="td-body" id="tocdrawerbody"></div>
-</aside>'''
+</aside>
+{FIND_HTML}'''
 
 NAVJS = r"""
 /* ≤1024: the sidebar TOC is hidden, so the same markup is cloned into a drawer opened from the
@@ -904,7 +924,7 @@ def compose(cfg,page_lang,prose,briefs_page,tocs,mapsecs,B,others,lang_base):
 {navchrome(dict(cfg,default_lang=dl))}
 {masthead(cfg)}
 <div class="page">
- <nav class="toc" aria-label="contents"><div class="lang-en">{toc_html(tocs['en'],'en',cfg['graph_sec'])}</div><div class="lang-ru">{toc_html(tocs['ru'],'ru',cfg['graph_sec'])}</div></nav>
+ <nav class="toc" aria-label="contents"><button type="button" class="findopen tocfind" data-findopen="1" title="find in the Atlas (/)"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 10l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> <span class="lang-en">Find in the Atlas</span><span class="lang-ru">Поиск по Атласу</span> <kbd>/</kbd></button><div class="lang-en">{toc_html(tocs['en'],'en',cfg['graph_sec'])}</div><div class="lang-ru">{toc_html(tocs['ru'],'ru',cfg['graph_sec'])}</div></nav>
  <main>
   <div id="map"><div class="lang-en">{mapsecs['en']}</div><div class="lang-ru">{mapsecs['ru']}</div></div>
   <div id="mapbody"><div class="mapfull">{MAPUI.replace("{MAPLEAD}",map_lead(cfg["graph_sec"]))}</div></div>
@@ -918,6 +938,7 @@ def compose(cfg,page_lang,prose,briefs_page,tocs,mapsecs,B,others,lang_base):
 {feedback_html(cfg)}
 </div>
 <script>window.__GRAPH={json.dumps(G,ensure_ascii=False,separators=(',',':'))};window.__MACH={json.dumps(mach_slim(),ensure_ascii=False,separators=(',',':'))};window.__SHORT={json.dumps(SHORT,ensure_ascii=False,separators=(',',':'))};window.__KEYREFS={json.dumps(BR.key_refs_slim(BR.key_refs_all(B)),ensure_ascii=False,separators=(',',':'))}</script>
+<script>window.__PICS={json.dumps(pics_slim(),ensure_ascii=False,separators=(',',':'))}</script>
 <script>window.__SECTITLES={json.dumps(sectitles,ensure_ascii=False,separators=(',',':'))};</script>
 <script>{D3}</script>
 <script>{LANG_JS}</script>
@@ -932,6 +953,7 @@ def compose(cfg,page_lang,prose,briefs_page,tocs,mapsecs,B,others,lang_base):
 <script>{NAVJS}</script>
 <script>{JS}</script>
 <script>{BRIEF_JS}</script>
+<script>{FIND_JS}</script>
 <script>window.__TIPS={json.dumps(tips_dict(),ensure_ascii=False,separators=(',',':'))};</script>
 <script>window.__GTIPS={json.dumps(BR.GTIPS,ensure_ascii=False,separators=(',',':'),sort_keys=True)};</script>
 <script>(function(){{var T=window.__GTIPS||{{}};function run(root){{var as=(root||document).querySelectorAll('a.tag-link[data-g]');for(var i=0;i<as.length;i++){{var c=as[i].getAttribute('data-g');if(T[c])as[i].setAttribute('title',T[c]);as[i].removeAttribute('data-g');}}}}run(document);(window.__hydrators=window.__hydrators||[]).push(run);}})();{GTIP_JS}</script><script>{FOLD_JS}</script><script>{TAG_JS}</script>

@@ -277,6 +277,9 @@ class Site:
             self.technology(lang); self.machine(lang); self.architecture(lang); self.organisation(lang); self.indexes(lang)
         self.sitemap()
         # the pictures the deploy must copy from the media register's thumbs: only those a page shows (289 of 706 hosted on 27 Sep 2026)
+        for key in ['node:' + n['id'] for n in self.G['nodes']] + ['machine:' + mid for mid in self.mach]:   # the map's cards show each target's first picture (build_html.pics_slim, 28 Sep 2026)
+            for a in media.pick(key, n=1):
+                if a.get('thumb'): self.media_used.add(a['thumb'])
         hosted = set(media.hosted_files()); used = sorted(self.media_used & hosted)
         unknown = sorted(self.media_used - hosted)
         if unknown: raise SystemExit('pages: pictures referenced but not hosted by the media register: %s' % ', '.join(unknown[:10]))

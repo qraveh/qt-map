@@ -134,6 +134,8 @@ def main():
     if '--smoke' in sys.argv:
         sm = run([sys.executable, 'build/audit/c2_smoke.py'], timeout=1200)
         item('smoke suite (Playwright)', 'RESULT: PASS' in sm.stdout, (sm.stdout + sm.stderr)[-400:])
+        mc = run([sys.executable, 'build/audit/mobile_check.py'], timeout=600)   # phone and desktop: zoom control on top, sheet, picture, pinch, hand-over, find (28 Sep 2026)
+        item('small-screen, touch and find checks (Playwright)', 'RESULT: PASS' in mc.stdout, (mc.stdout + mc.stderr)[-400:])
     if '--vv' in sys.argv:
         env = dict(os.environ, VV_PAGE=DIST)
         vv = subprocess.run([sys.executable, 'runner.py', 'single', '--out', 'results_release/'], cwd=os.path.join(ROOT, 'build', 'audit', 'vv'), capture_output=True, text=True, timeout=1800, env=env)

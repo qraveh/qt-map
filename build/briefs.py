@@ -162,6 +162,13 @@ def _ru_from_en(en_meta):
 
 
 _NODES = None
+_LAYER_NAME = {'en': {}, 'ru': {}}
+def _load_layers():
+    try:
+        for l in json.load(open(os.path.join(ROOT, 'data', 'graph.json'), encoding='utf-8'))['layers']:
+            _LAYER_NAME['en'][l['n']] = l['en']; _LAYER_NAME['ru'][l['n']] = l['ru']
+    except (OSError, ValueError, KeyError): pass
+_load_layers()
 def _node(bid):
     """the graph's record of a technology (data/graph.json, written by make_sections before the briefs are rendered)"""
     global _NODES
@@ -192,6 +199,7 @@ def load_briefs():
             for lang, meta in (('en', en_meta), ('ru', ru_meta)):
                 meta['brief_name'] = meta.get('name', ''); meta['name'] = node[lang]
                 meta['since'] = str(node['since']) if node.get('since') is not None and node['since'] < 2030 else ''
+                meta['layer'] = '%d %s' % (node['layer'], _LAYER_NAME[lang].get(node['layer'], ''))   # the layer's name is the graph's too (layer 1 "Qubit carrier", 28 Sep 2026)
         out.append({
             'id': bid, 'rank': r['rank'], 'tier': r['tier'], 'score': r['score'],
             'layer': layer_num(en_meta), 'ru_fallback': fallback,

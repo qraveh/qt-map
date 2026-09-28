@@ -9,6 +9,13 @@ const MACH=window.__MACH||{machines:[],by_node:{},families:['SC','ION','ATOM','P
 const MBY=Object.fromEntries(MACH.machines.map(m=>[m.id,m]));
 const REG_URL=id=>`machine/${id}.html`, TECH_URL=id=>`technology/${id}.html`;
 const RT=MACH.t||{};   // the register's enumerations in Russian (build/regvocab.py, embedded with the machines)
+const PICS=window.__PICS||{node:{},machine:{}};   // one hosted picture per technology and per machine for the cards (build_html.pics_slim, 28 Sep 2026)
+const MEDIA_BASE=(function(){ const app=document.getElementById('app'); const lb=(app&&app.dataset.langBase)||'lang/'; return lb.replace(/lang\/?$/,'')+'media/'; })();   // 'media/' at the root, '../media/' one level down
+function picHTML(kind,id){ const p=(PICS[kind]||{})[id]; if(!p)return '';
+  const img=`<img src="${MEDIA_BASE}${p.t}" alt="${esc(p.s.slice(0,140))}" loading="lazy" decoding="async"${p.w&&p.h?` width="${p.w}" height="${p.h}"`:''}>`;
+  return `<figure class="cardpic">${p.u?`<a href="${esc(p.u)}" target="_blank" rel="noopener" title="${T('the source of the picture','источник картинки')}">${img}</a>`:img}<figcaption title="${T('click to read the whole caption','нажмите, чтобы прочитать подпись целиком')}"><span class="story">${esc(p.s)}</span> <span class="credit">${p.c}</span></figcaption></figure>`; }
+function wirePic(){ insp.querySelectorAll('figure.cardpic').forEach(f=>{ const img=f.querySelector('img'); if(img)img.addEventListener('error',()=>f.remove());   // a picture the host does not serve: the card simply has none
+  const c=f.querySelector('figcaption'); if(c)c.addEventListener('click',ev=>{ if(ev.target.closest('a'))return; c.classList.toggle('open'); }); }); }
 function ruPlural(n,f){n=Math.abs(parseInt(n,10)||0); if(n%10===1&&n%100!==11)return f[0]; if(n%10>=2&&n%10<=4&&!(n%100>=12&&n%100<=14))return f[1]; return f[2];}
 function statusT(s){ s=s||''; if(lang()==='en')return s; const i=s.indexOf('('); const head=i<0?s:s.slice(0,i), tail=i<0?'':' '+s.slice(i); return head.split('/').map(w=>(RT.status||{})[w.trim()]||w.trim()).filter(Boolean).join(' / ')+tail; }
 function scopeT(x){ return lang()==='en'?x:((RT.scope||{})[x]||x); }
@@ -46,11 +53,14 @@ Object.values(byLayer).forEach(ns=>{
 // ---------- svg
 const wrap=document.getElementById('mapwrap');
 const svg=d3.select(wrap).append('svg').attr('viewBox',`0 0 ${W} ${H}`).attr('width',W).attr('height',H).attr('role','img').attr('aria-label','Technology map: ten stack layers as columns, carrier-nature affinity as rows, architectures as coloured lines');
-// zoom control: pinned top-right on desktop; on ≤1024 px it moves to the end of the scroller and pins bottom-right
-// (the sticky page bar would otherwise cover it whenever the map's top edge scrolls under the bar)
+// zoom control: pinned top-right on desktop; on ≤1024 px it moves into the scroller and sticks to its top-right corner
+// (the editor, 28 Sep 2026: on top, not at the bottom); when the map's top edge scrolls under the sticky page bar the
+// control is pushed down by the bar's height, so it never hides under it
 (function(){ const zb=wrap.querySelector('.zoombar'), win=document.querySelector('#mapbar .zoomwin'), ctl=document.querySelector('.zoomctl'); if(!zb||!win||!ctl)return; let mq=null; try{ mq=window.matchMedia('(max-width:1024px)'); }catch(e){}
-  const place=()=>{ if(mq&&mq.matches){ zb.appendChild(ctl); wrap.appendChild(zb); } else { win.appendChild(ctl); const row=document.querySelector('#mapbar .chipsrow'); if(row)row.insertBefore(win,row.firstChild); } };   // first in the row: a float rises to the line it starts on   // desktop: the window floats at the top right of the controls row (23 Sep 2026)
-  window.__placeZoom=place; place(); if(mq){ if(mq.addEventListener)mq.addEventListener('change',place); else if(mq.addListener)mq.addListener(place); } })();
+  const place=()=>{ if(mq&&mq.matches){ zb.appendChild(ctl); wrap.insertBefore(zb,wrap.firstChild); offset(); } else { zb.style.top=''; win.appendChild(ctl); const row=document.querySelector('#mapbar .chipsrow'); if(row)row.insertBefore(win,row.firstChild); } };   // first in the row: a float rises to the line it starts on   // desktop: the window floats at the top right of the controls row (23 Sep 2026)
+  function offset(){ if(!(mq&&mq.matches))return; const bar=document.querySelector('.mobilebar'); const bh=(bar&&getComputedStyle(bar).position==='sticky'&&bar.offsetParent)?bar.getBoundingClientRect().bottom:0; const top=wrap.getBoundingClientRect().top; zb.style.top=Math.max(0,bh-top)+'px'; }
+  window.__placeZoom=place; place(); if(mq){ if(mq.addEventListener)mq.addEventListener('change',place); else if(mq.addListener)mq.addListener(place); }
+  window.addEventListener('scroll',offset,{passive:true}); window.addEventListener('resize',offset); const mb=document.getElementById('mapbody'); if(mb)mb.addEventListener('scroll',offset,{passive:true}); })();
 const defs=svg.append('defs');
 defs.append('pattern').attr('id','hatch').attr('patternUnits','userSpaceOnUse').attr('width',6).attr('height',6).attr('patternTransform','rotate(45)').append('line').attr('x1',0).attr('y1',0).attr('x2',0).attr('y2',6).attr('stroke','var(--nat)').attr('stroke-width',1.2).attr('opacity',.55);
 defs.append('marker').attr('id','arr').attr('viewBox','0 0 10 10').attr('refX',9).attr('refY',5).attr('markerWidth',7).attr('markerHeight',7).attr('orient','auto-start-reverse').append('path').attr('d','M0,0 L10,5 L0,10 z').attr('fill','var(--ink)');
@@ -374,14 +384,14 @@ function inspectMachine(m){ const L=lang(); insp.hidden=false; const gaps=m.gaps
   const ev=m.ev||[0,0]; const q=(m.q!=null&&m.q!=='')?qubitsT(m.q):T('qubits not published','число кубитов не опубликовано');
   insp.innerHTML=`${gripHTML()}<h3><i class="sw" style="--c:${FAMC[m.family]||'var(--mid)'}"></i> ${esc(m.name)}</h3><div class="meta">${esc(m.org)} · ${T(...(FAMN[m.family]||[m.family,m.family]))} · ${esc(statusT(m.status))}${m.status_date?' ('+esc(m.status_date)+')':''} · ${q}</div>
   <div class="mlinks">${pageLink('machine',m.id)} <span class="empty">${T('architecture','архитектура')}:</span> <a href="#" class="archlink" data-arch="${esc(m.path)}" title="${T('isolate this architecture on the map','выделить эту архитектуру на карте')}">${PATH[m.path]?esc(PATH[m.path][L]):esc(m.path)}</a></div>
-  ${prof?`<div class="space"><h4>${T('Register profile — the machine\'s variant of its architecture','Профиль реестра — вариант архитектуры у этой машины (поля реестра — на английском)')}</h4>${prof}</div>`:''}
+  ${picHTML('machine',m.id)}${prof?`<div class="space"><h4>${T('Register profile — the machine\'s variant of its architecture','Профиль реестра — вариант архитектуры у этой машины (поля реестра — на английском)')}</h4>${prof}</div>`:''}
   <div class="space"><h4>${T('Technologies by layer — the machine\'s cell per layer','Технологии по слоям — ячейка машины на каждом слое')}</h4><table class="ptab mtab">${rows}</table>
    <div class="empty" style="margin-top:4px">${T('lit on the map: these technologies and the machine\'s architecture line; dashed outline = used only as an alternate','подсвечено на карте: эти технологии и линия архитектуры машины; пунктирная рамка = только как альтернатива')}</div></div>
   <div class="mfoot"><span>${T('evidence','источники')}: ✅ ${ev[0]} / ${ev[1]}</span> <button type="button" class="chip" data-mclose="1">${T('clear machine','снять машину')} ✕</button></div>`;
   insp.querySelectorAll('[data-goto]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); select(a.dataset.goto); const n=NODE[a.dataset.goto]; if(n)scrollToNode(n);}));
   insp.querySelectorAll('[data-close],[data-mclose]').forEach(b=>b.addEventListener('click',ev=>{ev.stopPropagation(); setMachine(null);}));
   insp.querySelectorAll('a.archlink[data-arch]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); const pid=a.dataset.arch; if(!PATH[pid])return; if(state.isolate!==pid)isolatePath(pid); else {pushHist(); inspectPath(PATH[pid]);} }));   // the machine's architecture, isolated and shown; ← returns to the machine
-  wireCard(); sheetRoom();
+  wireCard(); wirePic(); sheetRoom();
 }
 // "Used by" — the machines whose register cell on this technology's layer is this technology (primary first, then alternate, grouped by family)
 function usedByHTML(n){ const L=lang(); const ub=MACH.by_node[n.id]||{primary:[],alternate:[]}; const P=(ub.primary||[]).filter(id=>MBY[id]), A=(ub.alternate||[]).filter(id=>MBY[id]&&!P.includes(id));
@@ -409,7 +419,7 @@ function inspect(n){ const L=lang(); const c=n.c; const rows=[[T('(a) carrier af
   const other=(e)=>e.src===n.id?e.dst:e.src;
   const link=id=>`<a href="#" data-goto="${id}">${esc(NODE[id][L])}</a>`;
   insp.innerHTML=`${gripHTML()}<h3>${esc(n[L])}</h3><div class="meta">${n.id} · ${T('layer','слой')} ${n.layer} ${esc(G.layers[n.layer-1][L])} · ${vt('STATUS',n.status)}${n.since<2030?' · '+T('since','с')+' '+n.since:''}</div>
-  <p>${lk(n.desc[L])}</p><div>${flags.join(' ')}</div>
+  <p>${lk(n.desc[L])}</p>${picHTML('node',n.id)}<div>${flags.join(' ')}</div>
   <button type="button" class="briefbtn" data-brief="${n.id}">${T('Brief →','Бриф →')}</button> ${pageLink('technology',n.id)}
   ${(KEYREFS[n.id]||[]).length?`<div class="space keys"><h4>${T('Key references','Ключевые источники')}</h4>${KEYREFS[n.id].map(r=>{const lab=krLabel(n.id,r.n)||r.label||''; return `<div class="kr"><a href="${r.url}" target="_blank" rel="noopener">[${r.n}]</a> ${esc(lab.length>92?lab.slice(0,90)+'…':lab)}${r.year?' <span class="empty">· '+r.year+'</span>':''}</div>`;}).join('')}</div>`:''}
   <div class="space"><h4>${T('Design space — attributes','Пространство проектирования — атрибуты')}</h4><dl>${rows.map(([k,v,key])=>`<dt class="${lr.includes(key)?'lensrow':''}">${k}</dt><dd class="${lr.includes(key)?'lensrow':''}">${esc(v)}</dd>`).join('')}</dl></div>
@@ -425,7 +435,7 @@ function inspect(n){ const L=lang(); const c=n.c; const rows=[[T('(a) carrier af
   ${usedByHTML(n)}`;
   insp.querySelectorAll('[data-goto]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); select(a.dataset.goto); const m=NODE[a.dataset.goto]; scrollToNode(m);}));
   insp.querySelectorAll('[data-mach]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); showMachine(a.dataset.mach);}));
-  insp.querySelector('[data-close]').addEventListener('click',()=>select(null)); wireCard();
+  insp.querySelector('[data-close]').addEventListener('click',()=>select(null)); wireCard(); wirePic();
 }
 pathHit.on('mousemove',(ev,p)=>{ if(tipPinned)return; pathSel.classed('hov',d=>d.id===p.id); tip.style.display='block'; tip.classList.remove('wide'); tip.innerHTML=`<i class="sw" style="background:${FAMC[p.family]}"></i><b>${esc(p[lang()])}</b> · ${T('click to isolate this architecture','клик — изолировать эту архитектуру')}`; placeTip(ev); })
   .on('mouseleave',()=>{ pathSel.classed('hov',false); if(!tipPinned)hideTip(); })
@@ -535,6 +545,7 @@ function zoomStep(d){ const cur=zoomPct(state.zoom); let i=0; for(let k=1;k<ZSTE
   let phone=false; try{ phone=window.matchMedia('(max-width:600px)').matches; }catch(e){}
   if(phone){ let z=1; try{ const t=wrap.querySelector('g.station text'); const fs=t?(parseFloat(getComputedStyle(t).fontSize)||11):11; z=(fs*0.85>=10)?0.85:1; }catch(e){} applyZoom(z,false); }
   else fitWidth(); })();
+window.__mapZoom={get:()=>state.zoom||1, set:(z)=>{ applyZoom(z,false); state.fitMode=null; }, min:ZMIN, max:ZMAX};   // for the pinch handler outside this scope (28 Sep 2026)
 // collapsible map bar: one line with a summary of the current selection and the zoom window
 (function(){ const bar=document.getElementById('mapbar'), tog=document.getElementById('bartog'), sum=document.getElementById('barsum'); if(!bar||!tog||!sum)return; const KEY='qmap.barcollapsed';
   function summary(){ const L=lang(); const parts=[];
@@ -607,6 +618,8 @@ window.__mapTheme=function(){ buildScales(); applyLens(); pcRefresh(); };
 // select a technology from outside the map (used by the technology briefs)
 window.__mapContext=function(){ return {focus:state.focus,isolate:state.isolate,machine:state.machine,lens:state.lens}; };
 window.__selectNode=function(id){ if(!NODE[id])return false; select(id); const m=NODE[id]; scrollToNode(m); return true; };
+window.__showMachine=function(id){ if(!MBY[id])return false; showMachine(id); return true; };
+window.__isolatePath=function(pid){ if(!PATH[pid])return false; if(state.isolate!==pid)isolatePath(pid); else { pushHist(); inspectPath(PATH[pid]); } revealMap(); return true; };
 // deep links from the record pages and elsewhere (27 Sep 2026): #station-<id> focuses a technology, #machine-<id> chooses a
 // machine, #architecture-<pid> isolates an architecture — at load and on every hash change; the map is brought into view
 window.__deepLink=function(h){ let m; h=h||location.hash||'';
@@ -701,7 +714,28 @@ relabel(); inspectEmpty(); applyLens(); renderPC(); window.__deepLink();
   wrap.addEventListener('mousedown',ev=>{ const r=wrap.getBoundingClientRect(); const x=ev.clientX-r.left, y=ev.clientY-r.top; const sbw=wrap.offsetWidth-wrap.clientWidth; if(!(sbw>0&&x>=wrap.clientWidth))return;
     if(y>=wrap.clientHeight-20&&atBottom())bump(1,null); else if(y<=20&&atTop())bump(-1,null); });
   wrap.addEventListener('scroll',()=>{ if(!atBottom()&&!atTop())n=0; },{passive:true});
+  // touch (28 Sep 2026): a swipe that finds the map already at its bottom (or top) counts as one notch; the second such
+  // swipe hands over to the page, exactly as two wheel notches do — the map never traps a finger
+  let ty=null, tEdge=0;
+  wrap.addEventListener('touchstart',ev=>{ if(ev.touches.length!==1){ ty=null; return; } ty=ev.touches[0].clientY; tEdge=atBottom()?1:(atTop()?-1:0); },{passive:true});
+  wrap.addEventListener('touchmove',ev=>{ if(ty===null||ev.touches.length!==1)return; const dy=ty-ev.touches[0].clientY; if(tEdge===1&&dy>28&&atBottom()){ ty=null; bump(1,null); } else if(tEdge===-1&&dy<-28&&atTop()){ ty=null; bump(-1,null); } },{passive:true});
+  wrap.addEventListener('touchend',()=>{ ty=null; },{passive:true});
   window.__mapScrollEscape=goDown; window.__mapScrollEscapeUp=goUp; window.__mapScrollBump=(d)=>bump(d||1,null);
+})();
+// ---------- pinch zoom (touch screens, 28 Sep 2026): two fingers scale the map about their midpoint, so the place under
+// the fingers stays under them; a single finger pans natively (touch-action: pan-x pan-y). The zoom is the same rendered-
+// size zoom as the − / + buttons (viewBox untouched), applied per animation frame while the fingers move.
+(function(){ const wrap=document.getElementById('mapwrap'); const Z=window.__mapZoom; if(!wrap||!Z)return; let pinch=null, raf=0;
+  const dist=t=>Math.hypot(t[0].clientX-t[1].clientX,t[0].clientY-t[1].clientY);
+  const mid=t=>{ const r=wrap.getBoundingClientRect(); return {x:(t[0].clientX+t[1].clientX)/2-r.left, y:(t[0].clientY+t[1].clientY)/2-r.top}; };
+  wrap.addEventListener('touchstart',ev=>{ if(ev.touches.length!==2){ if(ev.touches.length<2)pinch=null; return; }
+    const m=mid(ev.touches), z0=Z.get(); pinch={d0:dist(ev.touches),z0:z0,cx:(wrap.scrollLeft+m.x)/z0,cy:(wrap.scrollTop+m.y)/z0,z:z0,m:m}; },{passive:true});
+  wrap.addEventListener('touchmove',ev=>{ if(!pinch||ev.touches.length!==2)return; if(ev.cancelable)ev.preventDefault();
+    pinch.z=Math.max(Z.min,Math.min(Z.max,pinch.z0*dist(ev.touches)/pinch.d0)); pinch.m=mid(ev.touches);
+    if(!raf)raf=requestAnimationFrame(()=>{ raf=0; if(!pinch)return; Z.set(pinch.z); wrap.scrollLeft=Math.max(0,pinch.cx*pinch.z-pinch.m.x); wrap.scrollTop=Math.max(0,pinch.cy*pinch.z-pinch.m.y); }); },{passive:false});
+  const end=ev=>{ if(pinch&&ev.touches.length<2){ const z=pinch.z, cx=pinch.cx, cy=pinch.cy, m=pinch.m; pinch=null; Z.set(z); wrap.scrollLeft=Math.max(0,cx*z-m.x); wrap.scrollTop=Math.max(0,cy*z-m.y); } };
+  wrap.addEventListener('touchend',end,{passive:true}); wrap.addEventListener('touchcancel',end,{passive:true});
+  window.__pinchState=()=>pinch;
 })();
 
 // ---------- floating card: drag, dock, remember
