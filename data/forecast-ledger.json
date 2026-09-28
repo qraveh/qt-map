@@ -1,6 +1,6 @@
 {
  "edition": "2026.09",
- "written": "by build/machines_chapter.py from the register of quantum-machines · 17 Sep 2026, re-cut 26 Sep 2026 (three ion paths, two analog paths, 14 gaps → stations, sentinels → cell values)",
+ "written": "by build/machines_chapter.py from the register of quantum-machines · 17 Sep 2026, re-cut 26 Sep 2026 (three ion paths, two analog paths, 14 gaps → technologies, sentinels → cell values)",
  "forecasts": [
   {
    "id": "F1a",
@@ -54,7 +54,7 @@
   },
   {
    "id": "F4",
-   "indicator": "devices with a demonstrated link station (interconnect layer)",
+   "indicator": "devices with a demonstrated link technology (interconnect layer)",
    "now": "6 (superconducting circuits 3, trapped ions 1, photonics 1, defect spins 1)",
    "e2027": "9–12: of the 10 announced machines that name a link (Fujitsu >10,000 physical / ~250 logical (STAR) (2025), Omega chipset (Moreton Bay / Chicago systems unnamed) (2025), QuantWare VIO-40K (2025), D-Wave gate-model dual-rail system (2026), IBM Quantum Kookaburra (2026), Superion 256 (2026), IBM Quantum Cockatoo (2027), IBM Quantum Starling (2029), Apollo (2030), IBM Quantum Blue Jay (2033)), the ones dated 2025–2026 are the candidates",
    "e2028": "12–18; the interconnect gap share falls below 85 % only if the multi-module superconducting lattices arrive",

@@ -21,7 +21,7 @@ DIST = os.path.join(ROOT, 'dist')
 
 FORBIDDEN = [r'<!--\s*function', r'toggleAuthorList', r'You must enable JavaScript', r'Honest null', r'not re-fetched', r'node attrs say',
              r'\bTODO\b', r'\bTBD\b', r'\bFIXME\b', r'\\mathrm\{', r'\\mathcal\{', r'\\ket\{', r'\[object Object\]', r'\bNaN\b',
-             r'claude\.ai/artifact']
+             r'claude\.ai/artifact', r'Open niche', r'Открытая ниша', r'QCVV/SFQ', r'(?<!resonator )(?<!Resonator )(?<!resonator-)(?<!Star )(?<!network )(?<!\()(?<![-_"\'=./#])\bhubs?\b(?![-_"\'=])(?! access)', r'(?<!резонаторные )(?<!Резонаторные )(?<!резонаторным )(?<!резонаторному )(?<!резонаторный )(?<!резонаторных )(?<!резонаторными )(?<!резонаторном )\bхаб(ы|ов|ам|ами|ах|а|у|ом|е)?\b(?! Star)', r'transfer hub', r'(?<!probe )(?<!Probe )(?<![-_"\'=./#])\bstations?\b(?![-_"\'=])', r'\bстанци(я|и|й|ю|ей|ям|ями|ях)\b', r'SCE \(SFQ\)', r'I/O wall, not the qubit']
 RETIRED_COUNTS = [r'\b136 (machines|машин)', r'\b14 (architectures|paths|архитектур|путей)', r'\b96 (technologies|технологий|nodes|stations)',
                   r'\b1,533\b', r'\b1 533\b', r'\b153 (machines|машин)', r'\b110 (technologies|технологий)']
 ARTICLES = [r'\ba (Atlas|architecture|Architecture|atlas)\b', r'\bA (Atlas|architecture)\b']

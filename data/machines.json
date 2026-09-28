@@ -1,7 +1,7 @@
 {
  "edition": "2026.09",
  "source": {
-  "register": "quantum-machines · 17 Sep 2026, re-cut 26 Sep 2026 (three ion paths, two analog paths, 14 gaps → stations, sentinels → cell values)",
+  "register": "quantum-machines · 17 Sep 2026, re-cut 26 Sep 2026 (three ion paths, two analog paths, 14 gaps → technologies, sentinels → cell values)",
   "evidence": "machine-stations-evidence.csv · 17 Sep 2026 (locator passes 1–3)"
  },
  "machines": [
@@ -172,7 +172,7 @@
       "role": "alternate",
       "gap": true,
       "state": "gap",
-      "summary": "post-fabrication laser trimming tunes qubit frequencies (same slot as Rigetti ABAA / IQM PALEA; no station for it)",
+      "summary": "post-fabrication laser trimming tunes qubit frequencies (same slot as Rigetti ABAA / IQM PALEA; no technology for it)",
       "evidence": {
        "type": "press-technical",
        "url": "https://www.sinica.edu.tw/en/news_content/55/3655",
@@ -3739,7 +3739,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "multi-die packaging inside one qubit module (station per note; no packaging detail given)",
+      "summary": "multi-die packaging inside one qubit module (technology per note; no packaging detail given)",
       "evidence": {
        "type": "architecture-paper",
        "url": "https://arxiv.org/abs/2512.10504",
@@ -3884,7 +3884,7 @@
       "role": "alternate",
       "gap": false,
       "state": "station",
-      "summary": "nearest station if published; coupler type not published",
+      "summary": "nearest technology if published; coupler type not published",
       "evidence": {
        "type": "press-technical",
        "url": "https://thequantuminsider.com/2026/05/15/10-plus-companies-leading-the-quantum-technologies-race-in-china/",
@@ -4387,7 +4387,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "multi-chip module station per note; no D-Wave module or coupler detail published",
+      "summary": "multi-chip module technology per note; no D-Wave module or coupler detail published",
       "evidence": {
        "type": "inferred",
        "url": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-charts-a-new-course-to-fault-tolerant-quantum-computing-with-gate-model-roadmap/",
@@ -5856,7 +5856,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "reset 160 ns as a QEC-cycle budget line item (no station); 500 ns measurement within 921 ns cycle",
+      "summary": "reset 160 ns as a QEC-cycle budget line item (no technology); 500 ns measurement within 921 ns cycle",
       "evidence": {
        "type": "architecture-paper-figure",
        "url": "https://www.nature.com/articles/s41586-022-05434-1",
@@ -6511,7 +6511,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "tunable coupler + l-couplers (same stations as Starling)",
+      "summary": "tunable coupler + l-couplers (same technologies as Starling)",
       "evidence": {
        "type": "vendor-architecture-page",
        "url": "https://www.ibm.com/quantum/blog/large-scale-ftqc",
@@ -6541,7 +6541,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "room-temperature RF + cryo-CMOS (register; same stations as Starling)",
+      "summary": "room-temperature RF + cryo-CMOS (register; same technologies as Starling)",
       "evidence": {
        "type": "vendor-architecture-page",
        "url": "https://www.ibm.com/quantum/blog/large-scale-ftqc",
@@ -6554,7 +6554,7 @@
       "role": "alternate",
       "gap": false,
       "state": "station",
-      "summary": "cryo-CMOS alongside room-temperature RF (register; same stations as Starling)",
+      "summary": "cryo-CMOS alongside room-temperature RF (register; same technologies as Starling)",
       "evidence": {
        "type": "vendor-architecture-page",
        "url": "https://www.ibm.com/quantum/blog/large-scale-ftqc",
@@ -6597,7 +6597,7 @@
       "role": "alternate",
       "gap": false,
       "state": "station",
-      "summary": "magic-state station as in Starling stations (code_qldpc + code_magic); register codes gross;qcga",
+      "summary": "magic-state technology as in Starling technologies (code_qldpc + code_magic); register codes gross;qcga",
       "evidence": {
        "type": "architecture-paper-figure",
        "url": "https://arxiv.org/abs/2506.03094",
@@ -6627,7 +6627,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "l-coupled cryogenic modules (same stations as Starling); Blue Jay stated as distributed across sites",
+      "summary": "l-coupled cryogenic modules (same technologies as Starling); Blue Jay stated as distributed across sites",
       "evidence": {
        "type": "architecture-paper-figure",
        "url": "https://arxiv.org/abs/2506.03094",
@@ -6655,7 +6655,7 @@
       "role": "alternate",
       "gap": false,
       "state": "station",
-      "summary": "fab_cmos as in Starling stations (cryo-CMOS control); no Blue Jay-specific fab source",
+      "summary": "fab_cmos as in Starling technologies (cryo-CMOS control); no Blue Jay-specific fab source",
       "evidence": {
        "type": "inferred",
        "url": "https://www.ibm.com/quantum/blog/large-scale-ftqc",
@@ -6755,7 +6755,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "tunable coupler (stations as Kookaburra)",
+      "summary": "tunable coupler (technologies as Kookaburra)",
       "evidence": {
        "type": "vendor-architecture-page",
        "url": "https://www.ibm.com/quantum/blog/qdc-2024",
@@ -7698,7 +7698,7 @@
       "role": "alternate",
       "gap": false,
       "state": "station",
-      "summary": "nearest station to heavy_hex subsystem code (d=2 2017, d=3 2022–23); also stab_4_2_2 flag-FT state prep, honeycomb_floquet plaquette measurement",
+      "summary": "nearest technology to heavy_hex subsystem code (d=2 2017, d=3 2022–23); also stab_4_2_2 flag-FT state prep, honeycomb_floquet plaquette measurement",
       "evidence": {
        "type": "architecture-paper-figure",
        "url": "https://www.nature.com/articles/s41467-023-38247-5",
@@ -13198,7 +13198,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "Coaxmon out-of-plane I/O: control and readout enter perpendicular to the chip plane; no Atlas station",
+      "summary": "Coaxmon out-of-plane I/O: control and readout enter perpendicular to the chip plane; no Atlas technology",
       "evidence": {
        "type": "architecture-paper-figure",
        "url": "https://arxiv.org/abs/2107.11140",
@@ -16656,7 +16656,7 @@
       "role": "alternate",
       "gap": false,
       "state": "station",
-      "summary": "coupler type not published (fixed vs tunable unresolved); g_tc is nearest station",
+      "summary": "coupler type not published (fixed vs tunable unresolved); g_tc is nearest technology",
       "evidence": {
        "type": "press-technical",
        "url": "https://thequantuminsider.com/2025/12/08/how-fujitsu-is-tackling-a-10000-qubit-quantum-computer-for-practical-applications/",
@@ -16890,7 +16890,7 @@
       "role": "alternate",
       "gap": false,
       "state": "station",
-      "summary": "coupler type not published; g_tc is nearest station",
+      "summary": "coupler type not published; g_tc is nearest technology",
       "evidence": {
        "type": "press-technical",
        "url": "https://thequantuminsider.com/2025/12/08/how-fujitsu-is-tackling-a-10000-qubit-quantum-computer-for-practical-applications/",
@@ -23257,7 +23257,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "no code stated for Sol; station carried as Helios (register codes: none)",
+      "summary": "no code stated for Sol; technology carried as Helios (register codes: none)",
       "evidence": {
        "type": "technical-whitepaper",
        "url": "https://www.quantinuum.com/blog/technical-perspective-by-the-end-of-the-decade-we-will-deliver-universal-fault-tolerant-quantum-computing",
@@ -28860,7 +28860,7 @@
       "role": "alternate",
       "gap": false,
       "state": "station",
-      "summary": "alternate station; fluorescence imaging alongside the mid-circuit erasure check",
+      "summary": "alternate technology; fluorescence imaging alongside the mid-circuit erasure check",
       "evidence": {
        "type": "architecture-paper-figure",
        "url": "https://arxiv.org/abs/2506.13724",
@@ -29525,7 +29525,7 @@
       "role": "alternate",
       "gap": false,
       "state": "station",
-      "summary": "alternate station; no high-rate code reported — demonstrated code is 488 color (d=3/d=5)",
+      "summary": "alternate technology; no high-rate code reported — demonstrated code is 488 color (d=3/d=5)",
       "evidence": {
        "type": "architecture-paper",
        "url": "https://www.nature.com/articles/s41586-025-09367-3",
@@ -29566,7 +29566,7 @@
       "role": "alternate",
       "gap": false,
       "state": "station",
-      "summary": "alternate station; primary decoding is correlated / loss-aware, offline",
+      "summary": "alternate technology; primary decoding is correlated / loss-aware, offline",
       "evidence": {
        "type": "architecture-paper",
        "url": "https://www.nature.com/articles/s41586-025-09367-3",
@@ -29836,7 +29836,7 @@
       "role": "alternate",
       "gap": false,
       "state": "station",
-      "summary": "alternate station; decoder planned (correlated / loss-aware), no GPU detail published",
+      "summary": "alternate technology; decoder planned (correlated / loss-aware), no GPU detail published",
       "evidence": {
        "type": "press-technical",
        "url": "https://quantumcomputingreport.com/quera-updates-neutral-atom-quantum-roadmap-with-2028-fault-tolerant-launch-on-amazon-braket/",
@@ -33713,7 +33713,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "[[4,2,2]] error detection on 6 EO qubits (slightly improved system): F_L = 0.95 post-selected (~77% of 10,000 shots rejected), 0.59 without; plus a d=5 bit-flip repetition code on 7 EO qubits, Λ5/3 = 4.7 over up to 200 rounds (no station)",
+      "summary": "[[4,2,2]] error detection on 6 EO qubits (slightly improved system): F_L = 0.95 post-selected (~77% of 10,000 shots rejected), 0.59 without; plus a d=5 bit-flip repetition code on 7 EO qubits, Λ5/3 = 4.7 over up to 200 rounds (no technology)",
       "evidence": {
        "type": "architecture-paper-figure",
        "url": "https://arxiv.org/abs/2604.16216",

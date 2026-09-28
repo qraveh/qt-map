@@ -32,10 +32,11 @@ class OracleTests(unittest.TestCase):
             self.assertEqual(r["lines"], {pid})
             self.assertEqual(r["edges"], set())
 
-    def test_focus_hub(self):
-        hubs = [n["id"] for n in self.m.g["nodes"] if n["hub"]]
-        self.assertTrue(hubs)
-        for h in hubs:
+    def test_focus_shared(self):
+        """focus on a technology shared by several architectures lights all of them (formerly the hub test)"""
+        shared = [n["id"] for n in self.m.g["nodes"] if len(n["paths"]) > 1]
+        self.assertTrue(shared)
+        for h in shared:
             s = oracle.default_state()
             s["focus"] = h
             r = oracle.expected(self.m, s)
@@ -50,6 +51,7 @@ class OracleTests(unittest.TestCase):
             for (u, v, t) in r2["edges"]:
                 self.assertIn(u, r2["stations"])
                 self.assertIn(v, r2["stations"])
+
 
     def test_toggle_alone_draws_all_of_type(self):
         for t, ty in oracle.TOGGLE_TYPES.items():

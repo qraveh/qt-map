@@ -8833,10 +8833,6 @@
    {
     "work": "https://www.quantinuum.com/blog/a-quantinuum-led-team-has-built-the-quantum-programming-tools-for-real-time-magic-state-distillation-on-a-quantum-computer",
     "grade": "C"
-   },
-   {
-    "work": "report:S20#0",
-    "grade": "P"
    }
   ],
   "code_mitig": [

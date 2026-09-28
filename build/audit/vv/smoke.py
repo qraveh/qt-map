@@ -32,7 +32,7 @@ try:
     m.clear_isolate(); show('clear_isolate')
     m.focus('transmon'); show('focus(transmon)')
     m.clear_focus(); show('clear_focus')
-    m.select_mark('hub'); show('select_mark(hub)')
+    m.select_mark('offd'); show('select_mark(offd)')
     m.collapse_bar(True); show('collapse_bar(True)')
     m.collapse_bar(False); show('collapse_bar(False)')
     m.reset(); show('reset')

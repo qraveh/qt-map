@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""References of the technology briefs (one per station), on the report's canon (build/sources.py, report §9).
+"""References of the technology briefs (one per technology), on the report's canon (build/sources.py, report §9).
 
 Each brief keeps its own list of IEEE entries; the numbers are the Atlas's permanent work numbers (build/worknum.py): the
 same work carries the same number in §9, in every brief and in every later edition, so a brief's list shows its subset of

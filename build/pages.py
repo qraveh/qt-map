@@ -2,7 +2,7 @@
 """Every record of the Atlas at its own address (27 Sep 2026, the editor's item 16).
 
 Built by build_html.build() after the main pages, from the same data and renderers:
-  dist/technology/<id>.html      the station card + the technology brief (111 × 2 languages)
+  dist/technology/<id>.html      the technology card + the technology brief (111 × 2 languages)
   dist/machine/<id>.html         the machine card (the register's profile, cells, records) + its pictures
   dist/architecture/<pid>.html   the architecture card + the §8.3 narrative and register block + machines
   dist/organisation/<slug>.html  the organisation's profile: machines, technologies, architectures, mentions
@@ -149,7 +149,7 @@ class Site:
             prev_id = order[i - 1] if i else ''; next_id = order[i + 1] if i + 1 < len(order) else ''
             card = cards.station_card_html(nid, lang, base)
             brief = self.BR._one_lang(b, lang, self.md2html, prev_id, next_id, self.colours.get(nid, 'var(--mid)'))
-            # the brief's own controls become links: prev/next → the neighbouring technology pages, close → the index, "station on the map" → the map
+            # the brief's own controls become links: prev/next → the neighbouring technology pages, close → the index, "technology on the map" → the map
             brief = re.sub(r'<button type="button" class="chip" data-brief="(\w+)">([^<]*)</button>', lambda m: '<a class="chip" href="%s">%s</a>' % (self.href('technology', m.group(1), lang), m.group(2)), brief)
             brief = re.sub(r'<button type="button" class="chip bclose" data-briefclose="1">[^<]*</button>', '', brief)
             brief = re.sub(r'<button type="button" class="chip" data-briefclose="1">[^<]*</button>', '', brief)

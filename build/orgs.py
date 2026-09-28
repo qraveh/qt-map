@@ -41,8 +41,8 @@ under a display name, its register name.
 
 Fields. machines: ids by status class (DEPLOYED, DEMONSTRATED, ANNOUNCED, PLANNED, RETIRED, other; as machines_chapter.py) then
 name. families: of its machines and architectures, in the report's family order. architectures: the paths of its machines and
-the paths whose actors name it, in graph order. stations: the 12 stations held by most of its machines (a machine counts once
-per station; ties by layer, then graph order). hosts: machines whose host is not the organisation itself - from
+the paths whose actors name it, in graph order. technologies: the 12 technologies held by most of its machines (a machine counts once
+per technology; ties by layer, then graph order). hosts: machines whose host is not the organisation itself - from
 machines-by-organisation.csv when the host text does not open with one of its own names (name, name less parenthetical
 remarks, an abbreviation in parentheses, the initials of its name, its first word when the other words are generic, an
 alias) nor names the same parties as its name or an alias (EQUIV: "CAS" = "Chinese Academy of Sciences"), or when the
@@ -608,7 +608,7 @@ def build(reg_dir=None):
         for i in ms:
             held.update({c['node'] for cells in mby[i].get('layers', {}).values() for c in cells
                          if c.get('state') == 'station' and c.get('node') in node_ix})
-        stations = sorted(held.items(), key=lambda kv: (-kv[1], node_layer[kv[0]], node_ix[kv[0]]))[:TOP_STATIONS]
+        technologies = sorted(held.items(), key=lambda kv: (-kv[1], node_layer[kv[0]], node_ix[kv[0]]))[:TOP_STATIONS]
         aliases = sorted(o['aliases'], key=lambda s: (s.casefold(), s))
         own = own_names(d['name'], aliases)
         own_parties = {parties(n) for n in [d['name']] + aliases}

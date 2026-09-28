@@ -86,7 +86,7 @@ PREFACE_PUBLIC = {
 PREFACE = {
     'en': [
         'Every technology on the map has a brief, and the depth of each one follows an importance score '
-        'derived from the graph itself — how far a node reaches across platform families (hub reach), how '
+        'derived from the graph itself — how far a node reaches across platform families, how '
         'many architectures run through it, and how recent it is. Tier 1 is the 27 most important '
         'technologies at roughly 1,600–2,400 words; Tier 2 is 33 technologies at roughly 1,300 words; '
         'Tier 3 is 50 technologies at roughly 800–1,100 words. The tier is a statement about the graph, not a '
@@ -102,7 +102,7 @@ PREFACE = {
     ],
     'ru': [
         'У каждой технологии на карте есть бриф, а его глубина определяется оценкой важности, выведенной '
-        'из самого графа: насколько узел дотягивается до разных семейств платформ (охват хаба), сколько '
+        'из самого графа: насколько узел дотягивается до разных семейств платформ, сколько '
         'архитектур через него проходит и насколько он свеж. Tier 1 — 27 самых важных технологий, '
         'примерно 1 600–2 400 слов; Tier 2 — 33 технологии, примерно 1 300 слов; Tier 3 — 50 технологий, '
         'примерно 800 слов. Tier — утверждение о графе, а не оценка технологии.',
@@ -163,7 +163,7 @@ def _ru_from_en(en_meta):
 
 _NODES = None
 def _node(bid):
-    """the graph's record of a station (data/graph.json, written by make_sections before the briefs are rendered)"""
+    """the graph's record of a technology (data/graph.json, written by make_sections before the briefs are rendered)"""
     global _NODES
     if _NODES is None:
         try: _NODES = {n['id']: n for n in json.load(open(os.path.join(ROOT, 'data', 'graph.json'), encoding='utf-8'))['nodes']}
@@ -185,7 +185,7 @@ def load_briefs():
         else:
             ru_meta, ru_body = _ru_from_en(en_meta), RU_FALLBACK_NOTE + '\n\n' + en_body
             fallback = True
-        # one name per station: the brief's title and its "since" are the graph's (the front matter keeps the author's wording
+        # one name per technology: the brief's title and its "since" are the graph's (the front matter keeps the author's wording
         # for the record; build/audit/briefs_meta_check.py lists the divergences — 97 of 222 names differed on 27 Sep 2026)
         node = _node(bid)
         if node:
@@ -427,10 +427,10 @@ def inline_html(s, md2html):
 
 # ---------- one brief section
 NAV = {
-    'en': {'map': '← Station on the map', 'row': '↑ Table 8.2 row', 'prev': '← Previous brief',
+    'en': {'map': '← Technology on the map', 'row': '↑ Table 8.2 row', 'prev': '← Previous brief',
            'next': 'Next brief →', 'close': 'Close ✕', 'verdict': 'Verdict',
            'layer': 'layer', 'tier': 'Tier', 'rank': 'rank', 'centrality': 'centrality', 'since': 'since', 'updated': 'updated'},
-    'ru': {'map': '← Станция на карте', 'row': '↑ Строка таблицы 8.2', 'prev': '← Предыдущий бриф',
+    'ru': {'map': '← Технология на карте', 'row': '↑ Строка таблицы 8.2', 'prev': '← Предыдущий бриф',
            'next': 'Следующий бриф →', 'close': 'Закрыть ✕', 'verdict': 'Вердикт',
            'layer': 'слой', 'tier': 'Tier', 'rank': 'ранг', 'centrality': 'центральность', 'since': 'с', 'updated': 'обновлено'},
 }
@@ -638,7 +638,7 @@ def key_refs_all(briefs, limit=5):
 
 def key_refs_html(refs, lang, bid=None):
     """The key-references chips of a brief header. With a brief id the block is a placeholder that brief_js fills at load from
-    window.__KEYREFS (the same records the station cards use) — the chips and their IEEE tooltips would otherwise stand in the
+    window.__KEYREFS (the same records the technology cards use) — the chips and their IEEE tooltips would otherwise stand in the
     file twice per brief (0.27 MB over the briefs); the static form is kept for the md bundles and for expand_keys()."""
     if not refs: return ''
     t = 'Key references' if lang == 'en' else 'Ключевые источники'
@@ -648,7 +648,7 @@ def key_refs_html(refs, lang, bid=None):
 
 def key_refs_slim(keyrefs):
     """the page's embedded form (27 Sep 2026): no label — the IEEE text of work n stands in the brief's own Sources list
-    (li#brief-<sid>-en-src-<n> span.ref); brief_js and the station card read it from there (90 KB saved, one text per work)"""
+    (li#brief-<sid>-en-src-<n> span.ref); brief_js and the technology card read it from there (90 KB saved, one text per work)"""
     return {sid: [{k: v for k, v in r.items() if k != 'label'} for r in refs] for sid, refs in keyrefs.items()}
 
 

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Import a newly written brief into the references canon (26 Sep 2026, the 14 stations of the paths revalidation).
+"""Import a newly written brief into the references canon (26 Sep 2026, the 14 technologies of the paths revalidation).
 
 A new brief is written with citation placeholders — `[D][@arxiv:2306.11727]`, `[C][@u:https://…]`, `[D][@doi:10.…]` — and a
 sidecar `<bid>.sources.json` ([{key, grade, record}] in order of first citation, record in the data/brief-sources.json schema).

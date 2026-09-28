@@ -4,7 +4,7 @@ Nodes = technologies (not platforms). Layers 1..10. Seven attributes (a..g).
 Three spaces kept apart: design (coords), evaluation (dated attrs/defines), actors&goals (annotations).
 """
 LAYERS = [
- (1,"carrier","Carrier","Носитель"),
+ (1,"carrier","Qubit carrier","Носитель кубита"),
  (2,"encoding","Encoding","Кодирование"),
  (3,"gate","Gate mechanism","Механизм гейта"),
  (4,"connect","Connectivity / transport","Связность / транспорт"),
@@ -270,7 +270,7 @@ N("ct_cryocmos",5,"Cryo-CMOS controller (4 K / mK)","Cryo-CMOS контролл�
   [("path","HRL 4 K controller sequencing QEC","≤ 3.5 W, 366 DACs; d=5 *bit-flip-only* repetition code Λ=4.7 without room-temperature real-time electronics (arXiv Apr–May 2026, Nature Jul 2026)","2026-07","https://arxiv.org/abs/2604.16216"),
    ("path","IBM 14 nm at 4 K","23 mW/qubit; 1Q 8×10⁻⁴","2024-02","https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.5.010326"),
    ("path","mK CMOS next to spin qubits","~20 nW/MHz per cell; fidelity impact 0.07%","2025-06","https://www.nature.com/articles/s41586-025-09157-x")],"",""),
-N("ct_sfq",5,"SCE (SFQ) digital control (4 K or millikelvin)","Цифровое управление на SCE (SFQ) (4 K или милликельвины)",1.0,["fab"],None,"na",None,"none","mw",["mK","4K"],["pauli"],"sclitho","E",
+N("ct_sfq",5,"SFQ digital control (4 K / mK)","Цифровое управление на SFQ (4 K / мК)",1.0,["fab"],None,"na",None,"none","mw",["mK","4K"],["pauli"],"sclitho","E",
   "Single-flux-quantum (superconducting-electronics) digital circuits either at the mK stage — pulse trains drive qubits from a flip-chip (1Q > 99 %, 99.9 % peak; nW/qubit claimed) — or at the 4 K stage as an in-fridge controller (DigiQ, 2022: the largest designs fit the few-watt budget of the 4 K stage); the same circuit family loads D-Wave's on-chip flux DACs.","Одноквантовые (сверхпроводниковая электроника) цифровые схемы либо на мК-ступени — цепочки импульсов управляют кубитами с flip-chip (1Q > 99 %, пик 99,9 %; заявлено нВт/кубит), — либо на ступени 4 K как контроллер внутри криостата (DigiQ, 2022: крупнейшие проекты укладываются в бюджет в несколько ватт ступени 4 K); та же схемотехника загружает on-chip flux-DAC D-Wave.",
   [("path","SEEQC mK SFQ control","1Q > 99%, up to 99.9% (Nature Electronics)","2026-03","https://www.nature.com/articles/s41928-026-01576-6"),
    ("path","DigiQ: A Scalable Digital Controller for Quantum Computers Using SFQ Logic, HPCA 2022","4 K in-fridge SFQ controller; the largest designs fit the few-watt budget of the 4 K stage","2022-02","https://arxiv.org/abs/2202.01407"),
@@ -436,7 +436,7 @@ N("dec_corr",8,"Correlated / loss-aware decoding (transversal, atom loss)","Ко
 N("dec_rl",8,"In-loop RL calibration / decoder steering","RL-калибровка в контуре / управление декодером",1.0,["fab"],None,"na",None,"none","none",["none"],["coherent"],"none","D",
   "Reinforcement learning tunes > 1,000 control parameters during QEC: ~20% extra suppression, 3.5× drift robustness.","Обучение с подкреплением подстраивает > 1 000 параметров управления во время QEC: ~20% дополнительного подавления, 3.5× устойчивость к дрейфу.",
   [("channel","RL-steered QEC","20% LER cut, 3.5× stability vs drift; the same Willow d=7 run that yields 7.72(9)×10⁻⁴/cycle (see dec_nn)","2025-11","https://arxiv.org/abs/2511.08493")],"",""),
-N("dec_cryo",8,"Cryogenic / on-chip decoder (SFQ, cryo-CMOS)","Криогенный / on-chip декодер (SFQ, cryo-CMOS)",1.0,["fab"],None,"na",None,"none","mw",["mK"],["pauli"],"sclitho","X",
+N("dec_cryo",8,"Cryogenic / on-chip decoder (cryo-CMOS, SFQ)","Криогенный / on-chip декодер (cryo-CMOS, SFQ)",1.0,["fab"],None,"na",None,"none","mw",["mK"],["pauli"],"sclitho","X",
   "Designs only: NISQ+ (≤ 20 ns, SFQ), QECOOL (2.8 µW), Pinball/CryoZip (4 K predecoders) — no fabricated decoder chip.","Только дизайны: NISQ+ (≤ 20 нс, SFQ), QECOOL (2.8 мкВт), Pinball/CryoZip (предекодеры при 4 K) — ни одного изготовленного чипа-декодера.",
   [("path","QECOOL on-line SFQ decoder (simulation)","2.78 µW at 2 GHz; latency not published","2021-03","https://arxiv.org/abs/2103.14209"),
    ("clock","NISQ+ approximate SFQ decoder (design)","≤ 20 ns latency","2020-04","https://arxiv.org/abs/2004.04794"),
@@ -678,9 +678,9 @@ REQ=[
 ("code_fusion","g_fusion","fusion measurements","fusion-измерения"),("code_fusion","src_resource","resource states","ресурсные состояния"),
 ("code_aft","cx_aod","transversal gates by transport","трансверсальные гейты через транспорт"),("code_aft","cx_qccd","transversal gates by ion shuttling (Quantinuum tesseract on ions)","трансверсальные гейты через транспорт ионов (тессеракт Quantinuum на ионах)"),("code_aft","dec_corr","correlated decoding","коррелированное декодирование"),
 ("code_magic","code_surface","host code","код-носитель"),("code_magic","code_color","host code","код-носитель"),
+("dec_fpga","code_surface","matching/clustering on surface syndromes","matching/кластеризация на синдромах surface"),("dec_nn","code_surface","trained on surface-code syndromes","обучен на синдромах surface code"),
 ("dec_relaybp","code_qldpc","qLDPC syndromes","синдромы qLDPC"),("dec_corr","code_highrate","transversal circuits","трансверсальные схемы"),("dec_rl","dec_nn","decoder in the loop","декодер в контуре"),
 ("dec_cryo","ct_sfq","cold digital logic","холодная цифровая логика"),("dec_cryo","ct_cryocmos","cold digital logic","холодная цифровая логика"),
-("ct_fluxdac","ct_sfq","the flux DAC is an SFQ circuit: flux-storage loops loaded one flux quantum at a time by SFQ pulses (D-Wave, since 2010)","flux-DAC — это SFQ-схема: петли хранения потока, заполняемые по одному кванту SFQ-импульсами (D-Wave, с 2010)"),("dec_fpga","code_surface","matching/clustering on surface syndromes","matching/кластеризация на синдромах surface"),("dec_nn","code_surface","trained on surface-code syndromes","обучен на синдромах surface code"),
 ("ic_mcm","fab_sc","chiplets, couplers","чиплеты, couplers"),("ic_cryolink","fab_sc","superconducting waveguide","сверхпроводящий волновод"),
 ("ic_ionphoton","ion","ion–photon entanglement","запутанность ион–фотон"),("ic_ionphoton","ro_spd","photon detection","детекция фотонов"),
 ("ic_atomcavity","alkali","cavity-coupled atoms","атомы в резонаторе"),("ic_atomcavity","ae_atom","cavity-coupled atoms","атомы в резонаторе"),("ic_atomcavity","fab_optics","cavities","резонаторы"),
@@ -746,7 +746,7 @@ _grp("dec_cryo","control","ct_sfq","ct_cryocmos"); _grp("ic_atomcavity","carrier
 _grp("enc_hf","carrier","ion","alkali","ae_atom"); _grp("enc_spin_ld","carrier","qd_spin","donor","defect"); _grp("enc_dualrail","carrier","cavity","transmon","photon"); _grp("cx_aod","carrier","alkali","ae_atom")
 _grp("g_tc","control","ct_rt","ct_cryocmos"); _grp("g_tc","carrier","transmon","fluxonium"); _grp("g_cr","control","ct_rt","ct_cryocmos"); _grp("g_mwspin","carrier","defect","qd_spin","donor"); _grp("enc_bare","carrier","transmon","fluxonium")
 _grp("cavity","fab","fab_3d","fab_sc"); _grp("photon","fab","fab_pic","fab_mbe"); _grp("squeezed","fab","fab_pic","fab_bulk"); _grp("ct_eo","fab","fab_pic","fab_bulk"); _grp("g_mwspin","control","ct_base","ct_rt")
-SOFT={("g_lointer","ct_eo"),("qd_spin","fab_cmos"),("g_bos","transmon"),("dec_fpga","code_surface"),("dec_nn","code_surface"),("ct_fluxdac","ct_sfq"),("donor","fab_stm"),("defect","fab_diamond"),("dec_rl","dec_nn"),
+SOFT={("g_lointer","ct_eo"),("qd_spin","fab_cmos"),("g_bos","transmon"),("dec_fpga","code_surface"),("dec_nn","code_surface"),("donor","fab_stm"),("defect","fab_diamond"),("dec_rl","dec_nn"),
       ("dec_mwpm","code_surface"),("dec_mwpm","code_bosonic"),("dec_mwpm","code_fusion"),("dec_mwpm","code_erasure")}   # matching's positive need is usual, not absolute; its impossibilities are the colour-code and qLDPC conflicts
 SCOPE_LINK={("ic_ionphoton","ro_spd"),("ic_spinphoton","ro_spd"),("ic_transducer","ro_spd"),("ic_transducer","fab_pic")}
 _LAYER_OF={}
@@ -907,16 +907,16 @@ CONX={
   status="open",date="2025-11",url="https://developer.nvidia.com/blog/nvidia-nvqlink-architecture-integrates-accelerated-computing-with-quantum-processors/"),
 ("ct_sfq","transmon"):dict(
   price=("photons emitted by switching junctions lie above the aluminium gap (2Δ ≈ 90 GHz) and break Cooper pairs in the qubit film: T₁ decay plus correlated, non-Pauli bursts; 0.96(2)% of the 1.2(1)% error per Clifford in the 2023 multi-chip module","фотоны переключающихся переходов лежат выше щели алюминия (2Δ ≈ 90 ГГц) и разрывают куперовские пары в плёнке кубита: распад T₁ плюс коррелированные не-паулиевские всплески; 0.96(2)% из 1.2(1)% ошибки на Клиффорд в многочиповом модуле 2023 г."),
-  mitig=("driver on a separate die, pulse-bandwidth limiting (projected 0.1%), quasiparticle traps / gap engineering, mm-wave shielding; SEEQC 2026 reports no detectable poisoning at 5 qubits","драйвер на отдельном кристалле, ограничение полосы импульсов (прогноз 0.1%), ловушки квазичастиц / инженерия щели, мм-волновое экранирование; SEEQC 2026 сообщает об отсутствии детектируемого отравления на 5 кубитах"),
-  status="mitigated",date="2023-09",url="https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.4.030310"),
+  mitig=("driver on a separate die, pulse-bandwidth limiting (projected 0.1%), quasiparticle traps / gap engineering, mm-wave shielding; SEEQC 2026 reports no detectable poisoning at 5 qubits (press, not independently measured)","драйвер на отдельном кристалле, ограничение полосы импульсов (прогноз 0.1%), ловушки квазичастиц / инженерия щели, мм-волновое экранирование; SEEQC 2026 сообщает об отсутствии детектируемого отравления на 5 кубитах"),
+  status="open",date="2023-09",url="https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.4.030310"),
 }
-CONSTAT={"open":("open — no mitigation shown at scale","открыт — снятие в масштабе не показано"),"mitigated":("mitigated at small scale","снят в малом масштабе"),"bypass":("bypassed by choosing another station in place of one of the two","обходится выбором другой станции вместо одной из двух")}
+CONSTAT={"open":("open — no mitigation shown at scale","открыт — снятие в масштабе не показано"),"mitigated":("mitigated at small scale","снят в малом масштабе"),"bypass":("bypassed by choosing another technology in place of one of the two","обходится выбором другой технологии вместо одной из двух")}
 for e in EDGES:
     if e["type"]=="conflicts":
         x=CONX.get((e["src"],e["dst"]))
         if x: e.update(price=dict(en=x["price"][0],ru=x["price"][1]),mitig=dict(en=x["mitig"][0],ru=x["mitig"][1]),status=x["status"],date=x["date"],url=x["url"])
 assert all(e.get("status") for e in EDGES if e["type"]=="conflicts"), "every conflict edge needs CONX detail"
-# ---------------------------------------------------------------- DERIVATIONS (transfers, off-diagonal, empty slots, clock, validity)
+# ---------------------------------------------------------------- DERIVATIONS (memberships, off-diagonal, empty slots, clock, validity)
 import json, math, os
 NODE={n["id"]:n for n in NODES}
 # ---------------------------------------------------------------- STANDARD RECORDS (dated, sourced; nulls are honest "not published")
@@ -1009,9 +1009,6 @@ def compute():
                 NODE[e["dst"]]["reach"].add(FAMILY_OF[pid])
     for n in NODES:
         n["reach"]=sorted(n["reach"]|set(n["families"])); n["reach_degree"]=max(0,len(n["reach"])-1)
-        recent=(n["since"]>=2023 or n["status"] in ("E","X"))
-        n["hub"]= n["reach_degree"]>=2 or (n["reach_degree"]>=1 and recent)
-        n["hub_recent"]= n["hub"]
     # empty slots
     empty=[n["id"] for n in NODES if n["status"]=="X"]
     empty_slots=[]
@@ -1093,45 +1090,16 @@ def compute():
         p["clock_limiter"]=p["round"]["limiter"]
     # defines edges flattened
     defines=[dict(type="defines",src=n["id"],dst=d["out"],metric=d["metric"],value=d["value"],date=d["date"],url=d["url"]) for n in NODES for d in n["defines"]]
-    # validity check against prose directions
-    DIRECTIONS={
-     "D1 superconducting + engineered error structure + qLDPC + cold-stage control":["enc_dualrail","ro_erasure","code_erasure","code_qldpc","cx_lr","ct_cryocmos","ct_sfq","ct_fluxdac","ic_mcm","ic_cryolink","dec_relaybp","dec_nn"],
-     "D2 neutral atoms + zoned + transversal/algorithmic FT + erasure conversion":["g_ryd","enc_omg","ro_erasure","code_erasure","code_highrate","ro_imgfast","ct_pic_trap"],
-     "D3 trapped ions + electronic gates + chip traps":["g_elec","ct_ionmw","fab_cmos","ct_ionlaser"],
-     "D4 silicon spins + CMOS manufacturability":["fab_cmos","ct_cryocmos","cx_shuttle"],
-     "D5 photonics as interconnect":["fab_pic","ro_spd","ic_transducer","ic_spinphoton"],
-     "D6 bosonic codes as a direction":["enc_dualrail","enc_gkp","code_bosonic","g_catcnot"],
-     "X1 erasure engineering (cross-cutting)":["enc_dualrail","enc_omg","ro_erasure","code_erasure"],
-     "X2 real-time decoding (cross-cutting)":["dec_nn","dec_relaybp","dec_gpu","dec_cryo"],
-     "X3 qLDPC / transversal FT (cross-cutting)":["code_qldpc","code_highrate","code_magic"],
-     "X4 cold-stage control (cross-cutting)":["ct_sfq","ct_cryocmos","ct_fluxdac"],
-     "X5 photonic interconnect (cross-cutting)":["fab_pic","ro_spd","ic_transducer"],
-    }
-    DIAGONAL_ENABLERS={"D2":["cx_aod","code_aft","dec_corr","ae_atom"],"D3":["cx_qccd","fab_trap","ic_ionphoton"],"D5":["ic_fibre","ic_ionphoton","ic_atomcavity"]}
-    S=set(offd)|set(n["id"] for n in NODES if n["hub_recent"])|set(empty)
-    report={}
-    for k,ids in DIRECTIONS.items():
-        hit=[i for i in ids if i in S]; miss=[i for i in ids if i not in S]
-        report[k]=dict(hit=hit,miss=miss,coverage=round(len(hit)/len(ids),2))
-    covered=set(i for ids in DIRECTIONS.values() for i in ids)
-    novel=sorted(S-covered)
-    validity=dict(directions=report,S_size=len(S),S=sorted(S),novel=novel,diagonal_enablers=DIAGONAL_ENABLERS)
     return dict(layers=[dict(n=l[0],id=l[1],en=l[2],ru=l[3]) for l in LAYERS],vocab=dict(AFF={('%g'%k):v for k,v in AFF.items()},DET=DET,MECH=MECH,MOB=MOB,MOD=MOD,PLACE=PLACE,ERR=ERR,FAB=FAB,STATUS=STATUS,OUT=OUT,OFFDIAG=OFFDIAG_RULES,CONSTAT=CONSTAT,RECKEYS=RECKEYS,EDGE_KIND=EDGE_KIND,GROUP_LABEL=GROUP_LABEL),
-                nodes=NODES,paths=PATHS,edges=EDGES+transfers+defines,empty_status=empty,empty_slots=empty_slots,validity=validity)
+                nodes=NODES,paths=PATHS,edges=EDGES+defines,empty_status=empty,empty_slots=empty_slots)
 
 if __name__=="__main__":
     G=compute()
     import os; json.dump(G,open(os.path.join(os.path.dirname(os.path.abspath(__file__)),"graph.json"),"w",encoding="utf-8"),ensure_ascii=False,indent=1)
-    print("nodes",len(G["nodes"]),"edges",{t:sum(1 for e in G["edges"] if e["type"]==t) for t in ("requires","replaces","conflicts","transfers","defines")})
+    print("nodes",len(G["nodes"]),"edges",{t:sum(1 for e in G["edges"] if e["type"]==t) for t in ("requires","replaces","conflicts","defines")})
     print("\nOFF-DIAGONAL:")
     for n in G["nodes"]:
         if n["offdiag"]: print(f"  {n['id']:16s} {','.join(n['offdiag']):32s} via {n['offdiag_paths']}")
-    print("\nHUBS (reach>=2 families):")
-    for n in sorted(G["nodes"],key=lambda x:(-x["reach_degree"],x["id"])):
-        if n["hub"]: print(f"  {n['id']:16s} {'RECENT' if n['hub_recent'] else 'commodity':9s} reach={n['reach']} paths={len(n['paths'])}")
     print("\nEMPTY status:",G["empty_status"]); print("EMPTY slots:",[(e['path'],e['layer'],e.get('only')) for e in G['empty_slots']])
     print("\nCLOCK:")
     for p in G["paths"]: print(f"  {p['id']:10s} round={p['round']['total']} limiter={p['round']['limiter']} parts={ {k:('%.3g'%v) for k,v in p['round']['parts'].items()} } measured={p['cycle']} | react loop={p['react']['loop']} floor={p['react']['floor']} | T2={p['coh']['t2']} ops/coh={p['coh']['ops_per_coh']} idle_exp={p['coh']['idle_exposure']} idle_meas={p['coh']['idle_measured']} | {p['round']['notes']}")
-    print("\nVALIDITY:"); 
-    for k,v in G["validity"]["directions"].items(): print(f"  {v['coverage']:.2f} {k}  miss={v['miss']}")
-    print("  novel (in S, not in prose):",G["validity"]["novel"])

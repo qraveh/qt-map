@@ -212,7 +212,7 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .ptab td.ln{white-space:nowrap;color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:10.5px;padding-right:10px}
 .ptab a.prim{font-weight:600}
 .ptab a.alt{color:var(--ink2)}
-/* machines on the Atlas (C2): a station the selected machine uses only as an alternate keeps a dashed outline while lit */
+/* machines on the Atlas (C2): a technology the selected machine uses only as an alternate keeps a dashed outline while lit */
 .station.altuse rect.box{stroke-dasharray:4 3}
 #machine{width:300px;max-width:100%;min-width:0}
 .insp .mlinks{margin:-4px 0 8px;font-size:12.5px;display:flex;flex-wrap:wrap;gap:2px 6px}
@@ -279,7 +279,7 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 
 /* lens */
 .lensed .pathline{stroke:var(--mid) !important;opacity:.28} .lensed .pathline.hov{opacity:.9}
-.lensed.filtered .pathline:not(.dim){opacity:.6}   /* a lens value chosen: the lines through the kept stations read clearly (27 Sep 2026) */
+.lensed.filtered .pathline:not(.dim){opacity:.6}   /* a lens value chosen: the lines through the kept technologies read clearly (27 Sep 2026) */
 .lensed .altstub{stroke:var(--mid) !important;opacity:.35}
 .lensed .badge{opacity:.35}
 .lk{appearance:none;border:1px solid var(--rule);background:var(--surface);color:var(--ink);font:inherit;font-size:12.5px;padding:2px 9px 2px 24px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;position:relative;overflow:hidden}
@@ -292,7 +292,7 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .mapbar .lenslegend{flex-basis:100%;gap:6px 8px;align-items:center;padding-top:6px;border-top:1px dashed var(--rule)}
 .mapbar .lenslegend:empty{display:none}
 .mapbar .lenslegend .lbl{margin-right:6px}
-.lg.stn{width:50px;height:16px}   /* two miniature stations: as drawn (outline = family), then with a lens on (tint + left band) */
+.lg.stn{width:50px;height:16px}   /* two miniature technologies: as drawn (outline = family), then with a lens on (tint + left band) */
 .lg.stn svg{display:block}
 .lg.badges{width:18px;height:12px;display:inline-flex;gap:2px;align-items:flex-end}
 .lg.badges b{display:inline-block;width:7px;height:4px;border-radius:1px;background:var(--sc)}

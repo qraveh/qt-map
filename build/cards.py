@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-"""The map's three cards — station, machine, architecture — rendered in Python for the Atlas's record pages (27 Sep 2026).
+"""The map's three cards — technology, machine, architecture — rendered in Python for the Atlas's record pages (27 Sep 2026).
 
 A port of inspect(), inspectMachine() and inspectPath() of build/map_js.py with their helpers (T, vt, fmtT, esc, lk, evGlyph,
-evHTML, machCell, usedByHTML, placeText, isHub / isOffd / isEmpty, the machines' slim form of build_html.mach_slim): the same
+evHTML, machCell, usedByHTML, placeText, isOffd / isEmpty, the machines' slim form of build_html.mach_slim): the same
 texts in both languages, the same blocks in the same order, the same class names, the same numbers and times (JavaScript's
 String(), toFixed, toPrecision and toExponential are reproduced exactly). No JavaScript in the output; every link is a real href:
-    a station       → {base}technology/{id}.html       "Open on the map" → {base}#station-{id}
+    a technology       → {base}technology/{id}.html       "Open on the map" → {base}#station-{id}
     a machine       → {base}machine/{id}.html          "Open on the map" → {base}#machine-{id}
     an architecture → {base}architecture/{pid}.html    "Open on the map" → {base}#architecture-{pid}
-    "Brief →"       → #brief (the brief is on the station's own page); a machine → its own page machine/<id>.html
+    "Brief →"       → #brief (the brief is on the technology's own page); a machine → its own page machine/<id>.html
 What only the live map can do is left out: the drag grip and dock buttons, "clear machine", the lens-row highlight and the hints
 that describe clicks on the map (the "Used by" hint keeps its other clauses). EXTRAS (default True) adds what the spec lists
 beyond the map's cards: the machine's access, codes, flags and standard records, and the summary and evidence of its gap / none /
@@ -35,11 +35,9 @@ FAMN = {'SC': ('superconducting circuits', 'сверхпроводниковые
         'SPIN': ('semiconductor spins', 'полупроводниковые спины'), 'DEFECT': ('defect spins', 'дефектные спины'),
         'TOPO': ('topological', 'топологические'), 'ANNEAL': ('quantum annealers', 'квантовый отжиг')}
 MACH_FAMILIES = ['SC', 'ION', 'ATOM', 'PHOTON', 'SPIN', 'DEFECT', 'TOPO', 'ANNEAL']
-HUBDEF = ('a station that stations of at least two families (or one family, recently) require — where a fix or a stall propagates across platforms',
-          'станция, которую требуют станции как минимум двух семейств (или одного — недавно): где исправление или застой распространяются на другие платформы')
-OFFDEF = ('a station that takes a trait from the other side of the natural/fabricated divide (see §7.6)',
-          'станция, берущая свойство с другой стороны раздела естественное/изготовленное (см. §7.6)')
-EMPTYDEF = ('a station with no demonstrated technology yet', 'станция, для которой технологии ещё нет')
+OFFDEF = ('a technology that takes a trait from the other side of the natural/fabricated divide (see §7.5)',
+          'технология, берущая свойство с другой стороны раздела естественное/изготовленное (см. §7.5)')
+EMPTYDEF = ('a technology with no demonstrated technology yet', 'технология, для которой технологии ещё нет')
 PLACES = ['RT', '4K', 'mK', 'none']   # CATS.place
 EVG = (('figure', '▣'), ('whitepaper', '▥'), ('paper', '▤'), ('vendor', '▦'), ('datasheet', '▧'), ('press', '▨'))
 NA_T = {'none': ('none — nothing in this layer', 'none — в этом слое ничего нет'),
@@ -242,7 +240,7 @@ def _mli(L, mid, base, role, tail=''):
 
 # ---------- machines: the cells of machines.json as mach_slim reads them
 def _cells(m, k):
-    """(stations, gaps, nones) of layer k: full cells; a gap's node starts with ∅, none / undisclosed are cell values"""
+    """(technologies, gaps, nones) of layer k: full cells; a gap's node starts with ∅, none / undisclosed are cell values"""
     st, gp, na = [], [], []
     for c in (m.get('layers') or {}).get(k, []):
         node = str(c['node'])
@@ -256,7 +254,7 @@ def _tup(c):
 
 
 def _mcell(m, nid):
-    """machCell: the machine's station cell on that station's layer"""
+    """machCell: the machine's technology cell on that technology's layer"""
     n = NODE.get(nid)
     if not n: return None
     return next((_tup(c) for c in _cells(m, str(n['layer']))[0] if c['node'] == nid), None)
@@ -292,7 +290,7 @@ def _used_by(L, n, base):
     return '<div class="space useby"><h4>%s</h4><ul class="useby">%s</ul><div class="empty" style="margin-top:4px">%s</div></div>' % (head, groups, t(*USEBY_HINT))
 
 
-# ---------- standard records (the station card's form; a machine's records have no grade tag and often no text)
+# ---------- standard records (the technology card's form; a machine's records have no grade tag and often no text)
 def _rec_val(L, r, machine):
     num, unit = r.get('num'), r.get('unit')
     if num is None: return '<span class="empty">%s</span>' % esc(T(L, 'not published', 'не опубликовано'))
@@ -314,7 +312,7 @@ def _records(L, recs, machine=False):
     return '<div class="space"><h4>%s</h4>%s</div>' % (esc(T(L, 'Standard records', 'Стандартные рекорды')), ''.join(out))
 
 
-# ---------- helpers of the station card
+# ---------- helpers of the technology card
 def _fam(nid):
     ps = PRIM.get(nid, []) + ALT.get(nid, [])
     return PATH[ps[0]]['family'] if ps else None
@@ -344,7 +342,7 @@ def _key_label(sid, num):
 def _wrap(kind, parts): return '<section class="card card-%s">%s</section>' % (kind, '\n'.join(p for p in parts if p))
 
 
-# ---------- the station card (inspect)
+# ---------- the technology card (inspect)
 def station_card_html(nid, lang, base=''):
     L, n = lang, NODE[nid]; t = lambda en, ru: esc(T(L, en, ru)); c = n.get('c'); b = n.get('b') or {}; e = n.get('e') or {}
     rows = [(T(L, '(a) carrier affinity', '(a) сродство носителя'), vt(L, 'AFF', n['aff'])),
@@ -357,13 +355,6 @@ def station_card_html(nid, lang, base=''):
             (T(L, '(f) error structure', '(f) структура ошибки'), ', '.join(vt(L, 'ERR', x) for x in n['f'])),
             (T(L, '(g) manufacturing', '(g) производство'), vt(L, 'FAB', n['g']))]
     marks = []
-    if n.get('hub'):
-        own = _fam(nid); names = [f for f in n.get('reach') or [] if f != own]
-        N = n['reach_degree'] if n.get('reach_degree') is not None else len(names)
-        if len(names) != N: names = n.get('reach') or []
-        marks.append('<div><span class="flag hub" title="%s">◎ %s</span> — %s %s %s (%s)</div>' % (
-            ea(T(L, *HUBDEF)), t('hub', 'хаб'), t('required by stations of', 'требуется станциям'), js_str(N),
-            t('family' if N == 1 else 'families', 'семейства' if N == 1 else 'семейств'), esc(', '.join(T(L, *FAMN.get(f, (f, f))) for f in names))))
     if n.get('offdiag'):
         marks.append('<div><span class="flag off" title="%s">⤢ %s</span> — %s</div>' % (ea(T(L, *OFFDEF)), t('off-diagonal', 'внедиагональная'),
                                                                                      esc('; '.join(vt(L, 'OFFDIAG', o) for o in n['offdiag']))))
@@ -457,7 +448,7 @@ def machine_card_html(mid, lang, base=''):
             t('architecture', 'архитектура'), _arch(base, pid, L) if pid in PATH else esc(pid),
             _maplink(base, 'machine', mid, L)),
         ('<div class="space"><h4>%s</h4>%s</div>' % (t("Register profile — the machine's variant of its architecture", 'Профиль реестра — вариант архитектуры у этой машины (поля реестра — на английском)'), prof)) if prof else '',
-        '<div class="space"><h4>%s</h4><table class="ptab mtab">%s</table></div>' % (t("Stations by layer — the machine's cell per layer", 'Станции по слоям — ячейка машины на каждом слое'), rows),
+        '<div class="space"><h4>%s</h4><table class="ptab mtab">%s</table></div>' % (t("Technologies by layer — the machine's cell per layer", 'Технологии по слоям — ячейка машины на каждом слое'), rows),
         _records(L, m['records'], True) if EXTRAS and m.get('records') else '',
         '<div class="mfoot"><span>%s: ✅ %s / %s</span></div>' % (t('evidence', 'источники'), js_str(ec.get('verified', 0)), js_str(ec.get('total', 0)))])
 
@@ -479,13 +470,13 @@ def architecture_card_html(pid, lang, base=''):
         if not xs: return ''
         return '<div><span class="tk">%s %s · %d</span></div>' % (glyph, head, len(xs)) + ''.join(
             '<div class="rel requires">%s <span class="empty">%s</span> %s%s</div>' % (
-                nm(e['dst']), t('is the usual route for', 'обычно служит станции') if e.get('strength') == 'soft' else t('is needed by', 'требуется станции'), nm(e['src']),
+                nm(e['dst']), t('is the usual route for', 'обычно служит технологии') if e.get('strength') == 'soft' else t('is needed by', 'требуется технологии'), nm(e['src']),
                 (' <span class="empty">(%s)</span>' % t('or an alternative', 'или альтернатива')) if e.get('any') else '') if typ == 'requires' else
             '<div class="rel %s">%s <span class="empty">%s</span> %s%s</div>' % (
                 ea(e['type']), nm(e['src']), t('alternative to', 'альтернатива для') if typ == 'replaces' else t('conflicts with', 'конфликтует с'), nm(e['dst']),
                 (' <span class="empty">· %s</span>' % esc(vt(L, 'CONSTAT', e['status']))) if typ == 'conflicts' and e.get('status') else '') for e in xs)
     rel_html = (rel_rows('requires', t('dependencies', 'зависимости'), '→') + rel_rows('conflicts', t('conflicts', 'конфликты'), '✕') +
-                rel_rows('replaces', t('alternatives', 'альтернативы'), '⇄')) if rel else '<div class="empty">%s</div>' % t('no recorded relations among these stations', 'между этими станциями связей не записано')
+                rel_rows('replaces', t('alternatives', 'альтернативы'), '⇄')) if rel else '<div class="empty">%s</div>' % t('no recorded relations among these technologies', 'между этими технологиями связей не записано')
     lim = R.get('limiter')
     clocks = ('<dt>%s</dt><dd><b>%s</b>%s</dd>' % (t('syndrome round', 'раунд синдрома'), fS(R.get('total')), (' · %s: %s · %s %s%s' % (
         t('limiter', 'ограничитель'), esc(T(L, *pn.get(lim, (_s(lim), _s(lim))))), t('round of', 'раунд кода'), esc(R.get('code') or ''),
@@ -509,16 +500,16 @@ def architecture_card_html(pid, lang, base=''):
             '<ul class="useby">%s</ul><div class="empty" style="margin-top:4px">%s</div>' % (''.join(_mli(L, i, base, '') for i in mids), t(*USEBY_HINT))) if mids else '')
     return _wrap('architecture', [
         '<h3><i class="sw" style="--c:%s"></i> %s</h3>' % (FAMC.get(p['family']), esc(p[L])),
-        '<div class="meta">%s · %s · %s</div>' % (t('architecture', 'архитектура'), esc(pid), ('10 layers · %d stations counting alternates' % len(members)) if L == 'en' else ('10 слоёв · %d %s с учётом альтернатив' % (len(members), regvocab.ru_plural(len(members), regvocab.PLURAL['stations'])))),
+        '<div class="meta">%s · %s · %s</div>' % (t('architecture', 'архитектура'), esc(pid), ('10 layers · %d technologies counting alternates' % len(members)) if L == 'en' else ('10 слоёв · %d %s с учётом альтернатив' % (len(members), regvocab.ru_plural(len(members), regvocab.PLURAL['stations'])))),
         '<div class="mlinks">%s</div>' % _maplink(base, 'architecture', pid, L),
         '<div class="space"><h4>%s</h4><div>%s</div><div class="empty">%s: %s</div></div>' % (t('Actors & goals', 'Акторы и цели'), esc(p.get('actors')), t('goals', 'цели'), esc(p.get('goals'))),
         '<div class="space"><h4>%s</h4><dl>%s</dl><div class="empty" style="margin-top:4px">%s</div></div>' % (t('Derived clocks', 'Выведенные такты'), clocks, t(
             "t_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — a sum of the round's phases, from the code node, the attributes and the standard records; the measured cycle is the check.",
             't_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — сумма фаз раунда из узла кода, атрибутов и стандартных рекордов; измеренный цикл — проверка.')),
-        '<div class="space"><h4>%s</h4><table class="ptab">%s</table></div>' % (t('Stations by layer — primary, then alternates', 'Станции по слоям — основная, затем альтернативы'), rows),
+        '<div class="space"><h4>%s</h4><table class="ptab">%s</table></div>' % (t('Technologies by layer — primary, then alternates', 'Технологии по слоям — основная, затем альтернативы'), rows),
         '<div class="space"><h4>%s</h4>%s</div>' % (t('Relations within the architecture', 'Связи внутри архитектуры'), rel_html),
-        '<div class="space"><h4>%s</h4><div>◎ %s: %s</div><div>⤢ %s: %s</div><div>∅ %s: %s</div></div>' % (
-            t('Reading', 'Чтение'), t('hubs', 'хабы'), rd([i for i in members if NODE[i].get('hub')]), t('off-diagonal', 'внедиагональные'),
+        '<div class="space"><h4>%s</h4><div>⤢ %s: %s</div><div>∅ %s: %s</div></div>' % (
+            t('Reading', 'Чтение'), t('off-diagonal', 'внедиагональные'),
             rd([i for i in members if NODE[i].get('offdiag')]), t('empty slots', 'пустые слоты'), rd([i for i in members if NODE[i].get('status') == 'X'])),
         ms])
 

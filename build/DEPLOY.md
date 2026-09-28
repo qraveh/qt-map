@@ -47,5 +47,5 @@ Not part of the site: `build/_out/body.html` (a build intermediate) — since 27
 
 ## Later editions
 
-Record URLs carry station, machine and architecture ids. When an id is renamed or a record removed, add a redirect from the old
+Record URLs carry technology, machine and architecture ids. When an id is renamed or a record removed, add a redirect from the old
 address; `build/audit/links_check.py --records` checks the internal links of the new tree before it goes out.

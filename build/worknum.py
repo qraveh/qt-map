@@ -2,7 +2,7 @@
 """Permanent reference numbers — one integer per work, the same everywhere in the Atlas (editor's decision of 26 Sep 2026).
 
 data/work-numbers.json is the table:  {"next": N, "works": [{"n": 54, "ids": [...], "label": "Nee26"}, ...]}
-  n       the number the page prints, in §9, in every technology brief and in the station cards; never reused, never moved
+  n       the number the page prints, in §9, in every technology brief and in the technology cards; never reused, never moved
   ids     the identities the work is known by — doi:…, arxiv:…, u:<normalised url> (strong), t:<title key> (weak, a fallback
           for records that gain a DOI later); a work matched by any strong id, or failing that by its title id, is that work
   label   a BibTeX-alpha mnemonic frozen at entry (Nee26, BGL+25; none for a work without personal authors) — stored for

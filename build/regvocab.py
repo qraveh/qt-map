@@ -35,7 +35,7 @@ FLAGS = {   # the register's caveat slugs on a machine → words (27 Sep 2026: 6
     'analog-only': ('analog operation only', 'только аналоговый режим'), 'unverified-claim': ('unverified claim', 'непроверенное заявление'),
     'annealer-reference-only': ('annealer reference only', 'только ссылка на отжигатель'), 'phase-flip-unpublished': ('phase-flip time unpublished', 'время фазового переворота не опубликовано'),
     'rebutted-claim': ('claim rebutted', 'заявление опровергнуто'), 'roadmap-missed': ('roadmap date missed', 'срок дорожной карты пропущен'),
-    'snippet-only': ('source seen as a snippet only', 'источник виден только фрагментом'), 'code-node-mismatch': ('code and station disagree', 'код и станция не согласуются'),
+    'snippet-only': ('source seen as a snippet only', 'источник виден только фрагментом'), 'code-node-mismatch': ('code and technology disagree', 'код и технология не согласуются'),
     'no-numbers-published': ('no numbers published', 'числа не опубликованы'), 'no-entangling-gate': ('no entangling gate', 'нет перепутывающего гейта'),
     'outlier-claim': ('outlier claim', 'выпадающее заявление'), 'assumption-gap': ('rests on an assumption', 'опирается на допущение'),
     'no-logical-error-rate': ('no logical error rate', 'нет логической ошибки'), 'not-peer-reviewed': ('not peer-reviewed', 'без рецензирования'),
@@ -52,7 +52,7 @@ def flag_words(slug, L):
     return FLAGS.get(slug, (slug.replace('-', ' '), slug.replace('-', ' ')))[0 if L == 'en' else 1]
 PLURAL = {   # Russian plural forms: one, few (2–4), many
     'qubits': ('физический кубит', 'физических кубита', 'физических кубитов'),
-    'stations': ('станция', 'станции', 'станций'),
+    'stations': ('технология', 'технологии', 'технологий'),
     'machines': ('машина', 'машины', 'машин'),
 }
 

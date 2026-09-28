@@ -4,7 +4,7 @@ BRIEF_JS = r"""
 var app=document.getElementById('app');
 var openId=null, prevY=0;
 function sec(id){ return document.getElementById('brief-'+id); }
-// the key-reference chips of every brief header are made at load from window.__KEYREFS (the station cards' records): [n] short year, the IEEE entry as the tooltip
+// the key-reference chips of every brief header are made at load from window.__KEYREFS (the technology cards' records): [n] short year, the IEEE entry as the tooltip
 // load-time work on the page's text, re-run on every block a language fragment brings in (window.__hydrate, 27 Sep 2026)
 var H=(window.__hydrators=window.__hydrators||[]);
 (function(){ var K=window.__KEYREFS||{}; function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }

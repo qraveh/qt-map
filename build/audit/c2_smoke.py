@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """C2 smoke — machines on the Atlas (sync Playwright API). Runs the same script at 1600×1000 and 400×800:
-default 96 stations lit → select google-willow (lit = its non-gap nodes, only path `sc` lit) → requires on (edges only among lit)
-→ click transmon (lit ⊆ machine ∪ {transmon}; station card has "Used by" with ≥ 10 machines) → reset (96 lit, select empty,
+default 96 technologies lit → select google-willow (lit = its non-gap nodes, only path `sc` lit) → requires on (edges only among lit)
+→ click transmon (lit ⊆ machine ∪ {transmon}; technology card has "Used by" with ≥ 10 machines) → reset (96 lit, select empty,
 no altuse) → RU labels. Exit 0 iff every check passes and there are 0 console errors (Google Fonts ERR_TUNNEL ignored)."""
 import json, pathlib, sys
 from playwright.sync_api import sync_playwright
@@ -10,11 +10,11 @@ ROOT = pathlib.Path(__file__).resolve().parents[2]
 PAGE = ROOT / 'dist' / 'Quantum-Technology-Atlas-2026.09.html'
 MACH = json.load(open(ROOT / 'data' / 'machines.json', encoding='utf-8'))
 GRAPH = json.load(open(ROOT / 'data' / 'graph.json', encoding='utf-8'))
-NN = len(GRAPH['nodes']); NP = len(GRAPH['paths']); NM = len(MACH['machines'])          # 110 stations, 17 paths, 153 machines since 26 Sep 2026 — read from the data
+NN = len(GRAPH['nodes']); NP = len(GRAPH['paths']); NM = len(MACH['machines'])          # 110 technologies, 17 paths, 153 machines since 26 Sep 2026 — read from the data
 FAM_COUNT = {f: sum(1 for m in MACH['machines'] if m['family'] == f) for f in ['SC', 'ION', 'ATOM', 'PHOTON', 'SPIN', 'DEFECT', 'TOPO', 'ANNEAL']}
 def place_count(v): return sum(1 for n in GRAPH['nodes'] if v in n['e']['place'])
 PLACE_4K = sorted(n['id'] for n in GRAPH['nodes'] if '4K' in n['e']['place'])
-GLYPH_N = [str(sum(1 for n in GRAPH['nodes'] if n['hub'])), str(sum(1 for n in GRAPH['nodes'] if n['offdiag'])), str(len(GRAPH['empty_status']))]
+GLYPH_N = [str(sum(1 for n in GRAPH['nodes'] if n['offdiag'])), str(len(GRAPH['empty_status']))]
 WILLOW = next(m for m in MACH['machines'] if m['id'] == 'google-willow')
 WILLOW_NODES = {c['node'] for cells in WILLOW['layers'].values() for c in cells if c.get('state', 'station') == 'station'}   # gaps and the cell values none / undisclosed are not nodes
 WILLOW_ALT = {c['node'] for cells in WILLOW['layers'].values() for c in cells if c['role'] == 'alternate' and c.get('state', 'station') == 'station'}
@@ -77,18 +77,18 @@ def run(pw, w, h):
         try:
             loc.scroll_into_view_if_needed(timeout=3000); loc.locator('rect.box').click(timeout=3000)
         except Exception:
-            loc.dispatch_event('click')   # covered by the bottom sheet (≤ 1024 px): fire the click on the station itself
+            loc.dispatch_event('click')   # covered by the bottom sheet (≤ 1024 px): fire the click on the technology itself
         p.wait_for_function("id=>[...document.querySelectorAll('#mapwrap g.station.sel')].some(g=>g.querySelector('text.id').textContent===id)", arg=nid)
 
     print(f'viewport {w}×{h}')
     r = read()
-    check(f'default: {NN} stations lit, {NP} lines, no edges, no machine', len(r['lit']) == NN and len(r['lines']) == NP and not r['edges'] and r['machine'] == '', (len(r['lit']), len(r['lines'])))
+    check(f'default: {NN} technologies lit, {NP} lines, no edges, no machine', len(r['lit']) == NN and len(r['lines']) == NP and not r['edges'] and r['machine'] == '', (len(r['lit']), len(r['lines'])))
     opt = p.evaluate("()=>[...document.querySelectorAll('#machine optgroup')].map(o=>[o.label,o.children.length])")
     check(f'selector: optgroups in family order with {NM} machines', [o[0] for o in opt] == ['superconducting circuits', 'trapped ions', 'neutral atoms', 'photonics', 'semiconductor spins', 'defect spins', 'topological', 'quantum annealers'] and sum(o[1] for o in opt) == NM, opt)
 
     p.select_option('#machine', 'google-willow')
     r = read()
-    check('willow: lit stations == its non-gap nodes', set(r['lit']) == WILLOW_NODES, (sorted(set(r['lit']) ^ WILLOW_NODES)))
+    check('willow: lit technologies == its non-gap nodes', set(r['lit']) == WILLOW_NODES, (sorted(set(r['lit']) ^ WILLOW_NODES)))
     check('willow: only path sc lit', set(r['lines']) == {'sc'}, r['lines'])
     check('willow: altuse == nodes used only as alternate', set(r['altuse']) == WILLOW_ALT, (r['altuse'], sorted(WILLOW_ALT)))
     check('willow: machine card shown (title, page link, evidence footer)', 'Willow' in r['card'] and 'page ↗' in r['card'] and '✅ 14 / 16' in r['card'], r['card'][:120])
@@ -100,15 +100,15 @@ def run(pw, w, h):
 
     p.locator('#tg-req').click()
     r = read()
-    check('requires on: edges drawn, all among lit stations', len(r['edges']) > 0 and all(e[0] in set(r['lit']) and e[1] in set(r['lit']) and e[2] == 'requires' for e in r['edges']), r['edges'][:5])
+    check('requires on: edges drawn, all among lit technologies', len(r['edges']) > 0 and all(e[0] in set(r['lit']) and e[1] in set(r['lit']) and e[2] == 'requires' for e in r['edges']), r['edges'][:5])
 
     click_station('transmon')
     r = read()
     check('transmon focused: lit ⊆ machine ∪ {transmon}', set(r['lit']) <= WILLOW_NODES | {'transmon'}, sorted(set(r['lit']) - WILLOW_NODES))
-    check('transmon focused: station card wins, Used by ≥ 10 machines', 'used by' in r['card'].lower() and r['usedby'] >= 10, (r['usedby'], r['card'][:80]))
+    check('transmon focused: technology card wins, Used by ≥ 10 machines', 'used by' in r['card'].lower() and r['usedby'] >= 10, (r['usedby'], r['card'][:80]))
     check('transmon focused: Used-by names Willow, machine select unchanged', 'Willow' in r['card'] and r['machine'] == 'google-willow')
-    check('transmon focused: edges still among lit stations', all(e[0] in set(r['lit']) and e[1] in set(r['lit']) for e in r['edges']))
-    check('no horizontal overflow with the station card', not r['hscroll'] and not r['inspOver'], (r['hscroll'], r['inspOver']))
+    check('transmon focused: edges still among lit technologies', all(e[0] in set(r['lit']) and e[1] in set(r['lit']) for e in r['edges']))
+    check('no horizontal overflow with the technology card', not r['hscroll'] and not r['inspOver'], (r['hscroll'], r['inspOver']))
 
     p.locator('#tg-reset').click()
     r = read()
@@ -118,7 +118,7 @@ def run(pw, w, h):
     opts = p.evaluate("()=>[...document.querySelectorAll('#lens option')].map(o=>[o.value,o.textContent])")
     check('lens select: 13 options in the editor\'s order, plain EN labels', [o[0] for o in opts] == LENS_ORDER and [o[1] for o in opts] == LENS_EN, opts)
     click_station('code_surface'); r = read()
-    check('code_surface card: hub badge with family count and names', 'reading marks' in r['card'].lower() and '◎ hub — required by stations of 2 families (' in r['card'], r['card'][:300])
+    check('code_surface card: no hub badge (the category was removed on 28 Sep 2026)', 'hub' not in r['card'].lower() and '◎' not in r['card'], r['card'][:300])
     click_station('ct_sfq'); r = read()
     check('ct_sfq card: off-diagonal badge with the flag definition', '⤢ off-diagonal — fabricated carrier + control/decoding in the cold stage' in r['card'], r['card'][:300])
     p.keyboard.press('Escape')
@@ -127,10 +127,10 @@ def run(pw, w, h):
     lv = p.evaluate("()=>[...document.querySelectorAll('#lenslegend [data-lv]')].map(b=>[b.dataset.lv,b.querySelector('.cnt')?b.querySelector('.cnt').textContent:''])")
     check('place lens: values RT / 4K / mK / none with the graph\'s counts, no vac', lv == [['RT', str(place_count('RT'))], ['4K', str(place_count('4K'))], ['mK', str(place_count('mK'))], ['none', str(place_count('none'))]], lv)
     p.locator('#lenslegend [data-lv="4K"]').dispatch_event('click'); r = read()
-    check('place = 4 K stage lights exactly the stations whose place holds 4K (ct_cryocmos, ct_sfq, ro_spd, ic_fanout)', sorted(r['lit']) == PLACE_4K, sorted(r['lit']))
+    check('place = 4 K stage lights exactly the technologies whose place holds 4K (ct_cryocmos, ct_sfq, ro_spd, ic_fanout)', sorted(r['lit']) == PLACE_4K, sorted(r['lit']))
     p.locator('#lenslegend [data-lv="4K"]').dispatch_event('click')
     p.locator('#lenslegend [data-lv="mK"]').dispatch_event('click'); r = read()
-    check(f'place = millikelvin stage lights ct_sfq (and ct_cryocmos), {place_count("mK")} stations', 'ct_sfq' in r['lit'] and 'ct_cryocmos' in r['lit'] and len(r['lit']) == place_count('mK'), sorted(r['lit']))
+    check(f'place = millikelvin stage lights ct_sfq (and ct_cryocmos), {place_count("mK")} technologies', 'ct_sfq' in r['lit'] and 'ct_cryocmos' in r['lit'] and len(r['lit']) == place_count('mK'), sorted(r['lit']))
     click_station('ct_sfq'); r = read()
     check('ct_sfq card: (e) control shows every stage — "microwave @ 4 K stage / millikelvin stage"', 'microwave @ 4 K stage / millikelvin stage' in r['card'], r['card'][:300])
     click_station('ct_cryocmos'); r = read()
@@ -141,8 +141,8 @@ def run(pw, w, h):
     novac = p.evaluate("()=>{const h=document.documentElement.outerHTML; return !document.querySelector('[data-lv=\"vac\"]') && h.indexOf('\"vac\"')<0 && h.indexOf(\"'vac'\")<0 && h.indexOf('@vac')<0 && h.indexOf('in-vacuum integrated')<0;}")
     check('no value "vac" anywhere in the DOM', novac)
     keys = p.evaluate("()=>[...document.querySelectorAll('#glyphlegend [data-glyph]')].map(e=>({k:e.dataset.glyph,n:e.querySelector('.cnt').textContent,title:e.title,role:e.getAttribute('role')}))")
-    check('glyph legend: 3 static keys with counts and definitions, no button role', [k['k'] for k in keys] == ['hub', 'offd', 'empty'] and [k['n'] for k in keys] == GLYPH_N and all(k['title'] and k['role'] is None for k in keys), keys)
-    p.locator('#glyphlegend [data-glyph="hub"]').dispatch_event('click'); r = read()
+    check('glyph legend: 2 static keys with counts and definitions, no button role', [k['k'] for k in keys] == ['offd', 'empty'] and [k['n'] for k in keys] == GLYPH_N and all(k['title'] and k['role'] is None for k in keys), keys)
+    p.locator('#glyphlegend [data-glyph="offd"]').dispatch_event('click'); r = read()
     check('glyph key click: no lens change, nothing dimmed', p.locator('#lens').evaluate('e=>e.value') == 'family' and len(r['lit']) == NN, (p.locator('#lens').evaluate('e=>e.value'), len(r['lit'])))
 
     p.locator('[data-setlang="ru"]').filter(visible=True).first.click()
@@ -177,7 +177,7 @@ TZ = """()=>{
 
 
 def tables(pw, w, h):
-    """Zoom bar for the big tables (editor's review, item 3): §7.2 node table and §7.10 edge list get a bar and are scaled to
+    """Zoom bar for the big tables (editor's review, item 3): §7.2 node table and §7.8 edge list get a bar and are scaled to
     fit, a small table gets none, 1:1 restores scale 1, 60 + Enter gives 0.6, nothing overflows the viewport, 0 console errors."""
     fails, errors = [], []
     b = pw.chromium.launch()
@@ -200,7 +200,7 @@ def tables(pw, w, h):
     r = p.evaluate(TZ)
     check('§7.2 node table: bar present, scaled < 1, fits (no horizontal scroll)', r['node'] and r['node']['bar'] and r['node']['z'] < 1 and r['node']['zoomed'] and r['node']['fits'], r['node'])
     # the edge list has 3 columns and fits its wrapper at 1280 and at 400 px (headers wrap on phones): bar iff big, scaled to fit when big
-    check('§7.10 edge list: bar iff wider than its wrapper; scaled to fit when big', r['edge'] and r['edge']['bar'] == r['edge']['big'] and (not r['edge']['big'] or (r['edge']['z'] < 1 and r['edge']['fits'])), r['edge'])
+    check('§7.8 edge list: bar iff wider than its wrapper; scaled to fit when big', r['edge'] and r['edge']['bar'] == r['edge']['big'] and (not r['edge']['big'] or (r['edge']['z'] < 1 and r['edge']['fits'])), r['edge'])
     check('a small table gets no bar', r['small'] is not None and not r['small']['bar'] and not r['small']['zoomed'], r['small'])
     print(f"  bars with every EN fold open: {r['bars']}")
     nid = p.evaluate("()=>{const h=[...document.querySelectorAll('#app .lang-en h3')].find(x=>x.textContent.startsWith('7.2 ')); return h?h.id:'';}")
@@ -233,7 +233,7 @@ TS = """(sel)=>{ const w=typeof sel==='string'?document.querySelector(sel):sel; 
 
 def sorting(pw, w, h):
     """Sortable tables (editor's review, second batch, brief D): §3.1 Maturity index asc → desc, Platform restores; §7.4 a numeric
-    header twice → descending, ↺ restores; §7.11 the ion T2 row has as many cells as the header, date asc, ↺ restores; the brief
+    header twice → descending, ↺ restores; §7.9 the ion T2 row has as many cells as the header, date asc, ↺ restores; the brief
     index sorts by centrality and restores in both languages; nothing overflows; 0 console errors."""
     fails, errors = [], []
     b = pw.chromium.launch()
@@ -295,21 +295,21 @@ def sorting(pw, w, h):
     click(p.locator(s74).locator('.tsreset').first); r = state(s74)
     check('§7.4: ↺ restores the build order', r['rows'] == o['rows'] and all(x in (None, 'none') for x in r['aria']), [x[0] for x in r['rows']][:3])
     check('§7.4: ↺ sits in the zoom bar iff the table shows one', r['reset']['vis'] and (r['reset']['inZoom'] == bool(p.locator(s74).locator('.tblzoom:not([hidden])').count())), r['reset'])
-    # §7.5 / §7.6 / §7.12 B — tagged, each with ≥ 1 numeric column
-    for k, lab in ((1, '§7.5'), (2, '§7.6'), (3, '§7.12 B')):
+    # §7.5 / §7.10 B — tagged, each with ≥ 1 numeric column
+    for k, lab in ((1, '§7.5'), (2, '§7.10 B')):
         t = p.evaluate(TS, p.locator(s74).nth(k).element_handle())
         check(f'{lab}: ≥ 1 numeric column sortable, first column not', t and sum(t['sortable']) >= 1 and not t['sortable'][0], t and (t['cols'], t['sortable']))
-        if lab == '§7.12 B': check('§7.12 B: T1, T2, 1Q, feed-forward, SPAM columns sortable (sparse columns count non-null cells)', all(t['sortable'][3:8]), t['sortable'])
-    # §7.11 — the ion T2 record row is whole; date asc; ↺ restores
+        if lab == '§7.10 B': check('§7.10 B: T1, T2, 1Q, feed-forward, SPAM columns sortable (sparse columns count non-null cells)', all(t['sortable'][3:8]), t['sortable'])
+    # §7.9 — the ion T2 record row is whole; date asc; ↺ restores
     s711 = EN + 'div.tbl[data-sort="date"]'
     o = state(s711)
     ion = next((r for r in o['rows'] if '4,235' in ' '.join(r)), None)
-    check('§7.11: the ion T2 row has as many cells as the header (|0>,|1> no longer splits it)', ion is not None and len(ion) == len(o['cols']) and '|0>,|1>' in ion[2], ion and (len(ion), len(o['cols'])))
-    check('§7.11: only the Date column is sortable', o['sortable'] == [False, False, False, False, True, False], o['sortable'])
+    check('§7.9: the ion T2 row has as many cells as the header (|0>,|1> no longer splits it)', ion is not None and len(ion) == len(o['cols']) and '|0>,|1>' in ion[2], ion and (len(ion), len(o['cols'])))
+    check('§7.9: only the Date column is sortable', o['sortable'] == [False, False, False, False, True, False], o['sortable'])
     click(hdr(s711, 'Date')); a = state(s711)
-    check('§7.11: date asc → first row date ≤ last, all rows kept', a['rows'][0][4] <= a['rows'][-1][4] and len(a['rows']) == len(o['rows']) and a['aria'][4] == 'ascending', (a['rows'][0][4], a['rows'][-1][4]))
+    check('§7.9: date asc → first row date ≤ last, all rows kept', a['rows'][0][4] <= a['rows'][-1][4] and len(a['rows']) == len(o['rows']) and a['aria'][4] == 'ascending', (a['rows'][0][4], a['rows'][-1][4]))
     click(p.locator(s711).locator('.tsreset').first); r = state(s711)
-    check('§7.11: ↺ restores the build order', r['rows'] == o['rows'], [x[0] for x in r['rows']][:3])
+    check('§7.9: ↺ restores the build order', r['rows'] == o['rows'], [x[0] for x in r['rows']][:3])
     # brief index — centrality asc/desc, ↺ restores, both languages
     for lang in ('en', 'ru'):
         if lang == 'ru':
@@ -396,7 +396,7 @@ def chapter8(pw, w, h):
 def laptop(pw):
     """Editor's screenshot of 20 Sep (laptop, OS scaling → ~1000 CSS px): a mouse laptop keeps the floating card (no bottom sheet), the card
     drags by its grip; a phone-width sheet resizes by dragging its grip and remembers the height; a machine clicked in "Used by" becomes the
-    selection (machine card, its stations lit) and the map is scrolled into view; a double click does not undo it; a fitted map stays fitted
+    selection (machine card, its technologies lit) and the map is scrolled into view; a double click does not undo it; a fitted map stays fitted
     across a resize and the page keeps room for the sheet; 0 console errors."""
     fails, errors = [], []
     b = pw.chromium.launch()
@@ -421,9 +421,9 @@ def laptop(pw):
     n = p.evaluate("()=>document.querySelectorAll('#insp [data-mach]').length")
     first = p.evaluate("()=>{const a=document.querySelector('#insp [data-mach]'); return a?[a.dataset.mach,a.textContent]:null;}")
     p.locator('#insp [data-mach]').first.click(); p.wait_for_timeout(1200); s2 = p.evaluate(STATE)
-    check('"Used by" click: the machine is selected, its card shows, its stations are lit', n >= 1 and s2['machine'] == first[0] and first[1].strip()[:20] in s2['title'] and 0 < s2['lit'] < NN, (first, s2['machine'], s2['title'][:40], s2['lit']))
+    check('"Used by" click: the machine is selected, its card shows, its technologies are lit', n >= 1 and s2['machine'] == first[0] and first[1].strip()[:20] in s2['title'] and 0 < s2['lit'] < NN, (first, s2['machine'], s2['title'][:40], s2['lit']))
     check('"Used by" click: the map is in view', s2['mapBottom'] > 120 and s2['mapTop'] < s2['vh'] * 0.6, (s2['mapTop'], s2['mapBottom'], s2['vh']))
-    # double click on a machine link inside a station card must not undo the selection
+    # double click on a machine link inside a technology card must not undo the selection
     p.evaluate(CLICK, 'enc_dualrail'); p.wait_for_timeout(400)
     tgt = p.evaluate("()=>{const a=document.querySelector('#insp [data-mach]'); return a?a.dataset.mach:null;}")
     if tgt:
@@ -456,8 +456,8 @@ def laptop(pw):
 
 
 def selections(pw):
-    """Editor's reproduction of 21 Sep: click the trapped-ions line, then the dual-rail station — the superconducting path was missing
-    (the lit set was the empty intersection of an isolated path and a station off it). Adjudication 12: a selection that cannot share a line
+    """Editor's reproduction of 21 Sep: click the trapped-ions line, then the dual-rail technology — the superconducting path was missing
+    (the lit set was the empty intersection of an isolated path and a technology off it). Adjudication 12: a selection that cannot share a line
     with an older selection releases it. Checks the three pairings in both orders at 1280×800; 0 console errors."""
     fails, errors = [], []
     b = pw.chromium.launch(); ctx = b.new_context(viewport={'width': 1280, 'height': 800}); p = ctx.new_page()
@@ -481,26 +481,26 @@ def selections(pw):
     check('click on the trapped-ions line isolates it', r0['lines'] == [ion] and pressed() == [ion], (r0['lines'], pressed()))
     p.evaluate(CLICK, 'enc_dualrail'); p.wait_for_timeout(400); r1 = rd()
     check('then click on dual-rail: its paths are lit, the ion isolate is released', set(r1['lines']) == dual_paths and pressed() == [] and 'enc_dualrail' in r1['lit'], (r1['lines'], pressed()))
-    check('… and the station card shows', 'dual-rail' in r1['card'].lower() or 'dual' in r1['card'].lower(), r1['card'][:60])
+    check('… and the technology card shows', 'dual-rail' in r1['card'].lower() or 'dual' in r1['card'].lower(), r1['card'][:60])
     # 2. mirror: focus dual-rail, then isolate the ion path -> the focus is released, the ion path stands alone with its card
     p.keyboard.press('Escape'); p.wait_for_timeout(200); p.evaluate(CLICK, 'enc_dualrail'); p.wait_for_timeout(300)
     p.evaluate(LINE, ion); p.wait_for_timeout(400); r2 = rd(); sel = p.evaluate("()=>[...document.querySelectorAll('#mapwrap g.station.sel')].length")
     check('focus dual-rail, then isolate the ion path: the focus is released, the ion line stands alone', r2['lines'] == [ion] and sel == 0 and pressed() == [ion], (r2['lines'], sel, pressed()))
-    # 3. compatible pair keeps the intersection: a station on the isolated path
+    # 3. compatible pair keeps the intersection: a technology on the isolated path
     on_ion = slots[ion][0]
     p.evaluate(CLICK, on_ion); p.wait_for_timeout(300); r3 = rd()
-    check('a station on the isolated path keeps the isolate (intersection)', r3['lines'] == [ion] and pressed() == [ion] and on_ion in r3['lit'], (r3['lines'], pressed()))
+    check('a technology on the isolated path keeps the isolate (intersection)', r3['lines'] == [ion] and pressed() == [ion] and on_ion in r3['lit'], (r3['lines'], pressed()))
     # 4. machine x isolate: a superconducting machine chosen while the ion path is isolated releases the isolate
     p.select_option('#machine', 'google-willow'); p.wait_for_timeout(400); r4 = rd()
     check('a machine on another path releases the isolate', r4['lines'] == [WILLOW['map_path']] and pressed() == [] and r4['machine'] == 'google-willow', (r4['lines'], pressed(), r4['machine']))
     p.evaluate(LINE, ion); p.wait_for_timeout(400); r5 = rd()
     check('isolating another path releases the machine', r5['lines'] == [ion] and r5['machine'] == '' and pressed() == [ion], (r5['lines'], r5['machine']))
-    # 5. machine x focus: a station off the machine's path releases the machine; one on it keeps it
+    # 5. machine x focus: a technology off the machine's path releases the machine; one on it keeps it
     p.click('#tg-reset'); p.wait_for_timeout(300); p.select_option('#machine', 'google-willow'); p.wait_for_timeout(300)
     p.evaluate(CLICK, 'transmon'); p.wait_for_timeout(300); r6 = rd()
-    check('a station on the machine\'s path keeps the machine', r6['machine'] == 'google-willow' and r6['lines'] == [WILLOW['map_path']], (r6['machine'], r6['lines']))
+    check('a technology on the machine\'s path keeps the machine', r6['machine'] == 'google-willow' and r6['lines'] == [WILLOW['map_path']], (r6['machine'], r6['lines']))
     p.evaluate(CLICK, 'ae_atom'); p.wait_for_timeout(300); r7 = rd()
-    check('a station off the machine\'s path releases the machine and lights its own paths', r7['machine'] == '' and len(r7['lines']) >= 1 and WILLOW['map_path'] not in r7['lines'] and 'ae_atom' in r7['lit'], (r7['machine'], r7['lines']))
+    check('a technology off the machine\'s path releases the machine and lights its own paths', r7['machine'] == '' and len(r7['lines']) >= 1 and WILLOW['map_path'] not in r7['lines'] and 'ae_atom' in r7['lit'], (r7['machine'], r7['lines']))
     ctx.close(); b.close()
     errs = [e for e in errors if not ('fonts.g' in e and ('ERR_TUNNEL' in e or 'net::' in e)) and 'ERR_TUNNEL' not in e]
     check('0 console errors', not errs, errs[:3])
@@ -584,8 +584,8 @@ def review23b(pw):
     check('the choice survives a reload', not p.evaluate("()=>document.getElementById('mapbar').classList.contains('collapsed')"))
     au = p.evaluate("()=>{const p=document.querySelector('.mast .author'); const a=p.querySelector('a.orcid'); return {text:p.textContent.replace(/\\s+/g,' ').trim(), icon:!!a&&!!a.querySelector('svg')&&!a.textContent.trim(), href:a?a.href:'', title:a?a.title:''};}")
     check('ORCID: the icon is the link, no text, no separator before it', au['icon'] and au['href'] == 'https://orcid.org/0000-0001-7362-9529' and au['text'].endswith('Raveh Neeman') and 'orcid.org' in au['title'], au)
-    ld = p.evaluate("()=>{const l=document.querySelector('#mapbody .maplead'); const lg=document.querySelector('#mapbody .legend'); return {below:!!l&&!!lg&&(lg.compareDocumentPosition(l)&Node.DOCUMENT_POSITION_FOLLOWING)>0, top:!!document.querySelector('.mapsec .lead'), links:[...(l?l.querySelectorAll('.lang-en a.xref'):[])].map(a=>a.getAttribute('href')), hub:/hub/.test(l?l.textContent:''), transfer:/transfer hub/.test(l?l.textContent:'')};}")
-    check('the caption sits below the map, none above, §-links resolve, "transfer hub" gone', ld['below'] and not ld['top'] and ld['links'] == ['#en-s7-6', '#en-s7'] and ld['hub'] and not ld['transfer'], ld)
+    ld = p.evaluate("()=>{const l=document.querySelector('#mapbody .maplead'); const lg=document.querySelector('#mapbody .legend'); return {below:!!l&&!!lg&&(lg.compareDocumentPosition(l)&Node.DOCUMENT_POSITION_FOLLOWING)>0, top:!!document.querySelector('.mapsec .lead'), links:[...(l?l.querySelectorAll('.lang-en a.xref'):[])].map(a=>a.getAttribute('href')), hub:/\\bhubs?\\b/.test(l?l.textContent:''), transfer:/transfer hub/.test(l?l.textContent:'')};}")
+    check('the caption sits below the map, none above, §-links resolve, no "hub"', ld['below'] and not ld['top'] and ld['links'] == ['#en-s7-5', '#en-s7'] and not ld['hub'] and not ld['transfer'], ld)
     rf = p.evaluate("()=>{const ol=document.querySelector('.secbody[data-sec=\"en-s9\"] ol.refs'); const li=ol?[...ol.querySelectorAll('li')]:[]; const cites=[...document.querySelectorAll('.prose.lang-en a.cite')]; return {n:li.length, first:li[0]?li[0].textContent.slice(0,40):'', numeric:cites.length>100&&cites.every(a=>/^\\[\\d+\\]$/.test(a.textContent)), resolve:cites.every(a=>document.getElementById(a.getAttribute('href').slice(1))), codes:/\\[[A-Z]{1,2}\\d{1,3}\\]/.test(document.querySelector('.prose.lang-en').textContent)};}")
     check('§9 is one numbered IEEE list; every citation is a number that resolves; no code left in the text', rf['n'] > 190 and rf['first'].startswith('[1]') and rf['numeric'] and rf['resolve'] and not rf['codes'], rf)
     t85 = p.evaluate("()=>{const a=document.getElementById('en-f1a'); const td=a.closest('td'); const r=a.getBoundingClientRect(); return {h:r.height, one:r.height<30, w:td.getBoundingClientRect().width};}")
@@ -663,14 +663,14 @@ def strip(pw):
     check('axes are drawn above the lines (ticks clickable)', r0['order'])
     check('the (e) axis carries all ten modality@stage rows', r0['eRows'] == 10, r0['eRows'])
     p.click('#pathchips .chip[data-chip-path="ion_qccd"]'); p.wait_for_timeout(300); r1 = p.evaluate(R)
-    check('isolated path: the strip dims exactly the map\'s dimmed stations', r1['dimEq'], r1)
+    check('isolated path: the strip dims exactly the map\'s dimmed technologies', r1['dimEq'], r1)
     p.select_option('#machine', 'google-willow'); p.wait_for_timeout(300); r2 = p.evaluate(R)
     check('machine: dim and dashed (alternate-use) lines follow the map', r2['dimEq'] and r2['altEq'], r2)
     p.evaluate("window.__selectNode('transmon')"); p.wait_for_timeout(300); r3 = p.evaluate(R)
-    check('focus: the thick line is the selected station', r3['hi'] == ['transmon'] and r3['sel'] == ['transmon'], (r3['hi'], r3['sel']))
+    check('focus: the thick line is the selected technology', r3['hi'] == ['transmon'] and r3['sel'] == ['transmon'], (r3['hi'], r3['sel']))
     p.click('#tg-reset'); p.wait_for_timeout(200)
     p.click('#pc text.t[data-lens="f"]'); p.wait_for_timeout(300); r4 = p.evaluate(R)
-    check('axis title (f) selects the error lens and marks the axis; colours mirror the stations', r4['lens'] == 'f' and r4['axis'] == ['f'] and r4['strokeEq'], r4)
+    check('axis title (f) selects the error lens and marks the axis; colours mirror the technologies', r4['lens'] == 'f' and r4['axis'] == ['f'] and r4['strokeEq'], r4)
     p.click('#pc text.tick[data-lens="f"][data-lv="erasure"]'); p.wait_for_timeout(300); r5 = p.evaluate(R)
     check('a tick presses the value in the legend and on the axis, and filters the map', r5['legend'] == ['erasure'] and r5['pressed'] == ['f=erasure'] and r5['dimEq'], r5)
     p.click('#pc text.tick[data-lens="f"][data-lv="leak"]', modifiers=['Control']); p.wait_for_timeout(300); r6 = p.evaluate(R)
@@ -680,18 +680,18 @@ def strip(pw):
     p.click('#pc text.t[data-lens="mod"]'); p.wait_for_timeout(300); r7b = p.evaluate(R)
     check('the title of the chosen lens\'s axis clears its filter (the lens with no filter)', r7b['lens'] == 'mod' and r7b['legend'] == [] and r7b['pressed'] == [] and r7b['axis'] == ['e'], r7b)
     p.click('#pc text.tick[data-lens="time"][data-lv="none"]'); p.wait_for_timeout(300); r7c = p.evaluate(R)
-    check('the (b) axis has a "—" tick for stations without a time value, and it filters the time lens', r7c['lens'] == 'time' and r7c['legend'] == ['none'] and r7c['pressed'] == ['time=none'] and r7c['dimEq'], r7c)
+    check('the (b) axis has a "—" tick for technologies without a time value, and it filters the time lens', r7c['lens'] == 'time' and r7c['legend'] == ['none'] and r7c['pressed'] == ['time=none'] and r7c['dimEq'], r7c)
     p.evaluate("()=>{const l=document.querySelector('#pc path.pcline[data-node=\"ion\"]'); l.dispatchEvent(new MouseEvent('mouseenter'));}"); p.wait_for_timeout(100)
     hv = p.evaluate("()=>({st:[...document.querySelectorAll('#mapwrap g.station.hover')].map(g=>g.querySelector('text.id').textContent), ln:[...document.querySelectorAll('#pc path.pcline.hover')].map(l=>l.dataset.node), label:document.querySelector('#pc svg > text').textContent})")
-    check('hovering a line lights its station and names it', hv['st'] == ['ion'] and hv['ln'] == ['ion'] and hv['label'] != '', hv)
+    check('hovering a line lights its technology and names it', hv['st'] == ['ion'] and hv['ln'] == ['ion'] and hv['label'] != '', hv)
     p.evaluate("()=>{const l=document.querySelector('#pc path.pcline[data-node=\"ion\"]'); l.dispatchEvent(new MouseEvent('mouseleave'));}"); p.wait_for_timeout(100)
     p.evaluate("()=>{const g=[...document.querySelectorAll('#mapwrap g.station')].find(x=>x.querySelector('text.id').textContent==='alkali'); g.dispatchEvent(new MouseEvent('mouseenter'));}"); p.wait_for_timeout(100)
     hv2 = p.evaluate("()=>[...document.querySelectorAll('#pc path.pcline.hover')].map(l=>l.dataset.node)")
-    check('hovering a station lights its line', hv2 == ['alkali'], hv2)
+    check('hovering a technology lights its line', hv2 == ['alkali'], hv2)
     p.evaluate("()=>{const g=[...document.querySelectorAll('#mapwrap g.station')].find(x=>x.querySelector('text.id').textContent==='alkali'); g.dispatchEvent(new MouseEvent('mouseleave'));}")
     p.click('#tg-reset'); p.wait_for_timeout(200)
     p.evaluate("()=>{const l=document.querySelector('#pc path.pcline[data-node=\"ct_sfq\"]'); l.dispatchEvent(new MouseEvent('click',{bubbles:true}));}"); p.wait_for_timeout(400); r8 = p.evaluate(R)
-    check('clicking a line selects the station on the map', r8['sel'] == ['ct_sfq'] and r8['hi'] == ['ct_sfq'], (r8['sel'], r8['hi']))
+    check('clicking a line selects the technology on the map', r8['sel'] == ['ct_sfq'] and r8['hi'] == ['ct_sfq'], (r8['sel'], r8['hi']))
     p.click('.mast .seg [data-setlang="ru"]'); p.wait_for_timeout(400)
     check('a language switch relabels the axes', p.evaluate("()=>document.querySelector('#pc text.t[data-lens=\"aff\"]').textContent") == '(a) носитель')
     p.click('.mast .seg [data-setlang="en"]'); p.wait_for_timeout(200)

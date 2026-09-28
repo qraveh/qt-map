@@ -83,7 +83,7 @@
   "scope": "all",
   "en": "Nothing to place here: either the machine runs something the map has no entry for, or it discloses nothing at this layer",
   "ru": "Ставить нечего: либо машина использует то, чего на карте нет, либо она ничего не раскрывает на этом слое",
-  "src": "§7.12",
+  "src": "§7.10",
   "why": "A blank could mean 'none' or 'unknown'; this mark covers both and the reader should not guess which"
  },
  {
@@ -353,34 +353,6 @@
   ]
  },
  {
-  "id": "station",
-  "match": [
-   "station",
-   "stations"
-  ],
-  "match_ru": [
-   "станция",
-   "станции",
-   "станций",
-   "станцию",
-   "станцией",
-   "Станция",
-   "Станции"
-  ],
-  "scope": "first",
-  "en": "One technology as the map draws it — a dot on a platform's line; in the graph chapter the same thing is a node",
-  "ru": "Одна технология в том виде, как её рисует карта, — точка на линии платформы; в главе о графе то же самое называется узлом",
-  "src": "About / §7.1 / §8",
-  "why": "The map renames technology twice (station, node); a reader who missed that renaming reads three subjects instead of one",
-  "variants": [
-   {
-    "until": "1",
-    "en": "One technology, drawn as a dot on the map: the map calls a technology a station because platforms are drawn as lines running through them, one technology per stack layer",
-    "ru": "Одна технология, нарисованная точкой на карте: платформы проведены линиями через такие точки, по одной технологии на слой стека — отсюда слово «станция»"
-   }
-  ]
- },
- {
   "id": "path",
   "match": [
    "architecture",
@@ -484,7 +456,7 @@
   "scope": "first",
   "en": "A view that recolours every technology on the map by one property at a time, with its legend doubling as a filter",
   "ru": "Режим, в котором карта перекрашивает каждую технологию по одному свойству, а легенда служит фильтром",
-  "src": "About / §7.9",
+  "src": "About / §7.7",
   "why": "Names a control of the interactive map, not a concept; without it the word sounds metaphorical",
   "only": [
    "0",
@@ -505,7 +477,7 @@
   "scope": "first",
   "en": "Showing one platform's line alone: its technologies stay lit, everything else dims",
   "ru": "Показ одной линии платформы отдельно: её технологии остаются яркими, остальное гаснет",
-  "src": "About / §7.12",
+  "src": "About / §7.10",
   "why": "A verb used as the name of a map control; the reader meets it inside a rule about what is lit",
   "only": [
    "0",
@@ -525,7 +497,7 @@
   "scope": "first",
   "en": "Selecting one technology so the map draws the edges that touch it — what it needs, what can replace it, what it collides with",
   "ru": "Выбор одной технологии, при котором карта рисует её рёбра: что ей нужно, чем её заменить, с чем она конфликтует",
-  "src": "About / §7.9 / §7.12",
+  "src": "About / §7.7 / §7.10",
   "why": "Named as a term in the intersection rule; without it that rule reads as three unexplained switches",
   "only": [
    "0",
@@ -545,8 +517,8 @@
   "scope": "first",
   "en": "The control that lights the technologies one registered machine actually uses and marks the layers where it uses something the map has no entry for",
   "ru": "Управление, подсвечивающее технологии, которые реально использует выбранная машина, и помечающее слои, где она использует то, чего на карте нет",
-  "src": "§7.12",
-  "why": "Capitalised like a proper name in §7.12; a reader who never opened the interactive map needs to know it is a button",
+  "src": "§7.10",
+  "why": "Capitalised like a proper name in §7.10; a reader who never opened the interactive map needs to know it is a button",
   "only": [
    "0",
    "7"
@@ -564,8 +536,8 @@
   "scope": "first",
   "en": "A technology several platform lines run through — the metro-map reading of a shared choice",
   "ru": "Технология, через которую проходит несколько линий платформ, — метро-прочтение общего выбора",
-  "src": "About / §7.9 / §7.12",
-  "why": "Metro vocabulary used without restating it in §7.12, where it decides what focus shows",
+  "src": "About / §7.7 / §7.10",
+  "why": "Metro vocabulary used without restating it in §7.10, where it decides what focus shows",
   "only": [
    "0",
    "7"
@@ -584,7 +556,7 @@
   "scope": "first",
   "en": "The band under the map that draws all {{N_NODES}} technologies at once, each as a line across the seven attributes, so outliers stand out",
   "ru": "Полоса под картой, рисующая все {{N_NODES}} технологий сразу — каждую линией по семи атрибутам, так что выбросы видны",
-  "src": "About / §7.9",
+  "src": "About / §7.7",
   "why": "Mentioned in About as if the reader has the map in front of them; many are reading the text alone",
   "only": [
    "0",
@@ -712,8 +684,8 @@
    "off-diagonal"
   ],
   "scope": "first",
-  "en": "A technology that breaks the usual pairing of properties — say a natural carrier driven by microwaves — which is where the interesting engineering sits",
-  "ru": "Технология, ломающая обычное сочетание свойств — например, естественный носитель под микроволновым управлением; там и сидит интересная инженерия",
+  "en": "A technology that breaks the usual pairing of properties — say a natural carrier driven by microwaves",
+  "ru": "Технология, ломающая обычное сочетание свойств — например, естественный носитель под микроволновым управлением",
   "src": "§7.1",
   "why": "The map's own coinage, borrowed from matrix language; it names a finding, not a position on a chart",
   "variants": [
@@ -721,30 +693,6 @@
     "until": "7",
     "en": "A technology that breaks the usual pairing of properties: natural carriers normally come with optical control and slow readout, fabricated ones with wiring and fast readout — this one mixes the two halves",
     "ru": "Технология, ломающая обычное сочетание свойств: у естественных носителей обычно оптическое управление и медленное считывание, у изготовленных — провода и быстрое; эта смешивает обе половины"
-   }
-  ]
- },
- {
-  "id": "hub",
-  "match": [
-   "hub",
-   "hubs"
-  ],
-  "match_ru": [
-   "хаб",
-   "хабы",
-   "Хабы"
-  ],
-  "scope": "first",
-  "en": "A technology that three or more qubit families depend on (two, if it is young), directly or through what they need — so work on it pays off in more than one place",
-  "ru": "Технология, от которой зависят три и более кубитных семейства (два, если она молода) — прямо или через то, что им нужно; работа над ней окупается не в одном месте",
-  "src": "§7.1",
-  "why": "Read as 'popular node'; the page means reach across families, which is why hubs are where leverage is",
-  "variants": [
-   {
-    "until": "7",
-    "en": "A technology that three or more kinds of qubit depend on (two, if it is young) — directly, or through something they need — so improving it moves more than one platform at once",
-    "ru": "Технология, от которой зависят три и более типов кубитов (два, если она молода) — прямо или через то, что им нужно; улучшив её, двигаешь сразу несколько платформ"
    }
   ]
  },
@@ -803,7 +751,7 @@
   "scope": "first",
   "en": "The dated, sourced numbers held per technology — gate and readout times, coherence, error rates — that the report's own calculations are built from",
   "ru": "Датированные числа с источниками по каждой технологии — времена гейта и считывания, когерентность, ошибки, — из которых отчёт считает своё",
-  "src": "§7.11",
+  "src": "§7.9",
   "why": "Explains why a null in that table is stated rather than filled: it means not published"
  },
  {
@@ -878,8 +826,8 @@
   "scope": "first",
   "en": "One real machine laid over one platform line: what it uses at each layer, and a marked hole wherever it uses something the map has no entry for",
   "ru": "Реальная машина, наложенная на линию платформы: что она использует на каждом слое и помеченная дыра там, где используется то, чего на карте нет",
-  "src": "§7.12",
-  "why": "The join between the register and the map; it explains why a machine can light stations and still show holes"
+  "src": "§7.10",
+  "why": "The join between the register and the map; it explains why a machine can light technologies and still show holes"
  },
  {
   "id": "evidence-cell",
@@ -936,7 +884,7 @@
   "scope": "first",
   "en": "A layer where the map has no entry for what the machine actually runs, or where the machine discloses nothing",
   "ru": "Слой, где у карты нет записи для того, что машина реально использует, или где машина ничего не раскрывает",
-  "src": "§7.12",
+  "src": "§7.10",
   "why": "Covers two different situations under one mark, and the counts in §8.2 mix them deliberately",
   "only": [
    "8"
@@ -1086,8 +1034,8 @@
    "архитектурой"
   ],
   "scope": "first",
-  "en": "A platform drawn as one line through the stack, one station per layer — {{N_PATHS}} such lines carry the {{N_MACHINES}} registered machines",
-  "ru": "Платформа, проведённая одной линией через стек, по одной станции на слой: {{N_PATHS}} таких линий несут {{N_MACHINES}} машин реестра",
+  "en": "A platform drawn as one line through the stack, one technology per layer — {{N_PATHS}} such lines carry the {{N_MACHINES}} registered machines",
+  "ru": "Платформа, проведённая одной линией через стек, по одной технологии на слой: {{N_PATHS}} таких линий несут {{N_MACHINES}} машин реестра",
   "src": "§8",
   "why": "Finer than family, coarser than a single machine; the chapter argues by architecture, not by company",
   "only": [
@@ -1104,8 +1052,8 @@
    "попытку"
   ],
   "scope": "first",
-  "en": "A machine read as an argument: this combination of technologies will reach the goal before the others — the register holds 136 of them",
-  "ru": "Машина, прочитанная как аргумент: именно это сочетание технологий дойдёт до цели раньше других; в реестре таких 136",
+  "en": "A machine read as an argument: this combination of technologies will reach the goal before the others — the register holds {{N_MACHINES}} of them",
+  "ru": "Машина, прочитанная как аргумент: именно это сочетание технологий дойдёт до цели раньше других; в реестре таких {{N_MACHINES}}",
   "src": "§8 / §8.3",
   "why": "The chapter title counts attempts, not products — it tells the reader machines are being read as claims",
   "only": [
@@ -1115,10 +1063,10 @@
  {
   "id": "link-station",
   "match": [
-   "link station"
+   "link technology"
   ],
   "match_ru": [
-   "станция связи"
+   "технология связи"
   ],
   "scope": "first",
   "en": "A demonstrated way of joining one module to another — the layer that is absent or undisclosed on {{N_IC_NONE_OR_UNDISC}} of the {{N_MACHINES}} machines",
@@ -1241,10 +1189,10 @@
    "стена I/O"
   ],
   "scope": "first",
-  "en": "The wiring limit: one refrigerator can only carry so many control lines, so cabling rather than the qubit caps the count around 10⁴",
-  "ru": "Ограничение проводки: в один рефрижератор входит лишь столько линий управления, так что число кубитов около 10⁴ упирается в кабели, а не в кубит",
+  "en": "The wiring limit: one refrigerator carries only so many control lines and so much heat; one of the four limits on qubit count (§0 item 5, §8.4–8.6) — the largest wired system has 1,536 lines",
+  "ru": "Ограничение проводки: в один рефрижератор входит лишь столько линий управления и столько тепла; одно из четырёх ограничений на число кубитов (§0, пункт 5; §8.4–8.6) — самая большая смонтированная система имеет 1 536 линий",
   "src": "§2.1 / §5.1",
-  "why": "Used unexplained in profiles and in the directions list, where it justifies moving control into the cold"
+  "why": "Used unexplained in profiles and in the directions list"
  },
  {
   "id": "technology-brief",

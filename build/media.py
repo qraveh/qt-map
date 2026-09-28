@@ -10,7 +10,7 @@ DIR defaults to $QT_MEDIA_DIR, else /home/claude/work/QT-Map/media-register/data
 are dropped with their illustrates rows; LINK-OUT assets are kept and linked, never hosted; EMBED / EMBED-ASIS assets are
 hosted as <asset_id>.jpg (the register's assets/thumbs/; the build never copies pictures into the repository).
 
-A target's list is ranked (hosted before link-out; for a station, the register's best real capture, then its best drawing
+A target's list is ranked (hosted before link-out; for a technology, the register's best real capture, then its best drawing
 or figure; role; real captures before renders and drawings; confidence, high first; asset id), so a consumer takes the
 first n and the register's chosen real capture is always among them:
 

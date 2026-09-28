@@ -23,13 +23,13 @@ updated: 2026-09-04
 | Дата | Показатель | Кто | Тег+ключ |
 |---|---|---|---|
 | 2025-11 | 0.5–1 ms, 0.46% битовых переворотов, 0.24% потерь, отказоустойчивый массив из 448 атомов | Harvard/MIT/QuEra | [D][4] |
-| 2026-08 | 17.6 µs, различение 99.89(5)%, выживаемость 98.80(44)%, бесспиновый ¹⁷⁴Yb | Kyoto/Yaqumo | [P][264] |
-| 2026-08 | Зондирование 15 µs на подмассиве из 25 узлов, неточность 4.1×10⁻⁵, потери 2.1×10⁻⁴ | USTC | [P][469] |
+| 2026-08 | 17.6 µs, различение 99.89(5)%, выживаемость 98.80(44)%, бесспиновый ¹⁷⁴Yb | Kyoto/Yaqumo | [P][261] |
+| 2026-08 | Зондирование 15 µs на подмассиве из 25 узлов, неточность 4.1×10⁻⁵, потери 2.1×10⁻⁴ | USTC | [P][623] |
 
 Доминирующая ошибка: потери, вызванные самой визуализацией, а не ошибочное отнесение.
 
 ## Производство, материалы и цепочка поставок
-Никакой фабрики: объектив, дихроичные зеркала и камера на оптическом столе. ORCA-Quest qCMOS от Hamamatsu — поимённо названный сенсор по всей линии Harvard/QuEra, и второго источника такой чувствительности нет [P][258]; объективы же представляют собой серийную микроскопную оптику. Визуализация находится внутри цикла QEC, поэтому её стоимость считается на раунд, а не на прогон. На 10³ атомах массив покрывается одним кадром; на 10⁴–10⁶ число пикселей, частота кадров и мощность подсветки вынуждают переходить к параллельным зонам, каждая со своей камерой, — это тот же режим, в котором перестаёт масштабироваться и обновление SLM/AOD на частоте около 10 MHz. Экспортный контроль задевает технологию косвенно: 4A906 связывает машину по числу кубитов, но ни оптика пинцетов, ни камеры нигде не поименованы [G][225].
+Никакой фабрики: объектив, дихроичные зеркала и камера на оптическом столе. ORCA-Quest qCMOS от Hamamatsu — поимённо названный сенсор по всей линии Harvard/QuEra, и второго источника такой чувствительности нет [P][329]; объективы же представляют собой серийную микроскопную оптику. Визуализация находится внутри цикла QEC, поэтому её стоимость считается на раунд, а не на прогон. На 10³ атомах массив покрывается одним кадром; на 10⁴–10⁶ число пикселей, частота кадров и мощность подсветки вынуждают переходить к параллельным зонам, каждая со своей камерой, — это тот же режим, в котором перестаёт масштабироваться и обновление SLM/AOD на частоте около 10 MHz. Экспортный контроль задевает технологию косвенно: 4A906 связывает машину по числу кубитов, но ни оптика пинцетов, ни камеры нигде не поименованы [G][301].
 
 ## Роль в стеке
 Требует щелочного или щёлочноземельного атома с циклическим переходом; предоставляет то неразрушающее внутрисхемное измерение, которое необходимо декодированию в реальном времени, и превращает потерю атома в детектируемое стирание (erasure), а не в тихую ошибку Паули. Производный такт = сумма раунда синдрома: слои гейтов + транспорт + считывание + сброс ≈ 1.3×10⁻³ s: первым идёт транспорт, вторым — это считывание, 501 µs, а не гейт длительностью 270 ns, — это ~10³× сверхпроводникового раунда. Верификация: оба микросекундных результата получены каждый одной группой и на одном изотопе; в работе Kyoto используется бесспиновый ¹⁷⁴Yb, поэтому она устанавливает различение заселённости, а не считывание сверхтонкого состояния, а 15 µs у USTC усреднены по подмассиву из 25 узлов. Ни один из них не запускался внутри логической памяти.
@@ -39,22 +39,20 @@ updated: 2026-09-04
 | Организация | Роль | Страна | Что делают | Свидетельство |
 |---|---|---|---|---|
 | Harvard/MIT | исследования | США | Отказоустойчивая базовая линия на 448 атомах | [D][4] |
-| QuEra Computing | разработчик | США | Поставляет это считывание в своей дорожной карте | [C][137] |
-| Atom Computing | разработчик | США | Массивы Yb; Magne совместно с Microsoft | [C][138] |
-| Kyoto Univ./Yaqumo | исследования | Япония | Демонстрация визуализации Yb за 17.6 µs | [P][264] |
-| Hamamatsu Photonics | поставщик | Япония | Сенсор qCMOS, второго источника нет | [P][258] |
+| QuEra Computing | разработчик | США | Поставляет это считывание в своей дорожной карте | [C][153] |
+| Atom Computing | разработчик | США | Массивы Yb; Magne совместно с Microsoft | [C][154] |
+| Kyoto Univ./Yaqumo | исследования | Япония | Демонстрация визуализации Yb за 17.6 µs | [P][261] |
+| Hamamatsu Photonics | поставщик | Япония | Сенсор qCMOS, второго источника нет | [P][329] |
 
-**Деньги.** 2025-09-09 · QuEra · раунд Series B · $230 M+ USD · Google, SoftBank VF2, NVentures [C][137]. 2025-11-06 · DARPA · QBI Stage B · ≤$15 M каждому · Atom и QuEra среди одиннадцати [G][60]. 2026-02 · Infleqtion · листинг на NYSE · >$550 M USD плюс LOI Министерства торговли на $100 M [C][139]. 2026-06 · Atom Computing · привлечение · $300 M+ USD, включая LOI Министерства торговли на $100 M [C][138]. 2026 · QuNorth · заказ Magne, 50 логических · €80 M · Atom/Microsoft [P][12].
+**Деньги.** 2025-09-09 · QuEra · раунд Series B · $230 M+ USD · Google, SoftBank VF2, NVentures [C][153]. 2025-11-06 · DARPA · QBI Stage B · ≤$15 M каждому · Atom и QuEra среди одиннадцати [G][65]. 2026-02 · Infleqtion · листинг на NYSE · >$550 M USD плюс LOI Министерства торговли на $100 M [C][155]. 2026-06 · Atom Computing · привлечение · $300 M+ USD, включая LOI Министерства торговли на $100 M [C][154]. 2026 · QuNorth · заказ Magne, 50 логических · €80 M · Atom/Microsoft [P][12].
 
 **Рынок и цепочка поставок.** Сенсор одного-единственного поставщика стоит на критическом пути каждого ведущего массива, всё прочее — серийная оптика; риск концентрации острый. Технология работает на цели G3 и G4: нет внутрисхемной визуализации — нет и декодирования в реальном времени.
 
 **ИС и стандарты.** Датированного патентного семейства или стандарта, специфичного для визуализации атомных массивов, нет.
 
-**Дорожные карты и послужной список.** (2026-08 · быстрая визуализация показана автономно · не встроена в логический прогон); (2028–29 · цели QuEra Libra и Magne · предполагают, что цикл продолжит сокращаться) [R][137]. Дорожные карты вендоров закладывают в цену ускорение, показанное лишь на подмассивах.
+**Дорожные карты и послужной список.** (2026-08 · быстрая визуализация показана автономно · не встроена в логический прогон); (2028–29 · цели QuEra Libra и Magne · предполагают, что цикл продолжит сокращаться) [R][153]. Дорожные карты вендоров закладывают в цену ускорение, показанное лишь на подмассивах.
 
 **Стратегическое прочтение.** Тот, кто первым выпустит низкопотерьную визуализацию быстрее 100 µs, обрушит крупнейшую фиксированную статью расходов в цикле на нейтральных атомах, забрав кратный выигрыш в эффективном такте, — единственную структурную слабость платформы. Поставщики камер обладают большим рычагом, чем следует из их выручки; у атомных вендоров рычага против них нет.
-
-*Открытая ниша:* статистика потерь при визуализации служит входными данными декодера; независимая валидация заявлений о различении и выживаемости — пробел, общий для обеих работ 2026 года, — собственного атомного массива не требует.
 
 ## Прогноз и открытые вопросы
 Подтвердить, если микросекундный результат будет встроен в прогон логической памяти к 2028 году; понизить в статусе, если он останется чисто считывательным. Лучший случай к 2029 году: визуализация быстрее 50 µs становится стандартом, а раунды QEC опускаются ниже 0.5 ms. Худший случай: миллисекундная визуализация остаётся значением по умолчанию и ограничивает цикл вблизи 1 ms. Открыто: держится ли быстрая визуализация на полном массиве и сдвигает ли она то соотношение потерь и ошибок Паули, которое закладывают декодеры?
@@ -62,14 +60,14 @@ updated: 2026-09-04
 ## Источники
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [12] M. Abdel-Kareem, “Denmark's QuNorth to Acquire 50-Logical-Qubit Magne Quantum Computer from Atom Computing and Microsoft,” Quantum Computing Report, Jul. 17, 2025. [Online]. Available: https://quantumcomputingreport.com/denmarks-qunorth-to-acquire-50-logical-qubit-magne-quantum-computer-from-atom-computing-and-microsoft/ [P]
-[60] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
-[137] QuEra Computing, “QuEra Expands $230 Million Financing Round Advancing Quantum-Accelerated Supercomputing,” Sep. 9, 2025. [Online]. Available: https://www.quera.com/press-releases/quera-expands-230-million-financing-round-advancing-quantum-accelerated-supercomputing [C]
-[138] Atom Computing, “Atom Computing Raises More Than $300 Million to Accelerate Deployment of Fault-Tolerant, Neutral-Atom Quantum Computers,” PR Newswire, Jun. 16, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/atom-computing-raises-more-than-300-million-to-accelerate-deployment-of-fault-tolerant-neutral-atom-quantum-computers-302800832.html [C]
-[139] L. Roady, “Infleqtion Becomes First Neutral-Atom Quantum Company to Go Public,” Infleqtion, Feb. 17, 2026. [Online]. Available: https://infleqtion.com/infleqtion-becomes-first-neutral-atom-quantum-company-to-go-public/ [C]
-[225] US Department of Commerce, Bureau of Industry and Security, “Commerce Control List Additions and Revisions; Implementation of Controls on Advanced Technologies Consistent With Controls Implemented by International Partners,” *Federal Register*, vol. 89, p. 72926, Sep. 6, 2024. [Online]. Available: https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies [G]
-[258] M. Ivezic, “The Tweezer Array's Hidden Supply Chain: Who Really Wins If Neutral-Atom Quantum Computing Wins,” PostQuantum.com, Nov. 17, 2025. [Online]. Available: https://postquantum.com/quantum-ecosystem/neutral-atom-quantum-ecosystem/ [P]
-[264] R. Yokoyama *et al.*, “Minimally Destructive Fast Imaging of Single Atoms in an Optical Tweezer Array with Coherent Excitation,” [arXiv:2605.24175](https://arxiv.org/abs/2605.24175), Jun. 2026. Also https://arxiv.org/abs/2605.24175. [P]
-[469] Xu-Zhao-Qiu Zeng *et al.*, “Fast Nondestructive Readout for High-Clock-Rate Atom Array Quantum Processor,” [arXiv:2608.17189](https://arxiv.org/abs/2608.17189), Aug. 2026. [P]
+[65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
+[153] QuEra Computing, “QuEra Expands $230 Million Financing Round Advancing Quantum-Accelerated Supercomputing,” Sep. 9, 2025. [Online]. Available: https://www.quera.com/press-releases/quera-expands-230-million-financing-round-advancing-quantum-accelerated-supercomputing [C]
+[154] Atom Computing, “Atom Computing Raises More Than $300 Million to Accelerate Deployment of Fault-Tolerant, Neutral-Atom Quantum Computers,” PR Newswire, Jun. 16, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/atom-computing-raises-more-than-300-million-to-accelerate-deployment-of-fault-tolerant-neutral-atom-quantum-computers-302800832.html [C]
+[155] L. Roady, “Infleqtion Becomes First Neutral-Atom Quantum Company to Go Public,” Infleqtion, Feb. 17, 2026. [Online]. Available: https://infleqtion.com/infleqtion-becomes-first-neutral-atom-quantum-company-to-go-public/ [C]
+[261] R. Yokoyama *et al.*, “Minimally Destructive Fast Imaging of Single Atoms in an Optical Tweezer Array with Coherent Excitation,” [arXiv:2605.24175](https://arxiv.org/abs/2605.24175), Jun. 2026. Also https://arxiv.org/abs/2605.24175. [P]
+[301] US Department of Commerce, Bureau of Industry and Security, “Commerce Control List Additions and Revisions; Implementation of Controls on Advanced Technologies Consistent With Controls Implemented by International Partners,” *Federal Register*, vol. 89, p. 72926, Sep. 6, 2024. [Online]. Available: https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies [G]
+[329] M. Ivezic, “The Tweezer Array's Hidden Supply Chain: Who Really Wins If Neutral-Atom Quantum Computing Wins,” PostQuantum.com, Nov. 17, 2025. [Online]. Available: https://postquantum.com/quantum-ecosystem/neutral-atom-quantum-ecosystem/ [P]
+[623] Xu-Zhao-Qiu Zeng *et al.*, “Fast Nondestructive Readout for High-Clock-Rate Atom Array Quantum Processor,” [arXiv:2608.17189](https://arxiv.org/abs/2608.17189), Aug. 2026. [P]
 
 ## Открытые пункты верификации
 Результат Kyoto/Yaqumo в 17.6 µs получен на бесспиновом ¹⁷⁴Yb, у которого нет сверхтонкого кубита, — это различение заселённости, а не считывание состояния; независимого воспроизведения не найдено. 15 µs у USTC — усреднённое время зондирования по подмассиву из 25 узлов; соответствующая цифра для полного массива из 100 узлов не приводится. Камера, использованная в демонстрации Kyoto, в найденных источниках не идентифицирована, поэтому привязка сенсора для неё не делается. Цитируемой удельной стоимости на канал считывания для камеры вместе с объективом нет. Заказ Magne у QuNorth на €80 M взят из отраслевой прессы; релиза вендора не найдено.

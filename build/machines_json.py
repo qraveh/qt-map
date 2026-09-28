@@ -6,7 +6,7 @@ Inputs : the machines register's CSVs — QT_MACHINES_DIR if set, else the live 
          data/graph.json (layers, vocab.RECKEYS)
 Output : data/machines.json  -- deterministic: same inputs give identical bytes.
 
-Every cell carries "state": station | gap | none | undisclosed (see cell_state); "gap" is kept as a boolean for the consumers
+Every cell carries "state": technology | gap | none | undisclosed (see cell_state); "gap" is kept as a boolean for the consumers
 that predate the register schema of 26 Sep 2026. Cells whose node is not in graph.json are reported (unknown_nodes).
 
 Record numbers are rounded to 6 significant digits. No existing determinize rule was found in
@@ -22,12 +22,12 @@ _REG_LIVE = '/home/claude/work/QT-Map/quantum-machines/data'
 REG = os.environ.get('QT_MACHINES_DIR') or (_REG_LIVE if os.path.isdir(_REG_LIVE) else SNAP)   # the live register when present, else the snapshot
 OUT = os.path.join(ROOT, 'data', 'machines.json')
 EDITION = '2026.09'
-SOURCE = {"register": "quantum-machines · 17 Sep 2026, re-cut 26 Sep 2026 (three ion paths, two analog paths, 14 gaps → stations, sentinels → cell values)",
+SOURCE = {"register": "quantum-machines · 17 Sep 2026, re-cut 26 Sep 2026 (three ion paths, two analog paths, 14 gaps → technologies, sentinels → cell values)",
           "evidence": "machine-stations-evidence.csv · 17 Sep 2026 (locator passes 1–3)"}
 FAMILY_ORDER = ['SC', 'ION', 'ATOM', 'PHOTON', 'SPIN', 'DEFECT', 'TOPO', 'ANNEAL']
 GAP_PREFIX = '∅'
-# A cell's node is one of four things (register schema of 26 Sep 2026, decision D5): an Atlas station; a gap `∅G-…` (the Atlas has
-# no station for what the machine runs); `none` (nothing in this layer — no code, no decoder, no interconnect, no encoding
+# A cell's node is one of four things (register schema of 26 Sep 2026, decision D5): an Atlas technology; a gap `∅G-…` (the Atlas has
+# no technology for what the machine runs); `none` (nothing in this layer — no code, no decoder, no interconnect, no encoding
 # layer, no entangling gate); `undisclosed` (the machine has something here but publishes nothing). Only the first is a node.
 SENTINELS = ('none', 'undisclosed')
 
@@ -91,6 +91,22 @@ def _clean_curator(v):
     v2 = re.sub(r'\(\s*not re-fetched\s*\)', '', v2)             # "(not re-fetched)" → ""
     v2 = re.sub(r'\bnot re-fetched\b[.;]?\s*', '', v2)            # bare
     return re.sub(r'\s{2,}', ' ', v2).strip(' ;,-')
+
+
+ATLAS_WORD = re.compile(r"(?<![-_.#/])\b([Ss])tation(s?)\b(?![-_])")
+def atlas_words(x):
+    """The register says "station" for a node of the map; the Atlas's reader word is "technology" (editor, 28 Sep 2026). Applied to every
+    string of the document in place (node ids, urls and keys never contain the word as a whole word); returns the count."""
+    n = 0
+    if isinstance(x, dict):
+        for k, v in x.items():
+            if isinstance(v, str):
+                if ' ' in v and k != 'state' and ATLAS_WORD.search(v):   # prose only: vocabulary tokens ('state': 'station') stay
+                    x[k] = ATLAS_WORD.sub(lambda m: ('T' if m.group(1) == 'S' else 't') + 'echnolog' + ('ies' if m.group(2) else 'y'), v); n += 1
+            else: n += atlas_words(v)
+    elif isinstance(x, list):
+        for v in x: n += atlas_words(v)
+    return n
 
 
 def strip_curator_notes(x):
@@ -170,7 +186,7 @@ def build():
                 "summary": r['usage_summary'],
                 "evidence": {"type": r['evidence_type'], "url": r['evidence_url'],
                              "locator": r['evidence_locator'], "verified": v}})
-            if cell_state(node) == 'station':   # by_node indexes Atlas stations only; gaps and cell values are counted per machine
+            if cell_state(node) == 'station':   # by_node indexes Atlas technologies only; gaps and cell values are counted per machine
                 by_node.setdefault(node, {"primary": set(), "alternate": set()})[r['role']].add(mid)
         for k, lst in layers.items():
             lst.sort(key=lambda s: (s['role'] != 'primary', s['node'], s['evidence']['url'], s['summary']))
@@ -190,8 +206,10 @@ def build():
     out.sort(key=fam_key)
     bn = {k: {"primary": sorted(v['primary']), "alternate": sorted(v['alternate'])} for k, v in sorted(by_node.items())}
     doc = {"edition": EDITION, "source": SOURCE, "machines": out, "by_node": bn, "roadmaps": road}
-    n_cur = strip_curator_notes(doc)   # the cataloguer's working remarks ("not re-fetched") never reach a reader (27 Sep 2026: 31 did)
-    report['curator_notes_stripped'] = n_cur
+    n_cur = strip_curator_notes(doc)
+    # the cataloguer's working remarks ("not re-fetched") never reach a reader (27 Sep 2026: 31 did)
+    n_words = atlas_words(doc)   # 'station' -> 'technology' in the register's notes (28 Sep 2026)
+    report['curator_notes_stripped'] = [n_cur]; report['atlas_words'] = [n_words]
     with open(OUT, 'w', encoding='utf-8', newline='\n') as fh:
         json.dump(doc, fh, ensure_ascii=False, indent=1, sort_keys=False)
         fh.write('\n')

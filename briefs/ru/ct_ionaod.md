@@ -12,93 +12,91 @@ updated: 2026-09-26
 AOM = акустооптический модулятор; AOD = акустооптический дефлектор; MS = гейт Мёльмера–Сёренсена; DRB = прямой рандомизированный бенчмаркинг (direct randomized benchmarking); ε = отношение частоты Раби соседа к частоте Раби цели; QV = квантовый объём (quantum volume); G1–G7 = классы целей отчёта (см. «Акторы и экономика»).
 
 ## Идентичность и происхождение
-Оптический стол направляет свет для гейтов через смотровые окна и высокоапертурный объектив; акустооптика задаёт, какой ион освещён, а также амплитуду, частоту и фазу света. Многоканальный AOM даёт по одному РЧ-каналу на фиксированный пучок — 32 на 355 nm в пятикубитной машине Maryland 2016 года, от которой ведёт начало станция [D][668]; AOD отображает РЧ-частоту в угол, так что управляемый пучок достигает любого иона [D][94]. Сверхтонким кубитам нужна рамановская пара — 355 nm для ¹⁷¹Yb⁺ [D][669], 532 nm для ¹³³Ba⁺ [D][103]; оптическим кубитам ⁴⁰Ca⁺ — один пучок на 729 nm [D][670].
+Оптический стол направляет свет для гейтов через смотровые окна и высокоапертурный объектив; акустооптика задаёт, какой ион освещён, а также амплитуду, частоту и фазу света. Многоканальный AOM даёт по одному РЧ-каналу на фиксированный пучок — 32 на 355 nm в пятикубитной машине Maryland 2016 года, от которой ведёт начало технология [D][585]; AOD отображает РЧ-частоту в угол, так что управляемый пучок достигает любого иона [D][100]. Сверхтонким кубитам нужна рамановская пара — 355 nm для ¹⁷¹Yb⁺ [D][586], 532 nm для ¹³³Ba⁺ [D][109]; оптическим кубитам ⁴⁰Ca⁺ — один пучок на 729 nm [D][253].
 Атрибуты: оптическое управление при комнатной температуре; когерентные ошибки; объёмная оптика; одна сборка на цепочку.
 
 ## Физика и пределы
-Перекрёстные помехи (crosstalk). Гауссово поле спадает как exp(−d²/w²) — ~10⁻¹² при перетяжке 0.85 µm и шаге 4.43 µm у EURIQA [S], — и всё же сосед видит до 2.5% частоты Раби цели [D][671]: пол задают аберрации и рассеяние. Опубликованные показатели для соседа, в различающихся мерах, снижаются с <4% в 2016 году [D][668] до <9×10⁻⁴ [D][672]. При отношении Раби ε ион-наблюдатель, повёрнутый на εθ, теряет ≈(εθ/2)², 2.5×10⁻⁴ при ε = 10⁻² для π-импульса [S]; будучи когерентной, эта ошибка компенсируется — импульсы светового сдвига с масштабированием по интенсивности снизили показатель для соседа у демонстратора AQT с 0.5% до 1.3×10⁻⁴ [D][670].
-Наведение и фаза. Дрожание δx сдвигает частоту Раби на ~(δx/w)² [S]; Forte подбирает перетяжку 1.5 µm с учётом шума наведения [D][94]. На 355 nm разность хода 56 nm между встречными плечами равна 1 rad фазы гейта [S]; Forte настраивает два из своих четырёх трактов на фазово-нечувствительные однокубитные гейты [D][94].
-AOD. θ = λf/v; разрешение равно произведению апертурного времени на полосу; тепловой дрейф требует калибровки угла на месте (in situ) [G][673]. УФ-AOD Duke отклоняет на 6 mrad в полосе 100 MHz [D][672], т. е. v ≈ 5.9 km/s [S]. РЧ также сдвигает оптическую частоту в зависимости от положения; скрещённые AOD у AQT это компенсируют [D][670]. ~50 диаметров пучка по диапазону наведения [D][672] охватывают 25–50 ионов при шаге 3–4 µm [S]. Пары обслуживаются последовательно [D][103]: 15 непересекающихся пар при медианном MS-гейте Forte 672 µs занимают ~10 ms [S]. Поле зрения и сериализация удерживают цепочку около 30–40 ионов [S].
+Перекрёстные помехи (crosstalk). Гауссово поле спадает как exp(−d²/w²) — ~10⁻¹² при перетяжке 0.85 µm и шаге 4.43 µm у EURIQA [S], — и всё же сосед видит до 2.5% частоты Раби цели [D][254]: пол задают аберрации и рассеяние. Опубликованные показатели для соседа, в различающихся мерах, снижаются с <4% в 2016 году [D][585] до <9×10⁻⁴ [D][587]. При отношении Раби ε ион-наблюдатель, повёрнутый на εθ, теряет ≈(εθ/2)², 2.5×10⁻⁴ при ε = 10⁻² для π-импульса [S]; будучи когерентной, эта ошибка компенсируется — импульсы светового сдвига с масштабированием по интенсивности снизили показатель для соседа у демонстратора AQT с 0.5% до 1.3×10⁻⁴ [D][253].
+Наведение и фаза. Дрожание δx сдвигает частоту Раби на ~(δx/w)² [S]; Forte подбирает перетяжку 1.5 µm с учётом шума наведения [D][100]. На 355 nm разность хода 56 nm между встречными плечами равна 1 rad фазы гейта [S]; Forte настраивает два из своих четырёх трактов на фазово-нечувствительные однокубитные гейты [D][100].
+AOD. θ = λf/v; разрешение равно произведению апертурного времени на полосу; тепловой дрейф требует калибровки угла на месте (in situ) [G][588]. УФ-AOD Duke отклоняет на 6 mrad в полосе 100 MHz [D][587], т. е. v ≈ 5.9 km/s [S]. РЧ также сдвигает оптическую частоту в зависимости от положения; скрещённые AOD у AQT это компенсируют [D][253]. ~50 диаметров пучка по диапазону наведения [D][587] охватывают 25–50 ионов при шаге 3–4 µm [S]. Пары обслуживаются последовательно [D][109]: 15 непересекающихся пар при медианном MS-гейте Forte 672 µs занимают ~10 ms [S]. Поле зрения и сериализация удерживают цепочку около 30–40 ионов [S].
 
 ## Инженерное состояние (state of the art)
 | Год | Показатель | Кто | Тег+ключ |
 |---|---|---|---|
-| 2016-08 | 5 ¹⁷¹Yb⁺; 32-канальный УФ-AOM; перекрёстные помехи <4%; гейт XX 235 µs | Univ. of Maryland | [D][668] |
-| 2019-11 | 11 кубитов в 13 ионах; глобальный и адресные пучки 355 nm; 2Q 97.5% | IonQ | [D][669] |
-| 2021-06 | Скрещённые AOD, 729 nm; перекрёстные помехи на соседа 0.5%; GHZ на 24 ионах 54.4(7)% | Innsbruck / AQT | [D][670] |
-| 2021-10 | 32 пучка, перетяжка 0.85 µm; 13 кубитов в 15 ионах; 2Q 98.5–99.3% | EURIQA (Maryland/Duke) | [D][671] |
-| 2023-08 | 4 AOD; 30 кубитов в 36 ионах; медиана 2Q по DRB 4.64×10⁻³ | IonQ Forte | [D][94] |
-| 2026-01 | Модуль AOD <1 ft²; перекрёстные помехи <9×10⁻⁴; цепочка из 30 ионов; переключение 240 ns | Duke | [D][672] |
-| 2026-06 | 40 ¹³³Ba⁺; рамановские пучки 532 nm, управляемые AOD | IonQ | [D][103] |
+| 2016-08 | 5 ¹⁷¹Yb⁺; 32-канальный УФ-AOM; перекрёстные помехи <4%; гейт XX 235 µs | Univ. of Maryland | [D][585] |
+| 2019-11 | 11 кубитов в 13 ионах; глобальный и адресные пучки 355 nm; 2Q 97.5% | IonQ | [D][586] |
+| 2021-06 | Скрещённые AOD, 729 nm; перекрёстные помехи на соседа 0.5%; GHZ на 24 ионах 54.4(7)% | Innsbruck / AQT | [D][253] |
+| 2021-10 | 32 пучка, перетяжка 0.85 µm; 13 кубитов в 15 ионах; 2Q 98.5–99.3% | EURIQA (Maryland/Duke) | [D][254] |
+| 2023-08 | 4 AOD; 30 кубитов в 36 ионах; медиана 2Q по DRB 4.64×10⁻³ | IonQ Forte | [D][100] |
+| 2026-01 | Модуль AOD <1 ft²; перекрёстные помехи <9×10⁻⁴; цепочка из 30 ионов; переключение 240 ns | Duke | [D][587] |
+| 2026-06 | 40 ¹³³Ba⁺; рамановские пучки 532 nm, управляемые AOD | IonQ | [D][109] |
 
-Выше 40 ионов существуют только заявления: страница Tempo указывает 100 «целевых» кубитов и 99.9% «целевой точности» (target fidelity) без метода адресации [C][95]. 512-ионный кристалл Tsinghua работает с глобальными пучками 411 nm — свободное пространство без адресации [D][110].
+Выше 40 ионов существуют только заявления: страница Tempo указывает 100 «целевых» кубитов и 99.9% «целевой точности» (target fidelity) без метода адресации [C][101]. 512-ионный кристалл Tsinghua работает с глобальными пучками 411 nm — свободное пространство без адресации [D][121].
 
 ## Производство, материалы и цепочка поставок
-Сборка, а не пластина: импульсный УФ-лазер (EURIQA: Coherent Paladin 355-4000) [D][671], акустооптика — плавленый кварц в УФ, TeO₂ в видимом диапазоне [G][673], — объективы и РЧ-синтез; модуль Duke использует AOD Brimrose [D][672]. Названы также Gooch & Housego и AA Opto Electronic [P][251]; дефлекторы G&H управляют и массивами пинцетов на 3,000 и 6,100 атомов [C][392] — цепочка поставок, общая с cx_aod. AQT размещает 12 кубитов в двух 19-дюймовых стойках, 2 m², <2 kW [C][674].
+Сборка, а не пластина: импульсный УФ-лазер (EURIQA: Coherent Paladin 355-4000) [D][254], акустооптика — плавленый кварц в УФ, TeO₂ в видимом диапазоне [G][588], — объективы и РЧ-синтез; модуль Duke использует AOD Brimrose [D][587]. Названы также Gooch & Housego и AA Opto Electronic [P][322]; дефлекторы G&H управляют и массивами пинцетов на 3,000 и 6,100 атомов [C][504] — цепочка поставок, общая с cx_aod. AQT размещает 12 кубитов в двух 19-дюймовых стойках, 2 m², <2 kW [C][382].
 
 ## Управление, считывание и нагрузка на ввод-вывод
-Многоканальному AOM нужен один РЧ-канал на ион при фиксированном шаге — EURIQA оставляет два крайних иона незадействованными, чтобы шаг был однородным [D][671]; четыре AOD у Forte, каждый за AOM, задающим амплитуду, частоту и фазу, достигают любого из 40 ионов и снимают ограничения с потенциала ловушки [D][94]. Переключение (~240 ns) [D][672] пренебрежимо; задержку определяет сериализация — циклы кода на Ba-стенде занимают 35–86 ms, все ионы переносятся в D₅/₂ во время считывания посреди схемы [D][103]. При 10³ ионов: ~25 оптических столов плюс фотонные связи [S].
+Многоканальному AOM нужен один РЧ-канал на ион при фиксированном шаге — EURIQA оставляет два крайних иона незадействованными, чтобы шаг был однородным [D][254]; четыре AOD у Forte, каждый за AOM, задающим амплитуду, частоту и фазу, достигают любого из 40 ионов и снимают ограничения с потенциала ловушки [D][100]. Переключение (~240 ns) [D][587] пренебрежимо; задержку определяет сериализация — циклы кода на Ba-стенде занимают 35–86 ms, все ионы переносятся в D₅/₂ во время считывания посреди схемы [D][109]. При 10³ ионов: ~25 оптических столов плюс фотонные связи [S].
 
 ## Роль в стеке
-Слот 5 архитектур «Ионы — линейная ловушка Пауля с индивидуальной лазерной адресацией» и «Ионы — QCCD (транспорт между зонами)». Станция **требует** fab_optics (объёмная оптика над ловушкой), **даёт** поля в свободном пространстве, которых требует g_ms, и **заменяется** на ct_ionlaser (интегрированная доставка) и ct_ionmw (электронные гейты, двухкубитная ошибка 8.4(7)×10⁻⁵ [D][96]). Её несут девять машин реестра, все как основную: IonQ Aria, Forte, Tempo и 40-ионный Ba-стенд; AQT IBEX Q1; Qudoor AbaQ; Tsinghua; Innsbruck; Maryland/Duke. Пять ячеек ✅ ссылаются на аппаратуру адресации; ✅ у Aria опирается на её предшественницу 2019 года [D][669]; ячейка Tsinghua показывает глобальные пучки; Tempo — 🔎; управление Qudoor не раскрыто. AQT и Innsbruck описаны в профилях как сверхтонкие; их цитируемые статьи используют оптические кубиты ⁴⁰Ca⁺ [D][670][D][675]. Пробел G-ionaod закрыт, причём вместо предлагавшегося ion_elec — ion_chain.
+Слот 5 архитектур «Ионы — линейная ловушка Пауля с индивидуальной лазерной адресацией» и «Ионы — QCCD (транспорт между зонами)». Технология **требует** fab_optics (объёмная оптика над ловушкой), **даёт** поля в свободном пространстве, которых требует g_ms, и **заменяется** на ct_ionlaser (интегрированная доставка) и ct_ionmw (электронные гейты, двухкубитная ошибка 8.4(7)×10⁻⁵ [D][102]). Её несут девять машин реестра, все как основную: IonQ Aria, Forte, Tempo и 40-ионный Ba-стенд; AQT IBEX Q1; Qudoor AbaQ; Tsinghua; Innsbruck; Maryland/Duke. Пять ячеек ✅ ссылаются на аппаратуру адресации; ✅ у Aria опирается на её предшественницу 2019 года [D][586]; ячейка Tsinghua показывает глобальные пучки; Tempo — 🔎; управление Qudoor не раскрыто. AQT и Innsbruck описаны в профилях как сверхтонкие; их цитируемые статьи используют оптические кубиты ⁴⁰Ca⁺ [D][253][D][255]. Пробел G-ionaod закрыт, причём вместо предлагавшегося ion_elec — ion_chain.
 
-## Верификация (QCVV)
-Перекрёстные помехи приводятся как отношение частот Раби, отношение интенсивностей (ε²) или ошибка иона-наблюдателя — Duke называет отношение Раби «перекрёстными помехами по интенсивности» [D][672], — а измеряются перемещением одного иона через пучок [D][670], флаговыми ионами [D][671] или одновременными бенчмарками [D][103]. DRB у Forte по 435 парам не находит значимой зависимости от расстояния между ионами, но находит значимые ошибки вне модели [D][94]. Из открытых страниц поставщиков по состоянию на 2026-09-26 только страница AQT указывает перекрёстные помехи — на соседа <1.8×10⁻² [C][674].
+## Свидетельства — как измерены числа
+Перекрёстные помехи приводятся как отношение частот Раби, отношение интенсивностей (ε²) или ошибка иона-наблюдателя — Duke называет отношение Раби «перекрёстными помехами по интенсивности» [D][587], — а измеряются перемещением одного иона через пучок [D][253], флаговыми ионами [D][254] или одновременными бенчмарками [D][109]. DRB у Forte по 435 парам не находит значимой зависимости от расстояния между ионами, но находит значимые ошибки вне модели [D][100]. Из открытых страниц поставщиков по состоянию на 2026-09-26 только страница AQT указывает перекрёстные помехи — на соседа <1.8×10⁻² [C][382].
 
 ## Акторы и экономика
 **Кто.**
 
 | Организация | Роль | Страна | Что именно они делают с этой технологией | Свидетельства |
 |---|---|---|---|---|
-| IonQ | разработчик | США | Адресация через AOD на Forte и на 40-ионном Ba-стенде | [D][94][D][103] |
-| Alpine Quantum Technologies | разработчик | Австрия | Адресация на 729 nm скрещёнными AOD, стоечные системы | [D][670][C][674] |
-| University of Innsbruck | исследования | Австрия | Управляемые пучки 729 nm, 16 ионов | [D][675] |
-| Univ. of Maryland / Duke | исследования | США | 32-канальный AOM; компактный модуль AOD | [D][671][D][672] |
-| Tsinghua University | исследования | Китай | 512-ионный кристалл, глобальные пучки | [D][110] |
-| Qudoor | разработчик | Китай | Собственные лазеры и управление; адресация не раскрыта | [P][226] |
-| Gooch & Housego | поставщик | Великобритания | AOD, AOM | [C][392] |
+| IonQ | разработчик | США | Адресация через AOD на Forte и на 40-ионном Ba-стенде | [D][100][D][109] |
+| Alpine Quantum Technologies | разработчик | Австрия | Адресация на 729 nm скрещёнными AOD, стоечные системы | [D][253][C][382] |
+| University of Innsbruck | исследования | Австрия | Управляемые пучки 729 nm, 16 ионов | [D][255] |
+| Univ. of Maryland / Duke | исследования | США | 32-канальный AOM; компактный модуль AOD | [D][254][D][587] |
+| Tsinghua University | исследования | Китай | 512-ионный кристалл, глобальные пучки | [D][121] |
+| Qudoor | разработчик | Китай | Собственные лазеры и управление; адресация не раскрыта | [P][302] |
+| Gooch & Housego | поставщик | Великобритания | AOD, AOM | [C][504] |
 
 **Деньги.**
-- 2023-12-05 · AQT · 20-кубитный компьютер в двух стойках для LRZ и Munich Quantum Valley, баварское финансирование · ~EUR 9.8 M · контракт заключён [C][252]
-- 2025-09-17 · IonQ · приобретение Oxford Ionics (ловушки, изготовленные как чипы) · в релизе не указано · закрыто [C][17]
+- 2023-12-05 · AQT · 20-кубитный компьютер в двух стойках для LRZ и Munich Quantum Valley, баварское финансирование · ~EUR 9.8 M · контракт заключён [C][323]
+- 2025-09-17 · IonQ · приобретение Oxford Ionics (ловушки, изготовленные как чипы) · в релизе не указано · закрыто [C][18]
 
-**Рынок и цепочка поставок.** Лазеры, акустооптика, объективы и РЧ — покупные серийные компоненты; УФ-линии иттербия требуют дорогих лазеров с ограниченной мощностью [P][251]. Обе архитектуры обслуживают G2, G3, G6 и G7.
+**Рынок и цепочка поставок.** Лазеры, акустооптика, объективы и РЧ — покупные серийные компоненты; УФ-линии иттербия требуют дорогих лазеров с ограниченной мощностью [P][322]. Обе архитектуры обслуживают G2, G3, G6 и G7.
 
-**ИС и стандарты.** Заявки IonQ на компенсацию ошибок геометрии рамановских пучков (JP 2024, EP 2025) [P][307]; стандарта отчётности по перекрёстным помехам по состоянию на 2026-09-26 не найдено.
+**ИС и стандарты.** Заявки IonQ на компенсацию ошибок геометрии рамановских пучков (JP 2024, EP 2025) [P][375]; стандарта отчётности по перекрёстным помехам по состоянию на 2026-09-26 не найдено.
 
-**Дорожные карты и послужной список.** IonQ (2025-06-13): Tempo, 100 кубитов, 2025; 10,000 на одном чипе, 2027; >2,000,000 к 2030 году, со ссылкой на 2D-ловушки Oxford Ionics и фотонные связи как на средства [R][118]. Показатели Tempo остаются целевыми [C][95]; фотонная связь двух систем 2026-04-14 не дала ни скорости, ни точности [C][567]. LYNX от AQT заявляет QV 32,768 и меньшую чувствительность к фазовому шуму лазера, без числа кубитов [C][115].
+**Дорожные карты и послужной список.** IonQ (2025-06-13): Tempo, 100 кубитов, 2025; 10,000 на одном чипе, 2027; >2,000,000 к 2030 году, со ссылкой на 2D-ловушки Oxford Ionics и фотонные связи как на средства [R][132]. Показатели Tempo остаются целевыми [C][101]; фотонная связь двух систем 2026-04-14 не дала ни скорости, ни точности [C][589]. LYNX от AQT заявляет QV 32,768 и меньшую чувствительность к фазовому шуму лазера, без числа кубитов [C][128].
 
 **Стратегическое прочтение.** Самый быстрый путь к работающей машине на 30–40 ионов и мерило для интегрированной и электронной доставки, но не путь масштабирования; ценность перемещается к чипам ловушек и связям.
-
-*Открытая ниша:* протокол измерения перекрёстных помех с разрешением по позиции, выполняемый через облачный доступ и сообщающий все три меры.
 
 ## Прогноз и открытые вопросы
 Подтвердить, если к 2027-12-31 IonQ опубликует для Tempo попарные времена гейтов, точности и метод адресации или если будет проведён бенчмаркинг адресуемой цепочки длиннее 60 ионов; понизить, если следующие системы IonQ будут поставлены на электронной или интегрированной доставке. Открытые вопросы. (1) Что задаёт пол для соседа ниже 10⁻³ — аберрации, рассеяние или РЧ-интермодуляция? (2) Могут ли многотональные AOD выполнять параллельные гейты без паразитных пучков? (3) Как дрейф наведения масштабируется с коэффициентом заполнения РЧ? (4) Выдерживает ли двустороннее наведение 100 ионов? (5) Когда фотонная связь выигрывает у более длинной цепочки?
 
 ## Источники
 
-[17] IonQ, “IonQ Completes Acquisition of Oxford Ionics, Rapidly Accelerating Its Quantum Computing Roadmap,” Sep. 17, 2025. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-oxford-ionics-rapidly-accelerating-its-quantum [C]
-[94] J.-S. Chen *et al.*, “Benchmarking a trapped-ion quantum computer with 30 qubits,” *Quantum*, vol. 8, Art. no. 1516, Nov. 2024, doi: [10.22331/q-2024-11-07-1516](https://doi.org/10.22331/q-2024-11-07-1516). [arXiv:2308.05071](https://arxiv.org/abs/2308.05071). [D]
-[95] IonQ, “IonQ Tempo: 100-Qubit Quantum Computer (#AQ 64).” [Online]. Available: https://ionq.com/quantum-systems/tempo [C]
-[96] A. C. Hughes *et al.*, “Trapped-ion two-qubit gates with >99.99% fidelity without ground-state cooling,” [arXiv:2510.17286](https://arxiv.org/abs/2510.17286), Oct. 2025. [D]
-[103] E. Tham *et al.*, “Breakeven demonstration of quantum low-density parity-check codes,” [arXiv:2606.06455](https://arxiv.org/abs/2606.06455), Jun. 2026. [D]
-[110] S.-A. Guo *et al.*, “A site-resolved two-dimensional quantum simulator with hundreds of trapped ions,” *Nature*, vol. 630, no. 8017, pp. 613–618, May 2024, doi: [10.1038/s41586-024-07459-0](https://doi.org/10.1038/s41586-024-07459-0). [D]
-[115] Alpine Quantum Technologies GmbH, “AQT Sets New European Industry Standard: Introducing the ‘LYNX’ Series with Record-Breaking Quantum Volume,” AQT, May 5, 2026. [Online]. Available: https://www.aqt.eu/lynx-quantum-volume-record/ [C]
-[118] IonQ, “IonQ's Accelerated Roadmap: Turning Quantum Ambition into Reality,” Jun. 13, 2025. [Online]. Available: https://www.ionq.com/blog/ionqs-accelerated-roadmap-turning-quantum-ambition-into-reality [R]
-[226] M. U. Rehman, “Top Chinese Quantum Computing Companies in 2026,” The Quantum Insider, May 15, 2026. [Online]. Available: https://thequantuminsider.com/2026/05/15/10-plus-companies-leading-the-quantum-technologies-race-in-china/ [P]
-[251] M. Ivezic, “The Optical Table's Hidden Supply Chain: Who Really Wins If Trapped-Ion Quantum Computing Wins,” PostQuantum.com, Apr. 10, 2026. [Online]. Available: https://postquantum.com/quantum-ecosystem/trapped-ion-quantum-ecosystem/ [P]
-[252] AQT, “AQT lands million euro contract,” Dec. 5, 2023. [Online]. Available: https://www.aqt.eu/aqt-lands-million-euro-contract/ [C]
-[307] PatSnap, “Trapped Ion Quantum Computing: Technology Landscape 2026,” Apr. 23, 2026. [Online]. Available: https://www.patsnap.com/resources/blog/rd-blog/trapped-ion-quantum-computing-2026-patsnap-eureka/ [P]
-[392] Gooch & Housego (G&H), “G&H Acousto-Optic Deflectors Referenced in Nature Papers Demonstrating 3,000 & 6,100 Qubit Quantum Systems,” G&H, Mar. 2026. [Online]. Available: https://gandh.com/news-and-resources/g-and-h-acousto-optic-deflectors-in-nature-papers [C]
-[567] IonQ, “IonQ Achieves Key Photonic Interconnect Milestone, Demonstrating Networked Quantum Systems Using Entanglement,” Apr. 14, 2026. [Online]. Available: https://www.ionq.com/news/ionq-achieves-key-photonic-interconnect-milestone-demonstrating-networked-quantum-systems-using-entanglement [C]
-[668] S. Debnath, N. M. Linke, C. Figgatt, K. A. Landsman, K. Wright, and C. Monroe, “Demonstration of a small programmable quantum computer with atomic qubits,” *Nature*, vol. 536, no. 7614, pp. 63–66, Aug. 2016, doi: [10.1038/nature18648](https://doi.org/10.1038/nature18648). [arXiv:1603.04512](https://arxiv.org/abs/1603.04512). [D]
-[669] K. Wright *et al.*, “Benchmarking an 11-qubit quantum computer,” *Nat. Commun.*, vol. 10, Art. no. 5464, Nov. 2019, doi: [10.1038/s41467-019-13534-2](https://doi.org/10.1038/s41467-019-13534-2). [arXiv:1903.08181](https://arxiv.org/abs/1903.08181). [D]
-[670] I. Pogorelov *et al.*, “Compact Ion-Trap Quantum Computing Demonstrator,” *PRX Quantum*, vol. 2, no. 2, Art. no. 020343, Jun. 2021, doi: [10.1103/PRXQuantum.2.020343](https://doi.org/10.1103/PRXQuantum.2.020343). [arXiv:2101.11390](https://arxiv.org/abs/2101.11390). [D]
-[671] L. Egan *et al.*, “Fault-tolerant control of an error-corrected qubit,” *Nature*, vol. 598, no. 7880, pp. 281–286, Oct. 2021, doi: [10.1038/s41586-021-03928-y](https://doi.org/10.1038/s41586-021-03928-y). [arXiv:2009.11482](https://arxiv.org/abs/2009.11482). [D]
-[672] J. Yu *et al.*, “Design and Characterization of Compact Acousto-Optic-Deflector Individual Addressing System for Trapped-Ion Quantum Computing,” [arXiv:2601.01647](https://arxiv.org/abs/2601.01647), Jan. 2026. [D]
-[673] R. Paschotta, “Acousto-optic Deflectors,” RP Photonics Encyclopedia. [Online]. Available: https://www.rp-photonics.com/acousto_optic_deflectors.html [G]
-[674] Alpine Quantum Technologies, “19-inch rack-mounted quantum computer,” AQT. [Online]. Available: https://www.aqt.eu/products/ibex-q1/ [C]
-[675] L. Postler *et al.*, “Demonstration of fault-tolerant universal quantum gate operations,” *Nature*, vol. 605, pp. 675–680, 2022, doi: [10.1038/s41586-022-04721-1](https://doi.org/10.1038/s41586-022-04721-1). [arXiv:2111.12654](https://arxiv.org/abs/2111.12654). [D]
+[18] IonQ, “IonQ Completes Acquisition of Oxford Ionics, Rapidly Accelerating Its Quantum Computing Roadmap,” Sep. 17, 2025. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-oxford-ionics-rapidly-accelerating-its-quantum [C]
+[100] J.-S. Chen *et al.*, “Benchmarking a trapped-ion quantum computer with 30 qubits,” *Quantum*, vol. 8, Art. no. 1516, Nov. 2024, doi: [10.22331/q-2024-11-07-1516](https://doi.org/10.22331/q-2024-11-07-1516). [arXiv:2308.05071](https://arxiv.org/abs/2308.05071). [D]
+[101] IonQ, “IonQ Tempo: 100-Qubit Quantum Computer (#AQ 64).” [Online]. Available: https://ionq.com/quantum-systems/tempo [C]
+[102] A. C. Hughes *et al.*, “Trapped-ion two-qubit gates with >99.99% fidelity without ground-state cooling,” [arXiv:2510.17286](https://arxiv.org/abs/2510.17286), Oct. 2025. [D]
+[109] E. Tham *et al.*, “Breakeven demonstration of quantum low-density parity-check codes,” [arXiv:2606.06455](https://arxiv.org/abs/2606.06455), Jun. 2026. [D]
+[121] S.-A. Guo *et al.*, “A site-resolved two-dimensional quantum simulator with hundreds of trapped ions,” *Nature*, vol. 630, no. 8017, pp. 613–618, May 2024, doi: [10.1038/s41586-024-07459-0](https://doi.org/10.1038/s41586-024-07459-0). [D]
+[128] Alpine Quantum Technologies GmbH, “AQT Sets New European Industry Standard: Introducing the ‘LYNX’ Series with Record-Breaking Quantum Volume,” AQT, May 5, 2026. [Online]. Available: https://www.aqt.eu/lynx-quantum-volume-record/ [C]
+[132] IonQ, “IonQ's Accelerated Roadmap: Turning Quantum Ambition into Reality,” Jun. 13, 2025. [Online]. Available: https://www.ionq.com/blog/ionqs-accelerated-roadmap-turning-quantum-ambition-into-reality [R]
+[253] I. Pogorelov *et al.*, “Compact Ion-Trap Quantum Computing Demonstrator,” *PRX Quantum*, vol. 2, no. 2, Art. no. 020343, Jun. 2021, doi: [10.1103/PRXQuantum.2.020343](https://doi.org/10.1103/PRXQuantum.2.020343). [arXiv:2101.11390](https://arxiv.org/abs/2101.11390). [D]
+[254] L. Egan *et al.*, “Fault-tolerant control of an error-corrected qubit,” *Nature*, vol. 598, no. 7880, pp. 281–286, Oct. 2021, doi: [10.1038/s41586-021-03928-y](https://doi.org/10.1038/s41586-021-03928-y). [arXiv:2009.11482](https://arxiv.org/abs/2009.11482). [D]
+[255] L. Postler *et al.*, “Demonstration of fault-tolerant universal quantum gate operations,” *Nature*, vol. 605, pp. 675–680, 2022, doi: [10.1038/s41586-022-04721-1](https://doi.org/10.1038/s41586-022-04721-1). [arXiv:2111.12654](https://arxiv.org/abs/2111.12654). [D]
+[302] M. U. Rehman, “Top Chinese Quantum Computing Companies in 2026,” The Quantum Insider, May 15, 2026. [Online]. Available: https://thequantuminsider.com/2026/05/15/10-plus-companies-leading-the-quantum-technologies-race-in-china/ [P]
+[322] M. Ivezic, “The Optical Table's Hidden Supply Chain: Who Really Wins If Trapped-Ion Quantum Computing Wins,” PostQuantum.com, Apr. 10, 2026. [Online]. Available: https://postquantum.com/quantum-ecosystem/trapped-ion-quantum-ecosystem/ [P]
+[323] AQT, “AQT lands million euro contract,” Dec. 5, 2023. [Online]. Available: https://www.aqt.eu/aqt-lands-million-euro-contract/ [C]
+[375] PatSnap, “Trapped Ion Quantum Computing: Technology Landscape 2026,” Apr. 23, 2026. [Online]. Available: https://www.patsnap.com/resources/blog/rd-blog/trapped-ion-quantum-computing-2026-patsnap-eureka/ [P]
+[382] Alpine Quantum Technologies, “19-inch rack-mounted quantum computer,” AQT. [Online]. Available: https://www.aqt.eu/products/ibex-q1/ [C]
+[504] Gooch & Housego (G&H), “G&H Acousto-Optic Deflectors Referenced in Nature Papers Demonstrating 3,000 & 6,100 Qubit Quantum Systems,” G&H, Mar. 2026. [Online]. Available: https://gandh.com/news-and-resources/g-and-h-acousto-optic-deflectors-in-nature-papers [C]
+[585] S. Debnath, N. M. Linke, C. Figgatt, K. A. Landsman, K. Wright, and C. Monroe, “Demonstration of a small programmable quantum computer with atomic qubits,” *Nature*, vol. 536, no. 7614, pp. 63–66, Aug. 2016, doi: [10.1038/nature18648](https://doi.org/10.1038/nature18648). [arXiv:1603.04512](https://arxiv.org/abs/1603.04512). [D]
+[586] K. Wright *et al.*, “Benchmarking an 11-qubit quantum computer,” *Nat. Commun.*, vol. 10, Art. no. 5464, Nov. 2019, doi: [10.1038/s41467-019-13534-2](https://doi.org/10.1038/s41467-019-13534-2). [arXiv:1903.08181](https://arxiv.org/abs/1903.08181). [D]
+[587] J. Yu *et al.*, “Design and Characterization of Compact Acousto-Optic-Deflector Individual Addressing System for Trapped-Ion Quantum Computing,” [arXiv:2601.01647](https://arxiv.org/abs/2601.01647), Jan. 2026. [D]
+[588] R. Paschotta, “Acousto-optic Deflectors,” RP Photonics Encyclopedia. [Online]. Available: https://www.rp-photonics.com/acousto_optic_deflectors.html [G]
+[589] IonQ, “IonQ Achieves Key Photonic Interconnect Milestone, Demonstrating Networked Quantum Systems Using Entanglement,” Apr. 14, 2026. [Online]. Available: https://www.ionq.com/news/ionq-achieves-key-photonic-interconnect-milestone-demonstrating-networked-quantum-systems-using-entanglement [C]
 (generated)
 
 ## Открытые пункты верификации

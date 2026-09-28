@@ -12,7 +12,7 @@ updated: 2026-09-03
 Λ = коэффициент подавления ошибки на шаг кодового расстояния; QBI = DARPA Quantum Benchmarking Initiative (стадия A — концепция → B — план НИОКР → C — государственная верификация и валидация); G1–G7 = классы целей настоящего отчёта (см. «Акторы и экономика»).
 
 ## Идентичность и происхождение
-Не железо, а дисциплина декодирования. Декодирование с учётом потерь потребляет геральд (herald): отсутствующий атом — это стирание (erasure) в известной позиции, поэтому стабилизаторы, задевающие вакансию, перемножаются в операторы *суперпроверки* большего веса, по-прежнему коммутирующие с уцелевшим кодом [4]. Коррелированное декодирование решает совместную историю синдромов сразу по трансверсальным (блок-в-блок) слоям, а не поблочно; Cain et al. (Harvard, 2024-03-05) показали, что число раундов между клиффордовыми гейтами падает как O(d)→O(1) [546], что затем обобщено как алгоритмическая отказоустойчивость (Nature 2025) [136].
+Не железо, а дисциплина декодирования. Декодирование с учётом потерь потребляет геральд (herald): отсутствующий атом — это стирание (erasure) в известной позиции, поэтому стабилизаторы, задевающие вакансию, перемножаются в операторы *суперпроверки* большего веса, по-прежнему коммутирующие с уцелевшим кодом [4]. Коррелированное декодирование решает совместную историю синдромов сразу по трансверсальным (блок-в-блок) слоям, а не поблочно; Cain et al. (Harvard, 2024-03-05) показали, что число раундов между клиффордовыми гейтами падает как O(d)→O(1) [738], что затем обобщено как алгоритмическая отказоустойчивость (Nature 2025) [152].
 f = потери + стирание; a/c/d/e/g = отсутствуют — классические вычисления, ни производства, ни размещения [запись графа].
 
 ## Физика и пределы
@@ -21,31 +21,31 @@ f = потери + стирание; a/c/d/e/g = отсутствуют — кл
 | Дата | Показатель | Кто | Тег+ключ |
 |---|---|---|---|
 | 2025-11-10 | Выигрыш 1.73(13)× от флагов потерь + ML относительно обычного декодирования, те же данные на 448 атомов | Harvard/MIT/QuEra | [D][4][G:HARVARD-LOSS-QEC-2025] |
-| 2026-03 | Декодер коррелированных потерь: порог 4% против 3.2% в предположении независимых потерь; 144 µs на раунд; моделирование | QPerfect | [S][547][G:QPERFECT-CORRLOSS-2026-03] |
-| 2026-06-12 | [[4,2,2]] на ¹⁷¹Yb: безусловный распад в 1.9(4)× медленнее при использовании информации о стираниях (3.6(1)× — это пост-селектированное удержание) | Princeton | [D][128][G:PRINCETON-ERASURE-RESOLVED-2026-09] |
+| 2026-03 | Декодер коррелированных потерь: порог 4% против 3.2% в предположении независимых потерь; 144 µs на раунд; моделирование | QPerfect | [S][739][G:QPERFECT-CORRLOSS-2026-03] |
+| 2026-06-12 | [[4,2,2]] на ¹⁷¹Yb: безусловный распад в 1.9(4)× медленнее при использовании информации о стираниях (3.6(1)× — это пост-селектированное удержание) | Princeton | [D][142][G:PRINCETON-ERASURE-RESOLVED-2026-09] |
 
 Та же схема: 2.14(13)×, d=3→5, четыре раунда. Доминирующий член: потеря атома, а не ошибка Паули.
 
 ## Производство, материалы и цепочка поставок
-Никакой фабрики: классические вычислители уже куплены под паросочетание. Область применения задаёт задержка: 144 µs на раунд укладываются в атомный цикл 1–4.5 ms с запасом 7–30× [547], но превышают сверхпроводниковый цикл 1.1 µs в ~130× — вот почему это остаётся специфичным для атомов. Полоса под флаги потерь составляет один бит на узел за раунд, поэтому стеной на 10³–10⁴ атомов оказываются визуализация в ~0.5–1 ms и окно декодирования, растущее с логической глубиной, а вовсе не канал связи. Унаследованные единые точки отказа: визуализация на qCMOS от Hamamatsu [G:HAMAMATSU-CAMERA-CONC-2026] и два поставщика AOD [G:AOD-VENDORS-2026].
+Никакой фабрики: классические вычислители уже куплены под паросочетание. Область применения задаёт задержка: 144 µs на раунд укладываются в атомный цикл 1–4.5 ms с запасом 7–30× [739], но превышают сверхпроводниковый цикл 1.1 µs в ~130× — вот почему это остаётся специфичным для атомов. Полоса под флаги потерь составляет один бит на узел за раунд, поэтому стеной на 10³–10⁴ атомов оказываются визуализация в ~0.5–1 ms и окно декодирования, растущее с логической глубиной, а вовсе не канал связи. Унаследованные единые точки отказа: визуализация на qCMOS от Hamamatsu [G:HAMAMATSU-CAMERA-CONC-2026] и два поставщика AOD [G:AOD-VENDORS-2026].
 
 ## Роль в стеке
-Требует высокоскоростных конкатенированных кодов с трансверсальными гейтами; предоставляет декодирующую половину алгоритмической отказоустойчивости, чьё утверждение о постоянном числе раундов иначе ничем на железе не подкреплено. Производный такт = сумма раунда синдрома (гейты 1 µs, транспорт 800 µs, 1Q 10 µs, считывание 501 µs) ≈ 1.3 ms, ~0.76 kHz; декодер обязан уложиться внутрь него, а не задавать его. Верификация: 1.73× — это отношение декодера к декодеру на данных одной лаборатории, невоспроизведённое; 4% — моделирование [547].  Четыре раунда не проверяют ни дрейф, ни дозагрузку; контролем служит тороидальный код Atom Computing, где подавление при дозагрузке исчезает (0.63% против 0.64% за цикл) [133]. Расхождение 1.9(4)×/3.6(1)× у Princeton разрешено: одна работа, две разные величины [G:PRINCETON-ERASURE-RESOLVED-2026-09].
+Требует высокоскоростных конкатенированных кодов с трансверсальными гейтами; предоставляет декодирующую половину алгоритмической отказоустойчивости, чьё утверждение о постоянном числе раундов иначе ничем на железе не подкреплено. Производный такт = сумма раунда синдрома (гейты 1 µs, транспорт 800 µs, 1Q 10 µs, считывание 501 µs) ≈ 1.3 ms, ~0.76 kHz; декодер обязан уложиться внутрь него, а не задавать его. Верификация: 1.73× — это отношение декодера к декодеру на данных одной лаборатории, невоспроизведённое; 4% — моделирование [739].  Четыре раунда не проверяют ни дрейф, ни дозагрузку; контролем служит тороидальный код Atom Computing, где подавление при дозагрузке исчезает (0.63% против 0.64% за цикл) [148]. Расхождение 1.9(4)×/3.6(1)× у Princeton разрешено: одна работа, две разные величины [G:PRINCETON-ERASURE-RESOLVED-2026-09].
 
 ## Акторы и экономика
 **Кто.**
 
 | Организация | Роль | Страна | Что именно | Свидетельство |
 |---|---|---|---|---|
-| Harvard/MIT | исследования | США | Коррелированное декодирование, суперпроверки, 1.73(13)× | [D][4], [546] |
-| QuEra | разработчик | США | Соавтор; Libra 2028 на это рассчитывает | [D][4][C][137] |
-| QPerfect (BTQ) | поставщик | Франция | Декодер коррелированных потерь; цифровой двойник aQCess | [S][547][C][548] |
-| Atom Computing | пользователь | США | Yb с нативным стиранием; контрпример с дозагрузкой | [D][133][C][138] |
+| Harvard/MIT | исследования | США | Коррелированное декодирование, суперпроверки, 1.73(13)× | [D][4], [738] |
+| QuEra | разработчик | США | Соавтор; Libra 2028 на это рассчитывает | [D][4][C][153] |
+| QPerfect (BTQ) | поставщик | Франция | Декодер коррелированных потерь; цифровой двойник aQCess | [S][739][C][740] |
+| Atom Computing | пользователь | США | Yb с нативным стиранием; контрпример с дозагрузкой | [D][148][C][154] |
 
 **Деньги.**
-2025-04-09 · BTQ Technologies · €2 M в QPerfect при оценке €10 M pre-money (16.67%) · term sheet [P][549]
-2026-07-22 · QPerfect · цифровой двойник aQCess, Equipex+ ANR-21-ESRE-0032 · объявлено [C][548]
-2026-06-16 · Atom Computing · $100 M раунда Series C (Third Point) + LOI по CHIPS на $100 M · закрыт + LOI [C][138][G:ATOM-300M-2026-06]
+2025-04-09 · BTQ Technologies · €2 M в QPerfect при оценке €10 M pre-money (16.67%) · term sheet [P][741]
+2026-07-22 · QPerfect · цифровой двойник aQCess, Equipex+ ANR-21-ESRE-0032 · объявлено [C][740]
+2026-06-16 · Atom Computing · $100 M раунда Series C (Third Point) + LOI по CHIPS на $100 M · закрыт + LOI [C][154][G:ATOM-300M-2026-06]
 2025-11-06 · DARPA QBI Stage B · Atom Computing, QuEra среди одиннадцати · ≤$15 M каждому [G:QBI-STAGEB-2025-11]
 
 **Рынок и цепочка поставок.** Рынка компонентов нет: такты GPU/FPGA уже куплены под паросочетание; риск концентрации лежит выше по цепочке — в визуализации и AOD. Платит только по G3/G4.
@@ -56,24 +56,22 @@ f = потери + стирание; a/c/d/e/g = отсутствуют — кл
 
 **Стратегическое прочтение.** Если это устоит, атомы превращают свой худший недостаток в дешёвый учитываемый канал, а трансверсальные архитектуры обыгрывают решёточную хирургию по пространственно-временной стоимости: выигрывают QuEra, Atom Computing, Pasqal и Infleqtion, а сверхпроводниковые вендоры теряют задержку декодера как отличительное преимущество. Угроза замещения: ридберговский CZ выше 99.95% сжимает член потерь. Неконкурентное благо: сдать его в аренду не может ни один поставщик.
 
-*Открытая ниша:* оба заголовочных числа суть отношения к базовой линии, выбранной той же самой командой; QCVV-коллектив без собственного атомного железа может заново вывести 1.73× относительно оптимального слепого к потерям декодера на опубликованных данных синдромов и проверить порог 4% на прочность при дозагрузке.
-
 ## Прогноз и открытые вопросы
-Подтвердить, если декодер QPerfect отработает на реальных синдромах либо второй вендор опубликует собственный выигрыш от учёта потерь; понизить в статусе, если выигрыш умрёт при дозагрузке или за пределами четырёх раундов. Лучший случай к 2029 году: значение по умолчанию во всех отказоустойчивых стеках на нейтральных атомах; худший — архитектура одной группы, никогда не выходящая за 10³ атомов. Открыто: держится ли 1.73× на 10⁴ атомах, на глубинах, где коррелированный граф перерастает память, и на ионах [506]?
+Подтвердить, если декодер QPerfect отработает на реальных синдромах либо второй вендор опубликует собственный выигрыш от учёта потерь; понизить в статусе, если выигрыш умрёт при дозагрузке или за пределами четырёх раундов. Лучший случай к 2029 году: значение по умолчанию во всех отказоустойчивых стеках на нейтральных атомах; худший — архитектура одной группы, никогда не выходящая за 10³ атомов. Открыто: держится ли 1.73× на 10⁴ атомах, на глубинах, где коррелированный граф перерастает память, и на ионах [667]?
 
 ## Источники
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [8] Y. Wu, S. Kolkowitz, S. Puri, and J. D. Thompson, “Erasure conversion for fault-tolerant quantum computing in alkaline earth Rydberg atom arrays,” *Nat. Commun.*, vol. 13, Art. no. 4657, 2022, doi: [10.1038/s41467-022-32094-6](https://doi.org/10.1038/s41467-022-32094-6). [arXiv:2201.03540](https://arxiv.org/abs/2201.03540). [S]
-[128] B. Zhang *et al.*, “Logical qubits with erasure conversion using metastable neutral atoms,” *Nat. Phys.*, vol. 22, no. 6, pp. 910–916, Jun. 2026, doi: [10.1038/s41567-026-03309-0](https://doi.org/10.1038/s41567-026-03309-0). [arXiv:2506.13724](https://arxiv.org/abs/2506.13724). [D]
-[133] Atom Computing and Collaborators, “Quantum error correction with the toric code,” [arXiv:2606.04079](https://arxiv.org/abs/2606.04079), Jun. 2026. [D]
-[136] H. Zhou *et al.*, “Low-Overhead Transversal Fault Tolerance for Universal Quantum Computation,” *Nature*, vol. 646, no. 8084, pp. 303–308, 2025, doi: [10.1038/s41586-025-09543-5](https://doi.org/10.1038/s41586-025-09543-5). [arXiv:2406.17653](https://arxiv.org/abs/2406.17653). [S]
-[137] QuEra Computing, “QuEra Expands $230 Million Financing Round Advancing Quantum-Accelerated Supercomputing,” Sep. 9, 2025. [Online]. Available: https://www.quera.com/press-releases/quera-expands-230-million-financing-round-advancing-quantum-accelerated-supercomputing [C]
-[138] Atom Computing, “Atom Computing Raises More Than $300 Million to Accelerate Deployment of Fault-Tolerant, Neutral-Atom Quantum Computers,” PR Newswire, Jun. 16, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/atom-computing-raises-more-than-300-million-to-accelerate-deployment-of-fault-tolerant-neutral-atom-quantum-computers-302800832.html [C]
-[506] A. Paetznick *et al.*, “Improved quantum processor logical error rates via correction and detection,” *Nature*, vol. 654, no. 8118, pp. 349–355, Jun. 2026, doi: [10.1038/s41586-026-10628-y](https://doi.org/10.1038/s41586-026-10628-y). [D]
-[546] M. Cain *et al.*, “Correlated decoding of logical algorithms with transversal gates,” [arXiv:2403.03272](https://arxiv.org/abs/2403.03272), Mar. 2024. [D]
-[547] H. Perrin, G. Roger, and G. Pupillo, “Correlated Atom Loss as a Resource for Quantum Error Correction,” [arXiv:2603.24237](https://arxiv.org/abs/2603.24237), Mar. 2026. [S]
-[548] BTQ Technologies, “BTQ Technologies' QPerfect Subsidiary and the University of Strasbourg Partner to Support France's First Public Neutral-Atom Quantum Computing Platform,” PR Newswire, Jul. 22, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/btq-technologies-qperfect-subsidiary-and-the-university-of-strasbourg-partner-to-support-frances-first-public-neutral-atom-quantum-computing-platform-302831874.html [C]
-[549] C. Choucair, “BTQ Technologies to Invest Over $2 Million in QPerfect to Advance Neutral Atom Quantum Computing,” The Quantum Insider, Apr. 9, 2025. [Online]. Available: https://thequantuminsider.com/2025/04/09/btq-technologies-to-invest-over-2-million-in-qperfect-to-advance-neutral-atom-quantum-computing/ [P]
+[142] B. Zhang *et al.*, “Logical qubits with erasure conversion using metastable neutral atoms,” *Nat. Phys.*, vol. 22, no. 6, pp. 910–916, Jun. 2026, doi: [10.1038/s41567-026-03309-0](https://doi.org/10.1038/s41567-026-03309-0). [arXiv:2506.13724](https://arxiv.org/abs/2506.13724). [D]
+[148] Atom Computing and Collaborators, “Quantum error correction with the toric code,” [arXiv:2606.04079](https://arxiv.org/abs/2606.04079), Jun. 2026. [D]
+[152] H. Zhou *et al.*, “Low-Overhead Transversal Fault Tolerance for Universal Quantum Computation,” *Nature*, vol. 646, no. 8084, pp. 303–308, 2025, doi: [10.1038/s41586-025-09543-5](https://doi.org/10.1038/s41586-025-09543-5). [arXiv:2406.17653](https://arxiv.org/abs/2406.17653). [S]
+[153] QuEra Computing, “QuEra Expands $230 Million Financing Round Advancing Quantum-Accelerated Supercomputing,” Sep. 9, 2025. [Online]. Available: https://www.quera.com/press-releases/quera-expands-230-million-financing-round-advancing-quantum-accelerated-supercomputing [C]
+[154] Atom Computing, “Atom Computing Raises More Than $300 Million to Accelerate Deployment of Fault-Tolerant, Neutral-Atom Quantum Computers,” PR Newswire, Jun. 16, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/atom-computing-raises-more-than-300-million-to-accelerate-deployment-of-fault-tolerant-neutral-atom-quantum-computers-302800832.html [C]
+[667] A. Paetznick *et al.*, “Improved quantum processor logical error rates via correction and detection,” *Nature*, vol. 654, no. 8118, pp. 349–355, Jun. 2026, doi: [10.1038/s41586-026-10628-y](https://doi.org/10.1038/s41586-026-10628-y). [D]
+[738] M. Cain *et al.*, “Correlated decoding of logical algorithms with transversal gates,” [arXiv:2403.03272](https://arxiv.org/abs/2403.03272), Mar. 2024. [D]
+[739] H. Perrin, G. Roger, and G. Pupillo, “Correlated Atom Loss as a Resource for Quantum Error Correction,” [arXiv:2603.24237](https://arxiv.org/abs/2603.24237), Mar. 2026. [S]
+[740] BTQ Technologies, “BTQ Technologies' QPerfect Subsidiary and the University of Strasbourg Partner to Support France's First Public Neutral-Atom Quantum Computing Platform,” PR Newswire, Jul. 22, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/btq-technologies-qperfect-subsidiary-and-the-university-of-strasbourg-partner-to-support-frances-first-public-neutral-atom-quantum-computing-platform-302831874.html [C]
+[741] C. Choucair, “BTQ Technologies to Invest Over $2 Million in QPerfect to Advance Neutral Atom Quantum Computing,” The Quantum Insider, Apr. 9, 2025. [Online]. Available: https://thequantuminsider.com/2025/04/09/btq-technologies-to-invest-over-2-million-in-qperfect-to-advance-neutral-atom-quantum-computing/ [P]
 [G] Bluvstein et al. (Harvard/MIT/QuEra), Nature 649, 39 (online 2025-11-10; arXiv:2506.20661, 2025-06-25): surface code on up to 448 atoms, 2.14(13)× below threshold in a four-round c… · 2025-11-10 · https://www.nature.com/articles/s41586-025-09848-5
 [G] Evered, Xu, Li, Geim, Bonilla Ataides, Kalinowski, Bluvstein, Maskara, Kokail, Greiner, Vuletic, Lukin (Harvard/MIT), "High-fidelity entangling gates and nonlocal circuits with neu… · 2026-04-28 · https://arxiv.org/abs/2604.25987
 [G] Perrin, Roger, Pupillo (Univ. Strasbourg/CNRS, QPERFECT SAS), "Correlated Atom Loss as a Resource for Quantum Error Correction", arXiv:2603.24237 (2026-03): fast correlated-loss de… · 2026-03 · https://arxiv.org/html/2603.24237

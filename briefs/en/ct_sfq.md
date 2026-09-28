@@ -13,47 +13,45 @@ updated: 2026-09-03
 
 ## Identity & lineage
 
-Single-flux-quantum logic holds a bit as one flux quantum Φ₀ = h/2e ≈ 2.07 × 10⁻¹⁵ Wb in a superconducting loop; a junction undergoing a 2π phase slip emits a pulse of quantised area Φ₀, about 1 mV for 2 ps. RSFQ (Likharev & Semenov, 1991) was built for classical computing at 4 K. The control use is younger: a pulse train locked to a multiple of the qubit period adds coherently into a Rabi rotation — proposed by McDermott and Vavilov in 2014 [S][435], first shown on a transmon at ≈ 95% by Leonard et al. [D][436]. The 2026 node is not merely cold classical logic: the control instrument sits on the mixing-chamber plate, flip-chipped to the qubits, so synthesis, timing and fan-out happen at 10 mK, not 300 K [D][229]. This brief covers the qubit-control node only; the wider family — RSFQ, ERSFQ/eSFQ, RQL, AQFP, DSFQ, their foundries, design flows and non-quantum markets — is tracked in the author's Superconductor Electronics Monitor [P][54].
+Single-flux-quantum (SFQ) logic stores a bit as one flux quantum Φ₀ = h/2e in a superconducting loop; a switching junction emits a pulse of area Φ₀, about 1 mV for 2 ps. Its rapid form (RSFQ; Likharev & Semenov, 1991) was built for classical computing at 4 K. For qubit control, a pulse train locked to the qubit period adds coherently into a Rabi rotation [S][565]. In the 2026 form the controller is flip-chipped to the qubits at 10 mK [D][304]. The wider superconductor-electronics field is tracked in the Superconductor Electronics Monitor [P][56].
 
-Attributes. **Carrier affinity:** fully fabricated — a control layer bonded to a carrier, not a carrier. **Time / entangling:** not applicable. **Readout:** none demonstrated [C][51]. **Mobility:** none, bump-bonded. **Control modality @ placement:** microwave drive synthesised digitally *at millikelvin*, the defining attribute. **Error structure as the code sees it:** Pauli plus a correlated non-Pauli component from photon-mediated quasiparticle poisoning [D][231]. **Manufacturing:** multi-layer niobium lithography.
+Attributes. **Carrier affinity:** fully fabricated control layer. **Time / entangling:** not applicable. **Readout:** none demonstrated [C][53]. **Mobility:** none, bump-bonded. **Control modality @ placement:** microwave drive synthesised digitally *at millikelvin*. **Error structure as the code sees it:** Pauli plus correlated poisoning bursts [D][249]. **Manufacturing:** multi-layer niobium lithography.
 
 ## Physics & limits
 
-A Φ₀ kick delivers a fixed, calibration-free phase increment, so gate amplitude is set by pulse *count*, not analogue amplitude — hence immunity to the drift and IQ imbalance of room-temperature chains. Each switching event costs of order I_cΦ₀ ≈ 10⁻¹⁹ J, and resistively shunted RSFQ also burns static bias power; the mixing-chamber budget is tens of µW at 20 mK (a KIDE-class platform quotes > 3 mW only at 100 mK) [C][G:BLUEFORS-KIDE], so switching energy is not binding — bias distribution and the Josephson transmission lines are.
+Each Φ₀ pulse gives the qubit a fixed phase kick, so gate angle is set by pulse *count*, not analogue amplitude. Switching costs only ~I_cΦ₀ ≈ 10⁻¹⁹ J per event; within a mixing-chamber budget of tens of µW at 20 mK, RSFQ's static bias power and bias distribution bind first.
 
-The floor is pair-breaking. A switching junction radiates photons above the gap (2Δ ≈ 90 GHz in aluminium); these break Cooper pairs in the qubit film, giving T₁ decay and correlated bursts no Pauli-channel decoder models. Liu et al. quantified it: with the driver on a separate chip joined by indium bumps, error per Clifford was 1.2(1)%, of which 0.96(2)% was incoherent and attributed to photon-mediated quasiparticle poisoning through the module's resonant millimetre-wave antenna modes [D][231]. Their fix is unexotic — limit the driver's pulse bandwidth — projecting 0.1% for resonant and 0.01% for complex sequences [D][231]. What moves the floor: gap engineering, quasiparticle traps, millimetre-wave absorbers, and bias-resistor-free families (ERSFQ/eSFQ, adiabatic quantum-flux-parametron).
+The floor is pair-breaking: switching junctions radiate photons above the aluminium gap (2Δ ≈ 90 GHz) that break Cooper pairs in the qubit film — quasiparticle poisoning — causing T₁ decay and correlated bursts. Limiting the driver's pulse bandwidth is projected to remove it, bringing gate error toward 0.1% for resonant sequences [D][249]. Other levers: quasiparticle traps, gap engineering, millimetre-wave absorbers.
 
 ## Engineering state of the art
 
-Best demonstrated as of 3 Sep 2026: SEEQC's five-qubit processor with SFQ control in the same flip-chip module at 10 mK, single-qubit fidelity above 99% with peaks at 99.9%, one digital input demultiplexed to several qubits [D][229][C][51]. There is no "typical at scale": every SFQ result is ≤ 5 qubits, and none has driven a two-qubit gate or run a QEC cycle.
+Best demonstrated (3 Sep 2026): SEEQC's five-qubit module at 10 mK, single-qubit fidelity above 99%, one digital input demultiplexed to several qubits [D][304][C][53]. No SFQ result exceeds five qubits or includes a two-qubit gate or a QEC cycle.
 
 | Year | Figure | Who | Tag+key |
 |---|---|---|---|
-| 2014 | Resonant SFQ pulse-train control proposed | McDermott & Vavilov | [S][435] |
-| 2014 | 4,544 on-chip flux DACs for 512 qubits via 56 wires | D-Wave | [D][437] |
-| 2019 | First SFQ single-qubit gate on a transmon, ≈ 95% | Wisconsin / Syracuse | [D][436] |
-| 2023 | Separate-die driver: 1.2(1)% error/Clifford, 0.96(2)% from poisoning | Wisconsin, Syracuse, NIST | [D][231] |
-| 2024 | Multiplexed adiabatic-logic controller at 4.2 K, ~1,000× signals per cable | AIST, Yokohama NU, NEC | [C][438] |
-| 2026-03 | Five qubits + SFQ control at 10 mK; 1Q > 99%, peak 99.9% | SEEQC | [D][229] |
-| 2026-03 | Fluxon time-delay readout in a Josephson transmission line | preprint | [S][439] |
+| 2014 | 4,544 on-chip flux DACs for 512 qubits via 56 wires | D-Wave | [D][430] |
+| 2019 | First SFQ gate on a transmon, ≈ 95% | Wisconsin / Syracuse | [D][566] |
+| 2023 | Separate-die driver: 1.2(1)% error/Clifford, 0.96(2)% from poisoning | Wisconsin, Syracuse, NIST | [D][249] |
+| 2026-03 | Five qubits, SFQ control at 10 mK; 1Q > 99%, peak 99.9% | SEEQC | [D][304] |
+| 2026-03 | Fluxon time-delay readout, no fidelity reported | preprint | [S][568] |
 
-Dominant error term: quasiparticle poisoning at ~80% of the 2023 module's total; in SEEQC's module, undisclosed — the paper reports fidelity, not a decomposition.
+Dominant error term: quasiparticle poisoning in the 2023 module [D][249]; undisclosed for SEEQC's.
 
 ## Manufacturing, materials & supply chain
 
-The control die is multi-layer Nb/AlOx/Nb — eight or more planarised niobium layers, 10⁴–10⁶ junctions — a different flow from the two- or three-layer aluminium-on-silicon qubit process, so this node's supply chain is not the qubit supply chain [D][440]. Sources are few and mostly non-commercial: MIT Lincoln Laboratory's superconducting-digital line (SFQ5ee family) and its SQUILL qubit foundry, now on 200 mm wafers with > 400 devices delivered [C][441]; AIST's niobium node, whose RSFQ and adiabatic-logic cell libraries run at 1 kA/cm² [D][442]; and SEEQC, owner of one of the very few *commercial* multi-layer superconductor foundries, in Elmsford, New York, with sites in London and Naples [C][443]. Yield risk: margins need junction critical-current spreads of a few per cent across thousands of junctions. The only dated cryogenic figure is ~1.6 µW per qubit for SFQ against 23 mW/qubit for 4 K cryo-CMOS driving a two-qubit gate [S][418][G:CRYOCMOS-POWER-CONFLICT]. Export exposure is asymmetric: the BIS rule of 2024-09-06 created ECCN 3A901.a for **CMOS** circuits designed for ≤ 4.5 K, a design-intent test that captures cryo-CMOS design files but, read literally, not niobium SFQ — exposed instead through 3A904, 3B904 and 4A906 [G][225]. Single points of failure: dilution refrigerators, indium-bump bonding, niobium sputter and CMP tooling.
+The control die is multi-layer Nb/AlOx/Nb — eight or more planarised niobium layers, 10⁴–10⁶ junctions — unlike the aluminium qubit process [D][569]. Foundries are few: MIT Lincoln Laboratory (SFQ5ee line, SQUILL qubit foundry) [C][570], AIST's niobium process and cell libraries [D][571], and SEEQC's commercial foundry in Elmsford, NY [C][572]. Yield needs critical-current spreads of a few per cent across thousands of junctions. Export exposure (BIS rule of 2024-09-06): ECCNs 3A904, 3B904 and 4A906; 3A901.a, read literally, covers cryogenic CMOS only [G][301]. Single points of failure: dilution refrigerators, indium-bump bonding, niobium sputter and CMP tools.
 
 ## Control, readout & I/O burden
 
-Transmons run roughly one drive coax plus one flux line per qubit; a KIDE-class platform advertises > 4,000 RF lines for "over 1000 qubits" [C][G:BLUEFORS-KIDE], already the ceiling of coax-per-qubit. SFQ substitutes a clock plus a low-rate instruction stream [D][229]; D-Wave's flux DACs are the existence proof at the other end of the same idea — 4,544 on-chip converters programmed through 56 wires with zero static dissipation [D][437]. At 10³ qubits coax is workable; at 10⁴ it fails on fridge cross-section and heat load; at 10⁶ only in-fridge digital fan-out closes. Latency is the second prize: real-time decoding at d = 5 costs 63 µs round trip [D][1], and a co-located decoder removes the cable and the 300 K hop. SFQ does not yet touch readout — the fluxon scheme is a preprint with no reported fidelity [S][439] — nor flux bias, which SEEQC lists as future work [C][51].
+Room-temperature control needs about one drive coax and one flux line per transmon, so fridge cross-section and heat load set its limit; a KIDE-class platform offers > 4,000 RF lines for "over 1000 qubits" [C][G:BLUEFORS-KIDE]. SFQ control needs a clock plus a low-rate instruction stream [D][304]. SFQ readout exists only as a preprint scheme [S][568]; SEEQC lists flux bias as future work [C][53].
 
 ## Role in the stack
 
-Architecture: superconducting transmon (Google, IBM, Rigetti, IQM, OQC, USTC/Zhejiang, Fujitsu). It requires superconducting-qubit lithography plus a flip-chip module flow, and provides the cold digital substrate a cryogenic on-chip decoder would sit on. D-Wave's on-chip flux DACs require it in the literal sense — each DAC is an SFQ flux-storage loop loaded one flux quantum at a time [D][437] — the node's only dependency from a second carrier family (annealing), and what makes it a transfer hub. It replaces room-temperature control racks and competes with 4 K cryo-CMOS — a substitution with a price, since cryo-CMOS reuses commercial foundries, EDA and verification whereas SFQ needs a niobium ecosystem whose design tools are commercial only at the physical-verification level (extraction, LVS, DRC) and academic above RTL — no licensable system-level flow exists. It conflicts with the transmon itself: the switching photons that make SFQ fast are the photons that poison the qubit. The off-diagonal reading is cold fabrication — a manufacturing answer to a control problem, which is why the leading actor is a foundry owner, not an instrument vendor. Contribution to the derived clock (sum of the syndrome round: gate layers + transport + readout + reset): neutral — gates stay at tens of nanoseconds, so the round stays at **0.65 µs**, readout its largest term, against the measured **1.1 µs** QEC cycle [D][1]. Neighbouring empty slots: SFQ flux bias for gate-model transmons (the annealer DAC exists), SFQ readout, a cryogenic decoder fed by SFQ syndrome traffic.
+Architecture: the superconducting transmon lattice. It requires superconducting-qubit lithography and flip-chip modules; it provides cold digital logic for a cryogenic decoder and D-Wave's flux DACs [D][430]. The cold routes for control are cryo-CMOS or SFQ: cryo-CMOS reuses commercial foundries and design tools; SFQ needs a niobium ecosystem whose commercial tools stop at physical verification. The conflict with the transmon — switching photons poisoning the qubit — is open: its mitigation is projected [D][249], and SEEQC's 2026 report of no detectable poisoning is press coverage [C][53]. Off-diagonal reading: cold fabrication. Contribution to the derived clock: neutral — the syndrome round stays at **0.65 µs** against the measured **1.1 µs** QEC cycle [D][1]. Neighbouring empty slots: SFQ flux bias, SFQ readout.
 
-## Verification (QCVV)
+## Evidence — how the numbers were measured
 
-Every headline number is a randomised-benchmarking Clifford average [D][436][D][231][D][229]. RB is the wrong instrument for this node's characteristic failure: quasiparticle bursts are rare, correlated and non-Markovian, while RB assumes a Markovian gate-independent channel and averages bursts into a slightly worse mean — so a module can pass at 99.9% and still produce correlated multi-qubit errors that break a surface-code decoder. The 2023 paper separated coherent from incoherent error [D][231]; the 2026 claim of "absence of detectable quasiparticle poisoning" reaches us only through press coverage [C][51]. Missing everywhere: charge-parity monitoring under continuous clocking, T₁ with the clock on versus off, any QEC-level measurement. No independent replication exists — the 2026 author list is entirely Seeqc [D][229]. Conflicts: the abstract says "exceeding 99%" [D][229], press coverage "exceeding 99.5%" [C][51] (trust the abstract); and "nanowatts per qubit" [C][51] against ~1.6 µW/qubit [S][418], three orders apart.
+Every headline number is a randomised-benchmarking (RB) Clifford average [D][566][D][249][D][304]. RB assumes Markovian, gate-independent errors, so rare correlated bursts average into a slightly worse mean, and a module can pass at 99.9% yet emit correlated errors that decoders do not model. SEEQC's "absence of detectable quasiparticle poisoning" is reported only in press [C][53]. Not reported: charge parity under continuous clocking, T₁ with the clock on and off. No independent replication: the 2026 authors are all from SEEQC [D][304]. Conflicts: "exceeding 99%" in the abstract [D][304] against "exceeding 99.5%" in press [C][53]; "nanowatts per qubit" [C][53] against ~1.6 µW per qubit in a 2026 estimate [S][550][G:CRYOCMOS-POWER-CONFLICT].
 
 ## Actors & economics
 
@@ -61,77 +59,64 @@ Every headline number is a randomised-benchmarking Clifford average [D][436][D][
 
 | Organisation | Role | Country | What they do with it | Evidence |
 |---|---|---|---|---|
-| SEEQC | developer / supplier | US | The mK SFQ control module; owns a commercial Nb foundry | [D][229][C][443] |
-| IBM | user / integrator | US | SFQ integration with SEEQC under QBI; also hedging with cryo-CMOS | [P][52][C][411] |
-| Hypres | IP predecessor | US | SEEQC's 2019 spin-out parent; > $100 M of prior SFQ investment | [C][443] |
-| Univ. of Wisconsin–Madison | research | US | Originated resonant SFQ control; leads poisoning studies | [S][435][D][231] |
-| Syracuse University | research | US | Qubit fabrication and diagnostics for the multi-chip work | [D][231] |
-| NIST Boulder | research / supplier | US | Niobium SFQ fabrication and metrology | [D][231] |
-| MIT Lincoln Laboratory | supplier (foundry) | US | SFQ5ee digital process; SQUILL qubit foundry | [C][441] |
-| D-Wave | developer (adjacent) | CA | On-chip flux DACs replacing control wires | [D][437] |
-| AIST | research / foundry | JP | Nb RSFQ and adiabatic-logic cell libraries | [D][442] |
-| NEC | research | JP | 4.2 K multiplexed qubit controller with AIST | [C][438] |
-| DARPA | programme sponsor | US | QBI; SEEQC participates via IBM, not as a performer | [G][60] |
-| IonQ | supplier (contested) | US | Owns SkyWater, named in D-Wave's 10-K filings | [C][18][G][379] |
+| SEEQC | developer / foundry | US | mK SFQ control module; commercial Nb foundry | [D][304][C][572] |
+| IBM | integrator | US | SFQ integration with SEEQC (QBI); own cryo-CMOS control | [P][54][C][527] |
+| Wisconsin–Madison, Syracuse, NIST Boulder | research | US | Resonant SFQ control; poisoning study | [S][565][D][249] |
+| MIT Lincoln Laboratory | foundry | US | SFQ5ee process; SQUILL qubit foundry | [C][570] |
+| D-Wave | developer (adjacent) | CA | On-chip SFQ flux DACs in annealers | [D][430] |
+| AIST, NEC | research / foundry | JP | Nb cell libraries; 4.2 K multiplexed controller | [D][571][C][567] |
 
 **Money.**
-- 2020-09-16 · SEEQC · Series A · $22.4 M · EQT Ventures (lead), FAM AB, M Ventures ($5 M) · cumulative > $29 M · closed [C][443]
-- 2025-01-16 · SEEQC · growth round · $30 M · SIP Global, NordicNinja, Booz Allen Ventures, no named lead · closed [P][444]
-- 2025-06-12 · SEEQC + IBM · SFQ integration under DARPA QBI · undisclosed · IBM the named performer · announced [P][52][G:SEEQC-2026]
-- 2026-06-29 · SEEQC · S-1 for a conventional Nasdaq IPO (SEQC), filed in parallel with the Allegro Merger Corp SPAC agreement ($1 B enterprise value, $65 M PIPE) · offering size not set · filed [P][426][G:SEEQC-S1-2026-07]
-- 2026-08-25 · SEEQC / Allegro Merger Corp · SPAC merger terminated by settlement; Allegro receives up to $2 M of expenses plus $6 M in stock at a $1.3 B pre-money valuation on a future IPO, acquisition or ≥ $100 M raise · terminated [G][445]
-- 2026-07-31 · IonQ / SkyWater · M&A · ~$1.8 B · closed [C][18][G:IONQ-SKYWATER-2026]
+- 2020-09-16 · SEEQC · Series A · $22.4 M · EQT Ventures (lead) · closed [C][572]
+- 2025-01-16 · SEEQC · growth round · $30 M · SIP Global and others · closed [P][573]
+- 2025-06-12 · SEEQC + IBM · SFQ integration under DARPA QBI, IBM the performer [G][65] · undisclosed · announced [P][54][G:SEEQC-2026]
+- 2026-06-29 · SEEQC · S-1 for a Nasdaq IPO, alongside an Allegro Merger Corp SPAC agreement ($1 B enterprise value) · filed [P][556][G:SEEQC-S1-2026-07]
+- 2026-08-25 · SEEQC / Allegro · SPAC merger ended by settlement: Allegro gets $6 M in stock at a $1.3 B pre-money valuation on a future IPO, sale or ≥ $100 M raise · terminated [G][574]
 
-**Market & supply chain.** No SFQ control market exists — one vendor, one demonstration, an IPO in registration. Concentration is upstream: niobium sputter and CMP tooling, indium-bump bonders, dilution refrigerators. Outside SEEQC's line, Western superconducting-digital capacity is essentially Lincoln Laboratory [C][441], and the merchant option most visible in SEC filings, SkyWater, now belongs to IonQ [C][18][G][379]. Only G3 and G4 pay for this; G7 is secondary, G1/G2/G5 pay nothing.
+**Market & supply chain.** No SFQ control market exists yet: one vendor, one demonstration. SkyWater, the merchant foundry named in D-Wave's 10-K filings [G][492], has belonged to IonQ since July 2026 [C][19]. G3 and G4 pay for it; G7 secondarily.
 
-**IP & standards.** SEEQC's position rests on the Hypres portfolio of RSFQ circuit and niobium process patents transferred in 2019 [C][443]; no dated patent-family count was obtained. No SFQ-for-control standards exist; the nearest shared design base is AIST's cell library [D][442] and MIT-LL's design kits [C][441].
+**IP & standards.** SEEQC holds the Hypres RSFQ and niobium-process patents, transferred at its 2019 spin-out [C][572]. No SFQ-control standards exist; shared design bases are AIST's cell library [D][571] and MIT-LL's kits [C][570].
 
-**Roadmaps & track record.** SEEQC: millikelvin SFQ control (promised 2021–22 · as chip-scale control · delivered 2026-03 at five qubits) [D][229]; on-die digital flux control and readout (promised 2026-03 · no date · not delivered) [C][51]; listing (promised 2026-06 · for 2026 · S-1 in registration; SPAC route abandoned 2026-08-25) [P][426]. It shipped the hard physics four to five years late and never at scale — take its fidelity claims seriously, its scaling claims sceptically. IBM: SFQ is a hedge beside cryo-CMOS, its control-electronics promises holding better than its module promises [G:IBM-ROADMAP-2022]. D-Wave: a decade of shipped on-chip digital control, for annealers [D][437].
+**Roadmaps & track record.** SEEQC: millikelvin SFQ control (promised 2021–22 · delivered 2026-03 at five qubits) [D][304]; on-die flux control and readout (announced 2026-03 · undated) [C][53].
 
-**Strategic reading.** Winners: owners of niobium process capability — SEEQC and, via Lincoln Laboratory, the US government — plus whichever transmon vendor integrates first, most plausibly IBM. Losers: room-temperature control vendors, whose per-qubit revenue disappears into a bonded die. The substitution leads on evidence: cryo-CMOS has a full QEC demonstration [D][163] and fleet-scale parity data [C][411]; SFQ has five qubits and no two-qubit gate. Supplier power holds only while the supplier is also the only foundry.
-
-*Open niche:* a small QCVV/SFQ research company plugs in where this brief keeps returning — nobody measures SFQ-controlled qubits with protocols that see the failure mode. Concretely: charge-parity and correlated-error spectroscopy with the clock gated on and off; burst-aware benchmarking reporting the tail, not the RB mean; and an independent replication path. That needs a fridge, not a foundry, and yields what no vendor publishes: correlated error rate per unit clock time.
+**Strategic reading.** Niobium process capability sits with SEEQC and, via Lincoln Laboratory, the US government. Of the cold routes, cryo-CMOS or SFQ, cryo-CMOS has the stronger record: a QEC demonstration under a 4 K cryo-CMOS controller [D][190] and parity with warm electronics on an IBM processor [C][527]; SFQ has single-qubit gates on five qubits from one group [D][304].
 
 ## Outlook & open questions
 
-Confirm if by end-2027 a group publishes an SFQ-driven two-qubit gate below 1% error, an SFQ-controlled device above ten qubits, or a charge-parity measurement showing no clock-correlated bursts over hours. Demote if by end-2028 no SFQ module above twenty qubits exists, or a published decomposition shows poisoning above 0.1% per Clifford. Best case by 2029: SFQ control plus SFQ flux bias in an IBM or SEEQC module at the 10²-qubit scale, decoder co-located. Worst case: cryo-CMOS wins on ecosystem economics and SFQ survives only as D-Wave-style flux DACs. Open questions: (1) does "no detectable quasiparticle poisoning" survive continuous clocking at QEC duty cycles? (2) Can SFQ flux bias hold the DC stability transmons need? (3) Who fabricates SFQ wafers at volume if SEEQC's line saturates and SkyWater sits inside IonQ? Watch: SEEQC's S-1 disclosures, any two-qubit SFQ preprint, the next QBI roster.
+Confirm if by end-2027 a group publishes an SFQ-driven two-qubit gate below 1% error, an SFQ-controlled device above ten qubits, or hours of charge-parity data free of clock-correlated bursts. Demote if by end-2028 no SFQ module exceeds twenty qubits, or a decomposition shows poisoning above 0.1% per Clifford. Open questions: does "no detectable poisoning" survive continuous clocking at QEC duty cycles? Can SFQ flux bias hold the DC stability transmons need?
 
 ## Sources
 
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
-[18] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [C]
-[51] M. Abdel-Kareem, “SEEQC Reports Integrated Qubit Control Logic Operating at Millikelvin Temperatures,” Quantum Computing Report, Mar. 21, 2026. [Online]. Available: https://quantumcomputingreport.com/seeqc-reports-integrated-qubit-control-logic-operating-at-millikelvin-temperatures/ [C]
-[52] M. Abdel-Kareem, “SEEQC and IBM Collaborate on SFQ Control Integration Under DARPA's Quantum Benchmarking Initiative,” Quantum Computing Report, Jun. 12, 2025. [Online]. Available: https://quantumcomputingreport.com/seeqc-and-ibm-collaborate-on-sfq-control-integration-under-darpas-quantum-benchmarking-initiative/ [P]
-[54] R. Neeman, “Superconductor Electronics Monitor,” Qodeh, 2026, doi: [10.5281/zenodo.21860767](https://doi.org/10.5281/zenodo.21860767). [Online]. Available: https://qodeh.com/publications/superconductor-electronics-monitor-2026/ [P]
-[60] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
-[163] Members of the HRL Quantum Team and Collaborators, “A digitally controlled silicon quantum processing unit,” [arXiv:2604.16216](https://arxiv.org/abs/2604.16216), Apr. 2026. [D]
-[225] US Department of Commerce, Bureau of Industry and Security, “Commerce Control List Additions and Revisions; Implementation of Controls on Advanced Technologies Consistent With Controls Implemented by International Partners,” *Federal Register*, vol. 89, p. 72926, Sep. 6, 2024. [Online]. Available: https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies [G]
-[229] C. Jordan *et al.*, “A quantum computer controlled by superconducting digital electronics at millikelvin temperature,” *Nat. Electron.*, vol. 9, no. 3, pp. 287–294, Mar. 2026, doi: [10.1038/s41928-026-01576-6](https://doi.org/10.1038/s41928-026-01576-6). [D]
-[231] C. Liu *et al.*, “Single Flux Quantum-Based Digital Control of Superconducting Qubits in a Multichip Module,” *PRX Quantum*, vol. 4, no. 3, Art. no. 030310, Jul. 2023, doi: [10.1103/PRXQuantum.4.030310](https://doi.org/10.1103/PRXQuantum.4.030310). [D]
-[379] U.S. Securities and Exchange Commission, “EDGAR full-text search: ‘SkyWater’ in D-Wave Quantum Inc. 10-K filings,” SEC EDGAR Full-Text Search, Feb. 26, 2026. [Online]. Available: https://efts.sec.gov/LATEST/search-index?q=%22SkyWater%22&forms=10-K&ciks=0001907982 [G]
-[411] A. Noori *et al.*, “A Cryo-CMOS Control System for Large-Scale Superconducting Qubit Quantum Computing: Part 2,” IBM Research, Mar. 16, 2026. [Online]. Available: https://research.ibm.com/publications/a-cryo-cmos-control-system-for-large-scale-superconducting-qubit-quantum-computing-part-2 [C]
-[418] S. Kawabata, “Integration and Resource Estimation of Cryoelectronics for Superconducting Fault-Tolerant Quantum Computers,” [arXiv:2601.03922](https://arxiv.org/abs/2601.03922), Jan. 2026. [S]
-[426] SEEQC, “SEEQC Files Registration Statement for Proposed Initial Public Offering,” Business Wire, Jun. 29, 2026. [Online]. Available: https://www.businesswire.com/news/home/20260629077919/en/SEEQC-Files-Registration-Statement-for-Proposed-Initial-Public-Offering [P]
-[435] R. McDermott and M. G. Vavilov, “Accurate Qubit Control with Single Flux Quantum Pulses,” *Phys. Rev. Appl.*, vol. 2, no. 1, Art. no. 014007, Jul. 2014, doi: [10.1103/PhysRevApplied.2.014007](https://doi.org/10.1103/PhysRevApplied.2.014007). [S]
-[436] E. Leonard *et al.*, “Digital Coherent Control of a Superconducting Qubit,” *Phys. Rev. Appl.*, vol. 11, no. 1, Art. no. 014009, Jan. 2019, doi: [10.1103/PhysRevApplied.11.014009](https://doi.org/10.1103/PhysRevApplied.11.014009). [arXiv:1806.07930](https://arxiv.org/abs/1806.07930). [D]
-[437] P. I. Bunyk *et al.*, “Architectural considerations in the design of a superconducting quantum annealing processor,” [arXiv:1401.5504](https://arxiv.org/abs/1401.5504), Jan. 2014. [D]
-[438] AIST; Yokohama National University; Tohoku University; NEC, “Successful demonstration of a superconducting circuit for qubit control within large-scale quantum computer systems,” NEC Press Releases, Jun. 3, 2024. [Online]. Available: https://www.nec.com/en/press/202406/global_20240603_02.html [C]
-[439] S. Kamimura, A. Taguchi, M. Tanaka, and T. Yamamoto, “Fluxon Time-Delay Readout of a Superconducting Qubit Protected by a Spectral Gap in a Josephson Transmission Line,” [arXiv:2603.13175](https://arxiv.org/abs/2603.13175), Mar. 2026. [S]
-[440] S. K. Tolpygo, “Superconductor Digital Electronics: Scalability and Energy Efficiency Issues,” [arXiv:1602.03546](https://arxiv.org/abs/1602.03546), Feb. 2016. [D]
-[441] MIT Lincoln Laboratory, “SQUILL Foundry.” [Online]. Available: https://www.ll.mit.edu/r-d/projects/squill-foundry [C]
-[442] T. Yamae *et al.*, “Rapid single-flux-quantum and adiabatic quantum-flux-parametron cell libraries using a 1 kA/cm2 niobium fabrication process,” *Scientific Reports*, vol. 15, Art. no. 41429, Nov. 2025, doi: [10.1038/s41598-025-20666-7](https://doi.org/10.1038/s41598-025-20666-7). [D]
-[443] SEEQC, “SEEQC Secures $22.4 Million In Series A Round; Strategic Investment Led By EQT Ventures,” Sep. 16, 2020. [Online]. Available: https://seeqc.com/resources/seeqc-secures-22.4-million-in-series-a-round-strategic-investment-led-by-eqt-ventures [C]
-[444] SIP Global Partners, “SIP Global Partners Participates in $30M Round for SEEQC, Developer of the World's First Full-Stack Processor for Quantum Computers,” PRWeb, Jan. 16, 2025. [Online]. Available: https://www.prweb.com/releases/sip-global-partners-participates-in-30m-round-for-seeqc-developer-of-the-worlds-first-full-stack-processor-for-quantum-computers-302352970.html [P]
-[445] Allegro Merger Corp.; SeeQC, Inc., “Settlement, Termination and Release Agreement,” U.S. Securities and Exchange Commission (EDGAR), Aug. 2026. [Online]. Available: https://www.sec.gov/Archives/edgar/data/1779977/000121390026095175/ea028847004ex2-2.htm [G]
+[19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [C]
+[53] M. Abdel-Kareem, “SEEQC Reports Integrated Qubit Control Logic Operating at Millikelvin Temperatures,” Quantum Computing Report, Mar. 21, 2026. [Online]. Available: https://quantumcomputingreport.com/seeqc-reports-integrated-qubit-control-logic-operating-at-millikelvin-temperatures/ [C]
+[54] M. Abdel-Kareem, “SEEQC and IBM Collaborate on SFQ Control Integration Under DARPA's Quantum Benchmarking Initiative,” Quantum Computing Report, Jun. 12, 2025. [Online]. Available: https://quantumcomputingreport.com/seeqc-and-ibm-collaborate-on-sfq-control-integration-under-darpas-quantum-benchmarking-initiative/ [P]
+[56] R. Neeman, “Superconductor Electronics Monitor,” Qodeh, 2026, doi: [10.5281/zenodo.21860767](https://doi.org/10.5281/zenodo.21860767). [Online]. Available: https://qodeh.com/publications/superconductor-electronics-monitor-2026/ [P]
+[65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
+[190] Members of the HRL Quantum Team and Collaborators, “A digitally controlled silicon quantum processing unit,” [arXiv:2604.16216](https://arxiv.org/abs/2604.16216), Apr. 2026. [D]
+[249] C. Liu *et al.*, “Single Flux Quantum-Based Digital Control of Superconducting Qubits in a Multichip Module,” *PRX Quantum*, vol. 4, no. 3, Art. no. 030310, Jul. 2023, doi: [10.1103/PRXQuantum.4.030310](https://doi.org/10.1103/PRXQuantum.4.030310). [D]
+[301] US Department of Commerce, Bureau of Industry and Security, “Commerce Control List Additions and Revisions; Implementation of Controls on Advanced Technologies Consistent With Controls Implemented by International Partners,” *Federal Register*, vol. 89, p. 72926, Sep. 6, 2024. [Online]. Available: https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies [G]
+[304] C. Jordan *et al.*, “A quantum computer controlled by superconducting digital electronics at millikelvin temperature,” *Nat. Electron.*, vol. 9, no. 3, pp. 287–294, Mar. 2026, doi: [10.1038/s41928-026-01576-6](https://doi.org/10.1038/s41928-026-01576-6). [D]
+[430] P. I. Bunyk *et al.*, “Architectural considerations in the design of a superconducting quantum annealing processor,” [arXiv:1401.5504](https://arxiv.org/abs/1401.5504), Jan. 2014. [D]
+[492] U.S. Securities and Exchange Commission, “EDGAR full-text search: ‘SkyWater’ in D-Wave Quantum Inc. 10-K filings,” SEC EDGAR Full-Text Search, Feb. 26, 2026. [Online]. Available: https://efts.sec.gov/LATEST/search-index?q=%22SkyWater%22&forms=10-K&ciks=0001907982 [G]
+[527] A. Noori *et al.*, “A Cryo-CMOS Control System for Large-Scale Superconducting Qubit Quantum Computing: Part 2,” IBM Research, Mar. 16, 2026. [Online]. Available: https://research.ibm.com/publications/a-cryo-cmos-control-system-for-large-scale-superconducting-qubit-quantum-computing-part-2 [C]
+[550] S. Kawabata, “Integration and Resource Estimation of Cryoelectronics for Superconducting Fault-Tolerant Quantum Computers,” [arXiv:2601.03922](https://arxiv.org/abs/2601.03922), Jan. 2026. [S]
+[556] SEEQC, “SEEQC Files Registration Statement for Proposed Initial Public Offering,” Business Wire, Jun. 29, 2026. [Online]. Available: https://www.businesswire.com/news/home/20260629077919/en/SEEQC-Files-Registration-Statement-for-Proposed-Initial-Public-Offering [P]
+[565] R. McDermott and M. G. Vavilov, “Accurate Qubit Control with Single Flux Quantum Pulses,” *Phys. Rev. Appl.*, vol. 2, no. 1, Art. no. 014007, Jul. 2014, doi: [10.1103/PhysRevApplied.2.014007](https://doi.org/10.1103/PhysRevApplied.2.014007). [S]
+[566] E. Leonard *et al.*, “Digital Coherent Control of a Superconducting Qubit,” *Phys. Rev. Appl.*, vol. 11, no. 1, Art. no. 014009, Jan. 2019, doi: [10.1103/PhysRevApplied.11.014009](https://doi.org/10.1103/PhysRevApplied.11.014009). [arXiv:1806.07930](https://arxiv.org/abs/1806.07930). [D]
+[567] AIST; Yokohama National University; Tohoku University; NEC, “Successful demonstration of a superconducting circuit for qubit control within large-scale quantum computer systems,” NEC Press Releases, Jun. 3, 2024. [Online]. Available: https://www.nec.com/en/press/202406/global_20240603_02.html [C]
+[568] S. Kamimura, A. Taguchi, M. Tanaka, and T. Yamamoto, “Fluxon Time-Delay Readout of a Superconducting Qubit Protected by a Spectral Gap in a Josephson Transmission Line,” [arXiv:2603.13175](https://arxiv.org/abs/2603.13175), Mar. 2026. [S]
+[569] S. K. Tolpygo, “Superconductor Digital Electronics: Scalability and Energy Efficiency Issues,” [arXiv:1602.03546](https://arxiv.org/abs/1602.03546), Feb. 2016. [D]
+[570] MIT Lincoln Laboratory, “SQUILL Foundry.” [Online]. Available: https://www.ll.mit.edu/r-d/projects/squill-foundry [C]
+[571] T. Yamae *et al.*, “Rapid single-flux-quantum and adiabatic quantum-flux-parametron cell libraries using a 1 kA/cm2 niobium fabrication process,” *Scientific Reports*, vol. 15, Art. no. 41429, Nov. 2025, doi: [10.1038/s41598-025-20666-7](https://doi.org/10.1038/s41598-025-20666-7). [D]
+[572] SEEQC, “SEEQC Secures $22.4 Million In Series A Round; Strategic Investment Led By EQT Ventures,” Sep. 16, 2020. [Online]. Available: https://seeqc.com/resources/seeqc-secures-22.4-million-in-series-a-round-strategic-investment-led-by-eqt-ventures [C]
+[573] SIP Global Partners, “SIP Global Partners Participates in $30M Round for SEEQC, Developer of the World's First Full-Stack Processor for Quantum Computers,” PRWeb, Jan. 16, 2025. [Online]. Available: https://www.prweb.com/releases/sip-global-partners-participates-in-30m-round-for-seeqc-developer-of-the-worlds-first-full-stack-processor-for-quantum-computers-302352970.html [P]
+[574] Allegro Merger Corp.; SeeQC, Inc., “Settlement, Termination and Release Agreement,” U.S. Securities and Exchange Commission (EDGAR), Aug. 2026. [Online]. Available: https://www.sec.gov/Archives/edgar/data/1779977/000121390026095175/ea028847004ex2-2.htm [G]
 
 ## Open verification items
 
-- Fidelity conflict: abstract "exceeding 99%" [229] versus press "exceeding 99.5%" [51]; main text paywalled.
-- Five-qubit count, 10 mK and "nanowatts per qubit" come from press coverage [51], not the abstract [229].
-- Power conflict: nanowatts per qubit [51] versus ~1.6 µW/qubit [418].
-- Reference [435] and Likharev & Semenov (1991) are cited from the standard literature.
-- MIT-LL SFQ5ee process parameters not obtained; [441] covers the qubit foundry only.
-- No dated 2025–26 Chinese SFQ qubit-control result surfaced; SIMIT and Nanjing activity unverified.
-- No dated patent-family count for SFQ qubit control from a named database.
-- SEEQC revenue, cash and offering size undisclosed in [426]; enterprise value from trade press.
-- SkyWater's superconducting capability inferred from D-Wave 10-K mentions [379].
+- Main text of [304] paywalled: five qubits, 10 mK and "nanowatts per qubit" come from press [53], not the abstract.
+- MIT-LL SFQ5ee parameters not obtained; [570] covers the qubit foundry only.
+- No dated 2025–26 Chinese SFQ qubit-control result found; no patent-family count.
+- SEEQC revenue, cash and offering size undisclosed [556]; enterprise value from trade press.
+- SkyWater's superconducting capability inferred from D-Wave 10-K mentions [492].
