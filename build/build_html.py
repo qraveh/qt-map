@@ -25,6 +25,8 @@ window.addEventListener('scroll',function(){if(cur&&!tip.hidden)place(cur);},{pa
 from editions import EDITIONS, editions_html, CONCEPT_DOI, REPO, SITE, STATUS
 import briefs as BR
 G=json.load(open(os.path.join(ROOT,'data','graph.json'),encoding='utf-8'))
+_nolabel=[n['id'] for n in G['nodes'] if n['id'] not in SHORT or not all(SHORT[n['id']])]
+if _nolabel: raise SystemExit('build/labels.py: every station needs a short map label in both languages (the map printed raw ids for 15 stations until 27 Sep 2026) — missing: %s' % ', '.join(_nolabel))
 # ---------- machines on the Atlas (C2): a slim, deterministic copy of data/machines.json for the page (window.__MACH)
 MACH_PATH=os.path.join(ROOT,'data','machines.json')
 MACH_URLS={'register':'machine/','tech':'technology/'}   # the machine's and the technology's own pages (relative to the page's language root); the register's private working pages are no longer linked (27 Sep 2026)

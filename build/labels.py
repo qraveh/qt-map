@@ -14,3 +14,12 @@ SHORT = {
 'ic_mcm':('Chiplets / l-couplers','Чиплеты / l-couplers'),'ic_cryolink':('Cryo microwave link','Крио СВЧ-линк'),'ic_ionphoton':('Ion–photon link','Ион-фотон линк'),'ic_atomcavity':('Atom–cavity interface','Атом–резонатор'),'ic_spinphoton':('Spin–photon link','Спин-фотон линк'),'ic_transducer':('MW–optical transducer ∅','СВЧ-опт. трансдьюсер ∅'),'ic_fibre':('Fibre links','Волоконные линки'),
 'fab_cmos':('CMOS 300 mm','CMOS 300 мм'),'fab_sc':('SC lithography','SC-литография'),'fab_3d':('3D cavities','3D-полости'),'fab_trap':('Trap microfab','Микроизг. ловушек'),'fab_pic':('PIC foundry','PIC-фабрика'),'fab_optics':('Optical assembly','Оптическая сборка'),'fab_mbe':('III-V MBE','III-V MBE'),'fab_stm':('STM lithography','STM-литография'),'fab_diamond':('Diamond','Алмаз'),
 }
+# the fifteen stations added on 26–27 Sep 2026 (the map showed their ids until 27 Sep evening — the editor's finding)
+SHORT.update({
+'enc_opt':('Optical qubit','Оптический кубит'),'enc_gr':('Ground–Rydberg qubit','Осн.–ридберг. кубит'),
+'g_rydanalog':('Analog Rydberg','Аналоговый Ридберг'),'g_lointer':('Linear interferometer','Линейный интерферометр'),
+'cx_reload':('Atom reload','Подгрузка атомов'),'ct_vio':('Vertical I/O (VIO)','Вертикальный ввод (VIO)'),'ct_ionaod':('Free-space AOD beams','AOD-пучки'),
+'ro_reset':('Fast reset','Быстрый сброс'),'ro_fluxro':('Flux readout (QFP)','Считывание потока'),'ro_homodyne':('Homodyne (CV)','Гомодин (CV)'),
+'code_mitig':('Error mitigation','Смягчение ошибок'),'code_detect':('Detection codes','Коды обнаружения'),
+'ic_multidie':('Multi-die module','Многокрист. модуль'),'ic_fanout':('Cryo fan-out','Крио-разводка'),'fab_bulk':('Bulk optics + fibre','Объёмная оптика'),
+})

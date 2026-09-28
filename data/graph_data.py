@@ -573,7 +573,7 @@ def P(id,en,ru,family,cls,slots,actors,cycle_measured,goals):
     return dict(id=id,en=en,ru=ru,family=family,cls=cls,slots=slots,actors=actors,cycle=cycle_measured,goals=goals)
 PATHS=[
 P("sc","Transmon lattice with tunable couplers","Решётка трансмонов с перестраиваемыми каплерами","SC","fab",
-  {1:["transmon","fluxonium"],2:["enc_bare"],3:["g_tc","g_cr"],4:["cx_nn","cx_lr"],5:["ct_rt","ct_vio","ct_cryocmos","ct_sfq"],6:["ro_disp","ro_reset"],7:["code_surface","code_color","code_qldpc","code_magic","code_detect","code_mitig"],8:["dec_nn","dec_mwpm","dec_fpga","dec_relaybp","dec_rl","dec_gpu"],9:["ic_mcm","ic_multidie","ic_cryolink","ic_transducer"],10:["fab_sc","fab_cmos"]},
+  {1:["transmon","fluxonium"],2:["enc_bare"],3:["g_tc","g_cr"],4:["cx_nn","cx_lr"],5:["ct_rt","ct_vio","ct_cryocmos","ct_sfq"],6:["ro_disp","ro_reset"],7:["code_surface","code_color","code_qldpc","code_magic","code_detect","code_mitig"],8:["dec_nn","dec_mwpm","dec_fpga","dec_relaybp","dec_rl","dec_gpu","dec_cryo"],9:["ic_mcm","ic_multidie","ic_cryolink","ic_transducer"],10:["fab_sc","fab_cmos"]},
   "IBM (Heron, Nighthawk), Google (Willow), Rigetti, IQM, OQC, USTC/Zhejiang, Fujitsu/RIKEN, QuantWare","1.1 µs (Willow QEC cycle)","G2 G3 G4"),
 P("cat","Bosonic cavity qubits — cat and GKP","Бозонные кубиты в резонаторах — кошки и GKP","SC","fab",
   {1:["cavity"],2:["enc_cat","enc_gkp"],3:["g_bos","g_catcnot"],4:["cx_nn"],5:["ct_rt"],6:["ro_disp"],7:["code_bosonic"],8:["dec_mwpm"],9:["ic_mcm","ic_multidie"],10:["fab_sc","fab_3d"]},
