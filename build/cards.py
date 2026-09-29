@@ -33,29 +33,31 @@ EXTRAS = True
 # ---------- the constants of map_js.py
 FAMC = {'SC': 'var(--sc)', 'ION': 'var(--ion)', 'ATOM': 'var(--atom)', 'PHOTON': 'var(--photon)', 'SPIN': 'var(--spin)',
         'DEFECT': 'var(--defect)', 'TOPO': 'var(--topo)', 'ANNEAL': 'var(--anneal)'}
-FAMN = {'SC': ('superconducting circuits', 'сверхпроводниковые схемы'), 'ION': ('trapped ions', 'ионы в ловушках'),
-        'ATOM': ('neutral atoms', 'нейтральные атомы'), 'PHOTON': ('photonics', 'фотоника'),
-        'SPIN': ('semiconductor spins', 'полупроводниковые спины'), 'DEFECT': ('defect spins', 'дефектные спины'),
-        'TOPO': ('topological', 'топологические'), 'ANNEAL': ('quantum annealers', 'квантовый отжиг')}
+FAMN = {'SC': ('superconducting circuits', 'сверхпроводниковые схемы', 'מעגלים מוליכי-על'), 'ION': ('trapped ions', 'ионы в ловушках', 'יונים לכודים'),
+        'ATOM': ('neutral atoms', 'нейтральные атомы', 'אטומים ניטרליים'), 'PHOTON': ('photonics', 'фотоника', 'פוטוניקה'),
+        'SPIN': ('semiconductor spins', 'полупроводниковые спины', 'ספינים במוליכים למחצה'), 'DEFECT': ('defect spins', 'дефектные спины', 'ספיני פגם'),
+        'TOPO': ('topological', 'топологические', 'טופולוגי'), 'ANNEAL': ('quantum annealers', 'квантовый отжиг', 'מחשבי חישול קוונטי')}
 MACH_FAMILIES = ['SC', 'ION', 'ATOM', 'PHOTON', 'SPIN', 'DEFECT', 'TOPO', 'ANNEAL']
 OFFDEF = ('a crossing technology: it takes a trait from the other side of the natural/fabricated divide — hatched on the map (see §7.5)',
-          'пересекающая технология: берёт свойство с другой стороны раздела естественное/изготовленное — на карте заштрихована (см. §7.5)')
-EMPTYDEF = ('a technology with no demonstrated technology yet', 'технология, для которой технологии ещё нет')
+          'пересекающая технология: берёт свойство с другой стороны раздела естественное/изготовленное — на карте заштрихована (см. §7.5)',
+          'טכנולוגיה חוצה: היא נוטלת מאפיין מהצד השני של החלוקה טבעי–מיוצר — מקווקוות במפה (ראו §7.5)')
+EMPTYDEF = ('a technology with no demonstrated technology yet', 'технология, для которой технологии ещё нет', 'טכנולוגיה שעדיין אין לה מימוש שהודגם')
 PLACES = ['RT', '4K', 'mK', 'none']   # CATS.place
 EVG = (('figure', '▣'), ('whitepaper', '▥'), ('paper', '▤'), ('vendor', '▦'), ('datasheet', '▧'), ('press', '▨'))
-NA_T = {'none': ('none — nothing in this layer', 'none — в этом слое ничего нет'),
-        'undisclosed': ('undisclosed — exists, nothing published', 'undisclosed — есть, но не опубликовано')}
+NA_T = {'none': ('none — nothing in this layer', 'none — в этом слое ничего нет', 'none — אין דבר בשכבה זו'),
+        'undisclosed': ('undisclosed — exists, nothing published', 'undisclosed — есть, но не опубликовано', 'undisclosed — קיים, אך דבר לא פורסם')}
 PROF_KEYS = ('qubit_type', 'gate_mechanism', 'connectivity', 'control', 'control_placement', 'readout')
-PROF_T = (('qubit type', 'тип кубита'), ('gate mechanism', 'механизм гейта'), ('connectivity', 'связность'), ('control', 'управление'),
-          ('control placement', 'размещение управления'), ('readout', 'считывание'))
-KIND = {'paper': ('paper', 'статья'), 'whitepaper': ('whitepaper', 'whitepaper'), 'product': ('product page', 'страница продукта'),
-        'docs': ('docs', 'документация'), 'blog': ('blog', 'блог'), 'press': ('press', 'пресса'), 'other': ('link', 'ссылка')}
-PN = (('gates', ('gates', 'гейты')), ('transport', ('transport', 'транспорт')), ('1q', ('1Q', '1Q')), ('readout', ('readout', 'считывание')),
-      ('reset', ('reset', 'сброс')))
+PROF_T = (('qubit type', 'тип кубита', 'סוג הקיוביט'), ('gate mechanism', 'механизм гейта', 'מנגנון השער'), ('connectivity', 'связность', 'קישוריות'),
+          ('control', 'управление', 'בקרה'), ('control placement', 'размещение управления', 'מיקום הבקרה'), ('readout', 'считывание', 'קריאה'))
+KIND = {'paper': ('paper', 'статья', 'מאמר'), 'whitepaper': ('whitepaper', 'whitepaper', 'מסמך טכני'), 'product': ('product page', 'страница продукта', 'דף מוצר'),
+        'docs': ('docs', 'документация', 'תיעוד'), 'blog': ('blog', 'блог', 'בלוג'), 'press': ('press', 'пресса', 'עיתונות'), 'other': ('link', 'ссылка', 'קישור')}
+PN = (('gates', ('gates', 'гейты', 'שערים')), ('transport', ('transport', 'транспорт', 'הובלה')), ('1q', ('1Q', '1Q', '1Q')), ('readout', ('readout', 'считывание', 'קריאה')),
+      ('reset', ('reset', 'сброс', 'איפוס')))
 USEBY_HINT = ('↗ its register card · paper / product / press: links that name the machine (attribution checked on 20 Sep 2026)',
-              '↗ карточка реестра · статья / продукт / пресса: ссылки, где машина названа (атрибуция проверена 20 сентября 2026)')
-MAP_LINK = ('Open on the map', 'Открыть на карте')
-ACTORS_GOALS = ('Actors & goals', 'Акторы и цели')   # the architecture card's block title; build/pages.py finds the block by it
+              '↗ карточка реестра · статья / продукт / пресса: ссылки, где машина названа (атрибуция проверена 20 сентября 2026)',
+              '↗ כרטיס המרשם שלה · מאמר / מוצר / עיתונות: קישורים שבהם המכונה נזכרת בשמה (הייחוס נבדק ב-20 בספטמבר 2026)')
+MAP_LINK = ('Open on the map', 'Открыть на карте', 'פתח במפה')
+ACTORS_GOALS = ('Actors & goals', 'Акторы и цели', 'שחקנים ויעדים')   # the architecture card's block title; build/pages.py finds the block by it
 PLAIN_UNITS = {'s', 'Hz', 'count', '1', 'fraction', 'dimensionless', 'ratio', 'relative', 'population'}   # machine records: other units are printed
 
 G = None
@@ -232,7 +234,7 @@ def _orglink(base, m, L):
         import orgs; sl = orgs.slug_for_machine(m.get('id') if isinstance(m, dict) else m)
     except Exception: sl = None
     name = esc(m['org'])
-    return '<a class="org" href="%sorganisation/%s.html" title="%s">%s</a>' % (ea(base), ea(sl), ea(T(L, "the organisation's page", 'страница организации')), name) if sl else name
+    return '<a class="org" href="%sorganisation/%s.html" title="%s">%s</a>' % (ea(base), ea(sl), ea(T(L, "the organisation's page", 'страница организации', 'דף הארגון')), name) if sl else name
 def _maplink(base, kind, i, L):
     # the main page of the record's own language (base is that language's root), by its default document (index.html), so that the link
     # also works from a folder on disk
@@ -279,7 +281,7 @@ def _ev_html(L, c):
     g, tl = _ev_glyph(c[3]), ea(c[3] or '')
     a = ('<a class="ev" href="%s" target="_blank" rel="noreferrer" title="%s">%s</a>' % (ea(c[4]), tl, g)) if c[4] else '<span class="ev" title="%s">%s</span>' % (tl, g)
     return a + ((' <span class="loc">%s</span>' % esc(c[5])) if c[5] else '') + ' <span class="vf" title="%s">%s</span>' % (
-        ea(T(L, 'verified', 'проверено') if c[6] else T(L, 'not verified', 'не проверено')), '✅' if c[6] else '🔎')
+        ea(T(L, 'verified', 'проверено', 'מאומת') if c[6] else T(L, 'not verified', 'не проверено', 'לא מאומת')), '✅' if c[6] else '🔎')
 
 
 def _used_by(L, n, base):
@@ -287,12 +289,12 @@ def _used_by(L, n, base):
     ub = BY_NODE.get(n['id']) or {}
     P = [i for i in ub.get('primary') or [] if i in MACH]; A = [i for i in ub.get('alternate') or [] if i in MACH and i not in P]
     N = len(P) + len(A)
-    if not N: return '<div class="space useby"><h4>%s</h4></div>' % t('Used by no registered machine', 'Не используется ни одной зарегистрированной машиной')
-    head = '%s %d %s (%d %s · %d %s)' % (t('Used by', 'Используют'), N, t('machine' if N == 1 else 'machines', 'машин'), len(P), t('primary', 'основная'),
-                                        len(A), t('alternate', 'альтернатива'))
+    if not N: return '<div class="space useby"><h4>%s</h4></div>' % t('Used by no registered machine', 'Не используется ни одной зарегистрированной машиной', 'אינה בשימוש באף מכונה במרשם')
+    head = '%s %d %s (%d %s · %d %s)' % (t('Used by', 'Используют', 'בשימוש:'), N, t('machine' if N == 1 else 'machines', 'машин', 'מכונה' if N == 1 else 'מכונות'), len(P), t('primary', 'основная', 'ראשית'),
+                                        len(A), t('alternate', 'альтернатива', 'חלופית'))
     def li(i, role):
         c = _mcell(MACH[i], n['id'])
-        return _mli(L, i, base, role, ((' ' + _ev_html(L, c)) if c else '') + ((' <span class="empty">(%s)</span>' % t('alternate', 'альтернатива')) if role == 'alternate' else ''))
+        return _mli(L, i, base, role, ((' ' + _ev_html(L, c)) if c else '') + ((' <span class="empty">(%s)</span>' % t('alternate', 'альтернатива', 'חלופית')) if role == 'alternate' else ''))
     groups = ''
     for f in MACH_FAMILIES:
         ps, as_ = [i for i in P if MACH[i]['family'] == f], [i for i in A if MACH[i]['family'] == f]
@@ -305,7 +307,7 @@ def _used_by(L, n, base):
 # ---------- standard records (the technology card's form; a machine's records have no grade tag and often no text)
 def _rec_val(L, r, machine):
     num, unit = r.get('num'), r.get('unit')
-    if num is None: return '<span class="empty">%s</span>' % esc(T(L, 'not published', 'не опубликовано'))
+    if num is None: return '<span class="empty">%s</span>' % esc(T(L, 'not published', 'не опубликовано', 'לא פורסם'))
     if unit == 's': return fmt_t(js_log10(num))
     if unit == 'Hz': return to_exponential(num, 1) + ' Hz'
     if unit == 'count': return js_str(num)
@@ -316,12 +318,12 @@ def _rec_val(L, r, machine):
 def _records(L, recs, machine=False):
     rk, out = V.get('RECKEYS') or {}, []
     for r in recs:
-        d = [esc(r.get('text')), esc(r.get('date')), '<a href="%s" target="_blank" rel="noopener">%s</a>' % (ea(r.get('url')), esc(T(L, 'source', 'источник')))]
+        d = [esc(r.get('text')), esc(r.get('date')), '<a href="%s" target="_blank" rel="noopener">%s</a>' % (ea(r.get('url')), esc(T(L, 'source', 'источник', 'מקור')))]
         out.append('<div class="def"><div><span class="k">%s</span> → <b>%s</b> <span class="empty">· %s</span></div><div class="d">%s%s%s</div></div>' % (
             esc(T(L, *(rk.get(r['key']) or (r['key'],)))), _rec_val(L, r, machine), esc(T(L, *regvocab.SCOPE.get(r.get('scope') or '', (r.get('scope') or '',) * 2))),
             ' · '.join(x for x in d if x or not machine), (' [%s]' % esc(r.get('tag'))) if r.get('tag') or not machine else '',
             (' <span class="empty" title="%s">ⓘ</span>' % ea(r['note'])) if r.get('note') else ''))
-    return '<div class="space"><h4>%s</h4>%s</div>' % (esc(T(L, 'Standard records', 'Стандартные рекорды')), ''.join(out))
+    return '<div class="space"><h4>%s</h4>%s</div>' % (esc(T(L, 'Standard records', 'Стандартные рекорды', 'רשומות סטנדרטיות')), ''.join(out))
 
 
 # ---------- helpers of the technology card
@@ -357,21 +359,21 @@ def _wrap(kind, parts): return '<section class="card card-%s">%s</section>' % (k
 # ---------- the technology card (inspect)
 def station_card_html(nid, lang, base=''):
     L, n = lang, NODE[nid]; t = lambda *x: esc(T(L, *x)); c = n.get('c'); b = n.get('b') or {}; e = n.get('e') or {}
-    rows = [(T(L, '(a) carrier affinity', '(a) сродство носителя'), vt(L, 'AFF', n['aff'])),
-            (T(L, '(b) time · entangling', '(b) время · перепутывание'), fmt_t(b.get('t')) + ((' · ' + vt(L, 'DET', b.get('det'))) if b.get('det') != 'na' else '')),
-            (T(L, '(c) readout', '(c) считывание'), '%s · %s · %s · %s' % (vt(L, 'MECH', c.get('mech')), fmt_t(c.get('t')),
-                                                                         T(L, 'destructive', 'разрушающее') if c.get('destr') else T(L, 'non-destructive', 'неразрушающее'),
-                                                                         'mid-circuit' if c.get('mid') else T(L, 'no mid-circuit', 'без mid-circuit')) if c is not None else '—'),
-            (T(L, '(d) mobility', '(d) подвижность'), vt(L, 'MOB', n['d'])),
-            (T(L, '(e) control', '(e) управление'), '—' if e.get('mod') == 'none' else '%s @ %s' % (vt(L, 'MOD', e.get('mod')), _place_text(L, n))),
-            (T(L, '(f) error structure', '(f) структура ошибки'), ', '.join(vt(L, 'ERR', x) for x in n['f'])),
-            (T(L, '(g) manufacturing', '(g) производство'), vt(L, 'FAB', n['g']))]
+    rows = [(T(L, '(a) carrier affinity', '(a) сродство носителя', '(a) זיקת הנושא'), vt(L, 'AFF', n['aff'])),
+            (T(L, '(b) time · entangling', '(b) время · перепутывание', '(b) זמן · שזירה'), fmt_t(b.get('t')) + ((' · ' + vt(L, 'DET', b.get('det'))) if b.get('det') != 'na' else '')),
+            (T(L, '(c) readout', '(c) считывание', '(c) קריאה'), '%s · %s · %s · %s' % (vt(L, 'MECH', c.get('mech')), fmt_t(c.get('t')),
+                                                                         T(L, 'destructive', 'разрушающее', 'הרסנית') if c.get('destr') else T(L, 'non-destructive', 'неразрушающее', 'לא הרסנית'),
+                                                                         'mid-circuit' if c.get('mid') else T(L, 'no mid-circuit', 'без mid-circuit', 'ללא mid-circuit')) if c is not None else '—'),
+            (T(L, '(d) mobility', '(d) подвижность', '(d) ניידות'), vt(L, 'MOB', n['d'])),
+            (T(L, '(e) control', '(e) управление', '(e) בקרה'), '—' if e.get('mod') == 'none' else '%s @ %s' % (vt(L, 'MOD', e.get('mod')), _place_text(L, n))),
+            (T(L, '(f) error structure', '(f) структура ошибки', '(f) מבנה השגיאה'), ', '.join(vt(L, 'ERR', x) for x in n['f'])),
+            (T(L, '(g) manufacturing', '(g) производство', '(g) ייצור'), vt(L, 'FAB', n['g']))]
     marks = []
     if n.get('offdiag'):
-        marks.append('<div><span class="flag off" title="%s">%s</span> — %s</div>' % (ea(T(L, *OFFDEF)), t('crossing technology', 'пересекающая технология'),
+        marks.append('<div><span class="flag off" title="%s">%s</span> — %s</div>' % (ea(T(L, *OFFDEF)), t('crossing technology', 'пересекающая технология', 'טכנולוגיה חוצה'),
                                                                                      esc('; '.join(vt(L, 'OFFDIAG', o) for o in n['offdiag']))))
-    if n.get('status') == 'X': marks.append('<div><span class="flag empty" title="%s">∅ %s</span></div>' % (ea(T(L, *EMPTYDEF)), t('empty slot', 'пустой слот')))
-    flags = ('<div class="marks"><span class="tk">%s</span>%s</div>' % (t('Reading marks', 'Метки чтения'), ''.join(marks))) if marks else ''
+    if n.get('status') == 'X': marks.append('<div><span class="flag empty" title="%s">∅ %s</span></div>' % (ea(T(L, *EMPTYDEF)), t('empty slot', 'пустой слот', 'משבצת ריקה')))
+    flags = ('<div class="marks"><span class="tk">%s</span>%s</div>' % (t('Reading marks', 'Метки чтения', 'סימוני המפה'), ''.join(marks))) if marks else ''
     keys = ''
     if KEYREFS.get(nid):
         kr = []
@@ -380,54 +382,54 @@ def station_card_html(nid, lang, base=''):
             if _u16(lab) > 92: lab = lab.encode('utf-16-le')[:180].decode('utf-16-le', 'ignore') + '…'
             kr.append('<div class="kr"><a href="%s" target="_blank" rel="noopener">[%s]</a> %s%s</div>' % (
                 ea(r.get('url')), esc(r['n']), esc(lab), (' <span class="empty">· %s</span>' % esc(r['year'])) if r.get('year') else ''))
-        keys = '<div class="space keys"><h4>%s</h4>%s</div>' % (t('Key references', 'Ключевые источники'), ''.join(kr))
+        keys = '<div class="space keys"><h4>%s</h4>%s</div>' % (t('Key references', 'Ключевые источники', 'מקורות מרכזיים'), ''.join(kr))
     defs = ''.join('<div class="def"><div><span class="k">%s</span> → <b>%s</b></div><div class="d">%s: %s · %s · <a href="%s" target="_blank" rel="noopener">%s</a></div></div>' % (
-        esc(d['metric']), esc(d['value']), t('defines', 'определяет'), esc(vt(L, 'OUT', d['out'])), esc(d['date']), ea(d['url']), t('source', 'источник'))
-        for d in n.get('defines') or []) or '<p class="empty">%s</p>' % t('no dated attribute', 'нет датированных атрибутов')
+        esc(d['metric']), esc(d['value']), t('defines', 'определяет', 'מגדירה'), esc(vt(L, 'OUT', d['out'])), esc(d['date']), ea(d['url']), t('source', 'источник', 'מקור'))
+        for d in n.get('defines') or []) or '<p class="empty">%s</p>' % t('no dated attribute', 'нет датированных атрибутов', 'אין תכונות מתוארכות')
     attrs = ('<p style="margin:6px 0 0">%s</p>' % lk(pick(L, n['attrs']))) if pick(L, n.get('attrs') or {}) else ''
     al = ALT.get(nid, [])
     tags = ''.join('<div class="pathtag"><i class="sw" style="--c:%s"></i>%s%s<span class="empty"> — %s · %s</span></div>' % (
-        FAMC.get(PATH[p]['family']), _arch(base, p, L), (' <span class="empty">(%s)</span>' % t('alternate', 'альтернатива')) if p in al else '',
-        esc(PATH[p]['actors']), esc(PATH[p]['goals'])) for p in PRIM.get(nid, []) + al) or '<p class="empty">%s</p>' % t('on no architecture', 'не входит ни в одну архитектуру')
+        FAMC.get(PATH[p]['family']), _arch(base, p, L), (' <span class="empty">(%s)</span>' % t('alternate', 'альтернатива', 'חלופית')) if p in al else '',
+        esc(PATH[p]['actors']), esc(PATH[p]['goals'])) for p in PRIM.get(nid, []) + al) or '<p class="empty">%s</p>' % t('on no architecture', 'не входит ни в одну архитектуру', 'אינה חלק מאף ארכיטקטורה')
     E = G['edges']
     req_out = [x for x in E if x['type'] == 'requires' and x['src'] == nid]; req_in = [x for x in E if x['type'] == 'requires' and x['dst'] == nid]
     rep = [x for x in E if x['type'] == 'replaces' and nid in (x['src'], x['dst'])]; con = [x for x in E if x['type'] == 'conflicts' and nid in (x['src'], x['dst'])]
     other = lambda x: x['dst'] if x['src'] == nid else x['src']
     mk = lambda x: ('<span class="empty">°</span>' if x.get('any') else '') + ('<span class="empty">·</span>' if x.get('strength') == 'soft' else '')
     edges = ''
-    if req_out: edges += '<div><b>%s:</b> %s</div>' % (t('needs', 'нужно'), ', '.join(_st(base, x['dst'], L) + mk(x) for x in req_out))
-    if req_in: edges += '<div><b>%s:</b> %s</div>' % (t('needed by', 'нужен для'), ', '.join(_st(base, x['src'], L) + mk(x) for x in req_in))
-    if rep: edges += '<div><b>%s:</b> %s</div>' % (t('alternatives', 'альтернативы'), ', '.join(_st(base, other(x), L) for x in rep))
+    if req_out: edges += '<div><b>%s:</b> %s</div>' % (t('needs', 'нужно', 'דורשת'), ', '.join(_st(base, x['dst'], L) + mk(x) for x in req_out))
+    if req_in: edges += '<div><b>%s:</b> %s</div>' % (t('needed by', 'нужен для', 'נחוצה עבור'), ', '.join(_st(base, x['src'], L) + mk(x) for x in req_in))
+    if rep: edges += '<div><b>%s:</b> %s</div>' % (t('alternatives', 'альтернативы', 'חלופות'), ', '.join(_st(base, other(x), L) for x in rep))
     if con:
-        edges += '<div><b style="color:var(--crit)">%s:</b></div>' % t('conflicts with', 'конфликтует с') + ''.join(
+        edges += '<div><b style="color:var(--crit)">%s:</b></div>' % t('conflicts with', 'конфликтует с', 'מתנגשת עם') + ''.join(
             '<div class="conf"><div>%s <span class="cst %s">%s</span></div><div class="cm">%s</div><div class="cm"><span class="tk">%s</span> %s</div><div class="cm"><span class="tk">%s</span> %s%s</div></div>' % (
-                _st(base, other(x), L), ea(x.get('status')), esc(vt(L, 'CONSTAT', x.get('status'))), lk(pick(L, x)), t('price', 'цена'),
-                lk(pick(L, x.get('price') or {}) or ''), t('mitigation', 'снятие'), lk(pick(L, x.get('mitig') or {}) or ''),
+                _st(base, other(x), L), ea(x.get('status')), esc(vt(L, 'CONSTAT', x.get('status'))), lk(pick(L, x)), t('price', 'цена', 'מחיר'),
+                lk(pick(L, x.get('price') or {}) or ''), t('mitigation', 'снятие', 'מיתון'), lk(pick(L, x.get('mitig') or {}) or ''),
                 (' · <a href="%s" target="_blank" rel="noopener">%s</a>' % (ea(x['url']), esc(x.get('date')))) if x.get('url') else '') for x in con)
-    edges += ('<div class="empty" style="margin-top:4px">° %s · %s</div>' % (t('one of several that would do', 'одно из нескольких, что подошли бы'),
-                                                                            t('the usual route, not a strict need', 'обычный маршрут, не строгая необходимость'))
+    edges += ('<div class="empty" style="margin-top:4px">° %s · %s</div>' % (t('one of several that would do', 'одно из нескольких, что подошли бы', 'אחת מכמה שהיו מתאימות'),
+                                                                            t('the usual route, not a strict need', 'обычный маршрут, не строгая необходимость', 'הדרך המקובלת, לא דרישה מחייבת'))
               if (req_out or req_in or rep or con) else '<p class="empty">—</p>')
     return _wrap('station', [
         '<h3>%s</h3>' % esc(pick(L, n)),
-        '<div class="meta">%s · %s %s %s · %s%s</div>' % (esc(nid), t('layer', 'слой'), n['layer'], esc(pick(L, G['layers'][n['layer'] - 1])), esc(vt(L, 'STATUS', n['status'])),
-                                                        (' · %s %s' % (t('since', 'с'), n['since'])) if n.get('since') is not None and n['since'] < 2030 else ''),
+        '<div class="meta">%s · %s %s %s · %s%s</div>' % (esc(nid), t('layer', 'слой', 'שכבה'), n['layer'], esc(pick(L, G['layers'][n['layer'] - 1])), esc(vt(L, 'STATUS', n['status'])),
+                                                        (' · %s %s' % (t('since', 'с', 'מאז'), n['since'])) if n.get('since') is not None and n['since'] < 2030 else ''),
         '<div class="mlinks">%s</div>' % _maplink(base, 'station', nid, L),
         '<p>%s</p><div>%s</div>' % (lk(pick(L, n['desc'])), flags),
-        '<a class="briefbtn" href="#brief">%s</a>' % t('Brief →', 'Бриф →'),
+        '<a class="briefbtn" href="#brief">%s</a>' % t('Brief →', 'Бриф →', 'תקציר ←'),
         keys,
-        '<div class="space"><h4>%s</h4><dl>%s</dl></div>' % (t('Design space — attributes', 'Пространство проектирования — атрибуты'),
+        '<div class="space"><h4>%s</h4><dl>%s</dl></div>' % (t('Design space — attributes', 'Пространство проектирования — атрибуты', 'מרחב התכן — תכונות'),
                                                             ''.join('<dt>%s</dt><dd>%s</dd>' % (esc(k), esc(v)) for k, v in rows)),
-        '<div class="space"><h4>%s</h4>%s%s</div>' % (t('Evaluation space — dated attributes', 'Пространство оценки — датированные атрибуты'), defs, attrs),
+        '<div class="space"><h4>%s</h4>%s%s</div>' % (t('Evaluation space — dated attributes', 'Пространство оценки — датированные атрибуты', 'מרחב ההערכה — תכונות מתוארכות'), defs, attrs),
         _records(L, n['records']) if n.get('records') else '',
-        '<div class="space"><h4>%s</h4>%s</div>' % (t('Actors & goals — annotations', 'Акторы и цели — аннотации'), tags),
-        '<div class="space"><h4>%s</h4>%s</div>' % (t('Edges', 'Рёбра'), edges),
+        '<div class="space"><h4>%s</h4>%s</div>' % (t('Actors & goals — annotations', 'Акторы и цели — аннотации', 'שחקנים ויעדים — ביאורים'), tags),
+        '<div class="space"><h4>%s</h4>%s</div>' % (t('Edges', 'Рёбра', 'קשתות'), edges),
         _used_by(L, n, base)])
 
 
 # ---------- the machine card (inspectMachine)
 def machine_card_html(mid, lang, base=''):
     L, m = lang, MACH[mid]; t = lambda *x: esc(T(L, *x))
-    role = lambda c: t('alternate', 'альтернатива') if c.get('role') == 'alternate' else t('primary', 'основная')
+    role = lambda c: t('alternate', 'альтернатива', 'חלופית') if c.get('role') == 'alternate' else t('primary', 'основная', 'ראשית')
     more = lambda c: ' ' + _ev_html(L, _tup(c)) + (('<div class="ms">%s</div>' % lk(c['summary'])) if c.get('summary') else '')
     rows = ''
     for l in G['layers']:
@@ -436,8 +438,8 @@ def machine_card_html(mid, lang, base=''):
             nm = _st(base, c['node'], L, 'alt' if c.get('role') == 'alternate' else 'prim') if c['node'] in NODE else esc(c['node'])
             h += '<div class="mc">%s <span class="empty">· %s</span>%s</div>' % (nm, role(c), more(c))
         for c in gp:
-            h += ('<div class="mc"><span class="empty">— (%s: %s) · %s</span>%s</div>' % (t('Atlas gap', 'пробел Атласа'), esc(c['node']), role(c), more(c)) if EXTRAS
-                  else '<div class="mc empty">— (%s: %s)</div>' % (t('Atlas gap', 'пробел Атласа'), esc(c['node'])))
+            h += ('<div class="mc"><span class="empty">— (%s: %s) · %s</span>%s</div>' % (t('Atlas gap', 'пробел Атласа', 'פער אטלס'), esc(c['node']), role(c), more(c)) if EXTRAS
+                  else '<div class="mc empty">— (%s: %s)</div>' % (t('Atlas gap', 'пробел Атласа', 'פער אטלס'), esc(c['node'])))
         for c in na:
             v = esc(T(L, *NA_T.get(str(c['node']), (str(c['node']),) * 2)))
             h += ('<div class="mc"><span class="empty">— %s</span>%s</div>' % (v, more(c))) if EXTRAS else '<div class="mc empty">— %s</div>' % v
@@ -445,24 +447,26 @@ def machine_card_html(mid, lang, base=''):
     pf = m.get('profile') or {}
     prof = ''.join('<div class="mc"><span class="empty">%s:</span> %s</div>' % (t(*PROF_T[i]), esc(str(pf.get(k)))) for i, k in enumerate(PROF_KEYS) if pf.get(k))
     if EXTRAS:
-        for lab, tip, vals in ((('codes', 'коды'), ('error-correcting codes the codes register links to this machine', 'коды коррекции ошибок, которые реестр кодов связывает с этой машиной'), m.get('codes')),
-                               (('flags', 'флаги'), ("the register's caveats on this machine's data", 'оговорки реестра к данным этой машины'), pf.get('flags'))):
+        for lab, tip, vals in ((('codes', 'коды', 'קודים'), ('error-correcting codes the codes register links to this machine', 'коды коррекции ошибок, которые реестр кодов связывает с этой машиной',
+                                                        'קודים לתיקון שגיאות שמרשם הקודים מקשר למכונה זו'), m.get('codes')),
+                               (('flags', 'флаги', 'דגלים'), ("the register's caveats on this machine's data", 'оговорки реестра к данным этой машины', 'ההסתייגויות של המרשם לגבי נתוני מכונה זו'), pf.get('flags'))):
             if vals: prof += '<div class="mc"><span class="empty" title="%s">%s:</span> %s</div>' % (ea(T(L, *tip)), t(*lab), esc(', '.join((regvocab.flag_words(v, L) if lab[0] == 'flags' else v) for v in vals)))
     fam, q, sd, ec = m['family'], m.get('physical_qubits_num'), m.get('status_date'), m.get('evidence_counts') or {}
     meta = '%s · %s · %s%s · %s' % (_orglink(base, m, L), t(*FAMN.get(fam, (fam, fam))), esc(regvocab.status_l(m['status'], L)), (' (%s)' % esc(sd)) if sd else '',
-                                    ('%s %s' % (js_str(q), T(L, 'physical qubits', regvocab.ru_plural(q, regvocab.PLURAL['qubits'])))) if q is not None and q != '' else t('qubits not published', 'число кубитов не опубликовано'))
-    if EXTRAS and m.get('access'): meta += ' · %s: %s' % (t('access', 'доступ'), esc(regvocab.access_l(m['access'], L)))
+                                    T(L, '%s physical qubits' % js_str(q), '%s %s' % (js_str(q), regvocab.ru_plural(q, regvocab.PLURAL['qubits'])),
+                                      regvocab.he_count(js_str(q), regvocab.PLURAL_HE['qubits'])) if q is not None and q != '' else t('qubits not published', 'число кубитов не опубликовано', 'מספר הקיוביטים לא פורסם'))
+    if EXTRAS and m.get('access'): meta += ' · %s: %s' % (t('access', 'доступ', 'גישה'), esc(regvocab.access_l(m['access'], L)))
     pid = m['map_path']
     return _wrap('machine', [
         '<h3><i class="sw" style="--c:%s"></i> %s</h3>' % (FAMC.get(fam, 'var(--mid)'), esc(m['name'])),
         '<div class="meta">%s</div>' % meta,
         '<div class="mlinks"><span class="empty">%s:</span> %s <span class="empty">·</span> %s</div>' % (
-            t('architecture', 'архитектура'), _arch(base, pid, L) if pid in PATH else esc(pid),
+            t('architecture', 'архитектура', 'ארכיטקטורה'), _arch(base, pid, L) if pid in PATH else esc(pid),
             _maplink(base, 'machine', mid, L)),
-        ('<div class="space"><h4>%s</h4>%s</div>' % (t("Register profile — the machine's variant of its architecture", 'Профиль реестра — вариант архитектуры у этой машины (поля реестра — на английском)'), prof)) if prof else '',
-        '<div class="space"><h4>%s</h4><table class="ptab mtab">%s</table></div>' % (t("Technologies by layer — the machine's cell per layer", 'Технологии по слоям — ячейка машины на каждом слое'), rows),
+        ('<div class="space"><h4>%s</h4>%s</div>' % (t("Register profile — the machine's variant of its architecture", 'Профиль реестра — вариант архитектуры у этой машины (поля реестра — на английском)', 'פרופיל המרשם — הגרסה של המכונה לארכיטקטורה שלה (שדות המרשם באנגלית)'), prof)) if prof else '',
+        '<div class="space"><h4>%s</h4><table class="ptab mtab">%s</table></div>' % (t("Technologies by layer — the machine's cell per layer", 'Технологии по слоям — ячейка машины на каждом слое', 'טכנולוגיות לפי שכבה — התא של המכונה בכל שכבה'), rows),
         _records(L, m['records'], True) if EXTRAS and m.get('records') else '',
-        '<div class="mfoot"><span>%s: ✅ %s / %s</span></div>' % (t('evidence', 'источники'), js_str(ec.get('verified', 0)), js_str(ec.get('total', 0)))])
+        '<div class="mfoot"><span>%s: ✅ %s / %s</span></div>' % (t('evidence', 'источники', 'ראיות'), js_str(ec.get('verified', 0)), js_str(ec.get('total', 0)))])
 
 
 # ---------- the architecture card (inspectPath)
@@ -470,7 +474,7 @@ def architecture_card_html(pid, lang, base=''):
     L, p = lang, PATH[pid]; t = lambda *x: esc(T(L, *x)); sl = p.get('slots') or {}
     members = list(dict.fromkeys(i for k in _okeys(sl) for i in sl[k])); mset = set(members)
     rows = ''.join('<tr><td class="ln">%s %s</td><td>%s</td></tr>' % (l['n'], esc(pick(L, l)), '<span class="empty"> · </span>'.join(
-        _st(base, i, L, 'alt' if j else 'prim') for j, i in enumerate(sl.get(str(l['n'])) or [])) or (('<span class="empty">— %s</span>' % esc(T(L, *p['na'][str(l['n'])]))) if str(l['n']) in (p.get('na') or {}) else '<span class="empty">∅ %s</span>' % t('empty slot', 'пустой слот')))
+        _st(base, i, L, 'alt' if j else 'prim') for j, i in enumerate(sl.get(str(l['n'])) or [])) or (('<span class="empty">— %s</span>' % esc(T(L, *p['na'][str(l['n'])]))) if str(l['n']) in (p.get('na') or {}) else '<span class="empty">∅ %s</span>' % t('empty slot', 'пустой слот', 'משבצת ריקה')))
         for l in G['layers'])
     R = p.get('round') or {}; RP = R.get('parts') or {}; RX = p.get('react') or {}; CO = p.get('coh') or {}; pn = dict(PN)
     fS = lambda x: '—' if x is None else ('0' if x == 0 else fmt_t(js_log10(x)))
@@ -482,47 +486,49 @@ def architecture_card_html(pid, lang, base=''):
         if not xs: return ''
         return '<div><span class="tk">%s %s · %d</span></div>' % (glyph, head, len(xs)) + ''.join(
             '<div class="rel requires">%s <span class="empty">%s</span> %s%s</div>' % (
-                nm(e['dst']), t('is the usual route for', 'обычно служит технологии') if e.get('strength') == 'soft' else t('is needed by', 'требуется технологии'), nm(e['src']),
-                (' <span class="empty">(%s)</span>' % t('or an alternative', 'или альтернатива')) if e.get('any') else '') if typ == 'requires' else
+                nm(e['dst']), t('is the usual route for', 'обычно служит технологии', 'היא הדרך המקובלת עבור') if e.get('strength') == 'soft' else t('is needed by', 'требуется технологии', 'נחוצה עבור'), nm(e['src']),
+                (' <span class="empty">(%s)</span>' % t('or an alternative', 'или альтернатива', 'או חלופה')) if e.get('any') else '') if typ == 'requires' else
             '<div class="rel %s">%s <span class="empty">%s</span> %s%s</div>' % (
-                ea(e['type']), nm(e['src']), t('alternative to', 'альтернатива для') if typ == 'replaces' else t('conflicts with', 'конфликтует с'), nm(e['dst']),
+                ea(e['type']), nm(e['src']), t('alternative to', 'альтернатива для', 'חלופה עבור') if typ == 'replaces' else t('conflicts with', 'конфликтует с', 'מתנגשת עם'), nm(e['dst']),
                 (' <span class="empty">· %s</span>' % esc(vt(L, 'CONSTAT', e['status']))) if typ == 'conflicts' and e.get('status') else '') for e in xs)
-    rel_html = (rel_rows('requires', t('dependencies', 'зависимости'), '→') + rel_rows('conflicts', t('conflicts', 'конфликты'), '✕') +
-                rel_rows('replaces', t('alternatives', 'альтернативы'), '⇄')) if rel else '<div class="empty">%s</div>' % t('no recorded relations among these technologies', 'между этими технологиями связей не записано')
+    rel_html = (rel_rows('requires', t('dependencies', 'зависимости', 'תלויות'), '→') + rel_rows('conflicts', t('conflicts', 'конфликты', 'התנגשויות'), '✕') +
+                rel_rows('replaces', t('alternatives', 'альтернативы', 'חלופות'), '⇄')) if rel else '<div class="empty">%s</div>' % t('no recorded relations among these technologies', 'между этими технологиями связей не записано', 'לא נרשמו קשרים בין הטכנולוגיות האלה')
     lim = R.get('limiter')
-    clocks = ('<dt>%s</dt><dd><b>%s</b>%s</dd>' % (t('syndrome round', 'раунд синдрома'), fS(R.get('total')), (' · %s: %s · %s %s%s' % (
-        t('limiter', 'ограничитель'), esc(T(L, *pn.get(lim, (_s(lim), _s(lim))))), t('round of', 'раунд кода'), esc(R.get('code') or ''),
+    clocks = ('<dt>%s</dt><dd><b>%s</b>%s</dd>' % (t('syndrome round', 'раунд синдрома', 'סבב סינדרום'), fS(R.get('total')), (' · %s: %s · %s %s%s' % (
+        t('limiter', 'ограничитель', 'גורם מגביל'), esc(T(L, *pn.get(lim, (_s(lim), _s(lim))))), t('round of', 'раунд кода', 'סבב של הקוד'), esc(R.get('code') or ''),
         (' (d₂ = %s%s)' % (js_str(R['d2']), (', d₁ = ' + js_str(R['d1'])) if R.get('d1') else '')) if R.get('d2') else '')) if R.get('total') else '') +
-        (('<dt>%s</dt><dd>%s</dd>' % (t('parts', 'части'), ' · '.join('%s %s' % (esc(T(L, *v)), fS(RP.get(k))) for k, v in PN))) if R.get('total') else '') +
-        '<dt>%s</dt><dd>%s</dd>' % (t('measured cycle', 'измеренный цикл'), esc(p.get('cycle') or '—')) +
-        '<dt>%s</dt><dd>%s%s %s %s</dd>' % (t('reaction time', 'время реакции'), ('<b>%s</b> %s · ' % (fS(RX['loop']), t('(published loop)', '(опубликованный контур)'))) if RX.get('loop') is not None else '',
-                                           t('floor', 'нижняя граница'), fS(RX.get('floor')),
-                                           ('<span class="empty">· %s</span>' % t('no published measurement→operation loop', 'нет опубликованного контура измерение→операция')) if RX.get('loop') is None else '') +
-        '<dt>%s</dt><dd>T₁ %s · T₂ %s%s · %s <b>%s</b></dd>' % (t('coherence', 'когерентность'), fS(CO.get('t1')), fS(CO.get('t2')),
+        (('<dt>%s</dt><dd>%s</dd>' % (t('parts', 'части', 'חלקים'), ' · '.join('%s %s' % (esc(T(L, *v)), fS(RP.get(k))) for k, v in PN))) if R.get('total') else '') +
+        '<dt>%s</dt><dd>%s</dd>' % (t('measured cycle', 'измеренный цикл', 'מחזור נמדד'), esc(p.get('cycle') or '—')) +
+        '<dt>%s</dt><dd>%s%s %s %s</dd>' % (t('reaction time', 'время реакции', 'זמן תגובה'), ('<b>%s</b> %s · ' % (fS(RX['loop']), t('(published loop)', '(опубликованный контур)', '(לולאה שפורסמה)'))) if RX.get('loop') is not None else '',
+                                           t('floor', 'нижняя граница', 'חסם תחתון'), fS(RX.get('floor')),
+                                           ('<span class="empty">· %s</span>' % t('no published measurement→operation loop', 'нет опубликованного контура измерение→операция', 'לא פורסמה לולאת מדידה→פעולה')) if RX.get('loop') is None else '') +
+        '<dt>%s</dt><dd>T₁ %s · T₂ %s%s · %s <b>%s</b></dd>' % (t('coherence', 'когерентность', 'קוהרנטיות'), fS(CO.get('t1')), fS(CO.get('t2')),
                                                              (' (%s)' % esc(CO['t2_scope'])) if CO.get('t2_scope') and CO['t2_scope'] != 'typical' else '',
-                                                             t('ops per coherence', 'операций на когерентность'), fE(CO.get('ops_per_coh'))) +
-        '<dt>%s</dt><dd>t_round/T₂ = %s · %s %s</dd>' % (t('idle exposure per round', 'экспозиция простоя за раунд'), fE(CO.get('idle_exposure')),
-                                                        t('measured idle error', 'измеренная ошибка простоя'), fE(CO.get('idle_measured'))) +
-        (('<dt>%s</dt><dd class="empty">%s</dd>' % (t('notes', 'примечания'), esc('; '.join(R['notes'])))) if R.get('notes') else ''))
+                                                             t('ops per coherence', 'операций на когерентность', 'פעולות לזמן קוהרנטיות'), fE(CO.get('ops_per_coh'))) +
+        '<dt>%s</dt><dd>t_round/T₂ = %s · %s %s</dd>' % (t('idle exposure per round', 'экспозиция простоя за раунд', 'חשיפת סרק לסבב'), fE(CO.get('idle_exposure')),
+                                                        t('measured idle error', 'измеренная ошибка простоя', 'שגיאת סרק נמדדת'), fE(CO.get('idle_measured'))) +
+        (('<dt>%s</dt><dd class="empty">%s</dd>' % (t('notes', 'примечания', 'הערות'), esc('; '.join(R['notes'])))) if R.get('notes') else ''))
     rd = lambda ids: ', '.join(_st(base, i, L) for i in ids) or '—'
     ms = ''
     if EXTRAS:
         mids = [i for i, m in MACH.items() if m.get('map_path') == pid]
-        ms = '<div class="space useby"><h4>%s · %d</h4>%s</div>' % (t('Machines of this architecture', 'Машины этой архитектуры'), len(mids), (
+        ms = '<div class="space useby"><h4>%s · %d</h4>%s</div>' % (t('Machines of this architecture', 'Машины этой архитектуры', 'מכונות בארכיטקטורה זו'), len(mids), (
             '<ul class="useby">%s</ul><div class="empty" style="margin-top:4px">%s</div>' % (''.join(_mli(L, i, base, '') for i in mids), t(*USEBY_HINT))) if mids else '')
     return _wrap('architecture', [
         '<h3><i class="sw" style="--c:%s"></i> %s</h3>' % (FAMC.get(p['family']), esc(pick(L, p))),
-        '<div class="meta">%s · %s · %s</div>' % (t('architecture', 'архитектура'), esc(pid), T(L, '10 layers · %d technologies counting alternates' % len(members), '10 слоёв · %d %s с учётом альтернатив' % (len(members), regvocab.ru_plural(len(members), regvocab.PLURAL['stations'])))),
+        '<div class="meta">%s · %s · %s</div>' % (t('architecture', 'архитектура', 'ארכיטקטורה'), esc(pid), T(L, '10 layers · %d technologies counting alternates' % len(members), '10 слоёв · %d %s с учётом альтернатив' % (len(members), regvocab.ru_plural(len(members), regvocab.PLURAL['stations'])),
+                                                                         '10 שכבות · %s כולל החלופיות' % regvocab.he_count(len(members), regvocab.PLURAL_HE['stations']))),
         '<div class="mlinks">%s</div>' % _maplink(base, 'architecture', pid, L),
-        '<div class="space"><h4>%s</h4><div>%s</div><div class="empty">%s: %s</div></div>' % (t(*ACTORS_GOALS), esc(p.get('actors')), t('goals', 'цели'), esc(p.get('goals'))),
-        '<div class="space"><h4>%s</h4><dl>%s</dl><div class="empty" style="margin-top:4px">%s</div></div>' % (t('Derived clocks', 'Выведенные такты'), clocks, t(
+        '<div class="space"><h4>%s</h4><div>%s</div><div class="empty">%s: %s</div></div>' % (t(*ACTORS_GOALS), esc(p.get('actors')), t('goals', 'цели', 'יעדים'), esc(p.get('goals'))),
+        '<div class="space"><h4>%s</h4><dl>%s</dl><div class="empty" style="margin-top:4px">%s</div></div>' % (t('Derived clocks', 'Выведенные такты', 'שעונים נגזרים'), clocks, t(
             "t_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — a sum of the round's phases, from the code node, the attributes and the standard records; the measured cycle is the check.",
-            't_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — сумма фаз раунда из узла кода, атрибутов и стандартных рекордов; измеренный цикл — проверка.')),
-        '<div class="space"><h4>%s</h4><table class="ptab">%s</table></div>' % (t('Technologies by layer — primary, then alternates', 'Технологии по слоям — основная, затем альтернативы'), rows),
-        '<div class="space"><h4>%s</h4>%s</div>' % (t('Relations within the architecture', 'Связи внутри архитектуры'), rel_html),
+            't_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — сумма фаз раунда из узла кода, атрибутов и стандартных рекордов; измеренный цикл — проверка.',
+            't_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — סכום שלבי הסבב, מצומת הקוד, מהתכונות ומהרשומות הסטנדרטיות; המחזור הנמדד הוא הבדיקה.')),
+        '<div class="space"><h4>%s</h4><table class="ptab">%s</table></div>' % (t('Technologies by layer — primary, then alternates', 'Технологии по слоям — основная, затем альтернативы', 'טכנולוגיות לפי שכבה — הראשית, ואחריה החלופיות'), rows),
+        '<div class="space"><h4>%s</h4>%s</div>' % (t('Relations within the architecture', 'Связи внутри архитектуры', 'קשרים בתוך הארכיטקטורה'), rel_html),
         '<div class="space"><h4>%s</h4><div>%s: %s</div><div>∅ %s: %s</div></div>' % (
-            t('Reading', 'Чтение'), t('hatched (crossing)', 'штрихованные (пересекающие)'),
-            rd([i for i in members if NODE[i].get('offdiag')]), t('empty slots', 'пустые слоты'), rd([i for i in members if NODE[i].get('status') == 'X'])),
+            t('Reading', 'Чтение', 'סימוני המפה'), t('hatched (crossing)', 'штрихованные (пересекающие)', 'מקווקוות (חוצות)'),
+            rd([i for i in members if NODE[i].get('offdiag')]), t('empty slots', 'пустые слоты', 'משבצות ריקות'), rd([i for i in members if NODE[i].get('status') == 'X'])),
         ms])
 
 

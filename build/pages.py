@@ -191,7 +191,7 @@ class Site:
             pics = self.gallery('machine:' + mid, lang)
             name = m['name']; p = self.path.get(m['map_path'])
             q = m.get('physical_qubits_num')
-            desc = '%s — %s; %s; %s' % (m['org'], (pick(lang, p.get('short') or {}) or pick(lang, p)) if p else m['map_path'], m['status'].lower(), ('%s %s' % (q, pick(lang, ('qubits', 'кубитов')))) if q else '')
+            desc = '%s — %s; %s; %s' % (m['org'], (pick(lang, p.get('short') or {}) or pick(lang, p)) if p else m['map_path'], m['status'].lower(), ('%s %s' % (q, pick(lang, ('qubits', 'кубитов', 'קיוביטים')))) if q else '')
             body = f'<h1 class="rectitle">{html.escape(name)}</h1>{orgline}{card}{pics}'
             self.write('machine', mid, lang, name, desc.strip('; '), body, image=self.first_image('machine:' + mid))
 

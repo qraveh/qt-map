@@ -12,7 +12,7 @@ const RTS=MACH.t||{}, RT=()=>RTS[lang()]||{};   // the register's enumerations p
 const PICS=window.__PICS||{node:{},machine:{}};   // one hosted picture per technology and per machine for the cards (build_html.pics_slim, 28 Sep 2026)
 const MEDIA_BASE=(function(){ const app=document.getElementById('app'); const lb=(app&&app.dataset.langBase)||'lang/'; return lb.replace(/lang\/?$/,'')+'media/'; })();   // 'media/' at the root, '../media/' one level down
 const ORG_SLUG={}; (MACH.machines||[]).forEach(m=>{ if(m.oslug&&m.org&&!ORG_SLUG[m.org])ORG_SLUG[m.org]=m.oslug; });   // organisation name → its page (organisation/<slug>.html), from the machines (29 Sep 2026)
-function orgLink(name){ const sl=ORG_SLUG[name]; return sl?`<a class="org" href="organisation/${sl}.html" title="${T('the organisation\'s page','страница организации')}">${esc(name)}</a>`:linkOrgs(esc(name)); }
+function orgLink(name){ const sl=ORG_SLUG[name]; return sl?`<a class="org" href="organisation/${sl}.html" title="${T('the organisation\'s page','страница организации','דף הארגון')}">${esc(name)}</a>`:linkOrgs(esc(name)); }
 // organisation names in the cards link to their pages (the editor, 29 Sep 2026: "links to organizations … everywhere"). window.__ORGS: [name or
 // alias, slug], longest first (build_html.orgs_slim, orgs.py's matcher). linkOrgs wraps EVERY occurrence in the text of an HTML string — never
 // inside a tag, a link, code, a heading or a button; orgs.py's rules: case-sensitive whole words, the longest name first, a name under 4
@@ -37,18 +37,19 @@ function linkOrgs(h){ const rx=orgRx(); if(!rx||!h)return h; let skip=0;
     if(skip)return t; let out='',i=0,m; rx.lastIndex=0;
     while((m=rx.exec(t))){ const k=orgNorm(m[0]), sl=ORG_BY.get(k);
       if(!sl||([...k].length<4&&!orgToken(t,m.index,m.index+m[0].length))){ rx.lastIndex=m.index+1; continue; }
-      out+=t.slice(i,m.index)+`<a class="org" href="organisation/${sl}.html" title="${T('the organisation\'s page','страница организации')}">${m[0]}</a>`; i=rx.lastIndex; }
+      out+=t.slice(i,m.index)+`<a class="org" href="organisation/${sl}.html" title="${T('the organisation\'s page','страница организации','דף הארגון')}">${m[0]}</a>`; i=rx.lastIndex; }
     return out+t.slice(i); }).join(''); }
 function picHTML(kind,id){ const p=(PICS[kind]||{})[id]; if(!p)return '';
   const img=`<img src="${MEDIA_BASE}${p.t}" alt="${esc(p.s.slice(0,140))}" loading="lazy" decoding="async"${p.w&&p.h?` width="${p.w}" height="${p.h}"`:''}>`;
-  return `<figure class="cardpic">${p.u?`<a href="${esc(p.u)}" target="_blank" rel="noopener" title="${T('the source of the picture','источник картинки')}">${img}</a>`:img}<figcaption title="${T('click to read the whole caption','нажмите, чтобы прочитать подпись целиком')}"><span class="story">${kind==='machine'?linkOrgs(esc(p.s)):esc(p.s)}</span> <span class="credit">${p.c}</span></figcaption></figure>`; }   // a machine's story links its organisations (29 Sep 2026); the credit stays as the register gives it
+  return `<figure class="cardpic">${p.u?`<a href="${esc(p.u)}" target="_blank" rel="noopener" title="${T('the source of the picture','источник картинки','מקור התמונה')}">${img}</a>`:img}<figcaption title="${T('click to read the whole caption','нажмите, чтобы прочитать подпись целиком','לחיצה מציגה את הכיתוב המלא')}"><span class="story">${kind==='machine'?linkOrgs(esc(p.s)):esc(p.s)}</span> <span class="credit">${p.c}</span></figcaption></figure>`; }   // a machine's story links its organisations (29 Sep 2026); the credit stays as the register gives it
 function wirePic(){ insp.querySelectorAll('figure.cardpic').forEach(f=>{ const img=f.querySelector('img'); if(img)img.addEventListener('error',()=>f.remove());   // a picture the host does not serve: the card simply has none
   const c=f.querySelector('figcaption'); if(c)c.addEventListener('click',ev=>{ if(ev.target.closest('a'))return; c.classList.toggle('open'); }); }); }
 function ruPlural(n,f){n=Math.abs(parseInt(n,10)||0); if(n%10===1&&n%100!==11)return f[0]; if(n%10>=2&&n%10<=4&&!(n%100>=12&&n%100<=14))return f[1]; return f[2];}
+function heCount(n,f){ const k=Math.abs(parseInt(n,10)||0); return k===1?f[0]:`${n} ${f[1]}`; }   // Hebrew: (one, many) — f[0] is the whole phrase for 1 («טכנולוגיה אחת»), otherwise «N טכנולוגיות»
 function statusT(s){ s=s||''; const st=RT().status; if(!st)return s; const i=s.indexOf('('); const head=i<0?s:s.slice(0,i), tail=i<0?'':' '+s.slice(i); return head.split('/').map(w=>st[w.trim()]||w.trim()).filter(Boolean).join(' / ')+tail; }
 function scopeT(x){ return (RT().scope||{})[x]||x; }
-function qubitsT(q){ return T(`${q} physical qubits`,`${q} ${ruPlural(q,(RT().plural||{}).qubits||['физический кубит','физических кубита','физических кубитов'])}`); }
-function stationsT(n){ return T(`10 layers · ${n} technologies counting alternates`,`10 слоёв · ${n} ${ruPlural(n,(RT().plural||{}).stations||['технология','технологии','технологий'])} с учётом альтернатив`); }   // every record has its own page since 27 Sep 2026 (the register's private working pages are no longer linked)
+function qubitsT(q){ return T(`${q} physical qubits`,`${q} ${ruPlural(q,(RT().plural||{}).qubits||['физический кубит','физических кубита','физических кубитов'])}`,heCount(q,(RT().plural||{}).qubits||['קיוביט פיזי אחד','קיוביטים פיזיים'])); }
+function stationsT(n){ return T(`10 layers · ${n} technologies counting alternates`,`10 слоёв · ${n} ${ruPlural(n,(RT().plural||{}).stations||['технология','технологии','технологий'])} с учётом альтернатив`,`10 שכבות · ${heCount(n,(RT().plural||{}).stations||['טכנולוגיה אחת','טכנולוגיות'])} כולל החלופיות`); }   // every record has its own page since 27 Sep 2026 (the register's private working pages are no longer linked)
 const app=document.getElementById('app');
 const lang=()=>app.getAttribute('data-lang')||'en';
 // a string in the page's language: T(English, Russian[, Hebrew]) — a missing language reads English (29 Sep 2026: any language of window.__LANGS)
@@ -58,7 +59,7 @@ const N=o=>o?(o[lang()]??o.en):'';
 const LIX=Object.fromEntries((((window.__LANGS||{}).list)||['en','ru']).map((l,i)=>[l,i]));   // a language's position in an (en, ru, he) list
 const SL=id=>{ const s=SHORT[id]; return s?(s[LIX[lang()]]||s[0]):id; };   // a technology's short map label
 const FAMC={SC:'var(--sc)',ION:'var(--ion)',ATOM:'var(--atom)',PHOTON:'var(--photon)',SPIN:'var(--spin)',DEFECT:'var(--defect)',TOPO:'var(--topo)',ANNEAL:'var(--anneal)'};
-const FAMN={SC:['superconducting circuits','сверхпроводниковые схемы'],ION:['trapped ions','ионы в ловушках'],ATOM:['neutral atoms','нейтральные атомы'],PHOTON:['photonics','фотоника'],SPIN:['semiconductor spins','полупроводниковые спины'],DEFECT:['defect spins','дефектные спины'],TOPO:['topological','топологические'],ANNEAL:['quantum annealers','квантовый отжиг']};   // full platform names (editor, 17 Sep: "neutral atoms", not "atoms")
+const FAMN={SC:['superconducting circuits','сверхпроводниковые схемы','מעגלים מוליכי-על'],ION:['trapped ions','ионы в ловушках','יונים לכודים'],ATOM:['neutral atoms','нейтральные атомы','אטומים ניטרליים'],PHOTON:['photonics','фотоника','פוטוניקה'],SPIN:['semiconductor spins','полупроводниковые спины','ספינים במוליכים למחצה'],DEFECT:['defect spins','дефектные спины','ספיני פגם'],TOPO:['topological','топологические','טופולוגי'],ANNEAL:['quantum annealers','квантовый отжиг','מחשבי חישול קוונטי']};   // full platform names (editor, 17 Sep: "neutral atoms", not "atoms")
 const NEUTRAL=new Set(['TOPO','ANNEAL']);
 const NODE=Object.fromEntries(G.nodes.map(n=>[n.id,n]));
 const PATH=Object.fromEntries(G.paths.map(p=>[p.id,p]));
@@ -149,13 +150,13 @@ function sheetCover(){ const i=document.getElementById('insp'); if(!i||i.hidden)
 function placeTip(ev){ const r=wrap.getBoundingClientRect(); let x=ev.clientX-r.left+wrap.scrollLeft+14, y=ev.clientY-r.top+wrap.scrollTop+14; const tw=tip.offsetWidth, th=tip.offsetHeight; if(ev.clientX-r.left+14+tw>wrap.clientWidth) x=ev.clientX-r.left+wrap.scrollLeft-tw-14; if(ev.clientY-r.top+14+th>wrap.clientHeight) y=ev.clientY-r.top+wrap.scrollTop-th-14;
   const sc=sheetCover(); if(sc!=null){ const maxY=sc-r.top+wrap.scrollTop-th-8; if(y>maxY)y=maxY; }
   tip.style.left=Math.max(wrap.scrollLeft,x)+'px'; tip.style.top=Math.max(wrap.scrollTop,y)+'px'; }
-function stationTip(d){ const L=lang(); const k=state.lens; let h=`<b>${esc(N(d))}</b> <span style="opacity:.7">${d.id}</span><br>${vt('STATUS',d.status)} · ${d.since<2030?d.since:'—'} · ${T('layer','слой')} ${d.layer}`;
+function stationTip(d){ const L=lang(); const k=state.lens; let h=`<b>${esc(N(d))}</b> <span style="opacity:.7">${d.id}</span><br>${vt('STATUS',d.status)} · ${d.since<2030?d.since:'—'} · ${T('layer','слой','שכבה')} ${d.layer}`;
   const ps=(prim[d.id]||[]), as=(alt[d.id]||[]);
-  if(ps.length||as.length) h+=`<br><span class="tk">${T('architectures','архитектуры')}</span> ${ps.length+as.length}${as.length?` (${ps.length} ${T('primary','основная')}, ${as.length} ${T('alternate','альтернатива')})`:''}: `+ps.map(p=>`<i class="sw" style="background:${FAMC[PATH[p].family]}"></i>${esc(N(PATH[p]))}`).concat(as.map(p=>`<i class="sw hollow" style="border-color:${FAMC[PATH[p].family]}"></i>${esc(N(PATH[p]))} <span style="opacity:.7">(${T('alternate','альтернатива')})</span>`)).join(' · ');
-  if(k==='family'){ const f=d._fams; h+=`<br><span class="tk">${T('outline','рамка')}</span> ${f.length?f.map(x=>T(...FAMN[x])).join(' + '):'—'}`; }
-  else { const c=lensColor(d,k); const v=lensValue(d,k); const lab=k==='aff'?vt('AFF',d.aff):(k==='time'?(v==='none'?T('no time','нет времени'):TBINS[+v][1]):catLabel(k,v)); h+=`<br><span class="tk">${T('lens','линза')}</span> ${esc(N(LENSES[k]))}: <i class="sw" style="background:${c||'transparent'};border:1px solid ${c||'var(--bg)'}"></i>${esc(lab)}`; }
-  const fl=[]; if(d.offdiag&&d.offdiag.length)fl.push(T('hatched: crossing technology','штриховка: пересекающая технология')); if(d.status==='X')fl.push('∅ '+T('empty slot','пустой слот')); if(fl.length)h+=`<br>${fl.join(' · ')}`;
-  h+=`<br><span style="opacity:.6">${T('click for the card','клик — карточка')}</span>`; return h; }
+  if(ps.length||as.length) h+=`<br><span class="tk">${T('architectures','архитектуры','ארכיטקטורות')}</span> ${ps.length+as.length}${as.length?` (${ps.length} ${T('primary','основная','ראשית')}, ${as.length} ${T('alternate','альтернатива','חלופית')})`:''}: `+ps.map(p=>`<i class="sw" style="background:${FAMC[PATH[p].family]}"></i>${esc(N(PATH[p]))}`).concat(as.map(p=>`<i class="sw hollow" style="border-color:${FAMC[PATH[p].family]}"></i>${esc(N(PATH[p]))} <span style="opacity:.7">(${T('alternate','альтернатива','חלופית')})</span>`)).join(' · ');
+  if(k==='family'){ const f=d._fams; h+=`<br><span class="tk">${T('outline','рамка','מסגרת')}</span> ${f.length?f.map(x=>T(...FAMN[x])).join(' + '):'—'}`; }
+  else { const c=lensColor(d,k); const v=lensValue(d,k); const lab=k==='aff'?vt('AFF',d.aff):(k==='time'?(v==='none'?T('no time','нет времени','ללא זמן'):TBINS[+v][1]):catLabel(k,v)); h+=`<br><span class="tk">${T('lens','линза','עדשה')}</span> ${esc(N(LENSES[k]))}: <i class="sw" style="background:${c||'transparent'};border:1px solid ${c||'var(--bg)'}"></i>${esc(lab)}`; }
+  const fl=[]; if(d.offdiag&&d.offdiag.length)fl.push(T('hatched: crossing technology','штриховка: пересекающая технология','קווקוו: טכנולוגיה חוצה')); if(d.status==='X')fl.push('∅ '+T('empty slot','пустой слот','משבצת ריקה')); if(fl.length)h+=`<br>${fl.join(' · ')}`;
+  h+=`<br><span style="opacity:.6">${T('click for the card','клик — карточка','לחיצה — הכרטיס')}</span>`; return h; }
 st.on('mousemove',(ev,d)=>{if(tipPinned)return; tip.style.display='block'; tip.classList.add('wide'); tip.innerHTML=stationTip(d); placeTip(ev);}).on('mouseenter',(ev,d)=>{ if(window.__pcHover)window.__pcHover(d.id,'map'); }).on('mouseleave',()=>{if(!tipPinned)hideTip(); if(window.__pcHover)window.__pcHover(null,'map');});
 st.on('click',(ev,d)=>{ev.stopPropagation(); unpinTip(); select(d.id===state.focus?null:d.id);}).on('keydown',(ev,d)=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault(); select(d.id===state.focus?null:d.id);}});
 svg.on('click',()=>select(null));
@@ -174,23 +175,23 @@ function unpinTip(){ tipPinned=false; hideTip(); }
 document.addEventListener('pointerdown',function(ev){ const t=ev.target; if(t&&t.closest&&t.closest('g.edge'))return; unpinTip(); },true);
 const LENSES={   // editor's order of 17 Sep 2026: family → manufacturing → error structure → mobility → control (modality, placement) → time → readout (mechanism, destructive, mid-circuit) → entangling → affinity → status
  // plain names, no attribute letters (brief E): the letter stays on the technology card's attribute rows and, muted, in the lens legend's title
- family:{en:'Platform family',ru:'Семейство платформ'},
- g:{en:'Manufacturing technology',ru:'Технология производства'},
- f:{en:'Dominant error structure',ru:'Доминирующая структура ошибок'},
- d:{en:'Mobility / connectivity',ru:'Подвижность / связность'},
- mod:{en:'Control: modality',ru:'Управление: модальность'},
- place:{en:'Control: placement (temperature stage)',ru:'Управление: размещение (температурная ступень)'},
- time:{en:'Characteristic time (gate or readout)',ru:'Характерное время (гейт или считывание)'},
- mech:{en:'Readout: mechanism',ru:'Считывание: механизм'},
- destr:{en:'Readout: destructive?',ru:'Считывание: разрушающее?'},
- mid:{en:'Readout: mid-circuit?',ru:'Считывание: внутрисхемное?'},
- det:{en:'Entangling: deterministic / heralded',ru:'Перепутывание: детерминированное / геральдированное (heralded)'},
- aff:{en:'Carrier affinity: natural ↔ fabricated',ru:'Сродство носителя: естественный ↔ изготовленный'},
- status:{en:'Technology status',ru:'Статус технологии'}};
+ family:{en:'Platform family',ru:'Семейство платформ',he:'משפחת פלטפורמות'},
+ g:{en:'Manufacturing technology',ru:'Технология производства',he:'טכנולוגיית ייצור'},
+ f:{en:'Dominant error structure',ru:'Доминирующая структура ошибок',he:'מבנה השגיאות השולט'},
+ d:{en:'Mobility / connectivity',ru:'Подвижность / связность',he:'ניידות / קישוריות'},
+ mod:{en:'Control: modality',ru:'Управление: модальность',he:'בקרה: סוג האות'},
+ place:{en:'Control: placement (temperature stage)',ru:'Управление: размещение (температурная ступень)',he:'בקרה: מיקום (שלב הטמפרטורה)'},
+ time:{en:'Characteristic time (gate or readout)',ru:'Характерное время (гейт или считывание)',he:'זמן אופייני (שער או קריאה)'},
+ mech:{en:'Readout: mechanism',ru:'Считывание: механизм',he:'קריאה: מנגנון'},
+ destr:{en:'Readout: destructive?',ru:'Считывание: разрушающее?',he:'קריאה: הרסנית?'},
+ mid:{en:'Readout: mid-circuit?',ru:'Считывание: внутрисхемное?',he:'קריאה: באמצע המעגל?'},
+ det:{en:'Entangling: deterministic / heralded',ru:'Перепутывание: детерминированное / геральдированное (heralded)',he:'שזירה: דטרמיניסטית / מבושרת (heralded)'},
+ aff:{en:'Carrier affinity: natural ↔ fabricated',ru:'Сродство носителя: естественный ↔ изготовленный',he:'זיקת הנושא: טבעי ↔ מיוצר'},
+ status:{en:'Technology status',ru:'Статус технологии',he:'מצב הטכנולוגיה'}};
 const LENSCOORD={g:'(g)',f:'(f)',d:'(d)',mod:'(e)',place:'(e)',time:'(b)/(c)',mech:'(c)',destr:'(c)',mid:'(c)',det:'(b)',aff:'(a)'};   // the report's attribute letter, shown once as a muted suffix of the lens legend's title
 // reading marks (brief E, editor's decision): no lens — glyphs on the technologies, static legend keys with counts, badges on the technology card
-const OFFDEF=['a crossing technology: it takes a trait from the other side of the natural/fabricated divide — hatched on the map (see §7.5)','пересекающая технология: берёт свойство с другой стороны раздела естественное/изготовленное — на карте заштрихована (см. §7.5)'];
-const EMPTYDEF=['a technology with no demonstrated technology yet','технология, для которой технологии ещё нет'];
+const OFFDEF=['a crossing technology: it takes a trait from the other side of the natural/fabricated divide — hatched on the map (see §7.5)','пересекающая технология: берёт свойство с другой стороны раздела естественное/изготовленное — на карте заштрихована (см. §7.5)','טכנולוגיה חוצה: היא נוטלת מאפיין מהצד השני של החלוקה טבעי–מיוצר — מקווקוות במפה (ראו §7.5)'];
+const EMPTYDEF=['a technology with no demonstrated technology yet','технология, для которой технологии ещё нет','טכנולוגיה שעדיין אין לה מימוש שהודגם'];
 const isOffd=n=>!!(n.offdiag&&n.offdiag.length), isEmpty=n=>n.status==='X';
 function glyphKeys(){ document.querySelectorAll('#glyphlegend [data-glyph]').forEach(el=>{ const k=el.dataset.glyph; const f=(k==='offd'?isOffd:isEmpty); const c=el.querySelector('.cnt'); if(c)c.textContent=G.nodes.filter(f).length; el.title=T(...(k==='offd'?OFFDEF:EMPTYDEF)); }); }
 // categorical lens palette (deliberately not the family palette: while a lens is active, path lines turn neutral so colour means the lens value only)
@@ -201,7 +202,7 @@ const CATS={
  g:['sclitho','3d','cmos','mbe','mems','pic','optics','stm','diamond','none'], status:['D','E','T','X'],
  det:['det','her','na'], destr:['yes','no','none'], mid:['yes','no','none']};
 const VTAB={mech:'MECH',d:'MOB',mod:'MOD',place:'PLACE',f:'ERR',g:'FAB',status:'STATUS',det:'DET'};
-const YESNO={yes:['yes','да'],no:['no','нет'],none:['no readout','без считывания']};
+const YESNO={yes:['yes','да','כן'],no:['no','нет','לא'],none:['no readout','без считывания','ללא קריאה']};
 function catLabelSafe(k,v){ try{ if(k==='family')return T(...FAMN[v]); if(k==='aff')return vt('AFF',Number(v)); if(k==='time')return v==='none'?'—':TBINS[Number(v)][1]; return catLabel(k,v);}catch(e){return String(v);} }
 function catLabel(k,v){ if(k==='destr'||k==='mid')return T(...YESNO[v]); return vt(VTAB[k],v); }
 function lensValues(n,k){ if(k==='f')return (n.f&&n.f.length)?n.f:['none']; if(k==='place')return (n.e.place&&n.e.place.length)?n.e.place:['none']; if(k==='family')return n._fams; return [lensValue(n,k)]; }   // every value a technology carries for a lens (f and place are lists; place since 17 Sep 2026)
@@ -222,7 +223,7 @@ function tint(c){ const x=d3.color(c); if(!x)return 'var(--surface)'; x.opacity=
 function lensItems(k){ const count=v=>G.nodes.filter(n=>lensValues(n,k).includes(v)).length;
   if(k==='family') return Object.keys(FAMC).map(f=>({c:FAMC[f],t:T(...FAMN[f]),v:f,n:G.nodes.filter(n=>n._fams.includes(f)).length}));
   if(k==='aff') return [0,0.25,0.5,0.75,1].map(a=>({c:affScale(a),t:vt('AFF',a),v:String(a),n:count(String(a))}));
-  if(k==='time') return TBINS.map((b,i)=>({c:timeScale(b[0]),t:b[1],v:String(i),n:count(String(i))})).concat([{c:null,t:T('no time (code, decoder, fab)','нет времени (код, декодер, производство)'),v:'none',n:count('none')}]);
+  if(k==='time') return TBINS.map((b,i)=>({c:timeScale(b[0]),t:b[1],v:String(i),n:count(String(i))})).concat([{c:null,t:T('no time (code, decoder, fab)','нет времени (код, декодер, производство)','ללא זמן (קוד, מפענח, ייצור)'),v:'none',n:count('none')}]);
   return CATS[k].map(v=>({c:v==='none'?null:LENSPAL[CATS[k].indexOf(v)%LENSPAL.length],t:catLabel(k,v),v,n:count(v)})); }
 function nodeMatchesFilter(n){ const k=state.lens, v=state.lensFilter; if(v==null)return true; if(k==='family')return n._fams.some(f=>v.has(f)); return lensValues(n,k).some(x=>v.has(x)); }
 function filterHas(x){ return !!(state.lensFilter&&state.lensFilter.has(x)); }
@@ -236,17 +237,17 @@ function applyLens(){ const k=state.lens; const leg=document.getElementById('len
     .attr('fill',d=>{ if(!lensed)return 'var(--surface)'; const c=lensColor(d,k); return c?tint(c):'var(--surface)'; });
   st.select('rect.lensbar').attr('fill',d=>{ if(!lensed)return 'transparent'; return lensColor(d,k)||'transparent'; });
   const items=lensItems(k).filter(it=>it.n>0);
-  leg.innerHTML='<span class="lbl">'+T('lens legend · click a value to keep only those technologies · Ctrl-click adds a value','легенда линзы · клик по значению оставляет только эти технологии · Ctrl-клик добавляет значение')+(LENSCOORD[k]?' <span class="cnt">'+T('attribute','атрибут')+' '+LENSCOORD[k]+'</span>':'')+'</span>'+items.map(it=>`<button type="button" class="k lk" data-lv="${it.v}" aria-pressed="${String(filterHas(it.v))}"><i class="sw" style="background:${it.c||'transparent'};border:1px solid ${it.c?it.c:'var(--mid)'}"></i>${esc(it.t)} <span class="cnt">${it.n}</span></button>`).join('')+(state.lensFilter!=null?`<button type="button" class="k lk clear" data-lv="">${T('clear filter','сбросить фильтр')} ✕</button>`:'');
+  leg.innerHTML='<span class="lbl">'+T('lens legend · click a value to keep only those technologies · Ctrl-click adds a value','легенда линзы · клик по значению оставляет только эти технологии · Ctrl-клик добавляет значение','מקרא העדשה · לחיצה על ערך משאירה רק את הטכנולוגיות שלו · לחיצה עם Ctrl מוסיפה ערך')+(LENSCOORD[k]?' <span class="cnt">'+T('attribute','атрибут','תכונה')+' '+LENSCOORD[k]+'</span>':'')+'</span>'+items.map(it=>`<button type="button" class="k lk" data-lv="${it.v}" aria-pressed="${String(filterHas(it.v))}"><i class="sw" style="background:${it.c||'transparent'};border:1px solid ${it.c?it.c:'var(--mid)'}"></i>${esc(it.t)} <span class="cnt">${it.n}</span></button>`).join('')+(state.lensFilter!=null?`<button type="button" class="k lk clear" data-lv="">${T('clear filter','сбросить фильтр','ניקוי המסנן')} ✕</button>`:'');
   leg.querySelectorAll('[data-lv]').forEach(b=>{ b.addEventListener('click',ev=>{ toggleFilter(b.dataset.lv,ev.ctrlKey||ev.metaKey||ev.shiftKey); applyLens(); drawEdges(); dimming(); });
     b.addEventListener('mouseenter',()=>{ const v=b.dataset.lv; if(v==='')return; st.classed('peek',d=>lensValues(d,k).includes(v)); });
     b.addEventListener('mouseleave',()=>{ st.classed('peek',false); }); });
   if(state.focus) inspect(NODE[state.focus]);
 }
 const LENSROWS={aff:['aff'],time:['b','c'],det:['b'],mech:['c'],destr:['c'],mid:['c'],d:['d'],mod:['e'],place:['e'],f:['f'],g:['g']};
-function relabel(){ st.attr('aria-label',d=>N(d)+' · '+T('layer','слой')+' '+d.layer); st.select('text.l1').text(d=>wrapLabel(SL(d.id))[0]); st.select('text.l2').text(d=>wrapLabel(SL(d.id))[1]||'');
+function relabel(){ st.attr('aria-label',d=>N(d)+' · '+T('layer','слой','שכבה')+' '+d.layer); st.select('text.l1').text(d=>wrapLabel(SL(d.id))[0]); st.select('text.l2').text(d=>wrapLabel(SL(d.id))[1]||'');
   laneHead.each(function(d){const s=N(d); let a=s,b=''; if(s.length>16){ const i=s.indexOf(' / ')>0?s.indexOf(' / '):s.lastIndexOf(' '); a=s.slice(0,i); b=s.slice(i).replace(/^ \/ /,'/ ').trim(); } d3.select(this).select('text.t:not(.t2)').text(a); d3.select(this).select('text.t2').text(b);});
   bandLabel.selectAll('*').remove(); BANDS.forEach((b,bi)=>{ if(!maxc[bi])return; const y=bandTop[bi]+(maxc[bi]*ROWH)/2; bandLabel.append('text').attr('x',X0-30).attr('y',y).attr('text-anchor','middle').attr('transform',`rotate(-90 ${X0-30} ${y})`).text(vt('AFF',b).split(' ')[0].toUpperCase()); });
-  gPaths.selectAll('circle.emptyslot').select('title').text(d=>{ const nm=N(d.p.short)||N(d.p), ly=N(G.layers[d.L-1]); return T(`${nm}: no technology in layer ${d.L} (${ly}) — the line skips this layer`,`${nm}: в слое ${d.L} (${ly}) у этой архитектуры нет технологии — линия пропускает слой`); });
+  gPaths.selectAll('circle.emptyslot').select('title').text(d=>{ const nm=N(d.p.short)||N(d.p), ly=N(G.layers[d.L-1]); return T(`${nm}: no technology in layer ${d.L} (${ly}) — the line skips this layer`,`${nm}: в слое ${d.L} (${ly}) у этой архитектуры нет технологии — линия пропускает слой`,`${nm}: אין טכנולוגיה בשכבה ${d.L} (${ly}) — הקו מדלג על השכבה הזו`); });
   document.querySelectorAll('[data-chip-path]').forEach(b=>{const p=PATH[b.dataset.chipPath]; b.querySelector('span.t').textContent=N(p.short)||N(p); b.title=N(p);});
   document.querySelectorAll('#lens option').forEach(o=>{o.textContent=N(LENSES[o.value]);});
   glyphKeys();
@@ -319,15 +320,16 @@ function drawEdges(){ gEdges.selectAll('*').remove(); const f=state.focus;
   const es=G.edges.filter(e=>{ if(e.type==='defines'||e.type==='transfers')return false;
     if(lit&&!(lit.has(e.src)&&lit.has(e.dst)))return false;
     return edgeOn(e); });
-  const ETYPE={replaces:['is an alternative to','— альтернатива для'],conflicts:['conflicts with','конфликтует с']};
+  const ETYPE={replaces:['is an alternative to','— альтернатива для','היא חלופה עבור'],conflicts:['conflicts with','конфликтует с','מתנגשת עם']};
   // a dependency reads in the supply direction — "B is needed by A" — and its arrowhead sits at A, the technology that needs B
   // (the editor, 27 Sep 2026: the words and the arrow must agree); one-of and soft dependencies say so
   const depTip=e=>{const L=lang(); const a=N(NODE[e.src]), b=N(NODE[e.dst]); const soft=e.strength==='soft';
     return T(`<b>${esc(b)}</b>${e.any?' <span style="opacity:.7">(or an alternative)</span>':''} ${soft?'is the usual route for':'is needed by'} <b>${esc(a)}</b>`,
-      `<b>«${esc(b)}»</b>${e.any?' <span style="opacity:.7">(или альтернатива)</span>':''} ${soft?'обычно служит технологии':'требуется технологии'} <b>«${esc(a)}»</b>`); };
+      `<b>«${esc(b)}»</b>${e.any?' <span style="opacity:.7">(или альтернатива)</span>':''} ${soft?'обычно служит технологии':'требуется технологии'} <b>«${esc(a)}»</b>`,
+      `<b>${esc(b)}</b>${e.any?' <span style="opacity:.7">(או חלופה)</span>':''} ${soft?'היא הדרך המקובלת עבור':'נחוצה עבור'} <b>${esc(a)}</b>`); };
   const edgeTip=e=>{const L=lang(); const a=N(NODE[e.src]), b=N(NODE[e.dst]); let h=e.type==='requires'?depTip(e):`<b>${esc(a)}</b> ${T(...ETYPE[e.type])} <b>${esc(b)}</b>`;
     if(N(e)) h+=`<br>${esc(N(e))}`;
-    if(e.type==='conflicts'&&e.price){ h+=`<br><span class="tk">${T('price','цена')}</span> ${esc(N(e.price))}<br><span class="tk">${T('mitigation','снятие')}</span> ${esc(N(e.mitig))}<br><span class="tk">${T('status','статус')}</span> ${esc(vt('CONSTAT',e.status))} · ${e.date}`; }
+    if(e.type==='conflicts'&&e.price){ h+=`<br><span class="tk">${T('price','цена','מחיר')}</span> ${esc(N(e.price))}<br><span class="tk">${T('mitigation','снятие','מיתון')}</span> ${esc(N(e.mitig))}<br><span class="tk">${T('status','статус','מצב')}</span> ${esc(vt('CONSTAT',e.status))} · ${e.date}`; }
     return h; };
   const g=gEdges.selectAll('g').data(es).join('g').attr('class',e=>'edge '+e.type);
   g.append('path').attr('class','hit').attr('d',e=>edgePath(NODE[e.src],NODE[e.dst]));
@@ -358,40 +360,40 @@ function applySnapshot(s){ state.focus=s.focus; state.isolate=s.isolate; state.m
   const sel=document.getElementById('lens'); if(sel)sel.value=state.lens; applyLens(); drawEdges(); dimming();
   if(state.focus){ inspect(NODE[state.focus]); insp.hidden=false; } else if(state.machine){ inspectMachine(MBY[state.machine]); } else if(state.isolate){ inspectPath(PATH[state.isolate]); } else inspectEmpty(); sheetRoom(); }
 function goBack(){ const s=HIST.pop(); if(s)applySnapshot(s); } window.__goBack=goBack;
-function pageLink(kind,id){ return `<a class="pagelink" href="${kind}/${id}.html" title="${T('this record at its own address','эта запись на своём адресе')}">${T('page ↗','страница ↗')}</a>`; }
+function pageLink(kind,id){ return `<a class="pagelink" href="${kind}/${id}.html" title="${T('this record at its own address','эта запись на своём адресе','הרשומה הזו בכתובת משלה')}">${T('page ↗','страница ↗','דף ↗')}</a>`; }
 function gripHTML(){ const sheet=insp.classList.contains('sheet-max');
   return '<div class="grip" data-grip="1">⠿ <span class="sp"></span>'+
-    '<button type="button" data-back="1" title="'+T('back to the previous card','к предыдущей карточке')+'" aria-label="back"'+(HIST.length?'':' disabled')+'>←</button>'+
+    '<button type="button" data-back="1" title="'+T('back to the previous card','к предыдущей карточке','חזרה לכרטיס הקודם')+'" aria-label="back"'+(HIST.length?'':' disabled')+'>←</button>'+
     '<button type="button" data-dock="left" title="dock left">⇤</button>'+
     '<button type="button" data-dock="right" title="dock right">⇥</button>'+
     '<button type="button" data-sheet="1" aria-pressed="'+String(sheet)+'" aria-label="expand card">'+(sheet?'⌄':'⌃')+'</button>'+
     '<button type="button" data-close="1" aria-label="close">✕</button></div>'; }
 function inspectPathHTML(p){ const L=lang();
   const members=new Set(Object.values(p.slots).flat());
-  const rows=G.layers.map(l=>{const ids=p.slots[String(l.n)]||[]; return `<tr><td class="ln">${l.n} ${esc(N(l))}</td><td>${ids.length?ids.map((id,i)=>`<a href="#" data-goto="${id}" class="${i?'alt':'prim'}">${esc(N(NODE[id]))}</a>`).join('<span class="empty"> · </span>'):((p.na||{})[String(l.n)]?`<span class="empty">— ${esc(T(...p.na[String(l.n)]))}</span>`:`<span class="empty">∅ ${T('empty slot','пустой слот')}</span>`)}</td></tr>`;}).join('');
-  const R=p.round||{}, RP=R.parts||{}, RX=p.react||{}, CO=p.coh||{}; const PN={gates:['gates','гейты'],transport:['transport','транспорт'],'1q':['1Q','1Q'],readout:['readout','считывание'],reset:['reset','сброс']};
+  const rows=G.layers.map(l=>{const ids=p.slots[String(l.n)]||[]; return `<tr><td class="ln">${l.n} ${esc(N(l))}</td><td>${ids.length?ids.map((id,i)=>`<a href="#" data-goto="${id}" class="${i?'alt':'prim'}">${esc(N(NODE[id]))}</a>`).join('<span class="empty"> · </span>'):((p.na||{})[String(l.n)]?`<span class="empty">— ${esc(T(...p.na[String(l.n)]))}</span>`:`<span class="empty">∅ ${T('empty slot','пустой слот','משבצת ריקה')}</span>`)}</td></tr>`;}).join('');
+  const R=p.round||{}, RP=R.parts||{}, RX=p.react||{}, CO=p.coh||{}; const PN={gates:['gates','гейты','שערים'],transport:['transport','транспорт','הובלה'],'1q':['1Q','1Q','1Q'],readout:['readout','считывание','קריאה'],reset:['reset','сброс','איפוס']};
   const fS=x=>{if(x==null)return '—'; if(x===0)return '0'; return fmtT(Math.log10(x));}; const fE=x=>x==null?'—':x.toExponential(1).replace('e+','e').replace('e-','e−');
   const offs=[...members].filter(id=>NODE[id].offdiag&&NODE[id].offdiag.length), empties=[...members].filter(id=>NODE[id].status==='X');
   const rel=G.edges.filter(e=>members.has(e.src)&&members.has(e.dst)&&(e.type==='requires'||e.type==='replaces'||e.type==='conflicts'));
   const relRows=(type,head,glyph)=>{ const xs=rel.filter(e=>e.type===type); if(!xs.length)return ''; const nm=id=>`<a href="#" data-goto="${id}" title="${esc(N(NODE[id]))}">${esc(SHORT[id]?SL(id):N(NODE[id]))}</a>`;
     return `<div><span class="tk">${glyph} ${head} · ${xs.length}</span></div>`+xs.map(e=>type==='requires'
-      ?`<div class="rel requires">${nm(e.dst)} <span class="empty">${e.strength==='soft'?T('is the usual route for','обычно служит технологии'):T('is needed by','требуется технологии')}</span> ${nm(e.src)}${e.any?' <span class="empty">('+T('or an alternative','или альтернатива')+')</span>':''}</div>`
-      :`<div class="rel ${e.type}">${nm(e.src)} <span class="empty">${type==='replaces'?T('alternative to','альтернатива для'):T('conflicts with','конфликтует с')}</span> ${nm(e.dst)}${type==='conflicts'&&e.status?' <span class="empty">· '+esc(vt('CONSTAT',e.status))+'</span>':''}</div>`).join(''); };
-  const relHTML=rel.length?relRows('requires',T('dependencies','зависимости'),'→')+relRows('conflicts',T('conflicts','конфликты'),'✕')+relRows('replaces',T('alternatives','альтернативы'),'⇄'):`<div class="empty">${T('no recorded relations among these technologies','между этими технологиями связей не записано')}</div>`;
-  return `${gripHTML()}<h3><i class="sw" style="--c:${FAMC[p.family]}"></i> ${esc(N(p))}</h3><div class="meta">${T('architecture','архитектура')} · ${p.id} · ${stationsT(members.size)} · ${pageLink('architecture',p.id)}</div>
-  <div class="space"><h4>${T('Actors & goals','Акторы и цели')}</h4><div>${linkOrgs(esc(p.actors))}</div><div class="empty">${T('goals','цели')}: ${esc(p.goals)}</div></div>
-  <div class="space"><h4>${T('Derived clocks','Выведенные такты')}</h4><dl>
-   <dt>${T('syndrome round','раунд синдрома')}</dt><dd><b>${fS(R.total)}</b>${R.total?` · ${T('limiter','ограничитель')}: ${T(...(PN[R.limiter]||[R.limiter,R.limiter]))} · ${T('round of','раунд кода')} ${esc(R.code||'')}${R.d2?' (d₂ = '+R.d2+(R.d1?', d₁ = '+R.d1:'')+')':''}`:''}</dd>
-   ${R.total?`<dt>${T('parts','части')}</dt><dd>${Object.keys(PN).map(k=>`${T(...PN[k])} ${fS(RP[k])}`).join(' · ')}</dd>`:''}
-   <dt>${T('measured cycle','измеренный цикл')}</dt><dd>${esc(p.cycle||'—')}</dd>
-   <dt>${T('reaction time','время реакции')}</dt><dd>${RX.loop!=null?`<b>${fS(RX.loop)}</b> ${T('(published loop)','(опубликованный контур)')} · `:''}${T('floor','нижняя граница')} ${fS(RX.floor)} ${RX.loop==null?`<span class="empty">· ${T('no published measurement→operation loop','нет опубликованного контура измерение→операция')}</span>`:''}</dd>
-   <dt>${T('coherence','когерентность')}</dt><dd>T₁ ${fS(CO.t1)} · T₂ ${fS(CO.t2)}${CO.t2_scope&&CO.t2_scope!=='typical'?' ('+CO.t2_scope+')':''} · ${T('ops per coherence','операций на когерентность')} <b>${fE(CO.ops_per_coh)}</b></dd>
-   <dt>${T('idle exposure per round','экспозиция простоя за раунд')}</dt><dd>t_round/T₂ = ${fE(CO.idle_exposure)} · ${T('measured idle error','измеренная ошибка простоя')} ${fE(CO.idle_measured)}</dd>
-   ${(R.notes||[]).length?`<dt>${T('notes','примечания')}</dt><dd class="empty">${esc((R.notes||[]).join('; '))}</dd>`:''}
-  </dl><div class="empty" style="margin-top:4px">${T('t_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — a sum of the round\'s phases, from the code node, the attributes and the standard records; the measured cycle is the check.','t_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — сумма фаз раунда из узла кода, атрибутов и стандартных рекордов; измеренный цикл — проверка.')}</div></div>
-  <div class="space"><h4>${T('Technologies by layer — primary, then alternates','Технологии по слоям — основная, затем альтернативы')}</h4><table class="ptab">${rows}</table></div>
-  <div class="space"><h4>${T('Relations within the architecture','Связи внутри архитектуры')}</h4>${relHTML}<div class="empty" style="margin-top:3px">${T('the edge toggles draw each type on the map, among these technologies only','переключатели рёбер рисуют каждый тип на карте — только между этими технологиями')}</div></div>
-  <div class="space"><h4>${T('Reading','Чтение')}</h4><div>${T('hatched (crossing)','штрихованные (пересекающие)')}: ${offs.length?offs.map(id=>`<a href="#" data-goto="${id}">${esc(N(NODE[id]))}</a>`).join(', '):'—'}</div><div>∅ ${T('empty slots','пустые слоты')}: ${empties.length?empties.map(id=>`<a href="#" data-goto="${id}">${esc(N(NODE[id]))}</a>`).join(', '):'—'}</div></div>
+      ?`<div class="rel requires">${nm(e.dst)} <span class="empty">${e.strength==='soft'?T('is the usual route for','обычно служит технологии','היא הדרך המקובלת עבור'):T('is needed by','требуется технологии','נחוצה עבור')}</span> ${nm(e.src)}${e.any?' <span class="empty">('+T('or an alternative','или альтернатива','או חלופה')+')</span>':''}</div>`
+      :`<div class="rel ${e.type}">${nm(e.src)} <span class="empty">${type==='replaces'?T('alternative to','альтернатива для','חלופה עבור'):T('conflicts with','конфликтует с','מתנגשת עם')}</span> ${nm(e.dst)}${type==='conflicts'&&e.status?' <span class="empty">· '+esc(vt('CONSTAT',e.status))+'</span>':''}</div>`).join(''); };
+  const relHTML=rel.length?relRows('requires',T('dependencies','зависимости','תלויות'),'→')+relRows('conflicts',T('conflicts','конфликты','התנגשויות'),'✕')+relRows('replaces',T('alternatives','альтернативы','חלופות'),'⇄'):`<div class="empty">${T('no recorded relations among these technologies','между этими технологиями связей не записано','לא נרשמו קשרים בין הטכנולוגיות האלה')}</div>`;
+  return `${gripHTML()}<h3><i class="sw" style="--c:${FAMC[p.family]}"></i> ${esc(N(p))}</h3><div class="meta">${T('architecture','архитектура','ארכיטקטורה')} · ${p.id} · ${stationsT(members.size)} · ${pageLink('architecture',p.id)}</div>
+  <div class="space"><h4>${T('Actors & goals','Акторы и цели','שחקנים ויעדים')}</h4><div>${linkOrgs(esc(p.actors))}</div><div class="empty">${T('goals','цели','יעדים')}: ${esc(p.goals)}</div></div>
+  <div class="space"><h4>${T('Derived clocks','Выведенные такты','שעונים נגזרים')}</h4><dl>
+   <dt>${T('syndrome round','раунд синдрома','סבב סינדרום')}</dt><dd><b>${fS(R.total)}</b>${R.total?` · ${T('limiter','ограничитель','גורם מגביל')}: ${T(...(PN[R.limiter]||[R.limiter,R.limiter]))} · ${T('round of','раунд кода','סבב של הקוד')} ${esc(R.code||'')}${R.d2?' (d₂ = '+R.d2+(R.d1?', d₁ = '+R.d1:'')+')':''}`:''}</dd>
+   ${R.total?`<dt>${T('parts','части','חלקים')}</dt><dd>${Object.keys(PN).map(k=>`${T(...PN[k])} ${fS(RP[k])}`).join(' · ')}</dd>`:''}
+   <dt>${T('measured cycle','измеренный цикл','מחזור נמדד')}</dt><dd>${esc(p.cycle||'—')}</dd>
+   <dt>${T('reaction time','время реакции','זמן תגובה')}</dt><dd>${RX.loop!=null?`<b>${fS(RX.loop)}</b> ${T('(published loop)','(опубликованный контур)','(לולאה שפורסמה)')} · `:''}${T('floor','нижняя граница','חסם תחתון')} ${fS(RX.floor)} ${RX.loop==null?`<span class="empty">· ${T('no published measurement→operation loop','нет опубликованного контура измерение→операция','לא פורסמה לולאת מדידה→פעולה')}</span>`:''}</dd>
+   <dt>${T('coherence','когерентность','קוהרנטיות')}</dt><dd>T₁ ${fS(CO.t1)} · T₂ ${fS(CO.t2)}${CO.t2_scope&&CO.t2_scope!=='typical'?' ('+CO.t2_scope+')':''} · ${T('ops per coherence','операций на когерентность','פעולות לזמן קוהרנטיות')} <b>${fE(CO.ops_per_coh)}</b></dd>
+   <dt>${T('idle exposure per round','экспозиция простоя за раунд','חשיפת סרק לסבב')}</dt><dd>t_round/T₂ = ${fE(CO.idle_exposure)} · ${T('measured idle error','измеренная ошибка простоя','שגיאת סרק נמדדת')} ${fE(CO.idle_measured)}</dd>
+   ${(R.notes||[]).length?`<dt>${T('notes','примечания','הערות')}</dt><dd class="empty">${esc((R.notes||[]).join('; '))}</dd>`:''}
+  </dl><div class="empty" style="margin-top:4px">${T('t_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — a sum of the round\'s phases, from the code node, the attributes and the standard records; the measured cycle is the check.','t_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — сумма фаз раунда из узла кода, атрибутов и стандартных рекордов; измеренный цикл — проверка.','t_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — סכום שלבי הסבב, מצומת הקוד, מהתכונות ומהרשומות הסטנדרטיות; המחזור הנמדד הוא הבדיקה.')}</div></div>
+  <div class="space"><h4>${T('Technologies by layer — primary, then alternates','Технологии по слоям — основная, затем альтернативы','טכנולוגיות לפי שכבה — הראשית, ואחריה החלופיות')}</h4><table class="ptab">${rows}</table></div>
+  <div class="space"><h4>${T('Relations within the architecture','Связи внутри архитектуры','קשרים בתוך הארכיטקטורה')}</h4>${relHTML}<div class="empty" style="margin-top:3px">${T('the edge toggles draw each type on the map, among these technologies only','переключатели рёбер рисуют каждый тип на карте — только между этими технологиями','מתגי הקשתות מציירים במפה כל סוג, בין הטכנולוגיות האלה בלבד')}</div></div>
+  <div class="space"><h4>${T('Reading','Чтение','סימוני המפה')}</h4><div>${T('hatched (crossing)','штрихованные (пересекающие)','מקווקוות (חוצות)')}: ${offs.length?offs.map(id=>`<a href="#" data-goto="${id}">${esc(N(NODE[id]))}</a>`).join(', '):'—'}</div><div>∅ ${T('empty slots','пустые слоты','משבצות ריקות')}: ${empties.length?empties.map(id=>`<a href="#" data-goto="${id}">${esc(N(NODE[id]))}</a>`).join(', '):'—'}</div></div>
   ${pathMachinesHTML(p)}`;
 }
 function inspectPath(p){ insp.hidden=false; insp.innerHTML=inspectPathHTML(p); cardOf=['path',p.id];
@@ -400,35 +402,35 @@ function inspectPath(p){ insp.hidden=false; insp.innerHTML=inspectPathHTML(p); c
   insp.querySelector('[data-close]').addEventListener('click',()=>{state.isolate=null; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false')); inspectEmpty(); drawEdges(); dimming();}); wireCard();
 }
 // the register's machines on an architecture, by organisation (the editor, 27 Sep 2026: the intuitive way from an architecture to its machines)
-function pathMachinesHTML(p){ const L=lang(); const ms=(MACH.machines||[]).filter(m=>m.path===p.id); if(!ms.length) return `<div class="space useby"><h4>${T('Machines on this architecture','Машины этой архитектуры')}</h4><div class="empty">${T('no registered machine yet','пока ни одной машины в реестре')}</div></div>`;
+function pathMachinesHTML(p){ const L=lang(); const ms=(MACH.machines||[]).filter(m=>m.path===p.id); if(!ms.length) return `<div class="space useby"><h4>${T('Machines on this architecture','Машины этой архитектуры','מכונות בארכיטקטורה זו')}</h4><div class="empty">${T('no registered machine yet','пока ни одной машины в реестре','עדיין אין מכונה במרשם')}</div></div>`;
   const byOrg=new Map(); ms.forEach(m=>{ const k=m.org||'—'; if(!byOrg.has(k))byOrg.set(k,[]); byOrg.get(k).push(m); });
-  const groups=[...byOrg.entries()].sort((a,b)=>b[1].length-a[1].length||a[0].localeCompare(b[0])).map(([org,list])=>`<li class="fam">${orgLink(org)} <span class="empty">${list.length}</span></li>`+list.sort((a,b)=>a.name.localeCompare(b.name)).map(m=>{const ev=m.ev||[0,0]; return `<li class="primary${state.machine===m.id?' cur':''}"><a href="#" data-mach="${m.id}" title="${esc(machLabel(m))}">${esc(m.name)}</a> <span class="empty">${esc(statusT(m.status))}${m.q!=null&&m.q!==''?' · '+m.q+' q':''} · ✅ ${ev[0]}/${ev[1]}</span> <a class="reg" href="${REG_URL(m.id)}" title="${T('the machine\'s page','страница машины')}">↗</a></li>`;}).join('')).join('');
-  return `<div class="space useby"><h4>${T('Machines on this architecture','Машины этой архитектуры')} <span class="empty">${ms.length}</span></h4><ul class="useby">${groups}</ul><div class="empty" style="margin-top:4px">${T('click a machine to light its technologies and open its card · ↗ its page','клик по машине подсвечивает её технологии и открывает карточку · ↗ её страница')}</div></div>`; }
+  const groups=[...byOrg.entries()].sort((a,b)=>b[1].length-a[1].length||a[0].localeCompare(b[0])).map(([org,list])=>`<li class="fam">${orgLink(org)} <span class="empty">${list.length}</span></li>`+list.sort((a,b)=>a.name.localeCompare(b.name)).map(m=>{const ev=m.ev||[0,0]; return `<li class="primary${state.machine===m.id?' cur':''}"><a href="#" data-mach="${m.id}" title="${esc(machLabel(m))}">${esc(m.name)}</a> <span class="empty">${esc(statusT(m.status))}${m.q!=null&&m.q!==''?' · '+m.q+' q':''} · ✅ ${ev[0]}/${ev[1]}</span> <a class="reg" href="${REG_URL(m.id)}" title="${T('the machine\'s page','страница машины','דף המכונה')}">↗</a></li>`;}).join('')).join('');
+  return `<div class="space useby"><h4>${T('Machines on this architecture','Машины этой архитектуры','מכונות בארכיטקטורה זו')} <span class="empty">${ms.length}</span></h4><ul class="useby">${groups}</ul><div class="empty" style="margin-top:4px">${T('click a machine to light its technologies and open its card · ↗ its page','клик по машине подсвечивает её технологии и открывает карточку · ↗ её страница','לחיצה על מכונה מדגישה את הטכנולוגיות שלה ופותחת את הכרטיס שלה · ↗ הדף שלה')}</div></div>`; }
 function inspectEmpty(){ insp.hidden=true; insp.innerHTML=''; cardOf=null; sheetRoom(); }
 // ---------- machines (register): evidence glyphs, the machine card, the "Used by" block
 const EVG=[[/figure/,'▣'],[/whitepaper/,'▥'],[/paper/,'▤'],[/vendor/,'▦'],[/datasheet/,'▧'],[/press/,'▨']];
 function evGlyph(t){ t=String(t||''); for(const [re,g] of EVG)if(re.test(t))return g; return '◌'; }
 // the glyph is the link to the evidence (title = its type), the locator follows in small type, then ✅ verified / 🔎 not yet
 function evHTML(c){ const g=evGlyph(c[3]); const a=c[4]?`<a class="ev" href="${esc(c[4])}" target="_blank" rel="noreferrer" title="${esc(c[3]||'')}">${g}</a>`:`<span class="ev" title="${esc(c[3]||'')}">${g}</span>`;
-  return a+(c[5]?` <span class="loc">${esc(c[5])}</span>`:'')+` <span class="vf" title="${c[6]?T('verified','проверено'):T('not verified','не проверено')}">${c[6]?'✅':'🔎'}</span>`; }
+  return a+(c[5]?` <span class="loc">${esc(c[5])}</span>`:'')+` <span class="vf" title="${c[6]?T('verified','проверено','מאומת'):T('not verified','не проверено','לא מאומת')}">${c[6]?'✅':'🔎'}</span>`; }
 function machLabel(m){ return m.name+' · '+m.org; }
-const NA_T={none:['none — nothing in this layer','none — в этом слое ничего нет'],undisclosed:['undisclosed — exists, nothing published','undisclosed — есть, но не опубликовано']};
-const PROF_T=[['qubit type','тип кубита'],['gate mechanism','механизм гейта'],['connectivity','связность'],['control','управление'],['control placement','размещение управления'],['readout','считывание']];
+const NA_T={none:['none — nothing in this layer','none — в этом слое ничего нет','none — אין דבר בשכבה זו'],undisclosed:['undisclosed — exists, nothing published','undisclosed — есть, но не опубликовано','undisclosed — קיים, אך דבר לא פורסם']};
+const PROF_T=[['qubit type','тип кубита','סוג הקיוביט'],['gate mechanism','механизм гейта','מנגנון השער'],['connectivity','связность','קישוריות'],['control','управление','בקרה'],['control placement','размещение управления','מיקום הבקרה'],['readout','считывание','קריאה']];
 function inspectMachineHTML(m){ const L=lang(); const gaps=m.gaps||{}, na=m.na||{};
   const rows=G.layers.map(l=>{ const k=String(l.n); const cells=(m.layers||{})[k]||[], gs=gaps[k]||[], ns=na[k]||[];
     const cellHTML=cells.map(c=>{ const n=NODE[c[0]]; const name=n?`<a href="#" data-goto="${c[0]}" class="${c[1]==='alternate'?'alt':'prim'}">${esc(N(n))}</a>`:esc(c[0]);
-      return `<div class="mc">${name} <span class="empty">· ${c[1]==='alternate'?T('alternate','альтернатива'):T('primary','основная')}</span> ${evHTML(c)}${c[2]?`<div class="ms">${linkOrgs(lk(c[2]))}</div>`:''}</div>`; }).join('');
-    const gapHTML=gs.map(g=>`<div class="mc empty">— (${T('Atlas gap','пробел Атласа')}: ${esc(g)})</div>`).join('');
+      return `<div class="mc">${name} <span class="empty">· ${c[1]==='alternate'?T('alternate','альтернатива','חלופית'):T('primary','основная','ראשית')}</span> ${evHTML(c)}${c[2]?`<div class="ms">${linkOrgs(lk(c[2]))}</div>`:''}</div>`; }).join('');
+    const gapHTML=gs.map(g=>`<div class="mc empty">— (${T('Atlas gap','пробел Атласа','פער אטלס')}: ${esc(g)})</div>`).join('');
     const naHTML=ns.map(v=>`<div class="mc empty">— ${esc(T(...(NA_T[v]||[v,v])))}</div>`).join('');
     return `<tr><td class="ln">${l.n} ${esc(N(l))}</td><td>${cellHTML+gapHTML+naHTML||`<span class="empty">—</span>`}</td></tr>`; }).join('');
   const prof=(m.prof||[]).map((v,i)=>v?`<div class="mc"><span class="empty">${T(...PROF_T[i])}:</span> ${linkOrgs(esc(v))}</div>`:'').join('');
-  const ev=m.ev||[0,0]; const q=(m.q!=null&&m.q!=='')?qubitsT(m.q):T('qubits not published','число кубитов не опубликовано');
+  const ev=m.ev||[0,0]; const q=(m.q!=null&&m.q!=='')?qubitsT(m.q):T('qubits not published','число кубитов не опубликовано','מספר הקיוביטים לא פורסם');
   return `${gripHTML()}<h3><i class="sw" style="--c:${FAMC[m.family]||'var(--mid)'}"></i> ${esc(m.name)}</h3><div class="meta">${orgLink(m.org)} · ${T(...(FAMN[m.family]||[m.family,m.family]))} · ${esc(statusT(m.status))}${m.status_date?' ('+esc(m.status_date)+')':''} · ${q}</div>
-  <div class="mlinks">${pageLink('machine',m.id)} <span class="empty">${T('architecture','архитектура')}:</span> <a href="#" class="archlink" data-arch="${esc(m.path)}" title="${T('isolate this architecture on the map','выделить эту архитектуру на карте')}">${PATH[m.path]?esc(N(PATH[m.path])):esc(m.path)}</a></div>
-  ${picHTML('machine',m.id)}${prof?`<div class="space"><h4>${T('Register profile — the machine\'s variant of its architecture','Профиль реестра — вариант архитектуры у этой машины (поля реестра — на английском)')}</h4>${prof}</div>`:''}
-  <div class="space"><h4>${T('Technologies by layer — the machine\'s cell per layer','Технологии по слоям — ячейка машины на каждом слое')}</h4><table class="ptab mtab">${rows}</table>
-   <div class="empty" style="margin-top:4px">${T('lit on the map: these technologies and the machine\'s architecture line; dashed outline = used only as an alternate','подсвечено на карте: эти технологии и линия архитектуры машины; пунктирная рамка = только как альтернатива')}</div></div>
-  <div class="mfoot"><span>${T('evidence','источники')}: ✅ ${ev[0]} / ${ev[1]}</span> <button type="button" class="chip" data-mclose="1">${T('clear machine','снять машину')} ✕</button></div>`;
+  <div class="mlinks">${pageLink('machine',m.id)} <span class="empty">${T('architecture','архитектура','ארכיטקטורה')}:</span> <a href="#" class="archlink" data-arch="${esc(m.path)}" title="${T('isolate this architecture on the map','выделить эту архитектуру на карте','בידוד הארכיטקטורה הזו במפה')}">${PATH[m.path]?esc(N(PATH[m.path])):esc(m.path)}</a></div>
+  ${picHTML('machine',m.id)}${prof?`<div class="space"><h4>${T('Register profile — the machine\'s variant of its architecture','Профиль реестра — вариант архитектуры у этой машины (поля реестра — на английском)','פרופיל המרשם — הגרסה של המכונה לארכיטקטורה שלה (שדות המרשם באנגלית)')}</h4>${prof}</div>`:''}
+  <div class="space"><h4>${T('Technologies by layer — the machine\'s cell per layer','Технологии по слоям — ячейка машины на каждом слое','טכנולוגיות לפי שכבה — התא של המכונה בכל שכבה')}</h4><table class="ptab mtab">${rows}</table>
+   <div class="empty" style="margin-top:4px">${T('lit on the map: these technologies and the machine\'s architecture line; dashed outline = used only as an alternate','подсвечено на карте: эти технологии и линия архитектуры машины; пунктирная рамка = только как альтернатива','מודגשים במפה: הטכנולוגיות האלה וקו הארכיטקטורה של המכונה; מסגרת מקוטעת = בשימוש כחלופית בלבד')}</div></div>
+  <div class="mfoot"><span>${T('evidence','источники','ראיות')}: ✅ ${ev[0]} / ${ev[1]}</span> <button type="button" class="chip" data-mclose="1">${T('clear machine','снять машину','ביטול בחירת המכונה')} ✕</button></div>`;
 }
 function inspectMachine(m){ insp.hidden=false; insp.innerHTML=inspectMachineHTML(m); cardOf=['machine',m.id];
   insp.querySelectorAll('[data-goto]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); select(a.dataset.goto); const n=NODE[a.dataset.goto]; if(n)scrollToNode(n);}));
@@ -439,43 +441,43 @@ function inspectMachine(m){ insp.hidden=false; insp.innerHTML=inspectMachineHTML
 }
 // "Used by" — the machines whose register cell on this technology's layer is this technology (primary first, then alternate, grouped by family)
 function usedByHTML(n){ const L=lang(); const ub=MACH.by_node[n.id]||{primary:[],alternate:[]}; const P=(ub.primary||[]).filter(id=>MBY[id]), A=(ub.alternate||[]).filter(id=>MBY[id]&&!P.includes(id));
-  const N=P.length+A.length; const head=N?`${T('Used by','Используют')} ${N} ${T(N===1?'machine':'machines','машин')} (${P.length} ${T('primary','основная')} · ${A.length} ${T('alternate','альтернатива')})`:T('Used by no registered machine','Не используется ни одной зарегистрированной машиной');
+  const N=P.length+A.length; const head=N?`${T('Used by','Используют','בשימוש:')} ${N} ${T(N===1?'machine':'machines','машин',N===1?'מכונה':'מכונות')} (${P.length} ${T('primary','основная','ראשית')} · ${A.length} ${T('alternate','альтернатива','חלופית')})`:T('Used by no registered machine','Не используется ни одной зарегистрированной машиной','אינה בשימוש באף מכונה במרשם');
   if(!N)return `<div class="space useby"><h4>${head}</h4></div>`;
-  const KIND={paper:['paper','статья'],whitepaper:['whitepaper','whitepaper'],product:['product page','страница продукта'],docs:['docs','документация'],blog:['blog','блог'],press:['press','пресса'],other:['link','ссылка']};
+  const KIND={paper:['paper','статья','מאמר'],whitepaper:['whitepaper','whitepaper','מסמך טכני'],product:['product page','страница продукта','דף מוצר'],docs:['docs','документация','תיעוד'],blog:['blog','блог','בלוג'],press:['press','пресса','עיתונות'],other:['link','ссылка','קישור']};
   const refsHTML=m=>(m.refs||[]).map(r=>`<a class="mref" href="${esc(r[1])}" target="_blank" rel="noreferrer" title="${esc(r[2]||r[1])}">${T(...(KIND[r[0]]||KIND.other))}</a>`).join(' ');
-  const li=(id,role)=>{ const m=MBY[id]; const c=machCell(m,n.id); return `<li class="${role}${state.machine===id?' cur':''}"><a href="#" data-mach="${id}" title="${esc(machLabel(m))}">${esc(m.name)}</a> <span class="empty">${orgLink(m.org)}</span> <a class="reg" href="${REG_URL(id)}" title="${T('the machine\'s page','страница машины')}">↗</a> ${refsHTML(m)}${c?' '+evHTML(c):''}${role==='alternate'?` <span class="empty">(${T('alternate','альтернатива')})</span>`:''}</li>`; };
+  const li=(id,role)=>{ const m=MBY[id]; const c=machCell(m,n.id); return `<li class="${role}${state.machine===id?' cur':''}"><a href="#" data-mach="${id}" title="${esc(machLabel(m))}">${esc(m.name)}</a> <span class="empty">${orgLink(m.org)}</span> <a class="reg" href="${REG_URL(id)}" title="${T('the machine\'s page','страница машины','דף המכונה')}">↗</a> ${refsHTML(m)}${c?' '+evHTML(c):''}${role==='alternate'?` <span class="empty">(${T('alternate','альтернатива','חלופית')})</span>`:''}</li>`; };
   const fams=MACH.families||Object.keys(FAMC); const groups=fams.map(f=>{ const ps=P.filter(id=>MBY[id].family===f), as=A.filter(id=>MBY[id].family===f); if(!ps.length&&!as.length)return '';
     return `<li class="fam"><i class="sw" style="--c:${FAMC[f]||'var(--mid)'}"></i>${T(...(FAMN[f]||[f,f]))} <span class="empty">${ps.length+as.length}</span></li>`+ps.map(id=>li(id,'primary')).join('')+as.map(id=>li(id,'alternate')).join(''); }).join('');
-  return `<div class="space useby"><h4>${head}</h4><ul class="useby">${groups}</ul><div class="empty" style="margin-top:4px">${T('click a machine to light its technologies on the map · ↗ its page · paper / product / press: links that name the machine (attribution checked on 20 Sep 2026)','клик по машине подсвечивает её технологии на карте · ↗ её страница · статья / продукт / пресса: ссылки, где машина названа (атрибуция проверена 20 сентября 2026)')}</div></div>`; }
+  return `<div class="space useby"><h4>${head}</h4><ul class="useby">${groups}</ul><div class="empty" style="margin-top:4px">${T('click a machine to light its technologies on the map · ↗ its page · paper / product / press: links that name the machine (attribution checked on 20 Sep 2026)','клик по машине подсвечивает её технологии на карте · ↗ её страница · статья / продукт / пресса: ссылки, где машина названа (атрибуция проверена 20 сентября 2026)','לחיצה על מכונה מדגישה את הטכנולוגיות שלה במפה · ↗ הדף שלה · מאמר / מוצר / עיתונות: קישורים שבהם המכונה נזכרת בשמה (הייחוס נבדק ב-20 בספטמבר 2026)')}</div></div>`; }
 function placeText(n){ const ps=(n.e.place&&n.e.place.length)?n.e.place:['none']; return CATS.place.filter(p=>ps.includes(p)).concat(ps.filter(p=>!CATS.place.includes(p))).map(p=>vt('PLACE',p)).join(' / '); }   // every stage the technology carries, in the vocabulary's order (RT → 4 K → mK)
-function inspectHTML(n){ const L=lang(); const c=n.c; const rows=[[T('(a) carrier affinity','(a) сродство носителя'),vt('AFF',n.aff),'aff'],
-  [T('(b) time · entangling','(b) время · перепутывание'),(n.b.t!=null?fmtT(n.b.t):'—')+(n.b.det!=='na'?' · '+vt('DET',n.b.det):''),'b'],
-  [T('(c) readout','(c) считывание'),c?`${vt('MECH',c.mech)} · ${fmtT(c.t)} · ${c.destr?T('destructive','разрушающее'):T('non-destructive','неразрушающее')} · ${c.mid?'mid-circuit':T('no mid-circuit','без mid-circuit')}`:'—','c'],
-  [T('(d) mobility','(d) подвижность'),vt('MOB',n.d),'d'],[T('(e) control','(e) управление'),n.e.mod==='none'?'—':`${vt('MOD',n.e.mod)} @ ${placeText(n)}`,'e'],
-  [T('(f) error structure','(f) структура ошибки'),n.f.map(x=>vt('ERR',x)).join(', '),'f'],[T('(g) manufacturing','(g) производство'),vt('FAB',n.g),'g']];
+function inspectHTML(n){ const L=lang(); const c=n.c; const rows=[[T('(a) carrier affinity','(a) сродство носителя','(a) זיקת הנושא'),vt('AFF',n.aff),'aff'],
+  [T('(b) time · entangling','(b) время · перепутывание','(b) זמן · שזירה'),(n.b.t!=null?fmtT(n.b.t):'—')+(n.b.det!=='na'?' · '+vt('DET',n.b.det):''),'b'],
+  [T('(c) readout','(c) считывание','(c) קריאה'),c?`${vt('MECH',c.mech)} · ${fmtT(c.t)} · ${c.destr?T('destructive','разрушающее','הרסנית'):T('non-destructive','неразрушающее','לא הרסנית')} · ${c.mid?'mid-circuit':T('no mid-circuit','без mid-circuit','ללא mid-circuit')}`:'—','c'],
+  [T('(d) mobility','(d) подвижность','(d) ניידות'),vt('MOB',n.d),'d'],[T('(e) control','(e) управление','(e) בקרה'),n.e.mod==='none'?'—':`${vt('MOD',n.e.mod)} @ ${placeText(n)}`,'e'],
+  [T('(f) error structure','(f) структура ошибки','(f) מבנה השגיאה'),n.f.map(x=>vt('ERR',x)).join(', '),'f'],[T('(g) manufacturing','(g) производство','(g) ייצור'),vt('FAB',n.g),'g']];
   const lr=LENSROWS[state.lens]||[];
   // reading marks: one line per mark (crossing technology — its flag definitions; empty slot)
   const marks=[];
-  if(isOffd(n)) marks.push(`<div><span class="flag off" title="${esc(T(...OFFDEF))}">${T('crossing technology','пересекающая технология')}</span> — ${esc(n.offdiag.map(o=>vt('OFFDIAG',o)).join('; '))}</div>`);
-  if(isEmpty(n)) marks.push(`<div><span class="flag empty" title="${esc(T(...EMPTYDEF))}">∅ ${T('empty slot','пустой слот')}</span></div>`);
-  const flags=marks.length?[`<div class="marks"><span class="tk">${T('Reading marks','Метки чтения')}</span>${marks.join('')}</div>`]:[];
+  if(isOffd(n)) marks.push(`<div><span class="flag off" title="${esc(T(...OFFDEF))}">${T('crossing technology','пересекающая технология','טכנולוגיה חוצה')}</span> — ${esc(n.offdiag.map(o=>vt('OFFDIAG',o)).join('; '))}</div>`);
+  if(isEmpty(n)) marks.push(`<div><span class="flag empty" title="${esc(T(...EMPTYDEF))}">∅ ${T('empty slot','пустой слот','משבצת ריקה')}</span></div>`);
+  const flags=marks.length?[`<div class="marks"><span class="tk">${T('Reading marks','Метки чтения','סימוני המפה')}</span>${marks.join('')}</div>`]:[];
   const reqOut=G.edges.filter(e=>e.type==='requires'&&e.src===n.id), reqIn=G.edges.filter(e=>e.type==='requires'&&e.dst===n.id), rep=G.edges.filter(e=>e.type==='replaces'&&(e.src===n.id||e.dst===n.id)), con=G.edges.filter(e=>e.type==='conflicts'&&(e.src===n.id||e.dst===n.id));
   const other=(e)=>e.src===n.id?e.dst:e.src;
   const link=id=>`<a href="#" data-goto="${id}">${esc(N(NODE[id]))}</a>`;
-  return `${gripHTML()}<h3>${esc(N(n))}</h3><div class="meta">${n.id} · ${T('layer','слой')} ${n.layer} ${esc(N(G.layers[n.layer-1]))} · ${vt('STATUS',n.status)}${n.since<2030?' · '+T('since','с')+' '+n.since:''}</div>
+  return `${gripHTML()}<h3>${esc(N(n))}</h3><div class="meta">${n.id} · ${T('layer','слой','שכבה')} ${n.layer} ${esc(N(G.layers[n.layer-1]))} · ${vt('STATUS',n.status)}${n.since<2030?' · '+T('since','с','מאז')+' '+n.since:''}</div>
   <p>${lk(N(n.desc))}</p>${picHTML('node',n.id)}<div>${flags.join(' ')}</div>
-  <button type="button" class="briefbtn" data-brief="${n.id}">${T('Brief →','Бриф →')}</button> ${pageLink('technology',n.id)}
-  ${(KEYREFS[n.id]||[]).length?`<div class="space keys"><h4>${T('Key references','Ключевые источники')}</h4>${KEYREFS[n.id].map(r=>{const lab=krLabel(n.id,r.n)||r.label||''; return `<div class="kr"><a href="${r.url}" target="_blank" rel="noopener">[${r.n}]</a> ${esc(lab.length>92?lab.slice(0,90)+'…':lab)}${r.year?' <span class="empty">· '+r.year+'</span>':''}</div>`;}).join('')}</div>`:''}
-  <div class="space"><h4>${T('Design space — attributes','Пространство проектирования — атрибуты')}</h4><dl>${rows.map(([k,v,key])=>`<dt class="${lr.includes(key)?'lensrow':''}">${k}</dt><dd class="${lr.includes(key)?'lensrow':''}">${esc(v)}</dd>`).join('')}</dl></div>
-  <div class="space"><h4>${T('Evaluation space — dated attributes','Пространство оценки — датированные атрибуты')}</h4>${n.defines.length?n.defines.map(d=>`<div class="def"><div><span class="k">${esc(d.metric)}</span> → <b>${esc(d.value)}</b></div><div class="d">${T('defines','определяет')}: ${vt('OUT',d.out)} · ${d.date} · <a href="${d.url}" target="_blank" rel="noopener">${T('source','источник')}</a></div></div>`).join(''):`<p class="empty">${T('no dated attribute','нет датированных атрибутов')}</p>`}${N(n.attrs)?`<p style="margin:6px 0 0">${lk(N(n.attrs))}</p>`:''}</div>
-  ${(n.records||[]).length?`<div class="space"><h4>${T('Standard records','Стандартные рекорды')}</h4>${n.records.map(r=>{const RK=(G.vocab.RECKEYS||{})[r.key]||[r.key,r.key]; const val=r.num==null?`<span class="empty">${T('not published','не опубликовано')}</span>`:(r.unit==='s'?fmtT(Math.log10(r.num)):(r.unit==='Hz'?r.num.toExponential(1)+' Hz':(r.unit==='count'?String(r.num):(r.num<0.01||r.num>1e4?r.num.toExponential(2):String(+r.num.toPrecision(3)))))); return `<div class="def"><div><span class="k">${esc(T(...RK))}</span> → <b>${val}</b> <span class="empty">· ${esc(scopeT(r.scope))}</span></div><div class="d">${esc(r.text)} · ${r.date} · <a href="${r.url}" target="_blank" rel="noopener">${T('source','источник')}</a> [${r.tag}]${r.note?` <span class="empty" title="${esc(r.note)}">ⓘ</span>`:''}</div></div>`;}).join('')}</div>`:''}
-  <div class="space"><h4>${T('Actors & goals — annotations','Акторы и цели — аннотации')}</h4>${linkOrgs((prim[n.id]||[]).concat(alt[n.id]||[]).map(p=>`<div class="pathtag"><i class="sw" style="--c:${FAMC[PATH[p].family]}"></i>${esc(N(PATH[p]))}${(alt[n.id]||[]).includes(p)?' <span class="empty">('+T('alternate','альтернатива')+')</span>':''}<span class="empty"> — ${esc(PATH[p].actors)} · ${PATH[p].goals}</span></div>`).join(''))||`<p class="empty">${T('on no architecture','не входит ни в одну архитектуру')}</p>`}</div>
-  <div class="space"><h4>${T('Edges','Рёбра')}</h4>
-   ${reqOut.length?`<div><b>${T('needs','нужно')}:</b> ${reqOut.map(e=>link(e.dst)+(e.any?'<span class="empty">°</span>':'')+(e.strength==='soft'?'<span class="empty">·</span>':'')).join(', ')}</div>`:''}
-   ${reqIn.length?`<div><b>${T('needed by','нужен для')}:</b> ${reqIn.map(e=>link(e.src)+(e.any?'<span class="empty">°</span>':'')+(e.strength==='soft'?'<span class="empty">·</span>':'')).join(', ')}</div>`:''}
-   ${rep.length?`<div><b>${T('alternatives','альтернативы')}:</b> ${rep.map(e=>link(other(e))).join(', ')}</div>`:''}
-   ${con.length?`<div><b style="color:var(--crit)">${T('conflicts with','конфликтует с')}:</b></div>`+con.map(e=>`<div class="conf"><div>${link(other(e))} <span class="cst ${e.status}">${esc(vt('CONSTAT',e.status))}</span></div><div class="cm">${lk(N(e))}</div><div class="cm"><span class="tk">${T('price','цена')}</span> ${lk(e.price?N(e.price):'')}</div><div class="cm"><span class="tk">${T('mitigation','снятие')}</span> ${lk(e.mitig?N(e.mitig):'')}${e.url?' · <a href="'+e.url+'" target="_blank" rel="noopener">'+e.date+'</a>':''}</div></div>`).join(''):''}
-   ${(reqOut.length||reqIn.length||rep.length||con.length)?`<div class="empty" style="margin-top:4px">° ${T('one of several that would do','одно из нескольких, что подошли бы')} · ${T('the usual route, not a strict need','обычный маршрут, не строгая необходимость')}</div>`:`<p class="empty">—</p>`}</div>
+  <button type="button" class="briefbtn" data-brief="${n.id}">${T('Brief →','Бриф →','תקציר ←')}</button> ${pageLink('technology',n.id)}
+  ${(KEYREFS[n.id]||[]).length?`<div class="space keys"><h4>${T('Key references','Ключевые источники','מקורות מרכזיים')}</h4>${KEYREFS[n.id].map(r=>{const lab=krLabel(n.id,r.n)||r.label||''; return `<div class="kr"><a href="${r.url}" target="_blank" rel="noopener">[${r.n}]</a> ${esc(lab.length>92?lab.slice(0,90)+'…':lab)}${r.year?' <span class="empty">· '+r.year+'</span>':''}</div>`;}).join('')}</div>`:''}
+  <div class="space"><h4>${T('Design space — attributes','Пространство проектирования — атрибуты','מרחב התכן — תכונות')}</h4><dl>${rows.map(([k,v,key])=>`<dt class="${lr.includes(key)?'lensrow':''}">${k}</dt><dd class="${lr.includes(key)?'lensrow':''}">${esc(v)}</dd>`).join('')}</dl></div>
+  <div class="space"><h4>${T('Evaluation space — dated attributes','Пространство оценки — датированные атрибуты','מרחב ההערכה — תכונות מתוארכות')}</h4>${n.defines.length?n.defines.map(d=>`<div class="def"><div><span class="k">${esc(d.metric)}</span> → <b>${esc(d.value)}</b></div><div class="d">${T('defines','определяет','מגדירה')}: ${vt('OUT',d.out)} · ${d.date} · <a href="${d.url}" target="_blank" rel="noopener">${T('source','источник','מקור')}</a></div></div>`).join(''):`<p class="empty">${T('no dated attribute','нет датированных атрибутов','אין תכונות מתוארכות')}</p>`}${N(n.attrs)?`<p style="margin:6px 0 0">${lk(N(n.attrs))}</p>`:''}</div>
+  ${(n.records||[]).length?`<div class="space"><h4>${T('Standard records','Стандартные рекорды','רשומות סטנדרטיות')}</h4>${n.records.map(r=>{const RK=(G.vocab.RECKEYS||{})[r.key]||[r.key,r.key]; const val=r.num==null?`<span class="empty">${T('not published','не опубликовано','לא פורסם')}</span>`:(r.unit==='s'?fmtT(Math.log10(r.num)):(r.unit==='Hz'?r.num.toExponential(1)+' Hz':(r.unit==='count'?String(r.num):(r.num<0.01||r.num>1e4?r.num.toExponential(2):String(+r.num.toPrecision(3)))))); return `<div class="def"><div><span class="k">${esc(T(...RK))}</span> → <b>${val}</b> <span class="empty">· ${esc(scopeT(r.scope))}</span></div><div class="d">${esc(r.text)} · ${r.date} · <a href="${r.url}" target="_blank" rel="noopener">${T('source','источник','מקור')}</a> [${r.tag}]${r.note?` <span class="empty" title="${esc(r.note)}">ⓘ</span>`:''}</div></div>`;}).join('')}</div>`:''}
+  <div class="space"><h4>${T('Actors & goals — annotations','Акторы и цели — аннотации','שחקנים ויעדים — ביאורים')}</h4>${linkOrgs((prim[n.id]||[]).concat(alt[n.id]||[]).map(p=>`<div class="pathtag"><i class="sw" style="--c:${FAMC[PATH[p].family]}"></i>${esc(N(PATH[p]))}${(alt[n.id]||[]).includes(p)?' <span class="empty">('+T('alternate','альтернатива','חלופית')+')</span>':''}<span class="empty"> — ${esc(PATH[p].actors)} · ${PATH[p].goals}</span></div>`).join(''))||`<p class="empty">${T('on no architecture','не входит ни в одну архитектуру','אינה חלק מאף ארכיטקטורה')}</p>`}</div>
+  <div class="space"><h4>${T('Edges','Рёбра','קשתות')}</h4>
+   ${reqOut.length?`<div><b>${T('needs','нужно','דורשת')}:</b> ${reqOut.map(e=>link(e.dst)+(e.any?'<span class="empty">°</span>':'')+(e.strength==='soft'?'<span class="empty">·</span>':'')).join(', ')}</div>`:''}
+   ${reqIn.length?`<div><b>${T('needed by','нужен для','נחוצה עבור')}:</b> ${reqIn.map(e=>link(e.src)+(e.any?'<span class="empty">°</span>':'')+(e.strength==='soft'?'<span class="empty">·</span>':'')).join(', ')}</div>`:''}
+   ${rep.length?`<div><b>${T('alternatives','альтернативы','חלופות')}:</b> ${rep.map(e=>link(other(e))).join(', ')}</div>`:''}
+   ${con.length?`<div><b style="color:var(--crit)">${T('conflicts with','конфликтует с','מתנגשת עם')}:</b></div>`+con.map(e=>`<div class="conf"><div>${link(other(e))} <span class="cst ${e.status}">${esc(vt('CONSTAT',e.status))}</span></div><div class="cm">${lk(N(e))}</div><div class="cm"><span class="tk">${T('price','цена','מחיר')}</span> ${lk(e.price?N(e.price):'')}</div><div class="cm"><span class="tk">${T('mitigation','снятие','מיתון')}</span> ${lk(e.mitig?N(e.mitig):'')}${e.url?' · <a href="'+e.url+'" target="_blank" rel="noopener">'+e.date+'</a>':''}</div></div>`).join(''):''}
+   ${(reqOut.length||reqIn.length||rep.length||con.length)?`<div class="empty" style="margin-top:4px">° ${T('one of several that would do','одно из нескольких, что подошли бы','אחת מכמה שהיו מתאימות')} · ${T('the usual route, not a strict need','обычный маршрут, не строгая необходимость','הדרך המקובלת, לא דרישה מחייבת')}</div>`:`<p class="empty">—</p>`}</div>
   ${usedByHTML(n)}`;
 }
 function inspect(n){ insp.hidden=false; insp.innerHTML=inspectHTML(n); cardOf=['node',n.id];
@@ -483,7 +485,7 @@ function inspect(n){ insp.hidden=false; insp.innerHTML=inspectHTML(n); cardOf=['
   insp.querySelectorAll('[data-mach]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); showMachine(a.dataset.mach);}));
   insp.querySelector('[data-close]').addEventListener('click',()=>select(null)); wireCard(); wirePic();
 }
-pathHit.on('mousemove',(ev,p)=>{ if(tipPinned)return; pathSel.classed('hov',d=>d.id===p.id); tip.style.display='block'; tip.classList.remove('wide'); tip.innerHTML=`<i class="sw" style="background:${FAMC[p.family]}"></i><b>${esc(N(p))}</b> · ${T('click to isolate this architecture','клик — изолировать эту архитектуру')}`; placeTip(ev); })
+pathHit.on('mousemove',(ev,p)=>{ if(tipPinned)return; pathSel.classed('hov',d=>d.id===p.id); tip.style.display='block'; tip.classList.remove('wide'); tip.innerHTML=`<i class="sw" style="background:${FAMC[p.family]}"></i><b>${esc(N(p))}</b> · ${T('click to isolate this architecture','клик — изолировать эту архитектуру','לחיצה — בידוד הארכיטקטורה הזו')}`; placeTip(ev); })
   .on('mouseleave',()=>{ pathSel.classed('hov',false); if(!tipPinned)hideTip(); })
   .on('click',(ev,p)=>{ ev.stopPropagation(); hideTip(); pathSel.classed('hov',false); isolatePath(p.id); });
 document.querySelectorAll('#mapbar [data-goto]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); select(a.dataset.goto); const m=NODE[a.dataset.goto]; scrollToNode(m); document.getElementById('mapwrap').scrollIntoView({block:'nearest'});}));
@@ -597,11 +599,11 @@ window.__mapZoom={get:()=>state.zoom||1, set:(z)=>{ applyZoom(z,false); state.fi
 // collapsible map bar: one line with a summary of the current selection and the zoom window
 (function(){ const bar=document.getElementById('mapbar'), tog=document.getElementById('bartog'), sum=document.getElementById('barsum'); if(!bar||!tog||!sum)return; const KEY='qmap.barcollapsed';
   function summary(){ const L=lang(); const parts=[];
-    if(state.machine&&MBY[state.machine])parts.push(T('machine','машина')+': <b>'+esc(MBY[state.machine].name)+'</b>');
-    if(state.isolate){ const p=PATH[state.isolate]; parts.push(`<i class="sw" style="background:${FAMC[p.family]}"></i><b>${esc(N(p))}</b>`); } else parts.push(T('all architectures','все архитектуры'));
-    if(state.lens&&state.lens!=='family'){ const lz=LENSES[state.lens]; parts.push(T('lens','линза')+': <b>'+esc(lz?(lz[L]||lz.en||state.lens):state.lens)+'</b>'+(state.lensFilter!=null?' = <b>'+esc([...state.lensFilter].map(v=>catLabelSafe(state.lens,v)).join(', '))+'</b>':'')); }
-    const ed=[]; if(state.showReq)ed.push(T('dependencies','зависимости')); if(state.showRep)ed.push(T('alternatives','альтернативы')); if(state.showConf)ed.push(T('conflicts','конфликты')); if(ed.length)parts.push(T('edges','рёбра')+': '+ed.join(', '));
-    if(state.focus)parts.push(T('technology','технология')+': <b>'+esc(N(NODE[state.focus]))+'</b>');
+    if(state.machine&&MBY[state.machine])parts.push(T('machine','машина','מכונה')+': <b>'+esc(MBY[state.machine].name)+'</b>');
+    if(state.isolate){ const p=PATH[state.isolate]; parts.push(`<i class="sw" style="background:${FAMC[p.family]}"></i><b>${esc(N(p))}</b>`); } else parts.push(T('all architectures','все архитектуры','כל הארכיטקטורות'));
+    if(state.lens&&state.lens!=='family'){ const lz=LENSES[state.lens]; parts.push(T('lens','линза','עדשה')+': <b>'+esc(lz?(lz[L]||lz.en||state.lens):state.lens)+'</b>'+(state.lensFilter!=null?' = <b>'+esc([...state.lensFilter].map(v=>catLabelSafe(state.lens,v)).join(', '))+'</b>':'')); }
+    const ed=[]; if(state.showReq)ed.push(T('dependencies','зависимости','תלויות')); if(state.showRep)ed.push(T('alternatives','альтернативы','חלופות')); if(state.showConf)ed.push(T('conflicts','конфликты','התנגשויות')); if(ed.length)parts.push(T('edges','рёбра','קשתות')+': '+ed.join(', '));
+    if(state.focus)parts.push(T('technology','технология','טכנולוגיה')+': <b>'+esc(N(NODE[state.focus]))+'</b>');
     sum.innerHTML=parts.join(' · '); }
   function setC(c){ bar.classList.toggle('collapsed',c); tog.setAttribute('aria-expanded',String(!c)); tog.querySelector('.when-open').hidden=c; tog.querySelector('.when-closed').hidden=!c; sum.hidden=!c; if(c)summary(); try{localStorage.setItem(KEY,c?'1':'0');}catch(e){} if(window.__refitTall)window.__refitTall(); }
   window.__barSummary=()=>{ if(bar.classList.contains('collapsed'))summary(); };
@@ -614,7 +616,7 @@ window.__mapZoom={get:()=>state.zoom||1, set:(z)=>{ applyZoom(z,false); state.fi
 const pcHost=document.getElementById('pc');
 const PCW=1100, PCH=300, PX0=70, PX1=PCW-30, PY0=34, PY1=PCH-46;
 const pcsvg=d3.select(pcHost).append('svg').attr('viewBox',`0 0 ${PCW} ${PCH}`).attr('role','img').attr('aria-label','Parallel coordinates of all technologies across the seven design attributes');
-const AXES=[{k:'aff',en:'(a) carrier',ru:'(a) носитель'},{k:'b',en:'(b) time',ru:'(b) время'},{k:'c',en:'(c) readout',ru:'(c) считывание'},{k:'d',en:'(d) mobility',ru:'(d) подвижность'},{k:'e',en:'(e) control',ru:'(e) управление'},{k:'f',en:'(f) error',ru:'(f) ошибка'},{k:'g',en:'(g) fab',ru:'(g) производство'}];
+const AXES=[{k:'aff',en:'(a) carrier',ru:'(a) носитель',he:'(a) נושא'},{k:'b',en:'(b) time',ru:'(b) время',he:'(b) זמן'},{k:'c',en:'(c) readout',ru:'(c) считывание',he:'(c) קריאה'},{k:'d',en:'(d) mobility',ru:'(d) подвижность',he:'(d) ניידות'},{k:'e',en:'(e) control',ru:'(e) управление',he:'(e) בקרה'},{k:'f',en:'(f) error',ru:'(f) ошибка',he:'(f) שגיאה'},{k:'g',en:'(g) fab',ru:'(g) производство',he:'(g) ייצור'}];
 const ORD={aff:[0,0.25,0.5,0.75,1],d:['none','static','shared','longrange','bus','transport','flying'],e:['none','lf@RT','mw@RT','eo@RT','opt@RT','mw@4K','eo@4K','lf@mK','mw@mK','eo@mK'],f:['none','pauli','coherent','leak','burst','bias','gauss','erasure','loss','unknown'],g:['none','sclitho','3d','cmos','mbe','mems','pic','optics','stm','diamond'],c:['none','spd','disp','erasure','s2c','qcap','fluor','img','flux','homodyne']};
 // the strip as a control (adjudication 13, 23 Sep 2026): each axis is one design attribute and stands for one lens; a tick on an
 // axis is one value of that lens — clicking the title selects the lens, clicking a tick keeps only the technologies with that value
@@ -675,7 +677,7 @@ window.__deepLink=function(h){ let m; h=h||location.hash||'';
   if((m=/^#station-(\w+)$/.exec(h))&&NODE[m[1]]){ select(m[1]); scrollToNode(NODE[m[1]]); revealMap(); return true; }
   if((m=/^#machine-([\w.-]+)$/.exec(h))&&MBY[m[1]]){ showMachine(m[1]); return true; }
   if((m=/^#architecture-(\w+)$/.exec(h))&&PATH[m[1]]){ if(state.isolate!==m[1])isolatePath(m[1]); revealMap(); return true; }
-  if((m=/^#(station|machine|architecture)-([\w.-]+)$/.exec(h))){ cardOf=null; insp.hidden=false; insp.innerHTML=`${gripHTML()}<h3>${T('Not in this edition','Нет в этом издании')}</h3><p class="empty">${T('No '+m[1]+' with the id','Нет записи вида '+m[1]+' с идентификатором')} <code>${esc(m[2])}</code>. ${T('Renamed or removed records are listed in the','Переименованные и удалённые записи перечислены в')} <a href='#editions-${lang()}'>${T('Editions table','таблице изданий')}</a>.</p>`; wireCard(); revealMap(); return false; }
+  if((m=/^#(station|machine|architecture)-([\w.-]+)$/.exec(h))){ cardOf=null; insp.hidden=false; insp.innerHTML=`${gripHTML()}<h3>${T('Not in this edition','Нет в этом издании','לא במהדורה זו')}</h3><p class="empty">${T('No '+m[1]+' with the id','Нет записи вида '+m[1]+' с идентификатором','אין רשומה מסוג '+m[1]+' עם המזהה')} <code>${esc(m[2])}</code>. ${T('Renamed or removed records are listed in the','Переименованные и удалённые записи перечислены в','לרשומות ששמן שונה או שהוסרו ראו את')} <a href='#editions-${lang()}'>${T('Editions table','таблице изданий','טבלת המהדורות')}</a>.</p>`; wireCard(); revealMap(); return false; }
   return false; };
 window.addEventListener('hashchange',()=>window.__deepLink());
 relabel(); inspectEmpty(); applyLens(); renderPC(); window.__deepLink();
@@ -853,8 +855,8 @@ try{ var __th=function(){ if(window.__mapTheme)window.__mapTheme(); };
   function mk(w,t){
     var s=document.createElement('div'); s.className='tblsizer'; w.insertBefore(s,t); s.appendChild(t);
     var bar=document.createElement('div'); bar.className='tblzoom';
-    bar.innerHTML='<div class="zoomctl" role="group" aria-label="table zoom"><span class="tzl">'+window.__LS('table','таблица')+'</span>'
-      +'<button type="button" class="zb zt" data-tz="fit" title="fit width"><span class="tzi" aria-hidden="true">⟷</span>'+window.__LS('fit width','по ширине')+'</button>'
+    bar.innerHTML='<div class="zoomctl" role="group" aria-label="table zoom"><span class="tzl">'+window.__LS('table','таблица','טבלה')+'</span>'
+      +'<button type="button" class="zb zt" data-tz="fit" title="fit width"><span class="tzi" aria-hidden="true">⟷</span>'+window.__LS('fit width','по ширине','לרוחב')+'</button>'
       +'<button type="button" class="zb zt" data-tz="one" title="actual size">1:1</button>'
       +'<input class="zlvl" type="text" inputmode="numeric" pattern="[0-9]*" value="100%" aria-label="table zoom percent — type a number (20–200) and press Enter" title="type a percentage (20–200) and press Enter"></div>';
     w.insertBefore(bar,s);
@@ -902,16 +904,16 @@ try{ var __th=function(){ if(window.__mapTheme)window.__mapTheme(); };
 // A div.tbl[data-sort] (tagged at build time) remembers its build order per tbody (WeakMap) and moves the same <tr> nodes
 // when a header is clicked. data-sort decides which columns sort: `numeric` — every column where ≥ 60 % of the non-null body cells
 // parse to a number (the first number in the text that is not glued to a letter, so `1Q ×1.0` reads 1.0 and `H2` reads
-// nothing; `—`, `n/a`, `not published`, empty → null, last in both directions); `date` — the column headed date/дата or
-// whose cells look like 2024-12 (also `Dec 2024`); `centrality` — the column headed centrality/центральность;
+// nothing; `—`, `n/a`, `not published`, empty → null, last in both directions); `date` — the column headed date/дата/תאריך or
+// whose cells look like 2024-12 (also `Dec 2024`); `centrality` — the column headed centrality/центральность/מרכזיות;
 // `platform-default` — the first column's header restores the build order, the other columns are numeric.
 // The ↺ button lives in the zoom bar (div.tblzoom) when the table has one showing, otherwise in a minimal bar of its own.
 (function(){
   var wraps=[].slice.call(document.querySelectorAll('div.tbl[data-sort]')); if(!wraps.length)return;
-  var NUM=/[-−+]?\d[\d,]*(\.\d+)?([eE][-+]?\d+)?/g, LET=/[A-Za-zА-Яа-яЁё]/;
-  var MON={jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12,'янв':1,'фев':2,'мар':3,'апр':4,'май':5,'мая':5,'июн':6,'июл':7,'авг':8,'сен':9,'окт':10,'ноя':11,'дек':12};
+  var NUM=/[-−+]?\d[\d,]*(\.\d+)?([eE][-+]?\d+)?/g, LET=/[A-Za-zА-Яа-яЁёא-ת]/;
+  var MON={jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12,'янв':1,'фев':2,'мар':3,'апр':4,'май':5,'мая':5,'июн':6,'июл':7,'авг':8,'сен':9,'окт':10,'ноя':11,'дек':12,'ינו':1,'פבר':2,'מרץ':3,'אפר':4,'מאי':5,'יונ':6,'יול':7,'אוג':8,'ספט':9,'אוק':10,'נוב':11,'דצמ':12};
   function txt(el){ return (el.textContent||'').replace(/\s+/g,' ').trim(); }
-  function isNull(s){ return s===''||/^(?:—|–|-|∅|n\/a|na|not published|не опубликовано)(?:$|[\s—–:;,.(])/i.test(s); }
+  function isNull(s){ return s===''||/^(?:—|–|-|∅|n\/a|na|not published|не опубликовано|לא פורסם)(?:$|[\s—–:;,.(])/i.test(s); }
   function num(s){
     if(isNull(s))return null; NUM.lastIndex=0; var m;
     while((m=NUM.exec(s))){ var a=m.index, b=a+m[0].length;
@@ -922,7 +924,7 @@ try{ var __th=function(){ if(window.__mapTheme)window.__mapTheme(); };
   function date(s){
     if(isNull(s))return null; var m=/(\d{4})(?:-(\d{1,2}))?(?:-(\d{1,2}))?/.exec(s);
     if(m) return +m[1]*10000+(+(m[2]||0))*100+(+(m[3]||0));
-    m=/([A-Za-zА-Яа-яЁё]{3})[A-Za-zА-Яа-яЁё.]*\s+(\d{4})/.exec(s); if(m&&MON[m[1].toLowerCase()]) return +m[2]*10000+MON[m[1].toLowerCase()]*100;
+    m=/([A-Za-zА-Яа-яЁёא-ת]{3})[A-Za-zА-Яа-яЁёא-ת.]*\s+(\d{4})/.exec(s); if(m&&MON[m[1].toLowerCase()]) return +m[2]*10000+MON[m[1].toLowerCase()]*100;
     return null;
   }
   function T(){ return window.__LS.apply(null,arguments); }   // one span per language, T(English, Russian[, Hebrew]) (window.__LS, 29 Sep 2026)
@@ -941,8 +943,8 @@ try{ var __th=function(){ if(window.__mapTheme)window.__mapTheme(); };
       var h=txt(ths[i]).toLowerCase(), c=null;
       if(kind==='numeric') c=numeric(i)?'num':null;
       else if(kind==='platform-default') c=i===0?'reset':(numeric(i)?'num':null);
-      else if(kind==='date'){ if(/date|дата/.test(h)) c='date'; else { var cc=colCells(i); var k=0; cc.forEach(function(x){ if(/^\d{4}-\d{2}/.test(txt(x)))k++; }); if(cc.length&&k>=0.6*cc.length)c='date'; } }
-      else if(kind==='centrality') c=/centrality|центральность/.test(h)?'num':null;
+      else if(kind==='date'){ if(/date|дата|תאריך/.test(h)) c='date'; else { var cc=colCells(i); var k=0; cc.forEach(function(x){ if(/^\d{4}-\d{2}/.test(txt(x)))k++; }); if(cc.length&&k>=0.6*cc.length)c='date'; } }
+      else if(kind==='centrality') c=/centrality|центральность|מרכזיות/.test(h)?'num':null;
       cols.push(c);
     }
     if(!cols.some(function(c){return c;}))return;
@@ -952,7 +954,7 @@ try{ var __th=function(){ if(window.__mapTheme)window.__mapTheme(); };
       var b=document.createElement('button'); b.type='button'; b.className='sortbtn'+(cols[i]==='reset'?' sortreset':'');
       while(th.firstChild) b.appendChild(th.firstChild);
       if(cols[i]!=='reset'){ var ind=document.createElement('span'); ind.className='sortind'; ind.setAttribute('aria-hidden','true'); b.appendChild(ind); th.setAttribute('aria-sort','none'); }
-      b.title=cols[i]==='reset'?'default order / исходный порядок':'sort: ascending → descending → default order';
+      b.title=cols[i]==='reset'?'default order / исходный порядок / הסדר המקורי':'sort: ascending → descending → default order';
       th.appendChild(b); btns.push(b);
       b.addEventListener('click',function(){
         if(cols[i]==='reset'){ restore(); return; }
@@ -980,7 +982,7 @@ try{ var __th=function(){ if(window.__mapTheme)window.__mapTheme(); };
     }
     // ↺ default order: in the zoom bar when one is showing, else in a minimal bar of our own
     var reset=document.createElement('button'); reset.type='button'; reset.className='tsreset idle';
-    reset.innerHTML='<span class="tsi" aria-hidden="true">↺</span> '+T('default order','исходный порядок');
+    reset.innerHTML='<span class="tsi" aria-hidden="true">↺</span> '+T('default order','исходный порядок','הסדר המקורי');
     reset.addEventListener('click',restore);
     var bar=document.createElement('div'); bar.className='tblbar'; bar.appendChild(reset); w.insertBefore(bar,w.firstChild);
     function place(){

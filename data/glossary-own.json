@@ -7,9 +7,13 @@
   "match_ru": [
    "[D]"
   ],
+  "match_he": [
+   "[D]"
+  ],
   "scope": "all",
   "en": "Demonstrated: a published or peer-reviewed result, read at September 2026 — the strongest standing a claim gets here",
   "ru": "Продемонстрировано: опубликованный или рецензированный результат на сентябрь 2026 — самый весомый статус утверждения",
+  "he": "הודגם: תוצאה שפורסמה או שעברה ביקורת עמיתים, נכון לספטמבר 2026 — המעמד החזק ביותר שטענה מקבלת כאן",
   "src": "§1.2 / §2",
   "why": "Every reader meets the bracket in the score tables before the legend; it must read without scrolling back",
   "briefs": true
@@ -22,9 +26,13 @@
   "match_ru": [
    "[R]"
   ],
+  "match_he": [
+   "[R]"
+  ],
   "scope": "all",
   "en": "Roadmap: what the vendor's published plan would deliver by about 2029 if it is held — an intention, not a result",
   "ru": "Дорожная карта: что дал бы опубликованный план вендора к 2029 году, если будет выдержан — намерение, а не результат",
+  "he": "מפת דרכים: מה שהתוכנית שפרסם היצרן תספק עד 2029 בערך, אם תעמוד בלוח הזמנים — כוונה, לא תוצאה",
   "src": "§1.2 / §2",
   "why": "Investors and managers read [D]/[R] pairs as one number unless the difference is spelled out",
   "briefs": true
@@ -37,9 +45,13 @@
   "match_ru": [
    "[C]"
   ],
+  "match_he": [
+   "[C]"
+  ],
   "scope": "all",
   "en": "Company claim: stated by the vendor, with no peer-reviewed data behind it yet",
   "ru": "Заявление компании: сказано вендором, рецензированных данных за ним пока нет",
+  "he": "טענת חברה: נמסרה על ידי היצרן, ועדיין אין מאחוריה נתונים שעברו ביקורת עמיתים",
   "src": "§2",
   "why": "The weakest of the three brackets; a reader skimming a profile needs to see the discount at once",
   "briefs": true
@@ -52,9 +64,13 @@
   "match_ru": [
    "✅"
   ],
+  "match_he": [
+   "✅"
+  ],
   "scope": "all",
   "en": "Verified: the cited source — a paper, a whitepaper, a product page or a technical press release — was opened and seen to show this technology in this machine",
   "ru": "Проверено: источник — статья, whitepaper, страница продукта или технический пресс-релиз — был открыт, и в нём увидена эта технология в этой машине",
+  "he": "מאומת: המקור המצוטט — מאמר, מסמך טכני (whitepaper), דף מוצר או הודעה טכנית לעיתונות — נפתח, ונראה בו שהטכנולוגיה הזו נמצאת במכונה הזו",
   "src": "§8",
   "why": "The tick looks like a pass mark; it actually says what kind of document was seen"
  },
@@ -66,9 +82,13 @@
   "match_ru": [
    "🔎"
   ],
+  "match_he": [
+   "🔎"
+  ],
   "scope": "all",
   "en": "Unverified: the cited source was not re-opened, or the cell is an inference — the claim is plausible but was not checked against its source",
   "ru": "Не проверено: источник не открывался заново, или ячейка — вывод; утверждение правдоподобно, но по источнику не проверено",
+  "he": "לא מאומת: המקור המצוטט לא נפתח מחדש, או שהתא הוא הסקה — הטענה סבירה, אך לא נבדקה מול המקור שלה",
   "src": "§8",
   "why": "The magnifier is easily read as 'verified'; it means the opposite end of the evidence scale"
  },
@@ -80,9 +100,13 @@
   "match_ru": [
    "∅"
   ],
+  "match_he": [
+   "∅"
+  ],
   "scope": "all",
   "en": "Nothing to place here: either the machine runs something the map has no entry for, or it discloses nothing at this layer",
   "ru": "Ставить нечего: либо машина использует то, чего на карте нет, либо она ничего не раскрывает на этом слое",
+  "he": "אין כאן מה למקם: או שהמכונה מריצה משהו שאין לו ערך במפה, או שהיא אינה חושפת דבר בשכבה זו",
   "src": "§7.10",
   "why": "A blank could mean 'none' or 'unknown'; this mark covers both and the reader should not guess which"
  },
@@ -94,9 +118,13 @@
   "match_ru": [
    "FEASIBLE"
   ],
+  "match_he": [
+   "FEASIBLE"
+  ],
   "scope": "all",
   "en": "The roadmap reaches its own target algorithm on qubit count, error rate and gate budget together, not on one of the three",
   "ru": "Дорожная карта дотягивает до своего целевого алгоритма разом по числу кубитов, ошибке и бюджету гейтов, а не по одному из трёх",
+  "he": "מפת הדרכים מגיעה לאלגוריתם המטרה שלה עצמה במספר הקיוביטים, בשיעור השגיאה ובתקציב השערים גם יחד, ולא רק באחד מהשלושה",
   "src": "§8",
   "why": "In a table of one-word verdicts the reader needs to know what was checked, not only the answer",
   "only": [
@@ -111,9 +139,13 @@
   "match_ru": [
    "SHORT"
   ],
+  "match_he": [
+   "SHORT"
+  ],
   "scope": "all",
   "en": "The roadmap misses its own target algorithm, with the shortfall named — most often the error budget, rarely the qubit count",
   "ru": "Дорожная карта не дотягивает до своего целевого алгоритма, дефицит назван — чаще всего бюджет ошибки, редко число кубитов",
+  "he": "מפת הדרכים מחטיאה את אלגוריתם המטרה שלה עצמה, והגירעון נקוב בשמו — לרוב תקציב השגיאה, לעתים רחוקות מספר הקיוביטים",
   "src": "§8 / §8.4",
   "why": "SHORT sounds like a small miss; the page means orders of magnitude, usually on error",
   "only": [
@@ -128,9 +160,13 @@
   "match_ru": [
    "NOT EVALUABLE"
   ],
+  "match_he": [
+   "NOT EVALUABLE"
+  ],
   "scope": "all",
   "en": "The roadmap does not publish enough dated numbers to be checked at all — this is about disclosure, not about quality",
   "ru": "Дорожная карта не публикует достаточно датированных чисел, чтобы её вообще проверить — это про раскрытие, а не про качество",
+  "he": "מפת הדרכים אינה מפרסמת מספיק מספרים מתוארכים כדי שאפשר יהיה לבדוק אותה בכלל — זו שאלה של גילוי, לא של איכות",
   "src": "§8",
   "why": "Reads as a bad grade; it is an absence of data, and the difference matters to an analyst",
   "only": [
@@ -145,9 +181,13 @@
   "match_ru": [
    "подтверждена"
   ],
+  "match_he": [
+   "נתמכת"
+  ],
   "scope": "all",
   "en": "The count run over the register's own rows bears the statement out",
   "ru": "Подсчёт по самим строкам реестра подтверждает утверждение",
+  "he": "הספירה שנערכה על השורות של המרשם עצמו מאששת את הטענה",
   "src": "§8.4",
   "why": "Marks whether a chapter heading is a finding or a question; the reader should know it was computed, not argued",
   "only": [
@@ -162,9 +202,13 @@
   "match_ru": [
    "частично"
   ],
+  "match_he": [
+   "נתמכת חלקית"
+  ],
   "scope": "all",
   "en": "The register bears the statement out only in part: the trend is there but not on every test, or not year after year",
   "ru": "Реестр подтверждает утверждение лишь отчасти: тренд есть, но не по каждой проверке или не из года в год",
+  "he": "המרשם מאשש את הטענה רק בחלקה: המגמה קיימת, אך לא בכל מבחן, או לא משנה לשנה",
   "src": "§8.4",
   "why": "Tells the reader how much weight the hypothesis carries in the chapter's conclusions",
   "only": [
@@ -179,9 +223,13 @@
   "match_ru": [
    "не подтверждена"
   ],
+  "match_he": [
+   "אינה נתמכת"
+  ],
   "scope": "all",
   "en": "The register's own rows contradict the statement — it is printed because it was tested and failed",
   "ru": "Строки самого реестра опровергают утверждение — оно напечатано потому, что его проверили и оно не прошло",
+  "he": "השורות של המרשם עצמו סותרות את הטענה — היא מודפסת משום שנבחנה ונכשלה",
   "src": "§8.4",
   "why": "A failed hypothesis left on the page looks like an error unless the reader sees it is deliberate",
   "only": [
@@ -196,9 +244,13 @@
   "match_ru": [
    "G1"
   ],
+  "match_he": [
+   "G1"
+  ],
   "scope": "all",
   "en": "Goal: analog and NISQ many-body simulation — qubit count, native connectivity and coherence on 10²–10⁴ qubits, no error correction",
   "ru": "Цель: аналоговая и NISQ-симуляция многочастичных систем — число кубитов, нативная связность и когерентность на 10²–10⁴ кубитах, без коррекции ошибок",
+  "he": "יעד: סימולציה של מערכות רבות-גופים, אנלוגית ו-NISQ — מספר קיוביטים, קישוריות מובנית וקוהרנטיות על 10²–10⁴ קיוביטים, ללא תיקון שגיאות",
   "src": "§1.3",
   "why": "The code is used alone in matrices and profiles far from the goals table, where it carries no meaning on its own"
  },
@@ -210,9 +262,13 @@
   "match_ru": [
    "G2"
   ],
+  "match_he": [
+   "G2"
+  ],
   "scope": "all",
   "en": "Goal: error-mitigated utility circuits — 100–150 qubits and 10³–10⁴ two-qubit gates, decided by error rate at full width and shot throughput",
   "ru": "Цель: полезные схемы с подавлением ошибок — 100–150 кубитов и 10³–10⁴ двухкубитных гейта; решают ошибка при полной загрузке и поток измерений",
+  "he": "יעד: מעגלי תועלת עם מיתון שגיאות — 100–150 קיוביטים ו-10³–10⁴ שערים דו-קיוביטיים, שמוכרעים לפי שיעור השגיאה ברוחב המלא ולפי קצב ההרצות",
   "src": "§1.3",
   "why": "The code is used alone in matrices and profiles far from the goals table, where it carries no meaning on its own"
  },
@@ -224,9 +280,13 @@
   "match_ru": [
    "G3"
   ],
+  "match_he": [
+   "G3"
+  ],
   "scope": "all",
   "en": "Goal: early fault tolerance — 10²–10³ logical qubits, 10⁵–10⁶ Toffoli gates, on 10⁴–10⁵ physical qubits, expected 2027–2031",
   "ru": "Цель: ранняя отказоустойчивость — 10²–10³ логических кубитов, 10⁵–10⁶ гейтов Тоффоли, на 10⁴–10⁵ физических, ожидается в 2027–2031",
+  "he": "יעד: עמידות מוקדמת לתקלות — 10²–10³ קיוביטים לוגיים, 10⁵–10⁶ שערי טופולי, על 10⁴–10⁵ קיוביטים פיזיים, צפויה ב-2027–2031",
   "src": "§1.3",
   "why": "The code is used alone in matrices and profiles far from the goals table, where it carries no meaning on its own"
  },
@@ -238,9 +298,13 @@
   "match_ru": [
    "G4"
   ],
+  "match_he": [
+   "G4"
+  ],
   "scope": "all",
   "en": "Goal: large-scale fault tolerance — 10³+ logical qubits and 10⁹–10¹⁰ Toffoli gates; here the cycle time decides, then fidelity and count",
   "ru": "Цель: крупномасштабная отказоустойчивость — от 10³ логических кубитов и 10⁹–10¹⁰ гейтов Тоффоли; здесь решает время такта, затем точность и число",
+  "he": "יעד: עמידות לתקלות בקנה מידה גדול — 10³+ קיוביטים לוגיים ו-10⁹–10¹⁰ שערי טופולי; כאן זמן המחזור מכריע, ואחריו הנאמנות והמספר",
   "src": "§1.3",
   "why": "The code is used alone in matrices and profiles far from the goals table, where it carries no meaning on its own"
  },
@@ -252,9 +316,13 @@
   "match_ru": [
    "G5"
   ],
+  "match_he": [
+   "G5"
+  ],
   "scope": "all",
   "en": "Goal: heuristic optimization and annealing — available today, and the one goal with no proven quantum advantage behind it",
   "ru": "Цель: эвристическая оптимизация и отжиг — доступно сегодня и единственная цель без доказанного квантового преимущества",
+  "he": "יעד: אופטימיזציה היוריסטית וחישול — זמינים כבר היום, והיעד היחיד שאין מאחוריו יתרון קוונטי מוכח",
   "src": "§1.3",
   "why": "The code is used alone in matrices and profiles far from the goals table, where it carries no meaning on its own"
  },
@@ -266,9 +334,13 @@
   "match_ru": [
    "G6"
   ],
+  "match_he": [
+   "G6"
+  ],
   "scope": "all",
   "en": "Goal: networking and distributed computing — quantum-internet nodes and links between modules, on interface rate, fidelity and memory",
   "ru": "Цель: сети и распределённые вычисления — узлы квантового интернета и связи между модулями: скорость интерфейса, точность и память",
+  "he": "יעד: תקשורת ומחשוב מבוזר — צומתי אינטרנט קוונטי וקישורים בין מודולים, לפי קצב הממשק, הנאמנות והזיכרון",
   "src": "§1.3",
   "why": "The code is used alone in matrices and profiles far from the goals table, where it carries no meaning on its own"
  },
@@ -280,9 +352,13 @@
   "match_ru": [
    "G7"
   ],
+  "match_he": [
+   "G7"
+  ],
   "scope": "all",
   "en": "Goal: deployable systems — racks that run without a dilution refrigerator, judged on footprint, power and integration",
   "ru": "Цель: развёртываемые системы — стойки, работающие без рефрижератора растворения; судят по габаритам, мощности и интеграции",
+  "he": "יעד: מערכות הניתנות לפריסה — ארונות ציוד שפועלים בלי מקרר דילול, הנשפטים לפי השטח, צריכת ההספק והשילוב",
   "src": "§1.3",
   "why": "The code is used alone in matrices and profiles far from the goals table, where it carries no meaning on its own"
  },
@@ -308,16 +384,28 @@
    "H7",
    "H8"
   ],
+  "match_he": [
+   "H1",
+   "H2",
+   "H3",
+   "H4",
+   "H5",
+   "H6",
+   "H7",
+   "H8"
+  ],
   "scope": "all",
   "en": "One of the eight statements about the field that this edition tested against the {{N_MACHINES}} registered machines, rather than asserting",
   "ru": "Одно из восьми утверждений об отрасли, которые это издание проверило по {{N_MACHINES}} машинам реестра, а не просто заявило",
+  "he": "אחת משמונה הטענות על התחום שמהדורה זו בחנה מול {{N_MACHINES}} המכונות הרשומות, במקום רק להצהיר עליהן",
   "src": "§8.4",
   "why": "Cited bare in §0 and §8.6 as (H1), (H8) by readers who never opened §8.4",
   "only": [
    "8"
   ],
   "re": "(?<!Quantinuum )(?<!Model )\\bH[1-8]\\b(?![-–/])(?! — )",
-  "re_ru": "(?<!Quantinuum )(?<!Model )\\bH[1-8]\\b(?![-–/])(?! — )"
+  "re_ru": "(?<!Quantinuum )(?<!Model )\\bH[1-8]\\b(?![-–/])(?! — )",
+  "re_he": "(?<!Quantinuum )(?<!Model )\\bH[1-8]\\b(?![-–/])(?! — )"
  },
  {
   "id": "forecast-id",
@@ -341,9 +429,20 @@
    "F5",
    "F6"
   ],
+  "match_he": [
+   "F1a",
+   "F1b",
+   "F1c",
+   "F2",
+   "F3",
+   "F4",
+   "F5",
+   "F6"
+  ],
   "scope": "all",
   "en": "One of the dated predictions this edition commits to: an indicator, its value now, the value expected next year, and what would prove it wrong",
   "ru": "Один из датированных прогнозов этого издания: показатель, значение сейчас, ожидаемое через год и то, что его опровергнет",
+  "he": "אחת התחזיות המתוארכות שמהדורה זו מתחייבת להן: מדד, ערכו כיום, הערך הצפוי בשנה הבאה, ומה יוכיח שהיא שגויה",
   "src": "§8.5",
   "why": "Referenced bare as (F1), (F3–F5) in the summary under the table and in §8.6",
   "only": [
@@ -370,16 +469,28 @@
    "Архитектура",
    "Архитектуры"
   ],
+  "match_he": [
+   "ארכיטקטורה",
+   "הארכיטקטורה",
+   "בארכיטקטורה",
+   "לארכיטקטורה",
+   "מהארכיטקטורה",
+   "והארכיטקטורה",
+   "שהארכיטקטורה",
+   "ארכיטקטורת"
+  ],
   "scope": "first",
   "en": "A platform drawn as a line through the ten layers: one technology chosen per layer, with the alternatives listed beside it; a machine is an instance of one",
   "ru": "Платформа, проведённая линией через десять слоёв: по одной технологии на слой, рядом перечислены альтернативы; машина — экземпляр одной из них",
+  "he": "פלטפורמה המצוירת כקו דרך עשר השכבות: טכנולוגיה אחת נבחרת בכל שכבה, והחלופות רשומות לצידה; מכונה היא מופע של קו כזה",
   "src": "§7.1",
   "why": "The report's central move — platforms are not compared as wholes but as chains of separable choices",
   "variants": [
    {
     "until": "7",
     "en": "A platform drawn as a line through the ten stack layers, choosing one technology in each — carrier, encoding, gate, connectivity, control, readout, code, decoder, interconnect, manufacturing",
-    "ru": "Платформа, проведённая линией через десять слоёв стека с выбором одной технологии в каждом: носитель, кодирование, гейт, связность, управление, считывание, код, декодер, межсоединение, изготовление"
+    "ru": "Платформа, проведённая линией через десять слоёв стека с выбором одной технологии в каждом: носитель, кодирование, гейт, связность, управление, считывание, код, декодер, межсоединение, изготовление",
+    "he": "פלטפורמה המצוירת כקו דרך עשר השכבות של המחסנית, הבוחרת טכנולוגיה אחת בכל אחת מהן — נושא, קידוד, שער, קישוריות, בקרה, קריאה, קוד, מפענח, חיבור בין-מודולי, ייצור"
    }
   ],
   "only": [
@@ -407,9 +518,21 @@
    "Слой",
    "Слои"
   ],
+  "match_he": [
+   "שכבה",
+   "השכבה",
+   "שכבות",
+   "השכבות",
+   "בשכבה",
+   "בשכבות",
+   "לשכבה",
+   "מהשכבה",
+   "שכבת"
+  ],
   "scope": "first",
   "en": "One of the ten columns of the stack, left to right: carrier, encoding, gate, connectivity, control, readout, code, decoder, interconnect, manufacturing",
   "ru": "Один из десяти столбцов стека слева направо: носитель, кодирование, гейт, связность, управление, считывание, код, декодер, межсоединение, изготовление",
+  "he": "אחת מעשר העמודות של המחסנית, משמאל לימין: נושא, קידוד, שער, קישוריות, בקרה, קריאה, קוד, מפענח, חיבור בין-מודולי, ייצור",
   "src": "§7.1",
   "why": "Ordinary word, but here it is a fixed list of ten — counts like 'a machine has about a dozen cells' only parse if the reader knows that",
   "only": [
@@ -432,9 +555,18 @@
    "основная",
    "основной"
   ],
+  "match_he": [
+   "חלופיות",
+   "החלופיות",
+   "חלופית",
+   "החלופית",
+   "הטכנולוגיה הראשית",
+   "הראשית"
+  ],
   "scope": "first",
   "en": "Where a layer offers several technologies, the first listed is the one the platform actually leads with; the rest are what it could swap in",
   "ru": "Если на слое есть несколько технологий, первая в списке — та, на которую платформа опирается; остальные — то, на что её можно заменить",
+  "he": "כאשר שכבה מציעה כמה טכנולוגיות, הראשונה ברשימה היא זו שהפלטפורמה נשענת עליה בפועל; השאר הן מה שהיא יכולה להחליף בה",
   "src": "§7.1 / §7.3",
   "why": "Tables print 'primary node per layer; alternates in brackets' as if self-evident; it decides how a whole row is read",
   "only": [
@@ -453,9 +585,18 @@
    "линзой",
    "Линзы"
   ],
+  "match_he": [
+   "עדשה",
+   "העדשה",
+   "עדשות",
+   "העדשות",
+   "בעדשה",
+   "עדשת"
+  ],
   "scope": "first",
   "en": "A view that recolours every technology on the map by one property at a time, with its legend doubling as a filter",
   "ru": "Режим, в котором карта перекрашивает каждую технологию по одному свойству, а легенда служит фильтром",
+  "he": "תצוגה הצובעת מחדש כל טכנולוגיה במפה לפי תכונה אחת בכל פעם, והמקרא שלה משמש גם כמסנן",
   "src": "About / §7.7",
   "why": "Names a control of the interactive map, not a concept; without it the word sounds metaphorical",
   "only": [
@@ -474,9 +615,17 @@
    "изолированного",
    "изоляция"
   ],
+  "match_he": [
+   "בידוד",
+   "ארכיטקטורה מבודדת",
+   "הארכיטקטורה המבודדת",
+   "בידוד ארכיטקטורה",
+   "לבודד"
+  ],
   "scope": "first",
   "en": "Showing one platform's line alone: its technologies stay lit, everything else dims",
   "ru": "Показ одной линии платформы отдельно: её технологии остаются яркими, остальное гаснет",
+  "he": "הצגת הקו של פלטפורמה אחת לבדו: הטכנולוגיות שלו נשארות מוארות, וכל השאר מתעמעם",
   "src": "About / §7.10",
   "why": "A verb used as the name of a map control; the reader meets it inside a rule about what is lit",
   "only": [
@@ -494,9 +643,16 @@
    "фокус",
    "фокусе"
   ],
+  "match_he": [
+   "מיקוד",
+   "במיקוד",
+   "שבמיקוד",
+   "ממוקדת"
+  ],
   "scope": "first",
   "en": "Selecting one technology so the map draws the edges that touch it — what it needs, what can replace it, what it collides with",
   "ru": "Выбор одной технологии, при котором карта рисует её рёбра: что ей нужно, чем её заменить, с чем она конфликтует",
+  "he": "בחירת טכנולוגיה אחת כך שהמפה מציירת את הקשתות הנוגעות בה — מה היא צריכה, מה יכול להחליף אותה, עם מה היא מתנגשת",
   "src": "About / §7.7 / §7.10",
   "why": "Named as a term in the intersection rule; without it that rule reads as three unexplained switches",
   "only": [
@@ -514,9 +670,15 @@
    "селектор машины",
    "селектор"
   ],
+  "match_he": [
+   "בורר המכונה",
+   "בורר מכונה",
+   "בבורר המכונה"
+  ],
   "scope": "first",
   "en": "The control that lights the technologies one registered machine actually uses and marks the layers where it uses something the map has no entry for",
   "ru": "Управление, подсвечивающее технологии, которые реально использует выбранная машина, и помечающее слои, где она использует то, чего на карте нет",
+  "he": "הפקד שמאיר את הטכנולוגיות שמכונה רשומה אחת משתמשת בהן בפועל, ומסמן את השכבות שבהן היא משתמשת במשהו שאין לו ערך במפה",
   "src": "§7.10",
   "why": "Capitalised like a proper name in §7.10; a reader who never opened the interactive map needs to know it is a button",
   "only": [
@@ -533,9 +695,15 @@
   "match_ru": [
    "пересадочная"
   ],
+  "match_he": [
+   "תחנת מעבר",
+   "תחנות מעבר",
+   "תחנת המעבר"
+  ],
   "scope": "first",
   "en": "A technology several platform lines run through — the metro-map reading of a shared choice",
   "ru": "Технология, через которую проходит несколько линий платформ, — метро-прочтение общего выбора",
+  "he": "טכנולוגיה שכמה קווי פלטפורמה עוברים דרכה — בחירה משותפת, כפי שהיא נקראת במפת רכבת תחתית",
   "src": "About / §7.7 / §7.10",
   "why": "Metro vocabulary used without restating it in §7.10, where it decides what focus shows",
   "only": [
@@ -553,9 +721,17 @@
   "match_ru": [
    "полоса"
   ],
+  "match_he": [
+   "רצועת הקואורדינטות המקבילות",
+   "רצועת קואורדינטות מקבילות",
+   "הרצועה שמתחת למפה",
+   "רצועה",
+   "הרצועה"
+  ],
   "scope": "first",
   "en": "The band under the map that draws all {{N_NODES}} technologies at once, each as a line across the seven attributes, so outliers stand out",
   "ru": "Полоса под картой, рисующая все {{N_NODES}} технологий сразу — каждую линией по семи атрибутам, так что выбросы видны",
+  "he": "הרצועה שמתחת למפה, המציירת את כל {{N_NODES}} הטכנולוגיות בבת אחת, כל אחת כקו לאורך שבע התכונות, כך שהחריגות בולטות לעין",
   "src": "About / §7.7",
   "why": "Mentioned in About as if the reader has the map in front of them; many are reading the text alone",
   "only": [
@@ -574,9 +750,16 @@
    "полые пунктирные",
    "пунктирные"
   ],
+  "match_he": [
+   "מקווקוות",
+   "מקווקו",
+   "חלולה",
+   "חלולות"
+  ],
   "scope": "first",
   "en": "Drawing marks on the map itself: a technology is shaded when it breaks the natural-to-fabricated trend, and drawn hollow when nothing fills the slot yet",
   "ru": "Пометки на самой карте: технология заштрихована, если ломает тренд «естественный → изготовленный», и нарисована полой, если слот ещё нечем заполнить",
+  "he": "סימונים המצוירים על המפה עצמה: טכנולוגיה מקווקוות כאשר היא שוברת את המגמה מטבעי למיוצר, ומצוירת חלולה כאשר עדיין אין דבר שממלא את המשבצת",
   "src": "About / §7.1",
   "why": "The marks carry findings, and the text names them in passing while describing the drawing",
   "only": [
@@ -596,16 +779,25 @@
    "атрибуты проектирования",
    "семью атрибутами"
   ],
+  "match_he": [
+   "תכונות התכן",
+   "שבע התכונות",
+   "שבע תכונות התכן",
+   "שבע תכונות",
+   "תכונות תכן"
+  ],
   "scope": "first",
   "en": "The seven properties every technology is placed on, chosen because they do not change when new results are published",
   "ru": "Семь свойств, по которым размещена каждая технология: их выбрали за то, что новые результаты их не меняют",
+  "he": "שבע התכונות שעל פיהן ממוקמת כל טכנולוגיה, שנבחרו משום שהן אינן משתנות כשמתפרסמות תוצאות חדשות",
   "src": "§7.1",
   "why": "The backbone of the graph; the editor's test case — it must land without codes, section numbers or grand words",
   "variants": [
    {
     "until": "7",
     "en": "The seven properties every technology is described by: what the qubit is made of, how fast it is, how it is measured, how it moves, how it is controlled, how it fails, how it is manufactured",
-    "ru": "Семь свойств, которыми описана каждая технология: из чего сделан кубит, как он быстр, как его измеряют, как он перемещается, как им управляют, как он ошибается, как его изготавливают"
+    "ru": "Семь свойств, которыми описана каждая технология: из чего сделан кубит, как он быстр, как его измеряют, как он перемещается, как им управляют, как он ошибается, как его изготавливают",
+    "he": "שבע התכונות שמתארות כל טכנולוגיה: ממה עשוי הקיוביט, כמה הוא מהיר, איך מודדים אותו, איך הוא נע, איך שולטים בו, איך הוא שוגה, איך מייצרים אותו"
    }
   ]
  },
@@ -621,9 +813,16 @@
    "пространство оценки",
    "пространства оценки"
   ],
+  "match_he": [
+   "תכונה של מרחב ההערכה",
+   "תכונות של מרחב ההערכה",
+   "מרחב ההערכה",
+   "תכונות הערכה"
+  ],
   "scope": "first",
   "en": "Anything that improves with new results — error rates, qubit counts, cycle times, funding; always dated and sourced, and never used to place a technology on the map",
   "ru": "Всё, что улучшается с новыми результатами: ошибки, число кубитов, времена такта, финансирование; всегда с датой и источником и никогда не задаёт место на карте",
+  "he": "כל מה שמשתפר עם תוצאות חדשות — שיעורי שגיאה, מספרי קיוביטים, זמני מחזור, מימון; תמיד מתוארך ומלווה במקור, ולעולם אינו משמש למיקום טכנולוגיה על המפה",
   "src": "§7.1",
   "why": "The rule that keeps the map stable between editions; a reader who misses it expects positions to move with the news"
  },
@@ -635,9 +834,15 @@
   "match_ru": [
    "четырёх выходов"
   ],
+  "match_he": [
+   "ארבעת הפלטים",
+   "מארבעת הפלטים",
+   "ארבעה פלטים"
+  ],
   "scope": "first",
   "en": "The four things a technology choice is judged to change: the error channel, the cycle time, how many qubits stay good at once, and the route to a larger machine",
   "ru": "Четыре вещи, которые меняет выбор технологии: канал ошибок, время такта, сколько кубитов одновременно остаются хорошими и путь к более крупной машине",
+  "he": "ארבעת הדברים שבחירת טכנולוגיה נשפטת לפי השינוי שהיא מחוללת בהם: ערוץ השגיאה, זמן המחזור, כמה קיוביטים נשארים טובים בו-זמנית, והדרך למכונה גדולה יותר",
   "src": "§7.1",
   "why": "The admission test for the whole graph, stated once in a dense sentence and relied on afterwards"
  },
@@ -651,9 +856,16 @@
   "match_ru": [
    "масштаб с качеством"
   ],
+  "match_he": [
+   "קנה מידה באיכות",
+   "קנה מידה עם איכות",
+   "מספר עם איכות",
+   "מספר הקיוביטים ואיכותם"
+  ],
   "scope": "first",
   "en": "How many qubits reach the good error rate at the same time, not how many are in the box — with the connectivity they have",
   "ru": "Сколько кубитов одновременно дотягивают до хорошей ошибки — а не сколько их в установке, — и с какой связностью",
+  "he": "כמה קיוביטים מגיעים לשיעור השגיאה הטוב בו-זמנית, לא כמה מהם יש בקופסה — יחד עם הקישוריות שיש להם",
   "src": "§1.2 / §7.1",
   "why": "The distinction the whole count-race argument rests on; the hyphenated form gives no clue on its own"
  },
@@ -667,9 +879,15 @@
    "качество канала",
    "Качество канала"
   ],
+  "match_he": [
+   "איכות הערוץ בקנה מידה",
+   "איכות הערוץ",
+   "איכות ערוץ"
+  ],
   "scope": "first",
   "en": "How wrong an operation goes and in what way, measured with the whole device running at once rather than on a good pair",
   "ru": "Насколько сильно и каким образом ошибается операция, измеренная при работе всего устройства сразу, а не на удачной паре",
+  "he": "עד כמה פעולה משתבשת ובאיזה אופן, כשהיא נמדדת בזמן שההתקן כולו פועל בבת אחת, ולא על זוג טוב אחד",
   "src": "§1.2",
   "why": "Axis A in every score table; 'channel' is the report's word for the kinds of error, not for a wire"
  },
@@ -685,9 +903,16 @@
    "пересекающей технологии",
    "пересекающих технологий"
   ],
+  "match_he": [
+   "טכנולוגיה חוצה",
+   "טכנולוגיות חוצות",
+   "הטכנולוגיה החוצה",
+   "הטכנולוגיות החוצות"
+  ],
   "scope": "first",
   "en": "A technology that takes a trait from the other side of the natural/fabricated divide — a natural carrier under microwave control, erasure on a fabricated carrier; hatched on the map",
   "ru": "Технология, берущая свойство с другой стороны раздела естественное/изготовленное — естественный носитель под СВЧ-управлением, стирание на изготовленном носителе; на карте заштрихована",
+  "he": "טכנולוגיה שלוקחת מאפיין מהצד השני של החלוקה טבעי/מיוצר — נושא טבעי בבקרת מיקרוגל, מחיקה על נושא מיוצר; מקווקוות במפה",
   "src": "§7.1",
   "why": "The map's own coinage: the hatch marks it, and the name says what it marks"
  },
@@ -703,16 +928,24 @@
    "пустых слота",
    "Пустые слоты"
   ],
+  "match_he": [
+   "משבצת ריקה",
+   "משבצות ריקות",
+   "המשבצת הריקה",
+   "המשבצות הריקות"
+  ],
   "scope": "first",
   "en": "A place in the stack where nothing has been demonstrated yet, drawn hollow — the map shows the hole instead of hiding it",
   "ru": "Место в стеке, где пока ничего не продемонстрировано; нарисовано полым — карта показывает дыру, а не прячет её",
+  "he": "מקום במחסנית שבו עדיין לא הודגם דבר, מצויר חלול — המפה מראה את החור במקום להסתיר אותו",
   "src": "§7.1",
   "why": "A deliberate absence; without the hint it looks like missing data rather than a finding",
   "variants": [
    {
     "until": "7",
     "en": "A place in the stack where a platform needs a technology and none has been demonstrated — the map draws the gap rather than leaving the reader to notice it",
-    "ru": "Место в стеке, где платформе нужна технология, а продемонстрированной нет: карта рисует этот пробел, а не оставляет читателя его замечать"
+    "ru": "Место в стеке, где платформе нужна технология, а продемонстрированной нет: карта рисует этот пробел, а не оставляет читателя его замечать",
+    "he": "מקום במחסנית שבו פלטפורמה צריכה טכנולוגיה ואף אחת לא הודגמה — המפה מציירת את הפער, במקום להשאיר לקורא להבחין בו"
    }
   ]
  },
@@ -727,9 +960,16 @@
    "выведенного такта",
    "выведенные такты"
   ],
+  "match_he": [
+   "שעון נגזר",
+   "שעונים נגזרים",
+   "השעון הנגזר",
+   "השעונים הנגזרים"
+  ],
   "scope": "first",
   "en": "A cycle time the report computes from the platform's own published gate, readout and reset times rather than quoting a vendor figure",
   "ru": "Время такта, посчитанное отчётом из опубликованных времён гейта, считывания и сброса самой платформы, а не взятое у вендора",
+  "he": "זמן מחזור שהדוח מחשב מתוך זמני השער, הקריאה והאיפוס שהפלטפורמה עצמה פרסמה, במקום לצטט מספר של היצרן",
   "src": "§7.1 / §7.4",
   "why": "Tables put it next to the measured cycle; the reader must know which column the report is responsible for"
  },
@@ -743,9 +983,14 @@
    "Стандартные рекорды",
    "стандартные рекорды"
   ],
+  "match_he": [
+   "רשומות התקן",
+   "רשומות תקן"
+  ],
   "scope": "first",
   "en": "The dated, sourced numbers held per technology — gate and readout times, coherence, error rates — that the report's own calculations are built from",
   "ru": "Датированные числа с источниками по каждой технологии — времена гейта и считывания, когерентность, ошибки, — из которых отчёт считает своё",
+  "he": "המספרים המתוארכים ומלווי המקור הנשמרים לכל טכנולוגיה — זמני שער וקריאה, קוהרנטיות, שיעורי שגיאה — שמהם בנויים החישובים של הדוח עצמו",
   "src": "§7.9",
   "why": "Explains why a null in that table is stated rather than filled: it means not published"
  },
@@ -765,16 +1010,27 @@
    "Машина",
    "Машины"
   ],
+  "match_he": [
+   "מכונה",
+   "המכונה",
+   "מכונות",
+   "המכונות",
+   "במכונה",
+   "למכונה",
+   "מכונת"
+  ],
   "scope": "first",
   "en": "One row of the register: a named system some organisation has built, announced or merely planned",
   "ru": "Одна строка реестра: именованная система, которую организация построила, анонсировала или только запланировала",
+  "he": "שורה אחת במרשם: מערכת בעלת שם שארגון כלשהו בנה, הכריז עליה או רק תכנן אותה",
   "src": "§8",
   "why": "Built and announced systems sit in one list; the word covers both, which is the point of the chapter",
   "variants": [
    {
     "until": "8",
     "en": "A named system an organisation has built, announced or planned — the register lists all three kinds together and marks which is which, so plans are never counted as hardware",
-    "ru": "Именованная система, которую организация построила, анонсировала или запланировала: реестр держит все три вида вместе и помечает, что есть что, чтобы планы не считались железом"
+    "ru": "Именованная система, которую организация построила, анонсировала или запланировала: реестр держит все три вида вместе и помечает, что есть что, чтобы планы не считались железом",
+    "he": "מערכת בעלת שם שארגון בנה, הכריז עליה או תכנן אותה — המרשם מונה את שלושת הסוגים יחד ומסמן מה הוא מה, כדי שתוכניות לעולם לא ייספרו כחומרה"
    }
   ],
   "only": [
@@ -797,9 +1053,18 @@
    "реестру",
    "реестром"
   ],
+  "match_he": [
+   "מרשם המכונות הקוונטיות",
+   "מרשם המכונות",
+   "המרשם",
+   "מרשם",
+   "במרשם",
+   "מהמרשם"
+  ],
   "scope": "first",
-  "en": "The list of 136 quantum machines that accompanies this map, each placed on it technology by technology, with the evidence for every placement graded",
-  "ru": "Список из 136 квантовых машин при этой карте: каждая размещена на ней технология за технологией, и свидетельство для каждого размещения оценено",
+  "en": "The list of {{N_MACHINES}} quantum machines that accompanies this map, each placed on it technology by technology, with the evidence for every placement graded",
+  "ru": "Список из {{N_MACHINES}} квантовых машин при этой карте: каждая размещена на ней технология за технологией, и свидетельство для каждого размещения оценено",
+  "he": "רשימת {{N_MACHINES}} המכונות הקוונטיות שמלווה את המפה, כל אחת ממוקמת עליה טכנולוגיה אחר טכנולוגיה, ולראיות של כל מיקום יש דרגה",
   "src": "About / §8",
   "why": "Named as if already known in About and §0; it is the data source behind every count in §8",
   "only": [
@@ -818,9 +1083,18 @@
    "экземпляр одной архитектуры",
    "экземпляры"
   ],
+  "match_he": [
+   "מופע של ארכיטקטורה",
+   "מופע של הארכיטקטורה",
+   "כמופע של ארכיטקטורה",
+   "מופעים של הארכיטקטורות",
+   "כמופעים של הארכיטקטורות",
+   "מופע"
+  ],
   "scope": "first",
   "en": "One real machine laid over one platform line: what it uses at each layer, and a marked hole wherever it uses something the map has no entry for",
   "ru": "Реальная машина, наложенная на линию платформы: что она использует на каждом слое и помеченная дыра там, где используется то, чего на карте нет",
+  "he": "מכונה אמיתית אחת המונחת על קו פלטפורמה אחד: במה היא משתמשת בכל שכבה, וחור מסומן בכל מקום שבו היא משתמשת במשהו שאין לו ערך במפה",
   "src": "§7.10",
   "why": "The join between the register and the map; it explains why a machine can light technologies and still show holes"
  },
@@ -836,9 +1110,16 @@
    "ячейки",
    "ячейка"
   ],
+  "match_he": [
+   "תא ראיות",
+   "תאי ראיות",
+   "תא הראיות",
+   "תאי הראיות"
+  ],
   "scope": "first",
   "en": "One machine at one layer of the stack: what it uses there, plus the document that shows it — a machine has about a dozen, the register {{N_CELLS}}",
   "ru": "Одна машина на одном слое стека: что она там использует, плюс документ, который это показывает; у машины их около дюжины, в реестре {{N_CELLS}}",
+  "he": "מכונה אחת בשכבה אחת של המחסנית: במה היא משתמשת שם, ועוד המסמך שמראה זאת — למכונה יש כתריסר תאים כאלה, ולמרשם {{N_CELLS}}",
   "src": "§8",
   "why": "The unit every count and every evidence share in the chapter is computed over",
   "only": [
@@ -854,9 +1135,15 @@
   "match_ru": [
    "класс свидетельств"
   ],
+  "match_he": [
+   "דרגת הראיות",
+   "דרגת ראיות",
+   "דרגות ראיות"
+  ],
   "scope": "first",
   "en": "For any count: the share of the entries behind it that a document was seen to support — how much of the claim survives if press releases are struck out",
   "ru": "Для любого числа: доля стоящих за ним записей, которые подтверждены увиденным документом — сколько от утверждения останется, если вычеркнуть пресс-релизы",
+  "he": "לכל ספירה: החלק מבין הרשומות שמאחוריה שנמצא מסמך התומך בהן — כמה מהטענה שורד אם מוחקים את ההודעות לעיתונות",
   "src": "§8",
   "why": "Printed beside numbers as a percentage; it grades the sourcing, not the machines",
   "only": [
@@ -876,9 +1163,16 @@
    "пробелом",
    "Пробел"
   ],
+  "match_he": [
+   "פער",
+   "הפער",
+   "פערים",
+   "הפערים"
+  ],
   "scope": "first",
   "en": "A layer where the map has no entry for what the machine actually runs, or where the machine discloses nothing",
   "ru": "Слой, где у карты нет записи для того, что машина реально использует, или где машина ничего не раскрывает",
+  "he": "שכבה שבה אין במפה ערך למה שהמכונה מריצה בפועל, או שבה המכונה אינה חושפת דבר",
   "src": "§7.10",
   "why": "Covers two different situations under one mark, and the counts in §8.2 mix them deliberately",
   "only": [
@@ -893,9 +1187,14 @@
   "match_ru": [
    "доля пробелов"
   ],
+  "match_he": [
+   "שיעור הפערים",
+   "שיעור פערים"
+  ],
   "scope": "first",
   "en": "Per layer, the share of machines that disclose nothing there or run something the map has no entry for — worst by far for codes, decoders and links",
   "ru": "По слоям — доля машин, которые ничего там не раскрывают или используют то, чего на карте нет: профиль раскрытия отрасли, худший для кодов, декодеров и связей",
+  "he": "לכל שכבה, שיעור המכונות שאינן חושפות בה דבר או שמריצות בה משהו שאין לו ערך במפה — הגרוע ביותר בפער ניכר בקודים, במפענחים ובקישורים",
   "src": "§8.2",
   "why": "Looks like a coverage defect of the map; it is mostly a measure of what vendors do not publish",
   "only": [
@@ -915,9 +1214,16 @@
    "устройстве",
    "устройством"
   ],
+  "match_he": [
+   "התקן",
+   "ההתקן",
+   "התקנים",
+   "ההתקנים"
+  ],
   "scope": "first",
   "en": "In the register's counts, a machine that exists — deployed, demonstrated or retired — as against an announcement, a plan or a component",
   "ru": "В подсчётах реестра — машина, которая существует: в эксплуатации, продемонстрирована или выведена, в отличие от анонса, плана или компонента",
+  "he": "בספירות של המרשם, מכונה שקיימת — בהפעלה, הודגמה או הוצאה משימוש — להבדיל מהכרזה, מתוכנית או מרכיב",
   "src": "§8",
   "why": "An ordinary word given a counting rule here; every 'N devices' figure in §8 depends on it",
   "only": [
@@ -933,16 +1239,24 @@
    "с гейтами",
    "С гейтами"
   ],
+  "match_he": [
+   "בעל שערים",
+   "בעלי שערים",
+   "בעלת שערים",
+   "בעלות שערים"
+  ],
   "scope": "first",
   "en": "A machine that actually runs a two-qubit entangling operation — an array that only holds atoms, or an analog simulator, does not qualify",
   "ru": "Машина, которая реально выполняет двухкубитную перепутывающую операцию: массив, который только удерживает атомы, или аналоговый симулятор не в счёт",
+  "he": "מכונה שמבצעת בפועל פעולת שזירה דו-קיוביטית — מערך שרק מחזיק אטומים, או סימולטור אנלוגי, אינו עומד בכך",
   "src": "§8",
   "why": "The qualifier behind 'largest device' claims; drop it and the record counts change by thousands of qubits",
   "variants": [
    {
     "until": "8",
     "en": "Said of a machine that actually runs a two-qubit entangling operation, as opposed to one that only holds or simulates qubits — the qualifier that keeps thousand-atom arrays out of the size records",
-    "ru": "О машине, которая реально выполняет двухкубитную перепутывающую операцию, а не только удерживает или симулирует кубиты: эта оговорка и не пускает массивы из тысяч атомов в рекорды размера"
+    "ru": "О машине, которая реально выполняет двухкубитную перепутывающую операцию, а не только удерживает или симулирует кубиты: эта оговорка и не пускает массивы из тысяч атомов в рекорды размера",
+    "he": "נאמר על מכונה שמבצעת בפועל פעולת שזירה דו-קיוביטית, להבדיל ממכונה שרק מחזיקה קיוביטים או מדמה אותם — ההסתייגות שמשאירה מערכים של אלפי אטומים מחוץ לשיאי הגודל"
    }
   ]
  },
@@ -955,9 +1269,14 @@
   "match_ru": [
    "рекордные пары"
   ],
+  "match_he": [
+   "זוגות שיא",
+   "זוג שיא"
+  ],
   "scope": "first",
   "en": "A record error rate measured on one hand-picked pair of qubits instead of across the whole device; excluded from the register's bests and medians",
   "ru": "Рекордная ошибка, измеренная на одной отобранной паре кубитов, а не по всему устройству; в лучшие значения и медианы реестра не входит",
+  "he": "שיעור שגיאה שיאי שנמדד על זוג קיוביטים אחד שנבחר ביד, ולא על פני ההתקן כולו; אינו נכלל בערכים הטובים ביותר ובחציונים של המרשם",
   "src": "§8.3 / §8.5",
   "why": "The page uses the term without defining it, and it is exactly what separates its numbers from vendor headlines"
  },
@@ -975,9 +1294,16 @@
    "когортах",
    "Когорта"
   ],
+  "match_he": [
+   "קוהורט",
+   "הקוהורט",
+   "קוהורטים",
+   "הקוהורטים"
+  ],
   "scope": "first",
   "en": "Machines grouped by the year of their status date — which may be first light, general availability or the latest milestone, so the grouping is rough by design",
   "ru": "Машины, сгруппированные по году даты статуса: это может быть первый запуск, доступность или последняя веха, так что группировка заведомо грубая",
+  "he": "מכונות המקובצות לפי שנת תאריך הסטטוס שלהן — שעשוי להיות ההפעלה הראשונה, הזמינות הכללית או אבן הדרך האחרונה, ולכן הקיבוץ גס מעצם תכנונו",
   "src": "§8 / §8.7",
   "why": "Trend charts are read by cohort; the reader deserves to know the year means different events for different rows",
   "only": [
@@ -998,16 +1324,25 @@
    "семействами",
    "семействах"
   ],
+  "match_he": [
+   "משפחה",
+   "המשפחה",
+   "משפחות",
+   "המשפחות",
+   "משפחת"
+  ],
   "scope": "first",
   "en": "A machine's qubit platform: superconducting circuits, trapped ions, neutral atoms, photonics, semiconductor or defect spins, topological, annealers",
   "ru": "Кубитная платформа машины: сверхпроводниковые схемы, ионы в ловушках, нейтральные атомы, фотоника, полупроводниковые или дефектные спины, топологические, отжиг",
+  "he": "פלטפורמת הקיוביטים של מכונה: מעגלים מוליכי-על, יונים לכודים, אטומים ניטרליים, פוטוניקה, ספינים במוליכים למחצה או ספיני פגם, טופולוגי, מחשבי חישול קוונטי",
   "src": "§8",
   "why": "Family and architecture name two different groupings in the same chapter; this is the coarsest",
   "variants": [
    {
     "until": "8",
     "en": "The kind of qubit a machine uses — superconducting circuits, trapped ions, neutral atoms, photonics, semiconductor or defect spins, topological, annealers: the coarsest of the report's groupings",
-    "ru": "Тип кубита машины: сверхпроводниковые схемы, ионы в ловушках, нейтральные атомы, фотоника, полупроводниковые или дефектные спины, топологические, отжиг — самая крупная группировка отчёта"
+    "ru": "Тип кубита машины: сверхпроводниковые схемы, ионы в ловушках, нейтральные атомы, фотоника, полупроводниковые или дефектные спины, топологические, отжиг — самая крупная группировка отчёта",
+    "he": "סוג הקיוביט שמכונה משתמשת בו — מעגלים מוליכי-על, יונים לכודים, אטומים ניטרליים, פוטוניקה, ספינים במוליכים למחצה או ספיני פגם, טופולוגי, מחשבי חישול קוונטי: הגסה מבין הקבוצות של הדוח"
    }
   ],
   "only": [
@@ -1028,9 +1363,17 @@
    "архитектуре",
    "архитектурой"
   ],
+  "match_he": [
+   "ארכיטקטורות",
+   "הארכיטקטורות",
+   "לכל ארכיטקטורה",
+   "בארכיטקטורות",
+   "לארכיטקטורות"
+  ],
   "scope": "first",
   "en": "A platform drawn as one line through the ten layers, one technology per layer — {{N_PATHS}} such lines carry the {{N_MACHINES}} registered machines",
   "ru": "Платформа, проведённая одной линией через десять слоёв, по одной технологии на слой: {{N_PATHS}} таких линий несут {{N_MACHINES}} машин реестра",
+  "he": "פלטפורמה המצוירת כקו אחד דרך עשר השכבות, טכנולוגיה אחת לכל שכבה — {{N_PATHS}} קווים כאלה נושאים את {{N_MACHINES}} המכונות הרשומות",
   "src": "§8",
   "why": "Finer than family, coarser than a single machine; the chapter argues by architecture, not by company",
   "only": [
@@ -1046,9 +1389,15 @@
   "match_ru": [
    "попытку"
   ],
+  "match_he": [
+   "ניסיונות",
+   "ניסיון",
+   "הניסיונות"
+  ],
   "scope": "first",
   "en": "A machine read as an argument: this combination of technologies will reach the goal before the others — the register holds {{N_MACHINES}} of them",
   "ru": "Машина, прочитанная как аргумент: именно это сочетание технологий дойдёт до цели раньше других; в реестре таких {{N_MACHINES}}",
+  "he": "מכונה הנקראת כטיעון: צירוף הטכנולוגיות הזה יגיע ליעד לפני האחרים — במרשם יש {{N_MACHINES}} כאלה",
   "src": "§8 / §8.3",
   "why": "The chapter title counts attempts, not products — it tells the reader machines are being read as claims",
   "only": [
@@ -1063,9 +1412,14 @@
   "match_ru": [
    "технология связи"
   ],
+  "match_he": [
+   "טכנולוגיית קישור",
+   "טכנולוגיות קישור"
+  ],
   "scope": "first",
   "en": "A demonstrated way of joining one module to another — the layer that is absent or undisclosed on {{N_IC_NONE_OR_UNDISC}} of the {{N_MACHINES}} machines",
   "ru": "Продемонстрированный способ соединить один модуль с другим — слой, отсутствующий или не раскрытый у {{N_IC_NONE_OR_UNDISC}} из {{N_MACHINES}} машин",
+  "he": "דרך מודגמת לחבר מודול אחד לאחר — השכבה שנעדרת או אינה נחשפת ב-{{N_IC_NONE_OR_UNDISC}} מתוך {{N_MACHINES}} המכונות",
   "src": "§8",
   "why": "Every modular roadmap depends on this one entry, which is why its emptiness is a headline",
   "only": [
@@ -1081,9 +1435,14 @@
    "интегрированное управление",
    "интегрированное"
   ],
+  "match_he": [
+   "בקרה משולבת",
+   "הבקרה המשולבת"
+  ],
   "scope": "first",
   "en": "Qubits driven by electronics on the chip or inside the refrigerator, instead of racks of room-temperature instruments and free-space optics",
   "ru": "Кубиты, управляемые электроникой на чипе или внутри рефрижератора, а не стойками приборов комнатной температуры и оптикой в свободном пространстве",
+  "he": "קיוביטים המונעים על ידי אלקטרוניקה על השבב או בתוך המקרר, במקום ארונות של מכשירים בטמפרטורת החדר ואופטיקה במרחב חופשי",
   "src": "§8",
   "why": "The slow variable of the whole chapter; without the contrast the phrase sounds like a generic virtue"
  },
@@ -1099,9 +1458,16 @@
    "замкнутое",
    "замкнут"
   ],
+  "match_he": [
+   "פענוח בלולאה סגורה",
+   "מפענח בלולאה",
+   "מפענחים בלולאה",
+   "פענוח בלולאה"
+  ],
   "scope": "first",
   "en": "The error-correction decoder keeps up with the machine and acts inside the cycle, instead of analysing the run afterwards",
   "ru": "Декодер коррекции ошибок успевает за машиной и действует внутри такта, а не разбирает запуск потом",
+  "he": "המפענח של תיקון השגיאות עומד בקצב המכונה ופועל בתוך המחזור, במקום לנתח את ההרצה בדיעבד",
   "src": "§8",
   "why": "Five machines out of 136 do this; the difference from offline decoding is what makes that number meaningful"
  },
@@ -1116,9 +1482,15 @@
    "вердикты",
    "вердиктов"
   ],
+  "match_he": [
+   "פסק מפת דרכים",
+   "פסק מפת הדרכים",
+   "פסקי מפות הדרכים"
+  ],
   "scope": "first",
   "en": "The register's own check of a published roadmap against the algorithm it promises: does it reach it, miss it, or not publish enough to be checked",
   "ru": "Собственная проверка реестром опубликованной дорожной карты по алгоритму, который она обещает: дотягивает, не дотягивает или данных для проверки нет",
+  "he": "הבדיקה שהמרשם עצמו עורך למפת דרכים שפורסמה מול האלגוריתם שהיא מבטיחה: האם היא מגיעה אליו, מחטיאה אותו, או אינה מפרסמת מספיק כדי שאפשר יהיה לבדוק",
   "src": "§8",
   "why": "These verdicts are computed here, not quoted from the vendor — the reader should not take them as company statements",
   "only": [
@@ -1133,9 +1505,14 @@
   "match_ru": [
    "реестр прогнозов"
   ],
+  "match_he": [
+   "פנקס התחזיות",
+   "פנקס תחזיות"
+  ],
   "scope": "first",
   "en": "The table of dated predictions this edition commits to, each with what would prove it wrong, scored in public by the editions that reach the date",
   "ru": "Таблица датированных прогнозов, на которые подписывается это издание, каждый с условием опровержения; издания, дошедшие до даты, оценивают их публично",
+  "he": "טבלת התחזיות המתוארכות שמהדורה זו מתחייבת להן, כל אחת עם מה שיוכיח שהיא שגויה; המהדורות שיגיעו למועד יעניקו להן ציון בפומבי",
   "src": "§8.5",
   "why": "Unusual in a report of this kind; the reader should see it is a commitment, not a projection",
   "only": [
@@ -1154,9 +1531,15 @@
    "Гонка за числом кубитов",
    "гонка за числом"
   ],
+  "match_he": [
+   "המרוץ על מספר הקיוביטים",
+   "מרוץ מספר הקיוביטים",
+   "המרוץ על המספר"
+  ],
   "scope": "first",
   "en": "The competition over physical qubit count, which the register shows has stalled: the largest machines that actually run a gate have not grown for three and four years",
   "ru": "Гонка за числом физических кубитов, которая, как показывает реестр, встала: крупнейшие машины, реально выполняющие гейт, не растут три и четыре года",
+  "he": "התחרות על מספר הקיוביטים הפיזיים, שהמרשם מראה שנעצרה: המכונות הגדולות ביותר שמריצות שער בפועל לא גדלו זה שלוש וארבע שנים",
   "src": "§0 / §8.6",
   "why": "Headline vocabulary the report is arguing against; the finding is in the qualifier 'that run a gate'"
  },
@@ -1169,9 +1552,13 @@
    "разрыв анонсов",
    "Разрыв анонсов"
   ],
+  "match_he": [
+   "פער ההכרזות"
+  ],
   "scope": "first",
   "en": "The widening share of the newest machines that are announcements and plans rather than hardware — 43% of the 2026 group against 4% in 2024",
   "ru": "Растущая доля новейших машин, которые остаются анонсами и планами, а не железом: 43% в группе 2026 года против 4% в 2024",
+  "he": "החלק ההולך וגדל של המכונות החדשות ביותר שהן הכרזות ותוכניות ולא חומרה — 43% מקבוצת 2026 לעומת 4% ב-2024",
   "src": "§8.4",
   "why": "The numbers are the definition here, and they are what makes the phrase a finding rather than a complaint"
  },
@@ -1183,9 +1570,15 @@
   "match_ru": [
    "стена I/O"
   ],
+  "match_he": [
+   "חומת החיווט",
+   "חומת הקלט-פלט",
+   "חומת I/O"
+  ],
   "scope": "first",
   "en": "The wiring limit: one refrigerator carries only so many control lines and so much heat; one of the four limits on qubit count (§0 item 5, §8.4–8.6) — the largest wired system has 1,536 lines",
   "ru": "Ограничение проводки: в один рефрижератор входит лишь столько линий управления и столько тепла; одно из четырёх ограничений на число кубитов (§0, пункт 5; §8.4–8.6) — самая большая смонтированная система имеет 1 536 линий",
+  "he": "מגבלת החיווט: מקרר אחד נושא רק מספר מסוים של קווי בקרה וכמות מסוימת של חום; אחת מארבע המגבלות על מספר הקיוביטים (§0 סעיף 5, §8.4–8.6) — במערכת המחווטת הגדולה ביותר יש 1,536 קווים",
   "src": "§2.1 / §5.1",
   "why": "Used unexplained in profiles and in the directions list"
  },
@@ -1201,9 +1594,18 @@
    "Брифы",
    "Бриф"
   ],
+  "match_he": [
+   "תקצירים",
+   "תקציר",
+   "התקצירים",
+   "תקצירי הטכנולוגיות",
+   "תקציר הטכנולוגיה",
+   "תקציר טכנולוגיה"
+  ],
   "scope": "first",
   "en": "The stand-alone article on one technology — same skeleton every time, from physics and manufacturing through verification and actors to what to watch",
   "ru": "Отдельная статья по одной технологии — всегда один скелет: от физики и изготовления через проверку и игроков до того, за чем следить",
+  "he": "המאמר העצמאי על טכנולוגיה אחת — אותו שלד בכל פעם, מהפיזיקה והייצור, דרך האימות והשחקנים, ועד למה שכדאי לעקוב אחריו",
   "src": "About",
   "why": "One of the five parts of the publication; the reader meets the word before ever seeing one"
  },
@@ -1216,9 +1618,15 @@
    "среза",
    "срезе"
   ],
+  "match_he": [
+   "תאריך הקפאת הנתונים",
+   "הקפאת הנתונים",
+   "הקפאת נתונים"
+  ],
   "scope": "first",
   "en": "The date every number in the report is read at, so that figures from different sources can be compared — later news is listed separately, not merged in",
   "ru": "Дата, на которую прочитаны все числа отчёта, чтобы данные из разных источников были сопоставимы; более поздние новости перечислены отдельно, а не вмешаны",
+  "he": "התאריך שלפיו נקרא כל מספר בדוח, כדי שאפשר יהיה להשוות נתונים ממקורות שונים — חדשות מאוחרות יותר מפורטות בנפרד ואינן משולבות",
   "src": "Header / §6.1",
   "why": "Explains why a reader's newer number may be absent: it is a discipline, not an oversight"
  },
@@ -1231,10 +1639,15 @@
    "центральности",
    "центральность"
   ],
+  "match_he": [
+   "מרכזיות",
+   "המרכזיות"
+  ],
   "scope": "first",
   "re": null,
   "en": "How much rests on a technology in the graph — how many platform families and architectures depend on it, and how recently it reached hardware; it sets a brief's depth, not a verdict",
   "ru": "Сколько всего опирается на технологию в графе: сколько семейств платформ и архитектур от неё зависят и насколько недавно она дошла до железа — задаёт глубину брифа, а не оценку технологии",
+  "he": "כמה נשען על טכנולוגיה בגרף — כמה משפחות פלטפורמה וארכיטקטורות תלויות בה, ועד כמה לאחרונה היא הגיעה לחומרה; היא קובעת את עומקו של תקציר, לא פסק",
   "src": "About / briefs preface",
   "why": "About and the brief index use the word before the preface defines it"
  }

@@ -115,8 +115,10 @@ NOTE_REMARKS = ('UNMATCHED ORG', 'org-alignment', 'body_id', 'must be carried', 
 GUARD_WORDS = ('Computation', 'Computing', 'computing', 'computation')
 
 HEAD = {'en': ('Machines in the Atlas', 'Technologies its machines use', 'Architectures', 'Mentioned in the briefs of'),
-        'ru': ('Машины в Атласе', 'Технологии её машин', 'Архитектуры', 'Упоминается в брифах')}
-HEAD_CO = {'en': 'Machines it co-developed (filed under another organisation)', 'ru': 'Машины, созданные с её участием (учтены за другой организацией)'}
+        'ru': ('Машины в Атласе', 'Технологии её машин', 'Архитектуры', 'Упоминается в брифах'),
+        'he': ('מכונות באטלס', 'טכנולוגיות שמכונותיו משתמשות בהן', 'ארכיטקטורות', 'מוזכר בתקצירים של')}
+HEAD_CO = {'en': 'Machines it co-developed (filed under another organisation)', 'ru': 'Машины, созданные с её участием (учтены за другой организацией)',
+           'he': 'מכונות שפיתח בשותפות (רשומות תחת ארגון אחר)'}
 RULES = [('1', 'org_id is a register name'),
          ('1*', 'org_id is an id form of a register name (case, first word)'),
          ('2', 'org_id is an academic body of academic-bodies.csv'),

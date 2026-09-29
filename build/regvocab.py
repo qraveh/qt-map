@@ -22,28 +22,28 @@ ACCESS = {   # the register's access value → Russian
     'domestic academic access': 'доступ для отечественных академических групп', 'partners only': 'только партнёры',
     'internal': 'внутреннее использование', 'on-prem': 'у заказчика', 'cloud': 'облако',
 }
-SCOPE = {'typical': ('typical', 'типичное'), 'best': ('best', 'лучшее')}   # the scope of a standard record
+SCOPE = {'typical': ('typical', 'типичное', 'טיפוסי'), 'best': ('best', 'лучшее', 'הטוב ביותר')}   # the scope of a standard record
 FLAGS = {   # the register's caveat slugs on a machine → words (27 Sep 2026: 61 machine pages printed the slugs)
-    'no-published-error-rates': ('no published error rates', 'ошибки гейтов не опубликованы'), 'source-not-confirmed': ('source not confirmed', 'источник не подтверждён'),
-    'target-not-device': ('a target, not a device', 'цель, не устройство'), 'spec-absent': ('specification absent', 'спецификация отсутствует'),
-    'cryo-gap': ('cryogenic details missing', 'нет данных о криогенике'), 'conflicting-claim': ('conflicting claims', 'противоречивые заявления'),
-    'schedule-risk': ('schedule risk', 'риск сроков'), 'estimated-baseline': ('estimated baseline', 'оценочная база'),
-    'post-selection-dominated': ('post-selection dominates the result', 'результат определяется постселекцией'), 'component-only': ('a component, not a machine', 'компонент, не машина'),
-    'press-only': ('press sources only', 'только пресса'), 'no-code-named': ('no code named', 'код не назван'), 'no-device': ('no device yet', 'устройства ещё нет'),
-    'conflicting-count': ('conflicting qubit counts', 'противоречивые числа кубитов'), 'vendor-claim': ('company claim', 'заявление компании'),
-    'eroded-claim': ('claim later eroded', 'заявление позже ослаблено'), 'code-id-missing': ('code id missing in the register', 'нет идентификатора кода в реестре'),
-    'analog-only': ('analog operation only', 'только аналоговый режим'), 'unverified-claim': ('unverified claim', 'непроверенное заявление'),
-    'annealer-reference-only': ('annealer reference only', 'только ссылка на отжигатель'), 'phase-flip-unpublished': ('phase-flip time unpublished', 'время фазового переворота не опубликовано'),
-    'rebutted-claim': ('claim rebutted', 'заявление опровергнуто'), 'roadmap-missed': ('roadmap date missed', 'срок дорожной карты пропущен'),
-    'snippet-only': ('source seen as a snippet only', 'источник виден только фрагментом'), 'code-node-mismatch': ('code and technology disagree', 'код и технология не согласуются'),
-    'no-numbers-published': ('no numbers published', 'числа не опубликованы'), 'no-entangling-gate': ('no entangling gate', 'нет перепутывающего гейта'),
-    'outlier-claim': ('outlier claim', 'выпадающее заявление'), 'assumption-gap': ('rests on an assumption', 'опирается на допущение'),
-    'no-logical-error-rate': ('no logical error rate', 'нет логической ошибки'), 'not-peer-reviewed': ('not peer-reviewed', 'без рецензирования'),
-    'no-distance-scaling': ('no distance scaling shown', 'масштабирование по расстоянию не показано'), 'name-not-qubit-count': ('the name is not a qubit count', 'название — не число кубитов'),
-    'access-disputed': ('access disputed', 'доступ оспаривается'), 'estimate-only': ('estimate only', 'только оценка'), 'acquisition-unconfirmed': ('acquisition unconfirmed', 'поглощение не подтверждено'),
-    'never-user-accessible': ('never accessible to users', 'никогда не была доступна пользователям'), 'test-chip-vs-system': ('test chip, not a system', 'тестовый чип, не система'),
-    'unverifiable-vendor-claim': ('unverifiable company claim', 'непроверяемое заявление компании'), 'aggressive-roadmap': ('aggressive roadmap', 'агрессивная дорожная карта'),
-    'unverifiable': ('unverifiable', 'непроверяемо'), 'contested': ('contested', 'оспаривается'), 'not-a-qubit': ('not a qubit', 'не кубит'), 'hero-pair-number': ('hero-pair number', 'число для лучшей пары'),
+    'no-published-error-rates': ('no published error rates', 'ошибки гейтов не опубликованы', 'לא פורסמו שיעורי שגיאה'), 'source-not-confirmed': ('source not confirmed', 'источник не подтверждён', 'המקור לא אושר'),
+    'target-not-device': ('a target, not a device', 'цель, не устройство', 'מטרה, לא התקן'), 'spec-absent': ('specification absent', 'спецификация отсутствует', 'אין מפרט'),
+    'cryo-gap': ('cryogenic details missing', 'нет данных о криогенике', 'חסרים פרטי הקריוגניקה'), 'conflicting-claim': ('conflicting claims', 'противоречивые заявления', 'טענות סותרות'),
+    'schedule-risk': ('schedule risk', 'риск сроков', 'סיכון בלוח הזמנים'), 'estimated-baseline': ('estimated baseline', 'оценочная база', 'בסיס משוער'),
+    'post-selection-dominated': ('post-selection dominates the result', 'результат определяется постселекцией', 'התוצאה נקבעת בסינון בדיעבד (post-selection)'), 'component-only': ('a component, not a machine', 'компонент, не машина', 'רכיב, לא מכונה'),
+    'press-only': ('press sources only', 'только пресса', 'מקורות עיתונאיים בלבד'), 'no-code-named': ('no code named', 'код не назван', 'לא צוין קוד'), 'no-device': ('no device yet', 'устройства ещё нет', 'עדיין אין התקן'),
+    'conflicting-count': ('conflicting qubit counts', 'противоречивые числа кубитов', 'מספרי קיוביטים סותרים'), 'vendor-claim': ('company claim', 'заявление компании', 'טענת החברה'),
+    'eroded-claim': ('claim later eroded', 'заявление позже ослаблено', 'הטענה נשחקה בהמשך'), 'code-id-missing': ('code id missing in the register', 'нет идентификатора кода в реестре', 'חסר מזהה קוד במרשם'),
+    'analog-only': ('analog operation only', 'только аналоговый режим', 'פעולה אנלוגית בלבד'), 'unverified-claim': ('unverified claim', 'непроверенное заявление', 'טענה לא מאומתת'),
+    'annealer-reference-only': ('annealer reference only', 'только ссылка на отжигатель', 'הפניה למחשב חישול בלבד'), 'phase-flip-unpublished': ('phase-flip time unpublished', 'время фазового переворота не опубликовано', 'זמן היפוך הפאזה לא פורסם'),
+    'rebutted-claim': ('claim rebutted', 'заявление опровергнуто', 'הטענה הופרכה'), 'roadmap-missed': ('roadmap date missed', 'срок дорожной карты пропущен', 'מועד מפת הדרכים הוחמץ'),
+    'snippet-only': ('source seen as a snippet only', 'источник виден только фрагментом', 'המקור נראה כקטע בלבד'), 'code-node-mismatch': ('code and technology disagree', 'код и технология не согласуются', 'הקוד והטכנולוגיה אינם מתיישבים'),
+    'no-numbers-published': ('no numbers published', 'числа не опубликованы', 'לא פורסמו מספרים'), 'no-entangling-gate': ('no entangling gate', 'нет перепутывающего гейта', 'אין שער שזירה'),
+    'outlier-claim': ('outlier claim', 'выпадающее заявление', 'טענה חריגה'), 'assumption-gap': ('rests on an assumption', 'опирается на допущение', 'נשען על הנחה'),
+    'no-logical-error-rate': ('no logical error rate', 'нет логической ошибки', 'אין שיעור שגיאה לוגית'), 'not-peer-reviewed': ('not peer-reviewed', 'без рецензирования', 'לא עבר ביקורת עמיתים'),
+    'no-distance-scaling': ('no distance scaling shown', 'масштабирование по расстоянию не показано', 'לא הוצגה הגדלה עם מרחק הקוד'), 'name-not-qubit-count': ('the name is not a qubit count', 'название — не число кубитов', 'השם אינו מספר הקיוביטים'),
+    'access-disputed': ('access disputed', 'доступ оспаривается', 'הגישה שנויה במחלוקת'), 'estimate-only': ('estimate only', 'только оценка', 'הערכה בלבד'), 'acquisition-unconfirmed': ('acquisition unconfirmed', 'поглощение не подтверждено', 'הרכישה לא אושרה'),
+    'never-user-accessible': ('never accessible to users', 'никогда не была доступна пользователям', 'מעולם לא הייתה נגישה למשתמשים'), 'test-chip-vs-system': ('test chip, not a system', 'тестовый чип, не система', 'שבב ניסוי, לא מערכת'),
+    'unverifiable-vendor-claim': ('unverifiable company claim', 'непроверяемое заявление компании', 'טענת חברה שאי אפשר לאמת'), 'aggressive-roadmap': ('aggressive roadmap', 'агрессивная дорожная карта', 'מפת דרכים אגרסיבית'),
+    'unverifiable': ('unverifiable', 'непроверяемо', 'אי אפשר לאמת'), 'contested': ('contested', 'оспаривается', 'שנוי במחלוקת'), 'not-a-qubit': ('not a qubit', 'не кубит', 'אינו קיוביט'), 'hero-pair-number': ('hero-pair number', 'число для лучшей пары', 'ערך של זוג שיא'),
 }
 
 
@@ -56,6 +56,11 @@ PLURAL = {   # Russian plural forms: one, few (2–4), many
     'stations': ('технология', 'технологии', 'технологий'),
     'machines': ('машина', 'машины', 'машин'),
 }
+PLURAL_HE = {   # Hebrew: one form for 1 — the whole phrase, the number word inside it — and one for every other number
+    'qubits': ('קיוביט פיזי אחד', 'קיוביטים פיזיים'),
+    'stations': ('טכנולוגיה אחת', 'טכנולוגיות'),
+    'machines': ('מכונה אחת', 'מכונות'),
+}
 
 
 def ru_plural(n, forms):
@@ -65,6 +70,13 @@ def ru_plural(n, forms):
     if n % 10 == 1 and n % 100 != 11: return forms[0]
     if 2 <= n % 10 <= 4 and not 12 <= n % 100 <= 14: return forms[1]
     return forms[2]
+
+
+def he_count(n, forms):
+    """the Hebrew count phrase of n: forms[0] for 1 («טכנולוגיה אחת»), otherwise 'n forms[1]' («12 טכנולוגיות»)"""
+    try: k = abs(int(n))
+    except (TypeError, ValueError): k = None
+    return forms[0] if k == 1 else '%s %s' % (n, forms[1])
 
 
 def status_ru(s):
@@ -85,8 +97,22 @@ def _pick(L, x):
     return pick(L, x)
 
 
-STATUS_T = {'ru': STATUS}   # the register's status word → the language's word ('he': {...} when written)
-ACCESS_T = {'ru': ACCESS}
+STATUS_HE = {   # the register's status word → Hebrew (the status words of data/i18n/he-terms.md, masculine as there: the device, התקן)
+    'DEPLOYED': 'בהפעלה', 'DEPLOYING': 'בפריסה', 'DEMONSTRATED': 'הודגם', 'ANNOUNCED': 'הוכרז',
+    'PLANNED': 'מתוכנן', 'RETIRED': 'הוצא משימוש', 'CONTESTED': 'שנוי במחלוקת', 'DISTRIBUTED': 'מבוזר',
+    'DEMONSTRATED-in-validation': 'הודגם (האימות נמשך)',
+}
+ACCESS_HE = {   # the register's access value → Hebrew
+    'lab-only': 'במעבדה בלבד', 'lab': 'מעבדה', 'n/a': 'לא ישים', 'not disclosed': 'לא נמסר',
+    'cloud service': 'שירות ענן', 'free open-access cloud': 'ענן פתוח ללא תשלום', 'was cloud service': 'היה שירות ענן',
+    'on-prem sold': 'נמכר להתקנה באתר הלקוח', 'on-prem sold + cloud': 'נמכר להתקנה באתר הלקוח + ענן',
+    'cloud service + export sales': 'שירות ענן + מכירות לייצוא', 'research use': 'שימוש מחקרי',
+    'sold as components': 'נמכר כרכיבים', 'on-prem at a national testbed': 'באתר של מתקן ניסוי לאומי',
+    'domestic academic access': 'גישה לקבוצות אקדמיות מקומיות', 'partners only': 'שותפים בלבד',
+    'internal': 'שימוש פנימי', 'on-prem': 'באתר הלקוח', 'cloud': 'ענן',
+}
+STATUS_T = {'ru': STATUS, 'he': STATUS_HE}   # the register's status word → the language's word
+ACCESS_T = {'ru': ACCESS, 'he': ACCESS_HE}
 
 
 def status_l(s, L):
@@ -103,4 +129,5 @@ def access_l(a, L):
 
 
 TABLE = {'status': STATUS, 'access': ACCESS, 'scope': {k: v[1] for k, v in SCOPE.items()}, 'plural': PLURAL}   # the Russian table (the old name)
-TABLES = {'ru': TABLE}   # for window.__MACH.t: {lang: {status, access, scope, plural}}; a language without a table reads the register's English
+TABLE_HE = {'status': STATUS_HE, 'access': ACCESS_HE, 'scope': {k: v[2] for k, v in SCOPE.items()}, 'plural': PLURAL_HE}   # plural: (one, other), see he_count
+TABLES = {'ru': TABLE, 'he': TABLE_HE}   # for window.__MACH.t: {lang: {status, access, scope, plural}}; a language without a table reads the register's English

@@ -426,5 +426,5 @@ def splice(lang,start,end):
     if i<0 or j<0: raise SystemExit('report %s: section markers not found'%lang)
     open(p,'w',encoding='utf-8',newline='\n').write(s[:i]+sec.rstrip()+'\n\n---\n\n'+sec8.rstrip()+'\n'+s[k:])
 splice('en','## 7. The technology graph','## 9. References'); splice('ru','## 7. Граф технологий','## 9. Литература')
-if os.path.exists(os.path.join(ROOT,'report','report_HE.md')): splice('he','\n## 7. ','\n## 9. מקורות')   # the Hebrew report (29 Sep 2026): its §7/§8 are regenerated like the others
+if os.path.exists(os.path.join(ROOT,'report','report_HE.md')): splice('he','## 7. ','## 9. מקורות')   # markers without the newline — a marker that starts with one loses it at every run   # the Hebrew report (29 Sep 2026): its §7/§8 are regenerated like the others
 print('sec9 written', len(sec9('en').split()), len(sec9('ru').split()), '| sec8 (machines)', len(mc.sec_machines('en').split()), len(mc.sec_machines('ru').split()))

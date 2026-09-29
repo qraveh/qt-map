@@ -39,8 +39,8 @@ FIND_HTML = r'''<div class="findbar" id="findbar" hidden role="search" aria-labe
   <button type="button" class="fb findclose" id="findclose" aria-label="close (Escape)" title="close (Escape)">✕</button>
  </div>
  <div class="findopts" id="findopts">
-  <button type="button" class="fo" id="findcase" title="click to toggle"><span class="lang-en">case-insensitive</span><span class="lang-ru">без учёта регистра</span></button>
-  <button type="button" class="fo" id="findword" title="click to toggle"><span class="lang-en">substring</span><span class="lang-ru">подстрока</span></button>
+  <button type="button" class="fo" id="findcase" title="click to toggle"><span class="lang-en">case-insensitive</span><span class="lang-ru">без учёта регистра</span><span class="lang-he">לא תלוי רישיות</span></button>
+  <button type="button" class="fo" id="findword" title="click to toggle"><span class="lang-en">substring</span><span class="lang-ru">подстрока</span><span class="lang-he">מחרוזת חלקית</span></button>
   <span class="folang"><button type="button" class="fo" id="findlang" aria-haspopup="menu" aria-expanded="false" title="the language searched"><span id="findlangname">English</span> ▾</button><div class="fomenu" id="findlangmenu" hidden role="menu"></div></span>
   <span class="findmode" id="findmode" title="the query is read as a regular expression; an expression that does not parse is taken literally"></span>
   <span class="findwhere" id="findwhere"></span>
@@ -109,7 +109,7 @@ function makeRe(query){ var flags='gu'+(opts.cs?'':'i'), src=query, lit=false;
   try{ new RegExp(src,flags); }catch(e){ src=esc(query); lit=true; }
   if(opts.whole) src='(?<![\\p{L}\\p{N}_])(?:'+src+')(?![\\p{L}\\p{N}_])';
   var re=null; try{ re=new RegExp(src,flags); }catch(e){ try{ re=new RegExp(src,'g'+(opts.cs?'':'i')); }catch(e2){ re=null; } }
-  if(mode) mode.textContent=lit?T('literal','буквально'):'regex';
+  if(mode) mode.textContent=lit?T('literal','буквально','מילולי'):'regex';
   return re; }
 function scopeLangs(){ if(opts.scope==='all') return null; if(opts.scope==='this') return [lang()]; return [opts.scope]; }
 function inScope(lg){ var s=scopeLangs(); if(!s||!lg) return true; return s.indexOf(lg)>=0; }
@@ -170,9 +170,9 @@ function openCard(c){ if(window.__expandMap) window.__expandMap(); var ok=false;
 function go(i){ if(!hits.length){ show(); return; } i=((i%hits.length)+hits.length)%hits.length; cur=i; var h=hits[i];
   if(HL) CSS.highlights.delete('findcur'); unmark();
   if(h.kind==='text'){ var el=h.run.segs[0].node.parentElement; if(!el){ show(); return; } revealEl(el);
-    var r=rangeOf(h); var host=r?(r.startContainer.parentElement||el):el; if(!r||!visible(host)){ show(T('hidden here','скрыто здесь')); markRow(); return; }
+    var r=rangeOf(h); var host=r?(r.startContainer.parentElement||el):el; if(!r||!visible(host)){ show(T('hidden here','скрыто здесь','מוסתר כאן')); markRow(); return; }
     scrollTo(host); paintRange(r,host); show(); }
-  else if(h.kind==='meta'){ revealEl(h.el); if(visible(h.el)){ scrollTo(h.el); h.el.classList.add('findout'); } show((h.attr==='title'?T('tooltip: ','подсказка: '):h.attr+': ')+h.text.slice(0,140)); }
+  else if(h.kind==='meta'){ revealEl(h.el); if(visible(h.el)){ scrollTo(h.el); h.el.classList.add('findout'); } show((h.attr==='title'?T('tooltip: ','подсказка: ','הסבר צף: '):h.attr+': ')+h.text.slice(0,140)); }
   else if(h.kind==='card'){ var L=h.lang; if(L&&L!==lang()&&window.__setLang) window.__setLang(L);
     openCard(h.card); var insp=document.getElementById('insp'); var w=document.getElementById('mapwrap');
     if(insp&&!insp.hidden){ var runs=[]; walkInto(insp,L,runs,[],h.card); var re=makeRe(q.value.trim()); var k=0, found=null;
@@ -180,18 +180,18 @@ function go(i){ if(!hits.length){ show(); return; } i=((i%hits.length)+hits.leng
       if(found){ var rr=rangeOf(found); if(rr){ var hostEl=rr.startContainer.parentElement; try{ hostEl.scrollIntoView({block:'nearest'}); }catch(e){} paintRange(rr,hostEl); } }
       else if(w) scrollTo(w); }
     else if(w) scrollTo(w);
-    show(T('card: ','карточка: ')+h.card.name); }
+    show(T('card: ','карточка: ','כרטיס: ')+h.card.name); }
   markRow();
 }
 // ---------- the list of hits in context
 var RENDERED=0, ROWS=200;
-function whereOf(h){ if(h.kind==='card') return (h.card.kind==='node'?T('technology card','карточка технологии'):h.card.kind==='machine'?T('machine card','карточка машины'):T('architecture card','карточка архитектуры'))+' · '+h.card.name;
-  if(h.kind==='meta') return T('tooltip','подсказка');
+function whereOf(h){ if(h.kind==='card') return (h.card.kind==='node'?T('technology card','карточка технологии','כרטיס טכנולוגיה'):h.card.kind==='machine'?T('machine card','карточка машины','כרטיס מכונה'):T('architecture card','карточка архитектуры','כרטיס ארכיטקטורה'))+' · '+h.card.name;
+  if(h.kind==='meta') return T('tooltip','подсказка','הסבר צף');
   var el=h.run.segs[0].node.parentElement; if(!el) return '';
-  var b=el.closest('section.brief'); if(b){ var t=b.querySelector('h2,h3,.btitle'); return T('brief','бриф')+(t?' · '+t.textContent.trim().slice(0,60):''); }
-  if(el.closest('#mapbar')) return T('map controls','панель карты'); if(el.closest('#mapbody')) return T('map','карта'); if(el.closest('.mast')) return T('masthead','шапка'); if(el.closest('#pcwrap')) return T('strip','лента');
+  var b=el.closest('section.brief'); if(b){ var t=b.querySelector('h2,h3,.btitle'); return T('brief','бриф','תקציר')+(t?' · '+t.textContent.trim().slice(0,60):''); }
+  if(el.closest('#mapbar')) return T('map controls','панель карты','פקדי המפה'); if(el.closest('#mapbody')) return T('map','карта','המפה'); if(el.closest('.mast')) return T('masthead','шапка','כותרת העמוד'); if(el.closest('#pcwrap')) return T('strip','лента','הרצועה');
   var sb=el.closest('.secbody[data-sec]'); if(sb){ var hd=sb.previousElementSibling; if(hd&&/^H[23]$/.test(hd.tagName)){ var c=hd.cloneNode(true); var fb=c.querySelector('.foldbtn'); if(fb) fb.remove(); return c.textContent.replace(/\s+/g,' ').trim().slice(0,70); } }
-  var g=el.closest('dl.glossary,details.glossary-fold'); if(g) return T('glossary','глоссарий');
+  var g=el.closest('dl.glossary,details.glossary-fold'); if(g) return T('glossary','глоссарий','מילון מונחים');
   return ''; }
 function rowHTML(h,i){ var ctx='', wh=whereOf(h);
   if(h.kind==='text'||h.kind==='card'){ var t=h.run.text, a=Math.max(0,h.start-26), b=Math.min(t.length,h.end+80); ctx=(a>0?'…':'')+E(t.slice(a,h.start))+'<b>'+E(t.slice(h.start,h.end))+'</b>'+E(t.slice(h.end,b))+(b<t.length?'…':''); }
@@ -201,20 +201,20 @@ function E(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').repla
 function renderList(){ list.innerHTML=''; RENDERED=0; if(!hits.length){ list.hidden=true; keepFrac=null; layout(); return; } list.hidden=false; more(); layout();
   if(keepFrac!=null){ list.scrollTop=keepFrac*list.scrollHeight; keepFrac=null; } }   // a language switch re-runs the search: the list keeps its scroll fraction
 function more(){ var end=Math.min(hits.length,RENDERED+ROWS); var html=''; for(var i=RENDERED;i<end;i++) html+=rowHTML(hits[i],i); list.insertAdjacentHTML('beforeend',html); RENDERED=end;
-  if(RENDERED<hits.length){ var li=document.createElement('li'); li.className='more'; li.textContent=T('… more','… ещё')+' ('+(hits.length-RENDERED)+')'; li.addEventListener('click',function(){ li.remove(); more(); }); list.appendChild(li); } }
+  if(RENDERED<hits.length){ var li=document.createElement('li'); li.className='more'; li.textContent=T('… more','… ещё','… עוד')+' ('+(hits.length-RENDERED)+')'; li.addEventListener('click',function(){ li.remove(); more(); }); list.appendChild(li); } }
 function markRow(){ var rows=list.querySelectorAll('li.cur'); for(var i=0;i<rows.length;i++) rows[i].classList.remove('cur'); if(cur<0) return; var r=list.querySelector('li[data-i="'+cur+'"]'); if(r){ r.classList.add('cur'); try{ r.scrollIntoView({block:'nearest'}); }catch(e){} } }
 list.addEventListener('click',function(ev){ var li=ev.target.closest('li[data-i]'); if(!li) return; go(parseInt(li.dataset.i,10)); });
 function show(note){ if(!q.value.trim()){ cnt.textContent=''; where.textContent=''; if(mode) mode.textContent=''; return; }
-  cnt.textContent=hits.length?((cur>=0?(cur+1):'—')+' / '+hits.length+(hits.length>=MAXH?'+':'')):(running?'…':T('no hits','нет совпадений'));
+  cnt.textContent=hits.length?((cur>=0?(cur+1):'—')+' / '+hits.length+(hits.length>=MAXH?'+':'')):(running?'…':T('no hits','нет совпадений','אין התאמות'));
   var pend=opts.scope==='this'?[]:LANGS.filter(function(l){ return window.__langLoaded&&!window.__langLoaded(l)&&(opts.scope==='all'||opts.scope===l); });   // the languages searched whose text has not arrived yet, by name
-  where.textContent=(note||'')+(pend.length?(' · '+T('still loading: ','ещё загружается: ')+pend.map(function(l){ return NATIVE[l]||l; }).join(', ')):''); }
+  where.textContent=(note||'')+(pend.length?(' · '+T('still loading: ','ещё загружается: ','עדיין בטעינה: ')+pend.map(function(l){ return NATIVE[l]||l; }).join(', ')):''); }
 // ---------- options: each button names its current state
 function paintOpts(){ var c=document.getElementById('findcase'), w=document.getElementById('findword'), ln=document.getElementById('findlangname');
-  c.innerHTML=opts.cs?window.__LS('case-sensitive','с учётом регистра'):window.__LS('case-insensitive','без учёта регистра');   // one span per language (window.__LS)
-  w.innerHTML=opts.whole?window.__LS('whole word','целое слово'):window.__LS('substring','подстрока');
-  ln.textContent=opts.scope==='all'?T('all languages','все языки'):(opts.scope==='this'?(NATIVE[lang()]||lang()):(NATIVE[opts.scope]||opts.scope)); }
+  c.innerHTML=opts.cs?window.__LS('case-sensitive','с учётом регистра','תלוי רישיות'):window.__LS('case-insensitive','без учёта регистра','לא תלוי רישיות');   // one span per language (window.__LS)
+  w.innerHTML=opts.whole?window.__LS('whole word','целое слово','מילה שלמה'):window.__LS('substring','подстрока','מחרוזת חלקית');
+  ln.textContent=opts.scope==='all'?T('all languages','все языки','כל השפות'):(opts.scope==='this'?(NATIVE[lang()]||lang()):(NATIVE[opts.scope]||opts.scope)); }
 function langMenu(){ var m=document.getElementById('findlangmenu'); m.innerHTML=''; var items=[];
-  LANGS.forEach(function(l){ items.push([l,NATIVE[l]||l]); }); items.push(['all',T('all languages','все языки')]);
+  LANGS.forEach(function(l){ items.push([l,NATIVE[l]||l]); }); items.push(['all',T('all languages','все языки','כל השפות')]);
   items.forEach(function(it){ var b=document.createElement('button'); b.type='button'; b.setAttribute('role','menuitem'); b.textContent=it[1]; var on=(it[0]==='all'&&opts.scope==='all')||(it[0]!=='all'&&(opts.scope===it[0]||(opts.scope==='this'&&it[0]===lang()))); if(on) b.className='on';
     b.addEventListener('click',function(){ opts.scope=(it[0]==='all')?'all':(it[0]===lang()?'this':it[0]); m.hidden=true; document.getElementById('findlang').setAttribute('aria-expanded','false'); paintOpts(); lastKey=''; save(); if(q.value.trim()) run(false); }); m.appendChild(b); }); }
 document.getElementById('findlang').addEventListener('click',function(){ var m=document.getElementById('findlangmenu'); if(m.hidden){ langMenu(); m.hidden=false; this.setAttribute('aria-expanded','true'); } else { m.hidden=true; this.setAttribute('aria-expanded','false'); } });

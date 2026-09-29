@@ -30,7 +30,7 @@ FILES = ('media.csv', 'verdicts.csv', 'stories.csv', 'illustrates.csv', 'coverag
 HOSTED = ('EMBED', 'EMBED-ASIS'); KEPT = HOSTED + ('LINK-OUT',); DROPPED = ('QUARANTINE', 'REJECT')
 ROLE_RANK = {'shown-primary': 0, 'shown-machine': 1, 'shown-secondary': 2, 'shown-generation': 3, 'shown-background': 4,
              'also': 5, 'implied': 6}
-LINKOUT = {'en': 'external image — opens at the source', 'ru': 'внешнее изображение — откроется у источника'}
+LINKOUT = {'en': 'external image — opens at the source', 'ru': 'внешнее изображение — откроется у источника', 'he': 'תמונה חיצונית — נפתחת במקור'}
 
 
 def _lpick(lang, texts):
