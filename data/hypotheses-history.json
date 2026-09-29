@@ -1,0 +1,23 @@
+{
+ "note": "verdict history of the hypotheses of §8.4, one row per edition; written by build/machines_chapter.py; a frozen row is never rewritten",
+ "editions": [
+  {
+   "edition": "2026.09",
+   "machines": 160,
+   "devices": 110,
+   "cells": 1764,
+   "verified_share": 0.444,
+   "verdicts": {
+    "H1": "yes",
+    "H2": "yes",
+    "H3": "yes",
+    "H4": "part",
+    "H5": "yes",
+    "H6": "yes",
+    "H7": "yes",
+    "H8": "no"
+   },
+   "frozen": false
+  }
+ ]
+}

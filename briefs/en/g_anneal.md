@@ -25,7 +25,7 @@ Two clocks bound the schedule. From below, control bandwidth — DAC slew for fl
 | 2025-03 | Coherent quench 3.6–27 ns, up to 5,627 qubits; beyond-classical claim | D-Wave | [D][221] |
 | 2025–26 | Claim eroded by tensor networks and t-VMC | Tindall; Mauron & Carleo | [D][222], [223] |
 | 2025 | 69-qubit analog-digital simulator, beyond-classical on XEB only | Google | [D][225] |
-| 2025 | Aquila, 256 atoms, gauge-theory string breaking, no claim | QuEra | [D][226] |
+| 2025 | Aquila, 256 atoms, analog Rydberg evolution: gauge-theory string breaking, no claim | QuEra | [D][226] |
 
 Dominant limitation: no accepted certificate that analog output matches the Hamiltonian.
 
@@ -33,14 +33,14 @@ Dominant limitation: no accepted certificate that analog output matches the Hami
 Two supply chains carry one mechanism: Nb/Al superconducting lithography (D-Wave) and vacuum/laser/AOM tweezer stacks (QuEra, Pasqal). The I/O burdens scale oppositely: flux annealers push everything through one mK stage on multiplexed on-chip DACs, while tweezer machines add laser power, deflectors and imaging per atom — the optical table is the constraint. Pasqal has begun displacing bulk optics with a silicon-nitride photonic IC: four traps from one chip, atom lifetime ~27.5 s [C][G:PASQAL-PIC-2026-08]. No export rule names analog evolution: exposure is inherited from the carrier — ECCN 4A906 and 3A904 for the flux line, nothing for tweezer optics.
 
 ## Role in the stack
-Feeds analog carriers only and provides nothing to a gate-model stack; the field's standard error is reading an analog sampling claim as gate-model advantage. Quantinuum's magnetism result is quoted alongside these but is Trotterised digital simulation competing for the same budget [D][227]. No derived clock applies; the figure is quench time, ~4 ns to µs, plus one measurement. Verification is comparison against classical solvers, never randomized benchmarking, and the target moves: D-Wave's March 2025 claim was eroded within weeks [222], [223], its counter arguing the tensor-network scaling used against it is unvalidated [P][224]. Unresolved as of 4 Sep 2026.
+Architecture: quantum annealer — flux qubits, where it is the only gate mechanism. The register lists 3 machines using it, among them D-Wave's Advantage2 and Advantage. It runs on the flux-qubit carrier only — Rydberg arrays use the separate analog Rydberg Hamiltonian evolution — and provides nothing to a gate-model stack; the field's standard error is reading an analog sampling claim as gate-model advantage. Quantinuum's magnetism result is quoted alongside these but is Trotterised digital simulation competing for the same budget [D][227]. No derived clock applies; the figure is quench time, ~4 ns to µs, plus one measurement. Verification is comparison against classical solvers, never randomized benchmarking, and the target moves: D-Wave's March 2025 claim was eroded within weeks [222], [223], its counter arguing the tensor-network scaling used against it is unvalidated [P][224]. Unresolved as of 4 Sep 2026.
 
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What they do | Evidence |
 |---|---|---|---|---|
 | D-Wave Quantum | developer | US/Canada | Coherent-quench annealer; the disputed claim | [D][221] |
-| QuEra Computing | developer | US | Aquila Rydberg on Braket; Libra 2028 | [D][226] |
+| QuEra Computing | developer | US | Aquila Rydberg on Braket (analog Rydberg evolution, not annealing); Libra 2028 | [D][226] |
 | Pasqal | developer | France | Analog Rydberg arrays; Nasdaq since 2026-08 | [P][156] |
 | Google Quantum AI | developer | US | Analog-digital simulator; atom track 2026-03 | [G:GOOGLE-ATOMS-2026-03] |
 

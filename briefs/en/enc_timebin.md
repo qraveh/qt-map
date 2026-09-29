@@ -31,7 +31,7 @@ No logical qubit exists in this encoding, and the threshold it must meet is disp
 No fabrication step of its own: the encoding rides its host — PsiQuantum's 300 mm silicon nitride, Quandela's III–V quantum dots, QuiX's SiN meshes. Control is inherited: no per-qubit drive line, but every interferometer needs a phase shifter and every output a detector — thousands of cryogenic channels and their fan-out at 10³–10⁴ qubits. Chokepoints are the detector vendors (Single Quantum, ID Quantique, Photon Spot) and the III–V and SiN foundries [P][G:SNSPD-VENDORS-2026]; ECCN 4A906 applies [G:BIS-QUANTUM-2024].
 
 ## Role in the stack
-The encoding under the fusion-based discrete-variable architecture (PsiQuantum, Quandela, QuiX); it needs only a single-photon source and has no rival there. Swapping path for time-bin trades interferometer phase stability for delay-line loss, unaffordable on chip. It also caps fusion: passive linear-optical Bell measurement on a dual-rail qubit succeeds at 50%, at least 75% with unentangled ancillae [S][419]. Verification: no group has run a syndrome cycle using heralded loss as an erasure flag, so the advantage is a design argument, not a measurement.
+The encoding under the fusion-based discrete-variable architecture (PsiQuantum, Quandela, QuiX); it needs only a single-photon source, and its one rival there is the dual-rail encoding, primary on PsiQuantum's Omega and QuiX's Carina. Swapping path for time-bin trades interferometer phase stability for delay-line loss, unaffordable on chip. It also caps fusion: passive linear-optical Bell measurement on a dual-rail qubit succeeds at 50%, at least 75% with unentangled ancillae [S][419]. Verification: no group has run a syndrome cycle using heralded loss as an erasure flag, so the advantage is a design argument, not a measurement.
 
 ## Actors & economics
 **Who.**
@@ -40,7 +40,7 @@ The encoding under the fusion-based discrete-variable architecture (PsiQuantum, 
 |---|---|---|---|---|
 | PsiQuantum | developer | US | Path-encoded qubits on Omega | [D][169] |
 | Quandela | developer | FR | Photonic QPUs on quantum-dot sources | [C][G:QUANDELA-LUCY-HPC-2026-04] |
-| QuiX Quantum | developer | NL | Carina core delivered to DLR | [C][340] |
+| QuiX Quantum | developer | NL | Carina core delivered to DLR, dual-rail encoded | [C][340] |
 | Sparrow Quantum | supplier | DK | Only merchant single-photon source vendor | [P][342] |
 
 **Money.**

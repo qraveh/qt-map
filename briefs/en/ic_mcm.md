@@ -61,7 +61,7 @@ Latency is not the l-coupler's problem — the demonstrated inter-module SWAP is
 
 Three architectures use it: superconducting transmons, superconducting bosonic cat/GKP, superconducting dual-rail erasure. It requires superconducting-qubit lithography with multilayer routing and flip-chip packaging. It replaces inter-fridge cryogenic links, and the price is thermal: everything shares one cooling budget and one vacuum, so scaling stops at the fridge rather than at the network. Its contribution is manufacturability, not gate physics.
 
-Off-diagonal reading: a fabricated carrier acquiring far-range connectivity through packaging, where atoms and ions acquire it through motion. Derived clock = sum of the syndrome round: gate layers + transport + readout + reset for the architecture: 0.65 µs, readout at 282 ns its largest term, and the < 100 ns inter-module SWAP [D][752] is under 15% of the round, so transport does not bind. Neighbouring empty slots: cross-module error correction, and a qLDPC code whose checks span modules — compilation for such machines exists only in simulation [S][753].
+A fabricated carrier acquires far-range connectivity through packaging, where atoms and ions acquire it through motion. Derived clock = sum of the syndrome round: gate layers + transport + readout + reset for the architecture: 0.65 µs, readout at 282 ns its largest term, and the < 100 ns inter-module SWAP [D][752] is under 15% of the round, so transport does not bind. Neighbouring empty slots: cross-module error correction, and a qLDPC code whose checks span modules — compilation for such machines exists only in simulation [S][753].
 
 ## Evidence — how the numbers were measured
 
@@ -74,7 +74,7 @@ Rigetti's 99.1% and 99.5% are company medians without error bars or a stated pro
 | Organisation | Role | Country | What exactly they do with this technology | Evidence |
 |---|---|---|---|---|
 | IBM | developer | US | l-couplers between modules; modular cryogenic cells; Cockatoo 2027, Starling 2029 | [C][50], [481] [G:IBM-ROADMAP] |
-| Rigetti | developer | US | only shipped multi-chip system: 4- and 12-chiplet processors | [C][36], [751] [G:RIGETTI-FIN-2026] |
+| Rigetti | developer | US | only shipped multi-chip system with published figures: 4- and 12-chiplet processors | [C][36], [751] [G:RIGETTI-FIN-2026] |
 | QuantWare | supplier | Netherlands | merchant 3D-integrated chiplet stacks; VIO-40K, Kilofab Delft | [P][495] [G:QUANTWARE-VIO] |
 | SUSTech | research | CN | five-module aluminium-coax interconnect network | [D][748] |
 | Univ. of Illinois Urbana-Champaign | research | US | interchangeable modules, 99% inter-module SWAP < 100 ns | [D][752] |

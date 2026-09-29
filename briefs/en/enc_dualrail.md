@@ -37,7 +37,7 @@ Four floors are intrinsic: rail asymmetry, whose differential frequency shift de
 
 ## Engineering state of the art
 
-Best demonstrated as of 3 Sep 2026: a cavity dual-rail CZ in ~500 ns at ≈0.5% erasure per gate and 0.029(6)% post-selected Pauli error [D][84]. Typical at scale: nothing beyond eight qubits — Quantum Circuits' 8-qubit Aqumen Seeker (2024-11) [C][86], SUSTech's four dual-rail transmons (2025-04) [D][406].
+Best demonstrated as of 3 Sep 2026: a cavity dual-rail CZ in ~500 ns at ≈0.5% erasure per gate and 0.029(6)% post-selected Pauli error [D][84]. Typical at scale: nothing beyond sixteen sites — OQC GENESIS, 16 dual-rail sites with no published entangling gate (2025-09), Quantum Circuits' 8-qubit Aqumen Seeker (2024-11) [C][86], SUSTech's four dual-rail transmons (2025-04) [D][406].
 
 **Records timeline**
 
@@ -63,7 +63,7 @@ The encoding doubles control fan-out: two drive lines per qubit, or two cavities
 
 ## Role in the stack
 
-Dual-rail sits on two named architectures: "Superconducting dual-rail erasure" (Quantum Circuits/D-Wave, AWS, SUSTech) and "Photonic — fusion-based (DV)" (PsiQuantum, Quandela, QuiX). It requires a mid-circuit erasure check and is what that check reads; without one it is merely a lossier qubit. It replaces bare encoding at 2× the modes and conflicts with the plain surface code, which discards heralds. Hence the fabrication↔erasure off-diagonal: buy error *structure* with area, not error *rate* with coherence.
+Dual-rail sits on two architectures: "Dual-rail erasure qubits", as the primary encoding (Quantum Circuits/D-Wave, AWS, OQC, SUSTech), and "Fusion-based photonic (FBQC)", as an alternate (PsiQuantum, Quandela, QuiX). It requires a mid-circuit erasure check and is what that check reads; without one it is merely a lossier qubit. It replaces bare encoding at 2× the modes and conflicts with the plain surface code, which discards heralds. It buys error *structure* with area, not error *rate* with coherence.
 
 Derived clock = sum of the syndrome round: gate layers + transport + readout + reset: 2.8×10⁻⁶ s on the dual-rail architecture — four 5.0×10⁻⁷ s CZ layers [D][84] over a 4.0×10⁻⁷ s check [D][85] — gate-set on the cavity and the transmon route alike. Switching away is cheap in hardware, expensive in software: decoder, calibration and benchmarks assume heralds. Neighbouring empty slots: a dual-rail *logical* memory over repeated rounds, and the erasure-biased code consuming heralds and bias.
 
@@ -84,7 +84,7 @@ Replication is real: transmon AWS 2023 → SUSTech 2025 → AWS 2026; cavity Yal
 | Yale University | research | US | Origin of the cavity encoding; C2QA | [D][399], [401], [403] [G:DOE-NQISRC-2025-11] |
 | PsiQuantum | developer | US | Path-encoded dual-rail photonics, 300 mm | [D][169] [G:PSIQ-QBI-C-2026-07] |
 | SUSTech | research | China | Four dual-rail transmons; logical Bell, CNOT | [D][406] [G:SUSTECH-DUALRAIL-2025] |
-| Oxford Quantum Circuits | developer | UK | Industrial erasure-qubit review | [S][402] [G:OQC-SERIESC-2026-06] |
+| Oxford Quantum Circuits | developer | UK | GENESIS, 16 dual-rail sites, deployed 2025-09; industrial erasure-qubit review | [S][402] [G:OQC-SERIESC-2026-06] |
 | UMass Amherst | research | US | Transmon-qutrit erasure qubit | [D][405] |
 | ORCA Computing | developer | UK | Linear-optical dual-rail GHZ patents | [G][407] |
 
@@ -107,7 +107,7 @@ Replication is real: transmon AWS 2023 → SUSTech 2025 → AWS 2026; cavity Yal
 - D-Wave/Quantum Circuits: promised 2026-06-01, restated 2026-08-06 · DR17 (17 qubits, 2× logical error reduction) 2026, DR49 at 20× 2027, DR181 at 2,000× 2028, 10 logical 2030, 100 logical 2032, Λ = 10 · undelivered as of 2026-09-03 [R][409] [G:DWAVE-QCI-2026-01].
 - PsiQuantum: promised utility scale "before 2033" · Brisbane groundbreaking slipped to 2026-06-17 · at risk [G:PSIQ-1B-2025-09].
 - AWS: no dual-rail product promised · three papers delivered 2022–2026 [D][85], [400]. Oxford Quantum Circuits: TITAN announced with the Series C · no dated dual-rail target [C][60].
-Credibility: Quantum Circuits/D-Wave publishes the field's best channel numbers and has never shipped a system; AWS publishes and promises nothing; PsiQuantum's components are the best-characterised anywhere, its systems slip.
+Credibility: Quantum Circuits/D-Wave publishes the field's best channel numbers and has shipped only the 8-qubit Seeker; AWS publishes and promises nothing; PsiQuantum's components are the best-characterised anywhere, its systems slip.
 
 **Strategic reading.** If dual-rail wins, the winners own long-lived modes and cheap area — cavity vendors and photonic foundries — and the losers are transmon roadmaps spending their whole budget on T₁, since the encoding makes T₁ a *detected* cost, not a fatal one. Substitution runs hard from inside the family: the transmon-qutrit erasure qubit needs one transmon and one ancilla, not two rails, at logical T₁ > 500 µs against a physical ~55 µs [D][405]; dual-rail cat codes add bias to the same structure [S][410]. Bargaining power sits with platform vendors.
 

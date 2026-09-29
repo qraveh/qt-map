@@ -52,7 +52,7 @@ At 10³ the platform is done. At 10⁴ the constraints are aggregate trap power 
 
 ## Role in the stack
 
-One architecture: "Neutral atoms — alkali (Rb/Cs)". It requires optical/mechanical assembly and provides the carrier for Rydberg-blockade CZ, for fluorescence imaging of atom arrays, and for the atom–photon cavity interface a network layer would need. It replaces the alkaline-earth slot: switching costs a laser rebuild (narrow-line cooling and clock lasers at 689/698 nm) plus a decade of alkali Rydberg calibration, and buys native erasure conversion and non-destructive nuclear-spin readout. The field splits on that line — QuEra, Pasqal, Harvard, Tsinghua on alkalis; Atom Computing (Yb), Infleqtion, Caltech's gate work (Sr) on alkaline earths. Derived clock = sum of the syndrome round (gates 1 µs, transport 0.80 ms, 1Q 10 µs, readout 0.50 ms) ≈ **1.3 × 10⁻³ s**, set by transport then readout, never the gate. Neighbouring empty slots: no cavity interconnect at array scale, no cryogenic-vacuum array above 10³.
+Two architectures, primary in both: "Rydberg tweezer array — alkali (Rb/Cs)" and "Neutral-atom analog simulator (Rydberg arrays, lattice gases)". It requires optical/mechanical assembly and provides the carrier for Rydberg-blockade CZ, for fluorescence imaging of atom arrays, and for the atom–photon cavity interface a network layer would need. It replaces the alkaline-earth slot: switching costs a laser rebuild (narrow-line cooling and clock lasers at 689/698 nm) plus a decade of alkali Rydberg calibration, and buys native erasure conversion and non-destructive nuclear-spin readout. The field splits on that line — QuEra, Pasqal, Infleqtion (Cs), Harvard, Tsinghua on alkalis; Atom Computing (Yb), planqc (Sr), Caltech's gate work (Sr) on alkaline earths. Derived clock on the alkali tweezer array = sum of the syndrome round (gates 1 µs, transport 0.80 ms, 1Q 10 µs, readout 0.50 ms) ≈ **1.3 × 10⁻³ s**, set by transport then readout, never the gate. Neighbouring empty slots: no cavity interconnect at array scale, no cryogenic-vacuum array above 10³.
 
 ## Evidence — how the numbers were measured
 
@@ -74,7 +74,7 @@ Conflicts. The Caltech abstract says "over 6,100 atoms in around 12,000 sites"; 
 | Tsinghua | research | CN | 11,022-atom metasurface array, largest trapped ensemble | [D][145] |
 | Google Quantum AI | research | US | neutral-atom track opened 2026-03 under Adam Kaufman | [C][9] |
 | Atom Computing | developer | US | Yb competitor; Magne with Microsoft; QBI Stage B | [G][11] |
-| planqc | developer | DE | DLR and LRZ builds; 1,000 qubits at LRZ circa 2027 | [C][246] |
+| planqc | developer | DE | Sr competitor; DLR and LRZ builds; 1,000 qubits at LRZ circa 2027 | [C][246] |
 | TOPTICA | supplier | DE | dominant supplier of Rb/Cs cooling and trapping lasers | [P][329] |
 | Hamamatsu | supplier | JP | LCOS-SLMs and qCMOS cameras; owns Menlo and NKT | [P][329] |
 

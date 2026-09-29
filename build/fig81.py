@@ -94,8 +94,8 @@ def build(lang):
         boxes.append(chosen[3:]); marks.append((x, y))
         o.append('<text class="lb" x="%.1f" y="%.1f" text-anchor="%s">%s</text>' % (chosen[0], chosen[1], chosen[2], esc(txt)))
     o.append('</svg>')
-    cap = ('<b>Figure 8.1 — Physical qubit count against median two-qubit error</b>, for the %d registered machines that publish both (hero-pair numbers excluded). The families separate along the qubit axis more than along the error axis — the reading behind H1 and H2; hover a mark for the machine.' % len(pts)) if en else \
-          ('<b>Рисунок 8.1 — Число физических кубитов против медианной двухкубитной ошибки</b> для %d зарегистрированных машин, публикующих обе величины (рекордные пары исключены). Семейства расходятся по оси числа кубитов сильнее, чем по оси ошибки — это чтение, стоящее за H1 и H2; наведите на метку, чтобы увидеть машину.' % len(pts))
+    cap = ('<b>Figure 8.1 — Physical qubit count against median two-qubit error</b>, for the %d registered quantum machines that publish both (hero-pair numbers excluded). The families separate along the qubit axis more than along the error axis — the reading behind H1 and H2; hover a mark for the machine.' % len(pts)) if en else \
+          ('<b>Рисунок 8.1 — Число физических кубитов против медианной двухкубитной ошибки</b> для %d зарегистрированных квантовых машин, публикующих обе величины (рекордные пары исключены). Семейства расходятся по оси числа кубитов сильнее, чем по оси ошибки — это чтение, стоящее за H1 и H2; наведите на метку, чтобы увидеть машину.' % len(pts))
     o.append('<figcaption>%s</figcaption></figure>' % cap)
     return '\n'.join(o) + '\n', len(pts)
 

@@ -32,7 +32,7 @@ The 2026 benchmark claim does not survive comparison: PsiQuantum's 52 mdB is ~39
 No new fabrication: fibre, connectors and edge-coupled arrays are commodity telecom, with Corning fibre arrays and DISCO singulation behind Xanadu's coupling figure [C][172]. The scaling variable is attachment count: every module boundary is two attachments, each a yield event and a 52 mdB loss event, so at 10³ modules packaging throughput sets the build rate; at 10⁴ bundle volume and timing calibration bind; nothing addresses 10⁶. I/O burden sits upstream, in the source and the fusion measurement. The machine falls under BIS ECCN 4A906 [G:BIS-QUANTUM-2024].
 
 ## Role in the stack
-Both photonic architectures depend on it — fusion (PsiQuantum, Quandela, QuiX) and continuous-variable/GKP (Xanadu) — to scale past one chip's mode count, contributing ~0.21 µs per 42 m to the derived clock, comparable to the whole feed-forward term. Verification: the 99.72% is a conditional Bell fidelity on heralded events, channel loss excluded [D][169], so it says nothing about link efficiency, and it is single-source as of 2026-09-04.
+Two photonic architectures depend on it — fusion (PsiQuantum, Quandela, QuiX) and continuous-variable/GKP (Xanadu) — to scale past one chip's mode count, contributing ~0.21 µs per 42 m to the derived clock, comparable to the whole feed-forward term. Verification: the 99.72% is a conditional Bell fidelity on heralded events, channel loss excluded [D][169], so it says nothing about link efficiency, and it is single-source as of 2026-09-04.
 
 ## Actors & economics
 **Who.**

@@ -14,7 +14,7 @@ NN = len(GRAPH['nodes']); NP = len(GRAPH['paths']); NM = len(MACH['machines'])  
 FAM_COUNT = {f: sum(1 for m in MACH['machines'] if m['family'] == f) for f in ['SC', 'ION', 'ATOM', 'PHOTON', 'SPIN', 'DEFECT', 'TOPO', 'ANNEAL']}
 def place_count(v): return sum(1 for n in GRAPH['nodes'] if v in n['e']['place'])
 PLACE_4K = sorted(n['id'] for n in GRAPH['nodes'] if '4K' in n['e']['place'])
-GLYPH_N = [str(sum(1 for n in GRAPH['nodes'] if n['offdiag'])), str(len(GRAPH['empty_status']))]
+GLYPH_N = [str(len(GRAPH['empty_status']))]
 WILLOW = next(m for m in MACH['machines'] if m['id'] == 'google-willow')
 WILLOW_NODES = {c['node'] for cells in WILLOW['layers'].values() for c in cells if c.get('state', 'station') == 'station'}   # gaps and the cell values none / undisclosed are not nodes
 WILLOW_ALT = {c['node'] for cells in WILLOW['layers'].values() for c in cells if c['role'] == 'alternate' and c.get('state', 'station') == 'station'}
@@ -120,7 +120,7 @@ def run(pw, w, h):
     click_station('code_surface'); r = read()
     check('code_surface card: no hub badge (the category was removed on 28 Sep 2026)', 'hub' not in r['card'].lower() and '◎' not in r['card'], r['card'][:300])
     click_station('ct_sfq'); r = read()
-    check('ct_sfq card: off-diagonal badge with the flag definition', '⤢ off-diagonal — fabricated carrier + control/decoding in the cold stage' in r['card'], r['card'][:300])
+    check('ct_sfq card: the crossing-technology line with the flag definition', 'crossing technology — fabricated carrier + control/decoding in the cold stage' in r['card'], r['card'][:300])
     p.keyboard.press('Escape')
     # brief F (17 Sep): place is a list — 4 K lights ct_cryocmos, ct_sfq, ro_spd; mK lights ct_sfq too; no 'vac' anywhere; the card joins the stages
     p.select_option('#lens', 'place'); p.wait_for_function("document.querySelectorAll('#lenslegend [data-lv]').length>0")
@@ -141,8 +141,8 @@ def run(pw, w, h):
     novac = p.evaluate("()=>{const h=document.documentElement.outerHTML; return !document.querySelector('[data-lv=\"vac\"]') && h.indexOf('\"vac\"')<0 && h.indexOf(\"'vac'\")<0 && h.indexOf('@vac')<0 && h.indexOf('in-vacuum integrated')<0;}")
     check('no value "vac" anywhere in the DOM', novac)
     keys = p.evaluate("()=>[...document.querySelectorAll('#glyphlegend [data-glyph]')].map(e=>({k:e.dataset.glyph,n:e.querySelector('.cnt').textContent,title:e.title,role:e.getAttribute('role')}))")
-    check('glyph legend: 2 static keys with counts and definitions, no button role', [k['k'] for k in keys] == ['offd', 'empty'] and [k['n'] for k in keys] == GLYPH_N and all(k['title'] and k['role'] is None for k in keys), keys)
-    p.locator('#glyphlegend [data-glyph="offd"]').dispatch_event('click'); r = read()
+    check('glyph legend: 1 static key with a count and a definition, no button role', [k['k'] for k in keys] == ['empty'] and [k['n'] for k in keys] == GLYPH_N and all(k['title'] and k['role'] is None for k in keys), keys)
+    p.locator('#glyphlegend [data-glyph="empty"]').dispatch_event('click'); r = read()
     check('glyph key click: no lens change, nothing dimmed', p.locator('#lens').evaluate('e=>e.value') == 'family' and len(r['lit']) == NN, (p.locator('#lens').evaluate('e=>e.value'), len(r['lit'])))
 
     p.locator('[data-setlang="ru"]').filter(visible=True).first.click()

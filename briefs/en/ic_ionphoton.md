@@ -46,7 +46,7 @@ Per link: one collection channel per ion, two detectors, a phase-stable optical 
 
 ## Role in the stack
 
-It requires the trapped atomic ion and single-photon detection (SNSPD/TES) and provides for nothing downstream: a terminal capability, the exit from single-trap scaling. Architectures served: QCCD laser-gate ions (Quantinuum, AQT) and electronic-gate, chip-controlled ions (IonQ/Oxford Ionics, eleQtron, Quantum Art). The graph lists no replacement or conflict, but in-trap transport is the functional rival and currently wins. Derived-clock contribution: dominant where used — at 250 s⁻¹ one inter-module pair costs 4.0×10⁻³ s, comparable to a full-width ion layer; at 9.7 s⁻¹ it is 1.0×10⁻¹ s.
+It requires the trapped atomic ion and single-photon detection (SNSPD/TES) and provides for nothing downstream: a terminal capability, the exit from single-trap scaling. Architectures served: all three trapped-ion architectures, as primary — QCCD (Quantinuum), the linear Paul trap with laser addressing (AQT, Maryland/Duke, Quantum Art) and electronic-gate, chip-controlled ions (IonQ/Oxford Ionics, eleQtron). The graph lists no replacement or conflict, but in-trap transport is the functional rival and currently wins. Derived-clock contribution: dominant where used — at 250 s⁻¹ one inter-module pair costs 4.0×10⁻³ s, comparable to a full-width ion layer; at 9.7 s⁻¹ it is 1.0×10⁻¹ s.
 
 ## Evidence — how the numbers were measured
 
@@ -61,7 +61,7 @@ Heralded fidelity is tomography or parity oscillation conditioned on a successfu
 | University of Oxford | research | UK | 2-m link, teleported CZ and distributed Grover | [D][115] |
 | Duke University | research | US | Co-holder of the 250 s⁻¹ record | [D][116] |
 | IonQ | developer | US | Networked two systems; owns Lightsynq and ID Quantique | [C][589] |
-| Quantinuum | developer | US | Scales by in-trap transport; no photonic commitment | [D][113] |
+| Quantinuum | developer | US | Scales by in-trap transport; photonic link only as Apollo's stated direction | [D][113] |
 | ID Quantique | supplier | CH | SNSPD vendor, acquired by IonQ | [P][G:SNSPD-VENDORS-2026] |
 | Single Quantum | supplier | NL | Merchant SNSPD supplier, independent | [P][G:SNSPD-VENDORS-2026] |
 | AFRL | user | US | Partner on IonQ's April-2026 milestone | [C][589] |

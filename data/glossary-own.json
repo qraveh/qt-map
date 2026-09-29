@@ -371,8 +371,8 @@
    "Архитектуры"
   ],
   "scope": "first",
-  "en": "A platform drawn as a line through the stack: one technology chosen per layer, with the alternatives listed beside it; a machine is an instance of one",
-  "ru": "Платформа, проведённая линией через стек: по одной технологии на слой, рядом перечислены альтернативы; машина — экземпляр одной из них",
+  "en": "A platform drawn as a line through the ten layers: one technology chosen per layer, with the alternatives listed beside it; a machine is an instance of one",
+  "ru": "Платформа, проведённая линией через десять слоёв: по одной технологии на слой, рядом перечислены альтернативы; машина — экземпляр одной из них",
   "src": "§7.1",
   "why": "The report's central move — platforms are not compared as wholes but as chains of separable choices",
   "variants": [
@@ -674,27 +674,22 @@
   "why": "Axis A in every score table; 'channel' is the report's word for the kinds of error, not for a wire"
  },
  {
-  "id": "off-diagonal",
+  "id": "crossing",
   "match": [
-   "off-diagonal"
+   "crossing technology",
+   "crossing technologies"
   ],
   "match_ru": [
-   "внедиагональные",
-   "внедиагональный",
-   "off-diagonal"
+   "пересекающая технология",
+   "пересекающие технологии",
+   "пересекающей технологии",
+   "пересекающих технологий"
   ],
   "scope": "first",
-  "en": "A technology that breaks the usual pairing of properties — say a natural carrier driven by microwaves",
-  "ru": "Технология, ломающая обычное сочетание свойств — например, естественный носитель под микроволновым управлением",
+  "en": "A technology that takes a trait from the other side of the natural/fabricated divide — a natural carrier under microwave control, erasure on a fabricated carrier; hatched on the map",
+  "ru": "Технология, берущая свойство с другой стороны раздела естественное/изготовленное — естественный носитель под СВЧ-управлением, стирание на изготовленном носителе; на карте заштрихована",
   "src": "§7.1",
-  "why": "The map's own coinage, borrowed from matrix language; it names a finding, not a position on a chart",
-  "variants": [
-   {
-    "until": "7",
-    "en": "A technology that breaks the usual pairing of properties: natural carriers normally come with optical control and slow readout, fabricated ones with wiring and fast readout — this one mixes the two halves",
-    "ru": "Технология, ломающая обычное сочетание свойств: у естественных носителей обычно оптическое управление и медленное считывание, у изготовленных — провода и быстрое; эта смешивает обе половины"
-   }
-  ]
+  "why": "The map's own coinage: the hatch marks it, and the name says what it marks"
  },
  {
   "id": "empty-slot",
@@ -1034,8 +1029,8 @@
    "архитектурой"
   ],
   "scope": "first",
-  "en": "A platform drawn as one line through the stack, one technology per layer — {{N_PATHS}} such lines carry the {{N_MACHINES}} registered machines",
-  "ru": "Платформа, проведённая одной линией через стек, по одной технологии на слой: {{N_PATHS}} таких линий несут {{N_MACHINES}} машин реестра",
+  "en": "A platform drawn as one line through the ten layers, one technology per layer — {{N_PATHS}} such lines carry the {{N_MACHINES}} registered machines",
+  "ru": "Платформа, проведённая одной линией через десять слоёв, по одной технологии на слой: {{N_PATHS}} таких линий несут {{N_MACHINES}} машин реестра",
   "src": "§8",
   "why": "Finer than family, coarser than a single machine; the chapter argues by architecture, not by company",
   "only": [

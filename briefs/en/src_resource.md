@@ -40,7 +40,7 @@ In the photonic fusion-based architecture (PsiQuantum, Quandela, QuiX): requires
 | Organisation | Role | Country | What they do | Evidence |
 |---|---|---|---|---|
 | PsiQuantum | developer | US | In-house fusion and generation | [D][G:PSIQ-OMEGA-METRICS-2025] |
-| Quandela | developer | FR | QD sources; Lucy on Joliot-Curie | [C][G:QUANDELA-LUCY-HPC-2026-04] |
+| Quandela | developer | FR | QD sources; Lucy on Joliot-Curie, running post-selected gates, not resource states | [C][G:QUANDELA-LUCY-HPC-2026-04] |
 | Sparrow Quantum | supplier | DK | Sole merchant source vendor | [D][G:SPARROW-SERIESA-2025-04] |
 | MPQ Garching | research | DE | Holds the 8-photon record | [D][688] |
 

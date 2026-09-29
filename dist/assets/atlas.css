@@ -739,21 +739,38 @@ html.lang-loading .mast .seg [aria-pressed="true"]{opacity:.6}
 .insp figure.cardpic figcaption{margin-top:4px;font-size:11.5px;line-height:1.35;color:var(--muted);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer}
 .insp figure.cardpic figcaption.open{display:block;-webkit-line-clamp:unset}
 .insp figure.cardpic .credit a{color:inherit}
-/* ---------------- find in the Atlas (28 Sep 2026) ---------------- */
-.findbar{position:fixed;top:10px;right:16px;z-index:70;width:min(520px,calc(100vw - 32px));padding:8px 10px;border:1px solid var(--rule);border-radius:12px;background:var(--surface);box-shadow:0 8px 30px rgba(0,0,0,.18);font-size:13px}
+/* ---------------- find in the Atlas (28–29 Sep 2026): opens where it was called, a little transparent ---------------- */
+.findbar{position:fixed;top:10px;right:16px;z-index:70;width:min(560px,calc(100vw - 32px));padding:8px 10px;border:1px solid var(--rule);border-radius:12px;background:rgba(255,255,255,.86);box-shadow:0 8px 30px rgba(0,0,0,.18);font-size:13px}
+@supports (backdrop-filter:blur(8px)) or (-webkit-backdrop-filter:blur(8px)){.findbar{background:rgba(255,255,255,.72);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .findbar{background:rgba(24,27,33,.82)} }
+:root[data-theme="dark"] .findbar{background:rgba(24,27,33,.82)}
 .findbar[hidden]{display:none}
 .findrow{display:flex;align-items:center;gap:6px}
-.findq{flex:1 1 auto;min-width:0;height:32px;padding:0 10px;border:1px solid var(--rule);border-radius:8px;background:var(--surface);color:var(--ink);font:500 14px/1 inherit;font-family:inherit}
+.findq{flex:1 1 auto;min-width:0;height:32px;padding:0 10px;border:1px solid var(--rule);border-radius:8px;background:var(--surface);color:var(--ink);font:500 14px/1 "JetBrains Mono",monospace}
 .findq:focus{border-color:var(--accent);outline:none}
-.findcount{white-space:nowrap;color:var(--muted);font-variant-numeric:tabular-nums;font-size:12.5px;min-width:3em;text-align:right}
+.findcount{white-space:nowrap;color:var(--muted);font-variant-numeric:tabular-nums;font-size:12.5px;min-width:4em;text-align:right}
 .findbar .fb{height:30px;min-width:30px;padding:0 6px;border:1px solid var(--rule);border-radius:8px;background:var(--surface);color:var(--ink);cursor:pointer;font-size:12px}
 .findbar .fb:hover{background:var(--surface2)}
-.findopts{display:flex;align-items:center;flex-wrap:wrap;gap:4px 6px;margin-top:6px}
-.findbar .fo{height:24px;padding:0 8px;border:1px solid var(--rule);border-radius:999px;background:var(--surface);color:var(--ink2);cursor:pointer;font-size:11.5px;font-family:inherit}
-.findbar .fo[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
-.findbar .fosep{width:1px;height:16px;background:var(--rule);margin:0 2px}
-.findbar .folbl{font-size:11.5px;color:var(--muted)}
+.findopts{display:flex;align-items:center;flex-wrap:wrap;gap:4px 6px;margin-top:6px;position:relative}
+.findbar .fo{height:24px;padding:0 9px;border:1px solid var(--rule);border-radius:999px;background:var(--surface);color:var(--ink2);cursor:pointer;font-size:11.5px;font-family:inherit;white-space:nowrap}
+.findbar .fo:hover{background:var(--surface2)}
+.findbar .folang{position:relative}
+.findbar .fomenu{position:absolute;top:28px;left:0;z-index:5;min-width:160px;padding:4px;border:1px solid var(--rule);border-radius:10px;background:var(--surface);box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.findbar .fomenu[hidden]{display:none}
+.findbar .fomenu button{display:block;width:100%;text-align:left;padding:6px 10px;border:0;background:transparent;color:var(--ink);font:inherit;font-size:12.5px;border-radius:6px;cursor:pointer}
+.findbar .fomenu button:hover{background:var(--surface2)}
+.findbar .fomenu button.on{font-weight:700}
+.findmode{font-size:10.5px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;margin-left:2px}
 .findwhere{flex:1 1 100%;font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-height:1.2em}
+.findlist{list-style:none;margin:6px -4px 0;padding:0;max-height:min(42vh,420px);overflow:auto;border-top:1px solid var(--rule);font-size:12.5px}
+.findlist[hidden]{display:none}
+.findlist li{display:flex;gap:8px;align-items:baseline;padding:4px 6px;border-radius:6px;cursor:pointer;line-height:1.35}
+.findlist li:hover{background:var(--surface2)}
+.findlist li.cur{background:rgba(255,159,26,.18)}
+.findlist li .fx{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink)}
+.findlist li .fx b{background:rgba(255,205,60,.55);color:var(--ink);font-weight:600;padding:0 1px;border-radius:2px}
+.findlist li .fw{flex:0 0 auto;max-width:30%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted);font-size:11px}
+.findlist li.more{justify-content:center;color:var(--accent);font-weight:600}
 .findopen.tocfind{display:inline-flex;align-items:center;gap:6px;margin:0 0 10px;padding:5px 10px;border:1px solid var(--rule);border-radius:999px;background:var(--surface);color:var(--ink);cursor:pointer;font:inherit;font-size:12.5px}
 .findopen.tocfind kbd{font:600 11px/1 "JetBrains Mono",monospace;padding:2px 5px;border:1px solid var(--rule);border-radius:4px;color:var(--muted)}
 .findopen.tocfind:hover{background:var(--surface2)}
@@ -762,5 +779,17 @@ html.lang-loading .mast .seg [aria-pressed="true"]{opacity:.6}
 ::highlight(findcur){background:#ff9f1a;color:#000}
 mark.findmark{background:#ff9f1a;color:#000;padding:0 1px;border-radius:2px}
 .findout{outline:3px solid #ff9f1a;outline-offset:2px;border-radius:4px}
-@media (max-width:1024px){ .findbar{top:52px;left:8px;right:8px;width:auto} }
+@media (max-width:700px){ .findbar{top:52px !important;left:8px !important;right:8px !important;width:auto !important} .findlist{max-height:34vh} }
+/* the floating language switch (the editor, 29 Sep 2026): appears once the masthead's switch has scrolled away, a little transparent
+   until hovered; ≤1024 the sticky phone bar carries its own switch, so none here; the build's floating_lang_switch=False removes the markup */
+.floatlang{position:fixed;top:10px;right:16px;z-index:60;display:inline-flex;border:1px solid var(--rule);border-radius:999px;overflow:hidden;background:rgba(255,255,255,.6);box-shadow:0 2px 12px rgba(0,0,0,.14);opacity:0;pointer-events:none;transition:opacity .18s}
+.floatlang.show{opacity:.55;pointer-events:auto}
+.floatlang.show:hover,.floatlang.show:focus-within{opacity:1;background:var(--surface)}
+@supports (backdrop-filter:blur(6px)) or (-webkit-backdrop-filter:blur(6px)){.floatlang{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}}
+.floatlang button{appearance:none;border:0;background:transparent;color:var(--ink2);font:inherit;font-size:12px;font-weight:600;padding:5px 11px;min-height:28px;cursor:pointer}
+.floatlang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .floatlang{background:rgba(24,27,33,.6)} }
+:root[data-theme="dark"] .floatlang{background:rgba(24,27,33,.6)}
+@media (max-width:1024px){ .floatlang{display:none} }
+#machcard[hidden]{display:none}
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) ::highlight(findall){background:rgba(255,190,40,.35)} }

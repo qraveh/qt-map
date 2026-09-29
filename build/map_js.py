@@ -11,6 +11,8 @@ const REG_URL=id=>`machine/${id}.html`, TECH_URL=id=>`technology/${id}.html`;
 const RT=MACH.t||{};   // the register's enumerations in Russian (build/regvocab.py, embedded with the machines)
 const PICS=window.__PICS||{node:{},machine:{}};   // one hosted picture per technology and per machine for the cards (build_html.pics_slim, 28 Sep 2026)
 const MEDIA_BASE=(function(){ const app=document.getElementById('app'); const lb=(app&&app.dataset.langBase)||'lang/'; return lb.replace(/lang\/?$/,'')+'media/'; })();   // 'media/' at the root, '../media/' one level down
+const ORG_SLUG={}; (MACH.machines||[]).forEach(m=>{ if(m.oslug&&m.org&&!ORG_SLUG[m.org])ORG_SLUG[m.org]=m.oslug; });   // organisation name → its page (organisation/<slug>.html), from the machines (29 Sep 2026)
+function orgLink(name){ const sl=ORG_SLUG[name]; return sl?`<a class="org" href="organisation/${sl}.html" title="${T('the organisation\'s page','страница организации')}">${esc(name)}</a>`:esc(name); }
 function picHTML(kind,id){ const p=(PICS[kind]||{})[id]; if(!p)return '';
   const img=`<img src="${MEDIA_BASE}${p.t}" alt="${esc(p.s.slice(0,140))}" loading="lazy" decoding="async"${p.w&&p.h?` width="${p.w}" height="${p.h}"`:''}>`;
   return `<figure class="cardpic">${p.u?`<a href="${esc(p.u)}" target="_blank" rel="noopener" title="${T('the source of the picture','источник картинки')}">${img}</a>`:img}<figcaption title="${T('click to read the whole caption','нажмите, чтобы прочитать подпись целиком')}"><span class="story">${esc(p.s)}</span> <span class="credit">${p.c}</span></figcaption></figure>`; }
@@ -101,7 +103,6 @@ st.append('rect').attr('class','hatchov').attr('width',NW).attr('height',NH).att
 st.append('text').attr('class','l1').attr('x',9).attr('y',15);
 st.append('text').attr('class','l2').attr('x',9).attr('y',27);
 st.append('text').attr('class','id').attr('x',NW-6).attr('y',NH-5).attr('text-anchor','end').text(d=>d.id);
-st.filter(d=>d.offdiag.length).append('text').attr('x',NW-14).attr('y',12).attr('font-size',11).attr('fill','var(--nat)').attr('text-anchor','end').text('⤢');
 // family badges
 st.each(function(d){const g=d3.select(this); const fp=[...new Set((prim[d.id]||[]).map(p=>PATH[p].family))], fa=[...new Set((alt[d.id]||[]).map(p=>PATH[p].family))].filter(f=>!fp.includes(f)); let x=9;
   fp.forEach(f=>{g.append('rect').attr('class','badge').attr('x',x).attr('y',NH-9).attr('width',7).attr('height',4).attr('rx',1).attr('fill',FAMC[f]); x+=9;});
@@ -121,7 +122,7 @@ function stationTip(d){ const L=lang(); const k=state.lens; let h=`<b>${esc(d[L]
   if(ps.length||as.length) h+=`<br><span class="tk">${T('lines','линии')}</span> `+ps.map(p=>`<i class="sw" style="background:${FAMC[PATH[p].family]}"></i>${esc(PATH[p][L])}`).concat(as.map(p=>`<i class="sw hollow" style="border-color:${FAMC[PATH[p].family]}"></i>${esc(PATH[p][L])} <span style="opacity:.7">(${T('alternate','альтернатива')})</span>`)).join(' · ');
   if(k==='family'){ const f=d._fams; h+=`<br><span class="tk">${T('outline','рамка')}</span> ${f.length?f.map(x=>T(...FAMN[x])).join(' + '):'—'}`; }
   else { const c=lensColor(d,k); const v=lensValue(d,k); const lab=k==='aff'?vt('AFF',d.aff):(k==='time'?(v==='none'?T('no time','нет времени'):TBINS[+v][1]):catLabel(k,v)); h+=`<br><span class="tk">${T('lens','линза')}</span> ${esc(LENSES[k][L])}: <i class="sw" style="background:${c||'transparent'};border:1px solid ${c||'var(--bg)'}"></i>${esc(lab)}`; }
-  const fl=[]; if(d.offdiag&&d.offdiag.length)fl.push('⤢ '+T('off-diagonal','внедиагональный')); if(d.status==='X')fl.push('∅ '+T('empty slot','пустой слот')); if(fl.length)h+=`<br>${fl.join(' · ')}`;
+  const fl=[]; if(d.offdiag&&d.offdiag.length)fl.push(T('hatched: crossing technology','штриховка: пересекающая технология')); if(d.status==='X')fl.push('∅ '+T('empty slot','пустой слот')); if(fl.length)h+=`<br>${fl.join(' · ')}`;
   h+=`<br><span style="opacity:.6">${T('click for the card','клик — карточка')}</span>`; return h; }
 st.on('mousemove',(ev,d)=>{if(tipPinned)return; tip.style.display='block'; tip.classList.add('wide'); tip.innerHTML=stationTip(d); placeTip(ev);}).on('mouseenter',(ev,d)=>{ if(window.__pcHover)window.__pcHover(d.id,'map'); }).on('mouseleave',()=>{if(!tipPinned)hideTip(); if(window.__pcHover)window.__pcHover(null,'map');});
 st.on('click',(ev,d)=>{ev.stopPropagation(); unpinTip(); select(d.id===state.focus?null:d.id);}).on('keydown',(ev,d)=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault(); select(d.id===state.focus?null:d.id);}});
@@ -156,7 +157,7 @@ const LENSES={   // editor's order of 17 Sep 2026: family → manufacturing → 
  status:{en:'Technology status',ru:'Статус технологии'}};
 const LENSCOORD={g:'(g)',f:'(f)',d:'(d)',mod:'(e)',place:'(e)',time:'(b)/(c)',mech:'(c)',destr:'(c)',mid:'(c)',det:'(b)',aff:'(a)'};   // the report's attribute letter, shown once as a muted suffix of the lens legend's title
 // reading marks (brief E, editor's decision): no lens — glyphs on the technologies, static legend keys with counts, badges on the technology card
-const OFFDEF=['a technology that takes a trait from the other side of the natural/fabricated divide (see §7.5)','технология, берущая свойство с другой стороны раздела естественное/изготовленное (см. §7.5)'];
+const OFFDEF=['a crossing technology: it takes a trait from the other side of the natural/fabricated divide — hatched on the map (see §7.5)','пересекающая технология: берёт свойство с другой стороны раздела естественное/изготовленное — на карте заштрихована (см. §7.5)'];
 const EMPTYDEF=['a technology with no demonstrated technology yet','технология, для которой технологии ещё нет'];
 const isOffd=n=>!!(n.offdiag&&n.offdiag.length), isEmpty=n=>n.status==='X';
 function glyphKeys(){ document.querySelectorAll('#glyphlegend [data-glyph]').forEach(el=>{ const k=el.dataset.glyph; const f=(k==='offd'?isOffd:isEmpty); const c=el.querySelector('.cnt'); if(c)c.textContent=G.nodes.filter(f).length; el.title=T(...(k==='offd'?OFFDEF:EMPTYDEF)); }); }
@@ -303,6 +304,9 @@ function drawEdges(){ gEdges.selectAll('*').remove(); const f=state.focus;
    .on('pointerdown',(ev,e)=>{ if(ev.pointerType==='mouse'&&!noHover())return; ev.stopPropagation(); tipPinned=true; tip.style.display='block'; tip.classList.add('wide'); tip.innerHTML=edgeTip(e); placeTip(ev); }); }
 // ---------- inspector
 const insp=document.getElementById('insp');
+// the machine-card chip follows the card: shown while a chosen machine's card is closed (the editor, 29 Sep 2026); declared after insp — a
+// top-level use before this line is a TDZ error that aborts the whole script
+new MutationObserver(()=>{ try{ machCardBtn(); }catch(e){} }).observe(insp,{attributes:true,attributeFilter:['hidden'],childList:true});
 function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
 // no negative lookbehind here: Safari before 16.4 throws a SyntaxError on it and would kill the script.
 // Instead match an already-built href="…" first and pass it through unchanged.
@@ -327,7 +331,7 @@ function gripHTML(){ const sheet=insp.classList.contains('sheet-max');
     '<button type="button" data-dock="right" title="dock right">⇥</button>'+
     '<button type="button" data-sheet="1" aria-pressed="'+String(sheet)+'" aria-label="expand card">'+(sheet?'⌄':'⌃')+'</button>'+
     '<button type="button" data-close="1" aria-label="close">✕</button></div>'; }
-function inspectPath(p){ const L=lang(); insp.hidden=false;
+function inspectPathHTML(p){ const L=lang();
   const members=new Set(Object.values(p.slots).flat());
   const rows=G.layers.map(l=>{const ids=p.slots[String(l.n)]||[]; return `<tr><td class="ln">${l.n} ${esc(l[L])}</td><td>${ids.length?ids.map((id,i)=>`<a href="#" data-goto="${id}" class="${i?'alt':'prim'}">${esc(NODE[id][L])}</a>`).join('<span class="empty"> · </span>'):((p.na||{})[String(l.n)]?`<span class="empty">— ${esc(T(...p.na[String(l.n)]))}</span>`:`<span class="empty">∅ ${T('empty slot','пустой слот')}</span>`)}</td></tr>`;}).join('');
   const R=p.round||{}, RP=R.parts||{}, RX=p.react||{}, CO=p.coh||{}; const PN={gates:['gates','гейты'],transport:['transport','транспорт'],'1q':['1Q','1Q'],readout:['readout','считывание'],reset:['reset','сброс']};
@@ -339,7 +343,7 @@ function inspectPath(p){ const L=lang(); insp.hidden=false;
       ?`<div class="rel requires">${nm(e.dst)} <span class="empty">${e.strength==='soft'?T('is the usual route for','обычно служит технологии'):T('is needed by','требуется технологии')}</span> ${nm(e.src)}${e.any?' <span class="empty">('+T('or an alternative','или альтернатива')+')</span>':''}</div>`
       :`<div class="rel ${e.type}">${nm(e.src)} <span class="empty">${type==='replaces'?T('alternative to','альтернатива для'):T('conflicts with','конфликтует с')}</span> ${nm(e.dst)}${type==='conflicts'&&e.status?' <span class="empty">· '+esc(vt('CONSTAT',e.status))+'</span>':''}</div>`).join(''); };
   const relHTML=rel.length?relRows('requires',T('dependencies','зависимости'),'→')+relRows('conflicts',T('conflicts','конфликты'),'✕')+relRows('replaces',T('alternatives','альтернативы'),'⇄'):`<div class="empty">${T('no recorded relations among these technologies','между этими технологиями связей не записано')}</div>`;
-  insp.innerHTML=`${gripHTML()}<h3><i class="sw" style="--c:${FAMC[p.family]}"></i> ${esc(p[L])}</h3><div class="meta">${T('architecture','архитектура')} · ${p.id} · ${stationsT(members.size)} · ${pageLink('architecture',p.id)}</div>
+  return `${gripHTML()}<h3><i class="sw" style="--c:${FAMC[p.family]}"></i> ${esc(p[L])}</h3><div class="meta">${T('architecture','архитектура')} · ${p.id} · ${stationsT(members.size)} · ${pageLink('architecture',p.id)}</div>
   <div class="space"><h4>${T('Actors & goals','Акторы и цели')}</h4><div>${esc(p.actors)}</div><div class="empty">${T('goals','цели')}: ${esc(p.goals)}</div></div>
   <div class="space"><h4>${T('Derived clocks','Выведенные такты')}</h4><dl>
    <dt>${T('syndrome round','раунд синдрома')}</dt><dd><b>${fS(R.total)}</b>${R.total?` · ${T('limiter','ограничитель')}: ${T(...(PN[R.limiter]||[R.limiter,R.limiter]))} · ${T('round of','раунд кода')} ${esc(R.code||'')}${R.d2?' (d₂ = '+R.d2+(R.d1?', d₁ = '+R.d1:'')+')':''}`:''}</dd>
@@ -352,8 +356,10 @@ function inspectPath(p){ const L=lang(); insp.hidden=false;
   </dl><div class="empty" style="margin-top:4px">${T('t_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — a sum of the round\'s phases, from the code node, the attributes and the standard records; the measured cycle is the check.','t_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — сумма фаз раунда из узла кода, атрибутов и стандартных рекордов; измеренный цикл — проверка.')}</div></div>
   <div class="space"><h4>${T('Technologies by layer — primary, then alternates','Технологии по слоям — основная, затем альтернативы')}</h4><table class="ptab">${rows}</table></div>
   <div class="space"><h4>${T('Relations within the architecture','Связи внутри архитектуры')}</h4>${relHTML}<div class="empty" style="margin-top:3px">${T('the edge toggles draw each type on the map, among these technologies only','переключатели рёбер рисуют каждый тип на карте — только между этими технологиями')}</div></div>
-  <div class="space"><h4>${T('Reading','Чтение')}</h4><div>⤢ ${T('off-diagonal','внедиагональные')}: ${offs.length?offs.map(id=>`<a href="#" data-goto="${id}">${esc(NODE[id][L])}</a>`).join(', '):'—'}</div><div>∅ ${T('empty slots','пустые слоты')}: ${empties.length?empties.map(id=>`<a href="#" data-goto="${id}">${esc(NODE[id][L])}</a>`).join(', '):'—'}</div></div>
+  <div class="space"><h4>${T('Reading','Чтение')}</h4><div>${T('hatched (crossing)','штрихованные (пересекающие)')}: ${offs.length?offs.map(id=>`<a href="#" data-goto="${id}">${esc(NODE[id][L])}</a>`).join(', '):'—'}</div><div>∅ ${T('empty slots','пустые слоты')}: ${empties.length?empties.map(id=>`<a href="#" data-goto="${id}">${esc(NODE[id][L])}</a>`).join(', '):'—'}</div></div>
   ${pathMachinesHTML(p)}`;
+}
+function inspectPath(p){ insp.hidden=false; insp.innerHTML=inspectPathHTML(p);
   insp.querySelectorAll('[data-goto]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); select(a.dataset.goto); const m=NODE[a.dataset.goto]; scrollToNode(m);}));
   insp.querySelectorAll('[data-mach]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); showMachine(a.dataset.mach);}));
   insp.querySelector('[data-close]').addEventListener('click',()=>{state.isolate=null; chipsWrap.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed','false')); inspectEmpty(); drawEdges(); dimming();}); wireCard();
@@ -361,7 +367,7 @@ function inspectPath(p){ const L=lang(); insp.hidden=false;
 // the register's machines on an architecture, by organisation (the editor, 27 Sep 2026: the intuitive way from an architecture to its machines)
 function pathMachinesHTML(p){ const L=lang(); const ms=(MACH.machines||[]).filter(m=>m.path===p.id); if(!ms.length) return `<div class="space useby"><h4>${T('Machines on this architecture','Машины этой архитектуры')}</h4><div class="empty">${T('no registered machine yet','пока ни одной машины в реестре')}</div></div>`;
   const byOrg=new Map(); ms.forEach(m=>{ const k=m.org||'—'; if(!byOrg.has(k))byOrg.set(k,[]); byOrg.get(k).push(m); });
-  const groups=[...byOrg.entries()].sort((a,b)=>b[1].length-a[1].length||a[0].localeCompare(b[0])).map(([org,list])=>`<li class="fam">${esc(org)} <span class="empty">${list.length}</span></li>`+list.sort((a,b)=>a.name.localeCompare(b.name)).map(m=>{const ev=m.ev||[0,0]; return `<li class="primary${state.machine===m.id?' cur':''}"><a href="#" data-mach="${m.id}" title="${esc(machLabel(m))}">${esc(m.name)}</a> <span class="empty">${esc(statusT(m.status))}${m.q!=null&&m.q!==''?' · '+m.q+' q':''} · ✅ ${ev[0]}/${ev[1]}</span> <a class="reg" href="${REG_URL(m.id)}" title="${T('the machine\'s page','страница машины')}">↗</a></li>`;}).join('')).join('');
+  const groups=[...byOrg.entries()].sort((a,b)=>b[1].length-a[1].length||a[0].localeCompare(b[0])).map(([org,list])=>`<li class="fam">${orgLink(org)} <span class="empty">${list.length}</span></li>`+list.sort((a,b)=>a.name.localeCompare(b.name)).map(m=>{const ev=m.ev||[0,0]; return `<li class="primary${state.machine===m.id?' cur':''}"><a href="#" data-mach="${m.id}" title="${esc(machLabel(m))}">${esc(m.name)}</a> <span class="empty">${esc(statusT(m.status))}${m.q!=null&&m.q!==''?' · '+m.q+' q':''} · ✅ ${ev[0]}/${ev[1]}</span> <a class="reg" href="${REG_URL(m.id)}" title="${T('the machine\'s page','страница машины')}">↗</a></li>`;}).join('')).join('');
   return `<div class="space useby"><h4>${T('Machines on this architecture','Машины этой архитектуры')} <span class="empty">${ms.length}</span></h4><ul class="useby">${groups}</ul><div class="empty" style="margin-top:4px">${T('click a machine to light its technologies and open its card · ↗ its page','клик по машине подсвечивает её технологии и открывает карточку · ↗ её страница')}</div></div>`; }
 function inspectEmpty(){ insp.hidden=true; insp.innerHTML=''; sheetRoom(); }
 // ---------- machines (register): evidence glyphs, the machine card, the "Used by" block
@@ -373,7 +379,7 @@ function evHTML(c){ const g=evGlyph(c[3]); const a=c[4]?`<a class="ev" href="${e
 function machLabel(m){ return m.name+' · '+m.org; }
 const NA_T={none:['none — nothing in this layer','none — в этом слое ничего нет'],undisclosed:['undisclosed — exists, nothing published','undisclosed — есть, но не опубликовано']};
 const PROF_T=[['qubit type','тип кубита'],['gate mechanism','механизм гейта'],['connectivity','связность'],['control','управление'],['control placement','размещение управления'],['readout','считывание']];
-function inspectMachine(m){ const L=lang(); insp.hidden=false; const gaps=m.gaps||{}, na=m.na||{};
+function inspectMachineHTML(m){ const L=lang(); const gaps=m.gaps||{}, na=m.na||{};
   const rows=G.layers.map(l=>{ const k=String(l.n); const cells=(m.layers||{})[k]||[], gs=gaps[k]||[], ns=na[k]||[];
     const cellHTML=cells.map(c=>{ const n=NODE[c[0]]; const name=n?`<a href="#" data-goto="${c[0]}" class="${c[1]==='alternate'?'alt':'prim'}">${esc(n[L])}</a>`:esc(c[0]);
       return `<div class="mc">${name} <span class="empty">· ${c[1]==='alternate'?T('alternate','альтернатива'):T('primary','основная')}</span> ${evHTML(c)}${c[2]?`<div class="ms">${lk(c[2])}</div>`:''}</div>`; }).join('');
@@ -382,14 +388,17 @@ function inspectMachine(m){ const L=lang(); insp.hidden=false; const gaps=m.gaps
     return `<tr><td class="ln">${l.n} ${esc(l[L])}</td><td>${cellHTML+gapHTML+naHTML||`<span class="empty">—</span>`}</td></tr>`; }).join('');
   const prof=(m.prof||[]).map((v,i)=>v?`<div class="mc"><span class="empty">${T(...PROF_T[i])}:</span> ${esc(v)}</div>`:'').join('');
   const ev=m.ev||[0,0]; const q=(m.q!=null&&m.q!=='')?qubitsT(m.q):T('qubits not published','число кубитов не опубликовано');
-  insp.innerHTML=`${gripHTML()}<h3><i class="sw" style="--c:${FAMC[m.family]||'var(--mid)'}"></i> ${esc(m.name)}</h3><div class="meta">${esc(m.org)} · ${T(...(FAMN[m.family]||[m.family,m.family]))} · ${esc(statusT(m.status))}${m.status_date?' ('+esc(m.status_date)+')':''} · ${q}</div>
+  return `${gripHTML()}<h3><i class="sw" style="--c:${FAMC[m.family]||'var(--mid)'}"></i> ${esc(m.name)}</h3><div class="meta">${orgLink(m.org)} · ${T(...(FAMN[m.family]||[m.family,m.family]))} · ${esc(statusT(m.status))}${m.status_date?' ('+esc(m.status_date)+')':''} · ${q}</div>
   <div class="mlinks">${pageLink('machine',m.id)} <span class="empty">${T('architecture','архитектура')}:</span> <a href="#" class="archlink" data-arch="${esc(m.path)}" title="${T('isolate this architecture on the map','выделить эту архитектуру на карте')}">${PATH[m.path]?esc(PATH[m.path][L]):esc(m.path)}</a></div>
   ${picHTML('machine',m.id)}${prof?`<div class="space"><h4>${T('Register profile — the machine\'s variant of its architecture','Профиль реестра — вариант архитектуры у этой машины (поля реестра — на английском)')}</h4>${prof}</div>`:''}
   <div class="space"><h4>${T('Technologies by layer — the machine\'s cell per layer','Технологии по слоям — ячейка машины на каждом слое')}</h4><table class="ptab mtab">${rows}</table>
    <div class="empty" style="margin-top:4px">${T('lit on the map: these technologies and the machine\'s architecture line; dashed outline = used only as an alternate','подсвечено на карте: эти технологии и линия архитектуры машины; пунктирная рамка = только как альтернатива')}</div></div>
   <div class="mfoot"><span>${T('evidence','источники')}: ✅ ${ev[0]} / ${ev[1]}</span> <button type="button" class="chip" data-mclose="1">${T('clear machine','снять машину')} ✕</button></div>`;
+}
+function inspectMachine(m){ insp.hidden=false; insp.innerHTML=inspectMachineHTML(m);
   insp.querySelectorAll('[data-goto]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); select(a.dataset.goto); const n=NODE[a.dataset.goto]; if(n)scrollToNode(n);}));
-  insp.querySelectorAll('[data-close],[data-mclose]').forEach(b=>b.addEventListener('click',ev=>{ev.stopPropagation(); setMachine(null);}));
+  insp.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',ev=>{ev.stopPropagation(); insp.hidden=true; insp.innerHTML=''; sheetRoom(); machCardBtn();}));   // the card closes, the machine stays chosen (the editor, 29 Sep 2026)
+  insp.querySelectorAll('[data-mclose]').forEach(b=>b.addEventListener('click',ev=>{ev.stopPropagation(); setMachine(null);}));
   insp.querySelectorAll('a.archlink[data-arch]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); const pid=a.dataset.arch; if(!PATH[pid])return; if(state.isolate!==pid)isolatePath(pid); else {pushHist(); inspectPath(PATH[pid]);} }));   // the machine's architecture, isolated and shown; ← returns to the machine
   wireCard(); wirePic(); sheetRoom();
 }
@@ -399,26 +408,26 @@ function usedByHTML(n){ const L=lang(); const ub=MACH.by_node[n.id]||{primary:[]
   if(!N)return `<div class="space useby"><h4>${head}</h4></div>`;
   const KIND={paper:['paper','статья'],whitepaper:['whitepaper','whitepaper'],product:['product page','страница продукта'],docs:['docs','документация'],blog:['blog','блог'],press:['press','пресса'],other:['link','ссылка']};
   const refsHTML=m=>(m.refs||[]).map(r=>`<a class="mref" href="${esc(r[1])}" target="_blank" rel="noreferrer" title="${esc(r[2]||r[1])}">${T(...(KIND[r[0]]||KIND.other))}</a>`).join(' ');
-  const li=(id,role)=>{ const m=MBY[id]; const c=machCell(m,n.id); return `<li class="${role}${state.machine===id?' cur':''}"><a href="#" data-mach="${id}" title="${esc(machLabel(m))}">${esc(m.name)}</a> <span class="empty">${esc(m.org)}</span> <a class="reg" href="${REG_URL(id)}" title="${T('the machine\'s page','страница машины')}">↗</a> ${refsHTML(m)}${c?' '+evHTML(c):''}${role==='alternate'?` <span class="empty">(${T('alternate','альтернатива')})</span>`:''}</li>`; };
+  const li=(id,role)=>{ const m=MBY[id]; const c=machCell(m,n.id); return `<li class="${role}${state.machine===id?' cur':''}"><a href="#" data-mach="${id}" title="${esc(machLabel(m))}">${esc(m.name)}</a> <span class="empty">${orgLink(m.org)}</span> <a class="reg" href="${REG_URL(id)}" title="${T('the machine\'s page','страница машины')}">↗</a> ${refsHTML(m)}${c?' '+evHTML(c):''}${role==='alternate'?` <span class="empty">(${T('alternate','альтернатива')})</span>`:''}</li>`; };
   const fams=MACH.families||Object.keys(FAMC); const groups=fams.map(f=>{ const ps=P.filter(id=>MBY[id].family===f), as=A.filter(id=>MBY[id].family===f); if(!ps.length&&!as.length)return '';
     return `<li class="fam"><i class="sw" style="--c:${FAMC[f]||'var(--mid)'}"></i>${T(...(FAMN[f]||[f,f]))} <span class="empty">${ps.length+as.length}</span></li>`+ps.map(id=>li(id,'primary')).join('')+as.map(id=>li(id,'alternate')).join(''); }).join('');
   return `<div class="space useby"><h4>${head}</h4><ul class="useby">${groups}</ul><div class="empty" style="margin-top:4px">${T('click a machine to light its technologies on the map · ↗ its page · paper / product / press: links that name the machine (attribution checked on 20 Sep 2026)','клик по машине подсвечивает её технологии на карте · ↗ её страница · статья / продукт / пресса: ссылки, где машина названа (атрибуция проверена 20 сентября 2026)')}</div></div>`; }
 function placeText(n){ const ps=(n.e.place&&n.e.place.length)?n.e.place:['none']; return CATS.place.filter(p=>ps.includes(p)).concat(ps.filter(p=>!CATS.place.includes(p))).map(p=>vt('PLACE',p)).join(' / '); }   // every stage the technology carries, in the vocabulary's order (RT → 4 K → mK)
-function inspect(n){ const L=lang(); const c=n.c; const rows=[[T('(a) carrier affinity','(a) сродство носителя'),vt('AFF',n.aff),'aff'],
+function inspectHTML(n){ const L=lang(); const c=n.c; const rows=[[T('(a) carrier affinity','(a) сродство носителя'),vt('AFF',n.aff),'aff'],
   [T('(b) time · entangling','(b) время · перепутывание'),(n.b.t!=null?fmtT(n.b.t):'—')+(n.b.det!=='na'?' · '+vt('DET',n.b.det):''),'b'],
   [T('(c) readout','(c) считывание'),c?`${vt('MECH',c.mech)} · ${fmtT(c.t)} · ${c.destr?T('destructive','разрушающее'):T('non-destructive','неразрушающее')} · ${c.mid?'mid-circuit':T('no mid-circuit','без mid-circuit')}`:'—','c'],
   [T('(d) mobility','(d) подвижность'),vt('MOB',n.d),'d'],[T('(e) control','(e) управление'),n.e.mod==='none'?'—':`${vt('MOD',n.e.mod)} @ ${placeText(n)}`,'e'],
   [T('(f) error structure','(f) структура ошибки'),n.f.map(x=>vt('ERR',x)).join(', '),'f'],[T('(g) manufacturing','(g) производство'),vt('FAB',n.g),'g']];
   const lr=LENSROWS[state.lens]||[];
-  // reading marks: one line per badge (off-diagonal — its flag definitions; empty slot)
+  // reading marks: one line per mark (crossing technology — its flag definitions; empty slot)
   const marks=[];
-  if(isOffd(n)) marks.push(`<div><span class="flag off" title="${esc(T(...OFFDEF))}">⤢ ${T('off-diagonal','внедиагональная')}</span> — ${esc(n.offdiag.map(o=>vt('OFFDIAG',o)).join('; '))}</div>`);
+  if(isOffd(n)) marks.push(`<div><span class="flag off" title="${esc(T(...OFFDEF))}">${T('crossing technology','пересекающая технология')}</span> — ${esc(n.offdiag.map(o=>vt('OFFDIAG',o)).join('; '))}</div>`);
   if(isEmpty(n)) marks.push(`<div><span class="flag empty" title="${esc(T(...EMPTYDEF))}">∅ ${T('empty slot','пустой слот')}</span></div>`);
   const flags=marks.length?[`<div class="marks"><span class="tk">${T('Reading marks','Метки чтения')}</span>${marks.join('')}</div>`]:[];
   const reqOut=G.edges.filter(e=>e.type==='requires'&&e.src===n.id), reqIn=G.edges.filter(e=>e.type==='requires'&&e.dst===n.id), rep=G.edges.filter(e=>e.type==='replaces'&&(e.src===n.id||e.dst===n.id)), con=G.edges.filter(e=>e.type==='conflicts'&&(e.src===n.id||e.dst===n.id));
   const other=(e)=>e.src===n.id?e.dst:e.src;
   const link=id=>`<a href="#" data-goto="${id}">${esc(NODE[id][L])}</a>`;
-  insp.innerHTML=`${gripHTML()}<h3>${esc(n[L])}</h3><div class="meta">${n.id} · ${T('layer','слой')} ${n.layer} ${esc(G.layers[n.layer-1][L])} · ${vt('STATUS',n.status)}${n.since<2030?' · '+T('since','с')+' '+n.since:''}</div>
+  return `${gripHTML()}<h3>${esc(n[L])}</h3><div class="meta">${n.id} · ${T('layer','слой')} ${n.layer} ${esc(G.layers[n.layer-1][L])} · ${vt('STATUS',n.status)}${n.since<2030?' · '+T('since','с')+' '+n.since:''}</div>
   <p>${lk(n.desc[L])}</p>${picHTML('node',n.id)}<div>${flags.join(' ')}</div>
   <button type="button" class="briefbtn" data-brief="${n.id}">${T('Brief →','Бриф →')}</button> ${pageLink('technology',n.id)}
   ${(KEYREFS[n.id]||[]).length?`<div class="space keys"><h4>${T('Key references','Ключевые источники')}</h4>${KEYREFS[n.id].map(r=>{const lab=krLabel(n.id,r.n)||r.label||''; return `<div class="kr"><a href="${r.url}" target="_blank" rel="noopener">[${r.n}]</a> ${esc(lab.length>92?lab.slice(0,90)+'…':lab)}${r.year?' <span class="empty">· '+r.year+'</span>':''}</div>`;}).join('')}</div>`:''}
@@ -433,6 +442,8 @@ function inspect(n){ const L=lang(); const c=n.c; const rows=[[T('(a) carrier af
    ${con.length?`<div><b style="color:var(--crit)">${T('conflicts with','конфликтует с')}:</b></div>`+con.map(e=>`<div class="conf"><div>${link(other(e))} <span class="cst ${e.status}">${esc(vt('CONSTAT',e.status))}</span></div><div class="cm">${lk(e[L])}</div><div class="cm"><span class="tk">${T('price','цена')}</span> ${lk(e.price?e.price[L]:'')}</div><div class="cm"><span class="tk">${T('mitigation','снятие')}</span> ${lk(e.mitig?e.mitig[L]:'')}${e.url?' · <a href="'+e.url+'" target="_blank" rel="noopener">'+e.date+'</a>':''}</div></div>`).join(''):''}
    ${(reqOut.length||reqIn.length||rep.length||con.length)?`<div class="empty" style="margin-top:4px">° ${T('one of several that would do','одно из нескольких, что подошли бы')} · ${T('the usual route, not a strict need','обычный маршрут, не строгая необходимость')}</div>`:`<p class="empty">—</p>`}</div>
   ${usedByHTML(n)}`;
+}
+function inspect(n){ insp.hidden=false; insp.innerHTML=inspectHTML(n);
   insp.querySelectorAll('[data-goto]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); select(a.dataset.goto); const m=NODE[a.dataset.goto]; scrollToNode(m);}));
   insp.querySelectorAll('[data-mach]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault(); showMachine(a.dataset.mach);}));
   insp.querySelector('[data-close]').addEventListener('click',()=>select(null)); wireCard(); wirePic();
@@ -461,6 +472,8 @@ function setMachine(id,nopush){ if(!nopush&&id&&MBY[id]&&id!==state.machine)push
   if(state.focus)inspect(NODE[state.focus]);                       // a focused technology keeps its card; the machine stays a term of the lit set
   else if(state.machine)inspectMachine(MBY[state.machine]);
   else if(state.isolate)inspectPath(PATH[state.isolate]); else inspectEmpty(); }
+function machCardBtn(){ const b=document.getElementById('machcard'); if(!b)return; b.hidden=!(state.machine&&MBY[state.machine]&&(insp.hidden||!insp.querySelector('[data-mclose]'))); }
+(function(){ const b=document.getElementById('machcard'); if(b)b.addEventListener('click',()=>{ if(state.machine&&MBY[state.machine]){ inspectMachine(MBY[state.machine]); machCardBtn(); } }); })();
 window.__selectMachine=id=>{ setMachine(id||null); return state.machine; };
 // a machine chosen from a card (the "Used by" list): the machine becomes the selection — its card, its full lit set (the technology focus is
 // released, otherwise the lit set would be the intersection with that technology's paths) — and the map is brought into view if it is off-screen
@@ -617,6 +630,7 @@ window.__relabelMap=relabel;
 window.__mapTheme=function(){ buildScales(); applyLens(); pcRefresh(); };
 // select a technology from outside the map (used by the technology briefs)
 window.__mapContext=function(){ return {focus:state.focus,isolate:state.isolate,machine:state.machine,lens:state.lens}; };
+window.__cardHTML={node:id=>NODE[id]?inspectHTML(NODE[id]):'', machine:id=>MBY[id]?inspectMachineHTML(MBY[id]):'', path:id=>PATH[id]?inspectPathHTML(PATH[id]):''};   // the cards as they render, for Find (28 Sep 2026)
 window.__selectNode=function(id){ if(!NODE[id])return false; select(id); const m=NODE[id]; scrollToNode(m); return true; };
 window.__showMachine=function(id){ if(!MBY[id])return false; showMachine(id); return true; };
 window.__isolatePath=function(pid){ if(!PATH[pid])return false; if(state.isolate!==pid)isolatePath(pid); else { pushHist(); inspectPath(PATH[pid]); } revealMap(); return true; };

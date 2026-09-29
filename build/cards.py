@@ -35,8 +35,8 @@ FAMN = {'SC': ('superconducting circuits', 'сверхпроводниковые
         'SPIN': ('semiconductor spins', 'полупроводниковые спины'), 'DEFECT': ('defect spins', 'дефектные спины'),
         'TOPO': ('topological', 'топологические'), 'ANNEAL': ('quantum annealers', 'квантовый отжиг')}
 MACH_FAMILIES = ['SC', 'ION', 'ATOM', 'PHOTON', 'SPIN', 'DEFECT', 'TOPO', 'ANNEAL']
-OFFDEF = ('a technology that takes a trait from the other side of the natural/fabricated divide (see §7.5)',
-          'технология, берущая свойство с другой стороны раздела естественное/изготовленное (см. §7.5)')
+OFFDEF = ('a crossing technology: it takes a trait from the other side of the natural/fabricated divide — hatched on the map (see §7.5)',
+          'пересекающая технология: берёт свойство с другой стороны раздела естественное/изготовленное — на карте заштрихована (см. §7.5)')
 EMPTYDEF = ('a technology with no demonstrated technology yet', 'технология, для которой технологии ещё нет')
 PLACES = ['RT', '4K', 'mK', 'none']   # CATS.place
 EVG = (('figure', '▣'), ('whitepaper', '▥'), ('paper', '▤'), ('vendor', '▦'), ('datasheet', '▧'), ('press', '▨'))
@@ -222,6 +222,13 @@ def _st(base, nid, L, cls=None, title=None, text=None):
 def _arch(base, pid, L): return '<a href="%sarchitecture/%s.html">%s</a>' % (ea(base), ea(pid), esc(PATH[pid][L]))
 
 
+def _orglink(base, m, L):
+    """the machine's organisation as a link to its page (organisation/<slug>.html) when the organisations register has one"""
+    try:
+        import orgs; sl = orgs.slug_for_machine(m.get('id') if isinstance(m, dict) else m)
+    except Exception: sl = None
+    name = esc(m['org'])
+    return '<a class="org" href="%sorganisation/%s.html" title="%s">%s</a>' % (ea(base), ea(sl), ea(T(L, "the organisation's page", 'страница организации')), name) if sl else name
 def _maplink(base, kind, i, L):
     # the main page of the record's own language, by its default document (index.html), so that the link also works from a folder on disk
     return '<a class="maplink" href="%s%sindex.html#%s-%s">%s</a>' % (ea(base), '' if L == 'en' else 'ru/', kind, ea(i), esc(T(L, *MAP_LINK)))
@@ -235,7 +242,7 @@ def _mrefs(L, m):
 def _mli(L, mid, base, role, tail=''):
     m = MACH[mid]
     return '<li%s><a href="%smachine/%s.html" title="%s">%s</a> <span class="empty">%s</span> %s%s</li>' % (
-        (' class="%s"' % role) if role else '', ea(base), ea(mid), ea(m['name'] + ' · ' + m['org']), esc(m['name']), esc(m['org']), _mrefs(L, m), tail)
+        (' class="%s"' % role) if role else '', ea(base), ea(mid), ea(m['name'] + ' · ' + m['org']), esc(m['name']), _orglink(base, m, L), _mrefs(L, m), tail)
 
 
 # ---------- machines: the cells of machines.json as mach_slim reads them
@@ -356,7 +363,7 @@ def station_card_html(nid, lang, base=''):
             (T(L, '(g) manufacturing', '(g) производство'), vt(L, 'FAB', n['g']))]
     marks = []
     if n.get('offdiag'):
-        marks.append('<div><span class="flag off" title="%s">⤢ %s</span> — %s</div>' % (ea(T(L, *OFFDEF)), t('off-diagonal', 'внедиагональная'),
+        marks.append('<div><span class="flag off" title="%s">%s</span> — %s</div>' % (ea(T(L, *OFFDEF)), t('crossing technology', 'пересекающая технология'),
                                                                                      esc('; '.join(vt(L, 'OFFDIAG', o) for o in n['offdiag']))))
     if n.get('status') == 'X': marks.append('<div><span class="flag empty" title="%s">∅ %s</span></div>' % (ea(T(L, *EMPTYDEF)), t('empty slot', 'пустой слот')))
     flags = ('<div class="marks"><span class="tk">%s</span>%s</div>' % (t('Reading marks', 'Метки чтения'), ''.join(marks))) if marks else ''
@@ -437,7 +444,7 @@ def machine_card_html(mid, lang, base=''):
                                (('flags', 'флаги'), ("the register's caveats on this machine's data", 'оговорки реестра к данным этой машины'), pf.get('flags'))):
             if vals: prof += '<div class="mc"><span class="empty" title="%s">%s:</span> %s</div>' % (ea(T(L, *tip)), t(*lab), esc(', '.join((regvocab.flag_words(v, L) if lab[0] == 'flags' else v) for v in vals)))
     fam, q, sd, ec = m['family'], m.get('physical_qubits_num'), m.get('status_date'), m.get('evidence_counts') or {}
-    meta = '%s · %s · %s%s · %s' % (esc(m['org']), t(*FAMN.get(fam, (fam, fam))), esc(m['status'] if L == 'en' else regvocab.status_ru(m['status'])), (' (%s)' % esc(sd)) if sd else '',
+    meta = '%s · %s · %s%s · %s' % (_orglink(base, m, L), t(*FAMN.get(fam, (fam, fam))), esc(m['status'] if L == 'en' else regvocab.status_ru(m['status'])), (' (%s)' % esc(sd)) if sd else '',
                                     ('%s %s' % (js_str(q), 'physical qubits' if L == 'en' else regvocab.ru_plural(q, regvocab.PLURAL['qubits']))) if q is not None and q != '' else t('qubits not published', 'число кубитов не опубликовано'))
     if EXTRAS and m.get('access'): meta += ' · %s: %s' % (t('access', 'доступ'), esc(m['access'] if L == 'en' else regvocab.access_ru(m['access'])))
     pid = m['map_path']
@@ -508,8 +515,8 @@ def architecture_card_html(pid, lang, base=''):
             't_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — сумма фаз раунда из узла кода, атрибутов и стандартных рекордов; измеренный цикл — проверка.')),
         '<div class="space"><h4>%s</h4><table class="ptab">%s</table></div>' % (t('Technologies by layer — primary, then alternates', 'Технологии по слоям — основная, затем альтернативы'), rows),
         '<div class="space"><h4>%s</h4>%s</div>' % (t('Relations within the architecture', 'Связи внутри архитектуры'), rel_html),
-        '<div class="space"><h4>%s</h4><div>⤢ %s: %s</div><div>∅ %s: %s</div></div>' % (
-            t('Reading', 'Чтение'), t('off-diagonal', 'внедиагональные'),
+        '<div class="space"><h4>%s</h4><div>%s: %s</div><div>∅ %s: %s</div></div>' % (
+            t('Reading', 'Чтение'), t('hatched (crossing)', 'штрихованные (пересекающие)'),
             rd([i for i in members if NODE[i].get('offdiag')]), t('empty slots', 'пустые слоты'), rd([i for i in members if NODE[i].get('status') == 'X'])),
         ms])
 

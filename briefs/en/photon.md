@@ -43,7 +43,7 @@ The standard fix for probabilistic sources costs the budget it protects: four-wa
 | 2025 | Commercial QD source S1: 55.3% system efficiency, 26.2 MHz detected rate | Sparrow Quantum | [D][338] |
 | 2025-10 | 12-qubit Belenos/Lucy delivered to CEA TGCC | Quandela | [C][176] |
 | 2026 | QD source S3: raw HOM visibility 97.1 ± 0.1%, purity 99.9 ± 0.1% | Sparrow Quantum | [D][338] |
-| 2026-05 | Gaussian boson sampling, 3,050 photon clicks | USTC (Jiuzhang 4.0) | [D][175] |
+| 2026-05 | Gaussian boson sampling on squeezed light, 3,050 photon clicks | USTC (Jiuzhang 4.0) | [D][175] |
 | 2026-07 | 8-qubit universal MBQC subsystem (Carina) delivered to DLR QCI | QuiX Quantum | [C][177] |
 
 Best-demonstrated and typical-at-scale are further apart here than on any other platform: component fidelities are excellent, the largest fielded universal DV machine is twelve qubits [C][176], and no photonic logical qubit exists as of 2026-09-03. The dominant error term is not a fidelity but per-photon survival through the switch network.
@@ -60,7 +60,7 @@ Drivers are room-temperature electro-optics and the chip sits at ~2 K, where a c
 
 ## Role in the stack
 
-The node sits on the fusion-based photonic architecture (PsiQuantum, Quandela, QuiX). It requires the photonic-IC foundry for sources and waveguides, and provides photons to linear-optical fusion, the resource-state factory, time-bin and path encodings, and single-photon detection. It replaces continuous-variable squeezed light; switching costs the whole stack — different sources, homodyne rather than click detection, GKP rather than fusion codes. Derived clock = sum of the syndrome round: gate layers + transport + readout + reset: none is defined, the architecture being measurement-driven; the native 1.0×10⁻⁷ s clock stands instead, and multiplexing and fusion retries set the effective logical rate. Empty neighbouring slots are conspicuous: no deterministic photon–photon gate, no photonic memory good enough for multiplexing at scale (ORCA's rubidium hollow-core fibre is the only commercial attempt), no non-destructive mid-circuit measurement.
+The node sits on the fusion-based photonic architecture (PsiQuantum, Quandela, QuiX) and is the alternate carrier of the boson sampler architecture. It requires the photonic-IC foundry for sources and waveguides, and provides photons to linear-optical fusion, the resource-state factory, time-bin and path encodings, and single-photon detection. It replaces continuous-variable squeezed light; switching costs the whole stack — different sources, homodyne rather than click detection, GKP rather than fusion codes. Derived clock = sum of the syndrome round: gate layers + transport + readout + reset: none is defined, the architecture being measurement-driven; the native 1.0×10⁻⁷ s clock stands instead, and multiplexing and fusion retries set the effective logical rate. Empty neighbouring slots are conspicuous: no deterministic photon–photon gate, no photonic memory good enough for multiplexing at scale (ORCA's rubidium hollow-core fibre is the only commercial attempt), no non-destructive mid-circuit measurement.
 
 ## Evidence — how the numbers were measured
 
@@ -80,7 +80,7 @@ Conflicts. (i) The main report's 0.5 dB/m is the multimode figure; single-mode S
 | ORCA Computing | developer | UK | Time-bin boson sampling with Rb memory; nine PT-1 units fielded | [P][341] |
 | Xanadu | developer | CA | CV/squeezed route — the in-platform substitution threat | [C][178][G:XANADU-SPAC-2026-03] |
 | Sparrow Quantum | supplier | DK | Merchant deterministic QD single-photon source chips | [D][338][P][342] |
-| USTC (Pan group) | research | CN | Jiuzhang boson sampling; best QD source efficiency on record | [D][170][D][175] |
+| USTC (Pan group) | research | CN | Jiuzhang boson sampling (squeezed light); best QD source efficiency on record | [D][170][D][175] |
 | Photonic Inc. | developer (adjacent) | CA | T-centres in silicon: spin-photon interface, telecom-band links | [P][186][G:PHOTONIC-200M-2026-05] |
 | GlobalFoundries | supplier | US | 300 mm photonic quantum manufacturing, integrated SNSPD | [C][G:GF-QTS-2026-05] |
 | DARPA | funder | US | QBI Stage A/B/C and US2QC validation money | [G:QBI-STAGEB-2025-11] |

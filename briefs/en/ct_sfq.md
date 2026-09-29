@@ -47,7 +47,7 @@ Room-temperature control needs about one drive coax and one flux line per transm
 
 ## Role in the stack
 
-Architecture: the superconducting transmon lattice. It requires superconducting-qubit lithography and flip-chip modules; it provides cold digital logic for a cryogenic decoder and D-Wave's flux DACs [D][430]. The cold routes for control are cryo-CMOS or SFQ: cryo-CMOS reuses commercial foundries and design tools; SFQ needs a niobium ecosystem whose commercial tools stop at physical verification. The conflict with the transmon — switching photons poisoning the qubit — is open: its mitigation is projected [D][249], and SEEQC's 2026 report of no detectable poisoning is press coverage [C][53]. Off-diagonal reading: cold fabrication. Contribution to the derived clock: neutral — the syndrome round stays at **0.65 µs** against the measured **1.1 µs** QEC cycle [D][1]. Neighbouring empty slots: SFQ flux bias, SFQ readout.
+Architecture: the superconducting transmon lattice. It requires superconducting-qubit lithography and flip-chip modules; it provides cold digital logic for a cryogenic decoder and D-Wave's flux DACs [D][430]. The cold routes for control are cryo-CMOS or SFQ: cryo-CMOS reuses commercial foundries and design tools; SFQ needs a niobium ecosystem whose commercial tools stop at physical verification. The conflict with the transmon — switching photons poisoning the qubit — is open: its mitigation is projected [D][249], and SEEQC's 2026 report of no detectable poisoning is press coverage [C][53]. Contribution to the derived clock: neutral — the syndrome round stays at **0.65 µs** against the measured **1.1 µs** QEC cycle [D][1]. Neighbouring empty slots: SFQ flux bias, SFQ readout.
 
 ## Evidence — how the numbers were measured
 

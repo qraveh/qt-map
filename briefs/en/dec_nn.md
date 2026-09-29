@@ -37,7 +37,7 @@ Failure modes are statistical: distribution shift degrades a fine-tuned model wi
 | 2026-05 | First closed-loop neural decoding on hardware: 124 ns decode, 184 ns throughput period, 550 ns loop, distance 3, 6.9(2)%/round vs offline matching 7.2(2)% | International Quantum Academy | [D][729] |
 | 2026-07 | AlphaQubit2 decoding Willow in real time at distance 7: 7.72(9)×10⁻⁴ logical error per cycle | Google Quantum AI | [D][2] |
 
-Best demonstrated is the July 2026 Willow run; typical at scale is still matching or clustering, since every stack outside Google is deterministic. The decoder's own budget is dominated by model mismatch and latency, not arithmetic precision — the Shenzhen implementation quantised weights to 6-bit integers and lost nothing against offline matching [D][729]. At system level the distance-7 record is limited by two-qubit gate and readout errors, and no Λ is reported for it [D][2].
+Best demonstrated is the July 2026 Willow run; typical at scale is still matching or clustering, since outside Google neural decoders run offline or without a stated real-time loop — on Zuchongzhi 3.2, the 448-atom fault-tolerant processor and Sqale — and live only in one distance-3 loop. The decoder's own budget is dominated by model mismatch and latency, not arithmetic precision — the Shenzhen implementation quantised weights to 6-bit integers and lost nothing against offline matching [D][729]. At system level the distance-7 record is limited by two-qubit gate and readout errors, and no Λ is reported for it [D][2].
 
 ## Manufacturing, materials & supply chain
 

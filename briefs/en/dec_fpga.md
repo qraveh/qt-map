@@ -25,7 +25,7 @@ Throughput must clear one round per cycle — 1.1 µs on Willow-class hardware [
 |---|---|---|---|
 | 2025-02-20 | Exact MWPM at 0.8 µs average, d=13, p=0.1%, 62 MHz | Yale (Micro Blossom) | [D][727] |
 | 2025-12-17 | Clustering under 1 µs per round to d=17 on one FPGA | Riverlane | [D][238] |
-| 2026-05-06 | First closed-loop FPGA decode on a live processor, 550 ns at d=3 | IQA Shenzhen | [D][729] |
+| 2026-05-06 | First closed-loop neural FPGA decode on a live processor, 550 ns at d=3 | IQA Shenzhen | [D][729] |
 
 IBM's Relay-BP for the gross code reports a 24 ns iteration and under 1 µs per cycle below p = 3×10⁻³, from simulated syndromes [S][48].
 
@@ -33,7 +33,7 @@ IBM's Relay-BP for the gross code reports a 24 ns iteration and under 1 µs per 
 No fab: a commercial FPGA card in the room-temperature rack. Every published real-time decoder runs on AMD/Xilinx silicon (VU19P for LCD [D][238], VMK180 for Micro Blossom [D][727]); the only merchant alternative changed hands when Intel sold 51% of Altera to Silver Lake at an $8.75 B valuation in April 2025 [G][735] — a duopoly with one side under private equity. High-end FPGAs sit inside US export-control scope. The I/O burden is the syndrome pipe: trivial at 10³ qubits, but at 10⁴–10⁶ the rate forces predecoding at 4 K or many parallel cards.
 
 ## Role in the stack
-Requires the rotated surface code and provides the correction stream fault tolerance needs; it replaces GPU decoding, whose tail latency is non-deterministic — 3.84 µs mean, 3.96 µs max just to cross NVQLink [C][324]. Its contribution to the derived clock is a floor, not a term: it must stay under the 1.1 µs cycle, and does. Verification: these are decoder-in-isolation figures on replayed or simulated syndromes, only the d=3 loop live; Micro Blossom's quoted 367 ns is a repository figure in no paper, the published number being 0.8 µs [D][727].
+An alternate decoder on the transmon lattice with tunable couplers. Requires the rotated surface code and provides the correction stream fault tolerance needs; it replaces GPU decoding, whose tail latency is non-deterministic — 3.84 µs mean, 3.96 µs max just to cross NVQLink [C][324]. Its contribution to the derived clock is a floor, not a term: it must stay under the 1.1 µs cycle, and does. Verification: these are decoder-in-isolation figures on replayed or simulated syndromes; only two loops are live — the d=3 one and the in-loop clustering decoder on Rigetti Ankaa-2, the register's one carrier; Micro Blossom's quoted 367 ns is a repository figure in no paper, the published number being 0.8 µs [D][727].
 
 ## Actors & economics
 **Who.**
@@ -43,7 +43,7 @@ Requires the rotated surface code and provides the correction stream fault toler
 | Riverlane | supplier | UK | LCD and Deltaflow, the only merchant QEC stack | [D][238] |
 | AMD | supplier | US | The FPGA silicon under every published decoder | [D][238] |
 | Google | user | US | 63 µs baseline at d=5 [D][1], then neural decoding at d=7 | [D][2] |
-| IQA Shenzhen | research | CN | First closed-loop FPGA decode on a live processor | [D][729] |
+| IQA Shenzhen | research | CN | First closed-loop neural FPGA decode on a live processor | [D][729] |
 
 **Money.**
 2024-08-06 · Riverlane · Series C · $75 M · Planet First Partners lead · closed [C][661][G:RIVERLANE-FUNDING]

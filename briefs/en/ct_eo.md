@@ -32,7 +32,7 @@ June 2026 reset the arithmetic: 80 ns against a 1 µs cycle is ~12×, and rack e
 TFLN comes from two merchant vendors, HyperLight and Lightium [P][518]; volume BTO only from PsiQuantum's 300 mm GlobalFoundries flow [D][169] and Lumiphase's pilot [D][516]; Xanadu's 0.085 dB/facet coupling used Corning and DISCO [C][172]. No cost per channel is public. I/O burden is this node: a driver and DAC per modulator, a coax and discriminator per detector. QuiX's unit is 32×32 [C][825], so 10³ modes is ~30 racks; at 10⁴ the wall is inter-rack clock skew, at 10⁶ nothing scales. The machine falls under BIS ECCN 4A906 [G:BIS-QUANTUM-2024].
 
 ## Role in the stack
-Shared, not an architecture choice: it drives the fusion architecture (PsiQuantum, Quandela, QuiX) and the continuous-variable/GKP architecture (Xanadu) identically, and sets the derived clock wherever fusions or homodyne measurements iterate — 1.0 MHz at system scale, 5–7 MHz at unit scale. Verification: the figures sit at three reference planes. QuiX's ~150 ns is detector-to-drive [C][825]; 196 ns a full CV loop [P][822]; Aurora's 1 MHz a cycle time, not a latency [D][173].
+Shared, not an architecture choice: it drives the fusion architecture (PsiQuantum, Quandela, QuiX) and the continuous-variable/GKP architecture (Xanadu) identically, also serves the boson sampler, and sets the derived clock wherever fusions or homodyne measurements iterate — 1.0 MHz at system scale, 5–7 MHz at unit scale. Verification: the figures sit at three reference planes. QuiX's ~150 ns is detector-to-drive [C][825]; 196 ns a full CV loop [P][822]; Aurora's 1 MHz a cycle time, not a latency [D][173].
 
 ## Actors & economics
 **Who.**
