@@ -16,7 +16,7 @@ def main():
     a.add_argument('--touch', action='store_true'); a.add_argument('--scroll-to', default=None); a.add_argument('--js', action='append', default=[])
     a.add_argument('--full', action='store_true'); a.add_argument('--lang', default='en'); a.add_argument('--name', default='shot'); a.add_argument('--wait', type=int, default=800)
     o = a.parse_args()
-    page_path = os.path.join(ROOT, 'dist', 'ru' if o.lang == 'ru' else '', 'index.html')
+    page_path = os.path.join(ROOT, 'dist', '' if o.lang == 'en' else o.lang, 'index.html')   # any language folder (29 Sep 2026)
     os.makedirs(o.out, exist_ok=True)
     with sync_playwright() as p:
         b = p.chromium.launch()
