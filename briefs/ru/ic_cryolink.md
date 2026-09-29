@@ -63,7 +63,7 @@ updated: 2026-09-04
 ## Прогноз и открытые вопросы
 Фальсифицируемо (12–24 месяца): подтвердить, если до конца 2027 г. какая-либо группа опубликует цепочечную линию из трёх криостатов либо прогон 30-метровой линии при исполнении гейтов на обоих процессорах; понизить, если к тому же сроку потери на интерфейсах не опустятся ниже 0.3 dB. Лучший случай к 2029 г.: эффективность на один переход выше 90% и архитектура, которой нужны два рефрижератора. Худший случай: внутрикриостатная модульность поглощает весь рост вплоть до 2030 г., и технология остаётся инструментом для белловских тестов. Открытые вопросы: остаточный межкриостатный фазовый шум; можно ли сделать стыки неразъёмными, сохранив ремонтопригодность; построит ли кто-нибудь криогенный СВЧ-коммутатор. За чем следить: продолжения работ ETH, первые связанные ячейки IBM с кубитами внутри.
 
-## Источники
+## Литература
 [50] C. Dundon, S. Hall, M. Hollister, and A. Lindler, “IBM's new modular architecture for cryogenic systems,” IBM Quantum Computing Blog, Aug. 19, 2026. [Online]. Available: https://www.ibm.com/quantum/blog/modular-cryogenics [C]
 [301] US Department of Commerce, Bureau of Industry and Security, “Commerce Control List Additions and Revisions; Implementation of Controls on Advanced Technologies Consistent With Controls Implemented by International Partners,” *Federal Register*, vol. 89, p. 72926, Sep. 6, 2024. [Online]. Available: https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies [G]
 [303] Bluefors, “KIDE Cryogenic Platform — For Large-Scale Quantum Computing,” Jun. 16, 2026. [Online]. Available: https://bluefors.com/products/kide-cryogenic-platform/ [C]

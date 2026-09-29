@@ -88,8 +88,7 @@ Falsifiable milestones for 12–24 months. Confirm: a conveyor spin link on a 30
 
 Open questions. (1) Is benchmarking of a shuttle a meaningful fidelity, or an artefact of motional averaging? (2) Does motional averaging survive foundry-level charge disorder, or invert into pinning? (3) What is the leakage rate at valley anticrossings? (4) Can conveyor phase calibration be automated across thousands of buses? (5) Can a spin cross a die boundary? Watch: any 300 mm shuttling result from imec, Intel, GlobalFoundries or STMicroelectronics; ARQUE's acceptance data at Jülich; QuTech's follow-up to the weight-four parity device.
 
-## Sources
-
+## References
 [10] IBM, “IBM to Acquire HRL Laboratories to Power the Future of Quantum,” Jul. 23, 2026. [Online]. Available: https://newsroom.ibm.com/2026-07-23-ibm-to-acquire-hrl-laboratories-to-power-the-future-of-quantum [G]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
 [189] P. Steinacker *et al.*, “Industry-compatible silicon spin-qubit unit cells exceeding 99% fidelity,” *Nature*, vol. 646, no. 8083, pp. 81–87, Sep. 2025, doi: [10.1038/s41586-025-09531-9](https://doi.org/10.1038/s41586-025-09531-9). [D]

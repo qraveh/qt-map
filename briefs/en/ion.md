@@ -108,8 +108,7 @@ Best case by 2029: Apollo lands with hundreds of logical qubits at 10⁻⁶–10
 
 Open questions: does grid-trap heating scale with zone count or electrode area? Can leakage be turned into erasure fast enough that decoders stop paying for it? What is the electronic gate's real duration at full width? Is 10⁴ s⁻¹ remote entanglement reachable at all? Who second-sources Infineon?
 
-## Sources
-
+## References
 [18] IonQ, “IonQ Completes Acquisition of Oxford Ionics, Rapidly Accelerating Its Quantum Computing Roadmap,” Sep. 17, 2025. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-oxford-ionics-rapidly-accelerating-its-quantum [C]
 [19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [C]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]

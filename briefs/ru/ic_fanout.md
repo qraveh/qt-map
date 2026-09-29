@@ -72,8 +72,7 @@ Pando Tree подаёт «как постоянное напряжение см�
 ## Прогноз и открытые вопросы
 Подтвердить, если до 2027-12-31 рецензируемый бенчмарк гейтов на спиновых кубитах будет выполнен через милликельвиновый маршрутизатор или мультиплексор на кристалле и сообщит тепло на канал; понизить, если прототип Hitachi 2028 финансового года или система Diraq 2029 года выйдут с отдельными линиями на каждый затвор от 4 K или комнатной температуры. Открытые вопросы. (1) Сколько рассеивает Pando Tree на один переключаемый вывод? (2) Какую просадку удерживаемого напряжения терпят обменные гейты между регенерациями? (3) Ограничивает ли импульсное управление с временным мультиплексированием параллелизм гейтов ниже того, что нужно раунду поверхностного кода? (4) Могут ли разделение линий в кроссбаре и милликельвиновая маршрутизация ужиться на одном кристалле? (5) Займут ли спиновые модули (ic_mcm) этот слот раньше, чем маршрутизаторы дойдут до 10⁴ каналов?
 
-## Источники
-
+## Литература
 [197] A. Nickl *et al.*, “Eight-qubit operation of a 300 mm SiMOS foundry-fabricated device,” *Nat. Commun.*, vol. 17, no. 1, Art. no. 5878, Jul. 2026, doi: [10.1038/s41467-026-74597-6](https://doi.org/10.1038/s41467-026-74597-6). [D]
 [199] H. C. George *et al.*, “12-spin-qubit arrays fabricated on a 300 mm semiconductor manufacturing line,” *Nano Lett.*, vol. 25, no. 2, pp. 793–799, Dec. 2024, doi: [10.1021/acs.nanolett.4c05205](https://doi.org/10.1021/acs.nanolett.4c05205). [arXiv:2410.16583](https://arxiv.org/abs/2410.16583). [D]
 [200] Quantum Motion, “Quantum Motion Delivers the Industry's First Full-Stack Silicon CMOS Quantum Computer,” Sep. 15, 2025. [Online]. Available: https://quantummotion.com/quantum-motion-delivers-the-industrys-first-full-stack-silicon-cmos-quantum-computer/ [C]

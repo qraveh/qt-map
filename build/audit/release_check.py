@@ -57,7 +57,7 @@ def main():
     # 3. headings and ids: numbered, unique, in the TOC; §x.y references resolve
     ids = re.findall(r'<h[23] id="([^"]+)"', h)
     item('heading ids unique', len(ids) == len(set(ids)), [i for i in ids if ids.count(i) > 1][:5])
-    item('heading ids follow section numbers (en-s7-2 style)', all(re.match(r'(en|ru)-s(-about|\d+(-\d+)?)$|editions-(en|ru)$', i) for i in ids), [i for i in ids if not re.match(r'(en|ru)-s(-about|\d+(-\d+)?)$|editions-(en|ru)$', i)][:5])
+    item('heading ids follow section numbers (en-s7-2 style)', all(re.match(r'(en|ru|he)-s(-about|\d+(-\d+){0,2})$|editions-(en|ru|he)$', i) for i in ids), [i for i in ids if not re.match(r'(en|ru|he)-s(-about|\d+(-\d+){0,2})$|editions-(en|ru|he)$', i)][:5])
     nav = re.findall(r'<nav class="toc".*?</nav>', h, flags=re.S)[0]; toc_hrefs = set(re.findall(r'href="#((?:en|ru)-s[^"]*)"', nav))
     # the TOC lists every h2 and the h3 of the graph and machines chapters (7.x, 8.x) by design
     must = [i for i in ids if re.match(r'(en|ru)-s\d+$', i) or re.match(r'(en|ru)-s[78]-\d+$', i)]
@@ -128,6 +128,10 @@ def main():
     # 7. the harness's own self-test and the chapter's classifiers still import
     to = run([sys.executable, 'build/audit/vv/test_oracle.py'])
     item('oracle self-test', to.returncode == 0 and 'OK' in (to.stdout + to.stderr), (to.stdout + to.stderr)[-200:])
+    # 7b. every fact of the change ledgers reached the hand-written corners (build/audit/propagate.py, 29 Sep 2026): no old name after a
+    #     rename, no removed row still named as a machine
+    pr = run([sys.executable, 'build/audit/propagate.py', '--check'])
+    item('change ledgers propagated to the hand-written corners (propagate.py --check)', pr.returncode == 0, (pr.stdout + pr.stderr)[-400:])
     # 8. sizes
     item('dist under 12 MB', os.path.getsize(DIST) < 12 * 1024 * 1024, os.path.getsize(DIST))
     # optional: smoke, V&V single

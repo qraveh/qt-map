@@ -69,8 +69,7 @@ Every headline here is conditional on acceptance: Harper & Flammia's 0.60(3)% is
 ## Outlook & open questions
 Confirm if by 2027-12-31 a detection-certified sampling run holds a fidelity bound above 0.3 on a circuit no published classical method reproduces within a week; demote to history if by 2028-12-31 magic-state preparation and utility circuits on transmons and ions run with correction, not discard. Open questions. (1) Where do detection and probabilistic error cancellation cross in sampling cost at 100–150 qubits? (2) How much gain survives a baseline given the same leakage discard? (3) Can spacetime checks leave the Clifford regime, where valid checks thin out exponentially [D][717]? (4) What acceptance do Helios' 94-qubit iceberg runs keep at depth? (5) Is concatenated detection a cheaper route to early fault tolerance on 2D chips than surface-code memories?
 
-## Sources
-
+## References
 [46] S. Martiel *et al.*, “Sampling hard circuits with verifiably high fidelity,” [arXiv:2607.25941](https://arxiv.org/abs/2607.25941), Jul. 2026. [D]
 [47] H. Manabe, H. Gu, and F. Pan, “Classical Simulation and Design Frontiers for IBM's Doped Clifford Sampling Experiment,” [arXiv:2608.13110](https://arxiv.org/abs/2608.13110), Aug. 2026. [D]
 [105] S. Dasu *et al.*, “Computing with many encoded logical qubits beyond break-even,” [arXiv:2602.22211](https://arxiv.org/abs/2602.22211), Feb. 2026. [D]

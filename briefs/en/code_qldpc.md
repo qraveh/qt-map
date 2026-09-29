@@ -89,8 +89,7 @@ Confirm within 12–24 months if IBM demonstrates a gross-code memory below brea
 
 Open questions: (1) what two-qubit fidelity does a millimetre-scale coupler cost, and does it exceed the rate advantage? (2) can Relay-BP hold its latency on live syndromes? (3) do BB logical gates via adapters beat lattice surgery once the logical processing unit is counted? (4) how does the threshold move under leakage and loss rather than depolarising noise? (5) does anyone outside IBM adopt this family? Watch the Loon fidelity disclosure and IQM's 2027 demonstrator.
 
-## Sources
-
+## References
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [7] C. Gidney, “How to factor 2048 bit RSA integers with less than a million noisy qubits,” [arXiv:2505.15917](https://arxiv.org/abs/2505.15917), May 2025. [S]
 [19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [C]

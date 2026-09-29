@@ -59,7 +59,7 @@ The encoding under the fusion-based discrete-variable architecture (PsiQuantum, 
 ## Outlook & open questions
 Confirm by 2027: a hardware syndrome cycle consuming heralded loss as an erasure flag; absent that it stays theory. Best case 2029: a small fusion-based logical qubit; worst case, commercially real only in QKD. Open: does anyone reconcile the 0.38% and 2.7% thresholds; can detector efficiency reach herald-trust levels at scale.
 
-## Sources
+## References
 [169] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
 [179] S. Bartolucci *et al.*, “Fusion-based quantum computation,” *Nat. Commun.*, vol. 14, Art. no. 912, Feb. 2023, doi: [10.1038/s41467-023-36493-1](https://doi.org/10.1038/s41467-023-36493-1). [arXiv:2101.09310](https://arxiv.org/abs/2101.09310). [S]
 [264] M. C. Löbl, L. A. M. Pettersson, J. Dragašević, S. X. Chen, and O. A. D. Sandberg, “The subthreshold issue of fusion-based quantum computing,” [arXiv:2606.28490](https://arxiv.org/abs/2606.28490), Jun. 2026. [S]

@@ -106,8 +106,7 @@ updated: 2026-09-03
 
 Открытые вопросы: (1) какова Λ, когда ложноотрицательные срабатывания накопятся как утечка за 10³ раундов? (2) сохранится ли смещение 40:1 при параллельных гейтах на общих линиях считывания? (3) можно ли снять налог на точность в метастабильном многообразии Yb? (4) возможен ли адаптированный к стиранию код qLDPC с быстрым декодером? Следить за: поставкой D-Wave в 2026 г., следующей многокубитной статьёй AWS, результатами Google/Kaufman по Yb.
 
-## Источники
-
+## Литература
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [8] Y. Wu, S. Kolkowitz, S. Puri, and J. D. Thompson, “Erasure conversion for fault-tolerant quantum computing in alkaline earth Rydberg atom arrays,” *Nat. Commun.*, vol. 13, Art. no. 4657, 2022, doi: [10.1038/s41467-022-32094-6](https://doi.org/10.1038/s41467-022-32094-6). [arXiv:2201.03540](https://arxiv.org/abs/2201.03540). [S]

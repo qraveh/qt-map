@@ -107,6 +107,11 @@ def phone(pw, shots):
     check('phone (Russian): the page bar\'s language switch is fully on screen', mb['right'] <= mb['vw'], mb)
     if shots: p.screenshot(path=os.path.join(shots, 'phone_ru_top.png'))
     p.evaluate("()=>window.__setLang('en')")
+    # 7. the find window is sticky (29 Sep 2026): stored open, it reopens after a reload — still the band under the page bar, no grip
+    p.evaluate("()=>{window.scrollTo(0,0); window.__find.open(null);}"); time.sleep(0.5)
+    p.reload(wait_until='load', timeout=120000); p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0", timeout=60000); time.sleep(0.6)
+    f2 = p.evaluate("()=>{const b=document.getElementById('findbar'); const r=b.getBoundingClientRect(); const mb=document.querySelector('.mobilebar').getBoundingClientRect(); return {open:!b.hidden, top:Math.round(r.top), barBottom:Math.round(mb.bottom), left:Math.round(r.left), right:Math.round(innerWidth-r.right), grip:getComputedStyle(b.querySelector('.fgrip')).display};}")
+    check('phone: stored open, the find window reopens after a reload — edge to edge under the page bar, no grip', f2['open'] and f2['top'] >= f2['barBottom'] - 2 and f2['left'] < 12 and f2['right'] < 12 and f2['grip'] == 'none', f2)
     check('phone: no page errors', not errors, errors[:3])
     b.close()
 
@@ -208,15 +213,126 @@ def desktop(pw, shots):
     p.evaluate("()=>window.__selectNode('ion')"); time.sleep(0.5)
     r7 = p.evaluate("()=>{const f=document.querySelector('#insp figure.cardpic'); return {pic:!!f, cap:f?f.querySelector('figcaption').textContent.length:0, img:f?f.querySelector('img').naturalWidth:0};}")
     check('desktop: the technology card carries a captioned picture', r7['pic'] and r7['cap'] > 20, r7)
+    find_window(p)
+    keep_place(p)
     check('desktop: no page errors', not errors, errors[:3])
     b.close()
+
+
+def wait(p, js, timeout=30000):
+    try: p.wait_for_function(js, timeout=timeout); return True
+    except Exception: return False
+
+
+BAR = "()=>{const b=document.getElementById('findbar'), r=b.getBoundingClientRect(), l=document.getElementById('findlist'); return {open:!b.hidden, x:Math.round(r.left), y:Math.round(r.top), r:Math.round(r.right), b:Math.round(r.bottom), h:Math.round(r.height), vw:innerWidth, vh:innerHeight, list:getComputedStyle(l).display==='none'?0:Math.round(l.getBoundingClientRect().height), opts:getComputedStyle(b.querySelector('.findopts')).display, glyph:document.getElementById('findfold').textContent, exp:document.getElementById('findfold').getAttribute('aria-expanded'), q:document.getElementById('findq').value, count:document.getElementById('findcount').textContent};}"
+
+
+def find_window(p):
+    """The find window moves, folds and is sticky (the editor, 29 Sep 2026)."""
+    p.evaluate("()=>{const c=document.querySelector('#insp [data-close]'); if(c)c.click(); window.scrollTo(0,0); window.__find.open({clientX:300,clientY:200});}"); time.sleep(0.3)
+    g = p.evaluate("()=>{const g=document.querySelector('#findbar .fgrip').getBoundingClientRect(); return {x:g.left+g.width/2, y:g.top+g.height/2, cur:getComputedStyle(document.querySelector('#findbar .fgrip')).cursor};}")
+    a0 = p.evaluate(BAR)
+    p.mouse.move(g['x'], g['y']); p.mouse.down(); p.mouse.move(g['x'] + 110, g['y'] + 80, steps=4); p.mouse.move(g['x'] + 220, g['y'] + 160, steps=4); p.mouse.up(); time.sleep(0.2)
+    a1 = p.evaluate(BAR)
+    check('desktop: dragging the grip by (+220, +160) moves the find window by that much and keeps it inside the viewport (grab cursor)', abs(a1['x'] - a0['x'] - 220) <= 3 and abs(a1['y'] - a0['y'] - 160) <= 3 and a1['x'] >= 0 and a1['y'] >= 0 and a1['r'] <= a1['vw'] and a1['b'] <= a1['vh'] and g['cur'] == 'grab', (a0, a1, g['cur']))
+    c = p.evaluate("()=>{const r=document.getElementById('findcount').getBoundingClientRect(); return {x:r.left+r.width/2, y:r.top+r.height/2};}")   # a bare part of the row drags too
+    p.mouse.move(c['x'], c['y']); p.mouse.down(); p.mouse.move(c['x'] + 1500, c['y'] + 1500, steps=6); p.mouse.up(); time.sleep(0.2)
+    a2 = p.evaluate(BAR)
+    check('desktop: dragged by a bare part of the top row far past the corner, the window stops inside the viewport', a2['x'] > a1['x'] and a2['y'] > a1['y'] and a2['r'] <= a2['vw'] - 4 and a2['b'] <= a2['vh'] - 4, (a1, a2))
+    p.evaluate("()=>window.__find.open({clientX:424,clientY:136})"); time.sleep(0.2)   # back to (400, 150)
+    # fold: one line; unfold: as it was
+    p.evaluate("()=>window.__find.search('threshold',{scope:'this',cs:false,whole:false})"); time.sleep(0.3)
+    b0 = p.evaluate(BAR); p.click('#findfold'); time.sleep(0.2); b1 = p.evaluate(BAR); p.click('#findfold'); time.sleep(0.2); b2 = p.evaluate(BAR)
+    check('desktop: ▾ folds the find window to its one row (< 60 px; the options, the location line and the list hidden; ▸) and ▸ restores it', b0['list'] > 50 and b1['h'] < 60 and b1['list'] == 0 and b1['opts'] == 'none' and b1['glyph'] == '▸' and b1['exp'] == 'false' and abs(b2['h'] - b0['h']) <= 2 and b2['list'] > 50 and b2['glyph'] == '▾' and (b1['x'], b1['y']) == (b0['x'], b0['y']), (b0, b1, b2))
+    # sticky: a reload reopens it where it was, with its query, and searches
+    p.click('#findq'); p.keyboard.press('Control+A'); p.keyboard.type('erasure'); time.sleep(0.8)
+    c0 = p.evaluate(BAR)
+    p.reload(wait_until='load', timeout=120000); p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0", timeout=60000)
+    ok = wait(p, r"()=>{const m=/\/ (\d+)/.exec(document.getElementById('findcount').textContent); return !!m&&+m[1]>0&&!document.getElementById('findlist').hidden;}")
+    c1 = p.evaluate(BAR)
+    check('desktop: the find window is sticky — after a reload it is open at the same place with the same query, and the search has run (a hit count, the list)', ok and c1['open'] and (c1['x'], c1['y']) == (c0['x'], c0['y']) and c1['q'] == 'erasure' and c1['list'] > 50, (c0, c1))
+    wait(p, "!document.documentElement.classList.contains('lang-loading') && window.__langLoaded('ru')", 60000)
+
+
+P4 = """(L)=>{const c=document.querySelector('.secbody[data-sec="'+L+'-s5"]'); const p=c&&c.querySelectorAll('p')[3]; if(!p||!p.getClientRects().length) return null; const r=p.getBoundingClientRect(); return {top:Math.round(r.top), h:Math.round(r.height), text:p.textContent.slice(0,30)};}"""
+VIEW = "()=>{const w=document.getElementById('mapwrap'), m=window.__mapContext(), i=document.getElementById('insp'); return {zoom:document.getElementById('zoomlvl').value, sl:Math.round(w.scrollLeft), st:Math.round(w.scrollTop), focus:m.focus, isolate:m.isolate, machine:m.machine, brief:!document.getElementById('brief-transmon').hidden, card:!i.hidden, cardFrac:Math.round(1000*i.scrollTop/Math.max(1,i.scrollHeight))/1000};}"
+
+
+def switch(p, L):
+    p.evaluate("(L)=>window.__setLang(L)", L); wait(p, "!document.documentElement.classList.contains('lang-loading')", 60000); time.sleep(0.4)
+
+
+def keep_place(p):
+    """A language switch keeps the reader's place and leaves the rest of the view as it was (the editor, 29 Sep 2026)."""
+    p.evaluate("()=>{window.__find.close(); const p=document.querySelectorAll('.secbody[data-sec=\"en-s5\"] p')[3]; window.scrollTo(0, p.getBoundingClientRect().top + scrollY - 30);}"); time.sleep(0.4)
+    d0 = p.evaluate(P4, 'en'); switch(p, 'ru'); d1 = p.evaluate(P4, 'ru'); switch(p, 'en'); d2 = p.evaluate(P4, 'en')
+    check('desktop: the 4th paragraph of §5 at the top (30 px down) → in Russian its twin is within 40 px of the top, and back in English the paragraph again', d0 and d1 and d2 and abs(d0['top'] - 30) <= 2 and abs(d1['top']) <= 40 and abs(d2['top']) <= 40, (d0, d1, d2))
+    # a card scrolled 40 % inside, an isolated architecture, an open brief, a zoomed map: the switch keeps them all
+    p.evaluate("()=>{const a=window.__GRAPH.paths.find(x=>Object.values(x.slots).flat().includes('transmon')); window.__isolatePath(a.id); window.__selectNode('transmon'); window.__openBrief('transmon',true); document.getElementById('zoom-in').click();}"); time.sleep(0.6)
+    p.evaluate("()=>{const i=document.getElementById('insp'); i.scrollTop=0.4*i.scrollHeight; const w=document.getElementById('mapwrap'); w.scrollLeft=120; w.scrollTop=60;}"); time.sleep(0.3)
+    v0 = p.evaluate(VIEW); switch(p, 'ru'); v1 = p.evaluate(VIEW)
+    check('desktop: with a technology card open and scrolled 40 % inside, a language switch keeps the card open at 40 % ± 10 %', v0['card'] and abs(v0['cardFrac'] - 0.4) <= 0.01 and v1['card'] and abs(v1['cardFrac'] - 0.4) <= 0.04, (v0['cardFrac'], v1['cardFrac']))
+    same = {k: (v0[k], v1[k]) for k in v0 if k != 'cardFrac' and v0[k] != v1[k]}
+    check('desktop: … and leaves the rest as it was — the selection, the isolated architecture, the open brief, the map\'s zoom and scroll', not same and v0['isolate'] and v0['brief'], (same, v0))
+    # a chosen machine whose card was closed stays closed across a switch
+    switch(p, 'en'); p.evaluate("()=>{document.getElementById('tg-reset').click(); window.__showMachine('google-willow');}"); time.sleep(0.4)
+    p.evaluate("()=>{const c=document.querySelector('#insp [data-mclose]')&&document.querySelector('#insp [data-close]'); if(c)c.click();}"); time.sleep(0.2)
+    m0 = p.evaluate("()=>({card:!document.getElementById('insp').hidden, machine:window.__mapContext().machine})")
+    switch(p, 'ru'); m1 = p.evaluate("()=>({card:!document.getElementById('insp').hidden, machine:window.__mapContext().machine})"); switch(p, 'en')
+    check('desktop: a closed machine card stays closed across a language switch (the machine stays chosen)', m0 == {'card': False, 'machine': 'google-willow'} and m1 == m0, (m0, m1))
+
+
+HE_PAGE = os.path.join(ROOT, 'dist', 'he', 'index.html')
+
+
+def hebrew(pw, shots):
+    """The Hebrew page (29 Sep 2026): right to left on a phone and on a desktop — nothing wider than the screen (at the top, with a brief
+    open, in each language), the phone bar's three-language switch fully on screen, the zoom control and the contents on the start side."""
+    for W, H, mobile in ((390, 844, True), (1280, 860, False)):
+        b = pw.chromium.launch(); ctx = b.new_context(viewport={'width': W, 'height': H}, device_scale_factor=2 if mobile else 1, has_touch=mobile, is_mobile=mobile)
+        p = ctx.new_page(); errors = []
+        p.on('pageerror', lambda e: errors.append(str(e)))
+        p.goto('file://' + HE_PAGE, wait_until='load', timeout=120000)
+        p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0", timeout=60000)
+        p.wait_for_function("!document.documentElement.classList.contains('lang-loading') && window.__langLoaded('en') && window.__langLoaded('ru')", timeout=60000); time.sleep(0.6)
+        tag = 'phone' if mobile else 'desktop'
+        print('Hebrew page, %s %d×%d' % (tag, W, H))
+        r = p.evaluate("()=>({dir:document.documentElement.dir, lang:document.documentElement.lang})")
+        check('HE %s: <html dir="rtl" lang="he">' % tag, r == {'dir': 'rtl', 'lang': 'he'}, r)
+        o1 = p.evaluate(OVER)
+        check('HE %s: nothing wider than the screen at the top' % tag, o1['sw'] <= o1['vw'] + 1 and not o1['bad'], o1)
+        if mobile:
+            mb = p.evaluate("()=>{const s=document.querySelector('.mobilebar .mb-seg'), r=s.getBoundingClientRect(); return {left:Math.round(r.left), right:Math.round(r.right), vw:innerWidth, names:[...s.querySelectorAll('[data-setlang]')].map(b=>b.textContent.trim())};}")
+            check('HE phone: the page bar\'s switch — English · Русский · עברית — is fully on screen', mb['left'] >= 0 and mb['right'] <= mb['vw'] and sorted(mb['names']) == ['English', 'Русский', 'עברית'], mb)
+            z = p.evaluate("()=>{const w=document.getElementById('mapwrap').getBoundingClientRect(), c=document.querySelector('#mapwrap .zoomctl').getBoundingClientRect(); return {left:Math.round(c.left-w.left), right:Math.round(w.right-c.right)};}")
+            check('HE phone: the zoom control sits in the scroller\'s top-left corner (mirrored)', 0 <= z['left'] < 30 and z['right'] > 60, z)
+        else:
+            t = p.evaluate("()=>{const t=document.querySelector('nav.toc').getBoundingClientRect(), m=document.querySelector('main').getBoundingClientRect(), f=document.getElementById('floatlang'); return {toc:Math.round(t.left), main:Math.round(m.right)};}")
+            check('HE desktop: the contents column is on the right', t['toc'] >= t['main'], t)
+        if shots: p.screenshot(path=os.path.join(shots, 'he_%s_top.png' % tag))
+        p.evaluate("()=>window.__openBrief('transmon')"); time.sleep(0.6)
+        o2 = p.evaluate(OVER)
+        check('HE %s: nothing wider than the screen with a brief open' % tag, o2['sw'] <= o2['vw'] + 1 and not o2['bad'], o2)
+        if shots: p.screenshot(path=os.path.join(shots, 'he_%s_brief.png' % tag))
+        p.evaluate("()=>window.__closeBrief(false)")
+        for L in ('en', 'ru', 'he'):
+            p.evaluate("(L)=>{window.__setLang(L); window.scrollTo(0,0);}", L); time.sleep(0.6)
+            o3 = p.evaluate(OVER)
+            check('HE %s, switched to %s: nothing wider than the screen' % (tag, L), o3['sw'] <= o3['vw'] + 1 and not o3['bad'], o3)
+        check('HE %s: no page errors' % tag, not errors, errors[:3])
+        b.close()
+
+
+OVER = """()=>{const vw=innerWidth; const out=[]; const bad=[]; const inScroller=el=>{ for(let p=el.parentElement;p;p=p.parentElement){ const o=getComputedStyle(p).overflowX; if(o==='auto'||o==='scroll'||o==='hidden')return true; } return false; };
+      document.querySelectorAll('body *').forEach(el=>{ if(bad.length>12)return; const cs=getComputedStyle(el); if(cs.display==='none'||cs.visibility==='hidden'||cs.position==='fixed')return; const r=el.getBoundingClientRect(); if(!r.width)return; if((r.right>vw+2||r.left<-2)&&!inScroller(el)) bad.push(el.tagName+'.'+String(el.className).slice(0,40)+' left='+Math.round(r.left)+' right='+Math.round(r.right)); });
+      return {sw:document.documentElement.scrollWidth, vw:vw, bad:bad};}"""   # both edges: a right-to-left page overflows on the left
 
 
 def main():
     a = argparse.ArgumentParser(); a.add_argument('--shots', default=None); o = a.parse_args()
     if o.shots: os.makedirs(o.shots, exist_ok=True)
     with sync_playwright() as pw:
-        phone(pw, o.shots); tablet(pw, o.shots); desktop(pw, o.shots)
+        phone(pw, o.shots); tablet(pw, o.shots); desktop(pw, o.shots); hebrew(pw, o.shots)
     print('RESULT: ' + ('PASS' if not FAILS else 'FAIL ' + str(FAILS)))
     return 0 if not FAILS else 1
 

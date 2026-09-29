@@ -60,7 +60,7 @@ Architectures: the continuous-variable photonic GKP architecture and the boson s
 ## Outlook & open questions
 Confirm by 2028: on-chip GKP effective squeezing above 2 dB with its loss budget; demote if still below 1 dB. Best case 2029: a second group publishes a competing GKP figure. Worst case: integration loss pins it near 1 dB and CV/GKP stays a research architecture. Open: does loss fall as the roadmap claims; can poled TFLN reach GKP-grade fidelity.
 
-## Sources
+## References
 [173] H. A. Rad *et al.*, “Scaling and networking a modular photonic quantum computer,” *Nature*, vol. 638, no. 8052, pp. 912–919, Jan. 2025, doi: [10.1038/s41586-024-08406-9](https://doi.org/10.1038/s41586-024-08406-9). [D]
 [174] M. V. Larsen *et al.*, “Integrated photonic source of Gottesman–Kitaev–Preskill qubits,” *Nature*, vol. 642, no. 8068, pp. 587–591, Jun. 2025, doi: [10.1038/s41586-025-09044-5](https://doi.org/10.1038/s41586-025-09044-5). [D]
 [178] Xanadu Quantum Technologies Limited, “Xanadu Charts Path to Over 1,000 Logical Qubits by 2031,” GlobeNewswire, Aug. 31, 2026. [Online]. Available: https://www.globenewswire.com/news-release/2026/08/31/3353211/0/en/xanadu-charts-path-to-over-1-000-logical-qubits-by-2031.html [R]

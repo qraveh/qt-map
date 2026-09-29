@@ -55,7 +55,7 @@ The one demonstrated block the topological architecture owns: it requires the Ma
 ## Outlook & open questions
 Falsifiable in 12–24 months: a third group publishing parity readout; a sub-1% assignment error from anyone but Microsoft; a directly measured poisoning rate. Confirm if two land; demote if it stays a two-laboratory result to 2028. Best case, readout stops being the open variable; worst case, τ on a joint loop stays in tens of µs. Open: does multiplexed multi-tetron readout work; is 1% reproducible off Microsoft's devices.
 
-## Sources
+## References
 [13] Microsoft Azure Quantum, “Interferometric single-shot parity measurement in InAs–Al hybrid devices,” *Nature*, vol. 638, no. 8051, pp. 651–655, Feb. 2025, doi: [10.1038/s41586-024-08445-2](https://doi.org/10.1038/s41586-024-08445-2). [D]
 [20] M. Aghaee *et al.*, “Distinct Lifetimes for X and Z Loop Measurements in a Majorana Tetron Device,” [arXiv:2507.08795](https://arxiv.org/abs/2507.08795), Jul. 2025. [D]
 [21] M. Aghaee *et al.*, “20 Second Parity Lifetime in an InAs–Pb Tetron Device,” [arXiv:2606.03884](https://arxiv.org/abs/2606.03884), Jun. 2026. [D]

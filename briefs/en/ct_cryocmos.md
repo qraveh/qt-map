@@ -108,8 +108,7 @@ Confirm within 12–24 months if IBM publishes a peer-reviewed full chain — dr
 
 Open questions: (1) a defensible power-per-qubit definition? (2) will a foundry qualify a cryogenic corner? (3) does controller drift dominate below 10⁻⁴ qubit error? (4) must per-qubit power fall, or can the plant grow tenfold? (5) will IBM keep HRL's 130 nm design? Watch ISSCC 2027, IBM's post-acquisition disclosures, and any 4 K plant marketed above 20 W.
 
-## Sources
-
+## References
 [10] IBM, “IBM to Acquire HRL Laboratories to Power the Future of Quantum,” Jul. 23, 2026. [Online]. Available: https://newsroom.ibm.com/2026-07-23-ibm-to-acquire-hrl-laboratories-to-power-the-future-of-quantum [C]
 [190] Members of the HRL Quantum Team and Collaborators, “A digitally controlled silicon quantum processing unit,” [arXiv:2604.16216](https://arxiv.org/abs/2604.16216), Apr. 2026. [D]
 [272] S. Subramanian and S. Pellerano, “Intel's Millikelvin Quantum Research Control Chip Provides Denser Integration with Qubits,” Intel Community, Jun. 20, 2024. [Online]. Available: https://community.intel.com/t5/Blogs/Tech-Innovation/Data-Center/Intel-s-Millikelvin-Quantum-Research-Control-Chip-Provides/post/1608558 [C]

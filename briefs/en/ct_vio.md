@@ -75,8 +75,7 @@ Line crosstalk exists only as OQC's four-qubit selectivity matrix [D][538]; RIKE
 ## Outlook & open questions
 Confirm if, by 2027-12-31, a vertically wired processor above 256 qubits publishes two-qubit errors with simultaneous crosstalk; demote if Fujitsu's 1,000-qubit machine passes 2026-12-31 undisclosed or VIO-40K slips past 2028. Open questions. (1) What pitch holds selectivity below −40 dB at 1 mm qubit spacing? (2) Can non-galvanic pins serve flux-tuned couplers? (3) What is contact yield per thermal cycle at 10⁴ pins? (4) Does nine-way line sharing survive coupled qubits and gates? (5) At what scale does the stack's own heat bind?
 
-## Sources
-
+## References
 [51] Fujitsu Limited and RIKEN, “Fujitsu and RIKEN develop world-leading 256-qubit superconducting quantum computer,” Fujitsu Global, Apr. 22, 2025. [Online]. Available: https://info.archives.global.fujitsu/global/about/resources/news/press-releases/2025/0422-01.html [C]
 [60] A. Curbison, “OQC raises £260m in Europe's largest ever private quantum computing funding round,” OQC, Jun. 2, 2026. [Online]. Available: https://oqc.tech/company/newsroom/series-c [C]
 [75] Fujitsu, “Fujitsu Quantum.” [Online]. Available: https://global.fujitsu/en-global/technology/research/quantum [C]

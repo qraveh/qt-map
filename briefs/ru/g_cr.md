@@ -61,7 +61,7 @@ updated: 2026-09-04
 ## Прогноз и открытые вопросы
 Подтвердить к 2028: изготовленный процессор на фиксированных частотах более чем на восемь кубитов с опубликованной точностью CR при одновременной работе гейтов либо измеренный «патч» Hanyang выше 98%; иначе понизить до наследия. Лучший случай, 2029: дешёвый чиплет на фиксированных частотах; худший — CR выживает лишь как цель компиляции в Qiskit. Использует ли CR в продуктиве кто-нибудь, кроме IBM? Достигает ли попадание в частоты выхода годных без столкновений за пределами ~100 кубитов? Выберет ли фабрика (foundry) CR по стоимости, а не по физике?
 
-## Источники
+## Литература
 [34] IBM Quantum, “What's new at IBM Quantum - Q2 2026.” [Online]. Available: https://www.ibm.com/quantum/blog/whats-new-q2-2026 [D]
 [57] IBM Quantum, “Why IBM is investing $10 billion into quantum computing,” Jun. 2, 2026. [Online]. Available: https://www.ibm.com/quantum/blog/10-billion-investment-faq [G]
 [60] A. Curbison, “OQC raises £260m in Europe's largest ever private quantum computing funding round,” OQC, Jun. 2, 2026. [Online]. Available: https://oqc.tech/company/newsroom/series-c [C]

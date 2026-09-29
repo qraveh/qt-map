@@ -70,7 +70,7 @@ Headline numbers are benchmarking averages over a zone or chain; no vendor publi
 ## Outlook & open questions
 Falsifiable in 12–24 months: confirm/demote that Sol ships in 2027 with laser gates; that a vendor publishes pair-resolved error against chain position; that AQT discloses LYNX gate time and fidelity at the Q4-2026 rollout. Best case by 2029: pulse engineering and zone subdivision hold laser gates at ≈10⁻⁴ with transport still the clock. Worst case: electronic gates reach product scale first and this becomes legacy. Open: does the AQT variant generalise beyond quantum-volume circuits; can scattering-limited error go below 10⁻⁴ at usable power; which binds first at 10⁴ ions, power or transport.
 
-## Sources
+## References
 [18] IonQ, “IonQ Completes Acquisition of Oxford Ionics, Rapidly Accelerating Its Quantum Computing Roadmap,” Sep. 17, 2025. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-oxford-ionics-rapidly-accelerating-its-quantum [C]
 [97] A. Ransford *et al.*, “A 98-qubit trapped-ion quantum computer with all-to-all connectivity,” *Nature*, vol. 655, no. 8121, pp. 81–86, Jun. 2026, doi: [10.1038/s41586-026-10676-4](https://doi.org/10.1038/s41586-026-10676-4). [arXiv:2511.05465](https://arxiv.org/abs/2511.05465). [D]
 [98] Quantinuum, “Quantum Volume.” [Online]. Available: https://www.quantinuum.com/glossary-item/quantum-volume [C]

@@ -97,8 +97,7 @@ updated: 2026-09-03
 
 Открытые вопросы. (1) Каков выход годных кристаллов для интегрированной матрицы SNSPD на 300 mm и почему этого никто не опубликовал? (2) Технологичен ли BTO в объёме производства или это материал рекордного кристалла, выяснение чего и оплачивает DARPA? (3) Кто станет вторым источником для этого слоя, если GlobalFoundries сменит приоритеты?
 
-## Источники
-
+## Литература
 [169] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
 [172] Xanadu, “Xanadu sets new industry benchmark in photonic chip packaging,” PR Newswire, Jun. 10, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/xanadu-sets-new-industry-benchmark-in-photonic-chip-packaging-302796562.html [C]
 [176] Quandela, “Quandela delivers Lucy, the most advanced photonic quantum computer worldwide, to EuroHPC and GENCI at CEA's TGCC,” Oct. 23, 2025. [Online]. Available: https://www.quandela.com/about-us/newsroom/quandela-delivers-lucy-the-most-advanced-photonic-quantum-computer-worldwide-to-eurohpc-and-genci-at-ceas-tgcc/ [C]

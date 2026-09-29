@@ -70,7 +70,7 @@ updated: 2026-09-04
 ## Прогноз и открытые вопросы
 Фальсифицируемо в течение 12–24 месяцев: подтвердить/понизить, что Sol выйдет в 2027 г. с лазерными гейтами; что какой-либо поставщик опубликует ошибку с разрешением по парам в зависимости от положения в цепочке; что AQT раскроет время гейта и точность LYNX при выпуске в Q4-2026. Лучший случай к 2029 г.: инженерия импульсов и дробление на зоны удерживают лазерные гейты на ≈10⁻⁴, а тактом остаётся транспорт. Худший случай: электронные гейты первыми достигают продуктового масштаба, и этот механизм становится наследием. Открыто: обобщается ли вариант AQT за пределы схем для квантового объёма; может ли ограниченная рассеянием ошибка уйти ниже 10⁻⁴ при пригодной мощности; что упрётся первым при 10⁴ ионах — мощность или транспорт.
 
-## Источники
+## Литература
 [18] IonQ, “IonQ Completes Acquisition of Oxford Ionics, Rapidly Accelerating Its Quantum Computing Roadmap,” Sep. 17, 2025. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-oxford-ionics-rapidly-accelerating-its-quantum [C]
 [97] A. Ransford *et al.*, “A 98-qubit trapped-ion quantum computer with all-to-all connectivity,” *Nature*, vol. 655, no. 8121, pp. 81–86, Jun. 2026, doi: [10.1038/s41586-026-10676-4](https://doi.org/10.1038/s41586-026-10676-4). [arXiv:2511.05465](https://arxiv.org/abs/2511.05465). [D]
 [98] Quantinuum, “Quantum Volume.” [Online]. Available: https://www.quantinuum.com/glossary-item/quantum-volume [C]

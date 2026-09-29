@@ -54,7 +54,7 @@ Everything in the topological architecture stands on this stack: encoding, reado
 ## Outlook & open questions
 Falsifiable in 12–24 months: an outside lab publishing an independently grown epitaxial-Pb wire; any published mobility, yield or disorder metric from Microsoft. Confirm on the first; without it the dispute is unresolvable. Best case, an academic group reproduces the stack; worst case, the recipe stays proprietary and the architecture unauditable to 2029. Open: the Pb-shell induced gap; yield per wafer; whether anyone outside Microsoft attempts the Pb shell.
 
-## Sources
+## References
 [13] Microsoft Azure Quantum, “Interferometric single-shot parity measurement in InAs–Al hybrid devices,” *Nature*, vol. 638, no. 8051, pp. 651–655, Feb. 2025, doi: [10.1038/s41586-024-08445-2](https://doi.org/10.1038/s41586-024-08445-2). [D]
 [21] M. Aghaee *et al.*, “20 Second Parity Lifetime in an InAs–Pb Tetron Device,” [arXiv:2606.03884](https://arxiv.org/abs/2606.03884), Jun. 2026. [D]
 [22] H. F. Legg, “On the robustness of topological gap detection via transport,” *Nature*, vol. 654, no. 8120, pp. E22–E26, Jun. 2026, doi: [10.1038/s41586-026-10567-8](https://doi.org/10.1038/s41586-026-10567-8). [arXiv:2503.08944](https://arxiv.org/abs/2503.08944). [D]

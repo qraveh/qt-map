@@ -67,7 +67,7 @@ Electrode and signal counts are vendor-reported and unaudited. Heating is publis
 ## Outlook & open questions
 Confirm or demote by end-2027: does a SkyWater-fabricated trap hold ions in a shipped system; does Sol validate on schedule at 1,200+ electrodes in 2D; does anyone publish a yield or per-wafer heating distribution. Best case 2029: merchant trap wafers with published acceptance data and switching that cuts signals per ion five-fold. Worst case: electrode counts plateau near 10³ because feedthroughs and DAC channels are the wall, and tighter 2D geometry raises heating enough to push Apollo right. Open questions: does a 2D grid keep the linear trap's heating rate; can switching run at 4 K inside a dissipation budget; will Infineon stay merchant.
 
-## Sources
+## References
 [19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [C]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
 [97] A. Ransford *et al.*, “A 98-qubit trapped-ion quantum computer with all-to-all connectivity,” *Nature*, vol. 655, no. 8121, pp. 81–86, Jun. 2026, doi: [10.1038/s41586-026-10676-4](https://doi.org/10.1038/s41586-026-10676-4). [arXiv:2511.05465](https://arxiv.org/abs/2511.05465). [D]

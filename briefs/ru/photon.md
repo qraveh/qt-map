@@ -115,8 +115,7 @@ updated: 2026-09-03
 
 Открытые вопросы. (1) Можно ли интегрировать источники на квантовых точках в масштабе фабрики, не ломая бюджет 2 K и не отказываясь от телекоммуникационных длин волн? (2) Существует ли технология feed-forward, оптическая задержка которой стоит меньше потерь, чем даёт обеспечиваемое ею мультиплексирование? (3) Какая доля потерь геральдирована, а не молчалива? (4) Почему PsiQuantum ничего не опубликовала после Omega? (5) Масштабируются ли фабрики ресурсных состояний сублинейно по числу ключей?
 
-## Источники
-
+## Литература
 [169] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
 [170] X. Ding *et al.*, “High-efficiency single-photon source above the loss-tolerant threshold for efficient linear optical quantum computing,” [arXiv:2311.08347](https://arxiv.org/abs/2311.08347), Nov. 2023. [D]
 [175] H.-L. Liu *et al.*, “Gaussian boson sampling with 1,024 squeezed states in 8,176 modes,” *Nature*, vol. 653, no. 8115, pp. 687–692, May 2026, doi: [10.1038/s41586-026-10523-6](https://doi.org/10.1038/s41586-026-10523-6). [arXiv:2508.09092](https://arxiv.org/abs/2508.09092). [D]

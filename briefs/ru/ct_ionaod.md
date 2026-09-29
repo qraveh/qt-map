@@ -73,8 +73,7 @@ AOD. θ = λf/v; разрешение равно произведению апе
 ## Прогноз и открытые вопросы
 Подтвердить, если к 2027-12-31 IonQ опубликует для Tempo попарные времена гейтов, точности и метод адресации или если будет проведён бенчмаркинг адресуемой цепочки длиннее 60 ионов; понизить, если следующие системы IonQ будут поставлены на электронной или интегрированной доставке. Открытые вопросы. (1) Что задаёт пол для соседа ниже 10⁻³ — аберрации, рассеяние или РЧ-интермодуляция? (2) Могут ли многотональные AOD выполнять параллельные гейты без паразитных пучков? (3) Как дрейф наведения масштабируется с коэффициентом заполнения РЧ? (4) Выдерживает ли двустороннее наведение 100 ионов? (5) Когда фотонная связь выигрывает у более длинной цепочки?
 
-## Источники
-
+## Литература
 [18] IonQ, “IonQ Completes Acquisition of Oxford Ionics, Rapidly Accelerating Its Quantum Computing Roadmap,” Sep. 17, 2025. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-oxford-ionics-rapidly-accelerating-its-quantum [C]
 [100] J.-S. Chen *et al.*, “Benchmarking a trapped-ion quantum computer with 30 qubits,” *Quantum*, vol. 8, Art. no. 1516, Nov. 2024, doi: [10.22331/q-2024-11-07-1516](https://doi.org/10.22331/q-2024-11-07-1516). [arXiv:2308.05071](https://arxiv.org/abs/2308.05071). [D]
 [101] IonQ, “IonQ Tempo: 100-Qubit Quantum Computer (#AQ 64).” [Online]. Available: https://ionq.com/quantum-systems/tempo [C]

@@ -74,8 +74,7 @@ In = индий; TSV = сквозное отверстие в кремнии (th
 ## Прогноз и открытые вопросы
 Подтвердить, если до 2027-12-31 носитель с числом кубитов свыше 100 опубликует число бампов, разброс зазора и ошибку попадания в целевую частоту; понизить, если к тому сроку ни один носитель с числом кубитов свыше 100 этих чисел не опубликует. Открытые вопросы. (1) Какова непрерывность бампов за один термоцикл при 10⁴ бампах? (2) Какая часть ошибки попадания в целевую частоту у кубитов с фиксированной частотой обусловлена неоднородностью зазора? (3) Задаёт ли интерфейс бампов пол потерь около Q ≈ 10⁶? (4) Может ли SFQ-кристалл под кубитами удержать свой вклад в ошибку ниже 10⁻³? (5) Сохраняют ли преемники Sycamore, Zuchongzhi 3.2 и Tianyan-287 двухкристальный стек, который выводит реестр?
 
-## Источники
-
+## Литература
 [35] D. Gao *et al.*, “Establishing a New Benchmark in Quantum Computational Advantage with 105-qubit Zuchongzhi 3.0 Processor,” *Phys. Rev. Lett.*, vol. 134, Art. no. 090601, Mar. 2025, doi: [10.1103/PhysRevLett.134.090601](https://doi.org/10.1103/PhysRevLett.134.090601). [arXiv:2412.11924](https://arxiv.org/abs/2412.11924). [D]
 [80] H. Putterman *et al.*, “Hardware-efficient quantum error correction via concatenated bosonic qubits,” *Nature*, vol. 638, no. 8052, pp. 927–934, Feb. 2025, doi: [10.1038/s41586-025-08642-7](https://doi.org/10.1038/s41586-025-08642-7). [D]
 [249] C. Liu *et al.*, “Single Flux Quantum-Based Digital Control of Superconducting Qubits in a Multichip Module,” *PRX Quantum*, vol. 4, no. 3, Art. no. 030310, Jul. 2023, doi: [10.1103/PRXQuantum.4.030310](https://doi.org/10.1103/PRXQuantum.4.030310). [D]

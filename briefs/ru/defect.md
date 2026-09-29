@@ -56,7 +56,7 @@ updated: 2026-09-03
 ## Прогноз и открытые вопросы
 Подтвердить/понизить (12–24 месяца): безусловный межузловой гейт выше 90% или связь быстрее 1 kHz подтверждают тезис; ещё два года на герцовых темпах понижают технологию до сенсорики. Лучший случай к 2029: многоузловой участок ретранслятора с обнаружением ошибок. Худший случай: только лабораторные линии связи. Открыто: (1) поднимется ли выход годных по SnV выше уровня процентов; (2) появится ли второй рыночный поставщик алмаза; (3) сможет ли темп на T-центрах приблизиться к SiV.
 
-## Источники
+## Литература
 [186] M. Abdel-Kareem, “Photonic Inc. Reaches $2B Valuation with $200M Final Close,” Quantum Computing Report, May 12, 2026. [Online]. Available: https://quantumcomputingreport.com/photonic-inc-reaches-2b-valuation-with-200m-final-close/ [P]
 [208] M. Swayne, “Fujitsu And QuTech Realize High-Precision Quantum Gates,” The Quantum Insider, Mar. 28, 2025. [Online]. Available: https://thequantuminsider.com/2025/03/28/fujitsu-and-qutech-realize-high-precision-quantum-gates/ [P]
 [209] C. M. Knaut *et al.*, “Entanglement of nanophotonic quantum memory nodes in a telecom network,” *Nature*, vol. 629, no. 8012, pp. 573–578, May 2024, doi: [10.1038/s41586-024-07252-z](https://doi.org/10.1038/s41586-024-07252-z). [D]

@@ -59,7 +59,7 @@ updated: 2026-09-04
 ## Прогноз и открытые вопросы
 Подтвердить к 2028, если работающее многомодовое устройство удержит время жизни фотона выше 1 ms; понизить оценку, если эксплуатационные времена жизни останутся около 10² µs, а планарные кубиты со стиранием сократят разрыв. Лучший случай, 2029: мультиплексированное управление, корпуса меньше сантиметра; худший — бессрочные демонстраторы с числом мод в пределах десятка. Открытые вопросы: какая доля эксплуатационной дефазировки обусловлена анциллой; опубликует ли кто-нибудь Q для корпусов λ/4? Следить за данными логического уровня Alice & Bob и за DR49.
 
-## Источники
+## Литература
 [80] H. Putterman *et al.*, “Hardware-efficient quantum error correction via concatenated bosonic qubits,” *Nature*, vol. 638, no. 8052, pp. 927–934, Feb. 2025, doi: [10.1038/s41586-025-08642-7](https://doi.org/10.1038/s41586-025-08642-7). [D]
 [82] S. Turcotte *et al.*, “Quantum error correction of a grid-state qubit with state preparation and measurement errors below 10⁻³,” [arXiv:2607.06718](https://arxiv.org/abs/2607.06718), Jul. 2026. [D]
 [84] N. Mehta *et al.*, “An entangling gate for dual-rail erasure qubits,” *Nature*, vol. 656, no. 8126, pp. 47–53, Aug. 2026, doi: [10.1038/s41586-026-10822-y](https://doi.org/10.1038/s41586-026-10822-y). [arXiv:2503.10935](https://arxiv.org/abs/2503.10935). [D]

@@ -16,9 +16,14 @@ var H=(window.__hydrators=window.__hydrators||[]);
     for(var j=0;j<rs.length;j++){ var r=rs[j]; out+='<a href="'+esc(r.url)+'" target="_blank" rel="noopener" title="'+esc(window.__keyLabel(sid,r.n))+'">['+r.n+'] '+esc(r.short||'')+(r.year?' '+r.year:'')+'</a>'; }
     ds[i].insertAdjacentHTML('beforeend',' '+out); ds[i].removeAttribute('data-keys'); } }
   run(document); H.push(run); })();
-// a Russian brief's Sources list is cloned from the English one (same works, same numbers, English entries): ids and §-links switch to ru
-(function(){ function run(root){ var ols=(root||document).querySelectorAll('ol.refs[data-clone]'); for(var i=0;i<ols.length;i++){ var src=document.getElementById(ols[i].getAttribute('data-clone')); if(!src) continue;
-  ols[i].innerHTML=src.innerHTML.split('-en-src-').join('-ru-src-').split('#en-s').join('#ru-s'); ols[i].removeAttribute('data-clone'); } }
+// a non-English brief's Sources list is cloned from the English one (same works, same numbers, English entries): ids and §-links switch to
+// the half's language (data-clone-lang; a placeholder without it is Russian). A placeholder whose English list has not arrived yet (a page
+// of another language, before the English fragment) waits for it: filled when the fragment brings that list in (29 Sep 2026)
+(function(){ var pend={};
+  function fill(ol,src){ var L=ol.getAttribute('data-clone-lang')||'ru'; ol.innerHTML=src.innerHTML.split('-en-src-').join('-'+L+'-src-').split('#en-s').join('#'+L+'-s'); ol.removeAttribute('data-clone'); ol.removeAttribute('data-clone-lang'); }
+  function run(root){ root=root||document; if(!root.querySelectorAll) return;
+    var ols=root.querySelectorAll('ol.refs[data-clone]'); for(var i=0;i<ols.length;i++){ var id=ols[i].getAttribute('data-clone'), src=document.getElementById(id); if(src) fill(ols[i],src); else (pend[id]=pend[id]||[]).push(ols[i]); }
+    var srcs=root.querySelectorAll('ol.refs[id]'); for(var j=0;j<srcs.length;j++){ var w=pend[srcs[j].id]; if(!w) continue; delete pend[srcs[j].id]; for(var k=0;k<w.length;k++){ if(w[k].hasAttribute('data-clone')) fill(w[k],srcs[j]); } } }
   run(document); H.push(run); })();
 // a self-labelled link (class u) is written without href: the address is its text (sources._link)
 (function(){ function run(root){ var as=(root||document).querySelectorAll('a.u:not([href])'); for(var i=0;i<as.length;i++){ as[i].setAttribute('href',as[i].textContent); } }

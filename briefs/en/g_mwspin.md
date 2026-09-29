@@ -56,7 +56,7 @@ Requires the colour-centre carrier and provides the gate the defect-node archite
 ## Outlook & open questions
 Confirm/demote (12–24 months): a peer-reviewed sub-0.1% gate-set result with an explicit charge-state error term confirms; two more years of press-release fidelities demotes it. Best case 2029: a small error-detected multi-node register. Worst case: excellent gates that never enter a code. Open: (1) can optical addressing be multiplexed; (2) does anyone report nuclear-gate times with fidelities; (3) does a defect platform reach a logical qubit.
 
-## Sources
+## References
 [208] M. Swayne, “Fujitsu And QuTech Realize High-Precision Quantum Gates,” The Quantum Insider, Mar. 28, 2025. [Online]. Available: https://thequantuminsider.com/2025/03/28/fujitsu-and-qutech-realize-high-precision-quantum-gates/ [P]
 [359] J. Fischer *et al.*, “Spin-photon correlations from a Purcell-enhanced diamond nitrogen-vacancy center coupled to an open microcavity,” *Nat. Commun.*, vol. 16, no. 1, Art. no. 11680, Nov. 2025, doi: [10.1038/s41467-025-66722-8](https://doi.org/10.1038/s41467-025-66722-8). [D]
 [360] M. Iuliano *et al.*, “Unconditionally teleported quantum gates between remote solid-state qubit registers,” *Nat. Commun.*, vol. 17, no. 1, Art. no. 4694, May 2026, doi: [10.1038/s41467-026-72818-6](https://doi.org/10.1038/s41467-026-72818-6). [D]

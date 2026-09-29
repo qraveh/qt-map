@@ -4998,5 +4998,653 @@
    "url": "https://quantumzeitgeist.com/top-silicon-spin-quantum-computing-companies/",
    "verified": true
   }
+ ],
+ "S44": [
+  {
+   "authors": [
+    "Ryan Mandelbaum"
+   ],
+   "etal": true,
+   "org": "IBM",
+   "title": "How IBM will build the world's first large-scale, fault-tolerant quantum computer",
+   "date": "2025-06-10",
+   "kind": "web",
+   "site": "IBM Quantum Computing Blog",
+   "url": "https://www.ibm.com/quantum/blog/large-scale-ftqc",
+   "verified": true
+  }
+ ],
+ "B20": [
+  {
+   "org": "Amazon Web Services",
+   "title": "Amazon's new Ocelot chip brings us closer to building a practical quantum computer",
+   "date": "2025-02-27",
+   "kind": "web",
+   "site": "www.aboutamazon.com",
+   "publisher": "Amazon",
+   "url": "https://www.aboutamazon.com/news/aws/quantum-computing-aws-ocelot-chip",
+   "verified": true
+  }
+ ],
+ "B21": [
+  {
+   "org": "Alice & Bob",
+   "title": "Alice & Bob Publishes Quantum Computing Roadmap to 100 Logical Qubits in 2030",
+   "date": "2024-12-04",
+   "kind": "web",
+   "site": "alice-bob.com",
+   "publisher": "Alice & Bob",
+   "url": "https://alice-bob.com/newsroom/alice-bob-quantum-computing-roadmap/",
+   "verified": true
+  }
+ ],
+ "B22": [
+  {
+   "org": "Nord Quantique",
+   "title": "Nord Quantique Achieves Breakthrough in Quantum Error Correction with SPAM Errors Reduced to Below 0.1%",
+   "date": "2026-07-13",
+   "kind": "web",
+   "site": "www.businesswire.com",
+   "publisher": "Nord Quantique",
+   "url": "https://www.businesswire.com/news/home/20260713953398/en/Nord-Quantique-Achieves-Breakthrough-in-Quantum-Error-Correction-with-SPAM-Errors-Reduced-to-Below-0.1",
+   "verified": true
+  }
+ ],
+ "B23": [
+  {
+   "org": "Nord Quantique",
+   "title": "Fewer Qubits and Better Error Correction: Nord Quantique's Multimode Encoding Breakthrough",
+   "date": "2025-05-29",
+   "kind": "web",
+   "site": "nordquantique.com",
+   "publisher": "Nord Quantique",
+   "url": "https://nordquantique.com/articles/nord-quantique-error-correction-multimode-encoding-breakthrough/",
+   "verified": true
+  }
+ ],
+ "S45": [
+  {
+   "org": "D-Wave Quantum",
+   "title": "D-Wave Charts a New Course to Fault-Tolerant Quantum Computing with Gate-Model Roadmap",
+   "date": "2026-06-01",
+   "kind": "web",
+   "site": "www.dwavequantum.com",
+   "publisher": "D-Wave Quantum",
+   "url": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-charts-a-new-course-to-fault-tolerant-quantum-computing-with-gate-model-roadmap/",
+   "verified": true
+  }
+ ],
+ "S46": [
+  {
+   "org": "Oxford Quantum Circuits",
+   "title": "Oxford Quantum Circuits Outlines Roadmap to 50,000 Logical Qubits by 2034",
+   "date": "2025-06-05",
+   "kind": "web",
+   "site": "www.hpcwire.com",
+   "publisher": "Oxford Quantum Circuits",
+   "url": "https://www.hpcwire.com/off-the-wire/oxford-quantum-circuits-outlines-roadmap-to-50000-logical-qubits-by-2034/",
+   "verified": true
+  }
+ ],
+ "S47": [
+  {
+   "org": "Oxford Quantum Circuits",
+   "title": "OQC and Digital Realty Team with NVIDIA to Launch First Quantum-AI Data Centre in New York City",
+   "date": "2025-09-16",
+   "kind": "web",
+   "site": "oqc.tech",
+   "publisher": "Oxford Quantum Circuits",
+   "url": "https://oqc.tech/company/newsroom/oqc-quantum-ai-data-centre",
+   "verified": true
+  }
+ ],
+ "Q33": [
+  {
+   "org": "Diraq",
+   "title": "Diraq to Deploy a Quantum Computer Inside an Equinix Data Center",
+   "date": "2026-08-31",
+   "kind": "web",
+   "site": "www.globenewswire.com",
+   "publisher": "Diraq",
+   "url": "https://www.globenewswire.com/news-release/2026/08/31/3353719/0/en/diraq-to-deploy-a-quantum-computer-inside-an-equinix-data-center.html",
+   "verified": true
+  }
+ ],
+ "Q34": [
+  {
+   "org": "Hitachi",
+   "title": "Hitachi launches R&D on silicon quantum computers in collaboration with Intel K.K. and AIST to accelerate the shift from academic demonstration to industrial application",
+   "date": "2026-07-22",
+   "kind": "web",
+   "site": "www.hitachi.com",
+   "publisher": "Hitachi",
+   "url": "https://www.hitachi.com/en/press/articles/2026/07/0722a/",
+   "verified": true
+  }
+ ],
+ "Q35": [
+  {
+   "org": "Silicon Quantum Computing",
+   "title": "About — Silicon Quantum Computing",
+   "date": "2026-09-29",
+   "kind": "web",
+   "site": "sqc.com",
+   "publisher": "Silicon Quantum Computing",
+   "url": "https://sqc.com/about",
+   "verified": true
+  }
+ ],
+ "Q36": [
+  {
+   "org": "Silicon Quantum Computing",
+   "title": "SQC Establishes Leadership in Silicon Modality of Quantum Computing with Record-Setting Processor",
+   "date": "2025-12-18",
+   "kind": "web",
+   "site": "sqc.com",
+   "publisher": "Silicon Quantum Computing",
+   "url": "https://sqc.com/news/sqc-establishes-leadership-in-silicon-modality",
+   "verified": true
+  }
+ ],
+ "Q37": [
+  {
+   "org": "Silicon Quantum Computing",
+   "title": "SQC Advances to DARPA's Quantum Benchmarking Initiative Stage B",
+   "date": "2025-11-07",
+   "kind": "web",
+   "site": "sqc.com",
+   "publisher": "Silicon Quantum Computing",
+   "url": "https://sqc.com/news/darpa-qbi-stage-b",
+   "verified": true
+  }
+ ],
+ "Q38": [
+  {
+   "org": "Photonic Inc.",
+   "title": "Photonic Inc. Accelerates into its Next Phase of Growth",
+   "date": "2026-03-13",
+   "kind": "web",
+   "site": "www.globenewswire.com",
+   "publisher": "Photonic Inc.",
+   "url": "https://www.globenewswire.com/news-release/2026/03/13/3255642/0/en/photonic-inc-accelerates-into-its-next-phase-of-growth.html",
+   "verified": true
+  }
+ ],
+ "Q39": [
+  {
+   "org": "Photonic Inc.",
+   "title": "Photonic Performs Distributed Entanglement between Modules",
+   "date": "2024-05-30",
+   "kind": "web",
+   "site": "photonic.com",
+   "publisher": "Photonic Inc.",
+   "url": "https://photonic.com/news/photonic-demonstrates-distributed-entanglement-between-modules/",
+   "verified": true
+  }
+ ],
+ "Q40": [
+  {
+   "org": "eeNews Europe",
+   "title": "Quantum Brilliance CEO Mark Luo on deployable quantum systems and the future of diamond-based computing",
+   "date": "2026-05-07",
+   "kind": "web",
+   "site": "www.eenewseurope.com",
+   "publisher": "eeNews Europe",
+   "url": "https://www.eenewseurope.com/en/quantum-brilliance-ceo-mark-luo-on-deployable-quantum-systems-and-the-future-of-diamond-based-computing/",
+   "verified": true
+  }
+ ],
+ "Q41": [
+  {
+   "org": "Quantum Brilliance",
+   "title": "Quantum Brilliance Announces First Purchase of a Room-Temperature Quantum Accelerator in Europe, Powered by NVIDIA CUDA-Q",
+   "date": "2024-11-18",
+   "kind": "web",
+   "site": "quantumbrilliance.com",
+   "publisher": "Quantum Brilliance",
+   "url": "https://quantumbrilliance.com/press-release/quantum-brilliance-announces-first-purchase-of-a-room-temperature-quantum-accelerator-in-europe-powered-by-nvidia-cuda-q",
+   "verified": true
+  }
+ ],
+ "T11": [
+  {
+   "org": "Microsoft",
+   "title": "Microsoft's Majorana 1 chip carves new path for quantum computing",
+   "date": "2025-02-19",
+   "kind": "web",
+   "site": "news.microsoft.com",
+   "publisher": "Microsoft",
+   "url": "https://news.microsoft.com/source/features/innovation/microsofts-majorana-1-chip-carves-new-path-for-quantum-computing/",
+   "verified": true
+  }
+ ],
+ "A9": [
+  {
+   "org": "D-Wave Quantum",
+   "title": "D-Wave Announces General Availability of Advantage2 Quantum Computer, Its Most Advanced and Performant System",
+   "date": "2025-05-20",
+   "kind": "web",
+   "site": "www.dwavequantum.com",
+   "publisher": "D-Wave Quantum",
+   "url": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-announces-general-availability-of-advantage2-quantum-computer-its-most-advanced-and-performant-system/",
+   "verified": true
+  }
+ ],
+ "A10": [
+  {
+   "org": "D-Wave Quantum",
+   "title": "Beyond Classical: D-Wave First to Demonstrate Quantum Supremacy on Useful, Real-World Problem",
+   "date": "2025-03-12",
+   "kind": "web",
+   "site": "www.dwavequantum.com",
+   "publisher": "D-Wave Quantum",
+   "url": "https://www.dwavequantum.com/company/newsroom/press-release/beyond-classical-d-wave-first-to-demonstrate-quantum-supremacy-on-useful-real-world-problem/",
+   "verified": true
+  }
+ ],
+ "A11": [
+  {
+   "org": "D-Wave Quantum",
+   "title": "D-Wave Reports Second Quarter 2026 Results",
+   "date": "2026-08-06",
+   "kind": "web",
+   "site": "ir.dwavequantum.com",
+   "publisher": "D-Wave Quantum",
+   "url": "https://ir.dwavequantum.com/news/news-details/2026/D-Wave-Reports-Second-Quarter-2026-Results/default.aspx",
+   "verified": true
+  }
+ ],
+ "A12": [
+  {
+   "org": "Qilimanjaro Quantum Tech",
+   "title": "Qilimanjaro's New Analog Quantum System Inaugurated at the Barcelona Supercomputing Center",
+   "date": "2026-05-28",
+   "kind": "web",
+   "site": "qilimanjaro.tech",
+   "publisher": "Qilimanjaro Quantum Tech",
+   "url": "https://qilimanjaro.tech/qilimanjaros-new-analog-quantum-system-inaugurated-at-the-barcelona-supercomputing-center/",
+   "verified": true
+  }
+ ],
+ "I44": [
+  {
+   "org": "Quantinuum",
+   "title": "Introducing Helios: The Most Accurate Quantum Computer in the World",
+   "date": "2025-11-05",
+   "kind": "web",
+   "site": "www.quantinuum.com",
+   "publisher": "Quantinuum",
+   "url": "https://www.quantinuum.com/blog/introducing-helios-the-most-accurate-quantum-computer-in-the-world",
+   "verified": true
+  }
+ ],
+ "I45": [
+  {
+   "org": "Quantinuum",
+   "title": "Helix: A New Architecture for Enterprise-Scale Fault-Tolerant Quantum Computing",
+   "date": "2026-09-08",
+   "kind": "web",
+   "site": "www.quantinuum.com",
+   "publisher": "Quantinuum",
+   "url": "https://www.quantinuum.com/blog/helix-a-new-architecture-for-enterprise-scale-fault-tolerant-quantum-computing",
+   "verified": true
+  }
+ ],
+ "I46": [
+  {
+   "org": "Quantinuum",
+   "title": "Technical perspective: By the end of the decade, we will deliver universal, fully fault-tolerant quantum computing",
+   "date": "2024-09-17",
+   "kind": "web",
+   "site": "www.quantinuum.com",
+   "publisher": "Quantinuum",
+   "url": "https://www.quantinuum.com/blog/technical-perspective-by-the-end-of-the-decade-we-will-deliver-universal-fault-tolerant-quantum-computing",
+   "verified": true
+  }
+ ],
+ "I47": [
+  {
+   "org": "Quantinuum",
+   "title": "Quantinuum Overcomes Last Major Hurdle to Deliver Scalable Universal Fault-Tolerant Quantum Computers by 2029",
+   "date": "2025-06-26",
+   "kind": "web",
+   "site": "www.quantinuum.com",
+   "publisher": "Quantinuum",
+   "url": "https://www.quantinuum.com/blog/quantinuum-overcomes-last-major-hurdle-to-deliver-scalable-universal-fault-tolerant-quantum-computers-by-2029",
+   "verified": true
+  }
+ ],
+ "I48": [
+  {
+   "org": "Universal Quantum",
+   "title": "Universal Quantum develops key enabler of million-qubit quantum computer",
+   "date": "2024-07-22",
+   "kind": "web",
+   "site": "universalquantum.com",
+   "publisher": "Universal Quantum",
+   "url": "https://universalquantum.com/knowledge-hub/universal-quantum-develops-key-enabler-of-million-qubit-quantum-computer",
+   "verified": true
+  }
+ ],
+ "I49": [
+  {
+   "org": "IonQ",
+   "title": "IonQ Hits #AQ 64 Milestone Ahead of Schedule — And Sets Its Sights Even Higher",
+   "date": "2025-10-13",
+   "kind": "web",
+   "site": "www.ionq.com",
+   "publisher": "IonQ",
+   "url": "https://www.ionq.com/blog/ionq-hits-aq-64-milestone-ahead-of-schedule-and-sets-its-sights-even-higher",
+   "verified": true
+  }
+ ],
+ "I50": [
+  {
+   "org": "IonQ",
+   "title": "IonQ Achieves Key Photonic Interconnect Milestone, Demonstrating Networked Quantum Systems Using Entanglement",
+   "date": "2026-04-14",
+   "kind": "web",
+   "site": "IonQ",
+   "url": "https://www.ionq.com/news/ionq-achieves-key-photonic-interconnect-milestone-demonstrating-networked-quantum-systems-using-entanglement",
+   "verified": true
+  }
+ ],
+ "I51": [
+  {
+   "org": "Quantum Art",
+   "title": "Quantum Art Unveils Aggressive Roadmap to Scalable Commercial Quantum Advantage by 2027, 1 Million Qubits by 2033",
+   "date": "2025-06-24",
+   "kind": "web",
+   "site": "www.prnewswire.com",
+   "publisher": "PR Newswire",
+   "url": "https://www.prnewswire.com/news-releases/quantum-art-unveils-aggressive-roadmap-to-scalable-commercial-quantum-advantage-by-2027-1-million-qubits-by-2033-302488527.html",
+   "verified": true
+  }
+ ],
+ "I52": [
+  {
+   "org": "Lebedev Physical Institute (FIAN)",
+   "title": "В России создан 50-кубитный ионный квантовый компьютер",
+   "date": "2024-09-26",
+   "kind": "web",
+   "site": "www.lebedev.ru",
+   "publisher": "Lebedev Physical Institute",
+   "url": "https://www.lebedev.ru/ru/main-news/news/4720",
+   "verified": true
+  }
+ ],
+ "I53": [
+  {
+   "org": "Rosatom (FIAN and Russian Quantum Center)",
+   "title": "ФИАН и РКЦ освоили планарную технологию увеличения мощности ионных квантовых компьютеров",
+   "date": "2026-08-12",
+   "kind": "web",
+   "site": "www.atomic-energy.ru",
+   "publisher": "Atomic Energy 2.0 (Rosatom press release)",
+   "url": "https://www.atomic-energy.ru/news/2026/08/12/167757",
+   "verified": true
+  }
+ ],
+ "I54": [
+  {
+   "org": "Oxford Ionics",
+   "title": "Unveiling Oxford Ionics' development roadmap to scalable fault-tolerant quantum computing",
+   "date": "2025-05-08",
+   "kind": "web",
+   "site": "www.oxionics.com",
+   "publisher": "Oxford Ionics",
+   "url": "https://www.oxionics.com/blog-post/unveiling-oxford-ionics%E2%80%99-development-roadmap-to-scalable-fault-tolerant-quantum-computing",
+   "verified": true
+  }
+ ],
+ "I55": [
+  {
+   "org": "Forschungszentrum Jülich",
+   "title": "Official Launch of JION Quantum Computer at Jülich",
+   "date": "2026-09-03",
+   "kind": "web",
+   "site": "www.fz-juelich.de",
+   "publisher": "Forschungszentrum Jülich",
+   "url": "https://www.fz-juelich.de/en/news/archive/press-release/2026/launch-jion-quantum-computer-juelich",
+   "verified": true
+  }
+ ],
+ "I56": [
+  {
+   "org": "QUDORA Technologies",
+   "title": "German Government Selects QUDORA-Led Consortium For €122 Million Project",
+   "date": "2026-09-23",
+   "kind": "web",
+   "site": "thequantuminsider.com",
+   "publisher": "The Quantum Insider",
+   "url": "https://thequantuminsider.com/2026/09/23/german-government-selects-qudora-led-consortium-for-e122-million-project/",
+   "verified": true
+  }
+ ],
+ "N42": [
+  {
+   "org": "Harvard University",
+   "title": "A potential quantum leap",
+   "date": "2025-11-12",
+   "kind": "web",
+   "site": "news.harvard.edu",
+   "publisher": "Harvard Gazette",
+   "url": "https://news.harvard.edu/gazette/story/2025/11/a-potential-quantum-leap/",
+   "verified": true
+  }
+ ],
+ "N43": [
+  {
+   "authors": [
+    "Lucia Garbini"
+   ],
+   "org": "Pasqal",
+   "title": "Inside Pasqal's 2026 Vision on Quantum for Industry and Research",
+   "date": "2026-01-29",
+   "kind": "web",
+   "site": "Pasqal",
+   "url": "https://www.pasqal.com/blog/inside-pasqals-2026-vision-on-quantum-for-industry-and-research/",
+   "verified": true
+  }
+ ],
+ "N44": [
+  {
+   "org": "Atom Computing",
+   "title": "Atom Computing Reveals Quantum Error Correction with Toric Code",
+   "date": "2026-06-03",
+   "kind": "web",
+   "site": "www.prnewswire.com",
+   "publisher": "PR Newswire",
+   "url": "https://www.prnewswire.com/news-releases/atom-computing-reveals-quantum-error-correction-with-toric-code-302789413.html",
+   "verified": true
+  }
+ ],
+ "N45": [
+  {
+   "org": "Microsoft Quantum",
+   "title": "From research to product engineering—how groundbreaking logical-qubit demonstrations are shaping Microsoft's utility-scale quantum software platform",
+   "date": "2026-08-03",
+   "kind": "web",
+   "site": "quantum.microsoft.com",
+   "publisher": "Microsoft",
+   "url": "https://quantum.microsoft.com/en-us/insights/blogs/from-research-to-product-engineering-logical-qubit-demonstrations-shaping-microsoft-utility-scale-quantum-software-platform",
+   "verified": true
+  }
+ ],
+ "A13": [
+  {
+   "authors": [
+    "Lucas Leclerc",
+    "Sergi Julià-Farré",
+    "Gabriel Silva Freitas",
+    "et al.",
+    "Loïc Henriet",
+    "Antoine Browaeys",
+    "Alexandre Dauphin"
+   ],
+   "title": "One-to-one quantum simulation of a frustrated magnet with 256 qubits",
+   "date": "2026-03-20",
+   "kind": "preprint",
+   "site": "arxiv.org",
+   "publisher": "arXiv",
+   "url": "https://arxiv.org/abs/2603.20372",
+   "verified": true,
+   "arxiv": "2603.20372"
+  }
+ ],
+ "A14": [
+  {
+   "org": "QuEra Computing",
+   "title": "Scientists Observe \"String Breaking\" in Two-Dimensional Quantum Simulator",
+   "date": "2025-06-04",
+   "kind": "web",
+   "site": "www.quera.com",
+   "publisher": "QuEra Computing",
+   "url": "https://www.quera.com/press-releases/scientists-observe-string-breaking-in-two-dimensional-quantum-simulator",
+   "verified": true
+  }
+ ],
+ "A15": [
+  {
+   "org": "ICFO - Institut de Ciencies Fotoniques",
+   "title": "QUIONE: Announcing the birth of a unique analog quantum processor in the world",
+   "date": "2024-04-22",
+   "kind": "web",
+   "site": "www.icfo.eu",
+   "publisher": "ICFO",
+   "url": "https://www.icfo.eu/news/2328/quione-announcing-the-birth-of-a-unique-analog-quantum-processor-in-the-world/",
+   "verified": true
+  }
+ ],
+ "P30": [
+  {
+   "org": "PsiQuantum",
+   "title": "PsiQuantum Announces Omega, a Manufacturable Chipset for Photonic Quantum Computing",
+   "date": "2025-02-26",
+   "kind": "web",
+   "site": "www.psiquantum.com",
+   "publisher": "PsiQuantum",
+   "url": "https://www.psiquantum.com/news-import/omega",
+   "verified": true
+  }
+ ],
+ "P31": [
+  {
+   "org": "PsiQuantum",
+   "title": "PsiQuantum to Build World's First Utility-Scale, Fault-Tolerant Quantum Computer in Australia",
+   "date": "2024-04-29",
+   "kind": "web",
+   "site": "www.psiquantum.com",
+   "publisher": "PsiQuantum",
+   "url": "https://www.psiquantum.com/news-import/psiquantum-to-build-worlds-first-utility-scale-fault-tolerant-quantum-computer-in-australia",
+   "verified": true
+  }
+ ],
+ "P32": [
+  {
+   "org": "PsiQuantum",
+   "title": "PsiQuantum Breaks Ground in Australia on Site of World's First Utility-Scale Quantum Computer",
+   "date": "2026-06-17",
+   "kind": "web",
+   "site": "www.psiquantum.com",
+   "publisher": "PsiQuantum",
+   "url": "https://www.psiquantum.com/news-import/psiquantum-breaks-ground-in-australia-on-site-of-worlds-first-utility-scale-quantum-computer",
+   "verified": true
+  }
+ ],
+ "P33": [
+  {
+   "org": "Quandela",
+   "title": "Roadmap 2026–2033",
+   "date": "2026-04-22",
+   "kind": "web",
+   "site": "www.quandela.com",
+   "publisher": "Quandela",
+   "url": "https://www.quandela.com/wp-content/uploads/2026/04/Roadmap-brochure-220426-web.pdf",
+   "verified": true
+  }
+ ],
+ "P34": [
+  {
+   "org": "QuiX Quantum",
+   "title": "QuiX Quantum Secures €15 Million to Deliver First-Generation Universal Photonic Quantum Computer",
+   "date": "2025-07-10",
+   "kind": "web",
+   "site": "QuiX Quantum",
+   "url": "https://www.quixquantum.com/news/quix-quantum-series-a",
+   "verified": true
+  }
+ ],
+ "P35": [
+  {
+   "org": "QuiX Quantum",
+   "title": "QuiX Quantum Announces Carina, the First Universal Photonic Quantum Computing Architecture for Commercial Deployment",
+   "date": "2026-07-14",
+   "kind": "web",
+   "site": "www.quixquantum.com",
+   "publisher": "QuiX Quantum",
+   "url": "https://www.quixquantum.com/news/quix-quantum-announces-carina",
+   "verified": true
+  }
+ ],
+ "P36": [
+  {
+   "org": "Xanadu",
+   "title": "Xanadu Unveils First On-Chip Error-Resistant Photonic Qubit",
+   "date": "2025-06-04",
+   "kind": "web",
+   "site": "www.prnewswire.com",
+   "publisher": "PR Newswire",
+   "url": "https://www.prnewswire.com/news-releases/xanadu-unveils-first-on-chip-error-resistant-photonic-qubit-302470947.html",
+   "verified": true
+  }
+ ],
+ "P37": [
+  {
+   "org": "Xanadu",
+   "title": "Xanadu introduces Aurora: world's first scalable, networked and modular quantum computer",
+   "date": "2025-01-22",
+   "kind": "web",
+   "site": "www.prnewswire.com",
+   "publisher": "PR Newswire",
+   "url": "https://www.prnewswire.com/news-releases/xanadu-introduces-aurora-worlds-first-scalable-networked-and-modular-quantum-computer-302355496.html",
+   "verified": true
+  }
+ ],
+ "P38": [
+  {
+   "org": "ORCA Computing",
+   "title": "Nonlinear Photonic Architecture for Fault-tolerant Quantum Computing",
+   "date": "2025-10-20",
+   "kind": "web",
+   "site": "orcacomputing.com",
+   "publisher": "ORCA Computing",
+   "url": "https://orcacomputing.com/nonlinear-photonic-architecture-for-fault-tolerant-quantum-computing/",
+   "verified": true
+  }
+ ],
+ "P39": [
+  {
+   "org": "TechJournal (interview with Richard Murray, ORCA Computing)",
+   "title": "ORCA Computing Targets Quantum Advantage for AI Within Two Years",
+   "date": "2025-05-14",
+   "kind": "web",
+   "site": "www.techjournal.uk",
+   "publisher": "TechJournal",
+   "url": "https://www.techjournal.uk/p/orca-computing-targets-quantum-advantage",
+   "verified": true
+  }
+ ],
+ "P40": [
+  {
+   "org": "ORCA Computing",
+   "title": "ORCA Computing and Toyota Tsusho Deploy First Quantum System to Enterprise Customer in Japan",
+   "date": "2026-06-16",
+   "kind": "web",
+   "site": "orcacomputing.com",
+   "publisher": "ORCA Computing",
+   "url": "https://orcacomputing.com/orca-toyota-tsusho-deploy-to-enterprise-customer/",
+   "verified": true
+  }
  ]
 }

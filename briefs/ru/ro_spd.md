@@ -107,8 +107,7 @@ updated: 2026-09-03
 
 Открытые вопросы. (1) Каково совместное распределение эффективности и джиттера по 300 mm пластине и каков критерий выхода годных? (2) Достижимо ли разрешение по числу фотонов при 2 K или GKP навсегда потребует TES вблизи 100 mK? (3) Какая мощность охлаждения на канал при 2 K нужна машине на 10⁵ каналов и кто построит такую установку? (4) Достигает ли хоть одна неразрушающая схема телекоммуникационных длин волн при пригодной эффективности? (5) Есть ли у рыночных поставщиков путь, совместимый с фабрикой (foundry)? Следить за следующей аппаратной статьёй PsiQuantum и вехами Stage C, а также за любым раскрытым раундом у Single Quantum, Photon Spot или Quantum Opus — это будет первым сигналом, что спрос вышел за пределы QKD.
 
-## Источники
-
+## Литература
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
 [115] D. Main *et al.*, “Distributed quantum computing across an optical network link,” *Nature*, vol. 638, no. 8050, pp. 383–388, Feb. 2025, doi: [10.1038/s41586-024-08404-x](https://doi.org/10.1038/s41586-024-08404-x). [D]
 [116] J. O'Reilly *et al.*, “Fast photon-mediated entanglement of continuously-cooled trapped ions for quantum networking,” *Phys. Rev. Lett.*, vol. 133, Art. no. 090802, Aug. 2024, doi: [10.1103/PhysRevLett.133.090802](https://doi.org/10.1103/PhysRevLett.133.090802). [arXiv:2404.16167](https://arxiv.org/abs/2404.16167). [D]

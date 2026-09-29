@@ -62,7 +62,7 @@ Sits, as an alternate code, in four architectures — the transmon lattice with 
 ## Outlook & open questions
 Confirm/demote in 12–24 months: a colour-code memory beyond d=5 with Λ approaching 2.14; a second vendor reproducing transversal Cliffords. Best case 2029: cultivation makes it the standard magic-state substrate, the footprint premium confined to factory patches. Worst case: hook-error and decoder overheads keep Λ near 1.5 and it survives only as a distillation substrate. Open questions: does the one-auxiliary-per-plaquette circuit [S][665] recover a competitive threshold on hardware; do planar non-Clifford circuits [S][669] beat distillation; will anyone publish a total-footprint comparison.
 
-## Sources
+## References
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [2] V. Sivak *et al.*, “Reinforcement learning control of quantum error correction,” *Nature*, vol. 655, no. 8124, pp. 879–884, Jul. 2026, doi: [10.1038/s41586-026-10759-2](https://doi.org/10.1038/s41586-026-10759-2). [D]
 [41] N. Lacroix *et al.*, “Scaling and logic in the color code on a superconducting quantum processor,” *Nature*, vol. 645, no. 8081, pp. 614–619, May 2025, doi: [10.1038/s41586-025-09061-4](https://doi.org/10.1038/s41586-025-09061-4). [arXiv:2412.14256](https://arxiv.org/abs/2412.14256). [D]

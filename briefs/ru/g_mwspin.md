@@ -56,7 +56,7 @@ updated: 2026-09-03
 ## Прогноз и открытые вопросы
 Подтвердить/понизить (12–24 месяца): рецензируемый результат по набору гейтов ниже 0.1% с явно выделенным членом ошибки зарядового состояния подтверждает; ещё два года точностей (fidelity) из пресс-релизов понижают. Лучший случай к 2029: небольшой многоузловой регистр с обнаружением ошибок. Худший случай: превосходные гейты, которые так и не войдут ни в один код. Открыто: (1) поддаётся ли оптическая адресация мультиплексированию; (2) сообщит ли кто-нибудь длительности ядерных гейтов вместе с точностями; (3) дойдёт ли дефектная платформа до логического кубита.
 
-## Источники
+## Литература
 [208] M. Swayne, “Fujitsu And QuTech Realize High-Precision Quantum Gates,” The Quantum Insider, Mar. 28, 2025. [Online]. Available: https://thequantuminsider.com/2025/03/28/fujitsu-and-qutech-realize-high-precision-quantum-gates/ [P]
 [359] J. Fischer *et al.*, “Spin-photon correlations from a Purcell-enhanced diamond nitrogen-vacancy center coupled to an open microcavity,” *Nat. Commun.*, vol. 16, no. 1, Art. no. 11680, Nov. 2025, doi: [10.1038/s41467-025-66722-8](https://doi.org/10.1038/s41467-025-66722-8). [D]
 [360] M. Iuliano *et al.*, “Unconditionally teleported quantum gates between remote solid-state qubit registers,” *Nat. Commun.*, vol. 17, no. 1, Art. no. 4694, May 2026, doi: [10.1038/s41467-026-72818-6](https://doi.org/10.1038/s41467-026-72818-6). [D]

@@ -59,7 +59,7 @@ updated: 2026-09-03
 ## Прогноз и открытые вопросы
 Подтвердить к 2027 году: аппаратный цикл извлечения синдрома, потребляющий геральдированную потерю как флаг стирания; без этого всё остаётся теорией. Лучший сценарий к 2029 году: небольшой логический кубит на слияниях; худший — коммерческая состоятельность только в QKD. Открытые вопросы: согласует ли кто-нибудь пороги 0.38% и 2.7%; сможет ли эффективность детекторов в масштабе достичь уровня, при котором геральдирующему сигналу можно доверять.
 
-## Источники
+## Литература
 [169] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
 [179] S. Bartolucci *et al.*, “Fusion-based quantum computation,” *Nat. Commun.*, vol. 14, Art. no. 912, Feb. 2023, doi: [10.1038/s41467-023-36493-1](https://doi.org/10.1038/s41467-023-36493-1). [arXiv:2101.09310](https://arxiv.org/abs/2101.09310). [S]
 [264] M. C. Löbl, L. A. M. Pettersson, J. Dragašević, S. X. Chen, and O. A. D. Sandberg, “The subthreshold issue of fusion-based quantum computing,” [arXiv:2606.28490](https://arxiv.org/abs/2606.28490), Jun. 2026. [S]

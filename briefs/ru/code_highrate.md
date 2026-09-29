@@ -100,8 +100,7 @@ updated: 2026-09-03
 
 Открытые вопросы: (1) сохраняет ли конкатенация до d≥6 выигрыш по скорости кода, если честно смоделировать утечку и потерю? (2) может ли фабрика магических состояний жить внутри блока высокой скорости? (3) каково истинное масштабирование доли принятых прогонов с объёмом схемы? (4) успеют ли общеблочные декодеры с учётом потерь при циклах 1 µs? (5) есть ли маршрут на ближайших соседях дешевле дальних каплеров? Следить за первыми логическими результатами Sol, за неопубликованным заявлением Quantinuum о «почти пяти девятках» на новом семействе кодов, за IBM Kookaburra и за первым внедрением Pinnacle партнёром.
 
-## Источники
-
+## Литература
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [7] C. Gidney, “How to factor 2048 bit RSA integers with less than a million noisy qubits,” [arXiv:2505.15917](https://arxiv.org/abs/2505.15917), May 2025. [S]
 [29] P. Webster *et al.*, “The Pinnacle Architecture: Reducing the cost of breaking RSA-2048 to 100 000 physical qubits using quantum LDPC codes,” [arXiv:2602.11457](https://arxiv.org/abs/2602.11457), Feb. 2026. [S]

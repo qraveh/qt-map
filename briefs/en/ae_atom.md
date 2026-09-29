@@ -70,7 +70,7 @@ Fractions come from state-selective fluorescence after gates; CZ fidelity from r
 ## Outlook & open questions
 Milestones (12–24 months): Magne shows 50 logical qubits under erasure-biased decoding in situ, not post-selected (confirm); an outside group replicates >50% 1Q conversion (confirm); a real-time decoder consumes array erasure flags inside the cycle budget (confirm) — or conversion vanishes under reloading as Λ did (demote). Best case 2029: erasure-native arrays underpin a >100-logical-qubit machine with validated overhead reduction; worst case, conversion stays a single-gate effect and the millisecond cycle decides the platform. Open questions: does conversion survive ms-scale reloading; can the metastable encoding recover its 6× gate deficit; does trap power or AOD bandwidth bind first above 10⁴. Watch: Magne acceptance, Google's species choice, the first non-Princeton replication.
 
-## Sources
+## References
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [9] H. Neven, “Building superconducting and neutral atom quantum computers,” Google, Mar. 24, 2026. [Online]. Available: https://blog.google/innovation-and-ai/technology/research/neutral-atom-quantum-computers/ [C]
 [11] Novo Nordisk Foundation, “New quantum computer with great potential to boost Nordic research and innovation,” Novo Nordisk Fonden, Jul. 17, 2025. [Online]. Available: https://novonordiskfonden.dk/en/news/new-quantum-computer-with-great-potential-to-boost-nordic-research-and-innovation/ [C]

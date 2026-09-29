@@ -66,7 +66,7 @@ GKP требует бозонной резонаторной моды в мик�
 ## Прогноз и открытые вопросы
 Подтвердить или понизить в статусе в течение 12–24 месяцев: опубликует ли хоть одна GKP-демонстрация безусловную частоту логических ошибок; поднимет ли Nord Quantique совокупную выживаемость выше 10%; преодолеет ли оптическое GKP-состояние 1 dB эффективного сжатия. Лучший случай к 2029 году: многомодовый логический GKP-кубит ниже break-even без пост-селекции, под внешним qLDPC-кодом. Худший случай: он остаётся пост-селектированной памятью, а бозонную архитектуру несут кот-коды и кодирования со стиранием (erasure).
 
-## Источники
+## Литература
 [82] S. Turcotte *et al.*, “Quantum error correction of a grid-state qubit with state preparation and measurement errors below 10⁻³,” [arXiv:2607.06718](https://arxiv.org/abs/2607.06718), Jul. 2026. [D]
 [83] B. L. Brock *et al.*, “Quantum error correction of qudits beyond break-even,” *Nature*, vol. 641, no. 8063, pp. 612–618, May 2025, doi: [10.1038/s41586-025-08899-y](https://doi.org/10.1038/s41586-025-08899-y). [D]
 [93] Nord Quantique, “Company website.” [Online]. Available: https://www.nordquantique.com/ [R]

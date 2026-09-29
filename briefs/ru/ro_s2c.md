@@ -55,7 +55,7 @@ updated: 2026-09-04
 ## Прогноз и открытые вопросы
 Подтвердить или понизить в статусе за 12–24 месяца: ≥99.9% быстрее 20 µs на устройстве фабричного изготовления; ≥16 сенсоров, мультиплексированных в одну линию, с указанной цифрой перекрёстных наводок. Лучший случай к 2029: >100 сенсоров, каждый считывается менее чем за 10 µs, с демодуляцией внутри криостата. Худший случай: считывание остаётся членом, задающим такт, и крупнейшей ошибкой синдромного цикла. Открыто: (1) сколько контуров приходится на один усилитель квантового предела; (2) достаточно ли считывания чётности без анциллы на каждый кубит; (3) как коррелированный дрейф порога выглядит для декодера.
 
-## Источники
+## Литература
 [189] P. Steinacker *et al.*, “Industry-compatible silicon spin-qubit unit cells exceeding 99% fidelity,” *Nature*, vol. 646, no. 8083, pp. 81–87, Sep. 2025, doi: [10.1038/s41586-025-09531-9](https://doi.org/10.1038/s41586-025-09531-9). [D]
 [190] Members of the HRL Quantum Team and Collaborators, “A digitally controlled silicon quantum processing unit,” [arXiv:2604.16216](https://arxiv.org/abs/2604.16216), Apr. 2026. [D]
 [449] Quantum Machines, “Semiconductor Spin Qubits,” Aug. 11, 2026. [Online]. Available: https://www.quantum-machines.co/qubit-types/semiconductor-spin-qubits/ [C]

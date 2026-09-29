@@ -66,8 +66,7 @@ D-Wave publishes readout error as a bound, ≤0.001 on every listed Advantage an
 ## Outlook & open questions
 Confirm if by 2027-06-30 D-Wave publishes an Advantage2 readout description with a measured per-qubit error distribution; demote ≤10⁻³ to an unqualified company bound if not. Confirm Qilimanjaro here if by 2027-12-31 it publishes a flux-latch chain; move it to ro_disp if a resonator reads its QFP or qubit. Open questions. (1) What sets the 17 µs floor — shift clock, resonator ring-down or thermalisation? (2) Does readout error vary along a track? (3) Does latch back-action bias the next reverse anneal? (4) Can a mid-anneal read be made non-terminal? (5) Why does Advantage2_system1 need a 60.6 µs per-sample delay against 20.6 µs on system2?
 
-## Sources
-
+## References
 [430] P. I. Bunyk *et al.*, “Architectural considerations in the design of a superconducting quantum annealing processor,” [arXiv:1401.5504](https://arxiv.org/abs/1401.5504), Jan. 2014. [D]
 [607] K. Boothby *et al.*, “Architectural considerations in the design of a third-generation superconducting quantum annealing processor,” [arXiv:2108.02322](https://arxiv.org/abs/2108.02322), Aug. 2021. [C]
 [608] A. J. Berkley *et al.*, “A scalable readout system for a superconducting adiabatic quantum optimization system,” *Supercond. Sci. Technol.*, vol. 23, Art. no. 105014, 2010. [arXiv:0905.0891](https://arxiv.org/abs/0905.0891). [D]

@@ -87,8 +87,7 @@ updated: 2026-09-03
 
 Подтвердить к концу 2027 г., если какая-либо группа опубликует значение выше 10³ с⁻¹ либо IonQ раскроет скорость, точность и расстояние. Понизить трактовку «готово к сетевому объединению», если к концу 2028 г. ничто не превысит примерно 10× от рекорда 250 с⁻¹. Лучший случай к 2029 г.: резонаторный или волноводный сбор света вместе с преобразованием в телеком-диапазон выводит на 10³–10⁴ с⁻¹, и появляется трёхузловая сеть. Худший случай: скорости остаются на уровне 10²–10³ с⁻¹, а модульные ионные машины используют вместо этого внутриловушечный транспорт. Открытые вопросы: чего именно достигла линия IonQ; не обходится ли резонаторное усиление потерей видности интерференции; выдержит ли преобразование частоты бюджет точности?
 
-## Источники
-
+## Литература
 [18] IonQ, “IonQ Completes Acquisition of Oxford Ionics, Rapidly Accelerating Its Quantum Computing Roadmap,” Sep. 17, 2025. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-oxford-ionics-rapidly-accelerating-its-quantum [C]
 [19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [C]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]

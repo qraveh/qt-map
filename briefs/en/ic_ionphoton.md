@@ -87,8 +87,7 @@ Heralded fidelity is tomography or parity oscillation conditioned on a successfu
 
 Confirm by end-2027 if any group publishes above 10³ s⁻¹, or IonQ discloses rate, fidelity and distance. Demote the networking-ready framing if by end-2028 nothing exceeds roughly 10× the 250 s⁻¹ record. Best case by 2029: cavity or waveguide collection plus telecom conversion reaches 10³–10⁴ s⁻¹ and a three-node network appears. Worst case: rates stay at 10²–10³ s⁻¹ and modular ion machines use in-trap transport instead. Open questions: what did IonQ's link achieve; does cavity enhancement cost interference visibility; can frequency conversion survive the fidelity budget?
 
-## Sources
-
+## References
 [18] IonQ, “IonQ Completes Acquisition of Oxford Ionics, Rapidly Accelerating Its Quantum Computing Roadmap,” Sep. 17, 2025. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-oxford-ionics-rapidly-accelerating-its-quantum [C]
 [19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [C]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]

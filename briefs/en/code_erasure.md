@@ -106,8 +106,7 @@ Confirm within 12–24 months if: any group decodes a d = 3 → 5 memory with er
 
 Open questions: (1) what is Λ once false negatives accumulate as leakage over 10³ rounds? (2) does the 40:1 bias survive parallel gates on shared readout lines? (3) can the metastable fidelity tax on Yb be removed? (4) is an erasure-adapted qLDPC code with a fast decoder possible? Watch: D-Wave's 2026 delivery, AWS's next multi-qubit paper, Google/Kaufman's Yb results.
 
-## Sources
-
+## References
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [8] Y. Wu, S. Kolkowitz, S. Puri, and J. D. Thompson, “Erasure conversion for fault-tolerant quantum computing in alkaline earth Rydberg atom arrays,” *Nat. Commun.*, vol. 13, Art. no. 4657, 2022, doi: [10.1038/s41467-022-32094-6](https://doi.org/10.1038/s41467-022-32094-6). [arXiv:2201.03540](https://arxiv.org/abs/2201.03540). [S]

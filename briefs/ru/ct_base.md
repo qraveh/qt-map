@@ -63,7 +63,7 @@ updated: 2026-09-04
 ## Прогноз и открытые вопросы
 Подтвердить к 2027 г., если какой-либо разработчик опубликует двухкубитные точности по всем парам при числе кубитов свыше 12 либо если независимая группа воспроизведёт разделение на внешнюю и внутреннюю ошибку; понизить, если наводки удержат массивы на ≤20 кубитах вплоть до 2028 г. Лучший случай на 2029 г.: холодное управление с собственным секвенированием становится нормой, а двухкубитные ошибки уходят от 3×10⁻³ к 10⁻⁴. Худший случай: накладные расходы на калибровку обгоняют рост числа кубитов, и аргумент в пользу CMOS застревает на демонстрационном масштабе. Открытые вопросы: переживёт ли цифра в 80% независимое измерение; может ли число ЦАП на кубит упасть на порядок; поспевает ли перекалибровка за размером массива; получит ли майорановское управление когда-нибудь кубит.
 
-## Источники
+## Литература
 [13] Microsoft Azure Quantum, “Interferometric single-shot parity measurement in InAs–Al hybrid devices,” *Nature*, vol. 638, no. 8051, pp. 651–655, Feb. 2025, doi: [10.1038/s41586-024-08445-2](https://doi.org/10.1038/s41586-024-08445-2). [D]
 [199] H. C. George *et al.*, “12-spin-qubit arrays fabricated on a 300 mm semiconductor manufacturing line,” *Nano Lett.*, vol. 25, no. 2, pp. 793–799, Dec. 2024, doi: [10.1021/acs.nanolett.4c05205](https://doi.org/10.1021/acs.nanolett.4c05205). [arXiv:2410.16583](https://arxiv.org/abs/2410.16583). [D]
 [200] Quantum Motion, “Quantum Motion Delivers the Industry's First Full-Stack Silicon CMOS Quantum Computer,” Sep. 15, 2025. [Online]. Available: https://quantummotion.com/quantum-motion-delivers-the-industrys-first-full-stack-silicon-cmos-quantum-computer/ [C]

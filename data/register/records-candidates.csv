@@ -34,7 +34,6 @@ accept,8e-2,fraction,best (magic-state cultivation),Dec 2025,google-willow,https
 magic_cost,1e-4,dimensionless,best (T-state error at 8% acceptance),Dec 2025,google-willow,https://arxiv.org/abs/2512.13908,~2 extra cultivation rounds + 3 QEC cycles
 spread,4e1,ratio,best (narrowing of the cycle-error distribution after Snake optimisation),Mar 2024,google-willow,https://www.nature.com/articles/s41467-024-46623-y,
 crosstalk,5.5e-4,dimensionless,"typical (fitted component of the error budget, not a direct measurement)",Dec 2024,google-willow,https://arxiv.org/abs/2408.13687,
-err_2q_parallel,1e-2,dimensionless,best-for-fluxonium (>99% RIP 2Q on a degree-4 cell),Aug 2026,google-fluxonium,https://arxiv.org/abs/2608.25503,"academic device, not a Google product"
 err_2q_parallel,3.8e-3,dimensionless,typical (99.62% parallel 2Q),Mar 2025,ustc-zuchongzhi-3.0,https://www.eurekalert.org/news-releases/1076296,
 t1q,2.8e-8,s,best,Mar 2025,ustc-zuchongzhi-3.0,https://www.eurekalert.org/news-releases/1076296,
 t1,7.2e-5,s,typical,Mar 2025,ustc-zuchongzhi-3.0,https://www.eurekalert.org/news-releases/1076296,
@@ -58,7 +57,7 @@ crosstalk,6e3,Hz,best published for superconducting (residual ZZ in the off stat
 t1,2.3e-4,s,best,Nov 2024,toshiba-dtc,https://www.global.toshiba/ww/technology/corporate/rdc/rd/topics/24/2411-03.html,
 t2,3.6e-4,s,best,Nov 2024,toshiba-dtc,https://www.global.toshiba/ww/technology/corporate/rdc/rd/topics/24/2411-03.html,
 t1,1e-4,s,scope unstated (best or median not distinguished),Feb 2026,qpiai-kaveri-64,https://www.sify.com/science-tech/qpiai-unveils-kaveri-indias-first-aatmanirbhar-64-qubit-quantum-chip/,
-t1,5.3e-4,s,best (claimed),Jan 2026,academia-sinica-20q,https://www.sinica.edu.tw/en/news_content/55/3655,"a company release with no accompanying gate fidelity; the release calls it at or beyond the record for multi-qubit transmon processors"
+t1,5.3e-4,s,best (claimed),Jan 2026,academia-sinica-20q,https://www.sinica.edu.tw/en/news_content/55/3655,a company release with no accompanying gate fidelity; the release calls it at or beyond the record for multi-qubit transmon processors
 t_decode,4.4e-7,s,best in-loop for a non-Google superconducting machine (per round; range 0.44-0.79 us),Jun 2026,rigetti-ankaa-2,https://www.nature.com/articles/s41467-026-73331-6,
 t_ff,9.6e-6,s,best measured superconducting reaction time (9 rounds),Jun 2026,rigetti-ankaa-2,https://www.nature.com/articles/s41467-026-73331-6,6.5 us decode + 3.1 us communication
 err_2q_parallel,9e-3,dimensionless,"typical (median 2Q at 108 q, 99.1%)",Apr 2026,rigetti-cepheus-1-108q,https://aws.amazon.com/blogs/quantum-computing/amazon-braket-launches-rigetti-cepheus-1-108q-superconducting-device/,

@@ -66,7 +66,7 @@ The "100–1000× fewer qubits" claim is a resource estimate, not a measurement,
 ## Outlook & open questions
 Confirm or demote within 12–24 months: a demonstrated bias-preserving cat–cat CNOT; a distance scan at fixed photon number; any LDPC-cat or GKP-plus-qLDPC hardware result. Best case by 2029: a repetition-cat logical qubit with isolated below-threshold scaling and a measured bias-preserving gate, making the 758-cat estimate arguable. Worst case: phase-flip stays near 10⁻¹ and the family survives as a research line. Open: whether bias survives any two-qubit gate.
 
-## Sources
+## References
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [80] H. Putterman *et al.*, “Hardware-efficient quantum error correction via concatenated bosonic qubits,” *Nature*, vol. 638, no. 8052, pp. 927–934, Feb. 2025, doi: [10.1038/s41586-025-08642-7](https://doi.org/10.1038/s41586-025-08642-7). [D]
 [81] Y. Ye *et al.*, “Bias-preserving cat-cat CNOT gate via vacuum-conditional beam-splitter,” [arXiv:2607.22852](https://arxiv.org/abs/2607.22852), Jul. 2026. [S]

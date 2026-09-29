@@ -39,13 +39,16 @@ body{margin:0;font-family:"Golos Text",system-ui,-apple-system,"Segoe UI",Roboto
 *{box-sizing:border-box}
 a{color:var(--accent);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--accent) 40%,transparent);text-underline-offset:2px}
 a:hover{text-decoration-color:var(--accent)}
+/* organisation names link to their pages (the editor, 29 Sep 2026): quiet links — the text keeps its colour (the cards' dark and muted text
+   too), a thin dotted underline; hover shows the plain underline */
+a.org{color:inherit;text-decoration:underline dotted;text-decoration-thickness:1px;text-decoration-color:color-mix(in srgb,currentColor 55%,transparent);text-underline-offset:2px}
+a.org:hover{text-decoration-style:solid;text-decoration-color:currentColor}
 :focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:3px}
 .mono,code,kbd{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 code{font-size:.85em;background:var(--surface2);padding:.05em .35em;border-radius:3px}
 #app{max-width:none;margin:0 auto;padding:0 24px 80px}
-/* language switching */
-#app[data-lang="ru"] .lang-en{display:none !important}
-#app[data-lang="en"] .lang-ru{display:none !important}
+/* language switching: generated from build/langs.py — every language hides the others' elements (29 Sep 2026) */
+@@LANG_RULES@@
 /* masthead */
 .mast{display:grid;grid-template-columns:1fr auto;gap:18px 32px;align-items:end;padding:36px 0 20px;border-bottom:1px solid var(--rule)}
 .eyebrow{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
@@ -56,11 +59,11 @@ h1.title{font-family:"Unbounded","Golos Text",system-ui,sans-serif;font-weight:7
 .seg button{appearance:none;border:0;background:transparent;color:var(--ink2);font:inherit;font-weight:500;padding:7px 14px;cursor:pointer}
 .seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
 .jump{font-size:14px}
-.thesis{margin:22px 0 0;padding:16px 20px;border-left:3px solid var(--fab);background:var(--surface);border-radius:0 8px 8px 0;font-size:15.5px;color:var(--ink2)}
+.thesis{margin:22px 0 0;padding:16px 20px;border-inline-start:3px solid var(--fab);background:var(--surface);border-radius:0 8px 8px 0;font-size:15.5px;color:var(--ink2)}
 .thesis b{color:var(--ink)}
 /* layout */
 .page{display:grid;grid-template-columns:236px minmax(0,1fr);gap:36px;margin-top:8px}
-nav.toc{position:sticky;top:16px;align-self:start;max-height:calc(100vh - 32px);overflow:auto;padding-right:8px;font-size:13.5px}
+nav.toc{position:sticky;top:16px;align-self:start;max-height:calc(100vh - 32px);overflow:auto;padding-inline-end:8px;font-size:13.5px}
 nav.toc ol{list-style:none;margin:0;padding:0}
 nav.toc li{margin:0;padding:3px 0}
 nav.toc a{color:var(--ink2);text-decoration:none;display:flex;gap:8px}
@@ -75,25 +78,25 @@ main{min-width:0}
 .prose h2 .num{font-family:"Unbounded",sans-serif;font-weight:500;font-size:15px;color:var(--muted);letter-spacing:.02em}
 .prose h3{font-size:18px;font-weight:600;margin:1.8em 0 .5em;text-wrap:balance}
 .prose p{margin:.85em 0;text-wrap:pretty;text-align:justify;hyphens:auto;-webkit-hyphens:auto}   /* justified running text with automatic hyphenation (lang attributes on the prose blocks); lists, tables and captions stay left-aligned */
-.prose li p,.prose td p,.prose th p,.prose .empty,.prose p.small{text-align:left}
-@media (max-width:700px){.prose p{text-align:left}}
+.prose li p,.prose td p,.prose th p,.prose .empty,.prose p.small{text-align:start}
+@media (max-width:700px){.prose p{text-align:start}}
 /* lists (24 Sep 2026): room for two-digit markers, air between items, more between the long items of the takeaways and
    the definition items, a little less inside nested lists; the same rules serve the briefs below */
-.prose ul,.prose ol{padding-left:1.6em;margin:.7em 0}
+.prose ul,.prose ol{padding-inline-start:1.6em;margin:.7em 0}
 .prose li{margin:.45em 0}
-.prose li>ul,.prose li>ol{margin:.35em 0 .45em;padding-left:1.4em}
+.prose li>ul,.prose li>ol{margin:.35em 0 .45em;padding-inline-start:1.4em}
 .prose li>ul>li,.prose li>ol>li{margin:.3em 0}
 .prose li>p:first-child{margin-top:0}
 .prose li>p:last-child{margin-bottom:0}
 /* labelled items "(a) …", "(i) …" hang their label; definition-style items "Term — text" put the term on its own line (21 Sep 2026) */
-.prose li.lbl{list-style:none;position:relative;padding-left:2.5em}
-.prose li.lbl .lb{position:absolute;left:0;color:var(--muted);font-variant-numeric:tabular-nums}
+.prose li.lbl{list-style:none;position:relative;padding-inline-start:2.5em}
+.prose li.lbl .lb{position:absolute;inset-inline-start:0;color:var(--muted);font-variant-numeric:tabular-nums}
 .prose ol ol,.prose ol ul,.prose ul ol{margin:.35em 0 .5em}
 .prose li.def>strong,.prose li.def>p>strong{display:block;margin-bottom:.12em}
 .prose li.def{margin:.75em 0}
 .prose ol.es>li{text-align:justify;hyphens:auto;-webkit-hyphens:auto;margin:.9em 0}
-@media (max-width:700px){.prose ol.es>li{text-align:left}}
-.mast .author .orcid{display:inline-block;line-height:0;margin-left:2px;vertical-align:-3px;border-radius:50%}
+@media (max-width:700px){.prose ol.es>li{text-align:start}}
+.mast .author .orcid{display:inline-block;line-height:0;margin-inline-start:2px;vertical-align:-3px;border-radius:50%}
 .mast .author .orcid:hover{box-shadow:0 0 0 2px var(--accent)}
 .mast .author .orcid-id{display:block}
 .pubmeta .ghlink{display:inline-flex;align-items:center;gap:4px;text-decoration:none}
@@ -106,15 +109,15 @@ main{min-width:0}
 .prose .src{font-weight:600;scroll-margin-top:70px}
 /* reference lists (23–24 Sep 2026): one style for §9 and for every brief — hanging numbers in a column, entries set apart in a
    slightly smaller size, long identifiers and URLs break at their own slashes and dots rather than inside a word */
-ol.refs{list-style:none;padding-left:0;margin:8px 0 0}
-ol.refs>li{position:relative;padding-left:3.4em;margin:0 0 9px;font-size:.93em;line-height:1.5;text-align:left;scroll-margin-top:70px;max-width:none}
-ol.refs>li .src{position:absolute;left:0;top:0;width:2.9em;text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+ol.refs{list-style:none;padding-inline-start:0;margin:8px 0 0;direction:ltr}   /* the entries are English (IEEE) in every language: an LTR block */
+ol.refs>li{position:relative;padding-inline-start:3.4em;margin:0 0 9px;font-size:.93em;line-height:1.5;text-align:start;scroll-margin-top:70px;max-width:none}
+ol.refs>li .src{position:absolute;inset-inline-start:0;top:0;width:2.9em;text-align:end;font-variant-numeric:tabular-nums;font-weight:600}
 ol.refs>li:target{background:var(--surface2);box-shadow:0 0 0 4px var(--surface2);border-radius:3px}
 ol.refs>li a{overflow-wrap:break-word;word-break:normal}
-ol.refs>li .tag{margin-left:2px}
+ol.refs>li .tag{margin-inline-start:2px}
 .prose .refnote{font-size:.92em;color:var(--muted);margin-top:6px}
 /* folding (23 Sep 2026): headings carry a chevron and toggle their section; tables fold under their caption */
-.foldbtn{appearance:none;border:0;background:transparent;color:var(--muted);width:22px;height:22px;padding:0;margin-left:6px;cursor:pointer;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;flex:none}
+.foldbtn{appearance:none;border:0;background:transparent;color:var(--muted);width:22px;height:22px;padding:0;margin-inline-start:6px;cursor:pointer;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;flex:none}
 .foldbtn:hover{color:var(--accent);background:var(--surface2)}
 .foldbtn::before{content:"▾";font-size:12px;line-height:1;transition:transform .15s ease}
 .foldbtn[aria-expanded="false"]::before{transform:rotate(-90deg)}
@@ -132,18 +135,18 @@ details.tblfold>summary:hover .tlbl{color:var(--accent)}
 .tt{text-decoration:underline dotted;text-decoration-color:var(--muted);text-underline-offset:3px;cursor:help;outline:none}
 .tt:hover,.tt:focus{text-decoration-color:var(--accent)}
 th .tt,td .tt{text-decoration-thickness:1px}
-#gtip{position:absolute;z-index:60;max-width:min(400px,calc(100vw - 24px));padding:.5rem .65rem;border:1px solid var(--rule);border-radius:8px;background:var(--surface);color:var(--ink);font:400 .86rem/1.45 system-ui,sans-serif;text-align:left;box-shadow:0 6px 24px rgba(0,0,0,.14);white-space:normal;user-select:text;-webkit-user-select:text;cursor:text}
+#gtip{position:absolute;z-index:60;max-width:min(400px,calc(100vw - 24px));padding:.5rem .65rem;border:1px solid var(--rule);border-radius:8px;background:var(--surface);color:var(--ink);font:400 .86rem/1.45 system-ui,sans-serif;text-align:start;box-shadow:0 6px 24px rgba(0,0,0,.14);white-space:normal;user-select:text;-webkit-user-select:text;cursor:text}
 #gtip.pinned{border-color:var(--accent)}
 #gtip[hidden]{display:none}
 .prose [id^="en-h"],.prose [id^="ru-h"],.prose td[id],.prose figure[id]{scroll-margin-top:70px}
-.prose blockquote{margin:1em 0;padding:12px 18px;border-left:3px solid var(--rule);background:var(--surface);border-radius:0 8px 8px 0;color:var(--ink2)}
+.prose blockquote{margin:1em 0;padding:12px 18px;border-inline-start:3px solid var(--rule);background:var(--surface);border-radius:0 8px 8px 0;color:var(--ink2)}
 .prose hr{border:0;border-top:1px solid var(--rule);margin:2em 0}
 .prose strong{font-weight:600}
 .prose .m{font-family:"JetBrains Mono",monospace;font-size:.92em;white-space:nowrap}
 .prose sup,.prose sub{line-height:0}
 .tbl{max-width:none;overflow-x:auto;margin:1em 0;border:1px solid var(--rule);border-radius:8px;background:var(--surface)}
 table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
-th,td{padding:8px 10px;border-bottom:1px solid var(--rule2);vertical-align:top;text-align:left}
+th,td{padding:8px 10px;border-bottom:1px solid var(--rule2);vertical-align:top;text-align:start}
 th{font-weight:600;background:var(--surface2);position:sticky;top:0;white-space:nowrap}
 tr:last-child td{border-bottom:0}
 td code{white-space:nowrap}
@@ -177,14 +180,14 @@ details.fold .tbl{border:0;border-top:1px solid var(--rule);border-radius:0;marg
 .mapsec h2 .num{font-family:"Unbounded",sans-serif;font-weight:500;font-size:15px;color:var(--muted)}
 .mapbar{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;padding:10px 12px;border:1px solid var(--rule);border-radius:10px 10px 0 0;background:var(--surface);font-size:13.5px}
 .mapbar .grp{display:flex;flex-wrap:wrap;gap:6px;align-items:center;min-width:0;max-width:100%}
-.mapbar .lbl{color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-right:2px}
-.chip{appearance:none;border:1px solid var(--rule);background:var(--surface);color:var(--ink);font:inherit;font-size:13px;padding:4px 10px 4px 8px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;line-height:1.2}
+.mapbar .lbl{color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-inline-end:2px}
+.chip{appearance:none;border:1px solid var(--rule);background:var(--surface);color:var(--ink);font:inherit;font-size:13px;padding:4px 10px;padding-inline-start:8px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;line-height:1.2}
 .chip .sw{width:10px;height:10px;border-radius:2px;background:var(--c);display:inline-block}
 .chip[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
 .chip.off{opacity:.45}
 .chip.tog[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
 /* global reset: an action, not a toggle — so not a pill: square corners, dashed outline, icon, muted until hovered */
-.resetbtn{appearance:none;border:1px dashed var(--muted);background:transparent;color:var(--ink2);font:inherit;font-size:12.5px;padding:4px 9px 4px 7px;border-radius:5px;cursor:pointer;display:inline-flex;align-items:center;gap:5px;line-height:1.2}
+.resetbtn{appearance:none;border:1px dashed var(--muted);background:transparent;color:var(--ink2);font:inherit;font-size:12.5px;padding:4px 9px;padding-inline-start:7px;border-radius:5px;cursor:pointer;display:inline-flex;align-items:center;gap:5px;line-height:1.2}
 .resetbtn:hover,.resetbtn:focus-visible{border-style:solid;border-color:var(--accent);color:var(--accent);outline:none}
 .resetbtn:active{background:var(--surface2)}
 select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--rule);border-radius:6px;background:var(--surface);color:var(--ink);max-width:100%}
@@ -204,12 +207,12 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .station.peek rect.box{stroke-width:3;stroke:var(--ink)}
 .tip .sw{display:inline-block;width:9px;height:9px;border-radius:2px;margin:0 3px 0 0;vertical-align:-1px}
 .tip .sw.hollow{background:transparent;border:1.5px solid}
-.mapcol{margin-left:auto;font-size:12px;font-weight:500;align-self:center;flex:0 0 auto;white-space:nowrap}
+.mapcol{margin-inline-start:auto;font-size:12px;font-weight:500;align-self:center;flex:0 0 auto;white-space:nowrap}
 #mapbody[hidden]{display:none}
-.insp h3 .sw{width:11px;height:11px;border-radius:3px;background:var(--c);display:inline-block;margin-right:4px}
+.insp h3 .sw{width:11px;height:11px;border-radius:3px;background:var(--c);display:inline-block;margin-inline-end:4px}
 .ptab{border-collapse:collapse;width:100%;font-size:12.5px}
-.ptab td{padding:3px 6px 3px 0;vertical-align:top;border-top:1px solid var(--rule2,var(--rule))}
-.ptab td.ln{white-space:nowrap;color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:10.5px;padding-right:10px}
+.ptab td{padding:3px 0;padding-inline-end:6px;vertical-align:top;border-top:1px solid var(--rule2,var(--rule))}
+.ptab td.ln{white-space:nowrap;color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:10.5px;padding-inline-end:10px}
 .ptab a.prim{font-weight:600}
 .ptab a.alt{color:var(--ink2)}
 /* machines on the Atlas (C2): a technology the selected machine uses only as an alternate keeps a dashed outline while lit */
@@ -230,7 +233,7 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .insp ul.useby li.fam .sw{width:10px;height:3px;border-radius:2px;background:var(--c);display:inline-block}
 .insp ul.useby li.cur > a:first-child{font-weight:700;text-decoration:underline}
 .insp ul.useby li.alternate > a:first-child{color:var(--ink2)}
-.insp ul.useby a.mref{font-size:11px;color:var(--muted);text-decoration:none;border:1px solid var(--rule);border-radius:9px;padding:0 6px;margin-left:2px;white-space:nowrap}
+.insp ul.useby a.mref{font-size:11px;color:var(--muted);text-decoration:none;border:1px solid var(--rule);border-radius:9px;padding:0 6px;margin-inline-start:2px;white-space:nowrap}
 .insp ul.useby a.mref:hover{color:var(--accent);border-color:var(--accent)}
 .insp ul.useby a.reg{text-decoration:none;font-size:11px}
 .insp .keys .kr{margin:3px 0;font-size:12.5px;line-height:1.35}
@@ -243,7 +246,7 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .bbody .srcn{font-family:"JetBrains Mono",monospace;font-size:.9em;color:var(--muted);scroll-margin-top:90px;border-radius:4px;padding:0 2px}
 .bbody .srcn.hl,.bbody li.hl .srcn{background:var(--accent);color:var(--bg)}
 .bbody .fold-src a[href^="http"]{word-break:break-all}
-.bbody .fold-src ol{list-style:none;padding-left:0}
+.bbody .fold-src ol{list-style:none;padding-inline-start:0}
 .bbody .fold-src li{margin:.35em 0}
 .station.hub rect.box{stroke-width:2}
 .station.dim{opacity:.22}
@@ -272,7 +275,7 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .edge.requires path.vis.soft{stroke-dasharray:1.5 3.5;stroke-linecap:round;opacity:.75}   /* a soft dependency (the usual route, not a strict need) */
 .edge.replaces{stroke:var(--ink2);stroke-dasharray:5 4}
 .edge.conflicts{stroke:var(--crit);stroke-dasharray:3 3;stroke-width:2}
-.rel{padding-left:14px;text-indent:-14px;line-height:1.35}
+.rel{padding-inline-start:14px;text-indent:-14px;line-height:1.35}
 .badge{stroke:none}
 .hatch{fill:url(#hatch)}
 .tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12px;padding:6px 9px;border-radius:6px;width:max-content;max-width:280px;line-height:1.35;box-shadow:var(--shadow);z-index:5;display:none}
@@ -282,40 +285,40 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .lensed.filtered .pathline:not(.dim){opacity:.6}   /* a lens value chosen: the lines through the kept technologies read clearly (27 Sep 2026) */
 .lensed .altstub{stroke:var(--mid) !important;opacity:.35}
 .lensed .badge{opacity:.35}
-.lk{appearance:none;border:1px solid var(--rule);background:var(--surface);color:var(--ink);font:inherit;font-size:12.5px;padding:2px 9px 2px 24px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;position:relative;overflow:hidden}
-.lk .sw{position:absolute;left:0;top:0;bottom:0;width:17px;border-radius:0 !important;border:0 !important;border-right:1px solid rgba(0,0,0,.12) !important;display:block}
-.lk.clear{padding-left:9px}
+.lk{appearance:none;border:1px solid var(--rule);background:var(--surface);color:var(--ink);font:inherit;font-size:12.5px;padding:2px 9px;padding-inline-start:24px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;position:relative;overflow:hidden}
+.lk .sw{position:absolute;inset-inline-start:0;top:0;bottom:0;width:17px;border-radius:0 !important;border:0 !important;border-inline-end:1px solid rgba(0,0,0,.12) !important;display:block}
+.lk.clear{padding-inline-start:9px}
 .lk .cnt{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted)}
 .lk[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);font-weight:600}
 .lk:hover{background:var(--surface2)}
 .lk.clear{border-style:dashed}
 .mapbar .lenslegend{flex-basis:100%;gap:6px 8px;align-items:center;padding-top:6px;border-top:1px dashed var(--rule)}
 .mapbar .lenslegend:empty{display:none}
-.mapbar .lenslegend .lbl{margin-right:6px}
+.mapbar .lenslegend .lbl{margin-inline-end:6px}
 .lg.stn{width:50px;height:16px}   /* two miniature technologies: as drawn (outline = family), then with a lens on (tint + left band) */
 .lg.stn svg{display:block}
 .lg.badges{width:18px;height:12px;display:inline-flex;gap:2px;align-items:flex-end}
 .lg.badges b{display:inline-block;width:7px;height:4px;border-radius:1px;background:var(--sc)}
 .lg.badges b+b{background:none;border:1px solid var(--atom)}
-.insp dl .lensrow{background:var(--surface);box-shadow:inset 3px 0 0 var(--accent);padding-left:6px}
+.insp dl .lensrow{background:var(--surface);box-shadow:inset 3px 0 0 var(--accent);padding-inline-start:6px}
 .mast .author{margin:2px 0 10px;font-size:15px;color:var(--ink2)}
 .mast .author b{color:var(--ink);font-weight:600}
 .mast .title .yr{color:var(--muted);font-weight:500}
-.pubmeta{margin-top:12px;font-size:12.5px;color:var(--muted);text-align:right;line-height:1.6}
+.pubmeta{margin-top:12px;font-size:12.5px;color:var(--muted);text-align:end;line-height:1.6}
 .pubmeta a{color:var(--ink2)}
 .colophon{margin:48px 0 0;padding:20px 0 0;border-top:1px solid var(--rule);font-size:13.5px;color:var(--ink2);max-width:90ch}
 .colophon p{margin:.6em 0;text-wrap:pretty}
 .colophon b{color:var(--ink)}
 /* inspector */
 /* Send feedback — a fixed button (bug icon) with a tooltip, opening a small sheet with the page context and two channels (26 Sep 2026) */
-.fbk{position:fixed;right:18px;bottom:18px;z-index:75;display:flex;flex-direction:column;align-items:center;gap:8px}
+.fbk{position:fixed;inset-inline-end:18px;bottom:18px;z-index:75;display:flex;flex-direction:column;align-items:center;gap:8px}
 .fbk .fbkbtn{appearance:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--rule);background:var(--surface);color:var(--ink);cursor:pointer;display:grid;place-items:center;box-shadow:0 2px 10px rgba(10,16,22,.10);padding:0}
 .fbk .fbkbtn:hover,.fbk .fbkbtn:focus-visible{border-color:var(--ink);outline:none}
 .fbk .fbkbtn svg{width:22px;height:22px;display:block}
-.fbk .fbktip{position:absolute;bottom:54px;right:0;background:#111;color:#fff;font:500 15px/1.2 "Golos Text",system-ui,sans-serif;padding:9px 16px;border-radius:10px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .12s}
+.fbk .fbktip{position:absolute;bottom:54px;inset-inline-end:0;background:#111;color:#fff;font:500 15px/1.2 "Golos Text",system-ui,sans-serif;padding:9px 16px;border-radius:10px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .12s}
 .fbk .fbkbtn:hover + .fbktip,.fbk .fbkbtn:focus-visible + .fbktip{opacity:1}
 .fbk.open .fbktip{opacity:0 !important}
-.fbkpop{position:fixed;right:18px;bottom:72px;z-index:76;width:min(360px,calc(100vw - 36px));background:var(--surface);border:1px solid var(--rule);border-radius:12px;box-shadow:0 8px 30px rgba(10,16,22,.18);padding:14px 16px 12px;font-size:13.5px}
+.fbkpop{position:fixed;inset-inline-end:18px;bottom:72px;z-index:76;width:min(360px,calc(100vw - 36px));background:var(--surface);border:1px solid var(--rule);border-radius:12px;box-shadow:0 8px 30px rgba(10,16,22,.18);padding:14px 16px 12px;font-size:13.5px}
 .fbkpop[hidden]{display:none}
 .fbkpop h4{margin:0 0 6px;font-size:14px}
 .fbkpop p{margin:0 0 8px;color:var(--ink2)}
@@ -329,15 +332,15 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .insp .grip button{appearance:none;border:1px solid var(--rule);background:var(--surface);color:var(--ink);font:inherit;font-size:11px;padding:1px 7px;border-radius:6px;cursor:pointer}
 .insp .grip button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
 .insp .grip button[data-back]{font-weight:700} .insp .grip button[data-back][disabled]{opacity:.35;cursor:default}
-.insp .pagelink{font-size:12px;font-weight:600;text-decoration:none;border:1px solid var(--rule);border-radius:999px;padding:1px 8px;margin-left:4px;white-space:nowrap}
+.insp .pagelink{font-size:12px;font-weight:600;text-decoration:none;border:1px solid var(--rule);border-radius:999px;padding:1px 8px;margin-inline-start:4px;white-space:nowrap}
 .insp.dragging{opacity:.92}
 .insp[hidden]{display:none}
 .insp .iclose{display:none}
-.insp .conf{margin:6px 0 8px;padding:6px 8px;border-left:2px solid var(--crit);background:var(--surface)}
+.insp .conf{margin:6px 0 8px;padding:6px 8px;border-inline-start:2px solid var(--crit);background:var(--surface)}
 .insp .conf .cm{color:var(--ink2);margin-top:2px}
-.tk{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.tk{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-inline-end:4px}
 .tip .tk{color:var(--bg);opacity:.7}
-.cst{font-family:"JetBrains Mono",monospace;font-size:10.5px;padding:1px 6px;border-radius:999px;border:1px solid var(--rule);color:var(--ink2);margin-left:6px}
+.cst{font-family:"JetBrains Mono",monospace;font-size:10.5px;padding:1px 6px;border-radius:999px;border:1px solid var(--rule);color:var(--ink2);margin-inline-start:6px}
 .cst.open{border-color:var(--crit);color:var(--crit)}
 .cst.mitigated{border-color:var(--atom);color:var(--atom)}
 .mapbar .glyphs{flex-basis:100%;color:var(--ink2);font-size:12.5px}
@@ -346,7 +349,7 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .mapbar details.glyphs>summary::after{content:"▾";color:var(--muted);font-size:11px}
 .mapbar details.glyphs:not([open])>summary::after{content:"▸"}
 .glyphlist{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
-.gl{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.gl{display:inline-flex;align-items:center;gap:5px;white-space:normal;max-width:100%}   /* a long key wraps instead of widening the page (the badge key, 29 Sep 2026) */
 .gl.long{white-space:normal;max-width:100%} .gl.long .lg{flex:0 0 auto}
 .gl.mark{cursor:help} .gl.mark .cnt{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted)}   /* static keys with counts (brief E): the definition is the title */
 .lg{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;font-style:normal;font-size:12px;color:var(--ink)}
@@ -369,9 +372,9 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .insp .def:first-of-type{border-top:0}
 .insp .def .k{color:var(--ink2)}
 .insp .def .d{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted)}
-.insp .pathtag{display:inline-flex;align-items:center;gap:6px;margin:2px 6px 2px 0}
+.insp .pathtag{display:inline-flex;align-items:center;gap:6px;margin:2px 0;margin-inline-end:6px}
 .insp .pathtag .sw{width:10px;height:3px;border-radius:2px;background:var(--c);display:inline-block}
-.insp .flag{display:inline-block;padding:1px 7px;border-radius:999px;font-size:12px;border:1px solid var(--rule);margin:2px 4px 2px 0}
+.insp .flag{display:inline-block;padding:1px 7px;border-radius:999px;font-size:12px;border:1px solid var(--rule);margin:2px 0;margin-inline-end:4px}
 .insp .flag.off{border-color:var(--nat);color:var(--ink)}
 .insp .flag.hub{border-color:var(--fab)}
 .insp .flag.empty{border-style:dashed}
@@ -426,7 +429,7 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .blede{max-width:78ch;color:var(--ink2)}
 .blede p{margin:.7em 0;text-wrap:pretty}
 .bidx table{font-size:13px}
-.bidx td.r{text-align:right;font-family:"JetBrains Mono",monospace;color:var(--muted);white-space:nowrap}
+.bidx td.r{text-align:end;font-family:"JetBrains Mono",monospace;color:var(--muted);white-space:nowrap}
 .bidx td.ol{color:var(--ink2);font-size:12.5px;min-width:28ch}
 .bidx tbody tr{cursor:pointer}
 .bidx tbody tr:hover{background:var(--surface2)}
@@ -436,23 +439,24 @@ a.bref:hover code{background:var(--accent);color:var(--bg);text-decoration-color
 tr.rowflash>td{background:color-mix(in srgb,var(--focus) 20%,transparent)}
 /* one brief */
 .brief{display:block;max-width:none;margin:18px 0;padding:18px 22px 14px;border:1px solid var(--rule);border-radius:12px;background:var(--surface);box-shadow:var(--shadow);scroll-margin-top:12px}
-.brief-head{border-left:4px solid var(--fam,var(--mid));padding:2px 0 2px 14px;margin:0 0 16px}
+.brief-head{border-inline-start:4px solid var(--fam,var(--mid));padding:2px 0;padding-inline-start:14px;margin:0 0 16px}
 .brief-head .bclose{float:right;margin-left:12px}
+.brief-head .bclose:dir(rtl){float:left;margin-left:0;margin-right:12px}
 .bmeta{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--muted);letter-spacing:.02em}
 .bmeta .bid{color:var(--fam,var(--ink2));font-weight:500}
 .btitle{font-family:"Unbounded","Golos Text",system-ui,sans-serif;font-weight:700;font-size:clamp(20px,2.2vw,27px);line-height:1.15;letter-spacing:-.01em;margin:.25em 0 .3em;text-wrap:balance;max-width:26ch}
 .bone{margin:.2em 0 .7em;color:var(--ink2);max-width:78ch;text-wrap:pretty}
-.bverdict{margin:0;padding:10px 14px;max-width:78ch;background:var(--surface2);border-left:3px solid var(--fam,var(--accent));border-radius:0 8px 8px 0;text-wrap:pretty}
+.bverdict{margin:0;padding:10px 14px;max-width:78ch;background:var(--surface2);border-inline-start:3px solid var(--fam,var(--accent));border-radius:0 8px 8px 0;text-wrap:pretty}
 .bverdict b{color:var(--ink)}
 .bbody{max-width:none}
 .bbody p,.bbody ul,.bbody ol{max-width:78ch}
 .bbody h3.bh3{font-size:17px;font-weight:600;margin:1.7em 0 .5em;padding-top:.7em;border-top:1px solid var(--rule2);text-wrap:balance}
 .bbody p{margin:.8em 0;text-wrap:pretty;text-align:justify;hyphens:auto;-webkit-hyphens:auto}   /* the briefs read like the report: justified running text, left-aligned lists and tables */
-.bbody li p,.bbody td p,.bbody th p{text-align:left}
-@media (max-width:700px){.bbody p{text-align:left}}
-.bbody ul,.bbody ol{padding-left:1.6em;margin:.7em 0}
+.bbody li p,.bbody td p,.bbody th p{text-align:start}
+@media (max-width:700px){.bbody p{text-align:start}}
+.bbody ul,.bbody ol{padding-inline-start:1.6em;margin:.7em 0}
 .bbody li{margin:.4em 0}
-.bbody li>ul,.bbody li>ol{margin:.3em 0 .4em;padding-left:1.4em}
+.bbody li>ul,.bbody li>ol{margin:.3em 0 .4em;padding-inline-start:1.4em}
 .bbody .m{font-family:"JetBrains Mono",monospace;font-size:.92em;white-space:nowrap}
 .bbody sup,.bbody sub{line-height:0}
 .bbody .tbl{max-width:100%;overflow-x:auto}
@@ -527,7 +531,7 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
   .mast{grid-template-columns:minmax(0,1fr);gap:10px;padding:18px 0 16px}
   .controls{flex-direction:row;flex-wrap:wrap;align-items:center;gap:10px 14px}
   .controls .seg,.controls .jump{display:none}
-  .pubmeta{text-align:left;margin-top:6px}
+  .pubmeta{text-align:start;margin-top:6px}
   .eyebrow{white-space:normal}
   /* sticky navigation bar */
   .mobilebar{display:flex;position:sticky;top:0;z-index:55;align-items:center;gap:8px;
@@ -539,8 +543,8 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
   .mobilebar .seg button{padding:7px 10px;font-size:13px}
   /* TOC drawer */
   .tocbackdrop{display:block;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,16,22,.45);z-index:70}
-  .tocdrawer{display:flex;flex-direction:column;position:fixed;top:0;left:0;bottom:0;
-    width:86vw;max-width:340px;z-index:71;background:var(--surface);border-right:1px solid var(--rule);
+  .tocdrawer{display:flex;flex-direction:column;position:fixed;top:0;inset-inline-start:0;bottom:0;
+    width:86vw;max-width:340px;z-index:71;background:var(--surface);border-inline-end:1px solid var(--rule);
     box-shadow:0 0 40px rgba(0,0,0,.28)}
   .tocdrawer .td-head{display:flex;align-items:center;justify-content:space-between;gap:10px;
     padding:12px 14px;border-bottom:1px solid var(--rule);font-weight:600;flex:0 0 auto}
@@ -563,9 +567,9 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
   .mapbar{gap:8px 10px;padding:8px 10px}
   .mapbar .chipsrow{position:relative;flex-basis:100%;flex-wrap:nowrap;align-items:center;min-width:0;gap:6px}
   .mapbar .chipsrow #pathchips{flex:1 1 auto;flex-wrap:nowrap;overflow-x:auto;min-width:0;
-    -webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:thin;padding:2px 24px 6px 0}
+    -webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:thin;padding:2px 0 6px;padding-inline-end:24px}
   .mapbar .chipsrow #pathchips .chip{flex:0 0 auto}
-  .mapbar .chipsrow::after{content:"";position:absolute;right:0;top:0;bottom:6px;width:26px;pointer-events:none;
+  .mapbar .chipsrow::after{content:"";position:absolute;inset-inline-end:0;top:0;bottom:6px;width:26px;pointer-events:none;
     background:linear-gradient(to left,var(--surface),var(--surface-t0))}
   /* the lens legend and the glyph legend wrap; the glyph legend collapses */
   .mapbar .lenslegend{gap:6px 8px}
@@ -605,8 +609,8 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
 @media (max-width:600px){
   #app{padding:0 12px 60px}
   .mobilebar{margin:0 -12px;padding:6px 8px;gap:6px}
-  .mobilebar .findopen .lang-en,.mobilebar .findopen .lang-ru{display:none}   /* icon only on a phone: the Russian labels overflowed the bar (28 Sep 2026) */
-  .mobilebar .findopen svg{margin-right:0}
+  .mobilebar .findopen [class*="lang-"]{display:none}   /* icon only on a phone: the Russian labels overflowed the bar (28 Sep 2026) */
+  .mobilebar .findopen svg{margin-inline-end:0}
   .mobilebar .mb-btn{padding:6px 10px}
   .mast{padding:14px 0 14px}
   .prose h2,.mapsec h2,.briefs h2{font-size:20px;gap:10px;flex-wrap:wrap}
@@ -619,7 +623,7 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
   th,td{padding:6px 8px}
   th{white-space:normal}
   .prose .tbl table th{z-index:2}
-  .prose .tbl table td:first-child,.prose .tbl table th:first-child{position:sticky;left:0}
+  .prose .tbl table td:first-child,.prose .tbl table th:first-child{position:sticky;inset-inline-start:0}
   .prose .tbl table td:first-child{background:var(--surface);z-index:1}
   .prose .tbl table th:first-child{background:var(--surface2);z-index:3}
   .bidx td.ol{display:none}
@@ -627,6 +631,12 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
   .radars{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
   .insp{font-size:13px}
   .colophon{font-size:13px}
+}
+/* [phone ≤480] the page bar holds three languages by their own names: the contents button keeps its ☰ and says its word to screen readers
+   only (29 Sep 2026: with English · Русский · עברית the bar was 30 px wider than a 390 px phone) */
+@media (max-width:480px){
+  .mobilebar .mb-lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .mobilebar .seg button{padding:7px 8px}
 }
 
 /* [touch] no hover: tap targets grow, hover-only affordances stay reachable */
@@ -641,16 +651,17 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
 
 /* map zoom — a translucent window in the top-right corner of the map bar (desktop); the paths row keeps a margin
    clear of it. On ≤1024 px the same control moves into the scroller and pins to its bottom-right corner. */
-.zoomwin{margin-left:auto;align-self:center}
-#pathchips .zoomwin{margin-left:auto}
+.zoomwin{margin-inline-start:auto;align-self:center}
+#pathchips .zoomwin{margin-inline-start:auto}
 @media (min-width:1025px){
   .mapbar .chipsrow{display:block;flex:1 1 100%;line-height:1.2}
   .mapbar .chipsrow > .zoomwin{float:right;margin:0 0 6px 10px}
-  .mapbar .chipsrow > .bartog{margin:0 8px 6px 0;vertical-align:middle}
-  .mapbar .chipsrow > .lbl{display:inline-block;margin:0 6px 6px 0;vertical-align:middle}
+  .mapbar .chipsrow > .zoomwin:dir(rtl){float:left;margin:0 10px 6px 0}
+  .mapbar .chipsrow > .bartog{margin:0 0 6px;margin-inline-end:8px;vertical-align:middle}
+  .mapbar .chipsrow > .lbl{display:inline-block;margin:0 0 6px;margin-inline-end:6px;vertical-align:middle}
   .mapbar .chipsrow > .barsum{display:inline-block;max-width:60%;vertical-align:middle;margin-bottom:6px}
   .mapbar .chipsrow #pathchips{display:inline}
-  .mapbar .chipsrow #pathchips .chip{margin:0 6px 6px 0;vertical-align:middle}
+  .mapbar .chipsrow #pathchips .chip{margin:0 0 6px;margin-inline-end:6px;vertical-align:middle}
   .mapbar.collapsed .chipsrow{display:block}
 }
 .zoomctl{display:inline-flex;align-items:center;gap:2px;padding:3px;border:1px solid var(--rule);border-radius:9px;background:var(--surface-t85);box-shadow:var(--shadow)}
@@ -666,7 +677,7 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
 .zoomctl .zlvl::-webkit-outer-spin-button,.zoomctl .zlvl::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
 .zoomctl .zlvl:focus{border-color:var(--accent);outline:none}
 .zoomctl .zsep{width:1px;height:16px;background:var(--rule);margin:0 3px}
-.zoomctl .zhint{font-size:10.5px;color:var(--muted);margin:0 6px 0 4px;letter-spacing:.04em;text-transform:uppercase}
+.zoomctl .zhint{font-size:10.5px;color:var(--muted);margin:0;margin-inline:4px 6px;letter-spacing:.04em;text-transform:uppercase}
 .zoombar{position:sticky;top:0;left:0;height:0;overflow:visible;z-index:4;pointer-events:none}
 .zoombar .zoomctl{position:absolute;right:6px;top:6px;pointer-events:auto}
 @media (max-width:600px){.zoomctl{padding:2px}.zoomctl .zb{height:30px;min-width:30px}.zoomctl .zt span{display:none}.zoomctl .zt{padding:0 5px}.zoomctl .zhint{display:none}.zoomctl #zoom-fith,.zoomctl #zoom-top{display:none}}   /* a phone keeps −, %, +, fit width, 1:1 and full screen; fit height and align top are desktop moves */
@@ -674,7 +685,7 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
 .pubmeta .doi{font-family:"JetBrains Mono",monospace;color:var(--muted);border-bottom:1px dotted var(--line);cursor:help}
 
 /* collapsible map bar: one line (toggle · summary · zoom) when collapsed */
-.bartog{appearance:none;display:inline-flex;align-items:center;gap:6px;border:1px solid var(--ink2);background:var(--surface2);color:var(--ink);border-radius:8px;height:30px;padding:0 10px 0 9px;cursor:pointer;font:600 13px/1 "Inter",system-ui,sans-serif;margin-right:4px;flex:0 0 auto}
+.bartog{appearance:none;display:inline-flex;align-items:center;gap:6px;border:1px solid var(--ink2);background:var(--surface2);color:var(--ink);border-radius:8px;height:30px;padding:0 10px;padding-inline-start:9px;cursor:pointer;font:600 13px/1 "Inter",system-ui,sans-serif;margin-inline-end:4px;flex:0 0 auto}
 .bartog:hover{background:var(--surface);border-color:var(--accent);color:var(--accent)}
 .bartog .when-open,.bartog .when-closed{font-size:11px;color:var(--muted)}
 .bartog:hover .when-open,.bartog:hover .when-closed{color:inherit}
@@ -689,7 +700,7 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
 #mapbody:fullscreen .maplead,#mapbody:-webkit-full-screen .maplead,#mapbody.fsfake .maplead{display:none}
 .barsum{color:var(--ink2);font-size:12.5px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .barsum b{color:var(--ink);font-weight:600}
-.barsum .sw{display:inline-block;width:9px;height:9px;border-radius:2px;vertical-align:-1px;margin-right:4px}
+.barsum .sw{display:inline-block;width:9px;height:9px;border-radius:2px;vertical-align:-1px;margin-inline-end:4px}
 .mapbar.collapsed > .grp:not(.chipsrow),.mapbar.collapsed > details,.mapbar.collapsed > #lenslegend{display:none}
 .mapbar.collapsed .chipsrow #pathchips .chip{display:none}
 .mapbar.collapsed .chipsrow{flex:1 1 100%;flex-wrap:nowrap;align-items:center}
@@ -698,13 +709,14 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
 /* zoom bar for the big tables (editor's review of 17 Sep 2026, item 3): the bar sits inside the wrapper above the table and
    stays in view while the wrapper scrolls sideways; the sizer's box follows the scaled table; the sticky header / first
    column are switched off while the table is scaled (.zoomed) — sticky offsets are computed in unscaled units */
-.tblzoom{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:5px 8px;border-bottom:1px solid var(--rule);background:var(--surface2);position:sticky;left:0;z-index:4;box-sizing:border-box;max-width:100%}
+.tblzoom{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:5px 8px;border-bottom:1px solid var(--rule);background:var(--surface2);position:sticky;inset-inline-start:0;z-index:4;box-sizing:border-box;max-width:100%}
 .tblzoom .zoomctl{flex-wrap:wrap;box-shadow:none;background:var(--surface);max-width:100%}
 .tblzoom .zoomctl .zt span{display:inline}
-.tblzoom .zoomctl .zt .tzi{font-size:13px;margin-right:2px}
-.tblzoom .tzl{font:500 10.5px/1 "JetBrains Mono",monospace;color:var(--muted);margin:0 6px 0 4px;letter-spacing:.04em;text-transform:uppercase}
+.tblzoom .zoomctl .zt .tzi{font-size:13px;margin-inline-end:2px}
+.tblzoom .tzl{font:500 10.5px/1 "JetBrains Mono",monospace;color:var(--muted);margin:0;margin-inline:4px 6px;letter-spacing:.04em;text-transform:uppercase}
 .tblsizer{overflow:clip}
 .tblsizer>table{transform-origin:0 0}
+.tblsizer>table:dir(rtl){transform-origin:100% 0}   /* a right-to-left table scales toward its right edge, where its box starts */
 .tbl.zoomed table th,.tbl.zoomed table td:first-child,.tbl.zoomed table th:first-child,.prose .tbl.zoomed table th,.prose .tbl.zoomed table td:first-child,.prose .tbl.zoomed table th:first-child{position:static}
 /* sortable tables (editor's review of 17 Sep 2026, second batch, brief D): the header button looks like the header text; the
    indicator is muted; the ↺ button sits in the zoom bar when there is one, else in a minimal bar styled like it */
@@ -713,21 +725,21 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
 .sortbtn:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 .sortbtn .sortind{color:var(--muted);font-size:.8em;font-weight:500}
 th[aria-sort="ascending"] .sortbtn,th[aria-sort="descending"] .sortbtn{color:var(--accent)}
-.tblbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:5px 8px;border-bottom:1px solid var(--rule);background:var(--surface2);position:sticky;left:0;z-index:4;box-sizing:border-box;max-width:100%}
+.tblbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:5px 8px;border-bottom:1px solid var(--rule);background:var(--surface2);position:sticky;inset-inline-start:0;z-index:4;box-sizing:border-box;max-width:100%}
 .tsreset{display:inline-flex;align-items:center;gap:4px;height:26px;padding:0 8px;border:1px solid var(--rule);border-radius:6px;background:var(--surface);color:var(--ink);font:500 11.5px/1 "JetBrains Mono",monospace;letter-spacing:.02em;cursor:pointer;white-space:nowrap;max-width:100%}
 .tsreset .tsi{font-size:13px}
 .tsreset:hover{background:var(--surface2)}
 .tsreset:active{transform:translateY(1px)}
 .tsreset:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 .tsreset.idle{color:var(--muted)}
-.tblzoom .tsreset{margin-left:2px}
+.tblzoom .tsreset{margin-inline-start:2px}
 /* §8 figure (build/fig81.py): inline SVG that follows the page's ink and surface tokens */
 figure.fig81{margin:1em 0 1.2em;padding:0}
-figure.fig81 figcaption{font-size:13px;color:var(--ink2);margin-top:6px;text-align:left}
+figure.fig81 figcaption{font-size:13px;color:var(--ink2);margin-top:6px;text-align:start}
 figure.fig81 .pt:hover .mk{stroke-width:2.6}
 /* one page per language (27 Sep 2026): a block of the other language waits for its fragment; a short notice stands in its place */
 dl.glossary{columns:2;column-gap:28px;margin:6px 0 14px;font-size:14px} dl.glossary dt{font-weight:600;break-after:avoid} dl.glossary dd{margin:0 0 8px;color:var(--ink2)} .glossary-h{margin:14px 0 4px;font-size:15px;font-weight:600} @media (max-width:760px){dl.glossary{columns:1}}
-.skip{position:absolute;left:8px;top:-40px;z-index:200;padding:6px 10px;background:var(--ink);color:var(--bg);border-radius:6px;text-decoration:none} .skip:focus{top:8px}
+.skip{position:absolute;inset-inline-start:8px;top:-40px;z-index:200;padding:6px 10px;background:var(--ink);color:var(--bg);border-radius:6px;text-decoration:none} .skip:focus{top:8px}
 .langwait{margin:24px 0;padding:10px 14px;border:1px dashed var(--mid);border-radius:8px;color:var(--ink2);font-size:14px}
 .langwait.langfail{border-style:solid;border-color:#c0504d;color:var(--ink)} .langwait.langfail a{color:var(--accent,#1f5fbf)}
 html.lang-loading .mast .seg [aria-pressed="true"]{opacity:.6}
@@ -739,8 +751,9 @@ html.lang-loading .mast .seg [aria-pressed="true"]{opacity:.6}
 .insp figure.cardpic figcaption{margin-top:4px;font-size:11.5px;line-height:1.35;color:var(--muted);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer}
 .insp figure.cardpic figcaption.open{display:block;-webkit-line-clamp:unset}
 .insp figure.cardpic .credit a{color:inherit}
+.insp figure.cardpic figcaption a.org{display:inline}   /* an organisation in the story flows with the text (29 Sep 2026) */
 /* ---------------- find in the Atlas (28–29 Sep 2026): opens where it was called, a little transparent ---------------- */
-.findbar{position:fixed;top:10px;right:16px;z-index:70;width:min(560px,calc(100vw - 32px));padding:8px 10px;border:1px solid var(--rule);border-radius:12px;background:rgba(255,255,255,.86);box-shadow:0 8px 30px rgba(0,0,0,.18);font-size:13px}
+.findbar{position:fixed;top:10px;inset-inline-end:16px;z-index:70;width:min(560px,calc(100vw - 32px));padding:8px 10px;border:1px solid var(--rule);border-radius:12px;background:rgba(255,255,255,.86);box-shadow:0 8px 30px rgba(0,0,0,.18);font-size:13px}
 @supports (backdrop-filter:blur(8px)) or (-webkit-backdrop-filter:blur(8px)){.findbar{background:rgba(255,255,255,.72);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}}
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .findbar{background:rgba(24,27,33,.82)} }
 :root[data-theme="dark"] .findbar{background:rgba(24,27,33,.82)}
@@ -748,19 +761,19 @@ html.lang-loading .mast .seg [aria-pressed="true"]{opacity:.6}
 .findrow{display:flex;align-items:center;gap:6px}
 .findq{flex:1 1 auto;min-width:0;height:32px;padding:0 10px;border:1px solid var(--rule);border-radius:8px;background:var(--surface);color:var(--ink);font:500 14px/1 "JetBrains Mono",monospace}
 .findq:focus{border-color:var(--accent);outline:none}
-.findcount{white-space:nowrap;color:var(--muted);font-variant-numeric:tabular-nums;font-size:12.5px;min-width:4em;text-align:right}
+.findcount{white-space:nowrap;color:var(--muted);font-variant-numeric:tabular-nums;font-size:12.5px;min-width:4em;text-align:end}
 .findbar .fb{height:30px;min-width:30px;padding:0 6px;border:1px solid var(--rule);border-radius:8px;background:var(--surface);color:var(--ink);cursor:pointer;font-size:12px}
 .findbar .fb:hover{background:var(--surface2)}
 .findopts{display:flex;align-items:center;flex-wrap:wrap;gap:4px 6px;margin-top:6px;position:relative}
 .findbar .fo{height:24px;padding:0 9px;border:1px solid var(--rule);border-radius:999px;background:var(--surface);color:var(--ink2);cursor:pointer;font-size:11.5px;font-family:inherit;white-space:nowrap}
 .findbar .fo:hover{background:var(--surface2)}
 .findbar .folang{position:relative}
-.findbar .fomenu{position:absolute;top:28px;left:0;z-index:5;min-width:160px;padding:4px;border:1px solid var(--rule);border-radius:10px;background:var(--surface);box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.findbar .fomenu{position:absolute;top:28px;inset-inline-start:0;z-index:5;min-width:160px;padding:4px;border:1px solid var(--rule);border-radius:10px;background:var(--surface);box-shadow:0 8px 24px rgba(0,0,0,.18)}
 .findbar .fomenu[hidden]{display:none}
-.findbar .fomenu button{display:block;width:100%;text-align:left;padding:6px 10px;border:0;background:transparent;color:var(--ink);font:inherit;font-size:12.5px;border-radius:6px;cursor:pointer}
+.findbar .fomenu button{display:block;width:100%;text-align:start;padding:6px 10px;border:0;background:transparent;color:var(--ink);font:inherit;font-size:12.5px;border-radius:6px;cursor:pointer}
 .findbar .fomenu button:hover{background:var(--surface2)}
 .findbar .fomenu button.on{font-weight:700}
-.findmode{font-size:10.5px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;margin-left:2px}
+.findmode{font-size:10.5px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;margin-inline-start:2px}
 .findwhere{flex:1 1 100%;font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-height:1.2em}
 .findlist{list-style:none;margin:6px -4px 0;padding:0;max-height:min(42vh,420px);overflow:auto;border-top:1px solid var(--rule);font-size:12.5px}
 .findlist[hidden]{display:none}
@@ -771,18 +784,25 @@ html.lang-loading .mast .seg [aria-pressed="true"]{opacity:.6}
 .findlist li .fx b{background:rgba(255,205,60,.55);color:var(--ink);font-weight:600;padding:0 1px;border-radius:2px}
 .findlist li .fw{flex:0 0 auto;max-width:30%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted);font-size:11px}
 .findlist li.more{justify-content:center;color:var(--accent);font-weight:600}
+/* the window moves by its grip or any bare part of its top row, and folds to that row (the editor, 29 Sep 2026: the extended window
+   "obliterates much space"); on a phone it stays the edge-to-edge band under the page bar, without the grip */
+.findrow{cursor:grab;touch-action:none}
+.findrow input{cursor:text} .findrow button{cursor:pointer}
+.fgrip{flex:0 0 auto;align-self:stretch;display:flex;align-items:center;margin:0;margin-inline:-4px -2px;padding:0 2px;color:var(--muted);font-size:13px;line-height:1;letter-spacing:-3px;user-select:none;-webkit-user-select:none}
+.findbar.dragging,.findbar.dragging *{cursor:grabbing !important;user-select:none;-webkit-user-select:none}
+.findbar.folded .findopts,.findbar.folded .findlist{display:none}
 .findopen.tocfind{display:inline-flex;align-items:center;gap:6px;margin:0 0 10px;padding:5px 10px;border:1px solid var(--rule);border-radius:999px;background:var(--surface);color:var(--ink);cursor:pointer;font:inherit;font-size:12.5px}
 .findopen.tocfind kbd{font:600 11px/1 "JetBrains Mono",monospace;padding:2px 5px;border:1px solid var(--rule);border-radius:4px;color:var(--muted)}
 .findopen.tocfind:hover{background:var(--surface2)}
-.mobilebar .findopen svg{margin-right:4px;vertical-align:-2px}
+.mobilebar .findopen svg{margin-inline-end:4px;vertical-align:-2px}
 ::highlight(findall){background:rgba(255,205,60,.45)}
 ::highlight(findcur){background:#ff9f1a;color:#000}
 mark.findmark{background:#ff9f1a;color:#000;padding:0 1px;border-radius:2px}
 .findout{outline:3px solid #ff9f1a;outline-offset:2px;border-radius:4px}
-@media (max-width:700px){ .findbar{top:52px !important;left:8px !important;right:8px !important;width:auto !important} .findlist{max-height:34vh} }
+@media (max-width:700px){ .findbar{top:52px !important;left:8px !important;right:8px !important;width:auto !important} .findlist{max-height:34vh} .fgrip{display:none} .findrow{cursor:auto;touch-action:auto} }
 /* the floating language switch (the editor, 29 Sep 2026): appears once the masthead's switch has scrolled away, a little transparent
    until hovered; ≤1024 the sticky phone bar carries its own switch, so none here; the build's floating_lang_switch=False removes the markup */
-.floatlang{position:fixed;top:10px;right:16px;z-index:60;display:inline-flex;border:1px solid var(--rule);border-radius:999px;overflow:hidden;background:rgba(255,255,255,.6);box-shadow:0 2px 12px rgba(0,0,0,.14);opacity:0;pointer-events:none;transition:opacity .18s}
+.floatlang{position:fixed;top:10px;inset-inline-end:16px;z-index:60;display:inline-flex;border:1px solid var(--rule);border-radius:999px;overflow:hidden;background:rgba(255,255,255,.6);box-shadow:0 2px 12px rgba(0,0,0,.14);opacity:0;pointer-events:none;transition:opacity .18s}
 .floatlang.show{opacity:.55;pointer-events:auto}
 .floatlang.show:hover,.floatlang.show:focus-within{opacity:1;background:var(--surface)}
 @supports (backdrop-filter:blur(6px)) or (-webkit-backdrop-filter:blur(6px)){.floatlang{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}}
@@ -794,3 +814,38 @@ mark.findmark{background:#ff9f1a;color:#000;padding:0 1px;border-radius:2px}
 #machcard[hidden]{display:none}
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) ::highlight(findall){background:rgba(255,190,40,.35)} }
 """
+
+# ---------- Hebrew (29 Sep 2026): the fonts and the right-to-left layout. The page's `dir` follows the language shown (setLang sets
+# <html dir>), so an English or Russian page switched to Hebrew mirrors too. The layout rules above use logical properties
+# (padding-inline-start …), which follow each element's own direction — a block that shows English in place of Hebrew carries
+# dir="ltr" (langs.fb_attrs) and keeps the English layout inside the mirrored page. What has no logical form is set here.
+import langs as _langs
+_LANG_RULES = '\n'.join('%s{display:none !important}' % ','.join('#app[data-lang="%s"] .lang-%s' % (L, O) for O in _langs.others(L))
+                        for L in _langs.LANGS)
+RTL_CSS = r"""
+/* Hebrew type: Heebo (Unbounded, Golos Text and JetBrains Mono carry no Hebrew glyphs); the Latin display faces keep Latin text */
+html:lang(he) body{font-family:"Heebo","Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+html:lang(he) h1.title,html:lang(he) .btitle,html:lang(he) .rectitle,html:lang(he) .prose h2 .num,html:lang(he) .briefs h2 .num,html:lang(he) .mapsec h2 .num{font-family:"Unbounded","Heebo",system-ui,sans-serif}
+html:lang(he) .mapwrap svg,html:lang(he) .pcwrap svg,html:lang(he) .fig81 .lb,html:lang(he) .fig81 .lg{font-family:"Heebo","Golos Text",system-ui,sans-serif}
+html:lang(he) .eyebrow,html:lang(he) .mapbar .lbl,html:lang(he) .tk,html:lang(he) .insp .space h4,html:lang(he) .insp .grip,html:lang(he) .insp ul.useby li.fam{font-family:"JetBrains Mono","Heebo",monospace;letter-spacing:0}
+html:lang(he) .prose p,html:lang(he) .bbody p,html:lang(he) .prose ol.es>li{hyphens:manual;-webkit-hyphens:manual}   /* no hyphenation dictionary for Hebrew */
+[dir="rtl"] .seg button,[dir="rtl"] .floatlang button{font-family:"Heebo","Golos Text",system-ui,sans-serif}
+/* a diagram keeps its geometry: every SVG is laid out left to right (text-anchor start/end are direction-relative in SVG); the
+   map's scroller too (its scrollLeft arithmetic is left to right); their texts are in the page's language */
+[dir="rtl"] svg,[dir="rtl"] #mapwrap{direction:ltr}
+[dir="rtl"] #mapwrap .tip{direction:rtl}
+/* identifiers, codes, numbers and formulas read left to right inside Hebrew text */
+[dir="rtl"] code,[dir="rtl"] kbd,[dir="rtl"] .mono,[dir="rtl"] .m,[dir="rtl"] .id,[dir="rtl"] .src,[dir="rtl"] .srcn,[dir="rtl"] .bid,[dir="rtl"] a.cite,
+[dir="rtl"] .tag,[dir="rtl"] .cst,[dir="rtl"] .num,[dir="rtl"] nav.toc a .n,[dir="rtl"] .tocdrawer a .n,[dir="rtl"] .recid,[dir="rtl"] .loc,[dir="rtl"] .zlvl{unicode-bidi:isolate;direction:ltr}
+[dir="rtl"] .findq,[dir="rtl"] .findlist li .fx,[dir="rtl"] .findwhere{unicode-bidi:plaintext}   /* a query or a hit in either script reads in its own direction */
+/* the mirrored corners: the zoom control inside the map's scroller (phone, tablet) and the controls bar's zoom window move to the left */
+[dir="rtl"] .zoombar .zoomctl{right:auto;left:6px}
+/* rounded boxes with a straight start edge, fold chevrons, fades: their mirror images */
+.thesis:dir(rtl),.prose blockquote:dir(rtl),.bverdict:dir(rtl){border-radius:8px 0 0 8px}
+.insp dl .lensrow:dir(rtl){box-shadow:inset -3px 0 0 var(--accent)}
+.foldbtn[aria-expanded="false"]:dir(rtl)::before{transform:rotate(90deg)}
+details.tblfold:not([open])>summary:dir(rtl)::before{content:"◂"}
+.maplead details:not([open])>summary:dir(rtl)::after,.pclead:not([open])>summary:dir(rtl)::after,.mapbar details.glyphs:not([open])>summary:dir(rtl)::after{content:"◂"}
+@media (max-width:1024px){ .mapbar .chipsrow::after{background:linear-gradient(to left,var(--surface),var(--surface-t0))} .mapbar .chipsrow:dir(rtl)::after{background:linear-gradient(to right,var(--surface),var(--surface-t0))} }
+"""
+CSS = CSS.replace('@@LANG_RULES@@', _LANG_RULES) + RTL_CSS

@@ -53,7 +53,7 @@ Architecture: donor spins in silicon, as its primary carrier. Requires STM hydro
 ## Outlook & open questions
 Confirm/demote (12–24 months): a device beyond 11 qubits or a dated parallel-write scheme confirms; silence through 2028 demotes this to a physics testbed. Best case 2029: a few dozen donor qubits above 99.5%. Worst case: eleven remains the record. Open: (1) can hydrogen-resist patterning be parallelised; (2) does SkyWater's new owner keep the relationship; (3) does QBI Stage C fund SQC; (4) what is the placement-yield distribution.
 
-## Sources
+## References
 [19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [G]
 [192] H. Edlbauer *et al.*, “An 11-qubit atom processor in silicon,” *Nature*, vol. 648, no. 8094, pp. 569–575, Dec. 2025, doi: [10.1038/s41586-025-09827-w](https://doi.org/10.1038/s41586-025-09827-w). [arXiv:2506.03567](https://arxiv.org/abs/2506.03567). [D]
 [276] Silicon Quantum Computing, “SkyWater x SQC: Advancing Hybrid Quantum-Classical Computing,” Nov. 20, 2025. [Online]. Available: https://sqc.com/news/skywater-and-sqc-advancing-hybrid-quantum-classical-computing [C]

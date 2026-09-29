@@ -59,7 +59,7 @@ The primary decoder on both Rydberg tweezer arrays, alkali (Rb/Cs) and alkaline-
 ## Outlook & open questions
 Confirm if the QPerfect decoder runs on real syndromes or a second vendor publishes its own loss-aware gain; demote if the gain dies under reloading or past four rounds. Best case 2029: default across neutral-atom FT stacks; worst case, one group's architecture, never past 10³ atoms. Open: does 1.73× hold at 10⁴ atoms, at depths where the correlated graph outgrows memory, and on ions [667]?
 
-## Sources
+## References
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [8] Y. Wu, S. Kolkowitz, S. Puri, and J. D. Thompson, “Erasure conversion for fault-tolerant quantum computing in alkaline earth Rydberg atom arrays,” *Nat. Commun.*, vol. 13, Art. no. 4657, 2022, doi: [10.1038/s41467-022-32094-6](https://doi.org/10.1038/s41467-022-32094-6). [arXiv:2201.03540](https://arxiv.org/abs/2201.03540). [S]
 [142] B. Zhang *et al.*, “Logical qubits with erasure conversion using metastable neutral atoms,” *Nat. Phys.*, vol. 22, no. 6, pp. 910–916, Jun. 2026, doi: [10.1038/s41567-026-03309-0](https://doi.org/10.1038/s41567-026-03309-0). [arXiv:2506.13724](https://arxiv.org/abs/2506.13724). [D]

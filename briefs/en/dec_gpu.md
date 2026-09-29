@@ -63,7 +63,7 @@ Both headline numbers come from NVIDIA's own blog, co-developed with Quantinuum,
 ## Outlook & open questions
 Falsifiable (12–24 months): confirm if a second QPU vendor publishes an NVQLink decode loop with numbers by end-2027; demote if published deployments still number one. Best case 2029: GPU decoding is the default on ion, atom and superconducting memory, reaction-limited operations handed to a small local FPGA. Worst case: 17 builders yield two deployments and dedicated hardware keeps the loop. Open questions: how decode time scales with code size and block count; whether anyone reports tail rather than median latency; whether AMD or Intel field a rival host. Watch: a second deployment and any independent benchmark.
 
-## Sources
+## References
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [48] T. Maurer *et al.*, “Real-time decoding of the gross code memory with FPGAs,” [arXiv:2510.21600](https://arxiv.org/abs/2510.21600), Oct. 2025. [D]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]

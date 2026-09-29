@@ -75,7 +75,7 @@ TSV = сквозное переходное отверстие в кремнии
 ## Прогноз и открытые вопросы
 Подтвердить, если к 2027-12-31 процессор с вертикальной разводкой на более чем 256 кубитов опубликует двухкубитные ошибки вместе с одновременными перекрёстными помехами; понизить, если 1,000-кубитная машина Fujitsu минует 2026-12-31 без раскрытия данных или VIO-40K сдвинется за 2028 г. Открытые вопросы. (1) Какой шаг удерживает селективность ниже −40 dB при расстоянии между кубитами 1 mm? (2) Могут ли негальванические штыри обслуживать каплеры с перестройкой потоком? (3) Каков выход годных контактов на один термоцикл при 10⁴ штырей? (4) Выдерживает ли разделение линии на девять кубитов связанные кубиты и гейты? (5) На каком масштабе ограничением становится собственное тепло стопки?
 
-## Источники
+## Литература
 [51] Fujitsu Limited and RIKEN, “Fujitsu and RIKEN develop world-leading 256-qubit superconducting quantum computer,” Fujitsu Global, Apr. 22, 2025. [Online]. Available: https://info.archives.global.fujitsu/global/about/resources/news/press-releases/2025/0422-01.html [C]
 [60] A. Curbison, “OQC raises £260m in Europe's largest ever private quantum computing funding round,” OQC, Jun. 2, 2026. [Online]. Available: https://oqc.tech/company/newsroom/series-c [C]
 [75] Fujitsu, “Fujitsu Quantum.” [Online]. Available: https://global.fujitsu/en-global/technology/research/quantum [C]

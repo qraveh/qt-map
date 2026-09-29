@@ -61,7 +61,7 @@ Requires single photons, single-photon detection for heralding and electro-optic
 ## Outlook & open questions
 Confirm by 2027: a published network of ≥3 chained fusions with end-to-end success rate and erasure statistics; demote if only single-fusion figures exist by 2028. Best case 2029: boosted fusion above 75% on chip. Worst case: the zero-loss failure floor holds and linear-optical fusion survives only inside emitter hybrids. Open: how correlated failures are across a chip; whether 93%-efficient number resolution supports boosting.
 
-## Sources
+## References
 [169] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
 [173] H. A. Rad *et al.*, “Scaling and networking a modular photonic quantum computer,” *Nature*, vol. 638, no. 8052, pp. 912–919, Jan. 2025, doi: [10.1038/s41586-024-08406-9](https://doi.org/10.1038/s41586-024-08406-9). [D]
 [264] M. C. Löbl, L. A. M. Pettersson, J. Dragašević, S. X. Chen, and O. A. D. Sandberg, “The subthreshold issue of fusion-based quantum computing,” [arXiv:2606.28490](https://arxiv.org/abs/2606.28490), Jun. 2026. [S]

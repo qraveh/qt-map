@@ -67,7 +67,7 @@ Crosstalk and coupler figures come from randomised or cross-entropy benchmarking
 ## Outlook & open questions
 Confirm or demote within 12–24 months: does Kookaburra ship a qLDPC memory on c-coupled hardware or slip again; does Rigetti reach median 99.5% at 108 qubits; does any vendor publish a full-lattice simultaneous-crosstalk number. Best case by 2029: degree-6 on-chip routing ships without a fidelity penalty and a planar lattice hosts a high-rate memory. Worst case: coordination stays near 3.5 and scale is bought with 2d² overhead. Open: whether the pair-to-full-width gap is intrinsic.
 
-## Sources
+## References
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [33] IBM, “IBM Quantum Computing — Hardware and roadmap.” [Online]. Available: https://www.ibm.com/quantum/hardware [D]
 [36] Rigetti Computing, Inc., “Rigetti Announces General Availability of 108-Qubit System,” Apr. 7, 2026. [Online]. Available: https://investors.rigetti.com/news-releases/news-release-details/rigetti-announces-general-availability-108-qubit-system [C]

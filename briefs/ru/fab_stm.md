@@ -54,7 +54,7 @@ updated: 2026-09-03
 ## Прогноз и открытые вопросы
 Подтвердить/понизить (12–24 месяца): датированный анонс параллельного изготовления или устройство более чем на одиннадцать кубитов подтверждают наличие пути за пределы штучного масштаба; отсутствие того и другого к 2028 году понижает технологию до физического инструмента. Лучший случай к 2029: свыше пятидесяти доноров с опубликованным выходом годных. Худший случай: возможность, замкнутая на одну лабораторию. Открыто: (1) осуществима ли экспозиция несколькими остриями или по шаблону; (2) сохранит ли новый владелец SkyWater эти отношения; (3) опубликует ли кто-нибудь распределение выхода годных по размещению.
 
-## Источники
+## Литература
 [19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [G]
 [192] H. Edlbauer *et al.*, “An 11-qubit atom processor in silicon,” *Nature*, vol. 648, no. 8094, pp. 569–575, Dec. 2025, doi: [10.1038/s41586-025-09827-w](https://doi.org/10.1038/s41586-025-09827-w). [arXiv:2506.03567](https://arxiv.org/abs/2506.03567). [D]
 [276] Silicon Quantum Computing, “SkyWater x SQC: Advancing Hybrid Quantum-Classical Computing,” Nov. 20, 2025. [Online]. Available: https://sqc.com/news/skywater-and-sqc-advancing-hybrid-quantum-classical-computing [C]

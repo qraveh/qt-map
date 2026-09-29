@@ -2,9 +2,9 @@
 /* record pages (27 Sep 2026): one record per page, the map's card rendered statically, the brief or the narrative below */
 body.record{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Golos Text",system-ui,sans-serif}
 .recbar{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:10px 20px;border-bottom:1px solid var(--line);font-size:14px;position:sticky;top:0;background:var(--bg);z-index:5}
-.recbar .rb-home{font-weight:600;text-decoration:none;color:var(--ink)} .recbar .rb-kinds a{margin-right:2px} .recbar .rb-sp{flex:1} .recbar .rb-lang{text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:2px 10px}
+.recbar .rb-home{font-weight:600;text-decoration:none;color:var(--ink)} .recbar .rb-kinds a{margin-inline-end:2px} .recbar .rb-sp{flex:1} .recbar .rb-lang{text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:2px 10px}
 .recmain{max-width:1080px;margin:0 auto;padding:18px 20px 60px}
-.rectitle{font:700 30px/1.15 "Unbounded","Golos Text",sans-serif;margin:14px 0 6px} .rectitle .recid{font:500 13px "JetBrains Mono",monospace;color:var(--ink2);margin-left:10px;vertical-align:middle}
+.rectitle{font:700 30px/1.15 "Unbounded","Golos Text",sans-serif;margin:14px 0 6px} .rectitle .recid{font:500 13px "JetBrains Mono",monospace;color:var(--ink2);margin-inline-start:10px;vertical-align:middle}
 .reclead{font-size:17px;color:var(--ink2);margin:0 0 18px} .recorg{margin:0 0 14px;font-size:15px}
 .card{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0;background:var(--surface)}
 .card h3{margin:0 0 4px;font-size:20px} .card .meta{font-size:13px;color:var(--ink2)} .card .mlinks{margin:6px 0 10px;font-size:14px} .card .maplink{font-weight:600}

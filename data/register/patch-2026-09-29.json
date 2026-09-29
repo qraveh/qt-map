@@ -1,0 +1,2415 @@
+{
+ "rows": [
+  {
+   "machine_id": "ibm-kookaburra",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://www.ibm.com/roadmaps/quantum/2026/",
+     "date": "2026-09-29",
+     "quote": "Kookaburra will demonstrate a single module out of Starling consisting of a logical processing unit and quantum memory."
+    },
+    {
+     "url": "https://newsroom.ibm.com/2026-08-19-ibm-connects-its-first-modular-cryogenic-systems-in-milestone-toward-fault-tolerant-quantum-computing",
+     "date": "2026-08-19",
+     "quote": "IBM will install IBM Quantum Nighthawk processors into the cryogenic modules later this year to expand operational performance testing."
+    }
+   ],
+   "note": "Still a future-tense 2026 deliverable on IBM's roadmap page; no delivery by 26 Sep 2026 (IBM usually reports at its November developer conference). A May-2026 web story of a '4,096-qubit Kookaburra' (theplatinumcapital.com) cites no IBM source and is disregarded."
+  },
+  {
+   "machine_id": "ibm-cockatoo",
+   "action": "update",
+   "fields": {
+    "err_2q_median": "l-coupler: IBM reported a two-qubit operation across an l-coupler at 99.3% fidelity, target 99.9% (EE Times briefing, 19 Aug 2026; test hardware not named); earlier best 3.5e-2 per CNOT at 235 ns on Flamingo test devices (QDC 2024). The two cryogenic modules linked in Aug 2026 contained no processors.",
+    "flags": "schedule-risk"
+   },
+   "old": {
+    "err_2q_median": "l-coupler best benchmarked error 3.5e-2 per gate at 235 ns (QDC 2024); the 99.3% Aug-2026 figure is not in the cited release - not re-fetched",
+    "flags": "schedule-risk;source-not-confirmed"
+   },
+   "evidence": [
+    {
+     "url": "https://www.eetimes.com/ibm-makes-quantum-cryogenics-modular-but-scaling-problems-remain/",
+     "date": "2026-08-19",
+     "quote": "The company said it has demonstrated a two-qubit operation across an L-coupler with 99.3% fidelity and is targeting 99.9%."
+    },
+    {
+     "url": "https://postquantum.com/industry-news/ibm-modular-cryogenic-architecture/",
+     "date": "2026-08-26",
+     "quote": "For 2027, IBM plans Cockatoo, intended to entangle two encoded modules, alongside its separate goal of at least 1,000 programmable qubits."
+    }
+   ],
+   "note": "Status unchanged (PLANNED 2027); the 99.3% figure now has a source, but it is a coupler result on unnamed test hardware, not a module-to-module result (see doubt 6)."
+  },
+  {
+   "machine_id": "ibm-starling",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://www.ibm.com/quantum/hardware",
+     "date": "2026-09-29",
+     "quote": "run 100 million quantum gates on 200 logical qubits"
+    },
+    {
+     "url": "https://newsroom.ibm.com/2026-08-19-ibm-connects-its-first-modular-cryogenic-systems-in-milestone-toward-fault-tolerant-quantum-computing",
+     "date": "2026-08-19",
+     "quote": "IBM Quantum Starling in 2029, which is expected to be the world's first fault-tolerant quantum computer."
+    }
+   ],
+   "note": "2029 target restated Aug 2026; the first two linked cryogenic modules (empty, heat-loaded) are Starling infrastructure, not qubits."
+  },
+  {
+   "machine_id": "ibm-bluejay",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://www.ibm.com/roadmaps/quantum/",
+     "date": "2026-09-29",
+     "quote": "2000 qubits system, called Blue Jay, capable of running 1 billion gates"
+    }
+   ],
+   "note": "Unchanged 2033+ roadmap item (2,000 logical qubits, 1e9 gates)."
+  },
+  {
+   "machine_id": "ibm-condor",
+   "action": "status",
+   "fields": {
+    "status": "DEMONSTRATED (unveiled 4 Dec 2023 as an innovation milestone; never offered on the IBM Quantum Platform)",
+    "status_date": "4 Dec 2023"
+   },
+   "old": {
+    "status": "ANNOUNCED (never GA)",
+    "status_date": "Dec 2023"
+   },
+   "evidence": [
+    {
+     "url": "https://www.ibm.com/quantum/blog/quantum-roadmap-2033",
+     "date": "2023-12-04",
+     "quote": "With performance comparable to our previous 433-qubit Osprey, it serves as an innovation milestone, solving scale and informing future hardware design."
+    }
+   ],
+   "note": "Condor was fabricated and characterised (not merely announced) but never deployed; IBM's current hardware page (Sep 2026) lists only Heron and Nighthawk processors."
+  },
+  {
+   "machine_id": "ibm-system-two-cscs",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://newsroom.ibm.com/2026-09-10-ibm,-lockheed-martin-announce-swiss-quantum-innovation-hub-at-eth-zurich,-anchored-by-switzerlands-first-ibm-quantum-computer",
+     "date": "2026-09-10",
+     "quote": "Upon the system's deployment by the end of 2026, ETH Zurich will provide organizations with access to Switzerland's own dedicated IBM Quantum System Two."
+    }
+   ],
+   "note": "Announced 10 Sep 2026, Nighthawk-powered, deployment by end-2026; nothing newer."
+  },
+  {
+   "machine_id": "amaravati-ibm-tcs",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://www.etvbharat.com/en/state/amaravati-quantum-computing-centre-nears-completion-ibm-quantum-computer-to-be-installed-by-year-end-enn26080405623",
+     "date": "2026-08-04",
+     "quote": "Installation of an IBM quantum computer is expected to begin within two months of construction"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Amaravati_Quantum_Valley",
+     "date": "2026-08-25",
+     "quote": "the quantum computing services of the quantum valley is expected to be operational from January of 2027."
+    }
+   ],
+   "note": "Building due 15 Oct 2026, installation after, services from Jan 2027 - as the row says. Keep 156 q from IBM's May-2025 release; one Indian outlet says 133 q (press inconsistency, no IBM restatement)."
+  },
+  {
+   "machine_id": "fraunhofer-ehningen",
+   "action": "update",
+   "fields": {
+    "status": "DEPLOYED (2021); since Oct 2024 Fraunhofer's renewed IBM contract gives access to IBM's utility-scale Eagle/Heron systems in the IBM Europe Quantum Data Center, Ehningen; no 2025-26 report on the 27-qubit System One"
+   },
+   "old": {
+    "status": "DEPLOYED (2021; 2026 processor generation unverified)"
+   },
+   "evidence": [
+    {
+     "url": "https://de.newsroom.ibm.com/Fraunhofer-Gesellschaft-erneuert-Vertrag-mit-IBM-zu-Quantumcomputing",
+     "date": "2024-10-01",
+     "quote": "Zugang zu zwei Utility-Scale-Systemen, die von IBM Quantum Eagle-Prozessoren mit 127 Quantenbits und in Zukunft von einem IBM Quantum Heron-Prozessor mit 156 Quantenbits angetrieben werden"
+    },
+    {
+     "url": "https://newsroom.ibm.com/2024-10-01-first-ibm-quantum-data-center-in-europe-opens-will-include-ibms-most-performant-quantum-systems",
+     "date": "2024-10-01",
+     "quote": "Europe's first IBM Quantum Data Center includes two new utility-scale, IBM Quantum Eagle-based systems, and will soon feature a new IBM Quantum Heron-based system."
+    }
+   ],
+   "note": "No processor upgrade of the 2021 27-qubit System One is published; Fraunhofer's access moved to the IBM data-center systems. Consider flagging the row status-unresolved."
+  },
+  {
+   "machine_id": "aliceandbob-graphene",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
+     "date": "2024-12-04",
+     "quote": "Graphene ... Cat Qubits 2000 ... Logical Qubits 100 ... Logical Error Rate 10^-6"
+    },
+    {
+     "url": "https://alice-bob.com/newsroom/alice-bob-surpasses-bit-flip-stability-record",
+     "date": "2025-09-25",
+     "quote": "Alice & Bob's 2030 roadmap targets an early fault tolerant quantum computer (eFTQC) with 100 logical qubits"
+    }
+   ],
+   "note": "Roadmap unchanged through the Jun-2026 Helium launch; 2,000 cat qubits is the builder's figure."
+  },
+  {
+   "machine_id": "aliceandbob-helium-2",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://alice-bob.com/newsroom/alice-bob-surpasses-bit-flip-stability-record",
+     "date": "2025-09-25",
+     "quote": "This result was achieved on Alice & Bob's latest qubit design, the Galvanic Cat, the same used on their 12-cat qubit chip Helium 2."
+    },
+    {
+     "url": "https://alice-bob.com/blog/just-out-of-the-lab-a-cat-qubit-that-jumps-every-hour/",
+     "date": "2025-09-25",
+     "quote": "these are just preliminary results on very new techniques"
+    }
+   ],
+   "note": "No paper or confirmation since; the Jun-2026 on-premise Helium system is a different configuration (18 cat qubits for one logical qubit), already its own row."
+  },
+  {
+   "machine_id": "dwave-dualrail-17",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://www.sec.gov/Archives/edgar/data/1907982/000190798226000127/qbts-20260806xexx991.htm",
+     "date": "2026-08-06",
+     "quote": "2026: Delivery of a 17-physical-qubit system that supports logical error rates 2 times lower than physical error rates"
+    },
+    {
+     "url": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-charts-a-new-course-to-fault-tolerant-quantum-computing-with-gate-model-roadmap/",
+     "date": "2026-06-01",
+     "quote": "17-physical-qubit system that supports logical error rates 2 times lower than physical error rates"
+    }
+   ],
+   "note": "Not shipped by 26 Sep 2026; D-Wave (Q2 call, 6 Aug 2026) says delivery is on track for before end-2026."
+  },
+  {
+   "machine_id": "fujitsu-1000q",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://global.fujitsu/en-global/technology/research/quantum",
+     "date": "2026-09-29",
+     "quote": "scheduled to be installed in a new building at the Fujitsu Technology Park and launched in 2026."
+    },
+    {
+     "url": "https://quantumzeitgeist.com/fujitsu-builds-facility-for-massive-1000-qubit-quantum-computer/",
+     "date": "2026-04-15",
+     "quote": "The upcoming system, boasting an impressive 1000 qubits, is slated for release in fiscal year 2026."
+    }
+   ],
+   "note": "No launch by 26 Sep 2026; Fujitsu's fiscal 2026 runs to 31 Mar 2027, so the target has not yet lapsed."
+  },
+  {
+   "machine_id": "fujitsu-10000q",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://global.fujitsu/en-global/technology/research/quantum",
+     "date": "2026-09-29",
+     "quote": "complete the construction of a superconducting quantum computer with a capacity exceeding 10,000 qubits by fiscal 2030."
+    },
+    {
+     "url": "https://global.fujitsu/en-global/pr/news/2026/09/08-01",
+     "date": "2026-09-08",
+     "quote": "a 250 logical qubit system by fiscal 2030 and a 1,000 logical qubit system by fiscal 2035"
+    }
+   ],
+   "note": "Target restated Sep 2026."
+  },
+  {
+   "machine_id": "google-fluxonium",
+   "action": "no-row",
+   "fields": {},
+   "old": {
+    "status": "ANNOUNCED (no device)"
+   },
+   "evidence": [
+    {
+     "url": "https://blog.google/technology/research/scaling-quantum-computing-even-faster-with-atlantic-quantum/",
+     "date": "2025-10-02",
+     "quote": "Its modular chip stack, which combines qubits and superconducting control electronics within the cold stage."
+    },
+    {
+     "url": "https://quantumfrontier.substack.com/p/the-great-superconducting-qubit-consolidation",
+     "date": "2026-04-20",
+     "quote": "Their public demonstrations emphasized single- and two-qubit fidelities on small devices rather than assembled multi-qubit processors"
+    }
+   ],
+   "note": "Not a machine: Google announced a team acquisition (Atlantic Quantum, 2 Oct 2025) whose text names no fluxonium and no device; no Google fluxonium processor through Sep 2026. Move the fact to the superconducting brief; drop the row."
+  },
+  {
+   "machine_id": "iqm-halocene-150",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://iqm.tech/press-releases/lumi-ai-factory-selects-iqms-staged-path-to-europes-first-superconducting-quantum-computer-with-logical-qubits/",
+     "date": "2026-09-10",
+     "quote": "IQM Halocene H4 system in 2027 with 150 physical qubits and early quantum error correction capabilities."
+    },
+    {
+     "url": "https://www.businesswire.com/news/home/20251113614564/en",
+     "date": "2025-11-13",
+     "quote": "an IQM Crystal quantum processing unit (QPU) targeting 99.7% physical two-qubit gate fidelity"
+    }
+   ],
+   "note": "Launch release promised availability by end-2026; the first named installation (LUMI-IQ H4) is 2027, as the row says. Halocene is a Crystal (square-lattice) QPU: remove iqm-halocene-150 from the G-bus (central-resonator) gap list in map-gaps.csv."
+  },
+  {
+   "machine_id": "chalmers-wacqt-25q",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://www.chalmers.se/en/centres/wacqt/wacqt-quantum-technology-testbed/",
+     "date": "2025-11-12",
+     "quote": "The Testbed is accessible to both Swedish industry and academia. External users can book time to utilize the Testbed's resources."
+    }
+   ],
+   "note": "No 2026 report of the 25-qubit machine opening to users or of the 40-qubit upgrade; the testbed page (last updated 12 Nov 2025) still offers IBM processors for larger work."
+  },
+  {
+   "machine_id": "ctqg-tianyan-504",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "http://en.sasac.gov.cn/2024/12/30/c_18552.htm",
+     "date": "2024-12-30",
+     "quote": "will be integrated into the world's first quantum computing cloud platform with quantum advantage, named 'Tianyan,' which has been open for external services."
+    },
+    {
+     "url": "https://arxiv.org/abs/2512.10504",
+     "date": "2025-12-11",
+     "quote": "single-qubit gates, two-qubit gates, and readout fidelity at 99.90%, 99.56%, 98.7%, respectively."
+    }
+   ],
+   "note": "The Dec-2025 Tianyan cloud paper describes Tianyan-287 only and never names the 504-qubit chip - consistent with 'reachability disputed'; no error rates for Xiaohong published."
+  },
+  {
+   "machine_id": "iqm-spark-eldorado",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://thequantuminsider.com/2026/09/17/iqm-quantum-computer-south-america-brazil-eldorado/",
+     "date": "2026-09-17",
+     "quote": "The IQM Spark quantum computer will be installed at Eldorado's Campinas headquarters, about 100km northwest of São Paulo, in the first quarter of 2027."
+    }
+   ],
+   "note": "Announced 17 Sep 2026; row is current."
+  },
+  {
+   "machine_id": "kriss-20q",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://en.sedaily.com/technology/2026/03/23/korea-builds-quantum-fabs-targets-second-gen-quantum",
+     "date": "2026-03-23",
+     "quote": "KRISS plans to offer cloud-based pilot access to its internally developed 20-qubit-class system to domestic researchers starting in the second half of this year"
+    }
+   ],
+   "note": "No report of the pilot opening yet (cloud service was demonstrated 12 Mar 2025); keep DEPLOYING."
+  },
+  {
+   "machine_id": "kriss-50q",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://en.sedaily.com/technology/2026/03/23/korea-builds-quantum-fabs-targets-second-gen-quantum",
+     "date": "2026-03-23",
+     "quote": "with a next target of achieving a 50-qubit-class system"
+    },
+    {
+     "url": "https://mbiz.heraldcorp.com/article/10839197",
+     "date": "2026-09-29",
+     "quote": "the government plans to secure a 100-qubit-class quantum processing unit capable of error correction by 2029."
+    }
+   ],
+   "note": "Undated next target; nothing newer."
+  },
+  {
+   "machine_id": "qpiai-kaveri-64",
+   "action": "update",
+   "fields": {
+    "status": "ANNOUNCED (64-qubit chip unveiled 3-4 Nov 2025; commercial availability promised by Q3 2026, not confirmed by 26 Sep 2026; the Mar-2026 decoder result was validated on simulated qubits)",
+    "status_date": "3 Nov 2025"
+   },
+   "old": {
+    "status": "ANNOUNCED",
+    "status_date": "26 Feb 2026"
+   },
+   "evidence": [
+    {
+     "url": "https://www.qpiai.tech/newsroom",
+     "date": "2025-11-03",
+     "quote": "QpiAI Launches Kaveri, India's Most Powerful 64 Qubit Quantum Processor"
+    },
+    {
+     "url": "https://thequantuminsider.com/2026/03/25/qpiai-high-speed-quantum-error-correction-decoder/",
+     "date": "2026-03-25",
+     "quote": "has been validated using simulated qubits, with ongoing integration and experimental validation on physical qubits"
+    }
+   ],
+   "note": "The 26 Feb 2026 date is a later press echo; the chip was launched at ESTIC (Delhi) on 3-4 Nov 2025. No device benchmark or delivery found."
+  },
+  {
+   "machine_id": "quamcore",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://www.quamcore.com/",
+     "date": "2026-09-29",
+     "quote": "we enable fault-tolerant, scalable systems capable of managing millions of qubits."
+    },
+    {
+     "url": "https://www.ynetnews.com/business/article/sjmeah121g",
+     "date": "2025-03-12",
+     "quote": "The first chips based on this architecture are expected to enter production soon at one of the world's major semiconductor manufacturing plants."
+    }
+   ],
+   "note": "Still design-only: no device, qubit count or date published through Sep 2026."
+  },
+  {
+   "machine_id": "quantware-contralto-a17",
+   "action": "status",
+   "fields": {
+    "status": "DEPLOYED (sold as a QPU; 'Shipping now' on QuantWare's A-line page, Sep 2026; early access since Feb 2025)",
+    "status_date": "2026 (GA; early access Feb 2025)",
+    "roadmap": "A-line: Tenor-A41 (41 q) shipping 2026; Baritone-A250 (250 q) 2028; Bass-A10K (10,000 q) 2027 as printed on the A-line page (order inconsistent)"
+   },
+   "old": {
+    "status": "early access (GA H1 2026 unconfirmed)",
+    "status_date": "2025-2026",
+    "roadmap": "Tenor-A41 (41 q, logical operations) planned 2026"
+   },
+   "evidence": [
+    {
+     "url": "https://quantware.com/product/processors/a-line",
+     "date": "2026-09-29",
+     "quote": "Contralto-A17 ... Shipping now"
+    },
+    {
+     "url": "https://quantware.com/news/quantwares-contralto-a-quantum-processor-wins-quantum-effects-award-2025-for-leading-quantum-error-correction",
+     "date": "2025-10-08",
+     "quote": "Contralto-A is currently in Early Access with a select number of customers, ahead of its General Access launch planned for the first half of 2026."
+    }
+   ],
+   "note": "General access happened (product page 'Shipping now'); no named customer installation or error rates published - keep flag no-published-error-rates, drop source-not-confirmed."
+  },
+  {
+   "machine_id": "quantware-tenor-d64",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://quantware.com/product/processors/d-line",
+     "date": "2026-09-29",
+     "quote": "Tenor-D64 ... 64 qubits ... Shipping in 2026"
+    },
+    {
+     "url": "https://quantware.com/news/quantware-delivers-tenor-qpu-to-power-italys-largest-quantum-computer",
+     "date": "2025-09-30",
+     "quote": "QuantWare has today announced the delivery of its 64-qubit Tenor QPU to the University of Naples Federico II"
+    }
+   ],
+   "note": "Product page still says 'Shipping in 2026'. A 64-qubit 'Tenor' QPU already runs Naples' Partenope machine (since 30 Sep 2025); QuantWare does not say whether it is the D-line Tenor-D64."
+  },
+  {
+   "machine_id": "quantware-vio-40k",
+   "action": "rename",
+   "fields": {
+    "name": "QuantWare Bass-A10K (VIO-40K)",
+    "status": "ANNOUNCED (A-line page: 'Shipping in 2027'; VIO-40K release: first devices to customers in 2028)",
+    "roadmap": "KiloFab (Delft) scheduled to open 2026; the same VIO-40K architecture carries the D-line Bass-D18K (18,000 q, shipping 2028)"
+   },
+   "old": {
+    "name": "QuantWare VIO-40K",
+    "status": "ANNOUNCED (ships 2028)",
+    "roadmap": "KiloFab (Delft) opens 2026; first customer shipments 2028"
+   },
+   "alias": "QuantWare VIO-40K",
+   "evidence": [
+    {
+     "url": "https://quantware.com/product/processors/a-line",
+     "date": "2026-09-29",
+     "quote": "Bass-A10K ... Shipping in 2027 ... 10,000 qubits"
+    },
+    {
+     "url": "https://quantware.com/news/quantware-announces-scaling-breakthrough-with-vio-40k",
+     "date": "2025-12-08",
+     "quote": "VIO-40K reservations are available today through direct request, with the first devices shipping to customers in 2028."
+    }
+   ],
+   "note": "VIO-40K is the 40,000-I/O-line packaging architecture; the 10,000-qubit processor built on it is sold as Bass-A10K (A-line), with an 18,000-qubit D-line sibling (Bass-D18K). Keep 'VIO-40K' as alias; date conflict 2027 vs 2028 stays in the status text."
+  },
+  {
+   "machine_id": "zhuangzi-2.0",
+   "action": "status",
+   "fields": {
+    "status": "DEMONSTRATED (Nature, 29 Jan 2026)",
+    "status_date": "29 Jan 2026 (arXiv Mar 2025)",
+    "connectivity": "2-D lattice: 78 qubits with 137 couplers",
+    "flags": "no-published-error-rates"
+   },
+   "old": {
+    "status": "DEMONSTRATED (unverified)",
+    "status_date": "2025",
+    "connectivity": "not published",
+    "flags": "snippet-only;no-published-error-rates;source-not-confirmed"
+   },
+   "alias": "Chuang-tzu 2.0",
+   "evidence": [
+    {
+     "url": "https://www.nature.com/articles/s41586-025-09977-x",
+     "date": "2026-01-29",
+     "quote": "Prethermalization by random multipolar driving on a 78-qubit processor"
+    },
+    {
+     "url": "https://english.news.cn/20260129/2fec8da01fae44a9a72a4530508966d4/c.html",
+     "date": "2026-01-29",
+     "quote": "Chuang-tzu 2.0, a two-dimensional superconducting processor consisting of 78 qubits"
+    }
+   ],
+   "note": "Now peer-reviewed (Institute of Physics CAS + Peking University); the papers spell the name Chuang-tzu 2.0 - keep Zhuangzi 2.0 with that alias."
+  },
+  {
+   "machine_id": "ionq-superion-10k",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://www.ionq.com/news/ionq-launches-superion-product-line-industry-leading-upgradeable-platform-designed-to-scale-manufacturable-fault-tolerant-quantum-computing",
+     "date": "2026-09-08",
+     "quote": "full fault tolerance reality in a 2027 lab setting"
+    }
+   ],
+   "note": "Announced 8 Sep 2026; row is current."
+  },
+  {
+   "machine_id": "ionq-superion-256",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://www.ionq.com/news/ionq-launches-superion-product-line-industry-leading-upgradeable-platform-designed-to-scale-manufacturable-fault-tolerant-quantum-computing",
+     "date": "2026-09-08",
+     "quote": "Available to order now, with customer deliveries in 2027"
+    }
+   ],
+   "note": "Row is current; Tempo stays a separate (previous-generation) product, not renamed into Superion."
+  },
+  {
+   "machine_id": "quantinuum-sol",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://www.quantinuum.com/press-releases/quantinuum-reports-second-quarter-2026-results",
+     "date": "2026-08-11",
+     "quote": "Progressing towards the launch of Sol in 2027, with Sol's trap chip back from fabrication and advancing through product validation"
+    }
+   ],
+   "note": "On schedule for 2027; still no official qubit count beyond 'hundreds' (the often-quoted 192 is not in a Quantinuum text found)."
+  },
+  {
+   "machine_id": "quantinuum-apollo",
+   "action": "update",
+   "fields": {
+    "status_date": "2029"
+   },
+   "old": {
+    "status_date": "~2030"
+   },
+   "evidence": [
+    {
+     "url": "https://www.quantinuum.com/press-releases/quantinuum-reports-second-quarter-2026-results",
+     "date": "2026-08-11",
+     "quote": "Apollo remains on schedule for 2029, with significant progress made across key architectural subsystems through prototyping"
+    },
+    {
+     "url": "https://www.quantinuum.com/blog/quantinuum-overcomes-last-major-hurdle-to-deliver-scalable-universal-fault-tolerant-quantum-computers-by-2029",
+     "date": "2025-06-10",
+     "quote": "deliver our universal, fully fault-tolerant quantum computer, Apollo, by 2029"
+    }
+   ],
+   "note": "Quantinuum dates Apollo to 2029, not ~2030."
+  },
+  {
+   "machine_id": "quantum-art-multicore",
+   "action": "rename",
+   "fields": {
+    "name": "Perspective (1,000-qubit multi-core system)",
+    "status": "ANNOUNCED (in development; no delivery date; QaaS platform launching)",
+    "roadmap": "Perspective: 1,000-qubit multi-core system; then the Landscape series (thousands of logical qubits), undated"
+   },
+   "old": {
+    "name": "multi-core 2-D ion architecture",
+    "status": "ANNOUNCED",
+    "roadmap": "1,000-qubit multi-core system in development"
+   },
+   "alias": "multi-core 2-D ion architecture",
+   "evidence": [
+    {
+     "url": "https://quantumcomputingreport.com/quantum-art-extends-series-a-to-140m-to-scale-trapped-ion-architecture/",
+     "date": "2026-04-27",
+     "quote": "Perspective, the company's 1,000-qubit multi-core system"
+    },
+    {
+     "url": "https://thequantuminsider.com/2026/06/16/quantum-art-validates-a-scalable-path-to-fault-tolerant-quantum-computing-using-multi-qubit-gates/",
+     "date": "2026-06-16",
+     "quote": "validated through a detailed microscopic noise model and comprehensive fault-tolerance simulations"
+    }
+   ],
+   "note": "The planned machine now has a name (Perspective); the June-2026 'validation' was simulation, not hardware, so the status stays ANNOUNCED."
+  },
+  {
+   "machine_id": "qudora-nfqc",
+   "action": "rename",
+   "fields": {
+    "name": "XAPHIRO (QUDORA 50-qubit NFQC prototype for the DLR Quantum Computing Initiative)",
+    "status": "ANNOUNCED (under construction: first ion trapped 4 Jun 2025; >=50 fully functional qubits due by project end 31 Jan 2027; emulator on DLR QCI Connect)",
+    "status_date": "Jun 2025 (first ion); Jan 2027 (project end)",
+    "physical_qubits": ">=50 (target)",
+    "control": "chip-integrated microwave near-field control (NFQC); trap at 4 K in a cryostat; NXP CMOS photon detector",
+    "roadmap": "QUDORA system 'reaching 200 high-fidelity qubits through 2027'; NFQC-1k (>=1,000 physical, 50 logical, 2030)",
+    "refs": "https://qci.dlr.de/en/xaphiro/"
+   },
+   "old": {
+    "name": "QUDORA NFQC",
+    "status": "ANNOUNCED (emulator only)",
+    "status_date": "2026",
+    "physical_qubits": "not published",
+    "control": "chip-integrated microwave",
+    "refs": "qudoor-tqi"
+   },
+   "alias": "QUDORA NFQC",
+   "evidence": [
+    {
+     "url": "https://qci.dlr.de/en/xaphiro/",
+     "date": "2026-09-29",
+     "quote": "Developing a microfabricated quantum computer prototype based on ion trapping technology with at least 50 fully functional qubits."
+    },
+    {
+     "url": "https://quantumzeitgeist.com/qubit-qudora-system-50-scale/",
+     "date": "2026-05-29",
+     "quote": "QUDORA's 50-qubit system, which has achieved a coherence time exceeding 60 seconds"
+    }
+   ],
+   "note": "The row's only real hardware is XAPHIRO (QUDORA + NXP for DLR QCI). Its ref 'qudoor-tqi' points at Qudoor (China, AbaQ), a different company - replace."
+  },
+  {
+   "machine_id": "qudora-nfqc-1k",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://thequantuminsider.com/2026/09/23/german-government-selects-qudora-led-consortium-for-e122-million-project/",
+     "date": "2026-09-23",
+     "quote": "at least 1,000 individually addressable physical qubits and at least 50 logical qubits"
+    }
+   ],
+   "note": "Selected Sep 2026; row is current."
+  },
+  {
+   "machine_id": "rqc-ion-50q",
+   "action": "update",
+   "fields": {
+    "name": "70-qubit ion quantum computer (FIAN / Rosatom roadmap)",
+    "physical_qubits": "70 qubits in 35 Yb ions (two qubits per ion via four-level qudits)",
+    "physical_qubits_num": "70",
+    "status": "ANNOUNCED (claimed prototype; presented Oct 2025, reported 18 Dec 2025; no paper)",
+    "status_date": "Dec 2025",
+    "err_2q_median": "3.9e-2 to 4.6e-2 (two-qubit 96.1% per RAS/Rosatom Dec 2025; 95.4% per TASS Feb 2026; no paper)",
+    "roadmap": "tens of times more qubits and millions of operations by 2030 (Rosatom roadmap, stated generally)"
+   },
+   "old": {
+    "name": "50-qubit ion quantum computer (Rosatom roadmap)",
+    "physical_qubits": "50 (claimed; realised with Yb ion qudits, ion count not published)",
+    "physical_qubits_num": "50",
+    "status": "ANNOUNCED (claimed; no paper)",
+    "status_date": "Sep 2024",
+    "roadmap": "~75-qubit machine targeted for 2025"
+   },
+   "alias": "50-qubit ion quantum computer (Rosatom roadmap)",
+   "evidence": [
+    {
+     "url": "https://rg.ru/2025/12/18/rossijskie-uchenye-sozdali-70-kubitnyj-kvantovyj-kompiuter.html",
+     "date": "2025-12-18",
+     "quote": "прототип 70-кубитного квантового компьютера на ионах иттербия"
+    },
+    {
+     "url": "https://www.ixbt.com/news/2026/02/10/rossijskij-kvantovyj-proryv-fiziki-iz-fian-sozdali-ionnyj-kompjuter-na-70-kubitov-i-s-rekordnoj-tochnostju.html",
+     "date": "2026-02-10",
+     "quote": "Система построена на базе цепочки из 35 ионов иттербия"
+    }
+   ],
+   "note": "The same FIAN machine grew from 50 to 70 qubits (35 Yb ions as ququarts); keep old name as alias; still press-only."
+  },
+  {
+   "machine_id": "atom-computing-magne",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://thequantuminsider.com/2026/09/02/qunorth-clears-facility-milestone-for-magne-quantum-computer/",
+     "date": "2026-09-02",
+     "quote": "MAGNE is expected to be fully operational in the spring of 2027."
+    }
+   ],
+   "note": "Facility completed and installation begun (Sep 2026); 'early 2027' in the row matches 'spring 2027'."
+  },
+  {
+   "machine_id": "hanyuan-2",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://thequantuminsider.com/2026/05/08/china-claims-first-dual-core-neutral-atom-quantum-computer/",
+     "date": "2026-05-08",
+     "quote": "200 qubits built from two different isotopes of rubidium atoms — 100 rubidium-85 atoms and 100 rubidium-87 atoms"
+    }
+   ],
+   "note": "No benchmarks, delivery or access reported since the May-2026 unveiling (CAS Cold Atom Technology, Wuhan)."
+  },
+  {
+   "machine_id": "msu-rb-50q",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://strana-rosatom.ru/2026/04/16/bolshe-kubitov-kak-ustroeny-dva-rossi/",
+     "date": "2026-04-16",
+     "quote": "вычислитель МГУ на нейтральных атомах рубидия, в декабре 2025 года достигший размерности 72 кубита"
+    },
+    {
+     "url": "https://www.ixbt.com/news/2025/12/23/sozdan-novyj-rossijskij-kvantovyj-kompjuter--72-kubita-iz-atomov-rubidija.html",
+     "date": "2025-12-23",
+     "quote": "72 кубита, построенный на базе одиночных нейтральных атомов рубидия"
+    }
+   ],
+   "note": "Row is current (72 q, 94% 2Q, press only)."
+  },
+  {
+   "machine_id": "pasqal-vela",
+   "action": "update",
+   "fields": {
+    "physical_qubits": "200+ (Pasqal hardware page and June-2026 investor roadmap; a 2026 Pasqal blog had said 'over 256')",
+    "status": "ANNOUNCED (orders 2026; deliveries from 2027; Pasqal's 'first quantum advantage' QPU)",
+    "status_date": "2027 (deliveries)"
+   },
+   "old": {
+    "physical_qubits": "over 256 high-quality qubits",
+    "status": "ANNOUNCED",
+    "status_date": "2026"
+   },
+   "evidence": [
+    {
+     "url": "https://www.pasqal.com/solutions/hardware/",
+     "date": "2026-09-29",
+     "quote": "Pasqal Vela ... 200+ qubits ... Orders 2026, deliveries from 2027"
+    },
+    {
+     "url": "https://www.pasqal.com/wp-content/uploads/2026/06/Pasqal-Analyst-Investor-Presentation-June-2026-1.pdf",
+     "date": "2026-06",
+     "quote": "Gamma 140 – 200+ qubits Vela 200+ qubits First QA Centaurus Analog & Early FTQC Lyra Analog & Impactful FTQC"
+    }
+   ],
+   "note": "Vela is a 2027 delivery, not a 2026 machine; builder now prints 200+ qubits."
+  },
+  {
+   "machine_id": "planqc-maqcs",
+   "action": "split",
+   "fields": {
+    "name": "MAQCS",
+    "status": "PLANNED / under construction (first hardware at LRZ since 9-10 Sep 2026; operation as an HPC co-processor by end-2027)",
+    "physical_qubits": "1,000 (target)",
+    "roadmap": "1,000-qubit multicore system for LRZ, operation end-2027"
+   },
+   "old": {
+    "name": "MAQCS and DiNAQC",
+    "roadmap": "DiNAQC 100 q spring 2027; MAQCS 1,000+ q ~2027"
+   },
+   "split_into": [
+    "planqc-maqcs",
+    "planqc-dinaqc-100"
+   ],
+   "evidence": [
+    {
+     "url": "https://quantumzeitgeist.com/lrz-planqcs-1000-qubit-system-gains/",
+     "date": "2026-09-10",
+     "quote": "Approximately 800 kilograms of equipment, including a custom server cabinet, laser hardware, and a computing rack"
+    },
+    {
+     "url": "https://planqc.eu/technology/products",
+     "date": "2026-09-29",
+     "quote": "developing a 100 qubit system for the German Aerospace Center (DLR) as an on-premise solution."
+    }
+   ],
+   "note": "One row held two machines for two customers (LRZ 1,000 q; DLR 100 q); keep MAQCS here and add DiNAQC as its own row."
+  },
+  {
+   "machine_id": "qinghe-1",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://thequantuminsider.com/2026/07/22/shanghai-startup-unveils-data-center-ready-quantum-computer-at-waic-2026/",
+     "date": "2026-07-22",
+     "quote": "the first quantum computer concept designed in a standard server form factor for direct installation in existing data center racks"
+    }
+   ],
+   "note": "Still no qubit count; TQI calls it the company's second-generation machine."
+  },
+  {
+   "machine_id": "quera-libra",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://www.quera.com/press-releases/quera-announces-2028-fault-tolerant-quantum-computer-and-expanded-multi-year-strategic-collaboration-with-aws",
+     "date": "2026-06-15",
+     "quote": "over 256 error-corrected logical qubits"
+    }
+   ],
+   "note": "Row is current (2028 on Amazon Braket; physical count is not in QuEra's release - the >10,000 figure should carry its secondary source)."
+  },
+  {
+   "machine_id": "qxl-neutral-atom-50",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://www.globenewswire.com/news-release/2026/05/28/3302867/0/en/quantum-x-labs-launches-50-physical-qubits-neutral-atom-quantum-computer-targets-thousands-qubit-milestone-by-end-of-h1-2027.html",
+     "date": "2026-05-28",
+     "quote": "Quantum X Labs Launches 50+ Physical Qubits Neutral-Atom Quantum Computer, Targets Thousands Qubit Milestone by End of H1 2027"
+    }
+   ],
+   "note": "No data or update since May 2026."
+  },
+  {
+   "machine_id": "quix-carina",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://www.quixquantum.com/news/quix-quantum-delivers-carina-core-hardware-platformto-dlr-qci",
+     "date": "2026-07-14",
+     "quote": "we are moving from component development toward system-level integration and validation in a real customer environment."
+    }
+   ],
+   "note": "Still in integration/commissioning at DLR QCI; no qubit count or completion date published since."
+  },
+  {
+   "machine_id": "diraq-equinix-sydney",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://newsroom.equinix.com/2026-09-01-Diraq-and-Equinix-to-Deploy-Australias-First-Quantum-Computer-Inside-a-Data-Centre",
+     "date": "2026-09-01",
+     "quote": "Installation work at Equinix's Sydney data centre is on track to be completed in October 2026."
+    }
+   ],
+   "note": "Row is current (8 qubits, installation Oct 2026)."
+  },
+  {
+   "machine_id": "groove-quantum",
+   "action": "status",
+   "fields": {
+    "name": "Groove Quantum 18-qubit germanium spin processor",
+    "status": "DEMONSTRATED (lab demonstration announced 30 Apr 2026; no fidelities or paper)",
+    "status_date": "30 Apr 2026",
+    "roadmap": "next: a 100-qubit 'unit cell' (undated); foundry manufacturing; QuTech lineage"
+   },
+   "old": {
+    "name": "Groove Quantum (no named machine)",
+    "status": "ANNOUNCED",
+    "status_date": "May 2026",
+    "roadmap": "QuTech lineage"
+   },
+   "evidence": [
+    {
+     "url": "https://thequantuminsider.com/2026/04/30/groove-quantum-spin-qubit-processor-funding/",
+     "date": "2026-04-30",
+     "quote": "Scale its processors further from 18 to 100 qubits, building a 'unit cell' that contains all architectural elements required for further exponential scaling."
+    },
+    {
+     "url": "https://www.innovationindustries.com/news/groove-quantum-unveils-worlds-largest-semiconductor-spin-qubit-processor-and-raises-eu16m-to-bring-quantum-computing-to-industrial-scale",
+     "date": "2026-04-30",
+     "quote": "demonstrated an 18-qubit semiconductor spin-qubit processor"
+    }
+   ],
+   "note": "The 18 operational qubits were demonstrated in the lab (not merely announced); the processor still has no product name."
+  },
+  {
+   "machine_id": "hitachi-intel18a",
+   "action": "keep",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://www.hitachi.com/content/dam/hitachi/global/en/press/files/2026/07/260722a.pdf",
+     "date": "2026-07-22",
+     "quote": "prototype silicon quantum computers implementing quantum error-correcting codes at the 100-qubit scale"
+    }
+   ],
+   "note": "Row is current; the Hitachi release itself (22 Jul 2026) can replace the TechTimes ref as primary."
+  },
+  {
+   "machine_id": "quobly",
+   "action": "update",
+   "fields": {
+    "physical_qubits": "not stated by Quobly; the Alloy Forge emulator 'modeling the silicon spin qubits of Quobly's Pioneer processor' exposes 15 qubits on a linear nearest-neighbour map (22 Sep 2026); QCR reports a '10-qubit Alloy Pioneer'; the earlier 100-qubit figure is a chip target, not Pioneer",
+    "physical_qubits_num": "15",
+    "connectivity": "1-D linear nearest neighbour (per the Pioneer emulator model)"
+   },
+   "old": {
+    "physical_qubits": "target 100 physical qubits on a commercial chip (not restated in the 16 Sep 2026 release); no device qubit count published; ...",
+    "physical_qubits_num": "100",
+    "connectivity": "nearest neighbour"
+   },
+   "evidence": [
+    {
+     "url": "https://qbraid.com/press/quobly-brings-alloy-forge-to-qbraid",
+     "date": "2026-09-22",
+     "quote": "The emulator exposes 15 qubits on a linear nearest-neighbor coupling map, modeling the silicon spin qubits of Quobly's Pioneer processor."
+    },
+    {
+     "url": "https://quantumcomputingreport.com/quobly-integrates-alloy-forge-emulator-with-qbraid-cloud-to-accelerate-silicon-spin-qubit-application-development/",
+     "date": "2026-09-22",
+     "quote": "10-qubit Alloy Pioneer quantum processing unit (QPU)"
+    },
+    {
+     "url": "https://www.quobly.io/press-releases/quobly-demonstrates-key-quantum-operations-on-single-industrial-silicon-chip-advancing-toward-large-scale-quantum-computing/",
+     "date": "2026-09-16",
+     "quote": "Alloy Pioneer, Quobly's first quantum computer, is planned for cloud access by the end of 2026 for early users"
+    }
+   ],
+   "note": "Status stays PLANNED (end-2026). Pioneer is a 10-15-qubit class machine, not 100; flag conflicting-claim until Quobly states the count."
+  },
+  {
+   "machine_id": "microsoft-majorana-1",
+   "action": "split",
+   "fields": {
+    "name": "Majorana 1",
+    "status_date": "19 Feb 2025 (Nature parity paper; disputed in Nature Matters Arising, 24 Jun 2026)"
+   },
+   "old": {
+    "name": "Majorana 1 (and Majorana 2)",
+    "status_date": "19 Feb 2025 / 2 Jun 2026"
+   },
+   "split_into": [
+    "microsoft-majorana-1",
+    "microsoft-majorana-2"
+   ],
+   "evidence": [
+    {
+     "url": "https://quantum.microsoft.com/en-us/insights/blogs/majorana-2-scalable-quantum-processor",
+     "date": "2026-06-02",
+     "quote": "A multi-tetron device ... A four-qubit array"
+    },
+    {
+     "url": "https://quantumzeitgeist.com/microsoft-majorana-qubit-claims/",
+     "date": "2026-06-28",
+     "quote": "A gapless, disordered wire could not sustain that signal"
+    }
+   ],
+   "note": "Majorana 2 is a different device (InAs-Pb, multi-tetron array, own arXiv paper) - give it its own CONTESTED row; Majorana 1 keeps the Feb-2025 InAs-Al record and the Legg dispute."
+  },
+  {
+   "machine_id": "qilimanjaro",
+   "action": "status",
+   "fields": {
+    "name": "Qilimanjaro AQPU (Adiabatic Quantum Processing Unit) at BSC",
+    "status": "DEPLOYED (inaugurated at BSC 28 May 2026 under EuroQCS-Spain; access via EuroHPC and RES calls)",
+    "status_date": "28 May 2026",
+    "access": "national/EuroHPC allocation (EuroHPC JU and Spanish Supercomputing Network access calls)",
+    "physical_qubits": "10 analog fluxonium qubits",
+    "physical_qubits_num": "10",
+    "qubit_type": "fluxonium (analog / adiabatic operation)",
+    "roadmap": "two further AQPU generations scheduled for delivery in 2026 and 2027 (EuroQCS-Spain, EUR 8.5 M); part of BSC's MareNostrum-Ona hybrid infrastructure",
+    "flags": "no-published-error-rates"
+   },
+   "old": {
+    "name": "coherent annealer",
+    "status": "PLANNED / research",
+    "status_date": "2026",
+    "physical_qubits": "not found - few, highly coherent flux qubits...",
+    "qubit_type": "rf-SQUID flux qubit",
+    "roadmap": "no 2026 device, qubit count or benchmark found",
+    "flags": "annealer-reference-only;no-device;source-not-confirmed"
+   },
+   "alias": "Qilimanjaro coherent annealer",
+   "evidence": [
+    {
+     "url": "https://qilimanjaro.tech/qilimanjaros-new-analog-quantum-system-inaugurated-at-the-barcelona-supercomputing-center/",
+     "date": "2026-05-28",
+     "quote": "Two additional AQPU generations scheduled for delivery in 2026 and 2027"
+    },
+    {
+     "url": "https://qilimanjaro.tech/qilimanjaros-new-analog-quantum-system-inaugurated-at-the-barcelona-supercomputing-center/",
+     "date": "2026-05-28",
+     "quote": "available through EuroHPC and the Spanish Supercomputing Network (RES) access calls"
+    }
+   ],
+   "note": "The planned 'coherent annealer' now exists: a 10-qubit analog fluxonium AQPU inaugurated at BSC on 28 May 2026. Keep family ANNEAL / path anneal; change qubit_type from rf-SQUID to fluxonium. Distinct from bsc-quantum-spain (the 35-qubit digital machine)."
+  },
+  {
+   "machine_id": "eleqtron-qsea-i-10",
+   "action": "add",
+   "fields": {
+    "name": "QSea I (DLR QCI ion-trap demonstrator)",
+    "org": "eleQtron with NXP Semiconductors and ParityQC, for the DLR Quantum Computing Initiative",
+    "org_id": "eleQtron",
+    "org_country": "Germany",
+    "family": "ION",
+    "map_path": "ion_elec",
+    "status": "DEPLOYED (demonstrator revealed 30 May 2024, commissioned at the DLR QCI Innovation Center, Hamburg, Jul 2024; project runs to 28 Feb 2027)",
+    "status_date": "30 May 2024 (revealed); Jul 2024 (commissioned)",
+    "access": "DLR QCI partners from industry and research",
+    "physical_qubits": "10 (project target: at least ten fully functional qubits)",
+    "physical_qubits_num": "10",
+    "qubit_type": "trapped-ion hyperfine qubit (species not stated in the DLR/NXP sources)",
+    "gate_mechanism": "MAGIC (magnetic gradient induced coupling): microwave gates, no gate lasers",
+    "connectivity": "unknown",
+    "control": "MAGIC microwave control (eleQtron); control electronics and sensors (NXP); operating system and algorithms (ParityQC)",
+    "control_placement": "unknown",
+    "readout": "unknown",
+    "err_2q_median": "not published",
+    "codes": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "QSea II (same consortium, to 14 Apr 2027): modular architecture aimed at 'basic scalability to many thousands of qubits'",
+    "refs": "https://qci.dlr.de/en/qsea-i/;https://www.nxp.com/company/about-nxp/newsroom/NW-NXP-ELEQTRON-AND-PARITYQC-FIRST-QUANTUM;https://www.datacenterdynamics.com/en/news/german-made-quantum-computing-demonstrator-goes-live-in-hamburg/",
+    "flags": "no-published-error-rates"
+   },
+   "evidence": [
+    {
+     "url": "https://qci.dlr.de/en/qsea-i/",
+     "date": "2026-09-29",
+     "quote": "A 10-qubit quantum computer demonstrator based on ion trap technology"
+    },
+    {
+     "url": "https://www.datacenterdynamics.com/en/news/german-made-quantum-computing-demonstrator-goes-live-in-hamburg/",
+     "date": "2024-07-08",
+     "quote": "It enables partners from industry and research to run quantum algorithms on real ion trap qubits in a real production environment for the first time."
+    }
+   ],
+   "note": "Distinct machine (eleQtron's first delivered system, before JION); deserves a row. 'DLR QSea I' in the brief is this demonstrator."
+  },
+  {
+   "machine_id": "orca-pt1",
+   "action": "add",
+   "fields": {
+    "name": "PT-1",
+    "org": "ORCA Computing",
+    "org_id": "ORCA Computing",
+    "org_country": "UK",
+    "family": "PHOTON",
+    "map_path": "ph_sampler",
+    "status": "DEPLOYED (still offered as the entry PT-Series system)",
+    "status_date": "2023 (PSNC, two systems); Montana State University order Jun 2024",
+    "access": "on-prem sold (PSNC Poznan x2, 2023; Montana State University x2, ordered Jun 2024; an NQCC unit before the PT-2 testbed)",
+    "physical_qubits": "not published as a qubit count",
+    "qubit_type": "single photons in time bins (per the register's PT-2 row)",
+    "gate_mechanism": "programmable time-bin interferometer in optical fibre",
+    "connectivity": "fibre loops + variable couplers",
+    "control": "room-temperature electronics",
+    "control_placement": "room-temp electro-optic",
+    "readout": "single-photon detection (type not stated on ORCA's page)",
+    "err_2q_median": "n/a",
+    "codes": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "PT-2 (the advanced PT-Series system)",
+    "refs": "https://orcacomputing.com/orca-pt-1/",
+    "flags": "spec-absent"
+   },
+   "evidence": [
+    {
+     "url": "https://orcacomputing.com/orca-pt-1/",
+     "date": "2026-09-29",
+     "quote": "The most accessible starting point for organisations in our PT Series, the ORCA PT-1 is designed to accelerate your quantum readiness."
+    },
+    {
+     "url": "https://orcacomputing.com/orca-pt-1/",
+     "date": "2026-09-29",
+     "quote": "Rack-mounted, room temperature and built with optical fibre components"
+    }
+   ],
+   "note": "PT-1 is a separate, still-sold product with its own installed base; the PSNC systems the PT-2 row lists as PT-2 sites are PT-1s (see orca-pt2 update)."
+  },
+  {
+   "machine_id": "orca-pt2",
+   "action": "update",
+   "fields": {
+    "access": "on-prem sold (NQCC photonic testbed, delivered from Q1 2025)"
+   },
+   "old": {
+    "access": "on-prem sold (NQCC, PSNC, UK MoD / Digital Catapult)"
+   },
+   "evidence": [
+    {
+     "url": "https://orcacomputing.com/orca-pt-2/",
+     "date": "2026-04-10",
+     "quote": "ORCA will next deliver the NQCC Photonic Testbed system in Q1 2025."
+    },
+    {
+     "url": "https://orcacomputing.com/orca-pt-1/",
+     "date": "2026-09-29",
+     "quote": "Two PT-1 systems delivered in 2023"
+    }
+   ],
+   "note": "PSNC's two systems are PT-1 (ORCA's own PT-1 page); the UK MoD unit was not confirmed as a PT-2 in any ORCA page opened - move both to the PT-1 row or drop. The 'PT-3 in 2026' roadmap line has no ORCA source (see orca-pt3)."
+  },
+  {
+   "machine_id": "orca-pt3",
+   "action": "no-row",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://orcacomputing.com/orca-pt-2/",
+     "date": "2026-04-10",
+     "quote": "the ORCA PT-2 provides access to quantum computing capabilities now."
+    }
+   ],
+   "note": "Not an announced machine: ORCA's product pages list only PT-1 and PT-2 (orcacomputing.com/orca-pt-3/ returns 404) and no dated PT-3 release was found; remove 'PT-3 in 2026' from orca-pt2's roadmap unless a source is supplied."
+  },
+  {
+   "machine_id": "equal1-racq",
+   "action": "add",
+   "fields": {
+    "name": "RacQ",
+    "org": "Equal1",
+    "org_id": "Equal1",
+    "org_country": "Ireland",
+    "family": "SPIN",
+    "map_path": "spin_qd",
+    "status": "DEPLOYED (unveiled 14 May 2026; first installation at ESA's Centre for Earth Observation reported by Equal1 on 31 Jul 2026)",
+    "status_date": "14 May 2026 (unveiled); 31 Jul 2026 (ESA installation)",
+    "access": "on-prem sold",
+    "physical_qubits": "not stated (UnityQ QPU; the Bell-1 generation carried a 6-qubit UnityQ)",
+    "physical_qubits_num": "",
+    "qubit_type": "Si gate-defined electron spin (GlobalFoundries 22FDX)",
+    "gate_mechanism": "exchange 2Q; ESR 1Q (UnityQ)",
+    "connectivity": "unknown",
+    "control": "UnityQ quantum system-on-chip (qubits + control/readout on one die) in a self-contained closed-cycle cryocooler at 0.3 K; 19-inch rack, 400 kg, 1,600 W single-phase; integrates with Dell PowerEdge servers",
+    "control_placement": "cryo-CMOS on-die at 0.3 K",
+    "readout": "spin-to-charge, parity readout 99% (UnityQ page)",
+    "err_2q_median": "7e-3 (UnityQ page: average 2Q 99.3% by interleaved RB; product-page claim, no paper)",
+    "codes": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "'next generation evolution of our Bell-1 Server'",
+    "refs": "https://www.equal1.com/insights/equal1-unveils-worlds-first-hybrid-rack-mounted-silicon-spin-quantum-computer;https://www.equal1.com/technology;https://www.equal1.com/insights",
+    "flags": "count-unpublished;product-page-claims"
+   },
+   "evidence": [
+    {
+     "url": "https://www.equal1.com/insights/equal1-unveils-worlds-first-hybrid-rack-mounted-silicon-spin-quantum-computer",
+     "date": "2026-05-14",
+     "quote": "RacQ, the next generation evolution of our Bell-1 Server, represents the world's first deployable rack-mounted silicon-spin quantum computer."
+    },
+    {
+     "url": "https://www.equal1.com/insights",
+     "date": "2026-07-31",
+     "quote": "Equal1 RacQ Installed at ESA Centre for Earth Observation"
+    }
+   ],
+   "note": "Successor product to Bell-1 with its own installation; add as a row and point Bell-1's roadmap to it. The ESA post itself could not be opened (404 on the guessed slug); the installation date is from Equal1's insights index."
+  },
+  {
+   "machine_id": "equal1-bell-1",
+   "action": "update",
+   "fields": {
+    "roadmap": "succeeded by RacQ (unveiled 14 May 2026, 'next generation evolution of our Bell-1 Server')"
+   },
+   "old": {
+    "roadmap": "later Bell generations expand qubit capacity; no dated qubit targets"
+   },
+   "evidence": [
+    {
+     "url": "https://www.equal1.com/post/equal1-launches-bell-1-the-first-quantum-system-purpose-built-for-the-hpc-era",
+     "date": "2025-03-16",
+     "quote": "6-Qubit Quantum Processing System"
+    },
+    {
+     "url": "https://www.equal1.com/insights/equal1-unveils-worlds-first-hybrid-rack-mounted-silicon-spin-quantum-computer",
+     "date": "2026-05-14",
+     "quote": "RacQ, the next generation evolution of our Bell-1 Server"
+    }
+   ],
+   "note": "Bell-1's 6 qubits stand (launch release); no Bell-1 customer site is named by Equal1 - consider flag status-unresolved on DEPLOYED (see doubt 9)."
+  },
+  {
+   "machine_id": "sustech-dualrail-8",
+   "action": "add",
+   "fields": {
+    "name": "SUSTech four-dual-rail-qubit processor",
+    "org": "Southern University of Science and Technology (Huang et al.)",
+    "org_id": "unmatched",
+    "org_country": "China",
+    "family": "SC",
+    "map_path": "dualrail",
+    "status": "DEMONSTRATED (Nature Physics, Mar 2026; arXiv Apr 2025)",
+    "status_date": "Mar 2026 (arXiv 16 Apr 2025)",
+    "access": "lab-only",
+    "physical_qubits": "8 tunable transmons forming 4 dual-rail erasure qubits",
+    "physical_qubits_num": "8",
+    "qubit_type": "dual rail from pairs of tunable transmons (millisecond coherence in the logical subspace)",
+    "gate_mechanism": "coupler-activated logical CNOT inside the protected subspace (96.2% process fidelity)",
+    "connectivity": "unknown",
+    "control": "room-temperature control",
+    "control_placement": "room-temp",
+    "readout": "erasure detection on dual rails (details in paper)",
+    "err_2q_median": "logical CNOT process infidelity 3.8e-2 (96.2%); logical Bell 98.8%, three-qubit GHZ 93.5%; single-qubit gate errors ~1e-5",
+    "codes": "dual_rail",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "none published",
+    "refs": "https://arxiv.org/abs/2504.12099;https://doi.org/10.1038/s41567-026-03211-9",
+    "flags": "lab-only"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2504.12099",
+     "date": "2025-04-16",
+     "quote": "Four dual-rail erasure qubits"
+    },
+    {
+     "url": "https://arxiv.org/abs/2504.12099",
+     "date": "2025-04-16",
+     "quote": "Logical controlled-NOT (CNOT) gate with 96.2% process fidelity"
+    }
+   ],
+   "note": "The largest multi-qubit dual-rail transmon circuit cited in the briefs; a lab device comparable to the register's aws-dualrail and sustc-biased-erasure rows."
+  },
+  {
+   "machine_id": "saxonq-qc2026-dualcore-10",
+   "action": "add",
+   "fields": {
+    "name": "QC2026 Dual Core",
+    "org": "SaxonQ",
+    "org_id": "SaxonQ",
+    "org_country": "Germany",
+    "family": "DEFECT",
+    "map_path": "defect",
+    "status": "DEMONSTRATED (unveiled and run under operating conditions at Hannover Messe, Apr 2026; third-generation mobile system)",
+    "status_date": "Apr 2026",
+    "access": "unknown",
+    "physical_qubits": "10 (two NV-diamond processors, 5 qubits per core)",
+    "physical_qubits_num": "10",
+    "qubit_type": "NV-centre spin in diamond",
+    "gate_mechanism": "unknown",
+    "connectivity": "two independent 5-qubit cores; inter-core link not described",
+    "control": "room-temperature operation from a standard wall outlet; no cryogenics",
+    "control_placement": "room temperature",
+    "readout": "unknown",
+    "err_2q_median": "not published",
+    "codes": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "SaxonQ site: SXQ128 'orderable today with 3-month delivery'; SXQ512 from Q2 2027; SXQ10k (10,000+ qubits, 128 cores) 2030+",
+    "refs": "https://thequantuminsider.com/2026/07/10/8-quantum-computing-companies-working-with-nv-centre-in-diamond-technology/;https://www.saxonq.com/",
+    "flags": "no-published-error-rates;press-only"
+   },
+   "evidence": [
+    {
+     "url": "https://thequantuminsider.com/2026/07/10/8-quantum-computing-companies-working-with-nv-centre-in-diamond-technology/",
+     "date": "2026-07-10",
+     "quote": "a third-generation system featuring two parallel NV diamond processors at 5 qubits per core"
+    },
+    {
+     "url": "https://www.saxonq.com/",
+     "date": "2026-09-29",
+     "quote": "SXQ 128 orderable today with 3-month delivery; SXQ 512 from Q2 2027."
+    }
+   ],
+   "note": "SaxonQ has no register row at all; the dual-core system is the one the brief cites. SaxonQ's own site now names products SXQ4/SXQ128/SXQ10k and does not use 'QC2026'."
+  },
+  {
+   "machine_id": "saxonq-sxq4-4",
+   "action": "add",
+   "fields": {
+    "name": "SXQ4",
+    "org": "SaxonQ",
+    "org_id": "SaxonQ",
+    "org_country": "Germany",
+    "family": "DEFECT",
+    "map_path": "defect",
+    "status": "DEPLOYED (delivered 2023-2025 to DLR and Fraunhofer; 'live with first customers')",
+    "status_date": "2023-2025",
+    "access": "on-prem sold",
+    "physical_qubits": "4 (one core)",
+    "physical_qubits_num": "4",
+    "qubit_type": "NV-centre spin in diamond",
+    "gate_mechanism": "unknown",
+    "connectivity": "single 4-qubit core",
+    "control": "room temperature (18-27 °C), mobile",
+    "control_placement": "room temperature",
+    "readout": "unknown",
+    "err_2q_median": "not published",
+    "codes": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "QC2026 Dual Core (2 x 5 q, Apr 2026); SXQ128 orderable; SXQ512 Q2 2027",
+    "refs": "https://www.saxonq.com/",
+    "flags": "no-published-error-rates;product-page-claims"
+   },
+   "evidence": [
+    {
+     "url": "https://www.saxonq.com/",
+     "date": "2026-09-29",
+     "quote": "Pioneer of mobile room-temperature quantum computing. Live with first customers."
+    },
+    {
+     "url": "https://thequantuminsider.com/2026/07/10/8-quantum-computing-companies-working-with-nv-centre-in-diamond-technology/",
+     "date": "2026-07-10",
+     "quote": "Fraunhofer IWU in Dresden has a SaxonQ system for research"
+    }
+   ],
+   "note": "Optional companion row: SaxonQ's delivered machines (DLR, Fraunhofer IWU, Bechtle Bonn) are a register gap next to Quantum Brilliance's Quoll."
+  },
+  {
+   "machine_id": "ustc-jiuzhang1",
+   "action": "add",
+   "fields": {
+    "name": "Jiuzhang (1.0)",
+    "org": "USTC (Pan Jianwei group)",
+    "org_id": "University of Science and Technology of China",
+    "org_country": "China",
+    "family": "PHOTON",
+    "map_path": "ph_sampler",
+    "status": "RETIRED (superseded; demonstrated Dec 2020)",
+    "status_date": "3 Dec 2020 (Science 370, 1460)",
+    "access": "lab-only",
+    "physical_qubits": "50 single-mode squeezed states into a 100-mode interferometer; up to 76 output photon clicks",
+    "qubit_type": "squeezed light (Gaussian boson sampling); no qubit encoding",
+    "gate_mechanism": "fixed (non-programmable) 100-mode interferometer with full connectivity and random transformation",
+    "connectivity": "full connectivity across 100 modes",
+    "control": "room-temperature optics",
+    "control_placement": "room-temp",
+    "readout": "photon click detection (threshold detectors)",
+    "err_2q_median": "n/a",
+    "codes": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "succeeded by Jiuzhang 2.0",
+    "refs": "https://arxiv.org/abs/2012.01625"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2012.01625",
+     "date": "2020-12-03",
+     "quote": "50 input single-mode squeezed states with high indistinguishability and squeezing parameters"
+    },
+    {
+     "url": "https://arxiv.org/abs/2012.01625",
+     "date": "2020-12-03",
+     "quote": "up to 76 output photon-clicks"
+    }
+   ],
+   "note": "Lineage row: the register keeps retired SC predecessors (Sycamore, Zuchongzhi 2.1); the photonic sampler path should keep Jiuzhang's."
+  },
+  {
+   "machine_id": "ustc-jiuzhang2",
+   "action": "add",
+   "fields": {
+    "name": "Jiuzhang 2.0",
+    "org": "USTC (Pan Jianwei group)",
+    "org_id": "University of Science and Technology of China",
+    "org_country": "China",
+    "family": "PHOTON",
+    "map_path": "ph_sampler",
+    "status": "RETIRED (superseded; demonstrated 2021)",
+    "status_date": "Oct 2021 (PRL 127, 180502; arXiv Jun 2021)",
+    "access": "lab-only",
+    "physical_qubits": "144-mode photonic circuit; up to 113 detection events",
+    "qubit_type": "squeezed light (Gaussian boson sampling); no qubit encoding",
+    "gate_mechanism": "phase-programmable Gaussian boson sampling by tuning the phase of the input squeezed states (stimulated squeezed light)",
+    "connectivity": "144-mode interferometer",
+    "control": "room-temperature optics",
+    "control_placement": "room-temp",
+    "readout": "photon click detection",
+    "err_2q_median": "n/a",
+    "codes": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "succeeded by Jiuzhang 3.0",
+    "refs": "https://arxiv.org/abs/2106.15534"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2106.15534",
+     "date": "2021-06-29",
+     "quote": "produces up to 113 detection events out of a 144-mode photonic circuit"
+    }
+   ],
+   "note": "Lineage row (see Jiuzhang 1.0)."
+  },
+  {
+   "machine_id": "ustc-jiuzhang3",
+   "action": "add",
+   "fields": {
+    "name": "Jiuzhang 3.0",
+    "org": "USTC (Pan Jianwei group)",
+    "org_id": "University of Science and Technology of China",
+    "org_country": "China",
+    "family": "PHOTON",
+    "map_path": "ph_sampler",
+    "status": "RETIRED (superseded by Jiuzhang 4.0; demonstrated 2023)",
+    "status_date": "2023 (PRL; arXiv Apr 2023)",
+    "access": "lab-only",
+    "physical_qubits": "up to 255 photon-click events",
+    "qubit_type": "squeezed light (Gaussian boson sampling); no qubit encoding",
+    "gate_mechanism": "Gaussian interferometer",
+    "connectivity": "unknown",
+    "control": "room-temperature optics",
+    "control_placement": "room-temp",
+    "readout": "pseudo-photon-number-resolving detection",
+    "err_2q_median": "n/a",
+    "codes": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "succeeded by Jiuzhang 4.0",
+    "refs": "https://arxiv.org/abs/2304.12240"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2304.12240",
+     "date": "2023-04-24",
+     "quote": "register up to 255 photon-click events"
+    }
+   ],
+   "note": "Lineage row (see Jiuzhang 1.0)."
+  },
+  {
+   "machine_id": "qarpet",
+   "action": "no-row",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://doi.org/10.1038/s41928-026-01569-5",
+     "date": "2026-03",
+     "quote": "A crossbar chip for benchmarking semiconductor spin qubits"
+    }
+   ],
+   "note": "Not a machine: QuTech/TU Delft's QARPET is a crossbar-addressed germanium benchmarking chip (23x23 site array, 40 tiles measured for coherence statistics, no two-qubit gates) - a component/device for the crossbar brief."
+  },
+  {
+   "machine_id": "tsinghua-metasurface-11000",
+   "action": "no-row",
+   "fields": {},
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2606.02715",
+     "date": "2026-06-01",
+     "quote": "Trapping 11,000 Atoms in a Tweezer Array Generated by a Single Metasurface"
+    }
+   ],
+   "note": "Not a machine: an optics/trapping demonstration (11,022 Rb atoms in 18,225 metasurface tweezers) with no qubit operation, coherence or gate reported; unlike caltech-6100 it characterises no qubits."
+  },
+  {
+   "machine_id": "ibm-flamingo",
+   "action": "add",
+   "fields": {
+    "name": "IBM Quantum Flamingo (l-coupler proof of concept)",
+    "org": "IBM",
+    "org_id": "IBM",
+    "org_country": "USA",
+    "family": "SC",
+    "map_path": "sc",
+    "status": "DEMONSTRATED (proof of concept, Nov 2024; the production Flamingo-based system promised for end-2025 was not delivered under that name)",
+    "status_date": "Nov 2024",
+    "access": "lab-only",
+    "physical_qubits": "two Heron R2 chips joined by four l-couplers up to 1 m long",
+    "qubit_type": "fixed-frequency transmon",
+    "gate_mechanism": "CNOT across chips through l-couplers",
+    "connectivity": "chip-to-chip l-couplers (in-fridge cable)",
+    "control": "room-temperature RF",
+    "control_placement": "room-temp",
+    "readout": "dispersive",
+    "err_2q_median": "3.5e-2 per CNOT at 235 ns across l-couplers (best, test devices, QDC 2024); IBM reported 99.3% for an l-coupler two-qubit operation in Aug 2026, hardware not named",
+    "codes": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "l-coupler line continues in multi-chip Nighthawk (up to 3 x 120 q in 2026) and Cockatoo (2027)",
+    "refs": "https://www.ibm.com/quantum/blog/qdc-2024",
+    "flags": "component-only;schedule-risk"
+   },
+   "evidence": [
+    {
+     "url": "https://www.ibm.com/quantum/blog/qdc-2024",
+     "date": "2024-11-13",
+     "quote": "IBM Quantum Flamingo, which connects two Heron R2 chips with four connectors measuring up to a meter long."
+    },
+    {
+     "url": "https://www.ibm.com/quantum/blog/qdc-2024",
+     "date": "2024-11-13",
+     "quote": "The best CNOTs we've benchmarked have been on test devices, with errors per gate of 3.5% for a 235 nanosecond operation."
+    }
+   ],
+   "note": "A named, measured two-chip device like ibm-loon (component testbed); the promised 2025 product never appeared (IBM's Sep-2026 hardware page lists only Heron and Nighthawk)."
+  },
+  {
+   "machine_id": "rigetti-novera-9",
+   "action": "add",
+   "fields": {
+    "name": "Rigetti Novera",
+    "org": "Rigetti Computing",
+    "org_id": "Rigetti Computing",
+    "org_country": "USA",
+    "family": "SC",
+    "map_path": "sc",
+    "status": "DEPLOYED (on-prem QPU product, 'ready to ship')",
+    "status_date": "2024-2026 (on-prem deliveries)",
+    "access": "on-prem sold (Montana State University QCORE; Horizon Quantum, Singapore; Pittsburgh Supercomputing Center TangleLab)",
+    "physical_qubits": "9 (3x3 tunable transmons) plus a separate 5-qubit chip for single-qubit work",
+    "physical_qubits_num": "9",
+    "qubit_type": "tunable transmon (Ankaa-class)",
+    "gate_mechanism": "tunable couplers (12)",
+    "connectivity": "3x3 square lattice",
+    "control": "customer-supplied control system and dilution refrigerator (MXC plate >=290 mm, >=14 uW at 20 mK)",
+    "control_placement": "room-temp",
+    "readout": "dispersive",
+    "err_2q_median": "vendor table lists medians of 99.9% and 99.6% (single-/two-qubit assignment not reliably extracted)",
+    "codes": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "9-qubit chiplet of the Cepheus-1-108Q (twelve 9-qubit chiplets)",
+    "refs": "https://www.rigetti.com/novera;https://investors.rigetti.com/news-releases/news-release-details/rigetti-computing-reports-second-quarter-2026-financial-results",
+    "flags": "source-not-confirmed"
+   },
+   "evidence": [
+    {
+     "url": "https://www.rigetti.com/novera",
+     "date": "2026-09-29",
+     "quote": "3x3 array of tunable transmons"
+    },
+    {
+     "url": "https://investors.rigetti.com/news-releases/news-release-details/rigetti-computing-reports-second-quarter-2026-financial-results",
+     "date": "2026-08",
+     "quote": "9-qubit Novera QPU supports a broader R&D community with a high-performance, on-premises QPU"
+    }
+   ],
+   "note": "A sold QPU with several named sites; the register lacks it. Launch date not verified in this pass."
+  },
+  {
+   "machine_id": "iqm-star-6",
+   "action": "add",
+   "fields": {
+    "name": "IQM six-qubit star QPU (Deneb-class)",
+    "org": "IQM Quantum Computers",
+    "org_id": "IQM Quantum Computers",
+    "org_country": "Finland",
+    "family": "SC",
+    "map_path": "sc",
+    "status": "DEMONSTRATED ([[4,2,2]] error detection, arXiv Mar 2025); not among the QPUs IQM Resonance lists in Sep 2026",
+    "status_date": "Mar 2025",
+    "access": "cloud 2024-2025 (IQM Resonance); not listed Sep 2026",
+    "physical_qubits": "6 transmons around one central computational resonator",
+    "physical_qubits_num": "6",
+    "qubit_type": "tunable transmon",
+    "gate_mechanism": "qubit-resonator MOVE and CZ through the central resonator",
+    "connectivity": "star: effective all-to-all through the resonator",
+    "control": "room-temperature RF",
+    "control_placement": "room-temp",
+    "readout": "dispersive",
+    "err_2q_median": "not published here",
+    "codes": "stab_4_2_2",
+    "decoder": "post-selection (error detection)",
+    "realtime": "none",
+    "roadmap": "IQM Star 24; IQM Constellation (2-D lattice of Star cells)",
+    "refs": "https://arxiv.org/abs/2503.12869",
+    "flags": "name-inferred"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2503.12869",
+     "date": "2025-03-17",
+     "quote": "We encode two logical qubits in a six-qubit superconducting QPU with a star-topology"
+    },
+    {
+     "url": "https://arxiv.org/abs/2503.12869",
+     "date": "2025-03-17",
+     "quote": "Logical error-per-cycle values ranging from 0.25(2) % to 0.91(3) %"
+    }
+   ],
+   "note": "The briefs' 'IQM [[4,2,2]] star processor' is this 6-qubit device, not the 24-qubit Star 24 (the paper does not name it; Deneb was IQM's 6-qubit star QPU on Resonance). If a separate row is not wanted, record the result on iqm-star-24 as 'IQM star lineage'."
+  },
+  {
+   "machine_id": "iqm-star-24",
+   "action": "alias",
+   "fields": {},
+   "alias": "IQM Star (24-qubit star-topology QPU); same QPU model as it4i-vlq",
+   "evidence": [
+    {
+     "url": "https://iqm.tech/products/iqm-resonance/",
+     "date": "2026-09-29",
+     "quote": "IQM Star 24 ... 24-qubit QPU based on superconducting transmon qubits ... A central resonator hub connects a large number of qubits"
+    }
+   ],
+   "note": "The brief's 24-qubit 'IQM Star' is this row (a QPU product offered on IQM Resonance); it4i-vlq is an on-prem installation of the same 24-qubit star design (keep both; see doubt 2 for the date)."
+  },
+  {
+   "machine_id": "iqm-garnet-20",
+   "action": "alias",
+   "fields": {},
+   "alias": "IQM Crystal 20",
+   "evidence": [
+    {
+     "url": "https://iqm.tech/products/iqm-resonance/",
+     "date": "2026-09-29",
+     "quote": "IQM Crystal 20 ... 20 qubits with tunable couplers between the qubits"
+    }
+   ],
+   "note": "IQM now markets its 20-qubit square-lattice QPU as 'IQM Crystal 20' (its whitepaper still cites 'IQM Garnet 20Q'); Garnet remains the backend name."
+  },
+  {
+   "machine_id": "iqm-emerald-54",
+   "action": "alias",
+   "fields": {},
+   "alias": "IQM Crystal 54",
+   "evidence": [
+    {
+     "url": "https://iqm.tech/products/iqm-resonance/",
+     "date": "2026-09-29",
+     "quote": "IQM Crystal 54 ... 54 qubits with tunable couplers between the qubits"
+    }
+   ],
+   "note": "Product rename of the 54-qubit square-lattice QPU; Emerald remains the backend name (Amazon Braket, LRZ)."
+  },
+  {
+   "machine_id": "oqc-titan-2000",
+   "action": "add",
+   "fields": {
+    "name": "OQC TITAN",
+    "org": "Oxford Quantum Circuits",
+    "org_id": "Oxford Quantum Circuits (OQC)",
+    "org_country": "UK/USA",
+    "family": "SC",
+    "map_path": "dualrail",
+    "status": "PLANNED",
+    "status_date": "2028",
+    "access": "n/a",
+    "physical_qubits": "2,000 lattice sites (multimode qubits); 200 logical qubits",
+    "qubit_type": "multimode superconducting qubit (dimon lineage)",
+    "err_2q_median": "target logical error 1e-6; clock 1 MHz",
+    "codes": "unknown",
+    "decoder": "unknown",
+    "realtime": "unknown",
+    "roadmap": "after GENESIS (16 logical, 2026); then ATHENA 2031, ATLAS 2034",
+    "refs": "https://oqc.tech/tech/technical-roadmap",
+    "flags": "target-not-device"
+   },
+   "evidence": [
+    {
+     "url": "https://oqc.tech/tech/technical-roadmap",
+     "date": "2026-09-29",
+     "quote": "200 logical qubits, 2,000 lattice sites, logical error rate 10-6, clock speed 1 MHz"
+    }
+   ],
+   "note": "Named roadmap machine (like IBM Starling); machine_id number = lattice sites."
+  },
+  {
+   "machine_id": "oqc-athena-75000",
+   "action": "add",
+   "fields": {
+    "name": "OQC ATHENA",
+    "org": "Oxford Quantum Circuits",
+    "org_id": "Oxford Quantum Circuits (OQC)",
+    "org_country": "UK/USA",
+    "family": "SC",
+    "map_path": "dualrail",
+    "status": "PLANNED",
+    "status_date": "2031",
+    "access": "n/a",
+    "physical_qubits": "75,000 lattice sites; 5,000 logical qubits",
+    "qubit_type": "enhanced multimode superconducting qubit",
+    "err_2q_median": "target logical error 1e-9; clock 3 MHz",
+    "roadmap": "after TITAN; then ATLAS 2034",
+    "refs": "https://oqc.tech/tech/technical-roadmap",
+    "flags": "target-not-device"
+   },
+   "evidence": [
+    {
+     "url": "https://oqc.tech/tech/technical-roadmap",
+     "date": "2026-09-29",
+     "quote": "5,000 logical qubits, 75,000 lattice sites, logical error rate 10-9, clock speed 3 MHz"
+    }
+   ],
+   "note": "Decade-out roadmap name, same standing as IBM Blue Jay."
+  },
+  {
+   "machine_id": "oqc-atlas-1000000",
+   "action": "add",
+   "fields": {
+    "name": "OQC ATLAS",
+    "org": "Oxford Quantum Circuits",
+    "org_id": "Oxford Quantum Circuits (OQC)",
+    "org_country": "UK/USA",
+    "family": "SC",
+    "map_path": "dualrail",
+    "status": "PLANNED",
+    "status_date": "2034",
+    "access": "n/a",
+    "physical_qubits": "1,000,000 lattice sites; 50,000 logical qubits",
+    "qubit_type": "advanced multimode superconducting qubit",
+    "err_2q_median": "target logical error 1e-12; clock 10 MHz",
+    "roadmap": "final named OQC roadmap system",
+    "refs": "https://oqc.tech/tech/technical-roadmap",
+    "flags": "target-not-device"
+   },
+   "evidence": [
+    {
+     "url": "https://oqc.tech/tech/technical-roadmap",
+     "date": "2026-09-29",
+     "quote": "50,000 logical qubits, 1,000,000 lattice sites, logical error rate 10-12, clock speed 10 MHz"
+    }
+   ],
+   "note": "Decade-out roadmap name."
+  },
+  {
+   "machine_id": "dwave-advantage3-20000",
+   "action": "add",
+   "fields": {
+    "name": "Advantage3",
+    "org": "D-Wave Quantum",
+    "org_id": "D-Wave Quantum",
+    "org_country": "Canada/USA",
+    "family": "ANNEAL",
+    "map_path": "anneal",
+    "status": "PLANNED (20,000-qubit system available 2029; 100,000 qubits by 2031)",
+    "status_date": "2029",
+    "access": "n/a",
+    "physical_qubits": "20,000 (2029 step); 100,000 (2031 goal)",
+    "physical_qubits_num": "20000",
+    "qubit_type": "flux qubit (annealing lineage)",
+    "connectivity": "multi-chip fabric: advanced packaging and superconducting interconnects",
+    "control": "scalable I/O prototype: large QPU expansion 'with limited increase in control lines'",
+    "err_2q_median": "n/a - no gate set",
+    "codes": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "successor to the 4,500-qubit Advantage2; the 100,000-qubit annealer is also the goal of the CHIPS-funded development (8 Sep 2026)",
+    "refs": "https://www.sec.gov/Archives/edgar/data/1907982/000190798226000127/qbts-20260806xexx991.htm;https://www.sec.gov/Archives/edgar/data/1907982/000190798226000127/q2earningspresentation.htm",
+    "flags": "target-not-device"
+   },
+   "evidence": [
+    {
+     "url": "https://www.sec.gov/Archives/edgar/data/1907982/000190798226000127/qbts-20260806xexx991.htm",
+     "date": "2026-08-06",
+     "quote": "the next generation Advantage3 system to ultimately reach 100,000 qubits by 2031, with an intermediate step of a 20,000 qubit system available in 2029"
+    },
+    {
+     "url": "https://www.sec.gov/Archives/edgar/data/1907982/000190798226000127/q2earningspresentation.htm",
+     "date": "2026-08-06",
+     "quote": "Advanced packaging & superconducting interconnects enable multi-chip fabric to drive qubit counts"
+    }
+   ],
+   "note": "Named next-generation annealer with date and size; today it lives only in Advantage2's roadmap field."
+  },
+  {
+   "machine_id": "aliceandbob-lithium-48",
+   "action": "add",
+   "fields": {
+    "name": "Alice & Bob Lithium",
+    "org": "Alice & Bob",
+    "org_id": "Alice & Bob",
+    "org_country": "France",
+    "family": "SC",
+    "map_path": "cat",
+    "status": "PLANNED (undated; the next chip after Helium, which the Helium platform is built to take)",
+    "status_date": "undated (after Jun 2026)",
+    "access": "n/a",
+    "physical_qubits": "48 cat qubits; 4 logical qubits",
+    "physical_qubits_num": "48",
+    "qubit_type": "dissipative cat qubit",
+    "gate_mechanism": "first error-corrected logical CNOT (target)",
+    "err_2q_median": "target logical error 1e-3",
+    "codes": "unknown",
+    "roadmap": "then Beryllium (250 cat qubits), Graphene (2,000 cat qubits, 100 logical, 2030)",
+    "refs": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf;https://alice-bob.com/newsroom/alice-bob-unveils-first-quantum-system/",
+    "flags": "target-not-device"
+   },
+   "evidence": [
+    {
+     "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
+     "date": "2024-12-04",
+     "quote": "Lithium ... Cat Qubits 48 ... Logical Qubits 4 ... Logical Error Rate 10^-3"
+    },
+    {
+     "url": "https://alice-bob.com/newsroom/alice-bob-unveils-first-quantum-system/",
+     "date": "2026-06-10",
+     "quote": "The system will also support the next 48 cat-qubit chip on Alice & Bob's roadmap – expected to feature multiple logical qubits."
+    }
+   ],
+   "note": "Named roadmap machine with a specification (48 cat qubits, 4 logical, first logical CNOT)."
+  },
+  {
+   "machine_id": "aliceandbob-beryllium-250",
+   "action": "add",
+   "fields": {
+    "name": "Alice & Bob Beryllium",
+    "org": "Alice & Bob",
+    "org_id": "Alice & Bob",
+    "org_country": "France",
+    "family": "SC",
+    "map_path": "cat",
+    "status": "PLANNED (undated)",
+    "status_date": "undated (before Graphene, 2030)",
+    "access": "n/a",
+    "physical_qubits": "250 cat qubits; 5 logical qubits",
+    "physical_qubits_num": "250",
+    "qubit_type": "dissipative cat qubit",
+    "gate_mechanism": "universal logical gate set via magic-state factories and live error correction (target)",
+    "err_2q_median": "target logical error 1e-4",
+    "roadmap": "then Graphene (2030)",
+    "refs": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf;https://alice-bob.com/newsroom/alice-bob-quantum-computing-roadmap/",
+    "flags": "target-not-device"
+   },
+   "evidence": [
+    {
+     "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
+     "date": "2024-12-04",
+     "quote": "Beryllium ... Cat Qubits 250 ... Logical Qubits 5 ... Logical Error Rate 10^-4"
+    },
+    {
+     "url": "https://alice-bob.com/newsroom/alice-bob-quantum-computing-roadmap/",
+     "date": "2024-12-04",
+     "quote": "Enable a universal set of logical gates enabled by magic state factories and live error correction"
+    }
+   ],
+   "note": "Named roadmap machine with a specification."
+  },
+  {
+   "machine_id": "pasqal-centaurus-500",
+   "action": "add",
+   "fields": {
+    "name": "Pasqal Centaurus",
+    "org": "Pasqal",
+    "org_id": "Pasqal",
+    "org_country": "France",
+    "family": "ATOM",
+    "map_path": "atom_rb",
+    "status": "PLANNED (targeted availability for users 2028)",
+    "status_date": "2028",
+    "access": "n/a",
+    "physical_qubits": "500+",
+    "physical_qubits_num": "500",
+    "qubit_type": "hyperfine qubit (Rb)",
+    "gate_mechanism": "analog plus early fault-tolerant digital operation (Pasqal wording)",
+    "roadmap": "after Vela (200+ q, deliveries 2027); then Lyra (2029, 'impactful FTQC')",
+    "refs": "https://www.pasqal.com/solutions/hardware/;https://www.pasqal.com/newsroom/pasqal-releases-2025-roadmap/",
+    "flags": "target-not-device"
+   },
+   "evidence": [
+    {
+     "url": "https://www.pasqal.com/solutions/hardware/",
+     "date": "2026-09-29",
+     "quote": "Pasqal Centaurus ... 500+ qubits ... Targeted availability for users: 2028"
+    }
+   ],
+   "note": "Named roadmap machine; the register holds Vela but not its successors."
+  },
+  {
+   "machine_id": "pasqal-lyra",
+   "action": "add",
+   "fields": {
+    "name": "Pasqal Lyra",
+    "org": "Pasqal",
+    "org_id": "Pasqal",
+    "org_country": "France",
+    "family": "ATOM",
+    "map_path": "atom_rb",
+    "status": "PLANNED",
+    "status_date": "2029",
+    "access": "n/a",
+    "physical_qubits": "unknown",
+    "qubit_type": "hyperfine qubit (Rb)",
+    "gate_mechanism": "'impactful FTQC' (Pasqal wording)",
+    "roadmap": "Pasqal's roadmap: 100 high-fidelity logical qubits by 2029, 200 logical qubits in 2030 (not tied to Lyra by name in the text found)",
+    "refs": "https://www.pasqal.com/newsroom/pasqal-releases-2025-roadmap/",
+    "flags": "target-not-device;spec-absent"
+   },
+   "evidence": [
+    {
+     "url": "https://www.pasqal.com/newsroom/pasqal-releases-2025-roadmap/",
+     "date": "2025-06-12",
+     "quote": "delivering impactful FTQC"
+    }
+   ],
+   "note": "Named 2029 roadmap machine without a qubit specification."
+  },
+  {
+   "machine_id": "planqc-dinaqc-100",
+   "action": "add",
+   "fields": {
+    "name": "DiNAQC",
+    "org": "planqc, for the DLR Quantum Computing Initiative",
+    "org_id": "planqc",
+    "org_country": "Germany",
+    "family": "ATOM",
+    "map_path": "atom_ae",
+    "status": "PLANNED / under construction (DLR QCI project 1 Sep 2023 - 1 Mar 2027; a 10x13 register captured, cooled and sorted by Nov 2025; emulator on DLR QCI Connect)",
+    "status_date": "Nov 2025 (register milestone); Mar 2027 (project end)",
+    "access": "on-prem (DLR)",
+    "physical_qubits": "100 (target)",
+    "physical_qubits_num": "100",
+    "qubit_type": "strontium atoms in optical traps",
+    "roadmap": "sibling of MAQCS (1,000 q, LRZ, end-2027)",
+    "refs": "https://qci.dlr.de/en/dinaqc/;https://planqc.eu/technology/products",
+    "flags": "target-not-device"
+   },
+   "evidence": [
+    {
+     "url": "https://qci.dlr.de/en/dinaqc/",
+     "date": "2026-09-29",
+     "quote": "A highly scalable digital quantum computer with 100 qubits based on neutral atoms"
+    },
+    {
+     "url": "https://qci.dlr.de/en/dinaqc/",
+     "date": "2025-11",
+     "quote": "DiNAQC captures, cools & sorts a register with 10×13 neutral atoms"
+    }
+   ],
+   "note": "Split out of planqc-maqcs."
+  },
+  {
+   "machine_id": "microsoft-majorana-2",
+   "action": "add",
+   "fields": {
+    "name": "Majorana 2",
+    "org": "Microsoft",
+    "org_id": "Microsoft",
+    "org_country": "USA",
+    "family": "TOPO",
+    "map_path": "topo",
+    "status": "CONTESTED (parity measurements only; no qubit operation shown)",
+    "status_date": "2 Jun 2026",
+    "access": "lab-only",
+    "physical_qubits": "multi-tetron device presented as a 'four-qubit array'; measurements reported on a single hybrid nanowire",
+    "qubit_type": "Majorana parity in an InAs-Pb gate-defined nanowire tetron",
+    "gate_mechanism": "none shown (Z-type parity measurements only, per critics no X measurement)",
+    "connectivity": "tetron array (intent)",
+    "control": "baseband gate voltages",
+    "readout": "interferometric single-shot parity via quantum capacitance",
+    "err_2q_median": "n/a - no gate",
+    "codes": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "Microsoft: scalable, practical quantum computer by 2029",
+    "refs": "https://quantum.microsoft.com/en-us/insights/blogs/majorana-2-scalable-quantum-processor;https://arxiv.org/abs/2606.03884",
+    "flags": "contested;not-a-qubit"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2606.03884",
+     "date": "2026-06-02",
+     "quote": "Characteristic parity switching time of ~20 s with some instances reaching minute-scale"
+    },
+    {
+     "url": "https://quantumzeitgeist.com/microsoft-majorana-qubit-claims/",
+     "date": "2026-06-28",
+     "quote": "the accompanying paper reportedly documents only Z-direction measurements without complementary X measurements"
+    }
+   ],
+   "note": "Split out of microsoft-majorana-1."
+  },
+  {
+   "machine_id": "quandela-canopus-24",
+   "action": "add",
+   "fields": {
+    "name": "Quandela Canopus",
+    "org": "Quandela",
+    "org_id": "Quandela",
+    "org_country": "France",
+    "family": "PHOTON",
+    "map_path": "ph_fusion",
+    "status": "ANNOUNCED (cloud access for Premium customers and partners in 2026; no launch confirmed by 26 Sep 2026)",
+    "status_date": "2026 (target)",
+    "access": "cloud (Quandela Cloud, Premium customers and partners)",
+    "physical_qubits": "24 ('MosaiQ 24Q')",
+    "physical_qubits_num": "24",
+    "qubit_type": "photonic qubits from quantum-dot single-photon sources (as Belenos)",
+    "roadmap": "after Belenos (12 q) and Lucy",
+    "refs": "https://www.quandela.com/canopus/",
+    "flags": "target-not-device;spec-absent"
+   },
+   "evidence": [
+    {
+     "url": "https://www.quandela.com/canopus/",
+     "date": "2026-09-29",
+     "quote": "Canopus will be available to our Premium customers and partners through Quandela cloud platform in 2026."
+    }
+   ],
+   "note": "Named next Quandela machine absent from the register."
+  },
+  {
+   "machine_id": "aqt-ibex-q1",
+   "action": "split",
+   "fields": {
+    "name": "IBEX Q1 (Marmot / PINE)",
+    "roadmap": "LYNX series (separate row)"
+   },
+   "old": {
+    "name": "IBEX Q1 (Marmot / PINE / LYNX)",
+    "roadmap": "LYNX line"
+   },
+   "split_into": [
+    "aqt-ibex-q1",
+    "aqt-lynx"
+   ],
+   "evidence": [
+    {
+     "url": "https://www.aqt.eu/lynx-quantum-volume-record/",
+     "date": "2026-05-05",
+     "quote": "Quantum Volume (QV) of 32768"
+    },
+    {
+     "url": "https://www.uibk.ac.at/en/newsroom/2026/aqt-sets-new-european-industry-standard/",
+     "date": "2026-05",
+     "quote": "first units of the LYNX Series are scheduled for availability to select strategic partners in Q4 2026"
+    }
+   ],
+   "note": "LYNX is a new product series with its own benchmark and availability date; it does not share IBEX Q1's 12-qubit spec (see doubt 5)."
+  },
+  {
+   "machine_id": "aqt-lynx",
+   "action": "add",
+   "fields": {
+    "name": "AQT LYNX",
+    "org": "Alpine Quantum Technologies",
+    "org_id": "Alpine Quantum Technologies",
+    "org_country": "Austria",
+    "family": "ION",
+    "map_path": "ion_chain",
+    "status": "DEMONSTRATED (QV 32,768 = 2^15 measured on a 15-qubit register, 5 May 2026; first units to select strategic partners Q4 2026)",
+    "status_date": "5 May 2026",
+    "access": "select strategic partners from Q4 2026",
+    "physical_qubits": ">=15 (QV run used a 15-qubit register; total not published)",
+    "physical_qubits_num": "15",
+    "qubit_type": "trapped ion (AQT's Ca-40 optical-qubit lineage; species not restated for LYNX)",
+    "gate_mechanism": "laser gates with AQT's patented gate implementation, reduced sensitivity to laser frequency and phase noise",
+    "connectivity": "all-to-all within a single chain, 'no need for time-consuming reconfiguration or SWAP operations'",
+    "control": "19-inch rack-mounted, free-space laser addressing (AQT lineage)",
+    "control_placement": "room-temp + free-space optics",
+    "readout": "fluorescence",
+    "err_2q_median": "not published (QV mean heavy-output probability 0.678, 2-sigma lower bound 0.670)",
+    "codes": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "LYNX series; AQT Germany is a partner in NFQC-1k",
+    "refs": "https://www.aqt.eu/lynx-quantum-volume-record/;https://thequantuminsider.com/2026/05/06/aqt-high-performing-quantum-computer-europe-32768-qv/",
+    "flags": "no-published-error-rates"
+   },
+   "evidence": [
+    {
+     "url": "https://thequantuminsider.com/2026/05/06/aqt-high-performing-quantum-computer-europe-32768-qv/",
+     "date": "2026-05-06",
+     "quote": "We run 305 random quantum volume test circuits with 100 shots each on the AQT LYNX system."
+    }
+   ],
+   "note": "Split out of aqt-ibex-q1; single-chain machine (cx_bus), not QCCD."
+  },
+  {
+   "machine_id": "quantinuum-h1",
+   "action": "update",
+   "fields": {
+    "st_control": "ct_ionaod",
+    "control": "room-temperature electronics + free-space laser beams focused into gate zones, propagating parallel to the trap surface; ~10 control signals per qubit"
+   },
+   "old": {
+    "st_control": "ct_ionlaser",
+    "control": "room-temperature electronics + free-space and integrated laser delivery; ~10 control signals per qubit"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/pdf/2003.01293",
+     "date": "2020-03-03",
+     "quote": "All quantum operations are executed in these gate zones using lasers propagating parallel to the trap surface."
+    }
+   ],
+   "note": "Doubt 1: no integrated photonics on H1."
+  },
+  {
+   "machine_id": "quantinuum-h2",
+   "action": "update",
+   "fields": {
+    "st_control": "ct_ionaod",
+    "control": "room-temperature electronics + free-space laser beams (gate beam pairs, 'sheet' cooling beams); ~4.8 control signals per qubit"
+   },
+   "old": {
+    "st_control": "ct_ionlaser",
+    "control": "room-temperature electronics; ~4.8 control signals per qubit"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/pdf/2305.03828",
+     "date": "2023-05-05",
+     "quote": "we cool all 138Ba+ ions with Doppler cooling 'sheet beams', illustrated on top and bottom of Fig. 2d, which resemble sheets of laser light that cover the entire trap."
+    }
+   ],
+   "note": "Doubt 1: H2 uses free-space beams; the H2 paper lists 'laser light generation and delivery' among advances still to be inserted."
+  },
+  {
+   "machine_id": "quantinuum-helios",
+   "action": "update",
+   "fields": {
+    "control": "room-temperature electronics; 1,228 trap electrodes driven by 273 independent voltages (~2.8 control signals per qubit); shared time-multiplexed lasers, >=5 wavelengths (515 nm gates; 493, 614, 650, 1762 nm) delivered as focused free-space beams propagating parallel to the chip surface",
+    "control_placement": "room-temp + free-space optics"
+   },
+   "old": {
+    "control": "... >=5 wavelengths delivered through the trap (515 nm gates; ...)",
+    "control_placement": "room-temp + in-trap optics"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/html/2511.05465",
+     "date": "2025-11-05",
+     "quote": "focused laser beams propagating parallel to the chip surface"
+    }
+   ],
+   "note": "Doubt 1: st_control is already ct_ionaod; the free-text 'delivered through the trap' / 'in-trap optics' contradicts it."
+  },
+  {
+   "machine_id": "google-willow",
+   "action": "update",
+   "fields": {
+    "readout": "frequency-multiplexed dispersive; multi-level reset of measure qubits every cycle; DQLR leakage removal on data qubits",
+    "stations.readout": "∅G-lru primary; ro_reset alternate (new); ro_disp alternate",
+    "stations_evidence.decoder.dec_nn": "AlphaQubit2: fine-tuned and evaluated on Willow surface-code data (d=3,5,7) only; its 'real-time' results (surface d=11, colour d=9, <1 us/cycle) are throughput on TPU accelerators with simulated data, not in Willow's control loop"
+   },
+   "old": {
+    "readout": "frequency-multiplexed dispersive",
+    "stations.readout": "∅G-lru primary; ro_disp alternate",
+    "stations_evidence.decoder.dec_nn": "AlphaQubit2 neural decoder: sub-1 us/cycle at surface d=11; first real-time colour-code decoding at d=9"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/html/2408.13687v1",
+     "date": "2024-08-24",
+     "quote": "During logical qubit operation, we remove leakage from measure qubits using multi-level reset."
+    },
+    {
+     "url": "https://arxiv.org/html/2512.07737",
+     "date": "2025-12",
+     "quote": "we applied AQ2 to experimental data from the 105-qubit Willow chip, which implements surface codes of distance 3, 5, and 7."
+    }
+   ],
+   "note": "Doubt 3. Field names 'stations.*' refer to machine-stations.csv / machine-stations-evidence.csv."
+  },
+  {
+   "machine_id": "atom-computing-phoenix",
+   "action": "update",
+   "fields": {
+    "readout": "non-destructive, state-selective imaging that also flags loss ('delayed erasure conversion'): ancillas at each mid-circuit measurement, data qubits when measured; missing atoms replaced from a storage zone; loss-aware decoding offline (Jun 2026). Nov 2024 logical runs: loss from a separate end-of-circuit survival image",
+    "stations.readout": "ro_img primary; drop ro_erasure alternate (no ancilla-based erasure check)"
+   },
+   "old": {
+    "readout": "fluorescence imaging; mid-circuit measurement and replacement of lost qubits",
+    "stations.readout": "ro_img primary; ro_erasure alternate"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/html/2606.04079",
+     "date": "2026-06-02",
+     "quote": "Our imaging method used for qubit measurement independently identifies qubit state and loss, enabling us to perform delayed erasure conversion."
+    },
+    {
+     "url": "https://arxiv.org/html/2411.11822",
+     "date": "2024-11-18",
+     "quote": "A third 'survival' image determines whether an atom is still present after the circuit."
+    }
+   ],
+   "note": "Doubt 4."
+  },
+  {
+   "machine_id": "dwave-advantage2",
+   "action": "update",
+   "fields": {
+    "physical_qubits": "4,500 flux qubits (D-Wave, Q2 2026 results, Aug 2026; '4,400+' at general availability, May 2025), 40,000+ couplers",
+    "physical_qubits_num": "4500"
+   },
+   "old": {
+    "physical_qubits": "4,400+ flux qubits, 40,000+ couplers",
+    "physical_qubits_num": "4400"
+   },
+   "evidence": [
+    {
+     "url": "https://www.sec.gov/Archives/edgar/data/1907982/000190798226000127/qbts-20260806xexx991.htm",
+     "date": "2026-08-06",
+     "quote": "the current 4,500 qubit Advantage2 system"
+    },
+    {
+     "url": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-announces-general-availability-of-advantage2-quantum-computer-its-most-advanced-and-performant-system/",
+     "date": "2025-05-20",
+     "quote": "Production-Ready 4,400+ Qubit Annealing Quantum Computer Available Now for Customers' Real-World Use Cases"
+    }
+   ],
+   "note": "Doubt 10: print the builder's current figure with the GA figure in parentheses."
+  }
+ ],
+ "doubts": [
+  {
+   "n": 1,
+   "verdict": "Free-space delivery on all three, integrated photonics on none. H1: lasers focused into gate zones 'propagating parallel to the trap surface'. H2: free-space gate beam pairs and 'sheet' cooling beams; the paper lists laser generation and delivery among advances still to come. Helios: 'focused laser beams propagating parallel to the chip surface'. ct_ionlaser is wrong as primary for H1 and H2. Helios already has ct_ionaod, but its free text ('delivered through the trap', 'in-trap optics') contradicts that. Sol and Apollo also carry ct_ionlaser with no Quantinuum source; flag them source-not-confirmed.",
+   "correction": {
+    "machine_id": "quantinuum-h1;quantinuum-h2",
+    "layer/field": "control (st_control / machine-stations.csv)",
+    "from": "ct_ionlaser",
+    "to": "ct_ionaod"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/pdf/2003.01293",
+     "date": "2020-03-03",
+     "quote": "All quantum operations are executed in these gate zones using lasers propagating parallel to the trap surface."
+    },
+    {
+     "url": "https://arxiv.org/pdf/2305.03828",
+     "date": "2023-05-05",
+     "quote": "we cool all 138Ba+ ions with Doppler cooling 'sheet beams', illustrated on top and bottom of Fig. 2d"
+    },
+    {
+     "url": "https://arxiv.org/html/2511.05465",
+     "date": "2025-11-05",
+     "quote": "focused laser beams propagating parallel to the chip surface"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "verdict": "Yes, it is a resonator bus in the strong sense. The transmons couple to one central computational resonator that can hold a qubit state (the MOVE operation), which gives effective all-to-all connectivity. That justifies the G-bus gap and a new cx_busres station. 'IQM Star' is the topology. 'IQM Star 24' is a QPU product (a device, not just a chip), offered on IQM Resonance. VLQ at IT4I is an on-premises installation of the same 24-qubit design. The row date '2024' fits only the 6-qubit star QPU; the first 24-qubit Star was delivered as VLQ. Halocene is an IQM Crystal (square-lattice) QPU and should be removed from the G-bus machine list.",
+   "correction": {
+    "machine_id": "iqm-star-24",
+    "layer/field": "status_date",
+    "from": "2024",
+    "to": "Sep 2025 (first 24-qubit Star delivered, as VLQ at IT4I); offered on IQM Resonance as 'IQM Star 24' by Sep 2026; also remove iqm-halocene-150 from G-bus in map-gaps.csv"
+   },
+   "evidence": [
+    {
+     "url": "https://iqm.tech/products/iqm-resonance/",
+     "date": "2026-09-29",
+     "quote": "IQM Star 24 ... 24-qubit QPU based on superconducting transmon qubits ... A central resonator hub connects a large number of qubits"
+    },
+    {
+     "url": "https://iqm.tech/blog/jumping-off-the-grid-in-quantum-processor-innovation-introducing-iqm-star/",
+     "date": "2025-04-30",
+     "quote": "IQM Star is a superconducting quantum processor topology that connects multiple qubits through a central computational resonator."
+    },
+    {
+     "url": "https://www.businesswire.com/news/home/20251113614564/en",
+     "date": "2025-11-13",
+     "quote": "an IQM Crystal quantum processing unit (QPU) targeting 99.7% physical two-qubit gate fidelity"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "verdict": "Multi-level reset: yes. Willow resets its measure qubits with multi-level reset every cycle, and DQLR removes leakage from data qubits, so add ro_reset beside the G-lru gap. Colour code: not in real time. The in-loop decoder (Sparse Blossom, 63 us mean latency) ran only on the d=5 surface code. Willow's colour-code experiment (Nature 645, 614) was decoded offline. AlphaQubit 2 was fine-tuned and tested on Willow data for surface codes d=3/5/7 only. Its 'first real-time colour-code decoding at d=9' is throughput on TPU accelerators with simulated data, not decoding in Willow's control loop. The brief is right for hardware syndromes; the register's dec_nn note overstates.",
+   "correction": {
+    "machine_id": "google-willow",
+    "layer/field": "machine-stations-evidence: decoder dec_nn note (+ readout: add ro_reset as alternate)",
+    "from": "AlphaQubit2 neural decoder: sub-1 us/cycle at surface d=11; first real-time colour-code decoding at d=9",
+    "to": "AlphaQubit2: evaluated on Willow surface-code data (d=3,5,7) only; real-time figures (surface d=11, colour d=9) are TPU throughput on simulated data, not in Willow's loop"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/html/2408.13687v1",
+     "date": "2024-08-24",
+     "quote": "During logical qubit operation, we remove leakage from measure qubits using multi-level reset."
+    },
+    {
+     "url": "https://arxiv.org/html/2512.07737",
+     "date": "2025-12",
+     "quote": "we applied AQ2 to experimental data from the 105-qubit Willow chip, which implements surface codes of distance 3, 5, and 7."
+    },
+    {
+     "url": "https://arxiv.org/abs/2512.07737",
+     "date": "2025-12",
+     "quote": "We demonstrate real-time decoding faster than 1us per cycle on commercial accelerators"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "verdict": "Not a mid-circuit erasure check, so ro_img is right and ro_erasure is not. In the Nov-2024 logical runs with Microsoft, loss came from a separate 'survival' image taken after the circuit and was decoded as erasure. In the Jun-2026 toric-code work, the non-destructive state-selective image used for each mid-circuit measurement also flags loss ('delayed erasure conversion'). Ancillas are checked every cycle; data qubits only when they are measured. Missing atoms are refilled from a storage zone, and loss-aware PyMatching decoding runs offline. No ancilla-based check detects a lost data qubit during the code.",
+   "correction": {
+    "machine_id": "atom-computing-phoenix",
+    "layer/field": "readout (machine-stations.csv)",
+    "from": "ro_img primary; ro_erasure alternate",
+    "to": "ro_img primary (drop ro_erasure; note 'delayed erasure conversion' in the readout text)"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/html/2411.11822",
+     "date": "2024-11-18",
+     "quote": "A third 'survival' image determines whether an atom is still present after the circuit."
+    },
+    {
+     "url": "https://arxiv.org/html/2606.04079",
+     "date": "2026-06-02",
+     "quote": "Our imaging method used for qubit measurement independently identifies qubit state and loss, enabling us to perform delayed erasure conversion."
+    },
+    {
+     "url": "https://arxiv.org/html/2606.04079",
+     "date": "2026-06-02",
+     "quote": "Atoms identified as missing are replaced from a near-by storage zone (SZ)."
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "verdict": "A single ion chain, not a shuttling trap. AQT describes LYNX as all-to-all 'with no need for time-consuming reconfiguration or SWAP operations'. Its quantum volume of 32,768 (2^15) was measured on a 15-qubit register (May 2026), and the first units go to selected partners in Q4 2026. LYNX is a new product series with its own benchmark and date, so split it from aqt-ibex-q1 onto ion_chain / cx_bus.",
+   "correction": {
+    "machine_id": "aqt-lynx (split from aqt-ibex-q1)",
+    "layer/field": "row + connect",
+    "from": "LYNX listed inside 'IBEX Q1 (Marmot / PINE / LYNX)'",
+    "to": "own row, map_path ion_chain, connect cx_bus (single chain), status DEMONSTRATED 5 May 2026"
+   },
+   "evidence": [
+    {
+     "url": "https://thequantuminsider.com/2026/05/06/aqt-high-performing-quantum-computer-europe-32768-qv/",
+     "date": "2026-05-06",
+     "quote": "no need for time-consuming reconfiguration or SWAP operations"
+    },
+    {
+     "url": "https://www.uibk.ac.at/en/newsroom/2026/aqt-sets-new-european-industry-standard/",
+     "date": "2026-05",
+     "quote": "first units of the LYNX Series are scheduled for availability to select strategic partners in Q4 2026"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "verdict": "There were qubits at both ends, but the result is not between modules. IBM told EE Times (19 Aug 2026) that it had 'demonstrated a two-qubit operation across an L-coupler with 99.3% fidelity' (target 99.9%). A two-qubit operation needs a qubit at each end of the coupler, but IBM did not name the test hardware. The two cryogenic modules linked that month 'contained no processors' and were tested with an applied heat load; Nighthawk processors go in later in 2026. Module-to-module entanglement remains Cockatoo's 2027 target, so describe the 99.3% as a coupler result, not a module link.",
+   "correction": {
+    "machine_id": "ibm-cockatoo",
+    "layer/field": "err_2q_median + machine-stations-evidence connect/interconnect notes",
+    "from": "2Q 99.3% measured Aug 2026 (implied between modules); 'not in the cited release - not re-fetched'",
+    "to": "l-coupler two-qubit operation 99.3% (IBM via EE Times, 19 Aug 2026; test hardware unnamed); the Aug-2026 modules held no processors"
+   },
+   "evidence": [
+    {
+     "url": "https://www.eetimes.com/ibm-makes-quantum-cryogenics-modular-but-scaling-problems-remain/",
+     "date": "2026-08-19",
+     "quote": "The company said it has demonstrated a two-qubit operation across an L-coupler with 99.3% fidelity and is targeting 99.9%."
+    },
+    {
+     "url": "https://postquantum.com/industry-news/ibm-modular-cryogenic-architecture/",
+     "date": "2026-08-26",
+     "quote": "Although the cells contained no processors, IBM tested them with an applied heat load to approximate operating conditions."
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "verdict": "Tin-vacancy (SnV) centres, not NV. Fujitsu's prototype puts SnV centres into photonic integrated circuits (alumina waveguides) and runs at -271.6 °C (1.55 K); QCR contrasts it explicitly with traditional NV centres. The register row already says SnV, so no register change is needed; any brief saying NV is wrong.",
+   "correction": null,
+   "evidence": [
+    {
+     "url": "https://global.fujitsu/en-global/pr/news/2026/09/08-01",
+     "date": "2026-09-08",
+     "quote": "tin-vacancy (SnV) centers into photonic integrated circuits"
+    },
+    {
+     "url": "https://quantumcomputingreport.com/fujitsu-fabricates-diamond-spin-qpu-prototype-integrating-tin-vacancy-centers-and-photonic-ics/",
+     "date": "2026-09",
+     "quote": "in contrast to traditional nitrogen-vacancy (NV) centers"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "verdict": "54 quantum dots. The Nature paper (29 Jul 2026, arXiv 2604.16216) describes a 3-rail array of 54 exchange-coupled dots hosting up to 18 exchange-only qubits. IBM's announcement blog (23 Jul 2026) says '56 quantum dots as 18 qubits' without explanation; the paper governs, and the register's 54 stands.",
+   "correction": null,
+   "evidence": [
+    {
+     "url": "https://www.nature.com/articles/s41586-026-10754-7",
+     "date": "2026-07-29",
+     "quote": "The quantum chip features a 3-rail array of 54 exchange-coupled quantum dots, configurable to host up to 18 exchange-only qubits."
+    },
+    {
+     "url": "https://research.ibm.com/blog/hrl-laboratories-ibm",
+     "date": "2026-07-23",
+     "quote": "a digitally controlled silicon quantum processing unit comprising 56 quantum dots as 18 qubits"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "verdict": "Quantum Motion: the status is current. Its full-stack silicon CMOS system at the NQCC (15 Sep 2025, 'first commercial deployment') is still the only one, and Quantum Motion's releases through Sep 2026 (Series C in May, new CPO in Sep) still give no qubit count. 'Bloomsbury' appears in no Quantum Motion text found, so do not use it as the machine's name; 'QM One' appears only as an image caption. Equal1: Bell-1's 6 qubits stand (launch release, 16 Mar 2025), but Bell-1 has been succeeded. RacQ, 'the next generation evolution of our Bell-1 Server', was unveiled on 14 May 2026 and installed at ESA's Centre for Earth Observation in Jul 2026, with no qubit count stated. Equal1 names no Bell-1 customer site. Add RacQ as a row and point Bell-1's roadmap to it.",
+   "correction": {
+    "machine_id": "equal1-bell-1",
+    "layer/field": "roadmap (+ new row equal1-racq)",
+    "from": "later Bell generations expand qubit capacity; no dated qubit targets",
+    "to": "succeeded by RacQ (unveiled 14 May 2026; ESA installation Jul 2026)"
+   },
+   "evidence": [
+    {
+     "url": "https://quantummotion.com/quantum-motion-delivers-the-industrys-first-full-stack-silicon-cmos-quantum-computer/",
+     "date": "2025-09-15",
+     "quote": "Data-centre-friendly footprint of just three 19\" server racks, housing the dilution refrigerator and integrated control electronics."
+    },
+    {
+     "url": "https://quantummotion.com/quantum-motion-raises-160-million-series-c-to-deliver-quantum-computings-transistor-moment/",
+     "date": "2026-05-07",
+     "quote": "delivering the world's first commercial deployment of a full-stack silicon CMOS quantum computer at the UK National Quantum Computing Centre (NQCC) in 2025"
+    },
+    {
+     "url": "https://www.equal1.com/insights/equal1-unveils-worlds-first-hybrid-rack-mounted-silicon-spin-quantum-computer",
+     "date": "2026-05-14",
+     "quote": "RacQ, the next generation evolution of our Bell-1 Server, represents the world's first deployable rack-mounted silicon-spin quantum computer."
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "verdict": "Print 4,500 and keep '4,400+ at general availability (May 2025)' in parentheses. Both are D-Wave's figures for the same product at different dates; the newest (Q2 2026 results, 6 Aug 2026, and the matching investor slide) is 'the current 4,500 qubit Advantage2 system'.",
+   "correction": {
+    "machine_id": "dwave-advantage2",
+    "layer/field": "physical_qubits / physical_qubits_num",
+    "from": "4,400+ / 4400",
+    "to": "4,500 (Aug 2026; 4,400+ at GA May 2025) / 4500"
+   },
+   "evidence": [
+    {
+     "url": "https://www.sec.gov/Archives/edgar/data/1907982/000190798226000127/qbts-20260806xexx991.htm",
+     "date": "2026-08-06",
+     "quote": "the current 4,500 qubit Advantage2 system"
+    },
+    {
+     "url": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-announces-general-availability-of-advantage2-quantum-computer-its-most-advanced-and-performant-system/",
+     "date": "2025-05-20",
+     "quote": "Production-Ready 4,400+ Qubit Annealing Quantum Computer Available Now for Customers' Real-World Use Cases"
+    }
+   ]
+  }
+ ]
+}

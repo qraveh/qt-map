@@ -63,7 +63,7 @@ Sparse Blossom's throughput comes from simulated Stim streams [D][726]. The one 
 ## Outlook & open questions
 Confirm/demote in 12–24 months: a same-qubit, same-calibration comparison of matching against a challenger (all current ones are simulated, offline or self-refereed); an FPGA matcher closing a live loop at d≥7. Best case 2029: matching stays default past 10⁴ physical qubits, reaction time down from 63 µs to ~1 µs. Worst case: qLDPC memories carry the machines and belief propagation owns the socket. Open questions: does matching extend to loss-dominated atom syndromes; will anyone fund a decoder ASIC when 6% of an FPGA suffices; will QBI Stage C fix a decoder-agnostic benchmark.
 
-## Sources
+## References
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [48] T. Maurer *et al.*, “Real-time decoding of the gross code memory with FPGAs,” [arXiv:2510.21600](https://arxiv.org/abs/2510.21600), Oct. 2025. [P]
 [238] A. B. Ziad *et al.*, “Local clustering decoder as a fast and adaptive hardware decoder for the surface code,” *Nat. Commun.*, vol. 16, no. 1, Art. no. 11048, Dec. 2025, doi: [10.1038/s41467-025-66773-x](https://doi.org/10.1038/s41467-025-66773-x). [D]

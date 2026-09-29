@@ -1,4 +1,4 @@
-.card h3 .sw{width:11px;height:11px;border-radius:3px;background:var(--c);display:inline-block;margin-right:4px}
+.card h3 .sw{width:11px;height:11px;border-radius:3px;background:var(--c);display:inline-block;margin-inline-end:4px}
 .card .mlinks{margin:-4px 0 8px;font-size:12.5px;display:flex;flex-wrap:wrap;gap:2px 6px}
 .card .mtab td{min-width:0}
 .card .mtab td.ln{white-space:normal;width:30%;max-width:104px;line-height:1.25}
@@ -14,21 +14,21 @@
 .card ul.useby li.fam .sw{width:10px;height:3px;border-radius:2px;background:var(--c);display:inline-block}
 .card ul.useby li.cur > a:first-child{font-weight:700;text-decoration:underline}
 .card ul.useby li.alternate > a:first-child{color:var(--ink2)}
-.card ul.useby a.mref{font-size:11px;color:var(--muted);text-decoration:none;border:1px solid var(--rule);border-radius:9px;padding:0 6px;margin-left:2px;white-space:nowrap}
+.card ul.useby a.mref{font-size:11px;color:var(--muted);text-decoration:none;border:1px solid var(--rule);border-radius:9px;padding:0 6px;margin-inline-start:2px;white-space:nowrap}
 .card ul.useby a.mref:hover{color:var(--accent);border-color:var(--accent)}
 .card ul.useby a.reg{text-decoration:none;font-size:11px}
 .card .keys .kr{margin:3px 0;font-size:12.5px;line-height:1.35}
 .card .keys a{font-family:"JetBrains Mono",monospace;font-size:11px}
-.card dl .lensrow{background:var(--surface);box-shadow:inset 3px 0 0 var(--accent);padding-left:6px}
+.card dl .lensrow{background:var(--surface);box-shadow:inset 3px 0 0 var(--accent);padding-inline-start:6px}
 .card .grip{position:sticky;top:0;display:flex;align-items:center;gap:6px;margin:0 -16px 8px;padding:6px 10px;background:var(--surface2);border-bottom:1px solid var(--rule);cursor:move;user-select:none;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);z-index:2}
 .card .grip .sp{flex:1}
 .card .grip button{appearance:none;border:1px solid var(--rule);background:var(--surface);color:var(--ink);font:inherit;font-size:11px;padding:1px 7px;border-radius:6px;cursor:pointer}
 .card .grip button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
 .card .grip button[data-back]{font-weight:700}
 .card .grip button[data-back][disabled]{opacity:.35;cursor:default}
-.card .pagelink{font-size:12px;font-weight:600;text-decoration:none;border:1px solid var(--rule);border-radius:999px;padding:1px 8px;margin-left:4px;white-space:nowrap}
+.card .pagelink{font-size:12px;font-weight:600;text-decoration:none;border:1px solid var(--rule);border-radius:999px;padding:1px 8px;margin-inline-start:4px;white-space:nowrap}
 .card .iclose{display:none}
-.card .conf{margin:6px 0 8px;padding:6px 8px;border-left:2px solid var(--crit);background:var(--surface)}
+.card .conf{margin:6px 0 8px;padding:6px 8px;border-inline-start:2px solid var(--crit);background:var(--surface)}
 .card .conf .cm{color:var(--ink2);margin-top:2px}
 .card h3{margin:0 0 2px;font-size:17px;line-height:1.25;text-wrap:balance}
 .card .meta{color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:11.5px;margin-bottom:10px}
@@ -41,9 +41,9 @@
 .card .def:first-of-type{border-top:0}
 .card .def .k{color:var(--ink2)}
 .card .def .d{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted)}
-.card .pathtag{display:inline-flex;align-items:center;gap:6px;margin:2px 6px 2px 0}
+.card .pathtag{display:inline-flex;align-items:center;gap:6px;margin:2px 0;margin-inline-end:6px}
 .card .pathtag .sw{width:10px;height:3px;border-radius:2px;background:var(--c);display:inline-block}
-.card .flag{display:inline-block;padding:1px 7px;border-radius:999px;font-size:12px;border:1px solid var(--rule);margin:2px 4px 2px 0}
+.card .flag{display:inline-block;padding:1px 7px;border-radius:999px;font-size:12px;border:1px solid var(--rule);margin:2px 0;margin-inline-end:4px}
 .card .flag.off{border-color:var(--nat);color:var(--ink)}
 .card .flag.hub{border-color:var(--fab)}
 .card .flag.empty{border-style:dashed}
@@ -66,3 +66,6 @@
 .card figure.cardpic figcaption{margin-top:4px;font-size:11.5px;line-height:1.35;color:var(--muted);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer}
 .card figure.cardpic figcaption.open{display:block;-webkit-line-clamp:unset}
 .card figure.cardpic .credit a{color:inherit}
+.card figure.cardpic figcaption a.org{display:inline}
+html:lang(he) .card .space h4,html:lang(he) .card .grip,html:lang(he) .card ul.useby li.fam{font-family:"JetBrains Mono","Heebo",monospace;letter-spacing:0}
+.card dl .lensrow:dir(rtl){box-shadow:inset -3px 0 0 var(--accent)}

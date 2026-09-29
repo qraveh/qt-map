@@ -65,7 +65,7 @@ Sycamore тратил 660 из 921 ns (72%) на измерение и сбро�
 Подтвердить, если IBM или независимая группа к 2027-06-30 опубликует для Nighthawk r2 длительность сброса, абсолютный остаток и применение внутри схемы (mid-circuit) и если поверхностный код с d ≥ 9 к 2027-12-31 сведёт считывание + сброс к менее чем половине своего раунда; понизить элемент до функции пропускной способности, если цифры охватывают лишь инициализацию между запусками.
 Открытые вопросы. (1) Какого абсолютного остатка достигает Nighthawk r2? (2) Чего стоит выключенное состояние диссипатора в T1 на 10³ кубитах? (3) Может ли сброс перекрываться с затуханием резонатора, чтобы сократить член 660 ns? (4) Сравниваются ли чисто микроволновые сбросы по скорости с потоковыми без перекрёстных помех? (5) Какая схема удаления утечки с кубитов данных закроет G-lru, не добавляя шага в раунд?
 
-## Источники
+## Литература
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [3] T. He *et al.*, “Experimental Quantum Error Correction below the Surface Code Threshold via All-Microwave Leakage Suppression,” *Phys. Rev. Lett.*, vol. 135, no. 26, Art. no. 260601, Dec. 2025, doi: [10.1103/rqkg-dw31](https://doi.org/10.1103/rqkg-dw31). [D]
 [486] R. Mandelbaum, “Scaling for quantum advantage and beyond,” IBM Quantum Computing Blog, Nov. 12, 2025. [Online]. Available: https://www.ibm.com/quantum/blog/qdc-2025 [C]

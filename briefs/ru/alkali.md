@@ -108,8 +108,7 @@ updated: 2026-09-03
 
 Следить: отчёт Infleqtion за IV квартал 2026 против заявленных 30 логических; веха Libra у QuEra в 2027 году; число каналов на чипе у Pasqal; первая статья Google по нейтральным атомам; любое ограниченное вакуумом время жизни выше 300 s на масштабе массива.
 
-## Источники
-
+## Литература
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [9] H. Neven, “Building superconducting and neutral atom quantum computers,” Google, Mar. 24, 2026. [Online]. Available: https://blog.google/innovation-and-ai/technology/research/neutral-atom-quantum-computers/ [C]
 [11] Novo Nordisk Foundation, “New quantum computer with great potential to boost Nordic research and innovation,” Novo Nordisk Fonden, Jul. 17, 2025. [Online]. Available: https://novonordiskfonden.dk/en/news/new-quantum-computer-with-great-potential-to-boost-nordic-research-and-innovation/ [G]

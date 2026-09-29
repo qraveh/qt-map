@@ -111,8 +111,7 @@ Confirm within 12–24 months if: D-Wave ships the 17-qubit system with publishe
 
 Open questions: (1) does the 40× bias survive parallel checks on qubits sharing feedlines? (2) can Rydberg leakage be made bright within microseconds? (3) what does a decoder do with false negatives at 10⁻³ as leakage accumulates? Watch: D-Wave's 2026 delivery, AWS's next multi-qubit paper, Google/Kaufman Yb results.
 
-## Sources
-
+## References
 [8] Y. Wu, S. Kolkowitz, S. Puri, and J. D. Thompson, “Erasure conversion for fault-tolerant quantum computing in alkaline earth Rydberg atom arrays,” *Nat. Commun.*, vol. 13, Art. no. 4657, 2022, doi: [10.1038/s41467-022-32094-6](https://doi.org/10.1038/s41467-022-32094-6). [arXiv:2201.03540](https://arxiv.org/abs/2201.03540). [S]
 [14] D-Wave Quantum Inc., “D-Wave Announces Agreement to Acquire Quantum Circuits Inc., Establishing World's Leading Quantum Computing Company,” Jan. 7, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-to-acquire-quantum-circuits-inc-establishing-world-s-leading-quantum-computing-company/ [C]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]

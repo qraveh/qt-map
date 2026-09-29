@@ -109,8 +109,7 @@ Confirm within 12–24 months if: IBM's Cockatoo demonstrates entanglement betwe
 
 Open questions: what causes the 40-basis-point tiling tax, per-join or per-calibration? Can a metre-scale cable's mode comb be pushed out of band without shortening it? What is an l-coupler's fidelity, two years after the claim? Does a qLDPC check spanning modules survive the extra transport error? Watch Rigetti's roadmap update, IBM's first Cockatoo measurement, QuantWare's Kilofab yield, and any paper benchmarking a chiplet boundary as such.
 
-## Sources
-
+## References
 [36] Rigetti Computing, Inc., “Rigetti Announces General Availability of 108-Qubit System,” Apr. 7, 2026. [Online]. Available: https://investors.rigetti.com/news-releases/news-release-details/rigetti-announces-general-availability-108-qubit-system [C]
 [50] C. Dundon, S. Hall, M. Hollister, and A. Lindler, “IBM's new modular architecture for cryogenic systems,” IBM Quantum Computing Blog, Aug. 19, 2026. [Online]. Available: https://www.ibm.com/quantum/blog/modular-cryogenics [C]
 [481] R. Mandelbaum *et al.*, “How IBM will build the world's first large-scale, fault-tolerant quantum computer,” IBM Quantum Computing Blog, Jun. 10, 2025. [Online]. Available: https://www.ibm.com/quantum/blog/large-scale-ftqc [C]
@@ -127,5 +126,5 @@ Open questions: what causes the 40-basis-point tiling tax, per-join or per-calib
 - IBM's l-coupler, "first demonstrated in 2024" on Flamingo [C][50], [481]: no length, fidelity, latency or publication found as of 2026-09-03.
 - The cause of Rigetti's 99.5% (four chiplets) → 99.1% (twelve chiplets) step is unattributed in both releases [C][36], [751]; per-join versus per-calibration cannot be separated from public data.
 - arXiv:2308.09240 and arXiv:2409.04634 abstracts do not state author institutions or numeric two-qubit fidelities; the "same level as single-chip" claim in [749] carries no number.
-- QuantWare VIO-40K's 40,000 I/O lines appear in the shared fact record [G:QUANTWARE-VIO] but not on the 2025-12-08 trade-press page itself; line count unconfirmed at source.
+- QuantWare Bass-A10K's (VIO-40K) 40,000 I/O lines appear in the shared fact record [G:QUANTWARE-VIO] but not on the 2025-12-08 trade-press page itself; line count unconfirmed at source.
 - Rigetti chiplet-packaging and QuantWare vertical-I/O patent families: no dated assignee record found.

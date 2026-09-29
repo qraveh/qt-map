@@ -71,7 +71,7 @@ updated: 2026-09-04
 ## Прогноз и открытые вопросы
 Фальсифицируемо в течение 12–24 месяцев: подтвердить/понизить, что Universal Quantum и Atlas Copco поставят вакуумную систему, выйдя за стадию меморандума; что в серийной ионной системе будет назван второй поставщик лазеров; что какой-либо массив превзойдёт оценку перестроения в ~10 MHz. Лучший случай к 2029 г.: доставка через фотонную интеграцию снимает чувствительность к наведению, и стоимость оптики на одну позицию падает. Худший случай: поставки остаются сконцентрированными, а когерентная ошибка этого уровня остаётся доминирующим членом неточности. Открыто: вытеснит ли кто-нибудь TOPTICA; появится ли названный товарный поставщик объективов; сохранится ли разрыв удельной стоимости между ионами и атомами.
 
-## Источники
+## Литература
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [12] M. Abdel-Kareem, “Denmark's QuNorth to Acquire 50-Logical-Qubit Magne Quantum Computer from Atom Computing and Microsoft,” Quantum Computing Report, Jul. 17, 2025. [Online]. Available: https://quantumcomputingreport.com/denmarks-qunorth-to-acquire-50-logical-qubit-magne-quantum-computer-from-atom-computing-and-microsoft/ [P]
 [97] A. Ransford *et al.*, “A 98-qubit trapped-ion quantum computer with all-to-all connectivity,” *Nature*, vol. 655, no. 8121, pp. 81–86, Jun. 2026, doi: [10.1038/s41586-026-10676-4](https://doi.org/10.1038/s41586-026-10676-4). [arXiv:2511.05465](https://arxiv.org/abs/2511.05465). [D]

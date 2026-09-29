@@ -17,7 +17,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'build'))
 import sources as S
 
-EN = os.path.join(ROOT, 'report', 'report_EN.md'); RU = os.path.join(ROOT, 'report', 'report_RU.md')
+EN = os.path.join(ROOT, 'report', 'report_EN.md'); RU = os.path.join(ROOT, 'report', 'report_RU.md'); HE = os.path.join(ROOT, 'report', 'report_HE.md')   # HE optional (29 Sep 2026)
 SRC = os.path.join(ROOT, 'data', 'sources.json'); REC = os.path.join(ROOT, 'data', 'records.json')
 REG = os.environ.get('QT_MACHINES_DIR') or '/home/claude/work/QT-Map/quantum-machines/data'
 FIELDS = ('authors', 'etal', 'n_authors', 'org', 'title', 'journal', 'volume', 'issue', 'pages', 'article', 'date', 'pubdate', 'doi', 'arxiv',

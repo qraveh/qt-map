@@ -830,14 +830,16 @@ def _fmt_q(q):
 
 
 def profile_html(o, lang, base, machines_by_id, node_by_id, path_by_id):
-    """An organisation's card (English or Russian headings); empty sections are left out."""
-    L = 'ru' if lang == 'ru' else 'en'
-    h_m, h_t, h_a, h_b = HEAD[L]
+    """An organisation's card, its headings in the page's language (English where the language has none, 29 Sep 2026); base: from the
+    page to its language's root, so the links stay in that language; empty sections are left out."""
+    from langs import pick
+    L = lang
+    h_m, h_t, h_a, h_b = pick(L, HEAD)
     e = html.escape
     b = e(base or '')
 
     def node_name(i):
-        return e((node_by_id.get(i) or {}).get(L) or (node_by_id.get(i) or {}).get('en') or i)
+        return e(pick(L, node_by_id.get(i) or {}) or i)
     meta = [e(x) for x in (o.get('tier'), o.get('segment')) if x]
     place = ', '.join(x for x in (o.get('city'), o.get('country')) if x)
     if place:
@@ -865,7 +867,7 @@ def profile_html(o, lang, base, machines_by_id, node_by_id, path_by_id):
         out.append('<h3>%s (%d)</h3><ul>%s</ul>' % (h_m, len(ms), ''.join(lis)))
     cms = [machines_by_id[i] for i in o.get('co_machines') or [] if i in machines_by_id]
     if cms:
-        out.append('<h3>%s (%d)</h3><ul>%s</ul>' % (HEAD_CO[L], len(cms), ''.join(
+        out.append('<h3>%s (%d)</h3><ul>%s</ul>' % (pick(L, HEAD_CO), len(cms), ''.join(
             '<li><a href="%smachine/%s.html">%s</a> — %s</li>' % (b, e(m['id']), e(m.get('name') or m['id']), e(m.get('org') or ''))
             for m in cms)))
     if o.get('stations'):
@@ -875,7 +877,7 @@ def profile_html(o, lang, base, machines_by_id, node_by_id, path_by_id):
     if o.get('architectures'):
         def short(p):
             pr = path_by_id.get(p) or {}
-            return e(pr.get(L) or (pr.get('short') or {}).get(L) or pr.get('en') or p)   # the full name (one name per architecture, 27 Sep 2026)
+            return e(pick(L, pr) or pick(L, pr.get('short') or {}) or p)   # the full name (one name per architecture, 27 Sep 2026)
         out.append('<h3>%s</h3><ul>%s</ul>' % (h_a, ''.join(
             '<li><a href="%sarchitecture/%s.html">%s</a></li>' % (b, e(p), short(p)) for p in o['architectures'])))
     briefs = (o.get('mentions') or {}).get('briefs') or []

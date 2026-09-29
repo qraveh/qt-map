@@ -66,7 +66,7 @@ updated: 2026-09-03
 ## Прогноз и открытые вопросы
 Подтвердить или понизить в течение 12–24 месяцев: опубликует ли хоть один поставщик QND-характер в среднем по парку систем; опустится ли ошибка считывания по парку ниже 5×10⁻³. Лучший случай к 2029 г.: различение без укладки на вспомогательный уровень и изоляция на кристалле доводят ошибку считывания по парку до величины порядка 10⁻³, не замедляя цикл. Худший случай: индуцированная измерением утечка удерживает QND-характер около 99.3% независимо от усилителя, и считывание остаётся тем членом, который ограничивает Λ. Открытые вопросы: как раскладывается парковый 1%; сколько тонов несёт один TWPA до наступления компрессии.
 
-## Источники
+## Литература
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [33] IBM, “IBM Quantum Computing — Hardware and roadmap.” [Online]. Available: https://www.ibm.com/quantum/hardware [C]
 [35] D. Gao *et al.*, “Establishing a New Benchmark in Quantum Computational Advantage with 105-qubit Zuchongzhi 3.0 Processor,” *Phys. Rev. Lett.*, vol. 134, Art. no. 090601, Mar. 2025, doi: [10.1103/PhysRevLett.134.090601](https://doi.org/10.1103/PhysRevLett.134.090601). [arXiv:2412.11924](https://arxiv.org/abs/2412.11924). [D]

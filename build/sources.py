@@ -208,8 +208,10 @@ def brief_records():
 # ---------- the register: report §9 → codes → [(sublabel, url)]
 def parse_register(lang='en'):
     p = os.path.join(ROOT, 'report', 'report_%s.md' % lang.upper()); s = open(p, encoding='utf-8').read()
-    head = '## 9. Sources' if lang == 'en' else '## 9. Источники'
-    i = s.find(head); body, src = s[:i], s[i:]
+    head = {'en': '## 9. References', 'ru': '## 9. Литература', 'he': '## 9. מקורות'}.get(lang, '## 9. References')   # renamed from Sources / Источники on 29 Sep 2026 (the editor); Hebrew the same day
+    i = s.find(head)
+    if i < 0: raise SystemExit('report_%s.md: the heading %r was not found' % (lang.upper(), head))
+    body, src = s[:i], s[i:]
     ent = OrderedDict()
     for l in src.split('\n'):
         if not l.strip() or l.startswith('#') or l.startswith('**') or l.startswith('*'): continue

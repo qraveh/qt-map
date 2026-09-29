@@ -111,8 +111,7 @@ FP/FN получают, подготавливая |0_L⟩, |1_L⟩ и стёр�
 
 Открытые вопросы: (1) сохранится ли 40-кратное смещение при параллельных проверках кубитов, делящих общие подводящие линии? (2) можно ли сделать ридберговскую утечку «светящейся» за микросекунды? (3) что делает декодер с ложноотрицательными срабатываниями на уровне 10⁻³ по мере накопления утечки? Следить за: поставкой D-Wave в 2026 г., следующей многокубитной статьёй AWS, результатами Google/Kaufman по Yb.
 
-## Источники
-
+## Литература
 [8] Y. Wu, S. Kolkowitz, S. Puri, and J. D. Thompson, “Erasure conversion for fault-tolerant quantum computing in alkaline earth Rydberg atom arrays,” *Nat. Commun.*, vol. 13, Art. no. 4657, 2022, doi: [10.1038/s41467-022-32094-6](https://doi.org/10.1038/s41467-022-32094-6). [arXiv:2201.03540](https://arxiv.org/abs/2201.03540). [S]
 [14] D-Wave Quantum Inc., “D-Wave Announces Agreement to Acquire Quantum Circuits Inc., Establishing World's Leading Quantum Computing Company,” Jan. 7, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-to-acquire-quantum-circuits-inc-establishing-world-s-leading-quantum-computing-company/ [C]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]

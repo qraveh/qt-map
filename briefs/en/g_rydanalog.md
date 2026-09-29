@@ -69,8 +69,7 @@ With no gate error, fidelity comes from observables: order parameters against nu
 ## Outlook & open questions
 Confirm if, by 2027-12-31, a commercial analog machine publishes a many-body fidelity at ≥60 atoms, or an analog result survives a year of classical challenge; demote if Vela and QuEra's next systems ship without analog specifications. Open questions. (1) Can F_d certify beyond the size where MPS keeps pace? (2) What are per-site local-detuning calibration errors? (3) How does driven-T2 loss split between phase noise, Doppler and scattering? (4) Can erasure excision post-select many-body runs at tolerable shot cost? (5) Will the requires-alkali edge survive alkaline-earth analog machines?
 
-## Sources
-
+## References
 [143] P. Scholl, A. L. Shaw, R. B.-S. Tsai, R. Finkelstein, J. Choi, and M. Endres, “Erasure conversion in a high-fidelity Rydberg quantum simulator,” *Nature*, vol. 622, p. 273, 2023, doi: [10.1038/s41586-023-06516-4](https://doi.org/10.1038/s41586-023-06516-4). [arXiv:2305.03406](https://arxiv.org/abs/2305.03406). [D]
 [153] QuEra Computing, “QuEra Expands $230 Million Financing Round Advancing Quantum-Accelerated Supercomputing,” Sep. 9, 2025. [Online]. Available: https://www.quera.com/press-releases/quera-expands-230-million-financing-round-advancing-quantum-accelerated-supercomputing [C]
 [156] M. Swayne, “Pasqal Completes SPAC Merger With $360 Million in Cash,” The Quantum Insider, Aug. 28, 2026. [Online]. Available: https://thequantuminsider.com/2026/08/28/pasqal-completes-spac-merger-with-360-million-in-cash/ [P]

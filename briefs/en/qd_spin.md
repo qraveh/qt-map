@@ -118,8 +118,7 @@ Best case by 2029: a few hundred physical qubits on a qualified 300 mm process w
 
 Open questions. (1) Is 99.5%-class two-qubit fidelity reproducible across all pairs of a die, or only the pair that tunes up? (2) Can valley splitting be made uniform enough that leakage stops being a per-device lottery? (3) Does readout get below 1 µs without a charge sensor per qubit? (4) Did IBM buy a qubit or a control stack?
 
-## Sources
-
+## References
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
 [189] P. Steinacker *et al.*, “Industry-compatible silicon spin-qubit unit cells exceeding 99% fidelity,” *Nature*, vol. 646, no. 8083, pp. 81–87, Sep. 2025, doi: [10.1038/s41586-025-09531-9](https://doi.org/10.1038/s41586-025-09531-9). [D]
 [190] Members of the HRL Quantum Team and Collaborators, “A digitally controlled silicon quantum processing unit,” [arXiv:2604.16216](https://arxiv.org/abs/2604.16216), Apr. 2026. [D]

@@ -65,8 +65,7 @@ Reset is checked by reading the qubit afterwards, so readout error bounds it: Mc
 Confirm if IBM or an independent group publishes Nighthawk r2's reset duration, absolute residual and mid-circuit use by 2027-06-30, and if a d ≥ 9 surface code brings readout + reset below half its round by 2027-12-31; demote the gadget to a throughput feature if figures cover only between-shot initialization.
 Open questions. (1) What absolute residual does Nighthawk r2 reach? (2) What does a dissipator's off-state cost in T1 across 10³ qubits? (3) Can reset overlap ring-down to shrink the 660 ns term? (4) Do microwave-only resets match flux-based speed without crosstalk? (5) Which data-qubit leakage scheme closes G-lru without adding a round step?
 
-## Sources
-
+## References
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [3] T. He *et al.*, “Experimental Quantum Error Correction below the Surface Code Threshold via All-Microwave Leakage Suppression,” *Phys. Rev. Lett.*, vol. 135, no. 26, Art. no. 260601, Dec. 2025, doi: [10.1103/rqkg-dw31](https://doi.org/10.1103/rqkg-dw31). [D]
 [486] R. Mandelbaum, “Scaling for quantum advantage and beyond,” IBM Quantum Computing Blog, Nov. 12, 2025. [Online]. Available: https://www.ibm.com/quantum/blog/qdc-2025 [C]

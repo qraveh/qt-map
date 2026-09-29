@@ -57,7 +57,7 @@ Requires a decoder in the loop to steer against — the real-time neural decoder
 ## Outlook & open questions
 Confirm if RL-in-loop calibration appears on a second platform, or a Λ is published for an RL-steered run; demote if it stays Willow-only. Best case 2029: standard across superconducting FT stacks, sold by control vendors. Worst case: one unreplicated chip. Open: does size-independent optimisation survive outside simulation, and can the loop be made decoder-agnostic?
 
-## Sources
+## References
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [2] V. Sivak *et al.*, “Reinforcement learning control of quantum error correction,” *Nature*, vol. 655, no. 8124, pp. 879–884, Jul. 2026, doi: [10.1038/s41586-026-10759-2](https://doi.org/10.1038/s41586-026-10759-2). [D]
 [657] J. Bausch *et al.*, “Learning high-accuracy error decoding for quantum processors,” *Nature*, vol. 635, no. 8040, pp. 834–840, Nov. 2024, doi: [10.1038/s41586-024-08148-8](https://doi.org/10.1038/s41586-024-08148-8). [D]

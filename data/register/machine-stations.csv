@@ -208,18 +208,6 @@ google-willow,decoder,dec_rl,alternate,
 google-willow,interconnect,none,primary,"monolithic, single module"
 google-willow,fab,fab_sc,primary,
 google-willow,fab,∅G-calib,alternate,calibration and frequency choreography
-google-fluxonium,carrier,fluxonium,primary,
-google-fluxonium,encoding,enc_bare,primary,
-google-fluxonium,gate,∅G-rip,primary,resonator-induced-phase / parametric all-microwave 2Q on fluxonium
-google-fluxonium,gate,g_tc,alternate,
-google-fluxonium,connect,cx_nn,primary,
-google-fluxonium,control,ct_rt,primary,
-google-fluxonium,control,ct_cryocmos,alternate,
-google-fluxonium,readout,ro_disp,primary,
-google-fluxonium,code,none,primary,no code (NISQ)
-google-fluxonium,decoder,none,primary,"no decoder, and no deployment-mode axis"
-google-fluxonium,interconnect,none,primary,"monolithic, single module"
-google-fluxonium,fab,fab_sc,primary,
 ustc-zuchongzhi-2.1,carrier,transmon,primary,
 ustc-zuchongzhi-2.1,encoding,enc_bare,primary,
 ustc-zuchongzhi-2.1,gate,g_tc,primary,
@@ -820,7 +808,7 @@ quantinuum-h1,carrier,ion,primary,
 quantinuum-h1,encoding,enc_hf,primary,
 quantinuum-h1,gate,g_ms,primary,
 quantinuum-h1,connect,cx_qccd,primary,
-quantinuum-h1,control,ct_ionlaser,primary,
+quantinuum-h1,control,ct_ionaod,primary,
 quantinuum-h1,readout,ro_fluor,primary,
 quantinuum-h1,code,code_highrate,primary,
 quantinuum-h1,code,code_color,alternate,
@@ -834,7 +822,7 @@ quantinuum-h2,carrier,ion,primary,
 quantinuum-h2,encoding,enc_hf,primary,
 quantinuum-h2,gate,g_ms,primary,
 quantinuum-h2,connect,cx_qccd,primary,
-quantinuum-h2,control,ct_ionlaser,primary,
+quantinuum-h2,control,ct_ionaod,primary,
 quantinuum-h2,readout,ro_fluor,primary,
 quantinuum-h2,code,code_highrate,primary,
 quantinuum-h2,code,code_color,alternate,
@@ -1122,7 +1110,6 @@ atom-computing-phoenix,connect,cx_aod,primary,
 atom-computing-phoenix,connect,cx_reload,alternate,
 atom-computing-phoenix,control,ct_laser,primary,
 atom-computing-phoenix,readout,ro_img,primary,
-atom-computing-phoenix,readout,ro_erasure,alternate,
 atom-computing-phoenix,code,∅G-toric,primary,toric versus rotated surface code
 atom-computing-phoenix,code,code_surface,alternate,
 atom-computing-phoenix,decoder,dec_corr,primary,"loss-aware matching, offline (SM §SIV)"
@@ -1763,3 +1750,252 @@ hrl-eo-18q,code,∅G-repetition,alternate,"d=5 bit-flip repetition code on 7 EO 
 hrl-eo-18q,decoder,∅G-parity,primary,offline parity-check (majority) decoder for the repetition code — no Atlas station (gap G-parity); no real-time decoding
 hrl-eo-18q,interconnect,none,primary,"monolithic, single module"
 hrl-eo-18q,fab,fab_cmos,primary,"controller from a commercial 130-nm RF CMOS process; qubit chip on 200 mm wafers by a proprietary process, not a 300 mm foundry"
+google-willow,readout,ro_reset,alternate,
+eleqtron-qsea-i-10,carrier,ion,primary,
+eleqtron-qsea-i-10,encoding,enc_hf,primary,
+eleqtron-qsea-i-10,gate,g_elec,primary,
+eleqtron-qsea-i-10,connect,cx_bus,primary,
+eleqtron-qsea-i-10,control,ct_ionmw,primary,
+eleqtron-qsea-i-10,readout,ro_fluor,primary,
+eleqtron-qsea-i-10,code,none,primary,no code (NISQ)
+eleqtron-qsea-i-10,decoder,none,primary,"no decoder, and no deployment-mode axis"
+eleqtron-qsea-i-10,interconnect,none,primary,"monolithic, single module"
+eleqtron-qsea-i-10,fab,fab_trap,primary,
+orca-pt1,carrier,photon,primary,
+orca-pt1,encoding,none,primary,a sampler carries no qubit encoding; time bins are the interferometer's modes
+orca-pt1,gate,g_lointer,primary,programmable linear-optical interferometer with no entangling primitive
+orca-pt1,connect,cx_switch,primary,
+orca-pt1,control,ct_eo,primary,
+orca-pt1,readout,ro_spd,primary,
+orca-pt1,code,none,primary,no code (NISQ)
+orca-pt1,decoder,none,primary,"no decoder, and no deployment-mode axis"
+orca-pt1,interconnect,none,primary,"monolithic, single module"
+orca-pt1,fab,fab_bulk,primary,bulk-optics and fibre-assembly photonic manufacturing
+equal1-racq,carrier,qd_spin,primary,
+equal1-racq,encoding,enc_spin_ld,primary,
+equal1-racq,gate,g_exch,primary,
+equal1-racq,connect,cx_nn,primary,
+equal1-racq,control,ct_cryocmos,primary,
+equal1-racq,control,∅G-qsoc,alternate,qubits and controller on one die
+equal1-racq,readout,ro_s2c,primary,
+equal1-racq,code,none,primary,no code (NISQ)
+equal1-racq,decoder,none,primary,"no decoder, and no deployment-mode axis"
+equal1-racq,decoder,dec_cryo,alternate,
+equal1-racq,interconnect,ic_fanout,primary,
+equal1-racq,fab,fab_cmos,primary,
+sustech-dualrail-8,carrier,transmon,primary,
+sustech-dualrail-8,encoding,enc_dualrail,primary,
+sustech-dualrail-8,gate,g_tc,primary,
+sustech-dualrail-8,connect,cx_nn,primary,
+sustech-dualrail-8,control,ct_rt,primary,
+sustech-dualrail-8,readout,ro_erasure,primary,
+sustech-dualrail-8,code,code_erasure,primary,
+sustech-dualrail-8,decoder,none,primary,"no decoder, and no deployment-mode axis"
+sustech-dualrail-8,interconnect,ic_multidie,primary,multi-die packaging inside one qubit module
+sustech-dualrail-8,fab,fab_sc,primary,
+saxonq-qc2026-dualcore-10,carrier,defect,primary,
+saxonq-qc2026-dualcore-10,encoding,enc_spin_ld,primary,
+saxonq-qc2026-dualcore-10,gate,g_mwspin,primary,
+saxonq-qc2026-dualcore-10,connect,cx_nn,primary,
+saxonq-qc2026-dualcore-10,control,∅G-nvroom,primary,room-temperature microwave and optical spin control
+saxonq-qc2026-dualcore-10,readout,ro_fluor,primary,
+saxonq-qc2026-dualcore-10,code,none,primary,no code (NISQ)
+saxonq-qc2026-dualcore-10,decoder,none,primary,"no decoder, and no deployment-mode axis"
+saxonq-qc2026-dualcore-10,interconnect,none,primary,"two parallel cores, no inter-core link published"
+saxonq-qc2026-dualcore-10,fab,fab_diamond,primary,
+saxonq-sxq4-4,carrier,defect,primary,
+saxonq-sxq4-4,encoding,enc_spin_ld,primary,
+saxonq-sxq4-4,gate,g_mwspin,primary,
+saxonq-sxq4-4,connect,cx_nn,primary,
+saxonq-sxq4-4,control,∅G-nvroom,primary,room-temperature microwave and optical spin control
+saxonq-sxq4-4,readout,ro_fluor,primary,
+saxonq-sxq4-4,code,none,primary,no code (NISQ)
+saxonq-sxq4-4,decoder,none,primary,"no decoder, and no deployment-mode axis"
+saxonq-sxq4-4,interconnect,none,primary,"monolithic, single module"
+saxonq-sxq4-4,fab,fab_diamond,primary,
+ustc-jiuzhang1,carrier,squeezed,primary,
+ustc-jiuzhang1,encoding,none,primary,no encoding layer (analog and sampling machines)
+ustc-jiuzhang1,gate,g_lointer,primary,fixed linear-optical interferometer with no entangling primitive
+ustc-jiuzhang1,connect,none,primary,fixed interferometer; no switching or routing layer
+ustc-jiuzhang1,control,ct_eo,primary,
+ustc-jiuzhang1,readout,ro_spd,primary,
+ustc-jiuzhang1,code,none,primary,no code (NISQ)
+ustc-jiuzhang1,decoder,none,primary,"no decoder, and no deployment-mode axis"
+ustc-jiuzhang1,interconnect,none,primary,"monolithic, single module"
+ustc-jiuzhang1,fab,fab_bulk,primary,bulk-optics and fibre-assembly photonic manufacturing
+ustc-jiuzhang2,carrier,squeezed,primary,
+ustc-jiuzhang2,encoding,none,primary,no encoding layer (analog and sampling machines)
+ustc-jiuzhang2,gate,g_lointer,primary,linear-optical interferometer with no entangling primitive
+ustc-jiuzhang2,connect,none,primary,fixed interferometer; no switching or routing layer
+ustc-jiuzhang2,control,ct_eo,primary,
+ustc-jiuzhang2,readout,ro_spd,primary,
+ustc-jiuzhang2,code,none,primary,no code (NISQ)
+ustc-jiuzhang2,decoder,none,primary,"no decoder, and no deployment-mode axis"
+ustc-jiuzhang2,interconnect,none,primary,"monolithic, single module"
+ustc-jiuzhang2,fab,fab_bulk,primary,bulk-optics and fibre-assembly photonic manufacturing
+ustc-jiuzhang3,carrier,squeezed,primary,
+ustc-jiuzhang3,encoding,none,primary,no encoding layer (analog and sampling machines)
+ustc-jiuzhang3,gate,g_lointer,primary,fixed linear-optical interferometer with no entangling primitive
+ustc-jiuzhang3,connect,none,primary,fixed interferometer; no switching or routing layer
+ustc-jiuzhang3,control,ct_eo,primary,
+ustc-jiuzhang3,readout,ro_spd,primary,
+ustc-jiuzhang3,code,none,primary,no code (NISQ)
+ustc-jiuzhang3,decoder,none,primary,"no decoder, and no deployment-mode axis"
+ustc-jiuzhang3,interconnect,none,primary,"monolithic, single module"
+ustc-jiuzhang3,fab,fab_bulk,primary,bulk-optics and fibre-assembly photonic manufacturing
+ibm-flamingo,carrier,transmon,primary,
+ibm-flamingo,encoding,enc_bare,primary,
+ibm-flamingo,gate,g_tc,primary,
+ibm-flamingo,connect,cx_nn,primary,
+ibm-flamingo,control,ct_rt,primary,
+ibm-flamingo,readout,ro_disp,primary,
+ibm-flamingo,code,none,primary,no code (NISQ)
+ibm-flamingo,decoder,none,primary,"no decoder, and no deployment-mode axis"
+ibm-flamingo,interconnect,ic_mcm,primary,
+ibm-flamingo,fab,fab_sc,primary,
+rigetti-novera-9,carrier,transmon,primary,
+rigetti-novera-9,encoding,enc_bare,primary,
+rigetti-novera-9,gate,g_tc,primary,
+rigetti-novera-9,connect,cx_nn,primary,
+rigetti-novera-9,control,ct_rt,primary,
+rigetti-novera-9,readout,ro_disp,primary,
+rigetti-novera-9,code,none,primary,no code (NISQ)
+rigetti-novera-9,decoder,none,primary,"no decoder, and no deployment-mode axis"
+rigetti-novera-9,interconnect,none,primary,"monolithic, single module"
+rigetti-novera-9,fab,fab_sc,primary,
+iqm-star-6,carrier,transmon,primary,
+iqm-star-6,encoding,enc_bare,primary,
+iqm-star-6,gate,g_tc,primary,
+iqm-star-6,connect,∅G-bus,primary,central computational bus resonator
+iqm-star-6,control,ct_rt,primary,
+iqm-star-6,readout,ro_disp,primary,
+iqm-star-6,code,code_detect,primary,
+iqm-star-6,decoder,none,primary,"no decoder, and no deployment-mode axis"
+iqm-star-6,interconnect,none,primary,"monolithic, single module"
+iqm-star-6,fab,fab_sc,primary,
+oqc-titan-2000,carrier,transmon,primary,
+oqc-titan-2000,carrier,∅G-dimon,alternate,multimode single-device dual rail
+oqc-titan-2000,encoding,enc_dualrail,primary,
+oqc-titan-2000,gate,undisclosed,primary,gate mechanism not published
+oqc-titan-2000,connect,undisclosed,primary,connectivity not published
+oqc-titan-2000,control,ct_vio,primary,
+oqc-titan-2000,readout,ro_erasure,primary,
+oqc-titan-2000,code,undisclosed,primary,code not published; 200 logical qubits targeted
+oqc-titan-2000,decoder,undisclosed,primary,decoder not published
+oqc-titan-2000,interconnect,undisclosed,primary,wafer-level packaging named; links not published
+oqc-titan-2000,fab,fab_sc,primary,
+oqc-athena-75000,carrier,transmon,primary,
+oqc-athena-75000,carrier,∅G-dimon,alternate,multimode single-device dual rail
+oqc-athena-75000,encoding,enc_dualrail,primary,
+oqc-athena-75000,gate,undisclosed,primary,gate mechanism not published
+oqc-athena-75000,connect,undisclosed,primary,connectivity not published
+oqc-athena-75000,control,ct_vio,primary,
+oqc-athena-75000,readout,ro_erasure,primary,
+oqc-athena-75000,code,undisclosed,primary,"code not published; 5,000 logical qubits targeted"
+oqc-athena-75000,decoder,undisclosed,primary,decoder not published
+oqc-athena-75000,interconnect,undisclosed,primary,modular system named; module links not published
+oqc-athena-75000,fab,fab_sc,primary,
+oqc-atlas-1000000,carrier,transmon,primary,
+oqc-atlas-1000000,carrier,∅G-dimon,alternate,multimode single-device dual rail
+oqc-atlas-1000000,encoding,enc_dualrail,primary,
+oqc-atlas-1000000,gate,undisclosed,primary,gate mechanism not published
+oqc-atlas-1000000,connect,undisclosed,primary,connectivity not published
+oqc-atlas-1000000,control,ct_vio,primary,
+oqc-atlas-1000000,readout,ro_erasure,primary,
+oqc-atlas-1000000,code,undisclosed,primary,"code not published; 50,000 logical qubits targeted"
+oqc-atlas-1000000,decoder,undisclosed,primary,decoder not published
+oqc-atlas-1000000,interconnect,undisclosed,primary,module count and links not published
+oqc-atlas-1000000,fab,fab_sc,primary,
+dwave-advantage3-20000,carrier,fluxq,primary,
+dwave-advantage3-20000,encoding,none,primary,no encoding layer (analog and sampling machines)
+dwave-advantage3-20000,gate,g_anneal,primary,
+dwave-advantage3-20000,connect,undisclosed,primary,connectivity not published
+dwave-advantage3-20000,control,ct_fluxdac,primary,
+dwave-advantage3-20000,readout,ro_fluxro,primary,
+dwave-advantage3-20000,code,none,primary,"no code; analog device, QEC not applicable"
+dwave-advantage3-20000,decoder,none,primary,"no decoder, and no deployment-mode axis"
+dwave-advantage3-20000,interconnect,ic_mcm,primary,
+dwave-advantage3-20000,fab,fab_sc,primary,
+aliceandbob-lithium-48,carrier,cavity,primary,
+aliceandbob-lithium-48,encoding,enc_cat,primary,
+aliceandbob-lithium-48,gate,g_catcnot,primary,
+aliceandbob-lithium-48,connect,cx_nn,primary,
+aliceandbob-lithium-48,control,ct_rt,primary,
+aliceandbob-lithium-48,readout,ro_disp,primary,
+aliceandbob-lithium-48,code,code_bosonic,primary,
+aliceandbob-lithium-48,decoder,undisclosed,primary,decoder not published
+aliceandbob-lithium-48,interconnect,ic_multidie,primary,multi-die packaging inside one qubit module
+aliceandbob-lithium-48,fab,fab_sc,primary,
+aliceandbob-beryllium-250,carrier,cavity,primary,
+aliceandbob-beryllium-250,encoding,enc_cat,primary,
+aliceandbob-beryllium-250,gate,g_catcnot,primary,
+aliceandbob-beryllium-250,connect,cx_nn,primary,
+aliceandbob-beryllium-250,control,ct_rt,primary,
+aliceandbob-beryllium-250,readout,ro_disp,primary,
+aliceandbob-beryllium-250,code,code_bosonic,primary,
+aliceandbob-beryllium-250,code,code_magic,alternate,
+aliceandbob-beryllium-250,decoder,undisclosed,primary,a live decoder is planned; algorithm not named
+aliceandbob-beryllium-250,interconnect,ic_multidie,primary,multi-die packaging inside one qubit module
+aliceandbob-beryllium-250,fab,fab_sc,primary,
+pasqal-centaurus-500,carrier,alkali,primary,
+pasqal-centaurus-500,encoding,enc_hf,primary,
+pasqal-centaurus-500,gate,g_ryd,primary,
+pasqal-centaurus-500,connect,cx_aod,primary,
+pasqal-centaurus-500,control,ct_laser,primary,
+pasqal-centaurus-500,control,ct_pic_trap,alternate,
+pasqal-centaurus-500,readout,ro_img,primary,
+pasqal-centaurus-500,code,undisclosed,primary,code not published; early FTQC targeted
+pasqal-centaurus-500,decoder,undisclosed,primary,decoder not published
+pasqal-centaurus-500,interconnect,none,primary,"monolithic, single module"
+pasqal-centaurus-500,fab,fab_optics,primary,
+pasqal-lyra,carrier,alkali,primary,
+pasqal-lyra,encoding,enc_hf,primary,
+pasqal-lyra,gate,g_ryd,primary,
+pasqal-lyra,connect,cx_aod,primary,
+pasqal-lyra,control,ct_laser,primary,
+pasqal-lyra,control,ct_pic_trap,alternate,
+pasqal-lyra,readout,ro_img,primary,
+pasqal-lyra,code,undisclosed,primary,code not published; FTQC targeted
+pasqal-lyra,decoder,undisclosed,primary,decoder not published
+pasqal-lyra,interconnect,none,primary,"monolithic, single module"
+pasqal-lyra,fab,fab_optics,primary,
+planqc-dinaqc-100,carrier,ae_atom,primary,
+planqc-dinaqc-100,encoding,enc_opt,primary,
+planqc-dinaqc-100,gate,g_ryd,primary,
+planqc-dinaqc-100,connect,cx_aod,primary,
+planqc-dinaqc-100,control,ct_laser,primary,
+planqc-dinaqc-100,readout,ro_img,primary,
+planqc-dinaqc-100,code,undisclosed,primary,code not published; error-correction demonstrations planned
+planqc-dinaqc-100,decoder,undisclosed,primary,decoder not published
+planqc-dinaqc-100,interconnect,none,primary,"monolithic, single module"
+planqc-dinaqc-100,fab,fab_optics,primary,
+microsoft-majorana-2,carrier,majorana,primary,
+microsoft-majorana-2,encoding,enc_parity,primary,
+microsoft-majorana-2,gate,g_mbq,primary,
+microsoft-majorana-2,connect,cx_nn,primary,
+microsoft-majorana-2,control,ct_base,primary,
+microsoft-majorana-2,readout,ro_qcap,primary,
+microsoft-majorana-2,code,none,primary,no code: no qubit operation shown
+microsoft-majorana-2,decoder,none,primary,"no decoder, and no deployment-mode axis"
+microsoft-majorana-2,interconnect,none,primary,"monolithic, single module"
+microsoft-majorana-2,fab,fab_mbe,primary,
+quandela-canopus-24,carrier,photon,primary,
+quandela-canopus-24,encoding,enc_timebin,primary,
+quandela-canopus-24,gate,g_fusion,primary,
+quandela-canopus-24,connect,cx_switch,primary,
+quandela-canopus-24,control,ct_eo,primary,
+quandela-canopus-24,readout,ro_spd,primary,
+quandela-canopus-24,code,none,primary,no code (NISQ)
+quandela-canopus-24,decoder,none,primary,"no decoder, and no deployment-mode axis"
+quandela-canopus-24,interconnect,none,primary,"monolithic, single module"
+quandela-canopus-24,fab,∅G-twofab,primary,one machine needs two L10 nodes
+aqt-lynx,carrier,ion,primary,
+aqt-lynx,encoding,enc_opt,primary,
+aqt-lynx,gate,g_ms,primary,
+aqt-lynx,connect,cx_bus,primary,
+aqt-lynx,control,ct_ionaod,primary,
+aqt-lynx,readout,ro_fluor,primary,
+aqt-lynx,code,none,primary,no code (NISQ)
+aqt-lynx,decoder,none,primary,"no decoder, and no deployment-mode axis"
+aqt-lynx,interconnect,none,primary,"monolithic, single module"
+aqt-lynx,fab,fab_trap,primary,

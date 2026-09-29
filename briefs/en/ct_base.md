@@ -63,7 +63,7 @@ Fidelities come from randomised benchmarking and gate-set tomography, and the he
 ## Outlook & open questions
 Confirm by 2027 if any developer publishes all-pairs two-qubit fidelities above 12 qubits, or an independent group reproduces the extrinsic/intrinsic split; demote if crosstalk caps arrays at ≤20 qubits through 2028. Best case 2029: cold self-sequenced control becomes default and two-qubit errors move from 3×10⁻³ toward 10⁻⁴. Worst case: calibration overhead outruns qubit count and the CMOS argument stalls at demonstration scale. Open questions: does the 80% figure survive independent measurement; can per-qubit DAC counts fall an order of magnitude; does recalibration keep pace with array size; does Majorana control ever get a qubit.
 
-## Sources
+## References
 [13] Microsoft Azure Quantum, “Interferometric single-shot parity measurement in InAs–Al hybrid devices,” *Nature*, vol. 638, no. 8051, pp. 651–655, Feb. 2025, doi: [10.1038/s41586-024-08445-2](https://doi.org/10.1038/s41586-024-08445-2). [D]
 [199] H. C. George *et al.*, “12-spin-qubit arrays fabricated on a 300 mm semiconductor manufacturing line,” *Nano Lett.*, vol. 25, no. 2, pp. 793–799, Dec. 2024, doi: [10.1021/acs.nanolett.4c05205](https://doi.org/10.1021/acs.nanolett.4c05205). [arXiv:2410.16583](https://arxiv.org/abs/2410.16583). [D]
 [200] Quantum Motion, “Quantum Motion Delivers the Industry's First Full-Stack Silicon CMOS Quantum Computer,” Sep. 15, 2025. [Online]. Available: https://quantummotion.com/quantum-motion-delivers-the-industrys-first-full-stack-silicon-cmos-quantum-computer/ [C]

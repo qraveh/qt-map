@@ -56,7 +56,7 @@ Architecture: colour-centre spins — network nodes (NV/SiV/T), as its primary c
 ## Outlook & open questions
 Confirm/demote (12–24 months): an unconditional inter-node gate above 90%, or a link above 1 kHz, confirms the thesis; two more years at hertz rates demotes it to sensing. Best case 2029: a multi-node repeater segment with error detection. Worst case: laboratory links only. Open: (1) does SnV yield rise above the percent level; (2) does a second merchant diamond supplier appear; (3) can T-centre rates close on SiV.
 
-## Sources
+## References
 [186] M. Abdel-Kareem, “Photonic Inc. Reaches $2B Valuation with $200M Final Close,” Quantum Computing Report, May 12, 2026. [Online]. Available: https://quantumcomputingreport.com/photonic-inc-reaches-2b-valuation-with-200m-final-close/ [P]
 [208] M. Swayne, “Fujitsu And QuTech Realize High-Precision Quantum Gates,” The Quantum Insider, Mar. 28, 2025. [Online]. Available: https://thequantuminsider.com/2025/03/28/fujitsu-and-qutech-realize-high-precision-quantum-gates/ [P]
 [209] C. M. Knaut *et al.*, “Entanglement of nanophotonic quantum memory nodes in a telecom network,” *Nature*, vol. 629, no. 8012, pp. 573–578, May 2024, doi: [10.1038/s41586-024-07252-z](https://doi.org/10.1038/s41586-024-07252-z). [D]

@@ -85,8 +85,7 @@ Frequency is predicted from junction resistance via Ambegaokar–Baratoff, then 
 
 Confirm by end-2027 if Anderon executes definitive CHIPS documents and fabricates for a named non-IBM customer; demote the merchant-foundry framing if only IBM designs emerge. Best case by 2029: two or more independent 300 mm lines with published cross-foundry uniformity and post-trim residuals below 1% frequency RSD. Worst case: Anderon stays captive. Open questions: does any line publish post-trim collision yield; can epitaxial barriers lift median $T_1$ above 200 µs; does a merchant European or Asian line emerge?
 
-## Sources
-
+## References
 [36] Rigetti Computing, Inc., “Rigetti Announces General Availability of 108-Qubit System,” Apr. 7, 2026. [Online]. Available: https://investors.rigetti.com/news-releases/news-release-details/rigetti-announces-general-availability-108-qubit-system [C]
 [49] IBM, “IBM Delivers New Quantum Processors, Software, and Algorithm Breakthroughs on Path to Advantage and Fault Tolerance,” Nov. 12, 2025. [Online]. Available: https://newsroom.ibm.com/2025-11-12-ibm-delivers-new-quantum-processors,-software,-and-algorithm-breakthroughs-on-path-to-advantage-and-fault-tolerance [C]
 [57] IBM Quantum, “Why IBM is investing $10 billion into quantum computing,” Jun. 2, 2026. [Online]. Available: https://www.ibm.com/quantum/blog/10-billion-investment-faq [C]

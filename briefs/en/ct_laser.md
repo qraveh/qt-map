@@ -71,7 +71,7 @@ Trap counts and filling come from direct fluorescence imaging and are not disput
 ## Outlook & open questions
 Confirm/demote in 12–24 months: a QEC round below 1 ms above 10³ sites; a second group replicating the metasurface array or the 17.6 µs imaging; Magne benchmarked at 50 logical qubits. Best case 2029: fast imaging and conveyor transport cut the round to ~100 µs, removing the clock disadvantage. Worst case: latency stays at milliseconds, arrays large, cheap and slow. Open: is the deflector bandwidth-transit trade engineering or a hard limit; can fast imaging survive at 10⁴ sites; will anyone second-source the deflectors. Watch Magne's acceptance tests.
 
-## Sources
+## References
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [137] QuEra Computing Inc., “Gemini-Class Gate-Model Quantum Computer.” [Online]. Available: https://www.quera.com/gemini [C]
 [144] N.-C. Chiu *et al.*, “Continuous operation of a coherent 3,000-qubit system,” *Nature*, vol. 646, no. 8087, pp. 1075–1080, Sep. 2025, doi: [10.1038/s41586-025-09596-6](https://doi.org/10.1038/s41586-025-09596-6). [D]

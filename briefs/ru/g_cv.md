@@ -59,7 +59,7 @@ updated: 2026-09-03
 ## Прогноз и открытые вопросы
 Подтвердить к 2027 году: эффективное сжатие выше 3 дБ на кристалле; понизить в ранге веху 2028–29 годов, если оно останется ниже 1 дБ. Лучший сценарий к 2029 году: небольшой логический кубит GKP при малом расстоянии. Худший сценарий: демонстрации без коррекции ошибок продолжаются, а график срывается так же, как сорвалось финансирование. Открытые вопросы: какая часть разрыва приходится на потери, а какая на изготовление; масштабируются ли гомодинные входные тракты.
 
-## Источники
+## Литература
 [172] Xanadu, “Xanadu sets new industry benchmark in photonic chip packaging,” PR Newswire, Jun. 10, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/xanadu-sets-new-industry-benchmark-in-photonic-chip-packaging-302796562.html [C]
 [173] H. A. Rad *et al.*, “Scaling and networking a modular photonic quantum computer,” *Nature*, vol. 638, no. 8052, pp. 912–919, Jan. 2025, doi: [10.1038/s41586-024-08406-9](https://doi.org/10.1038/s41586-024-08406-9). [D]
 [174] M. V. Larsen *et al.*, “Integrated photonic source of Gottesman–Kitaev–Preskill qubits,” *Nature*, vol. 642, no. 8068, pp. 587–591, Jun. 2025, doi: [10.1038/s41586-025-09044-5](https://doi.org/10.1038/s41586-025-09044-5). [D]

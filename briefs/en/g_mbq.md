@@ -55,7 +55,7 @@ Requires the Majorana-parity carrier (two wires per tetron) and quantum-capacita
 ## Outlook & open questions
 Falsifiable in 12–24 months: a first joint (X-basis) parity measurement with a stated assignment error; any operation or entanglement between two tetrons; a published X/Z ratio below 100×. Confirm on the first two; demote to theory if none lands by end-2027. Best case 2029, measurement-only Cliffords on a small array; worst case, X-basis poisoning is intrinsic to the two-loop geometry and the line closes. Open: is the asymmetry geometric or material; does anyone outside Microsoft attempt a joint measurement.
 
-## Sources
+## References
 [13] Microsoft Azure Quantum, “Interferometric single-shot parity measurement in InAs–Al hybrid devices,” *Nature*, vol. 638, no. 8051, pp. 651–655, Feb. 2025, doi: [10.1038/s41586-024-08445-2](https://doi.org/10.1038/s41586-024-08445-2). [D]
 [20] M. Aghaee *et al.*, “Distinct Lifetimes for X and Z Loop Measurements in a Majorana Tetron Device,” [arXiv:2507.08795](https://arxiv.org/abs/2507.08795), Jul. 2025. [D]
 [21] M. Aghaee *et al.*, “20 Second Parity Lifetime in an InAs–Pb Tetron Device,” [arXiv:2606.03884](https://arxiv.org/abs/2606.03884), Jun. 2026. [D]

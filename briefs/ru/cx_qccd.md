@@ -68,7 +68,7 @@ QCCD, предложенная Kielpinski, Monroe и Wineland в 2002 г. [D][49
 ## Прогноз и открытые вопросы
 Подтвердить/понизить в течение 12–24 месяцев: Sol выходит в 2027 г. с опубликованным временем на слой; любой вендор публикует слой полной ширины быстрее 10 мс; Universal Quantum связывает более двух модулей. Лучший случай к 2029 г.: слои быстрее 10 мс приближают логический такт ионов к сверхпроводниковому с разрывом ~10×. Худший случай: время слоя остаётся в пределах двукратного от 55 мс, и ионы остаются платформой, которая демонстрирует коды, а не исполняет алгоритмы. Открытые вопросы: вынуждает ли аномальный нагрев переходить к криогенным ловушкам при 10⁴ ионов; можно ли сделать разделение/слияние свободным от возбуждения квантов средствами оптимального управления; действительно ли гейты на тёплом кристалле устраняют повторное охлаждение; появится ли вторая коммерческая фабрика. Следить за: валидацией Sol, мощностями Infineon, первой ловушкой IonQ производства SkyWater.
 
-## Источники
+## Литература
 [18] IonQ, “IonQ Completes Acquisition of Oxford Ionics, Rapidly Accelerating Its Quantum Computing Roadmap,” Sep. 17, 2025. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-oxford-ionics-rapidly-accelerating-its-quantum [G]
 [19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [G]
 [97] A. Ransford *et al.*, “A 98-qubit trapped-ion quantum computer with all-to-all connectivity,” *Nature*, vol. 655, no. 8121, pp. 81–86, Jun. 2026, doi: [10.1038/s41586-026-10676-4](https://doi.org/10.1038/s41586-026-10676-4). [arXiv:2511.05465](https://arxiv.org/abs/2511.05465). [D]

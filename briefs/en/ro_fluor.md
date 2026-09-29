@@ -67,7 +67,7 @@ SPAM is measured by preparing known bright and dark states and counting misclass
 ## Outlook & open questions
 Confirm by end-2027 if IonQ publishes a peer-reviewed SPAM figure; demote the 0.5% claim if it stays a specification page. Best case by 2029: trap-integrated detectors or multiplexed SNSPD arrays make per-zone readout free at 10⁴ zones. Worst case: readout stays one free-space objective per zone and becomes the mechanical limit on zone count. Open questions: does IonQ's owned detector supply produce a measurable SPAM advantage; can UV SNSPD efficiency approach telecom-band figures; do trap-integrated photodiodes reach the tens of µs free-space detection already achieves.
 
-## Sources
+## References
 [19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [G]
 [97] A. Ransford *et al.*, “A 98-qubit trapped-ion quantum computer with all-to-all connectivity,” *Nature*, vol. 655, no. 8121, pp. 81–86, Jun. 2026, doi: [10.1038/s41586-026-10676-4](https://doi.org/10.1038/s41586-026-10676-4). [arXiv:2511.05465](https://arxiv.org/abs/2511.05465). [D]
 [99] IonQ, “IonQ Forte: High-Performance Commercial Quantum Computer.” [Online]. Available: https://www.ionq.com/quantum-systems/forte [C]

@@ -53,7 +53,7 @@ Requires a gate-defined quantum-dot spin carrier; replaces one-line-per-electrod
 ## Outlook & open questions
 Confirm or demote in 12–24 months: two tiles gated independently through one shared line; a published crosstalk figure; a foundry crossbar step by 2027. Best case 2029: on-chip demultiplexing addresses >10⁴ dots with hundreds of lines. Worst case: crossbars stay a wireability demonstration while cold per-qubit multiplexing wins. Open: (1) what fraction of tiles stays addressable as arrays grow; (2) whether row-correlated error breaks decoder assumptions; (3) whether demultiplexers fit the millikelvin power budget.
 
-## Sources
+## References
 [197] A. Nickl *et al.*, “Eight-qubit operation of a 300 mm SiMOS foundry-fabricated device,” *Nat. Commun.*, vol. 17, no. 1, Art. no. 5878, Jul. 2026, doi: [10.1038/s41467-026-74597-6](https://doi.org/10.1038/s41467-026-74597-6). [D]
 [353] GlobalFoundries, “GlobalFoundries launches Quantum Technology Solutions to scale U.S. quantum manufacturing,” May 21, 2026. [Online]. Available: https://gf.com/gf-press-release/globalfoundries-launches-quantum-technology-solutions-to-scale-us-quantum-manufacturing/ Also https://investors.gf.com/news-releases/news-release-details/globalfoundries-launches-quantum-technology-solutions-scale-us. [C]
 [449] Quantum Machines, “Semiconductor Spin Qubits,” Aug. 11, 2026. [Online]. Available: https://www.quantum-machines.co/qubit-types/semiconductor-spin-qubits/ [C]

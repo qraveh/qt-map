@@ -33,6 +33,12 @@ ROLE_RANK = {'shown-primary': 0, 'shown-machine': 1, 'shown-secondary': 2, 'show
 LINKOUT = {'en': 'external image — opens at the source', 'ru': 'внешнее изображение — откроется у источника'}
 
 
+def _lpick(lang, texts):
+    """the language's text, English where the language has none (langs.pick; named apart from media.pick, 29 Sep 2026)"""
+    from langs import pick as lp
+    return lp(lang, texts)
+
+
 # ---- import: the register's CSVs -> the snapshot ----
 
 def _rows(d, name):
@@ -323,7 +329,7 @@ def figure_html(a, lang, base):
     url = _href(a.get('file_url')) or _href(a.get('source_page_url'))
     if not url: return ''
     return head + ('%s <span class="credit">%s</span><figcaption>%s</figcaption></figure>'
-                   % (_a(url, _e(clean_text(a.get('title')))), _e(LINKOUT['en' if lang == 'en' else 'ru']), _e(story)))
+                   % (_a(url, _e(clean_text(a.get('title')))), _e(_lpick(lang, LINKOUT)), _e(story)))
 
 
 def gallery_html(target_key, lang, base, n=3, kinds=None):

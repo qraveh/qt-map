@@ -56,7 +56,7 @@ Provides the host crystal colour-centre spins and their gates require, hence the
 ## Outlook & open questions
 Confirm/demote (12–24 months): deterministic single-ion implantation with event detection, or percent-level cooperativity yield, confirms; two more years at sub-percent demotes this to a research process. Best case 2029: chip-scale arrays with tens of usable nodes. Worst case: every node stays hand-selected. Open: (1) can implantation precision approach one nanometre; (2) does a second merchant supplier appear; (3) does external-cavity coupling displace monolithic nanophotonics.
 
-## Sources
+## References
 [209] C. M. Knaut *et al.*, “Entanglement of nanophotonic quantum memory nodes in a telecom network,” *Nature*, vol. 629, no. 8012, pp. 573–578, May 2024, doi: [10.1038/s41586-024-07252-z](https://doi.org/10.1038/s41586-024-07252-z). [D]
 [359] J. Fischer *et al.*, “Spin-photon correlations from a Purcell-enhanced diamond nitrogen-vacancy center coupled to an open microcavity,” *Nat. Commun.*, vol. 16, no. 1, Art. no. 11680, Nov. 2025, doi: [10.1038/s41467-025-66722-8](https://doi.org/10.1038/s41467-025-66722-8). [D]
 [361] Element Six, “Element Six launches DNV-B1™ – its first commercially-available, general-purpose quantum grade diamond,” Jun. 15, 2020. [Online]. Available: https://www.e6.com/en/about/news/dnv-b1-launch [C]

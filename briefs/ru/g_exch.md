@@ -70,7 +70,7 @@ J растёт экспоненциально по мере понижения �
 ## Прогноз и открытые вопросы
 Фальсифицируемо в течение 12–24 месяцев: подтвердить/понизить, что фабричное устройство опубликует точность по всем парам крупнее восьми кубитов и что IBM поставит датированную спиновую веху в публичную дорожную карту. Лучший случай к 2029 г.: криогенно секвенируемый фабричный чип показывает подпороговую логическую память с полноценным кодом. Худший случай: однородность упирается в потолок за десятью кубитами, и дорожные карты остаются на два порядка впереди железа. Открыто: может ли калибровочная ошибка снижаться без импорта собственного бюджета ошибок контроллера; вытеснит ли CZ с переносом статический обмен; что IBM сделает с кремнием HRL.
 
-## Источники
+## Литература
 [10] IBM, “IBM to Acquire HRL Laboratories to Power the Future of Quantum,” Jul. 23, 2026. [Online]. Available: https://newsroom.ibm.com/2026-07-23-ibm-to-acquire-hrl-laboratories-to-power-the-future-of-quantum [C]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
 [189] P. Steinacker *et al.*, “Industry-compatible silicon spin-qubit unit cells exceeding 99% fidelity,” *Nature*, vol. 646, no. 8083, pp. 81–87, Sep. 2025, doi: [10.1038/s41586-025-09531-9](https://doi.org/10.1038/s41586-025-09531-9). [D]

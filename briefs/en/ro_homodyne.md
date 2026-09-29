@@ -70,8 +70,7 @@ Confirm if, by 2027-12-31, a CV machine publishes per-channel homodyne efficienc
 
 Open questions. (1) Aurora's per-channel efficiency and clearance? (2) Can photodiodes on a low-loss squeezing platform reach 99 %? (3) Does OPA pre-amplification scale to one locked pump per mode? (4) What LO phase noise does GKP binning tolerate near 10 dB? (5) How much of the gap from 0.62 dB is detection loss?
 
-## Sources
-
+## References
 [173] H. A. Rad *et al.*, “Scaling and networking a modular photonic quantum computer,” *Nature*, vol. 638, no. 8052, pp. 912–919, Jan. 2025, doi: [10.1038/s41586-024-08406-9](https://doi.org/10.1038/s41586-024-08406-9). [D]
 [174] M. V. Larsen *et al.*, “Integrated photonic source of Gottesman–Kitaev–Preskill qubits,” *Nature*, vol. 642, no. 8068, pp. 587–591, Jun. 2025, doi: [10.1038/s41586-025-09044-5](https://doi.org/10.1038/s41586-025-09044-5). [D]
 [270] L. S. Madsen *et al.*, “Quantum computational advantage with a programmable photonic processor,” *Nature*, vol. 606, no. 7912, pp. 75–81, Jun. 2022, doi: [10.1038/s41586-022-04725-x](https://doi.org/10.1038/s41586-022-04725-x). [D]

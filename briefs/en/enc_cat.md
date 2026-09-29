@@ -56,7 +56,7 @@ Architecture: bosonic cavity qubits — cat and GKP, where it is the primary enc
 ## Outlook & open questions
 Confirm by 2027 if phase-flip per cycle falls below 10⁻² with bias above 100 at fixed n̄; demote the efficiency claims if it stays near 10⁻¹. Best case 2029: a cat at n̄ ≥ 5 with millisecond lifetime under active stabilisation. Worst case: bias saturates and the 758-cat and 126,133-cat estimates stay unreachable [S][95], [96]. Open: does squeezing survive multi-qubit operation; can pump power rise without loading T1? Watch Lithium and any Ocelot successor.
 
-## Sources
+## References
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
 [77] N. Coppola, “Alice & Bob Shares Preliminary Results Vastly Surpassing Previous Bit-Flip Time Record,” Alice & Bob, Sep. 25, 2025. [Online]. Available: https://alice-bob.com/newsroom/alice-bob-surpasses-bit-flip-stability-record [C]
 [78] N. Coppola, “Alice & Bob Improves Error Suppression in Quantum Computers by 'Squeezing' Cat Qubits,” Alice & Bob, Mar. 11, 2025. [Online]. Available: https://alice-bob.com/newsroom/squeezed-cat-qubit/ [D]

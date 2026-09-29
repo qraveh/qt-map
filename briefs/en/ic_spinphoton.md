@@ -65,7 +65,7 @@ The teleported-CNOT attribution resolves, and not as a mis-attribution: both res
 ## Outlook & open questions
 Confirm by 2028 if any group sustains > 1 Hz heralded entanglement above F = 0.8 over > 20 km of deployed fibre, or if Photonic Inc. publishes an unconditional inter-module gate with a fidelity; demote if T-centre results stay post-selected preprints. Best case 2029: cavity enhancement plus multiplexing reaches 10–100 Hz at metropolitan distance. Worst case: sub-Hz rates, fidelity near 0.7, ion-photon links taking the slot. Open questions: does native telecom emission beat conversion once T-centre photon yield is counted; can cavity yield rise from ~0.6% to what a 100-node network needs; does anyone multiplex across emitters.
 
-## Sources
+## References
 [209] C. M. Knaut *et al.*, “Entanglement of nanophotonic quantum memory nodes in a telecom network,” *Nature*, vol. 629, no. 8012, pp. 573–578, May 2024, doi: [10.1038/s41586-024-07252-z](https://doi.org/10.1038/s41586-024-07252-z). [D]
 [363] F. Afzal *et al.*, “Distributed Quantum Computing in Silicon,” [arXiv:2406.01704](https://arxiv.org/abs/2406.01704), Jun. 2024. [P]
 [783] H. Bernien *et al.*, “Heralded entanglement between solid-state qubits separated by three metres,” *Nature*, vol. 497, no. 7447, pp. 86–90, May 2013, doi: [10.1038/nature12016](https://doi.org/10.1038/nature12016). [D]

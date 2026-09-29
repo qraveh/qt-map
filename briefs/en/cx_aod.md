@@ -85,8 +85,7 @@ Move fidelity is post-recapture survival by fluorescence imaging: a loss metric,
 
 Confirm by end-2027 a zoned system holding >1,000 atoms under fault-tolerant control; demote if by end-2028 no group shows long-memory suppression (Λ > 2) with continuous reloading — the case where suppression has already vanished once [D][148]. Best case by 2029: transport loss cut several-fold and the axial axis in use, unlocking 10⁴-atom zones. Worst case: channel count and refresh cap zones near 10³–10⁴ atoms. Open questions: does move fidelity hold at QEC duty cycles under reloading; can channel count scale past refresh limits; who else supplies deflectors at volume?
 
-## Sources
-
+## References
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [9] H. Neven, “Building superconducting and neutral atom quantum computers,” Google, Mar. 24, 2026. [Online]. Available: https://blog.google/innovation-and-ai/technology/research/neutral-atom-quantum-computers/ [C]
 [11] Novo Nordisk Foundation, “New quantum computer with great potential to boost Nordic research and innovation,” Novo Nordisk Fonden, Jul. 17, 2025. [Online]. Available: https://novonordiskfonden.dk/en/news/new-quantum-computer-with-great-potential-to-boost-nordic-research-and-innovation/ [G]

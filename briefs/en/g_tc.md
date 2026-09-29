@@ -67,7 +67,7 @@ The 99.90% and 99.93% headlines are interleaved randomised benchmarking on one c
 ## Outlook & open questions
 Confirm or demote within 12–24 months: does Nighthawk reach 7,500 two-qubit gates by end-2026; does any fleet report typical EPLG below 0.2%; does a second laboratory reproduce 99.93%. Best case by 2029: fleet-width error near 10⁻³ at 10³ qubits, on-chip biasing removing the line tax. Worst case: coupler count caps chips near 10³ qubits and the 40 ns coherence limit holds error at a few 10⁻⁴, too high for Λ to grow. Open questions: does IBM's patent constrain merchant coupler chips; can fluxonium couplers cut leakage; will fixed coupling remove the line tax at scale.
 
-## Sources
+## References
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [2] V. Sivak *et al.*, “Reinforcement learning control of quantum error correction,” *Nature*, vol. 655, no. 8124, pp. 879–884, Jul. 2026, doi: [10.1038/s41586-026-10759-2](https://doi.org/10.1038/s41586-026-10759-2). [D]
 [34] IBM Quantum, “What's new at IBM Quantum - Q2 2026.” [Online]. Available: https://www.ibm.com/quantum/blog/whats-new-q2-2026 [C]

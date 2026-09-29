@@ -108,8 +108,7 @@ HRL убрала тёплую генерацию сигналов, но числ
 
 Открытые вопросы: (1) каково защитимое определение мощности на кубит? (2) квалифицирует ли хоть одна фабрика криогенный угол? (3) доминирует ли дрейф контроллера при кубитной ошибке ниже 10⁻⁴? (4) должна ли падать мощность на кубит — или холодильная машина может вырасти в десять раз? (5) сохранит ли IBM 130-нанометровый проект HRL? Следить за ISSCC 2027, за раскрытиями IBM после закрытия сделки и за любой машиной 4 K, выводимой на рынок с мощностью выше 20 W.
 
-## Источники
-
+## Литература
 [10] IBM, “IBM to Acquire HRL Laboratories to Power the Future of Quantum,” Jul. 23, 2026. [Online]. Available: https://newsroom.ibm.com/2026-07-23-ibm-to-acquire-hrl-laboratories-to-power-the-future-of-quantum [C]
 [190] Members of the HRL Quantum Team and Collaborators, “A digitally controlled silicon quantum processing unit,” [arXiv:2604.16216](https://arxiv.org/abs/2604.16216), Apr. 2026. [D]
 [272] S. Subramanian and S. Pellerano, “Intel's Millikelvin Quantum Research Control Chip Provides Denser Integration with Qubits,” Intel Community, Jun. 20, 2024. [Online]. Available: https://community.intel.com/t5/Blogs/Tech-Innovation/Data-Center/Intel-s-Millikelvin-Quantum-Research-Control-Chip-Provides/post/1608558 [C]

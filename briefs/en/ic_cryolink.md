@@ -63,7 +63,7 @@ A loophole-free CHSH violation with space-like separated measurements is device-
 ## Outlook & open questions
 Falsifiable (12–24 months): confirm if any group publishes a three-cryostat chained link, or a 30 m link run while both processors execute gates, by end-2027; demote if interface loss is not below 0.3 dB by then. Best case 2029: per-hop efficiency above 90% and an architecture that needs two fridges. Worst case: intra-cryostat modularity absorbs all growth through 2030 and this stays a Bell-test instrument. Open questions: residual inter-cryostat phase noise; whether joints can be non-demountable and still serviceable; whether anyone builds a cryogenic microwave switch. Watch: ETH follow-ons, IBM's first coupled cells with qubits in them.
 
-## Sources
+## References
 [50] C. Dundon, S. Hall, M. Hollister, and A. Lindler, “IBM's new modular architecture for cryogenic systems,” IBM Quantum Computing Blog, Aug. 19, 2026. [Online]. Available: https://www.ibm.com/quantum/blog/modular-cryogenics [C]
 [301] US Department of Commerce, Bureau of Industry and Security, “Commerce Control List Additions and Revisions; Implementation of Controls on Advanced Technologies Consistent With Controls Implemented by International Partners,” *Federal Register*, vol. 89, p. 72926, Sep. 6, 2024. [Online]. Available: https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies [G]
 [303] Bluefors, “KIDE Cryogenic Platform — For Large-Scale Quantum Computing,” Jun. 16, 2026. [Online]. Available: https://bluefors.com/products/kide-cryogenic-platform/ [C]

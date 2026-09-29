@@ -70,8 +70,7 @@ No gate exists to benchmark; samples are compared with the ideal distribution, a
 ## Outlook & open questions
 Confirm if, by 2027-12-31, no classical sampler matches Jiuzhang 4.0 on its subsystem benchmarks and ORCA publishes PT-3 modes, loops and loss with a classical comparison; demote if one matches Jiuzhang 4.0 by then, or PT-3 ships in 2026 without those figures. Open questions. (1) What is the per-element loss of Jiuzhang 4.0's programmable meshes? (2) Does subsystem validation extrapolate to full scale? (3) What does PT-2 inject, and through how many loops? (4) Does any GBS application keep a speed-up at 33–51% transmission? (5) Can a loop sampler become a fusion machine by adding heralding and feed-forward?
 
-## Sources
-
+## References
 [175] H.-L. Liu *et al.*, “Gaussian boson sampling with 1,024 squeezed states in 8,176 modes,” *Nature*, vol. 653, no. 8115, pp. 687–692, May 2026, doi: [10.1038/s41586-026-10523-6](https://doi.org/10.1038/s41586-026-10523-6). [arXiv:2508.09092](https://arxiv.org/abs/2508.09092). [D]
 [268] C. S. Hamilton *et al.*, “Gaussian Boson Sampling,” *Phys. Rev. Lett.*, vol. 119, no. 17, Art. no. 170501, Oct. 2017, doi: [10.1103/PhysRevLett.119.170501](https://doi.org/10.1103/PhysRevLett.119.170501). [arXiv:1612.01199](https://arxiv.org/abs/1612.01199). [G]
 [269] H. Qi, D. J. Brod, N. Quesada, and R. García-Patrón, “Regimes of Classical Simulability for Noisy Gaussian Boson Sampling,” *Phys. Rev. Lett.*, vol. 124, no. 10, Art. no. 100502, Mar. 2020, doi: [10.1103/PhysRevLett.124.100502](https://doi.org/10.1103/PhysRevLett.124.100502). [arXiv:1905.12075](https://arxiv.org/abs/1905.12075). [S]

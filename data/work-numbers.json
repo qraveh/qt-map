@@ -1,5 +1,5 @@
 {
- "next": 827,
+ "next": 873,
  "works": [
   {
    "n": 1,
@@ -125,7 +125,8 @@
    "n": 15,
    "ids": [
     "u:https://www.dwavequantum.com/company/newsroom/press-release/d-wave-reports-second-quarter-2026-results",
-    "t:d wave reports second quarter 2026 results"
+    "t:d wave reports second quarter 2026 results",
+    "u:https://ir.dwavequantum.com/news/news-details/2026/d-wave-reports-second-quarter-2026-results/default.aspx"
    ]
   },
   {
@@ -1047,7 +1048,8 @@
    "n": 126,
    "ids": [
     "u:https://quantumcomputingreport.com/german-government-selects-qudora-led-consortium-for-e122-million-138-8-usd-nfqc-1k-trapped-ion-quantum-computer-project",
-    "t:german government selects qudora led consortium for 122 mill"
+    "t:german government selects qudora led consortium for 122 mill",
+    "u:https://thequantuminsider.com/2026/09/23/german-government-selects-qudora-led-consortium-for-e122-million-project"
    ]
   },
   {
@@ -1443,7 +1445,9 @@
     "doi:10.1038/s41586-026-10523-6",
     "arxiv:2508.09092",
     "u:nature:s41586-026-10523-6",
-    "t:gaussian boson sampling with 1 024 squeezed states in 8 176 "
+    "t:gaussian boson sampling with 1 024 squeezed states in 8 176 ",
+    "u:arxiv:2508.09092",
+    "t:robust quantum computational advantage with programmable 305"
    ],
    "label": "LSD+26"
   },
@@ -1802,7 +1806,8 @@
    "n": 220,
    "ids": [
     "u:https://thequantuminsider.com/2025/05/20/d-wave-announces-general-availability-of-advantage2-quantum-computer",
-    "t:d wave announces general availability of advantage2 quantum "
+    "t:d wave announces general availability of advantage2 quantum ",
+    "u:https://www.dwavequantum.com/company/newsroom/press-release/d-wave-announces-general-availability-of-advantage2-quantum-computer-its-most-advanced-and-performant-system"
    ],
    "label": "Swa25b"
   },
@@ -6962,6 +6967,330 @@
     "t:classically accelerated readout for neutral atoms with cpu g"
    ],
    "label": "Akh26"
+  },
+  {
+   "n": 827,
+   "ids": [
+    "u:https://www.aboutamazon.com/news/aws/quantum-computing-aws-ocelot-chip",
+    "t:amazon s new ocelot chip brings us closer to building a prac"
+   ]
+  },
+  {
+   "n": 828,
+   "ids": [
+    "u:https://alice-bob.com/newsroom/alice-bob-quantum-computing-roadmap",
+    "t:alice bob publishes quantum computing roadmap to 100 logical"
+   ]
+  },
+  {
+   "n": 829,
+   "ids": [
+    "u:https://www.businesswire.com/news/home/20260713953398/en/nord-quantique-achieves-breakthrough-in-quantum-error-correction-with-spam-errors-reduced-to-below-0.1",
+    "t:nord quantique achieves breakthrough in quantum error correc"
+   ]
+  },
+  {
+   "n": 830,
+   "ids": [
+    "u:https://nordquantique.com/articles/nord-quantique-error-correction-multimode-encoding-breakthrough",
+    "t:fewer qubits and better error correction nord quantique s mu"
+   ]
+  },
+  {
+   "n": 831,
+   "ids": [
+    "u:https://www.dwavequantum.com/company/newsroom/press-release/d-wave-charts-a-new-course-to-fault-tolerant-quantum-computing-with-gate-model-roadmap",
+    "t:d wave charts a new course to fault tolerant quantum computi"
+   ]
+  },
+  {
+   "n": 832,
+   "ids": [
+    "u:https://www.hpcwire.com/off-the-wire/oxford-quantum-circuits-outlines-roadmap-to-50000-logical-qubits-by-2034",
+    "t:oxford quantum circuits outlines roadmap to 50 000 logical q"
+   ]
+  },
+  {
+   "n": 833,
+   "ids": [
+    "u:https://oqc.tech/company/newsroom/oqc-quantum-ai-data-centre",
+    "t:oqc and digital realty team with nvidia to launch first quan"
+   ]
+  },
+  {
+   "n": 834,
+   "ids": [
+    "u:https://www.quantinuum.com/blog/introducing-helios-the-most-accurate-quantum-computer-in-the-world",
+    "t:introducing helios the most accurate quantum computer in the"
+   ]
+  },
+  {
+   "n": 835,
+   "ids": [
+    "u:https://www.quantinuum.com/blog/helix-a-new-architecture-for-enterprise-scale-fault-tolerant-quantum-computing",
+    "t:helix a new architecture for enterprise scale fault tolerant"
+   ]
+  },
+  {
+   "n": 836,
+   "ids": [
+    "u:https://www.quantinuum.com/blog/technical-perspective-by-the-end-of-the-decade-we-will-deliver-universal-fault-tolerant-quantum-computing",
+    "t:technical perspective by the end of the decade we will deliv"
+   ]
+  },
+  {
+   "n": 837,
+   "ids": [
+    "u:https://www.quantinuum.com/blog/quantinuum-overcomes-last-major-hurdle-to-deliver-scalable-universal-fault-tolerant-quantum-computers-by-2029",
+    "t:quantinuum overcomes last major hurdle to deliver scalable u"
+   ]
+  },
+  {
+   "n": 838,
+   "ids": [
+    "u:https://universalquantum.com/knowledge-hub/universal-quantum-develops-key-enabler-of-million-qubit-quantum-computer",
+    "t:universal quantum develops key enabler of million qubit quan"
+   ]
+  },
+  {
+   "n": 839,
+   "ids": [
+    "u:https://www.ionq.com/blog/ionq-hits-aq-64-milestone-ahead-of-schedule-and-sets-its-sights-even-higher",
+    "t:ionq hits aq 64 milestone ahead of schedule and sets its sig"
+   ]
+  },
+  {
+   "n": 840,
+   "ids": [
+    "u:https://www.prnewswire.com/news-releases/quantum-art-unveils-aggressive-roadmap-to-scalable-commercial-quantum-advantage-by-2027-1-million-qubits-by-2033-302488527.html",
+    "t:quantum art unveils aggressive roadmap to scalable commercia"
+   ]
+  },
+  {
+   "n": 841,
+   "ids": [
+    "u:https://www.lebedev.ru/ru/main-news/news/4720",
+    "t:в россии создан 50 кубитный ионный квантовый компьютер"
+   ]
+  },
+  {
+   "n": 842,
+   "ids": [
+    "u:https://www.atomic-energy.ru/news/2026/08/12/167757",
+    "t:фиан и ркц освоили планарную технологию увеличения мощности "
+   ]
+  },
+  {
+   "n": 843,
+   "ids": [
+    "u:https://www.oxionics.com/blog-post/unveiling-oxford-ionics%e2%80%99-development-roadmap-to-scalable-fault-tolerant-quantum-computing",
+    "t:unveiling oxford ionics development roadmap to scalable faul"
+   ]
+  },
+  {
+   "n": 844,
+   "ids": [
+    "u:https://www.fz-juelich.de/en/news/archive/press-release/2026/launch-jion-quantum-computer-juelich",
+    "t:official launch of jion quantum computer at jülich"
+   ]
+  },
+  {
+   "n": 845,
+   "ids": [
+    "u:https://news.harvard.edu/gazette/story/2025/11/a-potential-quantum-leap",
+    "t:a potential quantum leap"
+   ]
+  },
+  {
+   "n": 846,
+   "ids": [
+    "u:https://www.prnewswire.com/news-releases/atom-computing-reveals-quantum-error-correction-with-toric-code-302789413.html",
+    "t:atom computing reveals quantum error correction with toric c"
+   ]
+  },
+  {
+   "n": 847,
+   "ids": [
+    "u:https://quantum.microsoft.com/en-us/insights/blogs/from-research-to-product-engineering-logical-qubit-demonstrations-shaping-microsoft-utility-scale-quantum-software-platform",
+    "t:from research to product engineering how groundbreaking logi"
+   ]
+  },
+  {
+   "n": 848,
+   "ids": [
+    "arxiv:2603.20372",
+    "u:arxiv:2603.20372",
+    "t:one to one quantum simulation of a frustrated magnet with 25"
+   ],
+   "label": "LJF+26"
+  },
+  {
+   "n": 849,
+   "ids": [
+    "u:https://www.quera.com/press-releases/scientists-observe-string-breaking-in-two-dimensional-quantum-simulator",
+    "t:scientists observe string breaking in two dimensional quantu"
+   ]
+  },
+  {
+   "n": 850,
+   "ids": [
+    "u:https://www.icfo.eu/news/2328/quione-announcing-the-birth-of-a-unique-analog-quantum-processor-in-the-world",
+    "t:quione announcing the birth of a unique analog quantum proce"
+   ]
+  },
+  {
+   "n": 851,
+   "ids": [
+    "u:https://www.psiquantum.com/news-import/omega",
+    "t:psiquantum announces omega a manufacturable chipset for phot"
+   ]
+  },
+  {
+   "n": 852,
+   "ids": [
+    "u:https://www.psiquantum.com/news-import/psiquantum-to-build-worlds-first-utility-scale-fault-tolerant-quantum-computer-in-australia",
+    "t:psiquantum to build world s first utility scale fault tolera"
+   ]
+  },
+  {
+   "n": 853,
+   "ids": [
+    "u:https://www.psiquantum.com/news-import/psiquantum-breaks-ground-in-australia-on-site-of-worlds-first-utility-scale-quantum-computer",
+    "t:psiquantum breaks ground in australia on site of world s fir"
+   ]
+  },
+  {
+   "n": 854,
+   "ids": [
+    "u:https://www.quandela.com/wp-content/uploads/2026/04/roadmap-brochure-220426-web.pdf",
+    "t:roadmap 2026 2033"
+   ]
+  },
+  {
+   "n": 855,
+   "ids": [
+    "u:https://www.quixquantum.com/news/quix-quantum-announces-carina",
+    "t:quix quantum announces carina the first universal photonic q"
+   ]
+  },
+  {
+   "n": 856,
+   "ids": [
+    "u:https://www.prnewswire.com/news-releases/xanadu-unveils-first-on-chip-error-resistant-photonic-qubit-302470947.html",
+    "t:xanadu unveils first on chip error resistant photonic qubit"
+   ]
+  },
+  {
+   "n": 857,
+   "ids": [
+    "u:https://www.prnewswire.com/news-releases/xanadu-introduces-aurora-worlds-first-scalable-networked-and-modular-quantum-computer-302355496.html",
+    "t:xanadu introduces aurora world s first scalable networked an"
+   ]
+  },
+  {
+   "n": 858,
+   "ids": [
+    "u:https://orcacomputing.com/nonlinear-photonic-architecture-for-fault-tolerant-quantum-computing",
+    "t:nonlinear photonic architecture for fault tolerant quantum c"
+   ]
+  },
+  {
+   "n": 859,
+   "ids": [
+    "u:https://www.techjournal.uk/p/orca-computing-targets-quantum-advantage",
+    "t:orca computing targets quantum advantage for ai within two y"
+   ]
+  },
+  {
+   "n": 860,
+   "ids": [
+    "u:https://orcacomputing.com/orca-toyota-tsusho-deploy-to-enterprise-customer",
+    "t:orca computing and toyota tsusho deploy first quantum system"
+   ]
+  },
+  {
+   "n": 861,
+   "ids": [
+    "u:https://www.globenewswire.com/news-release/2026/08/31/3353719/0/en/diraq-to-deploy-a-quantum-computer-inside-an-equinix-data-center.html",
+    "t:diraq to deploy a quantum computer inside an equinix data ce"
+   ]
+  },
+  {
+   "n": 862,
+   "ids": [
+    "u:https://www.hitachi.com/en/press/articles/2026/07/0722a",
+    "t:hitachi launches r d on silicon quantum computers in collabo"
+   ]
+  },
+  {
+   "n": 863,
+   "ids": [
+    "u:https://sqc.com/about",
+    "t:about silicon quantum computing"
+   ]
+  },
+  {
+   "n": 864,
+   "ids": [
+    "u:https://sqc.com/news/sqc-establishes-leadership-in-silicon-modality",
+    "t:sqc establishes leadership in silicon modality of quantum co"
+   ]
+  },
+  {
+   "n": 865,
+   "ids": [
+    "u:https://sqc.com/news/darpa-qbi-stage-b",
+    "t:sqc advances to darpa s quantum benchmarking initiative stag"
+   ]
+  },
+  {
+   "n": 866,
+   "ids": [
+    "u:https://www.globenewswire.com/news-release/2026/03/13/3255642/0/en/photonic-inc-accelerates-into-its-next-phase-of-growth.html",
+    "t:photonic inc accelerates into its next phase of growth"
+   ]
+  },
+  {
+   "n": 867,
+   "ids": [
+    "u:https://photonic.com/news/photonic-demonstrates-distributed-entanglement-between-modules",
+    "t:photonic performs distributed entanglement between modules"
+   ]
+  },
+  {
+   "n": 868,
+   "ids": [
+    "u:https://www.eenewseurope.com/en/quantum-brilliance-ceo-mark-luo-on-deployable-quantum-systems-and-the-future-of-diamond-based-computing",
+    "t:quantum brilliance ceo mark luo on deployable quantum system"
+   ]
+  },
+  {
+   "n": 869,
+   "ids": [
+    "u:https://quantumbrilliance.com/press-release/quantum-brilliance-announces-first-purchase-of-a-room-temperature-quantum-accelerator-in-europe-powered-by-nvidia-cuda-q",
+    "t:quantum brilliance announces first purchase of a room temper"
+   ]
+  },
+  {
+   "n": 870,
+   "ids": [
+    "u:https://news.microsoft.com/source/features/innovation/microsofts-majorana-1-chip-carves-new-path-for-quantum-computing",
+    "t:microsoft s majorana 1 chip carves new path for quantum comp"
+   ]
+  },
+  {
+   "n": 871,
+   "ids": [
+    "u:https://www.dwavequantum.com/company/newsroom/press-release/beyond-classical-d-wave-first-to-demonstrate-quantum-supremacy-on-useful-real-world-problem",
+    "t:beyond classical d wave first to demonstrate quantum suprema"
+   ]
+  },
+  {
+   "n": 872,
+   "ids": [
+    "u:https://qilimanjaro.tech/qilimanjaros-new-analog-quantum-system-inaugurated-at-the-barcelona-supercomputing-center",
+    "t:qilimanjaro s new analog quantum system inaugurated at the b"
+   ]
   }
  ]
 }

@@ -106,8 +106,7 @@ updated: 2026-09-03
 
 Открытые вопросы: переживёт ли СВЧ-градиент плотную 2D-разводку без неприемлемых перекрёстных помех и тепловыделения? Какая доля остаточных 8.4×10⁻⁵ когерентна и что это даёт для Λ? Даёт ли процесс SkyWater чипы ловушек в объёме, или приобретение было ради надёжности поставок, а не ради технологической возможности?
 
-## Источники
-
+## Литература
 [18] IonQ, “IonQ Completes Acquisition of Oxford Ionics, Rapidly Accelerating Its Quantum Computing Roadmap,” Sep. 17, 2025. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-oxford-ionics-rapidly-accelerating-its-quantum [C]
 [19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [C]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]

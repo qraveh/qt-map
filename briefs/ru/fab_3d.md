@@ -58,7 +58,7 @@ updated: 2026-09-04
 ## Прогноз и открытые вопросы
 Подтвердить к 2028, если какой-либо поставщик опубликует выход годных на корпус или корпус размером меньше сантиметра при сопоставимой Q; понизить оценку, если механические участки будут молчать и дальше, пока планарные кубиты со стиранием масштабируются. Лучший случай, 2029: массивы резонаторов группового изготовления. Худший случай: корпуса ручной обработки бессрочно, что удерживает ветвь на уровне около 10² мод. Открытые вопросы: повышает ли бесшовная обработка Q; какова реальная стоимость одной моды? Следить за чипом Alice & Bob на 48 котов и за DR49 у D-Wave.
 
-## Источники
+## Литература
 [80] H. Putterman *et al.*, “Hardware-efficient quantum error correction via concatenated bosonic qubits,” *Nature*, vol. 638, no. 8052, pp. 927–934, Feb. 2025, doi: [10.1038/s41586-025-08642-7](https://doi.org/10.1038/s41586-025-08642-7). [D]
 [82] S. Turcotte *et al.*, “Quantum error correction of a grid-state qubit with state preparation and measurement errors below 10⁻³,” [arXiv:2607.06718](https://arxiv.org/abs/2607.06718), Jul. 2026. [D]
 [84] N. Mehta *et al.*, “An entangling gate for dual-rail erasure qubits,” *Nature*, vol. 656, no. 8126, pp. 47–53, Aug. 2026, doi: [10.1038/s41586-026-10822-y](https://doi.org/10.1038/s41586-026-10822-y). [arXiv:2503.10935](https://arxiv.org/abs/2503.10935). [D]

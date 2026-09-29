@@ -100,8 +100,7 @@ AMD (Xilinx) и NVIDIA поставляют практически весь кр
 
 Следить за: результатом AlphaQubit2 на аппаратуре вне Google; первым нейросетевым декодером на коде bivariate-bicycle; tape-out криогенного декодера; и задержкой NVQLink, достаточной для декодирования на разделяемом ускорителе для трансмонов.
 
-## Источники
-
+## Литература
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [2] V. Sivak *et al.*, “Reinforcement learning control of quantum error correction,” *Nature*, vol. 655, no. 8124, pp. 879–884, Jul. 2026, doi: [10.1038/s41586-026-10759-2](https://doi.org/10.1038/s41586-026-10759-2). [D]
 [48] T. Maurer *et al.*, “Real-time decoding of the gross code memory with FPGAs,” [arXiv:2510.21600](https://arxiv.org/abs/2510.21600), Oct. 2025. [S]

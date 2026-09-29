@@ -56,7 +56,7 @@ Architecture: topological — tetron (Majorana), where it is the primary encodin
 ## Outlook & open questions
 Falsifiable in 12–24 months: any X-basis parity measurement with a stated assignment error; an X/Z ratio below 100×; a joint measurement across two tetrons. Confirm on the first two; demote to theory if none appears by end-2027. Best case, loop redesign and a larger gap bring X into milliseconds; worst case, X-loop poisoning is intrinsic and the design is abandoned. Open: is the asymmetry geometric or intrinsic; does anyone build a tetron outside Microsoft.
 
-## Sources
+## References
 [20] M. Aghaee *et al.*, “Distinct Lifetimes for X and Z Loop Measurements in a Majorana Tetron Device,” [arXiv:2507.08795](https://arxiv.org/abs/2507.08795), Jul. 2025. [D]
 [21] M. Aghaee *et al.*, “20 Second Parity Lifetime in an InAs–Pb Tetron Device,” [arXiv:2606.03884](https://arxiv.org/abs/2606.03884), Jun. 2026. [D]
 [22] H. F. Legg, “On the robustness of topological gap detection via transport,” *Nature*, vol. 654, no. 8120, pp. E22–E26, Jun. 2026, doi: [10.1038/s41586-026-10567-8](https://doi.org/10.1038/s41586-026-10567-8). [arXiv:2503.08944](https://arxiv.org/abs/2503.08944). [D]

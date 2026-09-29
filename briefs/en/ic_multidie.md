@@ -74,8 +74,7 @@ Coherence under a cap is shown at few-qubit scale [D][754][D][755]; stack gate d
 ## Outlook & open questions
 Confirm if, by 2027-12-31, a carrier above 100 qubits publishes bump count, gap spread and frequency-targeting error; demote if no carrier above 100 qubits publishes those numbers by then. Open questions. (1) What is bump continuity per thermal cycle at 10⁴ bumps? (2) How much fixed-frequency targeting error is gap non-uniformity? (3) Does the bump interface set a loss floor near Q ≈ 10⁶? (4) Can an SFQ die under the qubits keep its error contribution below 10⁻³? (5) Do Sycamore's successors, Zuchongzhi 3.2 and Tianyan-287 keep the two-die stack the register infers?
 
-## Sources
-
+## References
 [35] D. Gao *et al.*, “Establishing a New Benchmark in Quantum Computational Advantage with 105-qubit Zuchongzhi 3.0 Processor,” *Phys. Rev. Lett.*, vol. 134, Art. no. 090601, Mar. 2025, doi: [10.1103/PhysRevLett.134.090601](https://doi.org/10.1103/PhysRevLett.134.090601). [arXiv:2412.11924](https://arxiv.org/abs/2412.11924). [D]
 [80] H. Putterman *et al.*, “Hardware-efficient quantum error correction via concatenated bosonic qubits,” *Nature*, vol. 638, no. 8052, pp. 927–934, Feb. 2025, doi: [10.1038/s41586-025-08642-7](https://doi.org/10.1038/s41586-025-08642-7). [D]
 [249] C. Liu *et al.*, “Single Flux Quantum-Based Digital Control of Superconducting Qubits in a Multichip Module,” *PRX Quantum*, vol. 4, no. 3, Art. no. 030310, Jul. 2023, doi: [10.1103/PRXQuantum.4.030310](https://doi.org/10.1103/PRXQuantum.4.030310). [D]

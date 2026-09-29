@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# the map's short labels, (English, Russian[, Hebrew]) per technology; a missing language reads the English label (langs.pick, 29 Sep 2026)
 SHORT = {
 'transmon':('Transmon','Трансмон'),'fluxonium':('Fluxonium','Флаксониум'),'cavity':('Cavity mode','Мода резонатора'),'ion':('Trapped ion','Ион'),'alkali':('Rb/Cs atom','Атом Rb/Cs'),'ae_atom':('Yb/Sr atom','Атом Yb/Sr'),
 'photon':('Photon (DV)','Фотон (DV)'),'squeezed':('Squeezed mode','Сжатая мода'),'qd_spin':('QD spin','Спин в КТ'),'donor':('Donor spin','Донорный спин'),'defect':('Defect spin','Дефектный спин'),'majorana':('Majorana tetron','Тетрон Майораны'),'fluxq':('Flux qubit','Потоковый кубит'),

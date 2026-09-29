@@ -60,7 +60,7 @@ updated: 2026-09-03
 ## Прогноз и открытые вопросы
 Подтвердить к 2028 году: эффективное сжатие GKP на кристалле выше 2 дБ с приведённым бюджетом потерь; понизить в ранге, если оно останется ниже 1 дБ. Лучший сценарий к 2029 году: вторая группа публикует конкурирующий показатель GKP. Худший сценарий: потери интеграции удерживают его вблизи 1 дБ, и CV/GKP остаётся исследовательской архитектурой. Открытые вопросы: снижаются ли потери так, как заявляет дорожная карта; способен ли поляризованный TFLN обеспечить точность уровня GKP.
 
-## Источники
+## Литература
 [173] H. A. Rad *et al.*, “Scaling and networking a modular photonic quantum computer,” *Nature*, vol. 638, no. 8052, pp. 912–919, Jan. 2025, doi: [10.1038/s41586-024-08406-9](https://doi.org/10.1038/s41586-024-08406-9). [D]
 [174] M. V. Larsen *et al.*, “Integrated photonic source of Gottesman–Kitaev–Preskill qubits,” *Nature*, vol. 642, no. 8068, pp. 587–591, Jun. 2025, doi: [10.1038/s41586-025-09044-5](https://doi.org/10.1038/s41586-025-09044-5). [D]
 [178] Xanadu Quantum Technologies Limited, “Xanadu Charts Path to Over 1,000 Logical Qubits by 2031,” GlobeNewswire, Aug. 31, 2026. [Online]. Available: https://www.globenewswire.com/news-release/2026/08/31/3353211/0/en/xanadu-charts-path-to-over-1-000-logical-qubits-by-2031.html [R]

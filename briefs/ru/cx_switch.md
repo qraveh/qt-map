@@ -72,7 +72,7 @@ updated: 2026-09-04
 ## Прогноз и открытые вопросы
 Подтвердить/понизить в течение 12–24 месяцев: энергонезависимый переключатель ниже 50 mdB; независимое воспроизведение цифры 100 mdB; запуск криогенной установки PsiQuantum в Брисбене во 2H 2027; опубликованную петлю feed-forward быстрее 100 ns. Лучший случай к 2029 г.: энергонезависимая коммутация с однозначным числом mdB и закрытие обещанных Xanadu 24.1×. Худший случай: потери выходят на плато вблизи 100 mdB, и фотонная отказоустойчивость для всей ветви уезжает за 2031 год. Открыто: даёт ли титанат бария приемлемый выход годных на 300 мм; можно ли получить второй источник для приклейки волоконных сборок; станет ли подавление связывающим ограничением, когда потери упадут. Следить за цифрой потерь Xanadu в 2027 году.
 
-## Источники
+## Литература
 [169] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
 [172] Xanadu, “Xanadu sets new industry benchmark in photonic chip packaging,” PR Newswire, Jun. 10, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/xanadu-sets-new-industry-benchmark-in-photonic-chip-packaging-302796562.html [C]
 [173] H. A. Rad *et al.*, “Scaling and networking a modular photonic quantum computer,” *Nature*, vol. 638, no. 8052, pp. 912–919, Jan. 2025, doi: [10.1038/s41586-024-08406-9](https://doi.org/10.1038/s41586-024-08406-9). [D]

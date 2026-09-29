@@ -118,8 +118,7 @@ Credibility: IBM high on cadence, weak on its first qLDPC module and on "advanta
 
 Milestones, 12–24 months: (1) Kookaburra runs a gross-code memory below break-even — confirm; nothing by end-2027 demotes IBM's 2029 date [R][G:IBM-ROADMAP]. (2) Google publishes Λ ≥ 3 or a 10⁻⁶ logical memory at d ≥ 9 — confirm; a second year without a Willow successor demotes [D][2]. (3) QBI Stage C (expected around Q4 2026 [G:QBI-STAGEC-2026][P][314]) promotes a transmon vendor. (4) cryo-CMOS or SFQ drives ≥ 50 transmons without a fidelity penalty [D][190], [304]. Best case 2029: a Starling-class 200-logical machine [R][G:IBM-ROADMAP] and a d ≥ 11 Google memory; worst: Λ near 2, readout at 10⁻², bursts cap distance, the transmon survives only as an ancilla and capital rotates to atoms and spins. Open questions: does millisecond Ta/Si coherence survive a 100-qubit process with couplers; is the at-scale 2Q floor coherent (calibration) or incoherent; can readout reach 10⁻³ in < 300 ns across a lattice. Watch: Google's next paper, Kookaburra, the Stage C list.
 
-## Sources
-
+## References
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [2] V. Sivak *et al.*, “Reinforcement learning control of quantum error correction,” *Nature*, vol. 655, no. 8124, pp. 879–884, Jul. 2026, doi: [10.1038/s41586-026-10759-2](https://doi.org/10.1038/s41586-026-10759-2). [D]
 [3] T. He *et al.*, “Experimental Quantum Error Correction below the Surface Code Threshold via All-Microwave Leakage Suppression,” *Phys. Rev. Lett.*, vol. 135, no. 26, Art. no. 260601, Dec. 2025, doi: [10.1103/rqkg-dw31](https://doi.org/10.1103/rqkg-dw31). [D]

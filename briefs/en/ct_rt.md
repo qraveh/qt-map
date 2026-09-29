@@ -69,7 +69,7 @@ Every line count above 1,536 is product literature, not a wired system: Bluefors
 ## Outlook & open questions
 Confirm by end-2027 if one fridge runs >2,000 qubits on RT lines with published fidelity at that density; demote after another year of line-count specifications without a wired system. Best case by 2029: flex density plus deeper multiplexing reaches 10⁴ qubits, stack unchanged. Worst case: density plateaus near 4,000–5,000 lines while roadmaps beyond assume undelivered cryo-CMOS or SFQ. Open questions: does crosstalk grow faster than linearly past ~1,000 lines; do flex density and multiplexing compound or hit independent walls; will any vendor commit to in-fridge control before RT wiring visibly fails; does multi-fridge partitioning make the per-fridge ceiling irrelevant.
 
-## Sources
+## References
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [190] Members of the HRL Quantum Team and Collaborators, “A digitally controlled silicon quantum processing unit,” [arXiv:2604.16216](https://arxiv.org/abs/2604.16216), Apr. 2026. [D]
 [292] J. Gambetta, “The hardware and software for the era of quantum utility is here,” IBM Quantum Computing Blog, Dec. 4, 2023. [Online]. Available: https://www.ibm.com/quantum/blog/quantum-roadmap-2033 [C]

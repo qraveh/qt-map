@@ -57,7 +57,7 @@ IonQ закрыла сделку по приобретению SkyWater 2026-07-
 ## Прогноз и открытые вопросы
 Подтверждение, если IonQ опубликует времена гейтов Tempo и точности по парам либо поставит 256 кубитов в H1 2027; понижение, если раскрытие останется на уровне заголовков. Лучший случай к 2029: электронные гейты на ловушках собственного производства выводят цепочки за 100 ионов. Худший случай: цепочки застревают на 30–50 ионах. Открытый вопрос: как масштабируется нагрев мод при 100 ионах?
 
-## Источники
+## Литература
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
 [97] A. Ransford *et al.*, “A 98-qubit trapped-ion quantum computer with all-to-all connectivity,” *Nature*, vol. 655, no. 8121, pp. 81–86, Jun. 2026, doi: [10.1038/s41586-026-10676-4](https://doi.org/10.1038/s41586-026-10676-4). [arXiv:2511.05465](https://arxiv.org/abs/2511.05465). [D]
 [100] J.-S. Chen *et al.*, “Benchmarking a trapped-ion quantum computer with 30 qubits,” *Quantum*, vol. 8, Art. no. 1516, Nov. 2024, doi: [10.22331/q-2024-11-07-1516](https://doi.org/10.22331/q-2024-11-07-1516). [arXiv:2308.05071](https://arxiv.org/abs/2308.05071). [D]

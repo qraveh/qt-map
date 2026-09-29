@@ -21,17 +21,24 @@ Shift+Enter / ▲ walk the hits, the list under the box shows every hit in its s
 on a row jumps there. Each step reveals what hides the hit — a folded section, a closed brief, the map's collapsed bar,
 the other language, a card — scrolls it into view and highlights it (the CSS Custom Highlight API; a <mark> where the API
 is missing).
+
+The window (the editor, 29 Sep 2026: the extended window "obliterates much space"). Its grip, or any bare part of its top row,
+drags it (kept inside the viewport; on a phone it stays edge to edge under the page bar); ▾ folds it to that one row; it is
+sticky — {open, x, y, collapsed, q, cs, whole, scope} is kept under the key qtech-find, and a page loaded with the window open
+reopens it where it was, with its query and options, and searches once the page is ready.
 """
 
 FIND_HTML = r'''<div class="findbar" id="findbar" hidden role="search" aria-label="find in the Atlas">
  <div class="findrow">
+  <span class="fgrip" title="drag to move" aria-hidden="true">⋮⋮</span>
   <input type="search" id="findq" class="findq" autocomplete="off" spellcheck="false" placeholder="find…  regex: [bg]ui  \d+ q  a|b" aria-label="find in the Atlas — a regular expression; Enter next hit, Shift+Enter previous">
   <span class="findcount" id="findcount" aria-live="polite"></span>
   <button type="button" class="fb" id="findprev" aria-label="previous hit (Shift+Enter)" title="previous (Shift+Enter)">▲</button>
   <button type="button" class="fb" id="findnext" aria-label="next hit (Enter)" title="next (Enter)">▼</button>
+  <button type="button" class="fb" id="findfold" aria-expanded="true" aria-controls="findopts findlist" aria-label="collapse / expand" title="collapse / expand">▾</button>
   <button type="button" class="fb findclose" id="findclose" aria-label="close (Escape)" title="close (Escape)">✕</button>
  </div>
- <div class="findopts">
+ <div class="findopts" id="findopts">
   <button type="button" class="fo" id="findcase" title="click to toggle"><span class="lang-en">case-insensitive</span><span class="lang-ru">без учёта регистра</span></button>
   <button type="button" class="fo" id="findword" title="click to toggle"><span class="lang-en">substring</span><span class="lang-ru">подстрока</span></button>
   <span class="folang"><button type="button" class="fo" id="findlang" aria-haspopup="menu" aria-expanded="false" title="the language searched"><span id="findlangname">English</span> ▾</button><div class="fomenu" id="findlangmenu" hidden role="menu"></div></span>
@@ -46,8 +53,8 @@ var bar=document.getElementById('findbar'), q=document.getElementById('findq'), 
 if(!bar||!q) return;
 var app=document.getElementById('app');
 function lang(){ return (app&&app.getAttribute('data-lang'))||'en'; }
-var T=function(en,ru){ return lang()==='ru'?ru:en; };
-var NATIVE={en:'English',ru:'Русский',de:'Deutsch',fr:'Français',es:'Español',zh:'中文',ja:'日本語',he:'עברית',ar:'العربية',pt:'Português',it:'Italiano',ko:'한국어'};
+var T=function(a,b,c){ var L=lang(); return L==='en'?a:(L==='ru'?b:(c!=null?c:a)); };   // T(English, Russian[, Hebrew]); a missing language reads English (29 Sep 2026)
+var NATIVE=(window.__LANGS||{}).native||{en:'English',ru:'Русский',he:'עברית'};   // the Atlas's languages by their own names (build/langs.py)
 var LANGS=[app.getAttribute('data-page-lang')||'en']; try{ JSON.parse(app.getAttribute('data-other-langs')||'[]').forEach(function(l){ if(LANGS.indexOf(l)<0) LANGS.push(l); }); }catch(e){}
 var opts={cs:false, whole:false, scope:'this'};   // scope: 'this' | 'all' | a language code
 var hits=[], cur=-1, lastKey='', running=null, index=null, indexKey='', cards={};
@@ -56,7 +63,8 @@ var HL=!!(window.CSS&&CSS.highlights&&window.Highlight);
 var SKIP={SCRIPT:1,STYLE:1,TEMPLATE:1,NOSCRIPT:1,CANVAS:1,SELECT:1,OPTION:1,TEXTAREA:1,INPUT:1,IFRAME:1,OBJECT:1};
 var BLOCK={P:1,DIV:1,LI:1,UL:1,OL:1,TABLE:1,THEAD:1,TBODY:1,TFOOT:1,TR:1,TD:1,TH:1,H1:1,H2:1,H3:1,H4:1,H5:1,H6:1,SECTION:1,ARTICLE:1,ASIDE:1,DL:1,DT:1,DD:1,DETAILS:1,SUMMARY:1,FIGURE:1,FIGCAPTION:1,BLOCKQUOTE:1,PRE:1,NAV:1,HEADER:1,FOOTER:1,MAIN:1,FORM:1,FIELDSET:1,LABEL:1,BUTTON:1,HR:1,BR:1,svg:1,SVG:1,text:1,g:1,tspan:1};
 var EXCL='#findbar,#insp,#maptip,nav.toc,#tocdrawer,#tocbackdrop,.fbkpop,.langwait,#gtip,.tip,.floatlang';
-function langOf(el){ var c=el.classList; if(!c) return null; if(c.contains('lang-en')) return 'en'; if(c.contains('lang-ru')) return 'ru'; return null; }
+function langOf(el){ var c=el.classList; if(!c) return null; for(var i=0;i<LANGS.length;i++){ if(c.contains('lang-'+LANGS[i])) return LANGS[i]; } return null; }   // any language of the page (29 Sep 2026)
+var LANGSEL=LANGS.map(function(l){ return '.lang-'+l; }).join(',');
 function walkInto(root,lg,runs,metas,card){
   function textNodesOf(el,out){ var c=el.childNodes; for(var i=0;i<c.length;i++){ var n=c[i]; if(n.nodeType===3) out.push(n); else if(n.nodeType===1&&!SKIP[n.tagName]&&!(n.matches&&n.matches(EXCL))) textNodesOf(n,out); } }
   function flush(run,lgx){ if(!run.length) return; var nodes=[]; for(var i=0;i<run.length;i++){ var n=run[i]; if(n.nodeType===3) nodes.push(n); else textNodesOf(n,nodes); }
@@ -72,7 +80,7 @@ function walkInto(root,lg,runs,metas,card){
       if(n.nodeType===3){ run.push(n); continue; }
       if(n.nodeType!==1) continue;
       if(SKIP[n.tagName]||(n.matches&&n.matches(EXCL))){ flush(run,l); run=[]; continue; }
-      if(BLOCK[n.tagName]||langOf(n)||n.querySelector('p,div,li,table,h1,h2,h3,h4,dl,details,figure,section,.lang-en,.lang-ru')){ flush(run,l); run=[]; walk(n,l); }
+      if(BLOCK[n.tagName]||langOf(n)||n.querySelector('p,div,li,table,h1,h2,h3,h4,dl,details,figure,section,'+LANGSEL)){ flush(run,l); run=[]; walk(n,l); }
       else { run.push(n); meta(n,l); var inl=n.querySelectorAll('[title],[aria-label],[alt]'); for(var j=0;j<inl.length;j++) meta(inl[j],l); }
     }
     flush(run,l);
@@ -142,7 +150,7 @@ function paintRange(r,el){ if(HL){ try{ var H=new Highlight(); H.add(r); CSS.hig
   try{ var m=document.createElement('mark'); m.className='findmark'; r.surroundContents(m); }catch(e){ if(el) el.classList.add('findout'); } }
 // ---------- reveal what hides a hit
 function revealEl(el){
-  var lgEl=el.closest&&el.closest('.lang-en,.lang-ru'); var lg=lgEl?(lgEl.classList.contains('lang-ru')?'ru':'en'):null;
+  var lgEl=el.closest&&el.closest(LANGSEL); var lg=lgEl?langOf(lgEl):null;
   if(lg&&lg!==lang()&&window.__setLang) window.__setLang(lg);
   for(var p=el;p;p=p.parentElement){
     if(p.tagName==='DETAILS'&&!p.open) p.open=true;
@@ -190,41 +198,66 @@ function rowHTML(h,i){ var ctx='', wh=whereOf(h);
   else ctx=E(h.text.slice(0,120));
   return '<li data-i="'+i+'"'+(i===cur?' class="cur"':'')+'><span class="fx">'+ctx.replace(/\s+/g,' ')+'</span>'+(wh?'<span class="fw">'+E(wh)+'</span>':'')+'</li>'; }
 function E(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-function renderList(){ list.innerHTML=''; RENDERED=0; if(!hits.length){ list.hidden=true; return; } list.hidden=false; more(); }
+function renderList(){ list.innerHTML=''; RENDERED=0; if(!hits.length){ list.hidden=true; keepFrac=null; layout(); return; } list.hidden=false; more(); layout();
+  if(keepFrac!=null){ list.scrollTop=keepFrac*list.scrollHeight; keepFrac=null; } }   // a language switch re-runs the search: the list keeps its scroll fraction
 function more(){ var end=Math.min(hits.length,RENDERED+ROWS); var html=''; for(var i=RENDERED;i<end;i++) html+=rowHTML(hits[i],i); list.insertAdjacentHTML('beforeend',html); RENDERED=end;
   if(RENDERED<hits.length){ var li=document.createElement('li'); li.className='more'; li.textContent=T('… more','… ещё')+' ('+(hits.length-RENDERED)+')'; li.addEventListener('click',function(){ li.remove(); more(); }); list.appendChild(li); } }
 function markRow(){ var rows=list.querySelectorAll('li.cur'); for(var i=0;i<rows.length;i++) rows[i].classList.remove('cur'); if(cur<0) return; var r=list.querySelector('li[data-i="'+cur+'"]'); if(r){ r.classList.add('cur'); try{ r.scrollIntoView({block:'nearest'}); }catch(e){} } }
 list.addEventListener('click',function(ev){ var li=ev.target.closest('li[data-i]'); if(!li) return; go(parseInt(li.dataset.i,10)); });
 function show(note){ if(!q.value.trim()){ cnt.textContent=''; where.textContent=''; if(mode) mode.textContent=''; return; }
   cnt.textContent=hits.length?((cur>=0?(cur+1):'—')+' / '+hits.length+(hits.length>=MAXH?'+':'')):(running?'…':T('no hits','нет совпадений'));
-  var loading=document.documentElement.classList.contains('lang-loading')&&opts.scope!=='this';
-  where.textContent=(note||'')+(loading?(' · '+T('the other language is still loading','другой язык ещё загружается')):''); }
+  var pend=opts.scope==='this'?[]:LANGS.filter(function(l){ return window.__langLoaded&&!window.__langLoaded(l)&&(opts.scope==='all'||opts.scope===l); });   // the languages searched whose text has not arrived yet, by name
+  where.textContent=(note||'')+(pend.length?(' · '+T('still loading: ','ещё загружается: ')+pend.map(function(l){ return NATIVE[l]||l; }).join(', ')):''); }
 // ---------- options: each button names its current state
 function paintOpts(){ var c=document.getElementById('findcase'), w=document.getElementById('findword'), ln=document.getElementById('findlangname');
-  c.innerHTML=opts.cs?'<span class="lang-en">case-sensitive</span><span class="lang-ru">с учётом регистра</span>':'<span class="lang-en">case-insensitive</span><span class="lang-ru">без учёта регистра</span>';
-  w.innerHTML=opts.whole?'<span class="lang-en">whole word</span><span class="lang-ru">целое слово</span>':'<span class="lang-en">substring</span><span class="lang-ru">подстрока</span>';
+  c.innerHTML=opts.cs?window.__LS('case-sensitive','с учётом регистра'):window.__LS('case-insensitive','без учёта регистра');   // one span per language (window.__LS)
+  w.innerHTML=opts.whole?window.__LS('whole word','целое слово'):window.__LS('substring','подстрока');
   ln.textContent=opts.scope==='all'?T('all languages','все языки'):(opts.scope==='this'?(NATIVE[lang()]||lang()):(NATIVE[opts.scope]||opts.scope)); }
 function langMenu(){ var m=document.getElementById('findlangmenu'); m.innerHTML=''; var items=[];
   LANGS.forEach(function(l){ items.push([l,NATIVE[l]||l]); }); items.push(['all',T('all languages','все языки')]);
   items.forEach(function(it){ var b=document.createElement('button'); b.type='button'; b.setAttribute('role','menuitem'); b.textContent=it[1]; var on=(it[0]==='all'&&opts.scope==='all')||(it[0]!=='all'&&(opts.scope===it[0]||(opts.scope==='this'&&it[0]===lang()))); if(on) b.className='on';
-    b.addEventListener('click',function(){ opts.scope=(it[0]==='all')?'all':(it[0]===lang()?'this':it[0]); m.hidden=true; document.getElementById('findlang').setAttribute('aria-expanded','false'); paintOpts(); lastKey=''; if(q.value.trim()) run(false); }); m.appendChild(b); }); }
+    b.addEventListener('click',function(){ opts.scope=(it[0]==='all')?'all':(it[0]===lang()?'this':it[0]); m.hidden=true; document.getElementById('findlang').setAttribute('aria-expanded','false'); paintOpts(); lastKey=''; save(); if(q.value.trim()) run(false); }); m.appendChild(b); }); }
 document.getElementById('findlang').addEventListener('click',function(){ var m=document.getElementById('findlangmenu'); if(m.hidden){ langMenu(); m.hidden=false; this.setAttribute('aria-expanded','true'); } else { m.hidden=true; this.setAttribute('aria-expanded','false'); } });
 document.addEventListener('click',function(ev){ var m=document.getElementById('findlangmenu'); if(!m.hidden&&!ev.target.closest('.folang')){ m.hidden=true; document.getElementById('findlang').setAttribute('aria-expanded','false'); } });
-function tog(id,key){ var b=document.getElementById(id); b.addEventListener('click',function(){ opts[key]=!opts[key]; paintOpts(); lastKey=''; if(q.value.trim()) run(false); }); }
+function tog(id,key){ var b=document.getElementById(id); b.addEventListener('click',function(){ opts[key]=!opts[key]; paintOpts(); lastKey=''; save(); if(q.value.trim()) run(false); }); }
 tog('findcase','cs'); tog('findword','whole');
+// ---------- the window's place (29 Sep 2026): the reader's (x, y) — where it was called, dragged or remembered — clamped into the
+// viewport; the list takes the room below the window (MINL px at least, reserved while unfolded so the window never jumps as the list
+// comes and goes), and the window rises only when even that does not fit. A phone (≤ 700 px): the stylesheet's edge-to-edge band.
+var row=bar.querySelector('.findrow'), foldBtn=document.getElementById('findfold'), pos=null, MINL=120, keepFrac=null;
+function narrow(){ return window.innerWidth<=700; }
+function folded(){ return bar.classList.contains('folded'); }
+function layout(){ if(bar.hidden) return; if(narrow()){ bar.style.left=bar.style.top=bar.style.right=bar.style.width=list.style.maxHeight=''; return; }
+  var vw=window.innerWidth, vh=window.innerHeight, w=Math.min(560,vw-32), f=folded(), shown=!f&&!list.hidden; bar.style.width=w+'px'; bar.style.right='auto';
+  var head=bar.offsetHeight-(shown?list.offsetHeight+6:0), x=pos?pos.x:(document.documentElement.dir==='rtl'?16:vw-w-16), y=pos?pos.y:10;   // head: the window without its list (6 = the list's top margin); unplaced, it opens in the page's end corner — top left in a right-to-left language
+  x=Math.max(8,Math.min(vw-w-8,x)); y=Math.max(8,Math.min(vh-8-head-(f?0:MINL+6),y)); bar.style.left=x+'px'; bar.style.top=y+'px';
+  if(!f) list.style.maxHeight=Math.max(MINL,Math.min(0.42*vh,420,vh-8-y-head-6))+'px'; }
+window.addEventListener('resize',layout);
+// drag: the grip or any bare part of the top row (not the input, not a button); pointer capture keeps the drag when the pointer outruns the row
+row.addEventListener('pointerdown',function(ev){ if(narrow()||ev.button!==0||ev.target.closest('input,button,a,select')) return;
+  ev.preventDefault(); var r=bar.getBoundingClientRect(), dx=ev.clientX-r.left, dy=ev.clientY-r.top; try{ row.setPointerCapture(ev.pointerId); }catch(e){} bar.classList.add('dragging');
+  function mv(e){ pos={x:e.clientX-dx,y:e.clientY-dy}; layout(); }
+  function up(){ row.removeEventListener('pointermove',mv); row.removeEventListener('pointerup',up); row.removeEventListener('pointercancel',up); bar.classList.remove('dragging'); var rr=bar.getBoundingClientRect(); pos={x:rr.left,y:rr.top}; save(); }
+  row.addEventListener('pointermove',mv); row.addEventListener('pointerup',up); row.addEventListener('pointercancel',up); });
+// fold: one row (grip, input, count, ▲ ▼, fold, ✕); the options, the location line and the list are hidden
+function setFold(on){ bar.classList.toggle('folded',!!on); foldBtn.textContent=on?'▸':'▾'; foldBtn.setAttribute('aria-expanded',String(!on)); layout(); }
+foldBtn.addEventListener('click',function(){ setFold(!folded()); save(); });
+// sticky: every change is written (debounced; flushed when the page goes away), a page loaded with the window open reopens it
+var KEY='qtech-find', saveT=null;
+function flush(){ clearTimeout(saveT); saveT=null; try{ localStorage.setItem(KEY,JSON.stringify({open:!bar.hidden,x:pos?Math.round(pos.x):null,y:pos?Math.round(pos.y):null,collapsed:folded(),q:q.value,cs:opts.cs,whole:opts.whole,scope:opts.scope})); }catch(e){} }
+function save(){ clearTimeout(saveT); saveT=setTimeout(flush,250); }
+window.addEventListener('pagehide',function(){ if(saveT) flush(); });
 // ---------- open (where it was called), close, keys
-var lastPos=null;
-function place(ev){ var vw=window.innerWidth, vh=window.innerHeight; if(vw<=700){ bar.style.left=''; bar.style.top=''; bar.style.right=''; return; }
-  var w=Math.min(560,vw-32), x, y; if(ev&&typeof ev.clientX==='number'&&(ev.clientX||ev.clientY)){ x=ev.clientX-24; y=ev.clientY+14; lastPos={x:x,y:y}; } else if(lastPos){ x=lastPos.x; y=lastPos.y; } else { x=vw-w-16; y=10; }
-  x=Math.max(8,Math.min(vw-w-8,x)); y=Math.max(8,Math.min(vh-160,y)); bar.style.left=x+'px'; bar.style.top=y+'px'; bar.style.right='auto'; bar.style.width=w+'px'; }
-function open(ev){ place(ev); bar.hidden=false; document.body.classList.add('has-find'); paintOpts(); q.focus(); try{ q.select(); }catch(e){} if(q.value.trim()&&!hits.length) run(false); }
-function close(){ bar.hidden=true; document.body.classList.remove('has-find'); if(running) running.stop=true; running=null; clearHL(); hits=[]; cur=-1; lastKey=''; list.hidden=true; list.innerHTML=''; }
+function open(ev,quiet){ if(!narrow()&&ev&&typeof ev.clientX==='number'&&(ev.clientX||ev.clientY)) pos={x:ev.clientX-24,y:ev.clientY+14};
+  bar.hidden=false; document.body.classList.add('has-find'); paintOpts(); layout(); save(); if(quiet) return;
+  q.focus(); try{ q.select(); }catch(e){} if(q.value.trim()&&!hits.length) run(false); }
+function close(){ bar.hidden=true; document.body.classList.remove('has-find'); if(running) running.stop=true; running=null; clearHL(); hits=[]; cur=-1; lastKey=''; list.hidden=true; list.innerHTML=''; save(); }
 function run(jump){ var v=q.value.trim(); var key=v+'|'+opts.cs+'|'+opts.whole+'|'+opts.scope+'|'+lang();
   if(!v){ if(running) running.stop=true; running=null; clearHL(); hits=[]; cur=-1; lastKey=''; list.hidden=true; list.innerHTML=''; show(); return; }
   if(key===lastKey&&!running){ if(jump) go(cur+1); return; }
   lastKey=key; search(v,function(){ if(jump&&hits.length) go(0); }); }
 var typing=null;
-q.addEventListener('input',function(){ clearTimeout(typing); typing=setTimeout(function(){ run(false); },220); });
+q.addEventListener('input',function(){ clearTimeout(typing); typing=setTimeout(function(){ run(false); },220); save(); });
 q.addEventListener('keydown',function(ev){ if(ev.key==='Enter'){ ev.preventDefault(); clearTimeout(typing); if(running){ running.then=true; } if(ev.shiftKey&&hits.length) go(cur-1); else if(hits.length&&lastKey===q.value.trim()+'|'+opts.cs+'|'+opts.whole+'|'+opts.scope+'|'+lang()) go(cur+1); else run(true); } else if(ev.key==='Escape'){ ev.preventDefault(); close(); } });
 q.addEventListener('search',function(){ if(!q.value){ run(false); } });
 document.querySelectorAll('[data-findopen]').forEach(function(b){ b.addEventListener('click',function(ev){ if(bar.hidden) open(ev); else close(); }); });
@@ -235,6 +268,18 @@ document.addEventListener('keydown',function(ev){ var t=ev.target; var typing=t&
   if(!typing&&ev.key==='/'&&!ev.ctrlKey&&!ev.metaKey&&!ev.altKey){ ev.preventDefault(); open(null); }
   else if((ev.ctrlKey||ev.metaKey)&&!ev.shiftKey&&!ev.altKey&&(ev.key==='k'||ev.key==='K')){ ev.preventDefault(); open(null); }
   else if(ev.key==='Escape'&&!bar.hidden&&t!==q){ close(); } });
-document.querySelectorAll('[data-setlang]').forEach(function(b){ b.addEventListener('click',function(){ setTimeout(function(){ paintOpts(); index=null; lastKey=''; if(!bar.hidden&&q.value.trim()) run(false); },0); }); });
-window.__find={open:open,close:close,search:function(v,o,cb){ if(o) Object.assign(opts,o); paintOpts(); q.value=v; lastKey=''; return new Promise(function(res){ search(v,function(){ res(hits.length); }); }); },go:go,hits:function(){ return hits; },cur:function(){ return cur; },opts:opts,running:function(){ return !!running; }};
+// a language switch (in place, no reload) re-runs the search once the language's text is there; the list keeps its scroll fraction (29 Sep 2026)
+document.querySelectorAll('[data-setlang]').forEach(function(b){ b.addEventListener('click',function(){ var kf=(!bar.hidden&&!list.hidden&&list.scrollHeight)?list.scrollTop/list.scrollHeight:null;
+  setTimeout(function(){ paintOpts(); index=null; lastKey=''; if(bar.hidden||!q.value.trim()) return; var again=function(){ keepFrac=kf; lastKey=''; run(false); };
+    if(window.__langReady) window.__langReady(lang()).then(again); else again(); },0); }); });
+window.__find={open:open,close:close,search:function(v,o,cb){ if(o) Object.assign(opts,o); paintOpts(); q.value=v; lastKey=''; save(); return new Promise(function(res){ search(v,function(){ res(hits.length); }); }); },go:go,hits:function(){ return hits; },cur:function(){ return cur; },opts:opts,running:function(){ return !!running; },fold:setFold,layout:layout};
+// ---------- at load: the remembered query, options, place and fold; an open window reopens (without taking the focus) and searches once the
+// page is ready and the languages it reads have arrived — sliced as always, the highlights and the list follow
+(function(){ var s=null; try{ s=JSON.parse(localStorage.getItem(KEY)||'null'); }catch(e){} if(!s||typeof s!=='object') return;
+  if(typeof s.q==='string') q.value=s.q; opts.cs=!!s.cs; opts.whole=!!s.whole; if(s.scope==='all'||s.scope==='this'||LANGS.indexOf(s.scope)>=0) opts.scope=s.scope;
+  if(typeof s.x==='number'&&typeof s.y==='number') pos={x:s.x,y:s.y}; setFold(!!s.collapsed); paintOpts();
+  if(!s.open) return; open(null,true);
+  function ready(){ var ps=(scopeLangs()||LANGS).map(function(L){ return window.__langReady?window.__langReady(L):null; });
+    Promise.all(ps).then(function(){ if(!bar.hidden&&q.value.trim()){ lastKey=''; run(false); } }); }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',ready); else ready(); })();
 })();'''

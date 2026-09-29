@@ -67,7 +67,7 @@ updated: 2026-09-04
 ## Прогноз и открытые вопросы
 Подтвердить или понизить в статусе в течение 12–24 месяцев: поставит ли Kookaburra qLDPC-память на оборудовании с c-каплерами или сдвинется снова; достигнет ли Rigetti медианы 99.5% при 108 кубитах; опубликует ли хоть один вендор значение одновременных наводок для полной решётки. Лучший случай к 2029 году: маршрутизация на кристалле со степенью 6 выходит без потери точности, и планарная решётка несёт высокоскоростную память. Худший случай: координационное число остаётся вблизи 3.5, а масштаб покупается накладными расходами 2d². Открыто: является ли разрыв между парой и полной шириной внутренне присущим.
 
-## Источники
+## Литература
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [33] IBM, “IBM Quantum Computing — Hardware and roadmap.” [Online]. Available: https://www.ibm.com/quantum/hardware [D]
 [36] Rigetti Computing, Inc., “Rigetti Announces General Availability of 108-Qubit System,” Apr. 7, 2026. [Online]. Available: https://investors.rigetti.com/news-releases/news-release-details/rigetti-announces-general-availability-108-qubit-system [C]

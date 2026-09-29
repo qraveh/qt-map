@@ -57,7 +57,7 @@ Architectures: the primary encoding of all three trapped-ion architectures (QCCD
 ## Outlook & open questions
 Confirm if all-electronic control reaches a fleet average below 10⁻⁵ with published leakage, or a second group replicates 8.4×10⁻⁵; demote if it stays a ten-qubit result. Best case 2029: microwave-driven hyperfine qubits the default. Worst case: gradient-limited leakage caps ions near 10⁻⁵ and omg takes the base.
 
-## Sources
+## References
 [19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [C]
 [97] A. Ransford *et al.*, “A 98-qubit trapped-ion quantum computer with all-to-all connectivity,” *Nature*, vol. 655, no. 8121, pp. 81–86, Jun. 2026, doi: [10.1038/s41586-026-10676-4](https://doi.org/10.1038/s41586-026-10676-4). [arXiv:2511.05465](https://arxiv.org/abs/2511.05465). [D]
 [102] A. C. Hughes *et al.*, “Trapped-ion two-qubit gates with >99.99% fidelity without ground-state cooling,” [arXiv:2510.17286](https://arxiv.org/abs/2510.17286), Oct. 2025. [D]

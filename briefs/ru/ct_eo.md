@@ -61,7 +61,7 @@ TFLN поставляют два коммерческих вендора — Hyp
 ## Прогноз и открытые вопросы
 Подтвердить к 2027 году: петля короче 200 нс при более чем 32 каналах либо системный такт быстрее 1 МГц; понизить в ранге, если в 2028 году 1 МГц у Aurora по-прежнему будет пределом. Лучший сценарий к 2029 году: ~10 МГц в масштабе стойки. Худший сценарий: задержка отдельного блока так и не сомкнётся с масштабом. Открытые вопросы: удержатся ли 150 нс под нагрузкой в 32 канала; выйдет ли энергонезависимый BTO на приемлемые проходные потери.
 
-## Источники
+## Литература
 [169] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
 [172] Xanadu, “Xanadu sets new industry benchmark in photonic chip packaging,” PR Newswire, Jun. 10, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/xanadu-sets-new-industry-benchmark-in-photonic-chip-packaging-302796562.html [C]
 [173] H. A. Rad *et al.*, “Scaling and networking a modular photonic quantum computer,” *Nature*, vol. 638, no. 8052, pp. 912–919, Jan. 2025, doi: [10.1038/s41586-024-08406-9](https://doi.org/10.1038/s41586-024-08406-9). [D]

@@ -70,8 +70,7 @@ Borealis настраивает каждый петлевой светодели
 ## Прогноз и открытые вопросы
 Подтвердить, если к 2027-12-31 ни один классический сэмплер не сравняется с Jiuzhang 4.0 на её бенчмарках по подсистемам, а ORCA опубликует для PT-3 моды, петли и потери вместе с классическим сравнением; понизить, если к тому времени какой-либо сэмплер сравняется с Jiuzhang 4.0 или если PT-3 будет поставлена в 2026 году без этих показателей. Открытые вопросы. (1) Каковы потери на элемент в программируемых сетках Jiuzhang 4.0? (2) Экстраполируется ли валидация на подсистемах на полный масштаб? (3) Что PT-2 подаёт на вход и через сколько петель? (4) Сохраняет ли какое-либо приложение GBS ускорение при пропускании 33–51%? (5) Может ли петлевой сэмплер стать fusion-машиной, если добавить объявление (heralding) и прямую связь (feed-forward)?
 
-## Источники
-
+## Литература
 [175] H.-L. Liu *et al.*, “Gaussian boson sampling with 1,024 squeezed states in 8,176 modes,” *Nature*, vol. 653, no. 8115, pp. 687–692, May 2026, doi: [10.1038/s41586-026-10523-6](https://doi.org/10.1038/s41586-026-10523-6). [arXiv:2508.09092](https://arxiv.org/abs/2508.09092). [D]
 [268] C. S. Hamilton *et al.*, “Gaussian Boson Sampling,” *Phys. Rev. Lett.*, vol. 119, no. 17, Art. no. 170501, Oct. 2017, doi: [10.1103/PhysRevLett.119.170501](https://doi.org/10.1103/PhysRevLett.119.170501). [arXiv:1612.01199](https://arxiv.org/abs/1612.01199). [G]
 [269] H. Qi, D. J. Brod, N. Quesada, and R. García-Patrón, “Regimes of Classical Simulability for Noisy Gaussian Boson Sampling,” *Phys. Rev. Lett.*, vol. 124, no. 10, Art. no. 100502, Mar. 2020, doi: [10.1103/PhysRevLett.124.100502](https://doi.org/10.1103/PhysRevLett.124.100502). [arXiv:1905.12075](https://arxiv.org/abs/1905.12075). [S]

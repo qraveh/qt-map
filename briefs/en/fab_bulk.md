@@ -68,8 +68,7 @@ Two cells are ✅ on architecture papers: Borealis's Methods (fibre delay lines,
 ## Outlook & open questions
 Confirm if, by 2027-12-31, an assembled sampler beats Jiuzhang 4.0's 51% end-to-end efficiency at ≥8,000 modes, or ORCA publishes PT loop count and loss; demote if the next Jiuzhang or PT-3 puts its interferometers on a chip, leaving the technology only delays and detectors. Open questions. (1) What is each Borealis loop's round-trip transmission? (2) Are Jiuzhang 4.0's 16-mode interferometers bulk, fibre or integrated? (3) How often must a loop sampler be realigned, at what cost in uptime? (4) Can on-chip delay approach fibre's ~0.2 dB/km, or will every photonic computer keep fibre spools? (5) Does any export-control entry beyond the 2024 US quantum ECCNs capture SNSPD or TES systems?
 
-## Sources
-
+## References
 [169] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
 [173] H. A. Rad *et al.*, “Scaling and networking a modular photonic quantum computer,” *Nature*, vol. 638, no. 8052, pp. 912–919, Jan. 2025, doi: [10.1038/s41586-024-08406-9](https://doi.org/10.1038/s41586-024-08406-9). [D]
 [175] H.-L. Liu *et al.*, “Gaussian boson sampling with 1,024 squeezed states in 8,176 modes,” *Nature*, vol. 653, no. 8115, pp. 687–692, May 2026, doi: [10.1038/s41586-026-10523-6](https://doi.org/10.1038/s41586-026-10523-6). [arXiv:2508.09092](https://arxiv.org/abs/2508.09092). [D]

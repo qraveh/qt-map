@@ -109,8 +109,7 @@ updated: 2026-09-03
 
 Открытые вопросы: чем вызван налог на тайлинг в 40 базисных пунктов — соединениями или калибровкой? Можно ли вывести гребёнку мод метрового кабеля из рабочей полосы, не укорачивая его? Какова точность l-coupler спустя два года после заявления? Переживает ли qLDPC-проверка, охватывающая несколько модулей, дополнительную ошибку транспорта? Следить за обновлением дорожной карты Rigetti, за первым измерением IBM на Cockatoo, за выходом годных на Kilofab у QuantWare и за любой статьёй, где граница чиплета рассматривается как самостоятельный объект бенчмаркинга.
 
-## Источники
-
+## Литература
 [36] Rigetti Computing, Inc., “Rigetti Announces General Availability of 108-Qubit System,” Apr. 7, 2026. [Online]. Available: https://investors.rigetti.com/news-releases/news-release-details/rigetti-announces-general-availability-108-qubit-system [C]
 [50] C. Dundon, S. Hall, M. Hollister, and A. Lindler, “IBM's new modular architecture for cryogenic systems,” IBM Quantum Computing Blog, Aug. 19, 2026. [Online]. Available: https://www.ibm.com/quantum/blog/modular-cryogenics [C]
 [481] R. Mandelbaum *et al.*, “How IBM will build the world's first large-scale, fault-tolerant quantum computer,” IBM Quantum Computing Blog, Jun. 10, 2025. [Online]. Available: https://www.ibm.com/quantum/blog/large-scale-ftqc [C]
@@ -127,5 +126,5 @@ updated: 2026-09-03
 - l-coupler у IBM, «впервые продемонстрированный в 2024 году» на Flamingo [C][50], [481]: ни длины, ни точности, ни задержки, ни публикации по состоянию на 2026-09-03 не найдено.
 - Причина перехода Rigetti от 99.5% (четыре чиплета) к 99.1% (двенадцать чиплетов) в обоих релизах не указана [C][36], [751]; отделить вклад соединений от вклада калибровки по публичным данным невозможно.
 - В аннотациях arXiv:2308.09240 и arXiv:2409.04634 не названы ни институты авторов, ни числовые значения двухкубитной точности; заявление «на том же уровне, что и однокристальный» в [749] не подкреплено ни одним числом.
-- 40,000 линий ввода-вывода у QuantWare VIO-40K фигурируют в общей записи фактов [G:QUANTWARE-VIO], но отсутствуют на самой странице отраслевой прессы от 2025-12-08; число линий у источника не подтверждено.
+- 40,000 линий ввода-вывода у QuantWare Bass-A10K (VIO-40K) фигурируют в общей записи фактов [G:QUANTWARE-VIO], но отсутствуют на самой странице отраслевой прессы от 2025-12-08; число линий у источника не подтверждено.
 - Семейства патентов по чиплетному корпусированию Rigetti и вертикальному вводу-выводу QuantWare: датированной записи о правообладателе не найдено.

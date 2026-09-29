@@ -2,7 +2,7 @@
 """C2 smoke — machines on the Atlas (sync Playwright API). Runs the same script at 1600×1000 and 400×800:
 default 96 technologies lit → select google-willow (lit = its non-gap nodes, only path `sc` lit) → requires on (edges only among lit)
 → click transmon (lit ⊆ machine ∪ {transmon}; technology card has "Used by" with ≥ 10 machines) → reset (96 lit, select empty,
-no altuse) → RU labels. Exit 0 iff every check passes and there are 0 console errors (Google Fonts ERR_TUNNEL ignored)."""
+no altuse) → organisation links (§2, the sc and transmon cards) → RU labels. Exit 0 iff every check passes and there are 0 console errors (Google Fonts ERR_TUNNEL ignored)."""
 import json, pathlib, sys
 from playwright.sync_api import sync_playwright
 
@@ -91,7 +91,7 @@ def run(pw, w, h):
     check('willow: lit technologies == its non-gap nodes', set(r['lit']) == WILLOW_NODES, (sorted(set(r['lit']) ^ WILLOW_NODES)))
     check('willow: only path sc lit', set(r['lines']) == {'sc'}, r['lines'])
     check('willow: altuse == nodes used only as alternate', set(r['altuse']) == WILLOW_ALT, (r['altuse'], sorted(WILLOW_ALT)))
-    check('willow: machine card shown (title, page link, evidence footer)', 'Willow' in r['card'] and 'page ↗' in r['card'] and '✅ 14 / 16' in r['card'], r['card'][:120])
+    check('willow: machine card shown (title, page link, evidence footer)', 'Willow' in r['card'] and 'page ↗' in r['card'] and '✅ 14 / 17' in r['card'], r['card'][:120])
     check('willow: card shows the Atlas gaps', 'Atlas gap: ∅G-lru' in r['card'], '')
     check('willow: no horizontal overflow', not r['hscroll'] and not r['inspOver'], (r['hscroll'], r['inspOver']))
     p.locator('#bartog').click()
@@ -113,6 +113,19 @@ def run(pw, w, h):
     p.locator('#tg-reset').click()
     r = read()
     check(f'reset: {NN} lit, {NP} lines, no edges, select empty, no altuse, card closed', len(r['lit']) == NN and len(r['lines']) == NP and not r['edges'] and r['machine'] == '' and not r['altuse'] and r['card'] == '', (len(r['lit']), r['machine'], r['altuse']))
+    # organisation links (the editor, 29 Sep 2026: "links to organizations … everywhere"): §2's prose, the architecture card's Actors & goals
+    # and the technology card's annotations link organisations; every link opens a built organisation page; none sits in a heading or a link
+    built = lambda hs: all((ROOT / 'dist' / h).is_file() for h in hs)
+    s2 = p.evaluate("()=>[...document.querySelectorAll('.secbody[data-sec=\"en-s2\"] a.org')].map(a=>a.getAttribute('href'))")
+    check(f'§2 (EN) links organisations: ≥ 20 a.org, each to an existing dist/organisation page ({len(s2)})', len(s2) >= 20 and built(s2), sorted({h for h in s2 if not built([h])})[:5])
+    AG = "t=>{const s=[...document.querySelectorAll('#insp .space')].find(x=>x.querySelector('h4')&&x.querySelector('h4').textContent.trim()===t); return s?[...s.querySelectorAll('a.org')].map(a=>a.getAttribute('href')):null;}"
+    p.evaluate("window.__isolatePath('sc')"); ag = p.evaluate(AG, 'Actors & goals')
+    check('architecture card sc: ≥ 3 organisation links in "Actors & goals", each to a built page', ag is not None and len(ag) >= 3 and built(ag), ag)
+    p.evaluate("window.__selectNode('transmon')"); an = p.evaluate(AG, 'Actors & goals — annotations')
+    check('technology card transmon: ≥ 1 organisation link in "Actors & goals — annotations", each to a built page', an is not None and len(an) >= 1 and built(an), an)
+    nest = p.evaluate("()=>document.querySelectorAll('h1 a.org,h2 a.org,h3 a.org,h4 a.org,a a.org').length")
+    check('no organisation link inside a heading (h1–h4) or inside another link', nest == 0, nest)
+    p.locator('#tg-reset').click()
 
     # brief E (17 Sep): lens labels, reading marks as badges, static glyph keys
     opts = p.evaluate("()=>[...document.querySelectorAll('#lens option')].map(o=>[o.value,o.textContent])")
@@ -142,10 +155,18 @@ def run(pw, w, h):
     check('no value "vac" anywhere in the DOM', novac)
     keys = p.evaluate("()=>[...document.querySelectorAll('#glyphlegend [data-glyph]')].map(e=>({k:e.dataset.glyph,n:e.querySelector('.cnt').textContent,title:e.title,role:e.getAttribute('role')}))")
     check('glyph legend: 1 static key with a count and a definition, no button role', [k['k'] for k in keys] == ['empty'] and [k['n'] for k in keys] == GLYPH_N and all(k['title'] and k['role'] is None for k in keys), keys)
+    # every technology carries one badge per architecture that uses it — full for a primary, half-tone for an alternate (the editor, 29 Sep 2026: cx_nn "should be 7")
+    exp = {}
+    for pth in GRAPH['paths']:
+        for L, ids in pth['slots'].items():
+            for i, nid in enumerate(ids): exp.setdefault(nid, [0, 0])[0 if i == 0 else 1] += 1
+    got = p.evaluate("()=>{const o={}; document.querySelectorAll('#mapwrap g.station').forEach(g=>{const id=g.querySelector('text.id').textContent; o[id]=[g.querySelectorAll('rect.badge:not(.alt)').length,g.querySelectorAll('rect.badge.alt').length];}); return o;}")
+    bad = {k: (got.get(k), v) for k, v in exp.items() if got.get(k) != v}
+    check(f'badges: one square per architecture on every technology ({len(exp)} technologies; cx_nn {exp.get("cx_nn")})', not bad and exp.get('cx_nn') == [7, 0], list(bad.items())[:5])
     p.locator('#glyphlegend [data-glyph="empty"]').dispatch_event('click'); r = read()
     check('glyph key click: no lens change, nothing dimmed', p.locator('#lens').evaluate('e=>e.value') == 'family' and len(r['lit']) == NN, (p.locator('#lens').evaluate('e=>e.value'), len(r['lit'])))
 
-    p.locator('[data-setlang="ru"]').filter(visible=True).first.click()
+    p.evaluate("()=>window.__setLang('ru')")
     p.wait_for_function("document.getElementById('app').getAttribute('data-lang')==='ru'")
     vis = p.evaluate("()=>[...document.querySelectorAll('.machgrp .lbl')].filter(e=>getComputedStyle(e).display!=='none').map(e=>e.textContent)")
     og = p.evaluate("()=>[...document.querySelectorAll('#machine optgroup')].map(o=>o.label)")
@@ -154,8 +175,8 @@ def run(pw, w, h):
     check('RU: lens select labels', opts == LENS_RU, opts)
     p.select_option('#machine', 'google-willow')
     r = read()
-    check('RU: machine card in Russian', 'страница ↗' in r['card'] and 'источники: ✅ 14 / 16' in r['card'], r['card'][:100])
-    p.locator('[data-setlang="en"]').filter(visible=True).first.click()
+    check('RU: machine card in Russian', 'страница ↗' in r['card'] and 'источники: ✅ 14 / 17' in r['card'], r['card'][:100])
+    p.evaluate("()=>window.__setLang('en')")
 
     errs = [e for e in errors if not ('fonts.g' in e and ('ERR_TUNNEL' in e or 'net::' in e)) and 'ERR_TUNNEL' not in e]
     check('0 console errors', not errs, errs[:3])
@@ -313,7 +334,7 @@ def sorting(pw, w, h):
     # brief index — centrality asc/desc, ↺ restores, both languages
     for lang in ('en', 'ru'):
         if lang == 'ru':
-            p.locator('[data-setlang="ru"]').filter(visible=True).first.click()
+            p.evaluate("()=>window.__setLang('ru')")
             p.wait_for_function("document.getElementById('app').getAttribute('data-lang')==='ru'")
         sb = f'#app .lang-{lang} div.tbl.bidx[data-sort="centrality"]'
         o = state(sb)
@@ -365,7 +386,7 @@ def chapter8(pw, w, h):
               srcEn:en[idx(en,'9')]||'', srcRu:ru[idx(ru,'9')]||'', macEn:en[idx(en,'8')]||''};
     }""")
     check('§8 follows §7 and precedes §9 (EN and RU)', r['en7'] >= 0 and r['en8'] == r['en7'] + 1 and r['en9'] == r['en8'] + 1 and r['ru8'] == r['en8'] and r['ru9'] == r['en9'], r)
-    check('§8 is the machines chapter; §9 is Sources', r['macEn'].startswith('8Quantum machines') and r['srcEn'].startswith('9Sources') and r['srcRu'].startswith('9Источники'), (r['macEn'][:30], r['srcEn'][:20], r['srcRu'][:20]))
+    check('§8 is the machines chapter; §9 is References', r['macEn'].startswith('8Quantum machines') and r['srcEn'].startswith('9References') and r['srcRu'].startswith('9Литература'), (r['macEn'][:30], r['srcEn'][:20], r['srcRu'][:20]))
     SUBS = ['8.1', '8.2', '8.3', '8.4', '8.5', '8.6', '8.7']
     check('seven subsections 8.1–8.7 in both languages', [x[:3] for x in r['h3en']] == SUBS and [x[:3] for x in r['h3ru']] == SUBS, (r['h3en'], r['h3ru']))
     check('TOC lists §8 with 8.1–8.7 (EN and RU)', r['tocEn'] == ['8'] + SUBS and r['tocRu'] == r['tocEn'], (r['tocEn'], r['tocRu']))
@@ -868,7 +889,7 @@ def feedback(pw):
     p.evaluate("()=>{location.hash=''; document.getElementById('ru-s9').scrollIntoView();}"); p.wait_for_timeout(300)
     p.keyboard.press('Escape'); p.click('#fbkbtn'); p.wait_for_timeout(200)
     r3 = p.evaluate("()=>({ctx:document.getElementById('fbkctx').textContent, mail:decodeURIComponent(document.getElementById('fbkmail').href)})")
-    check('the location is the English section title (§9 Sources), the mail goes to Raveh Neeman', 'location: §9 Sources' in r3['ctx'] and 'ru-s9' not in r3['ctx'] and r3['mail'].startswith('mailto:raveh.neeman@qodeh.com?subject=[QT Atlas] Feedback: §9 Sources'), (r3['ctx'][:160], r3['mail'][:120]))
+    check('the location is the English section title (§9 References), the mail goes to Raveh Neeman', 'location: §9 References' in r3['ctx'] and 'ru-s9' not in r3['ctx'] and r3['mail'].startswith('mailto:raveh.neeman@qodeh.com?subject=[QT Atlas] Feedback: §9 References'), (r3['ctx'][:160], r3['mail'][:120]))
     p.evaluate("()=>window.__setLang('en')")
     ctx.close(); b.close()
     errs = [e for e in errors if not ('fonts.g' in e and ('ERR_TUNNEL' in e or 'net::' in e)) and 'ERR_TUNNEL' not in e]
@@ -876,8 +897,67 @@ def feedback(pw):
     return fails
 
 
+HE_PAGE = ROOT / 'dist' / 'he' / 'index.html'
+P5 = """(L)=>{const c=document.querySelector('.secbody[data-sec="'+L+'-s5"]'); const p=c&&c.querySelectorAll('p')[3]; if(!p||!p.getClientRects().length) return null; const r=p.getBoundingClientRect(); return {top:Math.round(r.top), text:p.textContent.slice(0,24)};}"""
+
+
+def hebrew(pw):
+    """The Hebrew page (29 Sep 2026, the third language): dist/he/index.html loads right to left in Hebrew; the three language switches
+    name the three languages in their own scripts; switching he → en → ru → he loads the other languages' fragments and keeps the
+    reader's paragraph at the top; Find offers the three languages and "all"; the map's cards read the graph's Hebrew names; a Hebrew
+    record page exists and its cards link Hebrew record pages."""
+    import re as _re
+    fails, errors = [], []
+    b = pw.chromium.launch(); ctx = b.new_context(viewport={'width': 1280, 'height': 860}); p = ctx.new_page()
+    def check(label, cond, detail=''):
+        print(f"  [{'ok' if cond else 'FAIL'}] {label}{(' — ' + str(detail)) if (detail and not cond) else ''}")
+        if not cond: fails.append(label)
+    print('Hebrew page — 1280×860')
+    p.on('console', lambda m: m.type == 'error' and not ('ERR_FILE_NOT_FOUND' in m.text and '/media/' in (m.location or {}).get('url', '')) and errors.append(m.text))
+    p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
+    p.goto(HE_PAGE.as_uri(), wait_until='load', timeout=120000); wait_langs(p)
+    p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0", timeout=60000)
+    r = p.evaluate("()=>({dir:document.documentElement.dir, lang:document.documentElement.lang, app:document.getElementById('app').dataset.lang, others:document.getElementById('app').dataset.otherLangs})")
+    check('dist/he/index.html: <html dir="rtl" lang="he">, the page in Hebrew, English and Russian as the other languages', r['dir'] == 'rtl' and r['lang'] == 'he' and r['app'] == 'he' and set(json.loads(r['others'])) == {'en', 'ru'}, r)
+    sw = p.evaluate("()=>['.mast .controls .seg','.mb-seg','#floatlang'].map(s=>[...document.querySelectorAll(s+' [data-setlang]')].map(b=>b.dataset.setlang+':'+b.textContent.trim()))")
+    check('the three switches (masthead, phone bar, floating pill) name English · Русский · עברית', all(sorted(x) == ['en:English', 'he:עברית', 'ru:Русский'] for x in sw), sw)
+    t = p.evaluate("()=>{const t=document.querySelector('nav.toc').getBoundingClientRect(), m=document.querySelector('main').getBoundingClientRect(); return {toc:t.left, main:m.right, sw:document.documentElement.scrollWidth, vw:innerWidth};}")
+    check('desktop: the contents column sits right of the text; no horizontal page scroll', t['toc'] >= t['main'] and t['sw'] <= t['vw'] + 1, t)
+    # the reader's place across he → en → ru → he, the fragments loaded on the way
+    p.evaluate("()=>{const p=document.querySelectorAll('.secbody[data-sec=\"he-s5\"] p')[3]; window.scrollTo(0, p.getBoundingClientRect().top + scrollY - 30);}"); p.wait_for_timeout(400)
+    seq = [('he', p.evaluate(P5, 'he'))]
+    for L in ('en', 'ru', 'he'):
+        p.evaluate("(L)=>window.__setLang(L)", L)
+        p.wait_for_function("(L)=>!document.documentElement.classList.contains('lang-loading') && window.__langLoaded(L)", arg=L, timeout=60000); p.wait_for_timeout(500)
+        seq.append((L, p.evaluate(P5, L), p.evaluate("()=>document.documentElement.dir")))
+    ok = all(x[1] and abs(x[1]['top'] - 30) <= 40 for x in seq) and [x[2] for x in seq[1:]] == ['ltr', 'ltr', 'rtl']
+    check('he → en → ru → he: each language\'s fragment arrives and the 4th paragraph of §5 stays at the top (± 40 px); the direction follows', ok, seq)
+    # Find: this page's language, the two others, and all
+    p.evaluate("()=>window.__find.open(null,true)"); p.click('#findlang'); p.wait_for_timeout(200)
+    menu = p.evaluate("()=>[...document.querySelectorAll('#findlangmenu button')].map(b=>b.textContent.trim())")
+    p.click('#findlang'); p.evaluate("()=>window.__find.close()")
+    check('Find: the language menu lists עברית, English, Русский and "all languages"', len(menu) == 4 and menu[:3] == ['עברית', 'English', 'Русский'], menu)
+    # the cards read the graph's names in Hebrew (data/i18n/graph_he.json), English where a name has no Hebrew yet
+    G = GRAPH; tr = next(n for n in G['nodes'] if n['id'] == 'transmon')
+    p.evaluate("()=>window.__selectNode('transmon')"); p.wait_for_timeout(300)
+    h3 = p.evaluate("()=>(document.querySelector('#insp h3')||{}).textContent||''")
+    check('the technology card is titled with the graph\'s Hebrew name (English if none)', h3.strip() == (tr.get('he') or tr['en']), (h3, tr.get('he')))
+    errs = [e for e in errors if not ('fonts.g' in e and ('ERR_TUNNEL' in e or 'net::' in e)) and 'ERR_TUNNEL' not in e]
+    check('0 console errors', not errs, errs[:3])
+    ctx.close(); b.close()
+    # a Hebrew record page: in Hebrew, right to left, its cards link the Hebrew record pages and its language links name the other two
+    rec = ROOT / 'dist' / 'he' / 'technology' / 'transmon.html'
+    h = rec.read_text(encoding='utf-8') if rec.exists() else ''
+    links = _re.findall(r'<a (?:class="[^"]*" )?href="((?:\.\./)+[^"#]*?/(?:technology|machine|architecture|organisation)/[^"#]+\.html)"', _re.sub(r'<div class="recbar">.*?</div>', '', h, flags=_re.S))
+    outside = [x for x in links if not x.startswith('../../he/')]
+    check('dist/he/technology/transmon.html: <html lang="he" dir="rtl">; its cards link only Hebrew record pages (%d links)' % len(links), h.startswith('<!doctype html>\n<html lang="he" dir="rtl">') and links and not outside, outside[:5])
+    langs = _re.findall(r'<a class="rb-lang" href="([^"]+)" hreflang="(\w+)"[^>]*>([^<]+)</a>', h)
+    check('the record page links its English and Russian twins by name', sorted((l, n) for _, l, n in langs) == [('en', 'English'), ('ru', 'Русский')] and all((ROOT / 'dist' / 'he' / 'technology' / u).resolve().exists() for u, _, _ in langs), langs)
+    return fails
+
+
 if __name__ == '__main__':
     with sync_playwright() as pw:
-        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800) + sorting(pw, 1280, 900) + sorting(pw, 400, 800) + chapter8(pw, 1280, 900) + chapter8(pw, 400, 800) + laptop(pw) + selections(pw) + hints(pw) + fullscreen(pw) + review23b(pw) + review23c(pw) + strip(pw) + folds(pw) + stripmodes(pw) + feedback(pw)
+        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800) + sorting(pw, 1280, 900) + sorting(pw, 400, 800) + chapter8(pw, 1280, 900) + chapter8(pw, 400, 800) + laptop(pw) + selections(pw) + hints(pw) + fullscreen(pw) + review23b(pw) + review23c(pw) + strip(pw) + folds(pw) + stripmodes(pw) + feedback(pw) + hebrew(pw)
     print('RESULT:', 'PASS' if not f else f'FAIL {f}')
     sys.exit(1 if f else 0)

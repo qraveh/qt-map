@@ -97,8 +97,7 @@ Loss is measured two incompatible ways. Ring-resonator intrinsic Q gives the 0.0
 
 Open questions. (1) What is the die yield of an integrated SNSPD array on 300 mm, and why has nobody published it? (2) Is BTO manufacturable at volume, or a hero-die material DARPA is paying to find out about? (3) Who second-sources this layer if GlobalFoundries reprioritises?
 
-## Sources
-
+## References
 [169] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
 [172] Xanadu, “Xanadu sets new industry benchmark in photonic chip packaging,” PR Newswire, Jun. 10, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/xanadu-sets-new-industry-benchmark-in-photonic-chip-packaging-302796562.html [C]
 [176] Quandela, “Quandela delivers Lucy, the most advanced photonic quantum computer worldwide, to EuroHPC and GENCI at CEA's TGCC,” Oct. 23, 2025. [Online]. Available: https://www.quandela.com/about-us/newsroom/quandela-delivers-lucy-the-most-advanced-photonic-quantum-computer-worldwide-to-eurohpc-and-genci-at-ceas-tgcc/ [C]

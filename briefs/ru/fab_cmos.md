@@ -127,8 +127,7 @@ g, производство: CMOS.
 
 Открытые вопросы: можно ли сделать долинное расщепление и зарядовый шум однородными по пластине — или каждый массив придётся отбирать постселекцией? Каков выход годных по кубитной точности у маршрута 300 mm? Удерживает ли разделяемое управление когерентную ошибку ниже порога? Может ли попадание переходов в номинал внутри маршрута выйти на субпроцентный уровень? Следить за первым числом выхода годных по точности, за первой мультипроектной пластиной SPINS, за окончательными решениями по CHIPS, за Intel.
 
-## Источники
-
+## Литература
 [10] IBM, “IBM to Acquire HRL Laboratories to Power the Future of Quantum,” Jul. 23, 2026. [Online]. Available: https://newsroom.ibm.com/2026-07-23-ibm-to-acquire-hrl-laboratories-to-power-the-future-of-quantum [C]
 [19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [C]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]

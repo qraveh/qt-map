@@ -61,7 +61,7 @@ Requires linear-optical fusion and a resource-state factory, neither at code-rel
 ## Outlook & open questions
 Confirm by 2028: an end-to-end fusion-lattice demonstration at any code distance with measured loss and logical error; demote if only component numbers persist. Best case 2029: a small working lattice. Worst case: it stays a paper and emitter hybrids inherit it. Open: does anyone rebut the 2026 critique; which threshold survives hardware; does Stage C publish a code-level number.
 
-## Sources
+## References
 [169] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
 [179] S. Bartolucci *et al.*, “Fusion-based quantum computation,” *Nat. Commun.*, vol. 14, Art. no. 912, Feb. 2023, doi: [10.1038/s41467-023-36493-1](https://doi.org/10.1038/s41467-023-36493-1). [arXiv:2101.09310](https://arxiv.org/abs/2101.09310). [S]
 [264] M. C. Löbl, L. A. M. Pettersson, J. Dragašević, S. X. Chen, and O. A. D. Sandberg, “The subthreshold issue of fusion-based quantum computing,” [arXiv:2606.28490](https://arxiv.org/abs/2606.28490), Jun. 2026. [S]

@@ -62,7 +62,7 @@ A drop-in Layer-1 alternative on the transmon lattice with tunable couplers, rep
 ## Outlook & open questions
 Confirm by end-2027: a ≥ 4-qubit fluxonium under on-chip flux control with published two-qubit RB, or a replication of 99.94%; demote if neither appears. Best case 2029: 2Q error near 10⁻⁴ cuts the surface-code budget for a given Λ; worst case, switching noise from the control die eats the coherence advantage. Does the flux-noise floor survive multiplexing? Can 0.2–1 GHz readout reach 99.5% in a lattice? What became of the Atlantic Quantum team?
 
-## Sources
+## References
 [15] D-Wave Quantum Inc., “D-Wave Reports Second Quarter 2026 Results,” Aug. 6, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-reports-second-quarter-2026-results/ [C]
 [37] R. Li, K. Kubo, Y. Ho, Z. Yan, Y. Nakamura, and H. Goto, “Realization of High-Fidelity CZ Gate Based on a Double-Transmon Coupler,” *Phys. Rev. X*, vol. 14, no. 4, Art. no. 041050, Nov. 2024, doi: [10.1103/PhysRevX.14.041050](https://doi.org/10.1103/PhysRevX.14.041050). [arXiv:2402.18926](https://arxiv.org/abs/2402.18926). [D]
 [39] W.-J. Lin, H. Cho, Y. Chen, M. G. Vavilov, C. Wang, and V. E. Manucharyan, “24 days-stable CNOT-gate on fluxonium qubits with over 99.9% fidelity,” [arXiv:2407.15783](https://arxiv.org/abs/2407.15783), Jul. 2024. [D]

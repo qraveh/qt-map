@@ -115,8 +115,7 @@ Best case 2029: deterministic sources above 70% system efficiency on a foundry P
 
 Open questions. (1) Can QD sources be integrated at foundry scale without breaking the 2 K budget or abandoning telecom wavelengths? (2) Is there a feed-forward technology whose optical delay costs less loss than the multiplexing it enables? (3) How much loss is heralded rather than silent? (4) Why has PsiQuantum published nothing since Omega? (5) Do resource-state factories scale sub-linearly in switch count?
 
-## Sources
-
+## References
 [169] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
 [170] X. Ding *et al.*, “High-efficiency single-photon source above the loss-tolerant threshold for efficient linear optical quantum computing,” [arXiv:2311.08347](https://arxiv.org/abs/2311.08347), Nov. 2023. [D]
 [175] H.-L. Liu *et al.*, “Gaussian boson sampling with 1,024 squeezed states in 8,176 modes,” *Nature*, vol. 653, no. 8115, pp. 687–692, May 2026, doi: [10.1038/s41586-026-10523-6](https://doi.org/10.1038/s41586-026-10523-6). [arXiv:2508.09092](https://arxiv.org/abs/2508.09092). [D]

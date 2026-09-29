@@ -66,7 +66,7 @@ Three quantities circulate as "readout fidelity" and are not interchangeable: as
 ## Outlook & open questions
 Confirm or demote within 12–24 months: does any vendor publish a fleet-average QNDness; does fleet readout error fall below 5×10⁻³. Best case by 2029: shelving-free discrimination and on-chip isolation take fleet readout error toward 10⁻³ without slowing the cycle. Worst case: measurement-induced leakage holds QNDness near 99.3% whatever the amplifier does, and readout stays the term that caps Λ. Open questions: how the fleet 1% decomposes; how many tones one TWPA carries before compression.
 
-## Sources
+## References
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [33] IBM, “IBM Quantum Computing — Hardware and roadmap.” [Online]. Available: https://www.ibm.com/quantum/hardware [C]
 [35] D. Gao *et al.*, “Establishing a New Benchmark in Quantum Computational Advantage with 105-qubit Zuchongzhi 3.0 Processor,” *Phys. Rev. Lett.*, vol. 134, Art. no. 090601, Mar. 2025, doi: [10.1103/PhysRevLett.134.090601](https://doi.org/10.1103/PhysRevLett.134.090601). [arXiv:2412.11924](https://arxiv.org/abs/2412.11924). [D]

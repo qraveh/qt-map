@@ -67,7 +67,7 @@ The three results are not on a common scale. MPQ's ~90% is generation-to-detecti
 ## Outlook & open questions
 Confirm by end-2027 if any group publishes a heralded entanglement rate between two neutral-atom modules; demote the interconnect claim if new results are still single-pair efficiencies. Best case by 2029: multiplexed collection reaches ~100 channels and a two-module logical operation is shown. Worst case: efficiency plateaus near 90%, channel counts stay in the tens, and the networking agreements never convert into a dated target. Open questions: what rate does a distributed neutral-atom architecture require; can chip-scale collection reach bulk-cavity cooperativity; does direct telecom emission beat cavity enhancement plus conversion.
 
-## Sources
+## References
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [11] Novo Nordisk Foundation, “New quantum computer with great potential to boost Nordic research and innovation,” Novo Nordisk Fonden, Jul. 17, 2025. [Online]. Available: https://novonordiskfonden.dk/en/news/new-quantum-computer-with-great-potential-to-boost-nordic-research-and-innovation/ [G]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]

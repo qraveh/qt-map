@@ -66,7 +66,7 @@ D-Wave публикует ошибку считывания как оценку 
 ## Прогноз и открытые вопросы
 Подтвердить, если к 2027-06-30 D-Wave опубликует описание считывания Advantage2 с измеренным распределением ошибки по кубитам; иначе понизить ≤10⁻³ до ничем не обоснованной оценки компании. Подтвердить здесь Qilimanjaro, если к 2027-12-31 компания опубликует цепочку с потоковой защёлкой; перенести её в ro_disp, если её QFP или кубит считывается резонатором. Открытые вопросы. (1) Что задаёт пол в 17 µs — тактовая частота сдвига, затухание резонатора или термализация? (2) Меняется ли ошибка считывания вдоль дорожки? (3) Смещает ли обратное действие защёлки следующий обратный отжиг? (4) Можно ли сделать считывание в середине отжига нетерминальным? (5) Почему Advantage2_system1 требуется задержка 60.6 µs на выборку против 20.6 µs на system2?
 
-## Источники
+## Литература
 [430] P. I. Bunyk *et al.*, “Architectural considerations in the design of a superconducting quantum annealing processor,” [arXiv:1401.5504](https://arxiv.org/abs/1401.5504), Jan. 2014. [D]
 [607] K. Boothby *et al.*, “Architectural considerations in the design of a third-generation superconducting quantum annealing processor,” [arXiv:2108.02322](https://arxiv.org/abs/2108.02322), Aug. 2021. [C]
 [608] A. J. Berkley *et al.*, “A scalable readout system for a superconducting adiabatic quantum optimization system,” *Supercond. Sci. Technol.*, vol. 23, Art. no. 105014, 2010. [arXiv:0905.0891](https://arxiv.org/abs/0905.0891). [D]

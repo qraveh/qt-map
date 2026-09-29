@@ -55,7 +55,7 @@ Required by quantum-dot and donor spins, with no replace or conflict edges — t
 ## Outlook & open questions
 Confirm or demote in 12–24 months: ≥99.9% below 20 µs on a foundry device; ≥16 sensors multiplexed on one line with a crosstalk number. Best case 2029: >100 sensors read under 10 µs each, demodulated in-fridge. Worst case: readout stays the clock-setting term and the largest syndrome-cycle error. Open: (1) tanks per quantum-limited amplifier; (2) whether parity readout suffices without a per-qubit ancilla; (3) how correlated threshold drift looks to a decoder.
 
-## Sources
+## References
 [189] P. Steinacker *et al.*, “Industry-compatible silicon spin-qubit unit cells exceeding 99% fidelity,” *Nature*, vol. 646, no. 8083, pp. 81–87, Sep. 2025, doi: [10.1038/s41586-025-09531-9](https://doi.org/10.1038/s41586-025-09531-9). [D]
 [190] Members of the HRL Quantum Team and Collaborators, “A digitally controlled silicon quantum processing unit,” [arXiv:2604.16216](https://arxiv.org/abs/2604.16216), Apr. 2026. [D]
 [449] Quantum Machines, “Semiconductor Spin Qubits,” Aug. 11, 2026. [Online]. Available: https://www.quantum-machines.co/qubit-types/semiconductor-spin-qubits/ [C]

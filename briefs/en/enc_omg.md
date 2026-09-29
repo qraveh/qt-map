@@ -105,8 +105,7 @@ Conflicts. (i) The graph record records the [[4,2,2]] improvement as **3.6×**; 
 
 Open questions. (1) Why is measured conversion 38–50% when the model says 98% — gate, check, or error inventory? (2) Does erasure information still help once false negatives are folded in at distance ≥5? (3) Is the residual Pauli error set by sublevel choice or by the gate laser? (4) Can a metastable ancilla be read non-destructively inside a 1 ms atom cycle? Watch the next Princeton follow-up, whether Atom Computing exposes the metastable manifold, and whether Quantinuum's unpublished "novel code family" is erasure-structured.
 
-## Sources
-
+## References
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [8] Y. Wu, S. Kolkowitz, S. Puri, and J. D. Thompson, “Erasure conversion for fault-tolerant quantum computing in alkaline earth Rydberg atom arrays,” *Nat. Commun.*, vol. 13, Art. no. 4657, 2022, doi: [10.1038/s41467-022-32094-6](https://doi.org/10.1038/s41467-022-32094-6). [arXiv:2201.03540](https://arxiv.org/abs/2201.03540). [S]
 [19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [G]

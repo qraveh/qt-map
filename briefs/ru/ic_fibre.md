@@ -60,7 +60,7 @@ updated: 2026-09-03
 ## Прогноз и открытые вопросы
 Подтвердить к 2028 году: поставщик, публикующий межмодульный темп вместе с точностью; понизить в ранге, если отрасль по-прежнему будет сообщать одну лишь точность. Лучший сценарий к 2029 году: мультиплексированные линии закрывают заявленный разрыв по темпу в масштабе стойки. Худший сценарий: темп так и остаётся неизмеренным. Открытые вопросы: воспроизводимы ли 99.72% за пределами PsiQuantum; помогает ли многосердцевинное волокно внутри машины.
 
-## Источники
+## Литература
 [169] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
 [172] Xanadu, “Xanadu sets new industry benchmark in photonic chip packaging,” PR Newswire, Jun. 10, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/xanadu-sets-new-industry-benchmark-in-photonic-chip-packaging-302796562.html [C]
 [173] H. A. Rad *et al.*, “Scaling and networking a modular photonic quantum computer,” *Nature*, vol. 638, no. 8052, pp. 912–919, Jan. 2025, doi: [10.1038/s41586-024-08406-9](https://doi.org/10.1038/s41586-024-08406-9). [D]

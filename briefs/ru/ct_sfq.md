@@ -85,8 +85,7 @@ updated: 2026-09-03
 
 Подтверждают, если до конца 2027 г. какая-либо группа опубликует двухкубитный гейт с приводом от SFQ и ошибкой ниже 1%, управляемое SFQ устройство более чем на десять кубитов или многочасовые данные по зарядовой чётности без коррелированных с тактом всплесков. Понижают, если к концу 2028 г. ни один SFQ-модуль не превысит двадцати кубитов либо разложение ошибки покажет отравление выше 0.1% на клиффорд. Открытые вопросы: переживёт ли «отсутствие детектируемого отравления» непрерывное тактирование при скважностях, характерных для QEC? Способно ли потоковое смещение на SFQ обеспечить стабильность по постоянному току, необходимую трансмонам?
 
-## Источники
-
+## Литература
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [C]
 [53] M. Abdel-Kareem, “SEEQC Reports Integrated Qubit Control Logic Operating at Millikelvin Temperatures,” Quantum Computing Report, Mar. 21, 2026. [Online]. Available: https://quantumcomputingreport.com/seeqc-reports-integrated-qubit-control-logic-operating-at-millikelvin-temperatures/ [C]

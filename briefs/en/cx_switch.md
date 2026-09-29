@@ -72,7 +72,7 @@ Switch loss and extinction come from direct insertion-loss characterisation agai
 ## Outlook & open questions
 Confirm/demote in 12–24 months: a sub-50 mdB non-volatile switch; independent replication of the 100 mdB figure; PsiQuantum's Brisbane cryoplant energised in 2H 2027; a feed-forward loop published under 100 ns. Best case 2029: single-digit-mdB non-volatile switching, Xanadu's 24.1× closing as promised. Worst case: loss plateaus near 100 mdB and photonic fault tolerance slips past 2031 for the whole branch. Open: does barium titanate yield at 300 mm; can fibre-array attach be second-sourced; does extinction bind once loss falls. Watch Xanadu's 2027 loss number.
 
-## Sources
+## References
 [169] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
 [172] Xanadu, “Xanadu sets new industry benchmark in photonic chip packaging,” PR Newswire, Jun. 10, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/xanadu-sets-new-industry-benchmark-in-photonic-chip-packaging-302796562.html [C]
 [173] H. A. Rad *et al.*, “Scaling and networking a modular photonic quantum computer,” *Nature*, vol. 638, no. 8052, pp. 912–919, Jan. 2025, doi: [10.1038/s41586-024-08406-9](https://doi.org/10.1038/s41586-024-08406-9). [D]

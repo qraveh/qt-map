@@ -68,7 +68,7 @@ Transversal gates and 96 active logical qubits are hardware measurements [D][4];
 ## Outlook & open questions
 Confirm/demote in 12–24 months: a group closes transversal gate, correlated decode and feed-forward on hardware; an atom system shows sustained below-threshold memory with reloading; QuEra restates Libra without the gain. Best case 2029: constant-round fault tolerance at 10³ logical qubits, compressing every transport-capable roadmap. Worst case: correlated decoding stalls at a few dozen blocks and stays a resource-estimation tool. Open: does decoder latency scale past 10⁴ blocks; does >10× survive loss-heavy noise. Watch: Libra milestones and any real-time correlated-decoder demonstration.
 
-## Sources
+## References
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [9] H. Neven, “Building superconducting and neutral atom quantum computers,” Google, Mar. 24, 2026. [Online]. Available: https://blog.google/innovation-and-ai/technology/research/neutral-atom-quantum-computers/ [C]
 [30] M. Cain *et al.*, “Shor's algorithm is possible with as few as 10,000 reconfigurable atomic qubits,” [arXiv:2603.28627](https://arxiv.org/abs/2603.28627), Mar. 2026. [S]

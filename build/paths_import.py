@@ -16,7 +16,7 @@ from collections import OrderedDict
 
 def main():
     a = sys.argv[1:]; dry = '--dry' in a; files = [x for x in a if x.endswith('.json')]
-    en = RI.read_lines(RI.EN); ru = RI.read_lines(RI.RU)
+    en = RI.read_lines(RI.EN); ru = RI.read_lines(RI.RU); he = RI.read_lines(RI.HE) if os.path.exists(RI.HE) else None   # the Hebrew report carries the same §9 register lines (29 Sep 2026)
     data = json.load(open(RI.SRC, encoding='utf-8'), object_pairs_hook=OrderedDict)
     codes = {}; log = []
     for f in files:
@@ -28,10 +28,10 @@ def main():
             r = RI.make_record(s.get('record') or {}, s['key']); data[c] = [r]
             label = s.get('label') or r.get('title', '')[:90]
             entry = ' · [%s] %s — %s' % (c, label, r['url'])
-            for ls in (en, ru):
+            for ls in (en, ru) + ((he,) if he else ()):
                 i = RI.register_line(ls, s['prefix']); ls[i] = ls[i].rstrip() + entry
             log.append('%s: %s → new [%s]' % (pid, s['key'], c))
-        for lang in ('en', 'ru'):
+        for lang in ('en', 'ru', 'he'):
             pf = os.path.join(ROOT, 'report', 'paths', '%s.%s.md' % (pid, lang))
             if not os.path.exists(pf): continue
             txt = open(pf, encoding='utf-8').read()
@@ -54,6 +54,7 @@ def main():
     for l in log: print(l)
     if dry: print('dry run'); return
     RI.write_lines(RI.EN, en); RI.write_lines(RI.RU, ru)
+    if he: RI.write_lines(RI.HE, he)
     with open(RI.SRC, 'w', encoding='utf-8', newline='\n') as fh: json.dump(data, fh, ensure_ascii=False, indent=1); fh.write('\n')
 
 if __name__ == '__main__':

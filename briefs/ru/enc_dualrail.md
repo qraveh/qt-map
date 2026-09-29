@@ -117,8 +117,7 @@ Dual-rail лежит на двух архитектурах: «Кубиты dual
 
 Открытые вопросы. (1) Сохраняется ли доля стираний при двухкубитных гейтах на глубине? (2) Какова частота ложноотрицательных срабатываний у серийной проверки и масштабируется ли она? (3) Может ли планарный dual-rail достичь времён жизни резонаторного класса? (4) Существует ли режим, в котором удвоение числа мод выгоднее удвоения кодового расстояния? Следить за квартальными раскрытиями D-Wave и за первой статьёй о dual-rail-памяти на повторяющихся раундах.
 
-## Источники
-
+## Литература
 [15] D-Wave Quantum Inc., “D-Wave Reports Second Quarter 2026 Results,” Aug. 6, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-reports-second-quarter-2026-results/ [C]
 [60] A. Curbison, “OQC raises £260m in Europe's largest ever private quantum computing funding round,” OQC, Jun. 2, 2026. [Online]. Available: https://oqc.tech/company/newsroom/series-c [C]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]

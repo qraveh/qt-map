@@ -3,10 +3,10 @@
  "editions": [
   {
    "edition": "2026.09",
-   "machines": 160,
-   "devices": 110,
-   "cells": 1764,
-   "verified_share": 0.444,
+   "machines": 183,
+   "devices": 126,
+   "cells": 2000,
+   "verified_share": 0.436,
    "verdicts": {
     "H1": "yes",
     "H2": "yes",

@@ -73,7 +73,7 @@ Headline figures come from randomised benchmarking on the composite two-mode sys
 ## Outlook & open questions
 Confirm/demote in 12–24 months: a cat–cat CX on hardware; a dual-rail gate below 0.01% post-selected Pauli outside Quantum Circuits; a delivered 17-qubit system with its promised 2× logical-versus-physical error reduction; a published discard rate. Best case 2029: erasure conversion becomes a standard transmon add-on. Worst case: cat–cat gates stay theory and 3D cavities stall on volume. Open: does the erasure fraction hold at depth 10³; the true false-negative rate; can it be planarised without losing Q; does D-Wave fund Quantum Circuits through 2028 on $5.9M half-year revenue. Watch QBI Stage C.
 
-## Sources
+## References
 [14] D-Wave Quantum Inc., “D-Wave Announces Agreement to Acquire Quantum Circuits Inc., Establishing World's Leading Quantum Computing Company,” Jan. 7, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-to-acquire-quantum-circuits-inc-establishing-world-s-leading-quantum-computing-company/ [C]
 [15] D-Wave Quantum Inc., “D-Wave Reports Second Quarter 2026 Results,” Aug. 6, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-reports-second-quarter-2026-results/ [C]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]

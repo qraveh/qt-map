@@ -63,7 +63,7 @@ Every headline is from simulated syndromes under a noise model with neither leak
 ## Outlook & open questions
 Falsifiable (12–24 months): confirm if Kookaburra ships and a gross-code memory is decoded in real time by end-2027; demote if Relay-BP has consumed no hardware syndrome by then. Best case 2029: Relay-BP-class decoding inside IBM's Starling stack at the demonstrated latency. Worst case: gross-code hardware keeps slipping and GPU or matching decoders take the installed base. Open questions: the 99.9th-percentile latency rather than the mean; whether accuracy survives leakage and correlated bursts; whether anyone builds a decoder ASIC. Watch: Kookaburra delivery, any live-syndrome decode, the first latency histogram.
 
-## Sources
+## References
 [48] T. Maurer *et al.*, “Real-time decoding of the gross code memory with FPGAs,” [arXiv:2510.21600](https://arxiv.org/abs/2510.21600), Oct. 2025. [D]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
 [72] IBM, “Quantum Roadmap.” [Online]. Available: https://www.ibm.com/roadmaps/quantum/ [D]

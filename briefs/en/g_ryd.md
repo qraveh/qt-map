@@ -98,8 +98,7 @@ Confirm/demote milestones for 12–24 months: (1) a **raw** CZ ≥99.9% in a den
 
 Open questions. Does the loss channel scale with array density and transport, or is 0.087% per gate a floor set by trap depth? Can single-photon UV excitation recover the phase-noise and scattering terms without new UV-induced loss? Is Förster-resonance or modulated-driving physics real above 99.9%? Does erasure conversion survive at circuit level, where a decoder must locate losses inside a 1 ms budget? Watch for a raw record without post-selection, and whether Google's atom track publishes a gate before 2027.
 
-## Sources
-
+## References
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [31] H. Zhou *et al.*, “Resource Analysis of Low-Overhead Transversal Architectures for Reconfigurable Atom Arrays,” *Proc. 52nd Annu. Int. Symp. Comput. Archit. (ISCA)*, 2025, doi: [10.1145/3695053.3731039](https://doi.org/10.1145/3695053.3731039). [arXiv:2505.15907](https://arxiv.org/abs/2505.15907). [S]
 [134] S. J. Evered *et al.*, “High-fidelity entangling gates and nonlocal circuits with neutral atoms,” [arXiv:2604.25987](https://arxiv.org/abs/2604.25987), Apr. 2026. [D]

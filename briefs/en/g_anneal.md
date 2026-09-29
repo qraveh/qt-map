@@ -57,7 +57,7 @@ Architecture: quantum annealer — flux qubits, where it is the only gate mechan
 ## Outlook & open questions
 Confirm if any platform defends an unchallenged claim through 2028; demote if erosion repeats. Best case 2029: Rydberg vendors convert analog arrays into error-corrected digital machines. Worst case: analog stays a physics instrument. Open: does Pasqal reach 10,000 physical by 2028; does Libra hold at >256 logical?
 
-## Sources
+## References
 [153] QuEra Computing, “QuEra Expands $230 Million Financing Round Advancing Quantum-Accelerated Supercomputing,” Sep. 9, 2025. [Online]. Available: https://www.quera.com/press-releases/quera-expands-230-million-financing-round-advancing-quantum-accelerated-supercomputing [C]
 [156] M. Swayne, “Pasqal Completes SPAC Merger With $360 Million in Cash,” The Quantum Insider, Aug. 28, 2026. [Online]. Available: https://thequantuminsider.com/2026/08/28/pasqal-completes-spac-merger-with-360-million-in-cash/ [P]
 [162] QuEra Computing, “QuEra Announces 2028 Fault-Tolerant Quantum Computer and Expanded Multi-Year Strategic Collaboration with AWS,” Jun. 15, 2026. [Online]. Available: https://www.quera.com/press-releases/quera-announces-2028-fault-tolerant-quantum-computer-and-expanded-multi-year-strategic-collaboration-with-aws [R]

@@ -11,6 +11,8 @@ from map_js import JS
 from brief_js import BRIEF_JS
 from find_js import FIND_JS, FIND_HTML
 from labels import SHORT
+import langs as LG   # the languages (29 Sep 2026: en, ru, he) — every per-language loop below reads LG.LANGS
+from langs import LANGS, NATIVE, FOLDER, pick, spans, fb_attrs, direction
 # shared tooltip for .tt terms: hover, keyboard focus or a tap shows the explanation below the term, kept inside the viewport
 GTIP_JS=r"""(function(){var tip=document.createElement('div');tip.id='gtip';tip.hidden=true;tip.setAttribute('role','tooltip');document.body.appendChild(tip);var cur=null,pinned=false,timer=null;
 function textOf(el){var t=el.getAttribute('data-tip');if(t)return t;var L=(document.getElementById('app')||{getAttribute:function(){return 'en';}}).getAttribute('data-lang')||'en';var D=(window.__TIPS||{});return (D[L]||{})[el.getAttribute('data-t')]||(D.en||{})[el.getAttribute('data-t')]||'';}
@@ -26,8 +28,8 @@ window.addEventListener('scroll',function(){if(cur&&!tip.hidden)place(cur);},{pa
 from editions import EDITIONS, editions_html, CONCEPT_DOI, REPO, SITE, STATUS
 import briefs as BR
 G=json.load(open(os.path.join(ROOT,'data','graph.json'),encoding='utf-8'))
-_nolabel=[n['id'] for n in G['nodes'] if n['id'] not in SHORT or not all(SHORT[n['id']])]
-if _nolabel: raise SystemExit('build/labels.py: every technology needs a short map label in both languages (the map printed raw ids for 15 technologies until 27 Sep 2026) — missing: %s' % ', '.join(_nolabel))
+_nolabel=[n['id'] for n in G['nodes'] if n['id'] not in SHORT or not SHORT[n['id']][0]]
+if _nolabel: raise SystemExit('build/labels.py: every technology needs a short map label, in English at least — a missing language reads the English one (the map printed raw ids for 15 technologies until 27 Sep 2026) — missing: %s' % ', '.join(_nolabel))
 # ---------- machines on the Atlas (C2): a slim, deterministic copy of data/machines.json for the page (window.__MACH)
 MACH_PATH=os.path.join(ROOT,'data','machines.json')
 MACH_URLS={'register':'machine/','tech':'technology/'}   # the machine's and the technology's own pages (relative to the page's language root); the register's private working pages are no longer linked (27 Sep 2026)
@@ -80,7 +82,7 @@ def mach_slim():
                     'refs':[[r['kind'],r['url'],r['title']] for r in (m.get('refs') or [])[:3]]})   # up to three attribution-verified links per machine
     by_node={k:{'primary':list(v.get('primary',[])),'alternate':list(v.get('alternate',[]))} for k,v in M['by_node'].items() if not str(k).startswith('∅')}
     import regvocab
-    return {'machines':out,'by_node':by_node,'families':MACH_FAMILIES,'urls':MACH_URLS,'t':regvocab.TABLE}   # t: the register's enumerations in Russian (build/regvocab.py)
+    return {'machines':out,'by_node':by_node,'families':MACH_FAMILIES,'urls':MACH_URLS,'t':regvocab.TABLES}   # t: the register's enumerations per language, {lang: table} (build/regvocab.py); a language without a table prints the register's English
 
 # ---------- math: $...$ → HTML
 GREEK={'Lambda':'Λ','lambda':'λ','mu':'µ','varepsilon':'ε','epsilon':'ε','kappa':'κ','alpha':'α','beta':'β','gamma':'γ','delta':'δ','Delta':'Δ','eta':'η','theta':'θ','sigma':'σ','pi':'π','tau':'τ','omega':'ω','Omega':'Ω','rho':'ρ','phi':'φ','chi':'χ','psi':'ψ','nu':'ν'}
@@ -127,18 +129,22 @@ def convert(md,lang):
     # carried a running counter that shifted whenever a heading was added, which broke every hard-coded anchor.
     toc=[]; k=0; j=0
     def h2(m):
-        nonlocal k,j; k+=1; j=0; txt=m.group(1); mm=re.match(r'(\d+)\.\s+(.*)',txt)
+        nonlocal k,j; k+=1; j=0; txt=m.group(m.lastindex); mm=re.match(r'(\d+)\.\s+(.*)',txt)
         num,title=(mm.group(1),mm.group(2)) if mm else ('',txt)
         hid=f'{P}s{num}' if num else (f'{P}s-subtitle' if k==1 else f'{P}s-about')
         toc.append((hid,num,re.sub('<[^>]+>','',title),2))
         return f'<h2 id="{hid}">'+(f'<span class="num">{num}</span>' if num else '')+f'{title}</h2>'
     def h3(m):
-        nonlocal k,j; j+=1; txt=m.group(1); mm=re.match(r'(\d+)\.(\d+)\s+(.*)',txt)
+        nonlocal k,j; j+=1; txt=m.group(m.lastindex); mm=re.match(r'(\d+)\.(\d+)\s+(.*)',txt)
         num,title=(mm.group(1)+'.'+mm.group(2),mm.group(3)) if mm else ('',txt)
         hid=f'{P}s{mm.group(1)}-{mm.group(2)}' if mm else f'{P}s-x{j}'
         toc.append((hid,num,re.sub('<[^>]+>','',title),3))
         return f'<h3 id="{hid}">{txt}</h3>'
-    h=re.sub(r'<h2>(.*?)</h2>',h2,h); h=re.sub(r'<h3>(.*?)</h3>',h3,h)
+    # h2 and h3 in one pass, so the toc keeps document order (two passes listed every h3 after the last h2 — the 7.x/8.x entries
+    # sat under 9 in the contents panel; the editor, 29 Sep 2026)
+    h=re.sub(r'<h([23])>(.*?)</h\1>',lambda m: h2(m) if m.group(1)=='2' else h3(m),h)
+    # h4 "8.3.k …" headings get ids too (en-s8-3-4), so the architecture record pages can find their narrative (29 Sep 2026)
+    h=re.sub(r'<h4>((\d+)\.(\d+)\.(\d+)\s.*?)</h4>',lambda m: f'<h4 id="{P}s{m.group(2)}-{m.group(3)}-{m.group(4)}">{m.group(1)}</h4>',h)
     # the first h2 (subtitle line) is actually the subtitle: strip the first h1/h2 pair
     h=re.sub(r'<h1>.*?</h1>\s*','',h,count=1,flags=re.S)
     h=re.sub(r'<h2 id="'+P+r's-subtitle">.*?</h2>\s*','',h,count=1,flags=re.S); toc=[t for t in toc if t[0]!=P+'s-subtitle']
@@ -149,15 +155,19 @@ def convert(md,lang):
         start=m.end(); t=h.find('<div class="tbl">',start); e=h.find('</div>',t)+6
         return h[:t]+f'<details class="fold big-table"><summary>{label}</summary>'+h[t:e]+'</details>'+h[e:]
     # target the headings by their printed number: the h3 ids carry a running counter, so id-based matching folded §1.2 and §3.1 instead of §7.2 and §7.9 (found 17 Sep 2026)
-    h=fold(h,r'<h3 id="[^"]+">7\.2 [^<]*</h3>','Show table' if lang=='en' else 'Показать таблицу')     # one language per label since 27 Sep 2026 (the page is monolingual)
-    h=fold(h,r'<h3 id="[^"]+">7\.11 [^<]*</h3>','Show records' if lang=='en' else 'Показать рекорды')
-    for lbl in (['<strong>requires / provides</strong>','<strong>alternatives (within layer)</strong>','<strong>conflicts</strong>','<strong>transfers (node → additional architectures)</strong>','<strong>defines (node → output; every row carries a source, a date and a number)</strong>'] if lang=='en' else
-                ['<strong>требует / обеспечивает</strong>','<strong>альтернативы (внутри слоя)</strong>','<strong>конфликтует</strong>','<strong>переносится (узел → дополнительные архитектуры)</strong>','<strong>определяет (узел → выход; каждая строка несёт источник, дату и число)</strong>']):
+    h=fold(h,r'<h3 id="[^"]+">7\.2 [^<]*</h3>',pick(lang,('Show table','Показать таблицу')))     # one language per label since 27 Sep 2026 (the page is monolingual)
+    h=fold(h,r'<h3 id="[^"]+">7\.11 [^<]*</h3>',pick(lang,('Show records','Показать рекорды')))
+    # the §7 edge lists fold under their bold caption, whichever language the markdown is in (a page may carry another language's text
+    # until its own report exists — the Hebrew page reads report_EN.md, 29 Sep 2026)
+    for lbl in [x for L in LANGS for x in EDGE_LABELS.get(L,[])]:
         h=fold(h,re.escape(lbl),re.sub('<[^>]+>','',lbl))
+    h=re.sub(r'\bfig81t-(?:%s)\b'%'|'.join(LANGS),'fig81t-'+lang,h)   # Figure 8.1's title id carries the page's language, not the markdown's
     h=polish(h,lang)
     h=re.sub(r'(<h2 id="'+P+r's0">.*?</h2>\s*(?:<p>.*?</p>\s*)*)<ol>',lambda m:m.group(1)+'<ol class="es">',h,count=1,flags=re.S)   # the executive summary's list is justified
     return h,toc
 
+EDGE_LABELS={'en':['<strong>requires / provides</strong>','<strong>alternatives (within layer)</strong>','<strong>conflicts</strong>','<strong>transfers (node → additional architectures)</strong>','<strong>defines (node → output; every row carries a source, a date and a number)</strong>'],
+             'ru':['<strong>требует / обеспечивает</strong>','<strong>альтернативы (внутри слоя)</strong>','<strong>конфликтует</strong>','<strong>переносится (узел → дополнительные архитектуры)</strong>','<strong>определяет (узел → выход; каждая строка несёт источник, дату и число)</strong>']}   # a language's captions of the §7 edge lists (the report's own words; a translation adds its list)
 # ---------- reader-facing polish (21 Sep 2026, the editor's review): labelled lists, definition-style items, and every
 # reference made clickable — source codes [S1] to their entry in §9, §x.y to the heading, Figure/Table x.y to the figure or the
 # section, hypotheses H1–H8 and forecast rows F1a–F6 to their anchors in §8. Text nodes only: never inside links, code, headings,
@@ -224,9 +234,26 @@ def polish(h,lang):
         keep=[p for p in re.findall(r'<p>.*?</p>',body,flags=re.S) if not CITE.search(p) and not re.search(r'End of (?:the )?\w+ edition|Конец \w+ издания',p)]
         import worknum
         _nlist=len({n for c in order for n in num[c] if n}); _nall=len(worknum.load()['works'])
-        note=(f'<p class="refnote">A number stands for one work throughout the Atlas — here, in every technology brief and in later editions. This list holds the {_nlist:,} works the report cites, in that shared numbering (the Atlas cites {_nall:,} works in all); a number absent here belongs to a work cited only in the briefs. Online sources were accessed in September 2026.</p>' if lang=='en' else
-              f'<p class="refnote">Номер обозначает одну работу во всём Атласе — здесь, в каждом брифе по технологии и в последующих изданиях. В этом списке — {_nlist} работ, на которые ссылается отчёт, в общей нумерации (всего Атлас ссылается на {_nall} работ); номер, которого здесь нет, принадлежит работе, цитируемой только в брифах. Онлайн-источники просмотрены в сентябре 2026 г.</p>')
-        h=h[:e]+'\n'+note+'\n'+sources.render_list(lang,order,works,num)+'\n'+'\n'.join(keep)+'\n'
+        _rn=(f'A number stands for one work throughout the Atlas — here, in every technology brief and in later editions. This list holds all {_nall:,} works the Atlas cites, in that shared numbering: 1–{_nlist:,} are the works the report cites, in order of first citation; the works after them entered through the technology briefs, which repeat their own entries under their text. Online sources were accessed in September 2026.',
+             f'Номер обозначает одну работу во всём Атласе — здесь, в каждом брифе по технологии и в последующих изданиях. В этом списке — все {_nall} работ, на которые ссылается Атлас, в общей нумерации: 1–{_nlist} — работы, на которые ссылается отчёт, в порядке первого цитирования; работы после них вошли через брифы по технологиям, которые повторяют свои записи под своим текстом. Онлайн-источники просмотрены в сентябре 2026 г.')
+        note='<p class="refnote"%s>%s</p>'%(fb_attrs(lang,not LG.has(lang,_rn)),pick(lang,_rn))
+        # the briefs' works (numbers after the report's) join the list, so every permanent number resolves here (the editor, 29 Sep 2026)
+        import brief_refs as _brf
+        _db=_brf.load(); _rep={n for c in order for n in num[c] if n}; _extra={}
+        for _key in _db['works']:
+            _n=_brf.number_of(_key,_db)
+            if not _n or _n in _rep or _n in _extra: continue
+            _rec=_brf.record_of(_key,_db); _eh=_brf.entry_html(_rec)
+            if _rec.get('kind')=='report' and _rec.get('section'):   # the Atlas's own section as an internal link (a self-citation carries no DOI)
+                _sec=re.sub(r'[^\d.]','',_rec['section']); _eh=re.sub(r'§(\d+(?:\.\d+)*)\.?$',lambda m:'<a class="xref" href="#%ss%s">§%s</a>.'%(P,m.group(1).replace('.','-'),m.group(1)),_eh)
+            _extra[_n]='<li id="%ssrc-w%d" value="%d"><span class="src">[%d]</span> <span class="ref">%s</span></li>'%(P,_n,_n,_n,_eh)
+        _brf.worknum.flush()
+        _list=sources.render_list(lang,order,works,num)
+        if _extra:
+            _rows=re.findall(r'<li id="[^"]+" value="(\d+)">.*?</li>',_list,flags=re.S)
+            _all=sorted([(int(m.group(1)),m.group(0)) for m in re.finditer(r'<li id="[^"]+" value="(\d+)">.*?</li>',_list,flags=re.S)]+list(_extra.items()))
+            _list='<ol class="refs" data-nohint="1">\n'+'\n'.join(r for _,r in _all)+'\n</ol>'
+        h=h[:e]+'\n'+note+'\n'+_list+'\n'+'\n'.join(keep)+'\n'
         srcs=set(num)
     h=re.sub(r'<p><strong>(H[1-8]) — ',lambda m:f'<p id="{P}{m.group(1).lower()}"><strong>{m.group(1)} — ',h)
     h=re.sub(r'<td>(F[1-6][abc]?)</td>',lambda m:f'<td><a class="src" id="{P}{m.group(1).lower()}">{m.group(1)}</a></td>',h)   # an anchor, not a link (never self-linked)
@@ -247,14 +274,15 @@ def polish(h,lang):
         t=re.sub(r'(?<!CFR )§(\d+)(?:\.(\d+))?',sec,t)
         def figtab(m):
             word,a,b=m.group(1),m.group(2),m.group(3); low=word.lower()
-            tid=f'{P}fig{a}-{b}' if low in ('figure','рисунок','рис.','fig.') else f'{P}s{a}-{b}'
+            tid=f'{P}fig{a}-{b}' if (low in ('figure','рисунок','рис.','fig.') or low.endswith('איור')) else f'{P}s{a}-{b}'
             return f'<a class="xref" href="#{tid}">{m.group(0)}</a>' if tid in ids else m.group(0)
-        t=re.sub(r'\b(Figure|Fig\.|Table|Рисунок|Рис\.|Таблица|табл\.)\s(\d)\.(\d+)\b',figtab,t)
+        # Hebrew (29 Sep 2026): איור / טבלה, with a joined prefix letter (באיור, בטבלה, לטבלה, והטבלה …)
+        t=re.sub(r'\b(Figure|Fig\.|Table|Рисунок|Рис\.|Таблица|табл\.|[ובלמשה]{0,2}(?:איור|טבלה))\s(\d)\.(\d+)\b',figtab,t)
         # hypotheses and forecast rows: after a §8.x reference anywhere; bare tokens only inside the chapter itself
         # (outside it, H1/H2 are half-years and Quantinuum machines)
         def hf(m):
             c=m.group(0); tid=f'{P}{c.lower()}'; return f'<a class="xref" href="#{tid}">{c}</a>' if tid in ids else c
-        t=re.sub(r'(§8\.\d</a>,\s*)((?:[HF]\d[abc]?(?:,\s*|\s*(?:and|и)\s*)?)+)',lambda m:m.group(1)+re.sub(r'\b[HF]\d[abc]?\b',hf,m.group(2)),t)
+        t=re.sub(r'(§8\.\d</a>,\s*)((?:[HF]\d[abc]?(?:,\s*|\s*(?:and|и)\s*|\s*ו[-־]?)?)+)',lambda m:m.group(1)+re.sub(r'\b[HF]\d[abc]?\b',hf,m.group(2)),t)
         if in_ch8:
             t=re.sub(r'(?<![\w/\-–])(?<!Quantinuum )(?<!Model )([HF][1-8][abc]?)(?![\w/\-–])(?! — )',lambda m:hf(m),t)   # not the label itself ("H1 — …")
         return t
@@ -281,18 +309,23 @@ def glossary():
             GLOSSARY+=part
         for e in GLOSSARY:
             if e['id'] in ('notation-lambda','notation-code-distance'): e['scope']='first'   # notation: once per section is enough
-            for L in ('en','ru'):   # the definitions name the data's counts through the same placeholders as the report (27 Sep 2026: a tooltip said 14 architectures, 136 machines)
-                if '{{' in e[L]: e[L]=report_numbers(e[L],L)
+            for L in LANGS:   # the definitions name the data's counts through the same placeholders as the report (27 Sep 2026: a tooltip said 14 architectures, 136 machines)
+                if '{{' in (e.get(L) or ''): e[L]=report_numbers(e[L],L)
                 for v in e.get('variants') or []:
                     if '{{' in v.get(L,''): v[L]=report_numbers(v[L],L)
     return GLOSSARY
 def tips_dict():
-    d={'en':{},'ru':{}}
+    """the hints' texts per language (window.__TIPS); an entry without a language's text is absent there — the page then shows the
+    English text (GTIP_JS), and a Hebrew page carries a hint only where the entry has Hebrew forms (tooltips)"""
+    d={L:{} for L in LANGS}
     for e in glossary():
-        for L in ('en','ru'):
-            d[L][e['id']]=e[L]
-            for k,v in enumerate(e.get('variants') or []): d[L][e['id']+'@'+str(k)]=v[L]
+        for L in LANGS:
+            if e.get(L): d[L][e['id']]=e[L]
+            for k,v in enumerate(e.get('variants') or []):
+                if v.get(L): d[L][e['id']+'@'+str(k)]=v[L]
     return d
+def _gforms(e,L): return e.get('match' if L=='en' else 'match_'+L) or []   # the words a hint is attached to, in the text's language
+def _grx(e,L): return e.get('re' if L=='en' else 're_'+L)
 def variant_key(e,secnum):
     # a variant applies to sections before its "until" (About and §0 count as 0): the reader has not yet met the definition
     for k,v in enumerate(e.get('variants') or []):
@@ -314,20 +347,21 @@ def tooltips(h,lang,briefs=False):
     G_=glossary(); items=[]   # (entry, own regex, alternatives)
     for e in G_:
         if briefs and e.get('own') and not e.get('briefs'): continue   # a brief is a stand-alone article: field terms and the evidence codes only
-        forms=e.get('match_ru' if lang=='ru' else 'match') or []
-        rx=e.get('re') if lang=='en' else e.get('re_ru')
+        forms=_gforms(e,lang)   # a language's own forms only: an entry without them gets no hint there (never another language's)
+        rx=_grx(e,lang)
         body=rx if rx else _term_re(forms)   # a regex replaces the plain forms (it carries the context rules)
         if not body: continue
         items.append((e,re.compile(body),body))
+    if not items: return h
     # one combined regex, longer forms first so "path instance" beats "path"; the entry is identified by a full match afterwards
-    items.sort(key=lambda x:-max(len(f) for f in (x[0].get('match_ru' if lang=='ru' else 'match') or ['']) ) )
+    items.sort(key=lambda x:-max(len(f) for f in (_gforms(x[0],lang) or ['']) ) )
     comb=re.compile('|'.join('(?:'+b+')' for _,_,b in items))
     def entry_of(txt):
         for e,rx,_ in items:
             if rx.fullmatch(txt): return e
         return None
     def process(segment):
-        seen=set(); mh=re.match(r'<h[23] id="(?:en|ru)-s(\d+)(?:-(\d+))?"',segment)
+        seen=set(); mh=re.match(r'<h[23] id="(?:%s)-s(\d+)(?:-(\d+))?"'%'|'.join(LANGS),segment)
         secnum=float(mh.group(1)+'.'+(mh.group(2) or '0')) if mh else 0.0
         major=str(int(secnum))
         for e,_,_ in items:                       # entries confined to some sections ("only") are marked seen elsewhere
@@ -359,18 +393,18 @@ def score_tips(h,lang):
         cells=[html_mod.unescape(re.sub(r'<[^>]+>','',c)).strip() for c in re.findall(r'<td[^>]*>(.*?)</td>',row,flags=re.S)]
         if len(cells) in (5,7) and re.match(r'[A-F]\.',cells[0]): axes[cells[0][0]]=cells
     if len(axes)!=6: return h
-    en=lang=='en'
+    tr=lambda *x: pick(lang,x)   # the tip's words in the page's language (a missing language reads English)
     def desc(L):
         a=axes[L]
         if len(a)==7: anch=f'5 = {a[2]}; 4 = {a[3]}; 3 = {a[4]}; 2 = {a[5]}; 1 = {a[6]}'   # the intermediate anchors were added on 26 Sep 2026 (Codex review, item 5)
         else: anch=f'5 = {a[2]}; 3 = {a[3]}; 1 = {a[4]}'
-        return (f'{a[0]} — {a[1]}. Anchors: {anch}' if en else f'{a[0]} — {a[1]}. Опорные значения: {anch}')
+        return f'{a[0]} — {a[1]}. '+tr('Anchors: ','Опорные значения: ')+anch
     j=h.find('</table>',i31); t31=h[i31:j]
     def th(m):
         L=m.group(2); return m.group(1)+'<span class="tt" data-tip="'+html_mod.escape(desc(L),quote=True)+'">'+L+m.group(3)+'</span></th>'
     t31=re.sub(r'(<th[^>]*>)([A-F])( [^<]+)</th>',th,t31)
-    mi=('Maturity index — the sum of the six axis scores (30 at most): how much of the fault-tolerance stack has been shown to work, not how useful the platform is' if en else
-        'Индекс зрелости — сумма баллов по шести осям (не более 30): какая часть стека отказоустойчивости показана в работе, а не полезность платформы')
+    mi=tr('Maturity index — the sum of the six axis scores (30 at most): how much of the fault-tolerance stack has been shown to work, not how useful the platform is',
+          'Индекс зрелости — сумма баллов по шести осям (не более 30): какая часть стека отказоустойчивости показана в работе, а не полезность платформы')
     t31=re.sub(r'<th([^>]*)><strong>([^<]+)</strong></th>',lambda m:'<th'+m.group(1)+'><strong><span class="tt" data-tip="'+html_mod.escape(mi,quote=True)+'">'+m.group(2)+'</span></strong></th>',t31)
     letters='ABCDEF'
     def row(m):
@@ -379,10 +413,10 @@ def score_tips(h,lang):
         out=[cells[0]]
         for k,c in enumerate(cells[1:7]):
             L=letters[k]; inner=re.sub(r'^<td[^>]*>|</td>$','',c); txt=html_mod.unescape(re.sub(r'<[^>]+>','',inner)).strip()
-            if re.fullmatch(r'\d',txt): tip=(f'{axes[L][0]} — {txt} of 5. Measures: ' if en else f'{axes[L][0]} — {txt} из 5. Измеряет: ')+desc(L).split(' — ',1)[1]
-            elif txt.startswith('('): tip=(f'{axes[L][0]}: {txt[1:-1]} — the architecture\'s value by design, not a demonstrated one' if en else f'{axes[L][0]}: {txt[1:-1]} — значение по замыслу архитектуры, не продемонстрированное')
-            elif txt=='n/a': tip=(f'{axes[L][0]}: not applicable — annealers run no gate-model error correction, so the axis has no meaning for them' if en else f'{axes[L][0]}: неприменимо — отжигатели не выполняют коррекцию ошибок гейтовой модели, ось для них не имеет смысла')
-            elif txt in ('—','-'): tip=(f'{axes[L][0]}: nothing to score yet' if en else f'{axes[L][0]}: оценивать пока нечего')
+            if re.fullmatch(r'\d',txt): tip=tr(f'{axes[L][0]} — {txt} of 5. Measures: ',f'{axes[L][0]} — {txt} из 5. Измеряет: ')+desc(L).split(' — ',1)[1]
+            elif txt.startswith('('): tip=tr(f'{axes[L][0]}: {txt[1:-1]} — the architecture\'s value by design, not a demonstrated one',f'{axes[L][0]}: {txt[1:-1]} — значение по замыслу архитектуры, не продемонстрированное')
+            elif txt=='n/a': tip=tr(f'{axes[L][0]}: not applicable — annealers run no gate-model error correction, so the axis has no meaning for them',f'{axes[L][0]}: неприменимо — отжигатели не выполняют коррекцию ошибок гейтовой модели, ось для них не имеет смысла')
+            elif txt in ('—','-'): tip=tr(f'{axes[L][0]}: nothing to score yet',f'{axes[L][0]}: оценивать пока нечего')
             else: out.append(c); continue
             out.append(c[:c.find('>')+1]+'<span class="tt" data-tip="'+html_mod.escape(tip,quote=True)+'">'+inner+'</span></td>')
         out.append(cells[7])
@@ -408,7 +442,7 @@ def insert_after_section(h,sec_id,block):
     i=h.find(f'<h2 id="{sec_id}">'); return h[:i]+block+h[i:]
 
 # ---------- radars for §3.1
-SCORES_META=[('Superconducting','Сверхпроводники','SC'),('Neutral atoms','Нейтральные атомы','ATOM'),('Trapped ions','Ионы','ION'),('Bosonic (cat/GKP/dual-rail)','Бозонные SC','SC'),('Spin qubits (Si/Ge)','Спиновые кубиты','SPIN'),('Photonic','Фотоника','PHOTON'),('Topological','Топологические','TOPO')]
+SCORES_META=[(('Superconducting','Сверхпроводники'),'SC'),(('Neutral atoms','Нейтральные атомы'),'ATOM'),(('Trapped ions','Ионы'),'ION'),(('Bosonic (cat/GKP/dual-rail)','Бозонные SC'),'SC'),(('Spin qubits (Si/Ge)','Спиновые кубиты'),'SPIN'),(('Photonic','Фотоника'),'PHOTON'),(('Topological','Топологические'),'TOPO')]   # (names per language, family); the English name finds the §3.1 row
 def scores_from_report():
     """the §3.1 scores read from report_EN.md (the radars were hard-coded until 26 Sep 2026 and drifted from the table): row label → six scores; a
     '(4 design)' cell reads as its number, '—' as 0"""
@@ -425,10 +459,10 @@ def scores_from_report():
     return out
 def SCORES():
     sc=scores_from_report(); res=[]
-    for n,r,f in SCORES_META:
-        key=next((k for k in sc if k.startswith(n.split(' (')[0])),None)
+    for names,f in SCORES_META:
+        n=names[0]; key=next((k for k in sc if k.startswith(n.split(' (')[0])),None)
         if key is None: raise SystemExit('§3.1 scores: no row for '+n)
-        res.append((n.split(' (')[0],r,f,sc[key]))
+        res.append(((n.split(' (')[0],)+tuple(names[1:]),f,sc[key]))
     return res
 AXL=['A','B','C','D','E','F']
 import math
@@ -443,23 +477,23 @@ def radar(name,fam,vals):
     dots=''.join(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="2.4" fill="var(--{fam.lower()})"/>' for x,y in pts)
     return f'<svg viewBox="0 0 140 140" role="img" aria-label="{name} profile A–F">{grid}{spokes}{labels}{poly}{dots}</svg>'
 def radars_block(lang):
-    cap={'en':'Profiles by axis (A channel · B clock · C scale · D FT progress · E scaling path · F roadmap credibility). The shape is the information: superconducting is round, ions are tall on A and short on B, atoms mirror ions on C/D, bosonic and photonic are B-only spikes.','ru':'Профили по осям (A канал · B такт · C масштаб · D прогресс FT · E путь масштабирования · F правдоподобие карты). Информация — в форме: сверхпроводники круглые, ионы высокие по A и низкие по B, атомы зеркалят ионы по C/D, бозонные и фотоника — пики только по B.'}[lang]
-    cards=''.join(f'<div class="radar">{radar(n if lang=="en" else r,f,v)}<div class="cap"><b>{n if lang=="en" else r}</b> · {sum(v)}</div></div>' for n,r,f,v in SCORES())
+    cap=pick(lang,{'en':'Profiles by axis (A channel · B clock · C scale · D FT progress · E scaling path · F roadmap credibility). The shape is the information: superconducting is round, ions are tall on A and short on B, atoms mirror ions on C/D, bosonic and photonic are B-only spikes.','ru':'Профили по осям (A канал · B такт · C масштаб · D прогресс FT · E путь масштабирования · F правдоподобие карты). Информация — в форме: сверхпроводники круглые, ионы высокие по A и низкие по B, атомы зеркалят ионы по C/D, бозонные и фотоника — пики только по B.'})
+    cards=''.join(f'<div class="radar">{radar(pick(lang,names),f,v)}<div class="cap"><b>{pick(lang,names)}</b> · {sum(v)}</div></div>' for names,f,v in SCORES())
     return f'<div class="radars">{cards}</div><p class="figcap">{cap}</p>'
 def glossary_html(lang):
     """The tooltip dictionary as a browsable Glossary at the end of About (27 Sep 2026: 178 definitions existed only on hover, which a phone
     cannot show): the Atlas's own terms first, then the field's terms and abbreviations, each alphabetical in the page's language."""
     L=lang; own=[e for e in glossary() if e['own']]; fld=[e for e in glossary() if not e['own']]
     def label(e):
-        m=(e.get('match_ru') if L=='ru' else e.get('match')) or e.get('match') or [e['id']]
+        own_=e.get(L) and _gforms(e,L); m=(_gforms(e,L) if own_ else e.get('match')) or [e['id']]   # a term without the language's text is listed in English, form and definition
         t=m[0].strip(); return t[:1].upper()+t[1:] if t[:1].isalpha() else t
     def block(title,entries):
-        rows=sorted(((label(e),e[L]) for e in entries if e.get(L)),key=lambda x:(x[0].strip('[]∅✅🔎◎⤢ ').casefold(),x[0]))
-        return f'<div class="glossary-h" role="heading" aria-level="3">{title}</div><dl class="glossary">'+''.join(f'<dt>{html_mod.escape(k)}</dt><dd>{html_mod.escape(v)}</dd>' for k,v in rows)+'</dl>'
+        rows=sorted(((label(e),pick(L,e),not e.get(L)) for e in entries if e.get(L) or e.get('en')),key=lambda x:(x[0].strip('[]∅✅🔎◎⤢ ').casefold(),x[0]))
+        return f'<div class="glossary-h" role="heading" aria-level="3">{title}</div><dl class="glossary">'+''.join(f'<dt{fb_attrs(L,f)}>{html_mod.escape(k)}</dt><dd{fb_attrs(L,f)}>{html_mod.escape(v)}</dd>' for k,v,f in rows)+'</dl>'
     n=len(own)+len(fld)
-    return (f'<details class="fold glossary-fold"><summary>{"Glossary — %d terms as this Atlas uses them" % n if L=="en" else "Глоссарий — %d терминов в том смысле, в каком их употребляет Атлас" % n}</summary>'
-            + block('Terms of the Atlas' if L=='en' else 'Термины Атласа', own)
-            + block('Terms and abbreviations of the field' if L=='en' else 'Термины и сокращения области', fld) + '</details>')
+    return (f'<details class="fold glossary-fold"><summary>{pick(L,("Glossary — %d terms as this Atlas uses them","Глоссарий — %d терминов в том смысле, в каком их употребляет Атлас")) % n}</summary>'
+            + block(pick(L,('Terms of the Atlas','Термины Атласа')), own)
+            + block(pick(L,('Terms and abbreviations of the field','Термины и сокращения области')), fld) + '</details>')
 def insert_before_h2(h,h2_id,block):
     m=re.search(r'<h2 id="'+re.escape(h2_id)+r'"',h)
     if not m: return h
@@ -502,7 +536,7 @@ def fold_tables(h,lang,idprefix=''):
             out.append(pre+h[s:e]); pos=e; continue
         cap=re.search(r'<p>(<strong>(?:(?!</strong>).)*</strong>)</p>\s*$',pre,re.S)
         if cap: summary=cap.group(1); pre=pre[:cap.start()]
-        else: summary='<span class="tlbl">'+('table' if lang=='en' else 'таблица')+'</span>'
+        else: summary='<span class="tlbl">'+pick(lang,('table','таблица'))+'</span>'
         tid=f'{pre_id}-tbl-{k}'; k+=1
         out.append(pre+f'<details class="tblfold" id="{tid}" data-def="1" open><summary>{summary}</summary>'+h[s:e]+'</details>'); pos=e
     out.append(h[pos:]); return ''.join(out)
@@ -530,8 +564,64 @@ def foldable(h,lang,levels=('h2','h3'),idprefix=''):
     out.append(h[pos:])
     while open_lv: out.append('</div>'); open_lv.pop()
     return ''.join(out)
+# ---------- organisation links (the editor, 29 Sep 2026: "I do not see links to organizations. It should be everywhere"). In every prose block
+# — a paragraph, a list item (its own text; a nested list's items are blocks of their own), a table cell, a definition, a figure caption; on
+# the record pages also the cards' Actors & goals lines and cells (div.pathtag, div.actors, div.mc) — the first mention of each organisation
+# of data/orgs/organisations.json links to its page (orgs.link_orgs, run on each block alone); an organisation the block already links (the
+# §8.3 register lines, the cards' own links) is not linked again, nor `own` (an organisation's own page). Never in headings, navigation, the
+# masthead, the map legend, summaries, buttons, the reference lists (§9, the briefs' Sources folds), picture credits, .meta/.btitle lines,
+# nor inside an element whose click opens a brief (the briefs' index rows: such a link could not be followed). base: from the page to its
+# language folder ('' on the main pages; the other language's fragment then resolves from its host page, like every relative link there).
+ORG_BLOCKS={'p','li','td','dd','figcaption'}; ORG_BLOCK_CLASSES={'pathtag','actors','mc'}
+ORG_SKIP={'h1','h2','h3','h4','h5','h6','nav','header','summary','button','svg','script','style','textarea','pre'}
+ORG_SKIP_CLASSES={'refs','fold-src','mast','toc','glyphs','credit','meta','btitle'}
+_OTAG=re.compile(r'<!--.*?-->|<(/?)([A-Za-z][A-Za-z0-9:-]*)((?:[^>"\']|"[^"]*"|\'[^\']*\')*)>',re.S)
+_OVOID={'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
+_OMARK='\x00org\x00'   # the base of orgs.link_orgs's links until the block keeps or drops them
+def link_org_blocks(h,base='',own=()):
+    import orgs
+    out=[]; blocks=[]; skip=None; i=pos=0   # blocks: the open blocks [tag, slugs linked in it]; skip: [tag, depth] of an element copied as is
+    def flush(j):
+        seg=h[i:j]
+        if not blocks or not seg.strip(): out.append(seg); return
+        seen=blocks[-1][1]; seen.update(re.findall(r'href="[^"]*organisation/([^"/#]+)\.html"',seg))
+        def keep(m):
+            if m.group(1) in seen or m.group(1) in own: return m.group(2)
+            seen.add(m.group(1)); return '<a class="org" href="%sorganisation/%s.html">%s</a>'%(base,m.group(1),m.group(2))
+        out.append(re.sub(r'<a class="org" href="\x00org\x00organisation/([^"]+)\.html">(.*?)</a>',keep,orgs.link_orgs(seg,base=_OMARK)))
+    while True:
+        m=_OTAG.search(h,pos)
+        if not m: break
+        pos=m.end(); name=(m.group(2) or '').lower()
+        if not name: continue                                   # a comment stays in its text run
+        close=bool(m.group(1)); attrs=m.group(3) or ''; void=name in _OVOID or attrs.rstrip().endswith('/')
+        if skip:                                                # inside a skipped element only its own nesting counts
+            if name==skip[0] and not void: skip[1]+=-1 if close else 1
+            if not skip[1]: out.append(h[i:pos]); i=pos; skip=None
+            continue
+        if close:
+            k=next((k for k in range(len(blocks)-1,-1,-1) if blocks[k][0]==name),None)
+            if k is not None: flush(m.start()); i=m.start(); del blocks[k:]
+            continue
+        if void: continue
+        cm=re.search(r'\sclass="([^"]*)"',attrs); cls=set(cm.group(1).split()) if cm else set()
+        if name in ORG_SKIP or cls&ORG_SKIP_CLASSES or ' data-brief=' in attrs:
+            flush(m.start()); i=m.start()
+            if name in ('script','style','textarea'):
+                c=re.compile(r'</%s\s*>'%name,re.I).search(h,pos); pos=c.end() if c else len(h); out.append(h[i:pos]); i=pos
+            else: skip=[name,1]
+        elif name in ORG_BLOCKS or cls&ORG_BLOCK_CLASSES:
+            flush(m.start()); i=m.start(); blocks.append([name,set()])
+    if skip: out.append(h[i:])
+    else: flush(len(h))
+    return ''.join(out)
+def orgs_slim():
+    """window.__ORGS: [name or alias, slug] of every organisation name orgs.py's matcher knows (one organisation per name), longest first —
+    the map's cards link organisation names with it (map_js linkOrgs, 29 Sep 2026)"""
+    import orgs
+    return [[k,s] for k,s in sorted(orgs.Matcher(orgs.load()['organisations']).owner.items(),key=lambda kv:(-len(kv[0]),kv[0]))]
 TAG_JS=r"""(function(){ var T={en:{D:"[D] measured / peer-reviewed",C:"[C] company claim",R:"[R] roadmap / target",S:"[S] simulation / estimate",G:"[G] established / general fact",P:"[P] preprint / trade press"},ru:{D:"[D] измерено / рецензировано",C:"[C] заявление компании",R:"[R] дорожная карта / цель",S:"[S] симуляция / оценка",G:"[G] установленный / общий факт",P:"[P] препринт / отраслевая пресса"}};
-document.addEventListener('mouseover',function(e){ var t=e.target&&e.target.closest&&e.target.closest('span.tag'); if(!t||t.title)return; var m=/(?:^|\s)tag-([DCRSGP])(?:\s|$)/.exec(t.className); if(!m)return; var L=(document.documentElement.lang||'en').slice(0,2)==='ru'?'ru':'en'; t.title=T[L][m[1]]; },true);
+document.addEventListener('mouseover',function(e){ var t=e.target&&e.target.closest&&e.target.closest('span.tag'); if(!t||t.title)return; var m=/(?:^|\s)tag-([DCRSGP])(?:\s|$)/.exec(t.className); if(!m)return; var L=(document.documentElement.lang||'en').slice(0,2); t.title=(T[L]||T.en)[m[1]]; },true);   // a language without its table reads the English tags
 })();"""
 FOLD_JS=r"""(function(){ var KEY='qmap.folds', closed={}; try{ closed=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){}
 function q(sel,id){ return document.querySelector(sel+'[data-sec="'+(window.CSS&&CSS.escape?CSS.escape(id):id)+'"]'); }
@@ -558,20 +648,24 @@ window.__revealHash=function(h){ reveal(h); var el=null; try{ el=document.getEle
 })();"""
 # ---------- map section block
 def map_block(lang,gsec='8'):
-    en=lang=='en'
     return f'''<section class="mapsec">
-<div class="maphead"><h2 class="sr-only">{'Quantum Technology Atlas' if en else 'Атлас квантовых технологий'}</h2><button type="button" class="chip mapcol" data-mapcollapse="1" aria-expanded="true"><span class="when-open">{'▾ collapse the map' if en else '▾ свернуть карту'}</span><span class="when-closed" hidden>{'▸ expand the map' if en else '▸ развернуть карту'}</span></button></div>
+<div class="maphead"><h2 class="sr-only">{pick(lang,('Quantum Technology Atlas','Атлас квантовых технологий'))}</h2><button type="button" class="chip mapcol" data-mapcollapse="1" aria-expanded="true"><span class="when-open">{pick(lang,('▾ collapse the map','▾ свернуть карту'))}</span><span class="when-closed" hidden>{pick(lang,('▸ expand the map','▸ развернуть карту'))}</span></button></div>
 </section>'''
 NUMWORD_EN={14:'fourteen',15:'fifteen',16:'sixteen',17:'seventeen',18:'eighteen',19:'nineteen',20:'twenty'}
 NUMWORD_RU={14:'четырнадцать',15:'пятнадцать',16:'шестнадцать',17:'семнадцать',18:'восемнадцать',19:'девятнадцать',20:'двадцать'}
+NUMWORDS={'en':NUMWORD_EN,'ru':NUMWORD_RU}   # a language without number words (Hebrew) prints digits
+def numword(lang,n): return NUMWORDS.get(lang,{}).get(n,str(n))
+MAP_LEAD=('Columns are the ten layers of a quantum-computing stack, from the qubit’s carrier on the left to manufacturing on the right; each column holds the technologies that fill that layer. Within a column a technology sits higher the more natural its carrier is (atoms, ions and photons at the top) and lower the more fabricated (circuits, dots and cavities at the bottom). The order is not decoration: it predicts behaviour — natural carriers are identical and long-lived but slow and optically driven, fabricated ones are fast and wired but differ from unit to unit — and most technologies of a layer follow it. A hatched technology breaks the order — a *crossing technology*, one that takes a trait from the other side of the divide (§7.5). Coloured lines are the {N} architectures, one technology per layer; dashed hollow technologies are slots nobody has filled. Click a technology for its brief, pick a lens to recolour the map by one attribute, or choose a machine to light the technologies it uses; the strip below shows the seven-attribute vector of every technology. Construction rules and derived tables: §7.',
+          'Колонки — десять слоёв стека квантового компьютера, от носителя кубита слева до производства справа; в каждой колонке — технологии, заполняющие этот слой. Внутри колонки технология стоит тем выше, чем естественнее её носитель (атомы, ионы и фотоны — вверху), и тем ниже, чем больше он изготовлен (схемы, квантовые точки и резонаторы — внизу). Этот порядок не украшение: он предсказывает поведение — естественные носители одинаковы и долгоживущи, но медленны и управляются оптически, изготовленные быстры и подключены проводами, но различаются от экземпляра к экземпляру, — и большинство технологий слоя ему следует. Заштрихованная технология порядок нарушает — это *пересекающая технология*, берущая свойство с другой стороны раздела (§7.5). Цветные линии — {N} архитектур, по одной технологии на слой; пунктирные полые технологии — слоты, которые никто не заполнил. Кликните технологию, чтобы открыть её бриф; выберите линзу, чтобы перекрасить карту по одному атрибуту, или машину, чтобы подсветить технологии, которые она использует; лента ниже показывает вектор из семи атрибутов каждой технологии. Правила построения и выведенные таблицы — в §7.')   # {N}: the number of architectures, in words where the language has them
 def map_lead(gsec='7'):
-    """The map's caption (23 Sep 2026, the editor's review): below the map, in both languages, with its section references linked."""
-    en='Columns are the ten layers of a quantum-computing stack, from the qubit’s carrier on the left to manufacturing on the right; each column holds the technologies that fill that layer. Within a column a technology sits higher the more natural its carrier is (atoms, ions and photons at the top) and lower the more fabricated (circuits, dots and cavities at the bottom). The order is not decoration: it predicts behaviour — natural carriers are identical and long-lived but slow and optically driven, fabricated ones are fast and wired but differ from unit to unit — and most technologies of a layer follow it. A hatched technology breaks the order — a *crossing technology*, one that takes a trait from the other side of the divide (§7.5). Coloured lines are the '+NUMWORD_EN[len(G['paths'])]+' architectures, one technology per layer; dashed hollow technologies are slots nobody has filled. Click a technology for its brief, pick a lens to recolour the map by one attribute, or choose a machine to light the technologies it uses; the strip below shows the seven-attribute vector of every technology. Construction rules and derived tables: §7.'
-    ru='Колонки — десять слоёв стека квантового компьютера, от носителя кубита слева до производства справа; в каждой колонке — технологии, заполняющие этот слой. Внутри колонки технология стоит тем выше, чем естественнее её носитель (атомы, ионы и фотоны — вверху), и тем ниже, чем больше он изготовлен (схемы, квантовые точки и резонаторы — внизу). Этот порядок не украшение: он предсказывает поведение — естественные носители одинаковы и долгоживущи, но медленны и управляются оптически, изготовленные быстры и подключены проводами, но различаются от экземпляра к экземпляру, — и большинство технологий слоя ему следует. Заштрихованная технология порядок нарушает — это *пересекающая технология*, берущая свойство с другой стороны раздела (§7.5). Цветные линии — '+NUMWORD_RU[len(G['paths'])]+' архитектур, по одной технологии на слой; пунктирные полые технологии — слоты, которые никто не заполнил. Кликните технологию, чтобы открыть её бриф; выберите линзу, чтобы перекрасить карту по одному атрибуту, или машину, чтобы подсветить технологии, которые она использует; лента ниже показывает вектор из семи атрибутов каждой технологии. Правила построения и выведенные таблицы — в §7.'
+    """The map's caption (23 Sep 2026, the editor's review): below the map, one paragraph per language, its section references
+    linked to the page's own language (a language without its text shows the English one)."""
     def link(t,lang):
         return re.sub(r'§(\d+)(?:\.(\d+))?',lambda m:'<a class="xref" href="#%s-s%s%s">%s</a>'%(lang,m.group(1),('-'+m.group(2)) if m.group(2) else '',m.group(0)),t.replace('§7',"§"+gsec))
-    return ('<div class="maplead"><details id="maplead"><summary><span class="lang-en">How to read the map</span><span class="lang-ru">Как читать карту</span></summary>'
-            '<p class="lead lang-en">'+link(en,'en')+'</p><p class="lead lang-ru">'+link(ru,'ru')+'</p></details></div>')
+    n=len(G['paths'])
+    return ('<div class="maplead"><details id="maplead"><summary>'+spans(('How to read the map','Как читать карту'))+'</summary>'
+            +''.join('<p class="lead lang-%s"%s>%s</p>'%(L,fb_attrs(L,not LG.has(L,MAP_LEAD)),link(pick(L,MAP_LEAD).replace('{N}',numword(L if LG.has(L,MAP_LEAD) else 'en',n)),L)) for L in LANGS)
+            +'</details></div>')
 MAPUI='''<div class="mapbar" id="mapbar">
  <div class="grp chipsrow"><button type="button" class="bartog" id="bartog" aria-expanded="true" aria-controls="mapbar" title="show or hide the map controls: architectures, lens, machine, edges, zoom, legend"><svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="6" cy="4" r="1.9" fill="var(--surface)" stroke="currentColor" stroke-width="1.4"/><circle cx="11" cy="8" r="1.9" fill="var(--surface)" stroke="currentColor" stroke-width="1.4"/><circle cx="5" cy="12" r="1.9" fill="var(--surface)" stroke="currentColor" stroke-width="1.4"/></svg><span class="lang-en">Controls</span><span class="lang-ru">Управление</span><span class="when-open">▾</span><span class="when-closed" hidden>▸</span></button><span class="lbl lang-en">architectures</span><span class="lbl lang-ru">архитектуры</span><span class="barsum" id="barsum" hidden></span><span id="pathchips" class="grp"></span></div>
  <div class="grp"><span class="lbl lang-en">lens</span><span class="lbl lang-ru">линза</span><select id="lens" class="sel" aria-label="colour lens"></select></div>
@@ -592,7 +686,7 @@ MAPUI='''<div class="mapbar" id="mapbar">
   <span class="gl"><i class="lg ed con"></i><span class="lang-en">conflicts — hover for the reason</span><span class="lang-ru">конфликтует — причина по наведению</span></span>
   <span class="gl long"><i class="lg stn" aria-hidden="true"><svg viewBox="0 0 50 16" width="50" height="16"><rect x="0.6" y="0.6" width="21" height="14.8" rx="3.5" fill="var(--surface)" stroke="var(--ink2)" stroke-width="1.2"/><rect x="3.2" y="3.6" width="11" height="1.6" rx="0.8" fill="var(--ink)" opacity="0.8"/><rect x="3.2" y="10.8" width="4" height="2.2" rx="0.6" fill="var(--sc)"/><path d="M23.4 8H27M25.6 6.4L27.2 8L25.6 9.6" fill="none" stroke="var(--muted)" stroke-width="1"/><rect x="28.400000000000002" y="0.6" width="21" height="14.8" rx="3.5" fill="rgba(27,175,122,0.22)" stroke="var(--atom)" stroke-width="1.2"/><rect x="31.0" y="3.6" width="11" height="1.6" rx="0.8" fill="var(--ink)" opacity="0.8"/><rect x="31.0" y="10.8" width="4" height="2.2" rx="0.6" fill="var(--sc)"/><rect x="28.4" y="0.6" width="3.2" height="14.8" rx="1.4" fill="var(--atom)"/></svg></i><span class="lang-en">outline = family colour (dark: several families); with an attribute lens on (any but “Platform family”): tint + left band = the lens value (legend below)</span><span class="lang-ru">рамка = цвет семейства (тёмная: несколько семейств); при линзе по атрибуту (любой, кроме «семейства платформ»): оттенок + полоса слева = значение линзы (легенда ниже)</span></span>
   <span class="gl"><i class="lg stn" aria-hidden="true"><svg viewBox="0 0 50 16" width="50" height="16"><rect x="0.6" y="0.6" width="21" height="14.8" rx="3.5" fill="var(--surface)" stroke="var(--ink2)" stroke-width="1.2"/><rect x="3.2" y="3.6" width="11" height="1.6" rx="0.8" fill="var(--ink)" opacity="0.8"/><rect x="3.2" y="10.8" width="4" height="2.2" rx="0.6" fill="var(--sc)"/><path d="M23.4 8H27M25.6 6.4L27.2 8L25.6 9.6" fill="none" stroke="var(--muted)" stroke-width="1"/><rect x="28.400000000000002" y="0.6" width="21" height="14.8" rx="3.5" fill="var(--surface)" stroke="var(--ink)" stroke-width="2.5"/><rect x="31.0" y="3.6" width="11" height="1.6" rx="0.8" fill="var(--ink)" opacity="0.8"/><rect x="31.0" y="10.8" width="4" height="2.2" rx="0.6" fill="var(--sc)"/></svg></i><span class="lang-en">thick outline = the clicked technology</span><span class="lang-ru">толстая рамка = выбранная технология</span></span>
-  <span class="gl"><i class="lg badges"><b></b><b></b></i><span class="lang-en">small squares = the platform lines through the technology (■ primary, half-tone ▪ alternate)</span><span class="lang-ru">маленькие квадраты = линии платформ через технологию (■ основная, полутон ▪ альтернатива)</span></span>
+  <span class="gl"><i class="lg badges"><b></b><b></b></i><span class="lang-en">small squares = the architectures using the technology, one per architecture in its family's colour (■ primary, ▪ alternate)</span><span class="lang-ru">квадраты = архитектуры, использующие технологию, по одному на архитектуру цветом семейства (■ основная, ▪ альтернатива)</span></span>
   <span class="gl"><i class="lg ax">↕</i><span class="lang-en">rows natural → fabricated · columns = layers · click a technology</span><span class="lang-ru">строки естественное → изготовленное · колонки — слои · клик по технологии</span></span>
   <span class="gl try"><span class="lang-en">try:</span><span class="lang-ru">попробуйте:</span> <a href="#" data-goto="transmon">Transmon</a> · <a href="#" data-goto="code_qldpc">qLDPC</a> · <a href="#" data-goto="ro_erasure"><span class="lang-en">Erasure check</span><span class="lang-ru">Проверка стирания</span></a></span>
   </div>
@@ -618,14 +712,14 @@ MAPUI='''<div class="mapbar" id="mapbar">
 <p class="lang-ru">Каждая ломаная — одна технология (технология карты, узел графа — три слова называют одно и то же в трёх его домах: отрасли, карте, данных); вертикальные оси — её семь атрибутов проектирования (a)–(g) из §7.1. Наведите на линию, чтобы назвать её — её технология подсветится на карте, а наведение на технологию подсвечивает её линию; клик по линии выбирает технологию. Оси — это линзы карты: клик по заголовку оси раскрашивает карту по этому атрибуту (повторный клик снимает выбранные значения), клик по значению на оси оставляет только технологии с этим значением (Ctrl-клик добавляет значение); подсвеченные, приглушённые и пунктирные линии следуют выбору на карте. Пучки показывают диагональ (естественные носители идут через оптическое управление и транспорт; изготовленные — через СВЧ/электрическое управление и статическую разводку); линии, пересекающие пучки, — заштрихованные на карте технологии.</p>
 </details>
 <div id="pc"></div></div></div>'''
-# assemble content with both languages
-def toc_html(toc,lang,gsec='8'):
+# the contents of one language (fallback: its titles are another language's — marked, so they read in their own direction)
+def toc_html(toc,lang,gsec='8',fallback=False):
     def li(i,num,t,lvl):
-        sty=' style="padding-left:14px;font-size:12.5px"' if lvl==3 else ''
-        return '<li'+sty+'><a href="#'+i+'"><span class="n">'+num+'</span><span>'+html.escape(t)+'</span></a></li>'
+        sty=' style="padding-inline-start:14px;font-size:12.5px"' if lvl==3 else ''
+        return '<li'+sty+'><a href="#'+i+'"><span class="n">'+num+'</span><span'+(fb_attrs(lang,fallback and i!='briefs'))+'>'+html.escape(t)+'</span></a></li>'
     subs=(gsec+'.',str(int(gsec)+1)+'.')   # level-3 entries for the graph section and the machines chapter that follows it
     items=''.join(li(i,num,t,lvl) for i,num,t,lvl in toc if lvl==2 or num.startswith(subs))
-    return f'<ol><li class="mapl"><a href="#map"><span class="n">◎</span><span>{"Technology map" if lang=="en" else "Карта технологий"}</span></a></li>{items}</ol>'
+    return f'<ol><li class="mapl"><a href="#map"><span class="n">◎</span><span>{pick(lang,("Technology map","Карта технологий","מפת הטכנולוגיות"))}</span></a></li>{items}</ol>'
 # find split point: before <h2 id="s3"> in each
 def split_after_s2(h,lang):
     i=h.find(f'<h2 id="{lang}-s1">'); return h[:i],h[i:]   # the map block goes in before section 1
@@ -637,39 +731,42 @@ def split_before_num(h,toc,num):
     return (h,'') if i<0 else (h[:i],h[i:])
 def toc_with_briefs(toc,lang,snum='9'):
     """Insert the Technology-briefs entry before the sources section."""
-    out=list(toc); entry=('briefs','◈',BR.SECTION_TITLE[lang],2)
+    out=list(toc); entry=('briefs','◈',pick(lang,BR.SECTION_TITLE),2)
     for k,t in enumerate(out):
         if t[3]==2 and t[1]==snum:
             out.insert(k,entry); return out
     out.append(entry); return out
 
 PUBLIC=dict(mode='public',
-    report_en=os.path.join(ROOT,'report','report_EN.md'), report_ru=os.path.join(ROOT,'report','report_RU.md'),
+    reports={L:os.path.join(ROOT,'report','report_%s.md'%L.upper()) for L in LANGS},   # a language whose report is missing is built from the English one (with a warning)
     out_body=os.path.join(ROOT,'build','_out','body.html'), out_full=os.path.join(ROOT,'dist','Quantum-Technology-Atlas-%s.html'%EDITIONS[0]['edition']),
     title='Quantum Technology Atlas', default_lang='en', graph_sec='7', sources_num='9', table_num='7.2', id_sections=('7.2','7.5','7.6','7.7'),
-    briefs_en=os.path.join(ROOT,'briefs','en'), briefs_ru=os.path.join(ROOT,'briefs','ru'), regmap=os.path.join(ROOT,'data','facts.json'),
+    briefs_dirs={L:os.path.join(ROOT,'briefs',L) for L in LANGS}, regmap=os.path.join(ROOT,'data','facts.json'),
     doi_concept=CONCEPT_DOI, doi_version=EDITIONS[0]['doi'], author='Raveh Neeman', publisher='Qodeh', url=SITE, repo=REPO, date=EDITIONS[0]['date'], edition=EDITIONS[0]['edition'],
     floating_lang_switch=True)   # a semi-transparent floating language switch on wide screens (the editor, 29 Sep 2026); False removes it
+PUBLIC['report_en']=PUBLIC['reports']['en']   # the English report by its old key (sync_readme, older callers)
 
+def lang_buttons(cur):
+    """the language switch's buttons: every language of langs.LANGS by its own name, the page's language pressed (29 Sep 2026)"""
+    return ''.join('<button type="button" data-setlang="%s" lang="%s"%s aria-pressed="%s">%s</button>'%(L,L,' dir="rtl"' if direction(L)=='rtl' else '','true' if L==cur else 'false',NATIVE[L]) for L in LANGS)
 def floatlang(cfg):
-    """the floating language switch: fixed at the top right on wide screens, a little transparent until hovered; the masthead's
-    switch scrolls away with the masthead, this one stays (the editor, 29 Sep 2026); cfg['floating_lang_switch']=False removes it"""
+    """the floating language switch: fixed at the top corner on wide screens (top right; top left on a right-to-left page), a
+    little transparent until hovered; the masthead's switch scrolls away with the masthead, this one stays (the editor, 29 Sep
+    2026); cfg['floating_lang_switch']=False removes it"""
     if not cfg.get('floating_lang_switch', True): return ''
-    dl=cfg['default_lang']; en='true' if dl=='en' else 'false'; ru='true' if dl=='ru' else 'false'
-    return f'''<div class="floatlang" id="floatlang" role="group" aria-label="language"><button type="button" data-setlang="en" aria-pressed="{en}">EN</button><button type="button" data-setlang="ru" aria-pressed="{ru}">RU</button></div>'''
+    return f'''<div class="floatlang" id="floatlang" role="group" aria-label="language">{lang_buttons(cfg['default_lang'])}</div>'''
 def navchrome(cfg):
     dl=cfg['default_lang']
-    en='true' if dl=='en' else 'false'; ru='true' if dl=='ru' else 'false'
     return f'''<div class="mobilebar" id="mobilebar">
- <button type="button" class="mb-btn" id="tocopen" aria-expanded="false" aria-controls="tocdrawer"><span class="lang-en">Contents ☰</span><span class="lang-ru">Содержание ☰</span></button>
- <a class="mb-btn" href="#map"><span class="lang-en">Map</span><span class="lang-ru">Карта</span></a>
- <button type="button" class="mb-btn findopen" data-findopen="1" aria-label="find in the Atlas" title="find in the Atlas (/)"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 10l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="lang-en">Find</span><span class="lang-ru">Поиск</span></button>
+ <button type="button" class="mb-btn" id="tocopen" aria-expanded="false" aria-controls="tocdrawer">{spans(('Contents','Содержание','תוכן העניינים'),cls='mb-lbl')} ☰</button>
+ <a class="mb-btn" href="#map">{spans(('Map','Карта','מפה'))}</a>
+ <button type="button" class="mb-btn findopen" data-findopen="1" aria-label="find in the Atlas" title="find in the Atlas (/)"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 10l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>{spans(('Find','Поиск','חיפוש'))}</button>
  <span class="mb-sp"></span>
- <div class="seg mb-seg" role="group" aria-label="language"><button type="button" data-setlang="en" aria-pressed="{en}">EN</button><button type="button" data-setlang="ru" aria-pressed="{ru}">RU</button></div>
+ <div class="seg mb-seg" role="group" aria-label="language">{lang_buttons(dl)}</div>
 </div>
 <div class="tocbackdrop" id="tocbackdrop" hidden></div>
 <aside class="tocdrawer" id="tocdrawer" hidden role="dialog" aria-modal="true" aria-label="contents">
- <div class="td-head"><span><span class="lang-en">Contents</span><span class="lang-ru">Содержание</span></span><button type="button" class="td-close" id="tocclose" aria-label="close">✕</button></div>
+ <div class="td-head"><span>{spans(('Contents','Содержание','תוכן העניינים'))}</span><button type="button" class="td-close" id="tocclose" aria-label="close">✕</button></div>
  <div class="td-body" id="tocdrawerbody"></div>
 </aside>
 {FIND_HTML}
@@ -735,9 +832,10 @@ def report_numbers(text,lang):
     so the text never carries a stale 96 / 14 / 136 / 1,533 again."""
     M=json.load(open(os.path.join(ROOT,'data','machines.json'),encoding='utf-8'))
     nm=len(M['machines']); cells=sum(m['evidence_counts']['total'] for m in M['machines']); press=sum(1 for m in M['machines'] if m['evidence_counts']['verified']==0)
-    thou=(lambda n: f'{n:,}') if lang=='en' else (lambda n: f'{n:,}'.replace(',','\u00a0'))
-    vals={'N_NODES':str(len(G['nodes'])),'N_PATHS':str(len(G['paths'])),'N_PATHS_WORD':(NUMWORD_EN if lang=='en' else NUMWORD_RU).get(len(G['paths']),str(len(G['paths']))),
-          'N_MACHINES':str(nm),'N_CELLS':thou(cells),'N_PRESSONLY':str(press),'N_PRESSONLY_WORD':(NUMWORD_EN_SMALL if lang=='en' else NUMWORD_RU_SMALL).get(press,str(press))}
+    thou=(lambda n: f'{n:,}'.replace(',','\u00a0')) if lang=='ru' else (lambda n: f'{n:,}')   # Russian groups thousands with a space; English and Hebrew with a comma
+    small={'en':NUMWORD_EN_SMALL,'ru':NUMWORD_RU_SMALL}.get(lang,{})   # Hebrew prints digits, no number words (29 Sep 2026)
+    vals={'N_NODES':str(len(G['nodes'])),'N_PATHS':str(len(G['paths'])),'N_PATHS_WORD':numword(lang,len(G['paths'])),
+          'N_MACHINES':str(nm),'N_CELLS':thou(cells),'N_PRESSONLY':str(press),'N_PRESSONLY_WORD':small.get(press,str(press))}
     vals['N_PRESSONLY_WORD_CAP']=vals['N_PRESSONLY_WORD'][:1].upper()+vals['N_PRESSONLY_WORD'][1:]
     import machines_chapter as _mc                      # §8's headline figures: {{N_CODE_RUN}}, {{N_IC_NONE_OR_UNDISC}}, {{N_CTRL_EXT}}, {{N_OCC}} … (27 Sep 2026)
     vals.update({'N_'+k:str(v) for k,v in _mc.figures().items()})
@@ -752,15 +850,15 @@ def masthead(cfg):
     doi_html=f'<a href="{doiurl}" target="_blank" rel="noopener">{doi}</a>'
     return f'''<header class="mast">
  <div>
-  <div class="eyebrow"><span class="lang-en">Edition {cfg['edition']} · English / Russian</span><span class="lang-ru">Издание {cfg['edition']} · English / Русский</span></div>
+  <div class="eyebrow">{spans(('Edition','Издание','מהדורה'))} {cfg['edition']} · {' / '.join('<span lang="%s" dir="%s">%s</span>'%(L,direction(L),NATIVE[L]) for L in LANGS)}</div>
   <h1 class="title">Quantum Technology Atlas</h1>
-  <p class="author"><span class="lang-en">Author</span><span class="lang-ru">Автор</span> · <b>{cfg['author']}</b> <a class="orcid" href="https://orcid.org/0000-0001-7362-9529" target="_blank" rel="noopener author" title="ORCID iD: https://orcid.org/0000-0001-7362-9529" aria-label="ORCID iD 0000-0001-7362-9529"><svg class="orcid-id" viewBox="0 0 256 256" width="16" height="16" aria-hidden="true"><path fill="#A6CE39" d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z"/><path fill="#FFF" d="M86.3 186.2H70.9V79.1h15.4v107.1zM108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7 0-21.5-13.7-39.7-43.7-39.7h-23.7v79.4zM88.7 56.8c0 5.5-4.5 10.1-10.1 10.1s-10.1-4.6-10.1-10.1c0-5.6 4.5-10.1 10.1-10.1s10.1 4.6 10.1 10.1z"/></svg></a></p>
+  <p class="author">{spans(('Author','Автор','מחבר'))} · <b>{cfg['author']}</b> <a class="orcid" href="https://orcid.org/0000-0001-7362-9529" target="_blank" rel="noopener author" title="ORCID iD: https://orcid.org/0000-0001-7362-9529" aria-label="ORCID iD 0000-0001-7362-9529"><svg class="orcid-id" viewBox="0 0 256 256" width="16" height="16" aria-hidden="true"><path fill="#A6CE39" d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z"/><path fill="#FFF" d="M86.3 186.2H70.9V79.1h15.4v107.1zM108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7 0-21.5-13.7-39.7-43.7-39.7h-23.7v79.4zM88.7 56.8c0 5.5-4.5 10.1-10.1 10.1s-10.1-4.6-10.1-10.1c0-5.6 4.5-10.1 10.1-10.1s10.1 4.6 10.1 10.1z"/></svg></a></p>
   <p class="subtitle"><span class="lang-en">Every quantum-computing technology ({NN}) and every quantum machine built, announced or planned ({NM}): analysed and summarised, partitioned by seven stable design attributes, compared and combined in dozens of ways — with a brief on every technology and a card on every machine.</span><span class="lang-ru">Все технологии квантовых вычислений ({NN}) и все построенные, объявленные или запланированные квантовые машины ({NM}): проанализированы и сведены, разбиты по семи устойчивым атрибутам конструкции, сопоставлены и скомбинированы десятками способов — с брифом на каждую технологию и карточкой на каждую машину.</span></p>
  </div>
  <div class="controls">
-  <div class="seg" role="group" aria-label="language"><button type="button" data-setlang="en" aria-pressed="true">English</button><button type="button" data-setlang="ru" aria-pressed="false">Русский</button></div>
+  <div class="seg" role="group" aria-label="language">{lang_buttons(cfg.get('page_lang','en'))}</div>
   <div class="pubmeta">
-   <div><span class="lang-en">Published by</span><span class="lang-ru">Издатель</span> <a href="https://qodeh.com" target="_blank" rel="noopener">{cfg['publisher']}</a> · <span class="lang-en">data cut-off 26 September 2026</span><span class="lang-ru">данные по состоянию на 26 сентября 2026</span></div>
+   <div>{spans(('Published by','Издатель','בהוצאת'))} <a href="https://qodeh.com" target="_blank" rel="noopener">{cfg['publisher']}</a> · {spans(('data cut-off 26 September 2026','данные по состоянию на 26 сентября 2026','הקפאת נתונים: 26 בספטמבר 2026'))}</div>
    <div>DOI {doi_html} · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener">CC BY 4.0</a> · <a class="ghlink" href="{cfg['repo']}" target="_blank" rel="noopener" title="github.com/qraveh/qt-map"><svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg> <span class="lang-en">GitHub — data &amp; source</span><span class="lang-ru">GitHub — данные и исходники</span></a></div>
   </div>
  </div>
@@ -782,8 +880,9 @@ def feedback_html(cfg):
 
 FEEDBACK_JS=r"""(function(){var btn=document.getElementById('fbkbtn'),pop=document.getElementById('fbkpop'),wrap=document.getElementById('fbk');if(!btn||!pop)return;
 function lang(){return (document.getElementById('app')||{}).getAttribute?document.getElementById('app').getAttribute('data-lang')||'en':'en';}
-function htext(el){var en=document.getElementById(el.id.replace(/^ru-/,'en-'));if(!en&&/^ru-/.test(el.id)){var S=window.__SECTITLES||{};var t=S[el.id.replace(/^ru-/,'')];var n0=el.querySelector('.num');var num0=n0?n0.textContent.trim():'';if(t)return (num0?('§'+num0+' '):'')+t;}en=en||el;var n=en.querySelector('.num');var num=n?n.textContent.trim():'';var rest=en.textContent.trim();if(num&&rest.indexOf(num)===0)rest=rest.slice(num.length).trim();return (num?('§'+num+' '):'')+rest;}
-function where(){var h=location.hash||'';if(h.indexOf('#brief-')===0)return 'brief '+h.slice(7).replace(/^(en|ru)-/,'');var best=null,top=window.scrollY+80;var hs=document.querySelectorAll('main h2[id],main h3[id],main h4[id]');for(var i=0;i<hs.length;i++){if(!hs[i].getClientRects().length)continue;var r=hs[i].getBoundingClientRect().top+window.scrollY;if(r<=top)best=hs[i];else break;}return best?htext(best).slice(0,90):(h?h.slice(1):'top');}   // hidden headings (the other language's blocks) have no rect and are skipped (27 Sep 2026)
+var LL=(window.__LANGS||{}).list||['en'],OTH=new RegExp('^('+LL.filter(function(l){return l!=='en';}).join('|')+')-'),ANY=new RegExp('^('+LL.join('|')+')-');   // a heading of another language is named by its English twin (29 Sep 2026: any language)
+function htext(el){var en=document.getElementById(el.id.replace(OTH,'en-'));if(!en&&OTH.test(el.id)){var S=window.__SECTITLES||{};var t=S[el.id.replace(OTH,'')];var n0=el.querySelector('.num');var num0=n0?n0.textContent.trim():'';if(t)return (num0?('§'+num0+' '):'')+t;}en=en||el;var n=en.querySelector('.num');var num=n?n.textContent.trim():'';var rest=en.textContent.trim();if(num&&rest.indexOf(num)===0)rest=rest.slice(num.length).trim();return (num?('§'+num+' '):'')+rest;}
+function where(){var h=location.hash||'';if(h.indexOf('#brief-')===0)return 'brief '+h.slice(7).replace(ANY,'');var best=null,top=window.scrollY+80;var hs=document.querySelectorAll('main h2[id],main h3[id],main h4[id]');for(var i=0;i<hs.length;i++){if(!hs[i].getClientRects().length)continue;var r=hs[i].getBoundingClientRect().top+window.scrollY;if(r<=top)best=hs[i];else break;}return best?htext(best).slice(0,90):(h?h.slice(1):'top');}   // hidden headings (the other language's blocks) have no rect and are skipped (27 Sep 2026)
 function context(){var m=(window.__mapContext&&window.__mapContext())||{};var L=lang();var app=document.getElementById('app');var lines=['page: '+(document.title||'Quantum Technology Atlas'),'edition: '+((app&&app.getAttribute('data-edition'))||''),'language: '+L,'location: '+where()];if(m.focus)lines.push('technology: '+m.focus);if(m.isolate)lines.push('architecture: '+m.isolate);if(m.machine)lines.push('machine: '+m.machine);if(m.lens)lines.push('lens: '+m.lens);lines.push('url: '+location.href.split('#')[0]+(location.hash||''));lines.push('date: '+new Date().toISOString().slice(0,10));return lines.join('\n');}
 function fill(){var c=context();document.getElementById('fbkctx').textContent=c;var loc=where();var title='Feedback: '+loc.slice(0,60);var body='What is wrong and where:\n\n\n---\nContext (attached automatically):\n'+c;   // the issue and the mail are English whatever the page's language (26 Sep 2026)
  var gh=document.getElementById('fbkgh');gh.href=gh.href.split('?')[0]+'?title='+encodeURIComponent(title)+'&body='+encodeURIComponent(body);
@@ -803,28 +902,25 @@ def footer(cfg):
     doi=cfg['doi_concept']; doiurl='https://doi.org/'+doi
     # the citation names the work, not an edition (the editor, 27 Sep 2026): the concept DOI is the work's identifier and
     # always resolves to its newest edition; the edition read is dated in the Editions table below
-    cite_en=f"{cfg['author']} (2026). <i>Quantum Technology Atlas</i>. {cfg['publisher']}. <a href=\"{doiurl}\">{doiurl}</a> — the DOI names the work as a whole and always resolves to its newest edition; each edition has its own DOI in the table below."
-    cite_ru=f"{cfg['author']} (2026). <i>Quantum Technology Atlas</i>. {cfg['publisher']}. <a href=\"{doiurl}\">{doiurl}</a> — DOI именует работу в целом и всегда ведёт на её последнее издание; у каждого издания свой DOI в таблице ниже."
-    return f'''<footer class="colophon">
- <div class="lang-en">
-  <p><b>Cite as.</b> {cite_en}</p>
-  <p><b>License.</b> This work is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International License</a>: you may share and adapt it for any purpose, including commercially, provided you give appropriate credit, link to the license and indicate any changes. The interactive document, its technology graph ({NN} nodes, edges and attributes) and the {NN} technology briefs are all covered. Quoted figures remain the property of their cited sources.</p>
-  <p><b>Data and source.</b> The graph (nodes, attributes, edges, dated records), the briefs and the build that renders this page are maintained at <a href="{cfg['repo']}">{cfg['repo'].replace('https://','')}</a>; corrections and new records are welcome as issues or pull requests; each edition is a tagged release archived on Zenodo.</p>
-  {editions_html('en')}
-  <p><b>Disclosures.</b> This is a single-author publication, produced independently and published under the author's own imprint, Qodeh — no external funding, sponsorship or solicitation, and no affiliation with any vendor or laboratory named in it. Factual corrections are welcome.</p>
-  <p><b>Provenance.</b> Research and drafting with Claude (Anthropic) under the author's direction and review. In the comparison (§2–§3), the graph section (§7), the machines chapter (§8) and the briefs, figures carry an evidence tag ([D] measured / peer-reviewed, [C] company claim, [R] roadmap, [S] simulation or estimate, [G] established fact, [P] preprint or trade press) and trace to a dated, linked source; where only a secondary source exists, the text says so. Known conflicts between sources are stated, not averaged. Open verification items are listed at the end of each brief. Data cut-off: 26 September 2026 (the report and the register); a brief's own “as of” date says when that brief was last researched.</p>
-  <p><b>Sharing image.</b> The picture shown when this page is shared: Raveh Neeman, <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>; a collage of photographs by OJB Quantum (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>), Steve Jurvetson (<a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>) and the U.S. National Institute of Standards and Technology (public domain) — <a href="{OG_CREDITS_URL}">full list of works</a>.</p>
- </div>
- <div class="lang-ru">
-  <p><b>Как цитировать.</b> {cite_ru}</p>
-  <p><b>Лицензия.</b> Работа распространяется по лицензии <a href="https://creativecommons.org/licenses/by/4.0/deed.ru" rel="license">Creative Commons Attribution 4.0 International</a>: её можно распространять и перерабатывать в любых целях, включая коммерческие, при условии указания авторства, ссылки на лицензию и обозначения внесённых изменений. Лицензия покрывает интерактивный документ, граф технологий ({NN} узлов, рёбра и атрибуты) и {NN} брифов. Цитируемые цифры остаются собственностью указанных источников.</p>
-  <p><b>Данные и исходники.</b> Граф (узлы, атрибуты, рёбра, датированные рекорды), брифы и сборка, порождающая эту страницу, ведутся в <a href="{cfg['repo']}">{cfg['repo'].replace('https://','')}</a>; исправления и новые рекорды принимаются как issue или pull request; каждое издание — тегированный релиз, архивируемый на Zenodo.</p>
-  {editions_html('ru')}
-  <p><b>Раскрытие.</b> Это публикация одного автора, подготовленная независимо и изданная под собственным импринтом автора, Qodeh — без внешнего финансирования, спонсорства и заказа, без аффилиации с какими-либо названными в ней компаниями и лабораториями. Фактические поправки приветствуются.</p>
-  <p><b>Происхождение.</b> Исследование и написание — совместно с Claude (Anthropic) под руководством и с проверкой автора. В сравнении (§2–§3), разделе графа (§7), главе о машинах (§8) и брифах цифры несут тег свидетельства ([D] измерено / рецензировано, [C] заявление компании, [R] дорожная карта, [S] симуляция или оценка, [G] установленный факт, [P] препринт или отраслевая пресса) и прослеживаются к датированному источнику по ссылке; где есть только вторичный источник, текст говорит об этом. Расхождения между источниками названы, а не усреднены. Открытые пункты верификации перечислены в конце каждого брифа. Данные по состоянию на 26 сентября 2026 (отчёт и реестр); дата «по состоянию на» внутри брифа говорит, когда этот бриф исследовался в последний раз.</p>
-  <p><b>Изображение для ссылок.</b> Картинка, которую показывают, когда этой страницей делятся: Raveh Neeman, <a href="https://creativecommons.org/licenses/by/4.0/deed.ru" rel="license">CC BY 4.0</a>; коллаж из фотографий OJB Quantum (<a href="https://creativecommons.org/licenses/by/4.0/deed.ru">CC BY 4.0</a>), Steve Jurvetson (<a href="https://creativecommons.org/licenses/by/2.0/deed.ru">CC BY 2.0</a>) и Национального института стандартов и технологий США (общественное достояние) — <a href="{OG_CREDITS_URL}">полный список работ</a>.</p>
- </div>
-</footer>'''
+    cite=(f"{cfg['author']} (2026). <i>Quantum Technology Atlas</i>. {cfg['publisher']}. <a href=\"{doiurl}\">{doiurl}</a> — the DOI names the work as a whole and always resolves to its newest edition; each edition has its own DOI in the table below.",
+          f"{cfg['author']} (2026). <i>Quantum Technology Atlas</i>. {cfg['publisher']}. <a href=\"{doiurl}\">{doiurl}</a> — DOI именует работу в целом и всегда ведёт на её последнее издание; у каждого издания свой DOI в таблице ниже.")
+    repo=f"<a href=\"{cfg['repo']}\">{cfg['repo'].replace('https://','')}</a>"
+    # the colophon's paragraphs, (English, Russian[, Hebrew]) each; None marks the place of the Editions table
+    P=[(f'<b>Cite as.</b> {cite[0]}', f'<b>Как цитировать.</b> {cite[1]}'),
+       (f'<b>License.</b> This work is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International License</a>: you may share and adapt it for any purpose, including commercially, provided you give appropriate credit, link to the license and indicate any changes. The interactive document, its technology graph ({NN} nodes, edges and attributes) and the {NN} technology briefs are all covered. Quoted figures remain the property of their cited sources.',
+        f'<b>Лицензия.</b> Работа распространяется по лицензии <a href="https://creativecommons.org/licenses/by/4.0/deed.ru" rel="license">Creative Commons Attribution 4.0 International</a>: её можно распространять и перерабатывать в любых целях, включая коммерческие, при условии указания авторства, ссылки на лицензию и обозначения внесённых изменений. Лицензия покрывает интерактивный документ, граф технологий ({NN} узлов, рёбра и атрибуты) и {NN} брифов. Цитируемые цифры остаются собственностью указанных источников.'),
+       (f'<b>Data and source.</b> The graph (nodes, attributes, edges, dated records), the briefs and the build that renders this page are maintained at {repo}; corrections and new records are welcome as issues or pull requests; each edition is a tagged release archived on Zenodo.',
+        f'<b>Данные и исходники.</b> Граф (узлы, атрибуты, рёбра, датированные рекорды), брифы и сборка, порождающая эту страницу, ведутся в {repo}; исправления и новые рекорды принимаются как issue или pull request; каждое издание — тегированный релиз, архивируемый на Zenodo.'),
+       None,
+       ("<b>Disclosures.</b> This is a single-author publication, produced independently and published under the author's own imprint, Qodeh — no external funding, sponsorship or solicitation, and no affiliation with any vendor or laboratory named in it. Factual corrections are welcome.",
+        '<b>Раскрытие.</b> Это публикация одного автора, подготовленная независимо и изданная под собственным импринтом автора, Qodeh — без внешнего финансирования, спонсорства и заказа, без аффилиации с какими-либо названными в ней компаниями и лабораториями. Фактические поправки приветствуются.'),
+       ("<b>Provenance.</b> Research and drafting with Claude (Anthropic) under the author's direction and review. In the comparison (§2–§3), the graph section (§7), the machines chapter (§8) and the briefs, figures carry an evidence tag ([D] measured / peer-reviewed, [C] company claim, [R] roadmap, [S] simulation or estimate, [G] established fact, [P] preprint or trade press) and trace to a dated, linked source; where only a secondary source exists, the text says so. Known conflicts between sources are stated, not averaged. Open verification items are listed at the end of each brief. Data cut-off: 26 September 2026 (the report and the register); a brief's own “as of” date says when that brief was last researched.",
+        '<b>Происхождение.</b> Исследование и написание — совместно с Claude (Anthropic) под руководством и с проверкой автора. В сравнении (§2–§3), разделе графа (§7), главе о машинах (§8) и брифах цифры несут тег свидетельства ([D] измерено / рецензировано, [C] заявление компании, [R] дорожная карта, [S] симуляция или оценка, [G] установленный факт, [P] препринт или отраслевая пресса) и прослеживаются к датированному источнику по ссылке; где есть только вторичный источник, текст говорит об этом. Расхождения между источниками названы, а не усреднены. Открытые пункты верификации перечислены в конце каждого брифа. Данные по состоянию на 26 сентября 2026 (отчёт и реестр); дата «по состоянию на» внутри брифа говорит, когда этот бриф исследовался в последний раз.'),
+       (f'<b>Sharing image.</b> The picture shown when this page is shared: Raveh Neeman, <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>; a collage of photographs by OJB Quantum (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>), Steve Jurvetson (<a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>) and the U.S. National Institute of Standards and Technology (public domain) — <a href="{OG_CREDITS_URL}">full list of works</a>.',
+        f'<b>Изображение для ссылок.</b> Картинка, которую показывают, когда этой страницей делятся: Raveh Neeman, <a href="https://creativecommons.org/licenses/by/4.0/deed.ru" rel="license">CC BY 4.0</a>; коллаж из фотографий OJB Quantum (<a href="https://creativecommons.org/licenses/by/4.0/deed.ru">CC BY 4.0</a>), Steve Jurvetson (<a href="https://creativecommons.org/licenses/by/2.0/deed.ru">CC BY 2.0</a>) и Национального института стандартов и технологий США (общественное достояние) — <a href="{OG_CREDITS_URL}">полный список работ</a>.')]
+    def block(L):   # one language's colophon; a paragraph without the language's text is the English one, marked
+        return '\n'.join(editions_html(L) if p is None else '  <p%s>%s</p>'%(fb_attrs(L,not LG.has(L,p)),pick(L,p)) for p in P)
+    return '<footer class="colophon">\n'+'\n'.join(' <div class="lang-%s">\n%s\n </div>'%(L,block(L)) for L in LANGS)+'\n</footer>'
 
 # ---------- sharing image (og:image / twitter:image)
 # The picture social platforms show when the page is shared. Chosen by the editor on 2026-09-26 from the
@@ -868,109 +964,173 @@ def og_image_size():
 def head_meta(cfg):
     if cfg['mode']=='internal': return '<meta name="color-scheme" content="light dark">'
     doi=cfg['doi_concept']; cite_doi='<meta name="citation_doi" content="'+doi+'">'; ident='https://doi.org/'+doi; NN,NM=_counts(); pl=cfg.get('page_lang','en')
-    desc=(f'Every quantum-computing technology ({NN}) and every quantum machine built, announced or planned ({NM}): analysed and summarised, partitioned by seven stable design attributes, compared and combined in dozens of ways — with a brief on every technology and a card on every machine. Bilingual EN/RU, CC BY 4.0.' if pl=='en'
-          else f'Все технологии квантовых вычислений ({NN}) и все построенные, объявленные или запланированные квантовые машины ({NM}): проанализированы и сведены, разбиты по семи устойчивым атрибутам конструкции, сопоставлены и скомбинированы десятками способов — с брифом на каждую технологию и карточкой на каждую машину. Двуязычно EN/RU, CC BY 4.0.')
+    # the languages by their own names, not "bilingual" (29 Sep 2026: a third language joined)
+    desc=pick(pl,(f'Every quantum-computing technology ({NN}) and every quantum machine built, announced or planned ({NM}): analysed and summarised, partitioned by seven stable design attributes, compared and combined in dozens of ways — with a brief on every technology and a card on every machine.',
+                  f'Все технологии квантовых вычислений ({NN}) и все построенные, объявленные или запланированные квантовые машины ({NM}): проанализированы и сведены, разбиты по семи устойчивым атрибутам конструкции, сопоставлены и скомбинированы десятками способов — с брифом на каждую технологию и карточкой на каждую машину.'))+' '+' / '.join(NATIVE[L] for L in LANGS)+'; CC BY 4.0.'
     # one page per language (27 Sep 2026): the alternates name every language page, x-default the English one
-    site=cfg.get('site',SITE); alts=''.join(f'<link rel="alternate" hreflang="{L}" href="{site}{"" if L=="en" else L+"/"}">' for L in PAGE_LANGS)+f'<link rel="alternate" hreflang="x-default" href="{site}">'
+    site=cfg.get('site',SITE); alts=''.join(f'<link rel="alternate" hreflang="{L}" href="{site}{FOLDER[L]}">' for L in LANGS)+f'<link rel="alternate" hreflang="x-default" href="{site}">'
     ogw, ogh = og_image_size()
-    ld={"@context":"https://schema.org","@type":"ScholarlyArticle","name":"Quantum Technology Atlas","headline":"Quantum Technology Atlas","version":cfg['edition'],"datePublished":cfg['date'],"codeRepository":cfg.get('repo'),"inLanguage":["en","ru"],
+    ld={"@context":"https://schema.org","@type":"ScholarlyArticle","name":"Quantum Technology Atlas","headline":"Quantum Technology Atlas","version":cfg['edition'],"datePublished":cfg['date'],"codeRepository":cfg.get('repo'),"inLanguage":list(LANGS),
         "author":{"@type":"Person","name":cfg['author']},"publisher":{"@type":"Organization","name":cfg['publisher'],"url":"https://qodeh.com"},
         "license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":True,"identifier":ident,"sameAs":ident,"url":cfg['url'],"image":OG_IMAGE_URL,"description":desc,
         "keywords":["quantum computing","quantum error correction","superconducting qubits","trapped ions","neutral atoms","photonic quantum computing","spin qubits","technology landscape","technology graph"]}
     return ('<meta name="color-scheme" content="light dark">\n<meta name="description" content="'+html.escape(desc)+'">\n'
             f'<meta name="author" content="{cfg["author"]}">\n<meta name="citation_title" content="Quantum Technology Atlas">\n<meta name="citation_author" content="{cfg["author"]}">\n'
             f'<meta name="citation_publication_date" content="{cfg["date"].replace("-","/")}">\n<meta name="citation_publisher" content="{cfg["publisher"]}">\n{cite_doi}\n<meta name="citation_language" content="{pl}">\n'
-            f'<meta name="DC.title" content="Quantum Technology Atlas"><meta name="DC.creator" content="{cfg["author"]}"><meta name="DC.publisher" content="{cfg["publisher"]}"><meta name="DC.date" content="{cfg["date"]}"><meta name="DC.identifier" content="{ident}"><meta name="DC.rights" content="CC BY 4.0"><meta name="DC.language" content="en, ru">\n'
+            f'<meta name="DC.title" content="Quantum Technology Atlas"><meta name="DC.creator" content="{cfg["author"]}"><meta name="DC.publisher" content="{cfg["publisher"]}"><meta name="DC.date" content="{cfg["date"]}"><meta name="DC.identifier" content="{ident}"><meta name="DC.rights" content="CC BY 4.0"><meta name="DC.language" content="{", ".join(LANGS)}">\n'
             f'<meta property="og:type" content="article"><meta property="og:title" content="Quantum Technology Atlas"><meta property="og:description" content="{html.escape(desc)}"><meta property="og:url" content="{cfg["url"]}">\n'
             # og:image:* attach to the most recently seen og:image, so they follow it here and nowhere else
             f'<meta property="og:image" content="{OG_IMAGE_URL}"><meta property="og:image:width" content="{ogw}"><meta property="og:image:height" content="{ogh}"><meta property="og:image:alt" content="{html.escape(OG_IMAGE_ALT)}"><meta name="twitter:card" content="summary_large_image">\n'
             f'<link rel="license" href="https://creativecommons.org/licenses/by/4.0/"><link rel="canonical" href="{cfg["url"]}">{alts}\n'
             '<script type="application/ld+json">'+json.dumps(ld,ensure_ascii=False)+'</script>')
 
-PAGE_LANGS=('en','ru')   # one page per language (27 Sep 2026); every other language's large blocks are fetched on demand
-LANG_WAIT={'en':'The English text is loading…','ru':'Русский текст загружается…'}
+PAGE_LANGS=tuple(LANGS)   # one page per language (27 Sep 2026; three since 29 Sep 2026); every other language's large blocks are fetched on demand
+LANG_WAIT={'en':'The English text is loading…','ru':'Русский текст загружается…','he':'הטקסט בעברית נטען…'}
+LANG_FAIL={'en':'The English text did not load. <a href="%P">Open the English page</a> or <a href="#" data-langretry="en">try again</a>.',
+           'ru':'Русский текст не загрузился. <a href="%P">Открыть русскую страницу</a> или <a href="#" data-langretry="ru">повторить</a>.',
+           'he':'הטקסט בעברית לא נטען. <a href="%P">פתח את הדף בעברית</a> או <a href="#" data-langretry="he">נסה שוב</a>.'}
 
-def lang_split(blocks_by_lang, briefs_block, page_lang):
-    """The page of one language: its own prose and brief halves inline; every other language's prose and brief halves
-    replaced by placeholders (data-lang-slot) and collected into fragments {lang: {slot: html}} that dist/lang/<lang>.js
-    carries and the page fetches after its first paint (the language switch stays instant once the fragment is there).
-    The briefs' index and every short inline pair (UI strings, headings' twins) stay in the page."""
-    frags={L:{} for L in PAGE_LANGS if L!=page_lang}
+def prose_div(L,k,html_,fallback=False):
+    """a language's prose block; one whose text is English in place of the language's own (its report not written yet) says so"""
+    return '<div class="prose lang-%s"%s>%s</div>'%(L,fb_attrs(L) if fallback else ' lang="%s"'%L,html_)
+_BL_SPLIT=re.compile(r'(?=<div class="bl lang-\w+"[ >])'); _BL_LANG=re.compile(r'<div class="bl lang-(\w+)"')
+def page_blocks(blocks_by_lang, briefs_block, page_lang, fallback):
+    """The page of one language: its own prose and brief halves inline; every other language's prose and brief halves replaced by
+    placeholders (data-lang-slot) that the page fills after its first paint from dist/lang/<lang>.js (fragments()). The briefs'
+    index and every short inline group (UI strings, headings' twins) stay in the page."""
     prose={}
     for L,parts in blocks_by_lang.items():
         for k,html_ in parts.items():
-            if L==page_lang: prose[(L,k)]='<div class="prose lang-%s" lang="%s">%s</div>'%(L,L,html_)
-            else:
-                frags[L]['prose:'+k]='<div class="prose lang-%s" lang="%s">%s</div>'%(L,L,html_)
-                prose[(L,k)]='<div class="prose lang-%s" lang="%s" data-lang-slot="%s:prose:%s"><p class="langwait">%s</p></div>'%(L,L,L,k,LANG_WAIT[L])
+            prose[(L,k)]=prose_div(L,k,html_,fallback.get(L)) if L==page_lang else \
+                '<div class="prose lang-%s" lang="%s" data-lang-slot="%s:prose:%s"><p class="langwait">%s</p></div>'%(L,L,L,k,LANG_WAIT.get(L,LANG_WAIT['en']))
     def sec(m):
-        bid=m.group(1); inner=m.group(2)
-        halves=re.split(r'(?=<div class="bl lang-(?:en|ru)">)',inner)
-        halves=[x for x in halves if x]
         out=[]
-        for x in halves:
-            L=re.match(r'<div class="bl lang-(en|ru)">',x).group(1)
-            if L==page_lang: out.append(x)
-            else:
-                frags[L]['brief:'+bid]=x
-                out.append('<div class="bl lang-%s" data-lang-slot="%s:brief:%s"><p class="langwait">%s</p></div>'%(L,L,bid,LANG_WAIT[L]))
-        return '<section class="brief" id="brief-%s" hidden>%s</section>'%(bid,''.join(out))
-    briefs_page=re.sub(r'<section class="brief" id="brief-(\w+)" hidden>(.*?)</section>',sec,briefs_block,flags=re.S)
-    return prose,briefs_page,frags
+        for x in [x for x in _BL_SPLIT.split(m.group(2)) if x]:
+            L=_BL_LANG.match(x).group(1)
+            out.append(x if L==page_lang else '<div class="bl lang-%s" data-lang-slot="%s:brief:%s"><p class="langwait">%s</p></div>'%(L,L,m.group(1),LANG_WAIT.get(L,LANG_WAIT['en'])))
+        return '<section class="brief" id="brief-%s" hidden>%s</section>'%(m.group(1),''.join(out))
+    return prose,re.sub(r'<section class="brief" id="brief-(\w+)" hidden>(.*?)</section>',sec,briefs_block,flags=re.S)
+def fragments(blocks_by_lang, briefs_block, fallback):
+    """{lang: {slot: html}} — every language's prose and brief halves, the same for every page (the slots are keyed by language);
+    the brief halves as briefs_block has them (a non-English Sources list is a clone of the English one, filled at load)"""
+    frags={L:{} for L in LANGS}
+    for L,parts in blocks_by_lang.items():
+        for k,html_ in parts.items(): frags[L]['prose:'+k]=prose_div(L,k,html_,fallback.get(L))
+    for m in re.finditer(r'<section class="brief" id="brief-(\w+)" hidden>(.*?)</section>',briefs_block,flags=re.S):
+        for x in [x for x in _BL_SPLIT.split(m.group(2)) if x]: frags[_BL_LANG.match(x).group(1)]['brief:'+m.group(1)]=x
+    return frags
 
 LANG_JS=r"""(function(){var app=document.getElementById('app');if(!app)return;var PL=app.getAttribute('data-page-lang')||'en';var OTHERS=[];try{OTHERS=JSON.parse(app.getAttribute('data-other-langs')||'[]');}catch(e){}var BASE=app.getAttribute('data-lang-base')||'lang/';
+var LG=window.__LANGS||{list:['en'],folder:{en:''}};
 var loaded={},loading={};loaded[PL]=true;
 function fill(L){var F=(window.__LANGFRAG||{})[L];if(!F)return false;var slots=document.querySelectorAll('[data-lang-slot^="'+L+':"]');for(var i=0;i<slots.length;i++){var ph=slots[i];var html=F[ph.getAttribute('data-lang-slot').slice(L.length+1)];if(html==null)continue;var t=document.createElement('template');t.innerHTML=html;var nodes=[].slice.call(t.content.childNodes);ph.replaceWith.apply(ph,nodes);for(var k=0;k<nodes.length;k++){if(nodes[k].nodeType===1&&window.__hydrate)window.__hydrate(nodes[k]);}}loaded[L]=true;document.documentElement.classList.remove('lang-loading');if(window.__relabelMap)window.__relabelMap();var h=location.hash||'';if(h.indexOf('#brief-')!==0&&h.length>1&&window.__revealHash)window.__revealHash(h);return true;}
 function load(L,cb){if(loaded[L]||OTHERS.indexOf(L)<0){if(cb)cb();return;}if(loading[L]){loading[L].push(cb);return;}loading[L]=[cb];var s=document.createElement('script');s.src=BASE+L+'.js';s.async=true;s.onload=function(){fill(L);var q=loading[L]||[];delete loading[L];for(var i=0;i<q.length;i++){if(q[i])q[i]();}};s.onerror=function(){var q=loading[L]||[];delete loading[L];document.documentElement.classList.remove('lang-loading');failed(L);for(var i=0;i<q.length;i++){if(q[i])q[i]();}};document.head.appendChild(s);}
 // the fragment did not arrive (offline copy without lang/, a blocked request): every waiting slot says so once and points at the page
 // that carries this language in full; a retry link tries the fragment again (27 Sep 2026)
-var FAILMSG={en:'The English text did not load. <a href="%P">Open the English page</a> or <a href="#" data-langretry="en">try again</a>.',ru:'Русский текст не загрузился. <a href="%P">Открыть русскую страницу</a> или <a href="#" data-langretry="ru">повторить</a>.'};
-function pageOf(L){var up=BASE.replace(/lang\/$/,'');return up+(L==='en'?'':L+'/')+'index.html';}
+var FAILMSG=@@FAILMSG@@,WAITMSG=@@WAITMSG@@;
+function pageOf(L){var up=BASE.replace(/lang\/$/,'');return up+((LG.folder||{})[L]!=null?LG.folder[L]:L+'/')+'index.html';}   // the language's own page: langs.FOLDER
 function failed(L){var msg=(FAILMSG[L]||FAILMSG.en).replace('%P',pageOf(L));var slots=document.querySelectorAll('[data-lang-slot^="'+L+':"] .langwait');for(var i=0;i<slots.length;i++){slots[i].innerHTML=msg;slots[i].classList.add('langfail');}}
-document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[data-langretry]'):null;if(!a)return;e.preventDefault();var L=a.getAttribute('data-langretry');var slots=document.querySelectorAll('[data-lang-slot^="'+L+':"] .langwait');for(var i=0;i<slots.length;i++){slots[i].classList.remove('langfail');slots[i].textContent=(L==='ru'?'Русский текст загружается…':'English text is loading…');}document.documentElement.classList.add('lang-loading');load(L);});
+document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a[data-langretry]'):null;if(!a)return;e.preventDefault();var L=a.getAttribute('data-langretry');var slots=document.querySelectorAll('[data-lang-slot^="'+L+':"] .langwait');for(var i=0;i<slots.length;i++){slots[i].classList.remove('langfail');slots[i].textContent=WAITMSG[L]||WAITMSG.en;}document.documentElement.classList.add('lang-loading');load(L);});
 window.__loadLang=load;window.__langLoaded=function(L){return !!loaded[L];};
 window.__langReady=function(L){return new Promise(function(res){load(L,res);});};
 var idle=window.requestIdleCallback||function(f){setTimeout(f,800);};
 window.addEventListener('load',function(){idle(function(){for(var i=0;i<OTHERS.length;i++)load(OTHERS[i]);});});
+})();""".replace('@@FAILMSG@@',json.dumps(LANG_FAIL,ensure_ascii=False)).replace('@@WAITMSG@@',json.dumps(LANG_WAIT,ensure_ascii=False))
+
+# A language switch keeps the reader's place (the editor, 29 Sep 2026). Before the switch: the block-level element at the window's top edge
+# (under the phone's page bar), its container in its language (an id with the language prefix, a folding section, the brief's language
+# half — the two bodies mirror each other paragraph by paragraph), its index among the container's blocks and the share of it above the
+# edge. After the switch the twin (the other prefix; the same index) is put at the same share — and again once the other language's
+# fragment has arrived, unless the reader (or a link) has moved the page meanwhile; a missing twin falls back to its container's top.
+# The map card, the Find list and the brief's scroll boxes keep their scroll fraction. setLang calls window.__keepPlace(from, to).
+PLACE_JS=r"""(function(){var app=document.getElementById('app');if(!app)return;
+var BLK='p,li,h2,h3,h4,table,figure,blockquote,pre,.secbody>*',OVER='#insp,#findbar,#floatlang,#fbk,#fbkpop,#maptip,#tocdrawer,.tip',gen=0;
+function sw(s,a,b){return s.replace(new RegExp('(^|-)'+a+'-'),'$1'+b+'-');}
+function edge(){var m=document.querySelector('.mobilebar');var r=m&&m.getBoundingClientRect();return (r&&r.height&&r.top<=1&&r.bottom>0)?r.bottom:0;}
+function box(e){var r=e.getBoundingClientRect();return (r.width||r.height)?r:null;}
+function pick(c,y){var l=c.querySelectorAll(BLK);for(var i=0;i<l.length;i++){var r=box(l[i]);if(r&&r.bottom>y)return l[i];}return null;}   // document order: the first block still reaching below the line
+function anchor(y){var m=document.querySelector('main');if(!m)return null;var mr=m.getBoundingClientRect(),hit=null,xs=[mr.left+mr.width/2,mr.left+24,mr.right-24];   // the right edge too: a right-to-left text starts there (29 Sep 2026)
+ for(var i=0;i<xs.length&&!hit;i++){var es=document.elementsFromPoint(xs[i],y+1)||[];for(var k=0;k<es.length;k++){if(m.contains(es[k])&&!es[k].closest(OVER)){hit=es[k];break;}}}
+ var a=hit?(hit.closest(BLK)||hit):m;if(!m.contains(a))a=m;for(var n=0;n<12;n++){var d=pick(a,y);if(!d)break;a=d;}return a===m?null:a;}
+function sib(c,L,O){var p=c.parentElement,k=0,i,ch;if(!p)return null;ch=p.children;   // a language block's twin: the same-rank sibling of the other language
+ for(i=0;i<ch.length&&ch[i]!==c;i++)if(ch[i].tagName===c.tagName&&ch[i].classList.contains('lang-'+L))k++;
+ for(i=0;i<ch.length;i++)if(ch[i].tagName===c.tagName&&ch[i].classList.contains('lang-'+O)&&!k--)return ch[i];return null;}
+function twin(c,L,O){var t;if(c.id){t=document.getElementById(sw(c.id,L,O));if(t&&t!==c)return t;}
+ var s=c.classList.contains('secbody')&&c.getAttribute('data-sec');if(s){t=document.querySelector('.secbody[data-sec="'+sw(s,L,O)+'"]');if(t&&t!==c)return t;}
+ return c.classList.contains('lang-'+L)?sib(c,L,O):null;}
+function up(c,lb,L){if(c===lb)return null;var u=c.parentElement&&c.parentElement.closest('[id^="'+L+'-"],.secbody[data-sec],section.brief,.lang-'+L);return (u&&u!==lb&&lb.contains(u))?u:lb;}
+function record(L,O){var y=edge(),a=anchor(y),rec={L:L,O:O,y:y,p:[],b:[]};
+ if(a){var r=box(a);if(r){if(r.top<=y)rec.f=Math.min(1,(y-r.top)/(r.height||1));else rec.off=r.top-y;}
+  var lb=a.closest('.lang-'+L);if(!lb)rec.el=a;   // the map, the strip: the same element in both languages
+  else{var c=(a===lb||(a.id&&sw(a.id,L,O)!==a.id))?a:up(a,lb,L);rec.lb=lb;rec.c=c;rec.i=(c===a)?-1:[].indexOf.call(c.querySelectorAll(BLK),a);}}
+ ['insp','findlist'].forEach(function(id){var e=document.getElementById(id);if(e&&!e.hidden&&e.scrollHeight>e.clientHeight)rec.p.push({e:e,f:e.scrollTop/e.scrollHeight});});
+ document.querySelectorAll('#app .lang-'+L+' details.fold[open] .tbl').forEach(function(t){if(t.scrollTop>0){var lb=t.closest('.lang-'+L);rec.b.push({lb:lb,i:[].indexOf.call(lb.querySelectorAll('details.fold .tbl'),t),f:t.scrollTop/t.scrollHeight});}});
+ return rec;}
+function target(rec){if(rec.el)return rec.el.isConnected?{t:rec.el,x:1}:null;if(!rec.c)return null;
+ for(var c=rec.c,first=true;c;c=up(c,rec.lb,rec.L),first=false){var tc=twin(c,rec.L,rec.O);if(!tc)continue;   // the other language still loading: its block's top for now
+  if(!first||rec.i<0)return {t:tc,x:first};var e=tc.querySelectorAll(BLK)[rec.i];return e?{t:e,x:1}:{t:tc,x:0};}return null;}
+function reveal(el){for(var p=el;p&&p!==app;p=p.parentElement){if(p.tagName==='DETAILS'&&!p.open&&p!==el)p.open=true;if(p.hidden&&p.classList.contains('secbody')&&window.__setFold)window.__setFold(p.getAttribute('data-sec'),true,false);}}
+function apply(rec){var g=target(rec);if(g)reveal(g.t);
+ rec.p.forEach(function(x){if(!x.e.hidden&&x.e.scrollHeight)x.e.scrollTop=x.f*x.e.scrollHeight;});
+ rec.b.forEach(function(x){var t=sib(x.lb,rec.L,rec.O),b=t&&t.querySelectorAll('details.fold .tbl')[x.i];if(b&&b.scrollHeight)b.scrollTop=x.f*b.scrollHeight;});
+ var r=g&&box(g.t);if(!r)return;var d=r.top-rec.y+(g.x?(rec.f!=null?rec.f*r.height:-(rec.off||0)):0);if(Math.abs(d)>=1)window.scrollTo(window.scrollX,window.scrollY+d);}
+window.__keepPlace=function(L,O){var rec=record(L,O),my=++gen,moved=false,y1=null,waiting=false;
+ function sc(){if(y1!=null&&Math.abs(window.scrollY-y1)>2)moved=true;}function hc(){moved=true;}
+ function done(){window.removeEventListener('scroll',sc);window.removeEventListener('hashchange',hc);}
+ function put(){try{apply(rec);}catch(e){}y1=window.scrollY;}
+ function settle(last){requestAnimationFrame(function(){requestAnimationFrame(function(){if(my===gen&&!moved)put();if(last)done();});});}   // after the resize observers (the tables' zoom) have run
+ window.addEventListener('scroll',sc,{passive:true});window.addEventListener('hashchange',hc);
+ return {now:function(){put();waiting=!!(window.__langLoaded&&!window.__langLoaded(O));settle(!waiting);},
+  later:function(){try{if(my!==gen||moved||app.getAttribute('data-lang')!==O){done();return;}put();settle(true);}catch(e){done();}}};};
 })();"""
 
-def compose(cfg,page_lang,prose,briefs_page,tocs,mapsecs,B,others,lang_base):
-    dl=page_lang
+def compose(cfg,page_lang,prose,briefs_page,tocs,mapsecs,B,others,lang_base,fallback=None):
+    dl=page_lang; fallback=fallback or {}
     D3=open(os.path.join(ROOT,'build','vendor','d3.v7.min.js'),encoding='utf-8').read()
     sectitles={h[0].replace('en-',''):h[2] for h in tocs['en'] if h and len(h)>2}
+    each=lambda f:''.join(f(L) for L in LANGS)   # one block per language, in langs.LANGS order
     body=f"""<title>{cfg['title']}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Golos+Text:wght@400;500;600&family=Heebo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>{CSS}</style>
 <div id="app" data-lang="{dl}" data-page-lang="{dl}" data-other-langs='{json.dumps(others)}' data-lang-base="{lang_base}" data-edition="{cfg['edition']}">
-<a class="skip" href="#map">{'Skip to the map' if dl=='en' else 'К карте'}</a>
+<a class="skip" href="#map">{pick(dl,('Skip to the map','К карте','דלג אל המפה'))}</a>
 {navchrome(dict(cfg,default_lang=dl))}
-{masthead(cfg)}
+{masthead(dict(cfg,page_lang=dl))}
 <div class="page">
- <nav class="toc" aria-label="contents"><button type="button" class="findopen tocfind" data-findopen="1" title="find in the Atlas (/)"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 10l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> <span class="lang-en">Find in the Atlas</span><span class="lang-ru">Поиск по Атласу</span> <kbd>/</kbd></button><div class="lang-en">{toc_html(tocs['en'],'en',cfg['graph_sec'])}</div><div class="lang-ru">{toc_html(tocs['ru'],'ru',cfg['graph_sec'])}</div></nav>
+ <nav class="toc" aria-label="contents"><button type="button" class="findopen tocfind" data-findopen="1" title="find in the Atlas (/)"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 10l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> {spans(('Find in the Atlas','Поиск по Атласу','חיפוש באטלס'))} <kbd>/</kbd></button>{each(lambda L:'<div class="lang-%s">%s</div>'%(L,toc_html(tocs[L],L,cfg['graph_sec'],fallback=fallback.get(L))))}</nav>
  <main>
-  <div id="map"><div class="lang-en">{mapsecs['en']}</div><div class="lang-ru">{mapsecs['ru']}</div></div>
+  <div id="map">{each(lambda L:'<div class="lang-%s">%s</div>'%(L,mapsecs[L]))}</div>
   <div id="mapbody"><div class="mapfull">{MAPUI.replace("{MAPLEAD}",map_lead(cfg["graph_sec"]))}</div></div>
-  {prose[('en','a')]}{prose[('ru','a')]}
-  {prose[('en','b1')]}{prose[('ru','b1')]}
+  {each(lambda L:prose[(L,'a')])}
+  {each(lambda L:prose[(L,'b1')])}
   {briefs_page}
-  {prose[('en','b2')]}{prose[('ru','b2')]}
+  {each(lambda L:prose[(L,'b2')])}
   {footer(cfg)}
  </main>
 </div>
 {feedback_html(cfg)}
 </div>
+<script>window.__LANGS={LG.js_config()};
+// the page's scripts write a UI string as one span per language: __LS(English, Russian[, Hebrew]) — a missing language shows the English text, marked (29 Sep 2026)
+window.__LS=function(){{var a=arguments,G=window.__LANGS;return G.list.map(function(L,i){{var x=a[i],fb=(x==null||x==='');return '<span class="lang-'+L+'"'+(fb&&i?' lang="en"'+(G.dir[L]==='rtl'?' dir="ltr"':''):'')+'>'+(fb?a[0]:x)+'</span>';}}).join('');}};</script>
 <script>window.__GRAPH={json.dumps(G,ensure_ascii=False,separators=(',',':'))};window.__MACH={json.dumps(mach_slim(),ensure_ascii=False,separators=(',',':'))};window.__SHORT={json.dumps(SHORT,ensure_ascii=False,separators=(',',':'))};window.__KEYREFS={json.dumps(BR.key_refs_slim(BR.key_refs_all(B)),ensure_ascii=False,separators=(',',':'))}</script>
-<script>window.__PICS={json.dumps(pics_slim(),ensure_ascii=False,separators=(',',':'))}</script>
+<script>window.__PICS={json.dumps(pics_slim(),ensure_ascii=False,separators=(',',':'))};window.__ORGS={json.dumps(orgs_slim(),ensure_ascii=False,separators=(',',':'))}</script>
 <script>window.__SECTITLES={json.dumps(sectitles,ensure_ascii=False,separators=(',',':'))};</script>
 <script>{D3}</script>
 <script>{LANG_JS}</script>
+<script>{PLACE_JS}</script>
 <script>
-(function(){{const app=document.getElementById('app');
- function setLang(l){{app.setAttribute('data-lang',l); document.querySelectorAll('[data-setlang]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.setlang===l))); document.documentElement.lang=l; try{{localStorage.setItem('qtech-lang',l);}}catch(e){{}} if(window.__langLoaded&&!window.__langLoaded(l)){{document.documentElement.classList.add('lang-loading'); if(window.__loadLang)window.__loadLang(l);}} if(window.__relabelMap)window.__relabelMap();}}
- let l='{dl}'; try{{l=localStorage.getItem('qtech-lang')||((navigator.language||'').toLowerCase().startsWith('ru')?'ru':'{dl}');}}catch(e){{}}
+(function(){{const app=document.getElementById('app'); let boot=true;
+ // the reader's place (PLACE_JS, 29 Sep 2026): found before the switch, restored after it and again when the language's fragment has arrived
+ // any language of window.__LANGS (langs.LANGS); <html lang dir> follow the language shown, so a right-to-left language mirrors the page (29 Sep 2026)
+ const LG=window.__LANGS, ok=x=>LG.list.indexOf(x)>=0;
+ function setLang(l){{if(!ok(l))l='{dl}'; const was=app.getAttribute('data-lang'); let keep=null; if(!boot&&was!==l&&window.__keepPlace){{try{{keep=window.__keepPlace(was,l);}}catch(e){{}}}}
+  app.setAttribute('data-lang',l); document.querySelectorAll('[data-setlang]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.setlang===l))); document.documentElement.lang=l; document.documentElement.dir=LG.dir[l]||'ltr'; try{{localStorage.setItem('qtech-lang',l);}}catch(e){{}} if(window.__langLoaded&&!window.__langLoaded(l)){{document.documentElement.classList.add('lang-loading'); if(window.__loadLang)window.__loadLang(l,keep?keep.later:null);}} if(window.__relabelMap)window.__relabelMap(); if(keep){{try{{keep.now();}}catch(e){{}}}}}}
+ // the reader's stored choice; else the browser's language when the Atlas has it (ru → ru, he / iw → he); else this page's own
+ let l='{dl}'; try{{const s=localStorage.getItem('qtech-lang'), nv=(navigator.language||'').toLowerCase(), bl=nv.startsWith('ru')?'ru':((nv.startsWith('he')||nv.startsWith('iw'))?'he':''); l=ok(s)?s:(ok(bl)?bl:'{dl}');}}catch(e){{}}
  document.querySelectorAll('[data-setlang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.setlang)));
- window.__setLang=setLang; setLang(l);
+ window.__setLang=setLang; setLang(l); boot=false;
 }})();
 </script>
 <script>{NAVJS}</script>
@@ -983,65 +1143,75 @@ def compose(cfg,page_lang,prose,briefs_page,tocs,mapsecs,B,others,lang_base):
 <script>{FEEDBACK_JS}</script>
 <script>window.__hydrate=function(root){{var hs=window.__hydrators||[];for(var i=0;i<hs.length;i++){{try{{hs[i](root);}}catch(e){{}}}}}};if(window.__relabelMap)window.__relabelMap();</script>
 """
-    return body
+    return LG.fill_twins(body)   # every language group of the templates gets its missing languages (the English text, marked) — langs.fill_twins
 
 def build(cfg=PUBLIC):
-    EN=report_numbers(open(cfg['report_en'],encoding='utf-8').read(),'en')
-    RU=report_numbers(open(cfg['report_ru'],encoding='utf-8').read(),'ru')
+    # every language of langs.LANGS (29 Sep 2026): its report when it exists, else the English one — the page is built all the same,
+    # its prose marked as English (lang="en", dir="ltr" in a right-to-left language) until the translation arrives
+    reports=cfg.get('reports') or {'en':cfg['report_en']}
+    TXT={}; fallback={}
+    for L in LANGS:
+        p=reports.get(L)
+        fallback[L]=not (p and os.path.exists(p))
+        if fallback[L]: print('%s: %s missing — English text used'%(L,os.path.basename(p or 'report_%s.md'%L.upper())))
+        TXT[L]=report_numbers(open(reports['en'] if fallback[L] else p,encoding='utf-8').read(),L)
     regmap=json.load(open(cfg['regmap'],encoding='utf-8')) if cfg.get('regmap') else None
-    BR.configure(cfg['mode'],en_dir=cfg.get('briefs_en'),ru_dir=cfg.get('briefs_ru'),regmap=regmap,table_num=cfg['table_num'],id_sections=cfg['id_sections'])
+    BR.configure(cfg['mode'],dirs=cfg.get('briefs_dirs'),regmap=regmap,table_num=cfg['table_num'],id_sections=cfg['id_sections'])
     B=BR.load_briefs()
     ids={b['id'] for b in B}
     colours=BR.family_colours(G)
     BR.TOOLTIPS=lambda h,lang:tooltips(h,lang,briefs=True)
     BR.FOLD=lambda h,lang,bid:foldable(h,lang,levels=('h3',),idprefix='brief-'+bid+'-'+lang)
     briefs_block=BR.briefs_section_html(B,brief_md2html,colours)
-    en_html,en_toc=convert(EN,'en'); ru_html,ru_toc=convert(RU,'ru')
-    en_html=insert_after_h3_table(en_html,'3.1',radars_block('en')); ru_html=insert_after_h3_table(ru_html,'3.1',radars_block('ru'))
-    en_html=insert_before_h2(en_html,'en-s0',glossary_html('en')); ru_html=insert_before_h2(ru_html,'ru-s0',glossary_html('ru'))   # the Glossary closes About
-    en_html=tag_sortables(en_html); ru_html=tag_sortables(ru_html)
-    en_html=BR.link_node_ids(en_html,ids); ru_html=BR.link_node_ids(ru_html,ids)
-    en_html=BR.autolink(en_html); ru_html=BR.autolink(ru_html)
-    en_html=foldable(en_html,'en'); ru_html=foldable(ru_html,'ru')
-    mapsecs={'en':map_block('en',cfg['graph_sec']),'ru':map_block('ru',cfg['graph_sec'])}
-    en_a,en_b=split_after_s2(en_html,'en'); ru_a,ru_b=split_after_s2(ru_html,'ru')
-    en_b1,en_b2=split_before_num(en_b,en_toc,cfg['sources_num']); ru_b1,ru_b2=split_before_num(ru_b,ru_toc,cfg['sources_num'])
-    tocs={'en':toc_with_briefs(en_toc,'en',cfg['sources_num']),'ru':toc_with_briefs(ru_toc,'ru',cfg['sources_num'])}
-    blocks={'en':dict(a=en_a,b1=en_b1,b2=en_b2),'ru':dict(a=ru_a,b1=ru_b1,b2=ru_b2)}
-    import brief_refs as _bref
-    briefs_full=_bref.expand_clones(briefs_block)   # a page whose own language is Russian carries its Sources lists in full
+    _no=lambda x:x.count('<a class="org" href="')
+    bodies={}; tocs0={}
+    for L in LANGS:
+        h,tocs0[L]=convert(TXT[L],L)
+        h=insert_after_h3_table(h,'3.1',radars_block(L))
+        h=insert_before_h2(h,L+'-s0',glossary_html(L))   # the Glossary closes About
+        h=tag_sortables(h); h=BR.link_node_ids(h,ids); h=BR.autolink(h); h=foldable(h,L)
+        # organisation names link to their pages, block by block, once the bodies are complete (29 Sep 2026; after the folds, so that a
+        # table caption moved into its fold's summary stays plain)
+        bodies[L]=link_org_blocks(h)
+    briefs_block=link_org_blocks(briefs_block)
+    halves=[x for x in _BL_SPLIT.split(briefs_block)]
+    norg={L:(_no(bodies[L]),sum(_no(x) for x in halves if x.startswith('<div class="bl lang-%s"'%L))) for L in LANGS}
+    mapsecs={L:map_block(L,cfg['graph_sec']) for L in LANGS}
+    blocks={}; tocs={}
+    for L in LANGS:
+        a,b=split_after_s2(bodies[L],L); b1,b2=split_before_num(b,tocs0[L],cfg['sources_num'])
+        blocks[L]=dict(a=a,b1=b1,b2=b2); tocs[L]=toc_with_briefs(tocs0[L],L,cfg['sources_num'])
+    briefs_full=BR.expand_clones(briefs_block)   # a page whose own language is not English carries its Sources lists in full
+    # the language fragments (dist/lang/<lang>.js): every language's prose and brief halves, fetched by the other languages' pages
     os.makedirs(os.path.join(ROOT,'dist','lang'),exist_ok=True)
+    for L,F in fragments(blocks,briefs_block,fallback).items():
+        open(os.path.join(ROOT,'dist','lang',L+'.js'),'w',encoding='utf-8',newline='\n').write('window.__LANGFRAG=window.__LANGFRAG||{};window.__LANGFRAG[%s]=%s;\n'%(json.dumps(L),json.dumps(F,ensure_ascii=False,separators=(',',':'))))
     sizes=[]; page_html={}
     for pl in PAGE_LANGS:
-        others=[L for L in PAGE_LANGS if L!=pl]
-        prose,briefs_page,frags=lang_split(blocks,briefs_full if pl!='en' else briefs_block,pl)
-        sub='' if pl=='en' else pl+'/'
-        lang_base='lang/' if pl=='en' else '../lang/'
-        body=compose(cfg,pl,prose,briefs_page,tocs,mapsecs,B,others,lang_base)
-        outdir=os.path.join(ROOT,'dist',pl) if pl!='en' else os.path.join(ROOT,'dist'); os.makedirs(outdir,exist_ok=True)
+        prose,briefs_page=page_blocks(blocks,briefs_full if pl!='en' else briefs_block,pl,fallback)
+        body=compose(cfg,pl,prose,briefs_page,tocs,mapsecs,B,LG.others(pl),LG.up(pl)+'lang/',fallback)
+        outdir=os.path.join(ROOT,'dist',FOLDER[pl]) if FOLDER[pl] else os.path.join(ROOT,'dist'); os.makedirs(outdir,exist_ok=True)
         out_full=os.path.join(outdir,os.path.basename(cfg['out_full']))
-        pcfg=dict(cfg,url=cfg['url']+sub,page_lang=pl)
-        full=f'<!doctype html>\n<html lang="{pl}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">{head_meta(pcfg)}<style>img{{max-width:100%}}[hidden]{{display:none!important}}</style></head><body>'+body+'</body></html>'
+        pcfg=dict(cfg,url=cfg['url']+FOLDER[pl],page_lang=pl)
+        full=f'<!doctype html>\n<html lang="{pl}" dir="{direction(pl)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">{head_meta(pcfg)}<style>img{{max-width:100%}}[hidden]{{display:none!important}}</style></head><body>'+body+'</body></html>'
         open(out_full,'w',encoding='utf-8',newline='\n').write(full)
         page_html[pl]=full
         if pl=='en':
             os.makedirs(os.path.dirname(cfg['out_body']),exist_ok=True); open(cfg['out_body'],'w',encoding='utf-8',newline='\n').write(body)
-        # the directory's default document: the public address is the directory (…/quantum-technology-atlas/, …/ru/), the record
+        # the directory's default document: the public address is the directory (…/quantum-technology-atlas/, …/ru/, …/he/), the record
         # pages link to index.html so that the links also work from a folder on disk; a copy, not committed (27 Sep 2026)
         open(os.path.join(outdir,'index.html'),'w',encoding='utf-8',newline='\n').write(full)
-        for L,F in frags.items():
-            # the fragment of language L as the page of pl needs it: the same for every page (the slots are keyed by language)
-            fp=os.path.join(ROOT,'dist','lang',L+'.js')
-            open(fp,'w',encoding='utf-8',newline='\n').write('window.__LANGFRAG=window.__LANGFRAG||{};window.__LANGFRAG[%s]=%s;\n'%(json.dumps(L),json.dumps(F,ensure_ascii=False,separators=(',',':'))))
         sizes.append('%s %d KB'%(pl,len(full)//1024))
-    nofb=sum(1 for b in B if b['ru_fallback'])
+    pending=' · '.join('%s %d'%(L,sum(1 for b in B if b['fallback'].get(L))) for L in LANGS if L!='en')
     # every record at its own address (build/pages.py): the cards, the briefs, the narratives, the organisations, the pictures
     import pages
+    pages.ORG_LINKS=link_org_blocks   # the record pages link organisations block by block too (29 Sep 2026)
     site=pages.Site(dict(cfg,og_image=OG_IMAGE_URL),G,json.load(open(MACH_PATH,encoding='utf-8')),B,BR,brief_md2html,colours,page_html,CSS,
                     json.dumps(tips_dict(),ensure_ascii=False,separators=(',',':')),GTIP_JS,TAG_JS,BR.key_refs_all(B))
     npages=site.build(PAGE_LANGS)
-    if cfg['mode']=='public': sync_readme(EN)
-    print('built', cfg['mode'], '; '.join(sizes),';',len(B),'briefs;',nofb,'RU fallbacks;',npages,'record pages')
+    if cfg['mode']=='public': sync_readme(TXT['en'])
+    print('built', cfg['mode'], '; '.join(sizes),';',len(B),'briefs; briefs still in English:',pending,';',npages,'record pages (%s)'%' · '.join('%s %d'%(L,site.written_by.get(L,0)) for L in PAGE_LANGS))
+    print('organisation links: report %s; briefs %s; record pages %d'%(' · '.join('%s %d'%(L,norg[L][0]) for L in LANGS),' · '.join('%s %d'%(L,norg[L][1]) for L in LANGS),site.org_links))
 
 
 def sync_readme(report_en):

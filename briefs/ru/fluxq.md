@@ -58,7 +58,7 @@ updated: 2026-09-04
 ## Прогноз и открытые вопросы
 Подтверждение, если заявление на научно поставленном классе экземпляров переживёт классический раунд до конца 2027 года; понижение, если размывание повторится. Лучший случай к 2029: 20,000 кубитов и отстоянное заявление; худший — линейка замерзает на Advantage2, а гейтовый разворот съедает деньги. Открытый вопрос: найдётся ли класс экземпляров, устойчивый и к распространению доверия, и к t-VMC?
 
-## Источники
+## Литература
 [15] D-Wave Quantum Inc., “D-Wave Reports Second Quarter 2026 Results,” Aug. 6, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-reports-second-quarter-2026-results/ [C]
 [220] M. Swayne, “D-Wave Announces General Availability of Advantage2 Quantum Computer,” The Quantum Insider, May 20, 2025. [Online]. Available: https://thequantuminsider.com/2025/05/20/d-wave-announces-general-availability-of-advantage2-quantum-computer/ [P]
 [221] A. D. King *et al.*, “Beyond-classical computation in quantum simulation,” *Science*, vol. 388, pp. 199–204, 2025, doi: [10.1126/science.ado6285](https://doi.org/10.1126/science.ado6285). [arXiv:2403.00910](https://arxiv.org/abs/2403.00910). [D]

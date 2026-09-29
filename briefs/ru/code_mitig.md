@@ -68,7 +68,7 @@ PEC несмещённа и даёт планки погрешностей, ес
 Подтвердить, если к 2027-12-31 появится несмещённая оценка PEC на ≥5,000 гейтах с планками погрешностей или если одно из заявлений июля 2026 г. доживёт до 2027-07-31 без сошедшегося классического воспроизведения; понизить эти заявления до уровня utility, если с ними совпадут сошедшиеся значения тензорных сетей или распространения Паули (Pauli propagation), как в 2023 г.
 Открытые вопросы. (1) Насколько стабильна выученная модель Паули–Линдблада на протяжении многочасового запуска при 10³–10⁴ гейтах? (2) Сохраняется ли квадратичная экономия TEM при ошибке модели на реальной аппаратуре? (3) С какого размера код обнаружения плюс смягчение ошибок выигрывает у одного смягчения по числу запусков? (4) Можно ли доказать классическую сложность задачи оценки среднего значения со смягчением ошибок? (5) Какой множитель числа запусков потратил 7,500-гейтовый запуск PEA на Nighthawk r2?
 
-## Источники
+## Литература
 [35] D. Gao *et al.*, “Establishing a New Benchmark in Quantum Computational Advantage with 105-qubit Zuchongzhi 3.0 Processor,” *Phys. Rev. Lett.*, vol. 134, Art. no. 090601, Mar. 2025, doi: [10.1103/PhysRevLett.134.090601](https://doi.org/10.1103/PhysRevLett.134.090601). [arXiv:2412.11924](https://arxiv.org/abs/2412.11924). [D]
 [45] A. Kandala, A. Javadi-Abhari, and J. Gambetta, “Researchers demonstrate quantum advantage through trusted quantum computation,” IBM Quantum Computing Blog, Jul. 30, 2026. [Online]. Available: https://www.ibm.com/quantum/blog/quantum-advantage [C]
 [233] E. Leviatan *et al.*, “Resolving Structure in Prethermal Floquet Dynamics with Precision Quantum Computation,” [arXiv:2607.24937](https://arxiv.org/abs/2607.24937), Jul. 2026. [D]

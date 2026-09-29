@@ -85,8 +85,7 @@ updated: 2026-09-03
 
 Подтвердить к концу 2027 г., если Anderon подпишет окончательные документы по CHIPS и изготовит продукцию для названного заказчика, не являющегося IBM; понизить трактовку «коммерческая фабрика», если появятся только проекты IBM. Лучший случай к 2029 г.: две и более независимых 300-мм линии с опубликованной межфабричной однородностью и остаточным разбросом частоты после подгонки ниже 1% RSD. Худший случай: Anderon остаётся кэптивной. Открытые вопросы: опубликует ли хоть одна линия выход годных по коллизиям после подгонки; способны ли эпитаксиальные барьеры поднять медианное $T_1$ выше 200 мкс; появится ли коммерческая линия в Европе или Азии?
 
-## Источники
-
+## Литература
 [36] Rigetti Computing, Inc., “Rigetti Announces General Availability of 108-Qubit System,” Apr. 7, 2026. [Online]. Available: https://investors.rigetti.com/news-releases/news-release-details/rigetti-announces-general-availability-108-qubit-system [C]
 [49] IBM, “IBM Delivers New Quantum Processors, Software, and Algorithm Breakthroughs on Path to Advantage and Fault Tolerance,” Nov. 12, 2025. [Online]. Available: https://newsroom.ibm.com/2025-11-12-ibm-delivers-new-quantum-processors,-software,-and-algorithm-breakthroughs-on-path-to-advantage-and-fault-tolerance [C]
 [57] IBM Quantum, “Why IBM is investing $10 billion into quantum computing,” Jun. 2, 2026. [Online]. Available: https://www.ibm.com/quantum/blog/10-billion-investment-faq [C]

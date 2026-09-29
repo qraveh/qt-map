@@ -118,8 +118,7 @@ updated: 2026-09-03
 
 Открытые вопросы. (1) Воспроизводима ли двухкубитная точность класса 99.5% на всех парах кристалла — или только на той паре, которая настраивается? (2) Можно ли сделать долинное расщепление достаточно однородным, чтобы утечка перестала быть лотереей на каждом отдельном приборе? (3) Опустится ли считывание ниже 1 µs без зарядового сенсора на каждый кубит? (4) Что купила IBM — кубит или стек управления?
 
-## Источники
-
+## Литература
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
 [189] P. Steinacker *et al.*, “Industry-compatible silicon spin-qubit unit cells exceeding 99% fidelity,” *Nature*, vol. 646, no. 8083, pp. 81–87, Sep. 2025, doi: [10.1038/s41586-025-09531-9](https://doi.org/10.1038/s41586-025-09531-9). [D]
 [190] Members of the HRL Quantum Team and Collaborators, “A digitally controlled silicon quantum processing unit,” [arXiv:2604.16216](https://arxiv.org/abs/2604.16216), Apr. 2026. [D]

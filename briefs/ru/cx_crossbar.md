@@ -53,7 +53,7 @@ updated: 2026-09-04
 ## Прогноз и открытые вопросы
 Подтвердить или понизить в статусе за 12–24 месяца: два тайла, на которых гейты выполнены независимо через одну разделяемую линию; опубликованная цифра перекрёстных наводок; кроссбарный шаг техпроцесса на фабрике к 2027. Лучший случай к 2029: демультиплексирование на кристалле адресует >10⁴ точек сотнями линий. Худший случай: кроссбары остаются демонстрацией разводимости, а побеждает холодное мультиплексирование при разводке на каждый кубит. Открыто: (1) какая доля тайлов остаётся адресуемой по мере роста массивов; (2) ломает ли коррелированная по строкам ошибка допущения декодеров; (3) укладываются ли демультиплексоры в милликельвиновый бюджет мощности.
 
-## Источники
+## Литература
 [197] A. Nickl *et al.*, “Eight-qubit operation of a 300 mm SiMOS foundry-fabricated device,” *Nat. Commun.*, vol. 17, no. 1, Art. no. 5878, Jul. 2026, doi: [10.1038/s41467-026-74597-6](https://doi.org/10.1038/s41467-026-74597-6). [D]
 [353] GlobalFoundries, “GlobalFoundries launches Quantum Technology Solutions to scale U.S. quantum manufacturing,” May 21, 2026. [Online]. Available: https://gf.com/gf-press-release/globalfoundries-launches-quantum-technology-solutions-to-scale-us-quantum-manufacturing/ Also https://investors.gf.com/news-releases/news-release-details/globalfoundries-launches-quantum-technology-solutions-scale-us. [C]
 [449] Quantum Machines, “Semiconductor Spin Qubits,” Aug. 11, 2026. [Online]. Available: https://www.quantum-machines.co/qubit-types/semiconductor-spin-qubits/ [C]

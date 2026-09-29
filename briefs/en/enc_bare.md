@@ -59,7 +59,7 @@ The default Layer-2 encoding on the transmon lattice with tunable couplers (IBM,
 ## Outlook & open questions
 Confirm by end-2027: ≥ 50× leakage suppression in a below-threshold code outside USTC, or leakage published as a line item in a vendor's logical error budget; otherwise demote it to a single-device claim. Best case 2029: leakage falls under the correlated-event floor (≈10⁻¹⁰, hourly bursts on Willow [D][1]); worst case, Λ stays near 2 and physical-per-logical above 10³. Does leakage or 2Q error dominate at 10⁴ qubits? Can removal keep up at 10⁶? Does erasure conversion ever cross over commercially?
 
-## Sources
+## References
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [2] V. Sivak *et al.*, “Reinforcement learning control of quantum error correction,” *Nature*, vol. 655, no. 8124, pp. 879–884, Jul. 2026, doi: [10.1038/s41586-026-10759-2](https://doi.org/10.1038/s41586-026-10759-2). [D]
 [3] T. He *et al.*, “Experimental Quantum Error Correction below the Surface Code Threshold via All-Microwave Leakage Suppression,” *Phys. Rev. Lett.*, vol. 135, no. 26, Art. no. 260601, Dec. 2025, doi: [10.1103/rqkg-dw31](https://doi.org/10.1103/rqkg-dw31). [D]

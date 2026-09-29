@@ -54,7 +54,7 @@ The manufacturing layer of donor spins in silicon: provides the donor-spin carri
 ## Outlook & open questions
 Confirm/demote (12–24 months): a dated parallel-fabrication announcement or a device beyond eleven qubits confirms a path past boutique scale; neither by 2028 demotes this to a physics tool. Best case 2029: above fifty donors with published yield. Worst case: a single-laboratory capability. Open: (1) is multi-tip or templated exposure feasible; (2) does SkyWater's new owner keep the relationship; (3) does anyone publish a placement-yield distribution.
 
-## Sources
+## References
 [19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [G]
 [192] H. Edlbauer *et al.*, “An 11-qubit atom processor in silicon,” *Nature*, vol. 648, no. 8094, pp. 569–575, Dec. 2025, doi: [10.1038/s41586-025-09827-w](https://doi.org/10.1038/s41586-025-09827-w). [arXiv:2506.03567](https://arxiv.org/abs/2506.03567). [D]
 [276] Silicon Quantum Computing, “SkyWater x SQC: Advancing Hybrid Quantum-Classical Computing,” Nov. 20, 2025. [Online]. Available: https://sqc.com/news/skywater-and-sqc-advancing-hybrid-quantum-classical-computing [C]

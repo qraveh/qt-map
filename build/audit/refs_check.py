@@ -38,7 +38,7 @@ LI = re.compile(r'<li id="([^"]+)" value="(\d+)"><span class="src">\[(\d+)\]</sp
 def scope_of(lid):
     m = re.match(r'(brief-[a-z0-9_]+-(?:en|ru)-src)-\d+$', lid)
     if m: return m.group(1)
-    m = re.match(r'((?:en|ru)-src)-', lid)
+    m = re.match(r'((?:en|ru|he)-src)-', lid)
     return m.group(1) if m else lid
 lists = {}; entry = {}
 for m in LI.finditer(h):
@@ -70,6 +70,9 @@ for scope, items in lists.items():
     for n, v, r, t, l in items:
         if n != v: prob('numbering', '%s: [%d] has value=%d' % (scope, n, v))
     used = set(cites.get(scope, []))
+    if re.match(r'(en|ru|he)-src$', scope):   # §9 lists every work of the Atlas (29 Sep 2026): a work cited only in the briefs is cited there
+        for other, ns2 in cites.items():
+            if other != scope: used |= set(ns2)
     for n in ns:
         if n not in used: prob('numbering', '%s: entry [%d] is never cited' % (scope, n))
 for scope in cites:

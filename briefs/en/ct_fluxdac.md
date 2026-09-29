@@ -70,7 +70,7 @@ T1 (relaxation) and T2* (Ramsey) were measured on the single Φ-DAC-controlled f
 ## Outlook & open questions
 Milestones (12–24 months): D-Wave publishes a multi-qubit Φ-DAC result with a crosstalk matrix and gate fidelity (confirm); the 17-qubit 2026 gate-model target ships (confirm); an outside group replicates the coherence result on a second device (confirm) — or the fluxonium line stays a single-device whitepaper through 2027 (demote). Best case 2029: Φ-DAC control of hundreds of independently tuned gate-model qubits, crosstalk below the gate-error budget, adopted outside D-Wave; worst case, proven only for a homogeneous annealer array while cryo-CMOS or line-reduction takes the gate-model market. Open: crosstalk and drift at scale; whether bump-bond density becomes the real wall. Watch: D-Wave's next fluxonium publication, SEEQC's closing, an SFQ-vs-cryo-CMOS comparison.
 
-## Sources
+## References
 [14] D-Wave Quantum Inc., “D-Wave Announces Agreement to Acquire Quantum Circuits Inc., Establishing World's Leading Quantum Computing Company,” Jan. 7, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-to-acquire-quantum-circuits-inc-establishing-world-s-leading-quantum-computing-company/ [C]
 [15] D-Wave Quantum Inc., “D-Wave Reports Second Quarter 2026 Results,” Aug. 6, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-reports-second-quarter-2026-results/ [C]
 [220] M. Swayne, “D-Wave Announces General Availability of Advantage2 Quantum Computer,” The Quantum Insider, May 20, 2025. [Online]. Available: https://thequantuminsider.com/2025/05/20/d-wave-announces-general-availability-of-advantage2-quantum-computer/ [C]

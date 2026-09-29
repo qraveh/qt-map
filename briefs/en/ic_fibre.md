@@ -60,7 +60,7 @@ Two photonic architectures depend on it — fusion (PsiQuantum, Quandela, QuiX) 
 ## Outlook & open questions
 Confirm by 2028: a vendor publishing an inter-module rate with its fidelity; demote if the field still reports fidelity alone. Best case 2029: multiplexed links close a stated rate gap at rack scale. Worst case: rate stays unmeasured. Open: is 99.72% reproducible outside PsiQuantum; does multicore fibre help inside a machine.
 
-## Sources
+## References
 [169] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
 [172] Xanadu, “Xanadu sets new industry benchmark in photonic chip packaging,” PR Newswire, Jun. 10, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/xanadu-sets-new-industry-benchmark-in-photonic-chip-packaging-302796562.html [C]
 [173] H. A. Rad *et al.*, “Scaling and networking a modular photonic quantum computer,” *Nature*, vol. 638, no. 8052, pp. 912–919, Jan. 2025, doi: [10.1038/s41586-024-08406-9](https://doi.org/10.1038/s41586-024-08406-9). [D]

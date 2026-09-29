@@ -62,7 +62,7 @@ updated: 2026-09-04
 ## Прогноз и открытые вопросы
 Подтвердить к концу 2027: флаксониум на ≥ 4 кубита под кристальным управлением потоком с опубликованными двухкубитными RB либо воспроизведение 99.94%; понизить оценку, если не появится ни того, ни другого. Лучший случай, 2029: двухкубитная ошибка около 10⁻⁴ сокращает бюджет поверхностного кода при заданном Λ; худший — коммутационный шум с управляющего кристалла съедает выигрыш по когерентности. Переживёт ли предел по потоковому шуму мультиплексирование? Способно ли считывание в диапазоне 0.2–1 GHz достичь 99.5% в решётке? Что стало с командой Atlantic Quantum?
 
-## Источники
+## Литература
 [15] D-Wave Quantum Inc., “D-Wave Reports Second Quarter 2026 Results,” Aug. 6, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-reports-second-quarter-2026-results/ [C]
 [37] R. Li, K. Kubo, Y. Ho, Z. Yan, Y. Nakamura, and H. Goto, “Realization of High-Fidelity CZ Gate Based on a Double-Transmon Coupler,” *Phys. Rev. X*, vol. 14, no. 4, Art. no. 041050, Nov. 2024, doi: [10.1103/PhysRevX.14.041050](https://doi.org/10.1103/PhysRevX.14.041050). [arXiv:2402.18926](https://arxiv.org/abs/2402.18926). [D]
 [39] W.-J. Lin, H. Cho, Y. Chen, M. G. Vavilov, C. Wang, and V. E. Manucharyan, “24 days-stable CNOT-gate on fluxonium qubits with over 99.9% fidelity,” [arXiv:2407.15783](https://arxiv.org/abs/2407.15783), Jul. 2024. [D]

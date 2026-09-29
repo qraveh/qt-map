@@ -85,8 +85,7 @@ Every headline number is a randomised-benchmarking (RB) Clifford average [D][566
 
 Confirm if by end-2027 a group publishes an SFQ-driven two-qubit gate below 1% error, an SFQ-controlled device above ten qubits, or hours of charge-parity data free of clock-correlated bursts. Demote if by end-2028 no SFQ module exceeds twenty qubits, or a decomposition shows poisoning above 0.1% per Clifford. Open questions: does "no detectable poisoning" survive continuous clocking at QEC duty cycles? Can SFQ flux bias hold the DC stability transmons need?
 
-## Sources
-
+## References
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [C]
 [53] M. Abdel-Kareem, “SEEQC Reports Integrated Qubit Control Logic Operating at Millikelvin Temperatures,” Quantum Computing Report, Mar. 21, 2026. [Online]. Available: https://quantumcomputingreport.com/seeqc-reports-integrated-qubit-control-logic-operating-at-millikelvin-temperatures/ [C]

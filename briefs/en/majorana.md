@@ -115,8 +115,7 @@ Best case 2029: a few tetrons with balanced X/Z lifetimes and a two-qubit parity
 
 Open questions: why no X-loop number exists for the lead generation; what fraction of tetrons pass screening; how parity lifetime scales with wire length, the measurement that tests exponential protection directly; whether US2QC's final phase can be satisfied by a Z-only result; and whether Nokia's route, with its peer-reviewed non-Abelian interference signature [D][366], is the better-evidenced bet.
 
-## Sources
-
+## References
 [13] Microsoft Azure Quantum, “Interferometric single-shot parity measurement in InAs–Al hybrid devices,” *Nature*, vol. 638, no. 8051, pp. 651–655, Feb. 2025, doi: [10.1038/s41586-024-08445-2](https://doi.org/10.1038/s41586-024-08445-2). [D]
 [20] M. Aghaee *et al.*, “Distinct Lifetimes for X and Z Loop Measurements in a Majorana Tetron Device,” [arXiv:2507.08795](https://arxiv.org/abs/2507.08795), Jul. 2025. [D]
 [21] M. Aghaee *et al.*, “20 Second Parity Lifetime in an InAs–Pb Tetron Device,” [arXiv:2606.03884](https://arxiv.org/abs/2606.03884), Jun. 2026. [C]

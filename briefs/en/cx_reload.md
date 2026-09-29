@@ -72,8 +72,7 @@ The discriminating test is stored-qubit coherence with reload on versus off. Har
 ## Outlook & open questions
 Confirm if, by 2027-12-31, a published experiment runs gates or QEC rounds on ≥1,000 atoms while reloading, with logical error flat across reload events; demote if QuEra's 2028 reservoir has no such precursor by then. Open questions. (1) Does flux scale with array area, or do extraction and imaging cap it? (2) What gate-fidelity tax do stored qubits pay beside an active preparation zone? (3) What does re-cooling fresh atoms cost in time? (4) Can a conveyor share optical access with a zoned architecture at 10⁴ sites? (5) At 5,000–6,000 s cryogenic lifetimes, is operation-induced loss the whole budget?
 
-## Sources
-
+## References
 [8] Y. Wu, S. Kolkowitz, S. Puri, and J. D. Thompson, “Erasure conversion for fault-tolerant quantum computing in alkaline earth Rydberg atom arrays,” *Nat. Commun.*, vol. 13, Art. no. 4657, 2022, doi: [10.1038/s41467-022-32094-6](https://doi.org/10.1038/s41467-022-32094-6). [arXiv:2201.03540](https://arxiv.org/abs/2201.03540). [S]
 [138] H. J. Manetsch, G. Nomura, E. Bataille, K. H. Leung, X. Lv, and M. Endres, “A tweezer array with 6100 highly coherent atomic qubits,” *Nature*, vol. 647, pp. 60–67, 2025, doi: [10.1038/s41586-025-09641-4](https://doi.org/10.1038/s41586-025-09641-4). [arXiv:2403.12021](https://arxiv.org/abs/2403.12021). [D]
 [144] N.-C. Chiu *et al.*, “Continuous operation of a coherent 3,000-qubit system,” *Nature*, vol. 646, no. 8087, pp. 1075–1080, Sep. 2025, doi: [10.1038/s41586-025-09596-6](https://doi.org/10.1038/s41586-025-09596-6). [D]

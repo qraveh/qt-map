@@ -67,8 +67,7 @@ T₂ = время фазовой когерентности по Рамзи; MS 
 ## Прогноз и открытые вопросы
 Подтвердить атомную ветвь, если planqc до 2027-12-31 опубликует T₂ часового кубита и точность CZ на аппаратуре MAQCS; если нет — понизить её до метрологии. Подтвердить ионную ветвь, если LYNX будет поставлен в Q4 2026 с попарными показателями 2Q. Открытые вопросы. (1) Какая ширина линии лазера довела бы T₂ у ⁴⁰Ca⁺ до предела 2.3 s? (2) Чем заданы 10–100 ms у planqc — решёткой, лазером или полем? (3) Какая доля распадов D₅/₂ даёт утечку, а какая — переворот? (4) Перейдёт ли AQT на сорт ионов для сверхтонкого кодирования или для omg? (5) Сможет ли один часовой лазер обслуживать 10³ узлов?
 
-## Источники
-
+## Литература
 [128] Alpine Quantum Technologies GmbH, “AQT Sets New European Industry Standard: Introducing the ‘LYNX’ Series with Record-Breaking Quantum Volume,” AQT, May 5, 2026. [Online]. Available: https://www.aqt.eu/lynx-quantum-volume-record/ [C]
 [161] planqc, “MAQCS takes shape as first quantum computing hardware arrives at LRZ,” Sep. 9, 2026. [Online]. Available: https://planqc.eu/news/maqcs-takes-shape-as-first-quantum-computing-hardware-arrives-at-lrz [C]
 [247] M. Ivezic, “Planqc,” PostQuantum, May 22, 2025. [Online]. Available: https://postquantum.com/quantum-computing-companies/planqc/ [P]

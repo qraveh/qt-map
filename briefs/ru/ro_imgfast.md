@@ -62,7 +62,7 @@ e = оптическое управление при комнатной темп
 ## Прогноз и открытые вопросы
 Подтвердить/понизить за 12–24 месяца: воспроизведение любого из двух результатов второй группой; считывание быстрее 20 µs внутри живого прогона с логическим кубитом; удержание считывания при дозагрузке на полном размере массива. Лучший случай к 2029 г.: микросекундная визуализация становится стандартом, раунд ограничен транспортом на уровне нескольких сотен µs, а детектирование потерь дёшево настолько, что конверсия в стирание становится рутиной. Худший случай: цифры держатся только на малых статических подмассивах. Открытые вопросы: какой сорт атомов использовала USTC; переживает ли адаптивная остановка переход на полный массив, где счёт идёт всюду одновременно; кто построит первый сенсор с принятием решения прямо на кристалле.
 
-## Источники
+## Литература
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [11] Novo Nordisk Foundation, “New quantum computer with great potential to boost Nordic research and innovation,” Novo Nordisk Fonden, Jul. 17, 2025. [Online]. Available: https://novonordiskfonden.dk/en/news/new-quantum-computer-with-great-potential-to-boost-nordic-research-and-innovation/ [R]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]

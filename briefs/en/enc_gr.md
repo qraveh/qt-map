@@ -67,8 +67,7 @@ Gate benchmarks do not apply; the figures are T2*, echo T2, Rabi damping, blocka
 ## Outlook & open questions
 Confirm if by 2027-12-31 a commercial analog machine publishes T2* above 20 µs; demote if Vela ships without coherence figures or no peer-reviewed analog-advantage result appears by 2027-06-30. Open questions. (1) Why is Aquila's echo time a third of the 2018 value? (2) How does T2* scale with register size? (3) Will erasure-detecting alkaline-earth g–r qubits reach a product? (4) Which Rydberg level and coherence do Fresnel and Orion run? (5) Does the readout asymmetry bias published phase diagrams?
 
-## Sources
-
+## References
 [137] QuEra Computing Inc., “Gemini-Class Gate-Model Quantum Computer.” [Online]. Available: https://www.quera.com/gemini [C]
 [138] H. J. Manetsch, G. Nomura, E. Bataille, K. H. Leung, X. Lv, and M. Endres, “A tweezer array with 6100 highly coherent atomic qubits,” *Nature*, vol. 647, pp. 60–67, 2025, doi: [10.1038/s41586-025-09641-4](https://doi.org/10.1038/s41586-025-09641-4). [arXiv:2403.12021](https://arxiv.org/abs/2403.12021). [D]
 [143] P. Scholl, A. L. Shaw, R. B.-S. Tsai, R. Finkelstein, J. Choi, and M. Endres, “Erasure conversion in a high-fidelity Rydberg quantum simulator,” *Nature*, vol. 622, p. 273, 2023, doi: [10.1038/s41586-023-06516-4](https://doi.org/10.1038/s41586-023-06516-4). [arXiv:2305.03406](https://arxiv.org/abs/2305.03406). [D]

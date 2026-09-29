@@ -59,7 +59,7 @@ The continuous-variable architecture's gate layer, requiring squeezed sources an
 ## Outlook & open questions
 Confirm by 2027: effective squeezing above 3 dB on chip; demote the 2028–29 milestone if it stays below 1 dB. Best case 2029: a small GKP logical qubit at low distance. Worst case: uncorrected demonstrations continue and the schedule slips as the financing did. Open: how much of the gap is loss versus fabrication; do homodyne front-ends scale.
 
-## Sources
+## References
 [172] Xanadu, “Xanadu sets new industry benchmark in photonic chip packaging,” PR Newswire, Jun. 10, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/xanadu-sets-new-industry-benchmark-in-photonic-chip-packaging-302796562.html [C]
 [173] H. A. Rad *et al.*, “Scaling and networking a modular photonic quantum computer,” *Nature*, vol. 638, no. 8052, pp. 912–919, Jan. 2025, doi: [10.1038/s41586-024-08406-9](https://doi.org/10.1038/s41586-024-08406-9). [D]
 [174] M. V. Larsen *et al.*, “Integrated photonic source of Gottesman–Kitaev–Preskill qubits,” *Nature*, vol. 642, no. 8068, pp. 587–591, Jun. 2025, doi: [10.1038/s41586-025-09044-5](https://doi.org/10.1038/s41586-025-09044-5). [D]

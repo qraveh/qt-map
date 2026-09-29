@@ -70,7 +70,7 @@ HRL's headline figures and the 80% calibration split are vendor-reported and unr
 ## Outlook & open questions
 Falsifiable in 12–24 months: confirm/demote that a foundry device publishes all-pairs fidelity past eight qubits, and that IBM places a dated spin milestone on a public roadmap. Best case by 2029: a cryogenically sequenced foundry chip shows below-threshold logical memory with a full code. Worst case: uniformity stalls past ten qubits and roadmaps stay two orders ahead of hardware. Open: can calibration error fall without importing the controller's own error budget; does shuttled CZ displace static exchange; what IBM does with HRL's silicon.
 
-## Sources
+## References
 [10] IBM, “IBM to Acquire HRL Laboratories to Power the Future of Quantum,” Jul. 23, 2026. [Online]. Available: https://newsroom.ibm.com/2026-07-23-ibm-to-acquire-hrl-laboratories-to-power-the-future-of-quantum [C]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
 [189] P. Steinacker *et al.*, “Industry-compatible silicon spin-qubit unit cells exceeding 99% fidelity,” *Nature*, vol. 646, no. 8083, pp. 81–87, Sep. 2025, doi: [10.1038/s41586-025-09531-9](https://doi.org/10.1038/s41586-025-09531-9). [D]

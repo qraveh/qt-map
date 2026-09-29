@@ -68,8 +68,7 @@ PEC is unbiased, with error bars, if its noise model is right, so verification b
 Confirm if an unbiased PEC estimate on ≥5,000 gates appears with error bars by 2027-12-31, or a July-2026 claim survives to 2027-07-31 without converged classical reproduction; demote those claims to utility if converged tensor-network or Pauli-propagation values match them, as in 2023.
 Open questions. (1) How stable is a learned Pauli–Lindblad model over a multi-hour run at 10³–10⁴ gates? (2) Does TEM's quadratic saving survive model error on hardware? (3) At what size does a detection code plus mitigation beat mitigation alone in shots? (4) Can a mitigated expectation-value task be proven classically hard? (5) What shot multiplier did Nighthawk r2's 7,500-gate PEA run spend?
 
-## Sources
-
+## References
 [35] D. Gao *et al.*, “Establishing a New Benchmark in Quantum Computational Advantage with 105-qubit Zuchongzhi 3.0 Processor,” *Phys. Rev. Lett.*, vol. 134, Art. no. 090601, Mar. 2025, doi: [10.1103/PhysRevLett.134.090601](https://doi.org/10.1103/PhysRevLett.134.090601). [arXiv:2412.11924](https://arxiv.org/abs/2412.11924). [D]
 [45] A. Kandala, A. Javadi-Abhari, and J. Gambetta, “Researchers demonstrate quantum advantage through trusted quantum computation,” IBM Quantum Computing Blog, Jul. 30, 2026. [Online]. Available: https://www.ibm.com/quantum/blog/quantum-advantage [C]
 [233] E. Leviatan *et al.*, “Resolving Structure in Prethermal Floquet Dynamics with Precision Quantum Computation,” [arXiv:2607.24937](https://arxiv.org/abs/2607.24937), Jul. 2026. [D]

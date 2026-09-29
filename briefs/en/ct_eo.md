@@ -61,7 +61,7 @@ Shared, not an architecture choice: it drives the fusion architecture (PsiQuantu
 ## Outlook & open questions
 Confirm by 2027: a loop under 200 ns above 32 channels, or a system cycle faster than 1 MHz; demote if Aurora's 1 MHz still stands in 2028. Best case 2029: ~10 MHz rack-scale. Worst case: unit latency never couples to scale. Open: does 150 ns hold under 32-channel load; does non-volatile BTO reach usable in-line loss.
 
-## Sources
+## References
 [169] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
 [172] Xanadu, “Xanadu sets new industry benchmark in photonic chip packaging,” PR Newswire, Jun. 10, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/xanadu-sets-new-industry-benchmark-in-photonic-chip-packaging-302796562.html [C]
 [173] H. A. Rad *et al.*, “Scaling and networking a modular photonic quantum computer,” *Nature*, vol. 638, no. 8052, pp. 912–919, Jan. 2025, doi: [10.1038/s41586-024-08406-9](https://doi.org/10.1038/s41586-024-08406-9). [D]

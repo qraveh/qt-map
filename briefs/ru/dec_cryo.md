@@ -68,7 +68,7 @@ updated: 2026-09-04
 ## Прогноз и открытые вопросы
 Подтвердить к 2028 г., если хоть один криогенный предекодер пройдёт tape-out и даст измеренный кремний; понизить, если литература 2027 г. останется на уровне послесинтезных оценок. Лучший случай на 2029 г.: компрессор при 4 K внутри системы, близкой к QBI, поглощает поток синдромов ещё до жгута. Худший случай: декодирование при комнатной температуре масштабируется вместе с кодами qLDPC и более быстрыми каналами. Открытые вопросы: какая базовая величина мощности должна задавать размер холодного декодера; может ли декодирующая логика делить ступень с управлением, не возвращая отравление квазичастицами; упрётся ли хоть одна платформа в стену по вводам раньше 10⁴ кубитов. Следить за листингом SEEQC и за дорожной картой IBM после покупки HRL.
 
-## Источники
+## Литература
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [550] S. Kawabata, “Integration and Resource Estimation of Cryoelectronics for Superconducting Fault-Tolerant Quantum Computers,” [arXiv:2601.03922](https://arxiv.org/abs/2601.03922), Jan. 2026. [S]
 [575] SeeQC, Inc., “Form S-4 Registration Statement (SeeQC, Inc. / Allegro Merger Corp.),” U.S. Securities and Exchange Commission, May 2026. [Online]. Available: https://www.sec.gov/Archives/edgar/data/1779977/000121390026061108/ea0278139-04.htm [G]

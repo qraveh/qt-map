@@ -66,7 +66,7 @@ updated: 2026-09-04
 ## Прогноз и открытые вопросы
 Подтвердить или понизить в статусе в течение 12–24 месяцев: продемонстрированный сохраняющий смещение CNOT кот–кот; скан по расстоянию при фиксированном числе фотонов; любой аппаратный результат по LDPC-cat или «GKP плюс qLDPC». Лучший случай к 2029 году: логический кубит на repetition-cat с изолированно показанным подпороговым масштабированием и с измеренным сохраняющим смещение гейтом, что делает оценку в 758 котов обсуждаемой. Худший случай: фазовые перевороты остаются вблизи 10⁻¹, и семейство выживает как исследовательская линия. Открыто: переживает ли смещение хоть какой-нибудь двухкубитный гейт.
 
-## Источники
+## Литература
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [80] H. Putterman *et al.*, “Hardware-efficient quantum error correction via concatenated bosonic qubits,” *Nature*, vol. 638, no. 8052, pp. 927–934, Feb. 2025, doi: [10.1038/s41586-025-08642-7](https://doi.org/10.1038/s41586-025-08642-7). [D]
 [81] Y. Ye *et al.*, “Bias-preserving cat-cat CNOT gate via vacuum-conditional beam-splitter,” [arXiv:2607.22852](https://arxiv.org/abs/2607.22852), Jul. 2026. [S]

@@ -5,9 +5,11 @@ A port of inspect(), inspectMachine() and inspectPath() of build/map_js.py with 
 evHTML, machCell, usedByHTML, placeText, isOffd / isEmpty, the machines' slim form of build_html.mach_slim): the same
 texts in both languages, the same blocks in the same order, the same class names, the same numbers and times (JavaScript's
 String(), toFixed, toPrecision and toExponential are reproduced exactly). No JavaScript in the output; every link is a real href:
-    a technology       → {base}technology/{id}.html       "Open on the map" → {base}#station-{id}
-    a machine       → {base}machine/{id}.html          "Open on the map" → {base}#machine-{id}
-    an architecture → {base}architecture/{pid}.html    "Open on the map" → {base}#architecture-{pid}
+    a technology       → {base}technology/{id}.html       "Open on the map" → {base}index.html#station-{id}
+    a machine       → {base}machine/{id}.html          "Open on the map" → {base}index.html#machine-{id}
+    an architecture → {base}architecture/{pid}.html    "Open on the map" → {base}index.html#architecture-{pid}
+    (base: from the page to its language's root — '../' on an English record page, '../../ru/' on a Russian one, '../../he/' on a Hebrew
+    one — so that every link stays in the page's language; before 29 Sep 2026 the non-English cards linked the English pages)
     "Brief →"       → #brief (the brief is on the technology's own page); a machine → its own page machine/<id>.html
 What only the live map can do is left out: the drag grip and dock buttons, "clear machine", the lens-row highlight and the hints
 that describe clicks on the map (the "Used by" hint keeps its other clauses). EXTRAS (default True) adds what the spec lists
@@ -16,12 +18,13 @@ undisclosed cells; the architecture's machines. cards.EXTRAS = False renders the
 
     import cards
     cards.load()                                     # data/graph.json, data/machines.json, build/labels.py, the briefs' key references
-    cards.station_card_html(node_id, lang, base)     # lang 'en' | 'ru'; base = prefix to the Atlas root ('' or '../')
+    cards.station_card_html(node_id, lang, base)     # lang: any of langs.LANGS; base = prefix to the language's root
     cards.machine_card_html(machine_id, lang, base)
     cards.architecture_card_html(path_id, lang, base)
 """
 import html, json, math, os, re, sys
 import regvocab
+from langs import LANGS, pick   # 29 Sep 2026: every text is a (en, ru[, he]) tuple; a missing language reads English
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BUILD = os.path.join(ROOT, 'build')
@@ -52,6 +55,7 @@ PN = (('gates', ('gates', 'гейты')), ('transport', ('transport', 'тран�
 USEBY_HINT = ('↗ its register card · paper / product / press: links that name the machine (attribution checked on 20 Sep 2026)',
               '↗ карточка реестра · статья / продукт / пресса: ссылки, где машина названа (атрибуция проверена 20 сентября 2026)')
 MAP_LINK = ('Open on the map', 'Открыть на карте')
+ACTORS_GOALS = ('Actors & goals', 'Акторы и цели')   # the architecture card's block title; build/pages.py finds the block by it
 PLAIN_UNITS = {'s', 'Hz', 'count', '1', 'fraction', 'dimensionless', 'ratio', 'relative', 'population'}   # machine records: other units are printed
 
 G = None
@@ -190,11 +194,11 @@ def fmt_t(x):
 def _s(x): return '' if x is None else (x if isinstance(x, str) else js_str(x))
 def esc(x): return html.escape(_s(x), False)   # text: & < > (the JS esc)
 def ea(x): return html.escape(_s(x))           # attribute values
-def T(L, en, ru): return en if L == 'en' else ru
+def T(L, *texts): return pick(L, texts)   # T(L, en, ru[, he])
 
 
 def vt(L, tab, key):
-    e = V[tab].get(_s(key)); return T(L, *e[:2]) if e else _s(key)
+    e = V[tab].get(_s(key)); return T(L, *e) if e else _s(key)
 
 
 _AX = re.compile(r'arXiv:\s?((?:[0-9]{4}\.[0-9]{4,5}|[a-z\-]+/[0-9]{7})(?:v[0-9]+)?)')
@@ -216,10 +220,10 @@ def _u16(s): return len(s.encode('utf-16-le')) // 2   # JS .length
 # ---------- links
 def _st(base, nid, L, cls=None, title=None, text=None):
     return '<a href="%stechnology/%s.html"%s%s>%s</a>' % (ea(base), ea(nid), (' class="%s"' % cls) if cls else '',
-                                                          (' title="%s"' % ea(title)) if title is not None else '', esc(NODE[nid][L]) if text is None else text)
+                                                          (' title="%s"' % ea(title)) if title is not None else '', esc(pick(L, NODE[nid])) if text is None else text)
 
 
-def _arch(base, pid, L): return '<a href="%sarchitecture/%s.html">%s</a>' % (ea(base), ea(pid), esc(PATH[pid][L]))
+def _arch(base, pid, L): return '<a href="%sarchitecture/%s.html">%s</a>' % (ea(base), ea(pid), esc(pick(L, PATH[pid])))
 
 
 def _orglink(base, m, L):
@@ -230,8 +234,9 @@ def _orglink(base, m, L):
     name = esc(m['org'])
     return '<a class="org" href="%sorganisation/%s.html" title="%s">%s</a>' % (ea(base), ea(sl), ea(T(L, "the organisation's page", 'страница организации')), name) if sl else name
 def _maplink(base, kind, i, L):
-    # the main page of the record's own language, by its default document (index.html), so that the link also works from a folder on disk
-    return '<a class="maplink" href="%s%sindex.html#%s-%s">%s</a>' % (ea(base), '' if L == 'en' else 'ru/', kind, ea(i), esc(T(L, *MAP_LINK)))
+    # the main page of the record's own language (base is that language's root), by its default document (index.html), so that the link
+    # also works from a folder on disk
+    return '<a class="maplink" href="%sindex.html#%s-%s">%s</a>' % (ea(base), kind, ea(i), esc(T(L, *MAP_LINK)))
 
 
 def _mrefs(L, m):
@@ -278,7 +283,7 @@ def _ev_html(L, c):
 
 
 def _used_by(L, n, base):
-    t = lambda en, ru: esc(T(L, en, ru))
+    t = lambda *x: esc(T(L, *x))
     ub = BY_NODE.get(n['id']) or {}
     P = [i for i in ub.get('primary') or [] if i in MACH]; A = [i for i in ub.get('alternate') or [] if i in MACH and i not in P]
     N = len(P) + len(A)
@@ -313,7 +318,7 @@ def _records(L, recs, machine=False):
     for r in recs:
         d = [esc(r.get('text')), esc(r.get('date')), '<a href="%s" target="_blank" rel="noopener">%s</a>' % (ea(r.get('url')), esc(T(L, 'source', 'источник')))]
         out.append('<div class="def"><div><span class="k">%s</span> → <b>%s</b> <span class="empty">· %s</span></div><div class="d">%s%s%s</div></div>' % (
-            esc(T(L, *(rk.get(r['key']) or (r['key'], r['key']))[:2])), _rec_val(L, r, machine), esc(T(L, *regvocab.SCOPE.get(r.get('scope') or '', (r.get('scope') or '',) * 2))),
+            esc(T(L, *(rk.get(r['key']) or (r['key'],)))), _rec_val(L, r, machine), esc(T(L, *regvocab.SCOPE.get(r.get('scope') or '', (r.get('scope') or '',) * 2))),
             ' · '.join(x for x in d if x or not machine), (' [%s]' % esc(r.get('tag'))) if r.get('tag') or not machine else '',
             (' <span class="empty" title="%s">ⓘ</span>' % ea(r['note'])) if r.get('note') else ''))
     return '<div class="space"><h4>%s</h4>%s</div>' % (esc(T(L, 'Standard records', 'Стандартные рекорды')), ''.join(out))
@@ -351,7 +356,7 @@ def _wrap(kind, parts): return '<section class="card card-%s">%s</section>' % (k
 
 # ---------- the technology card (inspect)
 def station_card_html(nid, lang, base=''):
-    L, n = lang, NODE[nid]; t = lambda en, ru: esc(T(L, en, ru)); c = n.get('c'); b = n.get('b') or {}; e = n.get('e') or {}
+    L, n = lang, NODE[nid]; t = lambda *x: esc(T(L, *x)); c = n.get('c'); b = n.get('b') or {}; e = n.get('e') or {}
     rows = [(T(L, '(a) carrier affinity', '(a) сродство носителя'), vt(L, 'AFF', n['aff'])),
             (T(L, '(b) time · entangling', '(b) время · перепутывание'), fmt_t(b.get('t')) + ((' · ' + vt(L, 'DET', b.get('det'))) if b.get('det') != 'na' else '')),
             (T(L, '(c) readout', '(c) считывание'), '%s · %s · %s · %s' % (vt(L, 'MECH', c.get('mech')), fmt_t(c.get('t')),
@@ -379,7 +384,7 @@ def station_card_html(nid, lang, base=''):
     defs = ''.join('<div class="def"><div><span class="k">%s</span> → <b>%s</b></div><div class="d">%s: %s · %s · <a href="%s" target="_blank" rel="noopener">%s</a></div></div>' % (
         esc(d['metric']), esc(d['value']), t('defines', 'определяет'), esc(vt(L, 'OUT', d['out'])), esc(d['date']), ea(d['url']), t('source', 'источник'))
         for d in n.get('defines') or []) or '<p class="empty">%s</p>' % t('no dated attribute', 'нет датированных атрибутов')
-    attrs = ('<p style="margin:6px 0 0">%s</p>' % lk(n['attrs'][L])) if (n.get('attrs') or {}).get(L) else ''
+    attrs = ('<p style="margin:6px 0 0">%s</p>' % lk(pick(L, n['attrs']))) if pick(L, n.get('attrs') or {}) else ''
     al = ALT.get(nid, [])
     tags = ''.join('<div class="pathtag"><i class="sw" style="--c:%s"></i>%s%s<span class="empty"> — %s · %s</span></div>' % (
         FAMC.get(PATH[p]['family']), _arch(base, p, L), (' <span class="empty">(%s)</span>' % t('alternate', 'альтернатива')) if p in al else '',
@@ -396,18 +401,18 @@ def station_card_html(nid, lang, base=''):
     if con:
         edges += '<div><b style="color:var(--crit)">%s:</b></div>' % t('conflicts with', 'конфликтует с') + ''.join(
             '<div class="conf"><div>%s <span class="cst %s">%s</span></div><div class="cm">%s</div><div class="cm"><span class="tk">%s</span> %s</div><div class="cm"><span class="tk">%s</span> %s%s</div></div>' % (
-                _st(base, other(x), L), ea(x.get('status')), esc(vt(L, 'CONSTAT', x.get('status'))), lk(x.get(L)), t('price', 'цена'),
-                lk((x.get('price') or {}).get(L, '')), t('mitigation', 'снятие'), lk((x.get('mitig') or {}).get(L, '')),
+                _st(base, other(x), L), ea(x.get('status')), esc(vt(L, 'CONSTAT', x.get('status'))), lk(pick(L, x)), t('price', 'цена'),
+                lk(pick(L, x.get('price') or {}) or ''), t('mitigation', 'снятие'), lk(pick(L, x.get('mitig') or {}) or ''),
                 (' · <a href="%s" target="_blank" rel="noopener">%s</a>' % (ea(x['url']), esc(x.get('date')))) if x.get('url') else '') for x in con)
     edges += ('<div class="empty" style="margin-top:4px">° %s · %s</div>' % (t('one of several that would do', 'одно из нескольких, что подошли бы'),
                                                                             t('the usual route, not a strict need', 'обычный маршрут, не строгая необходимость'))
               if (req_out or req_in or rep or con) else '<p class="empty">—</p>')
     return _wrap('station', [
-        '<h3>%s</h3>' % esc(n[L]),
-        '<div class="meta">%s · %s %s %s · %s%s</div>' % (esc(nid), t('layer', 'слой'), n['layer'], esc(G['layers'][n['layer'] - 1][L]), esc(vt(L, 'STATUS', n['status'])),
+        '<h3>%s</h3>' % esc(pick(L, n)),
+        '<div class="meta">%s · %s %s %s · %s%s</div>' % (esc(nid), t('layer', 'слой'), n['layer'], esc(pick(L, G['layers'][n['layer'] - 1])), esc(vt(L, 'STATUS', n['status'])),
                                                         (' · %s %s' % (t('since', 'с'), n['since'])) if n.get('since') is not None and n['since'] < 2030 else ''),
         '<div class="mlinks">%s</div>' % _maplink(base, 'station', nid, L),
-        '<p>%s</p><div>%s</div>' % (lk(n['desc'][L]), flags),
+        '<p>%s</p><div>%s</div>' % (lk(pick(L, n['desc'])), flags),
         '<a class="briefbtn" href="#brief">%s</a>' % t('Brief →', 'Бриф →'),
         keys,
         '<div class="space"><h4>%s</h4><dl>%s</dl></div>' % (t('Design space — attributes', 'Пространство проектирования — атрибуты'),
@@ -421,7 +426,7 @@ def station_card_html(nid, lang, base=''):
 
 # ---------- the machine card (inspectMachine)
 def machine_card_html(mid, lang, base=''):
-    L, m = lang, MACH[mid]; t = lambda en, ru: esc(T(L, en, ru))
+    L, m = lang, MACH[mid]; t = lambda *x: esc(T(L, *x))
     role = lambda c: t('alternate', 'альтернатива') if c.get('role') == 'alternate' else t('primary', 'основная')
     more = lambda c: ' ' + _ev_html(L, _tup(c)) + (('<div class="ms">%s</div>' % lk(c['summary'])) if c.get('summary') else '')
     rows = ''
@@ -436,7 +441,7 @@ def machine_card_html(mid, lang, base=''):
         for c in na:
             v = esc(T(L, *NA_T.get(str(c['node']), (str(c['node']),) * 2)))
             h += ('<div class="mc"><span class="empty">— %s</span>%s</div>' % (v, more(c))) if EXTRAS else '<div class="mc empty">— %s</div>' % v
-        rows += '<tr><td class="ln">%s %s</td><td>%s</td></tr>' % (l['n'], esc(l[L]), h or '<span class="empty">—</span>')
+        rows += '<tr><td class="ln">%s %s</td><td>%s</td></tr>' % (l['n'], esc(pick(L, l)), h or '<span class="empty">—</span>')
     pf = m.get('profile') or {}
     prof = ''.join('<div class="mc"><span class="empty">%s:</span> %s</div>' % (t(*PROF_T[i]), esc(str(pf.get(k)))) for i, k in enumerate(PROF_KEYS) if pf.get(k))
     if EXTRAS:
@@ -444,9 +449,9 @@ def machine_card_html(mid, lang, base=''):
                                (('flags', 'флаги'), ("the register's caveats on this machine's data", 'оговорки реестра к данным этой машины'), pf.get('flags'))):
             if vals: prof += '<div class="mc"><span class="empty" title="%s">%s:</span> %s</div>' % (ea(T(L, *tip)), t(*lab), esc(', '.join((regvocab.flag_words(v, L) if lab[0] == 'flags' else v) for v in vals)))
     fam, q, sd, ec = m['family'], m.get('physical_qubits_num'), m.get('status_date'), m.get('evidence_counts') or {}
-    meta = '%s · %s · %s%s · %s' % (_orglink(base, m, L), t(*FAMN.get(fam, (fam, fam))), esc(m['status'] if L == 'en' else regvocab.status_ru(m['status'])), (' (%s)' % esc(sd)) if sd else '',
-                                    ('%s %s' % (js_str(q), 'physical qubits' if L == 'en' else regvocab.ru_plural(q, regvocab.PLURAL['qubits']))) if q is not None and q != '' else t('qubits not published', 'число кубитов не опубликовано'))
-    if EXTRAS and m.get('access'): meta += ' · %s: %s' % (t('access', 'доступ'), esc(m['access'] if L == 'en' else regvocab.access_ru(m['access'])))
+    meta = '%s · %s · %s%s · %s' % (_orglink(base, m, L), t(*FAMN.get(fam, (fam, fam))), esc(regvocab.status_l(m['status'], L)), (' (%s)' % esc(sd)) if sd else '',
+                                    ('%s %s' % (js_str(q), T(L, 'physical qubits', regvocab.ru_plural(q, regvocab.PLURAL['qubits'])))) if q is not None and q != '' else t('qubits not published', 'число кубитов не опубликовано'))
+    if EXTRAS and m.get('access'): meta += ' · %s: %s' % (t('access', 'доступ'), esc(regvocab.access_l(m['access'], L)))
     pid = m['map_path']
     return _wrap('machine', [
         '<h3><i class="sw" style="--c:%s"></i> %s</h3>' % (FAMC.get(fam, 'var(--mid)'), esc(m['name'])),
@@ -462,16 +467,16 @@ def machine_card_html(mid, lang, base=''):
 
 # ---------- the architecture card (inspectPath)
 def architecture_card_html(pid, lang, base=''):
-    L, p = lang, PATH[pid]; t = lambda en, ru: esc(T(L, en, ru)); sl = p.get('slots') or {}
+    L, p = lang, PATH[pid]; t = lambda *x: esc(T(L, *x)); sl = p.get('slots') or {}
     members = list(dict.fromkeys(i for k in _okeys(sl) for i in sl[k])); mset = set(members)
-    rows = ''.join('<tr><td class="ln">%s %s</td><td>%s</td></tr>' % (l['n'], esc(l[L]), '<span class="empty"> · </span>'.join(
+    rows = ''.join('<tr><td class="ln">%s %s</td><td>%s</td></tr>' % (l['n'], esc(pick(L, l)), '<span class="empty"> · </span>'.join(
         _st(base, i, L, 'alt' if j else 'prim') for j, i in enumerate(sl.get(str(l['n'])) or [])) or (('<span class="empty">— %s</span>' % esc(T(L, *p['na'][str(l['n'])]))) if str(l['n']) in (p.get('na') or {}) else '<span class="empty">∅ %s</span>' % t('empty slot', 'пустой слот')))
         for l in G['layers'])
     R = p.get('round') or {}; RP = R.get('parts') or {}; RX = p.get('react') or {}; CO = p.get('coh') or {}; pn = dict(PN)
     fS = lambda x: '—' if x is None else ('0' if x == 0 else fmt_t(js_log10(x)))
     fE = lambda x: '—' if x is None else to_exponential(x, 1).replace('e+', 'e', 1).replace('e-', 'e−', 1)
     rel = [e for e in G['edges'] if e['src'] in mset and e['dst'] in mset and e['type'] in ('requires', 'replaces', 'conflicts')]
-    nm = lambda i: _st(base, i, L, title=NODE[i][L], text=esc(SHORT[i][0 if L == 'en' else 1] if i in SHORT else NODE[i][L]))
+    nm = lambda i: _st(base, i, L, title=pick(L, NODE[i]), text=esc(pick(L, SHORT[i]) if i in SHORT else pick(L, NODE[i])))
     def rel_rows(typ, head, glyph):
         xs = [e for e in rel if e['type'] == typ]
         if not xs: return ''
@@ -506,10 +511,10 @@ def architecture_card_html(pid, lang, base=''):
         ms = '<div class="space useby"><h4>%s · %d</h4>%s</div>' % (t('Machines of this architecture', 'Машины этой архитектуры'), len(mids), (
             '<ul class="useby">%s</ul><div class="empty" style="margin-top:4px">%s</div>' % (''.join(_mli(L, i, base, '') for i in mids), t(*USEBY_HINT))) if mids else '')
     return _wrap('architecture', [
-        '<h3><i class="sw" style="--c:%s"></i> %s</h3>' % (FAMC.get(p['family']), esc(p[L])),
-        '<div class="meta">%s · %s · %s</div>' % (t('architecture', 'архитектура'), esc(pid), ('10 layers · %d technologies counting alternates' % len(members)) if L == 'en' else ('10 слоёв · %d %s с учётом альтернатив' % (len(members), regvocab.ru_plural(len(members), regvocab.PLURAL['stations'])))),
+        '<h3><i class="sw" style="--c:%s"></i> %s</h3>' % (FAMC.get(p['family']), esc(pick(L, p))),
+        '<div class="meta">%s · %s · %s</div>' % (t('architecture', 'архитектура'), esc(pid), T(L, '10 layers · %d technologies counting alternates' % len(members), '10 слоёв · %d %s с учётом альтернатив' % (len(members), regvocab.ru_plural(len(members), regvocab.PLURAL['stations'])))),
         '<div class="mlinks">%s</div>' % _maplink(base, 'architecture', pid, L),
-        '<div class="space"><h4>%s</h4><div>%s</div><div class="empty">%s: %s</div></div>' % (t('Actors & goals', 'Акторы и цели'), esc(p.get('actors')), t('goals', 'цели'), esc(p.get('goals'))),
+        '<div class="space"><h4>%s</h4><div>%s</div><div class="empty">%s: %s</div></div>' % (t(*ACTORS_GOALS), esc(p.get('actors')), t('goals', 'цели'), esc(p.get('goals'))),
         '<div class="space"><h4>%s</h4><dl>%s</dl><div class="empty" style="margin-top:4px">%s</div></div>' % (t('Derived clocks', 'Выведенные такты'), clocks, t(
             "t_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — a sum of the round's phases, from the code node, the attributes and the standard records; the measured cycle is the check.",
             't_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — сумма фаз раунда из узла кода, атрибутов и стандартных рекордов; измеренный цикл — проверка.')),
@@ -523,10 +528,10 @@ def architecture_card_html(pid, lang, base=''):
 
 if __name__ == '__main__':
     load()
-    for fn, i, title in ((station_card_html, 'ion', NODE['ion']), (machine_card_html, 'google-willow', {'en': MACH['google-willow']['name'], 'ru': MACH['google-willow']['name']}),
+    for fn, i, title in ((station_card_html, 'ion', NODE['ion']), (machine_card_html, 'google-willow', {'en': MACH['google-willow']['name']}),
                          (architecture_card_html, 'sc', PATH['sc'])):
-        for lang in ('en', 'ru'):
+        for lang in LANGS:
             h = fn(i, lang, '../')
-            assert re.search(r'<h3>(?:<i class="sw"[^>]*></i> )?%s</h3>' % re.escape(esc(title[lang])), h), (fn.__name__, i, lang)
+            assert re.search(r'<h3>(?:<i class="sw"[^>]*></i> )?%s</h3>' % re.escape(esc(pick(lang, title))), h), (fn.__name__, i, lang)
             assert '<script' not in h and 'href="#"' not in h and 'data-goto' not in h
             print('%-24s %-14s %s %7d bytes' % (fn.__name__, i, lang, len(h.encode('utf-8'))))

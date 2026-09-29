@@ -66,7 +66,7 @@ updated: 2026-09-04
 ## Прогноз и открытые вопросы
 Подтвердить/понизить в течение 12–24 месяцев: кто-либо выполняет двухкубитный гейт через ловушку, сформированную чипом; число атомов в чиповых ловушках доходит до сотен; появляется второй вендор. Лучший случай к 2029 г.: чиповые пинцеты удерживают сотни-тысячи атомов с точностью на уровне свободной оптики, ужимая стойку настолько, что это меняет стоимость системы. Худший случай: ограничение со стороны поверхности вынуждает работать на больших рабочих расстояниях, выигрыш по площади испаряется, и интегральная оптика остаётся в пределах получения изображений и сбора света, где она уже работает. Открытые вопросы: на каком расстоянии от чипа должны сидеть атомы ради чистой ридберговской линии; способна ли коммутация на чипе обогнать дефлекторы по перестроению. Следить за: следующим обновлением Pasqal и любым гейтом через чиповую ловушку.
 
-## Источники
+## Литература
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [156] M. Swayne, “Pasqal Completes SPAC Merger With $360 Million in Cash,” The Quantum Insider, Aug. 28, 2026. [Online]. Available: https://thequantuminsider.com/2026/08/28/pasqal-completes-spac-merger-with-360-million-in-cash/ [R]
 [330] Pasqal, “Pasqal brings qubit control on-chip, advancing the path to fault-tolerant quantum computing at scale,” Aug. 10, 2026. [Online]. Available: https://www.pasqal.com/news/pasqal-brings-qubit-control-on-chip-advancing-the-path-to-fault-tolerant-quantum-computing-at-scale/ [C]

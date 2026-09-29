@@ -9,6 +9,7 @@ import json, math, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import machines_chapter as mc
+from langs import pick   # (en, ru[, he]); a missing language reads English (29 Sep 2026)
 
 W, H = 760, 440
 ML, MR, MT, MB = 62, 30, 14, 46
@@ -27,7 +28,7 @@ def fmt_e(x):
 
 
 def build(lang):
-    en = lang == 'en'
+    tr = lambda *x: pick(lang, x)
     M, G, NODE, LAYERS, PATHS, MS = mc.prep()
     pts = [m for m in MS if m['q'] and m['err'] is not None and m['err'] > 0 and m['family'] in FAMS and not (m['flags'] & mc.EXCL_ERR_FLAGS)]
     pts.sort(key=lambda m: (m['family'], m['id']))
@@ -38,7 +39,7 @@ def build(lang):
     def Y(v): return MT + (y1 - math.log10(v)) / (y1 - y0) * (H - MT - MB)
     o = []
     o.append('<figure class="fig81"><svg viewBox="0 0 %d %d" role="img" aria-labelledby="fig81t-%s" style="max-width:%dpx;width:100%%;height:auto;display:block">' % (W, H, lang, W))
-    o.append('<title id="fig81t-%s">%s</title>' % (lang, esc('Physical qubit count against median two-qubit error, %d machines' % len(pts) if en else 'Число физических кубитов против медианной двухкубитной ошибки, %d машин' % len(pts))))
+    o.append('<title id="fig81t-%s">%s</title>' % (lang, esc(tr('Physical qubit count against median two-qubit error, %d machines', 'Число физических кубитов против медианной двухкубитной ошибки, %d машин') % len(pts))))
     o.append('<style>.fig81 .gl{stroke:var(--rule);stroke-width:1}.fig81 .ax{fill:var(--muted);font:11px "JetBrains Mono",monospace}.fig81 .lb{fill:var(--ink2);font:11px system-ui,sans-serif}.fig81 .lg{fill:var(--ink2);font:11.5px system-ui,sans-serif}'
              + ''.join('.fig81 .f-%s{fill:%s;stroke:%s}' % (f, LIGHT[f], LIGHT[f]) for f in FAMS)
              + '@media (prefers-color-scheme: dark){' + ''.join(':root:not([data-theme="light"]) .fig81 .f-%s{fill:%s;stroke:%s}' % (f, DARK[f], DARK[f]) for f in FAMS) + '}'
@@ -51,12 +52,12 @@ def build(lang):
     for e in range(int(math.ceil(y0)), y1 + 1):
         y = Y(10 ** e); o.append('<line class="gl" x1="%d" y1="%.1f" x2="%d" y2="%.1f"/>' % (ML, y, W - MR, y))
         o.append('<text class="ax" x="%d" y="%.1f" text-anchor="end" dominant-baseline="middle">10%s</text>' % (ML - 6, y, str(e).translate(mc.SUP)))
-    o.append('<text class="ax" x="%.1f" y="%d" text-anchor="middle">%s</text>' % ((ML + W - MR) / 2, H - 6, esc('physical qubits (log scale)' if en else 'физических кубитов (лог. шкала)')))
-    o.append('<text class="ax" transform="translate(12,%.1f) rotate(-90)" text-anchor="middle">%s</text>' % ((MT + H - MB) / 2, esc('median two-qubit error' if en else 'медианная двухкубитная ошибка')))
+    o.append('<text class="ax" x="%.1f" y="%d" text-anchor="middle">%s</text>' % ((ML + W - MR) / 2, H - 6, esc(tr('physical qubits (log scale)', 'физических кубитов (лог. шкала)'))))
+    o.append('<text class="ax" transform="translate(12,%.1f) rotate(-90)" text-anchor="middle">%s</text>' % ((MT + H - MB) / 2, esc(tr('median two-qubit error', 'медианная двухкубитная ошибка'))))
     # marks: hollow = not a gate-capable device (announcement, target, component); a 2px surface ring under every mark
     for m in pts:
         x, y = X(m['q']), Y(m['err']); hollow = not m['gatedev']
-        tip = '%s — %s · %s %s · %s %s' % (m['name'], m['org'], '{:,}'.format(m['q']), 'qubits' if en else 'кубитов', fmt_e(m['err']), 'median 2Q error' if en else 'медианная 2Q-ошибка')
+        tip = '%s — %s · %s %s · %s %s' % (m['name'], m['org'], '{:,}'.format(m['q']), tr('qubits', 'кубитов'), fmt_e(m['err']), tr('median 2Q error', 'медианная 2Q-ошибка'))
         o.append('<g class="pt"><title>%s</title><circle class="ring" cx="%.1f" cy="%.1f" r="6.2"/><circle class="mk f-%s%s" cx="%.1f" cy="%.1f" r="4.6"/></g>' % (esc(tip), x, y, m['family'], ' hollow' if hollow else '', x, y))
     boxes = []   # occupied label boxes (x0, y0, x1, y1); marks are avoided by trying the four corners around the point
     marks = [(X(m['q']), Y(m['err'])) for m in pts]
@@ -74,7 +75,7 @@ def build(lang):
     for i, f in enumerate([f for f in FAMS if any(m['family'] == f for m in pts)]):
         o.append('<circle class="mk f-%s" cx="%d" cy="%d" r="4.6"/><text class="lg" x="%d" y="%d" dominant-baseline="middle">%s</text>' % (f, lx, ly + i * 16, lx + 10, ly + i * 16, esc(mc.t(lang, mc.FAMN[f]))))
     n = len([f for f in FAMS if any(m['family'] == f for m in pts)])
-    o.append('<circle class="mk f-SC hollow" cx="%d" cy="%d" r="4.6"/><text class="lg" x="%d" y="%d" dominant-baseline="middle">%s</text>' % (lx, ly + n * 16, lx + 10, ly + n * 16, esc('hollow: announced, target or component' if en else 'пустой: анонс, цель или компонент')))
+    o.append('<circle class="mk f-SC hollow" cx="%d" cy="%d" r="4.6"/><text class="lg" x="%d" y="%d" dominant-baseline="middle">%s</text>' % (lx, ly + n * 16, lx + 10, ly + n * 16, esc(tr('hollow: announced, target or component', 'пустой: анонс, цель или компонент'))))
     # direct labels: the largest gate-capable device and the best error of each of the three large families
     lab = {}
     for f in ('SC', 'ION', 'ATOM'):
@@ -94,8 +95,8 @@ def build(lang):
         boxes.append(chosen[3:]); marks.append((x, y))
         o.append('<text class="lb" x="%.1f" y="%.1f" text-anchor="%s">%s</text>' % (chosen[0], chosen[1], chosen[2], esc(txt)))
     o.append('</svg>')
-    cap = ('<b>Figure 8.1 — Physical qubit count against median two-qubit error</b>, for the %d registered quantum machines that publish both (hero-pair numbers excluded). The families separate along the qubit axis more than along the error axis — the reading behind H1 and H2; hover a mark for the machine.' % len(pts)) if en else \
-          ('<b>Рисунок 8.1 — Число физических кубитов против медианной двухкубитной ошибки</b> для %d зарегистрированных квантовых машин, публикующих обе величины (рекордные пары исключены). Семейства расходятся по оси числа кубитов сильнее, чем по оси ошибки — это чтение, стоящее за H1 и H2; наведите на метку, чтобы увидеть машину.' % len(pts))
+    cap = tr('<b>Figure 8.1 — Physical qubit count against median two-qubit error</b>, for the %d registered quantum machines that publish both (hero-pair numbers excluded). The families separate along the qubit axis more than along the error axis — the reading behind H1 and H2; hover a mark for the machine.',
+             '<b>Рисунок 8.1 — Число физических кубитов против медианной двухкубитной ошибки</b> для %d зарегистрированных квантовых машин, публикующих обе величины (рекордные пары исключены). Семейства расходятся по оси числа кубитов сильнее, чем по оси ошибки — это чтение, стоящее за H1 и H2; наведите на метку, чтобы увидеть машину.') % len(pts)
     o.append('<figcaption>%s</figcaption></figure>' % cap)
     return '\n'.join(o) + '\n', len(pts)
 

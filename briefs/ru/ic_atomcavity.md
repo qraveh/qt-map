@@ -67,7 +67,7 @@ updated: 2026-09-03
 ## Прогноз и открытые вопросы
 Подтверждение к концу 2027 г. — если какая-либо группа опубликует скорость геральдированного запутывания между двумя модулями на нейтральных атомах; понижение заявки на интерконнект — если новые результаты по-прежнему будут эффективностями одиночных пар. Лучший случай к 2029 г.: мультиплексированный сбор доходит до ~100 каналов и показана логическая операция между двумя модулями. Худший случай: эффективность выходит на плато около 90%, число каналов остаётся в десятках, а сетевые соглашения так и не превращаются в датированную цель. Открытые вопросы: какая скорость реально нужна распределённой архитектуре на нейтральных атомах; способен ли сбор чипового масштаба дотянуться до кооперативности объёмного резонатора; выигрывает ли прямое телеком-излучение у связки «резонаторное усиление плюс преобразование частоты».
 
-## Источники
+## Литература
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [11] Novo Nordisk Foundation, “New quantum computer with great potential to boost Nordic research and innovation,” Novo Nordisk Fonden, Jul. 17, 2025. [Online]. Available: https://novonordiskfonden.dk/en/news/new-quantum-computer-with-great-potential-to-boost-nordic-research-and-innovation/ [G]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]

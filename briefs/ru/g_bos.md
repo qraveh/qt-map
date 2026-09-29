@@ -73,7 +73,7 @@ updated: 2026-09-04
 ## Прогноз и открытые вопросы
 Подтвердить/понизить в течение 12–24 месяцев: CX кот–кот на аппаратуре; двухрельсовый гейт ниже 0.01% постселектированной паулиевской вне Quantum Circuits; поставленную 17-кубитную систему с обещанным 2× снижением логической ошибки относительно физической; опубликованную долю отбрасывания. Лучший случай к 2029 г.: конверсия в стирание становится штатной надстройкой над трансмонами. Худший случай: гейты кот–кот остаются теорией, а 3D-резонаторы упираются в объём. Открыто: держится ли доля стираний на глубине 10³; какова истинная доля ложноотрицательных срабатываний; можно ли перевести схему в планарный вид без потери добротности; будет ли D-Wave финансировать Quantum Circuits до 2028 г. при полугодовой выручке в $5.9M. Следить за QBI Stage C.
 
-## Источники
+## Литература
 [14] D-Wave Quantum Inc., “D-Wave Announces Agreement to Acquire Quantum Circuits Inc., Establishing World's Leading Quantum Computing Company,” Jan. 7, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-to-acquire-quantum-circuits-inc-establishing-world-s-leading-quantum-computing-company/ [C]
 [15] D-Wave Quantum Inc., “D-Wave Reports Second Quarter 2026 Results,” Aug. 6, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-reports-second-quarter-2026-results/ [C]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]

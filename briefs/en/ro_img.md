@@ -57,7 +57,7 @@ It is the readout of all three neutral-atom architectures: the alkali (Rb/Cs) an
 ## Outlook & open questions
 Confirm if a microsecond result is folded into a logical memory run by 2028; demote if it stays readout-only. Best case 2029: sub-50 µs imaging is standard and QEC rounds fall below 0.5 ms. Worst case: millisecond imaging stays the default and caps the cycle near 1 ms. Open: does fast imaging hold across a full array, and does it shift the loss-versus-Pauli mix decoders assume?
 
-## Sources
+## References
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [12] M. Abdel-Kareem, “Denmark's QuNorth to Acquire 50-Logical-Qubit Magne Quantum Computer from Atom Computing and Microsoft,” Quantum Computing Report, Jul. 17, 2025. [Online]. Available: https://quantumcomputingreport.com/denmarks-qunorth-to-acquire-50-logical-qubit-magne-quantum-computer-from-atom-computing-and-microsoft/ [P]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]

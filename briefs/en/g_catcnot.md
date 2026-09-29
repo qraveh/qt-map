@@ -60,7 +60,7 @@ On the superconducting bosonic (cat/GKP) architecture; requires two cat-encoded 
 ## Outlook & open questions
 Confirm by 2028 if a measured two-cat gate holds bit-flip time within 10× of idle; demote if 2028 passes with only ancilla-mediated gates, since the 2030 rung and the 126,133-cat class of estimates lose their premise [S][95]. Best case 2029: bias above 10³ under drive. Worst case: cat logic runs through ancillas indefinitely. Open: does the scheme survive junction-nonlinearity spread; can the gate be characterised without ancilla contamination; who attempts hardware first? Watch Ocelot follow-ups and the Lithium chip.
 
-## Sources
+## References
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
 [80] H. Putterman *et al.*, “Hardware-efficient quantum error correction via concatenated bosonic qubits,” *Nature*, vol. 638, no. 8052, pp. 927–934, Feb. 2025, doi: [10.1038/s41586-025-08642-7](https://doi.org/10.1038/s41586-025-08642-7). [D]
 [81] Y. Ye *et al.*, “Bias-preserving cat-cat CNOT gate via vacuum-conditional beam-splitter,” [arXiv:2607.22852](https://arxiv.org/abs/2607.22852), Jul. 2026. [S]

@@ -66,7 +66,7 @@ Pasqal's lifetime and 50× footprint projection are company-reported without rep
 ## Outlook & open questions
 Confirm/demote in 12–24 months: anyone runs a two-qubit gate through a chip-generated trap; chip-trapped atom count reaches the hundreds; a second vendor enters. Best case 2029: chip tweezers hold hundreds to thousands of atoms at free-space fidelity, shrinking a rack enough to change system cost. Worst case: the surface constraint forces long working distances, the footprint gain evaporates, and integrated optics stays confined to imaging and collection, where it already works. Open: how far from the chip must atoms sit for a clean Rydberg line; can on-chip switching beat deflector reconfiguration. Watch: Pasqal's next update and any gate through a chip trap.
 
-## Sources
+## References
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [156] M. Swayne, “Pasqal Completes SPAC Merger With $360 Million in Cash,” The Quantum Insider, Aug. 28, 2026. [Online]. Available: https://thequantuminsider.com/2026/08/28/pasqal-completes-spac-merger-with-360-million-in-cash/ [R]
 [330] Pasqal, “Pasqal brings qubit control on-chip, advancing the path to fault-tolerant quantum computing at scale,” Aug. 10, 2026. [Online]. Available: https://www.pasqal.com/news/pasqal-brings-qubit-control-on-chip-advancing-the-path-to-fault-tolerant-quantum-computing-at-scale/ [C]

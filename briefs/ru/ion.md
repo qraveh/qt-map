@@ -108,8 +108,7 @@ updated: 2026-09-03
 
 Открытые вопросы: масштабируется ли нагрев сеточной ловушки с числом зон или с площадью электродов? Можно ли превращать утечку (leakage) в стирание (erasure) достаточно быстро, чтобы декодеры перестали за неё платить? Какова реальная длительность электронного гейта при полной ширине? Достижимо ли удалённое запутывание 10⁴ с⁻¹ в принципе? Кто станет вторым источником поставок в дополнение к Infineon?
 
-## Источники
-
+## Литература
 [18] IonQ, “IonQ Completes Acquisition of Oxford Ionics, Rapidly Accelerating Its Quantum Computing Roadmap,” Sep. 17, 2025. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-oxford-ionics-rapidly-accelerating-its-quantum [C]
 [19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [C]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]

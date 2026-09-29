@@ -107,8 +107,7 @@ Confirm in 12–24 months if a published wafer map shows >99% median on-chip eff
 
 Open questions. (1) What is the efficiency–jitter joint distribution across a 300 mm wafer, and what is the yield criterion? (2) Can number resolution be had at 2 K, or does GKP permanently require a TES near 100 mK? (3) What cooling power per channel at 2 K does a 10⁵-channel machine need, and who builds that plant? (4) Does any non-destructive scheme reach telecom wavelengths with usable efficiency? (5) Do merchant vendors have a foundry-compatible path? Watch PsiQuantum's next hardware paper and Stage C milestones, and any disclosed round at Single Quantum, Photon Spot or Quantum Opus — the first signal that demand has moved beyond QKD.
 
-## Sources
-
+## References
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
 [115] D. Main *et al.*, “Distributed quantum computing across an optical network link,” *Nature*, vol. 638, no. 8050, pp. 383–388, Feb. 2025, doi: [10.1038/s41586-024-08404-x](https://doi.org/10.1038/s41586-024-08404-x). [D]
 [116] J. O'Reilly *et al.*, “Fast photon-mediated entanglement of continuously-cooled trapped ions for quantum networking,” *Phys. Rev. Lett.*, vol. 133, Art. no. 090802, Aug. 2024, doi: [10.1103/PhysRevLett.133.090802](https://doi.org/10.1103/PhysRevLett.133.090802). [arXiv:2404.16167](https://arxiv.org/abs/2404.16167). [D]

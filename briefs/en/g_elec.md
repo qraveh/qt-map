@@ -106,8 +106,7 @@ Confirm-or-demote milestones for 12–24 months: a device above ~30 electronic-g
 
 Open questions: does the microwave gradient survive dense 2D routing without unacceptable crosstalk and dissipation? How much of the residual 8.4×10⁻⁵ is coherent, and what does that do to Λ? Does SkyWater's process yield trap chips at volume, or was the acquisition supply security rather than capability?
 
-## Sources
-
+## References
 [18] IonQ, “IonQ Completes Acquisition of Oxford Ionics, Rapidly Accelerating Its Quantum Computing Roadmap,” Sep. 17, 2025. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-oxford-ionics-rapidly-accelerating-its-quantum [C]
 [19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [C]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]

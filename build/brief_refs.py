@@ -31,7 +31,7 @@ import worknum
 
 ROOT = S.ROOT
 DATA = os.path.join(ROOT, 'data', 'brief-sources.json')
-HEAD = {'en': '## Sources', 'ru': '## Источники'}
+HEAD = {'en': '## References', 'ru': '## Литература', 'he': '## מקורות'}   # a brief's References heading per language (Hebrew: data/i18n/he-terms.md, 29 Sep 2026)
 # editor's decisions on wrong or split works (24 Sep 2026, triage of the verification notes)
 FR = 'https://www.federalregister.gov/documents/2024/09/06/2024-19633/'
 SAME_WORK = {FR + 'commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies-consistent':

@@ -67,8 +67,7 @@ AQT's 98.7(3) % is an all-pairs product average [C][382]; a secondary 97.7 % in 
 ## Outlook & open questions
 Confirm the atomic branch if planqc publishes clock-qubit T₂ and CZ fidelity on MAQCS hardware by 2027-12-31; demote it to metrology if not. Confirm the ion branch if LYNX ships in Q4 2026 with per-pair 2Q figures. Open questions. (1) What laser linewidth would bring ⁴⁰Ca⁺ T₂ to its 2.3 s bound? (2) Is planqc's 10–100 ms the lattice, the laser or the field? (3) How much D₅/₂ decay leaks versus flips? (4) Will AQT move to a hyperfine or omg species? (5) Can one clock laser serve 10³ sites?
 
-## Sources
-
+## References
 [128] Alpine Quantum Technologies GmbH, “AQT Sets New European Industry Standard: Introducing the ‘LYNX’ Series with Record-Breaking Quantum Volume,” AQT, May 5, 2026. [Online]. Available: https://www.aqt.eu/lynx-quantum-volume-record/ [C]
 [161] planqc, “MAQCS takes shape as first quantum computing hardware arrives at LRZ,” Sep. 9, 2026. [Online]. Available: https://planqc.eu/news/maqcs-takes-shape-as-first-quantum-computing-hardware-arrives-at-lrz [C]
 [247] M. Ivezic, “Planqc,” PostQuantum, May 22, 2025. [Online]. Available: https://postquantum.com/quantum-computing-companies/planqc/ [P]

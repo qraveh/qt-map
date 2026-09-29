@@ -69,8 +69,7 @@ Aquila: Ω ≤ 15.8 rad/µs, |Δ| ≤ 125 rad/µs, $C_6$ = 5,420,503 µm⁶ rad/
 ## Прогноз и открытые вопросы
 Подтвердить, если к 2027-12-31 коммерческая аналоговая машина опубликует многочастичную точность на ≥60 атомах или если аналоговый результат выдержит год классических попыток опровержения; понизить, если Vela и следующие системы QuEra будут поставлены без аналоговых спецификаций. Открытые вопросы. (1) Может ли F_d сертифицировать за пределами размера, на котором MPS не отстаёт? (2) Каковы ошибки калибровки локальной отстройки по позициям? (3) Как потеря T2 под возбуждением делится между фазовым шумом, доплеровским сдвигом и рассеянием? (4) Может ли исключение стираний проводить послеотбор многочастичных прогонов при приемлемой цене в запусках? (5) Переживёт ли ребро «требует щелочного атома» появление щёлочноземельных аналоговых машин?
 
-## Источники
-
+## Литература
 [143] P. Scholl, A. L. Shaw, R. B.-S. Tsai, R. Finkelstein, J. Choi, and M. Endres, “Erasure conversion in a high-fidelity Rydberg quantum simulator,” *Nature*, vol. 622, p. 273, 2023, doi: [10.1038/s41586-023-06516-4](https://doi.org/10.1038/s41586-023-06516-4). [arXiv:2305.03406](https://arxiv.org/abs/2305.03406). [D]
 [153] QuEra Computing, “QuEra Expands $230 Million Financing Round Advancing Quantum-Accelerated Supercomputing,” Sep. 9, 2025. [Online]. Available: https://www.quera.com/press-releases/quera-expands-230-million-financing-round-advancing-quantum-accelerated-supercomputing [C]
 [156] M. Swayne, “Pasqal Completes SPAC Merger With $360 Million in Cash,” The Quantum Insider, Aug. 28, 2026. [Online]. Available: https://thequantuminsider.com/2026/08/28/pasqal-completes-spac-merger-with-360-million-in-cash/ [P]

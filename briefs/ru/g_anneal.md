@@ -57,7 +57,7 @@ updated: 2026-09-04
 ## Прогноз и открытые вопросы
 Подтверждение, если хоть одна платформа отстоит неоспоренное заявление до конца 2028 года; понижение, если размывание повторится. Лучший случай к 2029: ридберговские поставщики превращают аналоговые массивы в цифровые машины с коррекцией ошибок. Худший случай: аналоговый режим остаётся физическим прибором. Открытые вопросы: дойдёт ли Pasqal до 10,000 физических к 2028 году; удержит ли Libra планку >256 логических?
 
-## Источники
+## Литература
 [153] QuEra Computing, “QuEra Expands $230 Million Financing Round Advancing Quantum-Accelerated Supercomputing,” Sep. 9, 2025. [Online]. Available: https://www.quera.com/press-releases/quera-expands-230-million-financing-round-advancing-quantum-accelerated-supercomputing [C]
 [156] M. Swayne, “Pasqal Completes SPAC Merger With $360 Million in Cash,” The Quantum Insider, Aug. 28, 2026. [Online]. Available: https://thequantuminsider.com/2026/08/28/pasqal-completes-spac-merger-with-360-million-in-cash/ [P]
 [162] QuEra Computing, “QuEra Announces 2028 Fault-Tolerant Quantum Computer and Expanded Multi-Year Strategic Collaboration with AWS,” Jun. 15, 2026. [Online]. Available: https://www.quera.com/press-releases/quera-announces-2028-fault-tolerant-quantum-computer-and-expanded-multi-year-strategic-collaboration-with-aws [R]

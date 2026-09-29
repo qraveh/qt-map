@@ -100,8 +100,7 @@ Conflicts. The tesseract is [[16,6,4]], not [[16,4,4]] — I trust the Error Cor
 
 Open questions: (1) does concatenation to d≥6 keep the rate advantage once leakage and loss are modelled honestly? (2) can a magic-state factory live inside a high-rate block? (3) what is the true acceptance scaling with circuit volume? (4) can block-wide loss-aware decoders keep up at 1 µs cycles? (5) is any nearest-neighbour route cheaper than long-range couplers? Watch Sol's first logical results, Quantinuum's unpublished "near five-nines" code-family claim, IBM Kookaburra, and the first partner adoption of Pinnacle.
 
-## Sources
-
+## References
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [7] C. Gidney, “How to factor 2048 bit RSA integers with less than a million noisy qubits,” [arXiv:2505.15917](https://arxiv.org/abs/2505.15917), May 2025. [S]
 [29] P. Webster *et al.*, “The Pinnacle Architecture: Reducing the cost of breaking RSA-2048 to 100 000 physical qubits using quantum LDPC codes,” [arXiv:2602.11457](https://arxiv.org/abs/2602.11457), Feb. 2026. [S]

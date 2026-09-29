@@ -71,7 +71,7 @@ The reload-rate conflict is resolved above; the graph's bare "300,000 atoms/s" i
 ## Outlook & open questions
 Falsifiable in 12–24 months: confirm/demote that Universal Quantum and Atlas Copco ship a vacuum system past MoU stage; that a second laser vendor is named in a production ion system; that any array beats the ~10 MHz rearrangement assessment. Best case by 2029: photonic-integrated delivery removes pointing sensitivity and per-site optics cost falls. Worst case: supply stays concentrated and this tier's coherent error stays the dominant infidelity term. Open: does anyone displace TOPTICA; do objectives get a named merchant vendor; does the ion-versus-atom unit-cost gap persist.
 
-## Sources
+## References
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [12] M. Abdel-Kareem, “Denmark's QuNorth to Acquire 50-Logical-Qubit Magne Quantum Computer from Atom Computing and Microsoft,” Quantum Computing Report, Jul. 17, 2025. [Online]. Available: https://quantumcomputingreport.com/denmarks-qunorth-to-acquire-50-logical-qubit-magne-quantum-computer-from-atom-computing-and-microsoft/ [P]
 [97] A. Ransford *et al.*, “A 98-qubit trapped-ion quantum computer with all-to-all connectivity,” *Nature*, vol. 655, no. 8121, pp. 81–86, Jun. 2026, doi: [10.1038/s41586-026-10676-4](https://doi.org/10.1038/s41586-026-10676-4). [arXiv:2511.05465](https://arxiv.org/abs/2511.05465). [D]

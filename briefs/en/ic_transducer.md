@@ -102,8 +102,7 @@ The ledger is the finding: disclosed private capital in transduction as a produc
 
 Open questions. (1) Does pump power per channel scale sub-linearly, or does the mixing chamber cap channel count at order ten? (2) Is η > 1/2 actually required, or does heralding plus distillation make η ≈ 10⁻² usable — the direct [306] versus [786] disagreement? (3) Which material wins, thin-film lithium niobate for bandwidth or silicon optomechanics for noise? (4) Who pays, given no transducer team in QBI and about €10 M of disclosed private capital? (5) Will a superconducting vendor acquire a transducer team or build in-house? Watch the NQCC multi-channel milestone and IBM's Cockatoo delivery in 2027.
 
-## Sources
-
+## References
 [50] C. Dundon, S. Hall, M. Hollister, and A. Lindler, “IBM's new modular architecture for cryogenic systems,” IBM Quantum Computing Blog, Aug. 19, 2026. [Online]. Available: https://www.ibm.com/quantum/blog/modular-cryogenics [C]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
 [67] IBM, “IBM Sets the Course to Build World's First Large-Scale, Fault-Tolerant Quantum Computer at New IBM Quantum Data Center,” Jun. 10, 2025. [Online]. Available: https://newsroom.ibm.com/2025-06-10-IBM-Sets-the-Course-to-Build-Worlds-First-Large-Scale,-Fault-Tolerant-Quantum-Computer-at-New-IBM-Quantum-Data-Center [R]

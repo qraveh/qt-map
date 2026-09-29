@@ -115,8 +115,7 @@ Legg утверждает, что протокол топологической 
 
 Открытые вопросы: почему для свинцового поколения не существует цифры по X-петле; какая доля тетронов проходит отбор; как время жизни чётности масштабируется с длиной провода — измерение, напрямую проверяющее экспоненциальную защиту; может ли финальная фаза US2QC быть закрыта результатом только в Z-базисе; и не является ли путь Nokia, с его прошедшей рецензирование неабелевой интерференционной сигнатурой [D][366], лучше обоснованной ставкой.
 
-## Источники
-
+## Литература
 [13] Microsoft Azure Quantum, “Interferometric single-shot parity measurement in InAs–Al hybrid devices,” *Nature*, vol. 638, no. 8051, pp. 651–655, Feb. 2025, doi: [10.1038/s41586-024-08445-2](https://doi.org/10.1038/s41586-024-08445-2). [D]
 [20] M. Aghaee *et al.*, “Distinct Lifetimes for X and Z Loop Measurements in a Majorana Tetron Device,” [arXiv:2507.08795](https://arxiv.org/abs/2507.08795), Jul. 2025. [D]
 [21] M. Aghaee *et al.*, “20 Second Parity Lifetime in an InAs–Pb Tetron Device,” [arXiv:2606.03884](https://arxiv.org/abs/2606.03884), Jun. 2026. [C]

@@ -67,8 +67,7 @@ Aquila подаёт один глобальный набор Ω(t), Δ(t), φ(t)
 ## Прогноз и открытые вопросы
 Подтвердить, если к 2027-12-31 коммерческая аналоговая машина опубликует T2* выше 20 µs; понизить, если Vela будет поставлена без показателей когерентности или если к 2027-06-30 не появится ни одного рецензируемого результата об аналоговом преимуществе. Открытые вопросы. (1) Почему время эха у Aquila составляет треть значения 2018 года? (2) Как T2* масштабируется с размером регистра? (3) Дойдут ли щёлочноземельные кубиты g–r с детектированием стираний до продукта? (4) На каком ридберговском уровне и с какой когерентностью работают Fresnel и Orion? (5) Смещает ли асимметрия считывания опубликованные фазовые диаграммы?
 
-## Источники
-
+## Литература
 [137] QuEra Computing Inc., “Gemini-Class Gate-Model Quantum Computer.” [Online]. Available: https://www.quera.com/gemini [C]
 [138] H. J. Manetsch, G. Nomura, E. Bataille, K. H. Leung, X. Lv, and M. Endres, “A tweezer array with 6100 highly coherent atomic qubits,” *Nature*, vol. 647, pp. 60–67, 2025, doi: [10.1038/s41586-025-09641-4](https://doi.org/10.1038/s41586-025-09641-4). [arXiv:2403.12021](https://arxiv.org/abs/2403.12021). [D]
 [143] P. Scholl, A. L. Shaw, R. B.-S. Tsai, R. Finkelstein, J. Choi, and M. Endres, “Erasure conversion in a high-fidelity Rydberg quantum simulator,” *Nature*, vol. 622, p. 273, 2023, doi: [10.1038/s41586-023-06516-4](https://doi.org/10.1038/s41586-023-06516-4). [arXiv:2305.03406](https://arxiv.org/abs/2305.03406). [D]

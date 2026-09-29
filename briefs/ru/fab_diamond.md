@@ -56,7 +56,7 @@ Element Six — единственный названный коммерческ
 ## Прогноз и открытые вопросы
 Подтвердить/понизить (12–24 месяца): детерминированная одноионная имплантация с детектированием события либо выход по кооперативности на уровне процентов подтверждает; ещё два года на субпроцентном уровне понижают это до исследовательского процесса. Лучший случай к 2029: массивы масштаба чипа с десятками пригодных узлов. Худший случай: каждый узел так и остаётся отобранным вручную. Открытые вопросы: (1) может ли точность имплантации приблизиться к одному нанометру; (2) появится ли второй коммерческий поставщик; (3) вытеснит ли связь с внешним резонатором монолитную нанофотонику.
 
-## Источники
+## Литература
 [209] C. M. Knaut *et al.*, “Entanglement of nanophotonic quantum memory nodes in a telecom network,” *Nature*, vol. 629, no. 8012, pp. 573–578, May 2024, doi: [10.1038/s41586-024-07252-z](https://doi.org/10.1038/s41586-024-07252-z). [D]
 [359] J. Fischer *et al.*, “Spin-photon correlations from a Purcell-enhanced diamond nitrogen-vacancy center coupled to an open microcavity,” *Nat. Commun.*, vol. 16, no. 1, Art. no. 11680, Nov. 2025, doi: [10.1038/s41467-025-66722-8](https://doi.org/10.1038/s41467-025-66722-8). [D]
 [361] Element Six, “Element Six launches DNV-B1™ – its first commercially-available, general-purpose quantum grade diamond,” Jun. 15, 2020. [Online]. Available: https://www.e6.com/en/about/news/dnv-b1-launch [C]

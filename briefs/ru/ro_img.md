@@ -57,7 +57,7 @@ updated: 2026-09-04
 ## Прогноз и открытые вопросы
 Подтвердить, если микросекундный результат будет встроен в прогон логической памяти к 2028 году; понизить в статусе, если он останется чисто считывательным. Лучший случай к 2029 году: визуализация быстрее 50 µs становится стандартом, а раунды QEC опускаются ниже 0.5 ms. Худший случай: миллисекундная визуализация остаётся значением по умолчанию и ограничивает цикл вблизи 1 ms. Открыто: держится ли быстрая визуализация на полном массиве и сдвигает ли она то соотношение потерь и ошибок Паули, которое закладывают декодеры?
 
-## Источники
+## Литература
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [12] M. Abdel-Kareem, “Denmark's QuNorth to Acquire 50-Logical-Qubit Magne Quantum Computer from Atom Computing and Microsoft,” Quantum Computing Report, Jul. 17, 2025. [Online]. Available: https://quantumcomputingreport.com/denmarks-qunorth-to-acquire-50-logical-qubit-magne-quantum-computer-from-atom-computing-and-microsoft/ [P]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]

@@ -61,7 +61,7 @@ No funding event or QBI stage names cross-resonance.
 ## Outlook & open questions
 Confirm by 2028: a fabricated fixed-frequency processor above eight qubits with CR fidelity published under simultaneous operation, or the Hanyang patch measured above 98%; else demote to legacy. Best case 2029: a cheap fixed-frequency chiplet; worst case, CR survives only as a Qiskit compilation target. Does anyone outside IBM run CR in production? Does frequency targeting reach collision-free yield past ~100 qubits? Would a foundry pick CR on cost rather than physics?
 
-## Sources
+## References
 [34] IBM Quantum, “What's new at IBM Quantum - Q2 2026.” [Online]. Available: https://www.ibm.com/quantum/blog/whats-new-q2-2026 [D]
 [57] IBM Quantum, “Why IBM is investing $10 billion into quantum computing,” Jun. 2, 2026. [Online]. Available: https://www.ibm.com/quantum/blog/10-billion-investment-faq [G]
 [60] A. Curbison, “OQC raises £260m in Europe's largest ever private quantum computing funding round,” OQC, Jun. 2, 2026. [Online]. Available: https://oqc.tech/company/newsroom/series-c [C]

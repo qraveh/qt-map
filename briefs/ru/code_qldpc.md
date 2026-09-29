@@ -89,8 +89,7 @@ updated: 2026-09-03
 
 Открытые вопросы: (1) какой двухкубитной точности стоит каплер миллиметрового масштаба и не превышает ли эта цена выигрыш по скорости кода? (2) удержит ли Relay-BP свою задержку на живых синдромах? (3) выигрывают ли логические гейты BB через адаптеры у решёточной хирургии, если считать вместе с блоком логической обработки? (4) как смещается порог при утечке и потере вместо деполяризующего шума? (5) принимает ли это семейство кто-нибудь за пределами IBM? Следить за раскрытием точности Loon и за демонстратором IQM 2027 г.
 
-## Источники
-
+## Литература
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [7] C. Gidney, “How to factor 2048 bit RSA integers with less than a million noisy qubits,” [arXiv:2505.15917](https://arxiv.org/abs/2505.15917), May 2025. [S]
 [19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [C]

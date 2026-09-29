@@ -56,7 +56,7 @@ updated: 2026-09-04
 ## Прогноз и открытые вопросы
 Подтвердить к 2027, если переворот фазы за цикл опустится ниже 10⁻² при асимметрии выше 100 и фиксированном n̄; понизить оценку заявлений об эффективности, если он останется около 10⁻¹. Лучший случай, 2029: кот при n̄ ≥ 5 с миллисекундным временем жизни под активной стабилизацией. Худший случай: асимметрия насыщается, и оценки на 758 котов и на 126,133 кота остаются недостижимыми [S][95], [96]. Открытые вопросы: переживёт ли сжатие переход к многокубитным операциям; можно ли поднимать мощность накачки, не нагружая T1? Следить за Lithium и за любым преемником Ocelot.
 
-## Источники
+## Литература
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
 [77] N. Coppola, “Alice & Bob Shares Preliminary Results Vastly Surpassing Previous Bit-Flip Time Record,” Alice & Bob, Sep. 25, 2025. [Online]. Available: https://alice-bob.com/newsroom/alice-bob-surpasses-bit-flip-stability-record [C]
 [78] N. Coppola, “Alice & Bob Improves Error Suppression in Quantum Computers by 'Squeezing' Cat Qubits,” Alice & Bob, Mar. 11, 2025. [Online]. Available: https://alice-bob.com/newsroom/squeezed-cat-qubit/ [D]

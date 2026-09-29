@@ -88,8 +88,7 @@ updated: 2026-09-03
 
 Открытые вопросы. (1) Является ли бенчмаркинг переброса осмысленной точностью или это артефакт усреднения по движению? (2) Переживёт ли усреднение по движению зарядовый беспорядок фабричного уровня — или обратится в пиннинг? (3) Какова скорость утечки на долинных антипересечениях? (4) Можно ли автоматизировать калибровку фаз конвейера на тысячах шин? (5) Может ли спин пересечь границу кристалла? Следить: за любым результатом по шаттлингу на 300 mm от imec, Intel, GlobalFoundries или STMicroelectronics; за приёмочными данными ARQUE в Jülich; за продолжением работ QuTech по устройству проверки чётности веса четыре.
 
-## Источники
-
+## Литература
 [10] IBM, “IBM to Acquire HRL Laboratories to Power the Future of Quantum,” Jul. 23, 2026. [Online]. Available: https://newsroom.ibm.com/2026-07-23-ibm-to-acquire-hrl-laboratories-to-power-the-future-of-quantum [G]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
 [189] P. Steinacker *et al.*, “Industry-compatible silicon spin-qubit unit cells exceeding 99% fidelity,” *Nature*, vol. 646, no. 8083, pp. 81–87, Sep. 2025, doi: [10.1038/s41586-025-09531-9](https://doi.org/10.1038/s41586-025-09531-9). [D]

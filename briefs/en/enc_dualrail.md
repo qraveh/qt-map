@@ -117,8 +117,7 @@ Confirm if, within 12–24 months: DR17 ships with a *measured* 2× logical erro
 
 Open questions. (1) Does the erasure fraction hold under two-qubit gates at depth? (2) What is a production check's false-negative rate, and does it scale? (3) Can planar dual-rail reach cavity-grade lifetimes? (4) Is there a regime where doubling modes beats doubling code distance? Watch D-Wave's quarterly disclosures and the first repeated-round dual-rail memory paper.
 
-## Sources
-
+## References
 [15] D-Wave Quantum Inc., “D-Wave Reports Second Quarter 2026 Results,” Aug. 6, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-reports-second-quarter-2026-results/ [C]
 [60] A. Curbison, “OQC raises £260m in Europe's largest ever private quantum computing funding round,” OQC, Jun. 2, 2026. [Online]. Available: https://oqc.tech/company/newsroom/series-c [C]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]

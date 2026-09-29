@@ -102,8 +102,7 @@ updated: 2026-09-03
 
 Открытые вопросы. (1) Масштабируется ли мощность накачки на канал сублинейно — или камера смешения ограничивает число каналов порядком десяти? (2) Действительно ли требуется η > 1/2 — или геральдирование плюс дистилляция делают пригодным η ≈ 10⁻², то есть прямое разногласие [306] против [786]? (3) Какой материал победит: плёночный ниобат лития ради полосы или кремниевая оптомеханика ради шума? (4) Кто будет платить, если в QBI нет ни одной команды по преобразователям, а раскрытого частного капитала около €10 M? (5) Купит ли сверхпроводниковый вендор команду по преобразователям — или построит своё? Следить за многоканальной вехой NQCC и за поставкой Cockatoo от IBM в 2027 г.
 
-## Источники
-
+## Литература
 [50] C. Dundon, S. Hall, M. Hollister, and A. Lindler, “IBM's new modular architecture for cryogenic systems,” IBM Quantum Computing Blog, Aug. 19, 2026. [Online]. Available: https://www.ibm.com/quantum/blog/modular-cryogenics [C]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]
 [67] IBM, “IBM Sets the Course to Build World's First Large-Scale, Fault-Tolerant Quantum Computer at New IBM Quantum Data Center,” Jun. 10, 2025. [Online]. Available: https://newsroom.ibm.com/2025-06-10-IBM-Sets-the-Course-to-Build-Worlds-First-Large-Scale,-Fault-Tolerant-Quantum-Computer-at-New-IBM-Quantum-Data-Center [R]

@@ -73,8 +73,7 @@ Crosstalk is quoted as Rabi ratio, intensity ratio (ε²) or spectator error —
 ## Outlook & open questions
 Confirm if, by 2027-12-31, IonQ publishes Tempo's per-pair gate times, fidelities and addressing method, or an addressed chain above 60 ions is benchmarked; demote if IonQ's next systems ship on electronic or integrated delivery. Open questions. (1) What sets the neighbour floor below 10⁻³ — aberration, scatter or RF intermodulation? (2) Can multi-tone AODs run parallel gates without stray beams? (3) How does pointing drift scale with RF duty cycle? (4) Does double-sided steering hold at 100 ions? (5) When does a photonic link beat a longer chain?
 
-## Sources
-
+## References
 [18] IonQ, “IonQ Completes Acquisition of Oxford Ionics, Rapidly Accelerating Its Quantum Computing Roadmap,” Sep. 17, 2025. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-oxford-ionics-rapidly-accelerating-its-quantum [C]
 [100] J.-S. Chen *et al.*, “Benchmarking a trapped-ion quantum computer with 30 qubits,” *Quantum*, vol. 8, Art. no. 1516, Nov. 2024, doi: [10.22331/q-2024-11-07-1516](https://doi.org/10.22331/q-2024-11-07-1516). [arXiv:2308.05071](https://arxiv.org/abs/2308.05071). [D]
 [101] IonQ, “IonQ Tempo: 100-Qubit Quantum Computer (#AQ 64).” [Online]. Available: https://ionq.com/quantum-systems/tempo [C]

@@ -66,7 +66,7 @@ Three quantities are reported as if commensurable. Gain is a ratio of decay rate
 ## Outlook & open questions
 Confirm or demote within 12–24 months: does any GKP demonstration publish an unconditional logical error rate; does Nord Quantique lift combined survival above 10%; does an optical GKP state pass 1 dB effective squeezing. Best case by 2029: a multi-mode GKP logical qubit below break-even without post-selection, under a qLDPC outer code. Worst case: it stays a post-selected memory while cat and erasure encodings carry the bosonic architecture.
 
-## Sources
+## References
 [82] S. Turcotte *et al.*, “Quantum error correction of a grid-state qubit with state preparation and measurement errors below 10⁻³,” [arXiv:2607.06718](https://arxiv.org/abs/2607.06718), Jul. 2026. [D]
 [83] B. L. Brock *et al.*, “Quantum error correction of qudits beyond break-even,” *Nature*, vol. 641, no. 8063, pp. 612–618, May 2025, doi: [10.1038/s41586-025-08899-y](https://doi.org/10.1038/s41586-025-08899-y). [D]
 [93] Nord Quantique, “Company website.” [Online]. Available: https://www.nordquantique.com/ [R]

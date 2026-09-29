@@ -105,8 +105,7 @@ omg-кодирование помещает вычислительный баз�
 
 Открытые вопросы. (1) Почему измеренная конверсия составляет 38–50%, когда модель обещает 98%, — виноват гейт, проверка или опись ошибок? (2) Помогает ли информация о стираниях по-прежнему, если на расстоянии ≥5 учесть пропуски? (3) Чем задана остаточная паулиевская ошибка — выбором подуровней или гейтовым лазером? (4) Можно ли считать метастабильную анциллу неразрушающим образом внутри атомного цикла в 1 ms? Следить за следующей работой Princeton, за тем, откроет ли Atom Computing доступ к метастабильному мультиплету, и за тем, имеет ли неопубликованное «новое семейство кодов» Quantinuum структуру стирания.
 
-## Источники
-
+## Литература
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [8] Y. Wu, S. Kolkowitz, S. Puri, and J. D. Thompson, “Erasure conversion for fault-tolerant quantum computing in alkaline earth Rydberg atom arrays,” *Nat. Commun.*, vol. 13, Art. no. 4657, 2022, doi: [10.1038/s41467-022-32094-6](https://doi.org/10.1038/s41467-022-32094-6). [arXiv:2201.03540](https://arxiv.org/abs/2201.03540). [S]
 [19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [G]

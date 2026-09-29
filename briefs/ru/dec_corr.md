@@ -59,7 +59,7 @@ f = потери + стирание; a/c/d/e/g = отсутствуют — кл
 ## Прогноз и открытые вопросы
 Подтвердить, если декодер QPerfect отработает на реальных синдромах либо второй вендор опубликует собственный выигрыш от учёта потерь; понизить в статусе, если выигрыш умрёт при дозагрузке или за пределами четырёх раундов. Лучший случай к 2029 году: значение по умолчанию во всех отказоустойчивых стеках на нейтральных атомах; худший — архитектура одной группы, никогда не выходящая за 10³ атомов. Открыто: держится ли 1.73× на 10⁴ атомах, на глубинах, где коррелированный граф перерастает память, и на ионах [667]?
 
-## Источники
+## Литература
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [8] Y. Wu, S. Kolkowitz, S. Puri, and J. D. Thompson, “Erasure conversion for fault-tolerant quantum computing in alkaline earth Rydberg atom arrays,” *Nat. Commun.*, vol. 13, Art. no. 4657, 2022, doi: [10.1038/s41467-022-32094-6](https://doi.org/10.1038/s41467-022-32094-6). [arXiv:2201.03540](https://arxiv.org/abs/2201.03540). [S]
 [142] B. Zhang *et al.*, “Logical qubits with erasure conversion using metastable neutral atoms,” *Nat. Phys.*, vol. 22, no. 6, pp. 910–916, Jun. 2026, doi: [10.1038/s41567-026-03309-0](https://doi.org/10.1038/s41567-026-03309-0). [arXiv:2506.13724](https://arxiv.org/abs/2506.13724). [D]

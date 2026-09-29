@@ -97,8 +97,7 @@ updated: 2026-09-03
 
 Открытые вопросы. (1) Сколько аномального нагрева вносят токи возбуждения при градиентах, нужных для запутывающего гейта? (2) Может ли ключ на чипе работать в микрометрах от иона без зарядки диэлектриков? (3) Комнатная температура или 4 K, если меньший нагрев не даёт запаса для параллельного возбуждения? (4) Масштабируется ли частотная адресация дальше ~10 ионов в цепочке? (5) В статическом регистре производный такт ограничен гейтом или транспортом?
 
-## Источники
-
+## Литература
 [19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [C]
 [97] A. Ransford *et al.*, “A 98-qubit trapped-ion quantum computer with all-to-all connectivity,” *Nature*, vol. 655, no. 8121, pp. 81–86, Jun. 2026, doi: [10.1038/s41586-026-10676-4](https://doi.org/10.1038/s41586-026-10676-4). [arXiv:2511.05465](https://arxiv.org/abs/2511.05465). [D]
 [102] A. C. Hughes *et al.*, “Trapped-ion two-qubit gates with >99.99% fidelity without ground-state cooling,” [arXiv:2510.17286](https://arxiv.org/abs/2510.17286), Oct. 2025. [D]

@@ -109,8 +109,7 @@ updated: 2026-09-03
 
 Открытые вопросы: (1) переживает ли T₁ кубита те рабочие точки по потоку, в которые его загоняют шесть каплеров? (2) какова перекрёстная наводка при параллельных гейтах на вершине, удлинители которой делят один слой разводки? (3) какой декодер исполняет «велосипедные» коды в пределах времени цикла? Следить за: любой статьёй IBM по каплерам, статусом Kookaburra в 2026 г., датой выпуска продукта Constellation у IQM, гейтом Nanjing на 1 см.
 
-## Источники
-
+## Литература
 [15] D-Wave Quantum Inc., “D-Wave Reports Second Quarter 2026 Results,” Aug. 6, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-reports-second-quarter-2026-results/ [C]
 [19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [C]
 [49] IBM, “IBM Delivers New Quantum Processors, Software, and Algorithm Breakthroughs on Path to Advantage and Fault Tolerance,” Nov. 12, 2025. [Online]. Available: https://newsroom.ibm.com/2025-11-12-ibm-delivers-new-quantum-processors,-software,-and-algorithm-breakthroughs-on-path-to-advantage-and-fault-tolerance [C]

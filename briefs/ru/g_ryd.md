@@ -98,8 +98,7 @@ updated: 2026-09-03
 
 Открытые вопросы. Масштабируется ли канал потерь с плотностью массива и транспортом — или 0.087% на гейт есть предел, задаваемый глубиной ловушки? Способно ли однофотонное УФ-возбуждение вернуть членам фазового шума и рассеяния приемлемые значения без новых потерь, индуцированных УФ? Реальна ли физика фёрстеровского резонанса или модулированной накачки выше 99.9%? Переживает ли конверсия в стирание переход на схемный уровень, где декодер должен локализовать потери в пределах бюджета 1 ms? Следить за рекордом без пост-селекции и за тем, опубликует ли атомное направление Google гейт до 2027 г.
 
-## Источники
-
+## Литература
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
 [31] H. Zhou *et al.*, “Resource Analysis of Low-Overhead Transversal Architectures for Reconfigurable Atom Arrays,” *Proc. 52nd Annu. Int. Symp. Comput. Archit. (ISCA)*, 2025, doi: [10.1145/3695053.3731039](https://doi.org/10.1145/3695053.3731039). [arXiv:2505.15907](https://arxiv.org/abs/2505.15907). [S]
 [134] S. J. Evered *et al.*, “High-fidelity entangling gates and nonlocal circuits with neutral atoms,” [arXiv:2604.25987](https://arxiv.org/abs/2604.25987), Apr. 2026. [D]

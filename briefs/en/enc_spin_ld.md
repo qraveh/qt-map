@@ -55,7 +55,7 @@ The base encoding for the silicon and germanium quantum-dot architecture, the do
 ## Outlook & open questions
 Confirm or demote in 12–24 months: all-pairs fidelities above 12 qubits; baseband control beyond a 2×2 array. Best case 2029: baseband plus 1 K operation removes most microwave I/O at >99.5% two-qubit fidelity. Worst case: the plateau holds. Open: (1) whether hopping-gate control scales past four qubits; (2) whether the calibration-limited diagnosis generalises; (3) which platform shows a below-threshold logical qubit.
 
-## Sources
+## References
 [189] P. Steinacker *et al.*, “Industry-compatible silicon spin-qubit unit cells exceeding 99% fidelity,” *Nature*, vol. 646, no. 8083, pp. 81–87, Sep. 2025, doi: [10.1038/s41586-025-09531-9](https://doi.org/10.1038/s41586-025-09531-9). [D]
 [190] Members of the HRL Quantum Team and Collaborators, “A digitally controlled silicon quantum processing unit,” [arXiv:2604.16216](https://arxiv.org/abs/2604.16216), Apr. 2026. [D]
 [192] H. Edlbauer *et al.*, “An 11-qubit atom processor in silicon,” *Nature*, vol. 648, no. 8094, pp. 569–575, Dec. 2025, doi: [10.1038/s41586-025-09827-w](https://doi.org/10.1038/s41586-025-09827-w). [arXiv:2506.03567](https://arxiv.org/abs/2506.03567). [D]

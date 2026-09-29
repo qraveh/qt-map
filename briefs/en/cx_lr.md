@@ -109,8 +109,7 @@ Confirm within 12–24 months if: IBM publishes c-coupler CZ fidelities ≥ 99.5
 
 Open questions: (1) does a qubit's T₁ survive the flux points six couplers force on it? (2) what is the parallel-gate crosstalk on a vertex whose extenders share a routing layer? (3) which decoder runs bicycle codes within the cycle time? Watch: any IBM coupler paper, Kookaburra's 2026 status, IQM's Constellation product date, Nanjing's 1 cm gate.
 
-## Sources
-
+## References
 [15] D-Wave Quantum Inc., “D-Wave Reports Second Quarter 2026 Results,” Aug. 6, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-reports-second-quarter-2026-results/ [C]
 [19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [C]
 [49] IBM, “IBM Delivers New Quantum Processors, Software, and Algorithm Breakthroughs on Path to Advantage and Fault Tolerance,” Nov. 12, 2025. [Online]. Available: https://newsroom.ibm.com/2025-11-12-ibm-delivers-new-quantum-processors,-software,-and-algorithm-breakthroughs-on-path-to-advantage-and-fault-tolerance [C]

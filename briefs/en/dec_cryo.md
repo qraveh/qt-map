@@ -68,7 +68,7 @@ Every decoder number is post-synthesis power/performance/area on a cryo-characte
 ## Outlook & open questions
 Confirm by 2028 if any cryogenic predecoder tapes out with measured silicon; demote if the 2027 literature is still post-synthesis. Best case 2029: a compressor at 4 K inside a QBI-adjacent system absorbs syndrome traffic before the harness. Worst case: room-temperature decoding scales with qLDPC codes and faster links. Open questions: which power baseline should size a cold decoder; can decode logic share a stage with control without reintroducing quasiparticle poisoning; does any platform hit the feedthrough wall before 10⁴ qubits. Watch the SEEQC listing and IBM's post-HRL roadmap.
 
-## Sources
+## References
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [550] S. Kawabata, “Integration and Resource Estimation of Cryoelectronics for Superconducting Fault-Tolerant Quantum Computers,” [arXiv:2601.03922](https://arxiv.org/abs/2601.03922), Jan. 2026. [S]
 [575] SeeQC, Inc., “Form S-4 Registration Statement (SeeQC, Inc. / Allegro Merger Corp.),” U.S. Securities and Exchange Commission, May 2026. [Online]. Available: https://www.sec.gov/Archives/edgar/data/1779977/000121390026061108/ea0278139-04.htm [G]

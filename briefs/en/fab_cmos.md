@@ -127,8 +127,7 @@ Milestones, 12–24 months: (1) a 300 mm device with > 20 qubits and published a
 
 Open questions: can valley splitting and charge noise be made wafer-uniform, or must every array be post-selected? What is the qubit-fidelity yield of a 300 mm flow? Does shared control keep coherent error below threshold? Can in-flow junction targeting reach sub-percent? Watch the first fidelity-yield number, SPINS' first multi-project wafer, definitive CHIPS awards, Intel.
 
-## Sources
-
+## References
 [10] IBM, “IBM to Acquire HRL Laboratories to Power the Future of Quantum,” Jul. 23, 2026. [Online]. Available: https://newsroom.ibm.com/2026-07-23-ibm-to-acquire-hrl-laboratories-to-power-the-future-of-quantum [C]
 [19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [C]
 [65] DARPA, “Stage B selection,” Nov. 6, 2025. [Online]. Available: https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection [G]

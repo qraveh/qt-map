@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""The register's enumerations as the Russian page prints them — one table for both renderers (build/cards.py in Python, the map's
+"""The register's enumerations as the Russian page prints them (a table per language since 29 Sep 2026; English is the register's own) — one table for both renderers (build/cards.py in Python, the map's
 JavaScript through window.__MACH.t), so that a word is translated once (27 Sep 2026: the Russian cards printed DEPLOYED, typical,
 lab-only and "32 физических кубитов").
 
@@ -48,8 +48,9 @@ FLAGS = {   # the register's caveat slugs on a machine → words (27 Sep 2026: 6
 
 
 def flag_words(slug, L):
-    """a caveat slug as words in the page's language; an unknown slug prints as itself with hyphens as spaces"""
-    return FLAGS.get(slug, (slug.replace('-', ' '), slug.replace('-', ' ')))[0 if L == 'en' else 1]
+    """a caveat slug as words in the page's language (English where the language has none); an unknown slug prints as itself with
+    hyphens as spaces"""
+    return _pick(L, FLAGS.get(slug, (slug.replace('-', ' '),)))
 PLURAL = {   # Russian plural forms: one, few (2–4), many
     'qubits': ('физический кубит', 'физических кубита', 'физических кубитов'),
     'stations': ('технология', 'технологии', 'технологий'),
@@ -77,4 +78,29 @@ def status_ru(s):
 def access_ru(a): return ACCESS.get((a or '').strip(), a or '')
 
 
-TABLE = {'status': STATUS, 'access': ACCESS, 'scope': {k: v[1] for k, v in SCOPE.items()}, 'plural': PLURAL}   # for window.__MACH.t
+# ---------- any language (29 Sep 2026): the register's words have a table per language; a language without one prints the register's
+# English (status_l / access_l for the cards in Python, TABLES for the map's JavaScript through window.__MACH.t = {lang: table})
+def _pick(L, x):
+    from langs import pick
+    return pick(L, x)
+
+
+STATUS_T = {'ru': STATUS}   # the register's status word → the language's word ('he': {...} when written)
+ACCESS_T = {'ru': ACCESS}
+
+
+def status_l(s, L):
+    """the register's status in language L: its head words translated where the language has a table (the parenthetical stays)"""
+    t = STATUS_T.get(L)
+    if not t: return s or ''
+    head, sep, tail = (s or '').partition('(')
+    words = [t.get(w.strip(), w.strip()) for w in head.split('/')]
+    return ' / '.join(w for w in words if w) + ((' ' + sep + tail) if sep else '')
+
+
+def access_l(a, L):
+    t = ACCESS_T.get(L); return t.get((a or '').strip(), a or '') if t else (a or '')
+
+
+TABLE = {'status': STATUS, 'access': ACCESS, 'scope': {k: v[1] for k, v in SCOPE.items()}, 'plural': PLURAL}   # the Russian table (the old name)
+TABLES = {'ru': TABLE}   # for window.__MACH.t: {lang: {status, access, scope, plural}}; a language without a table reads the register's English

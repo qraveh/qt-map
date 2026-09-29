@@ -22,7 +22,7 @@ _REG_LIVE = '/home/claude/work/QT-Map/quantum-machines/data'
 REG = os.environ.get('QT_MACHINES_DIR') or (_REG_LIVE if os.path.isdir(_REG_LIVE) else SNAP)   # the live register when present, else the snapshot
 OUT = os.path.join(ROOT, 'data', 'machines.json')
 EDITION = '2026.09'
-SOURCE = {"register": "quantum-machines · 17 Sep 2026, re-cut 26 Sep 2026 (three ion paths, two analog paths, 14 gaps → technologies, sentinels → cell values)",
+SOURCE = {"register": "quantum-machines · 17 Sep 2026, re-cut 26 Sep 2026 (three ion paths, two analog paths, 14 gaps → technologies, sentinels → cell values), extended 29 Sep 2026 (24 machines added, 3 renamed, 3 split, 1 removed; ten cell corrections — data/register/patch-2026-09-29.json)",
           "evidence": "machine-stations-evidence.csv · 17 Sep 2026 (locator passes 1–3)"}
 FAMILY_ORDER = ['SC', 'ION', 'ATOM', 'PHOTON', 'SPIN', 'DEFECT', 'TOPO', 'ANNEAL']
 GAP_PREFIX = '∅'

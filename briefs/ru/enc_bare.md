@@ -59,7 +59,7 @@ updated: 2026-09-04
 ## Прогноз и открытые вопросы
 Подтвердить к концу 2027: подавление утечки ≥ 50× в подпороговом коде вне USTC либо публикация утечки отдельной строкой в логическом бюджете ошибок какого-либо поставщика; иначе понизить это до утверждения об одном устройстве. Лучший случай, 2029: утечка опускается ниже предела по коррелированным событиям (≈10⁻¹⁰, ежечасные всплески на Willow [D][1]); худший — Λ остаётся около 2, а число физических кубитов на логический — выше 10³. Что доминирует на 10⁴ кубитов: утечка или двухкубитная ошибка? Успеет ли удаление на уровне 10⁶? Перейдёт ли конверсия в стирание когда-нибудь в коммерческую плоскость?
 
-## Источники
+## Литература
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [2] V. Sivak *et al.*, “Reinforcement learning control of quantum error correction,” *Nature*, vol. 655, no. 8124, pp. 879–884, Jul. 2026, doi: [10.1038/s41586-026-10759-2](https://doi.org/10.1038/s41586-026-10759-2). [D]
 [3] T. He *et al.*, “Experimental Quantum Error Correction below the Surface Code Threshold via All-Microwave Leakage Suppression,” *Phys. Rev. Lett.*, vol. 135, no. 26, Art. no. 260601, Dec. 2025, doi: [10.1103/rqkg-dw31](https://doi.org/10.1103/rqkg-dw31). [D]

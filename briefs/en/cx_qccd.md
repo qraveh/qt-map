@@ -68,7 +68,7 @@ Transport has no stand-alone benchmark. It is inferred from sideband thermometry
 ## Outlook & open questions
 Confirm/demote in 12–24 months: Sol ships in 2027 with a published per-layer time; any vendor publishes a full-width layer below 10 ms; Universal Quantum links more than two modules. Best case 2029: sub-10 ms layers put the ion logical clock within ~10× of superconducting. Worst case: layer time stays within 2× of 55 ms and ions stay a platform that demonstrates codes rather than running algorithms. Open: does anomalous heating force cryogenic traps at 10⁴ ions; can split/merge be made quanta-free by optimal control; do warm-crystal gates delete re-cooling; does a second merchant fab appear. Watch: Sol validation, Infineon capacity, IonQ's first SkyWater trap.
 
-## Sources
+## References
 [18] IonQ, “IonQ Completes Acquisition of Oxford Ionics, Rapidly Accelerating Its Quantum Computing Roadmap,” Sep. 17, 2025. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-oxford-ionics-rapidly-accelerating-its-quantum [G]
 [19] IonQ, “IonQ Completes Acquisition of SkyWater Technology,” Jul. 31, 2026. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology [G]
 [97] A. Ransford *et al.*, “A 98-qubit trapped-ion quantum computer with all-to-all connectivity,” *Nature*, vol. 655, no. 8121, pp. 81–86, Jun. 2026, doi: [10.1038/s41586-026-10676-4](https://doi.org/10.1038/s41586-026-10676-4). [arXiv:2511.05465](https://arxiv.org/abs/2511.05465). [D]
