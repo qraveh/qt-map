@@ -1,6 +1,6 @@
 # Quantum Technology Atlas
 
-**Edition 2026.09 (beta)** · published at [qodeh.com/publications/quantum-technology-atlas](https://qodeh.com/publications/quantum-technology-atlas/) · DOI reserved on Zenodo, 10.5281/zenodo.22674814 (resolves on release) · CC BY 4.0 · in English, Russian and Hebrew
+**Edition 2026.09** · published at [qodeh.com/publications/quantum-technology-atlas](https://qodeh.com/publications/quantum-technology-atlas/) · archived on Zenodo, DOI [10.5281/zenodo.22674814](https://doi.org/10.5281/zenodo.22674814) · CC BY 4.0 · in English, Russian and Hebrew
 
 Every quantum-computing platform compared by the goal it serves; a technology graph of <!-- n:N_NODES -->111<!-- /n --> self-contained technologies across ten stack layers, seven design attributes and four edge types; a brief on each technology; a register of <!-- n:N_MACHINES -->182<!-- /n --> quantum machines as architecture instances with graded evidence in every cell; every record — technology, machine, architecture, organisation — at its own address. This repository holds the data, the briefs and the build that renders the interactive edition.
 
@@ -58,7 +58,7 @@ The build is reproducible: on any platform it rebuilds `dist/` byte-for-byte, so
 
 Editions use calendar versioning (`YYYY.MM`, `.N` for a re-issue within the month) and are cut when the graph changes structurally, a verdict changes or a headline number is corrected — otherwise roughly quarterly (3–6 per year). Each edition is a git tag and a Zenodo version with its own DOI; the concept DOI names the work as a whole and always resolves to the newest edition. Cite the work by that DOI, not an edition:
 
-> Neeman, R. (2026). *Quantum Technology Atlas*. Qodeh. https://qodeh.com/publications/quantum-technology-atlas/
+> Neeman, R. (2026). *Quantum Technology Atlas*. Qodeh. https://doi.org/10.5281/zenodo.22674814
 
 A `CITATION.cff` is included for GitHub's "Cite this repository" and for reference managers; the release stamp (below) adds the DOI to it.
 

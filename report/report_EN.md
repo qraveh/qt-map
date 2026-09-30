@@ -1924,7 +1924,7 @@ Each hypothesis is a falsifiable statement about the population; the test is the
 
 | Edition | Machines | Devices | Evidence cells (verified) | H1 | H2 | H3 | H4 | H5 | H6 | H7 | H8 |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 2026.09 (beta) | 182 | 125 | 1,986 (44 %) | supported | supported | supported | partly | supported | supported | supported | not |
+| 2026.09 | 182 | 125 | 1,986 (44 %) | supported | supported | supported | partly | supported | supported | supported | not |
 
 A row is written by the builds of its edition and frozen when the edition is stamped as released; a verdict that flips between editions is re-run on the old and the new rows apart, and the row's note names the cause — new machines, re-graded cells or a re-cut map.
 

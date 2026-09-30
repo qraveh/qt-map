@@ -3,13 +3,14 @@ message: "If you use the Quantum Technology Atlas, please cite the work by its c
 type: dataset
 title: "Quantum Technology Atlas"
 version: "2026.09"
-date-released: "2026-09-09"
+date-released: "2026-09-30"
 authors:
   - family-names: Neeman
     given-names: Raveh
     affiliation: Qodeh
     orcid: "https://orcid.org/0000-0001-7362-9529"
 license: CC-BY-4.0
+doi: "10.5281/zenodo.22674814"
 url: "https://qodeh.com/publications/quantum-technology-atlas/"
 repository-code: "https://github.com/qraveh/qt-map"
 abstract: "Every quantum-computing technology and every quantum machine built, announced or planned: a goal-oriented comparison of the platforms; a technology graph of self-contained technologies across ten stack layers, each on seven design attributes and connected by four edge types, with the platform architectures as paths through the layers; a brief on each technology; a register of machines as architecture instances with graded evidence in every cell; figures tagged by evidence grade and traced to dated sources. In English, Russian and Hebrew, published as an interactive web edition with a page for every record."
