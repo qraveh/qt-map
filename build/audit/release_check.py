@@ -92,12 +92,13 @@ def main():
     f1 = dict(re.findall(r"(SC|ION|ATOM|PHOTON|SPIN|DEFECT|TOPO|ANNEAL):\['([^']+)'", mj)); f2 = dict(re.findall(r"'(SC|ION|ATOM|PHOTON|SPIN|DEFECT|TOPO|ANNEAL)':\('([^']+)'", ms)); f3 = dict(re.findall(r"'(SC|ION|ATOM|PHOTON|SPIN|DEFECT|TOPO|ANNEAL)': \('([^']+)'", mc))
     item('family labels agree across the map, §7 and §8', f1 == f2 == f3 and len(f1) == 8, (f1, f2, f3))
     # 6b. references and tooltips (21 Sep 2026): every citation code in the text has a source anchor; every cross-reference link
-    #     resolves; no TeX remnant or currency-swallowed formula survives; every tooltip key has a text in both languages
+    #     resolves; no TeX remnant or currency-swallowed formula survives; every tooltip key has a text in every language
     import html as _html, json as _json
     # 23 Sep 2026: citations are IEEE numbers; a code left in the text means it has no entry in the register
     cited=set(re.findall(r'(?<![\w\-\[])\[([A-Z]{1,2}\d{1,3})\](?!\])', t))
     item('every citation code was numbered (no [CODE] token left in the rendered text)', not cited, sorted(cited)[:8])
-    for lang in ('en','ru'):
+    sys.path.insert(0, os.path.join(ROOT, 'build')); from langs import LANGS as _LANGS   # every language's §9 and citations (30 Sep 2026: the loop still named en and ru)
+    for lang in _LANGS:
         ol=re.search(r'<ol class="refs"[^>]*>(.*?)</ol>', h[h.find(f'<h2 id="{lang}-s9">'):], flags=re.S)
         nums=[int(x) for x in re.findall(r' value="(\d+)"', ol.group(1))] if ol else []
         # 26 Sep 2026: numbers are permanent Map-wide (worknum) — a work added to §9 after the briefs took theirs keeps the next free number,
@@ -118,8 +119,12 @@ def main():
     item('no TeX remnants in the rendered text', not remn, remn[:6])
     item('no formula span longer than 60 characters (currency signs never open a formula)', 'class="m long"' not in h)
     tk=set(re.findall(r'data-t="([^"]+)"', h)); i=h.find('window.__TIPS='); j=h.find('</script>', i)
-    tips=_json.loads(h[i+len('window.__TIPS='):j].rstrip(';')) if i>0 else {'en':{},'ru':{}}
-    item('every tooltip key has a text in both languages', tk <= set(tips['en']) and tk <= set(tips['ru']), sorted(tk-set(tips['en']))[:5]+sorted(tk-set(tips['ru']))[:5])
+    tips=_json.loads(h[i+len('window.__TIPS='):j].rstrip(';')) if i>0 else {L:{} for L in _LANGS}
+    for L in _LANGS:   # the keys every main page uses (each language's page carries its own static text)
+        pg=os.path.join(os.path.dirname(DIST), *( [L] if L!='en' else [] ), os.path.basename(DIST))
+        if os.path.exists(pg): tk|=set(re.findall(r'data-t="([^"]+)"', open(pg, encoding='utf-8').read()))
+    miss={L: sorted(tk-set(tips.get(L,{})))[:5] for L in _LANGS}
+    item('every tooltip key has a text in every language (%s)' % ', '.join(_LANGS), not any(miss.values()), {L:m for L,m in miss.items() if m})
     xr=[x for x in re.findall(r'<a class="xref" href="#([^"]+)"', h) if f' id="{x}"' not in h]
     item('every cross-reference (§, Figure, Table, H, F) resolves', not xr, xr[:6])
     # 6c. 24 Sep 2026: every reference list on the rendered page — numbering, own-list citations, RU = EN, one work = one entry, forms, anchors
