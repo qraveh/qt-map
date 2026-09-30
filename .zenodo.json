@@ -12,7 +12,7 @@
       "orcid": "0000-0001-7362-9529"
     }
   ],
-  "description": "<p>Every quantum-computing platform compared by the goal it serves — achievements, justified intentions and the most promising directions — followed by a technology graph of self-contained technologies across ten stack layers (carrier, encoding, gate mechanism, connectivity/transport, control, readout, code, decoder, interconnect, manufacturing), each on seven design attributes and connected by four edge types (requires/provides, alternatives, conflicts with mechanism–price–mitigation, dated defines), with the platform architectures as paths through the layers; a brief on every technology; and a register of every quantum machine built, announced or planned that the sources allow to be placed, each an architecture instance with graded evidence in every cell. An interactive web edition — the main page in English, in Russian and in Hebrew, with a page for every technology, machine, architecture and organisation — archived here as one zip of the site. Figures in the comparison, the graph section, the machines chapter and the briefs carry an evidence tag and trace to a dated, linked source; conflicts between sources are stated, not averaged.</p><p>Editions use calendar versioning; the concept DOI resolves to the newest edition. Data and build: https://github.com/qraveh/qt-map</p>",
+  "description": "Every quantum-computing technology (111) and every quantum machine built, announced or planned (182): analysed and summarised, partitioned by seven stable design attributes, compared and combined in dozens of ways — with a brief on every technology and a card on every machine.",
   "access_right": "open",
   "license": "cc-by-4.0",
   "keywords": [
@@ -35,6 +35,16 @@
   "related_identifiers": [
     {
       "identifier": "https://qodeh.com/publications/quantum-technology-atlas/",
+      "relation": "isIdenticalTo",
+      "resource_type": "publication-report"
+    },
+    {
+      "identifier": "https://qodeh.com/publications/quantum-technology-atlas/ru/",
+      "relation": "isIdenticalTo",
+      "resource_type": "publication-report"
+    },
+    {
+      "identifier": "https://qodeh.com/publications/quantum-technology-atlas/he/",
       "relation": "isIdenticalTo",
       "resource_type": "publication-report"
     },

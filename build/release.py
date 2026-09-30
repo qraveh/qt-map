@@ -52,8 +52,9 @@ def stamp(a):
     z = json.loads(rd('.zenodo.json'))
     z['version'] = edition; z['publication_date'] = date
     z['notes'] = re.sub(r'https://qodeh\.com[^\s.]*', site, z.get('notes', ''))
-    for r in z.get('related_identifiers', []):
-        if str(r.get('identifier', '')).startswith('https://qodeh.com'): r['identifier'] = site
+    for r in z.get('related_identifiers', []):   # the language pages keep their folder (30 Sep 2026: /ru/ and /he/ would have become the root)
+        u = str(r.get('identifier', ''))
+        if u.startswith('https://qodeh.com'): r['identifier'] = site + next((t for t in ('ru/', 'he/') if u.endswith('/' + t)), '')
     wr('.zenodo.json', json.dumps(z, ensure_ascii=False, indent=2) + '\n')
     # README.md — header line and the citation line
     r = rd('README.md')

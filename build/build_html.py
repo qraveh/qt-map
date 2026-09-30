@@ -977,13 +977,19 @@ def og_image_size():
         i += 2 + int.from_bytes(data[i + 2:i + 4], 'big')
     raise SystemExit('no SOF marker in the sharing image: ' + OG_IMAGE_FILE)
 
+def abstract(lang):
+    """the Atlas in one sentence, per language — the page's description without its language/licence tail, and the abstract of
+    the Zenodo record (the editor's text for ORCID, 30 Sep 2026: build/zenodo_meta.py writes it into .zenodo.json)"""
+    NN,NM=_counts()
+    return pick(lang,(f'Every quantum-computing technology ({NN}) and every quantum machine built, announced or planned ({NM}): analysed and summarised, partitioned by seven stable design attributes, compared and combined in dozens of ways — with a brief on every technology and a card on every machine.',
+                  f'Все технологии квантовых вычислений ({NN}) и все построенные, объявленные или запланированные квантовые машины ({NM}): проанализированы и сведены, разбиты по семи устойчивым атрибутам конструкции, сопоставлены и скомбинированы десятками способов — с брифом на каждую технологию и карточкой на каждую машину.',
+                  f'כל טכנולוגיות המחשוב הקוונטי ({NN}) וכל המכונות הקוונטיות שנבנו, הוכרזו או תוכננו ({NM}): מנותחות ומסוכמות, מחולקות לפי שבע תכונות תכן יציבות, מושוות ומשולבות בעשרות דרכים — עם תקציר לכל טכנולוגיה וכרטיס לכל מכונה.'))
+
 def head_meta(cfg):
     if cfg['mode']=='internal': return '<meta name="color-scheme" content="light dark">'
     doi=cfg['doi_concept']; cite_doi='<meta name="citation_doi" content="'+doi+'">'; ident='https://doi.org/'+doi; NN,NM=_counts(); pl=cfg.get('page_lang','en')
     # the languages by their own names, not "bilingual" (29 Sep 2026: a third language joined)
-    desc=pick(pl,(f'Every quantum-computing technology ({NN}) and every quantum machine built, announced or planned ({NM}): analysed and summarised, partitioned by seven stable design attributes, compared and combined in dozens of ways — with a brief on every technology and a card on every machine.',
-                  f'Все технологии квантовых вычислений ({NN}) и все построенные, объявленные или запланированные квантовые машины ({NM}): проанализированы и сведены, разбиты по семи устойчивым атрибутам конструкции, сопоставлены и скомбинированы десятками способов — с брифом на каждую технологию и карточкой на каждую машину.',
-                  f'כל טכנולוגיות המחשוב הקוונטי ({NN}) וכל המכונות הקוונטיות שנבנו, הוכרזו או תוכננו ({NM}): מנותחות ומסוכמות, מחולקות לפי שבע תכונות תכן יציבות, מושוות ומשולבות בעשרות דרכים — עם תקציר לכל טכנולוגיה וכרטיס לכל מכונה.'))+' '+' / '.join(NATIVE[L] for L in LANGS)+'; CC BY 4.0.'
+    desc=abstract(pl)+' '+' / '.join(NATIVE[L] for L in LANGS)+'; CC BY 4.0.'
     # one page per language (27 Sep 2026): the alternates name every language page, x-default the English one
     site=cfg.get('site',SITE); alts=''.join(f'<link rel="alternate" hreflang="{L}" href="{site}{FOLDER[L]}">' for L in LANGS)+f'<link rel="alternate" hreflang="x-default" href="{site}">'
     ogw, ogh = og_image_size()

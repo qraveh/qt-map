@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""The references in the Zenodo metadata (the editor's word of 30 Sep 2026). .zenodo.json carries one `cites` related identifier
-per work of the Atlas's shared numbering (data/work-numbers.json), in reference-number order: the publisher DOI where the work
-has one, else its arXiv DOI 10.48550/arXiv.<id>. Web-only sources have no DOI and stay out, and so does the Atlas's own section
-(a `map:` id — #687, §3.2). Edition 2026.09: 438 = 303 publisher DOIs + 135 arXiv DOIs; 444 web-only; one self-reference —
-the list Zenodo record 22674815 carries since its revision of 30 Sep 2026.
+"""The Zenodo metadata as the record carries it (aligned with record 22674815 on 30 Sep 2026). .zenodo.json gets from the build
+the English abstract as its description — the page's own sentence, the editor's text for ORCID — one isIdenticalTo per language
+page, and one `cites` per work of the Atlas's shared numbering (data/work-numbers.json), in reference-number order: the publisher
+DOI where the work has one, else its arXiv DOI 10.48550/arXiv.<id>. Web-only sources have no DOI and stay out, and so does the
+Atlas's own section (a `map:` id — #687, §3.2). Edition 2026.09: 438 = 303 publisher DOIs + 135 arXiv DOIs; 444 web-only; one
+self-reference.
 
-    python3 build/zenodo_meta.py            # rewrites .zenodo.json when its list is stale (build.py runs it)
-    python3 build/zenodo_meta.py --check    # exit 1 when .zenodo.json differs from what the numbering gives
+    python3 build/zenodo_meta.py            # rewrites .zenodo.json when it is stale (build.py runs it)
+    python3 build/zenodo_meta.py --check    # exit 1 when .zenodo.json differs from what the build gives
 """
 import json, os, re, sys
 from collections import OrderedDict
@@ -33,9 +34,18 @@ def cites():
 
 
 def apply(z):
-    """the metadata with its `cites` list regenerated; every other related identifier kept, in place and first"""
-    keep = [r for r in z.get('related_identifiers', []) if r.get('relation') != 'cites']
-    z['related_identifiers'] = keep + [OrderedDict([('identifier', d), ('relation', 'cites')]) for _, d in cites()[0]]
+    """the metadata as the record carries it (aligned with Zenodo record 22674815 on 30 Sep 2026): the description is the
+    English abstract — the page's own sentence, the editor's text for ORCID (build_html.abstract); one isIdenticalTo per
+    language page; the other related identifiers (GitHub) kept; then the cites. What the legacy .zenodo.json format cannot
+    hold stays on the record only: the three languages (the field takes one), the Russian and Hebrew abstracts and the
+    technical description — Zenodo copies them into each new version."""
+    sys.path.insert(0, os.path.join(ROOT, 'build'))
+    import build_html; from editions import SITE; from langs import LANGS, FOLDER
+    z['description'] = build_html.abstract('en')
+    pages = [OrderedDict([('identifier', SITE + FOLDER[L]), ('relation', 'isIdenticalTo'), ('resource_type', 'publication-report')]) for L in LANGS]
+    other = [r for r in z.get('related_identifiers', []) if r.get('relation') != 'cites'
+             and not (r.get('relation') == 'isIdenticalTo' and str(r.get('identifier', '')).startswith('https://qodeh.com/'))]
+    z['related_identifiers'] = pages + other + [OrderedDict([('identifier', d), ('relation', 'cites')]) for _, d in cites()[0]]
     return z
 
 
