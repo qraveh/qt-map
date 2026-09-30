@@ -24,9 +24,11 @@ jobs:
           python3 build/audit/briefs_meta_check.py --quiet
           python3 build/audit/records_check.py
           python3 build/audit/text_lint.py
+          python3 build/audit/propagate.py --check   # the change ledgers against the hand-written corners (30 Sep 2026)
+          python3 build/brief_refs.py --check
           python3 build/media.py --check
       - name: package the site
-        # the deployable tree: both main pages (also as index.html), the language fragments, the assets, every record page, the
+        # the deployable tree: the three main pages (also as index.html), the language fragments, the assets, every record page, the
         # sitemap and the list of pictures the deploy copies from the media register (build/DEPLOY.md); body.html never enters dist/
         run: (cd dist && zip -qr ../quantum-technology-atlas-site.zip . -x 'media/*') && ls -l quantum-technology-atlas-site.zip
       - uses: actions/upload-artifact@v4

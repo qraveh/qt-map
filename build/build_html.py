@@ -1040,7 +1040,7 @@ def fragments(blocks_by_lang, briefs_block, fallback):
 LANG_JS=r"""(function(){var app=document.getElementById('app');if(!app)return;var PL=app.getAttribute('data-page-lang')||'en';var OTHERS=[];try{OTHERS=JSON.parse(app.getAttribute('data-other-langs')||'[]');}catch(e){}var BASE=app.getAttribute('data-lang-base')||'lang/';
 var LG=window.__LANGS||{list:['en'],folder:{en:''}};
 var loaded={},loading={};loaded[PL]=true;
-function fill(L){var F=(window.__LANGFRAG||{})[L];if(!F)return false;var slots=document.querySelectorAll('[data-lang-slot^="'+L+':"]');for(var i=0;i<slots.length;i++){var ph=slots[i];var html=F[ph.getAttribute('data-lang-slot').slice(L.length+1)];if(html==null)continue;var t=document.createElement('template');t.innerHTML=html;var nodes=[].slice.call(t.content.childNodes);ph.replaceWith.apply(ph,nodes);for(var k=0;k<nodes.length;k++){if(nodes[k].nodeType===1&&window.__hydrate)window.__hydrate(nodes[k]);}}loaded[L]=true;document.documentElement.classList.remove('lang-loading');if(window.__relabelMap)window.__relabelMap();var h=location.hash||'';if(h.indexOf('#brief-')!==0&&h.length>1&&window.__revealHash)window.__revealHash(h);return true;}
+function fill(L){var F=(window.__LANGFRAG||{})[L];if(!F)return false;var h=location.hash||'',hid=h.length>1?decodeURIComponent(h.slice(1)):'',had=!!(hid&&document.getElementById(hid));var slots=document.querySelectorAll('[data-lang-slot^="'+L+':"]');for(var i=0;i<slots.length;i++){var ph=slots[i];var html=F[ph.getAttribute('data-lang-slot').slice(L.length+1)];if(html==null)continue;var t=document.createElement('template');t.innerHTML=html;var nodes=[].slice.call(t.content.childNodes);ph.replaceWith.apply(ph,nodes);for(var k=0;k<nodes.length;k++){if(nodes[k].nodeType===1&&window.__hydrate)window.__hydrate(nodes[k]);}}loaded[L]=true;document.documentElement.classList.remove('lang-loading');if(window.__relabelMap)window.__relabelMap();if(hid&&!had&&h.indexOf('#brief-')!==0&&document.getElementById(hid)&&window.__revealHash)window.__revealHash(h);return true;}   // the hash's target only if it came with this fragment: a late fragment never pulls the reader back to a target that was already there (30 Sep 2026)
 function load(L,cb){if(loaded[L]||OTHERS.indexOf(L)<0){if(cb)cb();return;}if(loading[L]){loading[L].push(cb);return;}loading[L]=[cb];var s=document.createElement('script');s.src=BASE+L+'.js';s.async=true;s.onload=function(){fill(L);var q=loading[L]||[];delete loading[L];for(var i=0;i<q.length;i++){if(q[i])q[i]();}};s.onerror=function(){var q=loading[L]||[];delete loading[L];document.documentElement.classList.remove('lang-loading');failed(L);for(var i=0;i<q.length;i++){if(q[i])q[i]();}};document.head.appendChild(s);}
 // the fragment did not arrive (offline copy without lang/, a blocked request): every waiting slot says so once and points at the page
 // that carries this language in full; a retry link tries the fragment again (27 Sep 2026)
@@ -1246,6 +1246,9 @@ def sync_readme(report_en):
     rp=os.path.join(ROOT,'README.md'); r=open(rp,encoding='utf-8').read()
     new=re.sub(r'(<!-- about:begin[^>]*-->\n).*?(<!-- about:end -->)',lambda mm: mm.group(1)+about+mm.group(2),r,count=1,flags=re.S)
     if new==r and about not in r: raise SystemExit('README sync: markers not found')
+    # the README's own counts are placeholders too: <!-- n:N_MACHINES -->182<!-- /n --> is rewritten from the data at every build
+    # (the header line still said "160 quantum machines" and "five edge types" on 30 Sep 2026)
+    new=re.sub(r'(<!-- n:(N_[A-Z0-9_]+) -->)[^<]*(<!-- /n -->)',lambda mm: mm.group(1)+report_numbers('{{%s}}'%mm.group(2),'en')+mm.group(3),new)
     if new!=r: open(rp,'w',encoding='utf-8',newline='\n').write(new)
 
 if __name__=='__main__':

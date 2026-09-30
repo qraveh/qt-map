@@ -30,9 +30,14 @@ FORBIDDEN = [r'<!--\s*function', r'toggleAuthorList', r'You must enable JavaScri
              r'(?i)off-diagonal', r'(?i)внедиагональн', r'(?i)вне-диагональн',   # the crossing-technology rename of 29 Sep 2026
              # the bilingual period (29 Sep 2026: a third language joined — the reader text names the languages, never "the other" or "both")
              r'English / Russian', r'(?i)\bboth languages\b', r'(?i)\bthe other language\b', r'(?i)\beither language or both\b', r'Английский / Русский', r'(?i)обоих языках']
-RETIRED_COUNTS = [r'\b(?:136|160|153|183) (machines|машин|מכונות)', r'\b(?:out of|из|מתוך) (?:136|160|153|183)\b(?! ?(?:mK|K|GHz|MHz|kHz|Hz|nm|µm|μm|ms|µs|μs|ns|dB|%))',
+RETIRED_COUNTS = [r'\b(?:136|160|153|183) (machines|машин|מכונות)', r'\b(?:136|160|153|183)\s+(?:quantum|registered|квантов\w*|зарегистрированн\w*)\s+(?:machines|машин)', r'\b(?:out of|из|מתוך) (?:136|160|153|183)\b(?! ?(?:mK|K|GHz|MHz|kHz|Hz|nm|µm|μm|ms|µs|μs|ns|dB|%))',
                   r'\b14 (architectures|paths|архитектур|путей|ארכיטקטורות|נתיבים)', r'\b(?:96|110) (technologies|технологий|nodes|stations|טכנולוגיות)',
-                  r'\b1,533\b', r'\b1 533\b']   # 29 Sep 2026: 160 → 183 machines; 30 Sep 2026: 183 → 182 (Bell-1 and RacQ are one machine); "out of 136" (a glossary note) had slipped past "136 machines"
+                  r'\b1,533\b', r'\b1 533\b',
+                  # 30 Sep 2026: the README's header still said "160 quantum machines" (an adjective slipped past the first pattern), and the
+                  # About paragraph "five kinds of edge" in all three languages beside §7's "Four edge types" (the transfers left on 28 Sep);
+                  # README, CITATION.cff and .zenodo.json still called the edition bilingual
+                  r'(?i)\bfive (?:kinds of edges?|edge types|types of edges?)\b', r'(?i)пят(?:ью|ь) (?:видами|типами|видов|типов) р[её]бер', r'חמישה סוגי קשתות',
+                  r'(?i)\bbilingual\b', r'(?i)двуязычн', r'\bEN ?/ ?RU\b(?! ?/ ?HE)', r'דו-לשוני']   # 29 Sep 2026: 160 → 183 machines; 30 Sep 2026: 183 → 182 (Bell-1 and RacQ are one machine); "out of 136" (a glossary note) had slipped past "136 machines"
 # a number (digits or a number word) directly before machines / devices / rows / cells, in the register paragraph of a narrative
 LITERAL_COUNT = {'en': r'(?i)\b(?:\d[\d,]*|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty)(?:\s+(?:evidence|documented|gate-capable|none|register|registered|physical))?\s+(?:machines?|devices?|rows?|cells?)\b',
                  'ru': r'(?i)(?<!ни )\b(?:\d[\d\u00a0 ]*|одн[аоу]|один|дв[аеух]|три|трёх|четыр[ёех]|пят[ьи]|шест[ьи]|сем[ьи]|восьм[ьи]|восемь|девят[ьи]|десят[ьи]|одиннадцат[ьи]|двенадцат[ьи]|тринадцат[ьи]|четырнадцат[ьи]|пятнадцат[ьи]|шестнадцат[ьи]|семнадцат[ьи]|восемнадцат[ьи]|девятнадцат[ьи]|двадцат[ьи])\s+(?:машин[аыу]?|устройств[аоу]?|строк[аиу]?|яче[её]к[аиу]?)\b',

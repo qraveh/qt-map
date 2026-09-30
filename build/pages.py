@@ -298,6 +298,17 @@ class Site:
         self.assets(); self.media_used = set()
         for lang in langs:
             self.technology(lang); self.machine(lang); self.architecture(lang); self.organisation(lang); self.indexes(lang)
+        # a row that left the data (merged, removed) must not leave its page behind in dist/: a clean clone never had it, a reused
+        # working tree kept it and would deploy it (equal1-bell-1 and google-fluxonium were still there on 30 Sep 2026)
+        written = set(self.urls); stale = []
+        for lang in langs:
+            for kind in ('technology', 'machine', 'architecture', 'organisation'):
+                d = os.path.join(self.dist, FOLDER[lang], kind)
+                if not os.path.isdir(d): continue
+                for f in sorted(os.listdir(d)):
+                    if f.endswith('.html') and (lang, kind, f[:-5]) not in written:
+                        os.remove(os.path.join(d, f)); stale.append('%s%s/%s' % (FOLDER[lang], kind, f))
+        if stale: print('record pages: %d stale page(s) removed — %s' % (len(stale), ', '.join(stale)))
         self.sitemap()
         # the pictures the deploy must copy from the media register's thumbs: only those a page shows (289 of 706 hosted on 27 Sep 2026)
         for key in ['node:' + n['id'] for n in self.G['nodes']] + ['machine:' + mid for mid in self.mach]:   # the map's cards show each target's first picture (build_html.pics_slim, 28 Sep 2026)
