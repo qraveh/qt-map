@@ -67,7 +67,7 @@ A `CITATION.cff` is included for GitHub's "Cite this repository" and for referen
 1. Reserve the DOIs on Zenodo (a new upload → *Reserve DOI*; the concept DOI is the record's "all versions" DOI). Do not publish yet.
 2. `python3 build/release.py stamp --concept 10.5281/zenodo.C --version 10.5281/zenodo.V --status beta --date YYYY-MM-DD --build` — the page names the work by its concept DOI in every state; this README and `CITATION.cff` say "reserved" until the release stamp; `dist/` is rebuilt. The date is the publication day, and it stamps the Editions table, the CFF, the Zenodo metadata and the sitemap.
 3. Commit, tag the edition (`git tag -f 2026.09`), push with `--tags`, deploy the `dist/` tree (see the deploy checklist in `build/DEPLOY.md`).
-4. When the edition is final: upload a zip of the deployed tree (and the repository archive) to the reserved Zenodo record, publish it — the DOI now resolves — then `python3 build/release.py stamp --status release --build`, commit, re-tag, push, and create the GitHub Release from the tag (the workflow attaches the zip).
+4. When the edition is final: upload the site zip (the CI artefact, or `python3 build/site_zip.py` — the same bytes) and the repository archive to the reserved Zenodo record, publish it — the DOI now resolves — then `python3 build/release.py stamp --status release --build`, commit, re-tag, push, and create the GitHub Release from the tag (the workflow attaches the zip).
 
 ## Contributing
 

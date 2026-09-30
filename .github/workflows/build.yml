@@ -3,6 +3,9 @@ on:
   push: { branches: [main] }
   pull_request:
   release: { types: [published] }
+# read-only by default: the build installs and runs third-party packages; only the job that attaches the Release asset writes
+# (30 Sep 2026: with no write permission at all, the 2026.09 Release got its zip by hand)
+permissions: { contents: read }
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,7 +17,7 @@ jobs:
       - run: python3 build/build.py
       - name: check the build is committed and reproduces byte-for-byte
         run: |
-          git diff --exit-code -- data/graph.json report/ README.md CHANGELOG.md dist/ || (echo "run build/build.py and commit the result; if only dist/ differs, the build is not reproducible on this platform" && exit 1)
+          git diff --exit-code -- data/graph.json report/ README.md CHANGELOG.md .zenodo.json dist/ || (echo "run build/build.py and commit the result; if only dist/ differs, the build is not reproducible on this platform" && exit 1)
           test -z "$(git status --porcelain --ignored=no dist/)" || (echo "untracked files in dist/ — commit or ignore them" && git status --porcelain dist/ && exit 1)
       - name: consistency checks
         run: |
@@ -29,11 +32,19 @@ jobs:
           python3 build/media.py --check
       - name: package the site
         # the deployable tree: the three main pages (also as index.html), the language fragments, the assets, every record page, the
-        # sitemap and the list of pictures the deploy copies from the media register (build/DEPLOY.md); body.html never enters dist/
-        run: (cd dist && zip -qr ../quantum-technology-atlas-site.zip . -x 'media/*') && ls -l quantum-technology-atlas-site.zip
+        # sitemap and the list of pictures the deploy copies from the media register (build/DEPLOY.md); body.html never enters dist/.
+        # Byte-reproducible (the editor's word of 30 Sep 2026): the Release asset and the Zenodo file are the same bytes
+        run: python3 build/site_zip.py
       - uses: actions/upload-artifact@v4
         with: { name: quantum-technology-atlas, path: quantum-technology-atlas-site.zip }
-      - name: attach to release
-        if: github.event_name == 'release'
-        uses: softprops/action-gh-release@v2
-        with: { files: quantum-technology-atlas-site.zip }   # the whole site; the same zip goes to the Zenodo record
+  attach:
+    # the Release asset — the build job's zip; this job alone may write to the repository
+    if: github.event_name == 'release'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions: { contents: write }
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { name: quantum-technology-atlas }
+      - uses: softprops/action-gh-release@v2
+        with: { files: quantum-technology-atlas-site.zip }   # the whole site; the same bytes go to the Zenodo record

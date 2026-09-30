@@ -73,12 +73,20 @@ CODE = r'[A-Z]{1,2}\d{1,3}'
 
 
 # ---------- identifiers
+def nature_id(u):
+    """the article id of a nature.com/articles/<id> address. Old Nature Publishing Group ids carry dots — nnano.2012.21,
+    nphoton.2013.287 — and the id ran only to the first dot until 30 Sep 2026, which cut those DOIs to 10.1038/nnano and
+    10.1038/nphoton (#357 and #821 carried the fragments, which any other article of the same journal would have matched);
+    a .pdf or .html suffix is not part of the id."""
+    m = re.search(r'nature\.com/articles/([a-z0-9\-]+(?:\.[a-z0-9\-]+)*)', u)
+    return re.sub(r'\.(?:pdf|html?)$', '', m.group(1)) if m else ''
+
+
 def norm(u):
     u = u.rstrip('.;,)')
     m = re.search(r'arxiv\.org/(?:abs|pdf|html)/(\d{4}\.\d{4,5})', u)
     if m: return 'arxiv:' + m.group(1)
-    m = re.search(r'nature\.com/articles/([a-z0-9\-]+)', u)
-    if m: return 'nature:' + m.group(1)
+    if nature_id(u): return 'nature:' + nature_id(u)
     return u.lower().rstrip('/')
 
 
@@ -92,8 +100,7 @@ def host(u):
 def doi_of(u):
     m = re.search(r'doi\.org/(10\.\S+)', u)
     if m: return m.group(1).rstrip('.;,)')
-    m = re.search(r'nature\.com/articles/([a-z0-9\-]+)', u)
-    if m: return '10.1038/' + m.group(1)
+    if nature_id(u): return '10.1038/' + nature_id(u)
     m = re.search(r'journals\.aps\.org/[^/]+/abstract/(10\.\d+/\S+)', u)
     if m: return m.group(1).rstrip('.;,)')
     m = re.search(r'/(10\.\d{4,9}/[^\s?#]+)', u)

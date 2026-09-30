@@ -24,29 +24,35 @@ Not part of the site: `build/_out/body.html` (a build intermediate) — since 27
    The build must be run at deploy time (or its CI artefact `quantum-technology-atlas-site.zip` used): the record pages are not in git.
 2. **Pictures.** Copy every file listed in `dist/media-files.txt` from the media register's `assets/thumbs/` folder
    (`C:\MyDrive\QT-Map\media-register\assets\thumbs\` on the editor's machine) into `<site root>/media/`. Check first:
-   `python3 build/media.py --check --thumbs <thumbs dir>` must report `problems: 0`; the deploy fails on a missing file.
+   `python3 build/media.py --check --thumbs <thumbs dir>` must report `problems: 0`: a problem is a file of `dist/media-files.txt` missing
+   from the folder, and the deploy fails on it. A hosted thumbnail no page shows (one that illustrates only a gap or an adjacent
+   target) is printed as a note for the media register and does not stop the deploy.
 3. **Upload the tree** — everything in `dist/` except `media-files.txt` — to `https://qodeh.com/publications/quantum-technology-atlas/`,
    keeping the directory structure. `index.html`, `ru/index.html` and `he/index.html` are the directory defaults; if the server maps directory URLs
    to a different default document, configure it to serve them.
-4. **Redirects (301).** `…/publications/quantum-technology-map/` and everything under it → `…/publications/quantum-technology-atlas/`
+4. **The old addresses.** `…/publications/quantum-technology-map/` and everything under it → `…/publications/quantum-technology-atlas/`
    (same path tail); `…/Quantum-Technology-Map-2026.09.html` → `…/Quantum-Technology-Atlas-2026.09.html`. The old name was public
-   in the beta announcements.
+   in the beta announcements. A 301 where the host can send one; qodeh.com serves static files, so there a small page at the old
+   address sends the reader on (`<meta http-equiv="refresh">` to the new address), which is how qodeh.com serves them now.
 5. **Sharing image.** `build/social/og-image_quantum-technology-map.jpg` → `https://qodeh.com/images/og-image_quantum-technology-map.jpg`
    (the pages' `og:image`); the credits link points at `build/social/CREDITS.md` on `main`, so `main` must carry it.
-6. **Headers.** Compress `*.html` and `*.js` (gzip or brotli — the English page is 5.6 MB, 1.4 MB gzipped; the fragments 4–4.5 MB,
-   about 1 MB gzipped). Send `Cache-Control: no-cache` (revalidate) for `*.html` and `lang/*.js`: a page and its fragment must match slot
+6. **Headers.** Compress `*.html` and `*.js` (gzip or brotli — the main pages are 6.7–8.1 MB, 1.6–2.0 MB gzipped; the fragments
+   4.4–5.1 MB, about 1 MB gzipped). Send `Cache-Control: no-cache` (revalidate) for `*.html` and `lang/*.js`: a page and its fragment must match slot
    for slot, and beta revisions redeploy under the same file names. Long cache for `media/` and `assets/` is fine.
 7. **Sitemap.** Add `Sitemap: https://qodeh.com/publications/quantum-technology-atlas/sitemap.xml` to `https://qodeh.com/robots.txt`, or
    submit it in Search Console.
-8. **Zenodo and the release stamp**, in this order: upload the site zip (the CI artefact, or `zip -r site.zip dist -x 'dist/media/*'`) and
+8. **Zenodo and the release stamp**, in this order: upload the site zip (the CI artefact, or `python3 build/site_zip.py` on a clean tree
+   after the build — the same bytes: every file stamped with the commit's time, in byte order, `zip -X -D` under TZ=UTC) and
    the repository archive to the reserved record → publish (the DOI now resolves) → `python3 build/release.py stamp --status release --date <publication day> --build`
    → commit, move the tag, push, create the GitHub Release (the workflow attaches the zip). The date stamps the Editions table,
    `CITATION.cff`, `.zenodo.json` and the sitemap's `lastmod` in one go — it must be the publication day, after the data cut-off.
 9. **Smoke test after deploy:** the root URL, `/ru/` and `/he/` (right-to-left, the map left-to-right); one "Open on the map" link from an English, a Russian and a Hebrew record page;
    the language switch on the three main pages (the fragment loads; no "did not load" notice); one picture; `https://doi.org/<concept DOI>`;
-   the old map URL redirects; `curl -I` shows compression and the cache header.
+   the old map URL leads to the new one; `curl -I` shows compression and the cache header.
 
 ## Later editions
 
-Record URLs carry technology, machine and architecture ids. When an id is renamed or a record removed, add a redirect from the old
-address; `build/audit/links_check.py --records` checks the internal links of the new tree before it goes out.
+Record URLs carry technology, machine and architecture ids. When a record is removed or merged into another, its old address
+answers 404 — the editor's rule of 30 Sep 2026 (the build removes the page; `equal1-bell-1` and `google-fluxonium` went that way);
+a redirect only when he asks for one, and for a renamed id ask him. `build/audit/links_check.py --records` checks the internal links
+of the new tree before it goes out.

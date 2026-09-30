@@ -3738,7 +3738,7 @@
    "url": "https://www.nature.com/articles/ncomms13575",
    "verified": true
   },
-  "doi:10.1038/nnano": {
+  "doi:10.1038/nnano.2012.21": {
    "authors": [
     "Martin Fuechsle"
    ],
@@ -3755,7 +3755,7 @@
    "url": "https://www.nature.com/articles/nnano.2012.21",
    "verified": true
   },
-  "doi:10.1038/nphoton": {
+  "doi:10.1038/nphoton.2013.287": {
    "authors": [
     "Shota Yokoyama"
    ],
@@ -11015,7 +11015,7 @@
     "grade": "D"
    },
    {
-    "work": "doi:10.1038/nnano",
+    "work": "doi:10.1038/nnano.2012.21",
     "grade": "D"
    },
    {
@@ -12133,7 +12133,7 @@
   ],
   "fab_stm": [
    {
-    "work": "doi:10.1038/nnano",
+    "work": "doi:10.1038/nnano.2012.21",
     "grade": "D"
    },
    {
@@ -12521,7 +12521,7 @@
     "grade": "S"
    },
    {
-    "work": "doi:10.1038/nphoton",
+    "work": "doi:10.1038/nphoton.2013.287",
     "grade": "D"
    },
    {

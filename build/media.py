@@ -3,7 +3,7 @@
 illustrates (data/media/media.json), and the helpers the page builders call to place them.
 
     python3 build/media.py --import [--dir DIR]     read the register's CSVs, write data/media/media.json
-    python3 build/media.py --check [--thumbs DIR]   counts and problems; with DIR, the hosted thumbnails missing from it
+    python3 build/media.py --check [--thumbs DIR]   counts and problems; with DIR, the pictures the pages show missing from it
     python3 build/media.py --files                  the thumbnail files the deploy copies to <atlas base>/media/
 
 DIR defaults to $QT_MEDIA_DIR, else /home/claude/work/QT-Map/media-register/data. Assets whose verdict is QUARANTINE or REJECT
@@ -381,9 +381,16 @@ def check(thumbs_dir=None):
     elif not os.path.isdir(thumbs_dir):
         problems.append('thumbs dir not found: %s' % thumbs_dir)
     else:
-        have = set(os.listdir(thumbs_dir)); miss = [f for f in files if f not in have]
-        print('thumbnails in %s: %d of %d hosted files present' % (thumbs_dir, len(files) - len(miss), len(files)))
+        # a problem is a picture the deploy must copy — the pages' list, dist/media-files.txt, when the build has written it; a
+        # hosted thumbnail no page shows (a gap or an adjacent target) is a note for the media register, not a reason to stop the
+        # deploy (30 Sep 2026: mr-8f70d325d9.jpg, illustrating only adj_adr, adj_dilution_refrigerator and G-cryo, stopped it)
+        have = set(os.listdir(thumbs_dir)); mf = os.path.join(ROOT, 'dist', 'media-files.txt')
+        served = [l.strip() for l in open(mf, encoding='utf-8') if l.strip()] if os.path.exists(mf) else files
+        miss = [f for f in served if f not in have]; spare = [f for f in files if f not in have and f not in set(served)]
+        print('thumbnails in %s: %d of %d files the pages show present%s' % (thumbs_dir, len(served) - len(miss), len(served),
+              '' if os.path.exists(mf) else ' (no dist/media-files.txt: every hosted file counted)'))
         for f in miss: print('missing:', f)
+        for f in spare: print('note: hosted, on no page, missing from the thumbs folder (the media register\'s to fix):', f)
         problems += ['missing thumbnail %s' % f for f in miss]
     for p in problems:
         if not p.startswith('missing thumbnail '): print('problem:', p)

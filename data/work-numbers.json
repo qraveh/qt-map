@@ -2956,8 +2956,7 @@
    "n": 357,
    "ids": [
     "doi:10.1038/nnano.2012.21",
-    "doi:10.1038/nnano",
-    "u:nature:nnano",
+    "u:nature:nnano.2012.21",
     "t:a single atom transistor"
    ],
    "label": "F+12"
@@ -6925,8 +6924,7 @@
    "n": 821,
    "ids": [
     "doi:10.1038/nphoton.2013.287",
-    "doi:10.1038/nphoton",
-    "u:nature:nphoton",
+    "u:nature:nphoton.2013.287",
     "t:ultra large scale continuous variable cluster states multipl"
    ],
    "label": "Y+13"

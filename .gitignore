@@ -20,3 +20,5 @@ dist/he/machine/
 dist/he/architecture/
 dist/he/organisation/
 dist/media/
+# the site zip build/site_zip.py writes beside dist/ (30 Sep 2026)
+quantum-technology-atlas-site.zip

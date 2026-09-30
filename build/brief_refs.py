@@ -743,8 +743,8 @@ def check():
             elif w not in db['works']: probs.append('%s: work %s has no record' % (bid, w))
         works = [e['work'] for e in db['briefs'][bid]]
         if len(set(works)) != len(works): probs.append('%s: a work listed twice' % bid)
-        for lang in ('en', 'ru'):
-            if lang == 'ru' and not os.path.exists(path(bid, lang)): continue   # translation pending (the build falls back to EN)
+        for lang in LANGS:   # every language's list (30 Sep 2026: the check still named en and ru)
+            if lang != 'en' and not os.path.exists(path(bid, lang)): continue   # translation pending (the build falls back to EN)
             sp = split(read(path(bid, lang)), lang)
             if not sp: probs.append('%s/%s: no Sources section' % (bid, lang)); continue
             ents, extra, _ = entries(sp[1])
@@ -757,6 +757,13 @@ def check():
                 if str(k) not in cs: probs.append('%s/%s: entry [%d] never cited' % (bid, lang, k))
             for a, b, labs in runs(sp[0] + sp[2]):
                 if len(labs) > 1: probs.append('%s/%s: adjacent citations not in IEEE run form: %s' % (bid, lang, ''.join('[%s]' % l for l in labs)))
+    # a DOI with no digit after the prefix is a fragment of a parsed address (10.1038/nnano), and every article of that journal
+    # would match it: #357 and #821 carried two until 30 Sep 2026 (nature.com/articles/<id> was cut at the first dot)
+    frag = lambda d: not re.search(r'\d', d.split('/', 1)[1] if '/' in d else '')
+    for e in worknum.numbers().t['works']:
+        probs += ['work-numbers #%d: DOI fragment %s' % (e['n'], i) for i in e['ids'] if i.startswith('doi:') and frag(i[4:])]
+    for k, r in db['works'].items():
+        probs += ['brief-sources %s: DOI fragment %s' % (k, d) for d in ([k[4:]] if k.startswith('doi:') else []) + ([r['doi']] if r.get('doi') else []) if frag(d)]
     unv = sorted({e['work'] for es in db['briefs'].values() for e in es if not e['work'].startswith('report:') and not db['works'].get(e['work'], {}).get('verified')})
     return probs, unv
 
