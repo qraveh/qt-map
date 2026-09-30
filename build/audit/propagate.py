@@ -16,6 +16,12 @@ with the line — and flags what contradicts the new fact:
     STATUS      a machine whose register status is now DEPLOYED/DEMONSTRATED/RETIRED is called planned/announced/expected/
                 "not yet"/"never delivered" in the same sentence (or the reverse: a planned one called deployed/delivered)
     QUBITS      a number followed by "qubits"/"кубит…" in the same sentence disagrees with the register's physical_qubits_num
+    LARGEST     a narrative's sentence about the largest gate-capable device does not name Table 8.3's (report/paths, three languages)
+    BESTERR     a narrative's sentence about the best two-qubit error does not carry Table 8.3's figure, or claims one where the table has none
+
+The narratives' counts (machines, devices, cells, status breakdown) are placeholders filled from the data (machines_chapter.arch_figures),
+so they cannot drift; text_lint refuses a typed count in that paragraph. What remains hand-written there — which device is the largest,
+whose error is the best — is what LARGEST and BESTERR compare with the table.
 
     python3 build/audit/propagate.py [data/changes/2026-09-29.json …] [--check] [--all]
 
@@ -61,12 +67,18 @@ def terms_of(item, reg):
                 if len(x) >= 4: out.add(x.strip())
         out.add(re.sub(r'\s*\([^)]*\)', '', nm).strip())
     v = (item.get('old') or {}).get('name')
-    if isinstance(v, str) and 4 <= len(v) <= 80 and item.get('kind') in ('rename', 'remove'): out.add(v)
+    if isinstance(v, str) and 4 <= len(v) <= 80 and (item.get('kind') in ('rename', 'remove') or renamed(item)): out.add(v)
     return sorted({t for t in out if len(t) >= 4 and not t.lower().startswith('unknown')}, key=len, reverse=True)
 
 
+def renamed(item):
+    """an update whose fields include a new name is a rename too (rqc-ion-50q: '50-qubit …' → '70-qubit … (FIAN / Rosatom roadmap)')"""
+    old = (item.get('old') or {}).get('name'); new = (item.get('fields') or {}).get('name') or (item.get('new') or {}).get('name')
+    return item.get('kind') == 'rename' or bool(old and new and old != new)
+
+
 def sentences(line):
-    return re.split(r'(?<=[.;!?])\s+', line)
+    return re.split(r'(?<!табл\.)(?<!рис\.)(?<!Table)(?<=[.;!?])\s+', line)   # not after the abbreviations табл. / рис.
 
 
 def scan(items, reg, show_all=False):
@@ -85,8 +97,9 @@ def scan(items, reg, show_all=False):
         row = reg.get(sid) if s.get('type') == 'machine' else None
         status = (row or {}).get('status', ''); delivered = bool(re.match(r'(DEPLOYED|DEMONSTRATED|RETIRED)', status)); planned = bool(re.match(r'(PLANNED|ANNOUNCED)', status))
         qn = (row or {}).get('physical_qubits_num', '')
-        new_name = (it.get('new') or {}).get('name') or (row or {}).get('name', '')
+        new_name = (it.get('new') or {}).get('name') or (it.get('fields') or {}).get('name') or (row or {}).get('name', '')
         old_names = [v for v in [(it.get('old') or {}).get('name'), it.get('old_name')] if v]
+        if renamed(it): kind = 'rename'
         for term in terms_of(it, reg):
             rx = re.compile(r'(?<![\w-])' + re.escape(term) + r'(?![\w-])')
             for f, lines in texts.items():
@@ -101,11 +114,43 @@ def scan(items, reg, show_all=False):
                         elif row and delivered and PLANNED_WORDS.search(near) and not DELIVERED_WORDS.search(near) and len(sent) < 400: flag = 'STATUS'
                         elif row and planned and DELIVERED_WORDS.search(near) and not PLANNED_WORDS.search(near) and len(sent) < 400: flag = 'STATUS'
                         if row and qn and not flag:
-                            m = re.search(re.escape(term) + r'[^.;:]{0,40}?(\d[\d,]*)\s*(?:physical\s+)?(?:qubits?|кубит\w*|q\b)', sent) or re.search(r'(\d[\d,]*)-(?:qubit|кубитн\w*)\s+' + re.escape(term), sent)
-                            if m and m.group(1).replace(',', '').isdigit() and int(m.group(1).replace(',', '')) != int(qn): flag = 'QUBITS'
+                            m = re.search(re.escape(term) + r'[^.;:]{0,40}?(\d[\d,\u00a0]*)\s*(?:physical\s+)?(?:qubits?|кубит\w*|q\b)', sent) or re.search(r'(\d[\d,\u00a0]*)-(?:qubit|кубитн\w*)\s+' + re.escape(term), sent)
+                            num = m.group(1).replace(',', '').replace('\u00a0', '').strip() if m else ''
+                            if num.isdigit() and int(num) != int(qn): flag = 'QUBITS'
                         if flag or show_all:
                             findings.append((flag, f, n, sid, term, sent.strip()[:160]))
     return findings
+
+
+LARGEST_RX = {'en': r'largest gate-capable device|the table\'s largest|the largest,|is the largest at', 'ru': r'крупнейше\w* устройств\w* с гейтами|крупнейш\w*,', 'he': r'ההתקן בעל השערים הגדול ביותר|הגדול\w* שב\w*,'}
+BEST_RX = {'en': r'best (?:median )?(?:two-qubit|2Q) error', 'ru': r'лучш\w* (?:медианн\w* )?(?:двухкубитн\w* ошибк\w*|2Q-ошибк\w*)', 'he': r'שגיאת (?:השער הדו-קיוביטי|ה-2Q)(?: החציונית)? הטובה ביותר'}
+NO_BEST_RX = {'en': r'no best error|no two-qubit error|no best two-qubit', 'ru': r'ни одной двухкубитной ошибки|отсутствие лучшей ошибки|нет лучшей ошибки', 'he': r'ללא שגיאת שער דו-קיוביטי|אין לארכיטקטורה שגיאה מיטבית'}
+
+
+def narratives():
+    """Table 8.3 against the narratives (report/paths/<pid>.<L>.md): the largest gate-capable device and the best 2Q error."""
+    sys.path.insert(0, os.path.join(ROOT, 'build'))
+    import machines_chapter as mc
+    A = mc.arch_figures('en'); out = []
+    for f in sorted(glob.glob(os.path.join(ROOT, 'report', 'paths', '*.md'))):
+        m = re.match(r'(\w+)\.(en|ru|he)\.md$', os.path.basename(f))
+        if not m: continue
+        pid, L = m.groups(); key = 'A_' + re.sub(r'[^A-Z0-9]+', '_', pid.upper())
+        big, q, err = A.get(key + '_LARGEST', '—'), A.get(key + '_LARGEST_Q', '—'), A.get(key + '_BESTERR', '—')
+        toks = [x for x in re.split(r'[\s()/,\-–—]+', big) if len(x) >= 3 and x not in ('and', 'the', 'system', 'processor', 'quantum', 'Quantum')] if big != '—' else []
+        rel = os.path.relpath(f, ROOT)
+        for n, line in enumerate(open(f, encoding='utf-8').read().split('\n'), 1):
+            for sent in sentences(line):
+                if re.search(LARGEST_RX[L], sent, re.I) and not re.search(r'largest (?:arrays|vendor|instances)|крупнейш\w* (?:массив|вендор|экземпляр)|למערכים הגדולים|הספק הגדול|למופעים הגדולים', sent):
+                    score = sum(1 for x in toks if x in sent)
+                    ok = (big == '—' and re.search(r'no gate-capable|none gate-capable|not count it gate-capable|ни одного с гейтами|не считает его устройством с гейтами|אף אחד מהם אינו בעל שערים|אינה מונה אותו כבעל שערים', sent)) \
+                        or (toks and score >= min(2, len(toks))) or (q != '—' and re.search(r'(?<![\d,.])' + re.escape(q) + r'(?![\d,.])', sent))
+                    if not ok: out.append(('LARGEST', rel, n, pid, big, sent.strip()[:160]))
+                if re.search(BEST_RX[L], sent, re.I) and not re.search(NO_BEST_RX[L], sent, re.I):
+                    if err == '—' or err not in sent.replace(' ', ''): out.append(('BESTERR', rel, n, pid, err, sent.strip()[:160]))
+                elif re.search(NO_BEST_RX[L], sent, re.I) and err != '—':
+                    out.append(('BESTERR', rel, n, pid, err, sent.strip()[:160]))
+    return out
 
 
 def main():
@@ -116,11 +161,12 @@ def main():
     allow = set()
     ap = os.path.join(ROOT, 'data', 'changes', 'allow.json')
     if os.path.exists(ap): allow = set(json.load(open(ap, encoding='utf-8')))
-    fs = scan(items, reg, show_all)
-    HARD = ('OLD-NAME', 'REMOVED')   # the gate: names that must not stand; STATUS and QUBITS are advisory (a reader's glance decides)
+    fs = scan(items, reg, show_all) + narratives()
+    HARD = ('OLD-NAME', 'REMOVED', 'LARGEST', 'BESTERR')   # the gate: names and table facts that must not stand; STATUS and QUBITS are advisory (a reader's glance decides)
     flagged = [x for x in fs if x[0] in HARD and ('%s:%s' % (x[1], x[3])) not in allow]
-    print('propagate: %d ledger item(s), %d corner file(s); %d mention(s) listed, %d flagged (%d allowed)' % (
-        len(items), len([c for c in CORNERS if os.path.exists(c if os.path.isabs(c) else os.path.join(ROOT, c))]), len(fs), len(flagged), len(fs) - len(flagged) - len([x for x in fs if not x[0]])))
+    hard_all = [x for x in fs if x[0] in HARD]
+    print('propagate: %d ledger item(s), %d corner file(s); %d mention(s) listed — %d flagged, %d allowed, %d advisory (STATUS/QUBITS)' % (
+        len(items), len([c for c in CORNERS if os.path.exists(c if os.path.isabs(c) else os.path.join(ROOT, c))]), len(fs), len(flagged), len(hard_all) - len(flagged), len([x for x in fs if x[0] and x[0] not in HARD])))
     last = None
     for flag, f, n, sid, term, snip in sorted(fs, key=lambda x: (x[3], x[1], x[2])):
         if (sid, f) != last: print('  %s — %s' % (sid, f)); last = (sid, f)

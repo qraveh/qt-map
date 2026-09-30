@@ -6,7 +6,7 @@ status: emerging
 since: 2020
 one_line: A qubit encoded in periodic grid states of one bosonic mode — microwave cavity or optical — correcting small quadrature shifts and handing the decoder an analogue syndrome.
 verdict: The only encoding whose syndrome is continuous, and the only one whose every headline number is still post-selected. Unconditional logical error remains unpublished on both branches.
-updated: 2026-09-04
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -57,7 +57,7 @@ Three quantities are reported as if commensurable. Gain is a ratio of decay rate
 
 **Market & supply chain.** No one sells GKP; both branches buy their host platform's equipment — cavity machining, TWPA readout and refrigerators on one side, a narrow set of squeezed-light and photon-number-resolving detector suppliers plus specialist packaging on the other. G3 and G4 are the only goals that pay for GKP.
 
-**IP & standards.** No dated GKP-specific patent-family count was found; aggregate sector figures (IBM 4,388, Google 2,385 families to 2026-06-30) do not break out continuous-variable encodings [P][312]. The 2001 construction is prior art, pushing defensible IP into state preparation, breeding and ancilla-control circuits. No standards activity found.
+**IP & standards.** No dated GKP-specific patent-family count was found; aggregate sector figures (IBM 4,388, Google 2,385 families in PatSnap's landscape published on 2026-06-30) do not break out continuous-variable encodings [P][312]. The 2001 construction is prior art, pushing defensible IP into state preparation, breeding and ancilla-control circuits. No standards activity found.
 
 **Roadmaps & track record.** Xanadu (promised 2026-08-31): loss 24.1× above threshold in 2026 → 1.0× in 2030, 200 logical qubits by 2029, 1,000+ by 2031, on a GKP-plus-qLDPC architecture [R][G:XANADU-SPAC-2026-03]. Nord Quantique (company material): 100+ logical by 2029 at "1:1 physical to logical" [R][93]. Xanadu quantified its roadmap but raised ~40% below plan against a best published state of 0.62 dB; Nord Quantique's claim rests on a device whose combined survival is under 10%.
 

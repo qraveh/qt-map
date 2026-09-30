@@ -6,7 +6,7 @@ status: demonstrated
 since: 2024
 one_line: Commercial CMOS ASICs inside the cryostat that synthesise qubit control waveforms and bias next to the qubits, replacing room-temperature racks and their coaxial lines.
 verdict: Proven end-to-end on 18 spin qubits and at room-temperature parity on 156 transmons for flux only; the binding constraint is milliwatts per qubit against a 2 W 4 K plant. Demote if nothing drives >50 qubits end-to-end by end-2027.
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -75,7 +75,7 @@ Conflicts: IBM's 23 mW per qubit [D][296] against 5 mW and under 2 mW [S][550] a
 | Organisation | Role | Country | What exactly they do with it | Evidence |
 |---|---|---|---|---|
 | HRL Laboratories | developer | US | 4 K controller sequencing 18 qubits | [D][190] [G:HRL-2026] |
-| IBM Quantum | developer | US | 14 nm flux ASICs; buying HRL | [D][296] [C][10], [527] |
+| IBM Quantum | developer | US | 14 nm flux ASICs; acquired HRL | [D][296] [C][10], [527] [G:IBM-HRL-CLOSED-2026-08] |
 | Intel | developer | US | Horse Ridge, Pando Tree | [C][272] [G:INTEL-2026] |
 | Microsoft | research | US | Gooseberry at 100 mK; charge-lock patent | [D][549] [G][555] |
 | University of Sydney | research | AU | mK CMOS driving Diraq spins | [D][551] |
@@ -86,8 +86,8 @@ Conflicts: IBM's 23 mW per qubit [D][296] against 5 mW and under 2 mW [S][550] a
 - 2025-02-25 · Quantum Machines · Series C · $170 M · PSG Equity · $280 M cumulative [C][528]
 - 2025-11-06 · DARPA QBI Stage B · up to $15 M each · eleven teams incl. IBM, Diraq [G:QBI-STAGEB-2025-11]
 - 2026-05-21 · GlobalFoundries; Diraq · CHIPS letters of intent · $375 M; $38 M · LOI [G:CHIPS-LOI-2026-05]
-- 2026-07-02 · SEEQC · S-1 for Nasdaq beside an Allegro merger · $1 B enterprise value, $65 M PIPE [C][556] [P][557]; SPAC merger terminated 2026-08-25, S-1 continues [G:SEEQC-SPAC-TERMINATED-2026-08]
-- 2026-07-23 · IBM · acquires HRL Laboratories · undisclosed · closing end Q3 2026 [C][10] [G:IBM-HRL-2026-07]
+- 2026-06-29 · SEEQC · S-1 for Nasdaq beside an Allegro merger · $1 B enterprise value, $65 M PIPE [C][556] [P][557]; SPAC merger terminated 2026-08-25, S-1 continues, IPO unpriced as of 30 Sep 2026 [G:SEEQC-SPAC-TERMINATED-2026-08]
+- 2026-07-23 · IBM · acquires HRL Laboratories · undisclosed · closed 2026-08-26 [C][10] [G:IBM-HRL-2026-07][G:IBM-HRL-CLOSED-2026-08]
 
 **Market & supply chain.** Nobody sells a cryo-CMOS controller as of 3 Sep 2026; the layer's revenue is warm racks from Quantum Machines, Zurich Instruments, Keysight and QBLOX, and Quantum Machines alone has raised $280 M [C][528], [558]. Cryo-CMOS itself is captive R&D; merchant offers are pre-revenue: SemiQon, FrostByte (€1.3 M) and Rhonexum ($1 M) [C][553], [559] [P][560]. G3, G4 and G7 pay for it; G1, G2 and G5 do not.
 
@@ -143,8 +143,8 @@ Open questions: (1) a defensible power-per-qubit definition? (2) will a foundry 
 - IBM's 2026 cryo-CMOS flux result exists only as conference abstracts [C][527]; no preprint or paper as of 2026-09-03, and the 14 nm FinFET attribution rests on the abstract text. IBM's modular-cryogenics blog (2026-08) gives cell wiring area and vacuum volume but no cooling power at 4 K.
 - Equal1's 99.9% / 99.3% / 99% fidelities and "35 monolithic quantum cells" are product-page claims [C][273] with no paper or dated release.
 - SemiQon's process node, fab location and the size of its 2026-07 PostScriptum investment are undisclosed.
-- SEEQC's revenue, cash and offering size appear in neither the filing announcement nor the trade-press summary [C][556] [P][557]; the $1 B enterprise value and $65 M PIPE are trade-press figures and the S-1 itself was not read.
+- SEEQC's revenue and cash appear in its S-1 filings, not in the filing announcement or the trade-press summary [C][556] [P][557]: $4.2 M revenue in 2025 and $18.1 M cash at 2026-06-30 (S-1 amendment of 2026-08-28) [G:SEEQC-S1A-2026-08]; the offering size is still blank, and the $1 B enterprise value and $65 M PIPE describe the terminated Allegro merger.
 - Quantum Machines' revenue is undisclosed and its ">50% of companies developing quantum computers" customer share is a company claim [C][528]; Zurich Instruments, Keysight and QBLOX publish nothing comparable, so the warm-control market this node would displace cannot be sized.
 - The QuTech/Fujitsu diamond cryo-CMOS ISSCC 2026 paper's power, channel count and process node were not obtainable; only the institutional release [C][554].
 - Cryo-CMOS patent-family counts: no named database publishes a dated count; PatSnap gives only regional "key result" tallies with a completeness disclaimer [P][563].
-- HRL's controller cost, tape-out schedule and whether IBM retains the 130 nm design are unstated in the acquisition release [C][10]; the acquisition was not confirmed closed as of 2026-09-03.
+- HRL's controller cost, tape-out schedule and whether IBM retains the 130 nm design are unstated in the acquisition release [C][10]; the acquisition closed on 2026-08-26 [G:IBM-HRL-CLOSED-2026-08].

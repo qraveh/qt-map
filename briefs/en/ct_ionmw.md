@@ -6,7 +6,7 @@ status: demonstrated
 since: 2024
 one_line: Ion gate drive synthesised as electrical signals and delivered by conductors inside the trap chip instead of by laser beams.
 verdict: Fidelity records are real but two-ion; the ~200-sources-per-1,000-qubits wiring claim remains a 2023 design study, with no multi-zone chip-integrated microwave device published as of 2026-09-03.
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -49,7 +49,7 @@ At 10³ qubits the binding question is whether an on-chip switch can sit microme
 
 ## Role in the stack
 
-The node sits on the architecture *Trapped ions — electronic qubit control (microwave / RF gates)* (IonQ/Oxford Ionics, eleQtron) and is the alternate control of *Trapped ions — QCCD (transport between zones)* (Universal Quantum). The register lists 7 machines using it, among them JION, QUARTET and iQPU / UQConnect. It **requires** surface-electrode ion-trap microfabrication, specifically the current-carrying traces; it **provides** the signal sources for the electronic near-field microwave gate; it **replaces** laser control of ions. The switching price is precise: gate lasers go, but cooling, state-preparation and readout lasers stay, so a "laser-free" machine still carries optics, the trap chip becomes a microwave design problem, and the species choice narrows to hyperfine ions with a usable clock transition. Here a natural carrier is driven by a wholly fabricated control structure — the manufacturing burden moves off the qubit onto the chip around it.
+The node sits on the architecture *Trapped ions — electronic qubit control (microwave / RF gates)* (IonQ/Oxford Ionics, eleQtron) and is the alternate control of *Trapped ions — QCCD (transport between zones)* (Universal Quantum). The register lists {{N_T_CT_IONMW_MACHINES}} machines using it, among them JION, QSea I, QUARTET and iQPU / UQConnect. It **requires** surface-electrode ion-trap microfabrication, specifically the current-carrying traces; it **provides** the signal sources for the electronic near-field microwave gate; it **replaces** laser control of ions. The switching price is precise: gate lasers go, but cooling, state-preparation and readout lasers stay, so a "laser-free" machine still carries optics, the trap chip becomes a microwave design problem, and the species choice narrows to hyperfine ions with a usable clock transition. Here a natural carrier is driven by a wholly fabricated control structure — the manufacturing burden moves off the qubit onto the chip around it.
 
 Derived clock = sum of the syndrome round: gate layers + transport + readout + reset: 1.5×10⁻³ s — seven gate layers of today's electronic gate plus readout and reset, no transport — against ~5.5×10⁻² s on a transport-based machine of the Helios type [D][97]. Neighbouring empty slots: cryogenic on-chip microwave synthesis; a trap-qualified on-chip current switch with a published electric-field-noise spectrum; superconducting current traces in an ion trap.
 

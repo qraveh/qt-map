@@ -6,7 +6,7 @@ status: demonstrated
 since: 2012
 one_line: Phosphorus donors placed by STM lithography in enriched silicon-28, the bound electron giving drive and readout, the ³¹P nucleus the long-lived qubit.
 verdict: Highest published per-gate fidelities in silicon, but a serial atom-by-atom write process and a single practitioner cap the register at eleven qubits with no dated parallelisation scheme.
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -27,7 +27,7 @@ The qubit is a nucleus, not a confined electron: with no orbital degree of freed
 Dominant term: register size and the electron-mediated gate. The main report's single "99.90% donor nuclear CZ" is not isolable from this work [D][192].
 
 ## Manufacturing, materials & supply chain
-Serial by construction: one tip, one site, so throughput is qubit-hours, not wafer-hours; no parallel exposure is published. Enriched ²⁸Si is dual-sourced as of 4 Sep 2026 — ASP Isotopes' Pretoria line since 2025-03, US DOE silane at 99.9999% ²⁸Si from 2026-07-16 [P][348] — so feedstock is not the constraint. Suppliers: SkyWater for US resonators [C][276], Bluefors for cryogenics [C][358]. The single point of failure moved in 2026: IonQ closed its ~USD 1.8 B purchase of SkyWater on 2026-07-31 [G][19], putting SQC's only named US manufacturing route inside a competitor. Export exposure is nil today — 4A906 bites only above 34 qubits [G][301]. Wiring is not the wall; the write step is.
+Serial by construction: one tip, one site, so throughput is qubit-hours, not wafer-hours; no parallel exposure is published. Enriched ²⁸Si is dual-sourced as of 4 Sep 2026 — ASP Isotopes' Pretoria line since 2025-03, US DOE silane at 99.9999% ²⁸Si from 2026-07-16 [P][348] — so feedstock is not the constraint. Suppliers: SkyWater for US resonators [C][276], Bluefors for cryogenics [C][358]. The single point of failure moved in 2026: IonQ closed its ~USD 1.8 B purchase of SkyWater on 2026-07-31 [G][19], putting SQC's only named US manufacturing route inside a competitor. Export exposure sits in the feedstock, not the machine: the US rule of 2024-09-06 created Export Control Classification Numbers (ECCNs) for isotopically enriched silicon and germanium — silicon qualifies below 0.08% of the nuclear-spin isotope ²⁹Si — as epitaxial layers (3C907), hydrides such as silane (3C908) and bulk material or oxide (3C909), so qubit-grade ²⁸Si is itself a controlled item; its quantum-computer ECCN, 4A906, starts at 34 qubits and, below 2,000, applies only under a two-qubit (C-NOT) error ceiling set for each size band — out of reach of an eleven-qubit register [G][301]. Wiring is not the wall; the write step is.
 
 ## Role in the stack
 Architecture: donor spins in silicon, as its primary carrier. Requires STM hydrogen lithography; provides the carrier for exchange links and spin-to-charge readout; substitutes for gate-defined dots at the cost of the whole process flow. Its clock contribution is not distinctive — µs gates and ~6 µs readout match dot spins, so sum of the syndrome round: gate layers + transport + readout + reset is 7.7 µs against their 8.5 µs, and the real bottleneck is a manufacturing quantity the clock cannot express. Verification: one group, one device, no replication, three inconsistent fidelity framings [D][192].

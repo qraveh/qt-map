@@ -5,8 +5,8 @@ layer: "4 Connectivity / transport"
 status: demonstrated
 since: 2024
 one_line: "A continuously fed atom reservoir (optical-lattice conveyor belts from a distant MOT, a cavity-enhanced lattice or a molasses-stopped beam) from which tweezers extract fresh atoms into the array while the stored qubits keep their coherence."
-verdict: "Demonstrated as an enabler: Harvard/MIT held over 3,000 atoms for over 2 h and sort 15,000 qubits/s, the authors' own sufficiency figure for a ~10,000-qubit processor; as of 2026-09-26 the largest published QEC run with reservoir reloading found is 64 atoms, and the register's only carrier has no entangling result."
-updated: 2026-09-26
+verdict: "Demonstrated as an enabler: Harvard/MIT held over 3,000 atoms for over 2 h and sort 15,000 qubits/s, the authors' own sufficiency figure for a ~10,000-qubit processor; as of 2026-09-26 the largest published QEC run with reservoir reloading found is 64 atoms, and the register's only primary carrier has no entangling result."
+updated: 2026-09-30
 ---
 
 MOT = magneto-optical trap; AOD = acousto-optic deflector; DD = dynamical decoupling (XY16 = its 16-pulse sequence); T2 / T2* = echo / Ramsey coherence time; ³P₀ = metastable clock state of Sr and Yb; QEC = quantum error correction; G1–G7 = the report's goal classes (see Actors & economics).
@@ -42,7 +42,7 @@ Three synchronised loops — reservoir delivery (~150 ms), batch extraction, ima
 ## Role in the stack
 Slot 4 of Rydberg tweezer array — alkali (Rb/Cs) and Rydberg tweezer array — alkaline-earth (Yb/Sr), erasure-native, beside cx_aod. It **requires** ct_laser (lattice and tweezer light) and fab_optics (second MOT region, conveyor optics, vacuum). It **replaces** one-shot loading (the edge from cx_aod), though every machine keeps AOD tweezers for extraction and sorting. The gap ledger holds: AOD moves span hundreds of micrometres in 0.4–1.6 ms; a conveyor carries a ~10⁶-atom reservoir half a metre [D][144]. Filed by function: a lattice reservoir or a molasses-stopped beam does the same job. Conflicts with alkali (scattered MOT light) and ae_atom (repumper depleting stored atoms) are mitigated (2025-09; 2024-02). It **provides** reload flux and run length: >2 h, >5 × 10⁷ atoms through 3,000 sites [D][144].
 Reload closes the loop erasure conversion opens: converting 98 % of ¹⁷¹Yb errors to erasures raised the simulated threshold from 0.937 % to 4.15 % [S][8]; Atom Computing corrected on average 1.8 lost atoms across 24 logical qubits [D][149]; delayed-erasure decoding uses loss of unknown timing [S][508]. Each converted error is a hole that mid-circuit imaging locates and the reservoir fills [D][148]; without reload, conversion shortens the run.
-Register: two machines — the continuously reloaded 3,000-atom machine (Harvard/MIT, primary, demonstrated Sep 2025), cell ✅ verified (arXiv:2506.20660, Fig. 1a), two-qubit error n/a — an enabler without an entangling result; and Phoenix (Gen-1) and Gen-2 (Atom Computing, alternate), cell ✅.
+Register: {{N_T_CX_RELOAD_MACH}} — the continuously reloaded 3,000-atom machine (Harvard/MIT, primary, demonstrated Sep 2025), cell ✅ verified (arXiv:2506.20660, Fig. 1a), two-qubit error n/a — an enabler without an entangling result; and Phoenix (Gen-1) and Gen-2 (Atom Computing, alternate), cell ✅.
 
 ## Evidence — how the numbers were measured
 The discriminating test is stored-qubit coherence with reload on versus off. Harvard (Rb, XY16): T2 1.34(4) s reference, 1.15(3) s with the MOT, 1.09(3) s adding imaging and shielding [D][144] — 14–19 % lower, ~4–5σ [S]. Princeton (Yb): echo T2 5.4(9) versus 7(1) s, T2* 0.73(2) versus 0.69(2) s, unchanged within 1.5σ [D][506]. No gate fidelity on stored qubits during reload is published, as of 2026-09-26. The one logical figure: 0.63(3) % and 0.64(4) % error per cycle over up to 90 cycles with reloading, on 32- and 64-atom toric codes, cycle time unstated [D][148]. Flux is quoted as atoms, initialised or sorted qubits, a tenfold spread; the Atlas uses initialised qubits/s.
@@ -91,4 +91,4 @@ Confirm if, by 2027-12-31, a published experiment runs gates or QEC rounds on �
 - 2026-09-26: Atom Computing's 30 cm MOT distance and per-cycle logical errors come from an automated read of arXiv:2606.04079 v1; no journal version, author count or syndrome-cycle time found.
 - 2026-09-26: Affiliations of Lim et al. (arXiv:2604.07205; the dossier says Pasqal/Institut d'Optique), Schymik et al. and the MPQ authors were not shown on the arXiv abstract pages.
 - 2026-09-26: Caltech's lifetime is the abstract's 23 min; the dossier's 22.9(1) min and 51.2 % fill were not checked in the full text.
-- 2026-09-26: No patent search was run; the register lists only harvard-continuous-3000 here — Atom Computing's toric-code machine is a candidate second carrier.
+- 2026-09-26: No patent search was run. The register lists {{N_T_CX_RELOAD_MACH}} here — harvard-continuous-3000 (primary) and Atom Computing's toric-code machine, atom-computing-phoenix (alternate).

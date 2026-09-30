@@ -1,6 +1,6 @@
 {
  "edition": "2026.09",
- "written": "by build/machines_chapter.py from the register of quantum-machines · 17 Sep 2026, re-cut 26 Sep 2026 (three ion paths, two analog paths, 14 gaps → technologies, sentinels → cell values)",
+ "written": "by build/machines_chapter.py from the register of quantum-machines · 17 Sep 2026, re-cut 26 Sep 2026 (three ion paths, two analog paths, 14 gaps → technologies, sentinels → cell values), extended 29 Sep 2026 (24 machines added, 3 renamed, 3 split, 1 removed; ten cell corrections — data/register/patch-2026-09-29.json)",
  "forecasts": [
   {
    "id": "F1a",
@@ -65,7 +65,7 @@
   {
    "id": "F5",
    "indicator": "machines with integrated control; superconducting devices ≥ 100 qubits driven cryogenically",
-   "now": "22 / 0",
+   "now": "21 / 0",
    "e2027": "≤ 25 / 0: the candidates are demos and claims (IBM Quantum Heron r2, OQC GENESIS, OQC Toshiko, QuamCore, QuantWare Bass-A10K (VIO-40K), foundry 8-qubit array); IBM's cryo-CMOS is scheduled with Starling (2029)",
    "e2028": "≤ 30 / 0–1",
    "basis": "H3's mechanism: integration happens where physics forces it (spins, annealers, surface traps) and is a plan elsewhere; the register's control-placement field lists the plans",

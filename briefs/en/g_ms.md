@@ -6,7 +6,7 @@ status: demonstrated
 since: 2003
 one_line: Bichromatic-laser spin-dependent force that entangles trapped ions through a geometric phase on a shared motional mode, leaving no population in it.
 verdict: Still the entangling mechanism under every deployed laser-gate ion system, but gate time scales with chain length (1.6 µs on a pair, 672 µs median on 30 ions) and its floor is laser noise plus photon scattering — the two terms electronic gates delete.
-updated: 2026-09-04
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -51,7 +51,7 @@ Headline numbers are benchmarking averages over a zone or chain; no vendor publi
 | Oxford Ionics (IonQ) | developer | UK | Laser-free electronic gate, the substitute | [D][102] |
 | Alpine Quantum Technologies | developer | Austria | Rack-mounted LYNX, noise-desensitised variant | [C][128] |
 | Leibniz Supercomputing Centre | user | Germany | 20-qubit AQT system, the only public price | [C][323] |
-| DARPA | regulator | US | QBI Stage B funds both large roadmaps | [G:QBI-STAGEB-2025-11] |
+| DARPA | funder | US | QBI Stage B funds both large roadmaps | [G:QBI-STAGEB-2025-11] |
 
 **Money.**
 - 2023-12-05 · Alpine Quantum Technologies · sale to Leibniz Supercomputing Centre · ≈EUR 9.8 M, 20 qubits · closed [C][323]

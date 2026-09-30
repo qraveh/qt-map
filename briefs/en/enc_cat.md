@@ -6,7 +6,7 @@ status: demonstrated
 since: 2020
 one_line: A two-photon-dissipation-stabilised coherent-state qubit whose bit-flips fall exponentially with photon number while phase-flips rise linearly with it.
 verdict: The bias is real but small where measured — bias > 25 under a CX at n̄ = 2; the resource estimates imply a cavity lifetime near 50 ms, twice the best ever built.
-updated: 2026-09-04
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -27,7 +27,7 @@ A qubit spanned by two coherent states of a cavity mode, held there by engineere
 Phase-flip dominates: ~10⁻¹ per cycle where a code has run, against the ~10⁻³ assumed; bit-flip suppression stopped being the problem two years ago.
 
 ## Manufacturing, materials & supply chain
-It has no fabrication step of its own, adding a continuous parametric pump and buffer mode to the host cavity. That pump is the I/O cost: a drive line, a pump line and a shared ancilla readout chain per cat. Ocelot spends five buffers and four ancilla transmons on five cats [D][80]. At 10³ cats the wall is pump-line count and pump heating in one dilution unit; 10⁴–10⁶ needs multiplexed cryogenic drive, undemonstrated here. Supply chain and export exposure are the host cavity's.
+It has no fabrication step of its own, adding a continuous parametric pump and buffer mode to the host cavity. That pump is the I/O cost: a drive line, a pump line and a readout chain per cat — through a shared ancilla transmon on Ocelot, through the buffer at Alice & Bob [C][G:ALICEBOB-BOSON4-DOCS-2026]. Ocelot spends five buffers and four ancilla transmons on five cats [D][80]. At 10³ cats the wall is pump-line count and pump heating in one dilution unit; 10⁴–10⁶ needs multiplexed cryogenic drive, undemonstrated here. Supply chain and export exposure are the host cavity's.
 
 ## Role in the stack
 Architecture: bosonic cavity qubits — cat and GKP, where it is the primary encoding. Requires a bosonic cavity mode; provides the biased inner qubit for repetition-cat and LDPC-cat concatenation and for a cat–cat CNOT. It replaces the bare two-level encoding, competes with GKP and conflicts with the unbiased surface code. Derived round 1.44 µs, gate-set, against the measured 2.8 µs syndrome cycle [D][80]. Verification: the distance-3 and distance-5 points were taken at n̄ = 1 and n̄ = 1.5, so "flat with distance" mixes distance with operating point [D][80]. The 44-minute mean bit-flip is preliminary; the same vendor's roadmap quotes a 252-minute peak from that run [C][77][C][412].

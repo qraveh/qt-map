@@ -6,7 +6,7 @@ status: demonstrated
 since: 2004
 one_line: Spin converted into a charge-motion event by Pauli blockade or energy-selective tunnelling, then read by an rf-matched charge sensor in microseconds without destroying the qubit.
 verdict: The readout every silicon architecture uses and the term that sets the silicon clock — 6 µs at 99.2% or 100 µs at 99.9%, with no published device delivering both.
-updated: 2026-09-04
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -29,7 +29,7 @@ Dominant term: SNR at short windows, T₁ at long; no foundry device publishes s
 Built in the qubit's own 300 mm CMOS stack, the sensor adds no materials risk; the gate-based box, needing only an electrode and a tank, is the foundry-favoured form. Instrumentation is bought, not built: Zurich Instruments' SHFQC-LRT gives ≤32 µs weighted integration [C][625], and Quantum Machines' OPX1000 lists nine spin customers including Diraq, HRL, imec and Equal1 [C][449]. Frequency multiplexing keeps line count sub-linear: the wall at 10³ is tank spacing across the band; at 10⁴–10⁶ it is aggregate readout bandwidth and amplifier count, not the sensor. HRL's 4 K controller (366 DACs, ≤3.5 W) shows the chain can move inside the fridge [D][190].
 
 ## Role in the stack
-Required by quantum-dot and donor spins, with no replace or conflict edges — the load-bearing readout node in both the silicon/germanium quantum-dot spin architecture and the donor-spin architecture. The register lists 10 machines using it, among them QM-One, Bell-1 (UnityQ), the 11-qubit donor processor and the HRL exchange-only silicon spin processor (18 EO qubits from 54 quantum dots). With exchange gates in tens of nanoseconds, readout at 6–100 µs sets derived clock = sum of the syndrome round: gate layers + transport + readout + reset: 8.5×10⁻⁶ s at the fast end, 6.3 µs of it readout. Verification: the two headline figures are different devices with different sensors — a speed–fidelity curve, not one system — and the 99.9% bundles initialisation. Neither is replicated independently.
+Required by quantum-dot and donor spins, with no replace or conflict edges — the load-bearing readout node in both the silicon/germanium quantum-dot spin architecture and the donor-spin architecture. The register lists {{N_T_RO_S2C_MACHINES}} machines using it, among them QM-One, RacQ (Bell-1), the 11-qubit donor processor and the HRL exchange-only silicon spin processor (18 EO qubits from 54 quantum dots). With exchange gates in tens of nanoseconds, readout at 6–100 µs sets derived clock = sum of the syndrome round: gate layers + transport + readout + reset: 8.5×10⁻⁶ s at the fast end, 6.3 µs of it readout. Verification: the two headline figures are different devices with different sensors — a speed–fidelity curve, not one system — and the 99.9% bundles initialisation. Neither is replicated independently.
 
 ## Actors & economics
 **Who.**

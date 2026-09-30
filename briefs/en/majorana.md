@@ -6,7 +6,7 @@ status: emerging
 since: 2025
 one_line: "Fermion parity stored non-locally in a gate-defined semiconductor–superconductor wire pair; only single-wire parity readout has been measured."
 verdict: "No topological qubit exists as of 2026-09-03: one measured basis, no X-basis lifetime, no two-qubit operation, no independent replication of the topological claim."
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -101,7 +101,7 @@ Legg argues the Topological Gap Protocol can label the same region gapped or gap
 
 **Market & supply chain.** Nobody sells equipment specific to this technology; inputs are general MBE tools, III–V substrates and standard dilution refrigerators. Concentration risk is total: one vendor, one captive fab, no merchant supply. Unit economics are unquotable — no device sold, no cloud access, no attributable revenue. Only G3 and G4 (early and large-scale fault tolerance) would pay for it; G1, G2, G5 and G7 are served by machines Microsoft buys from others, which the Magne order documents [G:MAGNE-2025-07].
 
-**IP & standards.** No topological-specific patent count from a named database was found; the only dated figure is PatSnap's 1,175 Microsoft quantum patent families to 2026-06-30 [P][G:PATSNAP-2026-06], spanning all modalities. No litigation over Majorana device IP was found, and there is no standards body; the only openly published aligned stack is Microsoft's Q#/Azure Quantum Development Kit, whose instruction model presumes the architecture rather than validating it.
+**IP & standards.** No topological-specific patent count from a named database was found; the only dated figure is the 1,175 Microsoft quantum patent families counted in PatSnap's landscape published on 2026-06-30 [P][G:PATSNAP-2026-06], spanning all modalities. No litigation over Majorana device IP was found, and there is no standards body; the only openly published aligned stack is Microsoft's Q#/Azure Quantum Development Kit, whose instruction model presumes the architecture rather than validating it.
 
 **Roadmaps & track record.** (promised on · promised for · status 2026-09-03): 2018-03 · quantised Majorana conductance · retracted 2021-03-08 [D][365]. 2025-02 · topological qubit demonstrated · contested, with a Nature editor's note [D][13], [214]. 2025 · "years, not decades" · superseded [C][215]. 2026-06 · 2029 fault tolerance · no two-qubit operation exists [C][215]. Nokia: end-2025 · Pauli-X control result · no publication found; end-2026 · qubit in superposition · outstanding [P][369]. Microsoft delivers excellent measurements on schedule and labels them with claims they do not support — consistent from 2018 to 2026; a 2029 date resting on zero demonstrated two-qubit physics is an intention, not a forecast. QuTech's statements have matched its data. Nokia's roadmap is too thinly published to judge.
 

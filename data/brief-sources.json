@@ -237,12 +237,14 @@
     "Austin G. Fowler"
    ],
    "title": "Minimum weight perfect matching of fault-tolerant topological quantum error correction in average O(1) parallel time",
-   "journal": "Quantum Information and Computation",
+   "journal": "Quantum Inf. Comput.",
    "volume": "15",
-   "pages": "0145",
-   "date": "2013-07-06",
+   "issue": "1&2",
+   "pages": "145–158",
+   "date": "2015-01",
+   "doi": "10.26421/QIC15.1-2-9",
    "arxiv": "1307.1740",
-   "kind": "preprint",
+   "kind": "journal",
    "url": "https://arxiv.org/abs/1307.1740",
    "verified": true
   },
@@ -2792,9 +2794,13 @@
     "Lin Zhong"
    ],
    "title": "Micro Blossom: Accelerated Minimum-Weight Perfect Matching Decoding for Quantum Error Correction",
+   "journal": "Proc. 30th ACM Int. Conf. Architectural Support for Programming Languages and Operating Systems (ASPLOS '25)",
+   "volume": "2",
    "date": "2025-02-20",
+   "pubdate": "2025-03",
+   "doi": "10.1145/3676641.3716005",
    "arxiv": "2502.14787",
-   "kind": "preprint",
+   "kind": "journal",
    "url": "https://arxiv.org/abs/2502.14787",
    "also": [
     "https://github.com/yuewuo/micro-blossom"
@@ -4302,6 +4308,35 @@
    "arxiv": "2002.09532",
    "kind": "journal",
    "url": "https://www.nature.com/articles/s41586-020-2667-0",
+   "verified": true
+  },
+  "doi:10.1038/s41586-020-2811-x": {
+   "authors": [
+    "Robert J. Niffenegger",
+    "Jules Stuart",
+    "Cheryl Sorace-Agaskar",
+    "Dave Kharas",
+    "Suraj Bramhavar",
+    "Colin D. Bruzewicz",
+    "William Loh",
+    "Ryan T. Maxson",
+    "Robert McConnell",
+    "David Reens",
+    "Gavin N. West",
+    "Jeremy M. Sage",
+    "John Chiaverini"
+   ],
+   "title": "Integrated multi-wavelength control of an ion qubit",
+   "journal": "Nature",
+   "volume": "586",
+   "issue": "7830",
+   "pages": "538–542",
+   "date": "2020-10-21",
+   "pubdate": "2020-10",
+   "doi": "10.1038/s41586-020-2811-x",
+   "arxiv": "2001.05052",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-020-2811-x",
    "verified": true
   },
   "doi:10.1038/s41586-020-2823-6": {
@@ -5946,7 +5981,7 @@
   },
   "https://patents.google.com/patent/gb2641501a/en": {
    "authors": [
-    "Ziad Abbas Bracken",
+    "Abbas Bracken Ziad",
     "Ankit Zalawadiya",
     "Ben Barber",
     "Luka Skoric"
@@ -6169,7 +6204,7 @@
    ],
    "org": "PostQuantum.com",
    "title": "The Optical Table's Hidden Supply Chain: Who Really Wins If Trapped-Ion Quantum Computing Wins",
-   "date": "2026-04-10",
+   "date": "2025-10-01",
    "kind": "web",
    "site": "PostQuantum.com",
    "url": "https://postquantum.com/quantum-ecosystem/trapped-ion-quantum-ecosystem/",
@@ -7391,6 +7426,15 @@
    "kind": "web",
    "site": "LIGENTEC",
    "url": "https://www.ligentec.com/about-our-story/",
+   "verified": true
+  },
+  "https://www.lionix-international.com/about-us/blog/a-photonic-integrated-ion-trap-for-scalable-quantum-computing": {
+   "org": "LioniX International",
+   "title": "A photonic integrated ion trap for scalable quantum computing",
+   "date": "2020-11-20",
+   "kind": "web",
+   "site": "LioniX International",
+   "url": "https://www.lionix-international.com/about-us/blog/a-photonic-integrated-ion-trap-for-scalable-quantum-computing/",
    "verified": true
   },
   "https://www.ll.mit.edu/r-d/projects/squill-foundry": {
@@ -9161,6 +9205,10 @@
    {
     "work": "report:T1#0",
     "grade": "D"
+   },
+   {
+    "work": "doi:10.1038/s41586-024-07275-6",
+    "grade": "D"
    }
   ],
   "ct_cryocmos": [
@@ -9470,6 +9518,14 @@
    },
    {
     "work": "report:I4#0",
+    "grade": "D"
+   },
+   {
+    "work": "https://www.lionix-international.com/about-us/blog/a-photonic-integrated-ion-trap-for-scalable-quantum-computing",
+    "grade": "C"
+   },
+   {
+    "work": "doi:10.1038/s41586-020-2811-x",
     "grade": "D"
    },
    {
@@ -9792,7 +9848,7 @@
    },
    {
     "work": "https://www.businesswire.com/news/home/20260629077919/en/seeqc-files-registration-statement-for-proposed-initial-public-offering",
-    "grade": "P"
+    "grade": "C"
    },
    {
     "work": "https://www.sec.gov/archives/edgar/data/1779977/000121390026095175/ea028847004ex2-2.htm",
@@ -9989,6 +10045,10 @@
     "grade": "D"
    },
    {
+    "work": "report:I12#0",
+    "grade": "D"
+   },
+   {
     "work": "report:I23#1",
     "grade": "C"
    },
@@ -10159,6 +10219,10 @@
    {
     "work": "report:S32#0",
     "grade": "C"
+   },
+   {
+    "work": "https://quantware.com/news/quantware-announces-scaling-breakthrough-with-vio-40k",
+    "grade": "C"
    }
   ],
   "cx_nn": [
@@ -10225,6 +10289,10 @@
    {
     "work": "https://www.patsnap.com/resources/blog/rd-blog/quantum-computing-patent-landscape",
     "grade": "P"
+   },
+   {
+    "work": "doi:10.1038/s41586-024-07275-6",
+    "grade": "D"
    }
   ],
   "cx_qccd": [
@@ -10447,6 +10515,14 @@
    {
     "work": "https://www.quobly.io",
     "grade": "C"
+   },
+   {
+    "work": "report:Q9#0",
+    "grade": "D"
+   },
+   {
+    "work": "doi:10.1038/s41586-024-07275-6",
+    "grade": "D"
    }
   ],
   "cx_switch": [
@@ -10764,7 +10840,7 @@
    },
    {
     "work": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/alphaqubit-quantum-error-correction",
-    "grade": "D"
+    "grade": "C"
    },
    {
     "work": "arxiv:2510.22724",
@@ -10813,6 +10889,14 @@
    {
     "work": "report:X9#1",
     "grade": "P"
+   },
+   {
+    "work": "https://patents.justia.com/search?q=%22surface+code%22+quantum+error+correction&company=google",
+    "grade": "G"
+   },
+   {
+    "work": "report:N5#1",
+    "grade": "D"
    }
   ],
   "dec_relaybp": [
@@ -10830,7 +10914,7 @@
    },
    {
     "work": "report:S32#0",
-    "grade": "D"
+    "grade": "R"
    },
    {
     "work": "arxiv:2308.07915",
@@ -10850,7 +10934,7 @@
    },
    {
     "work": "https://www.prnewswire.com/news-releases/qblox-and-riverlane-demonstrate-integration-enabling-real-time-quantum-error-correction-302716254.html",
-    "grade": "D"
+    "grade": "C"
    },
    {
     "work": "report:S28#0",
@@ -10910,7 +10994,7 @@
    },
    {
     "work": "https://qutech.nl/2026/06/25/a-step-toward-faster-quantum-networks",
-    "grade": "D"
+    "grade": "P"
    },
    {
     "work": "arxiv:2406.01704",
@@ -11491,6 +11575,10 @@
    {
     "work": "report:Q2#0",
     "grade": "D"
+   },
+   {
+    "work": "doi:10.1038/s41586-024-07275-6",
+    "grade": "D"
    }
   ],
   "enc_timebin": [
@@ -11543,10 +11631,6 @@
    {
     "work": "report:B7#0",
     "grade": "D"
-   },
-   {
-    "work": "report:B10#0",
-    "grade": "C"
    },
    {
     "work": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-demonstrates-first-scalable-on-chip-cryogenic-control-of-gate-model-qubits",
@@ -11779,12 +11863,24 @@
    {
     "work": "https://www.hpcwire.com/off-the-wire/quobly-raises-e115m-series-a-to-industrialize-silicon-quantum-computing/",
     "grade": "P"
+   },
+   {
+    "work": "https://ir.aspisotopes.com/news-events/press-releases/detail/56/asp-isotopes-inc-commences-commercial-production-of",
+    "grade": "C"
+   },
+   {
+    "work": "https://www.hpcwire.com/off-the-wire/doe-advances-domestic-supply-of-silicon-germanium-isotopes-for-quantum-computing",
+    "grade": "G"
+   },
+   {
+    "work": "arxiv:2601.03922",
+    "grade": "S"
    }
   ],
   "fab_diamond": [
    {
     "work": "https://qutech.nl/2026/06/25/a-step-toward-faster-quantum-networks",
-    "grade": "D"
+    "grade": "P"
    },
    {
     "work": "report:Q13#1",
@@ -11831,6 +11927,10 @@
    {
     "work": "report:T5#0",
     "grade": "C"
+   },
+   {
+    "work": "https://www.federalregister.gov/documents/2024/09/06/2024-19633/implementation-of-additional-export-controls-certain-advanced-computing-items-supercomputer-and",
+    "grade": "G"
    }
   ],
   "fab_optics": [
@@ -12023,12 +12123,12 @@
     "grade": "P"
    },
    {
-    "work": "https://www.patsnap.com/resources/blog/articles/quantum-error-correction-patent-landscape-2026",
-    "grade": "P"
-   },
-   {
     "work": "report:S6#0",
     "grade": "C"
+   },
+   {
+    "work": "https://www.patsnap.com/resources/blog/rd-blog/quantum-computing-patent-landscape",
+    "grade": "P"
    }
   ],
   "fab_stm": [
@@ -12137,6 +12237,14 @@
    {
     "work": "https://www.patsnap.com/resources/blog/rd-blog/trapped-ion-quantum-computing-2026-patsnap-eureka",
     "grade": "P"
+   },
+   {
+    "work": "arxiv:2101.11390",
+    "grade": "D"
+   },
+   {
+    "work": "report:I12#0",
+    "grade": "D"
    }
   ],
   "fluxonium": [
@@ -12291,6 +12399,10 @@
     "grade": "D"
    },
    {
+    "work": "report:B3#0",
+    "grade": "D"
+   },
+   {
     "work": "https://www.federalregister.gov/documents/2024/09/06/2024-19633/implementation-of-additional-export-controls-certain-advanced-computing-items-supercomputer-and",
     "grade": "G"
    },
@@ -12363,10 +12475,6 @@
    {
     "work": "report:S28#0",
     "grade": "G"
-   },
-   {
-    "work": "report:B12#0",
-    "grade": "C"
    }
   ],
   "g_cr": [
@@ -12599,6 +12707,10 @@
    {
     "work": "report:Q12#0",
     "grade": "C"
+   },
+   {
+    "work": "doi:10.1038/s41586-024-07275-6",
+    "grade": "D"
    }
   ],
   "g_fusion": [
@@ -13088,7 +13200,7 @@
    },
    {
     "work": "https://qutech.nl/2026/06/25/a-step-toward-faster-quantum-networks",
-    "grade": "D"
+    "grade": "P"
    },
    {
     "work": "https://thequantuminsider.com/2026/06/17/atom-computing-and-nu-quantum-partner-to-scale-neutral-atom-quantum-computers",
@@ -13125,6 +13237,10 @@
    {
     "work": "report:N19#0",
     "grade": "G"
+   },
+   {
+    "work": "doi:10.1038/s41467-024-50355-4",
+    "grade": "D"
    }
   ],
   "ic_cryolink": [
@@ -13375,6 +13491,14 @@
    {
     "work": "arxiv:2505.09036",
     "grade": "S"
+   },
+   {
+    "work": "https://www.ibm.com/quantum/blog/ibm-quantum-roadmap-2025",
+    "grade": "C"
+   },
+   {
+    "work": "report:S7#1",
+    "grade": "D"
    }
   ],
   "ic_multidie": [
@@ -13437,6 +13561,10 @@
    {
     "work": "https://www.sify.com/science-tech/qpiai-unveils-kaveri-indias-first-aatmanirbhar-64-qubit-quantum-chip",
     "grade": "P"
+   },
+   {
+    "work": "doi:10.1038/s41567-026-03211-9",
+    "grade": "D"
    }
   ],
   "ic_spinphoton": [
@@ -13459,12 +13587,20 @@
    {
     "work": "https://postquantum.com/quantum-computing-companies/photonic-inc",
     "grade": "P"
+   },
+   {
+    "work": "doi:10.1038/s41467-025-66722-8",
+    "grade": "D"
+   },
+   {
+    "work": "report:I16#0",
+    "grade": "D"
    }
   ],
   "ic_transducer": [
    {
     "work": "arxiv:2605.26976",
-    "grade": "D"
+    "grade": "P"
    },
    {
     "work": "arxiv:2505.00542",
@@ -13512,6 +13648,18 @@
    },
    {
     "work": "https://quantumcomputingreport.com/qphox-rigetti-and-qblox-demonstrate-optical-readout-technique-for-superconducting-qubits",
+    "grade": "P"
+   },
+   {
+    "work": "report:S17#0",
+    "grade": "C"
+   },
+   {
+    "work": "https://newsroom.ibm.com/2026-06-02-ibm-commits-more-than-10-billion-to-quantum-computing,-funding-its-roadmap-from-todays-leading-systems-to-the-worlds-first-fault-tolerant-quantum-computers",
+    "grade": "C"
+   },
+   {
+    "work": "arxiv:2602.12773",
     "grade": "P"
    }
   ],
@@ -13893,6 +14041,10 @@
    {
     "work": "https://www.patsnap.com/resources/blog/rd-blog/spin-qubit-silicon-quantum-dot-arrays-2026-patsnap-eureka",
     "grade": "P"
+   },
+   {
+    "work": "doi:10.1038/s41586-024-07275-6",
+    "grade": "D"
    }
   ],
   "ro_disp": [
@@ -14143,6 +14295,10 @@
    {
     "work": "report:I26#0",
     "grade": "R"
+   },
+   {
+    "work": "https://postquantum.com/quantum-ecosystem/trapped-ion-quantum-ecosystem",
+    "grade": "P"
    }
   ],
   "ro_fluxro": [
@@ -14829,6 +14985,10 @@
    {
     "work": "https://quantumledger.report/darpa-qbi",
     "grade": "P"
+   },
+   {
+    "work": "report:S6#0",
+    "grade": "C"
    }
   ]
  }

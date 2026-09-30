@@ -6,7 +6,7 @@ status: demonstrated
 since: 2016
 one_line: Camera-based fluorescence detection of neutral atoms — non-destructive, mid-circuit, millisecond by default, microsecond in single-group demos.
 verdict: Sets the neutral-atom QEC round at ~1 ms; unless sub-100 µs low-loss imaging reaches shipped hardware by 2028 it stays the largest fixed cost in the cycle.
-updated: 2026-09-04
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -29,7 +29,7 @@ Signal is collection solid angle times quantum efficiency times scattering rate 
 Dominant error: imaging-induced loss, not misassignment.
 
 ## Manufacturing, materials & supply chain
-No fab: an objective, dichroics and a camera on a bench. Hamamatsu's ORCA-Quest qCMOS is the named sensor across the Harvard/QuEra line, with no second source at this sensitivity [P][329]; objectives are commodity microscope optics. Imaging sits inside the QEC cycle, so its cost is per round, not per shot. At 10³ atoms one frame covers the array; at 10⁴–10⁶ pixel count, frame rate and illumination power force parallel zones with a camera each — the regime where SLM/AOD refresh near 10 MHz also stops scaling. Export exposure is indirect: 4A906 binds the machine by qubit count, nothing names tweezer optics or cameras [G][301].
+No fab: an objective, dichroics and a camera on a bench. Hamamatsu's ORCA-Quest qCMOS is the named sensor across the Harvard/QuEra line, with no second source at this sensitivity [P][329]; objectives are commodity microscope optics. Imaging sits inside the QEC cycle, so its cost is per round, not per shot. At 10³ atoms one frame covers the array; at 10⁴–10⁶ pixel count, frame rate and illumination power force parallel zones with a camera each — the regime where beam steering also stops scaling in one device: a deflector resolves as many spots as its RF bandwidth times the acoustic transit across the beam, a transit that also bounds how fast it re-points a trap, and liquid-crystal modulators reframe only at tens of hertz. Export exposure is indirect: 4A906 binds the machine only when its qubit count and C-NOT error fall in the same band, from 34–99 qubits at ≤ 10⁻⁴ to any error from 2,000 qubits [G:BIS-3A901A-CRYOCMOS]; nothing names tweezer optics or cameras [G][301].
 
 ## Role in the stack
 It is the readout of all three neutral-atom architectures: the alkali (Rb/Cs) and alkaline-earth (Yb/Sr) Rydberg tweezer arrays and the neutral-atom analog simulator. Requires an alkali or alkaline-earth atom with a cycling transition; provides the non-destructive mid-circuit measurement real-time decoding needs, and turns atom loss into detectable erasure, not silent Pauli error. Derived clock = sum of the syndrome round: gate layers + transport + readout + reset ≈ 1.3×10⁻³ s, transport first and this readout second at 501 µs, not the 270 ns gate — ~10³× a superconducting round. Verification: both microsecond results are single-group and single-species; Kyoto's uses spinless ¹⁷⁴Yb, so it establishes occupancy discrimination, not hyperfine state readout, and USTC's 15 µs averages over a 25-site subarray. Neither has run inside a logical memory.

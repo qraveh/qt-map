@@ -6,7 +6,7 @@ status: demonstrated
 since: 2020
 one_line: "A programmable passive unitary on N optical modes — a beamsplitter/phase-shifter mesh or time-bin fibre loops — that scatters squeezed light or single photons into detectors for sampling, with no entangling gate and no feed-forward."
 verdict: "A working sampler, not a gate: 8,176 modes and up to 3,050 detected photons (Jiuzhang 4.0, 2026). Every earlier advantage claim was matched on its own benchmarks by a published classical sampler; as of 2026-09-26 none was found for Jiuzhang 4.0, and ORCA publishes no mode, loss or clock figure for PT-2."
-updated: 2026-09-26
+updated: 2026-09-30
 ---
 
 GBS = Gaussian boson sampling; MZI = Mach–Zehnder interferometer; EOM = electro-optic modulator; PNR = photon-number-resolving; SNSPD = superconducting nanowire single-photon detector; TES = transition-edge sensor; MPS = matrix-product state (a tensor network); USTC = University of Science and Technology of China; NQCC = UK National Quantum Computing Centre; G1–G7 = the report's goal classes (G1: analog and NISQ simulation).
@@ -59,7 +59,7 @@ No gate exists to benchmark; samples are compared with the ideal distribution, a
 - 2024-06-05 · Montana State University · two PT-1 systems, US Air Force-funded · undisclosed · contracted [C][468]
 - 2025-06-11 · ORCA · NQCC testbed installed under the UK's £121 M initiative · undisclosed · delivered [C][469]
 
-**Market & supply chain.** Of the register's three machines only PT-2 is sold as a system; USTC is academic, and the register marks Borealis superseded by Aurora. ORCA does not publicise most of its fundraising [P][470].
+**Market & supply chain.** Of the register's {{N_T_G_LOINTER_MACHINES_W}} machines only ORCA's PT-1 and PT-2 are sold as systems; USTC is academic, and the register marks Borealis superseded by Aurora. ORCA does not publicise most of its fundraising [P][470].
 
 **IP & standards.** No sampler-specific patent count or benchmark standard found as of 2026-09-26.
 

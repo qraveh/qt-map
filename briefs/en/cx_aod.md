@@ -6,7 +6,7 @@ status: demonstrated
 since: 2022
 one_line: "Crossed acousto-optic deflectors move tweezers to shuttle atoms between storage, entangling and readout zones at ~99.95% per move."
 verdict: "Real: 610 µm in 1.6 ms at 99.95% survival; 448 atoms under fault-tolerant control. Unverified: AOD channel bandwidth past 10⁴ atoms. Demote if no >10³-atom zoned system runs long-memory QEC by 2028."
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -37,11 +37,11 @@ Dominant error term: atom loss at release and recapture — the channel that mak
 
 ## Manufacturing, materials & supply chain
 
-No fab here — free-space optics bolted to a vacuum cell, so "yield" is array filling fraction: 99.3% after rearrangement [D][144], 60.5% before it in a metasurface array [D][145]. Named hardware in the 448-atom system: crossed AODs (DTSX-400, AA Opto-Electronic), Hamamatsu modulator and camera, Spectrum Instrumentation AWGs, Rohde & Schwarz microwave sources [D][4]; Gooch & Housego supplies deflectors in the 3,000- and 6,100-qubit papers [P][504]. That is the concentration risk: two small acousto-optics houses serve the published field, neither public nor separately funded. Cost per channel is not quotable. Export exposure is nil — the BIS rule of 2024-09-06 names no tweezer optics or deflectors, controlling only the resulting ≥34-qubit machines (4A906) [G:BIS-QUANTUM-ECCN-2024-09].
+No fab here — free-space optics bolted to a vacuum cell, so "yield" is array filling fraction: 99.3% after rearrangement [D][144], 60.5% before it in a metasurface array [D][145]. Named hardware in the 448-atom system: crossed AODs (DTSX-400, AA Opto-Electronic), Hamamatsu modulator and camera, Spectrum Instrumentation AWGs, Rohde & Schwarz microwave sources [D][4]; Gooch & Housego supplies deflectors in the 3,000- and 6,100-qubit papers [P][504]. That is the concentration risk: two acousto-optics houses serve the published field — Gooch & Housego, quoted on the London Stock Exchange's AIM market, and the privately held AA Opto-Electronic. Cost per channel is not quotable. Export exposure is nil — the BIS rule of 2024-09-06 names no tweezer optics or deflectors [G:BIS-QUANTUM-ECCN-2024-09]; it controls only the resulting machines (4A906), and those only when qubit count and C-NOT error fall in the same band, from 34–99 qubits at ≤ 10⁻⁴ to any error from 2,000 qubits [G:BIS-3A901A-CRYOCMOS].
 
 ## Control, readout & I/O burden
 
-The burden is one RF tone per trap per axis, synthesised by AWG; count scales with atoms, not zones, and intermodulation between tones — not laser power — caps simultaneous traps. The cycle is the real cost: transport 0.4–1.6 ms plus imaging 0.5–1 ms gives QEC rounds of 1–4.5 ms, ~10³× a superconducting cycle, with the decoder obliged to keep up. At 10³ atoms a few AWG channels suffice; at 10⁴ the stated wall is AOD/SLM refresh, which no source consulted here quantifies against atom number; at 10⁶ the only design point puts RSA-2048 at 19 M atoms and 5.6 days at 1 ms cycles [S][31].
+The burden is one RF tone per trap per axis, synthesised by AWG; count scales with atoms, not zones, and intermodulation between tones — not laser power — caps simultaneous traps. The cycle is the real cost: transport 0.4–1.6 ms plus imaging 0.5–1 ms gives QEC rounds of 1–4.5 ms, ~10³× a superconducting cycle, with the decoder obliged to keep up. At 10³ atoms a few AWG channels suffice; at 10⁴ the wall is beam steering — a deflector resolves as many spots as its RF bandwidth times the acoustic transit across the beam, a transit that also bounds how fast it re-points — a trade no source consulted here quantifies against atom number; at 10⁶ the only design point puts RSA-2048 at 19 M atoms and 5.6 days at 1 ms cycles [S][31].
 
 ## Role in the stack
 
@@ -83,7 +83,7 @@ Move fidelity is post-recapture survival by fluorescence imaging: a loss metric,
 
 ## Outlook & open questions
 
-Confirm by end-2027 a zoned system holding >1,000 atoms under fault-tolerant control; demote if by end-2028 no group shows long-memory suppression (Λ > 2) with continuous reloading — the case where suppression has already vanished once [D][148]. Best case by 2029: transport loss cut several-fold and the axial axis in use, unlocking 10⁴-atom zones. Worst case: channel count and refresh cap zones near 10³–10⁴ atoms. Open questions: does move fidelity hold at QEC duty cycles under reloading; can channel count scale past refresh limits; who else supplies deflectors at volume?
+Confirm by end-2027 a zoned system holding >1,000 atoms under fault-tolerant control; demote if by end-2028 no group shows long-memory suppression (Λ > 2) with continuous reloading — the case where suppression has already vanished once [D][148]. Best case by 2029: transport loss cut several-fold and the axial axis in use, unlocking 10⁴-atom zones. Worst case: channel count and deflector bandwidth cap zones near 10³–10⁴ atoms. Open questions: does move fidelity hold at QEC duty cycles under reloading; can channel count scale past the deflector's bandwidth–transit limit; who else supplies deflectors at volume?
 
 ## References
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
@@ -105,10 +105,10 @@ Confirm by end-2027 a zoned system holding >1,000 atoms under fault-tolerant con
 
 ## Open verification items
 
-- The "AOD/SLM refresh near 10 MHz is insufficient above ~10⁴ qubits" wall is carried from the main report; no source consulted here quantifies channel count or refresh rate against atom number.
+- No source consulted here quantifies channel count, or the deflector's trade between spot count and re-pointing speed, against atom number.
 - No source isolates transport-only fidelity from combined transport + gate + readout logical numbers.
 - Bluvstein et al.'s 2022 coherent-transport paper is cited as lineage from the technology-graph record; no numbered source is given for it.
 - No dated patent family (assignee + year) found for AOD-based zoned atom transport.
-- AA Opto-Electronic and Gooch & Housego capacity and scale-up plans not found; neither appears separately funded or public.
+- AA Opto-Electronic and Gooch & Housego capacity and scale-up plans not found; Gooch & Housego is quoted on the London Stock Exchange's AIM (GHH), AA Opto-Electronic is privately held.
 - [503] is an optical design study with no trapped atoms; its axial range, speed and survival are not established experimentally.
 - [4]'s online date (2025-11-10) differs from its print date (Jan 2026); dated 2025-11 per the graph record.

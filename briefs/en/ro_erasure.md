@@ -6,7 +6,7 @@ status: demonstrated
 since: 2023
 one_line: Ancilla- or fluorescence-based test of whether a qubit is still in its code space, flagging decay/leakage as a located erasure without reading the logical state.
 verdict: The check is solved on transmons (384 ns, residual 6×10⁻⁴); unsolved are erasure fraction under two-qubit gates, false negatives and the cycle-time tax. Demote if no erasure system shows logical Λ > 2 by end-2027.
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -52,7 +52,7 @@ Dominant term today: on transmons the idling erasure during the check (T₁ ≈2
 
 ## Manufacturing, materials & supply chain
 
-Transmon dual-rail uses standard superconducting lithography, but the pair must be flux-tunable to find a χ-matched point and dodge two-level systems, and both must be good — a yield-squared problem; AWS's five-day samples fluctuate with near-resonant TLSs [D][85]. Cavity dual-rail needs two machined high-Q cavities plus an ancilla per qubit, hand-assembled — hence Quantum Circuits' plan of 8 → 17 → 49 → 181 qubits over 2024–2028 [R][94]. The atomic check needs only an imaging beam and a camera. Cost and energy per checked qubit are unpublished. The transmon check inherits the dispersive-readout chain, whose amplifiers and refrigerators are the concentrated items. Export exposure: the BIS rule of 2024-09-06 [G][301] [G:BIS-QUANTUM-2024] lists parametric amplifiers and cryo-CMOS (3A901), refrigerators of ≥600 µW at ≤0.1 K (3A904) and computers with ≥34 physical qubits (4A906), a floor no erasure system reaches; the rule does not say whether a dual-rail qubit counts as one or two.
+Transmon dual-rail uses standard superconducting lithography, but the pair must be flux-tunable to find a χ-matched point and dodge two-level systems, and both must be good — a yield-squared problem; AWS's five-day samples fluctuate with near-resonant TLSs [D][85]. Cavity dual-rail needs two machined high-Q cavities plus an ancilla per qubit, hand-assembled — hence Quantum Circuits' plan of 8 → 17 → 49 → 181 qubits over 2024–2028 [R][94]. The atomic check needs only an imaging beam and a camera. Cost and energy per checked qubit are unpublished. The transmon check inherits the dispersive-readout chain, whose amplifiers and refrigerators are the concentrated items. Export exposure: the BIS rule of 2024-09-06 [G][301] [G:BIS-QUANTUM-2024] lists parametric amplifiers and cryo-CMOS (3A901), refrigerators of ≥600 µW at ≤0.1 K (3A904) and quantum computers (4A906), these only when their qubit count and C-NOT error fall in the same band, from 34–99 qubits at ≤ 10⁻⁴ to any error from 2,000 qubits [G:BIS-3A901A-CRYOCMOS]; the rule does not say whether a dual-rail qubit counts as one or two.
 
 ## Control, readout & I/O burden
 

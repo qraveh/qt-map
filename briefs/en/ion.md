@@ -6,7 +6,7 @@ status: demonstrated
 since: 1995
 one_line: "Single Yb⁺/Ba⁺/Ca⁺ ions in RF traps, entangled through shared motional modes; the highest-fidelity and slowest qubit in commercial service."
 verdict: "Fidelity leader and the only platform running dozens of corrected logical qubits, but throughput is set by transport and cooling, not gates; 2D scaling unproven until Sol (2027)."
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -94,7 +94,7 @@ Conflicts. The electronic gate's duration is 225.8 µs (2025) or ≈ 120 µs (20
 
 **Market & supply chain.** Equipment money sits with TOPTICA, Infineon and commodity vacuum vendors; concentration risk is real in two places only — UV lasers and Infineon's fab, which underpins three otherwise-independent developers [P][322]. Against ≈ €9.8 M for a 20-qubit rack [C][323], sector ion revenue is about one large system per quarter plus cloud access. Goals that pay: G1 (Tsinghua's simulator), G2 and G5 (cloud), G3 (Helios logical qubits, IonQ's qLDPC memory), G7 (AQT racks, eleQtron's backlog), G6 in prototype. G4 is funded by capital markets and DARPA, not customers.
 
-**IP & standards.** Named families: Oxford Ionics' electronic qubit control and the WISE in-trap switching architecture [S][325]; Honeywell/Quantinuum QCCD junction and grid-trap patents behind 2.5 kHz ion exchange and 4 m/s transport [D][113]; Infineon's anodic-bonding 3D-electrode process [C][320]; ID Quantique's detector portfolio, now IonQ's [C][19]. No dated ion-specific patent count from a named database was found; the PatSnap 2026-06-30 cut carries no ion line [P][G:PATSNAP-2026-06]. No ion-specific standard exists.
+**IP & standards.** Named families: Oxford Ionics' electronic qubit control and the WISE in-trap switching architecture [S][325]; Honeywell/Quantinuum QCCD junction and grid-trap patents behind 2.5 kHz ion exchange and 4 m/s transport [D][113]; Infineon's anodic-bonding 3D-electrode process [C][320]; ID Quantique's detector portfolio, now IonQ's [C][19]. No dated ion-specific patent count from a named database was found; PatSnap's landscape published on 2026-06-30 counts 546 quantum patent families for IonQ, eighth among assignees, but breaks out no trapped-ion line [P][G:PATSNAP-2026-06]. No ion-specific standard exists.
 
 **Roadmaps & track record.** Quantinuum: Helios (promised 2024-09-10 · for 2025 · launched 2025-11-05) [G:QTM-ROADMAP]; Sol (promised 2024-09-10 · for 2027 · trap chip fabricated, in validation); Apollo (for 2029 · "on schedule", prototypes only) [C][123]. Credibility high — promised dates met — except the unpublished five-nines code family. IonQ: 4,000 qubits (promised 2020 · for 2026 · missed ~40×) [P][132]; 256 qubits at 99.99% (promised 2025-06-13 · for 2026 · slipped to H1 2027) [R][132]; 10,000 on one chip (for 2027 · no published 2D-trap heating or interconnect data). Credibility mixed: the physics is peer-reviewable, the schedules are not. AQT delivers its QV records on time; Universal Quantum has announced nothing against its 2022 contract [P][328].
 
@@ -134,7 +134,7 @@ Open questions: does grid-trap heating scale with zone count or electrode area? 
 [302] M. U. Rehman, “Top Chinese Quantum Computing Companies in 2026,” The Quantum Insider, May 15, 2026. [Online]. Available: https://thequantuminsider.com/2026/05/15/10-plus-companies-leading-the-quantum-technologies-race-in-china/ [P]
 [320] Infineon Technologies AG, “Trapped ion quantum computing.” [Online]. Available: https://www.infineon.com/promo/trapped-ions [C]
 [321] Quantinuum, “Infineon and Quantinuum announce partnership to accelerate quantum computing towards meaningful real-world applications,” Nov. 19, 2024. [Online]. Available: https://www.quantinuum.com/press-releases/infineon-and-quantinuum-announce-partnership-to-accelerate-quantum-computing-towards-meaningful-real-world-applications [C]
-[322] M. Ivezic, “The Optical Table's Hidden Supply Chain: Who Really Wins If Trapped-Ion Quantum Computing Wins,” PostQuantum.com, Apr. 10, 2026. [Online]. Available: https://postquantum.com/quantum-ecosystem/trapped-ion-quantum-ecosystem/ [P]
+[322] M. Ivezic, “The Optical Table's Hidden Supply Chain: Who Really Wins If Trapped-Ion Quantum Computing Wins,” PostQuantum.com, Oct. 1, 2025. [Online]. Available: https://postquantum.com/quantum-ecosystem/trapped-ion-quantum-ecosystem/ [P]
 [323] AQT, “AQT lands million euro contract,” Dec. 5, 2023. [Online]. Available: https://www.aqt.eu/aqt-lands-million-euro-contract/ [C]
 [324] S. Caldwell *et al.*, “NVIDIA NVQLink Architecture Integrates Accelerated Computing with Quantum Processors,” NVIDIA Technical Blog, Nov. 17, 2025. [Online]. Available: https://developer.nvidia.com/blog/nvidia-nvqlink-architecture-integrates-accelerated-computing-with-quantum-processors/ [C]
 [325] M. Malinowski, D. Allcock, and C. Ballance, “How to Wire a 1000-Qubit Trapped-Ion Quantum Computer,” *PRX Quantum*, vol. 4, no. 4, Art. no. 040313, Oct. 2023, doi: [10.1103/PRXQuantum.4.040313](https://doi.org/10.1103/PRXQuantum.4.040313). [arXiv:2305.12773](https://arxiv.org/abs/2305.12773). [S]

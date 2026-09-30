@@ -6,7 +6,7 @@ status: demonstrated
 since: 2018
 one_line: Voltage-pulsed Heisenberg exchange between neighbouring or shuttled spins in gate-defined dots or donors — the only entangling mechanism that needs nothing but CMOS gate electrodes.
 verdict: Best exchange CNOT is 9×10⁻⁴ (HRL, 18 qubits) and foundry pairs sit at 99.0–99.6%, but ~80% of two-qubit error is calibration rather than physics, and no device past eight qubits publishes all-pairs fidelity.
-updated: 2026-09-04
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -30,7 +30,7 @@ Best exchange gate: HRL's exchange-only CNOT at 9×10⁻⁴ best reproducible, 3
 | 2026-07 | Exchange-only CNOT 9×10⁻⁴ best, 18 qubits | HRL Laboratories | [D][190] |
 
 ## Manufacturing, materials & supply chain
-It needs only gate electrodes and voltage pulses, so it rides existing lines: Intel 300 mm EUV (>24,000 devices per wafer, 96% tune-up yield) [D][199], imec 300 mm, GlobalFoundries 22FDX, STMicroelectronics FD-SOI. Two concentrations matter — GlobalFoundries has folded the modality into one business unit behind a USD 375 M CHIPS letter of intent [C][353], and Quantum Machines' control stack sits under Diraq, HRL, imec, Equal1, Sandia and the UK NQCC [C][449]. Export exposure is direct: the 2024-09-06 BIS rule created ECCN 3A901.a for CMOS circuits *designed* to run at or below 4.5 K — a design-intent test, so a cryo-CMOS controller design file of the HRL type is itself controlled [G][301].
+It needs only gate electrodes and voltage pulses, so it rides existing lines: Intel 300 mm EUV (>24,000 devices per wafer [D][199]; 96% tune-up yield on 232 devices of one wafer [D][766]), imec 300 mm, GlobalFoundries 22FDX, STMicroelectronics FD-SOI. Two concentrations matter — GlobalFoundries has folded the modality into one business unit behind a USD 375 M CHIPS letter of intent [C][353], and Quantum Machines' control stack sits under Diraq, HRL, imec, Equal1, Sandia and the UK NQCC [C][449]. Export exposure is direct: the 2024-09-06 BIS rule created ECCN 3A901.a for CMOS circuits *designed* to run at or below 4.5 K — a design-intent test, so a cryo-CMOS controller design file of the HRL type is itself controlled [G][301].
 
 ## Control, readout & I/O burden
 A double dot needs roughly 4–6 baseband channels, so wiring grows faster than qubit count under room-temperature control; HRL's answer is 296 lines and 366 DACs inside the fridge at ≤3.5 W, with no real-time room-temperature loop [D][190]. Readout, not the gate, sets the cycle: 1–100 µs against a 58–500 ns gate. At 10³ qubits room-temperature fan-out is impractical without cryogenic integration; at 10⁴–10⁶ the crossbar schemes that cut wire count collide with the need to calibrate every exchange pair separately — this mechanism's unresolved architectural conflict.
@@ -90,6 +90,7 @@ Falsifiable in 12–24 months: confirm/demote that a foundry device publishes al
 [416] D. P. DiVincenzo, D. Bacon, J. Kempe, G. Burkard, and K. B. Whaley, “Universal quantum computation with the exchange interaction,” *Nature*, vol. 408, no. 6810, pp. 339–342, 2000, doi: [10.1038/35042541](https://doi.org/10.1038/35042541). [arXiv:quant-ph/0005116](https://arxiv.org/abs/quant-ph/0005116). [S]
 [449] Quantum Machines, “Semiconductor Spin Qubits,” Aug. 11, 2026. [Online]. Available: https://www.quantum-machines.co/qubit-types/semiconductor-spin-qubits/ [C]
 [450] D. Garisto, “Underdog 'spin qubits' leap forward in race to a useful quantum computer,” *Nature*, vol. 656, no. 8127, pp. 280–281, Aug. 2026, doi: [10.1038/d41586-026-02357-z](https://doi.org/10.1038/d41586-026-02357-z). [P]
+[766] S. F. Neyens *et al.*, “Probing single electrons across 300-mm spin qubit wafers,” *Nature*, vol. 629, no. 8010, pp. 80–85, May 2024, doi: [10.1038/s41586-024-07275-6](https://doi.org/10.1038/s41586-024-07275-6). [D]
 
 ## Open verification items
 HRL's ~80% calibration share of two-qubit error is self-reported, single-vendor and unreplicated as of 2026-09-04. SQC fidelity range conflict: the arXiv abstract of [192] states all fidelities 99.5–99.99% and Bell states beyond 99%, while the published Nature version gives 99.10–99.99% with Bell up to 99.5%, and the main report quotes a single 99.90% donor nuclear CZ — three different framings of the same experiment, and the 99.90% could not be isolated in the abstract. Financial terms of the IBM–HRL acquisition are undisclosed in both the announcement and the closing release. Diraq's total raised (">USD 100 M") comes from trade press, not a company release. No dated patent-family count specific to exchange gates was found.

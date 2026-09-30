@@ -6,10 +6,10 @@ status: demonstrated
 since: 2022
 one_line: Industrial 300 mm CMOS lines fabricating quantum-dot spin qubits, cryo-CMOS controllers and superconducting wiring; the only qubit manufacturing route with wafer-scale yield statistics.
 verdict: Uniformity is proven (96% device yield, sub-nm CD); fidelity is not yet a foundry deliverable. Demote if no 300 mm device with >20 qubits and all-pairs 2Q ≥ 99.5% appears by end-2027.
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
-"Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics)."
+Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
 
@@ -32,7 +32,7 @@ Mechanism. The fab fixes four inherited quantities: geometric uniformity, critic
 
 Scales. T2*/T2echo reach 5/205 µs on 28Si Si/SiGe against 0.6/98 µs on natural silicon [D][766]; Hahn-echo T2 reaches 1.31 ms on imec SiMOS [D][197].
 
-Floor. For spins it is material: residual 29Si, interface charge noise and the Si/SiGe valley-splitting tail that turns some dots into leakage sinks. For transmons it is junction targeting: 8% wafer-level resistance spread gives 5–7% frequency spread [D][293], an order above collision-free lattice needs; alternating-bias annealing (97.4% targeting [D][294]) is post-fab, not a foundry property.
+Floor. For spins it is material: residual 29Si, interface charge noise and the Si/SiGe valley-splitting tail that turns some dots into leakage sinks. For transmons it is junction targeting: across a 300 mm wafer qubit frequencies spread 5–7%, i.e. 10–14% in junction resistance at qubit junction sizes (the ~8% resistance spread is that of large junctions) [D][293], an order above collision-free lattice needs; alternating-bias annealing (97.4% targeting [D][294]) is post-fab, not a foundry property.
 
 As the code sees it: coherent, calibratable error (HRL attributes about 80% of CNOT error on its 54-dot array to control and calibration [D][190]) plus leakage and slow drift; nothing is erasure-convertible; wafer gradients [D][293] become spatially correlated error. Moving the floor needs 10-ppm-class 28Si, engineered valley splitting (simulation only [S][796]), Ge/SiGe holes or in-flow junction trimming.
 
@@ -48,7 +48,7 @@ Best demonstrated: four Diraq/imec unit cells, every operation above 99% (1Q 99.
 | 2024-12 | >24,000 devices per wafer, CD < 0.5 nm (EUV) | Intel | [D][199] |
 | 2025-01 | 1,024 dots on 22FDX, 1:1,024 cryo-CMOS mux, < 10 min | Quantum Motion/GF | [D][767] |
 | 2025-09 | CZ 99.04–99.56% on 300 mm SiMOS, 4 of 4 devices > 99% | Diraq/imec | [D][189] |
-| 2026-07 | 4 K CMOS controller (366 DACs, ≤ 3.5 W) runs d=5 repetition code, Λ = 4.7 | HRL | [D][190][G:HRL-2026] |
+| 2026-04 | 4 K CMOS controller (366 DACs, ≤ 3.5 W) runs d=5 repetition code, Λ = 4.7 | HRL | [D][190][G:HRL-2026] |
 
 Dominant error term: the 2Q plateau at 99.0–99.6% is charge noise plus exchange calibration [D][189], [190]; 100 µs readout for 99.9%-class SPAM [D][189] sets a 100–300 µs cycle; no 300 mm device above twelve qubits has published all-pairs 2Q; for transmons the limit is junction spread, not coherence [D][293].
 
@@ -60,15 +60,15 @@ Yield. 96% device yield on a quantum-optimised flow [D][766] against 28–40% on
 
 Cost and energy. No foundry publishes a quantum wafer price; Diraq's < $1 per qubit target [R][211] and vendors' rack-scale claims [C][200], [355], [771] are unaudited.
 
-Supply chain. Lines: Intel (captive); imec, coordinator of the EU SPINS pilot line [G][770]; GlobalFoundries' Quantum Technology Solutions unit [C][353]; IBM Albany, becoming Anderon for superconducting wiring, TSVs and bumps [C][798]; SkyWater, 200 mm, IonQ-owned since 2026-07-31 [C][19]. Materials: enriched 28Si, historically Russian; Silex completed a plant for up to 20 kg per year in June 2026, commissioning late 2026, for SQC [C][799]. Equipment: cryogenic wafer probers from Bluefors/Afore (< 2 K, 300 mm, 768 DC, 48 RF lines) [C][800] and FormFactor [C][801]. Single points of failure: EUV dots only at Intel and imec; one 28Si plant; a prober duopoly.
+Supply chain. Lines: Intel (captive); imec, coordinator of the EU SPINS pilot line [G][770]; GlobalFoundries' Quantum Technology Solutions unit [C][353]; IBM Albany, becoming Anderon for superconducting wiring, TSVs and bumps [C][798]; SkyWater, 200 mm, IonQ-owned since 2026-07-31 [C][19]. Materials: enriched 28Si, historically Russian, now also from ASP Isotopes in Pretoria (commercial since 2025-03-27) [C][347] and from ORNL and PNNL as 99.9999% 28Si silane (US DOE, announced 2026-07-16) [G][348]; Silex completed a plant for up to 20 kg per year in June 2026, commissioning late 2026, for SQC [C][799]. Equipment: cryogenic wafer probers from Bluefors/Afore (< 2 K, 300 mm, 768 DC, 48 RF lines) [C][800] and FormFactor [C][801]. Single points of failure: EUV dots only at Intel and imec; a prober duopoly; 28Si from a handful of enrichers.
 
-Export control. BIS's rule of 2024-09-06 controls cryogenic CMOS ICs for ≤ 4.5 K (ECCN 3A901), cryogenic systems ≥ 600 µW at ≤ 0.1 K (3A904), cryogenic wafer probers (3B904) and quantum computers from 34 qubits (4A906), with License Exception IEC for allies [G][301][G:BIS-QUANTUM-2024]; EU and UK lists match.
+Export control. BIS's rule of 2024-09-06 controls cryogenic CMOS ICs for ≤ 4.5 K (ECCN 3A901), cryogenic systems ≥ 600 µW at ≤ 0.1 K (3A904), cryogenic wafer probers (3B904) and quantum computers by qubit count and C-NOT error together, from 34 qubits at ≤ 10⁻⁴ to any error from 2,000 qubits (4A906) [G:BIS-3A901A-CRYOCMOS], with License Exception IEC for allies [G][301][G:BIS-QUANTUM-2024]; EU and UK lists match. The same rule controls silicon and germanium enriched beyond set isotope fractions — epitaxial layers, hydrides such as silane, bulk and oxides (3C907–3C909) [G][301].
 
 ## Control, readout & I/O burden
 
 Multiplexing moves on-die or in-package: a 1:1,024 cryo-CMOS multiplexer on 13 lines [D][767]; imec's multiplexer routing transmon pulses below 15 mK with > 99.9% 1Q preserved [D][802]; a 32-cell 28 nm FD-SOI chip at 7 mK, ~20 nW/MHz per cell [D][551]; HRL's 4 K controller, 366 DACs at ≤ 3.5 W (~10 mW per channel), running a repetition code [D][190]; IBM's 4 K controller at 23 mW per qubit [D][296]. Crossbar sharing needs T = 6√g − 1 lines for a square array of g dots (23 for 16) [D][520].
 
-Walls. 10³: per-qubit lines suffice; the burden is tune-up time. 10⁴: 10–23 mW per channel at 4 K means 100–230 W, beyond any cryostat's 4 K stage, forcing ≥ 10:1 multiplexing or millikelvin nW-class cells. 10⁶: only crossbar sharing (~6,000 lines [D][520]) plus millikelvin CMOS or SFQ closes; whether shared control keeps coherent error below threshold is open. Latency: spin cycles are readout-bound, 100 µs integration [D][189].
+Walls. 10³: per-qubit lines suffice; the burden is tune-up time. 10⁴: at IBM's 23 mW per qubit [D][296] the 4 K load is 230 W, at HRL's 3.5 W per 18 qubits [D][190] about 2 kW — over a hundred times the 2 W 4 K stage of a Bluefors XLD1000sl, and above the 200 W of Fermilab's Colossus, the largest plant in the resource review [S][550] — forcing ≥ 10:1 multiplexing or millikelvin nW-class cells. 10⁶: only crossbar sharing (~6,000 lines [D][520]) plus millikelvin CMOS or SFQ closes; whether shared control keeps coherent error below threshold is open. Latency: spin cycles are readout-bound, 100 µs integration [D][189].
 
 ## Role in the stack
 
@@ -108,20 +108,20 @@ Replication: imec's SiMOS numbers reproduce across four devices and two institut
 | 2026-05-21 | Diraq | CHIPS LOI | up to $38 M | US Commerce | > $100 M raised [P][G:DIRAQ-FUNDING] | LOI, not awarded [G][300] |
 | 2026-06-03 | Quobly | Series A | €115 M | Bpifrance, SEALSQ, STMicroelectronics | €134 M | closed [P][804][G:QUOBLY-115M-2026-06] |
 | 2026-06 | Silex Systems | Q-Si plant completed | A$5.1 M + A$4.35 M | Defence Trailblazer; SQC | — | commissioning late 2026 [C][799] |
-| 2026-07-23 | IBM | M&A: HRL Laboratories | undisclosed | — | — | announced, closing Q3 2026; potential plans for spin qubits at Anderon [C][10][G:IBM-HRL-2026-07] |
+| 2026-07-23 | IBM | M&A: HRL Laboratories | undisclosed | — | — | announced; closed 2026-08-26; potential plans for spin qubits at Anderon [C][10][G:IBM-HRL-2026-07][G:IBM-HRL-CLOSED-2026-08] |
 | 2026-07-31 | IonQ | M&A: SkyWater | $15.00 + 0.4883 IonQ shares per share (~$1.8 B) | — | — | closed [C][19][G:IONQ-SKYWATER-2026] |
 
-**Market & supply chain.** Quantum is immaterial to foundry revenue. Concentration: two EUV-capable dot lines, one merchant FD-SOI option (ST entering), a prober duopoly, one 28Si plant. Unit economics: unpublished beyond Diraq's target [R][211]. Payers: G4 for 10⁶-qubit CMOS density; G7, as of 3 Sep 2026, for rack-scale spin systems; superconducting vendors buy Anderon/GF wiring for G2–G4; ion vendors buy standard-fab traps for G2, G3, G7.
+**Market & supply chain.** Quantum is immaterial to foundry revenue. Concentration: two EUV-capable dot lines, one merchant FD-SOI option (ST entering), a prober duopoly, a handful of 28Si enrichers. Unit economics: unpublished beyond Diraq's target [R][211]. Payers: G4 for 10⁶-qubit CMOS density; G7, as of 3 Sep 2026, for rack-scale spin systems; superconducting vendors buy Anderon/GF wiring for G2–G4; ion vendors buy standard-fab traps for G2, G3, G7.
 
 **IP & standards.** Portfolios: Intel, HRL, Diraq/UNSW, Quantum Motion/UCL, Quobly (CEA/CNRS licences), Equal1; no litigation public; no dated family count from a named database found. SPINS promises quantum PDKs and multi-project-wafer access [G][770]; GF markets FDX cryogenic models [C][353]; no open cryogenic device-model standard exists.
 
-**Roadmaps & track record.** Intel (promised 2022 · wafer-scale qubits · delivered 2024, Argonne 2026-01-06 [G][207][G:INTEL-2026]; no successor or roadmap as of 2026-09-03). Diraq (promised 2026-07-09 · "thousands" by 2029, restated 2026-08-27 as 150,000 physical · eight qubits shown [D][197][R][211][G:DIRAQ-FUNDING]). Quantum Motion (promised 2025-01 · NQCC system · delivered 2025-09-15, no published fidelity [C][200], [803]). Quobly (promised 2025-12 · ST-lot metrics Q1 2026 [P][795] · none found as of 2026-09-03). GF, Anderon: no wafer dates promised [C][353], [798]. Credibility: imec/Diraq (peer-reviewed, replicated) first; Intel manufactures without a product path; Quantum Motion, Quobly, Equal1 deliver systems without metrics; roadmap slides last.
+**Roadmaps & track record.** Intel (promised 2022 · wafer-scale qubits · delivered 2024, Argonne 2026-01-06 [G][207][G:INTEL-2026]; no successor or roadmap as of 2026-09-03). Diraq (promised 2026-07-09 · "thousands" by 2029, restated 2026-08-27 as 150,000 physical · eight qubits shown [D][197][R][211][G:DIRAQ-FUNDING]). Quantum Motion (promised 2025-01 · NQCC system · delivered 2025-09-15, no published fidelity [C][200], [803]). Quobly (promised 2025-12 · ST-lot metrics Q1 2026 [P][795] · none found as of 2026-09-03). GF, Anderon: no wafer dates promised [C][353], [798]. Credibility: imec/Diraq (peer-reviewed, replicated) first; Intel manufactures without a product path; Quantum Motion and Equal1 deliver systems without peer-reviewed metrics (Equal1's RacQ, sold as Bell-1 until May 2026, is installed at ESA's Frascati centre, announced by ESA on 2026-07-15 [G:ESA-BELL1-2026-07] and by Equal1 on 2026-07-31 [C][G:EQUAL1-RACQ-ESA-2026-07]), Quobly none yet; roadmap slides last.
 
 **Strategic reading.** Success rewards foundries and suppliers (GF, imec, ST/Soitec, Bluefors) and spin vendors whose bill of materials shrinks to wafers plus racks; bespoke routes (STM lithography, university lift-off) and MEMS trap fabs lose. Supplier bargaining power is high (few lines, quantum revenue immaterial), but three or four substitutable lines and state money cap what foundries extract. Substitution threats: Ge/SiGe holes, photonic-interconnect fabs, SFQ against cryo-CMOS.
 
 ## Outlook & open questions
 
-Milestones, 12–24 months: (1) a 300 mm device with > 20 qubits and published all-pairs 2Q ≥ 99.5% confirms; none by end-2027 demotes; (2) SPINS multi-project-wafer runs with a public quantum PDK; (3) GF's LOI made definitive, a named 22FDX quantum product; (4) a spin-qubit lot at Anderon after IBM–HRL closes; (5) Intel naming a Tunnel Falls successor or exiting.
+Milestones, 12–24 months: (1) a 300 mm device with > 20 qubits and published all-pairs 2Q ≥ 99.5% confirms; none by end-2027 demotes; (2) SPINS multi-project-wafer runs with a public quantum PDK; (3) GF's LOI made definitive, a named 22FDX quantum product; (4) a spin-qubit lot at Anderon from HRL, IBM-owned since 2026-08-26; (5) Intel naming a Tunnel Falls successor or exiting.
 
 2029 best case: two merchant 300 mm lines with quantum PDKs, 10³-dot arrays with on-die multiplexing, 2Q ≥ 99.5% typical, a below-threshold spin memory. Worst: merchant yields at tens of percent, 2Q at 99–99.6%, roadmaps cut again, GF's unit reduced to packaging for superconducting and photonic customers.
 
@@ -145,10 +145,13 @@ Open questions: can valley splitting and charge noise be made wafer-uniform, or 
 [296] D. Underwood *et al.*, “Using Cryogenic CMOS Control Electronics to Enable a Two-Qubit Cross-Resonance Gate,” *PRX Quantum*, vol. 5, no. 1, Art. no. 010326, Feb. 2024, doi: [10.1103/PRXQuantum.5.010326](https://doi.org/10.1103/PRXQuantum.5.010326). [D]
 [300] National Institute of Standards and Technology, “Department of Commerce Announces Letters of Intent With 9 Companies for $2 Billion to Accelerate U.S. Leadership in Quantum Computing,” NIST News, May 21, 2026. [Online]. Available: https://www.nist.gov/news-events/news/2026/05/department-commerce-announces-letters-intent-9-companies-2-billion [G]
 [301] US Department of Commerce, Bureau of Industry and Security, “Commerce Control List Additions and Revisions; Implementation of Controls on Advanced Technologies Consistent With Controls Implemented by International Partners,” *Federal Register*, vol. 89, p. 72926, Sep. 6, 2024. [Online]. Available: https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies [G]
+[347] ASP Isotopes Inc., “ASP Isotopes Inc. Commences Commercial Production of Enriched Silicon-28 at its Second Aerodynamic Separation Process (ASP) Enrichment Facility,” Mar. 27, 2025. [Online]. Available: https://ir.aspisotopes.com/news-events/press-releases/detail/56/asp-isotopes-inc-commences-commercial-production-of [C]
+[348] U.S. Department of Energy, “DOE Advances Domestic Supply of Silicon, Germanium Isotopes for Quantum Computing,” HPCwire, Jul. 16, 2026. [Online]. Available: https://www.hpcwire.com/off-the-wire/doe-advances-domestic-supply-of-silicon-germanium-isotopes-for-quantum-computing/ [G]
 [353] GlobalFoundries, “GlobalFoundries launches Quantum Technology Solutions to scale U.S. quantum manufacturing,” May 21, 2026. [Online]. Available: https://gf.com/gf-press-release/globalfoundries-launches-quantum-technology-solutions-to-scale-us-quantum-manufacturing/ Also https://investors.gf.com/news-releases/news-release-details/globalfoundries-launches-quantum-technology-solutions-scale-us. [C]
 [355] Quantum Motion, “Quantum Motion Raises $160 Million Series C to Deliver Quantum Computing's "Transistor Moment,” May 7, 2026. [Online]. Available: https://quantummotion.com/quantum-motion-raises-160-million-series-c-to-deliver-quantum-computings-transistor-moment/ [C]
 [446] IonQ, “IonQ Achieves Landmark Result, Setting New World Record in Quantum Computing Performance,” Oct. 21, 2025. [Online]. Available: https://www.ionq.com/news/ionq-achieves-landmark-result-setting-new-world-record-in-quantum-computing [C]
 [520] F. Borsoi *et al.*, “Shared control of a 16 semiconductor quantum dot crossbar array,” *Nat. Nanotechnol.*, vol. 19, no. 1, pp. 21–27, Jan. 2024, doi: [10.1038/s41565-023-01491-3](https://doi.org/10.1038/s41565-023-01491-3). [D]
+[550] S. Kawabata, “Integration and Resource Estimation of Cryoelectronics for Superconducting Fault-Tolerant Quantum Computers,” [arXiv:2601.03922](https://arxiv.org/abs/2601.03922), Jan. 2026. [S]
 [551] S. K. Bartee *et al.*, “Spin-qubit control with a milli-kelvin CMOS chip,” *Nature*, vol. 643, no. 8071, pp. 382–387, Jul. 2025, doi: [10.1038/s41586-025-09157-x](https://doi.org/10.1038/s41586-025-09157-x). [D]
 [733] A. Knapen *et al.*, “Pinball: A Cryogenic Predecoder for Surface Code Decoding Under Circuit-Level Noise,” [arXiv:2512.09807](https://arxiv.org/abs/2512.09807), Dec. 2025. [S]
 [766] S. F. Neyens *et al.*, “Probing single electrons across 300-mm spin qubit wafers,” *Nature*, vol. 629, no. 8010, pp. 80–85, May 2024, doi: [10.1038/s41586-024-07275-6](https://doi.org/10.1038/s41586-024-07275-6). [D]
@@ -174,4 +177,4 @@ Open questions: can valley splitting and charge noise be made wafer-uniform, or 
 - Shuttling fidelity [196]: v1 gave 99.54%; the abstract states "99.5% on average"; the abstract value is used.
 - Silex funding (A$5.1 M Defence Trailblazer, A$4.35 M SQC): amounts undated on the Silex page [799]; the ledger row is dated by the June 2026 plant completion.
 - [796] Losert et al.: bibliographic details are cited from the standard literature and not confirmed against the publisher's page.
-- Dropped from v1 as unverified here: the "~1% Commerce equity stake" in GF's CHIPS LOI (v1 cited [300], [353], [798] jointly), IBM's 30× device-output claim for Anderon (trade-press proxy only), and Intel's 91% single-electron-sensing figure [766] versus 96% tune-up [199] (different device sets and criteria).
+- Dropped from v1 as unverified here: the "~1% Commerce equity stake" in GF's CHIPS LOI (v1 cited [300], [353], [798] jointly) and IBM's 30× device-output claim for Anderon (trade-press proxy only). Intel's yield figures all come from [766], on 232 twelve-dot devices of one wafer — 99.8% of dots, 96% of full devices, 91% charge-sensing success; [199] restates the 96%, citing [766].

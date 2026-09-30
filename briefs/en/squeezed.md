@@ -6,7 +6,7 @@ status: demonstrated
 since: 2012
 one_line: "A continuous-variable optical mode with one quadrature below vacuum noise; the carrier for GKP and cluster-state photonics, where integration loss, not nonlinearity, sets the ceiling."
 verdict: "Real: 1.4 dB directly measured on TFLN, 15 dB in bulk optics. Unproven: GKP effective squeezing beyond 0.62 dB on chip against ~9.75 dB needed. Demote if no on-chip GKP figure above 2 dB by 2028."
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -32,7 +32,7 @@ The on-chip-to-bulk gap is ~13 dB, the GKP gap ~9 dB.
 Squeezers ride the CV photonic-IC line — SiN and thin-film lithium niobate with periodic poling. Merchant TFLN supply is thin: HyperLight (USD 37 M Series B, 2024-09) and Lightium (USD 7 M seed) [P][G:TFLN-FUNDING-2024-09], plus the PIXEurope pilot line [G:PIXEUROPE-2024-11]. Xanadu builds rather than buys; no cost per squeezer is public. Poling uniformity and waveguide loss are the yield-limiting defects, both acting on the headline dB. I/O is one pump and one homodyne chain per mode plus phase locking; Aurora ran 35 chips at 12 modes on a 1 MHz cycle [D][173]. At 10³ modes the wall is pump distribution and phase stability; at 10⁴–10⁶, detector and DAC channel count. No ECCN names squeezers; 4A906 catches the machine [G:BIS-QUANTUM-ECCN-2024-09].
 
 ## Role in the stack
-Architectures: the continuous-variable photonic GKP architecture and the boson sampler, primary carrier in both. The register lists 4 machines using it, among them Aurora, Borealis and Jiuzhang 4.0. Requires a photonic-IC foundry; provides the modes for CV Gaussian gates with GKP-assisted non-Gaussian operations and for GKP grid encoding on Xanadu's architecture. It replaces discrete photons as carrier — DV trades erasure-dominated errors for Gaussian-plus-loss ones, and switching costs the whole detector chain. Squeezing level sets the error floor of every CV operation, bounding the derived clock indirectly rather than contributing a gate time. Verification: 0.62 dB is single-source and unreplicated; the independent TFLN result measures raw squeezing, and its ">10 dB" is inferred by subtracting detection loss [D][345].
+Architectures: the continuous-variable photonic GKP architecture and the boson sampler, primary carrier in both. The register lists {{N_T_SQUEEZED_MACHINES}} machines using it, among them Aurora, Borealis and the Jiuzhang line up to 4.0. Requires a photonic-IC foundry; provides the modes for CV Gaussian gates with GKP-assisted non-Gaussian operations and for GKP grid encoding on Xanadu's architecture. It replaces discrete photons as carrier — DV trades erasure-dominated errors for Gaussian-plus-loss ones, and switching costs the whole detector chain. Squeezing level sets the error floor of every CV operation, bounding the derived clock indirectly rather than contributing a gate time. Verification: 0.62 dB is single-source and unreplicated; the independent TFLN result measures raw squeezing, and its ">10 dB" is inferred by subtracting detection loss [D][345].
 
 ## Actors & economics
 **Who.**

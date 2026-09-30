@@ -6,7 +6,7 @@ status: demonstrated
 since: 2003
 one_line: A shared collective motional mode entangles any pair in one trap, giving genuine all-to-all connectivity at the price of gate time growing with chain length.
 verdict: Real all-to-all to ~30 benchmarked ions and ~100 claimed; IonQ's 10,000-ions-on-one-chip target for 2027 has no published heating, gate-time or mode-spectrum data behind it.
-updated: 2026-09-04
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -30,10 +30,10 @@ N ions carry N motional modes in a fixed bandwidth, so mode spacing falls as ~1/
 Tempo: 100 ions, #AQ 64, no gate time [C][101]. Dominant term: gate time, not fidelity.
 
 ## Manufacturing, materials & supply chain
-IonQ closed its SkyWater acquisition on 2026-07-31, naming microfabricated-trap fabs in Minnesota, Florida and Texas, no wafer size or node disclosed [C][G:IONQ-SKYWATER-FAB-2026]. Control splits two ways: laser MS gates need several wavelengths and per-ion optics; electronic gates use on-chip current and microwave lines. At 10³ ions the wall is the mode spectrum, not wiring: the answer is many short chains joined by shuttling or photonics — IonQ's first two-system entanglement (2026-04-14) disclosed no rate or fidelity [C][G:IONQ-PHOTONIC-INTERCONNECT-2026-04]. Export exposure is by qubit count under ECCN 4A906; no rule names ion traps [G][301].
+IonQ closed its SkyWater acquisition on 2026-07-31, naming microfabricated-trap fabs in Minnesota, Florida and Texas, no wafer size or node disclosed [C][G:IONQ-SKYWATER-FAB-2026]. Control splits two ways: laser MS gates need several wavelengths and per-ion optics; electronic gates use on-chip current and microwave lines. At 10³ ions the wall is the mode spectrum, not wiring: the answer is many short chains joined by shuttling or photonics — IonQ's first two-system entanglement (2026-04-14) disclosed no rate or fidelity [C][G:IONQ-PHOTONIC-INTERCONNECT-2026-04]. Export exposure sits with the finished machine: ECCN 4A906 controls it only when its qubit count and C-NOT error fall in the same band, from 34–99 qubits at ≤ 10⁻⁴ to any error from 2,000 qubits [G:BIS-3A901A-CRYOCMOS]; no rule names ion traps [G][301].
 
 ## Role in the stack
-It is the primary connectivity of two trapped-ion architectures: the linear Paul trap with individual laser addressing and electronic qubit control (microwave / RF gates). Requires nothing; provides the non-local checks bivariate-bicycle qLDPC and high-rate transversal codes assume, as IonQ's [[18,4,3]] break-even memory shows [D][109]. It competes with QCCD shuttling, which buys chain length with transport time: Helios gets all-to-all from a ring plus junction at ~55 ms per full-width layer, transport ~60% of H2 runtime [D][97]. Derived clock = sum of the syndrome round: gate layers + transport + readout + reset ≈ 1.5×10⁻³ s, gate layers 1.4 ms of it. Verification: Forte's figure is an all-pairs benchmark over 435 pairs, so position effects are visible; Tempo publishes #AQ 64 and "99.9% fidelity" with no gate time or per-pair data — a disclosure gap, not a dispute.
+It is the primary connectivity of two trapped-ion architectures: the linear Paul trap with individual laser addressing and electronic qubit control (microwave / RF gates). Requires nothing; provides the non-local checks bivariate-bicycle qLDPC and high-rate transversal codes assume, as IonQ's eight codes on one 40-ion chain show, run without hardware reconfiguration, one of them at break-even within error bars [D][109]. It competes with QCCD shuttling, which buys chain length with transport time: Helios gets all-to-all from a ring plus junction at ~55 ms per full-width layer [D][97], and on H2 transport took ~60% of circuit time on average [D][110]. Derived clock = sum of the syndrome round: gate layers + transport + readout + reset ≈ 1.5×10⁻³ s, gate layers 1.4 ms of it. Verification: Forte's figure is an all-pairs benchmark over 435 pairs, so position effects are visible; Tempo publishes #AQ 64 and "99.9% fidelity" with no gate time or per-pair data — a disclosure gap, not a dispute.
 
 ## Actors & economics
 **Who.**
@@ -64,6 +64,7 @@ Confirm if IonQ publishes Tempo gate times and per-pair fidelities, or ships 256
 [101] IonQ, “IonQ Tempo: 100-Qubit Quantum Computer (#AQ 64).” [Online]. Available: https://ionq.com/quantum-systems/tempo [C]
 [102] A. C. Hughes *et al.*, “Trapped-ion two-qubit gates with >99.99% fidelity without ground-state cooling,” [arXiv:2510.17286](https://arxiv.org/abs/2510.17286), Oct. 2025. [D]
 [109] E. Tham *et al.*, “Breakeven demonstration of quantum low-density parity-check codes,” [arXiv:2606.06455](https://arxiv.org/abs/2606.06455), Jun. 2026. [D]
+[110] S. A. Moses *et al.*, “A Race Track Trapped-Ion Quantum Processor,” *Phys. Rev. X*, vol. 13, Art. no. 041052, Dec. 2023, doi: [10.1103/PhysRevX.13.041052](https://doi.org/10.1103/PhysRevX.13.041052). [arXiv:2305.03828](https://arxiv.org/abs/2305.03828). [D]
 [121] S.-A. Guo *et al.*, “A site-resolved two-dimensional quantum simulator with hundreds of trapped ions,” *Nature*, vol. 630, no. 8017, pp. 613–618, May 2024, doi: [10.1038/s41586-024-07459-0](https://doi.org/10.1038/s41586-024-07459-0). [D]
 [129] A. Cordes, “Quantum computing scale-up eleQtron secures €57 million in one of the largest Series A funding rounds worldwide,” eleQtron, May 5, 2026. [Online]. Available: https://eleqtron.com/en/quantum-computing-scale-up-eleqtron-secures-57-million-in-one-of-the-largest-series-a-funding-rounds-worldwide/ [C]
 [132] IonQ, “IonQ's Accelerated Roadmap: Turning Quantum Ambition into Reality,” Jun. 13, 2025. [Online]. Available: https://www.ionq.com/blog/ionqs-accelerated-roadmap-turning-quantum-ambition-into-reality [R]

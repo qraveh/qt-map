@@ -6,7 +6,7 @@ status: demonstrated
 since: 2011
 one_line: Superconducting double-well loop used as a programmable Ising spin in D-Wave's annealers; no gate set, no code.
 verdict: No D-Wave beyond-classical claim has survived rebuttal as of 4 Sep 2026; falsified if one holds through 2028, confirmed as sampler-not-solver if erosion repeats.
-updated: 2026-09-04
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -49,7 +49,7 @@ Serves the annealing architecture only and feeds no gate-model architecture: D-W
 
 **Market & supply chain.** One vendor, one carrier, one cryoplant class; foundry capacity shared with gate-model lines. Only G1 and parts of G5 pay for it; G3/G4 cannot, absent a code layer.
 
-**IP & standards.** 975 D-Wave quantum patent families as of 2026-06-30 [P][G:PATSNAP-2026-06]; no annealing-specific litigation or standard found.
+**IP & standards.** PatSnap's landscape published on 2026-06-30 counts 975 D-Wave quantum patent families [P][G:PATSNAP-2026-06]; no annealing-specific litigation or standard found.
 
 **Roadmaps & track record.** (2025-05 · for 2029/2031 · 20,000 then 100,000 qubits · open) [R][15]. Scale milestones land on schedule; claims do not survive classical solvers; revenue collapsed while bookings and RPO rose, so monetisation is deferred, not lost.
 

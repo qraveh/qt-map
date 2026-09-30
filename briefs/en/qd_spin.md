@@ -6,7 +6,7 @@ status: demonstrated
 since: 2012
 one_line: "Electron or hole spin in a lithographically gated dot; exchange gives deterministic ns-scale two-qubit gates on a CMOS die."
 verdict: "Only carrier fabricated on a 300 mm line at scale, but two-qubit fidelity has sat at 99.0-99.6% on foundry devices for a year and no array above 12 qubits has published all-pairs numbers."
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -48,7 +48,7 @@ The dominant error term today is not decoherence but calibration drift: 54 dots 
 
 ## Manufacturing, materials & supply chain
 
-The distinguishing claim is fabrication on unmodified CMOS lines — Intel reports >24,000 devices per 300 mm EUV wafer at 96% tune-up yield [D][199], and Quantum Motion characterised 1,024 dots in five minutes on GlobalFoundries 22FDX [C][200]. Process detail belongs to the 300 mm CMOS foundry brief; wafer-scale statistics exist here and for no other carrier.
+The distinguishing claim is fabrication on unmodified CMOS lines — Intel reports >24,000 devices per 300 mm EUV wafer [D][199] and 96% tune-up yield over 232 twelve-dot devices of one wafer [D][766], and Quantum Motion characterised 1,024 dots in five minutes on GlobalFoundries 22FDX [C][200]. Process detail belongs to the 300 mm CMOS foundry brief; wafer-scale statistics exist here and for no other carrier.
 
 Materials are the exposure. Enriched ²⁸Si is a genuine single point of failure: **ASP Isotopes began commercial production of enriched silicon-28 at its second Pretoria facility on 2025-03-27**, with two undisclosed US customers [C][347]. On 2026-07-16 the US DOE Office of Isotope R&D and Production announced that ORNL and PNNL now make silane at 99.9999% ²⁸Si and germane with Ge-73 below 1 ppm, "at least 100×" more depleted than any commercial material — a deliberate re-shoring [G][348]. Ge/SiGe heterostructures come from a handful of academic reactors (Scappucci's group at Delft), a narrower bottleneck than the fab. Export-control exposure is indirect: the dies are ordinary CMOS, but enriched isotopes and dilution refrigerators fall under the 2024 multilateral quantum controls (US ECCN 3A901/3A904).
 
@@ -84,7 +84,7 @@ Conflicts. Diraq's messaging conflicts on scale: a 2026-07-09 release said "thou
 | QuTech (TU Delft) | research | NL | Shuttled-spin gates, parity checks, Ge heterostructures | [D][193][D][349] |
 | Groove Quantum | developer | NL | 18-qubit Ge array, spun out of the Delft Ge programme | [D][195] |
 | Quobly | developer | FR | ²⁸Si FD-SOI lots at ST Crolles since 2025-12 | [C][350] |
-| Equal1 | developer | IE | Bell-1 six-qubit rack unit; RacQ at ESA Frascati | [C][351] |
+| Equal1 | developer | IE | Six-qubit rack unit, sold as Bell-1 and since May 2026 as RacQ; installed at ESA Frascati in July 2026 | [C][351] [G:ESA-BELL1-2026-07] [G:EQUAL1-RACQ-ESA-2026-07] |
 | SemiQon | supplier | FI | VTT spin-out; cryo-CMOS chips fabricated in Espoo | [P][352] |
 | GlobalFoundries | supplier | US | Quantum Technology Solutions unit; 22FDX wafers | [C][353] |
 
@@ -145,6 +145,7 @@ Open questions. (1) Is 99.5%-class two-qubit fidelity reproducible across all pa
 [354] M. Abdel-Kareem, “SemiQon Secures €17.5M ($18.3M USD) to Develop Cryogenic CMOS Technology for Quantum Systems,” Quantum Computing Report, Feb. 24, 2025. [Online]. Available: https://quantumcomputingreport.com/semiqon-secures-e17-5m-18-3m-usd-to-develop-cryogenic-cmos-technology-for-quantum-systems/ [P]
 [355] Quantum Motion, “Quantum Motion Raises $160 Million Series C to Deliver Quantum Computing's "Transistor Moment,” May 7, 2026. [Online]. Available: https://quantummotion.com/quantum-motion-raises-160-million-series-c-to-deliver-quantum-computings-transistor-moment/ [C]
 [356] PatSnap, “Spin Qubit Silicon Quantum Dot Arrays 2026 — PatSnap Eureka,” Jun. 2, 2026. [Online]. Available: https://www.patsnap.com/resources/blog/rd-blog/spin-qubit-silicon-quantum-dot-arrays-2026-patsnap-eureka/ [P]
+[766] S. F. Neyens *et al.*, “Probing single electrons across 300-mm spin qubit wafers,” *Nature*, vol. 629, no. 8010, pp. 80–85, May 2024, doi: [10.1038/s41586-024-07275-6](https://doi.org/10.1038/s41586-024-07275-6). [D]
 
 ## Open verification items
 

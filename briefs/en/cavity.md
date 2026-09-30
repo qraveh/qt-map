@@ -6,7 +6,7 @@ status: demonstrated
 since: 2013
 one_line: A harmonic microwave mode of a 3D or planar superconducting resonator used as the qubit carrier; its error is structured photon loss, not generic Pauli noise.
 verdict: Laboratory memories reach 25.6 ms photon lifetime, but working bosonic devices run two to three orders shorter; the carrier's limit is the ancilla coupled to it, not the cavity.
-updated: 2026-09-04
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -27,10 +27,10 @@ A harmonic mode's dominant decay channel is amplitude damping alone — the whol
 Typical at scale is far below best: 18 cat modes (Helium), five storage modes (Ocelot) [C][87][D][80]. The dominant operating term is ancilla-induced dephasing plus gate-visible loss, the 0.5%-per-gate erasure being that loss detected [D][84].
 
 ## Manufacturing, materials & supply chain
-Bodies are precision-machined aluminium or niobium, polished and sealed; a mode occupies cm scale against a transmon's ~100 µm — that ratio, not Q, is the liability. Per mode the burden is one drive line plus an ancilla with its own drive and readout chain. No cryogenic-CMOS or on-chip multiplexing of cavity control exists, so lines grow linearly: at 10³ modes the wall is coax count and cryostat volume in one dilution unit; 10⁴–10⁶ needs different packaging. Machining is in-house everywhere; no third-party foundry and no cavity-specific export rule were found. Concentration sits around it: Bluefors refrigerators, Cryomech pulse tubes included [G:BLUEFORS-CRYOMECH-2023].
+Two routes make the mode. Machined bodies of aluminium or niobium, polished and sealed, hold Nord Quantique's GKP mode and D-Wave's λ/4 dual-rail pairs [D][82][D][84]; such a mode occupies cm scale against a transmon's ~100 µm — that ratio, not Q, is the liability. The cat chips are planar: Alice & Bob's are tantalum-on-sapphire circuits, Boson 3's memory a quarter-wave coplanar resonator [G:ALICEBOB-CAT-PLANAR-2024], and Ocelot's modes are coplanar-waveguide resonators on two bump-bonded dies [D][80]. Per mode the burden is one drive line plus an ancilla with its own drive and readout chain — at Alice & Bob, a buffer mode and its pumps instead of the ancilla [C][G:ALICEBOB-BOSON4-DOCS-2026]. No cryogenic-CMOS or on-chip multiplexing of cavity control exists, so lines grow linearly: at 10³ modes the wall is coax count and cryostat volume in one dilution unit; 10⁴–10⁶ needs different packaging. Machining is in-house at every vendor that machines bodies; no third-party foundry and no cavity-specific export rule were found. Concentration sits around it: Bluefors refrigerators, Cryomech pulse tubes included [G:BLUEFORS-CRYOMECH-2023].
 
 ## Role in the stack
-Requires machined 3D cavities; provides the mode for cat and GKP encodings, dual-rail erasure, ancilla-mediated gates and dispersive readout. Derived clock = sum of the syndrome round: gate layers + transport + readout + reset: 2.8 µs on the dual-rail erasure architecture, four 500 ns CZ layers over a ~0.4 µs check [D][84], and 1.44 µs on the cat-and-GKP cavity architecture, gate-set, against its measured 2.8 µs cycle [D][80]. Verification: the 25.6/34 ms figures are single-group and unreplicated [D][319]; the dual-rail CZ's Pauli error is post-selected, and its Λ ≈ 27 is simulated, not measured [S][G:QCI-LAMBDA27-2026-08].
+Requires one of two manufacturing routes, machined 3D cavities or planar superconducting lithography; provides the mode for cat and GKP encodings, dual-rail erasure, ancilla-mediated gates and dispersive readout. Derived clock = sum of the syndrome round: gate layers + transport + readout + reset: 2.8 µs on the dual-rail erasure architecture, four 500 ns CZ layers over a ~0.4 µs check [D][84], and 1.44 µs on the cat-and-GKP cavity architecture, gate-set, against its measured 2.8 µs cycle [D][80]. Verification: the 25.6/34 ms figures are single-group and unreplicated [D][319]; the dual-rail CZ's Pauli error is post-selected, and its Λ ≈ 27 is simulated, not measured [S][G:QCI-LAMBDA27-2026-08].
 
 ## Actors & economics
 **Who.**

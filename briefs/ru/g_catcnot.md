@@ -66,7 +66,6 @@ updated: 2026-09-04
 [81] Y. Ye *et al.*, “Bias-preserving cat-cat CNOT gate via vacuum-conditional beam-splitter,” [arXiv:2607.22852](https://arxiv.org/abs/2607.22852), Jul. 2026. [S]
 [87] N. Coppola, “Alice & Bob Unveils First Quantum System, Helium,” Alice & Bob, Jun. 10, 2026. [Online]. Available: https://alice-bob.com/newsroom/alice-bob-unveils-first-quantum-system/ [C]
 [88] N. Coppola, “Alice & Bob announces Series B Extension,” Alice & Bob, May 22, 2026. [Online]. Available: https://alice-bob.com/newsroom/alice-bob-announces-series-b-extension/ [C]
-[89] Nord Quantique, “Nord Quantique Reaches $1.4 Billion USD Valuation with Latest Investment,” Business Wire, May 18, 2026. [Online]. Available: https://www.businesswire.com/news/home/20260518358351/en/Nord-Quantique-Reaches-$1.4-Billion-USD-Valuation-with-Latest-Investment [C]
 [95] É. Gouzien, D. Ruiz, F.-M. Le Régent, J. Guillaud, and N. Sangouard, “Performance Analysis of a Repetition Cat Code Architecture: Computing 256-bit Elliptic Curve Logarithm in 9 Hours with 126133 Cat Qubits,” *Phys. Rev. Lett.*, vol. 131, Art. no. 040602, Jul. 2023, doi: [10.1103/PhysRevLett.131.040602](https://doi.org/10.1103/PhysRevLett.131.040602). [arXiv:2302.06639](https://arxiv.org/abs/2302.06639). [S]
 [412] Alice & Bob, “Roadmap,” Jun. 23, 2026. [Online]. Available: https://alice-bob.com/roadmap/ [R]
 
@@ -74,4 +73,4 @@ updated: 2026-09-04
 Заявление о логической памяти <10⁻⁶ в [81] опирается на предполагаемые времена жизни компонентов и точность задания нелинейности; независимого воспроизведения и измеренного гейта по состоянию на 2026-09-04 не существует.
 Страница дорожной карты [412] привязывает требование «13 минут» по перевороту бита к чипу Graphene, не уточняя, относится ли оно к покою или к работе под гейтом; основной отчёт трактует его как относящееся к работе под CNOT.
 Публичных свидетельств того, что какая-либо экспериментальная группа пыталась реализовать запутывающий гейт кот–кот, не найдено.
-Nord Quantique [89] фигурирует в перечне сделок, но не в таблице «Кто»: его многомодовый маршрут этого гейта не использует.
+Nord Quantique [65] фигурирует в перечне сделок, но не в таблице «Кто»: его многомодовый маршрут этого гейта не использует.

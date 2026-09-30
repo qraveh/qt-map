@@ -6,7 +6,7 @@ status: demonstrated
 since: 2025
 one_line: The subsystem that manufactures non-Clifford resource states so a code with transversal Cliffords can run universal circuits.
 verdict: Three routes are demonstrated on three carriers, but every headline number is a post-selected stand-alone state; no factory has yet fed a real algorithm.
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -68,7 +68,7 @@ Every headline number is a post-selected stand-alone fidelity, measured on a sta
 | IBM | developer | US | Starling budgets 10⁸ logical gates; on Heron, post-selected magic-state injection only, no factory | [R][67] |
 | NVIDIA | supplier | US | NVQLink, the accept/reject path a pipelined factory needs | [P][324] |
 | Riverlane | supplier | UK | Sub-microsecond decoding, the throughput gate on cultivation | [D][238] |
-| DARPA | regulator | US | QBI Stage B funds IBM, Quantinuum, QuEra and eight others | [G:QBI-STAGEB-2025-11] |
+| DARPA | funder | US | QBI Stage B funds IBM, Quantinuum, QuEra and eight others | [G:QBI-STAGEB-2025-11] |
 
 **Money.**
 - 2025-09-04 · Quantinuum · capital raise · $600 M at $10 B pre-money · NVentures, Quanta, QED, JPMorgan · closed [G:QTM-600M-2025-09]
@@ -79,7 +79,7 @@ Every headline number is a post-selected stand-alone fidelity, measured on a sta
 
 **Market & supply chain.** Nobody sells a magic-state factory; it is bundled into a machine and given away in a compiler. The sellable adjacencies are real-time decoding and interconnect, resource estimation, and the host hardware. Concentration is extreme: Google, Quantinuum, and QuEra with Harvard and MIT hold every demonstrated result except Innsbruck's code switching and the magic-state injections on IBM's Heron and Zhejiang University's 125-qubit processor, and two of the three routes trace to one theory group. G3 and G4 pay for this directly, G6 indirectly; G1, G2 and G5 pay nothing, which is why a primitive on every fault-tolerance critical path carries almost no dedicated revenue.
 
-**IP & standards.** No dated patent-family count specific to magic-state factories was found from a named database as of 3 September 2026; PatSnap's quantum totals to 2026-06-30 (IBM 4,388, Google 2,385, Microsoft 1,175 families) do not resolve to this node [P][G:PATSNAP-2026-06]. There is no interface standard; the de-facto portability layer is the Quantum Intermediate Representation used in the 2023 real-time demonstration [C][692], the verification layer open-source stabiliser and ZX simulation [D][691]. No litigation on record.
+**IP & standards.** No dated patent-family count specific to magic-state factories was found from a named database as of 3 September 2026; PatSnap's landscape published on 2026-06-30 counts IBM 4,388, Google 2,385 and Microsoft 1,175 quantum patent families but does not break them down to this node [P][G:PATSNAP-2026-06]. There is no interface standard; the de-facto portability layer is the Quantum Intermediate Representation used in the 2023 real-time demonstration [C][692], the verification layer open-source stabiliser and ZX simulation [D][691]. No litigation on record.
 
 **Roadmaps & track record.** Google (2024-09-26, "as cheap as a CNOT"): demonstrated 2025-12-15 at 0.9999, fifteen months theory to silicon, still five orders above target. Quantinuum (2024-09-10, universal fault tolerance by 2029): two demonstrations, both on the 20-qubit H1-1, none yet on Helios. QuEra (2024-01, 100 logical qubits in 2026): distillation shown 2025-07, count not met, restated as Libra in 2028. IBM (2025-06-10, Starling 2029): no factory result, Kookaburra slipped a year. Credibility: Google highest, with theory, hardware and verification tooling in one place; Quantinuum high on primitives, unproven at scale; QuEra high on primitives, slipped roadmap; IBM unevidenced here.
 

@@ -6,7 +6,7 @@ status: demonstrated
 since: 2023
 one_line: One excitation shared between two modes; loss leaves the code space and is heralded as a located erasure, not an unknown Pauli.
 verdict: The cleanest error channel in superconducting hardware (≈0.5% erasure, 0.03% residual Pauli per CZ), bought with 2× the modes; unproven above eight qubits. Demote if no dual-rail device shows a coded Λ > 2 by end-2027.
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -44,7 +44,7 @@ Best demonstrated as of 3 Sep 2026: a cavity dual-rail CZ in ~500 ns at ≈0.5% 
 | Year | Figure | Who | Evidence |
 |---|---|---|---|
 | 2023-07 | Erasure 2.19(2)×10⁻³ per 1Q gate, residual ~40× lower | AWS | [D][400] |
-| 2025-04 | Four dual-rail transmons: logical Bell 98.8%, CNOT 96.2% | SUSTech | [D][406] |
+| 2025-04 / 2026-03 | Four dual-rail transmons: logical CNOT 98.1% process fidelity at a 13% erasure rate, three-qubit GHZ 93.9% (Nature Physics, 2026-03; arXiv v1 of 2025-04: Bell 98.8%, CNOT 96.2%, GHZ 93.5%) | SUSTech | [D][406] |
 | 2026-04 | 384 ns check; erasure 2.54(1)×10⁻², residual 6.0(2)×10⁻⁴, bias 42(1) | AWS | [D][85] |
 | 2026-08 | CZ ~500 ns; erasure ≈0.5%/gate, Pauli 0.029(6)%, bit-flip 2.8(4)×10⁻⁶ | Quantum Circuits | [D][84] |
 | 2025 | Photonic dual-rail: fusion Bell 99.22(12)%, SPAM 99.98(1)% | PsiQuantum | [D][169] |
@@ -105,7 +105,7 @@ Replication is real: transmon AWS 2023 → SUSTech 2025 → AWS 2026; cavity Yal
 
 **Roadmaps & track record.**
 - D-Wave/Quantum Circuits: promised 2026-06-01, restated 2026-08-06 · DR17 (17 qubits, 2× logical error reduction) 2026, DR49 at 20× 2027, DR181 at 2,000× 2028, 10 logical 2030, 100 logical 2032, Λ = 10 · undelivered as of 2026-09-03 [R][409] [G:DWAVE-QCI-2026-01].
-- PsiQuantum: promised utility scale "before 2033" · Brisbane groundbreaking slipped to 2026-06-17 · at risk [G:PSIQ-1B-2025-09].
+- PsiQuantum: promised utility scale "before 2033" · Moreton Bay groundbreaking slipped to 2026-06-17 · at risk [G:PSIQ-1B-2025-09].
 - AWS: no dual-rail product promised · three papers delivered 2022–2026 [D][85], [400]. Oxford Quantum Circuits: TITAN announced with the Series C · no dated dual-rail target [C][60].
 Credibility: Quantum Circuits/D-Wave publishes the field's best channel numbers and has shipped only the 8-qubit Seeker; AWS publishes and promises nothing; PsiQuantum's components are the best-characterised anywhere, its systems slip.
 

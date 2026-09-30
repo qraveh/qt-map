@@ -10,7 +10,10 @@ technologies, 1,533 cells). This lint reads the built pages (scripts and styles 
   2. retired counts in the hand-written layer (RETIRED_COUNTS — extend it at every re-cut);
   3. English UI words on the Russian main page's static text, and Cyrillic in the English and Hebrew pages' UI (the machine cards
      are drawn by JavaScript and are covered by c2_smoke instead);
-  4. article slips left by a rename ("a Atlas", "a architecture").
+  4. article slips left by a rename ("a Atlas", "a architecture");
+  5. a register count typed into the "Where it stands" paragraph of an architecture narrative (report/paths) instead of a placeholder
+     (LITERAL_COUNT — 29 Sep 2026: the 24 added rows left twelve openings saying "Thirteen machines" in front of fifteen; the counts
+     now come from build/machines_chapter.arch_figures through {{N_A_<PID>_…}}).
 
     python3 build/audit/text_lint.py            # exit 1 on any hit; prints file, rule and a snippet
 """
@@ -27,14 +30,25 @@ FORBIDDEN = [r'<!--\s*function', r'toggleAuthorList', r'You must enable JavaScri
              r'(?i)off-diagonal', r'(?i)внедиагональн', r'(?i)вне-диагональн',   # the crossing-technology rename of 29 Sep 2026
              # the bilingual period (29 Sep 2026: a third language joined — the reader text names the languages, never "the other" or "both")
              r'English / Russian', r'(?i)\bboth languages\b', r'(?i)\bthe other language\b', r'(?i)\beither language or both\b', r'Английский / Русский', r'(?i)обоих языках']
-RETIRED_COUNTS = [r'\b136 (machines|машин)', r'\b14 (architectures|paths|архитектур|путей)', r'\b96 (technologies|технологий|nodes|stations)',
-                  r'\b1,533\b', r'\b1 533\b', r'\b153 (machines|машин)', r'\b110 (technologies|технологий)']
+RETIRED_COUNTS = [r'\b(?:136|160|153|183) (machines|машин|מכונות)', r'\b(?:out of|из|מתוך) (?:136|160|153|183)\b(?! ?(?:mK|K|GHz|MHz|kHz|Hz|nm|µm|μm|ms|µs|μs|ns|dB|%))',
+                  r'\b14 (architectures|paths|архитектур|путей|ארכיטקטורות|נתיבים)', r'\b(?:96|110) (technologies|технологий|nodes|stations|טכנולוגיות)',
+                  r'\b1,533\b', r'\b1 533\b']   # 29 Sep 2026: 160 → 183 machines; 30 Sep 2026: 183 → 182 (Bell-1 and RacQ are one machine); "out of 136" (a glossary note) had slipped past "136 machines"
+# a number (digits or a number word) directly before machines / devices / rows / cells, in the register paragraph of a narrative
+LITERAL_COUNT = {'en': r'(?i)\b(?:\d[\d,]*|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty)(?:\s+(?:evidence|documented|gate-capable|none|register|registered|physical))?\s+(?:machines?|devices?|rows?|cells?)\b',
+                 'ru': r'(?i)(?<!ни )\b(?:\d[\d\u00a0 ]*|одн[аоу]|один|дв[аеух]|три|трёх|четыр[ёех]|пят[ьи]|шест[ьи]|сем[ьи]|восьм[ьи]|восемь|девят[ьи]|десят[ьи]|одиннадцат[ьи]|двенадцат[ьи]|тринадцат[ьи]|четырнадцат[ьи]|пятнадцат[ьи]|шестнадцат[ьи]|семнадцат[ьи]|восемнадцат[ьи]|девятнадцат[ьи]|двадцат[ьи])\s+(?:машин[аыу]?|устройств[аоу]?|строк[аиу]?|яче[её]к[аиу]?)\b',
+                 'he': r'(?<![\u05d0-\u05ea\w])(?:\d[\d,]*|אחת|אחד|שתי|שני|שלוש|שלושה|ארבע|ארבעה|חמש|חמישה|שש|שישה|שבע|שבעה|שמונה|תשע|תשעה|עשר|עשרה|[\u05d0-\u05ea]+-עשרה?|עשרים|שלושת|ארבעת|חמשת|ששת|שבעת|שמונת|תשעת|עשרת)\s+(?:ה?מכונות|ה?התקנים|ה?שורות|ה?תאים|תאי|מכונה|התקן|שורה|תא)(?![\u05d0-\u05ea])'}
+STANDS = {'en': 'Where it stands', 'ru': 'Где она стоит', 'he': 'היכן היא עומדת'}
 ARTICLES = [r'\ba (Atlas|architecture|Architecture|atlas)\b', r'\bA (Atlas|architecture)\b']
 EN_UI_ON_RU = [r'Show table', r'Show records', r'\bregister card\b', r'Skip to the map']
 CYR_IN_EN_UI = [r'<summary>[^<]*[А-Яа-я]', r'<button(?![^>]*data-setlang)[^>]*>[^<]*[А-Яа-я][^<]*</button>']   # the language switch itself says «Русский»
 
-HAND_WRITTEN = ['report/report_EN.md', 'report/report_RU.md', 'README.md', 'CITATION.cff', '.zenodo.json', 'data/glossary-own.json',
-                'data/glossary-field.json']   # the generators' comments may name retired counts as history; the pages are checked above
+HAND_WRITTEN = ['report/report_EN.md', 'report/report_RU.md', 'report/report_HE.md', 'README.md', 'CITATION.cff', '.zenodo.json',
+                'data/glossary-own.json', 'data/glossary-field.json', 'data/graph_data.py', 'data/i18n/graph_he.json'] \
+               + sorted(os.path.relpath(x, ROOT) for x in glob.glob(os.path.join(ROOT, 'report', 'paths', '*.md'))) \
+               + sorted(os.path.relpath(x, ROOT) for x in glob.glob(os.path.join(ROOT, 'briefs', '*', '*.md')))
+# not scanned: build/editions.py — the editions log describes each revision as it was (17 Sep: "136 registered quantum machines") — and the
+# generators' comments, which may name retired counts as history; the pages are checked above. In the report files the generated §7–§8
+# (between "## 7. " and "## 9. ") are skipped: their counts come from the data at build time.
 
 
 def strip_markup(h):
@@ -52,7 +66,7 @@ def hits(text, patterns, label, path, out, limit=3):
         ms = list(re.finditer(p, text))
         if ms:
             m = ms[0]; snip = text[max(0, m.start() - 50):m.end() + 50].replace('\n', ' ')
-            out.append('%s: %s [%s] ×%d — …%s…' % (os.path.relpath(path, ROOT), label, p, len(ms), snip))
+            out.append('%s: %s [%s] ×%d — …%s…' % (os.path.relpath(path, ROOT), label, p if len(p) < 90 else p[:60] + '…', len(ms), snip))
 
 
 def main():
@@ -73,8 +87,15 @@ def main():
         p = os.path.join(ROOT, rel)
         if not os.path.exists(p): continue
         t = open(p, encoding='utf-8').read()
+        if re.search(r'report_[A-Z]{2}\.md$', p):   # §7 and §8 are generated from the data by the build
+            L = t.split('\n'); i = next((k for k, l in enumerate(L) if re.match(r'## 7\. ', l)), None); j = next((k for k, l in enumerate(L) if re.match(r'## 9\. ', l)), None)
+            if i is not None and j is not None: t = '\n'.join(L[:i] + [''] * (j - i) + L[j:])
         hits(t, RETIRED_COUNTS, 'retired-count', p, out)
         hits(t, ARTICLES, 'article', p, out)
+        m = re.match(r'report/paths/\w+\.(en|ru|he)\.md$', rel.replace(os.sep, '/'))
+        if m:   # the register paragraph of a narrative names its counts through placeholders, never by a typed number
+            L = m.group(1); para = re.search(r'\*\*' + re.escape(STANDS[L]) + r'\.\*\*(.*)', t)
+            if para: hits(para.group(1), [LITERAL_COUNT[L]], 'literal-count', p, out)
     print('text_lint: %d page(s) and %d source file(s) read; %d finding(s)' % (len(pages), len(HAND_WRITTEN), len(out)))
     for x in out: print('  ' + x[:300])
     return 1 if out else 0

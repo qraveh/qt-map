@@ -6,14 +6,14 @@ status: demonstrated
 since: 2024
 one_line: "Many logical qubits per block (iceberg, tesseract, concatenated [[4,2,2]]), Clifford gates transversal, paid for with all-to-all connectivity and post-selection."
 verdict: "The reason ions and atoms quote 48–96 logical qubits while superconducting quotes 1–2; holds only at distance 2–4 and only where acceptance stays above ~50%."
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
 
-Block codes whose rate k/n is a large fraction of unity and whose logical Cliffords run transversally — depth-one layers of two-local physical gates — instead of d rounds of lattice surgery. Four members define the node. The **iceberg code** [[k+2,k,2]] detects any single-qubit error (Quantinuum: Self, Benedetti, Amaro; Nature Physics 20, 219, 2024-07-26) [D][673]. Two-level concatenation gives [[(k₁+2)(k₂+2), k₁k₂, 4]]; **[[80,48,4]]** (k₁=6, k₂=8) is the largest cycle executed anywhere [D][105]. The **tesseract colour code [[16,6,4]]** is a doubly-even self-dual 4D CSS code from the [16,5,8] Reed–Muller code (subsystem variant [[16,4,2,4]]), its logical Clifford group depth-one [D][674]. Goto's **many-hypercube codes** concatenate [[4,2,2]] blocks to ~30% rate [S][675].
+Block codes whose rate k/n is a large fraction of unity and whose logical Cliffords run transversally — depth-one layers of two-local physical gates — instead of d rounds of lattice surgery. Four members define the node. The **iceberg code** [[k+2,k,2]] detects any single-qubit error (Quantinuum: Self, Benedetti, Amaro; Nature Physics 20, 219, 2024-01-05) [D][673]. Two-level concatenation gives [[(k₁+2)(k₂+2), k₁k₂, 4]]; **[[80,48,4]]** (k₁=6, k₂=8) is the largest cycle executed anywhere [D][105]. The **tesseract colour code [[16,6,4]]** is a doubly-even self-dual 4D CSS code from the [16,5,8] Reed–Muller code (subsystem variant [[16,4,2,4]]), its logical Clifford group depth-one [D][674]. Goto's **many-hypercube codes** concatenate [[4,2,2]] blocks to ~30% rate [S][675].
 
 Attributes: no carrier of its own (affinity 0.0), it inherits the platform's; no characteristic time and no entangling determinism here; no readout of its own; mobility by physical transport of the carriers, which supplies the required all-to-all; no control modality, placed nowhere; error structure as the code sees it, depolarising Pauli noise; no manufacturing.
 
@@ -33,7 +33,7 @@ Best demonstrated as of 3 Sep 2026: 48 error-corrected logical qubits in one [[8
 
 | Year | Figure | Who | Tag+key |
 |---|---|---|---|
-| 2024-07 | Iceberg [[k+2,k,2]]: 8 logical qubits, 256 layers, logical quantum volume 2⁸ | Quantinuum | [D][673] |
+| 2024-01 | Iceberg [[k+2,k,2]]: 8 logical qubits, 256 layers, logical quantum volume 2⁸ | Quantinuum | [D][673] |
 | 2024-09 | Tesseract [[16,6,4]]: graph states on 12 logical qubits, 5 correction rounds | Microsoft + Quantinuum | [D][667] |
 | 2025-11 | [[16,6,4]] on 448 atoms: 96 logical qubits active, hundreds of teleportations | Harvard/MIT/QuEra | [D][4] |
 | 2026-02 | [[80,48,4]]: 48 corrected logical qubits, cycle infidelity ≤4×10⁻⁵, acceptance 0.62(2) | Quantinuum Helios | [D][105] |
@@ -57,9 +57,9 @@ Across families: this node explains the largest divergence in the 2026 fault-tol
 
 ## Evidence — how the numbers were measured
 
-Headline numbers come from repeated logical preparation and measurement in both bases, post-selected on detected-but-uncorrectable events. Two cautions: the Helios ≤4×10⁻⁵ cycle figure is a confidence upper bound from zero logical errors in 5,000 shots per basis, not a measured rate [D][105]; and no number is interpretable without its acceptance [D][105][D][97]. Leakage and loss sit outside the Pauli model — IonQ's [[18,4,3]] break-even needed leakage post-selection [D][109]. Nothing here reports Λ-style distance scaling. Replication is good: the tesseract has run on two unrelated platforms [D][667][D][4].
+Headline numbers come from repeated logical preparation and measurement in both bases, post-selected on detected-but-uncorrectable events. Two cautions: the Helios ≤4×10⁻⁵ cycle figure is a confidence upper bound from zero logical errors in 5,000 shots per basis, not a measured rate [D][105]; and no number is interpretable without its acceptance [D][105][D][97]. Leakage and loss sit outside the Pauli model — IonQ's break-even, within error bars in one code the paper does not identify (3.95 ± 0.68 s against 3.84 ± 0.48 s physical, while its [[18,4,3]] memory reaches 2.48 ± 0.40 s), needed leakage post-selection [D][109]. Nothing here reports Λ-style distance scaling. Replication is good: the tesseract has run on two unrelated platforms [D][667][D][4].
 
-Conflicts. The tesseract is [[16,6,4]], not [[16,4,4]] — I trust the Error Correction Zoo entry and the arXiv abstract [D][674][D][667]. "48 corrected" and "94 detected" on Helios are different codes at different distances, routinely conflated [D][105]. Iceberg's sub-100,000-qubit RSA-2048 claim assumes p=10⁻³ with 1 µs cycles [S][29], not comparable to Gidney's <1 M [S][7].
+Conflicts. The tesseract is [[16,6,4]], not [[16,4,4]] — the Error Correction Zoo entry and the arXiv abstract agree [D][674][D][667]. "48 corrected" and "94 detected" on Helios are different codes at different distances, routinely conflated [D][105]. Iceberg's sub-100,000-qubit RSA-2048 claim assumes p=10⁻³ with 1 µs cycles [S][29], not comparable to Gidney's <1 M [S][7].
 
 ## Actors & economics
 
@@ -71,7 +71,7 @@ Conflicts. The tesseract is [[16,6,4]], not [[16,4,4]] — I trust the Error Cor
 | Microsoft Quantum | developer / user | US | Co-authored the tesseract demonstrations on Quantinuum hardware | [D][667] |
 | Harvard/MIT (Lukin) | research | US | [[16,6,4]] with 96 logical qubits on 448 atoms | [D][4] |
 | QuEra | developer | US | Commercialises that architecture; Libra 2028 targets >256 logical | [R][G:QUERA-LIBRA-2026] |
-| IonQ (incl. Oxford Ionics) | developer | US/UK | Nine codes on 40 ions incl. [[18,4,3]] break-even; Iceberg partner | [D][109][C][676] |
+| IonQ (incl. Oxford Ionics) | developer | US/UK | Eight codes on 40 ions (nine in the June version), break-even within error bars in one unidentified code ([[18,4,3]] stays below the physical lifetime); Oxford Ionics and Iceberg Quantum partnered on a fault-tolerant architecture with Iceberg's qLDPC codes (2025-07, within QBI Stage A) | [D][109][C][G:OXIONICS-ICEBERG-2025-07] |
 | Iceberg Quantum | supplier (architecture) | AU/DE/US | Only pure-play: licenses high-rate/qLDPC architectures (Pinnacle) | [S][29][P][677] |
 | DARPA | funder | US | QBI Stage B funds Quantinuum, IonQ, QuEra, Atom Computing | [G:QBI-STAGEB-2025-11] |
 | IBM | competitor | US | Bivariate-bicycle qLDPC is the substitution threat | [D][248] |
@@ -124,6 +124,7 @@ Open questions: (1) does concatenation to d≥6 keep the rate advantage once lea
 ## Open verification items
 
 - Iceberg Quantum's headquarters: trade press describes a Berlin base with a US presence while the founding institution is the University of Sydney [P][677][C][676]; the company site gives no location. Recorded AU/DE/US, unresolved.
+- Whether the Oxford Ionics–Iceberg Quantum partnership (2025-07) continues under IonQ is unstated: as of 2026-09-30, Iceberg Quantum's site lists PsiQuantum and Diraq as partners and names neither Oxford Ionics nor IonQ [C][676].
 - Acceptance for the Harvard [[16,6,4]] 96-logical-qubit runs is not quoted in the sources consulted; only the ion-side figures (0.62(2), 3.2%) are verified.
 - Quantinuum's Q2-2026 call claim of "near five-nines logical fidelity with a novel code family" has no public paper as of 2026-09-03; whether it refers to this family is unverified.
 - No dated patent-database count exists for this code family; the PatSnap figures cited are device-class only.

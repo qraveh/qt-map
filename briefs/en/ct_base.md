@@ -6,10 +6,10 @@ status: demonstrated
 since: 2012
 one_line: DC-to-few-GHz voltage pulses on lithographic gate electrodes drive exchange, tunnelling and parity in spin and Majorana devices, with no resonant drive.
 verdict: The physics is settled and the wiring is not. HRL attributes roughly 80% of its CNOT error to control and calibration rather than the qubit, so cold co-location — not faster pulses — is the lever.
-updated: 2026-09-04
+updated: 2026-09-30
 ---
 
-"Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics)."
+Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
 Baseband control manipulates a qubit with DC-to-few-GHz voltage pulses on lithographic gates rather than a resonant drive: a pulse shifts the electrostatic potential, and with it the exchange coupling between dots or the tunnel coupling of a Majorana junction. The licence is old and precise: DiVincenzo, Bacon, Kempe, Burkard and Whaley showed in 2000 that the Heisenberg interaction alone suffices for universal computation, at about 3× more qubits and ~10× more two-qubit operations [S][416]. Every exchange-only architecture since pays that bill to delete microwave hardware.
@@ -29,7 +29,7 @@ Exchange coupling J depends exponentially on detuning and barrier height, so a r
 Dominant term: extrinsic control and calibration, ~80% of the CNOT budget.
 
 ## Manufacturing, materials & supply chain
-The node rides ordinary CMOS: Intel's 300 mm EUV line reports over 24,000 devices per wafer at 96% tune-up yield [D][199] and Quantum Motion characterises 1,024 dots in five minutes on GlobalFoundries 22FDX [C][200]. That is the asset and the exposure: each developer sole-sources one foundry it does not own — Quobly to STMicroelectronics, Quantum Motion to GlobalFoundries, Diraq to imec — so a fab-side decision is a company-level failure mode. Room-temperature pulse generation is uncontrolled, but a controller "designed to operate at" ≤4.5 K falls under ECCN 3A901.a from the design file on [G:BIS-3A901A-CRYOCMOS]: cold integration imports export control.
+The node rides ordinary CMOS: Intel's 300 mm EUV line reports over 24,000 devices per wafer [D][199], with 96% tune-up yield on 232 devices of one wafer [D][766], and Quantum Motion characterises 1,024 dots in five minutes on GlobalFoundries 22FDX [C][200]. That is the asset and the exposure: each developer sole-sources one foundry it does not own — Quobly to STMicroelectronics, Quantum Motion to GlobalFoundries, Diraq to imec — so a fab-side decision is a company-level failure mode. Room-temperature pulse generation is uncontrolled, but a controller "designed to operate at" ≤4.5 K falls under ECCN 3A901.a from the design file on [G:BIS-3A901A-CRYOCMOS]: cold integration imports export control.
 
 ## Control, readout & I/O burden
 Baseband control costs about one line per gate and two to four gates per dot, so a naive 10³-qubit array wants 10³–10⁴ addressed lines from room temperature. HRL's counter-example is the number to hold: 296 lines and 366 DACs at ≤3.5 W driving 54 dots, with a 250 MHz on-chip sequencer and no room-temperature real-time electronics [D][G:HRL-CRYOCMOS-4K-2026] — ~20 DACs per qubit, cold multiplexing rather than wire elimination. At 10³ the harness is impractical without cold DACs; at 10⁴ per-qubit DAC count must fall an order of magnitude; at 10⁶ nothing exists. The binding constraint is recalibration cadence.
@@ -50,7 +50,7 @@ Fidelities come from randomised benchmarking and gate-set tomography, and the he
 | QuTech | Research | Netherlands | Microwave-free hopping control, 2D array | [D][G:QUTECH-BASEBAND-2025-07] |
 | Microsoft | Developer | USA | Gate-voltage-tuned parity measurement in tetrons | [D][13] |
 
-**Money.** 2025-11-06 · Diraq, Quantum Motion, Silicon Quantum Computing · DARPA QBI Stage B · up to $15 M USD each · programme [G:QBI-STAGEB-2025-11]. 2026-05-07 · Quantum Motion · Series C · $160 M USD · DCVC, Kembara · closed [C][G:QM-160M-2026-05]. 2026-05-21 · Diraq · CHIPS letter of intent · up to $38 M USD · US Commerce · non-binding [G:CHIPS-LOI-2026-05]. 2026-06-03 · Quobly · Series A · €115 M · Bpifrance, SEALSQ, STMicro · €134 M cumulative · closed [C][G:QUOBLY-115M-2026-06]. 2026-07-23 · IBM · acquires HRL · undisclosed · announced [C][G:IBM-HRL-2026-07].
+**Money.** 2025-11-06 · Diraq, Quantum Motion, Silicon Quantum Computing · DARPA QBI Stage B · up to $15 M USD each · programme [G:QBI-STAGEB-2025-11]. 2026-05-07 · Quantum Motion · Series C · $160 M USD · DCVC, Kembara · closed [C][G:QM-160M-2026-05]. 2026-05-21 · Diraq · CHIPS letter of intent · up to $38 M USD · US Commerce · non-binding [G:CHIPS-LOI-2026-05]. 2026-06-03 · Quobly · Series A · €115 M · Bpifrance, SEALSQ, STMicro · €134 M cumulative · closed [C][G:QUOBLY-115M-2026-06]. 2026-07-23 · IBM · acquires HRL · undisclosed · closed 2026-08-26 [C][G:IBM-HRL-2026-07][G:IBM-HRL-CLOSED-2026-08].
 
 **Market & supply chain.** Nothing is sold as "baseband control"; what sells is foundry capacity, enriched ²⁸Si, and the warm waveform racks Quantum Machines dominates with over half of developers as customers [C][G:QM-SERIESC-2025-02]. Cold integration threatens that rack business, and is why IBM bought HRL. Diraq's under-$1-per-qubit figure is a target, not a cost. This node pays for G3 and G4 on the spin architecture, G4 on the Majorana architecture if a qubit appears.
 
@@ -68,6 +68,7 @@ Confirm by 2027 if any developer publishes all-pairs two-qubit fidelities above 
 [199] H. C. George *et al.*, “12-spin-qubit arrays fabricated on a 300 mm semiconductor manufacturing line,” *Nano Lett.*, vol. 25, no. 2, pp. 793–799, Dec. 2024, doi: [10.1021/acs.nanolett.4c05205](https://doi.org/10.1021/acs.nanolett.4c05205). [arXiv:2410.16583](https://arxiv.org/abs/2410.16583). [D]
 [200] Quantum Motion, “Quantum Motion Delivers the Industry's First Full-Stack Silicon CMOS Quantum Computer,” Sep. 15, 2025. [Online]. Available: https://quantummotion.com/quantum-motion-delivers-the-industrys-first-full-stack-silicon-cmos-quantum-computer/ [C]
 [416] D. P. DiVincenzo, D. Bacon, J. Kempe, G. Burkard, and K. B. Whaley, “Universal quantum computation with the exchange interaction,” *Nature*, vol. 408, no. 6810, pp. 339–342, 2000, doi: [10.1038/35042541](https://doi.org/10.1038/35042541). [arXiv:quant-ph/0005116](https://arxiv.org/abs/quant-ph/0005116). [S]
+[766] S. F. Neyens *et al.*, “Probing single electrons across 300-mm spin qubit wafers,” *Nature*, vol. 629, no. 8010, pp. 80–85, May 2024, doi: [10.1038/s41586-024-07275-6](https://doi.org/10.1038/s41586-024-07275-6). [D]
 
 ## Open verification items
 The 80% extrinsic share of CNOT error is a modelled inference from HRL's noise budget, not an independent partition, and has no second-group replication.

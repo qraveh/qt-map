@@ -107,7 +107,7 @@ accept,9.95e-1,fraction,best (0.5% forced-gap discard),Sep 2026,quantinuum-helix
 t1,1e1,s,typical (10-100 s),2024,ionq-forte,https://www.ionq.com/quantum-systems/forte,
 t2,1,s,typical,2024,ionq-forte,https://www.ionq.com/quantum-systems/forte,
 err_2q_parallel,1e-4,dimensionless,best (99.99% two-qubit fidelity),Oct 2025,ionq-oxford-quartet,https://www.oxionics.com/announcements/ionq-achieves-landmark-result-setting-new-world-record-in-quantum-computing-performance/,"a hero-pair record, not a system median"
-t2,3.95,s,"best (logical lifetime, one code per the abstract)",Sep 2026,ionq-ba133-qldpc-testbed,https://arxiv.org/abs/2606.06455,physical baseline on the same device 3.84 ± 0.48 s (= 3 T₂*; version of 15 Sep 2026; 3.3 ± 0.9 s in June)
+t2,3.95,s,"best (logical lifetime, one code per the abstract)",Sep 2026,ionq-ba133-qldpc-testbed,https://arxiv.org/abs/2606.06455,physical baseline on the same device 3.84 ± 0.48 s (= 3 T₂*; arXiv version of 14 Sep 2026; 3.3 ± 0.9 s in June)
 accept,2.5e-1,fraction,typical for the larger codes (~75% rejection),Jun 2026,ionq-ba133-qldpc-testbed,https://arxiv.org/abs/2606.06455,
 magic_cost,4.0e7,Toffoli,"blueprint, not measured (ECDLP-256 end to end)",Sep 2026,ionq-superion-256,https://arxiv.org/abs/2609.05625,"19,397 physical ions, 25.7 days, 63% success"
 crosstalk,1.0e-2,dimensionless,typical (nearest neighbour),2025,aqt-ibex-q1,https://www.aqt.eu/products/ibex-q1/,not re-fetched

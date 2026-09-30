@@ -385,6 +385,16 @@ def _he_overlay(G, path=os.path.join(ROOT, 'data', 'i18n', 'graph_he.json')):
 _nhe = _he_overlay(G)
 if _nhe: print('graph_he.json: %d Hebrew entries merged' % _nhe)
 # ---- END Hebrew overlay -------------------------------------------------------------------------------------------------------------------
+# the descriptions name the register's counts through placeholders ({{N_T_CT_IONAOD_MACHINES_W}} — build/counts.py, 29 Sep 2026)
+import counts as _cn
+_M = json.load(open(os.path.join(ROOT, 'data', 'machines.json'), encoding='utf-8'))
+_nf = 0
+for _L in ('en', 'ru', 'he'):
+    _vals = _cn.tech_placeholders(_L, _M, G); _vals['MACHINES'] = str(len(_M['machines']))
+    for _n in G['nodes']:
+        for _f in ('desc', 'attrs'):
+            if isinstance(_n.get(_f), dict) and '{{' in (_n[_f].get(_L) or ''): _n[_f][_L] = _cn.fill(_n[_f][_L], _L, _vals); _nf += 1
+if _nf: print('graph descriptions: %d placeholder text(s) filled from the register' % _nf)
 json.dump(G,open(os.path.join(ROOT,'data','graph.json'),'w',encoding='utf-8',newline='\n'),ensure_ascii=False)
 # the architectures must satisfy their technologies' hard dependencies (build/audit/edges_check.py, 27 Sep 2026): an unmet need of a primary
 # technology stops the build; an alternate's is printed as a warning

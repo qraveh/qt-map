@@ -2656,7 +2656,7 @@
   "key": "spread",
   "num": null,
   "unit": "1",
-  "text": "No wafer-level parameter spread published for the InAs-Al/InAs-Pb heterostructures; only per-device topological gaps of 20-60 ueV are quoted",
+  "text": "No wafer-level parameter spread published for the InAs-Al or InAs-Pb heterostructures; only per-device topological gaps are quoted: maxima of 20–60 µeV for InAs-Al, a top-quintile ~70 µeV for InAs-Pb (against ~30 µeV for InAs-Al on that measure; tetron preprint arXiv:2606.03884, 2026)",
   "scope": "typical",
   "date": "2022-07",
   "url": "https://arxiv.org/abs/2207.02472",

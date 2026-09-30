@@ -22,6 +22,7 @@ not numbered entries (research notes such as "[G] …", "General facts cited abo
     python3 build/brief_refs.py --check             # lists == data, citations == entries, numbering, RU == EN
     python3 build/brief_refs.py --absolute          # one-time (26 Sep 2026): seed the permanent numbers, renumber every brief's text and list
 """
+from langs import LANGS
 import glob, json, os, re, sys
 from collections import OrderedDict
 
@@ -477,7 +478,7 @@ def _migrate(raw_path, vdir, alias, enrich, dry):
 def write_all(db):
     for bid, es in db['briefs'].items():
         ls = md_lines(bid, db)
-        for lang in ('en', 'ru'):
+        for lang in LANGS:   # every language of build/langs.py (29 Sep 2026: en, ru, he — a Hebrew list is the English one, byte for byte)
             p = path(bid, lang)
             if not os.path.exists(p): continue   # a brief whose translation is not written yet
             s = read(p); s2 = rewrite_section(s, lang, ls)

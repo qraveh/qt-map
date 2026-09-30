@@ -6,7 +6,7 @@ status: demonstrated
 since: 1998
 one_line: One qubit per spin-1/2 — a confined electron, hole or nucleus — with no encoded subspace, giving the smallest footprint and no leakage channel.
 verdict: The default encoding on every silicon, germanium, donor and defect platform; it buys minimum area and a clean Pauli error model at the cost of a resonant drive per qubit.
-updated: 2026-09-04
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -27,7 +27,7 @@ The computational space is the whole two-level system: nothing leaks out, so eve
 Dominant term: calibration drift across the array; no device above 12 qubits publishes all-pairs fidelities.
 
 ## Manufacturing, materials & supply chain
-The encoding adds no structure — one dot or donor per qubit, about a third of the dots an exchange-only qubit needs — and inherits the carrier's process: Intel's 300 mm EUV line at >24,000 devices per wafer and 96% tune-up yield [D][199], plus 22FDX, FD-SOI and imec 300 mm. The burden it imposes is control: one resonant drive per qubit frequency, so at 10³ qubits the wall is frequency crowding and microwave power at millikelvin, at 10⁴–10⁶ the count of addressable tones.
+The encoding adds no structure — one dot or donor per qubit, about a third of the dots an exchange-only qubit needs — and inherits the carrier's process: Intel's 300 mm EUV line at >24,000 devices per wafer [D][199] and 96% tune-up yield on 232 devices of one wafer [D][766], plus 22FDX, FD-SOI and imec 300 mm. The burden it imposes is control: one resonant drive per qubit frequency, so at 10³ qubits the wall is frequency crowding and microwave power at millikelvin, at 10⁴–10⁶ the count of addressable tones.
 
 ## Role in the stack
 The base encoding for the silicon and germanium quantum-dot architecture, the donor architecture and defect-spin network nodes. It is replaced in some designs by exchange-only encoding — the central fork: microwave hardware for minimum footprint and no leakage, against extra dots for baseband-only control and a leakage channel. It adds nothing to derived clock = sum of the syndrome round: gate layers + transport + readout + reset, which on silicon stays readout-dominated at 8.5×10⁻⁶ s. Verification: the 99.50(6)% is a lower bound and the accompanying ~49 µs Hahn-echo a maximum, both routinely requoted as point estimates [D][820]; the main report's "99.90% donor nuclear CZ" conflicts with the published SQC range [D][192]; and HRL's 2×10⁻⁴ single-qubit error belongs to exchange-only encoding, not this one [D][190].
@@ -60,6 +60,7 @@ Confirm or demote in 12–24 months: all-pairs fidelities above 12 qubits; baseb
 [190] Members of the HRL Quantum Team and Collaborators, “A digitally controlled silicon quantum processing unit,” [arXiv:2604.16216](https://arxiv.org/abs/2604.16216), Apr. 2026. [D]
 [192] H. Edlbauer *et al.*, “An 11-qubit atom processor in silicon,” *Nature*, vol. 648, no. 8094, pp. 569–575, Dec. 2025, doi: [10.1038/s41586-025-09827-w](https://doi.org/10.1038/s41586-025-09827-w). [arXiv:2506.03567](https://arxiv.org/abs/2506.03567). [D]
 [199] H. C. George *et al.*, “12-spin-qubit arrays fabricated on a 300 mm semiconductor manufacturing line,” *Nano Lett.*, vol. 25, no. 2, pp. 793–799, Dec. 2024, doi: [10.1021/acs.nanolett.4c05205](https://doi.org/10.1021/acs.nanolett.4c05205). [arXiv:2410.16583](https://arxiv.org/abs/2410.16583). [D]
+[766] S. F. Neyens *et al.*, “Probing single electrons across 300-mm spin qubit wafers,” *Nature*, vol. 629, no. 8010, pp. 80–85, May 2024, doi: [10.1038/s41586-024-07275-6](https://doi.org/10.1038/s41586-024-07275-6). [D]
 [819] D. Loss and D. P. DiVincenzo, “Quantum computation with quantum dots,” *Phys. Rev. A*, vol. 57, no. 1, pp. 120–126, Jan. 1998, doi: [10.1103/PhysRevA.57.120](https://doi.org/10.1103/PhysRevA.57.120). [D]
 [820] F. K. Unseld *et al.*, “Baseband control of single-electron silicon spin qubits in two dimensions,” *Nat. Commun.*, vol. 16, no. 1, Art. no. 5605, Jul. 2025, doi: [10.1038/s41467-025-60351-x](https://doi.org/10.1038/s41467-025-60351-x). [D]
 

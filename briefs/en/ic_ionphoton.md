@@ -5,8 +5,8 @@ layer: "9 Interconnect"
 status: demonstrated
 since: 2007
 one_line: "Heralded ion–photon entanglement over fibre links separate ion traps into one machine; best published rate 250 s⁻¹ against a ~10⁴ s⁻¹ need."
-verdict: "Real: remote Bell pairs at 9.7–250 s⁻¹, 94–97% fidelity, teleported CZ 86%. Unverified: IonQ's networked-systems claim carries no rate or fidelity. Demote if nothing exceeds 10³ s⁻¹ by 2028."
-updated: 2026-09-03
+verdict: "Real: remote Bell pairs at 9.7–250 s⁻¹, 94–97% fidelity, teleported CZ 86%. Unverified: IonQ's networked-systems claim carries no rate or fidelity. Demote if nothing exceeds 10³ s⁻¹ by end-2028."
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -34,15 +34,15 @@ Best demonstrated is a distributed computation, not just a Bell pair: Oxford ran
 | 2025-06 | Lightsynq (photonic interconnect + quantum memory, >20 patents and applications) acquired | IonQ | [C][776] |
 | 2026-04 | Two commercial ion systems linked; no rate, fidelity or distance disclosed | IonQ | [C][589] |
 
-Dominant gap: throughput. Every published rate is two to three orders below what a networked QEC cycle needs; fidelity is not the blocker.
+Dominant gap: throughput. Published rates sit 40× (the record) to ~10³× below the ~10⁴ s⁻¹ a networked QEC cycle needs; fidelity is not the blocker.
 
 ## Manufacturing, materials & supply chain
 
-No fab and no wafer statistic — the "yield" is optical collection efficiency, an alignment and numerical-aperture figure. A link is a high-NA objective or in-vacuum cavity, single-mode fibre and polarisation control, a Bell-state-measurement technology with two single-photon detectors, and coincidence logic. Traps come from elsewhere: Infineon is the merchant trap foundry for IonQ/Oxford Ionics, eleQtron and Universal Quantum, Honeywell fabricates Quantinuum's in house [C][G:INFINEON-IONTRAP-FAB-2026]. The concentrated input is detectors — the merchant SNSPD base is Single Quantum, ID Quantique, Photon Spot and Quantum Opus, and IonQ owns ID Quantique [P][G:SNSPD-VENDORS-2026]. Cost per link is not quotable. Export exposure is indirect: the BIS rule of 2024-09-06 names no interconnect optics, only ≥34-qubit machines (4A906) [G][301].
+No fab and no wafer statistic — the "yield" is optical collection efficiency, an alignment and numerical-aperture figure. A link is a high-NA objective or in-vacuum cavity, single-mode fibre and polarisation control, a Bell-state-measurement apparatus with two single-photon detectors, and coincidence logic. Traps come from elsewhere: Infineon is the merchant trap foundry for IonQ/Oxford Ionics, eleQtron and Universal Quantum, Honeywell fabricates Quantinuum's in house [C][G:INFINEON-IONTRAP-FAB-2026]. The concentrated input is detectors: the merchant SNSPD base is five vendors — Single Quantum, ID Quantique (owned by IonQ), Photon Spot, Quantum Opus and Moscow's Scontel [P][G:SNSPD-VENDORS-2026]. Cost per link is not quotable. Export exposure is indirect: the BIS rule of 2024-09-06 names no interconnect optics [G][301]; it reaches only the machine, under 4A906, and only when its qubit count and C-NOT error fall in the same band, from 34–99 qubits at ≤ 10⁻⁴ to any error from 2,000 qubits [G:BIS-3A901A-CRYOCMOS].
 
 ## Control, readout & I/O burden
 
-Per link: one collection channel per ion, two detectors, a phase-stable optical path, a coincidence gate. Heralding latency is sub-µs, so the electronics limit nothing — the attempt rate does. At ~10 modules a handful of point-to-point links works; at 10⁴ any-to-any needs a switch fabric plus enough pair generation to feed inter-module lattice surgery, and no published design states a link count. Quantinuum's in-trap alternative exchanges ions at 2.5 kHz and transports through junctions at 4 m/s [D][113] — an order faster than the best photonic link, which is why QCCD vendors have not adopted this node.
+Per link: one collection channel per ion, two detectors, a phase-stable optical path, a coincidence gate. Heralding latency is sub-µs, so the electronics limit nothing — the attempt rate does. At ~10 modules a handful of point-to-point links works; at 10⁴ any-to-any needs a switch fabric plus enough pair generation to feed inter-module lattice surgery, and no published design states a link count. Quantinuum's in-trap alternative exchanges ions at 2.5 kHz and transports through junctions at 4 m/s [D][113] — an order faster than the best photonic link, which is why QCCD vendors have not adopted the technology.
 
 ## Role in the stack
 
@@ -75,17 +75,17 @@ Heralded fidelity is tomography or parity oscillation conditioned on a successfu
 - 2026-06-03 · Quantinuum · IPO, Nasdaq QNT · $1.68 B gross · — · closed [G][123]
 - 2026-07-31 · IonQ · M&A, SkyWater Technology · ~$1.8 B · — · closed [C][19]
 
-**Market & supply chain.** There is no market yet — four merchant detector houses and a few optics suppliers — and the largest natural customer owns one of the four. IonQ has bought the vertical: Lightsynq for interconnect and memory, ID Quantique for detectors, Oxford Ionics for gates, SkyWater for fabrication. Unit economics are not quotable. G6 pays directly; G4 pays as the way past single-trap ceilings; the rest do not.
+**Market & supply chain.** There is no market yet — five merchant detector houses and a few optics suppliers — and the largest natural customer owns one of the five. IonQ has bought the vertical: Lightsynq for interconnect and memory, ID Quantique for detectors, Oxford Ionics for gates, SkyWater for fabrication. Unit economics are not quotable. G6 pays directly; G4 pays as the way past single-trap ceilings; the rest do not.
 
 **IP & standards.** The only dated IP fact is IonQ's statement that Lightsynq brought "over 20 patents and patent applications" in photonic interconnect and quantum memory — a company count with no family, assignees or filing years [C][776]. No named patent family was found for ion–photon link hardware; no standards body governs it.
 
-**Roadmaps & track record.** IonQ (promised 2025-06 · 2 M physical, 40–80 k logical by 2030 · status 2026-09-03: needs an interconnect two orders faster than any published rate) [R][132]; its 2020 roadmap missed 4,000 qubits by 2026 by ~40×. Quantinuum (promised 2024-09 · Sol 2027, Apollo 2029 · no dated photonic-interconnect commitment) [R][118]; Helios launched on schedule, so its dates carry weight.
+**Roadmaps & track record.** IonQ (promised 2025-06 · 2 M physical, 40–80 k logical by 2030 · status 2026-09-03: needs an interconnect ~40× faster than the best published rate) [R][132]; its 2020 roadmap missed 4,000 qubits by 2026 by ~40×. Quantinuum (promised 2024-09 · Sol 2027, Apollo 2029 · no dated photonic-interconnect commitment) [R][118]; Helios launched on schedule, so its dates carry weight.
 
-**Strategic reading.** If heralded links reach production rates the single-trap ceiling stops mattering and every ion vendor becomes modular; IonQ wins that world because it owns each layer, and merchant detector vendors lose their largest customer to a competitor. If rates stay put, Quantinuum wins by ignoring the node — in-trap transport at 4 m/s is already faster. Supplier power is negligible today and would rise only if link counts grew with module counts.
+**Strategic reading.** If heralded links reach production rates the single-trap ceiling stops mattering and every ion vendor becomes modular; IonQ wins that world because it owns each layer, and merchant detector vendors lose their largest customer to a competitor. If rates stay put, Quantinuum wins by ignoring the technology — in-trap transport at 4 m/s is already faster. Supplier power is negligible today and would rise only if link counts grew with module counts.
 
 ## Outlook & open questions
 
-Confirm by end-2027 if any group publishes above 10³ s⁻¹, or IonQ discloses rate, fidelity and distance. Demote the networking-ready framing if by end-2028 nothing exceeds roughly 10× the 250 s⁻¹ record. Best case by 2029: cavity or waveguide collection plus telecom conversion reaches 10³–10⁴ s⁻¹ and a three-node network appears. Worst case: rates stay at 10²–10³ s⁻¹ and modular ion machines use in-trap transport instead. Open questions: what did IonQ's link achieve; does cavity enhancement cost interference visibility; can frequency conversion survive the fidelity budget?
+Confirm by end-2027 if any group publishes above 10³ s⁻¹, or IonQ discloses rate, fidelity and distance. Demote the networking-ready framing if by end-2028 nothing exceeds 10³ s⁻¹, four times the 250 s⁻¹ record. Best case by 2029: cavity or waveguide collection plus telecom conversion reaches 10³–10⁴ s⁻¹ and a three-node network appears. Worst case: rates stay at 10²–10³ s⁻¹ and modular ion machines use in-trap transport instead. Open questions: what did IonQ's link achieve; does cavity enhancement cost interference visibility; can frequency conversion survive the fidelity budget?
 
 ## References
 [18] IonQ, “IonQ Completes Acquisition of Oxford Ionics, Rapidly Accelerating Its Quantum Computing Roadmap,” Sep. 17, 2025. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-oxford-ionics-rapidly-accelerating-its-quantum [C]

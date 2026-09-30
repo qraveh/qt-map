@@ -6,7 +6,7 @@ status: demonstrated
 since: 2015
 one_line: Electro-optic and MEMS switches route photons between waveguides on a real-time heralding decision, the loss-dominated transport layer every photonic architecture shares.
 verdict: Best published in-line switch loss is 100 mdB (PsiQuantum BTO), ~14x the ~7 mdB fault-tolerance budget as of 4 Sep 2026; non-volatile devices fix static power, not loss.
-updated: 2026-09-04
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -65,12 +65,12 @@ Switch loss and extinction come from direct insertion-loss characterisation agai
 
 **IP & standards.** No patent family specific to quantum photonic switching surfaced; the nearest adjacent grant is ORCA Computing's US 12,437,225 on linear-optical encoded GHZ measurements (2025-10-07) [G:ORCA-DUALRAIL-PATENT-2025]. Classical MZI-switch IP is extensive and non-quantum; PatSnap's counts are not disaggregated to this layer [P][G:PATSNAP-2026-06]. No standards body, no litigation, no shared feed-forward interface.
 
-**Roadmaps & track record.** PsiQuantum (2024-04, for a useful machine by end-2027) — as of 4 Sep 2026 groundbreaking only in June 2026 after a site change [P][183], cryoplant targeted 2H 2027, no 2026 hardware publication; strong components, unevidenced system. Xanadu (2026-08-31, for 1.0× threshold loss in 2030 from 24.1×) — the field's first quantified roadmap, naming this component's gap. QuiX (2025-07, for a 2026 universal system) — Carina delivered July 2026, commissioning pending. Quandela — Lucy delivered, 2025 logical-qubit milestone missed.
+**Roadmaps & track record.** PsiQuantum (2024-04, for a useful machine by end-2027) — as of 4 Sep 2026 groundbreaking only on 2026-06-17 after a site change [P][183], its Linde cryoplant due for delivery in 2H 2027 [C][G:PSIQ-GROUNDBREAKING-2026-06], no 2026 hardware publication; strong components, unevidenced system. Xanadu (2026-08-31, for 1.0× threshold loss in 2030 from 24.1×) — the field's first quantified roadmap, naming this component's gap. QuiX (2025-07, for a 2026 universal system) — Carina delivered July 2026, commissioning pending. Quandela — Lucy delivered, 2025 logical-qubit milestone missed.
 
 **Strategic reading.** Whoever first ships a non-volatile sub-10 mdB switch owns the chokepoint for both photonic architectures at once, the requirement being encoding-agnostic; hence DARPA's Stage C buys validation of switches, packaging and cryogenics, not an algorithm. If the gap fails to close the branch loses together — no photonic fallback avoids switching — while matter-based modalities face no equivalent single-number gate. Leverage sits with GlobalFoundries, Corning and DISCO.
 
 ## Outlook & open questions
-Confirm/demote in 12–24 months: a sub-50 mdB non-volatile switch; independent replication of the 100 mdB figure; PsiQuantum's Brisbane cryoplant energised in 2H 2027; a feed-forward loop published under 100 ns. Best case 2029: single-digit-mdB non-volatile switching, Xanadu's 24.1× closing as promised. Worst case: loss plateaus near 100 mdB and photonic fault tolerance slips past 2031 for the whole branch. Open: does barium titanate yield at 300 mm; can fibre-array attach be second-sourced; does extinction bind once loss falls. Watch Xanadu's 2027 loss number.
+Confirm/demote in 12–24 months: a sub-50 mdB non-volatile switch; independent replication of the 100 mdB figure; PsiQuantum's Moreton Bay cryoplant delivered in 2H 2027 as promised; a feed-forward loop published under 100 ns. Best case 2029: single-digit-mdB non-volatile switching, Xanadu's 24.1× closing as promised. Worst case: loss plateaus near 100 mdB and photonic fault tolerance slips past 2031 for the whole branch. Open: does barium titanate yield at 300 mm; can fibre-array attach be second-sourced; does extinction bind once loss falls. Watch Xanadu's 2027 loss number.
 
 ## References
 [169] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
@@ -90,4 +90,4 @@ Confirm/demote in 12–24 months: a sub-50 mdB non-volatile switch; independent 
 [519] PsiQuantum, “PsiQuantum Raises $1 Billion to Build Million-Qubit Scale, Fault-Tolerant Quantum Computers,” Sep. 10, 2025. [Online]. Available: https://www.psiquantum.com/news-import/psiquantum-1b-fundraise [C]
 
 ## Open verification items
-The graph record's "recent 30 mdB" switch figure could not be traced to any publication; the best located in-line figure is 100 mdB (PsiQuantum) and the most recent device is a 1.5 dB MEMS switch. Whether 0.19 dB/MZI (switch plus interconnect), 100 mdB (switch element) and 85 or 52 mdB (fibre-to-chip) share a reference plane — no source reconciles them. The main report's "waveguide loss 0.5 dB/m" for Omega conflicts with the paper's single-mode silicon-nitride figure of 1.8(2) dB/m [G:PSIQ-OMEGA-METRICS-2025]; I use neither as a switch number. Institutional affiliation for the MEMS switch authors was not returned by the arXiv abstract page.
+The graph record's "recent 30 mdB" switch figure could not be traced to any publication; the best located in-line figure is 100 mdB (PsiQuantum) and the most recent device is a 1.5 dB MEMS switch. Whether 0.19 dB/MZI (switch plus interconnect), 100 mdB (switch element) and 85 or 52 mdB (fibre-to-chip) share a reference plane — no source reconciles them. The main report's "waveguide loss 0.5 dB/m" for Omega conflicts with the paper's single-mode silicon-nitride figure of 1.8(2) dB/m [G:PSIQ-OMEGA-METRICS-2025]; neither is used here as a switch number. Institutional affiliation for the MEMS switch authors was not returned by the arXiv abstract page.

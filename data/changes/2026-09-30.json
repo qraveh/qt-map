@@ -1,0 +1,202 @@
+{
+ "date": "2026-09-30",
+ "source": "doubts of 30 Sep 2026 (F8a): Equal1 Bell-1 = RacQ, Alice & Bob's manufacturing cells, IonQ's code count",
+ "items": [
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "equal1-racq"
+   },
+   "fields": {
+    "name": "RacQ (Bell-1)",
+    "status": "DEPLOYED (installed at ESA's Centre for Earth Observation, Frascati: announced by ESA on 15 Jul 2026 under the name Bell-1, reported by Equal1 on 31 Jul 2026 as RacQ — 'our old brand name of Bell-1 … Same machine'; no other customer installation on record)",
+    "status_date": "Jul 2026 (ESA installation: ESA 15 Jul, Equal1 31 Jul); launched as Bell-1 16 Mar 2025, unveiled as RacQ 14 May 2026",
+    "physical_qubits": "6",
+    "physical_qubits_num": "6",
+    "roadmap": "Equal1 in Jun 2025 (Silicon Republic): 17 qubits 'next year', then 49, then 2,000 — the machine ESA installed in Jul 2026 is 'a 6-qubit system'; UnityQ 'will integrate the complete quantum system onto a single silicon package' (undated)",
+    "flags": "conflicting-claim;vendor-claim"
+   },
+   "old": {
+    "name": "RacQ",
+    "status": "DEPLOYED (unveiled 14 May 2026; installed at ESA's Centre for Earth Observation, Frascati, reported 31 Jul 2026)",
+    "status_date": "14 May 2026 (unveiled); 31 Jul 2026 (ESA installation)",
+    "physical_qubits_num": "",
+    "roadmap": "successor to Bell-1 ('the next generation evolution of our Bell-1 Server'); UnityQ 'will integrate the complete quantum system onto a single silicon package'",
+    "flags": "count-unpublished;vendor-claim"
+   },
+   "aliases": [
+    "Bell-1"
+   ],
+   "evidence": [
+    {
+     "url": "https://www.equal1.com/insights/equal1-racq-installed-at-esa",
+     "date": "2026-07-31",
+     "quote": "In the blog post ESA mentions our old brand name of Bell-1. You may know it as the Equal1 RacQ. Same machine."
+    },
+    {
+     "url": "https://philab.esa.int/esas-first-quantum-computer-will-shift-computing-frontiers-in-space/",
+     "date": "2026-07-15",
+     "quote": "Equal1's Bell-1 quantum computer, a 6-qubit system, is under installation at ESA-ESRIN's Data Centre in Frascati."
+    },
+    {
+     "url": "https://www.esa.int/Applications/Observing_the_Earth/ESA_brings_quantum_computing_to_Earth_observation",
+     "date": "2026-07-15",
+     "quote": "The European Space Agency has installed its first quantum computer, called Bell-1, at its Earth observation centre in Italy."
+    },
+    {
+     "url": "https://www.equal1.com/insights/equal1-unveils-worlds-first-hybrid-rack-mounted-silicon-spin-quantum-computer",
+     "date": "2026-05-14",
+     "quote": "RacQ, the next generation evolution of our Bell-1 Server"
+    }
+   ],
+   "note": "One machine under two brand names: equal1-bell-1 merged into this row (see the next item). Its qubit count comes from the Bell-1 launch and from ESA; Equal1's RacQ pages give none."
+  },
+  {
+   "kind": "remove",
+   "subject": {
+    "type": "machine",
+    "id": "equal1-bell-1"
+   },
+   "fields": {},
+   "old": {
+    "name": "Bell-1 (UnityQ)",
+    "status": "DEPLOYED",
+    "status_date": "16 Mar 2025"
+   },
+   "evidence": [
+    {
+     "url": "https://www.equal1.com/insights/equal1-racq-installed-at-esa",
+     "date": "2026-07-31",
+     "quote": "In the blog post ESA mentions our old brand name of Bell-1. You may know it as the Equal1 RacQ. Same machine."
+    },
+    {
+     "url": "https://www.siliconrepublic.com/machines/equal1-bell-1-ucd-silicon-republic-quantum-computing",
+     "date": "2025-06-20",
+     "quote": "Bell-1 is situated in a dedicated room in Equal1's office."
+    },
+    {
+     "url": "https://www.equal1.com/insights/equal1-raises-60m-to-accelerate-quantum-computing-using-existing-semiconductor-manufacturing",
+     "date": "2026-01-15",
+     "quote": "flagship customers, such as the European Space Agency (ESA), where Equal1 will install Bell-1 into ESA's Space HPC Center in Italy"
+    }
+   ],
+   "note": "Not a second machine: Bell-1 is the former brand name of RacQ, and its only customer installation on record is ESA's Frascati machine, which the RacQ row carries. Its DEPLOYED status rested on the 16 Mar 2025 launch alone (the unit then stood in Equal1's own office). Its cells and evidence rows removed, its two verified refs moved to equal1-racq; the id is replaced by equal1-racq in map-gaps (G-spinl9, G-none7, G-none8, G-cryo; G-qsoc now lists equal1-racq and quantum-motion-qm-one, the two machines whose cells carry the gap), technology-machines, org-alignment and data/orgs/organisations.json."
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "aliceandbob-boson-4"
+   },
+   "fields": {
+    "stations.fab": "fab_sc primary (evidence arXiv:2502.07892, ✅); drop fab_3d"
+   },
+   "old": {
+    "stations.fab": "fab_sc primary (evidence arXiv:2307.06617, 🔎); fab_3d alternate ('3-D machined superconducting-cavity heritage of the cat-qubit line', inferred)"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2307.06617",
+     "date": "2024-05-06",
+     "quote": "A quarter wavelength coplanar waveguide resonator of frequency ω_a/2π=5.26 GHz ... A 2-inch, 430 μm-thick sapphire wafer, on which 200 nm of α-phase tantalum were sputtered"
+    },
+    {
+     "url": "https://arxiv.org/abs/2502.07892",
+     "date": "2025-03-03",
+     "quote": "The circuit is fabricated by patterning the circuit on a Tantalum layer sputtered on a Sapphire substrate. Josephson junctions are then evaporated in Aluminum using the Dolan-bridge technique."
+    },
+    {
+     "url": "https://alice-bob.com/products/quantum-cloud-felis/boson-4/",
+     "date": "2026-09-30",
+     "quote": "Boson 4 builds upon the measurement protocols developed with Boson 3 while further improving bit-flip lifetime to more than 22 seconds."
+    }
+   ],
+   "note": "Alice & Bob's cat qubits are planar 2-D circuits (λ/4 coplanar resonator in Ta on sapphire), not machined 3-D cavities. Alice & Bob's Boson 4 page links Réglade et al. (Nature 629, 778) as Boson 3 and arXiv:2502.07892 as Boson 4's paper; the fab cell now cites the latter."
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "aliceandbob-helium-2"
+   },
+   "fields": {
+    "stations.fab": "fab_sc primary; drop fab_3d"
+   },
+   "old": {
+    "stations.fab": "fab_sc primary; fab_3d alternate (inferred)"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2307.06617",
+     "date": "2024-05-06",
+     "quote": "A quarter wavelength coplanar waveguide resonator"
+    }
+   ],
+   "note": "Planar cat line; the fab_3d alternate had no source."
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "aliceandbob-helium"
+   },
+   "fields": {
+    "stations.fab": "fab_sc primary; drop fab_3d"
+   },
+   "old": {
+    "stations.fab": "fab_sc primary; fab_3d alternate (whitepaper)"
+   },
+   "evidence": [
+    {
+     "url": "https://alice-bob.com/wp-content/uploads/2024/12/Think-Inside-The-Box-Alice-Bob-Whitepaper.pdf",
+     "date": "2024-12",
+     "quote": "sapphire chips with printed superconducting circuits"
+    }
+   ],
+   "note": "The whitepaper the fab_3d alternate cited describes printed circuits on sapphire, i.e. the fab_sc cell."
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "aliceandbob-graphene"
+   },
+   "fields": {
+    "stations.fab": "fab_sc primary; drop fab_3d"
+   },
+   "old": {
+    "stations.fab": "fab_sc primary; fab_3d alternate (inferred)"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2401.09541",
+     "date": "2024-01",
+     "quote": "Fig. 9: flip-chip two-layer layout"
+    }
+   ],
+   "note": "Planar flip-chip layout; the fab_3d alternate had no source. Lithium and Beryllium carried no fab_3d cell."
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-ba133-qldpc-testbed"
+   },
+   "fields": {
+    "best_logical": "eight distinct codes across three families on one device (nine in the June version) …"
+   },
+   "old": {
+    "best_logical": "nine distinct codes across three families on one device …"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2606.06455v2",
+     "date": "2026-09-14",
+     "quote": "we demonstrate eight quantum error-correcting codes with starkly different qubit connectivity requirements"
+    }
+   ],
+   "note": "Table I of v2 lists eight codes (BB [[18,4,3]], [[24,4,4]], [[30,4,5]]; GB [[16,2,4]], [[26,2,5]]; toric [[18,2,3]], [[16,2,4]]; concatenated [[16,4,4]]) in the same three families; the June version said nine. Also in machine-codes.csv, the cx_bus and code_qldpc evidence cells and gap G-beam."
+  }
+ ]
+}

@@ -6,7 +6,7 @@ status: demonstrated
 since: 2010
 one_line: "Global laser pulses drive neighbouring tweezer-trapped atoms to a Rydberg state whose interaction blocks double excitation, giving a deterministic 270 ns CZ."
 verdict: "Best natural-carrier entangler by speed; 99.854% raw as of April 2026, but the standard scheme sits within ~0.05% of its own ceiling and its residual error is atom loss."
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -45,7 +45,7 @@ There is no wafer; the manufacturing surface is the laser and beam-steering chai
 
 ## Control, readout & I/O burden
 
-The gate is *global*: one beam pair entangles every blockaded pair at once, so per-qubit control lines scale as O(1), not O(N). The cost is optical power — holding $2\pi\times17$ MHz over $N$ atoms scales power linearly in $N$ — and steering bandwidth, since SLM/AOD refresh near 10 MHz is judged insufficient above ~$10^4$ qubits. At $10^3$ nothing breaks; at $10^4$ power and steering bind; at $10^6$ multi-core optical interconnects are required and undemonstrated. The gate's own control latency is sub-µs, but it sits inside a round dominated by ~0.8 ms of transport between gate layers and ~0.5 ms imaging, giving measured QEC rounds of ~1–4.5 ms [D][4][S][31]; the compensating theory is transversal gates with correlated decoding, keeping syndrome rounds constant per logical gate [S][152].
+The gate is *global*: one beam pair entangles every blockaded pair at once, so per-qubit control lines scale as O(1), not O(N). The cost is optical power — holding $2\pi\times17$ MHz over $N$ atoms scales power linearly in $N$ — and beam steering: an acousto-optic deflector resolves as many spots as its RF bandwidth times the acoustic transit across the beam, a transit that also bounds how fast it re-points, while liquid-crystal modulators reframe at tens of hertz. At $10^3$ nothing breaks; at $10^4$ power and steering bind; at $10^6$ multi-core optical interconnects are required and undemonstrated. The gate's own control latency is sub-µs, but it sits inside a round dominated by ~0.8 ms of transport between gate layers and ~0.5 ms imaging, giving measured QEC rounds of ~1–4.5 ms [D][4][S][31]; the compensating theory is transversal gates with correlated decoding, keeping syndrome rounds constant per logical gate [S][152].
 
 ## Role in the stack
 

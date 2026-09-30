@@ -4,9 +4,9 @@ name: Crossbar shared-line control (spins)
 layer: "4 Connectivity / transport"
 status: emerging
 since: 2024
-one_line: Row- and column-shared plunger and barrier lines address a two-dimensional dot array with line count scaling as the square root of dot count, trading wireability for addressing granularity.
+one_line: Row- and column-shared plunger and barrier lines address a two-dimensional dot array with line count scaling as the square root of dot count, trading addressing granularity for wireability.
 verdict: Removes the wiring wall on paper and in a 1,058-site chip, but no crossbar array has published a two-qubit gate, a crosstalk figure or an independent replication.
-updated: 2026-09-04
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).

@@ -6,7 +6,7 @@ status: emerging
 since: 2026
 one_line: "Квантованные импульсы магнитного потока с ниобиевого цифрового кристалла, смонтированного flip-chip на кубитную пластину, выполняют гейты при милликельвинах, заменяя микроволновый коаксиал на каждый кубит."
 verdict: "Реально: один пятикубитный модуль с однокубитной точностью > 99%. Не доказано: двухкубитные гейты, считывание, потоковое смещение, устойчивость к квазичастицам за пределами пяти кубитов. Понизить, если к 2028 г. не появится SFQ-модуль более чем на 20 кубитов."
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = коэффициент подавления ошибки на шаг расстояния кода; QBI = DARPA Quantum Benchmarking Initiative (Stage A — концепция → B — план НИОКР → C — государственная V&V); G1–G7 = классы целей, принятые в отчёте (см. «Акторы и экономика»).
@@ -70,7 +70,7 @@ updated: 2026-09-03
 - 2020-09-16 · SEEQC · раунд серии A · $22.4 M · EQT Ventures (лид) · закрыт [C][572]
 - 2025-01-16 · SEEQC · раунд роста · $30 M · SIP Global и другие · закрыт [P][573]
 - 2025-06-12 · SEEQC + IBM · интеграция SFQ в рамках DARPA QBI, исполнитель — IBM [G][65] · сумма не раскрыта · объявлено [P][54][G:SEEQC-2026]
-- 2026-06-29 · SEEQC · форма S-1 для IPO на Nasdaq, параллельно соглашению о SPAC-слиянии с Allegro Merger Corp (оценка предприятия $1 B) · подана [P][556][G:SEEQC-S1-2026-07]
+- 2026-06-29 · SEEQC · форма S-1 для IPO на Nasdaq, параллельно соглашению о SPAC-слиянии с Allegro Merger Corp (оценка предприятия $1 B) · подана [C][556][G:SEEQC-S1-2026-07]
 - 2026-08-25 · SEEQC / Allegro · SPAC-слияние прекращено по соглашению об урегулировании: Allegro получает $6 M акциями по pre-money оценке $1.3 B при будущем IPO, продаже или привлечении ≥ $100 M · расторгнуто [G][574]
 
 **Рынок и цепочка поставок.** Рынка SFQ-управления пока нет: один вендор, одна демонстрация. SkyWater — контрактная фабрика, упомянутая в отчётах D-Wave по форме 10-K [G][492], — с июля 2026 г. принадлежит IonQ [C][19]. Платят за это G3 и G4; G7 — во вторую очередь.
@@ -100,7 +100,7 @@ updated: 2026-09-03
 [492] U.S. Securities and Exchange Commission, “EDGAR full-text search: ‘SkyWater’ in D-Wave Quantum Inc. 10-K filings,” SEC EDGAR Full-Text Search, Feb. 26, 2026. [Online]. Available: https://efts.sec.gov/LATEST/search-index?q=%22SkyWater%22&forms=10-K&ciks=0001907982 [G]
 [527] A. Noori *et al.*, “A Cryo-CMOS Control System for Large-Scale Superconducting Qubit Quantum Computing: Part 2,” IBM Research, Mar. 16, 2026. [Online]. Available: https://research.ibm.com/publications/a-cryo-cmos-control-system-for-large-scale-superconducting-qubit-quantum-computing-part-2 [C]
 [550] S. Kawabata, “Integration and Resource Estimation of Cryoelectronics for Superconducting Fault-Tolerant Quantum Computers,” [arXiv:2601.03922](https://arxiv.org/abs/2601.03922), Jan. 2026. [S]
-[556] SEEQC, “SEEQC Files Registration Statement for Proposed Initial Public Offering,” Business Wire, Jun. 29, 2026. [Online]. Available: https://www.businesswire.com/news/home/20260629077919/en/SEEQC-Files-Registration-Statement-for-Proposed-Initial-Public-Offering [P]
+[556] SEEQC, “SEEQC Files Registration Statement for Proposed Initial Public Offering,” Business Wire, Jun. 29, 2026. [Online]. Available: https://www.businesswire.com/news/home/20260629077919/en/SEEQC-Files-Registration-Statement-for-Proposed-Initial-Public-Offering [C]
 [565] R. McDermott and M. G. Vavilov, “Accurate Qubit Control with Single Flux Quantum Pulses,” *Phys. Rev. Appl.*, vol. 2, no. 1, Art. no. 014007, Jul. 2014, doi: [10.1103/PhysRevApplied.2.014007](https://doi.org/10.1103/PhysRevApplied.2.014007). [S]
 [566] E. Leonard *et al.*, “Digital Coherent Control of a Superconducting Qubit,” *Phys. Rev. Appl.*, vol. 11, no. 1, Art. no. 014009, Jan. 2019, doi: [10.1103/PhysRevApplied.11.014009](https://doi.org/10.1103/PhysRevApplied.11.014009). [arXiv:1806.07930](https://arxiv.org/abs/1806.07930). [D]
 [567] AIST; Yokohama National University; Tohoku University; NEC, “Successful demonstration of a superconducting circuit for qubit control within large-scale quantum computer systems,” NEC Press Releases, Jun. 3, 2024. [Online]. Available: https://www.nec.com/en/press/202406/global_20240603_02.html [C]
@@ -117,5 +117,5 @@ updated: 2026-09-03
 - Основной текст [304] за платным доступом: пять кубитов, 10 mK и «нановатты на кубит» взяты из прессы [53], а не из аннотации.
 - Параметры процесса SFQ5ee MIT-LL получить не удалось; [570] описывает только кубитную фабрику.
 - Датированного китайского результата 2025–26 гг. по SFQ-управлению кубитами не найдено; счёта патентных семейств нет.
-- Выручка, денежные средства и объём размещения SEEQC не раскрыты [556]; оценка предприятия взята из отраслевой прессы.
+- Выручка и денежные средства SEEQC приведены в её формах S-1 — выручка $4.2 M за 2025 г., $18.1 M денежных средств на 2026-06-30 [G:SEEQC-S1A-2026-08]; объём размещения по-прежнему не заполнен (поправка к S-1 от 2026-09-11), а оценка предприятия взята из отраслевой прессы.
 - Сверхпроводниковые возможности SkyWater выведены из упоминаний в отчётах D-Wave по форме 10-K [492].

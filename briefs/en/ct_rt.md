@@ -6,7 +6,7 @@ status: demonstrated
 since: 2007
 one_line: One coherent line per drive, flux and readout port runs from room-temperature racks through attenuated coax or flex ribbon into the mixing chamber.
 verdict: Line count and mixing-chamber heat, not gate physics, cap qubits per fridge; falsifiable if one fridge runs >2,000 qubits on RT lines.
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -64,7 +64,7 @@ Every line count above 1,536 is product literature, not a wired system: Bluefors
 
 **Roadmaps & track record.** Delft Circuits (2025-11-10, for 2029): 40,000+ lines per fridge, no interim milestone [R][523]. Bluefors (2026-06-16, undated): KIDE at >4,000 lines, product page only [C][303]. Zurich Instruments (2026-03-09, undated): "several thousand qubits" [C][526]. Both cabling vendors have shipped every density step they announced; 2029 is nonetheless a straight-line projection.
 
-**Strategic reading.** If RT wiring reaches 10⁴ qubits, the rack vendors and Bluefors keep the control budget and cryo-CMOS or SFQ control stays a research programme. If density stalls near 4,000–5,000 lines, bargaining power moves inside the fridge, where no RT vendor owns IP — and the strongest cryo-CMOS results sit with IBM and HRL, now one company. Export control favours the incumbent [G][301].
+**Strategic reading.** If RT wiring reaches 10⁴ qubits, the rack vendors and Bluefors keep the control budget and cryo-CMOS or SFQ control stays a research programme. If density stalls near 4,000–5,000 lines, bargaining power moves inside the fridge, where no RT vendor owns IP — and the strongest cryo-CMOS results sit with IBM and HRL, one company since 2026-08-26 [G:IBM-HRL-CLOSED-2026-08]. Export control favours the incumbent [G][301].
 
 ## Outlook & open questions
 Confirm by end-2027 if one fridge runs >2,000 qubits on RT lines with published fidelity at that density; demote after another year of line-count specifications without a wired system. Best case by 2029: flex density plus deeper multiplexing reaches 10⁴ qubits, stack unchanged. Worst case: density plateaus near 4,000–5,000 lines while roadmaps beyond assume undelivered cryo-CMOS or SFQ. Open questions: does crosstalk grow faster than linearly past ~1,000 lines; do flex density and multiplexing compound or hit independent walls; will any vendor commit to in-fridge control before RT wiring visibly fails; does multi-fridge partitioning make the per-fridge ceiling irrelevant.

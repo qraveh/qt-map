@@ -145,6 +145,73 @@ def figures():
     return dict(FIG)
 
 
+_AF = {}
+
+
+def arch_figures(lang):
+    """The register's counts per architecture, per family and per machine, as placeholders for the hand-written narratives of §8.3
+    (29 Sep 2026 — the editor's requirement that new facts reach every corner: a re-cut of the register changed twelve of the seventeen
+    "Where it stands" openings, which had their counts typed in). Filled by build_html.report_numbers with the N_ prefix:
+      N_A_<PID>_MACHINES · _DEVICES · _GATE · _DEPLOYED · _DEMONSTRATED · _RETIRED · _ANNOUNCED · _PLANNED · _ANNPLAN · _OTHER (digits)
+      N_A_<PID>_CELLS · _CELLS_OK (evidence cells, verified ✅) · _PRESSONLY (rows with no verified cell) · _EMPTY_CODE · _EMPTY_DEC ·
+        _EMPTY_IC · _EMPTY_789 (primary cell of layer 7 / 8 / 9 not a technology: none, undisclosed or an Atlas gap) · _NOGATE (rows whose
+        gate mechanism is not published)
+      … each also as _W (a word up to twenty, digits above; Hebrew in the masculine), _WF (feminine), _W_CAP / _WF_CAP (sentence start);
+      N_A_<PID>_MACH / _DEV (the counted noun, declined: "seven devices" / «семь устройств» / «שבעה התקנים») and _MACH_CAP / _DEV_CAP;
+      N_A_<PID>_TOP_ORG / _TOP_ORG_N (the organisation with most rows, by the organisations register's id, and its count);
+      N_A_<PID>_CTRY_<COUNTRY> (rows per country, e.g. N_A_SC_CTRY_CHINA);
+      N_A_<PID>_LARGEST / _LARGEST_Q / _BESTERR / _BESTERR_M (Table 8.3's largest gate-capable device and best 2Q error among devices);
+      the same set for a family as N_F_<FAM>_… (SC, ION, ATOM, PHOTON, SPIN, DEFECT, TOPO, ANNEAL);
+      per machine N_M_<ID>_CELLS · _CELLS_OK · _Q · _STATUS (the id upper-cased, hyphens to underscores: N_M_QUANDELA_LUCY_CELLS_OK).
+    Digits, words and declensions come from build/numwords.py. Table 8.3 stays the reference: propagate.py checks that a narrative
+    naming the largest device or the best error names the table's."""
+    if lang in _AF: return dict(_AF[lang])
+    import collections, numwords as NW
+    M, G, NODE, LAYERS, PATHS, MS = prep()
+    out = {}
+    def key(s): return re.sub(r'[^A-Z0-9]+', '_', str(s).upper()).strip('_')
+    def empty(m, k): return not any(c['role'] == 'primary' and c.get('state', 'station') == 'station' for c in m['layers'].get(k, []))
+    def nogate(m):
+        g = (m['profile'].get('gate_mechanism') or '').strip().lower()
+        return (not g) or re.match(r'(not published|not disclosed|undisclosed|unknown|none|n/a)\b', g) is not None
+    def oid(m): return m.get('org_id') if m.get('org_id') not in (None, '', 'unmatched') else m['org']
+    def put(pref, ms):
+        st = collections.Counter(m['sc'] for m in ms)
+        d = {'MACHINES': len(ms), 'DEVICES': sum(1 for m in ms if m['device']), 'GATE': sum(1 for m in ms if m['gatedev']),
+             'DEPLOYED': st['DEPLOYED'], 'DEMONSTRATED': st['DEMONSTRATED'], 'RETIRED': st['RETIRED'], 'ANNOUNCED': st['ANNOUNCED'],
+             'PLANNED': st['PLANNED'], 'ANNPLAN': st['ANNOUNCED'] + st['PLANNED'], 'OTHER': st['OTHER'],
+             'CELLS': sum(m['evidence_counts']['total'] for m in ms), 'CELLS_OK': sum(m['evidence_counts']['verified'] for m in ms),
+             'PRESSONLY': sum(1 for m in ms if m['evidence_counts']['verified'] == 0),
+             'EMPTY_CODE': sum(1 for m in ms if empty(m, '7')), 'EMPTY_DEC': sum(1 for m in ms if empty(m, '8')), 'EMPTY_IC': sum(1 for m in ms if empty(m, '9')),
+             'NOGATE': sum(1 for m in ms if nogate(m))}
+        d['EMPTY_789'] = d['EMPTY_CODE'] + d['EMPTY_DEC'] + d['EMPTY_IC']
+        for k, v in d.items():
+            out[f'{pref}_{k}'] = NW.digits(lang, v)
+            w = NW.word(lang, v, 'm'); wf = NW.word(lang, v, 'f')
+            out[f'{pref}_{k}_W'] = w; out[f'{pref}_{k}_W_CAP'] = NW.cap(w); out[f'{pref}_{k}_WF'] = wf; out[f'{pref}_{k}_WF_CAP'] = NW.cap(wf)
+        for k, noun, n in (('MACH', 'machine', d['MACHINES']), ('DEV', 'device', d['DEVICES'])):
+            ph = NW.phrase(lang, n, noun); out[f'{pref}_{k}'] = ph; out[f'{pref}_{k}_CAP'] = NW.cap(ph)
+        for c, n in collections.Counter(m.get('country') or '' for m in ms).items():
+            if c: out[f'{pref}_CTRY_{key(c)}'] = str(n)
+        byo = collections.Counter(oid(m) for m in ms)
+        if byo:
+            top, n = byo.most_common(1)[0]
+            out[f'{pref}_TOP_ORG'] = collections.Counter(m['org'] for m in ms if oid(m) == top).most_common(1)[0][0]; out[f'{pref}_TOP_ORG_N'] = str(n)
+        pd = [m for m in ms if m['device']]   # Table 8.3's rule, verbatim
+        big = max([m for m in pd if m['q'] and m['gatedev']], key=lambda m: (m['q'], m['name']), default=None)
+        errs = sorted([(m['err'], m['name']) for m in pd if m['err'] is not None and not (m['flags'] & EXCL_ERR_FLAGS)])
+        out[f'{pref}_LARGEST'] = big['name'] if big else '—'; out[f'{pref}_LARGEST_Q'] = fmt_n(big['q']) if big else '—'
+        out[f'{pref}_BESTERR'] = fmt_e(errs[0][0]) if errs else '—'; out[f'{pref}_BESTERR_M'] = errs[0][1] if errs else '—'
+    for pid in PATHS: put('A_' + key(pid), [m for m in MS if m['map_path'] == pid])
+    for fam in FAM_ORDER: put('F_' + key(fam), [m for m in MS if m['family'] == fam])
+    for m in MS:
+        pref = 'M_' + key(m['id'])
+        out[pref + '_CELLS'] = str(m['evidence_counts']['total']); out[pref + '_CELLS_OK'] = str(m['evidence_counts']['verified'])
+        out[pref + '_Q'] = fmt_n(m['q']) if m['q'] else '—'; out[pref + '_STATUS'] = t(lang, STATN.get(m['sc'], (m['sc'].lower(),) * 3))
+    _AF[lang] = out
+    return dict(out)
+
+
 def sec_machines(lang):
     L = lang; en = (lang == 'en')
     M, G, NODE, LAYERS, PATHS, MS = prep()
@@ -163,7 +230,7 @@ def sec_machines(lang):
     ncells = sum(m['evidence_counts']['total'] for m in MS)
     o.append((f"**Terms used in this chapter.** A *quantum machine* — *machine* for short in this chapter — is one row of the register: a named system an organisation has built, announced or planned. Its *family* is its qubit platform ({', '.join(t(L, FAMN[f]) for f in FAM_ORDER)}); its *architecture* is the map architecture it instantiates — one of the {len(PATHS)} architectures of §7.3, i.e. the family plus the choice of encoding, gate and control that defines it (cat qubits and dual-rail erasure are architectures of the superconducting family). An *evidence cell* is one machine × one technology it uses in a layer of the stack, with the document that shows it (a layer may hold a primary technology and an alternate, so a machine has about a dozen cells, not ten) and the register holds {ncells:,}. A cell is *verified* (✅) when its cited source — a paper, a whitepaper, a product page or a technical press release; the card shows which by its glyph — was opened and seen to show that technology in that machine, and *unverified* (🔎) when the source was not re-opened or the cell is an inference; the *evidence grade* of a count is the verified share of the cells it rests on — it says how much of a claim rests on sources that were actually checked, not how many of them are papers. A *device* is a machine whose status is deployed, demonstrated or retired and that is not flagged as a target or a component; a *gate-capable* device additionally runs an entangling gate (analog simulators, tweezer arrays without a gate and single-qubit testbeds are devices but not processors). A *cohort* is the year of the register's status date. *Integrated control* means the qubits are driven by electronics on the chip or inside the cryostat (on-chip microwave electrodes, cryo-CMOS, SFQ, flux DACs) rather than by room-temperature racks or free-space optics; *closed-loop decoding* means the error-correction decoder acts within the cycle. A *link technology* is an interconnect-layer technology that joins modules — a photonic, microwave or long-range coupler link; multi-die packaging inside one module and cryogenic signal fan-out are interconnect technologies but not links. A layer in which a machine uses no technology holds one of three values: *none* (nothing in this layer — no code, no decoder, no interconnect; for analog and sampling machines no encoding layer or no entangling gate), *undisclosed* (something is there, nothing is published) or an *Atlas gap* (`∅G-…`: the machine runs what the map has no technology for; each is an entry of the register's gap ledger). A *roadmap verdict* is the register's feasibility check of a published roadmap against its target algorithm (FEASIBLE, SHORT with a deficit, or NOT EVALUABLE).\n\n" if en else
               (f"**Термины этой главы.** *Квантовая машина* — в этой главе коротко *машина* — одна строка реестра: именованная система, которую организация построила, анонсировала или запланировала. Её *семейство* — кубитная платформа ({', '.join(t(L, FAMN[f]) for f in FAM_ORDER)}); её *архитектура* — линия карты, которую она реализует: одна из {len(PATHS)} архитектур §7.3, то есть семейство плюс выбор кодирования, гейта и управления, который её определяет (кошачьи кубиты и двухрельсовое стирание — архитектуры сверхпроводникового семейства). *Ячейка свидетельств* — одна машина × одна технология, которую она использует в слое стека, вместе с документом, который это показывает (в слое могут стоять основная технология и альтернатива, поэтому у машины около дюжины ячеек, в реестре их {ncells:,}. Ячейка *проверена* (✅), когда её источник — статья, whitepaper, страница продукта или технический пресс-релиз; какой именно, показывает значок в карточке — был открыт и в нём увидена эта технология в этой машине, и *не проверена* (🔎), когда источник не открывался заново или ячейка — вывод; *класс свидетельств* числа — доля проверенных ячеек, на которых оно стоит: он говорит, какая часть утверждения опирается на действительно проверенные источники, а не сколько из них — статьи. *Устройство* — машина со статусом «в эксплуатации», «продемонстрирована» или «выведена», не помеченная как цель или компонент; устройство *с гейтами* вдобавок выполняет перепутывающий гейт (аналоговые симуляторы, массивы пинцетов без гейта и однокубитные стенды — устройства, но не процессоры). *Когорта* — год даты статуса в реестре. *Интегрированное управление* — кубиты управляются электроникой на чипе или внутри криостата (микроволновые электроды на чипе, cryo-CMOS, SFQ, потоковые ЦАП), а не стойками при комнатной температуре или оптикой в свободном пространстве; *замкнутое декодирование* — декодер коррекции ошибок действует внутри такта. *Технология связи* — технология слоя межсоединений, соединяющая модули: фотонная, микроволновая или дальняя связь через каплер; многокристальная сборка внутри одного модуля и криогенная разводка сигналов — технологии межсоединения, но не связи. Слой, в котором машина не использует ни одной технологии, содержит одно из трёх значений: *none* (в этом слое ничего нет — нет кода, декодера, межсоединения; у аналоговых и сэмплирующих машин — нет слоя кодирования или перепутывающего гейта), *undisclosed* (что-то есть, но ничего не опубликовано) или *пробел Атласа* (`∅G-…`: машина запускает то, для чего у карты нет технологии; каждый — запись в реестре пробелов). *Вердикт дорожной карты* — проверка реестром опубликованной карты на осуществимость её целевого алгоритма (FEASIBLE, SHORT с дефицитом или NOT EVALUABLE).\n\n" if L == 'ru' else
-               f"**מונחים בפרק זה.** *מכונה קוונטית* — ובקיצור *מכונה* בפרק זה — היא שורה אחת במרשם: מערכת בעלת שם שארגון בנה, הכריז עליה או תכנן אותה. *המשפחה* שלה היא פלטפורמת הקיוביטים שלה ({', '.join(t(L, FAMN[f]) for f in FAM_ORDER)}); *הארכיטקטורה* שלה היא ארכיטקטורת המפה שהיא מממשת — אחת מ-{len(PATHS)} הארכיטקטורות של §7.3, כלומר המשפחה יחד עם בחירת הקידוד, השער והבקרה שמגדירה אותה (קיוביטי חתול ומחיקה במסילה כפולה הן ארכיטקטורות של משפחת המעגלים מוליכי-העל). *תא ראיות* הוא מכונה אחת × טכנולוגיה אחת שהיא משתמשת בה בשכבה של המחסנית, יחד עם המסמך שמראה זאת (שכבה יכולה להכיל טכנולוגיה ראשית וטכנולוגיה חלופית, ולכן למכונה יש כתריסר תאים ולא עשרה), ומספר התאים במרשם הוא {ncells:,}. תא הוא *מאומת* (✅) כאשר המקור המצוטט שלו — מאמר, מסמך טכני (whitepaper), דף מוצר או הודעה טכנית לעיתונות; הכרטיס מציין איזה מהם באמצעות סמל — נפתח ונמצא שהוא מראה את הטכנולוגיה הזו במכונה הזו, והוא *לא מאומת* (🔎) כאשר המקור לא נפתח מחדש או שהתא הוא הסקה; *דרגת הראיות* של ספירה היא החלק המאומת מבין התאים שעליהם היא נשענת — היא מראה איזה חלק מהטענה נשען על מקורות שנבדקו בפועל, ולא כמה מהם הם מאמרים. *התקן* הוא מכונה שהסטטוס שלה הוא בהפעלה, הודגם או הוצא משימוש, ושאינה מסומנת כמטרה או כרכיב; התקן *בעל שערים* מבצע בנוסף שער שזירה (סימולטורים אנלוגיים, מערכי פינצטות ללא שער ומערכי ניסוי של קיוביט יחיד הם התקנים אך לא מעבדים). *קוהורט* הוא השנה של תאריך הסטטוס במרשם. *בקרה משולבת* פירושה שהקיוביטים מונעים על ידי אלקטרוניקה על השבב או בתוך הקריוסטט (אלקטרודות מיקרוגל על השבב, cryo-CMOS, SFQ, ממירי DAC לשטף) ולא על ידי ארונות ציוד בטמפרטורת החדר או אופטיקה במרחב חופשי; *פענוח בלולאה סגורה* פירושו שהמפענח של תיקון השגיאות פועל בתוך המחזור. *טכנולוגיית קישור* היא טכנולוגיה של שכבת החיבור הבין-מודולי שמחברת מודולים — קישור פוטוני, קישור מיקרוגל או מצמד ארוך-טווח; אריזה רב-שבבית בתוך מודול אחד ופיזור אותות קריוגני הן טכנולוגיות של שכבה זו, אך אינן קישורים. שכבה שבה מכונה אינה משתמשת בשום טכנולוגיה מחזיקה אחד משלושה ערכים: *none* (אין דבר בשכבה זו — אין קוד, אין מפענח, אין חיבור בין-מודולי; במכונות אנלוגיות ובמכונות דגימה — אין שכבת קידוד או אין שער שזירה), *undisclosed* (משהו קיים, אך דבר לא פורסם) או *פער אטלס* (`∅G-…`: המכונה מריצה דבר שאין לו טכנולוגיה במפה; כל פער כזה הוא רשומה בפנקס הפערים של המרשם). *פסק מפת דרכים* הוא בדיקת ההיתכנות שהמרשם עורך למפת דרכים שפורסמה מול אלגוריתם המטרה שלה (FEASIBLE, SHORT עם גירעון, או NOT EVALUABLE).\n\n")))
+               f"**מונחים בפרק זה.** *מכונה קוונטית* — ובקיצור *מכונה* בפרק זה — היא שורה אחת במרשם: מערכת בעלת שם שארגון בנה, הכריז עליה או תכנן אותה. *המשפחה* שלה היא פלטפורמת הקיוביטים שלה ({', '.join(t(L, FAMN[f]) for f in FAM_ORDER)}); *הארכיטקטורה* שלה היא ארכיטקטורת המפה שהיא מממשת — אחת מ-{len(PATHS)} הארכיטקטורות של §7.3, כלומר המשפחה יחד עם בחירת הקידוד, השער והבקרה שמגדירה אותה (קיוביטי חתול ומחיקה במסילה כפולה הן ארכיטקטורות של משפחת המעגלים מוליכי-העל). *תא ראיות* הוא מכונה אחת × טכנולוגיה אחת שהיא משתמשת בה בשכבה של המחסנית, יחד עם המסמך שמראה זאת (שכבה יכולה להכיל טכנולוגיה ראשית וטכנולוגיה חלופית, ולכן למכונה יש כתריסר תאים ולא עשרה), ומספר התאים במרשם הוא {ncells:,}. תא הוא *מאומת* (✅) כאשר המקור המצוטט שלו — מאמר, מסמך טכני (whitepaper), דף מוצר או הודעה טכנית לעיתונות; הכרטיס מציין איזה מהם באמצעות סמל — נפתח ונמצא שהוא מראה את הטכנולוגיה הזו במכונה הזו, והוא *לא מאומת* (🔎) כאשר המקור לא נפתח מחדש או שהתא הוא הסקה; *דרגת הראיות* של ספירה היא החלק המאומת מבין התאים שעליהם היא נשענת — היא מראה איזה חלק מהטענה נשען על מקורות שנבדקו בפועל, ולא כמה מהם הם מאמרים. *התקן* הוא מכונה שהסטטוס שלה הוא בהפעלה, הודגם או הוצא משימוש, ושאינה מסומנת כמטרה או כרכיב; התקן *בעל שערים* מבצע בנוסף שער שזירה (סימולטורים אנלוגיים, מערכי פינצטות ללא שער ומערכי ניסוי של קיוביט יחיד הם התקנים אך לא מעבדים). *קוהורט* הוא השנה של תאריך הסטטוס במרשם. *בקרה משולבת* פירושה שהקיוביטים מונעים על ידי אלקטרוניקה על השבב או בתוך הקריוסטט (אלקטרודות מיקרוגל על השבב, cryo-CMOS, SFQ, ממירי DAC לשטף) ולא על ידי מסדי ציוד בטמפרטורת החדר או אופטיקה במרחב חופשי; *פענוח בלולאה סגורה* פירושו שהמפענח של תיקון השגיאות פועל בתוך המחזור. *טכנולוגיית קישור* היא טכנולוגיה של שכבת החיבור הבין-מודולי שמחברת מודולים — קישור פוטוני, קישור מיקרוגל או מצמד ארוך-טווח; אריזה רב-שבבית בתוך מודול אחד ופיזור אותות קריוגני הן טכנולוגיות של שכבה זו, אך אינן קישורים. שכבה שבה מכונה אינה משתמשת בשום טכנולוגיה מחזיקה אחד משלושה ערכים: *none* (אין דבר בשכבה זו — אין קוד, אין מפענח, אין חיבור בין-מודולי; במכונות אנלוגיות ובמכונות דגימה — אין שכבת קידוד או אין שער שזירה), *undisclosed* (משהו קיים, אך דבר לא פורסם) או *פער אטלס* (`∅G-…`: המכונה מריצה דבר שאין לו טכנולוגיה במפה; כל פער כזה הוא רשומה בפנקס הפערים של המרשם). *פסק מפת דרכים* הוא בדיקת ההיתכנות שהמרשם עורך למפת דרכים שפורסמה מול אלגוריתם המטרה שלה (FEASIBLE, SHORT עם גירעון, או NOT EVALUABLE).\n\n")))
     H("### 8.1 " + ("The population" if en else ("Популяция" if L == 'ru' else "האוכלוסייה")))
     nsc = {s: sum(1 for m in MS if m['sc'] == s) for s in STAT_ORDER}
     ncloud = sum(1 for m in MS if m['cloud']); nlab = sum(1 for m in MS if 'lab' in (m.get('access') or '').lower() or 'research' in (m.get('access') or '').lower())

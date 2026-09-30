@@ -1469,7 +1469,7 @@
   "ru": "Декодер коррекции ошибок успевает за машиной и действует внутри такта, а не разбирает запуск потом",
   "he": "המפענח של תיקון השגיאות עומד בקצב המכונה ופועל בתוך המחזור, במקום לנתח את ההרצה בדיעבד",
   "src": "§8",
-  "why": "Five machines out of 136 do this; the difference from offline decoding is what makes that number meaningful"
+  "why": "Only a handful of the registered machines do this (§8 counts them from the register); the difference from offline decoding is what makes that count meaningful"
  },
  {
   "id": "roadmap-verdict",

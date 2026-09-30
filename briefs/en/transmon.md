@@ -6,7 +6,7 @@ status: demonstrated
 since: 2007
 one_line: Capacitively shunted Josephson junction (Koch 2007); the carrier behind Willow, Heron/Nighthawk and Zuchongzhi, with the fastest deterministic gate and QEC cycle of any demonstrated qubit.
 verdict: Best-funded and fastest carrier, capped by ~10⁻³ two-qubit and ~10⁻² readout errors at scale and hourly correlated bursts. Confirm if a ≥100-qubit lattice shows Λ ≥ 3 with median 2Q error < 10⁻³ by 2028; otherwise demote to component status.
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -36,7 +36,7 @@ Most of the twirled channel is stochastic Pauli, so Willow's Λ = 2.14 [D][1] ma
 
 Best isolated devices: T1 1.68 ms, Q 2.5×10⁷, 1Q 99.994% [D][288]; CZ 99.93% and 280 ns readout at 99.94% on a two-qubit IQM chip [D][38]; Toshiba's double-transmon coupler CZ 99.90% in 48 ns [D][37].
 
-Typical at ≥ 100 qubits: Willow, 105 q — mean T1 68 µs, CZ error 0.33%, readout 99.5%, QEC cycle 1.1 µs [D][1][C][32]; IBM fleet error-per-layered-gate 3.7×10⁻³ typical, 1.9×10⁻³ best (2026-07) [C][34]; Zuchongzhi 3.0, 105 q — 2Q 99.62%, readout 99.13% [D][35]; Rigetti Cepheus-1-108Q chiplets — median 2Q 99.1% [C][G:RIGETTI-FIN-2026].
+Typical at ≥ 100 qubits: Willow, 105 q — mean T1 68 µs, CZ error 0.33%, readout 99.5%, QEC cycle 1.1 µs [D][1][C][32]; IBM fleet error-per-layered-gate 3.7×10⁻³ typical, 1.9×10⁻³ best (2026-07) [C][34]; Zuchongzhi 3.0, 105 q — 2Q 99.62%, readout 99.13% [D][35]; Rigetti Cepheus-1-108Q, twelve 9-qubit chiplets [C][36] — median 2Q 99.1% [C][G:RIGETTI-FIN-2026].
 
 | Year | Figure | Who | Evidence |
 |---|---|---|---|
@@ -56,7 +56,7 @@ Cost and energy: no vendor publishes $/qubit; proxies are IQM's €33 M LUMI con
 
 Supply chain: dilution refrigerators from Bluefors (FI), Oxford Instruments (UK), FormFactor and Maybell (US); ³He from tritium decay in state inventories (US: NNSA [G][297]), no merchant producer; 4 K HEMT amplifiers effectively one vendor (Low Noise Factory, SE); control electronics competitive (Quantum Machines, Qblox, Zurich Instruments); merchant QPUs from QuantWare (NL) [P][298]; foundries Anderon (IBM Albany spin-off, 2026-05; $1 B CHIPS letter of intent, $1 B IBM cash stated separately) [P][299][G][300] and GlobalFoundries ($375 M LOI) [G][300].
 
-Export controls: the BIS interim final rule of 2024-09-06 covers quantum computers from 34 qubits (ECCN 4A906), dilution refrigerators ≥ 600 µW at 0.1 K for 48 h (3A904), cryogenic wafer probers (3B904) and parametric amplifiers (3A901.b) [G][301][G:BIS-QUANTUM-2024]; Chinese vendors therefore build 10 mK refrigerators domestically (2026-05-15) [P][302].
+Export controls: the BIS interim final rule of 2024-09-06 covers dilution refrigerators ≥ 600 µW at 0.1 K for 48 h (3A904), cryogenic wafer probers (3B904), parametric amplifiers (3A901.b) and quantum computers (4A906) only where qubit count and C-NOT error fall in the same band — 34–99 qubits at ≤ 10⁻⁴, 100–199 at ≤ 10⁻³, the ceiling rising to 6 × 10⁻³ below 2,000 qubits, any error from 2,000 on [G][301][G:BIS-QUANTUM-2024]; Chinese vendors therefore build 10 mK refrigerators domestically (2026-05-15) [P][302].
 
 ## Control, readout & I/O burden
 
@@ -102,7 +102,7 @@ Replication: below-threshold scaling reproduced by USTC on 107 qubits with Λ = 
 
 **Market & supply chain.** Enabling equipment is more concentrated than the QPU market. Unit economics are unpublished; the €33 M IQM contract [P][295] and the $550 M Quantum Circuits price [C][G:DWAVE-QCI-2026-01] are the only quotable points. Paying goals: G7 (deployable systems) and G2 (error-mitigated utility) today; G3 (early fault tolerance) via QBI-style programmes from 2027 [G:QBI-STAGEC-2026]; G4 (large-scale fault tolerance) after 2029 [R][G:IBM-ROADMAP]; G1 (analog simulation), G5 (optimisation) and G6 (networking) bring no transmon-specific revenue.
 
-**IP & standards.** PatSnap (to 2026-06-30): IBM 4,388 quantum patent families, Google 2,385, Microsoft 1,175; superconducting devices (H10N 60) IBM 783, Google 357 [P][312][G:PATSNAP-2026-06]. No litigation found; no transmon-specific family verified. Open stacks commoditise the layer above: Qiskit (IBM claims ≈ 70% of developers [C][310]), Cirq/Stim, OpenQASM 3, NVQLink [C][G:NVQLINK-2025].
+**IP & standards.** PatSnap's landscape published on 2026-06-30: IBM 4,388 quantum patent families, Google 2,385, Microsoft 1,175; superconducting devices (H10N 60) IBM 783, Google 357 [P][312][G:PATSNAP-2026-06]. No litigation found; no transmon-specific family verified. Open stacks commoditise the layer above: Qiskit (IBM claims ≈ 70% of developers [C][310]), Cirq/Stim, OpenQASM 3, NVQLink [C][G:NVQLINK-2025].
 
 **Roadmaps & track record.**
 - IBM Kookaburra (2022-05-10 · 2025, as a 1,386-qubit multi-chip processor [C][313]; re-promised 2025-06-10 · 2026, as the first qLDPC module [R][67] · not delivered as of 2026-09-03 [R][72][G:IBM-ROADMAP]).
@@ -126,6 +126,7 @@ Milestones, 12–24 months: (1) Kookaburra runs a gross-code memory below break-
 [32] Y. Chen and M. Devoret, “Our quantum hardware: the engine for verifiable quantum advantage,” Google Blog, Oct. 22, 2025. [Online]. Available: https://blog.google/innovation-and-ai/technology/research/quantum-hardware-verifiable-advantage/ [C]
 [34] IBM Quantum, “What's new at IBM Quantum - Q2 2026.” [Online]. Available: https://www.ibm.com/quantum/blog/whats-new-q2-2026 [C]
 [35] D. Gao *et al.*, “Establishing a New Benchmark in Quantum Computational Advantage with 105-qubit Zuchongzhi 3.0 Processor,” *Phys. Rev. Lett.*, vol. 134, Art. no. 090601, Mar. 2025, doi: [10.1103/PhysRevLett.134.090601](https://doi.org/10.1103/PhysRevLett.134.090601). [arXiv:2412.11924](https://arxiv.org/abs/2412.11924). [D]
+[36] Rigetti Computing, Inc., “Rigetti Announces General Availability of 108-Qubit System,” Apr. 7, 2026. [Online]. Available: https://investors.rigetti.com/news-releases/news-release-details/rigetti-announces-general-availability-108-qubit-system [C]
 [37] R. Li, K. Kubo, Y. Ho, Z. Yan, Y. Nakamura, and H. Goto, “Realization of High-Fidelity CZ Gate Based on a Double-Transmon Coupler,” *Phys. Rev. X*, vol. 14, no. 4, Art. no. 041050, Nov. 2024, doi: [10.1103/PhysRevX.14.041050](https://doi.org/10.1103/PhysRevX.14.041050). [arXiv:2402.18926](https://arxiv.org/abs/2402.18926). [D]
 [38] F. Marxer *et al.*, “Above 99.9% Fidelity Single-Qubit Gates, Two-Qubit Gates, and Readout in a Single Superconducting Quantum Device,” *PRX Quantum*, vol. 7, Art. no. 020333, 2026, doi: [10.1103/n86s-2b88](https://doi.org/10.1103/n86s-2b88). [arXiv:2508.16437](https://arxiv.org/abs/2508.16437). [D]
 [41] N. Lacroix *et al.*, “Scaling and logic in the color code on a superconducting quantum processor,” *Nature*, vol. 645, no. 8081, pp. 614–619, May 2025, doi: [10.1038/s41586-025-09061-4](https://doi.org/10.1038/s41586-025-09061-4). [arXiv:2412.14256](https://arxiv.org/abs/2412.14256). [D]
@@ -186,7 +187,6 @@ Milestones, 12–24 months: (1) Kookaburra runs a gross-code memory below break-
 - Bluefors KIDE "> 4,000 RF lines / > 1,000 qubits": product page revised 2026-06-16; no launch date established.
 - IBM "> $1.1 B of client contracts since 2017" [C][310]: not independently verified; the figure is not listed.
 - Cross-resonance gate time ≈ 200–500 ns: fleet-typical range inferred from a single-device paper [287]; no fleet-wide source.
-- Cepheus-1-108Q chiplet count: no verified figure, so none is given.
 - imec 300 mm yield 393 of 400 (98.25%): cited against [293]; the median T1 for that run is ≈ 75 µs.
 - Source [306] (arXiv:2503.10842): no author list is given for it; the "≈ 3 orders of magnitude" transduction gap is cited from the literature.
 - "4 K HEMT amplifiers effectively one vendor (Low Noise Factory)": a market observation; no database source.

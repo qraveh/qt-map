@@ -714,7 +714,6 @@ aliceandbob-boson-4,code,none,primary,"no outer code (1 cat qubit, 0 logical: no
 aliceandbob-boson-4,decoder,none,primary,"no decoder, and no deployment-mode axis"
 aliceandbob-boson-4,interconnect,none,primary,"monolithic, single module"
 aliceandbob-boson-4,fab,fab_sc,primary,
-aliceandbob-boson-4,fab,fab_3d,alternate,
 aliceandbob-helium-2,carrier,cavity,primary,
 aliceandbob-helium-2,encoding,enc_cat,primary,
 aliceandbob-helium-2,gate,g_bos,primary,
@@ -725,7 +724,6 @@ aliceandbob-helium-2,code,code_bosonic,primary,
 aliceandbob-helium-2,decoder,none,primary,"no decoder, and no deployment-mode axis"
 aliceandbob-helium-2,interconnect,none,primary,"monolithic, single module"
 aliceandbob-helium-2,fab,fab_sc,primary,
-aliceandbob-helium-2,fab,fab_3d,alternate,
 aliceandbob-helium,carrier,cavity,primary,
 aliceandbob-helium,encoding,enc_cat,primary,
 aliceandbob-helium,gate,g_bos,primary,
@@ -736,7 +734,6 @@ aliceandbob-helium,code,code_bosonic,primary,
 aliceandbob-helium,decoder,none,primary,"no decoder, and no deployment-mode axis"
 aliceandbob-helium,interconnect,none,primary,"monolithic, single module"
 aliceandbob-helium,fab,fab_sc,primary,
-aliceandbob-helium,fab,fab_3d,alternate,
 aliceandbob-graphene,carrier,cavity,primary,
 aliceandbob-graphene,encoding,enc_cat,primary,
 aliceandbob-graphene,gate,g_catcnot,primary,
@@ -748,7 +745,6 @@ aliceandbob-graphene,code,code_bosonic,primary,
 aliceandbob-graphene,decoder,none,primary,"no decoder, and no deployment-mode axis"
 aliceandbob-graphene,interconnect,none,primary,"monolithic, single module"
 aliceandbob-graphene,fab,fab_sc,primary,
-aliceandbob-graphene,fab,fab_3d,alternate,
 nordquantique-gkp,carrier,cavity,primary,
 nordquantique-gkp,encoding,enc_gkp,primary,
 nordquantique-gkp,gate,g_bos,primary,
@@ -793,7 +789,8 @@ dwave-dualrail-17,readout,ro_erasure,primary,
 dwave-dualrail-17,code,none,primary,no code (NISQ)
 dwave-dualrail-17,decoder,none,primary,"no decoder, and no deployment-mode axis"
 dwave-dualrail-17,interconnect,ic_mcm,primary,
-dwave-dualrail-17,fab,fab_sc,primary,
+dwave-dualrail-17,fab,fab_3d,primary,
+dwave-dualrail-17,fab,fab_sc,alternate,
 sustc-biased-erasure,carrier,cavity,primary,
 sustc-biased-erasure,encoding,∅G-fock02,primary,single-cavity 0/2 Fock erasure encoding — no Atlas station (gap G-fock02)
 sustc-biased-erasure,gate,g_bos,primary,
@@ -1352,7 +1349,7 @@ intel-tunnel-falls,control,ct_rt,alternate,
 intel-tunnel-falls,readout,ro_s2c,primary,
 intel-tunnel-falls,code,none,primary,no code (NISQ)
 intel-tunnel-falls,decoder,none,primary,"no decoder, and no deployment-mode axis"
-intel-tunnel-falls,interconnect,ic_fanout,primary,the spin architectures have no L9 slot at all
+intel-tunnel-falls,interconnect,ic_fanout,primary,cryogenic signal fan-out; spin_qd's L9 slot holds ic_fanout since 26 Sep 2026
 intel-tunnel-falls,fab,fab_cmos,primary,
 diraq-imec-8q,carrier,qd_spin,primary,
 diraq-imec-8q,encoding,enc_spin_ld,primary,
@@ -1376,7 +1373,7 @@ quantum-motion-qm-one,control,∅G-qsoc,alternate,integrated cryo-CMOS on the qu
 quantum-motion-qm-one,readout,ro_s2c,primary,
 quantum-motion-qm-one,code,none,primary,no code (NISQ)
 quantum-motion-qm-one,decoder,none,primary,"no decoder, and no deployment-mode axis"
-quantum-motion-qm-one,interconnect,ic_fanout,primary,the spin architectures have no L9 slot at all
+quantum-motion-qm-one,interconnect,ic_fanout,primary,cryogenic signal fan-out; spin_qd's L9 slot holds ic_fanout since 26 Sep 2026
 quantum-motion-qm-one,fab,fab_cmos,primary,
 sqc-11q,carrier,donor,primary,
 sqc-11q,encoding,enc_spin_ld,primary,
@@ -1388,17 +1385,6 @@ sqc-11q,code,none,primary,no code (NISQ)
 sqc-11q,decoder,none,primary,"no decoder, and no deployment-mode axis"
 sqc-11q,interconnect,none,primary,"no interconnect; room-temperature control, no fan-out component"
 sqc-11q,fab,fab_stm,primary,
-equal1-bell-1,carrier,qd_spin,primary,
-equal1-bell-1,encoding,enc_spin_ld,primary,
-equal1-bell-1,gate,g_exch,primary,
-equal1-bell-1,connect,cx_nn,primary,
-equal1-bell-1,control,ct_cryocmos,primary,
-equal1-bell-1,control,∅G-qsoc,alternate,qubits and controller on one die
-equal1-bell-1,readout,ro_s2c,primary,
-equal1-bell-1,code,none,primary,no code (NISQ)
-equal1-bell-1,decoder,none,primary,"no decoder, and no deployment-mode axis"
-equal1-bell-1,interconnect,ic_fanout,primary,the spin architectures have no L9 slot at all
-equal1-bell-1,fab,fab_cmos,primary,
 quobly,carrier,qd_spin,primary,
 quobly,encoding,enc_spin_ld,primary,
 quobly,gate,g_exch,primary,
@@ -1418,7 +1404,7 @@ hitachi-intel18a,control,ct_cryocmos,primary,
 hitachi-intel18a,readout,ro_s2c,primary,
 hitachi-intel18a,code,none,primary,no code (NISQ)
 hitachi-intel18a,decoder,none,primary,"no decoder, and no deployment-mode axis"
-hitachi-intel18a,interconnect,ic_fanout,primary,the spin architectures have no L9 slot at all
+hitachi-intel18a,interconnect,ic_fanout,primary,cryogenic signal fan-out; spin_qd's L9 slot holds ic_fanout since 26 Sep 2026
 hitachi-intel18a,fab,fab_cmos,primary,
 groove-quantum,carrier,qd_spin,primary,
 groove-quantum,encoding,enc_spin_ld,primary,

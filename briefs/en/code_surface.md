@@ -6,7 +6,7 @@ status: demonstrated
 since: 2023
 one_line: Weight-4 CSS stabilizer code on a square lattice; the only code with below-threshold hardware data on three platforms, and the most expensive.
 verdict: The default code because it needs nothing but a static degree-4 lattice; at Λ ≈ 2 it costs 600–1,500 physical per logical. Demote if a qLDPC memory beats it on hardware before end-2027.
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -19,7 +19,7 @@ Attributes from the technology graph (a affinity; b time; c readout; d mobility;
 
 ## Physics & limits
 
-The code turns a physical error rate p into a logical rate falling exponentially in d, while p sits below a threshold. Λ, the factor by which logical error drops per two distance steps, is the whole economics: at Λ = 2.14 a decade of logical fidelity costs seven distance steps, an order of magnitude in qubits. The threshold is decoder- and noise-dependent: 0.937% under uniform circuit-level depolarizing noise [S][8], but 0.55% for Riverlane's unweighted hardware decoder against 0.7% for weighted matching under leakage [D][238]. Every quoted Λ describes a decoder as much as a chip.
+The code turns a physical error rate p into a logical rate falling exponentially in d, while p sits below a threshold. Λ, the factor by which logical error drops per two distance steps, is the whole economics: at Λ = 2.14 a tenfold drop in logical error costs three factors of Λ (log 10 / log 2.14 ≈ 3.0), so d grows by about 6 — from d = 7 that is ~3.5× the qubits, since a patch needs 2d²−1. The threshold is decoder- and noise-dependent: 0.937% under uniform circuit-level depolarizing noise [S][8], but 0.55% for Riverlane's unweighted hardware decoder against 0.7% for weighted matching under leakage [D][238]. Every quoted Λ describes a decoder as much as a chip.
 
 Three floors are intrinsic. Area and time: a logical qubit is 2d²−1 physical qubits and a logical operation costs d rounds, so from 7.72×10⁻⁴ at d=7 with Λ ≈ 2 [D][2], reaching 10⁻⁶ needs d ≈ 25 and over 1,200 physical per logical unless p falls below 10⁻³; at p = 10⁻³ the teraquop footprint is about 1,500 physical per logical plain, 800 with one-dimensional and 600 with two-dimensional yokes [S][654], or about 650 plain with correlated matching [S][655]. Non-Pauli errors: leakage produces syndromes matching cannot explain, and atom loss is tractable only if the decoder is told where it happened. Correlated bursts: Google sees events roughly hourly pinning a floor near 10⁻¹⁰ irrespective of d [D][1]. What moves the floor is error-structure engineering — bias, erasure, leakage removal — exactly what this code discards; yokes move only the constant.
 
@@ -40,7 +40,7 @@ Dominant term: two-qubit gate error, about 40% of the comparable colour-code bud
 
 ## Manufacturing, materials & supply chain
 
-The code has no fabrication of its own; it imposes one — a static degree-4 lattice, a measure qubit between every data pair, non-destructive mid-circuit readout on every ancilla, and uniformity, because all 2d²−1 qubits must work. That is a yield problem in d², and why Google patented variants tolerating dead qubits [G][656]. Its real supply chain is the decoding chain: Riverlane's decoder takes about 6% of a Xilinx VU19P's logic at d=17 [D][238], and that FPGA family is single-source (AMD), as is the GPU alternative (NVIDIA, 3.84 µs round trip over NVQLink [G:NVQLINK-2025]). Cost per logical qubit is unpublished. Export exposure: the US BIS rule of 2024-09-06 [G:BIS-QUANTUM-2024] controls quantum computers at a 34-qubit floor with error-rate tiers (4A906) — a distance-5 patch, 49 qubits, clears it — and refrigerators (3A904).
+The code has no fabrication of its own; it imposes one — a static degree-4 lattice, a measure qubit between every data pair, non-destructive mid-circuit readout on every ancilla, and uniformity, because all 2d²−1 qubits must work. That is a yield problem in d², and why Google patented variants tolerating dead qubits [G][656]. Its real supply chain is the decoding chain: Riverlane's decoder takes about 6% of a Xilinx VU19P's logic at d=17 [D][238], and that FPGA family is single-source (AMD), as is the GPU alternative (NVIDIA, 3.84 µs round trip over NVQLink [G:NVQLINK-2025]). Cost per logical qubit is unpublished. Export exposure: the US BIS rule of 2024-09-06 [G:BIS-QUANTUM-2024] controls refrigerators (3A904), and quantum computers (4A906) only when their qubit count and C-NOT error fall in the same band, from 34–99 qubits at ≤ 10⁻⁴ to any error from 2,000 qubits [G:BIS-3A901A-CRYOCMOS]; a distance-5 patch, 49 qubits, is caught only at a C-NOT error of 10⁻⁴ or better.
 
 ## Control, readout & I/O burden
 
@@ -120,7 +120,7 @@ Confirm within 12–24 months if: any group reports Λ ≥ 3 over ≥10⁵ cycle
 [659] Qblox; Riverlane, “Qblox and Riverlane Demonstrate Integration Enabling Real-Time Quantum Error Correction,” PR Newswire, Mar. 17, 2026. [Online]. Available: https://www.prnewswire.com/news-releases/qblox-and-riverlane-demonstrate-integration-enabling-real-time-quantum-error-correction-302716254.html [C]
 [660] Riverlane, “Riverlane awarded £2.1m by Horizon Europe to develop the next generation of its quantum error correction decoder,” May 1, 2024. [Online]. Available: https://www.riverlane.com/press-release/riverlane-awarded-2-1m-by-horizon-europe-to-develop-the-next-generation-of-its-quantum-error-correction-decoder [C]
 [661] Riverlane, “Riverlane raises $75 million to meet surging global demand for quantum error correction technology,” Aug. 6, 2024. [Online]. Available: https://www.riverlane.com/press-release/riverlane-raises-75-million-to-meet-surging-global-demand-for-quantum-error-correction-technology [C]
-[662] Z. A. Bracken, A. Zalawadiya, B. Barber, and L. Skoric, “Quantum decoder,” Google Patents, Dec. 10, 2025. [Online]. Available: https://patents.google.com/patent/GB2641501A/en [G]
+[662] A. B. Ziad, A. Zalawadiya, B. Barber, and L. Skoric, “Quantum decoder,” Google Patents, Dec. 10, 2025. [Online]. Available: https://patents.google.com/patent/GB2641501A/en [G]
 
 ## Open verification items
 

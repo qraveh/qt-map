@@ -5646,5 +5646,267 @@
    "url": "https://orcacomputing.com/orca-toyota-tsusho-deploy-to-enterprise-customer/",
    "verified": true
   }
+ ],
+ "A16": [
+  {
+   "org": "D-Wave Quantum Inc.",
+   "title": "D-Wave Reports Second Quarter 2026 Results",
+   "date": "2026-08-06",
+   "kind": "web",
+   "site": "sec.gov",
+   "url": "https://www.sec.gov/Archives/edgar/data/1907982/000190798226000127/qbts-20260806xexx991.htm",
+   "hint": "D-Wave Q2 2026 results: Advantage3, 20,000 qubits in 2029, 100,000 by 2031",
+   "verified": true
+  }
+ ],
+ "N46": [
+  {
+   "org": "Pasqal",
+   "title": "Hardware — Pasqal",
+   "kind": "web",
+   "site": "pasqal.com",
+   "url": "https://www.pasqal.com/solutions/hardware/",
+   "hint": "Pasqal hardware page: Centaurus, 500+ qubits, targeted availability 2028",
+   "verified": true
+  }
+ ],
+ "B24": [
+  {
+   "org": "Alice & Bob",
+   "title": "Alice & Bob's Quantum Computing Roadmap (long version)",
+   "date": "2024-12-04",
+   "kind": "report",
+   "site": "alice-bob.com",
+   "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
+   "hint": "Alice & Bob roadmap: Lithium (48 cat qubits, 4 logical), Beryllium (250)",
+   "verified": true
+  }
+ ],
+ "B25": [
+  {
+   "authors": [
+    "Wenhui Huang"
+   ],
+   "etal": true,
+   "title": "Logical multi-qubit entanglement with dual-rail superconducting qubits",
+   "journal": "Nat. Phys.",
+   "volume": "22",
+   "issue": "4",
+   "pages": "591–597",
+   "date": "2026-03-06",
+   "doi": "10.1038/s41567-026-03211-9",
+   "arxiv": "2504.12099",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2504.12099",
+   "hint": "SUSTech four-dual-rail-qubit processor: logical CNOT at 98.1 % process fidelity at a 13 % erasure rate, three-logical-qubit GHZ state at 93.9 % (Nature Physics 6 Mar 2026; arXiv v1 of 16 Apr 2025 gave 96.2 % and 93.5 %)",
+   "verified": true
+  }
+ ],
+ "B26": [
+  {
+   "org": "Oxford Quantum Circuits",
+   "title": "Roadmap – OQC",
+   "kind": "web",
+   "site": "oqc.tech",
+   "url": "https://oqc.tech/tech/technical-roadmap",
+   "hint": "OQC technical roadmap: TITAN (2,000 lattice sites, 200 logical qubits, 2028), ATHENA (75,000), ATLAS (1,000,000)",
+   "verified": true
+  }
+ ],
+ "I57": [
+  {
+   "org": "Alpine Quantum Technologies",
+   "title": "\"LYNX\" Series with Record-Breaking Quantum Volume",
+   "date": "2026-05-05",
+   "kind": "web",
+   "site": "aqt.eu",
+   "url": "https://www.aqt.eu/lynx-quantum-volume-record/",
+   "hint": "AQT LYNX: quantum volume 32,768 on a 15-qubit register",
+   "verified": true
+  }
+ ],
+ "I58": [
+  {
+   "org": "German Aerospace Center (DLR)",
+   "title": "QSea I – Quantum computer demonstrator with 10 ion trap qubits",
+   "kind": "web",
+   "site": "DLR Quantum Computing Initiative",
+   "url": "https://qci.dlr.de/en/qsea-i/",
+   "hint": "QSea I (eleQtron, NXP, ParityQC): 10-qubit ion-trap demonstrator, Hamburg, commissioned July 2024",
+   "verified": true
+  }
+ ],
+ "P41": [
+  {
+   "org": "Quandela",
+   "title": "Canopus - Quandela",
+   "kind": "web",
+   "site": "quandela.com",
+   "url": "https://www.quandela.com/canopus/",
+   "hint": "Quandela Canopus, 24 qubits, cloud availability announced for 2026",
+   "verified": true
+  }
+ ],
+ "P42": [
+  {
+   "org": "ORCA Computing",
+   "title": "ORCA PT-1 | ORCA Computing",
+   "kind": "web",
+   "site": "orcacomputing.com",
+   "url": "https://orcacomputing.com/orca-pt-1/",
+   "hint": "ORCA PT-1 product page (two systems at PSNC Poznań, 2023)",
+   "verified": true
+  }
+ ],
+ "P43": [
+  {
+   "authors": [
+    "Han-Sen Zhong"
+   ],
+   "etal": true,
+   "title": "Quantum computational advantage using photons",
+   "journal": "Science",
+   "volume": "370",
+   "issue": "6523",
+   "pages": "1460–1463",
+   "date": "2020-12-18",
+   "doi": "10.1126/science.abe8770",
+   "arxiv": "2012.01625",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2012.01625",
+   "org": "USTC",
+   "hint": "Jiuzhang (1.0)",
+   "verified": true
+  }
+ ],
+ "P44": [
+  {
+   "authors": [
+    "Han-Sen Zhong"
+   ],
+   "etal": true,
+   "title": "Phase-Programmable Gaussian Boson Sampling Using Stimulated Squeezed Light",
+   "journal": "Physical Review Letters",
+   "volume": "127",
+   "pages": "180502",
+   "date": "2021-10-25",
+   "doi": "10.1103/PhysRevLett.127.180502",
+   "arxiv": "2106.15534",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2106.15534",
+   "org": "USTC",
+   "hint": "Jiuzhang 2.0",
+   "verified": true
+  }
+ ],
+ "P45": [
+  {
+   "authors": [
+    "Yu-Hao Deng",
+    "Yi-Chao Gu",
+    "Hua-Liang Liu",
+    "Si-Qiu Gong",
+    "Hao Su",
+    "Zhi-Jiong Zhang"
+   ],
+   "etal": true,
+   "n_authors": 27,
+   "title": "Gaussian Boson Sampling with Pseudo-Photon-Number-Resolving Detectors and Quantum Computational Advantage",
+   "journal": "Phys. Rev. Lett.",
+   "volume": "131",
+   "issue": "15",
+   "article": "150601",
+   "date": "2023-10-10",
+   "doi": "10.1103/PhysRevLett.131.150601",
+   "arxiv": "2304.12240",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2304.12240",
+   "hint": "Jiuzhang 3.0",
+   "verified": true
+  }
+ ],
+ "Q42": [
+  {
+   "authors": [
+    "Mohib Ur Rehman"
+   ],
+   "org": "The Quantum Insider",
+   "title": "Top Diamond NV-Centre Quantum Computing Companies in 2026",
+   "date": "2026-07-10",
+   "kind": "web",
+   "site": "The Quantum Insider",
+   "url": "https://thequantuminsider.com/2026/07/10/8-quantum-computing-companies-working-with-nv-centre-in-diamond-technology/",
+   "hint": "SaxonQ QC2026 Dual Core (two five-qubit NV cores, Hannover Messe, Apr 2026); SaxonQ system at Fraunhofer IWU",
+   "verified": true
+  }
+ ],
+ "Q43": [
+  {
+   "org": "SaxonQ",
+   "title": "SAXON Q — Room-temperature NV center quantum computing",
+   "kind": "web",
+   "site": "saxonq.com",
+   "url": "https://www.saxonq.com/",
+   "hint": "SaxonQ product page: SXQ4 delivered ('live with first customers'), SXQ 128 orderable, SXQ 512 from Q2 2027",
+   "verified": true
+  }
+ ],
+ "Q44": [
+  {
+   "org": "Innovation Industries",
+   "title": "Groove Quantum unveils world's largest semiconductor spin-qubit processor and raises €16M to bring quantum computing to industrial scale",
+   "date": "2026-04-30",
+   "kind": "web",
+   "site": "innovationindustries.com",
+   "url": "https://www.innovationindustries.com/news/groove-quantum-unveils-worlds-largest-semiconductor-spin-qubit-processor-and-raises-eu16m-to-bring-quantum-computing-to-industrial-scale",
+   "hint": "Groove Quantum: 18-qubit germanium spin-qubit processor demonstrated (30 Apr 2026)",
+   "verified": true
+  }
+ ],
+ "S48": [
+  {
+   "authors": [
+    "Jay Gambetta"
+   ],
+   "org": "IBM",
+   "title": "The hardware and software for the era of quantum utility is here",
+   "date": "2023-12-04",
+   "kind": "web",
+   "site": "IBM Quantum Computing Blog",
+   "url": "https://www.ibm.com/quantum/blog/quantum-roadmap-2033",
+   "hint": "Condor, 1,121 qubits, 'an innovation milestone' with performance comparable to Osprey (4 Dec 2023)",
+   "verified": true
+  }
+ ],
+ "Q45": [
+  {
+   "authors": [
+    "Samuel F. Neyens"
+   ],
+   "etal": true,
+   "title": "Probing single electrons across 300-mm spin qubit wafers",
+   "journal": "Nature",
+   "volume": "629",
+   "issue": "8010",
+   "pages": "80–85",
+   "date": "2024-05-01",
+   "doi": "10.1038/s41586-024-07275-6",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41586-024-07275-6",
+   "hint": "Intel 300 mm wafer statistics: 96% full-device yield over 232 twelve-dot devices at 1.6 K (Nature, May 2024)",
+   "verified": true
+  }
+ ],
+ "Q46": [
+  {
+   "org": "Equal1",
+   "title": "Equal1 RacQ Installed at ESA Centre for Earth Observation",
+   "date": "2026-07-31",
+   "kind": "web",
+   "site": "equal1.com",
+   "url": "https://www.equal1.com/insights/equal1-racq-installed-at-esa",
+   "hint": "Equal1 — RacQ installed at ESA's Centre for Earth Observation, Frascati, for integration with ESA's high-performance computing; no qubit count or metrics given (31 Jul 2026)",
+   "verified": true
+  }
  ]
 }

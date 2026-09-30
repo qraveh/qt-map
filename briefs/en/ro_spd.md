@@ -6,7 +6,7 @@ status: demonstrated
 since: 2001
 one_line: "Cryogenic superconducting detectors that destroy a photon to register it; the shared readout organ of every photonic and photon-linked platform."
 verdict: "Efficiency is solved in the lab (99.73% on-chip) but not at wafer scale (93.4% median on Omega); channel count and cryogenics, not physics, decide whether photonic fault tolerance is buildable."
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -47,7 +47,7 @@ Export-control exposure sits on the cryogenics, not the detector. The BIS interi
 
 ## Control, readout & I/O burden
 
-Per channel: a bias current, an amplifier, a coaxial line from 1–4 K to room temperature, and a time-tagger input. Tolerable at 10¹–10² channels — the entire commercial market — and binding above it. At 10³ the coax heat load and 2–4 K cooling budget dominate; Bluefors' KIDE, with nine pulse-tube cryocoolers and "more than 4,000 RF lines" [C][G:BLUEFORS-KIDE][303], is roughly the shippable ceiling. At 10⁴ wiring must give way to multiplexing: the 400,000-pixel camera's thermal row–column scheme [D][339] shows this works when timing can be sacrificed, but fusion networks need MHz–GHz feed-forward from click to switch and cannot sacrifice it. At 10⁶ detector, amplifier and demultiplexer must be monolithic in the photonic process and the cryoplant becomes kilowatt-class at 2–4 K; PsiQuantum's DARPA Stage C work explicitly covers packaging and cryogenics validation [P][G:PSIQ-QBI-C-2026-07][181], and its Brisbane cryoplant is not due until 2H 2027.
+Per channel: a bias current, an amplifier, a coaxial line from 1–4 K to room temperature, and a time-tagger input. Tolerable at 10¹–10² channels — the entire commercial market — and binding above it. At 10³ the coax heat load and 2–4 K cooling budget dominate; Bluefors' KIDE, with nine pulse-tube cryocoolers and "more than 4,000 RF lines" [C][G:BLUEFORS-KIDE][303], is roughly the shippable ceiling. At 10⁴ wiring must give way to multiplexing: the 400,000-pixel camera's thermal row–column scheme [D][339] shows this works when timing can be sacrificed, but fusion networks need MHz–GHz feed-forward from click to switch and cannot sacrifice it. At 10⁶ detector, amplifier and demultiplexer must be monolithic in the photonic process and the cryoplant becomes kilowatt-class at 2–4 K; PsiQuantum's DARPA Stage C work explicitly covers packaging and cryogenics validation [P][G:PSIQ-QBI-C-2026-07][181], and the Linde cryoplant for its Moreton Bay site is not due for delivery until 2H 2027 [C][G:PSIQ-GROUNDBREAKING-2026-06].
 
 ## Role in the stack
 
@@ -59,7 +59,7 @@ It conflicts with the surface code specifically: destructive detection precludes
 
 System detection efficiency is measured against a heavily attenuated laser and a calibrated power meter whose uncertainty the Nanjing authors put at 2–5% [D][628] — comparable to the gap between the 98.0 ± 0.5% [D][618] and 99.73% [D][628] headlines. The two are also different quantities: on-chip efficiency excludes fibre-to-chip coupling, so waveguide-integrated records must never be tabulated beside fibre-coupled ones without that caveat. Uncaptured: afterpulsing, latching, blinding attacks, and the joint distribution of efficiency and jitter across a wafer, which is what an integrator needs.
 
-Conflict. A "98.9% median (PsiQuantum)" figure is quoted elsewhere; the Omega paper and the shared fact record both give 93.4% median on-chip [D][169][G:PSIQ-OMEGA-METRICS-2025]. I trust 93.4% as the primary-source figure; the difference is 0.30 dB versus 0.05 dB per detection.
+Conflict. A "98.9% median (PsiQuantum)" figure is quoted elsewhere; the Omega paper and the shared fact record both give 93.4% median on-chip [D][169][G:PSIQ-OMEGA-METRICS-2025]. The primary-source figure, 93.4%, stands; the difference is 0.30 dB versus 0.05 dB per detection.
 
 ## Actors & economics
 
@@ -97,13 +97,13 @@ No detector vendor appears in that ledger with a disclosed round: the merchant s
 
 **IP & standards.** Quantum Opus holds an exclusive licence to US 11,274,962 B2 for photon-number resolution [C][631]. No dated patent-count figure from a named database was found for this node as of 2026-09-03. There is no SNSPD-specific standard; calibration traceability is de facto NIST's [D][339], [618].
 
-**Roadmaps & track record.** PsiQuantum (promised since 2021 · useful system by end-2027 · at risk: Brisbane groundbreaking only 2026-06, cryoplant 2H 2027, no 2026 hardware demonstration published) [P][181]. Xanadu (promised 2026-08-31 · loss 24.1× above threshold in 2026 → 1.0× in 2030, 1,000+ logical qubits by 2031 · paper roadmap only) [C][178]. Single Quantum (no public roadmap; 400 delivered systems is the only dated metric) [P][621]. Credibility: the detector vendors under-promise and ship; PsiQuantum's detector physics is credible and its schedule is not; Xanadu's roadmap is three weeks old and untested.
+**Roadmaps & track record.** PsiQuantum (promised since 2021 · useful system by end-2027 · at risk: Moreton Bay groundbreaking only 2026-06, cryoplant delivery due 2H 2027 [C][G:PSIQ-GROUNDBREAKING-2026-06], no 2026 hardware demonstration published) [P][181]. Xanadu (promised 2026-08-31 · loss 24.1× above threshold in 2026 → 1.0× in 2030, 1,000+ logical qubits by 2031 · paper roadmap only) [C][178]. Single Quantum (no public roadmap; 400 delivered systems is the only dated metric) [P][621]. Credibility: the detector vendors under-promise and ship; PsiQuantum's detector physics is credible and its schedule is not; Xanadu's roadmap is three weeks old and untested.
 
 **Strategic reading.** If fusion-based photonic computing scales, detectors per machine go from 10² to 10⁶ and merchant vendors must become foundry-integrated IP licensors or be displaced by in-house monolithic detectors — PsiQuantum has already chosen the second outcome for itself. Supplier bargaining power is weak against platform vendors and strong only in QKD and space communications, where volumes are real and integration is not. The substitution threat is homodyne detection on the CV architecture: cheap and room-temperature. The quiet winner in every scenario is the cryocooler industry.
 
 ## Outlook & open questions
 
-Confirm in 12–24 months if a published wafer map shows >99% median on-chip efficiency across a 300 mm line; if a >10³-channel cryogenic readout is demonstrated with per-channel jitter and feed-forward latency; if PsiQuantum's Brisbane cryoplant is energised in 2H 2027. Demote if PsiQuantum publishes no detector data through 2027, or wafer medians stay below 95% while switch and coupling losses fall. Best case by 2029: waveguide-integrated detectors above 99% median with thousands of channels multiplexed on-chip. Worst case: records keep being set on two-detector laboratory devices while wafer medians stall near 93–95% and the 2.7% loss threshold stays unreachable.
+Confirm in 12–24 months if a published wafer map shows >99% median on-chip efficiency across a 300 mm line; if a >10³-channel cryogenic readout is demonstrated with per-channel jitter and feed-forward latency; if PsiQuantum's Moreton Bay cryoplant is delivered in 2H 2027 as promised [C][G:PSIQ-GROUNDBREAKING-2026-06]. Demote if PsiQuantum publishes no detector data through 2027, or wafer medians stay below 95% while switch and coupling losses fall. Best case by 2029: waveguide-integrated detectors above 99% median with thousands of channels multiplexed on-chip. Worst case: records keep being set on two-detector laboratory devices while wafer medians stall near 93–95% and the 2.7% loss threshold stays unreachable.
 
 Open questions. (1) What is the efficiency–jitter joint distribution across a 300 mm wafer, and what is the yield criterion? (2) Can number resolution be had at 2 K, or does GKP permanently require a TES near 100 mK? (3) What cooling power per channel at 2 K does a 10⁵-channel machine need, and who builds that plant? (4) Does any non-destructive scheme reach telecom wavelengths with usable efficiency? (5) Do merchant vendors have a foundry-compatible path? Watch PsiQuantum's next hardware paper and Stage C milestones, and any disclosed round at Single Quantum, Photon Spot or Quantum Opus — the first signal that demand has moved beyond QKD.
 

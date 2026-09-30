@@ -6,7 +6,7 @@ status: demonstrated
 since: 2016
 one_line: "Hyperfine ground-state qubit in a single rubidium or caesium atom held by a far-detuned optical tweezer, moved on demand."
 verdict: "Identical, free, transportable qubits with second-scale coherence; the binding constraints are trap-laser watts, millisecond imaging and atom loss — not fabrication."
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -58,7 +58,7 @@ Two architectures, primary in both: "Rydberg tweezer array — alkali (Rb/Cs)" a
 
 The headline coherence is a dynamically decoupled, array-averaged T₂: it absorbs site-to-site trap-depth inhomogeneity into the pulse sequence rather than reporting it. Imaging survival of 99.98952(1)% is per image at a stated exposure and bounds nothing about loss during transport or Rydberg excitation. The 60.5% filling fraction is pre-rearrangement — "11,022 atoms" and "11,022 usable qubits" are different claims. No protocol here separates loss from depolarising error, so error-per-Clifford figures are not comparable to solid-state ones without the post-selection.
 
-Conflicts. The Caltech abstract says "over 6,100 atoms in around 12,000 sites"; versions differ (v1 2024-03, v4 2025-07) and the 12.6 s figure belongs to v4, which I trust [D][138]. The review arguing a 99.9% blockade ceiling also tabulates a 2025 USTC CZ of 99.84% that no primary source corroborates [P][140].
+Conflicts. The Caltech abstract says "over 6,100 atoms in around 12,000 sites"; versions differ (v1 2024-03, v4 2025-07) and the 12.6 s figure belongs to v4, the later revision, which takes precedence [D][138]. The review arguing a 99.9% blockade ceiling also tabulates a 2025 USTC CZ of 99.84% that no primary source corroborates [P][140].
 
 ## Actors & economics
 

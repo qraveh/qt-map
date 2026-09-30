@@ -6,7 +6,7 @@ status: demonstrated
 since: 2024
 one_line: Triangular 2D stabilizer code whose whole Clifford group acts transversally, skipping lattice surgery, at roughly 1.9× the surface code's teraquop footprint.
 verdict: The colour code's future is as the magic-state factory feeding surface-code memory, not as the memory. Demote the memory case if no platform reports a colour-code logical memory beating the surface code on total qubits for a fixed logical target by 2028.
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -29,7 +29,7 @@ The transversal gate needs no merge/split: Google puts a logical Hadamard at ~20
 Dominant term: the syndrome round, not the transversal gate — weight-6 extraction and hypergraph decoding leave Λ at 1.56 against 2.14 [D][1], [41].
 
 ## Manufacturing, materials & supply chain
-No fabrication of its own: it inherits the host's chip, trap or tweezer array, tiled hexagonally rather than square, and brings no new supplier [D][41]. Export exposure is the host's: quantum computers sit under ECCN 4A906 (BIS, 2024-09-06) [G:BIS-3A901A-CRYOCMOS], while the code is published mathematics from 2006 [D][663].
+No fabrication of its own: it inherits the host's chip, trap or tweezer array, tiled hexagonally rather than square, and brings no new supplier [D][41]. Export exposure is the host's: ECCN 4A906 (BIS, 2024-09-06) controls a quantum computer only when its qubit count and C-NOT error fall in the same band — from 34–99 qubits at ≤ 10⁻⁴ to any error from 2,000 qubits on [G:BIS-3A901A-CRYOCMOS] — while the code is published mathematics from 2006 [D][663].
 
 ## Control, readout & I/O burden
 Control and readout per qubit match the host's surface-code burden. The difference is per round: each data qubit sits in six weight-6 checks against the surface code's four weight-4 checks, so a round costs about 1.5× the two-qubit gates on a deeper schedule, and that is where the threshold goes. Against it, a logical Clifford needs no merge/split rounds at all. Decoding is the harder item: hypergraph syndromes rule out a stock matching engine, and the only published d=5 hardware decode is Google's Tesseract search decoder [D][2].

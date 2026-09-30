@@ -847,6 +847,8 @@ def report_numbers(text,lang):
     vals['N_PRESSONLY_WORD_CAP']=vals['N_PRESSONLY_WORD'][:1].upper()+vals['N_PRESSONLY_WORD'][1:]
     import machines_chapter as _mc                      # §8's headline figures: {{N_CODE_RUN}}, {{N_IC_NONE_OR_UNDISC}}, {{N_CTRL_EXT}}, {{N_OCC}} … (27 Sep 2026)
     vals.update({'N_'+k:str(v) for k,v in _mc.figures().items()})
+    vals.update({'N_'+k:v for k,v in _mc.arch_figures(lang).items()})   # the narratives' counts per architecture, family and machine (29 Sep 2026)
+    import counts as _cn; vals.update({'N_'+k:v for k,v in _cn.tech_placeholders(lang,M,G).items()})   # the briefs' and descriptions' counts per technology
     out=re.sub(r'\{\{(N_[A-Z0-9_]+)\}\}',lambda m: vals.get(m.group(1),m.group(0)),text)   # digits allowed in a name (N_SHARED2, N_H6_BOTH — 29 Sep 2026)
     left=re.findall(r'\{\{N_[A-Z0-9_]+\}\}',out)
     if left: raise SystemExit('report placeholders without a value: %s'%sorted(set(left)))
@@ -880,7 +882,7 @@ def feedback_html(cfg):
     return f'''<div class="fbk" id="fbk"><button type="button" class="fbkbtn" id="fbkbtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="fbkpop" aria-label="Send feedback">{BUG_SVG}</button><span class="fbktip" role="tooltip"><span class="lang-en">Send feedback</span><span class="lang-ru">Отправить отзыв</span><span class="lang-he">שליחת משוב</span></span></div>
 <div class="fbkpop" id="fbkpop" role="dialog" aria-labelledby="fbkh" hidden>
  <h4 id="fbkh"><span class="lang-en">Send feedback</span><span class="lang-ru">Отправить отзыв</span><span class="lang-he">שליחת משוב</span></h4>
- <p><span class="lang-en">A wrong number, a missing technology, a broken control — say what and where; the context below is attached.</span><span class="lang-ru">Неверное число, пропущенная технология, сломанный элемент управления — скажите, что и где; контекст ниже прилагается.</span><span class="lang-he">מספר שגוי, טכנולוגיה חסרה, פקד שאינו פועל — ציין מה ואיפה; ההקשר שלהלן מצורף.</span></p>
+ <p><span class="lang-en">An error or a gap, a source or a machine we missed, a question, a disagreement with a reading or a verdict, an idea, a control that misbehaves — say what and where; the context below is attached.</span><span class="lang-ru">Ошибка или пробел, пропущенный источник или машина, вопрос, несогласие с трактовкой или вердиктом, идея, сбой в работе страницы — скажите, что и где; контекст ниже прилагается.</span><span class="lang-he">שגיאה או חוסר, מקור או מכונה שהוחמצו, שאלה, אי-הסכמה עם פרשנות או עם פסק, רעיון, פקד שאינו פועל כראוי — ציין מה ואיפה; ההקשר שלהלן מצורף.</span></p>
  <pre class="ctx" id="fbkctx"></pre>
  <div class="acts"><a class="chip" id="fbkgh" href="{cfg['repo']}/issues/new" target="_blank" rel="noopener"><span class="lang-en">Open a GitHub issue</span><span class="lang-ru">Открыть issue на GitHub</span><span class="lang-he">פתח issue ב-GitHub</span></a><a class="chip" id="fbkmail" href="#"><span class="lang-en">E-mail Raveh Neeman</span><span class="lang-ru">Написать Раве Нээману</span><span class="lang-he">שלח דוא״ל לרווה נאמן</span></a><button type="button" class="chip" id="fbkclose"><span class="lang-en">Close</span><span class="lang-ru">Закрыть</span><span class="lang-he">סגור</span> ✕</button></div>
 </div>'''
@@ -892,7 +894,7 @@ var LL=(window.__LANGS||{}).list||['en'],OTH=new RegExp('^('+LL.filter(function(
 function htext(el){var en=document.getElementById(el.id.replace(OTH,'en-'));if(!en&&OTH.test(el.id)){var S=window.__SECTITLES||{};var t=S[el.id.replace(OTH,'')];var n0=el.querySelector('.num');var num0=n0?n0.textContent.trim():'';if(t)return (num0?('§'+num0+' '):'')+t;}en=en||el;var n=en.querySelector('.num');var num=n?n.textContent.trim():'';var rest=en.textContent.trim();if(num&&rest.indexOf(num)===0)rest=rest.slice(num.length).trim();return (num?('§'+num+' '):'')+rest;}
 function where(){var h=location.hash||'';if(h.indexOf('#brief-')===0)return 'brief '+h.slice(7).replace(ANY,'');var best=null,top=window.scrollY+80;var hs=document.querySelectorAll('main h2[id],main h3[id],main h4[id]');for(var i=0;i<hs.length;i++){if(!hs[i].getClientRects().length)continue;var r=hs[i].getBoundingClientRect().top+window.scrollY;if(r<=top)best=hs[i];else break;}return best?htext(best).slice(0,90):(h?h.slice(1):'top');}   // hidden headings (the other language's blocks) have no rect and are skipped (27 Sep 2026)
 function context(){var m=(window.__mapContext&&window.__mapContext())||{};var L=lang();var app=document.getElementById('app');var lines=['page: '+(document.title||'Quantum Technology Atlas'),'edition: '+((app&&app.getAttribute('data-edition'))||''),'language: '+L,'location: '+where()];if(m.focus)lines.push('technology: '+m.focus);if(m.isolate)lines.push('architecture: '+m.isolate);if(m.machine)lines.push('machine: '+m.machine);if(m.lens)lines.push('lens: '+m.lens);lines.push('url: '+location.href.split('#')[0]+(location.hash||''));lines.push('date: '+new Date().toISOString().slice(0,10));return lines.join('\n');}
-function fill(){var c=context();document.getElementById('fbkctx').textContent=c;var loc=where();var title='Feedback: '+loc.slice(0,60);var body='What is wrong and where:\n\n\n---\nContext (attached automatically):\n'+c;   // the issue and the mail are English whatever the page's language (26 Sep 2026)
+function fill(){var c=context();document.getElementById('fbkctx').textContent=c;var loc=where();var title='Feedback: '+loc.slice(0,60);var body='Your feedback — what and where:\n\n\n---\nContext (attached automatically):\n'+c;   // the issue and the mail are English whatever the page's language (26 Sep 2026)
  var gh=document.getElementById('fbkgh');gh.href=gh.href.split('?')[0]+'?title='+encodeURIComponent(title)+'&body='+encodeURIComponent(body);
  var m=document.getElementById('fbkmail');m.href='mailto:'+['raveh.neeman','qodeh.com'].join('@')+'?subject='+encodeURIComponent('[QT Atlas] '+title)+'&body='+encodeURIComponent(body);}
 function open(){fill();pop.hidden=false;wrap.classList.add('open');btn.setAttribute('aria-expanded','true');}
@@ -1173,6 +1175,12 @@ def build(cfg=PUBLIC):
     regmap=json.load(open(cfg['regmap'],encoding='utf-8')) if cfg.get('regmap') else None
     BR.configure(cfg['mode'],dirs=cfg.get('briefs_dirs'),regmap=regmap,table_num=cfg['table_num'],id_sections=cfg['id_sections'])
     B=BR.load_briefs()
+    for b in B:   # the briefs name the register's counts through placeholders ({{N_T_RO_S2C_MACHINES}} …, 29 Sep 2026)
+        for L in LANGS:
+            LL='en' if b['fallback'].get(L) else L   # an untranslated brief shows the English text: its numbers in English words too
+            if '{{' in b[L]['body']: b[L]['body']=report_numbers(b[L]['body'],LL)
+            for k,v in list(b[L]['meta'].items()):
+                if isinstance(v,str) and '{{' in v: b[L]['meta'][k]=report_numbers(v,LL)
     ids={b['id'] for b in B}
     colours=BR.family_colours(G)
     BR.TOOLTIPS=lambda h,lang:tooltips(h,lang,briefs=True)

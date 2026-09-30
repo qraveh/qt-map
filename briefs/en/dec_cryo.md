@@ -6,10 +6,10 @@ status: empty slot
 since: —
 one_line: Syndrome decoding or pre-decoding executed inside the cryostat — SFQ logic at millikelvin, CMOS at 4 K — instead of at room temperature.
 verdict: Four design studies, zero silicon as of 4 Sep 2026. Room-temperature FPGA decoders meet the 1.1 µs superconducting cycle, so only feedthrough count at 10⁴+ qubits can force this node into existence.
-updated: 2026-09-04
+updated: 2026-09-30
 ---
 
-"Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics)."
+Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
 A cryogenic decoder evaluates the syndrome-to-correction map inside the refrigerator instead of shipping every syndrome bit up the harness. Two substrates compete: single-flux-quantum (SFQ) logic switching quantised flux pulses at tens of GHz at millikelvin, and CMOS characterised at 4 K. The lineage is architectural: a per-qubit SFQ decoder in 2020 [S][744], an online SFQ surface-code decoder in 2021 [S][745], then in 2025–26 an inversion — compressing syndromes at 4 K rather than decoding them [S][733][S][746].
@@ -17,7 +17,7 @@ A cryogenic decoder evaluates the syndrome-to-correction map inside the refriger
 - Manufacturing: Nb multilayer lithography or 4 K-characterised CMOS; no decoder-specific process exists.
 
 ## Physics & limits
-The limit is thermal bookkeeping. An SFQ junction transition dissipates of order I_cΦ₀ ≈ 10⁻¹⁹ J, so a 10⁵-junction decoder at 2 GHz sits in the tens of µW — 2.78 µW is the published point [S][745] — against a dilution unit delivering hundreds of µW at 100 mK. Cryo-CMOS trades that for a ≈2 W plant at 4 K [S][550], of which one design spends 1.5 W to serve 2,668 logical qubits at d = 21 [S][733]. Neither floor is fundamental: it is allocation against a budget control already claims, moved only by adiabatic flux-parametron logic. The dominant failure mode is not a Pauli error — a decoder whose throughput falls below the syndrome rate accumulates unbounded backlog, so latency and bandwidth set the design. SFQ near the qubit die adds a second mechanism: pulse edges radiate, and photon-mediated quasiparticle poisoning measured 1.2(1)% error per Clifford on a separate-die SFQ driver that switches far less than a decoder would [D][G:SFQ-QP-POISONING-2023].
+The limit is thermal bookkeeping. An SFQ junction transition dissipates of order I_cΦ₀ ≈ 10⁻¹⁹ J, so a 10⁵-junction decoder at 2 GHz sits in the tens of µW — 2.78 µW is the published point [S][745] — against a dilution unit delivering hundreds of µW at 100 mK. Cryo-CMOS trades that for a ≈2 W plant at 4 K [S][550], of which one design spends 1.5 W to serve 2,668 logical qubits at d = 21 [S][733]. Neither floor is fundamental: each is an allocation against a budget control already claims, and it moves with the logic family — lower-power cryo-CMOS, SFQ at ~1.6 µW per qubit, adiabatic flux-parametron logic lower still [S][550]. The dominant failure mode is not a Pauli error — a decoder whose throughput falls below the syndrome rate accumulates unbounded backlog, so latency and bandwidth set the design. SFQ near the qubit die adds a second mechanism: pulse edges radiate, and photon-mediated quasiparticle poisoning measured 1.2(1)% error per Clifford on a separate-die SFQ driver that switches far less than a decoder would [D][G:SFQ-QP-POISONING-2023].
 
 ## Engineering state of the art
 All decoder figures are post-synthesis; the last row is the nearest fabricated analogue.
@@ -50,18 +50,18 @@ Every decoder number is post-synthesis power/performance/area on a cryo-characte
 | University of Michigan | Research | USA | Authored both cold predecoder and compressor designs | [S][G:PINBALL-2025-12] |
 | SEEQC Inc. | Developer, supplier | USA | Nb foundry and millikelvin SFQ control; only credible SFQ host | [D][G:SEEQC-MK-SFQ-2026-03] |
 | HRL Laboratories | Developer | USA | Only fabricated cold logic inside a QEC loop | [D][G:HRL-CRYOCMOS-4K-2026] |
-| IBM | Developer, acquirer | USA | Cryo-CMOS flux-bias ASICs on 156 qubits; buying HRL | [C][G:IBM-CRYOCMOS-FLUX-2026-03] |
+| IBM | Developer, acquirer | USA | Cryo-CMOS flux-bias ASICs on 156 qubits; acquired HRL | [C][G:IBM-CRYOCMOS-FLUX-2026-03][G:IBM-HRL-CLOSED-2026-08] |
 | Semiwise Ltd | Supplier | UK | Sole source of the 4 K 22 nm FDSOI PDK used | [S][746] |
 | Riverlane | Developer, rival | UK | Room-temperature FPGA decoding incumbent | [D][G:RIVERLANE-LCD-2025-12] |
 | US Bureau of Industry and Security | Regulator | USA | Controls ≤4.5 K CMOS ICs by design intent | [G:BIS-3A901A-CRYOCMOS] |
 
-**Money.** 2025-12/2026-06 · University of Michigan · DOE ARQC award DE-SC0025633, amount undisclosed · funds both studies · ongoing [S][746]. 2026-05-21 · GlobalFoundries · CHIPS letter of intent · $375 M USD · US Commerce · non-binding [G:CHIPS-LOI-2026-05]. 2026-07-02 · SEEQC · S-1 for Nasdaq listing after a 2026-01-16 Allegro merger agreement · $75 M offering plus $65 M PIPE at ~$1 B enterprise value · filed, not closed [G][575]; the Allegro SPAC merger itself was terminated 2026-08-25 [G:SEEQC-SPAC-TERMINATED-2026-08]. 2026-07-23 · IBM · acquisition of HRL Laboratories · terms undisclosed · announced [C][G:IBM-HRL-2026-07]. No programme funds cryogenic decoding directly.
+**Money.** 2025-12/2026-06 · University of Michigan · DOE ARQC award DE-SC0025633, amount undisclosed · funds both studies · ongoing [S][746]. 2026-05-21 · GlobalFoundries · CHIPS letter of intent · $375 M USD · US Commerce · non-binding [G:CHIPS-LOI-2026-05]. 2026-05-26 · SEEQC · Form S-4 for a Nasdaq listing through a 2026-01-16 Allegro merger agreement · $75 M offering plus $65 M PIPE at ~$1 B enterprise value · filed [G][575]; the merger was terminated 2026-08-25, and SEEQC's separate S-1 IPO (filed 2026-06-29) had not priced by 30 Sep 2026 [G:SEEQC-SPAC-TERMINATED-2026-08]; SEEQC's amended S-1 of 2026-08-28 reports 2025 revenue of $4.2 M, a 2025 net loss of $12.2 M and $18.1 M in cash at 2026-06-30 [G:SEEQC-S1A-2026-08]. 2026-07-23 · IBM · acquisition of HRL Laboratories · terms undisclosed · closed 2026-08-26 [C][G:IBM-HRL-2026-07][G:IBM-HRL-CLOSED-2026-08]. No programme funds cryogenic decoding directly.
 
 **Market & supply chain.** Nobody sells this. The enabling goods sit one layer down: cryo-PDKs, 22FDX capacity, Nb multilayer runs, and the racks a cold decoder would displace. Concentration is severe at both ends; no unit economics are quotable. Only G4 pays for this.
 
 **IP & standards.** No patent family specific to cryogenic decoding was found in a named dated database. The nearest is Riverlane's GB 2641501 A "Quantum decoder" (published 2025-12-10), claiming room-temperature hardware clustering [G:SURFACE-CODE-PATENTS]. No standard exists for a syndrome interface across the 4 K boundary; NVIDIA's NVQLink standardises the warm side instead.
 
-**Roadmaps & track record.** Michigan predecoder and compressor (2025-12-10, 2026-06-29 · no tape-out date · design-only as of 4 Sep 2026) — real PDK data, no fabrication commitment. SEEQC SFQ control (peer-reviewed 2026-03-10 · decode absent from its roadmap) — the only actor with process and listing proceeds to fund a tape-out. IBM cryo-CMOS control (abstracts 2026-03-16 · no preprint) — unproven at publication standard.
+**Roadmaps & track record.** Michigan predecoder and compressor (2025-12-10, 2026-06-29 · no tape-out date · design-only as of 4 Sep 2026) — real PDK data, no fabrication commitment. SEEQC SFQ control (peer-reviewed 2026-03-10 · decode absent from its roadmap) — the only actor with its own process line and, should its pending IPO price, the proceeds to fund a tape-out. IBM cryo-CMOS control (abstracts 2026-03-16 · no preprint) — unproven at publication standard.
 
 **Strategic reading.** If cold decoding works the winners already own cold silicon and cooling budget — SEEQC on SFQ, IBM/HRL and GlobalFoundries on CMOS — because decode folds into a chip they ship anyway. Losers are standalone decoder vendors whose value is reprogrammability, and accelerator vendors betting decode migrates to GPUs over a warm link. Bargaining power sits with the substrate owner.
 
@@ -72,7 +72,7 @@ Confirm by 2028 if any cryogenic predecoder tapes out with measured silicon; dem
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [550] S. Kawabata, “Integration and Resource Estimation of Cryoelectronics for Superconducting Fault-Tolerant Quantum Computers,” [arXiv:2601.03922](https://arxiv.org/abs/2601.03922), Jan. 2026. [S]
 [575] SeeQC, Inc., “Form S-4 Registration Statement (SeeQC, Inc. / Allegro Merger Corp.),” U.S. Securities and Exchange Commission, May 2026. [Online]. Available: https://www.sec.gov/Archives/edgar/data/1779977/000121390026061108/ea0278139-04.htm [G]
-[727] Y. Wu, N. Liyanage, and L. Zhong, “Micro Blossom: Accelerated Minimum-Weight Perfect Matching Decoding for Quantum Error Correction,” [arXiv:2502.14787](https://arxiv.org/abs/2502.14787), Feb. 2025. Also https://github.com/yuewuo/micro-blossom. [D]
+[727] Y. Wu, N. Liyanage, and L. Zhong, “Micro Blossom: Accelerated Minimum-Weight Perfect Matching Decoding for Quantum Error Correction,” *Proc. 30th ACM Int. Conf. Architectural Support for Programming Languages and Operating Systems (ASPLOS '25)*, vol. 2, Mar. 2025, doi: [10.1145/3676641.3716005](https://doi.org/10.1145/3676641.3716005). [arXiv:2502.14787](https://arxiv.org/abs/2502.14787). Also https://github.com/yuewuo/micro-blossom. [D]
 [733] A. Knapen *et al.*, “Pinball: A Cryogenic Predecoder for Surface Code Decoding Under Circuit-Level Noise,” [arXiv:2512.09807](https://arxiv.org/abs/2512.09807), Dec. 2025. [S]
 [744] A. Holmes *et al.*, “NISQ+: Boosting quantum computing power by approximating quantum error correction,” [arXiv:2004.04794](https://arxiv.org/abs/2004.04794), Apr. 2020. [S]
 [745] Y. Ueno, M. Kondo, M. Tanaka, Y. Suzuki, and Y. Tabuchi, “QECOOL: On-Line Quantum Error Correction with a Superconducting Decoder for Surface Code,” arXiv, Nov. 8, 2021. [Online]. Available: https://arxiv.org/abs/2103.14209 [S]
@@ -80,6 +80,6 @@ Confirm by 2028 if any cryogenic predecoder tapes out with measured silicon; dem
 
 ## Open verification items
 DOE ARQC award DE-SC0025633 is acknowledged in the CryoZip paper but no dollar amount appears in any source consulted; treated as unquantified.
-SEEQC's revenue and cash position are not in the registration statement, and the listing had not closed as of 4 Sep 2026.
+SEEQC's offering size and price range are still blank in its latest S-1 amendment (2026-09-11) [G:SEEQC-S1A-2026-08]; no listing has followed — the SPAC merger was terminated 2026-08-25 and the IPO had not priced by 30 Sep 2026.
 4 K power per qubit remains unresolved (23 mW vs 5 mW vs sub-2 mW); every cold-decoder power comparison inherits the ambiguity.
 No patent family specific to cryogenic decoding located in a named dated database; absence of evidence only.

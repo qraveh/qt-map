@@ -6,7 +6,7 @@ status: demonstrated
 since: 2004
 one_line: Resonant microwave rotation of a defect electron spin, hyperfine-conditional rotation of its neighbouring nuclei, and optical pulses for initialisation and readout.
 verdict: Sub-0.1% single-node gate error, but the optical cycles that initialise and read the spin are also its dominant decoherence source, and no benchmark in use separates the two.
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -22,7 +22,7 @@ Two rates set the architecture: megahertz electron Rabi gives gates of tens to h
 | year | figure | who | tag+key |
 |---|---|---|---|
 | 2025-03-28 | NV 1Q and 2Q gate error below 0.1% by gate-set tomography | Fujitsu with QuTech | [P][208] |
-| 2026-01-15 | resonant photon collection ~0.05% → ~0.5%, echo coherence above 100 µs kept | QuTech | [D][359] |
+| 2025-11-27 | resonant photon collection ~0.05% → ~0.5%, echo coherence above 100 µs kept | QuTech | [D][359] |
 | 2026-05-26 | unconditional teleported CNOT between cryostats, 63(4)% | QuTech | [D][360] |
 
 Dominant term: optically induced charge instability, not microwave control.
@@ -31,7 +31,7 @@ Dominant term: optically induced charge instability, not microwave control.
 The gate inherits diamond's constraints: CVD growth from Element Six, implanted defects, per-device nanophotonics. Nothing in the drive chain multiplexes: each addressed defect needs its own resonant laser line, microwave feed and detector channel, so hardware scales linearly with sites — the opposite of a shared microwave plant. Control latency is set by the link, not the gate: the teleported CNOT needed feed-forward inside the memory lifetime [D][360]. At 10³ sites the wall is laser count and optical fan-out, with no published plan. No export rule names colour centres.
 
 ## Role in the stack
-Requires the colour-centre carrier and provides the gate the defect-node architecture uses; it is also the alternate gate on the silicon / germanium quantum-dot spin and donor-spin architectures. The register lists 3 machines using it, among them Quantum Brilliance's Quoll / QB-QDK 2.0 and Fujitsu's Diamond-spin quantum computer prototype. Its clock contribution never binds: ~10⁻⁷–10⁻⁶ s electron gates against ~100 µs readout and links six to nine orders slower; no code runs on the defect architecture, so sum of the syndrome round: gate layers + transport + readout + reset has no value here and the link rate is the clock. Verification: the sub-0.1% figure is one collaboration, published through a press release, and gate-set tomography as applied does not separate microwave error from optically induced charge-state error — a composite that will not transfer to another readout duty cycle. The teleported CNOT is unconditional, unlike the post-selected T-centre result at Bell 0.60(8) [P][363].
+Requires the colour-centre carrier and provides the gate the defect-node architecture uses; it is also the alternate gate on the silicon / germanium quantum-dot spin and donor-spin architectures. The register lists {{N_T_G_MWSPIN_MACHINES}} machines using it, among them SaxonQ's QC2026 Dual Core, Quantum Brilliance's Quoll / QB-QDK 2.0 and Fujitsu's Diamond-spin quantum computer prototype. Its clock contribution never binds: ~10⁻⁷–10⁻⁶ s electron gates against ~100 µs readout and links six to nine orders slower; no code runs on the defect architecture, so sum of the syndrome round: gate layers + transport + readout + reset has no value here and the link rate is the clock. Verification: the sub-0.1% figure is one collaboration, published through a press release, and gate-set tomography as applied does not separate microwave error from optically induced charge-state error — a composite that will not transfer to another readout duty cycle. The teleported CNOT is unconditional, unlike the post-selected T-centre result at Bell 0.60(8) [P][363].
 
 ## Actors & economics
 **Who.**

@@ -6,7 +6,7 @@ status: emerging
 since: 2026
 one_line: "Quantised flux pulses from a niobium digital chip flip-chipped onto the qubit die drive gates at millikelvin, replacing per-qubit microwave coax."
 verdict: "Real: one five-qubit module at 1Q > 99%. Unproven: two-qubit gates, readout, flux bias, quasiparticle immunity beyond five qubits. Demote if no >20-qubit SFQ module by 2028."
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -70,7 +70,7 @@ Every headline number is a randomised-benchmarking (RB) Clifford average [D][566
 - 2020-09-16 · SEEQC · Series A · $22.4 M · EQT Ventures (lead) · closed [C][572]
 - 2025-01-16 · SEEQC · growth round · $30 M · SIP Global and others · closed [P][573]
 - 2025-06-12 · SEEQC + IBM · SFQ integration under DARPA QBI, IBM the performer [G][65] · undisclosed · announced [P][54][G:SEEQC-2026]
-- 2026-06-29 · SEEQC · S-1 for a Nasdaq IPO, alongside an Allegro Merger Corp SPAC agreement ($1 B enterprise value) · filed [P][556][G:SEEQC-S1-2026-07]
+- 2026-06-29 · SEEQC · S-1 for a Nasdaq IPO, alongside an Allegro Merger Corp SPAC agreement ($1 B enterprise value) · filed [C][556][G:SEEQC-S1-2026-07]
 - 2026-08-25 · SEEQC / Allegro · SPAC merger ended by settlement: Allegro gets $6 M in stock at a $1.3 B pre-money valuation on a future IPO, sale or ≥ $100 M raise · terminated [G][574]
 
 **Market & supply chain.** No SFQ control market exists yet: one vendor, one demonstration. SkyWater, the merchant foundry named in D-Wave's 10-K filings [G][492], has belonged to IonQ since July 2026 [C][19]. G3 and G4 pay for it; G7 secondarily.
@@ -100,7 +100,7 @@ Confirm if by end-2027 a group publishes an SFQ-driven two-qubit gate below 1% e
 [492] U.S. Securities and Exchange Commission, “EDGAR full-text search: ‘SkyWater’ in D-Wave Quantum Inc. 10-K filings,” SEC EDGAR Full-Text Search, Feb. 26, 2026. [Online]. Available: https://efts.sec.gov/LATEST/search-index?q=%22SkyWater%22&forms=10-K&ciks=0001907982 [G]
 [527] A. Noori *et al.*, “A Cryo-CMOS Control System for Large-Scale Superconducting Qubit Quantum Computing: Part 2,” IBM Research, Mar. 16, 2026. [Online]. Available: https://research.ibm.com/publications/a-cryo-cmos-control-system-for-large-scale-superconducting-qubit-quantum-computing-part-2 [C]
 [550] S. Kawabata, “Integration and Resource Estimation of Cryoelectronics for Superconducting Fault-Tolerant Quantum Computers,” [arXiv:2601.03922](https://arxiv.org/abs/2601.03922), Jan. 2026. [S]
-[556] SEEQC, “SEEQC Files Registration Statement for Proposed Initial Public Offering,” Business Wire, Jun. 29, 2026. [Online]. Available: https://www.businesswire.com/news/home/20260629077919/en/SEEQC-Files-Registration-Statement-for-Proposed-Initial-Public-Offering [P]
+[556] SEEQC, “SEEQC Files Registration Statement for Proposed Initial Public Offering,” Business Wire, Jun. 29, 2026. [Online]. Available: https://www.businesswire.com/news/home/20260629077919/en/SEEQC-Files-Registration-Statement-for-Proposed-Initial-Public-Offering [C]
 [565] R. McDermott and M. G. Vavilov, “Accurate Qubit Control with Single Flux Quantum Pulses,” *Phys. Rev. Appl.*, vol. 2, no. 1, Art. no. 014007, Jul. 2014, doi: [10.1103/PhysRevApplied.2.014007](https://doi.org/10.1103/PhysRevApplied.2.014007). [S]
 [566] E. Leonard *et al.*, “Digital Coherent Control of a Superconducting Qubit,” *Phys. Rev. Appl.*, vol. 11, no. 1, Art. no. 014009, Jan. 2019, doi: [10.1103/PhysRevApplied.11.014009](https://doi.org/10.1103/PhysRevApplied.11.014009). [arXiv:1806.07930](https://arxiv.org/abs/1806.07930). [D]
 [567] AIST; Yokohama National University; Tohoku University; NEC, “Successful demonstration of a superconducting circuit for qubit control within large-scale quantum computer systems,” NEC Press Releases, Jun. 3, 2024. [Online]. Available: https://www.nec.com/en/press/202406/global_20240603_02.html [C]
@@ -117,5 +117,5 @@ Confirm if by end-2027 a group publishes an SFQ-driven two-qubit gate below 1% e
 - Main text of [304] paywalled: five qubits, 10 mK and "nanowatts per qubit" come from press [53], not the abstract.
 - MIT-LL SFQ5ee parameters not obtained; [570] covers the qubit foundry only.
 - No dated 2025–26 Chinese SFQ qubit-control result found; no patent-family count.
-- SEEQC revenue, cash and offering size undisclosed [556]; enterprise value from trade press.
+- SEEQC's revenue and cash are in its S-1 filings — $4.2 M revenue in 2025, $18.1 M cash at 2026-06-30 [G:SEEQC-S1A-2026-08]; the offering size is still blank (S-1 amendment of 2026-09-11), and the enterprise value comes from trade press.
 - SkyWater's superconducting capability inferred from D-Wave 10-K mentions [492].

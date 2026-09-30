@@ -6,10 +6,10 @@ status: demonstrated
 since: 2014
 one_line: A flux-tuned coupler switches the exchange and ZZ interaction between transmons on and off, giving deterministic 25–70 ns CZ or iSWAP gates.
 verdict: Falsifiable — isolated pairs are already at the coherence limit, so if fleet-width error does not fall below 0.2% by 2027 the binding constraint is T1 and calibration, not the coupler.
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
-"Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics)."
+Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
 A flux-tunable coupler is a third element — usually a tunable transmon — bridging two data qubits. Its frequency sets an indirect coupling path that interferes with the direct capacitive one, so a bias sweep tunes net exchange through zero: at the off point static ZZ cancels; a pulse away from it drives a deterministic CZ or iSWAP via the |11⟩–|20⟩ crossing. Google/UCSB introduced it as the gmon in 2014, coupling settable to zero at nanosecond resolution without spoiling coherence [D][422].

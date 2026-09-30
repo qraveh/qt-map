@@ -6,7 +6,7 @@ status: theory
 since: 2030
 one_line: "A fault-tolerant code assembled from destructive linear-optical fusions on pre-made photonic resource states, tolerating 2.7-17.4% photon loss in theory and never run end-to-end."
 verdict: "Real: loss thresholds derived in simulation, 2.7% (boosted 6-ring) to 17.4% ({7,4} encoded). Unproven: any hardware run of the scheme; only components exist. Demote if no fusion-lattice demonstration by 2029."
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -54,7 +54,7 @@ Requires linear-optical fusion and a resource-state factory, neither at code-rel
 
 **IP & standards.** No dated patent family specific to the fusion-lattice code as of 4 Sep 2026; nearest is ORCA's US 12,437,225 [G:ORCA-DUALRAIL-PATENT-2025].
 
-**Roadmaps & track record.** (2024-04 · Brisbane machine useful by end-2027 · at risk: site moved, groundbreaking slipped to 2026-06, cryoplant not due until 2H 2027) [P][G:PSIQ-BRISBANE-940M]. Strong paper record, weak schedule.
+**Roadmaps & track record.** (2024-04 · Brisbane machine useful by end-2027 · at risk: site moved to Moreton Bay, groundbreaking slipped to 2026-06, Linde cryoplant not due for delivery until 2H 2027 [C][G:PSIQ-GROUNDBREAKING-2026-06]) [P][G:PSIQ-BRISBANE-940M]. Strong paper record, weak schedule.
 
 **Strategic reading.** If the subthreshold critique holds, the largest privately funded photonics bet needs a far lower-loss network or a pivot to emitter hybrids — a redesign for a company already late. Winners if it works: PsiQuantum, its foundry, detector vendors; losers: bosonic GKP and anyone selling a fast gate rather than cheap erasure.
 

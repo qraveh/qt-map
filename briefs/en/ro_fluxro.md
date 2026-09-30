@@ -6,7 +6,7 @@ status: demonstrated
 since: 2011
 one_line: "At the end of an anneal each flux qubit's persistent-current state is latched by a quantum flux parametron and carried as a classical bit to a detector — a dc SQUID, or on Advantage a frequency-multiplexed microresonator at the chip perimeter; no qubit is coupled to a readout resonator."
 verdict: "Mature for its one job — 17–101 µs per read and ≤10⁻³ error per qubit on Advantage2, by D-Wave's own figures — but terminal by construction: as of 2026-09-26 no annealer reads mid-schedule, and no published Advantage2 readout architecture or readout-error method was found."
-updated: 2026-09-26
+updated: 2026-09-30
 ---
 
 QFP = quantum flux parametron, an rf-SQUID flux latch; dc SQUID = two-junction interferometer used as a switching detector; Φ-DAC = on-chip flux digital-to-analog converter; FASTR = flux-sensitive superconducting microresonator; CSFQ = capacitively shunted flux qubit; G1–G7 = the report's goal classes (see Actors & economics).
@@ -39,7 +39,7 @@ The chain is built in the processor's own superconducting multilayer process: QF
 The technology keeps annealer I/O sublinear. Berkley's XY scheme needed 2√N + 2 bias lines — ~25 for 128 qubits, ~137 if applied to 4,575 [S][608]; Advantage drops per-qubit detectors, shifting bits out at ~10 Mbit/s per track [C][607]. Time is the cost: per sample T_s/R ≈ T_a + T_r + T_d; D-Wave's worked example has anneal 20.0 µs, readout 39.76 µs, delay 21.02 µs, and 15.9 ms programming per job [C][614]. For a full problem, readout is ~56% of each sample on Advantage2_system1 (T_r ≤ 101 µs, T_d = 60.6 µs) and ~85% on Advantage_system4 (235 µs, 20.5 µs) [S][613]. The Atlas's whole-chip read time of milliseconds (t = −3) overstates it 4–60-fold; milliseconds accrue per job [S][613].
 
 ## Role in the stack
-On the architecture Quantum annealer — flux qubits (anneal) the technology fills slot 6 beside ro_disp; slots 7–9 are empty. It **requires** flux qubits latched by QFPs (fluxq) and on-chip shift registers and DACs (ct_fluxdac); it **provides** no edge, its product being the classical sample; ro_disp is its declared **replacement** (dispersive vs flux-latch readout). Register machines: Advantage (primary, ✅), Advantage2 (primary, 🔎); Qilimanjaro's coherent annealer is not among them, its readout undisclosed. Gap ledger G-fluxro is answered — D-Wave does not read qubits dispersively — but "no dispersive resonator anywhere" overstates it: Advantage's perimeter microresonators read shift-register bits [C][607]. ro_disp belongs on this architecture only for the QFP-plus-resonator hybrid [D][611].
+On the architecture Quantum annealer — flux qubits (anneal) the technology fills slot 6 beside ro_disp; slots 7–9 are empty. It **requires** flux qubits latched by QFPs (fluxq) and on-chip shift registers and DACs (ct_fluxdac); it **provides** no edge, its product being the classical sample; ro_disp is its declared **replacement** (dispersive vs flux-latch readout). Register machines: Advantage (primary, ✅), Advantage2 (primary, 🔎); Qilimanjaro's AQPU (10 analog fluxonium qubits, inaugurated at BSC in May 2026) is not among them, its readout undisclosed. Gap ledger G-fluxro is answered — D-Wave does not read qubits dispersively — but "no dispersive resonator anywhere" overstates it: Advantage's perimeter microresonators read shift-register bits [C][607]. ro_disp belongs on this architecture only for the QFP-plus-resonator hybrid [D][611].
 
 ## Evidence — how the numbers were measured
 D-Wave publishes readout error as a bound, ≤0.001 on every listed Advantage and Advantage2 system, with no method stated [C][613]; at that bound a 4,575-qubit sample carries an expected ≤4.6 flipped bits [S][613]. The only published method found is Berkley's, error measured against latch bias [D][608]. Without a mid-anneal read there is no syndrome round: any code is decoded once, from the final sample, and mitigation is post hoc — repeated reads and software spin-reversal transforms [C][610]. Register grades: both D-Wave cells cite arXiv:0905.0891 Fig. 1 (🔎), whose abstract confirms the latch–dc-SQUID chain but for a 128-qubit XY design; Boothby et al. fits Advantage, the solver-properties page Advantage2. The Qilimanjaro cell cites a D-Wave page.
@@ -51,7 +51,7 @@ D-Wave publishes readout error as a bound, ≤0.001 on every listed Advantage an
 |---|---|---|---|---|
 | D-Wave Quantum | developer | Canada/USA | QFP latches, shift registers and perimeter microresonators on Advantage and Advantage2 | [C][607] |
 | Northrop Grumman | research | US | QFP-isolated resonator readout for high-coherence annealers | [D][611] |
-| Qilimanjaro Quantum Tech | developer | Spain | Coherent annealer platform; readout chain not confirmed as of 2026-09-26 | [C][615] |
+| Qilimanjaro Quantum Tech | developer | Spain | Coherent annealer platform (the AQPU at BSC, May 2026); readout chain not confirmed as of 2026-09-26 | [C][615] |
 
 **Money.** No dated financial item is specific to this readout technology as of 2026-09-26.
 

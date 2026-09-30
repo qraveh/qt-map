@@ -6,7 +6,7 @@ status: emerging
 since: 2023
 one_line: Waveguide- or resonator-extended tunable couplers that entangle fixed superconducting qubits millimetres apart, buying the degree-6 graphs that qLDPC codes need.
 verdict: One 2 mm CZ at 99.81% (IQM, 2023) and IBM's Loon components without numbers; demote if no coupler of ≥ 5 mm reports a CZ ≥ 99.5% with error bars by end-2027.
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -50,11 +50,11 @@ Dominant error term today: qubit relaxation during the flux excursion (T₁,eff 
 
 Standard Nb/Al Josephson lithography plus multilayer, low-loss routing so couplers can cross qubit rows. IBM builds Loon on 300 mm wafers at Albany NanoTech and credits the line with "a ten-fold increase" in chip complexity [C][49], [486]; D-Wave's 10-K describes "a multilayer integrated circuit process" [G][490]. Each tunable coupler adds a junction and a flux line: a 288-qubit gross-code module at degree 6 [D][248] carries 864 couplers if all are tunable, three per qubit against 1.8 on Nighthawk (218 couplers, 120 qubits) [C][49]. Yield per coupler is unpublished.
 
-Supply chain: IBM fabricates in-house with NY CREATES [C][49]; IQM in Espoo [D][480]; D-Wave uses "existing third-party foundries", demonstrated a second source with the 2000Q LN [G][491], and its 10-K filings mention SkyWater (nine full-text hits, 2023–2026) [G][492] — a foundry that IonQ, a platform competitor, has owned since 2026-07-31 [C][493] [G:IONQ-SKYWATER-2026]. The single points of failure are the three or four fabs with qualified low-loss multilayer processes. Export exposure: the BIS rule of 2024-09-06 [G][301] [G:BIS-QUANTUM-2024] controls computers of ≥ 34 qubits (4A906) and dilution refrigerators (3A904), not coupler designs.
+Supply chain: IBM fabricates in-house with NY CREATES [C][49]; IQM in Espoo [D][480]; D-Wave uses "existing third-party foundries", demonstrated a second source with the 2000Q LN [G][491], and its 10-K filings mention SkyWater (nine full-text hits, 2023–2026) [G][492] — a foundry that IonQ, a platform competitor, has owned since 2026-07-31 [C][493] [G:IONQ-SKYWATER-2026]. The single points of failure are the three or four fabs with qualified low-loss multilayer processes. Export exposure: the BIS rule of 2024-09-06 [G][301] [G:BIS-QUANTUM-2024] controls dilution refrigerators (3A904) and quantum computers only where qubit count and C-NOT error fall in the same band, from 34–99 qubits at ≤ 10⁻⁴ to any error from 2,000 qubits (4A906), not coupler designs.
 
 ## Control, readout & I/O burden
 
-A tunable long-range coupler needs one flux line and a 22 ns-class flux pulse [D][480]; a fixed resonator hub needs none but pays with MOVE operations [C][487], [494]. At degree 6 the coupler flux lines alone are three per qubit, on top of drive, qubit flux and multiplexed readout — five to six lines per qubit. At 10³ qubits that is 5,000–6,000 lines and cold multiplexing; at 10⁴ it is the 40,000 lines QuantWare promises for 2028 [P][495] [G:QUANTWARE-VIO]; at 10⁶ only on-chip flux generation (cryo-CMOS or SFQ, SEEQC's mK control being the published pointer [G:SEEQC-2026]) closes the gap. Loop latency is unchanged: a bivariate-bicycle round is "a depth-7 circuit composed of nearest-neighbor CNOT gates" [D][248]; what the coupler moves is the decoder, since bicycle codes lack the matching decoders that keep surface-code decoding within a microsecond.
+A tunable long-range coupler needs one flux line and a 22 ns-class flux pulse [D][480]; a fixed resonator hub needs none but pays with MOVE operations [C][487], [494]. At degree 6 the coupler flux lines alone are three per qubit, on top of drive, qubit flux and multiplexed readout — five to six lines per qubit. At 10³ qubits that is 5,000–6,000 lines and cold multiplexing; at 10⁴ it is the 40,000 lines QuantWare promises for 2028 [C][536] [G:QUANTWARE-VIO]; at 10⁶ only on-chip flux generation (cryo-CMOS or SFQ, SEEQC's mK control being the published pointer [G:SEEQC-2026]) closes the gap. Loop latency is unchanged: a bivariate-bicycle round is "a depth-7 circuit composed of nearest-neighbor CNOT gates" [D][248]; what the coupler moves is the decoder, since bicycle codes lack the matching decoders that keep surface-code decoding within a microsecond.
 
 ## Role in the stack
 
@@ -79,7 +79,7 @@ Not captured: crosstalk on shared extenders when several couplers of one vertex 
 | QuTech | research | Netherlands | Resonator link between spins 250 µm apart | [D][497] |
 | SkyWater Technology | supplier | US | Foundry named in D-Wave's 10-Ks; IonQ-owned since 2026-07-31 | [G][492] [C][493] |
 | QuantWare | supplier | Netherlands | 3D-routed chips; VIO-40K roadmap | [P][495] |
-| DARPA | regulator | US | QBI Stage B includes IBM (up to $15 M) | [G][65] [G:QBI-STAGEB-2025-11] |
+| DARPA | funder | US | QBI Stage B includes IBM (up to $15 M) | [G][65] [G:QBI-STAGEB-2025-11] |
 
 **Money.**
 - 2025-09-03 · IQM · Series B · $320 M · closed [G:IQM-LISTING-2026-07]
@@ -88,11 +88,11 @@ Not captured: crosstalk on shared extenders when several couplers of one vertex 
 - 2026-06-02 · IBM · quantum investment commitment · > $10 B over five years · announced [C][57] [G:IBM-10B-2026-06]
 - 2026-07-02 · IQM · Nasdaq and Helsinki listing · pro-forma cash €337 M; H1-2026 revenue €8.9 M · closed [C][58] [G:IQM-LISTING-2026-07]
 - 2026-07-31 · IonQ · acquisition of SkyWater · ~$1.8 B · closed [C][19] [G:IONQ-SKYWATER-2026]
-- 2026-08-06 · D-Wave · H1-2026 results · revenue $5.9 M, cash $546.2 M · reported [C][15] [G:DWAVE-FIN-2026]
+- 2026-08-06 · D-Wave · Q2-2026 results · H1 revenue $5.9 M (Q2 $3.1 M), cash $546.2 M · reported [C][15] [G:DWAVE-FIN-2026]
 
 **Market & supply chain.** Nobody sells a long-range coupler; it is a design block inside a vendor's chip, and the market is the three or four fabs that can print it — Albany [C][49], IQM's own [D][480], D-Wave's third-party foundries [G][491], [492], GlobalFoundries under its LOI [G:CHIPS-LOI-2026-05] — plus QuantWare as the only merchant seller of 3D-routed chips [P][495]. The structural cost is 1.5–3 extra couplers per qubit against a 10× saving in physical qubits per logical qubit [D][248]. Who pays: G4 (IBM's Starling), G3 if Kookaburra runs, G5 on the annealing architecture [C][489], G1/G2 through fewer SWAPs on Star hubs [C][494].
 
-**IP & standards.** IBM: US 12,517,856 (filed 2022-09-28, granted 2026-01-06) on modular connectivity levels, US 12,587,192 (granted 2026-03-24) on resonator chains with tunable inductive couplers, US 2024/0169232 A1 (filed 2022-11-18) on fluxonium long-range coupling [G][498]. D-Wave: US 10,268,622 (granted 2019-04-23), US 11,507,871 and US 11,494,683 (both 2022-11) on long-range couplers [G][498]. No litigation found; no standard. PatSnap to 2026-06-30 counts IBM at 4,388 quantum families, 783 in superconducting devices [P][G:PATSNAP-2026-06]; no count exists for long-range couplers.
+**IP & standards.** IBM: US 12,517,856 (filed 2022-09-28, granted 2026-01-06) on modular connectivity levels, US 12,587,192 (granted 2026-03-24) on resonator chains with tunable inductive couplers, US 2024/0169232 A1 (filed 2022-11-18) on fluxonium long-range coupling [G][498]. D-Wave: US 10,268,622 (granted 2019-04-23), US 11,507,871 and US 11,494,683 (both 2022-11) on long-range couplers [G][498]. No litigation found; no standard. PatSnap's landscape published on 2026-06-30 counts IBM at 4,388 quantum families, 783 in superconducting devices [P][G:PATSNAP-2026-06]; no count exists for long-range couplers.
 
 **Roadmaps & track record.**
 - IBM: promised 2025-06-10 · Loon in 2025 with c-couplers · delivered 2025-11-12 as components without performance numbers [C][49], [481].
@@ -143,6 +143,7 @@ Open questions: (1) does a qubit's T₁ survive the flux points six couplers for
 [496] T. J. Yoder *et al.*, “Tour de gross: A modular quantum computer based on bivariate bicycle codes,” [arXiv:2506.03094](https://arxiv.org/abs/2506.03094), Jun. 2025. [S]
 [497] J. Dijkema *et al.*, “Cavity-mediated iSWAP oscillations between distant spins,” *Nat. Phys.*, vol. 21, no. 1, pp. 168–174, Dec. 2024, doi: [10.1038/s41567-024-02694-8](https://doi.org/10.1038/s41567-024-02694-8). [arXiv:2310.16805](https://arxiv.org/abs/2310.16805). [D]
 [498] Justia Patents, “Patent search: ‘long-range coupler’ qubit (results as of Sep. 3, 2026).” [Online]. Available: https://patents.justia.com/search?q=%22long-range+coupler%22+qubit Also https://patents.google.com/patent/US12517856B2/en. Also https://patents.google.com/patent/US12587192B2/en. [G]
+[536] QuantWare, “QuantWare announces scaling breakthrough with VIO-40K™, delivering 10,000 qubit Quantum Processors for the first time,” Dec. 8, 2025. [Online]. Available: https://quantware.com/news/quantware-announces-scaling-breakthrough-with-vio-40k [C]
 
 ## Open verification items
 

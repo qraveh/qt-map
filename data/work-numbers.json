@@ -1,5 +1,5 @@
 {
- "next": 873,
+ "next": 884,
  "works": [
   {
    "n": 1,
@@ -126,7 +126,8 @@
    "ids": [
     "u:https://www.dwavequantum.com/company/newsroom/press-release/d-wave-reports-second-quarter-2026-results",
     "t:d wave reports second quarter 2026 results",
-    "u:https://ir.dwavequantum.com/news/news-details/2026/d-wave-reports-second-quarter-2026-results/default.aspx"
+    "u:https://ir.dwavequantum.com/news/news-details/2026/d-wave-reports-second-quarter-2026-results/default.aspx",
+    "u:https://www.sec.gov/archives/edgar/data/1907982/000190798226000127/qbts-20260806xexx991.htm"
    ]
   },
   {
@@ -1063,7 +1064,8 @@
    "n": 128,
    "ids": [
     "u:https://www.aqt.eu/lynx-quantum-volume-record",
-    "t:aqt sets new european industry standard introducing the lynx"
+    "t:aqt sets new european industry standard introducing the lynx",
+    "t:lynx series with record breaking quantum volume"
    ]
   },
   {
@@ -2427,7 +2429,8 @@
    "n": 292,
    "ids": [
     "u:https://www.ibm.com/quantum/blog/quantum-roadmap-2033",
-    "t:the hardware and software for the era of quantum utility is "
+    "t:the hardware and software for the era of quantum utility is ",
+    "t:ibm quantum system two the era of quantum utility is here"
    ],
    "label": "Gam23"
   },
@@ -6113,7 +6116,8 @@
    "ids": [
     "arxiv:1307.1740",
     "u:arxiv:1307.1740",
-    "t:minimum weight perfect matching of fault tolerant topologica"
+    "t:minimum weight perfect matching of fault tolerant topologica",
+    "doi:10.26421/qic15.1-2-9"
    ],
    "label": "Fow13"
   },
@@ -6134,7 +6138,8 @@
     "arxiv:2502.14787",
     "u:arxiv:2502.14787",
     "u:https://github.com/yuewuo/micro-blossom",
-    "t:micro blossom accelerated minimum weight perfect matching de"
+    "t:micro blossom accelerated minimum weight perfect matching de",
+    "doi:10.1145/3676641.3716005"
    ],
    "label": "WLZ25"
   },
@@ -7291,6 +7296,88 @@
     "u:https://qilimanjaro.tech/qilimanjaros-new-analog-quantum-system-inaugurated-at-the-barcelona-supercomputing-center",
     "t:qilimanjaro s new analog quantum system inaugurated at the b"
    ]
+  },
+  {
+   "n": 873,
+   "ids": [
+    "u:https://alice-bob.com/wp-content/uploads/2024/12/alice-bob-roadmap-long-version.pdf",
+    "t:alice bob s quantum computing roadmap long version"
+   ]
+  },
+  {
+   "n": 874,
+   "ids": [
+    "u:https://oqc.tech/tech/technical-roadmap"
+   ]
+  },
+  {
+   "n": 875,
+   "ids": [
+    "u:https://www.pasqal.com/solutions/hardware",
+    "t:hardware pasqal"
+   ]
+  },
+  {
+   "n": 876,
+   "ids": [
+    "u:https://www.quandela.com/canopus",
+    "t:canopus quandela"
+   ]
+  },
+  {
+   "n": 877,
+   "ids": [
+    "u:https://orcacomputing.com/orca-pt-1",
+    "t:orca pt 1 orca computing"
+   ]
+  },
+  {
+   "n": 878,
+   "ids": [
+    "doi:10.1103/physrevlett.127.180502",
+    "arxiv:2106.15534",
+    "u:arxiv:2106.15534",
+    "t:phase programmable gaussian boson sampling using stimulated "
+   ],
+   "label": "Z+21"
+  },
+  {
+   "n": 879,
+   "ids": [
+    "u:https://www.innovationindustries.com/news/groove-quantum-unveils-worlds-largest-semiconductor-spin-qubit-processor-and-raises-eu16m-to-bring-quantum-computing-to-industrial-scale",
+    "t:groove quantum unveils world s largest semiconductor spin qu"
+   ]
+  },
+  {
+   "n": 880,
+   "ids": [
+    "u:https://www.saxonq.com",
+    "t:saxon q room temperature nv center quantum computing"
+   ]
+  },
+  {
+   "n": 881,
+   "ids": [
+    "u:https://www.equal1.com/insights/equal1-racq-installed-at-esa",
+    "t:equal1 racq installed at esa centre for earth observation"
+   ]
+  },
+  {
+   "n": 882,
+   "ids": [
+    "u:https://www.lionix-international.com/about-us/blog/a-photonic-integrated-ion-trap-for-scalable-quantum-computing",
+    "t:a photonic integrated ion trap for scalable quantum computin"
+   ]
+  },
+  {
+   "n": 883,
+   "ids": [
+    "doi:10.1038/s41586-020-2811-x",
+    "arxiv:2001.05052",
+    "u:nature:s41586-020-2811-x",
+    "t:integrated multi wavelength control of an ion qubit"
+   ],
+   "label": "NSS+20"
   }
  ]
 }

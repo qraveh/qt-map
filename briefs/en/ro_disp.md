@@ -6,10 +6,10 @@ status: demonstrated
 since: 2005
 one_line: The qubit state is read as a dispersive shift of a coupled resonator, Purcell-filtered on chip and amplified near the quantum limit before the HEMT.
 verdict: Falsifiable — assignment fidelity is already 99.94%, so if fleet readout error stays near 1% through 2027 the binding term is measurement-induced leakage and QND violation, not amplifier noise.
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
-"Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics)."
+Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
 A resonator coupled off-resonantly (coupling g, detuning Δ ≫ g) acquires a state-dependent shift χ ≈ g²/Δ, so a probe tone carries the state in its phase without exchanging quanta with the qubit — non-demolition by construction. Wallraff and colleagues at Yale established it as circuit QED's readout channel [D][591]. Two additions make it usable: an on-chip Purcell filter, which passes the probe while blocking qubit emission into the same line, and a near-quantum-limited parametric amplifier before the HEMT.

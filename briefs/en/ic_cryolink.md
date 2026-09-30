@@ -5,8 +5,8 @@ layer: "9 Interconnect"
 status: emerging
 since: 2020
 one_line: "Superconducting waveguide held below 50 mK along its whole length, carrying itinerant 5–7 GHz photons or squeezed states between two independently cooled dilution refrigerators."
-verdict: "One group (ETH Zürich) owns every headline: 30 m, Bell fidelity 80.4% at 12.5 kHz, loophole-free. Loss sits in the demountable joints, not the waveguide, and no architecture puts this on a fault-tolerance critical path."
-updated: 2026-09-04
+verdict: "Two groups hold the headlines: ETH Zürich for photon transfer and Bell tests — 30 m, Bell fidelity 80.4% at 12.5 kHz, loophole-free — and TU Munich with VTT for squeezed states over 6.6 m. Loss sits in the demountable joints, not the waveguide, and no architecture puts this on a fault-tolerance critical path."
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -35,7 +35,7 @@ Every link is bespoke. The ETH 30 m assembly is 26 modules plus two nodes and a 
 Each attempt needs a flux-tunable coupler at both ends and microwave sources phase-locked across two cryostats. The 2023 Bell test carries this report's hardest real-time constraint: 32.824 m of separation leaves a 109 ns window in which basis choice, gate, readout and record must all complete [D][305]. The 12.5 kHz repetition rate — 80 µs per attempt — is set by reset and pulse shaping, not time of flight. Nothing is published at 10³–10⁶ qubits; the binding quantities are cryoplant count and independent phase references.
 
 ## Role in the stack
-The only architecture is superconducting transmon (Google, IBM, Rigetti, IQM, OQC, USTC/Zhejiang, Fujitsu); it requires superconducting-qubit lithography. It competes with same-fridge modularity — IBM coupled two cryogenic cells in 2026-08, l-couplers at "one meter scale", with no qubits and no fidelity reported [C][50][G:IBM-MODCRYO-2026-08] — and with microwave-optical transduction, best total efficiency 47% and nothing at η > ½ with sub-unity added noise [P][775][G:TRANSDUCER-GAP-2026]. Derived clock: 80 µs per entanglement attempt (2 s.f.) against a 1.1 µs surface-code cycle — four orders adrift. Adjacent empty slot: a cryogenic microwave switch, absent which N fridges need N(N−1)/2 waveguides.
+The only architecture is superconducting transmon (Google, IBM, Rigetti, IQM, OQC, USTC/Zhejiang, Fujitsu); it requires superconducting-qubit lithography. It competes with same-fridge modularity — IBM coupled two cryogenic cells in 2026-08, l-couplers at "one meter scale", with no qubits and no fidelity reported [C][50][G:IBM-MODCRYO-2026-08] — and with microwave-optical transduction, best total efficiency 47% and nothing at η > ½ with sub-unity added noise [P][775][G:TRANSDUCER-GAP-2026]. Derived clock: 80 µs per entanglement attempt (2 s.f.) against a 1.1 µs surface-code cycle — ~73× slower, under two orders of magnitude. Adjacent empty slot: a cryogenic microwave switch, absent which N fridges need N(N−1)/2 waveguides.
 
 ## Evidence — how the numbers were measured
 A loophole-free CHSH violation with space-like separated measurements is device-independent, not tomographic — unusually strong verification for this layer [D][305]. Munich rests on homodyne tomography [D][774]; the two are not comparable, neither replicated, and both ran with local processors idle. Conflict: the graph record's 75–79% transfer efficiency is not what 0.55–0.65 dB implies alone (86–88%).
@@ -44,19 +44,19 @@ A loophole-free CHSH violation with space-like separated measurements is device-
 **Who.**
 | Organisation | Role | Country | What exactly they do with this technology | Evidence |
 |---|---|---|---|---|
-| ETH Zürich | Research | Switzerland | Built the 5 m, 30 m and modular links; owns every headline | [D][305], [772], [773] |
-| TU Munich | Research | Germany | 6.6 m squeezed-state link, the independent second line | [D][774] |
+| ETH Zürich | Research | Switzerland | Built the 5 m, 30 m and modular links; holds the photon-transfer and Bell-test headlines | [D][305], [772], [773] |
+| TU Munich | Research | Germany | 6.6 m squeezed-state link with VTT — the independent second line, with its own headline | [D][774] |
 | Bluefors | Supplier | Finland | Refrigerator and cryocooler vendor; KIDE is the rival path | [C][303][G:BLUEFORS-KIDE] |
 | ULVAC Cryogenics | Supplier | Japan | ~10 mK refrigerator with IBM input, tested at Poughkeepsie | [C][525][G:ULVAC-IBM-REFRIG-2025] |
 | IBM | Developer | USA | Runs the competing intra-fridge modular-cryogenics line | [C][50][G:IBM-MODCRYO-2026-08] |
 
-**Money.** 2023-03-28 · Bluefors · M&A (Cryomech) · undisclosed · combined revenue > EUR 160 M · closed [C][524]. 2024-09-06 · US BIS · ECCN 3A904 rule · n/a · in force [G][301]. 2025-03-21 · ULVAC · ~10 mK refrigerator programme with IBM · undisclosed · "early 2026", unconfirmed [C][525]. No round, grant or acquisition specific to an inter-fridge link exists as of 2026-09-04.
+**Money.** 2023-03-28 · Bluefors · M&A (Cryomech) · undisclosed · combined revenue > EUR 160 M · closed [C][524]. 2024-09-06 · US BIS · ECCN 3A904 rule · n/a · in force [G][301]. 2025-03-20 · ULVAC · ~10 mK refrigerator programme with IBM · undisclosed · "early 2026" target passed, no shipment confirmed as of 2026-09-30 [C][525]. No round, grant or acquisition specific to an inter-fridge link exists as of 2026-09-04.
 
 **Market & supply chain.** There is no link market, only a refrigerator market in which a link consumes two units instead of one; Oxford Instruments is the second merchant source [C][525]. Bluefors plus Cryomech supplies the dilution stage and the pulse tubes beneath it with no alternative at that volume [C][524]. G6 (networking) pays directly; G4 pays only once a cryostat's line budget runs out, which KIDE's >4,000 RF lines are designed to postpone [C][303][G:BLUEFORS-KIDE].
 
 **IP & standards.** No patent family specific to cross-cryostat microwave links in any named database and no standards body addressing cryogenic microwave interfaces — no dated fact found; module geometry is published openly [D][773].
 
-**Roadmaps & track record.** ETH Zürich: (2023-05 · 30 m Bell test · delivered); (2026-04 · 120 m via cooling units per ~15 m · simulated only) [S][773]. ULVAC/IBM: (2025-03 · refrigerator "early 2026" · unconfirmed) [C][525]. IBM: (2026-08 · two coupled cells · delivered, no qubits in them) [C][50]. ETH has met every milestone it announced; both vendor timelines are unverified.
+**Roadmaps & track record.** ETH Zürich: (2023-05 · 30 m Bell test · delivered); (2026-04 · 120 m via cooling units per ~15 m · simulated only) [S][773]. ULVAC/IBM: (2025-03 · refrigerator "early 2026" · target passed, unconfirmed as of 2026-09-30) [C][525]. IBM: (2026-08 · two coupled cells · delivered, no qubits in them) [C][50]. ETH has met every milestone it announced; both vendor timelines are unverified.
 
 **Strategic reading.** If this works the cryostat suppliers capture the value, not the QPU vendor. If it fails nothing breaks — every published superconducting roadmap scales inside one cryostat first. Substitution runs both ways: l-couplers remove the need below ~1,000 qubits per cell [C][50], transduction removes the distance limit above it. No independent link vendor exists to bargain with.
 
@@ -79,5 +79,5 @@ Falsifiable (12–24 months): confirm if any group publishes a three-cryostat ch
 The graph record's "transfer efficiency 75–79%" for the 2026 link is not implied by the measured 0.55–0.65 dB channel loss (86–88% transmission); no source reconciles the two, and the residue is presumed to be node emission/absorption efficiency.
 Residual phase noise between the two cryostats is not quantified in any source reviewed.
 No independent replication of either the ETH 30 m or the Munich/VTT 6.6 m headline figure as of 2026-09-04.
-ULVAC/IBM refrigerator shipment status unconfirmed beyond the "early 2026" target stated in 2025-03.
+The ULVAC/IBM refrigerator's "early 2026" target, stated in 2025-03, has passed with no shipment confirmed as of 2026-09-30.
 The arXiv HTML for [773] shows a 2026-08-24 revision date against an April-2026 identifier; the graph record's 2026-04 date is used here.

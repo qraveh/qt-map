@@ -2,7 +2,7 @@
  "source": {
   "register": "quantum-register (SP04)",
   "imported": "2026-09-27",
-  "organisations": 89
+  "organisations": 90
  },
  "organisations": [
   {
@@ -81,7 +81,9 @@
     "aliceandbob-helium",
     "aliceandbob-boson-4",
     "aliceandbob-helium-2",
-    "aliceandbob-graphene"
+    "aliceandbob-beryllium-250",
+    "aliceandbob-graphene",
+    "aliceandbob-lithium-48"
    ],
    "co_machines": [],
    "families": [
@@ -93,42 +95,46 @@
    "stations": [
     {
      "id": "cavity",
-     "machines": 4
+     "machines": 6
     },
     {
      "id": "enc_cat",
-     "machines": 4
+     "machines": 6
+    },
+    {
+     "id": "cx_nn",
+     "machines": 6
+    },
+    {
+     "id": "ct_rt",
+     "machines": 6
+    },
+    {
+     "id": "ro_disp",
+     "machines": 6
+    },
+    {
+     "id": "fab_sc",
+     "machines": 6
+    },
+    {
+     "id": "code_bosonic",
+     "machines": 5
     },
     {
      "id": "g_bos",
      "machines": 4
     },
     {
-     "id": "cx_nn",
-     "machines": 4
-    },
-    {
-     "id": "ct_rt",
-     "machines": 4
-    },
-    {
-     "id": "ro_disp",
-     "machines": 4
-    },
-    {
-     "id": "fab_sc",
-     "machines": 4
-    },
-    {
-     "id": "fab_3d",
-     "machines": 4
-    },
-    {
-     "id": "code_bosonic",
+     "id": "g_catcnot",
      "machines": 3
     },
     {
-     "id": "g_catcnot",
+     "id": "ic_multidie",
+     "machines": 2
+    },
+    {
+     "id": "code_magic",
      "machines": 1
     }
    ],
@@ -144,12 +150,13 @@
      "g_catcnot",
      "code_bosonic",
      "g_bos",
-     "fab_3d",
      "cavity",
+     "ic_multidie",
      "dec_gpu",
      "enc_bare",
      "enc_gkp",
-     "ro_disp"
+     "ro_disp",
+     "fab_3d"
     ],
     "count": 59
    }
@@ -168,7 +175,8 @@
    "url": "https://www.aqt.eu/",
    "note": "",
    "machines": [
-    "aqt-ibex-q1"
+    "aqt-ibex-q1",
+    "aqt-lynx"
    ],
    "co_machines": [],
    "families": [
@@ -180,31 +188,31 @@
    "stations": [
     {
      "id": "ion",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "enc_opt",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "g_ms",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "cx_bus",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "ct_ionaod",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "ro_fluor",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "fab_trap",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "fab_optics",
@@ -219,14 +227,16 @@
      "g_ms",
      "ion",
      "cx_qccd",
-     "ct_ionlaser",
      "fab_optics",
+     "ct_ionlaser",
      "fab_trap",
+     "enc_omg",
+     "g_cr",
      "code_highrate",
      "code_magic",
      "ic_ionphoton"
     ],
-    "count": 92
+    "count": 93
    }
   },
   {
@@ -322,6 +332,7 @@
      "enc_cat",
      "g_catcnot",
      "ic_multidie",
+     "fab_3d",
      "cavity",
      "ae_atom",
      "enc_bare",
@@ -332,10 +343,9 @@
      "cx_aod",
      "ro_imgfast",
      "code_aft",
-     "fab_3d",
      "fab_optics"
     ],
-    "count": 77
+    "count": 78
    }
   },
   {
@@ -451,10 +461,6 @@
      "machines": 2
     },
     {
-     "id": "ro_erasure",
-     "machines": 2
-    },
-    {
      "id": "code_surface",
      "machines": 2
     },
@@ -473,6 +479,10 @@
     {
      "id": "cx_reload",
      "machines": 1
+    },
+    {
+     "id": "ro_erasure",
+     "machines": 1
     }
    ],
    "hosts": [
@@ -484,8 +494,8 @@
    "mentions": {
     "briefs": [
      "g_ryd",
-     "ae_atom",
      "ic_atomcavity",
+     "ae_atom",
      "cx_reload",
      "dec_corr",
      "enc_omg",
@@ -501,10 +511,9 @@
      "enc_hf",
      "code_highrate",
      "majorana",
-     "ct_pic_trap",
      "dec_rl"
     ],
-    "count": 142
+    "count": 141
    }
   },
   {
@@ -675,9 +684,9 @@
    "hosts": [],
    "mentions": {
     "briefs": [
-     "ae_atom",
      "g_ryd",
      "alkali",
+     "ae_atom",
      "cx_reload",
      "ro_erasure",
      "enc_opt",
@@ -694,7 +703,7 @@
      "ct_laser",
      "fab_optics"
     ],
-    "count": 52
+    "count": 51
    }
   },
   {
@@ -781,7 +790,8 @@
     "dwave-advantage",
     "dwave-advantage2",
     "qci-seeker-8",
-    "dwave-dualrail-17"
+    "dwave-dualrail-17",
+    "dwave-advantage3-20000"
    ],
    "co_machines": [],
    "families": [
@@ -795,10 +805,18 @@
    "stations": [
     {
      "id": "fab_sc",
-     "machines": 4
+     "machines": 5
     },
     {
      "id": "ct_fluxdac",
+     "machines": 4
+    },
+    {
+     "id": "fluxq",
+     "machines": 3
+    },
+    {
+     "id": "g_anneal",
      "machines": 3
     },
     {
@@ -806,11 +824,15 @@
      "machines": 3
     },
     {
-     "id": "cavity",
-     "machines": 2
+     "id": "ro_fluxro",
+     "machines": 3
     },
     {
-     "id": "fluxq",
+     "id": "ic_mcm",
+     "machines": 3
+    },
+    {
+     "id": "cavity",
      "machines": 2
     },
     {
@@ -822,23 +844,11 @@
      "machines": 2
     },
     {
-     "id": "g_anneal",
-     "machines": 2
-    },
-    {
      "id": "cx_nn",
      "machines": 2
     },
     {
      "id": "cx_lr",
-     "machines": 2
-    },
-    {
-     "id": "ct_rt",
-     "machines": 2
-    },
-    {
-     "id": "ro_fluxro",
      "machines": 2
     }
    ],
@@ -865,8 +875,8 @@
      "enc_dualrail",
      "g_anneal",
      "fab_3d",
-     "ct_sfq",
      "transmon",
+     "ct_sfq",
      "cavity",
      "photon",
      "g_tc",
@@ -878,7 +888,7 @@
      "ro_disp",
      "fab_pic"
     ],
-    "count": 249
+    "count": 247
    }
   },
   {
@@ -958,8 +968,8 @@
      "qd_spin",
      "g_exch",
      "fab_cmos",
-     "ic_fanout",
      "ct_base",
+     "ic_fanout",
      "cx_shuttle",
      "ro_s2c",
      "ct_cryocmos",
@@ -967,9 +977,11 @@
      "cx_nn",
      "dec_rl",
      "cx_crossbar",
+     "code_qldpc",
+     "code_highrate",
      "dec_corr"
     ],
-    "count": 90
+    "count": 91
    }
   },
   {
@@ -1100,14 +1112,15 @@
      "ro_fluor",
      "code_erasure"
     ],
-    "count": 13
+    "count": 14
    }
   },
   {
    "slug": "eleqtron",
    "name": "eleQtron",
    "aliases": [
-    "eleQtron + Forschungszentrum Julich"
+    "eleQtron + Forschungszentrum Julich",
+    "eleQtron with NXP Semiconductors and ParityQC, for the DLR Quantum Computing Initiative"
    ],
    "tier": "quantum-vendor",
    "segment": "computing-hardware",
@@ -1116,7 +1129,8 @@
    "url": "https://www.eleqtron.com/en/",
    "note": "",
    "machines": [
-    "eleqtron-jion"
+    "eleqtron-jion",
+    "eleqtron-qsea-i-10"
    ],
    "co_machines": [],
    "families": [
@@ -1128,31 +1142,31 @@
    "stations": [
     {
      "id": "ion",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "enc_hf",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "g_elec",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "cx_bus",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "ct_ionmw",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "ro_fluor",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "fab_trap",
-     "machines": 1
+     "machines": 2
     }
    ],
    "hosts": [
@@ -1177,7 +1191,7 @@
      "ro_fluor",
      "code_highrate"
     ],
-    "count": 53
+    "count": 54
    }
   },
   {
@@ -1193,7 +1207,7 @@
    "url": "https://www.equal1.com/",
    "note": "",
    "machines": [
-    "equal1-bell-1"
+    "equal1-racq"
    ],
    "co_machines": [],
    "families": [
@@ -1228,6 +1242,10 @@
      "machines": 1
     },
     {
+     "id": "dec_cryo",
+     "machines": 1
+    },
+    {
      "id": "ic_fanout",
      "machines": 1
     },
@@ -1247,7 +1265,7 @@
      "ct_base",
      "ro_s2c"
     ],
-    "count": 38
+    "count": 39
    }
   },
   {
@@ -1539,13 +1557,12 @@
      "cx_nn",
      "ct_rt",
      "ct_cryocmos",
-     "ct_sfq",
      "code_magic",
      "dec_nn",
      "ic_cryolink",
      "ic_transducer"
     ],
-    "count": 41
+    "count": 43
    }
   },
   {
@@ -1565,7 +1582,6 @@
    "machines": [
     "google-sycamore-72",
     "google-willow",
-    "google-fluxonium",
     "google-sycamore-54"
    ],
    "co_machines": [],
@@ -1579,32 +1595,36 @@
    ],
    "stations": [
     {
+     "id": "transmon",
+     "machines": 3
+    },
+    {
      "id": "enc_bare",
-     "machines": 4
+     "machines": 3
     },
     {
      "id": "g_tc",
-     "machines": 4
+     "machines": 3
     },
     {
      "id": "cx_nn",
-     "machines": 4
+     "machines": 3
     },
     {
      "id": "ct_rt",
-     "machines": 4
+     "machines": 3
     },
     {
      "id": "ro_disp",
-     "machines": 4
+     "machines": 3
     },
     {
      "id": "fab_sc",
-     "machines": 4
+     "machines": 3
     },
     {
-     "id": "transmon",
-     "machines": 3
+     "id": "ro_reset",
+     "machines": 2
     },
     {
      "id": "code_surface",
@@ -1621,17 +1641,13 @@
     {
      "id": "ic_multidie",
      "machines": 2
-    },
-    {
-     "id": "fluxonium",
-     "machines": 1
     }
    ],
    "hosts": [],
    "mentions": {
     "briefs": [
-     "transmon",
      "dec_nn",
+     "transmon",
      "code_surface",
      "dec_rl",
      "code_color",
@@ -1639,17 +1655,17 @@
      "cx_nn",
      "g_tc",
      "dec_mwpm",
-     "enc_bare",
      "ro_reset",
      "code_erasure",
+     "enc_bare",
      "ro_erasure",
      "g_ryd",
      "ro_disp",
+     "dec_fpga",
      "alkali",
      "ae_atom",
      "enc_gkp",
      "g_anneal",
-     "dec_fpga",
      "fab_sc",
      "fluxonium",
      "cx_aod",
@@ -1659,13 +1675,13 @@
      "g_rydanalog",
      "g_lointer",
      "g_bos",
-     "ct_sfq",
      "dec_gpu",
      "enc_dualrail",
      "g_elec",
      "cx_lr",
      "ct_rt",
      "ct_cryocmos",
+     "ct_sfq",
      "ro_img",
      "code_qldpc",
      "code_highrate",
@@ -1676,7 +1692,7 @@
      "ic_transducer",
      "fab_optics"
     ],
-    "count": 249
+    "count": 250
    }
   },
   {
@@ -1739,7 +1755,7 @@
      "cx_crossbar",
      "ic_fanout"
     ],
-    "count": 9
+    "count": 8
    }
   },
   {
@@ -1814,10 +1830,10 @@
      "enc_gr",
      "g_rydanalog",
      "cx_aod",
-     "code_aft",
      "code_highrate",
-     "code_magic",
+     "code_aft",
      "ic_spinphoton",
+     "code_magic",
      "ro_img",
      "code_surface",
      "fab_optics",
@@ -1825,13 +1841,13 @@
      "enc_omg",
      "ro_imgfast",
      "code_qldpc",
+     "dec_nn",
      "fab_pic",
      "fab_diamond",
      "ct_laser",
-     "dec_nn",
      "ic_ionphoton"
     ],
-    "count": 110
+    "count": 113
    }
   },
   {
@@ -1895,7 +1911,7 @@
     "briefs": [
      "ic_fanout"
     ],
-    "count": 10
+    "count": 9
    }
   },
   {
@@ -1977,9 +1993,10 @@
      "transmon",
      "enc_spin_ld",
      "ct_sfq",
-     "ct_fluxdac"
+     "ct_fluxdac",
+     "code_detect"
     ],
-    "count": 116
+    "count": 119
    }
   },
   {
@@ -2002,8 +2019,9 @@
     "ibm-heron-r3",
     "ibm-nighthawk-r1",
     "ibm-nighthawk-r2",
-    "ibm-loon",
     "ibm-condor",
+    "ibm-flamingo",
+    "ibm-loon",
     "amaravati-ibm-tcs",
     "ibm-system-two-cscs",
     "ibm-bluejay",
@@ -2025,31 +2043,35 @@
    "stations": [
     {
      "id": "transmon",
-     "machines": 17
+     "machines": 18
     },
     {
      "id": "enc_bare",
-     "machines": 17
+     "machines": 18
     },
     {
      "id": "ct_rt",
-     "machines": 17
+     "machines": 18
     },
     {
      "id": "ro_disp",
-     "machines": 17
+     "machines": 18
     },
     {
      "id": "fab_sc",
-     "machines": 17
+     "machines": 18
     },
     {
      "id": "g_tc",
-     "machines": 13
+     "machines": 14
     },
     {
      "id": "cx_nn",
-     "machines": 12
+     "machines": 13
+    },
+    {
+     "id": "ic_mcm",
+     "machines": 6
     },
     {
      "id": "cx_lr",
@@ -2061,10 +2083,6 @@
     },
     {
      "id": "dec_relaybp",
-     "machines": 5
-    },
-    {
-     "id": "ic_mcm",
      "machines": 5
     },
     {
@@ -2100,28 +2118,28 @@
      "cx_lr",
      "ct_cryocmos",
      "code_qldpc",
+     "ic_mcm",
      "fab_sc",
      "code_mitig",
-     "ic_mcm",
      "cx_nn",
+     "ic_transducer",
      "dec_relaybp",
      "g_cr",
      "g_tc",
-     "ic_transducer",
      "ro_reset",
-     "code_magic",
-     "enc_bare",
      "code_detect",
-     "g_exch",
+     "code_magic",
      "fab_cmos",
+     "enc_bare",
+     "g_exch",
      "qd_spin",
-     "ct_sfq",
      "ic_cryolink",
      "enc_eo",
      "ct_rt",
      "code_surface",
      "cx_shuttle",
      "ct_vio",
+     "ct_sfq",
      "ro_disp",
      "ct_base",
      "code_highrate",
@@ -2139,7 +2157,7 @@
      "dec_gpu",
      "dec_corr"
     ],
-    "count": 493
+    "count": 502
    }
   },
   {
@@ -2186,9 +2204,10 @@
    "hosts": [],
    "mentions": {
     "briefs": [
+     "ae_atom",
      "fab_pic"
     ],
-    "count": 1
+    "count": 2
    }
   },
   {
@@ -2270,14 +2289,14 @@
      "enc_omg",
      "ro_img",
      "ct_laser",
-     "ct_pic_trap",
      "code_highrate",
+     "ct_pic_trap",
      "code_magic",
      "dec_nn",
      "dec_corr",
      "fab_optics"
     ],
-    "count": 47
+    "count": 48
    }
   },
   {
@@ -2352,8 +2371,8 @@
      "enc_spin_ld",
      "g_exch",
      "cx_shuttle",
-     "cx_nn",
      "dec_relaybp",
+     "cx_nn",
      "ct_base",
      "dec_fpga",
      "dec_gpu",
@@ -2472,25 +2491,25 @@
      "cx_qccd",
      "ro_fluor",
      "code_qldpc",
-     "enc_hf",
      "code_highrate",
-     "fab_cmos",
+     "enc_hf",
      "enc_omg",
+     "fab_cmos",
      "cx_lr",
      "ro_spd",
      "donor",
-     "ct_sfq",
      "fab_stm",
      "fab_bulk",
+     "ct_sfq",
      "ic_mcm",
+     "ic_spinphoton",
      "fluxq",
      "dec_relaybp",
      "dec_corr",
      "dec_rl",
-     "ic_spinphoton",
      "fab_optics"
     ],
-    "count": 422
+    "count": 431
    }
   },
   {
@@ -2510,6 +2529,7 @@
     "iqm-emerald-54",
     "iqm-garnet-20",
     "iqm-star-24",
+    "iqm-star-6",
     "iqm-halocene-150",
     "iqm-spark-eldorado"
    ],
@@ -2523,27 +2543,27 @@
    "stations": [
     {
      "id": "transmon",
-     "machines": 5
+     "machines": 6
     },
     {
      "id": "enc_bare",
-     "machines": 5
+     "machines": 6
     },
     {
      "id": "g_tc",
-     "machines": 5
+     "machines": 6
     },
     {
      "id": "ct_rt",
-     "machines": 5
+     "machines": 6
     },
     {
      "id": "ro_disp",
-     "machines": 5
+     "machines": 6
     },
     {
      "id": "fab_sc",
-     "machines": 5
+     "machines": 6
     },
     {
      "id": "cx_nn",
@@ -2559,6 +2579,10 @@
     },
     {
      "id": "code_surface",
+     "machines": 1
+    },
+    {
+     "id": "code_detect",
      "machines": 1
     }
    ],
@@ -2593,12 +2617,11 @@
      "ro_disp",
      "code_detect",
      "ct_cryocmos",
-     "ct_sfq",
      "code_magic",
      "ic_cryolink",
      "ic_transducer"
     ],
-    "count": 84
+    "count": 82
    }
   },
   {
@@ -2831,8 +2854,10 @@
    ],
    "hosts": [],
    "mentions": {
-    "briefs": [],
-    "count": 0
+    "briefs": [
+     "g_cr"
+    ],
+    "count": 1
    }
   },
   {
@@ -2866,6 +2891,7 @@
      "ic_multidie",
      "ct_vio",
      "ct_sfq",
+     "ct_ionlaser",
      "ro_fluor",
      "code_magic",
      "dec_rl",
@@ -2877,7 +2903,7 @@
      "dec_corr",
      "fab_trap"
     ],
-    "count": 30
+    "count": 32
    }
   },
   {
@@ -2893,7 +2919,8 @@
    "url": "microsoft.com",
    "note": "",
    "machines": [
-    "microsoft-majorana-1"
+    "microsoft-majorana-1",
+    "microsoft-majorana-2"
    ],
    "co_machines": [
     "atom-computing-magne"
@@ -2909,31 +2936,31 @@
    "stations": [
     {
      "id": "majorana",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "enc_parity",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "g_mbq",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "cx_nn",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "ct_base",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "ro_qcap",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "fab_mbe",
-     "machines": 1
+     "machines": 2
     }
    ],
    "hosts": [
@@ -2945,14 +2972,14 @@
    "mentions": {
     "briefs": [
      "majorana",
-     "g_mbq",
      "fab_mbe",
+     "g_mbq",
      "enc_parity",
      "ro_qcap",
      "ct_cryocmos",
      "code_erasure",
-     "g_ryd",
      "code_highrate",
+     "g_ryd",
      "ct_laser",
      "ae_atom",
      "ct_base",
@@ -2977,7 +3004,7 @@
      "ic_atomcavity",
      "ic_transducer"
     ],
-    "count": 163
+    "count": 167
    }
   },
   {
@@ -3176,15 +3203,15 @@
      "enc_gkp",
      "cavity",
      "g_bos",
-     "g_catcnot",
      "code_bosonic",
+     "fab_3d",
      "transmon",
+     "g_catcnot",
      "enc_cat",
      "dec_corr",
-     "dec_rl",
-     "fab_3d"
+     "dec_rl"
     ],
-    "count": 40
+    "count": 42
    }
   },
   {
@@ -3201,6 +3228,7 @@
    "url": "https://www.orcacomputing.com/",
    "note": "",
    "machines": [
+    "orca-pt1",
     "orca-pt2"
    ],
    "co_machines": [
@@ -3214,27 +3242,31 @@
    ],
    "stations": [
     {
-     "id": "squeezed",
-     "machines": 1
-    },
-    {
      "id": "g_lointer",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "cx_switch",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "ct_eo",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "ro_spd",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "fab_bulk",
+     "machines": 2
+    },
+    {
+     "id": "photon",
+     "machines": 1
+    },
+    {
+     "id": "squeezed",
      "machines": 1
     }
    ],
@@ -3261,7 +3293,7 @@
      "ro_img",
      "dec_corr"
     ],
-    "count": 66
+    "count": 71
    }
   },
   {
@@ -3345,7 +3377,10 @@
    "note": "",
    "machines": [
     "oqc-genesis-16",
-    "oqc-toshiko-32"
+    "oqc-toshiko-32",
+    "oqc-athena-75000",
+    "oqc-atlas-1000000",
+    "oqc-titan-2000"
    ],
    "co_machines": [],
    "families": [
@@ -3358,7 +3393,23 @@
    "stations": [
     {
      "id": "transmon",
-     "machines": 2
+     "machines": 5
+    },
+    {
+     "id": "ct_vio",
+     "machines": 5
+    },
+    {
+     "id": "fab_sc",
+     "machines": 5
+    },
+    {
+     "id": "enc_dualrail",
+     "machines": 4
+    },
+    {
+     "id": "ro_erasure",
+     "machines": 4
     },
     {
      "id": "cx_nn",
@@ -3369,15 +3420,7 @@
      "machines": 2
     },
     {
-     "id": "ct_vio",
-     "machines": 2
-    },
-    {
      "id": "ro_disp",
-     "machines": 2
-    },
-    {
-     "id": "fab_sc",
      "machines": 2
     },
     {
@@ -3385,15 +3428,7 @@
      "machines": 1
     },
     {
-     "id": "enc_dualrail",
-     "machines": 1
-    },
-    {
      "id": "g_bos",
-     "machines": 1
-    },
-    {
-     "id": "ro_erasure",
      "machines": 1
     },
     {
@@ -3421,13 +3456,13 @@
      "g_tc",
      "dec_nn",
      "enc_bare",
-     "ct_sfq",
+     "ro_erasure",
      "code_magic",
      "dec_rl",
      "ic_cryolink",
      "ic_transducer"
     ],
-    "count": 52
+    "count": 55
    }
   },
   {
@@ -3445,7 +3480,9 @@
    "machines": [
     "pasqal-fresnel",
     "pasqal-orion",
-    "pasqal-vela"
+    "pasqal-vela",
+    "pasqal-centaurus-500",
+    "pasqal-lyra"
    ],
    "co_machines": [],
    "families": [
@@ -3458,30 +3495,34 @@
    "stations": [
     {
      "id": "alkali",
-     "machines": 3
+     "machines": 5
     },
     {
      "id": "enc_hf",
-     "machines": 3
+     "machines": 5
     },
     {
      "id": "g_ryd",
-     "machines": 3
+     "machines": 5
     },
     {
      "id": "cx_aod",
-     "machines": 3
+     "machines": 5
     },
     {
      "id": "ct_laser",
-     "machines": 3
+     "machines": 5
     },
     {
      "id": "ro_img",
-     "machines": 3
+     "machines": 5
     },
     {
      "id": "fab_optics",
+     "machines": 5
+    },
+    {
+     "id": "ct_pic_trap",
      "machines": 3
     },
     {
@@ -3491,10 +3532,6 @@
     {
      "id": "g_rydanalog",
      "machines": 2
-    },
-    {
-     "id": "ct_pic_trap",
-     "machines": 1
     }
    ],
    "hosts": [
@@ -3649,8 +3686,8 @@
    "mentions": {
     "briefs": [
      "ic_spinphoton",
-     "defect",
      "code_qldpc",
+     "defect",
      "photon",
      "g_mwspin",
      "ic_transducer",
@@ -3659,14 +3696,15 @@
      "dec_corr",
      "dec_rl"
     ],
-    "count": 39
+    "count": 42
    }
   },
   {
    "slug": "planqc",
    "name": "planqc",
    "aliases": [
-    "planqc"
+    "planqc",
+    "planqc, for the DLR Quantum Computing Initiative"
    ],
    "tier": "quantum-vendor",
    "segment": "computing-hardware",
@@ -3675,6 +3713,7 @@
    "url": "https://planqc.eu",
    "note": "",
    "machines": [
+    "planqc-dinaqc-100",
     "planqc-maqcs"
    ],
    "co_machines": [],
@@ -3687,26 +3726,30 @@
    "stations": [
     {
      "id": "ae_atom",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "enc_opt",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "g_ryd",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "ct_laser",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "ro_img",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "fab_optics",
+     "machines": 2
+    },
+    {
+     "id": "cx_aod",
      "machines": 1
     }
    ],
@@ -3720,9 +3763,10 @@
     "briefs": [
      "enc_opt",
      "alkali",
+     "ae_atom",
      "code_erasure"
     ],
-    "count": 22
+    "count": 23
    }
   },
   {
@@ -3852,8 +3896,8 @@
    "mentions": {
     "briefs": [
      "code_erasure",
-     "ae_atom",
      "enc_omg",
+     "ae_atom",
      "ro_erasure",
      "cx_reload",
      "dec_corr",
@@ -3861,7 +3905,7 @@
      "transmon",
      "code_qldpc"
     ],
-    "count": 56
+    "count": 55
    }
   },
   {
@@ -3947,19 +3991,19 @@
      "ro_spd",
      "photon",
      "cx_switch",
-     "fab_pic",
      "enc_timebin",
+     "fab_pic",
      "code_fusion",
      "ic_fibre",
      "enc_dualrail",
      "g_fusion",
      "ct_eo",
      "src_resource",
-     "majorana",
      "code_highrate",
+     "majorana",
      "ic_transducer"
     ],
-    "count": 141
+    "count": 143
    }
   },
   {
@@ -4212,7 +4256,8 @@
    "note": "",
    "machines": [
     "quandela-belenos",
-    "quandela-lucy"
+    "quandela-lucy",
+    "quandela-canopus-24"
    ],
    "co_machines": [],
    "families": [
@@ -4224,30 +4269,30 @@
    "stations": [
     {
      "id": "photon",
-     "machines": 2
-    },
-    {
-     "id": "enc_dualrail",
-     "machines": 2
+     "machines": 3
     },
     {
      "id": "enc_timebin",
-     "machines": 2
+     "machines": 3
     },
     {
      "id": "g_fusion",
-     "machines": 2
+     "machines": 3
     },
     {
      "id": "cx_switch",
-     "machines": 2
+     "machines": 3
     },
     {
      "id": "ct_eo",
-     "machines": 2
+     "machines": 3
     },
     {
      "id": "ro_spd",
+     "machines": 3
+    },
+    {
+     "id": "enc_dualrail",
      "machines": 2
     },
     {
@@ -4336,10 +4381,6 @@
      "machines": 6
     },
     {
-     "id": "ct_ionlaser",
-     "machines": 6
-    },
-    {
      "id": "ro_fluor",
      "machines": 6
     },
@@ -4352,8 +4393,16 @@
      "machines": 6
     },
     {
+     "id": "ct_ionlaser",
+     "machines": 4
+    },
+    {
      "id": "code_magic",
      "machines": 4
+    },
+    {
+     "id": "ct_ionaod",
+     "machines": 3
     },
     {
      "id": "code_color",
@@ -4361,10 +4410,6 @@
     },
     {
      "id": "dec_gpu",
-     "machines": 3
-    },
-    {
-     "id": "fab_optics",
      "machines": 3
     }
    ],
@@ -4379,8 +4424,8 @@
      "code_magic",
      "ic_ionphoton",
      "ro_fluor",
-     "enc_hf",
      "fab_trap",
+     "enc_hf",
      "code_color",
      "dec_gpu",
      "code_detect",
@@ -4391,14 +4436,16 @@
      "g_elec",
      "g_anneal",
      "ct_pic_trap",
+     "ct_ionaod",
      "ct_ionmw",
      "code_mitig",
      "dec_mwpm",
      "dec_nn",
      "dec_corr",
-     "dec_rl"
+     "dec_rl",
+     "fab_pic"
     ],
-    "count": 188
+    "count": 191
    }
   },
   {
@@ -4455,15 +4502,14 @@
      "ion",
      "enc_omg",
      "g_ms",
-     "g_elec",
      "cx_qccd",
+     "g_elec",
      "fab_trap",
-     "ct_ionmw",
      "ro_fluor",
      "code_highrate",
      "ic_ionphoton"
     ],
-    "count": 22
+    "count": 20
    }
   },
   {
@@ -4526,11 +4572,11 @@
    ],
    "mentions": {
     "briefs": [
-     "g_mwspin",
      "defect",
+     "g_mwspin",
      "fab_diamond"
     ],
-    "count": 11
+    "count": 17
    }
   },
   {
@@ -4598,8 +4644,8 @@
    "mentions": {
     "briefs": [
      "fab_cmos",
-     "ic_fanout",
      "qd_spin",
+     "ic_fanout",
      "ct_base",
      "g_exch",
      "cx_shuttle",
@@ -4609,7 +4655,7 @@
      "dec_corr",
      "dec_rl"
     ],
-    "count": 71
+    "count": 70
    }
   },
   {
@@ -4768,8 +4814,8 @@
    "url": "quantware.com",
    "note": "",
    "machines": [
-    "quantware-vio-40k",
     "quantware-contralto-a17",
+    "quantware-vio-40k",
     "quantware-tenor-d64"
    ],
    "co_machines": [
@@ -4834,11 +4880,11 @@
      "ct_vio",
      "ic_mcm",
      "g_tc",
-     "ro_disp",
      "cx_lr",
+     "ro_disp",
      "transmon"
     ],
-    "count": 50
+    "count": 53
    }
   },
   {
@@ -4893,10 +4939,11 @@
    "hosts": [],
    "mentions": {
     "briefs": [
+     "ion",
      "ct_ionaod",
-     "ion"
+     "g_ms"
     ],
-    "count": 6
+    "count": 7
    }
   },
   {
@@ -4957,9 +5004,10 @@
    "hosts": [],
    "mentions": {
     "briefs": [
-     "ion"
+     "ion",
+     "g_elec"
     ],
-    "count": 1
+    "count": 3
    }
   },
   {
@@ -5072,13 +5120,13 @@
      "enc_omg",
      "code_surface",
      "code_qldpc",
-     "ct_pic_trap",
      "dec_nn",
+     "ct_pic_trap",
      "dec_gpu",
      "dec_rl",
      "ic_atomcavity"
     ],
-    "count": 186
+    "count": 188
    }
   },
   {
@@ -5158,7 +5206,7 @@
      "code_fusion",
      "ic_fibre"
     ],
-    "count": 50
+    "count": 51
    }
   },
   {
@@ -5226,11 +5274,11 @@
      "ct_base",
      "enc_spin_ld",
      "g_exch",
-     "ic_fanout",
      "cx_nn",
-     "ct_cryocmos"
+     "ct_cryocmos",
+     "ic_fanout"
     ],
-    "count": 28
+    "count": 27
    }
   },
   {
@@ -5261,10 +5309,10 @@
     "briefs": [
      "defect",
      "cx_shuttle",
-     "g_mwspin",
      "ic_spinphoton",
-     "ct_cryocmos",
+     "g_mwspin",
      "fab_diamond",
+     "ct_cryocmos",
      "majorana",
      "cx_crossbar",
      "qd_spin",
@@ -5275,13 +5323,13 @@
      "ic_fanout",
      "enc_parity",
      "g_mbq",
+     "ic_atomcavity",
      "fab_cmos",
      "cx_lr",
      "code_detect",
-     "ic_atomcavity",
      "fab_mbe"
     ],
-    "count": 85
+    "count": 89
    }
   },
   {
@@ -5301,7 +5349,8 @@
     "rigetti-ankaa-2",
     "rigetti-ankaa-3",
     "rigetti-cepheus-1-108q",
-    "rigetti-cepheus-1-36q"
+    "rigetti-cepheus-1-36q",
+    "rigetti-novera-9"
    ],
    "co_machines": [],
    "families": [
@@ -5313,31 +5362,31 @@
    "stations": [
     {
      "id": "transmon",
-     "machines": 4
+     "machines": 5
     },
     {
      "id": "enc_bare",
-     "machines": 4
+     "machines": 5
     },
     {
      "id": "g_tc",
-     "machines": 4
+     "machines": 5
     },
     {
      "id": "cx_nn",
-     "machines": 4
+     "machines": 5
     },
     {
      "id": "ct_rt",
-     "machines": 4
+     "machines": 5
     },
     {
      "id": "ro_disp",
-     "machines": 4
+     "machines": 5
     },
     {
      "id": "fab_sc",
-     "machines": 4
+     "machines": 5
     },
     {
      "id": "ic_mcm",
@@ -5356,8 +5405,8 @@
    "mentions": {
     "briefs": [
      "ic_mcm",
-     "ic_transducer",
      "transmon",
+     "ic_transducer",
      "cx_nn",
      "fab_sc",
      "enc_bare",
@@ -5366,13 +5415,14 @@
      "dec_nn",
      "g_cr",
      "g_bos",
-     "ct_sfq",
      "ro_disp",
      "code_magic",
+     "code_detect",
+     "dec_fpga",
      "dec_rl",
      "ic_cryolink"
     ],
-    "count": 88
+    "count": 94
    }
   },
   {
@@ -5531,6 +5581,64 @@
    }
   },
   {
+   "slug": "saxonq",
+   "name": "SaxonQ",
+   "aliases": [
+    "SaxonQ"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "Germany",
+   "city": "Leipzig",
+   "url": "https://saxonq.com/",
+   "note": "",
+   "machines": [
+    "saxonq-sxq4-4",
+    "saxonq-qc2026-dualcore-10"
+   ],
+   "co_machines": [],
+   "families": [
+    "DEFECT"
+   ],
+   "architectures": [
+    "defect"
+   ],
+   "stations": [
+    {
+     "id": "defect",
+     "machines": 2
+    },
+    {
+     "id": "enc_spin_ld",
+     "machines": 2
+    },
+    {
+     "id": "g_mwspin",
+     "machines": 2
+    },
+    {
+     "id": "cx_nn",
+     "machines": 2
+    },
+    {
+     "id": "ro_fluor",
+     "machines": 2
+    },
+    {
+     "id": "fab_diamond",
+     "machines": 2
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "g_mwspin",
+     "defect"
+    ],
+    "count": 3
+   }
+  },
+  {
    "slug": "seeqc",
    "name": "SEEQC",
    "aliases": [
@@ -5586,18 +5694,17 @@
    "mentions": {
     "briefs": [
      "ct_sfq",
-     "ct_fluxdac",
      "dec_cryo",
+     "ct_fluxdac",
      "ct_cryocmos",
      "ic_multidie",
      "transmon",
-     "ct_rt",
      "cx_lr",
-     "ic_mcm",
+     "ct_rt",
      "cx_nn",
-     "code_magic"
+     "ic_mcm"
     ],
-    "count": 86
+    "count": 85
    }
   },
   {
@@ -5671,7 +5778,7 @@
      "ro_s2c",
      "ic_fanout"
     ],
-    "count": 60
+    "count": 58
    }
   },
   {
@@ -5679,6 +5786,7 @@
    "name": "Southern University of Science and Technology",
    "aliases": [
     "Southern University of Science and Technology",
+    "Southern University of Science and Technology (Huang et al.)",
     "SUSTech"
    ],
    "tier": "academic-body",
@@ -5688,7 +5796,8 @@
    "url": "https://www.sustech.edu.cn/en/",
    "note": "",
    "machines": [
-    "sustc-biased-erasure"
+    "sustc-biased-erasure",
+    "sustech-dualrail-8"
    ],
    "co_machines": [],
    "families": [
@@ -5699,7 +5808,35 @@
    ],
    "stations": [
     {
+     "id": "cx_nn",
+     "machines": 2
+    },
+    {
+     "id": "ct_rt",
+     "machines": 2
+    },
+    {
+     "id": "ro_erasure",
+     "machines": 2
+    },
+    {
+     "id": "code_erasure",
+     "machines": 2
+    },
+    {
+     "id": "transmon",
+     "machines": 1
+    },
+    {
      "id": "cavity",
+     "machines": 1
+    },
+    {
+     "id": "enc_dualrail",
+     "machines": 1
+    },
+    {
+     "id": "g_tc",
      "machines": 1
     },
     {
@@ -5707,19 +5844,11 @@
      "machines": 1
     },
     {
-     "id": "cx_nn",
+     "id": "ic_multidie",
      "machines": 1
     },
     {
-     "id": "ct_rt",
-     "machines": 1
-    },
-    {
-     "id": "ro_erasure",
-     "machines": 1
-    },
-    {
-     "id": "code_erasure",
+     "id": "fab_sc",
      "machines": 1
     },
     {
@@ -5733,11 +5862,12 @@
      "enc_dualrail",
      "ro_erasure",
      "ic_mcm",
+     "ic_multidie",
      "cavity",
      "code_erasure",
      "g_bos"
     ],
-    "count": 20
+    "count": 23
    }
   },
   {
@@ -6061,14 +6191,14 @@
    "mentions": {
     "briefs": [
      "g_elec",
-     "cx_qccd",
      "ion",
+     "cx_qccd",
      "fab_optics",
      "ct_ionmw",
      "ct_ionlaser",
      "ic_ionphoton"
     ],
-    "count": 27
+    "count": 30
    }
   },
   {
@@ -6147,13 +6277,15 @@
    "hosts": [],
    "mentions": {
     "briefs": [
-     "ct_ionaod",
      "enc_opt",
+     "ct_ionaod",
+     "code_highrate",
+     "code_magic",
      "ion",
      "cx_qccd",
      "fab_trap"
     ],
-    "count": 12
+    "count": 17
    }
   },
   {
@@ -6183,11 +6315,11 @@
    "mentions": {
     "briefs": [
      "ct_ionaod",
-     "fluxonium",
      "ic_ionphoton",
+     "fluxonium",
      "code_detect"
     ],
-    "count": 10
+    "count": 11
    }
   },
   {
@@ -6208,6 +6340,9 @@
     "ustc-jiuzhang4",
     "ustc-zuchongzhi-3.0",
     "ustc-zuchongzhi-3.2",
+    "ustc-jiuzhang1",
+    "ustc-jiuzhang2",
+    "ustc-jiuzhang3",
     "ustc-zuchongzhi-2.1"
    ],
    "co_machines": [],
@@ -6220,6 +6355,26 @@
     "ph_sampler"
    ],
    "stations": [
+    {
+     "id": "squeezed",
+     "machines": 4
+    },
+    {
+     "id": "g_lointer",
+     "machines": 4
+    },
+    {
+     "id": "ct_eo",
+     "machines": 4
+    },
+    {
+     "id": "ro_spd",
+     "machines": 4
+    },
+    {
+     "id": "fab_bulk",
+     "machines": 4
+    },
     {
      "id": "transmon",
      "machines": 3
@@ -6247,26 +6402,6 @@
     {
      "id": "fab_sc",
      "machines": 3
-    },
-    {
-     "id": "ic_multidie",
-     "machines": 2
-    },
-    {
-     "id": "squeezed",
-     "machines": 1
-    },
-    {
-     "id": "g_lointer",
-     "machines": 1
-    },
-    {
-     "id": "g_cv",
-     "machines": 1
-    },
-    {
-     "id": "cx_switch",
-     "machines": 1
     }
    ],
    "hosts": [
@@ -6281,10 +6416,10 @@
    ],
    "mentions": {
     "briefs": [
-     "enc_bare",
+     "fab_bulk",
      "g_lointer",
      "ro_imgfast",
-     "fab_bulk",
+     "enc_bare",
      "ro_reset",
      "code_surface",
      "transmon",
@@ -6296,14 +6431,13 @@
      "g_ryd",
      "g_tc",
      "src_resource",
-     "ct_sfq",
      "ct_ionaod",
      "code_magic",
      "dec_nn",
      "ic_cryolink",
      "ic_transducer"
     ],
-    "count": 73
+    "count": 72
    }
   },
   {
@@ -6527,13 +6661,13 @@
    "hosts": [],
    "mentions": {
     "briefs": [
+     "ae_atom",
      "ct_laser",
      "ro_img",
-     "ae_atom",
      "ro_fluor",
      "ro_imgfast"
     ],
-    "count": 10
+    "count": 11
    }
   },
   {
@@ -6608,9 +6742,8 @@
     "briefs": [
      "code_qldpc",
      "code_surface",
-     "enc_bare",
-     "ct_sfq",
      "code_magic",
+     "enc_bare",
      "dec_nn",
      "ic_cryolink",
      "ic_transducer"

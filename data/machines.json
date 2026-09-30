@@ -1,7 +1,7 @@
 {
  "edition": "2026.09",
  "source": {
-  "register": "quantum-machines · 17 Sep 2026, re-cut 26 Sep 2026 (three ion paths, two analog paths, 14 gaps → technologies, sentinels → cell values)",
+  "register": "quantum-machines · 17 Sep 2026, re-cut 26 Sep 2026 (three ion paths, two analog paths, 14 gaps → technologies, sentinels → cell values), extended 29 Sep 2026 (24 machines added, 3 renamed, 3 split, 1 removed; ten cell corrections — data/register/patch-2026-09-29.json)",
   "evidence": "machine-stations-evidence.csv · 17 Sep 2026 (locator passes 1–3)"
  },
  "machines": [
@@ -471,12 +471,12 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "single dissipatively stabilised cat qubit on a transmon-free characterisation chip; bit-flip ≈430 s (7 min), 2024 record (May 2024)",
+      "summary": "dissipatively stabilised cat qubit on a transmon-free chip: a lumped-element memory mode (1.1 GHz) coupled through an ATS to a 7.9 GHz buffer; bit-flip time 22 s for the squeezed cat at n̄ = 4.1 in the paper, up to 430 s (over 7 min) quoted by Alice & Bob for the cloud chip",
       "evidence": {
        "type": "architecture-paper-figure",
-       "url": "https://arxiv.org/abs/2307.06617",
-       "locator": "Fig. 1 (bistable cat qubit; memory resonator + ATS buffer)",
-       "verified": false
+       "url": "https://arxiv.org/abs/2502.07892",
+       "locator": "§I and Fig. 2A–C (memory mode at 1.1 GHz, buffer at 7.9 GHz, ATS); abstract (22 s bit-flip time); the paper Alice & Bob's Boson 4 page links as Boson 4",
+       "verified": true
       }
      }
     ],
@@ -486,12 +486,12 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "two-legged cat stabilised by two-photon dissipation; bit-flip ≈430 s on the transmon-free design",
+      "summary": "two-legged cat stabilised by two-photon dissipation; the paper adds a squeezed (moon-cat) deformation: bit-flip time 22 s at n̄ = 4.1, 160× a standard cat",
       "evidence": {
-       "type": "technical-whitepaper",
-       "url": "https://alice-bob.com/newsroom/alice-bob-quantum-computing-roadmap/",
-       "locator": "",
-       "verified": false
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2502.07892",
+       "locator": "§I (dissipation engineering for squeezed-like cat qubits); Fig. 3 (bit-flip protection by squeezing)",
+       "verified": true
       }
      }
     ],
@@ -501,12 +501,12 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "bosonic Z gate on a single cat qubit",
+      "summary": "bosonic Z gate on a single cat qubit: a Zeno gate, a resonant memory drive orthogonal to the cat axis rolls the fringes while two-photon dissipation pins the basis states",
       "evidence": {
        "type": "architecture-paper-figure",
-       "url": "https://arxiv.org/abs/2307.06617",
-       "locator": "Fig. 2 (holonomic Z gate tomography); Fig. 4 (control)",
-       "verified": false
+       "url": "https://arxiv.org/abs/2502.07892",
+       "locator": "§III (Zeno gates); Fig. 4 (Z-gate fidelity with squeezing)",
+       "verified": true
       }
      }
     ],
@@ -531,12 +531,12 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "room-temperature control",
+      "summary": "room-temperature control: buffer, memory, longitudinal and reset drives up-converted from IQ signals of a Quantum Machines controller",
       "evidence": {
        "type": "architecture-paper-figure",
-       "url": "https://arxiv.org/abs/2307.06617",
-       "locator": "Fig. 4 (quantum control preserving bit-flip protection)",
-       "verified": false
+       "url": "https://arxiv.org/abs/2502.07892",
+       "locator": "App. A2 (room-temperature setup); Fig. A1 (wiring diagram)",
+       "verified": true
       }
      }
     ],
@@ -546,12 +546,12 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "dispersive readout",
+      "summary": "readout through the buffer: a longitudinal pump displaces the buffer conditioned on the memory photon number, and Z is measured by a memory displacement followed by that photon-number measurement — the protocol developed on Boson 3 (Réglade et al., Nature 629, 778, 2024)",
       "evidence": {
-       "type": "architecture-paper",
-       "url": "https://arxiv.org/abs/2307.06617",
-       "locator": "Main text: readout via ATS/buffer longitudinal coupling",
-       "verified": false
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2502.07892",
+       "locator": "§II ('Measuring Z is done by a memory displacement followed by a photon number measurement'); App. C1 and Fig. C1 (longitudinal photon-number readout calibration)",
+       "verified": true
       }
      }
     ],
@@ -606,25 +606,12 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "superconducting transmon-free cat circuit; fab process not published",
+      "summary": "planar superconducting circuit patterned in a tantalum film sputtered on sapphire, aluminium junctions by the Dolan-bridge technique: a lumped-element memory (fractal capacitor and a 29-junction chain) with a quarter-wavelength coplanar-waveguide filter; no machined 3-D cavity (Boson 3's memory was a quarter-wave coplanar resonator: Réglade et al., Nature 629, 778, 2024)",
       "evidence": {
        "type": "architecture-paper",
-       "url": "https://arxiv.org/abs/2307.06617",
-       "locator": "Appendix/Methods: fabrication (Ta on sapphire, Dolan Al JJ)",
-       "verified": false
-      }
-     },
-     {
-      "node": "fab_3d",
-      "role": "alternate",
-      "gap": false,
-      "state": "station",
-      "summary": "3-D machined superconducting-cavity heritage of the cat-qubit line; no machine-specific cavity fab published",
-      "evidence": {
-       "type": "inferred",
-       "url": "https://alice-bob.com/newsroom/alice-bob-quantum-computing-roadmap/",
-       "locator": "",
-       "verified": false
+       "url": "https://arxiv.org/abs/2502.07892",
+       "locator": "Fig. 2B (optical micrograph: fractal capacitor, 29-junction chain, ATS, quarter-wavelength coplanar filter); App. A1 (tantalum patterning on sapphire; Dolan-bridge Al junctions)",
+       "verified": true
       }
      }
     ]
@@ -644,8 +631,8 @@
     "two-legged-cat"
    ],
    "evidence_counts": {
-    "verified": 0,
-    "total": 11
+    "verified": 6,
+    "total": 10
    },
    "refs": [
     {
@@ -669,7 +656,7 @@
     "t2": "not published at the same operating point",
     "t_2q": "",
     "t_meas": "",
-    "best_logical": "bit-flip lifetime ~430 s (7 min) - the 2024 record; not in either cited page",
+    "best_logical": "bit-flip lifetime ~430 s (7 min) - the 2024 record per Alice & Bob's release of 25 Sep 2025",
     "decoder": "none published",
     "realtime": "none",
     "roadmap": "Helium, Lithium, Beryllium, Graphene",
@@ -853,19 +840,6 @@
        "locator": "Fig. 9 (flip-chip two-layer layout)",
        "verified": true
       }
-     },
-     {
-      "node": "fab_3d",
-      "role": "alternate",
-      "gap": false,
-      "state": "station",
-      "summary": "3-D machined superconducting-cavity heritage of the cat-qubit line; no machine-specific cavity fab published",
-      "evidence": {
-       "type": "inferred",
-       "url": "https://alice-bob.com/newsroom/alice-bob-quantum-computing-roadmap/",
-       "locator": "",
-       "verified": false
-      }
      }
     ]
    },
@@ -876,7 +850,7 @@
    ],
    "evidence_counts": {
     "verified": 8,
-    "total": 12
+    "total": 11
    },
    "refs": [
     {
@@ -1064,24 +1038,11 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "superconducting cat-qubit chip; fab process not published",
+      "summary": "planar superconducting cat-qubit chip: printed superconducting circuits on sapphire, Ta/Al resonators; fab process not published",
       "evidence": {
        "type": "technical-whitepaper",
        "url": "https://alice-bob.com/wp-content/uploads/2024/12/Think-Inside-The-Box-Alice-Bob-Whitepaper.pdf",
        "locator": "§The Hardware Behind Cat Qubits (sapphire chips with printed superconducting circuits; Ta/Al resonator); §MILESTONE 1 Challenge 1: Herd the Cats (nanofabrication)",
-       "verified": true
-      }
-     },
-     {
-      "node": "fab_3d",
-      "role": "alternate",
-      "gap": false,
-      "state": "station",
-      "summary": "3-D machined superconducting-cavity heritage of the cat-qubit line; no machine-specific cavity fab published",
-      "evidence": {
-       "type": "technical-whitepaper",
-       "url": "https://alice-bob.com/wp-content/uploads/2024/12/Think-Inside-The-Box-Alice-Bob-Whitepaper.pdf",
-       "locator": "§MILESTONE 3 Challenge 2: Double the Density (flip-chip); §The Hardware Behind Cat Qubits",
        "verified": true
       }
      }
@@ -1092,8 +1053,8 @@
     "cat_repetition"
    ],
    "evidence_counts": {
-    "verified": 9,
-    "total": 11
+    "verified": 8,
+    "total": 10
    },
    "refs": [
     {
@@ -1287,20 +1248,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "galvanically coupled transmon-free cat circuits on one chip; fab process not published",
-      "evidence": {
-       "type": "inferred",
-       "url": "https://alice-bob.com/newsroom/alice-bob-surpasses-bit-flip-stability-record",
-       "locator": "",
-       "verified": false
-      }
-     },
-     {
-      "node": "fab_3d",
-      "role": "alternate",
-      "gap": false,
-      "state": "station",
-      "summary": "3-D machined superconducting-cavity heritage of the cat-qubit line; no machine-specific cavity fab published",
+      "summary": "galvanically coupled transmon-free cat circuits on one planar chip; fab process not published (Boson 3's memory was a quarter-wave coplanar resonator in tantalum on sapphire: Réglade et al., Nature 629, 778, 2024)",
       "evidence": {
        "type": "inferred",
        "url": "https://alice-bob.com/newsroom/alice-bob-surpasses-bit-flip-stability-record",
@@ -1336,7 +1284,7 @@
    ],
    "evidence_counts": {
     "verified": 3,
-    "total": 11
+    "total": 10
    },
    "refs": [
     {
@@ -4830,15 +4778,28 @@
     ],
     "10": [
      {
-      "node": "fab_sc",
+      "node": "fab_3d",
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "superconducting-qubit lithography; family-determined, no machine-specific fab source",
+      "summary": "3-D superconducting cavities: a pair of λ/4 coaxial cavities per dual-rail qubit; body material and machining not published",
       "evidence": {
        "type": "inferred",
-       "url": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-charts-a-new-course-to-fault-tolerant-quantum-computing-with-gate-model-roadmap/",
-       "locator": "",
+       "url": "https://www.nature.com/articles/s41586-026-10822-y",
+       "locator": "Fig. 1a (pair of 3D λ/4 coaxial cavities per qubit; the fabrication route is inferred)",
+       "verified": false
+      }
+     },
+     {
+      "node": "fab_sc",
+      "role": "alternate",
+      "gap": false,
+      "state": "station",
+      "summary": "Josephson-junction lithography for the three SQUID transmon couplers and the ancilla transmons; no fab process published",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.nature.com/articles/s41586-026-10822-y",
+       "locator": "Fig. 1a (three SQUID transmon couplers; transmon and readout resonator per cavity)",
        "verified": false
       }
      }
@@ -4848,7 +4809,7 @@
    "codes": [],
    "evidence_counts": {
     "verified": 5,
-    "total": 11
+    "total": 12
    },
    "refs": [
     {
@@ -19127,7 +19088,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "3D machined superconducting cavities — Aluminium/niobium cavities with Q > 10⁹; cm-scale footprint per qubit — the scaling liability of cavity-based bosonic codes.",
+      "summary": "3D machined superconducting cavities — Machined aluminium cavities reach Q > 0.5×10⁹ (10 ms photon lifetime, Yale 2013); niobium accelerator cavities with no qubit attached hold photons for 0.5–2 s at ~10 mK (Fermilab 2020); cm-scale footprint per qubit — the scaling liability of cavity-based bosonic codes.",
       "evidence": {
        "type": "architecture-paper",
        "url": "https://arxiv.org/abs/2601.21616",
@@ -22377,7 +22338,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "all-to-all through the chain's motional bus (degree 39); nine codes in three families run with no hardware reconfiguration",
+      "summary": "all-to-all through the chain's motional bus (degree 39); eight codes in three families run with no hardware reconfiguration (nine in the June version)",
       "evidence": {
        "type": "architecture-paper-figure",
        "url": "https://arxiv.org/abs/2606.06455",
@@ -22422,7 +22383,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "nine codes in three families on one device; break-even within error bars (logical 3.95±0.68 s in one code vs physical 3.84±0.48 s = 3 T₂*, version of 15 Sep 2026; the June version gave 3.3±0.9 s); BB5 [[18,4,3]] 4× X / 9× Z below the prior superconducting BB run",
+      "summary": "eight codes in three families on one device (nine in the June version); break-even within error bars (logical 3.95±0.68 s in one code vs physical 3.84±0.48 s = 3 T₂*, arXiv version of 14 Sep 2026; the June version gave 3.3±0.9 s); BB5 [[18,4,3]] 4× X / 9× Z below the prior superconducting BB run",
       "evidence": {
        "type": "architecture-paper-figure",
        "url": "https://arxiv.org/abs/2606.06455",
@@ -22491,7 +22452,7 @@
      "key": "t2",
      "num": 3.95,
      "unit": "s",
-     "text": "physical baseline on the same device 3.84 ± 0.48 s (= 3 T₂*; version of 15 Sep 2026; 3.3 ± 0.9 s in June)",
+     "text": "physical baseline on the same device 3.84 ± 0.48 s (= 3 T₂*; arXiv version of 14 Sep 2026; 3.3 ± 0.9 s in June)",
      "scope": "best (logical lifetime, one code per the abstract)",
      "date": "Sep 2026",
      "url": "https://arxiv.org/abs/2606.06455"
@@ -22527,7 +22488,7 @@
     "t2": "3.95 s logical (one code, abstract; physical 3.84 ± 0.48 s)",
     "t_2q": "",
     "t_meas": "",
-    "best_logical": "nine distinct codes across three families on one device with no hardware reconfiguration: BB5 [[18,4,3]] gives 4 logical from 18 physical with logical error 4x lower (X) / 9x lower (Z) than the prior superconducting BB demonstration; GB4 [[26,2,5]] reaches 0.91+-0.17% logical error per cycle (Z eigenstate; 0.96% in the June version) with T_Z 3.47+-0.56 s; the abstract reports break-even within error bars in one code (logical lifetime 3.95+-0.68 s vs physical 3.84+-0.48 s = 3 T2*, version of 15 Sep 2026; the June version gave 3.3+-0.9 s from T2* 1.1+-0.3 s), ; the 74.8% shot rejection reported in the secondary source is for BB5 [[30,4,5]] at 6 syndrome rounds, not for GB4",
+    "best_logical": "eight distinct codes across three families on one device (nine in the June version) with no hardware reconfiguration: BB5 [[18,4,3]] gives 4 logical from 18 physical with logical error 4x lower (X) / 9x lower (Z) than the prior superconducting BB demonstration; GB4 [[26,2,5]] reaches 0.91+-0.17% logical error per cycle (Z eigenstate; 0.96% in the June version) with T_Z 3.47+-0.56 s; the abstract reports break-even within error bars in one code (logical lifetime 3.95+-0.68 s vs physical 3.84+-0.48 s = 3 T2*, arXiv version of 14 Sep 2026; the June version gave 3.3+-0.9 s from T2* 1.1+-0.3 s), ; the 74.8% shot rejection reported in the secondary source is for BB5 [[30,4,5]] at 6 syndrome rounds, not for GB4",
     "decoder": "beam search (Delfosse)",
     "realtime": "offline",
     "roadmap": "feeds the Walking-Cat blueprint",
@@ -36736,236 +36697,16 @@
    }
   },
   {
-   "id": "equal1-bell-1",
-   "name": "Bell-1 (UnityQ)",
-   "org": "Equal1",
-   "org_id": "Equal1",
-   "country": "Ireland",
-   "family": "SPIN",
-   "map_path": "spin_qd",
-   "status": "DEPLOYED",
-   "status_date": "16 Mar 2025",
-   "physical_qubits_num": 6,
-   "access": "on-prem sold",
-   "layers": {
-    "1": [
-     {
-      "node": "qd_spin",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "Si gate-defined electron spin; 6-qubit UnityQ QPU",
-      "evidence": {
-       "type": "vendor-architecture-page",
-       "url": "https://www.equal1.com/post/equal1-launches-bell-1-the-first-quantum-system-purpose-built-for-the-hpc-era",
-       "locator": "",
-       "verified": false
-      }
-     }
-    ],
-    "2": [
-     {
-      "node": "enc_spin_ld",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "bare electron spin-1/2, Loss–DiVincenzo encoding",
-      "evidence": {
-       "type": "inferred",
-       "url": "https://www.equal1.com/post/equal1-launches-bell-1-the-first-quantum-system-purpose-built-for-the-hpc-era",
-       "locator": "",
-       "verified": false
-      }
-     }
-    ],
-    "3": [
-     {
-      "node": "g_exch",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "UnityQ (vendor): 1Q 99.9%, 2Q 99.3% average, readout 99%; a press source gave 1Q 99.4%, 2Q 98.4%; gate mechanism not named on the page",
-      "evidence": {
-       "type": "vendor-architecture-page",
-       "url": "https://www.equal1.com/technology",
-       "locator": "UnityQ specifications",
-       "verified": false
-      }
-     }
-    ],
-    "4": [
-     {
-      "node": "cx_nn",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "nearest neighbour",
-      "evidence": {
-       "type": "vendor-architecture-page",
-       "url": "https://www.equal1.com/post/equal1-launches-bell-1-the-first-quantum-system-purpose-built-for-the-hpc-era",
-       "locator": "",
-       "verified": false
-      }
-     }
-    ],
-    "5": [
-     {
-      "node": "ct_cryocmos",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "cryo-CMOS control at 0.3 K on a self-contained cryocooler, no dilution refrigerator; 1,600 W total, one standard rack (Mar 2025)",
-      "evidence": {
-       "type": "vendor-architecture-page",
-       "url": "https://www.equal1.com/post/equal1-launches-bell-1-the-first-quantum-system-purpose-built-for-the-hpc-era",
-       "locator": "",
-       "verified": true
-      }
-     },
-     {
-      "node": "∅G-qsoc",
-      "role": "alternate",
-      "gap": true,
-      "state": "gap",
-      "summary": "Quantum System on Chip: qubits and control/readout electronics on the same 22FDX die at 0.3 K — a sub-case ct_cryocmos (separate ASIC) does not distinguish",
-      "evidence": {
-       "type": "vendor-architecture-page",
-       "url": "https://www.equal1.com/post/equal1-launches-bell-1-the-first-quantum-system-purpose-built-for-the-hpc-era",
-       "locator": "",
-       "verified": false
-      }
-     }
-    ],
-    "6": [
-     {
-      "node": "ro_s2c",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "spin-to-charge + on-chip sensing",
-      "evidence": {
-       "type": "inferred",
-       "url": "https://www.equal1.com/post/equal1-launches-bell-1-the-first-quantum-system-purpose-built-for-the-hpc-era",
-       "locator": "",
-       "verified": false
-      }
-     }
-    ],
-    "7": [
-     {
-      "node": "none",
-      "role": "primary",
-      "gap": false,
-      "state": "none",
-      "summary": "no QEC code",
-      "evidence": {
-       "type": "vendor-architecture-page",
-       "url": "https://www.equal1.com/post/equal1-launches-bell-1-the-first-quantum-system-purpose-built-for-the-hpc-era",
-       "locator": "",
-       "verified": false
-      }
-     }
-    ],
-    "8": [
-     {
-      "node": "none",
-      "role": "primary",
-      "gap": false,
-      "state": "none",
-      "summary": "no decoder",
-      "evidence": {
-       "type": "vendor-architecture-page",
-       "url": "https://www.equal1.com/post/equal1-launches-bell-1-the-first-quantum-system-purpose-built-for-the-hpc-era",
-       "locator": "",
-       "verified": false
-      }
-     }
-    ],
-    "9": [
-     {
-      "node": "ic_fanout",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "on-die control and readout electronics co-integrated with the qubits (22FDX, 0.3 K)",
-      "evidence": {
-       "type": "inferred",
-       "url": "https://www.equal1.com/post/equal1-launches-bell-1-the-first-quantum-system-purpose-built-for-the-hpc-era",
-       "locator": "",
-       "verified": false
-      }
-     }
-    ],
-    "10": [
-     {
-      "node": "fab_cmos",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "GlobalFoundries 22FDX",
-      "evidence": {
-       "type": "vendor-architecture-page",
-       "url": "https://www.equal1.com/post/equal1-launches-bell-1-the-first-quantum-system-purpose-built-for-the-hpc-era",
-       "locator": "",
-       "verified": false
-      }
-     }
-    ]
-   },
-   "records": [],
-   "codes": [],
-   "evidence_counts": {
-    "verified": 1,
-    "total": 11
-   },
-   "refs": [
-    {
-     "url": "https://www.equal1.com/post/equal1-launches-bell-1-the-first-quantum-system-purpose-built-for-the-hpc-era",
-     "title": "Equal1 Launches Bell-1: The First Quantum System Purpose-Built for the HPC Era",
-     "kind": "press"
-    },
-    {
-     "url": "https://quantumzeitgeist.com/top-silicon-spin-quantum-computing-companies/",
-     "title": "Top Silicon Spin Quantum Computing Companies 2026: Complete Vendor Guide",
-     "kind": "press"
-    }
-   ],
-   "profile": {
-    "qubit_type": "Si gate-defined electron spin",
-    "gate_mechanism": "exchange 2Q; ESR 1Q",
-    "connectivity": "nearest neighbour",
-    "degree": "2",
-    "control": "Quantum System on Chip: qubits and control/readout electronics co-integrated on the same 22FDX die at 0.3 K with a self-contained cryocooler, no dilution refrigerator; 1,600 W total, one standard rack",
-    "control_placement": "cryo-CMOS on-die at 0.3 K",
-    "readout": "spin-to-charge + on-chip sensing",
-    "err_2q_median": "7e-3 (2Q 99.3% average, Equal1 UnityQ page; a press source gave 98.4%)",
-    "err_2q_best": "1e-3 (1Q 99.9% average, Equal1 UnityQ page)",
-    "readout_error": "",
-    "t1": "",
-    "t2": "",
-    "t_2q": "",
-    "t_meas": "",
-    "best_logical": "none. No code, no decoder",
-    "decoder": "none",
-    "realtime": "none",
-    "roadmap": "succeeded by RacQ (unveiled 14 May 2026, 'next generation evolution of our Bell-1 Server')",
-    "err_2q_median_num": 0.007,
-    "flags": [
-     "conflicting-claim"
-    ]
-   }
-  },
-  {
    "id": "equal1-racq",
-   "name": "RacQ",
+   "name": "RacQ (Bell-1)",
    "org": "Equal1",
    "org_id": "Equal1",
    "country": "Ireland",
    "family": "SPIN",
    "map_path": "spin_qd",
-   "status": "DEPLOYED (unveiled 14 May 2026; installed at ESA's Centre for Earth Observation, Frascati, reported 31 Jul 2026)",
-   "status_date": "14 May 2026 (unveiled); 31 Jul 2026 (ESA installation)",
-   "physical_qubits_num": null,
+   "status": "DEPLOYED (installed at ESA's Centre for Earth Observation, Frascati: announced by ESA on 15 Jul 2026 under the name Bell-1, reported by Equal1 on 31 Jul 2026 as RacQ — 'our old brand name of Bell-1 … Same machine'; no other customer installation on record)",
+   "status_date": "Jul 2026 (ESA installation: ESA 15 Jul, Equal1 31 Jul); launched as Bell-1 16 Mar 2025, unveiled as RacQ 14 May 2026",
+   "physical_qubits_num": 6,
    "access": "on-prem sold (ESA Centre for Earth Observation, Frascati)",
    "layers": {
     "1": [
@@ -37153,27 +36894,57 @@
    },
    "refs": [
     {
+     "url": "https://www.equal1.com/product",
+     "title": "Equal1 RacQ",
+     "kind": "product"
+    },
+    {
+     "url": "https://philab.esa.int/esas-first-quantum-computer-will-shift-computing-frontiers-in-space/",
+     "title": "ESA's first quantum computer will shift computing frontiers in space",
+     "kind": "blog"
+    },
+    {
      "url": "https://www.equal1.com/insights/equal1-racq-installed-at-esa",
      "title": "Equal1 RacQ Installed at ESA Centre for Earth Observation",
      "kind": "blog"
     },
     {
+     "url": "https://www.siliconrepublic.com/machines/equal1-bell-1-ucd-silicon-republic-quantum-computing",
+     "title": "Bell-1 by Equal1: An inside look at Ireland's first quantum computer",
+     "kind": "press"
+    },
+    {
+     "url": "https://www.esa.int/Applications/Observing_the_Earth/ESA_brings_quantum_computing_to_Earth_observation",
+     "title": "ESA brings quantum computing to Earth observation",
+     "kind": "press"
+    },
+    {
+     "url": "https://www.equal1.com/post/equal1-launches-bell-1-the-first-quantum-system-purpose-built-for-the-hpc-era",
+     "title": "Equal1 Launches Bell-1: The First Quantum System Purpose-Built for the HPC Era",
+     "kind": "press"
+    },
+    {
      "url": "https://www.equal1.com/insights/equal1-unveils-worlds-first-hybrid-rack-mounted-silicon-spin-quantum-computer",
      "title": "Equal1 Unveils World's First Hybrid Rack-Mounted Silicon-Spin Quantum Computer",
+     "kind": "press"
+    },
+    {
+     "url": "https://quantumzeitgeist.com/top-silicon-spin-quantum-computing-companies/",
+     "title": "Top Silicon Spin Quantum Computing Companies 2026: Complete Vendor Guide",
      "kind": "press"
     }
    ],
    "profile": {
     "qubit_type": "Si electron spin in quantum dots (GlobalFoundries 22FDX)",
-    "gate_mechanism": "exchange 2Q; ESR 1Q (as Bell-1; mechanism not named on Equal1's pages); average gate durations 140 ns (1Q), 200 ns (2Q)",
-    "connectivity": "",
+    "gate_mechanism": "exchange 2Q; ESR 1Q (mechanism not named on Equal1's pages); average gate durations 140 ns (1Q), 200 ns (2Q)",
+    "connectivity": "nearest neighbour (family-determined; array layout not published)",
     "degree": "",
-    "control": "UnityQ quantum system-on-chip: qubits, control electronics and error-correction logic in CMOS; multi-tile controller and cryogenic ARM cores at 300 mK; closed-cycle cryocooler at 0.3 K; 19-inch rack, 400 kg, 1,600 W single-phase; Dell PowerEdge R770 server alongside",
+    "control": "UnityQ quantum system-on-chip: qubits, control electronics and error-correction logic in CMOS; multi-tile controller and cryogenic ARM cores at 300 mK; closed-cycle cryocooler at 0.3 K, no dilution refrigerator; 19-inch rack, 400 kg (unveiling release; the product page gives 200 kg), 1,600 W single-phase; Dell PowerEdge R770 server alongside",
     "control_placement": "cryo-CMOS on-die at 0.3 K",
-    "readout": "parity readout, 99% readout fidelity (UnityQ page)",
-    "err_2q_median": "7e-3 (UnityQ page: average 2Q 99.3% by interleaved RB; product-page claim, no paper)",
+    "readout": "spin-to-charge, parity readout, 99% readout fidelity (UnityQ page; the RacQ product page lists 99.9%)",
+    "err_2q_median": "7e-3 (UnityQ page: average 2Q 99.3% by interleaved RB; product-page claim, no paper; a press survey gave 98.4%)",
     "err_2q_best": "1e-3 (1Q 99.9% average by randomised Clifford benchmarking, UnityQ page)",
-    "readout_error": "1e-2 (readout fidelity 99%, parity readout, UnityQ page)",
+    "readout_error": "1e-2 (readout fidelity 99%, parity readout, UnityQ page; the RacQ product page lists 99.9%)",
     "t1": "",
     "t2": "",
     "t_2q": "2.0e-7",
@@ -37181,10 +36952,10 @@
     "best_logical": "none",
     "decoder": "none (UnityQ integrates error-correction logic; no decoder run)",
     "realtime": "none",
-    "roadmap": "successor to Bell-1 ('the next generation evolution of our Bell-1 Server'); UnityQ 'will integrate the complete quantum system onto a single silicon package'",
+    "roadmap": "Equal1 in Jun 2025 (Silicon Republic): 17 qubits 'next year', then 49, then 2,000 — the machine ESA installed in Jul 2026 is 'a 6-qubit system'; UnityQ 'will integrate the complete quantum system onto a single silicon package' (undated)",
     "err_2q_median_num": 0.007,
     "flags": [
-     "count-unpublished",
+     "conflicting-claim",
      "vendor-claim"
     ]
    }
@@ -37530,7 +37301,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "no L9 slot on spin_qd; 3-D stacked cryo-control wiring has no node",
+      "summary": "planned 3-D stacking of qubit chips and cryogenic control electronics with short dense interconnects against the wiring bottleneck (Hitachi; Jul 2026); no device published",
       "evidence": {
        "type": "inferred",
        "url": "https://www.techtimes.com/articles/321867/20260728/hitachi-intel-18a-spin-qubit.htm",
@@ -38214,7 +37985,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "no L9 slot on the spin_qd path",
+      "summary": "on-die fan-out by the integrated cryo-CMOS (inferred from the related 384-qubit chip with integrated cryogenic CMOS control); no fan-out figure published for the delivered system",
       "evidence": {
        "type": "inferred",
        "url": "https://quantumzeitgeist.com/top-silicon-spin-quantum-computing-companies/",
@@ -39932,7 +39703,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "in-house III-V MBE heterostructure growth; no external replication of the material stack; 'sevenfold larger gap' for Pb over Al unsourced",
+      "summary": "in-house III-V MBE heterostructure growth (InAs–Al); no external replication of the material stack; the 2026 InAs–Pb stack raises the superconductor's own gap (≈1.3 meV vs 295 µeV) and the induced gap (≈570 vs 129 µeV) about fourfold, the top-quintile topological gap only about twofold (~70 vs ~30 µeV) — arXiv:2606.03884; PRB 107, 245423",
       "evidence": {
        "type": "architecture-paper-figure",
        "url": "https://www.nature.com/articles/s41586-024-08445-2",
@@ -41312,7 +41083,6 @@
   },
   "ct_cryocmos": {
    "primary": [
-    "equal1-bell-1",
     "equal1-racq",
     "hitachi-intel18a",
     "hrl-eo-18q",
@@ -41643,7 +41413,6 @@
     "diraq-equinix-sydney",
     "diraq-imec-8q",
     "dwave-dualrail-17",
-    "equal1-bell-1",
     "equal1-racq",
     "ethz-surface17",
     "fraunhofer-ehningen",
@@ -42083,7 +41852,6 @@
    "primary": [
     "diraq-equinix-sydney",
     "diraq-imec-8q",
-    "equal1-bell-1",
     "equal1-racq",
     "fujitsu-snv-prototype",
     "groove-quantum",
@@ -42111,17 +41879,13 @@
   },
   "fab_3d": {
    "primary": [
+    "dwave-dualrail-17",
     "nordquantique-gkp",
     "nordquantique-tesseract",
     "qci-seeker-8",
     "sustc-biased-erasure"
    ],
-   "alternate": [
-    "aliceandbob-boson-4",
-    "aliceandbob-graphene",
-    "aliceandbob-helium",
-    "aliceandbob-helium-2"
-   ]
+   "alternate": []
   },
   "fab_bulk": {
    "primary": [
@@ -42139,7 +41903,6 @@
    "primary": [
     "diraq-equinix-sydney",
     "diraq-imec-8q",
-    "equal1-bell-1",
     "equal1-racq",
     "groove-quantum",
     "hitachi-intel18a",
@@ -42257,7 +42020,6 @@
     "dwave-advantage",
     "dwave-advantage2",
     "dwave-advantage3-20000",
-    "dwave-dualrail-17",
     "ethz-surface17",
     "fraunhofer-ehningen",
     "fujitsu-10000q",
@@ -42329,6 +42091,7 @@
     "zju-125q"
    ],
    "alternate": [
+    "dwave-dualrail-17",
     "nordquantique-gkp",
     "nordquantique-tesseract",
     "qci-seeker-8"
@@ -42455,7 +42218,6 @@
    "primary": [
     "diraq-equinix-sydney",
     "diraq-imec-8q",
-    "equal1-bell-1",
     "equal1-racq",
     "groove-quantum",
     "hitachi-intel18a",
@@ -42639,7 +42401,6 @@
   },
   "ic_fanout": {
    "primary": [
-    "equal1-bell-1",
     "equal1-racq",
     "hitachi-intel18a",
     "intel-tunnel-falls",
@@ -42765,7 +42526,6 @@
    "primary": [
     "diraq-equinix-sydney",
     "diraq-imec-8q",
-    "equal1-bell-1",
     "equal1-racq",
     "groove-quantum",
     "hitachi-intel18a",
@@ -43000,7 +42760,6 @@
    "primary": [
     "diraq-equinix-sydney",
     "diraq-imec-8q",
-    "equal1-bell-1",
     "equal1-racq",
     "groove-quantum",
     "hitachi-intel18a",

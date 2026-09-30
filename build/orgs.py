@@ -631,7 +631,7 @@ def build(reg_dir=None):
         recs.append(dict(key=key, **d, aliases=aliases, machines=ms, raw_note=raw_note, added=o['added'],
                          families=sorted(fams, key=lambda f: (FAM_ORDER.index(f) if f in FAM_ORDER else len(FAM_ORDER), f)),
                          architectures=sorted(o['arch'], key=lambda p: (path_ix.get(p, len(path_ix)), p)),
-                         stations=[{'id': n, 'machines': c} for n, c in stations], hosts=hosts))
+                         stations=[{'id': n, 'machines': c} for n, c in technologies], hosts=hosts))   # the key keeps its old name (the card reads o['stations'])
 
     # slugs: unique, in order of (slug, name, key)
     taken, collisions = set(), []

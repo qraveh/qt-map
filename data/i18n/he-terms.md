@@ -99,3 +99,58 @@ Sentences keep the Atlas's voice: short, declarative, no marketing words, no "no
 | organisation | ארגון | |
 | author / publisher / published by | מחבר / מוציא לאור / בהוצאת | |
 | English / Russian / Hebrew (language names, native) | English / Русский / עברית | the language switch shows native names |
+| Who / Money / Market & supply chain / IP & standards / Roadmaps & track record / Strategic reading (the briefs' run-in labels of "Actors & economics") | מי / כספים / שוק ושרשרת אספקה / קניין רוחני ותקנים / מפות דרכים ועמידה בהבטחות / פרשנות אסטרטגית | bold, with the full stop inside: **פרשנות אסטרטגית.** |
+| Confirm / Demote (the briefs' next-test labels) | לאשר / להוריד בדרגה | |
+| Records timeline (the briefs' table) | ציר הזמן של השיאים | |
+| eponyms in running text (Rydberg, Josephson, Pauli, Clifford, Majorana, Bell, Cooper, Hamiltonian) | רידברג, ג'וזפסון, פאולי, קליפורד, מיורנה, בל, קופר, המילטוניאן | transliterated, as the finished briefs do; an eponym inside a Latin identifier or a product name stays Latin |
+| abstract (of a paper) | תמצית | never תקציר, which is "brief" |
+| randomized benchmarking (RB) / interleaved RB / cycle benchmarking | מדידת ביצועים אקראית / מדידת ביצועים אקראית משולבת / מדידת ביצועים מחזורית | never השוואת ביצועים |
+| decoherence | דה-קוהרנטיות | matches קוהרנטיות; never דה-קוהרנציה |
+| detuning / local detuning | היסט (מתהודה) / היסט מקומי | never ההסטה |
+| funding round "closed" | נסגר | never הושלם |
+| post-selected / heralded / heralding | בבחירה בדיעבד / מבושר / בישור | |
+| ancilla (qubit) | קיוביט עזר | |
+| break-even / sweet spot / prior art | נקודת האיזון / נקודת האופטימום / אמנות קודמת | |
+| crosstalk / whitepaper / preprint / testbed | הפרעה הדדית / מסמך טכני / טרום-פרסום / מצע ניסוי | |
+| gap ledger / the money ledger / the forecast ledger | פנקס הפערים / פנקס הכספים / פנקס התחזיות | |
+| moat (competitive) / lock-out | חפיר תחרותי / נעילת מתחרים | |
+| Tag+key (the timeline column) | תג+מפתח | |
+| roadmap status: pending / on track; deal status: undelivered / active | תלוי ועומד / לפי התוכנית; לא סופק / פעיל | |
+| gate-set / transport-set (clock) | נקבע בידי השערים / נקבע בידי ההובלה | |
+| erasure excision / erasure flag | השמטת מחיקות / דגל מחיקה | |
+| quench (of a Hamiltonian) | שינוי פתאומי (quench) | |
+| false positive / false negative | חיובי כוזב / שלילי כוזב | |
+| sequencer / demultiplexer / chiplet / interposer / bump bond | מתזמן / מפריד ריבוב / שבבון / אינטרפוזר / חיבור בליטות | |
+| matrix-product state / bond dimension / Mach–Zehnder / PNR (number-resolving) detector | מצב מכפלת מטריצות / ממד הקשר / מאך–צנדר / גלאי המבחין במספר הפוטונים | |
+| further eponyms | ראבי (Rabi), ראמאן (Raman), ראמזי (Ramsey), זימן (Zeeman), דופלר (Doppler), שטארק (Stark), פרסטר (Förster), ואן דר ואלס (van der Waals), מולמר–סורנסן (Mølmer–Sørensen), הייזנברג (Heisenberg), איזינג (Ising), טאנר (Tanner), רנט (Rent), ג'ונסון (Johnson) | people cited as authors stay in Latin (Loss–DiVincenzo, Cirac/Zoller as names; the gate שער סירק–צולר) |
+| Best case 2029: / Best case by 2029: / Worst case: (Outlook labels) | התרחיש הטוב ביותר ל-2029: / התרחיש הטוב ביותר עד 2029: / התרחיש הגרוע ביותר: | |
+| Confirm/demote in 12–24 months: | לאשר/להוריד בדרגה בתוך 12–24 חודשים: | verbs; no spaces around the slash |
+| Open: / Open questions: / Verification: / Attributes: / Register: (run-in labels) | פתוח: / שאלות פתוחות: / אימות: / תכונות: / המרשם: | |
+| What exactly they do with this technology (Who-table column) | מה בדיוק הם עושים בטכנולוגיה זו | |
+| Who roles: developer / research / supplier / user / investor / funder / regulator / evaluator | מפתח / מחקר / ספק / משתמש / משקיע / מממן / רגולטור / מעריך | DARPA = מממן |
+| (X group) | (הקבוצה של X) | |
+| captive / merchant (fab, foundry, supplier) | פנימי / מסחרי | never שבוי, never בבעלות הלקוח |
+| G1–G7 (goal names in the briefs) | סימולציה אנלוגית · תועלת עם מיתון שגיאות · עמידות מוקדמת לתקלות · עמידות לתקלות בקנה מידה גדול · אופטימיזציה · רישות · מערכות הניתנות לפריסה | |
+| derived clock (sum of the syndrome round) / readout-set | שעון נגזר / נקבע בידי הקריאה | |
+| dominant term / floor / ceiling / wall | האיבר השולט / רצפה / תקרה / חומה | "moves the floor" = מזיז את הרצפה |
+| fault tolerance / fault-tolerant / threshold / logical error rate / overhead / footprint / throughput | עמידות לתקלות / עמיד לתקלות / סף / שיעור שגיאה לוגית / תקורה / טביעת רגל / תפוקה | |
+| yield (fabrication) / efficiency (a measured ratio) | שיעור תקינות / נצילות | יעילות only in the economic sense |
+| wafer / die / chip / package / packaging / flip-chip | פרוסה / פיסה / שבב / מארז / אריזה / שבב הפוך | |
+| coupler / tunable coupler / resonator / junction | מצמד / מצמד בר-כוונון / מהוד / צומת | צומת ג'וזפסון |
+| two-level systems (TLS) | מערכות דו-רמתיות | |
+| shuttling / conveyor / zone / latency / feed-forward / real-time | הסעה / מסוע / אזור / השהיה / הזנה קדימה / בזמן אמת | |
+| magic state / distillation / cultivation / code switching / lattice surgery / yoked | מצב קסם / זיקוק / טיפוח / החלפת קוד / ניתוח סריג / רתום | |
+| stabilizer / repetition code / dephasing / bit-flip / phase-flip / bias-preserving | מייצב / קוד חזרה / דה-פאזה / היפוך ביט / היפוך פאזה / משמר-הטיה | |
+| loss (photons, atoms) / loss (dB: insertion, coupling) | אובדן / הפסד | |
+| hyperfine / metastable / clock state / tweezer / reloading | על-דק / מטא-יציב / מצב שעון / פינצטה / טעינה מחדש | |
+| fusion / resource state / cluster state / time-bin / squeezing / homodyne detection | היתוך / מצב משאב / מצב אשכול / תא זמן / סחיטה / גילוי הומודיני | |
+| multiplexing / demultiplexing / fan-out | ריבוב / פירוק ריבוב / פיצול | |
+| transducer / remote entanglement / Purcell filter / quantum-limited amplifier | מתמר / שזירה מרוחקת / מסנן פרסל / מגבר בגבול הקוונטי | |
+| loss-aware / erasure-aware decoding | פענוח מודע-אובדן / פענוח מודע-למחיקות | |
+| coherent quench (annealer) | חישול חטוף קוהרנטי | a quench of a Hamiltonian elsewhere = שינוי פתאומי (quench) |
+| IPO / Series B extension / non-binding / gross / cumulative / lead (investor) | הנפקה ראשונה לציבור / הרחבת סבב B / לא מחייב / ברוטו / במצטבר / בהובלת X | |
+| undisclosed (Money lines) / missed (roadmap outcome) / delivered / met / unmet / pending | לא פורסם / הוחמץ / סופק / הושג / לא הושג / תלוי ועומד | |
+| export control / patent family / standards body | פיקוח על יצוא / משפחת פטנטים / גוף תקינה | |
+| trade press / press release / peer-reviewed / company-reported | העיתונות המקצועית / הודעה לעיתונות / שעבר ביקורת עמיתים / מדווח בידי הספק | |
+| independent replication / headline figure / single-shot | שחזור בלתי תלוי / נתון הכותרת / בהרצה יחידה | |
+| microsecond / nanosecond (in words) | מיקרו-שנייה / ננו-שנייה | the unit symbols µs / ns stay |

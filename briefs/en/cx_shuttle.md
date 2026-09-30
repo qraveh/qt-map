@@ -6,7 +6,7 @@ status: emerging
 since: 2025
 one_line: "Coherent transport of a spin qubit along a gate-defined conveyor, buying distance and layout sparsity with a dephasing budget rather than with wiring."
 verdict: "Transport is no longer the limiting error in a shuttling circuit; the static exchange gates are. Demote if no 300 mm foundry conveyor link reaches 99% per 10 µm by end-2027."
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -35,7 +35,7 @@ The dominant error term is counter-intuitive: in the five-qubit parity device th
 
 ## Manufacturing, materials & supply chain
 
-Three overlapping gate layers at ~180 nm pitch over an enriched ²⁸Si/SiGe well, 7 nm thick at Delft [D][196] — nominally 300 mm-compatible, and the node's hard dependency is exactly that: uniform conveyor gates on a CMOS line. Dots need only resemble each other; a bus must be uniform along its whole length, because one pinning defect breaks the channel and a conveyor carries no redundancy. No yield or uniformity statistic has been published for conveyors, conspicuous beside Intel's 24,000-plus spin devices per wafer at 96% tune-up yield [D][189]. Supply: enriched ²⁸Si from a handful of isotope separators, the single point of failure the silicon-spin architecture already shares, and SiGe epitaxy and overlay at imec, Intel, GlobalFoundries and STMicroelectronics. Cost per bus is not quotable; no ECCN mapping of the quantum dual-use regime is asserted here.
+Three overlapping gate layers at ~180 nm pitch over an enriched ²⁸Si/SiGe well, 7 nm thick at Delft [D][196] — nominally 300 mm-compatible, and the node's hard dependency is exactly that: uniform conveyor gates on a CMOS line. Dots need only resemble each other; a bus must be uniform along its whole length, because one pinning defect breaks the channel and a conveyor carries no redundancy. No yield or uniformity statistic has been published for conveyors, conspicuous beside Intel's 24,000-plus spin devices per wafer [D][199] and 96% tune-up yield on 232 devices of one wafer [D][766]. Supply: enriched ²⁸Si from a handful of isotope separators, the single point of failure the silicon-spin architecture already shares, and SiGe epitaxy and overlay at imec, Intel, GlobalFoundries and STMicroelectronics. Cost per bus is not quotable; no ECCN mapping of the quantum dual-use regime is asserted here.
 
 ## Control, readout & I/O burden
 
@@ -70,7 +70,7 @@ The silicon figure comes from interleaved randomised benchmarking of a shuttle "
 - 2026-05-07 · Quantum Motion · Series C · $160 M · DCVC, Kembara · closed [C][355][G:QM-160M-2026-05]
 - 2026-05-21 · Diraq · CHIPS letter of intent · up to $38 M · US Commerce · LOI [G][300][G:CHIPS-LOI-2026-05]
 - 2026-06-03 · Quobly · Series A · €115 M · Bpifrance, SEALSQ, STMicroelectronics · closed [C][350][G:QUOBLY-115M-2026-06]
-- 2026-07-23 · IBM · acquisition of HRL Laboratories · undisclosed · close targeted end Q3 2026 · announced [G][10][G:IBM-HRL-2026-07]
+- 2026-07-23 · IBM · acquisition of HRL Laboratories · undisclosed · announced; closed 2026-08-26 [G][10][G:IBM-HRL-2026-07][G:IBM-HRL-CLOSED-2026-08]
 
 None of these is financing for shuttling as such: it is a feature funded inside spin-qubit companies, not a fundable line item, with ARQUE the sole exception — and its funding undisclosed.
 
@@ -95,6 +95,7 @@ Open questions. (1) Is benchmarking of a shuttle a meaningful fidelity, or an ar
 [190] Members of the HRL Quantum Team and Collaborators, “A digitally controlled silicon quantum processing unit,” [arXiv:2604.16216](https://arxiv.org/abs/2604.16216), Apr. 2026. [D]
 [193] Y. Matsumoto *et al.*, “Two-qubit logic and teleportation with mobile spin qubits in silicon,” *Nature*, vol. 653, no. 8114, pp. 391–397, May 2026, doi: [10.1038/s41586-026-10423-9](https://doi.org/10.1038/s41586-026-10423-9). [D]
 [196] M. De Smet *et al.*, “High-fidelity single-spin shuttling in silicon,” *Nat. Nanotechnol.*, vol. 20, no. 7, pp. 866–872, Jun. 2025, doi: [10.1038/s41565-025-01920-5](https://doi.org/10.1038/s41565-025-01920-5). [D]
+[199] H. C. George *et al.*, “12-spin-qubit arrays fabricated on a 300 mm semiconductor manufacturing line,” *Nano Lett.*, vol. 25, no. 2, pp. 793–799, Dec. 2024, doi: [10.1021/acs.nanolett.4c05205](https://doi.org/10.1021/acs.nanolett.4c05205). [arXiv:2410.16583](https://arxiv.org/abs/2410.16583). [D]
 [300] National Institute of Standards and Technology, “Department of Commerce Announces Letters of Intent With 9 Companies for $2 Billion to Accelerate U.S. Leadership in Quantum Computing,” NIST News, May 21, 2026. [Online]. Available: https://www.nist.gov/news-events/news/2026/05/department-commerce-announces-letters-intent-9-companies-2-billion [G]
 [349] B. Undseth *et al.*, “Weight-four parity checks in a spin-shuttling architecture,” *Nature*, vol. 655, no. 8125, pp. 1160–1166, Jul. 2026, doi: [10.1038/s41586-026-10766-3](https://doi.org/10.1038/s41586-026-10766-3). [D]
 [350] Quobly, “Quobly secures €115 million Series A to bring silicon-based quantum computers to market,” Jun. 3, 2026. [Online]. Available: https://www.quobly.io/press-releases/quobly-secures-e115-million-series-a-to-bring-silicon-based-quantum-computers-to-market [C]
@@ -105,6 +106,7 @@ Open questions. (1) Is benchmarking of a shuttle a meaningful fidelity, or an ar
 [513] D. Q. L. Nguyen, M. Rimbach-Russ, and S. Bosco, “Suppressing spin qubit decoherence during shuttling via confinement modulation,” [arXiv:2605.00611](https://arxiv.org/abs/2605.00611), May 2026. [S]
 [514] B. Yenilen, A. Sala, H. Bluhm, M. Müller, and M. Rispler, “Performance of the spin qubit shuttling architecture for a surface code implementation,” [arXiv:2503.10601](https://arxiv.org/abs/2503.10601), Mar. 2025. [S]
 [515] Forschungszentrum Jülich, “Jülich-Aachen Start-up Paves the Way for Scalable Quantum Computers,” fz-juelich.de, Apr. 8, 2026. [Online]. Available: https://www.fz-juelich.de/en/news/archive/press-release/2026/julich-aachen-start-up-arque-systems [C]
+[766] S. F. Neyens *et al.*, “Probing single electrons across 300-mm spin qubit wafers,” *Nature*, vol. 629, no. 8010, pp. 80–85, May 2024, doi: [10.1038/s41586-024-07275-6](https://doi.org/10.1038/s41586-024-07275-6). [D]
 
 ## Open verification items
 

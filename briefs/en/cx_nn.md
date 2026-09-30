@@ -6,7 +6,7 @@ status: demonstrated
 since: 2014
 one_line: A coupling graph fixed at mask level in which each qubit interacts only with lithographic neighbours; the default topology under every fielded superconducting and spin processor.
 verdict: Not a design choice but the residue of planar lithography. It caps codes at the surface/colour family by geometry, and every announced escape from it is roadmap, not hardware.
-updated: 2026-09-04
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -29,7 +29,7 @@ Best demonstrated is an isolated pair: IQM's flux-tunable-coupler CZ at 99.93% o
 | 2026-04 | Twelve chiplets tiled into 108 q, median 2Q 99.1% (99.5% at 36 q) | Rigetti | [C][36] |
 
 ## Manufacturing, materials & supply chain
-Superconducting lattices are Nb/Al junction films patterned by DUV or e-beam; EUV is not required and no fielded transmon lattice uses it — IBM runs 300 mm at Albany, Google in-house. Spin dot arrays are foundry-native and EUV-dependent: Intel 300 mm, >24,000 devices per wafer at 96% tune-up yield [D][199]; GlobalFoundries 22FDX for Quantum Motion; STMicroelectronics FD-SOI for Quobly [C][G:QUOBLY-115M-2026-06]. Uniformity, not peak fidelity, limits that branch: imec's eight-qubit device had a validated two-qubit gate on one of four pairs [D][197]. Export exposure attaches to the machine, not the topology (ECCN 4A906, 3A904, 3A901.a) [G][301].
+Superconducting lattices are Nb/Al junction films patterned by DUV or e-beam; EUV is not required and no fielded transmon lattice uses it — IBM runs 300 mm at Albany, Google in-house. Spin dot arrays are foundry-native and EUV-dependent: Intel 300 mm, >24,000 devices per wafer [D][199] and 96% tune-up yield on 232 devices of one wafer [D][766]; GlobalFoundries 22FDX for Quantum Motion; STMicroelectronics FD-SOI for Quobly [C][G:QUOBLY-115M-2026-06]. Uniformity, not peak fidelity, limits that branch: imec's eight-qubit device had a validated two-qubit gate on one of four pairs [D][197]. Export exposure attaches to the machine, not the topology (ECCN 4A906, 3A904, 3A901.a) [G][301].
 
 ## Control, readout & I/O burden
 The lattice buys no wiring saving. Nighthawk carries 218 tunable couplers for 120 qubits: the coupler count — roughly 1.8 flux lines per qubit above drive and readout — sets the harness [C][49]. At 10³ the harness is buildable; at 10⁴ it binds on cryostat area and heat load, which IBM's 0.53 m² wiring area and 2.75 m³ vacuum volume per modular cell are sized against [C][50]; at 10⁶ nothing at room temperature closes. Both mitigations sit far below lattice scale: SEEQC's millikelvin SFQ control flip-chip-integrated with qubits, 1Q up to 99.9% [D][304], and HRL's 4-K cryo-CMOS sequencer running 18 qubits with no room-temperature real-time electronics [D][190].
@@ -58,7 +58,7 @@ Crosstalk and coupler figures come from randomised or cross-entropy benchmarking
 
 **Market & supply chain.** Transmon lattices consume DUV/e-beam tooling, flip-chip bonders, TWPA amplifiers and control racks; spin lattices consume ASML EUV inside Intel, GlobalFoundries and STMicroelectronics — a single point of failure the superconducting branch does not share. G1–G3 pay for the lattice; G4 is the goal it cannot reach unaided.
 
-**IP & standards.** The IP is coupler-level: IBM US 11,727,297 B2 (granted 2023-08-15) claims an opposite-sign second coupling path cancelling coherent error [P][G:IBM-TCOUPLER-PATENT-2023]. Aggregate quantum families to 2026-06-30: IBM 4,388, Google 2,385 [P][312]. No topology standard exists.
+**IP & standards.** The IP is coupler-level: IBM US 11,727,297 B2 (granted 2023-08-15) claims an opposite-sign second coupling path cancelling coherent error [P][G:IBM-TCOUPLER-PATENT-2023]. Aggregate quantum families in PatSnap's landscape published on 2026-06-30: IBM 4,388, Google 2,385 [P][312]. No topology standard exists.
 
 **Roadmaps & track record.** IBM Nighthawk (promised 2025-06-10, for 2025, delivered 2025-12) [C][G:IBM-ROADMAP]; Kookaburra, the first step off pure nearest-neighbour connectivity (promised 2022-05-10 for 2025, redefined for 2026, undelivered as of 2026-09-04) [R][G:IBM-ROADMAP-2022]; Rigetti median 99.5% at 108 q (promised for end-2025, slipped to "later 2026", unmet) [R][G:RIGETTI-FIN-2026]. IBM ships the base lattice on time and misses every date beyond it.
 
@@ -84,6 +84,7 @@ Confirm or demote within 12–24 months: does Kookaburra ship a qLDPC memory on 
 [304] C. Jordan *et al.*, “A quantum computer controlled by superconducting digital electronics at millikelvin temperature,” *Nat. Electron.*, vol. 9, no. 3, pp. 287–294, Mar. 2026, doi: [10.1038/s41928-026-01576-6](https://doi.org/10.1038/s41928-026-01576-6). [D]
 [312] PatSnap, “Quantum Computing Patent Landscape 2026,” Jun. 30, 2026. [Online]. Available: https://www.patsnap.com/resources/blog/rd-blog/quantum-computing-patent-landscape/ [P]
 [476] C. Chamberland, G. Zhu, T. J. Yoder, J. B. Hertzberg, and A. W. Cross, “Topological and subsystem codes on low-degree graphs with flag qubits,” [arXiv:1907.09528](https://arxiv.org/abs/1907.09528), Jul. 2019. [S]
+[766] S. F. Neyens *et al.*, “Probing single electrons across 300-mm spin qubit wafers,” *Nature*, vol. 629, no. 8010, pp. 80–85, May 2024, doi: [10.1038/s41586-024-07275-6](https://doi.org/10.1038/s41586-024-07275-6). [D]
 
 ## Open verification items
 The title, authors and journal reference of arXiv:1907.09528 could not be retrieved from its abstract page; only the abstract text (heavy-hexagon / heavy-square construction, flag qubits, "several orders of magnitude" collision reduction) is quoted here. The 5.5×10⁻⁴ CZ-crosstalk figure is a component of Google's fitted device error budget, not an independently reported measurement. No full-lattice, simultaneously-gated crosstalk value exists for any vendor. The 40-basis-point median two-qubit drop across Rigetti's 36→108-qubit tiling is unattributed in both company releases. The PatSnap counts cited are secondary and are not independently confirmed against the database.

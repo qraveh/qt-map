@@ -5,8 +5,8 @@ layer: "7 Code"
 status: emerging
 since: 2025
 one_line: Sparse high-rate stabiliser codes on a degree-6 torus that cut physical-per-logical overhead roughly tenfold against the surface code.
-verdict: Real overhead win, proven only at distance 3–4 on 18–32 qubits; without a delivered long-range-coupled module by end-2027 it stays a paper advantage.
-updated: 2026-09-03
+verdict: Real overhead win, proven only at distance 3–5 on 32–40 physical qubits; without a delivered long-range-coupled module by end-2027 it stays a paper advantage.
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes.
@@ -25,7 +25,7 @@ Two structural penalties are real. Distance is not free: distance 12 in 288 qubi
 
 ## Engineering state of the art
 
-Best demonstrated as of 3 Sep 2026: 4 logical qubits in 18 trapped ions at break-even (IonQ, June 2026) [D][109]. Typical at scale: nothing — no BB code has run on more than 32 physical qubits, and none has hosted a logical two-qubit gate.
+Best demonstrated as of 3 Sep 2026: IonQ's eight codes on one 40-ion chain (June 2026, revised 14 Sep 2026) — break-even within error bars in one code the paper does not identify, 3.95 ± 0.68 s against 3.84 ± 0.48 s physical; the best bivariate-bicycle lifetime in its Table II is [[24,4,4]]'s 3.39 ± 0.47 s, and [[18,4,3]], 4 logical qubits in 18 data ions, reaches 2.48 ± 0.40 s [D][109]. Typical at scale: nothing — no BB code has run on more than 40 physical qubits (IonQ's [[30,4,5]], ancillas included), and none has hosted a logical two-qubit gate.
 
 **Records timeline**
 
@@ -35,7 +35,7 @@ Best demonstrated as of 3 Sep 2026: 4 logical qubits in 18 trapped ions at break
 | 2025-05 | First BB code on hardware: [[18,4,4]] on 32 transmons, 8.91 ± 0.17% per logical qubit per cycle — above physical error | Zhejiang University | [D][74] |
 | 2025-06 | Modular architecture: 288-qubit module + 90-qubit logical processing unit, 5,000 physical → 121 logical at p = 10⁻³ | IBM | [S][496] |
 | 2025-10 | Gross-code decoding on FPGA: 24 ns belief-propagation iteration, under 1 µs mean per cycle at p < 3×10⁻³ | IBM | [S][48] |
-| 2026-06 / 2026-09 | First qLDPC break-even, within error bars: 3.95 ± 0.68 s in one code vs 3.84 ± 0.48 s physical (revised from 3.3 ± 0.9 s in the version of 15 Sep 2026; leakage post-selected), 9× better logical error than the transmon run | IonQ | [D][109] |
+| 2026-06 / 2026-09 | First qLDPC break-even, within error bars: 3.95 ± 0.68 s in one code vs 3.84 ± 0.48 s physical (3.3 ± 0.9 s in the June version, revised in the arXiv version of 14 Sep 2026; leakage post-selected), 9× better logical error than the transmon run | IonQ | [D][109] |
 
 Dominant error term: on the ion run, post-selected leakage and loss; on the transmon run, two-qubit error over a depth-7 round on couplers up to 6.5 mm [D][74], [109].
 
@@ -53,7 +53,7 @@ Architectures: primary code on three — trapped ions in a linear Paul trap with
 
 ## Evidence — how the numbers were measured
 
-Break-even here is a memory comparison: logical lifetime against the best physical qubit on the same device, over repeated syndrome rounds and a destructive final readout. IonQ's 3.95 ± 0.68 s versus 3.84 ± 0.48 s (the physical baseline, 3·T₂*, revised from 3.3 ± 0.9 s in the version of 15 Sep 2026) overlaps within one standard deviation, and is stated with leakage post-selection [D][109] — defensible for a memory claim, but it removes exactly the error class a sparse code handles worst, and the acceptance rate is not in the abstract. The protocol also misses what a code is for: no BB demonstration anywhere reports a logical two-qubit gate, so the overhead advantage is verified only for storage. Value conflict: the main report lists a Harvard/QuEra [[16,6,4]] run beside IonQ's; that is a high-rate block code, not a bivariate bicycle code, and no primary source was found — treat IonQ and Zhejiang as the only BB hardware results. IBM's July-2026 "70 logical qubits, 468 T gates" is an error-*detecting* spacetime code and does not belong here [D][46].
+Break-even here is a memory comparison: logical lifetime against the best physical qubit on the same device, over repeated syndrome rounds and a destructive final readout. IonQ's 3.95 ± 0.68 s versus 3.84 ± 0.48 s (the physical baseline, 3·T₂*: 3.3 ± 0.9 s in the June version, revised in the arXiv version of 14 Sep 2026) overlaps within one standard deviation, and is stated with leakage post-selection [D][109] — defensible for a memory claim, but it removes exactly the error class a sparse code handles worst, and the acceptance rate is not in the abstract. The protocol also misses what a code is for: no BB demonstration anywhere reports a logical two-qubit gate, so the overhead advantage is verified only for storage. Value conflict: the main report lists a Harvard/QuEra [[16,6,4]] run beside IonQ's; that is a high-rate block code, not a bivariate bicycle code, and no primary source was found — treat IonQ and Zhejiang as the only BB hardware results. IBM's July-2026 "70 logical qubits, 468 T gates" is an error-*detecting* spacetime code and does not belong here [D][46].
 
 ## Actors & economics
 
@@ -62,7 +62,7 @@ Break-even here is a memory comparison: logical lifetime against the best physic
 | Organisation | Role | Country | What they do with it | Evidence |
 |---|---|---|---|---|
 | IBM | developer | US | Invented the gross code; Loon connectivity chip, Kookaburra module, Relay-BP decoder | [D][248][S][48], [496] |
-| IonQ (Oxford Ionics) | developer | US/UK | Only break-even qLDPC hardware result, 4 logical in 18 ions | [D][109] |
+| IonQ | developer | US | Only qLDPC break-even claim on hardware — within error bars, in one code the paper does not identify; its [[18,4,3]] (4 logical in 18 ions) stays below the physical lifetime | [D][109] |
 | Zhejiang University | research | CN | First BB code on hardware, 32-qubit Kunlun processor | [D][74] |
 | Photonic Inc. | developer | CA | SHYPS qLDPC family, "up to 20x fewer physical qubits" | [C][670][P][671] |
 | IQM | developer | FI | Resonator hubs; qLDPC demonstrators promised 2027-28 | [C][487] |
@@ -117,7 +117,7 @@ Open questions: (1) what two-qubit fidelity does a millimetre-scale coupler cost
 
 ## Open verification items
 
-- IonQ break-even paper: exact code notation, round count, post-selection acceptance rate and per-round logical error are not in the abstract; the graph record's 3.95 ± 0.68 s / 3.84 ± 0.48 s pair follows the abstract of the version of 15 Sep 2026, whose Table II lists no code at 3.95 s (best overall lifetime there: BB[[24,4,4]] 3.39 ± 0.47 s).
+- IonQ break-even paper: exact code notation, round count, post-selection acceptance rate and per-round logical error are not in the abstract; the graph record's 3.95 ± 0.68 s / 3.84 ± 0.48 s pair follows the introduction of the arXiv version of 14 Sep 2026, whose Table II lists no code at 3.95 s (best overall lifetime there: BB[[24,4,4]] 3.39 ± 0.47 s).
 - Harvard/QuEra [[16,6,4]] run cited by the main report: no primary source found, and that code is not a bivariate bicycle code. Conflict flagged.
 - Photonic Inc. "up to 20× fewer physical qubits" is a company claim with no stated logical error rate; the Nature Communications DOI and numbers were not retrievable within budget.
 - Tour de gross module numbers (288 q + 90-q logical processing unit; 5,000 → 121 logical) are not verified against the preprint.

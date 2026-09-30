@@ -6,7 +6,7 @@ status: demonstrated
 since: 2024
 one_line: Currents in a microfabricated trap chip entangle ions through microwave field gradients, with no laser and no ground-state cooling.
 verdict: Holds the highest two-qubit fidelity measured on any modality (8.4×10⁻⁵ error) but only on chips of ≤10 qubits; demote if no ≥50-qubit device publishes gate time, heating and crosstalk by end-2027.
-updated: 2026-09-03
+updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -102,7 +102,7 @@ The headline 8.4(7)×10⁻⁵ comes from subspace-leakage randomized benchmarkin
 
 ## Outlook & open questions
 
-Confirm-or-demote milestones for 12–24 months: a device above ~30 electronic-gate qubits with published two-qubit fidelity, gate time and crosstalk (absent by end-2027, demote); IonQ's 256-qubit system commissioned in H1 2027 near 99.99%; any independent replication above 99.9%; a 2D trap running electronic gates with published heating rates. Best case by 2029: chip-trap machines of a few thousand ions, laser hardware reduced to cooling and readout, fidelity near 10⁻⁴, error correction limited by transport rather than gates. Worst case: fidelity degrades by an order of magnitude once hundreds of microwave channels share a die, and the platform reverts to laser gates for addressing.
+Confirm-or-demote milestones for 12–24 months: a device above ~30 electronic-gate qubits with published two-qubit fidelity, gate time and crosstalk (absent by end-2027, demote); IonQ's 256-qubit system commissioned in H1 2027 near 99.99%; any independent replication above 99.9%; a 2D trap running electronic gates with published heating rates. Best case by 2029: chip-trap machines of a few thousand ions, laser hardware reduced to cooling and readout, gate error near 10⁻⁴, error correction limited by transport rather than gates. Worst case: fidelity degrades by an order of magnitude once hundreds of microwave channels share a die, and the platform reverts to laser gates for addressing.
 
 Open questions: does the microwave gradient survive dense 2D routing without unacceptable crosstalk and dissipation? How much of the residual 8.4×10⁻⁵ is coherent, and what does that do to Λ? Does SkyWater's process yield trap chips at volume, or was the acquisition supply security rather than capability?
 
