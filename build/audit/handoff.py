@@ -1,21 +1,26 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""One-command hand-off of the current HEAD from the cloud clone to the local Code session (rev 2, 2 Oct 2026, ticket
-20261001-1): the bundle, its clean-room proof, the ACCEPTANCE block of the note, and the machine-readable manifest
-`<ticket>.json` that the code-side skill qt-atlas-code accepts (00_admin/skills/qt-atlas-code/references/manifest.md).
+"""One-command hand-off of the current HEAD from the cloud clone to the local Code session (rev 3, 2 Oct 2026, tickets
+20261001-1 and 20261002-1): the bundle, its clean-room proof, the ACCEPTANCE block of the note, and the machine-readable
+manifest `<ticket>.json` that the code-side skill qt-atlas-code accepts (00_admin/skills/qt-atlas-code/references/manifest.md).
 
     python3 build/audit/handoff.py --ticket 20261002-1 --out <dir> [--note handoffs/HANDOFF_<date>_<slug>.md] [--rev N]
-        [--class data,text,...] [--steps verify,fetch,checks,push] [--needs-word push] [--no-cleanroom] [--no-zip]
+        [--full] [--class data,text,...] [--steps verify,fetch,checks,push] [--needs-word push] [--no-cleanroom] [--no-zip]
 
 What it does:
-  1. refuses a dirty working tree or a HEAD on main (the cloud works on a branch that is a child of main);
-  2. `git bundle create <out>/qt-map-<sha7>.bundle <branch> main --tags`, `git bundle verify`, sha256; over 19 MB the
-     bundle is also written in parts of 19 MB (`.00`, `.01`, …) for the device bridge, reassembled on the device by
-     concatenation and verified there;
-  3. clean room: a clone of the bundle at the branch, `build/build.py`, every file of dist/ equal to the working tree's
-     byte for byte and the tree clean after the build; the site zip made there (build/site_zip.py, Info-ZIP) when present;
-  4. the manifest: HEAD and refs as full shas, the build's last lines, every language's page sha256 from dist/manifest.json,
-     `change_class` from `git diff --name-only main...HEAD` (data / text / generator / ui / infra / edition), `dist.changed`,
+  1. refuses a dirty working tree, a HEAD on main, or a branch that is not a child of main;
+  2. the bundle, **incremental** by default (the editor's word of 2 Oct 2026): `git bundle create <out>/qt-map-<sha7>.bundle
+     main..<branch>` plus any tag on the branch beyond main — only the new commits, tens of kilobytes instead of the 31 MB
+     of the full history, so no parts and no inbox; its one prerequisite is main's commit, which the local clone holds.
+     `--full` writes the old full-history bundle (`<branch> main --tags`) for a fresh clone; over 19 MB that one is also
+     written in parts of 19 MB (`.00`, `.01`, …) for the device bridge's 20 MB cap, reassembled by concatenation;
+  3. the clean room rehearses the local side's acceptance: a clone of this repository at main only, `git bundle verify`
+     there (the prerequisite is present), `git fetch <bundle> <branch>`, the fetched head must be HEAD; then `build/build.py`,
+     every file of dist/ equal to the working tree's byte for byte, the tree clean after the build; the site zip made there
+     (build/site_zip.py, Info-ZIP) when present;
+  4. the manifest: HEAD and refs as full shas, the bundle's kind, refs and prerequisites, the build's last lines, every
+     language's page sha256 from dist/manifest.json, `change_class` from `git diff --name-only main...HEAD` (data / text /
+     generator / ui / infra / edition — `ui` only when a page byte moved), `dist.changed` and `dist.pages_changed`,
      `removed_ids` (record pages deleted since main), the checks the classes call for (SKILL §4), the steps and which of
      them need the editor's word;
   5. prints the ACCEPTANCE block for the note and writes <out>/<ticket>.json.
@@ -87,14 +92,17 @@ def main():
     head = git('rev-parse', 'HEAD'); short = head[:7]; subj = git('log', '-1', '--format=%s'); branch = git('rev-parse', '--abbrev-ref', 'HEAD')
     if branch == 'main': raise SystemExit('HEAD is on main — the cloud hands over a branch that is a child of main')
     main_sha = git('rev-parse', 'main')
-    tags = {t: git('rev-parse', t + '^{}') for t in git('tag', '-l').split()}
+    tags = {t: git('rev-parse', t + '^{}') for t in git('tag', '-l').split()}   # every tag with the commit it points at (the edition tag among them)
     if git('merge-base', 'main', 'HEAD') != main_sha: raise SystemExit('the branch is not a child of main — fetch and rebase first')
-    # 2. the bundle
+    # 2. the bundle — incremental (main..branch + the branch's own tags) unless --full
+    full = '--full' in a
     os.makedirs(out, exist_ok=True); bundle = os.path.join(out, 'qt-map-%s.bundle' % short)
     if os.path.exists(bundle): os.remove(bundle)
-    git('bundle', 'create', bundle, branch, 'main', '--tags')
-    v = subprocess.run(['git', 'bundle', 'verify', bundle], cwd=ROOT, capture_output=True, text=True)
-    if 'complete history' not in (v.stdout + v.stderr): raise SystemExit('bundle verify failed: ' + v.stderr)
+    new_tags = [t for t in git('tag', '--merged', branch).split() if t not in git('tag', '--merged', 'main').split()]
+    if full: git('bundle', 'create', bundle, branch, 'main', '--tags'); brefs = [branch, 'main'] + sorted(tags); prereq = []
+    else: git('bundle', 'create', bundle, 'main..' + branch, *new_tags); brefs = [branch] + new_tags; prereq = [main_sha]
+    v = subprocess.run(['git', 'bundle', 'verify', bundle], cwd=ROOT, capture_output=True, text=True)   # here main is present: the prerequisite resolves
+    if v.returncode: raise SystemExit('bundle verify failed: ' + v.stderr)
     bsha = sha(bundle); bsize = os.path.getsize(bundle); parts = []
     if bsize > PART:
         with open(bundle, 'rb') as f:
@@ -107,7 +115,11 @@ def main():
     says, zsha, nzip = [], None, None
     if '--no-cleanroom' not in a:
         tmp = tempfile.mkdtemp(prefix='cleanroom-')
-        git('clone', '-q', bundle, tmp, '-b', branch, cwd=ROOT)
+        git('clone', '-q', '--no-local', ROOT, tmp, '-b', 'main', cwd=ROOT)      # the local side's situation: a clone that holds main
+        vv = subprocess.run(['git', 'bundle', 'verify', bundle], cwd=tmp, capture_output=True, text=True)
+        if vv.returncode: raise SystemExit('clean room: bundle verify against a clone at main failed: ' + vv.stderr)
+        git('fetch', '-q', bundle, '%s:%s' % (branch, branch), cwd=tmp); git('checkout', '-q', branch, cwd=tmp)
+        if git('rev-parse', 'HEAD', cwd=tmp) != head: raise SystemExit('clean room: the bundle delivered %s, not HEAD %s' % (git('rev-parse', 'HEAD', cwd=tmp), head))
         b = subprocess.run([sys.executable, 'build/build.py'], cwd=tmp, capture_output=True, text=True, timeout=900)
         if b.returncode: raise SystemExit('clean-room build failed: ' + b.stderr[-800:])
         says = [l for l in b.stdout.splitlines() if l.startswith(('built ', 'zenodo cites:', 'CHANGELOG.md written'))]
@@ -139,6 +151,7 @@ def main():
     steps = (opt('--steps', 'verify,fetch,checks,push')).split(','); needs = (opt('--needs-word', 'push')).split(',')
     m = {'ticket': ticket, 'rev': rev, 'note': note,
          'bundle': {'path': DEV_DOWNLOADS + '\\' + os.path.basename(bundle), 'sha256': bsha, 'bytes': bsize,
+                    'kind': 'full' if full else 'incremental', 'refs': brefs, 'prerequisites': prereq,
                     'parts': parts, 'alt_paths': [DEV_INBOX + '\\' + os.path.basename(bundle)]},
          'head': {'sha': head, 'subject': subj, 'branch': branch},
          'refs': {'main': main_sha, 'tags': tags},
@@ -154,7 +167,8 @@ def main():
     # 5. the ACCEPTANCE block
     tagline = ', '.join('tag %s -> %s%s' % (t, s[:7], ' (= main)' if s == main_sha else '') for t, s in tags.items()) or 'no tags'
     acc = ['```', 'ACCEPTANCE',
-           '  bundle          %s   (%s bytes%s)' % (m['bundle']['path'], '{:,}'.format(bsize), '; parts ' + ' '.join(parts) if parts else ''),
+           '  bundle          %s   (%s, %s bytes%s)' % (m['bundle']['path'], 'full history' if full else 'incremental: main..%s, prerequisite main %s' % (branch, main_sha[:7]),
+                                                      '{:,}'.format(bsize), '; parts ' + ' '.join(parts) if parts else ''),
            '  bundle sha256   %s' % bsha,
            '  HEAD            %s  "%s"' % (head, subj),
            '  refs            %s -> %s; main -> %s; %s' % (branch, short, main_sha[:7], tagline),
