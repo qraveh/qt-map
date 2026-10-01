@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Find in the Atlas — one search over everything the page holds, walked hit by hit the way a browser's find walks a page
+r"""Find in the Atlas — one search over everything the page holds, walked hit by hit the way a browser's find walks a page
 (the editor, 28 Sep 2026; redesigned on his word of 29 Sep: the window opens where it was called, is a little transparent,
 searches as one types, speaks full regular expressions, and lists the hits in context).
 

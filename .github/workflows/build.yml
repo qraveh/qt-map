@@ -30,6 +30,9 @@ jobs:
           python3 build/audit/propagate.py --check   # the change ledgers against the hand-written corners (30 Sep 2026)
           python3 build/brief_refs.py --check
           python3 build/media.py --check
+          python3 build/manifest.py --check   # dist/manifest.json matches the pages (2 Oct 2026)
+      - name: manifest
+        run: cat dist/manifest.json
       - name: package the site
         # the deployable tree: the three main pages (also as index.html), the language fragments, the assets, every record page, the
         # sitemap and the list of pictures the deploy copies from the media register (build/DEPLOY.md); body.html never enters dist/.
