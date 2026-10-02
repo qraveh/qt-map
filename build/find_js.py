@@ -42,7 +42,7 @@ FIND_HTML = r'''<div class="findbar" id="findbar" hidden role="search" aria-labe
  </div>
  <div class="findopts" id="findopts">
   <button type="button" class="fo" id="findcase" title="click to toggle"><span class="lang-en">case-insensitive</span><span class="lang-ru">без учёта регистра</span><span class="lang-he">לא תלוי רישיות</span></button>
-  <button type="button" class="fo" id="findword" title="click to toggle"><span class="lang-en">substring</span><span class="lang-ru">подстрока</span><span class="lang-he">מחרוזת חלקית</span></button>
+  <button type="button" class="fo" id="findword" title="click to toggle"><span class="lang-en">substring</span><span class="lang-ru">подстрока</span><span class="lang-he">תת-מחרוזת</span></button>
   <span class="folang"><button type="button" class="fo" id="findlang" aria-haspopup="menu" aria-expanded="false" title="the language searched"><span id="findlangname">English</span> ▾</button><div class="fomenu" id="findlangmenu" hidden role="menu"></div></span>
   <span class="findmode" id="findmode" title="the query is read as a regular expression; an expression that does not parse is taken literally"></span>
   <span class="findwhere" id="findwhere"></span>
@@ -213,7 +213,7 @@ function show(note){ if(!q.value.trim()){ cnt.textContent=''; where.textContent=
 // ---------- options: each button names its current state
 function paintOpts(){ var c=document.getElementById('findcase'), w=document.getElementById('findword'), ln=document.getElementById('findlangname');
   c.innerHTML=opts.cs?window.__LS('case-sensitive','с учётом регистра','תלוי רישיות'):window.__LS('case-insensitive','без учёта регистра','לא תלוי רישיות');   // one span per language (window.__LS)
-  w.innerHTML=opts.whole?window.__LS('whole word','целое слово','מילה שלמה'):window.__LS('substring','подстрока','מחרוזת חלקית');
+  w.innerHTML=opts.whole?window.__LS('whole word','целое слово','מילה שלמה'):window.__LS('substring','подстрока','תת-מחרוזת');
   ln.textContent=opts.scope==='all'?T('all languages','все языки','כל השפות'):(opts.scope==='this'?(NATIVE[lang()]||lang()):(NATIVE[opts.scope]||opts.scope)); }
 function langMenu(){ var m=document.getElementById('findlangmenu'); m.innerHTML=''; var items=[];
   LANGS.forEach(function(l){ items.push([l,NATIVE[l]||l]); }); items.push(['all',T('all languages','все языки','כל השפות')]);

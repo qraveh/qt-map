@@ -144,10 +144,27 @@
     "type": "text",
     "id": "he-term-annealing"
    },
-   "note": "Hebrew terminology: annealing = הרפיה (feminine), the slow heat treatment, as in metallurgy and the Academy's dental dictionary (הַרְפָּיָה, 1991); the Atlas's earlier חישול is forging (fast and sharp), and the Hebrew CS habit 'חישול מדומה / קוונטי' is a mistranslation, named once as an alias in the glossary entry. T1 relaxation, which the Hebrew texts rendered הרפיה, is now דעיכת T1 (energy decay) so the two concepts stay apart. Changed in the terms list, graph_he.json, the generator's Hebrew strings, the glossaries, report_HE §0–§6/§9, the anneal and dual-rail narratives and 21 Hebrew briefs (218 word forms); adjectives and verbs re-agreed to the feminine noun. The editor's decision of 2 Oct 2026.",
+   "note": "Hebrew terminology: annealing = ריפוי (masculine) — the Academy's term (Modern Physics 1993, Chemical Engineering 1989, Technique 1946; simulated annealing = ריפוי מודמה, AI dictionary 1997). The Atlas's earlier חישול is forging; the editor's interim הרפיה of 2 Oct 18:40 (metallurgy) turned out to be the Academy's TEMPERING (Technique 1946) and its relaxation in chemistry, biology and medicine — annealing only in the dental dictionary 1991 — so the editor's second order of the day (every term by the academic standards) settled it on ריפוי; the Hebrew CS habit 'חישול מדומה / קוונטי' is named once as an alias in the glossary entry. T1 relaxation = רלקסציה (Modern Physics 1993: תפוגה / רלקסציה; HUJI; Wikipedia). The editor's decisions of 2 Oct 2026.",
    "sources": [
     "https://terms.hebrew-academy.org.il/munnah/45229_2/annealing",
     "https://www.hayadan.org.il/google-buys-15m-quantum-computer-for-nasa-200513"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "text",
+    "id": "he-terms-academy-2026-10-02"
+   },
+   "note": "Every Hebrew term of the Atlas (607 entries: the binding list data/i18n/he-terms.md, the graph overlay's names, the attribute vocabulary, the briefs' and architectures' names) checked against the Academy of the Hebrew Language's professional dictionaries and Israeli academic usage; 31 terms changed across the Hebrew report (§0–§6, §9), 111 briefs, 17 narratives, graph_he.json, the glossaries and the generator's Hebrew strings (about 1,500 lines): fusion מיזוג (היתוך is melting), imaging דימות (הדמיה is simulation), fluorescence פלואורנות, cavity (resonator) מהוד, donor אטום תורם, silicon צורן, optical tweezers מלקחיים אופטיים, fault tolerance סבילות לתקלות, packaging זיווד, foundry מפעל ייצור (בית יציקה casts metal), preprint קדם-פרסום, prior art ידע קודם, benchmarking מידוד, false positive/negative שגוי, substring תת-מחרוזת, IPO הנפקה ראשונית לציבור, cohort עוקבה, time evolution התפתחות, regulator מאסדר, mitigation אפחות, error rate שיעור שגיאות, demultiplexer מפלג, testbed סביבת ניסוי, latch תפסן, time bin משבצת זמן, graph matching זיווג, neural network רשת עצבית, objective אובייקטיב, coaxial cable כבל קואקסיאלי, annealing ריפוי, relaxation רלקסציה. Kept against a dead Academy coinage: מפענח, צומת, ספין, אפיק, קישור, מסילה, מקרר דילול, ואקום (apparatus), על-דק, תפוקה, הפרעה הדדית, מתזמן, שדה קרוב, גידול, קוודרטורה, crossbar, מאך–צנדר, מידת הביטחון. The terms list records the authority (dictionary, year) of every entry. The editor's order of 2 Oct 2026 (19:14).",
+   "sources": [
+    "https://terms.hebrew-academy.org.il/",
+    "https://terms.hebrew-academy.org.il/munnah/69323_2",
+    "https://terms.hebrew-academy.org.il/munnah/79217_2",
+    "https://terms.hebrew-academy.org.il/munnah/69162_2",
+    "https://terms.hebrew-academy.org.il/munnah/70257_2",
+    "https://terms.hebrew-academy.org.il/munnah/53703_2",
+    "https://terms.hebrew-academy.org.il/munnah/88807_2"
    ]
   }
  ]

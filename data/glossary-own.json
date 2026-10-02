@@ -124,7 +124,7 @@
   "scope": "all",
   "en": "The roadmap reaches its own target algorithm on qubit count, error rate and gate budget together, not on one of the three",
   "ru": "Дорожная карта дотягивает до своего целевого алгоритма разом по числу кубитов, ошибке и бюджету гейтов, а не по одному из трёх",
-  "he": "מפת הדרכים מגיעה לאלגוריתם המטרה שלה עצמה במספר הקיוביטים, בשיעור השגיאה ובתקציב השערים גם יחד, ולא רק באחד מהשלושה",
+  "he": "מפת הדרכים מגיעה לאלגוריתם המטרה שלה עצמה במספר הקיוביטים, בשיעור השגיאות ובתקציב השערים גם יחד, ולא רק באחד מהשלושה",
   "src": "§8",
   "why": "In a table of one-word verdicts the reader needs to know what was checked, not only the answer",
   "only": [
@@ -268,7 +268,7 @@
   "scope": "all",
   "en": "Goal: error-mitigated utility circuits — 100–150 qubits and 10³–10⁴ two-qubit gates, decided by error rate at full width and shot throughput",
   "ru": "Цель: полезные схемы с подавлением ошибок — 100–150 кубитов и 10³–10⁴ двухкубитных гейта; решают ошибка при полной загрузке и поток измерений",
-  "he": "יעד: מעגלי תועלת עם מיתון שגיאות — 100–150 קיוביטים ו-10³–10⁴ שערים דו-קיוביטיים, שמוכרעים לפי שיעור השגיאה ברוחב המלא ולפי קצב ההרצות",
+  "he": "יעד: מעגלי תועלת עם אפחות שגיאות — 100–150 קיוביטים ו-10³–10⁴ שערים דו-קיוביטיים, שמוכרעים לפי שיעור השגיאות ברוחב המלא ולפי קצב ההרצות",
   "src": "§1.3",
   "why": "The code is used alone in matrices and profiles far from the goals table, where it carries no meaning on its own"
  },
@@ -286,7 +286,7 @@
   "scope": "all",
   "en": "Goal: early fault tolerance — 10²–10³ logical qubits, 10⁵–10⁶ Toffoli gates, on 10⁴–10⁵ physical qubits, expected 2027–2031",
   "ru": "Цель: ранняя отказоустойчивость — 10²–10³ логических кубитов, 10⁵–10⁶ гейтов Тоффоли, на 10⁴–10⁵ физических, ожидается в 2027–2031",
-  "he": "יעד: עמידות מוקדמת לתקלות — 10²–10³ קיוביטים לוגיים, 10⁵–10⁶ שערי טופולי, על 10⁴–10⁵ קיוביטים פיזיים, צפויה ב-2027–2031",
+  "he": "יעד: סבילות מוקדמת לתקלות — 10²–10³ קיוביטים לוגיים, 10⁵–10⁶ שערי טופולי, על 10⁴–10⁵ קיוביטים פיזיים, צפויה ב-2027–2031",
   "src": "§1.3",
   "why": "The code is used alone in matrices and profiles far from the goals table, where it carries no meaning on its own"
  },
@@ -304,7 +304,7 @@
   "scope": "all",
   "en": "Goal: large-scale fault tolerance — 10³+ logical qubits and 10⁹–10¹⁰ Toffoli gates; here the cycle time decides, then fidelity and count",
   "ru": "Цель: крупномасштабная отказоустойчивость — от 10³ логических кубитов и 10⁹–10¹⁰ гейтов Тоффоли; здесь решает время такта, затем точность и число",
-  "he": "יעד: עמידות לתקלות בקנה מידה גדול — 10³+ קיוביטים לוגיים ו-10⁹–10¹⁰ שערי טופולי; כאן זמן המחזור מכריע, ואחריו הנאמנות והמספר",
+  "he": "יעד: סבילות לתקלות בקנה מידה גדול — 10³+ קיוביטים לוגיים ו-10⁹–10¹⁰ שערי טופולי; כאן זמן המחזור מכריע, ואחריו הנאמנות והמספר",
   "src": "§1.3",
   "why": "The code is used alone in matrices and profiles far from the goals table, where it carries no meaning on its own"
  },
@@ -322,7 +322,7 @@
   "scope": "all",
   "en": "Goal: heuristic optimization and annealing — available today, and the one goal with no proven quantum advantage behind it",
   "ru": "Цель: эвристическая оптимизация и отжиг — доступно сегодня и единственная цель без доказанного квантового преимущества",
-  "he": "יעד: אופטימיזציה היוריסטית והרפיה — זמינים כבר היום, והיעד היחיד שאין מאחוריו יתרון קוונטי מוכח",
+  "he": "יעד: אופטימיזציה היוריסטית וריפוי — זמינים כבר היום, והיעד היחיד שאין מאחוריו יתרון קוונטי מוכח",
   "src": "§1.3",
   "why": "The code is used alone in matrices and profiles far from the goals table, where it carries no meaning on its own"
  },
@@ -865,7 +865,7 @@
   "scope": "first",
   "en": "How many qubits reach the good error rate at the same time, not how many are in the box — with the connectivity they have",
   "ru": "Сколько кубитов одновременно дотягивают до хорошей ошибки — а не сколько их в установке, — и с какой связностью",
-  "he": "כמה קיוביטים מגיעים לשיעור השגיאה הטוב בו-זמנית, לא כמה מהם יש בקופסה — יחד עם הקישוריות שיש להם",
+  "he": "כמה קיוביטים מגיעים לשיעור השגיאות הטוב בו-זמנית, לא כמה מהם יש בקופסה — יחד עם הקישוריות שיש להם",
   "src": "§1.2 / §7.1",
   "why": "The distinction the whole count-race argument rests on; the hyphenated form gives no clue on its own"
  },
@@ -1276,7 +1276,7 @@
   "scope": "first",
   "en": "A record error rate measured on one hand-picked pair of qubits instead of across the whole device; excluded from the register's bests and medians",
   "ru": "Рекордная ошибка, измеренная на одной отобранной паре кубитов, а не по всему устройству; в лучшие значения и медианы реестра не входит",
-  "he": "שיעור שגיאה שיאי שנמדד על זוג קיוביטים אחד שנבחר ביד, ולא על פני ההתקן כולו; אינו נכלל בערכים הטובים ביותר ובחציונים של המרשם",
+  "he": "שיעור שגיאות שיאי שנמדד על זוג קיוביטים אחד שנבחר ביד, ולא על פני ההתקן כולו; אינו נכלל בערכים הטובים ביותר ובחציונים של המרשם",
   "src": "§8.3 / §8.5",
   "why": "The page uses the term without defining it, and it is exactly what separates its numbers from vendor headlines"
  },
@@ -1295,10 +1295,10 @@
    "Когорта"
   ],
   "match_he": [
-   "קוהורט",
-   "הקוהורט",
-   "קוהורטים",
-   "הקוהורטים"
+   "עוקבה",
+   "העוקבה",
+   "עוקבות",
+   "העוקבות"
   ],
   "scope": "first",
   "en": "Machines grouped by the year of their status date — which may be first light, general availability or the latest milestone, so the grouping is rough by design",
@@ -1334,7 +1334,7 @@
   "scope": "first",
   "en": "A machine's qubit platform: superconducting circuits, trapped ions, neutral atoms, photonics, semiconductor or defect spins, topological, annealers",
   "ru": "Кубитная платформа машины: сверхпроводниковые схемы, ионы в ловушках, нейтральные атомы, фотоника, полупроводниковые или дефектные спины, топологические, отжиг",
-  "he": "פלטפורמת הקיוביטים של מכונה: מעגלים מוליכי-על, יונים לכודים, אטומים ניטרליים, פוטוניקה, ספינים במוליכים למחצה או ספיני פגם, טופולוגי, מחשבי הרפיה קוונטית",
+  "he": "פלטפורמת הקיוביטים של מכונה: מעגלים מוליכי-על, יונים לכודים, אטומים ניטרליים, פוטוניקה, ספינים במוליכים למחצה או ספיני פגם, טופולוגי, מחשבי ריפוי קוונטי",
   "src": "§8",
   "why": "Family and architecture name two different groupings in the same chapter; this is the coarsest",
   "variants": [
@@ -1342,7 +1342,7 @@
     "until": "8",
     "en": "The kind of qubit a machine uses — superconducting circuits, trapped ions, neutral atoms, photonics, semiconductor or defect spins, topological, annealers: the coarsest of the report's groupings",
     "ru": "Тип кубита машины: сверхпроводниковые схемы, ионы в ловушках, нейтральные атомы, фотоника, полупроводниковые или дефектные спины, топологические, отжиг — самая крупная группировка отчёта",
-    "he": "סוג הקיוביט שמכונה משתמשת בו — מעגלים מוליכי-על, יונים לכודים, אטומים ניטרליים, פוטוניקה, ספינים במוליכים למחצה או ספיני פגם, טופולוגי, מחשבי הרפיה קוונטית: הגסה מבין הקבוצות של הדוח"
+    "he": "סוג הקיוביט שמכונה משתמשת בו — מעגלים מוליכי-על, יונים לכודים, אטומים ניטרליים, פוטוניקה, ספינים במוליכים למחצה או ספיני פגם, טופולוגי, מחשבי ריפוי קוונטי: הגסה מבין הקבוצות של הדוח"
    }
   ],
   "only": [

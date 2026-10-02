@@ -235,7 +235,7 @@
   "scope": "first",
   "en": "The share of operations that come out right — one minus the error rate; a single average that hides which errors occur and under what load",
   "ru": "Доля операций, выполненных верно, — единица минус частота ошибок; одно среднее число, скрывающее, какие ошибки происходят и при какой нагрузке",
-  "he": "החלק מהפעולות שיוצאות נכונות — אחד פחות שיעור השגיאה; ממוצע יחיד שמסתיר אילו שגיאות מתרחשות ותחת איזה עומס",
+  "he": "החלק מהפעולות שיוצאות נכונות — אחד פחות שיעור השגיאות; ממוצע יחיד שמסתיר אילו שגיאות מתרחשות ותחת איזה עומס",
   "src": "§1.1",
   "why": "The number every press release quotes; §1.1 argues against it, so the reader must first know exactly what it is"
  },
@@ -399,7 +399,7 @@
   "scope": "first",
   "en": "A Belgian chip research institute whose industrial silicon line other groups use to make qubits the way processors are made",
   "ru": "Бельгийский исследовательский центр микроэлектроники: на его промышленной кремниевой линии другие группы делают кубиты как обычные чипы",
-  "he": "מכון בלגי למחקר שבבים, שקו הסיליקון התעשייתי שלו משמש קבוצות אחרות לייצור קיוביטים כפי שמייצרים מעבדים",
+  "he": "מכון בלגי למחקר שבבים, שקו הצורן התעשייתי שלו משמש קבוצות אחרות לייצור קיוביטים כפי שמייצרים מעבדים",
   "src": "standard",
   "why": "Reads like a typo or a vendor; it is the shared fab behind most of the spin-qubit manufacturing claims"
  },
@@ -698,15 +698,15 @@
   ],
   "match_he": [
    "FT",
-   "עמידות לתקלות",
-   "העמידות לתקלות",
-   "עמיד לתקלות",
-   "עמידים לתקלות"
+   "סבילות לתקלות",
+   "הסבילות לתקלות",
+   "סובל תקלות",
+   "סובלי תקלות"
   ],
   "scope": "first",
   "en": "Fault tolerance: a way of running the whole computation — state preparation, gates, measurement and the correction cycle itself — on faulty parts so that errors, including those the correction makes, are caught faster than they arise; enlarging the code then drives the logical error down. It concerns every operation, not only a stored qubit",
   "ru": "Отказоустойчивость: способ выполнять всё вычисление — подготовку состояний, гейты, измерение и сам цикл коррекции — на несовершенных элементах так, чтобы ошибки, включая ошибки самой коррекции, обнаруживались быстрее, чем возникают; тогда рост кода снижает логическую ошибку. Это касается каждой операции, а не только хранимого кубита",
-  "he": "עמידות לתקלות: דרך להריץ את החישוב כולו — הכנת מצבים, שערים, מדידה ומחזור התיקון עצמו — על רכיבים פגומים, כך ששגיאות, כולל אלה שהתיקון עצמו יוצר, נתפסות מהר יותר משהן נוצרות; הגדלת הקוד מורידה אז את השגיאה הלוגית. היא נוגעת לכל פעולה, לא רק לקיוביט מאוחסן",
+  "he": "סבילות לתקלות: דרך להריץ את החישוב כולו — הכנת מצבים, שערים, מדידה ומחזור התיקון עצמו — על רכיבים פגומים, כך ששגיאות, כולל אלה שהתיקון עצמו יוצר, נתפסות מהר יותר משהן נוצרות; הגדלת הקוד מורידה אז את השגיאה הלוגית. היא נוגעת לכל פעולה, לא רק לקיוביט מאוחסן",
   "src": "standard",
   "why": "§0 uses fault tolerance next to error correction; the reader needs to see it is a property of operations, not of a memory alone (editor, 23 Sep)"
  },
@@ -790,7 +790,7 @@
   "scope": "first",
   "en": "Minimum-weight perfect matching: the classic decoding algorithm — it pairs up the alarms by the cheapest explanation",
   "ru": "Minimum-weight perfect matching: классический алгоритм декодирования — он связывает сработавшие проверки самым дешёвым объяснением",
-  "he": "התאמה מושלמת במשקל מינימלי (minimum-weight perfect matching): אלגוריתם הפענוח הקלאסי — הוא מצמיד את האזעקות בזוגות לפי ההסבר הזול ביותר",
+  "he": "זיווג מושלם במשקל מינימלי (minimum-weight perfect matching): אלגוריתם הפענוח הקלאסי — הוא מצמיד את האזעקות בזוגות לפי ההסבר הזול ביותר",
   "src": "standard",
   "why": "Named in node tables as the default decoder; four letters with no expansion on the page"
  },
@@ -1247,10 +1247,10 @@
    "пинцетах"
   ],
   "match_he": [
-   "פינצטה",
-   "פינצטות",
-   "פינצטות אופטיות",
-   "מערך פינצטות"
+   "מלקחיים אופטיים",
+   "מלקחיים",
+   "המלקחיים האופטיים",
+   "מערך מלקחיים אופטיים"
   ],
   "scope": "first",
   "en": "A tightly focused laser beam holding one atom and able to carry it elsewhere — how atom machines build and rearrange their arrays",
@@ -1432,7 +1432,7 @@
   "scope": "first",
   "en": "Silicon nitride: a low-loss, glass-like material for on-chip light paths, made on standard silicon lines",
   "ru": "Нитрид кремния: материал с малыми потерями для световодов на чипе, изготавливаемый на стандартных кремниевых линиях",
-  "he": "סיליקון ניטריד: חומר דמוי זכוכית בעל הפסדים נמוכים לנתיבי אור על השבב, המיוצר בקווי סיליקון סטנדרטיים",
+  "he": "ניטריד צורן: חומר דמוי זכוכית בעל הפסדים נמוכים לנתיבי אור על השבב, המיוצר בקווי צורן סטנדרטיים",
   "src": "standard",
   "why": "A formula in node tables; low loss and standard manufacturing is why it is there"
  },
@@ -1463,8 +1463,8 @@
    "fusion"
   ],
   "match_he": [
-   "מבוסס היתוך",
-   "מבוססת היתוך",
+   "מבוסס מיזוג",
+   "מבוססת מיזוג",
    "fusion"
   ],
   "scope": "first",
@@ -1569,7 +1569,7 @@
   "scope": "first",
   "en": "Spin qubits in a silicon layer sandwiched in silicon-germanium — the cleanest of the semiconductor approaches",
   "ru": "Спиновые кубиты в кремниевом слое между слоями кремний-германий — самый чистый из полупроводниковых подходов",
-  "he": "קיוביטי ספין בשכבת סיליקון הכלואה בין שכבות של סיליקון-גרמניום — הנקייה מבין הגישות של המוליכים למחצה",
+  "he": "קיוביטי ספין בשכבת צורן הכלואה בין שכבות של צורן-גרמניום — הנקייה מבין הגישות של המוליכים למחצה",
   "src": "standard",
   "why": "A materials formula in node tables; the reader compares it with the transistor-stack alternative one row down"
  },
@@ -1620,16 +1620,16 @@
    "донорных"
   ],
   "match_he": [
-   "דונור",
-   "דונורים",
-   "הדונור",
-   "דונורי",
-   "דונוריים"
+   "אטום תורם",
+   "אטומים תורמים",
+   "האטום התורם",
+   "ספיני תורמים",
+   "קיוביטי תורמים"
   ],
   "scope": "first",
   "en": "A single dopant atom placed inside silicon and used as a qubit — extremely long-lived, extremely hard to place",
   "ru": "Одиночный атом примеси, помещённый в кремний и используемый как кубит: живёт очень долго, размещается очень трудно",
-  "he": "אטום אילוח בודד הממוקם בתוך סיליקון ומשמש כקיוביט — ארוך חיים במיוחד, וקשה במיוחד למיקום",
+  "he": "אטום אילוח בודד הממוקם בתוך צורן ומשמש כקיוביט — ארוך חיים במיוחד, וקשה במיוחד למיקום",
   "src": "standard",
   "why": "A semiconductor term with a precise meaning here; the two extremes explain its scores"
  },
@@ -1651,7 +1651,7 @@
   "scope": "first",
   "en": "A light-emitting defect in silicon that both holds a spin and sends a photon, making silicon chips linkable over fibre",
   "ru": "Светоизлучающий дефект в кремнии, который и хранит спин, и испускает фотон, — так кремниевые чипы можно связать волокном",
-  "he": "פגם פולט אור בסיליקון שגם מחזיק ספין וגם שולח פוטון, וכך מאפשר לקשר שבבי סיליקון על גבי סיב",
+  "he": "פגם פולט אור בצורן שגם מחזיק ספין וגם שולח פוטון, וכך מאפשר לקשר שבבי צורן על גבי סיב",
   "src": "standard",
   "why": "The rare node that bridges two platforms; the dual role is the whole reason it appears"
  },
@@ -1705,14 +1705,14 @@
    "отжига"
   ],
   "match_he": [
-   "הרפיה",
-   "ההרפיה",
-   "הרפיה קוונטית"
+   "ריפוי",
+   "הריפוי",
+   "ריפוי קוונטי"
   ],
   "scope": "first",
   "en": "A special-purpose quantum machine: a problem settles into a low-energy answer as quantum fluctuations are slowly switched off — no gate circuit, no fault-tolerant error correction, only mitigation",
   "ru": "Специализированная квантовая машина: задача оседает в низкоэнергетический ответ по мере медленного выключения квантовых флуктуаций — без схемы гейтов и без отказоустойчивой коррекции, лишь смягчение ошибок",
-  "he": "מכונה קוונטית ייעודית: בעיה מתייצבת על תשובה בעלת אנרגיה נמוכה כשהתנודות הקוונטיות מכובות לאט — בלי מעגל שערים, בלי תיקון שגיאות עמיד לתקלות, רק מיתון. הרפיה (annealing) היא הטיפול התרמי האיטי, היפוכו של חישול; הצירוף \"חישול קוונטי\" הרווח בעברית הוא תרגום מוטעה",
+  "he": "מכונה קוונטית ייעודית: בעיה מתייצבת על תשובה בעלת אנרגיה נמוכה כשהתנודות הקוונטיות מכובות לאט — בלי מעגל שערים, בלי תיקון שגיאות סובל תקלות, רק אפחות. ריפוי (annealing) הוא המונח של האקדמיה ללשון העברית לטיפול התרמי האיטי, היפוכו של חיסום (quenching); הצירוף \"חישול קוונטי\", הנפוץ במדעי המחשב בעברית, הוא תרגום מוטעה — חישול הוא עיצוב מתכת בהקשה (forging)",
   "src": "standard",
   "why": "verified 22 Sep 2026: D-Wave docs describe annealing only; error handling is calibration/drift mitigation plus user-level encodings (QAC), no threshold theorem"
  },
@@ -2223,7 +2223,7 @@
   "re": null,
   "en": "Quantinuum's Helix code: 20 physical ions carrying 2 protected qubits at distance 6 (any error on fewer than 6 ions is detectable) — a preprint of September 2026, not yet peer-reviewed",
   "ru": "Код Helix от Quantinuum: 20 физических ионов несут 2 защищённых кубита при расстоянии 6, так что любая ошибка менее чем на 6 из них обнаружима — препринт сентября 2026, ещё не рецензирован",
-  "he": "קוד Helix של Quantinuum: 20 יונים פיזיים הנושאים 2 קיוביטים מוגנים במרחק 6 (כל שגיאה על פחות מ-6 יונים ניתנת לגילוי) — טרום-פרסום מספטמבר 2026, שטרם עבר ביקורת עמיתים",
+  "he": "קוד Helix של Quantinuum: 20 יונים פיזיים הנושאים 2 קיוביטים מוגנים במרחק 6 (כל שגיאה על פחות מ-6 יונים ניתנת לגילוי) — קדם-פרסום מספטמבר 2026, שטרם עבר ביקורת עמיתים",
   "src": "§0/[I28]",
   "why": "the editor asked for the code to be explained where §0 cites it"
  }

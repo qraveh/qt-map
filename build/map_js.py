@@ -59,7 +59,7 @@ const N=o=>o?(o[lang()]??o.en):'';
 const LIX=Object.fromEntries((((window.__LANGS||{}).list)||['en','ru']).map((l,i)=>[l,i]));   // a language's position in an (en, ru, he) list
 const SL=id=>{ const s=SHORT[id]; return s?(s[LIX[lang()]]||s[0]):id; };   // a technology's short map label
 const FAMC={SC:'var(--sc)',ION:'var(--ion)',ATOM:'var(--atom)',PHOTON:'var(--photon)',SPIN:'var(--spin)',DEFECT:'var(--defect)',TOPO:'var(--topo)',ANNEAL:'var(--anneal)'};
-const FAMN={SC:['superconducting circuits','сверхпроводниковые схемы','מעגלים מוליכי-על'],ION:['trapped ions','ионы в ловушках','יונים לכודים'],ATOM:['neutral atoms','нейтральные атомы','אטומים ניטרליים'],PHOTON:['photonics','фотоника','פוטוניקה'],SPIN:['semiconductor spins','полупроводниковые спины','ספינים במוליכים למחצה'],DEFECT:['defect spins','дефектные спины','ספיני פגם'],TOPO:['topological','топологические','טופולוגי'],ANNEAL:['quantum annealers','квантовый отжиг','מחשבי הרפיה קוונטית']};   // full platform names (editor, 17 Sep: "neutral atoms", not "atoms")
+const FAMN={SC:['superconducting circuits','сверхпроводниковые схемы','מעגלים מוליכי-על'],ION:['trapped ions','ионы в ловушках','יונים לכודים'],ATOM:['neutral atoms','нейтральные атомы','אטומים ניטרליים'],PHOTON:['photonics','фотоника','פוטוניקה'],SPIN:['semiconductor spins','полупроводниковые спины','ספינים במוליכים למחצה'],DEFECT:['defect spins','дефектные спины','ספיני פגם'],TOPO:['topological','топологические','טופולוגי'],ANNEAL:['quantum annealers','квантовый отжиг','מחשבי ריפוי קוונטי']};   // full platform names (editor, 17 Sep: "neutral atoms", not "atoms")
 const NEUTRAL=new Set(['TOPO','ANNEAL']);
 const NODE=Object.fromEntries(G.nodes.map(n=>[n.id,n]));
 const PATH=Object.fromEntries(G.paths.map(p=>[p.id,p]));
@@ -329,7 +329,7 @@ function drawEdges(){ gEdges.selectAll('*').remove(); const f=state.focus;
       `<b>${esc(b)}</b>${e.any?' <span style="opacity:.7">(או חלופה)</span>':''} ${soft?'היא הדרך המקובלת עבור':'נחוצה עבור'} <b>${esc(a)}</b>`); };
   const edgeTip=e=>{const L=lang(); const a=N(NODE[e.src]), b=N(NODE[e.dst]); let h=e.type==='requires'?depTip(e):`<b>${esc(a)}</b> ${T(...ETYPE[e.type])} <b>${esc(b)}</b>`;
     if(N(e)) h+=`<br>${esc(N(e))}`;
-    if(e.type==='conflicts'&&e.price){ h+=`<br><span class="tk">${T('price','цена','מחיר')}</span> ${esc(N(e.price))}<br><span class="tk">${T('mitigation','снятие','מיתון')}</span> ${esc(N(e.mitig))}<br><span class="tk">${T('status','статус','מצב')}</span> ${esc(vt('CONSTAT',e.status))} · ${e.date}`; }
+    if(e.type==='conflicts'&&e.price){ h+=`<br><span class="tk">${T('price','цена','מחיר')}</span> ${esc(N(e.price))}<br><span class="tk">${T('mitigation','снятие','אפחות')}</span> ${esc(N(e.mitig))}<br><span class="tk">${T('status','статус','מצב')}</span> ${esc(vt('CONSTAT',e.status))} · ${e.date}`; }
     return h; };
   const g=gEdges.selectAll('g').data(es).join('g').attr('class',e=>'edge '+e.type);
   g.append('path').attr('class','hit').attr('d',e=>edgePath(NODE[e.src],NODE[e.dst]));
@@ -476,7 +476,7 @@ function inspectHTML(n){ const L=lang(); const c=n.c; const rows=[[T('(a) carrie
    ${reqOut.length?`<div><b>${T('needs','нужно','דורשת')}:</b> ${reqOut.map(e=>link(e.dst)+(e.any?'<span class="empty">°</span>':'')+(e.strength==='soft'?'<span class="empty">·</span>':'')).join(', ')}</div>`:''}
    ${reqIn.length?`<div><b>${T('needed by','нужен для','נחוצה עבור')}:</b> ${reqIn.map(e=>link(e.src)+(e.any?'<span class="empty">°</span>':'')+(e.strength==='soft'?'<span class="empty">·</span>':'')).join(', ')}</div>`:''}
    ${rep.length?`<div><b>${T('alternatives','альтернативы','חלופות')}:</b> ${rep.map(e=>link(other(e))).join(', ')}</div>`:''}
-   ${con.length?`<div><b style="color:var(--crit)">${T('conflicts with','конфликтует с','מתנגשת עם')}:</b></div>`+con.map(e=>`<div class="conf"><div>${link(other(e))} <span class="cst ${e.status}">${esc(vt('CONSTAT',e.status))}</span></div><div class="cm">${lk(N(e))}</div><div class="cm"><span class="tk">${T('price','цена','מחיר')}</span> ${lk(e.price?N(e.price):'')}</div><div class="cm"><span class="tk">${T('mitigation','снятие','מיתון')}</span> ${lk(e.mitig?N(e.mitig):'')}${e.url?' · <a href="'+e.url+'" target="_blank" rel="noopener">'+e.date+'</a>':''}</div></div>`).join(''):''}
+   ${con.length?`<div><b style="color:var(--crit)">${T('conflicts with','конфликтует с','מתנגשת עם')}:</b></div>`+con.map(e=>`<div class="conf"><div>${link(other(e))} <span class="cst ${e.status}">${esc(vt('CONSTAT',e.status))}</span></div><div class="cm">${lk(N(e))}</div><div class="cm"><span class="tk">${T('price','цена','מחיר')}</span> ${lk(e.price?N(e.price):'')}</div><div class="cm"><span class="tk">${T('mitigation','снятие','אפחות')}</span> ${lk(e.mitig?N(e.mitig):'')}${e.url?' · <a href="'+e.url+'" target="_blank" rel="noopener">'+e.date+'</a>':''}</div></div>`).join(''):''}
    ${(reqOut.length||reqIn.length||rep.length||con.length)?`<div class="empty" style="margin-top:4px">° ${T('one of several that would do','одно из нескольких, что подошли бы','אחת מכמה שהיו מתאימות')} · ${T('the usual route, not a strict need','обычный маршрут, не строгая необходимость','הדרך המקובלת, לא דרישה מחייבת')}</div>`:`<p class="empty">—</p>`}</div>
   ${usedByHTML(n)}`;
 }
