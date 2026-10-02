@@ -180,6 +180,22 @@
     "https://www.hayadan.org.il/google-buys-15m-quantum-computer-for-nasa-200513",
     "https://chem.ch.huji.ac.il/nmr/hebrew/techniques/1d/1d.html"
    ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "text",
+    "id": "he-terms-fluorescence-fusion-2026-10-02"
+   },
+   "note": "The editor (22:28): search פלואורנות / מיזוג in the quantum context until no doubts remain, in Hebrew materials on these very technologies. Found: the Hebrew quantum literature (Weizmann's ion-trap computer article, Ozeri's ISF report, Bar-Gill's NV report and lab page, the Technion quantum-technologies lab syllabus, Hayadan, Calcalist on Quantum Art, Bizportal on Infleqtion, Hebrew Wikipedia's ion-trap, Paul-trap, laser-cooling, atomic-clock, quantum-computer and quantum-optics articles) names no fluorescence word for state detection at all — it writes פיזור האור, פולט פוטונים, גלאי פוטונים בודדים, הארה; where Hebrew physics names fluorescence it is פלואורסצנציה (Wikipedia's title and its quantum-dot and spectroscopy articles, 63 articles vs 5; Bar-Ilan EE; Davidson's own explainer spells פלורסנציה) and only one Davidson quantum-spin article writes the Academy's פלואורנות — so fluorescence = פלואורסצנציה. No Hebrew quantum text names the photonic fusion gate (PsiQuantum, Quantum Source and the Technion cluster-state work are covered in Hebrew without the word); the field's word for a fusion that combines is היתוך — היתוך גרעיני (163 vs 6 for the Academy's מיזוג), היתוך חיישנים / היתוך מידע in Israeli engineering, ניסויים בהיתוך על ידי לייזר in Wikipedia's tweezers article — so fusion = היתוך (back to the Atlas's original), מיזוג kept for merges and mergers. 163 lines reverted by alignment with the pre-migration text.",
+   "sources": [
+    "https://he.wikipedia.org/wiki/פלואורסצנציה",
+    "https://he.wikipedia.org/wiki/נקודה_קוונטית",
+    "https://he.wikipedia.org/wiki/היתוך_גרעיני",
+    "https://www.systematics.co.il/matlab-simulink-blog/sensor-fusion-and-tracking/",
+    "https://wis-wander.weizmann.ac.il/node/11634",
+    "https://davidson.org.il/read-experience/sciencenews/טלוויזיה-קוונטית/"
+   ]
   }
  ]
 }
