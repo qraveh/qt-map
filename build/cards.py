@@ -36,7 +36,7 @@ FAMC = {'SC': 'var(--sc)', 'ION': 'var(--ion)', 'ATOM': 'var(--atom)', 'PHOTON':
 FAMN = {'SC': ('superconducting circuits', 'сверхпроводниковые схемы', 'מעגלים מוליכי-על'), 'ION': ('trapped ions', 'ионы в ловушках', 'יונים לכודים'),
         'ATOM': ('neutral atoms', 'нейтральные атомы', 'אטומים ניטרליים'), 'PHOTON': ('photonics', 'фотоника', 'פוטוניקה'),
         'SPIN': ('semiconductor spins', 'полупроводниковые спины', 'ספינים במוליכים למחצה'), 'DEFECT': ('defect spins', 'дефектные спины', 'ספיני פגם'),
-        'TOPO': ('topological', 'топологические', 'טופולוגי'), 'ANNEAL': ('quantum annealers', 'квантовый отжиг', 'מחשבי חישול קוונטי')}
+        'TOPO': ('topological', 'топологические', 'טופולוגי'), 'ANNEAL': ('quantum annealers', 'квантовый отжиг', 'מחשבי הרפיה קוונטית')}
 MACH_FAMILIES = ['SC', 'ION', 'ATOM', 'PHOTON', 'SPIN', 'DEFECT', 'TOPO', 'ANNEAL']
 OFFDEF = ('a crossing technology: it takes a trait from the other side of the natural/fabricated divide — hatched on the map (see §7.5)',
           'пересекающая технология: берёт свойство с другой стороны раздела естественное/изготовленное — на карте заштрихована (см. §7.5)',

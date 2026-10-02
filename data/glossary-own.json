@@ -322,7 +322,7 @@
   "scope": "all",
   "en": "Goal: heuristic optimization and annealing — available today, and the one goal with no proven quantum advantage behind it",
   "ru": "Цель: эвристическая оптимизация и отжиг — доступно сегодня и единственная цель без доказанного квантового преимущества",
-  "he": "יעד: אופטימיזציה היוריסטית וחישול — זמינים כבר היום, והיעד היחיד שאין מאחוריו יתרון קוונטי מוכח",
+  "he": "יעד: אופטימיזציה היוריסטית והרפיה — זמינים כבר היום, והיעד היחיד שאין מאחוריו יתרון קוונטי מוכח",
   "src": "§1.3",
   "why": "The code is used alone in matrices and profiles far from the goals table, where it carries no meaning on its own"
  },
@@ -1334,7 +1334,7 @@
   "scope": "first",
   "en": "A machine's qubit platform: superconducting circuits, trapped ions, neutral atoms, photonics, semiconductor or defect spins, topological, annealers",
   "ru": "Кубитная платформа машины: сверхпроводниковые схемы, ионы в ловушках, нейтральные атомы, фотоника, полупроводниковые или дефектные спины, топологические, отжиг",
-  "he": "פלטפורמת הקיוביטים של מכונה: מעגלים מוליכי-על, יונים לכודים, אטומים ניטרליים, פוטוניקה, ספינים במוליכים למחצה או ספיני פגם, טופולוגי, מחשבי חישול קוונטי",
+  "he": "פלטפורמת הקיוביטים של מכונה: מעגלים מוליכי-על, יונים לכודים, אטומים ניטרליים, פוטוניקה, ספינים במוליכים למחצה או ספיני פגם, טופולוגי, מחשבי הרפיה קוונטית",
   "src": "§8",
   "why": "Family and architecture name two different groupings in the same chapter; this is the coarsest",
   "variants": [
@@ -1342,7 +1342,7 @@
     "until": "8",
     "en": "The kind of qubit a machine uses — superconducting circuits, trapped ions, neutral atoms, photonics, semiconductor or defect spins, topological, annealers: the coarsest of the report's groupings",
     "ru": "Тип кубита машины: сверхпроводниковые схемы, ионы в ловушках, нейтральные атомы, фотоника, полупроводниковые или дефектные спины, топологические, отжиг — самая крупная группировка отчёта",
-    "he": "סוג הקיוביט שמכונה משתמשת בו — מעגלים מוליכי-על, יונים לכודים, אטומים ניטרליים, פוטוניקה, ספינים במוליכים למחצה או ספיני פגם, טופולוגי, מחשבי חישול קוונטי: הגסה מבין הקבוצות של הדוח"
+    "he": "סוג הקיוביט שמכונה משתמשת בו — מעגלים מוליכי-על, יונים לכודים, אטומים ניטרליים, פוטוניקה, ספינים במוליכים למחצה או ספיני פגם, טופולוגי, מחשבי הרפיה קוונטית: הגסה מבין הקבוצות של הדוח"
    }
   ],
   "only": [

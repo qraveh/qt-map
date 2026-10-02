@@ -38,7 +38,7 @@ Sentences keep the Atlas's voice: short, declarative, no marketing words, no "no
 | semiconductor spins | ספינים במוליכים למחצה | family SPIN; quantum dot = נקודה קוונטית; donor = דונור (donor spin = ספין דונורי) |
 | defect spins | ספיני פגם | family DEFECT; colour centre = מרכז צבע; NV centre = מרכז NV |
 | topological | טופולוגי | family TOPO; Majorana = מיורנה |
-| quantum annealers | מחשבי חישול קוונטי | family ANNEAL; annealing = חישול |
+| quantum annealers | מחשבי הרפיה קוונטית | family ANNEAL; annealing = הרפיה (fem.: הרפיה קוונטית, הרפיה חטופה, ההרפיה נמשכת) — the slow heat treatment, as in metallurgy and the Academy's dental dictionary (הַרְפָּיָה, 1991); not חישול, which is forging (fast and sharp) — the editor, 2 Oct 2026; the Academy's physics term רִפּוּי (1993) is avoided because "ריפוי קוונטי" is the pseudo-scientific "quantum healing"; the Hebrew CS habit "חישול מדומה / קוונטי" is a mistranslation and is named once, as an alias, in the glossary entry (the reader's tooltip on the first הרפיה of a page); simulated annealing = הרפיה מדומה; quantum annealer (machine) = מחשב הרפיה; the construct form is הרפיית (הרפיית הצמתים = junction annealing) |
 | natural / fabricated (carrier) | טבעי / מיוצר | the natural–fabricated divide = החלוקה טבעי–מיוצר |
 | crossing technology | טכנולוגיה חוצה | hatched on the map = מקווקוות |
 | empty slot | משבצת ריקה | |
@@ -67,6 +67,7 @@ Sentences keep the Atlas's voice: short, declarative, no marketing words, no "no
 | two-qubit error / gate error | שגיאת שער דו-קיוביטי / שגיאת שער | |
 | fidelity | נאמנות | |
 | coherence / T1 / T2 | קוהרנטיות / T1 / T2 | |
+| T1 relaxation / relaxation time / energy relaxation | דעיכת T1 / זמן הדעיכה / דעיכת האנרגיה | never הרפיה, which the Atlas reserves for annealing (2 Oct 2026); dephasing = דה-פאזה; resonator decay = דעיכת המהוד |
 | syndrome round / QEC cycle | סבב סינדרום / מחזור תיקון שגיאות | |
 | surface code / colour code / qLDPC code | קוד המשטח / קוד הצבע / קוד qLDPC | |
 | erasure / erasure conversion | מחיקה / המרה למחיקה | erasure check = בדיקת מחיקה |
@@ -147,7 +148,7 @@ Sentences keep the Atlas's voice: short, declarative, no marketing words, no "no
 | multiplexing / demultiplexing / fan-out | ריבוב / פירוק ריבוב / פיצול | |
 | transducer / remote entanglement / Purcell filter / quantum-limited amplifier | מתמר / שזירה מרוחקת / מסנן פרסל / מגבר בגבול הקוונטי | |
 | loss-aware / erasure-aware decoding | פענוח מודע-אובדן / פענוח מודע-למחיקות | |
-| coherent quench (annealer) | חישול חטוף קוהרנטי | a quench of a Hamiltonian elsewhere = שינוי פתאומי (quench) |
+| coherent quench (annealer) | הרפיה חטופה קוהרנטית | a quench of a Hamiltonian elsewhere = שינוי פתאומי (quench) |
 | IPO / Series B extension / non-binding / gross / cumulative / lead (investor) | הנפקה ראשונה לציבור / הרחבת סבב B / לא מחייב / ברוטו / במצטבר / בהובלת X | |
 | undisclosed (Money lines) / missed (roadmap outcome) / delivered / met / unmet / pending | לא פורסם / הוחמץ / סופק / הושג / לא הושג / תלוי ועומד | |
 | export control / patent family / standards body | פיקוח על יצוא / משפחת פטנטים / גוף תקינה | |

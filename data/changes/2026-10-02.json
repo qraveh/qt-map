@@ -137,6 +137,18 @@
    "sources": [
     "https://arxiv.org/abs/2404.16167"
    ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "text",
+    "id": "he-term-annealing"
+   },
+   "note": "Hebrew terminology: annealing = הרפיה (feminine), the slow heat treatment, as in metallurgy and the Academy's dental dictionary (הַרְפָּיָה, 1991); the Atlas's earlier חישול is forging (fast and sharp), and the Hebrew CS habit 'חישול מדומה / קוונטי' is a mistranslation, named once as an alias in the glossary entry. T1 relaxation, which the Hebrew texts rendered הרפיה, is now דעיכת T1 (energy decay) so the two concepts stay apart. Changed in the terms list, graph_he.json, the generator's Hebrew strings, the glossaries, report_HE §0–§6/§9, the anneal and dual-rail narratives and 21 Hebrew briefs (218 word forms); adjectives and verbs re-agreed to the feminine noun. The editor's decision of 2 Oct 2026.",
+   "sources": [
+    "https://terms.hebrew-academy.org.il/munnah/45229_2/annealing",
+    "https://www.hayadan.org.il/google-buys-15m-quantum-computer-for-nasa-200513"
+   ]
   }
  ]
 }

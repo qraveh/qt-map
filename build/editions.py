@@ -97,7 +97,8 @@ ERRATA = {
    'H6 reads range deficits (a range counts by its geometric mean): 49 SHORT rows quantify both deficits, 5 error only, 11 qubits only, 0 neither (was 47/7/10 with one row dropped). '
    'Photonics as a compute bet is demoted: PsiQuantum\'s June 2026 release dates only the cryoplant (2H 2027) and names no operating date — §0 (v), §3, §5.2 and the fusion architecture\'s next test. '
    'The ion QCCD architecture\'s test keeps the 5× layer bar and states Quantinuum\'s own 2× promise beside it. '
-   'The state of Maryland in §2.7 no longer links the University of Maryland. The Find window opens on / and Ctrl+K (⌘K) on every keyboard layout, the hint in the page\'s language; the Russian and Hebrew pages carry the translated name in the masthead and the tab, the English name beneath as the citable one.'),
+   'The state of Maryland in §2.7 no longer links the University of Maryland. The Find window opens on / and Ctrl+K (⌘K) on every keyboard layout, the hint in the page\'s language; the Russian and Hebrew pages carry the translated name in the masthead and the tab, the English name beneath as the citable one. '
+   'Hebrew terminology: annealing is הרפיה (the slow heat treatment), no longer חישול (forging), throughout the Hebrew pages, briefs and cards; T1 relaxation becomes דעיכת T1 so the two stay apart (data/i18n/he-terms.md).'),
  ]}
 
 

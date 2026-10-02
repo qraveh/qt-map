@@ -59,7 +59,7 @@ const N=o=>o?(o[lang()]??o.en):'';
 const LIX=Object.fromEntries((((window.__LANGS||{}).list)||['en','ru']).map((l,i)=>[l,i]));   // a language's position in an (en, ru, he) list
 const SL=id=>{ const s=SHORT[id]; return s?(s[LIX[lang()]]||s[0]):id; };   // a technology's short map label
 const FAMC={SC:'var(--sc)',ION:'var(--ion)',ATOM:'var(--atom)',PHOTON:'var(--photon)',SPIN:'var(--spin)',DEFECT:'var(--defect)',TOPO:'var(--topo)',ANNEAL:'var(--anneal)'};
-const FAMN={SC:['superconducting circuits','сверхпроводниковые схемы','מעגלים מוליכי-על'],ION:['trapped ions','ионы в ловушках','יונים לכודים'],ATOM:['neutral atoms','нейтральные атомы','אטומים ניטרליים'],PHOTON:['photonics','фотоника','פוטוניקה'],SPIN:['semiconductor spins','полупроводниковые спины','ספינים במוליכים למחצה'],DEFECT:['defect spins','дефектные спины','ספיני פגם'],TOPO:['topological','топологические','טופולוגי'],ANNEAL:['quantum annealers','квантовый отжиг','מחשבי חישול קוונטי']};   // full platform names (editor, 17 Sep: "neutral atoms", not "atoms")
+const FAMN={SC:['superconducting circuits','сверхпроводниковые схемы','מעגלים מוליכי-על'],ION:['trapped ions','ионы в ловушках','יונים לכודים'],ATOM:['neutral atoms','нейтральные атомы','אטומים ניטרליים'],PHOTON:['photonics','фотоника','פוטוניקה'],SPIN:['semiconductor spins','полупроводниковые спины','ספינים במוליכים למחצה'],DEFECT:['defect spins','дефектные спины','ספיני פגם'],TOPO:['topological','топологические','טופולוגי'],ANNEAL:['quantum annealers','квантовый отжиг','מחשבי הרפיה קוונטית']};   // full platform names (editor, 17 Sep: "neutral atoms", not "atoms")
 const NEUTRAL=new Set(['TOPO','ANNEAL']);
 const NODE=Object.fromEntries(G.nodes.map(n=>[n.id,n]));
 const PATH=Object.fromEntries(G.paths.map(p=>[p.id,p]));

@@ -421,7 +421,7 @@ def score_tips(h,lang):
             L=letters[k]; inner=re.sub(r'^<td[^>]*>|</td>$','',c); txt=html_mod.unescape(re.sub(r'<[^>]+>','',inner)).strip()
             if re.fullmatch(r'\d',txt): tip=tr(f'{axes[L][0]} — {txt} of 5. Measures: ',f'{axes[L][0]} — {txt} из 5. Измеряет: ',f'{axes[L][0]} — {txt} מתוך 5. מודד: ')+desc(L).split(' — ',1)[1]
             elif txt.startswith('('): tip=tr(f'{axes[L][0]}: {txt[1:-1]} — the architecture\'s value by design, not a demonstrated one',f'{axes[L][0]}: {txt[1:-1]} — значение по замыслу архитектуры, не продемонстрированное',f'{axes[L][0]}: {txt[1:-1]} — ערך הארכיטקטורה לפי התכנון, לא ערך שהודגם')
-            elif txt=='n/a': tip=tr(f'{axes[L][0]}: not applicable — annealers run no gate-model error correction, so the axis has no meaning for them',f'{axes[L][0]}: неприменимо — отжигатели не выполняют коррекцию ошибок гейтовой модели, ось для них не имеет смысла',f'{axes[L][0]}: לא ישים — מחשבי חישול אינם מריצים תיקון שגיאות של מודל השערים, ולכן לציר אין משמעות עבורם')
+            elif txt=='n/a': tip=tr(f'{axes[L][0]}: not applicable — annealers run no gate-model error correction, so the axis has no meaning for them',f'{axes[L][0]}: неприменимо — отжигатели не выполняют коррекцию ошибок гейтовой модели, ось для них не имеет смысла',f'{axes[L][0]}: לא ישים — מחשבי הרפיה אינם מריצים תיקון שגיאות של מודל השערים, ולכן לציר אין משמעות עבורם')
             elif txt in ('—','-'): tip=tr(f'{axes[L][0]}: nothing to score yet',f'{axes[L][0]}: оценивать пока нечего',f'{axes[L][0]}: עדיין אין מה לדרג')
             else: out.append(c); continue
             out.append(c[:c.find('>')+1]+'<span class="tt" data-tip="'+html_mod.escape(tip,quote=True)+'">'+inner+'</span></td>')

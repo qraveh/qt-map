@@ -1705,14 +1705,14 @@
    "отжига"
   ],
   "match_he": [
-   "חישול",
-   "החישול",
-   "חישול קוונטי"
+   "הרפיה",
+   "ההרפיה",
+   "הרפיה קוונטית"
   ],
   "scope": "first",
   "en": "A special-purpose quantum machine: a problem settles into a low-energy answer as quantum fluctuations are slowly switched off — no gate circuit, no fault-tolerant error correction, only mitigation",
   "ru": "Специализированная квантовая машина: задача оседает в низкоэнергетический ответ по мере медленного выключения квантовых флуктуаций — без схемы гейтов и без отказоустойчивой коррекции, лишь смягчение ошибок",
-  "he": "מכונה קוונטית ייעודית: בעיה מתייצבת על תשובה בעלת אנרגיה נמוכה כשהתנודות הקוונטיות מכובות לאט — בלי מעגל שערים, בלי תיקון שגיאות עמיד לתקלות, רק מיתון",
+  "he": "מכונה קוונטית ייעודית: בעיה מתייצבת על תשובה בעלת אנרגיה נמוכה כשהתנודות הקוונטיות מכובות לאט — בלי מעגל שערים, בלי תיקון שגיאות עמיד לתקלות, רק מיתון. הרפיה (annealing) היא הטיפול התרמי האיטי, היפוכו של חישול; הצירוף \"חישול קוונטי\" הרווח בעברית הוא תרגום מוטעה",
   "src": "standard",
   "why": "verified 22 Sep 2026: D-Wave docs describe annealing only; error handling is calibration/drift mitigation plus user-level encodings (QAC), no threshold theorem"
  },
