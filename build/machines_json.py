@@ -70,7 +70,44 @@ def int_or_none(s):
 
 PROFILE_FIELDS = ('qubit_type', 'gate_mechanism', 'connectivity', 'degree', 'control', 'control_placement', 'readout',
                   'err_2q_median', 'err_2q_best', 'readout_error', 't1', 't2', 't_2q', 't_meas', 'best_logical',
-                  'decoder', 'realtime', 'roadmap')
+                  'decoder', 'realtime', 'roadmap', 'role', 'gate_evidence', 'decoder_mode')
+
+# Three register columns of 2 Oct 2026 (review R1, findings 2 and 5; the editor's criterion of 2 Oct) replace two rules that read free text:
+#   role           '' | scale-demonstrator (built to prove scale or a technology, performance not published, not operated for users: Condor)
+#                  | exploratory (operated for users as a technical demonstration: Osprey / ibm_seattle)
+#   gate_evidence  what stands behind the machine's entangling-gate figure — device-benchmark (a paper with its protocol) | platform-calibration
+#                  (calibration data on a cloud platform) | vendor-dashboard (a datasheet, spec sheet or dashboard) | vendor-figure (a number in a
+#                  release or blog, protocol unstated) | figure (a number whose source class is not yet tagged) | vendor-statement (words only:
+#                  "comparable to", "consistent with") | none. A device is *benchmarked* when a figure of any class exists; the frontier tables
+#                  count benchmarked devices (Condor, "comparable to Osprey", is not one). A blank cell is derived from err_2q_median and the flags.
+#   decoder_mode   none | planned | offline | real-time-throughput (keeps up with the syndrome stream, no feedback into the circuit: Willow)
+#                  | feed-forward (the decoder's output acts inside the run — closed-loop decoding). A blank cell is derived from `realtime`.
+#   qubits_accessible  the qubits a vendor made usable when fewer than the physical count (Osprey: 413 of 433); the frontier counts these.
+FIGURE_CLASSES = ('device-benchmark', 'platform-calibration', 'vendor-dashboard', 'vendor-figure', 'figure')
+DECODER_MODES = ('none', 'planned', 'offline', 'real-time-throughput', 'feed-forward')
+_NO_FIGURE = re.compile(r'^\s*(not published|none published|not disclosed|never published|no (2q|two-qubit|fidelit|gate|published)|none\b|n/a|as [A-Z]|-+\s*$|$)', re.I)
+
+
+def derive_gate_evidence(m):
+    """The evidence class of a row that does not state one, from err_2q_median and the flags (the migration of 2 Oct 2026)."""
+    txt = (m.get('err_2q_median') or '').strip(); tl = txt.lower(); flags = set(x.strip() for x in m.get('flags', '').split(';') if x.strip())
+    num = num_or_none(m.get('err_2q_median_num'))
+    if num is None and (_NO_FIGURE.search(txt) or not re.search(r'\d', txt)):
+        return 'vendor-statement' if re.search(r'comparable|consistent|class\b|as [A-Z]', txt) else 'none'
+    if num is None: return 'none'
+    if 'eplg' in tl or 'dashboard' in tl or 'calibration' in tl or 'spec sheet' in tl or 'datasheet' in tl or 'data sheet' in tl: return 'vendor-dashboard'
+    if 'claim' in tl or 'press' in tl or 'unverified' in tl or 'headline' in tl or 'product page' in tl or flags & {'press-only', 'estimated-baseline', 'emulator-numbers'}: return 'vendor-figure'
+    return 'figure'
+
+
+def derive_decoder_mode(m):
+    """decoder_mode from the free-text `realtime` field for rows that do not state one: the old rule (in-loop by the word) minus its defect —
+    an 'in-loop' text alone no longer makes a closed loop; the five rows that said so were re-read at the source on 2 Oct 2026 and hold the field."""
+    u = (m.get('realtime') or '').lower().strip()
+    if u.startswith('offline'): return 'offline'
+    if u.startswith(('planned', 'intended')): return 'planned'
+    if u.startswith('in-loop') or 'real-time' in u: return 'real-time-throughput'   # a claim of real-time decoding without a re-read source: throughput at most
+    return 'none'
 
 
 def profile(m):
@@ -78,6 +115,14 @@ def profile(m):
     p = {k: m.get(k, '') for k in PROFILE_FIELDS}
     p['err_2q_median_num'] = sig6(num_or_none(m.get('err_2q_median_num')))
     p['flags'] = sorted(x.strip() for x in m.get('flags', '').split(';') if x.strip())
+    p['qubits_accessible'] = int_or_none(m.get('qubits_accessible', ''))
+    if not p['gate_evidence']: p['gate_evidence'] = derive_gate_evidence(m); p['gate_evidence_derived'] = True
+    else: p['gate_evidence_derived'] = False
+    if not p['decoder_mode']: p['decoder_mode'] = derive_decoder_mode(m); p['decoder_mode_derived'] = True
+    else: p['decoder_mode_derived'] = False
+    assert p['decoder_mode'] in DECODER_MODES, (m.get('machine_id'), p['decoder_mode'])
+    assert p['gate_evidence'] in FIGURE_CLASSES + ('vendor-statement', 'none'), (m.get('machine_id'), p['gate_evidence'])
+    p['benchmarked'] = p['gate_evidence'] in FIGURE_CLASSES
     return p
 
 
@@ -232,3 +277,9 @@ if __name__ == '__main__':
           len(doc['by_node']), os.path.getsize(OUT)))
     for k, v in rep.items():
         print('  %s: %d%s' % (k, len(v), (' ' + str(v[:10])) if v else ''))
+    from collections import Counter
+    ge = Counter(m['profile']['gate_evidence'] for m in doc['machines']); dm = Counter(m['profile']['decoder_mode'] for m in doc['machines'])
+    print('  gate evidence (stated %d, derived %d): %s' % (sum(1 for m in doc['machines'] if not m['profile']['gate_evidence_derived']),
+          sum(1 for m in doc['machines'] if m['profile']['gate_evidence_derived']), ', '.join('%s %d' % kv for kv in sorted(ge.items()))))
+    print('  decoder mode (stated %d, derived %d): %s' % (sum(1 for m in doc['machines'] if not m['profile']['decoder_mode_derived']),
+          sum(1 for m in doc['machines'] if m['profile']['decoder_mode_derived']), ', '.join('%s %d' % kv for kv in sorted(dm.items()))))

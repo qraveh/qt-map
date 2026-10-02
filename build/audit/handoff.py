@@ -67,9 +67,14 @@ def classify(paths):
     for p in paths:
         if p.startswith('dist/'): continue
         if p in GENERATED: generated.append(p); continue
-        if p.startswith('report/'): generated.append(p); continue   # §7–§8 are regenerated into the reports: a report diff is text only when the hand-written part moved — say so with --class text
-        c = ('text' if p.startswith(('briefs/', 'data/i18n/')) else 'data' if p.startswith('data/') else 'edition' if p == 'build/editions.py'
-             else 'ui' if p in UI else 'generator' if p.startswith('build/') and p.endswith('.py') else 'infra')
+        if re.match(r'report/report_[A-Z]+\.md$', p):   # §7–§8 are regenerated into the reports; the hand-written sections make it text — the class is given when any of them moved
+            classes.append('text') if 'text' not in classes else None; continue
+        if p == 'build/editions.py':   # an edition only when the editions list or the status moved; the changelog writer and the errata are generator work
+            d = subprocess.run(['git', 'diff', 'main...HEAD', '--', p], cwd=ROOT, capture_output=True, text=True).stdout
+            c = 'edition' if re.search(r'^[+-](?!\+\+|--).*\b(EDITIONS\s*=|STATUS\s*=|\'edition\':|\'doi\':)', d, re.M) else 'generator'
+        else:
+            c = ('text' if p.startswith(('briefs/', 'data/i18n/', 'report/paths/')) else 'data' if p.startswith('data/')
+                 else 'ui' if p in UI else 'generator' if p.startswith('build/') and p.endswith('.py') else 'infra')
         if c not in classes: classes.append(c)
     return classes, generated
 

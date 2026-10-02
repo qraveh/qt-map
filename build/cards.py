@@ -46,9 +46,25 @@ PLACES = ['RT', '4K', 'mK', 'none']   # CATS.place
 EVG = (('figure', '▣'), ('whitepaper', '▥'), ('paper', '▤'), ('vendor', '▦'), ('datasheet', '▧'), ('press', '▨'))
 NA_T = {'none': ('none — nothing in this layer', 'none — в этом слое ничего нет', 'none — אין דבר בשכבה זו'),
         'undisclosed': ('undisclosed — exists, nothing published', 'undisclosed — есть, но не опубликовано', 'undisclosed — קיים, אך דבר לא פורסם')}
-PROF_KEYS = ('qubit_type', 'gate_mechanism', 'connectivity', 'control', 'control_placement', 'readout')
+PROF_KEYS = ('qubit_type', 'gate_mechanism', 'connectivity', 'control', 'control_placement', 'readout', 'role', 'gate_evidence', 'decoder_mode')
 PROF_T = (('qubit type', 'тип кубита', 'סוג הקיוביט'), ('gate mechanism', 'механизм гейта', 'מנגנון השער'), ('connectivity', 'связность', 'קישוריות'),
-          ('control', 'управление', 'בקרה'), ('control placement', 'размещение управления', 'מיקום הבקרה'), ('readout', 'считывание', 'קריאה'))
+          ('control', 'управление', 'בקרה'), ('control placement', 'размещение управления', 'מיקום הבקרה'), ('readout', 'считывание', 'קריאה'),
+          ('role', 'роль', 'תפקיד'), ('gate evidence', 'свидетельство гейта', 'ראיה לשער'), ('decoder mode', 'режим декодера', 'מצב המפענח'))
+# the three register fields of 2 Oct 2026, in the reader's words (the register's codes stay out of the page: the editor's rule on own codes)
+PROF_WORDS = {
+    'role': {'scale-demonstrator': ('scale demonstrator — built to prove scale, performance not published, not operated for users', 'демонстратор масштаба — построен, чтобы доказать масштаб; производительность не опубликована; пользователям не предоставлялся', 'מדגים קנה מידה — נבנה להוכחת קנה מידה, הביצועים לא פורסמו, לא הופעל עבור משתמשים'),
+             'exploratory': ('exploratory — operated for users as a technical demonstration', 'пробная — работала для пользователей как техническая демонстрация', 'ניסיונית — הופעלה עבור משתמשים כהדגמה טכנית')},
+    'gate_evidence': {'device-benchmark': ('a benchmark paper with its protocol', 'статья с бенчмарком и протоколом', 'מאמר מדידה עם הפרוטוקול שלו'),
+                      'platform-calibration': ('calibration data shown on a cloud platform', 'калибровочные данные на облачной платформе', 'נתוני כיול שהוצגו בפלטפורמת ענן'),
+                      'vendor-dashboard': ("the vendor's datasheet or dashboard", 'спецификация или дашборд производителя', 'גיליון הנתונים או לוח המחוונים של היצרן'),
+                      'vendor-figure': ('a number stated by the vendor, protocol unstated', 'число, названное производителем, без протокола', 'מספר שהיצרן נקב בו, ללא פרוטוקול'),
+                      'figure': ('a published figure (source class not yet tagged)', 'опубликованная цифра (класс источника ещё не помечен)', 'נתון שפורסם (סוג המקור טרם סומן)'),
+                      'vendor-statement': ('words only, no figure ("comparable to…")', 'только слова, без цифры («сопоставим с…»)', 'מילים בלבד, ללא נתון ("דומה ל…")'),
+                      'none': ('no published figure', 'опубликованной цифры нет', 'אין נתון שפורסם')},
+    'decoder_mode': {'none': ('none', 'нет', 'אין'), 'planned': ('planned — named in a roadmap only', 'планируется — назван только в дорожной карте', 'מתוכנן — נזכר רק במפת הדרכים'),
+                     'offline': ('offline — syndromes decoded after the run', 'офлайн — синдромы декодируются после прогона', 'לא מקוון — הסינדרומים מפוענחים אחרי הריצה'),
+                     'real-time-throughput': ('real-time throughput — keeps up with the syndrome stream, no feedback into the circuit', 'в реальном времени без обратной связи — успевает за потоком синдромов, в схему не возвращает', 'תפוקה בזמן אמת — עומד בקצב זרם הסינדרומים, ללא משוב למעגל'),
+                     'feed-forward': ('feed-forward — the decoder\'s result acts inside the run (closed loop)', 'с обратной связью — результат декодера действует внутри прогона (замкнутый цикл)', 'משוב קדימה — תוצאת המפענח פועלת בתוך הריצה (לולאה סגורה)')}}
 KIND = {'paper': ('paper', 'статья', 'מאמר'), 'whitepaper': ('whitepaper', 'whitepaper', 'מסמך טכני'), 'product': ('product page', 'страница продукта', 'דף מוצר'),
         'docs': ('docs', 'документация', 'תיעוד'), 'blog': ('blog', 'блог', 'בלוג'), 'press': ('press', 'пресса', 'עיתונות'), 'other': ('link', 'ссылка', 'קישור')}
 PN = (('gates', ('gates', 'гейты', 'שערים')), ('transport', ('transport', 'транспорт', 'הובלה')), ('1q', ('1Q', '1Q', '1Q')), ('readout', ('readout', 'считывание', 'קריאה')),
@@ -445,7 +461,11 @@ def machine_card_html(mid, lang, base=''):
             h += ('<div class="mc"><span class="empty">— %s</span>%s</div>' % (v, more(c))) if EXTRAS else '<div class="mc empty">— %s</div>' % v
         rows += '<tr><td class="ln">%s %s</td><td>%s</td></tr>' % (l['n'], esc(pick(L, l)), h or '<span class="empty">—</span>')
     pf = m.get('profile') or {}
-    prof = ''.join('<div class="mc"><span class="empty">%s:</span> %s</div>' % (t(*PROF_T[i]), esc(str(pf.get(k)))) for i, k in enumerate(PROF_KEYS) if pf.get(k))
+    def pword(k, v):
+        w = PROF_WORDS.get(k, {}).get(str(v))
+        return T(L, *w) if w else str(v)
+    prof = ''.join('<div class="mc"><span class="empty">%s:</span> %s</div>' % (t(*PROF_T[i]), esc(pword(k, pf.get(k)))) for i, k in enumerate(PROF_KEYS)
+                   if pf.get(k) and not (k == 'decoder_mode' and pf.get(k) == 'none') and not (k == 'gate_evidence' and pf.get(k) == 'none' and not pf.get('err_2q_median')))
     if EXTRAS:
         for lab, tip, vals in ((('codes', 'коды', 'קודים'), ('error-correcting codes the codes register links to this machine', 'коды коррекции ошибок, которые реестр кодов связывает с этой машиной',
                                                         'קודים לתיקון שגיאות שמרשם הקודים מקשר למכונה זו'), m.get('codes')),
@@ -455,6 +475,8 @@ def machine_card_html(mid, lang, base=''):
     meta = '%s · %s · %s%s · %s' % (_orglink(base, m, L), t(*FAMN.get(fam, (fam, fam))), esc(regvocab.status_l(m['status'], L)), (' (%s)' % esc(sd)) if sd else '',
                                     T(L, '%s physical qubits' % js_str(q), '%s %s' % (js_str(q), regvocab.ru_plural(q, regvocab.PLURAL['qubits'])),
                                       regvocab.he_count(js_str(q), regvocab.PLURAL_HE['qubits'])) if q is not None and q != '' else t('qubits not published', 'число кубитов не опубликовано', 'מספר הקיוביטים לא פורסם'))
+    qa = pf.get('qubits_accessible')
+    if qa and q and qa != q: meta += ' · ' + T(L, '%s of them made usable' % js_str(qa), '%s из них доступны пользователям' % js_str(qa), '%s מהם שמישים למשתמשים' % js_str(qa))
     if EXTRAS and m.get('access'): meta += ' · %s: %s' % (t('access', 'доступ', 'גישה'), esc(regvocab.access_l(m['access'], L)))
     pid = m['map_path']
     return _wrap('machine', [

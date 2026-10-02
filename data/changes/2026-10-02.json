@@ -1,0 +1,142 @@
+{
+ "date": "2026-10-02",
+ "source": "review R1 (an external audit of 1 Oct 2026) confirmed against main 8b124b8, and the editor's decisions of 2 Oct 2026 (the gate-evidence criterion; Osprey's 413 usable qubits; PsiQuantum demoted; Sol's builder bar; the Maryland link)",
+ "items": [
+  {
+   "kind": "status",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-condor"
+   },
+   "fields": {
+    "role": "scale-demonstrator",
+    "gate_evidence": "vendor-statement",
+    "err_2q_median": "not published (IBM, Dec 2023: performance \"comparable to Osprey\", which has no published figure either)"
+   },
+   "note": "IBM (4 Dec 2023): 'an innovation milestone, solving scale'; never offered on the IBM Quantum Platform, absent from IBM's current and retired system lists; no gate, coherence or readout figure ever published. Not the largest gate-capable superconducting device: the frontier counts benchmarked devices.",
+   "sources": [
+    "https://www.ibm.com/quantum/blog/quantum-roadmap-2033",
+    "https://www.allaboutcircuits.com/news/closer-look-at-ibms-heron-and-condor-quantum-processors/",
+    "https://quantum.cloud.ibm.com/docs/en/guides/retired-qpus"
+   ]
+  },
+  {
+   "kind": "status",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-osprey"
+   },
+   "fields": {
+    "qubits_accessible": "413",
+    "role": "exploratory",
+    "gate_evidence": "platform-calibration"
+   },
+   "note": "ibm_seattle, cloud May-Sep 2023 as an 'exploratory technical demonstration', 413 of 433 qubits accessible, performance 'consistent with Eagle R1' (IBM); calibration shown on the platform, not archived; retired 7 Sep 2023. The frontier counts its 413 usable qubits (the editor, 2 Oct 2026).",
+   "sources": [
+    "https://www.hpcwire.com/2023/05/09/ibm-opens-access-to-latest-osprey-quantum-processor-at-413-qubits/",
+    "https://quantum.cloud.ibm.com/docs/en/guides/retired-qpus"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "google-willow"
+   },
+   "fields": {
+    "decoder_mode": "real-time-throughput"
+   },
+   "note": "Nature 2024: the real-time decoder's 63 us mean latency 'does not yet include feedback into the logical circuit'; 'feedback (which we have not yet implemented)'. Not a closed loop (review R1, finding 2).",
+   "sources": [
+    "https://arxiv.org/abs/2408.13687"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "rigetti-ankaa-2"
+   },
+   "fields": {
+    "decoder_mode": "feed-forward"
+   },
+   "note": "Caune et al. (Riverlane/Rigetti): 'a circuit that conditionally applies a physical gate based on the outcome of decoding', FPGA decoder integrated into the Ankaa-2 control system; a physical conditional gate, demonstration-grade.",
+   "sources": [
+    "https://arxiv.org/abs/2410.05202"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-h1"
+   },
+   "fields": {
+    "decoder_mode": "feed-forward"
+   },
+   "note": "Ryan-Anderson et al. 2021: corrections 'physically applied' mid-circuit from a look-up-table decoder; 2022: decoded results 'dictate the control flow and operations executed in the quantum program'.",
+   "sources": [
+    "https://arxiv.org/abs/2107.07505",
+    "https://arxiv.org/abs/2208.01863"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-h2"
+   },
+   "fields": {
+    "decoder_mode": "feed-forward"
+   },
+   "note": "2024 (H2-1): 'syndromes are processed in real-time using a look-up table decoder. Active error correction is then applied'; 2025-26 (H2-2): real-time Steane QEC gadgets and runtime feedback.",
+   "sources": [
+    "https://arxiv.org/abs/2404.16728",
+    "https://arxiv.org/abs/2505.09133"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "xanadu-aurora"
+   },
+   "fields": {
+    "decoder_mode": "feed-forward"
+   },
+   "note": "Nature 2025: a belief-propagation decoder's confidence value picks the next measurement basis within the clock cycle (foliated distance-2 repetition code, 'real-time decoding'); error detection on low-quality GKP states, demonstration-grade.",
+   "sources": [
+    "https://www.nature.com/articles/s41586-024-08406-9"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "architecture",
+    "id": "ph_fusion"
+   },
+   "note": "Demoted (the editor, 2 Oct 2026): PsiQuantum's June 2026 release dates only the cryoplant (2H 2027) and names no operating date — the 'slipped system date' trigger of §0 (v), §3 verdict 5 and §5.2 fired; the narrative's next test restated.",
+   "sources": []
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "architecture",
+    "id": "ion_qccd"
+   },
+   "note": "The Atlas's 5x bar for Sol's full-width layer kept; the builder's own 2x promise written beside it as the promise's test, not the architecture's (the editor, 2 Oct 2026).",
+   "sources": []
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "text",
+    "id": "sec2.7-maryland"
+   },
+   "note": "The organisation linker linked the state in 'Microsoft's new Maryland research center' to the University of Maryland; the place name is now a no-link span. The §2.3 'Duke/Maryland' links stand: both affiliations are on O'Reilly et al. 2024 (Duke Quantum Center; JQI, University of Maryland).",
+   "sources": [
+    "https://arxiv.org/abs/2404.16167"
+   ]
+  }
+ ]
+}

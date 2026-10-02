@@ -28,10 +28,12 @@ sticky — {open, x, y, collapsed, q, cs, whole, scope} is kept under the key qt
 reopens it where it was, with its query and options, and searches once the page is ready.
 """
 
+# the hint shown on the Find buttons, in the page's language: the two hotkeys (⌘K on a Mac — the handler takes metaKey too)
+FIND_HINT = {'en': 'find in the Atlas — press / or Ctrl+K (⌘K)', 'ru': 'поиск по Атласу — клавиша / или Ctrl+K (⌘K)', 'he': 'חיפוש באטלס — מקש / או Ctrl+K (⌘K)'}
 FIND_HTML = r'''<div class="findbar" id="findbar" hidden role="search" aria-label="find in the Atlas">
  <div class="findrow">
   <span class="fgrip" title="drag to move" aria-hidden="true">⋮⋮</span>
-  <input type="search" id="findq" class="findq" autocomplete="off" spellcheck="false" placeholder="find…  regex: [bg]ui  \d+ q  a|b" aria-label="find in the Atlas — a regular expression; Enter next hit, Shift+Enter previous">
+  <input type="search" id="findq" class="findq" autocomplete="off" spellcheck="false" placeholder="find…  regex: [bg]ui  \d+ q  a|b   (/ or Ctrl+K)" aria-label="find in the Atlas — a regular expression; opens on / or Ctrl+K; Enter next hit, Shift+Enter previous">
   <span class="findcount" id="findcount" aria-live="polite"></span>
   <button type="button" class="fb" id="findprev" aria-label="previous hit (Shift+Enter)" title="previous (Shift+Enter)">▲</button>
   <button type="button" class="fb" id="findnext" aria-label="next hit (Enter)" title="next (Enter)">▼</button>
@@ -265,8 +267,11 @@ document.getElementById('findclose').addEventListener('click',close);
 document.getElementById('findnext').addEventListener('click',function(){ if(!hits.length) run(true); else go(cur+1); });
 document.getElementById('findprev').addEventListener('click',function(){ if(!hits.length) run(true); else go(cur-1); });
 document.addEventListener('keydown',function(ev){ var t=ev.target; var typing=t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.tagName==='SELECT'||t.isContentEditable);
-  if(!typing&&ev.key==='/'&&!ev.ctrlKey&&!ev.metaKey&&!ev.altKey){ ev.preventDefault(); open(null); }
-  else if((ev.ctrlKey||ev.metaKey)&&!ev.shiftKey&&!ev.altKey&&(ev.key==='k'||ev.key==='K')){ ev.preventDefault(); open(null); }
+  // the two hotkeys of the web's search convention — "/" (GitHub, YouTube, Gmail) and Ctrl+K / ⌘K (GitHub's palette, Slack, Notion) — matched by the
+  // physical key (KeyboardEvent.code, layout-independent) with the character as the fallback, so that on a Russian or Hebrew layout the key that prints
+  // "." still opens Find and Ctrl+л / Ctrl+ל count as Ctrl+K (the editor, 2 Oct 2026); Shift+slash ("?") is left alone; neither key is reserved by a browser
+  if(!typing&&!ev.ctrlKey&&!ev.metaKey&&!ev.altKey&&(ev.key==='/'||(ev.code==='Slash'&&!ev.shiftKey))){ ev.preventDefault(); open(null); }
+  else if((ev.ctrlKey||ev.metaKey)&&!ev.shiftKey&&!ev.altKey&&(ev.code==='KeyK'||ev.key==='k'||ev.key==='K')){ ev.preventDefault(); open(null); }
   else if(ev.key==='Escape'&&!bar.hidden&&t!==q){ close(); } });
 // a language switch (in place, no reload) re-runs the search once the language's text is there; the list keeps its scroll fraction (29 Sep 2026)
 document.querySelectorAll('[data-setlang]').forEach(function(b){ b.addEventListener('click',function(){ var kf=(!bar.hidden&&!list.hidden&&list.scrollHeight)?list.scrollTop/list.scrollHeight:null;

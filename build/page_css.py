@@ -53,6 +53,7 @@ code{font-size:.85em;background:var(--surface2);padding:.05em .35em;border-radiu
 .mast{display:grid;grid-template-columns:1fr auto;gap:18px 32px;align-items:end;padding:36px 0 20px;border-bottom:1px solid var(--rule)}
 .eyebrow{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 h1.title{font-family:"Unbounded","Golos Text",system-ui,sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);line-height:1.08;letter-spacing:-.01em;margin:.35em 0 .3em;text-wrap:balance;max-width:24ch}
+.mast .citename{margin:-.2em 0 .4em;font-family:"Unbounded","Golos Text",system-ui,sans-serif;font-weight:500;font-size:clamp(14px,1.4vw,18px);letter-spacing:.01em;color:var(--mid)}
 .subtitle{font-size:17px;color:var(--ink2);max-width:62ch;margin:0;text-wrap:pretty}
 .controls{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
 .seg{display:inline-flex;border:1px solid var(--rule);border-radius:8px;overflow:hidden;background:var(--surface)}

@@ -87,8 +87,26 @@ def editions_html(lang):
         e['edition'], e['date'], doi_cell(e), fb_attrs(lang, not e.get(lang)), (e.get(lang) or e['en'])[0]) for e in EDITIONS)
     return '<h3 id="editions-%s"%s>%s</h3><div class="tbl"><table><thead><tr><th>%s</th><th>%s</th><th>%s</th><th>%s</th></tr></thead><tbody>%s</tbody></table></div>' % (lang, fh, t[0], t[1], t[2], t[3], t[4], rows)
 
+# Site updates after an edition's Zenodo version (the editor's cadence of 2 Oct 2026: the site is updated as fixes land; Zenodo gets a new version
+# when the changes amount to an edition). One entry per update, newest first: date, the review or ledger it answers, what changed for the reader.
+ERRATA = {
+ '2026.09': [
+  ('2026-10-02', 'review R1 (1 Oct 2026; data/reviews/R1-2026-10-01.json) and the editor\'s decisions of 2 Oct 2026',
+   'The largest superconducting device with a benchmarked entangling gate is IBM Quantum Osprey, 413 of its 433 qubits usable (2023) — not the 1,121-qubit Condor, a scale demonstrator with no published gate figure, and not 433: takeaway (i), §5.2, Table 8.3, H1 and F1a now count benchmarked devices by usable qubits (register fields role and gate_evidence). '
+   'Closed-loop decoding counts feed-forward only: four machines (Aurora, Ankaa-2, H1, H2); Willow\'s real-time decoder fed nothing back and is shown apart (register field decoder_mode; H4, F3). '
+   'H6 reads range deficits (a range counts by its geometric mean): 49 SHORT rows quantify both deficits, 5 error only, 11 qubits only, 0 neither (was 47/7/10 with one row dropped). '
+   'Photonics as a compute bet is demoted: PsiQuantum\'s June 2026 release dates only the cryoplant (2H 2027) and names no operating date — §0 (v), §3, §5.2 and the fusion architecture\'s next test. '
+   'The ion QCCD architecture\'s test keeps the 5× layer bar and states Quantinuum\'s own 2× promise beside it. '
+   'The state of Maryland in §2.7 no longer links the University of Maryland. The Find window opens on / and Ctrl+K (⌘K) on every keyboard layout, the hint in the page\'s language; the Russian and Hebrew pages carry the translated name in the masthead and the tab, the English name beneath as the citable one.'),
+ ]}
+
+
 def changelog_md():
     out = ['# Changelog — Quantum Technology Atlas', '', 'Editions use calendar versioning (YYYY.MM, optionally .N for a re-issue within the month). Each edition is archived on Zenodo with its own version DOI; the concept DOI %s resolves to the newest edition.' % CONCEPT_DOI, '']
     for e in EDITIONS:
         out += ['## %s — %s' % (e['edition'], e['date']), '', 'DOI: https://doi.org/%s' % e['doi'], ''] + ['- ' + c for c in e['en']] + ['']
+        err = ERRATA.get(e['edition'])
+        if err:
+            out += ['### Errata and site updates since the Zenodo version of %s' % e['edition'], '', 'The site (qodeh.com) is updated as fixes land; the Zenodo record keeps the edition as published until the changes amount to a new edition.', '']
+            out += ['- **%s** — answers %s. %s' % (d, src, txt) for d, src, txt in err] + ['']
     return '\n'.join(out)

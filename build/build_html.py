@@ -9,7 +9,7 @@ import json, os
 from page_css import CSS
 from map_js import JS
 from brief_js import BRIEF_JS
-from find_js import FIND_JS, FIND_HTML
+from find_js import FIND_JS, FIND_HTML, FIND_HINT
 from labels import SHORT
 import langs as LG   # the languages (29 Sep 2026: en, ru, he) — every per-language loop below reads LG.LANGS
 from langs import LANGS, NATIVE, FOLDER, pick, spans, fb_attrs, direction
@@ -768,7 +768,7 @@ def navchrome(cfg):
     return f'''<div class="mobilebar" id="mobilebar">
  <button type="button" class="mb-btn" id="tocopen" aria-expanded="false" aria-controls="tocdrawer">{spans(('Contents','Содержание','תוכן העניינים'),cls='mb-lbl')} ☰</button>
  <a class="mb-btn" href="#map">{spans(('Map','Карта','מפה'))}</a>
- <button type="button" class="mb-btn findopen" data-findopen="1" aria-label="find in the Atlas" title="find in the Atlas (/)"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 10l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>{spans(('Find','Поиск','חיפוש'))}</button>
+ <button type="button" class="mb-btn findopen" data-findopen="1" aria-label="find in the Atlas" title="{FIND_HINT[dl]}"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 10l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>{spans(('Find','Поиск','חיפוש'))}</button>
  <span class="mb-sp"></span>
  <div class="seg mb-seg" role="group" aria-label="language">{lang_buttons(dl)}</div>
 </div>
@@ -853,6 +853,9 @@ def report_numbers(text,lang):
     left=re.findall(r'\{\{N_[A-Z0-9_]+\}\}',out)
     if left: raise SystemExit('report placeholders without a value: %s'%sorted(set(left)))
     return out
+# The work's name in each language (the editor's word of 2 Oct 2026): the masthead and the browser tab carry the translated name, with the English
+# name beneath it as the citable one; citation and Dublin Core metadata, the Zenodo record and CITATION.cff keep the English name only.
+TITLE_L={'en':'Quantum Technology Atlas','ru':'Атлас квантовых технологий','he':'אטלס הטכנולוגיות הקוונטיות'}
 def masthead(cfg):
     # The page is the publication artefact and names the work by its concept DOI whatever the repository's release stamp
     # (editions.STATUS governs CITATION.cff and the README only — the editor's word of 27 Sep 2026: no "beta", no "reserved").
@@ -861,7 +864,7 @@ def masthead(cfg):
     return f'''<header class="mast">
  <div>
   <div class="eyebrow">{spans(('Edition','Издание','מהדורה'))} {cfg['edition']} · {' / '.join('<span lang="%s" dir="%s">%s</span>'%(L,direction(L),NATIVE[L]) for L in LANGS)}</div>
-  <h1 class="title">Quantum Technology Atlas</h1>
+  <h1 class="title">{TITLE_L[cfg.get('page_lang','en')]}</h1>{('<p class="citename">Quantum Technology Atlas</p>' if cfg.get('page_lang','en')!='en' else '')}
   <p class="author">{spans(('Author','Автор','מחבר'))} · <b>{cfg['author']}</b> <a class="orcid" href="https://orcid.org/0000-0001-7362-9529" target="_blank" rel="noopener author" title="ORCID iD: https://orcid.org/0000-0001-7362-9529" aria-label="ORCID iD 0000-0001-7362-9529"><svg class="orcid-id" viewBox="0 0 256 256" width="16" height="16" aria-hidden="true"><path fill="#A6CE39" d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z"/><path fill="#FFF" d="M86.3 186.2H70.9V79.1h15.4v107.1zM108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7 0-21.5-13.7-39.7-43.7-39.7h-23.7v79.4zM88.7 56.8c0 5.5-4.5 10.1-10.1 10.1s-10.1-4.6-10.1-10.1c0-5.6 4.5-10.1 10.1-10.1s10.1 4.6 10.1 10.1z"/></svg></a></p>
   <p class="subtitle"><span class="lang-en">Every quantum-computing technology ({NN}) and every quantum machine built, announced or planned ({NM}): analysed and summarised, partitioned by seven stable design attributes, compared and combined in dozens of ways — with a brief on every technology and a card on every machine.</span><span class="lang-ru">Все технологии квантовых вычислений ({NN}) и все построенные, объявленные или запланированные квантовые машины ({NM}): проанализированы и сведены, разбиты по семи устойчивым атрибутам конструкции, сопоставлены и скомбинированы десятками способов — с брифом на каждую технологию и карточкой на каждую машину.</span><span class="lang-he">כל טכנולוגיות המחשוב הקוונטי ({NN}) וכל המכונות הקוונטיות שנבנו, הוכרזו או תוכננו ({NM}): מנותחות ומסוכמות, מחולקות לפי שבע תכונות תכן יציבות, מושוות ומשולבות בעשרות דרכים — עם תקציר לכל טכנולוגיה וכרטיס לכל מכונה.</span></p>
  </div>
@@ -1112,7 +1115,7 @@ def compose(cfg,page_lang,prose,briefs_page,tocs,mapsecs,B,others,lang_base,fall
     D3=open(os.path.join(ROOT,'build','vendor','d3.v7.min.js'),encoding='utf-8').read()
     sectitles={h[0].replace('en-',''):h[2] for h in tocs['en'] if h and len(h)>2}
     each=lambda f:''.join(f(L) for L in LANGS)   # one block per language, in langs.LANGS order
-    body=f"""<title>{cfg['title']}</title>
+    body=f"""<title>{TITLE_L[dl] + (' — ' + cfg['title'] if dl!='en' else '')}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Golos+Text:wght@400;500;600&family=Heebo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>{CSS}</style>
@@ -1121,7 +1124,7 @@ def compose(cfg,page_lang,prose,briefs_page,tocs,mapsecs,B,others,lang_base,fall
 {navchrome(dict(cfg,default_lang=dl))}
 {masthead(dict(cfg,page_lang=dl))}
 <div class="page">
- <nav class="toc" aria-label="contents"><button type="button" class="findopen tocfind" data-findopen="1" title="find in the Atlas (/)"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 10l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> {spans(('Find in the Atlas','Поиск по Атласу','חיפוש באטלס'))} <kbd>/</kbd></button>{each(lambda L:'<div class="lang-%s">%s</div>'%(L,toc_html(tocs[L],L,cfg['graph_sec'],fallback=fallback.get(L))))}</nav>
+ <nav class="toc" aria-label="contents"><button type="button" class="findopen tocfind" data-findopen="1" title="{FIND_HINT[dl]}"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 10l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> {spans(('Find in the Atlas','Поиск по Атласу','חיפוש באטלס'))} <kbd>/</kbd></button>{each(lambda L:'<div class="lang-%s">%s</div>'%(L,toc_html(tocs[L],L,cfg['graph_sec'],fallback=fallback.get(L))))}</nav>
  <main>
   <div id="map">{each(lambda L:'<div class="lang-%s">%s</div>'%(L,mapsecs[L]))}</div>
   <div id="mapbody"><div class="mapfull">{MAPUI.replace("{MAPLEAD}",map_lead(cfg["graph_sec"]))}</div></div>

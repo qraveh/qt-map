@@ -224,12 +224,19 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "domestic fab capability is the programme's point",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "outlier-claim",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -446,10 +453,17 @@
     "decoder": "live decoder ('correct errors, live'); type not published",
     "realtime": "intended in-loop",
     "roadmap": "then Graphene (2030)",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "planned",
     "err_2q_median_num": null,
     "flags": [
      "target-not-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -660,10 +674,17 @@
     "decoder": "none published",
     "realtime": "none",
     "roadmap": "Helium, Lithium, Beryllium, Graphene",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "phase-flip-unpublished"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -878,10 +899,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "Graphene: 100 high-fidelity logical qubits by 2030",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.001,
     "flags": [
      "assumption-gap"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -1087,11 +1115,18 @@
     "decoder": "none published for any Alice & Bob device",
     "realtime": "none",
     "roadmap": "48 cat qubits next; Graphene 2030",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "cryo-gap",
      "no-logical-error-rate"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -1312,11 +1347,18 @@
     "decoder": "none published",
     "realtime": "none",
     "roadmap": "Helium system, then Lithium",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "not-peer-reviewed",
      "phase-flip-unpublished"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -1525,10 +1567,17 @@
     "decoder": "",
     "realtime": "",
     "roadmap": "then Beryllium (250 cat qubits), Graphene (2,000 cat qubits, 100 logical, 2030)",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "target-not-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -1721,12 +1770,19 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "Quantum Valley Tech Park, Uddandarayunipalem; building completion targeted 15 Oct 2026, installation expected within two months of construction, inauguration planned Jan 2027; provision for two more quantum computers (Aug 2026)",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "conflicting-claim",
      "schedule-risk",
      "target-not-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -1930,11 +1986,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "CAD 23 M to accelerate QEC",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -2145,10 +2208,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "no system product",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "component-only"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -2395,10 +2465,17 @@
     "decoder": "matching (1-D)",
     "realtime": "offline",
     "roadmap": "\"future versions of Ocelot\", no milestone, no date",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "offline",
     "err_2q_median_num": 0.096,
     "flags": [
      "no-distance-scaling"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -2597,11 +2674,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "not published",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.0098,
     "flags": [
      "no-published-error-rates",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -2794,11 +2878,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "not published",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -2991,11 +3082,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "not published",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -3188,11 +3286,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "not published",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -3385,10 +3490,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "regional programme (BasQ); System Two designed to integrate multiple processors",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -3581,11 +3693,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "35 qubits is the final Quantum Spain milestone; coupled to MareNostrum 5",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "spec-absent"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -3778,10 +3897,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "40 qubits within a couple of years; 100 qubits by 2029",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -3974,10 +4100,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "not published",
+    "role": "",
+    "gate_evidence": "vendor-figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.004,
     "flags": [
      "vendor-claim"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -4195,11 +4328,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "not published",
+    "role": "",
+    "gate_evidence": "vendor-figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.0044,
     "flags": [
      "estimated-baseline",
      "name-not-qubit-count"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -4411,11 +4551,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": ">=1,000 qubits with sub-microsecond feedback latency by 2026",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "access-disputed",
      "no-published-error-rates"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -4608,11 +4755,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "scale-up planned; no qubit target published",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "press-only"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -4837,11 +4991,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "17 to 49 to 181 physical, then 10 and 100 logical; CHIPS R&D award (8 Sep 2026) supports a 10,000-qubit gate-model system for 100 logical qubits running >1M operations (undated)",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.001,
     "flags": [
      "no-code-named",
      "target-not-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -5036,8 +5197,15 @@
     "decoder": "MWPM with error-model-free weights, applied in post-processing",
     "realtime": "offline",
     "roadmap": "academic",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "offline",
     "err_2q_median_num": 0.015,
-    "flags": []
+    "flags": [],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -5230,11 +5398,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "national",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -5461,11 +5636,18 @@
     "decoder": "PyMatching v2 (MWPM), assumed",
     "realtime": "not built",
     "roadmap": "FY2030 250 logical; 2035 1,000 logical",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.001,
     "flags": [
      "estimate-only",
      "no-published-error-rates"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -5684,12 +5866,19 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "live Fujitsu pages still say \"launched in 2026\" as of 15 Sep 2026",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "schedule-risk",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -5916,10 +6105,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "superseded",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.0062,
     "flags": [
      "eroded-claim"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -6194,8 +6390,15 @@
     "decoder": "matching / tensor-network; AlphaQubit trained on this device",
     "realtime": "offline",
     "roadmap": "superseded by Willow",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "offline",
     "err_2q_median_num": null,
-    "flags": []
+    "flags": [],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -6629,10 +6832,17 @@
     "decoder": "sparse-blossom MWPM in loop; AlphaQubit2 neural; Tesseract offline MLE",
     "realtime": "in-loop (real-time, 63 us mean latency at d=5 for 1e6 cycles)",
     "roadmap": "Milestone 3: 1,000 physical to 1 logical at 1e-6 - still ahead",
+    "role": "",
+    "gate_evidence": "vendor-figure",
+    "decoder_mode": "real-time-throughput",
     "err_2q_median_num": 0.0015,
     "flags": [
      "estimated-baseline"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": false,
+    "benchmarked": true
    }
   },
   {
@@ -6873,10 +7083,17 @@
     "decoder": "Relay-BP",
     "realtime": "intended in-loop",
     "roadmap": "2033+",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "planned",
     "err_2q_median_num": null,
     "flags": [
      "cryo-gap"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -7081,10 +7298,17 @@
     "decoder": "Relay-BP (intended)",
     "realtime": "intended in-loop",
     "roadmap": "module-to-module entanglement",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "planned",
     "err_2q_median_num": 0.035,
     "flags": [
      "schedule-risk"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -7095,7 +7319,7 @@
    "country": "USA",
    "family": "SC",
    "map_path": "sc",
-   "status": "DEMONSTRATED (unveiled 4 Dec 2023 as an innovation milestone; never offered on the IBM Quantum Platform)",
+   "status": "DEMONSTRATED (unveiled 4 Dec 2023 as an innovation milestone \"solving scale\"; never offered on the IBM Quantum Platform; not in IBM's current or retired system lists)",
    "status_date": "4 Dec 2023",
    "physical_qubits_num": 1121,
    "access": "lab-only",
@@ -7136,7 +7360,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "cross-resonance; coherence and gate fidelity \"comparable to Osprey\" (Dec 2023)",
+      "summary": "cross-resonance (design); IBM (Dec 2023): performance \"comparable to Osprey\" - no gate figure published; the chip is a scale demonstrator (\"solving scale\"), never offered to users",
       "evidence": {
        "type": "technical-whitepaper",
        "url": "https://www.ibm.com/quantum/blog/quantum-roadmap-2033",
@@ -7287,7 +7511,7 @@
     "control": "room-temperature RF; ~1 mile of high-density cryogenic flex wiring",
     "control_placement": "room-temp",
     "readout": "multiplexed dispersive",
-    "err_2q_median": "not published (\"Osprey-class\")",
+    "err_2q_median": "not published (IBM, Dec 2023: performance \"comparable to Osprey\", which has no published figure either)",
     "err_2q_best": "",
     "readout_error": "",
     "t1": "",
@@ -7298,12 +7522,19 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "end of the monolithic-scaling line",
+    "role": "scale-demonstrator",
+    "gate_evidence": "vendor-statement",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "cryo-gap",
      "never-user-accessible",
      "no-published-error-rates"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": false,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -7540,10 +7771,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "retired",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.0074,
     "flags": [
      "rebutted-claim"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -7742,10 +7980,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "coupler bridge from CR to Heron",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -7989,8 +8234,15 @@
     "decoder": "matching",
     "realtime": "offline",
     "roadmap": "superseded by Eagle/Heron",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "offline",
     "err_2q_median_num": null,
-    "flags": []
+    "flags": [],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -8189,11 +8441,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "l-coupler line continues in multi-chip Nighthawk (up to 3 x 120 q in 2026) and Cockatoo (2027)",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "component-only",
      "schedule-risk"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -8402,10 +8661,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "superseded by r2/r3",
+    "role": "",
+    "gate_evidence": "vendor-dashboard",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.00246,
     "flags": [
      "conflicting-claim"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -8674,8 +8940,15 @@
     "decoder": "none in loop",
     "realtime": "none (replay only)",
     "roadmap": "stable platform under Nighthawk",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.00203,
-    "flags": []
+    "flags": [],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -8945,10 +9218,17 @@
     "decoder": "none in loop",
     "realtime": "none (replay only)",
     "roadmap": "stable platform; no r4 announced",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.00152,
     "flags": [
      "conflicting-claim"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -9149,10 +9429,17 @@
     "decoder": "Relay-BP on FPGA (intended)",
     "realtime": "intended in-loop",
     "roadmap": "first logical module; unannounced as of 26 Sep 2026",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "planned",
     "err_2q_median_num": null,
     "flags": [
      "schedule-risk"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -9400,10 +9687,17 @@
     "decoder": "none (targets dec_relaybp)",
     "realtime": "none",
     "roadmap": "feeds Kookaburra",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -9622,8 +9916,15 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "r2, then 3-module 360 q; a Nighthawk r2-based IBM Quantum System Two at CSCS Lugano (ETH Zurich), expected operational by end-2026 (announced 10 Sep 2026)",
+    "role": "",
+    "gate_evidence": "vendor-dashboard",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.0037,
-    "flags": []
+    "flags": [],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -9898,10 +10199,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "2027: 10,000 gates and at least 1,000 programmable qubits; 2028: 15,000 gates (IBM publishes no 2028 qubit count; the ~1,080 figure is not in the cited sources)",
+    "role": "",
+    "gate_evidence": "vendor-dashboard",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.0037,
     "flags": [
      "conflicting-claim"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -9912,7 +10220,7 @@
    "country": "USA",
    "family": "SC",
    "map_path": "sc",
-   "status": "RETIRED",
+   "status": "RETIRED (ibm_seattle, cloud May-Sep 2023 as an \"exploratory technical demonstration\"; retired 7 Sep 2023)",
    "status_date": "announced Nov 2022",
    "physical_qubits_num": 433,
    "access": "was cloud service",
@@ -9953,11 +10261,11 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "cross-resonance CR/ECR on fixed-frequency transmons; IBM published no QV/EPLG, fidelity \"Eagle-class\"",
+      "summary": "cross-resonance CR/ECR on fixed-frequency transmons; ibm_seattle live May-Sep 2023 as an \"exploratory technical demonstration\" with 413 of 433 qubits accessible, performance \"consistent with Eagle r1\" (IBM); calibration shown on the platform, no figure published",
       "evidence": {
        "type": "press-technical",
-       "url": "https://postquantum.com/industry-news/ibm-condor/",
-       "locator": "",
+       "url": "https://www.hpcwire.com/2023/05/09/ibm-opens-access-to-latest-osprey-quantum-processor-at-413-qubits/",
+       "locator": "IBM statement quoted: 413 of 433 qubits, exploratory technical demonstration, consistent with Eagle R1",
        "verified": false
       }
      }
@@ -10094,7 +10402,7 @@
     "control": "room-temperature RF + custom flex cabling",
     "control_placement": "room-temp",
     "readout": "multiplexed dispersive",
-    "err_2q_median": "not published",
+    "err_2q_median": "not published; calibration data shown on the platform while ibm_seattle was live (May-Sep 2023, \"exploratory technical demonstration\", 413 of 433 qubits accessible; IBM: performance \"consistent with Eagle r1\"), not archived",
     "err_2q_best": "",
     "readout_error": "",
     "t1": "",
@@ -10105,10 +10413,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "retired",
+    "role": "exploratory",
+    "gate_evidence": "platform-calibration",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates"
-    ]
+    ],
+    "qubits_accessible": 413,
+    "gate_evidence_derived": false,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -10350,10 +10665,17 @@
     "decoder": "Relay-BP on FPGA/ASIC, in-loop",
     "realtime": "intended in-loop",
     "roadmap": "Poughkeepsie NY, 2029",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "planned",
     "err_2q_median_num": null,
     "flags": [
      "cryo-gap"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -10559,10 +10881,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "initial IBM-ETH Zurich install-and-operate agreement for three years (through 2029); hub partners IBM, Lockheed Martin, ETH Zurich, CSCS",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "target-not-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -10766,11 +11095,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "a natural venue for real-time decoding experiments",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -11026,10 +11362,17 @@
     "decoder": "none deployed (targets dec_gpu over NVQLink)",
     "realtime": "demonstrator only",
     "roadmap": "fault tolerance by 2030, scaling to 1 M physical qubits",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.005,
     "flags": [
      "test-chip-vs-system"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -11228,8 +11571,15 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "superseded by Emerald",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
-    "flags": []
+    "flags": [],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -11500,10 +11850,17 @@
     "decoder": "GPU decoding over NVQLink (planned)",
     "realtime": "planned real-time from 2028",
     "roadmap": "LUMI-IQ: 2027 H4 150 q; 2028 real-time correction; 2029 H5 lattice surgery and T-gate teleportation, up to 9 logical qubits (restated 10 Sep 2026)",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "planned",
     "err_2q_median_num": 0.003,
     "flags": [
      "schedule-risk"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -11696,10 +12053,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "teaching and research system; larger workloads on IQM 54-qubit cloud system",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.01,
     "flags": [
      "target-not-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -11898,8 +12262,15 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "Constellation: a 2-D lattice of Star cells",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
-    "flags": []
+    "flags": [],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -12103,10 +12474,17 @@
     "decoder": "post-selection (error detection), no decoder",
     "realtime": "none",
     "roadmap": "tiled star QPUs for codes with high-weight, overlapping stabilizers (paper); IQM Star 24",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "post-selection-dominated"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -12299,10 +12677,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "national (LUMI-Q consortium)",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -12508,11 +12893,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "1,000-qubit superconducting systems in the early 2030s",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -12705,11 +13097,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "100-qubit superconducting systems by 2029; the 1,000-qubit-class target is on the Yb neutral-atom track",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "spec-absent",
      "target-not-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -12902,8 +13301,15 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "national (DOE open testbed)",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
-    "flags": []
+    "flags": [],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -13168,11 +13574,18 @@
     "decoder": "no classical decoder at all - autonomous stabilisation",
     "realtime": "none (autonomous)",
     "roadmap": "100 logical qubits by 2028, 100+ by 2029",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "post-selection-dominated",
      "unverifiable-vendor-claim"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -13405,10 +13818,17 @@
     "decoder": "none (autonomous)",
     "realtime": "none (autonomous)",
     "roadmap": "fault tolerance 2028-2029",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "post-selection-dominated"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -13620,10 +14040,17 @@
     "decoder": "",
     "realtime": "",
     "roadmap": "after TITAN (2028); then ATLAS 2034",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "target-not-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -13835,10 +14262,17 @@
     "decoder": "",
     "realtime": "",
     "roadmap": "final named OQC roadmap system",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "target-not-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -14124,11 +14558,18 @@
     "decoder": "none published",
     "realtime": "none",
     "roadmap": "GENESIS 2026 16 logical at 1e-3 (15 mm); TITAN 2028 200 logical at 1e-6, 1 MHz, 100 mm (the \"2,000 sites\" figure is not on the roadmap page); ATHENA 2031 5,000 logical at 1e-9, 3 MHz, 200 mm; ATLAS 2034 50,000 logical at 1e-12, 10 MHz, 300 mm",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "aggressive-roadmap",
      "spec-absent"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -14340,10 +14781,17 @@
     "decoder": "",
     "realtime": "",
     "roadmap": "after GENESIS (16 logical, 2026); then ATHENA 2031, ATLAS 2034",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "target-not-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -14555,11 +15003,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "GENESIS/TITAN line",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "spec-absent"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -14752,11 +15207,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "superseded by Wukong-180",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -14955,11 +15417,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "launch date itself inconsistent across sources (9/14/15 May 2026)",
+    "role": "",
+    "gate_evidence": "vendor-figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.001,
     "flags": [
      "unverifiable",
      "vendor-claim"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -15180,11 +15649,18 @@
     "decoder": "offline",
     "realtime": "offline",
     "roadmap": "2021 roadmap promised 1,024 qubits by 2025 and delivered 72",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "offline",
     "err_2q_median_num": null,
     "flags": [
      "post-selection-dominated",
      "roadmap-missed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -15433,10 +15909,17 @@
     "decoder": "none published",
     "realtime": "none",
     "roadmap": "D-Wave gate-model line",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.001,
     "flags": [
      "no-code-named"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -15642,11 +16125,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "positioning is fab discipline and manufacturability",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -15845,11 +16335,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "Ganges 128 q, then Everest 1,000 q (no date)",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -16058,10 +16555,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "Ganges 128 q, Everest 1,000 q",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.01,
     "flags": [
      "aggregate-error-only"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -16273,12 +16777,19 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "no first-device date",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "cryo-gap",
      "paper-architecture",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -16492,11 +17003,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "A-line: Tenor-A41 (41 q) shipping 2026; Baritone-A250 (250 q) 2028; Bass-A10K (10,000 q) 2027 as printed on the A-line page (order inconsistent)",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -16695,11 +17213,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "Baritone-D450 (450 q) 2027; Bass-D18K (18,000 q) 2028",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -16921,11 +17446,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "KiloFab (Delft) scheduled to open 2026; the same VIO-40K architecture carries the D-line Bass-D18K (18,000 q, shipping 2028)",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "target-not-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -17151,8 +17683,15 @@
     "decoder": "Collision Clustering (union-find class) on FPGA",
     "realtime": "in-loop",
     "roadmap": "superseded by Cepheus",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "feed-forward",
     "err_2q_median_num": 0.01,
-    "flags": []
+    "flags": [],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": false,
+    "benchmarked": true
    }
   },
   {
@@ -17356,8 +17895,15 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "superseded by Cepheus",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.01,
-    "flags": []
+    "flags": [],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -17597,10 +18143,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "~1,000 qubits at ~99.9% 2Q in ~3 years (~2029); the 100+ qubits at 99.5% by end-2025 promise was missed",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.009,
     "flags": [
      "roadmap-missed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -17817,8 +18370,15 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "108Q",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.005,
-    "flags": []
+    "flags": [],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -18022,10 +18582,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "9-qubit chiplet of the Cepheus-1-108Q (twelve 9-qubit chiplets)",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "vendor-claim"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -18255,11 +18822,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "feeds the 256-qubit machine",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -18489,11 +19063,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "collaboration extended to Mar 2029; 1,000-qubit machine planned",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "cryo-gap",
      "no-published-error-rates"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -18707,10 +19288,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "digital flux control, then digital qubit readout on-die",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "1q-only"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -18927,11 +19515,18 @@
     "decoder": "\"cascaded quantum Hamming code decoding\" claimed",
     "realtime": "none",
     "roadmap": "d=3 surface code in 2026",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -19160,8 +19755,15 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "none published",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
-    "flags": []
+    "flags": [],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -19365,10 +19967,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "none published",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "post-selection-dominated"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -19609,10 +20218,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "stated goal 99.99%; no multi-qubit DTC processor exists",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.001,
     "flags": [
      "component-only"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -19824,8 +20440,15 @@
     "decoder": "offline",
     "realtime": "offline",
     "roadmap": "none published",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "offline",
     "err_2q_median_num": null,
-    "flags": []
+    "flags": [],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -20024,12 +20647,19 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "superseded",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.025,
     "flags": [
      "eroded-claim",
      "second-hand-numbers",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -20288,10 +20918,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "surface code at d=7, d=9/d=11 planned",
+    "role": "",
+    "gate_evidence": "vendor-figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.0038,
     "flags": [
      "estimated-baseline"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -20554,8 +21191,15 @@
     "decoder": "none named for the memory; neural network for the Jul 2026 logical-gate work",
     "realtime": "offline (memory); unstated for the logical-gate paper",
     "roadmap": "d=9, d=11 surface codes",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "offline",
     "err_2q_median_num": 0.004,
-    "flags": []
+    "flags": [],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -20748,10 +21392,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "150- and 300-qubit systems planned; the 300-qubit one for materials modelling and quantum error correction",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -20950,10 +21601,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "not published",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -21217,10 +21875,17 @@
     "decoder": "belief-matching",
     "realtime": "offline",
     "roadmap": "not published",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "offline",
     "err_2q_median_num": 0.004,
     "flags": [
      "post-selection-dominated"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -21451,10 +22116,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "LYNX series (separate row)",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.013,
     "flags": [
      "conflicting-claim"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -21658,10 +22330,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "LYNX series; AQT Germany is a partner in NFQC-1k",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -21860,10 +22539,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "Q-STAR.NRW toward up to 200 qubits",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -22072,10 +22758,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "QSea II (same consortium, to 14 Apr 2027): several modular MAGIC processors connected to each other, to 'show the basic scalability to many thousands of qubits'",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -22268,10 +22961,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "superseded by Forte",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.004,
     "flags": [
      "vendor-claim"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -22492,11 +23192,18 @@
     "decoder": "beam search (Delfosse)",
     "realtime": "offline",
     "roadmap": "feeds the Walking-Cat blueprint",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "offline",
     "err_2q_median_num": null,
     "flags": [
      "code-params-inferred",
      "post-selection-dominated"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -22729,10 +23436,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "Tempo, then Superion",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.004,
     "flags": [
      "conflicting-count"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -22954,11 +23668,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "field-upgradeable by QPU swap",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.0001,
     "flags": [
      "count-from-secondary-source",
      "hero-pair-number"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -23164,10 +23885,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "Superion 256 (orderable; deliveries 2027) developed concurrently; 10K is the first generation built for the Walking Cat architecture; platform scales to millions of qubits",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "target-not-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -23405,10 +24133,17 @@
     "decoder": "one unified decoder, algorithm not named",
     "realtime": "planned",
     "roadmap": "Superion 10K (CMOS on chip, Walking Cat): 'full fault tolerance' in a 2027 lab setting, commercial 2028; >2,000,000 physical giving 40,000-80,000 logical at <1e-12 by 2030",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "planned",
     "err_2q_median_num": null,
     "flags": [
      "blueprint-not-demonstration"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -23610,11 +24345,18 @@
     "decoder": "beam search (Delfosse)",
     "realtime": "offline",
     "roadmap": "Superion 256",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "offline",
     "err_2q_median_num": 0.001,
     "flags": [
      "conflicting-count",
      "target-not-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -23807,10 +24549,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "national",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -24035,10 +24784,17 @@
     "decoder": "GPU",
     "realtime": "planned",
     "roadmap": "universal fault tolerance by the end of the decade",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "planned",
     "err_2q_median_num": 0.0001,
     "flags": [
      "target-not-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -24316,12 +25072,19 @@
     "decoder": "real-time lookup table",
     "realtime": "in-loop (the longest-running in-loop decoder on any platform)",
     "roadmap": "superseded by Helios",
+    "role": "",
+    "gate_evidence": "vendor-figure",
+    "decoder_mode": "feed-forward",
     "err_2q_median_num": 0.001,
     "flags": [
      "emulator-numbers",
      "source-not-confirmed",
      "status-unresolved"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": false,
+    "benchmarked": true
    }
   },
   {
@@ -24599,10 +25362,17 @@
     "decoder": "matching; real-time lookup table",
     "realtime": "in-loop for Steane",
     "roadmap": "superseded by Helios",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "feed-forward",
     "err_2q_median_num": 0.001,
     "flags": [
      "code-id-missing"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": false,
+    "benchmarked": true
    }
   },
   {
@@ -24972,12 +25742,19 @@
     "decoder": "Frontier (offline); GPU-accelerated BP-OSD over NVQLink at median 67 us round trip, 5.4x LER gain",
     "realtime": "offline for the record; GPU real-time demonstrated",
     "roadmap": "Sol, then Apollo",
+    "role": "",
+    "gate_evidence": "vendor-figure",
+    "decoder_mode": "offline",
     "err_2q_median_num": 0.00079,
     "flags": [
      "code-id-missing",
      "conflicting-claim",
      "estimated-baseline"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -25198,12 +25975,19 @@
     "decoder": "Frontier - a block-specific offline decoder for concatenated high-rate codes",
     "realtime": "offline (a streaming version is future work)",
     "roadmap": "generalised in Apollo",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "offline",
     "err_2q_median_num": 0.00079,
     "flags": [
      "architecture-not-machine",
      "code-id-missing",
      "component-only"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -25415,10 +26199,17 @@
     "decoder": "Frontier generalised",
     "realtime": "planned",
     "roadmap": "Apollo",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "planned",
     "err_2q_median_num": 0.0002,
     "flags": [
      "target-not-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -25630,10 +26421,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "Perspective: 1,000-qubit multi-core system; then the Landscape series (thousands of logical qubits), undated",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "spec-absent"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -25832,11 +26630,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "full stack from trap chips to cloud",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "source-not-confirmed",
      "spec-absent"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -26029,12 +26834,19 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "QUDORA system 'reaching 200 high-fidelity qubits through 2027'; NFQC-1k (>=1,000 physical, 50 logical, 2030)",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-hardware",
      "snippet-only",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -26240,10 +27052,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "EUR 122 M over five years; >=1,000 physical and 50 logical qubits with logical gate error below 1e-4; semiconductor QPU pilot line (NXP); national fault-tolerant target for 2030",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "target-not-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -26436,12 +27255,19 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "tens of times more qubits and millions of operations by 2030 (Rosatom roadmap, stated generally)",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "press-only",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -26634,8 +27460,15 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "national (DOE open testbed; discontinued by end of FY2026)",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
-    "flags": []
+    "flags": [],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -26862,10 +27695,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "academic",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "analog-only"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -27129,8 +27969,15 @@
     "decoder": "coherent / measurement-free: the correction is a unitary conditioned on an ancilla register",
     "realtime": "latency-free by construction",
     "roadmap": "academic",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.025,
-    "flags": []
+    "flags": [],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -27355,10 +28202,17 @@
     "decoder": "matching",
     "realtime": "offline",
     "roadmap": "academic; the Monroe lineage holds the remote ion-ion entanglement rate record (9.7-250 per second at 94-97% fidelity, teleported CZ 86%)",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "offline",
     "err_2q_median_num": null,
     "flags": [
      "code-node-mismatch"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -27589,11 +28443,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "2026-2030 modular scaling roadmap",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "conflicting-count",
      "no-published-error-rates"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -27831,11 +28692,18 @@
     "decoder": "Microsoft stack",
     "realtime": "planned",
     "roadmap": "marketed as the first commercially available Level 2 machine",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "planned",
     "err_2q_median_num": null,
     "flags": [
      "no-numbers-published",
      "target-not-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -28105,11 +28973,18 @@
     "decoder": "matching",
     "realtime": "offline",
     "roadmap": "Magne (50 logical target)",
+    "role": "",
+    "gate_evidence": "vendor-figure",
+    "decoder_mode": "offline",
     "err_2q_median_num": 0.004,
     "flags": [
      "code-node-mismatch",
      "no-numbers-published"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -28323,10 +29198,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "academic",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-entangling-gate"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -28525,10 +29407,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "rapid iteration without peer-reviewed verification",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.02,
     "flags": [
      "unverified-claim"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -28727,11 +29616,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "\"first dual-core neutral-atom computer\"",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "spec-absent",
      "unverified-claim"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -29033,8 +29929,15 @@
     "decoder": "machine-learning and most-likely-error decoders that consume loss information; correlated decoding across transversal gates",
     "realtime": "offline (1.73x QEC gain from loss-aware decoding)",
     "roadmap": "QuEra Libra",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "offline",
     "err_2q_median_num": 0.0016,
-    "flags": []
+    "flags": [],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -29283,10 +30186,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "enabler for mid-circuit active reloading on Libra and for Atom Computing's 90-round toric code",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "enabler-only"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -29479,11 +30389,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "academic",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "analog-only",
      "no-entangling-gate"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -29709,10 +30626,17 @@
     "decoder": "AI-accelerated decoding with NVIDIA (announced, no numbers)",
     "realtime": "offline",
     "roadmap": "30 entangled logical qubits shown Sep 2026 (80 atoms, ten [[8,3,2]] blocks, error-detected; paper pending); 100 logical by 2028; 1,000 by 2030",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "offline",
     "err_2q_median_num": 0.0027,
     "flags": [
      "conflicting-count"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -29905,12 +30829,19 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "72 qubits reached Dec 2025 (two of three functional zones tested); 'several hundred qubits' by 2030",
+    "role": "",
+    "gate_evidence": "vendor-figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.06,
     "flags": [
      "no-published-error-rates",
      "press-only",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -30127,10 +31058,17 @@
     "decoder": "",
     "realtime": "",
     "roadmap": "after Vela (200+ qubits, 2027); then Lyra (2029, 'impactful FTQC')",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "target-not-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -30362,11 +31300,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "Orion line",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -30578,11 +31523,18 @@
     "decoder": "",
     "realtime": "",
     "roadmap": "Pasqal roadmap: 100 high-fidelity logical qubits by 2029, 200 logical qubits in 2030 (not tied to Lyra by name)",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "spec-absent",
      "target-not-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -30812,11 +31764,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "Vela 2026-27; Centaurus ~10,000 physical 2028; Lyra ~100 logical 2029; ~200 logical 2030",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-code-named",
      "no-published-error-rates"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -31015,11 +31974,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "the first QPU engineered for quantum-advantage specifications",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "conflicting-claim",
      "no-code-named"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -31228,10 +32194,17 @@
     "decoder": "",
     "realtime": "",
     "roadmap": "sibling of MAQCS (1,000 qubits, LRZ, end-2027); planqc: 100-qubit demonstrator operational by spring 2027",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "target-not-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -31440,10 +32413,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "1,000-qubit multicore system for LRZ, operation end-2027",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -31682,8 +32662,15 @@
     "decoder": "correlated / loss-aware",
     "realtime": "offline",
     "roadmap": "academic",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "offline",
     "err_2q_median_num": null,
-    "flags": []
+    "flags": [],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -31882,11 +32869,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "nothing disclosed at all",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "spec-absent",
      "unverified-claim"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -32090,10 +33084,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "Gemini, then Libra",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "analog-only"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -32375,8 +33376,15 @@
     "decoder": "correlated / loss-aware decoding",
     "realtime": "offline",
     "roadmap": "Libra 2028",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "offline",
     "err_2q_median_num": 0.008,
-    "flags": []
+    "flags": [],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -32601,10 +33609,17 @@
     "decoder": "correlated / loss-aware",
     "realtime": "planned",
     "roadmap": ">256 logical qubits at 1e-6 on Amazon Braket (2028); a separate gigaquop system (>1,000 logical, >20,000 physical per core) 2028–29",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "planned",
     "err_2q_median_num": null,
     "flags": [
      "target-not-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -32808,6 +33823,9 @@
     "decoder": "AI 'deep transformer' decoder (claimed; trained on synthetic data, tested on Google's public surface-code dataset, claimed to beat correlated matching and PyMatching; no paper; patent cited by the company: US12294387B2, Ramot at TAU, classical-code decoding)",
     "realtime": "claimed (low-latency feedback via the IQCC OPX1000 collaboration; not demonstrated)",
     "roadmap": "thousands of physical qubits by end H1 2027; AI error-correction integration mid-2027 (company statements)",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "claim-only",
@@ -32815,7 +33833,11 @@
      "no-published-error-rates",
      "source-not-confirmed",
      "species-not-stated-path-provisional"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -33034,10 +34056,17 @@
     "decoder": "PyMatching v2 (MWPM), inherited from STAR",
     "realtime": "planned",
     "roadmap": "more than several hundred qubits with QEC by FY2027",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "planned",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -33230,10 +34259,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "16-qubit chips, then 32 qubits; cloud-based quantum computing service",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -33437,10 +34473,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "PT-2 (the advanced PT-Series system); PT-3 planned for 2026",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "spec-absent"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -33644,11 +34687,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "PT-3 in 2026",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "source-not-confirmed",
      "spec-absent"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -33909,12 +34959,19 @@
     "decoder": "MWPM / union-find on the fusion syndrome graph",
     "realtime": "offline",
     "roadmap": "Moreton Bay + Chicago \"operational\" 2027 means cooling and install capacity in place, not a working computer; utility-scale 1e6 photons late 2020s",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "offline",
     "err_2q_median_num": 0.0078,
     "flags": [
      "component-only",
      "cryo-gap",
      "no-qec-cycle"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -34193,11 +35250,18 @@
     "decoder": "none published (decoders scheduled for 2027)",
     "realtime": "none",
     "roadmap": "Canopus 24 q ~2026; 40+ q by 2028; 50 logical 2028",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.062,
     "flags": [
      "no-published-error-rates",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -34406,11 +35470,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "after Belenos (12 qubits) and Lucy",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "spec-absent",
      "target-not-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -34661,11 +35732,18 @@
     "decoder": "none published",
     "realtime": "none",
     "roadmap": "Canopus 24 q",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.062,
     "flags": [
      "no-published-error-rates",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -34871,11 +35949,18 @@
     "decoder": "none published",
     "realtime": "none",
     "roadmap": "2027 second generation with QEC features; 100+ logical \"foreseeable future\"; Dedalo next",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "source-not-confirmed",
      "spec-absent"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -35074,10 +36159,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "succeeded by Jiuzhang 2.0",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "estimated-baseline"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -35281,10 +36373,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "succeeded by Jiuzhang 3.0",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "estimated-baseline"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -35488,10 +36587,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "succeeded by Jiuzhang 4.0",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "estimated-baseline"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -35727,10 +36833,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "academic",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "estimated-baseline"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -35995,11 +37108,18 @@
     "decoder": "real-time, in-loop at 1 MHz - the only in-loop decoder in photonics",
     "realtime": "in-loop",
     "roadmap": "FT threshold 2028-29; 200 logical 2029, 500 in 2030, 1,000+ in 2031",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "feed-forward",
     "err_2q_median_num": null,
     "flags": [
      "detection-only",
      "loss-dominated"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": false,
+    "benchmarked": false
    }
   },
   {
@@ -36216,10 +37336,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "superseded by Aurora",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "eroded-claim"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -36412,12 +37539,19 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "higher qubit counts by chip replacement with no infrastructure change; Diraq targets millions of qubits by 2031",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "press-only",
      "target-not-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -36690,10 +37824,17 @@
     "decoder": "not specified",
     "realtime": "none",
     "roadmap": "millions of qubits by 2031, tens of millions by 2033",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-benchmarks-on-array"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -36953,11 +38094,18 @@
     "decoder": "none (UnityQ integrates error-correction logic; no decoder run)",
     "realtime": "none",
     "roadmap": "Equal1 in Jun 2025 (Silicon Republic): 17 qubits 'next year', then 49, then 2,000 — the machine ESA installed in Jul 2026 is 'a 6-qubit system'; UnityQ 'will integrate the complete quantum system onto a single silicon package' (undated)",
+    "role": "",
+    "gate_evidence": "vendor-figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.007,
     "flags": [
      "conflicting-claim",
      "vendor-claim"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -37156,10 +38304,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "next: a 100-qubit 'unit cell' (undated); foundry manufacturing; QuTech lineage",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -37358,10 +38513,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "prototype silicon quantum computers running error-correcting codes at the 100-qubit scale in FY2028, 1,000-qubit scale in FY2030 (Hitachi, 22 Jul 2026); the enabling deliverable is a quantum PDK on Intel 18A, the first such interface for a 1.8 nm-class process",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -37580,8 +38742,15 @@
     "decoder": "naive parity-check decoder on repetition-code syndromes; [[4,2,2]] by post-selection; both after the run",
     "realtime": "offline (the 4 K controller sequences syndrome extraction autonomously; decoding after the run)",
     "roadmap": "no dated roadmap; HRL's stated goal: standard microchip production lines and one computer per refrigerator; IBM acquired HRL (closed 26 Aug 2026)",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "offline",
     "err_2q_median_num": 0.003,
-    "flags": []
+    "flags": [],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -37827,10 +38996,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "next-generation chip prioritising coherence and control over count; 2-D arrays; no dates",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -38046,12 +39222,19 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "utility-scale silicon spin by 2033",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "count-unpublished",
      "no-published-error-rates",
      "source-not-confirmed"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -38263,10 +39446,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "Alloy Pioneer cloud access for early users by end-2026, then progressively larger Alloy systems toward one million qubits by 2032 (16 Sep 2026); isotopically enriched Si-28 entered STMicroelectronics 28 nm FD-SOI production Dec 2025 - the supply-chain milestone that matters more than the qubit count",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -38480,10 +39670,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "\"bridge the gap toward million-qubit systems\"; no dated intermediate milestone published",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
     "err_2q_median_num": 0.0036,
     "flags": [
      "no-foundry-route"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -38689,10 +39886,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "multi-module diamond-spin prototype by 2027; Fujitsu targets 250 logical qubits by FY2030 and 1,000 by FY2035",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -38921,11 +40125,18 @@
     "decoder": "none published; the defect architecture has an empty L8",
     "realtime": "none",
     "roadmap": "4 logical qubits near term; utility scale 2033",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-rate-published",
      "path-membership-gap"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -39137,10 +40348,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "2027 mobile prototype; 2029 first commercially valuable accelerator at ~60-100 qubits",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -39339,11 +40557,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "SaxonQ site: SXQ128 'orderable today with 3-month delivery'; SXQ512 from Q2 2027; SXQ10k (10,000+ qubits, 128 cores) 2030+",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "press-only"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -39542,11 +40767,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "QC2026 Dual Core (2 x 5 qubits, Apr 2026); SXQ128 orderable with 3-month delivery; SXQ512 from Q2 2027; SXQ10k 2030+",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "vendor-claim"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -39755,11 +40987,18 @@
     "decoder": "none; the topo architecture has empty L7, L8 and L9 slots",
     "realtime": "none",
     "roadmap": "scalable system timeline accelerated from 2029",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "contested",
      "not-a-qubit"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -39963,11 +41202,18 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "Microsoft: scalable quantum computer target by 2029 ('cut our timeline in half')",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "contested",
      "not-a-qubit"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -40189,10 +41435,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "superseded by Advantage2",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "annealer-reference-only"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -40443,12 +41696,19 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "Advantage3 (multi-chip): a 20,000-qubit system in 2029, 100,000 qubits by 2031 (Q2-2026 results, Aug 2026); the 100,000-qubit annealer is also the goal of the CHIPS-funded development (8 Sep 2026)",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "annealer-reference-only",
      "cryo-gap",
      "rebutted-claim"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -40652,10 +41912,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "successor to the 4,500-qubit Advantage2; 100,000 qubits by 2031; the 100,000-qubit annealer is also the goal of the CHIPS-funded development (8 Sep 2026)",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "target-not-device"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   },
   {
@@ -40854,10 +42121,17 @@
     "decoder": "none",
     "realtime": "none",
     "roadmap": "two further AQPU generations scheduled for delivery in 2026 and 2027 (EuroQCS-Spain, EUR 8.5 M); part of BSC's MareNostrum-Ona hybrid infrastructure",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates"
-    ]
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
    }
   }
  ],

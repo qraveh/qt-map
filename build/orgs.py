@@ -750,7 +750,7 @@ _TAG = re.compile(r'<!--.*?-->|<![^>]*>|<\?[^>]*>|</?([A-Za-z][A-Za-z0-9:-]*)(?:
 _CLASS = re.compile(r'''\sclass\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'>]+))''', re.I)
 _RAWTEXT = ('script', 'style', 'textarea', 'title')                     # element bodies copied verbatim
 _NOLINK_TAGS = {'a', 'svg', 'code', 'h1', 'h2', 'h3', 'h4'}             # nothing is linked inside these
-_NOLINK_CLASSES = {'btitle', 'meta'}                                    # nor inside an element of these classes
+_NOLINK_CLASSES = {'btitle', 'meta', 'place'}                           # nor inside an element of these classes; 'place' marks a place name that is not an organisation ("Microsoft's new Maryland research center", 2 Oct 2026)
 _VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'}
 _CLOSES_P = {'address', 'article', 'aside', 'blockquote', 'details', 'div', 'dl', 'fieldset', 'figcaption', 'figure', 'footer',
              'form', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'header', 'hr', 'main', 'nav', 'ol', 'p', 'pre', 'section', 'table', 'ul'}

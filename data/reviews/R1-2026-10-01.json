@@ -1,0 +1,86 @@
+{
+ "id": "R1",
+ "date": "2026-10-01",
+ "reviewer": "an external audit of the published edition 2026.09 (GPT-5.6, through a Microsoft product; a targeted audit of the takeaways, the methodology, the public generator and data, and key primary papers — not a line-by-line check of the 883 references)",
+ "edition_reviewed": "2026.09",
+ "verdict_quoted": "a strong, transparent source index, but not yet a dependable quantitative ranking; individual cited facts are often good; aggregate scores, H1/H2/H4/H6, and forecasts require correction or independent review",
+ "editor_verdict": "fair; all five findings confirmed against main 8b124b8 on 2 Oct 2026",
+ "findings": [
+  {
+   "id": "R1-1",
+   "claim": "Cross-platform error comparison is not valid: §1.1 says fidelity comparisons across platforms are meaningless, then H2 ranks families by err_2q_median; Helios's 7.9e-4 is zone-averaged 2Q RB, not a simultaneous 98-qubit benchmark; the families' entries use different protocols and post-selection rules; H2 and axis A should not support a quantitative ranking.",
+   "verdict": "confirmed",
+   "class": "A",
+   "disposition": "open — WP2 of PLAN_2026-10-02: comparability classes (protocol, scope and conditioning, error structure) tagged per figure; H2 restated at order-of-magnitude resolution; axis A's evidence table shows the class per figure",
+   "fix_commit": null,
+   "pages": [
+    "§0 takeaway (ii)",
+    "§1.2",
+    "§3.1",
+    "§8.4 H2",
+    "Figure 8.1",
+    "Table 8.3",
+    "§8.5 F2"
+   ]
+  },
+  {
+   "id": "R1-2",
+   "claim": "'Closed-loop decoding' is overcounted: the generator classifies any realtime text containing 'real-time' as in-loop; Willow is counted although its decoder did not feed results back into the logical circuit.",
+   "verdict": "confirmed — and the defect is in the data as much as in the rule: Willow's register value itself read 'in-loop (real-time, …)'",
+   "class": "A",
+   "disposition": "fixed — register field decoder_mode (none / planned / offline / real-time-throughput / feed-forward); the five rows re-read at the source; H4 counts feed-forward only and shows throughput apart",
+   "fix_commit": "c5-2026-10-02 (2 Oct 2026)",
+   "pages": [
+    "§8.4 H4",
+    "§8.5 F3",
+    "machine cards"
+   ]
+  },
+  {
+   "id": "R1-3",
+   "claim": "H6 contains a parser bug: its regex cannot parse range deficits such as x1.5-15 q, so the published categories total 64 of 65 SHORT rows; presence-aware counts are 49 both, 5 error-only, 11 qubit-only, 0 neither.",
+   "verdict": "confirmed (reproduced: 47 both + 7 error-only + 10 qubit-only + 1 neither = 65, the text showed 64; three Apollo rows carry ranges)",
+   "class": "B",
+   "disposition": "fixed — a range counts by its geometric mean (the rule now stated in the text); unparsed deficits are printed by the build; the 'neither' count is printed",
+   "fix_commit": "c5-2026-10-02 (2 Oct 2026)",
+   "pages": [
+    "§8.4 H6",
+    "§8.5 F6"
+   ]
+  },
+  {
+   "id": "R1-4",
+   "claim": "Several shared data fields mix incompatible quantities: optical loss fractions stored as T1; CMOS spread=0.059 means 59 mV while superconducting spread=0.059 means 5.9%; atom-array loading fraction called 'device yield'; spin-to-charge readout marked nondestructive while its record says a singlet outcome destroys the spin.",
+   "verdict": "confirmed (each record's note states the caveat in words; the key and the flag do not)",
+   "class": "A",
+   "disposition": "open — WP1 of PLAN_2026-10-02: a field dictionary with unit, scope and comparability class per key; loss out of t1, spread split by unit, yield vs load_fraction, readout destr → qnd class",
+   "fix_commit": null,
+   "pages": [
+    "§7.9",
+    "technology record pages"
+   ]
+  },
+  {
+   "id": "R1-5",
+   "claim": "'Gate-capable' is internally inconsistent: the generator only requires a populated gate cell, not evidence that an entangling gate ran, so it calls the 1,121-qubit Condor gate-capable while the takeaway says the demonstrated superconducting frontier remains 433 qubits.",
+   "verdict": "confirmed — and the 433 was itself unsupported: Osprey has no published gate figure either (IBM: 'consistent with Eagle R1'; 413 of 433 qubits accessible)",
+   "class": "A",
+   "disposition": "fixed — register fields role and gate_evidence; the frontier tables, H1's largest-device column and F1a–c count benchmarked devices by usable qubits; Condor is a scale demonstrator; Osprey counts 413; the takeaway and §5.2 take the number from the data",
+   "fix_commit": "c5-2026-10-02 (2 Oct 2026)",
+   "pages": [
+    "§0 takeaway (i)",
+    "§5.2",
+    "§8.3 Table 8.3",
+    "§8.4 H1",
+    "§8.5 F1a"
+   ]
+  }
+ ],
+ "what_checks_out": [
+  "Willow's Λ = 2.14, 1.1 µs cycle and memory-only result",
+  "the 448-atom work as a four-round d = 3 → 5 result, not a sustained memory",
+  "the 0.937% → 4.15% erasure threshold as a simulation under 98% conversion",
+  "the RSA estimate with its 0.1% error, 1 µs cycle and 10 µs reaction assumptions",
+  "the qualified scepticism on Majorana, photonic and vendor-roadmap claims"
+ ]
+}
