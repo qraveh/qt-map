@@ -166,6 +166,20 @@
     "https://terms.hebrew-academy.org.il/munnah/53703_2",
     "https://terms.hebrew-academy.org.il/munnah/88807_2"
    ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "text",
+    "id": "he-terms-quantum-context-2026-10-02"
+   },
+   "note": "The editor's correction (2 Oct, 20:51–20:53): quantum annealing is physically a relaxation, and the terms of quantum mechanics must be checked in the quantum context, not against general scientific dictionaries. Second pass against the Hebrew quantum literature only (Hebrew Wikipedia's quantum articles via its search API, the Davidson Institute, university teaching, the quantum press): quantum annealing = הרפיה (Hayadan 2013 'הרפיה קוונטית'; Hebrew Wikipedia has no settled term — its quantum-computer article says 'מערכות מבוססות חישול', 'ריפוי קוונטי' is only Deepak Chopra), the materials anneal of fabrication keeps the Academy's ריפוי; relaxation T1 = רלקסציה (HUJI 'זמן רלקסציה אורכי – T1', Wikipedia's physics article); randomized benchmarking = בחינת ביצועים אקראית (Hebrew Wikipedia's quantum-benchmarking article), replacing the general מידוד; error mitigation = הפחתת שגיאות (the quantum press on Qedma), replacing the public-health אפחות; fault-tolerant = סובלני לתקלות (Hayadan), the noun סבילות לתקלות confirmed (Wikipedia's Majorana article); confirmed in the quantum context: מהוד (Davidson's cQED article), מלקחיים אופטיים (Davidson's tweezer-array article; Wikipedia title), צורן (Davidson glosses 'סיליקון (צורן בעברית)'), נאמנות, דה-קוהרנטיות, קיוביט לוגי/פיזי, סף, מצב קסם, קיוביט עזר, מייצב, קוד משטח, קיוביטי חתול, התפתחות בזמן, מפענח, צומת ג'וזפסון, טרנסמון; no quantum attestation either way: fusion (מיזוג kept, היתוך is the nuclear-fusion loan), fluorescence (Davidson 'פלואורנות (פלואורסצנציה)'), donor, time bin, squeezing, homodyne, erasure, GKP.",
+   "sources": [
+    "https://he.wikipedia.org/wiki/בחינת_ביצועים_של_מחשבים_קוונטיים",
+    "https://he.wikipedia.org/wiki/רלקסציה",
+    "https://www.hayadan.org.il/google-buys-15m-quantum-computer-for-nasa-200513",
+    "https://chem.ch.huji.ac.il/nmr/hebrew/techniques/1d/1d.html"
+   ]
   }
  ]
 }

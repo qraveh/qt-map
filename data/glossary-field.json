@@ -700,8 +700,8 @@
    "FT",
    "סבילות לתקלות",
    "הסבילות לתקלות",
-   "סובל תקלות",
-   "סובלי תקלות"
+   "סובלני לתקלות",
+   "סובלניים לתקלות"
   ],
   "scope": "first",
   "en": "Fault tolerance: a way of running the whole computation — state preparation, gates, measurement and the correction cycle itself — on faulty parts so that errors, including those the correction makes, are caught faster than they arise; enlarging the code then drives the logical error down. It concerns every operation, not only a stored qubit",
@@ -1705,14 +1705,14 @@
    "отжига"
   ],
   "match_he": [
-   "ריפוי",
-   "הריפוי",
-   "ריפוי קוונטי"
+   "הרפיה",
+   "ההרפיה",
+   "הרפיה קוונטית"
   ],
   "scope": "first",
   "en": "A special-purpose quantum machine: a problem settles into a low-energy answer as quantum fluctuations are slowly switched off — no gate circuit, no fault-tolerant error correction, only mitigation",
   "ru": "Специализированная квантовая машина: задача оседает в низкоэнергетический ответ по мере медленного выключения квантовых флуктуаций — без схемы гейтов и без отказоустойчивой коррекции, лишь смягчение ошибок",
-  "he": "מכונה קוונטית ייעודית: בעיה מתייצבת על תשובה בעלת אנרגיה נמוכה כשהתנודות הקוונטיות מכובות לאט — בלי מעגל שערים, בלי תיקון שגיאות סובל תקלות, רק אפחות. ריפוי (annealing) הוא המונח של האקדמיה ללשון העברית לטיפול התרמי האיטי, היפוכו של חיסום (quenching); הצירוף \"חישול קוונטי\", הנפוץ במדעי המחשב בעברית, הוא תרגום מוטעה — חישול הוא עיצוב מתכת בהקשה (forging)",
+  "he": "מכונה קוונטית ייעודית: בעיה מתייצבת על תשובה בעלת אנרגיה נמוכה כשהתנודות הקוונטיות מכובות לאט — בלי מעגל שערים, בלי תיקון שגיאות סובלני לתקלות, רק הפחתה. הרפיה קוונטית (quantum annealing) היא המונח של הספרות הקוונטית בעברית; הטיפול התרמי האיטי במתכות ובמוליכים למחצה, שממנו שאול השם, הוא ריפוי במונחי האקדמיה ללשון העברית (וכך באטלס לריפוי בייצור); הצירוף \"חישול קוונטי\", הנפוץ במדעי המחשב בעברית, הוא תרגום מוטעה — חישול הוא עיצוב מתכת בהקשה (forging)",
   "src": "standard",
   "why": "verified 22 Sep 2026: D-Wave docs describe annealing only; error handling is calibration/drift mitigation plus user-level encodings (QAC), no threshold theorem"
  },

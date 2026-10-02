@@ -36,7 +36,7 @@ FAMC = {'SC': 'var(--sc)', 'ION': 'var(--ion)', 'ATOM': 'var(--atom)', 'PHOTON':
 FAMN = {'SC': ('superconducting circuits', 'сверхпроводниковые схемы', 'מעגלים מוליכי-על'), 'ION': ('trapped ions', 'ионы в ловушках', 'יונים לכודים'),
         'ATOM': ('neutral atoms', 'нейтральные атомы', 'אטומים ניטרליים'), 'PHOTON': ('photonics', 'фотоника', 'פוטוניקה'),
         'SPIN': ('semiconductor spins', 'полупроводниковые спины', 'ספינים במוליכים למחצה'), 'DEFECT': ('defect spins', 'дефектные спины', 'ספיני פגם'),
-        'TOPO': ('topological', 'топологические', 'טופולוגי'), 'ANNEAL': ('quantum annealers', 'квантовый отжиг', 'מחשבי ריפוי קוונטי')}
+        'TOPO': ('topological', 'топологические', 'טופולוגי'), 'ANNEAL': ('quantum annealers', 'квантовый отжиг', 'מחשבי הרפיה קוונטית')}
 MACH_FAMILIES = ['SC', 'ION', 'ATOM', 'PHOTON', 'SPIN', 'DEFECT', 'TOPO', 'ANNEAL']
 OFFDEF = ('a crossing technology: it takes a trait from the other side of the natural/fabricated divide — hatched on the map (see §7.5)',
           'пересекающая технология: берёт свойство с другой стороны раздела естественное/изготовленное — на карте заштрихована (см. §7.5)',
@@ -420,7 +420,7 @@ def station_card_html(nid, lang, base=''):
         edges += '<div><b style="color:var(--crit)">%s:</b></div>' % t('conflicts with', 'конфликтует с', 'מתנגשת עם') + ''.join(
             '<div class="conf"><div>%s <span class="cst %s">%s</span></div><div class="cm">%s</div><div class="cm"><span class="tk">%s</span> %s</div><div class="cm"><span class="tk">%s</span> %s%s</div></div>' % (
                 _st(base, other(x), L), ea(x.get('status')), esc(vt(L, 'CONSTAT', x.get('status'))), lk(pick(L, x)), t('price', 'цена', 'מחיר'),
-                lk(pick(L, x.get('price') or {}) or ''), t('mitigation', 'снятие', 'אפחות'), lk(pick(L, x.get('mitig') or {}) or ''),
+                lk(pick(L, x.get('price') or {}) or ''), t('mitigation', 'снятие', 'הפחתה'), lk(pick(L, x.get('mitig') or {}) or ''),
                 (' · <a href="%s" target="_blank" rel="noopener">%s</a>' % (ea(x['url']), esc(x.get('date')))) if x.get('url') else '') for x in con)
     edges += ('<div class="empty" style="margin-top:4px">° %s · %s</div>' % (t('one of several that would do', 'одно из нескольких, что подошли бы', 'אחת מכמה שהיו מתאימות'),
                                                                             t('the usual route, not a strict need', 'обычный маршрут, не строгая необходимость', 'הדרך המקובלת, לא דרישה מחייבת'))
