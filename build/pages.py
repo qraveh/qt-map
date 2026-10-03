@@ -95,6 +95,15 @@ class Site:
     def out_path(self, kind, ident, lang): return os.path.join(self.dist, FOLDER[lang], kind, ident + '.html')
 
     # ---------- shell
+    @staticmethod
+    def meta_desc(desc, limit=160):
+        """the description search engines show: at most `limit` characters, cut at the last clause boundary (3 Oct 2026 — Bing's rule
+        is 25–160; 51 English, 97 Russian and 26 Hebrew technology pages had carried their brief's whole first sentence)"""
+        if len(desc) <= limit: return desc
+        cut = desc[:limit - 1]
+        pos = max(cut.rfind(sep) for sep in ('; ', ' — ', ', ', ': ', ' – '))
+        if pos < limit // 2: pos = cut.rfind(' ')
+        return cut[:pos].rstrip(' ,;:—–') + '…'
     def shell(self, kind, ident, lang, title, desc, body, image=None, twin=True, jsonld_extra=None):
         t = pick(lang, T); base = self.rel(lang)
         canonical = self.abs_url(kind, ident, lang)
@@ -109,7 +118,7 @@ class Site:
         if jsonld_extra: ld.update(jsonld_extra)
         nav_kinds = ' · '.join('<a href="%s%s/index.html">%s</a>' % (self.base(lang), k, t[KIND_T[k]]) for k in KINDS)
         head = (f'<!doctype html>\n<html lang="{lang}" dir="{direction(lang)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-                f'<title>{html.escape(title)} — Quantum Technology Atlas</title>\n<meta name="description" content="{html.escape(desc)}">\n'
+                f'<title>{html.escape(title)} — Quantum Technology Atlas</title>\n<meta name="description" content="{html.escape(self.meta_desc(desc))}">\n'
                 f'<meta name="author" content="{html.escape(self.cfg["author"])}"><meta name="citation_title" content="{html.escape(title)} — Quantum Technology Atlas"><meta name="citation_author" content="{html.escape(self.cfg["author"])}">'
                 f'<meta name="citation_publication_date" content="{self.cfg["date"].replace("-", "/")}"><meta name="citation_publisher" content="{html.escape(self.cfg["publisher"])}"><meta name="citation_doi" content="{CONCEPT_DOI}"><meta name="citation_language" content="{lang}">\n'
                 f'<meta property="og:type" content="article"><meta property="og:title" content="{html.escape(title)}"><meta property="og:description" content="{html.escape(desc)}"><meta property="og:url" content="{canonical}">'

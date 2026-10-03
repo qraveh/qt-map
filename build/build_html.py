@@ -988,11 +988,26 @@ def abstract(lang):
                   f'Все технологии квантовых вычислений ({NN}) и все построенные, объявленные или запланированные квантовые машины ({NM}): проанализированы и сведены, разбиты по семи устойчивым атрибутам конструкции, сопоставлены и скомбинированы десятками способов — с брифом на каждую технологию и карточкой на каждую машину.',
                   f'כל טכנולוגיות המחשוב הקוונטי ({NN}) וכל המכונות הקוונטיות שנבנו, הוכרזו או תוכננו ({NM}): מנותחות ומסוכמות, מחולקות לפי שבע תכונות תכן יציבות, מושוות ומשולבות בעשרות דרכים — עם תקציר לכל טכנולוגיה וכרטיס לכל מכונה.'))
 
+def seo_description(lang):
+    """the sentence search engines show under the title — at most 160 characters (Bing's rule; Google cuts at about 155): the
+    abstract's own words, shortened (3 Oct 2026, the editor's word; Bing's analyzer had flagged the 315-character description).
+    og:description, the JSON-LD and the Zenodo record keep the full abstract."""
+    NN,NM=_counts()
+    return pick(lang,(f'Every quantum-computing technology ({NN}) and every quantum machine built, announced or planned ({NM}), compared on seven design attributes — a brief on each.',
+                      f'Все технологии квантовых вычислений ({NN}) и все квантовые машины ({NM}), сопоставленные по семи атрибутам конструкции, с брифом о каждой.',
+                      f'כל טכנולוגיות המחשוב הקוונטי ({NN}) וכל המכונות הקוונטיות שנבנו, הוכרזו או תוכננו ({NM}), מושוות לפי שבע תכונות תכן — עם תקציר לכל טכנולוגיה וכרטיס לכל מכונה.'))
+
+def page_title(lang):
+    """the document title: the work's name in the page's language, the English name after it on the other pages"""
+    return TITLE_L[lang] + (' — Quantum Technology Atlas' if lang!='en' else '')
+
 def head_meta(cfg):
     if cfg['mode']=='internal': return '<meta name="color-scheme" content="light dark">'
     doi=cfg['doi_concept']; cite_doi='<meta name="citation_doi" content="'+doi+'">'; ident='https://doi.org/'+doi; NN,NM=_counts(); pl=cfg.get('page_lang','en')
     # the languages by their own names, not "bilingual" (29 Sep 2026: a third language joined)
     desc=abstract(pl)+' '+' / '.join(NATIVE[L] for L in LANGS)+'; CC BY 4.0.'
+    seo=seo_description(pl)
+    assert len(seo)<=160, 'meta description over 160 characters (%s): %d' % (pl, len(seo))
     # one page per language (27 Sep 2026): the alternates name every language page, x-default the English one
     site=cfg.get('site',SITE); alts=''.join(f'<link rel="alternate" hreflang="{L}" href="{site}{FOLDER[L]}">' for L in LANGS)+f'<link rel="alternate" hreflang="x-default" href="{site}">'
     ogw, ogh = og_image_size()
@@ -1000,7 +1015,8 @@ def head_meta(cfg):
         "author":{"@type":"Person","name":cfg['author']},"publisher":{"@type":"Organization","name":cfg['publisher'],"url":"https://qodeh.com"},
         "license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":True,"identifier":ident,"sameAs":ident,"url":cfg['url'],"image":OG_IMAGE_URL,"description":desc,
         "keywords":["quantum computing","quantum error correction","superconducting qubits","trapped ions","neutral atoms","photonic quantum computing","spin qubits","technology landscape","technology graph"]}
-    return ('<meta name="color-scheme" content="light dark">\n<meta name="description" content="'+html.escape(desc)+'">\n'
+    # the <title> belongs in <head> (3 Oct 2026: it had been the first element of <body>; browsers hoist it, Bing's analyzer reported "Title tag missing")
+    return (f'<title>{html.escape(page_title(pl))}</title>\n<meta name="color-scheme" content="light dark">\n<meta name="description" content="'+html.escape(seo)+'">\n'
             f'<meta name="author" content="{cfg["author"]}">\n<meta name="citation_title" content="Quantum Technology Atlas">\n<meta name="citation_author" content="{cfg["author"]}">\n'
             f'<meta name="citation_publication_date" content="{cfg["date"].replace("-","/")}">\n<meta name="citation_publisher" content="{cfg["publisher"]}">\n{cite_doi}\n<meta name="citation_language" content="{pl}">\n'
             f'<meta name="DC.title" content="Quantum Technology Atlas"><meta name="DC.creator" content="{cfg["author"]}"><meta name="DC.publisher" content="{cfg["publisher"]}"><meta name="DC.date" content="{cfg["date"]}"><meta name="DC.identifier" content="{ident}"><meta name="DC.rights" content="CC BY 4.0"><meta name="DC.language" content="{", ".join(LANGS)}">\n'
@@ -1115,8 +1131,7 @@ def compose(cfg,page_lang,prose,briefs_page,tocs,mapsecs,B,others,lang_base,fall
     D3=open(os.path.join(ROOT,'build','vendor','d3.v7.min.js'),encoding='utf-8').read()
     sectitles={h[0].replace('en-',''):h[2] for h in tocs['en'] if h and len(h)>2}
     each=lambda f:''.join(f(L) for L in LANGS)   # one block per language, in langs.LANGS order
-    body=f"""<title>{TITLE_L[dl] + (' — ' + cfg['title'] if dl!='en' else '')}</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    body=f"""<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Golos+Text:wght@400;500;600&family=Heebo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>{CSS}</style>
 <div id="app" data-lang="{dl}" data-page-lang="{dl}" data-other-langs='{json.dumps(others)}' data-lang-base="{lang_base}" data-edition="{cfg['edition']}">
