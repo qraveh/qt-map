@@ -190,7 +190,7 @@ var RENDERED=0, ROWS=200;
 function whereOf(h){ if(h.kind==='card') return (h.card.kind==='node'?T('technology card','карточка технологии','כרטיס טכנולוגיה'):h.card.kind==='machine'?T('machine card','карточка машины','כרטיס מכונה'):T('architecture card','карточка архитектуры','כרטיס ארכיטקטורה'))+' · '+h.card.name;
   if(h.kind==='meta') return T('tooltip','подсказка','הסבר צף');
   var el=h.run.segs[0].node.parentElement; if(!el) return '';
-  var b=el.closest('section.brief'); if(b){ var t=b.querySelector('h2,h3,.btitle'); return T('brief','бриф','תקציר')+(t?' · '+t.textContent.trim().slice(0,60):''); }
+  var b=el.closest('section.brief'); if(b){ var t=b.querySelector('h2,h3,.btitle'); return T('brief','обзор','תקציר')+(t?' · '+t.textContent.trim().slice(0,60):''); }
   if(el.closest('#mapbar')) return T('map controls','панель карты','פקדי המפה'); if(el.closest('#mapbody')) return T('map','карта','המפה'); if(el.closest('.mast')) return T('masthead','шапка','כותרת העמוד'); if(el.closest('#pcwrap')) return T('strip','лента','הרצועה');
   var sb=el.closest('.secbody[data-sec]'); if(sb){ var hd=sb.previousElementSibling; if(hd&&/^H[23]$/.test(hd.tagName)){ var c=hd.cloneNode(true); var fb=c.querySelector('.foldbtn'); if(fb) fb.remove(); return c.textContent.replace(/\s+/g,' ').trim().slice(0,70); } }
   var g=el.closest('dl.glossary,details.glossary-fold'); if(g) return T('glossary','глоссарий','מילון מונחים');
@@ -213,7 +213,7 @@ function show(note){ if(!q.value.trim()){ cnt.textContent=''; where.textContent=
 // ---------- options: each button names its current state
 function paintOpts(){ var c=document.getElementById('findcase'), w=document.getElementById('findword'), ln=document.getElementById('findlangname');
   c.innerHTML=opts.cs?window.__LS('case-sensitive','с учётом регистра','תלוי רישיות'):window.__LS('case-insensitive','без учёта регистра','לא תלוי רישיות');   // one span per language (window.__LS)
-  w.innerHTML=opts.whole?window.__LS('whole word','целое слово','מילה שלמה'):window.__LS('substring','подстрока','תת-מחרוזת');
+  w.innerHTML=opts.whole?window.__LS('whole word','слово целиком','מילה שלמה'):window.__LS('substring','подстрока','תת-מחרוזת');
   ln.textContent=opts.scope==='all'?T('all languages','все языки','כל השפות'):(opts.scope==='this'?(NATIVE[lang()]||lang()):(NATIVE[opts.scope]||opts.scope)); }
 function langMenu(){ var m=document.getElementById('findlangmenu'); m.innerHTML=''; var items=[];
   LANGS.forEach(function(l){ items.push([l,NATIVE[l]||l]); }); items.push(['all',T('all languages','все языки','כל השפות')]);

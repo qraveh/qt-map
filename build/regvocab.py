@@ -24,7 +24,7 @@ ACCESS = {   # the register's access value → Russian
 }
 SCOPE = {'typical': ('typical', 'типичное', 'טיפוסי'), 'best': ('best', 'лучшее', 'הטוב ביותר')}   # the scope of a standard record
 FLAGS = {   # the register's caveat slugs on a machine → words (27 Sep 2026: 61 machine pages printed the slugs)
-    'no-published-error-rates': ('no published error rates', 'ошибки гейтов не опубликованы', 'לא פורסמו שיעורי שגיאה'), 'source-not-confirmed': ('source not confirmed', 'источник не подтверждён', 'המקור לא אושר'),
+    'no-published-error-rates': ('no published error rates', 'ошибки вентилей не опубликованы', 'לא פורסמו שיעורי שגיאה'), 'source-not-confirmed': ('source not confirmed', 'источник не подтверждён', 'המקור לא אושר'),
     'target-not-device': ('a target, not a device', 'цель, не устройство', 'מטרה, לא התקן'), 'spec-absent': ('specification absent', 'спецификация отсутствует', 'אין מפרט'),
     'cryo-gap': ('cryogenic details missing', 'нет данных о криогенике', 'חסרים פרטי הקריוגניקה'), 'conflicting-claim': ('conflicting claims', 'противоречивые заявления', 'טענות סותרות'),
     'schedule-risk': ('schedule risk', 'риск сроков', 'סיכון בלוח הזמנים'), 'estimated-baseline': ('estimated baseline', 'оценочная база', 'בסיס משוער'),
@@ -36,7 +36,7 @@ FLAGS = {   # the register's caveat slugs on a machine → words (27 Sep 2026: 6
     'annealer-reference-only': ('annealer reference only', 'только ссылка на отжигатель', 'הפניה למחשב הרפיה בלבד'), 'phase-flip-unpublished': ('phase-flip time unpublished', 'время фазового переворота не опубликовано', 'זמן היפוך הפאזה לא פורסם'),
     'rebutted-claim': ('claim rebutted', 'заявление опровергнуто', 'הטענה הופרכה'), 'roadmap-missed': ('roadmap date missed', 'срок дорожной карты пропущен', 'מועד מפת הדרכים הוחמץ'),
     'snippet-only': ('source seen as a snippet only', 'источник виден только фрагментом', 'המקור נראה כקטע בלבד'), 'code-node-mismatch': ('code and technology disagree', 'код и технология не согласуются', 'הקוד והטכנולוגיה אינם מתיישבים'),
-    'no-numbers-published': ('no numbers published', 'числа не опубликованы', 'לא פורסמו מספרים'), 'no-entangling-gate': ('no entangling gate', 'нет перепутывающего гейта', 'אין שער שזירה'),
+    'no-numbers-published': ('no numbers published', 'числа не опубликованы', 'לא פורסמו מספרים'), 'no-entangling-gate': ('no entangling gate', 'нет запутывающего вентиля', 'אין שער שזירה'),
     'outlier-claim': ('outlier claim', 'выпадающее заявление', 'טענה חריגה'), 'assumption-gap': ('rests on an assumption', 'опирается на допущение', 'נשען על הנחה'),
     'no-logical-error-rate': ('no logical error rate', 'нет логической ошибки', 'אין שיעור שגיאות לוגיות'), 'not-peer-reviewed': ('not peer-reviewed', 'без рецензирования', 'לא עבר ביקורת עמיתים'),
     'no-distance-scaling': ('no distance scaling shown', 'масштабирование по расстоянию не показано', 'לא הוצגה הגדלה עם מרחק הקוד'), 'name-not-qubit-count': ('the name is not a qubit count', 'название — не число кубитов', 'השם אינו מספר הקיוביטים'),

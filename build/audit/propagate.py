@@ -122,7 +122,7 @@ def scan(items, reg, show_all=False):
     return findings
 
 
-LARGEST_RX = {'en': r'largest gate-capable device|the table\'s largest|the largest,|is the largest at', 'ru': r'крупнейше\w* устройств\w* с гейтами|крупнейш\w*,', 'he': r'ההתקן בעל השערים הגדול ביותר|הגדול\w* שב\w*,'}
+LARGEST_RX = {'en': r'largest gate-capable device|the table\'s largest|the largest,|is the largest at', 'ru': r'крупнейше\w* устройств\w* с (?:гейтами|вентилями)|крупнейш\w*,', 'he': r'ההתקן בעל השערים הגדול ביותר|הגדול\w* שב\w*,'}
 BEST_RX = {'en': r'best (?:median )?(?:two-qubit|2Q) error', 'ru': r'лучш\w* (?:медианн\w* )?(?:двухкубитн\w* ошибк\w*|2Q-ошибк\w*)', 'he': r'שגיאת (?:השער הדו-קיוביטי|ה-2Q)(?: החציונית)? הטובה ביותר'}
 NO_BEST_RX = {'en': r'no best error|no two-qubit error|no best two-qubit', 'ru': r'ни одной двухкубитной ошибки|отсутствие лучшей ошибки|нет лучшей ошибки', 'he': r'ללא שגיאת שער דו-קיוביטי|אין לארכיטקטורה שגיאה מיטבית'}
 
@@ -143,7 +143,7 @@ def narratives():
             for sent in sentences(line):
                 if re.search(LARGEST_RX[L], sent, re.I) and not re.search(r'largest (?:arrays|vendor|instances)|крупнейш\w* (?:массив|вендор|экземпляр)|למערכים הגדולים|הספק הגדול|למופעים הגדולים', sent):
                     score = sum(1 for x in toks if x in sent)
-                    ok = (big == '—' and re.search(r'no gate-capable|none gate-capable|not count it gate-capable|ни одного с гейтами|не считает его устройством с гейтами|אף אחד מהם אינו בעל שערים|אינה מונה אותו כבעל שערים', sent)) \
+                    ok = (big == '—' and re.search(r'no gate-capable|none gate-capable|not count it gate-capable|ни одного с (?:гейтами|вентилями)|не считает его устройством с (?:гейтами|вентилями)|אף אחד מהם אינו בעל שערים|אינה מונה אותו כבעל שערים', sent)) \
                         or (toks and score >= min(2, len(toks))) or (q != '—' and re.search(r'(?<![\d,.])' + re.escape(q) + r'(?![\d,.])', sent))
                     if not ok: out.append(('LARGEST', rel, n, pid, big, sent.strip()[:160]))
                 if re.search(BEST_RX[L], sent, re.I) and not re.search(NO_BEST_RX[L], sent, re.I):

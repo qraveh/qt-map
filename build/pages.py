@@ -31,7 +31,7 @@ T = {
             no_pictures='No picture in the media register yet.', story_note='Every picture carries the story of what it shows and its credit line.',
             chip='on the map bar: %s'),
  'ru': dict(atlas='Quantum Technology Atlas', back='← Quantum Technology Atlas', map='Открыть на карте', tech='Технологии', mach='Машины',
-            arch='Архитектуры', org='Организации', brief='Бриф', pictures='Иллюстрации', cite='Как цитировать',
+            arch='Архитектуры', org='Организации', brief='Обзор', pictures='Иллюстрации', cite='Как цитировать',
             index='Указатель', edition='Издание', part='часть издания', licence='CC BY 4.0', prev='← предыдущая', next='следующая →',
             tech_one='технология', mach_one='машина', arch_one='архитектура', org_one='организация',
             narrative='Архитектура в отчёте (§8.3)', machines_of='Машины этой архитектуры', by_layer='по слоям', chip='на панели карты: %s',

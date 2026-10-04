@@ -12,7 +12,7 @@
   ],
   "scope": "first",
   "en": "Two-qubit: the operation that entangles two qubits — the one whose error usually sets the limit of the whole machine",
-  "ru": "Двухкубитная операция — та, что перепутывает два кубита; именно её ошибка обычно задаёт предел всей машины",
+  "ru": "Двухкубитная операция — та, что запутывает два кубита; именно её ошибка обычно задаёт предел всей машины",
   "he": "דו-קיוביטי: הפעולה ששוזרת שני קיוביטים — זו שהשגיאה שלה קובעת בדרך כלל את הגבול של המכונה כולה",
   "src": "standard",
   "why": "Manager and investor meet it in every profile table; without it the percentages look interchangeable"
@@ -48,7 +48,7 @@
   ],
   "scope": "first",
   "en": "State preparation and measurement: the error of setting a qubit before the circuit and reading it after, counted apart from the gates",
-  "ru": "Подготовка состояния и измерение: ошибка инициализации кубита до схемы и его считывания после, отдельно от ошибок гейтов",
+  "ru": "Подготовка состояния и измерение: ошибка инициализации кубита до схемы и его считывания после, отдельно от ошибок вентилей",
   "he": "הכנת מצב ומדידה: השגיאה בקביעת מצבו של קיוביט לפני המעגל ובקריאתו אחריו, הנספרת בנפרד מהשערים",
   "src": "standard",
   "why": "Looks like the mail word; it is a third error number alongside 1Q and 2Q and is often the worst one"
@@ -158,7 +158,7 @@
   ],
   "scope": "first",
   "en": "Error per layered gate: the error of a two-qubit layer run across the whole chip at once, instead of one gate measured on its own",
-  "ru": "Ошибка на слой гейтов: ошибка двухкубитного слоя, выполняемого сразу по всему чипу, а не одного гейта в отдельности",
+  "ru": "Ошибка на слой вентилей: ошибка двухкубитного слоя, выполняемого сразу по всему чипу, а не одного вентиля в отдельности",
   "he": "שגיאה לשער בשכבה (error per layered gate): השגיאה של שכבת שערים דו-קיוביטיים שרצה על פני השבב כולו בבת אחת, במקום שער אחד שנמדד לבדו",
   "src": "standard",
   "why": "IBM's fleet number; it is not comparable with the isolated-gate percentages in the same paragraph"
@@ -176,7 +176,7 @@
   ],
   "scope": "first",
   "en": "Randomized benchmarking: the standard way to measure gate error — run random sequences and watch how fast the result decays",
-  "ru": "Рандомизированный бенчмаркинг: стандартный способ измерить ошибку гейта — прогонять случайные последовательности и смотреть, как быстро падает результат",
+  "ru": "Рандомизированный бенчмаркинг: стандартный способ измерить ошибку вентиля — прогонять случайные последовательности и смотреть, как быстро падает результат",
   "he": "השוואת ביצועים אקראית (randomized benchmarking): הדרך המקובלת למדידת שגיאת שער — מריצים רצפים אקראיים ובודקים כמה מהר התוצאה דועכת",
   "src": "standard",
   "why": "Node tables name the method behind the fidelity numbers; two letters otherwise unreadable"
@@ -272,7 +272,10 @@
    "считывание",
    "считывания",
    "считыванием",
-   "mid-circuit"
+   "внутрисхемное",
+   "внутрисхемного",
+   "внутрисхемная",
+   "внутрисхемной"
   ],
   "match_he": [
    "קריאה",
@@ -283,7 +286,7 @@
   ],
   "scope": "first",
   "en": "Measuring a qubit and getting a 0 or a 1; mid-circuit means doing it partway through and carrying on — what error correction needs",
-  "ru": "Измерение кубита с получением 0 или 1; mid-circuit — сделать это посреди схемы и продолжить счёт, что и нужно коррекции ошибок",
+  "ru": "Измерение кубита с получением 0 или 1; внутрисхемное считывание — сделать это посреди схемы и продолжить счёт, что и нужно коррекции ошибок",
   "he": "מדידת קיוביט וקבלת 0 או 1; “באמצע המעגל” פירושו לעשות זאת באמצע הדרך ולהמשיך — מה שתיקון שגיאות צריך",
   "src": "standard",
   "why": "Readout is a third error source next to gates; mid-circuit is the capability that separates QEC-ready machines"
@@ -302,7 +305,7 @@
   ],
   "scope": "first",
   "en": "Any qubit can be entangled with any other directly, with no chain of swaps in between — it shortens circuits by a large factor",
-  "ru": "Любой кубит можно перепутать с любым напрямую, без цепочки обменов, — это укорачивает схемы в разы",
+  "ru": "Любой кубит можно запутать с любым напрямую, без цепочки обменов, — это укорачивает схемы в разы",
   "he": "כל קיוביט יכול להישזר ישירות עם כל קיוביט אחר, בלי שרשרת של החלפות בדרך — הדבר מקצר מעגלים בפקטור גדול",
   "src": "standard",
   "why": "The advantage ions and atoms claim over grids; without it the reader cannot weigh a lower qubit count"
@@ -313,8 +316,11 @@
    "heralded"
   ],
   "match_ru": [
-   "геральдированная",
-   "геральдированными"
+   "с оповещением",
+   "оповещение",
+   "оповещения",
+   "оповещающий",
+   "оповещающего"
   ],
   "match_he": [
    "מבושרת",
@@ -447,7 +453,8 @@
   ],
   "match_ru": [
    "BB",
-   "bivariate"
+   "bivariate",
+   "bivariate-bicycle"
   ],
   "match_he": [
    "BB",
@@ -510,7 +517,10 @@
    "surface code"
   ],
   "match_ru": [
+   "поверхностный",
    "поверхностного",
+   "поверхностным",
+   "поверхностном",
    "поверхностные",
    "поверхностных"
   ],
@@ -533,7 +543,12 @@
    "colour code"
   ],
   "match_ru": [
-   "цветового"
+   "цветовой",
+   "цветового",
+   "цветовым",
+   "цветовом",
+   "цветовые",
+   "цветовых"
   ],
   "match_he": [
    "קוד הצבע",
@@ -554,7 +569,12 @@
    "repetition code"
   ],
   "match_ru": [
-   "repetition"
+   "код с повторением",
+   "кода с повторением",
+   "кодом с повторением",
+   "коды с повторением",
+   "кодов с повторением",
+   "коде с повторением"
   ],
   "match_he": [
    "קוד חזרה",
@@ -592,8 +612,12 @@
    "cat qubits"
   ],
   "match_ru": [
+   "кошачий",
+   "кошачьего",
+   "кошачьим",
    "кошачьи",
-   "кошачьих"
+   "кошачьих",
+   "кошачьими"
   ],
   "match_he": [
    "קיוביטי חתול",
@@ -614,7 +638,15 @@
    "dual-rail"
   ],
   "match_ru": [
-   "dual-rail"
+   "двухрельсовый",
+   "двухрельсовое",
+   "двухрельсового",
+   "двухрельсовым",
+   "двухрельсовые",
+   "двухрельсовых",
+   "двухрельсовыми",
+   "двухрельсовая",
+   "двухрельсовой"
   ],
   "match_he": [
    "מסילה כפולה",
@@ -692,9 +724,13 @@
    "fault tolerance"
   ],
   "match_ru": [
-   "FT",
    "отказоустойчивость",
-   "отказоустойчивости"
+   "отказоустойчивости",
+   "отказоустойчивостью",
+   "отказоустойчивый",
+   "отказоустойчивой",
+   "отказоустойчивые",
+   "отказоустойчивых"
   ],
   "match_he": [
    "FT",
@@ -705,7 +741,7 @@
   ],
   "scope": "first",
   "en": "Fault tolerance: a way of running the whole computation — state preparation, gates, measurement and the correction cycle itself — on faulty parts so that errors, including those the correction makes, are caught faster than they arise; enlarging the code then drives the logical error down. It concerns every operation, not only a stored qubit",
-  "ru": "Отказоустойчивость: способ выполнять всё вычисление — подготовку состояний, гейты, измерение и сам цикл коррекции — на несовершенных элементах так, чтобы ошибки, включая ошибки самой коррекции, обнаруживались быстрее, чем возникают; тогда рост кода снижает логическую ошибку. Это касается каждой операции, а не только хранимого кубита",
+  "ru": "Отказоустойчивость: способ выполнять всё вычисление — подготовку состояний, вентили, измерение и сам цикл коррекции — на несовершенных элементах так, чтобы ошибки, включая ошибки самой коррекции, обнаруживались быстрее, чем возникают; тогда рост кода снижает логическую ошибку. Это касается каждой операции, а не только хранимого кубита",
   "he": "סבילות לתקלות: דרך להריץ את החישוב כולו — הכנת מצבים, שערים, מדידה ומחזור התיקון עצמו — על רכיבים פגומים, כך ששגיאות, כולל אלה שהתיקון עצמו יוצר, נתפסות מהר יותר משהן נוצרות; הגדלת הקוד מורידה אז את השגיאה הלוגית. היא נוגעת לכל פעולה, לא רק לקיוביט מאוחסן",
   "src": "standard",
   "why": "§0 uses fault tolerance next to error correction; the reader needs to see it is a property of operations, not of a memory alone (editor, 23 Sep)"
@@ -716,7 +752,9 @@
    "break-even"
   ],
   "match_ru": [
-   "break-even"
+   "безубыточность",
+   "безубыточности",
+   "безубыточностью"
   ],
   "match_he": [
    "break-even",
@@ -782,14 +820,18 @@
    "MWPM"
   ],
   "match_ru": [
-   "MWPM"
+   "MWPM",
+   "паросочетание",
+   "паросочетания",
+   "паросочетаний",
+   "паросочетаниям"
   ],
   "match_he": [
    "MWPM"
   ],
   "scope": "first",
   "en": "Minimum-weight perfect matching: the classic decoding algorithm — it pairs up the alarms by the cheapest explanation",
-  "ru": "Minimum-weight perfect matching: классический алгоритм декодирования — он связывает сработавшие проверки самым дешёвым объяснением",
+  "ru": "Совершенное паросочетание минимального веса (minimum-weight perfect matching): классический алгоритм декодирования — он связывает сработавшие проверки самым дешёвым объяснением",
   "he": "זיווג מושלם במשקל מינימלי (minimum-weight perfect matching): אלגוריתם הפענוח הקלאסי — הוא מצמיד את האזעקות בזוגות לפי ההסבר הזול ביותר",
   "src": "standard",
   "why": "Named in node tables as the default decoder; four letters with no expansion on the page"
@@ -954,7 +996,9 @@
   "match_ru": [
    "Клиффорды",
    "Клиффорд",
-   "не-Клиффорд"
+   "не-Клиффорд",
+   "клиффордовы",
+   "клиффордовых"
   ],
   "match_he": [
    "קליפורד",
@@ -1003,7 +1047,7 @@
   ],
   "scope": "first",
   "en": "Controlled-Z: a standard two-qubit entangling operation — it flips the sign of the state when both qubits are set",
-  "ru": "Controlled-Z: стандартная двухкубитная перепутывающая операция — меняет знак состояния, когда оба кубита установлены",
+  "ru": "Controlled-Z: стандартная двухкубитная запутывающая операция — меняет знак состояния, когда оба кубита установлены",
   "he": "Z מבוקר (Controlled-Z): פעולת שזירה דו-קיוביטית סטנדרטית — היא הופכת את סימן המצב כאשר שני הקיוביטים מוצבים",
   "src": "standard",
   "why": "The gate almost every fidelity number is measured on; two letters that otherwise read as a code"
@@ -1021,7 +1065,7 @@
   ],
   "scope": "first",
   "en": "Controlled-NOT: a two-qubit operation that flips the second qubit when the first is set — the textbook entangling gate",
-  "ru": "Controlled-NOT: двухкубитная операция, переворачивающая второй кубит, если установлен первый, — учебниковый перепутывающий гейт",
+  "ru": "Controlled-NOT: двухкубитная операция, переворачивающая второй кубит, если установлен первый, — учебниковый запутывающий вентиль",
   "he": "NOT מבוקר (Controlled-NOT): פעולה דו-קיוביטית שהופכת את הקיוביט השני כאשר הראשון מוצב — שער השזירה של ספרי הלימוד",
   "src": "standard",
   "why": "Quoted interchangeably with CZ; the reader should see they are two names for one job"
@@ -1032,7 +1076,12 @@
    "MS gates"
   ],
   "match_ru": [
-   "MS-гейты"
+   "MS-вентили",
+   "MS-вентиль",
+   "MS-вентиля",
+   "MS-вентилей",
+   "вентиль Мёльмера–Соренсена",
+   "вентиля Мёльмера–Соренсена"
   ],
   "match_he": [
    "שערי MS",
@@ -1040,7 +1089,7 @@
   ],
   "scope": "first",
   "en": "Mølmer–Sørensen: the entangling operation of trapped ions, done through the ions' shared motion rather than by contact",
-  "ru": "Mølmer–Sørensen: перепутывающая операция ионов — через их общее движение, а не через прямой контакт",
+  "ru": "Мёльмера–Соренсена: запутывающая операция ионов — через их общее движение, а не через прямой контакт",
   "he": "Mølmer–Sørensen: פעולת השזירה של יונים לכודים, המתבצעת דרך התנועה המשותפת של היונים ולא במגע",
   "src": "standard",
   "why": "Named once as the ion counterpart of CZ; the letters are two surnames, unguessable"
@@ -1053,7 +1102,11 @@
   "match_ru": [
    "стирание",
    "стирания",
-   "стираниями"
+   "стираний",
+   "стиранием",
+   "стираниями",
+   "стираниям",
+   "стираниях"
   ],
   "match_he": [
    "מחיקה",
@@ -1076,7 +1129,9 @@
   ],
   "match_ru": [
    "смещение шума",
-   "перекосом"
+   "смещения шума",
+   "перекосом",
+   "сохраняющий смещение"
   ],
   "match_he": [
    "הטיית רעש",
@@ -1088,7 +1143,7 @@
   ],
   "scope": "first",
   "en": "When one kind of error is far rarer than the other; a code can exploit the imbalance, but only if the gates do not destroy it",
-  "ru": "Когда один тип ошибок много реже другого; код может использовать этот перекос, но лишь если гейты его не разрушают",
+  "ru": "Когда один тип ошибок много реже другого; код может использовать этот перекос, но лишь если вентили его не разрушают",
   "he": "מצב שבו סוג אחד של שגיאה נדיר בהרבה מהאחר; קוד יכול לנצל את חוסר האיזון, אבל רק אם השערים אינם הורסים אותו",
   "src": "standard",
   "why": "Explains why cat and similar qubits promise low overhead, and what the 'bias-preserving' qualifier is guarding"
@@ -1131,7 +1186,7 @@
   ],
   "scope": "first",
   "en": "Stray charge set loose in a superconducting chip, often by a cosmic ray, knocking out many qubits at once",
-  "ru": "Паразитный заряд, выбитый в сверхпроводящем чипе, часто космической частицей, — гасит сразу много кубитов",
+  "ru": "Паразитный заряд, выбитый в сверхпроводниковом чипе, часто космической частицей, — гасит сразу много кубитов",
   "he": "מטען תועה המשתחרר בשבב מוליך-על, לעתים קרובות בעקבות קרן קוסמית, ומשבית קיוביטים רבים בבת אחת",
   "src": "standard",
   "why": "A rare correlated failure that no per-qubit fidelity shows; the manager should know it is a scaling risk"
@@ -1167,7 +1222,7 @@
   ],
   "scope": "first",
   "en": "A trap chip divided into zones with ions shuttled between them, so every gate happens in a small, well-controlled group",
-  "ru": "Ловушечный чип, разделённый на зоны, между которыми перевозят ионы: каждый гейт выполняется в маленькой, хорошо управляемой группе",
+  "ru": "Ловушечный чип, разделённый на зоны, между которыми перевозят ионы: каждый вентиль выполняется в маленькой, хорошо управляемой группе",
   "he": "שבב מלכודת המחולק לאזורים, שהיונים מוסעים ביניהם, כך שכל שער מתבצע בקבוצה קטנה ומבוקרת היטב",
   "src": "standard",
   "why": "The defining architecture of trapped ions; four letters borrowed from camera sensors and misleading on sight"
@@ -1178,7 +1233,9 @@
    "shuttling"
   ],
   "match_ru": [
-   "шаттлинг"
+   "перемещение",
+   "перемещения",
+   "перемещением"
   ],
   "match_he": [
    "הסעה",
@@ -1209,7 +1266,7 @@
   ],
   "scope": "first",
   "en": "A machine split into areas for storage, gates and measurement, with qubits moved between them, so each area is tuned for one job",
-  "ru": "Машина, разделённая на области хранения, гейтов и измерения, между которыми перемещают кубиты: каждая область настроена под своё дело",
+  "ru": "Машина, разделённая на области хранения, вентилей и измерения, между которыми перемещают кубиты: каждая область настроена под своё дело",
   "he": "מכונה המחולקת לאזורים של אחסון, שערים ומדידה, והקיוביטים מועברים ביניהם, כך שכל אזור מכוון לתפקיד אחד",
   "src": "standard",
   "why": "The word carries an architecture; without it the atom and ion profiles read as lists of unrelated tricks"
@@ -1229,7 +1286,7 @@
   ],
   "scope": "first",
   "en": "An atom briefly excited into a giant orbit, which makes it interact strongly with a neighbour — how neutral atoms entangle at all",
-  "ru": "Атом, ненадолго переведённый на гигантскую орбиту: так он сильно взаимодействует с соседом — только этим нейтральные атомы и перепутываются",
+  "ru": "Атом, ненадолго переведённый на гигантскую орбиту: так он сильно взаимодействует с соседом — только этим нейтральные атомы и запутываются",
   "he": "אטום שעורר לרגע למסלול ענק, מה שגורם לו לקיים אינטראקציה חזקה עם שכנו — כך בכלל נשזרים אטומים ניטרליים",
   "src": "standard",
   "why": "A surname used as a mechanism; the reader of the atom profile needs the mechanism to judge the gate error"
@@ -1297,7 +1354,7 @@
   ],
   "scope": "first",
   "en": "A superconducting qubit that trades speed for a much longer life and lower error, at the cost of harder control",
-  "ru": "Сверхпроводящий кубит, меняющий скорость на существенно большее время жизни и меньшую ошибку ценой более сложного управления",
+  "ru": "Сверхпроводниковый кубит, меняющий скорость на существенно большее время жизни и меньшую ошибку ценой более сложного управления",
   "he": "קיוביט מוליך-על שמוותר על מהירות תמורת חיים ארוכים בהרבה ושגיאה נמוכה יותר, במחיר בקרה קשה יותר",
   "src": "standard",
   "why": "Offered as the alternative to the mainstream design; the trade-off is why it is a watch-list item"
@@ -1308,14 +1365,18 @@
    "SFQ"
   ],
   "match_ru": [
-   "SFQ"
+   "БОК",
+   "БОК-логика",
+   "БОК-логики",
+   "БОК-логике",
+   "БОК-логикой"
   ],
   "match_he": [
    "SFQ"
   ],
   "scope": "first",
   "en": "Single flux quantum: superconducting digital logic that can sit in the cold beside the qubits, replacing bulky room-temperature wiring",
-  "ru": "Single flux quantum: сверхпроводящая цифровая логика, которая работает в холоде рядом с кубитами и заменяет громоздкую проводку из комнаты",
+  "ru": "Быстрая одноквантовая логика (БОК; single flux quantum): сверхпроводниковая цифровая логика, которая работает в холоде рядом с кубитами и заменяет громоздкую проводку из комнаты",
   "he": "קוונט שטף יחיד (single flux quantum): לוגיקה דיגיטלית מוליכת-על שיכולה לשבת בקור לצד הקיוביטים, במקום חיווט מגושם לטמפרטורת החדר",
   "src": "standard",
   "why": "One of the two answers to the wiring problem; three letters used with no expansion anywhere"
@@ -1326,14 +1387,14 @@
    "cryo-CMOS"
   ],
   "match_ru": [
-   "cryo-CMOS"
+   "крио-КМОП"
   ],
   "match_he": [
    "cryo-CMOS"
   ],
   "scope": "first",
   "en": "Ordinary chip electronics built to work in the cold next to the qubits — the way out of one cable per qubit to room temperature",
-  "ru": "Обычная чиповая электроника, работающая в холоде рядом с кубитами, — выход из схемы «один кабель на кубит» до комнатной температуры",
+  "ru": "Крио-КМОП: обычная чиповая электроника, работающая в холоде рядом с кубитами, — выход из схемы «один кабель на кубит» до комнатной температуры",
   "he": "אלקטרוניקה שבבית רגילה הבנויה לעבוד בקור ליד הקיוביטים — הדרך לצאת מכבל אחד לכל קיוביט אל טמפרטורת החדר",
   "src": "standard",
   "why": "The manager meets it in §0 as a scaling enabler; what it replaces is the useful half of the hint"
@@ -1356,7 +1417,7 @@
   ],
   "scope": "first",
   "en": "The refrigerator that reaches thousandths of a degree above absolute zero — bulky, power-hungry, and needed by most superconducting machines",
-  "ru": "Криостат растворения, достигающий тысячных долей градуса выше абсолютного нуля: громоздкий, прожорливый и необходимый большинству сверхпроводящих машин",
+  "ru": "Криостат растворения, достигающий тысячных долей градуса выше абсолютного нуля: громоздкий, прожорливый и необходимый большинству сверхпроводниковых машин",
   "he": "המקרר שמגיע לאלפיות מעלה מעל האפס המוחלט — מגושם, זולל הספק, ודרוש לרוב המכונות של מוליכי-על",
   "src": "standard",
   "why": "A goal is defined as 'no dilution fridge'; the reader must know what is being escaped"
@@ -1368,7 +1429,7 @@
    "4 K"
   ],
   "match_ru": [
-   "мК",
+   "mK",
    "4 K"
   ],
   "match_he": [
@@ -1395,7 +1456,7 @@
   ],
   "scope": "first",
   "en": "Superconducting nanowire single-photon detector: the fast, near-perfect photon counter photonic machines depend on — it needs its own cold stage",
-  "ru": "Сверхпроводящий нанопроводниковый детектор одиночных фотонов: быстрый и почти идеальный счётчик, без которого не обходятся фотонные машины; ему нужен свой холод",
+  "ru": "Сверхпроводниковый нанопроводниковый детектор одиночных фотонов: быстрый и почти идеальный счётчик, без которого не обходятся фотонные машины; ему нужен свой холод",
   "he": "גלאי פוטון בודד מננו-חוט מוליך-על: מונה הפוטונים המהיר, הכמעט מושלם, שמכונות פוטוניות תלויות בו — הוא צריך שלב קר משלו",
   "src": "standard",
   "why": "Five letters standing for the component that decides whether photonic machines work at all"
@@ -1406,14 +1467,14 @@
    "PIC"
   ],
   "match_ru": [
-   "PIC"
+   "ФИС"
   ],
   "match_he": [
    "PIC"
   ],
   "scope": "first",
   "en": "Photonic integrated circuit: a chip in which light is routed through waveguides instead of current through wires",
-  "ru": "Фотонная интегральная схема: чип, в котором свет ведут по волноводам вместо тока по проводам",
+  "ru": "Фотонная интегральная схема (ФИС): чип, в котором свет ведут по волноводам вместо тока по проводам",
   "he": "מעגל פוטוני משולב: שבב שבו אור מנותב דרך מוליכי גל במקום זרם דרך חוטים",
   "src": "standard",
   "why": "Reads as an English word; it is the manufacturing base of every photonic roadmap"
@@ -1460,7 +1521,12 @@
    "fusion-based"
   ],
   "match_ru": [
-   "fusion"
+   "слияние",
+   "слияния",
+   "слияний",
+   "слиянием",
+   "слияниями",
+   "на основе слияний"
   ],
   "match_he": [
    "מבוסס היתוך",
@@ -1489,7 +1555,7 @@
   ],
   "scope": "first",
   "en": "Computing with photons using only beam splitters, phase shifters and detectors — photons never interact, so gates succeed by chance",
-  "ru": "Вычисления на фотонах с одними делителями, фазовращателями и детекторами: фотоны не взаимодействуют, поэтому гейты срабатывают случайно",
+  "ru": "Вычисления на фотонах с одними делителями, фазовращателями и детекторами: фотоны не взаимодействуют, поэтому вентили срабатывают случайно",
   "he": "חישוב בפוטונים באמצעות מפצלי קרן, מזיזי פאזה וגלאים בלבד — פוטונים אינם מקיימים אינטראקציה, ולכן שערים מצליחים במקרה",
   "src": "standard",
   "why": "Explains in one line why photonic machines need so much hardware per useful gate"
@@ -1711,7 +1777,7 @@
   ],
   "scope": "first",
   "en": "A special-purpose quantum machine: a problem settles into a low-energy answer as quantum fluctuations are slowly switched off — no gate circuit, no fault-tolerant error correction, only mitigation",
-  "ru": "Специализированная квантовая машина: задача оседает в низкоэнергетический ответ по мере медленного выключения квантовых флуктуаций — без схемы гейтов и без отказоустойчивой коррекции, лишь смягчение ошибок",
+  "ru": "Специализированная квантовая машина: задача оседает в низкоэнергетический ответ по мере медленного выключения квантовых флуктуаций — без схемы вентилей и без отказоустойчивой коррекции, лишь смягчение ошибок",
   "he": "מכונה קוונטית ייעודית: בעיה מתייצבת על תשובה בעלת אנרגיה נמוכה כשהתנודות הקוונטיות מכובות לאט — בלי מעגל שערים, בלי תיקון שגיאות סובלני לתקלות, רק הפחתה. הרפיה קוונטית (quantum annealing) היא המונח של הספרות הקוונטית בעברית; הטיפול התרמי האיטי במתכות ובמוליכים למחצה, שממנו שאול השם, הוא ריפוי במונחי האקדמיה ללשון העברית (וכך באטלס לריפוי בייצור); הצירוף \"חישול קוונטי\", הנפוץ במדעי המחשב בעברית, הוא תרגום מוטעה — חישול הוא עיצוב מתכת בהקשה (forging)",
   "src": "standard",
   "why": "verified 22 Sep 2026: D-Wave docs describe annealing only; error handling is calibration/drift mitigation plus user-level encodings (QAC), no threshold theorem"
@@ -1941,14 +2007,14 @@
    "AOD"
   ],
   "match_ru": [
-   "AOD"
+   "АОД"
   ],
   "match_he": [
    "AOD"
   ],
   "scope": "first",
   "en": "Acousto-optic deflector: the steerable beam that picks up single atoms and moves them — how atom machines rearrange qubits mid-run",
-  "ru": "Акустооптический дефлектор: управляемый луч, который подхватывает отдельные атомы и переносит их, — так атомные машины перестраивают кубиты на ходу",
+  "ru": "Акустооптический дефлектор (АОД): управляемый луч, который подхватывает отдельные атомы и переносит их, — так атомные машины перестраивают кубиты на ходу",
   "he": "מסיט אקוסטו-אופטי: הקרן הניתנת להיגוי שמרימה אטומים בודדים ומזיזה אותם — כך מכונות אטומים מסדרות מחדש קיוביטים באמצע הריצה",
   "src": "standard",
   "why": "Used unexpanded in every neutral-atom row; it is the mechanism behind the mobility claims"
@@ -2056,7 +2122,7 @@
   ],
   "scope": "first",
   "en": "Josephson junction: the thin break in a superconducting loop that makes the circuit behave as a qubit — and the main source of its scatter",
-  "ru": "Джозефсоновский переход: тонкий разрыв в сверхпроводящем контуре, благодаря которому схема ведёт себя как кубит, — и главный источник разброса",
+  "ru": "Джозефсоновский переход: тонкий разрыв в сверхпроводниковом контуре, благодаря которому схема ведёт себя как кубит, — и главный источник разброса",
   "he": "צומת ג׳וזפסון: הנתק הדק בלולאה מוליכת-על שגורם למעגל להתנהג כקיוביט — והמקור העיקרי לפיזור בתכונותיו",
   "src": "standard",
   "why": "The single component every superconducting qubit is built around, abbreviated in manufacturing rows"
@@ -2086,7 +2152,6 @@
    "DV"
   ],
   "match_ru": [
-   "CV",
    "DV"
   ],
   "match_he": [

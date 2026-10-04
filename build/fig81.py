@@ -57,7 +57,7 @@ def build(lang):
     # marks: hollow = not a gate-capable device (announcement, target, component); a 2px surface ring under every mark
     for m in pts:
         x, y = X(m['q']), Y(m['err']); hollow = not m['gatedev']
-        tip = '%s — %s · %s %s · %s %s' % (m['name'], m['org'], '{:,}'.format(m['q']), tr('qubits', 'кубитов', 'קיוביטים'), fmt_e(m['err']), tr('median 2Q error', 'медианная 2Q-ошибка', 'שגיאת 2Q חציונית'))
+        tip = '%s — %s · %s %s · %s %s' % (m['name'], m['org'], '{:,}'.format(m['q']), tr('qubits', 'кубитов', 'קיוביטים'), fmt_e(m['err']), tr('median 2Q error', 'медианная ошибка двухкубитного вентиля', 'שגיאת 2Q חציונית'))
         o.append('<g class="pt"><title>%s</title><circle class="ring" cx="%.1f" cy="%.1f" r="6.2"/><circle class="mk f-%s%s" cx="%.1f" cy="%.1f" r="4.6"/></g>' % (esc(tip), x, y, m['family'], ' hollow' if hollow else '', x, y))
     boxes = []   # occupied label boxes (x0, y0, x1, y1); marks are avoided by trying the four corners around the point
     marks = [(X(m['q']), Y(m['err'])) for m in pts]

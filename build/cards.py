@@ -35,11 +35,11 @@ FAMC = {'SC': 'var(--sc)', 'ION': 'var(--ion)', 'ATOM': 'var(--atom)', 'PHOTON':
         'DEFECT': 'var(--defect)', 'TOPO': 'var(--topo)', 'ANNEAL': 'var(--anneal)'}
 FAMN = {'SC': ('superconducting circuits', 'сверхпроводниковые схемы', 'מעגלים מוליכי-על'), 'ION': ('trapped ions', 'ионы в ловушках', 'יונים לכודים'),
         'ATOM': ('neutral atoms', 'нейтральные атомы', 'אטומים ניטרליים'), 'PHOTON': ('photonics', 'фотоника', 'פוטוניקה'),
-        'SPIN': ('semiconductor spins', 'полупроводниковые спины', 'ספינים במוליכים למחצה'), 'DEFECT': ('defect spins', 'дефектные спины', 'ספיני פגם'),
+        'SPIN': ('semiconductor spins', 'полупроводниковые спины', 'ספינים במוליכים למחצה'), 'DEFECT': ('defect spins', 'спины дефектов', 'ספיני פגם'),
         'TOPO': ('topological', 'топологические', 'טופולוגי'), 'ANNEAL': ('quantum annealers', 'квантовый отжиг', 'מחשבי הרפיה קוונטית')}
 MACH_FAMILIES = ['SC', 'ION', 'ATOM', 'PHOTON', 'SPIN', 'DEFECT', 'TOPO', 'ANNEAL']
 OFFDEF = ('a crossing technology: it takes a trait from the other side of the natural/fabricated divide — hatched on the map (see §7.5)',
-          'пересекающая технология: берёт свойство с другой стороны раздела естественное/изготовленное — на карте заштрихована (см. §7.5)',
+          'сквозная технология: берёт свойство с другой стороны раздела естественное/искусственное — на карте заштрихована (см. §7.5)',
           'טכנולוגיה חוצה: היא נוטלת מאפיין מהצד השני של החלוקה טבעי–מיוצר — מקווקוות במפה (ראו §7.5)')
 EMPTYDEF = ('a technology with no demonstrated technology yet', 'технология, для которой технологии ещё нет', 'טכנולוגיה שעדיין אין לה מימוש שהודגם')
 PLACES = ['RT', '4K', 'mK', 'none']   # CATS.place
@@ -47,9 +47,9 @@ EVG = (('figure', '▣'), ('whitepaper', '▥'), ('paper', '▤'), ('vendor', '�
 NA_T = {'none': ('none — nothing in this layer', 'none — в этом слое ничего нет', 'none — אין דבר בשכבה זו'),
         'undisclosed': ('undisclosed — exists, nothing published', 'undisclosed — есть, но не опубликовано', 'undisclosed — קיים, אך דבר לא פורסם')}
 PROF_KEYS = ('qubit_type', 'gate_mechanism', 'connectivity', 'control', 'control_placement', 'readout', 'role', 'gate_evidence', 'decoder_mode')
-PROF_T = (('qubit type', 'тип кубита', 'סוג הקיוביט'), ('gate mechanism', 'механизм гейта', 'מנגנון השער'), ('connectivity', 'связность', 'קישוריות'),
+PROF_T = (('qubit type', 'тип кубита', 'סוג הקיוביט'), ('gate mechanism', 'механизм вентиля', 'מנגנון השער'), ('connectivity', 'связность', 'קישוריות'),
           ('control', 'управление', 'בקרה'), ('control placement', 'размещение управления', 'מיקום הבקרה'), ('readout', 'считывание', 'קריאה'),
-          ('role', 'роль', 'תפקיד'), ('gate evidence', 'свидетельство гейта', 'ראיה לשער'), ('decoder mode', 'режим декодера', 'מצב המפענח'))
+          ('role', 'роль', 'תפקיד'), ('gate evidence', 'свидетельство вентиля', 'ראיה לשער'), ('decoder mode', 'режим декодера', 'מצב המפענח'))
 # the three register fields of 2 Oct 2026, in the reader's words (the register's codes stay out of the page: the editor's rule on own codes)
 PROF_WORDS = {
     'role': {'scale-demonstrator': ('scale demonstrator — built to prove scale, performance not published, not operated for users', 'демонстратор масштаба — построен, чтобы доказать масштаб; производительность не опубликована; пользователям не предоставлялся', 'מדגים קנה מידה — נבנה להוכחת קנה מידה, הביצועים לא פורסמו, לא הופעל עבור משתמשים'),
@@ -67,13 +67,13 @@ PROF_WORDS = {
                      'feed-forward': ('feed-forward — the decoder\'s result acts inside the run (closed loop)', 'с обратной связью — результат декодера действует внутри прогона (замкнутый цикл)', 'משוב קדימה — תוצאת המפענח פועלת בתוך הריצה (לולאה סגורה)')}}
 KIND = {'paper': ('paper', 'статья', 'מאמר'), 'whitepaper': ('whitepaper', 'whitepaper', 'מסמך טכני'), 'product': ('product page', 'страница продукта', 'דף מוצר'),
         'docs': ('docs', 'документация', 'תיעוד'), 'blog': ('blog', 'блог', 'בלוג'), 'press': ('press', 'пресса', 'עיתונות'), 'other': ('link', 'ссылка', 'קישור')}
-PN = (('gates', ('gates', 'гейты', 'שערים')), ('transport', ('transport', 'транспорт', 'הובלה')), ('1q', ('1Q', '1Q', '1Q')), ('readout', ('readout', 'считывание', 'קריאה')),
+PN = (('gates', ('gates', 'вентили', 'שערים')), ('transport', ('transport', 'транспорт', 'הובלה')), ('1q', ('1Q', '1Q', '1Q')), ('readout', ('readout', 'считывание', 'קריאה')),
       ('reset', ('reset', 'сброс', 'איפוס')))
 USEBY_HINT = ('↗ its register card · paper / product / press: links that name the machine (attribution checked on 20 Sep 2026)',
               '↗ карточка реестра · статья / продукт / пресса: ссылки, где машина названа (атрибуция проверена 20 сентября 2026)',
               '↗ כרטיס המרשם שלה · מאמר / מוצר / עיתונות: קישורים שבהם המכונה נזכרת בשמה (הייחוס נבדק ב-20 בספטמבר 2026)')
 MAP_LINK = ('Open on the map', 'Открыть на карте', 'פתח במפה')
-ACTORS_GOALS = ('Actors & goals', 'Акторы и цели', 'שחקנים ויעדים')   # the architecture card's block title; build/pages.py finds the block by it
+ACTORS_GOALS = ('Actors & goals', 'Участники и цели', 'שחקנים ויעדים')   # the architecture card's block title; build/pages.py finds the block by it
 PLAIN_UNITS = {'s', 'Hz', 'count', '1', 'fraction', 'dimensionless', 'ratio', 'relative', 'population'}   # machine records: other units are printed
 
 G = None
@@ -376,17 +376,17 @@ def _wrap(kind, parts): return '<section class="card card-%s">%s</section>' % (k
 def station_card_html(nid, lang, base=''):
     L, n = lang, NODE[nid]; t = lambda *x: esc(T(L, *x)); c = n.get('c'); b = n.get('b') or {}; e = n.get('e') or {}
     rows = [(T(L, '(a) carrier affinity', '(a) сродство носителя', '(a) זיקת הנושא'), vt(L, 'AFF', n['aff'])),
-            (T(L, '(b) time · entangling', '(b) время · перепутывание', '(b) זמן · שזירה'), fmt_t(b.get('t')) + ((' · ' + vt(L, 'DET', b.get('det'))) if b.get('det') != 'na' else '')),
+            (T(L, '(b) time · entangling', '(b) время · запутывание', '(b) זמן · שזירה'), fmt_t(b.get('t')) + ((' · ' + vt(L, 'DET', b.get('det'))) if b.get('det') != 'na' else '')),
             (T(L, '(c) readout', '(c) считывание', '(c) קריאה'), '%s · %s · %s · %s' % (vt(L, 'MECH', c.get('mech')), fmt_t(c.get('t')),
                                                                          T(L, 'destructive', 'разрушающее', 'הרסנית') if c.get('destr') else T(L, 'non-destructive', 'неразрушающее', 'לא הרסנית'),
-                                                                         'mid-circuit' if c.get('mid') else T(L, 'no mid-circuit', 'без mid-circuit', 'ללא mid-circuit')) if c is not None else '—'),
+                                                                         T(L, 'mid-circuit', 'внутрисхемное', 'mid-circuit') if c.get('mid') else T(L, 'no mid-circuit', 'не внутрисхемное', 'ללא mid-circuit')) if c is not None else '—'),
             (T(L, '(d) mobility', '(d) подвижность', '(d) ניידות'), vt(L, 'MOB', n['d'])),
             (T(L, '(e) control', '(e) управление', '(e) בקרה'), '—' if e.get('mod') == 'none' else '%s @ %s' % (vt(L, 'MOD', e.get('mod')), _place_text(L, n))),
             (T(L, '(f) error structure', '(f) структура ошибки', '(f) מבנה השגיאה'), ', '.join(vt(L, 'ERR', x) for x in n['f'])),
             (T(L, '(g) manufacturing', '(g) производство', '(g) ייצור'), vt(L, 'FAB', n['g']))]
     marks = []
     if n.get('offdiag'):
-        marks.append('<div><span class="flag off" title="%s">%s</span> — %s</div>' % (ea(T(L, *OFFDEF)), t('crossing technology', 'пересекающая технология', 'טכנולוגיה חוצה'),
+        marks.append('<div><span class="flag off" title="%s">%s</span> — %s</div>' % (ea(T(L, *OFFDEF)), t('crossing technology', 'сквозная технология', 'טכנולוגיה חוצה'),
                                                                                      esc('; '.join(vt(L, 'OFFDIAG', o) for o in n['offdiag']))))
     if n.get('status') == 'X': marks.append('<div><span class="flag empty" title="%s">∅ %s</span></div>' % (ea(T(L, *EMPTYDEF)), t('empty slot', 'пустой слот', 'משבצת ריקה')))
     flags = ('<div class="marks"><span class="tk">%s</span>%s</div>' % (t('Reading marks', 'Метки чтения', 'סימוני המפה'), ''.join(marks))) if marks else ''
@@ -420,7 +420,7 @@ def station_card_html(nid, lang, base=''):
         edges += '<div><b style="color:var(--crit)">%s:</b></div>' % t('conflicts with', 'конфликтует с', 'מתנגשת עם') + ''.join(
             '<div class="conf"><div>%s <span class="cst %s">%s</span></div><div class="cm">%s</div><div class="cm"><span class="tk">%s</span> %s</div><div class="cm"><span class="tk">%s</span> %s%s</div></div>' % (
                 _st(base, other(x), L), ea(x.get('status')), esc(vt(L, 'CONSTAT', x.get('status'))), lk(pick(L, x)), t('price', 'цена', 'מחיר'),
-                lk(pick(L, x.get('price') or {}) or ''), t('mitigation', 'снятие', 'הפחתה'), lk(pick(L, x.get('mitig') or {}) or ''),
+                lk(pick(L, x.get('price') or {}) or ''), t('mitigation', 'смягчение', 'הפחתה'), lk(pick(L, x.get('mitig') or {}) or ''),
                 (' · <a href="%s" target="_blank" rel="noopener">%s</a>' % (ea(x['url']), esc(x.get('date')))) if x.get('url') else '') for x in con)
     edges += ('<div class="empty" style="margin-top:4px">° %s · %s</div>' % (t('one of several that would do', 'одно из нескольких, что подошли бы', 'אחת מכמה שהיו מתאימות'),
                                                                             t('the usual route, not a strict need', 'обычный маршрут, не строгая необходимость', 'הדרך המקובלת, לא דרישה מחייבת'))
@@ -431,13 +431,13 @@ def station_card_html(nid, lang, base=''):
                                                         (' · %s %s' % (t('since', 'с', 'מאז'), n['since'])) if n.get('since') is not None and n['since'] < 2030 else ''),
         '<div class="mlinks">%s</div>' % _maplink(base, 'station', nid, L),
         '<p>%s</p><div>%s</div>' % (lk(pick(L, n['desc'])), flags),
-        '<a class="briefbtn" href="#brief">%s</a>' % t('Brief →', 'Бриф →', 'תקציר ←'),
+        '<a class="briefbtn" href="#brief">%s</a>' % t('Brief →', 'Обзор →', 'תקציר ←'),
         keys,
         '<div class="space"><h4>%s</h4><dl>%s</dl></div>' % (t('Design space — attributes', 'Пространство проектирования — атрибуты', 'מרחב התכן — תכונות'),
                                                             ''.join('<dt>%s</dt><dd>%s</dd>' % (esc(k), esc(v)) for k, v in rows)),
         '<div class="space"><h4>%s</h4>%s%s</div>' % (t('Evaluation space — dated attributes', 'Пространство оценки — датированные атрибуты', 'מרחב ההערכה — תכונות מתוארכות'), defs, attrs),
         _records(L, n['records']) if n.get('records') else '',
-        '<div class="space"><h4>%s</h4>%s</div>' % (t('Actors & goals — annotations', 'Акторы и цели — аннотации', 'שחקנים ויעדים — ביאורים'), tags),
+        '<div class="space"><h4>%s</h4>%s</div>' % (t('Actors & goals — annotations', 'Участники и цели — аннотации', 'שחקנים ויעדים — ביאורים'), tags),
         '<div class="space"><h4>%s</h4>%s</div>' % (t('Edges', 'Рёбра', 'קשתות'), edges),
         _used_by(L, n, base)])
 
@@ -549,7 +549,7 @@ def architecture_card_html(pid, lang, base=''):
         '<div class="space"><h4>%s</h4><table class="ptab">%s</table></div>' % (t('Technologies by layer — primary, then alternates', 'Технологии по слоям — основная, затем альтернативы', 'טכנולוגיות לפי שכבה — הראשית, ואחריה החלופיות'), rows),
         '<div class="space"><h4>%s</h4>%s</div>' % (t('Relations within the architecture', 'Связи внутри архитектуры', 'קשרים בתוך הארכיטקטורה'), rel_html),
         '<div class="space"><h4>%s</h4><div>%s: %s</div><div>∅ %s: %s</div></div>' % (
-            t('Reading', 'Чтение', 'סימוני המפה'), t('hatched (crossing)', 'штрихованные (пересекающие)', 'מקווקוות (חוצות)'),
+            t('Reading', 'Чтение', 'סימוני המפה'), t('hatched (crossing)', 'штрихованные (сквозные)', 'מקווקוות (חוצות)'),
             rd([i for i in members if NODE[i].get('offdiag')]), t('empty slots', 'пустые слоты', 'משבצות ריקות'), rd([i for i in members if NODE[i].get('status') == 'X'])),
         ms])
 

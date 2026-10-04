@@ -1,0 +1,22 @@
+{
+ "date": "2026-10-04",
+ "source": "the editor's order of 4 Oct 2026 (10:51): every Russian term of the Atlas checked for its correct use in the context of quantum mechanics — the most literate academic usage, preferably in the context of the very device described; seven research passes over 653 entries (device literature first, then the Russian QI texts, then living usage), the rule table RULES_RU.md and the binding list data/i18n/ru-terms.md",
+ "items": [
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "text",
+    "id": "ru-terms-device-literature-2026-10-04"
+   },
+   "note": "Russian terminology: every Russian term of the Atlas (653 entries — the graph's names and attribute vocabulary, the 111 briefs, the report, the 17 narratives, the glossaries, the generator's strings) checked against the Russian literature of the device itself (ФИАН/РКЦ ions, МИСиС/ВНИИА/ИФТТ/МФТИ superconducting circuits, ИФП СО РАН and МГУ atoms, МГУ/ИТМО photonics, ФТИ spins), then Нильсен–Чанг (Мир 2006) and the Russian QI texts, then living usage as an indicator. Changed throughout the Russian edition (about 3,700 lines): gate = вентиль (Нильсен–Чанг; Горбацевич, Шубин, УФН 2018; Мажорин…Рязанов, Изв. вузов. Радиофизика 2023) — no longer the transliteration гейт (1,592 occurrences); coupler = элемент связи; interconnect = межсоединение; link = интерфейс / линия связи; transducer = преобразователь; heralded = с оповещением (Криштоп, Фотоника; Чуприна, Латыпов, Изв. РАН 2019); erasure = стирание; photonic fusion = слияние; dual-rail = двухрельсовый; surface / colour / repetition code = поверхностный / цветовой код, код с повторением; concatenated = каскадный; bit-flip / phase-flip = переворот бита / фазы; matching = паросочетание; cavity = резонатор; cat qubit = кошачий кубит; quench = квенч (not закалка); fidelity = точность (one form); dephasing = дефазировка; decoherence = декогеренция; entanglement = запутанность (one stem); trapped ions = ионы в ловушках; Мёльмера–Соренсена; shuttling = перемещение; atom reload = дозагрузка; fluorescence detection = детектирование состояния по флуоресценции, imaging = регистрация флуоресценции; clock-state qubit = кубит на часовом переходе; defect spin = спин дефекта; fabricated carrier = искусственный носитель (Астафьев); superconducting devices = сверхпроводниковый, the state = сверхпроводящий; crosstalk = перекрёстные помехи; FPGA = ПЛИС; CMOS = КМОП; SQUID = СКВИД (ВЧ-СКВИД); SFQ = БОК; MEMS = МЭМС; STM = СТМ; PIC = ФИС; MBE = МЛЭ; III-V = A3B5; AOD = АОД; Purcell = фильтр Парселла; cross-resonance = кросс-резонанс; break-even = безубыточность; mid-circuit = внутрисхемный; real-time = в реальном времени; testbed = испытательный стенд; whitepaper = белая книга; undisclosed = не раскрыто; Series B = раунд серии B; brief = обзор; actors = участники; evidence grade = уровень доказательности; crossing technology = сквозная технология; the brief headings Сущность и происхождение / Достигнутый инженерный уровень / Перспективы и открытые вопросы / Интеллектуальная собственность и стандарты (ИС read as интегральная схема); unit symbols international in the Russian edition as in the other two (µs, mK, mm — no мкс, мК, мм). Kept after checking: анцилла, рандомизированный бенчмаркинг, смягчение ошибок, частота ошибок, донорный спин, бамп, time-bin, flip-chip."
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "text",
+    "id": "ru-graph-names-2026-10-04"
+   },
+   "note": "81 Russian node names and 8 architecture names of the graph re-set to the new terms (e.g. «Механизм вентиля», «Межсоединение», «Перемещение ионов (QCCD, перекрёстки, решётчатые ловушки)», «Повёрнутый поверхностный код (+ yoked-варианты)», «Потоковый кубит на ВЧ-СКВИДе (отжигатель)», «Двухрельсовые кубиты со стираниями», «Ионы в ловушках — QCCD (перемещение между зонами)»); the briefs' front-matter names follow the graph (briefs_meta_check: names differ 95 → 27, the remainder pre-existing paraphrases in both languages). The Russian glossary definitions and their matchers (match_ru) follow the new spellings. The English and Hebrew editions are unchanged except the Russian strings they carry for the language switch."
+  }
+ ]
+}

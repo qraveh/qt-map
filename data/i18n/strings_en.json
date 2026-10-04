@@ -60,7 +60,7 @@
   ]
  },
  "hatched: crossing technology": {
-  "ru": "штриховка: пересекающая технология",
+  "ru": "штриховка: сквозная технология",
   "files": [
    "build/map_js.py"
   ]
@@ -108,7 +108,7 @@
   ]
  },
  "mitigation": {
-  "ru": "снятие",
+  "ru": "смягчение",
   "files": [
    "build/map_js.py"
   ]
@@ -198,7 +198,7 @@
   ]
  },
  "Actors & goals": {
-  "ru": "Акторы и цели",
+  "ru": "Участники и цели",
   "files": [
    "build/map_js.py"
   ]
@@ -330,7 +330,7 @@
   ]
  },
  "hatched (crossing)": {
-  "ru": "штрихованные (пересекающие)",
+  "ru": "штрихованные (сквозные)",
   "files": [
    "build/map_js.py"
   ]
@@ -451,7 +451,7 @@
   ]
  },
  "(b) time · entangling": {
-  "ru": "(b) время · перепутывание",
+  "ru": "(b) время · запутывание",
   "files": [
    "build/map_js.py"
   ]
@@ -475,7 +475,7 @@
   ]
  },
  "no mid-circuit": {
-  "ru": "без mid-circuit",
+  "ru": "не внутрисхемное",
   "files": [
    "build/map_js.py"
   ]
@@ -505,7 +505,7 @@
   ]
  },
  "crossing technology": {
-  "ru": "пересекающая технология",
+  "ru": "сквозная технология",
   "files": [
    "build/map_js.py"
   ]
@@ -523,7 +523,7 @@
   ]
  },
  "Brief →": {
-  "ru": "Бриф →",
+  "ru": "Обзор →",
   "files": [
    "build/map_js.py"
   ]
@@ -577,7 +577,7 @@
   ]
  },
  "Actors & goals — annotations": {
-  "ru": "Акторы и цели — аннотации",
+  "ru": "Участники и цели — аннотации",
   "files": [
    "build/map_js.py"
   ]
@@ -721,7 +721,7 @@
   ]
  },
  "brief": {
-  "ru": "бриф",
+  "ru": "обзор",
   "files": [
    "build/find_js.py"
   ]
@@ -805,7 +805,7 @@
   ]
  },
  "{f}{axes[L][0]}: not applicable — annealers run no gate-model error correction, so the axis has no meaning for them": {
-  "ru": "{axes[L][0]}: неприменимо — отжигатели не выполняют коррекцию ошибок гейтовой модели, ось для них не имеет смысла",
+  "ru": "{axes[L][0]}: неприменимо — отжигатели не выполняют коррекцию ошибок вентильной модели, ось для них не имеет смысла",
   "files": [
    "build/build_html.py"
   ]
@@ -853,7 +853,7 @@
   ]
  },
  "median 2Q error": {
-  "ru": "медианная 2Q-ошибка",
+  "ru": "медианная ошибка двухкубитного вентиля",
   "files": [
    "build/fig81.py"
   ]
@@ -883,7 +883,7 @@
   ]
  },
  "largest gate-capable superconducting device (physical qubits)": {
-  "ru": "крупнейшее сверхпроводниковое устройство с гейтами (физ. кубитов)",
+  "ru": "крупнейшее сверхпроводниковое устройство с вентилями (физ. кубитов)",
   "files": [
    "build/machines_chapter.py"
   ]
@@ -895,13 +895,13 @@
   ]
  },
  "largest gate-capable neutral-atom device": {
-  "ru": "крупнейшее нейтрально-атомное устройство с гейтами",
+  "ru": "крупнейшее нейтрально-атомное устройство с вентилями",
   "files": [
    "build/machines_chapter.py"
   ]
  },
  "largest gate-capable trapped-ion device": {
-  "ru": "крупнейшее ионное устройство с гейтами",
+  "ru": "крупнейшее ионное устройство с вентилями",
   "files": [
    "build/machines_chapter.py"
   ]
@@ -949,13 +949,13 @@
   ]
  },
  "gate-capable devices": {
-  "ru": "устройств с гейтами",
+  "ru": "устройств с вентилями",
   "files": [
    "build/machines_chapter.py"
   ]
  },
  "status ∈ {deployed, demonstrated, retired}; no target/component/analog/no-gate flag": {
-  "ru": "статус ∈ {в эксплуатации, продемонстрирована, выведена}; без флагов цели/компонента/аналога/без гейта",
+  "ru": "статус ∈ {в эксплуатации, продемонстрирована, выведена}; без флагов цели/компонента/аналога/без вентиля",
   "files": [
    "build/machines_chapter.py"
   ]
@@ -967,7 +967,7 @@
   ]
  },
  "a gate-capable median of another family above the atoms’, or a larger gate-capable device outside the atoms": {
-  "ru": "медиана другого семейства по устройствам с гейтами выше атомной или крупнейшее устройство с гейтами не у атомов",
+  "ru": "медиана другого семейства по устройствам с вентилями выше атомной или крупнейшее устройство с вентилями не у атомов",
   "files": [
    "build/machines_chapter.py"
   ]
@@ -1123,7 +1123,7 @@
   ]
  },
  "{f}≤ 1,121 (no gate-capable device above {fmt_n(sc_top)} delivered)": {
-  "ru": "≤ 1 121 (устройство с гейтами крупнее {fmt_n(sc_top)} не поставлено)",
+  "ru": "≤ 1 121 (устройство с вентилями крупнее {fmt_n(sc_top)} не поставлено)",
   "files": [
    "build/machines_chapter.py"
   ]
@@ -1141,7 +1141,7 @@
   ]
  },
  "a superconducting device with an entangling gate on more than 1,121 qubits in the 2027.09 register": {
-  "ru": "сверхпроводниковое устройство с перепутывающим гейтом более чем на 1 121 кубит в реестре 2027.09",
+  "ru": "сверхпроводниковое устройство с запутывающим вентилем более чем на 1 121 кубит в реестре 2027.09",
   "files": [
    "build/machines_chapter.py"
   ]
@@ -1165,7 +1165,7 @@
   ]
  },
  "a gate-capable tweezer processor above 3,000 qubits by 2028.09, or none above 1,180 by then": {
-  "ru": "пинцетный процессор с гейтами более чем на 3 000 кубитов к 2028.09 — или ни одного выше 1 180 к тому времени",
+  "ru": "пинцетный процессор с вентилями более чем на 3 000 кубитов к 2028.09 — или ни одного выше 1 180 к тому времени",
   "files": [
    "build/machines_chapter.py"
   ]
@@ -1177,7 +1177,7 @@
   ]
  },
  "{f}a trapped-ion device with entangling gates on more than {ion_hi} qubits by 2027.09, or the frontier still at {fmt_n(io_top)}": {
-  "ru": "ионное устройство с перепутывающими гейтами более чем на {ion_hi} кубитов к 2027.09 — или фронт всё ещё на {fmt_n(io_top)}",
+  "ru": "ионное устройство с запутывающими вентилями более чем на {ion_hi} кубитов к 2027.09 — или фронт всё ещё на {fmt_n(io_top)}",
   "files": [
    "build/machines_chapter.py"
   ]
@@ -1249,7 +1249,7 @@
   ]
  },
  "{f}≤ 25 / 0: the candidates are demos and claims ({', '.join(mdcell(m['name']) for m in sorted(ctl_cand, key=lambda m: m['name']))}); IBM's cryo-CMOS is scheduled with Starling (2029)": {
-  "ru": "≤ 25 / 0: кандидаты — демонстрации и заявления ({', '.join(mdcell(m['name']) for m in sorted(ctl_cand, key=lambda m: m['name']))}); cryo-CMOS IBM запланирован вместе со Starling (2029)",
+  "ru": "≤ 25 / 0: кандидаты — демонстрации и заявления ({', '.join(mdcell(m['name']) for m in sorted(ctl_cand, key=lambda m: m['name']))}); крио-КМОП IBM запланирован вместе со Starling (2029)",
   "files": [
    "build/machines_chapter.py"
   ]
@@ -1267,7 +1267,7 @@
   ]
  },
  "the checkpoints dated 2026–2027 are scored; on H6's distribution (56 of 65 SHORT verdicts on error or gates) the expectation is that they miss on the error budget, not on qubits": {
-  "ru": "точки, датированные 2026–2027, оцениваются; по распределению H6 (56 из 65 вердиктов SHORT — по ошибке или гейтам) ожидание таково, что они промахнутся по бюджету ошибок, а не по кубитам",
+  "ru": "точки, датированные 2026–2027, оцениваются; по распределению H6 (56 из 65 вердиктов SHORT — по ошибке или вентилям) ожидание таково, что они промахнутся по бюджету ошибок, а не по кубитам",
   "files": [
    "build/machines_chapter.py"
   ]
@@ -1285,7 +1285,7 @@
   ]
  },
  "a dated checkpoint met on qubits, error and gate budget together": {
-  "ru": "датированная точка, выполненная одновременно по кубитам, ошибке и бюджету гейтов",
+  "ru": "датированная точка, выполненная одновременно по кубитам, ошибке и бюджету вентилей",
   "files": [
    "build/machines_chapter.py"
   ]
@@ -1297,13 +1297,13 @@
   ]
  },
  "{f}The map's technologies are what *can* be built; the machines register says what *has been* built, announced or planned, one row per machine, each joined to the map as an architecture instance (§7.10). This chapter reads the register as a population: how large it is, which technologies it is built from, what idea justifies each attempt, and what the population's trends say about where the architecture is heading. Every count below is computed from the Quantum Machines Register as of 26 September 2026 (the register and its evidence file are published with the Atlas's data); a claim is tested against the register, not asserted, and its evidence grade is carried along — the share of the cells behind it whose cited source was opened and found to support them (✅) rather than left unverified or inferred (🔎).\\n\\n": {
-  "ru": "Технологии карты — это то, что *может* быть построено; реестр машин говорит, что *построено*, анонсировано или запланировано: по строке на машину, каждая соединена с картой как экземпляр архитектуры (§7.10). Эта глава читает реестр как популяцию: насколько она велика, из каких технологий собрана, какая идея оправдывает каждую попытку и что тренды популяции говорят о том, куда движется архитектура. Каждое число ниже вычислено по Реестру квантовых машин по состоянию на 26 сентября 2026 года (реестр и его файл свидетельств публикуются вместе с данными Атласа); утверждение проверяется по реестру, а не постулируется, и его класс свидетельств указан рядом — доля ячеек за ним, чей источник был открыт и подтвердил их (✅), а не оставлен непроверенным или выведен (🔎).\\n\\n",
+  "ru": "Технологии карты — это то, что *может* быть построено; реестр машин говорит, что *построено*, анонсировано или запланировано: по строке на машину, каждая соединена с картой как экземпляр архитектуры (§7.10). Эта глава читает реестр как популяцию: насколько она велика, из каких технологий собрана, какая идея оправдывает каждую попытку и что тренды популяции говорят о том, куда движется архитектура. Каждое число ниже вычислено по Реестру квантовых машин по состоянию на 26 сентября 2026 года (реестр и его файл свидетельств публикуются вместе с данными Атласа); утверждение проверяется по реестру, а не постулируется, и его уровень доказательности указан рядом — доля ячеек за ним, чей источник был открыт и подтвердил их (✅), а не оставлен непроверенным или выведен (🔎).\\n\\n",
   "files": [
    "build/machines_chapter.py"
   ]
  },
  "{f}**Terms used in this chapter.** A *quantum machine* — *machine* for short in this chapter — is one row of the register: a named system an organisation has built, announced or planned. Its *family* is its qubit platform ({', '.join(t(L, FAMN[f]) for f in FAM_ORDER)}); its *architecture* is the map architecture it instantiates — one of the {len(PATHS)} architectures of §7.3, i.e. the family plus the choice of encoding, gate and control that defines it (cat qubits and dual-rail erasure are architectures of the superconducting family). An *evidence cell* is one machine × one technology it uses in a layer of the stack, with the document that shows it (a layer may hold a primary technology and an alternate, so a machine has about a dozen cells, not ten) and the register holds {ncells:,}. A cell is *verified* (✅) when its cited source — a paper, a whitepaper, a product page or a technical press release; the card shows which by its glyph — was opened and seen to show that technology in that machine, and *unverified* (🔎) when the source was not re-opened or the cell is an inference; the *evidence grade* of a count is the verified share of the cells it rests on — it says how much of a claim rests on sources that were actually checked, not how many of them are papers. A *device* is a machine whose status is deployed, demonstrated or retired and that is not flagged as a target or a component; a *gate-capable* device additionally runs an entangling gate (analog simulators, tweezer arrays without a gate and single-qubit testbeds are devices but not processors). A *cohort* is the year of the register's status date. *Integrated control* means the qubits are driven by electronics on the chip or inside the cryostat (on-chip microwave electrodes, cryo-CMOS, SFQ, flux DACs) rather than by room-temperature racks or free-space optics; *closed-loop decoding* means the error-correction decoder acts within the cycle. A *link technology* is an interconnect-layer technology that joins modules — a photonic, microwave or long-range coupler link; multi-die packaging inside one module and cryogenic signal fan-out are interconnect technologies but not links. A layer in which a machine uses no technology holds one of three values: *none* (nothing in this layer — no code, no decoder, no interconnect; for analog and sampling machines no encoding layer or no entangling gate), *undisclosed* (something is there, nothing is published) or an *Atlas gap* (`∅G-…`: the machine runs what the map has no technology for; each is an entry of the register's gap ledger). A *roadmap verdict* is the register's feasibility check of a published roadmap against its target algorithm (FEASIBLE, SHORT with a deficit, or NOT EVALUABLE).\\n\\n": {
-  "ru": "**Термины этой главы.** *Квантовая машина* — в этой главе коротко *машина* — одна строка реестра: именованная система, которую организация построила, анонсировала или запланировала. Её *семейство* — кубитная платформа ({', '.join(t(L, FAMN[f]) for f in FAM_ORDER)}); её *архитектура* — линия карты, которую она реализует: одна из {len(PATHS)} архитектур §7.3, то есть семейство плюс выбор кодирования, гейта и управления, который её определяет (кошачьи кубиты и двухрельсовое стирание — архитектуры сверхпроводникового семейства). *Ячейка свидетельств* — одна машина × одна технология, которую она использует в слое стека, вместе с документом, который это показывает (в слое могут стоять основная технология и альтернатива, поэтому у машины около дюжины ячеек, в реестре их {ncells:,}. Ячейка *проверена* (✅), когда её источник — статья, whitepaper, страница продукта или технический пресс-релиз; какой именно, показывает значок в карточке — был открыт и в нём увидена эта технология в этой машине, и *не проверена* (🔎), когда источник не открывался заново или ячейка — вывод; *класс свидетельств* числа — доля проверенных ячеек, на которых оно стоит: он говорит, какая часть утверждения опирается на действительно проверенные источники, а не сколько из них — статьи. *Устройство* — машина со статусом «в эксплуатации», «продемонстрирована» или «выведена», не помеченная как цель или компонент; устройство *с гейтами* вдобавок выполняет перепутывающий гейт (аналоговые симуляторы, массивы пинцетов без гейта и однокубитные стенды — устройства, но не процессоры). *Когорта* — год даты статуса в реестре. *Интегрированное управление* — кубиты управляются электроникой на чипе или внутри криостата (микроволновые электроды на чипе, cryo-CMOS, SFQ, потоковые ЦАП), а не стойками при комнатной температуре или оптикой в свободном пространстве; *замкнутое декодирование* — декодер коррекции ошибок действует внутри такта. *Технология связи* — технология слоя межсоединений, соединяющая модули: фотонная, микроволновая или дальняя связь через каплер; многокристальная сборка внутри одного модуля и криогенная разводка сигналов — технологии межсоединения, но не связи. Слой, в котором машина не использует ни одной технологии, содержит одно из трёх значений: *none* (в этом слое ничего нет — нет кода, декодера, межсоединения; у аналоговых и сэмплирующих машин — нет слоя кодирования или перепутывающего гейта), *undisclosed* (что-то есть, но ничего не опубликовано) или *пробел Атласа* (`∅G-…`: машина запускает то, для чего у карты нет технологии; каждый — запись в реестре пробелов). *Вердикт дорожной карты* — проверка реестром опубликованной карты на осуществимость её целевого алгоритма (FEASIBLE, SHORT с дефицитом или NOT EVALUABLE).\\n\\n",
+  "ru": "**Термины этой главы.** *Квантовая машина* — в этой главе коротко *машина* — одна строка реестра: именованная система, которую организация построила, анонсировала или запланировала. Её *семейство* — кубитная платформа ({', '.join(t(L, FAMN[f]) for f in FAM_ORDER)}); её *архитектура* — линия карты, которую она реализует: одна из {len(PATHS)} архитектур §7.3, то есть семейство плюс выбор кодирования, вентиля и управления, который её определяет (кошачьи кубиты и двухрельсовое стирание — архитектуры сверхпроводникового семейства). *Ячейка свидетельств* — одна машина × одна технология, которую она использует в слое стека, вместе с документом, который это показывает (в слое могут стоять основная технология и альтернатива, поэтому у машины около дюжины ячеек, в реестре их {ncells:,}. Ячейка *проверена* (✅), когда её источник — статья, белая книга, страница продукта или технический пресс-релиз; какой именно, показывает значок в карточке — был открыт и в нём увидена эта технология в этой машине, и *не проверена* (🔎), когда источник не открывался заново или ячейка — вывод; *уровень доказательности* числа — доля проверенных ячеек, на которых оно стоит: он говорит, какая часть утверждения опирается на действительно проверенные источники, а не сколько из них — статьи. *Устройство* — машина со статусом «в эксплуатации», «продемонстрирована» или «выведена», не помеченная как цель или компонент; устройство *с вентилями* вдобавок выполняет запутывающий вентиль (аналоговые симуляторы, массивы пинцетов без вентиля и однокубитные стенды — устройства, но не процессоры). *Когорта* — год даты статуса в реестре. *Интегрированное управление* — кубиты управляются электроникой на чипе или внутри криостата (микроволновые электроды на чипе, крио-КМОП, БОК-логика, потоковые ЦАП), а не стойками при комнатной температуре или оптикой в свободном пространстве; *замкнутое декодирование* — декодер коррекции ошибок действует внутри такта. *Технология связи* — технология слоя межсоединений, соединяющая модули: фотонная, микроволновая или дальняя связь через элемент связи; многокристальная сборка внутри одного модуля и криогенная разводка сигналов — технологии межсоединения, но не связи. Слой, в котором машина не использует ни одной технологии, содержит одно из трёх значений: *none* (в этом слое ничего нет — нет кода, декодера, межсоединения; у аналоговых и сэмплирующих машин — нет слоя кодирования или запутывающего вентиля), *undisclosed* (что-то есть, но ничего не опубликовано) или *пробел Атласа* (`∅G-…`: машина запускает то, для чего у карты нет технологии; каждый — запись в реестре пробелов). *Вердикт дорожной карты* — проверка реестром опубликованной карты на осуществимость её целевого алгоритма (FEASIBLE, SHORT с дефицитом или NOT EVALUABLE).\\n\\n",
   "files": [
    "build/machines_chapter.py"
   ]
@@ -1333,7 +1333,7 @@
   ]
  },
  "{f}Reading the table: the superconducting family is the largest by far and also the only one with retirements; the spin family is small and mostly at the demonstration stage, the photonic one small and split between deployed and demonstrated machines; the {nsc['OTHER']} rows in *other* are statuses the register could not reduce to one word (component testbeds, disputed reachability). The last three columns are the chapter's evidence grade: of the evidence cells behind a family's rows, how many the cited source was opened and found to support. It matters because every count in this chapter inherits it — the family at {round(100*min(fshare.values()))} % rests mostly on press claims and inferences, the family at {round(100*max(fshare.values()))} % mostly on papers — and it differs by family because the families publish differently: architecture papers with device figures are the norm for the academic superconducting, ion and atom machines and the exception for commercial photonic and spin announcements.\\n\\n": {
-  "ru": "Чтение таблицы: сверхпроводниковое семейство — самое большое и единственное с выведенными машинами; спиновое семейство мало и в основном на стадии демонстрации, фотонное — мало и поделено между развёрнутыми и продемонстрированными машинами; {nsc['OTHER']} строк *прочее* — статусы, которые реестр не свёл к одному слову (испытательные стенды компонентов, спорная достижимость). Последние три столбца — класс свидетельств главы: сколько из ячеек свидетельств за строками семейства проверены по открытому источнику. Это важно, потому что каждое число главы его наследует — семейство на {round(100*min(fshare.values()))} % стоит в основном на заявлениях прессы и выводах, семейство на {round(100*max(fshare.values()))} % — в основном на статьях, — и он различается по семействам, потому что семейства публикуют по-разному: статьи об архитектуре с рисунками устройства — норма для академических сверхпроводниковых, ионных и атомных машин и исключение для коммерческих фотонных и спиновых анонсов.\\n\\n",
+  "ru": "Чтение таблицы: сверхпроводниковое семейство — самое большое и единственное с выведенными машинами; спиновое семейство мало и в основном на стадии демонстрации, фотонное — мало и поделено между развёрнутыми и продемонстрированными машинами; {nsc['OTHER']} строк *прочее* — статусы, которые реестр не свёл к одному слову (испытательные стенды компонентов, спорная достижимость). Последние три столбца — уровень доказательности главы: сколько из ячеек свидетельств за строками семейства проверены по открытому источнику. Это важно, потому что каждое число главы его наследует — семейство на {round(100*min(fshare.values()))} % стоит в основном на заявлениях прессы и выводах, семейство на {round(100*max(fshare.values()))} % — в основном на статьях, — и он различается по семействам, потому что семейства публикуют по-разному: статьи об архитектуре с рисунками устройства — норма для академических сверхпроводниковых, ионных и атомных машин и исключение для коммерческих фотонных и спиновых анонсов.\\n\\n",
   "files": [
    "build/machines_chapter.py"
   ]
@@ -1345,7 +1345,7 @@
   ]
  },
  "Per layer of the map, the technologies the machines actually occupy (primary role), the three ways a machine can occupy none — *none* (nothing in this layer), *undisclosed* (published nothing) and *Atlas gap* (the map has no technology for what it runs) — and the families that share the most-used technology. The `none` column is the register's maturity profile: near zero for the carrier, small for gates, connectivity and fabrication, and large for exactly the layers where the field's claims run ahead of its machines — code, decoder, interconnect. The `undisclosed` column is its disclosure profile, and the gap column is the map's own to-do list: what the machines run that the map does not yet name.\\n\\n": {
-  "ru": "По слоям карты: технологии, которые машины реально занимают (основная роль), три способа не занимать ни одной — *none* (в этом слое ничего нет), *undisclosed* (ничего не опубликовано) и *пробел Атласа* (у карты нет технологии для того, что запускает машина), — и семейства, делящие самую занятую технологию. Столбец `none` — профиль зрелости реестра: около нуля для носителя, мал для гейтов, связности и изготовления и велик ровно на тех слоях, где заявления отрасли опережают её машины: код, декодер, межсоединение. Столбец `undisclosed` — его профиль раскрытия, а столбец пробелов — список дел самой карты: то, что машины запускают, а карта ещё не называет.\\n\\n",
+  "ru": "По слоям карты: технологии, которые машины реально занимают (основная роль), три способа не занимать ни одной — *none* (в этом слое ничего нет), *undisclosed* (ничего не опубликовано) и *пробел Атласа* (у карты нет технологии для того, что запускает машина), — и семейства, делящие самую занятую технологию. Столбец `none` — профиль зрелости реестра: около нуля для носителя, мал для вентилей, связности и изготовления и велик ровно на тех слоях, где заявления отрасли опережают её машины: код, декодер, межсоединение. Столбец `undisclosed` — его профиль раскрытия, а столбец пробелов — список дел самой карты: то, что машины запускают, а карта ещё не называет.\\n\\n",
   "files": [
    "build/machines_chapter.py"
   ]
@@ -1369,7 +1369,7 @@
   ]
  },
  "A machine is an argument: *this* combination of technologies will reach the goal before the others. The argument is made per architecture (an architecture of the map), not per machine, so the register is read here by architecture — the bet in one line, the count of machines and devices that make it, the largest gate-capable device the register holds for it (analog simulators, arrays without an entangling gate and single-qubit testbeds excluded), and the best two-qubit error among its devices (hero pairs, targets and component demonstrations excluded).\\n\\n": {
-  "ru": "Машина — это аргумент: *эта* комбинация технологий достигнет цели раньше других. Аргумент делается на уровне архитектуры (линии карты), а не машины, поэтому реестр читается здесь по архитектурам: ставка в одну строку, число машин и устройств, её делающих, крупнейшее устройство с гейтами, которое реестр держит для неё (аналоговые симуляторы, массивы без перепутывающего гейта и однокубитные стенды исключены), и лучшая двухкубитная ошибка среди её устройств (рекордные пары, цели и демонстрации компонентов исключены).\\n\\n",
+  "ru": "Машина — это аргумент: *эта* комбинация технологий достигнет цели раньше других. Аргумент делается на уровне архитектуры (линии карты), а не машины, поэтому реестр читается здесь по архитектурам: ставка в одну строку, число машин и устройств, её делающих, крупнейшее устройство с вентилями, которое реестр держит для неё (аналоговые симуляторы, массивы без запутывающего вентиля и однокубитные стенды исключены), и лучшая двухкубитная ошибка среди её устройств (рекордные пары, цели и демонстрации компонентов исключены).\\n\\n",
   "files": [
    "build/machines_chapter.py"
   ]
@@ -1381,13 +1381,13 @@
   ]
  },
  "| Architecture (map architecture) | Machines | Devices | Largest gate-capable device (physical qubits) | Best 2Q error among devices | The bet |": {
-  "ru": "| Архитектура (линия карты) | Машин | Устройств | Крупнейшее устройство с гейтами (физ. кубитов) | Лучшая 2Q-ошибка среди устройств | Ставка |",
+  "ru": "| Архитектура (линия карты) | Машин | Устройств | Крупнейшее устройство с вентилями (физ. кубитов) | Лучшая ошибка двухкубитного вентиля среди устройств | Ставка |",
   "files": [
    "build/machines_chapter.py"
   ]
  },
  "Two readings. First, the bets are not symmetric in what they need to prove: the superconducting and tweezer bets are already made by dozens of devices and argue about *rates* (error per gate, qubits per year); the bosonic, topological and donor bets are made by one to seven machines and still argue about *existence* (does the protection hold at the second qubit, at the second module). Second, the best numbers sit on different architectures for different quantities — the largest device is a tweezer array, the best two-qubit error is an ion trap, the fastest clock (§7.4) is a transmon lattice — which is the empirical form of the Atlas's claim that no architecture dominates on all axes.\\n\\n": {
-  "ru": "Два прочтения. Во-первых, ставки несимметричны в том, что им нужно доказать: сверхпроводниковая и пинцетная ставки уже сделаны десятками устройств и спорят о *темпах* (ошибка на гейт, кубиты в год); бозонные, топологическая и донорная сделаны одной–семью машинами и всё ещё спорят о *существовании* (держится ли защита на втором кубите, на втором модуле). Во-вторых, лучшие числа лежат в разных архитектурах для разных величин — крупнейшее устройство это массив пинцетов, лучшая двухкубитная ошибка — ионная ловушка, самый быстрый такт (§7.4) — трансмонная решётка, — что есть эмпирическая форма утверждения Атласа: ни одна архитектура не доминирует по всем осям.\\n\\n",
+  "ru": "Два прочтения. Во-первых, ставки несимметричны в том, что им нужно доказать: сверхпроводниковая и пинцетная ставки уже сделаны десятками устройств и спорят о *темпах* (ошибка на вентиль, кубиты в год); бозонные, топологическая и донорная сделаны одной–семью машинами и всё ещё спорят о *существовании* (держится ли защита на втором кубите, на втором модуле). Во-вторых, лучшие числа лежат в разных архитектурах для разных величин — крупнейшее устройство это массив пинцетов, лучшая двухкубитная ошибка — ионная ловушка, самый быстрый такт (§7.4) — трансмонная решётка, — что есть эмпирическая форма утверждения Атласа: ни одна архитектура не доминирует по всем осям.\\n\\n",
   "files": [
    "build/machines_chapter.py"
   ]
@@ -1405,7 +1405,7 @@
   ]
  },
  "{f}**Machines of this architecture (register: {len(pm)}, of them {ndev} devices, {ngate} gate-capable).** {orgs}.\\n\\n": {
-  "ru": "**Машины этой архитектуры (реестр: {len(pm)}, из них {ndev} устройств, {ngate} с гейтами).** {orgs}.\\n\\n",
+  "ru": "**Машины этой архитектуры (реестр: {len(pm)}, из них {ndev} устройств, {ngate} с вентилями).** {orgs}.\\n\\n",
   "files": [
    "build/machines_chapter.py"
   ]
@@ -1441,13 +1441,13 @@
   ]
  },
  "{f}*Test.* Median physical qubits per family over all devices and over gate-capable devices ({len(gdev)} of {len(dev)}; analog simulators, arrays without an entangling gate and single-qubit testbeds excluded); the largest gate-capable device per family; cohort medians for the two largest families.\\n\\n": {
-  "ru": "*Проверка.* Медиана физических кубитов по семействам для всех устройств и для устройств с гейтами ({len(gdev)} из {len(dev)}; аналоговые симуляторы, массивы без перепутывающего гейта и однокубитные стенды исключены); крупнейшее устройство с гейтами по семействам; медианы по когортам для двух крупнейших семейств.\\n\\n",
+  "ru": "*Проверка.* Медиана физических кубитов по семействам для всех устройств и для устройств с вентилями ({len(gdev)} из {len(dev)}; аналоговые симуляторы, массивы без запутывающего вентиля и однокубитные стенды исключены); крупнейшее устройство с вентилями по семействам; медианы по когортам для двух крупнейших семейств.\\n\\n",
   "files": [
    "build/machines_chapter.py"
   ]
  },
  "| Family | Devices: median qubits (n) | Gate-capable: median qubits (n) | Largest gate-capable device | Largest device of any kind |": {
-  "ru": "| Семейство | Устройства: медиана кубитов (n) | С гейтами: медиана кубитов (n) | Крупнейшее устройство с гейтами | Крупнейшее устройство любого рода |",
+  "ru": "| Семейство | Устройства: медиана кубитов (n) | С вентилями: медиана кубитов (n) | Крупнейшее устройство с вентилями | Крупнейшее устройство любого рода |",
   "files": [
    "build/machines_chapter.py"
   ]
@@ -1465,13 +1465,13 @@
   ]
  },
  "Control stays external: integrated control is a minority confined to spins, annealers and a few traps; no superconducting device of 100 qubits or more generates its microwave drive inside the cryostat — 4-K cryo-CMOS flux bias has run in hybrid with room-temperature RF on 156 qubits (Heron r2, Mar 2026).": {
-  "ru": "Управление остаётся внешним: интегрированное управление — меньшинство, ограниченное спинами, отжигом и несколькими ловушками; ни одно сверхпроводниковое устройство от 100 кубитов не формирует СВЧ-сигналы внутри криостата — cryo-CMOS смещение потока при 4 K работало в гибриде с комнатным СВЧ на 156 кубитах (Heron r2, март 2026).",
+  "ru": "Управление остаётся внешним: интегрированное управление — меньшинство, ограниченное спинами, отжигом и несколькими ловушками; ни одно сверхпроводниковое устройство от 100 кубитов не формирует СВЧ-сигналы внутри криостата — смещение потока от крио-КМОП при 4 K работало в гибриде с комнатным СВЧ на 156 кубитах (Heron r2, март 2026).",
   "files": [
    "build/machines_chapter.py"
   ]
  },
  "{f}), of which cryogenic {len(cryo)}; superconducting devices ≥ 100 qubits with non-demo cryogenic control: {len(big_sc_cryo)}. *Verdict:* {t(L, VER[h3])}. The attribute the map treats as the slow-moving one (§7.2: control placement) moves slowly in the register too: the integrated class is where the physics forces it — flux DACs on annealers, CMOS next to CMOS spins, microwave electrodes in surface traps — and a plan elsewhere.\\n\\n": {
-  "ru": "*Проверка.* Поле реестра `control_placement`, классифицированное как электроника при комнатной температуре, оптика, интегрированное (микроволны на чипе, cryo-CMOS, SFQ, потоковые ЦАП, 4 K) или не раскрыто; интегрированный класс по семействам; сверхпроводниковые устройства ≥ 100 кубитов с криогенным управлением не в статусе демонстрации. *Результат.* Внешнее {ext} из {len(cryo_ms)} машин криогенных семейств (сверхпроводники, спины, топологические, отжиг); интегрированное {len(integ)} (",
+  "ru": "*Проверка.* Поле реестра `control_placement`, классифицированное как электроника при комнатной температуре, оптика, интегрированное (микроволны на чипе, крио-КМОП, БОК-логика, потоковые ЦАП, 4 K) или не раскрыто; интегрированный класс по семействам; сверхпроводниковые устройства ≥ 100 кубитов с криогенным управлением не в статусе демонстрации. *Результат.* Внешнее {ext} из {len(cryo_ms)} машин криогенных семейств (сверхпроводники, спины, топологические, отжиг); интегрированное {len(integ)} (",
   "files": [
    "build/machines_chapter.py"
   ]
@@ -1591,7 +1591,7 @@
   ]
  },
  "{f}Of the eight hypotheses, {nsup} are supported, {npart} partly and {nno} not. **From count to encoded qubits and links.** The three layers most often empty on a machine — code, decoder and interconnect, with no technology or an undisclosed one on {_empty('7')}, {_empty('8')} and {_empty('9')} of the machines — are the layers every fault-tolerant roadmap must fill (H4, H5, H6): the next generation of quantum computers will be judged by the logical error per cycle and by the link between modules, not by the count (H1). **A division of roles between families rather than a winner.** The largest devices are tweezer arrays, the best gate is an ion trap and the fastest clock a transmon lattice; the medians converge (H2) while the extremes stay apart; hardware is shared only between kindred families while codes and decoders cross all of them (H8) — and the roadmaps assume many modules joined by links rather than one module grown large (H5). **The slow variable is control.** Integrated control is a necessity where the physics forces it and a plan elsewhere (H3); the map's placement attribute will move last. **The binding constraint is the error budget.** Roadmaps are short on qubits too (a median ×{med_q:,.0f}) but far more on error (×{med_e:,.0f}) (H6), so the machines that matter next are the ones that move the logical error per operation, whatever their qubit count.\\n\\n": {
-  "ru": "Из восьми гипотез {nsup} подтверждены, {npart} — частично, {nno} — нет. **От числа кубитов — к закодированным кубитам и связям.** Три слоя, чаще всего пустые у машины, — код, декодер и межсоединение: без технологии или с нераскрытой у {_empty('7')}, {_empty('8')} и {_empty('9')} машин — это слои, которые должна заполнить каждая отказоустойчивая дорожная карта (H4, H5, H6): следующее поколение квантовых компьютеров будут судить по логической ошибке на цикл и по связи между модулями, а не по числу (H1). **Разделение ролей между семействами, а не победитель.** Крупнейшие устройства — массивы пинцетов, лучший гейт — ионная ловушка, самый быстрый такт — трансмонная решётка; медианы сходятся (H2), крайние значения остаются врозь; железо делится только между родственными семействами, а коды и декодеры пересекают все границы (H8) — и дорожные карты предполагают много модулей, соединённых связями, а не один разросшийся модуль (H5). **Медленная переменная — управление.** Интегрированное управление — необходимость там, где его вынуждает физика, и план в остальных местах (H3); атрибут размещения на карте сдвинется последним. **Связывающее ограничение — бюджет ошибок.** Дорожные карты не дотягивают и по кубитам (медиана ×{med_q:,.0f}), но куда сильнее по ошибке (×{med_e:,.0f}) (H6), поэтому машины, которые важны дальше, — те, что сдвигают логическую ошибку на операцию, каково бы ни было их число кубитов.\\n\\n",
+  "ru": "Из восьми гипотез {nsup} подтверждены, {npart} — частично, {nno} — нет. **От числа кубитов — к закодированным кубитам и связям.** Три слоя, чаще всего пустые у машины, — код, декодер и межсоединение: без технологии или с нераскрытой у {_empty('7')}, {_empty('8')} и {_empty('9')} машин — это слои, которые должна заполнить каждая отказоустойчивая дорожная карта (H4, H5, H6): следующее поколение квантовых компьютеров будут судить по логической ошибке на цикл и по связи между модулями, а не по числу (H1). **Разделение ролей между семействами, а не победитель.** Крупнейшие устройства — массивы пинцетов, лучший вентиль — ионная ловушка, самый быстрый такт — трансмонная решётка; медианы сходятся (H2), крайние значения остаются врозь; железо делится только между родственными семействами, а коды и декодеры пересекают все границы (H8) — и дорожные карты предполагают много модулей, соединённых связями, а не один разросшийся модуль (H5). **Медленная переменная — управление.** Интегрированное управление — необходимость там, где его вынуждает физика, и план в остальных местах (H3); атрибут размещения на карте сдвинется последним. **Связывающее ограничение — бюджет ошибок.** Дорожные карты не дотягивают и по кубитам (медиана ×{med_q:,.0f}), но куда сильнее по ошибке (×{med_e:,.0f}) (H6), поэтому машины, которые важны дальше, — те, что сдвигают логическую ошибку на операцию, каково бы ни было их число кубитов.\\n\\n",
   "files": [
    "build/machines_chapter.py"
   ]
@@ -1609,7 +1609,7 @@
   ]
  },
  "| Hypothesis | Verdict | Sample | Filters applied | Evidence grade of the inputs | What would overturn it |": {
-  "ru": "| Гипотеза | Вердикт | Выборка | Применённые фильтры | Класс свидетельств входов | Что его опрокинуло бы |",
+  "ru": "| Гипотеза | Вердикт | Выборка | Применённые фильтры | Уровень доказательности входов | Что его опрокинуло бы |",
   "files": [
    "build/machines_chapter.py"
   ]
@@ -1657,7 +1657,7 @@
   ]
  },
  "fabricated": {
-  "ru": "изготовленный",
+  "ru": "искусственный",
   "files": [
    "build/make_sections.py"
   ]
@@ -1681,7 +1681,7 @@
   ]
  },
  "| # | Layer | Technology | (a) carrier affinity | (b) time · entangling | (c) readout | (d) mobility | (e) control · placement | (f) error structure | (g) manufacturing | status · since |": {
-  "ru": "| # | Слой | Технология | (a) сродство носителя | (b) время · перепутывание | (c) считывание | (d) подвижность | (e) управление · размещение | (f) структура ошибки | (g) производство | статус · с года |",
+  "ru": "| # | Слой | Технология | (a) сродство носителя | (b) время · запутывание | (c) считывание | (d) подвижность | (e) управление · размещение | (f) структура ошибки | (g) производство | статус · с года |",
   "files": [
    "build/make_sections.py"
   ]
@@ -1711,13 +1711,13 @@
   ]
  },
  "| Architecture | round of | d₂ | gates | transport | 1Q | readout | reset | **t_round** | limiter | measured cycle | reaction time (loop / floor) | T₂ | ops per coherence | idle exposure t_round/T₂ | idle measured |": {
-  "ru": "| Архитектура | раунд кода | d₂ | гейты | транспорт | 1Q | считывание | сброс | **t_round** | ограничитель | измеренный цикл | время реакции (контур / граница) | T₂ | операций на когерентность | экспозиция простоя t_round/T₂ | простой измерен |",
+  "ru": "| Архитектура | раунд кода | d₂ | вентили | транспорт | 1Q | считывание | сброс | **t_round** | ограничитель | измеренный цикл | время реакции (контур / граница) | T₂ | операций на когерентность | экспозиция простоя t_round/T₂ | простой измерен |",
   "files": [
    "build/make_sections.py"
   ]
  },
  "**Reading.** The round is a sum, not a maximum, so the limiter is the largest term, not the only one: on the superconducting architecture readout and reset together are two-thirds of the round, on the atom architectures transport between gate layers is, on the QCCD ion architecture transport plus recooling is ~90%. Where the derived round sits below the measured cycle the difference is the gap between the *attribute* (best published time for the mechanism) and the *device* (the cycle actually run) — on the superconducting architecture 0.65 µs against 1.1 µs, on the spin architecture the best 6 µs readout against the ~100 µs typically run. The idle exposure t_round/T₂ is a second check: on the superconducting architecture it predicts 0.7% per round against the 0.9% idle term in Google's measured error budget; on ions and atoms it is 10⁻⁴–10⁻⁷, so a millisecond clock costs those platforms mostly time — idle error is small per round, though the terms the idle exposure omits (heating during transport, loss during imaging, drift between calibrations) are exactly the ones those platforms report. A total printed with ≥ is a partial sum: a term the architecture needs (transport, 1Q, reset) that no record publishes enters as zero and is named in the column, so the round is a lower bound, not an estimate. On the QCCD ion architecture the transport-plus-recooling primitives are the published H1 table (2020) — 9.7 ms derived against the 1–5 ms cycles reported for H2-class experiments, because the primitives have not been republished for H2/Helios and the derived value uses the colour code's eight layers. Reaction time is the quantity resource estimates assume (10 µs in the RSA-2048 estimate) and the one the map most often cannot fill: only the superconducting, atom and photonic architectures have a published measurement-to-operation loop.": {
-  "ru": "**Чтение.** Раунд — сумма, а не максимум, поэтому ограничитель — наибольшее слагаемое, а не единственное: в сверхпроводниковой архитектуре считывание и сброс вместе дают две трети раунда, в атомных — транспорт между слоями гейтов, в ионной QCCD-архитектуре транспорт с повторным охлаждением — ~90%. Там, где выведенный раунд ниже измеренного цикла, разница — это зазор между *атрибутом* (лучшее опубликованное время механизма) и *устройством* (реально прогнанным циклом): в сверхпроводниковой архитектуре 0.65 мкс против 1.1 мкс, в спиновой — лучшее считывание 6 мкс против типичных ~100 мкс. Экспозиция простоя t_round/T₂ — вторая проверка: в сверхпроводниковой архитектуре она предсказывает 0.7% за раунд против 0.9% члена простоя в измеренном бюджете ошибок Google; у ионов и атомов она 10⁻⁴–10⁻⁷ — поэтому миллисекундный такт стоит этим платформам главным образом времени: ошибка простоя за раунд мала, хотя члены, которых экспозиция простоя не учитывает (нагрев при транспорте, потери при съёмке, дрейф между калибровками), — ровно те, о которых эти платформы сообщают. Итог, напечатанный с ≥, — частичная сумма: слагаемое, нужное архитектуре (транспорт, 1Q, сброс), которого не публикует ни один рекорд, входит нулём и названо в столбце, так что раунд — нижняя граница, а не оценка. В ионной QCCD-архитектуре примитивы транспорта и повторного охлаждения — опубликованная таблица H1 (2020): выведено 9.7 мс против 1–5 мс циклов, сообщённых для экспериментов класса H2, потому что примитивы для H2/Helios не переопубликованы, а выведенное значение берёт восемь слоёв цветового кода. Время реакции — величина, которую предполагают оценки ресурсов (10 мкс в оценке для RSA-2048), и та, которую карта чаще всего не может заполнить: опубликованный контур измерение → операция есть только у сверхпроводниковой, атомной и фотонной архитектур.",
+  "ru": "**Чтение.** Раунд — сумма, а не максимум, поэтому ограничитель — наибольшее слагаемое, а не единственное: в сверхпроводниковой архитектуре считывание и сброс вместе дают две трети раунда, в атомных — транспорт между слоями вентилей, в ионной QCCD-архитектуре транспорт с повторным охлаждением — ~90%. Там, где выведенный раунд ниже измеренного цикла, разница — это зазор между *атрибутом* (лучшее опубликованное время механизма) и *устройством* (реально прогнанным циклом): в сверхпроводниковой архитектуре 0.65 µs против 1.1 µs, в спиновой — лучшее считывание 6 µs против типичных ~100 µs. Экспозиция простоя t_round/T₂ — вторая проверка: в сверхпроводниковой архитектуре она предсказывает 0.7% за раунд против 0.9% члена простоя в измеренном бюджете ошибок Google; у ионов и атомов она 10⁻⁴–10⁻⁷ — поэтому миллисекундный такт стоит этим платформам главным образом времени: ошибка простоя за раунд мала, хотя члены, которых экспозиция простоя не учитывает (нагрев при транспорте, потери при съёмке, дрейф между калибровками), — ровно те, о которых эти платформы сообщают. Итог, напечатанный с ≥, — частичная сумма: слагаемое, нужное архитектуре (транспорт, однокубитные вентили, сброс), которого не публикует ни один рекорд, входит нулём и названо в столбце, так что раунд — нижняя граница, а не оценка. В ионной QCCD-архитектуре примитивы транспорта и повторного охлаждения — опубликованная таблица H1 (2020): выведено 9.7 ms против 1–5 ms циклов, сообщённых для экспериментов класса H2, потому что примитивы для H2/Helios не переопубликованы, а выведенное значение берёт восемь слоёв цветового кода. Время реакции — величина, которую предполагают оценки ресурсов (10 µs в оценке для RSA-2048), и та, которую карта чаще всего не может заполнить: опубликованный контур измерение → операция есть только у сверхпроводниковой, атомной и фотонной архитектур.",
   "files": [
    "build/make_sections.py"
   ]
@@ -1729,19 +1729,19 @@
   ]
  },
  "Crossing technologies — where a technology takes a trait from across the natural/fabricated divide": {
-  "ru": "Пересекающие технологии — где технология берёт свойство с другой стороны раздела естественное/изготовленное",
+  "ru": "Сквозные технологии — где технология берёт свойство с другой стороны раздела естественное/искусственное",
   "files": [
    "build/make_sections.py"
   ]
  },
  "{f}**The divide on paper.** Rows are the carrier class of the architecture a technology serves, columns the side its traits come from. Natural-side traits: optical control, µs–ms gates and readout, no semiconductor/photonic-chip fabrication, local connectivity. Fabricated-side traits: microwave control, sub-µs gates, ≤ 10 µs readout, cold electronics at 4 K/mK, transport/long-range connectivity, erasure conversion, photonic interconnect. The two cells where the row and the column agree hold the stereotype — {ndiag} of {len(G['nodes'])} technologies; the two crossing cells hold the {nod} hatched technologies ({nnat} in the natural row, {nfab} in the fabricated row; {nboth} of them carries a flag on each side and appears in both rows) with their flags from the `OFFDIAG` vocabulary.\\n": {
-  "ru": "**Раздел на бумаге.** Строки — класс носителя архитектуры, которой служит технология, столбцы — сторона, с которой взяты её свойства. Свойства естественной стороны: оптическое управление, гейты и считывание мкс–мс, без полупроводникового/фотонно-чипового производства, локальная связность. Свойства изготовленной стороны: СВЧ-управление, суб-мкс гейты, считывание ≤ 10 мкс, холодная электроника при 4 K/mK, транспортная/дальняя связность, конверсия в erasure, фотонный интерконнект. Две ячейки, где строка и столбец согласны, — стереотип, {ndiag} из {len(G['nodes'])} технологий; две пересекающие ячейки — {nod} заштрихованных технологий ({nnat} в естественной строке, {nfab} в изготовленной; {nboth} из них несёт флаг с каждой стороны и стоит в обеих строках) с их флагами из словаря `OFFDIAG`.\\n",
+  "ru": "**Раздел на бумаге.** Строки — класс носителя архитектуры, которой служит технология, столбцы — сторона, с которой взяты её свойства. Свойства естественной стороны: оптическое управление, вентили и считывание µs–ms, без полупроводникового/фотонно-чипового производства, локальная связность. Свойства искусственной стороны: СВЧ-управление, суб-µs вентили, считывание ≤ 10 µs, холодная электроника при 4 K/mK, транспортная/дальняя связность, преобразование в стирания, фотонное межсоединение. Две ячейки, где строка и столбец согласны, — стереотип, {ndiag} из {len(G['nodes'])} технологий; две перекрёстные ячейки — {nod} заштрихованных технологий ({nnat} в естественной строке, {nfab} в искусственной; {nboth} из них несёт флаг с каждой стороны и стоит в обеих строках) с их флагами из словаря `OFFDIAG`.\\n",
   "files": [
    "build/make_sections.py"
   ]
  },
  "| Carrier class of the architecture | Natural-side traits | Fabricated-side traits |": {
-  "ru": "| Класс носителя архитектуры | Свойства естественной стороны | Свойства изготовленной стороны |",
+  "ru": "| Класс носителя архитектуры | Свойства естественной стороны | Свойства искусственной стороны |",
   "files": [
    "build/make_sections.py"
   ]
@@ -1765,7 +1765,7 @@
   ]
  },
  "Numeric gaps on existing nodes (attribute-level, not empty slots): ion–photon links at 10–250 s⁻¹ vs ≥ 10⁴ s⁻¹ needed; photonic switch loss 100–190 mdB vs ~7 mdB; optical GKP effective squeezing 0.62 dB vs 9.75 dB; cat phase-flip ~10⁻¹ per CX vs 10⁻³ assumed; spin readout 6 µs at 99.2% vs sub-µs at 99.9% for a µs-class cycle; atom imaging 0.5–1 ms typical vs 17.6 µs emerging.": {
-  "ru": "Числовые пробелы на существующих узлах (уровень атрибутов, не пустые слоты): ион-фотонные линки 10–250 с⁻¹ против ≥ 10⁴ с⁻¹; потери фотонных переключателей 100–190 мдБ против ~7 мдБ; эффективное оптическое сжатие GKP 0.62 дБ против 9.75 дБ; phase-flip кошек ~10⁻¹ на CX против заложенных 10⁻³; считывание спинов 6 мкс при 99.2% против суб-мкс при 99.9% для цикла класса мкс; imaging атомов 0.5–1 мс типично против формирующихся 17.6 мкс.",
+  "ru": "Числовые пробелы на существующих узлах (уровень атрибутов, не пустые слоты): ион-фотонные интерфейсы 10–250 s⁻¹ против ≥ 10⁴ s⁻¹; потери фотонных переключателей 100–190 mdB против ~7 mdB; эффективное оптическое сжатие GKP 0.62 dB против 9.75 dB; переворот фазы кошачьих кубитов ~10⁻¹ на CX против заложенных 10⁻³; считывание спинов 6 µs при 99.2% против суб-µs при 99.9% для цикла класса µs; регистрация флуоресценции атомов 0.5–1 ms типично против формирующихся 17.6 µs.",
   "files": [
    "build/make_sections.py"
   ]
@@ -1777,7 +1777,7 @@
   ]
  },
  " technologies cannot be read. The tables of §7.2–7.9 are the same graph on paper.": {
-  "ru": "Карта — **слоистая карта**: десять слоёв §7.1 — её столбцы, слева направо от носителя к приложению; внутри столбца вертикальная позиция технологии — её сродство к природе носителя, так что естественная половина сверху, изготовленная снизу, а *пересекающая технология* (§7.5) — та, что нарисована в чужой половине, со штриховкой. Каждая архитектура — цветная линия через её основную технологию в каждом слое, где такая есть; её альтернативы — полутоновые квадраты того же цвета рядом с линией; слой, который архитектура пропускает, отмечен пунктирным кружком там, где линия перескакивает столбец; пустой слот (§7.6) — полая пунктирная технология. Семь атрибутов нельзя закрасить одновременно — у читателя один канал оттенка, — поэтому у карты есть **линза**, перекрашивающая технологии по одному атрибуту за раз, **лента параллельных координат**, рисующая полный семимерный вектор каждой технологии ломаной, и **карточка**, разводящая три пространства: атрибуты проектирования, датированные атрибуты оценки, акторы и цели. Рёбра типов *требует / альтернативы / конфликтует* рисуются только для технологии в фокусе, потому что ",
+  "ru": "Карта — **слоистая карта**: десять слоёв §7.1 — её столбцы, слева направо от носителя к приложению; внутри столбца вертикальная позиция технологии — её сродство к природе носителя, так что естественная половина сверху, искусственная снизу, а *сквозная технология* (§7.5) — та, что нарисована в чужой половине, со штриховкой. Каждая архитектура — цветная линия через её основную технологию в каждом слое, где такая есть; её альтернативы — полутоновые квадраты того же цвета рядом с линией; слой, который архитектура пропускает, отмечен пунктирным кружком там, где линия перескакивает столбец; пустой слот (§7.6) — полая пунктирная технология. Семь атрибутов нельзя закрасить одновременно — у читателя один канал оттенка, — поэтому у карты есть **линза**, перекрашивающая технологии по одному атрибуту за раз, **лента параллельных координат**, рисующая полный семимерный вектор каждой технологии ломаной, и **карточка**, разводящая три пространства: атрибуты проектирования, датированные атрибуты оценки, участники и цели. Рёбра типов *требует / альтернативы / конфликтует* рисуются только для технологии в фокусе, потому что ",
   "files": [
    "build/make_sections.py"
   ]
@@ -1789,7 +1789,7 @@
   ]
  },
  "| From | To | Mechanism | Measured price | Mitigation | Status · source |": {
-  "ru": "| От | К | Механизм | Измеренная цена | Снятие | Статус · источник |",
+  "ru": "| От | К | Механизм | Измеренная цена | Смягчение | Статус · источник |",
   "files": [
    "build/make_sections.py"
   ]
@@ -1843,7 +1843,7 @@
   ]
  },
  "{f}On the map the **Machine selector** is one more term in the intersection isolate ∩ focus ∩ lens: choosing a machine keeps its technologies along its family's architecture, dims the rest and marks the layers where the machine has no technology (none, undisclosed or a gap); with a lens the reader sees which attribute the machine's choices share with the architecture, with focus which of its technologies other architectures share. The register's numbers are evaluation-space attributes — dated, sourced, never used for position.": {
-  "ru": "Машина — *экземпляр* своей архитектуры на карте: по одной технологии на слой, основной или альтернативной, из тех технологий, что на карте уже есть, — а её измеренные числа (§8) — то, что архитектура на бумаге могла лишь обещать. Слой без технологии содержит одно из трёх значений, которые реестр различает: **none** — в этом слое у машины ничего нет (нет кода, декодера, интерконнекта; у аналоговых и сэмплирующих машин — нет слоя кодирования или перепутывающего гейта); **undisclosed** — что-то есть, но ничего не опубликовано (механизм гейта, стек управления, связь между ядрами); **пробел** (`∅G-…`) — машина запускает то, для чего у карты нет технологии; каждый — запись в реестре пробелов и кандидат в технологии следующего издания. {len(MS)} машин Реестра квантовых машин (издание {M['edition']}; его входные файлы — в репозитории, [data/register](https://github.com/qraveh/qt-map/tree/main/data/register), а у каждой машины есть своя страница, [machine/](machine/index.html)) присоединены к графу по id узла; каждая ячейка несёт своё свидетельство (проверено или выведено), а собственные датированные рекорды машины стоят рядом со стандартными рекордами §7.9, не подменяя их. Таблица A сжимает матрицу Технология × Машина до одной строки на слой; таблица B ставит опубликованные машиной числа такта против выведенного такта её архитектуры (§7.4).\\n\\n",
+  "ru": "Машина — *экземпляр* своей архитектуры на карте: по одной технологии на слой, основной или альтернативной, из тех технологий, что на карте уже есть, — а её измеренные числа (§8) — то, что архитектура на бумаге могла лишь обещать. Слой без технологии содержит одно из трёх значений, которые реестр различает: **none** — в этом слое у машины ничего нет (нет кода, декодера, межсоединения; у аналоговых и сэмплирующих машин — нет слоя кодирования или запутывающего вентиля); **undisclosed** — что-то есть, но ничего не опубликовано (механизм вентиля, стек управления, связь между ядрами); **пробел** (`∅G-…`) — машина запускает то, для чего у карты нет технологии; каждый — запись в реестре пробелов и кандидат в технологии следующего издания. {len(MS)} машин Реестра квантовых машин (издание {M['edition']}; его входные файлы — в репозитории, [data/register](https://github.com/qraveh/qt-map/tree/main/data/register), а у каждой машины есть своя страница, [machine/](machine/index.html)) присоединены к графу по id узла; каждая ячейка несёт своё свидетельство (проверено или выведено), а собственные датированные рекорды машины стоят рядом со стандартными рекордами §7.9, не подменяя их. Таблица A сжимает матрицу Технология × Машина до одной строки на слой; таблица B ставит опубликованные машиной числа такта против выведенного такта её архитектуры (§7.4).\\n\\n",
   "files": [
    "build/make_sections.py"
   ]
@@ -1867,7 +1867,7 @@
   ]
  },
  "| Machine | Architecture | Architecture t_round | T1 (date; ×architecture) | T2 (date; ×architecture) | 1Q gate (date) | Feed-forward (date) | SPAM (date) | Clock term ×architecture | Verdict |": {
-  "ru": "| Машина | Архитектура | t_round архитектуры | T1 (дата; ×архитектура) | T2 (дата; ×архитектура) | 1Q-гейт (дата) | Feed-forward (дата) | SPAM (дата) | Член такта ×архитектура | Вердикт |",
+  "ru": "| Машина | Архитектура | t_round архитектуры | T1 (дата; ×архитектура) | T2 (дата; ×архитектура) | Однокубитный вентиль (дата) | Прямая связь (дата) | SPAM (дата) | Член такта ×архитектура | Вердикт |",
   "files": [
    "build/make_sections.py"
   ]
@@ -1885,7 +1885,7 @@
   ]
  },
  "{f}**What the comparison shows.** {rows} machines publish at least one of the seven numbers; only {nj} of them publish a *clock* term the architecture can be checked against (1Q gate time or feed-forward latency), and {nc} publish a coherence time. Verdicts per family, faster / on its clock / slower / no join: {vs}. Coherence against the architecture's T₁ or T₂ (above ×1.25 / within / below ×0.8): {cs}. The extremes are honest about what is being compared: the largest clock ratio is {hi[1]} ({t(L,CLOCKN[hi[2]])} {st(hi[3])} against {st(hi[4])} on its architecture, {rat(hi[0])}); the smallest is {lo[1]} ({t(L,CLOCKN[lo[2]])} {st(lo[3])} against {st(lo[4])}, {rat(lo[0])}); on coherence {chi[1]} sits at {rat(chi[0])} of its architecture's {chi[2].upper()} and {clo[1]} at {rat(clo[0])}. A ratio of ×1.0 is often the architecture's own record seen from the machine side (Willow's T₁/T₂ and 25 ns gate, Aurora's 1 µs loop), not an independent confirmation. Nulls: no machine in the register publishes {ab} — so the two largest terms of the superconducting and spin rounds, the 2Q gate and the readout, cannot be checked against any machine; {uj} — because their architecture has no derived round (photonic, defect, topological, annealing) or no 1Q layer in its code (cat); the ratios are per gate layer (parts ÷ d₂, d₁), so a machine's single-gate time is compared with a single gate of its architecture, not with the layer sum.": {
-  "ru": "**Что показывает сравнение.** {rows} машин публикуют хотя бы одно из семи чисел; лишь {nj} из них публикуют член *такта*, проверяемый против архитектуры (время 1Q-гейта или задержку feed-forward), и {nc} публикуют время когерентности. Вердикты по семействам, быстрее / по архитектуре / медленнее / нет соединения: {vs}. Когерентность против T₁ или T₂ архитектуры (выше ×1.25 / в пределах / ниже ×0.8): {cs}. Крайние случаи честны в том, что именно сравнивается: наибольшее отношение по такту — {hi[1]} ({t(L,CLOCKN[hi[2]])} {st(hi[3])} против {st(hi[4])} в его архитектуре, {rat(hi[0])}); наименьшее — {lo[1]} ({t(L,CLOCKN[lo[2]])} {st(lo[3])} против {st(lo[4])}, {rat(lo[0])}); по когерентности {chi[1]} стоит на {rat(chi[0])} от {chi[2].upper()} своей архитектуры, а {clo[1]} — на {rat(clo[0])}. Отношение ×1.0 — часто собственный рекорд архитектуры, увиденный со стороны машины (T₁/T₂ и 25-нс гейт Willow, 1-мкс контур Aurora), а не независимое подтверждение. Пустые: ни одна машина реестра не публикует {ab} — поэтому два крупнейших члена сверхпроводникового и спинового раундов, 2Q-гейт и считывание, нельзя проверить ни по одной машине; {uj} — потому что у их архитектуры нет выведенного раунда (фотоника, дефекты, топологические, отжиг) или нет слоя 1Q в её коде (кошки); отношения взяты на слой гейтов (части ÷ d₂, d₁), так что время одного гейта машины сравнивается с одним гейтом её архитектуры, а не с суммой слоя.",
+  "ru": "**Что показывает сравнение.** {rows} машин публикуют хотя бы одно из семи чисел; лишь {nj} из них публикуют член *такта*, проверяемый против архитектуры (время однокубитного вентиля или задержку прямой связи), и {nc} публикуют время когерентности. Вердикты по семействам, быстрее / по архитектуре / медленнее / нет соединения: {vs}. Когерентность против T₁ или T₂ архитектуры (выше ×1.25 / в пределах / ниже ×0.8): {cs}. Крайние случаи честны в том, что именно сравнивается: наибольшее отношение по такту — {hi[1]} ({t(L,CLOCKN[hi[2]])} {st(hi[3])} против {st(hi[4])} в его архитектуре, {rat(hi[0])}); наименьшее — {lo[1]} ({t(L,CLOCKN[lo[2]])} {st(lo[3])} против {st(lo[4])}, {rat(lo[0])}); по когерентности {chi[1]} стоит на {rat(chi[0])} от {chi[2].upper()} своей архитектуры, а {clo[1]} — на {rat(clo[0])}. Отношение ×1.0 — часто собственный рекорд архитектуры, увиденный со стороны машины (T₁/T₂ и 25-ns вентиль Willow, 1-µs контур Aurora), а не независимое подтверждение. Пустые: ни одна машина реестра не публикует {ab} — поэтому два крупнейших члена сверхпроводникового и спинового раундов, двухкубитный вентиль и считывание, нельзя проверить ни по одной машине; {uj} — потому что у их архитектуры нет выведенного раунда (фотоника, дефекты, топологические, отжиг) или нет слоя однокубитных вентилей в её коде (кошачьи кубиты); отношения взяты на слой вентилей (части ÷ d₂, d₁), так что время одного вентиля машины сравнивается с одним вентилем её архитектуры, а не с суммой слоя.",
   "files": [
    "build/make_sections.py"
   ]
