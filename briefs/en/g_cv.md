@@ -1,10 +1,10 @@
 ---
 id: g_cv
-name: CV Gaussian gates + GKP-assisted non-Gaussian ops
+name: CV Gaussian gates + GKP-assisted non-Gaussian operations
 layer: "3 Gate mechanism"
 status: demonstrated
 since: 2020
-one_line: "Beam-splitters, squeezers and homodyne feed-forward on optical modes, with GKP grid states supplying the non-Gaussian resource fault tolerance requires."
+one_line: "Beamsplitters, squeezers and homodyne feed-forward on optical modes, with GKP grid states supplying the non-Gaussian resource fault tolerance requires."
 verdict: "On-chip GKP effective squeezing is 0.62 dB against the ~10 dB the architecture needs — an ~8.7× grid-noise-variance gap. If Xanadu's 2028–29 fault-tolerance milestone slips, this is the slowest photonic track."
 updated: 2026-09-03
 ---
@@ -12,7 +12,7 @@ updated: 2026-09-03
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-Gates act on optical quadratures — beam-splitters, phase shifts, squeezers — closed by homodyne feed-forward. Gaussian operations with homodyne detection are classically simulable, so universality needs a non-Gaussian resource: the Gottesman–Kitaev–Preskill grid state, 2001 [S][413]. Time-domain multiplexing predates the companies — the University of Tokyo entangled over 10,000 modes in 2013 [D][821]; Xanadu added the modular chip version [D][173] and the first integrated GKP source [D][174]. Attributes: flying carrier, partly fabricated, ~1 µs deterministic step, Gaussian-noise and loss-dominated error; electro-optic control at room temperature, photonic-IC fabrication.
+Gates act on optical quadratures — beamsplitters, phase shifts, squeezers — closed by homodyne feed-forward. Gaussian operations with homodyne detection are classically simulable, so universality needs a non-Gaussian resource: the Gottesman–Kitaev–Preskill grid state, 2001 [S][413]. Time-domain multiplexing predates the companies — the University of Tokyo entangled over 10,000 modes in 2013 [D][821]; Xanadu added the modular chip version [D][173] and the first integrated GKP source [D][174]. Attributes: flying carrier, partly fabricated, ~1 µs deterministic step, Gaussian-noise and loss-dominated error; electro-optic control at room temperature, photonic-IC fabrication.
 
 ## Physics & limits
 Loss acts as a Gaussian random-displacement channel on the grid, blurring the GKP peaks until modular-quadrature measurement cannot resolve the logical value; the floor is effective squeezing, not gate count. Xanadu's on-chip source reports 0.62 dB [D][174] — grid-noise variance ~0.87 of vacuum against ~0.10 at the ~10 dB assumed, an ~8.7× reduction still to find [S], a different quantity from Xanadu's 24.1× loss factor above threshold [C][178]. Only lower per-element loss, better sources and deeper multiplexing move it. Feed-forward adds a second floor: electronics must act inside the ~1 µs clock, and the published CV loop is 196 ns [P][822].
@@ -28,7 +28,7 @@ Loss acts as a Gaussian random-displacement channel on the grid, blurring the GK
 No GKP logical qubit exists; Aurora ran two hours without error correction and reported no logical fidelity, so it shows stability, not computation [D][173].
 
 ## Manufacturing, materials & supply chain
-Fabrication is silicon-nitride lithography on 300 mm-class wafers, shared with the discrete-variable sector; the CV-specific additions are squeezers and high-efficiency homodyne receivers rather than switches, and the GKP source runs at room temperature [D][174]. Packaging is Corning fibre arrays and DISCO singulation [C][172].  Control is the heavy part: every mode needs a homodyne receiver, an ADC and a loop closing inside the clock, scaling linearly with no published shortcut. At 10³ modes that is a rack of receivers, at 10⁴ the analogue front end dominates, and nothing addresses 10⁶. ECCN 4A906 applies to the machine [G:BIS-QUANTUM-2024].
+Fabrication is silicon-nitride lithography on 300 mm-class wafers, shared with the discrete-variable sector; the CV-specific additions are squeezers and high-efficiency homodyne receivers rather than switches, and the GKP source runs at room temperature [D][174]. Packaging is Corning fibre arrays and DISCO singulation [C][172].  Control is the heavy part: every mode needs a homodyne receiver, an ADC and a loop closing inside the clock, scaling linearly with no published shortcut. At 10³ modes that is a rack of receivers, at 10⁴ the analog front end dominates, and nothing addresses 10⁶. ECCN 4A906 applies to the machine [G:BIS-QUANTUM-2024].
 
 ## Role in the stack
 The continuous-variable architecture's gate layer, requiring squeezed sources and room-temperature feed-forward. It substitutes for rather than complements discrete-variable fusion: CV measures quadratures where fusion detects single photons, so switching architectures replaces sources, detectors and decoders together. Derived clock 1.0 MHz [D][173]. Verification is thin: the 0.62 dB is single-group, unreplicated, and routinely confused with raw quadrature squeezing — the 1.4 dB in periodically poled TFLN [P][345] is a different quantity.

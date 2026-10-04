@@ -18,7 +18,7 @@ A transmon is an Al/AlOx/Al Josephson junction shunted by a large capacitor so t
 Attributes (technology graph):
 - a: affinity 1.0, fabricated (no natural counterpart).
 - b: characteristic time 10⁻⁸ s, deterministic entangling; the 1/α leakage bound puts the pulse floor near 10 ns.
-- c: readout dispersive microwave, 10⁻⁶·⁵ s (≈ 320 ns), non-destructive, mid-circuit capable.
+- c: readout dispersive microwave, ≈ 320 ns (10^−6.5 s), non-destructive, mid-circuit capable.
 - d: mobility static, nearest-neighbour wiring.
 - e: control microwave from room-temperature electronics; cold-stage variants (cryo-CMOS or SFQ) at ≤ 5 qubits.
 - f: error structure leakage + stochastic Pauli + correlated bursts + coherent/calibration.
@@ -30,7 +30,7 @@ Residual thermal population (0.1% at 35 mK in a 3D transmon [D][285], ≈ 1% at 
 
 The floor is decoherence over gate time: with Willow's mean T1 = 68 µs [D][1] a 40 ns CZ carries ≈ 6×10⁻⁴ of incoherent error [S][1]; at the record T1 = 1.68 ms of a single Ta-on-Si test transmon [D][288] it falls below 5×10⁻⁵ [S][288]. Loss is dominated by two-level systems (TLS) in amorphous interface oxides [D][288], with quasiparticles, Purcell decay and flux noise below.
 
-Most of the twirled channel is stochastic Pauli, so Willow's Λ = 2.14 [D][1] matches theory. Leakage to |2⟩ accumulates under QEC unless removed each cycle (USTC's all-microwave reset cut it 72×, to 6.4×10⁻⁴, on 107 qubits [D][3]). Coherent errors (residual ZZ, TLS drift) forced reinforcement-learning recalibration inside Google's 2026-07 QEC run [D][2]. Correlated bursts (ionizing particles flooding the chip with quasiparticles) hit all qubits at once — roughly one per 10 s on Sycamore in 2021 [D][289], about one per hour on Willow after gap engineering [D][1], [290] — truncating long memory runs by bursts, not distance. Moving the floor means new materials (Ta, encapsulated Nb), fluxonium-scale anharmonicity, radiation management or erasure conversion (dual-rail).
+Most of the twirled channel is stochastic Pauli, so Willow's Λ = 2.14 [D][1] matches theory. Leakage to |2⟩ accumulates under QEC unless removed each cycle (USTC's all-microwave reset cut it 72×, to 6.4×10⁻⁴, on 107 qubits [D][3]). Coherent errors (residual ZZ, TLS drift) forced reinforcement-learning recalibration inside Google's 2026-07 QEC run [D][2]. Correlated bursts (ionising particles flooding the chip with quasiparticles) hit all qubits at once — roughly one per 10 s on Sycamore in 2021 [D][289], about one per hour on Willow after gap engineering [D][1], [290] — truncating long memory runs by bursts, not distance. Moving the floor means new materials (Ta, encapsulated Nb), fluxonium-scale anharmonicity, radiation management or erasure conversion (dual-rail).
 
 ## Engineering state of the art
 
@@ -54,7 +54,7 @@ Process: Nb or Ta on high-resistivity Si or sapphire; shadow-evaporated Al/AlOx/
 
 Cost and energy: no vendor publishes $/qubit; proxies are IQM's €33 M LUMI contract [P][295] and IBM's 14 nm cryo-controller at 23 mW per qubit at 4 K [D][296] — tens of watts at 10³ qubits; SFQ control claims nW per qubit [C][54].
 
-Supply chain: dilution refrigerators from Bluefors (FI), Oxford Instruments (UK), FormFactor and Maybell (US); ³He from tritium decay in state inventories (US: NNSA [G][297]), no merchant producer; 4 K HEMT amplifiers effectively one vendor (Low Noise Factory, SE); control electronics competitive (Quantum Machines, Qblox, Zurich Instruments); merchant QPUs from QuantWare (NL) [P][298]; foundries Anderon (IBM Albany spin-off, 2026-05; $1 B CHIPS letter of intent, $1 B IBM cash stated separately) [P][299][G][300] and GlobalFoundries ($375 M LOI) [G][300].
+Supply chain: dilution refrigerators from Bluefors (FI), Oxford Instruments (UK), FormFactor and Maybell (US); ³He from tritium decay in state inventories (US: NNSA [G][297]), no merchant producer; 4 K HEMT (high-electron-mobility transistor) amplifiers effectively one vendor (Low Noise Factory, SE); control electronics competitive (Quantum Machines, Qblox, Zurich Instruments); merchant QPUs from QuantWare (NL) [P][298]; foundries Anderon (IBM Albany spin-off, 2026-05; $1 B CHIPS letter of intent, $1 B IBM cash stated separately) [P][299][G][300] and GlobalFoundries ($375 M LOI) [G][300].
 
 Export controls: the BIS interim final rule of 2024-09-06 covers dilution refrigerators ≥ 600 µW at 0.1 K for 48 h (3A904), cryogenic wafer probers (3B904), parametric amplifiers (3A901.b) and quantum computers (4A906) only where qubit count and C-NOT error fall in the same band — 34–99 qubits at ≤ 10⁻⁴, 100–199 at ≤ 10⁻³, the ceiling rising to 6 × 10⁻³ below 2,000 qubits, any error from 2,000 on [G][301][G:BIS-QUANTUM-2024]; Chinese vendors therefore build 10 mK refrigerators domestically (2026-05-15) [P][302].
 
@@ -62,7 +62,7 @@ Export controls: the BIS interim final rule of 2024-09-06 covers dilution refrig
 
 A tunable lattice needs one XY and one Z line per qubit plus one per coupler (Sycamore: ≈ 3.6 control lines per qubit before readout [D][291]); readout multiplexes ≈ 6–10 qubits per feedline [D][1]; each line is a DAC channel plus attenuated coax, so cost and heat scale with N.
 
-Latency: the QEC cycle is 1.1 µs; Google's real-time decoder ran at 63 µs mean latency for d=5 [D][1]; IBM's Relay-BP targets < 1 µs per cycle in simulation [S][48] for the gross code (IBM's [[144,12,12]] bivariate-bicycle qLDPC code, 12 logical qubits in 288 physical [D][248]).
+Latency: the QEC cycle is 1.1 µs; Google's real-time decoder ran at 63 µs mean latency for d=5 [D][1]; IBM's Relay-BP targets < 1 µs per cycle in simulation [S][48] for the gross code (IBM's [[144,12,12]] bivariate bicycle qLDPC code, 12 logical qubits in 288 physical [D][248]).
 
 Walls: 10³ reached (Condor, 1,121 qubits [C][292]); Bluefors' KIDE (> 4,000 RF lines, > 1,000 qubits; product page, 2026-06) [C][303] is one cryostat's ceiling. 10⁴ needs 4 K cryo-CMOS (HRL: d=5 repetition code from a ≤ 3.5 W controller [D][190][G:HRL-2026]) or millikelvin SFQ (SEEQC: 1Q up to 99.9% on ≤ 5 qubits [D][304][G:SEEQC-2026]) plus multi-cryostat modules (IBM coupled two cells, 2026-08 [C][50]). 10⁶ has no closed design: on-chip flux DACs, cold decoding and inter-fridge links (ETH: 30 m at 80.4% Bell fidelity [D][305]) are sub-scale.
 
@@ -91,7 +91,7 @@ Replication: below-threshold scaling reproduced by USTC on 107 qubits with Λ = 
 **Money.**
 - 2025-11-06 · DARPA · QBI Stage B (up to $15 M each) · IBM the only transmon-lattice vendor of eleven; Google and Rigetti stayed at Stage A [G][65][G:QBI-STAGEB-2025-11][G:QBI-STAGEA-2025-04]
 - 2026-01-20 · D-Wave · M&A, Quantum Circuits (dual-rail cavities on transmon ancillae) · $550 M (stock + cash) · closed [C][14][G:DWAVE-QCI-2026-01][G:DUALRAIL-CZ-2026-08]
-- 2026-05-05 · QuantWare (merchant QPUs; VIO-40K roadmap [R][G:QUANTWARE-VIO]) · Series B · $178 M (€152 M) · Intel Capital, In-Q-Tel, ETF Partners (new investors, no lead) · > $210 M cumulative · closed [P][298]
+- 2026-05-05 · QuantWare (merchant QPUs; VIO-40K roadmap — VIO is its vertical-wiring architecture [R][G:QUANTWARE-VIO]) · Series B · $178 M (€152 M) · Intel Capital, In-Q-Tel, ETF Partners (new investors, no lead) · > $210 M cumulative · closed [P][298]
 - 2026-05-18 · Nord Quantique · growth-equity financing · $30 M at a $1.4 B valuation · closed [C][89][G:NQ-1.4B-2026-05]
 - 2026-05-21 · US Dept of Commerce · CHIPS letters of intent ($2.013 B, nine companies) · IBM/Anderon $1 B, GlobalFoundries $375 M, Rigetti ≤ $100 M, D-Wave $100 M · non-binding LOI [G][300][G:CHIPS-LOI-2026-05]
 - 2026-06-02 · IBM · commitment · > $10 B over five years, the $1 B cash into Anderon stated separately · announced [C][310][G:IBM-10B-2026-06]

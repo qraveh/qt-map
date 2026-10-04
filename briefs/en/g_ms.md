@@ -4,7 +4,7 @@ name: Mølmer–Sørensen / light-shift laser gate
 layer: "3 Gate mechanism"
 status: demonstrated
 since: 2003
-one_line: Bichromatic-laser spin-dependent force that entangles trapped ions through a geometric phase on a shared motional mode, leaving no population in it.
+one_line: Bichromatic-laser spin-dependent force that entangles trapped ions through a geometric phase on a shared motional mode, which the gate leaves as it found it.
 verdict: Still the entangling mechanism under every deployed laser-gate ion system, but gate time scales with chain length (1.6 µs on a pair, 672 µs median on 30 ions) and its floor is laser noise plus photon scattering — the two terms electronic gates delete.
 updated: 2026-09-30
 ---
@@ -12,8 +12,8 @@ updated: 2026-09-30
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-Two laser tones detuned symmetrically about a motional sideband drive a spin-dependent force; the pair traces a closed loop in the phase space of a shared vibrational mode and acquires a geometric phase set by the enclosed area, so the spins entangle and the motion returns to its start. The phase depends on loop area, not mode occupation, so a hot bus is tolerated — why this, not Cirac–Zoller, became the production mechanism. Mølmer and Sørensen proposed it in 1999–2000; the light-shift variant, one field detuned against the differential Stark shift, shares the error budget and dates the deployed line to about 2003.
-Attributes: natural trapped-ion carrier; deterministic entangling at ≈10⁻⁴·² s (≈63 µs) over a shared motional bus.
+Two laser tones detuned symmetrically about a motional sideband drive a spin-dependent force; the pair traces a closed loop in the phase space of a shared vibrational mode and acquires a geometric phase set by the enclosed area, so the spins entangle and the motion returns to its start. The phase depends on loop area, not mode occupation, so a hot bus is tolerated — why this, not Cirac–Zoller, became the production mechanism. Mølmer and Sørensen proposed it in 1999–2000; the light-shift (σzσz geometric-phase) variant, a state-dependent optical dipole force, shares the error budget and dates the deployed line to about 2003.
+Attributes: natural trapped-ion carrier; deterministic entangling at ≈63 µs (10^−4.2 s) over a shared motional bus.
 Optical control from room temperature; error coherent, leakage, Pauli; manufacturing is optical assembly.
 
 ## Physics & limits
@@ -36,7 +36,7 @@ Nothing here is fabricated into the trap: the gate is delivered by stabilised la
 The two global tones do not scale with ion count; individual addressing does, at ~one modulator channel and beam path per ion. The pulse is the cheap part of the cycle: a full-width Helios layer runs ≈55 ms once sorting, transport and re-cooling are counted — three orders above the 70 µs gate — transport alone was ~60% of runtime on H2 [D][97]. At 10³ ions, power and crosstalk trade addressing quality against zone count; at 10⁴–10⁶, gate time growing with chain length makes any single-bus design trade throughput for connectivity, which is why every roadmap subdivides the trap.
 
 ## Role in the stack
-Entangling mechanism of two trapped-ion architectures — QCCD (Quantinuum) and the linear Paul trap with individual laser addressing (IonQ's Aria, Forte and Tempo, Alpine Quantum Technologies, Qudoor, Quantum Art) — and the historical one for lines migrating to electronic control (IonQ with Oxford Ionics, eleQtron). It requires a trapped-ion carrier and a laser subsystem delivering phase-stable bichromatic beams to a chosen pair, and provides the entangling layer zoned architectures assume. Its substitute is the near-field electronic gate at 8.4×10⁻⁵ [D][102]; switching writes off the optics stack but deletes photon scattering and laser noise. It conflicts with any single-bus design. Derived clock on the QCCD architecture = sum of the syndrome round: gate layers + transport + readout + reset ≈ 9.7 ms, transport 9.0 ms of it, against a measured ~55 ms full-width layer [D][97]. No neighbouring empty slot is flagged.
+Entangling mechanism of two trapped-ion architectures — QCCD (Quantinuum) and the linear Paul trap with individual laser addressing (IonQ's Aria, Forte and Tempo, Alpine Quantum Technologies, Qudoor, Quantum Art) — and the historical one for lines migrating to laser-free, microwave-driven electronic control (IonQ with Oxford Ionics, eleQtron). It requires a trapped-ion carrier and a laser subsystem delivering phase-stable bichromatic beams to a chosen pair, and provides the entangling layer zoned architectures assume. Its substitute is the near-field electronic gate at 8.4×10⁻⁵ [D][102]; switching writes off the optics stack but deletes photon scattering and laser noise. It conflicts with any single-bus design. Derived clock on the QCCD architecture = sum of the syndrome round: gate layers + transport + readout + reset ≈ 9.7 ms, transport 9.0 ms of it, against a measured ~55 ms full-width layer [D][97]. No neighbouring empty slot is flagged.
 
 ## Evidence — how the numbers were measured
 Headline numbers are benchmarking averages over a zone or chain; no vendor publishes pair-resolved error against chain position, and the ~10× neighbour-versus-distant gap remains theory [S][442]. Quantum-volume claims need the same care: AQT's 32,768 is 2¹⁵ against 2²⁵ published for Quantinuum's 56-qubit H2 [C][98] — a record inside the rack-mounted class, not at the frontier. Neither 7.9×10⁻⁴ nor 8.4×10⁻⁵ has an independent replication as of 2026-09-04.

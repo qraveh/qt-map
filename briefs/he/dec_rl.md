@@ -1,6 +1,6 @@
 ---
 id: dec_rl
-name: כיול RL בלולאה / היגוי המפענח
+name: כיול RL בלולאה / היגוי הבקרה
 layer: "8 מפענח"
 status: demonstrated
 since: 2026

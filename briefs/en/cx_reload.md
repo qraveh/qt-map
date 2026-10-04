@@ -1,6 +1,6 @@
 ---
 id: cx_reload
-name: Continuous atom reload (reservoir + conveyor)
+name: Continuous atom reloading (reservoir + optical conveyor belt)
 layer: "4 Connectivity / transport"
 status: demonstrated
 since: 2024

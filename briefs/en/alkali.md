@@ -1,6 +1,6 @@
 ---
 id: alkali
-name: Alkali atom (Rb/Cs) in optical tweezer
+name: Alkali atom (Rb/Cs) in optical tweezers
 layer: "1 Carrier"
 status: demonstrated
 since: 2016
@@ -21,7 +21,7 @@ Attributes. *Carrier affinity:* fully natural — nothing fabricated, nothing to
 
 The trap sets the scaling law. Holding a laser-cooled atom costs roughly 0.5–1 mW of 850–1064 nm light: Tsinghua's 18,225-site array took 33 W incident and 12.2 W effective trapping power, ~0.67 mW per site [D][145]. Trap light grows strictly linearly with qubit count: a 10⁶-atom array is a kilowatt-class optical plant, not a larger version of today's machine.
 
-Coherence is not the constraint. Hyperfine clock states are first-order magnetically insensitive: T₂ = 12.6(1) s in a 6,100-atom Cs array [D][138]; T₂ = 1.09(3) s in Rb *while a magneto-optical trap ran 0.5 m away*, against a shielded 1.34(4) s [D][144]. Against a millisecond cycle both are enormous.
+Coherence is not the constraint. Hyperfine clock states are first-order magnetically insensitive: T2 = 12.6(1) s in a 6,100-atom Cs array [D][138]; T2 = 1.09(3) s in Rb *while a magneto-optical trap ran 0.5 m away*, against a shielded 1.34(4) s [D][144]. Against a millisecond cycle both are enormous.
 
 The floor is atom loss. Background-gas collisions and photon-scattering heating give a tweezer-limited lifetime near 60 s in a room-temperature cell [D][144]; loss runs ~0.09% per two-qubit gate [D][134], and over 80% of leakage in a logical circuit is loss [D][4]. That is the defining asymmetry: the dominant error announces itself. Moving the floor takes cryogenic vacuum, reloading during computation (300,000 atoms/s into tweezers, >30,000 initialised qubits/s [D][144]) or a species change — alkalis buy the simplest laser system and the best-characterised Rydberg structure but lack the manifolds that make erasure conversion and loss-free imaging native in Sr/Yb.
 
@@ -31,7 +31,7 @@ The floor is atom loss. Background-gas collisions and photon-scattering heating 
 
 | Year | Figure | Who | Tag+key |
 |---|---|---|---|
-| 2024-03 → 2025-07 | 6,100 Cs atoms in ~12,000 sites; T₂ 12.6(1) s; imaging survival 99.98952(1)% | Caltech | [D][138] |
+| 2024-03 → 2025-07 | 6,100 Cs atoms in ~12,000 sites; T2 12.6(1) s; imaging survival 99.98952(1)% | Caltech | [D][138] |
 | 2025-09-15 | 3,217 Rb atoms in one shot, >3,000 held >2 h; 300,000 atoms/s loaded; ~60 s lifetime | Harvard/MIT | [D][144] |
 | 2025-11-10 | 448 atoms under fault-tolerant control; 2.14(13)× below threshold, four rounds | Harvard/MIT/QuEra | [D][G:HARVARD-LOSS-QEC-2025] |
 | 2026-06-01 | 11,022 Rb atoms in 18,225 metasurface tweezers, 60.5% filling, no gates | Tsinghua/Qosmos | [D][145] |
@@ -52,11 +52,11 @@ At 10³ the platform is done. At 10⁴ the constraints are aggregate trap power 
 
 ## Role in the stack
 
-Two architectures, primary in both: "Rydberg tweezer array — alkali (Rb/Cs)" and "Neutral-atom analog simulator (Rydberg arrays, lattice gases)". It requires optical/mechanical assembly and provides the carrier for Rydberg-blockade CZ, for fluorescence imaging of atom arrays, and for the atom–photon cavity interface a network layer would need. It replaces the alkaline-earth slot: switching costs a laser rebuild (narrow-line cooling and clock lasers at 689/698 nm) plus a decade of alkali Rydberg calibration, and buys native erasure conversion and non-destructive nuclear-spin readout. The field splits on that line — QuEra, Pasqal, Infleqtion (Cs), Harvard, Tsinghua on alkalis; Atom Computing (Yb), planqc (Sr), Caltech's gate work (Sr) on alkaline earths. Derived clock on the alkali tweezer array = sum of the syndrome round (gates 1 µs, transport 0.80 ms, 1Q 10 µs, readout 0.50 ms) ≈ **1.3 × 10⁻³ s**, set by transport then readout, never the gate. Neighbouring empty slots: no cavity interconnect at array scale, no cryogenic-vacuum array above 10³.
+Two architectures, primary in both: "Rydberg tweezer array — alkali (Rb/Cs)" and "Neutral-atom analog simulator (Rydberg arrays, lattice gases)". It requires optical/mechanical assembly and provides the carrier for Rydberg-blockade CZ, for fluorescence imaging of atom arrays, and for the atom–photon cavity interface a network layer would need. It replaces the slot of alkaline-earth and alkaline-earth-like atoms (Sr, Yb): switching costs a laser rebuild (narrow-line cooling and clock lasers at 689/698 nm) plus a decade of alkali Rydberg calibration, and buys native erasure conversion and non-destructive nuclear-spin readout. The field splits on that line — QuEra, Pasqal, Infleqtion (Cs), Harvard, Tsinghua on alkalis; Atom Computing (Yb), planqc (Sr), Caltech's gate work (Sr) on alkaline-earth(-like) atoms. Derived clock on the alkali tweezer array = sum of the syndrome round (gates 1 µs, transport 0.80 ms, 1Q 10 µs, readout 0.50 ms) ≈ **1.3 × 10⁻³ s**, set by transport then readout, never the gate. Neighbouring empty slots: no cavity interconnect at array scale, no cryogenic-vacuum array above 10³.
 
 ## Evidence — how the numbers were measured
 
-The headline coherence is a dynamically decoupled, array-averaged T₂: it absorbs site-to-site trap-depth inhomogeneity into the pulse sequence rather than reporting it. Imaging survival of 99.98952(1)% is per image at a stated exposure and bounds nothing about loss during transport or Rydberg excitation. The 60.5% filling fraction is pre-rearrangement — "11,022 atoms" and "11,022 usable qubits" are different claims. No protocol here separates loss from depolarising error, so error-per-Clifford figures are not comparable to solid-state ones without the post-selection.
+The headline coherence is a dynamically decoupled, array-averaged T2: it absorbs site-to-site trap-depth inhomogeneity into the pulse sequence rather than reporting it. Imaging survival of 99.98952(1)% is per image at a stated exposure and bounds nothing about loss during transport or Rydberg excitation. The 60.5% filling fraction is pre-rearrangement — "11,022 atoms" and "11,022 usable qubits" are different claims. No protocol here separates loss from depolarising error, so error-per-Clifford figures are not comparable to solid-state ones without the post-selection.
 
 Conflicts. The Caltech abstract says "over 6,100 atoms in around 12,000 sites"; versions differ (v1 2024-03, v4 2025-07) and the 12.6 s figure belongs to v4, the later revision, which takes precedence [D][138]. The review arguing a 99.9% blockade ceiling also tabulates a 2025 USTC CZ of 99.84% that no primary source corroborates [P][140].
 
@@ -68,7 +68,7 @@ Conflicts. The Caltech abstract says "over 6,100 atoms in around 12,000 sites"; 
 |---|---|---|---|---|
 | QuEra | developer | US | Rb arrays; Gemini 260 q shipping; Libra promised 2028 | [C][137], [162] |
 | Harvard/MIT | research | US | 448-atom architecture; 3,000-qubit continuous run; CZ record | [D][4], [144] |
-| Caltech | research | US | 6,100-atom Cs array; T₂ 12.6 s; record imaging survival | [D][138] |
+| Caltech | research | US | 6,100-atom Cs array; T2 12.6 s; record imaging survival | [D][138] |
 | Pasqal | developer | FR | Rb machines; on-chip trapping; Nasdaq PSQL | [C][330], [331] |
 | Infleqtion | developer | US | Sqale line; NYSE INFQ; Illinois system 2027 | [G][155], [332] |
 | Tsinghua | research | CN | 11,022-atom metasurface array, largest trapped ensemble | [D][145] |
@@ -96,7 +96,7 @@ Conflicts. The Caltech abstract says "over 6,100 atoms in around 12,000 sites"; 
 
 **Roadmaps & track record.** QuEra (promised 2024-01 · for 2026 · 100 logical qubits undelivered as of 2026-09-03, replaced by Libra >256 logical in 2028 — a two-year slip). Pasqal (promised 2024-03 · for 2026 · 10,000 physical slipped to 2028; 100 logical now 2029). Infleqtion (reaffirmed 2026-08-12 · for 2026 · 30 logical qubits, unverified; >50 logical at Illinois 2027). planqc (promised 2024-11 · for ~2027 · 1,000 qubits at LRZ; no device metrics published since). Credibility: Harvard/MIT outrun every roadmap because they publish rather than promise; QuEra and Pasqal have each slipped a flagship number by two years and read as 2029 companies; Infleqtion alone reports audited revenue against its claims; planqc has contracts but no published metrics.
 
-**Strategic reading.** If alkali arrays win, value accrues asymmetrically to component vendors — TOPTICA, Hamamatsu, Meadowlark — paid identically whichever developer prevails and facing no substitution risk from the alkaline-earth branch beyond a change of wavelength catalogue. The real threat to *this node* is internal: Sr/Yb carriers convert the dominant error into an erasure for free. Bargaining power sits with buyers — Infleqtion holds USD 582 M, Pasqal ~USD 360 M, against far smaller European vendors — and the response is acquisition rather than negotiation.
+**Strategic reading.** If alkali arrays win, value accrues asymmetrically to component vendors — TOPTICA, Hamamatsu, Meadowlark — paid identically whichever developer prevails and facing no substitution risk from the alkaline-earth(-like) branch beyond a change of wavelength catalogue. The real threat to *this node* is internal: Sr/Yb carriers convert the dominant error into an erasure for free. Bargaining power sits with buyers — Infleqtion holds USD 582 M, Pasqal ~USD 360 M, against far smaller European vendors — and the response is acquisition rather than negotiation.
 
 ## Outlook & open questions
 
@@ -134,7 +134,7 @@ Watch: Infleqtion's Q4 2026 report against the 30-logical claim; a QuEra Libra m
 - Export control: specific ECCNs for tunable lasers (6A005) and for quantum equipment under the 2024 BIS rule were not verified against a BIS or Wassenaar document; only general category exposure is asserted.
 - Infleqtion's computing atom species (caesium) is not confirmed by any source consulted here.
 - planqc's atom species (strontium) is not stated on its own news index; if strontium, planqc belongs to the alkaline-earth node rather than this one.
-- Caltech array: the v4 abstract says "over 6,100 atoms in around 12,000 sites"; version drift between v1 (2024-03) and v4 (2025-07), the 12.6 s T₂ figure taken from v4.
+- Caltech array: the v4 abstract says "over 6,100 atoms in around 12,000 sites"; version drift between v1 (2024-03) and v4 (2025-07), the 12.6 s T2 figure taken from v4.
 - The Tsinghua metasurface paper does not state a vacuum-limited trap lifetime.
 - No per-qubit or per-system capital cost was found for any tweezer machine, from any vendor or filing.
 - arXiv:2608.05010 tabulates a 2025 USTC CZ of 99.84% with no corroborating primary source; not used.

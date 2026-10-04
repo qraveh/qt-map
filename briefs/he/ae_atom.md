@@ -1,6 +1,6 @@
 ---
 id: ae_atom
-name: אטום אלקלי-עפרורי (Yb/Sr) — מחיקה מובנית
+name: אטום אלקלי-עפרורי או דומה לו (Yb/Sr) — מחיקה מובנית
 layer: "1 נושא הקיוביט"
 status: demonstrated
 since: 2019

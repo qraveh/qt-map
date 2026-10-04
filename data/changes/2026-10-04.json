@@ -1,6 +1,6 @@
 {
  "date": "2026-10-04",
- "source": "the editor's order of 4 Oct 2026 (10:51): every Russian term of the Atlas checked for its correct use in the context of quantum mechanics — the most literate academic usage, preferably in the context of the very device described; seven research passes over 653 entries (device literature first, then the Russian QI texts, then living usage), the rule table RULES_RU.md and the binding list data/i18n/ru-terms.md",
+ "source": "the editor's order of 4 Oct 2026 (10:51): every Russian term of the Atlas checked for its correct use in the context of quantum mechanics — the most literate academic usage, preferably in the context of the very device described; seven research passes over 653 entries (device literature first, then the Russian QI texts, then living usage), the rule table RULES_RU.md and the binding list data/i18n/ru-terms.md; the editor's second order of the day (15:01): the same procedure for the English edition — seven research passes over 617 items against the device literature, the rule table RULES_EN.md, the binding list data/i18n/en-terms.md",
  "items": [
   {
    "kind": "statement",
@@ -17,6 +17,30 @@
     "id": "ru-graph-names-2026-10-04"
    },
    "note": "81 Russian node names and 8 architecture names of the graph re-set to the new terms (e.g. «Механизм вентиля», «Межсоединение», «Перемещение ионов (QCCD, перекрёстки, решётчатые ловушки)», «Повёрнутый поверхностный код (+ yoked-варианты)», «Потоковый кубит на ВЧ-СКВИДе (отжигатель)», «Двухрельсовые кубиты со стираниями», «Ионы в ловушках — QCCD (перемещение между зонами)»); the briefs' front-matter names follow the graph (briefs_meta_check: names differ 95 → 27, the remainder pre-existing paraphrases in both languages). The Russian glossary definitions and their matchers (match_ru) follow the new spellings. The English and Hebrew editions are unchanged except the Russian strings they carry for the language switch."
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "text",
+    "id": "en-terms-device-literature-2026-10-04"
+   },
+   "note": "English terminology and house style (the Atlas's source language): 617 items — the field terms of the glossary, the graph's names and attribute labels, the 111 briefs, the report, the 17 narratives, the generator's strings — checked against the English literature of each device (Krantz 2019, Blais 2021, Bruzewicz 2019, Saffman 2010, Henriet 2020, Burkard 2023, Slussarenko & Pryde 2019, Bartolucci 2023, Terhal 2015, Bravyi 2024 and the builders' papers), then Nielsen & Chuang and Preskill. Decided: British English with -ise throughout the Atlas's own prose (randomised benchmarking, stabiliser, colour code; quoted titles keep their spelling), 'analog' as the technical term and 'analogue' only as a counterpart; one form for each compound (crosstalk, feed-forward, break-even, spacetime, nearest-neighbour, post-selected, multi-chip, fan-out, FD-SOI, predecoder, 6-ring, bivariate bicycle, BP+OSD, SiMOS, AlphaQubit 2, coaxmon, imec, ETH Zürich, beamsplitter, molecular beam epitaxy, Pauli spin blockade, T centre (noun), 3D/2D, 4 K, 300 mm, T1/T2 plain, × for multiplication, en dashes for pairs and ranges, superscript isotopes); the field's terms where the Atlas's differed — alkaline-earth(-like) atom (Yb), bare physical qubit, quantum annealing (analog evolution), continuous atom reloading (optical conveyor belt), resource-state generator (RSG), fusion failure (one outcome erased) distinguished from photon loss (both), the dominant (not only) error is loss, the 50% fusion ceiling a linear-optics bound, internal detection efficiency, squeezing by χ⁽²⁾ or χ⁽³⁾ processes, the light-shift gate as a state-dependent optical dipole force, the 1995 NIST gate between one ion's spin and motion, laser-free microwave gates (Oxford Ionics' electronic qubit control), crossbar proposed by Li et al. 2018 and demonstrated by Borsoi et al. 2024, SiMOS accumulation layer, NV without inversion symmetry (SiV, SnV with it; the T centre not), Pauli spin blockade, Majorana zero modes, leakage reduction units, quasiparticle poisoning, post-fabrication trimming, AQFP, I/O wall, superconducting-qubit lithography (Al/AlOx/Al junctions, Nb wiring), STM hydrogen-resist lithography, homodyne detection (quadrature), static nearest-neighbour wiring. 23 English node names re-set; every brief's name in all three languages now equals the graph's (briefs_meta_check 0)."
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "text",
+    "id": "glossary-definitions-abbreviations-2026-10-04"
+   },
+   "note": "The glossary (data/glossary-field.json, glossary-own.json): 70 definitions rewritten in the field's words with their sources — among them transmon, fluxonium, Josephson junction, GKP (corrected through an auxiliary qubit or mode, not 'without extra qubits'), cat qubit, dual-rail (two modes, loss caught as an erasure), SFQ, cryo-CMOS, dilution refrigerator, quasiparticle burst (broken Cooper pairs), MS gate, QCCD (expanded), Rydberg, donor, AOD, SLM, heralded, SNSPD (no photon-number resolution), BTO, fusion-based, linear-optical, continuous-variable, Si/SiGe, SiMOS, NV (room-temperature optical readout, cryogenic networking), T1/T2/T2*, EPLG (error per gate from the layer fidelity of a chain), RB, QCVV, fidelity, coherence, QBI (DARPA, utility scale), qLDPC (sparsity), bivariate bicycle, gross code ([[144,12,12]], 288 physical qubits with checks), tesseract, C4-Helix, surface / colour / repetition code (the real outer code on cat qubits), FT (non-spreading plus a threshold), break-even, syndrome, decoder (software, FPGA or ASIC), magic state, transversal, teleportation, erasure, Majorana, P450, BP (the decoder of sparse codes), error suppression, QEC cycle, Clifford, ZZ (gate interaction and crosstalk), RSA-2048, FeMoCo (cofactor), Hubbard (on-site repulsion), THC, QND, control modality, post-selection; 42 matchers given their plural, compound and variant forms or narrowed with context rules (Ge, DC, EO, annealing, carrier, error suppression, teleportation, modality); 56 entries added — 52 abbreviations that occurred in three or more documents without expansion (DARPA, ECCN, CHIPS, LOI, CMOS, RF, HRL, FPGA, GHZ, DAC, ASIC, SQC, DC, cQED, NQCC, EUV, US2QC, mdB, FD-SOI, MBE, TES, EO, MAGIC, MEMS, STM, HPC, SQUID, SnV, TLS, #AQ, AOM, CVD, MBQC, MZI, QD, SNR, UHV, WISE, EDSR, ESR, HOM, LCD, PMT, QKD, RT, SHYPS, TRL, TSV, XEB, kT, QFP, CLOPS) and four of the Atlas's own words (carrier, carrier affinity, natural/fabricated, erasure-native); rarer abbreviations expanded in place at their first mention in the brief. The Russian and Hebrew definitions and matchers follow the English (the earlier translations carried the same factual slips)."
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "text",
+    "id": "cross-language-content-corrections-2026-10-04"
+   },
+   "note": "Eighteen content corrections made in the English briefs were carried into their Russian and Hebrew twins sentence for sentence (fusion failure vs loss; the dominant error is loss; the 1995 NIST gate; the light-shift gate; Li et al. 2018 for the crossbar; the SiMOS accumulation layer; MWPM over detection events across rounds; aluminium's transition rather than its gap; squeezing by χ⁽²⁾ or χ⁽³⁾; internal detection efficiency; quasiparticle poisoning; exchange-only vs singlet–triplet; the T centre not inversion-symmetric; alkaline-earth(-like)); the Russian and Hebrew terms lists gained 'генератор ресурсных состояний (RSG)' / 'מחולל מצבי משאב' and the Latin spellings SiMOS, AlphaQubit 2, bivariate bicycle."
   }
  ]
 }

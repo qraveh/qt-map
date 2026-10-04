@@ -1,6 +1,6 @@
 ---
 id: g_anneal
-name: Analog annealing evolution
+name: Quantum annealing (analog evolution)
 layer: "3 Gate mechanism"
 status: demonstrated
 since: 2011
@@ -33,7 +33,7 @@ Dominant limitation: no accepted certificate that analog output matches the Hami
 Two supply chains carry one mechanism: Nb/Al superconducting lithography (D-Wave) and vacuum/laser/AOM tweezer stacks (QuEra, Pasqal). The I/O burdens scale oppositely: flux annealers push everything through one mK stage on multiplexed on-chip DACs, while tweezer machines add laser power, deflectors and imaging per atom — the optical table is the constraint. Pasqal has begun displacing bulk optics with a silicon-nitride photonic IC: four traps from one chip, atom lifetime ~27.5 s [C][G:PASQAL-PIC-2026-08]. No export rule names analog evolution: exposure is inherited from the carrier — ECCN 4A906 and 3A904 for the flux line, nothing for tweezer optics.
 
 ## Role in the stack
-Architecture: quantum annealer — flux qubits, where it is the only gate mechanism. The register lists {{N_T_G_ANNEAL_MACHINES}} machines using it, among them D-Wave's Advantage2 and Advantage and Qilimanjaro's AQPU. It runs on the flux-qubit carrier only — Rydberg arrays use the separate analog Rydberg Hamiltonian evolution — and provides nothing to a gate-model stack; the field's standard error is reading an analog sampling claim as gate-model advantage. Quantinuum's magnetism result is quoted alongside these but is Trotterised digital simulation competing for the same budget [D][227]. No derived clock applies; the figure is quench time, ~4 ns to µs, plus one measurement. Verification is comparison against classical solvers, never randomized benchmarking, and the target moves: D-Wave's March 2025 claim was eroded within weeks [222], [223], its counter arguing the tensor-network scaling used against it is unvalidated [P][224]. Unresolved as of 4 Sep 2026.
+Architecture: quantum annealer — flux qubits, where it is the only gate mechanism. The register lists {{N_T_G_ANNEAL_MACHINES}} machines using it, among them D-Wave's Advantage2 and Advantage and Qilimanjaro's AQPU. It runs on the flux-qubit carrier only — Rydberg arrays use the separate analog Rydberg Hamiltonian evolution — and provides nothing to a gate-model stack; the field's standard error is reading an analog sampling claim as gate-model advantage. Quantinuum's magnetism result is quoted alongside these but is Trotterised digital simulation competing for the same budget [D][227]. No derived clock applies; the figure is quench time, ~4 ns to µs, plus one measurement. Verification is comparison against classical solvers, never randomised benchmarking, and the target moves: D-Wave's March 2025 claim was eroded within weeks [222], [223], its counter arguing the tensor-network scaling used against it is unvalidated [P][224]. Unresolved as of 4 Sep 2026.
 
 ## Actors & economics
 **Who.**

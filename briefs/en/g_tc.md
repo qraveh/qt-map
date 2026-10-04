@@ -13,7 +13,7 @@ updated: 2026-09-30
 
 ## Identity & lineage
 A flux-tunable coupler is a third element — usually a tunable transmon — bridging two data qubits. Its frequency sets an indirect coupling path that interferes with the direct capacitive one, so a bias sweep tunes net exchange through zero: at the off point static ZZ cancels; a pulse away from it drives a deterministic CZ or iSWAP via the |11⟩–|20⟩ crossing. Google/UCSB introduced it as the gmon in 2014, coupling settable to zero at nanosecond resolution without spoiling coherence [D][422].
-Attributes: carrier affinity a = 1.0, fully fabricated, no natural analogue. Gate time ~10⁻⁷·⁴ s (≈40 ns), deterministic.
+Attributes: carrier affinity a = 1.0, fully fabricated, no natural analogue. Gate time ≈40 ns (10^−7.4 s), deterministic.
 
 ## Physics & limits
 The coupler buys speed and isolation at the cost of a third noisy degree of freedom. Tens of MHz on-coupling sets 25–70 ns gates. Three mechanisms set the floor. Coherence: at 40 ns against Willow's mean T1 of 68 µs, relaxation and dephasing during the pulse already cost a few 10⁻⁴, most of the gap between the 99.88% device mean and unity [D][1] — pulse shaping cannot recover it, only longer T1 or shorter gates. Leakage: the pulse passes near |20⟩ and the coupler's second level, so population leaves the computational space — an unheralded, sticky error to the code. And 1/f flux noise on the bias moves the off point between calibrations, leaving a drifting residual ZZ that appears as coherent, correlated error. What moves the floor: higher T1, larger anharmonicity (fluxonium couplers), shaped flux pulses, and couplers biased at a flux-insensitive point.
@@ -56,7 +56,7 @@ The 99.90% and 99.93% headlines are interleaved randomised benchmarking on one c
 - 2026-07-02 · IQM · listing (Nasdaq/Helsinki) · cash €337 M, H1-2026 revenue €8.9 M · closed [G:IQM-LISTING-2026-07]
 - 2025-11-06 · DARPA · QBI Stage B, IBM the only transmon vendor of eleven · ≤$15 M each · announced [G:QBI-STAGEB-2025-11]
 
-**Market & supply chain.** What this gate consumes is flux control — multi-channel AWGs and DACs from Zurich Instruments, Quantum Machines and Keysight, none coupler-specific — so concentration risk sits in chips, not instruments. QuantWare is the only merchant route; everyone else fabricates in-house, making coupler design proprietary and control electronics commodity. G2 and G3 pay for this node: both need 10⁻³ two-qubit error at fleet width.
+**Market & supply chain.** What this gate consumes is flux control — multi-channel AWGs (arbitrary waveform generators) and DACs from Zurich Instruments, Quantum Machines and Keysight, none coupler-specific — so concentration risk sits in chips, not instruments. QuantWare is the only merchant route; everyone else fabricates in-house, making coupler design proprietary and control electronics commodity. G2 and G3 pay for this node: both need 10⁻³ two-qubit error at fleet width.
 
 **IP & standards.** IBM holds US 11,727,297 B2, "Tunable quantum coupler facilitating a quantum gate between qubits" (granted 2023-08-15), claiming an opposite-sign second coupling path that cancels unwanted coherent rotation [G][424]; Google's 2014 gmon work is published prior art [D][422]. No litigation identified, no standards body for coupler design or reporting.
 

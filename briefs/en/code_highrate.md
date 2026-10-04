@@ -19,7 +19,7 @@ Attributes: no carrier of its own (affinity 0.0), it inherits the platform's; no
 
 ## Physics & limits
 
-[[80,48,4]] costs 1.67 physical qubits per logical at distance 4 [D][105], the tesseract 2.67 [D][674]; a teraquop surface code costs 650 under 0.1% noise [S][655], IBM's [[144,12,12]] 24 at distance 12 [D][248]. The comparison is not like-for-like, and that is the limitation: distance 4 corrects one error, suppression goes roughly as p², and there is no Λ-style exponential handle. Distance 2 corrects nothing — it detects, and detection means discarding.
+[[80,48,4]] costs 1.67 physical qubits per logical at distance 4 [D][105], the tesseract 2.67 [D][674]; a teraquop surface code (sized for 10¹² reliable operations) costs 650 under 0.1% noise [S][655], IBM's [[144,12,12]] 24 at distance 12 [D][248]. The comparison is not like-for-like, and that is the limitation: distance 4 corrects one error, suppression goes roughly as p², and there is no Λ-style exponential handle. Distance 2 corrects nothing — it detects, and detection means discarding.
 
 Hence acceptance: the [[80,48,4]] cycle accepted 0.62(2) of shots after post-selecting uncorrectable errors [D][105], and the 64-logical XY-model simulation accepted 3.2% at algorithmic depth [D][97]. Acceptance falls exponentially in circuit volume, so a claim here that omits it is unreadable.
 
@@ -51,7 +51,7 @@ The burden is decoding, not wiring. Syndrome extraction is shallow, but each tra
 
 ## Role in the stack
 
-Four architectures: primary on trapped-ion QCCD (Quantinuum) and alkali neutral atoms (Harvard/MIT, QuEra, Pasqal, Infleqtion, Google); alternate on ions in a linear Paul trap with laser gates (AQT, Quantum Art, Innsbruck) and ions with electronic gates and chip control (IonQ/Oxford Ionics, eleQtron). It requires transport-supplied connectivity — AOD tweezer transport in a zoned architecture, ion shuttling through QCCD junctions and grid traps, or a single chain's motional bus — and provides for correlated, loss-aware decoding. It replaces the surface code at an explicit price: the surface code needs only nearest-neighbour coupling and has a mature ~1% threshold with exponential distance scaling, while this family needs all-to-all and buys width instead of depth, and it conflicts with nearest-neighbour connectivity outright.
+Four architectures: primary on trapped-ion QCCD (Quantinuum) and alkali neutral atoms (Harvard/MIT, QuEra, Pasqal, Infleqtion, Google); alternate on ions in a linear Paul trap with laser gates (AQT, Quantum Art, Innsbruck) and ions with electronic (laser-free, microwave-driven) gates and chip control (IonQ/Oxford Ionics, eleQtron). It requires transport-supplied connectivity — AOD tweezer transport in a zoned architecture, ion shuttling through QCCD junctions and grid traps, or a single chain's motional bus — and provides for correlated, loss-aware decoding. It replaces the surface code at an explicit price: the surface code needs only nearest-neighbour coupling and has a mature ~1% threshold with exponential distance scaling, while this family needs all-to-all and buys width instead of depth, and it conflicts with nearest-neighbour connectivity outright.
 
 Across families: this node explains the largest divergence in the 2026 fault-tolerance table — 48 and 96 logical qubits on ions and atoms against 1–2 on superconducting — a connectivity fact, not a qubit-quality fact. It adds no clock of its own; it sets the QEC cycles per logical layer, ≈1 with transversal gates plus correlated decoding versus ≈d for lattice surgery [S][152]. Derived clock (= sum of the syndrome round: gate layers + transport + readout + reset): 9.66 ms on the ion QCCD architecture, transport-set, against the ~55 ms Helios full-width layer, and 1.31 ms on the alkali atom architecture against a measured ~1–4.5 ms round. Empty slots nearby: no high-rate transversal code on a nearest-neighbour platform, no member above distance 4, no magic-state factory inside a high-rate block.
 
@@ -74,7 +74,7 @@ Conflicts. The tesseract is [[16,6,4]], not [[16,4,4]] — the Error Correction 
 | IonQ (incl. Oxford Ionics) | developer | US/UK | Eight codes on 40 ions (nine in the June version), break-even within error bars in one unidentified code ([[18,4,3]] stays below the physical lifetime); Oxford Ionics and Iceberg Quantum partnered on a fault-tolerant architecture with Iceberg's qLDPC codes (2025-07, within QBI Stage A) | [D][109][C][G:OXIONICS-ICEBERG-2025-07] |
 | Iceberg Quantum | supplier (architecture) | AU/DE/US | Only pure-play: licenses high-rate/qLDPC architectures (Pinnacle) | [S][29][P][677] |
 | DARPA | funder | US | QBI Stage B funds Quantinuum, IonQ, QuEra, Atom Computing | [G:QBI-STAGEB-2025-11] |
-| IBM | competitor | US | Bivariate-bicycle qLDPC is the substitution threat | [D][248] |
+| IBM | competitor | US | Bivariate bicycle qLDPC is the substitution threat | [D][248] |
 
 **Money.**
 - 2025-03-24 · Iceberg Quantum · pre-seed · $2 M · Blackbird lead, LocalGlobe · closed [P][678]

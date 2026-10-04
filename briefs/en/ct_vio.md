@@ -1,6 +1,6 @@
 ---
 id: ct_vio
-name: Vertical (out-of-plane) signal delivery — VIO, Coaxmon, 3-D wiring
+name: Vertical (out-of-plane) signal delivery — VIO, coaxmon, 3D wiring
 layer: "5 Control"
 status: demonstrated
 since: 2016
@@ -12,7 +12,7 @@ updated: 2026-09-30
 TSV = through-silicon via; MXC = mixing chamber, the coldest refrigerator stage; T1, T2e = relaxation and echoed dephasing times; G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-Lines still start in room-temperature racks (ct_rt); only the last centimetre changes. Instead of a coplanar line routed to a wire-bond pad at the die edge, the signal enters through the chip's face — a spring-loaded or coaxial pin, a contact probe, a superconducting via, or a bump-bonded signal die. Waterloo's quantum socket (2016) pressed spring-mounted coaxial wires onto the chip [D][532]; Oxford's coaxial circuit QED (2017) put qubit and resonator on opposite faces with all wiring perpendicular [D][533], the root of OQC's Coaxmon. RIKEN chose backside superconducting vias over flip-chip interfaces that still bring pads to the edge [C][534] and reviewed the packaging this needs [G][535].
+Lines still start in room-temperature racks (ct_rt); only the last centimetre changes. Instead of a coplanar line routed to a wire-bond pad at the die edge, the signal enters through the chip's face — a spring-loaded or coaxial pin, a contact probe, a superconducting via, or a bump-bonded signal die. Waterloo's quantum socket (2016) pressed spring-mounted coaxial wires onto the chip [D][532]; Oxford's coaxial circuit QED (2017) put qubit and resonator on opposite faces with all wiring perpendicular [D][533], the root of OQC's coaxmon. RIKEN chose backside superconducting vias over flip-chip interfaces that still bring pads to the edge [C][534] and reviewed the packaging this needs [G][535].
 Attributes: microwave control at room temperature; coherent error; superconducting-lithography fabrication.
 
 ## Physics & limits
@@ -33,7 +33,7 @@ Heat is set per line, not by the route: OQC's fully wired wafer-scale package is
 | 2025-04 | 256 qubits; density ×4 in the same refrigerator | RIKEN / Fujitsu | [C][51] |
 | 2026-02 | >500 qubits on a 3-inch die; median T1 97 µs, T2e 129 µs | OQC | [D][311] |
 
-Among the register's carriers, beyond 256 gate-coupled qubits only claims exist: VIO-40K, 40,000 lines for 10,000 qubits in chiplet modules, shipping 2028 [C][536]. No Japanese machine has a two-qubit error in the register, and OQC's package reports coherence and readout, not gates [D][311].
+Among the register's carriers, beyond 256 gate-coupled qubits only claims exist: VIO-40K (VIO is QuantWare's vertical-wiring architecture), 40,000 lines for 10,000 qubits in chiplet modules, shipping 2028 [C][536]. No Japanese machine has a two-qubit error in the register, and OQC's package reports coherence and readout, not gates [D][311].
 
 ## Manufacturing, materials & supply chain
 Vias: MIT Lincoln Laboratory fabricates qubits on a TSV-bearing surface [D][540]; Rigetti's sloped walls let evaporated or sputtered films coat the via [D][539]. Pins: OQC's package manages differential thermal contraction across 3 inches with 0.5 mm pin gaps [D][311]. Stacks: QuantWare integrates "all signal conditioning components" [C][537] and opens KiloFab, Delft, in 2026 at 20× its 2025 capacity [C][536]. Pin, via and bump yields at 10³–10⁴ contacts are unpublished as of 2026-09-26.
@@ -62,11 +62,11 @@ Line crosstalk exists only as OQC's four-qubit selectivity matrix [D][538]; RIKE
 
 **Money.**
 - 2026-05-05 · QuantWare · Series B led by Intel Capital and In-Q-Tel, naming VIO-40K and KiloFab · USD 178 M · announced [C][547]
-- 2026-06-02 · OQC · Series C led by Bullhound Capital, Coaxmon not named · GBP 260 M · announced [C][60]
+- 2026-06-02 · OQC · Series C led by Bullhound Capital, coaxmon not named · GBP 260 M · announced [C][60]
 
 **Market & supply chain.** RIKEN/Fujitsu and OQC build their own packages; QuantWare sells VIO to "scale the qubit chiplets and designs of third parties" [C][547]. Serves G2–G4 (transmon) and G3–G4 (dual-rail).
 
-**IP & standards.** OQC calls the Coaxmon "patented" [C][543], no number traced; QuantWare pitches VIO-40K as the standard of its Quantum Open Architecture [P][495]. No standards body, as of 2026-09-26.
+**IP & standards.** OQC calls the coaxmon "patented" [C][543], no number traced; QuantWare pitches VIO-40K as the standard of its Quantum Open Architecture [P][495]. No standards body, as of 2026-09-26.
 
 **Roadmaps & track record.** In July 2020 RIKEN aimed for a 64-qubit device "within the next three years" [C][534] and opened it on 2023-03-27 [C][542] — kept. Fujitsu still lists 1,000 qubits for 2026 [C][75], no launch found as of 2026-09-26. QuantWare: VIO-40K 2028 [C][536]; no interim VIO data, as of 2026-09-26.
 

@@ -4,7 +4,7 @@ name: III-V MBE heterostructures (InAs–Pb wires, QD sources)
 layer: "10 Manufacturing"
 status: demonstrated
 since: 2015
-one_line: Molecular-beam epitaxy of III-V nanostructures with vacuum-unbroken superconductor shells for Majorana wires, and of quantum dots for single-photon sources.
+one_line: Molecular beam epitaxy of III-V nanostructures with vacuum-unbroken superconductor shells for Majorana wires, and of quantum dots for single-photon sources.
 verdict: The process works and is single-source; falsified as a reproducible platform unless a group outside Microsoft publishes an independently grown InAs–Pb device with comparable parity signatures by 2028.
 updated: 2026-09-30
 ---
@@ -12,17 +12,17 @@ updated: 2026-09-30
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-Two unrelated devices share a tool class. The first is a III-V nanowire or 2DEG grown by molecular-beam epitaxy with a superconductor deposited in the same vacuum, so the interface is never exposed: aluminium through 2025, lead in the 2026 tetron as the higher-gap shell [D][21]. The second is GaAs-based quantum dots as single-photon sources, same reactors, different physics [G:QBI-QBIT-2026]. The lineage dates to 2015, when Copenhagen grew aluminium epitaxially on InAs nanowires without breaking vacuum [D][G:KROGSTRUP-EPI-2015]; the field's 2018 headline, quantized Majorana conductance in InSb–Al wires, was retracted on 2021-03-08 [D][365].
+Two unrelated devices share a tool class. The first is a III-V nanowire or 2DEG (two-dimensional electron gas) grown by molecular beam epitaxy (MBE) with a superconductor deposited in the same vacuum, so the interface is never exposed: aluminium through 2025, lead in the 2026 tetron as the higher-gap shell [D][21]. The second is GaAs-based quantum dots as single-photon sources, same reactors, different physics [G:QBI-QBIT-2026]. The lineage dates to 2015, when Copenhagen grew aluminium epitaxially on InAs nanowires without breaking vacuum [D][G:KROGSTRUP-EPI-2015]; the field's 2018 headline, quantised Majorana conductance in InSb–Al wires, was retracted on 2021-03-08 [D][365].
 a mostly fabricated (0.75) · b a process, not a clock · c none · d none
-e none · f disorder-dominated · g molecular-beam epitaxy
+e none · f disorder-dominated · g molecular beam epitaxy
 
 ## Physics & limits
-The floor is disorder. Unintentional doping, interface roughness and shell strain produce trivial sub-gap Andreev states whose signatures mimic Majorana modes, which is the Nature dispute: Legg argues the regions used for parity readout are disordered and gapless [D][22]. Lead raises the gaps above aluminium's: in Microsoft's tetron stack the lead film's own gap is ≈1.3 meV and the gap it induces in the wire ≈570 µeV, against 295 µeV and 129 µeV with aluminium, while the topological gap, taken at the top quintile of its measured values, only doubles, from ~30 to ~70 µeV [D][21], [G:MSFT-TGP-PRB-2023]; epitaxial Pb on InAs nanowires holds a hard 1.25 meV gap to 8.5 T (Copenhagen, 2021) [D][G:KANNE-PB-INAS-2021]. Moving the floor means a mean free path well above the coherence length, verified by a published mobility or disorder metric rather than device outcomes. Microsoft published such metrics for InAs–Al — mobility 60,000–100,000 cm²/V·s, a charged-defect density of 2.7 × 10¹² cm⁻² [D][G:MSFT-TGP-PRB-2023] — and for the Pb stack only Hall-bar values of its active region, a surface charge density of ≈2 × 10¹² cm⁻² and a buried-well mobility above 350,000 cm²/V·s [D][21]; none is measured on a device, which is why the materials argument runs through transport data.
+The floor is disorder. Unintentional doping, interface roughness and shell strain produce trivial sub-gap Andreev states whose signatures mimic Majorana zero modes (MZMs), which is the Nature dispute: Legg argues the regions used for parity readout are disordered and gapless [D][22]. Lead raises the gaps above aluminium's: in Microsoft's tetron stack the lead film's own gap is ≈1.3 meV and the gap it induces in the wire ≈570 µeV, against 295 µeV and 129 µeV with aluminium, while the topological gap, taken at the top quintile of its measured values, only doubles, from ~30 to ~70 µeV [D][21], [G:MSFT-TGP-PRB-2023]; epitaxial Pb on InAs nanowires holds a hard 1.25 meV gap to 8.5 T (Copenhagen, 2021) [D][G:KANNE-PB-INAS-2021]. Moving the floor means a mean free path well above the coherence length, verified by a published mobility or disorder metric rather than device outcomes. Microsoft published such metrics for InAs–Al — mobility 60,000–100,000 cm²/V·s, a charged-defect density of 2.7 × 10¹² cm⁻² [D][G:MSFT-TGP-PRB-2023] — and for the Pb stack only Hall-bar values of its active region, a surface charge density of ≈2 × 10¹² cm⁻² and a buried-well mobility above 350,000 cm²/V·s [D][21]; none is measured on a device, which is why the materials argument runs through transport data.
 
 ## Engineering state of the art
 | Year | Figure | Who | Tag+key |
 |---|---|---|---|
-| 2018 | Quantized-conductance Majorana claim in InSb–Al wires; retracted 2021-03-08 | Delft (Kouwenhoven et al.) | [D][365] |
+| 2018 | Quantised-conductance Majorana claim in InSb–Al wires; retracted 2021-03-08 | Delft (Kouwenhoven et al.) | [D][365] |
 | 2025-02 | InAs–Al stack supports 1% parity assignment error | Microsoft Azure Quantum | [D][13] |
 | 2026-06 | InAs–Pb stack, higher-gap shell, ~20 s parity switching, one wire | Microsoft Quantum | [D][21] |
 

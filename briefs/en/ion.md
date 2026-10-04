@@ -4,7 +4,7 @@ name: Trapped atomic ion
 layer: "1 Carrier"
 status: demonstrated
 since: 1995
-one_line: "Single Yb⁺/Ba⁺/Ca⁺ ions in RF traps, entangled through shared motional modes; the highest-fidelity and slowest qubit in commercial service."
+one_line: "Single Yb⁺/Ba⁺/Ca⁺ ions in rf traps, entangled through shared motional modes; the highest-fidelity and slowest qubit in commercial service."
 verdict: "Fidelity leader and the only platform running dozens of corrected logical qubits, but throughput is set by transport and cooling, not gates; 2D scaling unproven until Sol (2027)."
 updated: 2026-09-30
 ---
@@ -13,9 +13,9 @@ updated: 2026-09-30
 
 ## Identity & lineage
 
-A trapped-ion qubit is a single atomic ion — ytterbium, barium, calcium or strontium — confined by RF and static fields above micro-fabricated electrodes, with logic in hyperfine, Zeeman or optical levels. Ions in a chain repel, so they share quantised motional modes; a spin-dependent force on those modes turns motion into a bus that entangles any pair. Cirac and Zoller proposed it in 1995; Wineland's NIST group demonstrated a two-qubit gate the same year. Everything commercial today is that idea plus surface-electrode microfabrication.
+A trapped-ion qubit is a single atomic ion — ytterbium, barium, calcium or strontium — confined by rf and static fields above microfabricated electrodes, with logic in hyperfine, Zeeman or optical levels. Ions in a chain repel, so they share quantised motional modes; a spin-dependent force on those modes turns motion into a bus that entangles any pair. Cirac and Zoller proposed it in 1995; Wineland's NIST group demonstrated the first gate the same year, between one ion's internal state and its motion, and two-ion gates followed in 1998–2003. Everything commercial today is that idea plus surface-electrode microfabrication.
 
-Attributes (technology graph): carrier affinity 0.0 — wholly natural, every ion identical by physical law, no fabrication variance to calibrate out; entangling time 10⁻⁴·² s (≈ 63 µs), deterministic, no heralding; readout by fluorescence on a cycling transition, ≈ 10 µs, non-destructive, mid-circuit capable; mobility by physical transport — ions are shuttled, not wired; control optical, at room temperature; error structure as the code sees it coherent, leakage, Pauli; manufacturing MEMS-class surface-electrode traps.
+Attributes (technology graph): carrier affinity 0.0 — wholly natural, every ion identical by physical law, no fabrication variance to calibrate out; entangling time ≈ 63 µs (10^−4.2 s), deterministic, no heralding; readout by fluorescence on a cycling transition, ≈ 10 µs, non-destructive, mid-circuit capable; mobility by physical transport — ions are shuttled, not wired; control optical, at room temperature; error structure as the code sees it coherent, leakage, Pauli; manufacturing MEMS-class surface-electrode traps.
 
 ## Physics & limits
 
@@ -40,7 +40,7 @@ The dominant error term at scale is not the gate: it is the cost of moving ions 
 
 ## Manufacturing, materials & supply chain
 
-Traps are MEMS-class silicon parts, not qubit-defining lithography: the ion is perfect, so wafer variance shows up as electrode geometry and surface quality, never as qubit-to-qubit spread. Two fabs matter. Infineon runs a dedicated QPU platform in Villach on 6- to 12-inch wafers with anodic wafer bonding; its Generation-3 traps add out-of-plane electrodes claimed to raise confinement ~10×, with eleQtron (three generations), Oxford Ionics, Innsbruck and ETH Zurich as named users [C][320]. Honeywell fabricates Quantinuum's traps in-house — Helios carries 1,228 electrodes [D][97] — and the Sol grid trap is back from fabrication and in validation [C][123]; Infineon separately partnered with Quantinuum on next-generation traps in 2024-11 [C][321]. Infineon is a single point of failure for IonQ/Oxford Ionics, eleQtron and Universal Quantum at once [P][322] — which is what IonQ's ≈ $1.8 B purchase of SkyWater (closed 2026-07-31) buys its way out of [C][19].
+Traps are MEMS-class silicon parts, not qubit-defining lithography: the ion is perfect, so wafer variance shows up as electrode geometry and surface quality, never as qubit-to-qubit spread. Two fabs matter. Infineon runs a dedicated QPU platform in Villach on 6- to 12-inch wafers with anodic wafer bonding; its Generation-3 traps add out-of-plane electrodes claimed to raise confinement ~10×, with eleQtron (three generations), Oxford Ionics, Innsbruck and ETH Zürich as named users [C][320]. Honeywell fabricates Quantinuum's traps in-house — Helios carries 1,228 electrodes [D][97] — and the Sol grid trap is back from fabrication and in validation [C][123]; Infineon separately partnered with Quantinuum on next-generation traps in 2024-11 [C][321]. Infineon is a single point of failure for IonQ/Oxford Ionics, eleQtron and Universal Quantum at once [P][322] — which is what IonQ's ≈ $1.8 B purchase of SkyWater (closed 2026-07-31) buys its way out of [C][19].
 
 The second concentration is optical: TOPTICA (> €140 M revenue, ~600 staff) supplies most major ion experiments, and the UV end — 369 nm for Yb⁺ — is the constrained part [P][322]. Vacuum hardware and atomic sources are commodity; photonic interconnects re-import a cryogenic dependency through SNSPDs [P][322][G:SNSPD-VENDORS-2026]. Unit economics: AQT delivered a 20-qubit rack to LRZ / Munich Quantum Valley for ≈ €9.8 M (2023-12-05, Bavarian Hightech Agenda) [C][323] — ≈ €0.5 M per qubit, turnkey. Export exposure runs through the September-2024 US quantum ECCNs; a bare trap chip's classification is unverified here.
 
@@ -58,7 +58,7 @@ Derived clock = sum of the syndrome round: gate layers + transport + readout + r
 
 ## Evidence — how the numbers were measured
 
-Headline two-qubit numbers come from randomized-benchmarking variants. The 8.4(7)×10⁻⁵ record is a subspace-leakage RB on one ion pair at Doppler temperature, not a device-wide figure, and the retrievable text gives no gate duration [D][102]. Helios's 7.9×10⁻⁴ is an averaged device figure, consistent with the earnings language "99.921%" [C][123]. Quantum volume and #AQ are vendor-defined composites with no replication protocol [C][98], [99]. RB also runs statically, so shuttling and re-cooling are invisible to quoted gate errors. Logical results carry an acceptance fraction (0.62(2) [D][105]) and IonQ's break-even is leakage-post-selected [D][109]; neither is unconditional. No ion platform has published Λ-type distance scaling.
+Headline two-qubit numbers come from randomised-benchmarking variants. The 8.4(7)×10⁻⁵ record is a subspace-leakage RB on one ion pair at Doppler temperature, not a device-wide figure, and the retrievable text gives no gate duration [D][102]. Helios's 7.9×10⁻⁴ is an averaged device figure, consistent with the earnings language "99.921%" [C][123]. Quantum volume and #AQ are vendor-defined composites with no replication protocol [C][98], [99]. RB also runs statically, so shuttling and re-cooling are invisible to quoted gate errors. Logical results carry an acceptance fraction (0.62(2) [D][105]) and IonQ's break-even is leakage-post-selected [D][109]; neither is unconditional. No ion platform has published Λ-type distance scaling.
 
 Conflicts. The electronic gate's duration is 225.8 µs (2025) or ≈ 120 µs (2024) in the technology graph and unstated in the 2025 abstract — unverified. Quantinuum's "near five-nines logical fidelity with a novel QEC code family" [C][123] outruns the published 1.0–1.2×10⁻⁴ logical gate infidelity [D][105]; the code family is unpublished, so the [D] value stands. IonQ's Tempo is marketed at "99.9%" and #AQ 64 with no published gate times [C][99], [326].
 
@@ -102,7 +102,7 @@ Conflicts. The electronic gate's duration is 225.8 µs (2025) or ≈ 120 µs (20
 
 ## Outlook & open questions
 
-Confirm if: Sol ships in 2027 with ≥ 192 physical qubits on a 2D grid trap *and* a published layer time better than ≈ 55 ms; any ion vendor publishes Λ > 1 scaling across d = 3→5→7; remote entanglement passes 10³ s⁻¹. Demote if: IonQ has not shown 256 qubits at 99.99% by end-2027 (already slipped once); Sol leaves layer time unimproved; or the five-nines code family stays unpublished a year on.
+Confirm if: Sol ships in 2027 with ≥ 192 physical qubits on a 2D grid trap *and* a published layer time better than ≈ 55 ms; any ion vendor publishes Λ > 1 scaling across d=3→5→7; remote entanglement passes 10³ s⁻¹. Demote if: IonQ has not shown 256 qubits at 99.99% by end-2027 (already slipped once); Sol leaves layer time unimproved; or the five-nines code family stays unpublished a year on.
 
 Best case by 2029: Apollo lands with hundreds of logical qubits at 10⁻⁶–10⁻¹⁰ and ions own early fault tolerance, the clock deficit absorbed by depth-hungry algorithms. Worst case: 2D scaling multiplies transport cost instead of amortising it, layer time stays in tens of milliseconds, and ions become the high-fidelity low-throughput instrument for QEC research while neutral atoms and superconducting circuits take the volume.
 

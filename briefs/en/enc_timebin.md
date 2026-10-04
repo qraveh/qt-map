@@ -4,7 +4,7 @@ name: Time-bin / path photonic encoding
 layer: "2 Encoding"
 status: demonstrated
 since: 2001
-one_line: "Photonic dual-rail qubit in arrival-time bins or waveguide path; loss is the error and it is heralded rather than stochastic."
+one_line: "Photonic dual-rail qubit in arrival-time bins or waveguide path; loss is the dominant error, and it is heralded — an erasure at a known location — rather than a silent error."
 verdict: "The two halves have diverged: path encoding won on chip (PsiQuantum Omega), time-bin survives in fibre, because an on-chip delay costs 0.27 dB per ns. No fusion logical qubit by 2028 leaves it a communication encoding."
 updated: 2026-09-03
 ---
@@ -12,7 +12,7 @@ updated: 2026-09-03
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-One photon, two orthogonal modes: two arrival-time bins, or two waveguides. Nothing continuous decoheres, so the only error is loss — and a lost photon fails to herald, detectable where it happens. Time-bin entanglement came from Brendel, Gisin, Tittel and Zbinden at Geneva in 1999, built for telecom fibre [D][418]; path encoding is the on-chip descendant, and Omega says so plainly — "a path-encoded qubit using a heralded photon and two-mode interferometers" [D][169]. Attributes: no mobility, no control modality, no fabrication of its own; pure-loss error.
+One photon, two orthogonal modes: two arrival-time bins, or two waveguides. Nothing continuous decoheres, so the dominant error is loss — and a lost photon fails to herald, detectable where it happens. Time-bin entanglement came from Brendel, Gisin, Tittel and Zbinden at Geneva in 1999, built for telecom fibre [D][418]; path encoding is the on-chip descendant, and Omega says so plainly — "a path-encoded qubit using a heralded photon and two-mode interferometers" [D][169]. Attributes: no mobility, no control modality, no fabrication of its own; pure-loss error.
 
 ## Physics & limits
 The floor is a loss budget, not an infidelity: every interferometer, coupler and switch removes amplitude, and the two halves of this node price it differently. A 1 ns time bin needs ~0.15 m of on-chip delay at group index 2, which at PsiQuantum's measured 1.8 ± 0.2 dB/m SiN loss [D][169] costs ~0.27 dB — over half a ~0.5 dB per-photon budget, against ~0.04 mdB in fibre. That is why chips are path-encoded and fibres time-bin encoded — one node only in the abstract. The erasure advantage needs a trusted herald: Omega's median on-chip detector efficiency is 93.4% [D][169], so about one heralded event in fifteen is an unflagged loss entering the code as ordinary error.
@@ -28,7 +28,7 @@ The floor is a loss budget, not an infidelity: every interferometer, coupler and
 No logical qubit exists in this encoding, and the threshold it must meet is disputed: 2.7% per photon for a boosted 6-ring and 17.4% for a {7,4}-encoded state [S][179] against 0.38–0.82% unencoded [S][264] — an order of magnitude apart, unreconciled [G:FBQC-THRESHOLD-CONFLICT-2026].
 
 ## Manufacturing, materials & supply chain
-No fabrication step of its own: the encoding rides its host — PsiQuantum's 300 mm silicon nitride, Quandela's III–V quantum dots, QuiX's SiN meshes. Control is inherited: no per-qubit drive line, but every interferometer needs a phase shifter and every output a detector — thousands of cryogenic channels and their fan-out at 10³–10⁴ qubits. Chokepoints are the detector vendors (Single Quantum, ID Quantique, Photon Spot) and the III–V and SiN foundries [P][G:SNSPD-VENDORS-2026]; ECCN 4A906 applies [G:BIS-QUANTUM-2024].
+No fabrication step of its own: the encoding rides its host — PsiQuantum's 300 mm silicon nitride, Quandela's III-V quantum dots, QuiX's SiN meshes. Control is inherited: no per-qubit drive line, but every interferometer needs a phase shifter and every output a detector — thousands of cryogenic channels and their fan-out at 10³–10⁴ qubits. Chokepoints are the detector vendors (Single Quantum, ID Quantique, Photon Spot) and the III-V and SiN foundries [P][G:SNSPD-VENDORS-2026]; ECCN 4A906 applies [G:BIS-QUANTUM-2024].
 
 ## Role in the stack
 The encoding under the fusion-based discrete-variable architecture (PsiQuantum, Quandela, QuiX); it needs only a single-photon source, and its one rival there is the dual-rail encoding, primary on PsiQuantum's Omega and QuiX's Carina. Swapping path for time-bin trades interferometer phase stability for delay-line loss, unaffordable on chip. It also caps fusion: passive linear-optical Bell measurement on a dual-rail qubit succeeds at 50%, at least 75% with unentangled ancillae [S][419]. Verification: no group has run a syndrome cycle using heralded loss as an erasure flag, so the advantage is a design argument, not a measurement.

@@ -12,27 +12,27 @@ updated: 2026-09-04
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-Braiding is replaced by a schedule of projective joint fermion-parity measurements. Bonderson, Freedman and Nayak showed in 2008 that an anyonic teleportation identity lets topological-charge measurements produce the braiding transformations [S][475]; Karzig et al. made it hardware in 2017 — Cliffords read as differential-capacitance shifts of dots tunnel-coupled to Majorana modes [S][421]. Every published measurement here is single-wire (Z-type); the two-wire joint measurement that is the gate has never been reported [D][21].
+Braiding is replaced by a schedule of projective joint fermion-parity measurements. Bonderson, Freedman and Nayak showed in 2008 that an anyonic teleportation identity lets topological-charge measurements produce the braiding transformations [S][475]; Karzig et al. made it hardware in 2017 — Cliffords read as differential-capacitance shifts of dots tunnel-coupled to Majorana zero modes (MZMs) [S][421]. Every published measurement here is single-wire (Z-type); the two-wire joint measurement that is the gate has never been reported [D][21].
 a fabricated (1.0) · b gate time unmeasured, deterministic by intent · c no readout of its own
 d static · e low-frequency control at room temperature · f error structure unknown · g MBE wire stack
 
 ## Physics & limits
-Fidelity is joint-measurement time over the lifetime of the basis projected, and that ratio is where the mechanism fails. The tetron's Z-loop parity lives 12.4 ms, the X-loop, which a gate repeatedly projects, 14.5 µs, ~1000× shorter [D][20], attributed to the larger quasiparticle-capture cross-section of the two-loop configuration: poisoning, not dephasing. At SNR 1 in 3.6 µs [D][13] one X projection eats a fifth of that window, so a Clifford sequence has no margin. Operation is adaptive (next basis from last outcome), so feed-forward must close inside the same window; none has been published. Over trivial Andreev levels, meanwhile, a measurement sequence implements no braid at all [D][23].
+Fidelity is joint-measurement time over the lifetime of the basis projected, and that ratio is where the mechanism fails. The tetron's Z-loop parity lives 12.4 ms, the X loop, which a gate repeatedly projects, 14.5 µs, ~1000× shorter [D][20], attributed to the larger quasiparticle-capture cross-section of the two-loop configuration: poisoning, not dephasing. At SNR 1 in 3.6 µs [D][13] one X projection eats a fifth of that window, so a Clifford sequence has no margin. Operation is adaptive (next basis from last outcome), so feed-forward must close inside the same window; none has been published. Over trivial Andreev levels, meanwhile, a measurement sequence implements no braid at all [D][23].
 
 ## Engineering state of the art
 | Year | Figure | Who | Tag+key |
 |---|---|---|---|
 | 2025-02 | Single-wire parity readout, 1% assignment error, dwell >1 ms | Microsoft Azure Quantum | [D][13] |
-| 2025-07 | Tetron Z-loop 12.4 ms vs X-loop 14.5 µs | Microsoft Quantum | [D][20] |
+| 2025-07 | Tetron Z loop 12.4 ms vs X loop 14.5 µs | Microsoft Quantum | [D][20] |
 | 2026-06 | ~20 s parity switching, one wire of one InAs–Pb tetron | Microsoft Quantum | [D][21] |
 
-No row is a gate: the 2026 result measured one nanowire of a multi-tetron array: no braid, no joint parity, no two-qubit operation, no entanglement, no T₁/T₂ [D][21].
+No row is a gate: the 2026 result measured one nanowire of a multi-tetron array: no braid, no joint parity, no two-qubit operation, no entanglement, no T1/T2 [D][21].
 
 ## Manufacturing, materials & supply chain
 Nothing is fabricated for this mechanism alone: it consumes the InAs–Pb stack and the readout below it. The unbuilt part is control: per-tetron tunable dot–wire couplings, an rf loop per measurable parity, and a demodulator-to-bias path that must resolve inside the X window. At 10³ tetrons the line budget resembles transmon readout; the wall is latency, unquantified because no adaptive sequence has been attempted.
 
 ## Role in the stack
-Requires the Majorana-parity carrier (two wires per tetron) and quantum-capacitance readout; it would supply the topological architecture's entire Clifford layer. The only substitute is braiding in T-junction networks, geometry nobody is building. No derived clock: with no gate operated and no code on the architecture, sum of the syndrome round: gate layers + transport + readout + reset reduces to its readout term, ~3.6 µs [D][13], reset unpublished. Verification is telegraph statistics, not benchmarks: no randomized benchmarking, tomography or Bell test exists. QuTech's independent single-shot parity readout (Nature 650, 2026-02-11) replicates the method on InSb dot chains, limited protection stated [D][216]; Legg's Matters Arising (2026-06-24) argues the readout regions are disordered and gapless, so the signals may be trivial, and Microsoft's same-day reply concedes nothing [D][23].
+Requires the Majorana-parity carrier (two wires per tetron) and quantum-capacitance readout; it would supply the topological architecture's entire Clifford layer. The only substitute is braiding in T-junction networks, geometry nobody is building. No derived clock: with no gate operated and no code on the architecture, sum of the syndrome round: gate layers + transport + readout + reset reduces to its readout term, ~3.6 µs [D][13], reset unpublished. Verification is telegraph statistics, not benchmarks: no randomised benchmarking, tomography or Bell test exists. QuTech's independent single-shot parity readout (Nature 650, 2026-02-11) replicates the method on InSb dot chains, limited protection stated [D][216]; Legg's Matters Arising (2026-06-24) argues the readout regions are disordered and gapless, so the signals may be trivial, and Microsoft's same-day reply concedes nothing [D][23].
 
 ## Actors & economics
 **Who.**
@@ -66,4 +66,4 @@ Falsifiable in 12–24 months: a first joint (X-basis) parity measurement with a
 [475] P. Bonderson, M. Freedman, and C. Nayak, “Measurement-Only Topological Quantum Computation,” *Phys. Rev. Lett.*, vol. 101, no. 1, Art. no. 010501, Jun. 2008, doi: [10.1103/PhysRevLett.101.010501](https://doi.org/10.1103/PhysRevLett.101.010501). [arXiv:0802.0279](https://arxiv.org/abs/0802.0279). [S]
 
 ## Open verification items
-No dollar figure is public for DARPA's US2QC award to Microsoft. The arXiv HTML of [20] also shows X-loop ~4 µs and Z-loop ~9.3 ms for other tunings; the fact-checked 14.5 µs / 12.4 ms are used here and the ~1000× ratio is robust across both readings, the point values are not. No feed-forward latency, dot–wire coupling switching time or projected gate time has been published for this mechanism.
+No dollar figure is public for DARPA's US2QC award to Microsoft. The arXiv HTML of [20] also shows X loop ~4 µs and Z loop ~9.3 ms for other tunings; the fact-checked 14.5 µs / 12.4 ms are used here and the ~1000× ratio is robust across both readings, the point values are not. No feed-forward latency, dot–wire coupling switching time or projected gate time has been published for this mechanism.

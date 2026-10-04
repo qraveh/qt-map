@@ -13,7 +13,7 @@ updated: 2026-09-03
 
 ## Identity & lineage
 Two hyperfine (or nuclear-spin) ground-state sublevels at a bias field where the first-order Zeeman shift vanishes, leaving only the quadratic term: coherence in seconds to hours, with single-ion memories reaching hour scale [104]. The lineage is the field's own: NIST's first ion-trap logic gate stored a qubit in the internal states of one laser-cooled ion (Monroe, Meekhof, King, Itano, Wineland, PRL 75, 4714, 1995) [374], the default for ions and later atoms ever since.
-f = Pauli + leakage — leakage into neighbouring sublevels, invisible to a Pauli decoder; reach: four architectures, QCCD and electronic-gate ions, alkali and alkaline-earth atoms [graph].
+f = Pauli + leakage — leakage into neighbouring sublevels, invisible to a Pauli decoder; reach: four architectures, QCCD and electronic-gate ions, alkali atoms, and alkaline-earth and alkaline-earth-like atoms (Sr, Yb) [graph].
 
 ## Physics & limits
 The clock point kills first-order field sensitivity; what remains is the quadratic Zeeman term plus field *gradients* across the register, so memory degrades with register size, not only time. The memory is not the limit — the drive is. Raman gates carry a spontaneous-scattering error falling only as ~1/Δ, and the scattered photon usually lands outside the qubit manifold: leakage, not Pauli error. Deleting the laser deletes that term — 2Q 99.97(1)%, 1Q 99.99916(7)% on a ten-qubit seven-zone trap [D][G:OXIONICS-ALLELEC-2024-07], 8.4×10⁻⁵ without ground-state cooling [D][102]. The control modality moves the floor, not the encoding.
@@ -21,10 +21,10 @@ The clock point kills first-order field sensitivity; what remains is the quadrat
 ## Engineering state of the art
 | Date | Figure | Who | Tag+key |
 |---|---|---|---|
-| 2024-12-05 | ⁴³Ca⁺ clock qubit, chip microwave resonator, room temperature, unshielded: 1.5(4)×10⁻⁷ per Clifford, T₂ ≈ 70 s | Oxford | [D][103][G:OXFORD-1Q-1E-7-2024-12] |
+| 2024-12-05 | ⁴³Ca⁺ clock qubit, chip microwave resonator, room temperature, unshielded: 1.5(4)×10⁻⁷ per Clifford, T2 ≈ 70 s | Oxford | [D][103][G:OXFORD-1Q-1E-7-2024-12] |
 | 2025-11 | Helios fleet (98 Ba⁺): 1Q 2.5×10⁻⁵, 2Q 7.9×10⁻⁴, leakage 1.1×10⁻⁵ per Clifford | Quantinuum | [D][97] |
 
-On atoms, Cs hyperfine T₂ = 12.6 s in a 6,100-atom array [D][138]. Fleet-scale term: two-qubit-gate leakage, ~10⁻⁵ per Clifford on ions against ~10⁻⁴ per atom per gate on arrays.
+On atoms, Cs hyperfine T2 = 12.6 s in a 6,100-atom array [D][138]. Fleet-scale term: two-qubit-gate leakage, ~10⁻⁵ per Clifford on ions against ~10⁻⁴ per atom per gate on arrays.
 
 ## Manufacturing, materials & supply chain
 No dedicated process; the encoding rides whatever surrounds the species (Ba⁺, Yb⁺, Ca⁺, Cs, Rb, Sr). Two control families, two supply chains: Raman gates need the optical stack — Helios runs seven-plus wavelengths across 1,228 electrodes — while chip microwave traces delete it and move the burden to trap fabrication, internalised by IonQ's SkyWater purchase [C][19]; eleQtron sells the same idea as MAGIC [C][129]. Enriched ¹³⁷Ba and ¹⁷¹Yb are the plausible chokepoint, but no dated supplier fact was found; no specific ECCN.

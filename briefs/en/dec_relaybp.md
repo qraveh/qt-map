@@ -4,7 +4,7 @@ name: Relay-BP for qLDPC (FPGA)
 layer: "8 Decoder"
 status: demonstrated
 since: 2025
-one_line: "Belief propagation with disordered, partly negative memory strengths, chained in relay legs, decoding bivariate-bicycle qLDPC syndromes at 24 ns per iteration on an FPGA."
+one_line: "Belief propagation with disordered, partly negative memory strengths, chained in relay legs, decoding bivariate bicycle qLDPC syndromes at 24 ns per iteration on an FPGA."
 verdict: "Removes the OSD post-processor that made qLDPC decoding non-real-time: 24 ns/iteration and under 1 µs average per cycle on FPGA. Never run on live syndromes — no gross-code memory exists on any QPU as of 2026-09-04."
 updated: 2026-09-30
 ---
@@ -22,7 +22,7 @@ That buys latency: 24 ns per BP iteration and an *average* per-cycle decoding ti
 ## Engineering state of the art
 | Year | Figure | Who | Tag+key |
 |---|---|---|---|
-| 2025-06 | Relay-BP beats BP+OSD+CS-10 on bivariate-bicycle codes, matching-class on surface codes | IBM | [D][734] |
+| 2025-06 | Relay-BP beats BP+OSD+CS-10 on bivariate bicycle codes, matching-class on surface codes | IBM | [D][734] |
 | 2025-10 | FPGA: 24 ns/iteration, average < 1 µs per cycle at p < 3×10⁻³, simulated syndromes | IBM | [D][48][G:GROSSCODE-FPGA-2025-10] |
 | 2025-12 | Local Clustering Decoder: < 1 µs/round to d=17 using ≈6% of a Xilinx VU19P's LUTs | Riverlane | [D][238][G:RIVERLANE-LCD-2025-12] |
 
@@ -35,7 +35,7 @@ No fabrication process: the deliverable is a bitstream and the supply chain is m
 The decoder drives nothing; its burden is syndrome bandwidth and fan-in. One gross module is 144 data plus 144 check qubits, so a cycle yields 144 bits — ~0.14 Gbit/s per module at a 1 µs cycle [S][248]. Scaled naively, 10⁴ physical qubits is ~5 Gbit/s and 10⁶ ~0.5 Tbit/s at fixed rate: the wall is not BP arithmetic but getting bits out of the cryostat into enough parallel instances.
 
 ## Role in the stack
-It requires the bivariate-bicycle/gross qLDPC family and replaces minimum-weight perfect matching; the graph records it as the primary decoder on trapped ions with electronic gates and on continuous-variable photonic GKP, and as an alternate on the transmon lattice with tunable couplers and the linear Paul trap with individual laser addressing. Derived clock contribution: < 1.0 µs per cycle (2 s.f.), the first qLDPC decoder figure that fits inside a 1.1 µs superconducting cycle without an offline pass [D][48]; surface-code decoders such as Riverlane's LCD already fitted [D][238]. Switching costs a code change, not a board change: gross codes need degree-6 long-range couplers IBM has shown only as components, where LCD assumes the nearest-neighbour grid hardware already has [D][238][G:IBM-TOURDEGROSS-2025]. Adjacent empty slot: a merchant decoder ASIC.
+It requires the bivariate bicycle/gross qLDPC family and replaces minimum-weight perfect matching; the graph records it as the primary decoder on trapped ions with electronic gates and on continuous-variable photonic GKP, and as an alternate on the transmon lattice with tunable couplers and the linear Paul trap with individual laser addressing. Derived clock contribution: < 1.0 µs per cycle (2 s.f.), the first qLDPC decoder figure that fits inside a 1.1 µs superconducting cycle without an offline pass [D][48]; surface-code decoders such as Riverlane's LCD already fitted [D][238]. Switching costs a code change, not a board change: gross codes need degree-6 long-range couplers IBM has shown only as components, where LCD assumes the nearest-neighbour grid hardware already has [D][238][G:IBM-TOURDEGROSS-2025]. Adjacent empty slot: a merchant decoder ASIC.
 
 ## Evidence — how the numbers were measured
 Every headline is from simulated syndromes under a uniform circuit-noise model of strength p, with neither leakage nor correlated bursts — the dominant real-device terms [D][48], [734]. No independent group has reproduced either number, and Riverlane's LCD uses a different code and FPGA, so the two are not commensurable [D][238].
@@ -54,7 +54,7 @@ Every headline is from simulated syndromes under a uniform circuit-noise model o
 
 **Market & supply chain.** Decoding is priced as bundled firmware, not silicon: Riverlane sells Deltaflow, integrated with Qblox control hardware [C][659][G:RIVERLANE-DELTAFLOW-PAGE-2026-05], IBM ships Relay-BP inside its own stack. Concentration risk is FPGA supply — two vendors, one newly under private-equity control [G][735]. Goal exposure is narrow, G3 and G4 only: a real-time decoder is worthless until a code needs it, so willingness to pay is vendors insuring their own 2027–2029 roadmaps.
 
-**IP & standards.** Riverlane holds GB 2641501 A "Quantum decoder" (published 2025-12-10) on hardware clustering over the decoding hypergraph [G:SURFACE-CODE-PATENTS]; IBM's bivariate-bicycle estate covers the code, not the decoder, and no Relay-BP family appears in any named database. No standards body addresses decoder interfaces.
+**IP & standards.** Riverlane holds GB 2641501 A "Quantum decoder" (published 2025-12-10) on hardware clustering over the decoding hypergraph [G:SURFACE-CODE-PATENTS]; IBM's bivariate bicycle estate covers the code, not the decoder, and no Relay-BP family appears in any named database. No standards body addresses decoder interfaces.
 
 **Roadmaps & track record.** IBM: (2025-06 · Relay-BP algorithm · delivered); (2025-10 · FPGA implementation · delivered); (Kookaburra · promised for 2025 in the 2022 roadmap, re-promised for 2026 as the first qLDPC module · not delivered as of 2026-09-30) [R][72][G:IBM-ROADMAP-2022][G:IBM-ROADMAP]. Riverlane: (2026-03 · teraquop decoding from 2033 · too early) [C][G:RIVERLANE-ROADMAP-2026-03]. IBM's decoder software is on time twice over; the hardware it decodes is not.
 
@@ -77,6 +77,6 @@ Falsifiable (12–24 months): confirm if Kookaburra ships and a gross-code memor
 [736] A. Woodie, “IBM Touts Affordable Quantum Error Correction on AMD FPGAs,” HPCwire, Oct. 28, 2025. [Online]. Available: https://www.hpcwire.com/2025/10/28/ibm-touts-affordable-quantum-error-correction-on-amd-fpgas/ [P]
 
 ## Open verification items
-Neither abstract states the FPGA part, LUT/memory usage or arithmetic precision; the AMD attribution rests on trade press [736], whose page could not be retrieved (redirect loop).
+Neither abstract states the FPGA part, LUT (lookup table)/memory usage or arithmetic precision; the AMD attribution rests on trade press [736], whose page could not be retrieved (redirect loop).
 No latency distribution or tail percentile is published for Relay-BP — only the average.
 Riverlane's Series C is stated as $75 M in the 2024 release and $85 M in its 2026-03 roadmap release [G:RIVERLANE-FUNDING].

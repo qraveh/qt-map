@@ -1,6 +1,6 @@
 ---
 id: enc_omg
-name: Metastable ("omg") erasure encoding
+name: Metastable ('omg') erasure encoding
 layer: "2 Encoding"
 status: emerging
 since: 2023
@@ -52,7 +52,7 @@ Per-qubit line count is unchanged — the encoding's main commercial attraction.
 
 ## Role in the stack
 
-Three architectures carry it: *Rydberg tweezer array — alkaline-earth (Yb/Sr), erasure-native* as the primary encoding (Atom Computing with Microsoft, Princeton, Caltech), and two trapped-ion architectures as an alternate — *linear Paul trap with individual laser addressing* (IonQ, AQT, Quantum Art) and *electronic qubit control (microwave / RF gates)* (IonQ with Oxford Ionics, eleQtron). It **requires** an alkaline-earth atom or a trapped ion with an accessible metastable manifold; it **provides** the detectable-decay structure a mid-circuit erasure check consumes; it **replaces** ground-manifold hyperfine encoding. Switching costs a re-calibrated preparation and readout chain plus one or two lasers. Derived clock = sum of the syndrome round: gate layers + transport + readout + reset: **1.5×10⁻³ s** on the electronic-gate ion architecture (gate-set), where the encoding adds ≈1%, and **1.3×10⁻³ s** on the alkaline-earth tweezer array (transport-set), where it adds nothing. A rare Layer-2 node with no clock penalty, so conversion fraction, not speed, is what to watch. Empty neighbouring slots: no erasure-native encoding for fabricated carriers, and no sub-100-µs erasure check for ions [D][394].
+Three architectures carry it: *Rydberg tweezer array — alkaline-earth (Yb/Sr), erasure-native* as the primary encoding (Atom Computing with Microsoft, Princeton, Caltech), and two trapped-ion architectures as an alternate — *linear Paul trap with individual laser addressing* (IonQ, AQT, Quantum Art) and *electronic qubit control (microwave / RF gates)* (IonQ with Oxford Ionics, eleQtron). It **requires** an alkaline-earth(-like) atom or a trapped ion with an accessible metastable manifold; it **provides** the detectable-decay structure a mid-circuit erasure check consumes; it **replaces** ground-manifold hyperfine encoding. Switching costs a re-calibrated preparation and readout chain plus one or two lasers. Derived clock = sum of the syndrome round: gate layers + transport + readout + reset: **1.5×10⁻³ s** on the electronic-gate ion architecture (gate-set), where the encoding adds ≈1%, and **1.3×10⁻³ s** on the alkaline-earth tweezer array (transport-set), where it adds nothing. A rare Layer-2 node with no clock penalty, so conversion fraction, not speed, is what to watch. Empty neighbouring slots: no erasure-native encoding for fabricated carriers, and no sub-100-µs erasure check for ions [D][394].
 
 ## Evidence — how the numbers were measured
 
@@ -66,7 +66,7 @@ Conflicts. (i) The graph record records the [[4,2,2]] improvement as **3.6×**; 
 
 | Organisation | Role | Country | What exactly they do with this technology | Evidence |
 |---|---|---|---|---|
-| Princeton | research | US | Originated Yb-171 metastable erasure conversion; [[4,2,2]] demo | [D][8], [141], [142] |
+| Princeton | research | US | Originated ¹⁷¹Yb metastable erasure conversion; [[4,2,2]] demo | [D][8], [141], [142] |
 | University of Oregon | research | US | Only metastable-ion gate with erasure conversion; omg mid-circuit cooling | [D][393], [394] |
 | Caltech | research | US | Sr Rydberg erasure excision | [D][143] |
 | UCLA | research | US | omg blueprint co-author; metastable ion theory | [D][333], [392] |
@@ -97,7 +97,7 @@ Conflicts. (i) The graph record records the [[4,2,2]] improvement as **3.6×**; 
 
 **Roadmaps & track record.** (2021 · omg blueprint · partly delivered — Oregon entanglement 2024 [D][393], mid-circuit cooling 2026 [D][394]; no product.) (2022-01 · 98% conversion · missed by 2.6×, 38(6)% measured [D][142].) (2028 · QuEra Libra >256 logical · on roadmap, no metastable commitment [G:QUERA-LIBRA-2026].) (2026/27 · Magne 50 logical · installing, ground-manifold Yb [G:MAGNE-2025-07].) The vendors made no omg promises to break.
 
-**Strategic reading.** Winners would be alkaline-earth atom vendors and ion vendors still using laser gates; losers, decoder stacks tuned for Pauli noise. Substitution bites from both sides: atom loss is >80% of array leakage and Harvard detected it on ground-manifold Rb for 2.14(13)× below threshold [D][4], while laser-free ion gates at 8.4×10⁻⁵ delete the error omg catches [D][102].
+**Strategic reading.** Winners would be alkaline-earth(-like) atom vendors and ion vendors still using laser gates; losers, decoder stacks tuned for Pauli noise. Substitution bites from both sides: atom loss is >80% of array leakage and Harvard detected it on ground-manifold Rb for 2.14(13)× below threshold [D][4], while laser-free ion gates at 8.4×10⁻⁵ delete the error omg catches [D][102].
 
 ## Outlook & open questions
 

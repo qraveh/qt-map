@@ -5,7 +5,7 @@ layer: "4 Connectivity / transport"
 status: demonstrated
 since: 2002
 one_line: Moving trapped ions between zones through junctions or grid traps so a small gate-able crystal inherits all-to-all connectivity.
-verdict: Sorting, splitting and re-cooling — not the hop, not the gate — set the ion clock (~55 ms per full-width layer on Helios). Without a 10x cut by 2028 ion QCCD stays high-fidelity and low-throughput.
+verdict: Sorting, splitting and re-cooling — not the hop, not the gate — set the ion clock (~55 ms per full-width layer on Helios). Without a 10× cut by 2028 ion QCCD stays high-fidelity and low-throughput.
 updated: 2026-09-04
 ---
 
@@ -19,7 +19,7 @@ Mobility and time: the carrier itself moves, at 1.7–4 m/s measured [D][114], [
 ## Physics & limits
 Ramping neighbouring segment voltages drags a potential well, and its ion, along the axis — and the move need not be slow: NIST moved ⁹Be⁺ 370 µm in 8 µs, excitation peaking at 1.6 quanta and returning to 0.2 by waveform design [D][500]. The millisecond cost is therefore not the hop but splitting and recombining crystals (two ions split in 55 µs kept ~2 quanta each [D][500]) and the sideband cooling that restores the gate modes.
 
-At a junction the RF null is discontinuous: the ion crosses a pseudopotential bump with excess micromotion, which sets transit speed and heating. Beneath that is anomalous heating from electrode-surface noise, steep as the ion nears the surface, so tighter confinement cannot buy adiabaticity. What moves the floor is a gate tolerant of a warm crystal: the electronic gate reached 8.4×10⁻⁵ error without ground-state cooling [D][102], deleting the re-cool term rather than shrinking it.
+At a junction the rf null is discontinuous: the ion crosses a pseudopotential bump with excess micromotion, which sets transit speed and heating. Beneath that is anomalous heating from electrode-surface noise, steep as the ion nears the surface, so tighter confinement cannot buy adiabaticity. What moves the floor is a gate tolerant of a warm crystal: the electronic (laser-free, microwave-driven) gate reached 8.4×10⁻⁵ error without ground-state cooling [D][102], deleting the re-cool term rather than shrinking it.
 
 ## Engineering state of the art
 | Year | Figure | Who | Tag+key |
@@ -38,10 +38,10 @@ Traps are segmented-electrode chips. Honeywell is Quantinuum's captive fab and m
 A move is a synchronised DC waveform across tens of electrodes at µs update, then cooling and, for laser gates, beam re-addressing. Helios carries 1,228 electrodes for 98 ions [D][97]: electrode count is what scales, and updates fit three orders inside the 55 ms layer, so electronics is not the wall. At 10³ ions it is ~10⁴ filtered DC channels, which Oxford Ionics would cut to ~200 external sources by putting switching electronics on-chip — a design study, no chip built [S][325]. At 10⁴–10⁶ the constraint is routing cooling and gate light to many zones at once (Helios needs ≥7 wavelengths): none drives more than a few dozen concurrently.
 
 ## Role in the stack
-Shuttling serves two of the three trapped-ion architectures — QCCD (Quantinuum), where it is primary, and electronic qubit control (IonQ/Oxford Ionics, eleQtron), where it is the alternate — providing the arbitrary-pair connectivity that bivariate-bicycle qLDPC memories and high-rate transversal codes assume: Quantinuum's [[80,48,4]] demonstration pays for it in transport, while IonQ's qLDPC break-even ran on a static 40-ion chain without it. It replaces the static long chain, whose mode spectrum crowds as ions are added; the price is that connectivity becomes scheduling and the clock moves from gate to move — derived clock = sum of the syndrome round: gate layers + transport + readout + reset ≈ 9.7 ms, transport 9.0 ms of it, against the measured ~55 ms full-width layer [D][97]. Neighbouring empty slot: more than two linked modules — the two-module link exists [D][117], nothing larger.
+Shuttling serves two of the three trapped-ion architectures — QCCD (Quantinuum), where it is primary, and electronic qubit control (IonQ/Oxford Ionics, eleQtron), where it is the alternate — providing the arbitrary-pair connectivity that bivariate bicycle qLDPC memories and high-rate transversal codes assume: Quantinuum's [[80,48,4]] demonstration pays for it in transport, while IonQ's qLDPC break-even ran on a static 40-ion chain without it. It replaces the static long chain, whose mode spectrum crowds as ions are added; the price is that connectivity becomes scheduling and the clock moves from gate to move — derived clock = sum of the syndrome round: gate layers + transport + readout + reset ≈ 9.7 ms, transport 9.0 ms of it, against the measured ~55 ms full-width layer [D][97]. Neighbouring empty slot: more than two linked modules — the two-module link exists [D][117], nothing larger.
 
 ## Evidence — how the numbers were measured
-Transport has no stand-alone benchmark. It is inferred from sideband thermometry around a move — the 0.013(1)–0.030(2) quanta figures [D][114] — and from two-qubit fidelity after a transport sequence, which folds transport into gate error. Neither captures cumulative heating over a deep circuit, junction loss at scale, or zone cross-talk. The 55 ms layer and 2.5 kHz exchange rate are vendor-reported and externally unreplicated as of 2026-09-04; AQT's quantum volume 32,768 is not a transport measurement and discloses no timing [C][128].
+Transport has no stand-alone benchmark. It is inferred from sideband thermometry around a move — the 0.013(1)–0.030(2) quanta figures [D][114] — and from two-qubit fidelity after a transport sequence, which folds transport into gate error. Neither captures cumulative heating over a deep circuit, junction loss at scale, or zone crosstalk. The 55 ms layer and 2.5 kHz exchange rate are vendor-reported and externally unreplicated as of 2026-09-04; AQT's quantum volume 32,768 is not a transport measurement and discloses no timing [C][128].
 
 ## Actors & economics
 **Who.**

@@ -1,6 +1,6 @@
 ---
 id: enc_bare
-name: תת-מרחב דו-רמתי חשוף
+name: קיוביט פיזי חשוף (ללא קידוד)
 layer: 2 קידוד
 status: demonstrated
 since: 2007

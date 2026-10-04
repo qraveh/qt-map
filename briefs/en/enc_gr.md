@@ -12,7 +12,7 @@ updated: 2026-09-26
 Ω = Rabi frequency; Δ = detuning; C6 = van der Waals coefficient; R_b = blockade radius; T2* = Ramsey dephasing time; T2echo = spin-echo coherence time; G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-The qubit is a level pair inside one atom: |g⟩ in the 5S1/2 ground manifold and |r⟩ = |70S1/2⟩ in QuEra's Rb-87 machine Aquila, reached by a two-photon 420 nm + 1013 nm drive via 6P3/2 [C][262]. "Encoding" names the computational basis of an analog machine, not a code: the program is a Hamiltonian, the output a g/r pattern. The line starts with the 51-atom Harvard–MIT Ising-type simulator of 2017 [D][384], co-authored by QuEra's CEO Alexander Keesling [C][262]; Pasqal's architecture paper calls it the analog level, "programming Hamiltonian sequences" [C][385]. Attributes: natural carrier, nothing fabricated; no step time, control modality or placement of its own; loss and coherent errors.
+The qubit is a level pair inside one atom: |g⟩ in the 5S₁/₂ ground manifold and |r⟩ = |70S₁/₂⟩ in QuEra's ⁸⁷Rb machine Aquila, reached by a two-photon 420 nm + 1013 nm drive via 6P₃/₂ [C][262]. "Encoding" names the computational basis of an analog machine, not a code: the program is a Hamiltonian, the output a g/r pattern. The line starts with the 51-atom Harvard–MIT Ising-type simulator of 2017 [D][384], co-authored by QuEra's CEO Alexander Keesling [C][262]; Pasqal's architecture paper calls it the analog level, "programming Hamiltonian sequences" [C][385]. Attributes: natural carrier, nothing fabricated; no step time, control modality or placement of its own; loss and coherent errors.
 
 ## Physics & limits
 Aquila runs H(t) = (Ω/2)Σᵢ(e^{iφ}|gᵢ⟩⟨rᵢ| + h.c.) − ΔΣᵢnᵢ + Σ_{i<j} C6/|xᵢ−xⱼ|⁶ nᵢnⱼ, nᵢ = |rᵢ⟩⟨rᵢ|, with C6 = 5.42×10⁶ rad µm⁶ µs⁻¹ for 70S, |Ω| ≤ 15.8 rad/µs, |Δ| ≤ 125 rad/µs [C][262]; Pulser uses the same convention for Pasqal's "ground-rydberg" basis [C][386]. Blockade forbids two excitations within R_b = (C6/Ω)^{1/6} ≈ 8.4 µm at full drive [S][262].
@@ -85,7 +85,7 @@ Confirm if by 2027-12-31 a commercial analog machine publishes T2* above 20 µs;
 ## Open verification items
 - 2026-09-26: the arXiv page for 1802.10424 (v2) was refused by the fetch proxy (HTTP 429); its record rests on the v1 abstract and APS/ADS search results, authors after the first two unconfirmed.
 - 2026-09-26: Fresnel and Orion Rydberg level, T2* and echo time not found in the Pasqal pages opened; Fig. 6b of arXiv:2006.12326 not opened, only its abstract.
-- 2026-09-26: Gemini's product page names Rb-87 and digital mode, not the hyperfine pair; its enc_hf placement rests on the Harvard–MIT gate papers.
+- 2026-09-26: Gemini's product page names ⁸⁷Rb and digital mode, not the hyperfine pair; its enc_hf placement rests on the Harvard–MIT gate papers.
 - 2026-09-26: the string-breaking abstract does not name Aquila; QuEra authorship suggests it, unconfirmed.
 - 2026-09-26: whether Vela shipped and whether Pasqal's mid-2026 advantage objective was met were not checked.
 - 2026-09-26: the Aquila text opened gives neither the beam geometry assumed in the Doppler estimate nor the F, mF sublevel of |g⟩ in analog mode.

@@ -1,6 +1,6 @@
 ---
 id: fab_cmos
-name: 300 mm CMOS foundry (spins, cryo-CMOS, SC wiring)
+name: 300 mm CMOS foundry (spins, cryo-CMOS, superconducting wiring)
 layer: 10 Manufacturing
 status: demonstrated
 since: 2022
@@ -13,9 +13,9 @@ updated: 2026-09-30
 
 ## Identity & lineage
 
-This node is a manufacturing regime, not a qubit: 300 mm CMOS production lines making gate-defined quantum-dot arrays (Si/SiGe, Si-MOS, Ge), their cryo-CMOS ASICs, and superconducting qubit and wiring layers. A quantum dot is an accumulation-mode transistor at single-electron occupancy; at 45–100 nm pitch the foundry supplies uniformity, interface quality and isotopic control, not resolution, across tens of thousands of devices per wafer with cryogenic wafer-level test.
+This node is a manufacturing regime, not a qubit: 300 mm CMOS production lines making gate-defined quantum-dot arrays (Si/SiGe, SiMOS, Ge), their cryo-CMOS ASICs, and superconducting qubit and wiring layers. A quantum dot is an accumulation-mode transistor at single-electron occupancy; at 45–100 nm pitch the foundry supplies uniformity, interface quality and isotopic control, not resolution, across tens of thousands of devices per wafer with cryogenic wafer-level test.
 
-CEA-Leti opened the route in 2016 with a spin qubit in a 28 nm FD-SOI flow [D][793]. Intel and QuTech made the first all-optically patterned 300 mm qubits in March 2022 [D][794], fixing *since 2022*; Intel added EUV arrays and 1.6 K wafer statistics in 2024 [D][199], [766]. imec produced 300 mm transmons in 2024 [D][293] and, with Diraq, unit cells above 99% in 2025 [D][189]. GlobalFoundries' 22FDX became the merchant option in 2025 [D][767], ST started 28Si FD-SOI lots in December 2025 [P][795], and US CHIPS letters of intent followed in May 2026 [G][300].
+CEA-Leti opened the route in 2016 with a spin qubit in a 28 nm FD-SOI flow [D][793]. Intel and QuTech made the first all-optically patterned 300 mm qubits in March 2022 [D][794], fixing *since 2022*; Intel added EUV arrays and 1.6 K wafer statistics in 2024 [D][199], [766]. imec produced 300 mm transmons in 2024 [D][293] and, with Diraq, unit cells above 99% in 2025 [D][189]. GlobalFoundries' 22FDX became the merchant option in 2025 [D][767], ST started ²⁸Si FD-SOI lots in December 2025 [P][795], and US CHIPS letters of intent followed in May 2026 [G][300].
 
 Attributes (technology graph):
 a, carrier affinity: fabricated, 1.0; the node is fabrication itself.
@@ -28,13 +28,13 @@ g, manufacturing: CMOS.
 
 ## Physics & limits
 
-Mechanism. The fab fixes four inherited quantities: geometric uniformity, critical dimension within 0.5 nm at 45–100 nm pitch [D][199]; electrostatic disorder, a random threshold-voltage spread of 59 mV on Intel Si/SiGe [D][766]; isotopic purity, 800 ppm residual 29Si at Intel [D][199] and 400 ppm at imec [D][189]; and interface quality, which sets charge noise and, in Si/SiGe, the valley-splitting distribution.
+Mechanism. The fab fixes four inherited quantities: geometric uniformity, critical dimension within 0.5 nm at 45–100 nm pitch [D][199]; electrostatic disorder, a random threshold-voltage spread of 59 mV on Intel Si/SiGe [D][766]; isotopic purity, 800 ppm residual ²⁹Si at Intel [D][199] and 400 ppm at imec [D][189]; and interface quality, which sets charge noise and, in Si/SiGe, the valley-splitting distribution.
 
-Scales. T2*/T2echo reach 5/205 µs on 28Si Si/SiGe against 0.6/98 µs on natural silicon [D][766]; Hahn-echo T2 reaches 1.31 ms on imec SiMOS [D][197].
+Scales. T2*/T2echo reach 5/205 µs on ²⁸Si Si/SiGe against 0.6/98 µs on natural silicon [D][766]; Hahn-echo T2 reaches 1.31 ms on imec SiMOS [D][197].
 
-Floor. For spins it is material: residual 29Si, interface charge noise and the Si/SiGe valley-splitting tail that turns some dots into leakage sinks. For transmons it is junction targeting: across a 300 mm wafer qubit frequencies spread 5–7%, i.e. 10–14% in junction resistance at qubit junction sizes (the ~8% resistance spread is that of large junctions) [D][293], an order above collision-free lattice needs; alternating-bias annealing (97.4% targeting [D][294]) is post-fab, not a foundry property.
+Floor. For spins it is material: residual ²⁹Si, interface charge noise and the Si/SiGe valley-splitting tail that turns some dots into leakage sinks. For transmons it is junction targeting: across a 300 mm wafer qubit frequencies spread 5–7%, i.e. 10–14% in junction resistance at qubit junction sizes (the ~8% resistance spread is that of large junctions) [D][293], an order above collision-free lattice needs; alternating-bias annealing (97.4% targeting [D][294]) is post-fabrication, not a foundry property.
 
-As the code sees it: coherent, calibratable error (HRL attributes about 80% of CNOT error on its 54-dot array to control and calibration [D][190]) plus leakage and slow drift; nothing is erasure-convertible; wafer gradients [D][293] become spatially correlated error. Moving the floor needs 10-ppm-class 28Si, engineered valley splitting (simulation only [S][796]), Ge/SiGe holes or in-flow junction trimming.
+As the code sees it: coherent, calibratable error (HRL attributes about 80% of CNOT error on its 54-dot array to control and calibration [D][190]) plus leakage and slow drift; nothing is erasure-convertible; wafer gradients [D][293] become spatially correlated error. Moving the floor needs 10-ppm-class ²⁸Si, engineered valley splitting (simulation only [S][796]), Ge/SiGe holes or in-flow junction trimming.
 
 ## Engineering state of the art
 
@@ -54,13 +54,13 @@ Dominant error term: the 2Q plateau at 99.0–99.6% is charge noise plus exchang
 
 ## Manufacturing, materials & supply chain
 
-Platforms. Intel D1: Si/SiGe wells, immersion and EUV lithography, cryo-prober screening [D][199], [766]. imec: SiMOS with overlapping polysilicon gates below 100 nm pitch on 400 ppm 28Si [D][189], plus a transmon flow with dry-etched overlap junctions [D][293]. FD-SOI: GlobalFoundries 22FDX (Quantum Motion [D][767]; Equal1 [C][797]) and ST 28 nm at Crolles on Soitec 28Si substrates, first lots December 2025 [P][795]. HRL and SkyWater run 200 mm [D][190][C][19].
+Platforms. Intel D1: Si/SiGe wells, immersion and EUV lithography, cryo-prober screening [D][199], [766]. imec: SiMOS with overlapping polysilicon gates below 100 nm pitch on 400 ppm ²⁸Si [D][189], plus a transmon flow with dry-etched overlap junctions [D][293]. FD-SOI: GlobalFoundries 22FDX (Quantum Motion [D][767]; Equal1 [C][797]) and ST 28 nm at Crolles on Soitec ²⁸Si substrates, first lots December 2025 [P][795]. HRL and SkyWater run 200 mm [D][190][C][19].
 
 Yield. 96% device yield on a quantum-optimised flow [D][766] against 28–40% on a merchant flow [D][767] is this node's central number.
 
 Cost and energy. No foundry publishes a quantum wafer price; Diraq's < $1 per qubit target [R][211] and vendors' rack-scale claims [C][200], [355], [771] are unaudited.
 
-Supply chain. Lines: Intel (captive); imec, coordinator of the EU SPINS pilot line [G][770]; GlobalFoundries' Quantum Technology Solutions unit [C][353]; IBM Albany, becoming Anderon for superconducting wiring, TSVs and bumps [C][798]; SkyWater, 200 mm, IonQ-owned since 2026-07-31 [C][19]. Materials: enriched 28Si, historically Russian, now also from ASP Isotopes in Pretoria (commercial since 2025-03-27) [C][347] and from ORNL and PNNL as 99.9999% 28Si silane (US DOE, announced 2026-07-16) [G][348]; Silex completed a plant for up to 20 kg per year in June 2026, commissioning late 2026, for SQC [C][799]. Equipment: cryogenic wafer probers from Bluefors/Afore (< 2 K, 300 mm, 768 DC, 48 RF lines) [C][800] and FormFactor [C][801]. Single points of failure: EUV dots only at Intel and imec; a prober duopoly; 28Si from a handful of enrichers.
+Supply chain. Lines: Intel (captive); imec, coordinator of the EU SPINS pilot line [G][770]; GlobalFoundries' Quantum Technology Solutions unit [C][353]; IBM Albany, becoming Anderon for superconducting wiring, TSVs and bumps [C][798]; SkyWater, 200 mm, IonQ-owned since 2026-07-31 [C][19]. Materials: enriched ²⁸Si, historically Russian, now also from ASP Isotopes in Pretoria (commercial since 2025-03-27) [C][347] and from ORNL and PNNL as 99.9999% ²⁸Si silane (US DOE, announced 2026-07-16) [G][348]; Silex completed a plant for up to 20 kg per year in June 2026, commissioning late 2026, for SQC [C][799]. Equipment: cryogenic wafer probers from Bluefors/Afore (< 2 K, 300 mm, 768 DC, 48 RF lines) [C][800] and FormFactor [C][801]. Single points of failure: EUV dots only at Intel and imec; a prober duopoly; ²⁸Si from a handful of enrichers.
 
 Export control. BIS's rule of 2024-09-06 controls cryogenic CMOS ICs for ≤ 4.5 K (ECCN 3A901), cryogenic systems ≥ 600 µW at ≤ 0.1 K (3A904), cryogenic wafer probers (3B904) and quantum computers by qubit count and C-NOT error together, from 34 qubits at ≤ 10⁻⁴ to any error from 2,000 qubits (4A906) [G:BIS-3A901A-CRYOCMOS], with License Exception IEC for allies [G][301][G:BIS-QUANTUM-2024]; EU and UK lists match. The same rule controls silicon and germanium enriched beyond set isotope fractions — epitaxial layers, hydrides such as silane, bulk and oxides (3C907–3C909) [G][301].
 
@@ -111,7 +111,7 @@ Replication: imec's SiMOS numbers reproduce across four devices and two institut
 | 2026-07-23 | IBM | M&A: HRL Laboratories | undisclosed | — | — | announced; closed 2026-08-26; potential plans for spin qubits at Anderon [C][10][G:IBM-HRL-2026-07][G:IBM-HRL-CLOSED-2026-08] |
 | 2026-07-31 | IonQ | M&A: SkyWater | $15.00 + 0.4883 IonQ shares per share (~$1.8 B) | — | — | closed [C][19][G:IONQ-SKYWATER-2026] |
 
-**Market & supply chain.** Quantum is immaterial to foundry revenue. Concentration: two EUV-capable dot lines, one merchant FD-SOI option (ST entering), a prober duopoly, a handful of 28Si enrichers. Unit economics: unpublished beyond Diraq's target [R][211]. Payers: G4 for 10⁶-qubit CMOS density; G7, as of 3 Sep 2026, for rack-scale spin systems; superconducting vendors buy Anderon/GF wiring for G2–G4; ion vendors buy standard-fab traps for G2, G3, G7.
+**Market & supply chain.** Quantum is immaterial to foundry revenue. Concentration: two EUV-capable dot lines, one merchant FD-SOI option (ST entering), a prober duopoly, a handful of ²⁸Si enrichers. Unit economics: unpublished beyond Diraq's target [R][211]. Payers: G4 for 10⁶-qubit CMOS density; G7, as of 3 Sep 2026, for rack-scale spin systems; superconducting vendors buy Anderon/GF wiring for G2–G4; ion vendors buy standard-fab traps for G2, G3, G7.
 
 **IP & standards.** Portfolios: Intel, HRL, Diraq/UNSW, Quantum Motion/UCL, Quobly (CEA/CNRS licences), Equal1; no litigation public; no dated family count from a named database found. SPINS promises quantum PDKs and multi-project-wafer access [G][770]; GF markets FDX cryogenic models [C][353]; no open cryogenic device-model standard exists.
 

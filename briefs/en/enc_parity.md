@@ -4,7 +4,7 @@ name: Fermion-parity encoding (tetron)
 layer: "2 Encoding"
 status: theory / design only
 since: 2025
-one_line: One logical qubit in the fermion parity of four Majorana modes on two wires; Z and X are parities of different mode pairs, both non-local.
+one_line: One logical qubit in the fermion parity of four Majorana zero modes on two wires; Z and X are parities of different mode pairs, both non-local.
 verdict: Not a working encoding as of 4 Sep 2026 — its X channel lives ~1000× shorter than its Z channel; falsified as fault-tolerance-relevant unless that ratio falls below 10× by 2028.
 updated: 2026-09-04
 ---
@@ -12,7 +12,7 @@ updated: 2026-09-04
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-Four Majorana modes on two wires joined by a superconducting backbone hold one qubit: Z is the parity of one wire's mode pair, X of a pair spanning both, so neither logical operator is local. Karzig et al. defined the tetron and hexon layouts in 2017, with Cliffords by measurement rather than braiding [S][421]. Only Z-type parity has been read with a stated fidelity; the X measurement the encoding requires has not [D][21].
+Four Majorana zero modes (MZMs) on two wires joined by a superconducting backbone hold one qubit: Z is the parity of one wire's mode pair, X of a pair spanning both, so neither logical operator is local. Karzig et al. defined the tetron and hexon layouts in 2017, with Cliffords by measurement rather than braiding [S][421]. Only Z-type parity has been read with a stated fidelity; the X measurement the encoding requires has not [D][21].
 a fabricated (1.0) · b not a gate · c no readout · d no transport
 e no control · f asymmetric, poisoning-dominated · g inherits the wire fab
 

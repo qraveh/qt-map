@@ -1,6 +1,6 @@
 ---
 id: g_elec
-name: Electronic near-field microwave gate (ions, laser-free)
+name: Electronic microwave gate (ions, laser-free: near-field or static gradient)
 layer: "3 Gate mechanism"
 status: demonstrated
 since: 2024
@@ -42,7 +42,7 @@ Best demonstrated: two-qubit error 8.4(7)×10⁻⁵ (2025-10) on a laboratory ch
 | 2024-12 | Single-qubit error 1.5(4)×10⁻⁷ per Clifford, chip-integrated microwave resonator | Oxford (Lucas group) | [D][103] |
 | 2025-10 | Two-qubit error 8.4(7)×10⁻⁵ at n̄ = 9.4(3), no ground-state cooling | Oxford Ionics / IonQ | [D][102] |
 
-Dominant terms today: temperature-dependent residual spin–motion entanglement and coherent control error. The headline is an estimate from subspace-leakage randomized benchmarking, not tomography [D][102]. Gate duration is 225.8 µs in 2025 and ≈120 µs (two 60 µs pulses) in 2024 [D][102], [257].
+Dominant terms today: temperature-dependent residual spin–motion entanglement and coherent control error. The headline is an estimate from subspace-leakage randomised benchmarking, not tomography [D][102]. Gate duration is 225.8 µs in 2025 and ≈120 µs (two 60 µs pulses) in 2024 [D][102], [257].
 
 ## Manufacturing, materials & supply chain
 
@@ -60,7 +60,7 @@ The node sits on the architecture "Trapped ions — electronic qubit control (mi
 
 ## Evidence — how the numbers were measured
 
-The headline 8.4(7)×10⁻⁵ comes from subspace-leakage randomized benchmarking at Doppler temperature, not from tomography or interleaved RB against an independent reference [D][102]. Two-qubit RB twirls coherent errors into an effective depolarising rate, understating the coherent residual, and says nothing about crosstalk to spectator ions — the term that will decide performance at scale. No independent group has replicated the electronic gate above 99.9%: the 2016 Oxford [D][445] and 2011 NIST [D][444] results are the only non-Oxford-Ionics near-field microwave gates on record, and neither eleQtron nor Universal Quantum has published a comparable fidelity as of 3 Sep 2026. The company line "99.99% two-qubit gate fidelity" [C][446] rounds the preprint's 1 − 8.4(7)×10⁻⁵ — consistent, but with no error bar and no width.
+The headline 8.4(7)×10⁻⁵ comes from subspace-leakage randomised benchmarking at Doppler temperature, not from tomography or interleaved RB against an independent reference [D][102]. Two-qubit RB twirls coherent errors into an effective depolarising rate, understating the coherent residual, and says nothing about crosstalk to spectator ions — the term that will decide performance at scale. No independent group has replicated the electronic gate above 99.9%: the 2016 Oxford [D][445] and 2011 NIST [D][444] results are the only non-Oxford-Ionics near-field microwave gates on record, and neither eleQtron nor Universal Quantum has published a comparable fidelity as of 3 Sep 2026. The company line "99.99% two-qubit gate fidelity" [C][446] rounds the preprint's 1 − 8.4(7)×10⁻⁵ — consistent, but with no error bar and no width.
 
 ## Actors & economics
 

@@ -13,7 +13,7 @@ updated: 2026-09-30
 
 ## Identity & lineage
 
-A dual-rail qubit is one quantum of excitation shared between two modes: |0_L⟩ = |10⟩, |1_L⟩ = |01⟩. The dominant hardware error — cavity photon loss, transmon T₁ decay, waveguide absorption — is the annihilation operator on either rail, and it sends both logical states to |00⟩, outside the code space. A total-excitation measurement therefore commutes with the logical operators: decay is caught and *located* without disturbing the encoded state, turning the largest error term from unknown Pauli into heralded erasure. What remains is differential dephasing between two rails never quite identical.
+A dual-rail qubit is one quantum of excitation shared between two modes: |0_L⟩ = |10⟩, |1_L⟩ = |01⟩. The dominant hardware error — cavity photon loss, transmon T1 decay, waveguide absorption — is the annihilation operator on either rail, and it sends both logical states to |00⟩, outside the code space. A total-excitation measurement therefore commutes with the logical operators: decay is caught and *located* without disturbing the encoded state, turning the largest error term from unknown Pauli into heralded erasure. What remains is differential dephasing between two rails never quite identical.
 
 Dual-rail is the native photonic qubit: Chuang and Yamamoto (1995) called it "a simple form of error correction" [S][398]; Knill, Laflamme and Milburn built linear optics on it in 2000 [S][337]. The superconducting transfer was deliberate — AWS proposed transmon pairs (2022-08) [S][334], Yale cavities (2022-12) [S][399], both demonstrated July 2023 [D][400], [401].
 
@@ -109,7 +109,7 @@ Replication is real: transmon AWS 2023 → SUSTech 2025 → AWS 2026; cavity Yal
 - AWS: no dual-rail product promised · three papers delivered 2022–2026 [D][85], [400]. Oxford Quantum Circuits: TITAN announced with the Series C · no dated dual-rail target [C][60].
 Credibility: Quantum Circuits/D-Wave publishes the field's best channel numbers and has shipped only the 8-qubit Seeker; AWS publishes and promises nothing; PsiQuantum's components are the best-characterised anywhere, its systems slip.
 
-**Strategic reading.** If dual-rail wins, the winners own long-lived modes and cheap area — cavity vendors and photonic foundries — and the losers are transmon roadmaps spending their whole budget on T₁, since the encoding makes T₁ a *detected* cost, not a fatal one. Substitution runs hard from inside the family: the transmon-qutrit erasure qubit needs one transmon and one ancilla, not two rails, at logical T₁ > 500 µs against a physical ~55 µs [D][405]; dual-rail cat codes add bias to the same structure [S][410]. Bargaining power sits with platform vendors.
+**Strategic reading.** If dual-rail wins, the winners own long-lived modes and cheap area — cavity vendors and photonic foundries — and the losers are transmon roadmaps spending their whole budget on T1, since the encoding makes T1 a *detected* cost, not a fatal one. Substitution runs hard from inside the family: the transmon-qutrit erasure qubit needs one transmon and one ancilla, not two rails, at logical T1 > 500 µs against a physical ~55 µs [D][405]; dual-rail cat codes add bias to the same structure [S][410]. Bargaining power sits with platform vendors.
 
 ## Outlook & open questions
 

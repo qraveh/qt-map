@@ -17,14 +17,14 @@ Algorithmic fault tolerance, introduced by Zhou, Bluvstein, Kubica, Lukin and co
 Mobility: it presumes a machine that can bring any two blocks into register — tweezer transport or ion shuttling — not a fixed lattice. Error structure: no new channel — the code's own Pauli and erasure noise, atom loss dominant, with physical-cycle overhead traded for classical decoding overhead.
 
 ## Physics & limits
-The d-round rule exists because one round cannot distinguish a measurement error from a data error; repeating the syndrome circuit d times makes the detector graph's space-time distance equal the code distance. That redundancy is only needed when each block is decoded alone: a transversal CNOT maps a fault in one block to its partner in the other, so the joint graph across blocks and time still has distance d after O(1) rounds — if the decoder uses it. The proof bounds deviation from the ideal logical measurement distribution as exponentially small [D][152].
+The d-round rule exists because one round cannot distinguish a measurement error from a data error; repeating the syndrome circuit d times makes the detector graph's spacetime distance equal the code distance. That redundancy is only needed when each block is decoded alone: a transversal CNOT maps a fault in one block to its partner in the other, so the joint graph across blocks and time still has distance d after O(1) rounds — if the decoder uses it. The proof bounds deviation from the ideal logical measurement distribution as exponentially small [D][152].
 
 The cost moves to the classical side, structurally. The joint graph does not factorise, so the sliding window that keeps per-block decoding local in time is no longer exact: the decoder spans several logical gates, cannot close its window until the next feed-forward point, and its work grows with the blocks entangled since the last measurement, not with d.
 
 ## Engineering state of the art
 | Year | Figure | Who | Tag+key |
 |---|---|---|---|
-| 2024-06 | O(d) → O(1) rounds per logical gate, >10× space-time reduction (proof, simulation) | Harvard/QuEra | [D][152] |
+| 2024-06 | O(d) → O(1) rounds per logical gate, >10× spacetime reduction (proof, simulation) | Harvard/QuEra | [D][152] |
 | 2025-05 | RSA-2048 in 5.6 days on 19 M atoms at a 1 ms cycle, ~50× faster than comparable | Harvard/QuEra | [S][31] |
 | 2025-11 | 448 atoms: transversal CNOTs, hundreds of teleportations, 96 logical qubits | Harvard/QuEra | [D][4] |
 | 2026-03 | Shor with 10,000 atoms (26,000 for speed): P-256 in days, RSA-2048 far longer | Harvard/Caltech | [S][30] |
@@ -33,13 +33,13 @@ The cost moves to the classical side, structurally. The joint graph does not fac
 Every reported gain is simulation or an offline decode of stored syndromes: no published run closes the loop — transversal gate, correlated decode, feed-forward — in real time.
 
 ## Manufacturing, materials & supply chain
-An architecture and decoding layer with no process, yield or unit cost. Its supply-chain exposure is second-hand but specific: crossed acousto-optic deflectors, where AA Opto-Electronic and Gooch & Housego are the only vendors named in the 448-atom work [D][4], and the classical hardware running the decode. NVIDIA's NVQLink sets the yardstick at 3.84 µs round trip and 67 µs median BP-OSD decode — on the far easier per-block problem [C][324].
+An architecture and decoding layer with no process, yield or unit cost. Its supply-chain exposure is second-hand but specific: crossed acousto-optic deflectors, where AA Opto-Electronic and Gooch & Housego are the only vendors named in the 448-atom work [D][4], and the classical hardware running the decode. NVIDIA's NVQLink sets the yardstick at 3.84 µs round trip and 67 µs median decode with BP+OSD (belief propagation plus ordered-statistics decoding) — on the far easier per-block problem [C][324].
 
 ## Control, readout & I/O burden
 No new laser, control line or detector; the burden is classical and real-time. A correlated decoder must ingest syndromes from every block touched by a transversal gate and return a correction before the next feed-forward point — within milliseconds on atoms, on a graph 10²–10³× larger than the single-block problem GPUs handle now. At 10³ logical qubits the evidence is simulation; at 10⁴–10⁶ no latency model has been published, and both resource estimates assume decoding keeps up [S][31][S][30]. That assumption, not atom count, is where this fails if it fails.
 
 ## Role in the stack
-It applies on any architecture that can move qubits: the alkali Rydberg tweezer array (QuEra, Pasqal, Infleqtion) and — though the graph record models it on that array alone — Atom Computing's alkaline-earth arrays and the trapped-ion QCCD architecture, where Quantinuum runs the same [[16,6,4]] code transversally [D][667]. It requires transport plus correlated, loss-aware decoding, and conflicts with fixed nearest-neighbour lattices, which cannot pair arbitrary blocks without a routing layer. It adds no term to the derived clock but multiplies it, cutting rounds per logical gate from ~d (at d = 7 on atoms, ~9 ms per gate) to O(1). Neighbouring empty slot: a real-time correlated decoder.
+It applies on any architecture that can move qubits: the alkali Rydberg tweezer array (QuEra, Pasqal, Infleqtion) and — though the graph record models it on that array alone — Atom Computing's alkaline-earth(-like) arrays and the trapped-ion QCCD architecture, where Quantinuum runs the same [[16,6,4]] code transversally [D][667]. It requires transport plus correlated, loss-aware decoding, and conflicts with fixed nearest-neighbour lattices, which cannot pair arbitrary blocks without a routing layer. It adds no term to the derived clock but multiplies it, cutting rounds per logical gate from ~d (at d=7 on atoms, ~9 ms per gate) to O(1). Neighbouring empty slot: a real-time correlated decoder.
 
 ## Evidence — how the numbers were measured
 Transversal gates and 96 active logical qubits are hardware measurements [D][4]; the >10× reduction is a theorem plus simulation [D][152], unreproduced outside the author group. The two resource estimates differ by three orders in space — a trade curve, not a contradiction: 19 M atoms buys RSA-2048 in 5.6 days [S][31], while 10,000–26,000 atoms buys P-256 in days and RSA-2048 one to two orders slower [S][30]; "RSA-2048 with 10,000 atoms" is what neither paper says. The sharpest counter-evidence is Atom Computing and Microsoft's toric code: Λ_Z ≈ 1.9 but Λ_X ≈ 1.2, average 1.30 over four cycles, and with reloading over 90 rounds suppression vanished (0.63% versus 0.64% per cycle) [D][148]. Atoms have not shown sustained below-threshold memory, and constant-round fault tolerance is a claim about long algorithms.
@@ -87,6 +87,6 @@ Confirm/demote in 12–24 months: a group closes transversal gate, correlated de
 
 ## Open verification items
 - The physical error rate, code distance and decoder model behind the 19 M-atom / 5.6-day and 10,000-atom estimates are not in either abstract; the two were not reconciled against a common assumption set.
-- No independent replication of the >10× space-time reduction exists outside the overlapping Harvard/QuEra/Caltech author group.
+- No independent replication of the >10× spacetime reduction exists outside the overlapping Harvard/QuEra/Caltech author group.
 - No published real-time correlated-decoder latency figure above roughly 10² logical qubits; scaling above that is unverified.
 - The graph record's front-matter year (2025) is the Nature publication year; the preprint is 2024-06-25. Both are retained rather than reconciled.

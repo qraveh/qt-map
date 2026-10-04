@@ -4,7 +4,7 @@ name: Spin-to-charge conversion + rf reflectometry
 layer: "6 Readout"
 status: demonstrated
 since: 2004
-one_line: Spin converted into a charge-motion event by Pauli blockade or energy-selective tunnelling, then read by an rf-matched charge sensor in microseconds without destroying the qubit.
+one_line: Spin converted into a charge-motion event by Pauli spin blockade or energy-selective tunnelling, then read by an rf-matched charge sensor in microseconds without destroying the qubit.
 verdict: The readout every silicon architecture uses and the term that sets the silicon clock — 6 µs at 99.2% or 100 µs at 99.9%, with no published device delivering both.
 updated: 2026-09-30
 ---
@@ -12,10 +12,10 @@ updated: 2026-09-30
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-Spin carries no charge, so a tunnelling event is made spin-conditional — Pauli blockade (two-spin parity, scale = singlet–triplet splitting) or energy-selective Elzerman tunnelling (single spin, needing Zeeman ≫ kT) — and a charge sensor reports it. The sensor is a single-electron transistor or a gate-based single-electron box read via quantum capacitance, in an LC tank near 0.1–2 GHz. Elzerman single-shot readout dates to 2004. Attributes: readout — spin-to-charge, ~6 µs, non-destructive, mid-circuit-capable; control — low-frequency drive from room temperature, sensor in CMOS, carrier immobile.
+Spin carries no charge, so a tunnelling event is made spin-conditional — Pauli spin blockade (PSB; two-spin parity, scale = singlet–triplet splitting) or energy-selective Elzerman tunnelling (single spin, needing Zeeman ≫ kT) — and a charge sensor reports it. The sensor is a single-electron transistor or a gate-based single-electron box read via quantum capacitance, in an LC (inductor–capacitor) tank near 0.1–2 GHz. Elzerman single-shot readout dates to 2004. Attributes: readout — spin-to-charge, ~6 µs, non-destructive, mid-circuit-capable; control — low-frequency drive from room temperature, sensor in CMOS, carrier immobile.
 
 ## Physics & limits
-Per-shot signal-to-noise is the phase shift integrated against amplifier noise over a window capped by T₁ and floored by tank bandwidth — the whole trade: 99.2% under 6 µs [D][624] against 99.9% SPAM at 100 µs [D][189]. Elzerman readout dies as kT approaches the Zeeman energy, so hot (≈1 K) operation costs readout first; Pauli blockade survives there but answers parity. Relaxation inside the window returns a false ground state, and sensor charge noise walks the threshold, so measurement error is drifting and correlated, not independent as decoders assume. Quantum-limited amplification and in-fridge demodulation move the floor.
+Per-shot signal-to-noise is the phase shift integrated against amplifier noise over a window capped by T1 and floored by tank bandwidth — the whole trade: 99.2% under 6 µs [D][624] against 99.9% SPAM at 100 µs [D][189]. Elzerman readout dies as kT approaches the Zeeman energy, so hot (≈1 K) operation costs readout first; Pauli spin blockade survives there but answers parity. Relaxation inside the window returns a false ground state, and sensor charge noise walks the threshold, so measurement error is drifting and correlated, not independent as decoders assume. Quantum-limited amplification and in-fridge demodulation move the floor.
 
 ## Engineering state of the art
 | year | figure | who | tag+key |
@@ -23,7 +23,7 @@ Per-shot signal-to-noise is the phase shift integrated against amplifier noise o
 | 2023-02-23 | 99.2% single-shot in <6 µs, rf single-electron box | Quantum Motion | [D][624] |
 | 2025-09-24 | 99.9% SPAM at 100 µs, 300 mm SiMOS | Diraq | [D][189] |
 
-Dominant term: SNR at short windows, T₁ at long; no foundry device publishes sub-10 µs readout above 99.5%.
+Dominant term: SNR at short windows, T1 at long; no foundry device publishes sub-10 µs readout above 99.5%.
 
 ## Manufacturing, materials & supply chain
 Built in the qubit's own 300 mm CMOS stack, the sensor adds no materials risk; the gate-based box, needing only an electrode and a tank, is the foundry-favoured form. Instrumentation is bought, not built: Zurich Instruments' SHFQC-LRT gives ≤32 µs weighted integration [C][625], and Quantum Machines' OPX1000 lists nine spin customers including Diraq, HRL, imec and Equal1 [C][449]. Frequency multiplexing keeps line count sub-linear: the wall at 10³ is tank spacing across the band; at 10⁴–10⁶ it is aggregate readout bandwidth and amplifier count, not the sensor. HRL's 4 K controller (366 DACs, ≤3.5 W) shows the chain can move inside the fridge [D][190].

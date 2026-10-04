@@ -1,6 +1,6 @@
 ---
 id: enc_gkp
-name: Сеточное кодирование GKP
+name: GKP-кодирование (решётка)
 layer: "2 Кодирование"
 status: emerging
 since: 2020

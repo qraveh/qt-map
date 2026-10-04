@@ -4,7 +4,7 @@ name: Colour code (transversal Cliffords)
 layer: "7 Code"
 status: demonstrated
 since: 2024
-one_line: Triangular 2D stabilizer code whose whole Clifford group acts transversally, skipping lattice surgery, at roughly 1.9× the surface code's teraquop footprint.
+one_line: Triangular 2D stabiliser code whose whole Clifford group acts transversally, skipping lattice surgery, at roughly 1.9× the surface code's teraquop footprint (physical qubits per logical qubit for 10¹² reliable operations).
 verdict: The colour code's future is as the magic-state factory feeding surface-code memory, not as the memory. Demote the memory case if no platform reports a colour-code logical memory beating the surface code on total qubits for a fixed logical target by 2028.
 updated: 2026-09-30
 ---
@@ -12,9 +12,9 @@ updated: 2026-09-30
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-A 2D topological stabilizer code on a three-colourable trivalent lattice, each plaquette carrying an X and a Z stabilizer of weight 6. Because the two types share support, the entire Clifford group — H, S, CNOT — is transversal, where the surface code gets only CNOT natively and pays lattice surgery for the rest. Bombín and Martín-Delgado introduced it in 2006 [D][663]; the first full hardware demonstration is Google's, submitted December 2024 [D][41]. The price is density: ~1.9× the surface code's teraquop footprint, 1,250 against 650 physical per logical at 0.1% noise [S][655][G:SURFACE-TERAQUOP-650].
+A 2D topological stabiliser code on a three-colourable trivalent lattice, each plaquette carrying an X and a Z stabiliser of weight 6. Because the two types share support, the entire Clifford group — H, S, CNOT — is transversal, where the surface code gets only CNOT natively and pays lattice surgery for the rest. Bombín and Martín-Delgado introduced it in 2006 [D][663]; the first full hardware demonstration is Google's, submitted December 2024 [D][41]. The price is density: ~1.9× the surface code's teraquop footprint, 1,250 against 650 physical per logical at 0.1% noise [S][655][G:SURFACE-TERAQUOP-650].
 d = static triangular lattice, no transport; e = inherits the host's control modality and placement [graph].
-f = Pauli stabilizers only; a = 0.5 — identical on fabricated and natural carriers, needing only a static nearest-neighbour lattice [graph].
+f = Pauli stabilisers only; a = 0.5 — identical on fabricated and natural carriers, needing only a static nearest-neighbour lattice [graph].
 
 ## Physics & limits
 The transversal gate needs no merge/split: Google puts a logical Hadamard at ~20 ns against ~1,000× longer through lattice surgery [C][664]. Weight-6 checks mean deeper extraction and hook errors that cut the effective distance unless the schedule avoids them — a 2026 construction avoids all malign bulk hook errors with one auxiliary per plaquette [S][665]. Errors also fire three detectors, so the syndrome is a hypergraph: matching does not apply and decoders must project or search. Hence the gap: Λ₃/₅ = 1.56(4) [D][41] against 2.14 for the surface code on the same processor family [D][1], and Google's 2026 d=5 colour-code memory reached 8.19(14)×10⁻³ per cycle only with the search-based Tesseract decoder [D][2]. What moves the floor is circuit scheduling and decoders, not the code.

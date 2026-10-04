@@ -1,6 +1,6 @@
 ---
 id: ct_eo
-name: Electro-optic drive + feed-forward electronics (RT)
+name: Electro-optic drive + feed-forward electronics (room temperature)
 layer: "5 Control"
 status: demonstrated
 since: 2020

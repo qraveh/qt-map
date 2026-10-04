@@ -4,7 +4,7 @@ name: Linear-optical fusion (heralded)
 layer: "3 Gate mechanism"
 status: demonstrated
 since: 2005
-one_line: "Probabilistic Bell-basis measurement on two photons — 50% unboosted, 75% with ancillae — whose failure heralds as erasure; the entangling primitive of fusion-based photonics."
+one_line: "Probabilistic Bell-basis measurement on two photons — 50% unboosted, 75% with ancillae — whose failure is heralded and erases one of the two measured outcomes; the entangling primitive of fusion-based photonics."
 verdict: "Real: single fusions at 99.22% Bell fidelity on chip, 99.72% chip-to-chip (PsiQuantum, 2025-02). Unproven: any chained fusion network with an end-to-end success rate. Demote if no multi-fusion result is published by 2028."
 updated: 2026-09-03
 ---
@@ -15,7 +15,7 @@ updated: 2026-09-03
 A Bell-basis measurement — beamsplitter, phase shifters, number-resolving detectors — projecting two photons onto a Bell state or destroying both and saying so, handing the code erasure rather than Pauli error. Browne and Rudolph introduced type-I/II fusion in 2005 to grow cluster states without a deterministic gate [S][451]; linear optics caps unambiguous discrimination at 50%, unentangled ancillae lift it to 75% [S][419]. Attributes: flying photons, heralded entangling at ~100 ns; electro-optic room-temperature control, loss-dominated errors, photonic-IC fabrication.
 
 ## Physics & limits
-The 50%/75% ceiling is information-theoretic: two of four Bell states are indistinguishable to passive linear optics, and routes past 75% buy success with ancilla photons that must themselves survive. The operating figure is success probability × transmission²; loss turns a success into heralded failure at best, an undetected error at worst. The gate is not the problem: 99.22 ± 0.12% on chip, 99.72 ± 0.04% chip-to-chip over 42 m at ~2 K [D][169][G:PSIQ-OMEGA-METRICS-2025]. The floor is the path around it — SiN 1.8 ± 0.2 dB/m, BTO switch 100 mdB, fibre-to-chip 52 mdB, on-chip SNSPD 93.4% median [D][169] — and failure itself: a 2026 re-analysis puts a logical-error floor at zero loss, so all-linear-optics designs need very large distance, while emitter-mediated fusion tolerates 7.0–7.3% [S][264][G:SPARROW-SUBTHRESHOLD-2026-06].
+The 50% ceiling is a linear-optics bound (Calsamiglia & Lütkenhaus 2001): passive optics with vacuum ancillae distinguishes at most two of the four Bell states, and the ancilla photons that raise it to 75% and beyond must themselves survive. The operating figure is success probability × transmission²; loss turns a success into heralded failure at best, an undetected error at worst. The gate is not the problem: 99.22 ± 0.12% on chip, 99.72 ± 0.04% chip-to-chip over 42 m at ~2 K [D][169][G:PSIQ-OMEGA-METRICS-2025]. The floor is the path around it — SiN 1.8 ± 0.2 dB/m, BTO switch 100 mdB, fibre-to-chip 52 mdB, on-chip SNSPD 93.4% median [D][169] — and failure itself: a 2026 re-analysis puts a logical-error floor at zero loss, so all-linear-optics designs need very large distance, while emitter-mediated fusion tolerates 7.0–7.3% [S][264][G:SPARROW-SUBTHRESHOLD-2026-06].
 
 ## Engineering state of the art
 

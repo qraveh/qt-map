@@ -1,6 +1,6 @@
 ---
 id: dec_nn
-name: Нейросетевые декодеры (AlphaQubit2, CNN, трансформеры)
+name: Нейросетевые декодеры (AlphaQubit 2, CNN, трансформеры)
 layer: "8 Декодер"
 status: demonstrated
 since: 2024

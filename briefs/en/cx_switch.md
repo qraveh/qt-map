@@ -1,11 +1,11 @@
 ---
 id: cx_switch
-name: Photonic switching / routing (EO, feed-forward)
+name: Photonic switching / routing (electro-optic, feed-forward)
 layer: 4 Connectivity / transport
 status: demonstrated
 since: 2015
 one_line: Electro-optic and MEMS switches route photons between waveguides on a real-time heralding decision, the loss-dominated transport layer every photonic architecture shares.
-verdict: Best published in-line switch loss is 100 mdB (PsiQuantum BTO), ~14x the ~7 mdB fault-tolerance budget as of 4 Sep 2026; non-volatile devices fix static power, not loss.
+verdict: Best published in-line switch loss is 100 mdB (PsiQuantum BTO), ~14× the ~7 mdB fault-tolerance budget as of 4 Sep 2026; non-volatile devices fix static power, not loss.
 updated: 2026-09-30
 ---
 
@@ -17,7 +17,7 @@ An electro-optic or mechanical element inside a Mach–Zehnder interferometer se
 - d/g: flying photons routed in photonic-IC waveguides; every stage taxes the loss budget.
 
 ## Physics & limits
-Loss is multiplicative, so the architecture fixes a per-stage budget the device meets or the machine does not exist: against a total photon budget of order 0.5 dB across a fusion network's depth, the per-switch allowance is ≈7 mdB [D][173]. Fusion-based fault tolerance tolerates 2.7% per-photon loss with six-ring resource states, 17% only with 168-qubit states nobody can build [D][179]. The families trade differently: thermo-optic shifters are low-loss but dissipate milliwatts each and switch in µs, unusable at 2 K across 10⁴ channels; barium titanate and thin-film lithium niobate switch in ns at low power but add material and transition loss. The second failure mode is finite extinction: amplitude leaked to the wrong port is an unheralded error, not a loss. Moving the floor needs higher electro-optic coefficients (barium titanate's effective r is ~30× lithium niobate's, so shifters shorten and lose less), lower-loss material transitions and non-volatility.
+Loss is multiplicative, so the architecture fixes a per-stage budget the device meets or the machine does not exist: against a total photon budget of order 0.5 dB across a fusion network's depth, the per-switch allowance is ≈7 mdB [D][173]. Fusion-based fault tolerance tolerates 2.7% per-photon loss with 6-ring resource states, 17% only with 168-qubit states nobody can build [D][179]. The families trade differently: thermo-optic shifters are low-loss but dissipate milliwatts each and switch in µs, unusable at 2 K across 10⁴ channels; barium titanate and thin-film lithium niobate switch in ns at low power but add material and transition loss. The second failure mode is finite extinction: amplitude leaked to the wrong port is an unheralded error, not a loss. Moving the floor needs higher electro-optic coefficients (barium titanate's effective r is ~30× lithium niobate's, so shifters shorten and lose less), lower-loss material transitions and non-volatility.
 
 ## Engineering state of the art
 Best published in-line switch: PsiQuantum's barium titanate at 100 mdB insertion, with 52(12) mdB fibre-to-chip coupling at ~2 K [D][169][G:PSIQ-OMEGA-METRICS-2025]. Aurora is the only system-scale figure: 35 chips, 0.19 dB per MZI, ~14 dB total loss, no error-corrected computation [D][173]. The 2026 non-volatile barium-titanate array switches in 80 ns at 1.48 dB per cell with zero static power once set [D][516] — a static-power result, not a loss one. Dominant error: cumulative insertion loss, then coupling.
@@ -30,7 +30,7 @@ Best published in-line switch: PsiQuantum's barium titanate at 100 mdB insertion
 | 2026-08 | Foundry-compatible MEMS switch, <1.5 dB, >30 dB extinction, ~20 nW | UC Berkeley | [P][517] |
 
 ## Manufacturing, materials & supply chain
-Silicon nitride or thin-film lithium niobate waveguides, barium titanate for the active element, superconducting nanowire detectors on the same 300-mm wafer; PsiQuantum's runs at GlobalFoundries, which launched a quantum manufacturing unit on 2026-05-21 against a $375M CHIPS letter of intent [C][353]. Barium titanate on silicon is a deposition few lines can do; the merchant thin-film-lithium-niobate base is two venture-scale suppliers, HyperLight and Lightium [P][518]. Packaging is the second chokepoint: Xanadu's coupling result needed Corning fibre arrays and DISCO singulation [C][172]. No yield figure is public; no export-control category names photonic switches, the 2024 BIS rule reaching them only via ECCN 4A906 [G:BIS-QUANTUM-ECCN-2024-09].
+Silicon nitride or thin-film lithium niobate waveguides, barium titanate for the active element, superconducting nanowire detectors on the same 300 mm wafer; PsiQuantum's runs at GlobalFoundries, which launched a quantum manufacturing unit on 2026-05-21 against a $375M CHIPS letter of intent [C][353]. Barium titanate on silicon is a deposition few lines can do; the merchant thin-film-lithium-niobate base is two venture-scale suppliers, HyperLight and Lightium [P][518]. Packaging is the second chokepoint: Xanadu's coupling result needed Corning fibre arrays and DISCO singulation [C][172]. No yield figure is public; no export-control category names photonic switches, the 2024 BIS rule reaching them only via ECCN 4A906 [G:BIS-QUANTUM-ECCN-2024-09].
 
 ## Control, readout & I/O burden
 Feed-forward means the photon waits in a delay line while a cryogenic detector click is classified and the switch driven, which couples latency to loss — brutally on chip. At silicon-nitride propagation loss one nanosecond of on-chip delay costs a few tenths of a dB, more than the whole per-stage budget, while the same nanosecond in fibre at ≈0.2 dB/km is free: feed-forward lives in fibre and must resolve in nanoseconds. QuiX names feed-forward electronics as one of two problems its 2026 system must solve [C][177]. I/O scales with network depth, not qubit count; at 10⁴–10⁶ modes the binding constraints are detector channel count and the cryogenic power holding each switch in state.
@@ -49,7 +49,7 @@ Switch loss and extinction come from direct insertion-loss characterisation agai
 | Xanadu | developer | Canada | Aurora switch network; coupling and packaging | [D][173] |
 | QuiX Quantum | developer | Netherlands | Feed-forward hardware; Carina at DLR | [C][177] |
 | Quandela | developer | France | 12-qubit switched system at CEA | [C][176] |
-| GlobalFoundries | supplier | USA | 300-mm line; $375M CHIPS letter of intent | [C][353] |
+| GlobalFoundries | supplier | USA | 300 mm line; $375M CHIPS letter of intent | [C][353] |
 | DARPA | investor | USA | Stage C money buys BTO switch validation | [P][181] |
 
 **Money.**
@@ -61,7 +61,7 @@ Switch loss and extinction come from direct insertion-loss characterisation agai
 | 2026-07-22 | PsiQuantum | QBI Stage C expanded | $125M after $31.8M | DARPA | official [P][181] |
 | 2026-08-28 | Xanadu | Toronto factory funding | CAD 195M | Government of Canada | closed [C][178] |
 
-**Market & supply chain.** The enabling equipment is not quantum: 300-mm CMOS (GlobalFoundries), fibre-array assembly (Corning), wafer singulation (DISCO), a thin-film-lithium-niobate base of two small suppliers [P][518]. Concentration sits in mainstream chains where a photonic quantum company has no bargaining power and no second source for fibre-array attach. G3 and G4 pay for this component — no photonic logical qubit exists without closing the loss gap — G1/G5 do not.
+**Market & supply chain.** The enabling equipment is not quantum: 300 mm CMOS (GlobalFoundries), fibre-array assembly (Corning), wafer singulation (DISCO), a thin-film-lithium-niobate base of two small suppliers [P][518]. Concentration sits in mainstream chains where a photonic quantum company has no bargaining power and no second source for fibre-array attach. G3 and G4 pay for this component — no photonic logical qubit exists without closing the loss gap — G1/G5 do not.
 
 **IP & standards.** No patent family specific to quantum photonic switching surfaced; the nearest adjacent grant is ORCA Computing's US 12,437,225 on linear-optical encoded GHZ measurements (2025-10-07) [G:ORCA-DUALRAIL-PATENT-2025]. Classical MZI-switch IP is extensive and non-quantum; PatSnap's counts are not disaggregated to this layer [P][G:PATSNAP-2026-06]. No standards body, no litigation, no shared feed-forward interface.
 

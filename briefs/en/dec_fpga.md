@@ -17,7 +17,7 @@ Attributes: a compute module, not a carrier (affinity 0.5); no time, readout, mo
 Error structure it consumes: Pauli syndromes from the rotated surface code.
 
 ## Physics & limits
-Throughput must clear one round per cycle — 1.1 µs on Willow-class hardware [D][1] — which Riverlane's clustering decoder meets to d=17 [D][238]. Reaction latency gates every non-Clifford gate and only a closed loop measures it: Shenzhen's closed one in 550 ns at d=3, inside a 1.25 µs cycle [D][729]. Accuracy pays for latency: LCD thresholds at 0.55% against 0.7% for software MWPM [D][238], and on identical Willow syndromes matching gave Λ = 2.04 where a neural decoder gave 2.14 [D][1]. Area is the other wall: LCD at d=17 takes ~6% of a Xilinx VU19P's logic LUTs per logical qubit [D][238] — ~16 such logical qubits per top-end part.
+Throughput must clear one round per cycle — 1.1 µs on Willow-class hardware [D][1] — which Riverlane's clustering decoder meets to d=17 [D][238]. Reaction latency gates every non-Clifford gate and only a closed loop measures it: Shenzhen's closed one in 550 ns at d=3, inside a 1.25 µs cycle [D][729]. Accuracy pays for latency: LCD thresholds at 0.55% against 0.7% for software MWPM [D][238], and on identical Willow syndromes matching gave Λ = 2.04 where a neural decoder gave 2.14 [D][1]. Area is the other wall: LCD at d=17 takes ~6% of a Xilinx VU19P's logic LUTs (lookup tables) per logical qubit [D][238] — ~16 such logical qubits per top-end part.
 
 ## Engineering state of the art
 
@@ -58,7 +58,7 @@ An alternate decoder on the transmon lattice with tunable couplers. Requires the
 **Strategic reading.** Whoever owns the decoder sits between every superconducting QPU and fault tolerance — but the layer is thin enough that QPU vendors build it in-house, as IBM and Google did. AMD wins either way; the threat is NVQLink commoditising the interface.
 
 ## Outlook & open questions
-Confirm by end-2027: an FPGA decoder closing the loop on live syndromes at d ≥ 7 — no live d = 7 decode by any decoder is documented, Google's neural d = 7 result [D][2] included — or Relay-BP on real gross-code hardware; demote if neither happens. Best case 2029: a portable interface with second-source silicon; worst case, per-vendor decoders nobody can compare. Does reaction latency or throughput bind first at d=17? Do decoder vendors survive QPU vendors building in-house? Does export control reach FPGAs?
+Confirm by end-2027: an FPGA decoder closing the loop on live syndromes at d ≥ 7 — no live d=7 decode by any decoder is documented, Google's neural d=7 result [D][2] included — or Relay-BP on real gross-code hardware; demote if neither happens. Best case 2029: a portable interface with second-source silicon; worst case, per-vendor decoders nobody can compare. Does reaction latency or throughput bind first at d=17? Do decoder vendors survive QPU vendors building in-house? Does export control reach FPGAs?
 
 ## References
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]

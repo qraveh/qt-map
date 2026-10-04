@@ -1,6 +1,6 @@
 ---
 id: g_ryd
-name: CZ на ридберговской блокаде
+name: CZ через ридберговскую блокаду
 layer: "3 Механизм вентиля"
 status: demonstrated
 since: 2010

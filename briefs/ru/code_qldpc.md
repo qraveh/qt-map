@@ -1,6 +1,6 @@
 ---
 id: code_qldpc
-name: qLDPC-коды типа bivariate bicycle («gross»-коды)
+name: Нелокальные qLDPC-коды (bivariate bicycle, «gross»)
 layer: "7 Код"
 status: emerging
 since: 2025

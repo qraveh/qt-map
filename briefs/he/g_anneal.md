@@ -1,6 +1,6 @@
 ---
 id: g_anneal
-name: התפתחות הרפיה אנלוגית
+name: הרפיה קוונטית (התפתחות אנלוגית)
 layer: "3 מנגנון השער"
 status: demonstrated
 since: 2011

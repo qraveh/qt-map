@@ -9,7 +9,7 @@ verdict: "Demonstrated since 2018 and inside production error-correction rounds 
 updated: 2026-09-26
 ---
 
-T1 = energy-relaxation time; κ = energy-decay rate of the lossy mode; LRU = leakage-reduction unit; DQLR = data-qubit leakage removal; MLR = multi-level reset; Λ = error-suppression factor per code-distance step; G1–G7 = the report's goal classes (see Actors & economics).
+T1 = energy-relaxation time; κ = energy-decay rate of the lossy mode; LRU = leakage reduction unit; DQLR = data-qubit leakage removal; MLR = multi-level reset; Λ = error-suppression factor per code-distance step; G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
 Reset returns a qubit to |0⟩ before a shot and, in error correction, every measure qubit once per syndrome round. Unconditional reset — this technology — hands the excitation to a lossy mode with no classical decision, unlike waiting for T1 or measuring and flipping. It began with the all-microwave "f0g1" scheme: a drive couples |f,0⟩ to |g,1⟩ of the transmon–resonator pair (g, f = ground and second excited states; 0, 1 = resonator photons) and the photon leaks out, leaving 0.2% residual excitation in under 500 ns without feedback [D][596]. It sits in the readout layer because the lossy mode is usually the readout resonator and feedline [D][597][D][598]. Attributes: on-chip, superconducting lithography, driven from room temperature, no transport; error class leakage.
@@ -26,8 +26,8 @@ Passive relaxation is too slow: even with no thermal floor, 10⁻³ at T1 = 200 
 | 2023-02-22 | 160 ns reset + 500 ns measurement in a 921 ns round | Google, Sycamore | [D][602] |
 | 2024-09-25 | Reset + leakage reduction in 83 ns, fixed-frequency, >99% | Chen et al. | [D][598] |
 | 2024-11-05 | Reset error <0.13% (\|1⟩), 0.16% (\|2⟩) in 88 ns; \|2⟩-only LRU 44 ns | Kim et al. | [D][600] |
-| 2025-12-22 | Microwave LRUs + ancilla reset: leakage ÷72 to 6.4×10⁻⁴; d = 7, Λ = 1.40 ± 0.06 | USTC, Zuchongzhi 3.2 | [P][603] |
-| 2026-08-31 | 120 reset elements; initialization error ÷25 | IBM, Nighthawk r2 | [C][601] |
+| 2025-12-22 | Microwave LRUs + ancilla reset: leakage ÷72 to 6.4×10⁻⁴; d=7, Λ = 1.40 ± 0.06 | USTC, Zuchongzhi 3.2 | [P][603] |
+| 2026-08-31 | 120 reset elements; initialisation error ÷25 | IBM, Nighthawk r2 | [C][601] |
 
 Sycamore spent 660 of 921 ns (72%) measuring and resetting, and its authors name data-qubit idling during them a dominant error [D][602]. Willow runs MLR on measure qubits and DQLR on data qubits every 1.1 µs cycle [D][1], after DQLR cut data-qubit leakage tenfold, below 10⁻³ device-wide [D][604]. USTC's row is the press reading of its PRL [D][3]. IBM's gain is shot rate: 100,000 circuits per second, 25× Heron [C][601]. Dominant term: residual population, which production vendors do not publish.
 
@@ -62,7 +62,7 @@ Reset is checked by reading the qubit afterwards, so readout error bounds it: Mc
 **Strategic reading.** Reset is where fixed-frequency and tunable architectures part. If switchable dissipators keep their off-state T1 at scale, readout resonators can be optimised for readout alone.
 
 ## Outlook & open questions
-Confirm if IBM or an independent group publishes Nighthawk r2's reset duration, absolute residual and mid-circuit use by 2027-06-30, and if a d ≥ 9 surface code brings readout + reset below half its round by 2027-12-31; demote the gadget to a throughput feature if figures cover only between-shot initialization.
+Confirm if IBM or an independent group publishes Nighthawk r2's reset duration, absolute residual and mid-circuit use by 2027-06-30, and if a d ≥ 9 surface code brings readout + reset below half its round by 2027-12-31; demote the gadget to a throughput feature if figures cover only between-shot initialisation.
 Open questions. (1) What absolute residual does Nighthawk r2 reach? (2) What does a dissipator's off-state cost in T1 across 10³ qubits? (3) Can reset overlap ring-down to shrink the 660 ns term? (4) Do microwave-only resets match flux-based speed without crosstalk? (5) Which data-qubit leakage scheme closes G-lru without adding a round step?
 
 ## References
@@ -82,8 +82,8 @@ Open questions. (1) What absolute residual does Nighthawk r2 reach? (2) What doe
 [606] IBM, “Qubit initialization.” [Online]. Available: https://quantum.cloud.ibm.com/docs/en/guides/repetition-rate-execution [C]
 
 ## Open verification items
-- Zuchongzhi 3.2 PRL (journals.aps.org) returned 403 on 2026-09-26; Europe PMC and phys.org were rate-limited (429). The 72×, 6.4×10⁻⁴, d = 7 and Λ figures come from press analysis; USTC's reset duration and residual were not found.
+- Zuchongzhi 3.2 PRL (journals.aps.org) returned 403 on 2026-09-26; Europe PMC and phys.org were rate-limited (429). The 72×, 6.4×10⁻⁴, d=7 and Λ figures come from press analysis; USTC's reset duration and residual were not found.
 - Nighthawk r2 blog (opened 2026-09-26): effective T1, a 25× ratio, ~1 µs idle; no reset duration, absolute residual or paper. Loon's gadget figures unpublished as of 2026-09-26.
-- Heron's conditional-reset duration and feed-forward latency: not in IBM's initialization guide, opened 2026-09-26.
+- Heron's conditional-reset duration and feed-forward latency: not in IBM's initialisation guide, opened 2026-09-26.
 - Willow's measurement and reset durations, and Miao et al.'s DQLR duration and arXiv id, not found in pages opened 2026-09-26 (Miao cited by DOI).
 - Journal versions of arXiv:2409.16748 and arXiv:2411.02950 not opened; the 1.4 ms, 0.8%, ≈21/κ and 8×10³ figures are derived here.

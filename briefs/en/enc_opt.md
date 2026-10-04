@@ -9,20 +9,20 @@ verdict: "Proven on both carriers — ⁴⁰Ca⁺ in AQT's shipped machines, ⁸
 updated: 2026-09-26
 ---
 
-T₂ = Ramsey phase-coherence time; MS = Mølmer–Sørensen gate; CZ = controlled-Z gate; SPAM = state preparation and measurement; QV = quantum volume; TRL = technology readiness level; G1–G7 = the report's goal classes (see Actors & economics).
+T2 = Ramsey phase-coherence time; MS = Mølmer–Sørensen gate; CZ = controlled-Z gate; SPAM = state preparation and measurement; QV = quantum volume; TRL = technology readiness level; G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
 The ion realisation stores |1⟩ in |4S₁/₂, m = −1/2⟩ and |0⟩ in |3D₅/₂, m = −1/2⟩ of ⁴⁰Ca⁺, coupled by the 729 nm electric-quadrupole line [D][253]. Innsbruck ran the Cirac–Zoller CNOT on two such ions in 2003 [D][376]; the encoding carried its fault-tolerant universal gate set of 2022 [D][255] and AQT's products. ⁸⁸Sr⁺ at 674 nm is the sister ion, its D₅/₂ lifetime measured on a single ion at NPL [D][377]. The atom realisation uses ¹S₀ and ³P₀ of neutral strontium, the lattice-clock line, run in tweezers since 2019 [D][378], with alkaline-earth Rydberg entanglement from 2020 [D][379]. Attributes: natural carrier; no time, mobility or control of its own; errors Pauli plus leakage.
 
 ## Physics & limits
-Three ceilings. Lifetime: τ(D₅/₂, ⁴⁰Ca⁺) = 1.168(7) s [D][253], so T₂ ≤ 2τ ≈ 2.3 s; decay from m = −1/2 may land in S₁/₂, m = +1/2, outside the qubit pair — leakage [G]. The Sr ³P₀ level outlives the >3 s atomic coherence measured in a tweezer clock [D][378]. Field: ⁴⁰Ca⁺ has no hyperfine structure, hence no field-insensitive line; with g(D₅/₂) = 6/5 and g(S₁/₂) ≈ 2.002 the qubit line moves 0.40 μ_B B ≈ 5.6 kHz per µT, so 0.1 µT of noise shifts it 560 Hz, a radian in 0.3 ms [S]. Mitigations: shielding, mains feed-forward, dynamical decoupling, decoherence-free pairs. The J = 0 → J = 0 clock line has no first-order electronic Zeeman shift [G]. Laser: every gate references the laser phase, so T₂ is the laser's coherence over the circuit. AQT measured Ramsey T₂ = 90(30) ms on the optical qubit against 18(1) ms on the ground-state Zeeman qubit, naming magnetic noise from mains and neighbouring magnets beyond 25 ms [D][253] — 26× below the lifetime bound [S].
+Three ceilings. Lifetime: τ(D₅/₂, ⁴⁰Ca⁺) = 1.168(7) s [D][253], so T2 ≤ 2τ ≈ 2.3 s; decay from m = −1/2 may land in S₁/₂, m = +1/2, outside the qubit pair — leakage [G]. The Sr ³P₀ level outlives the >3 s atomic coherence measured in a tweezer clock [D][378]. Field: ⁴⁰Ca⁺ has no hyperfine structure, hence no field-insensitive line; with g(D₅/₂) = 6/5 and g(S₁/₂) ≈ 2.002 the qubit line moves 0.40 μB B ≈ 5.6 kHz per µT, so 0.1 µT of noise shifts it 560 Hz, a radian in 0.3 ms [S]. Mitigations: shielding, mains feed-forward, dynamical decoupling, decoherence-free pairs. The J = 0 → J = 0 clock line has no first-order electronic Zeeman shift [G]. Laser: every gate references the laser phase, so T2 is the laser's coherence over the circuit. AQT measured Ramsey T2 = 90(30) ms on the optical qubit against 18(1) ms on the ground-state Zeeman qubit, naming magnetic noise from mains and neighbouring magnets beyond 25 ms [D][253] — 26× below the lifetime bound [S].
 
 ## Engineering state of the art
 | Year | Figure | Who | Tag+key |
 |---|---|---|---|
 | 2003-03 | Cirac–Zoller CNOT on two ⁴⁰Ca⁺ S–D qubits | Innsbruck | [D][376] |
 | 2019 | Sr tweezer clock, >3 s coherence, duty cycle up to 96 % | JILA | [D][378] |
-| 2021-06 | τ(D₅/₂) 1.168(7) s; T₂ 90(30) ms; 24-ion GHZ fidelity 0.544(7) | AQT/Innsbruck | [D][253] |
+| 2021-06 | τ(D₅/₂) 1.168(7) s; T2 90(30) ms; 24-ion GHZ fidelity 0.544(7) | AQT/Innsbruck | [D][253] |
 | 2022-08 | Sr clock-qubit Bell state 92.8(2.0) % SPAM-corrected; Bell coherence 4.2(6) s | JILA | [D][380] |
 | 2024-10 | ⁸⁸Sr clock-qubit entangling gate 99.62(3) %; ancilla readout | Caltech | [D][381] |
 | 2026-05 | LYNX QV 32,768; first units Q4 2026 | AQT | [C][128] |
@@ -33,13 +33,13 @@ The shipped figure: IBEX Q1, 12 qubits, 1Q 99.97(1) %, 2Q 98.7(3) % over all pai
 No fabricated part; the item is the narrow-line laser — 729 nm (Ca⁺), 674 nm (Sr⁺), 698 nm (Sr) — locked to a high-finesse reference cavity [G]. AQT's demonstrator uses seven wavelengths (375, 397, 423, 515, 729, 854, 866 nm); the 854 nm quench laser exists only because the qubit level is metastable [D][253]. IBEX Q1 fills two 19-inch racks, 2 m², <2 kW, at (22.0 ± 1.5) °C [C][382].
 
 ## Control, readout & I/O burden
-One phase-stable laser per species, split into individually addressed 729 nm beams on the ion chain [D][255]; fibre and modulator phase noise lands directly on the qubit [S]. Readout is electron shelving — D₅/₂ stays dark on the 397 nm cycling line — by camera or photodiode, ~99.9 % in 300 µs [D][253]; atoms add ancilla-based read-out with non-destructive conditional reset [D][381].
+One phase-stable laser per species, split into individually addressed 729 nm beams on the ion chain [D][255]; fibre and modulator phase noise lands directly on the qubit [S]. Readout is electron shelving — D₅/₂ stays dark on the 397 nm cycling line — by camera or photodiode, ~99.9 % in 300 µs [D][253]; atoms add ancilla-based readout with non-destructive conditional reset [D][381].
 
 ## Role in the stack
 Slot 2 of Trapped ions — linear Paul trap with individual laser addressing, and of Rydberg tweezer array — alkaline-earth (Yb/Sr), erasure-native, beside enc_hf and enc_omg. It **requires** either ion (S–D quadrupole transition) or ae_atom (¹S₀–³P₀ of Sr/Yb). It is **replaced** by enc_hf, whose field-insensitive ground-state pair trades the one-laser drive for Raman or microwave control. It **provides** single-laser universality and shelving readout, and the metastable manifold that the omg erasure scheme reuses [S][333]; it **defines** the channel metric τ(D₅/₂) = 1.17 s. Register: IBEX Q1 (Marmot / PINE / LYNX) ✅ and University of Innsbruck / IQOQI research trap ✅; PIAST-Q 🔎 (20 AQT qubits, species unnamed — consistent with MARMOT); MAQCS and DiNAQC 🔎. Gap G-enc-clock is answered: the ledger's 10–100 ms is planqc's range in a press profile [P][247], 30–300× below published clock-qubit arrays [D][380], so it measures a laser, not the encoding.
 
 ## Evidence — how the numbers were measured
-AQT's 98.7(3) % is an all-pairs product average [C][382]; a secondary 97.7 % in the register stays unreconciled. The demonstrator's 0.997(6) is a two-ion Bell-state fidelity, not randomised benchmarking [D][253]. Caltech's 99.62(3) % is averaged over symmetric input states [D][381]. LYNX publishes QV without qubit count or fidelity [C][128]. No vendor reports T₂ beside τ, as of 2026-09-26.
+AQT's 98.7(3) % is an all-pairs product average [C][382]; a secondary 97.7 % in the register stays unreconciled. The demonstrator's 0.997(6) is a two-ion Bell-state fidelity, not randomised benchmarking [D][253]. Caltech's 99.62(3) % is averaged over symmetric input states [D][381]. LYNX publishes QV without qubit count or fidelity [C][128]. No vendor reports T2 beside τ, as of 2026-09-26.
 
 ## Actors & economics
 **Who.**
@@ -58,14 +58,14 @@ AQT's 98.7(3) % is an all-pairs product average [C][382]; a secondary 97.7 % in 
 
 **Market & supply chain.** One ultrastable laser and cavity per species is the concentration point. Pays into G2, G3 and G7.
 
-**IP & standards.** No patent search was run; no standard defines reporting of laser-limited T₂, as of 2026-09-26.
+**IP & standards.** No patent search was run; no standard defines reporting of laser-limited T2, as of 2026-09-26.
 
 **Roadmaps & track record.** (AQT · LYNX first units · Q4 2026) [C][128]; (planqc · MAQCS co-processor · end-2027, TRL 5 today, 6–7 targeted) [R][161].
 
 **Strategic reading.** On ions the encoding is AQT's legacy, its depth capped by τ; on atoms it is the best-gated clock qubit, and a clock-grade laser on a processor is the prize.
 
 ## Outlook & open questions
-Confirm the atomic branch if planqc publishes clock-qubit T₂ and CZ fidelity on MAQCS hardware by 2027-12-31; demote it to metrology if not. Confirm the ion branch if LYNX ships in Q4 2026 with per-pair 2Q figures. Open questions. (1) What laser linewidth would bring ⁴⁰Ca⁺ T₂ to its 2.3 s bound? (2) Is planqc's 10–100 ms the lattice, the laser or the field? (3) How much D₅/₂ decay leaks versus flips? (4) Will AQT move to a hyperfine or omg species? (5) Can one clock laser serve 10³ sites?
+Confirm the atomic branch if planqc publishes clock-qubit T2 and CZ fidelity on MAQCS hardware by 2027-12-31; demote it to metrology if not. Confirm the ion branch if LYNX ships in Q4 2026 with per-pair 2Q figures. Open questions. (1) What laser linewidth would bring ⁴⁰Ca⁺ T2 to its 2.3 s bound? (2) Is planqc's 10–100 ms the lattice, the laser or the field? (3) How much D₅/₂ decay leaks versus flips? (4) Will AQT move to a hyperfine or omg species? (5) Can one clock laser serve 10³ sites?
 
 ## References
 [128] Alpine Quantum Technologies GmbH, “AQT Sets New European Industry Standard: Introducing the ‘LYNX’ Series with Record-Breaking Quantum Volume,” AQT, May 5, 2026. [Online]. Available: https://www.aqt.eu/lynx-quantum-volume-record/ [C]

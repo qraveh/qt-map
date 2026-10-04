@@ -1,10 +1,10 @@
 ---
 id: g_bos
-name: Ancilla-mediated bosonic gates (cat CX, dual-rail CZ, beam-splitter)
+name: Ancilla-mediated bosonic gates (cat CX, dual-rail CZ, beamsplitter)
 layer: 3 Gate mechanism
 status: demonstrated
 since: 2018
-one_line: Driven SQUID/SNAIL couplers and transmon ancillas mediate beam-splitter and entangling gates between superconducting bosonic cavity modes, for cat, GKP and dual-rail encodings.
+one_line: Driven SQUID/SNAIL couplers and transmon ancillas mediate beamsplitter and entangling gates between superconducting bosonic cavity modes, for cat, GKP and dual-rail encodings.
 verdict: Dual-rail cavity CZ reaches 0.029% post-selected Pauli error at 500 ns with ~80% of gate error heralded as erasure; no bias-preserving cat-cat entangling gate exists as of 4 Sep 2026.
 updated: 2026-09-30
 ---
@@ -12,19 +12,19 @@ updated: 2026-09-30
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-Two bosonic cavity modes are never coupled directly. A nonlinear element between them — a driven DC-SQUID or SNAIL coupler, or a dispersively coupled transmon ancilla — is pumped at the mode-frequency difference, turning pump photons into a bilinear exchange (beam-splitter) or a conditional phase. Yale set the pattern in 2018 with an RF-driven 50:50 beam-splitter between two microwave memories [D][471]; gate fidelities follow from 2023 [D][472].
+Two bosonic cavity modes are never coupled directly. A nonlinear element between them — a driven DC-SQUID or SNAIL (superconducting nonlinear asymmetric inductive element) coupler, or a dispersively coupled transmon ancilla — is pumped at the mode-frequency difference, turning pump photons into a bilinear exchange (beamsplitter) or a conditional phase. Yale set the pattern in 2018 with an rf-driven 50:50 beamsplitter between two microwave memories [D][471]; gate fidelities follow from 2023 [D][472].
 - b/e: entangling time ≈500 ns (10⁻⁶·³ s), deterministic; microwave drives from room-temperature electronics.
 - d/g: modes linked through a shared coupler acting as a bus; 3D-machined cavity hardware, not planar chips.
 
 ## Physics & limits
-The parametric beam-splitter rate reaches a few MHz, hence ~100 ns swaps [D][472]; a conditional phase accumulates through a dispersive shift χ/2π ≈ 0.1–1 MHz, hence ~500 ns entangling gates [D][84]. The floor is the ancilla, not the cavity: at ancilla T₁ ≈ 50–100 µs against a 0.5-µs gate, ancilla error is ~10⁻² unless it is kept virtual or *relabelled*. Relabelling is the point: dual-rail does not lower total gate error but moves ~80% of it into heralded erasure (0.400(4)% control, 0.096(4)% target), leaving 0.029(6)% unheralded Pauli error and bit-flips at 2.8(4)×10⁻⁶ [D][84]; located erasures buy ~5× more tolerable Pauli error at code level than depolarising noise [P][402]. Failure modes: ancilla decay mid-gate (an erasure in dual-rail, a phase error elsewhere), ancilla dephasing, higher-Fock leakage no check sees, and for cats any gate term failing to commute with the two-photon dissipation. Moving the floor needs higher-coherence ancillas, virtual-ancilla or dissipative coupling, or a bias-preserving cat Hamiltonian — still theory [P][81].
+The parametric beamsplitter rate reaches a few MHz, hence ~100 ns swaps [D][472]; a conditional phase accumulates through a dispersive shift χ/2π ≈ 0.1–1 MHz, hence ~500 ns entangling gates [D][84]. The floor is the ancilla, not the cavity: at ancilla T1 ≈ 50–100 µs against a 0.5-µs gate, ancilla error is ~10⁻² unless it is kept virtual or *relabelled*. Relabelling is the point: dual-rail does not lower total gate error but moves ~80% of it into heralded erasure (0.400(4)% control, 0.096(4)% target), leaving 0.029(6)% unheralded Pauli error and bit-flips at 2.8(4)×10⁻⁶ [D][84]; located erasures buy ~5× more tolerable Pauli error at code level than depolarising noise [P][402]. Failure modes: ancilla decay mid-gate (an erasure in dual-rail, a phase error elsewhere), ancilla dephasing, higher-Fock leakage no check sees, and for cats any gate term failing to commute with the two-photon dissipation. Moving the floor needs higher-coherence ancillas, virtual-ancilla or dissipative coupling, or a bias-preserving cat Hamiltonian — still theory [P][81].
 
 ## Engineering state of the art
 Best demonstrated: dual-rail cavity CZ, ~500 ns, erasure ≈0.5%/gate, post-selected Pauli 0.029(6)%, SPAM ≈0.02% [D][84][G:DUALRAIL-CZ-2026-08]. D-Wave markets it as "approximately 99.9%" [C][473], neither the raw nor the post-selected value. Typical at scale lags: AWS's transmon check runs 384 ns, erasure 2.54(1)×10⁻²/check, residual 6.0(2)×10⁻⁴, bias 42(1) [D][85]. No cat–cat CNOT exists on hardware [P][81]. Dominant error term: unheralded Pauli error surviving post-selection, plus the check's false negatives.
 
 | Year | Figure | Who | Tag+key |
 |---|---|---|---|
-| 2018-02 | RF-driven 50:50 beam-splitter between two cavity memories | Yale | [D][471] |
+| 2018-02 | RF-driven 50:50 beamsplitter between two cavity memories | Yale | [D][471] |
 | 2023-03 | Cavity swap >99.98%, ~100 ns, DC-SQUID coupler | Yale | [D][472] |
 | 2026-04 | Erasure check 384 ns, residual 6.0(2)×10⁻⁴, bias 42(1) | AWS | [D][85] |
 | 2026-08 | Dual-rail cavity CZ ~500 ns, post-selected Pauli 0.029(6)% | Quantum Circuits | [D][84] |
@@ -95,4 +95,4 @@ Confirm/demote in 12–24 months: a cat–cat CX on hardware; a dual-rail gate b
 [474] US Department of Energy, “Energy Department Announces $625 Million to Advance the Next Phase of National Quantum Information Science Research Centers,” Energy.gov, Nov. 4, 2025. [Online]. Available: https://www.energy.gov/articles/energy-department-announces-625-million-advance-next-phase-national-quantum-information [G]
 
 ## Open verification items
-Author list, affiliation and journal reference for arXiv:2303.00959 could not be retrieved (the abstract page returned body text only); the ~100 ns / >99.98% swap figures and the DC-SQUID coupler are confirmed, the Yale attribution rests on the graph record. Alice & Bob's May-2026 Series B extension amount remains undisclosed. Post-selection discard rates for the dual-rail CZ and the beam-splitter swap are unreported. The 0.029(6)% point estimate and the 0.12% bound at depth both appear in Nature [84] without reconciliation, and D-Wave's "≈99.9%" [473] is reconciled with neither.
+Author list, affiliation and journal reference for arXiv:2303.00959 could not be retrieved (the abstract page returned body text only); the ~100 ns / >99.98% swap figures and the DC-SQUID coupler are confirmed, the Yale attribution rests on the graph record. Alice & Bob's May-2026 Series B extension amount remains undisclosed. Post-selection discard rates for the dual-rail CZ and the beamsplitter swap are unreported. The 0.029(6)% point estimate and the 0.12% bound at depth both appear in Nature [84] without reconciliation, and D-Wave's "≈99.9%" [473] is reconciled with neither.

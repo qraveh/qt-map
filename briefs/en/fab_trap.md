@@ -1,10 +1,10 @@
 ---
 id: fab_trap
-name: Surface-electrode ion-trap microfabrication
+name: Ion-trap fabrication (surface-electrode chips; machined 3D blade traps)
 layer: "10 Manufacturing"
 status: demonstrated
 since: 2006
-one_line: Planar RF/DC electrode chips that confine and shuttle ions, built on MEMS lines or, increasingly, on merchant semiconductor foundry wafers.
+one_line: Planar rf/DC electrode chips that confine and shuttle ions, built on MEMS lines or, increasingly, on merchant semiconductor foundry wafers.
 verdict: Falsifiable — if no vendor publishes wafer-level heating or yield data by end-2027, trap fabrication stays craft, and Sol/Apollo schedule risk sits in signal count and packaging, not gate physics.
 updated: 2026-09-30
 ---
@@ -12,7 +12,7 @@ updated: 2026-09-30
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-A surface-electrode trap flattens the Paul trap into one lithographic plane — electrodes side by side, the ion held tens of micrometres above — so trap geometry becomes mask layout. NIST demonstrated it in 2006, holding ²⁴Mg⁺ about 40 µm above planar gold and measuring the heating rate directly [D][806]. The machined 3-D trap persists beside it: AQT's Pine trap has four blade electrodes and two endcaps machined from gold-plated titanium on an alumina holder, the blades 0.57 mm from the trap axis [D][253]. It is the layer beneath the ion carrier: it fixes electrode count, zone and junction geometry, and the surface chemistry above it.
+A surface-electrode trap flattens the Paul trap into one lithographic plane — electrodes side by side, the ion held tens of micrometres above — so trap geometry becomes mask layout. NIST demonstrated it in 2006, holding ²⁴Mg⁺ about 40 µm above planar gold and measuring the heating rate directly [D][806]. The machined 3D trap persists beside it: AQT's Pine trap has four blade electrodes and two endcaps machined from gold-plated titanium on an alumina holder, the blades 0.57 mm from the trap axis [D][253]. It is the layer beneath the ion carrier: it fixes electrode count, zone and junction geometry, and the surface chemistry above it.
 Attributes: carrier affinity a = 0.0, natural — the carrier served is the ion; the trap itself is fabricated, but MEMS trap-making is the natural carriers' default, so the technology sits in the natural half of the map. Manufacturing g = MEMS lithography moving onto merchant 6–12-inch semiconductor lines [C][320].
 
 ## Physics & limits
@@ -29,7 +29,7 @@ The floor is anomalous field noise from the electrode surface, not lithographic 
 Helios's chip is the largest fielded trap; most groups still run bespoke traps of tens to ~100 electrodes. Nobody publishes yield, defect rate or cost per trap, so the layer has no public quality metric, and measured error stays dominated by heating, micromotion and calibration load, not lithographic defects.
 
 ## Manufacturing, materials & supply chain
-Two lineages. Research MEMS lines (Sandia's MESA complex, GTRI, university cleanrooms) put gold or niobium on sapphire, fused silica or oxidised silicon at one-off volumes [G][501]. The live shift is merchant fabrication: Infineon's Villach platform runs 6–12-inch wafers with anodic bonding for Oxford Ionics, eleQtron [C][129], Innsbruck and ETH Zurich; its Gen-3 out-of-plane electrodes claim ~10× confinement with no heating rate published [C][320]. Honeywell fabricates Quantinuum's traps captively, Sol's grid trap included [R][118]; IonQ closed SkyWater on 2026-07-31 for design, fabrication and packaging on US lines [C][19]. Infineon is the single point of failure: one merchant fab, several vendors, no second source named. Export exposure is mild — the 2024-09-06 BIS rule enumerates quantum computers (4A906) and sub-4.5 K electronics (3A901), but no ECCN names traps [G][301].
+Two lineages. Research MEMS lines (Sandia's MESA complex, GTRI, university cleanrooms) put gold or niobium on sapphire, fused silica or oxidised silicon at one-off volumes [G][501]. The live shift is merchant fabrication: Infineon's Villach platform runs 6–12-inch wafers with anodic bonding for Oxford Ionics, eleQtron [C][129], Innsbruck and ETH Zürich; its Gen-3 out-of-plane electrodes claim ~10× confinement with no heating rate published [C][320]. Honeywell fabricates Quantinuum's traps captively, Sol's grid trap included [R][118]; IonQ closed SkyWater on 2026-07-31 for design, fabrication and packaging on US lines [C][19]. Infineon is the single point of failure: one merchant fab, several vendors, no second source named. Export exposure is mild — the 2024-09-06 BIS rule enumerates quantum computers (4A906) and sub-4.5 K electronics (3A901), but no ECCN names traps [G][301].
 
 ## Control, readout & I/O burden
 The trap sets the wiring floor before any optical or microwave line exists: 273 independent signals for 98 ions, 2.8 per qubit, for confinement and transport alone [D][97], each a DAC channel, filter and feedthrough. At that ratio 10³ ions needs ~3,000 DC lines, past practical feedthrough counts, and 10⁶ is impossible without switching under the trap. The published escape is on-chip switching: Oxford Ionics' WISE drives 1,000 fully connected ions from ~200 sources, with no chip built and no dissipation budget [S][325].
@@ -58,7 +58,7 @@ Electrode and signal counts are vendor-reported and unaudited. Heating is publis
 
 **Market & supply chain.** Enabling equipment is ordinary semiconductor capital plus UHV parts, none concentrated; concentration sits in the fab — Infineon merchant, Honeywell captive, Sandia research-only, plus an IonQ–Sandia co-design MOU on 2026-08-04 [C][584]. Trap unit economics are unpublished; the nearest number is SkyWater's 19.7% GAAP gross margin on $442.1 M of FY2025 revenue [G][576]. G3 and G4 pay for this layer, G7 for rack modules.
 
-**IP & standards.** PatSnap's 2026 review names MIT Lincoln Laboratory's chip-integrated voltage-source and photonics families (2016, 2019) and ETH Zurich's cryogenic co-fabricated optics (2020) as core integration IP, with no count isolated to trap fabrication [P][375]. The key wiring architecture is published, not fenced [S][325]; no litigation, no acceptance standard.
+**IP & standards.** PatSnap's 2026 review names MIT Lincoln Laboratory's chip-integrated voltage-source and photonics families (2016, 2019) and ETH Zürich's cryogenic co-fabricated optics (2020) as core integration IP, with no count isolated to trap fabrication [P][375]. The key wiring architecture is published, not fenced [S][325]; no litigation, no acceptance standard.
 
 **Roadmaps & track record.** Quantinuum: Sol on a Honeywell-fabricated grid trap (promised 2024-09-10 · for 2027 · in validation as of 2026-09-03) [R][118]; Helios shipped on time, so fab-linked credibility is good. IonQ: SkyWater (promised 2026-01-26 · for Q2–Q3 2026 · closed 2026-07-31) [C][19], but 10,000 ions on one chip in 2027 rests on no published 2D-trap heating or yield data, and the 2020 roadmap missed its 2026 count ~40×.
 

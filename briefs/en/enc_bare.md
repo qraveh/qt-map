@@ -1,6 +1,6 @@
 ---
 id: enc_bare
-name: Bare two-level subspace
+name: Bare physical qubit (no encoding)
 layer: 2 Encoding
 status: demonstrated
 since: 2007
@@ -17,7 +17,7 @@ Attributes: it adds no characteristic time, readout, mobility, control or fabric
 Error structure as the code sees it: unbiased Pauli plus leakage out of the subspace.
 
 ## Physics & limits
-The scale that matters is α ≈ −E_C ≈ 2π × 200–300 MHz: it sets the minimum gate time and the leakage per gate, which DRAG suppresses but cannot remove. Raising α costs charge dispersion, which grows as exp(−√(8E_J/E_C)); that trade is the floor here. Leakage persists where a Pauli fault does not: the second excited state survives tens of QEC cycles at Willow's 1.1 µs [D][1], feeding the decoder correlated wrong syndromes. Hence dedicated removal: USTC's all-microwave scheme suppresses leakage 72×, to a residual 6.4(5)×10⁻⁴ after 40 cycles [D][3]. What moves the floor is leakage-aware decoding and faster multi-level reset.
+The scale that matters is α ≈ −E_C ≈ 2π × 200–300 MHz: it sets the minimum gate time and the leakage per gate, which DRAG (derivative removal by adiabatic gate) pulse shaping suppresses but cannot remove. Raising α costs charge dispersion, which grows as exp(−√(8E_J/E_C)); that trade is the floor here. Leakage persists where a Pauli fault does not: the second excited state survives tens of QEC cycles at Willow's 1.1 µs [D][1], feeding the decoder correlated wrong syndromes. Hence dedicated removal: USTC's all-microwave scheme suppresses leakage 72×, to a residual 6.4(5)×10⁻⁴ after 40 cycles [D][3]. What moves the floor is leakage-aware decoding and faster multi-level reset.
 
 ## Engineering state of the art
 

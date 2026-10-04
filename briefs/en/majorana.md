@@ -13,7 +13,7 @@ updated: 2026-09-30
 
 ## Identity & lineage
 
-The carrier is the total fermion parity of two hybrid semiconductor–superconductor nanowires (a "tetron"), intended to be held non-locally in Majorana zero modes at the wire ends and so inaccessible to local perturbation. Kitaev proposed the one-dimensional p-wave chain in 2001; the Lutchyn/Oreg proximitised-nanowire recipe (2010) is what every device since has tried to realise; Microsoft's measurement-based architecture, where logic is parity measurement rather than braiding, is what these devices serve. Nothing in the record establishes that the measured parity is topologically protected.
+The carrier is the total fermion parity of two hybrid semiconductor–superconductor nanowires (a "tetron"), intended to be held non-locally in Majorana zero modes (MZMs) at the wire ends and so inaccessible to local perturbation. Kitaev proposed the one-dimensional p-wave chain in 2001; the Lutchyn–Oreg proximitised-nanowire recipe (2010) is what every device since has tried to realise; Microsoft's measurement-based architecture, where logic is parity measurement rather than braiding, is what these devices serve. Nothing in the record establishes that the measured parity is topologically protected.
 
 Attributes (technology graph):
 - a — affinity: fully fabricated (1.0); the object does not exist until an MBE stack and a gate pattern create it.
@@ -22,17 +22,17 @@ Attributes (technology graph):
 - d — mobility: static; the carrier is not transported.
 - e — control: low-frequency gate voltages, electronics at room temperature.
 - f — dominant error structure: unknown as the code sees it; no error model measured on a working qubit.
-- g — manufacturing: molecular-beam epitaxy of III–V heterostructures.
+- g — manufacturing: molecular beam epitaxy (MBE) of III-V heterostructures.
 
 ## Physics & limits
 
-The intended floor is exponential: a parity error requires a quasiparticle to cross between Majorana modes separated by many coherence lengths, so the rate should fall as exp(−L/ξ). That is the argument, not the demonstration. Two scales govern the devices: the induced gap, which sets the thermal quasiparticle population and is why lead replaced aluminium; and the hybridisation splitting, resolved on InAs–Pb to µeV precision from h/2e-periodic quantum-capacitance shifts [C][21].
+The intended floor is exponential: a parity error requires a quasiparticle to cross between MZMs separated by many coherence lengths, so the rate should fall as exp(−L/ξ). That is the argument, not the demonstration. Two scales govern the devices: the induced gap, which sets the thermal quasiparticle population and is why lead replaced aluminium; and the hybridisation splitting, resolved on InAs–Pb to µeV precision from h/2e-periodic quantum-capacitance shifts [C][21].
 
-Failure modes divide into quasiparticle poisoning — one unpaired fermion entering the island flips parity, which is what the ~20 s figure bounds — and dephasing between parity states, which is what an X-loop measures. The published asymmetry is the whole story: Z-loop 12.4 ms against X-loop 14.5 µs, roughly 1000× shorter [D][20]. Long Z with short X is equally consistent with a well-isolated charge island and says nothing about topology. With no X-loop re-measured on InAs–Pb, the physics that would move the floor — larger gap, lower disorder, longer wires — stays untested against the only discriminating observable.
+Failure modes divide into quasiparticle poisoning — one unpaired fermion entering the island flips parity, which is what the ~20 s figure bounds — and dephasing between parity states, which is what an X loop measures. The published asymmetry is the whole story: Z loop 12.4 ms against X loop 14.5 µs, roughly 1000× shorter [D][20]. Long Z with short X is equally consistent with a well-isolated charge island and says nothing about topology. With no X loop re-measured on InAs–Pb, the physics that would move the floor — larger gap, lower disorder, longer wires — stays untested against the only discriminating observable.
 
 ## Engineering state of the art
 
-Best demonstrated, 2026-06-02: a characteristic parity switching time of ~20 s, "with some instances reaching minute-scale", by interferometric single-shot parity measurement on **one hybrid nanowire of one tetron** in a multi-tetron array, InAs–Pb [C][21]. Typical at scale does not exist: no array yield, no assignment error, no X-loop lifetime, no two-qubit operation, no entanglement, no Bell test, no qubit T₁/T₂ [C][21][G:MSFT-MAJORANA-2026]. Microsoft's blog calls the 20 s a "qubit lifetime"; the preprint claims a parity lifetime in one wire [C][215].
+Best demonstrated, 2026-06-02: a characteristic parity switching time of ~20 s, "with some instances reaching minute-scale", by interferometric single-shot parity measurement on **one hybrid nanowire of one tetron** in a multi-tetron array, InAs–Pb [C][21]. Typical at scale does not exist: no array yield, no assignment error, no X-loop lifetime, no two-qubit operation, no entanglement, no Bell test, no qubit T1/T2 [C][21][G:MSFT-MAJORANA-2026]. Microsoft's blog calls the 20 s a "qubit lifetime"; the preprint claims a parity lifetime in one wire [C][215].
 
 **Records timeline**
 
@@ -41,7 +41,7 @@ Best demonstrated, 2026-06-02: a characteristic parity switching time of ~20 s, 
 | 2018-03-28, retracted 2021-03-08 | quantised 2e²/h Majorana conductance; recalibration moved plateaus 8%, points fell outside 2σ | Zhang et al. (Delft, Eindhoven, Microsoft) | [D][365] |
 | 2023-03-01 | e/4 interference with the predicted even–odd effect at ν=5/2 and ν=7/2 | Nokia Bell Labs, PRX 13, 011028 | [D][366] |
 | 2025-02 | single-shot parity readout, 1% assignment error, ms dwell times, InAs–Al | Microsoft, Nature | [D][13] |
-| 2025-07 | tetron Z-loop 12.4 ms vs X-loop 14.5 µs | Microsoft, preprint | [D][20] |
+| 2025-07 | tetron Z loop 12.4 ms vs X loop 14.5 µs | Microsoft, preprint | [D][20] |
 | 2026 | Kitaev-chain parity readout > 1 ms | QuTech, Nature | [D][216] |
 | 2026-06-02 | ~20 s parity switching, one wire of one InAs–Pb tetron | Microsoft, preprint | [C][21] |
 | 2026-07-10 | coherent parity oscillations in coupled minimal Kitaev chains, "limited protection" | QuTech, preprint | [D][217] |
@@ -52,7 +52,7 @@ Dominant term of the error budget: unquantified. The only channel with a measure
 
 The stack is MBE-grown InAs with an in-situ superconductor — now lead — patterned into tetrons by electrostatic gates. It is the least manufacturable process in the carrier layer: MBE throughput is wafers per day; the semiconductor–superconductor interface determines yield and has no published in-line metric; and the device is defined by gate tuning, so "yield" means the fraction of gate settings passing a screen — the contested Topological Gap Protocol [22].
 
-No yield, uniformity, cost- or energy-per-qubit figure has been published for any Majorana device as of 2026-09-03. Microsoft moved fabrication capacity to Lyngby, Denmark, where the November 2025 opening was reported as enabling "the full fabrication of the Majorana chip core in Denmark", against cumulative Danish quantum-infrastructure investment above DKK 1 bn (≈ USD 156 M) [P][367]. GlobalFoundries lists topological among the modalities its Quantum Technology Solutions unit serves, with Microsoft Quantum named, but gives no wafer size, node or fab [C][353][G:GF-QTS-2026-05] — a captive research fab, not a foundry flow. Single points of failure: MBE tool supply, III–V source material, and the concentration of tetron know-how in one company and two university groups. No ECCN specific to Majorana devices was found.
+No yield, uniformity, cost- or energy-per-qubit figure has been published for any Majorana device as of 2026-09-03. Microsoft moved fabrication capacity to Lyngby, Denmark, where the November 2025 opening was reported as enabling "the full fabrication of the Majorana chip core in Denmark", against cumulative Danish quantum-infrastructure investment above DKK 1 bn (≈ USD 156 M) [P][367]. GlobalFoundries lists topological among the modalities its Quantum Technology Solutions unit serves, with Microsoft Quantum named, but gives no wafer size, node or fab [C][353][G:GF-QTS-2026-05] — a captive research fab, not a foundry flow. Single points of failure: MBE tool supply, III-V source material, and the concentration of tetron know-how in one company and two university groups. No ECCN specific to Majorana devices was found.
 
 ## Control, readout & I/O burden
 
@@ -60,7 +60,7 @@ Control is DC-to-low-frequency gate voltages from room-temperature electronics p
 
 ## Role in the stack
 
-The node sits on one architecture, Topological — tetron (Majorana). It requires III–V MBE heterostructures and provides the physical layer for the measurement-based Majorana gate, the fermion-parity (tetron) encoding and rf quantum-capacitance parity readout. It replaces and conflicts with nothing, because nothing depends on it. That isolation is the strategic fact: failure strands the branch with no partial credit — readout and MBE know-how transfer to hybrid-device physics, the encoding, gate set and error model nowhere.
+The node sits on one architecture, Topological — tetron (Majorana). It requires III-V MBE heterostructures and provides the physical layer for the measurement-based Majorana gate, the fermion-parity (tetron) encoding and rf quantum-capacitance parity readout. It replaces and conflicts with nothing, because nothing depends on it. That isolation is the strategic fact: failure strands the branch with no partial credit — readout and MBE know-how transfer to hybrid-device physics, the encoding, gate set and error model nowhere.
 
 Derived clock for the architecture = sum of the syndrome round: gate layers + transport + readout + reset: no code runs here, so only the ~100 µs parity-measurement term is defined and reset is unpublished, since logic *is* measurement and transport is absent — a design figure, not a demonstrated round. Neighbouring empty slots: a two-tetron joint-parity (X-type) measurement, and any decoder for a measured Majorana error model.
 
@@ -99,7 +99,7 @@ Legg argues the Topological Gap Protocol can label the same region gapped or gap
 - 2026-05-21 · GlobalFoundries · CHIPS letter of intent covering a unit that lists topological · $375 M · US Dept of Commerce · LOI [C][353][G:GF-QTS-2026-05]
 - Microsoft's topological R&D spend, headcount and Lyngby capex: not disclosed anywhere found.
 
-**Market & supply chain.** Nobody sells equipment specific to this technology; inputs are general MBE tools, III–V substrates and standard dilution refrigerators. Concentration risk is total: one vendor, one captive fab, no merchant supply. Unit economics are unquotable — no device sold, no cloud access, no attributable revenue. Only G3 and G4 (early and large-scale fault tolerance) would pay for it; G1, G2, G5 and G7 are served by machines Microsoft buys from others, which the Magne order documents [G:MAGNE-2025-07].
+**Market & supply chain.** Nobody sells equipment specific to this technology; inputs are general MBE tools, III-V substrates and standard dilution refrigerators. Concentration risk is total: one vendor, one captive fab, no merchant supply. Unit economics are unquotable — no device sold, no cloud access, no attributable revenue. Only G3 and G4 (early and large-scale fault tolerance) would pay for it; G1, G2, G5 and G7 are served by machines Microsoft buys from others, which the Magne order documents [G:MAGNE-2025-07].
 
 **IP & standards.** No topological-specific patent count from a named database was found; the only dated figure is the 1,175 Microsoft quantum patent families counted in PatSnap's landscape published on 2026-06-30 [P][G:PATSNAP-2026-06], spanning all modalities. No litigation over Majorana device IP was found, and there is no standards body; the only openly published aligned stack is Microsoft's Q#/Azure Quantum Development Kit, whose instruction model presumes the architecture rather than validating it.
 
@@ -109,7 +109,7 @@ Legg argues the Topological Gap Protocol can label the same region gapped or gap
 
 ## Outlook & open questions
 
-Falsifiable within 12–24 months. Confirm: an X-loop or joint-parity lifetime on InAs–Pb within two orders of magnitude of the Z-loop 20 s; any two-tetron measurement-based operation with a reported fidelity; independent reproduction of the InAs–Pb parity lifetime; Nokia publishing a ν=5/2 qubit in superposition, promised for end-2026 [P][369]. Demote: another year of Z-basis single-wire numbers only, or a second Matters Arising surviving reply.
+Falsifiable within 12–24 months. Confirm: an X-loop or joint-parity lifetime on InAs–Pb within two orders of magnitude of the Z loop's 20 s; any two-tetron measurement-based operation with a reported fidelity; independent reproduction of the InAs–Pb parity lifetime; Nokia publishing a ν=5/2 qubit in superposition, promised for end-2026 [P][369]. Demote: another year of Z-basis single-wire numbers only, or a second Matters Arising surviving reply.
 
 Best case 2029: a few tetrons with balanced X/Z lifetimes and a two-qubit parity gate — a research device, not the promised fault-tolerant machine. Worst case: the InAs–Pb signal proves to be trivial Andreev states and the branch closes.
 
@@ -142,7 +142,7 @@ Open questions: why no X-loop number exists for the lead generation; what fracti
 - X-loop / joint-parity lifetime for InAs–Pb: no measurement published as of 2026-09-03.
 - Microsoft topological R&D spend, Lyngby capex and headcount: not disclosed; the DKK 1 bn in [367] is total Danish quantum-infrastructure investment, not Microsoft's own outlay.
 - DARPA US2QC contract value to Microsoft: not disclosed in [218].
-- Export-control rules and ECCNs specific to Majorana or III–V superconducting hybrid devices: none identified.
+- Export-control rules and ECCNs specific to Majorana or III-V superconducting hybrid devices: none identified.
 - Nokia's claimed end-2025 Pauli-X control result: no publication or release found; [369], [371] are trade press.
 - Nokia device size "15×15 µm" and the "hours to days" state stability come from [369] and [368], not from a peer-reviewed source.
 - MBE tool vendor concentration asserted qualitatively; no dated market-share source consulted.

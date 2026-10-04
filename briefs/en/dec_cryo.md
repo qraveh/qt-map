@@ -1,10 +1,10 @@
 ---
 id: dec_cryo
-name: Cryogenic / on-chip decoder (SFQ, cryo-CMOS)
+name: Cryogenic / on-chip decoder (cryo-CMOS, SFQ)
 layer: "8 Decoder"
 status: empty slot
 since: —
-one_line: Syndrome decoding or pre-decoding executed inside the cryostat — SFQ logic at millikelvin, CMOS at 4 K — instead of at room temperature.
+one_line: Syndrome decoding or predecoding executed inside the cryostat — SFQ logic at millikelvin, CMOS at 4 K — instead of at room temperature.
 verdict: Four design studies, zero silicon as of 4 Sep 2026. Room-temperature FPGA decoders meet the 1.1 µs superconducting cycle, so only feedthrough count at 10⁴+ qubits can force this node into existence.
 updated: 2026-09-30
 ---
@@ -17,31 +17,31 @@ A cryogenic decoder evaluates the syndrome-to-correction map inside the refriger
 - Manufacturing: Nb multilayer lithography or 4 K-characterised CMOS; no decoder-specific process exists.
 
 ## Physics & limits
-The limit is thermal bookkeeping. An SFQ junction transition dissipates of order I_cΦ₀ ≈ 10⁻¹⁹ J, so a 10⁵-junction decoder at 2 GHz sits in the tens of µW — 2.78 µW is the published point [S][745] — against a dilution unit delivering hundreds of µW at 100 mK. Cryo-CMOS trades that for a ≈2 W plant at 4 K [S][550], of which one design spends 1.5 W to serve 2,668 logical qubits at d = 21 [S][733]. Neither floor is fundamental: each is an allocation against a budget control already claims, and it moves with the logic family — lower-power cryo-CMOS, SFQ at ~1.6 µW per qubit, adiabatic flux-parametron logic lower still [S][550]. The dominant failure mode is not a Pauli error — a decoder whose throughput falls below the syndrome rate accumulates unbounded backlog, so latency and bandwidth set the design. SFQ near the qubit die adds a second mechanism: pulse edges radiate, and photon-mediated quasiparticle poisoning measured 1.2(1)% error per Clifford on a separate-die SFQ driver that switches far less than a decoder would [D][G:SFQ-QP-POISONING-2023].
+The limit is thermal bookkeeping. An SFQ junction transition dissipates of order I_cΦ₀ ≈ 10⁻¹⁹ J, so a 10⁵-junction decoder at 2 GHz sits in the tens of µW — 2.78 µW is the published point [S][745] — against a dilution unit delivering hundreds of µW at 100 mK. Cryo-CMOS trades that for a ≈2 W plant at 4 K [S][550], of which one design spends 1.5 W to serve 2,668 logical qubits at d=21 [S][733]. Neither floor is fundamental: each is an allocation against a budget control already claims, and it moves with the logic family — lower-power cryo-CMOS, SFQ at ~1.6 µW per qubit, adiabatic quantum-flux-parametron (AQFP) logic lower still [S][550]. The dominant failure mode is not a Pauli error — a decoder whose throughput falls below the syndrome rate accumulates unbounded backlog, so latency and bandwidth set the design. SFQ near the qubit die adds a second mechanism: pulse edges radiate, and photon-mediated quasiparticle poisoning measured 1.2(1)% error per Clifford on a separate-die SFQ driver that switches far less than a decoder would [D][G:SFQ-QP-POISONING-2023].
 
 ## Engineering state of the art
 All decoder figures are post-synthesis; the last row is the nearest fabricated analogue.
 
 | Year | Figure | Who | Tag+key |
 |---|---|---|---|
-| 2021-03 | SFQ surface-code decoder: 2.78 µW at 2 GHz, 1.0% threshold, d = 5–13 | Ueno et al. | [S][745] |
-| 2025-12 | 22 nm FDSOI predecoder at 4 K: 3,780.72× bandwidth cut, peak < 0.56 mW | Univ. Michigan | [S][G:PINBALL-2025-12] |
-| 2026-06 | 22 nm FDSOI compressor at 4 K: 48× at d = 17, 14,238× combined, 100 ns/round | Univ. Michigan | [S][G:CRYOZIP-2026-06] |
-| 2026-07 | Fabricated 4 K CMOS controller self-sequencing a d = 5 repetition code, ≤3.5 W | HRL Laboratories | [D][G:HRL-CRYOCMOS-4K-2026] |
+| 2021-03 | SFQ surface-code decoder: 2.78 µW at 2 GHz, 1.0% threshold, d=5–13 | Ueno et al. | [S][745] |
+| 2025-12 | 22 nm FD-SOI predecoder at 4 K: 3,780.72× bandwidth cut, peak < 0.56 mW | Univ. Michigan | [S][G:PINBALL-2025-12] |
+| 2026-06 | 22 nm FD-SOI compressor at 4 K: 48× at d=17, 14,238× combined, 100 ns/round | Univ. Michigan | [S][G:CRYOZIP-2026-06] |
+| 2026-07 | Fabricated 4 K CMOS controller self-sequencing a d=5 repetition code, ≤3.5 W | HRL Laboratories | [D][G:HRL-CRYOCMOS-4K-2026] |
 
 The dominant budget term is classical: off-cryostat bandwidth and round-trip latency.
 
 ## Manufacturing, materials & supply chain
-Both cryo-CMOS designs run on 22 nm FDSOI characterised at 4 K, and both took that PDK from Semiwise Ltd (UK) [S][746] — one small supplier between every academic group and a tape-out. GlobalFoundries' 22FDX is the volume path behind it [C][G:GF-QTS-2026-05]. The SFQ path depends on SEEQC's multilayer Nb foundry in Elmsford NY [D][G:SEEQC-FUNDING], the only merchant line of its class. No yield or unit cost exists: nothing has taped out. ECCN 3A901.a covers CMOS ICs "designed to operate at" ≤4.5 K — design intent, not performance — so the layout is controlled pre-fabrication [G:BIS-3A901A-CRYOCMOS].
+Both cryo-CMOS designs run on 22 nm FD-SOI characterised at 4 K, and both took that PDK from Semiwise Ltd (UK) [S][746] — one small supplier between every academic group and a tape-out. GlobalFoundries' 22FDX is the volume path behind it [C][G:GF-QTS-2026-05]. The SFQ path depends on SEEQC's multilayer Nb foundry in Elmsford NY [D][G:SEEQC-FUNDING], the only merchant line of its class. No yield or unit cost exists: nothing has taped out. ECCN 3A901.a covers CMOS ICs "designed to operate at" ≤4.5 K — design intent, not performance — so the layout is controlled pre-fabrication [G:BIS-3A901A-CRYOCMOS].
 
 ## Control, readout & I/O burden
-The node exists to cut I/O. The superconducting QEC cycle is 1.1 µs [D][1] and a distance-d logical qubit emits d²−1 syndrome bits per round — ≈0.4 Gb/s at d = 21. At 10³ physical qubits nothing binds — a local clustering decoder holds under 1 µs per round to d = 17 on a Xilinx VU19P using ≈6% of its LUTs [D][G:RIVERLANE-LCD-2025-12], and exact FPGA matching averages 0.8 µs at d = 13 [D][727]. The wall at 10⁴–10⁶ is mechanical before computational: feedthrough count, harness heat load, serialiser bandwidth crossing 4 K. Compression attacks that term.
+The node exists to cut I/O. The superconducting QEC cycle is 1.1 µs [D][1] and a distance-d logical qubit emits d²−1 syndrome bits per round — ≈0.4 Gb/s at d=21. At 10³ physical qubits nothing binds — a local clustering decoder holds under 1 µs per round to d=17 on a Xilinx VU19P using ≈6% of its LUTs (lookup tables) [D][G:RIVERLANE-LCD-2025-12], and exact FPGA matching averages 0.8 µs at d=13 [D][727]. The wall at 10⁴–10⁶ is mechanical before computational: feedthrough count, harness heat load, serialiser bandwidth crossing 4 K. Compression attacks that term.
 
 ## Role in the stack
-An alternate decoder on the transmon lattice with tunable couplers. It requires millikelvin SFQ or 4 K cryo-CMOS control first, provides for nothing downstream, and blocks no one. It replaces room-temperature FPGA decoding: an FPGA is reprogrammable as codes and noise models change, a cold ASIC is fixed-function, competes with control for cold watts, and is export-controlled from the design file. The argument for an ASIC is supply-side: merchant high-end FPGAs are an AMD/Altera duopoly, one side private-equity-controlled since 2025 [G:ALTERA-SILVERLAKE-2025]. As a pre-decoder it adds ≈0.10 µs per round [S][G:CRYOZIP-2026-06] outside derived clock = sum of the syndrome round: gate layers + transport + readout + reset, which stays ≈0.65 µs against the measured 1.1 µs cycle; only the cabling cost changes.
+An alternate decoder on the transmon lattice with tunable couplers. It requires millikelvin SFQ or 4 K cryo-CMOS control first, provides for nothing downstream, and blocks no one. It replaces room-temperature FPGA decoding: an FPGA is reprogrammable as codes and noise models change, a cold ASIC is fixed-function, competes with control for cold watts, and is export-controlled from the design file. The argument for an ASIC is supply-side: merchant high-end FPGAs are an AMD/Altera duopoly, one side private-equity-controlled since 2025 [G:ALTERA-SILVERLAKE-2025]. As a predecoder it adds ≈0.10 µs per round [S][G:CRYOZIP-2026-06] outside derived clock = sum of the syndrome round: gate layers + transport + readout + reset, which stays ≈0.65 µs against the measured 1.1 µs cycle; only the cabling cost changes.
 
 ## Evidence — how the numbers were measured
-Every decoder number is post-synthesis power/performance/area on a cryo-characterised PDK plus vector simulation, syndromes drawn from noise models rather than a device; the 2025 predecoder is at least evaluated under circuit-level rather than code-capacity noise, and neither study is replicated outside an overlapping author set. Power per qubit at 4 K has no shared definition — 23 mW measured by IBM driving a two-qubit gate, against an "optimistic" 5 mW and sub-2 mW claims [S][G:CRYOCMOS-POWER-CONFLICT]; only 23 mW is tied to a running gate. The repeated 367 ns FPGA matching latency comes from a repository with no code distance and no paper; the peer-reviewed figure is 0.8 µs at d = 13 [D][727], used here.
+Every decoder number is post-synthesis power/performance/area on a cryo-characterised PDK plus vector simulation, syndromes drawn from noise models rather than a device; the 2025 predecoder is at least evaluated under circuit-level rather than code-capacity noise, and neither study is replicated outside an overlapping author set. Power per qubit at 4 K has no shared definition — 23 mW measured by IBM driving a two-qubit gate, against an "optimistic" 5 mW and sub-2 mW claims [S][G:CRYOCMOS-POWER-CONFLICT]; only 23 mW is tied to a running gate. The repeated 367 ns FPGA matching latency comes from a repository with no code distance and no paper; the peer-reviewed figure is 0.8 µs at d=13 [D][727], used here.
 
 ## Actors & economics
 **Who.**
@@ -51,7 +51,7 @@ Every decoder number is post-synthesis power/performance/area on a cryo-characte
 | SEEQC Inc. | Developer, supplier | USA | Nb foundry and millikelvin SFQ control; only credible SFQ host | [D][G:SEEQC-MK-SFQ-2026-03] |
 | HRL Laboratories | Developer | USA | Only fabricated cold logic inside a QEC loop | [D][G:HRL-CRYOCMOS-4K-2026] |
 | IBM | Developer, acquirer | USA | Cryo-CMOS flux-bias ASICs on 156 qubits; acquired HRL | [C][G:IBM-CRYOCMOS-FLUX-2026-03][G:IBM-HRL-CLOSED-2026-08] |
-| Semiwise Ltd | Supplier | UK | Sole source of the 4 K 22 nm FDSOI PDK used | [S][746] |
+| Semiwise Ltd | Supplier | UK | Sole source of the 4 K 22 nm FD-SOI PDK used | [S][746] |
 | Riverlane | Developer, rival | UK | Room-temperature FPGA decoding incumbent | [D][G:RIVERLANE-LCD-2025-12] |
 | US Bureau of Industry and Security | Regulator | USA | Controls ≤4.5 K CMOS ICs by design intent | [G:BIS-3A901A-CRYOCMOS] |
 

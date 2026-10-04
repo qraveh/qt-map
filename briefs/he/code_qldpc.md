@@ -1,6 +1,6 @@
 ---
 id: code_qldpc
-name: קודי qLDPC מסוג bivariate bicycle (קודי gross)
+name: קודי qLDPC לא-מקומיים (bivariate bicycle, "gross")
 layer: "7 קוד"
 status: emerging
 since: 2025

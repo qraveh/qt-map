@@ -4,7 +4,7 @@ name: Room-temperature electronics + per-qubit coax/flex
 layer: "5 Control"
 status: demonstrated
 since: 2007
-one_line: One coherent line per drive, flux and readout port runs from room-temperature racks through attenuated coax or flex ribbon into the mixing chamber.
+one_line: One coherent line per drive, flux and readout port runs from room-temperature racks through attenuated coax or flex cable into the mixing chamber.
 verdict: Line count and mixing-chamber heat, not gate physics, cap qubits per fridge; falsifiable if one fridge runs >2,000 qubits on RT lines.
 updated: 2026-09-30
 ---
@@ -12,7 +12,7 @@ updated: 2026-09-30
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-The incumbent control architecture for essentially every gate-model superconducting qubit: microwave drive, flux bias and readout tones synthesised at room temperature, carried down the dilution refrigerator on coax or flex ribbon, attenuated at each stage, reaching the chip at 10–20 mK. Every control degree of freedom is a conductor crossing a 300 K → 10 mK gradient — a thermal and mechanical problem, not a quantum one. In use since the first transmon setups (2007). Attributes: e = microwave control placed entirely at room temperature, no cryogenic amplification or demultiplexing; f = coherent error as the code sees it — crosstalk, phase noise, amplitude drift.
+The incumbent control architecture for essentially every gate-model superconducting qubit: microwave drive, flux bias and readout tones synthesised at room temperature, carried down the dilution refrigerator on coax or flex cable, attenuated at each stage, reaching the chip at 10–20 mK. Every control degree of freedom is a conductor crossing a 300 K → 10 mK gradient — a thermal and mechanical problem, not a quantum one. In use since the first transmon setups (2007). Attributes: e = microwave control placed entirely at room temperature, no cryogenic amplification or demultiplexing; f = coherent error as the code sees it — crosstalk, phase noise, amplitude drift.
 
 ## Physics & limits
 The binding constraint is the cooling budget, not coherence. Each line carries a passive conduction load plus an active load from the ~60 dB of attenuation that brings 300 K Johnson noise down to the 10 mK photon floor, most of it dumped at 4 K and the still. Cooling power per stage is fixed — a Bluefors XLD400 gives roughly 1 W at 4 K, microwatts at the mixing chamber — so lines scale O(N) against a constant. Krinner et al.'s measured budget supports 50 qubits at 14 mK in that fridge, about 150 at most [D][522]; every gain since is thinner cable and denser packing, not new physics. Failure is coherent — crosstalk and phase drift appear as control error, so these machines degrade by needing recalibration rather than by decohering. What moves the floor: multiplexing qubits per conductor, or moving synthesis into the fridge.
@@ -23,7 +23,7 @@ The binding constraint is the cooling budget, not coherence. Each line carries a
 | 2019 | 50 qubits per XLD400 measured; ~150 thermal upper bound | ETH Zürich | [D][522] |
 | 2023-12 | 1,121 qubits on one fridge (Condor), largest ever wired this way | IBM | [C][292] |
 | 2025-11-10 | 8 channels per flex, +50% per port, 1,536 lines per XLDsl | Delft Circuits | [C][523] |
-| 2026-06-16 | KIDE specified at >4,000 RF lines, >1,000 qubits | Bluefors | [C][303] |
+| 2026-06-16 | KIDE specified at >4,000 rf lines, >1,000 qubits | Bluefors | [C][303] |
 
 Wiring sets the N at which errors are worth correcting, not the floor: the dominant term is still two-qubit infidelity — Willow, 105 qubits at 99.88% mean 2Q, 1.1 µs cycle [D][1].
 
@@ -60,7 +60,7 @@ Every line count above 1,536 is product literature, not a wired system: Bluefors
 
 **Market & supply chain.** Racks are competitive and commoditising: five vendors qualified for NVQLink [C][531], Quantum Machines best capitalised at USD 280 M cumulative [C][528], Qblox an order of magnitude smaller [C][529]. Fridges and their wiring are concentrated, and Delft Circuits at EUR 15 M cumulative [P][530] is the one significant independent flex supplier — a single point of failure. Pays for G2, G3, G7; not G4.
 
-**IP & standards.** No dated patent-family count for cryogenic RF cabling or RT control was found in a named database — no dated fact found. No formal standard; the closest is NVQLink, which since 2025-10-28 defines a common GPU-side interface across five control vendors [C][531] while each pulse stack stays proprietary.
+**IP & standards.** No dated patent-family count for cryogenic rf cabling or RT control was found in a named database — no dated fact found. No formal standard; the closest is NVQLink, which since 2025-10-28 defines a common GPU-side interface across five control vendors [C][531] while each pulse stack stays proprietary.
 
 **Roadmaps & track record.** Delft Circuits (2025-11-10, for 2029): 40,000+ lines per fridge, no interim milestone [R][523]. Bluefors (2026-06-16, undated): KIDE at >4,000 lines, product page only [C][303]. Zurich Instruments (2026-03-09, undated): "several thousand qubits" [C][526]. Both cabling vendors have shipped every density step they announced; 2029 is nonetheless a straight-line projection.
 

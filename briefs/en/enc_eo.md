@@ -1,10 +1,10 @@
 ---
 id: enc_eo
-name: Exchange-only / singlet-triplet spin encoding
+name: Exchange-only / singlet–triplet spin encoding
 layer: "2 Encoding"
 status: demonstrated
 since: 2013
-one_line: One logical qubit in the total-spin subspace of two or three exchange-coupled dots, driven entirely by baseband voltage pulses, with leakage as the price of removing microwave control.
+one_line: One logical qubit in the total-spin subspace of three exchange-coupled spins (exchange-only) or two spins plus a field gradient (singlet–triplet), driven entirely by baseband voltage pulses, with leakage as the price of removing microwave control.
 verdict: The only spin encoding that has run error correction with no room-temperature real-time electronics; it costs three dots per qubit and a leakage channel, and its headline code result is bit-flip only.
 updated: 2026-09-04
 ---

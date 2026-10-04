@@ -1,6 +1,6 @@
 ---
 id: dec_gpu
-name: Декодирование на GPU через NVQLink
+name: GPU-декодирование через NVQLink
 layer: "8 Декодер"
 status: demonstrated
 since: 2025

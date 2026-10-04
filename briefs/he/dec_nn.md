@@ -1,6 +1,6 @@
 ---
 id: dec_nn
-name: מפענחים מבוססי רשתות עצביות (AlphaQubit2, CNN, טרנספורמרים)
+name: מפענחים מבוססי רשתות עצביות (AlphaQubit 2, CNN, טרנספורמרים)
 layer: "8 מפענח"
 status: demonstrated
 since: 2024

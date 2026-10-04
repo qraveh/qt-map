@@ -1,6 +1,6 @@
 ---
 id: fab_sc
-name: ליתוגרפיה של קיוביטים מוליכי-על (צמתי ג'וזפסון Nb/Al, 300 mm)
+name: ליתוגרפיה של קיוביטים מוליכי-על (צמתי Al/AlOx/Al, חיווט Nb, 300 mm)
 layer: "10 ייצור"
 status: demonstrated
 since: 2007

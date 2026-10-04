@@ -99,7 +99,7 @@ Rigetti's 99.1% and 99.5% are company medians without error bars or a stated pro
 - IBM: promised 2025-06-10 · Cockatoo 2027, entanglement between modules via the universal adapter; Nighthawk on nine l-coupled modules for 1,080 qubits by 2028 · pending [R][481] [G:IBM-ROADMAP].
 - IBM: promised 2022-05-10 · Kookaburra, a 1,386-qubit multi-chip processor, for 2025 [C][313]; re-promised 2025-06-10 for 2026 as the first module with a qLDPC memory [R][481] · not delivered as of 2026-09-30 [G:IBM-ROADMAP].
 - Rigetti: promised 2025-07-16 · 100+ qubit chiplet system at median 99.5% before end-2025 · delivered 2026-04-07 at 99.1%, target moved to "later in 2026" [C][36], [751].
-- QuantWare: promised 2025-12-08 · VIO-40K, 10,000 qubits, first delivery 2028 · pending [P][G:QUANTWARE-VIO].
+- QuantWare: promised 2025-12-08 · VIO-40K (VIO is QuantWare's vertical-wiring architecture), 10,000 qubits, first delivery 2028 · pending [P][G:QUANTWARE-VIO].
 
 Credibility: IBM meets its single-chip processor dates but not its multi-chip one — Kookaburra, promised for 2025, is undelivered — and publishes packaging as architecture rather than measurement, so its modular claims stay unfalsifiable until Cockatoo; Rigetti ships what it describes, a fidelity step behind its own target; QuantWare has money and a fab but no delivered multi-chip QPU at scale to judge.
 
@@ -107,7 +107,7 @@ Credibility: IBM meets its single-chip processor dates but not its multi-chip on
 
 ## Outlook & open questions
 
-Confirm within 12–24 months if: IBM's Cockatoo demonstrates entanglement between two l-coupled modules with a published fidelity by end-2027 [R][481]; Rigetti's 108-qubit system reaches median 99.5% [C][36]; anyone runs a stabilizer round whose checks cross a module boundary. Demote if no l-coupler fidelity is published by end-2027. Best case by 2029: a few thousand qubits in coupled cells with cross-module error correction at Λ comparable to monolithic. Worst case: tiling saturates near 10² qubits because frequency targeting across dies does not scale.
+Confirm within 12–24 months if: IBM's Cockatoo demonstrates entanglement between two l-coupled modules with a published fidelity by end-2027 [R][481]; Rigetti's 108-qubit system reaches median 99.5% [C][36]; anyone runs a stabiliser round whose checks cross a module boundary. Demote if no l-coupler fidelity is published by end-2027. Best case by 2029: a few thousand qubits in coupled cells with cross-module error correction at Λ comparable to monolithic. Worst case: tiling saturates near 10² qubits because frequency targeting across dies does not scale.
 
 Open questions: what causes the 40-basis-point tiling tax, per-join or per-calibration? Can a metre-scale cable's mode comb be pushed out of band without shortening it? What is an l-coupler's fidelity, two years after the claim? Does a qLDPC check spanning modules survive the extra transport error? Watch Rigetti's roadmap update, IBM's first Cockatoo measurement, QuantWare's Kilofab yield, and any paper benchmarking a chiplet boundary as such.
 

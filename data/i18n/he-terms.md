@@ -162,3 +162,5 @@ Sentences keep the Atlas's voice: short, declarative, no marketing words, no "no
 | trade press / press release / peer-reviewed / company-reported | העיתונות המקצועית / הודעה לעיתונות / שעבר ביקורת עמיתים / מדווח בידי הספק | |
 | independent replication / headline figure / single-shot | שחזור בלתי תלוי / נתון הכותרת / בהרצה יחידה | |
 | microsecond / nanosecond (in words) | מיקרו-שנייה / ננו-שנייה | the unit symbols µs / ns stay |
+| resource-state generator (RSG) (the photonic FBQC term; 4 Oct 2026 — the English pass replaced "factory") | מחולל מצבי משאב | the PsiQuantum term; "factory" stays only for magic states |
+| SiMOS; AlphaQubit 2; bivariate bicycle (English spellings fixed 4 Oct 2026) | SiMOS; AlphaQubit 2; bivariate bicycle | Latin tokens as the English edition writes them |

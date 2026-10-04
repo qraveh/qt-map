@@ -1,11 +1,11 @@
 ---
 id: ct_sfq
-name: SFQ digital control (millikelvin)
+name: SFQ digital control (4 K / mK)
 layer: "5 Control"
 status: emerging
 since: 2026
 one_line: "Quantised flux pulses from a niobium digital chip flip-chipped onto the qubit die drive gates at millikelvin, replacing per-qubit microwave coax."
-verdict: "Real: one five-qubit module at 1Q > 99%. Unproven: two-qubit gates, readout, flux bias, quasiparticle immunity beyond five qubits. Demote if no >20-qubit SFQ module by 2028."
+verdict: "Real: one five-qubit module at 1Q > 99%. Unproven: two-qubit gates, readout, flux bias, robustness to quasiparticle poisoning beyond five qubits. Demote if no >20-qubit SFQ module by 2028."
 updated: 2026-09-30
 ---
 
@@ -13,15 +13,15 @@ updated: 2026-09-30
 
 ## Identity & lineage
 
-Single-flux-quantum (SFQ) logic stores a bit as one flux quantum Φ₀ = h/2e in a superconducting loop; a switching junction emits a pulse of area Φ₀, about 1 mV for 2 ps. Its rapid form (RSFQ; Likharev & Semenov, 1991) was built for classical computing at 4 K. For qubit control, a pulse train locked to the qubit period adds coherently into a Rabi rotation [S][565]. In the 2026 form the controller is flip-chipped to the qubits at 10 mK [D][304]. The wider superconductor-electronics field is tracked in the Superconductor Electronics Monitor [P][56].
+Single-flux-quantum (SFQ) logic stores a bit as one flux quantum Φ₀ = h/2e in a superconducting loop; a switching junction emits a pulse of area Φ₀, about 1 mV for 2 ps. Rapid single-flux-quantum (RSFQ; Likharev & Semenov, 1991) logic was built for classical computing at 4 K. For qubit control, a pulse train locked to the qubit period adds coherently into a Rabi rotation [S][565]. In the 2026 form the controller is flip-chipped to the qubits at 10 mK [D][304]. The wider superconductor-electronics field is tracked in the Superconductor Electronics Monitor [P][56].
 
 Attributes. **Carrier affinity:** fully fabricated control layer. **Time / entangling:** not applicable. **Readout:** none demonstrated [C][53]. **Mobility:** none, bump-bonded. **Control modality @ placement:** microwave drive synthesised digitally *at millikelvin*. **Error structure as the code sees it:** Pauli plus correlated poisoning bursts [D][249]. **Manufacturing:** multi-layer niobium lithography.
 
 ## Physics & limits
 
-Each Φ₀ pulse gives the qubit a fixed phase kick, so gate angle is set by pulse *count*, not analogue amplitude. Switching costs only ~I_cΦ₀ ≈ 10⁻¹⁹ J per event; within a mixing-chamber budget of tens of µW at 20 mK, RSFQ's static bias power and bias distribution bind first.
+Each Φ₀ pulse gives the qubit a fixed phase kick, so gate angle is set by pulse *count*, not analog amplitude. Switching costs only ~I_cΦ₀ ≈ 10⁻¹⁹ J per event; within a mixing-chamber budget of tens of µW at 20 mK, RSFQ's static bias power and bias distribution bind first.
 
-The floor is pair-breaking: switching junctions radiate photons above the aluminium gap (2Δ ≈ 90 GHz) that break Cooper pairs in the qubit film — quasiparticle poisoning — causing T₁ decay and correlated bursts. Limiting the driver's pulse bandwidth is projected to remove it, bringing gate error toward 0.1% for resonant sequences [D][249]. Other levers: quasiparticle traps, gap engineering, millimetre-wave absorbers.
+The floor is pair-breaking: switching junctions radiate photons above the aluminium gap (2Δ ≈ 90 GHz) that break Cooper pairs in the qubit film — quasiparticle poisoning — causing T1 decay and correlated bursts. Limiting the driver's pulse bandwidth is projected to remove it, bringing gate error toward 0.1% for resonant sequences [D][249]. Other levers: quasiparticle traps, gap engineering, millimetre-wave absorbers.
 
 ## Engineering state of the art
 
@@ -43,7 +43,7 @@ The control die is multi-layer Nb/AlOx/Nb — eight or more planarised niobium l
 
 ## Control, readout & I/O burden
 
-Room-temperature control needs about one drive coax and one flux line per transmon, so fridge cross-section and heat load set its limit; a KIDE-class platform offers > 4,000 RF lines for "over 1000 qubits" [C][G:BLUEFORS-KIDE]. SFQ control needs a clock plus a low-rate instruction stream [D][304]. SFQ readout exists only as a preprint scheme [S][568]; SEEQC lists flux bias as future work [C][53].
+Room-temperature control needs about one drive coax and one flux line per transmon, so fridge cross-section and heat load set its limit; a KIDE-class platform offers > 4,000 rf lines for "over 1000 qubits" [C][G:BLUEFORS-KIDE]. SFQ control needs a clock plus a low-rate instruction stream [D][304]. SFQ readout exists only as a preprint scheme [S][568]; SEEQC lists flux bias as future work [C][53].
 
 ## Role in the stack
 
@@ -51,7 +51,7 @@ Architecture: the superconducting transmon lattice. It requires superconducting-
 
 ## Evidence — how the numbers were measured
 
-Every headline number is a randomised-benchmarking (RB) Clifford average [D][566][D][249][D][304]. RB assumes Markovian, gate-independent errors, so rare correlated bursts average into a slightly worse mean, and a module can pass at 99.9% yet emit correlated errors that decoders do not model. SEEQC's "absence of detectable quasiparticle poisoning" is reported only in press [C][53]. Not reported: charge parity under continuous clocking, T₁ with the clock on and off. No independent replication: the 2026 authors are all from SEEQC [D][304]. Conflicts: "exceeding 99%" in the abstract [D][304] against "exceeding 99.5%" in press [C][53]; "nanowatts per qubit" [C][53] against ~1.6 µW per qubit in a 2026 estimate [S][550][G:CRYOCMOS-POWER-CONFLICT].
+Every headline number is a randomised-benchmarking (RB) Clifford average [D][566][D][249][D][304]. RB assumes Markovian, gate-independent errors, so rare correlated bursts average into a slightly worse mean, and a module can pass at 99.9% yet emit correlated errors that decoders do not model. SEEQC's "absence of detectable quasiparticle poisoning" is reported only in press [C][53]. Not reported: charge parity under continuous clocking, T1 with the clock on and off. No independent replication: the 2026 authors are all from SEEQC [D][304]. Conflicts: "exceeding 99%" in the abstract [D][304] against "exceeding 99.5%" in press [C][53]; "nanowatts per qubit" [C][53] against ~1.6 µW per qubit in a 2026 estimate [S][550][G:CRYOCMOS-POWER-CONFLICT].
 
 ## Actors & economics
 

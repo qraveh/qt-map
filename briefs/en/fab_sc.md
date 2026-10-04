@@ -1,10 +1,10 @@
 ---
 id: fab_sc
-name: Superconducting-qubit lithography (Nb/Al JJ, 300 mm)
+name: Superconducting-qubit lithography (Al/AlOx/Al junctions, Nb wiring, 300 mm)
 layer: "10 Manufacturing"
 status: demonstrated
 since: 2007
-one_line: "300 mm junction lithography and post-fab trimming set the frequency spread every superconducting architecture inherits."
+one_line: "300 mm junction lithography and post-fabrication frequency trimming (laser annealing, ABAA) set the frequency spread every superconducting architecture inherits."
 verdict: "Real: 300 mm optical lithography yields 393/400 working qubits, at 5–7% frequency spread (10–14% in junction resistance); trimming lands 97.4% on target. Anderon is an LOI — demote if no non-IBM wafer ships by end-2027."
 updated: 2026-09-30
 ---
@@ -47,7 +47,7 @@ No control or readout of its own; it sets the ceiling others hit, through escape
 
 ## Role in the stack
 
-Root node of the superconducting family: it requires nothing upstream and provides for transmon, fluxonium, the rf-SQUID flux qubit and planar bosonic modes, plus long-range c-couplers, millikelvin SFQ control, flux-DAC multiplexing, vertical signal delivery, multi-die packaging, multi-chip modules with l-couplers, and cryogenic microwave links. Architectures served: transmon, bosonic cat/GKP, dual-rail erasure, annealing. For a bosonic mode it is the planar alternative to machined 3-D cavities. Fan-in is zero, yet its fan-out is the family's widest and every downstream node inherits its spread and yield. It adds nothing to the derived clock (derived clock = sum of the syndrome round: gate layers + transport + readout + reset, 0.65 µs on the transmon lattice) but bounds how many qubits reach it.
+Root node of the superconducting family: it requires nothing upstream and provides for transmon, fluxonium, the rf-SQUID flux qubit and planar bosonic modes, plus long-range c-couplers, millikelvin SFQ control, flux-DAC multiplexing, vertical signal delivery, multi-die packaging, multi-chip modules with l-couplers, and cryogenic microwave links. Architectures served: transmon, bosonic cat/GKP, dual-rail erasure, annealing. For a bosonic mode it is the planar alternative to machined 3D cavities. Fan-in is zero, yet its fan-out is the family's widest and every downstream node inherits its spread and yield. It adds nothing to the derived clock (derived clock = sum of the syndrome round: gate layers + transport + readout + reset, 0.65 µs on the transmon lattice) but bounds how many qubits reach it.
 
 ## Evidence — how the numbers were measured
 

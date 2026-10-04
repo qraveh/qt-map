@@ -1,6 +1,6 @@
 ---
 id: defect
-name: Colour-centre / defect spin (NV, SiV, SnV, T)
+name: Colour-centre / defect spin (NV, SiV, SnV, T centre)
 layer: 1 Carrier
 status: demonstrated
 since: 2004
@@ -12,7 +12,7 @@ updated: 2026-09-30
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-A point defect — nitrogen-vacancy, the group-IV silicon- and tin-vacancies in diamond, or silicon's T centre — read by fluorescence and entangled with an emitted photon, nearby nuclei as a small memory. Coherent single-spin control dates to 2004. The split that matters is symmetry: NV is polar and spectrally unstable, unlike SiV, SnV and the T centre.
+A point defect — nitrogen-vacancy, the group-IV silicon- and tin-vacancies in diamond, or silicon's T centre — read by fluorescence and entangled with an emitted photon, nearby nuclei as a small memory. Coherent single-spin control dates to 2004. The split that matters is symmetry: NV lacks inversion symmetry and so diffuses spectrally; SiV and SnV are inversion-symmetric.
 Attributes: natural defect, engineered placement, static host with a flying photon, ~1 µs gates; fluorescence readout ~100 µs, non-destructive and mid-circuit; optical plus microwave control; Pauli and loss error.
 
 ## Physics & limits
@@ -31,7 +31,7 @@ Local gates are not the problem: Fujitsu and QuTech report NV errors below 0.1% 
 Hosts: CVD diamond with implanted defects, or defect-engineered silicon for T centres. Element Six is the main merchant supplier, selling DNV-B1 (2020-06-15) by catalogue — but that grade targets NV *ensembles* [C][361]; single-defect nodes need electronic-grade plates. Two smaller sources exist: Diatope, an Ulm University spin-out (2021) selling engineered NV diamond, and Quantum Brilliance's quantum-diamond foundry in Melbourne (2025) [P][364]. Device yield is the missing number: QuTech's SnV study [P][362] characterised 327 nanocavities at room temperature, found coupled centres in 7 of the 9 it cooled and measured two above cooperativity one, with no chip-wide fraction [D][G:QUTECH-SNV-PRX-2026]. Optical I/O does not multiplex — each node needs its own resonant laser, microwave line, detector and fast feed-forward [D][360], so burden scales per node and 10³ nodes is nobody's target. Export control does name diamond: ECCN 3C005.a has covered diamond semiconductor substrates and their ingots above 10⁴ Ω·cm since 2022-08-15, and 3C006 such substrates carrying an epitaxial layer [G:BIS-3C005-DIAMOND-2022-08]; whether a quantum-grade plate counts as a semiconductor substrate is the open question.
 
 ## Role in the stack
-Architecture: colour-centre spins — network nodes (NV/SiV/T), as its primary carrier. The register lists {{N_T_DEFECT_MACHINES}} machines using it, among them SaxonQ's QC2026 Dual Core, Quantum Brilliance's Quoll / QB-QDK 2.0 and Fujitsu's Diamond-spin quantum computer prototype. Requires diamond growth or implantation; provides spin gating, fluorescence readout and the spin–photon link consumed upstream. The derived clock is transport-dominated by six to nine orders: ~1 µs gates against heralded links at 7.5 mHz (T centre, 40 m) to ~1 Hz (SiV, 20 m) [P][363][D][209]. Two teleported-CNOT claims coexist, one on T centres and one on NV, and *both* are right. Photonic Inc.'s T-centre tCNOT between cryostats was post-selected, no feed-forward and no gate fidelity, at Bell 0.60(8) [P][363]; QuTech's NV gate is unconditional at 63(4)% [D][360]. Only the second is a gate.
+Architecture: colour-centre spins — network nodes (NV/SiV/T), as its primary carrier. The register lists {{N_T_DEFECT_MACHINES}} machines using it, among them SaxonQ's QC2026 Dual Core, Quantum Brilliance's Quoll / QB-QDK 2.0 and Fujitsu's Diamond-spin quantum computer prototype. Requires diamond growth or implantation; provides spin gating, fluorescence readout and the spin–photon link consumed upstream. The derived clock is transport-dominated by six to nine orders: ~1 µs gates against heralded links at 7.5 mHz (T centre, 40 m) to ~1 Hz (SiV, 20 m) [P][363][D][209]. Two teleported-CNOT (tCNOT) claims coexist, one on T centres and one on NV, and *both* are right. Photonic Inc.'s T-centre tCNOT between cryostats was post-selected, no feed-forward and no gate fidelity, at Bell 0.60(8) [P][363]; QuTech's NV gate is unconditional at 63(4)% [D][360]. Only the second is a gate.
 
 ## Actors & economics
 **Who.**

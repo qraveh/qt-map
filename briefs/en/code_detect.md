@@ -1,6 +1,6 @@
 ---
 id: code_detect
-name: Error-detection codes ([[4,2,2]], d = 2 surface, iceberg, spacetime)
+name: Error-detection codes ([[4,2,2]], d=2 surface, iceberg, spacetime)
 layer: "7 Code"
 status: demonstrated
 since: 2017
@@ -12,7 +12,7 @@ updated: 2026-09-30
 [[n,k,d]] = n physical qubits carrying k logical qubits at distance d; acceptance = fraction of runs kept after post-selection; Λ = error-suppression factor per code-distance step; RB = randomised benchmarking; CZ = controlled-Z gate; G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-A distance-2 stabiliser code turns any single-qubit error into a non-trivial syndrome but cannot locate it, so the run is discarded (post-selected), not repaired. Members: [[4,2,2]], checks XXXX and ZZZZ; the distance-2 rotated surface code [[4,1,2]]; Quantinuum's iceberg code [[k+2,k,2]] [D][673]; and spacetime codes, which treat a Clifford circuit's outcome bits as a code and add checks that catch faults anywhere in it [S][710]. Fault-tolerant detection dates from 2017: [[4,2,2]] on trapped ions [D][711] and on IBM's five-qubit cloud chips [D][712]. The d = 2 surface code followed on transmons at ETH Zurich [D][713] and QuTech [D][714], and Google ran a small surface-code detection experiment beside its repetition codes [D][715].
+A distance-2 stabiliser code turns any single-qubit error into a non-trivial syndrome but cannot locate it, so the run is discarded (post-selected), not repaired. Members: [[4,2,2]], checks XXXX and ZZZZ; the distance-2 rotated surface code [[4,1,2]]; Quantinuum's iceberg code [[k+2,k,2]] [D][673]; and spacetime codes, which treat a Clifford circuit's outcome bits as a code and add checks that catch faults anywhere in it [S][710]. Fault-tolerant detection dates from 2017: [[4,2,2]] on trapped ions [D][711] and on IBM's five-qubit cloud chips [D][712]. The d=2 surface code followed on transmons at ETH Zürich [D][713] and QuTech [D][714], and Google ran a small surface-code detection experiment beside its repetition codes [D][715].
 Carrier-agnostic; static wiring; no control or readout of its own; stochastic Pauli errors only — leakage and loss need their own flags.
 
 ## Physics & limits
@@ -23,10 +23,10 @@ One fault flips a check, so an undetected logical error needs two: post-selected
 |---|---|---|---|
 | 2017-10 | [[4,2,2]] fault-tolerant encoding and syndrome measurement | Maryland, trapped ions | [D][711] |
 | 2019-02 | [[4,2,2]] logical RB: two-qubit infidelity 5.8(2)% → 0.60(3)% | Harper & Flammia, IBM cloud | [D][719] |
-| 2020-06 | d = 2 surface code, 7 transmons, logical initialisation 96.1% | ETH Zurich | [D][713] |
+| 2020-06 | d=2 surface code, 7 transmons, logical initialisation 96.1% | ETH Zürich | [D][713] |
 | 2024-01 | Iceberg: 8 logical qubits, up to 256 layers, logical quantum volume 2⁸ | Quantinuum H1-2 | [D][673] |
 | 2025-04 | Spacetime checks: 50 logical qubits, 2,450 CZ, fidelity gain up to 236× | IBM Heron (ibm_kingston) | [D][717] |
-| 2025-11 | d = 2 surface: transversal CNOT 88.9(5)%, logical Bell 79.4–79.5% | Origin Wukong | [D][720] |
+| 2025-11 | d=2 surface: transversal CNOT 88.9(5)%, logical Bell 79.4–79.5% | Origin Wukong | [D][720] |
 | 2026-02 | Iceberg and concatenated iceberg: 48–94 logical qubits beyond break-even | Quantinuum Helios | [D][105] |
 | 2026-09 | Spacetime-coded sampling: 76 physical qubits, 10× gate-error suppression, fidelity ≥ 0.349 (95%) | IBM/UChicago | [D][46] |
 
@@ -53,7 +53,7 @@ Every headline here is conditional on acceptance: Harper & Flammia's 0.60(3)% is
 |---|---|---|---|---|
 | IBM | developer | US | [[4,2,2]] magic state on Falcon; spacetime checks on Heron | [D][716][D][717] |
 | Quantinuum | developer | US/UK | Iceberg code on H1-2, H2-1 and Helios | [D][673][D][105] |
-| Origin Quantum | developer | CN | d = 2 surface-code logical gate set on Wukong | [D][720] |
+| Origin Quantum | developer | CN | d=2 surface-code logical gate set on Wukong | [D][720] |
 | IQM | developer | FI | [[4,2,2]] on a star-topology processor | [D][488] |
 
 **Money.** No dated financial item is specific to error-detection codes as of 2026-09-26; they are paid for inside machine and research budgets.

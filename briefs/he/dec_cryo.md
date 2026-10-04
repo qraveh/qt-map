@@ -1,6 +1,6 @@
 ---
 id: dec_cryo
-name: מפענח קריוגני / על השבב (SFQ, CMOS קריוגני)
+name: מפענח קריוגני / על השבב (CMOS קריוגני, SFQ)
 layer: "8 מפענח"
 status: empty slot
 since: —

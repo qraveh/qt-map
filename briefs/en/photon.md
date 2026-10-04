@@ -4,7 +4,7 @@ name: Single photon (discrete variable)
 layer: "1 Carrier"
 status: demonstrated
 since: 2001
-one_line: "A qubit carried by one optical quantum in path, time-bin or polarisation modes; entangling is probabilistic and the only error is loss."
+one_line: "A qubit carried by one optical quantum in path, time-bin or polarisation modes; entangling is probabilistic and the dominant error is loss."
 verdict: "Best component metrics of any platform, worst system result: no photonic logical qubit exists as of 2026-09-03 and loss sits 20–24× above threshold."
 updated: 2026-09-30
 ---
@@ -13,7 +13,7 @@ updated: 2026-09-30
 
 ## Identity & lineage
 
-A discrete-variable photonic qubit encodes one bit in which of two optical modes a single quantum occupies — two waveguides (path/dual-rail), two time slots, or two polarisations. Nothing in it decoheres: at 1550 nm the quantum carries 0.8 eV, four orders above room-temperature thermal energy, so there is no T1 and no T2. The photon either arrives intact or does not, so the error model is erasure with known location and the problem is transport, not isolation. Dual-rail as an error-suppressing encoding dates to Chuang and Yamamoto (1995); the platform starts with Knill, Laflamme and Milburn (2001), who proved linear optics, single-photon detection and feed-forward universal — at the price of making every two-qubit interaction probabilistic [D][337][G:DUALRAIL-LINEAGE].
+A discrete-variable photonic qubit encodes one bit in which of two optical modes a single quantum occupies — two waveguides (path/dual-rail), two time slots, or two polarisations. Nothing in it decoheres: at 1550 nm the quantum carries 0.8 eV, four orders above room-temperature thermal energy, so there is no T1 and no T2. The photon either arrives intact or does not, so the dominant error model is erasure with known location and the problem is transport, not isolation. Dual-rail as an error-suppressing encoding dates to Chuang and Yamamoto (1995); the platform starts with Knill, Laflamme and Milburn (2001), who proved linear optics, single-photon detection and feed-forward universal — at the price of making every two-qubit interaction probabilistic [D][337][G:DUALRAIL-LINEAGE].
 
 Attributes, from the graph record:
 - **a — affinity:** 0.25, near the fabricated end; the photon is natural, the mode defining the qubit is lithography.
@@ -30,7 +30,7 @@ Two indistinguishable photons meeting on a beamsplitter bunch, and detecting the
 
 The floor is a loss budget and every element spends against it. In Omega: fibre-to-chip 52 ± 12 mdB, splitter 0.5 ± 0.2 mdB, barium-titanate switch 100 mdB insertion, single-mode SiN 1.8 ± 0.2 dB/m (0.5 dB/m multimode) [D][169][G:PSIQ-OMEGA-METRICS-2025]. Theory tolerates 2.7% per-photon loss with 6-ring resource states, up to 17% with 168-qubit states nobody can build [S][179]. A photon crossing thirty switches has spent 3 dB — half of itself. Xanadu, on the continuous-variable side but with the same optics, quantifies the gap: 24.1× above threshold in 2026, targeting 1.0× in 2030 [C][178][G:XANADU-SPAC-2026-03].
 
-The standard fix for probabilistic sources costs the budget it protects: four-wave mixing must run at ~1% heralding probability to suppress multi-photon events, so near-determinism needs multiplexing depth around ten — ten times the switches at 100 mdB each. Deterministic quantum-dot sources break that circle, which is why 71.2% system efficiency, first above the 2/3 loss-tolerance threshold, is the most consequential source number on record [D][170]. Secondary failure modes: distinguishability (mismatch degrades HOM visibility and appears as Pauli rather than erasure error), multi-photon contamination, dark counts, and feed-forward latency — the photon waits in delay while a classical decision is made, and delay is loss.
+The standard fix for probabilistic sources costs the budget it protects: spontaneous four-wave mixing (SFWM) must run at ~1% heralding probability to suppress multi-photon events, so near-determinism needs multiplexing depth around ten — ten times the switches at 100 mdB each. Deterministic quantum-dot sources break that circle, which is why 71.2% system efficiency, first above the 2/3 loss-tolerance threshold, is the most consequential source number on record [D][170]. Secondary failure modes: distinguishability (mismatch degrades HOM visibility and appears as Pauli rather than erasure error), multi-photon contamination, dark counts, and feed-forward latency — the photon waits in delay while a classical decision is made, and delay is loss.
 
 ## Engineering state of the art
 
@@ -60,7 +60,7 @@ Drivers are room-temperature electro-optics and the chip sits at ~2 K, where a c
 
 ## Role in the stack
 
-The node sits on the fusion-based photonic architecture (PsiQuantum, Quandela, QuiX) and is the alternate carrier of the boson sampler architecture. It requires the photonic-IC foundry for sources and waveguides, and provides photons to linear-optical fusion, the resource-state factory, time-bin and path encodings, and single-photon detection. It replaces continuous-variable squeezed light; switching costs the whole stack — different sources, homodyne rather than click detection, GKP rather than fusion codes. Derived clock = sum of the syndrome round: gate layers + transport + readout + reset: none is defined, the architecture being measurement-driven; the native 1.0×10⁻⁷ s clock stands instead, and multiplexing and fusion retries set the effective logical rate. Empty neighbouring slots are conspicuous: no deterministic photon–photon gate, no photonic memory good enough for multiplexing at scale (ORCA's rubidium hollow-core fibre is the only commercial attempt), no non-destructive mid-circuit measurement.
+The node sits on the fusion-based photonic architecture (PsiQuantum, Quandela, QuiX) and is the alternate carrier of the boson sampler architecture. It requires the photonic-IC foundry for sources and waveguides, and provides photons to linear-optical fusion, the resource-state generator (RSG), time-bin and path encodings, and single-photon detection. It replaces continuous-variable squeezed light; switching costs the whole stack — different sources, homodyne rather than click detection, GKP rather than fusion codes. Derived clock = sum of the syndrome round: gate layers + transport + readout + reset: none is defined, the architecture being measurement-driven; the native 1.0×10⁻⁷ s clock stands instead, and multiplexing and fusion retries set the effective logical rate. Empty neighbouring slots are conspicuous: no deterministic photon–photon gate, no photonic memory good enough for multiplexing at scale (ORCA's rubidium hollow-core fibre is the only commercial attempt), no non-destructive mid-circuit measurement.
 
 ## Evidence — how the numbers were measured
 
@@ -81,7 +81,7 @@ Conflicts. (i) The main report's 0.5 dB/m is the multimode figure; single-mode S
 | Xanadu | developer | CA | CV/squeezed route — the in-platform substitution threat | [C][178][G:XANADU-SPAC-2026-03] |
 | Sparrow Quantum | supplier | DK | Merchant deterministic QD single-photon source chips | [D][338][P][342] |
 | USTC (Pan group) | research | CN | Jiuzhang boson sampling (squeezed light); best QD source efficiency on record | [D][170][D][175] |
-| Photonic Inc. | developer (adjacent) | CA | T-centres in silicon: spin-photon interface, telecom-band links | [P][186][G:PHOTONIC-200M-2026-05] |
+| Photonic Inc. | developer (adjacent) | CA | T centres in silicon: spin–photon interface, telecom-band links | [P][186][G:PHOTONIC-200M-2026-05] |
 | GlobalFoundries | supplier | US | 300 mm photonic quantum manufacturing, integrated SNSPD | [C][G:GF-QTS-2026-05] |
 | DARPA | funder | US | QBI Stage A/B/C and US2QC validation money | [G:QBI-STAGEB-2025-11] |
 | CEA/GENCI, DLR QCI | users | FR / DE | Buy and host photonic systems for HPC centres | [C][176][C][177] |
@@ -105,15 +105,15 @@ Conflicts. (i) The main report's 0.5 dB/m is the multimode figure; single-mode S
 
 **Roadmaps & track record.** PsiQuantum (promised 2024-04 · for end-2027 · commercially useful Brisbane machine; status: site moved to Moreton Bay Central, groundbreaking slipped to 2026-06, cryoplant delivery due 2H 2027 [C][G:PSIQ-GROUNDBREAKING-2026-06], no 2026 hardware publication) — the money and DARPA validation are real, the date is not. Quandela (promised · for 2025 · first logical qubit; missed) and (promised · for 2028 · 50 logical qubits; pending) — ships machines on schedule, misses fault-tolerance milestones. QuiX (promised 2025-07 · for 2026 · first-generation universal computer; status: Carina delivered 2026-07, commissioning pending) — credible on delivery, unproven on universality. ORCA (promised · for 2026 · PT-3; undelivered) — ships units, but non-universal ones. Xanadu (promised 2026-08-31 · for 2028–31 · fault tolerance 2028–29, 1,000+ logical by 2031) — the only photonic roadmap publishing its distance from threshold.
 
-**Strategic reading.** If DV photonics works, value migrates to the fab, the detector base and whoever owns the low-loss switch; the loser is the cryogenic-electronics complex around millikelvin qubits, because 2 K is cheap. Substitution threats sit inside photonics as much as outside: CV/GKP (Xanadu) and spin-photon hybrids (Photonic Inc.) both claim to sidestep probabilistic sources, while atoms and ions already have logical qubits — so photonics must win on manufacturing volume, not physics. Bargaining power sits with the foundry and the few firms able to make a deterministic source; no platform vendor gains leverage until one shows an encoded qubit.
+**Strategic reading.** If DV photonics works, value migrates to the fab, the detector base and whoever owns the low-loss switch; the loser is the cryogenic-electronics complex around millikelvin qubits, because 2 K is cheap. Substitution threats sit inside photonics as much as outside: CV/GKP (Xanadu) and spin–photon hybrids (Photonic Inc.) both claim to sidestep probabilistic sources, while atoms and ions already have logical qubits — so photonics must win on manufacturing volume, not physics. Bargaining power sits with the foundry and the few firms able to make a deterministic source; no platform vendor gains leverage until one shows an encoded qubit.
 
 ## Outlook & open questions
 
 **Confirm** if PsiQuantum publishes a fusion-network result with measured end-to-end loss, or DARPA advances it past Stage C; if QuiX commissions Carina and runs a universal feed-forward MBQC circuit by mid-2027; if any group demonstrates an encoded photonic qubit with measured error suppression. **Demote** if there is no PsiQuantum hardware publication by end-2027 while Brisbane slips again; if Quandela reaches end-2027 without one logical qubit while holding a 50-logical-by-2028 target; if PT-3 stays undelivered through 2027.
 
-Best case 2029: deterministic sources above 70% system efficiency on a foundry PIC, switch loss below 50 mdB, a first photonic logical qubit, a utility-scale machine in commissioning. Worst case 2029: loss within 3× of today, no logical qubit, the computing claim migrating to spin-photon hybrids while photonics consolidates into networking.
+Best case 2029: deterministic sources above 70% system efficiency on a foundry PIC, switch loss below 50 mdB, a first photonic logical qubit, a utility-scale machine in commissioning. Worst case 2029: loss within 3× of today, no logical qubit, the computing claim migrating to spin–photon hybrids while photonics consolidates into networking.
 
-Open questions. (1) Can QD sources be integrated at foundry scale without breaking the 2 K budget or abandoning telecom wavelengths? (2) Is there a feed-forward technology whose optical delay costs less loss than the multiplexing it enables? (3) How much loss is heralded rather than silent? (4) Why has PsiQuantum published nothing since Omega? (5) Do resource-state factories scale sub-linearly in switch count?
+Open questions. (1) Can QD sources be integrated at foundry scale without breaking the 2 K budget or abandoning telecom wavelengths? (2) Is there a feed-forward technology whose optical delay costs less loss than the multiplexing it enables? (3) How much loss is heralded rather than silent? (4) Why has PsiQuantum published nothing since Omega? (5) Do RSGs scale sub-linearly in switch count?
 
 ## References
 [169] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]

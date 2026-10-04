@@ -1,6 +1,6 @@
 ---
 id: fab_stm
-name: STM hydrogen lithography (donors)
+name: STM hydrogen-resist lithography (donors)
 layer: "10 Manufacturing"
 status: demonstrated
 since: 2012

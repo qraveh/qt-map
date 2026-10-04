@@ -5,14 +5,14 @@ layer: "4 Connectivity / transport"
 status: emerging
 since: 2024
 one_line: Row- and column-shared plunger and barrier lines address a two-dimensional dot array with line count scaling as the square root of dot count, trading addressing granularity for wireability.
-verdict: Removes the wiring wall on paper and in a 1,058-site chip, but no crossbar array has published a two-qubit gate, a crosstalk figure or an independent replication.
+verdict: Removes the I/O wall on paper and in a 1,058-site chip, but no crossbar array has published a two-qubit gate, a crosstalk figure or an independent replication.
 updated: 2026-09-30
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-A crossbar shares gate lines across rows and columns of a dot array: an n×m grid needs O(n+m) lines, not O(nm), at the price that every pulse reaches every dot on the line. Selectivity comes from cross-capacitance compensation and the operating-point spread between tiles: addressing becomes calibration. Introduced for spin qubits by Borsoi et al. (Veldhorst group, QuTech/TU Delft): 16 germanium dots on 23 lines, published January 2024 [D][520]. Attributes: connectivity — shared row/column addressing, carrier immobile; control and error — low-frequency drive from room temperature, coherent shared-line crosstalk over ordinary charge noise, CMOS fabrication.
+A crossbar shares gate lines across rows and columns of a dot array: an n×m grid needs O(n+m) lines, not O(nm), at the price that every pulse reaches every dot on the line. Selectivity comes from cross-capacitance compensation and the operating-point spread between tiles: addressing becomes calibration. Proposed for spin qubits by Li et al. (QuTech, Sci. Adv. 2018); first demonstrated by Borsoi et al. (Veldhorst group, QuTech/TU Delft): 16 germanium dots on 23 lines, published January 2024 [D][520]. Attributes: connectivity — shared row/column addressing, carrier immobile; control and error — low-frequency drive from room temperature, coherent shared-line crosstalk over ordinary charge noise, CMOS fabrication.
 
 ## Physics & limits
 Line count follows a Rent exponent near 0.5: T = 6√g − 1 terminals for g dots [D][520], and n+m+7 = 53 lines for the 23×23 QARPET array, capacity 1,058 sites at 2×10⁶ tiles/mm² [D][521]. The binding constraint is uniformity, not wiring: one shared voltage must land inside every tile's operating window at once, so threshold spread sets how many tiles a line serves. QARPET's 38-of-40 addressable tiles show T2* 4.43–5.75 µs and Hahn-echo T2 10.11–12.69 µs, comparable to individually wired germanium devices: sharing lines costs no coherence [D][521]. What it adds is coherent error correlated along a whole row or column, the structure decoders assume away. On-chip demultiplexing would move the floor.

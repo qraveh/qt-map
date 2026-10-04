@@ -4,7 +4,7 @@ name: Fusion-based fault tolerance
 layer: "7 Code"
 status: theory
 since: 2030
-one_line: "A fault-tolerant code assembled from destructive linear-optical fusions on pre-made photonic resource states, tolerating 2.7-17.4% photon loss in theory and never run end-to-end."
+one_line: "A fault-tolerant code assembled from destructive linear-optical fusions on pre-made photonic resource states, tolerating 2.7–17.4% photon loss in theory and never run end-to-end."
 verdict: "Real: loss thresholds derived in simulation, 2.7% (boosted 6-ring) to 17.4% ({7,4} encoded). Unproven: any hardware run of the scheme; only components exist. Demote if no fusion-lattice demonstration by 2029."
 updated: 2026-09-30
 ---
@@ -15,7 +15,7 @@ updated: 2026-09-30
 A fault-tolerant architecture with no deterministic two-qubit gate: pre-made photonic resource states are consumed by destructive linear-optical fusions, and the code lives in the pattern of which fusions succeeded, failed or reported loss. Bartolucci, Birchall, Bombín and colleagues at PsiQuantum formalised it with thresholds in 2023 [S][179]. It replaces GKP-bosonic concatenation as photonics' route to fault tolerance. Attributes: flying photons, no native control modality and no clock of its own; pure-loss errors, no manufacturing precursor beyond fusion and resource-state generation.
 
 ## Physics & limits
-Loss is the design variable: a lost photon heralds a fusion failure, that failure is an erasure with a known location, and the decoder routes around it. Hence unusually high tolerances — 2.7% loss per photon with a boosted 6-ring, 17.4% with a {7,4}-encoded state of ~168 photons nobody can make [S][179]. The catch sits below threshold. A 2026 re-analysis shows fusion failure alone, at zero physical loss, leaves a logical-error floor shrinking only with code distance, so being under threshold says nothing about the overhead for 10⁻¹⁰; emitter-mediated fusion raises the threshold to 7.0–7.3% against an unencoded 6-ring's 0.38–0.82% [S][264][G:SPARROW-SUBTHRESHOLD-2026-06]. Moving the floor takes lower-loss photonics, boosted fusion, or emitters.
+Loss is the design variable: a lost photon turns a fusion into a heralded erasure at a known location; an intrinsic failure erases one of its two outcomes, and the decoder routes around both. Hence unusually high tolerances — 2.7% loss per photon with a boosted 6-ring, 17.4% with a {7,4}-encoded state of ~168 photons nobody can make [S][179]. The catch sits below threshold. A 2026 re-analysis shows fusion failure alone, at zero physical loss, leaves a logical-error floor shrinking only with code distance, so being under threshold says nothing about the overhead for 10⁻¹⁰; emitter-mediated fusion raises the threshold to 7.0–7.3% against an unencoded 6-ring's 0.38–0.82% [S][264][G:SPARROW-SUBTHRESHOLD-2026-06]. Moving the floor takes lower-loss photonics, boosted fusion, or emitters.
 
 ## Engineering state of the art
 
@@ -32,7 +32,7 @@ On the report's cross-platform table photonics scores zero on every fault-tolera
 Nothing is manufactured for this code; it inherits the photonic-IC stack of its inputs (300 mm silicon at GlobalFoundries) [C][G:GF-QTS-2026-05]. No yield, cost or energy figure exists because nothing runs it. The burden it imposes is synchronisation: a {7,4}-encoded state means ~168 photons per round, each with a source, switch path and detector channel, against a record of 8 fused photons at 0.4–2.3 per minute [D][688]. At 10³ fusions/s the constraint is switch loss; at the 10⁶ a useful machine needs, cryogenic detector channels and GHz feed-forward, neither built. ECCN 4A906 covers the assembled machine [G:BIS-QUANTUM-ECCN-2024-09].
 
 ## Role in the stack
-Requires linear-optical fusion and a resource-state factory, neither at code-relevant scale, and provides nothing downstream — it tops the photonic fusion architecture (PsiQuantum, Quandela, QuiX). It replaces GKP-bosonic concatenation, and the switch is total: different carrier, detectors, error model. Its MHz cycle is a design claim, not a measurement: the real cycle is resource-state supply, ~0.4–2.3 per minute [D][688]. Verification: the thresholds are decoder simulations under stated noise models, never measured or independently reproduced; the 2026 re-analysis is the first published challenge to the framework's relevance, unanswered as of 4 Sep 2026.
+Requires linear-optical fusion and a resource-state generator (RSG), neither at code-relevant scale, and provides nothing downstream — it tops the photonic fusion architecture (PsiQuantum, Quandela, QuiX). It replaces GKP-bosonic concatenation, and the switch is total: different carrier, detectors, error model. Its MHz cycle is a design claim, not a measurement: the real cycle is resource-state supply, ~0.4–2.3 per minute [D][688]. Verification: the thresholds are decoder simulations under stated noise models, never measured or independently reproduced; the 2026 re-analysis is the first published challenge to the framework's relevance, unanswered as of 4 Sep 2026.
 
 ## Actors & economics
 **Who.**

@@ -1,10 +1,10 @@
 ---
 id: ic_fanout
-name: Cryogenic signal fan-out for spin arrays (router die, 3-D stacked wiring)
+name: Cryogenic signal fan-out for spin arrays (router die, 3D stacked wiring)
 layer: "9 Interconnect"
 status: emerging
 since: 2025
-one_line: "A millikelvin router die, an on-die multiplexer or 3-D stacked wiring that turns a few cold input lines into the tens to thousands of gate voltages a spin-qubit array needs."
+one_line: "A millikelvin router die, an on-die multiplexer or 3D stacked wiring that turns a few cold input lines into the tens to thousands of gate voltages a spin-qubit array needs."
 verdict: "The parts exist — Intel's 64-terminal Pando Tree, Quantum Motion's 1,024-dot multiplexed chip, Delft's 648-device demultiplexer — but no gate fidelity measured through a millikelvin router has been published as of 2026-09-26, and at Delft's ~1.25 µW per generated voltage a milliwatt of millikelvin cooling holds ~800 voltages: 10³ qubits only with shared control."
 updated: 2026-09-30
 ---
@@ -36,13 +36,13 @@ No row is a gate benchmark through a router: Pando Tree shares a circuit board w
 Router dies are foundry CMOS run cold: 22 nm FinFET from Intel for Delft [D][552], 22FDX for Quantum Motion [D][767] and Equal1 [C][273], Intel 18A for Hitachi's quantum PDK, "the first such interface for a 1.8nm-class process" [P][769]. Tunnel Falls comes off a 300 mm line with extreme-ultraviolet lithography [D][199]. Three routes compete: a separate router die (Intel), monolithic multiplexers (Quantum Motion, Equal1), and "stacking qubit chips and control electronics vertically" (Hitachi) [P][769]. Cold wafer test gates all three — Intel's cryoprober is the published instance [D][766] — and imec's SPINS pilot line adds 300 mm spin-qubit runs, PDKs and cryo-CMOS [C][770]. Router and bond yields are unpublished as of 2026-09-26.
 
 ## Control, readout & I/O burden
-Pando Tree delivers "both constant voltage bias and high-speed voltage pulsing for up to 64 qubit terminals" from nine digital signals and one line from the 4 K Horse Ridge II controller [C][272]: ten lines for 32 qubits at two terminals each (t = 2), ~0.3 lines per qubit [S]. The register's 0.0156 lines per qubit counts only the analogue line and reads terminals as qubits [S]. Intel's "approximately 20 cables" for a million qubits [C][272] carries no heat or bandwidth budget, as of 2026-09-26. Readout fans in too: Diraq reads eight qubits through two SETs [D][197]. At 1.25 µW per voltage and two terminals per qubit [S], 10³ qubits need ~2.5 mW wired directly, ~0.2 mW on a crossbar; 10⁶ need ~2.5 W, or ~7.5 mW shared — only the combination nears one refrigerator's budget.
+Pando Tree delivers "both constant voltage bias and high-speed voltage pulsing for up to 64 qubit terminals" from nine digital signals and one line from the 4 K Horse Ridge II controller [C][272]: ten lines for 32 qubits at two terminals each (t = 2), ~0.3 lines per qubit [S]. The register's 0.0156 lines per qubit counts only the analog line and reads terminals as qubits [S]. Intel's "approximately 20 cables" for a million qubits [C][272] carries no heat or bandwidth budget, as of 2026-09-26. Readout fans in too: Diraq reads eight qubits through two SETs [D][197]. At 1.25 µW per voltage and two terminals per qubit [S], 10³ qubits need ~2.5 mW wired directly, ~0.2 mW on a crossbar; 10⁶ need ~2.5 W, or ~7.5 mW shared — only the combination nears one refrigerator's budget.
 
 ## Role in the stack
 Slot 9, the only layer-9 entry, of "Silicon / germanium quantum-dot spins". It **requires** fab_cmos (foundry CMOS) — "a CMOS router die at cryogenic temperature" — and ct_cryocmos (cryogenic CMOS control), which generates what this technology routes; cx_crossbar (layer 4) shares lines inside the array. No **provides** edge is recorded. ic_mcm (coupled multi-chip modules) **replaces** it; neither spin architecture has an inter-module link, as of 2026-09-26. {{N_T_IC_FANOUT_MACHINES_W_CAP}} register machines carry it ({{N_T_IC_FANOUT_PRIMARY}} as primary): Tunnel Falls, Hitachi × Intel 18A, RacQ (Bell-1) and QM-One — those whose makers name an artefact. Tunnel Falls' cell is ✅, on the Pando Tree demultiplexer; the others are inferred and 🔎. Gap G-spinl9, answered in part: slot 9 of the quantum-dot architecture now holds this technology, the proposed ic_router; slot 9 of the donor-spin architecture is still empty.
 
 ## Evidence — how the numbers were measured
-The figures of merit — channels per die, heat per line at the MXC, hold droop, refresh rate, switching crosstalk — sit in no register cell. The record is component-level: Delft's held voltages drift 60 µV/s to 18 mV/s [D][552], slow coherent error that randomized benchmarking averages away [S]; the cryoprober and the 1,024-dot chip measure devices, not gates [D][766][D][767]. Equal1's page lists 99.3% average two-qubit fidelity [C][273], which the register holds beside a press survey's 98.4%; neither names the fan-out behind it. Missing, as of 2026-09-26: a benchmark through a millikelvin router, and Pando Tree's dissipation.
+The figures of merit — channels per die, heat per line at the MXC, hold droop, refresh rate, switching crosstalk — sit in no register cell. The record is component-level: Delft's held voltages drift 60 µV/s to 18 mV/s [D][552], slow coherent error that randomised benchmarking averages away [S]; the cryoprober and the 1,024-dot chip measure devices, not gates [D][766][D][767]. Equal1's page lists 99.3% average two-qubit fidelity [C][273], which the register holds beside a press survey's 98.4%; neither names the fan-out behind it. Missing, as of 2026-09-26: a benchmark through a millikelvin router, and Pando Tree's dissipation.
 
 ## Actors & economics
 **Who.**

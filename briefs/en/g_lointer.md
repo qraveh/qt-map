@@ -100,5 +100,5 @@ Confirm if, by 2027-12-31, no classical sampler matches Jiuzhang 4.0 on its subs
 ## Open verification items
 - The arXiv abstract pages of 2605.30935 and 2109.11525 did not render on 2026-09-26; months are taken from the identifiers, titles and authors from the full-text HTML.
 - NQCC system model: ORCA's release of 2025-06-11 says only "PT Series"; the PT-2 page names the NQCC testbed as a 2025 deployment (checked 2026-09-26).
-- PT-2 input state: the third-party "photon-subtracted squeezed states" contradicts the register's "single photons (SPDC)"; no ORCA primary source settles it (searched 2026-09-26).
+- PT-2 input state: the third-party "photon-subtracted squeezed states" contradicts the register's "single photons (SPDC)" (spontaneous parametric down-conversion); no ORCA primary source settles it (searched 2026-09-26).
 - No classical rebuttal of Jiuzhang 4.0 was found in a search on 2026-09-26; an unindexed preprint may exist.

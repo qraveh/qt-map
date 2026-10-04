@@ -12,7 +12,7 @@ updated: 2026-09-04
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-Driving a control transmon at its neighbour's frequency through a fixed bus produces a ZX interaction; Chow, Córcoles, Gambetta et al. (IBM), 2011 [D][425]. Kandala et al. reached CNOT 99.77(2)% in a single 180 ns pulse in 2021 by suppressing the static ZZ intrinsically, two fixed-frequency coupling elements retuning the dressed levels rather than extra cancellation drives [D][287].
+Driving a control transmon at its neighbour's frequency through a fixed bus produces a ZX interaction (Z on the control, X on the target); Chow, Córcoles, Gambetta et al. (IBM), 2011 [D][425]. Kandala et al. reached CNOT 99.77(2)% in a single 180 ns pulse in 2021 by suppressing the static ZZ intrinsically, two fixed-frequency coupling elements retuning the dressed levels rather than extra cancellation drives [D][287].
 Attributes: fabricated carrier, static connectivity, microwave control at room temperature; deterministic entangling at 10^-6.5 s (~320 ns typical, 180 ns best).
 Coherent plus Pauli error; standard superconducting lithography, no added process.
 
@@ -27,7 +27,7 @@ The ZX rate is second order, ∝ JΩ/(Δ(Δ+α)), fastest in the straddling regi
 | 2021-09-22 | CNOT 99.77(2)% in a single 180 ns pulse | IBM | [D][287] |
 | 2026-06-25 | Fixed-frequency lattice patch, CNOT > 98% simulated | Hanyang University | [S][426] |
 
-No fleet-average CR number was ever published; IBM's EPLG today (3.7×10⁻³ [D][34]) is Heron hardware, which replaced CR in 2023-12 [C][72]. The painful reference is Oxford/OQC's fixed-coupling CZ, 99.8% in 25 ns [C][423] — no coupler control either, seven times faster.
+No fleet-average cross-resonance (CR) number was ever published; IBM's EPLG today (3.7×10⁻³ [D][34]) is Heron hardware, which replaced CR in 2023-12 [C][72]. The painful reference is Oxford/OQC's fixed-coupling CZ, 99.8% in 25 ns [C][423] — no coupler control either, seven times faster.
 
 ## Manufacturing, materials & supply chain
 No process of its own. The cost lands in binning and trimming: a collision cannot be detuned away after fabrication, only masked in software or annealed out, so frequency targeting — laser annealing at IBM, alternating-bias annealing at Rigetti [D][294] — is the supply-chain item CR drives. Its advantage is the I/O ledger: one drive line per qubit and nothing per coupler, where tunable couplers add a flux line and a DAC channel each, roughly 1.5–2× the lines. At 10³ that is a crowded fridge against an impossible one; at 10⁴–10⁶ it is the whole wiring budget. Export exposure is the carrier's (ECCN 3A901).

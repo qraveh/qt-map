@@ -14,7 +14,7 @@ updated: 2026-09-04
 ## Identity & lineage
 Move the optics that hold and address single atoms — lenses, modulators and deflectors on a metre-scale breadboard — onto a photonic chip. Two functions hide under one node and only the first is trap generation: emitting tweezer light from the chip (Pasqal, four rubidium atoms, ~27.5 s lifetime, August 2026 [C][330]), and coupling trapped atoms to on-chip photonics for imaging and collection (Chicago, 64 free-space tweezers over >100 nanophotonic cavities [D][579]; a 50-atom, 784-channel glass waveguide array [D][580]). Reconfiguring traps on chip, nobody has shown.
 
-Control and fabrication: room-temperature optical control from a photonic IC, wrapping a natural carrier it never becomes. Error structure: coherent — coupling loss, cross-talk (0.4% measured [D][580]) and surface-induced light shifts, not decoherence.
+Control and fabrication: room-temperature optical control from a photonic IC, wrapping a natural carrier it never becomes. Error structure: coherent — coupling loss, crosstalk (0.4% measured [D][580]) and surface-induced light shifts, not decoherence.
 
 ## Physics & limits
 A rubidium tweezer needs roughly a millikelvin of depth: several milliwatts focused to a micron waist at high numerical aperture. A grating or metasurface emitter can do that, and Pasqal's lifetime matches its own bulk systems [C][330], so coupling loss is not the first wall. Power is next: a thousand traps is watts on chip, where scattered light and coupler heating bind first.
@@ -26,7 +26,7 @@ The first wall is the surface. Rydberg states are enormously polarisable, so ads
 |---|---|---|---|
 | 2024-07 | 64 tweezers over >100 nanophotonic cavities, 99.2% imaging fidelity, atoms a few hundred nm above the surface | University of Chicago | [D][579] |
 | 2026-08 | 4 Rb atoms trapped by light from a SiN chip, ~27.5 s lifetime, stated as matching bulk optics | Pasqal | [C][330] |
-| 2026-08 | 50 addressed ⁸⁷Rb atoms through a glass waveguide array: 0.4% cross-talk, 2.9 dB insertion loss, 93% fill, 118 Hz loss repair, 784-channel chip | USTC | [D][580] |
+| 2026-08 | 50 addressed ⁸⁷Rb atoms through a glass waveguide array: 0.4% crosstalk, 2.9 dB insertion loss, 93% fill, 118 Hz loss repair, 784-channel chip | USTC | [D][580] |
 
 Two to three orders below free-space systems on atom count, and no gate or transport has run through a chip-generated trap anywhere. The 784-channel chip is the strongest scaling evidence, and it addresses atoms rather than trapping them.
 
@@ -61,7 +61,7 @@ Pasqal's lifetime and 50× footprint projection are company-reported without rep
 
 **Roadmaps & track record.** Pasqal states >10,000 atoms and 100 logical qubits by this route with no date attached [R][330], against one slip already on the free-space side — 10,000 physical moved from 2026 to 2028, 100 logical to 2029 [R][156][G:PASQAL-SPAC-2026-08]. First demonstration August 2026: no delivery record to score, and no rival chip-trap roadmap exists.
 
-**Strategic reading.** If on-chip generation scales past the dozens it undercuts the free-space chain every tweezer and ion machine depends on and moves bargaining power to photonic foundries selling into datacom volumes; Pasqal wins by leading in a component competitors must then buy or build. If cross-talk, power and the surface problem cap channel counts in the tens, it stays packaging and the incumbent vendors keep their position — the likelier outcome on today's evidence.
+**Strategic reading.** If on-chip generation scales past the dozens it undercuts the free-space chain every tweezer and ion machine depends on and moves bargaining power to photonic foundries selling into datacom volumes; Pasqal wins by leading in a component competitors must then buy or build. If crosstalk, power and the surface problem cap channel counts in the tens, it stays packaging and the incumbent vendors keep their position — the likelier outcome on today's evidence.
 
 ## Outlook & open questions
 Confirm/demote in 12–24 months: anyone runs a two-qubit gate through a chip-generated trap; chip-trapped atom count reaches the hundreds; a second vendor enters. Best case 2029: chip tweezers hold hundreds to thousands of atoms at free-space fidelity, shrinking a rack enough to change system cost. Worst case: the surface constraint forces long working distances, the footprint gain evaporates, and integrated optics stays confined to imaging and collection, where it already works. Open: how far from the chip must atoms sit for a clean Rydberg line; can on-chip switching beat deflector reconfiguration. Watch: Pasqal's next update and any gate through a chip trap.

@@ -1,6 +1,6 @@
 ---
 id: src_resource
-name: Multi-photon resource-state factory (6-ring etc.)
+name: Multi-photon resource-state generator (RSG; 6-ring etc.)
 layer: "3 Gate mechanism"
 status: empty slot
 since: 2030
@@ -15,7 +15,7 @@ updated: 2026-09-03
 The source-plus-fusion subsystem that must manufacture, at code rate, the encoded graph states — canonically the 6-ring — that fusion-based fault tolerance consumes and destroys. Browne–Rudolph type-II fusion (2005) made it possible; Bartolucci et al. fixed the 6-ring as reference resource and set its loss budget [S][179]. Best instance: MPQ Garching fused deterministically emitted photons into 6-rings and 7-trees, 8 photons, 0.4–2.3 coincidences/minute [D][688]. Attributes: flying photons from fabricated emitters, heralded entangling, no fixed clock; electro-optic room-temperature control, pure-loss errors, photonic-IC fabrication.
 
 ## Physics & limits
-An n-photon graph from k-photon primitives costs ~n/k fusions, each 50% unboosted or 75% boosted; failure heralds as erasure, but every attempt burns a photon that must be indistinguishable and lossless. Yield is brightness × indistinguishability × fusion success × transmission over the whole state — the exponent is photon count, not depth. Hence the code's tolerance: 2.7% loss per photon with 6-rings, ~17% only with 168-photon states nobody can build [S][179]. A 2026 re-analysis sharpens this: fusion failure alone sets a logical-error floor at zero loss, forcing very large distance for 10⁻¹⁰, while emitter-mediated fusion raises the threshold to 7.0–7.3% against an unencoded 6-ring's 0.38–0.82% [S][264][G:SPARROW-SUBTHRESHOLD-2026-06].
+An n-photon graph from k-photon primitives costs ~n/k fusions, each 50% unboosted or 75% boosted; failure is heralded and erases one of the two measured outcomes, but every attempt burns a photon that must be indistinguishable and lossless. Yield is brightness × indistinguishability × fusion success × transmission over the whole state — the exponent is photon count, not depth. Hence the code's tolerance: 2.7% loss per photon with 6-rings, ~17% only with 168-photon states nobody can build [S][179]. A 2026 re-analysis sharpens this: fusion failure alone sets a logical-error floor at zero loss, forcing very large distance for 10⁻¹⁰, while emitter-mediated fusion raises the threshold to 7.0–7.3% against an unencoded 6-ring's 0.38–0.82% [S][264][G:SPARROW-SUBTHRESHOLD-2026-06].
 
 ## Engineering state of the art
 
@@ -29,10 +29,10 @@ An n-photon graph from k-photon primitives costs ~n/k fusions, each 50% unbooste
 Rate is the gap: components clear 99%, but nobody has fused past eight photons since 2024.
 
 ## Manufacturing, materials & supply chain
-No factory product exists; the nearest base is 300 mm photonic IC — GlobalFoundries' Quantum Technology Solutions [C][G:GF-QTS-2026-05] and PIXEurope [G:PIXEUROPE-2024-11]. Deterministic sources are the single point of failure: Sparrow Quantum, sole merchant vendor as of 4 Sep 2026, ships 20–35% system efficiency against its own 55.3% best device and USTC's 71.2% record [D][G:SPARROW-SERIESA-2025-04]; no cost or yield per state is public. I/O scales with photon count, not qubit count: a pump, switch tree and detectors per source, feed-forward within the photon's flight time per fusion — ~0.1–0.2 dB per switch against a ~0.5 dB budget at multiplexing depth ~10 [D][169]. At 10³ states/s the wall is switch loss; at 10⁶, thousands of cryogenic detector channels under GHz feed-forward. ECCN 4A906 catches the machine; none names photon sources [G:BIS-QUANTUM-ECCN-2024-09].
+No commercial resource-state generator exists; the nearest base is 300 mm photonic IC — GlobalFoundries' Quantum Technology Solutions [C][G:GF-QTS-2026-05] and PIXEurope [G:PIXEUROPE-2024-11]. Deterministic sources are the single point of failure: Sparrow Quantum, sole merchant vendor as of 4 Sep 2026, ships 20–35% system efficiency against its own 55.3% best device and USTC's 71.2% record [D][G:SPARROW-SERIESA-2025-04]; no cost or yield per state is public. I/O scales with photon count, not qubit count: a pump, switch tree and detectors per source, feed-forward within the photon's flight time per fusion — ~0.1–0.2 dB per switch against a ~0.5 dB budget at multiplexing depth ~10 [D][169]. At 10³ states/s the wall is switch loss; at 10⁶, thousands of cryogenic detector channels under GHz feed-forward. ECCN 4A906 catches the machine; none names photon sources [G:BIS-QUANTUM-ECCN-2024-09].
 
 ## Role in the stack
-In the photonic fusion-based architecture (PsiQuantum, Quandela, QuiX): requires linear-optical fusion and single photons, provides the only input fusion-based fault tolerance accepts. It sets the architecture's clock — with no syndrome round on a fusion architecture, sum of the syndrome round: gate layers + transport + readout + reset gives way to generation at ~0.4–2.3 min⁻¹ [D][688] against the ~10⁹ s⁻¹ a teraquop machine needs; the 24–168-photon slot next door is empty. Verification: the record is coincidence-counted tomography with fidelity 0.34–0.85 by graph type, unreplicated; nearest independent work is 4-photon states [D][824]. Every threshold quoted is simulation.
+In the photonic fusion-based architecture (PsiQuantum, Quandela, QuiX): requires linear-optical fusion and single photons, provides the only input fusion-based fault tolerance accepts. It sets the architecture's clock — on a fusion architecture there is no syndrome round (gate layers + transport + readout + reset); its place is taken by generation at ~0.4–2.3 min⁻¹ [D][688] against the ~10⁹ s⁻¹ a teraquop machine (10¹² reliable operations) needs; the 24–168-photon slot next door is empty. Verification: the record is coincidence-counted tomography with fidelity 0.34–0.85 by graph type, unreplicated; nearest independent work is 4-photon states [D][824]. Every threshold quoted is simulation.
 
 ## Actors & economics
 **Who.**

@@ -1,10 +1,10 @@
 ---
 id: dec_mwpm
-name: MWPM / Sparse Blossom (+correlated matching)
+name: MWPM / Sparse Blossom (+ correlated matching)
 layer: "8 Decoder"
 status: demonstrated
 since: 2015
-one_line: Graph-matching decoder turning a syndrome round into the likeliest Pauli error chain; the accuracy reference and the shipped real-time decoder for surface codes.
+one_line: Graph-matching decoder turning the syndrome history — detection events across rounds — into the likeliest error chain; the accuracy reference and the shipped real-time decoder for surface codes.
 verdict: Matching stays the surface-code default through 2026 — Google's own below-threshold run decodes with Sparse Blossom. Demote if a live-hardware, same-syndrome test shows a non-matching decoder beating it on accuracy and latency together by end-2027.
 updated: 2026-09-30
 ---
@@ -12,7 +12,7 @@ updated: 2026-09-30
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-MWPM makes each violated stabilizer a vertex on a weighted graph whose edges are the errors flipping two detectors; the lowest-weight pairing explaining the set is the most probable single error chain under independent errors — not the maximum-likelihood decoding, which sums over all chains in a class and is what the tensor-network and BP-based decoders approximate. Dennis, Kitaev, Landahl and Preskill introduced it (2002) [D][650]; Fowler showed in 2015 that below threshold it can be solved exactly in average O(1) parallel time per round — on a 2-D array of classical processors, each serving a fixed number of qubits, independent of lattice size [D][725]. Correlated matching reweights edges so a Y error is not charged twice. The engine is Higgott and Gidney's Sparse Blossom (*Quantum* 9, 1600, 2025-01-20) [D][726], a sparse reformulation of Edmonds' 1965 blossom algorithm, shipped as PyMatching v2.
+MWPM makes each detection event (a check whose outcome changed between rounds) a vertex on a weighted graph whose edges are the errors flipping two detectors; the lowest-weight pairing explaining the set is the most probable single error chain under independent errors — not the maximum-likelihood decoding, which sums over all chains in a class and is what the tensor-network and BP-based decoders approximate. Dennis, Kitaev, Landahl and Preskill introduced it (2002) [D][650]; Fowler showed in 2015 that below threshold it can be solved exactly in average O(1) parallel time per round — on a 2D array of classical processors, each serving a fixed number of qubits, independent of lattice size [D][725]. Correlated matching reweights edges so a Y error is not charged twice. The engine is Higgott and Gidney's Sparse Blossom (*Quantum* 9, 1600, 2025-01-20) [D][726], a sparse reformulation of Edmonds' 1965 blossom algorithm, shipped as PyMatching v2.
 a = 0.5 — classical post-processing, no carrier; b, c, d, e do not apply [graph].
 f = Pauli chain on a matching graph; g = none — software, no fabrication [graph].
 
@@ -29,7 +29,7 @@ Throughput must exceed syndrome production or the backlog diverges and the machi
 Dominant term: the decoding graph — mis-calibrated weights, unrepresented leakage — not the matcher [D][1].
 
 ## Manufacturing, materials & supply chain
-No fabrication: MIT-licensed software [728] on general compute, acceleration the paid, single-sourced layer. Every published real-time QEC decoder runs on AMD/Xilinx logic — Riverlane's on a VU19P at ≈6% of LUTs for d≤17 [D][238], Micro Blossom on a Versal VMK180 [D][727], the Shenzhen neural decoder on a Kintex-7 [D][729], IBM's Relay-BP on AMD parts [P][48] — and GPU decoding is NVIDIA-only. No MWPM ASIC exists (4 Sep 2026). Export exposure is on that hardware: the BIS rule of 2024-09-06 controls quantum computers (4A906) and sub-4.5 K control ICs (3A901.a) [G][301]; published decoder source is outside the EAR under 15 CFR §734.7.
+No fabrication: MIT-licensed software [728] on general compute, acceleration the paid, single-sourced layer. Every published real-time QEC decoder runs on AMD/Xilinx logic — Riverlane's on a VU19P at ≈6% of LUTs (lookup tables) for d≤17 [D][238], Micro Blossom on a Versal VMK180 [D][727], the Shenzhen neural decoder on a Kintex-7 [D][729], IBM's Relay-BP on AMD parts [P][48] — and GPU decoding is NVIDIA-only. No MWPM ASIC exists (4 Sep 2026). Export exposure is on that hardware: the BIS rule of 2024-09-06 controls quantum computers (4A906) and sub-4.5 K control ICs (3A901.a) [G][301]; published decoder source is outside the EAR under 15 CFR §734.7.
 
 ## Control, readout & I/O burden
 At 10³ qubits one core suffices. At 10⁴ the binding term is syndrome bandwidth, not compute — d² detectors per logical qubit per 1.1 µs — hence cryogenic pre-compression, claimed at up to 3,780× below 0.56 mW at 4 K but not fabricated [S][G:PINBALL-2025-12]. At 10⁶ the interconnect decides: NVQLink's 3.84 µs round trip [C][324] exceeds a transmon cycle, so GPU matching runs windowed there.

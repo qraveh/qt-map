@@ -524,10 +524,10 @@ def architecture_card_html(pid, lang, base=''):
         '<dt>%s</dt><dd>%s%s %s %s</dd>' % (t('reaction time', 'время реакции', 'זמן תגובה'), ('<b>%s</b> %s · ' % (fS(RX['loop']), t('(published loop)', '(опубликованный контур)', '(לולאה שפורסמה)'))) if RX.get('loop') is not None else '',
                                            t('floor', 'нижняя граница', 'חסם תחתון'), fS(RX.get('floor')),
                                            ('<span class="empty">· %s</span>' % t('no published measurement→operation loop', 'нет опубликованного контура измерение→операция', 'לא פורסמה לולאת מדידה→פעולה')) if RX.get('loop') is None else '') +
-        '<dt>%s</dt><dd>T₁ %s · T₂ %s%s · %s <b>%s</b></dd>' % (t('coherence', 'когерентность', 'קוהרנטיות'), fS(CO.get('t1')), fS(CO.get('t2')),
+        '<dt>%s</dt><dd>T1 %s · T2 %s%s · %s <b>%s</b></dd>' % (t('coherence', 'когерентность', 'קוהרנטיות'), fS(CO.get('t1')), fS(CO.get('t2')),
                                                              (' (%s)' % esc(CO['t2_scope'])) if CO.get('t2_scope') and CO['t2_scope'] != 'typical' else '',
                                                              t('ops per coherence', 'операций на когерентность', 'פעולות לזמן קוהרנטיות'), fE(CO.get('ops_per_coh'))) +
-        '<dt>%s</dt><dd>t_round/T₂ = %s · %s %s</dd>' % (t('idle exposure per round', 'экспозиция простоя за раунд', 'חשיפת סרק לסבב'), fE(CO.get('idle_exposure')),
+        '<dt>%s</dt><dd>t_round/T2 = %s · %s %s</dd>' % (t('idle exposure per round', 'экспозиция простоя за раунд', 'חשיפת סרק לסבב'), fE(CO.get('idle_exposure')),
                                                         t('measured idle error', 'измеренная ошибка простоя', 'שגיאת סרק נמדדת'), fE(CO.get('idle_measured'))) +
         (('<dt>%s</dt><dd class="empty">%s</dd>' % (t('notes', 'примечания', 'הערות'), esc('; '.join(R['notes'])))) if R.get('notes') else ''))
     rd = lambda ids: ', '.join(_st(base, i, L) for i in ids) or '—'

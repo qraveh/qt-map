@@ -1,6 +1,6 @@
 ---
 id: dec_rl
-name: In-loop RL calibration / decoder steering
+name: In-loop RL calibration / control steering
 layer: "8 Decoder"
 status: demonstrated
 since: 2026
@@ -21,7 +21,7 @@ No new physical floor: this tracks an existing floor without the dead time betwe
 ## Engineering state of the art
 | Date | Figure | Who | Tag+key |
 |---|---|---|---|
-| 2026-07-08 | d=7 surface code decoded with AlphaQubit2 (no live decode stated): 7.72(9)×10⁻⁴ per cycle; no Λ reported | Google Quantum AI | [D][2][G:ALPHAQUBIT2-2026-07] |
+| 2026-07-08 | d=7 surface code decoded with AlphaQubit 2 (no live decode stated): 7.72(9)×10⁻⁴ per cycle; no Λ reported | Google Quantum AI | [D][2][G:ALPHAQUBIT2-2026-07] |
 | 2026-07-08 | d=5 colour code, Tesseract decoder: 8.19(14)×10⁻³ per cycle; 3.5× stability against injected drift | Google Quantum AI | [D][2] |
 | 2024-12-09 | Λ = 2.14(2) with the neural decoder vs 2.04(2) with ensembled matching on identical Willow syndromes | Google Quantum AI | [D][1][G:WILLOW-RTDECODER-2024] |
 
@@ -29,14 +29,14 @@ No new physical floor: this tracks an existing floor without the dead time betwe
 No dedicated silicon and, unlike matching or clustering decoders, no FPGA resource claim to audit [G:RIVERLANE-LCD-2025-12]. The cost is control-plane traffic — detection events out, parameter updates in, over the decoder's own link; NVQLink's 3.84 µs mean, 3.96 µs maximum round trip is the vendor-neutral version of it [C][G:NVQLINK-NUMBERS-2025-11]. Updates run on a slow timescale outside the 1.1 µs cycle, which is why it coexists with Willow where heavier in-loop computation would not. Supply is GPU/TPU capacity plus the control stack; no specific export rule.
 
 ## Role in the stack
-Requires no decoder inside its control loop — the reward is the detection-event rate; its decoder steering reweights a matching graph from logical-error estimates, not in real time, and the record d=7 run was decoded separately with the neural decoder AlphaQubit2, published on its own only as a December 2025 preprint whose real-time speed was benchmarked on recorded or simulated data [D][2][G:ALPHAQUBIT2-2026-07]. Superconducting transmons only; derived round unchanged at 0.65 µs against the measured 1.1 µs QEC cycle, ~0.91 MHz. Verification: no Λ for the record run, no second-platform replication, and the only live closed-loop neural decoding anywhere is a d=3 demonstration with a 550 ns loop [D][729]. No value conflict: the 20% and >1,000 parameters in trade press [P][742] are the paper's own — about 20% further logical-error suppression after conventional calibration, over a thousand steered parameters — beside its 3.5× stability gain against injected drift [D][2].
+Requires no decoder inside its control loop — the reward is the detection-event rate; its decoder steering reweights a matching graph from logical-error estimates, not in real time, and the record d=7 run was decoded separately with the neural decoder AlphaQubit 2, published on its own only as a December 2025 preprint whose real-time speed was benchmarked on recorded or simulated data [D][2][G:ALPHAQUBIT2-2026-07]. Superconducting transmons only; derived round unchanged at 0.65 µs against the measured 1.1 µs QEC cycle, ~0.91 MHz. Verification: no Λ for the record run, no second-platform replication, and the only live closed-loop neural decoding anywhere is a d=3 demonstration with a 550 ns loop [D][729]. No value conflict: the 20% and >1,000 parameters in trade press [P][742] are the paper's own — about 20% further logical-error suppression after conventional calibration, over a thousand steered parameters — beside its 3.5× stability gain against injected drift [D][2].
 
 ## Actors & economics
 **Who.**
 
 | Organisation | Role | Country | What exactly | Evidence |
 |---|---|---|---|---|
-| Google Quantum AI | developer | US | RL control, AlphaQubit2, Willow | [D][2] |
+| Google Quantum AI | developer | US | RL control, AlphaQubit 2, Willow | [D][2] |
 | Google DeepMind | developer | UK | Neural decoders, AlphaQubit line | [D][657] |
 | Q-CTRL | supplier | AU | Boulder Opal calibration software | [C][743] |
 | IQA Shenzhen | research | CN | Only live closed-loop neural decoding | [D][729] |
@@ -52,7 +52,7 @@ Requires no decoder inside its control loop — the reward is the detection-even
 
 **Roadmaps & track record.** Google's next milestone, a long-lived logical qubit at 10⁻⁶ (no date): 7.72×10⁻⁴ at d=7 is three orders short, needing d≈25 at Λ≈2 [D][1]; Google is absent from QBI Stage B [G]. Q-CTRL shipped Boulder Opal on three platforms by 2024-10 — delivered, at nothing like Google's scale.
 
-**Strategic reading.** Software margin on hardware someone else owns. If it diffuses, control vendors and Q-CTRL capture it and calibration headcount falls; if AlphaQubit2 stays in-house, Google's advantage is the decoder, not the RL. Substitution threat: hardware that drifts less — fluxonium, cold-stage SFQ control — shrinks the problem.
+**Strategic reading.** Software margin on hardware someone else owns. If it diffuses, control vendors and Q-CTRL capture it and calibration headcount falls; if AlphaQubit 2 stays in-house, Google's advantage is the decoder, not the RL. Substitution threat: hardware that drifts less — fluxonium, cold-stage SFQ control — shrinks the problem.
 
 ## Outlook & open questions
 Confirm if RL-in-loop calibration appears on a second platform, or a Λ is published for an RL-steered run; demote if it stays Willow-only. Best case 2029: standard across superconducting FT stacks, sold by control vendors. Worst case: one unreplicated chip. Open: does size-independent optimisation survive outside simulation, and can the loop be made decoder-agnostic?
@@ -74,6 +74,6 @@ Confirm if RL-in-loop calibration appears on a second platform, or a Λ is publi
 ## Open verification items
 - No Λ is reported for the RL-steered d=7 run, so the effect on code-distance scaling is unmeasured.
 - The "~20% logical-error reduction" and ">1,000 live control parameters" quoted by trade press [742] are in the paper's main text, not its abstract, which quotes 3.5× against injected drift and tens of thousands of parameters in simulation.
-- AlphaQubit2's own paper is a preprint (arXiv:2512.07737, 2025-12-08) whose real-time benchmarks ran on recorded data; the RL paper does not state that its d=7 decode ran live.
+- AlphaQubit 2's own paper is a preprint (arXiv:2512.07737, 2025-12-08) whose real-time benchmarks ran on recorded data; the RL paper does not state that its d=7 decode ran live.
 - No second-platform replication of RL-in-loop calibration found.
 - Q-CTRL's Series B is quoted as USD $113 M by the company and as "$167 M" in Australian trade press, which is the AUD $166 M figure restated; the company release governs.

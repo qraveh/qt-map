@@ -1,11 +1,11 @@
 ---
 id: qd_spin
-name: Gate-defined quantum-dot spin (Si/SiGe, Si-MOS, Ge)
+name: Gate-defined quantum-dot spin (Si/SiGe, SiMOS, Ge)
 layer: "1 Carrier"
 status: demonstrated
 since: 2012
 one_line: "Electron or hole spin in a lithographically gated dot; exchange gives deterministic ns-scale two-qubit gates on a CMOS die."
-verdict: "Only carrier fabricated on a 300 mm line at scale, but two-qubit fidelity has sat at 99.0-99.6% on foundry devices for a year and no array above 12 qubits has published all-pairs numbers."
+verdict: "Only carrier fabricated on a 300 mm line at scale, but two-qubit fidelity has sat at 99.0–99.6% on foundry devices for a year and no array above 12 qubits has published all-pairs numbers."
 updated: 2026-09-30
 ---
 
@@ -13,7 +13,7 @@ updated: 2026-09-30
 
 ## Identity & lineage
 
-An electron or hole is trapped in an electrostatic well ~50 nm across, formed by metal gates over a Si/SiGe quantum well, a Si-MOS inversion layer, or a Ge/SiGe hole gas. The spin is the computational degree of freedom; the barrier between neighbouring dots sets an exchange coupling J, and pulsing J for ħπ/J gives a deterministic entangling gate. Loss and DiVincenzo proposed the architecture in 1998; the first single-spin and singlet–triplet qubits in silicon appeared 2010–2012, the lineage date used here.
+An electron or hole is trapped in an electrostatic well ~50 nm across, formed by metal gates over a Si/SiGe quantum well, an electron accumulation layer at the SiMOS Si/SiO₂ interface, or a Ge/SiGe hole gas. The spin is the computational degree of freedom; the barrier between neighbouring dots sets an exchange coupling J, and pulsing J for ħπ/J gives a deterministic entangling gate. Loss and DiVincenzo proposed the architecture in 1998; the first single-spin and singlet–triplet qubits in silicon appeared 2010–2012, the lineage date used here.
 
 Attributes, as the graph record records them:
 - **a — affinity:** 1.0, wholly fabricated; every dot is a lithography outcome.
@@ -28,17 +28,17 @@ Attributes, as the graph record records them:
 
 Three energy scales govern everything. Zeeman splitting (~10–100 µeV at 0.3–1 T) defines the qubit; exchange J, tunable over 10–100 MHz, defines the gate; valley splitting in silicon (0.1–0.3 meV, non-uniform because it tracks interface roughness) defines the leakage floor. Ge hole dots have no valley degeneracy and need no micromagnet, but their spin–orbit coupling turns electrical noise directly into dephasing.
 
-Two baths set the coherence floor. Nuclear spins are suppressible: ²⁸Si enrichment gives Hahn-echo T2 of 1.31(4) ms on foundry material and Ramsey T2* of 41(2) µs [D][197]. Charge noise is not — 1/f fluctuators in the oxide couple through exchange, so fidelity degrades exactly when J is on: the entangling interaction is also the dominant noise channel. Errors reach the code as coherent over-/under-rotation, Pauli dephasing, and leakage that repetition and surface codes miss without leakage-reduction units. HRL's dissection is the most useful single statement of where the error lives: about **80% of its CNOT error is extrinsic — control and calibration, not physics** [D][190]. Moving the floor needs quieter dielectrics, more uniform valley splitting and better calibration, in that order of difficulty and the inverse order of cost.
+Two baths set the coherence floor. Nuclear spins are suppressible: ²⁸Si enrichment gives Hahn-echo T2 of 1.31(4) ms on foundry material and Ramsey T2* of 41(2) µs [D][197]. Charge noise is not — 1/f fluctuators in the oxide couple through exchange, so fidelity degrades exactly when J is on: the entangling interaction is also the dominant noise channel. Errors reach the code as coherent over-/under-rotation, Pauli dephasing, and leakage that repetition and surface codes miss without leakage reduction units (LRUs). HRL's dissection is the most useful single statement of where the error lives: about **80% of its CNOT error is extrinsic — control and calibration, not physics** [D][190]. Moving the floor needs quieter dielectrics, more uniform valley splitting and better calibration, in that order of difficulty and the inverse order of cost.
 
 ## Engineering state of the art
 
-Best demonstrated as of 3 Sep 2026: two-qubit fidelity 99.04–99.56% on a 300 mm foundry Si-MOS device [D][189]; 18 qubits in one array, twice, on different materials [D][190][D][195]. Typical at scale is worse, and the gap is the story — imec's eight-qubit 300 mm device validated a two-qubit gate on **one of four** double-dot pairs [D][197]. No device above 12 qubits has published all-pairs two-qubit fidelities on this platform.
+Best demonstrated as of 3 Sep 2026: two-qubit fidelity 99.04–99.56% on a 300 mm foundry SiMOS device [D][189]; 18 qubits in one array, twice, on different materials [D][190][D][195]. Typical at scale is worse, and the gap is the story — imec's eight-qubit 300 mm device validated a two-qubit gate on **one of four** double-dot pairs [D][197]. No device above 12 qubits has published all-pairs two-qubit fidelities on this platform.
 
 | Year | Figure | Who | Tag+key |
 |---|---|---|---|
 | 2022-01 | 2Q 99.5% (gate-set tomography), Si/SiGe — first crossing of the surface-code threshold | QuTech/TU Delft | [D][346] |
 | 2024-03 | 2Q 98.9% at 1 K operating temperature | Diraq/UNSW | [D][194] |
-| 2025-09 | 2Q 99.04–99.56%, SPAM 99.9%, on 300 mm foundry Si-MOS | Diraq + imec | [D][189] |
+| 2025-09 | 2Q 99.04–99.56%, SPAM 99.9%, on 300 mm foundry SiMOS | Diraq + imec | [D][189] |
 | 2026-04 | 18-qubit Ge 2×N array; 1Q mean 99.8%, median 99.9% | Groove Quantum + QuTech | [D][195] |
 | 2026-05 | CZ between two *moving* spins, 98.86 ± 0.29%, 58 ns | QuTech/TU Delft | [D][193] |
 | 2026-07 | 8-qubit 300 mm device; Hahn-echo T2 1.31 ms; 2Q on 1 of 4 pairs | imec + Diraq | [D][197] |
@@ -62,11 +62,11 @@ The wall is readout, not gates. At ~6 µs spin-to-charge conversion plus settlin
 
 The node sits on one architecture, **Silicon / germanium quantum-dot spins**. It requires a 300 mm CMOS foundry; it provides the dots consumed by exchange gates, exchange-only and singlet–triplet encoding, conveyor-mode spin shuttling, crossbar shared-line control and spin-to-charge readout. It replaces donor spins (SQC's precision-placed phosphorus), which buy 99.10–99.99% gates on 11 qubits [D][192] at the cost of no foundry path — the switching price in one line.
 
-Derived clock for the architecture = sum of the syndrome round: gate layers + transport + readout + reset = **8.5 µs**, readout 6.3 µs of it and reset 1 µs. Everything the node enables is downstream of it, so a failure here has no fallback elsewhere. The neighbouring empty slot is fast sensor-free readout — Pauli-spin-blockade below 1 µs at >99.9%; nothing in the graph fills it.
+Derived clock for the architecture = sum of the syndrome round: gate layers + transport + readout + reset = **8.5 µs**, readout 6.3 µs of it and reset 1 µs. Everything the node enables is downstream of it, so a failure here has no fallback elsewhere. The neighbouring empty slot is fast sensor-free readout — Pauli spin blockade (PSB) below 1 µs at >99.9%; nothing in the graph fills it.
 
 ## Evidence — how the numbers were measured
 
-Headline two-qubit numbers come from interleaved randomized benchmarking or gate-set tomography on the best pair on the die — a legitimate protocol reporting an illegitimate summary, capturing neither cross-talk nor calibration drift. HRL's d=5 repetition code over 200 rounds is the only spin result measuring error *in situ* under continuous operation, and its Λ₅/₃ = 4.7 [D][190] is bit-flip-only, not below-threshold logical memory, which no spin platform has shown.
+Headline two-qubit numbers come from interleaved randomised benchmarking or gate-set tomography on the best pair on the die — a legitimate protocol reporting an illegitimate summary, capturing neither crosstalk nor calibration drift. HRL's d=5 repetition code over 200 rounds is the only spin result measuring error *in situ* under continuous operation, and its Λ₅/₃ = 4.7 [D][190] is bit-flip-only, not below-threshold logical memory, which no spin platform has shown.
 
 Conflicts. Diraq's messaging conflicts on scale: a 2026-07-09 release said "thousands of qubits by 2029", the 2026-08-27 roadmap says 150,000 physical and 1,000 logical by 2029 [R][211][G:DIRAQ-FUNDING]; take the roadmap as the company's position and the discrepancy as evidence about the company. No replication of the 300 mm two-qubit result outside the imec line exists.
 
@@ -76,7 +76,7 @@ Conflicts. Diraq's messaging conflicts on scale: a 2026-07-09 release said "thou
 
 | Organisation | Role | Country | What exactly they do | Evidence |
 |---|---|---|---|---|
-| Diraq | developer | AU | Si-MOS qubits on imec 300 mm; 2Q 99.04–99.56%; 1 K operation | [D][189][D][194] |
+| Diraq | developer | AU | SiMOS qubits on imec 300 mm; 2Q 99.04–99.56%; 1 K operation | [D][189][D][194] |
 | HRL Laboratories | developer | US | Exchange-only SiGe, 18 qubits, self-sequenced d=5 QEC | [D][190] |
 | IBM | investor | US | Acquired HRL; adds spins to a superconducting roadmap | [C][204] |
 | Intel | developer | US | 300 mm EUV spin devices; 12-qubit Tunnel Falls at Argonne | [D][199][P][207] |
@@ -108,7 +108,7 @@ Conflicts. Diraq's messaging conflicts on scale: a 2026-07-09 release said "thou
 
 **Roadmaps & track record.** Diraq (promised 2026-08-27 · for 2029 · 150 k physical / 1 k logical, >2 M by 2031) — six weeks earlier it said "thousands by 2029" [R][211]: keep the fidelities, discount the counts. Quobly (2026-06 · for 2032 · millions of qubits) — funded and fabbing at ST, no published multi-qubit device: an intention. SQC (for 2033 · commercial scale) — real 11-qubit donor result [D][192], unfalsifiable until 2030. Quantum Motion — the only actor to have delivered a system to a customer on schedule [C][200]. Intel — 12 qubits at Argonne, no successor chip and no dated roadmap as of 3 Sep 2026 [P][207]: alive but unguided. IBM/HRL — no spin milestone yet on Starling (2029) or Blue Jay (mid-2030s) [C][204].
 
-**Strategic reading.** If the platform succeeds the winners are foundries and isotope suppliers, not qubit designers: a Si-MOS qubit is a process recipe, and once qualified the marginal die is cheap and differentiation moves to calibration software. That is why IBM bought HRL — not for 18 qubits but for a cryo-CMOS control stack and packaging reusable across modalities: a supplier acquisition dressed as a platform bet. The losers are pure-play spin startups, whose bargaining power against a foundry that has just productised quantum manufacturing is falling. Manufacturability is the platform's only defensible argument, and if 2Q fidelity is still 99.0–99.6% through 2027 with arrays under 20 qubits, it stops being enough.
+**Strategic reading.** If the platform succeeds the winners are foundries and isotope suppliers, not qubit designers: a SiMOS qubit is a process recipe, and once qualified the marginal die is cheap and differentiation moves to calibration software. That is why IBM bought HRL — not for 18 qubits but for a cryo-CMOS control stack and packaging reusable across modalities: a supplier acquisition dressed as a platform bet. The losers are pure-play spin startups, whose bargaining power against a foundry that has just productised quantum manufacturing is falling. Manufacturability is the platform's only defensible argument, and if 2Q fidelity is still 99.0–99.6% through 2027 with arrays under 20 qubits, it stops being enough.
 
 ## Outlook & open questions
 

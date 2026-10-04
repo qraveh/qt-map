@@ -1,6 +1,6 @@
 ---
 id: ic_spinphoton
-name: Spin–photon solid-state link (SiV, NV, T-centre)
+name: Spin–photon solid-state link (SiV, NV, T centre)
 layer: "9 Interconnect"
 status: demonstrated
 since: 2013
@@ -75,7 +75,7 @@ Confirm by 2028 if any group sustains > 1 Hz heralded entanglement above F = 0.8
 [785] M. Ivezic, “Photonic Inc,” PostQuantum.com, Nov. 13, 2025. [Online]. Available: https://postquantum.com/quantum-computing-companies/photonic-inc/ [P]
 
 ## Open verification items
-Photonic Inc.'s teleported-CNOT sequence has no published gate fidelity and no journal publication; the tCNOT figure of merit is a truth table over a selected basis, post-selected on photon detection.
+Photonic Inc.'s teleported-CNOT (tCNOT) sequence has no published gate fidelity and no journal publication; the tCNOT figure of merit is a truth table over a selected basis, post-selected on photon detection.
 The 200 kHz / 99.8% Photonic target comes from a trade-press profile, not a company technical document; treated as an unverified architecture target.
 No dated patent-family count exists for spin–photon links in any named database consulted.
 The Fujitsu–QuTech "gate errors below 0.1%" figure circulating in trade press has no located peer-reviewed source and is omitted here.

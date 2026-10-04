@@ -12,7 +12,7 @@ updated: 2026-09-26
 LO = local oscillator; GKP = Gottesman–Kitaev–Preskill grid state; MBQC = measurement-based quantum computation; PNR = photon-number-resolving; TES = transition-edge sensor; TIA = transimpedance amplifier; OPA = optical parametric amplifier; G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-A weak signal mode and a strong LO meet on a 50:50 beam-splitter; subtracting the two photocurrents cancels the LO's classical noise and leaves a signal proportional to the quadrature x̂_θ = x̂ cos θ + p̂ sin θ, θ set by the LO phase. Heterodyne detection measures two conjugate quadratures at once for one extra unit of vacuum noise. It became a computational readout when time-multiplexed CV cluster states were read mode by mode — Tokyo [D][635] and DTU [D][636], both 2019 — and moved onto chips in Xanadu's Aurora [D][173].
+A weak signal mode and a strong LO meet on a 50:50 beamsplitter; subtracting the two photocurrents cancels the LO's classical noise and leaves a signal proportional to the quadrature x̂_θ = x̂ cos θ + p̂ sin θ, θ set by the LO phase. Heterodyne detection measures two conjugate quadratures at once for one extra unit of vacuum noise. It became a computational readout when time-multiplexed CV cluster states were read mode by mode — Tokyo [D][635] and DTU [D][636], both 2019 — and moved onto chips in Xanadu's Aurora [D][173].
 Attributes: destructive but mid-circuit (in MBQC the measurement angle is the gate); ~10⁻⁶ s per measurement at the 1 MHz clock; room-temperature electro-optic control; Gaussian-noise errors; photonic-IC fabrication.
 
 ## Physics & limits
