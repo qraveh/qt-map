@@ -417,7 +417,9 @@
     ]
    },
    "records": [],
-   "codes": [],
+   "codes": [
+    "two-legged-cat"
+   ],
    "evidence_counts": {
     "verified": 5,
     "total": 11
@@ -866,7 +868,6 @@
    },
    "records": [],
    "codes": [
-    "elevator",
     "ldpc_cat"
    ],
    "evidence_counts": {
@@ -1078,7 +1079,8 @@
    },
    "records": [],
    "codes": [
-    "cat_repetition"
+    "cat_repetition",
+    "two-legged-cat"
    ],
    "evidence_counts": {
     "verified": 8,
@@ -1314,7 +1316,6 @@
     }
    ],
    "codes": [
-    "squeezed_cat",
     "two-legged-cat"
    ],
    "evidence_counts": {
@@ -1526,7 +1527,9 @@
     ]
    },
    "records": [],
-   "codes": [],
+   "codes": [
+    "two-legged-cat"
+   ],
    "evidence_counts": {
     "verified": 7,
     "total": 10
@@ -2438,7 +2441,6 @@
    ],
    "codes": [
     "cat_repetition",
-    "quantum_repetition",
     "two-legged-cat"
    ],
    "evidence_counts": {
@@ -4960,7 +4962,9 @@
     ]
    },
    "records": [],
-   "codes": [],
+   "codes": [
+    "dual_rail"
+   ],
    "evidence_counts": {
     "verified": 5,
     "total": 12
@@ -5171,7 +5175,8 @@
    },
    "records": [],
    "codes": [
-    "rotated_surface"
+    "quantum_repetition",
+    "surface-17"
    ],
    "evidence_counts": {
     "verified": 8,
@@ -6074,7 +6079,12 @@
      "url": "https://www.nature.com/articles/s41586-019-1666-5"
     }
    ],
-   "codes": [],
+   "codes": [
+    "css_4_1_2",
+    "quantum_repetition",
+    "rotated_surface",
+    "surface"
+   ],
    "evidence_counts": {
     "verified": 8,
     "total": 10
@@ -6352,7 +6362,7 @@
    ],
    "codes": [
     "quantum_repetition",
-    "rotated_surface",
+    "twist_defect_surface",
     "xzzx"
    ],
    "evidence_counts": {
@@ -6778,7 +6788,7 @@
    "codes": [
     "google_dynamic_surface",
     "quantum_repetition",
-    "rotated_surface",
+    "steane",
     "triangular_color",
     "xzzx"
    ],
@@ -7050,7 +7060,6 @@
    },
    "records": [],
    "codes": [
-    "gross",
     "qcga"
    ],
    "evidence_counts": {
@@ -7725,7 +7734,14 @@
      "url": "https://arxiv.org/html/2410.00916v1"
     }
    ],
-   "codes": [],
+   "codes": [
+    "floquet_color",
+    "google_dynamic_surface",
+    "honeycomb_floquet",
+    "quantum_repetition",
+    "stab_4_2_2",
+    "xzzx"
+   ],
    "evidence_counts": {
     "verified": 7,
     "total": 11
@@ -8195,9 +8211,14 @@
     }
    ],
    "codes": [
+    "css_4_1_2",
+    "floquet_color",
     "heavy_hex",
     "honeycomb_floquet",
-    "stab_4_2_2"
+    "matching",
+    "quantum_repetition",
+    "stab_4_2_2",
+    "stab_8_3_2"
    ],
    "evidence_counts": {
     "verified": 8,
@@ -8620,7 +8641,10 @@
     ]
    },
    "records": [],
-   "codes": [],
+   "codes": [
+    "bacon_shor",
+    "google_dynamic_surface"
+   ],
    "evidence_counts": {
     "verified": 3,
     "total": 10
@@ -8898,7 +8922,11 @@
     }
    ],
    "codes": [
-    "rotated_surface"
+    "heavy_hex",
+    "quantum_repetition",
+    "rotated_surface",
+    "spacetime_circuit",
+    "steane"
    ],
    "evidence_counts": {
     "verified": 8,
@@ -9180,8 +9208,14 @@
     }
    ],
    "codes": [
+    "dynamic_compass",
+    "heavy_hex",
+    "quantum_repetition",
     "rotated_surface",
-    "spacetime_circuit"
+    "spacetime_circuit",
+    "stab_4_2_2",
+    "steane",
+    "triangular_color"
    ],
    "evidence_counts": {
     "verified": 6,
@@ -9656,7 +9690,9 @@
      "url": "https://www.ibm.com/quantum/blog/qdc-2025"
     }
    ],
-   "codes": [],
+   "codes": [
+    "gross"
+   ],
    "evidence_counts": {
     "verified": 7,
     "total": 13
@@ -9875,7 +9911,11 @@
      "url": "https://www.ibm.com/quantum/blog/nighthawk-r2"
     }
    ],
-   "codes": [],
+   "codes": [
+    "google_dynamic_surface",
+    "rotated_surface",
+    "xzzx"
+   ],
    "evidence_counts": {
     "verified": 3,
     "total": 10
@@ -10168,7 +10208,9 @@
      "url": "https://www.ibm.com/quantum/blog/nighthawk-r2"
     }
    ],
-   "codes": [],
+   "codes": [
+    "rotated_surface"
+   ],
    "evidence_counts": {
     "verified": 7,
     "total": 13
@@ -11337,7 +11379,10 @@
      "url": "https://quantumcomputingreport.com/iqm-and-zurich-instruments-develop-real-time-qec-via-nvidia-nvqlink/"
     }
    ],
-   "codes": [],
+   "codes": [
+    "hagiwara_nakayama_deletion",
+    "quantum_repetition"
+   ],
    "evidence_counts": {
     "verified": 7,
     "total": 12
@@ -11540,7 +11585,9 @@
     ]
    },
    "records": [],
-   "codes": [],
+   "codes": [
+    "quantum_repetition"
+   ],
    "evidence_counts": {
     "verified": 6,
     "total": 10
@@ -11810,8 +11857,6 @@
     }
    ],
    "codes": [
-    "barbell",
-    "directional_tile",
     "rotated_surface",
     "triangular_color"
    ],
@@ -12438,7 +12483,9 @@
     ]
    },
    "records": [],
-   "codes": [],
+   "codes": [
+    "stab_4_2_2"
+   ],
    "evidence_counts": {
     "verified": 5,
     "total": 10
@@ -13786,7 +13833,8 @@
     }
    ],
    "codes": [
-    "multimodegkp"
+    "multimodegkp",
+    "tesseract_gkp"
    ],
    "evidence_counts": {
     "verified": 9,
@@ -15616,8 +15664,7 @@
     }
    ],
    "codes": [
-    "css_4_1_2",
-    "rotated_surface"
+    "css_4_1_2"
    ],
    "evidence_counts": {
     "verified": 4,
@@ -16971,7 +17018,7 @@
    },
    "records": [],
    "codes": [
-    "rotated_surface"
+    "surface-17"
    ],
    "evidence_counts": {
     "verified": 4,
@@ -17645,8 +17692,7 @@
     }
    ],
    "codes": [
-    "rotated_surface",
-    "stab_4_2_2"
+    "rotated_surface"
    ],
    "evidence_counts": {
     "verified": 7,
@@ -19723,7 +19769,7 @@
     }
    ],
    "codes": [
-    "dual_rail"
+    "fock_0n"
    ],
    "evidence_counts": {
     "verified": 7,
@@ -19931,7 +19977,9 @@
     ]
    },
    "records": [],
-   "codes": [],
+   "codes": [
+    "dual_rail"
+   ],
    "evidence_counts": {
     "verified": 9,
     "total": 10
@@ -20407,8 +20455,8 @@
     }
    ],
    "codes": [
-    "generalized_bicycle",
-    "qcga"
+    "qcga",
+    "stab_18_6_3"
    ],
    "evidence_counts": {
     "verified": 7,
@@ -20616,7 +20664,9 @@
     ]
    },
    "records": [],
-   "codes": [],
+   "codes": [
+    "surface-17"
+   ],
    "evidence_counts": {
     "verified": 8,
     "total": 10
@@ -21164,8 +21214,7 @@
     }
    ],
    "codes": [
-    "rotated_surface",
-    "surface-17"
+    "xzzx"
    ],
    "evidence_counts": {
     "verified": 7,
@@ -22936,7 +22985,10 @@
     ]
    },
    "records": [],
-   "codes": [],
+   "codes": [
+    "quantum_repetition",
+    "stab_4_2_2"
+   ],
    "evidence_counts": {
     "verified": 5,
     "total": 10
@@ -23160,7 +23212,11 @@
    ],
    "codes": [
     "generalized_bicycle",
-    "qc_ldpc"
+    "qcga",
+    "rotated_surface",
+    "stab_16_4_4",
+    "stab_4_2_2",
+    "toric"
    ],
    "evidence_counts": {
     "verified": 6,
@@ -23390,7 +23446,13 @@
      "url": "https://www.ionq.com/quantum-systems/forte"
     }
    ],
-   "codes": [],
+   "codes": [
+    "hagiwara_nakayama_deletion",
+    "holographic",
+    "iceberg",
+    "stab_5_1_3",
+    "steane"
+   ],
    "evidence_counts": {
     "verified": 6,
     "total": 10
@@ -23860,7 +23922,10 @@
     ]
    },
    "records": [],
-   "codes": [],
+   "codes": [
+    "generalized_bicycle",
+    "qcga"
+   ],
    "evidence_counts": {
     "verified": 3,
     "total": 11
@@ -24099,10 +24164,7 @@
      "url": "https://arxiv.org/abs/2609.05625"
     }
    ],
-   "codes": [
-    "generalized_bicycle",
-    "qc_ldpc"
-   ],
+   "codes": [],
    "evidence_counts": {
     "verified": 7,
     "total": 12
@@ -24311,10 +24373,7 @@
     ]
    },
    "records": [],
-   "codes": [
-    "generalized_bicycle",
-    "qc_ldpc"
-   ],
+   "codes": [],
    "evidence_counts": {
     "verified": 1,
     "total": 10
@@ -24753,7 +24812,9 @@
     ]
    },
    "records": [],
-   "codes": [],
+   "codes": [
+    "c4_helix"
+   ],
    "evidence_counts": {
     "verified": 8,
     "total": 12
@@ -25034,8 +25095,16 @@
     }
    ],
    "codes": [
+    "css_4_1_2",
+    "dfs_qec_10_1_4",
+    "iceberg",
+    "stab_16_6_4",
+    "stab_4_2_2",
+    "stab_5_1_3",
     "stab_6_2_2",
-    "steane"
+    "stab_8_3_2",
+    "steane",
+    "toric"
    ],
    "evidence_counts": {
     "verified": 6,
@@ -25303,9 +25372,16 @@
    ],
    "codes": [
     "4d_surface",
+    "carbon",
+    "generalized_shor",
+    "iceberg",
+    "lr_enhanced_surface",
+    "quantum_double",
+    "qubit_golay",
     "stab_15_1_3",
-    "stab_8_3_2",
-    "steane"
+    "stab_16_6_4",
+    "steane",
+    "surface"
    ],
    "evidence_counts": {
     "verified": 9,
@@ -25674,8 +25750,12 @@
     }
    ],
    "codes": [
-    "4d_surface",
-    "stab_4_2_2"
+    "iceberg",
+    "many_hypercube",
+    "stab_16_4_4",
+    "stab_4_2_2",
+    "steane",
+    "stellated_dodecahedron_css"
    ],
    "evidence_counts": {
     "verified": 8,
@@ -25942,8 +26022,9 @@
     }
    ],
    "codes": [
-    "4d_surface",
-    "stab_4_2_2"
+    "c4_helix",
+    "rotated_surface",
+    "toric"
    ],
    "evidence_counts": {
     "verified": 5,
@@ -26168,7 +26249,9 @@
     ]
    },
    "records": [],
-   "codes": [],
+   "codes": [
+    "iceberg"
+   ],
    "evidence_counts": {
     "verified": 6,
     "total": 11
@@ -27926,6 +28009,11 @@
    },
    "records": [],
    "codes": [
+    "css_4_1_2",
+    "holographic",
+    "quantum_repetition",
+    "stab_10_1_2",
+    "stab_5_1_3",
     "stab_8_3_2",
     "steane"
    ],
@@ -28165,7 +28253,9 @@
     }
    ],
    "codes": [
-    "bacon_shor"
+    "bacon_shor",
+    "shor_nine",
+    "stab_4_2_2"
    ],
    "evidence_counts": {
     "verified": 9,
@@ -28939,7 +29029,8 @@
     }
    ],
    "codes": [
-    "bacon_shor",
+    "css_4_1_2",
+    "quantum_repetition",
     "stab_4_2_2",
     "toric"
    ],
@@ -29892,7 +29983,10 @@
     "rotated_surface",
     "stab_15_1_3",
     "stab_16_6_4",
-    "steane"
+    "stab_8_3_2",
+    "steane",
+    "surface",
+    "toric"
    ],
    "evidence_counts": {
     "verified": 14,
@@ -30592,7 +30686,6 @@
     }
    ],
    "codes": [
-    "many_hypercube",
     "stab_16_4_4",
     "stab_4_2_2"
    ],
@@ -31275,7 +31368,9 @@
     ]
    },
    "records": [],
-   "codes": [],
+   "codes": [
+    "stab_4_2_2"
+   ],
    "evidence_counts": {
     "verified": 10,
     "total": 13
@@ -33339,7 +33434,10 @@
     }
    ],
    "codes": [
-    "488_color"
+    "488_color",
+    "concatenated_steane",
+    "stab_5_1_3",
+    "steane"
    ],
    "evidence_counts": {
     "verified": 8,
@@ -37066,7 +37164,9 @@
     }
    ],
    "codes": [
-    "gkp-cluster-state"
+    "gkp",
+    "gkp-cluster-state",
+    "quantum_repetition"
    ],
    "evidence_counts": {
     "verified": 11,
@@ -37786,9 +37886,7 @@
      "url": "https://postquantum.com/industry-news/diraq-eight-qubit-foundry/"
     }
    ],
-   "codes": [
-    "generalized_bicycle"
-   ],
+   "codes": [],
    "evidence_counts": {
     "verified": 9,
     "total": 13
@@ -38717,7 +38815,10 @@
     ]
    },
    "records": [],
-   "codes": [],
+   "codes": [
+    "quantum_repetition",
+    "stab_4_2_2"
+   ],
    "evidence_counts": {
     "verified": 11,
     "total": 12
@@ -38950,7 +39051,9 @@
      "url": "https://postquantum.com/quantum-computing-companies/intel/"
     }
    ],
-   "codes": [],
+   "codes": [
+    "quantum_repetition"
+   ],
    "evidence_counts": {
     "verified": 4,
     "total": 11
@@ -40956,7 +41059,9 @@
      "url": "https://www.nature.com/articles/s41586-024-08445-2"
     }
    ],
-   "codes": [],
+   "codes": [
+    "ladder"
+   ],
    "evidence_counts": {
     "verified": 7,
     "total": 10
@@ -41404,7 +41509,9 @@
      "url": "https://support.dwavesys.com/hc/en-us/articles/32105885880087-D-Wave-s-Advantage2-Quantum-Computer-Now-Generally-Available"
     }
    ],
-   "codes": [],
+   "codes": [
+    "qac"
+   ],
    "evidence_counts": {
     "verified": 6,
     "total": 11
@@ -41645,7 +41752,9 @@
      "url": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-announces-advancements-in-annealing-and-gate-model-quantum-computing-technologies/"
     }
    ],
-   "codes": [],
+   "codes": [
+    "qac"
+   ],
    "evidence_counts": {
     "verified": 5,
     "total": 11

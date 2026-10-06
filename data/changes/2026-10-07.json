@@ -1,0 +1,1721 @@
+{
+ "date": "2026-10-07",
+ "source": "the editor's order of 7 Oct 2026 (00:23): for every machine of the register, the complete list of the QEC codes used on it — eleven research passes by machine family and two gap sweeps against the primary sources",
+ "items": [
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-falcon"
+   },
+   "fields": {
+    "codes": "css_4_1_2;floquet_color;heavy_hex;honeycomb_floquet;matching;quantum_repetition;stab_4_2_2;stab_8_3_2"
+   },
+   "old": {
+    "codes": "heavy_hex;stab_4_2_2;honeycomb_floquet"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2110.04285",
+     "date": "2021",
+     "code": "css_4_1_2"
+    },
+    {
+     "url": "https://arxiv.org/abs/2210.13154",
+     "date": "2022",
+     "code": "floquet_color"
+    },
+    {
+     "url": "https://arxiv.org/abs/2203.07205",
+     "date": "2022",
+     "code": "heavy_hex"
+    },
+    {
+     "url": "https://arxiv.org/abs/2210.13154",
+     "date": "2022",
+     "code": "honeycomb_floquet"
+    },
+    {
+     "url": "https://arxiv.org/abs/2109.13308",
+     "date": "2021",
+     "code": "matching"
+    },
+    {
+     "url": "https://arxiv.org/abs/2207.00553",
+     "date": "2022",
+     "code": "quantum_repetition"
+    },
+    {
+     "url": "https://arxiv.org/abs/2305.13581",
+     "date": "2021",
+     "code": "stab_4_2_2"
+    },
+    {
+     "url": "https://arxiv.org/abs/2309.08663",
+     "date": "2023",
+     "code": "stab_8_3_2"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-eagle"
+   },
+   "fields": {
+    "codes": "floquet_color;google_dynamic_surface;honeycomb_floquet;quantum_repetition;stab_4_2_2;xzzx"
+   },
+   "old": {
+    "codes": ""
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2408.02082",
+     "date": "2022",
+     "code": "floquet_color"
+    },
+    {
+     "url": "https://arxiv.org/abs/2408.02082",
+     "date": "2024",
+     "code": "google_dynamic_surface"
+    },
+    {
+     "url": "https://arxiv.org/abs/2210.13154",
+     "date": "2022",
+     "code": "honeycomb_floquet"
+    },
+    {
+     "url": "https://arxiv.org/abs/2308.08909",
+     "date": "2023",
+     "code": "quantum_repetition"
+    },
+    {
+     "url": "https://arxiv.org/abs/2503.14472",
+     "date": "2025",
+     "code": "stab_4_2_2"
+    },
+    {
+     "url": "https://arxiv.org/abs/2607.21707",
+     "date": "2026",
+     "code": "xzzx"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-heron-r1"
+   },
+   "fields": {
+    "codes": "bacon_shor;google_dynamic_surface"
+   },
+   "old": {
+    "codes": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2404.15989",
+     "date": "2024",
+     "code": "bacon_shor"
+    },
+    {
+     "url": "https://arxiv.org/abs/2404.15989",
+     "date": "2024",
+     "code": "google_dynamic_surface"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-heron-r2"
+   },
+   "fields": {
+    "codes": "heavy_hex;quantum_repetition;rotated_surface;spacetime_circuit;steane"
+   },
+   "old": {
+    "codes": "rotated_surface"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2504.07258",
+     "date": "2025",
+     "code": "heavy_hex"
+    },
+    {
+     "url": "https://arxiv.org/abs/2601.16123",
+     "date": "2026",
+     "code": "quantum_repetition"
+    },
+    {
+     "url": "https://arxiv.org/abs/2412.01446",
+     "date": "2024",
+     "code": "rotated_surface"
+    },
+    {
+     "url": "https://arxiv.org/abs/2504.15725",
+     "date": "2025",
+     "code": "spacetime_circuit"
+    },
+    {
+     "url": "https://arxiv.org/abs/2605.02861",
+     "date": "2026",
+     "code": "steane"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-heron-r3"
+   },
+   "fields": {
+    "codes": "dynamic_compass;heavy_hex;quantum_repetition;rotated_surface;spacetime_circuit;stab_4_2_2;steane;triangular_color"
+   },
+   "old": {
+    "codes": "rotated_surface;spacetime_circuit"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2604.14296",
+     "date": "2026",
+     "code": "dynamic_compass"
+    },
+    {
+     "url": "https://arxiv.org/abs/2604.14296",
+     "date": "2026",
+     "code": "heavy_hex"
+    },
+    {
+     "url": "https://arxiv.org/abs/2601.16123",
+     "date": "2026",
+     "code": "quantum_repetition"
+    },
+    {
+     "url": "https://arxiv.org/abs/2510.18847",
+     "date": "2025",
+     "code": "rotated_surface"
+    },
+    {
+     "url": "https://arxiv.org/abs/2607.25941",
+     "date": "2026",
+     "code": "spacetime_circuit"
+    },
+    {
+     "url": "https://arxiv.org/abs/2607.24947",
+     "date": "2026",
+     "code": "stab_4_2_2"
+    },
+    {
+     "url": "https://arxiv.org/abs/2605.02861",
+     "date": "2026",
+     "code": "steane"
+    },
+    {
+     "url": "https://arxiv.org/abs/2605.02861",
+     "date": "2026",
+     "code": "triangular_color"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-nighthawk-r1"
+   },
+   "fields": {
+    "codes": "google_dynamic_surface;rotated_surface;xzzx"
+   },
+   "old": {
+    "codes": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2607.01887",
+     "date": "2026",
+     "code": "google_dynamic_surface"
+    },
+    {
+     "url": "https://arxiv.org/abs/2610.03869",
+     "date": "2026",
+     "code": "rotated_surface"
+    },
+    {
+     "url": "https://arxiv.org/abs/2607.21707",
+     "date": "2026",
+     "code": "xzzx"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-nighthawk-r2"
+   },
+   "fields": {
+    "codes": "rotated_surface"
+   },
+   "old": {
+    "codes": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2610.05928",
+     "date": "2026",
+     "code": "rotated_surface"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-loon"
+   },
+   "fields": {
+    "codes": "gross"
+   },
+   "old": {
+    "codes": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://www.ibm.com/quantum/blog/large-scale-ftqc",
+     "date": "2025",
+     "code": "gross"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-starling"
+   },
+   "fields": {
+    "codes": "bb288;gross;qcga"
+   },
+   "old": {
+    "codes": "gross;qcga;bb288"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2506.03094",
+     "date": "2025",
+     "code": "bb288"
+    },
+    {
+     "url": "https://arxiv.org/abs/2506.03094",
+     "date": "2025",
+     "code": "gross"
+    },
+    {
+     "url": "https://www.ibm.com/quantum/blog/large-scale-ftqc",
+     "date": "2025",
+     "code": "qcga"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-bluejay"
+   },
+   "fields": {
+    "codes": "qcga"
+   },
+   "old": {
+    "codes": "gross;qcga"
+   },
+   "evidence": [
+    {
+     "url": "https://newsroom.ibm.com/2025-06-10-IBM-Sets-the-Course-to-Build-Worlds-First-Large-Scale,-Fault-Tolerant-Quantum-Computer-at-New-IBM-Quantum-Data-Center",
+     "date": "2025",
+     "code": "qcga"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "google-sycamore-54"
+   },
+   "fields": {
+    "codes": "css_4_1_2;quantum_repetition;rotated_surface;surface"
+   },
+   "old": {
+    "codes": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2102.06132",
+     "date": "2021",
+     "code": "css_4_1_2"
+    },
+    {
+     "url": "https://arxiv.org/abs/2102.06132",
+     "date": "2021",
+     "code": "quantum_repetition"
+    },
+    {
+     "url": "https://arxiv.org/abs/2104.01180",
+     "date": "2021",
+     "code": "rotated_surface"
+    },
+    {
+     "url": "https://arxiv.org/abs/2104.01180",
+     "date": "2021",
+     "code": "surface"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "google-sycamore-72"
+   },
+   "fields": {
+    "codes": "quantum_repetition;twist_defect_surface;xzzx"
+   },
+   "old": {
+    "codes": "rotated_surface;xzzx;quantum_repetition"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2207.06431",
+     "date": "2022",
+     "code": "quantum_repetition"
+    },
+    {
+     "url": "https://arxiv.org/abs/2210.10255",
+     "date": "2023",
+     "code": "twist_defect_surface"
+    },
+    {
+     "url": "https://arxiv.org/abs/2207.06431",
+     "date": "2022",
+     "code": "xzzx"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "google-willow"
+   },
+   "fields": {
+    "codes": "google_dynamic_surface;quantum_repetition;steane;triangular_color;xzzx"
+   },
+   "old": {
+    "codes": "rotated_surface;xzzx;triangular_color;google_dynamic_surface;quantum_repetition"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2412.14360",
+     "date": "2024",
+     "code": "google_dynamic_surface"
+    },
+    {
+     "url": "https://arxiv.org/abs/2408.13687",
+     "date": "2024",
+     "code": "quantum_repetition"
+    },
+    {
+     "url": "https://arxiv.org/abs/2512.13908",
+     "date": "2024",
+     "code": "steane"
+    },
+    {
+     "url": "https://arxiv.org/abs/2412.14256",
+     "date": "2024",
+     "code": "triangular_color"
+    },
+    {
+     "url": "https://arxiv.org/abs/2408.13687",
+     "date": "2024",
+     "code": "xzzx"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ustc-zuchongzhi-2.1"
+   },
+   "fields": {
+    "codes": "surface-17"
+   },
+   "old": {
+    "codes": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2112.13505",
+     "date": "2022",
+     "code": "surface-17"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ustc-zuchongzhi-3.2"
+   },
+   "fields": {
+    "codes": "xzzx"
+   },
+   "old": {
+    "codes": "rotated_surface;surface-17"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2601.09921",
+     "date": "2025",
+     "code": "xzzx"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "tsinghua-kunlun-32"
+   },
+   "fields": {
+    "codes": "qcga;stab_18_6_3"
+   },
+   "old": {
+    "codes": "qcga;generalized_bicycle"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2505.09684",
+     "date": "2025",
+     "code": "qcga"
+    },
+    {
+     "url": "https://arxiv.org/abs/2505.09684",
+     "date": "2025",
+     "code": "stab_18_6_3"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "originq-wukong-72"
+   },
+   "fields": {
+    "codes": "css_4_1_2"
+   },
+   "old": {
+    "codes": "rotated_surface;css_4_1_2"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2405.09035",
+     "date": "2024",
+     "code": "css_4_1_2"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "rigetti-ankaa-2"
+   },
+   "fields": {
+    "codes": "rotated_surface"
+   },
+   "old": {
+    "codes": "rotated_surface;stab_4_2_2"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2410.05202",
+     "date": "2024",
+     "code": "rotated_surface"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "iqm-garnet-20"
+   },
+   "fields": {
+    "codes": "quantum_repetition"
+   },
+   "old": {
+    "codes": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2411.00751",
+     "date": "2024",
+     "code": "quantum_repetition"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "iqm-emerald-54"
+   },
+   "fields": {
+    "codes": "hagiwara_nakayama_deletion;quantum_repetition"
+   },
+   "old": {
+    "codes": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2608.26010",
+     "date": "2026",
+     "code": "hagiwara_nakayama_deletion"
+    },
+    {
+     "url": "https://docs.iqm.tech/iqm-client/user_guide_qrisp/detector_experiment_demo.html",
+     "date": "2026",
+     "code": "quantum_repetition"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "iqm-halocene-150"
+   },
+   "fields": {
+    "codes": "rotated_surface;triangular_color"
+   },
+   "old": {
+    "codes": "directional_tile;barbell;rotated_surface;triangular_color"
+   },
+   "evidence": [
+    {
+     "url": "https://thequantuminsider.com/2026/09/10/iqm-plans-logical-qubit-system-for-finlands-lumi-ai-factory/",
+     "date": "2026",
+     "code": "rotated_surface"
+    },
+    {
+     "url": "https://thequantuminsider.com/2026/09/10/iqm-plans-logical-qubit-system-for-finlands-lumi-ai-factory/",
+     "date": "2026",
+     "code": "triangular_color"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantware-contralto-a17"
+   },
+   "fields": {
+    "codes": "surface-17"
+   },
+   "old": {
+    "codes": "rotated_surface"
+   },
+   "evidence": [
+    {
+     "url": "https://thequantuminsider.com/2025/02/25/quantware-introduces-contralto-a-a-qpu-for-quantum-error-correction/",
+     "date": "2025",
+     "code": "surface-17"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "aws-ocelot"
+   },
+   "fields": {
+    "codes": "cat_repetition;two-legged-cat"
+   },
+   "old": {
+    "codes": "two-legged-cat;cat_repetition;quantum_repetition"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2409.13025",
+     "date": "2024",
+     "code": "cat_repetition"
+    },
+    {
+     "url": "https://arxiv.org/abs/2409.13025",
+     "date": "2024",
+     "code": "two-legged-cat"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "aliceandbob-helium-2"
+   },
+   "fields": {
+    "codes": "two-legged-cat"
+   },
+   "old": {
+    "codes": "two-legged-cat;squeezed_cat"
+   },
+   "evidence": [
+    {
+     "url": "https://alice-bob.com/newsroom/alice-bob-surpasses-bit-flip-stability-record/",
+     "date": "2025",
+     "code": "two-legged-cat"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "aliceandbob-helium"
+   },
+   "fields": {
+    "codes": "cat_repetition;two-legged-cat"
+   },
+   "old": {
+    "codes": "cat_repetition"
+   },
+   "evidence": [
+    {
+     "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
+     "date": "2026",
+     "code": "cat_repetition"
+    },
+    {
+     "url": "https://alice-bob.com/newsroom/alice-bob-unveils-first-quantum-system/",
+     "date": "2026",
+     "code": "two-legged-cat"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "aliceandbob-graphene"
+   },
+   "fields": {
+    "codes": "ldpc_cat"
+   },
+   "old": {
+    "codes": "ldpc_cat;elevator"
+   },
+   "evidence": [
+    {
+     "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
+     "date": "2024",
+     "code": "ldpc_cat"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "nordquantique-tesseract"
+   },
+   "fields": {
+    "codes": "multimodegkp;tesseract_gkp"
+   },
+   "old": {
+    "codes": "multimodegkp"
+   },
+   "evidence": [
+    {
+     "url": "https://www.nordquantique.com/wp-content/uploads/2026/02/Nord_Quantique_-_Tesseract_Technical_Paper.pdf",
+     "date": "2025",
+     "code": "multimodegkp"
+    },
+    {
+     "url": "https://www.nordquantique.com/wp-content/uploads/2026/02/Nord_Quantique_-_Tesseract_Technical_Paper.pdf",
+     "date": "2025",
+     "code": "tesseract_gkp"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "dwave-dualrail-17"
+   },
+   "fields": {
+    "codes": "dual_rail"
+   },
+   "old": {
+    "codes": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-launches-gate-model-simulator-beta-program-advancing-error-aware-programming-capabilities/",
+     "date": "2026",
+     "code": "dual_rail"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "sustc-biased-erasure"
+   },
+   "fields": {
+    "codes": "fock_0n"
+   },
+   "old": {
+    "codes": "dual_rail"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2601.21616",
+     "date": "2026",
+     "code": "fock_0n"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-h1"
+   },
+   "fields": {
+    "codes": "css_4_1_2;dfs_qec_10_1_4;iceberg;stab_16_6_4;stab_4_2_2;stab_5_1_3;stab_6_2_2;stab_8_3_2;steane;toric"
+   },
+   "old": {
+    "codes": "steane;stab_6_2_2"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2406.09951",
+     "date": "2024",
+     "code": "css_4_1_2"
+    },
+    {
+     "url": "https://arxiv.org/abs/2503.22107",
+     "date": "2025",
+     "code": "dfs_qec_10_1_4"
+    },
+    {
+     "url": "https://arxiv.org/abs/2211.06703",
+     "date": "2022",
+     "code": "iceberg"
+    },
+    {
+     "url": "https://arxiv.org/abs/2409.04628",
+     "date": "2024",
+     "code": "stab_16_6_4"
+    },
+    {
+     "url": "https://arxiv.org/abs/2409.05835",
+     "date": "2024",
+     "code": "stab_4_2_2"
+    },
+    {
+     "url": "https://arxiv.org/abs/2208.01863",
+     "date": "2022",
+     "code": "stab_5_1_3"
+    },
+    {
+     "url": "https://arxiv.org/abs/2506.14688",
+     "date": "2025",
+     "code": "stab_6_2_2"
+    },
+    {
+     "url": "https://arxiv.org/abs/2309.09893",
+     "date": "2023",
+     "code": "stab_8_3_2"
+    },
+    {
+     "url": "https://arxiv.org/abs/2107.07505",
+     "date": "2021",
+     "code": "steane"
+    },
+    {
+     "url": "https://arxiv.org/abs/2406.09951",
+     "date": "2023",
+     "code": "toric"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-h2"
+   },
+   "fields": {
+    "codes": "4d_surface;carbon;generalized_shor;iceberg;lr_enhanced_surface;quantum_double;qubit_golay;stab_15_1_3;stab_16_6_4;steane;surface"
+   },
+   "old": {
+    "codes": "steane;stab_15_1_3;4d_surface;stab_8_3_2"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2408.08865",
+     "date": "2024",
+     "code": "4d_surface"
+    },
+    {
+     "url": "https://arxiv.org/abs/2404.02280",
+     "date": "2024",
+     "code": "carbon"
+    },
+    {
+     "url": "https://arxiv.org/abs/2506.00579",
+     "date": "2025",
+     "code": "generalized_shor"
+    },
+    {
+     "url": "https://arxiv.org/abs/2409.12104",
+     "date": "2024",
+     "code": "iceberg"
+    },
+    {
+     "url": "https://arxiv.org/abs/2406.02666",
+     "date": "2024",
+     "code": "lr_enhanced_surface"
+    },
+    {
+     "url": "https://arxiv.org/abs/2305.03766",
+     "date": "2023",
+     "code": "quantum_double"
+    },
+    {
+     "url": "https://arxiv.org/abs/2508.14200",
+     "date": "2025",
+     "code": "qubit_golay"
+    },
+    {
+     "url": "https://arxiv.org/abs/2506.14169",
+     "date": "2025",
+     "code": "stab_15_1_3"
+    },
+    {
+     "url": "https://arxiv.org/abs/2409.04628",
+     "date": "2024",
+     "code": "stab_16_6_4"
+    },
+    {
+     "url": "https://arxiv.org/abs/2404.16728",
+     "date": "2024",
+     "code": "steane"
+    },
+    {
+     "url": "https://arxiv.org/abs/2408.08865",
+     "date": "2024",
+     "code": "surface"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-helios"
+   },
+   "fields": {
+    "codes": "iceberg;many_hypercube;stab_16_4_4;stab_4_2_2;steane;stellated_dodecahedron_css"
+   },
+   "old": {
+    "codes": "stab_4_2_2;4d_surface"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2602.22211",
+     "date": "2026",
+     "code": "iceberg"
+    },
+    {
+     "url": "https://arxiv.org/abs/2602.22211",
+     "date": "2026",
+     "code": "many_hypercube"
+    },
+    {
+     "url": "https://arxiv.org/abs/2602.22211",
+     "date": "2026",
+     "code": "stab_16_4_4"
+    },
+    {
+     "url": "https://arxiv.org/abs/2602.22211",
+     "date": "2026",
+     "code": "stab_4_2_2"
+    },
+    {
+     "url": "https://arxiv.org/abs/2603.04584",
+     "date": "2026",
+     "code": "steane"
+    },
+    {
+     "url": "https://developer.nvidia.com/blog/nvidia-nvqlink-architecture-integrates-accelerated-computing-with-quantum-processors",
+     "date": "2025",
+     "code": "stellated_dodecahedron_css"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-helix"
+   },
+   "fields": {
+    "codes": "c4_helix;rotated_surface;toric"
+   },
+   "old": {
+    "codes": "4d_surface;stab_4_2_2"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2609.03194",
+     "date": "2026",
+     "code": "c4_helix"
+    },
+    {
+     "url": "https://arxiv.org/abs/2609.03194",
+     "date": "2026",
+     "code": "rotated_surface"
+    },
+    {
+     "url": "https://arxiv.org/abs/2609.03194",
+     "date": "2026",
+     "code": "toric"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-sol"
+   },
+   "fields": {
+    "codes": "iceberg"
+   },
+   "old": {
+    "codes": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://www.quantinuum.com/blog/technical-perspective-by-the-end-of-the-decade-we-will-deliver-universal-fault-tolerant-quantum-computing",
+     "date": "2024",
+     "code": "iceberg"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-apollo"
+   },
+   "fields": {
+    "codes": "c4_helix"
+   },
+   "old": {
+    "codes": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://www.quantinuum.com/blog/helix-a-new-architecture-for-enterprise-scale-fault-tolerant-quantum-computing",
+     "date": "2026",
+     "code": "c4_helix"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-aria"
+   },
+   "fields": {
+    "codes": "quantum_repetition;stab_4_2_2"
+   },
+   "old": {
+    "codes": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2411.00751",
+     "date": "2024",
+     "code": "quantum_repetition"
+    },
+    {
+     "url": "https://arxiv.org/abs/2412.04791",
+     "date": "2024",
+     "code": "stab_4_2_2"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-forte"
+   },
+   "fields": {
+    "codes": "hagiwara_nakayama_deletion;holographic;iceberg;stab_5_1_3;steane"
+   },
+   "old": {
+    "codes": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2608.26010",
+     "date": "2026",
+     "code": "hagiwara_nakayama_deletion"
+    },
+    {
+     "url": "https://arxiv.org/abs/2607.12047",
+     "date": "2026",
+     "code": "holographic"
+    },
+    {
+     "url": "https://arxiv.org/abs/2604.13219",
+     "date": "2026",
+     "code": "iceberg"
+    },
+    {
+     "url": "https://arxiv.org/abs/2607.12047",
+     "date": "2026",
+     "code": "stab_5_1_3"
+    },
+    {
+     "url": "https://arxiv.org/abs/2608.20676",
+     "date": "2026",
+     "code": "steane"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-tempo"
+   },
+   "fields": {
+    "codes": "none"
+   },
+   "old": {
+    "codes": "generalized_bicycle;qc_ldpc"
+   },
+   "evidence": [],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-ba133-qldpc-testbed"
+   },
+   "fields": {
+    "codes": "generalized_bicycle;qcga;rotated_surface;stab_16_4_4;stab_4_2_2;toric"
+   },
+   "old": {
+    "codes": "generalized_bicycle;qc_ldpc"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2606.06455",
+     "date": "2026",
+     "code": "generalized_bicycle"
+    },
+    {
+     "url": "https://arxiv.org/abs/2606.06455",
+     "date": "2026",
+     "code": "qcga"
+    },
+    {
+     "url": "https://arxiv.org/abs/2606.06455",
+     "date": "2026",
+     "code": "rotated_surface"
+    },
+    {
+     "url": "https://arxiv.org/abs/2606.06455",
+     "date": "2026",
+     "code": "stab_16_4_4"
+    },
+    {
+     "url": "https://arxiv.org/abs/2606.06455",
+     "date": "2026",
+     "code": "stab_4_2_2"
+    },
+    {
+     "url": "https://arxiv.org/abs/2606.06455",
+     "date": "2026",
+     "code": "toric"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-superion-256"
+   },
+   "fields": {
+    "codes": "none"
+   },
+   "old": {
+    "codes": "generalized_bicycle;qc_ldpc"
+   },
+   "evidence": [],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "uibk-innsbruck-ion"
+   },
+   "fields": {
+    "codes": "css_4_1_2;holographic;quantum_repetition;stab_10_1_2;stab_5_1_3;stab_8_3_2;steane"
+   },
+   "old": {
+    "codes": "steane;stab_8_3_2"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2006.03071",
+     "date": "2021",
+     "code": "css_4_1_2"
+    },
+    {
+     "url": "https://arxiv.org/abs/2607.16503",
+     "date": "2026",
+     "code": "holographic"
+    },
+    {
+     "url": "https://doi.org/10.1126/science.1203329",
+     "date": "2011",
+     "code": "quantum_repetition"
+    },
+    {
+     "url": "https://arxiv.org/abs/2403.13732",
+     "date": "2024",
+     "code": "stab_10_1_2"
+    },
+    {
+     "url": "https://arxiv.org/abs/2609.22572",
+     "date": "2026",
+     "code": "stab_5_1_3"
+    },
+    {
+     "url": "https://arxiv.org/abs/2506.22600",
+     "date": "2025",
+     "code": "stab_8_3_2"
+    },
+    {
+     "url": "https://arxiv.org/abs/2111.12654",
+     "date": "2014",
+     "code": "steane"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "umd-duke-ion"
+   },
+   "fields": {
+    "codes": "bacon_shor;shor_nine;stab_4_2_2"
+   },
+   "old": {
+    "codes": "bacon_shor"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2009.11482",
+     "date": "2021",
+     "code": "bacon_shor"
+    },
+    {
+     "url": "https://arxiv.org/abs/2104.01205",
+     "date": "2021",
+     "code": "shor_nine"
+    },
+    {
+     "url": "https://arxiv.org/abs/1611.06946",
+     "date": "2017",
+     "code": "stab_4_2_2"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quera-gemini"
+   },
+   "fields": {
+    "codes": "488_color;concatenated_steane;stab_5_1_3;steane"
+   },
+   "old": {
+    "codes": "488_color"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2412.15165",
+     "date": "2024",
+     "code": "488_color"
+    },
+    {
+     "url": "https://meetings-archive.aps.org/smt/2026/mar-j06/8/",
+     "date": "2025",
+     "code": "concatenated_steane"
+    },
+    {
+     "url": "https://arxiv.org/abs/2412.15165",
+     "date": "2024",
+     "code": "stab_5_1_3"
+    },
+    {
+     "url": "https://arxiv.org/abs/2412.15165",
+     "date": "2024",
+     "code": "steane"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "harvard-448"
+   },
+   "fields": {
+    "codes": "rotated_surface;stab_15_1_3;stab_16_6_4;stab_8_3_2;steane;surface;toric"
+   },
+   "old": {
+    "codes": "rotated_surface;steane;stab_15_1_3;stab_16_6_4"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2506.20661",
+     "date": "2023",
+     "code": "rotated_surface"
+    },
+    {
+     "url": "https://arxiv.org/abs/2506.20661",
+     "date": "2025",
+     "code": "stab_15_1_3"
+    },
+    {
+     "url": "https://arxiv.org/abs/2506.20661",
+     "date": "2025",
+     "code": "stab_16_6_4"
+    },
+    {
+     "url": "https://arxiv.org/abs/2312.03982",
+     "date": "2023",
+     "code": "stab_8_3_2"
+    },
+    {
+     "url": "https://arxiv.org/abs/2506.20661",
+     "date": "2023",
+     "code": "steane"
+    },
+    {
+     "url": "https://arxiv.org/abs/2112.03923",
+     "date": "2021",
+     "code": "surface"
+    },
+    {
+     "url": "https://arxiv.org/abs/2112.03923",
+     "date": "2021",
+     "code": "toric"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "atom-computing-phoenix"
+   },
+   "fields": {
+    "codes": "css_4_1_2;quantum_repetition;stab_4_2_2;toric"
+   },
+   "old": {
+    "codes": "stab_4_2_2;toric;bacon_shor"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2411.11822",
+     "date": "2024",
+     "code": "css_4_1_2"
+    },
+    {
+     "url": "https://arxiv.org/abs/2506.09936",
+     "date": "2025",
+     "code": "quantum_repetition"
+    },
+    {
+     "url": "https://arxiv.org/abs/2411.11822",
+     "date": "2024",
+     "code": "stab_4_2_2"
+    },
+    {
+     "url": "https://arxiv.org/abs/2606.04079",
+     "date": "2026",
+     "code": "toric"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "pasqal-fresnel"
+   },
+   "fields": {
+    "codes": "stab_4_2_2"
+   },
+   "old": {
+    "codes": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2605.21276",
+     "date": "2026",
+     "code": "stab_4_2_2"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "infleqtion-sqale"
+   },
+   "fields": {
+    "codes": "stab_16_4_4;stab_4_2_2"
+   },
+   "old": {
+    "codes": "stab_4_2_2;stab_16_4_4;many_hypercube"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2509.13247",
+     "date": "2025",
+     "code": "stab_16_4_4"
+    },
+    {
+     "url": "https://arxiv.org/abs/2412.07670",
+     "date": "2024",
+     "code": "stab_4_2_2"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "xanadu-aurora"
+   },
+   "fields": {
+    "codes": "gkp;gkp-cluster-state;quantum_repetition"
+   },
+   "old": {
+    "codes": "gkp-cluster-state"
+   },
+   "evidence": [
+    {
+     "url": "https://www.nature.com/articles/s41586-024-08406-9",
+     "date": "2025",
+     "code": "gkp-cluster-state"
+    },
+    {
+     "url": "https://www.nature.com/articles/s41586-024-08406-9",
+     "date": "2025",
+     "code": "quantum_repetition"
+    },
+    {
+     "url": "https://investors.xanadu.ai/news-releases/news-release-details/xanadu-charts-path-over-1000-logical-qubits-2031",
+     "date": "2025",
+     "code": "gkp"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "intel-tunnel-falls"
+   },
+   "fields": {
+    "codes": "quantum_repetition"
+   },
+   "old": {
+    "codes": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://meetings-archive.aps.org/smt/2026/mar-s10/13/",
+     "date": "2026",
+     "code": "quantum_repetition"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "diraq-imec-8q"
+   },
+   "fields": {
+    "codes": "none"
+   },
+   "old": {
+    "codes": "generalized_bicycle"
+   },
+   "evidence": [],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "microsoft-majorana-1"
+   },
+   "fields": {
+    "codes": "ladder"
+   },
+   "old": {
+    "codes": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2502.12252",
+     "date": "2025",
+     "code": "ladder"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "dwave-advantage"
+   },
+   "fields": {
+    "codes": "qac"
+   },
+   "old": {
+    "codes": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2401.07184",
+     "date": "2022",
+     "code": "qac"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "dwave-advantage2"
+   },
+   "fields": {
+    "codes": "qac"
+   },
+   "old": {
+    "codes": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2509.11217",
+     "date": "2025",
+     "code": "qac"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ethz-surface17"
+   },
+   "fields": {
+    "codes": "quantum_repetition;surface-17"
+   },
+   "old": {
+    "codes": "rotated_surface;surface-17;quantum_repetition"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2501.04612",
+     "date": "2025",
+     "code": "quantum_repetition"
+    },
+    {
+     "url": "https://arxiv.org/abs/2112.03708",
+     "date": "2021",
+     "code": "surface-17"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-superion-10k"
+   },
+   "fields": {
+    "codes": "generalized_bicycle;qcga"
+   },
+   "old": {
+    "codes": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2604.19481",
+     "date": "2026",
+     "code": "generalized_bicycle"
+    },
+    {
+     "url": "https://arxiv.org/abs/2604.19481",
+     "date": "2026",
+     "code": "qcga"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "aliceandbob-lithium-48"
+   },
+   "fields": {
+    "codes": "two-legged-cat"
+   },
+   "old": {
+    "codes": ""
+   },
+   "evidence": [
+    {
+     "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
+     "date": "2024",
+     "code": "two-legged-cat"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "aliceandbob-beryllium-250"
+   },
+   "fields": {
+    "codes": "two-legged-cat"
+   },
+   "old": {
+    "codes": ""
+   },
+   "evidence": [
+    {
+     "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
+     "date": "2024",
+     "code": "two-legged-cat"
+    }
+   ],
+   "note": "machine × code table revised; per-row use, scope, device, by, year, source and check state in data/register/machine-codes.csv"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "register",
+    "id": "machine-codes"
+   },
+   "note": "machine-codes.csv gains the fields use, scope, device, by, year, url, checked, note (defined in data/register/machine-codes.md); 22 codes added to the codes register (qec-codes.csv): c4_helix, carbon, concatenated_steane, dfs_qec_10_1_4, dynamic_compass, floquet_color, fock_0n, generalized_shor, hagiwara_nakayama_deletion, holographic, iceberg, ladder, lr_enhanced_surface, matching, qac, quantum_double, qubit_golay, stab_10_1_2, stab_18_6_3, stellated_dodecahedron_css, tesseract_gkp, twist_defect_surface. 25 earlier rows removed as wrong (e.g. rotated_surface on Sycamore-72, Willow and Zuchongzhi 3.2, which ran the XZZX form; generalized_bicycle on Kunlun, whose second code is an [[18,6,3]] reduction of the bivariate bicycle code; qc_ldpc, a classical code id, on three IonQ rows), 14 candidate rows not filed with their reasons — all in the sweep record 30_working/QEC-SWEEP_2026-10-07.csv."
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "hypothesis",
+    "id": "H4"
+   },
+   "verdict": "With the completed code table the H4 cohort shares are 2023 40 % (6/15), 2024 26 % (7/27), 2025 40 % (21/52), 2026 33 % (17/52): the last cohort is below the first and four machines decode in the loop, so the rule gives \"not supported\" (was \"partly\"). Third-party runs on older machines (Falcon, Eagle, Sycamore-54, Zuchongzhi 2.1) raise the early cohorts; the test counts a machine in the cohort of its status date whenever its code ran. The editor decides whether to accept the verdict or to restate the test (e.g. builder runs only, or the year of the first run)."
+  }
+ ]
+}
