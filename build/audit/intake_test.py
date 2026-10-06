@@ -32,6 +32,8 @@ RA = [
                          event='spec', quote='IonQ Forte 36 99.6%', source_class='C')),
     ('k-forte-q', dict(machine_id='ionq-forte', field='physical_qubits_num', current='30', proposed_value='36', event='spec',
                        quote='IonQ Forte 36 99.6%', source_class='C')),
+    ('k-aria', dict(machine_id='ionq-aria', field='qubits_accessible', current='', proposed_value='25', event='spec',
+                    quote='providing up to 25 qubits in the Ionq Aria QPUs', source_class='C')),
     ('k-same', dict(machine_id='ibm-heron-r2', field='physical_qubits_num', current='156', proposed_value='156', event='spec',
                     quote='Heron r2 156 qubits', source_class='A')),
     ('k-stale', dict(machine_id='ibm-heron-r2', field='physical_qubits_num', current='150', proposed_value='160', event='spec',
@@ -40,6 +42,18 @@ RA = [
                      event='access', quote='x', source_class='D')),
     ('k-ghost', dict(machine_id='no-such-machine', field='t1', current='', proposed_value='1', event='spec', quote='x',
                      source_class='A')),
+    ('k-cohort', dict(machine_id='ibm-heron-r1', field='status_date', current='Dec 2023', proposed_value='2026-04-01',
+                      event='status', quote='ibm_torino | 133 | 2026-04-01', source_class='C')),
+    ('k-bitflip', dict(machine_id='aliceandbob-helium', field='t1', current='', proposed_value='> 1 hour (measured bit-flip time)',
+                       event='spec', quote='> 1 hour measured bit-flip time', source_class='C')),
+    ('k-jump', dict(machine_id='ibm-nighthawk-r2', field='physical_qubits_num', current='120', proposed_value='458', event='spec',
+                    quote='120 programmable qubits and 458 physical qubits', source_class='C')),
+    ('k-jump2', dict(machine_id='ibm-heron-r2', field='physical_qubits_num', current='156', proposed_value='400', event='spec',
+                     quote='Heron r2 400 qubits', source_class='A')),
+    ('k-roadmap', dict(machine_id='pasqal-orion', field='roadmap', current=None, proposed_value='200+ logical qubits by 2029',
+                       event='roadmap', quote='200+ logical qubits by 2029', source_class='C')),
+    ('k-access', dict(machine_id='ibm-heron-r2', field='access', current='cloud + on-prem (System Two)', proposed_value='lab-only',
+                      event='access', quote='lab only', source_class='A')),
     ('k-planned', dict(machine_id='ibm-kookaburra', field='status', current='', proposed_value='DEMONSTRATED',
                        event='status', quote='Kookaburra demonstrated', source_class='A')),
 ]
@@ -65,6 +79,8 @@ def check(ok, what):
 
 A = I.Atlas()
 reg = A.machines
+for _k, _r in RA:
+    if _r.get('current') is None: _r['current'] = reg[_r['machine_id']][_r['field']]
 RA[-1][1]['current'] = reg['ibm-kookaburra']['status']
 with tempfile.TemporaryDirectory() as d:
     write(d, 'register-amendment-candidates.csv', RA)
@@ -93,11 +109,21 @@ with tempfile.TemporaryDirectory() as d:
           'Tempo: a status stated for the future goes to the editor, never applied by itself')
     check(T['k-retire']['tier'] == 'auto', 'a retirement from the owner\'s retired list (DEPLOYED → RETIRED) is applied')
     check(T['k-forte-err']['tier'] == 'hold', 'a two-qubit error waits for WP2')
-    check(T['k-forte-q']['tier'] == 'auto', 'a qubit count with the owner\'s words is applied')
+    check(T['k-forte-q']['tier'] == 'reject' and 'already weighs' in T['k-forte-q']['why_tier'],
+          'Forte 30 → 36: the register\'s note already weighs IonQ\'s 36 against the 30-ion benchmark — a curated choice stands')
+    check(T['k-aria']['tier'] == 'auto', 'a qubit count with the owner\'s words is applied')
     check(T['k-same']['tier'] == 'landed', 'a value the register already holds is landed, not news')
     check(T['k-stale']['tier'] == 'stale', 'a proposal measured against an older register value is stale')
     check(T['k-press']['tier'] == 'reject', 'press alone never changes the register')
     check(T['k-ghost']['tier'] == 'reject', 'an unknown machine is rejected')
+    check(T['k-cohort']['tier'] == 'reject' and 'cohort' in T['k-cohort']['why_tier'],
+          'a status_date that changes the year would move the cohort (§8.4 H7): rejected, the date goes in the status text')
+    check(T['k-bitflip']['tier'] == 'hold' and 'WP1' in T['k-bitflip']['why_tier'],
+          'a cat qubit\'s bit-flip time is not T1: held for WP1\'s field dictionary (R1-4)')
+    check(T['k-jump']['tier'] == 'reject', 'Nighthawk r2 «458 physical»: the register\'s note already explains 458 = qubits + couplers + resets')
+    check(T['k-jump2']['tier'] == 'editor', 'a qubit count that jumps by more than 25 %% (156 → 400) is checked by the editor')
+    check(T['k-roadmap']['tier'] == 'editor', 'a roadmap is merged by the editor, not replaced')
+    check(T['k-access']['tier'] == 'editor', 'an access change that leaves the cloud / on-premises class is the editor\'s')
     check(T['k-planned']['tier'] == 'editor' and 'into' in T['k-planned']['why_tier'],
           'a planned machine reported demonstrated enters the device counts: the editor\'s')
     check(T['k-new']['tier'] == 'editor' and T['k-new']['org_slug'] == 'ionq', 'a new machine is the editor\'s; its owner resolves')
@@ -107,26 +133,27 @@ with tempfile.TemporaryDirectory() as d:
     check(T['k-desc']['tier'] == 'editor', 'a technology\'s descriptor is the editor\'s')
     check(T['k-ghostnode']['tier'] == 'reject', 'an unknown technology is rejected')
     check(T['k-gap']['tier'] == 'editor', 'a new technology is the editor\'s')
-    check(T['k-rec']['tier'] == 'auto' and T['k-work']['tier'] == 'attach', 'a record is applied; a work waits for a citing change')
+    check(T['k-rec']['tier'] == 'session' and T['k-work']['tier'] == 'attach',
+          'a technology record goes to the weekly pass; a work waits for a citing change')
     V = I.verify_list(rows)
     vk = {v['row_key'] for v in V}
-    check({'k-retire', 'k-forte-q', 'k-org', 'k-rec', 'k-tempo'} <= vk and 'k-press' not in vk and 'k-work' not in vk,
+    check({'k-retire', 'k-aria', 'k-org', 'k-tempo'} <= vk and 'k-press' not in vk and 'k-work' not in vk,
           'the source checks cover the applied and the editor\'s rows, not the rejected or the works')
     ver = [{'row_key': 'k-retire', 'url': U, 'quote_found': True, 'checked': '2026-10-06'},
-           {'row_key': 'k-forte-q', 'url': U, 'quote_found': False, 'checked': '2026-10-06', 'note': 'page changed'},
-           {'row_key': 'k-org', 'url': U, 'quote_found': True, 'checked': '2026-10-06'},
-           {'row_key': 'k-rec', 'url': U, 'quote_found': True, 'checked': '2026-10-06'}]
+           {'row_key': 'k-aria', 'url': U, 'quote_found': False, 'checked': '2026-10-06', 'note': 'page changed'},
+           {'row_key': 'k-org', 'url': U, 'quote_found': True, 'checked': '2026-10-06'}]
     p = I.plan(rows, ver, '2026-10-06')
     D = p['decisions']
     check(D['k-retire']['decision'] == 'applied' and D['k-retire']['verified']['quote_found'],
           'a verified auto row is applied, with its source check recorded')
-    check(D['k-forte-q']['decision'] == 'deferred' and 'not found' in D['k-forte-q']['reason'],
+    check(D['k-aria']['decision'] == 'deferred' and 'not found' in D['k-aria']['reason'],
           'an auto row whose quote is not at the source is deferred, not applied')
     check('k-tempo' not in D and 'k-new' not in D and 'k-gap' not in D, 'the editor\'s rows stay undecided until he decides')
     check(D['k-press']['decision'] == 'rejected' and D['k-same']['decision'] == 'landed'
           and D['k-forte-err']['until'] == 'WP2' and D['k-note']['until'] == 'weekly brief pass',
           'rejections, landings and holds are decided with their reason')
-    check(D['k-work']['decision'] == 'applied' and 'k-work2' not in D, 'a work rides with its paper\'s applied record; another waits')
+    check('k-work' not in D and 'k-work2' not in D and D['k-rec']['until'] == 'weekly brief pass',
+          'works wait for a citing change; the record is deferred to the weekly pass')
     check([r['machine_id'] for r in p['register_patch']['rows']] == ['ibm-heron-r1']
           and p['register_patch']['rows'][0]['fields'] == {'status': 'RETIRED'},
           'the register patch holds exactly the verified register change')

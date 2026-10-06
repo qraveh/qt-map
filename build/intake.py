@@ -21,11 +21,12 @@ by its row_key, so nothing is read twice and nothing is lost.
 
 TIERS — the rule table TIER_RULES below is the whole policy, printed by `status --rules`:
   auto     the session verifies the quote at the source, then applies: register fields that do not move a conclusion
-           (qubit counts, coherence and gate times, readout error, access, a retirement, a status_date), organisation
-           events (as change-ledger statements), technology records whose number sits in a verified quote
+           (qubit counts within 25 %, T1/T2 that are T1/T2, gate and readout times, readout error, access within its
+           class, a retirement, a status_date within its year), organisation events (as change-ledger statements)
   hold     waits for a named work package, no decision needed now: two-qubit error figures wait for WP2's
            comparability classes (review R1-1)
-  session  a written change a session makes in a batch (the notes of the deep reviews, into the briefs, three languages)
+  session  a written change a session makes in a weekly batch: the deep reviews' notes into the briefs (three languages),
+           technology records (does the paper's device fit the technology; does the number beat the standing record)
   editor   the editor decides: a status that moves a machine into or out of the device counts of §8, any future-dated
            status (the Tempo case), a new machine, a new technology, a technology's status or descriptor
   attach   a work proposed for the references: numbered only when a change that cites it is applied
@@ -59,7 +60,10 @@ FINAL = ('applied', 'rejected', 'deferred', 'landed')
 DEVICE = ('DEPLOYED', 'DEMONSTRATED', 'RETIRED')
 STATUS_ORDER = ('PLANNED', 'ANNOUNCED', 'DEMONSTRATED', 'DEPLOYED', 'RETIRED')
 AUTO_FIELDS = ('physical_qubits_num', 'qubits_accessible', 't1', 't2', 't_2q', 't_meas', 'readout_error', 'access',
-               'status_date', 'roadmap', 'codes', 'best_logical', 'demonstrated_algorithms', 'benchmark')
+               'status_date', 'codes', 'best_logical', 'demonstrated_algorithms', 'benchmark')
+COUNT_JUMP = 0.25      # a qubit count that moves by more than this fraction is the editor's: the register's count may be
+                       # defined differently from the owner's (IBM Nighthawk r2: 120 qubits, «458 physical» counts couplers)
+COHERENCE_WORDS = re.compile(r'\bT[12]\*?\b|T_?[12]|coherence|relaxation|dephasing|energy decay', re.I)
 HOLD_FIELDS = ('err_2q_median_num', 'err_2q_best', 'err_2q_median')
 NUMERIC = ('physical_qubits_num', 'qubits_accessible', 'err_2q_median_num')
 TEXT_TWIN = {'physical_qubits_num': 'physical_qubits', 'err_2q_median_num': 'err_2q_median'}   # the register's prose column
@@ -75,7 +79,13 @@ TIER_RULES = [
     ('register-amendment', 'field status, the change crosses the device boundary of §8 (DEPLOYED/DEMONSTRATED/RETIRED)', 'editor'),
     ('register-amendment', 'field status within the device or non-device set (e.g. DEPLOYED → RETIRED)', 'auto'),
     ('register-amendment', 'two-qubit error fields', 'hold (WP2)'),
-    ('register-amendment', 'counts, times, readout error, access, status date, roadmap, milestones', 'auto'),
+    ('register-amendment', 'status_date whose year differs (it is the cohort date; a retirement date goes in the status text)', 'reject'),
+    ('register-amendment', 'T1/T2 whose quote names another quantity (a bit-flip time)', 'hold (WP1)'),
+    ('register-amendment', 'the register\'s prose beside the number already names the proposed value (a curated choice)', 'reject'),
+    ('register-amendment', 'a qubit count that moves by more than 25 %', 'editor'),
+    ('register-amendment', 'roadmap (merged, not replaced: the forecast ledger)', 'editor'),
+    ('register-amendment', 'access that changes the cloud / on-premises / laboratory class', 'editor'),
+    ('register-amendment', 'counts, times, readout error, access, status date, milestones', 'auto'),
     ('register-amendment', 'any other field', 'editor'),
     ('machine-candidate', 'a system the register does not hold', 'editor'),
     ('org-event', 'source class D', 'reject'),
@@ -85,7 +95,8 @@ TIER_RULES = [
     ('station amendment', 'change_kind note', 'session (weekly brief pass)'),
     ('map gap', 'a technology the Atlas lacks', 'editor'),
     ('record', 'station unknown', 'reject'),
-    ('record', 'a dated standard record with its quote', 'auto'),
+    ('record', 'a dated record with its quote (does the device fit the technology? better than the standing record?)',
+     'session (weekly pass)'),
     ('work', 'cited by an applied change of the same paper', 'attach'),
 ]
 
@@ -147,6 +158,11 @@ def status_word(s):
     return 'OTHER'
 
 
+def access_class(s):
+    u = (s or '').lower()
+    return ('cloud' in u and 'was cloud' not in u, 'on-prem' in u or 'sold' in u, 'lab' in u or 'research' in u)
+
+
 def atlas_link(kind, ident):
     return SITE + {'machine': 'machine/%s.html', 'organisation': 'organisation/%s.html',
                    'technology': 'technology/%s.html'}[kind] % ident
@@ -202,6 +218,29 @@ def tier_register(r, A):
         return 'auto', 'status %s → %s stays %s the device set' % (a, b, 'inside' if b in DEVICE else 'outside')
     if f in HOLD_FIELDS:
         return 'hold', 'two-qubit error waits for WP2 (protocol, scope and conditioning per figure; review R1-1)'
+    if f == 'status_date':
+        y0, y1 = re.findall(r'(?:19|20)\d\d', now or ''), re.findall(r'(?:19|20)\d\d', new or '')
+        if y0 and y1 and y0[0] != y1[0]:
+            return 'reject', ('status_date is the cohort date — when the machine first existed (build/machines_chapter.py) — '
+                              'and %s → %s would move its cohort; a retirement date belongs in the status text' % (y0[0], y1[0]))
+    if f in ('t1', 't2') and not COHERENCE_WORDS.search(r.get('quote', '')):
+        return 'hold', ('the quote does not name T1/T2 (e.g. a cat qubit\'s bit-flip time): one key, one meaning — '
+                        'waits for WP1\'s field dictionary (review R1-4)')
+    twin = m.get(TEXT_TWIN.get(f, ''), '')
+    if twin and re.search(r'(?<![\d.])%s(?![\d.])' % re.escape(re.sub(r'[^\d.]', '', new) or '\x00'), twin):
+        return 'reject', ('the register\'s note already weighs this value and keeps another: «%s»' % twin[:140])
+    if f in ('physical_qubits_num', 'qubits_accessible'):
+        try:
+            a, b = float((now or '').replace(',', '')), float(re.sub(r'[^\d.]', '', new) or 'x')
+            if a and abs(b - a) / a > COUNT_JUMP:
+                return 'editor', 'the count moves %g → %g (over %d %%): check the definition against the register\'s note' % (
+                    a, b, COUNT_JUMP * 100)
+        except ValueError:
+            pass
+    if f == 'roadmap':
+        return 'editor', 'a roadmap is merged, not replaced: it feeds the forecast ledger and the roadmap checks of §8.5'
+    if f == 'access' and access_class(now) != access_class(new):
+        return 'editor', 'the access class changes (cloud / on-premises / laboratory), which §8.1 counts'
     if f in AUTO_FIELDS:
         return 'auto', 'a register figure with the owner\'s own words'
     return 'editor', 'field %s has no rule' % f
@@ -264,7 +303,8 @@ def triage(intake_dir, A, led):
                          change=r.get('description', ''), quote=r.get('proposal', ''))
             elif name == 'records-candidates.csv':
                 nid = r.get('node_id', '')
-                tier, why = ('auto', 'a dated record whose number sits in its quote') if nid in A.nodes else \
+                tier, why = ('session', 'a technology record: the weekly pass checks that the paper\'s device is this '
+                             'technology and how the number stands against the standing records') if nid in A.nodes else \
                             ('reject', 'technology %r is not in the graph' % nid)
                 t.update(subject=('technology', nid), key=r.get('key', ''), num=r.get('num', ''), unit=r.get('unit', ''),
                          scope=r.get('scope', ''), date=r.get('date', ''), quote=r.get('note', ''),
@@ -359,7 +399,8 @@ def plan(rows, verified, date):
         elif tier == 'reject':
             decisions[k] = dict(base, decision='rejected', reason=t['why_tier'])
         elif tier.startswith('hold'):
-            decisions[k] = dict(base, decision='deferred', until='WP2', reason=t['why_tier'])
+            decisions[k] = dict(base, decision='deferred', until='WP1' if 'WP1' in t['why_tier'] else 'WP2',
+                                reason=t['why_tier'])
         elif tier == 'session':
             decisions[k] = dict(base, decision='deferred', until='weekly brief pass', reason=t['why_tier'])
         elif tier == 'auto' and k in failed:
