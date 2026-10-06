@@ -71,6 +71,18 @@ python3 build/machines_json.py && python3 build/audit/edges_check.py && python3 
 (nohup python3 build/build.py > $SP/build.log 2>&1 &)    # 3–4 min; poll with sleep ≤ 110
 python3 build/audit/text_lint.py && python3 build/audit/links_check.py --records
 ```
+Two register conventions the plan cannot know: a RETIRED status carries its date in the status text — «RETIRED (ibm_torino
+retired 1 Apr 2026, IBM retired-QPU list)» — while `status_date` keeps the date the machine first existed (it is the cohort
+of §8.4 H7); a change-ledger item's `note` quotes the source and says what the run decided about it.
+
+After the build, the **conclusions guard**: `git diff data/hypotheses-history.json data/forecast-ledger.json report/report_EN.md`.
+A changed hypothesis verdict or forecast range reverts the rows that caused it and sends them to the editor (`decide …
+deferred --until "editor"`); a moved frontier, a new largest device of an architecture (Table 8.3) or a moved forecast basis
+is applied and named in the errata line and the report — 6 Oct: Aria counted by its 25 usable qubits made Forte the
+largest device of the laser-addressed ion chain. Then add one line to `build/editions.py` ERRATA (newest first: the date,
+«the digest's intake of the <issue> issue (data/changes/<date>.json …)», what changed for the reader, including what the
+guard found) and rebuild: CHANGELOG.md is generated from it.
+
 `manual` rows (approved new machines, technologies, technology descriptors) are written only when the run has the budget
 for the full job (a new machine: cells per layer with evidence, references, the organisation — cloud manual §5.2);
 otherwise they stay approved-and-pending and the report says so. If `propagate --check` names hand-written text that

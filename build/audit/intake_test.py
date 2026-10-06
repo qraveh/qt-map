@@ -78,6 +78,17 @@ def check(ok, what):
 
 
 A = I.Atlas()
+# the fixture pins the register values it tests, so the checks hold whatever later intakes change in the real register
+FIXED = {'ibm-heron-r1': {'status': 'DEPLOYED', 'status_date': 'Dec 2023'}, 'ionq-aria': {'qubits_accessible': ''},
+         'ionq-forte': {'physical_qubits_num': '30', 'physical_qubits': "IonQ's page says 36; the benchmark of record is a "
+                        "30-ion chain covering all 435 pairs"},
+         'ibm-heron-r2': {'physical_qubits_num': '156', 'physical_qubits': '156 (heavy-hex)', 'access': 'cloud + on-prem (System Two)'},
+         'ibm-nighthawk-r2': {'physical_qubits_num': '120', 'physical_qubits': '120 programmable qubits (458 on-chip elements)'},
+         'ibm-kookaburra': {'status': 'PLANNED (not delivered)', 'flags': 'schedule-risk'},
+         'aliceandbob-helium': {'t1': ''}, 'ionq-tempo': {'status': 'DEPLOYED', 'flags': 'conflicting-count;target-not-device'}}
+for _m, _f in FIXED.items():
+    A.machines[_m] = dict(A.machines[_m], **_f)
+A.devices = sum(1 for m in A.machines.values() if A.is_device(m))
 reg = A.machines
 for _k, _r in RA:
     if _r.get('current') is None: _r['current'] = reg[_r['machine_id']][_r['field']]
