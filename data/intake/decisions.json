@@ -1,0 +1,5 @@
+{
+ "decisions": {},
+ "runs": [],
+ "note": "One decision per proposal of the digest's intake (QT-Map/qnews-intake, contract rev 3), keyed by the intake's row_key. decision: applied (in the Atlas data; `change` = the change-ledger item, `commit` when known) | rejected (`reason`) | deferred (`until` names the later step) | landed (already true at triage). `file` = the intake file, `date` = the decision's date, `by` = editor | intake-run | session, `verified` = the source check (url, quote_found, checked). `runs`: one line per intake run (its date, the intake manifest's `updated` it read, the ticket that carried it, the count of decisions by kind). Written only by build/intake.py; read by qnews to close its rows. Policy: build/intake.py TIER_RULES."
+}
