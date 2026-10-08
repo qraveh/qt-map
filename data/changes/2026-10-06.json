@@ -1,0 +1,112 @@
+{
+ "date": "2026-10-06",
+ "source": "the digest intake of the 2026-10-06 issue (qnews industry stream, contract rev 3), triaged by build/intake.py and each quote checked at its source on 6 Oct 2026",
+ "items": [
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "aqt-ibex-q1"
+   },
+   "fields": {
+    "access": "cloud (ARNICA, Scaleway, Amazon Braket eu-north-1) + on-prem"
+   },
+   "note": "«AQT IBEX-Q1 gate-based QPU arn:aws:braket:eu-north-1::device/qpu/aqt/Ibex-Q1 eu-north-1» (source class C; digest intake 2026-10-06)",
+   "sources": [
+    "https://docs.aws.amazon.com/braket/latest/developerguide/braket-devices.html"
+   ],
+   "intake": "44fb39d886d2f3b9"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "iqm-emerald-54"
+   },
+   "fields": {
+    "access": "cloud (Amazon Braket, IQM Resonance) + on-prem sold"
+   },
+   "note": "«IQM Emerald gate-based QPU arn:aws:braket:eu-north-1::device/qpu/iqm/Emerald eu-north-1» (source class C; digest intake 2026-10-06)",
+   "sources": [
+    "https://docs.aws.amazon.com/braket/latest/developerguide/braket-devices.html"
+   ],
+   "intake": "2a3a848f4e321a4f"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-aria"
+   },
+   "fields": {
+    "qubits_accessible": "25"
+   },
+   "note": "«providing up to 25 qubits in the Ionq Aria QPUs» (source class C; digest intake 2026-10-06)",
+   "sources": [
+    "https://learn.microsoft.com/en-us/azure/quantum/qc-target-list"
+   ],
+   "intake": "39b3560db7658248"
+  },
+  {
+   "kind": "status",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-heron-r1"
+   },
+   "fields": {
+    "status": "RETIRED (ibm_torino retired 1 Apr 2026, IBM retired-QPU list)"
+   },
+   "note": "IBM retired-QPU list: «ibm_torino | 133 | 2026-04-01». status_date stays Dec 2023 (the cohort date); the retirement date is in the status text. Digest intake 2026-10-06, source class C.",
+   "sources": [
+    "https://quantum.cloud.ibm.com/docs/en/guides/retired-qpus"
+   ],
+   "intake": "498dbfa6e40b9793"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "rigetti-cepheus-1-36q"
+   },
+   "fields": {
+    "status_date": "12 Aug 2025"
+   },
+   "note": "«Cepheus-1-36Q was deployed on August 12, 2025» (source class C; digest intake 2026-10-06)",
+   "sources": [
+    "https://www.rigetti.com/what-we-build"
+   ],
+   "intake": "5d69f276296b7d9b"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-nighthawk-r2"
+   },
+   "fields": {
+    "qubits_accessible": "120"
+   },
+   "note": "«r2 (September 2026) The second version of Nighthawk, with 120 programmable qubits and 458 physical qubits» (source class C; digest intake 2026-10-06)",
+   "sources": [
+    "https://quantum.cloud.ibm.com/docs/en/guides/processor-types"
+   ],
+   "intake": "468cb12d3c6053f9"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "organisation",
+    "id": "infleqtion"
+   },
+   "fields": {
+    "event": "funding (proposed)",
+    "date": "2026-09-24"
+   },
+   "note": "Form 8-K exhibit 99.2 (24 Sep 2026): a proposed $100M U.S. Department of Commerce investment, subject to definitive agreements and government approvals («the amount, availability and timing of the proposed U.S. Department of Commerce funding and the satisfaction of conditions to definitive agreements»). Digest intake 2026-10-06, source class B.",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/2007825/000162828026063328/infq-20260924xexx992.htm"
+   ],
+   "intake": "bfac8e25bdc8d91a"
+  }
+ ]
+}

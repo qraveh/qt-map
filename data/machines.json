@@ -8484,7 +8484,7 @@
    "country": "USA",
    "family": "SC",
    "map_path": "sc",
-   "status": "DEPLOYED",
+   "status": "RETIRED (ibm_torino retired 1 Apr 2026, IBM retired-QPU list)",
    "status_date": "Dec 2023",
    "physical_qubits_num": 133,
    "access": "cloud service",
@@ -10248,7 +10248,7 @@
     "flags": [
      "conflicting-claim"
     ],
-    "qubits_accessible": null,
+    "qubits_accessible": 120,
     "gate_evidence_derived": true,
     "decoder_mode_derived": true,
     "benchmarked": true
@@ -11162,7 +11162,7 @@
    "status": "DEPLOYED",
    "status_date": "21 Jul 2025 (LRZ 11 Feb 2026)",
    "physical_qubits_num": 54,
-   "access": "cloud + on-prem sold",
+   "access": "cloud (Amazon Braket, IQM Resonance) + on-prem sold",
    "layers": {
     "1": [
      {
@@ -18211,7 +18211,7 @@
    "family": "SC",
    "map_path": "sc",
    "status": "DEPLOYED",
-   "status_date": "mid-2025",
+   "status_date": "12 Aug 2025",
    "physical_qubits_num": 36,
    "access": "cloud service",
    "layers": {
@@ -21948,7 +21948,7 @@
    "status": "DEPLOYED",
    "status_date": "2024-2026",
    "physical_qubits_num": 12,
-   "access": "cloud (ARNICA, Scaleway) + on-prem",
+   "access": "cloud (ARNICA, Scaleway, Amazon Braket eu-north-1) + on-prem",
    "layers": {
     "1": [
      {
@@ -23020,7 +23020,7 @@
     "flags": [
      "vendor-claim"
     ],
-    "qubits_accessible": null,
+    "qubits_accessible": 25,
     "gate_evidence_derived": true,
     "decoder_mode_derived": true,
     "benchmarked": true

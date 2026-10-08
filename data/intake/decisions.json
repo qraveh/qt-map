@@ -1,0 +1,169 @@
+{
+ "decisions": {
+  "24a85181021d3c5c": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-10-06",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "WP2",
+   "reason": "two-qubit error waits for WP2 (protocol, scope and conditioning per figure; review R1-1)"
+  },
+  "2a3a848f4e321a4f": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-10-06",
+   "by": "intake-run",
+   "decision": "applied",
+   "change": "data/changes/2026-10-06.json#1",
+   "verified": {
+    "url": "https://docs.aws.amazon.com/braket/latest/developerguide/braket-devices.html",
+    "quote_found": true,
+    "checked": "2026-10-06"
+   },
+   "reason": "a register figure with the owner's own words"
+  },
+  "34e0ca38edcb35b5": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-10-06",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "WP1",
+   "reason": "the quote does not name T1/T2 (e.g. a cat qubit's bit-flip time): one key, one meaning — waits for WP1's field dictionary (review R1-4)"
+  },
+  "39b3560db7658248": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-10-06",
+   "by": "intake-run",
+   "decision": "applied",
+   "change": "data/changes/2026-10-06.json#2",
+   "verified": {
+    "url": "https://learn.microsoft.com/en-us/azure/quantum/qc-target-list",
+    "quote_found": true,
+    "checked": "2026-10-06"
+   },
+   "reason": "a register figure with the owner's own words"
+  },
+  "44fb39d886d2f3b9": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-10-06",
+   "by": "intake-run",
+   "decision": "applied",
+   "change": "data/changes/2026-10-06.json#0",
+   "verified": {
+    "url": "https://docs.aws.amazon.com/braket/latest/developerguide/braket-devices.html",
+    "quote_found": true,
+    "checked": "2026-10-06"
+   },
+   "reason": "a register figure with the owner's own words"
+  },
+  "468cb12d3c6053f9": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-10-06",
+   "by": "intake-run",
+   "decision": "applied",
+   "change": "data/changes/2026-10-06.json#5",
+   "verified": {
+    "url": "https://quantum.cloud.ibm.com/docs/en/guides/processor-types",
+    "quote_found": true,
+    "checked": "2026-10-06"
+   },
+   "reason": "a register figure with the owner's own words"
+  },
+  "498dbfa6e40b9793": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-10-06",
+   "by": "intake-run",
+   "decision": "applied",
+   "change": "data/changes/2026-10-06.json#3",
+   "verified": {
+    "url": "https://quantum.cloud.ibm.com/docs/en/guides/retired-qpus",
+    "quote_found": true,
+    "checked": "2026-10-06"
+   },
+   "reason": "status DEPLOYED → RETIRED stays inside the device set"
+  },
+  "5d69f276296b7d9b": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-10-06",
+   "by": "intake-run",
+   "decision": "applied",
+   "change": "data/changes/2026-10-06.json#4",
+   "verified": {
+    "url": "https://www.rigetti.com/what-we-build",
+    "quote_found": true,
+    "checked": "2026-10-06"
+   },
+   "reason": "a register figure with the owner's own words"
+  },
+  "6b3ad499fb3dcab5": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-10-06",
+   "by": "intake-run",
+   "decision": "rejected",
+   "reason": "the register's note already weighs this value and keeps another: «120 programmable qubits (458 on-chip elements = 120 q + 218 couplers + 120 reset elements)»"
+  },
+  "b846d33d383e2f5c": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-10-06",
+   "by": "intake-run",
+   "decision": "rejected",
+   "reason": "the register's note already weighs this value and keeps another: «IonQ's page says 36; the benchmark of record is a 30-ion chain covering all 435 pairs»"
+  },
+  "bf890d9b8327ece6": {
+   "file": "records-candidates.csv",
+   "date": "2026-10-06",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a technology record: the weekly pass checks that the paper's device is this technology and how the number stands against the standing records"
+  },
+  "bfac8e25bdc8d91a": {
+   "file": "org-event-candidates.csv",
+   "date": "2026-10-06",
+   "by": "intake-run",
+   "decision": "applied",
+   "change": "data/changes/2026-10-06.json#6",
+   "verified": {
+    "url": "https://www.sec.gov/Archives/edgar/data/2007825/000162828026063328/infq-20260924xexx992.htm",
+    "quote_found": true,
+    "checked": "2026-10-06"
+   },
+   "reason": "an organisation event, recorded as a change-ledger statement"
+  },
+  "e7f6d2c31ea91490": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-10-06",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "WP2",
+   "reason": "two-qubit error waits for WP2 (protocol, scope and conditioning per figure; review R1-1)"
+  },
+  "f6e9197ba5c19f99": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-10-06",
+   "by": "intake-run",
+   "decision": "rejected",
+   "reason": "status_date is the cohort date — when the machine first existed (build/machines_chapter.py) — and 2023 → 2026 would move its cohort; a retirement date belongs in the status text"
+  },
+  "fac5e358380af4a2": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-10-06",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "WP2",
+   "reason": "two-qubit error waits for WP2 (protocol, scope and conditioning per figure; review R1-1)"
+  }
+ },
+ "runs": [
+  {
+   "date": "2026-10-06",
+   "manifest_updated": "2026-10-06T08:18:49Z",
+   "ticket": "20261006-1",
+   "decided": {
+    "applied": 7,
+    "deferred": 5,
+    "rejected": 3
+   }
+  }
+ ],
+ "note": "One decision per proposal of the digest's intake (QT-Map/qnews-intake, contract rev 3), keyed by the intake's row_key. decision: applied (in the Atlas data; `change` = the change-ledger item, `commit` when known) | rejected (`reason`) | deferred (`until` names the later step) | landed (already true at triage). `file` = the intake file, `date` = the decision's date, `by` = editor | intake-run | session, `verified` = the source check (url, quote_found, checked). `runs`: one line per intake run (its date, the intake manifest's `updated` it read, the ticket that carried it, the count of decisions by kind). Written only by build/intake.py; read by qnews to close its rows. Policy: build/intake.py TIER_RULES."
+}
