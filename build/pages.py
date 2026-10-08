@@ -13,7 +13,7 @@ its twins in the other languages (hreflang, and links by the languages' own name
 register through build/media.py (hosted thumbnails at <atlas>/media/<asset>.jpg — the deploy copies them; the build lists them
 in dist/media-files.txt). Links inside a record page that point at an anchor of the main page are rewritten to go there.
 """
-import html, json, os, re, sys, unicodedata
+import datetime, hashlib, html, json, os, re, sys, unicodedata
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'build')); sys.path.insert(0, os.path.join(ROOT, 'data'))
@@ -22,6 +22,16 @@ from editions import EDITIONS, CONCEPT_DOI, SITE, REPO
 from langs import LANGS, NATIVE, FOLDER, pick, direction, others, up
 
 KINDS = ('technology', 'machine', 'architecture', 'organisation')
+# the sitemap's <lastmod> per page (8 Oct 2026: every URL carried the edition date, so a later change looked like none to a search engine)
+LASTMOD = os.path.join(ROOT, 'data', 'vv', 'page-lastmod.json')
+LASTMOD_DOC = ("Ledger of the sitemap's <lastmod>, one entry per sitemap page, keyed by the page's path under dist/ (the language roots by their "
+               "index.html). sha256 = the hash of the page's bytes as the build wrote them, all of them: the pages embed no build date or time "
+               "(their only date is the edition's, editions.EDITIONS[0]['date'], which is data) and the sitemap's lastmod is not fed back into any "
+               "page. lastmod = the day the page's bytes last changed: a build keeps the ledger's lastmod for a page whose hash is unchanged and "
+               "gives a new or changed page the build's own date (datetime.date.today()); a page no longer built is dropped. Written by "
+               "build/pages.py at every build and committed with the change that moved it. Seeded 8 Oct 2026: 2026-09-30 (the edition) for a "
+               "page whose bytes were equal in the builds of tag 2026.09 and of c7-2026-10-08; for a page that differed, the date of the last "
+               "commit that changed it in dist/ (the three main pages: 2026-10-07), else 2026-10-04 (the record pages, which are not committed).")
 T = {
  'en': dict(atlas='Quantum Technology Atlas', back='← Quantum Technology Atlas', map='Open on the map', tech='Technologies', mach='Machines',
             arch='Architectures', org='Organisations', brief='Brief', pictures='Pictures', cite='Cite as',
@@ -83,7 +93,7 @@ class Site:
             for mid in o.get('machines', []): self.org_of[mid] = o['slug']
         self.edition = cfg['edition']; self.site = cfg.get('site', SITE)
         self.dist = os.path.join(ROOT, 'dist'); self.urls = []   # (lang, path) for the sitemap
-        self.written = 0; self.org_links = 0; self.written_by = {}
+        self.written = 0; self.org_links = 0; self.written_by = {}; self.sha = {}   # sitemap path → sha256 of the bytes written
 
     # ---------- addresses
     def rel(self, lang): return '../' + up(lang)                            # from dist/[<lang>/]<kind>/x.html to dist/
@@ -275,7 +285,12 @@ class Site:
         urls = []
         def entry(loc, alts):
             a = ''.join('<xhtml:link rel="alternate" hreflang="%s" href="%s"/>' % (L, u) for L, u in alts)
-            return '<url><loc>%s</loc>%s<lastmod>%s</lastmod></url>' % (loc, a, self.cfg['date'])
+            return '<url><loc>%s</loc>%s<lastmod>%s</lastmod></url>' % (loc, a, lastmod[key(loc)])
+        def key(loc): k = loc[len(self.site):]; return k + 'index.html' if k == '' or k.endswith('/') else k   # the page's path under dist/
+        locs = [self.site + FOLDER[L0] for L0 in LANGS] + [self.abs_url(kind, ident, lang) for lang, kind, ident in self.urls]
+        for L0 in LANGS:   # the main pages (build_html wrote them before the record pages; index.html is the directory's default document)
+            self.sha[FOLDER[L0] + 'index.html'] = hashlib.sha256(open(os.path.join(self.dist, FOLDER[L0], 'index.html'), 'rb').read()).hexdigest()
+        lastmod = self.lastmod([key(l) for l in locs])
         for L0 in LANGS:
             urls.append(entry(self.site + FOLDER[L0], [(L, self.site + FOLDER[L]) for L in LANGS] + [('x-default', self.site)]))
         for lang, kind, ident in self.urls:
@@ -283,6 +298,24 @@ class Site:
             urls.append(entry(loc, [(L, self.abs_url(kind, ident, L)) for L in LANGS] + [('x-default', self.abs_url(kind, ident, 'en'))]))
         sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + '\n'.join(urls) + '\n</urlset>\n'
         open(os.path.join(self.dist, 'sitemap.xml'), 'w', encoding='utf-8', newline='\n').write(sm)
+
+    def lastmod(self, keys):
+        """the ledger data/vv/page-lastmod.json (its _doc defines it): an unchanged page keeps its lastmod, a new or changed page takes
+        the build's date, a vanished page is dropped; the ledger is rewritten only when an entry moved"""
+        try: old = json.load(open(LASTMOD, encoding='utf-8')).get('pages', {})
+        except (OSError, ValueError): old = {}
+        today = datetime.date.today().isoformat(); new = {}; moved = 0
+        for k in keys:
+            e = old.get(k)
+            if e and e.get('sha256') == self.sha[k]: new[k] = e
+            else: new[k] = {'sha256': self.sha[k], 'lastmod': today}; moved += 1
+        dropped = len(set(old) - set(new))
+        if moved or dropped or list(old) != sorted(new):
+            body = ',\n'.join('  %s: %s' % (json.dumps(k), json.dumps(new[k], sort_keys=True)) for k in sorted(new))
+            os.makedirs(os.path.dirname(LASTMOD), exist_ok=True)
+            open(LASTMOD, 'w', encoding='utf-8', newline='\n').write('{\n "_doc": %s,\n "pages": {\n%s\n }\n}\n' % (json.dumps(LASTMOD_DOC, ensure_ascii=False), body))
+        print('sitemap lastmod: %d page(s), %d new or changed (lastmod %s), %d dropped' % (len(new), moved, today, dropped))
+        return {k: v['lastmod'] for k, v in new.items()}
 
     # ---------- write
     def write(self, kind, ident, lang, title, desc, body, image=None, twin=True):
@@ -292,7 +325,7 @@ class Site:
             self.org_links += body.count('<a class="org" href="') - n0
         page = self.shell(kind, ident, lang, title, desc, body, image=image, twin=twin)
         p = self.out_path(kind, ident, lang); os.makedirs(os.path.dirname(p), exist_ok=True)
-        open(p, 'w', encoding='utf-8', newline='\n').write(page); self.written += 1; self.written_by[lang] = self.written_by.get(lang, 0) + 1
+        open(p, 'w', encoding='utf-8', newline='\n').write(page); self.sha[os.path.relpath(p, self.dist).replace(os.sep, '/')] = hashlib.sha256(page.encode('utf-8')).hexdigest(); self.written += 1; self.written_by[lang] = self.written_by.get(lang, 0) + 1
         self.urls.append((lang, kind, ident))
         self.media_used.update(re.findall(r'media/([A-Za-z0-9_.\-]+\.jpg)', page))   # the pictures this page shows (src and og:image)
 

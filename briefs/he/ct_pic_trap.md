@@ -30,6 +30,8 @@ updated: 2026-09-04
 
 שניים עד שלושה סדרי גודל מתחת למערכות המרחב החופשי במספר האטומים, ובשום מקום עוד לא הורצו שער או הובלה דרך מלכודת שנוצרה בשבב. השבב של 784 הערוצים הוא הראיה החזקה ביותר להגדלה, והוא ממען אטומים ואינו לוכד אותם.
 
+בצד מקור האור, מיקרו-מסרק ב-780 nm בשילוב היברידי (מהודי Si₃N₄ מפרוסות של 150 mm, דיודות לייזר III–V הנעולות בהזרקה עצמית), עם ייחוס ל-⁸⁵Rb, הניע ב-2026 סריג אופטי וצימוד ראמאן בעיבוי בוז–איינשטיין של ⁸⁷Rb [P][886]. האור נוצר בשבב אך הועבר במרחב החופשי, והוא שלט בגז קוונטי, לא בקיוביטים: לא הייתה מעורבת אף מלכודת או שער שנוצרו בשבב.
+
 ## ייצור, חומרים ושרשרת האספקה
 תהליכי מעגלים פוטוניים משולבים בניטריד צורן; מערך 50 האטומים משתמש במוליכי גל מזכוכית [D][580]. הפוטוניקה של Pasqal הגיעה מ-Aeponyx, במחיר שלא נחשף, פחות מ-18 חודשים לפני ההודעה מאוגוסט 2026, ולא נזכר שום שותף מבין מפעלי הייצור [C][581]. כושר הייצור המסחרי הקרוב ביותר: קו הייצור הניסיוני PIXEurope של imec (~EUR 400 M, 2024-11-24) ו-Quantum Technology Solutions של GlobalFoundries (מכתב כוונות של CHIPS בסך $375 M, 2026-05-21) — שניהם מציינים פוטוניקה כתוצר, ואף אחד מהם אינו מזכיר מלכודות אטומים [G][582][G][353]. ספקי ליתיום ניובט בשכבה דקה, HyperLight ו-Lightium, הם המועמדים אם מיתוג מהיר יהפוך לדרישה [P][518]. נכון ל-2026-09-04 לא נמצאו שיעור תקינות, עלות לערוץ או קטגוריית פיקוח על יצוא לפוטוניקה של מלכודות אטומים.
 
@@ -77,6 +79,7 @@ updated: 2026-09-04
 [580] Y.-D. Hu *et al.*, “A scalable chip-integrated single-photon source array based on 50 individually addressable neutral atoms,” [arXiv:2608.15637](https://arxiv.org/abs/2608.15637), Aug. 2026. [D]
 [581] M. U. Rehman, “Pasqal Demonstrates Photonic Chip-Based Control for Neutral-Atom Quantum Computers,” The Quantum Insider, Aug. 10, 2026. [Online]. Available: https://thequantuminsider.com/2026/08/10/pasqal-photonic-chip-control-neutral-atom-quantum-computers/ [C]
 [582] imec, “The European Commission and Chips JU select the PIXEurope consortium to lead the European Pilot Line on Advanced Photonic Integrated Circuits,” Nov. 24, 2024. [Online]. Available: https://www.imec-int.com/en/press/european-commission-and-chips-ju-select-pixeurope-consortium-lead-european-pilot-line [G]
+[886] W. Sun *et al.*, “A photonic integrated comb engine for ultracold quantum gases,” [arXiv:2609.28294](https://arxiv.org/abs/2609.28294), Sep. 2026. [P]
 
 ## פריטי אימות פתוחים
 - השיוך המוסדי של מחברי מערך 50 האטומים ל-USTC הוסק מרשימת המחברים (Zou, Guo, Ren, Li); דף התמצית אינו מציין אותו.

@@ -32,6 +32,8 @@ updated: 2026-09-30
 
 רוב הערוץ לאחר סחרור הוא פאולי סטוכסטי, ולכן Λ = 2.14 של Willow [D][1] תואם את התאוריה. דליפה ל-|2⟩ מצטברת תחת תיקון שגיאות אם אינה מוסרת בכל מחזור (האיפוס המיקרוגלי המלא של USTC הפחית אותה 72×, ל-6.4×10⁻⁴, על 107 קיוביטים [D][3]). שגיאות קוהרנטיות (ZZ שיורי, סחיפת TLS) חייבו כיול מחדש באמצעות למידת חיזוק בתוך ריצת תיקון השגיאות של Google מ-2026-07 [D][2]. פרצים מתואמים (חלקיקים מייננים המציפים את השבב בקוואזי-חלקיקים) פוגעים בכל הקיוביטים בבת אחת — בערך אחד לכל 10 s ב-Sycamore ב-2021 [D][289], בערך אחד לשעה ב-Willow לאחר הנדסת פער [D][1], [290] — ולכן ריצות זיכרון ארוכות נקטעות בגלל הפרצים, לא בגלל המרחק. הזזת הרצפה פירושה חומרים חדשים (Ta, Nb מכומס), אנהרמוניות בסדר הגודל של פלוקסוניום, ניהול קרינה או המרה למחיקה (מסילה כפולה).
 
+מערכות דו-רמתיות ארוכות-חיים (TLS) אינן ייחודיות לשרשראות הצמתים של פלוקסוניום: טרנסמון בר-כוונון בשטף ב-Forschungszentrum Jülich הראה 44 מהן לכל GHz, בפיזור אחיד על פני 3–4.5 GHz, כשכל אחת חוסמת כ-2 MHz, ולכן כ-9% מתחום הכוונון מושפע; הזיכרון שהן מעניקות לסביבה נע בין 20 µs ל-1 ms, ו-58% מהן ארוכות-חיים יותר מהקיוביט [P][890]. אנרגיה האגורה בהן מעוררת מחדש את הקיוביט לאחר הנעתו, שגיאה שאינה נראית ב-T1 ובספקטרוסקופיית רלקסציה.
+
 ## מצב ההנדסה העדכני
 
 ההתקנים המבודדים הטובים ביותר: T1 1.68 ms, Q 2.5×10⁷, שער חד-קיוביטי 99.994% [D][288]; CZ 99.93% וקריאה של 280 ns ב-99.94% על שבב דו-קיוביטי של IQM [D][38]; מצמד הטרנסמון הכפול של Toshiba: CZ 99.90% ב-48 ns [D][37].
@@ -179,6 +181,7 @@ updated: 2026-09-30
 [312] PatSnap, “Quantum Computing Patent Landscape 2026,” Jun. 30, 2026. [Online]. Available: https://www.patsnap.com/resources/blog/rd-blog/quantum-computing-patent-landscape/ [P]
 [313] J. Gambetta, “Expanding the IBM Quantum roadmap to anticipate the future of quantum-centric supercomputing,” IBM Quantum Blog, May 10, 2022. [Online]. Available: https://www.ibm.com/quantum/blog/ibm-quantum-roadmap-2025 [C]
 [314] Quantum Ledger, “DARPA QBI Tracker.” [Online]. Available: https://quantumledger.report/darpa-qbi [P]
+[890] J. R. Guimarães *et al.*, “Quantum environment afterglow from broadband excitation spectroscopy in superconducting qubits,” [arXiv:2609.31280](https://arxiv.org/abs/2609.31280), Sep. 2026. [P]
 
 ## פריטי אימות פתוחים
 

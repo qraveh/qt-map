@@ -68,6 +68,8 @@ Every decoder number is post-synthesis power/performance/area on a cryo-characte
 ## Outlook & open questions
 Confirm by 2028 if any cryogenic predecoder tapes out with measured silicon; demote if the 2027 literature is still post-synthesis. Best case 2029: a compressor at 4 K inside a QBI-adjacent system absorbs syndrome traffic before the harness. Worst case: room-temperature decoding scales with qLDPC codes and faster links. Open questions: which power baseline should size a cold decoder; can decode logic share a stage with control without reintroducing quasiparticle poisoning; does any platform hit the feedthrough wall before 10⁴ qubits. Watch the SEEQC listing and IBM's post-HRL roadmap.
 
+The junction budget that sizes a single-flux-quantum (SFQ) decoder is falling on the design side: a clock-free xSFQ cell library with built-in fan-out amplifiers cuts the Josephson-junction count 2.7–3.4× (63–71%) on standard single-cycle logic benchmarks and 41–66% on pipelined ones, with one cell fabricated and verified at 4.2 K [P][897]. No decoder was built; the figures are for generic logic.
+
 ## References
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [550] S. Kawabata, “Integration and Resource Estimation of Cryoelectronics for Superconducting Fault-Tolerant Quantum Computers,” [arXiv:2601.03922](https://arxiv.org/abs/2601.03922), Jan. 2026. [S]
@@ -77,6 +79,7 @@ Confirm by 2028 if any cryogenic predecoder tapes out with measured silicon; dem
 [744] A. Holmes *et al.*, “NISQ+: Boosting quantum computing power by approximating quantum error correction,” [arXiv:2004.04794](https://arxiv.org/abs/2004.04794), Apr. 2020. [S]
 [745] Y. Ueno, M. Kondo, M. Tanaka, Y. Suzuki, and Y. Tabuchi, “QECOOL: On-Line Quantum Error Correction with a Superconducting Decoder for Surface Code,” arXiv, Nov. 8, 2021. [Online]. Available: https://arxiv.org/abs/2103.14209 [S]
 [746] G. Tao *et al.*, “CryoZip: An Efficient Cryogenic Compressor for Quantum Error Correction Syndromes,” [arXiv:2606.30805](https://arxiv.org/abs/2606.30805), Jun. 2026. [S]
+[897] P. Papanikolaou, A. Vanasse, H. Jin, G. Tzimpragos, and J. Volk, “Duplication-aware retiming and cell interface redesign for superconductor circuit minimization,” [arXiv:2610.02333](https://arxiv.org/abs/2610.02333), Oct. 2026. [P]
 
 ## Open verification items
 DOE ARQC award DE-SC0025633 is acknowledged in the CryoZip paper but no dollar amount appears in any source consulted; treated as unquantified.

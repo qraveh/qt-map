@@ -191,7 +191,7 @@ const LENSES={   // editor's order of 17 Sep 2026: family → manufacturing → 
 const LENSCOORD={g:'(g)',f:'(f)',d:'(d)',mod:'(e)',place:'(e)',time:'(b)/(c)',mech:'(c)',destr:'(c)',mid:'(c)',det:'(b)',aff:'(a)'};   // the report's attribute letter, shown once as a muted suffix of the lens legend's title
 // reading marks (brief E, editor's decision): no lens — glyphs on the technologies, static legend keys with counts, badges on the technology card
 const OFFDEF=['a crossing technology: it takes a trait from the other side of the natural/fabricated divide — hatched on the map (see §7.5)','сквозная технология: берёт свойство с другой стороны раздела естественное/искусственное — на карте заштрихована (см. §7.5)','טכנולוגיה חוצה: היא נוטלת מאפיין מהצד השני של החלוקה טבעי–מיוצר — מקווקוות במפה (ראו §7.5)'];
-const EMPTYDEF=['a technology with no demonstrated technology yet','технология, для которой технологии ещё нет','טכנולוגיה שעדיין אין לה מימוש שהודגם'];
+const EMPTYDEF=['an empty slot: no technology has been demonstrated here yet','пустая ячейка: технологии здесь ещё не продемонстрировано','משבצת ריקה: עדיין לא הודגמה כאן טכנולוגיה'];
 const isOffd=n=>!!(n.offdiag&&n.offdiag.length), isEmpty=n=>n.status==='X';
 function glyphKeys(){ document.querySelectorAll('#glyphlegend [data-glyph]').forEach(el=>{ const k=el.dataset.glyph; const f=(k==='offd'?isOffd:isEmpty); const c=el.querySelector('.cnt'); if(c)c.textContent=G.nodes.filter(f).length; el.title=T(...(k==='offd'?OFFDEF:EMPTYDEF)); }); }
 // categorical lens palette (deliberately not the family palette: while a lens is active, path lines turn neutral so colour means the lens value only)

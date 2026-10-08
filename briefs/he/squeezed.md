@@ -17,6 +17,8 @@ updated: 2026-09-30
 ## פיזיקה וגבולות
 הסחיטה היא מדחום של אובדן: התווך יכול להפיק הפחתת קוודרטורה חזקה ככל שנרצה, אך כל dB של אובדן בין היצירה לגילוי מושך את הערך הנמדד לעבר הוואקום, ולכן המספר מתאר את המסלול האופטי ולא את מקור הסחיטה. מכאן 15 dB באופטיקה נפחית [D][344] מול 1.4 dB שנמדדו על השבב, ויותר מ-10 dB לאחר ניכוי תקציב אובדן הומודיני של 4 dB [D][345]. אין לבלבל בין סחיטת קוודרטורה גולמית לבין הסחיטה *האפקטיבית* של מצב רשת GKP, המגלמת גם את נאמנות ההכנה הלא-גאוסית ולא רק את האובדן: הסבילות לתקלות מתמחרת את האחרונה ב-~9.75 dB, מול 0.62 dB על השבב [D][174]. רק אובדן נמוך יותר, צימוד טוב יותר ונצילות גילוי גבוהה יותר מזיזים אותה.
 
+יישום הספקטרום הוויברוני המולקולרי של דגימת בוזונים גאוסית באור סחוט הוא סטטיסטיקה ליניארית של הפלט; הפונקציה האופיינית של ואקום סחוט מוזז ניתנת לחישוב מדויק בזמן פולינומי, ולכן ניתן לאמוד את הספקטרום באופן קלאסי ברמת הדיוק החיבורית של הניסוי [P][889].
+
 ## מצב ההנדסה העדכני
 
 | תאריך | נתון | מי | תג |
@@ -66,6 +68,7 @@ updated: 2026-09-30
 [178] Xanadu Quantum Technologies Limited, “Xanadu Charts Path to Over 1,000 Logical Qubits by 2031,” GlobeNewswire, Aug. 31, 2026. [Online]. Available: https://www.globenewswire.com/news-release/2026/08/31/3353211/0/en/xanadu-charts-path-to-over-1-000-logical-qubits-by-2031.html [R]
 [344] H. Vahlbruch, M. Mehmet, K. Danzmann, and R. Schnabel, “Detection of 15 dB Squeezed States of Light and their Application for the Absolute Calibration of Photoelectric Quantum Efficiency,” *Phys. Rev. Lett.*, vol. 117, no. 11, Art. no. 110801, Sep. 2016, doi: [10.1103/PhysRevLett.117.110801](https://doi.org/10.1103/PhysRevLett.117.110801). [D]
 [345] X. Shi *et al.*, “Squeezed Light Generation in Periodically Poled Thin-Film Lithium Niobate Waveguides,” [arXiv:2508.08599](https://arxiv.org/abs/2508.08599), Aug. 2025. [D]
+[889] B. Seron, H. Thomas, E. Araujo, A. Arkhipov, C. Oh, and L. Novo, “Efficient classical algorithm for estimating linear statistics of Boson Sampling,” [arXiv:2609.35447](https://arxiv.org/abs/2609.35447), Sep. 2026. [P]
 
 ## פריטי אימות פתוחים
 נתון סחיטה בלתי תלוי על שבב אכן קיים: Shi et al. מדווחים על 1.4 dB שנמדדו על TFLN מסוג PPLN [345]. מה שנותר נשען על מקור יחיד הוא הסחיטה *האפקטיבית של GKP*, 0.62 dB (Xanadu בלבד).

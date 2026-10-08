@@ -1,7 +1,7 @@
 {
  "edition": "2026.09",
  "source": {
-  "register": "quantum-machines · 17 Sep 2026, re-cut 26 Sep 2026 (three ion paths, two analog paths, 14 gaps → technologies, sentinels → cell values), extended 29 Sep 2026 (24 machines added, 3 renamed, 3 split, 1 removed; ten cell corrections — data/register/patch-2026-09-29.json)",
+  "register": "quantum-machines · 17 Sep 2026, re-cut 26 Sep 2026 (three ion paths, two analogue paths, 14 gaps → technologies, sentinels → cell values), extended 29 Sep 2026 (24 machines added, 3 renamed, 3 split, 1 removed; ten cell corrections — data/register/patch-2026-09-29.json)",
   "evidence": "machine-stations-evidence.csv · 17 Sep 2026 (locator passes 1–3)"
  },
  "machines": [
@@ -2201,7 +2201,7 @@
     "control_placement": "room-temp",
     "readout": "single-shot erasure detection in 384 ns; residual logical error 6.0(2)e-4 per check; induced dephasing 8(3)e-5 per check",
     "err_2q_median": "not published as a two-qubit figure; median 7.2e-5 error per single-qubit gate with time-continuous parallel erasure detection (Apr 2026)",
-    "err_2q_best": "7.2e-5",
+    "err_2q_best": "",
     "readout_error": "2.54e-2 erasure error per check",
     "t1": "ms-scale inside the logical subspace",
     "t2": "",
@@ -2456,8 +2456,8 @@
     "control": "room-temperature control",
     "control_placement": "room-temp",
     "readout": "multiplexed dispersive readout of the transmon ancillas",
-    "err_2q_median": "CX phase-flip 9.6(4)e-2, bit-flip 3.5(4)e-3 per cycle (bias >25)",
-    "err_2q_best": "3.5e-3 bit-flip",
+    "err_2q_median": "CX cycle errors, not a gate infidelity: phase-flip 9.6(4)e-2 and bit-flip 3.5(4)e-3 per repeated CX cycle (bias >25, one representative pair; the cycle includes ancilla preparation, readout and reset)",
+    "err_2q_best": "",
     "readout_error": "",
     "t1": ">1e-3 bit-flip time; storage mode >6e-5",
     "t2": "2.7e-5 to 3.3e-5 phase-flip time; storage >8e-5",
@@ -2468,14 +2468,14 @@
     "realtime": "offline",
     "roadmap": "\"future versions of Ocelot\", no milestone, no date",
     "role": "",
-    "gate_evidence": "figure",
+    "gate_evidence": "device-benchmark",
     "decoder_mode": "offline",
-    "err_2q_median_num": 0.096,
+    "err_2q_median_num": null,
     "flags": [
      "no-distance-scaling"
     ],
     "qubits_accessible": null,
-    "gate_evidence_derived": true,
+    "gate_evidence_derived": false,
     "decoder_mode_derived": true,
     "benchmarked": true
    }
@@ -4319,7 +4319,7 @@
     "control": "room-temperature RF",
     "control_placement": "room-temp",
     "readout": "dispersive",
-    "err_2q_median": "4.4e-3 (99.56%)",
+    "err_2q_median": "4.4e-3 mean iSWAP-like (fSim) Pauli error, simultaneous XEB (74-qubit RCS subset; 99.56%)",
     "err_2q_best": "",
     "readout_error": "1.3e-2",
     "t1": "",
@@ -5182,7 +5182,13 @@
     "verified": 8,
     "total": 10
    },
-   "refs": [],
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2112.03708",
+     "title": "Realizing Repeated Quantum Error Correction in a Distance-Three Surface Code",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "flux-tunable transmon (asymmetric SQUID)",
     "gate_mechanism": "flux-pulsed CZ between directly coupled neighbours (no tunable coupler)",
@@ -5191,8 +5197,8 @@
     "control": "room-temperature AWGs and UHFQA; IQ up/down-conversion; FPGA demodulation",
     "control_placement": "room-temp",
     "readout": "frequency-multiplexed dispersive; readout resonator + Purcell filter per qubit; TWPA; three-state discrimination flags leakage",
-    "err_2q_median": "1.5(1.0)e-2 average CZ error (average, not median)",
-    "err_2q_best": "6e-3",
+    "err_2q_median": "1.5(1.0)e-2 mean CZ error over 24 pairs, interleaved RB with three gates in parallel (mean, not median)",
+    "err_2q_best": "6e-3 (best of 24 CZ pairs, same protocol; worst 5.4e-2)",
     "readout_error": "9e-3 mean two-state (2.2e-2 three-state)",
     "t1": "32.5 µs (mean)",
     "t2": "T2* 37.5 µs; T2 echo 47.0 µs (means)",
@@ -6104,8 +6110,8 @@
     "control": "277 DACs (14-bit, 1 GS/s) at room temperature",
     "control_placement": "room-temp",
     "readout": "frequency-multiplexed dispersive",
-    "err_2q_median": "6.2e-3 simultaneous (3.6e-3 isolated)",
-    "err_2q_best": "3.6e-3 isolated",
+    "err_2q_median": "6.0e-3 median, simultaneous XEB Pauli error (86 pairs; mean 6.2e-3); isolated median 3.0e-3 (mean 3.6e-3)",
+    "err_2q_best": "",
     "readout_error": "",
     "t1": "2.0e-5",
     "t2": "",
@@ -6118,7 +6124,7 @@
     "role": "",
     "gate_evidence": "figure",
     "decoder_mode": "none",
-    "err_2q_median_num": 0.0062,
+    "err_2q_median_num": 0.006,
     "flags": [
      "eroded-claim"
     ],
@@ -6831,8 +6837,8 @@
     "control": "room-temperature control; QEC loop classifies on the control electronics and ships to a workstation over low-latency Ethernet",
     "control_placement": "room-temp",
     "readout": "frequency-multiplexed dispersive; multi-level reset of measure qubits every cycle; DQLR leakage removal on data qubits",
-    "err_2q_median": "1.5e-3 median (1.2e-3 mean)",
-    "err_2q_best": "1.2e-3 mean (99.88%)",
+    "err_2q_median": "1.5e-3 median iSWAP-like gate Pauli error by simultaneous XEB (103 qubits), not the CZ of the QEC paper; Table SII lists 1.2e-3 +- 0.4e-3 (mean +- s.d.) as a noise-model estimate",
+    "err_2q_best": "",
     "readout_error": "8e-3",
     "t1": "6.8e-5",
     "t2": "8.9e-5",
@@ -7308,16 +7314,16 @@
     "realtime": "intended in-loop",
     "roadmap": "module-to-module entanglement",
     "role": "",
-    "gate_evidence": "figure",
+    "gate_evidence": "none",
     "decoder_mode": "planned",
-    "err_2q_median_num": 0.035,
+    "err_2q_median_num": null,
     "flags": [
      "schedule-risk"
     ],
     "qubits_accessible": null,
     "gate_evidence_derived": true,
     "decoder_mode_derived": true,
-    "benchmarked": true
+    "benchmarked": false
    }
   },
   {
@@ -7776,7 +7782,7 @@
     "control": "room-temperature RF; first IBM multi-level wiring + TSVs",
     "control_placement": "room-temp",
     "readout": "multiplexed dispersive",
-    "err_2q_median": "7.4e-3 (median ECR, ibm_sherbrooke; Eagle r3 fleet spans 7.1e-3 to 1.24e-2)",
+    "err_2q_median": "7.4e-3 (median ECR, isolated RB, ibm_sherbrooke, 3 Jul 2024); Eagle r3 fleet medians span 7.1e-3 to 1.24e-2, and 2.40e-2 on ibm_cusco (same paper, same date)",
     "err_2q_best": "",
     "readout_error": "",
     "t1": "",
@@ -8957,7 +8963,7 @@
     "control": "room-temperature RF; cryo-CMOS flux control demonstrated Mar 2026 (16 flux channels per ASIC)",
     "control_placement": "room-temp + cryo-CMOS (demo)",
     "readout": "multiplexed dispersive; dynamic circuits in production",
-    "err_2q_median": "2.03e-3 (2nd source ~3e-3)",
+    "err_2q_median": "2.03e-3 median CZ error (IBM dashboard snapshot read at press; isolated RB; backend not named); second source: calibration mean 2.9e-3 over 25 chosen qubits of ibm_fez (Sci. Rep. 2026), not a median",
     "err_2q_best": "",
     "readout_error": "1.67e-2",
     "t1": "",
@@ -8969,7 +8975,7 @@
     "realtime": "none (replay only)",
     "roadmap": "stable platform under Nighthawk",
     "role": "",
-    "gate_evidence": "figure",
+    "gate_evidence": "vendor-dashboard",
     "decoder_mode": "none",
     "err_2q_median_num": 0.00203,
     "flags": [],
@@ -11387,7 +11393,13 @@
     "verified": 7,
     "total": 12
    },
-   "refs": [],
+   "refs": [
+    {
+     "url": "https://aws.amazon.com/blogs/quantum-computing/amazon-braket-launches-new-54-qubit-superconducting-quantum-processor-from-iqm/",
+     "title": "Amazon Braket launches new 54-qubit superconducting quantum processor from IQM",
+     "kind": "blog"
+    }
+   ],
    "profile": {
     "qubit_type": "tunable transmon",
     "gate_mechanism": "tunable couplers, native CZ",
@@ -11396,8 +11408,8 @@
     "control": "room-temperature RF; modular decoder architecture with NVIDIA NVQLink",
     "control_placement": "room-temp",
     "readout": "multiplexed dispersive, 240 ns pulse at 99.94% on a test chip",
-    "err_2q_median": "5e-3 (99.5% median 2Q; not on the cited roadmap page)",
-    "err_2q_best": "7e-4 on a 2-qubit test chip (99.93% CZ over 40 h)",
+    "err_2q_median": "5e-3 (99.5% median 2Q, early characterization, Amazon Braket launch blog, Jul 2025; protocol not named); IQM's 99.93% CZ (40 h mean) was measured on a separate 2-qubit test chip",
+    "err_2q_best": "",
     "readout_error": "6e-4 test chip",
     "t1": "",
     "t2": "",
@@ -12099,16 +12111,16 @@
     "realtime": "none",
     "roadmap": "teaching and research system; larger workloads on IQM 54-qubit cloud system",
     "role": "",
-    "gate_evidence": "figure",
+    "gate_evidence": "none",
     "decoder_mode": "none",
-    "err_2q_median_num": 0.01,
+    "err_2q_median_num": null,
     "flags": [
      "target-not-device"
     ],
     "qubits_accessible": null,
     "gate_evidence_derived": true,
     "decoder_mode_derived": true,
-    "benchmarked": true
+    "benchmarked": false
    }
   },
   {
@@ -13610,8 +13622,8 @@
     "control": "room-temperature control",
     "control_placement": "room-temp",
     "readout": "auxiliary-transmon readout, fidelity 0.95(1)",
-    "err_2q_median": "n/a",
-    "err_2q_best": "SPAM 7(7)e-4 (cardinal states)",
+    "err_2q_median": "n/a - no two-qubit gate published; the 7(7)e-4 is a single-mode SPAM error (cardinal states)",
+    "err_2q_best": "",
     "readout_error": "7e-4",
     "t1": "3.6e-4 storage mode",
     "t2": "6.4e-4 storage mode",
@@ -13842,6 +13854,11 @@
    },
    "refs": [
     {
+     "url": "https://www.nordquantique.com/technology",
+     "title": "Technology — Nord Quantique",
+     "kind": "product"
+    },
+    {
      "url": "https://postquantum.com/quantum-computing-companies/nord-quantique/",
      "title": "Nord Quantique",
      "kind": "press"
@@ -13865,7 +13882,7 @@
     "best_logical": "32 consecutive QEC cycles with no measurable decay of the logical qubit, at 12.6% of runs discarded per round; detects bit flips, phase flips, control errors and leakage",
     "decoder": "none (autonomous)",
     "realtime": "none (autonomous)",
-    "roadmap": "fault tolerance 2028-2029",
+    "roadmap": "fault tolerance 2028-2029; a 256-logical-qubit system by 2030 (technology page, read Oct 2026)",
     "role": "",
     "gate_evidence": "none",
     "decoder_mode": "none",
@@ -15945,7 +15962,7 @@
     "control": "room-temperature control; Real-Time Control Flow (mid-circuit measurement, conditional branching, qubit reuse, fast feedback)",
     "control_placement": "room-temp",
     "readout": "three-outcome readout 0 / 1 / * exposed to the user; erasure detection efficiency >90%",
-    "err_2q_median": "~1e-3 excluding heralded erasures, ~1e-2 including them",
+    "err_2q_median": "1.08(5)e-3 per CZ by interleaved RB, post-selected on no erasure (IRB on seven two-qubit systems, statistic not stated); erasure probability 0.53(2)% per CZ not included",
     "err_2q_best": "2.9(6)e-4 post-selected CZ infidelity; bit-flip 2.8(4)e-6",
     "readout_error": "5.3(2)e-3 erasure per gate",
     "t1": ">1e-3",
@@ -15957,14 +15974,14 @@
     "realtime": "none",
     "roadmap": "D-Wave gate-model line",
     "role": "",
-    "gate_evidence": "figure",
+    "gate_evidence": "device-benchmark",
     "decoder_mode": "none",
-    "err_2q_median_num": 0.001,
+    "err_2q_median_num": null,
     "flags": [
      "no-code-named"
     ],
     "qubits_accessible": null,
-    "gate_evidence_derived": true,
+    "gate_evidence_derived": false,
     "decoder_mode_derived": true,
     "benchmarked": true
    }
@@ -17718,7 +17735,7 @@
     "control": "room-temperature RF; Collision Clustering decoder on FPGA in the loop",
     "control_placement": "room-temp",
     "readout": "dispersive",
-    "err_2q_median": "~1e-2",
+    "err_2q_median": "2.7e-2 median CZ error by interleaved RB on an 8-qubit stability sublattice (CZ reconfigured on an iSWAP-optimised device); the ~1e-2 is not at the cited refs",
     "err_2q_best": "",
     "readout_error": "",
     "t1": "",
@@ -17730,12 +17747,12 @@
     "realtime": "in-loop",
     "roadmap": "superseded by Cepheus",
     "role": "",
-    "gate_evidence": "figure",
+    "gate_evidence": "device-benchmark",
     "decoder_mode": "feed-forward",
-    "err_2q_median_num": 0.01,
+    "err_2q_median_num": null,
     "flags": [],
     "qubits_accessible": null,
-    "gate_evidence_derived": true,
+    "gate_evidence_derived": false,
     "decoder_mode_derived": false,
     "benchmarked": true
    }
@@ -17920,6 +17937,11 @@
      "url": "https://postquantum.com/quantum-computing-companies/rigetti/",
      "title": "Rigetti",
      "kind": "press"
+    },
+    {
+     "url": "https://www.rigetti.com/news/rigetti-computing-launches-84-qubit-ankaa-3-system-achieves-99-5-median-two-qubit-gate-fidelity-milestone",
+     "title": "Rigetti Computing launches 84-qubit Ankaa™-3 system; Achieves 99.5% median two-qubit gate fidelity milestone",
+     "kind": "press"
     }
    ],
    "profile": {
@@ -17930,7 +17952,7 @@
     "control": "room-temperature RF",
     "control_placement": "room-temp",
     "readout": "dispersive",
-    "err_2q_median": "~1e-2 (~99% median 2Q)",
+    "err_2q_median": "5e-3 (99.5% median 2Q gate fidelity, Rigetti Ankaa-3 launch release; gate type and protocol not named)",
     "err_2q_best": "",
     "readout_error": "",
     "t1": "",
@@ -17944,7 +17966,7 @@
     "role": "",
     "gate_evidence": "figure",
     "decoder_mode": "none",
-    "err_2q_median_num": 0.01,
+    "err_2q_median_num": 0.005,
     "flags": [],
     "qubits_accessible": null,
     "gate_evidence_derived": true,
@@ -18179,7 +18201,7 @@
     "control_placement": "room-temp",
     "readout": "dispersive (fidelity not in the release)",
     "err_2q_median": "9e-3 (99.1% median 2Q)",
-    "err_2q_best": "2.8e-8 CZ at 99.9% on one prototype pair",
+    "err_2q_best": "",
     "readout_error": "",
     "t1": "",
     "t2": "",
@@ -19324,7 +19346,7 @@
     "control_placement": "SFQ at mK",
     "readout": "dispersive",
     "err_2q_median": "not published (1Q 5e-3 typical, 1e-3 peak)",
-    "err_2q_best": "1e-3 peak 1Q",
+    "err_2q_best": "",
     "readout_error": "",
     "t1": "",
     "t2": "",
@@ -20267,14 +20289,14 @@
     "realtime": "none",
     "roadmap": "stated goal 99.99%; no multi-qubit DTC processor exists",
     "role": "",
-    "gate_evidence": "figure",
+    "gate_evidence": "device-benchmark",
     "decoder_mode": "none",
-    "err_2q_median_num": 0.001,
+    "err_2q_median_num": null,
     "flags": [
      "component-only"
     ],
     "qubits_accessible": null,
-    "gate_evidence_derived": true,
+    "gate_evidence_derived": false,
     "decoder_mode_derived": true,
     "benchmarked": true
    }
@@ -20686,7 +20708,7 @@
     "control": "room-temperature RF",
     "control_placement": "room-temp",
     "readout": "dispersive",
-    "err_2q_median": "~2e-2 to 3e-2",
+    "err_2q_median": "5.2e-3 median, simultaneous XEB Pauli error (99 iSWAP-like gates, 60 qubits; mean 6.0e-3; isolated median 4.0e-3)",
     "err_2q_best": "",
     "readout_error": "",
     "t1": "",
@@ -20700,7 +20722,7 @@
     "role": "",
     "gate_evidence": "figure",
     "decoder_mode": "none",
-    "err_2q_median_num": 0.025,
+    "err_2q_median_num": 0.0052,
     "flags": [
      "eroded-claim",
      "second-hand-numbers",
@@ -20957,7 +20979,7 @@
     "control": "room-temperature RF",
     "control_placement": "room-temp",
     "readout": "dispersive",
-    "err_2q_median": "3.8e-3 parallel (99.62%)",
+    "err_2q_median": "3.27e-3 median, simultaneous XEB Pauli error of the iSWAP-like gates (83-qubit subset; mean 3.75e-3, i.e. 99.62%)",
     "err_2q_best": "",
     "readout_error": "8.2e-3 to 8.7e-3",
     "t1": "7.2e-5",
@@ -20971,7 +20993,7 @@
     "role": "",
     "gate_evidence": "vendor-figure",
     "decoder_mode": "none",
-    "err_2q_median_num": 0.0038,
+    "err_2q_median_num": 0.00327,
     "flags": [
      "estimated-baseline"
     ],
@@ -21229,7 +21251,7 @@
     "control": "room-temperature RF; all-microwave leakage-reduction units on data qubits + fast unconditional ancilla reset inside the QEC cycle",
     "control_placement": "room-temp",
     "readout": "dispersive, 0.95% readout error in a 300 ns window",
-    "err_2q_median": "~4e-3",
+    "err_2q_median": "5.06e-3 mean CZ Pauli error, parallel XEB (65 qubits, 104 couplers, logical-CNOT pattern; about 4.0e-3 as average gate error)",
     "err_2q_best": "",
     "readout_error": "9.5e-3",
     "t1": "",
@@ -21243,7 +21265,7 @@
     "role": "",
     "gate_evidence": "figure",
     "decoder_mode": "offline",
-    "err_2q_median_num": 0.004,
+    "err_2q_median_num": 0.00506,
     "flags": [],
     "qubits_accessible": null,
     "gate_evidence_derived": true,
@@ -21913,7 +21935,7 @@
     "control": "room-temperature RF",
     "control_placement": "room-temp",
     "readout": "dispersive; data-qubit idle error 0.024 per measurement cycle",
-    "err_2q_median": "4e-3 (99.6% median CZ)",
+    "err_2q_median": "4e-3 median CZ (99.6%, main text); SI: median XEB Pauli error 5.2e-3",
     "err_2q_best": "",
     "readout_error": "2.5e-2 two-state / 4.9e-2 three-state",
     "t1": "",
@@ -22154,8 +22176,8 @@
     "control": "free-space laser addressing on a rack-mounted optical bench; 2 standard 19-inch rack units, 2 m2, <2 kW, room temperature",
     "control_placement": "room-temp + free-space optics",
     "readout": "fluorescence",
-    "err_2q_median": "1.3(3)e-2 over all pairs (98.7%); a 2026 secondary source says 97.7%",
-    "err_2q_best": "3.0(1.0)e-4 (1Q error, 99.97 +- 0.01%)",
+    "err_2q_median": "1.3(3)e-2 average over all 66 pairs by 2Q RB (98.7%); a 2026 secondary source says 97.7%",
+    "err_2q_best": "9e-3 (best pair by 2Q RB; worst 1.8e-2)",
     "readout_error": "",
     "t1": "",
     "t2": "",
@@ -22993,7 +23015,13 @@
     "verified": 5,
     "total": 10
    },
-   "refs": [],
+   "refs": [
+    {
+     "url": "https://www.ionq.com/quantum-systems/aria",
+     "title": "IonQ Aria: Versatile Quantum Computer",
+     "kind": "product"
+    }
+   ],
    "profile": {
     "qubit_type": "hyperfine qubit",
     "gate_mechanism": "laser Molmer-Sorensen via multi-channel AOM addressing",
@@ -23002,7 +23030,7 @@
     "control": "room-temperature electronics + free-space AOM/AOD optical addressing",
     "control_placement": "room-temp + free-space optics",
     "readout": "fluorescence on a multi-channel PMT/camera",
-    "err_2q_median": "~4e-3 (99.6% era figure)",
+    "err_2q_median": "6e-3 (vendor page: 2Q gate error 0.6%, measured with concatenated Mølmer-Sørensen gates; statistic not named)",
     "err_2q_best": "",
     "readout_error": "",
     "t1": "",
@@ -23016,7 +23044,7 @@
     "role": "",
     "gate_evidence": "figure",
     "decoder_mode": "none",
-    "err_2q_median_num": 0.004,
+    "err_2q_median_num": 0.006,
     "flags": [
      "vendor-claim"
     ],
@@ -23487,8 +23515,8 @@
     "control": "room-temperature electronics + free-space AOM/AOD",
     "control_placement": "room-temp + free-space optics",
     "readout": "fluorescence",
-    "err_2q_median": "4e-3",
-    "err_2q_best": "2e-4 (1Q error)",
+    "err_2q_median": "4e-3 (vendor page: 2Q gate error 0.4% by direct randomized benchmarking; statistic not named)",
+    "err_2q_best": "",
     "readout_error": "5e-3 SPAM",
     "t1": "1e1 to 1e2 s",
     "t2": "1 s",
@@ -23719,8 +23747,8 @@
     "control": "chip-integrated microwave control; the 1.5e-7 1Q gate error without magnetic shielding is not on the cited page",
     "control_placement": "on-chip microwave",
     "readout": "fluorescence",
-    "err_2q_median": "1e-4 (99.99% \"four nines\", 21 Oct 2025; 99.97% in 2024)",
-    "err_2q_best": "1e-4",
+    "err_2q_median": "not published for QUARTET: IonQ's 99.99% (1e-4, Oct 2025) was 'achieved using prototypes in its R&D labs' (no protocol named); the 2024 paper's 99.97(1)% is a Bell-state fidelity",
+    "err_2q_best": "",
     "readout_error": "",
     "t1": "",
     "t2": "",
@@ -23731,9 +23759,9 @@
     "realtime": "none",
     "roadmap": "field-upgradeable by QPU swap",
     "role": "",
-    "gate_evidence": "figure",
+    "gate_evidence": "none",
     "decoder_mode": "none",
-    "err_2q_median_num": 0.0001,
+    "err_2q_median_num": null,
     "flags": [
      "count-from-secondary-source",
      "hero-pair-number"
@@ -23741,7 +23769,7 @@
     "qubits_accessible": null,
     "gate_evidence_derived": true,
     "decoder_mode_derived": true,
-    "benchmarked": true
+    "benchmarked": false
    }
   },
   {
@@ -23974,7 +24002,7 @@
    "status": "ANNOUNCED (orderable; first ions trapped in prototypes; deliveries 2027 — NVAQC 2027, FIU late 2027)",
    "status_date": "8 Sep 2026",
    "physical_qubits_num": 256,
-   "access": "orders open",
+   "access": "orders open; a Superion 256 planned for deployment with an SDT customer in South Korea (announced 21 Sep 2026, no date)",
    "layers": {
     "1": [
      {
@@ -24171,6 +24199,11 @@
    },
    "refs": [
     {
+     "url": "https://ionq.com/news/ionq-and-sdt-announce-the-first-strategic-partnership-to-bring-ionqs-superion-256-system-to-south-korea",
+     "title": "IonQ and SDT Announce the First Strategic Partnership to Bring IonQ's Superion 256 System to South Korea",
+     "kind": "press"
+    },
+    {
      "url": "https://www.ionq.com/news/ionq-launches-superion-product-line-industry-leading-upgradeable-platform-designed-to-scale-manufacturable-fault-tolerant-quantum-computing",
      "title": "IonQ | IonQ Debuts Superion 256 Quantum Computing Platform",
      "kind": "press"
@@ -24216,10 +24249,10 @@
    "country": "USA",
    "family": "ION",
    "map_path": "ion_chain",
-   "status": "DEPLOYED",
-   "status_date": "2025-2026",
-   "physical_qubits_num": 100,
-   "access": "cloud",
+   "status": "DEMONSTRATED",
+   "status_date": "25 Sep 2025",
+   "physical_qubits_num": 64,
+   "access": "lab (development system); the 100-qubit product sold to KISTI, delivery not dated",
    "layers": {
     "1": [
      {
@@ -24380,42 +24413,61 @@
    },
    "refs": [
     {
+     "url": "https://www.ionq.com/quantum-systems/compare",
+     "title": "Compare IonQ Quantum Systems",
+     "kind": "product"
+    },
+    {
      "url": "https://www.ionq.com/quantum-systems/tempo",
      "title": "IonQ Tempo: 100-Qubit Quantum Computer (#AQ 64)",
      "kind": "product"
+    },
+    {
+     "url": "https://www.ionq.com/blog/ionq-hits-aq-64-milestone-ahead-of-schedule-and-sets-its-sights-even-higher",
+     "title": "IonQ Hits #AQ 64 Milestone Ahead of Schedule",
+     "kind": "blog"
+    },
+    {
+     "url": "https://www.ionq.com/news/ionq-achieves-record-breaking-quantum-performance-milestone-of-aq-64",
+     "title": "IonQ Achieves Record-Breaking Quantum Performance Milestone of #AQ 64",
+     "kind": "press"
+    },
+    {
+     "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312525266878/ionq-ex99_1.htm",
+     "title": "IonQ Announces Third Quarter 2025 Financial Results",
+     "kind": "press"
     }
    ],
    "profile": {
-    "qubit_type": "barium (a species change from Forte's Yb) - the species is not stated on the cited IonQ page",
-    "gate_mechanism": "laser Molmer-Sorensen; the 100-ion all-to-all chain has no published gate time and no per-pair fidelity",
-    "connectivity": "single long chain, all-to-all claimed",
-    "degree": "99",
+    "qubit_type": "barium ions (IonQ: \"a barium system\"); isotope and qubit levels not stated for Tempo",
+    "gate_mechanism": "laser Molmer-Sorensen, AOD-steered beams; no gate time or per-pair fidelity published for the development system",
+    "connectivity": "all-to-all in a single ion chain (development system); the product is listed as \"many-to-many\"",
+    "degree": "63",
     "control": "room-temperature electronics + free-space AOM/AOD",
     "control_placement": "room-temp + free-space optics",
     "readout": "fluorescence",
-    "err_2q_median": "1e-3 target",
+    "err_2q_median": "not published for the Tempo development system (IonQ's 99.9% is a stated target for the product)",
     "err_2q_best": "",
     "readout_error": "",
     "t1": "",
     "t2": "",
     "t_2q": "",
     "t_meas": "",
-    "best_logical": "see the 40-ion Ba-133 testbed row - the qLDPC result ran on Tempo-generation barium hardware",
+    "best_logical": "none on Tempo; the 40-ion Ba-133 qLDPC run (arXiv:2606.06455) does not name Tempo — see that row",
     "decoder": "beam search (Delfosse)",
     "realtime": "offline",
-    "roadmap": "Superion 256",
+    "roadmap": "Tempo product (availability \"Late 2026\"): 100 physical qubits (IonQ: \"target qubits\"), 2Q 99.9% (\"target fidelity\"), 1Q 99.99%, \"many-to-many\" connectivity; one 100-qubit Tempo sold to KISTI (Dec 2025), delivery not dated; then Superion 256",
     "role": "",
-    "gate_evidence": "figure",
+    "gate_evidence": "none",
     "decoder_mode": "offline",
-    "err_2q_median_num": 0.001,
+    "err_2q_median_num": null,
     "flags": [
-     "conflicting-count",
-     "target-not-device"
+     "no-published-error-rates"
     ],
     "qubits_accessible": null,
     "gate_evidence_derived": true,
     "decoder_mode_derived": true,
-    "benchmarked": true
+    "benchmarked": false
    }
   },
   {
@@ -25414,6 +25466,11 @@
      "kind": "paper"
     },
     {
+     "url": "https://www.quantinuum.com/products-solutions/quantinuum-systems/system-model-h2",
+     "title": "System Model H2: Next-Gen Ion Trap Quantum Computing | Quantinuum",
+     "kind": "product"
+    },
+    {
      "url": "https://postquantum.com/quantum-computing/quantinuum-helios-architecture/",
      "title": "Analysis of Quantinuum Helios, a 98-Qubit Trapped-Ion Quantum Computer",
      "kind": "press"
@@ -25427,8 +25484,8 @@
     "control": "room-temperature electronics + free-space laser beams (gate beam pairs, 'sheet' cooling beams); ~4.8 control signals per qubit",
     "control_placement": "room-temp + optics",
     "readout": "fluorescence with mid-circuit measurement and reset",
-    "err_2q_median": "<1e-3",
-    "err_2q_best": "1.57(5)e-3 measured across all 56 qubits in the RCS run (99.843(5)% 2Q fidelity)",
+    "err_2q_median": "<1e-3 vendor headline ('>99.9%' two-qubit gate fidelity, H2 product page; no protocol, no device median published)",
+    "err_2q_best": "1.57(5)e-3 average 2Q RB infidelity over the 4 gate zones (8 qubits) in the RCS run (99.843(5)%)",
     "readout_error": "",
     "t1": "",
     "t2": "",
@@ -25439,7 +25496,7 @@
     "realtime": "in-loop for Steane",
     "roadmap": "superseded by Helios",
     "role": "",
-    "gate_evidence": "figure",
+    "gate_evidence": "vendor-figure",
     "decoder_mode": "feed-forward",
     "err_2q_median_num": 0.001,
     "flags": [
@@ -25811,8 +25868,8 @@
     "control": "room-temperature electronics; 1,228 trap electrodes driven by 273 independent voltages (~2.8 control signals per qubit); shared time-multiplexed lasers, >=5 wavelengths (515 nm gates; 493, 614, 650, 1762 nm) delivered as focused free-space beams propagating parallel to the chip surface",
     "control_placement": "room-temp + free-space optics",
     "readout": "fluorescence, destructive per ion; mid-circuit measurement and reset with microsecond-latency conditional branching",
-    "err_2q_median": "7.9(2)e-4 across all pairs",
-    "err_2q_best": "7.9e-4",
+    "err_2q_median": "7.9(2)e-4 average 2Q RB infidelity over all 8 operation zones (gates in parallel; leakage counted)",
+    "err_2q_best": "",
     "readout_error": "SPAM 3.3(5)e-4 (Nature) vs 4.8e-4 (secondary)",
     "t1": "",
     "t2": "",
@@ -26296,6 +26353,229 @@
    }
   },
   {
+   "id": "quantum-art-montage",
+   "name": "Montage (first-generation QaaS system, up to 50 qubits)",
+   "org": "Quantum Art",
+   "org_id": "Quantum Art",
+   "country": "Israel",
+   "family": "ION",
+   "map_path": "ion_chain",
+   "status": "ANNOUNCED (owner's roadmap: \"Launching our 1st generation QaaS system of up to 50 qubits\", 2025; availability not confirmed)",
+   "status_date": "2025",
+   "physical_qubits_num": 50,
+   "access": "QaaS (announced; no cloud listing found 8 Oct 2026)",
+   "layers": {
+    "1": [
+     {
+      "node": "ion",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "ion species undisclosed; 1,000-qubit multi-core system 'in development' (Apr 2026)",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2311.01168",
+       "locator": "Fig. 1 (architecture: RF-trapped ion crystal segmented by dynamic optical potentials); Fig. 4 (N=231 ions in S=6 cells)",
+       "verified": true
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_hf",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "hyperfine assumed by family; ion species undisclosed",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://quantumcomputingreport.com/quantum-art-extends-series-a-to-140m-to-scale-trapped-ion-architecture/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "g_ms",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "multi-qubit optical gates within a core (company direction); gate mechanism and fidelities undisclosed",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2311.01168",
+       "locator": "§VI Parallel multi-qubit logic and crosstalk mitigation; Fig. 7 (crosstalk mitigation vs optical trapping potential)",
+       "verified": true
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "cx_bus",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "2-D trapped-ion architecture 'to overcome the connectivity and scaling limitations common in linear trap designs'; multi-core modularity",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2311.01168",
+       "locator": "Fig. 1 (optically segmented crystal, cells as near-independent registers); §II Proposed architecture",
+       "verified": true
+      }
+     },
+     {
+      "node": "undisclosed",
+      "role": "alternate",
+      "gap": false,
+      "state": "undisclosed",
+      "summary": "inter-core link across cores, mechanism undisclosed",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2311.01168",
+       "locator": "§II Proposed architecture (connectivity by rapidly reconfiguring optical potentials; B_A/B_B barrier ions swap roles)",
+       "verified": true
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "undisclosed",
+      "role": "primary",
+      "gap": false,
+      "state": "undisclosed",
+      "summary": "control stack undisclosed",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2311.01168",
+       "locator": "§II Proposed architecture (local and global driving fields implement U_{s,n}); Fig. 1",
+       "verified": true
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_fluor",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "fluorescence (family-determined)",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2311.01168",
+       "locator": "Fig. 8 (mid-circuit measurement protocol schematic); §VII Mid-circuit measurements",
+       "verified": true
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no QEC code disclosed; none",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2311.01168",
+       "locator": "Fig. 3 (quantum error correction code on an optically segmented ion-crystal); §III Application demonstrations",
+       "verified": true
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder; none",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://quantumcomputingreport.com/quantum-art-extends-series-a-to-140m-to-scale-trapped-ion-architecture/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "undisclosed",
+      "role": "primary",
+      "gap": false,
+      "state": "undisclosed",
+      "summary": "inter-core link mechanism undisclosed",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2311.01168",
+       "locator": "§II Proposed architecture (segmentation reconfigured by swapping confinement of barrier ions)",
+       "verified": true
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_trap",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "trap fabrication undisclosed; surface-electrode trap assumed by family",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://quantumcomputingreport.com/quantum-art-extends-series-a-to-140m-to-scale-trapped-ion-architecture/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 8,
+    "total": 11
+   },
+   "refs": [
+    {
+     "url": "https://quantum-art.tech/roadmap",
+     "title": "Roadmap — Quantum Art",
+     "kind": "product"
+    }
+   ],
+   "profile": {
+    "qubit_type": "ion species undisclosed",
+    "gate_mechanism": "multi-qubit optical gates within a core (company direction); mechanism undisclosed",
+    "connectivity": "2-D trapped-ion architecture, multi-core modularity; inter-core link mechanism undisclosed",
+    "degree": "",
+    "control": "undisclosed",
+    "control_placement": "undisclosed",
+    "readout": "fluorescence",
+    "err_2q_median": "1e-3 target during multi-qubit gates (owner's spec table, a target)",
+    "err_2q_best": "",
+    "readout_error": "",
+    "t1": "",
+    "t2": "",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "Montage (2025) is the first step of the roadmap whose multi-core \"Perspective\" 1,000-qubit system follows",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
+    "err_2q_median_num": null,
+    "flags": [
+     "no-published-error-rates",
+     "target"
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
+   }
+  },
+  {
    "id": "quantum-art-multicore",
    "name": "Perspective (1,000-qubit multi-core system)",
    "org": "Quantum Art",
@@ -26303,10 +26583,10 @@
    "country": "Israel",
    "family": "ION",
    "map_path": "ion_chain",
-   "status": "ANNOUNCED (in development; no delivery date; QaaS platform launching)",
+   "status": "ANNOUNCED (in development; no delivery date)",
    "status_date": "2026",
    "physical_qubits_num": null,
-   "access": "QaaS platform launching",
+   "access": "not disclosed (the QaaS launch belongs to the Montage row)",
    "layers": {
     "1": [
      {
@@ -27523,7 +27803,13 @@
     "verified": 7,
     "total": 10
    },
-   "refs": [],
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2104.00759",
+     "title": "Engineering the Quantum Scientific Computing Open User Testbed (QSCOUT): Design details and user guide",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "hyperfine clock-state qubit (171Yb+)",
     "gate_mechanism": "Raman transitions with a 355 nm pulsed laser; Molmer-Sorensen 2Q gates",
@@ -27532,8 +27818,8 @@
     "control": "individual addressing by imaging an AOM array onto the chain; pulse-level access (Jaqal)",
     "control_placement": "room-temp + free-space optics",
     "readout": "fluorescence: chain imaged onto a multimode-fibre array with individual photomultiplier tubes",
-    "err_2q_median": "MS gate fidelity ~0.95-0.99 (as published)",
-    "err_2q_best": "1e-2 (fidelity ~0.99)",
+    "err_2q_median": "not benchmarked as a gate in the cited source: Bell-state (entanglement) fidelity 0.978 from parity oscillations on one ion pair; MS gate error listed as 2e-2 (2021 design paper)",
+    "err_2q_best": "",
     "readout_error": "",
     "t1": "",
     "t2": "",
@@ -28046,7 +28332,7 @@
     "control": "free-space addressed laser control",
     "control_placement": "room-temp + free-space optics",
     "readout": "fluorescence",
-    "err_2q_median": "2.5e-2 in the measurement-free experiment",
+    "err_2q_median": "not published in the cited refs; the 2.5e-2 is the two-qubit depolarizing probability of a simulation noise model (measurement-free paper, Table I)",
     "err_2q_best": "",
     "readout_error": "",
     "t1": "",
@@ -28058,14 +28344,14 @@
     "realtime": "latency-free by construction",
     "roadmap": "academic",
     "role": "",
-    "gate_evidence": "figure",
+    "gate_evidence": "none",
     "decoder_mode": "none",
-    "err_2q_median_num": 0.025,
+    "err_2q_median_num": null,
     "flags": [],
     "qubits_accessible": null,
     "gate_evidence_derived": true,
     "decoder_mode_derived": true,
-    "benchmarked": true
+    "benchmarked": false
    }
   },
   {
@@ -29053,7 +29339,7 @@
     "control": "SLM tweezers + AOD moves + Rydberg lasers",
     "control_placement": "optics (room temperature)",
     "readout": "non-destructive, state-selective imaging that also flags loss ('delayed erasure conversion'): ancillas at each mid-circuit measurement, data qubits when measured; missing atoms replaced from a storage zone; loss-aware decoding offline (Jun 2026). Nov 2024 logical runs: loss from a separate end-of-circuit survival image",
-    "err_2q_median": "4e-3 (99.6% claimed, highest for a commercial neutral-atom system)",
+    "err_2q_median": "4.3(1.9)e-3 per CZ by interleaved RB, post-selected on survival of both atoms; CZ loss 9.6(2.0)e-3 per gate not included (toric-code paper, Jun 2026); system not named in the paper; vendor claim for Phoenix 99.6% (no protocol)",
     "err_2q_best": "",
     "readout_error": "",
     "t1": "",
@@ -29067,13 +29353,13 @@
     "role": "",
     "gate_evidence": "vendor-figure",
     "decoder_mode": "offline",
-    "err_2q_median_num": 0.004,
+    "err_2q_median_num": null,
     "flags": [
      "code-node-mismatch",
      "no-numbers-published"
     ],
     "qubits_accessible": null,
-    "gate_evidence_derived": true,
+    "gate_evidence_derived": false,
     "decoder_mode_derived": true,
     "benchmarked": true
    }
@@ -29278,8 +29564,8 @@
     "control": "SLM/AOD laser control",
     "control_placement": "optics (room temperature)",
     "readout": "fluorescence imaging",
-    "err_2q_median": "n/a - no entangling gate",
-    "err_2q_best": "2e-4 (1Q infidelity)",
+    "err_2q_median": "n/a - no entangling gate; the 2e-4 is a single-qubit infidelity",
+    "err_2q_best": "",
     "readout_error": "",
     "t1": "",
     "t2": "12.6 s (T2)",
@@ -30012,7 +30298,7 @@
     "control": "SLM tweezers + AOD moves + Rydberg lasers",
     "control_placement": "optics (room temperature)",
     "readout": "non-destructive spin-resolved imaging that also detects atom loss; superchecks recover error information from the loss flags",
-    "err_2q_median": "~1.6e-3",
+    "err_2q_median": "~5e-3 (CZ fidelity 99.3-99.6% by randomized benchmarking, global Rydberg pulse on many pairs; error budget 'roughly 0.5%'; statistic over pairs not named)",
     "err_2q_best": "",
     "readout_error": "",
     "t1": "",
@@ -30026,7 +30312,7 @@
     "role": "",
     "gate_evidence": "figure",
     "decoder_mode": "offline",
-    "err_2q_median_num": 0.0016,
+    "err_2q_median_num": 0.005,
     "flags": [],
     "qubits_accessible": null,
     "gate_evidence_derived": true,
@@ -30708,8 +30994,8 @@
     "control": "SLM/AOD laser control",
     "control_placement": "optics (room temperature)",
     "readout": "fluorescence imaging",
-    "err_2q_median": "2.7e-3 (99.73%) - the best published 2Q number of any deployed neutral-atom system",
-    "err_2q_best": "2.7e-3",
+    "err_2q_median": "2.7e-3 post-selected on atom retention (CZ 99.73(3)%, one atom pair, 2024 research array); unconditioned 6.5e-3 (99.35(4)%); not stated for the NQCC Sqale",
+    "err_2q_best": "2.7e-3 post-selected on atom retention (one pair; unconditioned 6.5e-3)",
     "readout_error": "",
     "t1": "",
     "t2": "",
@@ -30720,14 +31006,14 @@
     "realtime": "offline",
     "roadmap": "30 entangled logical qubits shown Sep 2026 (80 atoms, ten [[8,3,2]] blocks, error-detected; paper pending); 100 logical by 2028; 1,000 by 2030",
     "role": "",
-    "gate_evidence": "figure",
+    "gate_evidence": "device-benchmark",
     "decoder_mode": "offline",
-    "err_2q_median_num": 0.0027,
+    "err_2q_median_num": null,
     "flags": [
      "conflicting-count"
     ],
     "qubits_accessible": null,
-    "gate_evidence_derived": true,
+    "gate_evidence_derived": false,
     "decoder_mode_derived": true,
     "benchmarked": true
    }
@@ -31837,6 +32123,11 @@
     {
      "url": "https://postquantum.com/quantum-computing-companies/pasqal/",
      "title": "Pasqal",
+     "kind": "press"
+    },
+    {
+     "url": "https://www.sec.gov/Archives/edgar/data/2119292/000121390026102831/ea030634601ex99-1_pasqal.htm",
+     "title": "Pasqal H1 2026 results",
      "kind": "press"
     }
    ],
@@ -33463,8 +33754,8 @@
     "control": "SLM tweezers + AOD moves + Rydberg lasers",
     "control_placement": "optics (room temperature)",
     "readout": "fluorescence imaging; SPAM/readout 99.7%",
-    "err_2q_median": "8e-3 (99.2% global 2Q)",
-    "err_2q_best": "1e-3 (99.9% global 1Q)",
+    "err_2q_median": "8e-3 (vendor spec: global 2Q gate fidelity 99.2%, up to 20 pairs in parallel; protocol not named); the magic-state-distillation paper measured 99.42(1)% per CZ (5.8e-3) by alternating-gate benchmarking",
+    "err_2q_best": "",
     "readout_error": "3e-3",
     "t1": "",
     "t2": "",
@@ -35046,8 +35337,8 @@
     "control": "electro-optic BTO Mach-Zehnder modulators, EO coefficient ~1000 pm/V; feed-forward within one clock cycle",
     "control_placement": "room-temp electro-optic",
     "readout": "waveguide-integrated SNSPD, destructive, photon-number-resolving; 93.4% median on-chip efficiency (the 98.9% figure is superseded)",
-    "err_2q_median": "two-qubit fusion fidelity 7.8e-3 (99.22 +- 0.12%)",
-    "err_2q_best": "SPAM 2.0e-4 (99.98 +- 0.01%); interferometer fidelity up to 99.999%",
+    "err_2q_median": "no two-qubit gate benchmark: fusion (Bell-measurement) fidelity 99.22 +- 0.12% with the ideal Bell state, conditional on a photon detected in each detector pair (loss not counted); the 2.0e-4 was a single-qubit SPAM error",
+    "err_2q_best": "",
     "readout_error": "",
     "t1": "",
     "t2": "",
@@ -35058,9 +35349,9 @@
     "realtime": "offline",
     "roadmap": "Moreton Bay + Chicago \"operational\" 2027 means cooling and install capacity in place, not a working computer; utility-scale 1e6 photons late 2020s",
     "role": "",
-    "gate_evidence": "figure",
+    "gate_evidence": "none",
     "decoder_mode": "offline",
-    "err_2q_median_num": 0.0078,
+    "err_2q_median_num": null,
     "flags": [
      "component-only",
      "cryo-gap",
@@ -35069,7 +35360,7 @@
     "qubits_accessible": null,
     "gate_evidence_derived": true,
     "decoder_mode_derived": true,
-    "benchmarked": true
+    "benchmarked": false
    }
   },
   {
@@ -35337,8 +35628,8 @@
     "control": "electro-optic control",
     "control_placement": "room-temp electro-optic",
     "readout": "SNSPD",
-    "err_2q_median": "6.2e-2 (2Q 93.8 +- 0.6%, Ascella - the only line with published gate fidelities)",
-    "err_2q_best": "1Q 4.0e-3 (99.6 +- 0.1%, Ascella)",
+    "err_2q_median": "not published for Belenos; the 6.2e-2 is the Ascella prototype's post-selected CNOT (average gate fidelity 93.8 +- 0.6%, symmetry-based estimation, SPAM included)",
+    "err_2q_best": "",
     "readout_error": "",
     "t1": "",
     "t2": "",
@@ -35349,9 +35640,9 @@
     "realtime": "none",
     "roadmap": "Canopus 24 q ~2026; 40+ q by 2028; 50 logical 2028",
     "role": "",
-    "gate_evidence": "figure",
+    "gate_evidence": "none",
     "decoder_mode": "none",
-    "err_2q_median_num": 0.062,
+    "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "source-not-confirmed"
@@ -35359,7 +35650,7 @@
     "qubits_accessible": null,
     "gate_evidence_derived": true,
     "decoder_mode_derived": true,
-    "benchmarked": true
+    "benchmarked": false
    }
   },
   {
@@ -35819,7 +36110,7 @@
     "control": "electro-optic control",
     "control_placement": "room-temp electro-optic",
     "readout": "SNSPD",
-    "err_2q_median": "as Belenos (no Lucy gate fidelity is public)",
+    "err_2q_median": "not published for Lucy (as for Belenos); the 0.062 was the Ascella prototype's post-selected CNOT error",
     "err_2q_best": "",
     "readout_error": "",
     "t1": "",
@@ -35831,9 +36122,9 @@
     "realtime": "none",
     "roadmap": "Canopus 24 q",
     "role": "",
-    "gate_evidence": "figure",
+    "gate_evidence": "none",
     "decoder_mode": "none",
-    "err_2q_median_num": 0.062,
+    "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
      "source-not-confirmed"
@@ -35841,7 +36132,7 @@
     "qubits_accessible": null,
     "gate_evidence_derived": true,
     "decoder_mode_derived": true,
-    "benchmarked": true
+    "benchmarked": false
    }
   },
   {
@@ -37197,8 +37488,8 @@
     "control": "electro-optic modulators + real-time feed-forward at the 1 MHz clock",
     "control_placement": "room-temp electro-optic",
     "readout": "homodyne (quadrature) detection with a shared local-oscillator phase reference; PNR detection heralds GKP states",
-    "err_2q_median": "n/a (loss-dominated): ~56% loss in heralding paths, >95% in heralded optical paths against a ~1% requirement",
-    "err_2q_best": "effective GKP squeezing 0.62 dB against a ~10 dB requirement",
+    "err_2q_median": "n/a (loss-dominated): ~56% loss in heralding paths, >95% in heralded optical paths against a ~1% requirement; the 0.62 dB is an effective GKP squeezing value, not a gate error",
+    "err_2q_best": "",
     "readout_error": "",
     "t1": "",
     "t2": "",
@@ -37912,7 +38203,7 @@
     "control_placement": "room-temp baseband (cryo-CMOS planned)",
     "readout": "two SETs at the chain ends plus a cascaded electron-cascade charge-sensing protocol for the central qubits - 8 qubits read through 2 sensors",
     "err_2q_median": "not published on the array (no gate benchmarks); 98.92% (1.1e-2) measured on separate devices at 1 K",
-    "err_2q_best": "1.5e-3 (99.85% 1Q at 1 K)",
+    "err_2q_best": "",
     "readout_error": "",
     "t1": "",
     "t2": "1.31e-3 (Hahn echo); 4.1e-5 (Ramsey T2*)",
@@ -38181,8 +38472,8 @@
     "control": "UnityQ quantum system-on-chip: qubits, control electronics and error-correction logic in CMOS; multi-tile controller and cryogenic ARM cores at 300 mK; closed-cycle cryocooler at 0.3 K, no dilution refrigerator; 19-inch rack, 400 kg (unveiling release; the product page gives 200 kg), 1,600 W single-phase; Dell PowerEdge R770 server alongside",
     "control_placement": "cryo-CMOS on-die at 0.3 K",
     "readout": "spin-to-charge, parity readout, 99% readout fidelity (UnityQ page; the RacQ product page lists 99.9%)",
-    "err_2q_median": "7e-3 (UnityQ page: average 2Q 99.3% by interleaved RB; product-page claim, no paper; a press survey gave 98.4%)",
-    "err_2q_best": "1e-3 (1Q 99.9% average by randomised Clifford benchmarking, UnityQ page)",
+    "err_2q_median": "7e-3 (product page: '2Q Gate Fidelity (average) 99.3%' for UnityQ test silicon under typical operating conditions; protocol not named; no paper; a press survey gave 98.4%)",
+    "err_2q_best": "",
     "readout_error": "1e-2 (readout fidelity 99%, parity readout, UnityQ page; the RacQ product page lists 99.9%)",
     "t1": "",
     "t2": "",
@@ -38823,7 +39114,13 @@
     "verified": 11,
     "total": 12
    },
-   "refs": [],
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2604.16216",
+     "title": "A digitally controlled silicon quantum processing unit",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "exchange-only (EO) spin qubit: three electron spins in three gate-defined Si/SiGe quantum dots (²⁸Si-enriched, ⁷³Ge-depleted heterostructure)",
     "gate_mechanism": "baseband exchange pulses only (symmetric exchange): 1Q gates of 4 exchange pulses; CNOT of 37 pulses in 45 timesteps",
@@ -39762,8 +40059,8 @@
     "control": "baseband + ESR/NMR from room temperature",
     "control_placement": "room-temp baseband",
     "readout": "QND readout via the electron spin - the only genuinely QND single-shot readout in this register",
-    "err_2q_median": "3.6e-3 (two-qubit electron CROT 99.64%)",
-    "err_2q_best": "1.0e-4 (1Q up to 99.99%)",
+    "err_2q_median": "3.6e-3 (electron CROT 99.64(8)% by interleaved 2Q-RB on one pair, one nuclear-spin configuration; no device-level figure)",
+    "err_2q_best": "1.0e-3 (nuclear CZ n6-n9, 99.90(4)% by interleaved 2Q-RB, one pair)",
     "readout_error": "",
     "t1": "",
     "t2": "6.6e-1 (nuclear Hahn echo up to 660 ms)",
@@ -39774,14 +40071,14 @@
     "realtime": "none",
     "roadmap": "\"bridge the gap toward million-qubit systems\"; no dated intermediate milestone published",
     "role": "",
-    "gate_evidence": "figure",
+    "gate_evidence": "device-benchmark",
     "decoder_mode": "none",
-    "err_2q_median_num": 0.0036,
+    "err_2q_median_num": null,
     "flags": [
      "no-foundry-route"
     ],
     "qubits_accessible": null,
-    "gate_evidence_derived": true,
+    "gate_evidence_derived": false,
     "decoder_mode_derived": true,
     "benchmarked": true
    }
@@ -42748,6 +43045,7 @@
     "ionq-superion-256",
     "ionq-tempo",
     "psnc-piast-q",
+    "quantum-art-montage",
     "quantum-art-multicore",
     "qudoor-abaq",
     "rqc-ion-50q",
@@ -43189,6 +43487,7 @@
     "quantinuum-helios",
     "quantinuum-helix",
     "quantinuum-sol",
+    "quantum-art-montage",
     "quantum-art-multicore",
     "qudoor-abaq",
     "qudora-nfqc",
@@ -43503,6 +43802,7 @@
     "quantinuum-helios",
     "quantinuum-helix",
     "quantinuum-sol",
+    "quantum-art-montage",
     "quantum-art-multicore",
     "qudoor-abaq",
     "qudora-nfqc",
@@ -43657,6 +43957,7 @@
     "quantinuum-helios",
     "quantinuum-helix",
     "quantinuum-sol",
+    "quantum-art-montage",
     "quantum-art-multicore",
     "qudoor-abaq",
     "rqc-ion-50q",
@@ -43873,6 +44174,7 @@
     "quantinuum-helios",
     "quantinuum-helix",
     "quantinuum-sol",
+    "quantum-art-montage",
     "quantum-art-multicore",
     "qudoor-abaq",
     "qudora-nfqc",
@@ -44054,6 +44356,7 @@
     "quantinuum-helios",
     "quantinuum-helix",
     "quantinuum-sol",
+    "quantum-art-montage",
     "quantum-art-multicore",
     "quantum-brilliance-quoll",
     "qudoor-abaq",

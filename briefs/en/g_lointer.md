@@ -9,13 +9,15 @@ verdict: "A working sampler, not a gate: 8,176 modes and up to 3,050 detected ph
 updated: 2026-09-30
 ---
 
-GBS = Gaussian boson sampling; MZI = Mach–Zehnder interferometer; EOM = electro-optic modulator; PNR = photon-number-resolving; SNSPD = superconducting nanowire single-photon detector; TES = transition-edge sensor; MPS = matrix-product state (a tensor network); USTC = University of Science and Technology of China; NQCC = UK National Quantum Computing Centre; G1–G7 = the report's goal classes (G1: analog and NISQ simulation).
+GBS = Gaussian boson sampling; MZI = Mach–Zehnder interferometer; EOM = electro-optic modulator; PNR = photon-number-resolving; SNSPD = superconducting nanowire single-photon detector; TES = transition-edge sensor; MPS = matrix-product state (a tensor network); USTC = University of Science and Technology of China; NQCC = UK National Quantum Computing Centre; G1–G7 = the report's goal classes (G1: analogue and NISQ simulation).
 
 ## Identity & lineage
 A passive network maps input modes onto outputs, a†ᵢ → Σⱼ Uⱼᵢ a†ⱼ, with U an N×N unitary. Reck et al. factorised any U into N(N−1)/2 beamsplitter–phase-shifter pairs [G][452]; Clements et al. halved the footprint and balanced the loss [G][453]; loops reuse one interference point on every time bin [G][454]. A six-mode, 15-MZI chip set 100 Haar-random unitaries at fidelity 0.999 ± 0.001 [D][455]. Machines on this technology use the network only to sample — single photons after Aaronson and Arkhipov [G][456], squeezed light after Hamilton et al. [G][268]. Attributes: flying carrier, no gate time or determinism class, loss-dominated error, electro-optic room-temperature control, bulk or photonic-IC fabrication.
 
 ## Physics & limits
 Output probabilities are permanents of n×n submatrices of U; exact polynomial-time classical sampling would collapse the polynomial hierarchy, and approximate hardness rests on two conjectures [G][456]. With squeezed inputs they are hafnians, also #P-hard [G][268]. The mesh entangles modes when fed squeezed light [D][270] but has no entangling gate on encoded qubits: linear optics without ancilla photons distinguishes Bell states with at most 50% probability [G][457], and universality needs detector feed-forward [G][337]. The limits are loss and distinguishability. Transmission compounds with depth: at 0.99 per MZI, a 100-mode Clements mesh passes ~0.37 [S][453]. Noisy GBS is efficiently simulable once squeezing, transmission and detector quality satisfy an inequality [S][269]; tensor networks are likely efficient when surviving photons scale as √N for N inputs [S][458]; at fixed partial distinguishability, simulation cost grows only polynomially with photon number [S][459].
+
+Coarse-grained outputs of a linear-optical interferometer are classically reproducible. Any linear statistic of the output — an integer-weighted sum of the photon counts per mode, which covers mode binning, molecular vibronic spectra and the 'most probable bin' one-way function — can be estimated classically to the same additive error as the experiment, in time polynomial in the number of modes, for single-photon and Gaussian inputs [P][889]. An advantage or application claim for this mechanism must rest on fine-grained sampling or on a non-linear statistic; hash-function and proof-of-work variants remain open.
 
 ## Engineering state of the art
 
@@ -96,6 +98,7 @@ Confirm if, by 2027-12-31, no classical sampler matches Jiuzhang 4.0 on its subs
 [468] ORCA Computing, “Montana State University Selects ORCA Computing to Advance Distributed Quantum Computing and Communications,” Jun. 5, 2024. [Online]. Available: https://orcacomputing.com/montana-state-university-selects-orca-computing/ [C]
 [469] ORCA Computing, “ORCA Computing Delivers First Photonic Quantum Computing System to UK's National Quantum Computing Centre,” Jun. 11, 2025. [Online]. Available: https://orcacomputing.com/installation-marks-key-milestone-in-the-uks-121m-quantum-initiative-advancing-practical-quantum-research/ [C]
 [470] Tech Journal UK, “ORCA aims to beat classical computers with PT-3 quantum system,” Jul. 1, 2026. [Online]. Available: https://www.techjournal.uk/p/orca-aims-to-beat-classical-computers [R]
+[889] B. Seron, H. Thomas, E. Araujo, A. Arkhipov, C. Oh, and L. Novo, “Efficient classical algorithm for estimating linear statistics of Boson Sampling,” [arXiv:2609.35447](https://arxiv.org/abs/2609.35447), Sep. 2026. [P]
 
 ## Open verification items
 - The arXiv abstract pages of 2605.30935 and 2109.11525 did not render on 2026-09-26; months are taken from the identifiers, titles and authors from the full-text HTML.

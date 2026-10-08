@@ -41,7 +41,7 @@ MACH_FAMILIES = ['SC', 'ION', 'ATOM', 'PHOTON', 'SPIN', 'DEFECT', 'TOPO', 'ANNEA
 OFFDEF = ('a crossing technology: it takes a trait from the other side of the natural/fabricated divide — hatched on the map (see §7.5)',
           'сквозная технология: берёт свойство с другой стороны раздела естественное/искусственное — на карте заштрихована (см. §7.5)',
           'טכנולוגיה חוצה: היא נוטלת מאפיין מהצד השני של החלוקה טבעי–מיוצר — מקווקוות במפה (ראו §7.5)')
-EMPTYDEF = ('a technology with no demonstrated technology yet', 'технология, для которой технологии ещё нет', 'טכנולוגיה שעדיין אין לה מימוש שהודגם')
+EMPTYDEF = ('an empty slot: no technology has been demonstrated here yet', 'пустая ячейка: технологии здесь ещё не продемонстрировано', 'משבצת ריקה: עדיין לא הודגמה כאן טכנולוגיה')
 PLACES = ['RT', '4K', 'mK', 'none']   # CATS.place
 EVG = (('figure', '▣'), ('whitepaper', '▥'), ('paper', '▤'), ('vendor', '▦'), ('datasheet', '▧'), ('press', '▨'))
 NA_T = {'none': ('none — nothing in this layer', 'none — в этом слое ничего нет', 'none — אין דבר בשכבה זו'),

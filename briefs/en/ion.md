@@ -52,7 +52,7 @@ The wall moves with N. At 10³ it is drive-source count and optical-table area; 
 
 ## Role in the stack
 
-The carrier feeds three architectures, as the primary carrier of each: *Trapped ions — QCCD (transport between zones)* (Quantinuum, Universal Quantum), *Trapped ions — linear Paul trap with individual laser addressing* (IonQ's Aria, Forte and Tempo; AQT; Qudoor; Quantum Art) and *Trapped ions — electronic qubit control (microwave / RF gates)* (IonQ/Oxford Ionics, eleQtron, QUDORA). It requires surface-electrode trap microfabrication and optical/mechanical assembly, and is the substrate for the Mølmer–Sørensen gate, the electronic near-field microwave gate, metastable "omg" erasure encoding, shuttling, fluorescence detection and the ion–photon link. It replaces and conflicts with nothing: ions are a self-contained column, which is why switching away is total — nothing above the carrier survives but the compiler.
+The carrier feeds three architectures, as the primary carrier of each: *Trapped ions — QCCD (transport between zones)* (Quantinuum, Universal Quantum), *Trapped ions — linear Paul trap with individual laser addressing* (IonQ's Aria, Forte and Tempo; AQT; Qudoor; Quantum Art) and *Trapped ions — electronic qubit control (laser-free, microwave-driven gates)* (IonQ/Oxford Ionics, eleQtron, QUDORA). It requires surface-electrode trap microfabrication and optical/mechanical assembly, and is the substrate for the Mølmer–Sørensen gate, the electronic near-field microwave gate, metastable "omg" erasure encoding, shuttling, fluorescence detection and the ion–photon link. It replaces and conflicts with nothing: ions are a self-contained column, which is why switching away is total — nothing above the carrier survives but the compiler.
 
 Derived clock = sum of the syndrome round: gate layers + transport + readout + reset. On the QCCD architecture transport dominates: ≈ 9.7×10⁻³ s per round, 9.0 ms of it transport, against a ≈ 5.5×10⁻² s full-width layer [D][97], [110]. On the electronic-gate architecture the round is ≈ 1.5×10⁻³ s, set by the gate layers [D][102]. That six-fold gap is the platform's defining number. Neighbouring empty slot: a cryogenic chip-integrated drive layer for ion traps — the SFQ/cryo-CMOS analogue — has no product-scale occupant.
 
@@ -76,7 +76,7 @@ Conflicts. The electronic gate's duration is 225.8 µs (2025) or ≈ 120 µs (20
 | eleQtron | developer | DE | Microwave ion control; DLR QSea I demonstrator; €54 M backlog | [G][327] |
 | Quantum Art | developer | IL | Multi-core trapped-ion architecture; $140 M Series A | [P][125] |
 | Universal Quantum | developer | UK | Modular trap machine under a €67 M DLR contract; nothing delivered | [P][328] |
-| Tsinghua University | research | CN | 512-ion 2D crystal analog simulation; hour-scale memory | [D][121] |
+| Tsinghua University | research | CN | 512-ion 2D crystal analogue simulation; hour-scale memory | [D][121] |
 | Qudoor | developer | CN | AbaQ ion-trap systems and cloud; 32+ claimed patents | [P][302] |
 
 **Money.**

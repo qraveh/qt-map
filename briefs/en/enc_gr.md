@@ -1,10 +1,10 @@
 ---
 id: enc_gr
-name: Ground–Rydberg analog qubit
+name: Ground–Rydberg analogue qubit
 layer: "2 Encoding"
 status: demonstrated
 since: 2017
-one_line: "A two-level qubit formed by an atomic ground state |g⟩ and a Rydberg state |r⟩, driven globally under an Ising-type Hamiltonian: the computational basis of analog Rydberg simulators, not an error-suppressing code."
+one_line: "A two-level qubit formed by an atomic ground state |g⟩ and a Rydberg state |r⟩, driven globally under an Ising-type Hamiltonian: the computational basis of analogue Rydberg simulators, not an error-suppressing code."
 verdict: "Its ceiling is the black-body-limited Rydberg lifetime (~150 µs for Rb 70S at 300 K), but its working window is set by Doppler and laser-phase dephasing (T2* ≈ 5–6 µs), which caps Aquila programs at 4 µs. As of 2026-09-26 it has no memory and no code, and both vendors' gate-model lines use the hyperfine basis instead."
 updated: 2026-09-26
 ---
@@ -12,7 +12,7 @@ updated: 2026-09-26
 Ω = Rabi frequency; Δ = detuning; C6 = van der Waals coefficient; R_b = blockade radius; T2* = Ramsey dephasing time; T2echo = spin-echo coherence time; G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-The qubit is a level pair inside one atom: |g⟩ in the 5S₁/₂ ground manifold and |r⟩ = |70S₁/₂⟩ in QuEra's ⁸⁷Rb machine Aquila, reached by a two-photon 420 nm + 1013 nm drive via 6P₃/₂ [C][262]. "Encoding" names the computational basis of an analog machine, not a code: the program is a Hamiltonian, the output a g/r pattern. The line starts with the 51-atom Harvard–MIT Ising-type simulator of 2017 [D][384], co-authored by QuEra's CEO Alexander Keesling [C][262]; Pasqal's architecture paper calls it the analog level, "programming Hamiltonian sequences" [C][385]. Attributes: natural carrier, nothing fabricated; no step time, control modality or placement of its own; loss and coherent errors.
+The qubit is a level pair inside one atom: |g⟩ in the 5S₁/₂ ground manifold and |r⟩ = |70S₁/₂⟩ in QuEra's ⁸⁷Rb machine Aquila, reached by a two-photon 420 nm + 1013 nm drive via 6P₃/₂ [C][262]. "Encoding" names the computational basis of an analogue machine, not a code: the program is a Hamiltonian, the output a g/r pattern. The line starts with the 51-atom Harvard–MIT Ising-type simulator of 2017 [D][384], co-authored by QuEra's CEO Alexander Keesling [C][262]; Pasqal's architecture paper calls it the analogue level, "programming Hamiltonian sequences" [C][385]. Attributes: natural carrier, nothing fabricated; no step time, control modality or placement of its own; loss and coherent errors.
 
 ## Physics & limits
 Aquila runs H(t) = (Ω/2)Σᵢ(e^{iφ}|gᵢ⟩⟨rᵢ| + h.c.) − ΔΣᵢnᵢ + Σ_{i<j} C6/|xᵢ−xⱼ|⁶ nᵢnⱼ, nᵢ = |rᵢ⟩⟨rᵢ|, with C6 = 5.42×10⁶ rad µm⁶ µs⁻¹ for 70S, |Ω| ≤ 15.8 rad/µs, |Δ| ≤ 125 rad/µs [C][262]; Pulser uses the same convention for Pasqal's "ground-rydberg" basis [C][386]. Blockade forbids two excitations within R_b = (C6/Ω)^{1/6} ≈ 8.4 µm at full drive [S][262].
@@ -39,10 +39,10 @@ Nothing is fabricated at this layer; fabrication sits in fab_optics. The demand 
 Aquila drives one global Ω(t), Δ(t), φ(t) set [C][262], so drive I/O is flat in atom number; local detuning, the first site-resolved knob, drove the string-breaking quench [D][226] and is promised for Pasqal's Vela [R][390]. Readout is destructive imaging with an asymmetric budget — Rydberg read as ground 0.08, ground as Rydberg 0.01, filling error 0.007 [C][262] — so r-populations are undercounted [S][262]. At under 10 shots per second [C][262], 10⁴ shots take over a quarter-hour.
 
 ## Role in the stack
-On the architecture "Neutral-atom analog simulator (Rydberg arrays, lattice gases)" (atom_analog) the technology fills slot 2; slots 7–9 (code to interconnect) are empty. It **requires** an atom with a Rydberg level (alkali), **provides** the ground–Rydberg states g_rydanalog requires, and is **replaced** by enc_hf. Register machines: Aquila (primary, ✅), Fresnel / Fresnel 2 (primary, 🔎), Orion Alpha/Beta/Gamma (alternate, analog mode on atom_rb, 🔎 inferred). Gate-model lines use enc_hf: QuEra's Gemini is a 260-qubit digital machine [C][137]; the Harvard–MIT gate work encodes in |F=1,mF=0⟩, |F=2,mF=0⟩ and visits 53S1/2 only during gates [D][391]; Pasqal drives a separate "digital" basis |g⟩,|h⟩ by Raman channel [C][386]. The gap ledger stands: enc_hf does not describe analog machines. Its atom_rb/atom_ae placement became atom_analog; the alkaline-earth variant [D][143] has no register machine.
+On the architecture "Neutral-atom analogue simulator (Rydberg arrays, lattice gases)" (atom_analog) the technology fills slot 2; slots 7–9 (code to interconnect) are empty. It **requires** an atom with a Rydberg level (alkali), **provides** the ground–Rydberg states g_rydanalog requires, and is **replaced** by enc_hf. Register machines: Aquila (primary, ✅), Fresnel / Fresnel 2 (primary, 🔎), Orion Alpha/Beta/Gamma (alternate, analogue mode on atom_rb, 🔎 inferred). Gate-model lines use enc_hf: QuEra's Gemini is a 260-qubit digital machine [C][137]; the Harvard–MIT gate work encodes in |F=1,mF=0⟩, |F=2,mF=0⟩ and visits 53S1/2 only during gates [D][391]; Pasqal drives a separate "digital" basis |g⟩,|h⟩ by Raman channel [C][386]. The gap ledger stands: enc_hf does not describe analogue machines. Its atom_rb/atom_ae placement became atom_analog; the alkaline-earth variant [D][143] has no register machine.
 
 ## Evidence — how the numbers were measured
-Gate benchmarks do not apply; the figures are T2*, echo T2, Rabi damping, blockaded-pair coherence and readout asymmetry. Aquila publishes all of them (Rabi 7.5 µs, blockaded Rabi 8.9 µs) [C][262], none independently re-measured; beyond classical simulation, programs are checked against phase diagrams [D][226]. Grades: Aquila ✅; Fresnel 🔎, the paper's abstract confirming only the analog/digital split [C][385]; Orion 🔎, its cited blog naming neither analog mode nor encoding [C][390] — Pulser's basis definition is better evidence.
+Gate benchmarks do not apply; the figures are T2*, echo T2, Rabi damping, blockaded-pair coherence and readout asymmetry. Aquila publishes all of them (Rabi 7.5 µs, blockaded Rabi 8.9 µs) [C][262], none independently re-measured; beyond classical simulation, programs are checked against phase diagrams [D][226]. Grades: Aquila ✅; Fresnel 🔎, the paper's abstract confirming only the analogue/digital split [C][385]; Orion 🔎, its cited blog naming neither analogue mode nor encoding [C][390] — Pulser's basis definition is better evidence.
 
 ## Actors & economics
 **Who.**
@@ -58,14 +58,14 @@ Gate benchmarks do not apply; the figures are T2*, echo T2, Rabi damping, blocka
 
 **Market & supply chain.** Two commercial actors, both also selling gate-model machines; Pasqal lists five hosting clouds and five sites, mode unstated [C][390]. Concentration sits in Rydberg lasers and cavities. Pays into G1.
 
-**IP & standards.** No standard for analog-qubit figures was found as of 2026-09-26; the shared Hamiltonian convention is the de facto interface [C][262][C][386].
+**IP & standards.** No standard for analogue-qubit figures was found as of 2026-09-26; the shared Hamiltonian convention is the de facto interface [C][262][C][386].
 
 **Roadmaps & track record.** Pasqal (2026-01-29): Vela in 2026, over 256 qubits with local detuning; measurable quantum advantage before mid-2026 [R][390] — not scored here. QuEra's next product is gate-model [C][137].
 
-**Strategic reading.** Scale without per-qubit control, code or storage, bounded by a few-microsecond window. If analog results survive classical challenge, it keeps a G1 niche as a mode of digital machines; if not, both vendors already sell the hyperfine alternative.
+**Strategic reading.** Scale without per-qubit control, code or storage, bounded by a few-microsecond window. If analogue results survive classical challenge, it keeps a G1 niche as a mode of digital machines; if not, both vendors already sell the hyperfine alternative.
 
 ## Outlook & open questions
-Confirm if by 2027-12-31 a commercial analog machine publishes T2* above 20 µs; demote if Vela ships without coherence figures or no peer-reviewed analog-advantage result appears by 2027-06-30. Open questions. (1) Why is Aquila's echo time a third of the 2018 value? (2) How does T2* scale with register size? (3) Will erasure-detecting alkaline-earth g–r qubits reach a product? (4) Which Rydberg level and coherence do Fresnel and Orion run? (5) Does the readout asymmetry bias published phase diagrams?
+Confirm if by 2027-12-31 a commercial analogue machine publishes T2* above 20 µs; demote if Vela ships without coherence figures or no peer-reviewed analogue-advantage result appears by 2027-06-30. Open questions. (1) Why is Aquila's echo time a third of the 2018 value? (2) How does T2* scale with register size? (3) Will erasure-detecting alkaline-earth g–r qubits reach a product? (4) Which Rydberg level and coherence do Fresnel and Orion run? (5) Does the readout asymmetry bias published phase diagrams?
 
 ## References
 [137] QuEra Computing Inc., “Gemini-Class Gate-Model Quantum Computer.” [Online]. Available: https://www.quera.com/gemini [C]
@@ -88,4 +88,4 @@ Confirm if by 2027-12-31 a commercial analog machine publishes T2* above 20 µs;
 - 2026-09-26: Gemini's product page names ⁸⁷Rb and digital mode, not the hyperfine pair; its enc_hf placement rests on the Harvard–MIT gate papers.
 - 2026-09-26: the string-breaking abstract does not name Aquila; QuEra authorship suggests it, unconfirmed.
 - 2026-09-26: whether Vela shipped and whether Pasqal's mid-2026 advantage objective was met were not checked.
-- 2026-09-26: the Aquila text opened gives neither the beam geometry assumed in the Doppler estimate nor the F, mF sublevel of |g⟩ in analog mode.
+- 2026-09-26: the Aquila text opened gives neither the beam geometry assumed in the Doppler estimate nor the F, mF sublevel of |g⟩ in analogue mode.

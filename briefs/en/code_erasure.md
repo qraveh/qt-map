@@ -106,6 +106,8 @@ Confirm within 12–24 months if: any group decodes a d=3 → 5 memory with eras
 
 Open questions: (1) what is Λ once false negatives accumulate as leakage over 10³ rounds? (2) does the 40:1 bias survive parallel gates on shared readout lines? (3) can the metastable fidelity tax on Yb be removed? (4) is an erasure-adapted qLDPC code with a fast decoder possible? Watch: D-Wave's 2026 delivery, AWS's next multi-qubit paper, Google/Kaufman's Yb results.
 
+Erasure-aware decoding also works at a photonic interface between surface-code processors: with ideal local operations, the threshold for erased fusion outcomes reaches the 50% bond-percolation ceiling of the square lattice (fitted 49.40–50.60% at d = 11–19), equivalent to 18.35% photon loss without fusion boosting, and it falls roughly linearly with resource-state error and ever faster as local circuit noise nears its own threshold [P][893]. The result is from simulation only.
+
 ## References
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
@@ -144,6 +146,7 @@ Open questions: (1) what is Λ once false negatives accumulate as leakage over 1
 [684] S. Gu, A. Retzker, and A. Kubica, “Fault-tolerant quantum architectures based on erasure qubits,” *Phys. Rev. Res.*, vol. 7, no. 1, Art. no. 013249, Mar. 2025, doi: [10.1103/PhysRevResearch.7.013249](https://doi.org/10.1103/PhysRevResearch.7.013249). [arXiv:2312.14060](https://arxiv.org/abs/2312.14060). [S]
 [685] N. Liyanage, Y. Wu, A. Deters, and L. Zhong, “Scalable Quantum Error Correction for Surface Codes using FPGA,” [arXiv:2301.08419](https://arxiv.org/abs/2301.08419), Jan. 2023. [D]
 [686] Brookhaven National Laboratory, “DOE Renews Brookhaven Lab-led Quantum Research Center,” BNL Newsroom, Nov. 4, 2025. [Online]. Available: https://www.bnl.gov/newsroom/news.php?a=122687 [G]
+[893] F. Burt *et al.*, “Loss-tolerant distributed lattice surgery using fusion networks,” [arXiv:2610.01923](https://arxiv.org/abs/2610.01923), Oct. 2026. [P]
 
 ## Open verification items
 

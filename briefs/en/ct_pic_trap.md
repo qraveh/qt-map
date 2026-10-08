@@ -30,6 +30,8 @@ The first wall is the surface. Rydberg states are enormously polarisable, so ads
 
 Two to three orders below free-space systems on atom count, and no gate or transport has run through a chip-generated trap anywhere. The 784-channel chip is the strongest scaling evidence, and it addresses atoms rather than trapping them.
 
+On the light-source side, a hybrid-integrated 780 nm microcomb (Si₃N₄ resonators from 150 mm wafers, self-injection-locked III–V laser diodes) referenced to ⁸⁵Rb drove an optical lattice and a Raman coupling in an ⁸⁷Rb Bose–Einstein condensate in 2026 [P][886]. The light was chip-generated but delivered through free space, and it controlled a quantum gas, not qubits: no chip-generated trap or gate was involved.
+
 ## Manufacturing, materials & supply chain
 Silicon nitride photonic-IC processes; the 50-atom array uses glass waveguides [D][580]. Pasqal's photonics came from Aeponyx at an undisclosed price under 18 months before the August 2026 release, and no foundry partner is named [C][581]. Nearest merchant capacity: imec's PIXEurope pilot line (~EUR 400 M, 2024-11-24) and GlobalFoundries' Quantum Technology Solutions ($375 M CHIPS letter of intent, 2026-05-21) — both name photonics as an output, neither names atom traps [G][582][G][353]. Thin-film lithium niobate vendors HyperLight and Lightium are the candidates if fast switching becomes the requirement [P][518]. No yield, per-channel cost or export-control category for atom-trap photonics was found as of 2026-09-04.
 
@@ -77,6 +79,7 @@ Confirm/demote in 12–24 months: anyone runs a two-qubit gate through a chip-ge
 [580] Y.-D. Hu *et al.*, “A scalable chip-integrated single-photon source array based on 50 individually addressable neutral atoms,” [arXiv:2608.15637](https://arxiv.org/abs/2608.15637), Aug. 2026. [D]
 [581] M. U. Rehman, “Pasqal Demonstrates Photonic Chip-Based Control for Neutral-Atom Quantum Computers,” The Quantum Insider, Aug. 10, 2026. [Online]. Available: https://thequantuminsider.com/2026/08/10/pasqal-photonic-chip-control-neutral-atom-quantum-computers/ [C]
 [582] imec, “The European Commission and Chips JU select the PIXEurope consortium to lead the European Pilot Line on Advanced Photonic Integrated Circuits,” Nov. 24, 2024. [Online]. Available: https://www.imec-int.com/en/press/european-commission-and-chips-ju-select-pixeurope-consortium-lead-european-pilot-line [G]
+[886] W. Sun *et al.*, “A photonic integrated comb engine for ultracold quantum gases,” [arXiv:2609.28294](https://arxiv.org/abs/2609.28294), Sep. 2026. [P]
 
 ## Open verification items
 - The institutional affiliation of the 50-atom array authors is inferred from the author list (Zou, Guo, Ren, Li) as USTC; the abstract page does not state it.

@@ -92,6 +92,8 @@ updated: 2026-09-30
 
 לאשר בתוך 12–24 חודשים אם: קבוצה כלשהי תדווח על Λ ≥ 3 לאורך ≥10⁵ מחזורים; שער לוגי דו-קיוביטי ב-d ≥ 5 יגיע ל-99% ללא בחירה בדיעבד; טלאי ירוץ על פני שני מודולים; טלאים רתומים יופיעו בחומרה. להוריד בדרגה אם זיכרון qLDPC יגבר על טלאי של קוד המשטח במספר קיוביטים שווה לפני סוף 2027. התרחיש הטוב ביותר עד 2029: כמה מאות קיוביטים לוגיים ב-10⁻⁶ על 10⁵–10⁶ קיוביטים פיזיים, והפענוח סחורה — מה ש-Starling ו-Libra מניחים. התרחיש הגרוע ביותר: Λ נשאר סמוך ל-2, d ≈ 25 נשאר מחירו של 10⁻⁶, והקוד שורד רק כמדד ביצועים. שאלות פתוחות: (1) האם Λ מחזיק מעל 10³ קיוביטים פיזיים, שם ההפרעה ההדדית והסחיפה גדלות אחרת? (2) האם הרתימה יכולה לרוץ בחומרה, או שפענוח הקוד החיצוני מכשיל את תקציב הזמן האמת? (3) כמה מהשיא של 2026 הוא כיול ולא פיזיקה, בהינתן שהיגוי בלמידת חיזוק לבדו הזיז את d=7 מ-1.43×10⁻³ ל-7.72×10⁻⁴? לעקוב: צעד המרחק הבא של Google ו-Kookaburra של IBM.
 
+ניתוח סריג המפוצל בין שני מעבדים המחוברים בקישור פוטוני אינו שומר מאליו על מרחק d בתפר: ממשק ישר של זוגות בל נותן d + 1 על תוצאת המיזוג, אך רק ⌊(d + 1)/2⌋ על הגודל הנצפה הניצב, חלוקה בזיגזג משיבה את d, ותפר היתוך של מצב אשכול ליניארי נותן 2d + 1 ו-d — מרחקים הסופרים רק תקלות בממשק [P][893].
+
 ## מקורות
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [2] V. Sivak *et al.*, “Reinforcement learning control of quantum error correction,” *Nature*, vol. 655, no. 8124, pp. 879–884, Jul. 2026, doi: [10.1038/s41586-026-10759-2](https://doi.org/10.1038/s41586-026-10759-2). [D]
@@ -121,6 +123,7 @@ updated: 2026-09-30
 [660] Riverlane, “Riverlane awarded £2.1m by Horizon Europe to develop the next generation of its quantum error correction decoder,” May 1, 2024. [Online]. Available: https://www.riverlane.com/press-release/riverlane-awarded-2-1m-by-horizon-europe-to-develop-the-next-generation-of-its-quantum-error-correction-decoder [C]
 [661] Riverlane, “Riverlane raises $75 million to meet surging global demand for quantum error correction technology,” Aug. 6, 2024. [Online]. Available: https://www.riverlane.com/press-release/riverlane-raises-75-million-to-meet-surging-global-demand-for-quantum-error-correction-technology [C]
 [662] A. B. Ziad, A. Zalawadiya, B. Barber, and L. Skoric, “Quantum decoder,” Google Patents, Dec. 10, 2025. [Online]. Available: https://patents.google.com/patent/GB2641501A/en [G]
+[893] F. Burt *et al.*, “Loss-tolerant distributed lattice surgery using fusion networks,” [arXiv:2610.01923](https://arxiv.org/abs/2610.01923), Oct. 2026. [P]
 
 ## פריטי אימות פתוחים
 

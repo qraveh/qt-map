@@ -18,7 +18,7 @@ SHORT = {
 # the fifteen technologies added on 26–27 Sep 2026 (the map showed their ids until 27 Sep evening — the editor's finding)
 SHORT.update({
 'enc_opt':('Optical qubit','Оптический кубит','קיוביט אופטי'),'enc_gr':('Ground–Rydberg qubit','Осн.–ридберг. кубит','קיוביט יסוד–רידברג'),
-'g_rydanalog':('Analog Rydberg','Аналоговый Ридберг','רידברג אנלוגי'),'g_lointer':('Linear interferometer','Линейный интерферометр','אינטרפרומטר ליניארי'),
+'g_rydanalog':('Analogue Rydberg','Аналоговый Ридберг','רידברג אנלוגי'),'g_lointer':('Linear interferometer','Линейный интерферометр','אינטרפרומטר ליניארי'),
 'cx_reload':('Atom reload','Дозагрузка атомов','טעינת אטומים מחדש'),'ct_vio':('Vertical I/O (VIO)','Верт. ввод-вывод (VIO)','קלט-פלט אנכי (VIO)'),'ct_ionaod':('Free-space AOD beams','Пучки АОД','אלומות AOD'),
 'ro_reset':('Fast reset','Быстрый сброс','איפוס מהיר'),'ro_fluxro':('Flux readout (QFP)','Считывание потока','קריאת שטף (QFP)'),'ro_homodyne':('Homodyne (CV)','Гомодин (непр. перем.)','הומודיני (CV)'),
 'code_mitig':('Error mitigation','Смягчение ошибок','הפחתת שגיאות'),'code_detect':('Detection codes','Коды обнаружения','קודי גילוי'),

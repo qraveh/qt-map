@@ -68,6 +68,8 @@ updated: 2026-09-30
 ## תחזית ושאלות פתוחות
 לאשר עד 2028 אם מפענח מקדים קריוגני כלשהו יימסר לייצור ויניב צורן שנמדד; להוריד בדרגה אם הספרות של 2027 עדיין תסתפק בנתונים שלאחר סינתזה. התרחיש הטוב ביותר ל-2029: דוחס ב-4 K, בתוך מערכת הקשורה ל-QBI, סופג את תעבורת הסינדרומים לפני רתמת הכבלים. התרחיש הגרוע ביותר: הפענוח בטמפרטורת החדר גדל יחד עם קודי qLDPC וקישורים מהירים יותר. שאלות פתוחות: איזה קו בסיס של הספק צריך לקבוע את ממדי המפענח הקר; האם לוגיקת הפענוח יכולה לחלוק שלב עם הבקרה בלי להחזיר את הרעלת הקוואזי-חלקיקים; האם פלטפורמה כלשהי תיתקל בחומת מעברי הדופן לפני 10⁴ קיוביטים. לעקוב אחר הרישום של SEEQC למסחר ואחר מפת הדרכים של IBM שלאחר HRL.
 
+תקציב הצמתים הקובע את גודלו של מפענח קוונט שטף בודד (SFQ) יורד בצד התכן: ספריית תאים xSFQ ללא שעון, עם מגברי פיצול מובנים, מקטינה את מספר צמתי ג'וזפסון פי 2.7–3.4 (63–71%) במעגלי בחינת ביצועים סטנדרטיים של לוגיקה חד-מחזורית וב-41–66% במעגלים בצנרת, ותא אחד יוצר ואומת ב-4.2 K [P][897]. לא נבנה מפענח; הנתונים הם ללוגיקה כללית.
+
 ## מקורות
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [550] S. Kawabata, “Integration and Resource Estimation of Cryoelectronics for Superconducting Fault-Tolerant Quantum Computers,” [arXiv:2601.03922](https://arxiv.org/abs/2601.03922), Jan. 2026. [S]
@@ -77,6 +79,7 @@ updated: 2026-09-30
 [744] A. Holmes *et al.*, “NISQ+: Boosting quantum computing power by approximating quantum error correction,” [arXiv:2004.04794](https://arxiv.org/abs/2004.04794), Apr. 2020. [S]
 [745] Y. Ueno, M. Kondo, M. Tanaka, Y. Suzuki, and Y. Tabuchi, “QECOOL: On-Line Quantum Error Correction with a Superconducting Decoder for Surface Code,” arXiv, Nov. 8, 2021. [Online]. Available: https://arxiv.org/abs/2103.14209 [S]
 [746] G. Tao *et al.*, “CryoZip: An Efficient Cryogenic Compressor for Quantum Error Correction Syndromes,” [arXiv:2606.30805](https://arxiv.org/abs/2606.30805), Jun. 2026. [S]
+[897] P. Papanikolaou, A. Vanasse, H. Jin, G. Tzimpragos, and J. Volk, “Duplication-aware retiming and cell interface redesign for superconductor circuit minimization,” [arXiv:2610.02333](https://arxiv.org/abs/2610.02333), Oct. 2026. [P]
 
 ## פריטי אימות פתוחים
 מענק DOE ARQC DE-SC0025633 מופיע בתודות של מאמר CryoZip, אך סכום בדולרים אינו מופיע באף מקור שנבדק; מטופל כלא מכומת.

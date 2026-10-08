@@ -25,6 +25,8 @@ Three spins span eight states and the qubit uses two, so population leaks into t
 
 Dominant term: extrinsic control and calibration, then leakage; best reproducible CNOT 9×10⁻⁴ [D][190].
 
+Benchmarked as one system rather than as encoded qubits, 48 spins of HRL's 54-dot device span the whole total-spin-zero space, of dimension C₂₄ ≈ 2⁴⁰ (a Catalan number), which includes the states a three-spin encoding treats as leakage; mirror randomised benchmarking gives an error of 3.2×10⁻⁴ per exchange pulse (2.2×10⁻⁴ device-wide by cross-entropy benchmarking), with the 4 K cryo-CMOS controller in the loop [P][900]. That is an error per exchange pulse, not a two-qubit gate error: at 37 exchanges per encoded CNOT the additive estimate is about 1%. The space has no local qubits, and no method yet compiles programs or runs error correction in it [P][900].
+
 ## Manufacturing, materials & supply chain
 Three dots per qubit — two for singlet–triplet — triples gate-stack density per logical unit on the hosting 300 mm process, with no encoding-specific step.  The win is control: purely baseband, no microwave lines or micromagnets, the sequencer inside a 4 K controller in commercial 130 nm RF CMOS — 366 DACs, 296 lines, ≤3.5 W, no room-temperature real-time electronics [D][190] — the first sign a control rack can become a cold ASIC. That sets the wall: ≤3.5 W for 18 qubits is ≈0.2 W per qubit, so 10³ qubits need hundreds of watts at 4 K, one to two orders beyond a standard pulse-tube stage [S][190]. Power per qubit, not line count, is the scaling problem.
 
@@ -57,6 +59,7 @@ Confirm or demote in 12–24 months: a second laboratory reproducing the 18-qubi
 [190] Members of the HRL Quantum Team and Collaborators, “A digitally controlled silicon quantum processing unit,” [arXiv:2604.16216](https://arxiv.org/abs/2604.16216), Apr. 2026. [D]
 [416] D. P. DiVincenzo, D. Bacon, J. Kempe, G. Burkard, and K. B. Whaley, “Universal quantum computation with the exchange interaction,” *Nature*, vol. 408, no. 6810, pp. 339–342, 2000, doi: [10.1038/35042541](https://doi.org/10.1038/35042541). [arXiv:quant-ph/0005116](https://arxiv.org/abs/quant-ph/0005116). [S]
 [417] J. D. Broz, J. C. Hoke, E. Acuna, and J. R. Petta, “Demonstration of an always-on exchange-only spin qubit,” *Nat. Commun.*, vol. 17, no. 1, Art. no. 4794, Apr. 2026, doi: [10.1038/s41467-026-70943-w](https://doi.org/10.1038/s41467-026-70943-w). [D]
+[900] HRL Quantum Team and Microsoft collaborators, “Benchmarking exchange-only control of a 48-spin singlet manifold,” [arXiv:2610.07393](https://arxiv.org/abs/2610.07393), Oct. 2026. [P]
 
 ## Open verification items
 The 0.2 W per qubit figure is arithmetic on HRL's published controller power and qubit count, not a scaling number the paper states. HRL's ~80% extrinsic-error attribution is self-reported and unreplicated. Neither the UCLA nor the HRL result has an independent replication, and no exchange-only device has published all-pairs two-qubit fidelities.

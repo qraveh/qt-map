@@ -1,5 +1,5 @@
 {
- "next": 884,
+ "next": 901,
  "works": [
   {
    "n": 1,
@@ -7376,6 +7376,161 @@
     "t:integrated multi wavelength control of an ion qubit"
    ],
    "label": "NSS+20"
+  },
+  {
+   "n": 884,
+   "ids": [
+    "doi:10.1038/s41567-026-03402-4",
+    "arxiv:2509.11477",
+    "u:nature:s41567-026-03402-4",
+    "u:arxiv:2509.11477",
+    "t:quantum field theory dynamics on a spin phonon quantum compu"
+   ],
+   "label": "TKV+26"
+  },
+  {
+   "n": 885,
+   "ids": [
+    "doi:10.1038/s41567-026-03471-5",
+    "u:nature:s41567-026-03471-5",
+    "t:deterministic and programmable fusion for the scalable gener"
+   ],
+   "label": "LYB+26"
+  },
+  {
+   "n": 886,
+   "ids": [
+    "arxiv:2609.28294",
+    "u:arxiv:2609.28294",
+    "t:a photonic integrated comb engine for ultracold quantum gase"
+   ],
+   "label": "SYL+26"
+  },
+  {
+   "n": 887,
+   "ids": [
+    "arxiv:2609.29736",
+    "u:arxiv:2609.29736",
+    "t:100 million photons per second from a single organic molecul"
+   ],
+   "label": "LHS+26"
+  },
+  {
+   "n": 888,
+   "ids": [
+    "arxiv:2609.33251",
+    "u:arxiv:2609.33251",
+    "t:high fidelity geometric quantum gates exceeding 99 9 in germ"
+   ],
+   "label": "ZMK+26"
+  },
+  {
+   "n": 889,
+   "ids": [
+    "arxiv:2609.35447",
+    "u:arxiv:2609.35447",
+    "t:efficient classical algorithm for estimating linear statisti"
+   ],
+   "label": "STA+26"
+  },
+  {
+   "n": 890,
+   "ids": [
+    "arxiv:2609.31280",
+    "u:arxiv:2609.31280",
+    "t:quantum environment afterglow from broadband excitation spec"
+   ],
+   "label": "GLG+26"
+  },
+  {
+   "n": 891,
+   "ids": [
+    "arxiv:2609.31830",
+    "u:arxiv:2609.31830",
+    "t:probing the classical complexity of quantum dynamics experim"
+   ],
+   "label": "SE26"
+  },
+  {
+   "n": 892,
+   "ids": [
+    "arxiv:2609.39226",
+    "u:arxiv:2609.39226",
+    "t:metrological benchmarking of random quantum circuits"
+   ],
+   "label": "CO26"
+  },
+  {
+   "n": 893,
+   "ids": [
+    "arxiv:2610.01923",
+    "u:arxiv:2610.01923",
+    "t:loss tolerant distributed lattice surgery using fusion netwo"
+   ],
+   "label": "BML+26"
+  },
+  {
+   "n": 894,
+   "ids": [
+    "arxiv:2610.01839",
+    "u:arxiv:2610.01839",
+    "t:toward optimal circuit depth for geometrically local hamilto"
+   ],
+   "label": "SWY+26"
+  },
+  {
+   "n": 895,
+   "ids": [
+    "arxiv:2610.03586",
+    "u:arxiv:2610.03586",
+    "t:lifting multiplicity in randomized benchmarking"
+   ],
+   "label": "FM26"
+  },
+  {
+   "n": 896,
+   "ids": [
+    "arxiv:2610.05222",
+    "u:arxiv:2610.05222",
+    "t:efficient fidelity estimation of general quantum resource st"
+   ],
+   "label": "TF26"
+  },
+  {
+   "n": 897,
+   "ids": [
+    "doi:10.1145/3770743.3803985",
+    "arxiv:2610.02333",
+    "u:arxiv:2610.02333",
+    "t:duplication aware retiming and cell interface redesign for s"
+   ],
+   "label": "PVJ+26"
+  },
+  {
+   "n": 898,
+   "ids": [
+    "arxiv:2610.07683",
+    "u:arxiv:2610.07683",
+    "t:sparse qubit operation in a 6 6 quantum dot array"
+   ],
+   "label": "ICC+26"
+  },
+  {
+   "n": 899,
+   "ids": [
+    "arxiv:2609.37766",
+    "u:arxiv:2609.37766",
+    "t:spin exchange interactions between circular rydberg atoms ov"
+   ],
+   "label": "DCY+26"
+  },
+  {
+   "n": 900,
+   "ids": [
+    "arxiv:2610.07393",
+    "u:arxiv:2610.07393",
+    "t:benchmarking exchange only control of a 48 spin singlet mani"
+   ]
   }
  ]
 }

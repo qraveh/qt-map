@@ -41,6 +41,8 @@ updated: 2026-09-30
 
 Управляющий кристалл — многослойная структура Nb/AlOx/Nb: восемь и более планаризованных ниобиевых слоёв, 10⁴–10⁶ переходов, — в отличие от алюминиевого кубитного процесса [D][569]. Фабрик мало: MIT Lincoln Laboratory (линия SFQ5ee, кубитная фабрика SQUILL) [C][570], ниобиевый процесс AIST с библиотеками ячеек [D][571] и коммерческая фабрика SEEQC в Elmsford, штат New York [C][572]. Выход годных требует разброса критического тока в единицы процентов на тысячах переходов. Экспортная уязвимость (правило BIS от 2024-09-06): ECCN 3A904, 3B904 и 4A906; позиция 3A901.a при буквальном прочтении охватывает только криогенные КМОП-схемы [G][301]. Единые точки отказа: рефрижераторы растворения, посадка на индиевые бампы, установки напыления ниобия и CMP.
 
+Сверхпроводниковая электроника интегрирует 1–10 млн переходов на cm² против более чем 10 млрд транзисторов на cm² в передовой КМОП-технологии (цифры из технологических статей MIT Lincoln Laboratory, на которые ссылаются авторы). Выигрыш на уровне проектирования — например, бестактовые ячейки xSFQ со встроенными усилителями разветвления (fan-out): в 2.7–3.4 раза меньше переходов на стандартных эталонных схемах, одна ячейка изготовлена по процессу SFQ5ee в MIT Lincoln Laboratory (плотность критического тока 10 kA/cm²) и проверена при 4.2 K — повышает функциональную плотность, но не плотность интеграции [P][897].
+
 ## Управление, считывание и нагрузка на ввод-вывод
 
 Комнатнотемпературному управлению нужен примерно один коаксиал привода и одна потоковая линия на трансмон, так что предел ему задают сечение криостата и тепловая нагрузка; платформа класса KIDE предлагает > 4,000 ВЧ-линий для «более 1000 кубитов» [C][G:BLUEFORS-KIDE]. БОК-управлению нужен тактовый сигнал плюс низкоскоростной поток инструкций [D][304]. Считывание на БОК существует лишь как схема в препринте [S][568]; потоковое смещение SEEQC относит к будущим работам [C][53].
@@ -111,6 +113,7 @@ updated: 2026-09-30
 [572] SEEQC, “SEEQC Secures $22.4 Million In Series A Round; Strategic Investment Led By EQT Ventures,” Sep. 16, 2020. [Online]. Available: https://seeqc.com/resources/seeqc-secures-22.4-million-in-series-a-round-strategic-investment-led-by-eqt-ventures [C]
 [573] SIP Global Partners, “SIP Global Partners Participates in $30M Round for SEEQC, Developer of the World's First Full-Stack Processor for Quantum Computers,” PRWeb, Jan. 16, 2025. [Online]. Available: https://www.prweb.com/releases/sip-global-partners-participates-in-30m-round-for-seeqc-developer-of-the-worlds-first-full-stack-processor-for-quantum-computers-302352970.html [P]
 [574] Allegro Merger Corp.; SeeQC, Inc., “Settlement, Termination and Release Agreement,” U.S. Securities and Exchange Commission (EDGAR), Aug. 2026. [Online]. Available: https://www.sec.gov/Archives/edgar/data/1779977/000121390026095175/ea028847004ex2-2.htm [G]
+[897] P. Papanikolaou, A. Vanasse, H. Jin, G. Tzimpragos, and J. Volk, “Duplication-aware retiming and cell interface redesign for superconductor circuit minimization,” [arXiv:2610.02333](https://arxiv.org/abs/2610.02333), Oct. 2026. [P]
 
 ## Открытые пункты верификации
 

@@ -1,0 +1,1461 @@
+{
+ "date": "2026-10-08",
+ "source": "the editor's session of 8 Oct 2026: decisions D1–D9 of the review packet of 5 Oct, the digest intake of the 2026-10-08 issue (industry stream and paper channel), the WP2 pilot tagging of every two-qubit error figure (data/register/machine-2q-classes.csv) and the corrections it found",
+ "items": [
+  {
+   "kind": "status",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-tempo"
+   },
+   "fields": {
+    "status": "DEMONSTRATED",
+    "status_date": "25 Sep 2025",
+    "physical_qubits_num": "64"
+   },
+   "note": "DEPLOYED → DEMONSTRATED (25 Sep 2025) with 64 qubits — IonQ ran #AQ 64 on a \"Tempo development system\" in one ion chain, while its own systems page lists the 100-qubit Tempo product for \"Late 2026\" with 100 \"Target qubits\" and 99.9% \"Target fidelity\", which move to the roadmap; no two-qubit error is published for the device; the \"256\" belongs to the separate Superion 256 row; the 99.99% in IonQ's 8-K exhibits is Oxford Ionics' two-ion result. The editor's decision D1 (option A), 8 Oct 2026.",
+   "sources": [
+    "https://www.ionq.com/blog/ionq-hits-aq-64-milestone-ahead-of-schedule-and-sets-its-sights-even-higher",
+    "https://www.ionq.com/news/ionq-achieves-record-breaking-quantum-performance-milestone-of-aq-64",
+    "https://www.ionq.com/quantum-systems/compare",
+    "https://www.sec.gov/Archives/edgar/data/1824920/000119312525266878/ionq-ex99_1.htm"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "nordquantique-tesseract"
+   },
+   "fields": {
+    "roadmap": "fault tolerance 2028-2029; 256 logical qubit system by 2030 (technology page, read Oct 2026)"
+   },
+   "note": "«our path to fault tolerance leverages these achievements and aims to deliver a 256 logical qubit system by 2030» (digest intake 2026-10-08, the industry stream)",
+   "sources": [
+    "https://www.nordquantique.com/technology"
+   ],
+   "intake": "c14df6a694fc24f9"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "pasqal-orion"
+   },
+   "fields": {
+    "demonstrated_algorithms": "analog optimisation and materials Hamiltonians; simulation of the magnetic material TmMgGaO₄ with up to 256 atoms on Orion Beta QPUs, compared against laboratory measurements (with academic partners; reported 24 Sep 2026)"
+   },
+   "note": "«Pasqal and its academic partners used up to 256 atoms on Pasqal’s Orion Beta QPUs to simulate the magnetic material TmMgGaO₄ and compared the results against laboratory measurements» (digest intake 2026-10-08, the industry stream)",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/2119292/000121390026102831/ea030634601ex99-1.htm"
+   ],
+   "intake": "45d1442311bb3b4e"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-superion-256"
+   },
+   "fields": {
+    "access": "orders open; a Superion 256 planned for deployment with an SDT customer in South Korea (announced 21 Sep 2026, no date)"
+   },
+   "note": "«Deployment will bring the first IonQ Superion 256 system and first silicon-vacancy quantum memory module to South Korea» (digest intake 2026-10-08, the industry stream)",
+   "sources": [
+    "https://ionq.com/news/ionq-and-sdt-announce-the-first-strategic-partnership-to-bring-both-advanced-quantum-computing-and-quantum-networking-to-the-asia-pacific-region"
+   ],
+   "intake": "bdfbf7217571d859"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "organisation",
+    "id": "d-wave-quantum"
+   },
+   "fields": {
+    "event": "funding",
+    "date": "2026-09-08"
+   },
+   "note": "2026-09-08 — D-Wave Quantum executed a definitive agreement with the U.S. Department of Commerce giving it access to up to $100 million of CHIPS and Science Act funding for R&D on its annealing and gate-model systems; the Department receives a minority, non-controlling equity stake. [SEC 8-K exhibit]",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1907982/000190798226000141/chipsactpressrelease.htm"
+   ],
+   "intake": "f95978dce4a07689"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "organisation",
+    "id": "quantinuum"
+   },
+   "fields": {
+    "event": "funding",
+    "date": "2026-09-08"
+   },
+   "note": "2026-09-08 — Quantinuum finalized an agreement with the U.S. Department of Commerce's CHIPS Research and Development Office for $100 million in federal funding under the CHIPS and Science Act, for R&D and U.S. quantum semiconductor manufacturing capabilities needed to deploy large-scale, fault-tolerant trapped-ion quantum computers. [SEC 8-K exhibit]",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/2110105/000162828026060934/quantinuum-finalizesx100.htm"
+   ],
+   "intake": "48a92bf0321862ac"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "organisation",
+    "id": "pasqal"
+   },
+   "fields": {
+    "event": "lab result",
+    "date": "2026-09-24"
+   },
+   "note": "Pasqal's H1-2026 results (Form 6-K exhibit, 24 Sep 2026) report defect-free registers of 1,024 atoms on a redesigned cryogenic platform — a laboratory result, not a register device (Orion is cryogenics-free; no machine, gate or paper named); and up to 256 atoms used on Orion Beta QPUs in one TmMgGaO4 simulation — the Orion row keeps 140 qubits (per-site systems of 140 and 200), the 256-atom run is in its prose.",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/2119292/000121390026102831/ea030634601ex99-1_pasqal.htm"
+   ]
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "machine",
+    "id": "quantum-art-montage"
+   },
+   "fields": {
+    "status": "ANNOUNCED",
+    "physical_qubits_num": "50"
+   },
+   "note": "Quantum Art's first-generation QaaS system \"Montage\" (up to 50 qubits; the owner's roadmap: \"2025 Launching our 1st generation QaaS system of up to 50 qubits (Montage Series)\"); the QaaS access text moves here from the Perspective row. Digest intake 2026-10-08 (catalogue audit); the editor's tier.",
+   "sources": [
+    "https://quantum-art.tech/roadmap"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "google-sycamore-54"
+   },
+   "fields": {
+    "err_2q_median": "6.0e-3 median, simultaneous XEB Pauli error (86 pairs; mean 6.2e-3); isolated median 3.0e-3 (mean 3.6e-3)",
+    "err_2q_median_num": "0.006",
+    "err_2q_best": ""
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): Table II: 2Q XEB e2 isolated / simultaneous 0.30 / 0.60 [median] 0.36 / 0.62 [mean] %; Two-qubit metrics represent 86 pairs.; Table II: 2Q XEB e2 isolated / simultaneous 0.30 / 0.60 [median] 0.36 / 0.62 [mean] %; Two-qubit metrics represent 86 pairs.; Table II: 2Q XEB e2 isolated / simultaneous 0.30 / 0.60 [median] 0.36 / 0.62 [mean] %; Two-qubit metrics represent 86 pairs.",
+   "sources": [
+    "https://arxiv.org/abs/1910.11333"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ustc-zuchongzhi-3.0"
+   },
+   "fields": {
+    "err_2q_median": "3.27e-3 median, simultaneous XEB Pauli error of the iSWAP-like gates (83-qubit subset; mean 3.75e-3, i.e. 99.62%)",
+    "err_2q_median_num": "0.00327"
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): Parameters Mean Median Stdev. … 2Q XEB e2 simultaneous (‰) 3.75 3.27 1.60 … TABLE S1. Summary of system parameters of the 83-qubit subset.; Parameters Mean Median Stdev. … 2Q XEB e2 simultaneous (‰) 3.75 3.27 1.60 … TABLE S1. Summary of system parameters of the 83-qubit subset.",
+   "sources": [
+    "https://arxiv.org/abs/2412.11924"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-h2"
+   },
+   "fields": {
+    "err_2q_median": "<1e-3 vendor headline ('>99.9%' two-qubit gate fidelity, H2 product page; no protocol, no device median published)",
+    "err_2q_best": "1.57(5)e-3 average 2Q RB infidelity over the 4 gate zones (8 qubits) in the RCS run (99.843(5)%)",
+    "refs": "teleport;codeswitch;tesseract-nature;qtm-rcs;certrand;jpmc-logical;qtm-h2"
+   },
+   "note": "Two-qubit error figure corrected against its source (class C; WP2 pilot tagging, 8 Oct 2026): \">99.9%\" two-qubit gate fidelity (spec block; no protocol named); The average 2Q gate infidelity was estimated by combining all four pairs of gate-zone qubit's 2Q RB data … ϵ2Q = 1.57(5)×10−3; \">99.9%\" two-qubit gate fidelity (spec block; no protocol named)",
+   "sources": [
+    "https://arxiv.org/abs/2406.02501",
+    "https://www.quantinuum.com/products-solutions/quantinuum-systems/system-model-h2"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "aws-dualrail"
+   },
+   "fields": {
+    "err_2q_best": ""
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): AWS dual-rail: the 7.2e-5 in the two-qubit best column was a single-qubit gate error (arXiv 2604.16292); cleared.",
+   "sources": [
+    "https://arxiv.org/html/2604.16292v1"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "sqc-11q"
+   },
+   "fields": {
+    "err_2q_median": "3.6e-3 (electron CROT 99.64(8)% by interleaved 2Q-RB on one pair, one nuclear-spin configuration; no device-level figure)",
+    "err_2q_median_num": "",
+    "err_2q_best": "1.0e-3 (nuclear CZ n6-n9, 99.90(4)% by interleaved 2Q-RB, one pair)",
+    "gate_evidence": "device-benchmark"
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): SQC 11-qubit: the 1.0e-4 best was a single-qubit figure; the paper's best two-qubit gate is the nuclear CZ at 99.90(4)%, and the 99.64% CROT is a single-pair value, so it is no longer ranked (arXiv 2506.03567).",
+   "sources": [
+    "https://arxiv.org/abs/2506.03567"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "atom-computing-phoenix"
+   },
+   "fields": {
+    "err_2q_median": "4.3(1.9)e-3 per CZ by interleaved RB, post-selected on survival of both atoms; CZ loss 9.6(2.0)e-3 per gate not included (toric-code paper, Jun 2026); system not named in the paper; vendor claim for Phoenix 99.6% (no protocol)",
+    "err_2q_median_num": "",
+    "gate_evidence": "vendor-figure"
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): Atom Computing: 4e-3 matches the loss-post-selected CZ error 4.3e-3 that excludes 9.6e-3 CZ loss per gate (arXiv 2606.04079), so it is no longer ranked.",
+   "sources": [
+    "https://arxiv.org/abs/2606.04079"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "qci-seeker-8"
+   },
+   "fields": {
+    "err_2q_median": "1.08(5)e-3 per CZ by interleaved RB, post-selected on no erasure (IRB on seven two-qubit systems, statistic not stated); erasure probability 0.53(2)% per CZ not included",
+    "err_2q_median_num": "",
+    "gate_evidence": "device-benchmark"
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): QCI Seeker: ~1e-3 is the erasure-post-selected IRB error 1.08e-3; the paper gives 0.53% erasure probability per CZ and no ~1e-2 'including erasures' figure (Nature s41586-026-10822-y), so it is no longer ranked.",
+   "sources": [
+    "https://www.nature.com/articles/s41586-026-10822-y"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quandela-belenos"
+   },
+   "fields": {
+    "err_2q_median": "not published for Belenos; the 6.2e-2 is the Ascella prototype's post-selected CNOT (average gate fidelity 93.8 +- 0.6%, symmetry-based estimation, SPAM included)",
+    "err_2q_median_num": "",
+    "err_2q_best": ""
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): Table I: Average gate fidelities … 2 CNOT 93.8 ± 0.6 … values are a lower bound … include errors related to state preparation and measurement; Table I: Average gate fidelities … 2 CNOT 93.8 ± 0.6 … values are a lower bound … include errors related to state preparation and measurement; Table I: Average gate fidelities … 2 CNOT 93.8 ± 0.6 … values are a lower bound … include errors related to state ",
+   "sources": [
+    "https://arxiv.org/abs/2306.00874"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "uibk-innsbruck-ion"
+   },
+   "fields": {
+    "err_2q_median": "not published in the cited refs; the 2.5e-2 is the two-qubit depolarizing probability of a simulation noise model (measurement-free paper, Table I)",
+    "err_2q_median_num": ""
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): two-qubit depolarizing noise … with a probability p2 = 2.5·10−2 … The values of the error rates correspond to the ones in our experimental setup; two-qubit depolarizing noise … with a probability p2 = 2.5·10−2 … The values of the error rates correspond to the ones in our experimental setup",
+   "sources": [
+    "https://arxiv.org/abs/2506.22600"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ustc-zuchongzhi-2.1"
+   },
+   "fields": {
+    "err_2q_median": "5.2e-3 median, simultaneous XEB Pauli error (99 iSWAP-like gates, 60 qubits; mean 6.0e-3; isolated median 4.0e-3)",
+    "err_2q_median_num": "0.0052"
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): TABLE S1 (Mean, Median, Stdev.): 2Q XEB e2 isolated / simultaneous (%) 0.48 / 0.60, 0.40 / 0.52, 0.31 / 0.30; TABLE S1 (Mean, Median, Stdev.): 2Q XEB e2 isolated / simultaneous (%) 0.48 / 0.60, 0.40 / 0.52, 0.31 / 0.30",
+   "sources": [
+    "https://arxiv.org/abs/2109.03494"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "harvard-448"
+   },
+   "fields": {
+    "err_2q_median": "~5e-3 (CZ fidelity 99.3-99.6% by randomized benchmarking, global Rydberg pulse on many pairs; error budget 'roughly 0.5%'; statistic over pairs not named)",
+    "err_2q_median_num": "0.005"
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): Harvard 448-atom: ~1.6e-3 is not in the source; the paper gives CZ fidelity 99.3-99.6% by RB, about 0.5% error (arXiv 2506.20661).",
+   "sources": [
+    "https://arxiv.org/abs/2506.20661"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-aria"
+   },
+   "fields": {
+    "err_2q_median": "6e-3 (vendor page: 2Q gate error 0.6%, measured with concatenated Mølmer-Sørensen gates; statistic not named)",
+    "err_2q_median_num": "0.006",
+    "refs": "ionq-forte;ionq-aria"
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): 2-Qubit gate error 0.6% … This characterization of Aria 2Q gates was collected using a concatenated Mølmer-Sørenson gate technique; 2-Qubit gate error 0.6% … This characterization of Aria 2Q gates was collected using a concatenated Mølmer-Sørenson gate technique; 2-Qubit gate error 0.6% … This characterization of Aria 2Q gates was collected using a concatenated Mølmer-Sørenson gate technique",
+   "sources": [
+    "https://www.ionq.com/quantum-systems/aria"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "rigetti-ankaa-3"
+   },
+   "fields": {
+    "err_2q_median": "5e-3 (99.5% median 2Q gate fidelity, Rigetti Ankaa-3 launch release; gate type and protocol not named)",
+    "err_2q_median_num": "0.005",
+    "refs": "cepheus;rigetti-pq;ankaa3-launch"
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): Ankaa-3 has achieved a 99.5% median two-qubit gate fidelity.; Ankaa-3 has achieved a 99.5% median two-qubit gate fidelity.; Ankaa-3 has achieved a 99.5% median two-qubit gate fidelity.",
+   "sources": [
+    "https://www.rigetti.com/news/rigetti-computing-launches-84-qubit-ankaa-3-system-achieves-99-5-median-two-qubit-gate-fidelity-milestone"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-eagle"
+   },
+   "fields": {
+    "err_2q_median": "7.4e-3 (median ECR, isolated RB, ibm_sherbrooke, 3 Jul 2024); Eagle r3 fleet medians span 7.1e-3 to 1.24e-2, and 2.40e-2 on ibm_cusco (same paper, same date)"
+   },
+   "note": "Two-qubit error figure corrected against its source (class C; WP2 pilot tagging, 8 Oct 2026): ibm cusco … Eagle r3 … As of July 3, 2024, the system demonstrates a median ECR error of 2.398 × 10−2",
+   "sources": [
+    "https://arxiv.org/abs/2410.00916"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "equal1-racq"
+   },
+   "fields": {
+    "err_2q_median": "7e-3 (product page: '2Q Gate Fidelity (average) 99.3%' for UnityQ test silicon under typical operating conditions; protocol not named; no paper; a press survey gave 98.4%)",
+    "err_2q_best": ""
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): Equal1: the product page says only '(average)' for test silicon, not interleaved RB; the 1Q figure left the best column (equal1.com/product).",
+   "sources": [
+    "https://www.equal1.com/product"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "nordquantique-gkp"
+   },
+   "fields": {
+    "err_2q_median": "n/a - no two-qubit gate published; the 7(7)e-4 is a single-mode SPAM error (cardinal states)",
+    "err_2q_best": ""
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): (register cell) SPAM 7(7)e-4 (cardinal states); (register cell) SPAM 7(7)e-4 (cardinal states)",
+   "sources": [
+    "https://arxiv.org/html/2607.06718v1"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "caltech-6100"
+   },
+   "fields": {
+    "err_2q_median": "n/a - no entangling gate; the 2e-4 is a single-qubit infidelity",
+    "err_2q_best": ""
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): Caltech 6100: the 2e-4 in the 2Q best column was a single-qubit infidelity (arXiv 2403.12021); cleared.",
+   "sources": [
+    "https://arxiv.org/abs/2403.12021"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "xanadu-aurora"
+   },
+   "fields": {
+    "err_2q_median": "n/a (loss-dominated): ~56% loss in heralding paths, >95% in heralded optical paths against a ~1% requirement; the 0.62 dB is an effective GKP squeezing value, not a gate error",
+    "err_2q_best": ""
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): (register cell) effective GKP squeezing 0.62 dB against a ~10 dB requirement; (register cell) effective GKP squeezing 0.62 dB against a ~10 dB requirement",
+   "sources": [
+    "https://www.nature.com/articles/s41586-024-08406-9"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "diraq-imec-8q"
+   },
+   "fields": {
+    "err_2q_best": ""
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): Diraq: the 1.5e-3 in the 2Q best column was a single-qubit figure (arXiv 2308.02111); cleared.",
+   "sources": [
+    "https://arxiv.org/abs/2308.02111"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "aqt-ibex-q1"
+   },
+   "fields": {
+    "err_2q_median": "1.3(3)e-2 average over all 66 pairs by 2Q RB (98.7%); a 2026 secondary source says 97.7%",
+    "err_2q_best": "9e-3 (best pair by 2Q RB; worst 1.8e-2)"
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): we find an average two-qubit error rate of (1,3 +/- 0,3)%, with a minimal error of 0,9% and a maximal error of 1,8%.; we find an average two-qubit error rate of (1,3 +/- 0,3)%, with a minimal error of 0,9% and a maximal error of 1,8%.",
+   "sources": [
+    "https://www.aqt.eu/products/ibex-q1/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-forte"
+   },
+   "fields": {
+    "err_2q_median": "4e-3 (vendor page: 2Q gate error 0.4% by direct randomized benchmarking; statistic not named)",
+    "err_2q_best": ""
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): This characterization of Forte 2Q gates is the randomized benchmarking error rate, as measured by Direct Randomized Benchmarking; This characterization of Forte 2Q gates is the randomized benchmarking error rate, as measured by Direct Randomized Benchmarking",
+   "sources": [
+    "https://www.ionq.com/quantum-systems/forte"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quera-gemini"
+   },
+   "fields": {
+    "err_2q_median": "8e-3 (vendor spec: global 2Q gate fidelity 99.2%, up to 20 pairs in parallel; protocol not named); the magic-state-distillation paper measured 99.42(1)% per CZ (5.8e-3) by alternating-gate benchmarking",
+    "err_2q_best": ""
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): We benchmark controlled-phase (CZ) two-qubit gates by driving pairs of blockaded atoms … a fidelity of 99.42(1)% per entangling gate; Delivers 99.9% fidelity on 1-qubit gates and 99.2% on 2-qubit gates … Global 2-Qubit Gate Fidelity 99.2% … Parallel 2-Qubit Gate Pairs 20",
+   "sources": [
+    "https://arxiv.org/abs/2412.15165",
+    "https://www.quera.com/gemini"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "iqm-emerald-54"
+   },
+   "fields": {
+    "err_2q_median": "5e-3 (99.5% median 2Q, early characterization, Amazon Braket launch blog, Jul 2025; protocol not named); IQM's 99.93% CZ (40 h mean) was measured on a separate 2-qubit test chip",
+    "err_2q_best": "",
+    "refs": "iqm-cz;iqm-roadmap;iqm-nvqlink;braket-emerald"
+   },
+   "note": "Two-qubit error figure corrected against its source (class C; WP2 pilot tagging, 8 Oct 2026): Early characterization data shows median single-qubit gate fidelity of 99.93% and median two-qubit gate fidelity of 99.5%.; Early characterization data shows median single-qubit gate fidelity of 99.93% and median two-qubit gate fidelity of 99.5%.; Early characterization data shows median single-qubit gate fidelity of 99.93% and median two-qubit gate fidelity of 99.5%.",
+   "sources": [
+    "https://aws.amazon.com/blogs/quantum-computing/amazon-braket-launches-new-54-qubit-superconducting-quantum-processor-from-iqm/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "sandia-qscout"
+   },
+   "fields": {
+    "err_2q_median": "not benchmarked as a gate in the cited source: Bell-state (entanglement) fidelity 0.978 from parity oscillations on one ion pair; MS gate error listed as 2e-2 (2021 design paper)",
+    "err_2q_best": "",
+    "refs": "qscout"
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): An estimated parity of 0.955 suggests an entanglement fidelity of 0.978. (Table VII: Two-Qubit MS gate 2e-2); An estimated parity of 0.955 suggests an entanglement fidelity of 0.978. (Table VII: Two-Qubit MS gate 2e-2); An estimated parity of 0.955 suggests an entanglement fidelity of 0.978. (Table VII: Two-Qubit MS gate 2e-2)",
+   "sources": [
+    "https://arxiv.org/abs/2104.00759"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ustc-zuchongzhi-3.2"
+   },
+   "fields": {
+    "err_2q_median": "5.06e-3 mean CZ Pauli error, parallel XEB (65 qubits, 104 couplers, logical-CNOT pattern; about 4.0e-3 as average gate error)",
+    "err_2q_median_num": "0.00506"
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): The 1Q and CZ errors are calibrated by parallel cross-entropy benchmarking (XEB) … The average 1Q, CZ, readout … errors are 1.01e-3, 5.06e-3; The 1Q and CZ errors are calibrated by parallel cross-entropy benchmarking (XEB) … The average 1Q, CZ, readout … errors are 1.01e-3, 5.06e-3",
+   "sources": [
+    "https://arxiv.org/abs/2607.01473"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "rigetti-ankaa-2"
+   },
+   "fields": {
+    "err_2q_median": "2.7e-2 median CZ error by interleaved RB on an 8-qubit stability sublattice (CZ reconfigured on an iSWAP-optimised device); the ~1e-2 is not at the cited refs",
+    "err_2q_median_num": "",
+    "gate_evidence": "device-benchmark"
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): the CZs had a median interleaved randomized benchmarking fidelity of 97.3%; the CZs had a median interleaved randomized benchmarking fidelity of 97.3%; the CZs had a median interleaved randomized benchmarking fidelity of 97.3%",
+   "sources": [
+    "https://arxiv.org/abs/2410.05202"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "google-willow"
+   },
+   "fields": {
+    "err_2q_median": "1.5e-3 median iSWAP-like gate Pauli error by simultaneous XEB (103 qubits), not the CZ of the QEC paper; Table SII lists 1.2e-3 +- 0.4e-3 (mean +- s.d.) as a noise-model estimate",
+    "err_2q_best": ""
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): The median two-qubit (iSWAP-like) gate fidelity is 99.85%, obtained using cross-entropy benchmarking (XEB) … measured with all qubits in simultaneous operation; Table SII: Estimated error rates in our device … mean and standard deviation among qubits: ε2Q 1.2e-3 ± 0.4e-3",
+   "sources": [
+    "https://arxiv.org/abs/2506.10191"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "rigetti-cepheus-1-108q"
+   },
+   "fields": {
+    "err_2q_best": ""
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): At launch, the device achieved a median two-qubit gate fidelity of 99.1% with gate speeds of ~ 60 nanoseconds.",
+   "sources": [
+    "https://aws.amazon.com/blogs/quantum-computing/amazon-braket-launches-rigetti-cepheus-1-108q-superconducting-device/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-heron-r2"
+   },
+   "fields": {
+    "err_2q_median": "2.03e-3 median CZ error (IBM dashboard snapshot read at press; isolated RB; backend not named); second source: calibration mean 2.9e-3 over 25 chosen qubits of ibm_fez (Sci. Rep. 2026), not a median"
+   },
+   "note": "Two-qubit error figure corrected against its source (class C; WP2 pilot tagging, 8 Oct 2026): The average error rates for readout and two-qubit gates were 1.6e-2 and 2.9e-3",
+   "sources": [
+    "https://www.nature.com/articles/s41598-026-40381-1"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-helios"
+   },
+   "fields": {
+    "err_2q_median": "7.9(2)e-4 average 2Q RB infidelity over all 8 operation zones (gates in parallel; leakage counted)",
+    "err_2q_best": ""
+   },
+   "note": "Two-qubit error figure corrected against its source (class C; WP2 pilot tagging, 8 Oct 2026): Table II: 2Q gates Avg. infidelity (2QRB) 7.9(2) … Component-level benchmark values, averaged over all operation zones.; Table II: 2Q gates Avg. infidelity (2QRB) 7.9(2) … Component-level benchmark values, averaged over all operation zones.",
+   "sources": [
+    "https://arxiv.org/abs/2511.05465"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ethz-surface17"
+   },
+   "fields": {
+    "err_2q_median": "1.5(1.0)e-2 mean CZ error over 24 pairs, interleaved RB with three gates in parallel (mean, not median)",
+    "err_2q_best": "6e-3 (best of 24 CZ pairs, same protocol; worst 5.4e-2)"
+   },
+   "note": "Two-qubit error figure corrected against its source (class C; WP2 pilot tagging, 8 Oct 2026): Two-qubit gates have an average gate error of 1.5(1.0) %, and a best (worst) gate error of 0.6 % (5.4 %).; Two-qubit gates have an average gate error of 1.5(1.0) %, and a best (worst) gate error of 0.6 % (5.4 %).",
+   "sources": [
+    "https://arxiv.org/abs/2112.03708"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "psiquantum-omega"
+   },
+   "fields": {
+    "err_2q_median": "no two-qubit gate benchmark: fusion (Bell-measurement) fidelity 99.22 +- 0.12% with the ideal Bell state, conditional on a photon detected in each detector pair (loss not counted); the 2.0e-4 was a single-qubit SPAM error",
+    "err_2q_median_num": "",
+    "err_2q_best": ""
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): When a photon is detected in each pair of detectors, we measure a fidelity of 99.22% +- 0.12% with the ideal Bell state.; When a photon is detected in each pair of detectors, we measure a fidelity of 99.22% +- 0.12% with the ideal Bell state.; When a photon is detected in each pair of detectors, we measure a fidelity of 99.22% +- 0.12% with the ideal Bell state.",
+   "sources": [
+    "https://arxiv.org/abs/2404.17570"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-oxford-quartet"
+   },
+   "fields": {
+    "err_2q_median": "not published for QUARTET: IonQ's 99.99% (1e-4, Oct 2025) was 'achieved using prototypes in its R&D labs' (no protocol named); the 2024 paper's 99.97(1)% is a Bell-state fidelity",
+    "err_2q_median_num": "",
+    "err_2q_best": ""
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): achieved using prototypes in its R&D labs; achieved using prototypes in its R&D labs; We also electronically generate two-qubit maximally entangled states with 99.97(1)% fidelity",
+   "sources": [
+    "https://arxiv.org/abs/2407.07694",
+    "https://www.oxionics.com/announcements/ionq-achieves-landmark-result-setting-new-world-record-in-quantum-computing-performance/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quandela-lucy"
+   },
+   "fields": {
+    "err_2q_median": "not published for Lucy (as for Belenos); the 0.062 was the Ascella prototype's post-selected CNOT error",
+    "err_2q_median_num": ""
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): Table I: Average gate fidelities … 2 CNOT 93.8 ± 0.6 … values are a lower bound … include errors related to state preparation and measurement; Table I: Average gate fidelities … 2 CNOT 93.8 ± 0.6 … values are a lower bound … include errors related to state preparation and measurement",
+   "sources": [
+    "https://arxiv.org/abs/2306.00874"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "infleqtion-sqale"
+   },
+   "fields": {
+    "err_2q_median": "2.7e-3 post-selected on atom retention (CZ 99.73(3)%, one atom pair, 2024 research array); unconditioned 6.5e-3 (99.35(4)%); not stated for the NQCC Sqale",
+    "err_2q_median_num": "",
+    "err_2q_best": "2.7e-3 post-selected on atom retention (one pair; unconditioned 6.5e-3)",
+    "gate_evidence": "device-benchmark",
+    "refs": "infleqtion-nqcc;infleqtion-npj;infleqtion-arch"
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): We achieve CZ fidelity of 99.35(4)% … a state-of-the-art CZ fidelity of 99.73(3)% when excluding atom-loss events; We achieve CZ fidelity of 99.35(4)% … a state-of-the-art CZ fidelity of 99.73(3)% when excluding atom-loss events; We achieve CZ fidelity of 99.35(4)% … a state-of-the-art CZ fidelity of 99.73(3)% when excluding atom-loss events; We achieve CZ fidelity of 99.35(4)% … a state-of-the-ar",
+   "sources": [
+    "https://arxiv.org/abs/2408.08288"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "hrl-eo-18q"
+   },
+   "fields": {
+    "refs": "hrl-qpu"
+   },
+   "note": "Two-qubit error figure corrected against its source (class C; WP2 pilot tagging, 8 Oct 2026): HRL EO: the HRL QPU paper (arXiv 2604.16216) added as its ref; values unchanged.",
+   "sources": [
+    "https://arxiv.org/abs/2604.16216"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "toshiba-dtc"
+   },
+   "fields": {
+    "err_2q_median_num": "",
+    "gate_evidence": "device-benchmark"
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): Toshiba DTC: 99.90% is one pair on a two-qubit device (arXiv 2402.18926); no longer ranked.",
+   "sources": [
+    "https://arxiv.org/abs/2402.18926"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "iqm-spark-eldorado"
+   },
+   "fields": {
+    "err_2q_median_num": ""
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): Median two-qubit gate (CZ) fidelity: Typical ≥ 99.0%, Minimum ≥ 98.0%",
+   "sources": [
+    "https://iqm.tech/products/iqm-spark/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "seeqc-sfq-5q"
+   },
+   "fields": {
+    "err_2q_best": ""
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): SEEQC: the 1e-3 in the 2Q best column was a single-qubit figure (arXiv 2503.09879); cleared.",
+   "sources": [
+    "https://arxiv.org/abs/2503.09879"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "zju-125q"
+   },
+   "fields": {
+    "err_2q_median": "4e-3 median CZ (99.6%, main text); SI: median XEB Pauli error 5.2e-3"
+   },
+   "note": "Two-qubit error figure corrected against its source (class C; WP2 pilot tagging, 8 Oct 2026): ZJU 125-qubit: text adds the SI median XEB Pauli error 5.2e-3 behind the 99.6% CZ (arXiv 2606.06598).",
+   "sources": [
+    "https://arxiv.org/abs/2606.06598"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-287"
+   },
+   "fields": {
+    "err_2q_median": "4.4e-3 mean iSWAP-like (fSim) Pauli error, simultaneous XEB (74-qubit RCS subset; 99.56%)"
+   },
+   "note": "Two-qubit error figure corrected against its source (class C; WP2 pilot tagging, 8 Oct 2026): For all qubits operating simultaneously, the average value of e1 and e2 are 1‰ and 4.4‰",
+   "sources": [
+    "https://arxiv.org/abs/2512.10504"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-cockatoo"
+   },
+   "fields": {
+    "err_2q_median_num": ""
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): the best CNOTs we have benchmarked have been on test devices, with errors per gate of 3.5% for a 235 nanosecond operation",
+   "sources": [
+    "https://www.ibm.com/quantum/blog/qdc-2024"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "aws-ocelot"
+   },
+   "fields": {
+    "err_2q_median": "CX cycle errors, not a gate infidelity: phase-flip 9.6(4)e-2 and bit-flip 3.5(4)e-3 per repeated CX cycle (bias >25, one representative pair; the cycle includes ancilla preparation, readout and reset)",
+    "err_2q_median_num": "",
+    "err_2q_best": "",
+    "gate_evidence": "device-benchmark"
+   },
+   "note": "Two-qubit error figure corrected against its source (class B; WP2 pilot tagging, 8 Oct 2026): AWS dual-rail: the 7.2e-5 in the two-qubit best column was a single-qubit gate error (arXiv 2604.16292); cleared.",
+   "sources": [
+    "https://arxiv.org/abs/2409.13025"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-h1"
+   },
+   "fields": {},
+   "note": "err_2q_median_num 0.001 rests on the H1 page's '>99.9%' (a lower bound, no protocol or statistic); the only protocol-named H1 figure is 3.0(1)e-3 by parallel RB (arXiv 2107.07505, 2021). Not edited: the contradiction gives no current device median; decide whether a lower-bound headline may be ranked.",
+   "sources": []
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-h2"
+   },
+   "fields": {},
+   "note": "err_2q_median_num 0.001 likewise rests on the '>99.9%' product-page lower bound (quote now in the text); the measured device figure is the 1.57e-3 zone average in err_2q_best. Same decision as H1.",
+   "sources": []
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-nighthawk-r1"
+   },
+   "fields": {},
+   "note": "'EPLG 3.7e-3' is at none of the three refs; no source value found, so no edit. If kept, note that IBM's EPLG already carries the 4/5 conversion.",
+   "sources": []
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-nighthawk-r2"
+   },
+   "fields": {},
+   "note": "Same unsourced 'EPLG 3.7e-3' as r1 (none of the four refs gives a number); no edit.",
+   "sources": []
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "quera-gemini"
+   },
+   "fields": {},
+   "note": "Two owner sources disagree: vendor spec 99.2% global 2Q (no protocol) vs 99.42(1)% per CZ in arXiv 2412.15165 (protocol named, statistic and pair count not). err_2q_median_num left at the vendor 0.008; switch to 0.0058 if the paper value is preferred.",
+   "sources": []
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "rigetti-ankaa-2"
+   },
+   "fields": {},
+   "note": "err_2q_median_num cleared: the only sourced figure (2.7e-2 median CZ IRB) is on an 8-qubit sublattice with a reconfigured CZ, not the device's native iSWAP. Set 0.027 instead if a sublattice median is acceptable for ranking.",
+   "sources": []
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "harvard-448"
+   },
+   "fields": {},
+   "note": "New ranked value 0.005 is the 'roughly 0.5%' error budget / 99.3-99.6% RB range; the statistic over pairs is not named. Medium confidence.",
+   "sources": []
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "infleqtion-sqale"
+   },
+   "fields": {},
+   "note": "The 99.73%/99.35% pair is from Infleqtion's 2024 research array (paper does not name Sqale); gate_evidence set to device-benchmark on that basis (Atom Computing set to vendor-figure for the same reason: its paper does not name Phoenix). Revisit if an NQCC Sqale benchmark appears.",
+   "sources": []
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "atom-computing-phoenix"
+   },
+   "fields": {},
+   "note": "The toric-code paper is Atom Computing's but does not name Phoenix; unconditioned error is not stated (only loss 9.6e-3 and post-selected 4.3e-3), so err_2q_median_num left empty rather than a derived ~1.4e-2.",
+   "sources": []
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-sol"
+   },
+   "fields": {},
+   "note": "err_2q_median_num 0.0002 is a roadmap target (register text says 'target'); rule says empty. Not edited (no quote/URL in the inputs); flagged target-not-device, so no ranking effect.",
+   "sources": []
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-apollo"
+   },
+   "fields": {},
+   "note": "err_2q_median_num 0.0001 is a roadmap target; rule says empty. Not edited (no quote/URL); target-not-device, no ranking effect.",
+   "sources": []
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "iqm-halocene-150"
+   },
+   "fields": {},
+   "note": "err_2q_median_num 0.003 is a roadmap target for an undelivered system; rule says empty. Not edited (no quote/URL); status ANNOUNCED, no device-ranking effect.",
+   "sources": []
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "fujitsu-10000q"
+   },
+   "fields": {},
+   "note": "err_2q_median_num 0.001 is a design target (STAR Ver. 3); rule says empty. Not edited (no quote/URL); ANNOUNCED.",
+   "sources": []
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "aliceandbob-graphene"
+   },
+   "fields": {},
+   "note": "err_2q_median_num 0.001 is an assumed phase-flip rate for a planned machine, not a 2Q gate figure; rule says empty. Not edited (no quote/URL); PLANNED.",
+   "sources": []
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "dwave-dualrail-17"
+   },
+   "fields": {},
+   "note": "err_2q_median_num 0.001: press says 'demonstrated, with error detection, 99.9% two-qubit fidelities' (detection-conditional, no protocol, not on the 17-qubit system); register calls it a target. Rule says empty; low-confidence tag, so not edited; target-not-device.",
+   "sources": []
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "originq-wukong-180"
+   },
+   "fields": {},
+   "note": "err_2q_median_num 0.001 is an unverified claim with no source among the refs; rule (press-only) says empty. Low confidence, not edited; this DEPLOYED row is ranked.",
+   "sources": []
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-176"
+   },
+   "fields": {},
+   "note": "err_2q_median_num 0.004 is a press claim with no paper; rule says empty. Low confidence, not edited; ranked.",
+   "sources": []
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "hanyuan-1"
+   },
+   "fields": {},
+   "note": "err_2q_median_num 0.02 is a state-media figure (2Q 0.98), no protocol; rule says empty. Low confidence, not edited; ranked.",
+   "sources": []
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "msu-rb-50q"
+   },
+   "fields": {},
+   "note": "err_2q_median_num 0.06 is an MSU press statement with no paper and no ref URL; rule says empty. Not edited; ANNOUNCED, so not in device tables.",
+   "sources": []
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "qpiai-kaveri-64"
+   },
+   "fields": {},
+   "note": "err_2q_median_num 0.01 is a press figure without per-gate split; rule says empty. Low confidence, not edited; ANNOUNCED.",
+   "sources": []
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "lbnl-aqt"
+   },
+   "fields": {},
+   "note": "err_2q_best '5e-3 (CZ, low end of published range)' has no ref; no source to confirm or correct.",
+   "sources": []
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "baqis-baihua-156"
+   },
+   "fields": {},
+   "note": "0.0098 median CZ over 111 qubits looks like a Quafu dashboard snapshot; protocol not named; ScienceDirect paper unreachable. No contradiction, no edit.",
+   "sources": []
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-oxford-quartet"
+   },
+   "fields": {},
+   "note": "arXiv 2407.07694 (and 2412.15165 for quera-gemini) carry verdict ✗ in machine-refs-verified.csv because the abs page names neither the machine nor the vendor; that is an attribution verdict, not a read failure, so not changed here.",
+   "sources": []
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "g_bos"
+   },
+   "fields": {
+    "brief_section": "Engineering state of the art"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: Trapped ions realise the same qubit-conditioned bosonic primitive outside circuit QED: driving the red and blue motional sidebands together gives a spin-dependent conditional displacement of a motional mode, and free-boson rotations are applied as laser phase ",
+   "sources": [
+    "work 884"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "cx_bus"
+   },
+   "fields": {
+    "brief_section": "Engineering state of the art"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: The chain's motional modes can also serve as a bosonic register rather than only as a gate bus. A three-ion ¹⁷¹Yb⁺ chain encoded a scalar field in one set of transverse modes (2.80–3.05 MHz) and evolved it with spin–phonon gates, avoiding the truncation of bos",
+   "sources": [
+    "work 884",
+    "work 884"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "fab_pic"
+   },
+   "fields": {
+    "brief_section": "Manufacturing, materials & supply chain"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: A second, smaller line serves the near-visible band that atom and ion control needs: at 780 nm, silicon nitride (Si₃N₄) microresonators from a CMOS-compatible 150 mm multi-project-wafer process (deep-ultraviolet lithography, 1,200 °C anneal) reach a most-proba",
+   "sources": [
+    "work 886"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "ct_laser"
+   },
+   "fields": {
+    "brief_section": "Engineering state of the art"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: A chip-scale alternative to the frequency-reference chain was shown in 2026: a 780 nm Si₃N₄ microcomb (a chip resonator that turns one pump laser into a comb of evenly spaced, mutually coherent lines) locked to an ⁸⁵Rb transition held its pump drift to the 100",
+   "sources": [
+    "work 886"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "ct_pic_trap"
+   },
+   "fields": {
+    "brief_section": "Engineering state of the art"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: On the light-source side, a hybrid-integrated 780 nm microcomb (Si₃N₄ resonators from 150 mm wafers, self-injection-locked III–V laser diodes) referenced to ⁸⁵Rb drove an optical lattice and a Raman coupling in an ⁸⁷Rb Bose–Einstein condensate in 2026 [P][886]",
+   "sources": [
+    "work 886"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "ro_spd"
+   },
+   "fields": {
+    "brief_section": "Evidence — how the numbers were measured"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: Silicon avalanche photodiodes, still used instead of superconducting nanowire or transition-edge detectors to characterise sources, emit breakdown flashes that leak between the two detectors of a Hanbury Brown–Twiss set-up (a beam splitter feeding two detector",
+   "sources": [
+    "work 887"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "qd_spin"
+   },
+   "fields": {
+    "brief_section": "Evidence — how the numbers were measured"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: On a single-hole Ge/SiGe qubit (T2* = 136 ns, Rabi frequency 19 MHz) the same idle gate scores 99.21(3)% by interleaved randomised benchmarking but 97.48(9)% by gate-set tomography, whose sequences contain long runs of consecutive idles that exceed T2*, while ",
+   "sources": [
+    "work 888"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "qd_spin"
+   },
+   "fields": {
+    "brief_section": "Engineering state of the art"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: The first germanium array beyond a quasi-one-dimensional layout, a 6×6 hole-dot grid with one shared ('merged') barrier gate and individual plunger gates (QuTech, October 2026), formed 34 of its 36 dots, reached 30 coherently and ran 10 qubits placed sparsely,",
+   "sources": [
+    "work 898"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "g_mwspin"
+   },
+   "fields": {
+    "brief_section": "Engineering state of the art"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: On germanium hole spins, a geometric form of the electric-dipole spin resonance (EDSR) pulse — a non-adiabatic, three-segment loop whose rotation is set by the loop's geometry rather than by the pulse's dynamics — kept X/2 and Y/2 above 99% at ±2.5 MHz microwa",
+   "sources": [
+    "work 888"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "g_lointer"
+   },
+   "fields": {
+    "brief_section": "Physics & limits"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: Coarse-grained outputs of a linear-optical interferometer are classically reproducible. Any linear statistic of the output — an integer-weighted sum of the photon counts per mode, which covers mode binning, molecular vibronic spectra and the 'most probable bin",
+   "sources": [
+    "work 889"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "squeezed"
+   },
+   "fields": {
+    "brief_section": "Physics & limits"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: The molecular vibronic-spectrum application of Gaussian boson sampling with squeezed light is a linear statistic of the output; the characteristic function of displaced squeezed vacuum is computable exactly in polynomial time, so the spectrum is classically es",
+   "sources": [
+    "work 889"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "transmon"
+   },
+   "fields": {
+    "brief_section": "Physics & limits"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: Long-lived TLS are not specific to fluxonium junction chains: a flux-tunable transmon at Forschungszentrum Jülich showed 44 of them per GHz, spread uniformly over 3–4.5 GHz and each blocking about 2 MHz, so about 9% of the tunable band is affected; the memory ",
+   "sources": [
+    "work 890"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "ct_rt"
+   },
+   "fields": {
+    "brief_section": "Evidence — how the numbers were measured"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: The qubit itself can measure the control chain's noise. On one Jülich transmon line with 56 dB of attenuation, the modelled excitation rate was dominated by classical noise from the room-temperature drive instrument (−146 dBm/Hz above 4.6 GHz) and from the 1 K",
+   "sources": [
+    "work 890"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "dec_rl"
+   },
+   "fields": {
+    "brief_section": "Physics & limits"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: The premise of in-loop recalibration is contested by a 2026 measurement: long-lived two-level systems (TLS) on a transmon give the environment 20 µs to 1 ms of memory — hundreds of ~1 µs error-correction cycles — so errors become history- and protocol-dependen",
+   "sources": [
+    "work 890"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "code_mitig"
+   },
+   "fields": {
+    "brief_section": "Physics & limits"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: Under local depolarising noise, a circuit's noisy expectation value is the Laplace transform of its reactivity function — the contribution of Pauli paths sorted by weight (the number of qubits a Pauli operator acts on non-trivially); inverting it exactly is il",
+   "sources": [
+    "work 891"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "g_rydanalog"
+   },
+   "fields": {
+    "brief_section": "Outlook & open questions"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: A benchmark that needs no per-atom addressing has been proposed for it: prepare U†AU with a global y-rotation A and probe with a collective z-rotation; the quantum Fisher information (how sharply the output responds to the probe angle) grows with the number of",
+   "sources": [
+    "work 892"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "g_rydanalog"
+   },
+   "fields": {
+    "brief_section": "Physics & limits"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: Interaction time, not atom number, caps analog Rydberg programs at a few microseconds. Two laser-trapped circular Rydberg atoms (long-lived states of maximal angular momentum) at Laboratoire Kastler Brossel, Paris, sustained spin exchange for more than 60 µs a",
+   "sources": [
+    "work 899"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "code_fusion"
+   },
+   "fields": {
+    "brief_section": "Outlook & open questions"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: Fusion networks need not carry a whole computation: a 2026 construction confines them to the seam of distributed surface-code lattice surgery between matter-qubit processors, where 'hybrid checks' combine local ancilla readouts with the fusion outcomes of phot",
+   "sources": [
+    "work 893",
+    "work 893"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "code_surface"
+   },
+   "fields": {
+    "brief_section": "Outlook & open questions"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: Lattice surgery split across two processors joined by a photonic link does not automatically keep distance d at the seam: a straight Bell-pair interface gives d + 1 on the merge outcome but only ⌊(d + 1)/2⌋ on the perpendicular observable, a zig-zag partition ",
+   "sources": [
+    "work 893"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "code_erasure"
+   },
+   "fields": {
+    "brief_section": "Outlook & open questions"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: Erasure-aware decoding also works at a photonic interface between surface-code processors: with ideal local operations, the threshold for erased fusion outcomes reaches the 50% bond-percolation ceiling of the square lattice (fitted 49.40–50.60% at d = 11–19), ",
+   "sources": [
+    "work 893"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "cx_nn"
+   },
+   "fields": {
+    "brief_section": "Physics & limits"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: For digital simulation of time-independent, finite-range lattice Hamiltonians in a fixed dimension, nearest-neighbour connectivity is near-optimal: a nearest-neighbour circuit reaches depth O(T log(nT/ε)) with O(nT log(nT/ε)) gates and O(n) ancilla qubits, for",
+   "sources": [
+    "work 894"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "g_ms"
+   },
+   "fields": {
+    "brief_section": "Evidence — how the numbers were measured"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: Randomised benchmarking over a native gate set built from two Mølmer–Sørensen gates, MS(π/2, 0) and MS(π/2, π/4) (a 192-element group), is not multiplicity-free: three irreducible representations occur two or three times and give matrix-valued rather than sing",
+   "sources": [
+    "work 895"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "dec_cryo"
+   },
+   "fields": {
+    "brief_section": "Outlook & open questions"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: The junction budget that sizes a single-flux-quantum (SFQ) decoder is falling on the design side: a clock-free xSFQ cell library with built-in fan-out amplifiers cuts the Josephson-junction count 2.7–3.4× (63–71%) on standard single-cycle logic benchmarks and ",
+   "sources": [
+    "work 897"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "ct_sfq"
+   },
+   "fields": {
+    "brief_section": "Manufacturing, materials & supply chain"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: Superconductor electronics integrate 1–10 million junctions per cm² against more than 10 billion transistors per cm² in advanced CMOS (figures from the MIT Lincoln Laboratory process papers the authors cite). Design gains such as clock-free xSFQ cells with bui",
+   "sources": [
+    "work 897"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "cx_shuttle"
+   },
+   "fields": {
+    "brief_section": "Engineering state of the art"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: Bucket-brigade hopping (a spin passed from dot to dot by sequential gate pulses, as opposed to conveyor-mode transport in a moving potential well) now crosses a two-dimensional array: in QuTech's 6×6 germanium hole-dot grid with one shared barrier gate, a spin",
+   "sources": [
+    "work 898"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "ct_base"
+   },
+   "fields": {
+    "brief_section": "Engineering state of the art"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: Baseband control can drop per-pair barrier pulsing: in a 6×6 germanium hole-dot array, one shared barrier gate held at a fixed voltage, with only the individual plunger gates pulsed, sufficed for electric-dipole spin resonance (EDSR) driving, shuttling and exc",
+   "sources": [
+    "work 898"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "code_magic"
+   },
+   "fields": {
+    "brief_section": "Evidence — how the numbers were measured"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: A factory's output can be certified with the operations the code already has: Bell-coherence fidelity estimation measures the infidelity ε of any pure resource state, including continuous-angle rotation states, to a fixed relative accuracy from Θ(1/ε) copies u",
+   "sources": [
+    "work 896"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "enc_eo"
+   },
+   "fields": {
+    "brief_section": "Engineering state of the art"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: Benchmarked as one system rather than as encoded qubits, 48 spins of HRL's 54-dot device span the whole total-spin-zero space, of dimension C₂₄ ≈ 2⁴⁰ (a Catalan number), which includes the states a three-spin encoding treats as leakage; mirror randomised bench",
+   "sources": [
+    "work 900",
+    "work 900"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "ct_cryocmos"
+   },
+   "fields": {
+    "brief_section": "Evidence — how the numbers were measured"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: On HRL's 54-dot exchange-only chip run by its 4 K CMOS controller, the measured error per exchange in a 12-spin cross-entropy benchmark (1.54×10⁻⁴) was more than ten times what component-level noise predicts (1.15×10⁻⁵) and mostly coherent; the authors suspect",
+   "sources": [
+    "work 900"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "technology",
+    "id": "src_resource"
+   },
+   "fields": {
+    "brief_section": "Engineering state of the art"
+   },
+   "note": "Paper amendment from the digest's channel (D7, 8 Oct 2026), verified in the paper's full text: In the microwave domain, fusion is already deterministic: a superconducting circuit fused on-demand time-bin cluster states by non-destructive Bell projection of flying microwave photons, with qubit reset and reuse, into graph states with genuine multipartite ",
+   "sources": [
+    "work 885"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "text",
+    "id": "report §8.1, §8 counters"
+   },
+   "fields": {},
+   "note": "Six counters of the machines chapter mixed all register rows with devices (the §8.1 status sentence 72+50+9≠125; the access sentence; the cloud test and Table 8.1's cloud column; H4's 'rest announced'; H5 and F4 counting component demonstrations as announced) — each now counts the set its sentence names (class B; decision D2). §2.1 cites the Superconductor Electronics Monitor without 'the author's' (the ruling of 28 Sep); the empty-slot tooltip rewritten in three languages; the sitemap's lastmod per page from a committed hash ledger (data/vv/page-lastmod.json); the data cut-off of the live site derived from this ledger ({{N_DATA_CUTOFF}}).",
+   "sources": []
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "text",
+    "id": "English style (D5)"
+   },
+   "fields": {},
+   "note": "'analogue' throughout the Atlas's own English prose (Nature's and the OED's form; 202 changes, identifiers and quoted titles untouched); the architecture titles 'electronic qubit control (microwave / RF gates)' → '(laser-free, microwave-driven gates)' and 'alkaline-earth (Yb/Sr)' → 'alkaline-earth(-like) (Yb/Sr)' in English; the Russian and Hebrew titles follow by the terms procedure.",
+   "sources": []
+  }
+ ]
+}

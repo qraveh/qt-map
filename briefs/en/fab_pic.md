@@ -42,6 +42,8 @@ The demonstrated flow is a 300 mm CMOS line with LPCVD (low-pressure chemical va
 
 Omega does publish spreads: on-chip SNSPD efficiency averages 88.9 ± 3.5% against its 93.4% median (screened detectors), BTO film thickness holds 3σ < 3% across the 300 mm wafer, and waveguide loss is 0.5 ± 0.3 dB/m multimode and 1.8 ± 0.2 dB/m single-mode [D][169]. No die yield or 2 K thermal-cycle ageing data exists, and no foundry publishes quantum MPW or mask-set pricing, so cost per mode is unquotable as of 3 Sep 2026. Single points of failure: one 300 mm line has demonstrated the full stack; BTO deposition tooling is no merchant market; TFLN wafer supply is thin and concentrated; integrated SNSPDs exist at one vendor. Export-control exposure is indirect but real — the BIS interim final rule of 2024-09-06 created ECCNs 3A901 (cryogenic CMOS below 4.5 K), 3A904 (cryocoolers ≥ 600 µW below 0.1 K), 3B904 (cryogenic wafer probing), 3D901/3E901 and 4A906, with License Exception IEC [G][301]. PIC processes and SNSPDs are not named; the cryogenic *test* equipment is.
 
+A second, smaller line serves the near-visible band that atom and ion control needs: at 780 nm, silicon nitride (Si₃N₄) microresonators from a CMOS-compatible 150 mm multi-project-wafer process (deep-ultraviolet lithography, 1,200 °C anneal) reach a most-probable intrinsic quality factor Q₀ = 9.5 × 10⁶ over 721 measured resonances, a propagation loss of 6.3 dB/m [P][886].
+
 ## Control, readout & I/O burden
 
 The I/O burden is fibre and bias lines. At 52 mdB per facet [D][169] per-channel loss is affordable; the wall is assembly throughput, since 10⁶ modes need of order 10⁵–10⁶ alignment steps. Detection adds a bias line and an amplifier per SNSPD at 2 K, which by 10⁴ channels forces cryogenic readout ASICs — the cryo-CMOS controlled under 3A901 [G][301] and now sold as a GlobalFoundries product line [C][353]. Feed-forward must drive the switch within a delay line's lifetime, at MHz–GHz; the 100 mdB BTO switch at 2 K is both the enabling device and the item DARPA is paying to validate [P][181]. At 10³ modes nothing binds; at 10⁴ fibre attach and channel count bind; at 10⁶ the constraints are wafer-scale integration, the cryoplant, and an unpublished yield.
@@ -115,6 +117,7 @@ Open questions. (1) What is the die yield of an integrated SNSPD array on 300 mm
 [812] LIGENTEC, “About us_2026 - LIGENTEC.” [Online]. Available: https://www.ligentec.com/about-our-story/ [C]
 [813] PIC Magazine, “EU to establish €380 million pilot line for photonic integrated circuits,” Jan. 6, 2026. [Online]. Available: https://picmagazine.net/article/123220/EU_to_establish_%E2%82%AC380_million_pilot_line_for_photonic_integrated_circuits [P]
 [814] AIM Photonics, “News — AIM Photonics.” [Online]. Available: https://www.aimphotonics.com/news [C]
+[886] W. Sun *et al.*, “A photonic integrated comb engine for ultracold quantum gases,” [arXiv:2609.28294](https://arxiv.org/abs/2609.28294), Sep. 2026. [P]
 
 ## Open verification items
 

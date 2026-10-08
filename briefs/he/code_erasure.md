@@ -106,6 +106,8 @@ updated: 2026-09-30
 
 שאלות פתוחות: (1) מהו Λ ברגע ששליליים שגויים מצטברים כדליפה לאורך 10³ סבבים? (2) האם ההטיה של 40:1 שורדת שערים מקביליים על קווי קריאה משותפים? (3) האם אפשר להסיר את מס הנאמנות המטא-יציב ב-Yb? (4) האם קוד qLDPC מותאם-מחיקה עם מפענח מהיר אפשרי? לעקוב: האספקה של D-Wave ב-2026, המאמר הרב-קיוביטי הבא של AWS, תוצאות ה-Yb של Google/Kaufman.
 
+פענוח מודע-למחיקות פועל גם בממשק פוטוני בין מעבדי קוד המשטח: עם פעולות מקומיות אידיאליות, הסף לתוצאות היתוך שנמחקו מגיע לתקרת חלחול הקשתות של 50% בסריג הריבועי (ערך מותאם: 49.40–50.60% ב-d = 11–19), השקולה לאובדן פוטונים של 18.35% ללא היתוך מוגבר, והוא יורד בקירוב ליניארית עם שגיאת מצבי המשאב, ובקצב הולך וגובר ככל שרעש המעגל המקומי מתקרב לסף שלו עצמו [P][893]. התוצאה היא מסימולציה בלבד.
+
 ## מקורות
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
@@ -144,6 +146,7 @@ updated: 2026-09-30
 [684] S. Gu, A. Retzker, and A. Kubica, “Fault-tolerant quantum architectures based on erasure qubits,” *Phys. Rev. Res.*, vol. 7, no. 1, Art. no. 013249, Mar. 2025, doi: [10.1103/PhysRevResearch.7.013249](https://doi.org/10.1103/PhysRevResearch.7.013249). [arXiv:2312.14060](https://arxiv.org/abs/2312.14060). [S]
 [685] N. Liyanage, Y. Wu, A. Deters, and L. Zhong, “Scalable Quantum Error Correction for Surface Codes using FPGA,” [arXiv:2301.08419](https://arxiv.org/abs/2301.08419), Jan. 2023. [D]
 [686] Brookhaven National Laboratory, “DOE Renews Brookhaven Lab-led Quantum Research Center,” BNL Newsroom, Nov. 4, 2025. [Online]. Available: https://www.bnl.gov/newsroom/news.php?a=122687 [G]
+[893] F. Burt *et al.*, “Loss-tolerant distributed lattice surgery using fusion networks,” [arXiv:2610.01923](https://arxiv.org/abs/2610.01923), Oct. 2026. [P]
 
 ## פריטי אימות פתוחים
 

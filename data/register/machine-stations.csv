@@ -983,6 +983,17 @@ quantum-art-multicore,code,none,primary,no code (NISQ)
 quantum-art-multicore,decoder,none,primary,"no decoder, and no deployment-mode axis"
 quantum-art-multicore,interconnect,undisclosed,primary,"inter-core link, mechanism undisclosed"
 quantum-art-multicore,fab,fab_trap,primary,
+quantum-art-montage,carrier,ion,primary,
+quantum-art-montage,encoding,enc_hf,primary,
+quantum-art-montage,gate,g_ms,primary,
+quantum-art-montage,connect,cx_bus,primary,
+quantum-art-montage,connect,undisclosed,alternate,"inter-core link, mechanism undisclosed"
+quantum-art-montage,control,undisclosed,primary,control stack undisclosed
+quantum-art-montage,readout,ro_fluor,primary,
+quantum-art-montage,code,none,primary,no code (NISQ)
+quantum-art-montage,decoder,none,primary,"no decoder, and no deployment-mode axis"
+quantum-art-montage,interconnect,undisclosed,primary,"inter-core link, mechanism undisclosed"
+quantum-art-montage,fab,fab_trap,primary,
 uibk-innsbruck-ion,carrier,ion,primary,
 uibk-innsbruck-ion,encoding,enc_opt,primary,optical narrow-line qubit (40Ca+ S–D)
 uibk-innsbruck-ion,gate,g_ms,primary,

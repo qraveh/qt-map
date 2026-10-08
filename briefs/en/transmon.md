@@ -32,6 +32,8 @@ The floor is decoherence over gate time: with Willow's mean T1 = 68 µs [D][1] a
 
 Most of the twirled channel is stochastic Pauli, so Willow's Λ = 2.14 [D][1] matches theory. Leakage to |2⟩ accumulates under QEC unless removed each cycle (USTC's all-microwave reset cut it 72×, to 6.4×10⁻⁴, on 107 qubits [D][3]). Coherent errors (residual ZZ, TLS drift) forced reinforcement-learning recalibration inside Google's 2026-07 QEC run [D][2]. Correlated bursts (ionising particles flooding the chip with quasiparticles) hit all qubits at once — roughly one per 10 s on Sycamore in 2021 [D][289], about one per hour on Willow after gap engineering [D][1], [290] — truncating long memory runs by bursts, not distance. Moving the floor means new materials (Ta, encapsulated Nb), fluxonium-scale anharmonicity, radiation management or erasure conversion (dual-rail).
 
+Long-lived TLS are not specific to fluxonium junction chains: a flux-tunable transmon at Forschungszentrum Jülich showed 44 of them per GHz, spread uniformly over 3–4.5 GHz and each blocking about 2 MHz, so about 9% of the tunable band is affected; the memory they give the environment spans 20 µs to 1 ms, and 58% of them outlive the qubit [P][890]. Energy stored in them re-excites the qubit after it is driven, an error that T1 and relaxation spectroscopy do not show.
+
 ## Engineering state of the art
 
 Best isolated devices: T1 1.68 ms, Q 2.5×10⁷, 1Q 99.994% [D][288]; CZ 99.93% and 280 ns readout at 99.94% on a two-qubit IQM chip [D][38]; Toshiba's double-transmon coupler CZ 99.90% in 48 ns [D][37].
@@ -100,7 +102,7 @@ Replication: below-threshold scaling reproduced by USTC on 107 qubits with Λ = 
 - 2026-08-04 · IQM · H1-2026 results · revenue €8.9 M (+47%), cash €309 M · reported [P][295]
 - 2026-08-06 · Rigetti · Q2-2026 results · revenue $5.1 M, GAAP loss $52.6 M, cash $541.3 M · reported [C][61]
 
-**Market & supply chain.** Enabling equipment is more concentrated than the QPU market. Unit economics are unpublished; the €33 M IQM contract [P][295] and the $550 M Quantum Circuits price [C][G:DWAVE-QCI-2026-01] are the only quotable points. Paying goals: G7 (deployable systems) and G2 (error-mitigated utility) today; G3 (early fault tolerance) via QBI-style programmes from 2027 [G:QBI-STAGEC-2026]; G4 (large-scale fault tolerance) after 2029 [R][G:IBM-ROADMAP]; G1 (analog simulation), G5 (optimisation) and G6 (networking) bring no transmon-specific revenue.
+**Market & supply chain.** Enabling equipment is more concentrated than the QPU market. Unit economics are unpublished; the €33 M IQM contract [P][295] and the $550 M Quantum Circuits price [C][G:DWAVE-QCI-2026-01] are the only quotable points. Paying goals: G7 (deployable systems) and G2 (error-mitigated utility) today; G3 (early fault tolerance) via QBI-style programmes from 2027 [G:QBI-STAGEC-2026]; G4 (large-scale fault tolerance) after 2029 [R][G:IBM-ROADMAP]; G1 (analogue simulation), G5 (optimisation) and G6 (networking) bring no transmon-specific revenue.
 
 **IP & standards.** PatSnap's landscape published on 2026-06-30: IBM 4,388 quantum patent families, Google 2,385, Microsoft 1,175; superconducting devices (H10N 60) IBM 783, Google 357 [P][312][G:PATSNAP-2026-06]. No litigation found; no transmon-specific family verified. Open stacks commoditise the layer above: Qiskit (IBM claims ≈ 70% of developers [C][310]), Cirq/Stim, OpenQASM 3, NVQLink [C][G:NVQLINK-2025].
 
@@ -179,6 +181,7 @@ Milestones, 12–24 months: (1) Kookaburra runs a gross-code memory below break-
 [312] PatSnap, “Quantum Computing Patent Landscape 2026,” Jun. 30, 2026. [Online]. Available: https://www.patsnap.com/resources/blog/rd-blog/quantum-computing-patent-landscape/ [P]
 [313] J. Gambetta, “Expanding the IBM Quantum roadmap to anticipate the future of quantum-centric supercomputing,” IBM Quantum Blog, May 10, 2022. [Online]. Available: https://www.ibm.com/quantum/blog/ibm-quantum-roadmap-2025 [C]
 [314] Quantum Ledger, “DARPA QBI Tracker.” [Online]. Available: https://quantumledger.report/darpa-qbi [P]
+[890] J. R. Guimarães *et al.*, “Quantum environment afterglow from broadband excitation spectroscopy in superconducting qubits,” [arXiv:2609.31280](https://arxiv.org/abs/2609.31280), Sep. 2026. [P]
 
 ## Open verification items
 

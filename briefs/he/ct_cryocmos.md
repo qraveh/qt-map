@@ -68,6 +68,8 @@ HRL ביטלה את יצירת צורות הגל בחום, אך מספר הכב�
 
 סתירות: 23 mW לקיוביט של IBM [D][296] לעומת 5 mW ופחות מ-2 mW [S][550] הם גדלים שונים — פעיל לעומת סרק, הנעה בלבד לעומת השרשרת המלאה — ללא הגדרה משותפת; 23 mW משמש כאן כנתון היחיד הקשור לשער פועל. נתוני הנאמנות של Equal1 הם טענות מדף מוצר [C][273], מול התקן של שישה קיוביטים ב-0.3 K שפורסם [G:EQUAL1-60M-2026-01].
 
+בשבב בן 54 הנקודות של HRL, הפועל בחילוף בלבד ומופעל בידי בקר ה-CMOS שלו ב-4 K, השגיאה הנמדדת לכל חילוף בבחינת ביצועים באנטרופיה צולבת על 12 ספינים (1.54×10⁻⁴) הייתה גדולה יותר מפי עשרה ממה שהרעש ברמת הרכיבים חוזה (1.15×10⁻⁵), ורובה קוהרנטית; המחברים חושדים בבקר הקריוגני ובקווי האות. הזיכרון של הבקר מכיל רק כ-1,000 הוראות פולס ייחודיות לאחר טעינת הכנת המצב והמדידה, ולכן היה צורך לבנות רצפים עמוקים משגרות משנה רקורסיביות [P][900].
+
 ## שחקנים וכלכלה
 
 **מי.**
@@ -134,6 +136,7 @@ HRL ביטלה את יצירת צורות הגל בחום, אך מספר הכב�
 [562] Intel Corporation, “Technologies for Closed-Loop Qubit Calibration,” USPTO, Jul. 2026. [Online]. Available: https://patents.justia.com/patent/20260187510 [G]
 [563] PatSnap, “Cryogenic CMOS Circuit Technology Landscape 2026,” Apr. 20, 2026. [Online]. Available: https://www.patsnap.com/resources/blog/articles/cryo-cmos-technology-landscape-2026/ [P]
 [564] C. Nayak, “Full stack ahead: Pioneering quantum hardware allows for controlling up to thousands of qubits at cryogenic temperatures,” Microsoft Research Blog, Jan. 27, 2021. [Online]. Available: https://www.microsoft.com/en-us/research/blog/full-stack-ahead-pioneering-quantum-hardware-allows-for-controlling-up-to-thousands-of-qubits-at-cryogenic-temperatures/ [C]
+[900] HRL Quantum Team and Microsoft collaborators, “Benchmarking exchange-only control of a 48-spin singlet manifold,” [arXiv:2610.07393](https://arxiv.org/abs/2610.07393), Oct. 2026. [P]
 
 ## פריטי אימות פתוחים
 

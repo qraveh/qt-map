@@ -2132,7 +2132,7 @@
    "DACs"
   ],
   "scope": "first",
-  "en": "Digital-to-analog converter: the circuit that turns numbers into the voltage waveforms driving qubits — counted per qubit, a main cost of control electronics and wiring",
+  "en": "Digital-to-analogue converter: the circuit that turns numbers into the voltage waveforms driving qubits — counted per qubit, a main cost of control electronics and wiring",
   "ru": "Цифро-аналоговый преобразователь (ЦАП): схема, превращающая числа в формы напряжения, которыми управляют кубитами; считаемые на кубит, ЦАП — одна из главных статей стоимости управляющей электроники и проводки",
   "he": "ממיר ספרתי-לאנלוגי (digital-to-analog converter): המעגל שהופך מספרים לצורות הגל של המתח המניעות את הקיוביטים — כשסופרים אותם לכל קיוביט, הם עלות עיקרית של אלקטרוניקת הבקרה ושל החיווט",
   "src": "standard",

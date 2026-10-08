@@ -27,6 +27,8 @@ updated: 2026-09-30
 
 האיבר השולט: אי-יציבות מטען המושרית אופטית, לא בקרת המיקרוגל.
 
+על ספיני חורים בגרמניום, צורה גיאומטרית של פולס תהודת ספין דיפולית-חשמלית (EDSR) — לולאה לא-אדיאבטית בת שלושה מקטעים, שהסיבוב שלה נקבע בידי הגיאומטריה של הלולאה ולא בידי הדינמיקה של הפולס — שמרה על X/2 ו-Y/2 מעל 99% בהיסט מיקרוגל של ±2.5 MHz ועל שער הסרק מעל 99% בהיסט של ±1.2 MHz, עם שיא של 99.98% (סרק), 99.80% (X/2) ו-99.97% (Y/2) בטומוגרפיית ערכת שערים [P][888]. המחיר הוא משך ארוך פי ארבעה עד שישה מזה של השער הרגיל, והלולאה הטובה ביותר תלויה ברעש השולט.
+
 ## ייצור, חומרים ושרשרת האספקה
 השער יורש את אילוצי היהלום: גידול CVD מ-Element Six, פגמים מושתלים, ננו-פוטוניקה לכל התקן. שום דבר בשרשרת ההנעה אינו ניתן לריבוב: כל פגם ממוען צריך קו לייזר תהודתי משלו, הזנת מיקרוגל וערוץ גלאי, ולכן החומרה גדלה ליניארית עם מספר האתרים — ההפך ממתקן מיקרוגל משותף. השהיית הבקרה נקבעת בידי הקישור, לא בידי השער: ה-CNOT בטלפורטציה נזקק להזנה קדימה בתוך זמן החיים של הזיכרון [D][360]. ב-10³ אתרים החומה היא מספר הלייזרים ופריסת הקווים האופטית, ואין תוכנית שפורסמה. אף כלל יצוא אינו נוקב במרכזי צבע.
 
@@ -63,6 +65,7 @@ updated: 2026-09-30
 [363] F. Afzal *et al.*, “Distributed Quantum Computing in Silicon,” [arXiv:2406.01704](https://arxiv.org/abs/2406.01704), Jun. 2024. [P]
 [364] M. U. Rehman, “Top Diamond NV-Centre Quantum Computing Companies in 2026,” The Quantum Insider, Jul. 10, 2026. [Online]. Available: https://thequantuminsider.com/2026/07/10/8-quantum-computing-companies-working-with-nv-centre-in-diamond-technology/ [P]
 [823] Oak Ridge National Laboratory, “Quantum Brilliance, ORNL pioneer quantum-classical hybrid computing,” ORNL News, Sep. 2, 2025. [Online]. Available: https://www.ornl.gov/news/quantum-brilliance-ornl-pioneer-quantum-classical-hybrid-computing Also https://www.iaf.fraunhofer.de/en/media-library/press-releases/first-room-temperature-quantum-accelerator-in-europe.html. Also https://quantumbrilliance.com/news/supercomputer-with-quantum-accelerator-pawsey-commissions-first-room-temperature-on-premises-quantum-computer-in-supercomputing-center/. [P]
+[888] Y.-C. Zhou *et al.*, “High-fidelity geometric quantum gates exceeding 99.9% in germanium quantum dots,” [arXiv:2609.33251](https://arxiv.org/abs/2609.33251), Sep. 2026. [P]
 
 ## פריטי אימות פתוחים
 - נתון טומוגרפיית ערכת השערים של NV, מתחת ל-0.1%, נשען על הודעה משותפת לעיתונות של Fujitsu/QuTech שהועברה בעיתונות המקצועית [208]; לא אותר פרסום בביקורת עמיתים עם תחומי שגיאה או תקציב שגיאות. מסומן כאן [P], ולא [D] כמו בדוח הראשי וברשומת הגרף.

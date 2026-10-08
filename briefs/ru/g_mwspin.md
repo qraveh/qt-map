@@ -27,6 +27,8 @@ updated: 2026-09-30
 
 Доминирующий член: оптически индуцированная зарядовая нестабильность, а не микроволновое управление.
 
+На дырочных спинах в германии геометрическая форма импульса электродипольного спинового резонанса (EDSR) — неадиабатическая трёхсегментная петля, поворот которой задаётся геометрией петли, а не динамикой импульса, — удержала X/2 и Y/2 выше 99% при микроволновой расстройке ±2.5 MHz, а вентиль ожидания (idle) — при ±1.2 MHz, с максимумами 99.98% (ожидание), 99.80% (X/2) и 99.97% (Y/2) по томографии набора вентилей [P][888]. Цена — длительность в четыре–шесть раз больше, чем у обычного вентиля, а то, какая петля лучше, зависит от доминирующего шума.
+
 ## Производство, материалы и цепочка поставок
 Вентиль наследует ограничения алмаза: CVD-рост от Element Six, имплантированные дефекты, нанофотоника под каждое устройство. В тракте возбуждения не мультиплексируется ничто: каждому адресуемому дефекту нужны собственная резонансная лазерная линия, микроволновый подвод и канал детектора, поэтому аппаратура растёт линейно с числом узлов — полная противоположность общей микроволновой установке. Задержка управления задаётся каналом связи, а не вентилем: телепортированному CNOT потребовалась обратная передача в пределах времени жизни памяти [D][360]. На 10³ узлах стеной становятся число лазеров и оптическое разветвление, причём опубликованного плана здесь нет. Центры окраски не названы ни в одном правиле экспортного контроля.
 
@@ -63,6 +65,7 @@ updated: 2026-09-30
 [363] F. Afzal *et al.*, “Distributed Quantum Computing in Silicon,” [arXiv:2406.01704](https://arxiv.org/abs/2406.01704), Jun. 2024. [P]
 [364] M. U. Rehman, “Top Diamond NV-Centre Quantum Computing Companies in 2026,” The Quantum Insider, Jul. 10, 2026. [Online]. Available: https://thequantuminsider.com/2026/07/10/8-quantum-computing-companies-working-with-nv-centre-in-diamond-technology/ [P]
 [823] Oak Ridge National Laboratory, “Quantum Brilliance, ORNL pioneer quantum-classical hybrid computing,” ORNL News, Sep. 2, 2025. [Online]. Available: https://www.ornl.gov/news/quantum-brilliance-ornl-pioneer-quantum-classical-hybrid-computing Also https://www.iaf.fraunhofer.de/en/media-library/press-releases/first-room-temperature-quantum-accelerator-in-europe.html. Also https://quantumbrilliance.com/news/supercomputer-with-quantum-accelerator-pawsey-commissions-first-room-temperature-on-premises-quantum-computer-in-supercomputing-center/. [P]
+[888] Y.-C. Zhou *et al.*, “High-fidelity geometric quantum gates exceeding 99.9% in germanium quantum dots,” [arXiv:2609.33251](https://arxiv.org/abs/2609.33251), Sep. 2026. [P]
 
 ## Открытые пункты верификации
 - Цифра ниже 0.1% по томографии набора вентилей на NV опирается на совместный пресс-релиз Fujitsu/QuTech, пересказанный отраслевой прессой [208]; рецензируемой публикации с доверительными интервалами или бюджетом ошибок найти не удалось. Здесь помечена [P], а не [D], как в основном отчёте и запись графа.

@@ -29,6 +29,8 @@ updated: 2026-09-30
 | 2026-04 | בדיקת מחיקה של 384 ns, שארית 6.0(2)×10⁻⁴, הטיה 42(1) | AWS | [D][85] |
 | 2026-08 | CZ במהודים במסילה כפולה ~500 ns, פאולי בבחירה בדיעבד 0.029(6)% | Quantum Circuits | [D][84] |
 
+יונים לכודים מממשים את אותו פרימיטיב בוזוני המותנה בקיוביט מחוץ לאלקטרודינמיקה הקוונטית של מעגלים (circuit QED): הנעה משותפת של פסי הצד התנועתיים האדום והכחול יוצרת הזזה מותנית, התלויה בספין, של אופן תנועה, וסיבובי הבוזון החופשי מיושמים כהסטות פאזה של הלייזר; שרשרת של שלושה יוני ¹⁷¹Yb⁺ השתמשה בהם לסימולציה של הדינמיקה של מודל שדה של יוקאווה [D][884].
+
 ## ייצור, חומרים ושרשרת האספקה
 קיוביט העזר והמצמד הם מעגלים עם צמתי אלומיניום בשכבות אלומיניום או טנטלום על צורן או ספיר; ב-Yale האופנים הם מהודים תלת-ממדיים מאלומיניום בטוהר גבוה בעיבוד שבבי, שעברו צריבה עד Q של 10⁷–10⁸, ב-D-Wave/Quantum Circuits מהודים קואקסיאליים תלת-ממדיים λ/4 שחומרם ואופן ייצורם לא פורסמו, ואילו Ocelot של AWS מחזיק אותם במהודי מוליך גל קו-מישוריים משכבה דקה על השבב, ו-Alice & Bob במעגלי טנטלום משכבה דקה על ספיר [D][80][G:ALICEBOB-CAT-PLANAR-2024]. אין ספק מסחרי של מהודים — Yale מעבדת את המהודים שלה בעצמה, ו-D-Wave/Quantum Circuits אינן נוקבות בספק — ולכן טיפול פני השטח הוא מלאכת מעבדה, לא תהליך מוסמך. מתחת לזה נמצאת שרשרת מוליכי-העל הכללית: Bluefors, שבלעה ב-2023 את יצרנית צינורות הפולס Cryomech, ו-Oxford Instruments [G:BLUEFORS-CRYOMECH-2023]. החשיפה לפיקוח על יצוא היא תקנת BIS מ-2024: ECCN 4A906 (מכונות שמספר הקיוביטים ושגיאת ה-C-NOT שלהן נופלים באותה רצועה — מ-34–99 קיוביטים ב-≤ 10⁻⁴ ועד כל שגיאה שהיא מ-2,000 קיוביטים ואילך [G:BIS-3A901A-CRYOCMOS]), 3A904 (מקררים של ≥600 µW ב-0.1 K), 3A901 (מגברים קריוגניים) [G][301]. אין נתון פומבי של עלות או של שיעור תקינות למהוד.
 
@@ -93,6 +95,7 @@ updated: 2026-09-30
 [472] Y. Lu *et al.*, “High-fidelity parametric beamsplitting with a parity-protected converter,” [arXiv:2303.00959](https://arxiv.org/abs/2303.00959), Mar. 2023. [D]
 [473] K. Chou, J. Teoh, and N. Mehta, “Why D-Wave's New Two-Qubit Gate is a Breakthrough for Quantum Error Correction,” D-Wave Quantum Blog, Aug. 5, 2026. [Online]. Available: https://www.dwavequantum.com/learn/blog/posts/why-d-wave-s-new-two-qubit-gate-is-a-breakthrough-for-quantum-error-correction/ [C]
 [474] US Department of Energy, “Energy Department Announces $625 Million to Advance the Next Phase of National Quantum Information Science Research Centers,” Energy.gov, Nov. 4, 2025. [Online]. Available: https://www.energy.gov/articles/energy-department-announces-625-million-advance-next-phase-national-quantum-information [G]
+[884] A. T. Than *et al.*, “Quantum field theory dynamics on a spin–phonon quantum computer,” *Nat. Phys.*, Sep. 2026, doi: [10.1038/s41567-026-03402-4](https://doi.org/10.1038/s41567-026-03402-4). [arXiv:2509.11477](https://arxiv.org/abs/2509.11477). [D]
 
 ## פריטי אימות פתוחים
 לא ניתן היה לאחזר את רשימת המחברים, את השיוך ואת ההפניה לכתב העת של arXiv:2303.00959 (דף התמצית החזיר את גוף הטקסט בלבד); נתוני ההחלפה ~100 ns / >99.98% ומצמד ה-DC-SQUID מאושרים, והייחוס ל-Yale נשען על רשומת הגרף. סכום הרחבת סבב B של Alice & Bob ממאי 2026 עדיין לא פורסם. שיעורי ההשלכה בבחירה בדיעבד עבור ה-CZ במסילה כפולה ועבור ההחלפה במפצל האלומה אינם מדווחים. אומדן הנקודה 0.029(6)% והחסם של 0.12% בעומק מופיעים שניהם ב-Nature [84] בלי יישוב ביניהם, וה-"≈99.9%" של D-Wave [473] אינו מיושב עם אף אחד מהם.

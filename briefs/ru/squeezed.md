@@ -17,6 +17,8 @@ updated: 2026-09-30
 ## Физика и пределы
 Сжатие — это термометр потерь: среда способна дать сколь угодно сильное подавление квадратуры, но каждый децибел потерь между генерацией и детектированием тянет измеренное значение обратно к вакууму, так что цифра описывает оптический тракт, а не сам сжиматель. Отсюда 15 dB в объёмной оптике [D][344] против 1.4 dB, измеренных на кристалле, и свыше 10 dB после вычитания 4 dB бюджета потерь гомодинного тракта [D][345]. Нельзя смешивать сырое квадратурное сжатие с *эффективным* сжатием решёточного состояния GKP, которое включает в себя не только потери, но и точность (fidelity) негауссовой подготовки состояния: отказоустойчивость оценивает последнее в ~9.75 dB против 0.62 dB на кристалле [D][174]. Сдвинуть эту величину способны только меньшие потери, лучшая стыковка и более высокая эффективность детектирования.
 
+Приложение гауссова бозонного сэмплинга (Gaussian boson sampling) на сжатом свете к молекулярным электронно-колебательным (вибронным) спектрам — это линейная статистика выхода; характеристическая функция смещённого сжатого вакуума вычисляется точно за полиномиальное время, поэтому спектр оценивается классически с аддитивной точностью эксперимента [P][889].
+
 ## Достигнутый инженерный уровень
 
 | Дата | Показатель | Кто | Тег |
@@ -66,6 +68,7 @@ updated: 2026-09-30
 [178] Xanadu Quantum Technologies Limited, “Xanadu Charts Path to Over 1,000 Logical Qubits by 2031,” GlobeNewswire, Aug. 31, 2026. [Online]. Available: https://www.globenewswire.com/news-release/2026/08/31/3353211/0/en/xanadu-charts-path-to-over-1-000-logical-qubits-by-2031.html [R]
 [344] H. Vahlbruch, M. Mehmet, K. Danzmann, and R. Schnabel, “Detection of 15 dB Squeezed States of Light and their Application for the Absolute Calibration of Photoelectric Quantum Efficiency,” *Phys. Rev. Lett.*, vol. 117, no. 11, Art. no. 110801, Sep. 2016, doi: [10.1103/PhysRevLett.117.110801](https://doi.org/10.1103/PhysRevLett.117.110801). [D]
 [345] X. Shi *et al.*, “Squeezed Light Generation in Periodically Poled Thin-Film Lithium Niobate Waveguides,” [arXiv:2508.08599](https://arxiv.org/abs/2508.08599), Aug. 2025. [D]
+[889] B. Seron, H. Thomas, E. Araujo, A. Arkhipov, C. Oh, and L. Novo, “Efficient classical algorithm for estimating linear statistics of Boson Sampling,” [arXiv:2609.35447](https://arxiv.org/abs/2609.35447), Sep. 2026. [P]
 
 ## Открытые пункты верификации
 Независимая цифра по сжатию на кристалле существует: Shi и соавт. сообщают о 1.4 dB, измеренных на PPLN TFLN [345]. На единственном источнике остаётся *эффективное сжатие GKP* 0.62 dB (только Xanadu).

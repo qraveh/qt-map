@@ -18,6 +18,8 @@ updated: 2026-09-26
 ## פיזיקה וגבולות
 Aquila: Ω ≤ 15.8 rad/µs, |Δ| ≤ 125 rad/µs, $C_6$ = 5,420,503 µm⁶ rad/µs (70S), מרווח ≥4 µm, תוכנית ≤4 µs, T2* 5.8 µs, T2 תחת הנעה 7.5 µs [C][262]: רדיוס חסימה $(C_6/\Omega)^{1/6}$ ≈ 8.4 µm בהנעה מלאה, ותוכנית באורך ~מחצית ה-T2 תחת הנעה, ~10 מחזורי ראבי [S]. איברי השגיאה הנקובים: רעש משרעת ורעש פאזה של הלייזר; תנועה תרמית (דופלר, פיזור מיקום של 0.200 µm); פיזור דרך המצב המתווך, הנמשך גם כשההנעה כבויה; אי-הומוגניות של ההיסט, 0.37 rad/µs RMS לאורך השדה ו-0.18 rad/µs מריצה לריצה [C][262]. דרך r⁻⁶, פיזור המיקום נותן פיזור של ~30% מריצה לריצה בקשר של 5.5 µm (δV/V = 6δr/r) [S] — בלתי מזיק עמוק בתוך החסימה, מכריע היכן ש-V ≈ Ω, וזה מה שבוחר את הפאזה המסודרת. ההיסט המקומי הוא תבנית קבועה עם צורת גל ≤0, ותוכניות המשתמשות בו מאבדות קוהרנטיות מהר יותר מה-T2 הרשום [C][429]. השגיאות מצטברות באופן קוהרנטי לאורך ריצה שאין בה נקודה למדידת סינדרום, ולכן שום קוד אינו פועל [S]; גילוי מחיקות ב-Sr העלה חסם על נאמנות זוג בל מ-≥0.9971 ל-≥0.9985 על ידי השלכת ריצות מסומנות [D][143] — בחירה בדיעבד, לא תיקון.
 
+זמן האינטראקציה, לא מספר האטומים, מגביל תוכניות רידברג אנלוגיות לכמה מיקרו-שניות. שני אטומי רידברג מעגליים הלכודים בלייזר (מצבים ארוכי-חיים בעלי תנע זוויתי מרבי) ב-Laboratoire Kastler Brossel בפריז קיימו חילוף ספין במשך יותר מ-60 µs ו-40 מחזורי תנודה, עם זמן דעיכה של 59 µs, בערך פי עשרה מהשיא הקודם; ניגודיות התנודה היא בבחירה בדיעבד (79%, לעומת 33% בנתונים הגולמיים) [P][899].
+
 ## מצב ההנדסה העדכני
 | שנה | נתון | מי | תג+מפתח |
 |---|---|---|---|
@@ -69,6 +71,8 @@ Aquila: Ω ≤ 15.8 rad/µs, |Δ| ≤ 125 rad/µs, $C_6$ = 5,420,503 µm⁶ rad/
 ## תחזית ושאלות פתוחות
 לאשר אם עד 2027-12-31 מכונה אנלוגית מסחרית תפרסם נאמנות רב-גופית ב-≥60 אטומים, או שתוצאה אנלוגית תשרוד שנה של אתגר קלאסי; להוריד בדרגה אם Vela והמערכות הבאות של QuEra יסופקו ללא מפרטים אנלוגיים. שאלות פתוחות. (1) האם F_d יכול לאשר מעבר לגודל שבו MPS עומד בקצב? (2) מהן שגיאות הכיול של ההיסט המקומי לכל אתר? (3) כיצד מתחלק האובדן ב-T2 תחת הנעה בין רעש פאזה, דופלר ופיזור? (4) האם השמטת מחיקות יכולה לבצע בחירה בדיעבד בריצות רב-גופיות בעלות סבירה במספר הריצות? (5) האם קשת ה"דורש אטום אלקלי" תשרוד מכונות אנלוגיות אלקליות-עפרוריות?
 
+הוצעה עבור התפתחות זו בחינת ביצועים שאינה דורשת מיעון של כל אטום בנפרד: מכינים U†AU עם סיבוב y גלובלי A, ובודקים בסיבוב z קולקטיבי; אינפורמציית פישר הקוונטית (עד כמה הפלט מגיב בחדות לזווית הבדיקה) גדלה עם מספר האטומים בדינמיקה הקרובה לאקראיות האר, ושווה לאפס בדיוק במעגלי קליפורד, ולכן אפשר לדרג את האקראיות של מעגל בלי לחשב הסתברויות פלט אידיאליות, בתנאי שאפשר להריץ את ההתפתחות גם לאחור (U†) [P][892]. זו הצעה תאורטית, שטרם הורצה על מערך אנלוגי.
+
 ## מקורות
 [143] P. Scholl, A. L. Shaw, R. B.-S. Tsai, R. Finkelstein, J. Choi, and M. Endres, “Erasure conversion in a high-fidelity Rydberg quantum simulator,” *Nature*, vol. 622, p. 273, 2023, doi: [10.1038/s41586-023-06516-4](https://doi.org/10.1038/s41586-023-06516-4). [arXiv:2305.03406](https://arxiv.org/abs/2305.03406). [D]
 [153] QuEra Computing, “QuEra Expands $230 Million Financing Round Advancing Quantum-Accelerated Supercomputing,” Sep. 9, 2025. [Online]. Available: https://www.quera.com/press-releases/quera-expands-230-million-financing-round-advancing-quantum-accelerated-supercomputing [C]
@@ -92,6 +96,8 @@ Aquila: Ω ≤ 15.8 rad/µs, |Δ| ≤ 125 rad/µs, $C_6$ = 5,420,503 µm⁶ rad/
 [438] Pasqal and O. Q.-C. P. brochure, “The Power of Neutral Atom Quantum Processors by Pasqal — Unlock Quantum Computing for Real-World Solutions,” Pasqal, product brochure (PDF). [Online]. Available: https://www.pasqal.com/wp-content/uploads/2025/11/2509_Pasqal_Quantum-Computing-Processor_Brochure-RVB-V8.pdf [C]
 [439] QuEra Computing, “Local Qubit Control Brings New Capabilities to QuEra's Quantum Computer,” Apr. 17, 2024. [Online]. Available: https://www.quera.com/press-releases/local-qubit-control-brings-new-capabilities-to-queras-quantum-computer [C]
 [440] Amazon Web Services, “Local detuning now available on QuEra's Aquila device with Braket Direct,” AWS What's New, Apr. 11, 2024. [Online]. Available: https://aws.amazon.com/about-aws/whats-new/2024/04/amazon-braket-experimental-capabilities-quera-device-braket-direct/ [C]
+[892] S. Cavazzoni and C. Oh, “Metrological benchmarking of random quantum circuits,” [arXiv:2609.39226](https://arxiv.org/abs/2609.39226), Sep. 2026. [P]
+[899] A. Durán-Hernández *et al.*, “Spin-exchange interactions between circular Rydberg atoms over long times,” [arXiv:2609.37766](https://arxiv.org/abs/2609.37766), Sep. 2026. [P]
 
 ## פריטי אימות פתוחים
 - מגבלות ההיסט המקומי של Aquila (גודל, רזולוציה, שגיאת כיול לכל אתר) חשופות רק דרך מאפייני ההתקן ב-Braket SDK, ולא נקראו כאן; המנגנון החומרתי (אלומת הסטת אור או אחר) אינו מתואר בהודעה של QuEra (נוסה ב-2026-09-26).

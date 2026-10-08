@@ -17,6 +17,8 @@ Error mitigation estimates an observable's noiseless expectation value from many
 ## Physics & limits
 PEC writes each layer's inverse noise as a signed mixture of implementable operations of norm γ ≥ 1; the estimate is unbiased, but shots grow as γ² and γ exponentially with depth [C][693]. For Pauli noise γ ≈ e^(2P), so shots multiply by ≈ e^(4P) [S]. At Heron r3's median CZ error of 0.15% [D][698], 1,000 CZs in the light cone give P ≈ 1.5 and ≈ 400× the shots, 7,500 give ~10¹⁹× [S]; today's 10²–10³× budgets cap P near 1.2–1.7 [S]. ZNE samples at amplified noise — by default three factors, nominally ~3× [C][693] — and extrapolates; it is biased by its fit and must resolve a signal attenuated by up to e^(−2P), so its cost grows comparably [S]. TEM claims the square root of PEC's overhead [S][697], still exponential [S]. The limit is general: overhead grows exponentially with depth for any protocol under local depolarising noise [D][699], nonlinear post-processing included [D][700], and worst-case estimation needs superpolynomially many samples at shallow depth [D][701]. Only lower physical error moves the exponent.
 
+Under local depolarising noise, a circuit's noisy expectation value is the Laplace transform of its reactivity function — the contribution of Pauli paths sorted by weight (the number of qubits a Pauli operator acts on non-trivially); inverting it exactly is ill-conditioned, with coefficients growing exponentially in weight, and only smoothed features in weight are recoverable, at a sampling cost exponential in the ratio of weight to resolution [P][891]. The Atlas's reading, not derived in the paper: noise-scaling mitigation attempts the same inversion, so its cost is set by the circuit's high-weight Pauli content, not by the error rate alone.
+
 ## Engineering state of the art
 | Year | Figure | Who | Tag+key |
 |---|---|---|---|
@@ -93,6 +95,7 @@ Open questions. (1) How stable is a learned Pauli–Lindblad model over a multi-
 [707] M. Ivezic, “IBM Launches Heron R3 (ibm_pittsburgh): ~350 uS T2 and a Quality Upgrade for Its 156-Qubit Platform,” PostQuantum.com, Aug. 1, 2025. [Online]. Available: https://postquantum.com/industry-news/ibm-heron-r3-pittsburgh/ [P]
 [708] T. Q. Group, “Tianyan: Cloud services with quantum advantage,” [arXiv:2512.10504](https://arxiv.org/abs/2512.10504), Dec. 2025. [D]
 [709] Algorithmiq, “Algorithmiq Establishes Milan Headquarters and raises €18m to Position Europe as the Future of Quantum Software,” May 11, 2026. [Online]. Available: https://algorithmiq.fi/news/algorithmiq-establishes-milan-headquarters-and-raises-18m-to-position-europe-as-the-future-of-quantum-software/ [C]
+[891] T. Schuster and A. Elben, “Probing the classical complexity of quantum dynamics experiments,” [arXiv:2609.31830](https://arxiv.org/abs/2609.31830), Sep. 2026. [P]
 
 ## Open verification items
 - IBM's 100× PEC-overhead reduction by samplomatic (2025-11-12) is a blog claim; no paper stating its baseline or circuit class was found (tried 2026-09-26).

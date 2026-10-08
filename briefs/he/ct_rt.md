@@ -39,6 +39,8 @@ updated: 2026-09-30
 ## ראיות — כיצד נמדדו המספרים
 כל מספר קווים מעל 1,536 לקוח מספרות מוצר, לא ממערכת מחווטת: לנתון >4,000 של Bluefors ולנתון 40,000 עד 2029 של Delft Circuits אין התקנה נקובה בשמה, ואף אחת מהן אינה מפרסמת נתוני הפרעה הדדית או יציבות פאזה במספר ערוצים גבוה. נכון ל-4 בספטמבר 2026 אין מדידה בלתי תלויה של הפרעה הדדית מצטברת מעל ~1,000 קווים בו-זמניים — וזה הפער שחשוב, שכן ההפרעה ההדדית היא הדרך שבה הארכיטקטורה הזו נכשלת.
 
+הקיוביט עצמו יכול למדוד את הרעש של שרשרת הבקרה. בקו טרנסמון אחד ב-Jülich עם הנחתה של 56 dB, קצב העירור במודל נשלט בידי רעש קלאסי ממכשיר ההנעה שבטמפרטורת החדר (−146 dBm/Hz מעל 4.6 GHz) ומשלב המנחת ב-1 K, ואילו הרלקסציה נקבעה בידי רעש קוונטי; ספקטרום העירור של הקיוביט שימש ספקטרומטר של אותו רעש בתוך המערך עצמו [P][890]. התוצאה מתארת מערך אחד, לא כל קו.
+
 ## שחקנים וכלכלה
 **מי.**
 | ארגון | תפקיד | מדינה | מה בדיוק הם עושים בטכנולוגיה זו | ראיות |
@@ -86,6 +88,7 @@ updated: 2026-09-30
 [529] E. Flipse, “Qblox secures series A funding to accelerate quantum control stack development,” Qblox Newsroom, Jun. 20, 2024. [Online]. Available: https://qblox.com/newsroom/qblox-secures-series-a-funding-quantum-control-stack-development [C]
 [530] M. U. Rehman, “Delft Circuits Names Martin Danoesastro CEO and Extends Funding Round,” The Quantum Insider, Dec. 3, 2025. [Online]. Available: https://thequantuminsider.com/2025/12/03/delft-circuits-new-ceo-financing/ [P]
 [531] NVIDIA, “NVIDIA Introduces NVQLink — Connecting Quantum and GPU Computing for 17 Quantum Builders and Nine Scientific Labs,” Oct. 28, 2025. [Online]. Available: https://nvidianews.nvidia.com/news/nvidia-nvqlink-quantum-gpu-computing [C]
+[890] J. R. Guimarães *et al.*, “Quantum environment afterglow from broadband excitation spectroscopy in superconducting qubits,” [arXiv:2609.31280](https://arxiv.org/abs/2609.31280), Sep. 2026. [P]
 
 ## פריטי אימות פתוחים
 אף ספק אינו מפרסם עלות לקו או לרתמת חיווט; אין כלכלת יחידה לחיווט קריוגני שניתן לצטט. אין תקציב חום נמדד או נתוני הפרעה הדדית לרתמת כבלים גמישים של >1,000 קווים — הנתונים של Bluefors (>4,000 קווים) ושל Delft Circuits (40,000 עד 2029) אינם מאומתים ברמת המערכת. ההכנסות ומספרי הלקוחות של Delft Circuits ושל Zurich Instruments לא פורסמו. תוצאת השוויון של IBM לממתח שטף ב-CMOS קריוגני קיימת רק כתמציות של כנס APS, ללא קדם-פרסום או מאמר נכון ל-2026-09-04. לא נמצאה קביעת ECCN מתוארכת ספציפית למסדי בקרה בטמפרטורת החדר; היותם לא מפוקחים נקראת מתוך היעדרה של רשומה תואמת בתקנה של 2024, לא מתוך הצהרה מפורשת של BIS.

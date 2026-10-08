@@ -89,8 +89,30 @@ def editions_html(lang):
 
 # Site updates after an edition's Zenodo version (the editor's cadence of 2 Oct 2026: the site is updated as fixes land; Zenodo gets a new version
 # when the changes amount to an edition). One entry per update, newest first: date, the review or ledger it answers, what changed for the reader.
+# The data cut-off of the live site: the date of the newest change ledger (data/changes/YYYY-MM-DD.json). The published
+# edition keeps its own cut-off (26 September 2026 for 2026.09) in the report's §6; the header, the footer and the
+# changelog line carry this one through the placeholder {{N_DATA_CUTOFF}} (the editor's order of 8 Oct 2026).
+import os as _os, re as _re
+def data_cutoff():
+    d = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..', 'data', 'changes')
+    dates = sorted(_re.sub(r'\.json$', '', f) for f in _os.listdir(d) if _re.match(r'^\d{4}-\d{2}-\d{2}\.json$', f))
+    return dates[-1] if dates else EDITIONS[0]['date']
+_MONTHS = {'en': ['January','February','March','April','May','June','July','August','September','October','November','December'],
+           'ru': ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'],
+           'he': ['בינואר','בפברואר','במרץ','באפריל','במאי','ביוני','ביולי','באוגוסט','בספטמבר','באוקטובר','בנובמבר','בדצמבר']}
+def data_cutoff_text(lang, iso=None):
+    y, m, d = (iso or data_cutoff()).split('-'); m = _MONTHS[lang][int(m) - 1]; d = str(int(d))
+    return {'en': f'{d} {m} {y}', 'ru': f'{d} {m} {y} года', 'he': f'{d} {m} {y}'}[lang]
+
 ERRATA = {
  '2026.09': [
+  ('2026-10-08', 'the editor\'s decisions D1–D9 of 8 Oct 2026, the digest intake of the 2026-10-08 issue and the WP2 pilot tagging (data/changes/2026-10-08.json)',
+   'IonQ Tempo is a 64-qubit demonstration (IonQ\'s #AQ 64 on a development system, 25 Sep 2025), not a deployed 100-qubit device: the 100 qubits and 99.9% are IonQ\'s stated targets for the product listed for late 2026, now in its roadmap; no two-qubit error is published for the device. The ion-chain narrative, §6.1 and the records row follow. '
+   'Six counters of §8 mixed all register rows with devices: the §8.1 sentence read 72 deployed, 50 demonstrated and 9 retired against 125 devices (71, 45 and 9 of them); the access sentence, the cloud column of Table 8.1, H4\'s "rest announced", H5 and F4 counted components and targets as devices — each now counts the set it names. '
+   'Every two-qubit error figure of the register (65 machines) carries its comparability class — protocol, scope, statistic, conditioning — in data/register/machine-2q-classes.csv, read from the machines\' own sources; 43 register values were corrected on the way: means labelled as medians (Sycamore, Zuchongzhi 3.0 and 3.2, Heron r2, Willow\'s iSWAP figure), single-qubit, SPAM, squeezing and Bell-state values standing in the two-qubit columns (AWS dual-rail, SQC, Nord Quantique, Caltech, Aurora, PsiQuantum, SEEQC, Equal1, Forte, Gemini), post-selected and zone-limited figures now stated as such (Phoenix, Seeker, Sqale, H2, Helios), and values the owners\' pages contradict (Zuchongzhi 2.1 0.52% not ~2%, Harvard 448 4–7e-3, Aria 0.6%, Ankaa-3 0.5%, Ankaa-2 2.7%). 21 ranked numbers changed; 23 doubts are filed for the register\'s owner. '
+   'The digest\'s intake of 8 Oct: Nord Quantique\'s 256-logical-qubit 2030 target merged into the Tesseract roadmap; Pasqal\'s 256-atom TmMgGaO4 simulation on Orion Beta as a milestone (the row keeps 140 qubits; the 1,024-atom defect-free register is a laboratory result); a Superion 256 planned for an SDT customer in South Korea; D-Wave\'s and Quantinuum\'s $100M CHIPS agreements as organisation statements; Quantum Art\'s first-generation QaaS system Montage (up to 50 qubits) added as an announced machine. '
+   'Thirty paragraphs from 37 digest proposals of September papers added to 28 technology briefs in three languages, each number verified in the paper\'s full text (17 works, numbers 884–900); among them the 6×6 germanium dot array, the circular-Rydberg benchmark, the deterministic microwave fusion of 13 photonic qubits (the optical fusion slot stays empty), the xSFQ cell library and the 48-spin exchange-only benchmark. '
+   '"analogue" throughout the Atlas\'s English prose, as Nature and the OED write it; two architecture titles renamed in English (laser-free, microwave-driven gates; alkaline-earth(-like) atoms). §2.1 cites the Superconductor Electronics Monitor without "the author\'s". The sitemap\'s lastmod moves per page from a committed hash ledger; the data cut-off shown on the site is the date of the newest change ledger.'),
   ('2026-10-07', 'the editor\'s order of 7 Oct 2026 (QEC codes per machine; data/changes/2026-10-07.json)',
    'The machine × code table completed against the primary sources, machine by machine: 177 rows on 70 machines (150 codes run on hardware, 27 designated by the builder), 62 distinct codes, 55 of them run on hardware (data/register/machine-codes.md defines the new fields: use, scope, device, by, year, source, check state). '
    'Corrections: Sycamore-72, Willow and Zuchongzhi 3.2 ran the XZZX (ZXXZ) form of the surface code, not the CSS rotated form; Kunlun\'s second code is an [[18,6,3]] reduction of the [[18,4,4]] bivariate bicycle code, not a generalized bicycle code; the IonQ rows carried a classical code id. '

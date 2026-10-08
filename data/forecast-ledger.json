@@ -1,6 +1,6 @@
 {
  "edition": "2026.09",
- "written": "by build/machines_chapter.py from the register of quantum-machines · 17 Sep 2026, re-cut 26 Sep 2026 (three ion paths, two analog paths, 14 gaps → technologies, sentinels → cell values), extended 29 Sep 2026 (24 machines added, 3 renamed, 3 split, 1 removed; ten cell corrections — data/register/patch-2026-09-29.json)",
+ "written": "by build/machines_chapter.py from the register of quantum-machines · 17 Sep 2026, re-cut 26 Sep 2026 (three ion paths, two analogue paths, 14 gaps → technologies, sentinels → cell values), extended 29 Sep 2026 (24 machines added, 3 renamed, 3 split, 1 removed; ten cell corrections — data/register/patch-2026-09-29.json)",
  "forecasts": [
   {
    "id": "F1a",
@@ -28,17 +28,17 @@
    "now": "98 (2025)",
    "e2027": "180–260: the historical ×1.37/yr gives ≈185 by 2027; the first announced system above it caps the range at 260",
    "e2028": "200–400",
-   "basis": "frontier series 2020 20, 2021 20, 2022 30, 2023 56, 2024 56, 2025 98 — the family whose frontier last grew (2023, 2025); announced: Tempo — 100 (2025); Superion 256 — 256 (2026); NFQC-1k — 1,000 (2026); IonQ Superion 10K — 10,000 (2026)",
+   "basis": "frontier series 2020 20, 2022 30, 2023 56, 2024 56, 2025 98 — the family whose frontier last grew (2023, 2025); announced: Superion 256 — 256 (2026); NFQC-1k — 1,000 (2026); IonQ Superion 10K — 10,000 (2026)",
    "confidence": "medium",
    "falsified_if": "a trapped-ion device with entangling gates on more than 260 qubits by 2027.09, or the frontier still at 98"
   },
   {
    "id": "F2",
    "indicator": "best two-qubit error per family (devices; hero pairs excluded) and the family median",
-   "now": "superconducting circuits 1.0×10⁻³ / median 4.2×10⁻³; trapped ions 7.9×10⁻⁴ / median 4.0×10⁻³; neutral atoms 1.6×10⁻³ / median 4.0×10⁻³",
-   "e2027": "superconducting circuits ≈ 7.7×10⁻⁴; trapped ions ≈ 7.2×10⁻⁴; neutral atoms ≈ 6.4×10⁻⁴; medians ≈ 2–3×10⁻³ for the three large families",
-   "e2028": "superconducting circuits ≈ 5.9×10⁻⁴; trapped ions ≈ 6.9×10⁻⁴; neutral atoms ≈ 4.0×10⁻⁴; the first family median below 2×10⁻³",
-   "basis": "frontier series superconducting circuits: 2019 6.2×10⁻³, 2021 6.2×10⁻³, 2022 6.2×10⁻³, 2023 2.5×10⁻³, 2024 1.0×10⁻³, 2025 1.0×10⁻³, 2026 1.0×10⁻³ (×1.30/yr); trapped ions: 2020 1.0×10⁻³, 2021 1.0×10⁻³, 2022 1.0×10⁻³, 2023 1.0×10⁻³, 2024 1.0×10⁻³, 2025 7.9×10⁻⁴ (×1.05/yr); neutral atoms: 2023 4.0×10⁻³, 2025 1.6×10⁻³ (×1.58/yr, two points only); the median trails the frontier by superconducting circuits 3 yr, trapped ions 6 yr, neutral atoms 3 yr (the year the frontier first reached today's median)",
+   "now": "superconducting circuits 1.0×10⁻³ / median 4.4×10⁻³; trapped ions 7.9×10⁻⁴ / median 2.5×10⁻³; neutral atoms 5.0×10⁻³ / median 8.0×10⁻³",
+   "e2027": "superconducting circuits ≈ 7.7×10⁻⁴; trapped ions ≈ 7.2×10⁻⁴; medians ≈ 2–3×10⁻³ for the three large families",
+   "e2028": "superconducting circuits ≈ 6.0×10⁻⁴; trapped ions ≈ 6.9×10⁻⁴; the first family median below 2×10⁻³",
+   "basis": "frontier series superconducting circuits: 2019 6.0×10⁻³, 2021 5.2×10⁻³, 2022 5.2×10⁻³, 2023 2.5×10⁻³, 2024 1.5×10⁻³, 2025 1.5×10⁻³, 2026 1.0×10⁻³ (×1.29/yr); trapped ions: 2020 1.0×10⁻³, 2022 1.0×10⁻³, 2023 1.0×10⁻³, 2024 1.0×10⁻³, 2025 7.9×10⁻⁴ (×1.05/yr); the median trails the frontier by superconducting circuits 3 yr, trapped ions 6 yr, neutral atoms 1 yr (the year the frontier first reached today's median)",
    "confidence": "medium",
    "falsified_if": "a family frontier that fails to improve for two editions, or a median that improves faster than the frontier did three years earlier"
   },
@@ -56,7 +56,7 @@
    "id": "F4",
    "indicator": "devices with a demonstrated link technology (interconnect layer)",
    "now": "6 (superconducting circuits 3, trapped ions 1, photonics 1, defect spins 1)",
-   "e2027": "9–12: of the 12 announced machines that name a link (IBM Quantum Flamingo (l-coupler proof of concept) (2024), Fujitsu >10,000 physical / ~250 logical (STAR) (2025), Omega chipset (Moreton Bay / Chicago systems unnamed) (2025), QuantWare Bass-A10K (VIO-40K) (2025), D-Wave gate-model dual-rail system (2026), IBM Quantum Kookaburra (2026), Superion 256 (2026), IBM Quantum Cockatoo (2027), Advantage3 (2029), Apollo (2029), IBM Quantum Starling (2029), IBM Quantum Blue Jay (2033)), the ones dated 2025–2026 are the candidates",
+   "e2027": "9–12: of the 10 announced machines that name a link (Fujitsu >10,000 physical / ~250 logical (STAR) (2025), QuantWare Bass-A10K (VIO-40K) (2025), D-Wave gate-model dual-rail system (2026), IBM Quantum Kookaburra (2026), Superion 256 (2026), IBM Quantum Cockatoo (2027), Advantage3 (2029), Apollo (2029), IBM Quantum Starling (2029), IBM Quantum Blue Jay (2033)), the ones dated 2025–2026 are the candidates",
    "e2028": "12–18; the interconnect gap share falls below 85 % only if the multi-module superconducting lattices arrive",
    "basis": "the register's announced-link rows discounted by the delivery record; the historical series is too short to extrapolate",
    "confidence": "low",

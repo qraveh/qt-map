@@ -28,6 +28,8 @@ Exchange coupling J depends exponentially on detuning and barrier height, so a r
 
 Dominant term: extrinsic control and calibration, ~80% of the CNOT budget.
 
+Baseband control can drop per-pair barrier pulsing: in a 6×6 germanium hole-dot array, one shared barrier gate held at a fixed voltage, with only the individual plunger gates pulsed, sufficed for electric-dipole spin resonance (EDSR) driving, shuttling and exchange tuning from about 20 kHz to about 80 MHz [P][898].
+
 ## Manufacturing, materials & supply chain
 The node rides ordinary CMOS: Intel's 300 mm EUV line reports over 24,000 devices per wafer [D][199], with 96% tune-up yield on 232 devices of one wafer [D][766], and Quantum Motion characterises 1,024 dots in five minutes on GlobalFoundries 22FDX [C][200]. That is the asset and the exposure: each developer sole-sources one foundry it does not own — Quobly to STMicroelectronics, Quantum Motion to GlobalFoundries, Diraq to imec — so a fab-side decision is a company-level failure mode. Room-temperature pulse generation is uncontrolled, but a controller "designed to operate at" ≤4.5 K falls under ECCN 3A901.a from the design file on [G:BIS-3A901A-CRYOCMOS]: cold integration imports export control.
 
@@ -69,6 +71,7 @@ Confirm by 2027 if any developer publishes all-pairs two-qubit fidelities above 
 [200] Quantum Motion, “Quantum Motion Delivers the Industry's First Full-Stack Silicon CMOS Quantum Computer,” Sep. 15, 2025. [Online]. Available: https://quantummotion.com/quantum-motion-delivers-the-industrys-first-full-stack-silicon-cmos-quantum-computer/ [C]
 [416] D. P. DiVincenzo, D. Bacon, J. Kempe, G. Burkard, and K. B. Whaley, “Universal quantum computation with the exchange interaction,” *Nature*, vol. 408, no. 6810, pp. 339–342, 2000, doi: [10.1038/35042541](https://doi.org/10.1038/35042541). [arXiv:quant-ph/0005116](https://arxiv.org/abs/quant-ph/0005116). [S]
 [766] S. F. Neyens *et al.*, “Probing single electrons across 300-mm spin qubit wafers,” *Nature*, vol. 629, no. 8010, pp. 80–85, May 2024, doi: [10.1038/s41586-024-07275-6](https://doi.org/10.1038/s41586-024-07275-6). [D]
+[898] A. S. Ivlev *et al.*, “Sparse qubit operation in a 6×6 quantum dot array,” [arXiv:2610.07683](https://arxiv.org/abs/2610.07683), Oct. 2026. [P]
 
 ## Open verification items
 The 80% extrinsic share of CNOT error is a modelled inference from HRL's noise budget, not an independent partition, and has no second-group replication.

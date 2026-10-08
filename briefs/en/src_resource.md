@@ -26,7 +26,9 @@ An n-photon graph from k-photon primitives costs ~n/k fusions, each 50% unbooste
 | 2025-05 | Reconfigurable 4-photon graph states, one QD, ~0.5 Hz | C2N Paris-Saclay | [D][824] |
 | 2026-06 | Emitter-fusion loss threshold 7.0–7.3% vs 0.38–0.82% | Sparrow | [S][264] |
 
-Rate is the gap: components clear 99%, but nobody has fused past eight photons since 2024.
+Rate is the gap: components clear 99%, but optical fusion has not passed eight photons since 2024.
+
+In the microwave domain, fusion is already deterministic: a superconducting circuit fused on-demand time-bin cluster states by non-destructive Bell projection of flying microwave photons, with qubit reset and reuse, into graph states with genuine multipartite entanglement across 13 photonic qubits [D][885]. Those photons cannot leave the cryostat without a microwave–optical transducer, itself an empty slot, so the result does not fill this optical slot.
 
 ## Manufacturing, materials & supply chain
 No commercial resource-state generator exists; the nearest base is 300 mm photonic IC — GlobalFoundries' Quantum Technology Solutions [C][G:GF-QTS-2026-05] and PIXEurope [G:PIXEUROPE-2024-11]. Deterministic sources are the single point of failure: Sparrow Quantum, sole merchant vendor as of 4 Sep 2026, ships 20–35% system efficiency against its own 55.3% best device and USTC's 71.2% record [D][G:SPARROW-SERIESA-2025-04]; no cost or yield per state is public. I/O scales with photon count, not qubit count: a pump, switch tree and detectors per source, feed-forward within the photon's flight time per fusion — ~0.1–0.2 dB per switch against a ~0.5 dB budget at multiplexing depth ~10 [D][169]. At 10³ states/s the wall is switch loss; at 10⁶, thousands of cryogenic detector channels under GHz feed-forward. ECCN 4A906 catches the machine; none names photon sources [G:BIS-QUANTUM-ECCN-2024-09].
@@ -66,6 +68,7 @@ Confirm by 2028: a fused state above 16 photons published with fidelity and rate
 [264] M. C. Löbl, L. A. M. Pettersson, J. Dragašević, S. X. Chen, and O. A. D. Sandberg, “The subthreshold issue of fusion-based quantum computing,” [arXiv:2606.28490](https://arxiv.org/abs/2606.28490), Jun. 2026. [S]
 [688] P. Thomas, L. Ruscio, O. Morin, and G. Rempe, “Fusion of deterministically generated photonic graph states,” *Nature*, vol. 629, no. 8012, pp. 567–572, May 2024, doi: [10.1038/s41586-024-07357-5](https://doi.org/10.1038/s41586-024-07357-5). [D]
 [824] H. Huet *et al.*, “Deterministic and reconfigurable graph state generation with a single solid-state quantum emitter,” *Nat. Commun.*, vol. 16, no. 1, Art. no. 4337, May 2025, doi: [10.1038/s41467-025-59693-3](https://doi.org/10.1038/s41467-025-59693-3). [D]
+[885] Y. Li *et al.*, “Deterministic and programmable fusion for the scalable generation of photonic graph states,” *Nat. Phys.*, Sep. 2026, doi: [10.1038/s41567-026-03471-5](https://doi.org/10.1038/s41567-026-03471-5). [D]
 
 ## Open verification items
 Fidelity of the 8-photon fused states spans 0.34–0.85 by graph type with no reconciled headline value — treat as a range, not a point estimate.

@@ -29,6 +29,8 @@ N יונים נושאים N אופני תנועה ברוחב פס קבוע, ול
 
 Tempo: 100 יונים, #AQ 64, ללא זמן שער [C][101]. האיבר השולט: זמן השער, לא הנאמנות.
 
+אופני התנועה של השרשרת יכולים לשמש גם אוגר בוזוני, ולא רק אפיק לשערים. שרשרת של שלושה יוני ¹⁷¹Yb⁺ קודדה שדה סקלרי בקבוצה אחת של אופנים רוחביים (2.80–3.05 MHz) והפעילה עליו התפתחות בזמן בשערי ספין–פונון, בלי לקטוע את הבוזונים לקיוביטים, ואילו שערי מולמר–סורנסן השתמשו בקבוצה הרוחבית האחרת, כך שהשתיים אינן מפריעות זו לזו; אכלוסי הפונונים שנמדדו תאמו את הסימולציה עד שמונה קוונטים לאופן, ואופן בוזוני רביעי חייב הרצה במעגל נפרד [D][884]. האוגר קצר-חיים: קוהרנטיות התנועה היא ≲ 10 ms, לעומת ≈ 1.5 s של קוהרנטיות הספין בזמן סרק [D][884].
+
 ## ייצור, חומרים ושרשרת האספקה
 IonQ סגרה את רכישת SkyWater ב-2026-07-31, ונקבה במפעלים למלכודות במיקרו-ייצור במינסוטה, בפלורידה ובטקסס, בלי לחשוף גודל פרוסה או דור תהליך [C][G:IONQ-SKYWATER-FAB-2026]. הבקרה מתפצלת לשתי דרכים: שערי MS בלייזר צריכים כמה אורכי גל ואופטיקה לכל יון; שערים אלקטרוניים משתמשים בקווי זרם ומיקרוגל על השבב. ב-10³ יונים הקיר הוא ספקטרום האופנים, לא החיווט: התשובה היא שרשראות קצרות רבות המחוברות בהסעה או בפוטוניקה — השזירה הראשונה של IonQ בין שתי מערכות (2026-04-14) לא חשפה קצב או נאמנות [C][G:IONQ-PHOTONIC-INTERCONNECT-2026-04]. החשיפה לפיקוח על יצוא היא של המכונה המוגמרת: ECCN 4A906 חל עליה רק כאשר מספר הקיוביטים ושגיאת ה-C-NOT שלה נופלים באותה רצועה — מ-34–99 קיוביטים ב-≤ 10⁻⁴ ועד כל שגיאה שהיא מ-2,000 קיוביטים ואילך [G:BIS-3A901A-CRYOCMOS]; אף תקנה אינה נוקבת במלכודות יונים [G][301].
 
@@ -70,6 +72,7 @@ IonQ סגרה את רכישת SkyWater ב-2026-07-31, ונקבה במפעלים 
 [132] IonQ, “IonQ's Accelerated Roadmap: Turning Quantum Ambition into Reality,” Jun. 13, 2025. [Online]. Available: https://www.ionq.com/blog/ionqs-accelerated-roadmap-turning-quantum-ambition-into-reality [R]
 [301] US Department of Commerce, Bureau of Industry and Security, “Commerce Control List Additions and Revisions; Implementation of Controls on Advanced Technologies Consistent With Controls Implemented by International Partners,” *Federal Register*, vol. 89, p. 72926, Sep. 6, 2024. [Online]. Available: https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies [G]
 [326] IonQ, “IonQ Announces Record Second Quarter 2026 Revenues, Growing 287% YoY,” Aug. 5, 2026. [Online]. Available: https://www.ionq.com/news/ionq-announces-record-second-quarter-2026-revenues-growing-287-yoy [C]
+[884] A. T. Than *et al.*, “Quantum field theory dynamics on a spin–phonon quantum computer,” *Nat. Phys.*, Sep. 2026, doi: [10.1038/s41567-026-03402-4](https://doi.org/10.1038/s41567-026-03402-4). [arXiv:2509.11477](https://arxiv.org/abs/2509.11477). [D]
 
 ## פריטי אימות פתוחים
 זמן השער הדו-קיוביטי והנאמנות לכל זוג של Tempo: לא פורסמו; יש רק #AQ 64 וכותרת של "נאמנות 99.9%". ערך החוזה של KISTI על Tempo-100: לא נחשף במקורות שנמצאו, ולכן ההצבה הושמטה מפנקס הכספים. שום נתון שפורסם על חימום, ספקטרום אופנים או חיבור בין-מודולי אינו מיישב את יעד ה-10,000 יונים על שבב אחד של IonQ ל-2027 עם הפשרה של אורך השרשרת. שרשרת ה-Tempo של 100 יונים היא טענה של החברה; השרשרת הגדולה ביותר שנבחנה באופן בלתי תלוי נשארת בת 30 יונים.

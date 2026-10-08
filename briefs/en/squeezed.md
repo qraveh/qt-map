@@ -17,6 +17,8 @@ An optical mode whose vacuum fluctuations are redistributed between conjugate qu
 ## Physics & limits
 Squeezing is a loss thermometer: the medium can produce arbitrarily strong quadrature reduction, but every dB of loss between generation and detection pulls the measured value toward vacuum, so the number describes the optical path, not the squeezer. Hence 15 dB in bulk optics [D][344] against 1.4 dB measured on chip, over 10 dB once a 4 dB homodyne loss budget is subtracted [D][345]. Do not conflate raw quadrature squeezing with the *effective* squeezing of a GKP grid state, which folds in non-Gaussian preparation fidelity as well as loss: fault tolerance prices the latter at ~9.75 dB against 0.62 dB on chip [D][174]. Only lower loss, better coupling and higher detection efficiency move it.
 
+The molecular vibronic-spectrum application of Gaussian boson sampling with squeezed light is a linear statistic of the output; the characteristic function of displaced squeezed vacuum is computable exactly in polynomial time, so the spectrum is classically estimable to the experiment's additive accuracy [P][889].
+
 ## Engineering state of the art
 
 | Date | Figure | Who | Tag |
@@ -66,6 +68,7 @@ Confirm by 2028: on-chip GKP effective squeezing above 2 dB with its loss budget
 [178] Xanadu Quantum Technologies Limited, “Xanadu Charts Path to Over 1,000 Logical Qubits by 2031,” GlobeNewswire, Aug. 31, 2026. [Online]. Available: https://www.globenewswire.com/news-release/2026/08/31/3353211/0/en/xanadu-charts-path-to-over-1-000-logical-qubits-by-2031.html [R]
 [344] H. Vahlbruch, M. Mehmet, K. Danzmann, and R. Schnabel, “Detection of 15 dB Squeezed States of Light and their Application for the Absolute Calibration of Photoelectric Quantum Efficiency,” *Phys. Rev. Lett.*, vol. 117, no. 11, Art. no. 110801, Sep. 2016, doi: [10.1103/PhysRevLett.117.110801](https://doi.org/10.1103/PhysRevLett.117.110801). [D]
 [345] X. Shi *et al.*, “Squeezed Light Generation in Periodically Poled Thin-Film Lithium Niobate Waveguides,” [arXiv:2508.08599](https://arxiv.org/abs/2508.08599), Aug. 2025. [D]
+[889] B. Seron, H. Thomas, E. Araujo, A. Arkhipov, C. Oh, and L. Novo, “Efficient classical algorithm for estimating linear statistics of Boson Sampling,” [arXiv:2609.35447](https://arxiv.org/abs/2609.35447), Sep. 2026. [P]
 
 ## Open verification items
 An independent on-chip squeezing number does exist: Shi et al. report 1.4 dB measured on PPLN TFLN [345]. What remains single-source is the *GKP effective* squeezing of 0.62 dB (Xanadu only).

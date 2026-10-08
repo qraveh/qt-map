@@ -68,6 +68,8 @@ updated: 2026-09-30
 ## Перспективы и открытые вопросы
 Подтвердить к 2028 г., если хоть один криогенный предекодер пройдёт tape-out и даст измеренный кремний; понизить, если литература 2027 г. останется на уровне послесинтезных оценок. В лучшем случае к 2029 г.: компрессор при 4 K внутри системы, близкой к QBI, поглощает поток синдромов ещё до жгута. В худшем случае: декодирование при комнатной температуре масштабируется вместе с кодами qLDPC и более быстрыми каналами. Открытые вопросы: какая базовая величина мощности должна задавать размер холодного декодера; может ли декодирующая логика делить ступень с управлением, не возвращая отравление квазичастицами; упрётся ли хоть одна платформа в стену по вводам раньше 10⁴ кубитов. Следить за листингом SEEQC и за дорожной картой IBM после покупки HRL.
 
+Бюджет переходов, определяющий размер декодера на БОК-логике, снижается со стороны проектирования: бестактовая библиотека ячеек xSFQ со встроенными усилителями разветвления (fan-out) сокращает число джозефсоновских переходов в 2.7–3.4 раза (на 63–71%) на стандартных однотактных логических бенчмарках и на 41–66% на конвейерных, причём одна ячейка изготовлена и проверена при 4.2 K [P][897]. Декодер не построен; цифры относятся к логике общего назначения.
+
 ## Литература
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [550] S. Kawabata, “Integration and Resource Estimation of Cryoelectronics for Superconducting Fault-Tolerant Quantum Computers,” [arXiv:2601.03922](https://arxiv.org/abs/2601.03922), Jan. 2026. [S]
@@ -77,6 +79,7 @@ updated: 2026-09-30
 [744] A. Holmes *et al.*, “NISQ+: Boosting quantum computing power by approximating quantum error correction,” [arXiv:2004.04794](https://arxiv.org/abs/2004.04794), Apr. 2020. [S]
 [745] Y. Ueno, M. Kondo, M. Tanaka, Y. Suzuki, and Y. Tabuchi, “QECOOL: On-Line Quantum Error Correction with a Superconducting Decoder for Surface Code,” arXiv, Nov. 8, 2021. [Online]. Available: https://arxiv.org/abs/2103.14209 [S]
 [746] G. Tao *et al.*, “CryoZip: An Efficient Cryogenic Compressor for Quantum Error Correction Syndromes,” [arXiv:2606.30805](https://arxiv.org/abs/2606.30805), Jun. 2026. [S]
+[897] P. Papanikolaou, A. Vanasse, H. Jin, G. Tzimpragos, and J. Volk, “Duplication-aware retiming and cell interface redesign for superconductor circuit minimization,” [arXiv:2610.02333](https://arxiv.org/abs/2610.02333), Oct. 2026. [P]
 
 ## Открытые пункты верификации
 Грант DOE ARQC DE-SC0025633 упомянут в благодарностях статьи CryoZip, но ни в одном использованном источнике сумма в долларах не приводится; считается неопределённой количественно.

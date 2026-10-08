@@ -92,6 +92,8 @@ Credibility: Google delivered every milestone it announced, late but real, and a
 
 Confirm within 12–24 months if: any group reports Λ ≥ 3 over ≥10⁵ cycles; a logical two-qubit gate at d ≥ 5 reaches 99% without post-selection; a patch runs across two modules; yoked patches appear on hardware. Demote if a qLDPC memory beats a surface-code patch at equal qubit count before end-2027. Best case by 2029: a few hundred logical qubits at 10⁻⁶ on 10⁵–10⁶ physical qubits, decoding a commodity — what Starling and Libra assume. Worst case: Λ stays near 2, d ≈ 25 stays the price of 10⁻⁶, and the code survives only as a benchmark. Open questions: (1) does Λ hold above 10³ physical qubits, where crosstalk and drift scale differently? (2) can yoking run on hardware, or does outer-code decoding defeat the real-time budget? (3) how much of the 2026 record is calibration rather than physics, given that RL steering alone moved d=7 from 1.43×10⁻³ to 7.72×10⁻⁴? Watch: Google's next distance step and IBM's Kookaburra.
 
+Lattice surgery split across two processors joined by a photonic link does not automatically keep distance d at the seam: a straight Bell-pair interface gives d + 1 on the merge outcome but only ⌊(d + 1)/2⌋ on the perpendicular observable, a zig-zag partition restores d, and a linear-cluster fusion seam gives 2d + 1 and d — distances that count interface faults only [P][893].
+
 ## References
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [2] V. Sivak *et al.*, “Reinforcement learning control of quantum error correction,” *Nature*, vol. 655, no. 8124, pp. 879–884, Jul. 2026, doi: [10.1038/s41586-026-10759-2](https://doi.org/10.1038/s41586-026-10759-2). [D]
@@ -121,6 +123,7 @@ Confirm within 12–24 months if: any group reports Λ ≥ 3 over ≥10⁵ cycle
 [660] Riverlane, “Riverlane awarded £2.1m by Horizon Europe to develop the next generation of its quantum error correction decoder,” May 1, 2024. [Online]. Available: https://www.riverlane.com/press-release/riverlane-awarded-2-1m-by-horizon-europe-to-develop-the-next-generation-of-its-quantum-error-correction-decoder [C]
 [661] Riverlane, “Riverlane raises $75 million to meet surging global demand for quantum error correction technology,” Aug. 6, 2024. [Online]. Available: https://www.riverlane.com/press-release/riverlane-raises-75-million-to-meet-surging-global-demand-for-quantum-error-correction-technology [C]
 [662] A. B. Ziad, A. Zalawadiya, B. Barber, and L. Skoric, “Quantum decoder,” Google Patents, Dec. 10, 2025. [Online]. Available: https://patents.google.com/patent/GB2641501A/en [G]
+[893] F. Burt *et al.*, “Loss-tolerant distributed lattice surgery using fusion networks,” [arXiv:2610.01923](https://arxiv.org/abs/2610.01923), Oct. 2026. [P]
 
 ## Open verification items
 

@@ -61,12 +61,15 @@ Requires linear-optical fusion and a resource-state generator (RSG), neither at 
 ## Outlook & open questions
 Confirm by 2028: an end-to-end fusion-lattice demonstration at any code distance with measured loss and logical error; demote if only component numbers persist. Best case 2029: a small working lattice. Worst case: it stays a paper and emitter hybrids inherit it. Open: does anyone rebut the 2026 critique; which threshold survives hardware; does Stage C publish a code-level number.
 
+Fusion networks need not carry a whole computation: a 2026 construction confines them to the seam of distributed surface-code lattice surgery between matter-qubit processors, where 'hybrid checks' combine local ancilla readouts with the fusion outcomes of photonic resource states [P][893]. In simulation with no local noise, the seam tolerates erasure of 50% of fusion outcomes (38% and 32% with resource chains truncated to eight and five qubits) and the merge observable's interface distance rises from d + 1 to 2d + 1; at circuit and resource-state error rates of 10⁻³, local errors largely mask that advantage, and resource-state generation is not modelled [P][893].
+
 ## References
 [169] K. Alexander *et al.*, “A manufacturable platform for photonic quantum computing,” *Nature*, vol. 641, no. 8064, pp. 876–883, Feb. 2025, doi: [10.1038/s41586-025-08820-7](https://doi.org/10.1038/s41586-025-08820-7). [D]
 [179] S. Bartolucci *et al.*, “Fusion-based quantum computation,” *Nat. Commun.*, vol. 14, Art. no. 912, Feb. 2023, doi: [10.1038/s41467-023-36493-1](https://doi.org/10.1038/s41467-023-36493-1). [arXiv:2101.09310](https://arxiv.org/abs/2101.09310). [S]
 [264] M. C. Löbl, L. A. M. Pettersson, J. Dragašević, S. X. Chen, and O. A. D. Sandberg, “The subthreshold issue of fusion-based quantum computing,” [arXiv:2606.28490](https://arxiv.org/abs/2606.28490), Jun. 2026. [S]
 [687] R. Neeman, “Quantum Technology Atlas,” ed. 2026.09, Qodeh, Sep. 2026, §3.2. [D]
 [688] P. Thomas, L. Ruscio, O. Morin, and G. Rempe, “Fusion of deterministically generated photonic graph states,” *Nature*, vol. 629, no. 8012, pp. 567–572, May 2024, doi: [10.1038/s41586-024-07357-5](https://doi.org/10.1038/s41586-024-07357-5). [D]
+[893] F. Burt *et al.*, “Loss-tolerant distributed lattice surgery using fusion networks,” [arXiv:2610.01923](https://arxiv.org/abs/2610.01923), Oct. 2026. [P]
 
 ## Open verification items
 Source conflict on the 6-ring loss threshold: the loss-tolerant-architecture paper gives 2.7% per photon for a *boosted* 6-ring [179], while the 2026 Sparrow re-analysis gives 0.38–0.82% (static bias) for an *unencoded* 6-ring [264]. The assumptions differ (boosting, bias model, decoder), so the two are not directly comparable; both are stated here rather than reconciled.

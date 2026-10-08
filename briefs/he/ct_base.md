@@ -28,6 +28,8 @@ updated: 2026-09-30
 
 האיבר השולט: בקרה וכיול חיצוניים לקיוביט, ~80% מתקציב ה-CNOT.
 
+בקרה בפס בסיס יכולה לוותר על פולסי מחסום לכל זוג: במערך 6×6 של נקודות חורים בגרמניום, שער מחסום משותף אחד במתח קבוע, כשרק שערי הבוכנה (plunger) הנפרדים מקבלים פולסים, הספיק להנעת תהודת ספין דיפולית-חשמלית (EDSR), להסעה ולכוונון החילוף מכ-20 kHz עד כ-80 MHz [P][898].
+
 ## ייצור, חומרים ושרשרת האספקה
 הטכנולוגיה רוכבת על CMOS רגיל: קו ה-EUV של Intel על 300 mm מדווח על יותר מ-24,000 התקנים לפרוסה [D][199], עם 96% הצלחה בכוונון ב-232 התקנים בפרוסה אחת [D][766], ו-Quantum Motion מאפיינת 1,024 נקודות בחמש דקות על 22FDX של GlobalFoundries [C][200]. זה הנכס וזו החשיפה: כל מפתח נשען על מפעל ייצור יחיד שאינו בבעלותו — Quobly על STMicroelectronics, Quantum Motion על GlobalFoundries, Diraq על imec — ולכן החלטה בצד המפעל היא אופן כשל ברמת החברה. יצירת פולסים בטמפרטורת החדר אינה מפוקחת, אך בקר "שתוכנן לפעול" ב-≤4.5 K נופל תחת ECCN 3A901.a כבר מקובץ התכנון [G:BIS-3A901A-CRYOCMOS]: השילוב בקור מייבא פיקוח על יצוא.
 
@@ -69,6 +71,7 @@ updated: 2026-09-30
 [200] Quantum Motion, “Quantum Motion Delivers the Industry's First Full-Stack Silicon CMOS Quantum Computer,” Sep. 15, 2025. [Online]. Available: https://quantummotion.com/quantum-motion-delivers-the-industrys-first-full-stack-silicon-cmos-quantum-computer/ [C]
 [416] D. P. DiVincenzo, D. Bacon, J. Kempe, G. Burkard, and K. B. Whaley, “Universal quantum computation with the exchange interaction,” *Nature*, vol. 408, no. 6810, pp. 339–342, 2000, doi: [10.1038/35042541](https://doi.org/10.1038/35042541). [arXiv:quant-ph/0005116](https://arxiv.org/abs/quant-ph/0005116). [S]
 [766] S. F. Neyens *et al.*, “Probing single electrons across 300-mm spin qubit wafers,” *Nature*, vol. 629, no. 8010, pp. 80–85, May 2024, doi: [10.1038/s41586-024-07275-6](https://doi.org/10.1038/s41586-024-07275-6). [D]
+[898] A. S. Ivlev *et al.*, “Sparse qubit operation in a 6×6 quantum dot array,” [arXiv:2610.07683](https://arxiv.org/abs/2610.07683), Oct. 2026. [P]
 
 ## פריטי אימות פתוחים
 החלק החיצוני של 80% משגיאת ה-CNOT הוא הסקה ממודל תקציב הרעש של HRL, לא חלוקה בלתי תלויה, ואין לו שחזור בידי קבוצה שנייה.

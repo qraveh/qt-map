@@ -68,6 +68,8 @@ Randomised benchmarking averages over Cliffords and is blind to slow coherent dr
 
 Conflicts: IBM's 23 mW per qubit [D][296] against 5 mW and under 2 mW [S][550] are different quantities — active versus idle, drive-only versus full chain — with no common definition; 23 mW is used here as the only figure tied to a working gate. Equal1's fidelity figures are product-page claims [C][273] against a published six-qubit device at 0.3 K [G:EQUAL1-60M-2026-01].
 
+On HRL's 54-dot exchange-only chip run by its 4 K CMOS controller, the measured error per exchange in a 12-spin cross-entropy benchmark (1.54×10⁻⁴) was more than ten times what component-level noise predicts (1.15×10⁻⁵) and mostly coherent; the authors suspect the cryo-controller and the signal lines. The controller's memory holds only about 1,000 unique pulse instructions once state preparation and measurement are loaded, so deep sequences had to be built from recursive subroutines [P][900].
+
 ## Actors & economics
 
 **Who.**
@@ -134,6 +136,7 @@ Open questions: (1) a defensible power-per-qubit definition? (2) will a foundry 
 [562] Intel Corporation, “Technologies for Closed-Loop Qubit Calibration,” USPTO, Jul. 2026. [Online]. Available: https://patents.justia.com/patent/20260187510 [G]
 [563] PatSnap, “Cryogenic CMOS Circuit Technology Landscape 2026,” Apr. 20, 2026. [Online]. Available: https://www.patsnap.com/resources/blog/articles/cryo-cmos-technology-landscape-2026/ [P]
 [564] C. Nayak, “Full stack ahead: Pioneering quantum hardware allows for controlling up to thousands of qubits at cryogenic temperatures,” Microsoft Research Blog, Jan. 27, 2021. [Online]. Available: https://www.microsoft.com/en-us/research/blog/full-stack-ahead-pioneering-quantum-hardware-allows-for-controlling-up-to-thousands-of-qubits-at-cryogenic-temperatures/ [C]
+[900] HRL Quantum Team and Microsoft collaborators, “Benchmarking exchange-only control of a 48-spin singlet manifold,” [arXiv:2610.07393](https://arxiv.org/abs/2610.07393), Oct. 2026. [P]
 
 ## Open verification items
 

@@ -28,6 +28,8 @@ updated: 2026-09-30
 
 Доминирующий член: внешние управление и калибровка, ~80% бюджета CNOT.
 
+Управление в основной полосе частот может обойтись без импульсов на барьере каждой пары: в германиевом массиве 6×6 дырочных квантовых точек одного общего барьерного затвора при фиксированном напряжении и импульсов только на индивидуальных плунжерных затворах хватило для возбуждения электродипольным спиновым резонансом (EDSR), перемещения спинов и перестройки обмена примерно от 20 kHz до примерно 80 MHz [P][898].
+
 ## Производство, материалы и цепочка поставок
 Узел едет на обычной КМОП: линия Intel 300 mm с EUV даёт более 24,000 приборов на пластину [D][199] при 96% выхода по успешной настройке на 232 приборах одной пластины [D][766], а Quantum Motion характеризует 1,024 квантовые точки за пять минут на GlobalFoundries 22FDX [C][200]. В этом одновременно и актив, и уязвимость: у каждого разработчика единственный источник — одна фабрика, которой он не владеет: Quobly — STMicroelectronics, Quantum Motion — GlobalFoundries, Diraq — imec, — так что решение на стороне фабрики становится режимом отказа уровня всей компании. Формирование импульсов при комнатной температуре не контролируется, но контроллер, «спроектированный для работы при» ≤4.5 K, подпадает под ECCN 3A901.a начиная уже с файла проекта [G:BIS-3A901A-CRYOCMOS]: холодная интеграция импортирует вместе с собой экспортный контроль.
 
@@ -69,6 +71,7 @@ updated: 2026-09-30
 [200] Quantum Motion, “Quantum Motion Delivers the Industry's First Full-Stack Silicon CMOS Quantum Computer,” Sep. 15, 2025. [Online]. Available: https://quantummotion.com/quantum-motion-delivers-the-industrys-first-full-stack-silicon-cmos-quantum-computer/ [C]
 [416] D. P. DiVincenzo, D. Bacon, J. Kempe, G. Burkard, and K. B. Whaley, “Universal quantum computation with the exchange interaction,” *Nature*, vol. 408, no. 6810, pp. 339–342, 2000, doi: [10.1038/35042541](https://doi.org/10.1038/35042541). [arXiv:quant-ph/0005116](https://arxiv.org/abs/quant-ph/0005116). [S]
 [766] S. F. Neyens *et al.*, “Probing single electrons across 300-mm spin qubit wafers,” *Nature*, vol. 629, no. 8010, pp. 80–85, May 2024, doi: [10.1038/s41586-024-07275-6](https://doi.org/10.1038/s41586-024-07275-6). [D]
+[898] A. S. Ivlev *et al.*, “Sparse qubit operation in a 6×6 quantum dot array,” [arXiv:2610.07683](https://arxiv.org/abs/2610.07683), Oct. 2026. [P]
 
 ## Открытые пункты верификации
 Доля внешних ошибок в 80% от ошибки CNOT — это модельный вывод из бюджета шума HRL, а не независимое разделение, и она не воспроизведена второй группой.

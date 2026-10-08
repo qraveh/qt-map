@@ -1,6 +1,6 @@
 ---
 id: g_rydanalog
-name: Analog Rydberg Hamiltonian evolution
+name: Analogue Rydberg Hamiltonian evolution
 layer: "3 Gate mechanism"
 status: demonstrated
 since: 2017
@@ -12,11 +12,13 @@ updated: 2026-09-26
 Λ = error-suppression factor per code-distance step; MIS = maximum independent set; SA = simulated annealing; F_d = cross-entropy-type many-body fidelity estimator; MPS = matrix-product state (χ = bond dimension); AHS = analog Hamiltonian simulation, Amazon Braket's program type; G1–G7 = the report's goal classes (see Actors & economics).
 
 ## Identity & lineage
-The array evolves under one Hamiltonian, H/ℏ = Σᵢ (Ω(t)/2) σˣᵢ − Σᵢ [Δ(t) + hᵢ Δ_loc(t)] nᵢ + Σ_{i<j} C₆ r_ij⁻⁶ nᵢ nⱼ: global waveforms, one static site pattern $h_i$, couplings fixed by atom positions [C][262][C][429]. Technology g_ryd uses the same blockade for a two-atom CZ inside a circuit; here it acts on all pairs for the whole run, and the output is a bit-string sample. Technology g_anneal, the rf-SQUID flux annealer, sets couplings with programmable on-chip couplers [D][430]; here geometry is the coupling matrix, and blockade confines the dynamics to independent sets of a unit-disk graph, the basis of MIS encoding [D][431]. Lineage: 51 atoms in 1D, Harvard/MIT, 2017 [D][384]; Pasqal's 2020 architecture naming analog "Hamiltonian sequences" beside circuits [D][385]; Aquila on Amazon Braket [C][262].
+The array evolves under one Hamiltonian, H/ℏ = Σᵢ (Ω(t)/2) σˣᵢ − Σᵢ [Δ(t) + hᵢ Δ_loc(t)] nᵢ + Σ_{i<j} C₆ r_ij⁻⁶ nᵢ nⱼ: global waveforms, one static site pattern $h_i$, couplings fixed by atom positions [C][262][C][429]. Technology g_ryd uses the same blockade for a two-atom CZ inside a circuit; here it acts on all pairs for the whole run, and the output is a bit-string sample. Technology g_anneal, the rf-SQUID flux annealer, sets couplings with programmable on-chip couplers [D][430]; here geometry is the coupling matrix, and blockade confines the dynamics to independent sets of a unit-disk graph, the basis of MIS encoding [D][431]. Lineage: 51 atoms in 1D, Harvard/MIT, 2017 [D][384]; Pasqal's 2020 architecture naming analogue "Hamiltonian sequences" beside circuits [D][385]; Aquila on Amazon Braket [C][262].
 Attributes: natural carrier; no step time (one evolution, ≤4 µs on Aquila); readout inherited; no mobility during the program; optical control at room temperature; coherent and loss errors; optics manufacturing.
 
 ## Physics & limits
 Aquila: Ω ≤ 15.8 rad/µs, |Δ| ≤ 125 rad/µs, $C_6$ = 5,420,503 µm⁶ rad/µs (70S), spacing ≥4 µm, program ≤4 µs, T2* 5.8 µs, driven T2 7.5 µs [C][262]: a blockade radius $(C_6/\Omega)^{1/6}$ ≈ 8.4 µm at full drive, and a program of ~half the driven T2, ~10 Rabi periods [S]. Named error terms: laser amplitude and phase noise; thermal motion (Doppler, 0.200 µm position spread); scattering via the intermediate state, which continues with the drive off; detuning inhomogeneity, 0.37 rad/µs RMS across the field and 0.18 rad/µs shot-to-shot [C][262]. Via r⁻⁶ the position spread gives ~30% shot-to-shot spread of a 5.5 µm bond (δV/V = 6δr/r) [S] — harmless deep in blockade, decisive where V ≈ Ω, which selects the ordered phase. Local detuning is a fixed pattern with a waveform ≤0, and programs using it decohere faster than the listed T2 [C][429]. Errors integrate coherently over a run with no point to measure a syndrome, so no code acts [S]; erasure detection on Sr raised a Bell-pair fidelity bound from ≥0.9971 to ≥0.9985 by discarding flagged shots [D][143] — post-selection, not correction.
+
+Interaction time, not atom number, caps analog Rydberg programs at a few microseconds. Two laser-trapped circular Rydberg atoms (long-lived states of maximal angular momentum) at Laboratoire Kastler Brossel, Paris, sustained spin exchange for more than 60 µs and 40 oscillation periods, with a decay time of 59 µs, about ten times the previous record; the oscillation contrast is post-selected (79% against 33% raw) [P][899].
 
 ## Engineering state of the art
 | Year | Figure | Who | Tag+key |
@@ -29,19 +31,19 @@ Aquila: Ω ≤ 15.8 rad/µs, |Δ| ≤ 125 rad/µs, $C_6$ = 5,420,503 µm⁶ rad/
 | 2024 | 60 Sr atoms; F_d = 0.095(11) at saturated entanglement | Caltech | [D][436] |
 | 2025-06-04 | (2+1)D string breaking on Aquila | QuEra et al. | [D][226] |
 
-Above ~100 atoms nothing is checked exactly: the 196-atom work matched numerics only to ~100 [D][433]. The 2022 speed-up did not survive: classical solvers reach optimality on the same Union-Jack-like instances to thousands of nodes within minutes [D][431]. Pasqal offers a 100-qubit analog QPU on Google Cloud (2025-05-13) [C][437]; no Fresnel datasheet like Aquila's was found as of 2026-09-26.
+Above ~100 atoms nothing is checked exactly: the 196-atom work matched numerics only to ~100 [D][433]. The 2022 speed-up did not survive: classical solvers reach optimality on the same Union-Jack-like instances to thousands of nodes within minutes [D][431]. Pasqal offers a 100-qubit analogue QPU on Google Cloud (2025-05-13) [C][437]; no Fresnel datasheet like Aquila's was found as of 2026-09-26.
 
 ## Manufacturing, materials & supply chain
-No wafer; optical assembly shared with the digital atom architectures. Orion Gamma: 140 qubits, room temperature, 3 kW average, 5 µm minimum spacing [C][438]. The analog-specific addition is a site-resolved detuning field whose hardware QuEra has not described [C][439]; nothing else in the sources separates the analog bill of materials from the digital one [S].
+No wafer; optical assembly shared with the digital atom architectures. Orion Gamma: 140 qubits, room temperature, 3 kW average, 5 µm minimum spacing [C][438]. The analogue-specific addition is a site-resolved detuning field whose hardware QuEra has not described [C][439]; nothing else in the sources separates the analogue bill of materials from the digital one [S].
 
 ## Control, readout & I/O burden
 Control is independent of N: a few waveforms, one pattern and a geometry [C][262]. The cost moves to readout and repetition. Aquila misreads 8% of Rydberg and 1% of ground atoms and leaves 0.7% of sites empty [C][262], so a 256-site snapshot, half excited, reads error-free with probability 0.92¹²⁸×0.99¹²⁸ ≈ 6×10⁻⁶, and ~17% of shots have a defect-free register [S]. Shots run below 10 Hz on Aquila [C][262] and at ≥0.25 Hz effective on Orion Gamma [C][438]: 10⁴ shots take ≥17 min to ~11 h [S].
 
 ## Role in the stack
-Slot 3 of the "Neutral-atom analog simulator (Rydberg arrays, lattice gases)" architecture (alkali atom → ground–Rydberg analog qubit → this technology → AOD transport → laser + AOD/SLM control → fluorescence imaging; layers 7–9 empty; optical assembly), serving G1. It **requires** the alkali atom, the ground–Rydberg encoding and global Rydberg lasers; it **provides** nothing upward; it **replaces** nothing and is replaced by g_ryd when a machine turns digital. Register: Aquila (QuEra, 256 sites) and Fresnel/Fresnel 2 (Pasqal, 100 qubits) carry it as primary, both ✅; Pasqal's Orion line carries it as alternate on the "Rydberg tweezer array — alkali (Rb/Cs)" architecture, 🔎. The gap ledger proposed the alkali and alkaline-earth(-like) array architectures; the technology got its own architecture, and no alkaline-earth(-like) register machine runs it, though the fidelity benchmark above used Sr [D][436] — the requires-alkali edge is narrower than the physics.
+Slot 3 of the "Neutral-atom analogue simulator (Rydberg arrays, lattice gases)" architecture (alkali atom → ground–Rydberg analogue qubit → this technology → AOD transport → laser + AOD/SLM control → fluorescence imaging; layers 7–9 empty; optical assembly), serving G1. It **requires** the alkali atom, the ground–Rydberg encoding and global Rydberg lasers; it **provides** nothing upward; it **replaces** nothing and is replaced by g_ryd when a machine turns digital. Register: Aquila (QuEra, 256 sites) and Fresnel/Fresnel 2 (Pasqal, 100 qubits) carry it as primary, both ✅; Pasqal's Orion line carries it as alternate on the "Rydberg tweezer array — alkali (Rb/Cs)" architecture, 🔎. The gap ledger proposed the alkali and alkaline-earth(-like) array architectures; the technology got its own architecture, and no alkaline-earth(-like) register machine runs it, though the fidelity benchmark above used Sr [D][436] — the requires-alkali edge is narrower than the physics.
 
 ## Evidence — how the numbers were measured
-With no gate error, fidelity comes from observables: order parameters against numerics, valid to ~100 atoms [D][433]; F_d, which weights measured bit-strings by simulated probabilities — 0.095(11) at 60 atoms, where a lightcone MPS at χ* = 3400 (~110 GB, ~180 core-days) keeps pace [D][436]; and problem output such as MIS size, cheap to validate but not to prove optimal [D][431]. F_d needs classical probabilities, so what it certifies can be simulated. Λ is undefined. The Orion cell stays 🔎: its cited page (2026-01-29) mentions local detuning for materials simulation and a 2026 Vela with over 256 qubits, but not analog mode, MIS, Orion or ≤100 qubits [C][390].
+With no gate error, fidelity comes from observables: order parameters against numerics, valid to ~100 atoms [D][433]; F_d, which weights measured bit-strings by simulated probabilities — 0.095(11) at 60 atoms, where a lightcone MPS at χ* = 3400 (~110 GB, ~180 core-days) keeps pace [D][436]; and problem output such as MIS size, cheap to validate but not to prove optimal [D][431]. F_d needs classical probabilities, so what it certifies can be simulated. Λ is undefined. The Orion cell stays 🔎: its cited page (2026-01-29) mentions local detuning for materials simulation and a 2026 Vela with over 256 qubits, but not analogue mode, MIS, Orion or ≤100 qubits [C][390].
 
 ## Actors & economics
 **Who.**
@@ -49,7 +51,7 @@ With no gate error, fidelity comes from observables: order parameters against nu
 | Organisation | Role | Country | What exactly they do with this technology | Evidence |
 |---|---|---|---|---|
 | QuEra Computing | developer | US | Aquila, 256 sites, on Braket since 2022 | [C][162] |
-| Pasqal | developer | FR | 100-qubit analog QPU; analog mode on Orion | [C][437] |
+| Pasqal | developer | FR | 100-qubit analogue QPU; analogue mode on Orion | [C][437] |
 | Amazon Web Services | cloud channel | US | Aquila local detuning by request, 2024-04-11 | [C][440] |
 | Harvard/MIT | research | US | 51- to 289-atom experiments | [D][435] |
 | Caltech | research | US | F_d benchmark, 60 Sr atoms | [D][436] |
@@ -58,16 +60,18 @@ With no gate error, fidelity comes from observables: order parameters against nu
 - 2025-09-09 · QuEra · Series B extended, NVentures joins · USD 230 M · announced; aimed at fault tolerance [C][153]
 - 2026-08-28 · Pasqal · SPAC merger, Nasdaq PSQL · ~USD 360 M cash · closed [P][156]
 
-**Market & supply chain.** Two vendors, two cloud channels. Pasqal reports seven QPUs deployed and markets its platform as analog today [P][156]; QuEra's analog offer is one machine. It pays into G1 only.
+**Market & supply chain.** Two vendors, two cloud channels. Pasqal reports seven QPUs deployed and markets its platform as analogue today [P][156]; QuEra's analogue offer is one machine. It pays into G1 only.
 
-**IP & standards.** No analog-specific patent count as of 2026-09-26; the program format is cloud-defined (Braket AHS) [C][429]; no standards body.
+**IP & standards.** No analogue-specific patent count as of 2026-09-26; the program format is cloud-defined (Braket AHS) [C][429]; no standards body.
 
-**Roadmaps & track record.** Pasqal promised 10,000 physical qubits for 2026 (2024-03-13) [R][167]; its 2026 launch is Vela, over 256 qubits [R][390] — ~39× short [S] — and its brochure says delivery 2027, 200+ [C][438]. QuEra's Libra (2028) is digital, with no analog specification [R][162].
+**Roadmaps & track record.** Pasqal promised 10,000 physical qubits for 2026 (2024-03-13) [R][167]; its 2026 launch is Vela, over 256 qubits [R][390] — ~39× short [S] — and its brochure says delivery 2027, 200+ [C][438]. QuEra's Libra (2028) is digital, with no analogue specification [R][162].
 
-**Strategic reading.** Analog is both vendors' revenue bridge while g_ryd matures. With certified advantage above ~100 atoms it stays a G1 instrument; without, it becomes a mode of digital machines, as on Orion.
+**Strategic reading.** Analogue is both vendors' revenue bridge while g_ryd matures. With certified advantage above ~100 atoms it stays a G1 instrument; without, it becomes a mode of digital machines, as on Orion.
 
 ## Outlook & open questions
-Confirm if, by 2027-12-31, a commercial analog machine publishes a many-body fidelity at ≥60 atoms, or an analog result survives a year of classical challenge; demote if Vela and QuEra's next systems ship without analog specifications. Open questions. (1) Can F_d certify beyond the size where MPS keeps pace? (2) What are per-site local-detuning calibration errors? (3) How does driven-T2 loss split between phase noise, Doppler and scattering? (4) Can erasure excision post-select many-body runs at tolerable shot cost? (5) Will the requires-alkali edge survive alkaline-earth(-like) analog machines?
+Confirm if, by 2027-12-31, a commercial analogue machine publishes a many-body fidelity at ≥60 atoms, or an analogue result survives a year of classical challenge; demote if Vela and QuEra's next systems ship without analogue specifications. Open questions. (1) Can F_d certify beyond the size where MPS keeps pace? (2) What are per-site local-detuning calibration errors? (3) How does driven-T2 loss split between phase noise, Doppler and scattering? (4) Can erasure excision post-select many-body runs at tolerable shot cost? (5) Will the requires-alkali edge survive alkaline-earth(-like) analogue machines?
+
+A benchmark that needs no per-atom addressing has been proposed for it: prepare U†AU with a global y-rotation A and probe with a collective z-rotation; the quantum Fisher information (how sharply the output responds to the probe angle) grows with the number of atoms for Haar-random-like dynamics and is exactly zero for Clifford circuits, so circuit randomness can be graded without computing ideal output probabilities, provided the evolution can also be run backwards (U†) [P][892]. It is a theory proposal, not yet run on an analog array.
 
 ## References
 [143] P. Scholl, A. L. Shaw, R. B.-S. Tsai, R. Finkelstein, J. Choi, and M. Endres, “Erasure conversion in a high-fidelity Rydberg quantum simulator,” *Nature*, vol. 622, p. 273, 2023, doi: [10.1038/s41586-023-06516-4](https://doi.org/10.1038/s41586-023-06516-4). [arXiv:2305.03406](https://arxiv.org/abs/2305.03406). [D]
@@ -92,6 +96,8 @@ Confirm if, by 2027-12-31, a commercial analog machine publishes a many-body fid
 [438] Pasqal and O. Q.-C. P. brochure, “The Power of Neutral Atom Quantum Processors by Pasqal — Unlock Quantum Computing for Real-World Solutions,” Pasqal, product brochure (PDF). [Online]. Available: https://www.pasqal.com/wp-content/uploads/2025/11/2509_Pasqal_Quantum-Computing-Processor_Brochure-RVB-V8.pdf [C]
 [439] QuEra Computing, “Local Qubit Control Brings New Capabilities to QuEra's Quantum Computer,” Apr. 17, 2024. [Online]. Available: https://www.quera.com/press-releases/local-qubit-control-brings-new-capabilities-to-queras-quantum-computer [C]
 [440] Amazon Web Services, “Local detuning now available on QuEra's Aquila device with Braket Direct,” AWS What's New, Apr. 11, 2024. [Online]. Available: https://aws.amazon.com/about-aws/whats-new/2024/04/amazon-braket-experimental-capabilities-quera-device-braket-direct/ [C]
+[892] S. Cavazzoni and C. Oh, “Metrological benchmarking of random quantum circuits,” [arXiv:2609.39226](https://arxiv.org/abs/2609.39226), Sep. 2026. [P]
+[899] A. Durán-Hernández *et al.*, “Spin-exchange interactions between circular Rydberg atoms over long times,” [arXiv:2609.37766](https://arxiv.org/abs/2609.37766), Sep. 2026. [P]
 
 ## Open verification items
 - Aquila's local-detuning limits (magnitude, resolution, per-site calibration error) are exposed only through Braket SDK device properties, not read here; the hardware mechanism (light-shift beam or otherwise) is not described in QuEra's release (tried 2026-09-26).

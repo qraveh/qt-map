@@ -39,6 +39,8 @@ Serves the transmon, bosonic cat/GKP and dual-rail erasure architectures — the
 ## Evidence — how the numbers were measured
 Every line count above 1,536 is product literature, not a wired system: Bluefors' >4,000 and Delft Circuits' 40,000-by-2029 have no named installation, and neither publishes crosstalk or phase-stability data at high channel count. No independent measurement of aggregate crosstalk above ~1,000 simultaneous lines exists as of 4 Sep 2026 — the gap that matters, since crosstalk is how this architecture fails.
 
+The qubit itself can measure the control chain's noise. On one Jülich transmon line with 56 dB of attenuation, the modelled excitation rate was dominated by classical noise from the room-temperature drive instrument (−146 dBm/Hz above 4.6 GHz) and from the 1 K attenuator stage, while relaxation was set by quantum noise; the qubit's excitation spectrum served as an in-situ spectrometer of that noise [P][890]. The result describes one set-up, not every line.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What exactly they do with this technology | Evidence |
@@ -86,6 +88,7 @@ Confirm by end-2027 if one fridge runs >2,000 qubits on RT lines with published 
 [529] E. Flipse, “Qblox secures series A funding to accelerate quantum control stack development,” Qblox Newsroom, Jun. 20, 2024. [Online]. Available: https://qblox.com/newsroom/qblox-secures-series-a-funding-quantum-control-stack-development [C]
 [530] M. U. Rehman, “Delft Circuits Names Martin Danoesastro CEO and Extends Funding Round,” The Quantum Insider, Dec. 3, 2025. [Online]. Available: https://thequantuminsider.com/2025/12/03/delft-circuits-new-ceo-financing/ [P]
 [531] NVIDIA, “NVIDIA Introduces NVQLink — Connecting Quantum and GPU Computing for 17 Quantum Builders and Nine Scientific Labs,” Oct. 28, 2025. [Online]. Available: https://nvidianews.nvidia.com/news/nvidia-nvqlink-quantum-gpu-computing [C]
+[890] J. R. Guimarães *et al.*, “Quantum environment afterglow from broadband excitation spectroscopy in superconducting qubits,” [arXiv:2609.31280](https://arxiv.org/abs/2609.31280), Sep. 2026. [P]
 
 ## Open verification items
 No vendor publishes per-line or per-loom cost; no unit economics for cryogenic wiring are quotable. No measured heat budget or crosstalk data exists for a >1,000-line flex loom — Bluefors' >4,000-line and Delft Circuits' 40,000-by-2029 figures are unverified at system level. Delft Circuits' and Zurich Instruments' revenue and customer counts are undisclosed. IBM's cryo-CMOS flux-bias parity result exists only as APS conference abstracts, with no preprint or paper as of 2026-09-04. No dated ECCN determination was found for RT control racks specifically; that they are uncontrolled is read from the absence of a matching entry in the 2024 rule, not from an explicit BIS statement.

@@ -55,6 +55,8 @@ updated: 2026-09-30
 
 כל מספר בולט הוא נאמנות של מצב העומד לבדו בבחירה בדיעבד, שנמדדה על מצב שהושלך אחר כך במקום להיות בשימוש. Google מדווחת על חסם מפרוטוקול מדידה סובלני לתקלות שנבנה במיוחד, לא על הערכה טומוגרפית [D][42]; הנתון 7×10⁻⁵ מצוטט בשיעור השלכה מוצהר [D][107]; ה-5.1(2.7)×10⁻⁴ של החלפת הקוד נושא אי-ודאות מאותו סדר גודל של הערך [D][666]; מאמר האטומים הניטרליים מדווח על שיפור לעומת הקלט ולא על אי-נאמנות מוחלטת של הפלט [D][147]. לא נמדד בשום מקום: התפוקה תחת עומס תזמון, עלות ההשלכות, מתאמים בין המפעל לצרכן, וערוצי האובדן שהבחירה בדיעבד מסירה. הבדיקה העצמאית חזקה במיוחד — Wan, Zhong ו-Zapirain מפרקים מעגלי טיפוח ב-d=5 לכ-8 איברי ZX של קליפורד בממוצע, יותר מ-10⁶× פחות מפירוקי מייצבים קודמים [D][691]. לא נמצאו סתירות בערכים בין המקורות שבשימוש.
 
+את המצבים שמפעל מפיק אפשר לאמת בפעולות שהקוד כבר מספק: הערכת נאמנות מבוססת קוהרנטיות בל מודדת את אי-הנאמנות ε של כל מצב משאב טהור, כולל מצבי סיבוב בזווית רציפה, בדיוק יחסי קבוע מתוך Θ(1/ε) עותקים, בעזרת שערי קליפורד ומדידות פאולי בלבד — באופן מיטבי אפילו מול מדידות קולקטיביות — ובסימולציות של קוד המשטח במרחק 3 היא נזקקה לעד פי 27 בקירוב פחות מצבים מהערכת נאמנות ישירה [P][896]. העותקים הנמדדים מתכלים.
+
 ## שחקנים וכלכלה
 
 **מי.**
@@ -105,6 +107,7 @@ updated: 2026-09-30
 [690] C. Gidney, N. Shutty, and C. Jones, “Magic state cultivation: growing T states as cheap as CNOT gates,” [arXiv:2409.17595](https://arxiv.org/abs/2409.17595), Sep. 2024. [S]
 [691] K. H. Wan, Z. Zhong, and A. Zapirain, “Simulating magic state cultivation with few Clifford terms,” *Quantum*, vol. 10, Art. no. 2134, Jun. 2026, doi: [10.22331/q-2026-06-12-2134](https://doi.org/10.22331/q-2026-06-12-2134). [D]
 [692] Quantinuum, “A Quantinuum-led team has built the quantum programming tools for real-time magic state distillation on a quantum computer,” Oct. 24, 2023. [Online]. Available: https://www.quantinuum.com/blog/a-quantinuum-led-team-has-built-the-quantum-programming-tools-for-real-time-magic-state-distillation-on-a-quantum-computer [C]
+[896] S. Takahashi and K. Fujii, “Efficient fidelity estimation of general quantum resource states via Clifford circuits,” [arXiv:2610.05222](https://arxiv.org/abs/2610.05222), Oct. 2026. [P]
 
 ## פריטי אימות פתוחים
 

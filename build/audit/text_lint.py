@@ -29,8 +29,12 @@ FORBIDDEN = [r'<!--\s*function', r'toggleAuthorList', r'You must enable JavaScri
              r'claude\.ai/artifact', r'Open niche', r'Открытая ниша', r'QCVV/SFQ', r'(?<!resonator )(?<!Resonator )(?<!resonator-)(?<!Star )(?<!network )(?<!\()(?<![-_"\'=./#])\bhubs?\b(?![-_"\'=])(?! access)', r'(?<!резонаторные )(?<!Резонаторные )(?<!резонаторным )(?<!резонаторному )(?<!резонаторный )(?<!резонаторных )(?<!резонаторными )(?<!резонаторном )\bхаб(ы|ов|ам|ами|ах|а|у|ом|е)?\b(?! Star)', r'transfer hub', r'(?<!probe )(?<!Probe )(?<![-_"\'=./#])\bstations?\b(?![-_"\'=])', r'\bстанци(я|и|й|ю|ей|ям|ями|ях)\b', r'SCE \(SFQ\)', r'I/O wall, not the qubit',
              r'(?i)off-diagonal', r'(?i)внедиагональн', r'(?i)вне-диагональн',   # the crossing-technology rename of 29 Sep 2026
              # the bilingual period (29 Sep 2026: a third language joined — the reader text names the languages, never "the other" or "both")
-             r'English / Russian', r'(?i)\bboth languages\b', r'(?i)\bthe other language\b', r'(?i)\beither language or both\b', r'Английский / Русский', r'(?i)обоих языках']
-RETIRED_COUNTS = [r'\b(?:136|160|153|183) (machines|машин|מכונות)', r'\b(?:136|160|153|183)\s+(?:quantum|registered|квантов\w*|зарегистрированн\w*)\s+(?:machines|машин)', r'\b(?:out of|из|מתוך) (?:136|160|153|183)\b(?! ?(?:mK|K|GHz|MHz|kHz|Hz|nm|µm|μm|ms|µs|μs|ns|dB|%))',
+             r'English / Russian', r'(?i)\bboth languages\b', r'(?i)\bthe other language\b', r'(?i)\beither language or both\b', r'Английский / Русский', r'(?i)обоих языках',
+             # the editor's ruling of 28 Sep 2026: the author's own works are cited by title, without "the author's" (§2.1, the Superconductor
+             # Electronics Monitor [X15]); the Russian and Hebrew forms removed with it. The fixed phrases "the author's own imprint / direction /
+             # judgment / own publication" (the disclosures and the [P] legend) are not citations and stay allowed
+             r"(?i)\bthe author's (?!own\b|direction\b|judgment\b)", r'(?i)\bавторск(?:ом|ий|ого|ая|ой|ую|ие|их)\s+(?=[A-Z«"])', r'\bשל המחבר(?! עצמו| לפי)(?=\s*\[)']
+RETIRED_COUNTS = [r'\b(?:136|160|153) (machines|машин|מכונות)', r'\b(?:136|160|153)\s+(?:quantum|registered|квантов\w*|зарегистрированн\w*)\s+(?:machines|машин)', r'\b(?:out of|из|מתוך) (?:136|160|153)\b(?! ?(?:mK|K|GHz|MHz|kHz|Hz|nm|µm|μm|ms|µs|μs|ns|dB|%))',
                   r'\b14 (architectures|paths|архитектур|путей|ארכיטקטורות|נתיבים)', r'\b(?:96|110) (technologies|технологий|nodes|stations|טכנולוגיות)',
                   r'\b1,533\b', r'\b1 533\b',
                   # 30 Sep 2026: the README's header still said "160 quantum machines" (an adjective slipped past the first pattern), and the

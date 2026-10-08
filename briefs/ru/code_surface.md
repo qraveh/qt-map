@@ -92,6 +92,8 @@ CSS-стабилизаторный код: плакетки X и Z веса 4 н
 
 Подтверждение в течение 12–24 месяцев, если: какая-либо группа сообщит о Λ ≥ 3 на ≥10⁵ циклах; логический двухкубитный вентиль при d ≥ 5 достигнет 99% без постселекции; участок отработает через два модуля; yoked-участки появятся в аппаратуре. Понизить ранг, если до конца 2027 г. qLDPC-память обойдёт участок поверхностного кода при равном числе кубитов. Лучший сценарий к 2029 г.: несколько сотен логических кубитов на уровне 10⁻⁶ на 10⁵–10⁶ физических кубитах, а декодирование становится массовым товаром — именно то, что предполагают Starling и Libra. Худший сценарий: Λ остаётся около 2, d ≈ 25 остаётся ценой уровня 10⁻⁶, и код выживает только как бенчмарк. Открытые вопросы: (1) сохраняется ли Λ выше 10³ физических кубитов, где перекрёстные помехи и дрейф масштабируются иначе? (2) можно ли исполнять yoked-варианты на аппаратуре — или декодирование внешнего кода срывает бюджет реального времени? (3) какая доля рекорда 2026 г. приходится на калибровку, а не на физику, если одно только управление обучением с подкреплением сдвинуло d=7 с 1.43×10⁻³ до 7.72×10⁻⁴? Следить: за следующим шагом по расстоянию у Google и за Kookaburra у IBM.
 
+Хирургия решётки, разделённая между двумя процессорами, которые соединены фотонной линией связи, не сохраняет на шве расстояние d автоматически: прямой интерфейс из белловских пар даёт d + 1 для исхода объединения (merge), но лишь ⌊(d + 1)/2⌋ для перпендикулярной наблюдаемой, зигзагообразное разбиение восстанавливает d, а шов на слияниях (fusion) линейных кластеров даёт 2d + 1 и d — расстояния, учитывающие только отказы на интерфейсе [P][893].
+
 ## Литература
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [2] V. Sivak *et al.*, “Reinforcement learning control of quantum error correction,” *Nature*, vol. 655, no. 8124, pp. 879–884, Jul. 2026, doi: [10.1038/s41586-026-10759-2](https://doi.org/10.1038/s41586-026-10759-2). [D]
@@ -121,6 +123,7 @@ CSS-стабилизаторный код: плакетки X и Z веса 4 н
 [660] Riverlane, “Riverlane awarded £2.1m by Horizon Europe to develop the next generation of its quantum error correction decoder,” May 1, 2024. [Online]. Available: https://www.riverlane.com/press-release/riverlane-awarded-2-1m-by-horizon-europe-to-develop-the-next-generation-of-its-quantum-error-correction-decoder [C]
 [661] Riverlane, “Riverlane raises $75 million to meet surging global demand for quantum error correction technology,” Aug. 6, 2024. [Online]. Available: https://www.riverlane.com/press-release/riverlane-raises-75-million-to-meet-surging-global-demand-for-quantum-error-correction-technology [C]
 [662] A. B. Ziad, A. Zalawadiya, B. Barber, and L. Skoric, “Quantum decoder,” Google Patents, Dec. 10, 2025. [Online]. Available: https://patents.google.com/patent/GB2641501A/en [G]
+[893] F. Burt *et al.*, “Loss-tolerant distributed lattice surgery using fusion networks,” [arXiv:2610.01923](https://arxiv.org/abs/2610.01923), Oct. 2026. [P]
 
 ## Открытые пункты верификации
 

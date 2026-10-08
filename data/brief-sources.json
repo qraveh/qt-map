@@ -3585,6 +3585,224 @@
    "url": "https://arxiv.org/abs/2608.17189",
    "verified": true
   },
+  "arxiv:2609.28294": {
+   "authors": [
+    "Wei Sun",
+    "Xiaoying Yan",
+    "Jinbao Long"
+   ],
+   "etal": true,
+   "title": "A photonic integrated comb engine for ultracold quantum gases",
+   "date": "2026-09",
+   "arxiv": "2609.28294",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2609.28294",
+   "verified": true
+  },
+  "arxiv:2609.29736": {
+   "authors": [
+    "Siwei Luo",
+    "Tim Hebenstreit",
+    "Alexey Shkarin"
+   ],
+   "etal": true,
+   "title": "100 million photons per second from a single organic molecule",
+   "date": "2026-09",
+   "arxiv": "2609.29736",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2609.29736",
+   "verified": true
+  },
+  "arxiv:2609.31280": {
+   "authors": [
+    "J. R. Guimarães",
+    "Y. Liu",
+    "Y. Gao",
+    "Y. Haddad",
+    "A. Galicia",
+    "D. A. Volkov"
+   ],
+   "etal": true,
+   "n_authors": 13,
+   "title": "Quantum environment afterglow from broadband excitation spectroscopy in superconducting qubits",
+   "date": "2026-09-25",
+   "arxiv": "2609.31280",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2609.31280",
+   "verified": true
+  },
+  "arxiv:2609.31830": {
+   "authors": [
+    "Thomas Schuster",
+    "Andreas Elben"
+   ],
+   "n_authors": 2,
+   "title": "Probing the classical complexity of quantum dynamics experiments",
+   "date": "2026-09-25",
+   "arxiv": "2609.31830",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2609.31830",
+   "verified": true
+  },
+  "arxiv:2609.33251": {
+   "authors": [
+    "Yu-Chen Zhou",
+    "Rong-Long Ma",
+    "Zhenzhen Kong"
+   ],
+   "etal": true,
+   "title": "High-fidelity geometric quantum gates exceeding 99.9% in germanium quantum dots",
+   "date": "2026-09",
+   "arxiv": "2609.33251",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2609.33251",
+   "verified": true
+  },
+  "arxiv:2609.35447": {
+   "authors": [
+    "Benoit Seron",
+    "Hugo Thomas",
+    "Eduardo Araujo",
+    "Alex Arkhipov",
+    "Changhun Oh",
+    "Leonardo Novo"
+   ],
+   "n_authors": 6,
+   "title": "Efficient classical algorithm for estimating linear statistics of Boson Sampling",
+   "date": "2026-09-28",
+   "arxiv": "2609.35447",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2609.35447",
+   "verified": true
+  },
+  "arxiv:2609.37766": {
+   "authors": [
+    "Andrés Durán-Hernández",
+    "Gautier Creutzer",
+    "Aurore Alice Young"
+   ],
+   "etal": true,
+   "title": "Spin-exchange interactions between circular Rydberg atoms over long times",
+   "date": "2026-09",
+   "arxiv": "2609.37766",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2609.37766",
+   "verified": true
+  },
+  "arxiv:2609.39226": {
+   "authors": [
+    "Simone Cavazzoni",
+    "Changhun Oh"
+   ],
+   "title": "Metrological benchmarking of random quantum circuits",
+   "date": "2026-09",
+   "arxiv": "2609.39226",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2609.39226",
+   "verified": true
+  },
+  "arxiv:2610.01839": {
+   "authors": [
+    "Zheyu Shen",
+    "Yusen Wu",
+    "Penghui Yao",
+    "Xiao Yuan",
+    "Yukun Zhang"
+   ],
+   "n_authors": 5,
+   "title": "Toward optimal circuit depth for geometrically local Hamiltonian simulation",
+   "date": "2026-10",
+   "arxiv": "2610.01839",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2610.01839",
+   "verified": true
+  },
+  "arxiv:2610.01923": {
+   "authors": [
+    "Felix Burt",
+    "Richard Meister",
+    "Sheng-Ku Lin",
+    "Kuan-Cheng Chen",
+    "Michael Hanks",
+    "Roberto Bondesan"
+   ],
+   "etal": true,
+   "n_authors": 8,
+   "title": "Loss-tolerant distributed lattice surgery using fusion networks",
+   "date": "2026-10-01",
+   "arxiv": "2610.01923",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2610.01923",
+   "verified": true
+  },
+  "arxiv:2610.02333": {
+   "authors": [
+    "Panagiotis Papanikolaou",
+    "Alex Vanasse",
+    "Haoran Jin",
+    "Georgios Tzimpragos",
+    "Jennifer Volk"
+   ],
+   "n_authors": 5,
+   "title": "Duplication-aware retiming and cell interface redesign for superconductor circuit minimization",
+   "date": "2026-10-01",
+   "doi": "10.1145/3770743.3803985",
+   "arxiv": "2610.02333",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2610.02333",
+   "verified": true
+  },
+  "arxiv:2610.03586": {
+   "authors": [
+    "Yale Fan",
+    "J. P. Marceaux"
+   ],
+   "title": "Lifting multiplicity in randomized benchmarking",
+   "date": "2026-10",
+   "arxiv": "2610.03586",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2610.03586",
+   "verified": true
+  },
+  "arxiv:2610.05222": {
+   "authors": [
+    "Shunta Takahashi",
+    "Keisuke Fujii"
+   ],
+   "title": "Efficient fidelity estimation of general quantum resource states via Clifford circuits",
+   "date": "2026-10",
+   "arxiv": "2610.05222",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2610.05222",
+   "verified": true
+  },
+  "arxiv:2610.07393": {
+   "org": "HRL Quantum Team and Microsoft collaborators",
+   "title": "Benchmarking exchange-only control of a 48-spin singlet manifold",
+   "date": "2026-10-05",
+   "arxiv": "2610.07393",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2610.07393",
+   "verified": true
+  },
+  "arxiv:2610.07683": {
+   "authors": [
+    "Alexander S. Ivlev",
+    "Harold L. Co",
+    "Damien R. Crielaard",
+    "Alice Petrillo",
+    "Setareh Kazemzadeh",
+    "Giordano Scappucci"
+   ],
+   "etal": true,
+   "n_authors": 7,
+   "title": "Sparse qubit operation in a 6×6 quantum dot array",
+   "date": "2026-10-06",
+   "arxiv": "2610.07683",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2610.07683",
+   "verified": true
+  },
   "arxiv:quant-ph/0007058": {
    "authors": [
     "J. Calsamiglia",
@@ -4226,6 +4444,37 @@
    "doi": "10.1038/s41567-026-03315-2",
    "kind": "journal",
    "url": "https://www.nature.com/articles/s41567-026-03315-2",
+   "verified": true
+  },
+  "doi:10.1038/s41567-026-03402-4": {
+   "authors": [
+    "Anton T. Than",
+    "Saurabh V. Kadam",
+    "Vinay Vikramaditya"
+   ],
+   "etal": true,
+   "title": "Quantum field theory dynamics on a spin–phonon quantum computer",
+   "journal": "Nat. Phys.",
+   "date": "2026-09-25",
+   "doi": "10.1038/s41567-026-03402-4",
+   "arxiv": "2509.11477",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41567-026-03402-4",
+   "verified": true
+  },
+  "doi:10.1038/s41567-026-03471-5": {
+   "authors": [
+    "Yan Li",
+    "Yunfan Yang",
+    "Zenghui Bao"
+   ],
+   "etal": true,
+   "title": "Deterministic and programmable fusion for the scalable generation of photonic graph states",
+   "journal": "Nat. Phys.",
+   "date": "2026-09-30",
+   "doi": "10.1038/s41567-026-03471-5",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41567-026-03471-5",
    "verified": true
   },
   "doi:10.1038/s41586-018-0551-y": {
@@ -8715,6 +8964,10 @@
    {
     "work": "https://patents.justia.com/inventor/shruti-puri",
     "grade": "G"
+   },
+   {
+    "work": "arxiv:2610.01923",
+    "grade": "P"
    }
   ],
   "code_fusion": [
@@ -8737,6 +8990,10 @@
    {
     "work": "doi:10.1038/s41586-024-07357-5",
     "grade": "D"
+   },
+   {
+    "work": "arxiv:2610.01923",
+    "grade": "P"
    }
   ],
   "code_highrate": [
@@ -8877,6 +9134,10 @@
    {
     "work": "https://www.quantinuum.com/blog/a-quantinuum-led-team-has-built-the-quantum-programming-tools-for-real-time-magic-state-distillation-on-a-quantum-computer",
     "grade": "C"
+   },
+   {
+    "work": "arxiv:2610.05222",
+    "grade": "P"
    }
   ],
   "code_mitig": [
@@ -8975,6 +9236,10 @@
    {
     "work": "https://algorithmiq.fi/news/algorithmiq-establishes-milan-headquarters-and-raises-18m-to-position-europe-as-the-future-of-quantum-software",
     "grade": "C"
+   },
+   {
+    "work": "arxiv:2609.31830",
+    "grade": "P"
    }
   ],
   "code_qldpc": [
@@ -9187,6 +9452,10 @@
    {
     "work": "report:S1#0",
     "grade": "C"
+   },
+   {
+    "work": "arxiv:2610.01923",
+    "grade": "P"
    }
   ],
   "ct_base": [
@@ -9209,6 +9478,10 @@
    {
     "work": "doi:10.1038/s41586-024-07275-6",
     "grade": "D"
+   },
+   {
+    "work": "arxiv:2610.07683",
+    "grade": "P"
    }
   ],
   "ct_cryocmos": [
@@ -9311,6 +9584,10 @@
    {
     "work": "https://www.microsoft.com/en-us/research/blog/full-stack-ahead-pioneering-quantum-hardware-allows-for-controlling-up-to-thousands-of-qubits-at-cryogenic-temperatures",
     "grade": "C"
+   },
+   {
+    "work": "arxiv:2610.07393",
+    "grade": "P"
    }
   ],
   "ct_eo": [
@@ -9647,6 +9924,10 @@
    {
     "work": "report:N18#0",
     "grade": "C"
+   },
+   {
+    "work": "arxiv:2609.28294",
+    "grade": "P"
    }
   ],
   "ct_pic_trap": [
@@ -9689,6 +9970,10 @@
    {
     "work": "report:N21#0",
     "grade": "R"
+   },
+   {
+    "work": "arxiv:2609.28294",
+    "grade": "P"
    }
   ],
   "ct_rt": [
@@ -9755,6 +10040,10 @@
    {
     "work": "https://nvidianews.nvidia.com/news/nvidia-nvqlink-quantum-gpu-computing",
     "grade": "C"
+   },
+   {
+    "work": "arxiv:2609.31280",
+    "grade": "P"
    }
   ],
   "ct_sfq": [
@@ -9857,6 +10146,10 @@
    {
     "work": "report:Q2#0",
     "grade": "D"
+   },
+   {
+    "work": "arxiv:2610.02333",
+    "grade": "P"
    }
   ],
   "ct_vio": [
@@ -10063,6 +10356,10 @@
    {
     "work": "report:I26#0",
     "grade": "R"
+   },
+   {
+    "work": "doi:10.1038/s41567-026-03402-4",
+    "grade": "D"
    }
   ],
   "cx_crossbar": [
@@ -10293,6 +10590,10 @@
    {
     "work": "doi:10.1038/s41586-024-07275-6",
     "grade": "D"
+   },
+   {
+    "work": "arxiv:2610.01839",
+    "grade": "P"
    }
   ],
   "cx_qccd": [
@@ -10523,6 +10824,10 @@
    {
     "work": "doi:10.1038/s41586-024-07275-6",
     "grade": "D"
+   },
+   {
+    "work": "arxiv:2610.07683",
+    "grade": "P"
    }
   ],
   "cx_switch": [
@@ -10669,6 +10974,10 @@
    {
     "work": "https://www.sec.gov/archives/edgar/data/1779977/000121390026061108/ea0278139-04.htm",
     "grade": "G"
+   },
+   {
+    "work": "arxiv:2610.02333",
+    "grade": "P"
    }
   ],
   "dec_fpga": [
@@ -10969,6 +11278,10 @@
    {
     "work": "https://q-ctrl.com/blog/q-ctrl-sets-global-quantum-technology-fundraising-record-increasing-series-b-to-usd-113m-led-by-gp-bullhound",
     "grade": "C"
+   },
+   {
+    "work": "arxiv:2609.31280",
+    "grade": "P"
    }
   ],
   "defect": [
@@ -11237,6 +11550,10 @@
    {
     "work": "report:Q2#0",
     "grade": "D"
+   },
+   {
+    "work": "arxiv:2610.07393",
+    "grade": "P"
    }
   ],
   "enc_gkp": [
@@ -12075,6 +12392,10 @@
    {
     "work": "https://www.nist.gov/news-events/news/2026/05/department-commerce-announces-letters-intent-9-companies-2-billion",
     "grade": "G"
+   },
+   {
+    "work": "arxiv:2609.28294",
+    "grade": "P"
    }
   ],
   "fab_sc": [
@@ -12445,6 +12766,10 @@
    {
     "work": "https://patents.google.com/patent/us11748652b1/en",
     "grade": "G"
+   },
+   {
+    "work": "doi:10.1038/s41567-026-03402-4",
+    "grade": "D"
    }
   ],
   "g_catcnot": [
@@ -12835,6 +13160,10 @@
    {
     "work": "https://www.techjournal.uk/p/orca-aims-to-beat-classical-computers",
     "grade": "R"
+   },
+   {
+    "work": "arxiv:2609.35447",
+    "grade": "P"
    }
   ],
   "g_mbq": [
@@ -12943,6 +13272,10 @@
    {
     "work": "report:I26#0",
     "grade": "R"
+   },
+   {
+    "work": "arxiv:2610.03586",
+    "grade": "P"
    }
   ],
   "g_mwspin": [
@@ -12968,6 +13301,10 @@
    },
    {
     "work": "https://thequantuminsider.com/2026/07/10/8-quantum-computing-companies-working-with-nv-centre-in-diamond-technology",
+    "grade": "P"
+   },
+   {
+    "work": "arxiv:2609.33251",
     "grade": "P"
    }
   ],
@@ -13125,6 +13462,14 @@
    {
     "work": "report:N25#1",
     "grade": "R"
+   },
+   {
+    "work": "arxiv:2609.39226",
+    "grade": "P"
+   },
+   {
+    "work": "arxiv:2609.37766",
+    "grade": "P"
    }
   ],
   "g_tc": [
@@ -14045,6 +14390,14 @@
    {
     "work": "doi:10.1038/s41586-024-07275-6",
     "grade": "D"
+   },
+   {
+    "work": "arxiv:2609.33251",
+    "grade": "P"
+   },
+   {
+    "work": "arxiv:2610.07683",
+    "grade": "P"
    }
   ],
   "ro_disp": [
@@ -14703,6 +15056,10 @@
    {
     "work": "report:P9#0",
     "grade": "C"
+   },
+   {
+    "work": "arxiv:2609.29736",
+    "grade": "P"
    }
   ],
   "squeezed": [
@@ -14725,6 +15082,10 @@
    {
     "work": "report:P4#0",
     "grade": "D"
+   },
+   {
+    "work": "arxiv:2609.35447",
+    "grade": "P"
    }
   ],
   "src_resource": [
@@ -14746,6 +15107,10 @@
    },
    {
     "work": "doi:10.1038/s41467-025-59693-3",
+    "grade": "D"
+   },
+   {
+    "work": "doi:10.1038/s41567-026-03471-5",
     "grade": "D"
    }
   ],
@@ -14989,6 +15354,10 @@
    {
     "work": "report:S6#0",
     "grade": "C"
+   },
+   {
+    "work": "arxiv:2609.31280",
+    "grade": "P"
    }
   ]
  }

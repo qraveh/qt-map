@@ -41,6 +41,8 @@ updated: 2026-09-30
 
 פיסת הבקרה היא Nb/AlOx/Nb רב-שכבתית — שמונה שכבות ניוביום מושטחות או יותר, 10⁴–10⁶ צמתים — בשונה מתהליך הקיוביטים מאלומיניום [D][569]. מפעלי הייצור מעטים: MIT Lincoln Laboratory (קו SFQ5ee, מפעל הייצור לקיוביטים SQUILL) [C][570], תהליך הניוביום וספריות התאים של AIST [D][571], ומפעל הייצור המסחרי של SEEQC ב-Elmsford, NY [C][572]. שיעור תקינות סביר דורש פיזור של הזרם הקריטי של אחוזים בודדים על פני אלפי צמתים. החשיפה לפיקוח על יצוא (תקנת BIS מ-2024-09-06): ECCN 3A904, 3B904 ו-4A906; 3A901.a, בקריאה מילולית, חל על CMOS קריוגני בלבד [G][301]. נקודות כשל יחידות: מקררי דילול, חיבור בבליטות אינדיום, וכלי ריסוס (sputter) ו-CMP לניוביום.
 
+אלקטרוניקה מוליכת-על משלבת 1–10 מיליון צמתים לכל cm², לעומת יותר מ-10 מיליארד טרנזיסטורים לכל cm² ב-CMOS מתקדם (נתונים ממאמרי התהליך של MIT Lincoln Laboratory שהמחברים מצטטים). שיפורי תכן כמו תאי xSFQ ללא שעון עם מגברי פיצול מובנים — פי 2.7–3.4 פחות צמתים במעגלי בחינת ביצועים סטנדרטיים, ותא אחד שיוצר בתהליך SFQ5ee של MIT Lincoln Laboratory (צפיפות זרם קריטית של 10 kA/cm²) ואומת ב-4.2 K — מעלים את הצפיפות הפונקציונלית, לא את צפיפות השילוב [P][897].
+
 ## בקרה, קריאה ועומס הקלט-פלט
 
 בקרה מטמפרטורת החדר צריכה בערך כבל קואקסיאלי אחד להנעה וקו שטף אחד לכל טרנסמון, ולכן חתך המקרר ועומס החום קובעים את גבולה; פלטפורמה ברמת KIDE מציעה > 4,000 קווי RF עבור "יותר מ-1000 קיוביטים" [C][G:BLUEFORS-KIDE]. בקרת SFQ צריכה שעון ועוד זרם פקודות בקצב נמוך [D][304]. קריאת SFQ קיימת רק כשיטה בקדם-פרסום [S][568]; SEEQC מונה את ממתח השטף כעבודה עתידית [C][53].
@@ -111,6 +113,7 @@ updated: 2026-09-30
 [572] SEEQC, “SEEQC Secures $22.4 Million In Series A Round; Strategic Investment Led By EQT Ventures,” Sep. 16, 2020. [Online]. Available: https://seeqc.com/resources/seeqc-secures-22.4-million-in-series-a-round-strategic-investment-led-by-eqt-ventures [C]
 [573] SIP Global Partners, “SIP Global Partners Participates in $30M Round for SEEQC, Developer of the World's First Full-Stack Processor for Quantum Computers,” PRWeb, Jan. 16, 2025. [Online]. Available: https://www.prweb.com/releases/sip-global-partners-participates-in-30m-round-for-seeqc-developer-of-the-worlds-first-full-stack-processor-for-quantum-computers-302352970.html [P]
 [574] Allegro Merger Corp.; SeeQC, Inc., “Settlement, Termination and Release Agreement,” U.S. Securities and Exchange Commission (EDGAR), Aug. 2026. [Online]. Available: https://www.sec.gov/Archives/edgar/data/1779977/000121390026095175/ea028847004ex2-2.htm [G]
+[897] P. Papanikolaou, A. Vanasse, H. Jin, G. Tzimpragos, and J. Volk, “Duplication-aware retiming and cell interface redesign for superconductor circuit minimization,” [arXiv:2610.02333](https://arxiv.org/abs/2610.02333), Oct. 2026. [P]
 
 ## פריטי אימות פתוחים
 

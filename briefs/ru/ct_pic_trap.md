@@ -30,6 +30,8 @@ updated: 2026-09-04
 
 По числу атомов это на два-три порядка ниже систем со свободной оптикой, и нигде через ловушку, сформированную чипом, не выполнялись ни вентиль, ни транспорт. Самое сильное свидетельство масштабируемости — чип на 784 канала, но он атомы адресует, а не удерживает.
 
+Со стороны источников света гибридно-интегрированная микрогребёнка на 780 nm (резонаторы из Si₃N₄ на 150 mm пластинах, лазерные диоды A3B5 с самоинжекционной синхронизацией), стабилизированная по ⁸⁵Rb, в 2026 году сформировала оптическую решётку и рамановскую связь в конденсате Бозе–Эйнштейна ⁸⁷Rb [P][886]. Свет генерировался на чипе, но доставлялся через свободное пространство и управлял квантовым газом, а не кубитами: ни ловушки, ни вентиля на свете, генерируемом чипом, здесь не было.
+
 ## Производство, материалы и цепочка поставок
 Техпроцессы фотонных ИС на нитриде кремния; в 50-атомном массиве использованы стеклянные волноводы [D][580]. Фотоника Pasqal получена вместе с Aeponyx по нераскрытой цене менее чем за 18 месяцев до релиза августа 2026 г., партнёр-фабрика не назван [C][581]. Ближайшие коммерческие мощности: пилотная линия PIXEurope у imec (~EUR 400 M, 2024-11-24) и подразделение Quantum Technology Solutions у GlobalFoundries (письмо о намерениях по CHIPS на $375 M, 2026-05-21) — обе называют фотонику в числе выпускаемого, ни одна не называет атомные ловушки [G][582][G][353]. Поставщики тонкоплёночного ниобата лития HyperLight и Lightium — кандидаты на тот случай, если требованием станет быстрая коммутация [P][518]. Ни выхода годных, ни стоимости канала, ни категории экспортного контроля для фотоники атомных ловушек по состоянию на 2026-09-04 не найдено.
 
@@ -77,6 +79,7 @@ updated: 2026-09-04
 [580] Y.-D. Hu *et al.*, “A scalable chip-integrated single-photon source array based on 50 individually addressable neutral atoms,” [arXiv:2608.15637](https://arxiv.org/abs/2608.15637), Aug. 2026. [D]
 [581] M. U. Rehman, “Pasqal Demonstrates Photonic Chip-Based Control for Neutral-Atom Quantum Computers,” The Quantum Insider, Aug. 10, 2026. [Online]. Available: https://thequantuminsider.com/2026/08/10/pasqal-photonic-chip-control-neutral-atom-quantum-computers/ [C]
 [582] imec, “The European Commission and Chips JU select the PIXEurope consortium to lead the European Pilot Line on Advanced Photonic Integrated Circuits,” Nov. 24, 2024. [Online]. Available: https://www.imec-int.com/en/press/european-commission-and-chips-ju-select-pixeurope-consortium-lead-european-pilot-line [G]
+[886] W. Sun *et al.*, “A photonic integrated comb engine for ultracold quantum gases,” [arXiv:2609.28294](https://arxiv.org/abs/2609.28294), Sep. 2026. [P]
 
 ## Открытые пункты верификации
 - Институциональная принадлежность авторов 50-атомного массива выведена из списка авторов (Zou, Guo, Ren, Li) как USTC; на странице аннотации она не указана.

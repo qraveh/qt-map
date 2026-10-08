@@ -29,6 +29,8 @@ updated: 2026-09-30
 | 2026-07 | 2,000 מלקחיים אופטיים מ-20 W, מרווח 3.5 µm, מתחת ל-100 nm | Fraunhofer ILT | [P][578] |
 | 2026-08 | דימות ב-17.6 µs, הבחנה 99.89(5)%, הישרדות 98.80(44)% | Kyoto | [P][261] |
 
+חלופה בקנה מידה של שבב לשרשרת ייחוס התדר הוצגה ב-2026: מיקרו-מסרק Si₃N₄ ב-780 nm (מהוד על שבב ההופך לייזר משאבה אחד למסרק של קווים במרווחים שווים, הקוהרנטיים זה לזה), הנעול למעבר של ⁸⁵Rb, החזיק את סחיפת המשאבה שלו ברמה של 100 kHz לאורך 2,000 s, ומכיוון שהמסרק קוהרנטי, הנעילה מייצבת את כל הקווים בבת אחת. קו אחד, שהוגבר ל-102 mW והועבר במרחב החופשי, יצר סריג אופטי בעומק של 4.2 אנרגיות רתיעה וצימוד ראמאן של 0.7 אנרגיות רתיעה בעיבוי בוז–איינשטיין של ⁸⁷Rb [P][886]. הודגם ערוץ אחד; שיתוף הייחוס בין ערוצים רבים הוא צפי של המחברים.
+
 ## ייצור, חומרים ושרשרת האספקה
 אין פרוסה: אופטיקה במרחב חופשי, סחורתית וחצי-ייעודית, המורכבת ביד — ובכל זאת הריכוזיות חמורה. רק שני ספקי מסיטים מופיעים בספרות שבמקורות, AA Opto-Electronic (DTSX-400, במערכת של 448 האטומים) ו-Gooch & Housego [D][G:AOD-VENDORS-2026], ו-Hamamatsu מספקת גם את המאפנן וגם את המצלמה, בלי שזוהתה חלופה [C][G:HAMAMATSU-CAMERA-CONC-2026] — שתי נקודות הכשל היחידות של ממש. ברית של Hamamatsu, NKT Photonics ו-Yaqumo מיוני 2026 היא הניסיון הראשון לתעש את דרג הספקים הזה, והיא מכוונת לשוק חישה שצפוי להגיע ל-$3.5–7.9B [P][335]. המטא-משטח של Tsinghua מצביע לכיוון ההפוך: רכיב ליתוגרפי המחליף את האובייקטיב הוא הצעד היחיד שעשוי להפוך לייצור של מוליכים למחצה [D][145]. אף קטגוריה של פיקוח על יצוא אינה נוקבת באופטיקת מלקחיים; החשיפה עוברת דרך ECCN 4A906 [G:BIS-QUANTUM-ECCN-2024-09].
 
@@ -83,6 +85,7 @@ updated: 2026-09-30
 [335] M. Abdel-Kareem, “Hamamatsu Photonics, NKT Photonics, and Yaqumo Form Alliance to Industrialize Cold-Atom Quantum Core Components,” Quantum Computing Report, Jun. 4, 2026. [Online]. Available: https://quantumcomputingreport.com/hamamatsu-photonics-nkt-photonics-and-yaqumo-form-alliance-to-industrialize-cold-atom-quantum-core-components/ [P]
 [577] M. Endres *et al.*, “Cold Matter Assembled Atom-by-Atom,” [arXiv:1607.03044](https://arxiv.org/abs/1607.03044), Jul. 2016. [D]
 [578] M. Swayne, “Fraunhofer ILT Develops Laser System for 2,000-Qubit Neutral-Atom Quantum Computer,” The Quantum Insider, Jul. 8, 2026. [Online]. Available: https://thequantuminsider.com/2026/07/08/fraunhofer-ilt-develops-laser-system-for-2000-qubit-neutral-atom-quantum-computer/ [P]
+[886] W. Sun *et al.*, “A photonic integrated comb engine for ultracold quantum gases,” [arXiv:2609.28294](https://arxiv.org/abs/2609.28294), Sep. 2026. [P]
 
 ## פריטי אימות פתוחים
 את הנתון "רענון של 10 MHz אינו מספיק מעל ~10⁴ קיוביטים", המצוטט לעתים, אי אפשר לייחס להתקן או למדידה בשום מקור שנמצא; מאפננים של גביש נוזלי מחליפים תמונה בקצב של עשרות הרץ, והגדרה מחדש של מסיט מוגבלת בזמן המעבר האקוסטי, ולכן הנתון אינו משמש כאן. השיוך המוסדי של מאמר המוצא מ-2016 לא הופיע בדף התמצית ב-arXiv. אם הברית של Hamamatsu, NKT Photonics ו-Yaqumo חתמה עם לקוחות מזוהים — לא נחשף. זמן החיים בוואקום וכל מדידת קוהרנטיות עבור מערך המטא-משטח בן 18,225 האתרים לא דווחו. אין פירוט עלויות מתחת לרמת המערכת; הנתון של €65k לאטום נגזר מהזמנה אחת, לא ממחירון.

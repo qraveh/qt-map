@@ -17,6 +17,8 @@ GBS = דגימת בוזונים גאוסית; MZI = אינטרפרומטר מא�
 ## פיזיקה וגבולות
 הסתברויות הפלט הן פרמננטות של תת-מטריצות n×n של U; דגימה קלאסית מדויקת בזמן פולינומי הייתה ממוטטת את ההיררכיה הפולינומית, והקושי של הדגימה המקורבת נשען על שתי השערות [G][456]. עם קלט סחוט הן הפניאנים, גם הם #P-קשים [G][268]. הרשת שוזרת אופנים כשמזינים אותה באור סחוט [D][270], אך אין לה שער שזירה על קיוביטים מקודדים: אופטיקה ליניארית ללא פוטוני עזר מבחינה במצבי בל בהסתברות של 50% לכל היותר [G][457], והאוניברסליות דורשת הזנה קדימה מהגלאים [G][337]. הגבולות הם האובדן והניתנות להבחנה. העבירות מצטברת עם העומק: ב-0.99 לכל MZI, רשת Clements של 100 אופנים מעבירה ~0.37 [S][453]. GBS רועשת ניתנת לסימולציה יעילה ברגע שהסחיטה, העבירות ואיכות הגלאים מקיימות אי-שוויון מסוים [S][269]; רשתות טנזורים כנראה יעילות כאשר מספר הפוטונים השורדים גדל כמו √N עבור N אופני קלט [S][458]; בניתנות חלקית קבועה להבחנה, עלות הסימולציה גדלה רק באופן פולינומי עם מספר הפוטונים [S][459].
 
+פלטים מקובצים של אינטרפרומטר אופטי ליניארי ניתנים לשחזור קלאסי. כל סטטיסטיקה ליניארית של הפלט — סכום בעל משקלים שלמים של ספירות הפוטונים לכל אופן, הכולל קיבוץ אופנים לסלים, ספקטרום ויברוני מולקולרי ואת הפונקציה החד-כיוונית של "הסל הסביר ביותר" — ניתנת לאמידה קלאסית באותה שגיאה חיבורית כמו הניסוי, בזמן פולינומי במספר האופנים, עבור קלט של פוטונים בודדים ועבור קלט גאוסי [P][889]. טענת יתרון או טענת יישום עבור מנגנון זה חייבת להישען על דגימה ברזולוציה מלאה, לא מקובצת, או על סטטיסטיקה לא-ליניארית; גרסאות של פונקציות גיבוב ושל הוכחת עבודה נותרות פתוחות.
+
 ## מצב ההנדסה העדכני
 
 | שנה | נתון | מי | תג+מפתח |
@@ -96,6 +98,7 @@ Borealis מכוונת כל מפצל אלומה בלולאה לכל משבצת ז
 [468] ORCA Computing, “Montana State University Selects ORCA Computing to Advance Distributed Quantum Computing and Communications,” Jun. 5, 2024. [Online]. Available: https://orcacomputing.com/montana-state-university-selects-orca-computing/ [C]
 [469] ORCA Computing, “ORCA Computing Delivers First Photonic Quantum Computing System to UK's National Quantum Computing Centre,” Jun. 11, 2025. [Online]. Available: https://orcacomputing.com/installation-marks-key-milestone-in-the-uks-121m-quantum-initiative-advancing-practical-quantum-research/ [C]
 [470] Tech Journal UK, “ORCA aims to beat classical computers with PT-3 quantum system,” Jul. 1, 2026. [Online]. Available: https://www.techjournal.uk/p/orca-aims-to-beat-classical-computers [R]
+[889] B. Seron, H. Thomas, E. Araujo, A. Arkhipov, C. Oh, and L. Novo, “Efficient classical algorithm for estimating linear statistics of Boson Sampling,” [arXiv:2609.35447](https://arxiv.org/abs/2609.35447), Sep. 2026. [P]
 
 ## פריטי אימות פתוחים
 - דפי התמצית ב-arXiv של 2605.30935 ושל 2109.11525 לא נטענו ב-2026-09-26; החודשים נלקחו מהמזהים, והכותרות והמחברים מגרסת ה-HTML של הטקסט המלא.

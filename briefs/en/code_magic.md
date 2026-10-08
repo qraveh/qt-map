@@ -55,6 +55,8 @@ It sits, as an alternate, on four architectures: the transmon lattice with tunab
 
 Every headline number is a post-selected stand-alone fidelity, measured on a state then discarded rather than used. Google reports a bound from a purpose-built fault-tolerant measurement protocol, not a tomographic estimate [D][42]; the 7×10⁻⁵ figure is quoted at a stated discard rate [D][107]; code switching's 5.1(2.7)×10⁻⁴ carries an uncertainty of the same order as the value [D][666]; the neutral-atom paper reports improvement over input rather than an absolute output infidelity [D][147]. Unmeasured everywhere: throughput under scheduling load, the cost of discards, factory-to-consumer correlations, and the loss channels post-selection removes. Independent checking is unusually strong — Wan, Zhong and Zapirain decompose d=5 cultivation circuits into about 8 Clifford terms on average via the ZX-calculus, over 10⁶× fewer than prior stabiliser decompositions [D][691]. No value conflicts were found among the sources used.
 
+A factory's output can be certified with the operations the code already has: Bell-coherence fidelity estimation measures the infidelity ε of any pure resource state, including continuous-angle rotation states, to a fixed relative accuracy from Θ(1/ε) copies using only Clifford gates and Pauli measurements — optimal even against collective measurements — and in distance-3 surface-code simulations it needed up to about 27× fewer states than direct fidelity estimation [P][896]. The measured copies are consumed.
+
 ## Actors & economics
 
 **Who.**
@@ -105,6 +107,7 @@ Confirm, within 12–24 months, if a cultivated state is consumed by a logical a
 [690] C. Gidney, N. Shutty, and C. Jones, “Magic state cultivation: growing T states as cheap as CNOT gates,” [arXiv:2409.17595](https://arxiv.org/abs/2409.17595), Sep. 2024. [S]
 [691] K. H. Wan, Z. Zhong, and A. Zapirain, “Simulating magic state cultivation with few Clifford terms,” *Quantum*, vol. 10, Art. no. 2134, Jun. 2026, doi: [10.22331/q-2026-06-12-2134](https://doi.org/10.22331/q-2026-06-12-2134). [D]
 [692] Quantinuum, “A Quantinuum-led team has built the quantum programming tools for real-time magic state distillation on a quantum computer,” Oct. 24, 2023. [Online]. Available: https://www.quantinuum.com/blog/a-quantinuum-led-team-has-built-the-quantum-programming-tools-for-real-time-magic-state-distillation-on-a-quantum-computer [C]
+[896] S. Takahashi and K. Fujii, “Efficient fidelity estimation of general quantum resource states via Clifford circuits,” [arXiv:2610.05222](https://arxiv.org/abs/2610.05222), Oct. 2026. [P]
 
 ## Open verification items
 

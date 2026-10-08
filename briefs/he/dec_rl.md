@@ -18,6 +18,8 @@ a = 1.0, שכבת בקרה קלאסית מהונדסת כולה; f = קוהרנ�
 ## פיזיקה וגבולות
 אין רצפה פיזיקלית חדשה: השיטה עוקבת אחר רצפה קיימת, בלי הזמן המת שבין כיולים. הטענה הנושאת את המשקל היא ארכיטקטונית — מהירות האופטימיזציה אינה תלויה בגודל המערכת [D][2], וזו הדרך היחידה לעקוף את הסריקה פרמטר-אחר-פרמטר, הקורסת מעל ~10³ פרמטרים ברי-כוונון. המגבלות נובעות ממה שהסוכן רואה וממה שהוא מכוונן: קצב ממוצע של אירועי גילוי, ופרמטרים של שערים חד-קיוביטיים ושל שערי CZ בלבד [D][2]. הפרצים המתואמים של Willow, המופיעים בערך פעם בשעה, אכן מייצרים אירועי גילוי, אך דועכים בתוך ~400 µs [D][1] — מהר בהרבה ממה שהסוכן מסוגל להגיב — והמאמר מותיר סחיפה מתואמת מהירה כזו לטיפול ברמת החומרה [D][2]. דליפה אל מחוץ למרחב החישובי, ש-Willow מסלק בשלב הסרה ייעודי אחרי כל סבב [D][1], אינה נידונה במאמר, ושגיאת הקריאה, ברמה של ~10⁻², אינה בין הפרמטרים המכווננים. השיטה אינה משנה את המעריך: לא דווח Λ לריצת השיא ב-d=7, ולכן מה שזז הוא השגיאה הנקודתית במרחק קבוע, ולא השיפוע שקובע אם d≈25 יגיע ל-10⁻⁶.
 
+ההנחה שביסוד הכיול מחדש בלולאה מוטלת בספק בידי מדידה מ-2026: מערכות דו-רמתיות (TLS) ארוכות-חיים על טרנסמון מעניקות לסביבה זיכרון של 20 µs עד 1 ms — מאות מחזורי תיקון שגיאות של ~1 µs — ולכן השגיאות נעשות תלויות בהיסטוריה ובפרוטוקול, והמחברים מעמידים זאת מול ההנחה המרקובית (חסרת הזיכרון) שביסוד הכיול הרציף [P][890].
+
 ## מצב ההנדסה העדכני
 | תאריך | נתון | מי | תג+מפתח |
 |---|---|---|---|
@@ -64,6 +66,7 @@ a = 1.0, שכבת בקרה קלאסית מהונדסת כולה; f = קוהרנ�
 [729] X. Yang *et al.*, “Real-time Surface-Code Error Correction Using an FPGA-based Neural-Network Decoder,” [arXiv:2605.04892](https://arxiv.org/abs/2605.04892), May 2026. Also https://arxiv.org/html/2605.04892. [D]
 [742] J. Burt, “Google Uses AI Reinforcement Learning For Quantum Error Correction,” The Next Platform, Jul. 20, 2026. [Online]. Available: https://www.nextplatform.com/compute/2026/07/20/google-uses-ai-reinforcement-learning-for-quantum-error-correction/5275023 [P]
 [743] Q-CTRL, “Q-CTRL Sets Global Quantum Technology Fundraising Record, Increasing Series B to USD $113M, Led by GP Bullhound,” Oct. 8, 2024. [Online]. Available: https://q-ctrl.com/blog/q-ctrl-sets-global-quantum-technology-fundraising-record-increasing-series-b-to-usd-113m-led-by-gp-bullhound [C]
+[890] J. R. Guimarães *et al.*, “Quantum environment afterglow from broadband excitation spectroscopy in superconducting qubits,” [arXiv:2609.31280](https://arxiv.org/abs/2609.31280), Sep. 2026. [P]
 [G] AlphaQubit2 is named and described as "a scalable and real-time neural decoder for topological quantum codes" in Sivak, Morvan, Broughton et al. (Google Quantum AI), "Reinforcement… · 2026-07-08 · https://link.springer.com/article/10.1038/s41586-026-10759-2
 [G] Google Quantum AI, "Quantum error correction below the surface code threshold" (Nature 638, 920; arXiv:2408.13687): the real-time decoder for the distance-5 10^6-cycle run is a spe… · 2024-12-09 · https://arxiv.org/abs/2408.13687
 [G] Ding, Hays, Sung, ... Serniak, Oliver (MIT / MIT Lincoln Laboratory), Phys. Rev. X 13, 031035 (2023-09-25): fluxonium CZ with transmon coupler, peak CZ fidelities 99.85-99.9%, rein… · 2023-09-25 · https://journals.aps.org/prx/abstract/10.1103/PhysRevX.13.031035

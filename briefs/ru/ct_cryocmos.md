@@ -68,6 +68,8 @@ HRL убрала тёплую генерацию сигналов, но числ
 
 Противоречия: 23 mW на кубит у IBM [D][296] против 5 mW и менее 2 mW [S][550] — это разные величины (активный режим против холостого, только тракт возбуждения против полной цепи), общего определения нет; здесь используется 23 mW как единственное число, привязанное к работающему вентилю. Показатели точности Equal1 — заявления с продуктовой страницы [C][273] на фоне опубликованного шестикубитного прибора при 0.3 K [G:EQUAL1-60M-2026-01].
 
+На 54-точечном чисто обменном кристалле HRL под управлением собственного КМОП-контроллера при 4 K измеренная ошибка на обмен в 12-спиновом бенчмарке перекрёстной энтропии (1.54×10⁻⁴) более чем в десять раз превысила предсказание по шуму на уровне компонентов (1.15×10⁻⁵) и была в основном когерентной; авторы подозревают криоконтроллер и сигнальные линии. После загрузки приготовления состояний и измерения память контроллера вмещает лишь около 1,000 уникальных импульсных инструкций, поэтому глубокие последовательности пришлось строить из рекурсивных подпрограмм [P][900].
+
 ## Участники и экономика
 
 **Кто.**
@@ -134,6 +136,7 @@ HRL убрала тёплую генерацию сигналов, но числ
 [562] Intel Corporation, “Technologies for Closed-Loop Qubit Calibration,” USPTO, Jul. 2026. [Online]. Available: https://patents.justia.com/patent/20260187510 [G]
 [563] PatSnap, “Cryogenic CMOS Circuit Technology Landscape 2026,” Apr. 20, 2026. [Online]. Available: https://www.patsnap.com/resources/blog/articles/cryo-cmos-technology-landscape-2026/ [P]
 [564] C. Nayak, “Full stack ahead: Pioneering quantum hardware allows for controlling up to thousands of qubits at cryogenic temperatures,” Microsoft Research Blog, Jan. 27, 2021. [Online]. Available: https://www.microsoft.com/en-us/research/blog/full-stack-ahead-pioneering-quantum-hardware-allows-for-controlling-up-to-thousands-of-qubits-at-cryogenic-temperatures/ [C]
+[900] HRL Quantum Team and Microsoft collaborators, “Benchmarking exchange-only control of a 48-spin singlet manifold,” [arXiv:2610.07393](https://arxiv.org/abs/2610.07393), Oct. 2026. [P]
 
 ## Открытые пункты верификации
 

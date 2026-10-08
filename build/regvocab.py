@@ -32,7 +32,7 @@ FLAGS = {   # the register's caveat slugs on a machine → words (27 Sep 2026: 6
     'press-only': ('press sources only', 'только пресса', 'מקורות עיתונאיים בלבד'), 'no-code-named': ('no code named', 'код не назван', 'לא צוין קוד'), 'no-device': ('no device yet', 'устройства ещё нет', 'עדיין אין התקן'),
     'conflicting-count': ('conflicting qubit counts', 'противоречивые числа кубитов', 'מספרי קיוביטים סותרים'), 'vendor-claim': ('company claim', 'заявление компании', 'טענת החברה'),
     'eroded-claim': ('claim later eroded', 'заявление позже ослаблено', 'הטענה נשחקה בהמשך'), 'code-id-missing': ('code id missing in the register', 'нет идентификатора кода в реестре', 'חסר מזהה קוד במרשם'),
-    'analog-only': ('analog operation only', 'только аналоговый режим', 'פעולה אנלוגית בלבד'), 'unverified-claim': ('unverified claim', 'непроверенное заявление', 'טענה לא מאומתת'),
+    'analog-only': ('analogue operation only', 'только аналоговый режим', 'פעולה אנלוגית בלבד'), 'unverified-claim': ('unverified claim', 'непроверенное заявление', 'טענה לא מאומתת'),
     'annealer-reference-only': ('annealer reference only', 'только ссылка на отжигатель', 'הפניה למחשב הרפיה בלבד'), 'phase-flip-unpublished': ('phase-flip time unpublished', 'время фазового переворота не опубликовано', 'זמן היפוך הפאזה לא פורסם'),
     'rebutted-claim': ('claim rebutted', 'заявление опровергнуто', 'הטענה הופרכה'), 'roadmap-missed': ('roadmap date missed', 'срок дорожной карты пропущен', 'מועד מפת הדרכים הוחמץ'),
     'snippet-only': ('source seen as a snippet only', 'источник виден только фрагментом', 'המקור נראה כקטע בלבד'), 'code-node-mismatch': ('code and technology disagree', 'код и технология не согласуются', 'הקוד והטכנולוגיה אינם מתיישבים'),

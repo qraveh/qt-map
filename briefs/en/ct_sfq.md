@@ -19,7 +19,7 @@ Attributes. **Carrier affinity:** fully fabricated control layer. **Time / entan
 
 ## Physics & limits
 
-Each Φ₀ pulse gives the qubit a fixed phase kick, so gate angle is set by pulse *count*, not analog amplitude. Switching costs only ~I_cΦ₀ ≈ 10⁻¹⁹ J per event; within a mixing-chamber budget of tens of µW at 20 mK, RSFQ's static bias power and bias distribution bind first.
+Each Φ₀ pulse gives the qubit a fixed phase kick, so gate angle is set by pulse *count*, not analogue amplitude. Switching costs only ~I_cΦ₀ ≈ 10⁻¹⁹ J per event; within a mixing-chamber budget of tens of µW at 20 mK, RSFQ's static bias power and bias distribution bind first.
 
 The floor is pair-breaking: switching junctions radiate photons above the aluminium gap (2Δ ≈ 90 GHz) that break Cooper pairs in the qubit film — quasiparticle poisoning — causing T1 decay and correlated bursts. Limiting the driver's pulse bandwidth is projected to remove it, bringing gate error toward 0.1% for resonant sequences [D][249]. Other levers: quasiparticle traps, gap engineering, millimetre-wave absorbers.
 
@@ -40,6 +40,8 @@ Dominant error term: quasiparticle poisoning in the 2023 module [D][249]; undisc
 ## Manufacturing, materials & supply chain
 
 The control die is multi-layer Nb/AlOx/Nb — eight or more planarised niobium layers, 10⁴–10⁶ junctions — unlike the aluminium qubit process [D][569]. Foundries are few: MIT Lincoln Laboratory (SFQ5ee line, SQUILL qubit foundry) [C][570], AIST's niobium process and cell libraries [D][571], and SEEQC's commercial foundry in Elmsford, NY [C][572]. Yield needs critical-current spreads of a few per cent across thousands of junctions. Export exposure (BIS rule of 2024-09-06): ECCNs 3A904, 3B904 and 4A906; 3A901.a, read literally, covers cryogenic CMOS only [G][301]. Single points of failure: dilution refrigerators, indium-bump bonding, niobium sputter and CMP tools.
+
+Superconductor electronics integrate 1–10 million junctions per cm² against more than 10 billion transistors per cm² in advanced CMOS (figures from the MIT Lincoln Laboratory process papers the authors cite). Design gains such as clock-free xSFQ cells with built-in fan-out amplifiers — 2.7–3.4× fewer junctions on standard benchmark circuits, one cell fabricated in MIT Lincoln Laboratory's SFQ5ee process (critical current density 10 kA/cm²) and verified at 4.2 K — raise functional density, not integration density [P][897].
 
 ## Control, readout & I/O burden
 
@@ -111,6 +113,7 @@ Confirm if by end-2027 a group publishes an SFQ-driven two-qubit gate below 1% e
 [572] SEEQC, “SEEQC Secures $22.4 Million In Series A Round; Strategic Investment Led By EQT Ventures,” Sep. 16, 2020. [Online]. Available: https://seeqc.com/resources/seeqc-secures-22.4-million-in-series-a-round-strategic-investment-led-by-eqt-ventures [C]
 [573] SIP Global Partners, “SIP Global Partners Participates in $30M Round for SEEQC, Developer of the World's First Full-Stack Processor for Quantum Computers,” PRWeb, Jan. 16, 2025. [Online]. Available: https://www.prweb.com/releases/sip-global-partners-participates-in-30m-round-for-seeqc-developer-of-the-worlds-first-full-stack-processor-for-quantum-computers-302352970.html [P]
 [574] Allegro Merger Corp.; SeeQC, Inc., “Settlement, Termination and Release Agreement,” U.S. Securities and Exchange Commission (EDGAR), Aug. 2026. [Online]. Available: https://www.sec.gov/Archives/edgar/data/1779977/000121390026095175/ea028847004ex2-2.htm [G]
+[897] P. Papanikolaou, A. Vanasse, H. Jin, G. Tzimpragos, and J. Volk, “Duplication-aware retiming and cell interface redesign for superconductor circuit minimization,” [arXiv:2610.02333](https://arxiv.org/abs/2610.02333), Oct. 2026. [P]
 
 ## Open verification items
 

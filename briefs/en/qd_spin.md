@@ -46,6 +46,8 @@ Best demonstrated as of 3 Sep 2026: two-qubit fidelity 99.04–99.56% on a 300 m
 
 The dominant error term today is not decoherence but calibration drift: 54 dots need hundreds of interdependent voltages, and the tune-up surface limits array size, not T2.
 
+The first germanium array beyond a quasi-one-dimensional layout, a 6×6 hole-dot grid with one shared ('merged') barrier gate and individual plunger gates (QuTech, October 2026), formed 34 of its 36 dots, reached 30 coherently and ran 10 qubits placed sparsely, driven and read out five at a time; the sparse placement cut crosstalk 42× and gave simultaneous single-qubit Clifford fidelities above 99% [P][898].
+
 ## Manufacturing, materials & supply chain
 
 The distinguishing claim is fabrication on unmodified CMOS lines — Intel reports >24,000 devices per 300 mm EUV wafer [D][199] and 96% tune-up yield over 232 twelve-dot devices of one wafer [D][766], and Quantum Motion characterised 1,024 dots in five minutes on GlobalFoundries 22FDX [C][200]. Process detail belongs to the 300 mm CMOS foundry brief; wafer-scale statistics exist here and for no other carrier.
@@ -69,6 +71,8 @@ Derived clock for the architecture = sum of the syndrome round: gate layers + tr
 Headline two-qubit numbers come from interleaved randomised benchmarking or gate-set tomography on the best pair on the die — a legitimate protocol reporting an illegitimate summary, capturing neither crosstalk nor calibration drift. HRL's d=5 repetition code over 200 rounds is the only spin result measuring error *in situ* under continuous operation, and its Λ₅/₃ = 4.7 [D][190] is bit-flip-only, not below-threshold logical memory, which no spin platform has shown.
 
 Conflicts. Diraq's messaging conflicts on scale: a 2026-07-09 release said "thousands of qubits by 2029", the 2026-08-27 roadmap says 150,000 physical and 1,000 logical by 2029 [R][211][G:DIRAQ-FUNDING]; take the roadmap as the company's position and the discrepancy as evidence about the company. No replication of the 300 mm two-qubit result outside the imec line exists.
+
+On a single-hole Ge/SiGe qubit (T2* = 136 ns, Rabi frequency 19 MHz) the same idle gate scores 99.21(3)% by interleaved randomised benchmarking but 97.48(9)% by gate-set tomography, whose sequences contain long runs of consecutive idles that exceed T2*, while the X/2 and Y/2 gates agree within 0.3 points (99.81% and 99.88% by gate-set tomography) [P][888]. An idle or memory figure for this carrier is meaningful only with its protocol named.
 
 ## Actors & economics
 
@@ -146,6 +150,8 @@ Open questions. (1) Is 99.5%-class two-qubit fidelity reproducible across all pa
 [355] Quantum Motion, “Quantum Motion Raises $160 Million Series C to Deliver Quantum Computing's "Transistor Moment,” May 7, 2026. [Online]. Available: https://quantummotion.com/quantum-motion-raises-160-million-series-c-to-deliver-quantum-computings-transistor-moment/ [C]
 [356] PatSnap, “Spin Qubit Silicon Quantum Dot Arrays 2026 — PatSnap Eureka,” Jun. 2, 2026. [Online]. Available: https://www.patsnap.com/resources/blog/rd-blog/spin-qubit-silicon-quantum-dot-arrays-2026-patsnap-eureka/ [P]
 [766] S. F. Neyens *et al.*, “Probing single electrons across 300-mm spin qubit wafers,” *Nature*, vol. 629, no. 8010, pp. 80–85, May 2024, doi: [10.1038/s41586-024-07275-6](https://doi.org/10.1038/s41586-024-07275-6). [D]
+[888] Y.-C. Zhou *et al.*, “High-fidelity geometric quantum gates exceeding 99.9% in germanium quantum dots,” [arXiv:2609.33251](https://arxiv.org/abs/2609.33251), Sep. 2026. [P]
+[898] A. S. Ivlev *et al.*, “Sparse qubit operation in a 6×6 quantum dot array,” [arXiv:2610.07683](https://arxiv.org/abs/2610.07683), Oct. 2026. [P]
 
 ## Open verification items
 

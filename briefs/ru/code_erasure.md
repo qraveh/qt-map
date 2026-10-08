@@ -106,6 +106,8 @@ updated: 2026-09-30
 
 Открытые вопросы: (1) какова Λ, когда ложноотрицательные срабатывания накопятся как утечка за 10³ раундов? (2) сохранится ли смещение 40:1 при параллельных вентилях на общих линиях считывания? (3) можно ли снять налог на точность в метастабильном многообразии Yb? (4) возможен ли адаптированный к стиранию код qLDPC с быстрым декодером? Следить за: поставкой D-Wave в 2026 г., следующей многокубитной статьёй AWS, результатами Google/Kaufman по Yb.
 
+Декодирование с учётом стираний работает и на фотонном интерфейсе между процессорами поверхностного кода: при идеальных локальных операциях порог для стёртых исходов слияний достигает потолка 50%, задаваемого перколяцией по связям квадратной решётки (по аппроксимации 49.40–50.60% при d = 11–19), что эквивалентно 18.35% потерь фотонов без усиления слияний (fusion boosting), и снижается примерно линейно с ошибкой ресурсных состояний и всё быстрее по мере того, как локальный шум схемы приближается к собственному порогу [P][893]. Результат получен только моделированием.
+
 ## Литература
 [1] Google Quantum AI and Collaborators, “Quantum error correction below the surface code threshold,” *Nature*, vol. 638, no. 8052, pp. 920–926, Dec. 2024, doi: [10.1038/s41586-024-08449-y](https://doi.org/10.1038/s41586-024-08449-y). [D]
 [4] D. Bluvstein *et al.*, “A fault-tolerant neutral-atom architecture for universal quantum computation,” *Nature*, vol. 649, no. 8095, pp. 39–46, Nov. 2025, doi: [10.1038/s41586-025-09848-5](https://doi.org/10.1038/s41586-025-09848-5). [arXiv:2506.20661](https://arxiv.org/abs/2506.20661). [D]
@@ -144,6 +146,7 @@ updated: 2026-09-30
 [684] S. Gu, A. Retzker, and A. Kubica, “Fault-tolerant quantum architectures based on erasure qubits,” *Phys. Rev. Res.*, vol. 7, no. 1, Art. no. 013249, Mar. 2025, doi: [10.1103/PhysRevResearch.7.013249](https://doi.org/10.1103/PhysRevResearch.7.013249). [arXiv:2312.14060](https://arxiv.org/abs/2312.14060). [S]
 [685] N. Liyanage, Y. Wu, A. Deters, and L. Zhong, “Scalable Quantum Error Correction for Surface Codes using FPGA,” [arXiv:2301.08419](https://arxiv.org/abs/2301.08419), Jan. 2023. [D]
 [686] Brookhaven National Laboratory, “DOE Renews Brookhaven Lab-led Quantum Research Center,” BNL Newsroom, Nov. 4, 2025. [Online]. Available: https://www.bnl.gov/newsroom/news.php?a=122687 [G]
+[893] F. Burt *et al.*, “Loss-tolerant distributed lattice surgery using fusion networks,” [arXiv:2610.01923](https://arxiv.org/abs/2610.01923), Oct. 2026. [P]
 
 ## Открытые пункты верификации
 

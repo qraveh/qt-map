@@ -61,6 +61,8 @@ System detection efficiency is measured against a heavily attenuated laser and a
 
 Conflict. A "98.9% median (PsiQuantum)" figure is quoted elsewhere; the Omega paper and the shared fact record both give 93.4% median on-chip [D][169][G:PSIQ-OMEGA-METRICS-2025]. The primary-source figure, 93.4%, stands; the difference is 0.30 dB versus 0.05 dB per detection.
 
+Silicon avalanche photodiodes, still used instead of superconducting nanowire or transition-edge detectors to characterise sources, emit breakdown flashes that leak between the two detectors of a Hanbury Brown–Twiss set-up (a beam splitter feeding two detectors whose coincidences measure the multiphoton fraction) and raise the zero-delay coincidence peak in the near-infrared; a second-order correlation g⁽²⁾(0) measured this way is an upper bound on the multiphoton fraction [P][887].
+
 ## Actors & economics
 
 **Who.**
@@ -132,6 +134,7 @@ Open questions. (1) What is the efficiency–jitter joint distribution across a 
 [632] A. E. Lita, A. J. Miller, and S. W. Nam, “Counting near-infrared single-photons with 95% efficiency,” *Optics Express*, vol. 16, no. 5, Art. no. 3032, 2008, doi: [10.1364/OE.16.003032](https://doi.org/10.1364/OE.16.003032). [D]
 [633] IonQ, “IonQ Completes Acquisition of ID Quantique, Cementing Leadership in Quantum Networking and Secure Communications,” May 6, 2025. [Online]. Available: https://investors.ionq.com/news/news-details/2025/IonQ-Completes-Acquisition-of-ID-Quantique-Cementing-Leadership-in-Quantum-Networking-and-Secure-Communications/default.aspx [P]
 [634] SCONTEL, “SCONTEL: SSPD SNSPD HEB CRYOGENICS – DETECT EVERYTHING YOU WANT.” [Online]. Available: https://www.scontel.ru/ [C]
+[887] S. Luo *et al.*, “100 million photons per second from a single organic molecule,” [arXiv:2609.29736](https://arxiv.org/abs/2609.29736), Sep. 2026. [P]
 
 ## Open verification items
 

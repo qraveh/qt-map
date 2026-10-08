@@ -27,6 +27,8 @@ Two rates set the architecture: megahertz electron Rabi gives gates of tens to h
 
 Dominant term: optically induced charge instability, not microwave control.
 
+On germanium hole spins, a geometric form of the electric-dipole spin resonance (EDSR) pulse — a non-adiabatic, three-segment loop whose rotation is set by the loop's geometry rather than by the pulse's dynamics — kept X/2 and Y/2 above 99% at ±2.5 MHz microwave detuning and the idle gate at ±1.2 MHz, peaking at 99.98% (idle), 99.80% (X/2) and 99.97% (Y/2) by gate-set tomography [P][888]. The price is four to six times the duration of the ordinary gate, and which loop works best depends on the dominant noise.
+
 ## Manufacturing, materials & supply chain
 The gate inherits diamond's constraints: CVD growth from Element Six, implanted defects, per-device nanophotonics. Nothing in the drive chain multiplexes: each addressed defect needs its own resonant laser line, microwave feed and detector channel, so hardware scales linearly with sites — the opposite of a shared microwave plant. Control latency is set by the link, not the gate: the teleported CNOT needed feed-forward inside the memory lifetime [D][360]. At 10³ sites the wall is laser count and optical fan-out, with no published plan. No export rule names colour centres.
 
@@ -63,6 +65,7 @@ Confirm/demote (12–24 months): a peer-reviewed sub-0.1% gate-set result with a
 [363] F. Afzal *et al.*, “Distributed Quantum Computing in Silicon,” [arXiv:2406.01704](https://arxiv.org/abs/2406.01704), Jun. 2024. [P]
 [364] M. U. Rehman, “Top Diamond NV-Centre Quantum Computing Companies in 2026,” The Quantum Insider, Jul. 10, 2026. [Online]. Available: https://thequantuminsider.com/2026/07/10/8-quantum-computing-companies-working-with-nv-centre-in-diamond-technology/ [P]
 [823] Oak Ridge National Laboratory, “Quantum Brilliance, ORNL pioneer quantum-classical hybrid computing,” ORNL News, Sep. 2, 2025. [Online]. Available: https://www.ornl.gov/news/quantum-brilliance-ornl-pioneer-quantum-classical-hybrid-computing Also https://www.iaf.fraunhofer.de/en/media-library/press-releases/first-room-temperature-quantum-accelerator-in-europe.html. Also https://quantumbrilliance.com/news/supercomputer-with-quantum-accelerator-pawsey-commissions-first-room-temperature-on-premises-quantum-computer-in-supercomputing-center/. [P]
+[888] Y.-C. Zhou *et al.*, “High-fidelity geometric quantum gates exceeding 99.9% in germanium quantum dots,” [arXiv:2609.33251](https://arxiv.org/abs/2609.33251), Sep. 2026. [P]
 
 ## Open verification items
 - The below-0.1% NV gate-set-tomography figure rests on a joint Fujitsu/QuTech press release relayed by trade press [208]; no peer-reviewed publication with error bars or an error budget was located. Tagged [P] here, not [D] as in the main report and graph record.

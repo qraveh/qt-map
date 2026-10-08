@@ -61,6 +61,8 @@ updated: 2026-09-30
 
 סתירה. נתון של "חציון 98.9% (PsiQuantum)" מצוטט במקום אחר; מאמר ה-Omega ורשומת העובדה המשותפת נותנים שניהם חציון של 93.4% על השבב [D][169][G:PSIQ-OMEGA-METRICS-2025]. נתון המקור הראשוני, 93.4%, הוא העומד בתוקף; ההבדל הוא 0.30 dB לעומת 0.05 dB לגילוי.
 
+פוטודיודות מפולת מצורן, שעדיין משמשות לאפיון מקורות במקום גלאי ננו-תיל מוליכי-על או חיישני קצה-מעבר, פולטות הבזקי פריצה הדולפים בין שני הגלאים של מערך Hanbury Brown–Twiss (מפצל אלומה המזין שני גלאים, שצירופי המקרים שלהם מודדים את החלק הרב-פוטוני) ומגביהים את שיא צירופי המקרים בהשהיה אפס בתחום התת-אדום הקרוב; מתאם מסדר שני g⁽²⁾(0) הנמדד כך הוא חסם עליון לחלק הרב-פוטוני [P][887].
+
 ## שחקנים וכלכלה
 
 **מי.**
@@ -132,6 +134,7 @@ updated: 2026-09-30
 [632] A. E. Lita, A. J. Miller, and S. W. Nam, “Counting near-infrared single-photons with 95% efficiency,” *Optics Express*, vol. 16, no. 5, Art. no. 3032, 2008, doi: [10.1364/OE.16.003032](https://doi.org/10.1364/OE.16.003032). [D]
 [633] IonQ, “IonQ Completes Acquisition of ID Quantique, Cementing Leadership in Quantum Networking and Secure Communications,” May 6, 2025. [Online]. Available: https://investors.ionq.com/news/news-details/2025/IonQ-Completes-Acquisition-of-ID-Quantique-Cementing-Leadership-in-Quantum-Networking-and-Secure-Communications/default.aspx [P]
 [634] SCONTEL, “SCONTEL: SSPD SNSPD HEB CRYOGENICS – DETECT EVERYTHING YOU WANT.” [Online]. Available: https://www.scontel.ru/ [C]
+[887] S. Luo *et al.*, “100 million photons per second from a single organic molecule,” [arXiv:2609.29736](https://arxiv.org/abs/2609.29736), Sep. 2026. [P]
 
 ## פריטי אימות פתוחים
 
