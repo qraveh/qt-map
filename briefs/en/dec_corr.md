@@ -26,6 +26,8 @@ The herald is the asset: >80% of Rydberg-array leakage is atom loss, and imaging
 
 Same circuit: 2.14(13)×, d=3→5, four rounds. Dominant term: atom loss, not Pauli error.
 
+Not published: the closing date and price of BTQ's full acquisition of QPerfect, whose option was exercised between 2025-04 and 2026-07, and a dated patent family for loss-aware or correlated decoding.
+
 ## Manufacturing, materials & supply chain
 No fab: classical compute already bought for matching. Latency sets scope: 144 µs/round fits a 1–4.5 ms atom cycle with 7–30× margin [739] but is ~130× over a 1.1 µs superconducting cycle — why this stays atom-specific. Loss-flag bandwidth is one bit per site per round, so the wall at 10³–10⁴ atoms is the ~0.5–1 ms imaging and a decode window scaling with logical depth, not the link. Inherited single points of failure: Hamamatsu qCMOS imaging [G:HAMAMATSU-CAMERA-CONC-2026] and two AOD vendors [G:AOD-VENDORS-2026].
 
@@ -81,8 +83,3 @@ Confirm if the QPerfect decoder runs on real syndromes or a second vendor publis
 [G] QuEra: Libra fault-tolerant system 2028 (>256 logical, 10⁻⁶, on Braket) and gigaquop system 2028–29 — its Jan-2024 roadmap had promised 100 logical qubits in 2026 · 2026-06-15 · https://www.quera.com/press-releases/quera-announces-2028-fault-tolerant-quantum-computer-and-expanded-multi-year-strategic-collaboration-with-aws
 [G] Atom Computing: $100 M Series C (Third Point) plus $100 M DoC CHIPS LOI, total > $300 M, 2026-06-16 · 2026-06-16 · https://www.prnewswire.com/news-releases/atom-computing-raises-more-than-300-million-to-accelerate-deployment-of-fault-tolerant-neutral-atom-quantum-computers-302800832.html
 [G] DARPA QBI Stage B (announced 2025-11-06, ~12 months, up to $15 M each): Atom Computing, Diraq, IBM, IonQ, Nord Quantique, Photonic Inc., Quantinuum, Quantum Motion, QuEra, Silicon… · 2025-11-06 · https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection
-## Open verification items
-- The 1.73(13)× gain is unreplicated outside the Harvard/MIT/QuEra 448-atom dataset, and its baseline decoder was the same team's choice.
-- The QPerfect 4% vs 3.2% threshold is simulation only; no hardware-syndrome test found as of 4 Sep 2026.
-- BTQ's option to acquire QPerfect in full was exercised between 2025-04 and 2026-07 (the later release calls QPerfect wholly owned); no dated closing or price found.
-- No dated patent family found for loss-aware or correlated decoding.

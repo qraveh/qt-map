@@ -66,6 +66,8 @@ The 99.81% is interleaved randomised benchmarking, its 1.9(2)×10⁻³ error dec
 
 Not captured: crosstalk on shared extenders when several couplers of one vertex fire together; T1 at the flux points every coupler forces on its qubits; leakage into extender modes; drift of the ZZ null. Independent replications of a mm-scale CZ with error bars: none as of 3 Sep 2026. Conflicts: degree 6 [D][248] against "does not exceed seven" [S][496] — the seventh edge is the logic-unit adapter, so both hold; the graph record's "≥ 2 mm" is the paper's 1.96 mm [D][480]; IQM's 99.3% (Constellation cell) and 99.81% (isolated pair) are different operations, not a regression.
 
+D-Wave's reliance on SkyWater rests on nine EDGAR full-text hits [G][492]; D-Wave's own text says "existing third-party foundries", with a second source demonstrated on the 2000Q LN [G][491]. IQM's Constellation "above 99.3%" carries no protocol or error bar [C][487]. Nanjing's 1 cm coupler has a measured XX of 23.5 MHz, while its 100 MHz ZZ is stated without saying whether it is measured or simulated [D][482]. The 282 ns readout behind the derived clock is the superconducting architecture's typical value, not a figure specific to long-range couplers. Patent metadata for [498] comes from Justia's index, not USPTO full-text records. Not published: IBM Loon's qubit count, c-coupler length and any gate fidelity [C][49], [486]; the cost, energy and yield per coupler, from any actor; a patent-family count for long-range couplers; and whether IQM's shipped Crystal products use the 2 mm extended coupler of [480].
+
 ## Actors & economics
 
 **Who.**
@@ -144,15 +146,3 @@ Open questions: (1) does a qubit's T1 survive the flux points six couplers force
 [497] J. Dijkema *et al.*, “Cavity-mediated iSWAP oscillations between distant spins,” *Nat. Phys.*, vol. 21, no. 1, pp. 168–174, Dec. 2024, doi: [10.1038/s41567-024-02694-8](https://doi.org/10.1038/s41567-024-02694-8). [arXiv:2310.16805](https://arxiv.org/abs/2310.16805). [D]
 [498] Justia Patents, “Patent search: ‘long-range coupler’ qubit (results as of Sep. 3, 2026).” [Online]. Available: https://patents.justia.com/search?q=%22long-range+coupler%22+qubit Also https://patents.google.com/patent/US12517856B2/en. Also https://patents.google.com/patent/US12587192B2/en. [G]
 [536] QuantWare, “QuantWare announces scaling breakthrough with VIO-40K™, delivering 10,000 qubit Quantum Processors for the first time,” Dec. 8, 2025. [Online]. Available: https://quantware.com/news/quantware-announces-scaling-breakthrough-with-vio-40k [C]
-
-## Open verification items
-
-- IBM Loon: qubit count, c-coupler length and any gate fidelity are unpublished as of 2026-09-03 [C][49], [486]; no 2026 IBM paper on c-couplers was found.
-- The exact 10-K wording of D-Wave's reliance on SkyWater: EDGAR full-text search returns nine hits [G][492], but the sentences could not be extracted from the filings consulted; D-Wave's own text says "existing third-party foundries" with a second source demonstrated on the 2000Q LN [G][491].
-- Degree 6 [D][248] versus "does not exceed seven" [S][496]: reconciled here as memory-only versus memory-plus-logic-unit; the seventh edge's assignment is this brief's reading, not the papers' wording.
-- IQM arXiv:2503.12869: author list and exact submission day not extracted (organisation cited); Constellation's "above 99.3%" carries no protocol or error bar [C][487].
-- Nanjing's 1 cm coupler: XX 23.5 MHz is measured; the 100 MHz ZZ is stated without saying whether measured or simulated [D][482]; treated as a design value.
-- The 282 ns readout used for the derived clock is the superconducting architecture's graph record value, not a figure specific to long-range couplers.
-- Cost, energy and yield per coupler: no actor publishes them.
-- Patent metadata for [498] comes from Justia's index, not USPTO full-text records; no family count exists for long-range couplers specifically.
-- Whether IQM's shipped Crystal products use the 2 mm extended coupler of [480] is not stated by the company.

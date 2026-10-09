@@ -28,6 +28,8 @@ Protection is a length and a gap: parity splitting falls exponentially with leng
 
 No logical state prepared, no X measurement, no coherence time or logical error rate for a tetron [D][21].
 
+The arXiv text of [20] also gives X ~4 µs and Z ~9.3 ms for other tunings, against the 14.5 µs / 12.4 ms quoted above. No non-Microsoft tetron exists. Not published: a Majorana splitting, a wire length over coherence length or a quasiparticle density for any tetron, so the protection claim cannot be checked numerically; and whether the X/Z asymmetry is geometric or intrinsic.
+
 ## Manufacturing, materials & supply chain
 No process of its own; the encoding fixes a geometry. Two wires, a backbone and the dots closing each loop cost more area and steps than a bare wire, and the X loop's coupling elements are exactly what a Z-only measurement avoids. Bring-up is per device: the 2026 rf technique resolves wire-end-state splitting to µeV so array devices can be tuned at all [D][21]. Below it is in-house InAs–Pb epitaxy, unreplicated outside Microsoft; no export-control category specific to it.
 
@@ -63,6 +65,3 @@ Falsifiable in 12–24 months: any X-basis parity measurement with a stated assi
 [215] C. Nayak, “Majorana 2 – Microsoft's Scalable Quantum Processor With Reliable, Long-Lasting Qubits,” Microsoft Quantum. [Online]. Available: https://quantum.microsoft.com/en-us/insights/blogs/majorana-2-scalable-quantum-processor [C]
 [217] F. Zatelli *et al.*, “Majorana parity qubit in coupled minimal Kitaev chains,” [arXiv:2607.09511](https://arxiv.org/abs/2607.09511), Jul. 2026. [D]
 [421] T. Karzig *et al.*, “Scalable designs for quasiparticle-poisoning-protected topological quantum computation with Majorana zero modes,” *Phys. Rev. B*, vol. 95, no. 23, Art. no. 235305, Jun. 2017, doi: [10.1103/PhysRevB.95.235305](https://doi.org/10.1103/PhysRevB.95.235305). [arXiv:1610.05289](https://arxiv.org/abs/1610.05289). [S]
-
-## Open verification items
-No Majorana splitting, wire length over coherence length, or quasiparticle density is published for a tetron, so the protection claim cannot be checked numerically. The arXiv text of [20] also gives X ~4 µs and Z ~9.3 ms for other tunings against the 14.5 µs / 12.4 ms used here. Whether the X/Z asymmetry is geometric or intrinsic is unresolved, and no non-Microsoft tetron exists to test it.

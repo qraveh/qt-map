@@ -60,6 +60,8 @@ Headline numbers come from Bell-state and randomised-benchmarking estimators wit
 
 Conflicts. (i) The graph record records the [[4,2,2]] improvement as **3.6×**; arXiv:2506.13724 v1 and v2 both state **1.9(4)×**, which we use, treating 3.6× as superseded [G:PRINCETON-ERASURE-V2-2026-06]. (ii) Oregon's Bell fidelities read 98.56%/99.14% in the arXiv HTML and 98.61%/99.16% in Physical Review A, detuning −43 vs −44 THz; journal values used [D][393]. (iii) The 98% conversion figure [S][8] is an upper bound on an idealised error inventory, not a missed target.
 
+Not published: the duration and fidelity of Oregon's quantum-logic non-destructive metastable readout [394].
+
 ## Actors & economics
 
 **Who.**
@@ -127,13 +129,3 @@ Open questions. (1) Why is measured conversion 38–50% when the model says 98% 
 [395] K. Chang *et al.*, “Surface Code with Imperfect Erasure Checks,” *PRX Quantum*, vol. 6, no. 4, Art. no. 040355, Dec. 2025, doi: [10.1103/d1v7-nctj](https://doi.org/10.1103/d1v7-nctj). [S]
 [396] K. DeBry *et al.*, “Error correction of a logical qubit encoded in a single atomic ion,” *Nat. Phys.*, vol. 22, no. 9, pp. 1446–1452, Sep. 2026, doi: [10.1038/s41567-026-03315-2](https://doi.org/10.1038/s41567-026-03315-2). [D]
 [397] quantumlib, “Gates supported by Stim,” GitHub. [Online]. Available: https://github.com/quantumlib/Stim/blob/main/doc/gates.md [C]
-
-## Open verification items
-
-- Exact Applied Physics Letters volume, page and month for the 2021 omg blueprint [333] — cited from a laboratory publications listing; the journal record itself was not consulted.
-- Metastable-manifold lifetimes used as the physical premise (¹⁷¹Yb 6s6p ³P₀, ⁴⁰Ca⁺ D₅/₂) — stated qualitatively; no numeric lifetime verified here.
-- Oregon Bell fidelities conflict: 98.56%/99.14% (arXiv HTML) vs 98.61%/99.16% (Physical Review A abstract), detuning −43 vs −44 THz; journal values used [393].
-- Princeton [[4,2,2]] logical-decay improvement: graph record says 3.6×, arXiv v1 and v2 both say 1.9(4)×; 1.9(4)× used, Nature Physics main text not accessible to confirm [142].
-- Erasure-check false-positive and false-negative rates for both the ¹⁷¹Yb and ⁴⁰Ca⁺ demonstrations — not published in the abstracts consulted.
-- Duration and fidelity of Oregon's quantum-logic non-destructive metastable readout [394] — no timing given.
-- Exact ECCN mapping of the US BIS quantum interim final rule of 2024-09-06 to metastable-qubit hardware — not verified.

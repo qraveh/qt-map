@@ -208,6 +208,14 @@ def fmt_t(x):
     return fmt_n(v * 1e9) + ' ns'
 
 
+def fmt_t_range(L, c):
+    """(c) readout time: one value, or a range when the node carries a fast end (c.lo, c.lo_note) — "≈ 18 µs (fast, …) to ≈ 0.5 ms"."""
+    if c.get('lo') is None: return fmt_t(c.get('t'))
+    v = math.pow(10, c.get('t'))   # the typical end, rounded to one digit in ms (≈ 0.5 ms, not 501 µs)
+    lo, hi, note = fmt_t(c['lo']), (to_precision(v * 1e3, 1) + ' ms' if 1e-4 <= v < 1e-3 else fmt_t(c.get('t'))), T(L, *c['lo_note'])
+    return T(L, '≈ %s (%s) to ≈ %s', 'от ≈ %s (%s) до ≈ %s', '≈ %s (%s) עד ≈ %s') % (lo, note, hi)
+
+
 # ---------- text
 def _s(x): return '' if x is None else (x if isinstance(x, str) else js_str(x))
 def esc(x): return html.escape(_s(x), False)   # text: & < > (the JS esc)
@@ -377,7 +385,7 @@ def station_card_html(nid, lang, base=''):
     L, n = lang, NODE[nid]; t = lambda *x: esc(T(L, *x)); c = n.get('c'); b = n.get('b') or {}; e = n.get('e') or {}
     rows = [(T(L, '(a) carrier affinity', '(a) сродство носителя', '(a) זיקת הנושא'), vt(L, 'AFF', n['aff'])),
             (T(L, '(b) time · entangling', '(b) время · запутывание', '(b) זמן · שזירה'), fmt_t(b.get('t')) + ((' · ' + vt(L, 'DET', b.get('det'))) if b.get('det') != 'na' else '')),
-            (T(L, '(c) readout', '(c) считывание', '(c) קריאה'), '%s · %s · %s · %s' % (vt(L, 'MECH', c.get('mech')), fmt_t(c.get('t')),
+            (T(L, '(c) readout', '(c) считывание', '(c) קריאה'), '%s · %s · %s · %s' % (vt(L, 'MECH', c.get('mech')), fmt_t_range(L, c),
                                                                          T(L, 'destructive', 'разрушающее', 'הרסנית') if c.get('destr') else T(L, 'non-destructive', 'неразрушающее', 'לא הרסנית'),
                                                                          T(L, 'mid-circuit', 'внутрисхемное', 'mid-circuit') if c.get('mid') else T(L, 'no mid-circuit', 'не внутрисхемное', 'ללא mid-circuit')) if c is not None else '—'),
             (T(L, '(d) mobility', '(d) подвижность', '(d) ניידות'), vt(L, 'MOB', n['d'])),

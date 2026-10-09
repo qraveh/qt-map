@@ -29,6 +29,8 @@ updated: 2026-09-30
 
 Relay-BP от IBM для gross-кода заявляет итерацию 24 ns и менее 1 µs на цикл при p ниже 3×10⁻³ — на смоделированных синдромах [S][48].
 
+Показатели Relay-BP на ПЛИС у IBM получены на смоделированных синдромах, а приведённые в аннотации 24 ns / <1 µs противоречат значению 480 ns на окно из 12 циклов, приводимому в других источниках [G:RELAYBP-LATENCY-CONFLICT]. Раунд серии C у Riverlane составляет $75 M в релизе 2024 года и $85 M в дорожной карте 2026 года. Сотрудничество IBM и AMD по декодеру на ПЛИС известно только из отраслевой прессы; его условия не опубликованы.
+
 ## Производство, материалы и цепочка поставок
 Собственного производства нет: коммерческая плата ПЛИС в стойке комнатной температуры. Каждый опубликованный декодер реального времени работает на кремнии AMD/Xilinx (VU19P для LCD [D][238], VMK180 для Micro Blossom [D][727]); единственная коммерческая альтернатива сменила владельца, когда продажа Intel 51% Altera фонду Silver Lake при оценке $8.75 B, объявленная в апреле 2025 года, была закрыта 2025-09-15 [G][735], — дуополия, одна сторона которой находится под фондом прямых инвестиций. ПЛИС верхнего уровня попадают в периметр экспортного контроля США. Нагрузка по вводу-выводу — это канал синдромов: на 10³ кубитов она тривиальна, но на 10⁴–10⁶ его скорость вынуждает вводить предварительное декодирование при 4 K либо множество параллельных плат.
 
@@ -73,9 +75,3 @@ Relay-BP от IBM для gross-кода заявляет итерацию 24 ns 
 [727] Y. Wu, N. Liyanage, and L. Zhong, “Micro Blossom: Accelerated Minimum-Weight Perfect Matching Decoding for Quantum Error Correction,” *Proc. 30th ACM Int. Conf. Architectural Support for Programming Languages and Operating Systems (ASPLOS '25)*, vol. 2, Mar. 2025, doi: [10.1145/3676641.3716005](https://doi.org/10.1145/3676641.3716005). [arXiv:2502.14787](https://arxiv.org/abs/2502.14787). Also https://github.com/yuewuo/micro-blossom. [D]
 [729] X. Yang *et al.*, “Real-time Surface-Code Error Correction Using an FPGA-based Neural-Network Decoder,” [arXiv:2605.04892](https://arxiv.org/abs/2605.04892), May 2026. Also https://arxiv.org/html/2605.04892. [D]
 [735] Altera, “Altera Closes Silver Lake Investment to Become World's Largest Pure-play FPGA Solutions Provider,” Sep. 15, 2025. [Online]. Available: https://www.altera.com/newsroom/news/press-release/altera-silver-lake [G]
-
-## Открытые пункты верификации
-367 ns у Micro Blossom — утверждение из репозитория GitHub, не встречающееся ни в одной статье; опубликованный результат ASPLOS 2025 — 0.8 µs в среднем при d=13, p=0.1%.
-Показатели Relay-BP на ПЛИС у IBM получены на смоделированных синдромах, а приведённые в аннотации 24 ns / <1 µs противоречат значению 480 ns на 12 циклов, встречающемуся в других местах [G:RELAYBP-LATENCY-CONFLICT].
-Раунд серии C у Riverlane указан как $75 M в релизе 2024 года и как $85 M в дорожной карте 2026 года; расхождение не устранено.
-Сотрудничество IBM и AMD по декодеру на ПЛИС известно только из отраслевой прессы, условия не подтверждены.

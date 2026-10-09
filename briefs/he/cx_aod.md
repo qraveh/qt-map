@@ -51,6 +51,8 @@ updated: 2026-09-30
 
 נאמנות ההזזה היא ההישרדות לאחר הלכידה מחדש, הנמדדת בדימות פלואורסצנציה: מדד של אובדן, לא נאמנות מצב, ולכן 99.95% מאשר שהאטום הגיע, לא שהפאזה שלו הגיעה. אף מקור אינו מבודד את שגיאת ההובלה לבדה ברמה הלוגית; תוצאות 448 האטומים מקפלות יחד הובלה, שערים וקריאה [D][4]. הראיה השלילית החדה ביותר היא ריצת קוד הטורוס של Atom Computing, שבה הדיכוי על פני ארבעה מחזורים נעלם ברגע שנכללה טעינה מחדש רציפה (0.63% לעומת 0.64% למחזור לאורך 90 סבבים) [D][148] — הטעינה מחדש וההובלה הן הפעולות שבאחריות הטכנולוגיה הזאת. Harvard ו-Caltech מדווחות על הישרדות של 99.8–99.95% בחומרת מסיטים שונה — עקבי, אך לא שחזור.
 
+הטווח הצירי, המהירות והשרידות ב-[503] לקוחים ממחקר תכנון אופטי ללא אטומים כלואים, לא מניסוי. לא פורסם: מספר הערוצים, או הפשרה של המסיט בין מספר הנקודות למהירות ההכוונה מחדש, כפונקציה של מספר האטומים; משפחת פטנטים מתוארכת (בעלים ושנה) להעברת אטומים בין אזורים מבוססת AOD; והקיבולת ותוכניות ההרחבה של AA Opto-Electronic ושל Gooch & Housego.
+
 ## שחקנים וכלכלה
 
 **מי.**
@@ -102,13 +104,3 @@ updated: 2026-09-30
 [332] Infleqtion, “Infleqtion Reports Record Q2 Revenue, Raises 2026 Outlook as Quantum Commercialization Accelerates,” Aug. 12, 2026. [Online]. Available: https://ir.infleqtion.com/news-events/press-releases/detail/201/infleqtion-reports-record-q2-revenue-raises-2026-outlook-as-quantum-commercialization-accelerates [G]
 [503] Z. Guo, R. A. van Herk, E. J. Vredenbregt, and S. J. Kokkelmans, “Acousto-optic lens for 3D shuttling of atoms in a neutral atom quantum computer,” [arXiv:2510.09398](https://arxiv.org/abs/2510.09398), Oct. 2025. [S]
 [504] Gooch & Housego (G&H), “G&H Acousto-Optic Deflectors Referenced in Nature Papers Demonstrating 3,000 & 6,100 Qubit Quantum Systems,” G&H, Mar. 2026. [Online]. Available: https://gandh.com/news-and-resources/g-and-h-acousto-optic-deflectors-in-nature-papers [P]
-
-## פריטי אימות פתוחים
-
-- אף מקור שנבדק כאן אינו מכמת כפונקציה של מספר האטומים את מספר הערוצים או את הפשרה של המסיט בין מספר הנקודות למהירות ההכוונה מחדש.
-- אף מקור אינו מבודד את נאמנות ההובלה לבדה מתוך המספרים הלוגיים המשולבים של הובלה + שער + קריאה.
-- המאמר של Bluvstein et al. מ-2022 על הובלה קוהרנטית מצוטט כמוצא על פי רשומת גרף הטכנולוגיות; לא ניתן לו מקור ממוספר.
-- לא נמצאה משפחת פטנטים מתוארכת (בעל זכויות + שנה) להובלת אטומים מבוססת-AOD בארכיטקטורה מחולקת לאזורים.
-- לא נמצאו נתונים על כושר הייצור ועל תוכניות ההרחבה של AA Opto-Electronic ושל Gooch & Housego; Gooch & Housego נסחרת בשוק AIM של הבורסה של לונדון (GHH), ו-AA Opto-Electronic נמצאת בבעלות פרטית.
-- [503] הוא מחקר תכנון אופטי ללא אטומים לכודים; הטווח הצירי, המהירות וההישרדות שלו לא בוססו בניסוי.
-- תאריך הפרסום המקוון של [4] (2025-11-10) שונה מתאריך הדפוס (ינואר 2026); מתוארך 2025-11 לפי רשומת הגרף.

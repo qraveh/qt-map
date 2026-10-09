@@ -40,6 +40,8 @@ GKP requires a bosonic cavity mode in the microwave branch and a roughly 10 dB s
 ## Evidence — how the numbers were measured
 Three quantities are reported as if commensurable. Gain is a ratio of decay rates against the best passive encoding [D][83], [415]; logical error per round is conditional on survival [D][82]; effective squeezing is a state-quality measure [D][174]. None converts into another. Xanadu's 0.62 dB effective squeezing is not comparable with raw quadrature squeezing such as the 1.4 dB on periodically poled thin-film lithium niobate [D][345], and its "24.1× above threshold" is a system-loss metric [R][G:XANADU-SPAC-2026-03]. No independent replication of the Nord Quantique or UCSB/Google results exists as of 4 Sep 2026.
 
+The ~10 dB squeezing requirement is architecture-dependent; no single threshold paper sets it. Nord Quantique's "100+ logical by 2029" comes from company web material with no dated release. Not published: an unconditional (non-post-selected) logical error rate for any GKP demonstration, on either branch; how Xanadu's "24.1× above threshold" system-loss figure relates to its 0.62 dB effective squeezing; and a GKP-specific patent family or export-control category.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What exactly they do | Evidence |
@@ -78,6 +80,3 @@ Confirm or demote within 12–24 months: does any GKP demonstration publish an u
 [413] D. Gottesman, A. Kitaev, and J. Preskill, “Encoding a qubit in an oscillator,” *Phys. Rev. A*, vol. 64, no. 1, Art. no. 012310, Jun. 2001, doi: [10.1103/PhysRevA.64.012310](https://doi.org/10.1103/PhysRevA.64.012310). [arXiv:quant-ph/0008040](https://arxiv.org/abs/quant-ph/0008040). [S]
 [414] P. Campagne-Ibarcq *et al.*, “Quantum error correction of a qubit encoded in grid states of an oscillator,” *Nature*, vol. 584, no. 7821, pp. 368–372, Aug. 2020, doi: [10.1038/s41586-020-2603-3](https://doi.org/10.1038/s41586-020-2603-3). [D]
 [415] V. V. Sivak *et al.*, “Real-time quantum error correction beyond break-even,” *Nature*, vol. 616, no. 7955, pp. 50–55, Apr. 2023, doi: [10.1038/s41586-023-05782-6](https://doi.org/10.1038/s41586-023-05782-6). [D]
-
-## Open verification items
-No unconditional (non-post-selected) logical error rate has been published for any GKP demonstration on either branch. The relationship between Xanadu's "24.1× above threshold" system-loss figure and its 0.62 dB effective squeezing is not derivable from the sources reviewed. The ~10 dB squeezing requirement is quoted from the graph record and is architecture-dependent; no single threshold paper is cited for it here. Nord Quantique's "100+ logical by 2029" is taken from company web material with no dated release located. No GKP-specific patent family or export-control category was found.

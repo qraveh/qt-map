@@ -78,6 +78,8 @@ Headline numbers come from Clifford RB/IRB, simultaneous XEB (Google), IBM's lay
 
 Replication: below-threshold scaling reproduced by USTC on 107 qubits with Λ = 1.40 [D][3]. Disputes: 2019 supremacy sampling reproduced by tensor networks [D][307]; the 2023 IBM "utility" experiment simulated classically within weeks [D][308], [309]; Google's 2026-07 paper reports no Λ for the d=7 run [D][2]. Value conflict: imec's 300 mm T1 is often quoted as "> 100 µs"; the paper's median is ≈ 75 µs [D][293][G:IMEC-300MM-2025], used here.
 
+The ≈ 200–500 ns cross-resonance gate time is a fleet-typical range inferred from a single-device paper [287]. That 4 K HEMT amplifiers come effectively from one vendor (Low Noise Factory) is a market observation without a database source. Not published: a launch date for Bluefors KIDE (> 4,000 RF lines / > 1,000 qubits), whose product page was revised 2026-06-16.
+
 ## Actors & economics
 
 **Who.**
@@ -182,14 +184,3 @@ Milestones, 12–24 months: (1) Kookaburra runs a gross-code memory below break-
 [313] J. Gambetta, “Expanding the IBM Quantum roadmap to anticipate the future of quantum-centric supercomputing,” IBM Quantum Blog, May 10, 2022. [Online]. Available: https://www.ibm.com/quantum/blog/ibm-quantum-roadmap-2025 [C]
 [314] Quantum Ledger, “DARPA QBI Tracker.” [Online]. Available: https://quantumledger.report/darpa-qbi [P]
 [890] J. R. Guimarães *et al.*, “Quantum environment afterglow from broadband excitation spectroscopy in superconducting qubits,” [arXiv:2609.31280](https://arxiv.org/abs/2609.31280), Sep. 2026. [P]
-
-## Open verification items
-
-- IQM market capitalisation ≈ $2.6 B (2026-08): no primary source found; the figure is not listed.
-- Rigetti's 1,000-qubit / 99.9% target and its date: no source was established for either, and both are omitted.
-- Bluefors KIDE "> 4,000 RF lines / > 1,000 qubits": product page revised 2026-06-16; no launch date established.
-- IBM "> $1.1 B of client contracts since 2017" [C][310]: not independently verified; the figure is not listed.
-- Cross-resonance gate time ≈ 200–500 ns: fleet-typical range inferred from a single-device paper [287]; no fleet-wide source.
-- imec 300 mm yield 393 of 400 (98.25%): cited against [293]; the median T1 for that run is ≈ 75 µs.
-- Source [306] (arXiv:2503.10842): no author list is given for it; the "≈ 3 orders of magnitude" transduction gap is cited from the literature.
-- "4 K HEMT amplifiers effectively one vendor (Low Noise Factory)": a market observation; no database source.

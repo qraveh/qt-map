@@ -40,6 +40,8 @@ updated: 2026-09-30
 ## Свидетельства — как измерены числа
 Обе ключевые цифры взяты из собственного блога NVIDIA, подготовленного совместно с Quantinuum, и рецензирования не проходили [C][324]. Показатель 5.4× приведён с погрешностями — практика лучше, чем у большинства заявлений производителей, — но это один код на одной машине, а демонстратор IQM известен только по отраслевой прессе [P][239]. Сравнения с Relay-BP [D][48] или с декодером Riverlane [D][238] на одних и тех же синдромах не существует, поэтому тезис «GPU медленнее ПЛИС» сопоставляет цифры от разных кодов и разных машин.
 
+Не опубликовано: как время декодирования на GPU масштабируется с размером кода или числом логических блоков при 10⁴–10⁶ кубитах, а также отдельные суммы инвестиций NVentures в Quantinuum, QuEra и Alice & Bob — публичны только итоговые размеры раундов. Ключевые числа релиза о запуске (17 создателей, девять лабораторий) точно не сходятся с перечисленными в нём именами.
+
 ## Участники и экономика
 **Кто.**
 | Организация | Роль | Страна | Что именно делает с технологией | Свидетельство |
@@ -73,10 +75,3 @@ updated: 2026-09-30
 [324] S. Caldwell *et al.*, “NVIDIA NVQLink Architecture Integrates Accelerated Computing with Quantum Processors,” NVIDIA Technical Blog, Nov. 17, 2025. [Online]. Available: https://developer.nvidia.com/blog/nvidia-nvqlink-architecture-integrates-accelerated-computing-with-quantum-processors/ [C]
 [531] NVIDIA, “NVIDIA Introduces NVQLink — Connecting Quantum and GPU Computing for 17 Quantum Builders and Nine Scientific Labs,” Oct. 28, 2025. [Online]. Available: https://nvidianews.nvidia.com/news/nvidia-nvqlink-quantum-gpu-computing [C]
 [737] NVIDIA, “NVIDIA Announces Financial Results for Second Quarter Fiscal 2027,” Aug. 26, 2026. [Online]. Available: https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027 [G]
-
-## Открытые пункты верификации
-Независимого (вне NVIDIA и вне Quantinuum) подтверждения показателей 3.84 µs и 67 µs по состоянию на 2026-09-04 нет.
-Прямого сопоставительного бенчмарка декодирования на GPU против ПЛИС на одних и тех же трассах синдромов не существует.
-Как время декодирования на GPU масштабируется с размером кода или числом логических блоков при 10⁴–10⁶ кубитах, не сказано ни в одном из рассмотренных источников.
-Суммы инвестиций NVentures в Quantinuum, QuEra и Alice & Bob отдельно не раскрыты; публичны только итоговые размеры раундов.
-Ключевые числа релиза о запуске (17 создателей, девять лабораторий) и извлечённые из него перечисленные имена точно не сходятся; здесь используются ключевые числа.

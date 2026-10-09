@@ -25,6 +25,8 @@ updated: 2026-09-30
 
 האיבר השולט: יחס האות לרעש בחלונות קצרים, T₁ בארוכים; אף התקן ממפעל ייצור אינו מפרסם קריאה מתחת ל-10 µs מעל 99.5%.
 
+מספר הערוצים של ZQCS הוא ניסוח מחדש בעיתונות המקצועית של השקת ספק, לא הודעה ראשונית. לא פורסם: נאמנות קריאה בלבד, המופרדת בבחינת ביצועים אקראית, מאחורי ה-99.9% של Diraq/imec המצוטט כ-SPAM.
+
 ## ייצור, חומרים ושרשרת האספקה
 בנוי במחסנית ה-CMOS של 300 mm של הקיוביט עצמו, החיישן אינו מוסיף סיכון חומרים; התיבה מבוססת אלקטרודת השער, הזקוקה רק לאלקטרודה ולמעגל תהודה, היא הצורה המועדפת על מפעלי הייצור. המכשור נקנה, לא נבנה: ה-SHFQC-LRT של Zurich Instruments נותן אינטגרציה משוקללת של ≤32 µs [C][625], ו-OPX1000 של Quantum Machines מונה תשעה לקוחות ספין, ובהם Diraq, HRL, imec ו-Equal1 [C][449]. ריבוב תדרים שומר על מספר קווים תת-ליניארי: הקיר ב-10³ הוא המרווח בין מעגלי התהודה על פני הפס; ב-10⁴–10⁶ הוא רוחב הפס המצרפי של הקריאה ומספר המגברים, לא החיישן. הבקר ב-4 K של HRL (366 DAC, ≤3.5 W) מראה שהשרשרת יכולה לעבור אל תוך המקרר [D][190].
 
@@ -62,6 +64,3 @@ updated: 2026-09-30
 [526] Zurich Instruments, “Zurich Instruments Launches the ZQCS Quantum Control System to Master the Long-Lived Logical Qubit Challenge,” Mar. 9, 2026. [Online]. Available: https://www.zhinst.com/americas/en/news/zurich-instruments-launches-zqcs-quantum-control-system-master-long-lived-logical-qubit/ [P]
 [624] G. A. Oakes *et al.*, “Fast High-Fidelity Single-Shot Readout of Spins in Silicon Using a Single-Electron Box,” *Phys. Rev. X*, vol. 13, no. 1, Art. no. 011023, Feb. 2023, doi: [10.1103/PhysRevX.13.011023](https://doi.org/10.1103/PhysRevX.13.011023). [D]
 [625] Zurich Instruments, “SHFQC-LRT Long Readout Time,” Jan. 30, 2025. [Online]. Available: https://www.zhinst.com/en/products/shfqc-lrt-long-readout-time [C]
-
-## פריטי אימות פתוחים
-טרום-הפרסום על רפלקטומטריה רב-אופנית arXiv:2512.05087 (98% ב-8 µs עד 2 GHz) אינו כלול בטבלת השיאים: לא ניתן היה לברר את מחבריו ואת מוסדו (דף התמצית אינו מחזיר מטא-נתונים; ה-API לייצוא של arXiv חסום בפני רובוטים). מספר הערוצים של ZQCS הוא ניסוח מחדש בעיתונות המקצועית של השקת ספק, לא הודעה ראשונית. אף מקור אינו נותן נאמנות קריאה בלבד, המופרדת בבחינת ביצועים אקראית, עבור ה-99.9% של Diraq/imec, המצוטט כ-SPAM.

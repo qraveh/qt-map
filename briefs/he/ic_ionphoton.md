@@ -52,6 +52,8 @@ updated: 2026-09-30
 
 הנאמנות המבושרת נמדדת בטומוגרפיה או בתנודות זוגיות, בהתניה על גילוי מוצלח, ולכן 94–97% מתארים את הקישורים שהתרחשו, לא את הערוץ כולל האובדן; מדד הטיב ההוגן הוא קצב × נאמנות, ואיש אינו מדווח עליו. הקצבים שפורסמו מגיעים ממיני יונים, ממרחקים ומגאומטריות איסוף שונים, ואינם ברי השוואה ישירה. הראיה החלשה ביותר היא מסחרית: ההודעה של IonQ מציינת שהחברה "תיקפה את היצירה, ההעברה והגילוי של פוטונים המשמשים לאפשר שזירה קוונטית" — ניסוח שנעצר לפני דיווח על מצב בל שנמדד, ללא קצב, נאמנות או מרחק וללא שחזור [C][589]. בין התוצאות שעברו ביקורת עמיתים אין סתירה.
 
+הנתון ">20 פטנטים ובקשות פטנט" שהביאה Lightsynq הוא ספירה של IonQ עצמה, ללא שמות משפחות, בעלי זכויות או שנות הגשה. לא פורסם: תנאי העסקה של Lightsynq, וכן מספר קישורים או טופולוגיית מארג מיתוג למכונת יונים של 10⁴ מודולים.
+
 ## שחקנים וכלכלה
 
 **מי.**
@@ -100,12 +102,3 @@ updated: 2026-09-30
 [301] US Department of Commerce, Bureau of Industry and Security, “Commerce Control List Additions and Revisions; Implementation of Controls on Advanced Technologies Consistent With Controls Implemented by International Partners,” *Federal Register*, vol. 89, p. 72926, Sep. 6, 2024. [Online]. Available: https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies [G]
 [589] IonQ, “IonQ Achieves Key Photonic Interconnect Milestone, Demonstrating Networked Quantum Systems Using Entanglement,” Apr. 14, 2026. [Online]. Available: https://www.ionq.com/news/ionq-achieves-key-photonic-interconnect-milestone-demonstrating-networked-quantum-systems-using-entanglement [C]
 [776] IonQ, “IonQ Completes Acquisition of Lightsynq, Accelerating Quantum Computing and Networking Roadmap,” Jun. 3, 2025. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-lightsynq-accelerating-quantum-computing-and [C]
-
-## פריטי אימות פתוחים
-
-- אבן הדרך של IonQ מאפריל 2026 [589] אינה חושפת קצב, נאמנות או מרחק, והניסוח שלה ("תיקפה את היצירה, ההעברה והגילוי של פוטונים המשמשים לאפשר שזירה קוונטית") אינו קובע שנמדד זוג בל.
-- השזירה המרוחקת הראשונה בין יונים, ב-2007, מיוחסת כאן לקבוצה של Monroe (Michigan) לפי תאריך ההדגמה הראשונה ברשומת גרף הטכנולוגיות; המאמר המקורי מצוטט מהספרות המקובלת ללא מקור ממוספר.
-- תנאי העסקה של Lightsynq לא נחשפו; הנתון ">20 פטנטים ובקשות פטנט" הוא ספירה של IonQ עצמה, ללא שמות משפחות, בעלי זכויות או שנות הגשה.
-- תאריך סגירת הרכישה של ID Quantique (2025-05-06) לקוח מרשומת העובדות המשותפת לספקי SNSPD, ואין לו מקור ממוספר.
-- אף מקור אינו מדווח על מדד קישור בלתי מותנה (קצב בשילוב עם נאמנות, כולל אובדן הבישור), ולכן אי אפשר לשלב את נתוני ה-94–97% ואת נתון ה-250 s⁻¹ למספר אחד.
-- אף תכנון שפורסם אינו נוקב במספר קישורים או בטופולוגיית מארג מיתוג למכונת יונים של 10⁴ מודולים.

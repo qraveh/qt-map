@@ -61,6 +61,8 @@ Headline numbers come from repeated logical preparation and measurement in both 
 
 Conflicts. The tesseract is [[16,6,4]], not [[16,4,4]] — the Error Correction Zoo entry and the arXiv abstract agree [D][674][D][667]. "48 corrected" and "94 detected" on Helios are different codes at different distances, routinely conflated [D][105]. Iceberg's sub-100,000-qubit RSA-2048 claim assumes p=10⁻³ with 1 µs cycles [S][29], not comparable to Gidney's <1 M [S][7].
 
+Not published: Iceberg Quantum's headquarters — trade press gives a Berlin base with a US presence, the founding institution is the University of Sydney, and the company site names no location [P][677][C][676]; whether the Oxford Ionics–Iceberg Quantum partnership continues under IonQ — as of 2026-09-30 Iceberg Quantum lists PsiQuantum and Diraq as partners and names neither Oxford Ionics nor IonQ [C][676]; the acceptance of the Harvard [[16,6,4]] 96-logical-qubit runs; and a dated patent-family count for this code family. Quantinuum's Q2-2026 claim of "near five-nines logical fidelity with a novel code family" has no public paper as of 2026-09-03. Goto's many-hypercube codes have no hardware demonstration; their 30% rate (64 logical in 216 physical qubits) is simulation only [S][675].
+
 ## Actors & economics
 
 **Who.**
@@ -120,12 +122,3 @@ Open questions: (1) does concatenation to d≥6 keep the rate advantage once lea
 [676] Iceberg Quantum, “Iceberg Quantum — Home.” [Online]. Available: https://www.iceberg-quantum.com/ [C]
 [677] M. Swayne, “Trifecta: Iceberg Quantum Unveils Pinnacle Architecture, Claims Sub-100,000 Qubits Could Break RSA-2048 And Raises $6 Million Seed Round,” The Quantum Insider, Feb. 13, 2026. [Online]. Available: https://thequantuminsider.com/2026/02/13/trifecta-iceberg-quantum-unveils-pinnacle-architecture-claims-sub-100000-qubits-could-break-rsa-2048-and-raises-6-million-seed-round/ [P]
 [678] Iceberg Quantum, “Iceberg Quantum Launches with $2M and PsiQuantum Partnership,” HPCwire, Mar. 24, 2025. [Online]. Available: https://www.hpcwire.com/off-the-wire/iceberg-quantum-launches-with-2m-and-psiquantum-partnership/ [P]
-
-## Open verification items
-
-- Iceberg Quantum's headquarters: trade press describes a Berlin base with a US presence while the founding institution is the University of Sydney [P][677][C][676]; the company site gives no location. Recorded AU/DE/US, unresolved.
-- Whether the Oxford Ionics–Iceberg Quantum partnership (2025-07) continues under IonQ is unstated: as of 2026-09-30, Iceberg Quantum's site lists PsiQuantum and Diraq as partners and names neither Oxford Ionics nor IonQ [C][676].
-- Acceptance for the Harvard [[16,6,4]] 96-logical-qubit runs is not quoted in the sources consulted; only the ion-side figures (0.62(2), 3.2%) are verified.
-- Quantinuum's Q2-2026 call claim of "near five-nines logical fidelity with a novel code family" has no public paper as of 2026-09-03; whether it refers to this family is unverified.
-- No dated patent-database count exists for this code family; the PatSnap figures cited are device-class only.
-- Goto's many-hypercube codes have no hardware demonstration found; the 30% rate (64 logical in 216 physical) is simulation only [S][675].

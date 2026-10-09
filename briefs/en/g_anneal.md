@@ -29,6 +29,8 @@ Two clocks bound the schedule. From below, control bandwidth — DAC slew for fl
 
 Dominant limitation: no accepted certificate that analogue output matches the Hamiltonian.
 
+QuEra's cumulative funding (">$250 M") and its fuller investor list (Valor Equity, Rakuten, Commonwealth of Massachusetts) appear only in secondary reporting; the primary release of 2025-09-09 names Google, SoftBank Vision Fund 2 and NVentures. Pasqal's 2025 revenue of €16.5 M is from trade press, not a filed statement. Not published: the date of Pasqal's Aeponyx acquisition, in any primary source, and a further classical test of D-Wave's "most frustrated instances" beyond Tindall and Mauron/Carleo.
+
 ## Manufacturing, materials & supply chain
 Two supply chains carry one mechanism: Nb/Al superconducting lithography (D-Wave) and vacuum/laser/AOM tweezer stacks (QuEra, Pasqal). The I/O burdens scale oppositely: flux annealers push everything through one mK stage on multiplexed on-chip DACs, while tweezer machines add laser power, deflectors and imaging per atom — the optical table is the constraint. Pasqal has begun displacing bulk optics with a silicon-nitride photonic IC: four traps from one chip, atom lifetime ~27.5 s [C][G:PASQAL-PIC-2026-08]. No export rule names analogue evolution: exposure is inherited from the carrier — ECCN 4A906 and 3A904 for the flux line, nothing for tweezer optics.
 
@@ -68,6 +70,3 @@ Confirm if any platform defends an unchallenged claim through 2028; demote if er
 [225] T. I. Andersen *et al.*, “Thermalization and criticality on an analogue–digital quantum simulator,” *Nature*, vol. 638, no. 8049, pp. 79–85, Feb. 2025, doi: [10.1038/s41586-024-08460-3](https://doi.org/10.1038/s41586-024-08460-3). [D]
 [226] D. González-Cuadra *et al.*, “Observation of string breaking on a (2 + 1)D Rydberg quantum simulator,” *Nature*, vol. 642, no. 8067, pp. 321–326, Jun. 2025, doi: [10.1038/s41586-025-09051-6](https://doi.org/10.1038/s41586-025-09051-6). [D]
 [227] R. Haghshenas *et al.*, “Digital quantum magnetism on a trapped-ion quantum computer,” *Nature*, vol. 653, pp. 56–62, 2026, doi: [10.1038/s41586-026-10445-3](https://doi.org/10.1038/s41586-026-10445-3). [arXiv:2503.20870](https://arxiv.org/abs/2503.20870). [D]
-
-## Open verification items
-QuEra's cumulative funding (">$250 M") and the fuller investor list (Valor Equity, Rakuten, Commonwealth of Massachusetts) appear only in secondary reporting; the primary release names Google, SoftBank Vision Fund 2 and NVentures on 2025-09-09. Pasqal's 2025 revenue of €16.5 M is trade-press, not a filed statement. No primary source found for the exact date of Pasqal's Aeponyx acquisition. Whether D-Wave's "most frustrated instances" survive a further classical round beyond Tindall and Mauron/Carleo.

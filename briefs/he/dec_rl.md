@@ -27,6 +27,8 @@ a = 1.0, שכבת בקרה קלאסית מהונדסת כולה; f = קוהרנ�
 | 2026-07-08 | קוד הצבע ב-d=5, מפענח Tesseract: 8.19(14)×10⁻³ למחזור; יציבות גבוהה 3.5× מול סחיפה מוזרקת | Google Quantum AI | [D][2] |
 | 2024-12-09 | Λ = 2.14(2) עם המפענח המבוסס על רשת עצבית לעומת 2.04(2) עם אנסמבל של מפענחי זיווג, על אותם סינדרומים של Willow | Google Quantum AI | [D][1][G:WILLOW-RTDECODER-2024] |
 
+מבחני זמן האמת של AlphaQubit 2 עצמו (arXiv:2512.07737) רצו על נתונים מוקלטים, והמאמר על למידת החיזוק אינו מציין שהפענוח של הריצה שלו ב-d=7 רץ בזמן אמת.
+
 ## ייצור, חומרים ושרשרת האספקה
 אין צורן ייעודי, ובניגוד למפענחי זיווג או אשכול, אין טענה על צריכת משאבי FPGA שאפשר לבדוק [G:RIVERLANE-LCD-2025-12]. העלות היא תעבורה במישור הבקרה — אירועי גילוי יוצאים ועדכוני פרמטרים נכנסים, דרך הקישור של המפענח עצמו; זמן ההלוך-ושוב של NVQLink, 3.84 µs בממוצע ו-3.96 µs לכל היותר, הוא הגרסה של קישור כזה שאינה תלויה בספק [C][G:NVQLINK-NUMBERS-2025-11]. העדכונים רצים בסקלת זמן איטית, מחוץ למחזור של 1.1 µs, ולכן השיטה מתקיימת לצד Willow, שבו חישוב כבד יותר בתוך הלולאה לא היה מתקיים. האספקה היא קיבולת GPU/TPU ועוד מחסנית הבקרה; אין כלל יצוא ייעודי.
 
@@ -74,9 +76,3 @@ a = 1.0, שכבת בקרה קלאסית מהונדסת כולה; f = קוהרנ�
 [G] NVIDIA developer blog (2025-11-17) detail: RoCE round trip 3.84 us mean, 0.035 us standard deviation, 3.96 us MAXIMUM over 1,000 samples (a bounded tail, not just a mean); BP+OSD o… · 2025-11-17 · https://developer.nvidia.com/blog/nvidia-nvqlink-architecture-integrates-accelerated-computing-with-quantum-processors/
 [G] Atlantic Quantum (fluxonium, cold-stage control) joined Google Quantum AI, 2025-10-03 · 2025-10-03 · https://thequantuminsider.com/2025/10/03/atlantic-quantum-joins-google-quantum-ai/
 [G] DARPA QBI Stage B (announced 2025-11-06, ~12 months, up to $15 M each): Atom Computing, Diraq, IBM, IonQ, Nord Quantique, Photonic Inc., Quantinuum, Quantum Motion, QuEra, Silicon… · 2025-11-06 · https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection
-## פריטי אימות פתוחים
-- לא דווח Λ לריצה ב-d=7 בהיגוי RL, ולכן ההשפעה על התלות במרחק הקוד לא נמדדה.
-- הנתונים "הפחתה של ~20% בשגיאה הלוגית" ו-">1,000 פרמטרי בקרה המכווננים בזמן ריצה", שהעיתונות המקצועית מצטטת [742], מופיעים בגוף המאמר ולא בתמצית שלו, המביאה 3.5× מול סחיפה מוזרקת ועשרות אלפי פרמטרים בסימולציה.
-- המאמר של AlphaQubit2 עצמו הוא קדם-פרסום (arXiv:2512.07737, 2025-12-08), ומדידות הביצועים שלו בזמן אמת נעשו על נתונים מוקלטים; מאמר ה-RL אינו מציין שהפענוח שלו ב-d=7 היה חי.
-- לא נמצא שחזור של כיול RL בלולאה בפלטפורמה שנייה.
-- סבב B של Q-CTRL מצוטט כ-USD $113 M בידי החברה וכ-"$167 M" בעיתונות המקצועית האוסטרלית, שהוא נתון ה-AUD $166 M בניסוח אחר; הודעת החברה היא הקובעת.

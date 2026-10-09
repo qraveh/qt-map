@@ -55,6 +55,8 @@ updated: 2026-09-30
 
 כל מספר בולט הוא ממוצע על פני פעולות קליפורד בבחינת ביצועים אקראית (RB) [D][566][D][249][D][304]. RB מניח שגיאות מרקוביות שאינן תלויות בשער, ולכן פרצים מתואמים נדירים נבלעים בממוצע כהרעה קלה, ומודול יכול לעבור ב-99.9% ועדיין לפלוט שגיאות מתואמות שהמפענחים אינם ממדלים. ה"היעדר של הרעלת קוואזי-חלקיקים ניתנת לגילוי" של SEEQC מדווח רק בעיתונות [C][53]. לא דווחו: זוגיות המטען תחת תזמון רציף, ו-T₁ כשהשעון פועל וכשהוא כבוי. אין שחזור בלתי תלוי: כל מחברי 2026 הם מ-SEEQC [D][304]. סתירות: "מעל 99%" בתמצית [D][304] לעומת "מעל 99.5%" בעיתונות [C][53]; "ננו-ואטים לקיוביט" [C][53] לעומת ~1.6 µW לקיוביט בהערכה מ-2026 [S][550][G:CRYOCMOS-POWER-CONFLICT].
 
+מספר חמשת הקיוביטים, 10 mK ו"ננו-וואטים לקיוביט" לקוחים מהעיתונות [53], לא מתקציר המאמר [304]. מסמכי ה-S-1 של SEEQC מציינים הכנסות של $4.2 M ב-2025 ומזומנים של $18.1 M ב-2026-06-30 [G:SEEQC-S1A-2026-08]; שווי הפעילות לקוח מעיתונות הענף. יכולת מוליכות-העל של SkyWater מוסקת מאזכורים בדוח ה-10-K של D-Wave [492]. לא פורסם: תוצאה סינית מתוארכת מ-2025–26 לבקרת קיוביטים ב-SFQ, ספירת משפחות פטנטים לבקרת SFQ, והיקף ההנפקה של SEEQC (ריק בתיקון ה-S-1 מ-2026-09-11).
+
 ## שחקנים וכלכלה
 
 **מי.**
@@ -114,11 +116,3 @@ updated: 2026-09-30
 [573] SIP Global Partners, “SIP Global Partners Participates in $30M Round for SEEQC, Developer of the World's First Full-Stack Processor for Quantum Computers,” PRWeb, Jan. 16, 2025. [Online]. Available: https://www.prweb.com/releases/sip-global-partners-participates-in-30m-round-for-seeqc-developer-of-the-worlds-first-full-stack-processor-for-quantum-computers-302352970.html [P]
 [574] Allegro Merger Corp.; SeeQC, Inc., “Settlement, Termination and Release Agreement,” U.S. Securities and Exchange Commission (EDGAR), Aug. 2026. [Online]. Available: https://www.sec.gov/Archives/edgar/data/1779977/000121390026095175/ea028847004ex2-2.htm [G]
 [897] P. Papanikolaou, A. Vanasse, H. Jin, G. Tzimpragos, and J. Volk, “Duplication-aware retiming and cell interface redesign for superconductor circuit minimization,” [arXiv:2610.02333](https://arxiv.org/abs/2610.02333), Oct. 2026. [P]
-
-## פריטי אימות פתוחים
-
-- הטקסט המלא של [304] חסום מאחורי חומת תשלום: חמשת הקיוביטים, 10 mK ו"ננו-ואטים לקיוביט" לקוחים מהעיתונות [53], לא מהתמצית.
-- הפרמטרים של SFQ5ee של MIT-LL לא הושגו; [570] עוסק רק במפעל הייצור לקיוביטים.
-- לא נמצאה תוצאה סינית מתוארכת מ-2025–26 של בקרת קיוביטים ב-SFQ; אין ספירה של משפחות פטנטים.
-- ההכנסות והמזומנים של SEEQC מופיעים בטופסי ה-S-1 שלה — הכנסות של $4.2 M ב-2025, $18.1 M במזומן ב-2026-06-30 [G:SEEQC-S1A-2026-08]; גודל ההנפקה עדיין ריק (תיקון ל-S-1 מ-2026-09-11), ושווי הפעילות לקוח מהעיתונות המקצועית.
-- היכולת של SkyWater במוליכי-על הוסקה מאזכורים בדוחות ה-10-K של D-Wave [492].

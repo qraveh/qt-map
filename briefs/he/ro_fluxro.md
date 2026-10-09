@@ -44,6 +44,8 @@ QFP = פרמטרון שטף קוונטי, תפסן שטף מסוג rf-SQUID; dc 
 ## ראיות — כיצד נמדדו המספרים
 D-Wave מפרסמת את שגיאת הקריאה כחסם, ≤0.001 בכל מערכת Advantage ו-Advantage2 ברשימה, ללא ציון שיטה [C][613]; בחסם זה דגימה של 4,575 קיוביטים נושאת בתוחלת ≤4.6 ביטים הפוכים [S][613]. השיטה היחידה שפורסמה ונמצאה היא זו של Berkley, שגיאה הנמדדת כנגד ממתח הנעילה [D][608]. ללא קריאה באמצע ההרפיה אין סבב סינדרום: כל קוד מפוענח פעם אחת, מהדגימה הסופית, וההפחתה הוא בדיעבד — קריאות חוזרות והתמרות היפוך ספין בתוכנה [C][610]. דרגות במרשם: שני התאים של D-Wave מצטטים את arXiv:0905.0891 Fig. 1 (🔎), שתמציתו מאשרת את שרשרת התפסן–dc SQUID, אך עבור תכנון XY של 128 קיוביטים; Boothby ועמיתיו מתאים ל-Advantage, דף תכונות הפותר ל-Advantage2. התא של Qilimanjaro מצטט דף של D-Wave.
 
+ההרפיה של 20 µs היא הדוגמה המחושבת של התיעוד, לא ברירת מחדל מאושרת של הפותר, והפרש ההשהיה 60.6 µs לעומת 20.6 µs אינו מוסבר. לא פורסם: התפלגות שגיאת קריאה לכל קיוביט במערכות D-Wave, וארכיטקטורת הקריאה של Advantage2 (מספר המהודים, קצב ההזזה).
+
 ## שחקנים וכלכלה
 **מי.**
 
@@ -78,11 +80,3 @@ D-Wave מפרסמת את שגיאת הקריאה כחסם, ≤0.001 בכל מע�
 [614] D-Wave Quantum Inc., “Operation and Timing — D-Wave Quantum Computing Products documentation.” [Online]. Available: https://docs.dwavequantum.com/en/latest/quantum_research/operation_timing.html [C]
 [615] Qilimanjaro Quantum Tech, “Towards a European full-stack coherent quantum annealer platform,” Mar. 2, 2021. [Online]. Available: https://qilimanjaro.tech/towards-a-european-full-stack-coherent-quantum-annealer-platform/ [C]
 [616] D-Wave Quantum Inc., “D‑Wave's Advantage2 Quantum Computer Now Generally Available,” D-Wave Support, May 14, 2025. [Online]. Available: https://support.dwavesys.com/hc/en-us/articles/32105885880087-D-Wave-s-Advantage2-Quantum-Computer-Now-Generally-Available [C]
-
-## פריטי אימות פתוחים
-- 2026-09-26: המאמר ב-EPJ Quantum Technology על מחשב ההרפיה של Qilimanjaro (doi:10.1140/epjqt/s40507-021-00094-y) נדחה בידי פרוקסי האחזור (HTTP 429); שרשרת הקריאה שלו לא אומתה.
-- 2026-09-26: Harris ועמיתיו 2010 לא הותאם למזהה arXiv בדף ה-arXiv; מצוטט לפי DOI, אומת ב-Crossref.
-- 2026-09-26: אף מקור של D-Wave שנפתח אינו נותן את השיטה שמאחורי "≤0.001", התפלגות שגיאה לכל קיוביט או ארכיטקטורת קריאה של Advantage2 (מספר המהודים, קצב ההזזה).
-- 2026-09-26: Fig. 1 של arXiv:0905.0891, ציון המיקום של המרשם, לא נפתח — רק התמצית; גרסת כתב העת של Whittaker ועמיתיו לא אושרה.
-- 2026-09-26: ההרפיה של 20 µs היא הדוגמה המחושבת של התיעוד, לא ברירת מחדל מאושרת של הפותר; הפרש ההשהיה 60.6 µs לעומת 20.6 µs אינו מוסבר.
-- 2026-09-26: הדף של Grover ועמיתיו ב-APS לא נפתח (Crossref דחה, HTTP 429); הכרך והמאמר לקוחים מכתובת ה-URL של APS ומה-bibcode של ADS בתוצאות החיפוש.

@@ -55,6 +55,8 @@ Architectures: primary code on three — trapped ions in a linear Paul trap with
 
 Break-even here is a memory comparison: logical lifetime against the best physical qubit on the same device, over repeated syndrome rounds and a destructive final readout. IonQ's 3.95 ± 0.68 s versus 3.84 ± 0.48 s (the physical baseline, 3·T2*: 3.3 ± 0.9 s in the June version, revised in the arXiv version of 14 Sep 2026) overlaps within one standard deviation, and is stated with leakage post-selection [D][109] — defensible for a memory claim, but it removes exactly the error class a sparse code handles worst, and the acceptance rate is not in the abstract. The protocol also misses what a code is for: no BB demonstration anywhere reports a logical two-qubit gate, so the overhead advantage is verified only for storage. Value conflict: the main report lists a Harvard/QuEra [[16,6,4]] run beside IonQ's; that is a high-rate block code, not a bivariate bicycle code, and no primary source was found — treat IonQ and Zhejiang as the only BB hardware results. IBM's July-2026 "70 logical qubits, 468 T gates" is an error-*detecting* spacetime code and does not belong here [D][46].
 
+IonQ's 3.95 ± 0.68 s break-even lifetime follows the introduction of its arXiv version of 14 Sep 2026; that version's Table II lists no code at 3.95 s, and its best lifetime there is BB[[24,4,4]] at 3.39 ± 0.47 s. Not published: the code, round count and per-round logical error behind the 3.95 s figure, and a dated qLDPC patent-family count. Photonic Inc.'s "up to 20× fewer physical qubits" is a company claim with no stated logical error rate. IBM's blog "10× fewer qubits" rounds the Nature comparison of 288 against ≈3,000 physical qubits, a ratio that depends on the assumed physical error rate.
+
 ## Actors & economics
 
 **Who.**
@@ -114,12 +116,3 @@ Open questions: (1) what two-qubit fidelity does a millimetre-scale coupler cost
 [670] Photonic Inc., “Photonic accelerates the timeline to useful quantum computing with breakthrough results in error correction,” Feb. 11, 2025. [Online]. Available: https://photonic.com/news/shyps-codes-announcement/ [C]
 [671] M. U. Rehman, “Photonic Publishes SHYPS QLDPC Code Results in Nature Communications,” The Quantum Insider, Aug. 26, 2026. [Online]. Available: https://thequantuminsider.com/2026/08/26/photonic-shyps-quantum-error-correction-nature-communications/ [P]
 [672] Justia Patents, “Patent search: ‘parity check’ quantum error correction code (results as of Sep. 3, 2026).” [Online]. Available: https://patents.justia.com/search?q=%22parity+check%22+quantum+error+correction+code Also https://patents.google.com/patent/US12346774B2/en. [P]
-
-## Open verification items
-
-- IonQ break-even paper: exact code notation, round count, post-selection acceptance rate and per-round logical error are not in the abstract; the graph record's 3.95 ± 0.68 s / 3.84 ± 0.48 s pair follows the introduction of the arXiv version of 14 Sep 2026, whose Table II lists no code at 3.95 s (best overall lifetime there: BB[[24,4,4]] 3.39 ± 0.47 s).
-- Harvard/QuEra [[16,6,4]] run cited by the main report: no primary source found, and that code is not a bivariate bicycle code. Conflict flagged.
-- Photonic Inc. "up to 20× fewer physical qubits" is a company claim with no stated logical error rate; the Nature Communications DOI and numbers were not retrievable within budget.
-- Tour de gross module numbers (288 q + 90-q logical processing unit; 5,000 → 121 logical) are not verified against the preprint.
-- No qLDPC patent family in the Justia index; one retry was rate-limited, so absence is not proven.
-- IBM's "10× fewer qubits" (blog) versus 288 vs ≈3,000 (Nature): the blog rounds a ratio that depends on the assumed physical error rate. Both stated.

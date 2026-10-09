@@ -38,6 +38,8 @@ updated: 2026-09-30
 ## ראיות — כיצד נמדדו המספרים
 שלוש התוצאות אינן על סולם משותף. ה-~90% של MPQ הם נצילות מיצירה עד גילוי לזוג אטום–פוטון אחד במהוד נפחי [D][777]; הנראות של Osaka, 0.87 — מתאם בין מצב האטום לקיטוב הפוטון — מגיעה ממערך משולב בשבב ללא הגברת מהוד ופורסמה ב-Optica ב-2026-08-31, ואילו הנצילות של 75–94% לכל ערוץ מופיעה רק בעיתונות המקצועית [D][G:OSAKA-ATOMPHOTON-2026-09][P][779]; התוצאה של Covey בתחום הטלקום היא סכמה של מערך סיבים הטוענת לקצב העומד ביחס ישר למספר הערוצים, לא לקצב מוחלט [D][778]. אף אחת מהן אינה מודדת את מה שקישור צריך: אירועים מבושרים לשנייה בין שני מעבדים, עם נאמנות לאחר תקורת הבישור.
 
+הנתון "נאמנות מצב בל של 91% בגילוף מהוד" (cavity-carved), המיוחס לעתים ל-arXiv:2407.09109, אינו מופיע בתמצית המאמר, שמציינת רק את הנצילות של ~90% מיצירה עד גילוי. לא פורסם: קצב שזירה או נאמנות מדודים לשני אבות-הטיפוס של מפת הדרכים של Nu Quantum [G:NUQ-PROTOTYPES-2025-06], וסיווג פיקוח על יצוא ייחודי לאופטיקת מהודים או לממשקי אטום–פוטון.
+
 ## שחקנים וכלכלה
 **מי.**
 | ארגון | תפקיד | מדינה | מה בדיוק הם עושים בטכנולוגיה זו | ראיות |
@@ -82,6 +84,3 @@ updated: 2026-09-30
 [780] M. Swayne, “Atom Computing and Nu Quantum Partner to Scale Neutral Atom Quantum Computers,” The Quantum Insider, Jun. 17, 2026. [Online]. Available: https://thequantuminsider.com/2026/06/17/atom-computing-and-nu-quantum-partner-to-scale-neutral-atom-quantum-computers/ [P]
 [781] Nu Quantum, “Nu Quantum Raises $60M Series A in Largest Financing Round for Quantum Computer Networking,” Dec. 10, 2025. [Online]. Available: https://www.nu-quantum.com/news/nu-quantum-raises-60m-series-a-in-largest-financing-round-for-quantum-computer-networking [C]
 [782] M. U. Rehman, “Cisco and Atom Computing Partner on Quantum Networking for Scalable Computing,” The Quantum Insider, Mar. 25, 2026. [Online]. Available: https://thequantuminsider.com/2026/03/25/atom-computing-cisco-distributed-quantum-collaboration/ [P]
-
-## פריטי אימות פתוחים
-הנתון "נאמנות מצב בל של 91% בגילוף מהוד" (cavity-carved), המיוחס לעתים ל-arXiv:2407.09109, אינו מופיע בתמצית המאמר ולא ניתן היה לאשרו ללא הטקסט המלא; כאן מאומתת רק הנצילות של ~90% מיצירה עד גילוי. המאמר של Covey ב-Nature Physics קובע שקצב השזירה המרוחקת גדל ביחס ישר למספר הערוצים, אך מהתמצית לא ניתן היה לחלץ קצב מוחלט. תוצאת 10 הערוצים של Osaka פורסמה (Y. Maeda ועמיתיו, Optica 13, 1718, 2026-08-31) [G:OSAKA-ATOMPHOTON-2026-09]; התמצית מציינת עשרה מתוך 32 ערוצים בפסיעה של 25 µm ונראות של 0.87, ואילו הנצילות של 75–94% לכל ערוץ לקוחה מהעיתונות המקצועית ולא נבדקה מול הטקסט המלא. שני פריטי מפת הדרכים של Nu Quantum יצאו כאבות-טיפוס ללא קצב שזירה או נאמנות מדודים [G:NUQ-PROTOTYPES-2025-06]. לא פורסם קצב שזירה בין שני מעבדי אטומים ניטרליים שבכל אחד מהם אטומים רבים; השזירה המרוחקת שפורסמה מחברת צמתים של אטום בודד [G:ATOM-NODE-LINKS-2012-2022]. לא נמצא סיווג פיקוח על יצוא ייחודי לאופטיקת מהודים או לממשקי אטום–פוטון. סבב A של Nu Quantum, בהיקף $60 M, נסגר ב-2025-12-10 בהובלת National Grid Partners.

@@ -43,6 +43,8 @@ The shared entangling primitive of two competing superconducting architectures, 
 ## Evidence — how the numbers were measured
 Headline figures come from randomised benchmarking on the composite two-mode system with post-selection on ancilla readout; the erasure fraction comes from that same readout, so false negatives fold into the "residual Pauli" bucket. A transmon-qutrit erasure design reports false positives ~2%, false negatives 6–8% [P][405] — the order of what may be misattributed here. Theory keeps the surface-code threshold at least twice the Pauli value under imperfect checks, but only when the check is short against the cycle [D][395]. Conflict: 0.029(6)% vs the 0.12% bound at depth [D][84] vs "≈99.9%" [C][473]; of the three, the measured decomposition is the best supported. SUSTech replicates the architecture, not the fidelity [D][406]. Discard rates go unreported.
 
+Not published: the amount of Alice & Bob's May-2026 Series B extension, and the post-selection discard rates of the dual-rail CZ and the beamsplitter swap.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What exactly they do with this technology | Evidence |
@@ -96,6 +98,3 @@ Confirm/demote in 12–24 months: a cat–cat CX on hardware; a dual-rail gate b
 [473] K. Chou, J. Teoh, and N. Mehta, “Why D-Wave's New Two-Qubit Gate is a Breakthrough for Quantum Error Correction,” D-Wave Quantum Blog, Aug. 5, 2026. [Online]. Available: https://www.dwavequantum.com/learn/blog/posts/why-d-wave-s-new-two-qubit-gate-is-a-breakthrough-for-quantum-error-correction/ [C]
 [474] US Department of Energy, “Energy Department Announces $625 Million to Advance the Next Phase of National Quantum Information Science Research Centers,” Energy.gov, Nov. 4, 2025. [Online]. Available: https://www.energy.gov/articles/energy-department-announces-625-million-advance-next-phase-national-quantum-information [G]
 [884] A. T. Than *et al.*, “Quantum field theory dynamics on a spin–phonon quantum computer,” *Nat. Phys.*, Sep. 2026, doi: [10.1038/s41567-026-03402-4](https://doi.org/10.1038/s41567-026-03402-4). [arXiv:2509.11477](https://arxiv.org/abs/2509.11477). [D]
-
-## Open verification items
-Author list, affiliation and journal reference for arXiv:2303.00959 could not be retrieved (the abstract page returned body text only); the ~100 ns / >99.98% swap figures and the DC-SQUID coupler are confirmed, the Yale attribution rests on the graph record. Alice & Bob's May-2026 Series B extension amount remains undisclosed. Post-selection discard rates for the dual-rail CZ and the beamsplitter swap are unreported. The 0.029(6)% point estimate and the 0.12% bound at depth both appear in Nature [84] without reconciliation, and D-Wave's "≈99.9%" [473] is reconciled with neither.

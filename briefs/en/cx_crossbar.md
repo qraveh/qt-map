@@ -25,6 +25,8 @@ Line count follows a Rent exponent near 0.5: T = 6√g − 1 terminals for g dot
 
 Dominant term: addressing coverage. Neither device published a two-qubit gate on a shared line.
 
+Not published: a shared-line crosstalk figure for any crossbar array; the conflict with per-pair exchange calibration follows from the addressing scheme, not from a measurement.
+
 ## Manufacturing, materials & supply chain
 Both devices are Ge/SiGe heterostructures made in a university cleanroom, not on a 300 mm line, and no foundry has announced a crossbar process step as of 4 Sep 2026 — GlobalFoundries' Quantum Technology Solutions unit, with cryogenic control ICs and packaging, is the closest named capability [C][353]. Control burden is the whole point, and its cost reappears as sequencing: one row and one column select at a time, so at 10³ tiles parallel operation needs on-chip decoding, and at 10⁴–10⁶ the wall is addressing bandwidth, not connector count. No demultiplexer has been demonstrated inside an array.
 
@@ -59,6 +61,3 @@ Confirm or demote in 12–24 months: two tiles gated independently through one s
 [449] Quantum Machines, “Semiconductor Spin Qubits,” Aug. 11, 2026. [Online]. Available: https://www.quantum-machines.co/qubit-types/semiconductor-spin-qubits/ [C]
 [520] F. Borsoi *et al.*, “Shared control of a 16 semiconductor quantum dot crossbar array,” *Nat. Nanotechnol.*, vol. 19, no. 1, pp. 21–27, Jan. 2024, doi: [10.1038/s41565-023-01491-3](https://doi.org/10.1038/s41565-023-01491-3). [D]
 [521] A. Tosato *et al.*, “A crossbar chip for benchmarking semiconductor spin qubits,” *Nat. Electron.*, vol. 9, no. 3, pp. 324–333, Mar. 2026, doi: [10.1038/s41928-026-01569-5](https://doi.org/10.1038/s41928-026-01569-5). [D]
-
-## Open verification items
-No crossbar publication gives a two-qubit fidelity or a shared-line crosstalk figure, so the conflict with per-pair exchange calibration is argued from the addressing scheme, not measured. Groove Quantum's investors and round label are not stated in any source consulted here. The QARPET 1,058 figure is a site capacity; the largest measured subset is 40 tiles.

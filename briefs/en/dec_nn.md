@@ -61,6 +61,8 @@ Headline numbers come from memory experiments — run N syndrome rounds, fit log
 
 Conflicts: none over AlphaQubit — the blog's "6% fewer errors than tensor network methods" and "30% fewer errors than correlated matching" both describe the largest Sycamore experiments [C][731] and agree with the Nature figures, 5.7% below the tensor-network decoder at distance 5 [D][657]; the two percentages differ by baseline, not by regime. Riverlane's Series C is announced as $75 M (2024-08-06) but its 2026 roadmap states "$85 million in 2024" and "$120 million+" total [C][661][G:RIVERLANE-FUNDING]; trust the 2024 release. No group has replicated AlphaQubit 2 on non-Google hardware as of 3 Sep 2026.
 
+AlphaQubit 2's own paper is a preprint (arXiv:2512.07737, v2 2026-03-11) whose timings of under 1 µs per cycle to distance 11 on Trillium TPUs come from recorded or simulated data; neither it nor the July 2026 Nature paper [2] states that the distance-7 decode ran live [G:ALPHAQUBIT2-2026-07]. The real-time thresholds of [732] are simulated, under a standard superconducting circuit-noise model (SI1000) with injected noise standing for decoder latency. On neutral atoms, machine-learning decoding has one primary source: atom-loss information plus machine-learning decoding improved QEC performance 1.73(13)× over conventional decoding on Harvard/MIT/QuEra data from up to 448 atoms, decoded in post-processing, and the gain is unreplicated outside that dataset [4]. Not published: a Λ for the distance-7 AlphaQubit 2 run, so the decoder's share of the gain cannot be separated from that of the reinforcement-learning calibration, and a dated patent-family count for neural decoders.
+
 ## Actors & economics
 
 **Who.**
@@ -119,13 +121,3 @@ Watch for: an AlphaQubit 2 result on non-Google hardware; the first neural decod
 [731] Google DeepMind and Google Quantum AI, “AlphaQubit tackles one of quantum computing's biggest challenges,” Google The Keyword, Nov. 20, 2024. [Online]. Available: https://blog.google/innovation-and-ai/models-and-research/google-deepmind/alphaqubit-quantum-error-correction/ [C]
 [732] C. Lee, T. Hur, and D. K. Park, “Scalable Neural Decoders for Practical Real-Time Quantum Error Correction,” [arXiv:2510.22724](https://arxiv.org/abs/2510.22724), Oct. 2025. [S]
 [733] A. Knapen *et al.*, “Pinball: A Cryogenic Predecoder for Surface Code Decoding Under Circuit-Level Noise,” [arXiv:2512.09807](https://arxiv.org/abs/2512.09807), Dec. 2025. [S]
-
-## Open verification items
-
-- AlphaQubit 2's own paper is a preprint (arXiv:2512.07737, v1 2025-12-08, v2 2026-03-11): it decodes recorded Willow data at distances 3–7 and times under 1 µs per cycle to distance 11 on Trillium TPUs, on recorded or simulated data; no live decode on hardware is reported, and the July 2026 Nature paper [2] does not state that its distance-7 decode ran live [G:ALPHAQUBIT2-2026-07].
-- No Λ is reported for the distance-7 AlphaQubit 2 run, so the gain attributable to the decoder rather than to the reinforcement-learning calibration cannot be separated.
-- Riverlane Series C conflicts: $75 M (2024-08-06 release) versus "$85 million in 2024" and "$120 million+" (2026-03-12 roadmap release); no extension announcement located.
-- arXiv:2510.22724 is by C. Lee, T. Hur and D. K. Park (Yonsei University) [732]; its real-time thresholds are simulated — a standard superconducting circuit-noise model (SI1000) plus injected noise standing for decoder latency.
-- Export-control classification of a stand-alone decoder product is unverified; no ECCN confirmed from a primary source.
-- Machine-learning decoding on neutral atoms has one primary source: atom-loss information plus machine-learning decoding improved QEC performance 1.73(13)× over conventional decoding on Harvard/MIT/QuEra data from up to 448 atoms, decoded in post-processing [4]; the gain is unreplicated outside that dataset.
-- No dated patent-database count for neural-decoder patent families was found from a named database.

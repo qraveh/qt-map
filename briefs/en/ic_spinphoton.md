@@ -41,6 +41,8 @@ It requires a colour-centre spin register and single-photon detection; without l
 ## Evidence — how the numbers were measured
 The teleported-CNOT attribution resolves, and not as a mis-attribution: both results exist and differ in kind. Photonic Inc. entangled two T-centre modules in separate cryostats over ~40 m and ran a teleported-CNOT sequence, but forwent feed-forward and post-selected on a photon detection, reporting a truth table rather than a gate fidelity; still a 2024 preprint as of 4 Sep 2026 [P][363]. QuTech's 2026 result is unconditional — real-time feed-forward, no post-selection — at 63(4)% and 64(4)% [D][G:QUTECH-NV-TELEPORT-CNOT-2026-05]. Quoting the two together without that distinction overstates the T-centre platform. Elsewhere fidelities are conditional on a herald, and Harvard rejects ~23% of data on reflectance-contrast thresholds [D][209]. No result here has a second-group replication.
 
+Not published: a dated patent-family count for spin–photon links.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What exactly they do | Evidence |
@@ -73,9 +75,3 @@ Confirm by 2028 if any group sustains > 1 Hz heralded entanglement above F = 0.8
 [783] H. Bernien *et al.*, “Heralded entanglement between solid-state qubits separated by three metres,” *Nature*, vol. 497, no. 7447, pp. 86–90, May 2013, doi: [10.1038/nature12016](https://doi.org/10.1038/nature12016). [D]
 [784] A. J. Stolk *et al.*, “Metropolitan-scale heralded entanglement of solid-state qubits,” *Sci. Adv.*, vol. 10, no. 44, Art. no. eadp6442, Oct. 2024, doi: [10.1126/sciadv.adp6442](https://doi.org/10.1126/sciadv.adp6442). [arXiv:2404.03723](https://arxiv.org/abs/2404.03723). [D]
 [785] M. Ivezic, “Photonic Inc,” PostQuantum.com, Nov. 13, 2025. [Online]. Available: https://postquantum.com/quantum-computing-companies/photonic-inc/ [P]
-
-## Open verification items
-Photonic Inc.'s teleported-CNOT (tCNOT) sequence has no published gate fidelity and no journal publication; the tCNOT figure of merit is a truth table over a selected basis, post-selected on photon detection.
-The 200 kHz / 99.8% Photonic target comes from a trade-press profile, not a company technical document; treated as an unverified architecture target.
-No dated patent-family count exists for spin–photon links in any named database consulted.
-The Fujitsu–QuTech "gate errors below 0.1%" figure circulating in trade press has no located peer-reviewed source and is omitted here.

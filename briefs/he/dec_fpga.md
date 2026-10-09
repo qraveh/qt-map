@@ -29,6 +29,8 @@ updated: 2026-09-30
 
 עבור קוד ה-gross, Relay-BP של IBM מדווח על איטרציה של 24 ns ועל פחות מ-1 µs למחזור מתחת ל-p = 3×10⁻³, מסינדרומים מדומים [S][48].
 
+נתוני ה-FPGA של Relay-BP של IBM באים מסינדרומים מדומים, וה-24 ns / <1 µs שבתמצית סותרים נתון של 480 ns לכל חלון של 12 מחזורים המדווח במקום אחר [G:RELAYBP-LATENCY-CONFLICT]. סבב C של Riverlane הוא $75 M בהודעה מ-2024 ו-$85 M במפת הדרכים מ-2026. שיתוף הפעולה בין IBM ל-AMD במפענח FPGA מתועד בעיתונות המקצועית בלבד; תנאיו לא פורסמו.
+
 ## ייצור, חומרים ושרשרת האספקה
 אין ייצור: כרטיס FPGA מסחרי במסד שבטמפרטורת החדר. כל מפענח בזמן אמת שפורסם רץ על צורן של AMD/Xilinx (VU19P עבור ה-LCD [D][238], VMK180 עבור Micro Blossom [D][727]); החלופה המסחרית היחידה החליפה ידיים כאשר מכירת 51% מ-Altera על ידי Intel ל-Silver Lake לפי שווי של $8.75 B, שהוכרזה באפריל 2025, נסגרה ב-2025-09-15 [G][735] — דואופול שצד אחד שלו נתון לשליטת קרן הון פרטי. רכיבי FPGA מהקצה העליון נמצאים בתחום הפיקוח האמריקאי על יצוא. עומס הקלט-פלט הוא צינור הסינדרום: זניח ב-10³ קיוביטים, אך ב-10⁴–10⁶ הקצב מחייב פענוח מקדים ב-4 K או כרטיסים מקביליים רבים.
 
@@ -73,9 +75,3 @@ updated: 2026-09-30
 [727] Y. Wu, N. Liyanage, and L. Zhong, “Micro Blossom: Accelerated Minimum-Weight Perfect Matching Decoding for Quantum Error Correction,” *Proc. 30th ACM Int. Conf. Architectural Support for Programming Languages and Operating Systems (ASPLOS '25)*, vol. 2, Mar. 2025, doi: [10.1145/3676641.3716005](https://doi.org/10.1145/3676641.3716005). [arXiv:2502.14787](https://arxiv.org/abs/2502.14787). Also https://github.com/yuewuo/micro-blossom. [D]
 [729] X. Yang *et al.*, “Real-time Surface-Code Error Correction Using an FPGA-based Neural-Network Decoder,” [arXiv:2605.04892](https://arxiv.org/abs/2605.04892), May 2026. Also https://arxiv.org/html/2605.04892. [D]
 [735] Altera, “Altera Closes Silver Lake Investment to Become World's Largest Pure-play FPGA Solutions Provider,” Sep. 15, 2025. [Online]. Available: https://www.altera.com/newsroom/news/press-release/altera-silver-lake [G]
-
-## פריטי אימות פתוחים
-ה-367 ns של Micro Blossom הוא טענה ממאגר קוד ב-GitHub שאינה מופיעה בשום מאמר; התוצאה שפורסמה ב-ASPLOS 2025 היא 0.8 µs בממוצע ב-d=13, p=0.1%.
-נתוני ה-FPGA של Relay-BP של IBM באים מסינדרומים מדומים, וה-24 ns / <1 µs שבתמצית סותרים נתון של 480 ns לכל חלון של 12 מחזורים, המופיע במקום אחר [G:RELAYBP-LATENCY-CONFLICT].
-סבב C של Riverlane הוא $75 M בהודעה מ-2024 ו-$85 M במפת הדרכים מ-2026; הפער לא יושב.
-שיתוף הפעולה בין IBM ל-AMD במפענח FPGA מתועד בעיתונות המקצועית בלבד, ותנאיו לא אושרו.

@@ -72,6 +72,8 @@ Independent work does not replicate the claim. QuTech has shown Kitaev-chain par
 
 Legg argues the Topological Gap Protocol can label the same region gapped or gapless depending on analysis choices such as field range and junction transparency, and that the conductance data show no clear gap [22]; it became a Nature Matters Arising in June 2026 with a multi-author Microsoft reply that concedes nothing [22], [23]. History is load-bearing: the 2018 "quantized Majorana conductance" Letter was retracted on 2021-03-08 after undisclosed charge-jump corrections, a mislabelled axis, and a recalibration moving plateau values by 8% that left points outside 2σ [D][365]. Only one group reports the headline numbers, so no value conflict arises.
 
+The "beyond 1 ms" parity-readout figure for [216] comes from the main report and is not confirmed against the paper. The DKK 1 bn in [367] is total Danish quantum-infrastructure investment, not Microsoft's own outlay. Nokia's claimed end-2025 Pauli-X control result appears only in trade press [369], [371]; its device size of "15×15 µm" and its "hours to days" state stability come from [369] and [368], not from a peer-reviewed source. Not published: the assignment error, readout fidelity and device yield of the InAs–Pb generation [21]; Microsoft's topological R&D spend, Lyngby capex and headcount; the value of DARPA's US2QC contract with Microsoft [218]; an export-control rule or ECCN specific to Majorana or III–V superconducting hybrid devices; and a dated market-share figure for MBE tool vendors.
+
 ## Actors & economics
 
 **Who.**
@@ -134,15 +136,3 @@ Open questions: why no X-loop number exists for the lead generation; what fracti
 [369] J. Burt, “Bell Labs Takes A Topological Approach To Quantum 2.0,” The Next Platform, Jul. 21, 2025. [Online]. Available: https://www.nextplatform.com/2025/07/21/bell-labs-takes-a-topological-approach-to-quantum-2-0/ [P]
 [370] M. U. Rehman, “Microsoft Opens 2026 Quantum Pioneers Program for Measurement-Based Topological Computing Research,” The Quantum Insider, Jan. 23, 2026. [Online]. Available: https://thequantuminsider.com/2026/01/23/microsoft-2026-quantum-pioneers-program-measurement-based-computing/ [P]
 [371] P. R. Allison, “Bell Labs' Michael Eggleston on Nokia's research into topological quantum computing,” IT Pro, Apr. 28, 2026. [Online]. Available: https://www.itpro.com/technology/bell-labs-michael-eggleston-on-nokias-research-into-topological-quantum-computing [P]
-
-## Open verification items
-- Affiliation of H. F. Legg not confirmed in the arXiv text consulted; the Matters Arising author list and exact June 2026 day could not be established.
-- The >1 ms figure for [216] is taken from the main report and is not verified against the paper.
-- Assignment error, readout fidelity and device yield for the InAs–Pb generation: not reported in [21]; no source found.
-- X-loop / joint-parity lifetime for InAs–Pb: no measurement published as of 2026-09-03.
-- Microsoft topological R&D spend, Lyngby capex and headcount: not disclosed; the DKK 1 bn in [367] is total Danish quantum-infrastructure investment, not Microsoft's own outlay.
-- DARPA US2QC contract value to Microsoft: not disclosed in [218].
-- Export-control rules and ECCNs specific to Majorana or III-V superconducting hybrid devices: none identified.
-- Nokia's claimed end-2025 Pauli-X control result: no publication or release found; [369], [371] are trade press.
-- Nokia device size "15×15 µm" and the "hours to days" state stability come from [369] and [368], not from a peer-reviewed source.
-- MBE tool vendor concentration asserted qualitatively; no dated market-share source consulted.

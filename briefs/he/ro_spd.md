@@ -63,6 +63,8 @@ updated: 2026-09-30
 
 פוטודיודות מפולת מצורן, שעדיין משמשות לאפיון מקורות במקום גלאי ננו-תיל מוליכי-על או חיישני קצה-מעבר, פולטות הבזקי פריצה הדולפים בין שני הגלאים של מערך Hanbury Brown–Twiss (מפצל אלומה המזין שני גלאים, שצירופי המקרים שלהם מודדים את החלק הרב-פוטוני) ומגביהים את שיא צירופי המקרים בהשהיה אפס בתחום התת-אדום הקרוב; מתאם מסדר שני g⁽²⁾(0) הנמדד כך הוא חסם עליון לחלק הרב-פוטוני [P][887].
 
+ריכוזיות ספקי הראשים הקרים (Sumitomo Heavy Industries, Cryomech) ואי-הזמינות של Scontel לתוכניות מערביות אחרי 2022 הם שיפוטים של אנליסט, לא עובדות ממקור. התמצית של Korzh ועמיתיו נותנת את נתוני הריצוד, אך לא את טמפרטורת הפעולה ונצילות הגילוי של אותו התקן. לא פורסם: התמורה ברכישת ID Quantique, וכן מחירי מערכות SNSPD או הכנסות של Single Quantum, Photon Spot, Quantum Opus ו-Scontel, ולכן אי אפשר לבדוק את כלכלת היחידה.
+
 ## שחקנים וכלכלה
 
 **מי.**
@@ -135,12 +137,3 @@ updated: 2026-09-30
 [633] IonQ, “IonQ Completes Acquisition of ID Quantique, Cementing Leadership in Quantum Networking and Secure Communications,” May 6, 2025. [Online]. Available: https://investors.ionq.com/news/news-details/2025/IonQ-Completes-Acquisition-of-ID-Quantique-Cementing-Leadership-in-Quantum-Networking-and-Secure-Communications/default.aspx [P]
 [634] SCONTEL, “SCONTEL: SSPD SNSPD HEB CRYOGENICS – DETECT EVERYTHING YOU WANT.” [Online]. Available: https://www.scontel.ru/ [C]
 [887] S. Luo *et al.*, “100 million photons per second from a single organic molecule,” [arXiv:2609.29736](https://arxiv.org/abs/2609.29736), Sep. 2026. [P]
-
-## פריטי אימות פתוחים
-
-- נצילות ה-TES של 95% (Lita/Miller/Nam, Optics Express 2008) וציטוטי השושלת של Gol'tsman 2001 ו-Irwin 1995 מצוטטים מהספרות המקובלת ללא מקור ממוספר.
-- נתוני הריצוד של Korzh ועמיתיו באים מהתמצית ב-arXiv; טמפרטורת הפעולה ונצילות הגילוי של אותו התקן לא צוינו שם.
-- התמורה ברכישת ID Quantique לא נחשפה בהודעות שהושגו; כתובת חדר החדשות של IonQ, שבה נעשה שימוש במקום אחר בדוח, החזירה 404, ולכן מצוטטת כתובת קשרי המשקיעים.
-- Single Quantum, Photon Spot, Quantum Opus ו-Scontel אינן מפרסמות מחירי מערכות SNSPD או הכנסות; כלכלת היחידה אינה ניתנת לאימות.
-- ריכוזיות ספקי הראשים הקרים (Sumitomo Heavy Industries, Cryomech) ואי-הזמינות של Scontel לתוכניות מערביות אחרי 2022 הם שיפוטים של אנליסט, לא עובדות ממקור.
-- המפרטים של Scontel לכל מוצר (נצילות, ריצוד, ספירות חושך, מספרי ערוצים) נמצאים ב-PDF קטלוגי שלא אוחזר.

@@ -26,6 +26,8 @@ Throughput is the floor, structurally: one tip visits one site at a time, so the
 
 Dominant term: device count. Every STM-donor device is fabricated individually; no parallel process exists at any scale and no placement-yield distribution is published.
 
+Not published: a primary measurement of the incorporated-donor position distribution behind the ~3 nm placement precision; the amounts of the Firgun Ventures investment, the SkyWater agreement and the AMD collaboration, and the split of the A$60 M NRFC total by tranche; a parallelisation scheme for STM donor placement, by SQC or any other group; and any SQC statement on IonQ's acquisition of SkyWater.
+
 ## Manufacturing, materials & supply chain
 No vendor sells a turnkey donor-placement tool: the equipment (UHV STM, phosphine handling, epitaxy) is merchant, the recipe is not, so no second source can be procured. Feedstock is no longer scarce: enriched ²⁸Si from ASP Isotopes and, from 2026-07-16, US DOE silane at 99.9999% ²⁸Si [P][348]. SkyWater supplies US resonators and packaging (2025-11-20) [C][276], and IonQ, a competing platform vendor, closed its ~USD 1.8 B acquisition of SkyWater on 2026-07-31 [G][19] — the sharpest supply risk here. Export control bites on the feedstock, not the tool: no Export Control Classification Number (ECCN) covers STM lithography, but the US rule of 2024-09-06 created ECCNs for isotopically enriched silicon and germanium — silicon qualifies below 0.08% of the nuclear-spin isotope ²⁹Si — as epitaxial layers (3C907), hydrides such as silane (3C908) and bulk material or oxide (3C909), which takes in the DOE silane; its quantum-computer ECCN, 4A906, starts at 34 qubits and, below 2,000, applies only under a two-qubit (C-NOT) error ceiling set for each size band — out of reach of an eleven-qubit device [G][301]. Burden at scale is unknown — no device beyond eleven qubits exists.
 
@@ -64,9 +66,3 @@ Confirm/demote (12–24 months): a dated parallel-fabrication announcement or a 
 [357] M. Fuechsle *et al.*, “A single-atom transistor,” *Nat. Nanotechnol.*, vol. 7, no. 4, pp. 242–246, Apr. 2012, doi: [10.1038/nnano.2012.21](https://doi.org/10.1038/nnano.2012.21). [D]
 [358] Silicon Quantum Computing, “Silicon Quantum Computing — News,” sqc.com. [Online]. Available: https://sqc.com/news/ [C]
 [531] NVIDIA, “NVIDIA Introduces NVQLink — Connecting Quantum and GPU Computing for 17 Quantum Builders and Nine Scientific Labs,” Oct. 28, 2025. [Online]. Available: https://nvidianews.nvidia.com/news/nvidia-nvqlink-quantum-gpu-computing [C]
-
-## Open verification items
-- Placement precision: no primary measurement of the incorporated-donor position distribution was located, so ~3 nm is used and the underlying distribution is listed as unpublished.
-- SQC's newsroom dates the NVIDIA announcement 2025-10-29; NVIDIA's own newsroom dates the NVQLink launch 2025-10-28. The NVIDIA date is used.
-- No dollar amounts disclosed for the Firgun Ventures investment, the SkyWater agreement or the AMD collaboration; the A$60 M NRFC total is not itemised by tranche on SQC's pages.
-- No parallelisation scheme for STM donor placement has been published by SQC or any other group, and no SQC statement was found on IonQ's acquisition of SkyWater.

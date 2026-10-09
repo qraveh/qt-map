@@ -53,6 +53,8 @@ Root node of the superconducting family: it requires nothing upstream and provid
 
 Frequency is predicted from junction resistance via Ambegaokar–Baratoff, then confirmed spectroscopically after packaging, so the statistic that matters is $R_n$ RSD — published by nobody except imec [D][293]. RB, XEB and cycle benchmarking measure a calibrated lattice, blind to dies discarded and pre-trim collision rates. ABAA's 97.4% is a targeting-success rate from an optimised study, not a worst-case bound [D][294]. OQC's numbers are sub-sampled: readout over 54 of >500 sites, 105/108 operational on the characterised subset [P][311]. Conflict: OQC's abstract gives a ~100 µs median for $T_1$ and $T_{2e}$ together; its body gives $T_1$ 97 µs and $T_{2e}$ 129 µs over 105 qubits [P][311].
 
+IBM's 2026-05-21 release gives Anderon as a letter of intent subject to definitive documents, with no execution announced by 4 Sep 2026, yet IBM's 2026-08-26 HRL release already calls Anderon "its quantum wafer foundry". The "≈30× device output versus 200 mm" appears only in trade press [299]; IBM's own release states no multiple. The PatSnap H10N 60 counts [312] are portfolio-wide patent records. Not published: a per-wafer or per-qubit cost for any 300 mm superconducting-qubit line; a dated patent family specific to Nb/Al junction lithography at 300 mm; whether Google's Goleta purchase is fab capacity, and the wafer size of its Santa Barbara fabrication facility [805]; and whether the Nb wiring stack of imec's 300 mm line, which uses Al/AlOx/Al overlap junctions, matches IBM's approach.
+
 ## Actors & economics
 
 **Who.**
@@ -99,12 +101,3 @@ Confirm by end-2027 if Anderon executes definitive CHIPS documents and fabricate
 [312] PatSnap, “Quantum Computing Patent Landscape 2026,” Jun. 30, 2026. [Online]. Available: https://www.patsnap.com/resources/blog/rd-blog/quantum-computing-patent-landscape/ [P]
 [798] IBM, “IBM and U.S. Department of Commerce Announce America's First Purpose-Built Quantum Foundry, Supported by Proposed $1 Billion CHIPS Award,” May 21, 2026. [Online]. Available: https://newsroom.ibm.com/ibm-and-u-s-department-of-commerce-announce-americas-first-purpose-built-quantum-foundry [G]
 [805] I. Hamm, “Google Buys 83,000-Square-Foot Campus in Goleta for $32.5M,” The Santa Barbara Independent, Aug. 24, 2026. [Online]. Available: https://www.independent.com/2026/08/24/google-buys-83000-square-foot-campus-in-goleta-for-32-5m/ [P]
-
-## Open verification items
-
-- Anderon's contractual status: IBM's 2026-05-21 release states an LOI subject to execution of definitive documents; no execution confirmed by 4 Sep 2026, yet IBM's 2026-08-26 HRL release already calls Anderon "its quantum wafer foundry".
-- "≈30× device output versus 200 mm" appears only in trade press [299]; IBM's own release states no multiple.
-- No per-wafer or per-qubit cost figure exists for any 300 mm superconducting-qubit line.
-- No dated patent family specific to Nb/Al junction lithography at 300 mm was found; the PatSnap H10N 60 counts [312] are portfolio-wide patent records.
-- Google's Goleta purchase is not stated to be fab capacity, and no source gives the wafer size of its Santa Barbara fabrication facility [805].
-- imec's 300 mm devices use Al/AlOx/Al overlap junctions; whether that line's Nb wiring stack matches IBM's approach is not established by the sources consulted.

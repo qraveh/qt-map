@@ -57,6 +57,8 @@ Every headline number is a post-selected stand-alone fidelity, measured on a sta
 
 A factory's output can be certified with the operations the code already has: Bell-coherence fidelity estimation measures the infidelity ε of any pure resource state, including continuous-angle rotation states, to a fixed relative accuracy from Θ(1/ε) copies using only Clifford gates and Pauli measurements — optimal even against collective measurements — and in distance-3 surface-code simulations it needed up to about 27× fewer states than direct fidelity estimation [P][896]. The measured copies are consumed.
 
+Not published in the abstracts of [42] and [147]: the escape-stage code distance, physical-qubit count and cycle count of Google's cultivation run, and the absolute output infidelity, atom count and acceptance rate of the QuEra/Harvard/MIT distillation, whose stated figure is the improvement over the input. Not published: a dated patent-family count for magic-state preparation. The distance-15 escape region of order 10³ qubits and ~17 µs per attempt are derived from [690] and [1], not quoted by a source.
+
 ## Actors & economics
 
 **Who.**
@@ -108,11 +110,3 @@ Confirm, within 12–24 months, if a cultivated state is consumed by a logical a
 [691] K. H. Wan, Z. Zhong, and A. Zapirain, “Simulating magic state cultivation with few Clifford terms,” *Quantum*, vol. 10, Art. no. 2134, Jun. 2026, doi: [10.22331/q-2026-06-12-2134](https://doi.org/10.22331/q-2026-06-12-2134). [D]
 [692] Quantinuum, “A Quantinuum-led team has built the quantum programming tools for real-time magic state distillation on a quantum computer,” Oct. 24, 2023. [Online]. Available: https://www.quantinuum.com/blog/a-quantinuum-led-team-has-built-the-quantum-programming-tools-for-real-time-magic-state-distillation-on-a-quantum-computer [C]
 [896] S. Takahashi and K. Fujii, “Efficient fidelity estimation of general quantum resource states via Clifford circuits,” [arXiv:2610.05222](https://arxiv.org/abs/2610.05222), Oct. 2026. [P]
-
-## Open verification items
-
-- Google cultivation [42]: escape-stage code distance, physical-qubit count and cycle count are not in the abstract; only fidelity, acceptance and the 40× reduction verified.
-- QuEra/Harvard/MIT distillation [147]: absolute output infidelity, atom count and acceptance rate not in the abstract — only improvement over input verified.
-- Litinski's 15-to-1 factory footprints (arXiv:1808.02892) could not be extracted; the footprint comparison rests on [690] and [655].
-- The distance-15 escape region of order 10³ qubits and ~17 µs per attempt are derived from [690] and [1], not quoted by a source.
-- The ECCN for quantum computers under the 2024 US rule is not confirmed here from a primary source; no dated patent-family count specific to this node was found.

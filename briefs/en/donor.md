@@ -26,6 +26,8 @@ The qubit is a nucleus, not a confined electron: with no orbital degree of freed
 
 Dominant term: register size and the electron-mediated gate. The main report's single "99.90% donor nuclear CZ" is not isolable from this work [D][192].
 
+The 99.90% donor nuclear-spin CZ fidelity cannot be isolated from [192], whose preprint gives 99.5–99.99% and published version 99.10–99.99%; the fidelity is a range. Not published: a placement yield or cost per donor, from any actor; Firgun Ventures' investment amount, and the split of the A$60 M NRFC total between its two tranches; and any SQC statement on the consequences of IonQ's acquisition of SkyWater.
+
 ## Manufacturing, materials & supply chain
 Serial by construction: one tip, one site, so throughput is qubit-hours, not wafer-hours; no parallel exposure is published. Enriched ²⁸Si is dual-sourced as of 4 Sep 2026 — ASP Isotopes' Pretoria line since 2025-03, US DOE silane at 99.9999% ²⁸Si from 2026-07-16 [P][348] — so feedstock is not the constraint. Suppliers: SkyWater for US resonators [C][276], Bluefors for cryogenics [C][358]. The single point of failure moved in 2026: IonQ closed its ~USD 1.8 B purchase of SkyWater on 2026-07-31 [G][19], putting SQC's only named US manufacturing route inside a competitor. Export exposure sits in the feedstock, not the machine: the US rule of 2024-09-06 created Export Control Classification Numbers (ECCNs) for isotopically enriched silicon and germanium — silicon qualifies below 0.08% of the nuclear-spin isotope ²⁹Si — as epitaxial layers (3C907), hydrides such as silane (3C908) and bulk material or oxide (3C909), so qubit-grade ²⁸Si is itself a controlled item; its quantum-computer ECCN, 4A906, starts at 34 qubits and, below 2,000, applies only under a two-qubit (C-NOT) error ceiling set for each size band — out of reach of an eleven-qubit register [G][301]. Wiring is not the wall; the write step is.
 
@@ -61,9 +63,3 @@ Confirm/demote (12–24 months): a device beyond 11 qubits or a dated parallel-w
 [348] U.S. Department of Energy, “DOE Advances Domestic Supply of Silicon, Germanium Isotopes for Quantum Computing,” HPCwire, Jul. 16, 2026. [Online]. Available: https://www.hpcwire.com/off-the-wire/doe-advances-domestic-supply-of-silicon-germanium-isotopes-for-quantum-computing/ [P]
 [357] M. Fuechsle *et al.*, “A single-atom transistor,” *Nat. Nanotechnol.*, vol. 7, no. 4, pp. 242–246, Apr. 2012, doi: [10.1038/nnano.2012.21](https://doi.org/10.1038/nnano.2012.21). [D]
 [358] Silicon Quantum Computing, “Silicon Quantum Computing — News,” sqc.com. [Online]. Available: https://sqc.com/news/ [C]
-
-## Open verification items
-- The main report's "99.90% donor nuclear-spin CZ" is not isolable from [192]; preprint (99.5–99.99%) and published (99.10–99.99%) framings also differ. Treated here as a range.
-- No placement-yield or cost-per-donor figure published by any actor.
-- Firgun Ventures' amount undisclosed; the A$60 M NRFC total's two tranches are not itemised on SQC's own pages.
-- No SQC statement located on the consequences of IonQ acquiring SkyWater.

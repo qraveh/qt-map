@@ -68,6 +68,8 @@ A fabricated carrier acquires far-range connectivity through packaging, where at
 
 Rigetti's 99.1% and 99.5% are company medians without error bars or a stated protocol [C][36], [751]; the 2021 die-to-die numbers carry explicit uncertainties [D][747]. SUSTech's 99% is a state-transfer and Bell-state fidelity, not a gate fidelity, and its 12-qubit GHZ at 55.8 ± 1.8% shows what five linked modules do at depth [D][748]. The Illinois figure is a SWAP *efficiency* with a separately stated ~1% error called threshold-level; the two should not be conflated [D][752]. IBM's coupled-cell result contains no qubits and no fidelity claim [C][50]. No value conflicts were found; the gap is that nothing explains the 99.5% → 99.1% step.
 
+Neither arXiv:2308.09240 (Rigetti; cross-chip CZ 99.13 ± 0.15% in 56 ns) nor arXiv:2409.04634 (IBM Quantum, T. J. Watson Research Center; cable joins, no qubit measured) has a journal version as of 2026-09-30. The 40,000 I/O lines of QuantWare's Bass-A10K (VIO-40K) rest only on QuantWare's own release of 2025-12-08 [G:QUANTWARE-VIO], which the trade-press page of 2025-12-10 [P][495] omits, and no delivered device confirms them. Not published: a gate fidelity or latency through IBM's l-coupler, "first demonstrated in 2024" on Flamingo [C][50], [481], whose cable joins were tested on 1 m of aluminium coax at internal Q ≈ 10⁶ [D][750], as of 2026-09-30; and a dated assignee record for Rigetti's chiplet-packaging and QuantWare's vertical-I/O patent families.
+
 ## Actors & economics
 
 **Who.**
@@ -125,10 +127,3 @@ Open questions: what causes the 40-basis-point tiling tax, per-join or per-calib
 [751] Rigetti Computing, “Rigetti Demonstrates Industry's Largest Multi-Chip Quantum Computer; Halves Two-Qubit Gate Error Rate,” Rigetti Investor Relations, Jul. 16, 2025. [Online]. Available: https://investors.rigetti.com/news-releases/news-release-details/rigetti-demonstrates-industrys-largest-multi-chip-quantum [C]
 [752] M. Mollenhauer, A. Irfan, X. Cao, S. Mandal, and W. Pfaff, “A high-efficiency elementary network of interchangeable superconducting qubit devices,” *Nat. Electron.*, vol. 8, no. 7, pp. 610–619, Jul. 2025, doi: [10.1038/s41928-025-01404-3](https://doi.org/10.1038/s41928-025-01404-3). [D]
 [753] Z. Du *et al.*, “Hardware-aware Compilation for Chip-to-Chip Coupler-Connected Modular Quantum Systems,” [arXiv:2505.09036](https://arxiv.org/abs/2505.09036), May 2025. [S]
-
-## Open verification items
-- IBM's l-coupler, "first demonstrated in 2024" on Flamingo [C][50], [481]: IBM published its cable joins in 2024-09, tested on 1 m of aluminium coax at internal Q ≈ 10⁶ [D][750], but no gate fidelity or latency through an l-coupler, as of 2026-09-30.
-- The cause of Rigetti's 99.5% (four chiplets) → 99.1% (twelve chiplets) step is unattributed in both releases [C][36], [751]; per-join versus per-calibration cannot be separated from public data.
-- arXiv:2308.09240 (Rigetti; cross-chip CZ 99.13 ± 0.15% in 56 ns) and arXiv:2409.04634 (IBM Quantum, T. J. Watson Research Center; cable joins, no qubit measured): no journal version found as of 2026-09-30.
-- QuantWare Bass-A10K's (VIO-40K) 40,000 I/O lines rest only on QuantWare's own release of 2025-12-08 [G:QUANTWARE-VIO] (the 2025-12-10 trade-press page [P][495] omits them); no delivered device confirms them.
-- Rigetti chiplet-packaging and QuantWare vertical-I/O patent families: no dated assignee record found.

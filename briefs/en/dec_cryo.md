@@ -43,6 +43,8 @@ An alternate decoder on the transmon lattice with tunable couplers. It requires 
 ## Evidence — how the numbers were measured
 Every decoder number is post-synthesis power/performance/area on a cryo-characterised PDK plus vector simulation, syndromes drawn from noise models rather than a device; the 2025 predecoder is at least evaluated under circuit-level rather than code-capacity noise, and neither study is replicated outside an overlapping author set. Power per qubit at 4 K has no shared definition — 23 mW measured by IBM driving a two-qubit gate, against an "optimistic" 5 mW and sub-2 mW claims [S][G:CRYOCMOS-POWER-CONFLICT]; only 23 mW is tied to a running gate. The repeated 367 ns FPGA matching latency comes from a repository with no code distance and no paper; the peer-reviewed figure is 0.8 µs at d=13 [D][727], used here.
 
+Not published: SEEQC's offering size and price range, still blank in its S-1 amendment of 2026-09-11 [G:SEEQC-S1A-2026-08], and a patent family specific to cryogenic decoding.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What exactly they do | Evidence |
@@ -80,9 +82,3 @@ The junction budget that sizes a single-flux-quantum (SFQ) decoder is falling on
 [745] Y. Ueno, M. Kondo, M. Tanaka, Y. Suzuki, and Y. Tabuchi, “QECOOL: On-Line Quantum Error Correction with a Superconducting Decoder for Surface Code,” arXiv, Nov. 8, 2021. [Online]. Available: https://arxiv.org/abs/2103.14209 [S]
 [746] G. Tao *et al.*, “CryoZip: An Efficient Cryogenic Compressor for Quantum Error Correction Syndromes,” [arXiv:2606.30805](https://arxiv.org/abs/2606.30805), Jun. 2026. [S]
 [897] P. Papanikolaou, A. Vanasse, H. Jin, G. Tzimpragos, and J. Volk, “Duplication-aware retiming and cell interface redesign for superconductor circuit minimization,” [arXiv:2610.02333](https://arxiv.org/abs/2610.02333), Oct. 2026. [P]
-
-## Open verification items
-DOE ARQC award DE-SC0025633 is acknowledged in the CryoZip paper but no dollar amount appears in any source consulted; treated as unquantified.
-SEEQC's offering size and price range are still blank in its latest S-1 amendment (2026-09-11) [G:SEEQC-S1A-2026-08]; no listing has followed — the SPAC merger was terminated 2026-08-25 and the IPO had not priced by 30 Sep 2026.
-4 K power per qubit remains unresolved (23 mW vs 5 mW vs sub-2 mW); every cold-decoder power comparison inherits the ambiguity.
-No patent family specific to cryogenic decoding located in a named dated database; absence of evidence only.

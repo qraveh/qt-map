@@ -43,6 +43,8 @@ This layer underlies all three neutral-atom architectures — the alkali (QuEra,
 ## Evidence — how the numbers were measured
 Trap counts and filling come from direct fluorescence imaging and are not disputed, but they are compared across incompatible boundaries: 11,022 trapped atoms and 448 qubits under fault-tolerant control measure different things, and filling is quoted before rearrangement (60.5% [D][145]) or after (99.3% [D][144]) unlabelled. Latency figures are architectural, measured inside one group's system and never reproduced, and the metasurface and 2,000-tweezer results are each single-group.
 
+The €65k-per-atom figure is derived from one order, not a price list. Not published: named customers of the Hamamatsu, NKT Photonics and Yaqumo alliance; the vacuum lifetime and any coherence measurement for the 18,225-site metasurface array; and any cost breakdown below system level.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What exactly they do with this technology | Evidence |
@@ -86,6 +88,3 @@ Confirm/demote in 12–24 months: a QEC round below 1 ms above 10³ sites; a sec
 [577] M. Endres *et al.*, “Cold Matter Assembled Atom-by-Atom,” [arXiv:1607.03044](https://arxiv.org/abs/1607.03044), Jul. 2016. [D]
 [578] M. Swayne, “Fraunhofer ILT Develops Laser System for 2,000-Qubit Neutral-Atom Quantum Computer,” The Quantum Insider, Jul. 8, 2026. [Online]. Available: https://thequantuminsider.com/2026/07/08/fraunhofer-ilt-develops-laser-system-for-2000-qubit-neutral-atom-quantum-computer/ [P]
 [886] W. Sun *et al.*, “A photonic integrated comb engine for ultracold quantum gases,” [arXiv:2609.28294](https://arxiv.org/abs/2609.28294), Sep. 2026. [P]
-
-## Open verification items
-The "10 MHz refresh insufficient above ~10⁴ qubits" sometimes quoted cannot be attributed to a device or a measurement in any source found; liquid-crystal modulators frame at tens of hertz and deflector reconfiguration is bounded by acoustic transit, so the figure is not used here. Institutional affiliation for the 2016 lineage paper was not returned by the arXiv abstract page. Whether the Hamamatsu, NKT Photonics and Yaqumo alliance has signed named customers is undisclosed. Vacuum lifetime and any coherence measurement for the 18,225-site metasurface array are not reported. No cost breakdown exists below system level; the €65k-per-atom figure is derived from one order, not a price list.

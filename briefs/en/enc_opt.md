@@ -41,6 +41,8 @@ Slot 2 of Trapped ions — linear Paul trap with individual laser addressing, an
 ## Evidence — how the numbers were measured
 AQT's 98.7(3) % is an all-pairs product average [C][382]; a secondary 97.7 % in the register stays unreconciled. The demonstrator's 0.997(6) is a two-ion Bell-state fidelity, not randomised benchmarking [D][253]. Caltech's 99.62(3) % is averaged over symmetric input states [D][381]. LYNX publishes QV without qubit count or fidelity [C][128]. No vendor reports T2 beside τ, as of 2026-09-26.
 
+Not published: planqc's computing species and transition — its technology and LRZ pages name neither strontium nor the clock transition — and the species and product of PIAST-Q.
+
 ## Actors & economics
 **Who.**
 
@@ -82,10 +84,3 @@ Confirm the atomic branch if planqc publishes clock-qubit T2 and CZ fidelity on 
 [381] R. Finkelstein *et al.*, “Universal quantum operations and ancilla-based read-out for tweezer clocks,” *Nature*, vol. 634, pp. 321–327, Oct. 2024, doi: [10.1038/s41586-024-08005-8](https://doi.org/10.1038/s41586-024-08005-8). [D]
 [382] Alpine Quantum Technologies, “19-inch rack-mounted quantum computer,” AQT. [Online]. Available: https://www.aqt.eu/products/ibex-q1/ [C]
 [383] Alpine Quantum Technologies (AQT), “Quantum computer products built for performance,” AQT. [Online]. Available: https://www.aqt.eu/products/ [C]
-
-## Open verification items
-- 2026-09-26: arxiv.org (abstract of 2111.14653v2) and api.semanticscholar.org returned HTTP 429; Schine et al. read at nature.com instead.
-- 2026-09-26: ⁸⁸Sr⁺ D₅/₂ lifetime (dossier: 0.39 s) not stated — Crossref elides the abstract, journals.aps.org returned 403.
-- 2026-09-26: ⁸⁷Sr ³P₀ natural lifetime (~118 s) not verified; no source opened.
-- 2026-09-26: planqc's own technology and LRZ pages name neither strontium nor the clock transition; PIAST-Q's species and product are unnamed on the pages in the register.
-- 2026-09-26: arXiv:2111.12654 not re-opened (register ✅ relied on); Madjarov et al.'s fidelity number, Finkelstein et al.'s arXiv id and Norcia et al.'s author list and DOI (arXiv page showed only the abstract) not seen.

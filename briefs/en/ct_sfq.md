@@ -55,6 +55,8 @@ Architecture: the superconducting transmon lattice. It requires superconducting-
 
 Every headline number is a randomised-benchmarking (RB) Clifford average [D][566][D][249][D][304]. RB assumes Markovian, gate-independent errors, so rare correlated bursts average into a slightly worse mean, and a module can pass at 99.9% yet emit correlated errors that decoders do not model. SEEQC's "absence of detectable quasiparticle poisoning" is reported only in press [C][53]. Not reported: charge parity under continuous clocking, T1 with the clock on and off. No independent replication: the 2026 authors are all from SEEQC [D][304]. Conflicts: "exceeding 99%" in the abstract [D][304] against "exceeding 99.5%" in press [C][53]; "nanowatts per qubit" [C][53] against ~1.6 µW per qubit in a 2026 estimate [S][550][G:CRYOCMOS-POWER-CONFLICT].
 
+The five-qubit count, 10 mK and "nanowatts per qubit" come from press [53], not from the paper's abstract [304]. SEEQC's S-1 filings give $4.2 M revenue in 2025 and $18.1 M cash at 2026-06-30 [G:SEEQC-S1A-2026-08]; its enterprise value comes from trade press. SkyWater's superconducting capability is inferred from mentions in D-Wave's 10-K [492]. Not published: a dated 2025–26 Chinese SFQ qubit-control result, an SFQ-control patent-family count, and SEEQC's offering size (blank in the S-1 amendment of 2026-09-11).
+
 ## Actors & economics
 
 **Who.**
@@ -114,11 +116,3 @@ Confirm if by end-2027 a group publishes an SFQ-driven two-qubit gate below 1% e
 [573] SIP Global Partners, “SIP Global Partners Participates in $30M Round for SEEQC, Developer of the World's First Full-Stack Processor for Quantum Computers,” PRWeb, Jan. 16, 2025. [Online]. Available: https://www.prweb.com/releases/sip-global-partners-participates-in-30m-round-for-seeqc-developer-of-the-worlds-first-full-stack-processor-for-quantum-computers-302352970.html [P]
 [574] Allegro Merger Corp.; SeeQC, Inc., “Settlement, Termination and Release Agreement,” U.S. Securities and Exchange Commission (EDGAR), Aug. 2026. [Online]. Available: https://www.sec.gov/Archives/edgar/data/1779977/000121390026095175/ea028847004ex2-2.htm [G]
 [897] P. Papanikolaou, A. Vanasse, H. Jin, G. Tzimpragos, and J. Volk, “Duplication-aware retiming and cell interface redesign for superconductor circuit minimization,” [arXiv:2610.02333](https://arxiv.org/abs/2610.02333), Oct. 2026. [P]
-
-## Open verification items
-
-- Main text of [304] paywalled: five qubits, 10 mK and "nanowatts per qubit" come from press [53], not the abstract.
-- MIT-LL SFQ5ee parameters not obtained; [570] covers the qubit foundry only.
-- No dated 2025–26 Chinese SFQ qubit-control result found; no patent-family count.
-- SEEQC's revenue and cash are in its S-1 filings — $4.2 M revenue in 2025, $18.1 M cash at 2026-06-30 [G:SEEQC-S1A-2026-08]; the offering size is still blank (S-1 amendment of 2026-09-11), and the enterprise value comes from trade press.
-- SkyWater's superconducting capability inferred from D-Wave 10-K mentions [492].

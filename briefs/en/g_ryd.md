@@ -55,6 +55,8 @@ The gate serves both Rydberg tweezer-array architectures — alkali (Rb/Cs: Harv
 
 The 2026 record uses echo randomised benchmarking and symmetric stabiliser benchmarking on ~8 sparse gate sites [D][134]; Atom Computing used Clifford and symmetric-subspace RB with >200 CZ gates per circuit [D][135]; Caltech built a fidelity-response theory and quotes 0.9971(5) *downward-corrected for leakage* [D][136]. What these miss: loss-post-selection removes 60% of the error, so 99.941% is not a circuit-level number and must not be set against a raw superconducting figure; sparse-site benchmarking misses dense-array crosstalk and next-nearest-neighbour blockade error; and none measures the gate *inside* a transport-and-image cycle, where re-trapping and heating act. Conflict: the August 2026 review tabulates a 2025 USTC CZ of 99.84% [P][140] that no primary source corroborates, so this brief uses Harvard's 99.854(4)% [D][134]. Note also three conventions behind three headline numbers — Atom Computing's 99.72/99.40 is post-selected/raw [D][135], Caltech's is leakage-corrected [D][136], Harvard's is raw plus post-selected [D][134].
 
+The 270 ns gate duration is the value in [4]; the April 2026 record paper gives a peak Rabi frequency of $2\pi\times17$ MHz but no extractable gate duration, so the two are treated as one scheme. Not published: the laser, AOD or SLM supplier of any specific neutral-atom machine in a dated procurement disclosure — the vendor names under Manufacturing are the field's usual pool; an export-control ruling on high-power 1013 nm Rydberg-laser subsystems (US BIS quantum ECCNs against Category 6 laser entries); and QuEra Gemini's availability date, deployment site and price.
+
 ## Actors & economics
 
 **Who.**
@@ -115,12 +117,3 @@ Open questions. Does the loss channel scale with array density and transport, or
 [391] S. J. Evered *et al.*, “High-fidelity parallel entangling gates on a neutral-atom quantum computer,” *Nature*, vol. 622, no. 7982, pp. 268–272, Oct. 2023, doi: [10.1038/s41586-023-06481-y](https://doi.org/10.1038/s41586-023-06481-y). [arXiv:2304.05420](https://arxiv.org/abs/2304.05420). [D]
 [427] D. Jaksch *et al.*, “Fast Quantum Gates for Neutral Atoms,” *Phys. Rev. Lett.*, vol. 85, no. 10, pp. 2208–2211, Sep. 2000, doi: [10.1103/PhysRevLett.85.2208](https://doi.org/10.1103/PhysRevLett.85.2208). [arXiv:quant-ph/0004038](https://arxiv.org/abs/quant-ph/0004038). [D]
 [428] H. Levine *et al.*, “Parallel Implementation of High-Fidelity Multiqubit Gates with Neutral Atoms,” *Phys. Rev. Lett.*, vol. 123, no. 17, Art. no. 170503, Oct. 2019, doi: [10.1103/PhysRevLett.123.170503](https://doi.org/10.1103/PhysRevLett.123.170503). [arXiv:1908.06101](https://arxiv.org/abs/1908.06101). [D]
-
-## Open verification items
-
-- The August 2026 review [140] tabulates a 2025 USTC CZ fidelity of 99.84%; no primary source corroborates it and a targeted search returned nothing. Treated as unverified; the record used here is Harvard's 99.854(4)% of 2026-04 [134].
-- Gate duration: 270 ns is the value given in [4]; the April 2026 record paper gives peak Rabi $2\pi\times17$ MHz but its gate duration is not extractable from the text consulted, so both are assumed to be the same scheme.
-- Named laser/AOD/SLM suppliers for any specific neutral-atom machine: no dated procurement disclosure found; the vendor names in Manufacturing are the field's usual pool, not a sourced supply chain.
-- Export-control classification of high-power 1013 nm Rydberg-laser subsystems (US BIS quantum ECCNs vs Category 6 laser entries): no public ruling found.
-- Caltech Sr full error budget and the upgrades claimed to reach >0.999: only the abstract value 0.9971(5), leakage-corrected, is used; the full text was not consulted.
-- QuEra Gemini: no availability date, deployment site or price disclosed on the product page.

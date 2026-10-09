@@ -28,6 +28,8 @@ updated: 2026-09-03
 
 יוני 2026 איפס את החשבון: 80 ns מול מחזור של 1 µs הם ~12×, ואלקטרוניקת מסד של 150–196 ns מצמצמת זאת ל-~2×. ההספק הסטטי האפסי של המערך הזה עולה 1.48 dB לכל תא, ~15× מהמתג שבתוך הקו של PsiQuantum, 100 mdB [D][169], [516] — מישור ניתוב, לא מישור היתוך.
 
+שלושת נתוני ההשהיה מ-2026 נמדדו במישורי ייחוס שונים, ואף מקור אינו מיישב ביניהם. ההשוואה בין השהיה על השבב (27 dB) להשהיה בסיב (4 mdB) נגזרת מנתוני אובדן שפורסמו, ולא נמדדה. לא פורסם: עלות למאפנן או לערוץ הזנה קדימה (feed-forward).
+
 ## ייצור, חומרים ושרשרת האספקה
 TFLN מגיע משני ספקים מסחריים, HyperLight ו-Lightium [P][518]; BTO בכמויות — רק מתהליך ה-300 mm של PsiQuantum ב-GlobalFoundries [D][169] ומקו הייצור הניסיוני של Lumiphase [D][516]; הצימוד של Xanadu, 0.085 dB לפאה, נעשה עם Corning ו-DISCO [C][172]. אין עלות פומבית לערוץ. עומס הקלט-פלט הוא הטכנולוגיה הזאת עצמה: מגבר הנעה ו-DAC לכל מאפנן, כבל קואקסיאלי ומבחין לכל גלאי. היחידה של QuiX היא 32×32 [C][825], ולכן 10³ אופנים הם ~30 מסדים; ב-10⁴ החומה היא סטיית השעון בין המסדים, וב-10⁶ שום דבר אינו גדל. המכונה נופלת תחת BIS ECCN 4A906 [G:BIS-QUANTUM-2024].
 
@@ -70,6 +72,3 @@ TFLN מגיע משני ספקים מסחריים, HyperLight ו-Lightium [P][518
 [518] optics.org, “Lithium niobate in vogue as thin-film developers raise cash,” Sep. 24, 2024. [Online]. Available: https://optics.org/news/lithium-niobate-in-vogue-as-thin-film-developers-raise-cash [P]
 [822] D. Duggan *et al.*, “FPGA Based Feedforward System for Photonic Quantum Computing Applications,” [arXiv:2606.03500](https://arxiv.org/abs/2606.03500), Jun. 2026. [P]
 [825] QuiX Quantum, “QuiX Quantum Installs Real-Time Control Component for Universal Photonic Quantum Computer,” Jun. 2, 2026. [Online]. Available: https://www.quixquantum.com/news/quix-quantum-installs-real-time-control-component-for-universal-photonic-quantum-computer [C]
-
-## פריטי אימות פתוחים
-השיוכים המוסדיים של arXiv:2606.03500 אינם מופיעים בדף התמצית הזמין; רשימת המחברים מצביעה על הקבוצה ב-DTU, אך הדבר לא אושר. שלושת נתוני ההשהיה של 2026 יושבים במישורי ייחוס שונים, ושום מקור אינו מיישב ביניהם. ההשוואה בין השהיה על השבב, 27 dB, לבין השהיה בסיב, 4 mdB, נגזרת כאן מנתוני הפסד שפורסמו ולא נמדדה. אין עלות פומבית למאפנן או לערוץ הזנה קדימה.

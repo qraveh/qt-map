@@ -45,6 +45,8 @@ Borealis מכוונת כל מפצל אלומה בלולאה לכל משבצת ז
 ## ראיות — כיצד נמדדו המספרים
 אין שער שאפשר למדוד את ביצועיו; הדגימות מושוות להתפלגות האידיאלית, ואמות המידה שבהן נעשה שימוש — מתאמים מסדר נמוך, מרחקי התפלגויות שוליות — הושגו או נעקפו בדוגמים קלאסיים [S][461], [463]. תא ה-✅ של Borealis ותא ה-✅ של Jiuzhang 4.0 עומדים מול המאמרים שלהם, השני עם תיקון המסנן שתואר לעיל. PT-2 נשאר 🔎: דף הראיות שלו אינו נותן ארכיטקטורה [C][465]. התיאור היחיד שנמצא הוא של צד שלישי — מערך של לולאות השהיה בסיב עם מפצלי אלומה משתנים, המסוגל להפעיל שתי לולאות, בעוד המאמר ההוא מציב את המשטר הקשה קלאסית בשלוש, והדוגם מצבים סחוטים שמהם הופחת פוטון, עם גלאי PNR [P][271] — לא הפוטונים הבודדים שהמרשם רושם. מחקר על PT-1 ש-ORCA שותפה לכתיבתו השתמש בקו השהיה אחד [D][466].
 
+ההודעה של ORCA מ-2025-06-11 מכנה את המערכת ב-NQCC רק "PT Series"; דף ה-PT-2 מונה את סביבת הניסוי של NQCC כהצבה מ-2025. נכון ל-2026-09-26 לא הופיעה הפרכה קלאסית של Jiuzhang 4.0. לא פורסם: מצב הקלט של PT-2 באף מקור ראשוני של ORCA.
+
 ## שחקנים וכלכלה
 **מי.**
 
@@ -99,9 +101,3 @@ Borealis מכוונת כל מפצל אלומה בלולאה לכל משבצת ז
 [469] ORCA Computing, “ORCA Computing Delivers First Photonic Quantum Computing System to UK's National Quantum Computing Centre,” Jun. 11, 2025. [Online]. Available: https://orcacomputing.com/installation-marks-key-milestone-in-the-uks-121m-quantum-initiative-advancing-practical-quantum-research/ [C]
 [470] Tech Journal UK, “ORCA aims to beat classical computers with PT-3 quantum system,” Jul. 1, 2026. [Online]. Available: https://www.techjournal.uk/p/orca-aims-to-beat-classical-computers [R]
 [889] B. Seron, H. Thomas, E. Araujo, A. Arkhipov, C. Oh, and L. Novo, “Efficient classical algorithm for estimating linear statistics of Boson Sampling,” [arXiv:2609.35447](https://arxiv.org/abs/2609.35447), Sep. 2026. [P]
-
-## פריטי אימות פתוחים
-- דפי התמצית ב-arXiv של 2605.30935 ושל 2109.11525 לא נטענו ב-2026-09-26; החודשים נלקחו מהמזהים, והכותרות והמחברים מגרסת ה-HTML של הטקסט המלא.
-- דגם המערכת ב-NQCC: ההודעה של ORCA מ-2025-06-11 אומרת רק "PT Series"; דף ה-PT-2 מציין את סביבת הניסוי של NQCC כהצבה מ-2025 (נבדק 2026-09-26).
-- מצב הקלט של PT-2: "מצבים סחוטים שמהם הופחת פוטון" של הצד השלישי סותר את "פוטונים בודדים (SPDC)" שבמרשם; אף מקור ראשוני של ORCA אינו מכריע בכך (חיפוש מ-2026-09-26).
-- בחיפוש ב-2026-09-26 לא נמצאה הפרכה קלאסית של Jiuzhang 4.0; ייתכן שקיים קדם-פרסום שאינו מאונדקס.

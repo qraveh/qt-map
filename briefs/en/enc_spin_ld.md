@@ -26,6 +26,8 @@ The computational space is the whole two-level system: nothing leaks out, so eve
 
 Dominant term: calibration drift across the array; no device above 12 qubits publishes all-pairs fidelities.
 
+The 99.90% donor nuclear-spin CZ fidelity cannot be isolated in the SQC abstract, whose published range is 99.10–99.99%. Intel's "scale to hundreds of dots" carries no date or milestone.
+
 ## Manufacturing, materials & supply chain
 The encoding adds no structure — one dot or donor per qubit, about a third of the dots an exchange-only qubit needs — and inherits the carrier's process: Intel's 300 mm EUV line at >24,000 devices per wafer [D][199] and 96% tune-up yield on 232 devices of one wafer [D][766], plus 22FDX, FD-SOI and imec 300 mm. The burden it imposes is control: one resonant drive per qubit frequency, so at 10³ qubits the wall is frequency crowding and microwave power at millikelvin, at 10⁴–10⁶ the count of addressable tones.
 
@@ -63,6 +65,3 @@ Confirm or demote in 12–24 months: all-pairs fidelities above 12 qubits; baseb
 [766] S. F. Neyens *et al.*, “Probing single electrons across 300-mm spin qubit wafers,” *Nature*, vol. 629, no. 8010, pp. 80–85, May 2024, doi: [10.1038/s41586-024-07275-6](https://doi.org/10.1038/s41586-024-07275-6). [D]
 [819] D. Loss and D. P. DiVincenzo, “Quantum computation with quantum dots,” *Phys. Rev. A*, vol. 57, no. 1, pp. 120–126, Jan. 1998, doi: [10.1103/PhysRevA.57.120](https://doi.org/10.1103/PhysRevA.57.120). [D]
 [820] F. K. Unseld *et al.*, “Baseband control of single-electron silicon spin qubits in two dimensions,” *Nat. Commun.*, vol. 16, no. 1, Art. no. 5605, Jul. 2025, doi: [10.1038/s41467-025-60351-x](https://doi.org/10.1038/s41467-025-60351-x). [D]
-
-## Open verification items
-The "99.90% donor nuclear CZ" quoted in the main report is not isolable in the SQC abstract and conflicts with the published range 99.10–99.99%. Intel's "scale to hundreds of dots" statement carries no date or milestone.

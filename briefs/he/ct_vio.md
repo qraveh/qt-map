@@ -47,6 +47,8 @@ TSV = מעבר דרך הצורן (through-silicon via); MXC = תא הערבוב,
 ## ראיות — כיצד נמדדו המספרים
 הפרעה הדדית בין קווים קיימת רק כמטריצת הבררנות של OQC לארבעה קיוביטים [D][538]; RIKEN, Fujitsu ו-QuantWare אינן מפרסמות נתון כזה במקורות שנפתחו, נכון ל-2026-09-26. המארז של OQC הוא מערך הנתונים היחיד עם קיוביטים רבים: חציון T1, T2e ~100 µs על פני ~100 קיוביטים, נאמנות קריאה של 97.5% וטמפרטורת קיוביט של 36 mK על פני 54 [D][311]. חסרים: בחינות ביצועים בו-זמניים על פני >100 קווים; שיעור תקינות המגעים לאורך מחזורי חימום וקירור.
 
+לא פורסם: האם האותות בדור Eagle של IBM נכנסים דרך פני השבב; אופן הולכת האותות ב-Rigetti Ankaa; נתוני העכבה, התפוקה ועומס החום של VIO אצל QuantWare, ואיזה מעבד נושא את "VIO 1K"; ועבור המארז של OQC עם שיתוף פי תשעה על פני 56 תאים — מספר הקווים הנכנסים למארז והאם הקיוביטים שלו מצומדים.
+
 ## שחקנים וכלכלה
 **מי.**
 
@@ -98,10 +100,3 @@ TSV = מעבר דרך הצורן (through-silicon via); MXC = תא הערבוב,
 [545] QuantWare, “D-line QPUs — Build bigger, scale faster.” [Online]. Available: https://quantware.com/product/processors/d-line [C]
 [546] M. Swayne, “How Fujitsu Is Tackling a 10,000-Qubit Quantum Computer for Practical Applications,” The Quantum Insider, Dec. 8, 2025. [Online]. Available: https://thequantuminsider.com/2025/12/08/how-fujitsu-is-tackling-a-10000-qubit-quantum-computer-for-practical-applications/ [P]
 [547] QuantWare, “QuantWare Raises $178 Million to Build World’s Most Powerful Quantum Processors at an Industrial Scale,” May 5, 2026. [Online]. Available: https://quantware.com/news/quantware-raises-178-million [C]
-
-## פריטי אימות פתוחים
-- arXiv:2407.02769, שנקוב בבקשת התקציר כ-Tamate et al. 2024, הוא מאמר לא קשור על סיווג תמונות (נבדק ב-2026-09-26); הסקירה של RIKEN היא של Tamate, Tabuchi ו-Nakamura, IEICE Trans. Electron. E105.C (2022), שהטקסט המלא שלה היה חסום, ולכן אף נתון ממנה אינו בשימוש.
-- Crossref, Europe PMC, OpenAlex ו-Semantic Scholar החזירו HTTP 429 ב-2026-09-26; הרשומות של Béjanin ושל Yost נושאות את השנה בלבד.
-- הפוסט של IBM שנפתח אינו אומר אם האותות בדור Eagle נכנסים דרך פני השבב, והמרשם אינו מונה אף מכונת IBM הנושאת את הטכנולוגיה; הולכת האותות של Rigetti Ankaa וכל עבודה של imec על הולכה אנכית לא נמצאו (2026-09-26).
-- QuantWare אינה מפרסמת נתוני הפרעה הדדית, עכבה, שיעור תקינות או עומס חום עבור VIO, ואינה אומרת איזה מעבד נושא את "VIO 1K" (2026-09-26).
-- השיתוף בין תשעה קיוביטים של OQC (56 תאים) לקוח מהטקסט המלא שלו ב-HTML; מספר הקווים הנכנסים למארז, והשאלה אם הקיוביטים בו מצומדים, אינם מצוינים (2026-09-26).

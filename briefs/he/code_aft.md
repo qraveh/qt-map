@@ -44,6 +44,8 @@ updated: 2026-09-04
 ## ראיות — כיצד נמדדו המספרים
 שערים טרנסוורסליים ו-96 קיוביטים לוגיים פעילים הם מדידות חומרה [D][4]; ההפחתה של >10× היא משפט ועוד סימולציה [D][152], שלא שוחזרו מחוץ לקבוצת המחברים. שתי הערכות המשאבים נבדלות בשלושה סדרי גודל במרחב — עקומת תמורה, לא סתירה: 19 M אטומים קונים RSA-2048 ב-5.6 ימים [S][31], בעוד 10,000–26,000 אטומים קונים P-256 בימים ו-RSA-2048 איטי בסדר גודל אחד או שניים [S][30]; "RSA-2048 עם 10,000 אטומים" הוא מה שאף אחד מהמאמרים אינו אומר. הראיה הנגדית החדה ביותר היא הקוד הטורי של Atom Computing ו-Microsoft: Λ_Z ≈ 1.9 אך Λ_X ≈ 1.2, ממוצע 1.30 על פני ארבעה מחזורים, ועם טעינה מחדש לאורך 90 סבבים הדיכוי נעלם (0.63% לעומת 0.64% למחזור) [D][148]. אטומים לא הראו זיכרון מתמשך מתחת לסף, וסבילות לתקלות במספר סבבים קבוע היא טענה על אלגוריתמים ארוכים.
 
+לא פורסם: מערך הנחות משותף (שיעור שגיאה פיזיקלי, מרחק קוד, מודל מפענח) להערכות של 19 מיליון אטומים / 5.6 ימים ו-10,000 אטומים, וזמן השהיה של מפענח מתואם בזמן אמת מעל כ-10² קיוביטים לוגיים. ההפחתה של יותר מפי 10 במרחב-זמן לא שוחזרה מחוץ לקבוצת המחברים החופפת של Harvard/QuEra/Caltech.
+
 ## שחקנים וכלכלה
 **מי.**
 | ארגון | תפקיד | מדינה | מה הם עושים כאן | ראיות |
@@ -84,9 +86,3 @@ updated: 2026-09-04
 [300] National Institute of Standards and Technology, “Department of Commerce Announces Letters of Intent With 9 Companies for $2 Billion to Accelerate U.S. Leadership in Quantum Computing,” NIST News, May 21, 2026. [Online]. Available: https://www.nist.gov/news-events/news/2026/05/department-commerce-announces-letters-intent-9-companies-2-billion [G]
 [324] S. Caldwell *et al.*, “NVIDIA NVQLink Architecture Integrates Accelerated Computing with Quantum Processors,” NVIDIA Technical Blog, Nov. 17, 2025. [Online]. Available: https://developer.nvidia.com/blog/nvidia-nvqlink-architecture-integrates-accelerated-computing-with-quantum-processors/ [C]
 [667] A. Paetznick *et al.*, “Improved quantum processor logical error rates via correction and detection,” *Nature*, vol. 654, no. 8118, pp. 349–355, Jun. 2026, doi: [10.1038/s41586-026-10628-y](https://doi.org/10.1038/s41586-026-10628-y). [D]
-
-## פריטי אימות פתוחים
-- שיעור השגיאה הפיזי, מרחק הקוד ומודל המפענח שמאחורי ההערכות של 19 M אטומים / 5.6 ימים ושל 10,000 אטומים אינם באף אחת משתי התמציות; השתיים לא יושבו מול מערכת הנחות משותפת.
-- לא קיים שחזור עצמאי של ההפחתה של >10× במרחב-זמן מחוץ לקבוצת המחברים החופפת של Harvard/QuEra/Caltech.
-- אין נתון השהיה שפורסם למפענח מתואם בזמן אמת מעל כ-10² קיוביטים לוגיים; ההתרחבות מעבר לכך אינה מאומתת.
-- שנת הכותרת ברשומת הגרף (2025) היא שנת הפרסום ב-Nature; הקדם-פרסום הוא מ-2024-06-25. שתיהן נשמרות ולא מיושבות.

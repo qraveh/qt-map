@@ -62,6 +62,8 @@ The node sits on the architecture "Trapped ions — electronic qubit control (la
 
 The headline 8.4(7)×10⁻⁵ comes from subspace-leakage randomised benchmarking at Doppler temperature, not from tomography or interleaved RB against an independent reference [D][102]. Two-qubit RB twirls coherent errors into an effective depolarising rate, understating the coherent residual, and says nothing about crosstalk to spectator ions — the term that will decide performance at scale. No independent group has replicated the electronic gate above 99.9%: the 2016 Oxford [D][445] and 2011 NIST [D][444] results are the only non-Oxford-Ionics near-field microwave gates on record, and neither eleQtron nor Universal Quantum has published a comparable fidelity as of 3 Sep 2026. The company line "99.99% two-qubit gate fidelity" [C][446] rounds the preprint's 1 − 8.4(7)×10⁻⁵ — consistent, but with no error bar and no width.
 
+The 225.8 µs gate duration of the 2025 record is not stated in the abstract of arXiv:2510.17286. Not published: a patent family or patent count for Oxford Ionics / IonQ Electronic Qubit Control; any delivery or milestone under Universal Quantum's €67 M DLR contract (four-year term from 2022-11) as of 2026-09-03; eleQtron's ion species, qubit count, fidelity and gate time, MAGIC being described only qualitatively; the value of the Innovate UK / DSIT Quantum Missions Pilot award to Oxford Ionics; and any crosstalk, heating-rate or on-chip dissipation figure for an electronic-gate trap chip.
+
 ## Actors & economics
 
 **Who.**
@@ -126,12 +128,3 @@ Open questions: does the microwave gradient survive dense 2D routing without una
 [446] IonQ, “IonQ Achieves Landmark Result, Setting New World Record in Quantum Computing Performance,” Oct. 21, 2025. [Online]. Available: https://www.ionq.com/news/ionq-achieves-landmark-result-setting-new-world-record-in-quantum-computing [C]
 [447] D. Finke, “eleQtron Secures €57 Million ($61.5M USD) Series A to Scale MAGIC Trapped-Ion Platform,” Quantum Computing Report, May 5, 2026. [Online]. Available: https://quantumcomputingreport.com/eleqtron-secures-e57-million-61-5m-usd-series-a-to-scale-ion-trap-systems/ [P]
 [448] Oxford Ionics, “Oxford Ionics selected for Quantum Missions Pilot to upgrade NQCC testbed with advanced 2D ion traps,” Mar. 11, 2025. [Online]. Available: https://www.oxionics.com/announcements/oxford-ionics-selected-for-quantum-missions-pilot-to-upgrade-nqcc-testbed-with-advanced-2d-ion-traps/ [C]
-
-## Open verification items
-- Gate duration for the 2025 record (225.8 µs) is not stated in the abstract of arXiv:2510.17286 and could not be confirmed in the retrievable text; unverified.
-- Ion species and trap zone count for arXiv:2510.17286 not stated in the retrievable text (the 2024 predecessor uses a seven-zone chip).
-- No patent family number or database-sourced patent count for Oxford Ionics / IonQ Electronic Qubit Control: patents.google.com assignee search is blocked by robots.txt.
-- Universal Quantum's €67 M DLR contract (four-year term from 2022-11) has no published delivery or milestone confirmation as of 2026-09-03.
-- eleQtron publishes no ion species, qubit count, fidelity or gate time; MAGIC is described only qualitatively.
-- Value of the Innovate UK / DSIT Quantum Missions Pilot award to Oxford Ionics is undisclosed.
-- No crosstalk, heating-rate or on-chip dissipation figure has been published for any electronic-gate trap chip.

@@ -70,6 +70,8 @@ Conflicts: IBM's 23 mW per qubit [D][296] against 5 mW and under 2 mW [S][550] a
 
 On HRL's 54-dot exchange-only chip run by its 4 K CMOS controller, the measured error per exchange in a 12-spin cross-entropy benchmark (1.54×10⁻⁴) was more than ten times what component-level noise predicts (1.15×10⁻⁵) and mostly coherent; the authors suspect the cryo-controller and the signal lines. The controller's memory holds only about 1,000 unique pulse instructions once state preparation and measurement are loaded, so deep sequences had to be built from recursive subroutines [P][900].
 
+Gooseberry's 18 nW per cell [D][549] and the Sydney chip's ~20 nW MHz⁻¹ per cell [D][551] are different quantities. The cooling powers of the Bluefors XLD1000sl, IBM Goldeneye and Fermilab Colossus come from the resource review [S][550], not from the makers' specifications. IBM's 2026 cryo-CMOS flux result, including its 14 nm FinFET attribution, exists only as conference abstracts as of 2026-09-03 [C][527]. SEEQC's S-1 amendment of 2026-08-28 gives $4.2 M revenue in 2025 and $18.1 M cash at 2026-06-30 [C][556] [P][557] [G:SEEQC-S1A-2026-08]; the $1 B enterprise value and $65 M PIPE describe the terminated Allegro merger. Quantum Machines' ">50% of companies developing quantum computers" is a company claim [C][528]. Not published: the cooling power at 4 K of IBM's modular cryogenics; SemiQon's process node, fab location and the size of its 2026-07 PostScriptum investment; SEEQC's offering size; the revenue of Quantum Machines and any comparable figure from Zurich Instruments, Keysight or QBLOX, so the warm-control market cannot be sized; the power, channel count and process node of the QuTech/Fujitsu diamond cryo-CMOS ISSCC 2026 paper beyond its institutional release [C][554]; a dated cryo-CMOS patent-family count — PatSnap gives only regional tallies with a completeness disclaimer [P][563]; and HRL's controller cost, tape-out schedule and whether IBM retains the 130 nm design, after the acquisition that closed on 2026-08-26 [C][10] [G:IBM-HRL-CLOSED-2026-08].
+
 ## Actors & economics
 
 **Who.**
@@ -137,17 +139,3 @@ Open questions: (1) a defensible power-per-qubit definition? (2) will a foundry 
 [563] PatSnap, “Cryogenic CMOS Circuit Technology Landscape 2026,” Apr. 20, 2026. [Online]. Available: https://www.patsnap.com/resources/blog/articles/cryo-cmos-technology-landscape-2026/ [P]
 [564] C. Nayak, “Full stack ahead: Pioneering quantum hardware allows for controlling up to thousands of qubits at cryogenic temperatures,” Microsoft Research Blog, Jan. 27, 2021. [Online]. Available: https://www.microsoft.com/en-us/research/blog/full-stack-ahead-pioneering-quantum-hardware-allows-for-controlling-up-to-thousands-of-qubits-at-cryogenic-temperatures/ [C]
 [900] HRL Quantum Team and Microsoft collaborators, “Benchmarking exchange-only control of a 48-spin singlet manifold,” [arXiv:2610.07393](https://arxiv.org/abs/2610.07393), Oct. 2026. [P]
-
-## Open verification items
-
-- Power per qubit at 4 K: IBM's measured 23 mW under active control [D][296] against "optimistic 5 mW" and "below 2 mW" in the resource review [S][550]; definitions differ (active vs idle, drive-only vs full chain) and none is published. 23 mW used.
-- Gooseberry's 18 nW per cell [D][549] and the Sydney chip's ~20 nW MHz⁻¹ per cell [D][551] are quoted interchangeably in secondary sources; different quantities, not reconciled.
-- Cooling powers for the Bluefors XLD1000sl, IBM Goldeneye and Fermilab Colossus come from the resource review [S][550]; the Bluefors XLD product page returned HTTP 404 on 2026-09-03 and the primary specification is unconfirmed.
-- IBM's 2026 cryo-CMOS flux result exists only as conference abstracts [C][527]; no preprint or paper as of 2026-09-03, and the 14 nm FinFET attribution rests on the abstract text. IBM's modular-cryogenics blog (2026-08) gives cell wiring area and vacuum volume but no cooling power at 4 K.
-- Equal1's 99.9% / 99.3% / 99% fidelities and "35 monolithic quantum cells" are product-page claims [C][273] with no paper or dated release.
-- SemiQon's process node, fab location and the size of its 2026-07 PostScriptum investment are undisclosed.
-- SEEQC's revenue and cash appear in its S-1 filings, not in the filing announcement or the trade-press summary [C][556] [P][557]: $4.2 M revenue in 2025 and $18.1 M cash at 2026-06-30 (S-1 amendment of 2026-08-28) [G:SEEQC-S1A-2026-08]; the offering size is still blank, and the $1 B enterprise value and $65 M PIPE describe the terminated Allegro merger.
-- Quantum Machines' revenue is undisclosed and its ">50% of companies developing quantum computers" customer share is a company claim [C][528]; Zurich Instruments, Keysight and QBLOX publish nothing comparable, so the warm-control market this node would displace cannot be sized.
-- The QuTech/Fujitsu diamond cryo-CMOS ISSCC 2026 paper's power, channel count and process node were not obtainable; only the institutional release [C][554].
-- Cryo-CMOS patent-family counts: no named database publishes a dated count; PatSnap gives only regional "key result" tallies with a completeness disclaimer [P][563].
-- HRL's controller cost, tape-out schedule and whether IBM retains the 130 nm design are unstated in the acquisition release [C][10]; the acquisition closed on 2026-08-26 [G:IBM-HRL-CLOSED-2026-08].

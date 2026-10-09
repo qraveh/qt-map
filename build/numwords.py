@@ -38,6 +38,15 @@ def ru_form(n, forms):
     return forms[2]
 
 
+RU_GEN = {1: 'одной', 2: 'двух', 3: 'трёх', 4: 'четырёх', 5: 'пяти', 6: 'шести', 7: 'семи', 8: 'восьми', 9: 'девяти', 10: 'десяти',
+          11: 'одиннадцати', 12: 'двенадцати'}
+
+
+def ru_gen(n):
+    """the Russian numeral in the genitive, for «из шести гипотез» (feminine for one); digits above twelve"""
+    return RU_GEN.get(n, digits('ru', n))
+
+
 def word(lang, n, gender='m'):
     """the bare number: a word up to twenty (Hebrew: in the noun's gender), digits above; 'no'/'ноль'/'0' for zero"""
     if lang == 'en': return EN.get(n, digits(lang, n))

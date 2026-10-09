@@ -29,6 +29,8 @@ updated: 2026-09-30
 
 המגבלה השולטת: אין אישור מקובל לכך שהפלט האנלוגי תואם את ההמילטוניאן.
 
+המימון המצטבר של QuEra (">$250 M") ורשימת המשקיעים המלאה יותר שלה (Valor Equity, Rakuten, Commonwealth of Massachusetts) מופיעים רק בדיווחים משניים; ההודעה הראשונית מ-2025-09-09 נוקבת ב-Google, ב-SoftBank Vision Fund 2 וב-NVentures. ההכנסות של Pasqal ב-2025, €16.5 M, באות מהעיתונות המקצועית, לא מדוח רשמי. לא פורסם: תאריך רכישת Aeponyx על ידי Pasqal, באף מקור ראשוני, ומבחן קלאסי נוסף ל-"most frustrated instances" של D-Wave מעבר ל-Tindall ול-Mauron/Carleo.
+
 ## ייצור, חומרים ושרשרת האספקה
 שתי שרשראות אספקה נושאות מנגנון אחד: ליתוגרפיה של מוליכי-על מסוג Nb/Al (D-Wave), ומערכות מלקחיים אופטיים של ואקום, לייזרים ו-AOM (QuEra, Pasqal). עומסי הקלט-פלט גדלים בכיוונים הפוכים: מחשבי הרפיה בשטף מעבירים הכול דרך שלב mK אחד, ב-DAC בריבוב על השבב, ואילו מכונות מלקחיים אופטיים מוסיפות הספק לייזר, מסיטים ודימות לכל אטום — השולחן האופטי הוא האילוץ. Pasqal החלה להחליף אופטיקה נפחית במעגל פוטוני משולב של ניטריד צורן: ארבע מלכודות משבב אחד, זמן חיים של אטום ~27.5 s [C][G:PASQAL-PIC-2026-08]. אף כלל יצוא אינו מזכיר התפתחות אנלוגית: החשיפה עוברת בירושה מהנושא — ECCN 4A906 ו-3A904 לקו השטף, ודבר לאופטיקת המלקחיים.
 
@@ -68,6 +70,3 @@ updated: 2026-09-30
 [225] T. I. Andersen *et al.*, “Thermalization and criticality on an analogue–digital quantum simulator,” *Nature*, vol. 638, no. 8049, pp. 79–85, Feb. 2025, doi: [10.1038/s41586-024-08460-3](https://doi.org/10.1038/s41586-024-08460-3). [D]
 [226] D. González-Cuadra *et al.*, “Observation of string breaking on a (2 + 1)D Rydberg quantum simulator,” *Nature*, vol. 642, no. 8067, pp. 321–326, Jun. 2025, doi: [10.1038/s41586-025-09051-6](https://doi.org/10.1038/s41586-025-09051-6). [D]
 [227] R. Haghshenas *et al.*, “Digital quantum magnetism on a trapped-ion quantum computer,” *Nature*, vol. 653, pp. 56–62, 2026, doi: [10.1038/s41586-026-10445-3](https://doi.org/10.1038/s41586-026-10445-3). [arXiv:2503.20870](https://arxiv.org/abs/2503.20870). [D]
-
-## פריטי אימות פתוחים
-המימון המצטבר של QuEra (">$250 M") ורשימת המשקיעים המלאה יותר (Valor Equity, Rakuten, Commonwealth of Massachusetts) מופיעים רק בדיווח משני; המקור הראשוני, ההודעה מ-2025-09-09, מזכיר את Google, SoftBank Vision Fund 2 ו-NVentures. ההכנסות של Pasqal ל-2025, €16.5 M, מקורן בעיתונות המקצועית, לא בדוח שהוגש. לא נמצא מקור ראשוני לתאריך המדויק של רכישת Aeponyx בידי Pasqal. האם "המופעים המתוסכלים ביותר" של D-Wave ישרדו סבב קלאסי נוסף מעבר ל-Tindall ול-Mauron/Carleo.

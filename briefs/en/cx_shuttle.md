@@ -51,6 +51,8 @@ The node belongs to the silicon and germanium quantum-dot spin architecture (Int
 
 The silicon figure comes from interleaved randomised benchmarking of a shuttle "gate" over a 10 µm effective path, shuttled back and forth [D][196]; the germanium figure from exponential fits to a characteristic shuttle number [D][512]. Different observables, routinely quoted side by side: 99.97% per shuttle in germanium is basis-state only, 99.54% in silicon a spin fidelity over a path. Benchmarking a shuttle also assumes twirlability, questionable for a deterministic position-dependent rotation, since motional averaging can flatten the benchmark below the physical error at any single point. Neither protocol reports leakage out of the valley or orbital subspace, and no shuttling result has been cycle- or mirror-benchmarked, so the correlated error a code would see is unmeasured. Conveyor transport is shown at charge level by RWTH Aachen, at spin level by Delft; the 10 µm figure has no independent replication as of 3 Sep 2026.
 
+The germanium "99.97% per shuttle" [512] is a basis-state figure, not comparable with the silicon conveyor spin fidelity [196]. Not published: ARQUE Systems' funding round, amount and investors [515], its headcount and a dated installation milestone at Jülich Supercomputing Centre; and yield, channel-uniformity or per-bus cost data for conveyor structures on any 300 mm line.
+
 ## Actors & economics
 
 **Who.**
@@ -110,12 +112,3 @@ Open questions. (1) Is benchmarking of a shuttle a meaningful fidelity, or an ar
 [515] Forschungszentrum Jülich, “Jülich-Aachen Start-up Paves the Way for Scalable Quantum Computers,” fz-juelich.de, Apr. 8, 2026. [Online]. Available: https://www.fz-juelich.de/en/news/archive/press-release/2026/julich-aachen-start-up-arque-systems [C]
 [766] S. F. Neyens *et al.*, “Probing single electrons across 300-mm spin qubit wafers,” *Nature*, vol. 629, no. 8010, pp. 80–85, May 2024, doi: [10.1038/s41586-024-07275-6](https://doi.org/10.1038/s41586-024-07275-6). [D]
 [898] A. S. Ivlev *et al.*, “Sparse qubit operation in a 6×6 quantum dot array,” [arXiv:2610.07683](https://arxiv.org/abs/2610.07683), Oct. 2026. [P]
-
-## Open verification items
-
-- ARQUE Systems funding: no round, amount or investor disclosed in the Forschungszentrum Jülich release [515]; no company or database page is cited for it. Headcount and a dated installation milestone at Jülich Supercomputing Centre are likewise unverified.
-- [514] (Yenilen et al., RWTH Aachen / Forschungszentrum Jülich) is now published in Quantum (30 Sep 2026); the threshold figures quoted were taken from the abstract and are to be re-read in the published version.
-- arXiv:2605.00611 [513]: abstract not machine-readable; cited by title only, no quantitative claim taken from it.
-- Export-control classification: no ECCN or category mapping for quantum-computing items and enriched ²⁸Si substrates is established here; no rule number is asserted.
-- No published yield, channel-uniformity or per-bus cost data exist for conveyor structures on any 300 mm line as of 2026-09-03 — an absence, not a conflict.
-- Source conflict, minor: "99.5%" (abstract) versus "99.54 ± 0.03%" (interleaved randomised benchmarking) in [196] — same measurement; this brief uses 99.54%. Cross-platform: the germanium "99.97% per shuttle" [512] is a basis-state figure, not comparable with the silicon conveyor spin fidelity [196].

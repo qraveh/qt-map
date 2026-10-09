@@ -46,6 +46,8 @@ An alternate in slot 9 of "Transmon lattice with tunable couplers", "Bosonic cav
 ## Evidence — how the numbers were measured
 Coherence under a cap is shown at few-qubit scale [D][754][D][755]; stack gate data are small: CZ (98.66 ± 0.08)% [D][755], single-qubit fidelity to 99.9% under SFQ control [D][304]. Large carriers' benchmarks hide the package. Missing as of 2026-09-26: one design measured with and without a cap; gap maps across a >100-qubit die against frequency-targeting error; bump continuity over thermal cycles; a control figure for Zuchongzhi 3.0's T1 gain.
 
+Tianyan-287's abstract names no packaging, and Zuchongzhi 3.2's packaging is unconfirmed. Shih et al.'s T1 ≈ 32 µs assumes a 5 GHz qubit frequency, which the source does not give. Not published: bump yield or thermal-cycle failures for any carrier machine; the one bump count is the WACQT processor's 2,900, whose inter-chip gap was checked by electron microscopy but not reported [G:WACQT-FLIPCHIP-2024].
+
 ## Actors & economics
 **Who.**
 
@@ -93,11 +95,3 @@ Confirm if, by 2027-12-31, a carrier above 100 qubits publishes bump count, gap 
 [758] O. Dial, “Eagle's quantum performance progress,” IBM Quantum Computing Blog, Mar. 23, 2022. [Online]. Available: https://www.ibm.com/quantum/blog/eagle-quantum-processor-performance [C]
 [759] Academia Sinica, “Academia Sinica Unveils 20-Qubit Superconducting Quantum Computer: Manufacturing Capabilities Reach Global Top-Tier,” Jan. 29, 2026. [Online]. Available: https://www.sinica.edu.tw/en/news_content/55/3655 [C]
 [760] N. Pereira, “QpiAI Unveils Kaveri, India's First Aatmanirbhar 64-Qubit Quantum Chip,” Sify, Feb. 26, 2026. [Online]. Available: https://www.sify.com/science-tech/qpiai-unveils-kaveri-indias-first-aatmanirbhar-64-qubit-quantum-chip/ [P]
-
-## Open verification items
-- Tianyan-287: the arXiv full text returned HTTP 429 on 2026-09-26; the abstract names no packaging, so the cell rests on "Zuchongzhi 3.0-like" only.
-- Zuchongzhi 3.2 (PRL, doi:10.1103/rqkg-dw31): APS returned 403 and PubMed no text on 2026-09-26; its packaging is unconfirmed.
-- Liu et al.: the PRX Quantum page returned 403 on 2026-09-26; figures are from the arXiv abstract (arXiv:2301.05696); affiliations not confirmed.
-- Shih et al. (arXiv:2608.07306): read on a mirror that gives no affiliations or qubit frequency; T1 ≈ 32 µs assumes 5 GHz.
-- Sycamore's SI Fig. S1 and Ocelot's substrates were not opened (2026-09-26); only the main-text bump sentence and App. A die description are used.
-- No source gives bump yield or thermal-cycle failures for any register carrier; the one bump count is the WACQT processor's 2,900, whose inter-chip gap was checked by electron microscopy but not reported [G:WACQT-FLIPCHIP-2024] (2026-09-30).

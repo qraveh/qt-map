@@ -43,6 +43,8 @@ The Readout slot of the Continuous-variable photonic — GKP architecture, besid
 ## Evidence — how the numbers were measured
 Receivers are qualified by shot-noise linearity, clearance and squeezed-light efficiency calibration; systems by nullifier variances below the −3 dB entanglement bound — all 1,500 of DTU's were [D][636]. Such figures include detection, like the uncorrected 5.2 dB at 43 GHz [D][640]; loss-corrected squeezing and GKP effective squeezing — 0.62 dB for Xanadu's integrated source in the Atlas's record [D][174] — are other quantities. Thresholds depend on architecture: static linear optics needs 10.1 dB with all modes GKP, 13.6 dB with one per macronode, lossless [S][637]. As of 2026-09-26 Aurora reports path losses but no per-channel efficiency, clearance or phase noise [D][173].
 
+The ~9.75 dB target has no primary source; Tzitrin et al. give 10.1 dB, 13.6 dB or ~10 dB depending on architecture. DTU's 2019 arXiv text gives its homodyne efficiency only by reference to earlier work. Not published: Aurora's homodyne bandwidth and feed-forward latency.
+
 ## Actors & economics
 **Who.**
 
@@ -82,11 +84,3 @@ Open questions. (1) Aurora's per-channel efficiency and clearance? (2) Can photo
 [640] A. Inoue *et al.*, “Toward a multi-core ultra-fast optical quantum processor: 43-GHz bandwidth real-time amplitude measurement of 5-dB squeezed light using modularized optical parametric amplifier with 5G technology,” *Appl. Phys. Lett.*, vol. 122, Art. no. 104001, 2023, doi: [10.1063/5.0137641](https://doi.org/10.1063/5.0137641). [arXiv:2205.14061](https://arxiv.org/abs/2205.14061). [D]
 [641] H. Chen *et al.*, “Heterogeneously Integrated Squeezed-Light Generation and Detection on a Single Photonic Chip,” [arXiv:2608.13218](https://arxiv.org/abs/2608.13218), Aug. 2026. [D]
 [642] Xanadu, “Xanadu Unveils 1st On-Chip Error-Resistant Photonic Qubit,” HPCwire, Jun. 5, 2025. [Online]. Available: https://www.hpcwire.com/off-the-wire/xanadu-unveils-1st-on-chip-error-resistant-photonic-qubit/ [P]
-
-## Open verification items
-- 2026-09-26: the integrated GKP source paper (doi:10.1038/s41586-025-09044-5) could not be opened — nature.com returned 502 twice, Europe PMC was rate-limited (429), PMC served a captcha; the 0.62 dB figure is carried from the Atlas's record, not re-read.
-- 2026-09-26: no primary source for the Atlas's ~9.75 dB requirement was found; Tzitrin et al. give 10.1 dB, 13.6 dB or ~10 dB depending on architecture.
-- 2026-09-26: Aurora's Nature article states no homodyne efficiency, bandwidth, clearance or feed-forward latency; the arXiv id 2403.15385 proposed for it belongs to an unrelated paper (LATTE3D), and the Nature page lists none.
-- 2026-09-26: DTU's 2019 homodyne efficiency is deferred in its arXiv text to earlier work; the Science full texts were not opened.
-- 2026-09-26: Bruynsteen et al. were read only through a SciSpace abstract page (Optica served a script challenge, ADS blocked by robots.txt, Crossref rate-limited); co-author names and the frequency at which the 28 dB clearance is quoted are unconfirmed.
-- The dossier's "since 2012" is not tied to a verified event; Vahlbruch et al. 2016 (15 dB, photodiode efficiency calibration) returned 403 and is not cited.

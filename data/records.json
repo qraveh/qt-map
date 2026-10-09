@@ -1320,6 +1320,54 @@
   "note": "The continuous 3,000-atom system reports a comparable 99.5% imaging survival."
  },
  {
+  "node": "ro_img",
+  "key": "spam",
+  "num": 0.009,
+  "unit": "fraction",
+  "text": "Cavity MCM, 87Rb: 40 us windows (9.5 us mean bright detection); infidelity 0.9(+0.4/-0.3)% bright, 0.2(+0.4/-0.2)% dark",
+  "scope": "typical",
+  "date": "2026-06",
+  "url": "https://arxiv.org/html/2606.24869",
+  "tag": "D",
+  "note": "Qubit-state-resolved, unlike the 17.6 us Yb imaging record."
+ },
+ {
+  "node": "ro_img",
+  "key": "spam",
+  "num": 0.0011,
+  "unit": "fraction",
+  "text": "Kyoto fast imaging of neutral 174Yb: 17.6 us exposure (1000 pulses), discrimination fidelity 99.89(5)%",
+  "scope": "best",
+  "date": "2026-05",
+  "url": "https://arxiv.org/html/2605.24175",
+  "tag": "D",
+  "note": "174Yb is spinless: this resolves occupancy, not qubit state, so it is not an atom-qubit SPAM figure."
+ },
+ {
+  "node": "ro_img",
+  "key": "qnd",
+  "num": 0.92,
+  "unit": "fraction",
+  "text": "Cavity MCM, 87Rb: adaptive gating 'decreases the atom loss rate from 95% to an average of 8%'; 45 us measure-and-feedforward cycle",
+  "scope": "typical",
+  "date": "2026-06",
+  "url": "https://arxiv.org/html/2606.24869",
+  "tag": "D",
+  "note": "Survival far below camera imaging (99.76%): speed is bought with loss."
+ },
+ {
+  "node": "ro_img",
+  "key": "qnd",
+  "num": 0.988,
+  "unit": "fraction",
+  "text": "Kyoto fast 174Yb imaging: survival probability 98.80(44)% after the 17.6 us image",
+  "scope": "best",
+  "date": "2026-05",
+  "url": "https://arxiv.org/html/2605.24175",
+  "tag": "D",
+  "note": "Matches the node's defines record; converted to a numeric fraction."
+ },
+ {
   "node": "ro_s2c",
   "key": "t_reset",
   "num": 1e-06,
@@ -1510,66 +1558,6 @@
   "url": "https://arxiv.org/html/2604.16292v1",
   "tag": "D",
   "note": "QND figure taken as 1 - measurement-induced dephasing per check inside the logical subspace."
- },
- {
-  "node": "ro_imgfast",
-  "key": "t_reset",
-  "num": null,
-  "unit": "s",
-  "text": "The 17.6 us fast-imaging demonstration reports no atom reload, reset or replenishment time",
-  "scope": "best",
-  "date": "2026-05",
-  "url": "https://arxiv.org/html/2605.24175",
-  "tag": "D",
-  "note": "Honest null; reload for atom arrays is 30-90 ms (see ro_img)."
- },
- {
-  "node": "ro_imgfast",
-  "key": "spam",
-  "num": 0.009,
-  "unit": "fraction",
-  "text": "Cavity MCM, 87Rb: 40 us windows (9.5 us mean bright detection); infidelity 0.9(+0.4/-0.3)% bright, 0.2(+0.4/-0.2)% dark",
-  "scope": "typical",
-  "date": "2026-06",
-  "url": "https://arxiv.org/html/2606.24869",
-  "tag": "D",
-  "note": "Qubit-state-resolved, unlike the 17.6 us Yb imaging record."
- },
- {
-  "node": "ro_imgfast",
-  "key": "spam",
-  "num": 0.0011,
-  "unit": "fraction",
-  "text": "Kyoto fast imaging of neutral 174Yb: 17.6 us exposure (1000 pulses), discrimination fidelity 99.89(5)%",
-  "scope": "best",
-  "date": "2026-05",
-  "url": "https://arxiv.org/html/2605.24175",
-  "tag": "D",
-  "note": "174Yb is spinless: this resolves occupancy, not qubit state, so it is not an atom-qubit SPAM figure."
- },
- {
-  "node": "ro_imgfast",
-  "key": "qnd",
-  "num": 0.92,
-  "unit": "fraction",
-  "text": "Cavity MCM, 87Rb: adaptive gating 'decreases the atom loss rate from 95% to an average of 8%'; 45 us measure-and-feedforward cycle",
-  "scope": "typical",
-  "date": "2026-06",
-  "url": "https://arxiv.org/html/2606.24869",
-  "tag": "D",
-  "note": "Survival far below camera imaging (99.76%): speed is bought with loss."
- },
- {
-  "node": "ro_imgfast",
-  "key": "qnd",
-  "num": 0.988,
-  "unit": "fraction",
-  "text": "Kyoto fast 174Yb imaging: survival probability 98.80(44)% after the 17.6 us image",
-  "scope": "best",
-  "date": "2026-05",
-  "url": "https://arxiv.org/html/2605.24175",
-  "tag": "D",
-  "note": "Matches the node's defines record; converted to a numeric fraction."
  },
  {
   "node": "ct_rt",

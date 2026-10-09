@@ -70,6 +70,8 @@ Not captured: survival (every headline fidelity is conditioned on "no erasure"; 
 
 Conflicts. D-Wave says its qubits detect "approximately 90% of errors" [C][94]; at gate level the fraction is 83–94% depending on whether the Pauli residual is the <0.1% bound or the 0.029% fit [D][84]. Atomic two-qubit conversion is 33–38% [D][141], [142] against the proposal's 98% [S][8]. The [[4,2,2]] gain from erasure information is 1.9(4)× in the 2025-06 arXiv text [D][142] but 3.6× as carried in the graph from the 2026-06 Nature Physics version [D][142]; the arXiv value is used pending the published text.
 
+Quantum Circuits' cumulative funding of ≈ $84 M to May 2024 is a trade-press figure [P][646]; the company's release states no total. Oregon's metastable-ion Bell fidelities read 98.61 → 99.16 % in abstract summaries and 98.56 → 99.14 % in the arXiv v1 full text, the values used here [D][393]. Not published: whether Quantum Circuits is the unnamed 18th DARPA QBI Stage A company — DARPA names 17 of 18 [G:QBI-STAGEA-2025-04]; the cost or energy per checked qubit, from any actor; a patent count for the Yale/Quantum Circuits dual-rail cavity families beyond two individual patents; AWS's spending on its dual-rail programme, and the grants attributable to this primitive behind the Princeton, Caltech, Yale, Oregon and SUSTech groups; and the atomic species of Google's neutral-atom track.
+
 ## Actors & economics
 
 **Who.**
@@ -145,15 +147,3 @@ Open questions: (1) does the 40× bias survive parallel checks on qubits sharing
 [646] M. Swayne, “Quantum Circuits Inc. Quietly Raises $26.5 Million,” The Quantum Insider, May 29, 2024. [Online]. Available: https://thequantuminsider.com/2024/05/29/quantum-circuits-inc-quietly-raises-26-5-million/ [P]
 [647] Quantum Circuits, Inc., “Quantum Circuits Secures More Than $60 Million in Series B Investment,” PR Newswire, Aug. 15, 2024. [Online]. Available: https://www.prnewswire.com/news-releases/quantum-circuits-secures-more-than-60-million-in-series-b-investment-302221428.html [C]
 [648] D-Wave Quantum Inc., “D-Wave Completes Acquisition of Quantum Circuits Inc., Creating World's Leading Quantum Computing Company,” Business Wire, Jan. 19, 2026. [Online]. Available: https://www.businesswire.com/news/home/20260119513563/en/D-Wave-Completes-Acquisition-of-Quantum-Circuits-Inc.-Creating-Worlds-Leading-Quantum-Computing-Company [C]
-
-## Open verification items
-
-- [[4,2,2]] erasure-information gain: 1.9(4)× in arXiv:2506.13724 v1 [D][142] versus 3.6× carried in the graph from the Nature Physics version [D][142]; the published main text could not be read (nature.com shows the abstract only; phys.org returned HTTP 429).
-- Quantum Circuits' 2017 Series A amount (reported $18 M, Canaan/Sequoia) not verified from a primary source; omitted.
-- Quantum Circuits' cumulative funding ≈ $84 M to May 2024 is a trade-press figure [P][646]; the company's release states no total.
-- Whether Quantum Circuits was the unnamed 18th DARPA QBI Stage A company: DARPA names 17 of 18 [G:QBI-STAGEA-2025-04]; unresolved.
-- Cost or energy per checked qubit: no actor publishes it.
-- Patent counts for the Yale/Quantum Circuits dual-rail cavity families: not available from a named database; two individual patents cited.
-- Oregon metastable-ion Bell fidelities: 98.61 → 99.16 % (abstract summaries) versus 98.56 → 99.14 % (arXiv v1 full text) [D][393]; the full text is used.
-- AWS's spending on its dual-rail programme and the grants behind the Princeton, Caltech, Yale, Oregon and SUSTech groups: undisclosed or not attributable to this primitive.
-- The atomic species of Google's neutral-atom track is not stated in accessible sources; not claimed.

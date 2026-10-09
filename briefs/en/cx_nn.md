@@ -42,6 +42,8 @@ It underlies the transmon architecture (IBM, Google, Rigetti, IQM, Fujitsu), the
 ## Evidence — how the numbers were measured
 Crosstalk and coupler figures come from randomised or cross-entropy benchmarking on pairs or small subsets. The 5.5×10⁻⁴ CZ crosstalk is a fitted component of Google's device-wide error budget, not an independent measurement; no vendor publishes full-lattice simultaneous crosstalk. Error per layered gate is the only full-width metric in fleet use and only IBM reports it, so cross-vendor comparison of the lattice tax is impossible today. Rigetti's 99.5%→99.1% median drop across its 36→108-qubit tiling is unattributed [C][36].
 
+The PatSnap patent counts come from secondary sources.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What exactly they do | Evidence |
@@ -88,6 +90,3 @@ Confirm or demote within 12–24 months: does Kookaburra ship a qLDPC memory on 
 [476] C. Chamberland, G. Zhu, T. J. Yoder, J. B. Hertzberg, and A. W. Cross, “Topological and subsystem codes on low-degree graphs with flag qubits,” [arXiv:1907.09528](https://arxiv.org/abs/1907.09528), Jul. 2019. [S]
 [766] S. F. Neyens *et al.*, “Probing single electrons across 300-mm spin qubit wafers,” *Nature*, vol. 629, no. 8010, pp. 80–85, May 2024, doi: [10.1038/s41586-024-07275-6](https://doi.org/10.1038/s41586-024-07275-6). [D]
 [894] Z. Shen, Y. Wu, P. Yao, X. Yuan, and Y. Zhang, “Toward optimal circuit depth for geometrically local Hamiltonian simulation,” [arXiv:2610.01839](https://arxiv.org/abs/2610.01839), Oct. 2026. [P]
-
-## Open verification items
-The title, authors and journal reference of arXiv:1907.09528 could not be retrieved from its abstract page; only the abstract text (heavy-hexagon / heavy-square construction, flag qubits, "several orders of magnitude" collision reduction) is quoted here. The 5.5×10⁻⁴ CZ-crosstalk figure is a component of Google's fitted device error budget, not an independently reported measurement. No full-lattice, simultaneously-gated crosstalk value exists for any vendor. The 40-basis-point median two-qubit drop across Rigetti's 36→108-qubit tiling is unattributed in both company releases. The PatSnap counts cited are secondary and are not independently confirmed against the database.

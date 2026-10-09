@@ -28,6 +28,8 @@ Loss is the design variable: a lost photon turns a fusion into a heralded erasur
 
 On the report's cross-platform table photonics scores zero on every fault-tolerance primitive: no below-threshold scaling, no logical qubit past break-even, no logical two-qubit gate, detection-only decoding [D][687].
 
+The 6-ring loss thresholds are not comparable: 2.7% per photon for a boosted 6-ring [179] against 0.38–0.82% (static bias) for an unencoded 6-ring [264], under different boosting, bias models and decoders. Every fusion threshold is a simulation, none is measured, and no independent group has reproduced them. As of 4 Sep 2026 PsiQuantum has published no response to the 2026-06 subthreshold critique and no 2026 hardware result; its progress is visible only through DARPA V&V contracting.
+
 ## Manufacturing, materials & supply chain
 Nothing is manufactured for this code; it inherits the photonic-IC stack of its inputs (300 mm silicon at GlobalFoundries) [C][G:GF-QTS-2026-05]. No yield, cost or energy figure exists because nothing runs it. The burden it imposes is synchronisation: a {7,4}-encoded state means ~168 photons per round, each with a source, switch path and detector channel, against a record of 8 fused photons at 0.4–2.3 per minute [D][688]. At 10³ fusions/s the constraint is switch loss; at the 10⁶ a useful machine needs, cryogenic detector channels and GHz feed-forward, neither built. ECCN 4A906 covers the assembled machine [G:BIS-QUANTUM-ECCN-2024-09].
 
@@ -70,9 +72,3 @@ Fusion networks need not carry a whole computation: a 2026 construction confines
 [687] R. Neeman, “Quantum Technology Atlas,” ed. 2026.09, Qodeh, Sep. 2026, §3.2. [D]
 [688] P. Thomas, L. Ruscio, O. Morin, and G. Rempe, “Fusion of deterministically generated photonic graph states,” *Nature*, vol. 629, no. 8012, pp. 567–572, May 2024, doi: [10.1038/s41586-024-07357-5](https://doi.org/10.1038/s41586-024-07357-5). [D]
 [893] F. Burt *et al.*, “Loss-tolerant distributed lattice surgery using fusion networks,” [arXiv:2610.01923](https://arxiv.org/abs/2610.01923), Oct. 2026. [P]
-
-## Open verification items
-Source conflict on the 6-ring loss threshold: the loss-tolerant-architecture paper gives 2.7% per photon for a *boosted* 6-ring [179], while the 2026 Sparrow re-analysis gives 0.38–0.82% (static bias) for an *unencoded* 6-ring [264]. The assumptions differ (boosting, bias model, decoder), so the two are not directly comparable; both are stated here rather than reconciled.
-The high threshold appears both as "17.4% ({7,4} encoded)" and as "up to 17% with 168-qubit resource states"; the photon count for the {7,4} encoding was not re-derived from the source.
-All thresholds are simulation, never measured, and no independent group has reproduced them.
-PsiQuantum has published no response to the 2026-06 subthreshold critique as of 4 Sep 2026, and no 2026 hardware result at all — progress is visible only through DARPA V&V contracting.

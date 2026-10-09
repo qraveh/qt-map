@@ -29,6 +29,8 @@ The scale that matters is α ≈ −E_C ≈ 2π × 200–300 MHz: it sets the mi
 
 Best in class is one characterised IQM pair, CZ 99.93% over 40 h [D][38]; typical at scale is IBM's fleet EPLG 3.7×10⁻³, best 1.9×10⁻³ [D][34], and Rigetti's 108-qubit median 99.1% [C][36].
 
+The 72× leakage suppression and the 6.4(5)×10⁻⁴ residual come from one USTC device, unreplicated as of 2026-09-04; the paper does not name the processor, and the "Zuchongzhi 3.2" label comes from outside it. Not published: a leakage figure for IBM's fleet, whose EPLG aggregates all error mechanisms.
+
 ## Manufacturing, materials & supply chain
 Nothing of its own: it inherits the carrier's 300 mm Nb/Al lithography, yield spread and one drive plus one readout line per qubit. That is the whole commercial argument — dual-rail erasure adds a rail and a check per qubit (384 ns, 2.54×10⁻² erasure [D][85]), cat codes a pump and buffer mode. The I/O wall is the carrier's: coax per qubit, ~10³ qubits per fridge. What this encoding adds at 10⁴–10⁶ is leakage removal inside every 1.1 µs cycle and the decoder bandwidth to use it. Export exposure is the carrier's (US EAR ECCN 3A901).
 
@@ -70,8 +72,3 @@ Confirm by end-2027: ≥ 50× leakage suppression in a below-threshold code outs
 [58] IQM Quantum Computers, “IQM Quantum Computers Becomes First European Quantum Computing Company Listed on a Major U.S. Exchange,” Jul. 2, 2026. [Online]. Available: https://iqm.tech/press-releases/iqm-quantum-computers-becomes-first-european-quantum-computing-company-listed-on-a-major-u-s-exchange/ [C]
 [84] N. Mehta *et al.*, “An entangling gate for dual-rail erasure qubits,” *Nature*, vol. 656, no. 8126, pp. 47–53, Aug. 2026, doi: [10.1038/s41586-026-10822-y](https://doi.org/10.1038/s41586-026-10822-y). [arXiv:2503.10935](https://arxiv.org/abs/2503.10935). [S]
 [85] J. S.-C. Hung *et al.*, “Fast, High-Fidelity Erasure Detection of Dual-Rail Qubits with Symmetrically Coupled Readout,” [arXiv:2604.16292](https://arxiv.org/abs/2604.16292), Apr. 2026. [D]
-
-## Open verification items
-The 72× leakage suppression and 6.4(5)×10⁻⁴ residual come from one USTC device; no independent replication was found as of 2026-09-04.
-The PRL does not name the processor; the report's "Zuchongzhi 3.2" label is external to the paper.
-No leakage figure is published for IBM's fleet; EPLG aggregates all error mechanisms.

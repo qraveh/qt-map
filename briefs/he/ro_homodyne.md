@@ -43,6 +43,8 @@ LO = מתנד מקומי; GKP = מצב סריג של Gottesman–Kitaev–Preski
 ## ראיות — כיצד נמדדו המספרים
 מקלטים מוסמכים לפי ליניאריות רעש הירי, המרווח וכיול הנצילות באור סחוט; מערכות — לפי שונויות מאפסים מתחת לחסם השזירה של −3 dB — כל 1,500 של DTU היו כאלה [D][636]. נתונים כאלה כוללים את הגילוי, כמו 5.2 dB ללא תיקון ב-43 GHz [D][640]; סחיטה מתוקנת-אובדן וסחיטה אפקטיבית של GKP — 0.62 dB למקור המשולב של Xanadu ברשומת האטלס [D][174] — הם גדלים אחרים. הספים תלויים בארכיטקטורה: אופטיקה ליניארית סטטית דורשת 10.1 dB כשכל האופנים GKP, 13.6 dB עם אחד לכל מקרו-צומת, ללא אובדן [S][637]. נכון ל-2026-09-26 Aurora מדווחת על אובדני נתיבים, אך לא על נצילות, מרווח או רעש פאזה לכל ערוץ [D][173].
 
+ליעד ה-~9.75 dB אין מקור ראשוני; Tzitrin ועמיתיו נותנים 10.1 dB, 13.6 dB או ~10 dB בהתאם לארכיטקטורה. הטקסט של DTU מ-2019 ב-arXiv מוסר את נצילות ההומודין רק בהפניה לעבודה קודמת. לא פורסם: רוחב הפס של ההומודין והשהיית ההזנה קדימה ב-Aurora.
+
 ## שחקנים וכלכלה
 **מי.**
 
@@ -82,11 +84,3 @@ LO = מתנד מקומי; GKP = מצב סריג של Gottesman–Kitaev–Preski
 [640] A. Inoue *et al.*, “Toward a multi-core ultra-fast optical quantum processor: 43-GHz bandwidth real-time amplitude measurement of 5-dB squeezed light using modularized optical parametric amplifier with 5G technology,” *Appl. Phys. Lett.*, vol. 122, Art. no. 104001, 2023, doi: [10.1063/5.0137641](https://doi.org/10.1063/5.0137641). [arXiv:2205.14061](https://arxiv.org/abs/2205.14061). [D]
 [641] H. Chen *et al.*, “Heterogeneously Integrated Squeezed-Light Generation and Detection on a Single Photonic Chip,” [arXiv:2608.13218](https://arxiv.org/abs/2608.13218), Aug. 2026. [D]
 [642] Xanadu, “Xanadu Unveils 1st On-Chip Error-Resistant Photonic Qubit,” HPCwire, Jun. 5, 2025. [Online]. Available: https://www.hpcwire.com/off-the-wire/xanadu-unveils-1st-on-chip-error-resistant-photonic-qubit/ [P]
-
-## פריטי אימות פתוחים
-- 2026-09-26: מאמר מקור ה-GKP המשולב (doi:10.1038/s41586-025-09044-5) לא נפתח — nature.com החזיר 502 פעמיים, Europe PMC הגביל את קצב הבקשות (429), PMC הגיש captcha; הנתון 0.62 dB מועבר מרשומת האטלס, לא נקרא מחדש.
-- 2026-09-26: לא נמצא מקור ראשוני לדרישת ה-~9.75 dB של האטלס; Tzitrin ועמיתיו נותנים 10.1 dB, 13.6 dB או ~10 dB בהתאם לארכיטקטורה.
-- 2026-09-26: המאמר של Aurora ב-Nature אינו מציין נצילות הומודין, רוחב פס, מרווח או השהיית הזנה קדימה; מזהה ה-arXiv 2403.15385 שהוצע לו שייך למאמר לא קשור (LATTE3D), ודף ה-Nature אינו מונה אף אחד.
-- 2026-09-26: נצילות ההומודין של DTU מ-2019 מופנית בטקסט ה-arXiv שלה לעבודה קודמת; הטקסטים המלאים ב-Science לא נפתחו.
-- 2026-09-26: Bruynsteen ועמיתיו נקראו רק דרך דף תמצית ב-SciSpace (Optica הגישה אתגר סקריפט, ADS חסום ב-robots.txt, Crossref הגביל את קצב הבקשות); שמות המחברים השותפים והתדר שבו מצוטט המרווח של 28 dB לא אושרו.
-- ה-"מאז 2012" של התיק אינו קשור לאירוע מאומת; Vahlbruch ועמיתיו 2016 (15 dB, כיול נצילות פוטודיודה) החזיר 403 ואינו מצוטט.

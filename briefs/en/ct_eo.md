@@ -28,6 +28,8 @@ Modulator bandwidth is not the constraint. What binds is detector rise, discrimi
 
 June 2026 reset the arithmetic: 80 ns against a 1 µs cycle is ~12×, and rack electronics at 150–196 ns cut it to ~2×. That array's zero static power costs 1.48 dB per cell, ~15× PsiQuantum's 100 mdB in-line switch [D][169], [516] — routing plane, not fusion plane.
 
+The three 2026 latency figures sit at different reference planes, and no source reconciles them. The 27 dB on-chip against 4 mdB in-fibre delay comparison is derived from published loss figures, not measured. Not published: a cost per modulator or per feed-forward channel.
+
 ## Manufacturing, materials & supply chain
 TFLN comes from two merchant vendors, HyperLight and Lightium [P][518]; volume BTO only from PsiQuantum's 300 mm GlobalFoundries flow [D][169] and Lumiphase's pilot [D][516]; Xanadu's 0.085 dB/facet coupling used Corning and DISCO [C][172]. No cost per channel is public. I/O burden is this node: a driver and DAC per modulator, a coax and discriminator per detector. QuiX's unit is 32×32 [C][825], so 10³ modes is ~30 racks; at 10⁴ the wall is inter-rack clock skew, at 10⁶ nothing scales. The machine falls under BIS ECCN 4A906 [G:BIS-QUANTUM-2024].
 
@@ -70,6 +72,3 @@ Confirm by 2027: a loop under 200 ns above 32 channels, or a system cycle faster
 [518] optics.org, “Lithium niobate in vogue as thin-film developers raise cash,” Sep. 24, 2024. [Online]. Available: https://optics.org/news/lithium-niobate-in-vogue-as-thin-film-developers-raise-cash [P]
 [822] D. Duggan *et al.*, “FPGA Based Feedforward System for Photonic Quantum Computing Applications,” [arXiv:2606.03500](https://arxiv.org/abs/2606.03500), Jun. 2026. [P]
 [825] QuiX Quantum, “QuiX Quantum Installs Real-Time Control Component for Universal Photonic Quantum Computer,” Jun. 2, 2026. [Online]. Available: https://www.quixquantum.com/news/quix-quantum-installs-real-time-control-component-for-universal-photonic-quantum-computer [C]
-
-## Open verification items
-Institutional affiliations for arXiv:2606.03500 are not on the retrievable abstract page; the author list points to the DTU group but is unconfirmed. The three 2026 latency figures sit at different reference planes and no source reconciles them. The 27 dB on-chip versus 4 mdB in-fibre delay comparison is derived here from published loss figures, not measured. No cost per modulator or feed-forward channel is public.

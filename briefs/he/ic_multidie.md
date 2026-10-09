@@ -46,6 +46,8 @@ In = אינדיום; TSV = מעבר דרך הצורן (through-silicon via); SFQ
 ## ראיות — כיצד נמדדו המספרים
 קוהרנטיות תחת פיסת כיסוי הוצגה בקנה מידה של קיוביטים ספורים [D][754][D][755]; נתוני השערים של ערימות מעטים: CZ (98.66 ± 0.08)% [D][755], נאמנות חד-קיוביטית עד 99.9% תחת בקרת SFQ [D][304]. מדידות הביצועים של המכונות הגדולות הנושאות אותה מסתירות את המארז. חסרים, נכון ל-2026-09-26: תכנון אחד שנמדד עם פיסת כיסוי ובלעדיה; מפות מרווח על פני פיסה של >100 קיוביטים מול שגיאת הפגיעה בתדר היעד; רציפות הבליטות לאורך מחזורי חימום וקירור; נתון מניסוי ביקורת לשיפור ה-T1 של Zuchongzhi 3.0.
 
+התמצית של Tianyan-287 אינה נוקבת בזיווד, והזיווד של Zuchongzhi 3.2 לא אומת. ה-T1 ≈ 32 µs של Shih ועמיתיו מניח תדר קיוביט של 5 GHz, שהמקור אינו מציין. לא פורסם: שיעור התקינות של הבליטות או כשלים במחזורי חימום וקירור לאף מכונה הנושאת את הטכנולוגיה; מספר הבליטות היחיד הוא 2,900 במעבד של WACQT, שהמרווח בין שבביו נבדק במיקרוסקופ אלקטרונים אך לא דווח [G:WACQT-FLIPCHIP-2024].
+
 ## שחקנים וכלכלה
 **מי.**
 
@@ -93,11 +95,3 @@ In = אינדיום; TSV = מעבר דרך הצורן (through-silicon via); SFQ
 [758] O. Dial, “Eagle's quantum performance progress,” IBM Quantum Computing Blog, Mar. 23, 2022. [Online]. Available: https://www.ibm.com/quantum/blog/eagle-quantum-processor-performance [C]
 [759] Academia Sinica, “Academia Sinica Unveils 20-Qubit Superconducting Quantum Computer: Manufacturing Capabilities Reach Global Top-Tier,” Jan. 29, 2026. [Online]. Available: https://www.sinica.edu.tw/en/news_content/55/3655 [C]
 [760] N. Pereira, “QpiAI Unveils Kaveri, India's First Aatmanirbhar 64-Qubit Quantum Chip,” Sify, Feb. 26, 2026. [Online]. Available: https://www.sify.com/science-tech/qpiai-unveils-kaveri-indias-first-aatmanirbhar-64-qubit-quantum-chip/ [P]
-
-## פריטי אימות פתוחים
-- Tianyan-287: הטקסט המלא ב-arXiv החזיר HTTP 429 ב-2026-09-26; התמצית אינה נוקבת בזיווד, ולכן התא נשען על "דמוי Zuchongzhi 3.0" בלבד.
-- Zuchongzhi 3.2 (PRL, doi:10.1103/rqkg-dw31): ב-2026-09-26 האתר של APS החזיר 403 ו-PubMed לא החזיר טקסט; הזיווד שלו לא אומת.
-- Liu ועמיתיו: דף ה-PRX Quantum החזיר 403 ב-2026-09-26; הנתונים לקוחים מהתמצית ב-arXiv (arXiv:2301.05696); השיוכים המוסדיים לא אומתו.
-- Shih ועמיתיו (arXiv:2608.07306): נקרא באתר מראה שאינו מציין שיוכים מוסדיים או את תדר הקיוביט; T1 ≈ 32 µs מניח 5 GHz.
-- איור S1 בחומר המשלים (SI) של Sycamore והמקור על המצעים של Ocelot לא נפתחו (2026-09-26); נעשה שימוש רק במשפט על הבליטות שבגוף המאמר ובתיאור הפיסות בנספח A.
-- אף מקור אינו מוסר את שיעור התקינות של הבליטות או כשלים במחזורי חימום וקירור לאף מכונה במרשם הנושאת את הטכנולוגיה; מספר הבליטות היחיד הוא 2,900 במעבד של WACQT, שהמרווח בין שבביו נבדק במיקרוסקופ אלקטרונים אך לא דווח [G:WACQT-FLIPCHIP-2024] (2026-09-30).

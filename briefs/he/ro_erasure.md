@@ -70,6 +70,8 @@ updated: 2026-09-30
 
 סתירות. D-Wave אומרת שהקיוביטים שלה מגלים "כ-90% מהשגיאות" [C][94]; ברמת השער השיעור הוא 83–94%, תלוי אם שארית הפאולי היא החסם <0.1% או ההתאמה 0.029% [D][84]. ההמרה הדו-קיוביטית באטומים היא 33–38% [D][141], [142] לעומת 98% שבהצעה [S][8]. הרווח של ה-[[4,2,2]] ממידע המחיקה הוא 1.9(4)× בטקסט ה-arXiv מ-2025-06 [D][142] אך 3.6× כפי שנישא בגרף מגרסת Nature Physics מ-2026-06 [D][142]; בשימוש ערך ה-arXiv, עד שיתקבל הטקסט המפורסם.
 
+המימון המצטבר של Quantum Circuits, ≈ $84 M עד מאי 2024, הוא נתון מהעיתונות המקצועית [P][646]; ההודעה של החברה אינה נוקבת בסך כולל. נאמנויות מצב בל ביונים מטא-יציבים ב-Oregon הן 98.61 → 99.16 % בסיכומי התמצית ו-98.56 → 99.14 % בטקסט המלא של arXiv v1, והאחרונות הן שבשימוש כאן [D][393]. לא פורסם: האם Quantum Circuits היא החברה ה-18, שלא נזכרה בשמה, בשלב A של DARPA QBI — DARPA נוקבת בשמן של 17 מתוך 18 [G:QBI-STAGEA-2025-04]; עלות או אנרגיה לכל קיוביט נבדק, מאף שחקן; ספירת פטנטים למשפחות המהודים במסילה כפולה של Yale/Quantum Circuits מעבר לשני פטנטים בודדים; ההוצאה של AWS על תוכנית המסילה הכפולה שלה, והמענקים הניתנים לייחוס לפרימיטיב זה שמאחורי הקבוצות ב-Princeton, ב-Caltech, ב-Yale, ב-Oregon וב-SUSTech; והמין האטומי של מסלול האטומים הניטרליים של Google.
+
 ## שחקנים וכלכלה
 
 **מי.**
@@ -145,15 +147,3 @@ updated: 2026-09-30
 [646] M. Swayne, “Quantum Circuits Inc. Quietly Raises $26.5 Million,” The Quantum Insider, May 29, 2024. [Online]. Available: https://thequantuminsider.com/2024/05/29/quantum-circuits-inc-quietly-raises-26-5-million/ [P]
 [647] Quantum Circuits, Inc., “Quantum Circuits Secures More Than $60 Million in Series B Investment,” PR Newswire, Aug. 15, 2024. [Online]. Available: https://www.prnewswire.com/news-releases/quantum-circuits-secures-more-than-60-million-in-series-b-investment-302221428.html [C]
 [648] D-Wave Quantum Inc., “D-Wave Completes Acquisition of Quantum Circuits Inc., Creating World's Leading Quantum Computing Company,” Business Wire, Jan. 19, 2026. [Online]. Available: https://www.businesswire.com/news/home/20260119513563/en/D-Wave-Completes-Acquisition-of-Quantum-Circuits-Inc.-Creating-Worlds-Leading-Quantum-Computing-Company [C]
-
-## פריטי אימות פתוחים
-
-- הרווח של ה-[[4,2,2]] ממידע המחיקה: 1.9(4)× ב-arXiv:2506.13724 v1 [D][142] לעומת 3.6× שנישא בגרף מגרסת Nature Physics [D][142]; לא ניתן היה לקרוא את הטקסט הראשי המפורסם (nature.com מציג את התמצית בלבד; phys.org החזיר HTTP 429).
-- סכום סבב A של Quantum Circuits מ-2017 (דווח $18 M, Canaan/Sequoia) לא אומת ממקור ראשוני; הושמט.
-- המימון המצטבר של Quantum Circuits, ≈ $84 M עד מאי 2024, הוא נתון מהעיתונות המקצועית [P][646]; ההודעה של החברה אינה נוקבת בסך כולל.
-- האם Quantum Circuits הייתה החברה ה-18, שלא נזכרה בשמה, בשלב A של DARPA QBI: DARPA נוקבת בשמן של 17 מתוך 18 [G:QBI-STAGEA-2025-04]; לא יושב.
-- עלות או אנרגיה לכל קיוביט נבדק: אף שחקן אינו מפרסם אותן.
-- ספירות פטנטים למשפחות המהודים במסילה כפולה של Yale/Quantum Circuits: לא זמינות ממאגר נקוב; מצוטטים שני פטנטים בודדים.
-- נאמנויות מצב בל ביונים מטא-יציבים ב-Oregon: 98.61 → 99.16 % (סיכומי התמצית) לעומת 98.56 → 99.14 % (הטקסט המלא של arXiv v1) [D][393]; בשימוש הטקסט המלא.
-- ההוצאה של AWS על תוכנית המסילה הכפולה שלה והמענקים שמאחורי הקבוצות ב-Princeton, ב-Caltech, ב-Yale, ב-Oregon וב-SUSTech: לא נמסרו, או שאינם ניתנים לייחוס לפרימיטיב זה.
-- המין האטומי של מסלול האטומים הניטרליים של Google אינו מצוין במקורות נגישים; לא נטען.

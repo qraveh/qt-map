@@ -191,7 +191,7 @@ function whereOf(h){ if(h.kind==='card') return (h.card.kind==='node'?T('technol
   if(h.kind==='meta') return T('tooltip','подсказка','הסבר צף');
   var el=h.run.segs[0].node.parentElement; if(!el) return '';
   var b=el.closest('section.brief'); if(b){ var t=b.querySelector('h2,h3,.btitle'); return T('brief','обзор','תקציר')+(t?' · '+t.textContent.trim().slice(0,60):''); }
-  if(el.closest('#mapbar')) return T('map controls','панель карты','פקדי המפה'); if(el.closest('#mapbody')) return T('map','карта','המפה'); if(el.closest('.mast')) return T('masthead','шапка','כותרת העמוד'); if(el.closest('#pcwrap')) return T('strip','лента','הרצועה');
+  if(el.closest('#mapbar')) return T('map controls','панель карты','פקדי המפה'); if(el.closest('#mapbody')) return T('map','карта','המפה'); if(el.closest('.mast')) return T('masthead','шапка','כותרת העמוד');
   var sb=el.closest('.secbody[data-sec]'); if(sb){ var hd=sb.previousElementSibling; if(hd&&/^H[23]$/.test(hd.tagName)){ var c=hd.cloneNode(true); var fb=c.querySelector('.foldbtn'); if(fb) fb.remove(); return c.textContent.replace(/\s+/g,' ').trim().slice(0,70); } }
   var g=el.closest('dl.glossary,details.glossary-fold'); if(g) return T('glossary','глоссарий','מילון מונחים');
   return ''; }

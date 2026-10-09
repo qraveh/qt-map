@@ -41,6 +41,8 @@ It sits under six architectures — as the primary assembly under alkali and alk
 ## Evidence — how the numbers were measured
 Pasqal's power and mass carry a company-claim tag, not a measurement tag [C][438]. TOPTICA's revenue and headcount are corroborated by its own page [C][815]; "dominant supplier" rests on one secondary source [P][322].
 
+Special Optics, maker of the 448-atom system's 0.65-NA objective, is the only objective vendor named in the published literature; none is named for an ion system. Only two AOD vendors appear across the published literature, which does not establish that only two exist.
+
 ## Actors & economics
 **Who.**
 
@@ -90,6 +92,3 @@ Falsifiable in 12–24 months: confirm/demote that Universal Quantum and Atlas C
 [502] M. Abdel-Kareem, “Universal Quantum and Atlas Copco Partner to Industrialize Vacuum Systems for Scalable Quantum Computers,” Quantum Computing Report, Dec. 18, 2025. [Online]. Available: https://quantumcomputingreport.com/universal-quantum-and-atlas-copco-partner-to-industrialize-vacuum-systems-for-scalable-quantum-computers/ [P]
 [504] Gooch & Housego (G&H), “G&H Acousto-Optic Deflectors Referenced in Nature Papers Demonstrating 3,000 & 6,100 Qubit Quantum Systems,” G&H, Mar. 2026. [Online]. Available: https://gandh.com/news-and-resources/g-and-h-acousto-optic-deflectors-in-nature-papers [P]
 [815] TOPTICA Photonics, “About the TOPTICA Group.” [Online]. Available: https://www.toptica.com/company [C]
-
-## Open verification items
-The ~10 MHz SLM/AOD refresh ceiling above ~10⁴ qubits sometimes quoted cannot be attributed to a device or a measurement, so it is not used here. TOPTICA's "dominant supplier" position rests on one secondary source [322], though its revenue and headcount are now confirmed on the company's own page [815]. Special Optics, for the 448-atom system's 0.65-NA objective, is the only objective vendor named in the sourced literature; none was found for an ion system. The AOD supplier list is verified by absence — only two vendors appear across the sourced literature, which is not the same as only two existing.

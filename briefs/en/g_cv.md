@@ -27,6 +27,8 @@ Loss acts as a Gaussian random-displacement channel on the grid, blurring the GK
 
 No GKP logical qubit exists; Aurora ran two hours without error correction and reported no logical fidelity, so it shows stability, not computation [D][173].
 
+The date, platform and room-temperature operation of the 0.62 dB GKP result come from the publisher's press coverage [642], and no independent group has replicated it. Published GKP threshold estimates vary with decoder and architecture, so the ~10 dB figure is not a single authoritative value. The 0.87→0.10 variance conversion is derived, not quoted. Xanadu's 24.1× loss factor and the 0.62 dB effective squeezing are different quantities that no source reconciles.
+
 ## Manufacturing, materials & supply chain
 Fabrication is silicon-nitride lithography on 300 mm-class wafers, shared with the discrete-variable sector; the CV-specific additions are squeezers and high-efficiency homodyne receivers rather than switches, and the GKP source runs at room temperature [D][174]. Packaging is Corning fibre arrays and DISCO singulation [C][172].  Control is the heavy part: every mode needs a homodyne receiver, an ADC and a loop closing inside the clock, scaling linearly with no published shortcut. At 10³ modes that is a rack of receivers, at 10⁴ the analogue front end dominates, and nothing addresses 10⁶. ECCN 4A906 applies to the machine [G:BIS-QUANTUM-2024].
 
@@ -69,6 +71,3 @@ Confirm by 2027: effective squeezing above 3 dB on chip; demote the 2028–29 mi
 [642] Xanadu, “Xanadu Unveils 1st On-Chip Error-Resistant Photonic Qubit,” HPCwire, Jun. 5, 2025. [Online]. Available: https://www.hpcwire.com/off-the-wire/xanadu-unveils-1st-on-chip-error-resistant-photonic-qubit/ [P]
 [821] S. Yokoyama *et al.*, “Ultra-large-scale continuous-variable cluster states multiplexed in the time domain,” *Nat. Photon.*, vol. 7, no. 12, pp. 982–986, Dec. 2013, doi: [10.1038/nphoton.2013.287](https://doi.org/10.1038/nphoton.2013.287). [D]
 [822] D. Duggan *et al.*, “FPGA Based Feedforward System for Photonic Quantum Computing Applications,” [arXiv:2606.03500](https://arxiv.org/abs/2606.03500), Jun. 2026. [P]
-
-## Open verification items
-The nature.com page for the GKP source could not be consulted; its date, platform and room-temperature operation are taken from the publisher's press coverage [642], and the 0.62 dB figure from the main report. The ~10 dB threshold is the main report's figure; published GKP threshold estimates vary with decoder and architecture and no single authoritative value was verified here. The 0.87→0.10 variance conversion is derived here, not quoted. Xanadu's 24.1× loss factor and the 0.62 dB effective squeezing are different quantities that no source reconciles. Affiliations for arXiv:2606.03500 and arXiv:2508.08599 were not confirmed from their abstract pages. No independent replication of the 0.62 dB result exists.

@@ -56,6 +56,8 @@ Five architectures carry it: superconducting transmons, alkali neutral atoms, al
 
 Conflicts. Λ per two distance steps: 2.14 ± 0.02 (Google, d=3→7) [D][1] versus 1.40(6) (USTC) [D][3] versus 2.14(13)× (atoms, four rounds, lost on reloading) [D][4] — different noise, not different codes, and only Google's survives a million cycles. Threshold: 0.937% [S][8] versus 0.55–0.7% under leakage [D][238]; budget against the second.
 
+Riverlane's Series C is $75 M in the 2024-08-06 release [C][661] but "$85 million in 2024", with "$120 million+" cumulative, in the 2026-03-12 roadmap release [C][658]. The yoked-code footprints (≈1,500 / ≈800 / ≈600 physical per logical at p = 10⁻³) come from a secondary rendering of arXiv:2312.04522 [S][654]. Not published: the cost or energy per logical qubit, and Riverlane's revenue and contract values.
+
 ## Actors & economics
 
 **Who.**
@@ -124,12 +126,3 @@ Lattice surgery split across two processors joined by a photonic link does not a
 [661] Riverlane, “Riverlane raises $75 million to meet surging global demand for quantum error correction technology,” Aug. 6, 2024. [Online]. Available: https://www.riverlane.com/press-release/riverlane-raises-75-million-to-meet-surging-global-demand-for-quantum-error-correction-technology [C]
 [662] A. B. Ziad, A. Zalawadiya, B. Barber, and L. Skoric, “Quantum decoder,” Google Patents, Dec. 10, 2025. [Online]. Available: https://patents.google.com/patent/GB2641501A/en [G]
 [893] F. Burt *et al.*, “Loss-tolerant distributed lattice surgery using fusion networks,” [arXiv:2610.01923](https://arxiv.org/abs/2610.01923), Oct. 2026. [P]
-
-## Open verification items
-
-- Riverlane Series C: $75 M in the 2024-08-06 release [C][661] versus "$85 million in 2024" and "$120 million+" cumulative in the 2026-03-12 roadmap release [C][658]; both stated, the 2024 primary figure used.
-- Yoked footprints (≈1,500 / ≈800 / ≈600 physical per logical at p = 10⁻³) come from a secondary rendering of arXiv:2312.04522 [S][654].
-- Bombín and Martín-Delgado (2007) [S][651] is cited for the rotated layout on standard attribution; the arXiv abstract page carries no metadata.
-- The 10⁶-cycle run's own error floor in the Willow paper [D][1] is not quoted here; only d=7, Λ, the 2.4(3)× ratio and the 10⁻¹⁰ burst floor are.
-- Cost or energy per logical qubit: unpublished. Riverlane's revenue and contract values: undisclosed.
-- The USTC logical-CNOT and Zhejiang lattice-surgery preprints [D][43], [44] come from the main report's fact-checked list.

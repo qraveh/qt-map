@@ -43,6 +43,8 @@ This Control-layer node underlies the quantum-annealing architecture (D-Wave), i
 ## Evidence — how the numbers were measured
 T1 (relaxation) and T2* (Ramsey) were measured on the single Φ-DAC-controlled fluxonium against a conventional control-line baseline. The comparison has limited sensitivity: T2* ≈ 20 µs is already an order of magnitude below T1 ≈ 200 µs, so "no resolvable increase" bounds rather than measures the DAC's flux noise. Unpublished: any crosstalk matrix, bias drift across thermal cycles, or gate fidelity. The source is a company whitepaper, not peer-reviewed, and unreplicated. Value conflict: D-Wave says 200 bias wires (2026-01-06) [C][281] and ~300 (2026-01-23) [D][316]; the whitepaper's figure is tied to a described array.
 
+The SkyWater–D-Wave foundry relationship rests on an EDGAR full-text hit count, not a quoted sentence. No ECCN names superconducting digital logic; whether an SFQ control die falls under a catch-all is untested. Not published: the Φ-DAC's settling time, and the scope, capacity or contract terms of JPL's role beyond "key components".
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What they do | Evidence |
@@ -85,6 +87,3 @@ Milestones (12–24 months): D-Wave publishes a multi-qubit Φ-DAC result with a
 [550] S. Kawabata, “Integration and Resource Estimation of Cryoelectronics for Superconducting Fault-Tolerant Quantum Computers,” [arXiv:2601.03922](https://arxiv.org/abs/2601.03922), Jan. 2026. [S]
 [575] SeeQC, Inc., “Form S-4 Registration Statement (SeeQC, Inc. / Allegro Merger Corp.),” U.S. Securities and Exchange Commission, May 2026. [Online]. Available: https://www.sec.gov/Archives/edgar/data/1779977/000121390026061108/ea0278139-04.htm [G]
 [576] SkyWater Technology, “SkyWater Technology Reports Fourth Quarter and Full Fiscal Year 2025 Results,” U.S. Securities and Exchange Commission, Feb. 2026. [Online]. Available: https://www.sec.gov/Archives/edgar/data/1819974/000181997426000005/skyt-20251228xex991.htm [G]
-
-## Open verification items
-D-Wave states 200 bias wires (press release, 2026-01-06) and ~300 bias lines (whitepaper, 2026-01-23) for the same annealer control scheme; unreconciled. No crosstalk matrix, settling time, drift or gate fidelity has been published for the Φ-DAC-controlled fluxonium beyond the single-device T1/T2* comparison, and no independent replication was found. The SkyWater–D-Wave foundry relationship rests on an EDGAR full-text hit count, not a quoted sentence. JPL's role is described only as "key components," with no scope, capacity or contract terms disclosed. No ECCN names superconducting digital logic; whether an SFQ control die is caught by a catch-all is untested.

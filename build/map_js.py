@@ -154,10 +154,10 @@ function stationTip(d){ const L=lang(); const k=state.lens; let h=`<b>${esc(N(d)
   const ps=(prim[d.id]||[]), as=(alt[d.id]||[]);
   if(ps.length||as.length) h+=`<br><span class="tk">${T('architectures','архитектуры','ארכיטקטורות')}</span> ${ps.length+as.length}${as.length?` (${ps.length} ${T('primary','основная','ראשית')}, ${as.length} ${T('alternate','альтернатива','חלופית')})`:''}: `+ps.map(p=>`<i class="sw" style="background:${FAMC[PATH[p].family]}"></i>${esc(N(PATH[p]))}`).concat(as.map(p=>`<i class="sw hollow" style="border-color:${FAMC[PATH[p].family]}"></i>${esc(N(PATH[p]))} <span style="opacity:.7">(${T('alternate','альтернатива','חלופית')})</span>`)).join(' · ');
   if(k==='family'){ const f=d._fams; h+=`<br><span class="tk">${T('outline','рамка','מסגרת')}</span> ${f.length?f.map(x=>T(...FAMN[x])).join(' + '):'—'}`; }
-  else { const c=lensColor(d,k); const v=lensValue(d,k); const lab=k==='aff'?vt('AFF',d.aff):(k==='time'?(v==='none'?T('no time','нет времени','ללא זמן'):TBINS[+v][1]):catLabel(k,v)); h+=`<br><span class="tk">${T('lens','линза','עדשה')}</span> ${esc(N(LENSES[k]))}: <i class="sw" style="background:${c||'transparent'};border:1px solid ${c||'var(--bg)'}"></i>${esc(lab)}`; }
+  else { const c=lensColor(d,k); const v=lensValue(d,k); const lab=k==='time'?(v==='none'?T('no time','нет времени','ללא זמן'):TBINS[+v][1]):catLabel(k,v); h+=`<br><span class="tk">${T('lens','линза','עדשה')}</span> ${esc(N(LENSES[k]))}: <i class="sw" style="background:${c||'transparent'};border:1px solid ${c||'var(--bg)'}"></i>${esc(lab)}`; }
   const fl=[]; if(d.offdiag&&d.offdiag.length)fl.push(T('hatched: crossing technology','штриховка: сквозная технология','קווקוו: טכנולוגיה חוצה')); if(d.status==='X')fl.push('∅ '+T('empty slot','пустой слот','משבצת ריקה')); if(fl.length)h+=`<br>${fl.join(' · ')}`;
   h+=`<br><span style="opacity:.6">${T('click for the card','клик — карточка','לחיצה — הכרטיס')}</span>`; return h; }
-st.on('mousemove',(ev,d)=>{if(tipPinned)return; tip.style.display='block'; tip.classList.add('wide'); tip.innerHTML=stationTip(d); placeTip(ev);}).on('mouseenter',(ev,d)=>{ if(window.__pcHover)window.__pcHover(d.id,'map'); }).on('mouseleave',()=>{if(!tipPinned)hideTip(); if(window.__pcHover)window.__pcHover(null,'map');});
+st.on('mousemove',(ev,d)=>{if(tipPinned)return; tip.style.display='block'; tip.classList.add('wide'); tip.innerHTML=stationTip(d); placeTip(ev);}).on('mouseleave',()=>{if(!tipPinned)hideTip();});
 st.on('click',(ev,d)=>{ev.stopPropagation(); unpinTip(); select(d.id===state.focus?null:d.id);}).on('keydown',(ev,d)=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault(); select(d.id===state.focus?null:d.id);}});
 svg.on('click',()=>select(null));
 document.addEventListener('keydown',ev=>{if(ev.key==='Escape')select(null);});
@@ -173,22 +173,19 @@ function hideTip(){ tip.style.display='none'; tip.classList.remove('wide'); }
 let tipPinned=false;
 function unpinTip(){ tipPinned=false; hideTip(); }
 document.addEventListener('pointerdown',function(ev){ const t=ev.target; if(t&&t.closest&&t.closest('g.edge'))return; unpinTip(); },true);
-const LENSES={   // editor's order of 17 Sep 2026: family → manufacturing → error structure → mobility → control (modality, placement) → time → readout (mechanism, destructive, mid-circuit) → entangling → affinity → status
+const LENSES={   // editor's order of 17 Sep 2026: family → manufacturing → error structure → mobility → control placement → time → readout (mechanism, mid-circuit) → entangling;
+ // nine lenses since 9 Oct 2026 (D6-1): control modality, destructive readout, carrier affinity and technology status stay as rows of the technology card, not lenses
  // plain names, no attribute letters (brief E): the letter stays on the technology card's attribute rows and, muted, in the lens legend's title
  family:{en:'Platform family',ru:'Семейство платформ',he:'משפחת פלטפורמות'},
  g:{en:'Manufacturing technology',ru:'Технология производства',he:'טכנולוגיית ייצור'},
  f:{en:'Dominant error structure',ru:'Доминирующая структура ошибок',he:'מבנה השגיאות השולט'},
  d:{en:'Mobility / connectivity',ru:'Подвижность / связность',he:'ניידות / קישוריות'},
- mod:{en:'Control: modality',ru:'Управление: модальность',he:'בקרה: סוג האות'},
  place:{en:'Control: placement (temperature stage)',ru:'Управление: размещение (температурная ступень)',he:'בקרה: מיקום (שלב הטמפרטורה)'},
  time:{en:'Characteristic time (gate or readout)',ru:'Характерное время (вентиль или считывание)',he:'זמן אופייני (שער או קריאה)'},
  mech:{en:'Readout: mechanism',ru:'Считывание: механизм',he:'קריאה: מנגנון'},
- destr:{en:'Readout: destructive?',ru:'Считывание: разрушающее?',he:'קריאה: הרסנית?'},
  mid:{en:'Readout: mid-circuit?',ru:'Считывание: внутрисхемное?',he:'קריאה: באמצע המעגל?'},
- det:{en:'Entangling: deterministic / heralded',ru:'Запутывание: детерминированное / с оповещением (heralded)',he:'שזירה: דטרמיניסטית / מבושרת (heralded)'},
- aff:{en:'Carrier affinity: natural ↔ fabricated',ru:'Сродство носителя: естественный ↔ искусственный',he:'זיקת הנושא: טבעי ↔ מיוצר'},
- status:{en:'Technology status',ru:'Статус технологии',he:'מצב הטכנולוגיה'}};
-const LENSCOORD={g:'(g)',f:'(f)',d:'(d)',mod:'(e)',place:'(e)',time:'(b)/(c)',mech:'(c)',destr:'(c)',mid:'(c)',det:'(b)',aff:'(a)'};   // the report's attribute letter, shown once as a muted suffix of the lens legend's title
+ det:{en:'Entangling: deterministic / heralded',ru:'Запутывание: детерминированное / с оповещением (heralded)',he:'שזירה: דטרמיניסטית / מבושרת (heralded)'}};
+const LENSCOORD={g:'(g)',f:'(f)',d:'(d)',place:'(e)',time:'(b)/(c)',mech:'(c)',mid:'(c)',det:'(b)'};   // the report's attribute letter, shown once as a muted suffix of the lens legend's title
 // reading marks (brief E, editor's decision): no lens — glyphs on the technologies, static legend keys with counts, badges on the technology card
 const OFFDEF=['a crossing technology: it takes a trait from the other side of the natural/fabricated divide — hatched on the map (see §7.5)','сквозная технология: берёт свойство с другой стороны раздела естественное/искусственное — на карте заштрихована (см. §7.5)','טכנולוגיה חוצה: היא נוטלת מאפיין מהצד השני של החלוקה טבעי–מיוצר — מקווקוות במפה (ראו §7.5)'];
 const EMPTYDEF=['an empty slot: no technology has been demonstrated here yet','пустая ячейка: технологии здесь ещё не продемонстрировано','משבצת ריקה: עדיין לא הודגמה כאן טכנולוגיה'];
@@ -198,31 +195,30 @@ function glyphKeys(){ document.querySelectorAll('#glyphlegend [data-glyph]').for
 const LENSPAL=['#3B6FD4','#E0862B','#2FA66A','#C94C6B','#7C5CC4','#C7A22B','#2AA5B8','#8B6A45','#D07AB5','#6E7F91'];
 const CATS={
  mech:['disp','s2c','qcap','erasure','fluor','img','spd','flux','homodyne','none'], d:['static','longrange','shared','bus','transport','flying','none'],
- mod:['mw','lf','eo','opt','none'], place:['RT','4K','mK','none'], f:['pauli','coherent','leak','burst','bias','gauss','erasure','loss','unknown','none'],
- g:['sclitho','3d','cmos','mbe','mems','pic','optics','stm','diamond','none'], status:['D','E','T','X'],
- det:['det','her','na'], destr:['yes','no','none'], mid:['yes','no','none']};
-const VTAB={mech:'MECH',d:'MOB',mod:'MOD',place:'PLACE',f:'ERR',g:'FAB',status:'STATUS',det:'DET'};
+ place:['RT','4K','mK','none'], f:['pauli','coherent','leak','burst','bias','gauss','erasure','loss','unknown','none'],
+ g:['sclitho','3d','cmos','mbe','mems','pic','optics','stm','diamond','none'],
+ det:['det','her','na'], mid:['yes','no','none']};
+const VTAB={mech:'MECH',d:'MOB',place:'PLACE',f:'ERR',g:'FAB',det:'DET'};
 const YESNO={yes:['yes','да','כן'],no:['no','нет','לא'],none:['no readout','без считывания','ללא קריאה']};
-function catLabelSafe(k,v){ try{ if(k==='family')return T(...FAMN[v]); if(k==='aff')return vt('AFF',Number(v)); if(k==='time')return v==='none'?'—':TBINS[Number(v)][1]; return catLabel(k,v);}catch(e){return String(v);} }
-function catLabel(k,v){ if(k==='destr'||k==='mid')return T(...YESNO[v]); return vt(VTAB[k],v); }
+function catLabelSafe(k,v){ try{ if(k==='family')return T(...FAMN[v]); if(k==='time')return v==='none'?'—':TBINS[Number(v)][1]; return catLabel(k,v);}catch(e){return String(v);} }
+function catLabel(k,v){ if(k==='mid')return T(...YESNO[v]); return vt(VTAB[k],v); }
 function lensValues(n,k){ if(k==='f')return (n.f&&n.f.length)?n.f:['none']; if(k==='place')return (n.e.place&&n.e.place.length)?n.e.place:['none']; if(k==='family')return n._fams; return [lensValue(n,k)]; }   // every value a technology carries for a lens (f and place are lists; place since 17 Sep 2026)
-function lensValue(n,k){ if(k==='mech')return n.c?n.c.mech:'none'; if(k==='d')return n.d; if(k==='mod')return n.e.mod; if(k==='place')return (n.e.place&&n.e.place[0])||'none'; if(k==='f')return n.f[0]||'none'; if(k==='g')return n.g; if(k==='status')return n.status;
-  if(k==='det')return n.b.det||'na'; if(k==='destr')return n.c?(n.c.destr?'yes':'no'):'none'; if(k==='mid')return n.c?(n.c.mid?'yes':'no'):'none'; if(k==='aff')return String(n.aff); if(k==='time'){const t=timeOf(n); return t==null?'none':timeBin(t);} return null;}
+function lensValue(n,k){ if(k==='mech')return n.c?n.c.mech:'none'; if(k==='d')return n.d; if(k==='place')return (n.e.place&&n.e.place[0])||'none'; if(k==='f')return n.f[0]||'none'; if(k==='g')return n.g;
+  if(k==='det')return n.b.det||'na'; if(k==='mid')return n.c?(n.c.mid?'yes':'no'):'none'; if(k==='time'){const t=timeOf(n); return t==null?'none':timeBin(t);} return null;}
 function timeOf(n){ if(n.b.t!=null)return n.b.t; if(n.c&&n.c.t!=null)return n.c.t; return null; }
 const TBINS=[[-8.5,'≤ 3 ns'],[-7.5,'~30 ns'],[-6.5,'~300 ns'],[-5.5,'~3 µs'],[-4.5,'~30 µs'],[-3.5,'~300 µs'],[-2.5,'≥ 3 ms']];
 function timeBin(t){ let best=0; TBINS.forEach((b,i)=>{ if(Math.abs(b[0]-t)<Math.abs(TBINS[best][0]-t))best=i; }); return String(best); }
 // resolve CSS colour tokens at runtime (d3 cannot interpolate var(--x) strings); re-resolved on theme change
 function css(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim()||'#888'; }
-let affScale=null, timeScale=null;
-function buildScales(){ affScale=d3.scaleLinear().domain([0,0.5,1]).range([css('--nat'),css('--mid'),css('--fab')]).interpolate(d3.interpolateRgb); timeScale=d3.scaleLinear().domain([-8.5,-6.5,-4.5,-2.5]).range([css('--lens4'),css('--lens3'),css('--lens2'),css('--lens1')]).interpolate(d3.interpolateRgb).clamp(true); }   // fast = the strong end of the ramp, slow = the pale end
+let timeScale=null;
+function buildScales(){ timeScale=d3.scaleLinear().domain([-8.5,-6.5,-4.5,-2.5]).range([css('--lens4'),css('--lens3'),css('--lens2'),css('--lens1')]).interpolate(d3.interpolateRgb).clamp(true); }   // fast = the strong end of the ramp, slow = the pale end
 buildScales();
 function lensShown(n,k){ if(k==='family')return n._fams.length===1?n._fams[0]:(n._fams.length?'multi':'none'); let v=lensValue(n,k); if((k==='f'||k==='place')&&state.lensFilter){ const hit=lensValues(n,k).find(x=>state.lensFilter.has(x)); if(hit)v=hit; } return v; }   // a multi-value technology shows the value it is lit for
-function lensColor(n,k){ if(k==='family')return null; if(k==='aff')return affScale(n.aff); if(k==='time'){const t=timeOf(n); return t==null?null:timeScale(t);} let v=lensShown(n,k);   // a multi-value technology takes the colour of the value it is lit for
+function lensColor(n,k){ if(k==='family')return null; if(k==='time'){const t=timeOf(n); return t==null?null:timeScale(t);} let v=lensShown(n,k);   // a multi-value technology takes the colour of the value it is lit for
   if(v==null||v==='none')return null; const i=CATS[k].indexOf(v); return i<0?null:LENSPAL[i%LENSPAL.length]; }
 function tint(c){ const x=d3.color(c); if(!x)return 'var(--surface)'; x.opacity=0.22; return x.formatRgb(); }
 function lensItems(k){ const count=v=>G.nodes.filter(n=>lensValues(n,k).includes(v)).length;
   if(k==='family') return Object.keys(FAMC).map(f=>({c:FAMC[f],t:T(...FAMN[f]),v:f,n:G.nodes.filter(n=>n._fams.includes(f)).length}));
-  if(k==='aff') return [0,0.25,0.5,0.75,1].map(a=>({c:affScale(a),t:vt('AFF',a),v:String(a),n:count(String(a))}));
   if(k==='time') return TBINS.map((b,i)=>({c:timeScale(b[0]),t:b[1],v:String(i),n:count(String(i))})).concat([{c:null,t:T('no time (code, decoder, fab)','нет времени (код, декодер, производство)','ללא זמן (קוד, מפענח, ייצור)'),v:'none',n:count('none')}]);
   return CATS[k].map(v=>({c:v==='none'?null:LENSPAL[CATS[k].indexOf(v)%LENSPAL.length],t:catLabel(k,v),v,n:count(v)})); }
 function nodeMatchesFilter(n){ const k=state.lens, v=state.lensFilter; if(v==null)return true; if(k==='family')return n._fams.some(f=>v.has(f)); return lensValues(n,k).some(x=>v.has(x)); }
@@ -243,7 +239,7 @@ function applyLens(){ const k=state.lens; const leg=document.getElementById('len
     b.addEventListener('mouseleave',()=>{ st.classed('peek',false); }); });
   if(state.focus) inspect(NODE[state.focus]);
 }
-const LENSROWS={aff:['aff'],time:['b','c'],det:['b'],mech:['c'],destr:['c'],mid:['c'],d:['d'],mod:['e'],place:['e'],f:['f'],g:['g']};
+const LENSROWS={time:['b','c'],det:['b'],mech:['c'],mid:['c'],d:['d'],place:['e'],f:['f'],g:['g']};
 function relabel(){ st.attr('aria-label',d=>N(d)+' · '+T('layer','слой','שכבה')+' '+d.layer); st.select('text.l1').text(d=>wrapLabel(SL(d.id))[0]); st.select('text.l2').text(d=>wrapLabel(SL(d.id))[1]||'');
   laneHead.each(function(d){const s=N(d); let a=s,b=''; if(s.length>16){ const i=s.indexOf(' / ')>0?s.indexOf(' / '):s.lastIndexOf(' '); a=s.slice(0,i); b=s.slice(i).replace(/^ \/ /,'/ ').trim(); } d3.select(this).select('text.t:not(.t2)').text(a); d3.select(this).select('text.t2').text(b);});
   bandLabel.selectAll('*').remove(); BANDS.forEach((b,bi)=>{ if(!maxc[bi])return; const y=bandTop[bi]+(maxc[bi]*ROWH)/2; bandLabel.append('text').attr('x',X0-30).attr('y',y).attr('text-anchor','middle').attr('transform',`rotate(-90 ${X0-30} ${y})`).text(vt('AFF',b).split(' ')[0].toUpperCase()); });
@@ -254,7 +250,7 @@ function relabel(){ st.attr('aria-label',d=>N(d)+' · '+T('layer','слой','ש
   document.querySelectorAll('#machine optgroup').forEach(o=>{ if(FAMN[o.dataset.fam])o.label=T(...FAMN[o.dataset.fam]); });
   // the card on screen is re-rendered in the new language as it is — the same card, open or closed (a closed machine card no longer reopens,
   // an architecture card opened from a machine card is no longer replaced by it: 29 Sep 2026)
-  applyLens(); if(!insp.hidden&&cardOf){ const k=cardOf[0], id=cardOf[1]; if(k==='node'&&NODE[id])inspect(NODE[id]); else if(k==='machine'&&MBY[id])inspectMachine(MBY[id]); else if(k==='path'&&PATH[id])inspectPath(PATH[id]); } renderPC();
+  applyLens(); if(!insp.hidden&&cardOf){ const k=cardOf[0], id=cardOf[1]; if(k==='node'&&NODE[id])inspect(NODE[id]); else if(k==='machine'&&MBY[id])inspectMachine(MBY[id]); else if(k==='path'&&PATH[id])inspectPath(PATH[id]); }
 }
 // the three selections (isolated path, focused technology, machine) narrow each other only while they can share a line; a new
 // selection that cannot (a technology off the isolated path or the machine's path, a path not through the focused technology or not the
@@ -307,7 +303,6 @@ function dimming(){ const f=state.focus, iso=state.isolate; const L=litSets(), k
   gAlt.selectAll('path').classed('dim',d=>keepP?!keepP.has(d.p.id):false);
   gPaths.selectAll('circle.emptyslot').attr('opacity',d=>keepP?(keepP.has(d.p.id)?1:.08):1);
   if(window.__barSummary)window.__barSummary();
-  if(typeof pcRefresh==='function')pcRefresh();   // the strip mirrors the lit set (adjudication 13)
   sheetRoom();
 }
 function edgePath(a,b){ const dx=b.cx-a.cx; if(Math.abs(dx)<1){ const x=a.cx+NW/2; return `M${a.cx+NW/2-2},${a.cy} C${x+22},${a.cy} ${x+22},${b.cy} ${b.cx+NW/2-2},${b.cy}`; }
@@ -452,7 +447,7 @@ function usedByHTML(n){ const L=lang(); const ub=MACH.by_node[n.id]||{primary:[]
 function placeText(n){ const ps=(n.e.place&&n.e.place.length)?n.e.place:['none']; return CATS.place.filter(p=>ps.includes(p)).concat(ps.filter(p=>!CATS.place.includes(p))).map(p=>vt('PLACE',p)).join(' / '); }   // every stage the technology carries, in the vocabulary's order (RT → 4 K → mK)
 function inspectHTML(n){ const L=lang(); const c=n.c; const rows=[[T('(a) carrier affinity','(a) сродство носителя','(a) זיקת הנושא'),vt('AFF',n.aff),'aff'],
   [T('(b) time · entangling','(b) время · запутывание','(b) זמן · שזירה'),(n.b.t!=null?fmtT(n.b.t):'—')+(n.b.det!=='na'?' · '+vt('DET',n.b.det):''),'b'],
-  [T('(c) readout','(c) считывание','(c) קריאה'),c?`${vt('MECH',c.mech)} · ${fmtT(c.t)} · ${c.destr?T('destructive','разрушающее','הרסנית'):T('non-destructive','неразрушающее','לא הרסנית')} · ${c.mid?T('mid-circuit','внутрисхемное','mid-circuit'):T('no mid-circuit','не внутрисхемное','ללא mid-circuit')}`:'—','c'],
+  [T('(c) readout','(c) считывание','(c) קריאה'),c?`${vt('MECH',c.mech)} · ${c.lo!=null?((h=>T('≈ '+fmtT(c.lo)+' ('+c.lo_note[0]+') to ≈ '+h,'от ≈ '+fmtT(c.lo)+' ('+c.lo_note[1]+') до ≈ '+h,'≈ '+fmtT(c.lo)+' ('+c.lo_note[2]+') עד ≈ '+h))((v=>v>=1e-4&&v<1e-3?Number((v*1e3).toPrecision(1))+' ms':fmtT(c.t))(Math.pow(10,c.t)))):fmtT(c.t)} · ${c.destr?T('destructive','разрушающее','הרסנית'):T('non-destructive','неразрушающее','לא הרסנית')} · ${c.mid?T('mid-circuit','внутрисхемное','mid-circuit'):T('no mid-circuit','не внутрисхемное','ללא mid-circuit')}`:'—','c'],
   [T('(d) mobility','(d) подвижность','(d) ניידות'),vt('MOB',n.d),'d'],[T('(e) control','(e) управление','(e) בקרה'),n.e.mod==='none'?'—':`${vt('MOD',n.e.mod)} @ ${placeText(n)}`,'e'],
   [T('(f) error structure','(f) структура ошибки','(f) מבנה השגיאה'),n.f.map(x=>vt('ERR',x)).join(', '),'f'],[T('(g) manufacturing','(g) производство','(g) ייצור'),vt('FAB',n.g),'g']];
   const lr=LENSROWS[state.lens]||[];
@@ -612,59 +607,10 @@ window.__mapZoom={get:()=>state.zoom||1, set:(z)=>{ applyZoom(z,false); state.fi
   setC(c); tog.addEventListener('click',()=>setC(!bar.classList.contains('collapsed')));
   document.querySelectorAll('[data-setlang]').forEach(b=>b.addEventListener('click',()=>setTimeout(()=>{ if(bar.classList.contains('collapsed'))summary(); },0)));
 })();
-// ---------- parallel coordinates
-const pcHost=document.getElementById('pc');
-const PCW=1100, PCH=300, PX0=70, PX1=PCW-30, PY0=34, PY1=PCH-46;
-const pcsvg=d3.select(pcHost).append('svg').attr('viewBox',`0 0 ${PCW} ${PCH}`).attr('role','img').attr('aria-label','Parallel coordinates of all technologies across the seven design attributes');
-const AXES=[{k:'aff',en:'(a) carrier',ru:'(a) носитель',he:'(a) נושא'},{k:'b',en:'(b) time',ru:'(b) время',he:'(b) זמן'},{k:'c',en:'(c) readout',ru:'(c) считывание',he:'(c) קריאה'},{k:'d',en:'(d) mobility',ru:'(d) подвижность',he:'(d) ניידות'},{k:'e',en:'(e) control',ru:'(e) управление',he:'(e) בקרה'},{k:'f',en:'(f) error',ru:'(f) ошибка',he:'(f) שגיאה'},{k:'g',en:'(g) fab',ru:'(g) производство',he:'(g) ייצור'}];
-const ORD={aff:[0,0.25,0.5,0.75,1],d:['none','static','shared','longrange','bus','transport','flying'],e:['none','lf@RT','mw@RT','eo@RT','opt@RT','mw@4K','eo@4K','lf@mK','mw@mK','eo@mK'],f:['none','pauli','coherent','leak','burst','bias','gauss','erasure','loss','unknown'],g:['none','sclitho','3d','cmos','mbe','mems','pic','optics','stm','diamond'],c:['none','spd','disp','erasure','s2c','qcap','fluor','img','flux','homodyne']};
-// the strip as a control (adjudication 13, 23 Sep 2026): each axis is one design attribute and stands for one lens; a tick on an
-// axis is one value of that lens — clicking the title selects the lens, clicking a tick keeps only the technologies with that value
-// (Ctrl-click adds a value), exactly as the lens select and the lens legend do. (e) shows modality@placement; its ticks act on the
-// modality lens. (b) shows the seven time bins of the time lens and a "—" row for the technologies without a time value. Clicking the
-// title of the axis whose lens is already chosen clears its filter (the lens with no filter, as the rule says).
-const AXLENS={aff:'aff',b:'time',c:'mech',d:'d',e:'mod',f:'f',g:'g'};
-const LENSAX={aff:'aff',time:'b',det:'b',mech:'c',destr:'c',mid:'c',d:'d',mod:'e',place:'e',f:'f',g:'g'};
-const xAx=i=>PX0+i*(PX1-PX0)/(AXES.length-1);
-const tScale=d3.scaleLinear().domain([-8.5,-1]).range([PY1,PY0]);
-function yOf(n,k){ if(k==='aff')return PY1-(ORD.aff.indexOf(n.aff))*(PY1-PY0)/4; if(k==='b')return n.b.t==null?PY1+10:tScale(n.b.t); if(k==='c'){const m=n.c?n.c.mech:'none'; const i=ORD.c.indexOf(m); return PY1-i*(PY1-PY0)/(ORD.c.length-1);} if(k==='e'){const key=n.e.mod==='none'?'none':n.e.mod+'@'+((n.e.place&&n.e.place[0])||'none'); let i=ORD.e.indexOf(key); if(i<0)i=0; return PY1-i*(PY1-PY0)/(ORD.e.length-1);} const arr=ORD[k]; const v=k==='f'?(n.f[0]||'none'):n[k]; let i=arr.indexOf(v); if(i<0)i=0; return PY1-i*(PY1-PY0)/(arr.length-1); }
-function axisTicks(a){ const k=a.k; if(k==='aff')return ORD.aff.map(v=>({y:PY1-ORD.aff.indexOf(v)*(PY1-PY0)/4,t:vt('AFF',v).split(' ')[0],lens:'aff',lv:String(v)}));
-  if(k==='b')return TBINS.map((b,i)=>({y:tScale(b[0]),t:b[1],lens:'time',lv:String(i)})).concat([{y:PY1+10,t:'—',lens:'time',lv:'none'}]);   // technologies without a time value sit below the axis (yOf); their tick is the legend's "no time"
-  if(k==='c')return ORD.c.map((v,i)=>({y:PY1-i*(PY1-PY0)/(ORD.c.length-1),t:v==='none'?'—':vt('MECH',v).split(' ')[0],lens:'mech',lv:v}));
-  if(k==='e')return ORD.e.map((v,i)=>({y:PY1-i*(PY1-PY0)/(ORD.e.length-1),t:v==='none'?'—':v,lens:'mod',lv:v==='none'?'none':v.split('@')[0]}));
-  const arr=ORD[k], tab={d:'MOB',f:'ERR',g:'FAB'}[k]; return arr.map((v,i)=>({y:PY1-i*(PY1-PY0)/(arr.length-1),t:v==='none'?'—':vt(tab,v).split(' ')[0],lens:k,lv:v})); }
-const pcLines=pcsvg.append('g'); const pcAxes=pcsvg.append('g'); const pcLabel=pcsvg.append('text').attr('x',PX0).attr('y',PCH-8).attr('fill','var(--ink)').attr('font-size',12).attr('font-weight',600);
-function pcSetLens(L){ if(state.lens===L&&state.lensFilter==null)return; state.lens=L; state.lensFilter=null; const sel=document.getElementById('lens'); if(sel)sel.value=L; applyLens(); drawEdges(); dimming(); }
-function pcTick(t,multi){ if(state.lens!==t.lens){ state.lens=t.lens; state.lensFilter=null; const sel=document.getElementById('lens'); if(sel)sel.value=t.lens; } toggleFilter(t.lv,multi); applyLens(); drawEdges(); dimming(); }
-let pcHov=null;
-function renderPC(){ pcAxes.selectAll('*').remove();
-  AXES.forEach((a,i)=>{const g=pcAxes.append('g').attr('class','pc-axis').attr('data-axis',a.k); const x=xAx(i); g.append('line').attr('x1',x).attr('x2',x).attr('y1',PY0-6).attr('y2',PY1+12);
-    g.append('text').attr('class','t').attr('x',x).attr('y',PY0-14).attr('text-anchor','middle').attr('data-lens',AXLENS[a.k]).attr('tabindex',0).attr('role','button').text(N(a))
-      .on('click',()=>pcSetLens(AXLENS[a.k])).on('keydown',ev=>{ if(ev.key==='Enter'||ev.key===' '){ ev.preventDefault(); pcSetLens(AXLENS[a.k]); } });
-    axisTicks(a).forEach(t=>{ g.append('line').attr('x1',x-3).attr('x2',x+3).attr('y1',t.y).attr('y2',t.y);
-      g.append('text').attr('class','tick').attr('x',x+(i===AXES.length-1?-6:6)).attr('y',t.y+3.5).attr('text-anchor',i===AXES.length-1?'end':'start').attr('data-lens',t.lens).attr('data-lv',t.lv).attr('tabindex',0).attr('role','button').text(t.t)
-        .on('click',ev=>pcTick(t,ev.ctrlKey||ev.metaKey||ev.shiftKey)).on('keydown',ev=>{ if(ev.key==='Enter'||ev.key===' '){ ev.preventDefault(); pcTick(t,ev.ctrlKey||ev.metaKey||ev.shiftKey); } }); }); });
-  const pl=d3.line().x(d=>d[0]).y(d=>d[1]).curve(d3.curveMonotoneX);
-  pcLines.selectAll('path').data(G.nodes,d=>d.id).join('path').attr('class','pcline').attr('data-node',d=>d.id).attr('d',d=>pl(AXES.map((a,i)=>[xAx(i),yOf(d,a.k)])))
-    .on('mouseenter',(ev,d)=>pcHover(d.id,'strip')).on('mouseleave',()=>pcHover(null,'strip')).on('click',(ev,d)=>{select(d.id); scrollToNode(d);});
-  pcRefresh(); }
-function pcStroke(d){ const k=state.lens; if(k==='family')return d._fam?FAMC[d._fam]:'var(--mid)'; return lensColor(d,k)||'var(--mid)'; }
-// the strip mirrors the map (adjudication 13): a line is dim iff its technology is dim, thick iff its technology is the focus, dashed iff the
-// chosen machine uses the technology only as an alternate; its colour and data-lv are the technology's lens value; the current lens's
-// axis title and the pressed values are marked
-function pcRefresh(){ const L=litSets(), keepN=L.keepN, f=state.focus, k=state.lens; const mm=state.machine&&MBY[state.machine], ma=mm?machNodes(mm).alt:null;
-  pcLines.selectAll('path').classed('dim',d=>keepN?!keepN.has(d.id):false).classed('hi',d=>d.id===f).classed('altuse',d=>!!(ma&&ma.has(d.id)&&(!keepN||keepN.has(d.id)))).attr('stroke',d=>pcStroke(d)).attr('data-lv',d=>String(lensShown(d,k)));
-  pcAxes.selectAll('text.t').classed('active',function(){ return this.getAttribute('data-lens')===k||LENSAX[k]===this.parentNode.getAttribute('data-axis'); });
-  pcAxes.selectAll('text.tick').classed('pressed',function(){ return this.getAttribute('data-lens')===k&&filterHas(this.getAttribute('data-lv')); });
-  if(!pcHov)pcLabel.text(f?N(NODE[f]):''); }
-// hover in either place lights the other (transient; no state)
-function pcHover(id,from){ pcHov=id; pcLines.selectAll('path').classed('hover',d=>d.id===id); if(from==='strip')st.classed('hover',d=>d.id===id); pcLabel.text(id?N(NODE[id]):(state.focus?N(NODE[state.focus]):'')); }
-window.__pcHover=pcHover;
-function pcHighlight(){ pcRefresh(); }
 // ---------- init
 window.__relabelMap=relabel;
 // theme changes must re-resolve the CSS colour tokens; buildScales/applyLens live in this closure
-window.__mapTheme=function(){ buildScales(); applyLens(); pcRefresh(); };
+window.__mapTheme=function(){ buildScales(); applyLens(); };
 // select a technology from outside the map (used by the technology briefs)
 window.__mapContext=function(){ return {focus:state.focus,isolate:state.isolate,machine:state.machine,lens:state.lens}; };
 window.__cardHTML={node:id=>NODE[id]?inspectHTML(NODE[id]):'', machine:id=>MBY[id]?inspectMachineHTML(MBY[id]):'', path:id=>PATH[id]?inspectPathHTML(PATH[id]):''};   // the cards as they render, for Find (28 Sep 2026)
@@ -680,7 +626,7 @@ window.__deepLink=function(h){ let m; h=h||location.hash||'';
   if((m=/^#(station|machine|architecture)-([\w.-]+)$/.exec(h))){ cardOf=null; insp.hidden=false; insp.innerHTML=`${gripHTML()}<h3>${T('Not in this edition','Нет в этом издании','לא במהדורה זו')}</h3><p class="empty">${T('No '+m[1]+' with the id','Нет записи вида '+m[1]+' с идентификатором','אין רשומה מסוג '+m[1]+' עם המזהה')} <code>${esc(m[2])}</code>. ${T('Renamed or removed records are listed in the','Переименованные и удалённые записи перечислены в','לרשומות ששמן שונה או שהוסרו ראו את')} <a href='#editions-${lang()}'>${T('Editions table','таблице изданий','טבלת המהדורות')}</a>.</p>`; wireCard(); revealMap(); return false; }
   return false; };
 window.addEventListener('hashchange',()=>window.__deepLink());
-relabel(); inspectEmpty(); applyLens(); renderPC(); window.__deepLink();
+relabel(); inspectEmpty(); applyLens(); window.__deepLink();
 })();
 
 // ---------- the caption below the map folds (23 Sep 2026, second review): closed by default, the reader's choice kept
@@ -696,7 +642,7 @@ relabel(); inspectEmpty(); applyLens(); renderPC(); window.__deepLink();
   document.querySelectorAll('a[href="#map"]').forEach(a=>a.addEventListener('click',()=>setC(false)));
 })();
 
-// ---------- full screen (23 Sep 2026): the whole map block (bar, legend, map, card, strip) takes the screen; the map wrapper is
+// ---------- full screen (23 Sep 2026): the whole map block (bar, legend, map, card) takes the screen; the map wrapper is
 // sized to the screen height on entry and on every resize, so fit width / fit height / zoom keep working on the real box; the
 // browser's own Escape or the button leaves; where the Fullscreen API is missing (iPhone) a fixed full-window layout stands in
 (function(){ const body=document.getElementById('mapbody'), wrap=document.getElementById('mapwrap'); if(!body||!wrap)return;
@@ -705,45 +651,16 @@ relabel(); inspectEmpty(); applyLens(); renderPC(); window.__deepLink();
   function size(){ if(!on())return; const top=wrap.getBoundingClientRect().top-body.getBoundingClientRect().top+body.scrollTop; const h=Math.max(240,body.clientHeight-top-10); wrap.classList.add('tall'); wrap.style.maxHeight=h+'px'; }
   let glyphWasOpen=null, pageY=null; const gl=document.getElementById('glyphlegend');
   function paint(){ const f=on(); body.classList.toggle('fs',f); btns().forEach(b=>{ b.setAttribute('aria-pressed',String(f)); b.querySelectorAll('.fs-on').forEach(x=>x.hidden=f); b.querySelectorAll('.fs-off').forEach(x=>x.hidden=!f); });
-    if(f){ if(gl&&glyphWasOpen===null){ glyphWasOpen=gl.open; gl.open=false; } if(body.classList.contains('both')&&window.__fitBoth)window.__fitBoth(); else size(); }   // the glyph legend folds to give the map the height; it reopens on leaving
-    else { if(body.classList.contains('both')&&window.__stripModeOff)window.__stripModeOff(true); wrap.style.maxHeight=''; wrap.classList.remove('tall'); if(gl&&glyphWasOpen!==null){ gl.open=glyphWasOpen; glyphWasOpen=null; } if(pageY!==null){ const y=pageY; pageY=null; window.scrollTo(0,y); requestAnimationFrame(()=>{ window.scrollTo(0,y); requestAnimationFrame(()=>window.scrollTo(0,y)); }); } }
+    if(f){ if(gl&&glyphWasOpen===null){ glyphWasOpen=gl.open; gl.open=false; } size(); }   // the glyph legend folds to give the map the height; it reopens on leaving
+    else { wrap.style.maxHeight=''; wrap.classList.remove('tall'); if(gl&&glyphWasOpen!==null){ gl.open=glyphWasOpen; glyphWasOpen=null; } if(pageY!==null){ const y=pageY; pageY=null; window.scrollTo(0,y); requestAnimationFrame(()=>{ window.scrollTo(0,y); requestAnimationFrame(()=>window.scrollTo(0,y)); }); } }
     if(window.__refit)window.__refit(); if(window.__sheetRoom)window.__sheetRoom(); if(window.__placeZoom)window.__placeZoom(); }
   function enter(){ pageY=window.scrollY; if(window.__expandMap)window.__expandMap(); const req=body.requestFullscreen||body.webkitRequestFullscreen; if(req){ try{ const r=req.call(body); if(r&&r.catch)r.catch(()=>{ body.classList.add('fsfake'); paint(); }); return; }catch(e){} } body.classList.add('fsfake'); paint(); }
   function leave(){ if(document.fullscreenElement===body&&document.exitFullscreen)document.exitFullscreen(); else if(document.webkitFullscreenElement===body&&document.webkitExitFullscreen)document.webkitExitFullscreen(); body.classList.remove('fsfake'); paint(); }
   btns().forEach(b=>b.addEventListener('click',()=>on()?leave():enter()));
   document.addEventListener('fullscreenchange',paint); document.addEventListener('webkitfullscreenchange',paint);
   document.addEventListener('keydown',ev=>{ if(ev.key==='Escape'&&body.classList.contains('fsfake'))leave(); });
-  let rt=null; window.addEventListener('resize',()=>{ if(!on())return; clearTimeout(rt); rt=setTimeout(()=>{ if(body.classList.contains('both')&&window.__fitBoth)window.__fitBoth(); else { size(); if(window.__refit)window.__refit(); } },120); });
+  let rt=null; window.addEventListener('resize',()=>{ if(!on())return; clearTimeout(rt); rt=setTimeout(()=>{ size(); if(window.__refit)window.__refit(); },120); });
   window.__mapFullscreen=(f)=>{ f?enter():leave(); return on(); }; window.__mapFullscreenOn=on;
-})();
-
-// ---------- the map and the strip together (24 Sep 2026): "fit height" puts the map's bar at the top of the window and
-// shares the height between the map and the strip; "full screen" does the same on the whole screen. Both hide the map's
-// footer legend, the caption fold, the strip's title and its header legend; the strip keeps at most a third of the height.
-(function(){ const body=document.getElementById('mapbody'), wrap=document.getElementById('mapwrap'), pcw=document.getElementById('pcwrap'); if(!body||!wrap||!pcw)return;
-  const bFit=document.getElementById('pc-fith'), bFs=document.getElementById('pc-fs'); let mode=null, savedMax='', wasWidth=false;
-  function fitBoth(){ if(!mode)return; const fs=!!(window.__mapFullscreenOn&&window.__mapFullscreenOn()); const off=fs?0:((window.__pageBarH?window.__pageBarH():0)+4);
-    const bar=document.getElementById('mapbar')||wrap;
-    if(!fs){ const y=bar.getBoundingClientRect().top+window.pageYOffset-off; window.scrollTo(0,Math.max(0,y)); }
-    const origin=fs?body.getBoundingClientRect().top:0; const limit=fs?body.clientHeight:window.innerHeight;
-    const top=wrap.getBoundingClientRect().top-origin; const strip=pcw.getBoundingClientRect().height;
-    const avail=Math.max(200,limit-top-strip-10);
-    if(window.__fitHeightTo)window.__fitHeightTo(avail); }
-  function paint(){ body.classList.toggle('both',!!mode); if(bFit)bFit.setAttribute('aria-pressed',String(mode==='fit')); if(bFs)bFs.setAttribute('aria-pressed',String(mode==='fs'));
-    if(bFs){ bFs.querySelectorAll('.fs-on').forEach(x=>x.hidden=(mode==='fs')); bFs.querySelectorAll('.fs-off').forEach(x=>x.hidden=(mode!=='fs')); } }
-  let barWas=null;
-  function tuck(){ if(barWas===null&&window.__barCollapsed){ barWas=window.__barCollapsed(); if(!barWas&&window.__setBarCollapsed)window.__setBarCollapsed(true); } }   // the controls bar folds to its summary line; the reader's state returns on leaving
-  function untuck(){ if(barWas!==null){ if(!barWas&&window.__setBarCollapsed)window.__setBarCollapsed(false); barWas=null; } }
-  function enterFit(){ if(mode==='fs'){ if(window.__mapFullscreen)window.__mapFullscreen(false); } mode='fit'; savedMax=wrap.style.maxHeight; wasWidth=!!(window.__fitModeIsWidth&&window.__fitModeIsWidth()); tuck(); paint(); fitBoth(); }
-  function off(fromFs){ if(!mode)return; const was=mode; mode=null; paint(); untuck(); wrap.style.maxHeight=savedMax; if(!savedMax)wrap.classList.remove('tall'); if(wasWidth&&window.__fitWidth)window.__fitWidth();
-    if(was==='fs'&&!fromFs&&window.__mapFullscreenOn&&window.__mapFullscreenOn()&&window.__mapFullscreen)window.__mapFullscreen(false); }
-  function enterFs(){ mode='fs'; savedMax=wrap.style.maxHeight; wasWidth=!!(window.__fitModeIsWidth&&window.__fitModeIsWidth()); tuck(); paint(); if(window.__mapFullscreen)window.__mapFullscreen(true); if(window.__mapFullscreenOn&&window.__mapFullscreenOn())fitBoth(); }
-  if(bFit)bFit.addEventListener('click',()=>mode==='fit'?off(false):enterFit());
-  if(bFs)bFs.addEventListener('click',()=>mode==='fs'?off(false):enterFs());
-  let rt=null; window.addEventListener('resize',()=>{ if(mode!=='fit')return; clearTimeout(rt); rt=setTimeout(fitBoth,150); });
-  window.__fitBoth=fitBoth; window.__stripModeOff=off; window.__stripMode=()=>mode;
-  // the strip's header legend folds like the map's caption; the reader's choice is kept
-  const d=document.getElementById('pclead'); if(d){ const KEY='qmap.pclead'; try{ const v=localStorage.getItem(KEY); if(v!==null)d.open=(v==='1'); }catch(e){} d.addEventListener('toggle',()=>{ try{localStorage.setItem(KEY,d.open?'1':'0');}catch(e){} }); }
 })();
 
 // ---------- the map scrolls on its own; at its bottom, two more wheel notches (or two clicks on the scrollbar's down arrow)

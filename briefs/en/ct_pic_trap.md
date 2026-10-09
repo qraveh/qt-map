@@ -44,6 +44,8 @@ It replaces free-space tweezer and addressing optics on the alkali neutral-atom 
 ## Evidence — how the numbers were measured
 Pasqal's lifetime and 50× footprint projection are company-reported without replication, and "matching bulk optics" is measured against its own systems, not an external reference [C][330]. The Chicago and USTC results carry no vendor roadmap and neither reports a gate fidelity, because neither has run a gate. Nothing published measures what matters most — trap depth, position stability and Rydberg-line shift against distance from the chip surface.
 
+The millikelvin trap depths and milliwatt-per-trap powers are standard tweezer scalings, not values quoted by the chip sources. Not published: the Aeponyx acquisition price and closing date (only "less than 18 months" before 2026-08-10 is stated); the numbers behind Pasqal's 50× footprint projection; and the yield, per-channel cost and export-control classification of atom-trap photonics.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What they do here | Evidence |
@@ -80,10 +82,3 @@ Confirm/demote in 12–24 months: anyone runs a two-qubit gate through a chip-ge
 [581] M. U. Rehman, “Pasqal Demonstrates Photonic Chip-Based Control for Neutral-Atom Quantum Computers,” The Quantum Insider, Aug. 10, 2026. [Online]. Available: https://thequantuminsider.com/2026/08/10/pasqal-photonic-chip-control-neutral-atom-quantum-computers/ [C]
 [582] imec, “The European Commission and Chips JU select the PIXEurope consortium to lead the European Pilot Line on Advanced Photonic Integrated Circuits,” Nov. 24, 2024. [Online]. Available: https://www.imec-int.com/en/press/european-commission-and-chips-ju-select-pixeurope-consortium-lead-european-pilot-line [G]
 [886] W. Sun *et al.*, “A photonic integrated comb engine for ultracold quantum gases,” [arXiv:2609.28294](https://arxiv.org/abs/2609.28294), Sep. 2026. [P]
-
-## Open verification items
-- The institutional affiliation of the 50-atom array authors is inferred from the author list (Zou, Guo, Ren, Li) as USTC; the abstract page does not state it.
-- Aeponyx acquisition price and closing date remain undisclosed; only "less than 18 months" before 2026-08-10 is stated anywhere found.
-- No independent replication of Pasqal's 27.5 s lifetime or of the 50× footprint projection, and no numbers behind the projection.
-- No measurement anywhere of Rydberg-line shift or broadening as a function of atom–chip distance in a trap-generating geometry; the millikelvin-depth and milliwatt-per-trap figures in Physics are standard tweezer scalings, not values quoted by these sources.
-- No yield, per-channel cost or export-control classification for atom-trap photonics was found.

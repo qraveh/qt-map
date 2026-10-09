@@ -43,6 +43,8 @@ QCCD, שהוצע בידי Kielpinski, Monroe ו-Wineland ב-2002 [D][499], מח�
 ## ראיות — כיצד נמדדו המספרים
 להובלה אין מדד ביצועים עצמאי. מסיקים אותה מתרמומטריית פסי צד סביב הזזה — הנתונים של 0.013(1)–0.030(2) קוונטים [D][114] — ומנאמנות דו-קיוביטית לאחר רצף הובלה, המקפלת את ההובלה לתוך שגיאת השער. אף אחת מהן אינה לוכדת חימום מצטבר לאורך מעגל עמוק, אובדן בצמתים בקנה מידה, או הפרעה הדדית בין אזורים. השכבה של 55 ms וקצב ההחלפה של 2.5 kHz מדווחים בידי הספק ולא שוחזרו מבחוץ נכון ל-2026-09-04; הנפח הקוונטי של AQT, 32,768, אינו מדידת הובלה ואינו חושף שום תזמון [C][128].
 
+הנתון EUR 0.5 M לקיוביט הוא מחיר מערכת מוכנה מ-2023, לא עלות שבב. לא פורסם: מספר אתרי הסריג במלכודת הסריג [113]; הארכיטקטורה של AQT LYNX (עם צמתים או קווית בלבד) וזמני ההעברה והשערים שלה; והתפוקה, האחידות או העלות לשבב בכל קו ייצור של מלכודות יונים.
+
 ## שחקנים וכלכלה
 **מי.**
 | ארגון | תפקיד | מדינה | מה הם עושים כאן | ראיות |
@@ -95,10 +97,3 @@ QCCD, שהוצע בידי Kielpinski, Monroe ו-Wineland ב-2002 [D][499], מח�
 [500] R. Bowler *et al.*, “Coherent Diabatic Ion Transport and Separation in a Multi-Zone Trap Array,” *Phys. Rev. Lett.*, vol. 109, no. 8, Art. no. 080502, 2012, doi: [10.1103/PhysRevLett.109.080502](https://doi.org/10.1103/PhysRevLett.109.080502). [arXiv:1206.0780](https://arxiv.org/abs/1206.0780). [D]
 [501] T. Rummler, “In the Mountain West, a quantum computing collaboration announces major results,” Sandia Lab News, Aug. 27, 2026. [Online]. Available: https://www.sandia.gov/labnews/2026/08/27/in-the-mountain-west-a-quantum-computing-collaboration-announces-major-results/ [G]
 [502] M. Abdel-Kareem, “Universal Quantum and Atlas Copco Partner to Industrialize Vacuum Systems for Scalable Quantum Computers,” Quantum Computing Report, Dec. 18, 2025. [Online]. Available: https://quantumcomputingreport.com/universal-quantum-and-atlas-copco-partner-to-industrialize-vacuum-systems-for-scalable-quantum-computers/ [P]
-
-## פריטי אימות פתוחים
-- רשימת המחברים והכותרת המדויקת של מאמר מלכודת הרשת [113] לא אוחזרו מדף התמצית ב-arXiv; הייחוס ל-Quantinuum נשען על בדיקת העובדות של הדוח הראשי, והתמצית אינה מוסרת את מספר אתרי הרשת.
-- אין שחזור בלתי תלוי (שאינו של הספק) לזמן השכבה ברוחב מלא של 55 ms או לקצב ההחלפה ברשת של 2.5 kHz.
-- הארכיטקטורה של LYNX של AQT (עם צמתים או ליניארית בלבד) וזמני ההובלה והשער שלה לא נחשפו.
-- אין נתון פומבי על שיעור תקינות, אחידות או עלות לפיסה עבור אף קו ייצור של מלכודות יונים; הנתון של EUR 0.5 M לקיוביט הוא מחיר של מערכת מוכנה להפעלה מ-2023, לא עלות שבב.
-- לא נבדק מול ערכי הפרמטרים בנוסח התקנה אם סף מספר הקיוביטים ושיעור השגיאה של ECCN 4A906 חל על מערכות היונים המסחריות הנוכחיות.

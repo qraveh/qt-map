@@ -26,6 +26,8 @@ f = אובדן + מחיקה; a/c/d/e/g = אין — חישוב קלאסי, לל�
 
 אותו מעגל: 2.14(13)×, d=3→5, ארבעה סבבים. האיבר השולט: אובדן אטומים, לא שגיאת פאולי.
 
+לא פורסם: תאריך הסגירה והמחיר של רכישת QPerfect במלואה על ידי BTQ, שהאופציה לה מומשה בין 2025-04 ל-2026-07, ומשפחת פטנטים מתוארכת לפענוח מודע-אובדן או לפענוח מתואם.
+
 ## ייצור, חומרים ושרשרת האספקה
 ללא מפעל: החישוב הקלאסי כבר נרכש לצורך הזיווג. ההשהיה קובעת את היקף התחולה: 144 µs לסבב נכנסים במחזור אטומים של 1–4.5 ms עם מרווח של 7–30× [739], אך הם ~130× מעל מחזור מוליכי-על של 1.1 µs — ולכן הדבר נשאר ייחודי לאטומים. רוחב הפס של דגלי האובדן הוא ביט אחד לאתר לסבב, ולכן הקיר ב-10³–10⁴ אטומים הוא הדימות של ~0.5–1 ms וחלון פענוח הגדל עם העומק הלוגי, לא הקישור. נקודות כשל יחידות שעברו בירושה: דימות qCMOS של Hamamatsu [G:HAMAMATSU-CAMERA-CONC-2026] ושני ספקי AOD [G:AOD-VENDORS-2026].
 
@@ -81,8 +83,3 @@ f = אובדן + מחיקה; a/c/d/e/g = אין — חישוב קלאסי, לל�
 [G] QuEra: Libra fault-tolerant system 2028 (>256 logical, 10⁻⁶, on Braket) and gigaquop system 2028–29 — its Jan-2024 roadmap had promised 100 logical qubits in 2026 · 2026-06-15 · https://www.quera.com/press-releases/quera-announces-2028-fault-tolerant-quantum-computer-and-expanded-multi-year-strategic-collaboration-with-aws
 [G] Atom Computing: $100 M Series C (Third Point) plus $100 M DoC CHIPS LOI, total > $300 M, 2026-06-16 · 2026-06-16 · https://www.prnewswire.com/news-releases/atom-computing-raises-more-than-300-million-to-accelerate-deployment-of-fault-tolerant-neutral-atom-quantum-computers-302800832.html
 [G] DARPA QBI Stage B (announced 2025-11-06, ~12 months, up to $15 M each): Atom Computing, Diraq, IBM, IonQ, Nord Quantique, Photonic Inc., Quantinuum, Quantum Motion, QuEra, Silicon… · 2025-11-06 · https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection
-## פריטי אימות פתוחים
-- הרווח של 1.73(13)× לא שוחזר מחוץ למערך הנתונים של 448 האטומים של Harvard/MIT/QuEra, ומפענח הייחוס שלו היה בחירתו של אותו צוות.
-- הסף של QPerfect, 4% לעומת 3.2%, הוא סימולציה בלבד; לא נמצאה בדיקה על סינדרומים מחומרה נכון ל-4 בספטמבר 2026.
-- האופציה של BTQ לרכוש את QPerfect במלואה מומשה בין 2025-04 ל-2026-07 (ההודעה המאוחרת מכנה את QPerfect חברה בבעלות מלאה); לא נמצאו תאריך סגירה או מחיר.
-- לא נמצאה משפחת פטנטים מתוארכת לפענוח מודע-אובדן או לפענוח מתואם.

@@ -35,7 +35,7 @@ FORBIDDEN = [r'<!--\s*function', r'toggleAuthorList', r'You must enable JavaScri
              # judgment / own publication" (the disclosures and the [P] legend) are not citations and stay allowed
              r"(?i)\bthe author's (?!own\b|direction\b|judgment\b)", r'(?i)\bавторск(?:ом|ий|ого|ая|ой|ую|ие|их)\s+(?=[A-Z«"])', r'\bשל המחבר(?! עצמו| לפי)(?=\s*\[)']
 RETIRED_COUNTS = [r'\b(?:136|160|153) (machines|машин|מכונות)', r'\b(?:136|160|153)\s+(?:quantum|registered|квантов\w*|зарегистрированн\w*)\s+(?:machines|машин)', r'\b(?:out of|из|מתוך) (?:136|160|153)\b(?! ?(?:mK|K|GHz|MHz|kHz|Hz|nm|µm|μm|ms|µs|μs|ns|dB|%))',
-                  r'\b14 (architectures|paths|архитектур|путей|ארכיטקטורות|נתיבים)', r'\b(?:96|110) (technologies|технологий|nodes|stations|טכנולוגיות)',
+                  r'\b14 (architectures|paths|архитектур|путей|ארכיטקטורות|נתיבים)', r'\b(?:96) (technologies|технологий|nodes|stations|טכנולוגיות)',
                   r'\b1,533\b', r'\b1 533\b',
                   # 30 Sep 2026: the README's header still said "160 quantum machines" (an adjective slipped past the first pattern), and the
                   # About paragraph "five kinds of edge" in all three languages beside §7's "Four edge types" (the transfers left on 28 Sep);

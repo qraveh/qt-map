@@ -45,6 +45,8 @@ Slot 7 of the Transmon lattice with tunable couplers architecture, beside code_s
 ## Evidence — how the numbers were measured
 PEC is unbiased, with error bars, if its noise model is right, so verification becomes validating the model [C][45]. Of the register's {{N_T_CODE_MITIG_MACHINES_W}} cells, Heron r3's and Nighthawk r2's are verified ✅ — the first by the July-2026 ibm_boston preprints [D][233], [698], the second by a section of the r2 blog [C][601] — and Eagle's is 🔎, though its source supports it [D][308]. Heron r1 and Nighthawk r1 hold no code: no primary source shows a named mitigation method run on r1 itself, and the press article on r3 that its cell cites names none [P][707]. Zuchongzhi 3.0 and Tianyan-287 run random-circuit sampling scored on raw fidelity; their abstracts mention neither mitigation nor correction [D][35][D][708], so as of 2026-09-26 their code slot is empty, not mitigated.
 
+IBM's 100× PEC-overhead reduction by samplomatic (2025-11-12) is a blog claim. Not published: its baseline and circuit class, and the shot count, QPU time and observable of Nighthawk r2's 7,500-gate PEA run. The e^(4P) shot scaling and the P values are derived from the PEC construction and published error rates, not quoted from a source.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What exactly they do with this technology | Evidence |
@@ -96,11 +98,3 @@ Open questions. (1) How stable is a learned Pauli–Lindblad model over a multi-
 [708] T. Q. Group, “Tianyan: Cloud services with quantum advantage,” [arXiv:2512.10504](https://arxiv.org/abs/2512.10504), Dec. 2025. [D]
 [709] Algorithmiq, “Algorithmiq Establishes Milan Headquarters and raises €18m to Position Europe as the Future of Quantum Software,” May 11, 2026. [Online]. Available: https://algorithmiq.fi/news/algorithmiq-establishes-milan-headquarters-and-raises-18m-to-position-europe-as-the-future-of-quantum-software/ [C]
 [891] T. Schuster and A. Elben, “Probing the classical complexity of quantum dynamics experiments,” [arXiv:2609.31830](https://arxiv.org/abs/2609.31830), Sep. 2026. [P]
-
-## Open verification items
-- IBM's 100× PEC-overhead reduction by samplomatic (2025-11-12) is a blog claim; no paper stating its baseline or circuit class was found (tried 2026-09-26).
-- Nighthawk r2's 7,500-gate PEA run: shot count, QPU time and observable are not in the blog (checked 2026-09-26).
-- Zuchongzhi 3.0 and Tianyan-287: only the arXiv abstracts were read; the full texts were not checked for a mitigation step (2026-09-26).
-- Heron r1: no primary source found showing a named mitigation method run on r1 itself (2026-09-26).
-- Begušić, Gray and Chan's Science Advances volume and issue not confirmed (Crossref rate-limited, PubMed Central behind a captcha, 2026-09-26); the TREX paper (arXiv:2012.09738) header could not be read, so TREX is cited from IBM's documentation.
-- The e^(4P) shot scaling and the P values are derived here from the PEC construction and published error rates, not quoted from a source.

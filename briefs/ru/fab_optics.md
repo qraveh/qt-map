@@ -41,6 +41,8 @@ updated: 2026-09-30
 ## Свидетельства — как измерены числа
 Мощность и масса у Pasqal несут тег заявления компании, а не тег измерения [C][438]. Выручка и численность персонала TOPTICA подтверждены её собственной страницей [C][815]; «доминирующий поставщик» держится на одном вторичном источнике [P][322].
 
+Special Optics, производитель объектива 0.65-NA для системы на 448 атомов, — единственный поставщик объективов, названный в опубликованной литературе; для ионных систем ни один не назван. Во всей опубликованной литературе фигурируют только два поставщика AOD, что не означает, что их существует только два.
+
 ## Участники и экономика
 **Кто.**
 
@@ -90,6 +92,3 @@ updated: 2026-09-30
 [502] M. Abdel-Kareem, “Universal Quantum and Atlas Copco Partner to Industrialize Vacuum Systems for Scalable Quantum Computers,” Quantum Computing Report, Dec. 18, 2025. [Online]. Available: https://quantumcomputingreport.com/universal-quantum-and-atlas-copco-partner-to-industrialize-vacuum-systems-for-scalable-quantum-computers/ [P]
 [504] Gooch & Housego (G&H), “G&H Acousto-Optic Deflectors Referenced in Nature Papers Demonstrating 3,000 & 6,100 Qubit Quantum Systems,” G&H, Mar. 2026. [Online]. Available: https://gandh.com/news-and-resources/g-and-h-acousto-optic-deflectors-in-nature-papers [P]
 [815] TOPTICA Photonics, “About the TOPTICA Group.” [Online]. Available: https://www.toptica.com/company [C]
-
-## Открытые пункты верификации
-Иногда цитируемый потолок частоты обновления пространственных модуляторов света (SLM) и АОД в ~10 MHz выше ~10⁴ кубитов нельзя приписать ни устройству, ни измерению, поэтому здесь он не используется. Позиция TOPTICA как «доминирующего поставщика» держится на одном вторичном источнике [322], хотя её выручка и численность персонала теперь подтверждены на собственной странице компании [815]. Special Optics — объектив с NA 0.65 в 448-атомной системе — единственный поставщик объективов, названный в просмотренной литературе; для ионных систем поставщика не найдено. Список поставщиков АОД верифицирован по отсутствию: в просмотренной литературе фигурируют лишь два поставщика, а это не то же самое, что существование лишь двух.

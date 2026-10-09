@@ -73,6 +73,8 @@ Every headline number here is post-selected: erasure rates come from heralded to
 
 Replication is real: transmon AWS 2023 → SUSTech 2025 → AWS 2026; cavity Yale 2023 → 2025 → Quantum Circuits 2026. Conflicts: the 2026 Nature gate is post-selected Pauli < 0.1% (0.12% at depth) with erasure fraction ≈80% in the main report, 0.029(6)% per gate cited from the same paper, "below 0.1%" in the arXiv abstract [D][84] — per-gate versus depth-extrapolated, quoted rather than merged. Second, PsiQuantum waveguide loss is 0.5 dB/m in the main report against 1.8(2) dB/m in Nature [D][169].
 
+The ≈80% gate-level erasure fraction of the cavity CZ comes from the main report; the arXiv abstract states only ≈0.5% erasure per gate, and no primary source gives the fraction. OQC's erasure-qubit perspective [S][402] is a review by an industrial group, not a hardware commitment, and OQC's Series C release names no dual-rail target [C][60]. Not published: whether Quandela's and QuiX's path-encoded linear-optical qubits are dual-rail, so no numbers are attributed to them; a dated primary figure for Quantum Circuits' physical-to-logical overhead, reported elsewhere as 10–20 physical per logical and absent from its dual-rail explainer [C][411]; yield, cost or energy per dual-rail qubit, from any actor, superconducting or photonic; a dated patent-family count for dual-rail encodings; and the funding of the dual-rail programmes at AWS, SUSTech and Yale, apart from their parent institutions. Not published in the abstract of [84]: the cavity materials, quality factors and packaging of the 2026 Quantum Circuits device.
+
 ## Actors & economics
 
 **Who.**
@@ -144,16 +146,3 @@ Open questions. (1) Does the erasure fraction hold under two-qubit gates at dept
 [409] M. Abdel-Kareem, “D-Wave Demonstrates Two-Qubit Gate Breakthrough for Dual-Rail Erasure Qubits in Nature,” Quantum Computing Report, Aug. 6, 2026. [Online]. Available: https://quantumcomputingreport.com/d-wave-demonstrates-two-qubit-gate-breakthrough-for-dual-rail-erasure-qubits-in-nature/ [R]
 [410] D. Biswas *et al.*, “Bias-Preserving Gates and Quantum Error Correction With Dual-Rail Cat Codes,” [arXiv:2607.00786](https://arxiv.org/abs/2607.00786), Jul. 2026. [S]
 [411] Quantum Circuits, “What are Quantum Circuits' Dual-Rail Qubits and Why are They a Breakthrough?,” Sep. 17, 2024. [Online]. Available: https://quantumcircuits.com/dual-resonator-qubits-breakthrough/ [C]
-
-## Open verification items
-
-- Post-selected Pauli error of the 2026 dual-rail CZ: 0.029(6)% per gate (as cited from Nature 656, 47) versus "< 0.1%" in the arXiv abstract and "0.12% bound at depth" in the main report [D][84]; per-gate and depth-extrapolated figures, not reconciled in an accessible full text.
-- Gate-level erasure fraction ≈80% for the cavity CZ is carried from the main report; the arXiv abstract states only ≈0.5% erasure per gate, so the fraction could not be re-derived from a primary source.
-- PsiQuantum waveguide loss: 0.5 dB/m (main report) versus 1.8(2) dB/m for single-mode SiN (Nature) [D][169]; likely different waveguide classes, unresolved.
-- Quandela's and QuiX's photonic qubit encoding is not stated on their public technology pages; both are path-encoded linear-optical by construction, but neither confirms "dual-rail" in a citable source, so no numbers are attributed to them.
-- Quantum Circuits' claimed physical-to-logical overhead (reported elsewhere as 10–20 physical per logical) is not stated on the company's dual-rail explainer page [C][411]; no dated primary figure found.
-- Dual-rail yield, cost per qubit and energy per qubit: not published by any actor, superconducting or photonic.
-- Patent-family counts for dual-rail encodings: no named database gives a dated count; four individual patents or applications cited instead.
-- OQC's erasure-qubit perspective [S][402] is a review by an industrial group, not a hardware commitment; OQC's Series C release names no dual-rail target [C][60].
-- Cavity materials, quality factors and packaging for the 2026 Quantum Circuits device: not in the abstract; the full Nature text was not accessible.
-- Funding attributable specifically to dual-rail programmes at AWS, SUSTech and Yale: undisclosed or not separable from the parent institution.

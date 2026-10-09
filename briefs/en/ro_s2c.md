@@ -25,6 +25,8 @@ Per-shot signal-to-noise is the phase shift integrated against amplifier noise o
 
 Dominant term: SNR at short windows, T1 at long; no foundry device publishes sub-10 µs readout above 99.5%.
 
+The ZQCS channel count is a trade-press restatement of a vendor launch, not a primary release. Not published: a readout-only fidelity, separated by randomised benchmarking, behind the Diraq/imec 99.9% quoted as SPAM.
+
 ## Manufacturing, materials & supply chain
 Built in the qubit's own 300 mm CMOS stack, the sensor adds no materials risk; the gate-based box, needing only an electrode and a tank, is the foundry-favoured form. Instrumentation is bought, not built: Zurich Instruments' SHFQC-LRT gives ≤32 µs weighted integration [C][625], and Quantum Machines' OPX1000 lists nine spin customers including Diraq, HRL, imec and Equal1 [C][449]. Frequency multiplexing keeps line count sub-linear: the wall at 10³ is tank spacing across the band; at 10⁴–10⁶ it is aggregate readout bandwidth and amplifier count, not the sensor. HRL's 4 K controller (366 DACs, ≤3.5 W) shows the chain can move inside the fridge [D][190].
 
@@ -62,6 +64,3 @@ Confirm or demote in 12–24 months: ≥99.9% below 20 µs on a foundry device; 
 [526] Zurich Instruments, “Zurich Instruments Launches the ZQCS Quantum Control System to Master the Long-Lived Logical Qubit Challenge,” Mar. 9, 2026. [Online]. Available: https://www.zhinst.com/americas/en/news/zurich-instruments-launches-zqcs-quantum-control-system-master-long-lived-logical-qubit/ [P]
 [624] G. A. Oakes *et al.*, “Fast High-Fidelity Single-Shot Readout of Spins in Silicon Using a Single-Electron Box,” *Phys. Rev. X*, vol. 13, no. 1, Art. no. 011023, Feb. 2023, doi: [10.1103/PhysRevX.13.011023](https://doi.org/10.1103/PhysRevX.13.011023). [D]
 [625] Zurich Instruments, “SHFQC-LRT Long Readout Time,” Jan. 30, 2025. [Online]. Available: https://www.zhinst.com/en/products/shfqc-lrt-long-readout-time [C]
-
-## Open verification items
-The multimode-reflectometry preprint arXiv:2512.05087 (98% in 8 µs to 2 GHz) is not included in the records table: its authors and institution could not be resolved (the abstract page returns no metadata; the arXiv export API is robots-disallowed). The ZQCS channel count is a trade-press restatement of a vendor launch, not a primary release. No source gives an RB-separated readout-only fidelity for the Diraq/imec 99.9%, quoted as SPAM.

@@ -82,6 +82,8 @@ g, ייצור: CMOS.
 
 שחזור: מספרי ה-SiMOS של imec משתחזרים על פני ארבעה התקנים ושני מוסדות [D][189]; המספרים של Intel באים מיצרן אחד בלבד. סומנו: "המחשב הקוונטי הראשון מצורן ב-CMOS, מלא בכל שכבותיו" של Quantum Motion, ללא נאמנויות שפורסמו [C][200]; הנקודות של Equal1 בתהליך מסחרי, ללא מדדי קיוביט [C][797].
 
+ה-SPAM לתאי היחידה של imec/Diraq הוא 99.95% ב-100 µs [189], לעומת 99.9% שנרשמו לקו 300 mm של imec (2025). כל נתוני התפוקה של Intel באים מ-[766], על 232 התקנים של שתים-עשרה נקודות מפרוסה אחת — 99.8% מהנקודות, 96% מההתקנים השלמים, 91% הצלחה בחישת מטען; [199] חוזר על ה-96% בהפניה ל-[766]. לא פורסם: התאריכים של מימון Silex, A$5.1 M מ-Defence Trailblazer ו-A$4.35 M מ-SQC [799].
+
 ## שחקנים וכלכלה
 
 **מי.**
@@ -170,11 +172,3 @@ g, ייצור: CMOS.
 [802] R. Acharya *et al.*, “Multiplexed superconducting qubit control at millikelvin temperatures with a low-power cryo-CMOS multiplexer,” *Nat. Electron.*, vol. 6, no. 11, pp. 900–909, Nov. 2023, doi: [10.1038/s41928-023-01033-8](https://doi.org/10.1038/s41928-023-01033-8). [D]
 [803] H. Bennie, “Quantum Motion Announces Record Integration of Quantum Devices and Partnership with Semiconductor Manufacturer, GlobalFoundries,” quantummotion.com, Jan. 6, 2025. [Online]. Available: https://quantummotion.com/partnership-with-globalfoundries/ [C]
 [804] Quobly, “Quobly Raises €115M Series A to Industrialize Silicon Quantum Computing,” HPCwire, Jun. 3, 2026. [Online]. Available: https://www.hpcwire.com/off-the-wire/quobly-raises-e115m-series-a-to-industrialize-silicon-quantum-computing/ [P]
-
-## פריטי אימות פתוחים
-
-- SPAM של תאי היחידה של imec/Diraq: 99.95% ב-100 µs [189] (ערך מגרסה v1, נשמר), לעומת 99.9% שנרשם לקו ה-300 mm של imec (2025).
-- נאמנות ההסעה [196]: גרסה v1 נתנה 99.54%; התמצית מציינת "99.5% בממוצע"; נעשה שימוש בערך שבתמצית.
-- המימון של Silex (A$5.1 M מ-Defence Trailblazer, A$4.35 M מ-SQC): הסכומים אינם מתוארכים בדף של Silex [799]; השורה בפנקס הכספים מתוארכת לפי השלמת המפעל ביוני 2026.
-- [796] Losert ועמיתיו: הפרטים הביבליוגרפיים מצוטטים מהספרות המקובלת, ולא אומתו מול דף המוציא לאור.
-- הושמטו מגרסה v1 כלא מאומתים כאן: "אחזקת הון של ~1% בידי Commerce" במכתב הכוונות של CHIPS ל-GF (גרסה v1 ציטטה את [300], [353], [798] יחד) וטענת ה-30× של IBM לתפוקת ההתקנים של Anderon (מקורה בעיתונות המקצועית בלבד). כל נתוני שיעור התקינות של Intel באים מ-[766], על 232 התקנים בני שתים-עשרה נקודות בפרוסה אחת: 99.8% מהנקודות, 96% מההתקנים השלמים, 91% הצלחה בחישת מטען; [199] חוזר על ה-96% בהפניה ל-[766].

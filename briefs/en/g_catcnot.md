@@ -28,6 +28,8 @@ No cat–cat entangling gate exists in hardware as of 2026-09-04.
 
 The neighbour shows the budget's shape: Ocelot's 2.8 µs cycle moved logical error only from 1.75(2)% at distance 3 to 1.65(3)% at distance 5, because per-CX phase-flip is already ~10⁻¹ [D][80].
 
+The <10⁻⁶ logical-memory claim in [81] rests on assumed component lifetimes and nonlinearity precision, with no independent replication and no measured gate as of 2026-09-04. The roadmap page [412] attaches the "13 minutes" bit-flip requirement to the Graphene chip without saying whether it holds idle or under a gate. No experimental group has reported an attempt at a cat–cat entangling gate.
+
 ## Manufacturing, materials & supply chain
 No dedicated process: the gate reuses existing cavity bodies, junction lithography and room-temperature microwave stacks. Dropping the ancilla removes one transmon and readout chain per gate pair — Ocelot spends four ancillas on five cats — but adds a parametric tone per cat: lines per qubit are re-allocated, not reduced. At 10³ cats the wall is coax density and pump crosstalk in one dilution unit; at 10⁴–10⁶ it is the generic microwave wiring wall, no cryogenic-CMOS multiplexing of cat pump tones having been demonstrated.
 
@@ -68,9 +70,3 @@ Confirm by 2028 if a measured two-cat gate holds bit-flip time within 10× of id
 [88] N. Coppola, “Alice & Bob announces Series B Extension,” Alice & Bob, May 22, 2026. [Online]. Available: https://alice-bob.com/newsroom/alice-bob-announces-series-b-extension/ [C]
 [95] É. Gouzien, D. Ruiz, F.-M. Le Régent, J. Guillaud, and N. Sangouard, “Performance Analysis of a Repetition Cat Code Architecture: Computing 256-bit Elliptic Curve Logarithm in 9 Hours with 126133 Cat Qubits,” *Phys. Rev. Lett.*, vol. 131, Art. no. 040602, Jul. 2023, doi: [10.1103/PhysRevLett.131.040602](https://doi.org/10.1103/PhysRevLett.131.040602). [arXiv:2302.06639](https://arxiv.org/abs/2302.06639). [S]
 [412] Alice & Bob, “Roadmap,” Jun. 23, 2026. [Online]. Available: https://alice-bob.com/roadmap/ [R]
-
-## Open verification items
-The <10⁻⁶ logical-memory claim in [81] rests on assumed component lifetimes and nonlinearity precision; no independent replication and no measured gate exist as of 2026-09-04.
-Roadmap page [412] attaches the "13 minutes" bit-flip requirement to the Graphene chip without saying whether it is idle or under-gate; the main report reads it as under-CNOT.
-No public record was found of any experimental group attempting a cat–cat entangling gate.
-Nord Quantique [65] appears in the ledger but not the Who table: its multimode route does not use this gate.

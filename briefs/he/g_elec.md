@@ -62,6 +62,8 @@ updated: 2026-09-30
 
 הנתון הבולט 8.4(7)×10⁻⁵ מגיע מבחינת ביצועים אקראית עם דליפה לתת-מרחב בטמפרטורת דופלר, לא מטומוגרפיה ולא מ-RB משולב (interleaved) מול ייחוס בלתי תלוי [D][102]. RB דו-קיוביטי מסחרר את השגיאות הקוהרנטיות לקצב דה-פולריזציה אפקטיבי, ממעיט בהערכת השארית הקוהרנטית, ואינו אומר דבר על הפרעה הדדית ליוני צופה — האיבר שיכריע את הביצועים בקנה מידה. אף קבוצה בלתי תלויה לא שחזרה את השער האלקטרוני מעל 99.9%: התוצאות של Oxford מ-2016 [D][445] ושל NIST מ-2011 [D][444] הן שערי המיקרוגל היחידים בשדה קרוב המתועדים שאינם של Oxford Ionics, ולא eleQtron ולא Universal Quantum פרסמו נאמנות דומה נכון ל-3 בספטמבר 2026. הניסוח של החברה, "נאמנות שער דו-קיוביטי של 99.99%" [C][446], מעגל את 1 − 8.4(7)×10⁻⁵ של טרום-הפרסום — עקבי, אך ללא תחום שגיאה וללא רוחב.
 
+משך השער של 225.8 µs בשיא של 2025 אינו מצוין בתמצית של arXiv:2510.17286. לא פורסם: משפחת פטנטים או ספירת פטנטים עבור Electronic Qubit Control של Oxford Ionics / IonQ; אספקה או אבן דרך כלשהי בחוזה DLR של Universal Quantum בסך €67 M (תקופה של ארבע שנים מ-2022-11) נכון ל-2026-09-03; מין היון, מספר הקיוביטים, הנאמנות וזמן השער של eleQtron, ש-MAGIC שלה מתוארת באופן איכותי בלבד; סכום המענק של Innovate UK / DSIT במסגרת Quantum Missions Pilot ל-Oxford Ionics; וכל נתון של הפרעה הדדית, קצב חימום או פיזור הספק על השבב עבור מלכודת של שערים אלקטרוניים.
+
 ## שחקנים וכלכלה
 
 **מי.**
@@ -126,12 +128,3 @@ updated: 2026-09-30
 [446] IonQ, “IonQ Achieves Landmark Result, Setting New World Record in Quantum Computing Performance,” Oct. 21, 2025. [Online]. Available: https://www.ionq.com/news/ionq-achieves-landmark-result-setting-new-world-record-in-quantum-computing [C]
 [447] D. Finke, “eleQtron Secures €57 Million ($61.5M USD) Series A to Scale MAGIC Trapped-Ion Platform,” Quantum Computing Report, May 5, 2026. [Online]. Available: https://quantumcomputingreport.com/eleqtron-secures-e57-million-61-5m-usd-series-a-to-scale-ion-trap-systems/ [P]
 [448] Oxford Ionics, “Oxford Ionics selected for Quantum Missions Pilot to upgrade NQCC testbed with advanced 2D ion traps,” Mar. 11, 2025. [Online]. Available: https://www.oxionics.com/announcements/oxford-ionics-selected-for-quantum-missions-pilot-to-upgrade-nqcc-testbed-with-advanced-2d-ion-traps/ [C]
-
-## פריטי אימות פתוחים
-- משך השער בשיא של 2025 (225.8 µs) אינו מצוין בתמצית של arXiv:2510.17286, ולא ניתן היה לאשר אותו בטקסט שניתן לאחזר; לא מאומת.
-- מין היון ומספר אזורי המלכודת ב-arXiv:2510.17286 אינם מצוינים בטקסט שניתן לאחזר (קודמו מ-2024 משתמש בשבב בן שבעה אזורים).
-- אין מספר משפחת פטנטים או ספירת פטנטים ממאגר נתונים עבור Electronic Qubit Control של Oxford Ionics / IonQ: החיפוש לפי בעל הפטנט ב-patents.google.com חסום באמצעות robots.txt.
-- לחוזה DLR של Universal Quantum בסך €67 M (תקופה של ארבע שנים מ-2022-11) אין אישור שפורסם על אספקה או על אבן דרך נכון ל-2026-09-03.
-- eleQtron אינה מפרסמת מין יון, מספר קיוביטים, נאמנות או זמן שער; MAGIC מתוארת באופן איכותי בלבד.
-- סכום המענק של Innovate UK / DSIT במסגרת Quantum Missions Pilot ל-Oxford Ionics לא פורסם.
-- לא פורסם נתון של הפרעה הדדית, קצב חימום או פיזור הספק על השבב עבור אף שבב מלכודת של שערים אלקטרוניים.

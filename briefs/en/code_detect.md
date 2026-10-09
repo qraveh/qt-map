@@ -46,6 +46,8 @@ The register lists {{N_T_CODE_DETECT_MACHINES_W}} carriers, {{N_T_CODE_DETECT_PR
 ## Evidence — how the numbers were measured
 Every headline here is conditional on acceptance: Harper & Flammia's 0.60(3)% is logical RB inside the code space [D][719]; Wukong's gates and the ibm_fez states are post-selected [D][720][D][721]. Acceptance belongs beside every fidelity, and the physical baseline deserves the same discard. Microsoft and Quantinuum report correction and detection on the same codes, 11× to 800× below physical baselines [D][667]. Detection can also certify: IBM's spacetime-coded sampling bounds fidelity from syndrome statistics, device-dependent but under weaker assumptions than proxy benchmarks [D][46] — fidelity, not hardness: version 1's 70-qubit circuit (bound 0.284) was simulated classically in 37.3 min on 256 H100 GPUs, log-XEB 0.350 [D][47]; version 3 (2026-09-02) reports 76 physical qubits and a bound of 0.349 [D][46].
 
+Not published: the acceptance rate of Helios' 94-logical-qubit iceberg runs.
+
 ## Actors & economics
 **Who.**
 
@@ -92,9 +94,3 @@ Confirm if by 2027-12-31 a detection-certified sampling run holds a fidelity bou
 [722] N. Sundaresan *et al.*, “Demonstrating multi-round subsystem quantum error correction using matching and maximum likelihood decoders,” *Nat. Commun.*, vol. 14, Art. no. 2852, May 2023, doi: [10.1038/s41467-023-38247-5](https://doi.org/10.1038/s41467-023-38247-5). [D]
 [723] L. Caune *et al.*, “Demonstrating real-time and low-latency quantum error correction with superconducting qubits,” *Nat. Commun.*, vol. 17, Art. no. 7383, Jun. 2026, doi: [10.1038/s41467-026-73331-6](https://doi.org/10.1038/s41467-026-73331-6). [arXiv:2410.05202](https://arxiv.org/abs/2410.05202). [D]
 [724] Z. He, D. Amaro, R. Shaydulin, and M. Pistoia, “Performance of quantum approximate optimization with quantum error detection,” *Commun. Phys.*, vol. 8, Art. no. 217, May 2025, doi: [10.1038/s42005-025-02136-8](https://doi.org/10.1038/s42005-025-02136-8). [arXiv:2409.12104](https://arxiv.org/abs/2409.12104). [D]
-
-## Open verification items
-- Heron r3 cell: its version-3 figures come from the abstract, and the processor name (ibm_pittsburgh in the register) could not be read from any version of arXiv:2607.25941 — only its abstract and contents rendered (tried 2026-09-26); version 1's 70-qubit and 0.284 figures are confirmed only through the classical-simulation paper (arXiv:2608.13110).
-- Vuillot's paper (arXiv:1705.08957): the abstract was read, but title, journal and volume could not be confirmed — the arXiv page rendered without metadata and Crossref returned HTTP 429 (tried 2026-09-26).
-- The sampling overhead of IBM's 50-qubit, 236× spacetime-check run could not be read unambiguously from its Table 1 (tried 2026-09-26).
-- Acceptance for Helios' 94-logical-qubit iceberg runs is not in the text that rendered (tried 2026-09-26).

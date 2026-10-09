@@ -41,6 +41,8 @@ It entangles two families: silicon and germanium quantum-dot spins (Intel, Diraq
 ## Evidence — how the numbers were measured
 HRL's headline figures and the 80% calibration split are vendor-reported and unreplicated [D][190]. Diraq and imec's 99.04–99.56% is a population statistic over foundry devices, not an all-pairs same-chip result; imec's eight-qubit device validates exchange on one of four pairs [D][197]. Nature's July 2026 spin-qubit feature was corrected on 2026-08-04, revising single-qubit error rates attributed to HRL and QuTech [P][450]. No below-threshold logical memory exists on any spin platform as of 2026-09-04.
 
+SQC's fidelities in [192] read 99.5–99.99%, with Bell states beyond 99%, in the arXiv abstract, and 99.10–99.99%, with Bell states up to 99.5%, in the Nature version; the main report's single 99.90% donor nuclear CZ does not appear in the abstract. Diraq's total raised (">USD 100 M") comes from trade press, not a company release. Not published: the financial terms of IBM's acquisition of HRL, and a dated patent-family count for exchange gates.
+
 ## Actors & economics
 **Who.**
 
@@ -91,6 +93,3 @@ Falsifiable in 12–24 months: confirm/demote that a foundry device publishes al
 [449] Quantum Machines, “Semiconductor Spin Qubits,” Aug. 11, 2026. [Online]. Available: https://www.quantum-machines.co/qubit-types/semiconductor-spin-qubits/ [C]
 [450] D. Garisto, “Underdog 'spin qubits' leap forward in race to a useful quantum computer,” *Nature*, vol. 656, no. 8127, pp. 280–281, Aug. 2026, doi: [10.1038/d41586-026-02357-z](https://doi.org/10.1038/d41586-026-02357-z). [P]
 [766] S. F. Neyens *et al.*, “Probing single electrons across 300-mm spin qubit wafers,” *Nature*, vol. 629, no. 8010, pp. 80–85, May 2024, doi: [10.1038/s41586-024-07275-6](https://doi.org/10.1038/s41586-024-07275-6). [D]
-
-## Open verification items
-HRL's ~80% calibration share of two-qubit error is self-reported, single-vendor and unreplicated as of 2026-09-04. SQC fidelity range conflict: the arXiv abstract of [192] states all fidelities 99.5–99.99% and Bell states beyond 99%, while the published Nature version gives 99.10–99.99% with Bell up to 99.5%, and the main report quotes a single 99.90% donor nuclear CZ — three different framings of the same experiment, and the 99.90% could not be isolated in the abstract. Financial terms of the IBM–HRL acquisition are undisclosed in both the announcement and the closing release. Diraq's total raised (">USD 100 M") comes from trade press, not a company release. No dated patent-family count specific to exchange gates was found.

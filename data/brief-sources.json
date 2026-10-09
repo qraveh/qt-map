@@ -14798,28 +14798,10 @@
    {
     "work": "report:N22#1",
     "grade": "P"
-   }
-  ],
-  "ro_imgfast": [
-   {
-    "work": "report:N5#1",
-    "grade": "D"
-   },
-   {
-    "work": "arxiv:2605.24175",
-    "grade": "D"
-   },
-   {
-    "work": "arxiv:2608.17189",
-    "grade": "D"
    },
    {
     "work": "https://www.quantum-machines.co/resources/blog/classically-accelerated-readout-neutral-atoms-cpu-gpu-readout",
     "grade": "C"
-   },
-   {
-    "work": "https://www.federalregister.gov/documents/2024/09/06/2024-19633/implementation-of-additional-export-controls-certain-advanced-computing-items-supercomputer-and",
-    "grade": "G"
    },
    {
     "work": "report:N13#0",
@@ -14832,18 +14814,6 @@
    {
     "work": "https://www.quantum-machines.co/press-release/quantum-machines-raises-170-million-in-series-c-funding",
     "grade": "C"
-   },
-   {
-    "work": "report:S28#0",
-    "grade": "G"
-   },
-   {
-    "work": "report:N19#0",
-    "grade": "C"
-   },
-   {
-    "work": "https://www.nist.gov/news-events/news/2026/05/department-commerce-announces-letters-intent-9-companies-2-billion",
-    "grade": "G"
    },
    {
     "work": "report:N22#0",

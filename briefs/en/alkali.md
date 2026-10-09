@@ -60,6 +60,8 @@ The headline coherence is a dynamically decoupled, array-averaged T2: it absorbs
 
 Conflicts. The Caltech abstract says "over 6,100 atoms in around 12,000 sites"; versions differ (v1 2024-03, v4 2025-07) and the 12.6 s figure belongs to v4, the later revision, which takes precedence [D][138]. The review arguing a 99.9% blockade ceiling also tabulates a 2025 USTC CZ of 99.84% that no primary source corroborates [P][140].
 
+Not published: the computing atom species of Infleqtion and of planqc (if strontium, planqc belongs to the alkaline-earth atoms technology), a vacuum-limited trap lifetime for the Tsinghua metasurface array, and a per-qubit or per-system capital cost for any tweezer machine.
+
 ## Actors & economics
 
 **Who.**
@@ -127,16 +129,3 @@ Watch: Infleqtion's Q4 2026 report against the 30-logical claim; a QuEra Libra m
 [330] Pasqal, “Pasqal brings qubit control on-chip, advancing the path to fault-tolerant quantum computing at scale,” Aug. 10, 2026. [Online]. Available: https://www.pasqal.com/news/pasqal-brings-qubit-control-on-chip-advancing-the-path-to-fault-tolerant-quantum-computing-at-scale/ [C]
 [331] Pasqal, “Newsroom.” [Online]. Available: https://www.pasqal.com/newsroom/ [C]
 [332] Infleqtion, “Infleqtion Reports Record Q2 Revenue, Raises 2026 Outlook as Quantum Commercialization Accelerates,” Aug. 12, 2026. [Online]. Available: https://ir.infleqtion.com/news-events/press-releases/detail/201/infleqtion-reports-record-q2-revenue-raises-2026-outlook-as-quantum-commercialization-accelerates [G]
-
-## Open verification items
-
-- The 2016 origin papers (Endres et al.; Barredo et al.) and the 2001 single-atom trapping result are cited from the standard literature without a numbered source.
-- Export control: specific ECCNs for tunable lasers (6A005) and for quantum equipment under the 2024 BIS rule were not verified against a BIS or Wassenaar document; only general category exposure is asserted.
-- Infleqtion's computing atom species (caesium) is not confirmed by any source consulted here.
-- planqc's atom species (strontium) is not stated on its own news index; if strontium, planqc belongs to the alkaline-earth node rather than this one.
-- Caltech array: the v4 abstract says "over 6,100 atoms in around 12,000 sites"; version drift between v1 (2024-03) and v4 (2025-07), the 12.6 s T2 figure taken from v4.
-- The Tsinghua metasurface paper does not state a vacuum-limited trap lifetime.
-- No per-qubit or per-system capital cost was found for any tweezer machine, from any vendor or filing.
-- arXiv:2608.05010 tabulates a 2025 USTC CZ of 99.84% with no corroborating primary source; not used.
-- https://www.quera.com/press-releases/quera-announces-2028-fault-tolerant-quantum-computer-and-expanded-multi-year-strategic-collaboration-with-aws returned HTTP 404 on 2026-09-03; no QuEra corporate events after 2026-06-15 were verified.
-- Filling-fraction framing conflict: Tsinghua's "11,022 atoms" is a pre-rearrangement loading figure at 60.5%, not a defect-free usable-qubit count; the two are routinely conflated in secondary coverage.

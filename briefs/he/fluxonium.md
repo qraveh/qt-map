@@ -30,6 +30,8 @@ updated: 2026-09-04
 
 כולם התקנים של קיוביט אחד או שניים; נכון ל-2026-09-04 אין סריג פלוקסוניום ואין מחזור תיקון שגיאות.
 
+D-Wave מציינת 200 חוטי הטיה (2026-01-06) ו-~300 קווי הטיה (2026-01-23) לאותה תכנית מחשלן [G:DWAVE-FLUXDAC-LINECOUNT-CONFLICT]. לא פורסם: משך שער ה-CZ של MIT בנאמנות 99.922%, שתמצית ה-PRX אינה מציינת, ומשפחת פטנטים מתוארכת ייחודית לפלוקסוניום.
+
 ## ייצור, חומרים ושרשרת האספקה
 אותה ליתוגרפיית צמתים של Nb/Al כמו בטרנסמון, ואיתה מפעלי הייצור שלו ובעיית ה-TLS שלו; התקני השיא מגיעים מ-MIT Lincoln Laboratory, ואין ספק מסחרי. עלות הקלט-פלט היא קו הנעה, קו קריאה וקו שטף לכל קיוביט: מקרר נושא כמה מאות קווי ממתח DC, ולכן העומס מתחיל להכביד ב-10³, וב-10⁴–10⁶ הממתח חייב להיווצר בשלב הקריוגני. D-Wave מרכיבה בשיטת השבב ההפוך פיסת Φ-DAC מרובבת מעל מרווח של ~7 µm ב-10 mK, ללא דה-קוהרנטיות נוספת הניתנת להבחנה (T1 ≈ 200 µs [D][316]), ורכיבי מפתח מגיעים מ-NASA JPL [C][281]; ב-Shenzhen מעבירים את XY ואת Z בקו חם אחד לכל קיוביט [D][315]. החשיפה לפיקוח על יצוא היא זו הכללית של מוליכי-העל (US EAR ECCN 3A901).
 
@@ -72,9 +74,3 @@ updated: 2026-09-04
 [315] X. Pan *et al.*, “Unified Flux Control Architecture for Fluxonium Qubits,” [arXiv:2605.25948](https://arxiv.org/abs/2605.25948), May 2026. [D]
 [316] D-Wave Quantum Inc., “Digital control of a high-coherence fluxonium qubit,” D-Wave Quantum Inc., Jan. 2026. [Online]. Available: https://www.dwavequantum.com/media/41upubz2/14-1090a-a_fluxonium-dac-control.pdf [D]
 [317] S. Miller, “Fast control methods enable record-setting fidelity in superconducting qubit,” MIT News, Jan. 14, 2025. [Online]. Available: https://news.mit.edu/2025/fast-control-methods-enable-record-setting-fidelity-superconducting-qubit-0114 [D]
-
-## פריטי אימות פתוחים
-משך השער של ה-CZ של MIT ב-99.922%: רשומת הגרף מציינת 50 ns; תמצית המאמר ב-PRX אינה מציינת משך. לא נפתר.
-תאריך הפרסום של מקור [39] ב-PRX Quantum לא אושר (רק כרך ומספר מאמר); נעשה שימוש בתאריך arXiv.
-D-Wave מציינת 200 חוטי ממתח (2026-01-06) ו-~300 קווי ממתח (2026-01-23) עבור אותה תצורה של מחשב ההרפיה; הסתירה לא יושבה [G:DWAVE-FLUXDAC-LINECOUNT-CONFLICT].
-לא נמצאה משפחת פטנטים מתוארכת הייחודית לפלוקסוניום.

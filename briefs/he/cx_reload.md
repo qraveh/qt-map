@@ -47,6 +47,8 @@ Harvard/MIT ממיינים 15,000 קיוביטים/s במנות של 600 קיו�
 ## ראיות — כיצד נמדדו המספרים
 המבחן המבחין הוא הקוהרנטיות של הקיוביטים המאוחסנים כשהטעינה מחדש פועלת לעומת כשהיא כבויה. Harvard (Rb, XY16): T2 של 1.34(4) s בייחוס, 1.15(3) s עם ה-MOT, 1.09(3) s בתוספת דימות ומיגון [D][144] — נמוך ב-14–19 %, ~4–5σ [S]. Princeton (Yb): T2 בהד 5.4(9) לעומת 7(1) s, ו-T2* של 0.73(2) לעומת 0.69(2) s, ללא שינוי בתוך 1.5σ [D][506]. נכון ל-2026-09-26 לא פורסמה נאמנות שער על קיוביטים מאוחסנים במהלך טעינה מחדש. הנתון הלוגי היחיד: שגיאה של 0.63(3) % ו-0.64(4) % למחזור לאורך עד 90 מחזורים עם טעינה מחדש, בקודי טורוס של 32 ו-64 אטומים, בלי שזמן המחזור צוין [D][148]. השטף מצוטט כאטומים, כקיוביטים מאותחלים או כקיוביטים ממוינים, פיזור של פי עשרה; האטלס משתמש בקיוביטים מאותחלים/s.
 
+קצב המנות של Harvard/MIT נגזר מהשטף ומגודל המנה, ואינו מצוטט מהמקור.
+
 ## שחקנים וכלכלה
 **מי.**
 
@@ -85,10 +87,3 @@ Harvard/MIT ממיינים 15,000 קיוביטים/s במנות של 600 קיו�
 [507] K.-N. Schymik *et al.*, “Single Atoms with 6000-Second Trapping Lifetimes in Optical-Tweezer Arrays at Cryogenic Temperatures,” *Phys. Rev. Appl.*, vol. 16, no. 3, Art. no. 034013, Jun. 2021, doi: [10.1103/PhysRevApplied.16.034013](https://doi.org/10.1103/PhysRevApplied.16.034013). [arXiv:2106.07414](https://arxiv.org/abs/2106.07414). [D]
 [508] G. Baranes *et al.*, “Leveraging Qubit Loss Detection in Fault-Tolerant Quantum Algorithms,” *Phys. Rev. X*, vol. 16, no. 1, Art. no. 011002, Jan. 2026, doi: [10.1103/ycwc-3myc](https://doi.org/10.1103/ycwc-3myc). [arXiv:2502.20558](https://arxiv.org/abs/2502.20558). [S]
 [509] QuEra Computing, “Our Quantum Roadmap,” Sep. 15, 2026. [Online]. Available: https://www.quera.com/our-quantum-roadmap [R]
-
-## פריטי אימות פתוחים
-- 2026-09-26: קצב המנות של Harvard/MIT נגזר מהשטף ומגודל המנה, ואינו מצוטט; הנתונים נקראו מ-arXiv:2506.20660 (HTML, גרסה v2 מ-2026-05-21), לא מגרסת Nature.
-- 2026-09-26: המרחק של 30 cm ל-MOT של Atom Computing והשגיאות הלוגיות למחזור לקוחים מקריאה אוטומטית של arXiv:2606.04079 v1; לא נמצאו גרסת כתב עת, מספר מחברים או זמן מחזור סינדרום.
-- 2026-09-26: השיוכים המוסדיים של Lim et al. (arXiv:2604.07205; לפי התיק: Pasqal/Institut d'Optique), של Schymik et al. ושל מחברי MPQ לא הוצגו בדפי התמצית ב-arXiv.
-- 2026-09-26: זמן החיים של Caltech הוא ה-23 min שבתמצית; ה-22.9(1) min ומילוי ה-51.2 % שבתיק לא נבדקו בטקסט המלא.
-- 2026-09-26: לא נערך חיפוש פטנטים. המרשם מונה כאן {{N_T_CX_RELOAD_MACHINES}} מכונות: את harvard-continuous-3000, כטכנולוגיה ראשית, ואת מכונת קוד הטורוס של Atom Computing, atom-computing-phoenix, כטכנולוגיה חלופית.

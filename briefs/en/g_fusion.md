@@ -28,6 +28,8 @@ The 50% ceiling is a linear-optics bound (Calsamiglia & Lütkenhaus 2001): passi
 
 Every dated fidelity is one fusion measured alone; no chained-fusion success rate is public.
 
+No second group has replicated PsiQuantum's 99.22%/99.72% fusion fidelities as of 4 Sep 2026. Quandela's Lucy is described by its sources only as a 12-photonic-qubit machine, not as a fusion-based system. The main report's PsiQuantum waveguide loss of 0.5 dB/m conflicts with the Nature paper's 1.8 ± 0.2 dB/m for single-mode SiN, the figure used here.
+
 ## Manufacturing, materials & supply chain
 No fusion-specific materials: the gate reuses the platform stack — SiN waveguides, BTO switches, on-chip SNSPDs on 300 mm silicon at GlobalFoundries [C][G:GF-QTS-2026-05]. Manufacturing decides loss per element, and every element sits inside the attempt: switch 100 mdB, fibre-to-chip 52 mdB [D][169]; best packaged coupling is Xanadu's 0.085 dB/facet [C][G:XANADU-PACKAGING-2026-06]. I/O is channels and latency: 2–4 number-resolving detectors per fusion plus feed-forward within the photon's flight time; Aurora runs 12 modes on a 1 MHz cycle [D][173]. At 10³ fusions/s the constraint is accumulated switch loss; at 10⁴–10⁶, cryogenic channel count and GHz feed-forward, unbuilt. ECCN 4A906 covers the machine, 3A901 sub-4.5 K electronics [G:BIS-QUANTUM-ECCN-2024-09].
 
@@ -67,8 +69,3 @@ Confirm by 2027: a published network of ≥3 chained fusions with end-to-end suc
 [264] M. C. Löbl, L. A. M. Pettersson, J. Dragašević, S. X. Chen, and O. A. D. Sandberg, “The subthreshold issue of fusion-based quantum computing,” [arXiv:2606.28490](https://arxiv.org/abs/2606.28490), Jun. 2026. [S]
 [419] F. Ewert and P. van Loock, “3/4-Efficient Bell Measurement with Passive Linear Optics and Unentangled Ancillae,” *Phys. Rev. Lett.*, vol. 113, no. 14, Art. no. 140403, Sep. 2014, doi: [10.1103/PhysRevLett.113.140403](https://doi.org/10.1103/PhysRevLett.113.140403). [arXiv:1403.4841](https://arxiv.org/abs/1403.4841). [S]
 [451] D. E. Browne and T. Rudolph, “Resource-Efficient Linear Optical Quantum Computation,” *Phys. Rev. Lett.*, vol. 95, no. 1, Art. no. 010501, Jun. 2005, doi: [10.1103/PhysRevLett.95.010501](https://doi.org/10.1103/PhysRevLett.95.010501). [S]
-
-## Open verification items
-No second group has replicated PsiQuantum's 99.22%/99.72% fusion fidelities as of 4 Sep 2026.
-No actor has published multi-fusion (network-scale) success-rate data; no source supports describing Quandela's Lucy as a "fusion-based system" — it is described only as a 12-photonic-qubit machine.
-Conflict carried from the main report: PsiQuantum waveguide loss is quoted as 0.5 dB/m in the report excerpt but 1.8 ± 0.2 dB/m for single-mode SiN in the Nature paper; the two remain unreconciled and the paper's figure is used here.

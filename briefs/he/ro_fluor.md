@@ -39,6 +39,8 @@ updated: 2026-09-30
 ## ראיות — כיצד נמדדו המספרים
 SPAM נמדד בהכנת מצבים בהירים וחשוכים ידועים ובספירת הסיווגים השגויים; ה-3.3–4.8×10⁻⁴ של Helios הוא טווח לפי אזורים, לא מספר אחד [D][97]. SPAM תקני ממזג הכנה עם מדידה, ולעתים רחוקות מפריד דליפה או אובדן מסיווג שגוי — ציטוט נפרד של הבחנה ושל הישרדות, כפי שעושה מחקר דימות של איטרביום ניטרלי מ-2026 (99.89% ו-98.80%, לא תוצאה של יונים), אינו נפוץ כאן [P][261]. גם מספרי הכותרת אינם ניתנים להשוואה: שלושה מינים, שלושה גלאים, שלוש מכונות. ה-SPAM של Forte של IonQ, 0.5% [C][99], גרוע בסדר גודל מזה של Helios — ייתכן שזהו הבדל ארכיטקטוני אמיתי, שרשראות ארוכות על מצלמה לעומת גילוי לפי אזורים, אך זהו דף מפרט מול קדם-פרסום.
 
+לא פורסם: מחיר רכישת ID Quantique, ולכן אין הערכת שווי לעמדת אספקת הגלאים; עלות גלאי לערוץ מאף ספק, והכנסות מקריאת יונים הניתנות להפרדה בדיווחי Hamamatsu או Oxford Instruments; ונצילות גילוי מערכתית של SNSPD בעל-סגול (369–400 nm) להעמיד מול נתון ה-98% של תחום הטלקום.
+
 ## שחקנים וכלכלה
 **מי.**
 | ארגון | תפקיד | מדינה | מה בדיוק הם עושים בטכנולוגיה זו | ראיות |
@@ -84,6 +86,3 @@ SPAM נמדד בהכנת מצבים בהירים וחשוכים ידועים ו�
 [620] Hamamatsu Photonics, “APS DAMOP 2026,” Aug. 25, 2026. [Online]. Available: https://www.hamamatsu.com/us/en/news/events/2026/APS-DAMOP-2026.html [C]
 [621] TipRanks, “Single Quantum Hits 400-System Milestone as It Deepens European Quantum Partnerships,” Jul. 4, 2026. [Online]. Available: https://www.tipranks.com/news/private-companies/single-quantum-hits-400-system-milestone-as-it-deepens-european-quantum-partnerships [P]
 [622] startupticker.ch, “US-based company acquires ID Quantique,” Mar. 3, 2025. [Online]. Available: https://www.startupticker.ch/en/news/US-based-company-acquires-id-quantique [P]
-
-## פריטי אימות פתוחים
-מחיר רכישת ID Quantique לא נחשף, ולכן אי אפשר להעריך את שוויה של עמדת אספקת הגלאים. ל-SPAM של Forte של IonQ, 0.5%, אין מקבילה שעברה ביקורת עמיתים. אף ספק אינו מפרסם עלות גלאי לערוץ, ואי אפשר להפריד הכנסות המיוחסות לקריאת יונים בדיווחי Hamamatsu או Oxford Instruments. לא נמצאה נצילות גילוי מערכתית שפורסמה ל-SNSPD בעל-סגול (369–400 nm) להעמיד מול נתון ה-98% של תחום הטלקום. תוצאת הדימות של Kyoto/Yaqumo, 17.6 µs, היא מדידה של אטום איטרביום ניטרלי, לא קריאת יונים, ומצוטטת כאן רק כהשוואה מתודולוגית.

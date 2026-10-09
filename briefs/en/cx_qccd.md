@@ -43,6 +43,8 @@ Shuttling serves two of the three trapped-ion architectures — QCCD (Quantinuum
 ## Evidence — how the numbers were measured
 Transport has no stand-alone benchmark. It is inferred from sideband thermometry around a move — the 0.013(1)–0.030(2) quanta figures [D][114] — and from two-qubit fidelity after a transport sequence, which folds transport into gate error. Neither captures cumulative heating over a deep circuit, junction loss at scale, or zone crosstalk. The 55 ms layer and 2.5 kHz exchange rate are vendor-reported and externally unreplicated as of 2026-09-04; AQT's quantum volume 32,768 is not a transport measurement and discloses no timing [C][128].
 
+The EUR 0.5 M per qubit figure is a 2023 turnkey system price, not a chip cost. Not published: the grid-site count of the grid trap [113]; AQT LYNX's architecture (junction or linear-only) and its transport and gate times; and the yield, uniformity or per-die cost of any ion-trap fab line.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What they do here | Evidence |
@@ -95,10 +97,3 @@ Confirm/demote in 12–24 months: Sol ships in 2027 with a published per-layer t
 [500] R. Bowler *et al.*, “Coherent Diabatic Ion Transport and Separation in a Multi-Zone Trap Array,” *Phys. Rev. Lett.*, vol. 109, no. 8, Art. no. 080502, 2012, doi: [10.1103/PhysRevLett.109.080502](https://doi.org/10.1103/PhysRevLett.109.080502). [arXiv:1206.0780](https://arxiv.org/abs/1206.0780). [D]
 [501] T. Rummler, “In the Mountain West, a quantum computing collaboration announces major results,” Sandia Lab News, Aug. 27, 2026. [Online]. Available: https://www.sandia.gov/labnews/2026/08/27/in-the-mountain-west-a-quantum-computing-collaboration-announces-major-results/ [G]
 [502] M. Abdel-Kareem, “Universal Quantum and Atlas Copco Partner to Industrialize Vacuum Systems for Scalable Quantum Computers,” Quantum Computing Report, Dec. 18, 2025. [Online]. Available: https://quantumcomputingreport.com/universal-quantum-and-atlas-copco-partner-to-industrialize-vacuum-systems-for-scalable-quantum-computers/ [P]
-
-## Open verification items
-- The author list and exact title of the grid-trap paper [113] could not be retrieved from the arXiv abstract page; attribution to Quantinuum follows the main report's fact-check, and the abstract gives no grid-site count.
-- No independent (non-vendor) replication exists for the 55 ms full-width-layer time or the 2.5 kHz grid-exchange rate.
-- AQT's LYNX architecture (junction versus linear-only) and its transport and gate times are undisclosed.
-- No yield, uniformity or per-die cost figure is public for any ion-trap fab line; the EUR 0.5 M per qubit figure is a 2023 turnkey system price, not a chip cost.
-- Whether ECCN 4A906's qubit-count and error-rate threshold captures current commercial ion systems was not checked against the parameter values in the rule text.

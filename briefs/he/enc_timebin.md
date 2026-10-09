@@ -27,6 +27,8 @@ updated: 2026-09-03
 
 בקידוד הזה אין קיוביט לוגי, והסף שעליו לעמוד בו שנוי במחלוקת: 2.7% לפוטון לטבעת-6 מוגברת ו-17.4% למצב המקודד ב-{7,4} [S][179], לעומת 0.38–0.82% ללא קידוד [S][264] — סדר גודל ביניהם, והפער לא יושב [G:FBQC-THRESHOLD-CONFLICT-2026].
 
+"אובדן גל-מוליך של 0.5 dB/m" שבדוח הראשי אינו הנתון של Omega לסיליקון ניטריד חד-אופני, 1.8 ± 0.2 dB/m [G:PSIQ-OMEGA-METRICS-2025]. ספי האובדן למיזוג טבעות-6 שונים בסדר גודל בין המקורות, ללא יישוב [G:FBQC-THRESHOLD-CONFLICT-2026]. אף פלטפורמה לא הדגימה מיצוי סינדרום עם אובדן מבושר. ה-0.27 dB לננו-שנייה של השהיה על השבב נגזר מנתוני אובדן שפורסמו, לא נמדד. לא פורסם: אם ההתקנות של Toshiba ב-2025–26 משתמשות בקידוד תאי-זמן; הדפים הפומביים שלה אינם אומרים זאת [420].
+
 ## ייצור, חומרים ושרשרת האספקה
 אין לו שלב ייצור משלו: הקידוד רוכב על המארח שלו — ניטריד צורן על 300 mm של PsiQuantum, נקודות קוונטיות III–V של Quandela, רשתות ה-SiN של QuiX. הבקרה עוברת בירושה: אין קו הנעה לכל קיוביט, אך כל אינטרפרומטר זקוק למזיז פאזה וכל פלט לגלאי — אלפי ערוצים קריוגניים והפיצול שלהם ב-10³–10⁴ קיוביטים. צווארי הבקבוק הם ספקי הגלאים (Single Quantum, ID Quantique, Photon Spot) ומפעלי הייצור ל-III–V ול-SiN [P][G:SNSPD-VENDORS-2026]; חל עליו ECCN 4A906 [G:BIS-QUANTUM-2024].
 
@@ -69,6 +71,3 @@ updated: 2026-09-03
 [418] J. Brendel, N. Gisin, W. Tittel, and H. Zbinden, “Pulsed Energy-Time Entangled Twin-Photon Source for Quantum Communication,” *Phys. Rev. Lett.*, vol. 82, no. 12, pp. 2594–2597, Mar. 1999, doi: [10.1103/PhysRevLett.82.2594](https://doi.org/10.1103/PhysRevLett.82.2594). [arXiv:quant-ph/9809034](https://arxiv.org/abs/quant-ph/9809034). [D]
 [419] F. Ewert and P. van Loock, “3/4-Efficient Bell Measurement with Passive Linear Optics and Unentangled Ancillae,” *Phys. Rev. Lett.*, vol. 113, no. 14, Art. no. 140403, Sep. 2014, doi: [10.1103/PhysRevLett.113.140403](https://doi.org/10.1103/PhysRevLett.113.140403). [arXiv:1403.4841](https://arxiv.org/abs/1403.4841). [S]
 [420] Toshiba Europe, “News Hub - The Latest Quantum Security News from Toshiba,” Toshiba Quantum Technology. [Online]. Available: https://www.toshiba.eu/quantum/news/ [C]
-
-## פריטי אימות פתוחים
-הנתון "אובדן מוליך גל 0.5 dB/m" של הדוח הראשי אינו הנתון של SiN חד-אופני ב-Omega; כאן משמש 1.8 ± 0.2 dB/m, והפער לא יושב [G:PSIQ-OMEGA-METRICS-2025]. דף התמצית ב-arXiv של quant-ph/9809034 החזיר את טקסט התמצית, אך לא את רשימת המחברים או את ההפניה לכתב העת; הייחוס ל-Brendel, Gisin, Tittel ו-Zbinden נשען על המזהה. ספי האובדן להיתוך טבעת-6 שונים בסדר גודל בין המקורות, והפער לא יושב [G:FBQC-THRESHOLD-CONFLICT-2026]. בשום פלטפורמה אין הדגמה של חילוץ סינדרום עם אובדן מבושר. הדפים הציבוריים של Toshiba אינם נוקבים ב"משבצות זמן" עבור הפריסות שלה ב-2025–26, ולכן הייחוס הזה אינו משמש כאן מעבר להקשר הכללי של QKD [420]. ה-0.27 dB לכל ננו-שנייה של השהיה על השבב נגזר מנתוני אובדן שפורסמו, ולא נמדד.

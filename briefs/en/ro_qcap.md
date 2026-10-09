@@ -28,6 +28,8 @@ Signal accumulates as √t while parity survives only until a quasiparticle arri
 
 Typical at scale is undefined: no multiplexed multi-tetron readout is published; the 2026 device came up one wire at a time [D][21].
 
+The arXiv full text of [20] also gives X ~4 µs and Z ~9.3 ms for other tunings, against the 14.5 µs / 12.4 ms used here. The quasiparticle-poisoning rate during a readout dwell has only been inferred, never measured directly. Not published: a readout-specific R&D spend.
+
 ## Manufacturing, materials & supply chain
 No dedicated process: dots, gates and loop share the wire device's lithography, resonator off-chip. Room-temperature rf drive and demodulation feed a millikelvin amplifier, from the merchant control-electronics base superconducting readout uses [C][G:NVQLINK-LAUNCH-2025-10-28]; no single point of failure beyond the wire stack, and no export-control category specific to it. I/O is a gate line and a resonator per measurable parity, multiplexed on a shared feedline: 10³ is solved packaging. The wall is time: 3.6 µs is fast against 12.4 ms, slow against 14.5 µs, so at 10⁴–10⁶ the limit is how many X projections fit in the shorter window.
 
@@ -64,6 +66,3 @@ Falsifiable in 12–24 months: a third group publishing parity readout; a sub-1%
 [215] C. Nayak, “Majorana 2 – Microsoft's Scalable Quantum Processor With Reliable, Long-Lasting Qubits,” Microsoft Quantum. [Online]. Available: https://quantum.microsoft.com/en-us/insights/blogs/majorana-2-scalable-quantum-processor [C]
 [216] N. van Loo *et al.*, “Single-shot parity readout of a minimal Kitaev chain,” *Nature*, vol. 650, no. 8101, pp. 334–339, Feb. 2026, doi: [10.1038/s41586-025-09927-7](https://doi.org/10.1038/s41586-025-09927-7). [D]
 [217] F. Zatelli *et al.*, “Majorana parity qubit in coupled minimal Kitaev chains,” [arXiv:2607.09511](https://arxiv.org/abs/2607.09511), Jul. 2026. [D]
-
-## Open verification items
-The mean SNR ~1.2 per µs and the assignment-error expression come from the arXiv full text of [20], not from the fact-checked report summary; that text also gives X ~4 µs and Z ~9.3 ms for other tunings against the 14.5 µs / 12.4 ms used here. The quasiparticle poisoning rate during a readout dwell has never been measured directly, only inferred. No multiplexed multi-tetron readout and no readout-specific R&D spend is public.

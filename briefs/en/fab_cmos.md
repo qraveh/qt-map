@@ -82,6 +82,8 @@ Not captured: (1) 1.6 K probing cannot see valley splitting, exchange or coheren
 
 Replication: imec's SiMOS numbers reproduce across four devices and two institutions [D][189]; Intel's are single-vendor. Flagged: Quantum Motion's "first full-stack silicon CMOS quantum computer" without published fidelities [C][200]; Equal1's commercial-process dots without qubit metrics [C][797].
 
+SPAM for the imec/Diraq unit cells is 99.95% at 100 µs [189], against 99.9% recorded for imec's 300 mm line (2025). Intel's yield figures all come from [766], on 232 twelve-dot devices of one wafer — 99.8% of dots, 96% of full devices, 91% charge-sensing success; [199] restates the 96%, citing [766]. Not published: the dates of Silex's A$5.1 M Defence Trailblazer and A$4.35 M SQC funding [799].
+
 ## Actors & economics
 
 **Who.**
@@ -170,11 +172,3 @@ Open questions: can valley splitting and charge noise be made wafer-uniform, or 
 [802] R. Acharya *et al.*, “Multiplexed superconducting qubit control at millikelvin temperatures with a low-power cryo-CMOS multiplexer,” *Nat. Electron.*, vol. 6, no. 11, pp. 900–909, Nov. 2023, doi: [10.1038/s41928-023-01033-8](https://doi.org/10.1038/s41928-023-01033-8). [D]
 [803] H. Bennie, “Quantum Motion Announces Record Integration of Quantum Devices and Partnership with Semiconductor Manufacturer, GlobalFoundries,” quantummotion.com, Jan. 6, 2025. [Online]. Available: https://quantummotion.com/partnership-with-globalfoundries/ [C]
 [804] Quobly, “Quobly Raises €115M Series A to Industrialize Silicon Quantum Computing,” HPCwire, Jun. 3, 2026. [Online]. Available: https://www.hpcwire.com/off-the-wire/quobly-raises-e115m-series-a-to-industrialize-silicon-quantum-computing/ [P]
-
-## Open verification items
-
-- SPAM for the imec/Diraq unit cells: 99.95% at 100 µs [189] (v1 value, retained) against 99.9% recorded for imec's 300 mm line (2025).
-- Shuttling fidelity [196]: v1 gave 99.54%; the abstract states "99.5% on average"; the abstract value is used.
-- Silex funding (A$5.1 M Defence Trailblazer, A$4.35 M SQC): amounts undated on the Silex page [799]; the ledger row is dated by the June 2026 plant completion.
-- [796] Losert et al.: bibliographic details are cited from the standard literature and not confirmed against the publisher's page.
-- Dropped from v1 as unverified here: the "~1% Commerce equity stake" in GF's CHIPS LOI (v1 cited [300], [353], [798] jointly) and IBM's 30× device-output claim for Anderon (trade-press proxy only). Intel's yield figures all come from [766], on 232 twelve-dot devices of one wafer — 99.8% of dots, 96% of full devices, 91% charge-sensing success; [199] restates the 96%, citing [766].

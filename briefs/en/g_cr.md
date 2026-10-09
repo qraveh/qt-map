@@ -29,6 +29,8 @@ The ZX rate is second order, ∝ JΩ/(Δ(Δ+α)), fastest in the straddling regi
 
 No fleet-average cross-resonance (CR) number was ever published; IBM's EPLG today (3.7×10⁻³ [D][34]) is Heron hardware, which replaced CR in 2023-12 [C][72]. The painful reference is Oxford/OQC's fixed-coupling CZ, 99.8% in 25 ns [C][423] — no coupler control either, seven times faster.
 
+The PRL by Kandala et al. reports intrinsic ZZ suppression through two fixed-frequency coupling elements, not active cancellation. Not published: a fleet-average CR fidelity for IBM's pre-Heron generations (Falcon to Condor), beside the isolated-pair 99.77(2)%, and a dated CR-specific patent count.
+
 ## Manufacturing, materials & supply chain
 No process of its own. The cost lands in binning and trimming: a collision cannot be detuned away after fabrication, only masked in software or annealed out, so frequency targeting — laser annealing at IBM, alternating-bias annealing at Rigetti [D][294] — is the supply-chain item CR drives. Its advantage is the I/O ledger: one drive line per qubit and nothing per coupler, where tunable couplers add a flux line and a DAC channel each, roughly 1.5–2× the lines. At 10³ that is a crowded fridge against an impossible one; at 10⁴–10⁶ it is the whole wiring budget. Export exposure is the carrier's (ECCN 3A901).
 
@@ -71,8 +73,3 @@ Confirm by 2028: a fabricated fixed-frequency processor above eight qubits with 
 [423] A. Curbison, “Oxford research group demonstrate fundamental speed-up of two-qubit gate,” OQC, Mar. 21, 2025. [Online]. Available: https://oqc.tech/company/newsroom/oxford-research-group-demonstrate-fundamental-speed-up-of-two-qubit-gate [C]
 [425] J. M. Chow *et al.*, “Simple All-Microwave Entangling Gate for Fixed-Frequency Superconducting Qubits,” *Phys. Rev. Lett.*, vol. 107, no. 8, Art. no. 080502, Aug. 2011, doi: [10.1103/PhysRevLett.107.080502](https://doi.org/10.1103/PhysRevLett.107.080502). [D]
 [426] C. Kim, J. Kang, and Y. Kwon, “Lattice patch structure for fixed-frequency transmon quantum computer with high-fidelity CNOT gates,” [arXiv:2606.27017](https://arxiv.org/abs/2606.27017), Jun. 2026. [S]
-
-## Open verification items
-No fleet-average CR fidelity for IBM's pre-Heron generations (Falcon–Condor) was ever published; only the isolated-pair 99.77(2)% is sourced.
-No CR-specific patent count from a named database was found as of 2026-09-04.
-The PRL by Kandala et al. reports intrinsic ZZ suppression through two fixed-frequency coupling elements, not active cancellation.

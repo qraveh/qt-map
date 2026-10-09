@@ -40,6 +40,8 @@ f = שרשרת פאולי על גרף זיווג; g = אין — תוכנה, ל�
 ## ראיות — כיצד נמדדו המספרים
 נתוני התפוקה של Sparse Blossom באים מזרמי Stim מדומים [D][726]. הנתון היחיד המשולב בחומרה, ה-63 µs של Willow ב-d=5, התקבל בגרסה מקבילית ייעודית של Sparse Blossom שבנתה Google, ולא ב-PyMatching המקורי [D][1]. ה-0.8 µs של Micro Blossom ב-d=13 עבר ביקורת עמיתים (ASPLOS 2025), אך הוא מפענח סינדרומים מוקלטים המוזנים מחדש [D][727]; ה-367 ns שבמאגר הקוד אינו מופיע בשום מאמר [C][G:MICROBLOSSOM-2026]. פיזור הספים המצוטט לעתים קרובות אינו סתירה: 0.7% (PyMatching), 0.65% ו-0.55% (מפענחי האשכול של Riverlane בתוכנה ובחומרה) באים מהשוואה אחת תחת מודל רעש אחד [D][238]. כל מתחרה מפרסם את MWPM כקו בסיס; אף אחד אינו משחזר את מהירותו.
 
+הטענה של Quantum X Labs שמפענח הטרנספורמר שלה עולה על MWPM אינה נושאת שום נתון כמותי ולא עברה ביקורת עמיתים [730]. לא פורסם: תיאור נפרד, פלטפורמת חומרה או נתוני משאבים של גרסת Sparse Blossom המיוחדת המפענחת את Willow בזמן אמת, ולכן לא ניתן לייחס את ה-63 µs שלה לרכיב מזוהה.
+
 ## שחקנים וכלכלה
 **מי.**
 | ארגון | תפקיד | מדינה | מה הם עושים | ראיות |
@@ -80,9 +82,3 @@ f = שרשרת פאולי על גרף זיווג; g = אין — תוכנה, ל�
 [728] O. Higgott, “PyMatching,” GitHub. [Online]. Available: https://github.com/oscarhiggott/PyMatching [G]
 [729] X. Yang *et al.*, “Real-time Surface-Code Error Correction Using an FPGA-based Neural-Network Decoder,” [arXiv:2605.04892](https://arxiv.org/abs/2605.04892), May 2026. Also https://arxiv.org/html/2605.04892. [D]
 [730] Quantum X Labs, “Quantum X Labs Reports Meaningful Error Correction Decoder Results with NVIDIA CUDA-Q QEC,” GlobeNewswire, Jul. 24, 2026. [Online]. Available: https://www.globenewswire.com/news-release/2026/07/24/3332879/0/en/quantum-x-labs-reports-meaningful-error-correction-decoder-results-with-nvidia-cuda-q-qec.html [C]
-
-## פריטי אימות פתוחים
-Micro Blossom: הנתון שעבר ביקורת עמיתים הוא השהיה ממוצעת של 0.8 µs ב-d=13 (ASPLOS 2025) [727]; ה-367 ns וה-10⁶ סבבים/s שבמאגר הקוד אינם מופיעים בשום מאמר ואינם נושאים מרחק קוד מוצהר — טענה של מאגר הקוד, לא מדידה.
-יש סתירה בסכום סבב C של Riverlane בין ההודעה שלה עצמה ($75 M, 2024-08-06) לבין מפת הדרכים שלה מ-2026 ($85 M) [G:RIVERLANE-FUNDING]; אין הודעה על הרחבה, ולא אותר סבב מאוחר יותר נכון ל-4 בספטמבר 2026.
-הטענה של Quantum X Labs שמפענח הטרנספורמר שלה עולה על MWPM אינה נושאת נתון כמותי ולא עברה ביקורת עמיתים [730].
-המפענח בזמן אמת של Willow מתואר רק כגרסה ייעודית של Sparse Blossom; לא אותרו עבורו פרסום נפרד, פלטפורמת חומרה או נתון משאבים, ולכן אי אפשר לייחס את ה-63 µs שלו לרכיב מסוים.

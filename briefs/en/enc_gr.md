@@ -44,6 +44,8 @@ On the architecture "Neutral-atom analogue simulator (Rydberg arrays, lattice ga
 ## Evidence — how the numbers were measured
 Gate benchmarks do not apply; the figures are T2*, echo T2, Rabi damping, blockaded-pair coherence and readout asymmetry. Aquila publishes all of them (Rabi 7.5 µs, blockaded Rabi 8.9 µs) [C][262], none independently re-measured; beyond classical simulation, programs are checked against phase diagrams [D][226]. Grades: Aquila ✅; Fresnel 🔎, the paper's abstract confirming only the analogue/digital split [C][385]; Orion 🔎, its cited blog naming neither analogue mode nor encoding [C][390] — Pulser's basis definition is better evidence.
 
+Gemini's product page names ⁸⁷Rb and a digital mode, not the hyperfine pair; its placement under hyperfine encoding rests on the Harvard–MIT gate papers. The string-breaking abstract does not name Aquila; only QuEra's authorship points to it. Not published: the Rydberg level, T2* and echo time of Pasqal's Fresnel and Orion, on Pasqal's pages; and, in the Aquila text, the beam geometry assumed in the Doppler estimate and the F, mF sublevel of |g⟩ in analogue mode.
+
 ## Actors & economics
 **Who.**
 
@@ -81,11 +83,3 @@ Confirm if by 2027-12-31 a commercial analogue machine publishes T2* above 20 µ
 [389] S. de Léséleuc, D. Barredo, V. Lienhard, A. Browaeys, and T. Lahaye, “Analysis of imperfections in the coherent optical excitation of single atoms to Rydberg states,” *Phys. Rev. A*, vol. 97, no. 5, Art. no. 053803, May 2018, doi: [10.1103/PhysRevA.97.053803](https://doi.org/10.1103/PhysRevA.97.053803). [arXiv:1802.10424](https://arxiv.org/abs/1802.10424). [D]
 [390] L. Garbini, “Inside Pasqal's 2026 Vision on Quantum for Industry and Research,” Pasqal, Jan. 29, 2026. [Online]. Available: https://www.pasqal.com/blog/inside-pasqals-2026-vision-on-quantum-for-industry-and-research/ [R]
 [391] S. J. Evered *et al.*, “High-fidelity parallel entangling gates on a neutral-atom quantum computer,” *Nature*, vol. 622, no. 7982, pp. 268–272, Oct. 2023, doi: [10.1038/s41586-023-06481-y](https://doi.org/10.1038/s41586-023-06481-y). [arXiv:2304.05420](https://arxiv.org/abs/2304.05420). [D]
-
-## Open verification items
-- 2026-09-26: the arXiv page for 1802.10424 (v2) was refused by the fetch proxy (HTTP 429); its record rests on the v1 abstract and APS/ADS search results, authors after the first two unconfirmed.
-- 2026-09-26: Fresnel and Orion Rydberg level, T2* and echo time not found in the Pasqal pages opened; Fig. 6b of arXiv:2006.12326 not opened, only its abstract.
-- 2026-09-26: Gemini's product page names ⁸⁷Rb and digital mode, not the hyperfine pair; its enc_hf placement rests on the Harvard–MIT gate papers.
-- 2026-09-26: the string-breaking abstract does not name Aquila; QuEra authorship suggests it, unconfirmed.
-- 2026-09-26: whether Vela shipped and whether Pasqal's mid-2026 advantage objective was met were not checked.
-- 2026-09-26: the Aquila text opened gives neither the beam geometry assumed in the Doppler estimate nor the F, mF sublevel of |g⟩ in analogue mode.

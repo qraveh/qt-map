@@ -30,6 +30,8 @@ The molecular vibronic-spectrum application of Gaussian boson sampling with sque
 
 The on-chip-to-bulk gap is ~13 dB, the GKP gap ~9 dB.
 
+Shi et al.'s 1.4 dB, measured on PPLN TFLN [345], is an independent on-chip squeezing figure; the 0.62 dB GKP effective squeezing rests on Xanadu alone. The >10 dB TFLN figure is loss-corrected, not measured, and stated at one pump power, so it is not comparable with the 15 dB bulk-optics measurement. The ~9.75 dB fault-tolerance requirement, rounded to ~10 dB in the main report, has no single primary source. Xanadu's CAD 195 M and USD 686 M both come from its 2026-08-31 release, not an audited filing.
+
 ## Manufacturing, materials & supply chain
 Squeezers ride the CV photonic-IC line — SiN and thin-film lithium niobate with periodic poling. Merchant TFLN supply is thin: HyperLight (USD 37 M Series B, 2024-09) and Lightium (USD 7 M seed) [P][G:TFLN-FUNDING-2024-09], plus the PIXEurope pilot line [G:PIXEUROPE-2024-11]. Xanadu builds rather than buys; no cost per squeezer is public. Poling uniformity and waveguide loss are the yield-limiting defects, both acting on the headline dB. I/O is one pump and one homodyne chain per mode plus phase locking; Aurora ran 35 chips at 12 modes on a 1 MHz cycle [D][173]. At 10³ modes the wall is pump distribution and phase stability; at 10⁴–10⁶, detector and DAC channel count. No ECCN names squeezers; 4A906 catches the machine [G:BIS-QUANTUM-ECCN-2024-09].
 
@@ -69,10 +71,3 @@ Confirm by 2028: on-chip GKP effective squeezing above 2 dB with its loss budget
 [344] H. Vahlbruch, M. Mehmet, K. Danzmann, and R. Schnabel, “Detection of 15 dB Squeezed States of Light and their Application for the Absolute Calibration of Photoelectric Quantum Efficiency,” *Phys. Rev. Lett.*, vol. 117, no. 11, Art. no. 110801, Sep. 2016, doi: [10.1103/PhysRevLett.117.110801](https://doi.org/10.1103/PhysRevLett.117.110801). [D]
 [345] X. Shi *et al.*, “Squeezed Light Generation in Periodically Poled Thin-Film Lithium Niobate Waveguides,” [arXiv:2508.08599](https://arxiv.org/abs/2508.08599), Aug. 2025. [D]
 [889] B. Seron, H. Thomas, E. Araujo, A. Arkhipov, C. Oh, and L. Novo, “Efficient classical algorithm for estimating linear statistics of Boson Sampling,” [arXiv:2609.35447](https://arxiv.org/abs/2609.35447), Sep. 2026. [P]
-
-## Open verification items
-An independent on-chip squeezing number does exist: Shi et al. report 1.4 dB measured on PPLN TFLN [345]. What remains single-source is the *GKP effective* squeezing of 0.62 dB (Xanadu only).
-The ">10 dB" TFLN figure is loss-corrected, not measured, and is stated at one pump power; it is not comparable with the 15 dB bulk-optics measurement.
-The ~9.75 dB fault-tolerance requirement comes from the graph record's fact-checked entry; the main report rounds it to ~10 dB. No conflict of substance, but no single primary source could be consulted directly (nature.com returned 502 on 4 Sep 2026).
-The "since 2012" front-matter year comes from the graph record and is not anchored to a specific paper.
-Xanadu's CAD 195 M and USD 686 M figures both come from the 2026-08-31 release, not an audited filing.

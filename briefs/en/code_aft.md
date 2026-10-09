@@ -44,6 +44,8 @@ It applies on any architecture that can move qubits: the alkali Rydberg tweezer 
 ## Evidence — how the numbers were measured
 Transversal gates and 96 active logical qubits are hardware measurements [D][4]; the >10× reduction is a theorem plus simulation [D][152], unreproduced outside the author group. The two resource estimates differ by three orders in space — a trade curve, not a contradiction: 19 M atoms buys RSA-2048 in 5.6 days [S][31], while 10,000–26,000 atoms buys P-256 in days and RSA-2048 one to two orders slower [S][30]; "RSA-2048 with 10,000 atoms" is what neither paper says. The sharpest counter-evidence is Atom Computing and Microsoft's toric code: Λ_Z ≈ 1.9 but Λ_X ≈ 1.2, average 1.30 over four cycles, and with reloading over 90 rounds suppression vanished (0.63% versus 0.64% per cycle) [D][148]. Atoms have not shown sustained below-threshold memory, and constant-round fault tolerance is a claim about long algorithms.
 
+Not published: a common assumption set (physical error rate, code distance, decoder model) for the 19 M-atom / 5.6-day and 10,000-atom estimates, and a real-time correlated-decoder latency above roughly 10² logical qubits. The >10× spacetime reduction has no replication outside the overlapping Harvard/QuEra/Caltech author group.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What they do here | Evidence |
@@ -84,9 +86,3 @@ Confirm/demote in 12–24 months: a group closes transversal gate, correlated de
 [300] National Institute of Standards and Technology, “Department of Commerce Announces Letters of Intent With 9 Companies for $2 Billion to Accelerate U.S. Leadership in Quantum Computing,” NIST News, May 21, 2026. [Online]. Available: https://www.nist.gov/news-events/news/2026/05/department-commerce-announces-letters-intent-9-companies-2-billion [G]
 [324] S. Caldwell *et al.*, “NVIDIA NVQLink Architecture Integrates Accelerated Computing with Quantum Processors,” NVIDIA Technical Blog, Nov. 17, 2025. [Online]. Available: https://developer.nvidia.com/blog/nvidia-nvqlink-architecture-integrates-accelerated-computing-with-quantum-processors/ [C]
 [667] A. Paetznick *et al.*, “Improved quantum processor logical error rates via correction and detection,” *Nature*, vol. 654, no. 8118, pp. 349–355, Jun. 2026, doi: [10.1038/s41586-026-10628-y](https://doi.org/10.1038/s41586-026-10628-y). [D]
-
-## Open verification items
-- The physical error rate, code distance and decoder model behind the 19 M-atom / 5.6-day and 10,000-atom estimates are not in either abstract; the two were not reconciled against a common assumption set.
-- No independent replication of the >10× spacetime reduction exists outside the overlapping Harvard/QuEra/Caltech author group.
-- No published real-time correlated-decoder latency figure above roughly 10² logical qubits; scaling above that is unverified.
-- The graph record's front-matter year (2025) is the Nature publication year; the preprint is 2024-06-25. Both are retained rather than reconciled.

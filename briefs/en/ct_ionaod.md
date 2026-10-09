@@ -45,6 +45,8 @@ Slot 5 of "Trapped ions — linear Paul trap with individual laser addressing" a
 ## Evidence — how the numbers were measured
 Crosstalk is quoted as Rabi ratio, intensity ratio (ε²) or spectator error — Duke calls a Rabi ratio "intensity crosstalk" [D][587] — and measured by moving one ion through the beam [D][253], by flag ions [D][254] or by simultaneous benchmarks [D][109]. Forte's 435-pair DRB finds no significant dependence on ion distance but significant out-of-model errors [D][100]. Of the vendor pages opened, only AQT's specifies crosstalk, neighbour <1.8×10⁻², as of 2026-09-26 [C][382].
 
+Not published: Tempo's species, gate time and addressing method, Aria's own architecture and Qudoor AbaQ's control; and any quantitative figure for rf power per tone, multi-tone intermodulation or AOD thermal pointing drift in ion systems.
+
 ## Actors & economics
 **Who.**
 
@@ -96,11 +98,3 @@ Confirm if, by 2027-12-31, IonQ publishes Tempo's per-pair gate times, fidelitie
 [587] J. Yu *et al.*, “Design and Characterization of Compact Acousto-Optic-Deflector Individual Addressing System for Trapped-Ion Quantum Computing,” [arXiv:2601.01647](https://arxiv.org/abs/2601.01647), Jan. 2026. [D]
 [588] R. Paschotta, “Acousto-optic Deflectors,” RP Photonics Encyclopedia. [Online]. Available: https://www.rp-photonics.com/acousto_optic_deflectors.html [G]
 [589] IonQ, “IonQ Achieves Key Photonic Interconnect Milestone, Demonstrating Networked Quantum Systems Using Entanglement,” Apr. 14, 2026. [Online]. Available: https://www.ionq.com/news/ionq-achieves-key-photonic-interconnect-milestone-demonstrating-networked-quantum-systems-using-entanglement [C]
-
-## Open verification items
-- Fang et al., PRL 129, 240504 (2022), arXiv:2206.02703, on crosstalk suppression in individually addressed gates: not read, Crossref and PubMed rate-limited (2026-09-26); not cited.
-- USTC double-sided AOD addressing (arXiv:2306.01307): neighbour Rabi crosstalk 1.19(5)×10⁻³ in the current abstract but 6.32×10⁻⁴ in the 2023 HTML version; published author list unconfirmed; not cited (2026-09-26).
-- Tempo's species, gate time and addressing method, Aria's own architecture and Qudoor AbaQ's control are not disclosed in the sources opened (2026-09-26); these register cells are inferences.
-- Register profiles give "hyperfine qubit" for AQT IBEX Q1 and Innsbruck, where the cited papers describe ⁴⁰Ca⁺ optical qubits at 729 nm; the IBEX Q1 page lists 2,000 gates per circuit against the register's 1,000 (2026-09-26).
-- No quantitative source was opened for rf power per tone, multi-tone intermodulation or AOD thermal pointing drift in ion systems (2026-09-26).
-- Postler et al.'s Nature publication date was not confirmed (Crossref rate-limited, 2026-09-26); the record carries the year.

@@ -43,6 +43,8 @@ updated: 2026-09-30
 ## ראיות — כיצד נמדדו המספרים
 הנתונים הבולטים מגיעים מבחינת ביצועים אקראית על המערכת המורכבת של שני האופנים, עם בחירה בדיעבד לפי קריאת קיוביט העזר; שבר המחיקה מגיע מאותה קריאה, ולכן השליליים השגויים נבלעים בסל "שארית הפאולי". תכנון מחיקה בקוטריטים טרנסמוניים מדווח על חיוביים שגויים ~2% ושליליים שגויים 6–8% [P][405] — סדר הגודל של מה שעלול להיות מיוחס כאן שלא כהלכה. התאוריה שומרת על סף קוד המשטח לפחות כפול מערך הפאולי תחת בדיקות לא מושלמות, אך רק כאשר הבדיקה קצרה ביחס למחזור [D][395]. סתירה: 0.029(6)% מול החסם של 0.12% בעומק [D][84] מול "≈99.9%" [C][473]; מבין השלושה, הפירוק הנמדד הוא המבוסס ביותר. SUSTech משחזרת את הארכיטקטורה, לא את הנאמנות [D][406]. שיעורי ההשלכה אינם מדווחים.
 
+לא פורסם: סכום ההרחבה של סבב B של Alice & Bob במאי 2026, ושיעורי הפסילה בבחירה בדיעבד של ה-CZ בשתי-מסילות ושל ההחלפה דרך מפצל האלומה.
+
 ## שחקנים וכלכלה
 **מי.**
 | ארגון | תפקיד | מדינה | מה בדיוק הם עושים בטכנולוגיה זו | ראיות |
@@ -96,6 +98,3 @@ updated: 2026-09-30
 [473] K. Chou, J. Teoh, and N. Mehta, “Why D-Wave's New Two-Qubit Gate is a Breakthrough for Quantum Error Correction,” D-Wave Quantum Blog, Aug. 5, 2026. [Online]. Available: https://www.dwavequantum.com/learn/blog/posts/why-d-wave-s-new-two-qubit-gate-is-a-breakthrough-for-quantum-error-correction/ [C]
 [474] US Department of Energy, “Energy Department Announces $625 Million to Advance the Next Phase of National Quantum Information Science Research Centers,” Energy.gov, Nov. 4, 2025. [Online]. Available: https://www.energy.gov/articles/energy-department-announces-625-million-advance-next-phase-national-quantum-information [G]
 [884] A. T. Than *et al.*, “Quantum field theory dynamics on a spin–phonon quantum computer,” *Nat. Phys.*, Sep. 2026, doi: [10.1038/s41567-026-03402-4](https://doi.org/10.1038/s41567-026-03402-4). [arXiv:2509.11477](https://arxiv.org/abs/2509.11477). [D]
-
-## פריטי אימות פתוחים
-לא ניתן היה לאחזר את רשימת המחברים, את השיוך ואת ההפניה לכתב העת של arXiv:2303.00959 (דף התמצית החזיר את גוף הטקסט בלבד); נתוני ההחלפה ~100 ns / >99.98% ומצמד ה-DC-SQUID מאושרים, והייחוס ל-Yale נשען על רשומת הגרף. סכום הרחבת סבב B של Alice & Bob ממאי 2026 עדיין לא פורסם. שיעורי ההשלכה בבחירה בדיעבד עבור ה-CZ במסילה כפולה ועבור ההחלפה במפצל האלומה אינם מדווחים. אומדן הנקודה 0.029(6)% והחסם של 0.12% בעומק מופיעים שניהם ב-Nature [84] בלי יישוב ביניהם, וה-"≈99.9%" של D-Wave [473] אינו מיושב עם אף אחד מהם.

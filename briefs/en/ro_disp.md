@@ -40,6 +40,8 @@ It serves every superconducting-family architecture: transmons, bosonic cat and 
 ## Evidence — how the numbers were measured
 Three quantities circulate as "readout fidelity" and are not interchangeable: assignment fidelity, QNDness (the qubit is left in the state reported), and SPAM. The 99.94% headline is simultaneous assignment fidelity with shelving; QNDness on the same device is 99.3% [D][38]. IBM's fleet ~10⁻² is undecomposed into amplifier noise, Purcell-limited decay and measurement-induced transitions [C][33]. Value conflict: the graph record quotes 280 ns readout, the preprint a 240 ns pulse, so ~280 ns should be read as the full window. No independent laboratory has replicated the 99.94% result.
 
+Not published: a named TWPA or Purcell-filter patent family with assignee and grant year; TWPA yield, unit cost, or the number of multiplexed tones one amplifier sustains before compression, from any supplier; and a fleet-average QNDness from any vendor.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What exactly they do with this technology | Evidence |
@@ -81,10 +83,3 @@ Confirm or demote within 12–24 months: does any vendor publish a fleet-average
 [594] QuantWare, “Peripherals — Crescendo TWPA,” 2026. [Online]. Available: https://quantware.com/product/peripherals [C]
 [595] D. Finke, “QuantumCore Secures $1.7M NSERC Grant to Advance Superconducting Amplifiers,” Quantum Computing Report, Apr. 25, 2026. [Online]. Available: https://quantumcomputingreport.com/quantumcore-partners-with-iqc-and-nserc-in-1-7m-traveling-wave-parametric-amplifier-twpa-development-initiative/ [P]
 General facts cited above: [G:QUANTWARE-SERIESB-2026-05], [G:IBM-10B-2026-06].
-
-## Open verification items
-- The graph record's 280 ns readout time versus the preprint's 240 ns readout pulse: the difference is unexplained in the source and may be a full-window versus pulse-length definition.
-- Authors, institution and journal for the 2015 Josephson TWPA reference could not be established here; only the 12 dB gain over a 4 GHz span and near-quantum-limited noise are confirmed.
-- No named TWPA or Purcell-filter patent family with assignee and grant year was found.
-- No supplier publishes TWPA yield, unit cost, or the number of multiplexed tones one amplifier sustains before compression.
-- No vendor publishes a fleet-average QNDness or a decomposition of the ~10⁻² fleet readout error.

@@ -45,6 +45,8 @@ The gate slot of the Boson sampler architecture (ph_sampler, goal G1). It **requ
 ## Evidence — how the numbers were measured
 No gate exists to benchmark; samples are compared with the ideal distribution, and the benchmarks used — low-order correlations, marginal distances — were matched or beaten classically [S][461], [463]. The Borealis ✅ and Jiuzhang 4.0 ✅ cells hold against their papers, the latter with the filter correction above. PT-2 stays 🔎: its evidence page gives no architecture [C][465]. The one description found is third-party — fibre delay loops with variable beamsplitters, capable of two loops where that paper puts the classically hard regime at three, sampling photon-subtracted squeezed states with a PNR detector [P][271] — not the single photons the register records. An ORCA co-authored PT-1 study used one delay line [D][466].
 
+ORCA's release of 2025-06-11 names the NQCC system only as "PT Series"; the PT-2 page lists the NQCC testbed as a 2025 deployment. No classical rebuttal of Jiuzhang 4.0 has appeared as of 2026-09-26. Not published: the PT-2 input state in any ORCA primary source.
+
 ## Actors & economics
 **Who.**
 
@@ -99,9 +101,3 @@ Confirm if, by 2027-12-31, no classical sampler matches Jiuzhang 4.0 on its subs
 [469] ORCA Computing, “ORCA Computing Delivers First Photonic Quantum Computing System to UK's National Quantum Computing Centre,” Jun. 11, 2025. [Online]. Available: https://orcacomputing.com/installation-marks-key-milestone-in-the-uks-121m-quantum-initiative-advancing-practical-quantum-research/ [C]
 [470] Tech Journal UK, “ORCA aims to beat classical computers with PT-3 quantum system,” Jul. 1, 2026. [Online]. Available: https://www.techjournal.uk/p/orca-aims-to-beat-classical-computers [R]
 [889] B. Seron, H. Thomas, E. Araujo, A. Arkhipov, C. Oh, and L. Novo, “Efficient classical algorithm for estimating linear statistics of Boson Sampling,” [arXiv:2609.35447](https://arxiv.org/abs/2609.35447), Sep. 2026. [P]
-
-## Open verification items
-- The arXiv abstract pages of 2605.30935 and 2109.11525 did not render on 2026-09-26; months are taken from the identifiers, titles and authors from the full-text HTML.
-- NQCC system model: ORCA's release of 2025-06-11 says only "PT Series"; the PT-2 page names the NQCC testbed as a 2025 deployment (checked 2026-09-26).
-- PT-2 input state: the third-party "photon-subtracted squeezed states" contradicts the register's "single photons (SPDC)" (spontaneous parametric down-conversion); no ORCA primary source settles it (searched 2026-09-26).
-- No classical rebuttal of Jiuzhang 4.0 was found in a search on 2026-09-26; an unindexed preprint may exist.

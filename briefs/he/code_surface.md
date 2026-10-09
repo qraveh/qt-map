@@ -56,6 +56,8 @@ updated: 2026-09-30
 
 סתירות. Λ לכל שני צעדי מרחק: 2.14 ± 0.02 (Google, d=3→7) [D][1] לעומת 1.40(6) (USTC) [D][3] לעומת 2.14(13)× (אטומים, ארבעה סבבים, אבד בטעינה מחדש) [D][4] — רעש שונה, לא קודים שונים, ורק זה של Google שורד מיליון מחזורים. סף: 0.937% [S][8] לעומת 0.55–0.7% תחת דליפה [D][238]; יש לתקצב לפי השני.
 
+סבב C של Riverlane הוא $75 M בהודעה מ-2024-08-06 [C][661] אך "$85 מיליון ב-2024", עם "$120 מיליון+" במצטבר, בהודעת מפת הדרכים מ-2026-03-12 [C][658]. טביעות הרגל של הקודים ה-yoked (≈1,500 / ≈800 / ≈600 פיזיקליים ללוגי ב-p = 10⁻³) לקוחות מהצגה משנית של arXiv:2312.04522 [S][654]. לא פורסם: העלות או האנרגיה לקיוביט לוגי, וההכנסות וערכי החוזים של Riverlane.
+
 ## שחקנים וכלכלה
 
 **מי.**
@@ -124,12 +126,3 @@ updated: 2026-09-30
 [661] Riverlane, “Riverlane raises $75 million to meet surging global demand for quantum error correction technology,” Aug. 6, 2024. [Online]. Available: https://www.riverlane.com/press-release/riverlane-raises-75-million-to-meet-surging-global-demand-for-quantum-error-correction-technology [C]
 [662] A. B. Ziad, A. Zalawadiya, B. Barber, and L. Skoric, “Quantum decoder,” Google Patents, Dec. 10, 2025. [Online]. Available: https://patents.google.com/patent/GB2641501A/en [G]
 [893] F. Burt *et al.*, “Loss-tolerant distributed lattice surgery using fusion networks,” [arXiv:2610.01923](https://arxiv.org/abs/2610.01923), Oct. 2026. [P]
-
-## פריטי אימות פתוחים
-
-- סבב C של Riverlane: $75 M בהודעה מ-2024-08-06 [C][661] לעומת "$85 מיליון ב-2024" ו-"$120 מיליון+" במצטבר בהודעת מפת הדרכים מ-2026-03-12 [C][658]; שניהם מצוינים, ובשימוש הנתון הראשוני מ-2024.
-- טביעות הרגל הרתומות (≈1,500 / ≈800 / ≈600 פיזיים ללוגי ב-p = 10⁻³) לקוחות מתיאור משני של arXiv:2312.04522 [S][654].
-- Bombín ו-Martín-Delgado (2007) [S][651] מצוטטים עבור הפריסה המסובבת לפי הייחוס המקובל; דף התמצית ב-arXiv אינו נושא מטא-נתונים.
-- רצפת השגיאה של ריצת 10⁶ המחזורים עצמה במאמר Willow [D][1] אינה מצוטטת כאן; מצוטטים רק d=7, Λ, היחס 2.4(3)× ורצפת הפרצים 10⁻¹⁰.
-- עלות או אנרגיה לקיוביט לוגי: לא פורסמו. ההכנסות של Riverlane וערכי החוזים שלה: לא נמסרו.
-- טרום-הפרסומים של USTC על CNOT לוגי ושל Zhejiang על ניתוח סריג [D][43], [44] לקוחים מהרשימה שעברה בדיקת עובדות של הדוח הראשי.

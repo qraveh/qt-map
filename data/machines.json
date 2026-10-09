@@ -230,237 +230,7 @@
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
-     "outlier-claim",
-     "source-not-confirmed"
-    ],
-    "qubits_accessible": null,
-    "gate_evidence_derived": true,
-    "decoder_mode_derived": true,
-    "benchmarked": false
-   }
-  },
-  {
-   "id": "aliceandbob-beryllium-250",
-   "name": "Alice & Bob Beryllium",
-   "org": "Alice & Bob",
-   "org_id": "Alice & Bob",
-   "country": "France",
-   "family": "SC",
-   "map_path": "cat",
-   "status": "PLANNED (undated)",
-   "status_date": "undated (before Graphene, 2030)",
-   "physical_qubits_num": 250,
-   "access": "n/a",
-   "layers": {
-    "1": [
-     {
-      "node": "cavity",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "250 cat qubits (roadmap specification)",
-      "evidence": {
-       "type": "technical-whitepaper",
-       "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
-       "locator": "Beryllium milestone ('Cat Qubits 250')",
-       "verified": true
-      }
-     }
-    ],
-    "2": [
-     {
-      "node": "enc_cat",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "cat-qubit encoding; 5 logical qubits from 250 cats",
-      "evidence": {
-       "type": "technical-whitepaper",
-       "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
-       "locator": "Beryllium milestone ('Logical Qubits 5')",
-       "verified": true
-      }
-     }
-    ],
-    "3": [
-     {
-      "node": "g_catcnot",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "bias-preserving cat–cat CNOT underlies the logical gate set (Lithium milestone); Toffoli via magic states",
-      "evidence": {
-       "type": "technical-whitepaper",
-       "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
-       "locator": "",
-       "verified": false
-      }
-     }
-    ],
-    "4": [
-     {
-      "node": "cx_nn",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "short-range cat-qubit grid (degree-3 layout introduced with Lithium); not restated",
-      "evidence": {
-       "type": "inferred",
-       "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
-       "locator": "",
-       "verified": false
-      }
-     }
-    ],
-    "5": [
-     {
-      "node": "ct_rt",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "room-temperature control (Alice & Bob lineage); not stated for Beryllium",
-      "evidence": {
-       "type": "inferred",
-       "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
-       "locator": "",
-       "verified": false
-      }
-     }
-    ],
-    "6": [
-     {
-      "node": "ro_disp",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "dispersive readout (lineage); not stated for Beryllium",
-      "evidence": {
-       "type": "inferred",
-       "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
-       "locator": "",
-       "verified": false
-      }
-     }
-    ],
-    "7": [
-     {
-      "node": "code_bosonic",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "outer code over 250 cats: 5 logical qubits at 1e-4",
-      "evidence": {
-       "type": "technical-whitepaper",
-       "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
-       "locator": "Beryllium specification table",
-       "verified": true
-      }
-     },
-     {
-      "node": "code_magic",
-      "role": "alternate",
-      "gap": false,
-      "state": "station",
-      "summary": "magic-state factories: magic states 'created' and 'spent' throughout an algorithm, for the Toffoli gate",
-      "evidence": {
-       "type": "technical-whitepaper",
-       "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
-       "locator": "Beryllium: 'Create Magic States'",
-       "verified": true
-      }
-     }
-    ],
-    "8": [
-     {
-      "node": "undisclosed",
-      "role": "primary",
-      "gap": false,
-      "state": "undisclosed",
-      "summary": "a live decoder — 'specialized classical computing functionality' to correct errors without slowing operations; type not published",
-      "evidence": {
-       "type": "technical-whitepaper",
-       "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
-       "locator": "Beryllium: 'Correct Errors, Live'",
-       "verified": true
-      }
-     }
-    ],
-    "9": [
-     {
-      "node": "ic_multidie",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "flip-chip packaging introduced with Lithium; not restated for Beryllium",
-      "evidence": {
-       "type": "inferred",
-       "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
-       "locator": "",
-       "verified": false
-      }
-     }
-    ],
-    "10": [
-     {
-      "node": "fab_sc",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "superconducting cat-qubit chip; fab not described",
-      "evidence": {
-       "type": "inferred",
-       "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
-       "locator": "",
-       "verified": false
-      }
-     }
-    ]
-   },
-   "records": [],
-   "codes": [
-    "two-legged-cat"
-   ],
-   "evidence_counts": {
-    "verified": 5,
-    "total": 11
-   },
-   "refs": [
-    {
-     "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
-     "title": "Alice & Bob's Quantum Computing Roadmap",
-     "kind": "whitepaper"
-    },
-    {
-     "url": "https://alice-bob.com/newsroom/alice-bob-quantum-computing-roadmap/",
-     "title": "Alice & Bob Publishes Quantum Computing Roadmap to 100 Logical Qubits in 2030",
-     "kind": "press"
-    }
-   ],
-   "profile": {
-    "qubit_type": "dissipatively stabilised cat qubit",
-    "gate_mechanism": "universal logical gate set via magic-state factories and live error correction (target); Toffoli from a continuous supply of magic states",
-    "connectivity": "",
-    "degree": "",
-    "control": "",
-    "control_placement": "",
-    "readout": "",
-    "err_2q_median": "target logical error 1e-4; logical clock 0.8 µs",
-    "err_2q_best": "",
-    "readout_error": "",
-    "t1": "",
-    "t2": "",
-    "t_2q": "",
-    "t_meas": "",
-    "best_logical": "target 5 logical qubits at 1e-4 with magic-state factories",
-    "decoder": "live decoder ('correct errors, live'); type not published",
-    "realtime": "intended in-loop",
-    "roadmap": "then Graphene (2030)",
-    "role": "",
-    "gate_evidence": "none",
-    "decoder_mode": "planned",
-    "err_2q_median_num": null,
-    "flags": [
-     "target-not-device"
+     "outlier-claim"
     ],
     "qubits_accessible": null,
     "gate_evidence_derived": true,
@@ -1355,227 +1125,6 @@
     "flags": [
      "not-peer-reviewed",
      "phase-flip-unpublished"
-    ],
-    "qubits_accessible": null,
-    "gate_evidence_derived": true,
-    "decoder_mode_derived": true,
-    "benchmarked": false
-   }
-  },
-  {
-   "id": "aliceandbob-lithium-48",
-   "name": "Alice & Bob Lithium",
-   "org": "Alice & Bob",
-   "org_id": "Alice & Bob",
-   "country": "France",
-   "family": "SC",
-   "map_path": "cat",
-   "status": "PLANNED (undated; the next chip after Helium, which the Helium platform is built to take)",
-   "status_date": "undated (after Jun 2026)",
-   "physical_qubits_num": 48,
-   "access": "n/a",
-   "layers": {
-    "1": [
-     {
-      "node": "cavity",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "48 cat qubits (roadmap specification)",
-      "evidence": {
-       "type": "technical-whitepaper",
-       "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
-       "locator": "Lithium milestone ('Cat Qubits 48')",
-       "verified": true
-      }
-     }
-    ],
-    "2": [
-     {
-      "node": "enc_cat",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "cat-qubit encoding; 4 logical qubits from 48 cats",
-      "evidence": {
-       "type": "technical-whitepaper",
-       "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
-       "locator": "Lithium milestone ('Logical Qubits 4')",
-       "verified": true
-      }
-     }
-    ],
-    "3": [
-     {
-      "node": "g_catcnot",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "a bias-preserving CNOT 'will be essential' for the first error-corrected logical CNOT",
-      "evidence": {
-       "type": "technical-whitepaper",
-       "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
-       "locator": "Lithium: 'Developing a bias-preserving CNOT gate, in particular, will be essential'",
-       "verified": true
-      }
-     }
-    ],
-    "4": [
-     {
-      "node": "cx_nn",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "degree-3 hexagonal grid: two neighbours within the logical qubit, one in another",
-      "evidence": {
-       "type": "technical-whitepaper",
-       "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
-       "locator": "Lithium: 'each physical cat qubit will be connected to three neighbors'",
-       "verified": true
-      }
-     }
-    ],
-    "5": [
-     {
-      "node": "ct_rt",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "room-temperature control (Alice & Bob lineage); not stated for Lithium",
-      "evidence": {
-       "type": "inferred",
-       "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
-       "locator": "",
-       "verified": false
-      }
-     }
-    ],
-    "6": [
-     {
-      "node": "ro_disp",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "dispersive readout (lineage); not stated for Lithium",
-      "evidence": {
-       "type": "inferred",
-       "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
-       "locator": "",
-       "verified": false
-      }
-     }
-    ],
-    "7": [
-     {
-      "node": "code_bosonic",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "outer code over cat qubits: 4 logical qubits at 1e-3 from 48 cats; code family not named for Lithium",
-      "evidence": {
-       "type": "technical-whitepaper",
-       "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
-       "locator": "Lithium specification table",
-       "verified": true
-      }
-     }
-    ],
-    "8": [
-     {
-      "node": "undisclosed",
-      "role": "primary",
-      "gap": false,
-      "state": "undisclosed",
-      "summary": "error-corrected logical qubits need decoding; no decoder published",
-      "evidence": {
-       "type": "inferred",
-       "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
-       "locator": "",
-       "verified": false
-      }
-     }
-    ],
-    "9": [
-     {
-      "node": "ic_multidie",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "flip-chip: qubits on one side of the processor, their connections printed on the other",
-      "evidence": {
-       "type": "technical-whitepaper",
-       "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
-       "locator": "Lithium: 'This flip-chip approach allows circuits to utilize both sides of the processor'",
-       "verified": true
-      }
-     }
-    ],
-    "10": [
-     {
-      "node": "fab_sc",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "superconducting cat-qubit chip; flip-chip doubles the density",
-      "evidence": {
-       "type": "technical-whitepaper",
-       "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
-       "locator": "Lithium milestone (flip-chip)",
-       "verified": true
-      }
-     }
-    ]
-   },
-   "records": [],
-   "codes": [
-    "two-legged-cat"
-   ],
-   "evidence_counts": {
-    "verified": 7,
-    "total": 10
-   },
-   "refs": [
-    {
-     "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
-     "title": "Alice & Bob's Quantum Computing Roadmap",
-     "kind": "whitepaper"
-    },
-    {
-     "url": "https://alice-bob.com/newsroom/alice-bob-quantum-computing-roadmap/",
-     "title": "Alice & Bob Publishes Quantum Computing Roadmap to 100 Logical Qubits in 2030",
-     "kind": "press"
-    },
-    {
-     "url": "https://alice-bob.com/newsroom/alice-bob-unveils-first-quantum-system/",
-     "title": "Alice & Bob Unveils First Quantum System, Helium",
-     "kind": "press"
-    }
-   ],
-   "profile": {
-    "qubit_type": "dissipatively stabilised cat qubit",
-    "gate_mechanism": "first error-corrected logical CNOT (target); a bias-preserving CNOT 'will be essential'",
-    "connectivity": "degree-3 hexagonal grid: each cat qubit linked to two neighbours in its logical qubit and one in another",
-    "degree": "3",
-    "control": "",
-    "control_placement": "",
-    "readout": "",
-    "err_2q_median": "target logical error 1e-3; logical clock 0.8 µs",
-    "err_2q_best": "",
-    "readout_error": "",
-    "t1": "",
-    "t2": "",
-    "t_2q": "",
-    "t_meas": "",
-    "best_logical": "target 4 logical qubits at 1e-3 and a first logical CNOT",
-    "decoder": "",
-    "realtime": "",
-    "roadmap": "then Beryllium (250 cat qubits), Graphene (2,000 cat qubits, 100 logical, 2030)",
-    "role": "",
-    "gate_evidence": "none",
-    "decoder_mode": "none",
-    "err_2q_median_num": null,
-    "flags": [
-     "target-not-device"
     ],
     "qubits_accessible": null,
     "gate_evidence_derived": true,
@@ -3303,6 +2852,213 @@
    }
   },
   {
+   "id": "baqis-shenglian-84",
+   "name": "Shenglian (BAQIS)",
+   "org": "Beijing Academy of Quantum Information Sciences",
+   "org_id": "Beijing Academy of Quantum Information Sciences",
+   "country": "China",
+   "family": "SC",
+   "map_path": "sc",
+   "status": "DEMONSTRATED",
+   "status_date": "Jul 2026",
+   "physical_qubits_num": 84,
+   "access": "not stated (the paper cites the BAQIS Quafu platform)",
+   "layers": {
+    "1": [
+     {
+      "node": "transmon",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "84 tunable transmons (Shenglian), 65 used in the CZ experiment",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2607.01422",
+       "locator": "§I; App. B, Fig. S2 (optical image of the processor)",
+       "verified": true
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_bare",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "bare transmon |0⟩/|1⟩ subspace; family-determined",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://arxiv.org/abs/2607.01422",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "g_tc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "non-adiabatic CZ via tunable transmon couplers (48 ns); median 99.25% over 72 CZ, best 99.92% (IRB)",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2607.01422",
+       "locator": "§II; Fig. 2a (SRB/IRB); Fig. 3 (72 CZ gates)",
+       "verified": true
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "cx_nn",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "hexagonal lattice of qubits coupled via tunable couplers (nearest neighbour)",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2607.01422",
+       "locator": "App. B, Fig. S2 (topology graph)",
+       "verified": true
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_rt",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "room-temperature control copied from the sibling Baihua; not described in the paper",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://arxiv.org/abs/2607.01422",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_disp",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "three-state single-shot readout; dispersive by family",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2607.01422",
+       "locator": "Fig. 1(f) (three-state single-shot readout clouds)",
+       "verified": false
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no QEC code; calibration/benchmarking experiment",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2607.01422",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder; no QEC run",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2607.01422",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "single processor, no interconnect",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://arxiv.org/abs/2607.01422",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_sc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "superconducting-qubit lithography; family-determined",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://arxiv.org/abs/2607.01422",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 3,
+    "total": 10
+   },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2607.01422",
+     "title": "High-Precision Calibration Workflow Achieves Above 99.9% CZ Gate Fidelity on a Scalable Superconducting Processor",
+     "kind": "paper"
+    }
+   ],
+   "profile": {
+    "qubit_type": "tunable transmon",
+    "gate_mechanism": "tunable coupler (non-adiabatic CZ, 48 ns)",
+    "connectivity": "hexagonal lattice",
+    "degree": "",
+    "control": "",
+    "control_placement": "",
+    "readout": "",
+    "err_2q_median": "7.5e-3 median CZ (99.25(1)%) over 72 parallel-calibrated CZ gates, interleaved RB (Jul 2026)",
+    "err_2q_best": "8e-4 (CZ 99.92(1)%, interleaved RB, one pair)",
+    "readout_error": "",
+    "t1": "median 50.8 µs (65 qubits)",
+    "t2": "median 16.9 µs (CPMG)",
+    "t_2q": "48 ns CZ",
+    "t_meas": "",
+    "best_logical": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "not published",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
+    "err_2q_median_num": null,
+    "flags": [],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
+   }
+  },
+  {
    "id": "basq-system-two",
    "name": "IBM Quantum System Two, Donostia-San Sebastian",
    "org": "Basque Government (BasQ) - IBM-Euskadi Quantum Computational Center",
@@ -3934,7 +3690,7 @@
    "map_path": "sc",
    "status": "DEPLOYED",
    "status_date": "2023",
-   "physical_qubits_num": 176,
+   "physical_qubits_num": 66,
    "access": "cloud service",
    "layers": {
     "1": [
@@ -4094,7 +3850,13 @@
     "verified": 1,
     "total": 10
    },
-   "refs": [],
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2512.10504",
+     "title": "[2512.10504] Tianyan: Cloud services with quantum advantage",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "coupler type not published",
@@ -4364,7 +4126,7 @@
    "country": "China",
    "family": "SC",
    "map_path": "sc",
-   "status": "ANNOUNCED / DEPLOYED (reachability disputed)",
+   "status": "DEPLOYED",
    "status_date": "Dec 2024",
    "physical_qubits_num": 504,
    "access": "cloud service (Cqlib SDK; operator paper Dec 2025)",
@@ -5879,7 +5641,13 @@
     "verified": 0,
     "total": 12
    },
-   "refs": [],
+   "refs": [
+    {
+     "url": "https://global.fujitsu/en-global/technology/research/quantum",
+     "title": "Quantum Computing by Fujitsu | Fujitsu Global",
+     "kind": "other"
+    }
+   ],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "not published",
@@ -7315,7 +7083,13 @@
     "verified": 4,
     "total": 10
    },
-   "refs": [],
+   "refs": [
+    {
+     "url": "https://newsroom.ibm.com/2025-06-10-IBM-Sets-the-Course-to-Build-Worlds-First-Large-Scale,-Fault-Tolerant-Quantum-Computer-at-New-IBM-Quantum-Data-Center",
+     "title": "IBM Sets the Course to Build World's First Large-Scale, Fault-Tolerant Quantum Computer at New IBM Quantum Data Center",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "fixed-frequency transmon",
     "gate_mechanism": "tunable coupler",
@@ -12817,8 +12591,8 @@
    "country": "South Korea",
    "family": "SC",
    "map_path": "sc",
-   "status": "DEPLOYING",
-   "status_date": "H2 2026",
+   "status": "DEPLOYED (20-qubit computer and its cloud demonstration, KRISS 21 Jul 2026)",
+   "status_date": "Jul 2026",
    "physical_qubits_num": 20,
    "access": "cloud (pilot)",
    "layers": {
@@ -12994,6 +12768,11 @@
    },
    "refs": [
     {
+     "url": "https://www.kriss.re.kr/gallery.es?mid=a20302000000&bid=0017&b_list=12&act=view&list_no=6553&nPage=1&vlist_no_npage=2&keyField=&orderby=",
+     "title": "KRISS news 2026-07-21 (Quantum Korea 2026)",
+     "kind": "press"
+    },
+    {
      "url": "https://en.sedaily.com/technology/2026/03/23/korea-builds-quantum-fabs-targets-second-gen-quantum",
      "title": "Korea builds quantum fabs, targets second-gen quantum",
      "kind": "press"
@@ -13040,7 +12819,7 @@
    "country": "South Korea",
    "family": "SC",
    "map_path": "sc",
-   "status": "PLANNED (next target after the 20-qubit class)",
+   "status": "ANNOUNCED (50-qubit model shown at Quantum Korea 2026; working status unconfirmed)",
    "status_date": "Mar 2026",
    "physical_qubits_num": 50,
    "access": "n/a",
@@ -13202,7 +12981,13 @@
     "verified": 0,
     "total": 10
    },
-   "refs": [],
+   "refs": [
+    {
+     "url": "https://www.kriss.re.kr/gallery.es?mid=a20302000000&bid=0017&b_list=12&act=view&list_no=6553&nPage=1&vlist_no_npage=2&keyField=&orderby=",
+     "title": "KRISS news 2026-07-21 (Quantum Korea 2026)",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "not published",
     "gate_mechanism": "not published",
@@ -16705,230 +16490,6 @@
    }
   },
   {
-   "id": "quamcore",
-   "name": "QuamCore",
-   "org": "QuamCore",
-   "org_id": "QuamCore",
-   "country": "Israel",
-   "family": "SC",
-   "map_path": "sc",
-   "status": "PLANNED (design only)",
-   "status_date": "Aug 2025",
-   "physical_qubits_num": null,
-   "access": "n/a",
-   "layers": {
-    "1": [
-     {
-      "node": "transmon",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "superconducting qubits (transmon per register); no qubit count; architecture designed and simulated, no hardware built (Aug 2025)",
-      "evidence": {
-       "type": "press-technical",
-       "url": "https://thequantuminsider.com/2026/05/15/10-plus-companies-leading-the-quantum-technologies-race-in-china/",
-       "locator": "",
-       "verified": false
-      }
-     }
-    ],
-    "2": [
-     {
-      "node": "enc_bare",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "Bare two-level subspace — Computational subspace of an anharmonic oscillator; leakage to |2⟩ is the price.",
-      "evidence": {
-       "type": "inferred",
-       "url": "https://thequantuminsider.com/2026/05/15/10-plus-companies-leading-the-quantum-technologies-race-in-china/",
-       "locator": "",
-       "verified": false
-      }
-     }
-    ],
-    "3": [
-     {
-      "node": "undisclosed",
-      "role": "primary",
-      "gap": false,
-      "state": "undisclosed",
-      "summary": "gate mechanism not published; no hardware built as of Aug 2025",
-      "evidence": {
-       "type": "press-technical",
-       "url": "https://thequantuminsider.com/2026/05/15/10-plus-companies-leading-the-quantum-technologies-race-in-china/",
-       "locator": "",
-       "verified": false
-      }
-     }
-    ],
-    "4": [
-     {
-      "node": "cx_nn",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "connectivity not published (register)",
-      "evidence": {
-       "type": "press-technical",
-       "url": "https://thequantuminsider.com/2026/05/15/10-plus-companies-leading-the-quantum-technologies-race-in-china/",
-       "locator": "",
-       "verified": false
-      }
-     }
-    ],
-    "5": [
-     {
-      "node": "ct_sfq",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "ultra-low-power superconducting control logic inside the cryostat, no 300 K→mK cabling; 1,000,000 qubits per cryostat targeted (Aug 2025 claim)",
-      "evidence": {
-       "type": "vendor-architecture-page",
-       "url": "https://www.quamcore.com/",
-       "locator": "§QuamCore's Superconducting Quantum Processor Architecture is Built to Solve the Scalability Challenge (superconducting digital logic chipset at mK; cabling >1000x lower)",
-       "verified": true
-      }
-     },
-     {
-      "node": "ct_cryocmos",
-      "role": "alternate",
-      "gap": false,
-      "state": "station",
-      "summary": "in-cryostat control logic (claimed; designed and simulated only, Aug 2025)",
-      "evidence": {
-       "type": "vendor-architecture-page",
-       "url": "https://www.quamcore.com/",
-       "locator": "§QuamCore's Superconducting Quantum Processor Architecture ... (integrated digital superconducting chipset)",
-       "verified": false
-      }
-     }
-    ],
-    "6": [
-     {
-      "node": "ro_disp",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "dispersive readout (register)",
-      "evidence": {
-       "type": "inferred",
-       "url": "https://thequantuminsider.com/2026/05/15/10-plus-companies-leading-the-quantum-technologies-race-in-china/",
-       "locator": "",
-       "verified": false
-      }
-     }
-    ],
-    "7": [
-     {
-      "node": "none",
-      "role": "primary",
-      "gap": false,
-      "state": "none",
-      "summary": "no QEC code; no hardware built (PLANNED, design only)",
-      "evidence": {
-       "type": "vendor-architecture-page",
-       "url": "https://www.quamcore.com/",
-       "locator": "§QuamCore's Superconducting Quantum Processor Architecture ... (Error-Correction-Aware Design, built-in error-correction capabilities)",
-       "verified": false
-      }
-     }
-    ],
-    "8": [
-     {
-      "node": "none",
-      "role": "primary",
-      "gap": false,
-      "state": "none",
-      "summary": "no decoder; no real-time path (register)",
-      "evidence": {
-       "type": "press-technical",
-       "url": "https://thequantuminsider.com/2026/05/15/10-plus-companies-leading-the-quantum-technologies-race-in-china/",
-       "locator": "",
-       "verified": false
-      }
-     }
-    ],
-    "9": [
-     {
-      "node": "none",
-      "role": "primary",
-      "gap": false,
-      "state": "none",
-      "summary": "single-cryostat architecture, no interconnect published",
-      "evidence": {
-       "type": "vendor-architecture-page",
-       "url": "https://www.quamcore.com/",
-       "locator": "§QuamCore's Superconducting Quantum Processor Architecture ... (over 1 million qubits in a single cryostat)",
-       "verified": true
-      }
-     }
-    ],
-    "10": [
-     {
-      "node": "fab_sc",
-      "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "Superconducting-qubit lithography (Nb/Al JJ, 300 mm) — IBM Albany 300 mm / Anderon foundry; Google Santa Barbara; Rigetti ABAA trimming (97.4% frequency-targeting success); OQC 500-qubit wafer-scale…",
-      "evidence": {
-       "type": "inferred",
-       "url": "https://thequantuminsider.com/2026/05/15/10-plus-companies-leading-the-quantum-technologies-race-in-china/",
-       "locator": "",
-       "verified": false
-      }
-     }
-    ]
-   },
-   "records": [],
-   "codes": [],
-   "evidence_counts": {
-    "verified": 2,
-    "total": 11
-   },
-   "refs": [
-    {
-     "url": "https://www.quamcore.com/",
-     "title": "Pioneering massive scaling of superconducting quantum computing",
-     "kind": "product"
-    }
-   ],
-   "profile": {
-    "qubit_type": "transmon",
-    "gate_mechanism": "not published",
-    "connectivity": "not published",
-    "degree": "",
-    "control": "ultra-low-power superconducting control logic inside the cryostat, eliminating 300 K to mK cabling",
-    "control_placement": "SFQ / cryo (claimed)",
-    "readout": "dispersive",
-    "err_2q_median": "no hardware",
-    "err_2q_best": "",
-    "readout_error": "",
-    "t1": "",
-    "t2": "",
-    "t_2q": "",
-    "t_meas": "",
-    "best_logical": "none",
-    "decoder": "none",
-    "realtime": "none",
-    "roadmap": "no first-device date",
-    "role": "",
-    "gate_evidence": "none",
-    "decoder_mode": "none",
-    "err_2q_median_num": null,
-    "flags": [
-     "cryo-gap",
-     "paper-architecture",
-     "source-not-confirmed"
-    ],
-    "qubits_accessible": null,
-    "gate_evidence_derived": true,
-    "decoder_mode_derived": true,
-    "benchmarked": false
-   }
-  },
-  {
    "id": "quantware-contralto-a17",
    "name": "QuantWare Contralto-A17",
    "org": "QuantWare",
@@ -19218,6 +18779,216 @@
    }
   },
   {
+   "id": "riken-fujitsu-64q",
+   "name": "RIKEN RQC-Fujitsu 64-qubit superconducting quantum computer",
+   "org": "RIKEN RQC + Fujitsu",
+   "org_id": "Fujitsu",
+   "country": "Japan",
+   "family": "SC",
+   "map_path": "sc",
+   "status": "DEPLOYED (superseded by the 256-qubit machine, Apr 2025)",
+   "status_date": "Oct 2023",
+   "physical_qubits_num": 64,
+   "access": "",
+   "layers": {
+    "1": [
+     {
+      "node": "transmon",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "64-qubit superconducting machine launched Oct 2023 (MEXT support); transmon per the sibling and the 256-qubit successor",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://www.riken.jp/en/news_pubs/news/2025/20250422_1/index.html",
+       "locator": "paragraph on the 64-qubit iteration",
+       "verified": false
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_bare",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "copied from the sibling riken-64q; the RIKEN page gives no design detail for the 64-qubit iteration",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.riken.jp/en/news_pubs/news/2025/20250422_1/index.html",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "undisclosed",
+      "role": "primary",
+      "gap": false,
+      "state": "undisclosed",
+      "summary": "copied from the sibling riken-64q; the RIKEN page gives no design detail for the 64-qubit iteration",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.riken.jp/en/news_pubs/news/2025/20250422_1/index.html",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "cx_nn",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "copied from the sibling riken-64q; the RIKEN page gives no design detail for the 64-qubit iteration",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.riken.jp/en/news_pubs/news/2025/20250422_1/index.html",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_vio",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "copied from the sibling riken-64q; the RIKEN page gives no design detail for the 64-qubit iteration",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.riken.jp/en/news_pubs/news/2025/20250422_1/index.html",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_disp",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "copied from the sibling riken-64q; the RIKEN page gives no design detail for the 64-qubit iteration",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.riken.jp/en/news_pubs/news/2025/20250422_1/index.html",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "copied from the sibling riken-64q; the RIKEN page gives no design detail for the 64-qubit iteration",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.riken.jp/en/news_pubs/news/2025/20250422_1/index.html",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "copied from the sibling riken-64q; the RIKEN page gives no design detail for the 64-qubit iteration",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.riken.jp/en/news_pubs/news/2025/20250422_1/index.html",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "copied from the sibling riken-64q; the RIKEN page gives no design detail for the 64-qubit iteration",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.riken.jp/en/news_pubs/news/2025/20250422_1/index.html",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_sc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "copied from the sibling riken-64q; the RIKEN page gives no design detail for the 64-qubit iteration",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.riken.jp/en/news_pubs/news/2025/20250422_1/index.html",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 0,
+    "total": 10
+   },
+   "refs": [
+    {
+     "url": "https://www.riken.jp/en/news_pubs/news/2025/20250422_1/index.html",
+     "title": "RIKEN and Fujitsu develop world-leading 256-qubit superconducting quantum computer",
+     "kind": "press"
+    }
+   ],
+   "profile": {
+    "qubit_type": "",
+    "gate_mechanism": "",
+    "connectivity": "",
+    "degree": "",
+    "control": "",
+    "control_placement": "",
+    "readout": "",
+    "err_2q_median": "none published",
+    "err_2q_best": "",
+    "readout_error": "",
+    "t1": "",
+    "t2": "",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "its technology is the base of the 256-qubit RIKEN-Fujitsu machine (Apr 2025)",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
+    "err_2q_median_num": null,
+    "flags": [
+     "no-published-error-rates",
+     "spec-absent"
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
+   }
+  },
+  {
    "id": "seeqc-sfq-5q",
    "name": "SEEQC SFQ-controlled 5-qubit system",
    "org": "SEEQC",
@@ -19449,9 +19220,9 @@
    "country": "China",
    "family": "SC",
    "map_path": "sc",
-   "status": "DEPLOYED",
+   "status": "DEPLOYED (the 25-qubit systems)",
    "status_date": "2025-2026",
-   "physical_qubits_num": 103,
+   "physical_qubits_num": 25,
    "access": "on-prem sold + cloud",
    "layers": {
     "1": [
@@ -19631,6 +19402,11 @@
      "kind": "product"
     },
     {
+     "url": "https://thequantuminsider.com/2026/06/30/spinq-raises-rmb-1-billion-fault-tolerant-quantum-computing/",
+     "title": "SpinQ raises RMB 1 billion for fault-tolerant quantum computing",
+     "kind": "press"
+    },
+    {
      "url": "https://thequantuminsider.com/2026/05/15/10-plus-companies-leading-the-quantum-technologies-race-in-china/",
      "title": "Top Chinese Quantum Computing Companies in 2026",
      "kind": "press"
@@ -19654,7 +19430,7 @@
     "best_logical": "none demonstrated (d=3 surface-code validation stated for 2026)",
     "decoder": "\"cascaded quantum Hamming code decoding\" claimed",
     "realtime": "none",
-    "roadmap": "d=3 surface code in 2026",
+    "roadmap": "103-qubit chip taped out, packaged and validated (mid-2026), delivery not stated; d=3 surface code in 2026",
     "role": "",
     "gate_evidence": "none",
     "decoder_mode": "none",
@@ -20376,13 +20152,13 @@
   {
    "id": "tsinghua-kunlun-32",
    "name": "Kunlun",
-   "org": "Zhejiang University (H. Wang group) with Tsinghua University IIIS (D.-L. Deng)",
+   "org": "Tsinghua University IIIS (D.-L. Deng) with Zhejiang University (H. Wang, C. Song groups)",
    "org_id": "Zhejiang University",
    "country": "China",
    "family": "SC",
    "map_path": "sc",
    "status": "DEMONSTRATED",
-   "status_date": "May 2025",
+   "status_date": "May 2025 (arXiv; Nature Physics, Jan 2026)",
    "physical_qubits_num": 32,
    "access": "lab-only",
    "layers": {
@@ -21096,7 +20872,7 @@
    "status": "DEMONSTRATED",
    "status_date": "22 Dec 2025",
    "physical_qubits_num": 107,
-   "access": "lab-only",
+   "access": "research cloud by application with expert review (QuantumCTek cloud: 107 readable qubits + 187 couplers)",
    "layers": {
     "1": [
      {
@@ -21746,6 +21522,11 @@
      "kind": "paper"
     },
     {
+     "url": "http://english.iop.cas.cn/rh/rp/202601/t20260130_1147808.html",
+     "title": "Chuang-tzu 2.0 (IOP CAS research progress, Jan 2026)",
+     "kind": "press"
+    },
+    {
      "url": "https://www.iop.cas.cn/xwzx/kydt/202601/t20260128_8119971.html",
      "title": "庄子（Chuang-tzu）2.0 (IOP CAS 科研动态, 2026-01-28)",
      "kind": "press"
@@ -21753,7 +21534,7 @@
    ],
    "profile": {
     "qubit_type": "transmon",
-    "gate_mechanism": "tunable coupler (assumed)",
+    "gate_mechanism": "tunable coupler",
     "connectivity": "2-D lattice: 78 qubits with 137 couplers",
     "degree": "",
     "control": "room-temperature RF",
@@ -24061,7 +23842,13 @@
     "verified": 3,
     "total": 11
    },
-   "refs": [],
+   "refs": [
+    {
+     "url": "https://www.ionq.com/news/ionq-launches-superion-product-line-industry-leading-upgradeable-platform-designed-to-scale-manufacturable-fault-tolerant-quantum-computing",
+     "title": "IonQ | IonQ Debuts Superion 256 Quantum Computing Platform",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "trapped-ion qubit (species not stated)",
     "gate_mechanism": "Electronic Qubit Control (EQC): trapped-ion qubits controlled by electronics integrated on the chip",
@@ -26909,7 +26696,7 @@
    "family": "ION",
    "map_path": "ion_chain",
    "status": "DEPLOYED",
-   "status_date": "2024-2026",
+   "status_date": "2023-",
    "physical_qubits_num": null,
    "access": "sold into government, finance, telecom, power",
    "layers": {
@@ -27503,7 +27290,13 @@
     "verified": 4,
     "total": 11
    },
-   "refs": [],
+   "refs": [
+    {
+     "url": "https://qudora.com/news/german-government-selects-qudora-led-consortium-for-e122-million-project-nfqc-1k-to-develop-a-1000-qubit-fault-tolerant-quantum-computer-and-build-a-qpu-pilot-line/",
+     "title": "German Government Selects QUDORA-Led Consortium for €122 Million Project NFQC-1k to Develop a 1,000-Qubit Fault-Tolerant Quantum Computer an",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "trapped-ion qubit (species not stated)",
     "gate_mechanism": "Near Field Quantum Control (NFQC): chip-scale microwave fields instead of laser addressing",
@@ -27749,7 +27542,7 @@
    "country": "USA",
    "family": "ION",
    "map_path": "ion_chain",
-   "status": "DEPLOYED (open user testbed; to be discontinued by end of FY2026)",
+   "status": "DEPLOYED (open user testbed; discontinuation scheduled for end of FY2026, 30 Sep 2026, now past; no end notice on the Sandia page)",
    "status_date": "2021-2026",
    "physical_qubits_num": 6,
    "access": "open user testbed (DOE-funded; calls for proposals); after the DOE funding redirection only a few short user projects until the end of FY2026",
@@ -28466,6 +28259,220 @@
     "decoder_mode": "none",
     "err_2q_median_num": null,
     "flags": [],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
+   }
+  },
+  {
+   "id": "uibk-iqoqi-sim-51",
+   "name": "Innsbruck trapped-ion analog quantum simulator (up to 51 ions)",
+   "org": "IQOQI Innsbruck (Austrian Academy of Sciences) with the University of Innsbruck (M. Joshi, C. Roos)",
+   "org_id": "University of Innsbruck",
+   "country": "Austria",
+   "family": "ION",
+   "map_path": "ion_chain",
+   "status": "DEMONSTRATED",
+   "status_date": "Aug 2026 (PRX 16, 031037; arXiv Nov 2025)",
+   "physical_qubits_num": 51,
+   "access": "lab-only",
+   "layers": {
+    "1": [
+     {
+      "node": "ion",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "linear strings of up to 51 40Ca+ ions in a linear RF trap",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2511.23392",
+       "locator": "§III; App. B (Experimental platform)",
+       "verified": true
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_opt",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "optical qubit: Zeeman sublevels S1/2 m=+1/2 and D5/2 m=+5/2, 729 nm quadrupole transition",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2511.23392",
+       "locator": "App. B1 (Engineered many-body interactions)",
+       "verified": true
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "∅G-isinganalog",
+      "role": "primary",
+      "gap": true,
+      "state": "gap",
+      "summary": "analog long-range Ising / XY interaction from a bichromatic beam coupling all transverse modes; no gates",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2511.23392",
+       "locator": "App. B1, Eqs. (B1)-(B3)",
+       "verified": true
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "∅G-crystal",
+      "role": "primary",
+      "gap": true,
+      "state": "gap",
+      "summary": "static linear Coulomb chain, long-range (J0 = 185 rad/s, alpha = 0.97 at 51 ions), no transport",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2511.23392",
+       "locator": "App. B1",
+       "verified": true
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_ionaod",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "global bichromatic beam plus a strongly focused steerable single-ion beam",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2511.23392",
+       "locator": "App. B2 (Local control)",
+       "verified": true
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_fluor",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "spatially resolved fluorescence detection",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2511.23392",
+       "locator": "§III; App. B2",
+       "verified": true
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no QEC code (analog simulator)",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2511.23392",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder (analog simulator)",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2511.23392",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "single trap, no interconnect",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://arxiv.org/abs/2511.23392",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_trap",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "linear radiofrequency ion trap",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2511.23392",
+       "locator": "App. B (Experimental platform)",
+       "verified": true
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 7,
+    "total": 10
+   },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2511.23392",
+     "title": "Bounded-Error Quantum Simulation via Hamiltonian and Lindbladian Learning",
+     "kind": "paper"
+    },
+    {
+     "url": "https://www.uibk.ac.at/en/newsroom/2026/quantum-simulators-get-error-bars/",
+     "title": "Quantum simulators get error bars",
+     "kind": "press"
+    }
+   ],
+   "profile": {
+    "qubit_type": "optical qubit (40Ca+ S1/2–D5/2 Zeeman sublevels, 729 nm)",
+    "gate_mechanism": "bichromatic laser-driven long-range Ising / XY spin-spin coupling - an analog simulator, not a gate-model machine",
+    "connectivity": "linear Coulomb chain, long-range coupling over all ions, no transport",
+    "degree": "50",
+    "control": "global bichromatic laser beam plus a steerable single-ion addressing beam",
+    "control_placement": "room-temp + free-space optics",
+    "readout": "spatially resolved fluorescence",
+    "err_2q_median": "n/a (analog)",
+    "err_2q_best": "",
+    "readout_error": "",
+    "t1": "",
+    "t2": "",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "academic",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
+    "err_2q_median_num": null,
+    "flags": [
+     "analog-only"
+    ],
     "qubits_accessible": null,
     "gate_evidence_derived": true,
     "decoder_mode_derived": true,
@@ -30482,7 +30489,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": ">3,000 87Rb atoms operated continuously for >2 hours (Aug 2026)",
+      "summary": ">3,000 87Rb atoms operated continuously for >2 hours (Nature, Sep 2025; arXiv Jun 2025)",
       "evidence": {
        "type": "architecture-paper-figure",
        "url": "https://arxiv.org/abs/2506.20660",
@@ -30540,7 +30547,7 @@
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "two optical-lattice conveyor belts move atoms ~0.5 m; reload 300,000 atoms/s into tweezers => 30,000 initialised qubits/s (Aug 2026)",
+      "summary": "two optical-lattice conveyor belts move atoms ~0.5 m; reload 300,000 atoms/s into tweezers => 30,000 initialised qubits/s (Nature, Sep 2025; arXiv Jun 2025)",
       "evidence": {
        "type": "architecture-paper-figure",
        "url": "https://arxiv.org/abs/2506.20660",
@@ -30925,6 +30932,216 @@
     "flags": [
      "analog-only",
      "no-entangling-gate"
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
+   }
+  },
+  {
+   "id": "infleqtion-illinois",
+   "name": "Infleqtion Illinois neutral-atom quantum computer (IQMP, Chicago)",
+   "org": "Infleqtion",
+   "org_id": "Infleqtion",
+   "country": "USA/UK",
+   "family": "ATOM",
+   "map_path": "atom_rb",
+   "status": "ANNOUNCED (under contract; delivery planned for 2027)",
+   "status_date": "2027 (contract; announced 12 Aug 2026)",
+   "physical_qubits_num": null,
+   "access": "on-prem at the Illinois Quantum & Microelectronics Park (Chicago)",
+   "layers": {
+    "1": [
+     {
+      "node": "alkali",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "neutral-atom computer (release); alkali species copied from Infleqtion Sqale, not stated for the Illinois system",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://ir.infleqtion.com/news-events/press-releases/detail/201/infleqtion-reports-record-q2-revenue-raises-2026-outlook-as-quantum-commercialization-accelerates",
+       "locator": "Highlights; Second Quarter and Recent Business Highlights",
+       "verified": false
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_hf",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "copied from the sibling Infleqtion Sqale; the release states only a neutral-atom architecture scaling by modular upgrades to > 50 logical qubits",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://ir.infleqtion.com/news-events/press-releases/detail/201/infleqtion-reports-record-q2-revenue-raises-2026-outlook-as-quantum-commercialization-accelerates",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "g_ryd",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "copied from the sibling Infleqtion Sqale; the release states only a neutral-atom architecture scaling by modular upgrades to > 50 logical qubits",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://ir.infleqtion.com/news-events/press-releases/detail/201/infleqtion-reports-record-q2-revenue-raises-2026-outlook-as-quantum-commercialization-accelerates",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "cx_aod",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "copied from the sibling Infleqtion Sqale; the release states only a neutral-atom architecture scaling by modular upgrades to > 50 logical qubits",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://ir.infleqtion.com/news-events/press-releases/detail/201/infleqtion-reports-record-q2-revenue-raises-2026-outlook-as-quantum-commercialization-accelerates",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_laser",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "copied from the sibling Infleqtion Sqale; the release states only a neutral-atom architecture scaling by modular upgrades to > 50 logical qubits",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://ir.infleqtion.com/news-events/press-releases/detail/201/infleqtion-reports-record-q2-revenue-raises-2026-outlook-as-quantum-commercialization-accelerates",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_img",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "copied from the sibling Infleqtion Sqale; the release states only a neutral-atom architecture scaling by modular upgrades to > 50 logical qubits",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://ir.infleqtion.com/news-events/press-releases/detail/201/infleqtion-reports-record-q2-revenue-raises-2026-outlook-as-quantum-commercialization-accelerates",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "code_highrate",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "copied from the sibling Infleqtion Sqale; the release states only a neutral-atom architecture scaling by modular upgrades to > 50 logical qubits",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://ir.infleqtion.com/news-events/press-releases/detail/201/infleqtion-reports-record-q2-revenue-raises-2026-outlook-as-quantum-commercialization-accelerates",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "dec_nn",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "copied from the sibling Infleqtion Sqale; the release states only a neutral-atom architecture scaling by modular upgrades to > 50 logical qubits",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://ir.infleqtion.com/news-events/press-releases/detail/201/infleqtion-reports-record-q2-revenue-raises-2026-outlook-as-quantum-commercialization-accelerates",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "copied from the sibling Infleqtion Sqale; the release states only a neutral-atom architecture scaling by modular upgrades to > 50 logical qubits",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://ir.infleqtion.com/news-events/press-releases/detail/201/infleqtion-reports-record-q2-revenue-raises-2026-outlook-as-quantum-commercialization-accelerates",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_optics",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "copied from the sibling Infleqtion Sqale; the release states only a neutral-atom architecture scaling by modular upgrades to > 50 logical qubits",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://ir.infleqtion.com/news-events/press-releases/detail/201/infleqtion-reports-record-q2-revenue-raises-2026-outlook-as-quantum-commercialization-accelerates",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 0,
+    "total": 10
+   },
+   "refs": [
+    {
+     "url": "https://ir.infleqtion.com/news-events/press-releases/detail/201/infleqtion-reports-record-q2-revenue-raises-2026-outlook-as-quantum-commercialization-accelerates",
+     "title": "Infleqtion Reports Record Q2 Revenue, Raises 2026 Outlook as Quantum Commercialization Accelerates",
+     "kind": "press"
+    }
+   ],
+   "profile": {
+    "qubit_type": "neutral atom (species not stated)",
+    "gate_mechanism": "",
+    "connectivity": "",
+    "degree": "",
+    "control": "",
+    "control_placement": "",
+    "readout": "",
+    "err_2q_median": "not published",
+    "err_2q_best": "",
+    "readout_error": "",
+    "t1": "",
+    "t2": "",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "none (target: more than 50 logical qubits)",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "modular upgrades to more than 50 logical qubits; 100-logical-qubit goal; described as \"a contracted fault-tolerant quantum computing system for Illinois\" (Infleqtion Q2 2026 results, 12 Aug 2026)",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
+    "err_2q_median_num": null,
+    "flags": [
+     "spec-absent",
+     "target-not-device"
     ],
     "qubits_accessible": null,
     "gate_evidence_derived": true,
@@ -34489,19 +34706,6 @@
        "locator": "",
        "verified": false
       }
-     },
-     {
-      "node": "ro_imgfast",
-      "role": "alternate",
-      "gap": false,
-      "state": "station",
-      "summary": "fast imaging — lineage result, not shown on the Yaqumo machine",
-      "evidence": {
-       "type": "architecture-paper",
-       "url": "https://yaqumo.com/en/news/499/",
-       "locator": "",
-       "verified": false
-      }
      }
     ],
     "7": [
@@ -34571,7 +34775,7 @@
    ],
    "evidence_counts": {
     "verified": 3,
-    "total": 11
+    "total": 10
    },
    "refs": [
     {
@@ -42757,6 +42961,7 @@
     "hanyuan-2",
     "harvard-448",
     "harvard-continuous-3000",
+    "infleqtion-illinois",
     "infleqtion-sqale",
     "msu-rb-50q",
     "pasqal-centaurus-500",
@@ -42774,12 +42979,10 @@
   },
   "cavity": {
    "primary": [
-    "aliceandbob-beryllium-250",
     "aliceandbob-boson-4",
     "aliceandbob-graphene",
     "aliceandbob-helium",
     "aliceandbob-helium-2",
-    "aliceandbob-lithium-48",
     "aws-ocelot",
     "dwave-dualrail-17",
     "nordquantique-gkp",
@@ -42798,11 +43001,9 @@
   },
   "code_bosonic": {
    "primary": [
-    "aliceandbob-beryllium-250",
     "aliceandbob-graphene",
     "aliceandbob-helium",
     "aliceandbob-helium-2",
-    "aliceandbob-lithium-48",
     "aws-ocelot",
     "xanadu-aurora"
    ],
@@ -42858,6 +43059,7 @@
   },
   "code_highrate": {
    "primary": [
+    "infleqtion-illinois",
     "infleqtion-sqale",
     "quantinuum-apollo",
     "quantinuum-h1",
@@ -42877,7 +43079,6 @@
   "code_magic": {
    "primary": [],
    "alternate": [
-    "aliceandbob-beryllium-250",
     "fujitsu-10000q",
     "google-willow",
     "harvard-448",
@@ -42970,7 +43171,6 @@
     "ibm-bluejay",
     "ibm-heron-r2",
     "ibm-starling",
-    "quamcore",
     "quobly"
    ]
   },
@@ -43019,6 +43219,7 @@
     "sandia-qscout",
     "tsinghua-512-ion",
     "uibk-innsbruck-ion",
+    "uibk-iqoqi-sim-51",
     "umd-duke-ion"
    ],
    "alternate": []
@@ -43056,6 +43257,7 @@
     "harvard-448",
     "harvard-continuous-3000",
     "icfo-quione",
+    "infleqtion-illinois",
     "infleqtion-sqale",
     "msu-rb-50q",
     "pasqal-centaurus-500",
@@ -43086,12 +43288,10 @@
   "ct_rt": {
    "primary": [
     "academia-sinica-20q",
-    "aliceandbob-beryllium-250",
     "aliceandbob-boson-4",
     "aliceandbob-graphene",
     "aliceandbob-helium",
     "aliceandbob-helium-2",
-    "aliceandbob-lithium-48",
     "amaravati-ibm-tcs",
     "anyon-monarq-24",
     "aws-dualrail",
@@ -43100,6 +43300,7 @@
     "baqis-dongling-130",
     "baqis-haituo-117",
     "baqis-scq136",
+    "baqis-shenglian-84",
     "basq-system-two",
     "bsc-quantum-spain",
     "chalmers-wacqt-25q",
@@ -43181,7 +43382,6 @@
   },
   "ct_sfq": {
    "primary": [
-    "quamcore",
     "seeqc-sfq-5q"
    ],
    "alternate": []
@@ -43196,7 +43396,8 @@
     "oqc-toshiko-32",
     "quantware-vio-40k",
     "riken-64q",
-    "riken-fujitsu-256q"
+    "riken-fujitsu-256q",
+    "riken-fujitsu-64q"
    ],
    "alternate": []
   },
@@ -43208,6 +43409,7 @@
     "hanyuan-1",
     "hanyuan-2",
     "harvard-448",
+    "infleqtion-illinois",
     "infleqtion-sqale",
     "msu-rb-50q",
     "pasqal-centaurus-500",
@@ -43267,12 +43469,10 @@
   "cx_nn": {
    "primary": [
     "academia-sinica-20q",
-    "aliceandbob-beryllium-250",
     "aliceandbob-boson-4",
     "aliceandbob-graphene",
     "aliceandbob-helium",
     "aliceandbob-helium-2",
-    "aliceandbob-lithium-48",
     "amaravati-ibm-tcs",
     "anyon-monarq-24",
     "aws-dualrail",
@@ -43281,6 +43481,7 @@
     "baqis-dongling-130",
     "baqis-haituo-117",
     "baqis-scq136",
+    "baqis-shenglian-84",
     "basq-system-two",
     "bsc-quantum-spain",
     "chalmers-wacqt-25q",
@@ -43335,7 +43536,6 @@
     "qolab-iqcc",
     "qpiai-indus-25",
     "qpiai-kaveri-64",
-    "quamcore",
     "quantum-brilliance-quoll",
     "quantum-motion-qm-one",
     "quantware-contralto-a17",
@@ -43349,6 +43549,7 @@
     "rigetti-novera-9",
     "riken-64q",
     "riken-fujitsu-256q",
+    "riken-fujitsu-64q",
     "saxonq-qc2026-dualcore-10",
     "saxonq-sxq4-4",
     "seeqc-sfq-5q",
@@ -43472,6 +43673,7 @@
   },
   "dec_nn": {
    "primary": [
+    "infleqtion-illinois",
     "infleqtion-sqale",
     "qxl-neutral-atom-50",
     "ustc-zuchongzhi-3.2"
@@ -43525,6 +43727,7 @@
     "baqis-dongling-130",
     "baqis-haituo-117",
     "baqis-scq136",
+    "baqis-shenglian-84",
     "basq-system-two",
     "bsc-quantum-spain",
     "chalmers-wacqt-25q",
@@ -43574,7 +43777,6 @@
     "qolab-iqcc",
     "qpiai-indus-25",
     "qpiai-kaveri-64",
-    "quamcore",
     "quantware-contralto-a17",
     "quantware-tenor-d64",
     "quantware-vio-40k",
@@ -43585,6 +43787,7 @@
     "rigetti-novera-9",
     "riken-64q",
     "riken-fujitsu-256q",
+    "riken-fujitsu-64q",
     "seeqc-sfq-5q",
     "spinq-ursa-major",
     "toshiba-dtc",
@@ -43600,12 +43803,10 @@
   },
   "enc_cat": {
    "primary": [
-    "aliceandbob-beryllium-250",
     "aliceandbob-boson-4",
     "aliceandbob-graphene",
     "aliceandbob-helium",
     "aliceandbob-helium-2",
-    "aliceandbob-lithium-48",
     "aws-ocelot"
    ],
    "alternate": []
@@ -43663,6 +43864,7 @@
     "hanyuan-2",
     "harvard-448",
     "harvard-continuous-3000",
+    "infleqtion-illinois",
     "infleqtion-sqale",
     "ionq-aria",
     "ionq-ba133-qldpc-testbed",
@@ -43715,7 +43917,8 @@
     "planqc-dinaqc-100",
     "planqc-maqcs",
     "psnc-piast-q",
-    "uibk-innsbruck-ion"
+    "uibk-innsbruck-ion",
+    "uibk-iqoqi-sim-51"
    ],
    "alternate": []
   },
@@ -43832,6 +44035,7 @@
     "harvard-448",
     "harvard-continuous-3000",
     "icfo-quione",
+    "infleqtion-illinois",
     "infleqtion-sqale",
     "msu-rb-50q",
     "pasqal-centaurus-500",
@@ -43874,12 +44078,10 @@
   "fab_sc": {
    "primary": [
     "academia-sinica-20q",
-    "aliceandbob-beryllium-250",
     "aliceandbob-boson-4",
     "aliceandbob-graphene",
     "aliceandbob-helium",
     "aliceandbob-helium-2",
-    "aliceandbob-lithium-48",
     "amaravati-ibm-tcs",
     "anyon-monarq-24",
     "aws-dualrail",
@@ -43888,6 +44090,7 @@
     "baqis-dongling-130",
     "baqis-haituo-117",
     "baqis-scq136",
+    "baqis-shenglian-84",
     "basq-system-two",
     "bsc-quantum-spain",
     "chalmers-wacqt-25q",
@@ -43945,7 +44148,6 @@
     "qolab-iqcc",
     "qpiai-indus-25",
     "qpiai-kaveri-64",
-    "quamcore",
     "quantware-contralto-a17",
     "quantware-tenor-d64",
     "quantware-vio-40k",
@@ -43956,6 +44158,7 @@
     "rigetti-novera-9",
     "riken-64q",
     "riken-fujitsu-256q",
+    "riken-fujitsu-64q",
     "seeqc-sfq-5q",
     "spinq-ursa-major",
     "sustech-dualrail-8",
@@ -44006,6 +44209,7 @@
     "sandia-qscout",
     "tsinghua-512-ion",
     "uibk-innsbruck-ion",
+    "uibk-iqoqi-sim-51",
     "umd-duke-ion",
     "universal-quantum-iqpu"
    ],
@@ -44054,9 +44258,7 @@
   },
   "g_catcnot": {
    "primary": [
-    "aliceandbob-beryllium-250",
-    "aliceandbob-graphene",
-    "aliceandbob-lithium-48"
+    "aliceandbob-graphene"
    ],
    "alternate": []
   },
@@ -44180,6 +44382,7 @@
     "hanyuan-1",
     "hanyuan-2",
     "harvard-448",
+    "infleqtion-illinois",
     "infleqtion-sqale",
     "msu-rb-50q",
     "pasqal-centaurus-500",
@@ -44217,6 +44420,7 @@
     "baqis-dongling-130",
     "baqis-haituo-117",
     "baqis-scq136",
+    "baqis-shenglian-84",
     "basq-system-two",
     "chalmers-wacqt-25q",
     "ctqg-tianyan-176",
@@ -44328,8 +44532,6 @@
   "ic_multidie": {
    "primary": [
     "academia-sinica-20q",
-    "aliceandbob-beryllium-250",
-    "aliceandbob-lithium-48",
     "aws-ocelot",
     "chalmers-wacqt-25q",
     "ctqg-tianyan-287",
@@ -44379,6 +44581,7 @@
     "sandia-qscout",
     "tsinghua-512-ion",
     "uibk-innsbruck-ion",
+    "uibk-iqoqi-sim-51",
     "umd-duke-ion",
     "universal-quantum-iqpu"
    ],
@@ -44420,12 +44623,10 @@
   "ro_disp": {
    "primary": [
     "academia-sinica-20q",
-    "aliceandbob-beryllium-250",
     "aliceandbob-boson-4",
     "aliceandbob-graphene",
     "aliceandbob-helium",
     "aliceandbob-helium-2",
-    "aliceandbob-lithium-48",
     "amaravati-ibm-tcs",
     "anyon-monarq-24",
     "aws-ocelot",
@@ -44433,6 +44634,7 @@
     "baqis-dongling-130",
     "baqis-haituo-117",
     "baqis-scq136",
+    "baqis-shenglian-84",
     "basq-system-two",
     "bsc-quantum-spain",
     "chalmers-wacqt-25q",
@@ -44480,7 +44682,6 @@
     "qolab-iqcc",
     "qpiai-indus-25",
     "qpiai-kaveri-64",
-    "quamcore",
     "quantware-contralto-a17",
     "quantware-tenor-d64",
     "quantware-vio-40k",
@@ -44491,6 +44692,7 @@
     "rigetti-novera-9",
     "riken-64q",
     "riken-fujitsu-256q",
+    "riken-fujitsu-64q",
     "seeqc-sfq-5q",
     "spinq-ursa-major",
     "toshiba-dtc",
@@ -44564,6 +44766,7 @@
     "saxonq-sxq4-4",
     "tsinghua-512-ion",
     "uibk-innsbruck-ion",
+    "uibk-iqoqi-sim-51",
     "umd-duke-ion",
     "universal-quantum-iqpu"
    ],
@@ -44593,6 +44796,7 @@
     "harvard-448",
     "harvard-continuous-3000",
     "icfo-quione",
+    "infleqtion-illinois",
     "infleqtion-sqale",
     "msu-rb-50q",
     "pasqal-centaurus-500",
@@ -44611,12 +44815,6 @@
    ],
    "alternate": [
     "princeton-yb-erasure"
-   ]
-  },
-  "ro_imgfast": {
-   "primary": [],
-   "alternate": [
-    "yaqumo-yb"
    ]
   },
   "ro_qcap": {
@@ -44702,6 +44900,7 @@
     "baqis-dongling-130",
     "baqis-haituo-117",
     "baqis-scq136",
+    "baqis-shenglian-84",
     "basq-system-two",
     "bsc-quantum-spain",
     "chalmers-wacqt-25q",
@@ -44755,7 +44954,6 @@
     "qolab-iqcc",
     "qpiai-indus-25",
     "qpiai-kaveri-64",
-    "quamcore",
     "quantware-contralto-a17",
     "quantware-tenor-d64",
     "quantware-vio-40k",
@@ -44766,6 +44964,7 @@
     "rigetti-novera-9",
     "riken-64q",
     "riken-fujitsu-256q",
+    "riken-fujitsu-64q",
     "seeqc-sfq-5q",
     "spinq-ursa-major",
     "sustech-dualrail-8",

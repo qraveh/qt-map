@@ -57,6 +57,8 @@ Derived clock = sum of the syndrome round: gate layers + transport + readout + r
 
 The 10⁻⁷ figure is a randomised-benchmarking number whose per-Clifford decay is comparable to slow drift, so it states as much about long-run stability and the leakage and SPAM model as about the gate [D][103]. Benchmarking here does not capture spectator crosstalk from the global far field, a.c. Zeeman shifts on neighbours, or drive-induced heating, which surfaces only in a later entangling gate. No simultaneous randomised benchmarking, crosstalk-RB or cycle benchmarking exists for a chip-integrated microwave device, and the 8.4(7)×10⁻⁵ two-qubit result has no independent replication as of 2026-09-03 [D][102]. Two source issues: the main report attributes gate durations of 225.8 µs (2025) and ≈120 µs (2024) to a paper whose abstract states neither, so those are carried as reported; and WISE's source count and layer rate are architectural estimates [S][325], not measurements.
 
+Not published: Universal Quantum's DLR contract value, funding and 2025–2026 status; the QSea I and QSea II contract values in EUR; patent counts for the three families; and per-qubit cost or yield for microwave trap chips.
+
 ## Actors & economics
 
 **Who.**
@@ -107,11 +109,3 @@ Open questions. (1) How much anomalous heating do drive currents inject at entan
 [325] M. Malinowski, D. Allcock, and C. Ballance, “How to Wire a 1000-Qubit Trapped-Ion Quantum Computer,” *PRX Quantum*, vol. 4, no. 4, Art. no. 040313, Oct. 2023, doi: [10.1103/PRXQuantum.4.040313](https://doi.org/10.1103/PRXQuantum.4.040313). [arXiv:2305.12773](https://arxiv.org/abs/2305.12773). [S]
 [327] German Aerospace Center (DLR), “QSea I – Quantum computer demonstrator with 10 ion trap qubits,” DLR Quantum Computing Initiative. [Online]. Available: https://qci.dlr.de/en/qsea-i/ [G]
 [590] NXP Semiconductors, “NXP, eleQtron and ParityQC Reveal their First Quantum Computing Demonstrator for the DLR Quantum Computing Initiative,” NXP Newsroom, May 30, 2024. [Online]. Available: https://www.nxp.com/company/about-nxp/newsroom/NW-NXP-ELEQTRON-AND-PARITYQC-FIRST-QUANTUM [C]
-
-## Open verification items
-
-- Electronic-gate duration 225.8 µs (2025) / ≈120 µs (2024): from the main report via arXiv:2510.17286, whose abstract gives neither figure.
-- Universal Quantum: DLR contract value, funding and 2025–2026 status unverified (site gave no dated figures; /news 404 on 2026-09-03).
-- NIST Boulder near-field microwave gate (Ospelkaus et al., ~2011): cited as lineage only, from the standard literature without a numbered source, no number attached.
-- ECCN for ion-trap microwave control chips under the September 2024 US quantum export controls: not verified.
-- QSea I / QSea II contract values in EUR, patent counts for the three families, and per-qubit cost or yield for microwave trap chips: no public figure found.

@@ -1,6 +1,6 @@
 {
  "date": "2026-10-09",
- "source": "the outreach round's review rows of 5 Oct (quantum-register/outreach/patch-2026-10-05.json), each re-fetched at its source on 9 Oct 2026; Scite's carried items of 6 Oct",
+ "source": "the outreach round's review rows of 5 Oct (quantum-register/outreach/patch-2026-10-05.json), each re-fetched at its source on 9 Oct 2026; Scite's carried items of 6 Oct; the editor's approval of 9 Oct 15:16 of the 23 editor-tier rows and of D6-1…D6-9 as recommended (QT-Atlas_plan-vs-site_2026-10-09.xlsx)",
  "items": [
   {
    "kind": "update",
@@ -1309,6 +1309,379 @@
    "sources": [
     "https://arxiv.org/abs/2406.07267"
    ]
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "machine",
+    "id": "infleqtion-illinois"
+   },
+   "fields": {
+    "status": "ANNOUNCED",
+    "status_date": "2027"
+   },
+   "note": "Infleqtion's neutral-atom machine for the Illinois Quantum & Microelectronics Park (Chicago): «Infleqtion is under contract to deploy a neutral-atom quantum computer at the Illinois Quantum & Microelectronics Park» «in 2027, with a new architecture designed to scale through modular upgrades to more than 50 logical qubits» (IR, 12 Aug 2026); layer cells copied from infleqtion-sqale",
+   "sources": [
+    "https://ir.infleqtion.com/news-events/press-releases/detail/201/infleqtion-reports-record-q2-revenue-raises-2026-outlook-as-quantum-commercialization-accelerates"
+   ]
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "machine",
+    "id": "riken-fujitsu-64q"
+   },
+   "fields": {
+    "status": "DEPLOYED",
+    "status_date": "Oct 2023",
+    "physical_qubits_num": "64"
+   },
+   "note": "RIKEN RQC–Fujitsu 64-qubit superconducting machine, kept apart from riken-64q (the 27 Mar 2023 cloud machine): «builds upon the advanced technology of the 64-qubit iteration, which was launched with the support of the Japanese Ministry of Education, Culture, Sports, Science and Technology (MEXT) in October 2023» (RIKEN, 23 Apr 2025)",
+   "sources": [
+    "https://www.riken.jp/en/news_pubs/news/2025/20250422_1/index.html"
+   ]
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "machine",
+    "id": "baqis-shenglian-84"
+   },
+   "fields": {
+    "status": "DEMONSTRATED",
+    "status_date": "Jul 2026",
+    "physical_qubits_num": "84"
+   },
+   "note": "«the superconducting processor Shenglian [39], which is composed of 84 tunable transmon qubits coupled via tunable transmon couplers» «median fidelity of (99.25 ± 0.01)% among 72 CZ gates ... maximum CZ gate fidelity is (99.92 ± 0.01)%» (IRB; hexagonal lattice, App. B); the two-qubit figure in the text cell only (err_2q_median_num empty, WP2); 2Q class row P-avg/S-sim/median/n=72",
+   "sources": [
+    "https://arxiv.org/abs/2607.01422"
+   ]
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "machine",
+    "id": "uibk-iqoqi-sim-51"
+   },
+   "fields": {
+    "status": "DEMONSTRATED",
+    "status_date": "Aug 2026",
+    "physical_qubits_num": "51"
+   },
+   "note": "IQOQI/University of Innsbruck trapped-ion analog simulator (flag analog-only): «linear strings of up to 51 40Ca ions are confined in the anisotropic harmonic potential of a linear radiofrequency trap» (Kraft, Joshi, ..., Roos, Zoller, PRX 16, 031037, 2026; doi:10.1103/s96t-n8tx); «an ion-trap quantum simulator containing up to 51 ions» (UIBK, 21 Aug 2026)",
+   "sources": [
+    "https://arxiv.org/abs/2511.23392",
+    "https://www.uibk.ac.at/en/newsroom/2026/quantum-simulators-get-error-bars/"
+   ]
+  },
+  {
+   "kind": "status",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-504"
+   },
+   "fields": {
+    "status": "DEPLOYED"
+   },
+   "note": "ANNOUNCED / DEPLOYED (reachability disputed) → DEPLOYED: «Then in 2024, Tianyan launched the Tianyan-504 superconducting quantum system with 504 physical qubits» (operator paper, Dec 2025); access text kept",
+   "sources": [
+    "https://arxiv.org/abs/2512.10504"
+   ]
+  },
+  {
+   "kind": "status",
+   "subject": {
+    "type": "machine",
+    "id": "kriss-20q"
+   },
+   "fields": {
+    "status": "DEPLOYED",
+    "status_date": "Jul 2026"
+   },
+   "note": "DEPLOYING → DEPLOYED: «the development of a 20-qubit superconducting quantum computer and its cloud demonstration» (KRISS, 21 Jul 2026)",
+   "sources": [
+    "https://www.kriss.re.kr/gallery.es?mid=a20302000000&bid=0017&b_list=12&act=view&list_no=6553&nPage=1&vlist_no_npage=2&keyField=&orderby="
+   ]
+  },
+  {
+   "kind": "status",
+   "subject": {
+    "type": "machine",
+    "id": "kriss-50q"
+   },
+   "fields": {
+    "status": "ANNOUNCED"
+   },
+   "note": "PLANNED → ANNOUNCED (50-qubit model shown at Quantum Korea 2026; working status unconfirmed): «Newly produced last year by KRISS, this model of a 50-qubit superconducting quantum computer made its public debut at the exhibition»; date kept",
+   "sources": [
+    "https://www.kriss.re.kr/gallery.es?mid=a20302000000&bid=0017&b_list=12&act=view&list_no=6553&nPage=1&vlist_no_npage=2&keyField=&orderby="
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "sandia-qscout"
+   },
+   "fields": {
+    "status": "DEPLOYED (open user testbed; discontinuation scheduled for end of FY2026, 30 Sep 2026, now past; no end notice on the Sandia page)"
+   },
+   "note": "«Due to a funding redirection at the DOE, the QSCOUT program is to be discontinued by the end of the 2026 fiscal year.» — the page names no end; RETIRED only on a Sandia statement",
+   "sources": [
+    "https://www.sandia.gov/quantum/quantum-information-sciences/projects/qscout/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-176"
+   },
+   "fields": {
+    "physical_qubits_num": "66"
+   },
+   "note": "176 → 66 qubits + 110 couplers, an inference: «In 2023, Tianyan introduced two superconducting quantum systems, Tianyan-176 and Tianyan-176 II, featuring the previous high-performance Zuchongzhi 2.0-like processor.» ('176' a qubits+couplers label like Tianyan-287); refs row for arXiv:2512.10504 now ✅",
+   "sources": [
+    "https://arxiv.org/abs/2512.10504"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "vtt-q50"
+   },
+   "fields": {
+    "physical_qubits": "50 (launch release); the VTT page also says 53-qubit"
+   },
+   "note": "number kept at 50; «VTT Q50 is a 53-qubit superconducting quantum computer.» recorded in the prose",
+   "sources": [
+    "https://www.vttresearch.com/en/technology-infrastructures/quantum-computers"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "spinq-ursa-major"
+   },
+   "fields": {
+    "physical_qubits_num": "25",
+    "status": "DEPLOYED (the 25-qubit systems)"
+   },
+   "note": "103 → 25: «In 2025, the company began batch deliveries of its “Ursa Major” superconducting quantum computing systems. ... completed tape-out, packaging, and validation for its new-generation 25-qubit and 103-qubit» — the 103-qubit chip moves to the roadmap (delivery not stated)",
+   "sources": [
+    "https://thequantuminsider.com/2026/06/30/spinq-raises-rmb-1-billion-fault-tolerant-quantum-computing/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ustc-zuchongzhi-3.2"
+   },
+   "fields": {
+    "access": "research cloud by application with expert review (QuantumCTek cloud: 107 readable qubits + 187 couplers)"
+   },
+   "note": "lab-only → reviewed research cloud: «祖冲之三号资源申请采用限量研究接入模式 ... 107 个可读取比特与 187 个耦合比特的原型机资源申请»",
+   "sources": [
+    "https://quantumctek-cloud.com/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "qudoor-abaq"
+   },
+   "fields": {
+    "status_date": "2023-"
+   },
+   "note": "2024-2026 → 2023-: «启科量子在2023年推出了模块化离子阱量子计算工程机<Aba|Qu>1.0»",
+   "sources": [
+    "https://www.qudoor.com/index.php?c=show&id=172"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "tsinghua-kunlun-32"
+   },
+   "fields": {
+    "org": "Tsinghua University IIIS (D.-L. Deng) with Zhejiang University (H. Wang, C. Song groups)",
+    "status_date": "May 2025 (arXiv; Nature Physics, Jan 2026)"
+   },
+   "note": "date kept at May 2025 with the Nature Physics publication noted; org reordered, org_id unchanged (Zhejiang University): «清华大学交叉信息研究院邓东灵课题组与浙江大学物理学院王浩华、宋超研究组等合作 ... 发表 ... 发布时间：2026-01-28»",
+   "sources": [
+    "https://iiis.tsinghua.edu.cn/info/1018/4871.htm"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "academia-sinica-20q"
+   },
+   "fields": {
+    "flags": "outlier-claim;no-published-error-rates"
+   },
+   "note": "source-not-confirmed removed: the release loads and confirms 20 qubits, 530 µs T1: «completed a new generation 20-qubit superconducting quantum chip ... to 530 microseconds»",
+   "sources": [
+    "https://www.sinica.edu.tw/en/news_content/55/3655"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "zhuangzi-2.0"
+   },
+   "fields": {
+    "gate_mechanism": "tunable coupler"
+   },
+   "note": "'(assumed)' removed: «Chuang-tzu 2.0 consists of 78 qubits arranged in a 6×13 lattice with 137 tunable couplers.» — new ref zhuangzi-iop-en",
+   "sources": [
+    "http://english.iop.cas.cn/rh/rp/202601/t20260130_1147808.html"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "harvard-continuous-3000"
+   },
+   "fields": {
+    "machine-stations-evidence": "carrier and connect lines: (Aug 2026) → (Nature, Sep 2025; arXiv Jun 2025)"
+   },
+   "note": "arXiv history v1 2025-06-25, v2 2026-05-21; Nature 646, 1075 (Sep 2025); no Aug 2026 version",
+   "sources": [
+    "https://arxiv.org/abs/2506.20660"
+   ]
+  },
+  {
+   "kind": "remove",
+   "subject": {
+    "type": "machine",
+    "id": "quamcore"
+   },
+   "fields": {},
+   "old": {
+    "name": "QuamCore"
+   },
+   "note": "No dated target from the owner (roadmap: no first-device date; Aug 2025 is the claim date) and the row's only refs key (qudoor-tqi) is an article on Chinese companies that does not name QuamCore — fails the project-only rule (D6-6, 9 Oct 2026). The page answers 404 (no redirect).",
+   "old_name": "QuamCore",
+   "aliases": [
+    "QuamCore"
+   ]
+  },
+  {
+   "kind": "remove",
+   "subject": {
+    "type": "machine",
+    "id": "aliceandbob-lithium-48"
+   },
+   "fields": {},
+   "old": {
+    "name": "Lithium-48"
+   },
+   "evidence": [
+    {
+     "url": "https://alice-bob.com/newsroom/alice-bob-quantum-computing-roadmap/",
+     "date": "2024-12-04",
+     "quote": "With the upcoming Lithium chip series, Alice & Bob aims to scale multi-logical-qubit systems"
+    }
+   ],
+   "note": "Undated on the owner's pages (alice-bob.com/roadmap and the 4 Dec 2024 roadmap release give no year for Lithium: 'With the upcoming Lithium chip series…') — a bound is not a dated target; fails the project-only rule (D6-6, 9 Oct 2026). The page answers 404 (no redirect).",
+   "old_name": "Alice & Bob Lithium-48 chip (48 cat qubits)",
+   "aliases": [
+    "Lithium"
+   ]
+  },
+  {
+   "kind": "remove",
+   "subject": {
+    "type": "machine",
+    "id": "aliceandbob-beryllium-250"
+   },
+   "fields": {},
+   "old": {
+    "name": "Beryllium-250"
+   },
+   "evidence": [
+    {
+     "url": "https://alice-bob.com/newsroom/alice-bob-quantum-computing-roadmap/",
+     "date": "2024-12-04",
+     "quote": "The Beryllium chip series will enable a universal set of logical gates enabled by magic state factories"
+    }
+   ],
+   "note": "Undated on the owner's pages (no year for Beryllium; only 'before Graphene, 2030') — a bound is not a dated target; fails the project-only rule (D6-6, 9 Oct 2026). The page answers 404 (no redirect).",
+   "old_name": "Alice & Bob Beryllium-250 chip (250 cat qubits)",
+   "aliases": [
+    "Beryllium"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "register",
+    "id": "project-only rule"
+   },
+   "fields": {},
+   "note": "The register's rule for project-only (PLANNED) rows, the editor's D6-6 of 9 Oct 2026: a row stays only with a dated target from the owner and a confirmed source naming the machine; rows without a dated target leave the register (QuamCore; Alice & Bob Lithium-48 and Beryllium-250 — the owner's roadmap names the chips without a year) and their pages answer 404 (the editor's decision of 30 Sep). Rows with a dated target whose reference row was missing (IBM Cockatoo 2027, Fujitsu 1,000-qubit 2026, IonQ Superion 10K, Qudora NFQC-1k) stay and get their reference rows.",
+   "sources": []
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "text",
+    "id": "map lenses, legend (D6-1, D6-2)"
+   },
+   "fields": {},
+   "note": "The map's lenses go from 13 to 9: Control: modality, Readout: destructive?, Carrier affinity and Technology status leave the lens list (the attributes stay on the technology cards) — the roundtable of 28 Sep, the editor's D6-1 of 9 Oct, on the data of ANALYSIS_2026-10-09_d6-data (carrier affinity repeats the map's rows; destructive? has two values on 23 nodes; status is one value on 77 %; modality follows the platform family on 84 %). The legend shows relations as one kind (the data and the hover keep kind and strength); the parallel-coordinates strip is removed (D6-2).",
+   "sources": []
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "technology",
+    "id": "ro_img"
+   },
+   "fields": {
+    "time": "≈ 18 µs (fast, USTC/Kyoto) to ≈ 0.5 ms"
+   },
+   "note": "ro_imgfast merged into ro_img (D6-7): the two nodes shared the same three records; the fast readout time is now the lower end of ro_img's range; the ytterbium-only link and the E status are on ro_img's card and brief; the crossing mark NAT_FAST_READ leaves with the node (20 crossing technologies); technology/ro_imgfast.html answers 404.",
+   "sources": []
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "text",
+    "id": "the briefs' Open verification items (D6-5)"
+   },
+   "fields": {},
+   "note": "The section \"Open verification items\" (13,672 words across 111 briefs) is gone from every brief in three languages: the gaps the sources do not fill are stated as facts at the end of each brief's Evidence (\"Not published: …\"), caveats a reader needs likewise, items the text already answers and housekeeping removed. Caveats that touch the report itself, for the next text ticket: IonQ's 3.95 s logical memory (the arXiv version of 14 Sep 2026 lists BB[[24,4,4]] at 3.39 ± 0.47 s); PsiQuantum Omega waveguide loss 0.5 dB/m in §2 vs 1.8 ± 0.2 dB/m in the paper; the SQC donor nuclear CZ 99.90% (the paper gives a range 99.10–99.99%); the Fujitsu/QuTech NV \"below 0.1%\" rests on a press release ([P] in the briefs, [D] in the report); fab_diamond's \"327 SnV devices, cooperativity > 1\" (327 cavities characterised, two devices above one); the cavity CZ's ≈ 80% erasure fraction has no primary source; Forte's MS gate times lack a numbered source ([100] carries them); the ~10 dB squeezing requirement has no single primary source; majorana's \"> 1 ms\" parity readout unconfirmed against [216]; Zuchongzhi 3.2's label absent from the PRL.",
+   "sources": []
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "hypothesis",
+    "id": "H7, H8"
+   },
+   "fields": {},
+   "note": "H7 (the share of announcements by cohort) and H8 (technologies shared between families) are retired as hypotheses and kept as a description of the population in §8.1 with the same counters (the roundtable of 28 Sep; the editor's D6-3 of 9 Oct); their past verdicts stay in the verdict history (H8: not supported in 2026.09); H1–H6 keep their numbers; the verdict table now also shows a 'current register' row beside the frozen 2026.09 row.",
+   "sources": []
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "text",
+    "id": "§3.1 maturity index (D6-4)"
+   },
+   "fields": {},
+   "note": "The maturity index prints two sums — A–D (anchored in §1.2, A–C from the register, D from §3.2) and E–F (the editor's judgement) — in place of one total; A, B, C recomputed by the anchors (build/maturity_check.py): B 5 → 4 for superconducting circuits (QEC cycle 1.1 µs on Surface-17 and Willow) and bosonic (Ocelot 2.8 µs) — the anchor gives 5 only at ≤ 1 µs; the superconducting lead on A–D is now one point (15 / 14 / 13) and the sensitivity sentence says so; the neutral-atom axis-A row cites the corrected register (448-atom processor 5.0e-3 by RB; Sqale 2.7e-3 post-selected).",
+   "sources": []
   }
  ]
 }

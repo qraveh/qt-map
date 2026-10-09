@@ -41,6 +41,8 @@ Manufacturing slot of the Boson sampler architecture (ph_sampler, G1), shared wi
 ## Evidence — how the numbers were measured
 {{N_T_FAB_BULK_VERIFIED_W_CAP}} cells are ✅. Two rest on architecture papers: Borealis's Methods (fibre delay lines, EOM beamsplitters, fibre coupling above 97%) [D][270] and Jiuzhang 4.0's Extended Data Fig. 1 (free-space unbalanced MZI on a PZT-mounted mirror), whose text confirms fibre delay loops but says only that the 16-mode interferometers "incorporate thermal tunability" [D][175]; PT-1's rests on ORCA's product page, "rack-mounted, room temperature and built with optical fibre components" [C][G:ORCA-PT1-2023]. PT-2 stays 🔎: its page gives no architecture [C][465], and the fibre reading rests on ORCA's technology page [C][464]. Jiuzhang 1.0–3.0 stay 🔎 too: their cells are inferred from the lineage, not read from a figure. As of 2026-09-26 no sampler has published an assembly yield, a per-element loss distribution or a realignment interval.
 
+Jiuzhang 4.0's 99.8% may be per filter MZI or for the cascade; its arXiv v3 does not say which. No entry in the 2024-09-06 US rule names SNSPDs, TES or squeezers. Not published: Borealis's per-loop transmission — its Nature text gives only ~33% net, ~20% filter stack, ~15% demultiplexer and fibre coupling above 97% — so no dB-per-loop figure is given; the SNSPD maker for Jiuzhang 4.0; and the completion of ORCA's purchase of GXC, or any PT product using GXC technology.
+
 ## Actors & economics
 **Who.**
 
@@ -84,10 +86,3 @@ Confirm if, by 2027-12-31, an assembled sampler beats Jiuzhang 4.0's 51% end-to-
 [633] IonQ, “IonQ Completes Acquisition of ID Quantique, Cementing Leadership in Quantum Networking and Secure Communications,” May 6, 2025. [Online]. Available: https://investors.ionq.com/news/news-details/2025/IonQ-Completes-Acquisition-of-ID-Quantique-Cementing-Leadership-in-Quantum-Networking-and-Secure-Communications/default.aspx [C]
 [816] Corning Incorporated, “Corning® SMF-28® Ultra Optical Fiber — Product Information (PI-1424-AEN),” Jul. 2025. [Online]. Available: https://www.corning.com/media/worldwide/coc/documents/Fiber/product-information-sheets/PI-1424-AEN.pdf [G]
 [817] Tech.eu, “ORCA Computing acquires GXC's integrated photonics division,” Jan. 30, 2024. [Online]. Available: https://tech.eu/2024/01/30/orca-computing-acquires-gxcs-integrated-photonics-division/ [P]
-
-## Open verification items
-- Borealis per-loop transmissions: not stated in the Nature text consulted on 2026-09-26 (only ~33% net, ~20% filter stack, ~15% demultiplexer, fibre coupling above 97%), so no dB-per-loop figure is given.
-- Jiuzhang 4.0 (arXiv v3, consulted 2026-09-26): the physical form of the 16-mode interferometers and the SNSPD maker are not stated; whether 99.8% is per filter MZI or for the cascade is ambiguous.
-- Export controls: no entry naming SNSPDs, TES or squeezers was found in the 2024-09-06 US rule or by search (2026-09-26); EAR/Wassenaar detector entries (6A002) and national lists were not checked, nor whether a TES refrigerator meets 3A904's cooling threshold (≥600 µW at ≤0.1 K).
-- PTB as a TES source was not verified (2026-09-26); only NIST's role is confirmed.
-- ORCA–GXC: completion of the purchase and any PT product using GXC technology were not found (2026-09-26).

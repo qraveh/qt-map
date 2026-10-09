@@ -62,6 +62,8 @@ Two architectures: superconducting dual-rail erasure (D-Wave/Quantum Circuits, A
 
 Headline numbers are logical decay rates versus hold time decoded with and without flags (Princeton) [D][142], or detected-error ratios between distances in a four-round circuit (Harvard's 2.14(13)×) [D][4]; simulated Λ comes from Stim-style circuit noise with an assumed bias [S][84]. Not captured: post-selection — Princeton's teleportation fidelities, 0.771(9) → 0.802(8), are conditioned on trivial syndromes and a flag [D][142]; four rounds are not a memory over 10⁵ rounds; the Λ ≈ 27 simulation assumes perfect checks, no false negatives, no check-induced dephasing [S][84]; nobody reports survival beside Λ. Independent replications: Harvard/QuEra [D][4], Microsoft/Atom [D][149], Princeton [D][142]; theory from AWS [S][334], [683], [684], Yale [S][395], [643], Duke [S][392]. Conflicts: (i) the [[4,2,2]] gain is 1.9(4)× in arXiv v1 and v2 (2026-06-23) [D][142] but 3.6× in the technology graph from the Nature Physics text [D][142] [G:PRINCETON-ERASURE-2026-06]; the published text is paywalled and 1.9(4)× is used. (ii) 98% conversion [S][8] against 38–56% measured [D][141], [142]. (iii) Λ ≈ 27 [S][84] against Λ = 2.14(2) on the best Pauli-decoded hardware [D][1] — a simulation-to-hardware gap.
 
+Gu, Retzker and Kubica publish thresholds as surfaces, not single values [S][684]. The 11.5 ns per decoding round is for phenomenological noise [D][685]. Not published: an FPGA decoding benchmark with erasure flags; a Princeton or Harvard patent family on erasure conversion; the neutral-atom species of planqc and of Google; the cost or energy per logical qubit, from any actor; and the NSF award behind D-Wave's "$1.57 million in NSF funding for gate-model development" [C][15].
+
 ## Actors & economics
 
 **Who.**
@@ -147,14 +149,3 @@ Erasure-aware decoding also works at a photonic interface between surface-code p
 [685] N. Liyanage, Y. Wu, A. Deters, and L. Zhong, “Scalable Quantum Error Correction for Surface Codes using FPGA,” [arXiv:2301.08419](https://arxiv.org/abs/2301.08419), Jan. 2023. [D]
 [686] Brookhaven National Laboratory, “DOE Renews Brookhaven Lab-led Quantum Research Center,” BNL Newsroom, Nov. 4, 2025. [Online]. Available: https://www.bnl.gov/newsroom/news.php?a=122687 [G]
 [893] F. Burt *et al.*, “Loss-tolerant distributed lattice surgery using fusion networks,” [arXiv:2610.01923](https://arxiv.org/abs/2610.01923), Oct. 2026. [P]
-
-## Open verification items
-
-- [[4,2,2]] erasure-information gain: 1.9(4)× in arXiv:2506.13724 v1 and v2 (2026-06-23) [D][142] versus 3.6× in the technology graph from Nature Physics 22, 910 [D][142]; published text paywalled; 1.9(4)× used.
-- Gu, Retzker, Kubica [S][684]: thresholds published as surfaces, not single values; qualitative result only.
-- Kang, Campbell, Brown [S][392]: PRX Quantum 4 (2023) article number not confirmed.
-- No Princeton or Harvard erasure patent family found in two patent searches; absence not proven.
-- planqc's and Google's neutral-atom species not confirmed from accessible sources; neither is claimed.
-- FPGA decoding with erasure flags: no published benchmark; 11.5 ns per round [D][685] is for phenomenological noise.
-- Cost or energy per logical qubit: unpublished by every actor.
-- D-Wave's "$1.57 million in NSF funding for gate-model development" [C][15]: award not identified.

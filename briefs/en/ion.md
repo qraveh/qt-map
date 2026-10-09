@@ -62,6 +62,8 @@ Headline two-qubit numbers come from randomised-benchmarking variants. The 8.4(7
 
 Conflicts. The electronic gate's duration is 225.8 µs (2025) or ≈ 120 µs (2024) in the technology graph and unstated in the 2025 abstract — unverified. Quantinuum's "near five-nines logical fidelity with a novel QEC code family" [C][123] outruns the published 1.0–1.2×10⁻⁴ logical gate infidelity [D][105]; the code family is unpublished, so the [D] value stands. IonQ's Tempo is marketed at "99.9%" and #AQ 64 with no published gate times [C][99], [326].
 
+The main report gives IonQ Forte's Mølmer–Sørensen gate times on 30+-ion chains (550–883 µs, median 672 µs; single-qubit 110 µs) without a numbered source. Not published: the export-control classification of a bare, un-populated ion-trap chip under the September-2024 US quantum ECCNs (4A906 family) and allied national controls; any funding amount, date, valuation or qubit count for Qudoor (AbaQ, 32+ claimed patents), the only Chinese ion-trap vendor named in 2026 sources; any delivery, milestone or fidelity result against Universal Quantum's €67 M DLR contract as of 2026-09-03; an equity round with a stated amount and date for AQT or QUDORA Technologies (Braunschweig; Tokyo subsidiary opened 2026-05); and Quantinuum's bookings, backlog, Helios unit sales or customer names, absent from its Q2-2026 release.
+
 ## Actors & economics
 
 **Who.**
@@ -141,15 +143,3 @@ Open questions: does grid-trap heating scale with zone count or electrode area? 
 [326] IonQ, “IonQ Announces Record Second Quarter 2026 Revenues, Growing 287% YoY,” Aug. 5, 2026. [Online]. Available: https://www.ionq.com/news/ionq-announces-record-second-quarter-2026-revenues-growing-287-yoy [C]
 [327] German Aerospace Center (DLR), “QSea I – Quantum computer demonstrator with 10 ion trap qubits,” DLR Quantum Computing Initiative. [Online]. Available: https://qci.dlr.de/en/qsea-i/ [G]
 [328] A. Ingall, “German government tasks Sussex spin-out with building a powerful quantum computer in €67M contract,” University of Sussex Broadcast, Nov. 2, 2022. [Online]. Available: https://www.sussex.ac.uk/broadcast/read/59206 [P]
-
-## Open verification items
-
-- Electronic-gate duration on the 2025 record: the retrievable text of arXiv:2510.17286 states neither the 225.8 µs (2025) nor the ≈ 120 µs (2024) figure. Unverified.
-- Quantinuum's "near five-nines logical fidelity with a novel QEC code family" (Q2-2026 call): no paper, no code family named as of 2026-09-03.
-- IonQ Forte Mølmer–Sørensen gate times on 30+-ion chains (550–883 µs, median 672 µs; 1Q 110 µs) appear in the main report without a numbered source; not independently verified here.
-- Export-control classification of a bare, un-populated ion-trap chip under the September-2024 US quantum ECCNs (4A906 family) and allied national controls — the rule text itself was not consulted here; unverified.
-- Infineon press release infpss202604-080 ("Quantum chips: Infineon contributes industrialization", 2026-04) could not be retrieved (navigation-only page); wafer volumes and any new 2026 partners unconfirmed.
-- Chinese trapped-ion commercial activity: Qudoor (AbaQ, 32+ claimed patents) is the only ion-trap vendor named in the surveyed 2026 sources; no funding amount, date, valuation or qubit count found.
-- Universal Quantum: no delivery, milestone or fidelity result announced against the €67 M DLR contract as of 2026-09-03.
-- AQT and QUDORA Technologies (Braunschweig; Tokyo subsidiary opened 2026-05): no equity funding round with a stated amount and date found.
-- Quantinuum's Q2-2026 release discloses no bookings, backlog, Helios unit sales or customer names.

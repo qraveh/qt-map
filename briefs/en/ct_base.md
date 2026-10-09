@@ -42,6 +42,8 @@ It requires nothing upstream, provides the exchange gate directly, and reaches f
 ## Evidence — how the numbers were measured
 Fidelities come from randomised benchmarking and gate-set tomography, and the headline QuTech number is a lower bound, not a point estimate [D][G:QUTECH-BASEBAND-2025-07]. The 80% extrinsic share deserves most scrutiny: it is inferred from measured error against a modelled noise budget, not independently partitioned, and unreplicated. No spin device above 12 qubits has published all-pairs two-qubit fidelities, so simultaneous-operation crosstalk — this node's own failure mode — is uncharacterised at scale. HRL's Λ₅/₃ = 4.7 is a repetition code, bit-flip only, not below-threshold evidence, and its [[4,2,2]] fidelity of 0.95 is post-selected [D][G:HRL-2026]. On the Majorana side the control works but the qubit does not exist: parity readout is real, X-loop lifetimes ran ~1,000× shorter than Z-loop lifetimes, no two-qubit operation [D][13].
 
+Not published: a dated patent-family count for baseband gate-voltage control.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What exactly they do | Evidence |
@@ -72,10 +74,3 @@ Confirm by 2027 if any developer publishes all-pairs two-qubit fidelities above 
 [416] D. P. DiVincenzo, D. Bacon, J. Kempe, G. Burkard, and K. B. Whaley, “Universal quantum computation with the exchange interaction,” *Nature*, vol. 408, no. 6810, pp. 339–342, 2000, doi: [10.1038/35042541](https://doi.org/10.1038/35042541). [arXiv:quant-ph/0005116](https://arxiv.org/abs/quant-ph/0005116). [S]
 [766] S. F. Neyens *et al.*, “Probing single electrons across 300-mm spin qubit wafers,” *Nature*, vol. 629, no. 8010, pp. 80–85, May 2024, doi: [10.1038/s41586-024-07275-6](https://doi.org/10.1038/s41586-024-07275-6). [D]
 [898] A. S. Ivlev *et al.*, “Sparse qubit operation in a 6×6 quantum dot array,” [arXiv:2610.07683](https://arxiv.org/abs/2610.07683), Oct. 2026. [P]
-
-## Open verification items
-The 80% extrinsic share of CNOT error is a modelled inference from HRL's noise budget, not an independent partition, and has no second-group replication.
-No spin device above 12 qubits has published all-pairs two-qubit fidelities, so simultaneous-operation crosstalk is uncharacterised at scale.
-The "since 2012" baseline for demonstrated baseband exchange control carries no numbered source; the 2000 exchange-only proposal is verified and cited instead.
-Diraq's two 2029 targets, six weeks apart, remain unreconciled.
-No dated patent-family count for baseband gate-voltage control was located in any named database.

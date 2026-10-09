@@ -44,6 +44,8 @@ Pando Tree מספק "גם ממתח במתח קבוע וגם פולסי מתח מ
 ## ראיות — כיצד נמדדו המספרים
 מדדי הטיב — ערוצים לפיסה, חום לקו ב-MXC, צניחת מתח בהחזקה, קצב רענון, הפרעה הדדית במיתוג — אינם מופיעים באף תא של המרשם. התיעוד הוא ברמת הרכיב: המתחים המוחזקים של Delft נסחפים בקצב של 60 µV/s עד 18 mV/s [D][552], שגיאה קוהרנטית איטית שבחינת ביצועים אקראית ממצעת ומעלימה [S]; מתקן בדיקת הפרוסות הקריוגני והשבב בן 1,024 הנקודות מודדים התקנים, לא שערים [D][766][D][767]. הדף של Equal1 מציג נאמנות דו-קיוביטית ממוצעת של 99.3% [C][273], והמרשם מביא אותה לצד 98.4% מסקירה בעיתונות; אף אחד מהם אינו נוקב בפיצול שמאחוריה. חסרים, נכון ל-2026-09-26: בחינת ביצועים דרך נתב בטמפרטורת מיליקלווין, ופיזור ההספק של Pando Tree.
 
+לא פורסם: דור התהליך של Pando Tree של Intel וכל נאמנות קיוביט שנמדדה דרכו, וכן תוכניות הפיצול של SQC, Quobly ו-Groove Quantum.
+
 ## שחקנים וכלכלה
 **מי.**
 
@@ -95,11 +97,3 @@ Pando Tree מספק "גם ממתח במתח קבוע וגם פולסי מתח מ
 [769] M. Rutherford, “Silicon Spin Qubits Get Foundry Path: Hitachi Banks on Intel 18A Process,” Tech Times, Jul. 28, 2026. [Online]. Available: https://www.techtimes.com/articles/321867/20260728/hitachi-intel-18a-spin-qubit.htm [P]
 [770] imec, “Quantum pilot line 'SPINS' launched with EU support,” Apr. 3, 2026. [Online]. Available: https://www.imec-int.com/en/press/semiconductor-based-quantum-pilot-line-spins-launched-eu-support [C]
 [771] University College Dublin, “Equal1 Announces $60 million in Funding to Accelerate Quantum Computing using Existing Semiconductor Manufacturing,” UCD Innovation, Jan. 15, 2026. [Online]. Available: https://www.ucd.ie/innovation/news-and-events/2026/equal1-announces-funding-round/ [C]
-
-## פריטי אימות פתוחים
-- "3–5 קווי שער לקיוביט" וניתוב בשכבות המתכת העליונות (back-end-of-line) של imec/Diraq, שניהם נזכרו בבקשה להכנת התקציר, לא נמצאו באף מקור שנפתח; במקומם נעשה שימוש ב-t = 2 של Franke ועמיתיו ובפסיעת השערים של 90 nm של Diraq (2026-09-26).
-- דפי התמצית ב-arXiv של Vandersypen ועמיתיו (2017), Franke ועמיתיו (2019) ו-Paquelet Wuetz ועמיתיו (2020) לא החזירו מטא-נתונים, ולאחר מכן arxiv.org סירב לבקשות נוספות עם HTTP 429 (2026-09-26); עבודות אלה מצוטטות לפי DOI, ומזהי ה-arXiv שלהן לא אומתו.
-- Pando Tree: המאמר מ-VLSI Symposium 2024 לא נפתח; דור התהליך, פיזור ההספק וכל נאמנות קיוביט שנמדדה דרכו אינם מופיעים בבלוג של Intel (2026-09-26).
-- תוכניות הפיצול של SQC, Quobly ו-Groove Quantum: לא נמצאו בבדיקה זו; התאים שלהן במרשם נשארים 🔎 (2026-09-26).
-- דף מפת הדרכים של Diraq מציג "27 באוגוסט" בלי שנה קריאה (הביבליוגרפיה של האטלס מתארכת אותו ל-2026-08-27); היעדים ל-2029 ול-2031 מצוטטים מהדף (2026-09-26).
-- הרשומה של Schaal ועמיתיו נשענת על הרשומה ב-UCL Discovery ועל רישום ב-arXiv, לא על דף המוציא לאור; לא בוצע חיפוש פטנטים ייעודי לפיצול קריוגני (2026-09-26).

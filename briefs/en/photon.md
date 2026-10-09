@@ -68,6 +68,8 @@ HOM visibility, g²(0) by Hanbury Brown–Twiss, and fusion Bell fidelity by tom
 
 Conflicts. (i) The main report's 0.5 dB/m is the multimode figure; single-mode SiN in Omega is 1.8 ± 0.2 dB/m [D][169][G:PSIQ-OMEGA-METRICS-2025] — both used here, labelled. (ii) QD efficiency 71.2% (lab) vs 55.3% (shipped) vs 20–35% (typical) is a lab-to-product gap; use the product figure [D][170], [338]. (iii) Jiuzhang 4.0's advantage is contested by loss-exploiting classical spoofing [D][175]. (iv) Sparrow's "highest HOM visibility to date" is an unreplicated vendor claim [D][338]. Omega has never been independently reproduced.
 
+PsiQuantum's $31.8 M Stage C award is dated 2025-09 in some sources and placed inside a July 2026 package in others; the $125 M expansion date (2026-07-22) is firm. ORCA Computing's funding is known only as a secondary range (~£8–15 M Series A plus 2023–24 capital). Not published: the exact date and instrument mix (equity, loan or grant) of the A$940 M Australian commitment to PsiQuantum, beyond the total and the two governments [183]; Sparrow Quantum's Series A lead investor and cumulative funding; a primary release, cumulative total or valuation for ORCA Computing; the ECCN of single-photon sources and detectors under the September 2024 US quantum rule; and Quandela's cumulative funding, or any 2025–26 round after its €50 M of 2023-11-07.
+
 ## Actors & economics
 
 **Who.**
@@ -133,14 +135,3 @@ Open questions. (1) Can QD sources be integrated at foundry scale without breaki
 [341] M. Ivezic, “ORCA Computing,” PostQuantum.com, May 22, 2025. [Online]. Available: https://postquantum.com/quantum-computing-companies/orca-computing/ [P]
 [342] M. Abdel-Kareem, “Sparrow Quantum Secures €21.5M ($24M USD) in Series A Funding to Advance Photonic Quantum Chip Production,” Quantum Computing Report, Apr. 10, 2025. [Online]. Available: https://quantumcomputingreport.com/sparrow-quantum-secures-e21-5m-24m-usd-in-series-a-funding-to-advance-photonic-quantum-chip-production/ [P]
 [343] Quandela, “Quandela secures €50 million to support international expansion,” Nov. 7, 2023. [Online]. Available: https://www.quandela.com/about-us/newsroom/quandela-secures-e50-million-to-support-international-expansion/ [C]
-
-## Open verification items
-
-- Exact date and instrument mix (equity vs loan vs grant) of the A$940 M Australian commitment to PsiQuantum; source [183] gives only the total and the two governments.
-- Sparrow Quantum Series A lead investor and cumulative funding — primary report paywalled; only date and amount confirmed.
-- ORCA Computing funding history: only a secondary range (~£8–15 M Series A plus 2023–24 capital); no primary release, no cumulative total, no valuation.
-- Export-control classification of single-photon sources and detectors under the September 2024 US quantum rule — ECCN not confirmed, deliberately not stated in the text.
-- Quandela cumulative funding and any 2025–26 round; €50 M (2023-11-07) is the most recent primary release located.
-- PsiQuantum's $31.8 M Stage C award is dated 2025-09 in some sources but framed inside a July 2026 package in others; the $125 M expansion date (2026-07-22) is firm.
-- Xanadu's 2026 SPAC close (~$302 M) and CAD 195 M Toronto funding are omitted from the Money ledger here as continuous-variable events.
-- Source conflicts carried forward: SiN loss 0.5 dB/m (multimode) vs 1.8 ± 0.2 dB/m (single-mode); QD efficiency 71.2% (lab) vs 55.3% (product) vs 20–35% (production); Jiuzhang 4.0 advantage contested by classical spoofing.

@@ -40,6 +40,8 @@ Default real-time decoder for surface- and colour-code memories, shared across f
 ## Evidence — how the numbers were measured
 Sparse Blossom's throughput comes from simulated Stim streams [D][726]. The one hardware-integrated figure, Willow's 63 µs at d=5, used a specialised parallel Sparse Blossom built by Google, not stock PyMatching [D][1]. Micro Blossom's 0.8 µs at d=13 is peer-reviewed (ASPLOS 2025) but replays syndromes [D][727]; the repository's 367 ns appears in no paper [C][G:MICROBLOSSOM-2026]. The much-quoted threshold spread is no conflict: 0.7% (PyMatching), 0.65% and 0.55% (Riverlane's software and hardware clustering decoders) come from one comparison under one noise model [D][238]. Every challenger publishes MWPM as baseline; none replicates its speed.
 
+Quantum X Labs' claim that its transformer decoder outperforms MWPM carries no quantitative figure and no peer review [730]. Not published: a separate description, hardware platform or resource figure for the specialised Sparse Blossom variant that decodes Willow in real time, so its 63 µs cannot be attributed to a named part.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What they do | Evidence |
@@ -80,9 +82,3 @@ Confirm/demote in 12–24 months: a same-qubit, same-calibration comparison of m
 [728] O. Higgott, “PyMatching,” GitHub. [Online]. Available: https://github.com/oscarhiggott/PyMatching [G]
 [729] X. Yang *et al.*, “Real-time Surface-Code Error Correction Using an FPGA-based Neural-Network Decoder,” [arXiv:2605.04892](https://arxiv.org/abs/2605.04892), May 2026. Also https://arxiv.org/html/2605.04892. [D]
 [730] Quantum X Labs, “Quantum X Labs Reports Meaningful Error Correction Decoder Results with NVIDIA CUDA-Q QEC,” GlobeNewswire, Jul. 24, 2026. [Online]. Available: https://www.globenewswire.com/news-release/2026/07/24/3332879/0/en/quantum-x-labs-reports-meaningful-error-correction-decoder-results-with-nvidia-cuda-q-qec.html [C]
-
-## Open verification items
-Micro Blossom: the peer-reviewed figure is 0.8 µs average latency at d=13 (ASPLOS 2025) [727]; the repository's 367 ns and 10⁶ rounds/s appear in no paper and carry no stated code distance — a repository claim, not a measurement.
-Riverlane's Series C amount conflicts between its own release ($75 M, 2024-08-06) and its 2026 roadmap ($85 M) [G:RIVERLANE-FUNDING]; no extension release exists and no later round was located as of 4 Sep 2026.
-Quantum X Labs' claim that its transformer decoder outperforms MWPM carries no quantitative figure and no peer review [730].
-Willow's real-time decoder is described only as a specialised Sparse Blossom variant; no separate publication, hardware platform or resource figure for it was located, so its 63 µs cannot be attributed to a named part.

@@ -39,6 +39,8 @@ Serves all three trapped-ion architectures — QCCD, the linear Paul trap with i
 ## Evidence — how the numbers were measured
 SPAM is measured by preparing known bright and dark states and counting misclassification; Helios's 3.3–4.8×10⁻⁴ is a per-zone range, not one number [D][97]. Standard SPAM conflates preparation with measurement and rarely separates leakage or loss from misclassification — quoting discrimination and survival separately, as a 2026 neutral-ytterbium imaging study does (99.89% and 98.80%, not an ion result), is uncommon here [P][261]. The headline numbers are also not commensurable: three species, three detectors, three machines. IonQ's Forte SPAM of 0.5% [C][99] is an order of magnitude worse than Helios's — plausibly a real architecture difference, long chains on a camera versus zoned detection, but it is a specification page against a preprint.
 
+Not published: the ID Quantique purchase price, so the detector-supply position carries no valuation; a per-channel detector cost from any vendor, and ion-readout revenue separable in Hamamatsu's or Oxford Instruments' reporting; and a UV (369–400 nm) SNSPD system detection efficiency to set against the 98% telecom-band figure.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What exactly they do with this technology | Evidence |
@@ -84,6 +86,3 @@ Confirm by end-2027 if IonQ publishes a peer-reviewed SPAM figure; demote the 0.
 [620] Hamamatsu Photonics, “APS DAMOP 2026,” Aug. 25, 2026. [Online]. Available: https://www.hamamatsu.com/us/en/news/events/2026/APS-DAMOP-2026.html [C]
 [621] TipRanks, “Single Quantum Hits 400-System Milestone as It Deepens European Quantum Partnerships,” Jul. 4, 2026. [Online]. Available: https://www.tipranks.com/news/private-companies/single-quantum-hits-400-system-milestone-as-it-deepens-european-quantum-partnerships [P]
 [622] startupticker.ch, “US-based company acquires ID Quantique,” Mar. 3, 2025. [Online]. Available: https://www.startupticker.ch/en/news/US-based-company-acquires-id-quantique [P]
-
-## Open verification items
-The ID Quantique purchase price is undisclosed, so no valuation can be put on the detector-supply position. IonQ's Forte SPAM of 0.5% has no peer-reviewed counterpart. No vendor publishes per-channel detector cost, and no revenue attributable to ion readout is separable in Hamamatsu's or Oxford Instruments' reporting. No published UV (369–400 nm) SNSPD system detection efficiency was found to set against the 98% telecom-band figure. The Kyoto/Yaqumo 17.6 µs imaging result is a neutral-ytterbium atom measurement, not ion readout, and is cited here only as a methodological comparison.

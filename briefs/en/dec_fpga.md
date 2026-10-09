@@ -29,6 +29,8 @@ Throughput must clear one round per cycle — 1.1 µs on Willow-class hardware [
 
 IBM's Relay-BP for the gross code reports a 24 ns iteration and under 1 µs per cycle below p = 3×10⁻³, from simulated syndromes [S][48].
 
+IBM's Relay-BP FPGA figures come from simulated syndromes, and the abstract's 24 ns / <1 µs conflicts with the 480 ns per 12-cycle window reported elsewhere [G:RELAYBP-LATENCY-CONFLICT]. Riverlane's Series C is $75 M in its 2024 release and $85 M in its 2026 roadmap. The IBM–AMD FPGA decoder collaboration is reported only by trade press; its terms are not published.
+
 ## Manufacturing, materials & supply chain
 No fab: a commercial FPGA card in the room-temperature rack. Every published real-time decoder runs on AMD/Xilinx silicon (VU19P for LCD [D][238], VMK180 for Micro Blossom [D][727]); the only merchant alternative changed hands when Intel's sale of 51% of Altera to Silver Lake at an $8.75 B valuation, announced in April 2025, closed on 2025-09-15 [G][735] — a duopoly with one side under private equity. High-end FPGAs sit inside US export-control scope. The I/O burden is the syndrome pipe: trivial at 10³ qubits, but at 10⁴–10⁶ the rate forces predecoding at 4 K or many parallel cards.
 
@@ -73,9 +75,3 @@ Confirm by end-2027: an FPGA decoder closing the loop on live syndromes at d ≥
 [727] Y. Wu, N. Liyanage, and L. Zhong, “Micro Blossom: Accelerated Minimum-Weight Perfect Matching Decoding for Quantum Error Correction,” *Proc. 30th ACM Int. Conf. Architectural Support for Programming Languages and Operating Systems (ASPLOS '25)*, vol. 2, Mar. 2025, doi: [10.1145/3676641.3716005](https://doi.org/10.1145/3676641.3716005). [arXiv:2502.14787](https://arxiv.org/abs/2502.14787). Also https://github.com/yuewuo/micro-blossom. [D]
 [729] X. Yang *et al.*, “Real-time Surface-Code Error Correction Using an FPGA-based Neural-Network Decoder,” [arXiv:2605.04892](https://arxiv.org/abs/2605.04892), May 2026. Also https://arxiv.org/html/2605.04892. [D]
 [735] Altera, “Altera Closes Silver Lake Investment to Become World's Largest Pure-play FPGA Solutions Provider,” Sep. 15, 2025. [Online]. Available: https://www.altera.com/newsroom/news/press-release/altera-silver-lake [G]
-
-## Open verification items
-Micro Blossom's 367 ns is a GitHub repository claim appearing in no paper; the published ASPLOS 2025 result is 0.8 µs average at d=13, p=0.1%.
-IBM's Relay-BP FPGA numbers come from simulated syndromes, and the abstract's 24 ns / <1 µs conflicts with a 480 ns-per-12-cycle figure carried elsewhere [G:RELAYBP-LATENCY-CONFLICT].
-Riverlane's Series C is $75 M in the 2024 release and $85 M in the 2026 roadmap; unreconciled.
-The IBM–AMD FPGA decoder collaboration is trade-press only, terms unconfirmed.

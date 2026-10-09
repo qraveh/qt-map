@@ -27,6 +27,8 @@ The advantage is geometric: the field lives in vacuum rather than at a lithograp
 
 The limiting figure is volume, not Q: no per-body yield, cost or tuning-time number has been published.
 
+The 34 ms figure is the Weizmann Institute's (T1 25.6 ms, T2 34 ms), not a Yale-lineage group's. The 2013 Q > 0.5×10⁹ has been exceeded independently — Fermilab's niobium accelerator cavities kept photons for 0.5–2 s at about 10 mK, with no qubit or ancilla attached [G:FNAL-SRF-CAVITY-2020] — but the 2023 cavity-qubit lifetime has no independent replication. AWS [80] uses no machined body. Not published: whether the Weizmann cavity is niobium-coated; a per-body yield, tuning time or cost, from any vendor; which package components JPL fabricated, or any role in cavity-body machining [281]; and how Nord Quantique makes its high-purity aluminium double-post cavity body [82].
+
 ## Manufacturing, materials & supply chain
 Bodies are CNC-machined (computer numerical control) or EDM-machined from high-purity stock, polished, sealed and tuned one at a time. The binding constraint is cryostat volume, not wafer area — the inverse of a planar roadmap. Nothing is integrated on chip, so each mode carries its own coax to room temperature; at 10³ modes the wall is coax count and cold-plate area, and 10⁴–10⁶ is out of reach. The two cat-qubit vendors build planar: AWS's Ocelot holds its bosonic modes in coplanar-waveguide resonators on two bump-bonded dies [D][80], and Alice & Bob's chips are tantalum-on-sapphire circuits, Boson 3's memory a quarter-wave coplanar resonator [G:ALICEBOB-CAT-PLANAR-2024]; Nord Quantique's GKP mode stays in a double-post cavity of high-purity aluminium [D][82]. Machining is in-house at every vendor, with no third-party cavity foundry found; the one named external supplier nearby, NASA's Jet Propulsion Laboratory, fabricated key components of D-Wave's cryogenic-control multi-chip package, not bodies [C][281]. Refrigerators concentrate on Bluefors, which also owns Cryomech [G:BLUEFORS-CRYOMECH-2023]. No export rule specific to cavity bodies was found; exposure runs through general machine-tool controls.
 
@@ -66,10 +68,3 @@ Confirm by 2028 if a vendor publishes a per-body yield figure or a sub-cm body a
 [281] D-Wave, “D-Wave Demonstrates First Scalable, On-Chip Cryogenic Control of Gate-Model Qubits,” Jan. 6, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-demonstrates-first-scalable-on-chip-cryogenic-control-of-gate-model-qubits/ [C]
 [318] M. Reagor *et al.*, “Reaching 10 ms single photon lifetimes for superconducting aluminum cavities,” [arXiv:1302.4408](https://arxiv.org/abs/1302.4408), Feb. 2013. [D]
 [319] O. Milul *et al.*, “Superconducting Cavity Qubit with Tens of Milliseconds Single-Photon Coherence Time,” *PRX Quantum*, vol. 4, no. 3, Art. no. 030336, Sep. 2023, doi: [10.1103/PRXQuantum.4.030336](https://doi.org/10.1103/PRXQuantum.4.030336). [D]
-
-## Open verification items
-The 34 ms figure is from the Weizmann Institute (T1 25.6 ms, T2 34 ms), not a Yale-lineage group, and neither the abstract nor the journal summary consulted states that the cavity is niobium-coated.
-No per-body yield, tuning time or cost figure was found for any vendor.
-The 2013 Q > 0.5×10⁹ has been exceeded independently — Fermilab's niobium accelerator cavities kept photons for 0.5–2 s at about 10 mK, with no qubit or ancilla attached [G:FNAL-SRF-CAVITY-2020]; no independent replication of the 2023 cavity-qubit lifetime was located.
-Source [281] names neither the package components JPL fabricated nor any role in cavity-body machining; this brief assumes it has none.
-Nord Quantique [82] names its cavity's material and geometry (high-purity aluminium, double-post) but not how the body is made; AWS [80] uses no machined body.

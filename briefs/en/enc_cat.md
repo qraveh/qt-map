@@ -26,6 +26,8 @@ A qubit spanned by two coherent states of a cavity mode, held there by engineere
 
 Phase-flip dominates: ~10⁻¹ per cycle where a code has run, against the ~10⁻³ assumed; bit-flip suppression stopped being the problem two years ago.
 
+The 9.6×10⁻² is the phase-flip error of the CX gate at n̄ = 2, not a per-QEC-cycle figure; the noise bias is > 25 under the CX and > 30 idle, and the "27–33" in circulation are phase-flip times in µs, not bias values [D][80]. The 44-minute mean bit-flip time of the 12-cat chip (September 2025) is preliminary and vendor-published, with no peer-reviewed follow-up, and the vendor's roadmap page gives a 252-minute peak for the same period. The 53 ms cavity-lifetime requirement is derived from Γ_Z ≈ n̄/T1 under the estimates' own assumptions; neither source states it. Nord Quantique's QBI Stage B award [65] funds its GKP route, which does not use this encoding.
+
 ## Manufacturing, materials & supply chain
 It has no fabrication step of its own, adding a continuous parametric pump and buffer mode to the host cavity. That pump is the I/O cost: a drive line, a pump line and a readout chain per cat — through a shared ancilla transmon on Ocelot, through the buffer at Alice & Bob [C][G:ALICEBOB-BOSON4-DOCS-2026]. Ocelot spends five buffers and four ancilla transmons on five cats [D][80]. At 10³ cats the wall is pump-line count and pump heating in one dilution unit; 10⁴–10⁶ needs multiplexed cryogenic drive, undemonstrated here. Supply chain and export exposure are the host cavity's.
 
@@ -66,9 +68,3 @@ Confirm by 2027 if phase-flip per cycle falls below 10⁻² with bias above 100 
 [96] D. Ruiz, J. Guillaud, A. Leverrier, M. Mirrahimi, and C. Vuillot, “LDPC-cat codes for low-overhead quantum computing in 2D,” *Nat. Commun.*, vol. 16, Art. no. 1040, 2025, doi: [10.1038/s41467-025-56298-8](https://doi.org/10.1038/s41467-025-56298-8). [arXiv:2401.09541](https://arxiv.org/abs/2401.09541). [S]
 [319] O. Milul *et al.*, “Superconducting Cavity Qubit with Tens of Milliseconds Single-Photon Coherence Time,” *PRX Quantum*, vol. 4, no. 3, Art. no. 030336, Sep. 2023, doi: [10.1103/PRXQuantum.4.030336](https://doi.org/10.1103/PRXQuantum.4.030336). [D]
 [412] Alice & Bob, “Roadmap,” Jun. 23, 2026. [Online]. Available: https://alice-bob.com/roadmap/ [C]
-
-## Open verification items
-9.6×10⁻² is the phase-flip error of the CX gate at n̄ = 2, not a per-QEC-cycle figure, and the noise bias is > 25 under the CX and > 30 idle — the "27–33" in circulation are phase-flip *times* in µs, not bias values [D][80].
-The 44-minute mean bit-flip time (12-cat chip, September 2025) is preliminary and vendor-published; no peer-reviewed follow-up was found, and the roadmap page states a 252-minute peak for the same period.
-The 53 ms cavity-lifetime requirement is this brief's arithmetic from Γ_Z ≈ n̄/T1 using the estimates' own assumptions; neither source states it.
-Nord Quantique's QBI Stage B award [65] is cited for programme context; its GKP route does not use this encoding.

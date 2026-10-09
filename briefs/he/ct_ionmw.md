@@ -57,6 +57,8 @@ updated: 2026-09-30
 
 הנתון 10⁻⁷ הוא מספר של בחינת ביצועים אקראית שדעיכתו לכל קליפורד דומה לסחיפה איטית, ולכן הוא אומר על היציבות לטווח ארוך ועל מודל הדליפה וה-SPAM לא פחות משהוא אומר על השער [D][103]. מדידת הביצועים כאן אינה לוכדת הפרעה הדדית ליוני צופה מהשדה הרחוק הגלובלי, הזזות זימן AC אצל השכנים, או חימום המושרה בידי ההנעה, המתגלה רק בשער שזירה מאוחר יותר. לא קיימים בחינת ביצועים אקראית בו-זמני, RB של הפרעה הדדית או בחינת ביצועים מחזורית (cycle benchmarking) להתקן מיקרוגל המשולב בשבב, ולתוצאה הדו-קיוביטית של 8.4(7)×10⁻⁵ אין שחזור עצמאי נכון ל-2026-09-03 [D][102]. שתי בעיות מקור: הדוח הראשי מייחס זמני שער של 225.8 µs (2025) ושל ≈120 µs (2024) למאמר שהתמצית שלו אינה מציינת אף אחד מהם, ולכן הם מובאים כפי שדווחו; ומספר המקורות וקצב השכבות של WISE הם הערכות ארכיטקטוניות [S][325], לא מדידות.
 
+לא פורסם: ערך החוזה של Universal Quantum עם DLR, המימון שלה ומצבה ב-2025–2026; ערכי החוזים QSea I ו-QSea II באירו; ספירות פטנטים לשלוש המשפחות; ועלות לקיוביט או תפוקה לשבבי מלכודת מיקרוגל.
+
 ## שחקנים וכלכלה
 
 **מי.**
@@ -107,11 +109,3 @@ updated: 2026-09-30
 [325] M. Malinowski, D. Allcock, and C. Ballance, “How to Wire a 1000-Qubit Trapped-Ion Quantum Computer,” *PRX Quantum*, vol. 4, no. 4, Art. no. 040313, Oct. 2023, doi: [10.1103/PRXQuantum.4.040313](https://doi.org/10.1103/PRXQuantum.4.040313). [arXiv:2305.12773](https://arxiv.org/abs/2305.12773). [S]
 [327] German Aerospace Center (DLR), “QSea I – Quantum computer demonstrator with 10 ion trap qubits,” DLR Quantum Computing Initiative. [Online]. Available: https://qci.dlr.de/en/qsea-i/ [G]
 [590] NXP Semiconductors, “NXP, eleQtron and ParityQC Reveal their First Quantum Computing Demonstrator for the DLR Quantum Computing Initiative,” NXP Newsroom, May 30, 2024. [Online]. Available: https://www.nxp.com/company/about-nxp/newsroom/NW-NXP-ELEQTRON-AND-PARITYQC-FIRST-QUANTUM [C]
-
-## פריטי אימות פתוחים
-
-- משך השער האלקטרוני 225.8 µs (2025) / ≈120 µs (2024): מהדוח הראשי דרך arXiv:2510.17286, שהתמצית שלו אינה נותנת אף אחד מהנתונים.
-- Universal Quantum: ערך חוזה ה-DLR, המימון והמצב ב-2025–2026 לא אומתו (האתר לא נתן נתונים מתוארכים; /news החזיר 404 ב-2026-09-03).
-- שער המיקרוגל בשדה קרוב של NIST Boulder (Ospelkaus ועמיתיו, ~2011): מצוטט כמוצא בלבד, מהספרות המקובלת ללא מקור ממוספר, ובלי נתון מספרי.
-- ה-ECCN של שבבי בקרת מיקרוגל למלכודות יונים לפי הפיקוח הקוונטי על יצוא של ארה״ב מספטמבר 2024: לא אומת.
-- ערכי החוזים של QSea I / QSea II ב-EUR, ספירות הפטנטים של שלוש המשפחות, ועלות לקיוביט או שיעור תקינות של שבבי מלכודות מיקרוגל: לא נמצא נתון פומבי.

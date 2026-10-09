@@ -18,7 +18,7 @@ def show(label):
 try:
     r = show('default')
     assert len(r['stations']) == 96 and len(r['lines']) == 14 and not r['edges'], 'default state'
-    m.set_lens('aff'); show('set_lens(aff)')
+    m.set_lens('place'); show('set_lens(place)')
     v = m.read()['legend']['lens'][0]['key']
     m.select_value(v); show(f'select_value({v})')
     v2 = m.read()['legend']['lens'][1]['key']

@@ -26,6 +26,8 @@ A harmonic mode's dominant decay channel is amplitude damping alone — the whol
 
 Typical at scale is far below best: 18 cat modes (Helium), five storage modes (Ocelot) [C][87][D][80]. The dominant operating term is ancilla-induced dephasing plus gate-visible loss, the 0.5%-per-gate erasure being that loss detected [D][84].
 
+The 25.6 ms and 34 ms Weizmann figures come from a single group, with no independent replication. Helium's "up to 200× lower hardware requirements" is a company claim with no logical-level data behind it [C][87]. Not published: the material (aluminium or niobium) of the Weizmann cavity, and a quality factor for the λ/4 coaxial bodies of the 2026-08 dual-rail CZ [84].
+
 ## Manufacturing, materials & supply chain
 Two routes make the mode. Machined bodies of aluminium or niobium, polished and sealed, hold Nord Quantique's GKP mode and D-Wave's λ/4 dual-rail pairs [D][82][D][84]; such a mode occupies cm scale against a transmon's ~100 µm — that ratio, not Q, is the liability. The cat chips are planar: Alice & Bob's are tantalum-on-sapphire circuits, Boson 3's memory a quarter-wave coplanar resonator [G:ALICEBOB-CAT-PLANAR-2024], and Ocelot's modes are coplanar-waveguide resonators on two bump-bonded dies [D][80]. Per mode the burden is one drive line plus an ancilla with its own drive and readout chain — at Alice & Bob, a buffer mode and its pumps instead of the ancilla [C][G:ALICEBOB-BOSON4-DOCS-2026]. No cryogenic-CMOS or on-chip multiplexing of cavity control exists, so lines grow linearly: at 10³ modes the wall is coax count and cryostat volume in one dilution unit; 10⁴–10⁶ needs different packaging. Machining is in-house at every vendor that machines bodies; no third-party foundry and no cavity-specific export rule were found. Concentration sits around it: Bluefors refrigerators, Cryomech pulse tubes included [G:BLUEFORS-CRYOMECH-2023].
 
@@ -67,9 +69,3 @@ Confirm by 2028 if an operating multi-mode device holds photon lifetime above 1 
 [89] Nord Quantique, “Nord Quantique Reaches $1.4 Billion USD Valuation with Latest Investment,” Business Wire, May 18, 2026. [Online]. Available: https://www.businesswire.com/news/home/20260518358351/en/Nord-Quantique-Reaches-$1.4-Billion-USD-Valuation-with-Latest-Investment [C]
 [318] M. Reagor *et al.*, “Reaching 10 ms single photon lifetimes for superconducting aluminum cavities,” [arXiv:1302.4408](https://arxiv.org/abs/1302.4408), Feb. 2013. [D]
 [319] O. Milul *et al.*, “Superconducting Cavity Qubit with Tens of Milliseconds Single-Photon Coherence Time,” *PRX Quantum*, vol. 4, no. 3, Art. no. 030336, Sep. 2023, doi: [10.1103/PRXQuantum.4.030336](https://doi.org/10.1103/PRXQuantum.4.030336). [D]
-
-## Open verification items
-The 25.6 ms / 34 ms Weizmann figures are single-group; no independent replication was found as of 2026-09-04, and the cavity's material (aluminium vs niobium) is not stated in the abstract or journal summary consulted.
-No cavity quality factor has been published for the λ/4 coaxial bodies used in the 2026-08 dual-rail CZ [84].
-SUSTech's dual-rail work uses four transmon qubits, so SUSTech is not an actor for this carrier.
-Helium's "up to 200× lower hardware requirements" is a company claim with no logical-level data behind it [C][87].

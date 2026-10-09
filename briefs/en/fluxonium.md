@@ -30,6 +30,8 @@ Dielectric loss scales with ω, so T1 of 160–260 µs at ~300 MHz is routine wh
 
 All one- or two-qubit devices; no fluxonium lattice or QEC cycle exists as of 2026-09-04.
 
+D-Wave quotes 200 bias wires (2026-01-06) and ~300 bias lines (2026-01-23) for the same annealer scheme [G:DWAVE-FLUXDAC-LINECOUNT-CONFLICT]. Not published: the gate duration of MIT's 99.922% CZ, which the PRX abstract does not state, and a dated fluxonium-specific patent family.
+
 ## Manufacturing, materials & supply chain
 Same Nb/Al junction lithography as transmon, inheriting its foundries and its TLS problem; record devices come from MIT Lincoln Laboratory and no merchant supplier exists. The I/O cost is drive, readout and a flux line per qubit: a fridge carries a few hundred DC bias lines, so the burden bites at 10³, and at 10⁴–10⁶ the bias must be generated cold. D-Wave flip-chips a multiplexed Φ-DAC die across a ~7 µm gap at 10 mK with no resolvable added decoherence (T1 ≈ 200 µs [D][316]), key parts from NASA JPL [C][281]; Shenzhen runs XY and Z down one warm line per qubit [D][315]. Export exposure is generic superconducting (US EAR ECCN 3A901).
 
@@ -72,9 +74,3 @@ Confirm by end-2027: a ≥ 4-qubit fluxonium under on-chip flux control with pub
 [315] X. Pan *et al.*, “Unified Flux Control Architecture for Fluxonium Qubits,” [arXiv:2605.25948](https://arxiv.org/abs/2605.25948), May 2026. [D]
 [316] D-Wave Quantum Inc., “Digital control of a high-coherence fluxonium qubit,” D-Wave Quantum Inc., Jan. 2026. [Online]. Available: https://www.dwavequantum.com/media/41upubz2/14-1090a-a_fluxonium-dac-control.pdf [D]
 [317] S. Miller, “Fast control methods enable record-setting fidelity in superconducting qubit,” MIT News, Jan. 14, 2025. [Online]. Available: https://news.mit.edu/2025/fast-control-methods-enable-record-setting-fidelity-superconducting-qubit-0114 [D]
-
-## Open verification items
-Gate duration of the 99.922% MIT CZ: the graph record says 50 ns; the PRX abstract states none. Unresolved.
-The PRX Quantum publication date of source [39] was not confirmed (volume/article number only); the arXiv date is used.
-D-Wave quotes 200 bias wires (2026-01-06) and ~300 bias lines (2026-01-23) for the same annealer scheme; unreconciled [G:DWAVE-FLUXDAC-LINECOUNT-CONFLICT].
-No fluxonium-specific patent family with a date was found.

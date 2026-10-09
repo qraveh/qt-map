@@ -44,6 +44,8 @@ On the architecture Quantum annealer — flux qubits (anneal) the technology fil
 ## Evidence — how the numbers were measured
 D-Wave publishes readout error as a bound, ≤0.001 on every listed Advantage and Advantage2 system, with no method stated [C][613]; at that bound a 4,575-qubit sample carries an expected ≤4.6 flipped bits [S][613]. The only published method found is Berkley's, error measured against latch bias [D][608]. Without a mid-anneal read there is no syndrome round: any code is decoded once, from the final sample, and mitigation is post hoc — repeated reads and software spin-reversal transforms [C][610]. Register grades: both D-Wave cells cite arXiv:0905.0891 Fig. 1 (🔎), whose abstract confirms the latch–dc-SQUID chain but for a 128-qubit XY design; Boothby et al. fits Advantage, the solver-properties page Advantage2. The Qilimanjaro cell cites a D-Wave page.
 
+The 20 µs anneal is the documentation's worked example, not a confirmed solver default, and the 60.6 µs against 20.6 µs delay difference is unexplained. Not published: a per-qubit readout-error distribution for D-Wave systems, and the Advantage2 readout architecture (resonator count, shift rate).
+
 ## Actors & economics
 **Who.**
 
@@ -78,11 +80,3 @@ Confirm if by 2027-06-30 D-Wave publishes an Advantage2 readout description with
 [614] D-Wave Quantum Inc., “Operation and Timing — D-Wave Quantum Computing Products documentation.” [Online]. Available: https://docs.dwavequantum.com/en/latest/quantum_research/operation_timing.html [C]
 [615] Qilimanjaro Quantum Tech, “Towards a European full-stack coherent quantum annealer platform,” Mar. 2, 2021. [Online]. Available: https://qilimanjaro.tech/towards-a-european-full-stack-coherent-quantum-annealer-platform/ [C]
 [616] D-Wave Quantum Inc., “D‑Wave's Advantage2 Quantum Computer Now Generally Available,” D-Wave Support, May 14, 2025. [Online]. Available: https://support.dwavesys.com/hc/en-us/articles/32105885880087-D-Wave-s-Advantage2-Quantum-Computer-Now-Generally-Available [C]
-
-## Open verification items
-- 2026-09-26: the EPJ Quantum Technology paper on Qilimanjaro's annealer (doi:10.1140/epjqt/s40507-021-00094-y) was refused by the fetch proxy (HTTP 429); its readout chain is unverified.
-- 2026-09-26: Harris et al. 2010 could not be matched to an arXiv id on the arXiv page; cited by DOI, verified on Crossref.
-- 2026-09-26: no D-Wave source opened gives the method behind "≤0.001", a per-qubit error distribution, or an Advantage2 readout architecture (resonator count, shift rate).
-- 2026-09-26: Fig. 1 of arXiv:0905.0891, the register's locator, was not opened — only the abstract; Whittaker et al.'s journal version was not confirmed.
-- 2026-09-26: the 20 µs anneal is the documentation's worked example, not a confirmed solver default; the 60.6 µs vs 20.6 µs delay difference is unexplained.
-- 2026-09-26: Grover et al.'s APS page was not opened (Crossref refused, HTTP 429); volume and article are from the APS URL and ADS bibcode in search results.

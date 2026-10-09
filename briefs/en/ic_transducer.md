@@ -61,6 +61,8 @@ The only architecture served is superconducting transmons (Google, IBM, Rigetti,
 
 Total efficiency is a calibrated scattering ratio between microwave and optical ports, so the number depends on where the reference planes sit — internal efficiency excludes coupling and is not what a link cares about. Added noise is input-referred with the pump running. The protocols miss duty cycle and thermal recovery time, routinely absent from headline claims, and end-to-end link fidelity with a real qubit at each end, never reported between two refrigerators. Conflicts: [775] lists 47% (2018) as the efficiency record while [786] tabulates 0.38 (2022) with the repetition time that makes it meaningful — both correct, incomparable; the figures reported alongside a duty cycle [786] are the ones to trust. The headline device in the technology-graph record (15% total, 0.16 photons) and the device used to read a qubit (3×10⁻⁶) differ by ~5×10⁴ [P][775][D][786].
 
+The per-platform records (Sahu 2022, Higginbotham 2018, Warner 2025, Sonar 2025) come from the tables of review [775], a preprint by authors with no experimental record in the field, not from the primary papers. [306] (IBM) requires three orders of magnitude of improvement in noise, efficiency and repetition rate, while [786] (QphoX/IST) claims >99% Bell fidelity with existing transducer performance through protocol design; the two remain unreconciled. The most recent primary device figures date to 2025. The title, authors, publication date and measured readout fidelity of the Nature Physics paper on the QphoX–Rigetti–Qblox optical readout are not given in [787], and [790] is paywalled. Not published: the ECCN for microwave-optical transducers under the BIS interim final rule of 2024-09-06; a dated patent-family count from a named database; QphoX's funding after 2024-01; and Nu Quantum's cumulative funding.
+
 ## Actors & economics
 
 **Who.**
@@ -119,15 +121,3 @@ Open questions. (1) Does pump power per channel scale sub-linearly, or does the 
 [788] QphoX, “QphoX raises €8m to bring quantum modem technology to market, building towards the quantum internet,” Jan. 17, 2024. [Online]. Available: https://qphox.eu/news/qphox-raises-e8m-to-bring-quantum-modem-technology-to-market-building-towards-the-quantum-internet/ [C]
 [789] Rigetti Computing, “QphoX, Rigetti and the NQCC Announce Collaboration on Multi-Channel Optical Readout of Quantum Processors,” Rigetti Investor Relations, May 6, 2025. [Online]. Available: https://investors.rigetti.com/news-releases/news-release-details/qphox-rigetti-and-nqcc-announce-collaboration-multi-channel [C]
 [790] M. Abdel-Kareem, “QphoX, Rigetti, and Qblox Demonstrate Optical Readout Technique for Superconducting Qubits,” Quantum Computing Report, Feb. 14, 2025. [Online]. Available: https://quantumcomputingreport.com/qphox-rigetti-and-qblox-demonstrate-optical-readout-technique-for-superconducting-qubits/ [P]
-
-## Open verification items
-
-- Primary papers behind the per-platform records (Sahu 2022, Higginbotham 2018, Warner 2025, Sonar 2025) were not consulted directly; values come from the tables of review [775] and inherit its transcription risk. Review [775] is a preprint by authors with no experimental record in the field.
-- Conflict: [775] reports 47% (2018) as the total-efficiency record; [786] tabulates 0.38 (2022) at 5,000 µs repetition. Both stand; [786] preferred because it reports duty cycle alongside efficiency.
-- Conflict: the headline figures in the technology-graph record (total efficiency 15%, added noise 0.16) versus the integrated device used with a qubit (3×10⁻⁶) — a factor ~5×10⁴ [775], [786].
-- Substantive conflict: [306] (IBM) requires three orders of improvement on noise, efficiency and repetition rate; [786] (QphoX/IST) claims >99% Bell fidelity with existing transducer performance via protocol design. Unresolved.
-- The Nature Physics paper for the QphoX–Rigetti–Qblox optical readout: exact title, authors, publication date and measured readout fidelity not obtained ([790] paywalled, [787] not itemised).
-- Export control: the specific ECCN applying to microwave-optical transducers under the BIS interim final rule of 2024-09-06 was not verified.
-- No dated patent-family count from a named database was obtained for this slot.
-- QphoX funding after 2024-01 and Nu Quantum cumulative funding are not disclosed by the sources used.
-- No 2026 transduction record was found; the most recent primary device numbers date to 2025.

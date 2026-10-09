@@ -40,6 +40,8 @@ Sits, as an alternate code, in four architectures — the transmon lattice with 
 ## Evidence — how the numbers were measured
 Λ₃/₅ = 1.56(4) and the 0.0027(3) transversal-Clifford error are Google's own, one processor, unreplicated by a second vendor [D][41]. Two framings of that paper conflict: it reports 86.5(1)–90.7(1)% teleported-state fidelities for lattice surgery, while Google's blog presents 86–91% as "two-qubit gate fidelity" [C][664] — trust the paper. Magic injection exceeds 99% only with post-selection keeping ~75% of runs [D][41]. The footprint claims are not comparable either: "fewer physical qubits per code distance" [C][664] against total qubits for a fixed logical target [S][655]. Nothing published separates code error from decoder error in the transversal figure.
 
+Not published: a quantified Monte Carlo improvement for the hook-error-free colour-code circuit [665].
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What they do | Evidence |
@@ -79,10 +81,3 @@ Confirm/demote in 12–24 months: a colour-code memory beyond d=5 with Λ approa
 [667] A. Paetznick *et al.*, “Improved quantum processor logical error rates via correction and detection,” *Nature*, vol. 654, no. 8118, pp. 349–355, Jun. 2026, doi: [10.1038/s41586-026-10628-y](https://doi.org/10.1038/s41586-026-10628-y). [D]
 [668] PatSnap, “Quantum Error Correction Technology Landscape 2026,” Apr. 22, 2026. [Online]. Available: https://www.patsnap.com/resources/blog/articles/quantum-error-correction-patent-landscape-2026/ [P]
 [669] A. Bauer and J. C. M. de la Fuente, “Planar Fault-Tolerant Circuits for Non-Clifford Gates on the 2D Color Code,” *PRX Quantum*, vol. 7, no. 2, Art. no. 020367, Jun. 2026, doi: [10.1103/p7c9-x1m9](https://doi.org/10.1103/p7c9-x1m9). [arXiv:2505.05175](https://arxiv.org/abs/2505.05175). [S]
-
-## Open verification items
-The authors and institutions of arXiv:2603.28852 ("Color code off-the-hook") could not be resolved from the abstract page; the hook-error and single-auxiliary claims are stated there, the Monte Carlo improvement is not quantified [665].
-The quantitative claims of arXiv:2505.05175 (planar non-Clifford circuits on the 2D colour code) could not be extracted; only its title and PRX Quantum acceptance are confirmed [669].
-Google's blog reports 86–91% as "two-qubit gate fidelity" where the paper reports 86.5(1)–90.7(1)% teleported-state fidelities via lattice surgery [41], [664] — same numbers, different quantity; unreconciled by either source.
-"Fewer physical qubits for the same code distance" [664] and the 1,250-against-650 teraquop footprint [655] measure different quantities; no published source reconciles them.
-No independent, non-Google replication of Λ₃/₅ = 1.56(4) was located as of 4 Sep 2026.

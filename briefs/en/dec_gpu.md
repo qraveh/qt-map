@@ -40,6 +40,8 @@ It requires nothing upstream and replaces FPGA-based real-time decoding, trading
 ## Evidence — how the numbers were measured
 Both headline numbers come from NVIDIA's own blog, co-developed with Quantinuum, and are not peer-reviewed [C][324]. The 5.4× carries uncertainties — better practice than most vendor claims — but it is one code on one machine, and the IQM demonstrator is trade press [P][239]. No comparison exists against Relay-BP [D][48] or Riverlane's decoder [D][238] on the same syndromes, so "GPUs are slower than FPGAs" compares numbers from different codes and machines.
 
+Not published: how GPU decoding time scales with code size or logical-block count at 10⁴–10⁶ qubits, and NVentures' separate investments in Quantinuum, QuEra and Alice & Bob, of which only the round totals are public. The launch release's headline counts of 17 builders and nine labs do not tally exactly with the names it lists.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What exactly they do with this technology | Evidence |
@@ -73,10 +75,3 @@ Falsifiable (12–24 months): confirm if a second QPU vendor publishes an NVQLin
 [324] S. Caldwell *et al.*, “NVIDIA NVQLink Architecture Integrates Accelerated Computing with Quantum Processors,” NVIDIA Technical Blog, Nov. 17, 2025. [Online]. Available: https://developer.nvidia.com/blog/nvidia-nvqlink-architecture-integrates-accelerated-computing-with-quantum-processors/ [C]
 [531] NVIDIA, “NVIDIA Introduces NVQLink — Connecting Quantum and GPU Computing for 17 Quantum Builders and Nine Scientific Labs,” Oct. 28, 2025. [Online]. Available: https://nvidianews.nvidia.com/news/nvidia-nvqlink-quantum-gpu-computing [C]
 [737] NVIDIA, “NVIDIA Announces Financial Results for Second Quarter Fiscal 2027,” Aug. 26, 2026. [Online]. Available: https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027 [G]
-
-## Open verification items
-No independent (non-NVIDIA, non-Quantinuum) confirmation of the 3.84 µs or 67 µs figures as of 2026-09-04.
-No head-to-head benchmark of GPU against FPGA decoding on identical syndrome traces.
-Whether GPU decode time scales with code size or logical-block count at 10⁴–10⁶ qubits is stated nowhere reviewed.
-NVentures investment amounts in Quantinuum, QuEra and Alice & Bob are not separately disclosed; only the round totals are public.
-The launch release's headline counts (17 builders, nine labs) and the enumerated names retrieved from it do not tally exactly; the headline counts are used here.

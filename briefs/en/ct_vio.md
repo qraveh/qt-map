@@ -47,6 +47,8 @@ Slot 5 of "Transmon lattice with tunable couplers" and "Dual-rail erasure qubits
 ## Evidence — how the numbers were measured
 Line crosstalk exists only as OQC's four-qubit selectivity matrix [D][538]; RIKEN, Fujitsu and QuantWare publish none in the sources opened, as of 2026-09-26. OQC's package is the one many-qubit dataset: median T1, T2e ~100 µs over ~100 qubits, readout fidelity 97.5% and qubit temperature 36 mK over 54 [D][311]. Missing: simultaneous benchmarks over >100 lines; contact yield across thermal cycles.
 
+Not published: whether IBM's Eagle-generation signals enter through the chip face; Rigetti Ankaa's signal delivery; QuantWare's impedance, yield and heat-load data for VIO, and which processor carries "VIO 1K"; and, for OQC's package with nine-way sharing over 56 cells, the number of lines entering the package and whether its qubits are coupled.
+
 ## Actors & economics
 **Who.**
 
@@ -98,10 +100,3 @@ Confirm if, by 2027-12-31, a vertically wired processor above 256 qubits publish
 [545] QuantWare, “D-line QPUs — Build bigger, scale faster.” [Online]. Available: https://quantware.com/product/processors/d-line [C]
 [546] M. Swayne, “How Fujitsu Is Tackling a 10,000-Qubit Quantum Computer for Practical Applications,” The Quantum Insider, Dec. 8, 2025. [Online]. Available: https://thequantuminsider.com/2025/12/08/how-fujitsu-is-tackling-a-10000-qubit-quantum-computer-for-practical-applications/ [P]
 [547] QuantWare, “QuantWare Raises $178 Million to Build World’s Most Powerful Quantum Processors at an Industrial Scale,” May 5, 2026. [Online]. Available: https://quantware.com/news/quantware-raises-178-million [C]
-
-## Open verification items
-- arXiv:2407.02769, named in the brief request as Tamate et al. 2024, is an unrelated image-classification paper (checked 2026-09-26); RIKEN's review is Tamate, Tabuchi and Nakamura, IEICE Trans. Electron. E105.C (2022), whose full text was blocked, so none of its figures is used.
-- Crossref, Europe PMC, OpenAlex and Semantic Scholar returned HTTP 429 on 2026-09-26; the Béjanin and Yost records carry the year only.
-- The IBM post opened does not say whether Eagle-generation signals enter through the chip face, and the register lists no IBM carrier; Rigetti Ankaa's signal delivery and any imec vertical-delivery work were not found (2026-09-26).
-- QuantWare publishes no crosstalk, impedance, yield or heat-load data for VIO, and does not say which processor carries "VIO 1K" (2026-09-26).
-- OQC's nine-way sharing (56 cells) is from its HTML full text; the number of lines entering the package, and whether its qubits are coupled, are not stated (2026-09-26).

@@ -56,6 +56,8 @@ The layer floors two architectures as their primary process: fusion-based photon
 
 Loss is measured two incompatible ways. Ring-resonator intrinsic Q gives the 0.060 dB/m record [D][810] — one mode, one geometry, no routing. Spiral cut-back on a production reticle gives 1.8 dB/m [D][169] — the waveguide the machine uses, and the only manufacturing number. Note that the main report's "0.5 dB/m" is the *multimode* figure from the Omega paper while the single-mode routing waveguide in the same paper is 1.8 ± 0.2 dB/m: both must be stated, they are not competing measurements [D][169]. Fusion Bell fidelity, HOM visibility and detector efficiency are component metrics on selected dies, with no protocol converting them into a loss budget an architecture can be scored against, and no ageing data. No second group has reproduced any Omega figure on a second line; the only third-party check is DARPA's Stage C validation of the BTO switches, packaging and cryogenics, whose results are not public [P][181]. The one conflict between sources is the PIXEurope budget: ≈€400 M per imec/ICFO [G][582] against €380 M in trade press [P][813]; trust the consortium release.
 
+PIXEurope's budget is ≈€400 M in [G][582] and €380 M in the consortium release [P][813]. The dominance of a single Chinese ion-slicing supplier of TFLN wafers is widely cited but stated only qualitatively. Not published: dated 2025–2026 funding, capacity or loss figures for LioniX International; AIM Photonics' founding federal award and the wafer diameter of its Albany line; quantum MPW and mask-set prices at 300 mm, from any foundry, so no cost per mode can be quoted; and wafer-level yield or 2 K thermal-cycle ageing for BTO switches and integrated SNSPDs, from any actor — uniformity is public only as Omega's film-thickness, efficiency and loss spreads.
+
 ## Actors & economics
 
 **Who.**
@@ -118,14 +120,3 @@ Open questions. (1) What is the die yield of an integrated SNSPD array on 300 mm
 [813] PIC Magazine, “EU to establish €380 million pilot line for photonic integrated circuits,” Jan. 6, 2026. [Online]. Available: https://picmagazine.net/article/123220/EU_to_establish_%E2%82%AC380_million_pilot_line_for_photonic_integrated_circuits [P]
 [814] AIM Photonics, “News — AIM Photonics.” [Online]. Available: https://www.aimphotonics.com/news [C]
 [886] W. Sun *et al.*, “A photonic integrated comb engine for ultracold quantum gases,” [arXiv:2609.28294](https://arxiv.org/abs/2609.28294), Sep. 2026. [P]
-
-## Open verification items
-
-- LioniX International: no dated 2025–2026 funding, capacity or loss figure retrieved; its row rests on platform description only.
-- SNSPD state of the art off-chip (the ~98% system-detection-efficiency result at 1550 nm): the Optica page failed to load; unverified, so no record row was claimed.
-- TFLN wafer supply concentration (the widely cited dominance of a single Chinese ion-slicing supplier): no source retrieved; stated qualitatively only.
-- PIXEurope budget conflict: ≈€400 M [G][582] versus €380 M [P][813]; consortium release preferred.
-- AIM Photonics: founding federal award amount and the wafer diameter of its Albany line are not on the page consulted; not stated.
-- Quantum MPW and mask-set pricing at 300 mm: not disclosed by any foundry; cost per mode unquotable.
-- Waveguide loss double figure: the main report quotes 0.5 dB/m (multimode) only; the single-mode routing value in the same paper is 1.8 ± 0.2 dB/m. Both stated here — a conflict between excerpts, not between sources.
-- Wafer-level yield and 2 K thermal-cycle ageing for BTO switches and integrated SNSPDs: no public data from any actor; uniformity is public only as Omega's film-thickness, efficiency and loss spreads.

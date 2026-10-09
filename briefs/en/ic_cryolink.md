@@ -40,6 +40,8 @@ The only architecture is superconducting transmon (Google, IBM, Rigetti, IQM, OQ
 ## Evidence — how the numbers were measured
 A loophole-free violation of the CHSH (Clauser–Horne–Shimony–Holt) Bell inequality with space-like separated measurements is device-independent, not tomographic — unusually strong verification for this layer [D][305]. Munich rests on homodyne tomography [D][774]; the two are not comparable, neither replicated, and both ran with local processors idle. Conflict: the graph record's 75–79% transfer efficiency is not what 0.55–0.65 dB implies alone (86–88%).
 
+Not published: the residual phase noise between the two cryostats.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What exactly they do with this technology | Evidence |
@@ -74,10 +76,3 @@ Falsifiable (12–24 months): confirm if any group publishes a three-cryostat ch
 [773] J. D. Schär *et al.*, “A Modular Cryogenic Link for Microwave Quantum Communication Over Distances of Tens of Meters,” [arXiv:2604.15971](https://arxiv.org/abs/2604.15971), Apr. 2026. [D]
 [774] W. K. Yam *et al.*, “Cryogenic microwave link for quantum local area networks,” *npj Quantum Inf.*, vol. 11, no. 1, Art. no. 87, May 2025, doi: [10.1038/s41534-025-01046-5](https://doi.org/10.1038/s41534-025-01046-5). [D]
 [775] T. A. Aditto, J. S. Ifty, and K. Zahin, “Toward Scalable Heterogeneous Quantum Networks: Microwave-Optical Transduction Across Platforms,” [arXiv:2605.26976](https://arxiv.org/abs/2605.26976), May 2026. [P]
-
-## Open verification items
-The graph record's "transfer efficiency 75–79%" for the 2026 link is not implied by the measured 0.55–0.65 dB channel loss (86–88% transmission); no source reconciles the two, and the residue is presumed to be node emission/absorption efficiency.
-Residual phase noise between the two cryostats is not quantified in any source reviewed.
-No independent replication of either the ETH 30 m or the Munich/VTT 6.6 m headline figure as of 2026-09-04.
-The ULVAC/IBM refrigerator's "early 2026" target, stated in 2025-03, has passed with no shipment confirmed as of 2026-09-30.
-The arXiv HTML for [773] shows a 2026-08-24 revision date against an April-2026 identifier; the graph record's 2026-04 date is used here.

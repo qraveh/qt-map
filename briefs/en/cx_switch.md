@@ -41,6 +41,8 @@ Transport for all three photonic architectures: fusion-based discrete-variable m
 ## Evidence — how the numbers were measured
 Switch loss and extinction come from direct insertion-loss characterisation against on-chip reference paths — harder numbers than gate fidelities, and the least comparable, each vendor quoting a different boundary. Aurora's 0.19 dB is per MZI including interconnect; PsiQuantum's 100 mdB is the switch element alone; Xanadu's 0.085 dB/facet is fibre-to-chip, marketed as an industry benchmark [C][172] though PsiQuantum published 52(12) mdB for that interface a year earlier [D][169]. None should be summed or ranked without a common protocol, and none is replicated outside its originating group. System verification is a loss budget, not a logical-fidelity witness.
 
+The main report's "waveguide loss 0.5 dB/m" for Omega conflicts with the paper's single-mode silicon-nitride figure of 1.8(2) dB/m [G:PSIQ-OMEGA-METRICS-2025]; neither is a switch figure.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What exactly they do with this technology | Evidence |
@@ -88,6 +90,3 @@ Confirm/demote in 12–24 months: a sub-50 mdB non-volatile switch; independent 
 [517] A. Roy *et al.*, “Zero-change foundry compatible silicon photonics MEMS optical switch,” [arXiv:2608.03146](https://arxiv.org/abs/2608.03146), Aug. 2026. [P]
 [518] optics.org, “Lithium niobate in vogue as thin-film developers raise cash,” Sep. 24, 2024. [Online]. Available: https://optics.org/news/lithium-niobate-in-vogue-as-thin-film-developers-raise-cash [P]
 [519] PsiQuantum, “PsiQuantum Raises $1 Billion to Build Million-Qubit Scale, Fault-Tolerant Quantum Computers,” Sep. 10, 2025. [Online]. Available: https://www.psiquantum.com/news-import/psiquantum-1b-fundraise [C]
-
-## Open verification items
-The graph record's "recent 30 mdB" switch figure could not be traced to any publication; the best located in-line figure is 100 mdB (PsiQuantum) and the most recent device is a 1.5 dB MEMS switch. Whether 0.19 dB/MZI (switch plus interconnect), 100 mdB (switch element) and 85 or 52 mdB (fibre-to-chip) share a reference plane — no source reconciles them. The main report's "waveguide loss 0.5 dB/m" for Omega conflicts with the paper's single-mode silicon-nitride figure of 1.8(2) dB/m [G:PSIQ-OMEGA-METRICS-2025]; neither is used here as a switch number. Institutional affiliation for the MEMS switch authors was not returned by the arXiv abstract page.

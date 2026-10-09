@@ -42,6 +42,8 @@ updated: 2026-09-30
 ## ראיות — כיצד נמדדו המספרים
 השיעורים מגיעים מפלואורסצנציה בררנית-מצב לאחר השערים; נאמנות ה-CZ — מבחינת ביצועים אקראית או מטומוגרפיה, ומדווחת גולמית ובבחירה בדיעבד לפי הדגל. קוד מוציא מחזור תיקון על כל מחיקה מבושרת, ולכן המספרים הגולמיים הם שקובעים את העלות. הסתירה בין 1.9(4)× ל-3.6× נפתרת בתוך arXiv:2506.13724v2: שני הנתונים מופיעים במאמר זה ומתארים גדלים שונים — הדעיכה איטית 3.6(1)× במהלך ההחזקה עבור הקיוביט הלוגי שנבחר בדיעבד, ואיטית 1.9(4)× תחת פענוח בלתי מותנה עם מידע המחיקה [D][142]. רק ל-1.9(4)× יש משמעות ארכיטקטונית; הטקסט ב-Nature Physics נמצא מאחורי חומת תשלום [142]. הנתונים 56% (שער חד-קיוביטי, 2023) ו-38(6)% (CZ, 2026) הם מדדים שונים, ואין למצע אותם. לא נמצא שחזור עצמאי.
 
+לא פורסם: מצב ההתקנה של Magne לאחר הודעת ההזמנה מ-2025-07-17. הספק המלכודת של כ-10 mW לאתר ב-10⁴ אתרים הוא אקסטרפולציה מנתוני Fraunhofer, לא מדידה [S]. אף ECCN אינו מונה אופטיקת פינצטה, AOD או תאי UHV; רק המערכת המוגמרת כפופה לפיקוח יצוא.
+
 ## שחקנים וכלכלה
 **מי.**
 | ארגון | תפקיד | מדינה | מה הם עושים | ראיות |
@@ -92,6 +94,3 @@ updated: 2026-09-30
 [334] A. Kubica *et al.*, “Erasure Qubits: Overcoming the T₁ Limit in Superconducting Circuits,” *Phys. Rev. X*, vol. 13, no. 4, Art. no. 041022, Nov. 2023, doi: [10.1103/PhysRevX.13.041022](https://doi.org/10.1103/PhysRevX.13.041022). [arXiv:2208.05461](https://arxiv.org/abs/2208.05461). [D]
 [335] M. Abdel-Kareem, “Hamamatsu Photonics, NKT Photonics, and Yaqumo Form Alliance to Industrialize Cold-Atom Quantum Core Components,” Quantum Computing Report, Jun. 4, 2026. [Online]. Available: https://quantumcomputingreport.com/hamamatsu-photonics-nkt-photonics-and-yaqumo-form-alliance-to-industrialize-cold-atom-quantum-core-components/ [P]
 [336] A. M. Kubica and A. Retzker, “Heralding of amplitude damping decay noise for quantum error correction,” Google Patents, Sep. 5, 2023. [Online]. Available: https://patents.google.com/patent/US11748652B1/en [G]
-
-## פריטי אימות פתוחים
-הגרסה שפורסמה ב-Nature Physics של תוצאת ה-[[4,2,2]] של Princeton לא נקראה (מאחורי חומת תשלום); יישוב הסתירה בין 1.9(4)× ל-3.6(1)× נשען על arXiv v2 [142], שבו שני המספרים מופיעים עם הגדרות נפרדות. לא נמצא שחזור עצמאי של שיעור ההמרה של 56% או של 38(6)%. מצב ההתקנה של Magne מעבר להודעת ההזמנה מ-2025-07-17 לא אושר. האקסטרפולציה של הספק הלכידה ≈10 mW/אתר ל-10⁴ אתרים נגזרת מנתוני Fraunhofer ולא נמדדה [S]. אף ECCN אינו נוקב באופטיקת מלקחיים, ב-AOD או בתאי UHV; רק המערכת המוגמרת נתונה לפיקוח.

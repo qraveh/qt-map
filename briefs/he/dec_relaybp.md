@@ -40,6 +40,8 @@ updated: 2026-09-30
 ## ראיות — כיצד נמדדו המספרים
 כל הנתונים הבולטים באים מסינדרומים מדומים, תחת מודל אחיד של רעש מעגל בעוצמה p, שאין בו לא דליפה ולא פרצים מתואמים — האיברים השולטים בהתקנים אמיתיים [D][48], [734]. שום קבוצה עצמאית לא שחזרה אף אחד משני המספרים, וה-LCD של Riverlane משתמש בקוד אחר וב-FPGA אחר, ולכן אי אפשר להשוות בין השניים [D][238].
 
+לא פורסם: דגם ה-FPGA, צריכת טבלאות החיפוש (LUT) והזיכרון שלו ודיוק החשבון — הייחוס ל-AMD נשען על העיתונות המקצועית [736] — וכן התפלגות ההשהיה או אחוזוני הזנב שלה; רק הממוצע מדווח.
+
 ## שחקנים וכלכלה
 **מי.**
 | ארגון | תפקיד | מדינה | מה בדיוק הם עושים בטכנולוגיה זו | ראיות |
@@ -75,8 +77,3 @@ updated: 2026-09-30
 [734] T. Müller *et al.*, “Improved belief propagation is sufficient for real-time decoding of quantum memory,” [arXiv:2506.01779](https://arxiv.org/abs/2506.01779), Jun. 2025. [D]
 [735] Altera, “Altera Closes Silver Lake Investment to Become World's Largest Pure-play FPGA Solutions Provider,” Sep. 15, 2025. [Online]. Available: https://www.altera.com/newsroom/news/press-release/altera-silver-lake [G]
 [736] A. Woodie, “IBM Touts Affordable Quantum Error Correction on AMD FPGAs,” HPCwire, Oct. 28, 2025. [Online]. Available: https://www.hpcwire.com/2025/10/28/ibm-touts-affordable-quantum-error-correction-on-amd-fpgas/ [P]
-
-## פריטי אימות פתוחים
-אף אחת משתי התמציות אינה מציינת את רכיב ה-FPGA, את ניצול טבלאות החיפוש (LUT) והזיכרון או את הדיוק האריתמטי; הייחוס ל-AMD נשען על העיתונות המקצועית [736], שאת העמוד שלה לא ניתן היה לאחזר (לולאת הפניות).
-לא פורסמו עבור Relay-BP התפלגות השהיה או אחוזון זנב — רק הממוצע.
-סבב C של Riverlane מצוין כ-$75 M בהודעה מ-2024 וכ-$85 M בהודעת מפת הדרכים שלה מ-2026-03 [G:RIVERLANE-FUNDING].

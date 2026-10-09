@@ -40,6 +40,8 @@ It belongs to the transmon lattice with tunable couplers (Google, IBM, Rigetti, 
 ## Evidence — how the numbers were measured
 The 99.90% and 99.93% headlines are interleaved randomised benchmarking on one characterised pair, and RB is blind to leakage unless a leakage protocol runs alongside — leakage being this gate's second error term. EPLG is a different observable, full-width layered gates including crosstalk, so the 0.37% versus 0.07% gap is definitional as much as fleet variability. Neither record has been replicated by an independent laboratory. One attribution conflict: the cited "25 ns at 99.8%" Oxford result is a fixed-coupling coaxmon pair with no coupler at all [C][423].
 
+Not published: the gate duration of IQM's 99.93% CZ, of which only the fidelity and the 40-hour averaging window are stated; a coupler-specific yield or defect rate from any vendor; and the share of IBM's fleet EPLG due to residual coupler-off ZZ rather than coherence or crosstalk.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What exactly they do with this technology | Evidence |
@@ -83,10 +85,3 @@ Confirm or demote within 12–24 months: does Nighthawk reach 7,500 two-qubit ga
 [423] A. Curbison, “Oxford research group demonstrate fundamental speed-up of two-qubit gate,” OQC, Mar. 21, 2025. [Online]. Available: https://oqc.tech/company/newsroom/oxford-research-group-demonstrate-fundamental-speed-up-of-two-qubit-gate [C]
 [424] J. Stehlik, D. L. Underwood, D. Zajac, and M. Steffen, “Tunable quantum coupler facilitating a quantum gate between qubits,” Google Patents, Aug. 15, 2023. [Online]. Available: https://patents.google.com/patent/US11727297/en [G]
 General facts cited above: [G:IBM-10B-2026-06], [G:IBM-ROADMAP], [G:RIGETTI-FIN-2026], [G:IQM-LISTING-2026-07], [G:OQC-SERIESC-2026-06], [G:QUANTWARE-SERIESB-2026-05], [G:QBI-STAGEB-2025-11].
-
-## Open verification items
-- Gate duration for IQM's 99.93% CZ is not stated in the preprint text retrieved; only the fidelity and the 40-hour averaging window are confirmed.
-- No vendor publishes a coupler-specific yield or defect rate; only qubit and coupler counts are public.
-- Independent replication of the Toshiba 99.90%/48 ns or IQM 99.93% results on separate hardware: none found as of 2026-09-04.
-- Whether IBM's US 11,727,297 B2 reads on merchant coupler chips such as QuantWare's: not assessed.
-- The share of IBM's fleet EPLG attributable to residual coupler-off ZZ rather than coherence or crosstalk is not separated in any public figure.

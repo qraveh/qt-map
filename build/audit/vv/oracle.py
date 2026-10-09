@@ -9,8 +9,9 @@ import random
 
 TOGGLE_TYPES = {"requires": "requires", "alternatives": "replaces", "conflicts": "conflicts"}
 TOGGLES = ("requires", "alternatives", "conflicts")
-LENSES = ("family", "aff", "time", "det", "mech", "destr", "mid",
-          "d", "mod", "place", "f", "g", "status")   # 17 Sep: the reading-marks lens was removed (RULES.md adjudication 10)
+LENSES = ("family", "time", "det", "mech", "mid",
+          "d", "place", "f", "g")   # 17 Sep: the reading-marks lens was removed (RULES.md adjudication 10);
+# 9 Oct 2026 (D6-1): aff, destr, mod and status are card rows, no longer lenses
 NONE = "none"
 
 
@@ -239,17 +240,7 @@ def expected(model, state):
         if selection and not (u in lit and v in lit):
             continue
         edges.add((u, v, t))
-    # the strip (ADJ-13, 23 Sep 2026): a line is bright iff its station is lit; the focus is the thick line; the chosen machine's
-    # alternate-only stations are dashed while lit; the lens's axis is marked and the pressed values are the lens values
-    pc_alt = (set(mach.alt) & lit) if mach else set()
-    return {"stations": lit, "lines": lines, "edges": edges,
-            "pc_bright": set(lit), "pc_hi": foc, "pc_alt": pc_alt,
-            "pc_axis": LENS_AXIS.get(lens), "pc_pressed": {(lens, v) for v in values} if _lens_active(state) else set()}
-
-
-# strip axes (design attributes) that stand for a lens; family and status have no axis
-LENS_AXIS = {"aff": "aff", "time": "b", "det": "b", "mech": "c", "destr": "c", "mid": "c", "d": "d", "mod": "e", "place": "e", "f": "f", "g": "g"}
-AXIS_LENS = {"aff": "aff", "b": "time", "c": "mech", "d": "d", "e": "mod", "f": "f", "g": "g"}
+    return {"stations": lit, "lines": lines, "edges": edges}   # the strip and its pc_* mirror went on 9 Oct 2026 (D6-2)
 
 
 def all_single_states(model):

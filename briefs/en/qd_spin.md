@@ -74,6 +74,8 @@ Conflicts. Diraq's messaging conflicts on scale: a 2026-07-09 release said "thou
 
 On a single-hole Ge/SiGe qubit (T2* = 136 ns, Rabi frequency 19 MHz) the same idle gate scores 99.21(3)% by interleaved randomised benchmarking but 97.48(9)% by gate-set tomography, whose sequences contain long runs of consecutive idles that exceed T2*, while the X/2 and Y/2 gates agree within 0.3 points (99.81% and 99.88% by gate-set tomography) [P][888]. An idle or memory figure for this carrier is meaningful only with its protocol named.
 
+SemiQon's €17.5 M comes from paywalled trade press with the round type unstated [P][354][P][352], and Groove Quantum's €16 M (2026-04-30) has no primary source [P][G:GROOVE-2026]. The PatSnap dataset (~60 records) omits HRL, imec, Diraq and Quantum Motion, so it is a sample, not a census [P][356]. Not published: SemiQon's cumulative funding and the PostScriptum amount; Groove Quantum's investors; the value of the IBM–HRL deal, and any dated spin milestone on IBM's roadmap [C][204]; and ASP Isotopes' enrichment level, capacity and customers, with the DOE quantities and funding [C][347][G][348].
+
 ## Actors & economics
 
 **Who.**
@@ -152,13 +154,3 @@ Open questions. (1) Is 99.5%-class two-qubit fidelity reproducible across all pa
 [766] S. F. Neyens *et al.*, “Probing single electrons across 300-mm spin qubit wafers,” *Nature*, vol. 629, no. 8010, pp. 80–85, May 2024, doi: [10.1038/s41586-024-07275-6](https://doi.org/10.1038/s41586-024-07275-6). [D]
 [888] Y.-C. Zhou *et al.*, “High-fidelity geometric quantum gates exceeding 99.9% in germanium quantum dots,” [arXiv:2609.33251](https://arxiv.org/abs/2609.33251), Sep. 2026. [P]
 [898] A. S. Ivlev *et al.*, “Sparse qubit operation in a 6×6 quantum dot array,” [arXiv:2610.07683](https://arxiv.org/abs/2610.07683), Oct. 2026. [P]
-
-## Open verification items
-
-- SemiQon cumulative funding and the PostScriptum amount undisclosed; the €17.5 M figure is paywalled trade press, round type unstated [P][354][P][352].
-- Groove Quantum's €16 M (2026-04-30) has no primary-source URL; investors unnamed [P][G:GROOVE-2026].
-- IBM–HRL deal value undisclosed in both releases; no spin milestone dated on IBM's roadmap [C][204].
-- ASP Isotopes' enrichment level, capacity and customers undisclosed; DOE quantities and funding unstated [C][347][G][348].
-- Diraq conflict on 2029 scale: "thousands" (2026-07-09) vs 150 k physical / 1 k logical (2026-08-27); roadmap figure used [R][211].
-- PatSnap dataset (~60 records) omits HRL, imec, Diraq and Quantum Motion; treated as a sample, not a census [P][356].
-- No independent replication of the 300 mm two-qubit fidelity range outside the imec line [D][189].

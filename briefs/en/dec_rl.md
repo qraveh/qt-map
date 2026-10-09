@@ -27,6 +27,8 @@ The premise of in-loop recalibration is contested by a 2026 measurement: long-li
 | 2026-07-08 | d=5 colour code, Tesseract decoder: 8.19(14)×10⁻³ per cycle; 3.5× stability against injected drift | Google Quantum AI | [D][2] |
 | 2024-12-09 | Λ = 2.14(2) with the neural decoder vs 2.04(2) with ensembled matching on identical Willow syndromes | Google Quantum AI | [D][1][G:WILLOW-RTDECODER-2024] |
 
+AlphaQubit 2's own real-time benchmarks (arXiv:2512.07737) ran on recorded data, and the reinforcement-learning paper does not state that its d=7 decode ran live.
+
 ## Manufacturing, materials & supply chain
 No dedicated silicon and, unlike matching or clustering decoders, no FPGA resource claim to audit [G:RIVERLANE-LCD-2025-12]. The cost is control-plane traffic — detection events out, parameter updates in, over the decoder's own link; NVQLink's 3.84 µs mean, 3.96 µs maximum round trip is the vendor-neutral version of it [C][G:NVQLINK-NUMBERS-2025-11]. Updates run on a slow timescale outside the 1.1 µs cycle, which is why it coexists with Willow where heavier in-loop computation would not. Supply is GPU/TPU capacity plus the control stack; no specific export rule.
 
@@ -74,9 +76,3 @@ Confirm if RL-in-loop calibration appears on a second platform, or a Λ is publi
 [G] NVIDIA developer blog (2025-11-17) detail: RoCE round trip 3.84 us mean, 0.035 us standard deviation, 3.96 us MAXIMUM over 1,000 samples (a bounded tail, not just a mean); BP+OSD o… · 2025-11-17 · https://developer.nvidia.com/blog/nvidia-nvqlink-architecture-integrates-accelerated-computing-with-quantum-processors/
 [G] Atlantic Quantum (fluxonium, cold-stage control) joined Google Quantum AI, 2025-10-03 · 2025-10-03 · https://thequantuminsider.com/2025/10/03/atlantic-quantum-joins-google-quantum-ai/
 [G] DARPA QBI Stage B (announced 2025-11-06, ~12 months, up to $15 M each): Atom Computing, Diraq, IBM, IonQ, Nord Quantique, Photonic Inc., Quantinuum, Quantum Motion, QuEra, Silicon… · 2025-11-06 · https://www.darpa.mil/research/programs/quantum-benchmarking-initiative/stage-b-selection
-## Open verification items
-- No Λ is reported for the RL-steered d=7 run, so the effect on code-distance scaling is unmeasured.
-- The "~20% logical-error reduction" and ">1,000 live control parameters" quoted by trade press [742] are in the paper's main text, not its abstract, which quotes 3.5× against injected drift and tens of thousands of parameters in simulation.
-- AlphaQubit 2's own paper is a preprint (arXiv:2512.07737, 2025-12-08) whose real-time benchmarks ran on recorded data; the RL paper does not state that its d=7 decode ran live.
-- No second-platform replication of RL-in-loop calibration found.
-- Q-CTRL's Series B is quoted as USD $113 M by the company and as "$167 M" in Australian trade press, which is the AUD $166 M figure restated; the company release governs.

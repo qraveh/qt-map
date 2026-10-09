@@ -61,6 +61,8 @@ updated: 2026-09-30
 
 סתירות. ה-tesseract הוא [[16,6,4]], לא [[16,4,4]] — כך קובעים הערך ב-Error Correction Zoo והתמצית ב-arXiv [D][674][D][667]. "48 מתוקנים" ו-"94 מגולים" על Helios הם קודים שונים במרחקים שונים, שמערבבים ביניהם דרך קבע [D][105]. הטענה של Iceberg על RSA-2048 בפחות מ-100,000 קיוביטים מניחה p=10⁻³ עם מחזורים של 1 µs [S][29], ואינה בת-השוואה ל-<1 M של Gidney [S][7].
 
+לא פורסם: מטה Iceberg Quantum — עיתונות הענף מציינת בסיס בברלין עם נוכחות בארה"ב, המוסד המייסד הוא University of Sydney, ואתר החברה אינו מציין מיקום [P][677][C][676]; האם השותפות Oxford Ionics–Iceberg Quantum נמשכת תחת IonQ — נכון ל-2026-09-30 Iceberg Quantum מונה את PsiQuantum ו-Diraq כשותפות ואינה מזכירה את Oxford Ionics או את IonQ [C][676]; שיעור הקבלה בהרצות Harvard [[16,6,4]] על 96 קיוביטים לוגיים; וספירה מתוארכת של משפחות פטנטים למשפחת קודים זו. לטענת Quantinuum מהרבעון השני של 2026 על "נאמנות לוגית של כמעט חמש תשיעיות עם משפחת קודים חדשה" אין מאמר פומבי נכון ל-2026-09-03. לקודי ה-many-hypercube של Goto אין הדגמת חומרה; הקצב של 30% (64 לוגיים ב-216 פיזיקליים) הוא סימולציה בלבד [S][675].
+
 ## שחקנים וכלכלה
 
 **מי.**
@@ -120,12 +122,3 @@ updated: 2026-09-30
 [676] Iceberg Quantum, “Iceberg Quantum — Home.” [Online]. Available: https://www.iceberg-quantum.com/ [C]
 [677] M. Swayne, “Trifecta: Iceberg Quantum Unveils Pinnacle Architecture, Claims Sub-100,000 Qubits Could Break RSA-2048 And Raises $6 Million Seed Round,” The Quantum Insider, Feb. 13, 2026. [Online]. Available: https://thequantuminsider.com/2026/02/13/trifecta-iceberg-quantum-unveils-pinnacle-architecture-claims-sub-100000-qubits-could-break-rsa-2048-and-raises-6-million-seed-round/ [P]
 [678] Iceberg Quantum, “Iceberg Quantum Launches with $2M and PsiQuantum Partnership,” HPCwire, Mar. 24, 2025. [Online]. Available: https://www.hpcwire.com/off-the-wire/iceberg-quantum-launches-with-2m-and-psiquantum-partnership/ [P]
-
-## פריטי אימות פתוחים
-
-- המטה של Iceberg Quantum: העיתונות המקצועית מתארת בסיס בברלין עם נוכחות בארה״ב, בעוד המוסד המייסד הוא University of Sydney [P][677][C][676]; אתר החברה אינו מציין מיקום. נרשם אוסטרליה/גרמניה/ארה״ב, לא הוכרע.
-- לא נמסר אם השותפות של Oxford Ionics עם Iceberg Quantum (2025-07) נמשכת תחת IonQ: נכון ל-2026-09-30, אתר Iceberg Quantum מציג כשותפים את PsiQuantum ואת Diraq, ואינו מזכיר את Oxford Ionics או את IonQ [C][676].
-- שיעור הקבלה בריצות ה-[[16,6,4]] של Harvard עם 96 קיוביטים לוגיים אינו מצוטט במקורות שנבדקו; רק הנתונים מצד היונים (0.62(2), 3.2%) מאומתים.
-- לטענת Quantinuum בשיחת המשקיעים של Q2-2026 על "נאמנות לוגית קרובה לחמש תשיעיות עם משפחת קודים חדשה" אין מאמר פומבי נכון ל-2026-09-03; לא אומת אם היא מתייחסת למשפחה הזאת.
-- אין ספירה מתוארכת במאגר פטנטים למשפחת הקודים הזאת; נתוני PatSnap המצוטטים הם ברמת מחלקת ההתקנים בלבד.
-- לקודי ה-many-hypercube של Goto לא נמצאה הדגמה בחומרה; הקצב של 30% (64 לוגיים ב-216 פיזיים) הוא סימולציה בלבד [S][675].

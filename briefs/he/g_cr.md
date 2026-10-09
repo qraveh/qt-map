@@ -29,6 +29,8 @@ updated: 2026-09-04
 
 מעולם לא פורסם נתון CR ממוצע לצי המכונות; ה-EPLG של IBM כיום (3.7×10⁻³ [D][34]) הוא של חומרת Heron, שהחליפה את ה-CR ב-2023-12 [C][72]. נקודת ההשוואה הכואבת היא ה-CZ בצימוד קבוע של Oxford/OQC, 99.8% ב-25 ns [C][423] — גם הוא ללא בקרת מצמד, ומהיר פי שבעה.
 
+ה-PRL של Kandala ועמיתיו מדווח על דיכוי ZZ מובנה באמצעות שני רכיבי צימוד בתדר קבוע, לא על ביטול אקטיבי. לא פורסם: נאמנות CR ממוצעת-צי לדורות של IBM שלפני Heron (מ-Falcon עד Condor), מלבד ה-99.77(2)% לזוג מבודד, וספירה מתוארכת של פטנטים ייחודיים ל-CR.
+
 ## ייצור, חומרים ושרשרת האספקה
 אין לו תהליך משלו. העלות נופלת על מיון וכוונון: אי אפשר להרחיק התנגשות בהיסט לאחר הייצור, רק למסך אותה בתוכנה או לסלק אותה בריפוי, ולכן הפגיעה ביעדי התדר — ריפוי בלייזר ב-IBM, ריפוי בממתח מתחלף ב-Rigetti [D][294] — היא פריט שרשרת האספקה שה-CR מניע. היתרון שלו הוא בספר החשבונות של הקלט-פלט: קו הנעה אחד לכל קיוביט ושום דבר לכל מצמד, בעוד שמצמדים ברי-כוונון מוסיפים כל אחד קו שטף וערוץ DAC, בערך פי 1.5–2 קווים. ב-10³ זה ההבדל בין מקרר צפוף למקרר בלתי אפשרי; ב-10⁴–10⁶ זה כל תקציב החיווט. החשיפה לפיקוח יצוא היא של הנושא (ECCN 3A901).
 
@@ -71,8 +73,3 @@ updated: 2026-09-04
 [423] A. Curbison, “Oxford research group demonstrate fundamental speed-up of two-qubit gate,” OQC, Mar. 21, 2025. [Online]. Available: https://oqc.tech/company/newsroom/oxford-research-group-demonstrate-fundamental-speed-up-of-two-qubit-gate [C]
 [425] J. M. Chow *et al.*, “Simple All-Microwave Entangling Gate for Fixed-Frequency Superconducting Qubits,” *Phys. Rev. Lett.*, vol. 107, no. 8, Art. no. 080502, Aug. 2011, doi: [10.1103/PhysRevLett.107.080502](https://doi.org/10.1103/PhysRevLett.107.080502). [D]
 [426] C. Kim, J. Kang, and Y. Kwon, “Lattice patch structure for fixed-frequency transmon quantum computer with high-fidelity CNOT gates,” [arXiv:2606.27017](https://arxiv.org/abs/2606.27017), Jun. 2026. [S]
-
-## פריטי אימות פתוחים
-מעולם לא פורסמה נאמנות CR ממוצעת לצי המכונות לדורות של IBM שלפני Heron (Falcon–Condor); רק ה-99.77(2)% של זוג מבודד נשען על מקור.
-נכון ל-2026-09-04 לא נמצאה ספירת פטנטים ייחודית ל-CR ממאגר נתונים מזוהה.
-המאמר ב-PRL של Kandala et al. מדווח על דיכוי ZZ מהותי באמצעות שני רכיבי צימוד בתדר קבוע, לא על ביטול אקטיבי.

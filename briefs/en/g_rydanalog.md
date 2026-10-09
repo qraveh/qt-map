@@ -45,6 +45,8 @@ Slot 3 of the "Neutral-atom analogue simulator (Rydberg arrays, lattice gases)" 
 ## Evidence — how the numbers were measured
 With no gate error, fidelity comes from observables: order parameters against numerics, valid to ~100 atoms [D][433]; F_d, which weights measured bit-strings by simulated probabilities — 0.095(11) at 60 atoms, where a lightcone MPS at χ* = 3400 (~110 GB, ~180 core-days) keeps pace [D][436]; and problem output such as MIS size, cheap to validate but not to prove optimal [D][431]. F_d needs classical probabilities, so what it certifies can be simulated. Λ is undefined. The Orion cell stays 🔎: its cited page (2026-01-29) mentions local detuning for materials simulation and a 2026 Vela with over 256 qubits, but not analogue mode, MIS, Orion or ≤100 qubits [C][390].
 
+Aquila's continued Braket service is inferred from QuEra's 2026-06-15 release, which does not state it. Not published: the hardware mechanism of Aquila's local detuning (light-shift beam or otherwise), whose magnitude, resolution and per-site calibration error appear only as Braket SDK device properties; a Rydberg lifetime or atom-loss rate during evolution for Aquila; and a Fresnel datasheet (Ω, Δ, T2, detection errors).
+
 ## Actors & economics
 **Who.**
 
@@ -98,10 +100,3 @@ A benchmark that needs no per-atom addressing has been proposed for it: prepare 
 [440] Amazon Web Services, “Local detuning now available on QuEra's Aquila device with Braket Direct,” AWS What's New, Apr. 11, 2024. [Online]. Available: https://aws.amazon.com/about-aws/whats-new/2024/04/amazon-braket-experimental-capabilities-quera-device-braket-direct/ [C]
 [892] S. Cavazzoni and C. Oh, “Metrological benchmarking of random quantum circuits,” [arXiv:2609.39226](https://arxiv.org/abs/2609.39226), Sep. 2026. [P]
 [899] A. Durán-Hernández *et al.*, “Spin-exchange interactions between circular Rydberg atoms over long times,” [arXiv:2609.37766](https://arxiv.org/abs/2609.37766), Sep. 2026. [P]
-
-## Open verification items
-- Aquila's local-detuning limits (magnitude, resolution, per-site calibration error) are exposed only through Braket SDK device properties, not read here; the hardware mechanism (light-shift beam or otherwise) is not described in QuEra's release (tried 2026-09-26).
-- The Aquila whitepaper gives no Rydberg lifetime or atom-loss rate during evolution; no Fresnel datasheet (Ω, Δ, T2, detection errors) was found, and Scaleway's Pasqal QPU page did not render (2026-09-26).
-- The register's Orion cell ("analog MIS/optimisation and materials Hamiltonians shown at ≤100 qubits") is not supported by its cited page; it stays 🔎 (2026-09-26).
-- The dipolar XY variant in the node description has no register machine and was not checked against a primary source (2026-09-26).
-- Aquila's continued Braket service is inferred from QuEra's 2026-06-15 release, which does not state it explicitly (2026-09-26).

@@ -41,6 +41,8 @@ T₂ = זמן קוהרנטיות הפאזה בניסוי ראמזי; MS = שער
 ## ראיות — כיצד נמדדו המספרים
 ה-98.7(3) % של AQT הוא ממוצע של המוצר על פני כל הזוגות [C][382]; נתון משני של 97.7 % במרשם נותר לא מיושב. ה-0.997(6) של המדגים הוא נאמנות של מצב בל בשני יונים, לא בחינת ביצועים אקראית [D][253]. ה-99.62(3) % של Caltech ממוצע על פני מצבי קלט סימטריים [D][381]. עבור LYNX מתפרסם QV בלי מספר קיוביטים ובלי נאמנות [C][128]. נכון ל-2026-09-26, אף ספק אינו מדווח T₂ לצד τ.
 
+לא פורסם: מין האטומים והמעבר החישוביים של planqc — דפי הטכנולוגיה וה-LRZ שלה אינם נוקבים לא בסטרונציום ולא במעבר השעון — ומין האטומים והמוצר של PIAST-Q.
+
 ## שחקנים וכלכלה
 **מי.**
 
@@ -82,10 +84,3 @@ T₂ = זמן קוהרנטיות הפאזה בניסוי ראמזי; MS = שער
 [381] R. Finkelstein *et al.*, “Universal quantum operations and ancilla-based read-out for tweezer clocks,” *Nature*, vol. 634, pp. 321–327, Oct. 2024, doi: [10.1038/s41586-024-08005-8](https://doi.org/10.1038/s41586-024-08005-8). [D]
 [382] Alpine Quantum Technologies, “19-inch rack-mounted quantum computer,” AQT. [Online]. Available: https://www.aqt.eu/products/ibex-q1/ [C]
 [383] Alpine Quantum Technologies (AQT), “Quantum computer products built for performance,” AQT. [Online]. Available: https://www.aqt.eu/products/ [C]
-
-## פריטי אימות פתוחים
-- 2026-09-26: arxiv.org (התמצית של 2111.14653v2) ו-api.semanticscholar.org החזירו HTTP 429; המאמר של Schine et al. נקרא במקום זאת ב-nature.com.
-- 2026-09-26: זמן החיים של D₅/₂ ב-⁸⁸Sr⁺ (בתיק: 0.39 s) אינו מובא — Crossref משמיט את התמצית, ו-journals.aps.org החזיר 403.
-- 2026-09-26: זמן החיים הטבעי של ³P₀ ב-⁸⁷Sr (~118 s) לא אומת; לא נפתח מקור.
-- 2026-09-26: דפי הטכנולוגיה של planqc עצמה ודפי LRZ אינם נוקבים לא בסטרונציום ולא במעבר השעון; המין האטומי והמוצר של PIAST-Q אינם נקובים בדפים שבמרשם.
-- 2026-09-26: arXiv:2111.12654 לא נפתח מחדש (ההסתמכות היא על ה-✅ שבמרשם); נתון הנאמנות של Madjarov et al., מזהה ה-arXiv של Finkelstein et al., ורשימת המחברים וה-DOI של Norcia et al. (דף ה-arXiv הציג רק את התמצית) לא נראו.

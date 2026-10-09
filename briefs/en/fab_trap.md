@@ -40,6 +40,8 @@ This layer underlies all three trapped-ion architectures — QCCD (Quantinuum), 
 ## Evidence — how the numbers were measured
 Electrode and signal counts are vendor-reported and unaudited. Heating is published per trap at one operating point, never as a wafer or batch distribution, and no vendor discloses yield. The 8.4×10⁻⁵ gate is a two-ion measurement without ground-state cooling, not a fleet average, unreplicated externally as of 4 Sep 2026 [D][102]. No dated dispute between vendors over fabrication claims was found.
 
+No ECCN names ion traps, and no BIS advisory opinion places a bare ion-trap die inside or outside 4A906. Not published: the defect rate and cost per trap, from IonQ, Quantinuum, Infineon, AQT or eleQtron, as of 2026-09-04; whether Infineon fabricated the chip behind the 8.4×10⁻⁵ result — the Oxford Ionics–Infineon link is asserted at company level only; and a heating rate for Infineon's Gen-3 out-of-plane electrodes, so their ~10× confinement gain is unmeasured.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What exactly they do with this technology | Evidence |
@@ -88,10 +90,3 @@ Confirm or demote by end-2027: does a SkyWater-fabricated trap hold ions in a sh
 [807] M. Brownnutt, M. Kumph, P. Rabl, and R. Blatt, “Ion-trap measurements of electric-field noise near surfaces,” *Rev. Mod. Phys.*, vol. 87, no. 4, pp. 1419–1482, Dec. 2015, doi: [10.1103/RevModPhys.87.1419](https://doi.org/10.1103/RevModPhys.87.1419). [arXiv:1409.6572](https://arxiv.org/abs/1409.6572). [D]
 [808] J. Labaziewicz *et al.*, “Suppression of Heating Rates in Cryogenic Surface-Electrode Ion Traps,” *Phys. Rev. Lett.*, vol. 100, no. 1, Art. no. 013001, Jan. 2008, doi: [10.1103/PhysRevLett.100.013001](https://doi.org/10.1103/PhysRevLett.100.013001). [arXiv:0706.3763](https://arxiv.org/abs/0706.3763). [D]
 [809] D. A. Hite *et al.*, “100-Fold Reduction of Electric-Field Noise in an Ion Trap Cleaned with In Situ Argon-Ion-Beam Bombardment,” *Phys. Rev. Lett.*, vol. 109, no. 10, Art. no. 103001, Sep. 2012, doi: [10.1103/PhysRevLett.109.103001](https://doi.org/10.1103/PhysRevLett.109.103001). [arXiv:1112.5419](https://arxiv.org/abs/1112.5419). [D]
-
-## Open verification items
-- Trap electrode yield, defect rate and cost per trap: not published by IonQ, Quantinuum, Infineon, AQT or eleQtron as of 2026-09-04.
-- Whether Infineon fabricated the specific chip behind the 8.4×10⁻⁵ result: neither the Infineon platform page nor the preprint says so; the Oxford Ionics–Infineon link is asserted at company level only.
-- No published heating rate for Infineon's Gen-3 out-of-plane electrodes; the ~10× confinement figure is unverified by measurement.
-- Independent replication of the 8.4×10⁻⁵ electronic two-qubit gate: none found as of 2026-09-04.
-- Whether a bare ion-trap die falls under ECCN 4A906 or outside the enumerated categories: the rule does not name traps and no BIS advisory opinion was found.

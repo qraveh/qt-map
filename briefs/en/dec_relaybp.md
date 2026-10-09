@@ -40,6 +40,8 @@ It requires the bivariate bicycle/gross qLDPC family and replaces minimum-weight
 ## Evidence — how the numbers were measured
 Every headline is from simulated syndromes under a uniform circuit-noise model of strength p, with neither leakage nor correlated bursts — the dominant real-device terms [D][48], [734]. No independent group has reproduced either number, and Riverlane's LCD uses a different code and FPGA, so the two are not commensurable [D][238].
 
+Not published: the FPGA part, its lookup-table (LUT) and memory use and the arithmetic precision — the AMD attribution rests on trade press [736] — and any latency distribution or tail percentile; only the average is given.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What exactly they do with this technology | Evidence |
@@ -75,8 +77,3 @@ Falsifiable (12–24 months): confirm if Kookaburra ships and a gross-code memor
 [734] T. Müller *et al.*, “Improved belief propagation is sufficient for real-time decoding of quantum memory,” [arXiv:2506.01779](https://arxiv.org/abs/2506.01779), Jun. 2025. [D]
 [735] Altera, “Altera Closes Silver Lake Investment to Become World's Largest Pure-play FPGA Solutions Provider,” Sep. 15, 2025. [Online]. Available: https://www.altera.com/newsroom/news/press-release/altera-silver-lake [G]
 [736] A. Woodie, “IBM Touts Affordable Quantum Error Correction on AMD FPGAs,” HPCwire, Oct. 28, 2025. [Online]. Available: https://www.hpcwire.com/2025/10/28/ibm-touts-affordable-quantum-error-correction-on-amd-fpgas/ [P]
-
-## Open verification items
-Neither abstract states the FPGA part, LUT (lookup table)/memory usage or arithmetic precision; the AMD attribution rests on trade press [736], whose page could not be retrieved (redirect loop).
-No latency distribution or tail percentile is published for Relay-BP — only the average.
-Riverlane's Series C is stated as $75 M in the 2024 release and $85 M in its 2026-03 roadmap release [G:RIVERLANE-FUNDING].

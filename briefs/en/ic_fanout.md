@@ -44,6 +44,8 @@ Slot 9, the only layer-9 entry, of "Silicon / germanium quantum-dot spins". It *
 ## Evidence — how the numbers were measured
 The figures of merit — channels per die, heat per line at the MXC, hold droop, refresh rate, switching crosstalk — sit in no register cell. The record is component-level: Delft's held voltages drift 60 µV/s to 18 mV/s [D][552], slow coherent error that randomised benchmarking averages away [S]; the cryoprober and the 1,024-dot chip measure devices, not gates [D][766][D][767]. Equal1's page lists 99.3% average two-qubit fidelity [C][273], which the register holds beside a press survey's 98.4%; neither names the fan-out behind it. Missing, as of 2026-09-26: a benchmark through a millikelvin router, and Pando Tree's dissipation.
 
+Not published: the process node of Intel's Pando Tree and any qubit fidelity measured through it, and the fan-out plans of SQC, Quobly and Groove Quantum.
+
 ## Actors & economics
 **Who.**
 
@@ -95,11 +97,3 @@ Confirm if, by 2027-12-31, a peer-reviewed spin-qubit gate benchmark runs throug
 [769] M. Rutherford, “Silicon Spin Qubits Get Foundry Path: Hitachi Banks on Intel 18A Process,” Tech Times, Jul. 28, 2026. [Online]. Available: https://www.techtimes.com/articles/321867/20260728/hitachi-intel-18a-spin-qubit.htm [P]
 [770] imec, “Quantum pilot line 'SPINS' launched with EU support,” Apr. 3, 2026. [Online]. Available: https://www.imec-int.com/en/press/semiconductor-based-quantum-pilot-line-spins-launched-eu-support [C]
 [771] University College Dublin, “Equal1 Announces $60 million in Funding to Accelerate Quantum Computing using Existing Semiconductor Manufacturing,” UCD Innovation, Jan. 15, 2026. [Online]. Available: https://www.ucd.ie/innovation/news-and-events/2026/equal1-announces-funding-round/ [C]
-
-## Open verification items
-- "3–5 gate lines per qubit" and imec/Diraq back-end-of-line routing, both named in the brief request, were not found in a source opened; Franke et al.'s t = 2 and Diraq's 90 nm gate pitch are used instead (2026-09-26).
-- arXiv abstract pages for Vandersypen et al. 2017, Franke et al. 2019 and Paquelet Wuetz et al. 2020 returned no metadata, then arxiv.org refused further fetches with HTTP 429 (2026-09-26); these works are cited by DOI and their arXiv ids are unconfirmed.
-- Pando Tree: the 2024 VLSI Symposium paper was not opened; process node, dissipation and any qubit fidelity measured through it are absent from Intel's blog (2026-09-26).
-- Fan-out plans of SQC, Quobly and Groove Quantum: none found in this pass; their register cells stay 🔎 (2026-09-26).
-- Diraq's roadmap page shows "27 August" without a readable year (the Atlas's bibliography dates it 2026-08-27); the 2029 and 2031 targets are quoted from the page (2026-09-26).
-- Schaal et al.'s record rests on the UCL Discovery entry and an arXiv listing, not the publisher page; no patent search specific to cryogenic fan-out was run (2026-09-26).

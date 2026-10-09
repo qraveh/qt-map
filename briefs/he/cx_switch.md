@@ -41,6 +41,8 @@ updated: 2026-09-30
 ## ראיות — כיצד נמדדו המספרים
 אובדן המתג וההכחדה שלו מגיעים מאפיון ישיר של אובדן ההחדרה מול מסלולי ייחוס על השבב — מספרים קשיחים יותר מנאמנויות שער, והפחות ברי השוואה, שכן כל ספק מצטט גבול אחר. ה-0.19 dB של Aurora הוא לכל MZI כולל החיבורים; ה-100 mdB של PsiQuantum הם של רכיב המתג לבדו; ה-0.085 dB לפאה של Xanadu הוא צימוד סיב–שבב, המשווק כאמת מידה של התעשייה [C][172], אף ש-PsiQuantum פרסמה 52(12) mdB לאותו ממשק שנה קודם לכן [D][169]. אין לחבר אותם או לדרג אותם בלי פרוטוקול משותף, ואף אחד מהם לא שוחזר מחוץ לקבוצה שממנה יצא. אימות המערכת הוא תקציב אובדן, לא עדות לנאמנות לוגית.
 
+"אובדן מוליך גל של 0.5 dB/m" עבור Omega בדוח הראשי סותר את נתון המאמר לסיליקון ניטריד חד-אופני, 1.8(2) dB/m [G:PSIQ-OMEGA-METRICS-2025]; אף אחד מהם אינו נתון של מתג.
+
 ## שחקנים וכלכלה
 **מי.**
 | ארגון | תפקיד | מדינה | מה בדיוק הם עושים בטכנולוגיה זו | ראיות |
@@ -88,6 +90,3 @@ updated: 2026-09-30
 [517] A. Roy *et al.*, “Zero-change foundry compatible silicon photonics MEMS optical switch,” [arXiv:2608.03146](https://arxiv.org/abs/2608.03146), Aug. 2026. [P]
 [518] optics.org, “Lithium niobate in vogue as thin-film developers raise cash,” Sep. 24, 2024. [Online]. Available: https://optics.org/news/lithium-niobate-in-vogue-as-thin-film-developers-raise-cash [P]
 [519] PsiQuantum, “PsiQuantum Raises $1 Billion to Build Million-Qubit Scale, Fault-Tolerant Quantum Computers,” Sep. 10, 2025. [Online]. Available: https://www.psiquantum.com/news-import/psiquantum-1b-fundraise [C]
-
-## פריטי אימות פתוחים
-את נתון המתג "30 mdB עדכני" שברשומת הגרף לא ניתן היה לאתר בשום פרסום; הנתון הטוב ביותר בקו שאותר הוא 100 mdB (PsiQuantum), וההתקן העדכני ביותר הוא מתג MEMS של 1.5 dB. האם 0.19 dB/MZI (מתג ועוד חיבורים), 100 mdB (רכיב המתג) ו-85 או 52 mdB (סיב–שבב) חולקים מישור ייחוס אחד — אף מקור אינו מיישב ביניהם. ה"אובדן מוליך גל של 0.5 dB/m" של הדוח הראשי עבור Omega סותר את נתון ניטריד הצורן החד-אופני של המאמר, 1.8(2) dB/m [G:PSIQ-OMEGA-METRICS-2025]; אף אחד מהם אינו משמש כאן כנתון של מתג. השיוך המוסדי של מחברי מתג ה-MEMS לא הוחזר בדף התמצית של arXiv.

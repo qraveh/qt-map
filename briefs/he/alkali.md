@@ -60,6 +60,8 @@ updated: 2026-09-30
 
 סתירות. תמצית המאמר של Caltech אומרת "יותר מ-6,100 אטומים בכ-12,000 אתרים"; הגרסאות שונות (v1 2024-03, v4 2025-07), והנתון 12.6 s שייך ל-v4, הגרסה המאוחרת יותר, שגוברת על הקודמת [D][138]. הסקירה הטוענת לתקרת חסימה של 99.9% מציגה בטבלה גם CZ של USTC מ-2025 ב-99.84% שאף מקור ראשוני אינו מאשש [P][140].
 
+לא פורסם: סוג האטום המחשובי של Infleqtion ושל planqc (אם זה סטרונציום, planqc שייכת לטכנולוגיית האטומים האלקליים-עפרוריים), אורך החיים במלכודת המוגבל בוואקום עבור מערך המטא-משטח של Tsinghua, ועלות הון לקיוביט או למערכת עבור מכונת פינצטה כלשהי.
+
 ## שחקנים וכלכלה
 
 **מי.**
@@ -127,16 +129,3 @@ updated: 2026-09-30
 [330] Pasqal, “Pasqal brings qubit control on-chip, advancing the path to fault-tolerant quantum computing at scale,” Aug. 10, 2026. [Online]. Available: https://www.pasqal.com/news/pasqal-brings-qubit-control-on-chip-advancing-the-path-to-fault-tolerant-quantum-computing-at-scale/ [C]
 [331] Pasqal, “Newsroom.” [Online]. Available: https://www.pasqal.com/newsroom/ [C]
 [332] Infleqtion, “Infleqtion Reports Record Q2 Revenue, Raises 2026 Outlook as Quantum Commercialization Accelerates,” Aug. 12, 2026. [Online]. Available: https://ir.infleqtion.com/news-events/press-releases/detail/201/infleqtion-reports-record-q2-revenue-raises-2026-outlook-as-quantum-commercialization-accelerates [G]
-
-## פריטי אימות פתוחים
-
-- מאמרי המוצא של 2016 (Endres ועמיתיו; Barredo ועמיתיו) ותוצאת לכידת האטום הבודד של 2001 מצוטטים מהספרות המקובלת ללא מקור ממוספר.
-- פיקוח על יצוא: סיווגי ECCN ספציפיים ללייזרים ברי-כוונון (6A005) ולציוד קוונטי לפי תקנת BIS מ-2024 לא אומתו מול מסמך של BIS או של Wassenaar; נטענת רק חשיפה כללית ברמת הקטגוריה.
-- המין האטומי שבו Infleqtion מחשבת (צזיום) אינו מאושר בשום מקור שנבדק כאן.
-- המין האטומי של planqc (סטרונציום) אינו מצוין בדף החדשות שלה; אם זה סטרונציום, planqc שייכת לטכנולוגיה האלקלית-עפרורית ולא לזו.
-- מערך Caltech: תמצית v4 אומרת "יותר מ-6,100 אטומים בכ-12,000 אתרים"; יש סחיפה בין הגרסאות v1 (2024-03) ו-v4 (2025-07), ונתון ה-T₂ של 12.6 s נלקח מ-v4.
-- מאמר המטא-משטח של Tsinghua אינו מציין זמן חיים במלכודת המוגבל בוואקום.
-- לא נמצאה עלות הון לקיוביט או למערכת עבור אף מכונת מלקחיים אופטיים, מאף ספק או דיווח רשמי.
-- arXiv:2608.05010 מציג בטבלה CZ של USTC מ-2025 ב-99.84% ללא מקור ראשוני מאשש; לא נעשה בו שימוש.
-- הכתובת https://www.quera.com/press-releases/quera-announces-2028-fault-tolerant-quantum-computer-and-expanded-multi-year-strategic-collaboration-with-aws החזירה HTTP 404 ב-2026-09-03; לא אומתו אירועים תאגידיים של QuEra לאחר 2026-06-15.
-- סתירה בניסוח שיעור המילוי: "11,022 אטומים" של Tsinghua הוא נתון טעינה לפני הסידור מחדש, ב-60.5%, ולא ספירה של קיוביטים שמישים נטולי פגמים; הסיקור המשני מערבב ביניהם באופן שגרתי.

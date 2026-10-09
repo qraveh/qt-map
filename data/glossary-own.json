@@ -395,9 +395,9 @@
    "H8"
   ],
   "scope": "all",
-  "en": "One of the eight statements about the field that this edition tested against the {{N_MACHINES}} registered machines, rather than asserting",
-  "ru": "Одно из восьми утверждений об отрасли, которые это издание проверило по {{N_MACHINES}} машинам реестра, а не просто заявило",
-  "he": "אחת משמונה הטענות על התחום שמהדורה זו בחנה מול {{N_MACHINES}} המכונות הרשומות, במקום רק להצהיר עליהן",
+  "en": "One of the statements about the field that this edition tests against the {{N_MACHINES}} registered machines, rather than asserting; H7 and H8 are retired to §8.1",
+  "ru": "Одно из утверждений об отрасли, которые это издание проверяет по {{N_MACHINES}} машинам реестра, а не просто заявляет; H7 и H8 перенесены в §8.1",
+  "he": "אחת הטענות על התחום שמהדורה זו בוחנת מול {{N_MACHINES}} המכונות הרשומות, במקום רק להצהיר עליהן; H7 ו-H8 הועברו ל-§8.1",
   "src": "§8.4",
   "why": "Cited bare in §0 and §8.6 as (H1), (H8) by readers who never opened §8.4",
   "only": [
@@ -741,34 +741,6 @@
   "he": "טכנולוגיה שכמה קווי פלטפורמה עוברים דרכה — בחירה משותפת, כפי שהיא נקראת במפת רכבת תחתית",
   "src": "About / §7.7 / §7.10",
   "why": "Metro vocabulary used without restating it in §7.10, where it decides what focus shows",
-  "only": [
-   "0",
-   "7"
-  ]
- },
- {
-  "id": "strip",
-  "match": [
-   "parallel-coordinates strip",
-   "strip under the map",
-   "strip"
-  ],
-  "match_ru": [
-   "полоса"
-  ],
-  "match_he": [
-   "רצועת הקואורדינטות המקבילות",
-   "רצועת קואורדינטות מקבילות",
-   "הרצועה שמתחת למפה",
-   "רצועה",
-   "הרצועה"
-  ],
-  "scope": "first",
-  "en": "The band under the map that draws all {{N_NODES}} technologies at once, each as a line across the seven attributes, so outliers stand out",
-  "ru": "Полоса под картой, рисующая все {{N_NODES}} технологий сразу — каждую линией по семи атрибутам, так что выбросы видны",
-  "he": "הרצועה שמתחת למפה, המציירת את כל {{N_NODES}} הטכנולוגיות בבת אחת, כל אחת כקו לאורך שבע התכונות, כך שהחריגות בולטות לעין",
-  "src": "About / §7.7",
-  "why": "Mentioned in About as if the reader has the map in front of them; many are reading the text alone",
   "only": [
    "0",
    "7"

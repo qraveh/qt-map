@@ -52,6 +52,8 @@ It requires the trapped atomic ion and single-photon detection (SNSPD/TES) and p
 
 Heralded fidelity is tomography or parity oscillation conditioned on a successful click, so 94–97% describes the links that happened, not the channel including loss; the honest figure of merit is rate × fidelity, which nobody reports. Published rates come from different species, distances and collection geometries and are not directly comparable. The weakest evidence is commercial: IonQ's release states it "validated the generation, transmission, and detection of photons used to enable quantum entanglement" — wording that stops short of reporting a measured Bell state, with no rate, fidelity or distance and no replication [C][589]. Among peer-reviewed results there is no conflict.
 
+The ">20 patents and patent applications" Lightsynq brought is IonQ's own count, with no family names, assignees or filing years. Not published: the Lightsynq deal terms, and a link count or switch-fabric topology for a 10⁴-module ion machine.
+
 ## Actors & economics
 
 **Who.**
@@ -100,12 +102,3 @@ Confirm by end-2027 if any group publishes above 10³ s⁻¹, or IonQ discloses 
 [301] US Department of Commerce, Bureau of Industry and Security, “Commerce Control List Additions and Revisions; Implementation of Controls on Advanced Technologies Consistent With Controls Implemented by International Partners,” *Federal Register*, vol. 89, p. 72926, Sep. 6, 2024. [Online]. Available: https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies [G]
 [589] IonQ, “IonQ Achieves Key Photonic Interconnect Milestone, Demonstrating Networked Quantum Systems Using Entanglement,” Apr. 14, 2026. [Online]. Available: https://www.ionq.com/news/ionq-achieves-key-photonic-interconnect-milestone-demonstrating-networked-quantum-systems-using-entanglement [C]
 [776] IonQ, “IonQ Completes Acquisition of Lightsynq, Accelerating Quantum Computing and Networking Roadmap,” Jun. 3, 2025. [Online]. Available: https://www.ionq.com/news/ionq-completes-acquisition-of-lightsynq-accelerating-quantum-computing-and [C]
-
-## Open verification items
-
-- IonQ's April-2026 milestone [589] discloses no rate, fidelity or distance, and its wording ("validated the generation, transmission, and detection of photons used to enable quantum entanglement") does not state that a Bell pair was measured.
-- The 2007 first remote ion–ion entanglement is attributed here to Monroe's group (Michigan) on the technology-graph record's first-demonstration date; the original paper is cited from the standard literature without a numbered source.
-- Lightsynq deal terms are undisclosed; the ">20 patents and patent applications" figure is IonQ's own count with no family names, assignees or filing years.
-- ID Quantique's acquisition close date (2025-05-06) comes from the shared fact record for SNSPD vendors and carries no numbered source.
-- No source reports an unconditional link metric (rate combined with fidelity including heralding loss), so the 94–97% figures and the 250 s⁻¹ figure cannot be combined into one number.
-- No published design states a link count or switch-fabric topology for a 10⁴-module ion machine.

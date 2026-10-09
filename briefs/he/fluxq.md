@@ -29,6 +29,8 @@ updated: 2026-09-30
 
 השגיאה השולטת: עירור תרמי סמוך לפער המינימלי.
 
+D-Wave נותנת 200 חוטי הטיה בהודעה מ-2026-01-06 ו-~300 במסמך הטכני 14-1090A-A (2026-01-23), והאחרון קשור למערך מתואר. היקף הקשר עם SkyWater נשען על תשע התאמות טקסט מלא ב-EDGAR בדוחות 10-K של D-Wave, לא על משפט מצוטט. ECCN 4A906 מנסח את הסף שלו בשגיאת שער דו-קיוביטי; אין פסיקה אם מחשלן נופל בתוכו. לא פורסם: זהות לקוח ה-QCaaS של D-Wave מרשימת Fortune-100 וזהות לקוח הקצה הביטחוני שמאחורי המחקר של Anduril/Davidson.
+
 ## ייצור, חומרים ושרשרת האספקה
 ליתוגרפיה רב-שכבתית של מוליכי-על מסוג Nb/Al, מאותה משפחה של מפעלי הטרנסמונים. דוח ה-10-K לשנת הכספים 2024 מזכיר מפעלי ייצור של צד שלישי עם מקור שני שהודגם; EDGAR מחזיר תשעה אזכורים של SkyWater בדוחות ה-10-K של D-Wave בשנים 2023–26 [G:DWAVE-FAB-10K], ו-SkyWater בבעלות IonQ מאז 2026-07-31 [G:IONQ-SKYWATER-2026] — המקור הזה יושב בתוך מתחרה. הנכס האמיתי הוא הקלט-פלט: DAC-שטף בריבוב על השבב מחזיקים את מספר הקווים מטמפרטורת החדר על O(100) עבור עשרות אלפי קיוביטים ומצמדים, לעומת O(מספר הקיוביטים) במכונות שערים — אם כי D-Wave מצטטת 200 חוטי הטיה (2026-01-06) ו-~300 (מסמך טכני, 2026-01-23), בלי יישוב הסתירה [C][G:DWAVE-FLUXDAC-LINECOUNT-CONFLICT]. הקיר ב-10⁴–10⁶ ספינים הוא תקורת שיכון המינורים (minor embedding) ומתקן הקירור של 12.5 kW, לא החיווט. ECCN 4A906 נשען על שגיאת שער דו-קיוביטי, שאינה מוגדרת כאן; במקומו חלים על המקררים סיווגי 3A904 [G][301].
 
@@ -69,6 +71,3 @@ updated: 2026-09-30
 [301] US Department of Commerce, Bureau of Industry and Security, “Commerce Control List Additions and Revisions; Implementation of Controls on Advanced Technologies Consistent With Controls Implemented by International Partners,” *Federal Register*, vol. 89, p. 72926, Sep. 6, 2024. [Online]. Available: https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies [G]
 [372] M. Abdel-Kareem, “D-Wave Announces HQ Relocation, $20M System Sale, $10M Fortune 100 Deal, and Dual-Platform Advancements,” Quantum Computing Report, Jan. 27, 2026. [Online]. Available: https://quantumcomputingreport.com/d-wave-announces-hq-relocation-20m-system-sale-and-defense-performance-breakthroughs/ [P]
 [373] D-Wave Quantum, “D-Wave Announces $10 Million, Two-Year Enterprise QCaaS Agreement with Fortune 100 Company,” Jan. 27, 2026. [Online]. Available: https://www.dwavequantum.com/company/newsroom/press-release/d-wave-announces-10-million-two-year-enterprise-qcaas-agreement-with-fortune-100-company/ [C]
-
-## פריטי אימות פתוחים
-מספר חוטי ההטיה: 200 (הודעה, 2026-01-06) מול ~300 (מסמך טכני 14-1090A-A, 2026-01-23) — לא יושב; נתון המסמך הטכני קשור למערך מתואר. ההיקף המדויק של הקשר עם SkyWater בדוחות ה-10-K של D-Wave (תשעה אזכורים, המשפטים לא חולצו). זהות לקוח ה-QCaaS מ-Fortune-100 וזהות לקוח הקצה הביטחוני שמאחורי המחקר של Anduril/Davidson. האם מחשב הרפיה נופל בגדר ECCN 4A906 כאשר הסף מנוסח בשגיאת שער דו-קיוביטי — לא נמצאה הכרעה.

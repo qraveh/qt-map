@@ -27,6 +27,8 @@ Everything rests on the chance an excited defect puts a usable photon into fibre
 
 Local gates are not the problem: Fujitsu and QuTech report NV errors below 0.1% by gate-set tomography [P][208]. Collection dominates; no defect platform has a logical qubit.
 
+The Fujitsu/QuTech "below 0.1%" NV gate error comes only from a joint press release relayed by trade press [208]. Element Six's lead as the diamond source of most NV-centre companies rests on a secondary survey [364]. Photonic Inc.'s T-centre tCNOT is post-selected [363]. Not published: a peer-reviewed paper with gate-set-tomography error bars for the Fujitsu/QuTech figure; Element Six's capacity, revenue or quantum-segment figures; a journal paper on Photonic Inc.'s T-centre work, as of 2026-09-04, and a gate fidelity for its tCNOT; and the dates of Quantum Brilliance's three deployments at Oak Ridge, Fraunhofer IAF and Pawsey [364].
+
 ## Manufacturing, materials & supply chain
 Hosts: CVD diamond with implanted defects, or defect-engineered silicon for T centres. Element Six is the main merchant supplier, selling DNV-B1 (2020-06-15) by catalogue — but that grade targets NV *ensembles* [C][361]; single-defect nodes need electronic-grade plates. Two smaller sources exist: Diatope, an Ulm University spin-out (2021) selling engineered NV diamond, and Quantum Brilliance's quantum-diamond foundry in Melbourne (2025) [P][364]. Device yield is the missing number: QuTech's SnV study [P][362] characterised 327 nanocavities at room temperature, found coupled centres in 7 of the 9 it cooled and measured two above cooperativity one, with no chip-wide fraction [D][G:QUTECH-SNV-PRX-2026]. Optical I/O does not multiplex — each node needs its own resonant laser, microwave line, detector and fast feed-forward [D][360], so burden scales per node and 10³ nodes is nobody's target. Export control does name diamond: ECCN 3C005.a has covered diamond semiconductor substrates and their ingots above 10⁴ Ω·cm since 2022-08-15, and 3C006 such substrates carrying an epitaxial layer [G:BIS-3C005-DIAMOND-2022-08]; whether a quantum-grade plate counts as a semiconductor substrate is the open question.
 
@@ -66,9 +68,3 @@ Confirm/demote (12–24 months): an unconditional inter-node gate above 90%, or 
 [362] QuTech, “Coherent coupling of diamond colour centre to a nanocavity,” Jun. 25, 2026. [Online]. Available: https://qutech.nl/2026/06/25/a-step-toward-faster-quantum-networks/ [P]
 [363] F. Afzal *et al.*, “Distributed Quantum Computing in Silicon,” [arXiv:2406.01704](https://arxiv.org/abs/2406.01704), Jun. 2024. [P]
 [364] M. U. Rehman, “Top Diamond NV-Centre Quantum Computing Companies in 2026,” The Quantum Insider, Jul. 10, 2026. [Online]. Available: https://thequantuminsider.com/2026/07/10/8-quantum-computing-companies-working-with-nv-centre-in-diamond-technology/ [P]
-
-## Open verification items
-- The Fujitsu/QuTech "below 0.1%" NV gate error is sourced only to a joint press release relayed by trade press [208]; no peer-reviewed paper with the gate-set-tomography error bars was located, so it is tagged [P] here, not [D] as in the main report.
-- Element Six publishes no capacity, revenue or quantum-segment figure; its lead — most NV-centre companies start from its diamond — rests on a secondary survey [364], and its quantum-technologies product page returned 404 on 2026-09-04.
-- Photonic Inc.'s T-centre work has no journal publication as of 2026-09-04, and its tCNOT is post-selected with no gate fidelity stated [363].
-- Quantum Brilliance's three deployment sites (Oak Ridge, Fraunhofer IAF, Pawsey) are named without dates [364].

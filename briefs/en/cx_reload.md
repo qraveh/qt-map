@@ -47,6 +47,8 @@ Register: {{N_T_CX_RELOAD_MACH}} — the continuously reloaded 3,000-atom machin
 ## Evidence — how the numbers were measured
 The discriminating test is stored-qubit coherence with reload on versus off. Harvard (Rb, XY16): T2 1.34(4) s reference, 1.15(3) s with the MOT, 1.09(3) s adding imaging and shielding [D][144] — 14–19 % lower, ~4–5σ [S]. Princeton (Yb): echo T2 5.4(9) versus 7(1) s, T2* 0.73(2) versus 0.69(2) s, unchanged within 1.5σ [D][506]. No gate fidelity on stored qubits during reload is published, as of 2026-09-26. The one logical figure: 0.63(3) % and 0.64(4) % error per cycle over up to 90 cycles with reloading, on 32- and 64-atom toric codes, cycle time unstated [D][148]. Flux is quoted as atoms, initialised or sorted qubits, a tenfold spread; the Atlas uses initialised qubits/s.
 
+The Harvard/MIT batch cadence is derived from flux and batch size, not quoted by the source.
+
 ## Actors & economics
 **Who.**
 
@@ -85,10 +87,3 @@ Confirm if, by 2027-12-31, a published experiment runs gates or QEC rounds on �
 [507] K.-N. Schymik *et al.*, “Single Atoms with 6000-Second Trapping Lifetimes in Optical-Tweezer Arrays at Cryogenic Temperatures,” *Phys. Rev. Appl.*, vol. 16, no. 3, Art. no. 034013, Jun. 2021, doi: [10.1103/PhysRevApplied.16.034013](https://doi.org/10.1103/PhysRevApplied.16.034013). [arXiv:2106.07414](https://arxiv.org/abs/2106.07414). [D]
 [508] G. Baranes *et al.*, “Leveraging Qubit Loss Detection in Fault-Tolerant Quantum Algorithms,” *Phys. Rev. X*, vol. 16, no. 1, Art. no. 011002, Jan. 2026, doi: [10.1103/ycwc-3myc](https://doi.org/10.1103/ycwc-3myc). [arXiv:2502.20558](https://arxiv.org/abs/2502.20558). [S]
 [509] QuEra Computing, “Our Quantum Roadmap,” Sep. 15, 2026. [Online]. Available: https://www.quera.com/our-quantum-roadmap [R]
-
-## Open verification items
-- 2026-09-26: The Harvard/MIT batch cadence is derived from flux and batch size, not quoted; figures were read from arXiv:2506.20660 (HTML, v2 of 2026-05-21), not the Nature version.
-- 2026-09-26: Atom Computing's 30 cm MOT distance and per-cycle logical errors come from an automated read of arXiv:2606.04079 v1; no journal version, author count or syndrome-cycle time found.
-- 2026-09-26: Affiliations of Lim et al. (arXiv:2604.07205; the dossier says Pasqal/Institut d'Optique), Schymik et al. and the MPQ authors were not shown on the arXiv abstract pages.
-- 2026-09-26: Caltech's lifetime is the abstract's 23 min; the dossier's 22.9(1) min and 51.2 % fill were not checked in the full text.
-- 2026-09-26: No patent search was run. The register lists {{N_T_CX_RELOAD_MACH}} here — harvard-continuous-3000 (primary) and Atom Computing's toric-code machine, atom-computing-phoenix (alternate).

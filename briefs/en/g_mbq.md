@@ -28,6 +28,8 @@ Fidelity is joint-measurement time over the lifetime of the basis projected, and
 
 No row is a gate: the 2026 result measured one nanowire of a multi-tetron array: no braid, no joint parity, no two-qubit operation, no entanglement, no T1/T2 [D][21].
 
+The arXiv HTML of [20] also gives an X loop of ~4 µs and a Z loop of ~9.3 ms for other tunings; the ~1000× ratio holds for both readings, the 14.5 µs / 12.4 ms point values do not. Not published: a dollar figure for DARPA's US2QC award to Microsoft, and any feed-forward latency, dot–wire coupling switching time or projected gate time for this mechanism.
+
 ## Manufacturing, materials & supply chain
 Nothing is fabricated for this mechanism alone: it consumes the InAs–Pb stack and the readout below it. The unbuilt part is control: per-tetron tunable dot–wire couplings, an rf loop per measurable parity, and a demodulator-to-bias path that must resolve inside the X window. At 10³ tetrons the line budget resembles transmon readout; the wall is latency, unquantified because no adaptive sequence has been attempted.
 
@@ -64,6 +66,3 @@ Falsifiable in 12–24 months: a first joint (X-basis) parity measurement with a
 [216] N. van Loo *et al.*, “Single-shot parity readout of a minimal Kitaev chain,” *Nature*, vol. 650, no. 8101, pp. 334–339, Feb. 2026, doi: [10.1038/s41586-025-09927-7](https://doi.org/10.1038/s41586-025-09927-7). [D]
 [421] T. Karzig *et al.*, “Scalable designs for quasiparticle-poisoning-protected topological quantum computation with Majorana zero modes,” *Phys. Rev. B*, vol. 95, no. 23, Art. no. 235305, Jun. 2017, doi: [10.1103/PhysRevB.95.235305](https://doi.org/10.1103/PhysRevB.95.235305). [arXiv:1610.05289](https://arxiv.org/abs/1610.05289). [S]
 [475] P. Bonderson, M. Freedman, and C. Nayak, “Measurement-Only Topological Quantum Computation,” *Phys. Rev. Lett.*, vol. 101, no. 1, Art. no. 010501, Jun. 2008, doi: [10.1103/PhysRevLett.101.010501](https://doi.org/10.1103/PhysRevLett.101.010501). [arXiv:0802.0279](https://arxiv.org/abs/0802.0279). [S]
-
-## Open verification items
-No dollar figure is public for DARPA's US2QC award to Microsoft. The arXiv HTML of [20] also shows X loop ~4 µs and Z loop ~9.3 ms for other tunings; the fact-checked 14.5 µs / 12.4 ms are used here and the ~1000× ratio is robust across both readings, the point values are not. No feed-forward latency, dot–wire coupling switching time or projected gate time has been published for this mechanism.

@@ -41,6 +41,8 @@ This node is the alternate light delivery of two trapped-ion architectures, "Tra
 ## Evidence — how the numbers were measured
 The 2020 two-qubit figure is the fidelity of the entangled state the waveguide-delivered gate prepares [D][583], not a benchmarked gate error; a paired comparison with free-space delivery on one trap is possible, but none is published. No vendor reports the photonic layer's crosstalk, stray-light heating or phase-noise contribution; Helios's numbers are system-level and free-space [D][97], and Sandia's August 2026 announcement carries none [G][501]. No independent replication of the 2020 ETH result was found. Reading caveat: AQT's "QV record" of 32,768 is 2¹⁵ against 2²⁵ for Quantinuum's H2 — a record within the rack-mounted class, with no gate time or fidelity disclosed [C][128][G:AQT-LYNX-QV-CONTEXT-2026].
 
+No ECCN names ion traps or ion-control photonics. The Ba⁺-versus-Yb⁺ wavelength argument is an engineering inference from the sourced species and supply-chain facts, not a quoted claim. Not published: which Quantinuum system will first carry integrated delivery — Sandia's release names only "future platforms" and the Helios paper describes free-space beams; a dated patent family specific to integrated photonics for ion control; and whether, and on what timeline, SkyWater will fabricate trapped-ion photonics.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What they do | Evidence |
@@ -86,6 +88,3 @@ Milestones (12–24 months): Sol ships with integrated delivery in its zones and
 [584] IonQ, “IonQ and Sandia National Laboratories Sign MOU to Accelerate Quantum Co-Design for National Security Applications,” Aug. 4, 2026. [Online]. Available: https://www.ionq.com/news/ionq-and-sandia-national-laboratories-sign-mou-to-accelerate-quantum-co-design-for-national-security-applications [C]
 [882] LioniX International, “A photonic integrated ion trap for scalable quantum computing,” Nov. 20, 2020. [Online]. Available: https://www.lionix-international.com/about-us/blog/a-photonic-integrated-ion-trap-for-scalable-quantum-computing/ [C]
 [883] R. J. Niffenegger *et al.*, “Integrated multi-wavelength control of an ion qubit,” *Nature*, vol. 586, no. 7830, pp. 538–542, Oct. 2020, doi: [10.1038/s41586-020-2811-x](https://doi.org/10.1038/s41586-020-2811-x). [arXiv:2001.05052](https://arxiv.org/abs/2001.05052). [D]
-
-## Open verification items
-No fidelity, loss or crosstalk figure specific to Sandia's MESA integrated-photonics process was found; the August 2026 Sandia announcement gives none. Which Quantinuum system will first carry integrated delivery is unstated: Sandia's release names only "future platforms", and the Helios paper describes free-space beams. No dated patent family specific to integrated photonics for ion control was found, and no ECCN names ion traps or ion-control photonics. Whether SkyWater will fabricate trapped-ion photonics, and on what timeline, is unstated. The Ba⁺-versus-Yb⁺ wavelength argument is engineering inference from the sourced species and supply-chain facts, not a quoted claim.

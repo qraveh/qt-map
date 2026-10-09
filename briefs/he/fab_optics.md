@@ -41,6 +41,8 @@ updated: 2026-09-30
 ## ראיות — כיצד נמדדו המספרים
 ההספק והמסה של Pasqal נושאים תג של טענת חברה, לא תג של מדידה [C][438]. ההכנסות ומספר העובדים של TOPTICA מאוששים בדף שלה עצמה [C][815]; "ספק דומיננטי" נשען על מקור משני אחד [P][322].
 
+Special Optics, יצרנית העדשה האובייקטיבית 0.65-NA של מערכת 448 האטומים, היא ספקית העדשות היחידה הנזכרת בספרות שפורסמה; לאף מערכת יונים לא נזכר ספק. רק שתי ספקיות AOD מופיעות בכל הספרות שפורסמה, ואין בכך כדי לקבוע שקיימות רק שתיים.
+
 ## שחקנים וכלכלה
 **מי.**
 
@@ -90,6 +92,3 @@ updated: 2026-09-30
 [502] M. Abdel-Kareem, “Universal Quantum and Atlas Copco Partner to Industrialize Vacuum Systems for Scalable Quantum Computers,” Quantum Computing Report, Dec. 18, 2025. [Online]. Available: https://quantumcomputingreport.com/universal-quantum-and-atlas-copco-partner-to-industrialize-vacuum-systems-for-scalable-quantum-computers/ [P]
 [504] Gooch & Housego (G&H), “G&H Acousto-Optic Deflectors Referenced in Nature Papers Demonstrating 3,000 & 6,100 Qubit Quantum Systems,” G&H, Mar. 2026. [Online]. Available: https://gandh.com/news-and-resources/g-and-h-acousto-optic-deflectors-in-nature-papers [P]
 [815] TOPTICA Photonics, “About the TOPTICA Group.” [Online]. Available: https://www.toptica.com/company [C]
-
-## פריטי אימות פתוחים
-את תקרת הרענון של ~10 MHz למאפנני אור מרחביים (SLM) ולמסיטים (AOD) מעל ~10⁴ קיוביטים, המצוטטת לעתים, אי אפשר לייחס להתקן או למדידה, ולכן אין בה שימוש כאן. מעמדה של TOPTICA כ"ספק דומיננטי" נשען על מקור משני אחד [322], אף שהכנסותיה ומספר עובדיה מאושרים כעת בדף של החברה עצמה [815]. Special Optics — האובייקטיב בצמצם נומרי 0.65 של מערכת 448 האטומים — הוא ספק האובייקטיבים היחיד הנקוב בשמו בספרות שבמקורות; למערכות יונים לא נמצא ספק. רשימת ספקי ה-AOD מאומתת בדרך השלילה — רק שני ספקים מופיעים בספרות שבמקורות, ואין פירוש הדבר שקיימים רק שניים.

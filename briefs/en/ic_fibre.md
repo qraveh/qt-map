@@ -28,6 +28,8 @@ Attenuation is not the binding term at machine scale. Forty-two metres at 0.2 dB
 
 The 2026 benchmark claim does not survive comparison: PsiQuantum's 52 mdB is ~39% lower at the same interface a year earlier [D][169][C][172]. Fidelity is past 99.7%; the missing number is throughput.
 
+PsiQuantum's 99.72% chip-to-chip Bell fidelity has no independent replication. The ~206 ns per 42 m latency and the ~104 mdB two-interface cost are derived from published figures, not measured.
+
 ## Manufacturing, materials & supply chain
 No new fabrication: fibre, connectors and edge-coupled arrays are commodity telecom, with Corning fibre arrays and DISCO singulation behind Xanadu's coupling figure [C][172]. The scaling variable is attachment count: every module boundary is two attachments, each a yield event and a 52 mdB loss event, so at 10³ modules packaging throughput sets the build rate; at 10⁴ bundle volume and timing calibration bind; nothing addresses 10⁶. I/O burden sits upstream, in the source and the fusion measurement. The machine falls under BIS ECCN 4A906 only if its qubit count and C-NOT error land in one of the rule's bands, from 34–99 qubits at ≤ 10⁻⁴ to any error from 2,000 qubits [G:BIS-3A901A-CRYOCMOS].
 
@@ -66,6 +68,3 @@ Confirm by 2028: a vendor publishing an inter-module rate with its fidelity; dem
 [173] H. A. Rad *et al.*, “Scaling and networking a modular photonic quantum computer,” *Nature*, vol. 638, no. 8052, pp. 912–919, Jan. 2025, doi: [10.1038/s41586-024-08406-9](https://doi.org/10.1038/s41586-024-08406-9). [D]
 [791] J. Du *et al.*, “Entanglement distribution over 155 km metropolitan fiber using a CMOS-compatible silicon chip,” [arXiv:2409.17558](https://arxiv.org/abs/2409.17558), Sep. 2024. [P]
 [792] M. U. Rehman, “Quandela Deploys Photonic Quantum Computer Integrated with HPC System,” The Quantum Insider, Apr. 14, 2026. [Online]. Available: https://thequantuminsider.com/2026/04/14/quandela-photonic-quantum-hpc/ [C]
-
-## Open verification items
-arXiv:2409.17558 is by J. Du, X. Zhang, G. F. R. Chen, H. Gao, D. T. H. Tan and A. Ling (v1 2024-09-26, revised 2026-03-16) [791]; their affiliations were not confirmed; the deployment names NUS, SUTD and NTU links in Singapore. No photonic computing vendor publishes an inter-module entanglement-distribution rate, so the field's throughput ceiling is unverified. PsiQuantum's 99.72% chip-to-chip Bell fidelity has no independent replication. The ~206 ns per 42 m latency and the ~104 mdB two-interface cost are derived here from published figures, not measured.

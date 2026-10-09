@@ -45,6 +45,8 @@ AOM רב-ערוצי זקוק לערוץ RF אחד לכל יון במרווח ק�
 ## ראיות — כיצד נמדדו המספרים
 ההפרעה ההדדית מצוטטת כיחס ראבי, כיחס עוצמות (ε²) או כשגיאת היון הצופה — Duke מכנה יחס ראבי "הפרעה הדדית בעוצמה" [D][587] — ונמדדת בהזזת יון אחד דרך האלומה [D][253], ביוני דגל [D][254] או בבחינות ביצועים בו-זמניים [D][109]. ה-DRB של Forte על 435 זוגות אינו מוצא תלות מובהקת במרחק בין היונים, אך מוצא שגיאות מובהקות שמחוץ למודל [D][100]. מבין דפי הספקים שנפתחו, רק הדף של AQT מציין הפרעה הדדית — לשכן <1.8×10⁻², נכון ל-2026-09-26 [C][382].
 
+לא פורסם: סוג היון, זמן השער ושיטת המיעון של Tempo, הארכיטקטורה של Aria עצמה והבקרה של Qudoor AbaQ; וכל נתון כמותי על הספק RF לטון, אינטרמודולציה רב-טונית או סחיפת הכיוון התרמית של AOD במערכות יונים.
+
 ## שחקנים וכלכלה
 **מי.**
 
@@ -96,11 +98,3 @@ AOM רב-ערוצי זקוק לערוץ RF אחד לכל יון במרווח ק�
 [587] J. Yu *et al.*, “Design and Characterization of Compact Acousto-Optic-Deflector Individual Addressing System for Trapped-Ion Quantum Computing,” [arXiv:2601.01647](https://arxiv.org/abs/2601.01647), Jan. 2026. [D]
 [588] R. Paschotta, “Acousto-optic Deflectors,” RP Photonics Encyclopedia. [Online]. Available: https://www.rp-photonics.com/acousto_optic_deflectors.html [G]
 [589] IonQ, “IonQ Achieves Key Photonic Interconnect Milestone, Demonstrating Networked Quantum Systems Using Entanglement,” Apr. 14, 2026. [Online]. Available: https://www.ionq.com/news/ionq-achieves-key-photonic-interconnect-milestone-demonstrating-networked-quantum-systems-using-entanglement [C]
-
-## פריטי אימות פתוחים
-- Fang ועמיתיו, PRL 129, 240504 (2022), arXiv:2206.02703, על דיכוי הפרעה הדדית בשערים ממוענים פרטנית: לא נקרא, Crossref ו-PubMed הגבילו את קצב הבקשות (2026-09-26); לא צוטט.
-- מיעון AOD דו-צדדי של USTC (arXiv:2306.01307): הפרעה הדדית של ראבי לשכן 1.19(5)×10⁻³ בתמצית הנוכחית, אך 6.32×10⁻⁴ בגרסת ה-HTML מ-2023; רשימת המחברים שפורסמה לא אושרה; לא צוטט (2026-09-26).
-- המין, זמן השער ושיטת המיעון של Tempo, הארכיטקטורה של Aria עצמה והבקרה של Qudoor AbaQ אינם נחשפים במקורות שנפתחו (2026-09-26); תאי המרשם האלה הם הסקות.
-- פרופילי המרשם מציינים "קיוביט על-דק" עבור IBEX Q1 של AQT ועבור Innsbruck, בעוד שהמאמרים המצוטטים מתארים קיוביטים אופטיים של ⁴⁰Ca⁺ ב-729 nm; הדף של IBEX Q1 מציין 2,000 שערים למעגל, לעומת 1,000 במרשם (2026-09-26).
-- לא נפתח מקור כמותי להספק RF לכל תדר, לאינטרמודולציה רב-תדרית או לסחיפת כיוון תרמית של AOD במערכות יונים (2026-09-26).
-- תאריך הפרסום ב-Nature של Postler ועמיתיו לא אושר (Crossref הגביל את קצב הבקשות, 2026-09-26); הרשומה נושאת את השנה בלבד.

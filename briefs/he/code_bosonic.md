@@ -39,6 +39,8 @@ updated: 2026-09-30
 ## ראיות — כיצד נמדדו המספרים
 הטענה "100–1000× פחות קיוביטים" היא הערכת משאבים, לא מדידה, ושני המאמרים מציינים את ההנחה בפשטות: היפוך פאזה של ~0.1% [S][95], [96]; החומרה נמצאת ב-9.6×10⁻² לכל CX [D][80]. אף פרוטוקול אינו לוכד שימור הטיה ברמת השער תחת עומס, משום שהשער אינו קיים; ל-Ocelot אין שחזור עצמאי, והיא מערבבת נקודות פעולה בהשוואת המרחקים שלה. Helium נמכרת אך אינה מפרסמת נתוני ביצועים לוגיים, ומפת הדרכים מצטטת זמן היפוך ביט *שיא* של 252 דקות מספטמבר 2025 לעומת ממוצע של 44 דקות לאותה ריצה [C][412].
 
+אף קוד LDPC-חתול ואף GKP בשילוב qLDPC לא הורצו על חומרה. לא פורסם: ספירה מתוארכת של משפחות פטנטים ייעודית לקודים בוזוניים, ומימון AWS לתוכנית Ocelot.
+
 ## שחקנים וכלכלה
 **מי.**
 | ארגון | תפקיד | מדינה | מה בדיוק הם עושים | ראיות |
@@ -76,6 +78,3 @@ updated: 2026-09-30
 [96] D. Ruiz, J. Guillaud, A. Leverrier, M. Mirrahimi, and C. Vuillot, “LDPC-cat codes for low-overhead quantum computing in 2D,” *Nat. Commun.*, vol. 16, Art. no. 1040, 2025, doi: [10.1038/s41467-025-56298-8](https://doi.org/10.1038/s41467-025-56298-8). [arXiv:2401.09541](https://arxiv.org/abs/2401.09541). [S]
 [301] US Department of Commerce, Bureau of Industry and Security, “Commerce Control List Additions and Revisions; Implementation of Controls on Advanced Technologies Consistent With Controls Implemented by International Partners,” *Federal Register*, vol. 89, p. 72926, Sep. 6, 2024. [Online]. Available: https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies [G]
 [412] Alice & Bob, “Roadmap,” Jun. 23, 2026. [Online]. Available: https://alice-bob.com/roadmap/ [C]
-
-## פריטי אימות פתוחים
-לא קיים שחזור עצמאי של תוצאת Ocelot. נקודות ה-d=3 וה-d=5 של Ocelot נלקחו במספרי פוטונים שונים, ולכן איש לא פרסם סריקת מרחק בנקודת פעולה קבועה. אף קוד LDPC-חתול או GKP עם qLDPC לא הורץ בחומרה. ל-Helium של Alice & Bob אין מדידת שגיאה לוגית שפורסמה, ומפת הדרכים שלה מצטטת זמן היפוך ביט שיא ולא ממוצע. לא נמצאה ספירה מתוארכת של משפחות פטנטים הייחודיות לקוד. AWS אינה חושפת קו מימון לתוכנית Ocelot.

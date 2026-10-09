@@ -358,9 +358,6 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .lg.off{color:var(--crit)}
 .lg.emp{color:var(--muted)}
 .lg.ed{width:22px;height:0;border-top:2px solid var(--ink)}
-.lg.ed.rep{border-top-style:dashed;border-color:var(--ink2)}
-.lg.ed.soft{border-top-style:dotted;border-color:var(--ink)}
-.lg.ed.con{border-top-style:dotted;border-color:var(--crit)}
 .gl.try a{color:var(--accent)}
 .insp h3{margin:0 0 2px;font-size:17px;line-height:1.25;text-wrap:balance}
 .insp .meta{color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:11.5px;margin-bottom:10px}
@@ -384,42 +381,6 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:12.5px;color:var(--ink2);padding:10px 12px;border:1px solid var(--rule);border-top:0;background:var(--surface);border-radius:0 0 10px 10px;margin-top:-1px}
 .legend .k{display:inline-flex;align-items:center;gap:6px}
 .legend svg{width:26px;height:16px}
-/* parallel coordinates */
-.pcwrap{margin-top:14px;border:1px solid var(--rule);border-radius:10px;background:var(--surface);padding:10px 12px 4px}
-.pcwrap h3{margin:0 0 4px;font-size:15px}
-/* the strip's header: title with its fold, and the toolbar for the map-and-strip modes (24 Sep 2026) */
-.pchead{display:flex;align-items:flex-start;justify-content:space-between;gap:8px 12px;flex-wrap:wrap}
-.pchead h3{flex:1 1 auto;min-width:0}
-.pctools{flex:0 0 auto;box-shadow:none;background:var(--surface2)}
-.pclead>summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--ink2);padding:2px 0;margin:0 0 4px}
-.pclead>summary::-webkit-details-marker{display:none}
-.pclead>summary::after{content:"▸";color:var(--muted);font-size:11px}
-.pclead[open]>summary::after{content:"▾"}
-/* map and strip together (fit height, full screen): the map's footer legend, the caption fold, the strip's title and its
-   header legend give way; the strip is capped so the map keeps most of the height; no frames between the two */
-#mapbody.both .legend,#mapbody.both .maplead,#mapbody.both .pchead h3,#mapbody.both #pclead{display:none}
-#mapbody.both .pchead{justify-content:flex-end;margin:0}
-#mapbody.both .pcwrap{margin-top:4px;padding:2px 8px 0;border-color:transparent;background:transparent}
-#mapbody.both #pc svg{max-height:34vh;max-height:34dvh;width:auto;max-width:100%;margin:0 auto}
-#mapbody.both .mapgrid{border-radius:0 0 4px 4px}
-#mapbody.both.fs .mapgrid,#mapbody.both.fs .mapbar{border-color:transparent}
-#mapbody.both .secbody[data-sec="pcwrap"][hidden]{display:block}
-.pcwrap p{margin:0 0 6px;color:var(--ink2);font-size:13px}
-.pcwrap svg{width:100%;height:auto;display:block;font-family:"Golos Text",system-ui,sans-serif}
-.pc-axis line{stroke:var(--rule)}
-.pc-axis text{fill:var(--muted);font-size:10.5px;paint-order:stroke;stroke:var(--surface);stroke-width:3px;stroke-linejoin:round}
-.pc-axis text.t{fill:var(--ink2);font-weight:600;font-size:11.5px;cursor:pointer}
-.pc-axis text.t:hover,.pc-axis text.tick:hover{fill:var(--accent)}
-.pc-axis text.t.active{fill:var(--accent);text-decoration:underline;text-underline-offset:3px}
-.pc-axis text.tick{cursor:pointer}
-.pc-axis text.tick.pressed{fill:var(--accent);font-weight:700}
-.pc-axis text:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
-.pcline{fill:none;stroke-width:1.1;opacity:.45}
-.pcline.hi,.pcline.hover{stroke-width:2.6;opacity:1}
-.pcline.dim{opacity:.06}
-.pcline.dim.hover{opacity:.7}
-.pcline.altuse{stroke-dasharray:5 3}
-.station.hover rect.box{stroke-width:2.5}
 /* ---------- technology briefs ---------- */
 [hidden]{display:none !important}
 .insp .briefbtn{display:inline-flex;align-items:center;gap:6px;margin:10px 0 2px;padding:5px 12px;border:1px solid var(--accent);border-radius:999px;background:var(--surface);color:var(--accent);font:inherit;font-size:13px;font-weight:600;cursor:pointer}
@@ -647,7 +608,7 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
   .tip,.tip.wide{max-width:min(320px,86vw)}
 }
 
-@media (prefers-reduced-motion:no-preference){.station rect.box,.pathline,.altstub,.pcline{transition:opacity .25s ease}}
+@media (prefers-reduced-motion:no-preference){.station rect.box,.pathline,.altstub{transition:opacity .25s ease}}
 @media print{.mapbar,.controls,.mobilebar,.tocdrawer,.tocbackdrop,.insp{display:none}.mapwrap{max-height:none;overflow:visible}.mapwrap svg{max-width:100%!important;height:auto!important}#app{max-width:none}.mapwrap,.tbl{break-inside:avoid}}
 
 /* map zoom — a translucent window in the top-right corner of the map bar (desktop); the paths row keeps a margin
@@ -827,7 +788,7 @@ RTL_CSS = r"""
 /* Hebrew type: Heebo (Unbounded, Golos Text and JetBrains Mono carry no Hebrew glyphs); the Latin display faces keep Latin text */
 html:lang(he) body{font-family:"Heebo","Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
 html:lang(he) h1.title,html:lang(he) .btitle,html:lang(he) .rectitle,html:lang(he) .prose h2 .num,html:lang(he) .briefs h2 .num,html:lang(he) .mapsec h2 .num{font-family:"Unbounded","Heebo",system-ui,sans-serif}
-html:lang(he) .mapwrap svg,html:lang(he) .pcwrap svg,html:lang(he) .fig81 .lb,html:lang(he) .fig81 .lg{font-family:"Heebo","Golos Text",system-ui,sans-serif}
+html:lang(he) .mapwrap svg,html:lang(he) .fig81 .lb,html:lang(he) .fig81 .lg{font-family:"Heebo","Golos Text",system-ui,sans-serif}
 html:lang(he) .eyebrow,html:lang(he) .mapbar .lbl,html:lang(he) .tk,html:lang(he) .insp .space h4,html:lang(he) .insp .grip,html:lang(he) .insp ul.useby li.fam{font-family:"JetBrains Mono","Heebo",monospace;letter-spacing:0}
 html:lang(he) .prose p,html:lang(he) .bbody p,html:lang(he) .prose ol.es>li{hyphens:manual;-webkit-hyphens:manual}   /* no hyphenation dictionary for Hebrew */
 [dir="rtl"] .seg button,[dir="rtl"] .floatlang button{font-family:"Heebo","Golos Text",system-ui,sans-serif}
@@ -846,7 +807,7 @@ html:lang(he) .prose p,html:lang(he) .bbody p,html:lang(he) .prose ol.es>li{hyph
 .insp dl .lensrow:dir(rtl){box-shadow:inset -3px 0 0 var(--accent)}
 .foldbtn[aria-expanded="false"]:dir(rtl)::before{transform:rotate(90deg)}
 details.tblfold:not([open])>summary:dir(rtl)::before{content:"◂"}
-.maplead details:not([open])>summary:dir(rtl)::after,.pclead:not([open])>summary:dir(rtl)::after,.mapbar details.glyphs:not([open])>summary:dir(rtl)::after{content:"◂"}
+.maplead details:not([open])>summary:dir(rtl)::after,.mapbar details.glyphs:not([open])>summary:dir(rtl)::after{content:"◂"}
 @media (max-width:1024px){ .mapbar .chipsrow::after{background:linear-gradient(to left,var(--surface),var(--surface-t0))} .mapbar .chipsrow:dir(rtl)::after{background:linear-gradient(to right,var(--surface),var(--surface-t0))} }
 """
 CSS = CSS.replace('@@LANG_RULES@@', _LANG_RULES) + RTL_CSS

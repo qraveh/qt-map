@@ -41,6 +41,8 @@ OPO = מתנד פרמטרי אופטי; (PP)KTP = אשלגן טיטניל פוס
 ## ראיות — כיצד נמדדו המספרים
 תאים המסומנים ✅: {{N_T_FAB_BULK_VERIFIED}}. שניים נשענים על מאמרי ארכיטקטורה: פרק ה-Methods של Borealis (קווי השהיה בסיב, מפצלי אלומה מבוססי EOM, צימוד לסיב מעל 97%) [D][270], ו-Extended Data Fig. 1 של Jiuzhang 4.0 (MZI לא מאוזן במרחב חופשי, על מראה המותקנת על PZT) — המאמר שלה מאשר בטקסט לולאות השהיה בסיב, אך אומר רק שהאינטרפרומטרים של 16 אופנים "כוללים יכולת כוונון תרמי" [D][175]; התא של PT-1 נשען על דף המוצר של ORCA: "מותקנת במסד, פועלת בטמפרטורת החדר ובנויה מרכיבי סיב אופטי" [C][G:ORCA-PT1-2023]. PT-2 נשארת 🔎: הדף שלה אינו מציג ארכיטקטורה [C][465], והקביעה שמדובר בסיב נשענת על דף הטכנולוגיה של ORCA [C][464]. גם Jiuzhang 1.0–3.0 נשארות 🔎: התאים שלהן הוסקו מן השושלת, ולא נקראו מתוך איור. נכון ל-2026-09-26 אף דוגם לא פרסם שיעור תקינות של הרכבה, התפלגות אובדן לרכיב או מרווח בין יישורים חוזרים.
 
+ה-99.8% של Jiuzhang 4.0 עשוי להתייחס ל-MZI סינון יחיד או למפל כולו; גרסה v3 ב-arXiv אינה מציינת. שום סעיף בכלל האמריקאי מ-2024-09-06 אינו נוקב ב-SNSPD, ב-TES או במקורות סחיטה. לא פורסם: ההעברה ללולאה של Borealis — הטקסט שלה ב-Nature נותן רק ~33% נטו, ~20% לערמת המסננים, ~15% למפריד וצימוד לסיב מעל 97% — ולכן אין נתון ב-dB ללולאה; יצרן ה-SNSPD של Jiuzhang 4.0; והשלמת רכישת GXC על ידי ORCA, או מוצר PT כלשהו המבוסס על טכנולוגיית GXC.
+
 ## שחקנים וכלכלה
 **מי.**
 
@@ -84,10 +86,3 @@ OPO = מתנד פרמטרי אופטי; (PP)KTP = אשלגן טיטניל פוס
 [633] IonQ, “IonQ Completes Acquisition of ID Quantique, Cementing Leadership in Quantum Networking and Secure Communications,” May 6, 2025. [Online]. Available: https://investors.ionq.com/news/news-details/2025/IonQ-Completes-Acquisition-of-ID-Quantique-Cementing-Leadership-in-Quantum-Networking-and-Secure-Communications/default.aspx [C]
 [816] Corning Incorporated, “Corning® SMF-28® Ultra Optical Fiber — Product Information (PI-1424-AEN),” Jul. 2025. [Online]. Available: https://www.corning.com/media/worldwide/coc/documents/Fiber/product-information-sheets/PI-1424-AEN.pdf [G]
 [817] Tech.eu, “ORCA Computing acquires GXC's integrated photonics division,” Jan. 30, 2024. [Online]. Available: https://tech.eu/2024/01/30/orca-computing-acquires-gxcs-integrated-photonics-division/ [P]
-
-## פריטי אימות פתוחים
-- העבירות של כל לולאה ב-Borealis: אינה מצוינת בטקסט של Nature שנבדק ב-2026-09-26 (רק ~33% נטו, ~20% בערימת המסננים, ~15% במפריד הריבוב, צימוד לסיב מעל 97%), ולכן לא ניתן נתון של dB ללולאה.
-- Jiuzhang 4.0 (הגרסה v3 ב-arXiv, נבדקה ב-2026-09-26): הצורה הפיזית של האינטרפרומטרים של 16 אופנים ויצרן ה-SNSPD אינם מצוינים; לא ברור אם ה-99.8% הם לכל MZI במסנן או למפל כולו.
-- פיקוח על יצוא: לא נמצאה רשומה הנוקבת ב-SNSPD, ב-TES או במקורות סחיטה, לא בתקנה האמריקאית מ-2024-09-06 ולא בחיפוש (2026-09-26); רשומות הגלאים של EAR/Wassenaar (6A002) והרשימות הלאומיות לא נבדקו, וגם לא נבדק אם מקרר לגלאי TES עומד בסף הקירור של 3A904 (≥600 µW ב-≤0.1 K).
-- PTB כמקור של גלאי TES לא אומת (2026-09-26); רק תפקידו של NIST מאושר.
-- ORCA–GXC: לא נמצאו השלמת הרכישה או מוצר PT כלשהו המשתמש בטכנולוגיה של GXC (2026-09-26).

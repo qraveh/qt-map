@@ -63,6 +63,8 @@ Conflict. A "98.9% median (PsiQuantum)" figure is quoted elsewhere; the Omega pa
 
 Silicon avalanche photodiodes, still used instead of superconducting nanowire or transition-edge detectors to characterise sources, emit breakdown flashes that leak between the two detectors of a Hanbury Brown–Twiss set-up (a beam splitter feeding two detectors whose coincidences measure the multiphoton fraction) and raise the zero-delay coincidence peak in the near-infrared; a second-order correlation g⁽²⁾(0) measured this way is an upper bound on the multiphoton fraction [P][887].
 
+Cold-head supplier concentration (Sumitomo Heavy Industries, Cryomech) and Scontel's unavailability to Western programmes after 2022 are analyst judgments, not sourced facts. The abstract of Korzh et al. gives the jitter figures but not that device's operating temperature or detection efficiency. Not published: the ID Quantique acquisition consideration, and SNSPD system prices or vendor revenues from Single Quantum, Photon Spot, Quantum Opus or Scontel, so unit economics cannot be checked.
+
 ## Actors & economics
 
 **Who.**
@@ -135,12 +137,3 @@ Open questions. (1) What is the efficiency–jitter joint distribution across a 
 [633] IonQ, “IonQ Completes Acquisition of ID Quantique, Cementing Leadership in Quantum Networking and Secure Communications,” May 6, 2025. [Online]. Available: https://investors.ionq.com/news/news-details/2025/IonQ-Completes-Acquisition-of-ID-Quantique-Cementing-Leadership-in-Quantum-Networking-and-Secure-Communications/default.aspx [P]
 [634] SCONTEL, “SCONTEL: SSPD SNSPD HEB CRYOGENICS – DETECT EVERYTHING YOU WANT.” [Online]. Available: https://www.scontel.ru/ [C]
 [887] S. Luo *et al.*, “100 million photons per second from a single organic molecule,” [arXiv:2609.29736](https://arxiv.org/abs/2609.29736), Sep. 2026. [P]
-
-## Open verification items
-
-- TES 95% efficiency (Lita/Miller/Nam, Optics Express 2008) and the Gol'tsman 2001 and Irwin 1995 lineage citations are cited from the standard literature without a numbered source.
-- Korzh et al. jitter figures came from the arXiv abstract; that device's operating temperature and detection efficiency were not stated there.
-- ID Quantique acquisition consideration was not disclosed in the releases reached; the IonQ newsroom URL used elsewhere in the report returned 404, so the investor-relations URL is cited.
-- No SNSPD system prices or vendor revenues are published by Single Quantum, Photon Spot, Quantum Opus or Scontel; unit economics unverifiable.
-- Cold-head supplier concentration (Sumitomo Heavy Industries, Cryomech) and Scontel's post-2022 unavailability to Western programmes are analyst judgments, not sourced facts.
-- Scontel's per-product specifications (efficiency, jitter, dark counts, channel counts) are in a catalogue PDF that was not retrieved.

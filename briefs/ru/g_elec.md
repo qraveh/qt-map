@@ -62,6 +62,8 @@ updated: 2026-09-30
 
 Ключевые 8.4(7)×10⁻⁵ получены из рандомизированного бенчмаркинга с учётом утечки (leakage) из подпространства при доплеровской температуре, а не из томографии и не из чередующегося (interleaved) RB относительно независимого эталона [D][102]. Двухкубитный RB твёрлингом сводит когерентные ошибки к эффективной скорости деполяризации, занижая когерентный остаток, и ничего не говорит о перекрёстных помехах на ионы-наблюдатели — а именно этот вклад решит вопрос производительности на масштабе. Ни одна независимая группа не воспроизвела электронный вентиль выше 99.9%: результаты Oxford 2016 г. [D][445] и NIST 2011 г. [D][444] — единственные зафиксированные ближнепольные СВЧ-вентили вне Oxford Ionics, а ни eleQtron, ни Universal Quantum не опубликовали сопоставимой точности по состоянию на 3 сентября 2026 г. Корпоративная формулировка «точность двухкубитного вентиля 99.99%» [C][446] округляет 1 − 8.4(7)×10⁻⁵ из препринта — непротиворечиво, но без доверительного интервала и без указания ширины.
 
+Длительность вентиля 225.8 µs для рекорда 2025 г. не указана в аннотации arXiv:2510.17286. Не опубликовано: патентное семейство или число патентов по Electronic Qubit Control компании Oxford Ionics / IonQ; какая-либо поставка или веха по контракту Universal Quantum с DLR на €67 M (четырёхлетний срок с 2022-11) на 2026-09-03; сорт иона, число кубитов, точность и время вентиля у eleQtron, чья MAGIC описана только качественно; сумма награды Innovate UK / DSIT по программе Quantum Missions Pilot для Oxford Ionics; и какие-либо цифры по перекрёстным помехам, скорости нагрева или тепловыделению на чипе для ловушки с электронными вентилями.
+
 ## Участники и экономика
 
 **Кто.**
@@ -126,12 +128,3 @@ updated: 2026-09-30
 [446] IonQ, “IonQ Achieves Landmark Result, Setting New World Record in Quantum Computing Performance,” Oct. 21, 2025. [Online]. Available: https://www.ionq.com/news/ionq-achieves-landmark-result-setting-new-world-record-in-quantum-computing [C]
 [447] D. Finke, “eleQtron Secures €57 Million ($61.5M USD) Series A to Scale MAGIC Trapped-Ion Platform,” Quantum Computing Report, May 5, 2026. [Online]. Available: https://quantumcomputingreport.com/eleqtron-secures-e57-million-61-5m-usd-series-a-to-scale-ion-trap-systems/ [P]
 [448] Oxford Ionics, “Oxford Ionics selected for Quantum Missions Pilot to upgrade NQCC testbed with advanced 2D ion traps,” Mar. 11, 2025. [Online]. Available: https://www.oxionics.com/announcements/oxford-ionics-selected-for-quantum-missions-pilot-to-upgrade-nqcc-testbed-with-advanced-2d-ion-traps/ [C]
-
-## Открытые пункты верификации
-- Длительность вентиля для рекорда 2025 г. (225.8 µs) не указана в аннотации arXiv:2510.17286 и в доступном тексте не подтверждается; не верифицировано.
-- Сорт иона и число зон ловушки для arXiv:2510.17286 в доступном тексте не указаны (предшественник 2024 г. использует семизонный чип).
-- Нет ни номера патентного семейства, ни полученного из базы данных числа патентов по Electronic Qubit Control компании Oxford Ionics / IonQ: поиск по правообладателю на patents.google.com закрыт robots.txt.
-- По контракту Universal Quantum с DLR на €67 M (четырёхлетний срок с 2022-11) на 2026-09-03 нет опубликованных подтверждений поставки или прохождения вех.
-- eleQtron не публикует ни сорта иона, ни числа кубитов, ни точности, ни времени вентиля; MAGIC описан только качественно.
-- Сумма награды Innovate UK / DSIT по программе Quantum Missions Pilot для Oxford Ionics не раскрыта.
-- Ни для одного чипа ловушки с электронными вентилями не опубликовано цифр по перекрёстным помехам, скорости нагрева или тепловыделению на чипе.

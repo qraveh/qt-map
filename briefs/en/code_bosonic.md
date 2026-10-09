@@ -39,6 +39,8 @@ The code requires a biased cat or a GKP inner qubit; as the terminal outer layer
 ## Evidence — how the numbers were measured
 The "100–1000× fewer qubits" claim is a resource estimate, not a measurement, and both papers state the assumption plainly: ~0.1% phase-flip [S][95], [96]; hardware is at 9.6×10⁻² per CX [D][80]. No protocol captures gate-level bias preservation under load, because the gate does not exist; Ocelot has no independent replication and mixes operating points across its distance comparison. Helium is sold but publishes no logical-performance data, and the roadmap quotes a September 2025 *peak* bit-flip time of 252 minutes against a 44-minute mean for the same run [C][412].
 
+No LDPC-cat or GKP-plus-qLDPC code has run on hardware. Not published: a dated patent-family count specific to bosonic codes, and AWS's funding for the Ocelot programme.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What exactly they do | Evidence |
@@ -76,6 +78,3 @@ Confirm or demote within 12–24 months: a demonstrated bias-preserving cat–ca
 [96] D. Ruiz, J. Guillaud, A. Leverrier, M. Mirrahimi, and C. Vuillot, “LDPC-cat codes for low-overhead quantum computing in 2D,” *Nat. Commun.*, vol. 16, Art. no. 1040, 2025, doi: [10.1038/s41467-025-56298-8](https://doi.org/10.1038/s41467-025-56298-8). [arXiv:2401.09541](https://arxiv.org/abs/2401.09541). [S]
 [301] US Department of Commerce, Bureau of Industry and Security, “Commerce Control List Additions and Revisions; Implementation of Controls on Advanced Technologies Consistent With Controls Implemented by International Partners,” *Federal Register*, vol. 89, p. 72926, Sep. 6, 2024. [Online]. Available: https://www.federalregister.gov/documents/2024/09/06/2024-19633/commerce-control-list-additions-and-revisions-implementation-of-controls-on-advanced-technologies [G]
 [412] Alice & Bob, “Roadmap,” Jun. 23, 2026. [Online]. Available: https://alice-bob.com/roadmap/ [C]
-
-## Open verification items
-No independent replication of the Ocelot result exists. Ocelot's d=3 and d=5 points were taken at different photon numbers, so no distance scan at fixed operating point has been published by anyone. No LDPC-cat or GKP-plus-qLDPC code has been run on hardware. Alice & Bob's Helium has no published logical-error measurement, and its roadmap quotes a peak rather than mean bit-flip time. No dated, code-specific patent-family count was found. AWS discloses no funding line for the Ocelot programme.

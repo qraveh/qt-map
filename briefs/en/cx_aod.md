@@ -51,6 +51,8 @@ It requires laser plus AOD/SLM optical control and provides for bivariate bicycl
 
 Move fidelity is post-recapture survival by fluorescence imaging: a loss metric, not a state fidelity, so 99.95% certifies the atom arrived, not that its phase did. No source isolates transport-only error at the logical level; the 448-atom results fold transport, gates and readout together [D][4]. The sharpest negative evidence is Atom Computing's toric-code run, where suppression over four cycles vanished once continuous reloading was included (0.63% versus 0.64% per cycle over 90 rounds) [D][148] — reloading and transport are the operations this node owns. Harvard and Caltech report 99.8–99.95% survival on different deflector hardware, consistent but not a replication.
 
+The axial range, speed and survival in [503] come from an optical design study with no trapped atoms, not from an experiment. Not published: the channel count, or the deflector's trade between spot count and re-pointing speed, against atom number; a dated patent family (assignee and year) for AOD-based zoned atom transport; and the capacity and scale-up plans of AA Opto-Electronic and Gooch & Housego.
+
 ## Actors & economics
 
 **Who.**
@@ -102,13 +104,3 @@ Confirm by end-2027 a zoned system holding >1,000 atoms under fault-tolerant con
 [332] Infleqtion, “Infleqtion Reports Record Q2 Revenue, Raises 2026 Outlook as Quantum Commercialization Accelerates,” Aug. 12, 2026. [Online]. Available: https://ir.infleqtion.com/news-events/press-releases/detail/201/infleqtion-reports-record-q2-revenue-raises-2026-outlook-as-quantum-commercialization-accelerates [G]
 [503] Z. Guo, R. A. van Herk, E. J. Vredenbregt, and S. J. Kokkelmans, “Acousto-optic lens for 3D shuttling of atoms in a neutral atom quantum computer,” [arXiv:2510.09398](https://arxiv.org/abs/2510.09398), Oct. 2025. [S]
 [504] Gooch & Housego (G&H), “G&H Acousto-Optic Deflectors Referenced in Nature Papers Demonstrating 3,000 & 6,100 Qubit Quantum Systems,” G&H, Mar. 2026. [Online]. Available: https://gandh.com/news-and-resources/g-and-h-acousto-optic-deflectors-in-nature-papers [P]
-
-## Open verification items
-
-- No source consulted here quantifies channel count, or the deflector's trade between spot count and re-pointing speed, against atom number.
-- No source isolates transport-only fidelity from combined transport + gate + readout logical numbers.
-- Bluvstein et al.'s 2022 coherent-transport paper is cited as lineage from the technology-graph record; no numbered source is given for it.
-- No dated patent family (assignee + year) found for AOD-based zoned atom transport.
-- AA Opto-Electronic and Gooch & Housego capacity and scale-up plans not found; Gooch & Housego is quoted on the London Stock Exchange's AIM (GHH), AA Opto-Electronic is privately held.
-- [503] is an optical design study with no trapped atoms; its axial range, speed and survival are not established experimentally.
-- [4]'s online date (2025-11-10) differs from its print date (Jan 2026); dated 2025-11 per the graph record.

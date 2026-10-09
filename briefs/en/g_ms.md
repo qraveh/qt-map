@@ -43,6 +43,8 @@ Headline numbers are benchmarking averages over a zone or chain; no vendor publi
 
 Randomised benchmarking over a native gate set built from two Mølmer–Sørensen gates, MS(π/2, 0) and MS(π/2, π/4) (a 192-element group), is not multiplicity-free: three irreducible representations occur two or three times and give matrix-valued rather than single-exponential decays, so a fidelity robust to state-preparation and measurement (SPAM) errors needs benchmarking against a larger 'lifting' group, here SU(4) [P][895]. The demonstration is numerical; a native-gate benchmarking figure for MS gates should be read with its protocol named.
 
+The 480 ns entangling result in [441] carries no fidelity in its abstract; only the 1.6 µs / 99.8% pair is a complete figure of merit. Not published: the gate time and fidelity of AQT's LYNX behind quantum volume 32,768, so its noise-desensitisation claim has no physical number to be checked against.
+
 ## Actors & economics
 **Who.**
 
@@ -92,6 +94,3 @@ Falsifiable in 12–24 months: confirm/demote that Sol ships in 2027 with laser 
 [442] D. V. Donchenko, E. A. Anikin, O. Lakhmanskaya, and K. Lakhmanskiy, “Mølmer-Sørensen gates in trapped-ions chains in the presence of correlated noise,” [arXiv:2606.23951](https://arxiv.org/abs/2606.23951), Jun. 2026. [S]
 [443] Q-CTRL, “Learn to optimize Mølmer–Sørensen gates for trapped ions.” [Online]. Available: https://docs.q-ctrl.com/boulder-opal/toolkit/apply/trapped-ion-quantum-computing/learn-to-optimize-molmer-sorensen-gates-for-trapped-ions [C]
 [895] Y. Fan and J. P. Marceaux, “Lifting multiplicity in randomized benchmarking,” [arXiv:2610.03586](https://arxiv.org/abs/2610.03586), Oct. 2026. [P]
-
-## Open verification items
-The 480 ns entangling result in [441] is quoted without a fidelity in the abstract; only the 1.6 µs / 99.8% pair is a complete figure of merit. AQT's LYNX gate time and fidelity behind quantum volume 32,768 are undisclosed, so the noise-desensitisation claim cannot be checked against a physical number. No independent, non-vendor replication of Helios's 7.9×10⁻⁴ or of the IonQ/Oxford Ionics 8.4×10⁻⁵ was found as of 2026-09-04. The ~10× position-dependent sensitivity gap [442] is perturbative theory, not measurement. PatSnap's family counts were not cross-checked against a second patent database. The 550–883 µs range comes from the full text of [100]; the abstract confirms only the single 30-ion chain and the 435-pair benchmark.

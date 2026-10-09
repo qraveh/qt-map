@@ -39044,32 +39044,6 @@
     "role": "implied"
    }
   ],
-  "node:ro_imgfast": [
-   {
-    "asset": "ax-4ff5b017d2",
-    "confidence": 0.7,
-    "how": "reports readout time tau_meas ~1 us via cavity probe (ic_atomcavity look-alike note); not ro_img (no camera imaging)",
-    "kind": "composite-figure",
-    "real": false,
-    "role": "shown-secondary"
-   },
-   {
-    "asset": "ax-f98e1619f1",
-    "confidence": null,
-    "how": "motivation: shortening atom readout time",
-    "kind": "composite-figure",
-    "real": false,
-    "role": "also"
-   },
-   {
-    "asset": "mr-eda42a7826",
-    "confidence": null,
-    "how": "implied: imaging fidelity/survival table, no timing shown",
-    "kind": "composite-figure",
-    "real": true,
-    "role": "implied"
-   }
-  ],
   "node:ro_qcap": [
    {
     "asset": "ax-e02da88bf6",

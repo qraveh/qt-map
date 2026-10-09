@@ -41,6 +41,8 @@ Every line count above 1,536 is product literature, not a wired system: Bluefors
 
 The qubit itself can measure the control chain's noise. On one Jülich transmon line with 56 dB of attenuation, the modelled excitation rate was dominated by classical noise from the room-temperature drive instrument (−146 dBm/Hz above 4.6 GHz) and from the 1 K attenuator stage, while relaxation was set by quantum noise; the qubit's excitation spectrum served as an in-situ spectrometer of that noise [P][890]. The result describes one set-up, not every line.
 
+Bluefors' >4,000-line and Delft Circuits' 40,000-by-2029 figures are not demonstrated at system level. IBM's cryo-CMOS flux-bias parity result exists only as APS conference abstracts, with no preprint or paper as of 2026-09-04. No dated ECCN determination covers RT control racks; their uncontrolled status is read from the absence of a matching entry in the 2024 rule, not from an explicit BIS statement. Not published: a per-line or per-loom cost, and the revenue and customer counts of Delft Circuits and Zurich Instruments.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What exactly they do with this technology | Evidence |
@@ -89,6 +91,3 @@ Confirm by end-2027 if one fridge runs >2,000 qubits on RT lines with published 
 [530] M. U. Rehman, “Delft Circuits Names Martin Danoesastro CEO and Extends Funding Round,” The Quantum Insider, Dec. 3, 2025. [Online]. Available: https://thequantuminsider.com/2025/12/03/delft-circuits-new-ceo-financing/ [P]
 [531] NVIDIA, “NVIDIA Introduces NVQLink — Connecting Quantum and GPU Computing for 17 Quantum Builders and Nine Scientific Labs,” Oct. 28, 2025. [Online]. Available: https://nvidianews.nvidia.com/news/nvidia-nvqlink-quantum-gpu-computing [C]
 [890] J. R. Guimarães *et al.*, “Quantum environment afterglow from broadband excitation spectroscopy in superconducting qubits,” [arXiv:2609.31280](https://arxiv.org/abs/2609.31280), Sep. 2026. [P]
-
-## Open verification items
-No vendor publishes per-line or per-loom cost; no unit economics for cryogenic wiring are quotable. No measured heat budget or crosstalk data exists for a >1,000-line flex loom — Bluefors' >4,000-line and Delft Circuits' 40,000-by-2029 figures are unverified at system level. Delft Circuits' and Zurich Instruments' revenue and customer counts are undisclosed. IBM's cryo-CMOS flux-bias parity result exists only as APS conference abstracts, with no preprint or paper as of 2026-09-04. No dated ECCN determination was found for RT control racks specifically; that they are uncontrolled is read from the absence of a matching entry in the 2024 rule, not from an explicit BIS statement.

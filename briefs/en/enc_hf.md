@@ -26,6 +26,8 @@ The clock point kills first-order field sensitivity; what remains is the quadrat
 
 On atoms, Cs hyperfine T2 = 12.6 s in a 6,100-atom array [D][138]. Fleet-scale term: two-qubit-gate leakage, ~10⁻⁵ per Clifford on ions against ~10⁻⁴ per atom per gate on arrays.
 
+The PatSnap counts mix patents and papers. Not published: the isotope and transition of the hour-scale Yb⁺ memory, which its abstract calls "a single Yb ion-qubit memory"; a multi-qubit fleet-average equivalent of Oxford's 1.5(4)×10⁻⁷; and a dated supplier of isotopically enriched ¹³⁷Ba or ¹⁷¹Yb, so the enrichment chokepoint is unconfirmed.
+
 ## Manufacturing, materials & supply chain
 No dedicated process; the encoding rides whatever surrounds the species (Ba⁺, Yb⁺, Ca⁺, Cs, Rb, Sr). Two control families, two supply chains: Raman gates need the optical stack — Helios runs seven-plus wavelengths across 1,228 electrodes — while chip microwave traces delete it and move the burden to trap fabrication, internalised by IonQ's SkyWater purchase [C][19]; eleQtron sells the same idea as MAGIC [C][129]. Enriched ¹³⁷Ba and ¹⁷¹Yb are the plausible chokepoint, but no dated supplier fact was found; no specific ECCN.
 
@@ -74,9 +76,3 @@ Confirm if all-electronic control reaches a fleet average below 10⁻⁵ with pu
 [G] Quantinuum raised $600 M at a $10 B pre-money valuation (NVentures, Quanta, QED, JPMorgan), 2025-09-04 · 2025-09-04 · https://www.honeywell.com/us/en/news/press-releases/2025/09/honeywell-announces-600-million-capital-raise-for-quantinuum-at-10b-pre-money-equity-valuation-to-advance-quantum-computing-at-scale
 [G] Quantinuum IPO priced 2026-06-03: 28,000,000 shares at $60 = $1.68 B gross, Nasdaq QNT; Q2-2026 revenue $8.0 M, cash $2.1 B, FY guidance $28–32 M · 2026-06-03 · https://www.quantinuum.com/press-releases/quantinuum-announces-pricing-of-upsized-initial-public-offering
 [G] IonQ acquired SkyWater Technology: $15.00 cash + 0.4883 IonQ shares per share (~$1.8 B at announcement 2026-01-26), closed 2026-07-31 · 2026-07-31 · https://www.ionq.com/news/ionq-completes-acquisition-of-skywater-technology
-## Open verification items
-- The 1995 PRL abstract does not name the species or the hyperfine sublevels; the "since 1995" attribution follows the graph record and the paper's internal-state qubit, not an explicit hyperfine statement in the abstract.
-- The Yb⁺ hour-scale memory source names "a single Yb ion-qubit memory" without specifying the isotope or transition in the abstract.
-- Oxford's 1.5(4)×10⁻⁷ has no published multi-qubit fleet-average equivalent.
-- PatSnap counts mix patents and papers and are not verified against original filings.
-- No dated supplier fact found for isotopically enriched ¹³⁷Ba or ¹⁷¹Yb; the chokepoint claim is unverified.

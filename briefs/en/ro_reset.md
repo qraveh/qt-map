@@ -43,6 +43,8 @@ Slot 6 of the Transmon lattice with tunable couplers architecture, beside disper
 ## Evidence — how the numbers were measured
 Reset is checked by reading the qubit afterwards, so readout error bounds it: McEwen et al.'s ~10⁻³ was readout-limited [D][597]. Reported quantities do not compare — residual excitation, reset error, effective T1, an error ratio. All four register cells are verified ✅, but only Sycamore's has a figure locator (Fig. 1b); IBM's rest on blogs, Loon's naming "reset gadgets" without figures [C][486]; Zuchongzhi 3.2's has neither locator nor reset figure.
 
+The Zuchongzhi 3.2 figures (72×, 6.4×10⁻⁴, d = 7, Λ) come from press analysis. The 1.4 ms, 0.8%, ≈21/κ and 8×10³ figures are derived from arXiv:2409.16748 and arXiv:2411.02950, not quoted by them. Not published, as of 2026-09-26: USTC's reset duration and residual; Nighthawk r2's reset duration, absolute residual and any paper — its blog gives an effective T1, a 25× ratio and ~1 µs idle; Loon's reset-gadget figures; Heron's conditional-reset duration and feed-forward latency; and Willow's measurement and reset durations, with the DQLR duration of Miao et al.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What exactly they do with this technology | Evidence |
@@ -80,10 +82,3 @@ Open questions. (1) What absolute residual does Nighthawk r2 reach? (2) What doe
 [604] K. C. Miao *et al.*, “Overcoming leakage in quantum error correction,” *Nat. Phys.*, vol. 19, pp. 1780–1786, Oct. 2023, doi: [10.1038/s41567-023-02226-w](https://doi.org/10.1038/s41567-023-02226-w). [D]
 [605] M. Swayne, “China Demonstrates Quantum Error Correction Using Microwaves, Narrowing Gap With Google,” The Quantum Insider, Dec. 26, 2025. [Online]. Available: https://thequantuminsider.com/2025/12/26/china-demonstrates-quantum-error-correction-using-microwaves-narrowing-gap-with-google/ [P]
 [606] IBM, “Qubit initialization.” [Online]. Available: https://quantum.cloud.ibm.com/docs/en/guides/repetition-rate-execution [C]
-
-## Open verification items
-- Zuchongzhi 3.2 PRL (journals.aps.org) returned 403 on 2026-09-26; Europe PMC and phys.org were rate-limited (429). The 72×, 6.4×10⁻⁴, d=7 and Λ figures come from press analysis; USTC's reset duration and residual were not found.
-- Nighthawk r2 blog (opened 2026-09-26): effective T1, a 25× ratio, ~1 µs idle; no reset duration, absolute residual or paper. Loon's gadget figures unpublished as of 2026-09-26.
-- Heron's conditional-reset duration and feed-forward latency: not in IBM's initialisation guide, opened 2026-09-26.
-- Willow's measurement and reset durations, and Miao et al.'s DQLR duration and arXiv id, not found in pages opened 2026-09-26 (Miao cited by DOI).
-- Journal versions of arXiv:2409.16748 and arXiv:2411.02950 not opened; the 1.4 ms, 0.8%, ≈21/κ and 8×10³ figures are derived here.

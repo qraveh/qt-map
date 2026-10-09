@@ -42,6 +42,8 @@ This carrier defines the "Rydberg tweezer array — alkaline-earth(-like) (Yb/Sr
 ## Evidence — how the numbers were measured
 Fractions come from state-selective fluorescence after gates; CZ fidelity from randomised benchmarking or tomography, reported raw and post-selected on the flag. A code spends a correction cycle on every heralded erasure, so raw numbers govern cost. The 1.9(4)× vs 3.6× conflict resolves inside arXiv:2506.13724v2: both figures are in that paper and describe different quantities — decay is 3.6(1)× slower during hold for the post-selected logical qubit, 1.9(4)× slower under unconditional decoding with erasure information [D][142]. Only 1.9(4)× is architecturally meaningful; the Nature Physics text is paywalled [142]. The 56% (1Q, 2023) and 38(6)% (CZ, 2026) figures are different metrics and must not be averaged. No independent replication was found.
 
+Not published: Magne's installation status after the 2025-07-17 order announcement. The ≈10 mW per site trap power at 10⁴ sites is an extrapolation from the Fraunhofer figures, not a measurement [S]. No ECCN names tweezer optics, AODs or UHV chambers; only the finished system is export-controlled.
+
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What they do | Evidence |
@@ -92,6 +94,3 @@ Milestones (12–24 months): Magne shows 50 logical qubits under erasure-biased 
 [334] A. Kubica *et al.*, “Erasure Qubits: Overcoming the T₁ Limit in Superconducting Circuits,” *Phys. Rev. X*, vol. 13, no. 4, Art. no. 041022, Nov. 2023, doi: [10.1103/PhysRevX.13.041022](https://doi.org/10.1103/PhysRevX.13.041022). [arXiv:2208.05461](https://arxiv.org/abs/2208.05461). [D]
 [335] M. Abdel-Kareem, “Hamamatsu Photonics, NKT Photonics, and Yaqumo Form Alliance to Industrialize Cold-Atom Quantum Core Components,” Quantum Computing Report, Jun. 4, 2026. [Online]. Available: https://quantumcomputingreport.com/hamamatsu-photonics-nkt-photonics-and-yaqumo-form-alliance-to-industrialize-cold-atom-quantum-core-components/ [P]
 [336] A. M. Kubica and A. Retzker, “Heralding of amplitude damping decay noise for quantum error correction,” Google Patents, Sep. 5, 2023. [Online]. Available: https://patents.google.com/patent/US11748652B1/en [G]
-
-## Open verification items
-The published Nature Physics version of the Princeton [[4,2,2]] result could not be read (paywalled); the 1.9(4)× / 3.6(1)× reconciliation rests on arXiv v2 [142], where both numbers appear with distinct definitions. No independent replication of either the 56% or the 38(6)% conversion fraction was found. Magne's installation status beyond the 2025-07-17 order announcement is unconfirmed. The ≈10 mW/site trap-power extrapolation to 10⁴ sites is derived from the Fraunhofer figures, not measured [S]. No ECCN names tweezer optics, AODs or UHV chambers; only the finished system is controlled.

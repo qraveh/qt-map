@@ -18,14 +18,15 @@ GLYPH_N = [str(len(GRAPH['empty_status']))]
 WILLOW = next(m for m in MACH['machines'] if m['id'] == 'google-willow')
 WILLOW_NODES = {c['node'] for cells in WILLOW['layers'].values() for c in cells if c.get('state', 'station') == 'station'}   # gaps and the cell values none / undisclosed are not nodes
 WILLOW_ALT = {c['node'] for cells in WILLOW['layers'].values() for c in cells if c['role'] == 'alternate' and c.get('state', 'station') == 'station'}
-# lens select (brief E, 17 Sep): the editor's order with plain labels, no coordinate letters, no reading-marks lens
-LENS_ORDER = ['family', 'g', 'f', 'd', 'mod', 'place', 'time', 'mech', 'destr', 'mid', 'det', 'aff', 'status']
-LENS_EN = ['Platform family', 'Manufacturing technology', 'Dominant error structure', 'Mobility / connectivity', 'Control: modality',
-           'Control: placement (temperature stage)', 'Characteristic time (gate or readout)', 'Readout: mechanism', 'Readout: destructive?',
-           'Readout: mid-circuit?', 'Entangling: deterministic / heralded', 'Carrier affinity: natural ↔ fabricated', 'Technology status']
-LENS_RU = ['Семейство платформ', 'Технология производства', 'Доминирующая структура ошибок', 'Подвижность / связность', 'Управление: модальность',
-           'Управление: размещение (температурная ступень)', 'Характерное время (вентиль или считывание)', 'Считывание: механизм', 'Считывание: разрушающее?',
-           'Считывание: внутрисхемное?', 'Запутывание: детерминированное / с оповещением (heralded)', 'Сродство носителя: естественный ↔ искусственный', 'Статус технологии']
+# lens select (brief E, 17 Sep): the editor's order with plain labels, no coordinate letters, no reading-marks lens;
+# nine lenses since 9 Oct 2026 (D6-1: control modality, destructive readout, carrier affinity, technology status are card rows only)
+LENS_ORDER = ['family', 'g', 'f', 'd', 'place', 'time', 'mech', 'mid', 'det']
+LENS_EN = ['Platform family', 'Manufacturing technology', 'Dominant error structure', 'Mobility / connectivity',
+           'Control: placement (temperature stage)', 'Characteristic time (gate or readout)', 'Readout: mechanism', 'Readout: mid-circuit?',
+           'Entangling: deterministic / heralded']
+LENS_RU = ['Семейство платформ', 'Технология производства', 'Доминирующая структура ошибок', 'Подвижность / связность',
+           'Управление: размещение (температурная ступень)', 'Характерное время (вентиль или считывание)', 'Считывание: механизм',
+           'Считывание: внутрисхемное?', 'Запутывание: детерминированное / с оповещением (heralded)']
 
 READ = """()=>({
   lit:[...document.querySelectorAll('#mapwrap g.station:not(.dim)')].map(g=>g.querySelector('text.id').textContent),
@@ -129,7 +130,7 @@ def run(pw, w, h):
 
     # brief E (17 Sep): lens labels, reading marks as badges, static glyph keys
     opts = p.evaluate("()=>[...document.querySelectorAll('#lens option')].map(o=>[o.value,o.textContent])")
-    check('lens select: 13 options in the editor\'s order, plain EN labels', [o[0] for o in opts] == LENS_ORDER and [o[1] for o in opts] == LENS_EN, opts)
+    check('lens select: 9 options in the editor\'s order, plain EN labels', [o[0] for o in opts] == LENS_ORDER and [o[1] for o in opts] == LENS_EN, opts)
     click_station('code_surface'); r = read()
     check('code_surface card: no hub badge (the category was removed on 28 Sep 2026)', 'hub' not in r['card'].lower() and '◎' not in r['card'], r['card'][:300])
     click_station('ct_sfq'); r = read()
@@ -253,7 +254,7 @@ TS = """(sel)=>{ const w=typeof sel==='string'?document.querySelector(sel):sel; 
 
 
 def sorting(pw, w, h):
-    """Sortable tables (editor's review, second batch, brief D): §3.1 Maturity index asc → desc, Platform restores; §7.4 a numeric
+    """Sortable tables (editor's review, second batch, brief D): §3.1 the A–D sum asc → desc, Platform restores; §7.4 a numeric
     header twice → descending, ↺ restores; §7.9 the ion T2 row has as many cells as the header, date asc, ↺ restores; the brief
     index sorts by centrality and restores in both languages; nothing overflows; 0 console errors."""
     fails, errors = [], []
@@ -291,16 +292,16 @@ def sorting(pw, w, h):
     p.evaluate("()=>document.querySelectorAll('#app .lang-en details.fold').forEach(d=>{d.open=true;})")
     p.wait_for_timeout(300)
     EN = '#app .prose.lang-en '
-    # §3.1 — Platform restores, the other columns sort; Maturity index twice → descending
+    # §3.1 — Platform restores, the other columns sort; the A–D sum twice → descending (the E–F sum is the last column)
     s31 = EN + 'div.tbl[data-sort="platform-default"]'
     o = state(s31)
-    check('§3.1: tagged, Platform + 7 numeric headers sortable, build order first', o and o['sortable'] == [True] * 8 and o['rows'][0][0] == 'Superconducting' and o['reset']['idle'], o and (o['sortable'], o['rows'][0][:1]))
-    click(hdr(s31, 'Maturity index')); a = state(s31)
-    va = [num(r[-1]) for r in a['rows']]; nn = [v for v in va if v is not None]
-    check('§3.1: one click → ascending by Maturity index, n/a last (aria-sort=ascending, ▲)', nn == sorted(nn) and va[:len(nn)] == nn and a['aria'][-1] == 'ascending' and '▲' in a['cols'][-1], (va, a['aria'][-1]))
-    click(hdr(s31, 'Maturity index')); d = state(s31)
-    vd = [num(r[-1]) for r in d['rows']]; nn = [v for v in vd if v is not None]
-    check('§3.1: second click → descending (24 first, n/a last)', nn == sorted(nn, reverse=True) and vd[:len(nn)] == nn and nn[0] == 24 and d['aria'][-1] == 'descending' and not d['reset']['idle'], vd)
+    check('§3.1: tagged, Platform + 8 numeric headers sortable, build order first', o and o['sortable'] == [True] * 9 and o['rows'][0][0] == 'Superconducting' and o['reset']['idle'], o and (o['sortable'], o['rows'][0][:1]))
+    click(hdr(s31, 'A–D, anchored')); a = state(s31)
+    va = [num(r[-2]) for r in a['rows']]; nn = [v for v in va if v is not None]
+    check('§3.1: one click → ascending by the A–D sum, n/a last (aria-sort=ascending, ▲)', nn == sorted(nn) and va[:len(nn)] == nn and a['aria'][-2] == 'ascending' and '▲' in a['cols'][-2], (va, a['aria'][-2]))
+    click(hdr(s31, 'A–D, anchored')); d = state(s31)
+    vd = [num(r[-2]) for r in d['rows']]; nn = [v for v in vd if v is not None]
+    check('§3.1: second click → descending (15 first, n/a last)', nn == sorted(nn, reverse=True) and vd[:len(nn)] == nn and nn[0] == 15 and d['aria'][-2] == 'descending' and not d['reset']['idle'], vd)
     click(hdr(s31, 'Platform')); r = state(s31)
     check('§3.1: Platform → build order restored, indicators cleared', r['rows'] == o['rows'] and all(x in (None, 'none') for x in r['aria']) and '▲' not in ''.join(r['cols']) and '▼' not in ''.join(r['cols']) and r['reset']['idle'], [x[0] for x in r['rows']])
     # §7.4 — numeric columns; a header twice → descending; ↺ → original
@@ -391,7 +392,8 @@ def chapter8(pw, w, h):
     check('seven subsections 8.1–8.7 in both languages', [x[:3] for x in r['h3en']] == SUBS and [x[:3] for x in r['h3ru']] == SUBS, (r['h3en'], r['h3ru']))
     check('TOC lists §8 with 8.1–8.7 (EN and RU)', r['tocEn'] == ['8'] + SUBS and r['tocRu'] == r['tocEn'], (r['tocEn'], r['tocRu']))
     check('tables 8.1–8.3 tagged numeric, sortable columns present, ↺ present', len(r['tbls']) == 3 and all(x and x['sort'] == 'numeric' and x['btns'] >= 2 and x['reset'] for x in r['tbls']), r['tbls'])
-    check('eight verdict lines in each language', r['verdicts'] == 8 and r['verdictsRu'] == 8, (r['verdicts'], r['verdictsRu']))
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1])); import machines_chapter as _mc8   # the hypotheses in force (H7 and H8 retired to §8.1, 9 Oct 2026)
+    check('one verdict line per hypothesis in each language', r['verdicts'] == len(_mc8.HYPOTHESES) and r['verdictsRu'] == len(_mc8.HYPOTHESES), (r['verdicts'], r['verdictsRu']))
     check('forecast ledger (Table 8.5) has 8 rows', r['ledger'] == 8, r['ledger'])
     # sort table 8.1 by "Machines" twice → descending; ↺ restores
     t = p.evaluate("""()=>{ const h=[...document.querySelectorAll('#app .prose.lang-en h3')].find(x=>x.textContent.startsWith('8.1 ')); for(const e of ((h&&h.nextElementSibling&&h.nextElementSibling.classList.contains('secbody'))?[...h.nextElementSibling.querySelectorAll('.tbl, h3')]:[])){ if(e.matches('.tbl')) { e.id=e.id||'smoke-t81'; return e.id; } } return ''; }""")
@@ -657,73 +659,6 @@ def review23c(pw):
     return fails
 
 
-def strip(pw):
-    """23 Sep 2026 (ADJ-13): the parallel-coordinates strip as a second interface — mirror of the lit set, lens colours, axis and tick
-    controls, hover both ways; the (e) axis carries every modality@stage of the graph; the axes sit above the lines; the strip works
-    in full screen and with the bar collapsed; a language switch relabels the axes."""
-    fails, errors = [], []
-    b = pw.chromium.launch(); ctx = b.new_context(viewport={'width': 1400, 'height': 900}); p = ctx.new_page()
-    def check(label, cond, detail=''):
-        print(f"  [{'ok' if cond else 'FAIL'}] {label}{(' — ' + str(detail)) if (detail and not cond) else ''}")
-        if not cond: fails.append(label)
-    print('strip — 1400×900')
-    p.on('console', lambda m: m.type == 'error' and not ('ERR_FILE_NOT_FOUND' in m.text and '/media/' in (m.location or {}).get('url', '')) and errors.append(m.text))   # the cards' pictures live in media/, which the deploy copies from the media register — absent in a bare dist (28 Sep 2026); p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
-    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000); wait_langs(p); expand_bar(p)
-    p.wait_for_function(f"document.querySelectorAll('#pc path.pcline').length==={NN}", timeout=60000); p.wait_for_timeout(300)
-    R = """()=>{const L=[...document.querySelectorAll('#pc path.pcline')], S=[...document.querySelectorAll('#mapwrap g.station')]; const id=g=>g.querySelector('text.id').textContent;
-      const set=(a)=>new Set(a); const eq=(a,b)=>a.size===b.size&&[...a].every(x=>b.has(x));
-      return {dimEq:eq(set(S.filter(g=>g.classList.contains('dim')).map(id)),set(L.filter(l=>l.classList.contains('dim')).map(l=>l.dataset.node))),
-        altEq:eq(set(S.filter(g=>g.classList.contains('altuse')).map(id)),set(L.filter(l=>l.classList.contains('altuse')).map(l=>l.dataset.node))),
-        hi:L.filter(l=>l.classList.contains('hi')).map(l=>l.dataset.node), sel:S.filter(g=>g.classList.contains('sel')).map(id),
-        lens:document.getElementById('lens').value, axis:[...document.querySelectorAll('#pc text.t.active')].map(t=>t.parentNode.dataset.axis),
-        pressed:[...document.querySelectorAll('#pc text.tick.pressed')].map(t=>t.dataset.lens+'='+t.dataset.lv), legend:[...document.querySelectorAll('#lenslegend [data-lv][aria-pressed="true"]')].map(b=>b.dataset.lv),
-        strokeEq:document.getElementById('lens').value==='family'||L.every(l=>{const g=S.find(x=>id(x)===l.dataset.node); return g.querySelector('rect.box').getAttribute('stroke')===l.getAttribute('stroke');}),
-        order:(()=>{const gs=[...document.querySelectorAll('#pc svg > g')]; return gs.findIndex(g=>g.querySelector('.pcline'))<gs.findIndex(g=>g.querySelector('.pc-axis'));})(),
-        eRows:document.querySelectorAll('#pc g.pc-axis[data-axis="e"] text.tick').length};}"""
-    r0 = p.evaluate(R)
-    check('axes are drawn above the lines (ticks clickable)', r0['order'])
-    check('the (e) axis carries all ten modality@stage rows', r0['eRows'] == 10, r0['eRows'])
-    p.click('#pathchips .chip[data-chip-path="ion_qccd"]'); p.wait_for_timeout(300); r1 = p.evaluate(R)
-    check('isolated path: the strip dims exactly the map\'s dimmed technologies', r1['dimEq'], r1)
-    p.select_option('#machine', 'google-willow'); p.wait_for_timeout(300); r2 = p.evaluate(R)
-    check('machine: dim and dashed (alternate-use) lines follow the map', r2['dimEq'] and r2['altEq'], r2)
-    p.evaluate("window.__selectNode('transmon')"); p.wait_for_timeout(300); r3 = p.evaluate(R)
-    check('focus: the thick line is the selected technology', r3['hi'] == ['transmon'] and r3['sel'] == ['transmon'], (r3['hi'], r3['sel']))
-    p.click('#tg-reset'); p.wait_for_timeout(200)
-    p.click('#pc text.t[data-lens="f"]'); p.wait_for_timeout(300); r4 = p.evaluate(R)
-    check('axis title (f) selects the error lens and marks the axis; colours mirror the technologies', r4['lens'] == 'f' and r4['axis'] == ['f'] and r4['strokeEq'], r4)
-    p.click('#pc text.tick[data-lens="f"][data-lv="erasure"]'); p.wait_for_timeout(300); r5 = p.evaluate(R)
-    check('a tick presses the value in the legend and on the axis, and filters the map', r5['legend'] == ['erasure'] and r5['pressed'] == ['f=erasure'] and r5['dimEq'], r5)
-    p.click('#pc text.tick[data-lens="f"][data-lv="leak"]', modifiers=['Control']); p.wait_for_timeout(300); r6 = p.evaluate(R)
-    check('Ctrl-click adds a value', sorted(r6['legend']) == ['erasure', 'leak'], r6['legend'])
-    p.click('#pc text.tick[data-lens="mod"][data-lv="mw"]'); p.wait_for_timeout(300); r7 = p.evaluate(R)
-    check('a tick on another axis switches the lens; all ticks of the modality press together', r7['lens'] == 'mod' and r7['legend'] == ['mw'] and len(r7['pressed']) == 3 and r7['axis'] == ['e'], r7)
-    p.click('#pc text.t[data-lens="mod"]'); p.wait_for_timeout(300); r7b = p.evaluate(R)
-    check('the title of the chosen lens\'s axis clears its filter (the lens with no filter)', r7b['lens'] == 'mod' and r7b['legend'] == [] and r7b['pressed'] == [] and r7b['axis'] == ['e'], r7b)
-    p.click('#pc text.tick[data-lens="time"][data-lv="none"]'); p.wait_for_timeout(300); r7c = p.evaluate(R)
-    check('the (b) axis has a "—" tick for technologies without a time value, and it filters the time lens', r7c['lens'] == 'time' and r7c['legend'] == ['none'] and r7c['pressed'] == ['time=none'] and r7c['dimEq'], r7c)
-    p.evaluate("()=>{const l=document.querySelector('#pc path.pcline[data-node=\"ion\"]'); l.dispatchEvent(new MouseEvent('mouseenter'));}"); p.wait_for_timeout(100)
-    hv = p.evaluate("()=>({st:[...document.querySelectorAll('#mapwrap g.station.hover')].map(g=>g.querySelector('text.id').textContent), ln:[...document.querySelectorAll('#pc path.pcline.hover')].map(l=>l.dataset.node), label:document.querySelector('#pc svg > text').textContent})")
-    check('hovering a line lights its technology and names it', hv['st'] == ['ion'] and hv['ln'] == ['ion'] and hv['label'] != '', hv)
-    p.evaluate("()=>{const l=document.querySelector('#pc path.pcline[data-node=\"ion\"]'); l.dispatchEvent(new MouseEvent('mouseleave'));}"); p.wait_for_timeout(100)
-    p.evaluate("()=>{const g=[...document.querySelectorAll('#mapwrap g.station')].find(x=>x.querySelector('text.id').textContent==='alkali'); g.dispatchEvent(new MouseEvent('mouseenter'));}"); p.wait_for_timeout(100)
-    hv2 = p.evaluate("()=>[...document.querySelectorAll('#pc path.pcline.hover')].map(l=>l.dataset.node)")
-    check('hovering a technology lights its line', hv2 == ['alkali'], hv2)
-    p.evaluate("()=>{const g=[...document.querySelectorAll('#mapwrap g.station')].find(x=>x.querySelector('text.id').textContent==='alkali'); g.dispatchEvent(new MouseEvent('mouseleave'));}")
-    p.click('#tg-reset'); p.wait_for_timeout(200)
-    p.evaluate("()=>{const l=document.querySelector('#pc path.pcline[data-node=\"ct_sfq\"]'); l.dispatchEvent(new MouseEvent('click',{bubbles:true}));}"); p.wait_for_timeout(400); r8 = p.evaluate(R)
-    check('clicking a line selects the technology on the map', r8['sel'] == ['ct_sfq'] and r8['hi'] == ['ct_sfq'], (r8['sel'], r8['hi']))
-    p.click('.mast .seg [data-setlang="ru"]'); p.wait_for_timeout(400)
-    check('a language switch relabels the axes', p.evaluate("()=>document.querySelector('#pc text.t[data-lens=\"aff\"]').textContent") == '(a) носитель')
-    p.click('.mast .seg [data-setlang="en"]'); p.wait_for_timeout(200)
-    p.click('#bartog'); p.wait_for_timeout(200); p.click('#zoom-fs'); p.wait_for_timeout(600)
-    check('the strip stays in the block in full screen and mirrors the map', p.evaluate("()=>document.fullscreenElement===document.getElementById('mapbody')||document.getElementById('mapbody').classList.contains('fsfake')") and p.evaluate(R)['dimEq'])
-    p.click('#zoom-fs'); p.wait_for_timeout(500)
-    errs = [e for e in errors if 'ERR_TUNNEL' not in e and 'net::' not in e]
-    check('0 console errors', not errs, errs[:3])
-    ctx.close(); b.close()
-    return fails
-
 
 def folds(pw):
     """23 Sep 2026: every titled section and every table folds; defaults as before; a link into a folded section opens it; the choice is
@@ -751,29 +686,24 @@ def folds(pw):
     check('choices survive a reload', p.evaluate("()=>document.querySelector('.secbody[data-sec=\"en-s3\"]').hidden && !document.querySelector('.secbody[data-sec=\"en-s3-1\"] details.tblfold').open"))
     bf = p.evaluate("()=>{const s=document.getElementById('brief-transmon'); return {btns:s.querySelectorAll('.foldbtn').length, src:!s.querySelector('.secbody details.fold-src'), en:s.querySelectorAll('.lang-en .foldbtn, [lang=en] .foldbtn').length};}")
     check('a brief\'s sections fold and its sources fold stays outside them', bf['btns'] >= 8 and bf['src'], bf)
-    p.click('#pcwrap .foldbtn[data-sec="pcwrap"]'); p.wait_for_timeout(200)
-    pc = p.evaluate("()=>({hidden:document.querySelector('.secbody[data-sec=\"pcwrap\"]').hidden, lines:document.querySelectorAll('#pc path.pcline').length})")
-    check('the parallel-coordinates strip folds under its title (the strip itself stays built)', pc['hidden'] and pc['lines'] == NN, pc)
-    p.click('#pcwrap .foldbtn[data-sec="pcwrap"]'); p.wait_for_timeout(200)
-    check('and unfolds', p.evaluate("()=>!document.querySelector('.secbody[data-sec=\"pcwrap\"]').hidden"))
     errs = [e for e in errors if 'ERR_TUNNEL' not in e and 'net::' not in e]
     check('0 console errors', not errs, errs[:3])
     ctx.close(); b.close()
     return fails
 
 
-def stripmodes(pw):
-    """24 Sep 2026: the map's scroll escape (two more wheel notches at the bottom hand over to the page), the strip's header legend
-    fold, and the two map-and-strip modes (fit height, full screen) with what they hide and restore."""
+def scrollescape(pw):
+    """24 Sep 2026: the map's scroll escape (two more wheel notches at the bottom hand over to the page). The strip's header legend
+    fold and the two map-and-strip modes went with the strip (9 Oct 2026, D6-2)."""
     fails, errors = [], []
     b = pw.chromium.launch(); ctx = b.new_context(viewport={'width': 1300, 'height': 820}); p = ctx.new_page()
     def check(label, cond, detail=''):
         print(f"  [{'ok' if cond else 'FAIL'}] {label}{(' — ' + str(detail)) if (detail and not cond) else ''}")
         if not cond: fails.append(label)
-    print('strip modes — 1300×820')
+    print('scroll escape — 1300×820')
     p.on('console', lambda m: m.type == 'error' and not ('ERR_FILE_NOT_FOUND' in m.text and '/media/' in (m.location or {}).get('url', '')) and errors.append(m.text))   # the cards' pictures live in media/, which the deploy copies from the media register — absent in a bare dist (28 Sep 2026); p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
     p.goto(PAGE.as_uri(), wait_until='load', timeout=120000); wait_langs(p)
-    p.wait_for_function(f"document.querySelectorAll('#pc path.pcline').length==={NN}", timeout=60000); p.wait_for_timeout(400)
+    p.wait_for_function(f"document.querySelectorAll('#mapwrap g.station').length==={NN}", timeout=60000); p.wait_for_timeout(400)
     # scroll escape
     p.click('#bartog'); p.wait_for_timeout(200); p.click('#zoom-in'); p.click('#zoom-in'); p.wait_for_timeout(300)
     r = p.evaluate("""()=>{const w=document.getElementById('mapwrap'); w.scrollTop=w.scrollHeight; const ev=()=>w.dispatchEvent(new WheelEvent('wheel',{deltaY:100,bubbles:true,cancelable:true})); const y0=window.scrollY; ev(); const y1=window.scrollY; ev(); return {scrollable:w.scrollHeight>w.clientHeight+1, y0, y1};}""")
@@ -789,30 +719,6 @@ def stripmodes(pw):
     check('at the map\'s top the second extra notch upward scrolls the page up (to the page top here: the masthead is shorter than the window)', r4['y0'] > 200 and r4['y1'] == r4['y0'] and p.evaluate("()=>window.scrollY") == 0, r4)
     p.click('#bartog'); p.wait_for_timeout(200)
     # header legend fold
-    f = p.evaluate("()=>{const d=document.getElementById('pclead'); const was=d.open; d.open=false; d.dispatchEvent(new Event('toggle')); return {was, now:d.open, stored:localStorage.getItem('qmap.pclead')};}")
-    check('the strip\'s header legend folds under its summary and the choice is stored', f['was'] and not f['now'] and f['stored'] == '0', f)
-    p.evaluate("()=>{const d=document.getElementById('pclead'); d.open=true; d.dispatchEvent(new Event('toggle'));}")
-    # fit height: map and strip together
-    p.click('#bartog'); p.wait_for_timeout(200)   # expanded bar: the mode folds it and restores it
-    p.click('#pc-fith'); p.wait_for_timeout(700)
-    vis = "const vis=el=>{const r=el.getBoundingClientRect(); return r.width>0&&r.height>0&&getComputedStyle(el).display!=='none';};"
-    g = p.evaluate("()=>{" + vis + """const b=document.getElementById('mapbody'), w=document.getElementById('mapwrap'), pc=document.querySelector('#pc svg'), bar=document.getElementById('mapbar');
-      return {both:b.classList.contains('both'), barTop:Math.round(bar.getBoundingClientRect().top), barCollapsed:bar.classList.contains('collapsed'), wrapTop:Math.round(w.getBoundingClientRect().top), stripBottom:Math.round(pc.getBoundingClientRect().bottom), inner:window.innerHeight,
-        hidden:[document.querySelector('#mapbody .legend'),document.querySelector('.maplead'),document.querySelector('.pchead h3'),document.getElementById('pclead')].map(e=>!vis(e)), mapWhole:w.scrollHeight<=w.clientHeight+1, pressed:document.getElementById('pc-fith').getAttribute('aria-pressed')};}""")
-    check('fit height: bar at the top, map whole and strip below it within the window, controls folded', g['both'] and g['barTop'] <= 8 and g['barCollapsed'] and g['mapWhole'] and g['stripBottom'] <= g['inner'] and g['pressed'] == 'true', g)
-    check('fit height hides the footer legend, the caption fold, the strip title and its header legend', all(g['hidden']), g['hidden'])
-    p.click('#pc-fith'); p.wait_for_timeout(500)
-    h = p.evaluate("()=>{" + vis + "return {both:document.getElementById('mapbody').classList.contains('both'), shown:vis(document.querySelector('#mapbody .legend'))&&vis(document.querySelector('.pchead h3')), barBack:!document.getElementById('mapbar').classList.contains('collapsed')};}")
-    check('leaving fit height restores the legend, the title and the controls bar', not h['both'] and h['shown'] and h['barBack'], h)
-    p.click('#bartog'); p.wait_for_timeout(200)
-    # full screen: map and strip together
-    p.click('#pc-fs'); p.wait_for_timeout(900)
-    k = p.evaluate("()=>{" + vis + """const b=document.getElementById('mapbody'), w=document.getElementById('mapwrap'), pc=document.querySelector('#pc svg');
-      return {fs:b.classList.contains('fs'), both:b.classList.contains('both'), mapWhole:w.scrollHeight<=w.clientHeight+1, stripBottom:Math.round(pc.getBoundingClientRect().bottom), bodyH:b.clientHeight, legendHidden:!vis(document.querySelector('#mapbody .legend')), pressed:document.getElementById('pc-fs').getAttribute('aria-pressed')};}""")
-    check('full screen: the block takes the screen, map whole and strip below it, legend hidden', k['fs'] and k['both'] and k['mapWhole'] and k['stripBottom'] <= k['bodyH'] and k['legendHidden'] and k['pressed'] == 'true', k)
-    p.click('#pc-fs'); p.wait_for_timeout(700)
-    m = p.evaluate("()=>({fs:document.getElementById('mapbody').classList.contains('fs'), both:document.getElementById('mapbody').classList.contains('both'), pressed:document.getElementById('pc-fs').getAttribute('aria-pressed')})")
-    check('the button leaves full screen and the mode', not m['fs'] and not m['both'] and m['pressed'] == 'false', m)
     errs = [e for e in errors if 'ERR_TUNNEL' not in e and 'net::' not in e]
     check('0 console errors', not errs, errs[:3])
     ctx.close(); b.close()
@@ -958,6 +864,6 @@ def hebrew(pw):
 
 if __name__ == '__main__':
     with sync_playwright() as pw:
-        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800) + sorting(pw, 1280, 900) + sorting(pw, 400, 800) + chapter8(pw, 1280, 900) + chapter8(pw, 400, 800) + laptop(pw) + selections(pw) + hints(pw) + fullscreen(pw) + review23b(pw) + review23c(pw) + strip(pw) + folds(pw) + stripmodes(pw) + feedback(pw) + hebrew(pw)
+        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800) + sorting(pw, 1280, 900) + sorting(pw, 400, 800) + chapter8(pw, 1280, 900) + chapter8(pw, 400, 800) + laptop(pw) + selections(pw) + hints(pw) + fullscreen(pw) + review23b(pw) + review23c(pw) + folds(pw) + scrollescape(pw) + feedback(pw) + hebrew(pw)
     print('RESULT:', 'PASS' if not f else f'FAIL {f}')
     sys.exit(1 if f else 0)

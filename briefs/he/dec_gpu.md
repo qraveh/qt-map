@@ -40,6 +40,8 @@ updated: 2026-09-30
 ## ראיות — כיצד נמדדו המספרים
 שני נתוני הכותרת באים מהבלוג של NVIDIA עצמה, בפיתוח משותף עם Quantinuum, ולא עברו ביקורת עמיתים [C][324]. ה-5.4× מובא עם אי-ודאויות — נוהג טוב יותר מזה של רוב טענות הספקים — אבל זהו קוד אחד על מכונה אחת, ומערכת ההדגמה של IQM ידועה רק מהעיתונות המקצועית [P][239]. אין השוואה מול Relay-BP [D][48] או מול המפענח של Riverlane [D][238] על אותם סינדרומים, ולכן הקביעה "מעבדי GPU איטיים יותר מ-FPGA" משווה מספרים מקודים שונים וממכונות שונות.
 
+לא פורסם: אם זמן הפענוח ב-GPU גדל עם גודל הקוד או עם מספר הבלוקים הלוגיים ב-10⁴–10⁶ קיוביטים, וסכומי ההשקעה של NVentures ב-Quantinuum, ב-QuEra וב-Alice & Bob בנפרד — רק הסכומים הכוללים של הסבבים פומביים. המספרים שבכותרת הודעת ההשקה (17 בונים, תשע מעבדות) אינם מתיישבים במדויק עם רשימת השמות שבה.
+
 ## שחקנים וכלכלה
 **מי.**
 | ארגון | תפקיד | מדינה | מה בדיוק הם עושים בטכנולוגיה זו | ראיות |
@@ -73,10 +75,3 @@ updated: 2026-09-30
 [324] S. Caldwell *et al.*, “NVIDIA NVQLink Architecture Integrates Accelerated Computing with Quantum Processors,” NVIDIA Technical Blog, Nov. 17, 2025. [Online]. Available: https://developer.nvidia.com/blog/nvidia-nvqlink-architecture-integrates-accelerated-computing-with-quantum-processors/ [C]
 [531] NVIDIA, “NVIDIA Introduces NVQLink — Connecting Quantum and GPU Computing for 17 Quantum Builders and Nine Scientific Labs,” Oct. 28, 2025. [Online]. Available: https://nvidianews.nvidia.com/news/nvidia-nvqlink-quantum-gpu-computing [C]
 [737] NVIDIA, “NVIDIA Announces Financial Results for Second Quarter Fiscal 2027,” Aug. 26, 2026. [Online]. Available: https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027 [G]
-
-## פריטי אימות פתוחים
-אין אישור בלתי תלוי (שאינו של NVIDIA ואינו של Quantinuum) לנתוני 3.84 µs או 67 µs נכון ל-2026-09-04.
-אין מבחן ביצועים ישיר של פענוח ב-GPU מול פענוח ב-FPGA על אותם רצפי סינדרומים.
-שום מקור שנסקר אינו מציין אם זמן הפענוח ב-GPU גדל עם גודל הקוד או עם מספר הבלוקים הלוגיים ב-10⁴–10⁶ קיוביטים.
-סכומי ההשקעה של NVentures ב-Quantinuum, ב-QuEra וב-Alice & Bob לא נמסרו בנפרד; רק הסכומים הכוללים של הסבבים פומביים.
-המספרים שבכותרת הודעת ההשקה (17 בונים, תשע מעבדות) ורשימת השמות שנשלפה ממנה אינם מתיישבים במדויק; כאן נעשה שימוש במספרים שבכותרת.
