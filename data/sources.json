@@ -3653,12 +3653,17 @@
    ],
    "n_authors": 9,
    "title": "Securing Elliptic Curve Cryptocurrencies against Quantum Vulnerabilities: Resource Estimates and Mitigations",
-   "venue": "arXiv:2603.28846",
+   "journal": "PRX Quantum",
+   "volume": "7",
+   "issue": "3",
    "date": "2026-03-30",
-   "kind": "preprint",
+   "pubdate": "2026-08-21",
+   "doi": "10.1103/j3xf-bw18",
+   "kind": "journal",
    "arxiv": "2603.28846",
    "hint": "Google ECDLP-256 estimate",
-   "verified": true
+   "verified": true,
+   "note": "published version from the Scite record of the DOI (title match), 9 Oct 2026; article number not given in that record"
   }
  ],
  "X12": [
@@ -5614,13 +5619,25 @@
  "P38": [
   {
    "org": "ORCA Computing",
+   "authors": [
+    "Maike Ostmann",
+    "Joshua Nunn",
+    "Alex E. Jones"
+   ],
    "title": "Nonlinear Photonic Architecture for Fault-tolerant Quantum Computing",
+   "journal": "Physical Review A",
+   "volume": "114",
+   "issue": "1",
    "date": "2025-10-20",
-   "kind": "web",
+   "pubdate": "2026-07-22",
+   "doi": "10.1103/s3dr-tsbg",
+   "arxiv": "2510.06890",
+   "kind": "journal",
    "site": "orcacomputing.com",
    "publisher": "ORCA Computing",
    "url": "https://orcacomputing.com/nonlinear-photonic-architecture-for-fault-tolerant-quantum-computing/",
-   "verified": true
+   "verified": true,
+   "note": "the ORCA page carries the title of arXiv:2510.06890 (Ostmann, Nunn, Jones; confirmed on arxiv.org/abs/2510.06890, 9 Oct 2026); published version from the Scite record of the DOI (title match), 9 Oct 2026; article number not given in that record"
   }
  ],
  "P39": [

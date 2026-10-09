@@ -9,7 +9,7 @@
    "id": "academia-sinica-20q",
    "name": "Academia Sinica 20-qubit superconducting quantum computer",
    "org": "Academia Sinica",
-   "org_id": "unmatched",
+   "org_id": "Academia Sinica",
    "country": "Taiwan",
    "family": "SC",
    "map_path": "sc",
@@ -1587,7 +1587,7 @@
    "id": "amaravati-ibm-tcs",
    "name": "IBM Quantum System Two at Amaravati Quantum Valley Tech Park",
    "org": "IBM with TCS and the Government of Andhra Pradesh",
-   "org_id": "IBM",
+   "org_id": "a host row (Amaravati Quantum Valley / TCS) — or, if the editor prefers filing by manufacturer, move basq-system-two, ibm-system-two-cscs and fraunhofer-ehningen under IBM instead; one rule for all four",
    "country": "India",
    "family": "SC",
    "map_path": "sc",
@@ -2006,7 +2006,7 @@
   {
    "id": "aws-dualrail",
    "name": "AWS dual-rail transmon erasure line",
-   "org": "AWS Center for Quantum Computing",
+   "org": "AWS Center for Quantum Computing (named Amazon Center for Quantum Computing in the Apr 2026 paper)",
    "org_id": "Amazon Web Services",
    "country": "USA",
    "family": "SC",
@@ -3313,7 +3313,7 @@
    "status": "DEPLOYED",
    "status_date": "Oct 2025",
    "physical_qubits_num": 156,
-   "access": "members of the IBM-Euskadi Quantum Computational Center",
+   "access": "members of the IBM-Euskadi Quantum Computational Center; since Jul 2026 also open to industry and public-sector entities (requests to access@basquequantum.eus; access agreement with Ikerbasque, which manages the infrastructure)",
    "layers": {
     "1": [
      {
@@ -3472,7 +3472,13 @@
     "verified": 0,
     "total": 10
    },
-   "refs": [],
+   "refs": [
+    {
+     "url": "https://www.basquequantum.eus/index%2Ephp/es/noticias/gobierno-vasco-abre-ibm-quantum-system-two-industria-y-entidades-publicas-impulsar-nuevos",
+     "title": "El Gobierno Vasco abre el IBM Quantum System Two a la industria y entidades públicas para impulsar nuevos proyectos de innovación y transfer",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "",
     "gate_mechanism": "",
@@ -3675,7 +3681,13 @@
     "verified": 0,
     "total": 10
    },
-   "refs": [],
+   "refs": [
+    {
+     "url": "https://quantumspain-project.es/el-bsc-amplia-la-capacidad-de-su-ordenador-cuantico-y-refuerza-el-acceso-abierto-a-su-infraestructura/",
+     "title": "El BSC amplía la capacidad de su ordenador cuántico y refuerza el acceso abierto a su infraestructura",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "superconducting, gate-based (qubit type not published)",
     "gate_mechanism": "not published",
@@ -3914,7 +3926,7 @@
   },
   {
    "id": "ctqg-tianyan-176",
-   "name": "Tianyan-176 (and 24-q sibling)",
+   "name": "Tianyan-176 / Tianyan-176 II (and Tianyan-24 sibling)",
    "org": "China Telecom Quantum Group + QuantumCTek",
    "org_id": "QuantumCTek",
    "country": "China",
@@ -4355,7 +4367,7 @@
    "status": "ANNOUNCED / DEPLOYED (reachability disputed)",
    "status_date": "Dec 2024",
    "physical_qubits_num": 504,
-   "access": "cloud service (disputed)",
+   "access": "cloud service (Cqlib SDK; operator paper Dec 2025)",
    "layers": {
     "1": [
      {
@@ -4528,6 +4540,11 @@
     "total": 11
    },
    "refs": [
+    {
+     "url": "https://arxiv.org/abs/2512.10504",
+     "title": "Tianyan: Cloud services with quantum advantage",
+     "kind": "paper"
+    },
     {
      "url": "https://thequantuminsider.com/2026/05/15/10-plus-companies-leading-the-quantum-technologies-race-in-china/",
      "title": "Top Chinese Quantum Computing Companies in 2026",
@@ -5183,6 +5200,11 @@
     "total": 10
    },
    "refs": [
+    {
+     "url": "https://arxiv.org/abs/2501.04612",
+     "title": "Realizing Lattice Surgery on Two Distance-Three Repetition Codes with Superconducting Qubits",
+     "kind": "paper"
+    },
     {
      "url": "https://arxiv.org/abs/2112.03708",
      "title": "Realizing Repeated Quantum Error Correction in a Distance-Three Surface Code",
@@ -5876,7 +5898,7 @@
     "best_logical": "none",
     "decoder": "none",
     "realtime": "none",
-    "roadmap": "live Fujitsu pages still say \"launched in 2026\" as of 15 Sep 2026",
+    "roadmap": "live Fujitsu pages still say \"launched in 2026\" as of 9 Oct 2026 (research page: \"scheduled to be installed in a new building at the Fujitsu Technology Park and launched in 2026\")",
     "role": "",
     "gate_evidence": "none",
     "decoder_mode": "none",
@@ -7312,7 +7334,7 @@
     "best_logical": "none",
     "decoder": "Relay-BP (intended)",
     "realtime": "intended in-loop",
-    "roadmap": "module-to-module entanglement",
+    "roadmap": "module-to-module entanglement; IBM (19 Aug 2026): by 2027 L-couplers to link multiple processors into a larger quantum computer with at least 1,000 programmable qubits (the release does not name Cockatoo); Nighthawk processors to be installed in the first modular cryogenic systems later in 2026",
     "role": "",
     "gate_evidence": "none",
     "decoder_mode": "planned",
@@ -10909,7 +10931,13 @@
     "verified": 4,
     "total": 11
    },
-   "refs": [],
+   "refs": [
+    {
+     "url": "https://newsroom.ibm.com/2026-09-10-ibm,-lockheed-martin-announce-swiss-quantum-innovation-hub-at-eth-zurich,-anchored-by-switzerlands-first-ibm-quantum-computer",
+     "title": "IBM, Lockheed Martin Announce Swiss Quantum Innovation Hub at ETH Zurich, Anchored by Switzerland's First IBM Quantum Computer",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "transmon (IBM Nighthawk/Heron family)",
     "gate_mechanism": "tunable-coupler two-qubit gates (218 tunable couplers on Nighthawk)",
@@ -11122,6 +11150,16 @@
      "url": "https://i-qcc.com/testbed/",
      "title": "IQCC | Testbed",
      "kind": "product"
+    },
+    {
+     "url": "https://www.quantum-machines.co/press-release/qolab-superconducting-qubit-device-iqcc-deployment/",
+     "title": "IQCC becomes the world's first facility to deploy Qolab's superconducting qubit device",
+     "kind": "press"
+    },
+    {
+     "url": "https://www.prnewswire.com/il/news-releases/quantum-machines-opens-the-israeli-quantum-computing-center-302181680.html",
+     "title": "Quantum Machines Opens the Israeli Quantum Computing Center",
+     "kind": "press"
     }
    ],
    "profile": {
@@ -11878,6 +11916,11 @@
    },
    "refs": [
     {
+     "url": "https://iqm.tech/press-releases/iqm-launches-halocene-a-new-quantum-computer-product-line-for-error-correction/",
+     "title": "IQM launches Halocene, a new quantum computer product line for error correction",
+     "kind": "press"
+    },
+    {
      "url": "https://quantumcomputingreport.com/lumi-ai-factory-selects-iqms-halocene-roadmap-for-europes-first-superconducting-logical-qubit-system/",
      "title": "LUMI AI Factory Selects IQM's Halocene Roadmap for Europe's First Superconducting Logical Qubit System",
      "kind": "press"
@@ -11906,7 +11949,7 @@
     "best_logical": "target: up to 9 logical qubits at distance 3 (2029), with headroom for d=11 surface or d=9 colour on one logical qubit; directional tile codes need only nearest-neighbour iSWAP and reach ~30 circuit qubits per logical qubit in the best layouts",
     "decoder": "GPU decoding over NVQLink (planned)",
     "realtime": "planned real-time from 2028",
-    "roadmap": "LUMI-IQ: 2027 H4 150 q; 2028 real-time correction; 2029 H5 lattice surgery and T-gate teleportation, up to 9 logical qubits (restated 10 Sep 2026)",
+    "roadmap": "150-qubit system commercially available by end of 2026 (launch release, 13 Nov 2025); LUMI-IQ: 2027 H4 150 q; 2028 real-time correction; 2029 H5 lattice surgery and T-gate teleportation, up to 9 logical qubits (restated 10 Sep 2026)",
     "role": "",
     "gate_evidence": "figure",
     "decoder_mode": "planned",
@@ -12090,7 +12133,13 @@
     "verified": 4,
     "total": 10
    },
-   "refs": [],
+   "refs": [
+    {
+     "url": "https://iqm.tech/press-releases/iqm-to-deliver-its-first-quantum-computer-in-south-america-to-brazils-eldorado-research-institute/",
+     "title": "IQM to deliver its first quantum computer in South America to Brazil's Eldorado Research Institute",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "CZ through tunable couplers",
@@ -12504,6 +12553,11 @@
    },
    "refs": [
     {
+     "url": "https://arxiv.org/abs/2503.10903",
+     "title": "A Superconducting Qubit-Resonator Quantum Processor with Effective All-to-All Connectivity",
+     "kind": "paper"
+    },
+    {
      "url": "https://arxiv.org/abs/2503.12869",
      "title": "Quantum error detection in qubit-resonator star architecture",
      "kind": "paper"
@@ -12557,7 +12611,7 @@
    "status": "DEPLOYED",
    "status_date": "Sep 2025",
    "physical_qubits_num": 24,
-   "access": "national allocation (EuroHPC JU access; integrated with the KAROLINA supercomputer)",
+   "access": "national allocation (EuroHPC JU access; integrated with the KAROLINA supercomputer); open to users since 14 Jul 2026 after testing and validation (16 projects awarded; IT4I Open Access Grant Competitions)",
    "layers": {
     "1": [
      {
@@ -12716,7 +12770,13 @@
     "verified": 1,
     "total": 10
    },
-   "refs": [],
+   "refs": [
+    {
+     "url": "https://www.it4i.cz/en/about/infoservice/press-releases/the-czech-republics-first-quantum-computer-is-available-to-users-researchers-and-companies-begin-working-with-vlq",
+     "title": "The Czech Republic's first quantum computer is available to users. Researchers and companies begin working with VLQ",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "superconducting (type not stated)",
     "gate_mechanism": "not published",
@@ -12932,7 +12992,13 @@
     "verified": 0,
     "total": 11
    },
-   "refs": [],
+   "refs": [
+    {
+     "url": "https://en.sedaily.com/technology/2026/03/23/korea-builds-quantum-fabs-targets-second-gen-quantum",
+     "title": "Korea builds quantum fabs, targets second-gen quantum",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "transmon",
     "gate_mechanism": "tunable coupler (assumed)",
@@ -13181,7 +13247,7 @@
    "status": "DEPLOYED (open testbed)",
    "status_date": "2018-2026",
    "physical_qubits_num": 8,
-   "access": "open user testbed (no cost for non-proprietary work that will be published; DOE ASCR)",
+   "access": "open user testbed (no cost for non-proprietary work that will be published; DOE ASCR); User Program being restructured, with no open call for user proposals on the usual annual cycle; collaborations by contact (aqt@lbl.gov)",
    "layers": {
     "1": [
      {
@@ -13359,7 +13425,7 @@
     "best_logical": "none",
     "decoder": "none",
     "realtime": "none",
-    "roadmap": "national (DOE open testbed)",
+    "roadmap": "national (DOE open testbed); fluxonium-processor development; hybrid quantum–classical integration under a Berkeley Lab–NVIDIA partnership",
     "role": "",
     "gate_evidence": "none",
     "decoder_mode": "none",
@@ -15721,7 +15787,7 @@
      "post-selection-dominated",
      "roadmap-missed"
     ],
-    "qubits_accessible": null,
+    "qubits_accessible": 62,
     "gate_evidence_derived": true,
     "decoder_mode_derived": true,
     "benchmarked": false
@@ -15736,7 +15802,7 @@
    "family": "SC",
    "map_path": "dualrail",
    "status": "DEPLOYED",
-   "status_date": "Nov 2024 (acquired 20 Jan 2026)",
+   "status_date": "Nov 2024 (acquired 19 Jan 2026)",
    "physical_qubits_num": 8,
    "access": "cloud service",
    "layers": {
@@ -15953,7 +16019,13 @@
     "verified": 5,
     "total": 12
    },
-   "refs": [],
+   "refs": [
+    {
+     "url": "https://www.businesswire.com/news/home/20260119513563/en/D-Wave-Completes-Acquisition-of-Quantum-Circuits-Inc.-Creating-Worlds-Leading-Quantum-Computing-Company",
+     "title": "D-Wave Completes Acquisition of Quantum Circuits Inc., Creating World's Leading Quantum Computing Company",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "dual-rail cavity qubit with erasure conversion; photon loss is heralded",
     "gate_mechanism": "native sqrt(X), Z, CZ; ~500 ns CZ",
@@ -18667,7 +18739,7 @@
    "id": "riken-64q",
    "name": "RIKEN 64-qubit superconducting processor",
    "org": "RIKEN with AIST, NICT, Osaka University, Fujitsu, NTT",
-   "org_id": "NICT",
+   "org_id": "RIKEN",
    "country": "Japan",
    "family": "SC",
    "map_path": "sc",
@@ -19601,7 +19673,7 @@
    "id": "sustc-biased-erasure",
    "name": "SUSTech biased-erasure cavity qubit",
    "org": "Southern University of Science and Technology",
-   "org_id": "unmatched",
+   "org_id": "Southern University of Science and Technology",
    "country": "China",
    "family": "SC",
    "map_path": "dualrail",
@@ -20305,7 +20377,7 @@
    "id": "tsinghua-kunlun-32",
    "name": "Kunlun",
    "org": "Zhejiang University (H. Wang group) with Tsinghua University IIIS (D.-L. Deng)",
-   "org_id": "Tsinghua University",
+   "org_id": "Zhejiang University",
    "country": "China",
    "family": "SC",
    "map_path": "sc",
@@ -20487,6 +20559,11 @@
    "refs": [
     {
      "url": "https://arxiv.org/abs/2505.09684",
+     "title": "Demonstration of low-overhead quantum error correction codes",
+     "kind": "paper"
+    },
+    {
+     "url": "https://doi.org/10.1038/s41567-025-03157-4",
      "title": "Demonstration of low-overhead quantum error correction codes",
      "kind": "paper"
     }
@@ -20962,6 +21039,11 @@
    "refs": [
     {
      "url": "https://arxiv.org/abs/2412.11924",
+     "title": "Establishing a New Benchmark in Quantum Computational Advantage with 105-qubit Zuchongzhi 3.0 Processor",
+     "kind": "paper"
+    },
+    {
+     "url": "https://doi.org/10.1103/PhysRevLett.134.090601",
      "title": "Establishing a New Benchmark in Quantum Computational Advantage with 105-qubit Zuchongzhi 3.0 Processor",
      "kind": "paper"
     },
@@ -21443,7 +21525,13 @@
     "verified": 2,
     "total": 10
    },
-   "refs": [],
+   "refs": [
+    {
+     "url": "https://www.vttresearch.com/en/technology-infrastructures/quantum-computers",
+     "title": "Quantum computers",
+     "kind": "product"
+    }
+   ],
    "profile": {
     "qubit_type": "flux-tunable superconducting qubits (transmon type not stated)",
     "gate_mechanism": "not published; flux-tunable couplers",
@@ -21462,7 +21550,7 @@
     "best_logical": "none",
     "decoder": "none",
     "realtime": "none",
-    "roadmap": "150- and 300-qubit systems planned; the 300-qubit one for materials modelling and quantum error correction",
+    "roadmap": "150-qubit system (VTT with IQM) to be delivered in 2026, followed by a 300-qubit system at a later stage; the 300-qubit one for materials modelling and quantum error correction",
     "role": "",
     "gate_evidence": "none",
     "decoder_mode": "none",
@@ -21478,14 +21566,14 @@
   },
   {
    "id": "zhuangzi-2.0",
-   "name": "Zhuangzi 2.0",
+   "name": "Zhuangzi 2.0 (Chuang-tzu 2.0)",
    "org": "CAS / Peking University",
-   "org_id": "unmatched",
+   "org_id": "Institute of Physics, Chinese Academy of Sciences",
    "country": "China",
    "family": "SC",
    "map_path": "sc",
-   "status": "DEMONSTRATED (Nature, 29 Jan 2026)",
-   "status_date": "29 Jan 2026 (arXiv Mar 2025)",
+   "status": "DEMONSTRATED (Nature, 28 Jan 2026)",
+   "status_date": "28 Jan 2026 (arXiv Mar 2025)",
    "physical_qubits_num": 78,
    "access": "not cloud-accessible",
    "layers": {
@@ -21648,9 +21736,19 @@
    },
    "refs": [
     {
+     "url": "https://www.nature.com/articles/s41586-025-09977-x",
+     "title": "Prethermalization by random multipolar driving on a 78-qubit processor",
+     "kind": "paper"
+    },
+    {
      "url": "https://arxiv.org/abs/2503.21553",
      "title": "arXiv:2503.21553 (title not returned by summariser)",
      "kind": "paper"
+    },
+    {
+     "url": "https://www.iop.cas.cn/xwzx/kydt/202601/t20260128_8119971.html",
+     "title": "庄子（Chuang-tzu）2.0 (IOP CAS 科研动态, 2026-01-28)",
+     "kind": "press"
     }
    ],
    "profile": {
@@ -21688,7 +21786,7 @@
   {
    "id": "zju-125q",
    "name": "Zhejiang University 125-qubit surface-code processor",
-   "org": "Zhejiang University + CAEP",
+   "org": "Zhejiang University + Graduate School of China Academy of Engineering Physics (Beijing)",
    "org_id": "Zhejiang University",
    "country": "China",
    "family": "SC",
@@ -23056,7 +23154,7 @@
   },
   {
    "id": "ionq-ba133-qldpc-testbed",
-   "name": "40-ion Ba-133 qLDPC testbed",
+   "name": "40-ion Ba-133 qLDPC testbed (IonQ: a Tempo engineering test system)",
    "org": "IonQ",
    "org_id": "IonQ",
    "country": "USA",
@@ -23254,6 +23352,11 @@
     {
      "url": "https://postquantum.com/quantum-research/ionq-qldpc-breakeven-trapped-ion/",
      "title": "IonQ Hits qLDPC Breakeven — 9× Better Than Superconducting",
+     "kind": "press"
+    },
+    {
+     "url": "https://www.ionq.com/news/ionq-launches-superion-product-line-industry-leading-upgradeable-platform-designed-to-scale-manufacturable-fault-tolerant-quantum-computing",
+     "title": "IonQ Launches Superion Product Line, Industry-Leading Upgradeable Platform Designed to Scale Manufacturable Fault-Tolerant Quantum Computing",
      "kind": "press"
     }
    ],
@@ -23776,7 +23879,7 @@
    "id": "ionq-superion-10k",
    "name": "IonQ Superion 10K",
    "org": "IonQ",
-   "org_id": "ionq",
+   "org_id": "IonQ",
    "country": "USA",
    "family": "ION",
    "map_path": "ion_elec",
@@ -26799,7 +26902,7 @@
   },
   {
    "id": "qudoor-abaq",
-   "name": "AbaQ",
+   "name": "Aba|Qu 1.0 (Tiansuan-1, 天算1号)",
    "org": "Qudoor (Guokaike)",
    "org_id": "QUDOOR",
    "country": "China",
@@ -26971,6 +27074,11 @@
     {
      "url": "https://thequantuminsider.com/2026/05/15/10-plus-companies-leading-the-quantum-technologies-race-in-china/",
      "title": "Top Chinese Quantum Computing Companies in 2026",
+     "kind": "press"
+    },
+    {
+     "url": "https://www.qudoor.com/index.php?c=show&id=172",
+     "title": "启科量子 — 模块化离子阱量子计算工程机<Aba|Qu>1.0（天算1号）",
      "kind": "press"
     }
    ],
@@ -27644,7 +27752,7 @@
    "status": "DEPLOYED (open user testbed; to be discontinued by end of FY2026)",
    "status_date": "2021-2026",
    "physical_qubits_num": 6,
-   "access": "open user testbed (DOE-funded; calls for proposals)",
+   "access": "open user testbed (DOE-funded; calls for proposals); after the DOE funding redirection only a few short user projects until the end of FY2026",
    "layers": {
     "1": [
      {
@@ -27808,6 +27916,16 @@
      "url": "https://arxiv.org/abs/2104.00759",
      "title": "Engineering the Quantum Scientific Computing Open User Testbed (QSCOUT): Design details and user guide",
      "kind": "paper"
+    },
+    {
+     "url": "https://arxiv.org/abs/2607.08560",
+     "title": "QSCOUT's Qubit-Boson Gate Set",
+     "kind": "paper"
+    },
+    {
+     "url": "https://www.sandia.gov/quantum/quantum-information-sciences/projects/qscout/",
+     "title": "QSCOUT",
+     "kind": "product"
     }
    ],
    "profile": {
@@ -28079,7 +28197,7 @@
   },
   {
    "id": "uibk-innsbruck-ion",
-   "name": "University of Innsbruck / IQOQI research trap",
+   "name": "University of Innsbruck trapped-ion demonstrator (Institut für Experimentalphysik)",
    "org": "University of Innsbruck",
    "org_id": "University of Innsbruck",
    "country": "Austria",
@@ -28841,7 +28959,7 @@
    "country": "Denmark",
    "family": "ATOM",
    "map_path": "atom_ae",
-   "status": "ANNOUNCED (facility completed and installation begun Sep 2026; fully operational early 2027)",
+   "status": "ANNOUNCED (facility completed and installation begun Sep 2026; fully operational spring 2027)",
    "status_date": "Sep 2026",
    "physical_qubits_num": 1225,
    "access": "on-premise, Danish-owned",
@@ -29046,6 +29164,11 @@
     {
      "url": "https://quantumcomputingreport.com/denmarks-qunorth-to-acquire-50-logical-qubit-magne-quantum-computer-from-atom-computing-and-microsoft/",
      "title": "Denmark's QuNorth to Acquire 50-Logical-Qubit Magne Quantum Computer from Atom Computing and Microsoft",
+     "kind": "press"
+    },
+    {
+     "url": "https://thequantuminsider.com/2026/09/02/qunorth-clears-facility-milestone-for-magne-quantum-computer/",
+     "title": "QuNorth Clears Facility Milestone for MAGNE Quantum Computer",
      "kind": "press"
     }
    ],
@@ -29329,6 +29452,11 @@
      "url": "https://www.nextbigfuture.com/2023/10/atom-computing-first-to-exceed-1000-qubits-with-1180-qubit-neutral-atom-quantum-computer.html",
      "title": "Atom Computing First to Exceed 1,000 Qubits With 1180 Qubit Neutral Atom Quantum Computer",
      "kind": "press"
+    },
+    {
+     "url": "https://www.prnewswire.com/news-releases/atom-computing-raises-more-than-300-million-to-accelerate-deployment-of-fault-tolerant-neutral-atom-quantum-computers-302800832.html",
+     "title": "Atom Computing Raises More Than $300 Million to Accelerate Deployment of Fault-Tolerant Neutral-Atom Quantum Computers",
+     "kind": "press"
     }
    ],
    "profile": {
@@ -29551,6 +29679,11 @@
      "kind": "paper"
     },
     {
+     "url": "https://doi.org/10.1038/s41586-025-09641-4",
+     "title": "A tweezer array with 6100 highly coherent atomic qubits",
+     "kind": "paper"
+    },
+    {
      "url": "https://www.caltech.edu/about/news/caltech-team-sets-record-with-6100-qubit-array",
      "title": "Caltech Team Sets Record with 6,100-Qubit Array",
      "kind": "press"
@@ -29592,7 +29725,7 @@
    "id": "hanyuan-1",
    "name": "Hanyuan-1",
    "org": "Zhongke Kuyuan (Wuhan, CAS)",
-   "org_id": "unmatched",
+   "org_id": "Zhongke Kuyuan",
    "country": "China",
    "family": "ATOM",
    "map_path": "atom_rb",
@@ -29763,6 +29896,11 @@
      "url": "https://postquantum.com/industry-news/china-neutral-atom-sprint-benchmarks/",
      "title": "China's Neutral-Atom Quantum Sprint: Speed vs Data",
      "kind": "press"
+    },
+    {
+     "url": "https://news.hubeidaily.net/pc/c_4727100.html",
+     "title": "湖北日报 — 汉原1号",
+     "kind": "press"
     }
    ],
    "profile": {
@@ -29801,7 +29939,7 @@
    "id": "hanyuan-2",
    "name": "Hanyuan-2",
    "org": "Zhongke Kuyuan (Wuhan, CAS)",
-   "org_id": "unmatched",
+   "org_id": "Zhongke Kuyuan",
    "country": "China",
    "family": "ATOM",
    "map_path": "atom_rb",
@@ -29971,6 +30109,11 @@
     {
      "url": "https://postquantum.com/industry-news/china-neutral-atom-sprint-benchmarks/",
      "title": "China's Neutral-Atom Quantum Sprint: Speed vs Data",
+     "kind": "press"
+    },
+    {
+     "url": "https://www.globaltimes.cn/page/202605/1360525.shtml",
+     "title": "Global Times — China unveils dual-core neutral-atom quantum computer Hanyuan-2",
      "kind": "press"
     }
    ],
@@ -30749,7 +30892,13 @@
     "verified": 6,
     "total": 10
    },
-   "refs": [],
+   "refs": [
+    {
+     "url": "https://www.icfo.eu/news/2328/quione-announcing-the-birth-of-a-unique-analog-quantum-processor-in-the-world-/",
+     "title": "QUIONE: Announcing the birth of a unique analog quantum processor in the world",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "none (analog quantum-gas simulator; no qubit encoding)",
     "gate_mechanism": "analog Bose-Hubbard dynamics in an optical lattice; no entangling gate",
@@ -30768,7 +30917,7 @@
     "best_logical": "none",
     "decoder": "none",
     "realtime": "none",
-    "roadmap": "academic",
+    "roadmap": "academic; QUIONE II, a hybrid analog-digital processor, under construction (ICFO, Apr 2024; no date given)",
     "role": "",
     "gate_evidence": "none",
     "decoder_mode": "none",
@@ -33024,6 +33173,11 @@
      "kind": "paper"
     },
     {
+     "url": "https://doi.org/10.1038/s41567-026-03309-0",
+     "title": "Logical qubits with erasure conversion using metastable neutral atoms",
+     "kind": "paper"
+    },
+    {
      "url": "https://arxiv.org/abs/2506.13724",
      "title": "[2506.13724] Logical qubits with erasure conversion using metastable neutral atoms",
      "kind": "paper"
@@ -33061,9 +33215,9 @@
   },
   {
    "id": "qinghe-1",
-   "name": "Qinghe-1",
+   "name": "Qinghe-1 (Qinghe No. 1, 清河一号)",
    "org": "Zhongqi Wuliang (Shanghai, CAS SIOM spin-off)",
-   "org_id": "unmatched",
+   "org_id": "Zhongqi Wuliang",
    "country": "China",
    "family": "ATOM",
    "map_path": "atom_rb",
@@ -33233,6 +33387,11 @@
     {
      "url": "https://postquantum.com/industry-news/china-neutral-atom-sprint-benchmarks/",
      "title": "China's Neutral-Atom Quantum Sprint: Speed vs Data",
+     "kind": "press"
+    },
+    {
+     "url": "https://quantumcomputingreport.com/zhongqi-wuliang-unveils-server-rack-neutral-atom-quantum-computer-at-waic-2026/",
+     "title": "Zhongqi Wuliang Unveils Server-Rack Neutral-Atom Quantum Computer at WAIC 2026",
      "kind": "press"
     }
    ],
@@ -34628,7 +34787,13 @@
     "verified": 4,
     "total": 10
    },
-   "refs": [],
+   "refs": [
+    {
+     "url": "https://doi.org/10.1364/OFC.2025.M4E.5",
+     "title": "Entanglement of up to 6 photons on a silicon photonic quantum circuit",
+     "kind": "paper"
+    }
+   ],
    "profile": {
     "qubit_type": "path-encoded (dual-rail) photonic qubit",
     "gate_mechanism": "linear-optic quantum gates formed by about half of the on-chip switches (probabilistic linear-optical entangling)",
@@ -35318,6 +35483,11 @@
     "total": 12
    },
    "refs": [
+    {
+     "url": "https://arxiv.org/abs/2404.17570",
+     "title": "A manufacturable platform for photonic quantum computing",
+     "kind": "paper"
+    },
     {
      "url": "https://www.psiquantum.com/technology",
      "title": "Technology — PsiQuantum",
@@ -38709,7 +38879,7 @@
   {
    "id": "hitachi-intel18a",
    "name": "Hitachi x Intel 18A spin programme",
-   "org": "Hitachi + Intel",
+   "org": "Hitachi + Intel K.K. + AIST (G-QuAT)",
    "org_id": "Hitachi",
    "country": "Japan/USA",
    "family": "SPIN",
@@ -38878,6 +39048,11 @@
    },
    "refs": [
     {
+     "url": "https://www.hitachi.com/content/dam/hitachi/global/en/press/files/2026/07/260722a.pdf",
+     "title": "Hitachi launches R&D on silicon quantum computers in collaboration with Intel K.K. and AIST",
+     "kind": "press"
+    },
+    {
      "url": "https://www.techtimes.com/articles/321867/20260728/hitachi-intel-18a-spin-qubit.htm",
      "title": "Silicon Spin Qubits Get Foundry Path: Hitachi Banks on Intel 18A Process",
      "kind": "press"
@@ -38901,7 +39076,7 @@
     "best_logical": "none; the \"error-correcting capability\" at FY2028 is unspecified",
     "decoder": "none",
     "realtime": "none",
-    "roadmap": "prototype silicon quantum computers running error-correcting codes at the 100-qubit scale in FY2028, 1,000-qubit scale in FY2030 (Hitachi, 22 Jul 2026); the enabling deliverable is a quantum PDK on Intel 18A, the first such interface for a 1.8 nm-class process",
+    "roadmap": "prototype silicon quantum computers running error-correcting codes at the 100-qubit scale in FY2028, 1,000-qubit scale in FY2030 (Hitachi, 22 Jul 2026); NEDO Post-5G project (Hitachi selected as prospective implementing organization) running until March 2029; cloud service by FY2027; the enabling deliverable is a quantum PDK on Intel 18A, the first such interface for a 1.8 nm-class process",
     "role": "",
     "gate_evidence": "none",
     "decoder_mode": "none",
@@ -38919,7 +39094,7 @@
    "id": "hrl-eo-18q",
    "name": "HRL exchange-only silicon spin processor (18 EO qubits from 54 quantum dots)",
    "org": "HRL Laboratories (IBM since 26 Aug 2026)",
-   "org_id": "hrl",
+   "org_id": "IBM",
    "country": "USA",
    "family": "SPIN",
    "map_path": "spin_qd",
@@ -39119,6 +39294,11 @@
      "url": "https://arxiv.org/abs/2604.16216",
      "title": "A digitally controlled silicon quantum processing unit",
      "kind": "paper"
+    },
+    {
+     "url": "https://www.hrl.com/uncategorized/2026/07/29/hrl-demonstrates-a-silicon-quantum-processing-unit-that-runs-error-correction-with-all-its-control-electronics-housed-inside-the-cryostat",
+     "title": "HRL Demonstrates a Silicon Quantum Processing Unit That Runs Error Correction With All Its Control Electronics Housed Inside the Cryostat",
+     "kind": "press"
     }
    ],
    "profile": {
@@ -40087,7 +40267,7 @@
    "id": "fujitsu-snv-prototype",
    "name": "Diamond-spin quantum computer prototype",
    "org": "Fujitsu (with TU Delft and QuTech)",
-   "org_id": "fujitsu",
+   "org_id": "Fujitsu",
    "country": "Japan",
    "family": "DEFECT",
    "map_path": "defect",
@@ -40266,7 +40446,13 @@
     "verified": 7,
     "total": 11
    },
-   "refs": [],
+   "refs": [
+    {
+     "url": "https://global.fujitsu/en-global/pr/news/2026/09/08-01",
+     "title": "Fujitsu press release, 8 Sep 2026 (diamond-spin quantum computer prototype)",
+     "kind": "press"
+    }
+   ],
    "profile": {
     "qubit_type": "tin-vacancy (SnV) centre spin in diamond",
     "gate_mechanism": "combined light, microwave and radio-frequency control; gate-level circuits converted into control sequences",
@@ -41365,6 +41551,11 @@
    },
    "refs": [
     {
+     "url": "https://www.nature.com/articles/s41586-026-10568-7",
+     "title": "Reply to: On the robustness of topological gap detection via transport",
+     "kind": "paper"
+    },
+    {
      "url": "https://quantumzeitgeist.com/microsoft-majorana-qubit-claims/",
      "title": "Majorana Qubit Claims: The Definitive 2026 Microsoft Dispute",
      "kind": "press"
@@ -41414,7 +41605,7 @@
    "status": "CONTESTED (parity measurements only; no qubit operation shown)",
    "status_date": "2 Jun 2026",
    "physical_qubits_num": null,
-   "access": "lab-only",
+   "access": "lab-only; qubits on Majorana 2 provided to DARPA for independent testing, with on-site access at Microsoft's Maryland research centre (22 Sep 2026)",
    "layers": {
     "1": [
      {
@@ -41574,6 +41765,11 @@
     "total": 10
    },
    "refs": [
+    {
+     "url": "https://quantum.microsoft.com/en-us/insights/blogs/microsoft-quantum-research-center-maryland",
+     "title": "Microsoft Quantum research center, Maryland",
+     "kind": "blog"
+    },
     {
      "url": "https://quantum.microsoft.com/en-us/insights/blogs/majorana-2-scalable-quantum-processor",
      "title": "Microsoft Quantum | Majorana 2 – Microsoft's Scalable Quantum Processor With Reliable, Long-Lasting Qubits",

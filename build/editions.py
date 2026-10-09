@@ -106,6 +106,10 @@ def data_cutoff_text(lang, iso=None):
 
 ERRATA = {
  '2026.09': [
+  ('2026-10-09', 'the outreach round\'s review rows of 5 Oct, re-fetched at their sources; Scite\'s carried items (data/changes/2026-10-09.json)',
+   'Fifty-seven machine cards corrected or completed from the owners\' own pages read during the outreach round — access, dates, names, organisations, roadmaps merged (Magne spring 2027; Halocene end-2026; Hitachi\'s NEDO project to March 2029; VTT\'s 150 and 300 qubits with IQM; Willow 103 operable of 105; Wukong-72 62 accessible; Tianyan-504 cloud access no longer disputed; Zhuangzi 2.0, Aba|Qu 1.0, Tianyan-176 and Qinghe-1 by their own names) — with 37 new references; twelve organisation keys unified. '
+   'Four arXiv-only references now cite their published versions (Quantum, Applied Physics Reviews, PRX Quantum, Physical Review A); nine editorial notices read — none changes a number printed here. '
+   'The conveyor shuttling record of 10 µm is an effective, cumulative path (the electron shuttled back and forth), stated as such wherever it appears.'),
   ('2026-10-08', 'the editor\'s decisions D1–D9 of 8 Oct 2026, the digest intake of the 2026-10-08 issue and the WP2 pilot tagging (data/changes/2026-10-08.json)',
    'IonQ Tempo is a 64-qubit demonstration (IonQ\'s #AQ 64 on a development system, 25 Sep 2025), not a deployed 100-qubit device: the 100 qubits and 99.9% are IonQ\'s stated targets for the product listed for late 2026, now in its roadmap; no two-qubit error is published for the device. The ion-chain narrative, §6.1 and the records row follow. '
    'Six counters of §8 mixed all register rows with devices: the §8.1 sentence read 72 deployed, 50 demonstrated and 9 retired against 125 devices (71, 45 and 9 of them); the access sentence, the cloud column of Table 8.1, H4\'s "rest announced", H5 and F4 counted components and targets as devices — each now counts the set it names. '

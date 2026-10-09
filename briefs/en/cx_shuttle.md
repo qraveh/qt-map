@@ -15,7 +15,7 @@ updated: 2026-09-30
 
 Conveyor-mode spin shuttling moves a single spin along a gate-defined channel on a travelling potential wave: overlapping clavier gates driven with fixed phase offsets by four sinusoids (eight two-tone), the carrier riding the moving minimum. Bucket-brigade shuttling needs one pulsed control per hop; a conveyor needs a control count set by the number of phases, not by distance. That is the node's whole economic case, and this brief is its price. Bluhm's group at RWTH Aachen and Forschungszentrum Jülich introduced it as the QuBus: 420 nm channel, four sinusoids, 99.42 ± 0.02% single-electron shuttling — charge, not spin [D][510]. Spin coherence at length followed at Delft [D][196].
 
-Attributes. **a — affinity:** fully fabricated, an electron in a lithographic ²⁸Si/SiGe well. **b — time:** ~2 × 10⁻⁷ s per 10 µm transit [D][196]; entangling not applicable, this is transport. **c — readout:** none of its own, it borrows the register's charge sensor. **d — mobility:** transport, the node's entire function. **e — control:** no modality or placement of its own, one shared radio-frequency drive. **f — error as the code sees it:** coherent, dephasing and position-dependent rotations, no loss channel. **g — manufacturing:** CMOS, the same 300 mm line as the dots.
+Attributes. **a — affinity:** fully fabricated, an electron in a lithographic ²⁸Si/SiGe well. **b — time:** ~2 × 10⁻⁷ s per 10 µm transit (cumulative, shuttled back and forth) [D][196]; entangling not applicable, this is transport. **c — readout:** none of its own, it borrows the register's charge sensor. **d — mobility:** transport, the node's entire function. **e — control:** no modality or placement of its own, one shared radio-frequency drive. **f — error as the code sees it:** coherent, dephasing and position-dependent rotations, no loss channel. **g — manufacturing:** CMOS, the same 300 mm line as the dots.
 
 ## Physics & limits
 
@@ -27,7 +27,7 @@ Gates at 180 nm pitch driven to 300 MHz make a moving confinement minimum; the c
 |---|---|---|---|
 | 2021-08 | 420 nm conveyor, four controls, 99.42 ± 0.02% single-electron (charge) shuttling | RWTH Aachen | [D][510] |
 | 2024-07-08 | Germanium holes, bucket-brigade: 99.97% per shuttle, basis states only, 312 µm effective | QuTech | [D][512] |
-| 2025-06-09 | Conveyor: 10 µm in under 200 ns at 99.54 ± 0.03% spin fidelity | QuTech | [D][196][G:SHUTTLE-DELFT-2025-06] |
+| 2025-06-09 | Conveyor: 10 µm effective (back and forth) in under 200 ns at 99.54 ± 0.03% spin fidelity | QuTech | [D][196][G:SHUTTLE-DELFT-2025-06] |
 | 2026-05-06 | Controlled-phase gate between two *moving* spins: 98.86 ± 0.29%, 240 nm, 58 ns | QuTech | [D][193] |
 | 2026-07-29 | Weight-four parity, mobile ancilla: 97.7(1)% per 1.2 µm round trip; Z-parity 72.2(6)% | QuTech | [D][349] |
 
@@ -49,7 +49,7 @@ The node belongs to the silicon and germanium quantum-dot spin architecture (Int
 
 ## Evidence — how the numbers were measured
 
-The silicon figure comes from interleaved randomised benchmarking of a shuttle "gate" over the 10 µm path [D][196]; the germanium figure from exponential fits to a characteristic shuttle number [D][512]. Different observables, routinely quoted side by side: 99.97% per shuttle in germanium is basis-state only, 99.54% in silicon a spin fidelity over a path. Benchmarking a shuttle also assumes twirlability, questionable for a deterministic position-dependent rotation, since motional averaging can flatten the benchmark below the physical error at any single point. Neither protocol reports leakage out of the valley or orbital subspace, and no shuttling result has been cycle- or mirror-benchmarked, so the correlated error a code would see is unmeasured. Conveyor transport is shown at charge level by RWTH Aachen, at spin level by Delft; the 10 µm figure has no independent replication as of 3 Sep 2026.
+The silicon figure comes from interleaved randomised benchmarking of a shuttle "gate" over a 10 µm effective path, shuttled back and forth [D][196]; the germanium figure from exponential fits to a characteristic shuttle number [D][512]. Different observables, routinely quoted side by side: 99.97% per shuttle in germanium is basis-state only, 99.54% in silicon a spin fidelity over a path. Benchmarking a shuttle also assumes twirlability, questionable for a deterministic position-dependent rotation, since motional averaging can flatten the benchmark below the physical error at any single point. Neither protocol reports leakage out of the valley or orbital subspace, and no shuttling result has been cycle- or mirror-benchmarked, so the correlated error a code would see is unmeasured. Conveyor transport is shown at charge level by RWTH Aachen, at spin level by Delft; the 10 µm figure has no independent replication as of 3 Sep 2026.
 
 ## Actors & economics
 
@@ -57,7 +57,7 @@ The silicon figure comes from interleaved randomised benchmarking of a shuttle "
 
 | Organisation | Role | Country | What exactly they do | Evidence |
 |---|---|---|---|---|
-| QuTech | research | NL | Every conveyor spin record: 10 µm link, moving-spin gate, mobile ancilla | [D][193], [196], [349] |
+| QuTech | research | NL | Every conveyor spin record: 10 µm effective shuttle, moving-spin gate, mobile ancilla | [D][193], [196], [349] |
 | RWTH Aachen | research | DE | Invented conveyor mode; SpinBus architecture | [D][510][S][514] |
 | Forschungszentrum Jülich | research | DE | Conveyor co-parent; hosts ARQUE's first system | [C][515] |
 | ARQUE Systems | developer | DE | Sells patented shuttling paths; five-qubit processor | [C][515] |
@@ -106,7 +106,7 @@ Open questions. (1) Is benchmarking of a shuttle a meaningful fidelity, or an ar
 [511] N. Ciroth *et al.*, “Numerical simulation of coherent spin-shuttling in a QuBus with charged defects,” [arXiv:2512.03588](https://arxiv.org/abs/2512.03588), Dec. 2025. [S]
 [512] F. van Riggelen *et al.*, “Coherent spin qubit shuttling through germanium quantum dots,” *Nat. Commun.*, vol. 15, Art. no. 5716, Jul. 2024, doi: [10.1038/s41467-024-49358-y](https://doi.org/10.1038/s41467-024-49358-y). [D]
 [513] D. Q. L. Nguyen, M. Rimbach-Russ, and S. Bosco, “Suppressing spin qubit decoherence during shuttling via confinement modulation,” [arXiv:2605.00611](https://arxiv.org/abs/2605.00611), May 2026. [S]
-[514] B. Yenilen, A. Sala, H. Bluhm, M. Müller, and M. Rispler, “Performance of the spin qubit shuttling architecture for a surface code implementation,” [arXiv:2503.10601](https://arxiv.org/abs/2503.10601), Mar. 2025. [S]
+[514] B. Yenilen, A. Sala, H. Bluhm, M. Müller, and M. Rispler, “Performance of the spin qubit shuttling architecture for a surface code implementation,” *Quantum*, vol. 10, Art. no. 2219, Sep. 2026, doi: [10.22331/q-2026-09-30-2219](https://doi.org/10.22331/q-2026-09-30-2219). [arXiv:2503.10601](https://arxiv.org/abs/2503.10601). [S]
 [515] Forschungszentrum Jülich, “Jülich-Aachen Start-up Paves the Way for Scalable Quantum Computers,” fz-juelich.de, Apr. 8, 2026. [Online]. Available: https://www.fz-juelich.de/en/news/archive/press-release/2026/julich-aachen-start-up-arque-systems [C]
 [766] S. F. Neyens *et al.*, “Probing single electrons across 300-mm spin qubit wafers,” *Nature*, vol. 629, no. 8010, pp. 80–85, May 2024, doi: [10.1038/s41586-024-07275-6](https://doi.org/10.1038/s41586-024-07275-6). [D]
 [898] A. S. Ivlev *et al.*, “Sparse qubit operation in a 6×6 quantum dot array,” [arXiv:2610.07683](https://arxiv.org/abs/2610.07683), Oct. 2026. [P]
@@ -114,7 +114,7 @@ Open questions. (1) Is benchmarking of a shuttle a meaningful fidelity, or an ar
 ## Open verification items
 
 - ARQUE Systems funding: no round, amount or investor disclosed in the Forschungszentrum Jülich release [515]; no company or database page is cited for it. Headcount and a dated installation milestone at Jülich Supercomputing Centre are likewise unverified.
-- arXiv:2503.10601 [514]: no author list, institution or date is available for it; the threshold figures quoted come from the abstract text only.
+- [514] (Yenilen et al., RWTH Aachen / Forschungszentrum Jülich) is now published in Quantum (30 Sep 2026); the threshold figures quoted were taken from the abstract and are to be re-read in the published version.
 - arXiv:2605.00611 [513]: abstract not machine-readable; cited by title only, no quantitative claim taken from it.
 - Export-control classification: no ECCN or category mapping for quantum-computing items and enriched ²⁸Si substrates is established here; no rule number is asserted.
 - No published yield, channel-uniformity or per-bus cost data exist for conveyor structures on any 300 mm line as of 2026-09-03 — an absence, not a conflict.

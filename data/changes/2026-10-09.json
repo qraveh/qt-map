@@ -1,0 +1,1314 @@
+{
+ "date": "2026-10-09",
+ "source": "the outreach round's review rows of 5 Oct (quantum-register/outreach/patch-2026-10-05.json), each re-fetched at its source on 9 Oct 2026; Scite's carried items of 6 Oct",
+ "items": [
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "atom-computing-magne"
+   },
+   "fields": {
+    "status": "ANNOUNCED (facility completed and installation begun Sep 2026; fully operational spring 2027)"
+   },
+   "note": "«MAGNE is expected to be fully operational in the spring of 2027.» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://thequantuminsider.com/2026/09/02/qunorth-clears-facility-milestone-for-magne-quantum-computer/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "atom-computing-phoenix"
+   },
+   "fields": {
+    "physical_qubits": "1,180 qubits populated in a 1,225-site grid; the company states it 'has developed systems with over 1,200 qubits' (16 Jun 2026)"
+   },
+   "note": "«has developed systems with over 1,200 qubits» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://www.prnewswire.com/news-releases/atom-computing-raises-more-than-300-million-to-accelerate-deployment-of-fault-tolerant-neutral-atom-quantum-computers-302800832.html"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "qci-seeker-8"
+   },
+   "fields": {
+    "status_date": "Nov 2024 (acquired 19 Jan 2026)"
+   },
+   "note": "«today announced that it has completed its previously announced acquisition of Quantum Circuits Inc.» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://www.businesswire.com/news/home/20260119513563/en/D-Wave-Completes-Acquisition-of-Quantum-Circuits-Inc.-Creating-Worlds-Leading-Quantum-Computing-Company"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "iqm-halocene-150"
+   },
+   "fields": {
+    "roadmap": "150-qubit system commercially available by end of 2026 (launch release, 13 Nov 2025); LUMI-IQ: 2027 H4 150 q; 2028 real-time correction; 2029 H5 lattice surgery and T-gate teleportation, up to 9 logical qubits (restated 10 Sep 2026)"
+   },
+   "note": "«The 150-qubit system will become commercially available by the end of 2026.» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://iqm.tech/press-releases/iqm-launches-halocene-a-new-quantum-computer-product-line-for-error-correction/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "infleqtion-sqale"
+   },
+   "fields": {},
+   "note": "For the editor (outreach review row, re-fetched 9 Oct): (new machine) → New card recommended: Infleqtion Illinois neutral-atom quantum computer, Illinois Quantum & Microelectronics Park (Chicago), status ANNOUNCED, status_date 2027 . A new machine is an editor call. Same release: 'with a new architecture designed to scale through modular upgrades to more than 50 logical qubits' and 'on the path to the system's 100-logical-qubit go «under contract to deploy a neutral-atom quantum computer at the Illinois Quantum & Microelectronics Park in 2027»",
+   "sources": [
+    "https://ir.infleqtion.com/news-events/press-releases/detail/201/infleqtion-reports-record-q2-revenue-raises-2026-outlook-as-quantum-commercialization-accelerates"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-ba133-qldpc-testbed"
+   },
+   "fields": {
+    "name": "40-ion Ba-133 qLDPC testbed (IonQ: a Tempo engineering test system)"
+   },
+   "note": "«in August 2026 it reported breakeven quantum error correction using qLDPC codes on a Tempo engineering test system,» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://www.ionq.com/news/ionq-launches-superion-product-line-industry-leading-upgradeable-platform-designed-to-scale-manufacturable-fault-tolerant-quantum-computing"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "psiquantum-omega"
+   },
+   "fields": {
+    "refs": "psiq-omega;psiq-tech;psiq-mit;psiq-pq;psiq-omega-paper"
+   },
+   "note": "«A manufacturable platform for photonic quantum computing» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://arxiv.org/abs/2404.17570"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "iqm-star-6"
+   },
+   "fields": {
+    "refs": "iqm-star6-device"
+   },
+   "note": "«uses a transmission-line resonator to implement effective all-to-all connectivity between six transmon qubits» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://arxiv.org/abs/2503.10903"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "aws-dualrail"
+   },
+   "fields": {
+    "org": "AWS Center for Quantum Computing (named Amazon Center for Quantum Computing in the Apr 2026 paper)"
+   },
+   "note": "«Amazon Center for Quantum Computing, Pasadena, California 91106, USA» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://arxiv.org/html/2604.16292v1"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "riken-fujitsu-256q|riken-64q"
+   },
+   "fields": {},
+   "note": "For the editor (outreach review row, re-fetched 9 Oct): (new machine) → New card recommended (or a separate line in riken-64q): RIKEN RQC-Fujitsu 64-qubit superconducting machine, launched Oct 2023 with MEXT support at the RIKEN RQC. A new machine is an editor call. riken-64q is the 27 Mar 2023 RIKEN cloud machine (org RIKEN with AIST, NICT, Osaka U., Fujitsu, NTT); the Oct 2023 machine is a distinct RIKEN-Fujitsu launch. Page dat «builds upon the advanced technology of the 64-qubit iteration, which was launched with the support of the Japanese Ministry … in October 2023»",
+   "sources": [
+    "https://www.riken.jp/en/news_pubs/news/2025/20250422_1/index.html"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "fujitsu-snv-prototype"
+   },
+   "fields": {
+    "refs": "fujitsu-snv-2026"
+   },
+   "note": "«Fujitsu is set to develop a prototype of a multi-module diamond-spin quantum computer by 2027.» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://global.fujitsu/en-global/pr/news/2026/09/08-01"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "fujitsu-1000q"
+   },
+   "fields": {
+    "roadmap": "live Fujitsu pages still say \"launched in 2026\" as of 9 Oct 2026 (research page: \"scheduled to be installed in a new building at the Fujitsu Technology Park and launched in 2026\")"
+   },
+   "note": "«scheduled to be installed in a new building at the Fujitsu Technology Park and launched in 2026» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://global.fujitsu/en-global/technology/research/quantum"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "google-willow"
+   },
+   "fields": {},
+   "note": "Deferred (WP1/WP2): 99.88% entangling-gate fidelity, 99.97% single-qubit, 99.5% readout across the 105-qubit array (22 Oct 2025) — Two-qubit error figure → WP2. The page is already ref 'google-verif'; 105 qubits matches the card.",
+   "sources": [
+    "https://blog.google/innovation-and-ai/technology/research/quantum-hardware-verifiable-advantage/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "hitachi-intel18a"
+   },
+   "fields": {
+    "org": "Hitachi + Intel K.K. + AIST (G-QuAT)"
+   },
+   "note": "«Hitachi launches R&D on silicon quantum computers in collaboration with Intel K.K. and AIST» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://www.hitachi.com/content/dam/hitachi/global/en/press/files/2026/07/260722a.pdf"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "hitachi-intel18a"
+   },
+   "fields": {
+    "roadmap": "prototype silicon quantum computers running error-correcting codes at the 100-qubit scale in FY2028, 1,000-qubit scale in FY2030 (Hitachi, 22 Jul 2026); NEDO Post-5G project (Hitachi selected as prospective implementing organization) running until March 2029; cloud service by FY2027; the enabling deliverable is a quantum PDK on Intel 18A, the first such interface for a 1.8 nm-class process"
+   },
+   "note": "«selected as the prospective implementing organization … until March 2029 … aims to launch the cloud service by fiscal year 2027» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://www.hitachi.com/content/dam/hitachi/global/en/press/files/2026/07/260722a.pdf"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "google-willow"
+   },
+   "fields": {
+    "qubits_accessible": "103 operable of 105 (two inoperable: broken coupler bias lines; Quantum Echoes, Nature 2025)"
+   },
+   "note": "«On cooling down, we found that two qubits were inoperable due to broken coupler bias lines.» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://www.nature.com/articles/s41586-025-09526-6"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-heron-r1|ibm-heron-r2|ibm-heron-r3|ibm-nighthawk-r1|ibm-nighthawk-r2"
+   },
+   "fields": {},
+   "note": "Deferred (WP1/WP2): cite IBM's definition: 'Average error per layered gate (EPLG) in a chain of 100 qubits' (QPU information guide, '2Q error (layered)') — Bears on how two-qubit error figures are stated → WP2.",
+   "sources": [
+    "https://quantum.cloud.ibm.com/docs/en/guides/qpu-information"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "hrl-eo-18q"
+   },
+   "fields": {
+    "refs": "hrl-qpu;hrl-release-2026"
+   },
+   "note": "«That simplicity is what lets a single 70-million-transistor chip serve as the entire control system for 18 qubits.» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://www.hrl.com/uncategorized/2026/07/29/hrl-demonstrates-a-silicon-quantum-processing-unit-that-runs-error-correction-with-all-its-control-electronics-housed-inside-the-cryostat"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-cockatoo"
+   },
+   "fields": {
+    "roadmap": "module-to-module entanglement; IBM (19 Aug 2026): by 2027 L-couplers to link multiple processors into a larger quantum computer with at least 1,000 programmable qubits (the release does not name Cockatoo); Nighthawk processors to be installed in the first modular cryogenic systems later in 2026"
+   },
+   "note": "«By 2027, IBM's quantum roadmap plans to use L-couplers to link multiple processors into a larger quantum computer with at least 1,000 programmable qubits» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://newsroom.ibm.com/2026-08-19-ibm-connects-its-first-modular-cryogenic-systems-in-milestone-toward-fault-tolerant-quantum-computing"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-system-two-cscs"
+   },
+   "fields": {
+    "refs": "ibm-cscs-2026"
+   },
+   "note": "«IBM will operate the IBM Quantum System Two, which will be powered by an IBM Quantum Nighthawk» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://newsroom.ibm.com/2026-09-10-ibm,-lockheed-martin-announce-swiss-quantum-innovation-hub-at-eth-zurich,-anchored-by-switzerlands-first-ibm-quantum-computer"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "iqcc-facility"
+   },
+   "fields": {
+    "physical_qubits": "25 (Jun 2024: QuantWare 25-qubit QPU, alongside an 8-qumode ORCA photonic system); a Qolab superconducting qubit device installed Dec 2025 (no qubit count published); 2026 inventory not found"
+   },
+   "note": "«has become the world’s first facility to deploy Qolab’s pioneering superconducting qubit device.» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://www.quantum-machines.co/press-release/qolab-superconducting-qubit-device-iqcc-deployment/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "iqcc-facility"
+   },
+   "fields": {
+    "refs": "iqcc-opening;qolab-iqcc;qudoor-tqi"
+   },
+   "note": "«The center boasts a superconducting quantum computer with a 25-qubit quantum processor manufactured by Quantware» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://www.prnewswire.com/il/news-releases/quantum-machines-opens-the-israeli-quantum-computing-center-302181680.html"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "microsoft-majorana-2"
+   },
+   "fields": {
+    "refs": "majorana-zeit;ms-tetron-pb"
+   },
+   "note": "«replacing aluminum with the higher-gap superconductor lead in our superconductor-semiconductor hybrid devices» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://arxiv.org/abs/2606.03884"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "microsoft-majorana-1"
+   },
+   "fields": {
+    "refs": "majorana-zeit;ms-logical;ms-reply-2026"
+   },
+   "note": "«Reply to: On the robustness of topological gap detection via transport» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://www.nature.com/articles/s41586-026-10568-7"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "microsoft-majorana-2"
+   },
+   "fields": {
+    "access": "lab-only; qubits on Majorana 2 provided to DARPA for independent testing, with on-site access at Microsoft's Maryland research centre (22 Sep 2026)"
+   },
+   "note": "«Microsoft Quantum is providing topological qubits built on our Majorana 2 quantum chip for independent testing» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://quantum.microsoft.com/en-us/insights/blogs/microsoft-quantum-research-center-maryland"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "toshiba-dtc"
+   },
+   "fields": {},
+   "note": "Deferred (WP1/WP2): 8e-4 (iSWAP, 99.92(2) % average gate fidelity in 112 ns, arXiv:2604.27679, Apr 2026) — Two-qubit error figure → WP2. Paper: Inoue, Li, Kubo, Ho, Nakamura, Goto; submitted 30 Apr 2026 (the note's '1 May' is the listing date).",
+   "sources": [
+    "https://arxiv.org/abs/2604.27679"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "academia-sinica-20q"
+   },
+   "fields": {},
+   "note": "For the editor (outreach review row, re-fetched 9 Oct): flags → outlier-claim;no-published-error-rates. Release (29 Jan 2026) loads and confirms the card's 20 qubits, 530 µs T1, 8-inch wafer and 'open to domestic academic and research institutions'; all cells already match. Only the flag 'source-not-con «completed a new generation 20-qubit superconducting quantum chip ... from the earlier 5-qubit system's 15–30 microseconds (µs) to 530 microseconds»",
+   "sources": [
+    "https://www.sinica.edu.tw/en/news_content/55/3655"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "baqis-shenglian-84 (new)"
+   },
+   "fields": {},
+   "note": "For the editor (outreach review row, re-fetched 9 Oct): new machine → Shenglian (Quafu platform), BAQIS, 84 tunable transmons, tunable transmon couplers, hexagonal lattice. New machine → editor. arXiv:2607.01422 (Dated: July 3, 2026) describes an 84-qubit hexagonal-lattice processor and cites BAQIS Quafu; abstract: 'CZ gate fidelity exceeding 99.9% on an 84-qubit process «which is composed of 84 tunable transmon qubits coupled via tunable transmon couplers ... arranged in a hexagonal lattice»",
+   "sources": [
+    "https://arxiv.org/html/2607.01422"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "baqis-dongling-130"
+   },
+   "fields": {},
+   "note": "Deferred (WP1/WP2): 3.7e-2 average CZ error (0.963 mean CZ fidelity, Table IV, arXiv:2501.07085); 1Q 0.999 — Two-qubit error figure → WP2. Page also: 'we selected a 105-qubit superconducting quantum chip named Dongling' (card: 130, 105 usable — consistent).",
+   "sources": [
+    "https://arxiv.org/html/2501.07085"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "baqis-dongling-130"
+   },
+   "fields": {},
+   "note": "Deferred (WP1/WP2): 5.95e-5 / 3.79e-5 (averages, Table IV) — T1/T2 figures → WP1.",
+   "sources": [
+    "https://arxiv.org/html/2501.07085"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "baqis-scq136"
+   },
+   "fields": {},
+   "note": "Deferred (WP1/WP2): 7.6e-2 average 2Q gate error (92.4% average fidelity, arXiv:2305.17979 §III.E); 1Q ~1e-2 — Two-qubit error figure → WP2. Paper: 'there is a two-dimensional architecture chip called the ScQ-P136'.",
+   "sources": [
+    "https://arxiv.org/pdf/2305.17979"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "baqis-scq136"
+   },
+   "fields": {},
+   "note": "Deferred (WP1/WP2): 8.585e-6 / 1.0471e-5 — T1/T2 figures → WP1.",
+   "sources": [
+    "https://arxiv.org/pdf/2305.17979"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "zhuangzi-2.0"
+   },
+   "fields": {
+    "status_date": "28 Jan 2026 (arXiv Mar 2025)"
+   },
+   "note": "«Published: 28 January 2026 ... Nature volume 650, pages 79–85 (2026)» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://www.nature.com/articles/s41586-025-09977-x"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "zhuangzi-2.0"
+   },
+   "fields": {
+    "status": "DEMONSTRATED (Nature, 28 Jan 2026)"
+   },
+   "note": "«Published: 28 January 2026» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://www.nature.com/articles/s41586-025-09977-x"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "zhuangzi-2.0"
+   },
+   "fields": {
+    "name": "Zhuangzi 2.0 (Chuang-tzu 2.0)"
+   },
+   "note": "«超导量子芯片“庄子（Chuang-tzu）2.0”上完成，芯片含78个量子比特，137个可调耦合器» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://www.iop.cas.cn/xwzx/kydt/202601/t20260128_8119971.html"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "zhuangzi-2.0"
+   },
+   "fields": {},
+   "note": "For the editor (outreach review row, re-fetched 9 Oct): gate_mechanism → tunable coupler. Source confirms tunable couplers; gate_mechanism is outside the apply list, so editor. Connectivity could also read '2-D 6×13 lattice: 78 qubits with 137 tunable couplers'. The release is a new ref (r «Chuang-tzu 2.0 consists of 78 qubits arranged in a 6×13 lattice with 137 tunable couplers.»",
+   "sources": [
+    "http://english.iop.cas.cn/rh/rp/202601/t20260130_1147808.html"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "originq-wukong-72"
+   },
+   "fields": {
+    "qubits_accessible": "62"
+   },
+   "note": "«The superconducting quantum processor Wukong consists of 72 transmon superconducting qubits (62 available)» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://arxiv.org/html/2405.09035v3"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "qudoor-abaq"
+   },
+   "fields": {
+    "name": "Aba|Qu 1.0 (Tiansuan-1, 天算1号)"
+   },
+   "note": "«启科量子在2023年推出了模块化离子阱量子计算工程机<Aba|Qu>1.0（“天算1号”）» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://www.qudoor.com/index.php?c=show&id=172"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "qudoor-abaq"
+   },
+   "fields": {},
+   "note": "For the editor (outreach review row, re-fetched 9 Oct): status_date → 2023-. Launch year 2023 lies outside the card's cohort years (2024-2026) → editor. «启科量子在2023年推出了模块化离子阱量子计算工程机<Aba|Qu>1.0»",
+   "sources": [
+    "https://www.qudoor.com/index.php?c=show&id=172"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-176"
+   },
+   "fields": {},
+   "note": "For the editor (outreach review row, re-fetched 9 Oct): physical_qubits_num / physical_qubits → (recommended) 66 / 66 qubits + 110 couplers ('Zuchongzhi 2.0-like'; '176' a qubits+couplers label like Tianyan-287). Count change 176→66 (>25 %) → editor. The paper does not state 66 explicitly; it is an inference from 'Zuchongzhi 2.0-like' and the 287=105+182 naming. Read via alphaXiv full text (abs page carries on «In 2023, Tianyan introduced two superconducting quantum systems, Tianyan-176 and Tianyan-176 II, featuring the previous high-performance Zuchongzhi 2.0-like pro»",
+   "sources": [
+    "https://arxiv.org/abs/2512.10504"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-504"
+   },
+   "fields": {
+    "access": "cloud service (Cqlib SDK; operator paper Dec 2025)"
+   },
+   "note": "«providing access to superconducting quantum computing systems include Tianyan-287, Tianyan-176, Tianyan-504 and Tianyan-24. All the systems are cloud-accessible via Cqlib SDK.» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://arxiv.org/abs/2512.10504"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-504"
+   },
+   "fields": {},
+   "note": "For the editor (outreach review row, re-fetched 9 Oct): status → DEPLOYED. Status change → editor; vendor-class evidence [D/P] that it is cloud-accessible. «Then in 2024, Tianyan launched the Tianyan-504 superconducting quantum system with 504 physical qubits»",
+   "sources": [
+    "https://arxiv.org/abs/2512.10504"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-176"
+   },
+   "fields": {
+    "name": "Tianyan-176 / Tianyan-176 II (and Tianyan-24 sibling)"
+   },
+   "note": "«currently with five systems in operation ... In 2023, Tianyan introduced two superconducting quantum systems, Tianyan-176 and Tianyan-176 II» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://arxiv.org/abs/2512.10504"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-287"
+   },
+   "fields": {},
+   "note": "Deferred (WP1/WP2): (WP2) add CZ 5.50e-3 mean XEB error and AshN-family (iSWAP, √iSWAP, SWAP, B-like) 6.15e-3 mean, arXiv:2608.24084 — Two-qubit error figures → WP2. Supplement: 'a superconducting quantum processor with the same hardware architecture as Zuchongzhi 3.0, comprising 105 frequency-",
+   "sources": [
+    "https://arxiv.org/abs/2608.24084"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "ustc-zuchongzhi-3.2"
+   },
+   "fields": {},
+   "note": "For the editor (outreach review row, re-fetched 9 Oct): access → (recommended) research cloud by application with expert review (QuantumCTek cloud, 107 readable qubits + 187 couplers). Access-class change lab-only → cloud (limited, reviewed) → editor. The portal says '祖冲之三号' (Zuchongzhi 3) without '.2'; 107 qubits matches 3.2 (3.0 card has 105); assigning it to 3.2 vs 3.0 is the edi «祖冲之三号资源申请采用限量研究接入模式 ... 107 个可读取比特与 187 个耦合比特的原型机资源申请»",
+   "sources": [
+    "https://quantumctek-cloud.com/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "spinq-ursa-major"
+   },
+   "fields": {},
+   "note": "For the editor (outreach review row, re-fetched 9 Oct): physical_qubits_num / status → (recommended) 25 delivered (Ursa Major batch deliveries 2025); 103-qubit chip validated, delivery not stated. No delivery or cloud of a 103-qubit system is stated; DEPLOYED with 103 overstates. Count change >25 % → editor. Card prose already says '(tape-out, packaging and validation complete mid-2026)'. «In 2025, the company began batch deliveries of its “Ursa Major” superconducting quantum computing systems. ... completed tape-out, packaging, and validation for»",
+   "sources": [
+    "https://thequantuminsider.com/2026/06/30/spinq-raises-rmb-1-billion-fault-tolerant-quantum-computing/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ustc-zuchongzhi-3.0"
+   },
+   "fields": {
+    "refs": "zcz3;zcz3-eurek;zcz3-prl"
+   },
+   "note": "«Journal: Physical Review Letters ... DOI: 10.1103/PhysRevLett.134.090601 ... Article Publication Date: 3-Mar-2025» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://www.eurekalert.org/news-releases/1076296"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "hanyuan-2"
+   },
+   "fields": {
+    "refs": "china-atoms;hanyuan2-gt"
+   },
+   "note": "«It integrates 100 atoms of rubidium-85 and 100 atoms of rubidium-87 to build a dual core system with a total of 200 qubits.» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://www.globaltimes.cn/page/202605/1360525.shtml"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "hanyuan-1"
+   },
+   "fields": {
+    "refs": "china-atoms;hanyuan1-hbd"
+   },
+   "note": "«搭载100个量子比特，实测单比特门保真度0.999、两比特门保真度0.98 ... 已向中国移动子公司交付国内首台商业整机，同时斩获巴基斯坦出口订单» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://news.hubeidaily.net/pc/c_4727100.html"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "qinghe-1"
+   },
+   "fields": {
+    "name": "Qinghe-1 (Qinghe No. 1, 清河一号)"
+   },
+   "note": "«Qinghe No. 1 (清河一号) ... formally unveiled ... at the World Artificial Intelligence Conference (WAIC 2026)» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://quantumcomputingreport.com/zhongqi-wuliang-unveils-server-rack-neutral-atom-quantum-computer-at-waic-2026/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "caltech-6100"
+   },
+   "fields": {
+    "refs": "caltech;caltech-nature"
+   },
+   "note": "«DOI 10.1038/s41586-025-09641-4 (listed on the arXiv page; current version v4, 2025-07-29)» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://arxiv.org/abs/2403.12021"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "etri-8photon"
+   },
+   "fields": {
+    "refs": "etri-ofc2025"
+   },
+   "note": "«Six-photon entanglement is demonstrated on a silicon photonic circuit ... eight path-encoded qubits» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://opg.optica.org/abstract.cfm?URI=OFC-2025-M4E.5"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "harvard-continuous-3000"
+   },
+   "fields": {},
+   "note": "For the editor (outreach review row, re-fetched 9 Oct): machine-stations-evidence.csv value text (carrier line 1090; connect/cx_reload line 1094) → ... (Nature, Sep 2025; arXiv Jun 2025). arXiv history: v1 2025-06-25, v2 2026-05-21; DOI 10.1038/s41586-025-09596-6; no Aug 2026 version. The register's machines.csv status_date 'Sep 2025 (Nature 646, 1075; arXiv Jun 2025)' is already right «we leverage to assemble and maintain an array of over 3,000 atoms for more than 2 hours ... Using a reloading rate of 300,000 atoms in tweezers per second»",
+   "sources": [
+    "https://arxiv.org/abs/2506.20660"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "kriss-20q"
+   },
+   "fields": {},
+   "note": "For the editor (outreach review row, re-fetched 9 Oct): status → (recommended) DEPLOYED (cloud demonstration done, per KRISS 21 Jul 2026). Status change → editor. KRISS news dated 2026-07-21 (an award citation). Status_date 'H2 2026' could become 'Jul 2026'. New ref (row given). «the development of a 20-qubit superconducting quantum computer and its cloud demonstration»",
+   "sources": [
+    "https://www.kriss.re.kr/gallery.es?mid=a20302000000&bid=0017&b_list=12&act=view&list_no=6553&nPage=1&vlist_no_npage=2&keyField=&orderby="
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "kriss-50q"
+   },
+   "fields": {},
+   "note": "For the editor (outreach review row, re-fetched 9 Oct): status → (recommended) ANNOUNCED (50-qubit model shown at Quantum Korea 2026; working status unconfirmed). Status change → editor. 'Model' may be a display model; no performance data. Ref row as for kriss-20q (same URL) with machine kriss-50q. «Newly produced last year by KRISS, this model of a 50-qubit superconducting quantum computer made its public debut at the exhibition»",
+   "sources": [
+    "https://www.kriss.re.kr/gallery.es?mid=a20302000000&bid=0017&b_list=12&act=view&list_no=6553&nPage=1&vlist_no_npage=2&keyField=&orderby="
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "kriss-20q"
+   },
+   "fields": {
+    "refs": "kriss-sedaily;kriss-2026-07"
+   },
+   "note": "«KRISS plans to offer cloud-based pilot access to its internally developed 20-qubit-class system ... with a next target of achieving a 50-qubit-class system.» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://en.sedaily.com/technology/2026/03/23/korea-builds-quantum-fabs-targets-second-gen-quantum"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "msu-rb-50q"
+   },
+   "fields": {},
+   "note": "Deferred (WP1/WP2): (WP2) Rydberg two-qubit operations on Rb-87 published, 94% fidelity (6P3/2 scheme), arXiv:2606.13975 — Two-qubit figure → WP2 (it matches the card's 94% press figure, now with a paper). The abs page shows no affiliations and no Rosatom mention; tie to the MSU mac",
+   "sources": [
+    "https://arxiv.org/abs/2606.13975"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "princeton-yb-erasure"
+   },
+   "fields": {
+    "refs": "princeton;princeton-natphys"
+   },
+   "note": "«DOI 10.1038/s41567-026-03309-0 (listed on the arXiv page; this version v2, 2026-06-23)» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://arxiv.org/abs/2506.13724"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "tsinghua-kunlun-32"
+   },
+   "fields": {
+    "refs": "kunlun;kunlun-natphys"
+   },
+   "note": "«该成果论文《低开销量子纠错码的演示》（Demonstration of low-overhead quantum error correction codes）近日以Article的形式在《自然物理》（Nature Physics）杂志发表» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://iiis.tsinghua.edu.cn/info/1018/4871.htm"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "tsinghua-kunlun-32"
+   },
+   "fields": {},
+   "note": "For the editor (outreach review row, re-fetched 9 Oct): status_date → Jan 2026 (Nature Physics; arXiv May 2025). Year change 2025 → 2026 is outside 'same cohort year' → editor. «近日以Article的形式在《自然物理》（Nature Physics）杂志发表 ... 发布时间：2026-01-28»",
+   "sources": [
+    "https://iiis.tsinghua.edu.cn/info/1018/4871.htm"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "tsinghua-kunlun-32"
+   },
+   "fields": {},
+   "note": "For the editor (outreach review row, re-fetched 9 Oct): org → (recommended) Tsinghua University IIIS (D.-L. Deng) with Zhejiang University (H. Wang, C. Song groups) — or keep ZJU first and move org_id to Zhejiang Universit. org string and org_id disagree; the page shows ZJU as experimental partner and 2 of 3 corresponding authors at ZJU. Ownership (org_id) is an editor decision. «清华大学交叉信息研究院邓东灵课题组与浙江大学物理学院王浩华、宋超研究组等合作 ... 通讯作者为清华大学交叉信息研究院邓东灵长聘副教授，浙江大学物理学院宋超研究员与浙江大学物理学院王震研究员»",
+   "sources": [
+    "https://iiis.tsinghua.edu.cn/info/1018/4871.htm"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "uibk-innsbruck-ion"
+   },
+   "fields": {
+    "name": "University of Innsbruck trapped-ion demonstrator (Institut für Experimentalphysik)"
+   },
+   "note": "«The experimental data was obtained with a 16-qubit quantum computing device based on trapped ions [40].» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://arxiv.org/pdf/2506.22600v1"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "uibk-iqoqi-sim-51 (new?)"
+   },
+   "fields": {},
+   "note": "For the editor (outreach review row, re-fetched 9 Oct): new machine → IQOQI/Innsbruck ion-trap quantum simulator, up to 51 ions (Joshi, Roos; PRX 16, 031037, 2026). New machine → editor. Release dated 21 Aug 2026, team led by Manoj Joshi and Christian Roos; DOI 10.1103/s96t-n8tx. The page does not itself say the trap is at IQOQI. «using an ion-trap quantum simulator containing up to 51 ions»",
+   "sources": [
+    "https://www.uibk.ac.at/en/newsroom/2026/quantum-simulators-get-error-bars/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "uibk-innsbruck-ion"
+   },
+   "fields": {},
+   "note": "Deferred (WP1/WP2): 5e-2 — T2 → WP1. Caution: the card's prose treats this paper's Table I as a simulation noise model.",
+   "sources": [
+    "https://arxiv.org/pdf/2506.22600v1"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "zju-125q"
+   },
+   "fields": {
+    "org": "Zhejiang University + Graduate School of China Academy of Engineering Physics (Beijing)"
+   },
+   "note": "«Affiliation: Graduate School of China Academy of Engineering Physics, Beijing, China» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://arxiv.org/html/2606.06598"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "bsc-quantum-spain"
+   },
+   "fields": {
+    "physical_qubits": "35 (expanded in May 2026; in Dec 2025 two chips of 5 and 10 qubits, with 20- and 35-qubit processors planned)"
+   },
+   "note": "«dos chips superconductores, uno de 5 qubits y otro de 10 qubits, y está prevista la incorporación de nuevos procesadores de 20 y 35 qubits» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://quantumspain-project.es/acceso-a-los-recursos-cuanticos-de-quantum-spain-convocatorias-y-requisitos/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "bsc-quantum-spain"
+   },
+   "fields": {
+    "refs": "bsc-qspain-2026"
+   },
+   "note": "«configuración actual de 35 cúbits, instalado recientemente … instalado y puesto en marcha por la UTE española Qilimanjaro-GMV … integrado en el supercomputador MareNostrum 5» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://quantumspain-project.es/el-bsc-amplia-la-capacidad-de-su-ordenador-cuantico-y-refuerza-el-acceso-abierto-a-su-infraestructura/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ethz-surface17"
+   },
+   "fields": {
+    "refs": "ethz-surface17;ethz-latsurg"
+   },
+   "note": "«DOI 10.1038/s41567-025-03090-6 [arXiv:2501.04612]; D-PHYS: \"The researchers have just published their results in Nature Physics.\" … \"a single logical qubit that was encoded by seventeen physical qubits\"» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://arxiv.org/abs/2501.04612"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "iqm-spark-eldorado"
+   },
+   "fields": {
+    "refs": "iqm-eldorado"
+   },
+   "note": "«IQM to deliver its first quantum computer in South America to Brazil's Eldorado Research Institute» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://iqm.tech/press-releases/iqm-to-deliver-its-first-quantum-computer-in-south-america-to-brazils-eldorado-research-institute/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "it4i-vlq"
+   },
+   "fields": {
+    "access": "national allocation (EuroHPC JU access; integrated with the KAROLINA supercomputer); open to users since 14 Jul 2026 after testing and validation (16 projects awarded; IT4I Open Access Grant Competitions)"
+   },
+   "note": "«All testing and validation were completed successfully … A total of 16 projects have been awarded access» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://www.it4i.cz/en/about/infoservice/press-releases/the-czech-republics-first-quantum-computer-is-available-to-users-researchers-and-companies-begin-working-with-vlq"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "it4i-vlq"
+   },
+   "fields": {},
+   "note": "For the editor (outreach review row, re-fetched 9 Oct): status_date → Jul 2026 (opened to users 14 Jul 2026; inaugurated Sep 2025). The date would cross the cohort year (2025→2026); the release does not state the inauguration date, so whether DEPLOYED dates to inauguration or to user opening is an editor's call. Keeping Sep 2025 w «Researchers and companies from the Czech Republic and across Europe can now gain access to VLQ»",
+   "sources": [
+    "https://www.it4i.cz/en/about/infoservice/press-releases/the-czech-republics-first-quantum-computer-is-available-to-users-researchers-and-companies-begin-working-with-vlq"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "it4i-vlq"
+   },
+   "fields": {
+    "refs": "it4i-vlq-users"
+   },
+   "note": "«The VLQ quantum computer is based on 24 superconducting qubits arranged in a star-shaped topology» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://www.it4i.cz/en/about/infoservice/press-releases/the-czech-republics-first-quantum-computer-is-available-to-users-researchers-and-companies-begin-working-with-vlq"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "basq-system-two"
+   },
+   "fields": {
+    "access": "members of the IBM-Euskadi Quantum Computational Center; since Jul 2026 also open to industry and public-sector entities (requests to access@basquequantum.eus; access agreement with Ikerbasque, which manages the infrastructure)"
+   },
+   "note": "«la apertura de su infraestructura de computación a la industria y a las entidades del sector público … con Ikerbasque, entidad responsable de la gestión de la infraestructura» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://www.basquequantum.eus/index%2Ephp/es/noticias/gobierno-vasco-abre-ibm-quantum-system-two-industria-y-entidades-publicas-impulsar-nuevos"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "basq-system-two"
+   },
+   "fields": {
+    "refs": "basq-open-2026"
+   },
+   "note": "«El Gobierno Vasco abre el IBM Quantum System Two a la industria y entidades públicas para impulsar nuevos proyectos de innovación y transferencia» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://www.basquequantum.eus/index%2Ephp/es/noticias/gobierno-vasco-abre-ibm-quantum-system-two-industria-y-entidades-publicas-impulsar-nuevos"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "icfo-quione"
+   },
+   "fields": {
+    "roadmap": "academic; QUIONE II, a hybrid analog-digital processor, under construction (ICFO, Apr 2024; no date given)"
+   },
+   "note": "«a hybrid analog-digital processor named QUIONE II, which is currently under construction» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://www.icfo.eu/news/2328/quione-announcing-the-birth-of-a-unique-analog-quantum-processor-in-the-world-/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "icfo-quione"
+   },
+   "fields": {},
+   "note": "For the editor (outreach review row, re-fetched 9 Oct): new machine: QUIONE II → QUIONE II (ICFO), hybrid analog-digital strontium processor; status ANNOUNCED (under construction, Apr 2024); no qubit count or date published. A new machine is an editor decision; the only source is a 2024 release with no specification or date, so a roadmap line on the QUIONE card (above) may suffice. «a hybrid analog-digital processor named QUIONE II, which is currently under construction»",
+   "sources": [
+    "https://www.icfo.eu/news/2328/quione-announcing-the-birth-of-a-unique-analog-quantum-processor-in-the-world-/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "icfo-quione"
+   },
+   "fields": {
+    "refs": "icfo-quione"
+   },
+   "note": "«ICFO researchers build QUIONE, a quantum simulator capable of observing individual atoms in a strontium quantum gas» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://www.icfo.eu/news/2328/quione-announcing-the-birth-of-a-unique-analog-quantum-processor-in-the-world-/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "vtt-q50"
+   },
+   "fields": {},
+   "note": "For the editor (outreach review row, re-fetched 9 Oct): physical_qubits_num → 53. physical_qubits_num change → editor. The same VTT page elsewhere calls the in-house machine a '50-qubit superconducting quantum computer', and the card prose already records both (50 launch release; 5 «VTT Q50 is a 53-qubit superconducting quantum computer.»",
+   "sources": [
+    "https://www.vttresearch.com/en/technology-infrastructures/quantum-computers"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "vtt-q50"
+   },
+   "fields": {
+    "roadmap": "150-qubit system (VTT with IQM) to be delivered in 2026, followed by a 300-qubit system at a later stage; the 300-qubit one for materials modelling and quantum error correction"
+   },
+   "note": "«VTT and IQM will deliver a 150‑qubit superconducting quantum computer in 2026 … followed by a 300‑qubit system at a later stage» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://www.vttresearch.com/en/technology-infrastructures/quantum-computers"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "vtt-q50"
+   },
+   "fields": {
+    "refs": "vtt-qc"
+   },
+   "note": "«VTT Q50 is a 53-qubit superconducting quantum computer.» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://www.vttresearch.com/en/technology-infrastructures/quantum-computers"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "psnc-piast-q"
+   },
+   "fields": {},
+   "note": "Deferred (WP1/WP2): (WP2) PSNC quantum page: 98% two-qubit gate accuracy between any qubits — Two-qubit error figure → WP2. The PSNC page (98%, two-qubit, all-to-all) conflicts with the PCSS page cited by the card (>99%, gate type unspecified); pcss.pl/e",
+   "sources": [
+    "https://quantum.psnc.pl/en/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "lbnl-aqt"
+   },
+   "fields": {
+    "access": "open user testbed (no cost for non-proprietary work that will be published; DOE ASCR); User Program being restructured, with no open call for user proposals on the usual annual cycle; collaborations by contact (aqt@lbl.gov)"
+   },
+   "note": "«The User Program is currently being restructured … does not plan to release an open call for user proposals on its usual annual cycle.» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://aqt.lbl.gov/about-aqt/collaborate-with-us/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "lbnl-aqt"
+   },
+   "fields": {
+    "roadmap": "national (DOE open testbed); fluxonium-processor development; hybrid quantum–classical integration under a Berkeley Lab–NVIDIA partnership"
+   },
+   "note": "«Innovating Quantum Computers With Fluxonium Processors … New Berkeley Lab and NVIDIA Partnership Integrates Quantum and AI Supercomputing for Next-Generation Research» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://aqt.lbl.gov/news/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "sandia-qscout"
+   },
+   "fields": {},
+   "note": "For the editor (outreach review row, re-fetched 9 Oct): status → DEPLOYED (open user testbed; discontinuation scheduled for end of FY2026, 30 Sep 2026, now past; no end notice on the Sandia page as of 9 Oct 2026). Status → editor. The page still states a future discontinuation and nowhere says the program has ended, so RETIRED is not confirmed by a quote; recommend keeping DEPLOYED with the note above and movin «Due to a funding redirection at the DOE, the QSCOUT program is to be discontinued by the end of the 2026 fiscal year.»",
+   "sources": [
+    "https://www.sandia.gov/quantum/quantum-information-sciences/projects/qscout/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "sandia-qscout"
+   },
+   "fields": {
+    "access": "open user testbed (DOE-funded; calls for proposals); after the DOE funding redirection only a few short user projects until the end of FY2026"
+   },
+   "note": "«There is some capacity for a few short user projects between now and then» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://www.sandia.gov/quantum/quantum-information-sciences/projects/qscout/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "sandia-qscout"
+   },
+   "fields": {
+    "refs": "qscout;qscout-qubit-boson"
+   },
+   "note": "«The Quantum Scientific Computing Open User Testbed (QSCOUT) has developed a qubit-boson gate set» — the outreach round's review row of 5 Oct, re-fetched 9 Oct 2026",
+   "sources": [
+    "https://arxiv.org/abs/2607.08560"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-superion-10k"
+   },
+   "fields": {
+    "org_id": "IonQ"
+   },
+   "note": "machines.csv writes IonQ's org_id two ways — 'IonQ' (six machines) and 'ionq' (ionq-superion-10k).",
+   "sources": []
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "fujitsu-snv-prototype"
+   },
+   "fields": {
+    "org_id": "Fujitsu"
+   },
+   "note": "machines.csv writes Fujitsu's org_id two ways — 'Fujitsu' (three machines) and 'fujitsu' (fujitsu-snv-prototype).",
+   "sources": []
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "hrl-eo-18q"
+   },
+   "fields": {
+    "org_id": "IBM"
+   },
+   "note": "HRL Laboratories has been part of IBM since 26 Aug 2026 (IBM closed the acquisition); the card keeps org_id 'hrl'. The outreach note files HRL's processor under IBM, with an HRL leader among the contacts.",
+   "sources": []
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "riken-64q"
+   },
+   "fields": {
+    "org_id": "RIKEN"
+   },
+   "note": "The 64-qubit machine was built and is run by the RIKEN Center for Quantum Computing (NICT is one partner); org_id 'NICT' misfiles it. The outreach note keeps 'NICT' as its file name and proposes 'RIKEN'.",
+   "sources": []
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "academia-sinica-20q"
+   },
+   "fields": {
+    "org_id": "Academia Sinica"
+   },
+   "note": "Academia Sinica's 20-qubit machine sits under org_id 'unmatched'; the outreach note proposes 'Academia Sinica'.",
+   "sources": []
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "zhuangzi-2.0"
+   },
+   "fields": {
+    "org_id": "Institute of Physics, Chinese Academy of Sciences"
+   },
+   "note": "Zhuangzi 2.0 sits under 'unmatched'; IOP CAS's own release (29 Jan 2026) presents the chip as IOP's (Peking University is a theory partner). The outreach note is filed as 'CAS / Peking University' and proposes 'Institute of Physics, Chinese Academy of Sciences'.",
+   "sources": []
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "hanyuan-1"
+   },
+   "fields": {
+    "org_id": "Zhongke Kuyuan"
+   },
+   "note": "Hanyuan-1 and -2 sit under 'unmatched'; the outreach note proposes 'Zhongke Kuyuan' (中科酷原科技（武汉）有限公司, trade name CAS Cold Atom Technology).",
+   "sources": []
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "hanyuan-2"
+   },
+   "fields": {
+    "org_id": "Zhongke Kuyuan"
+   },
+   "note": "as hanyuan-1",
+   "sources": []
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "qinghe-1"
+   },
+   "fields": {
+    "org_id": "Zhongqi Wuliang"
+   },
+   "note": "Qinghe-1 sits under 'unmatched'; the outreach note proposes 'Zhongqi Wuliang' (the SIOM spin-off; its founder Lv Xudong is a SIOM group leader).",
+   "sources": []
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "sustc-biased-erasure"
+   },
+   "fields": {
+    "org_id": "Southern University of Science and Technology"
+   },
+   "note": "The SUSTech biased-erasure cavity qubit sits under 'unmatched' while sustech-dualrail-8 sits under 'Southern University of Science and Technology'; both come from the same IQA/SUSTech group (Dapeng Yu last author).",
+   "sources": []
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "tsinghua-kunlun-32"
+   },
+   "fields": {
+    "org_id": "Zhejiang University"
+   },
+   "note": "Kunlun is Zhejiang University hardware (two of the three corresponding authors are ZJU staff; Tsinghua IIIS reports it as Deng's group working with ZJU's Wang Haohua and Song Chao groups); the card files it under Tsinghua. The outreach note keeps it under Tsinghua and flags the doubt.",
+   "sources": []
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "amaravati-ibm-tcs"
+   },
+   "fields": {
+    "org_id": "a host row (Amaravati Quantum Valley / TCS) — or, if the editor prefers filing by manufacturer, move basq-system-two, ibm-system-two-cscs and fraunhofer-ehningen under IBM instead; one rule for all four"
+   },
+   "note": "Hosted IBM systems are filed two ways: amaravati-ibm-tcs (IBM Quantum System Two at Amaravati, with TCS and Andhra Pradesh) sits under org_id IBM, while basq-system-two (Donostia), ibm-system-two-cscs (CSCS) and fraunhofer-ehningen (System One) sit under their host rows (ab-es-dipc, ab-ch-cscs, ab-d",
+   "sources": []
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "register",
+    "id": "references"
+   },
+   "fields": {},
+   "note": "Four arXiv-only references received their published versions: [514] Quantum 10.22331/q-2026-09-30-2219; [338] Appl. Phys. Rev. 10.1063/5.0316046; [28] PRX Quantum 10.1103/j3xf-bw18; [858] Phys. Rev. A 10.1103/s3dr-tsbg (Scite metadata, titles confirmed). Nine editorial notices of the Scite radar read: none changes a number the Atlas prints (Pogorelov: a reference fixed; Madjarov: Bell fidelities 0.983→0.980 raw, not printed; Mehta, Niffenegger: print symbols; Grover: a DOI; Zwerver: an author's name; Losert: an equation typo; Huet: a figure pulse; Teoh: unread, no number cited). Queued for the next fact-check: 10.1103/1bl4-b2f7 (correlated error bursts, Willow) and arXiv 2601.03461 (Many-body Quantum Score).",
+   "sources": []
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "text",
+    "id": "cx_shuttle, fab_cmos, report §2"
+   },
+   "fields": {},
+   "note": "The conveyor shuttling record of De Smet et al. [196] is an effective distance of 10 µm — the electron shuttled back and forth over 24 rounds, a cumulative path, not a 10 µm hop; every mention now says so in three languages.",
+   "sources": [
+    "https://arxiv.org/abs/2406.07267"
+   ]
+  }
+ ]
+}

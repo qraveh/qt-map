@@ -238,7 +238,8 @@
    "ids": [
     "arxiv:2603.28846",
     "u:arxiv:2603.28846",
-    "t:securing elliptic curve cryptocurrencies against quantum vul"
+    "t:securing elliptic curve cryptocurrencies against quantum vul",
+    "doi:10.1103/j3xf-bw18"
    ],
    "label": "BZG+26"
   },
@@ -2806,7 +2807,8 @@
    "ids": [
     "arxiv:2511.23232",
     "u:arxiv:2511.23232",
-    "t:deterministic quantum dot single photon sources operational "
+    "t:deterministic quantum dot single photon sources operational ",
+    "doi:10.1063/5.0316046"
    ],
    "label": "L+25a"
   },
@@ -4332,7 +4334,8 @@
    "ids": [
     "arxiv:2503.10601",
     "u:arxiv:2503.10601",
-    "t:performance of the spin qubit shuttling architecture for a s"
+    "t:performance of the spin qubit shuttling architecture for a s",
+    "doi:10.22331/q-2026-09-30-2219"
    ],
    "label": "YSB+25"
   },
@@ -7194,7 +7197,9 @@
    "n": 858,
    "ids": [
     "u:https://orcacomputing.com/nonlinear-photonic-architecture-for-fault-tolerant-quantum-computing",
-    "t:nonlinear photonic architecture for fault tolerant quantum c"
+    "t:nonlinear photonic architecture for fault tolerant quantum c",
+    "doi:10.1103/s3dr-tsbg",
+    "arxiv:2510.06890"
    ]
   },
   {

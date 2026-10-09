@@ -2833,11 +2833,17 @@
     "Manuel Rispler"
    ],
    "title": "Performance of the spin qubit shuttling architecture for a surface code implementation",
+   "journal": "Quantum",
+   "volume": "10",
+   "article": "2219",
    "date": "2025-03-13",
+   "pubdate": "2026-09-30",
+   "doi": "10.22331/q-2026-09-30-2219",
    "arxiv": "2503.10601",
-   "kind": "preprint",
+   "kind": "journal",
    "url": "https://arxiv.org/abs/2503.10601",
-   "verified": true
+   "verified": true,
+   "note": "published version from the Scite record of the DOI (title match), 9 Oct 2026"
   },
   "arxiv:2503.10842": {
    "authors": [
@@ -3105,11 +3111,17 @@
    ],
    "etal": true,
    "title": "Deterministic quantum dot single-photon sources: operational principles and state-of-the-art specifications",
+   "journal": "Appl. Phys. Rev.",
+   "volume": "13",
+   "issue": "1",
    "date": "2025-11-28",
+   "pubdate": "2026-03",
+   "doi": "10.1063/5.0316046",
    "arxiv": "2511.23232",
-   "kind": "preprint",
+   "kind": "journal",
    "url": "https://arxiv.org/html/2511.23232v1",
-   "verified": true
+   "verified": true,
+   "note": "published version from the Scite record of the DOI (title match), 9 Oct 2026; article number not given in that record"
   },
   "arxiv:2512.03588": {
    "authors": [
