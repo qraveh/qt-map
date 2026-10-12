@@ -106,6 +106,10 @@ def data_cutoff_text(lang, iso=None):
 
 ERRATA = {
  '2026.09': [
+  ('2026-10-12', 'the digest\'s intake of the issues of 26 Sep to 12 Oct 2026 (data/changes/2026-10-12.json)',
+   'Quantinuum Helios: a quantum-magnetism study by Qedma, BlueQubit and RIKEN, validated on Helios and System Model H2, joins the demonstrated algorithms. '
+   'Infleqtion Sqale: 30 entangled logical qubits from 80 physical qubits (24 Sep 2026) joins its best logical result. '
+   'Three organisation events in the change ledger: D-Wave and Quantinuum each finalised $100 million of CHIPS Act funding (8 Sep 2026); IonQ completed the acquisition of Nexus Photonics (10 Sep 2026).'),
   ('2026-10-09', 'the editor\'s approval of 9 Oct 2026 (the 23 editor-tier rows; the roundtable decisions D6-1 to D6-9; data/changes/2026-10-09.json)',
    'Four machines added on the owners\' pages (Infleqtion\'s Illinois machine for 2027; the RIKEN–Fujitsu 64-qubit machine of October 2023; BAQIS Shenglian, 84 tunable transmons; the Innsbruck 51-ion simulator); Tianyan-504 and KRISS-20q deployed; KRISS-50q announced; Tianyan-176 counted as 66 qubits and 110 couplers; SpinQ Ursa Major as the delivered 25-qubit systems with the 103-qubit chip in its roadmap; Zuchongzhi 3.2 on a research cloud by application; nine further cells by their sources. '
    'The register\'s rule for project-only rows — a dated target from the owner and a confirmed source naming the machine — leaves three rows without a dated target out (QuamCore; Alice & Bob Lithium-48 and Beryllium-250, named on the roadmap without a year); their pages answer 404. '

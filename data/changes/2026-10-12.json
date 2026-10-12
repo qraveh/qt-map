@@ -1,0 +1,84 @@
+{
+ "date": "2026-10-12",
+ "source": "digest intake of the issues of 26 Sep–12 Oct 2026 (QT-Map/qnews-intake, landed-manifest updated 2026-10-12T02:17:31Z); 13 rows re-fetched at their sources on 12 Oct",
+ "items": [
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-helios"
+   },
+   "fields": {
+    "demonstrated_algorithms": "a quantum-magnetism study by partners Qedma, BlueQubit and RIKEN that Quantinuum calls beyond the state-of-the-art classical methods considered, validated on Helios and System Model H2 (Quantinuum blog, 17 Aug 2026)"
+   },
+   "note": "«published a paper exploring quantum magnetism that “extends beyond the reach of the state-of-the-art classical methods considered;” evidence of a quantum advantage result» (source class A; digest intake 2026-10-08) — appended to the existing cell, nothing replaced; the paper is the partners', the run on Helios and H2",
+   "sources": [
+    "https://www.quantinuum.com/blog/accuracy-is-the-foundation-of-meaningful-quantum-computing"
+   ],
+   "intake": "cef0513ef9260fe4"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "infleqtion-sqale"
+   },
+   "fields": {
+    "best_logical": "30 entangled logical qubits from 80 physical qubits (Infleqtion, 24 Sep 2026; the code is not named in the announcement)"
+   },
+   "note": "«it has achieved 30 entangled logical qubits using just 80 physical qubits on its Sqale quantum computing platform» (source class A; digest intake 2026-10-08) — appended to the existing cell, nothing replaced",
+   "sources": [
+    "https://infleqtion.com/infleqtion-achieves-30-entangled-logical-qubits-on-its-sqale-quantum-computer/"
+   ],
+   "intake": "08bdf2d33683dd18"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "organisation",
+    "id": "d-wave-quantum"
+   },
+   "fields": {
+    "event": "funding",
+    "date": "2026-09-08"
+   },
+   "note": "finalized definitive agreement with U.S. Department of Commerce for up to $100M in CHIPS and Science Act funding — «D-Wave now has access to up to $100 million of U.S. CHIPS and Science Act funding.»",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1907982/000190798226000141/chipsactpressrelease.htm"
+   ],
+   "intake": "f95978dce4a07689"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "organisation",
+    "id": "quantinuum"
+   },
+   "fields": {
+    "event": "funding",
+    "date": "2026-09-08"
+   },
+   "note": "finalized $100M CHIPS R&D award with the U.S. Department of Commerce for trapped-ion manufacturing scale-up — «it has finalized an agreement with the U.S. Department of Commerce’s CHIPS Research and Development Office for $100 million in federal funding deployed through the CHIPS and Science Act»",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/2110105/000162828026060934/quantinuum-finalizesx100.htm"
+   ],
+   "intake": "48a92bf0321862ac"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "organisation",
+    "id": "ionq"
+   },
+   "fields": {
+    "event": "acquisition",
+    "date": "2026-09-10"
+   },
+   "note": "acquired Nexus Photonics for chip-scale photonic integration; dedicated quantum photonics foundry at SkyWater — «IonQ acquires Nexus Photonics to enable chip-scale quantum miniaturization and launch the industry's first dedicated quantum photonics foundry at SkyWater.» — date from the release (10 Sep 2026); the feed gave a truncated date",
+   "sources": [
+    "https://ionq.com/news/ionq-completes-acquisition-of-nexus-photonics-securing-scalable-manufacturing-for-quantum-systems"
+   ],
+   "intake": "f78fb6ddcdad9845"
+  }
+ ]
+}

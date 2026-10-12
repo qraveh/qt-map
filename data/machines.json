@@ -31367,7 +31367,7 @@
     "t2": "",
     "t_2q": "",
     "t_meas": "",
-    "best_logical": "[[4,2,2]] C4 with 2 logical qubits, transversal CX and HH, Bell error 12x reduced, random circuits 15x, algorithm up to 6x; level-2 C4 many-hypercube code on a 114-atom array running a logical pre-compiled Shor variant that factored 15 - the first logical-qubit execution of Shor's algorithm; 12 logical qubits with detection and loss correction",
+    "best_logical": "[[4,2,2]] C4 with 2 logical qubits, transversal CX and HH, Bell error 12x reduced, random circuits 15x, algorithm up to 6x; level-2 C4 many-hypercube code on a 114-atom array running a logical pre-compiled Shor variant that factored 15 - the first logical-qubit execution of Shor's algorithm; 12 logical qubits with detection and loss correction; 30 entangled logical qubits from 80 physical qubits (Infleqtion, 24 Sep 2026; the code is not named in the announcement)",
     "decoder": "AI-accelerated decoding with NVIDIA (announced, no numbers)",
     "realtime": "offline",
     "roadmap": "30 entangled logical qubits shown Sep 2026 (80 atoms, ten [[8,3,2]] blocks, error-detected; paper pending); 100 logical by 2028; 1,000 by 2030",
