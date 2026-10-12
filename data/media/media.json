@@ -13408,8 +13408,9 @@
  "source": {
   "assets": 784,
   "imported": "2026-09-27",
+  "note": "2026-10-12 (20261009-2 rev 2): node:ro_imgfast dropped from the snapshot when ro_imgfast merged into ro_img (D6 of 9 Oct); the register (SP08) still lists its three illustrates rows, so a re-import brings the target back until the register drops it",
   "register": "media-register (SP08)",
-  "targets": 292
+  "targets": 291
  },
  "targets": {
   "adjacent:adj_300mm_wafer": [

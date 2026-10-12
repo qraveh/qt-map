@@ -91,7 +91,7 @@ def scan(items, reg, show_all=False):
         if re.search(r'report_[A-Z]{2}\.md$', p):   # §7 and §8 of the report are generated from the data by the build: not a hand-written corner
             i = next((k for k, l in enumerate(lines) if re.match(r'## 7\. ', l)), None); j = next((k for k, l in enumerate(lines) if re.match(r'## 9\. ', l)), None)
             if i is not None and j is not None: lines = lines[:i] + [''] * (j - i) + lines[j:]
-        texts[os.path.relpath(p, ROOT)] = lines
+        texts[os.path.relpath(p, ROOT).replace(os.sep, "/")] = lines
     for it in items:
         s = it.get('subject', {}); sid = s.get('id', s.get('name', '?')); kind = it.get('kind')
         row = reg.get(sid) if s.get('type') == 'machine' else None
@@ -138,7 +138,7 @@ def narratives():
         pid, L = m.groups(); key = 'A_' + re.sub(r'[^A-Z0-9]+', '_', pid.upper())
         big, q, err = A.get(key + '_LARGEST', '—'), A.get(key + '_LARGEST_Q', '—'), A.get(key + '_BESTERR', '—')
         toks = [x for x in re.split(r'[\s()/,\-–—]+', big) if len(x) >= 3 and x not in ('and', 'the', 'system', 'processor', 'quantum', 'Quantum')] if big != '—' else []
-        rel = os.path.relpath(f, ROOT)
+        rel = os.path.relpath(f, ROOT).replace(os.sep, "/")
         for n, line in enumerate(open(f, encoding='utf-8').read().split('\n'), 1):
             for sent in sentences(line):
                 if re.search(LARGEST_RX[L], sent, re.I) and not re.search(r'largest (?:arrays|vendor|instances)|крупнейш\w* (?:массив|вендор|экземпляр)|למערכים הגדולים|הספק הגדול|למופעים הגדולים', sent):
