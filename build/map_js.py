@@ -585,11 +585,20 @@ function zoomStep(d){ const cur=zoomPct(state.zoom); let i=0; for(let k=1;k<ZSTE
     zl.addEventListener('keydown',ev=>{ if(ev.key==='Enter'){ev.preventDefault(); commit(); zl.blur();} else if(ev.key==='Escape'){ev.preventDefault(); zl.value=zoomPct(state.zoom)+'%'; zl.blur();} else if(ev.key==='ArrowUp'||ev.key==='ArrowDown'){ ev.preventDefault(); const cur=parseInt(String(zl.value).replace(/[^0-9]/g,''),10)||zoomPct(state.zoom); const nv=Math.max(10,Math.min(1000,cur+(ev.key==='ArrowUp'?5:-5))); applyZoom(zoomFromPct(nv),true); zl.value=String(zoomPct(state.zoom)); } });
     zl.addEventListener('input',()=>{ const c=String(zl.value).replace(/[^0-9]/g,''); if(c!==zl.value)zl.value=c; });
     zl.addEventListener('blur',commit); }
-  // first view: the map fitted to the frame (100 %); on a phone the fit would make labels unreadable, so the map opens at
-  // a legible scale instead — 0.85 of native if technology labels stay ≥ 10 px, otherwise native — and shows its true percentage
+  // first view (the editor's order of 12 Oct 2026, a screenshot of his display: "this scaling/layout of the Atlas title page is
+  // how I want the atlas page will open up"): the page opens at its top with the whole map in the first screen — the map fitted
+  // to the height left below its top edge and above its legend (39 % at 1920×1080, 32 % at 1536×864). It is measured once the map
+  // bar has its remembered state: the bar's block runs after this one, hence the zero-delay timer (an animation frame would wait
+  // until a tab opened in the background is shown). The fit-width view stays when it already shows the whole map, when the window
+  // leaves less than 240 px, when the page opens at an address fragment or scrolled, or when the map is folded away.
+  // On a phone the fit would make labels unreadable, so the map opens at a legible scale instead — 0.85 of native if technology
+  // labels stay ≥ 10 px, otherwise native — and shows its true percentage
   let phone=false; try{ phone=window.matchMedia('(max-width:600px)').matches; }catch(e){}
   if(phone){ let z=1; try{ const t=wrap.querySelector('g.station text'); const fs=t?(parseFloat(getComputedStyle(t).fontSize)||11):11; z=(fs*0.85>=10)?0.85:1; }catch(e){} applyZoom(z,false); }
-  else fitWidth(); })();
+  else { fitWidth(); setTimeout(()=>{ if(location.hash||window.pageYOffset>=1||wrap.offsetWidth<50) return;
+    const lg=wrap.parentElement&&wrap.parentElement.nextElementSibling, below=(lg&&lg.classList.contains('legend'))?lg.getBoundingClientRect().height+12:0;
+    const avail=Math.floor(window.innerHeight-wrap.getBoundingClientRect().top-below-6);
+    if(avail>=240&&avail/H<fitScale()) fitTo(avail); },0); } })();
 window.__mapZoom={get:()=>state.zoom||1, set:(z)=>{ applyZoom(z,false); state.fitMode=null; }, min:ZMIN, max:ZMAX};   // for the pinch handler outside this scope (28 Sep 2026)
 // collapsible map bar: one line with a summary of the current selection and the zoom window
 (function(){ const bar=document.getElementById('mapbar'), tog=document.getElementById('bartog'), sum=document.getElementById('barsum'); if(!bar||!tog||!sum)return; const KEY='qmap.barcollapsed';

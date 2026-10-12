@@ -106,6 +106,10 @@ def data_cutoff_text(lang, iso=None):
 
 ERRATA = {
  '2026.09': [
+  ('2026-10-13', 'the editor\'s order of 12 Oct 2026 (a screenshot of his display: "this scaling/layout of the Atlas title page is how I want the atlas page will open up")',
+   'The Atlas opens with the whole map in the first screen: on a desktop the page loads at its top and the map is fitted to the height left '
+   'below its top edge and above its legend (39% of the fit-width size at 1920 × 1080, 32% at 1536 × 864). The fit-width view stays when it already '
+   'shows the whole map, when the window leaves less than 240 pixels, or when the page opens at an address fragment; phones keep their legible scale.'),
   ('2026-10-12', 'the digest\'s intake of the issues of 26 Sep to 12 Oct 2026 (data/changes/2026-10-12.json)',
    'Quantinuum Helios: a quantum-magnetism study by Qedma, BlueQubit and RIKEN, validated on Helios and System Model H2, joins the demonstrated algorithms. '
    'Infleqtion Sqale: 30 entangled logical qubits from 80 physical qubits (24 Sep 2026) joins its best logical result. '
