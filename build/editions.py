@@ -106,6 +106,9 @@ def data_cutoff_text(lang, iso=None):
 
 ERRATA = {
  '2026.09': [
+  ('2026-10-13', 'the editor\'s word of 7 Oct 2026 on the code layer (data/changes/2026-10-13.json)',
+   'The code-layer cells follow the completed code table on 22 machines, each with its source: the surface-code family on Eagle, the three Heron revisions, both Nighthawk revisions and Zuchongzhi 2.1; error-detection codes on Sycamore-54, IQM Emerald and IonQ Aria; the Steane code on IonQ Forte; erasure-adapted dual-rail qubits on OQC Genesis; bosonic codes on Alice & Bob Boson 4 and both Nord Quantique machines; quantum annealing correction on D-Wave Advantage and Advantage2, a new Atlas gap (G-qac); the designated codes of IQM Halocene, the D-Wave dual-rail machine and IonQ Superion 10K. '
+   'Wukong-102 loses a cell it had inherited from Wukong-72; Superion 256 has no published code. The heavy-hex code ran on four Eagle devices and on Osprey (arXiv:2311.15146); the [[4,2,2]] run attributed to Pasqal Fresnel names no product and Fresnel is an analog machine, so the row is withdrawn. With that row gone, the 2023 cohort\'s share of machines with a code falls to 29 % (5 of 17), just below the 2026 cohort\'s 30 % (16 of 53), and H4\'s frozen rule moves its verdict from not supported to partly supported — a one-machine margin.'),
   ('2026-10-13', 'the editor\'s order of 12 Oct 2026 (a screenshot of his display: "this scaling/layout of the Atlas title page is how I want the atlas page will open up")',
    'The Atlas opens with the whole map in the first screen: on a desktop the page loads at its top and the map is fitted to the height left '
    'below its top edge and above its legend (39% of the fit-width size at 1920 × 1080, 32% at 1536 × 864). The fit-width view stays when it already '

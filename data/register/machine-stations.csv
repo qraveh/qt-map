@@ -17,8 +17,8 @@ ibm-eagle,gate,g_cr,primary,
 ibm-eagle,connect,cx_nn,primary,
 ibm-eagle,control,ct_rt,primary,
 ibm-eagle,readout,ro_disp,primary,
-ibm-eagle,code,code_mitig,primary,error mitigation as the occupant of the code slot
-ibm-eagle,code,none,alternate,no code (NISQ)
+ibm-eagle,code,code_surface,primary,surface-code family memory on Eagle r3
+ibm-eagle,code,code_mitig,alternate,error mitigation as the occupant of the code slot
 ibm-eagle,decoder,none,primary,"no decoder, and no deployment-mode axis"
 ibm-eagle,interconnect,ic_multidie,primary,multi-die packaging inside one qubit module
 ibm-eagle,fab,fab_sc,primary,
@@ -58,7 +58,7 @@ ibm-heron-r1,gate,g_tc,primary,
 ibm-heron-r1,connect,cx_nn,primary,
 ibm-heron-r1,control,ct_rt,primary,
 ibm-heron-r1,readout,ro_disp,primary,
-ibm-heron-r1,code,none,primary,no code (NISQ)
+ibm-heron-r1,code,code_surface,primary,surface-code family memory and lattice surgery on ibm_torino
 ibm-heron-r1,decoder,none,primary,"no decoder, and no deployment-mode axis"
 ibm-heron-r1,interconnect,none,primary,"monolithic, single module"
 ibm-heron-r1,fab,fab_sc,primary,
@@ -69,7 +69,8 @@ ibm-heron-r2,connect,cx_nn,primary,
 ibm-heron-r2,control,ct_rt,primary,
 ibm-heron-r2,control,ct_cryocmos,alternate,
 ibm-heron-r2,readout,ro_disp,primary,
-ibm-heron-r2,code,code_detect,primary,error-detection-only codes on the sc architecture
+ibm-heron-r2,code,code_surface,primary,rotated surface memory on Heron r2
+ibm-heron-r2,code,code_detect,alternate,error-detection-only codes on the sc architecture
 ibm-heron-r2,code,code_magic,alternate,
 ibm-heron-r2,decoder,none,primary,"no decoder, and no deployment-mode axis"
 ibm-heron-r2,interconnect,none,primary,"monolithic, single module"
@@ -81,7 +82,9 @@ ibm-heron-r3,gate,g_tc,primary,
 ibm-heron-r3,connect,cx_nn,primary,
 ibm-heron-r3,control,ct_rt,primary,
 ibm-heron-r3,readout,ro_disp,primary,
-ibm-heron-r3,code,code_detect,primary,error-detection-only codes on the sc architecture
+ibm-heron-r3,code,code_surface,primary,rotated surface and heavy-hex memory on Heron r3
+ibm-heron-r3,code,code_detect,alternate,error-detection-only codes on the sc architecture
+ibm-heron-r3,code,code_color,alternate,colour codes with transversal Clifford gates on ibm_boston
 ibm-heron-r3,code,code_mitig,alternate,error mitigation as the occupant of the code slot
 ibm-heron-r3,code,code_magic,alternate,
 ibm-heron-r3,decoder,none,primary,"no decoder, and no deployment-mode axis"
@@ -93,7 +96,7 @@ ibm-nighthawk-r1,gate,g_tc,primary,
 ibm-nighthawk-r1,connect,cx_nn,primary,
 ibm-nighthawk-r1,control,ct_rt,primary,
 ibm-nighthawk-r1,readout,ro_disp,primary,
-ibm-nighthawk-r1,code,none,primary,no code (NISQ)
+ibm-nighthawk-r1,code,code_surface,primary,rotated surface memory on Nighthawk r1
 ibm-nighthawk-r1,decoder,none,primary,"no decoder, and no deployment-mode axis"
 ibm-nighthawk-r1,interconnect,none,primary,"monolithic, single module"
 ibm-nighthawk-r1,fab,fab_sc,primary,
@@ -104,7 +107,7 @@ ibm-nighthawk-r2,connect,cx_nn,primary,
 ibm-nighthawk-r2,control,ct_rt,primary,
 ibm-nighthawk-r2,readout,ro_reset,primary,fast unconditional or dissipative reset
 ibm-nighthawk-r2,readout,ro_disp,alternate,
-ibm-nighthawk-r2,code,none,primary,no code (NISQ)
+ibm-nighthawk-r2,code,code_surface,primary,rotated surface memory on ibm_phoenix
 ibm-nighthawk-r2,code,code_mitig,alternate,error mitigation as the occupant of the code slot
 ibm-nighthawk-r2,decoder,none,primary,"no decoder, and no deployment-mode axis"
 ibm-nighthawk-r2,interconnect,none,primary,"monolithic, single module"
@@ -165,7 +168,7 @@ google-sycamore-54,gate,g_tc,primary,
 google-sycamore-54,connect,cx_nn,primary,
 google-sycamore-54,control,ct_rt,primary,
 google-sycamore-54,readout,ro_disp,primary,
-google-sycamore-54,code,none,primary,no code (NISQ)
+google-sycamore-54,code,code_detect,primary,"d=2 surface code as error detection, repetition-code memory"
 google-sycamore-54,decoder,none,primary,"no decoder, and no deployment-mode axis"
 google-sycamore-54,interconnect,ic_multidie,primary,multi-die packaging inside one qubit module
 google-sycamore-54,fab,fab_sc,primary,
@@ -204,7 +207,7 @@ ustc-zuchongzhi-2.1,gate,g_tc,primary,
 ustc-zuchongzhi-2.1,connect,cx_nn,primary,
 ustc-zuchongzhi-2.1,control,ct_rt,primary,
 ustc-zuchongzhi-2.1,readout,ro_disp,primary,
-ustc-zuchongzhi-2.1,code,none,primary,no code (NISQ)
+ustc-zuchongzhi-2.1,code,code_surface,primary,distance-3 surface code on Zuchongzhi 2.1
 ustc-zuchongzhi-2.1,decoder,none,primary,"no decoder, and no deployment-mode axis"
 ustc-zuchongzhi-2.1,interconnect,none,primary,"monolithic, single module"
 ustc-zuchongzhi-2.1,fab,fab_sc,primary,
@@ -300,7 +303,7 @@ originq-wukong-102,gate,g_tc,primary,
 originq-wukong-102,connect,cx_nn,primary,
 originq-wukong-102,control,ct_rt,primary,
 originq-wukong-102,readout,ro_disp,primary,
-originq-wukong-102,code,code_detect,primary,"d=2 rotated surface code and [[4,1,2]] post-selected runs (register note)"
+originq-wukong-102,code,none,primary,"no code run found on Wukong-102 (the [[4,1,2]] runs are on Wukong-72)"
 originq-wukong-102,decoder,none,primary,"no decoder, and no deployment-mode axis"
 originq-wukong-102,interconnect,none,primary,"monolithic, single module"
 originq-wukong-102,fab,fab_sc,primary,
@@ -541,7 +544,7 @@ iqm-emerald-54,gate,g_tc,primary,
 iqm-emerald-54,connect,cx_nn,primary,
 iqm-emerald-54,control,ct_rt,primary,
 iqm-emerald-54,readout,ro_disp,primary,
-iqm-emerald-54,code,none,primary,no code (NISQ)
+iqm-emerald-54,code,code_detect,primary,repetition-code memory run on Emerald
 iqm-emerald-54,code,code_qldpc,alternate,
 iqm-emerald-54,decoder,none,primary,"no decoder, and no deployment-mode axis"
 iqm-emerald-54,decoder,dec_gpu,alternate,
@@ -564,9 +567,9 @@ iqm-halocene-150,connect,cx_nn,primary,
 iqm-halocene-150,connect,∅G-bus,alternate,central computational bus resonator
 iqm-halocene-150,control,ct_rt,primary,
 iqm-halocene-150,readout,ro_disp,primary,
-iqm-halocene-150,code,none,primary,no code (NISQ)
+iqm-halocene-150,code,code_surface,primary,surface code in the LUMI-IQ plan
+iqm-halocene-150,code,code_color,alternate,colour code in the LUMI-IQ plan
 iqm-halocene-150,code,code_qldpc,alternate,
-iqm-halocene-150,code,code_surface,alternate,
 iqm-halocene-150,decoder,none,primary,"no decoder, and no deployment-mode axis"
 iqm-halocene-150,decoder,dec_gpu,alternate,
 iqm-halocene-150,interconnect,none,primary,"monolithic, single module"
@@ -592,8 +595,7 @@ oqc-genesis-16,control,ct_vio,primary,out-of-plane vertical signal delivery
 oqc-genesis-16,control,ct_rt,alternate,
 oqc-genesis-16,readout,ro_erasure,primary,
 oqc-genesis-16,readout,ro_disp,alternate,
-oqc-genesis-16,code,none,primary,no code (NISQ)
-oqc-genesis-16,code,code_erasure,alternate,
+oqc-genesis-16,code,code_erasure,primary,dual-rail dimon qubits with erasure detection
 oqc-genesis-16,decoder,none,primary,"no decoder, and no deployment-mode axis"
 oqc-genesis-16,interconnect,none,primary,"monolithic, single module"
 oqc-genesis-16,fab,fab_sc,primary,
@@ -697,7 +699,7 @@ aliceandbob-boson-4,gate,g_bos,primary,
 aliceandbob-boson-4,connect,cx_nn,primary,
 aliceandbob-boson-4,control,ct_rt,primary,
 aliceandbob-boson-4,readout,ro_disp,primary,
-aliceandbob-boson-4,code,none,primary,"no outer code (1 cat qubit, 0 logical: no outer code)"
+aliceandbob-boson-4,code,code_bosonic,primary,dissipative two-component cat qubit
 aliceandbob-boson-4,decoder,none,primary,"no decoder, and no deployment-mode axis"
 aliceandbob-boson-4,interconnect,none,primary,"monolithic, single module"
 aliceandbob-boson-4,fab,fab_sc,primary,
@@ -738,7 +740,7 @@ nordquantique-gkp,gate,g_bos,primary,
 nordquantique-gkp,connect,cx_nn,primary,
 nordquantique-gkp,control,ct_rt,primary,
 nordquantique-gkp,readout,ro_disp,primary,
-nordquantique-gkp,code,none,primary,"no outer code (single-mode GKP, inner code only, no outer discrete code)"
+nordquantique-gkp,code,code_bosonic,primary,square-lattice GKP with autonomous error correction
 nordquantique-gkp,decoder,∅G-auton,primary,autonomous stabilisation and analog decoding
 nordquantique-gkp,interconnect,none,primary,"monolithic, single module"
 nordquantique-gkp,fab,fab_3d,primary,
@@ -749,7 +751,7 @@ nordquantique-tesseract,gate,g_bos,primary,
 nordquantique-tesseract,connect,cx_nn,primary,
 nordquantique-tesseract,control,ct_rt,primary,
 nordquantique-tesseract,readout,ro_disp,primary,
-nordquantique-tesseract,code,none,primary,no outer code (multimode GKP in one cavity: a bosonic code without an outer discrete code)
+nordquantique-tesseract,code,code_bosonic,primary,two-mode tesseract GKP code
 nordquantique-tesseract,decoder,∅G-auton,primary,autonomous stabilisation and analog decoding
 nordquantique-tesseract,interconnect,none,primary,"monolithic, single module"
 nordquantique-tesseract,fab,fab_3d,primary,
@@ -773,7 +775,7 @@ dwave-dualrail-17,connect,cx_nn,primary,
 dwave-dualrail-17,control,ct_rt,primary,
 dwave-dualrail-17,control,ct_fluxdac,alternate,
 dwave-dualrail-17,readout,ro_erasure,primary,
-dwave-dualrail-17,code,none,primary,no code (NISQ)
+dwave-dualrail-17,code,code_erasure,primary,dual-rail qubits with erasure detection (announced)
 dwave-dualrail-17,decoder,none,primary,"no decoder, and no deployment-mode axis"
 dwave-dualrail-17,interconnect,ic_mcm,primary,
 dwave-dualrail-17,fab,fab_3d,primary,
@@ -870,7 +872,7 @@ ionq-aria,gate,g_ms,primary,
 ionq-aria,connect,cx_bus,primary,
 ionq-aria,control,ct_ionaod,primary,free-space AOM/AOD laser addressing for ions
 ionq-aria,readout,ro_fluor,primary,
-ionq-aria,code,none,primary,no code (NISQ)
+ionq-aria,code,code_detect,primary,"[[4,2,2]] error detection on Aria-1"
 ionq-aria,decoder,none,primary,"no decoder, and no deployment-mode axis"
 ionq-aria,interconnect,none,primary,"monolithic, single module"
 ionq-aria,fab,fab_trap,primary,
@@ -880,7 +882,8 @@ ionq-forte,gate,g_ms,primary,
 ionq-forte,connect,cx_bus,primary,
 ionq-forte,control,ct_ionaod,primary,free-space AOM/AOD laser addressing for ions
 ionq-forte,readout,ro_fluor,primary,
-ionq-forte,code,none,primary,no code (NISQ)
+ionq-forte,code,code_color,primary,"Steane [[7,1,3]] code with logical rotations on Forte"
+ionq-forte,code,code_detect,alternate,iceberg error detection
 ionq-forte,decoder,none,primary,"no decoder, and no deployment-mode axis"
 ionq-forte,interconnect,none,primary,"monolithic, single module"
 ionq-forte,fab,fab_trap,primary,
@@ -921,8 +924,7 @@ ionq-superion-256,gate,g_elec,primary,
 ionq-superion-256,connect,cx_bus,primary,
 ionq-superion-256,control,ct_ionmw,primary,
 ionq-superion-256,readout,ro_fluor,primary,
-ionq-superion-256,code,code_qldpc,primary,
-ionq-superion-256,code,code_highrate,alternate,
+ionq-superion-256,code,undisclosed,primary,IonQ names no code for Superion 256
 ionq-superion-256,decoder,undisclosed,primary,a unified real-time decoder is planned; algorithm not named
 ionq-superion-256,interconnect,ic_ionphoton,primary,
 ionq-superion-256,fab,fab_cmos,primary,
@@ -1472,7 +1474,7 @@ dwave-advantage,connect,cx_lr,primary,
 dwave-advantage,control,ct_fluxdac,primary,
 dwave-advantage,readout,ro_fluxro,primary,QFP / SQUID flux readout through on-chip shift registers
 dwave-advantage,readout,ro_disp,alternate,
-dwave-advantage,code,none,primary,no code (NISQ)
+dwave-advantage,code,∅G-qac,primary,quantum annealing correction has no fitting technology
 dwave-advantage,decoder,none,primary,"no decoder, and no deployment-mode axis"
 dwave-advantage,interconnect,none,primary,"monolithic, single module"
 dwave-advantage,fab,fab_sc,primary,
@@ -1483,7 +1485,7 @@ dwave-advantage2,connect,cx_lr,primary,
 dwave-advantage2,control,ct_fluxdac,primary,
 dwave-advantage2,readout,ro_fluxro,primary,QFP / SQUID flux readout through on-chip shift registers
 dwave-advantage2,readout,ro_disp,alternate,
-dwave-advantage2,code,none,primary,no code (NISQ)
+dwave-advantage2,code,∅G-qac,primary,quantum annealing correction has no fitting technology
 dwave-advantage2,decoder,none,primary,"no decoder, and no deployment-mode axis"
 dwave-advantage2,interconnect,none,primary,"monolithic, single module"
 dwave-advantage2,fab,fab_sc,primary,
@@ -1987,7 +1989,7 @@ ionq-superion-10k,gate,g_elec,primary,
 ionq-superion-10k,connect,undisclosed,primary,ion transport and connectivity not published
 ionq-superion-10k,control,ct_ionmw,primary,
 ionq-superion-10k,readout,ro_fluor,primary,
-ionq-superion-10k,code,undisclosed,primary,fault-tolerant target; code for the 10K not published
+ionq-superion-10k,code,code_qldpc,primary,generalized and bivariate bicycle codes of the Walking Cat architecture
 ionq-superion-10k,decoder,undisclosed,primary,decoder not published
 ionq-superion-10k,interconnect,undisclosed,primary,inter-chip or inter-module link not published
 ionq-superion-10k,fab,fab_cmos,primary,

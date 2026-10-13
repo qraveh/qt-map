@@ -343,16 +343,16 @@
     ],
     "7": [
      {
-      "node": "none",
+      "node": "code_bosonic",
       "role": "primary",
       "gap": false,
-      "state": "none",
-      "summary": "no outer code: 1 cat qubit, 0 logical: no outer code",
+      "state": "station",
+      "summary": "single dissipative cat qubit; bit-flip time above 7 minutes (sweep 7 Oct 2026, source read)",
       "evidence": {
-       "type": "inferred",
-       "url": "https://alice-bob.com/newsroom/alice-bob-quantum-computing-roadmap/",
-       "locator": "",
-       "verified": false
+       "type": "technical-whitepaper",
+       "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
+       "locator": "Boson 4 milestone",
+       "verified": true
       }
      }
     ],
@@ -417,7 +417,7 @@
     "two-legged-cat"
    ],
    "evidence_counts": {
-    "verified": 6,
+    "verified": 7,
     "total": 10
    },
    "refs": [
@@ -4668,16 +4668,16 @@
     ],
     "7": [
      {
-      "node": "none",
+      "node": "code_erasure",
       "role": "primary",
       "gap": false,
-      "state": "none",
-      "summary": "no code family named publicly; roadmap targets Λ≈10 per distance step, 10 logical q (2030), 100 logical q (2032)",
+      "state": "station",
+      "summary": "D-Wave describes its gate-model line as dual-rail; no outer code named (sweep 7 Oct 2026, source read)",
       "evidence": {
-       "type": "architecture-paper",
-       "url": "https://www.nature.com/articles/s41586-026-10822-y",
-       "locator": "Methods: Leakage propagation and delayed erasure checks in a dual-rail surface code",
-       "verified": true
+       "type": "press-technical",
+       "url": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-launches-gate-model-simulator-beta-program-advancing-error-aware-programming-capabilities/",
+       "locator": "release text",
+       "verified": false
       }
      }
     ],
@@ -4745,7 +4745,7 @@
     "dual_rail"
    ],
    "evidence_counts": {
-    "verified": 5,
+    "verified": 4,
     "total": 12
    },
    "refs": [
@@ -5787,15 +5787,15 @@
     ],
     "7": [
      {
-      "node": "none",
+      "node": "code_detect",
       "role": "primary",
       "gap": false,
-      "state": "none",
-      "summary": "no QEC code run; NISQ device (RCS, Oct 2019); small-code characterisation only",
+      "state": "station",
+      "summary": "repetition codes d=3–11 for 50 rounds (exponential suppression); d=2 surface code [[4,1,2]] run as error detection (sweep 7 Oct 2026, source read)",
       "evidence": {
-       "type": "architecture-paper-figure",
-       "url": "https://www.nature.com/articles/s41586-019-1666-5",
-       "locator": "Fig. 4 (RCS supremacy demo; no QEC experiment); SI §I (architecture suited to future surface-code tests)",
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2102.06132",
+       "locator": "abstract; Fig. 4",
        "verified": true
       }
      }
@@ -7453,27 +7453,27 @@
     ],
     "7": [
      {
-      "node": "code_mitig",
+      "node": "code_surface",
       "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "3CX surface code d=3 embedded in heavy-hex, 2–6 rounds; heavy-hex code d=3/5 memory on brisbane/cusco/nazca/sherbrooke (arXiv:2311.15146) (sweep 7 Oct 2026, source read)",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2408.02082",
+       "locator": "Fig. 9 (data taken on sherbrooke)",
+       "verified": true
+      }
+     },
+     {
+      "node": "code_mitig",
+      "role": "alternate",
       "gap": false,
       "state": "station",
       "summary": "error mitigation (ZNE) in the code slot; 127-q Ising-dynamics \"utility\" experiments (2023)",
       "evidence": {
        "type": "architecture-paper",
        "url": "https://www.nature.com/articles/s41586-023-06096-3",
-       "locator": "",
-       "verified": false
-      }
-     },
-     {
-      "node": "none",
-      "role": "alternate",
-      "gap": false,
-      "state": "none",
-      "summary": "no QEC code run; NISQ device",
-      "evidence": {
-       "type": "architecture-paper",
-       "url": "https://arxiv.org/html/2410.00916v1",
        "locator": "",
        "verified": false
       }
@@ -7539,13 +7539,14 @@
    "codes": [
     "floquet_color",
     "google_dynamic_surface",
+    "heavy_hex",
     "honeycomb_floquet",
     "quantum_repetition",
     "stab_4_2_2",
     "xzzx"
    ],
    "evidence_counts": {
-    "verified": 7,
+    "verified": 8,
     "total": 11
    },
    "refs": [
@@ -8383,16 +8384,16 @@
     ],
     "7": [
      {
-      "node": "none",
+      "node": "code_surface",
       "role": "primary",
       "gap": false,
-      "state": "none",
-      "summary": "no QEC code run on r1; NISQ device",
+      "state": "station",
+      "summary": "3CX surface code d=2–4 up to 5 rounds interleaved with a Bacon–Shor patch; logical Bell state by lattice surgery (sweep 7 Oct 2026, source read)",
       "evidence": {
-       "type": "press-technical",
-       "url": "https://postquantum.com/industry-news/ibm-heron-r3-pittsburgh/",
-       "locator": "",
-       "verified": false
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2404.15989",
+       "locator": "abstract; results",
+       "verified": true
       }
      }
     ],
@@ -8448,7 +8449,7 @@
     "google_dynamic_surface"
    ],
    "evidence_counts": {
-    "verified": 3,
+    "verified": 4,
     "total": 10
    },
    "refs": [
@@ -8618,8 +8619,21 @@
     ],
     "7": [
      {
-      "node": "code_detect",
+      "node": "code_surface",
       "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "rotated surface d=3 and (3,5)/(5,3) memory up to 10 QEC cycles on ibm_aachen, ibm_marrakesh, ibm_fez (sweep 7 Oct 2026, source read)",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2510.18847",
+       "locator": "abstract; memory results",
+       "verified": true
+      }
+     },
+     {
+      "node": "code_detect",
+      "role": "alternate",
       "gap": false,
       "state": "station",
       "summary": "rotated_surface magic-state injection with post-selection only; no below-threshold memory, no Λ, no closed-loop correction",
@@ -8731,8 +8745,8 @@
     "steane"
    ],
    "evidence_counts": {
-    "verified": 8,
-    "total": 13
+    "verified": 9,
+    "total": 14
    },
    "refs": [
     {
@@ -8886,8 +8900,34 @@
     ],
     "7": [
      {
-      "node": "code_detect",
+      "node": "code_surface",
       "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "rotated surface (3,3),(3,5),(5,3) memory up to 10 cycles on ibm_pittsburgh; heavy-hex d=5 memory to 30 rounds (arXiv:2604.14296) (sweep 7 Oct 2026, source read)",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2510.18847",
+       "locator": "abstract; ibm_pittsburgh runs",
+       "verified": true
+      }
+     },
+     {
+      "node": "code_color",
+      "role": "alternate",
+      "gap": false,
+      "state": "station",
+      "summary": "two d=5 triangular 6.6.6 colour-code logical qubits (38 physical), logical Bell state better than physical to depth 20 (sweep 7 Oct 2026, source read)",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2605.02861",
+       "locator": "abstract; colour-code results",
+       "verified": true
+      }
+     },
+     {
+      "node": "code_detect",
+      "role": "alternate",
       "gap": false,
       "state": "station",
       "summary": "spacetime-code error detection with syndrome post-selection: 64-qubit, depth-73 Clifford circuit doped with 314 T gates on 76 physical qubits; ~10× error suppression; fidelity lower bound 0.349 at 95% confidence (v3, 2 Sep 2026)",
@@ -9020,8 +9060,8 @@
     "triangular_color"
    ],
    "evidence_counts": {
-    "verified": 6,
-    "total": 12
+    "verified": 8,
+    "total": 14
    },
    "refs": [
     {
@@ -9643,16 +9683,16 @@
     ],
     "7": [
      {
-      "node": "none",
+      "node": "code_surface",
       "role": "primary",
       "gap": false,
-      "state": "none",
-      "summary": "no QEC code; explicitly the pre-fault-tolerance advantage vehicle",
+      "state": "station",
+      "summary": "rotated surface d=3 and d=5 memory, up to 50 rounds without reset, on ibm_berlin; d=5 with defect exclusion on ibm_miami (sweep 7 Oct 2026, source read)",
       "evidence": {
-       "type": "press-technical",
-       "url": "https://www.ibm.com/quantum/blog/nighthawk-r2",
-       "locator": "",
-       "verified": false
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2610.03869",
+       "locator": "abstract; memory results",
+       "verified": true
       }
      }
     ],
@@ -9719,7 +9759,7 @@
     "xzzx"
    ],
    "evidence_counts": {
-    "verified": 3,
+    "verified": 4,
     "total": 10
    },
    "refs": [
@@ -9887,15 +9927,15 @@
     ],
     "7": [
      {
-      "node": "none",
+      "node": "code_surface",
       "role": "primary",
       "gap": false,
-      "state": "none",
-      "summary": "no QEC code; explicitly the pre-fault-tolerance advantage vehicle",
+      "state": "station",
+      "summary": "d=3 surface-code memory, up to 10 rounds, on 11 patches of ibm_phoenix (sweep 7 Oct 2026, source read)",
       "evidence": {
        "type": "architecture-paper",
-       "url": "https://www.ibm.com/quantum/blog/nighthawk-r2",
-       "locator": "§ Built for quantum error correction",
+       "url": "https://arxiv.org/abs/2610.05928",
+       "locator": "Fig. 2c; methods",
        "verified": false
       }
      },
@@ -10221,7 +10261,9 @@
     ]
    },
    "records": [],
-   "codes": [],
+   "codes": [
+    "heavy_hex"
+   ],
    "evidence_counts": {
     "verified": 1,
     "total": 10
@@ -11074,16 +11116,16 @@
     ],
     "7": [
      {
-      "node": "none",
+      "node": "code_detect",
       "role": "primary",
       "gap": false,
-      "state": "none",
-      "summary": "no code run on IQM hardware (L0/L1); targets code_qldpc via tile codes + surface/colour codes on LUMI (2027–29)",
+      "state": "station",
+      "summary": "bit-flip repetition code, 4 data qubits, 2 syndrome rounds, hardware output in the vendor documentation (sweep 7 Oct 2026, source read)",
       "evidence": {
-       "type": "technical-whitepaper",
-       "url": "https://iqm.tech/technology/roadmap/",
-       "locator": "",
-       "verified": false
+       "type": "vendor-architecture-page",
+       "url": "https://docs.iqm.tech/iqm-client/user_guide_qrisp/detector_experiment_demo.html",
+       "locator": "tutorial output",
+       "verified": true
       }
      },
      {
@@ -11202,7 +11244,7 @@
     "quantum_repetition"
    ],
    "evidence_counts": {
-    "verified": 7,
+    "verified": 8,
     "total": 12
    },
    "refs": [
@@ -11571,16 +11613,29 @@
     ],
     "7": [
      {
-      "node": "none",
+      "node": "code_surface",
       "role": "primary",
       "gap": false,
-      "state": "none",
-      "summary": "no code run on IQM hardware; LUMI-IQ targets early QEC 2027, up to 9 logical qubits at d=3 (surface/colour) by 2029",
+      "state": "station",
+      "summary": "IQM plans up to 9 logical qubits with d=3 surface or colour codes on the Halocene line (2029) (sweep 7 Oct 2026, source read)",
       "evidence": {
        "type": "press-technical",
-       "url": "https://quantumcomputingreport.com/lumi-ai-factory-selects-iqms-halocene-roadmap-for-europes-first-superconducting-logical-qubit-system/",
-       "locator": "",
-       "verified": true
+       "url": "https://thequantuminsider.com/2026/09/10/iqm-plans-logical-qubit-system-for-finlands-lumi-ai-factory/",
+       "locator": "article text",
+       "verified": false
+      }
+     },
+     {
+      "node": "code_color",
+      "role": "alternate",
+      "gap": false,
+      "state": "station",
+      "summary": "IQM names a d=3 colour code as the alternative to the surface code for the LUMI-IQ logical qubits (sweep 7 Oct 2026, source read)",
+      "evidence": {
+       "type": "press-technical",
+       "url": "https://thequantuminsider.com/2026/09/10/iqm-plans-logical-qubit-system-for-finlands-lumi-ai-factory/",
+       "locator": "article text",
+       "verified": false
       }
      },
      {
@@ -11593,19 +11648,6 @@
        "type": "architecture-paper-figure",
        "url": "https://arxiv.org/abs/2606.19482",
        "locator": "Fig. 1 (planar directional tile codes); Fig. 2 (vs surface); §II, §IV",
-       "verified": true
-      }
-     },
-     {
-      "node": "code_surface",
-      "role": "alternate",
-      "gap": false,
-      "state": "station",
-      "summary": "LUMI-IQ target: d=3 surface/colour logical qubits; headroom d=11 surface on one logical; lattice surgery + T teleportation in 2029 (H5)",
-      "evidence": {
-       "type": "press-technical",
-       "url": "https://quantumcomputingreport.com/lumi-ai-factory-selects-iqms-halocene-roadmap-for-europes-first-superconducting-logical-qubit-system/",
-       "locator": "",
        "verified": true
       }
      }
@@ -11685,7 +11727,7 @@
     "triangular_color"
    ],
    "evidence_counts": {
-    "verified": 9,
+    "verified": 7,
     "total": 14
    },
    "refs": [
@@ -13327,16 +13369,16 @@
     ],
     "7": [
      {
-      "node": "none",
+      "node": "code_bosonic",
       "role": "primary",
       "gap": false,
-      "state": "none",
-      "summary": "no outer code: single-mode GKP, inner code only, no outer discrete code",
+      "state": "station",
+      "summary": "single-mode square-lattice GKP code with autonomous sBs correction in a 3D cavity (sweep 7 Oct 2026, source read)",
       "evidence": {
-       "type": "inferred",
-       "url": "https://arxiv.org/html/2607.06718v1",
-       "locator": "Fig. 4b (logical error per round); §II.6 Quantum error correction",
-       "verified": false
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2607.06718",
+       "locator": "abstract; results",
+       "verified": true
       }
      }
     ],
@@ -13450,7 +13492,7 @@
     "gkp"
    ],
    "evidence_counts": {
-    "verified": 6,
+    "verified": 7,
     "total": 11
    },
    "refs": [
@@ -13603,16 +13645,16 @@
     ],
     "7": [
      {
-      "node": "none",
+      "node": "code_bosonic",
       "role": "primary",
       "gap": false,
-      "state": "none",
-      "summary": "no outer code: multimode GKP in one cavity: a bosonic code without an outer discrete code",
+      "state": "station",
+      "summary": "tesseract (hypercubic two-mode) GKP code, 32 autonomous QEC rounds (sweep 7 Oct 2026, source read)",
       "evidence": {
-       "type": "inferred",
-       "url": "https://arxiv.org/html/2607.06718v1",
-       "locator": "Fig. 4b (logical error per round under sBs stabilisation); §II.6 Quantum error correction",
-       "verified": false
+       "type": "technical-whitepaper",
+       "url": "https://www.nordquantique.com/wp-content/uploads/2026/02/Nord_Quantique_-_Tesseract_Technical_Paper.pdf",
+       "locator": "results",
+       "verified": true
       }
      }
     ],
@@ -13700,7 +13742,7 @@
     "tesseract_gkp"
    ],
    "evidence_counts": {
-    "verified": 9,
+    "verified": 10,
     "total": 11
    },
    "refs": [
@@ -14348,29 +14390,16 @@
     ],
     "7": [
      {
-      "node": "none",
+      "node": "code_erasure",
       "role": "primary",
       "gap": false,
-      "state": "none",
-      "summary": "no code: dual-rail error detection at single-qubit level (post-selection), no distance scaling (L1 at best); no logical error rate published",
-      "evidence": {
-       "type": "architecture-paper-figure",
-       "url": "https://arxiv.org/abs/2506.15420",
-       "locator": "Fig. 2d–f (post-selected error-detected populations); §III",
-       "verified": true
-      }
-     },
-     {
-      "node": "code_erasure",
-      "role": "alternate",
-      "gap": false,
       "state": "station",
-      "summary": "targets erasure code (unnamed): GENESIS 16 logical @1e-3 (2026) → TITAN 200 logical over 2,000 sites @1e-6 (2028)",
+      "summary": "dual-rail encoding in a fixed-frequency dimon with erasure detection; the paper uses single-dimon test devices and does not name GENESIS (sweep 7 Oct 2026, source read)",
       "evidence": {
-       "type": "technical-whitepaper",
-       "url": "https://oqc.tech/tech/technical-roadmap",
-       "locator": "",
-       "verified": true
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2506.15420",
+       "locator": "abstract; device section",
+       "verified": false
       }
      }
     ],
@@ -14435,8 +14464,8 @@
     "dual_rail"
    ],
    "evidence_counts": {
-    "verified": 9,
-    "total": 15
+    "verified": 7,
+    "total": 14
    },
    "refs": [
     {
@@ -15038,16 +15067,16 @@
     ],
     "7": [
      {
-      "node": "code_detect",
+      "node": "none",
       "role": "primary",
       "gap": false,
-      "state": "station",
-      "summary": "error-detecting runs: d=2 rotated surface code, [[4,1,2]] post-selected",
+      "state": "none",
+      "summary": "no QEC experiment names Wukong-102; the earlier note was inherited from Wukong-72 (sweep 7 Oct 2026, source read)",
       "evidence": {
        "type": "inferred",
-       "url": "https://www.nature.com/articles/s41534-025-01118-6",
-       "locator": "Fig. 1 (d=2 surface code, transversal CNOT); Figs. 2–4 (logical prep, CNOT/Bell, rotations)",
-       "verified": false
+       "url": "https://arxiv.org/abs/2405.09035",
+       "locator": "title and device section name the 72-qubit Wukong",
+       "verified": true
       }
      }
     ],
@@ -15100,7 +15129,7 @@
    "records": [],
    "codes": [],
    "evidence_counts": {
-    "verified": 5,
+    "verified": 6,
     "total": 10
    },
    "refs": [],
@@ -20479,15 +20508,15 @@
     ],
     "7": [
      {
-      "node": "none",
+      "node": "code_surface",
       "role": "primary",
       "gap": false,
-      "state": "none",
-      "summary": "no QEC code run (NISQ); RCS only, 56 q × 20 cycles",
+      "state": "station",
+      "summary": "d=3 CSS surface code (17 of 66 qubits), up to 11 cycles, MWPM decoding (sweep 7 Oct 2026, source read)",
       "evidence": {
-       "type": "architecture-paper-figure",
-       "url": "https://arxiv.org/abs/2109.03494",
-       "locator": "Fig. 4a (RCS 60 q x 12-24 cycles; no QEC experiment)",
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2112.13505",
+       "locator": "abstract; results",
        "verified": true
       }
      }
@@ -22826,16 +22855,16 @@
     ],
     "7": [
      {
-      "node": "none",
+      "node": "code_detect",
       "role": "primary",
       "gap": false,
-      "state": "none",
-      "summary": "no QEC on this line; NISQ device (VQE chemistry, QAOA, generative ML at ≤25 qubits)",
+      "state": "station",
+      "summary": "fault-tolerant [[4,2,2]] Deutsch–Jozsa with post-selection on IonQ Aria-1 via Amazon Braket (sweep 7 Oct 2026, source read)",
       "evidence": {
-       "type": "vendor-architecture-page",
-       "url": "https://www.ionq.com/quantum-systems/forte",
-       "locator": "",
-       "verified": false
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2412.04791",
+       "locator": "abstract; results",
+       "verified": true
       }
      }
     ],
@@ -22891,7 +22920,7 @@
     "stab_4_2_2"
    ],
    "evidence_counts": {
-    "verified": 5,
+    "verified": 6,
     "total": 10
    },
    "refs": [
@@ -23279,15 +23308,28 @@
     ],
     "7": [
      {
-      "node": "none",
+      "node": "code_color",
       "role": "primary",
       "gap": false,
-      "state": "none",
-      "summary": "no QEC on Forte itself; NISQ device (#AQ 36 benchmark suite, chemistry VQE, QAOA)",
+      "state": "station",
+      "summary": "flag-verified Steane-code preparation, Steane-style syndrome extraction, continuous-angle logical rotations on the 36-qubit Forte (sweep 7 Oct 2026, source read)",
       "evidence": {
-       "type": "vendor-architecture-page",
-       "url": "https://www.ionq.com/quantum-systems/forte",
-       "locator": "",
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2608.20676",
+       "locator": "abstract; results",
+       "verified": true
+      }
+     },
+     {
+      "node": "code_detect",
+      "role": "alternate",
+      "gap": false,
+      "state": "station",
+      "summary": "iceberg-code fault-tolerant Toffoli on a 36-qubit trapped-ion device (device inferred) (sweep 7 Oct 2026, source read)",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2604.13219",
+       "locator": "abstract",
        "verified": false
       }
      }
@@ -23366,8 +23408,8 @@
     "steane"
    ],
    "evidence_counts": {
-    "verified": 6,
-    "total": 10
+    "verified": 7,
+    "total": 11
    },
    "refs": [
     {
@@ -23761,16 +23803,16 @@
     ],
     "7": [
      {
-      "node": "undisclosed",
+      "node": "code_qldpc",
       "role": "primary",
       "gap": false,
-      "state": "undisclosed",
-      "summary": "built to run the Walking Cat architecture (Apr 2026 blueprint); the Aug 2026 qLDPC breakeven ran on a Tempo test system, not on Superion",
+      "state": "station",
+      "summary": "GB8 [[102,22,9]] memory, BB7 [[70,6,9]] memory with a magic factory; IonQ's Superion release names the 10K as the first generation built to run Walking Cat (sweep 7 Oct 2026, source read)",
       "evidence": {
-       "type": "press-technical",
-       "url": "https://www.ionq.com/news/ionq-launches-superion-product-line-industry-leading-upgradeable-platform-designed-to-scale-manufacturable-fault-tolerant-quantum-computing",
-       "locator": "Walking Cat and qLDPC sentences",
-       "verified": false
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2604.19481",
+       "locator": "abstract; architecture section",
+       "verified": true
       }
      }
     ],
@@ -23839,7 +23881,7 @@
     "qcga"
    ],
    "evidence_counts": {
-    "verified": 3,
+    "verified": 4,
     "total": 11
    },
    "refs": [
@@ -23986,28 +24028,15 @@
     ],
     "7": [
      {
-      "node": "code_qldpc",
+      "node": "undisclosed",
       "role": "primary",
       "gap": false,
-      "state": "station",
-      "summary": "Walking-Cat blueprint: generalized bicycle + cyclic hypergraph-product qLDPC; ECDLP-256 at ~1,450 logical, 19,397 physical ions, 25.7 days, 63% success",
+      "state": "undisclosed",
+      "summary": "the release designates no code for Superion 256; the 10K is the first generation built to run the Walking Cat architecture (sweep 7 Oct 2026, source read)",
       "evidence": {
-       "type": "architecture-paper",
-       "url": "https://arxiv.org/abs/2609.05625",
-       "locator": "§II.1 Architecture; Part V Architecture",
-       "verified": true
-      }
-     },
-     {
-      "node": "code_highrate",
-      "role": "alternate",
-      "gap": false,
-      "state": "station",
-      "summary": "Walking-Cat \"cat factories\" (logical measurement) + magic-state factories; 4.0×10⁷ Toffoli for ECDLP-256 (blueprint, not measured)",
-      "evidence": {
-       "type": "architecture-paper",
-       "url": "https://arxiv.org/abs/2609.05625",
-       "locator": "§II.1 Architecture (two-level magic factory); Part V",
+       "type": "press-technical",
+       "url": "https://ionq.com/news/ionq-launches-superion-product-line-industry-leading-upgradeable-platform-designed-to-scale-manufacturable-fault-tolerant-quantum-computing",
+       "locator": "Superion launch release, 8 Sep 2026",
        "verified": true
       }
      }
@@ -24084,8 +24113,8 @@
    ],
    "codes": [],
    "evidence_counts": {
-    "verified": 7,
-    "total": 12
+    "verified": 6,
+    "total": 11
    },
    "refs": [
     {
@@ -32020,9 +32049,7 @@
     ]
    },
    "records": [],
-   "codes": [
-    "stab_4_2_2"
-   ],
+   "codes": [],
    "evidence_counts": {
     "verified": 10,
     "total": 13
@@ -42136,16 +42163,16 @@
     ],
     "7": [
      {
-      "node": "none",
+      "node": "∅G-qac",
       "role": "primary",
-      "gap": false,
-      "state": "none",
-      "summary": "QEC not applicable; analog annealer",
+      "gap": true,
+      "state": "gap",
+      "summary": "quantum annealing correction (penalty-repetition encoding) on up to 1,322 logical qubits of Advantage 4.1 (sweep 7 Oct 2026, source read)",
       "evidence": {
-       "type": "vendor-architecture-page",
-       "url": "https://support.dwavesys.com/hc/en-us/articles/32105885880087-D-Wave-s-Advantage2-Quantum-Computer-Now-Generally-Available",
-       "locator": "",
-       "verified": false
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2401.07184",
+       "locator": "abstract",
+       "verified": true
       }
      }
     ],
@@ -42210,7 +42237,7 @@
     "qac"
    ],
    "evidence_counts": {
-    "verified": 6,
+    "verified": 7,
     "total": 11
    },
    "refs": [
@@ -42370,16 +42397,16 @@
     ],
     "7": [
      {
-      "node": "none",
+      "node": "∅G-qac",
       "role": "primary",
-      "gap": false,
-      "state": "none",
-      "summary": "QEC not applicable; no code, no logical qubit, no gate set",
+      "gap": true,
+      "state": "gap",
+      "summary": "penalty-spin and stacked quantum annealing correction on Advantage2_system1.10 (sweep 7 Oct 2026, source read)",
       "evidence": {
-       "type": "vendor-architecture-page",
-       "url": "https://support.dwavesys.com/hc/en-us/articles/32105885880087-D-Wave-s-Advantage2-Quantum-Computer-Now-Generally-Available",
-       "locator": "",
-       "verified": false
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2509.11217",
+       "locator": "abstract; device section",
+       "verified": true
       }
      }
     ],
@@ -42453,7 +42480,7 @@
     "qac"
    ],
    "evidence_counts": {
-    "verified": 5,
+    "verified": 6,
     "total": 11
    },
    "refs": [
@@ -43001,22 +43028,28 @@
   },
   "code_bosonic": {
    "primary": [
+    "aliceandbob-boson-4",
     "aliceandbob-graphene",
     "aliceandbob-helium",
     "aliceandbob-helium-2",
     "aws-ocelot",
+    "nordquantique-gkp",
+    "nordquantique-tesseract",
     "xanadu-aurora"
    ],
    "alternate": []
   },
   "code_color": {
    "primary": [
+    "ionq-forte",
     "quera-gemini",
     "uibk-innsbruck-ion"
    ],
    "alternate": [
     "google-willow",
     "harvard-448",
+    "ibm-heron-r3",
+    "iqm-halocene-150",
     "quantinuum-h1",
     "quantinuum-h2",
     "quantinuum-helios"
@@ -43024,15 +43057,18 @@
   },
   "code_detect": {
    "primary": [
+    "google-sycamore-54",
     "hrl-eo-18q",
     "ibm-falcon",
-    "ibm-heron-r2",
-    "ibm-heron-r3",
+    "ionq-aria",
+    "iqm-emerald-54",
     "iqm-star-6",
-    "originq-wukong-102",
     "originq-wukong-72"
    ],
    "alternate": [
+    "ibm-heron-r2",
+    "ibm-heron-r3",
+    "ionq-forte",
     "quantinuum-h1",
     "quantinuum-helios"
    ]
@@ -43041,14 +43077,14 @@
    "primary": [
     "atom-computing-magne",
     "aws-dualrail",
+    "dwave-dualrail-17",
+    "oqc-genesis-16",
     "princeton-yb-erasure",
     "qci-seeker-8",
     "sustc-biased-erasure",
     "sustech-dualrail-8"
    ],
-   "alternate": [
-    "oqc-genesis-16"
-   ]
+   "alternate": []
   },
   "code_fusion": {
    "primary": [
@@ -43070,7 +43106,6 @@
    ],
    "alternate": [
     "harvard-448",
-    "ionq-superion-256",
     "quera-gemini",
     "quera-libra",
     "uibk-innsbruck-ion"
@@ -43096,10 +43131,9 @@
    ]
   },
   "code_mitig": {
-   "primary": [
-    "ibm-eagle"
-   ],
+   "primary": [],
    "alternate": [
+    "ibm-eagle",
     "ibm-heron-r3",
     "ibm-nighthawk-r2"
    ]
@@ -43111,7 +43145,7 @@
     "ibm-kookaburra",
     "ibm-starling",
     "ionq-ba133-qldpc-testbed",
-    "ionq-superion-256",
+    "ionq-superion-10k",
     "photonic-inc",
     "tsinghua-kunlun-32"
    ],
@@ -43127,7 +43161,15 @@
     "ethz-surface17",
     "google-sycamore-72",
     "google-willow",
+    "ibm-eagle",
+    "ibm-heron-r1",
+    "ibm-heron-r2",
+    "ibm-heron-r3",
+    "ibm-nighthawk-r1",
+    "ibm-nighthawk-r2",
+    "iqm-halocene-150",
     "rigetti-ankaa-2",
+    "ustc-zuchongzhi-2.1",
     "ustc-zuchongzhi-3.2",
     "yaqumo-yb",
     "zju-125q"
@@ -43138,7 +43180,6 @@
     "fujitsu-10000q",
     "harvard-448",
     "ibm-falcon",
-    "iqm-halocene-150",
     "quantware-contralto-a17",
     "spinq-ursa-major"
    ]

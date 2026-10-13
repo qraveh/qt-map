@@ -1,0 +1,539 @@
+{
+ "date": "2026-10-13",
+ "source": "the editor's word of 7 Oct 2026 (08:27: update the code-layer cells; finish the search) and of 13 Oct 2026 (14:07: make sure the work is on disk) — 20261007-1's second commit carried onto main",
+ "items": [
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-eagle"
+   },
+   "fields": {
+    "st_code": "code_surface",
+    "codes": "floquet_color;google_dynamic_surface;heavy_hex;honeycomb_floquet;quantum_repetition;stab_4_2_2;xzzx"
+   },
+   "old": {
+    "st_code": "code_mitig",
+    "codes": "floquet_color;google_dynamic_surface;honeycomb_floquet;quantum_repetition;stab_4_2_2;xzzx"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2408.02082",
+     "date": "2026-10-13",
+     "quote": "3CX surface code d=3 embedded in heavy-hex, 2–6 rounds; heavy-hex code d=3/5 memory on brisbane/cusco/nazca/sherbrooke (arXiv:2311.15146) (sweep 7 Oct 2026, source read)"
+    }
+   ],
+   "note": "code-layer cell set from the machine's demonstrated or designated codes in machine-codes.csv (the editor's word of 7 Oct 2026, 08:27)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-osprey"
+   },
+   "fields": {
+    "codes": "heavy_hex"
+   },
+   "old": {
+    "codes": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://postquantum.com/industry-news/ibm-condor/",
+     "date": "2026-10-13",
+     "quote": "no QEC code run; NISQ device, retired"
+    }
+   ],
+   "note": "second search pass of 7 Oct 2026"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-heron-r1"
+   },
+   "fields": {
+    "st_code": "code_surface"
+   },
+   "old": {
+    "st_code": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2404.15989",
+     "date": "2026-10-13",
+     "quote": "3CX surface code d=2–4 up to 5 rounds interleaved with a Bacon–Shor patch; logical Bell state by lattice surgery (sweep 7 Oct 2026, source read)"
+    }
+   ],
+   "note": "code-layer cell set from the machine's demonstrated or designated codes in machine-codes.csv (the editor's word of 7 Oct 2026, 08:27)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-heron-r2"
+   },
+   "fields": {
+    "st_code": "code_surface"
+   },
+   "old": {
+    "st_code": "code_detect"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2510.18847",
+     "date": "2026-10-13",
+     "quote": "rotated surface d=3 and (3,5)/(5,3) memory up to 10 QEC cycles on ibm_aachen, ibm_marrakesh, ibm_fez (sweep 7 Oct 2026, source read)"
+    }
+   ],
+   "note": "code-layer cell set from the machine's demonstrated or designated codes in machine-codes.csv (the editor's word of 7 Oct 2026, 08:27)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-heron-r3"
+   },
+   "fields": {
+    "st_code": "code_surface"
+   },
+   "old": {
+    "st_code": "code_detect"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2510.18847",
+     "date": "2026-10-13",
+     "quote": "rotated surface (3,3),(3,5),(5,3) memory up to 10 cycles on ibm_pittsburgh; heavy-hex d=5 memory to 30 rounds (arXiv:2604.14296) (sweep 7 Oct 2026, source read)"
+    }
+   ],
+   "note": "code-layer cell set from the machine's demonstrated or designated codes in machine-codes.csv (the editor's word of 7 Oct 2026, 08:27)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-nighthawk-r1"
+   },
+   "fields": {
+    "st_code": "code_surface"
+   },
+   "old": {
+    "st_code": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2610.03869",
+     "date": "2026-10-13",
+     "quote": "rotated surface d=3 and d=5 memory, up to 50 rounds without reset, on ibm_berlin; d=5 with defect exclusion on ibm_miami (sweep 7 Oct 2026, source read)"
+    }
+   ],
+   "note": "code-layer cell set from the machine's demonstrated or designated codes in machine-codes.csv (the editor's word of 7 Oct 2026, 08:27)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-nighthawk-r2"
+   },
+   "fields": {
+    "st_code": "code_surface"
+   },
+   "old": {
+    "st_code": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2610.05928",
+     "date": "2026-10-13",
+     "quote": "d=3 surface-code memory, up to 10 rounds, on 11 patches of ibm_phoenix (sweep 7 Oct 2026, source read)"
+    }
+   ],
+   "note": "code-layer cell set from the machine's demonstrated or designated codes in machine-codes.csv (the editor's word of 7 Oct 2026, 08:27)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "google-sycamore-54"
+   },
+   "fields": {
+    "st_code": "code_detect"
+   },
+   "old": {
+    "st_code": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2102.06132",
+     "date": "2026-10-13",
+     "quote": "repetition codes d=3–11 for 50 rounds (exponential suppression); d=2 surface code [[4,1,2]] run as error detection (sweep 7 Oct 2026, source read)"
+    }
+   ],
+   "note": "code-layer cell set from the machine's demonstrated or designated codes in machine-codes.csv (the editor's word of 7 Oct 2026, 08:27)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ustc-zuchongzhi-2.1"
+   },
+   "fields": {
+    "st_code": "code_surface"
+   },
+   "old": {
+    "st_code": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2112.13505",
+     "date": "2026-10-13",
+     "quote": "d=3 CSS surface code (17 of 66 qubits), up to 11 cycles, MWPM decoding (sweep 7 Oct 2026, source read)"
+    }
+   ],
+   "note": "code-layer cell set from the machine's demonstrated or designated codes in machine-codes.csv (the editor's word of 7 Oct 2026, 08:27)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "originq-wukong-102"
+   },
+   "fields": {
+    "st_code": "none"
+   },
+   "old": {
+    "st_code": "code_detect"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2405.09035",
+     "date": "2026-10-13",
+     "quote": "no QEC experiment names Wukong-102; the earlier note was inherited from Wukong-72 (sweep 7 Oct 2026, source read)"
+    }
+   ],
+   "note": "code-layer cell set from the machine's demonstrated or designated codes in machine-codes.csv (the editor's word of 7 Oct 2026, 08:27)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "iqm-emerald-54"
+   },
+   "fields": {
+    "st_code": "code_detect"
+   },
+   "old": {
+    "st_code": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://docs.iqm.tech/iqm-client/user_guide_qrisp/detector_experiment_demo.html",
+     "date": "2026-10-13",
+     "quote": "bit-flip repetition code, 4 data qubits, 2 syndrome rounds, hardware output in the vendor documentation (sweep 7 Oct 2026, source read)"
+    }
+   ],
+   "note": "code-layer cell set from the machine's demonstrated or designated codes in machine-codes.csv (the editor's word of 7 Oct 2026, 08:27)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "iqm-halocene-150"
+   },
+   "fields": {
+    "st_code": "code_surface"
+   },
+   "old": {
+    "st_code": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://thequantuminsider.com/2026/09/10/iqm-plans-logical-qubit-system-for-finlands-lumi-ai-factory/",
+     "date": "2026-10-13",
+     "quote": "IQM plans up to 9 logical qubits with d=3 surface or colour codes on the Halocene line (2029) (sweep 7 Oct 2026, source read)"
+    }
+   ],
+   "note": "code-layer cell set from the machine's demonstrated or designated codes in machine-codes.csv (the editor's word of 7 Oct 2026, 08:27)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "oqc-genesis-16"
+   },
+   "fields": {
+    "st_code": "code_erasure"
+   },
+   "old": {
+    "st_code": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2506.15420",
+     "date": "2026-10-13",
+     "quote": "dual-rail encoding in a fixed-frequency dimon with erasure detection; the paper uses single-dimon test devices and does not name GENESIS (sweep 7 Oct 2026, source read)"
+    }
+   ],
+   "note": "code-layer cell set from the machine's demonstrated or designated codes in machine-codes.csv (the editor's word of 7 Oct 2026, 08:27)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "aliceandbob-boson-4"
+   },
+   "fields": {
+    "st_code": "code_bosonic"
+   },
+   "old": {
+    "st_code": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://alice-bob.com/wp-content/uploads/2024/12/Alice-Bob-Roadmap-Long-Version.pdf",
+     "date": "2026-10-13",
+     "quote": "single dissipative cat qubit; bit-flip time above 7 minutes (sweep 7 Oct 2026, source read)"
+    }
+   ],
+   "note": "code-layer cell set from the machine's demonstrated or designated codes in machine-codes.csv (the editor's word of 7 Oct 2026, 08:27)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "nordquantique-gkp"
+   },
+   "fields": {
+    "st_code": "code_bosonic"
+   },
+   "old": {
+    "st_code": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2607.06718",
+     "date": "2026-10-13",
+     "quote": "single-mode square-lattice GKP code with autonomous sBs correction in a 3D cavity (sweep 7 Oct 2026, source read)"
+    }
+   ],
+   "note": "code-layer cell set from the machine's demonstrated or designated codes in machine-codes.csv (the editor's word of 7 Oct 2026, 08:27)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "nordquantique-tesseract"
+   },
+   "fields": {
+    "st_code": "code_bosonic"
+   },
+   "old": {
+    "st_code": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://www.nordquantique.com/wp-content/uploads/2026/02/Nord_Quantique_-_Tesseract_Technical_Paper.pdf",
+     "date": "2026-10-13",
+     "quote": "tesseract (hypercubic two-mode) GKP code, 32 autonomous QEC rounds (sweep 7 Oct 2026, source read)"
+    }
+   ],
+   "note": "code-layer cell set from the machine's demonstrated or designated codes in machine-codes.csv (the editor's word of 7 Oct 2026, 08:27)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "dwave-dualrail-17"
+   },
+   "fields": {
+    "st_code": "code_erasure"
+   },
+   "old": {
+    "st_code": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://www.dwavequantum.com/company/newsroom/press-release/d-wave-launches-gate-model-simulator-beta-program-advancing-error-aware-programming-capabilities/",
+     "date": "2026-10-13",
+     "quote": "D-Wave describes its gate-model line as dual-rail; no outer code named (sweep 7 Oct 2026, source read)"
+    }
+   ],
+   "note": "code-layer cell set from the machine's demonstrated or designated codes in machine-codes.csv (the editor's word of 7 Oct 2026, 08:27)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-aria"
+   },
+   "fields": {
+    "st_code": "code_detect"
+   },
+   "old": {
+    "st_code": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2412.04791",
+     "date": "2026-10-13",
+     "quote": "fault-tolerant [[4,2,2]] Deutsch–Jozsa with post-selection on IonQ Aria-1 via Amazon Braket (sweep 7 Oct 2026, source read)"
+    }
+   ],
+   "note": "code-layer cell set from the machine's demonstrated or designated codes in machine-codes.csv (the editor's word of 7 Oct 2026, 08:27)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-forte"
+   },
+   "fields": {
+    "st_code": "code_color"
+   },
+   "old": {
+    "st_code": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2608.20676",
+     "date": "2026-10-13",
+     "quote": "flag-verified Steane-code preparation, Steane-style syndrome extraction, continuous-angle logical rotations on the 36-qubit Forte (sweep 7 Oct 2026, source read)"
+    }
+   ],
+   "note": "code-layer cell set from the machine's demonstrated or designated codes in machine-codes.csv (the editor's word of 7 Oct 2026, 08:27)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-superion-256"
+   },
+   "fields": {
+    "st_code": "undisclosed"
+   },
+   "old": {
+    "st_code": "code_qldpc"
+   },
+   "evidence": [
+    {
+     "url": "https://ionq.com/news/ionq-launches-superion-product-line-industry-leading-upgradeable-platform-designed-to-scale-manufacturable-fault-tolerant-quantum-computing",
+     "date": "2026-10-13",
+     "quote": "the release designates no code for Superion 256; the 10K is the first generation built to run the Walking Cat architecture (sweep 7 Oct 2026, source read)"
+    }
+   ],
+   "note": "code-layer cell set from the machine's demonstrated or designated codes in machine-codes.csv (the editor's word of 7 Oct 2026, 08:27)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "pasqal-fresnel"
+   },
+   "fields": {
+    "codes": "none"
+   },
+   "old": {
+    "codes": "stab_4_2_2"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2006.12326",
+     "date": "2026-10-13",
+     "quote": "no QEC code run; analog/NISQ device"
+    }
+   ],
+   "note": "second search pass of 7 Oct 2026"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "dwave-advantage"
+   },
+   "fields": {
+    "st_code": "∅G-qac"
+   },
+   "old": {
+    "st_code": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2401.07184",
+     "date": "2026-10-13",
+     "quote": "quantum annealing correction (penalty-repetition encoding) on up to 1,322 logical qubits of Advantage 4.1 (sweep 7 Oct 2026, source read)"
+    }
+   ],
+   "note": "code-layer cell set from the machine's demonstrated or designated codes in machine-codes.csv (the editor's word of 7 Oct 2026, 08:27)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "dwave-advantage2"
+   },
+   "fields": {
+    "st_code": "∅G-qac"
+   },
+   "old": {
+    "st_code": "none"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2509.11217",
+     "date": "2026-10-13",
+     "quote": "penalty-spin and stacked quantum annealing correction on Advantage2_system1.10 (sweep 7 Oct 2026, source read)"
+    }
+   ],
+   "note": "code-layer cell set from the machine's demonstrated or designated codes in machine-codes.csv (the editor's word of 7 Oct 2026, 08:27)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-superion-10k"
+   },
+   "fields": {
+    "st_code": "code_qldpc"
+   },
+   "old": {
+    "st_code": "undisclosed"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2604.19481",
+     "date": "2026-10-13",
+     "quote": "GB8 [[102,22,9]] memory, BB7 [[70,6,9]] memory with a magic factory; IonQ's Superion release names the 10K as the first generation built to run Walking Cat (sweep 7 Oct 2026, source read)"
+    }
+   ],
+   "note": "code-layer cell set from the machine's demonstrated or designated codes in machine-codes.csv (the editor's word of 7 Oct 2026, 08:27)"
+  },
+  {
+   "kind": "remove",
+   "subject": {
+    "type": "machine-code",
+    "id": "pasqal-fresnel/stab_4_2_2"
+   },
+   "fields": {},
+   "old": {
+    "code_id": "stab_4_2_2"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2605.21276",
+     "date": "2026-05",
+     "quote": "an atom-based logical quantum processor (no product named)"
+    }
+   ],
+   "note": "the paper names no Pasqal product; Fresnel is an analog machine (map path atom_analog), so the digital, zoned processor that ran [[4,2,2]] is not it — a candidate for Orion once a source names it"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "gap",
+    "id": "G-qac"
+   },
+   "note": "New Atlas gap G-qac (L7 code): quantum annealing correction (a penalty-repetition encoding decoded by majority vote) runs on D-Wave Advantage and Advantage2, where no code technology of the Atlas applies."
+  }
+ ]
+}
