@@ -3691,7 +3691,7 @@
    "status": "DEPLOYED",
    "status_date": "2023",
    "physical_qubits_num": 66,
-   "access": "cloud service",
+   "access": "cloud service (the Tianyan cloud through the Cqlib SDK, backends 'tianyan176' and 'tianyan176-2')",
    "layers": {
     "1": [
      {
@@ -3852,22 +3852,52 @@
    },
    "refs": [
     {
+     "url": "https://arxiv.org/abs/2607.27009",
+     "title": "Embedded quantum computing for many-body surface reaction",
+     "kind": "paper"
+    },
+    {
+     "url": "https://arxiv.org/abs/2609.32433",
+     "title": "Feedback-based quantum optimization with low depth and measurement",
+     "kind": "paper"
+    },
+    {
      "url": "https://arxiv.org/abs/2512.10504",
      "title": "[2512.10504] Tianyan: Cloud services with quantum advantage",
      "kind": "paper"
+    },
+    {
+     "url": "https://cqlib.readthedocs.io/en/latest/notebooks/1.html",
+     "title": "cqlib tutorial",
+     "kind": "docs"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/cq-lib/cqlib-tianyan/release/0.1/crates/binding-python/README.md",
+     "title": "cqlib-tianyan — Python binding README, the device table of the Tianyan cloud",
+     "kind": "docs"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/cq-lib/cqlib-tianyan/release/0.1/crates/cqlib-tianyan/src/device_config.rs",
+     "title": "cqlib-tianyan — device_config.rs, the native gate set per backend",
+     "kind": "docs"
+    },
+    {
+     "url": "https://www.quantum-info.com/News/qy/2024/2025/0218/879.html",
+     "title": "国内最大规模超导量子计算机“天衍-504”发布",
+     "kind": "blog"
     }
    ],
    "profile": {
     "qubit_type": "transmon",
-    "gate_mechanism": "coupler type not published",
-    "connectivity": "not published",
+    "gate_mechanism": "coupler type not published; the cloud's native gate set in the owner SDK for tianyan176 and tianyan176-2: RZ, X2P, X2M, Y2P, Y2M, XY2P, XY2M, CZ (cqlib-tianyan device_config.rs, Sep 2026)",
+    "connectivity": "a two-dimensional array of 66 qubits with 110 tunable couplers, as third-party users describe the processor (arXiv:2609.32433, Sep 2026); the coupler map (Q0–Q65, G0–G109) is served to users by the SDK's download_config (owner tutorial, Aug 2024)",
     "degree": "4",
     "control": "room-temperature RF",
     "control_placement": "room-temp",
     "readout": "dispersive",
     "err_2q_median": "4e-3 claimed (press figure, no paper)",
     "err_2q_best": "",
-    "readout_error": "",
+    "readout_error": "5.98e-2 (owner tutorial, Aug 2024; its calibration snapshot says 5.8 %)",
     "t1": "",
     "t2": "",
     "t_2q": "",
@@ -3881,6 +3911,7 @@
     "decoder_mode": "none",
     "err_2q_median_num": 0.004,
     "flags": [
+     "name-not-qubit-count",
      "vendor-claim"
     ],
     "qubits_accessible": null,
@@ -3897,7 +3928,7 @@
    "country": "China",
    "family": "SC",
    "map_path": "sc",
-   "status": "DEPLOYED",
+   "status": "DEPLOYED (commissioning complete per QuantumCTek's 2025 annual report, Mar 2026)",
    "status_date": "Oct 2025",
    "physical_qubits_num": 105,
    "access": "cloud service",
@@ -4083,17 +4114,47 @@
      "url": "https://arxiv.org/abs/2512.10504",
      "title": "[2512.10504] Tianyan: Cloud services with quantum advantage",
      "kind": "paper"
+    },
+    {
+     "url": "https://github.com/cq-lib/cqlib-tianyan",
+     "title": "cq-lib/cqlib-tianyan",
+     "kind": "docs"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/cq-lib/cqlib-tianyan/release/0.1/crates/binding-python/README.md",
+     "title": "cqlib-tianyan — Python binding README, the device table of the Tianyan cloud",
+     "kind": "docs"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/cq-lib/cqlib-tianyan/release/0.1/crates/cqlib-tianyan/src/device_config.rs",
+     "title": "cqlib-tianyan — device_config.rs, the native gate set per backend",
+     "kind": "docs"
+    },
+    {
+     "url": "https://www.quantum-info.com/News/qy/2025nian/2026/0121/937.html",
+     "title": "国盾量子助力超导量子计算机“天衍-287”正式运行",
+     "kind": "blog"
+    },
+    {
+     "url": "https://icvtank.com/articles/2026-global-quantum-computing-cloud-platform-evaluation-repo",
+     "title": "2026 Global Quantum Computing Cloud Platform Evaluation Report",
+     "kind": "press"
+    },
+    {
+     "url": "https://stcn.com/article/detail/3695900.html",
+     "title": "国盾量子2025年实现扭亏为盈 量子计算业务营收翻倍",
+     "kind": "press"
     }
    ],
    "profile": {
     "qubit_type": "tunable transmon",
-    "gate_mechanism": "tunable coupler; explicitly a Zuchongzhi 3.0-like architecture",
-    "connectivity": "rectangular lattice",
+    "gate_mechanism": "tunable coupler; explicitly a Zuchongzhi 3.0-like architecture; iSWAP-like (fSim) two-qubit gate at a fixed 40 ns, single-qubit gates 26 ns with DRAG (arXiv:2512.10504); the cloud's native gate set in the owner SDK: RZ, X2P, X2M, Y2P, Y2M, XY2P, XY2M, CZ (cqlib-tianyan device_config.rs, Sep 2026); the AshN scheme (simultaneous XY drives on both qubits with the tunable coupler) gives a native set of CZ 48 ns, iSWAP 44 ns, √iSWAP 28 ns, SWAP 60 ns and a B-like gate 44 ns on the 105-qubit, 182-coupler device of arXiv:2608.24084 (CTQG with Tsinghua, Aug 2026; the paper names the architecture, not the machine)",
+    "connectivity": "square grid lattice, 105 qubits and 182 couplers (the owner's wording, arXiv:2512.10504)",
     "degree": "3.5",
-    "control": "room-temperature RF",
+    "control": "room-temperature RF; per-qubit XY and Z lines combined at room temperature through a bias tee before the refrigerator, coupler lines routed separately (arXiv:2608.24084)",
     "control_placement": "room-temp",
-    "readout": "dispersive",
-    "err_2q_median": "4.4e-3 mean iSWAP-like (fSim) Pauli error, simultaneous XEB (74-qubit RCS subset; 99.56%)",
+    "readout": "dispersive; X12-gate-driven 0–2 readout, correlated readout errors below 2 % with a synchronous SPAM protocol (arXiv:2512.10504); a TWPA at the mixing-chamber stage and a HEMT at 4 K (arXiv:2608.24084)",
+    "err_2q_median": "4.4e-3 mean iSWAP-like (fSim) Pauli error, simultaneous XEB (74-qubit RCS subset; 99.56%); the same 4.4 ‰ mean over all 105 qubits operating simultaneously; no median published (arXiv:2512.10504)",
     "err_2q_best": "",
     "readout_error": "1.3e-2",
     "t1": "",
@@ -4126,7 +4187,7 @@
    "country": "China",
    "family": "SC",
    "map_path": "sc",
-   "status": "DEPLOYED",
+   "status": "DEPLOYED (launched 2024 — 'the largest commercially available quantum computer', 'an engineering exploration on system scaling limitation' in the owner's words, arXiv:2512.10504; acceptance completed in 2025 per QuantumCTek's 2025 annual report, Mar 2026)",
    "status_date": "Dec 2024",
    "physical_qubits_num": 504,
    "access": "cloud service (Cqlib SDK; operator paper Dec 2025)",
@@ -4308,14 +4369,39 @@
      "kind": "paper"
     },
     {
+     "url": "https://cqlib.readthedocs.io/en/latest/notebooks/1.html",
+     "title": "cqlib tutorial",
+     "kind": "docs"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/cq-lib/cqlib-tianyan/release/0.1/crates/binding-python/README.md",
+     "title": "cqlib-tianyan — Python binding README, the device table of the Tianyan cloud",
+     "kind": "docs"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/cq-lib/cqlib-tianyan/release/0.1/crates/cqlib-tianyan/src/device_config.rs",
+     "title": "cqlib-tianyan — device_config.rs, the native gate set per backend",
+     "kind": "docs"
+    },
+    {
+     "url": "https://www.quantum-info.com/News/qy/2024/2025/0218/879.html",
+     "title": "国内最大规模超导量子计算机“天衍-504”发布",
+     "kind": "blog"
+    },
+    {
      "url": "https://thequantuminsider.com/2026/05/15/10-plus-companies-leading-the-quantum-technologies-race-in-china/",
      "title": "Top Chinese Quantum Computing Companies in 2026",
+     "kind": "press"
+    },
+    {
+     "url": "https://stcn.com/article/detail/3695900.html",
+     "title": "国盾量子2025年实现扭亏为盈 量子计算业务营收翻倍",
      "kind": "press"
     }
    ],
    "profile": {
     "qubit_type": "transmon",
-    "gate_mechanism": "not published",
+    "gate_mechanism": "not published; the owner SDK hard-codes an FSIM native gate for tianyan504 alone, beside CZ and XY2P/XY2M (cqlib-tianyan device_config.rs, Sep 2026); no mechanism paper",
     "connectivity": "not published",
     "degree": "",
     "control": "domestically developed kilo-qubit measurement-and-control system - the actual asset",

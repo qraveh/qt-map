@@ -573,7 +573,8 @@ def hints(pw):
 
 def review23b(pw):
     """23 Sep 2026 (second review): the controls bar starts collapsed behind a labelled "Controls" button and remembers the reader's
-    choice; 100 % is the map fitted to its frame (the first view), 1:1 is the native width and shows its true percentage, a typed
+    choice; 100 % is the map fitted to its frame's width (the first view until 3fd0803 of 13 Oct 2026, since then the first view is the
+    whole map fitted to the height above the legend), 1:1 is the native width and shows its true percentage, a typed
     value is relative to the fit; the ORCID icon is the link and no separator precedes it; the map's caption sits below the map
     (linked §-references) and no lead paragraph precedes the map; §9 is one IEEE list and every in-text citation is a number;
     Table 8.5's first column never breaks a code."""
@@ -590,8 +591,16 @@ def review23b(pw):
     check('controls bar starts collapsed, chips hidden, zoom window visible', st['collapsed'] and not st['chips'] and st['zoomVisible'], st)
     check('the toggle is a labelled button ≥ 28 px high', 'Controls' in st['label'] and st['h'] >= 28, st)
     check('collapsed bar shows the selection summary', 'all architectures' in st['sum'], st['sum'])
-    z0 = p.evaluate("()=>({lvl:document.getElementById('zoomlvl').value, svgW:+document.querySelector('#mapwrap svg').getAttribute('width'), wrapW:document.getElementById('mapwrap').clientWidth})")
-    check('first view is the fit (100 %, map fills the frame)', z0['lvl'] == '100%' and z0['wrapW'] - 40 <= z0['svgW'] <= z0['wrapW'], z0)
+    # the first view since 3fd0803 (13 Oct 2026, the editor's order of 12 Oct): the whole map in the first screen — fitted to the height
+    # left below the map's top edge and above its legend when that fit is smaller than the fit-width one (29–40 % by window size; 34 % at
+    # 1280×800); the fit-width view (100 %) stays when it already shows the whole map, when fewer than 240 px are left, or when the page
+    # opens at an address fragment or scrolled. The check recomputes the rule from the inputs map_js.py reads and tests the outcome.
+    z0 = p.evaluate("()=>{const w=document.getElementById('mapwrap'); const s=w.querySelector('svg'); const lg=w.parentElement&&w.parentElement.nextElementSibling; const below=(lg&&lg.classList.contains('legend'))?lg.getBoundingClientRect().height+12:0; const vb=(s.getAttribute('viewBox')||'').split(' '); return {lvl:document.getElementById('zoomlvl').value, svgW:+s.getAttribute('width'), svgH:+s.getAttribute('height'), wrapW:w.clientWidth, wrapH:w.clientHeight, avail:Math.floor(window.innerHeight-w.getBoundingClientRect().top-below-6), H:+vb[3], fit:window.__fitScale(), widthMode:window.__fitModeIsWidth(), legendBottom:lg?Math.round(lg.getBoundingClientRect().bottom):null, innerH:window.innerHeight, hash:location.hash, y:window.pageYOffset};}")
+    height_fit = z0['avail'] >= 240 and z0['avail'] / z0['H'] < z0['fit'] and not z0['hash'] and z0['y'] < 1
+    whole = z0['svgW'] <= z0['wrapW'] + 1 and z0['svgH'] <= z0['wrapH'] + 1 and (z0['legendBottom'] is None or z0['legendBottom'] <= z0['innerH'] + 1)
+    pct = int((z0['lvl'] or '0').rstrip('%') or 0)
+    check('first view shows the whole map in the first screen (3fd0803: the height fit above the legend at 10–99 %, else the fit width at 100 %)',
+          whole and ((not z0['widthMode'] and 10 <= pct < 100) if height_fit else (z0['widthMode'] and z0['lvl'] == '100%')), z0)
     p.click('#zoom-100'); p.wait_for_timeout(300)
     z1 = p.evaluate("()=>({lvl:document.getElementById('zoomlvl').value, svgW:+document.querySelector('#mapwrap svg').getAttribute('width'), fit:window.__fitScale()})")
     check('1:1 is the native width and shows its percentage of the fit', z1['svgW'] == 1490 and z1['lvl'] == str(round(1 / z1['fit'] * 100)) + '%', z1)

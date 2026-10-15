@@ -1,6 +1,6 @@
 {
  "date": "2026-10-15",
- "source": "digest intake of the issue of 14 Oct 2026 (QT-Map/qnews-intake, landed-manifest updated 2026-10-14T02:16:49Z); 5 rows re-fetched at their sources on 15 Oct",
+ "source": "digest intake of the issue of 14 Oct 2026 (QT-Map/qnews-intake, landed-manifest updated 2026-10-14T02:16:49Z); 5 rows re-fetched at their sources on 15 Oct; local writer job 20261015-2 — the Tianyan owner's review of 10 Oct 2026 (outreach org QuantumCTek) and the owner sources read on 15 Oct (00_admin/30_working/intake-2026-10-15/tianyan-findings.json: the kept rows and the verified ones of the unverified set), the editor's D6 of 15 Oct",
  "items": [
   {
    "kind": "statement",
@@ -17,6 +17,406 @@
     "https://www.sec.gov/Archives/edgar/data/1824920/000119312526419609/ionq-ex99_1.htm"
    ],
    "intake": "78d62daba0d8673f"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-287"
+   },
+   "fields": {
+    "status": "DEPLOYED (commissioning complete per QuantumCTek's 2025 annual report, Mar 2026)",
+    "gate_mechanism": "tunable coupler; explicitly a Zuchongzhi 3.0-like architecture; iSWAP-like (fSim) two-qubit gate at a fixed 40 ns, single-qubit gates 26 ns with DRAG (arXiv:2512.10504); the cloud's native gate set in the owner SDK: RZ, X2P, X2M, Y2P, Y2M, XY2P, XY2M, CZ (cqlib-tianyan device_config.rs, Sep 2026); the AshN scheme (simultaneous XY drives on both qubits with the tunable coupler) gives a native set of CZ 48 ns, iSWAP 44 ns, √iSWAP 28 ns, SWAP 60 ns and a B-like gate 44 ns on the 105-qubit, 182-coupler device of arXiv:2608.24084 (CTQG with Tsinghua, Aug 2026; the paper names the architecture, not the machine)",
+    "connectivity": "square grid lattice, 105 qubits and 182 couplers (the owner's wording, arXiv:2512.10504)",
+    "control": "room-temperature RF; per-qubit XY and Z lines combined at room temperature through a bias tee before the refrigerator, coupler lines routed separately (arXiv:2608.24084)",
+    "readout": "dispersive; X12-gate-driven 0–2 readout, correlated readout errors below 2 % with a synchronous SPAM protocol (arXiv:2512.10504); a TWPA at the mixing-chamber stage and a HEMT at 4 K (arXiv:2608.24084)",
+    "err_2q_median": "4.4e-3 mean iSWAP-like (fSim) Pauli error, simultaneous XEB (74-qubit RCS subset; 99.56%); the same 4.4 ‰ mean over all 105 qubits operating simultaneously; no median published (arXiv:2512.10504)",
+    "demonstrated_algorithms": "RCS, 74 q x 24 cycles, 1e6 samples in 18.4 minutes vs ~16,000 years classically; an 8-qubit two-excitation Dicke state at fidelity 0.736 ± 0.001 with genuine multipartite entanglement certified, compiled to the AshN native gates (CZ-only compilation 0.631, not certified), on the 105-qubit device of arXiv:2608.24084 (Aug 2026)",
+    "refs": "tianyan287;arxiv-2608.24084;cqlib-tianyan;cqlib-gates;cqlib-devices;quantumctek-2025-11-19;tianyan-cloud;cq-lib-github;cqlib-pypi"
+   },
+   "old": {
+    "status": "DEPLOYED",
+    "gate_mechanism": "tunable coupler; explicitly a Zuchongzhi 3.0-like architecture",
+    "connectivity": "rectangular lattice",
+    "control": "room-temperature RF",
+    "readout": "dispersive",
+    "err_2q_median": "4.4e-3 mean iSWAP-like (fSim) Pauli error, simultaneous XEB (74-qubit RCS subset; 99.56%)",
+    "demonstrated_algorithms": "RCS, 74 q x 24 cycles, 1e6 samples in 18.4 minutes vs ~16,000 years classically",
+    "refs": "tianyan287"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2512.10504",
+     "date": "2026-10-15",
+     "quote": "This prototype integrates 105 qubits and 182 couplers in a square grid lattice."
+    },
+    {
+     "url": "https://arxiv.org/abs/2512.10504",
+     "date": "2026-10-15",
+     "quote": "we first determined the optimal swap frequency via parameter scanning while fix the gate length at 40 ns"
+    },
+    {
+     "url": "https://arxiv.org/abs/2512.10504",
+     "date": "2026-10-15",
+     "quote": "Under a fixed gate time of 26 ns, the drive frequency, amplitude, and DRAG coefficient were jointly optimized"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/cq-lib/cqlib-tianyan/release/0.1/crates/cqlib-tianyan/src/device_config.rs",
+     "date": "2026-10-15",
+     "quote": "\"tianyan-287\" | \"tianyan176\" | \"tianyan176-2\" | \"tianyan504\" => { gates.push(Instruction::Standard(StandardGate::XY2P)); gates.push(Instruction::Standard(StandardGate::XY2M)); } — on the base set RZ, X2P, X2M, Y2P, Y2M; CZ pushed for every machine"
+    },
+    {
+     "url": "https://arxiv.org/abs/2608.24084",
+     "date": "2026-10-15",
+     "quote": "the output circuits use a native gate set comprising CZ, iSWAP, √iSWAP, SWAP, and a B-like entangling gate, with gate durations of 48, 44, 28, 60, and 44 ns, respectively."
+    },
+    {
+     "url": "https://arxiv.org/abs/2608.24084",
+     "date": "2026-10-15",
+     "quote": "with the same hardware architecture as Zuchongzhi 3.0, comprising 105 frequency-tunable transmon qubits and 182 tunable couplers"
+    },
+    {
+     "url": "https://arxiv.org/abs/2512.10504",
+     "date": "2026-10-15",
+     "quote": "the X12-gate-driven 0-2 readout method [6] was applied to effectively reduce decoherence errors during measurement. Furthermore, correlated readout errors were controlled below 2% using a synchronous state preparation and measurement protocol."
+    },
+    {
+     "url": "https://arxiv.org/abs/2608.24084",
+     "date": "2026-10-15",
+     "quote": "a combination of a High Electron Mobility Transistor (HEMT) amplifier at the 4 K stage and a Traveling Wave Parametric Amplifier (TWPA) at the MXC stage"
+    },
+    {
+     "url": "https://arxiv.org/abs/2608.24084",
+     "date": "2026-10-15",
+     "quote": "Each qubit is equipped with independent XY and Z control lines, which are combined at room temperature through a bias tee before entering the refrigerator, while the coupler control lines are routed separately."
+    },
+    {
+     "url": "https://stcn.com/article/detail/3695900.html",
+     "date": "2026-10-15",
+     "quote": "2025年，公司为中电信量子集团提供的国内单台比特数最多的超导量子计算机“天衍-504”完成验收，新提供的“祖冲之3号”同款超导量子计算机“天衍-287”调试完成 (证券时报, 24 Mar 2026, on QuantumCTek's 2025 annual report)"
+    },
+    {
+     "url": "https://arxiv.org/abs/2512.10504",
+     "date": "2026-10-15",
+     "quote": "For all qubits operating simultaneously, the average value of e1 and e2 are 1‰ and 4.4‰, respectively."
+    },
+    {
+     "url": "https://arxiv.org/abs/2608.24084",
+     "date": "2026-10-15",
+     "quote": "For the defect-free 2×4 topology, the Dicke state prepared with the AshN scheme achieves a fidelity of 0.736 ± 0.001"
+    }
+   ],
+   "note": "the Tianyan owner's reply of 10 Oct 2026 found the cards accurate and named its site, its GitHub repositories and its papers; the kept rows of 00_admin/30_working/intake-2026-10-15/tianyan-findings.json were re-read at their sources on 15 Oct and applied where they fit the session tier (appends and the owner's wording; the number cells unchanged); the WP2 figures, the status_date and flag doubts and the new-machine candidates went to the editor (the doubt items below and PACKET_2026-10-15_local.md) — local writer job 20261015-2 (D6 iii)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-504"
+   },
+   "fields": {
+    "status": "DEPLOYED (launched 2024 — 'the largest commercially available quantum computer', 'an engineering exploration on system scaling limitation' in the owner's words, arXiv:2512.10504; acceptance completed in 2025 per QuantumCTek's 2025 annual report, Mar 2026)",
+    "gate_mechanism": "not published; the owner SDK hard-codes an FSIM native gate for tianyan504 alone, beside CZ and XY2P/XY2M (cqlib-tianyan device_config.rs, Sep 2026); no mechanism paper",
+    "refs": "qudoor-tqi;tianyan287;quantumctek-2024-12-07;cqlib-gates;cqlib-devices;cqlib-tutorial;tianyan-cloud;cq-lib-github;cqlib-pypi"
+   },
+   "old": {
+    "status": "DEPLOYED",
+    "gate_mechanism": "not published",
+    "refs": "qudoor-tqi;tianyan287"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2512.10504",
+     "date": "2026-10-15",
+     "quote": "Then in 2024, Tianyan launched the Tianyan-504 superconducting quantum system with 504 physical qubits, achieving a previous milestone of the largest commercially available quantum computer. This demonstrated an engineering exploration on system scaling limitation."
+    },
+    {
+     "url": "https://stcn.com/article/detail/3695900.html",
+     "date": "2026-10-15",
+     "quote": "2025年，公司为中电信量子集团提供的国内单台比特数最多的超导量子计算机“天衍-504”完成验收"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/cq-lib/cqlib-tianyan/release/0.1/crates/cqlib-tianyan/src/device_config.rs",
+     "date": "2026-10-15",
+     "quote": "if machine == \"tianyan504\" { gates.push(Instruction::Standard(StandardGate::FSIM)); }"
+    }
+   ],
+   "note": "the Tianyan owner's reply of 10 Oct 2026 found the cards accurate and named its site, its GitHub repositories and its papers; the kept rows of 00_admin/30_working/intake-2026-10-15/tianyan-findings.json were re-read at their sources on 15 Oct and applied where they fit the session tier (appends and the owner's wording; the number cells unchanged); the WP2 figures, the status_date and flag doubts and the new-machine candidates went to the editor (the doubt items below and PACKET_2026-10-15_local.md) — local writer job 20261015-2 (D6 iii)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-176"
+   },
+   "fields": {
+    "access": "cloud service (the Tianyan cloud through the Cqlib SDK, backends 'tianyan176' and 'tianyan176-2')",
+    "physical_qubits": "66 qubits + 110 couplers (the owner's Cqlib tutorial, Aug 2024; '176' is a qubits+couplers label like Tianyan-287)",
+    "gate_mechanism": "coupler type not published; the cloud's native gate set in the owner SDK for tianyan176 and tianyan176-2: RZ, X2P, X2M, Y2P, Y2M, XY2P, XY2M, CZ (cqlib-tianyan device_config.rs, Sep 2026)",
+    "connectivity": "a two-dimensional array of 66 qubits with 110 tunable couplers, as third-party users describe the processor (arXiv:2609.32433, Sep 2026); the coupler map (Q0–Q65, G0–G109) is served to users by the SDK's download_config (owner tutorial, Aug 2024)",
+    "readout_error": "5.98e-2 (owner tutorial, Aug 2024; its calibration snapshot says 5.8 %)",
+    "demonstrated_algorithms": "cloud jobs; third-party hardware runs published: BLS-FALQON feedback-based optimisation on Tianyan-176 (arXiv:2609.32433, Sep 2026); QC-DFET surface-reaction QSCI sampling on Tianyan-176 II (arXiv:2607.27009, Jul 2026, USTC)",
+    "refs": "qudoor-tqi;tianyan287;cqlib-tutorial;arxiv-2609.32433;arxiv-2607.27009;cqlib-gates;cqlib-devices;quantumctek-2024-12-07;tianyan-cloud;cq-lib-github;cqlib-pypi",
+    "flags": "vendor-claim;name-not-qubit-count"
+   },
+   "old": {
+    "access": "cloud service",
+    "physical_qubits": "66 qubits + 110 couplers (inferred from 'Zuchongzhi 2.0-like'; '176' is a qubits+couplers label like Tianyan-287)",
+    "gate_mechanism": "coupler type not published",
+    "connectivity": "not published",
+    "readout_error": "",
+    "demonstrated_algorithms": "cloud jobs only",
+    "refs": "qudoor-tqi;tianyan287",
+    "flags": "vendor-claim"
+   },
+   "evidence": [
+    {
+     "url": "https://cqlib.readthedocs.io/en/latest/notebooks/1.html",
+     "date": "2026-10-15",
+     "quote": "天衍-176性能卓越，具有66个量子比特，110个纠缠比特，平均相干时间T1为34.2微秒，T2为3.09微秒。"
+    },
+    {
+     "url": "https://cqlib.readthedocs.io/en/latest/notebooks/1.html",
+     "date": "2026-10-15",
+     "quote": "其读出错误率为5.98%，单比特门错误率为0.18%，双比特门错误率为1.92%。"
+    },
+    {
+     "url": "https://cqlib.readthedocs.io/en/latest/notebooks/1.html",
+     "date": "2026-10-15",
+     "quote": "'G0': ['Q6', 'Q0'] (coupler_map); 'qubits_length': 66, 'couplers_length': 110, 'cz_error': 1.95, 'readout_error': 5.8 (overview); ['1764555284795101186', 'free', 'running', 'tianyan176'] (the machine list); update_time 2024-08-07"
+    },
+    {
+     "url": "https://arxiv.org/abs/2609.32433",
+     "date": "2026-10-15",
+     "quote": "on the Tianyan-176 quantum computer, which uses the zuchongzhi2 superconducting quantum processor"
+    },
+    {
+     "url": "https://arxiv.org/abs/2609.32433",
+     "date": "2026-10-15",
+     "quote": "comprises 66 superconducting qubits arranged in a two-dimensional array with 110 tunable couplers"
+    },
+    {
+     "url": "https://arxiv.org/abs/2607.27009",
+     "date": "2026-10-15",
+     "quote": "The quantum hardware experiments were carried out on the Tianyan-176-II machine at the China Telecom “Tianyan” Quantum Computing Laboratory, corresponding to the Zuchongzhi 2.0 superconducting quantum computer. The device provides 66 qubits and 110 tunable couplers. (p. 20 of the PDF)"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/cq-lib/cqlib-tianyan/release/0.1/crates/cqlib-tianyan/src/device_config.rs",
+     "date": "2026-10-15",
+     "quote": "\"tianyan-287\" | \"tianyan176\" | \"tianyan176-2\" | \"tianyan504\" => { gates.push(Instruction::Standard(StandardGate::XY2P)); gates.push(Instruction::Standard(StandardGate::XY2M)); }"
+    },
+    {
+     "url": "https://raw.githubusercontent.com/cq-lib/cqlib-tianyan/release/0.1/crates/binding-python/README.md",
+     "date": "2026-10-15",
+     "quote": "Superconducting | superconducting | tianyan176, tianyan176-2, tianyan24, tianyan504, tianyan-287, tianyan-294"
+    }
+   ],
+   "note": "the Tianyan owner's reply of 10 Oct 2026 found the cards accurate and named its site, its GitHub repositories and its papers; the kept rows of 00_admin/30_working/intake-2026-10-15/tianyan-findings.json were re-read at their sources on 15 Oct and applied where they fit the session tier (appends and the owner's wording; the number cells unchanged); the WP2 figures, the status_date and flag doubts and the new-machine candidates went to the editor (the doubt items below and PACKET_2026-10-15_local.md) — local writer job 20261015-2 (D6 iii)"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-176"
+   },
+   "fields": {
+    "event": "owner review",
+    "date": "2026-10-10"
+   },
+   "note": "the owner's review (the Tianyan Quantum Computing Team, tianyan@chinatelecom.cn, 10 Oct 2026 03:21 UTC, in reply to the editor's letter of 5 Oct and answer of 9 Oct): «We have reviewed the information currently presented in your Atlas and found it to be accurate. For additional publicly available information about our quantum computing systems and technologies, you may refer to our official website (https://qc.zdxlz.com/home?lang=zh), our GitHub repositories (https://github.com/cq-lib), and our published research papers.» — recorded as evidence on the card, no UI badge (the editor's D6 iv); the outreach register (quantum-register/outreach/outreach-contacts_QuantumCTek.md) carries the thread; outreach status confirmed (D9)",
+   "sources": [
+    "https://qc.zdxlz.com/home?lang=zh",
+    "https://github.com/cq-lib"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-287"
+   },
+   "fields": {
+    "event": "owner review",
+    "date": "2026-10-10"
+   },
+   "note": "the owner's review (the Tianyan Quantum Computing Team, tianyan@chinatelecom.cn, 10 Oct 2026 03:21 UTC, in reply to the editor's letter of 5 Oct and answer of 9 Oct): «We have reviewed the information currently presented in your Atlas and found it to be accurate. For additional publicly available information about our quantum computing systems and technologies, you may refer to our official website (https://qc.zdxlz.com/home?lang=zh), our GitHub repositories (https://github.com/cq-lib), and our published research papers.» — recorded as evidence on the card, no UI badge (the editor's D6 iv); the outreach register (quantum-register/outreach/outreach-contacts_QuantumCTek.md) carries the thread; outreach status confirmed (D9)",
+   "sources": [
+    "https://qc.zdxlz.com/home?lang=zh",
+    "https://github.com/cq-lib"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-504"
+   },
+   "fields": {
+    "event": "owner review",
+    "date": "2026-10-10"
+   },
+   "note": "the owner's review (the Tianyan Quantum Computing Team, tianyan@chinatelecom.cn, 10 Oct 2026 03:21 UTC, in reply to the editor's letter of 5 Oct and answer of 9 Oct): «We have reviewed the information currently presented in your Atlas and found it to be accurate. For additional publicly available information about our quantum computing systems and technologies, you may refer to our official website (https://qc.zdxlz.com/home?lang=zh), our GitHub repositories (https://github.com/cq-lib), and our published research papers.» — recorded as evidence on the card, no UI badge (the editor's D6 iv); the outreach register (quantum-register/outreach/outreach-contacts_QuantumCTek.md) carries the thread; outreach status confirmed (D9)",
+   "sources": [
+    "https://qc.zdxlz.com/home?lang=zh",
+    "https://github.com/cq-lib"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-287"
+   },
+   "fields": {
+    "event": "owner figures",
+    "date": "2025-12-16"
+   },
+   "note": "chip coherence per the owner paper: «The qubits have a mean operating T1 of 44.4 μs and T2^CPMG of 41.1 μs» (all 105 qubits; 104 working — one non-functional, two TLS-suppressed); the paper gives the 74-qubit subset's T2^CPMG as 44.1 μs in the text and 41.1 μs in the Fig. S2 label (an internal inconsistency, left to the owner); reliability monitored 29 Aug – 28 Sep 2025. Not put in the t1/t2 cells: a ledger statement per the findings file.",
+   "sources": [
+    "https://arxiv.org/abs/2512.10504"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-287"
+   },
+   "fields": {
+    "event": "third-party evaluation",
+    "date": "2026-07-28"
+   },
+   "note": "ICV TA&K, 2026 Global Quantum Computing Cloud Platform Evaluation Report (tests Jan–Jul 2026, 7 platforms): the Tianyan Quantum Computing Cloud Platform 72.5 points, Tier 1 with the IBM Quantum Platform (80.3); «Powered by the self-developed Tianyan-287 superconducting chip», «supports 26-qubit global GHZ entanglement», «achieves an 11-qubit XEB fidelity of 0.652» (press, re-read 15 Oct 2026)",
+   "sources": [
+    "https://icvtank.com/articles/2026-global-quantum-computing-cloud-platform-evaluation-repo"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-287"
+   },
+   "fields": {
+    "event": "fleet",
+    "date": "2026-06-22"
+   },
+   "note": "the owner counts «five systems in operation» on the Tianyan cloud in Dec 2025 — Tianyan-287, Tianyan-176, Tianyan-176 II, Tianyan-504, Tianyan-24, «equipped with Zuchongzhi- and Xiaohong- series superconducting quantum processors» (arXiv:2512.10504); the photonic Tianyan-P2000 joined the cloud in June 2026 («此前，“天衍”量子计算云平台已成功并网5台超导量子计算机», C114 via 新浪科技, 22 Jun 2026); the SDK's device table of Sep 2026 lists a sixth superconducting backend, tianyan-294, that no announcement names",
+   "sources": [
+    "https://arxiv.org/abs/2512.10504",
+    "https://finance.sina.com.cn/tech/roll/2026-06-22/doc-iniefuxz7149036.shtml",
+    "https://raw.githubusercontent.com/cq-lib/cqlib-tianyan/release/0.1/crates/binding-python/README.md"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-504"
+   },
+   "fields": {
+    "event": "owner figures",
+    "date": "2025-12-16"
+   },
+   "note": "«In 2024, the platform delivered a 504 qubits superconducting quantum system, marking the first validation of a 504-qubit-scale system» (arXiv:2512.10504); no calibration, coherence, fidelity or uptime figure published as of 15 Oct 2026; the SDK's download_config for tianyan504 answers only to a token (the reader of 15 Oct got HTTP 401)",
+   "sources": [
+    "https://arxiv.org/abs/2512.10504"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-176"
+   },
+   "fields": {
+    "event": "owner figures",
+    "date": "2024-08-07"
+   },
+   "note": "the owner's Cqlib tutorial (Aug 2024): T1 34.2 µs, T2 3.09 µs, readout error 5.98 %, 1Q error 0.18 %, 2Q error 1.92 % («天衍-176性能卓越，具有66个量子比特，110个纠缠比特，平均相干时间T1为34.2微秒，T2为3.09微秒。其读出错误率为5.98%，单比特门错误率为0.18%，双比特门错误率为1.92%»); third-party users for 1–27 May 2026: median T1 27.89 µs, T2 (CPMG) 21.61 µs, 1Q error 1.4e-3, 2Q error 1.36e-2, readout error 2.95e-2 (arXiv:2609.32433). Coherence not put in the t1/t2 cells: a ledger statement per the findings file.",
+   "sources": [
+    "https://cqlib.readthedocs.io/en/latest/notebooks/1.html",
+    "https://arxiv.org/abs/2609.32433"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-287"
+   },
+   "fields": {},
+   "note": "status_date: keep Oct 2025 or move to Nov 2025 — the owner monitored the machine running from 29 Aug 2025 (arXiv:2512.10504); QuantumCTek announced it «正式运行» on 19 Nov 2025; the Oct 2025 date rests on a Xinhua item of 12 Oct 2025 read only in paraphrase. Not edited: the editor's (the cohort date).",
+   "sources": [
+    "https://arxiv.org/abs/2512.10504",
+    "https://www.quantum-info.com/News/qy/2025nian/2026/0121/937.html"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-287"
+   },
+   "fields": {},
+   "note": "WP2 candidates, not put in err_2q_median: CZ mean XEB error 0.550 % and the iSWAP/√iSWAP/SWAP/B-like set 0.615 % by parallel XEB over 10 couplers of an 8–12-qubit patch (Table S8 per-coupler CZ 0.353–0.860 %), readout-corrected (arXiv:2608.24084, the machine unnamed) — a patch figure beside the register's chip-wide 4.4e-3 mean; noted in machine-2q-classes.csv",
+   "sources": [
+    "https://arxiv.org/abs/2608.24084"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-504"
+   },
+   "fields": {},
+   "note": "flag access-disputed: three owner sources now assert cloud access — the Dec 2025 paper (Fig. 1a: «All the systems are cloud-accessible via Cqlib SDK»), the SDK device table of Sep 2026 (tianyan504 a superconducting backend) and QuantumCTek's release of 7 Dec 2024 («随着504比特真机接入量子计算云平台并对外服务»). Not edited: whether the flag stays, or becomes access-owner-asserted beside no-published-error-rates, is the editor's.",
+   "sources": [
+    "https://arxiv.org/abs/2512.10504",
+    "https://raw.githubusercontent.com/cq-lib/cqlib-tianyan/release/0.1/crates/binding-python/README.md",
+    "https://www.quantum-info.com/News/qy/2024/2025/0218/879.html"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-176"
+   },
+   "fields": {},
+   "note": "degree 4: if the key means the mean coupler degree as on the Tianyan-287 row (3.5 = 2 × 182 / 105), Tianyan-176 reads 3.33 (2 × 110 / 66); if it means the nominal lattice degree, Tianyan-287 should read 4 as well. Not edited.",
+   "sources": [
+    "https://cqlib.readthedocs.io/en/latest/notebooks/1.html"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-176"
+   },
+   "fields": {},
+   "note": "WP2 candidates against the 4e-3 press figure the register carries: the owner's tutorial gives a 1.92 % two-qubit gate error (Aug 2024; snapshot cz_error 1.95; platform calibration, whole chip); third-party users report a median CZ error 1.36e-2 for 1–27 May 2026 (arXiv:2609.32433). Not edited: which figure the card carries is the editor's (the owner called the card accurate while its own tutorial contradicts the figure); noted in machine-2q-classes.csv",
+   "sources": [
+    "https://cqlib.readthedocs.io/en/latest/notebooks/1.html",
+    "https://arxiv.org/abs/2609.32433"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "ctqg-tianyan-176"
+   },
+   "fields": {},
+   "note": "new-machine candidates for the editor (not in the register): Tianyan-176 II (66 qubits, SDK backend tianyan176-2, 2023, owner paper; the QC-DFET runs of arXiv:2607.27009 were on it), Tianyan-24 (on the cloud by Dec 2024, still listed Sep 2026; qubit count unknown), Tianyan-P2000 (photonic Gaussian boson sampling, 2682 photons, 1500 input and 5220 output modes, formally operating June 2026; China Telecom Quantum Group with Jiuzhang (Jinan) Quantum Technology under CAS guidance — org_id question), and tianyan-294 as a watch item (an SDK backend of Sep 2026 that no announcement names)",
+   "sources": [
+    "https://arxiv.org/abs/2512.10504",
+    "https://finance.sina.com.cn/tech/roll/2026-06-22/doc-iniefuxz7149036.shtml",
+    "https://raw.githubusercontent.com/cq-lib/cqlib-tianyan/release/0.1/crates/binding-python/README.md",
+    "https://arxiv.org/abs/2607.27009"
+   ]
   }
  ]
 }

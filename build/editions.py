@@ -106,6 +106,9 @@ def data_cutoff_text(lang, iso=None):
 
 ERRATA = {
  '2026.09': [
+  ('2026-10-15', 'the Tianyan owner\'s review of 10 Oct 2026 and the owner sources read on 15 Oct (data/changes/2026-10-15.json); the editor\'s decision D3 of 15 Oct 2026 on §6',
+   'China Telecom Quantum Group reviewed the three Tianyan cards and found them accurate (10 Oct 2026); the cards gain the owner\'s own sources — the Tianyan cloud, the Cqlib SDK and its tutorial, QuantumCTek\'s releases, the native-gate paper of August 2026 and two third-party papers that ran on Tianyan-176 — and the facts they state: Tianyan-287\'s square-grid lattice, its native gate sets and gate times, readout chain and control wiring, its Dicke-state result and its commissioning in 2025; Tianyan-504\'s acceptance in 2025 and the FSIM gate its SDK exposes; Tianyan-176\'s 66 qubits and 110 couplers now stated by the owner, its readout error and two published third-party runs. '
+   '§6 Provenance now names both dates: the edition\'s cut-off, 26 September 2026, and the date the live site\'s data run to.'),
   ('2026-10-15', 'the digest\'s intake of the issue of 14 Oct 2026 (data/changes/2026-10-15.json)',
    'One organisation event in the change ledger: IonQ agreed to acquire Elisity, a Zero Trust security company, in an all-stock transaction valued at up to $1.3 billion (Form 8-K, 13 Oct 2026). No register cell changed.'),
   ('2026-10-13', 'the editor\'s word of 7 Oct 2026 on the code layer (data/changes/2026-10-13.json)',
