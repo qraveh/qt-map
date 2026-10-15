@@ -17,7 +17,7 @@
     "organisation": 89,
     "technology": 110
    },
-   "sha256": "b3cc069393ce0bb4e62ade7efbc9733fe83fd41b8b4fb2833b8ee274fa69ebbd"
+   "sha256": "4f0930b786dca7aa87cc3e2eb696b7bcd0717bcc62510b32620b7d75d049a49f"
   },
   "he": {
    "bytes": 7444296,
@@ -32,7 +32,7 @@
     "organisation": 89,
     "technology": 110
    },
-   "sha256": "354442f46e8e4be8babf636fb9bf703eb80442c1170d3e5b7498678808d3bba9"
+   "sha256": "1e71e9df4e91aef4b800e7a5eb631a7560de9acd55c57ca4fb26f86ce81aecfb"
   },
   "ru": {
    "bytes": 8245671,
@@ -47,7 +47,7 @@
     "organisation": 89,
     "technology": 110
    },
-   "sha256": "37ec304a2a4c877fb6b4430ae167a014a28995c08313cb73f7d990f420b22150"
+   "sha256": "264da61c1d3f0df84d4cc7ddf7508150ae7fd85d39effaf275cce9db82a617b4"
   }
  },
  "main": "Quantum-Technology-Atlas-2026.09.html",

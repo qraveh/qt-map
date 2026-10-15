@@ -106,6 +106,8 @@ def data_cutoff_text(lang, iso=None):
 
 ERRATA = {
  '2026.09': [
+  ('2026-10-15', 'the digest\'s intake of the issue of 14 Oct 2026 (data/changes/2026-10-15.json)',
+   'One organisation event in the change ledger: IonQ agreed to acquire Elisity, a Zero Trust security company, in an all-stock transaction valued at up to $1.3 billion (Form 8-K, 13 Oct 2026). No register cell changed.'),
   ('2026-10-13', 'the editor\'s word of 7 Oct 2026 on the code layer (data/changes/2026-10-13.json)',
    'The code-layer cells follow the completed code table on 22 machines, each with its source: the surface-code family on Eagle, the three Heron revisions, both Nighthawk revisions and Zuchongzhi 2.1; error-detection codes on Sycamore-54, IQM Emerald and IonQ Aria; the Steane code on IonQ Forte; erasure-adapted dual-rail qubits on OQC Genesis; bosonic codes on Alice & Bob Boson 4 and both Nord Quantique machines; quantum annealing correction on D-Wave Advantage and Advantage2, a new Atlas gap (G-qac); the designated codes of IQM Halocene, the D-Wave dual-rail machine and IonQ Superion 10K. '
    'Wukong-102 loses a cell it had inherited from Wukong-72; Superion 256 has no published code. The heavy-hex code ran on four Eagle devices and on Osprey (arXiv:2311.15146); the [[4,2,2]] run attributed to Pasqal Fresnel names no product and Fresnel is an analog machine, so the row is withdrawn. With that row gone, the 2023 cohort\'s share of machines with a code falls to 29 % (5 of 17), just below the 2026 cohort\'s 30 % (16 of 53), and H4\'s frozen rule moves its verdict from not supported to partly supported — a one-machine margin.'),
