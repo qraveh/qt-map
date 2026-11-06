@@ -22844,10 +22844,10 @@
    "country": "USA",
    "family": "ION",
    "map_path": "ion_chain",
-   "status": "DEPLOYED",
+   "status": "RETIRED (2026 — IonQ's Aria page: «Retired in 2026»)",
    "status_date": "2022",
    "physical_qubits_num": 32,
-   "access": "cloud (Braket, Azure, Google Cloud)",
+   "access": "was cloud (Braket, Azure, Google Cloud)",
    "layers": {
     "1": [
      {
@@ -25880,7 +25880,7 @@
     "t2": "",
     "t_2q": "7.0e-5",
     "t_meas": "",
-    "best_logical": "iceberg [[2m,2m-2,2]] concatenated to effective d=4: 94 logical qubits entangled in a GHZ state, 50 error-detected logical qubits at break-even and 48 error-corrected logical qubits (2:1) out of 98 physical; the 94.9% GHZ figure is not in the cited sources; logical gates cycle-benchmarked at ~1e-4",
+    "best_logical": "iceberg [[2m,2m-2,2]] concatenated to effective d=4: 94 logical qubits entangled in a GHZ state, 50 error-detected logical qubits at break-even and 48 error-corrected logical qubits (2:1) out of 98 physical; the 94.9% GHZ figure is not in the cited sources; logical gates cycle-benchmarked at ~1e-4; logical fidelity 99.9995% (five errors per million operations) on Helios, 21 Oct 2026 — the owner's claim of a 100× reduction vs the best published result in any other modality",
     "decoder": "Frontier (offline); GPU-accelerated BP-OSD over NVQLink at median 67 us round trip, 5.4x LER gain",
     "realtime": "offline for the record; GPU real-time demonstrated",
     "roadmap": "Sol, then Apollo",

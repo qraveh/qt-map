@@ -1,0 +1,558 @@
+{
+ "date": "2026-11-06",
+ "source": "digest intake of the issues of 16 Oct – 5 Nov 2026 (T1 research, the local session); the units count of 6 Nov 2026 re-verified at the owners' pages; a status found on the way",
+ "items": [
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-helios"
+   },
+   "fields": {
+    "best_logical": "iceberg [[2m,2m-2,2]] concatenated to effective d=4: 94 logical qubits entangled in a GHZ state, 50 error-detected logical qubits at break-even and 48 error-corrected logical qubits (2:1) out of 98 physical; the 94.9% GHZ figure is not in the cited sources - not re-fetched; logical gates cycle-benchmarked at ~1e-4; logical fidelity 99.9995% (five errors per million operations) on Helios, 21 Oct 2026 — the owner's claim of a 100× reduction vs the best published result in any other modality",
+    "old_best_logical": "iceberg [[2m,2m-2,2]] concatenated to effective d=4: 94 logical qubits entangled in a GHZ state, 50 error-detected logical qubits at break-even and 48 error-corrected logical qubits (2:1) out of 98 physical; the 94.9% GHZ figure is not in the cited sources - not re-fetched; logical gates cycle-benchmarked at ~1e-4"
+   },
+   "note": "«using our error-correction architecture on Helios to deliver a logical fidelity of 99.9995%, equivalent to just five errors per million operations and representing a 100x reduction in errors compared to the best published result across any other modality» (source class A; digest intake 2026-10-22) — appended to the standing value, not replaced",
+   "sources": [
+    "https://www.quantinuum.com/blog/quantinuum-and-google-two-fault-tolerance-results-two-different-measures-of-progress"
+   ],
+   "intake": "8961af5a4ededb33"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-forte"
+   },
+   "fields": {
+    "demonstrated_algorithms": "#AQ 36 benchmark suite, chemistry VQE, QAOA; AstraZeneca/AWS/NVIDIA drug-development workflow claiming a 20x workflow speedup; hybrid quantum-classical grid-optimisation algorithms with EPB on Forte Enterprise (grid model parameters cut by up to 95.8%, 28 Oct 2026)",
+    "old_demonstrated_algorithms": "#AQ 36 benchmark suite, chemistry VQE, QAOA; AstraZeneca/AWS/NVIDIA drug-development workflow claiming a 20x workflow speedup"
+   },
+   "note": "«EPB and IonQ trained an in-house quantum team and ran hybrid algorithms on IonQ Forte Enterprise, cutting grid model parameters by up to 95.8%.» (source class A; digest intake 2026-10-30) — appended to the standing value, not replaced",
+   "sources": [
+    "https://ionq.com/blog/co-innovating-with-ionq-how-one-utility-is-solving-power-grid-complexity"
+   ],
+   "intake": "d07f428dbb431010"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "aqt-ibex-q1"
+   },
+   "fields": {
+    "event": "benchmark",
+    "benchmark": "Quantum Volume 128 (PINE)",
+    "date": "2026-11-05"
+   },
+   "note": "«AQT successfully demonstrates a Quantum Volume of 128 on its 19-inch rack-compatible Quantum Computer system PINE.» (source class C; digest intake 2026-11-05) — the register has no benchmark column: a statement, not a cell; the intake row deferred until it has one",
+   "sources": [
+    "https://www.aqt.eu/solutions"
+   ],
+   "intake": "5249f0fb87e8a877"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "organisation",
+    "id": "alpine-quantum-technologies"
+   },
+   "fields": {
+    "event": "funding",
+    "date": "Wed, 14 Oc"
+   },
+   "note": "AQT and University of Innsbruck receive €5.4M of a €47.5M EC grant to the Quantum Internet Alliance (SGA 2, 42 months, quantum networking) — «The University of Innsbruck and AQT will receive Euro 5.4 million as part of a Euro 47.5 million European Commission funding package for the Quantum Internet Alliance (QIA). The Specific Grant Agreement (SGA 2) will support the next 42 months of research and development»",
+   "sources": [
+    "https://www.aqt.eu/quantum-internet-prototype-takes-shape-in-innsbruck/"
+   ],
+   "intake": "296d75cf7f753175"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "organisation",
+    "id": "nord-quantique"
+   },
+   "fields": {
+    "event": "funding",
+    "date": "Tue, 27 Oc"
+   },
+   "note": "US$10M DARPA QBI Stage B extension — «today announced a US$10 million extension of its Defense Advanced Research Projects Agency's (DARPA) Quantum Benchmarking Initiative (QBI) Stage B agreement»",
+   "sources": [
+    "https://www.nordquantique.com/articles/nord-quantique-secures-us10-million-darpa-stage-b-extension/"
+   ],
+   "intake": "8ac9cd4b184c8b17"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "organisation",
+    "id": "ionq"
+   },
+   "fields": {
+    "event": "funding",
+    "date": "Tue, 27 Oc"
+   },
+   "note": "$7.5M AFRL follow-on award to expand Rome, NY quantum network — «IonQ receives $7.5M in AFRL follow-on funding to expand its Rome, NY quantum network, adding free-space optics and hardware for real-world deployment.»",
+   "sources": [
+    "https://ionq.com/news/ionq-awarded-7-5-million-follow-on-funding-from-afrl-to-advance-full-stack-quantum-networking"
+   ],
+   "intake": "012f64491b357e96"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "organisation",
+    "id": "ionq"
+   },
+   "fields": {
+    "event": "policy",
+    "date": "Wed, 04 No"
+   },
+   "note": "direct cloud access to IonQ trapped-ion systems for Connecticut researchers, universities and enterprises via QuantumCT — «IonQ partners with QuantumCT to provide Connecticut researchers, universities, and enterprises with direct cloud access to trapped-ion quantum computers.»",
+   "sources": [
+    "https://ionq.com/news/ionq-announces-partnership-with-quantumct-to-expand-quantum-computing-access"
+   ],
+   "intake": "561d24262411fbdc"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "organisation",
+    "id": "ionq"
+   },
+   "fields": {
+    "event": "acquisition",
+    "date": "Wed, 04 No"
+   },
+   "note": "completed acquisition of network-security firm Elisity — «IonQ completes the acquisition of Elisity, integrating Zero Trust security with post-quantum cryptography and QKD to defend against emerging quantum threats.»",
+   "sources": [
+    "https://ionq.com/news/ionq-completes-acquisition-of-elisity-extending-quantum-security-for-enterprises-and-government"
+   ],
+   "intake": "899035ebc12ba956"
+  },
+  {
+   "kind": "status",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-aria"
+   },
+   "fields": {
+    "status": "RETIRED",
+    "old_status": "DEPLOYED",
+    "date": "2026"
+   },
+   "note": "IonQ's Aria page reads «Retired in 2026» and the systems page lists Forte, Forte Enterprise, Tempo and Superion 256 only (read 6 Nov 2026); status text «RETIRED (2026 — IonQ's Aria page: «Retired in 2026»)», access «was cloud (Braket, Azure, Google Cloud)», status_date 2022 unchanged (the cohort)",
+   "sources": [
+    "https://ionq.com/quantum-systems/aria",
+    "https://ionq.com/quantum-systems/compare"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "register",
+    "id": "units"
+   },
+   "fields": {
+    "fields_added": [
+     "units_built",
+     "units_in_service",
+     "units_evidence"
+    ],
+    "rows": 133,
+    "definition": "quantum-machines/data/units.md"
+   },
+   "note": "the units of each built machine type (the editor's D5 of 6 Nov 2026): the count of 6 Nov 2026 with its memory-sourced items re-read at the owners' pages; 42 rows carry a source, 91 rest on the register's own row",
+   "sources": [
+    "DATA_20261106_units-built.md",
+    "units.csv"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-falcon"
+   },
+   "fields": {
+    "units_built": "≥15",
+    "units_in_service": "0 cloud; the Ehningen System One unconfirmed"
+   },
+   "note": "https://quantum.cloud.ibm.com/docs/en/guides/retired-qpus — the retired list names thirteen 27-qubit backends: ibmq_paris, ibmq_berlin, ibmq_dublin, ibmq_sydney, ibmq_toronto, ibmq_montreal, ibmq_mumbai, ibmq_kolkata, ibmq_geneva, ibm_auckland, ibm_hanoi, ibm_cairo, ibm_algiers (retired 2020-12-31 … 2024-04-30); on-premises System One: Fraunhofer Ehningen (2021, the register) and Kawasaki (installed July 2021 — https://www.u-tokyo.ac.jp/focus/en/features/z1304_00193.html — the Eagle replaced it in 2023) — the 27-qubit Falcon family as a whole (the register row names r5.11); ibm_peekskill (exploratory r8, not on the retired list) not counted",
+   "sources": [
+    "https://quantum.cloud.ibm.com/docs/en/guides/retired-qpus",
+    "https://www.u-tokyo.ac.jp/focus/en/features/z1304_00193.html"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-eagle"
+   },
+   "fields": {
+    "units_built": "≥15",
+    "units_in_service": "0 cloud; ≥ 3 on-premises (the current processor of Cleveland Clinic, Bromont, Yonsei and Kawasaki not re-verified; RPI moved to Nighthawk r1 in 2026)"
+   },
+   "note": "https://quantum.cloud.ibm.com/docs/en/guides/retired-qpus — ten 127-qubit backends retired 2023-06-03 … 2026-04-27: ibm_washington, ibm_cusco, ibm_osaka, ibm_kyoto, ibm_nazca, ibm_kyiv, ibm_sherbrooke, ibm_brisbane, ibm_strasbourg, ibm_brussels; on-premises Eagle: Cleveland Clinic (https://consultqd.clevelandclinic.org/quantum-computing-debuts-at-cleveland-clinic — «IBM Quantum System One … 127-qubit Eagle», 2023), PINQ² Bromont (https://newsroom.ibm.com/2023-09-22-The-Platform-for-Digital-and-Quantum-Innovation-of-Quebec-PINQ-Proudly-Announces-the-Historic-Inauguration-of-an-IBM-Quantum-System-One-Quantum-Computer-in-Bromont — «utility-scale, 127-qubit», 22 Sep 2023), Kawasaki (https://newsroom.ibm.com/2023-11-27-The-University-of-Tokyo-Completes-Installation-of-127-Qubit-IBM-Quantum-Eagle-Processor — operating from 1 Oct 2023), RPI (https://newsroom.ibm.com/2024-04-05-Rensselaer-Polytechnic-Institute-and-IBM-unveil-the-worlds-first-IBM-Quantum-System-One-on-a-university-campus — «127-qubit IBM Quantum Eagle», 5 Apr 2024), Yonsei (https://newsroom.ibm.com/2024-11-19-yonsei-deploys-first-ibm-quantum-system-one-in-the-republic-of-korea — 127-qubit Eagle, 19 Nov 2024) — ten cloud + five on-premises units; the on-premises count rests on the owners' and customers' releases read on 6 Nov 2026",
+   "sources": [
+    "https://quantum.cloud.ibm.com/docs/en/guides/retired-qpus",
+    "https://consultqd.clevelandclinic.org/quantum-computing-debuts-at-cleveland-clinic",
+    "https://newsroom.ibm.com/2023-09-22-The-Platform-for-Digital-and-Quantum-Innovation-of-Quebec-PINQ-Proudly-Announces-the-Historic-Inauguration-of-an-IBM-Quantum-System-One-Quantum-Computer-in-Bromont",
+    "https://newsroom.ibm.com/2023-11-27-The-University-of-Tokyo-Completes-Installation-of-127-Qubit-IBM-Quantum-Eagle-Processor",
+    "https://newsroom.ibm.com/2024-04-05-Rensselaer-Polytechnic-Institute-and-IBM-unveil-the-worlds-first-IBM-Quantum-System-One-on-a-university-campus",
+    "https://newsroom.ibm.com/2024-11-19-yonsei-deploys-first-ibm-quantum-system-one-in-the-republic-of-korea"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-osprey"
+   },
+   "fields": {
+    "units_built": "1",
+    "units_in_service": "0"
+   },
+   "note": "https://quantum.cloud.ibm.com/docs/en/guides/retired-qpus — «ibm_seattle | 433 | 2023-09-07»",
+   "sources": [
+    "https://quantum.cloud.ibm.com/docs/en/guides/retired-qpus"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-heron-r1"
+   },
+   "fields": {
+    "units_built": "1",
+    "units_in_service": "0"
+   },
+   "note": "https://quantum.cloud.ibm.com/docs/en/guides/retired-qpus — «ibm_torino | 133 | 2026-04-01» — the only 133-qubit entry on the retired list",
+   "sources": [
+    "https://quantum.cloud.ibm.com/docs/en/guides/retired-qpus"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-heron-r2"
+   },
+   "fields": {
+    "units_built": "≥5",
+    "units_in_service": "≥5"
+   },
+   "note": "https://quantum.cloud.ibm.com/computers — ibm_fez, ibm_marrakesh (Online), ibm_kingston (Paused) — Heron r2, 156 qubits; on-premises System Two: RIKEN Kobe (the register, Jun 2025), BasQ Donostia (the register row basq-system-two) — ordered, not delivered: IBM Quantum System Two for Amaravati Quantum Valley (India) announced, delivery not confirmed",
+   "sources": [
+    "https://quantum.cloud.ibm.com/computers"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-heron-r3"
+   },
+   "fields": {
+    "units_built": "3",
+    "units_in_service": "3"
+   },
+   "note": "https://quantum.cloud.ibm.com/computers — ibm_pittsburgh, ibm_boston (us-east), ibm_aachen (eu-de) — Heron r3, 156 qubits, Online",
+   "sources": [
+    "https://quantum.cloud.ibm.com/computers"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-nighthawk-r1"
+   },
+   "fields": {
+    "units_built": "≥3",
+    "units_in_service": "≥3"
+   },
+   "note": "https://quantum.cloud.ibm.com/computers — ibm_miami (us-east, Offline: maintenance), ibm_berlin (eu-de, Online) — Nighthawk r1, 120 qubits; RPI's System One upgraded to Nighthawk r1, reopened 15 Aug 2026 (https://poly.rpi.edu/news/2026/09/rpis-ibm-quantum-system-one-gets-nighthawk-r1) — the third unit (RPI) is new since the count of 6 Nov",
+   "sources": [
+    "https://quantum.cloud.ibm.com/computers",
+    "https://poly.rpi.edu/news/2026/09/rpis-ibm-quantum-system-one-gets-nighthawk-r1"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-nighthawk-r2"
+   },
+   "fields": {
+    "units_built": "≥2",
+    "units_in_service": "≥2"
+   },
+   "note": "https://quantum.cloud.ibm.com/computers — ibm_chicago, ibm_phoenix (us-east) — Nighthawk r2, 120 qubits, Online — the register's «Yonsei (Korea) Nov 2026» installation not verified at a source — a doubt item | ordered, not delivered: Yonsei (Korea) Nighthawk r2 per register (Nov 2026) — not verified this run",
+   "sources": [
+    "https://quantum.cloud.ibm.com/computers"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "google-sycamore-54"
+   },
+   "fields": {
+    "units_built": "≥1",
+    "units_in_service": "0"
+   },
+   "note": "https://quantumai.google/cirq/google/devices — «The Sycamore device is a 54 qubit device introduced in 2019»; «The Sycamore23 chip is a 23-qubit subset of the Sycamore chip» — the Quantum Engine processors \"weber\" and \"rainbow\" of the count of 6 Nov are not on Google's current pages — not counted",
+   "sources": [
+    "https://quantumai.google/cirq/google/devices"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "oqc-toshiko-32"
+   },
+   "fields": {
+    "units_built": "≥1",
+    "units_in_service": "≥1"
+   },
+   "note": "https://oqc.tech/news/ — «OQC Releases 32-Qubit Quantum Chip – OQC Toshiko» (27 Nov 2023); «OQC Installing Quantum Computer in Equinix IBX® Data Center» (14 Mar 2023, model not named); «OQC selected by Spanish supercomputing centre, CESGA» (21 Apr 2023, a selection) — the sites of the register's access cell (UK, Spain, Japan) are not tied to a Toshiko unit on OQC's pages — a doubt item | ordered, not delivered: Spain site (register) not verified",
+   "sources": [
+    "https://oqc.tech/news/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "dwave-advantage"
+   },
+   "fields": {
+    "units_built": "≥2",
+    "units_in_service": "≥1"
+   },
+   "note": "https://docs.dwavequantum.com/en/latest/quantum_research/solver_properties_specific.html — Advantage_system6 (5612 qubits; first release 6.1 on 2022-05-12); the Jülich JUNIQ unit (the register) — the earlier Leap solvers Advantage_system1/4/5 of the count of 6 Nov are not on the current solver page — ≥ 2 is what the pages show",
+   "sources": [
+    "https://docs.dwavequantum.com/en/latest/quantum_research/solver_properties_specific.html"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "dwave-advantage2"
+   },
+   "fields": {
+    "units_built": "≥4",
+    "units_in_service": "≥4"
+   },
+   "note": "https://docs.dwavequantum.com/en/latest/quantum_research/solver_properties_specific.html — Advantage2_system1 (4566 qubits), Advantage2_system2 (4506), Advantage2_system4 (1202), Advantage2_research2 (the properties of system4) — four Leap QPUs on D-Wave's solver page of 6 Nov 2026; the count of 6 Nov said ≥ 3 | ordered, not delivered: Swiss Quantum Technology / Villa Saporiti, Como (EUR10M, arrived for installation); Juelich Advantage upgrade to Advantage2; Yonsei/Incheon (MOU)",
+   "sources": [
+    "https://docs.dwavequantum.com/en/latest/quantum_research/solver_properties_specific.html"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-h1"
+   },
+   "fields": {
+    "units_built": "≥2",
+    "units_in_service": "≥1"
+   },
+   "note": "https://quantinuum.com/press-releases/riken-scales-quantum-supercomputing-in-japan-with-quantinuum-system-upgrade — «Since its installation in February 2025, Reimei H1 has been widely used» (RIKEN); H1-1 = the register's own row — H1-2 and its retirement (the count of 6 Nov) are not on Quantinuum's current pages — not counted",
+   "sources": [
+    "https://quantinuum.com/press-releases/riken-scales-quantum-supercomputing-in-japan-with-quantinuum-system-upgrade"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-h2"
+   },
+   "fields": {
+    "units_built": "2",
+    "units_in_service": "≥2"
+   },
+   "note": "the register's row names H2-1 and H2-2 (Quantinuum cloud); the third unit: https://quantinuum.com/press-releases/riken-scales-quantum-supercomputing-in-japan-with-quantinuum-system-upgrade — «Earlier this month, Quantinuum delivered its H2 system to RIKEN's research facility near Tokyo, where assembly is already underway» (14 Apr 2026); the Q3 release of 5 Nov 2026: «a Reimei system upgrade at RIKEN in Japan scheduled for completion this month» — RIKEN's H2 counted as ordered-not-delivered until its completion is reported | ordered, not delivered: RIKEN Reimei upgrade to H2: delivered Apr 2026, assembly to complete Nov 2026 (third H2 unit, not yet counted)",
+   "sources": [
+    "https://quantinuum.com/press-releases/riken-scales-quantum-supercomputing-in-japan-with-quantinuum-system-upgrade"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-aria"
+   },
+   "fields": {
+    "units_built": "≥1",
+    "units_in_service": "0"
+   },
+   "note": "https://ionq.com/quantum-systems/aria — «IonQ Aria … Retired in 2026»; 25 qubits, #AQ 25; the systems page (https://ionq.com/quantum-systems/compare) no longer lists Aria — the backend names Aria-1 / Aria-2 of the count rest on the register's references, not re-read; the retirement is a register status change (the patch)",
+   "sources": [
+    "https://ionq.com/quantum-systems/aria",
+    "https://ionq.com/quantum-systems/compare"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "aqt-ibex-q1"
+   },
+   "fields": {
+    "event": "benchmark",
+    "benchmark": "Quantum Volume 128 (PINE)",
+    "date": "2026-11-05"
+   },
+   "note": "https://www.aqt.eu/news/ — «AQT's trapped-ion quantum computer now available on Amazon Braket» (18 Nov 2025: IBEX Q1); «AQT quantum computer go live on Scaleway cloud» (18 Feb 2026) — the cloud routes share one machine as far as stated — the register has no benchmark column: a statement, not a cell; the intake row deferred until it has one",
+   "sources": [
+    "https://www.aqt.eu/news/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "pasqal-orion"
+   },
+   "fields": {
+    "units_built": "≥2",
+    "units_in_service": "≥2"
+   },
+   "note": "https://www.datacenterdynamics.com/en/news/pasqal-delivers-two-neutral-atom-quantum-computers-to-jsc-and-cea/ — Ruby at GENCI/CEA TGCC, Jade at JSC Jülich (inaugurated Nov 2025) — the register's «five sites» rests on no fetched source; Pasqal's newsroom (https://www.pasqal.com/newsroom/) names no delivery in its first page — a doubt item | ordered, not delivered: Distriq Sherbrooke 100-qubit QPU (sold Jun 2025); Aramco and others not evidenced",
+   "sources": [
+    "https://www.datacenterdynamics.com/en/news/pasqal-delivers-two-neutral-atom-quantum-computers-to-jsc-and-cea/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "orca-pt2"
+   },
+   "fields": {
+    "units_built": "≥1",
+    "units_in_service": "≥1"
+   },
+   "note": "https://orcacomputing.com/installation-marks-key-milestone-in-the-uks-121m-quantum-initiative-advancing-practical-quantum-research/ — the photonic testbed installed at the NQCC; https://orcacomputing.com/https-orcacomputing-com-knowledge-hub-news/ — the PT-2 shipped to the NQCC («40 qumodes», a 19-inch rack) — the Toyota Tsusho enterprise system in Japan (https://orcacomputing.com/news/, 16 Jun 2026) names no model",
+   "sources": [
+    "https://orcacomputing.com/installation-marks-key-milestone-in-the-uks-121m-quantum-initiative-advancing-practical-quantum-research/",
+    "https://orcacomputing.com/https-orcacomputing-com-knowledge-hub-news/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "orca-pt1"
+   },
+   "fields": {
+    "units_built": "≥7",
+    "units_in_service": "≥4"
+   },
+   "note": "https://orcacomputing.com/orca-computing-unveils-the-pt-2-delivering-quantum-enhanced-generative-ai-capabilities/ — the PT-1 «has deployed seven on-premises systems» (ORCA); named: PSNC Poznań ×2 (https://orcacomputing.com/orca-computing-to-provide-poznan-supercomputing-and-networking-center-psnc-with-first-quantum-computers/, 2023), Montana State University ×2 (https://orcacomputing.com/orca-powers-up-photonic-quantum-systems-at-montana-state-university/) — ORCA's own count; the four named units in service as far as stated",
+   "sources": [
+    "https://orcacomputing.com/orca-computing-unveils-the-pt-2-delivering-quantum-enhanced-generative-ai-capabilities/",
+    "https://orcacomputing.com/orca-computing-to-provide-poznan-supercomputing-and-networking-center-psnc-with-first-quantum-computers/",
+    "https://orcacomputing.com/orca-powers-up-photonic-quantum-systems-at-montana-state-university/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "saxonq-sxq4-4"
+   },
+   "fields": {
+    "units_built": "≥1",
+    "units_in_service": "≥1"
+   },
+   "note": "https://saxonq.com/news/ — «Fraunhofer IWU puts Saxony's first mobile quantum computer into operation» (June 2025); the DLR unit of the register is not on SaxonQ's page — the register's model name SXQ4 is not on SaxonQ's page (its products: SXQ128, SXQ512) — a doubt item",
+   "sources": [
+    "https://saxonq.com/news/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "riken-64q"
+   },
+   "fields": {
+    "field": "row"
+   },
+   "note": "riken-64q (27 Mar 2023, «cloud service (non-commercial)», ref fujitsu-tqi) and riken-fujitsu-64q (Oct 2023, «superseded by the 256-qubit machine, Apr 2025», ref riken-256-2025) may be one machine (the RIKEN RQC–Fujitsu 64-qubit computer of March 2023) or two (RIKEN's and Fujitsu's own); the units count counted each as one. Needs the owners' pages — the editor's tier. Not edited: the editor's.",
+   "sources": [
+    "the units count of 6 Nov 2026 (DATA_20261106_units-built.md)",
+    "the register rows"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "pasqal-orion"
+   },
+   "fields": {
+    "field": "status"
+   },
+   "note": "the status cell says «DEPLOYED (five sites)»; the sources read name two delivered units (Ruby at GENCI/CEA TGCC, Jade at JSC Jülich) and one sold (Distriq Sherbrooke); Pasqal's newsroom first page names no delivery. Five sites unsupported until a Pasqal page names them. Not edited: the editor's.",
+   "sources": [
+    "https://www.datacenterdynamics.com/en/news/pasqal-delivers-two-neutral-atom-quantum-computers-to-jsc-and-cea/",
+    "https://www.pasqal.com/newsroom/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "oqc-toshiko-32"
+   },
+   "fields": {
+    "field": "access"
+   },
+   "note": "the access cell says «cloud service in colocation data centres (UK, Spain, Japan)»; OQC's news page ties no Toshiko unit to Spain (CESGA selected OQC in Apr 2023) or to Japan (the Equinix IBX installation of Mar 2023 names no model); the units count found one London/Reading unit only with confidence. Not edited: the editor's.",
+   "sources": [
+    "https://oqc.tech/news/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "saxonq-sxq4-4"
+   },
+   "fields": {
+    "field": "name"
+   },
+   "note": "the register names the machine SXQ4 and its deliveries «to DLR and Fraunhofer»; SaxonQ's news page names Fraunhofer IWU (a mobile quantum computer in operation, June 2025) and the products SXQ128 and SXQ512 — no SXQ4 and no DLR delivery on the page. Not edited: the editor's.",
+   "sources": [
+    "https://saxonq.com/news/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-nighthawk-r2"
+   },
+   "fields": {
+    "field": "access"
+   },
+   "note": "the access cell says «cloud service; Yonsei (Korea) Nov 2026»; no IBM or Yonsei page read on 6 Nov 2026 reports a Nighthawk r2 at Yonsei (the Yonsei System One of Nov 2024 carries an Eagle); the units count did not count it. Not edited: the editor's.",
+   "sources": [
+    "https://quantum.cloud.ibm.com/computers",
+    "https://newsroom.ibm.com/2024-11-19-yonsei-deploys-first-ibm-quantum-system-one-in-the-republic-of-korea"
+   ]
+  }
+ ]
+}
