@@ -479,6 +479,9 @@ def station_card_html(nid, lang, base=''):
         _used_by(L, n, base)])
 
 
+# the units item of the machine card (6 Nov 2026): the tooltip texts, the same words as map_js.unitsT
+UNITS_TIP = ('unit: one physically separate machine with a named cloud backend or site. Built: every unit the sources name, retired ones included (≥N = at least N). In service: in operation at the date of the count, 6 November 2026 (? = the sources say nothing). The register file units.md holds the rule', 'экземпляр: одна физически отдельная машина с именованным облачным бэкендом или площадкой. Построено: все экземпляры, названные источниками, включая выведенные из эксплуатации (≥N — не менее N). В работе: в эксплуатации на дату подсчёта, 6 ноября 2026 (? — источники молчат). Правило — в файле реестра units.md', 'יחידה: מכונה אחת נפרדת פיזית עם backend ענן או אתר בשם. נבנו: כל היחידות שהמקורות מונים, כולל אלה שהוצאו משירות (≥N = לפחות N). בשירות: בפעולה בתאריך הספירה, 6 בנובמבר 2026 (? = המקורות שותקים). הכלל בקובץ המרשם units.md')
+UNITS_EV_TIP = ('the sources the units count rests on: URLs and verbatim words, one unit or one list per source', 'источники, на которых держится подсчёт экземпляров: ссылки и дословные слова, по одному экземпляру или списку на источник', 'המקורות שספירת היחידות נשענת עליהם: קישורים ומילים מילוליות, יחידה אחת או רשימה אחת לכל מקור')
 # ---------- the machine card (inspectMachine)
 def machine_card_html(mid, lang, base=''):
     L, m = lang, MACH[mid]; t = lambda *x: esc(T(L, *x))
@@ -508,6 +511,8 @@ def machine_card_html(mid, lang, base=''):
                                                         'קודים לתיקון שגיאות שמרשם הקודים מקשר למכונה זו'), m.get('codes')),
                                (('flags', 'флаги', 'דגלים'), ("the register's caveats on this machine's data", 'оговорки реестра к данным этой машины', 'ההסתייגויות של המרשם לגבי נתוני מכונה זו'), pf.get('flags'))):
             if vals: prof += '<div class="mc"><span class="empty" title="%s">%s:</span> %s</div>' % (ea(T(L, *tip)), t(*lab), esc(', '.join((regvocab.flag_words(v, L) if lab[0] == 'flags' else v) for v in vals)))
+        u_ev = (m.get('units') or {}).get('evidence')
+        if u_ev: prof += '<div class="mc"><span class="empty" title="%s">%s:</span> %s</div>' % (ea(T(L, UNITS_EV_TIP[0], UNITS_EV_TIP[1], UNITS_EV_TIP[2])), t('units — evidence', 'экземпляры — источники', 'יחידות — ראיות'), lk(u_ev))
     fam, q, sd, ec = m['family'], m.get('physical_qubits_num'), m.get('status_date'), m.get('evidence_counts') or {}
     meta = '%s · %s · %s%s · %s' % (_orglink(base, m, L), t(*FAMN.get(fam, (fam, fam))), esc(regvocab.status_l(m['status'], L)), (' (%s)' % esc(sd)) if sd else '',
                                     T(L, '%s physical qubits' % js_str(q), '%s %s' % (js_str(q), regvocab.ru_plural(q, regvocab.PLURAL['qubits'])),
@@ -515,6 +520,12 @@ def machine_card_html(mid, lang, base=''):
     qa = pf.get('qubits_accessible')
     if qa and q and qa != q: meta += ' · ' + T(L, '%s of them made usable' % js_str(qa), '%s из них доступны пользователям' % js_str(qa), '%s מהם שמישים למשתמשים' % js_str(qa))
     if EXTRAS and m.get('access'): meta += ' · %s: %s' % (t('access', 'доступ', 'גישה'), esc(regvocab.access_l(m['access'], L)))
+    u = m.get('units') or {}
+    if u.get('built'):   # the register's count of the type's physical instances (data/register/units.md, 6 Nov 2026); the JS unitsT
+        s_ = u.get('in_service') or '?'
+        sv = t('in service: unknown', 'в работе: неизвестно', 'בשירות: לא ידוע') if s_ == '?' else esc(T(L, '%s in service' % s_, 'в работе %s' % s_, '%s בשירות' % s_))
+        meta += ' · <span class="units" title="%s">%s: %s · %s</span>' % (ea(T(L, UNITS_TIP[0], UNITS_TIP[1], UNITS_TIP[2])), t('units', 'экземпляры', 'יחידות'),
+                                                                     esc(T(L, '%s built' % u['built'], 'построено %s' % u['built'], 'נבנו %s' % u['built'])), sv)
     pid = m['map_path']
     return _wrap('machine', [
         '<h3><i class="sw" style="--c:%s"></i> %s</h3>' % (FAMC.get(fam, 'var(--mid)'), esc(m['name'])),

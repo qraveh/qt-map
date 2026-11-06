@@ -7,7 +7,8 @@ Inputs : the machines register's CSVs — QT_MACHINES_DIR if set, else the live 
 Output : data/machines.json  -- deterministic: same inputs give identical bytes.
 
 Every cell carries "state": technology | gap | none | undisclosed (see cell_state); "gap" is kept as a boolean for the consumers
-that predate the register schema of 26 Sep 2026. Cells whose node is not in graph.json are reported (unknown_nodes).
+that predate the register schema of 26 Sep 2026. Every machine carries "units" — built, in_service, evidence — the register's count of
+the type's physical instances (data/register/units.md, 6 Nov 2026), empty strings for a type without a count. Cells whose node is not in graph.json are reported (unknown_nodes).
 
 Record numbers are rounded to 6 significant digits. No existing determinize rule was found in
 data/graph_data.py or build/*.py, so the rule is implemented here (sig6).
@@ -244,6 +245,8 @@ def build():
                     "country": m['org_country'], "family": m['family'], "map_path": m['map_path'],
                     "status": m['status'], "status_date": m['status_date'],
                     "physical_qubits_num": int_or_none(m['physical_qubits_num']), "access": m['access'],
+                    "units": {"built": (m.get('units_built') or '').strip(), "in_service": (m.get('units_in_service') or '').strip(),
+                              "evidence": (m.get('units_evidence') or '').strip()},   # the type's physical instances (data/register/units.md, 6 Nov 2026); empty for a type without a count
                     "layers": layers, "records": recs, "codes": sorted(codes_by.get(mid, ())),
                     "evidence_counts": {"verified": ver, "total": tot},
                     "refs": refs_by.get(mid, []),

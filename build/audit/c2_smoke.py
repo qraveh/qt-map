@@ -94,6 +94,7 @@ def run(pw, w, h):
     check('willow: altuse == nodes used only as alternate', set(r['altuse']) == WILLOW_ALT, (r['altuse'], sorted(WILLOW_ALT)))
     check('willow: machine card shown (title, page link, evidence footer)', 'Willow' in r['card'] and 'page ↗' in r['card'] and '✅ 14 / 17' in r['card'], r['card'][:120])
     check('willow: card shows the Atlas gaps', 'Atlas gap: ∅G-lru' in r['card'], '')
+    check('willow: card shows the units of its type (built · in service, 6 Nov 2026)', 'units: ≥1 built · ≥1 in service' in r['card'], r['card'][:160])
     check('willow: no horizontal overflow', not r['hscroll'] and not r['inspOver'], (r['hscroll'], r['inspOver']))
     p.locator('#bartog').click()
     check('bar summary names the machine', 'machine: Willow' in p.locator('#barsum').inner_text())
@@ -178,6 +179,7 @@ def run(pw, w, h):
     p.select_option('#machine', 'google-willow')
     r = read()
     check('RU: machine card in Russian', 'страница ↗' in r['card'] and 'источники: ✅ 14 / 17' in r['card'], r['card'][:100])
+    check('RU: units item in Russian', 'экземпляры: построено ≥1 · в работе ≥1' in r['card'], r['card'][:160])
     p.evaluate("()=>window.__setLang('en')")
 
     errs = [e for e in errors if not ('fonts.g' in e and ('ERR_TUNNEL' in e or 'net::' in e)) and 'ERR_TUNNEL' not in e]

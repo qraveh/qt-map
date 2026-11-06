@@ -1797,5 +1797,24 @@
   "he": "כמה נשען על טכנולוגיה בגרף — כמה משפחות פלטפורמה וארכיטקטורות תלויות בה, ועד כמה לאחרונה היא הגיעה לחומרה; היא קובעת את עומקו של תקציר, לא פסק",
   "src": "About / briefs preface",
   "why": "About and the brief index use the word before the preface defines it"
+ },
+ {
+  "id": "units",
+  "match": [
+   "units built"
+  ],
+  "match_ru": [
+   "построено экземпляров"
+  ],
+  "match_he": [
+   "יחידות שנבנו"
+  ],
+  "scope": "first",
+  "re": null,
+  "en": "Units of a machine type: its physically separate machines, each with a named cloud backend or site. Built counts every unit the sources name, retired ones included (≥N = at least N); in service counts those in operation at the date of the count, 6 November 2026 (? = the sources say nothing). The machine cards carry both numbers; the machine pages add the evidence",
+  "ru": "Экземпляры типа машины: физически отдельные машины с именованным облачным бэкендом или площадкой. Построено — все экземпляры, названные источниками, включая выведенные из эксплуатации (≥N — не менее N); в работе — те, что в эксплуатации на дату подсчёта, 6 ноября 2026 (? — источники молчат). Карточки машин несут оба числа, страницы машин — ещё и источники",
+  "he": "יחידות של סוג מכונה: מכונותיו הנפרדות פיזית, כל אחת עם backend ענן או אתר בשם. נבנו מונה כל יחידה שהמקורות מונים, כולל שהוצאו משירות (≥N = לפחות N); בשירות מונה את אלה שבפעולה בתאריך הספירה, 6 בנובמבר 2026 (? = המקורות שותקים). כרטיסי המכונות נושאים את שני המספרים; דפי המכונות מוסיפים את הראיות",
+  "src": "the machine cards (6 Nov 2026)",
+  "why": "the cards show the count before any text defines it"
  }
 ]

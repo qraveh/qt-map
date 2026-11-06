@@ -17,6 +17,11 @@
    "status_date": "29 Jan 2026",
    "physical_qubits_num": 20,
    "access": "domestic academic access",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -250,6 +255,11 @@
    "status_date": "May 2024",
    "physical_qubits_num": 1,
    "access": "cloud (Google Cloud Marketplace)",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -471,6 +481,11 @@
    "status_date": "2030",
    "physical_qubits_num": 2000,
    "access": "n/a",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -695,6 +710,11 @@
    "status_date": "11/18 Jun 2026",
    "physical_qubits_num": 18,
    "access": "on-prem sold + cloud",
+   "units": {
+    "built": "≥1",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -913,6 +933,11 @@
    "status_date": "25 Sep 2025",
    "physical_qubits_num": 12,
    "access": "lab",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -1144,6 +1169,11 @@
    "status_date": "May 2025",
    "physical_qubits_num": 156,
    "access": "n/a (not yet commissioned)",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -1349,6 +1379,11 @@
    "status_date": "Dec 2025",
    "physical_qubits_num": 24,
    "access": "public research access (Calcul Quebec)",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -1564,6 +1599,11 @@
    "status_date": "Mar 2024 / Apr 2026",
    "physical_qubits_num": 2,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -1785,6 +1825,11 @@
    "status_date": "Feb 2025",
    "physical_qubits_num": 9,
    "access": "lab-only (no cloud access)",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -2041,6 +2086,11 @@
    "status_date": "2024-",
    "physical_qubits_num": 156,
    "access": "free open-access cloud",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine — BAQIS Quafu cloud"
+   },
    "layers": {
     "1": [
      {
@@ -2251,6 +2301,11 @@
    "status_date": "2024-",
    "physical_qubits_num": 130,
    "access": "free open-access cloud",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine — BAQIS Quafu cloud"
+   },
    "layers": {
     "1": [
      {
@@ -2455,6 +2510,11 @@
    "status_date": "2024-",
    "physical_qubits_num": 117,
    "access": "free open-access cloud",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine — BAQIS Quafu cloud"
+   },
    "layers": {
     "1": [
      {
@@ -2659,6 +2719,11 @@
    "status_date": "2024-",
    "physical_qubits_num": 136,
    "access": "free open-access cloud",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine — BAQIS Quafu cloud"
+   },
    "layers": {
     "1": [
      {
@@ -2863,6 +2928,11 @@
    "status_date": "Jul 2026",
    "physical_qubits_num": 84,
    "access": "not stated (the paper cites the BAQIS Quafu platform)",
+   "units": {
+    "built": "1",
+    "in_service": "",
+    "evidence": "the register's row: one machine — BAQIS lab"
+   },
    "layers": {
     "1": [
      {
@@ -3070,6 +3140,11 @@
    "status_date": "Oct 2025",
    "physical_qubits_num": 156,
    "access": "members of the IBM-Euskadi Quantum Computational Center; since Jul 2026 also open to industry and public-sector entities (requests to access@basquequantum.eus; access agreement with Ikerbasque, which manages the infrastructure)",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -3279,6 +3354,11 @@
    "status_date": "May 2026",
    "physical_qubits_num": 35,
    "access": "national allocation (open access via RES)",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -3489,6 +3569,11 @@
    "status_date": "2023-2024",
    "physical_qubits_num": 25,
    "access": "testbed for Swedish industry and academia (Chalmers Next Labs)",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -3692,6 +3777,11 @@
    "status_date": "2023",
    "physical_qubits_num": 66,
    "access": "cloud service (the Tianyan cloud through the Cqlib SDK, backends 'tianyan176' and 'tianyan176-2')",
+   "units": {
+    "built": "2",
+    "in_service": "2",
+    "evidence": "Tianyan cloud backends 'tianyan176' and 'tianyan176-2'"
+   },
    "layers": {
     "1": [
      {
@@ -3932,6 +4022,11 @@
    "status_date": "Oct 2025",
    "physical_qubits_num": 105,
    "access": "cloud service",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine — Tianyan cloud (China Telecom Quantum Group)"
+   },
    "layers": {
     "1": [
      {
@@ -4191,6 +4286,11 @@
    "status_date": "Dec 2024",
    "physical_qubits_num": 504,
    "access": "cloud service (Cqlib SDK; operator paper Dec 2025)",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine — Tianyan cloud ('Xiaohong' chip)"
+   },
    "layers": {
     "1": [
      {
@@ -4444,6 +4544,11 @@
    "status_date": "28 Aug 2024",
    "physical_qubits_num": 6,
    "access": "cloud interface (TCS) for education, research and testing",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -4648,6 +4753,11 @@
    "status_date": "2026 target",
    "physical_qubits_num": 17,
    "access": "simulator only (Leap, Sep 2026)",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -4886,6 +4996,11 @@
    "status_date": "2022-2025",
    "physical_qubits_num": 17,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -5101,6 +5216,11 @@
    "status_date": "Jun 2021",
    "physical_qubits_num": 27,
    "access": "Fraunhofer Quantum Computing Competence Network (companies and research organisations)",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -5305,6 +5425,11 @@
    "status_date": "Aug 2025, target FY2030",
    "physical_qubits_num": 10000,
    "access": "n/a",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -5543,6 +5668,11 @@
    "status_date": "2026 target",
    "physical_qubits_num": 1000,
    "access": "n/a",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -5780,6 +5910,11 @@
    "status_date": "demonstrated Oct 2019",
    "physical_qubits_num": 53,
    "access": "lab-only",
+   "units": {
+    "built": "≥1",
+    "in_service": "0",
+    "evidence": "https://quantumai.google/cirq/google/devices — «The Sycamore device is a 54 qubit device introduced in 2019»; «The Sycamore23 chip is a 23-qubit subset of the Sycamore chip»"
+   },
    "layers": {
     "1": [
      {
@@ -6022,6 +6157,11 @@
    "status_date": "2022 (Nature Feb 2023)",
    "physical_qubits_num": 72,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "",
+    "evidence": "the register's row: one machine — Google Quantum AI lab (2023 QEC experiment)"
+   },
    "layers": {
     "1": [
      {
@@ -6305,6 +6445,11 @@
    "status_date": "Dec 2024 (early-access programme; applications closed 15 May 2026, selected applicants notified)",
    "physical_qubits_num": 105,
    "access": "invited academic access",
+   "units": {
+    "built": "≥1",
+    "in_service": "≥1",
+    "evidence": "the register's row: one machine — Google Quantum AI Santa Barbara; Cirq device 'Willow105'"
+   },
    "layers": {
     "1": [
      {
@@ -6749,6 +6894,11 @@
    "status_date": "2033+",
    "physical_qubits_num": null,
    "access": "n/a",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -6999,6 +7149,11 @@
    "status_date": "2027",
    "physical_qubits_num": null,
    "access": "n/a",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -7220,6 +7375,11 @@
    "status_date": "4 Dec 2023",
    "physical_qubits_num": 1121,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "0",
+    "evidence": "the register's row: one machine — IBM lab (Yorktown) demonstrator"
+   },
    "layers": {
     "1": [
      {
@@ -7446,6 +7606,11 @@
    "status_date": "launched Nov 2021",
    "physical_qubits_num": 127,
    "access": "was cloud service",
+   "units": {
+    "built": "≥15",
+    "in_service": "0 cloud; ≥ 3 on-premises (the current processor of Cleveland Clinic, Bromont, Yonsei and Kawasaki not re-verified; RPI moved to Nighthawk r1 in 2026)",
+    "evidence": "https://quantum.cloud.ibm.com/docs/en/guides/retired-qpus — ten 127-qubit backends retired 2023-06-03 … 2026-04-27: ibm_washington, ibm_cusco, ibm_osaka, ibm_kyoto, ibm_nazca, ibm_kyiv, ibm_sherbrooke, ibm_brisbane, ibm_strasbourg, ibm_brussels; on-premises Eagle: Cleveland Clinic (https://consultqd.clevelandclinic.org/quantum-computing-debuts-at-cleveland-clinic — «IBM Quantum System One … 127-qubit Eagle», 2023), PINQ² Bromont (https://newsroom.ibm.com/2023-09-22-The-Platform-for-Digital-and-Quantum-Innovation-of-Quebec-PINQ-Proudly-Announces-the-Historic-Inauguration-of-an-IBM-Quantum-System-One-Quantum-Computer-in-Bromont — «utility-scale, 127-qubit», 22 Sep 2023), Kawasaki (https://newsroom.ibm.com/2023-11-27-The-University-of-Tokyo-Completes-Installation-of-127-Qubit-IBM-Quantum-Eagle-Processor — operating from 1 Oct 2023), RPI (https://newsroom.ibm.com/2024-04-05-Rensselaer-Polytechnic-Institute-and-IBM-unveil-the-worlds-first-IBM-Quantum-System-One-on-a-university-campus — «127-qubit IBM Quantum Eagle», 5 Apr 2024), Yonsei (https://newsroom.ibm.com/2024-11-19-yonsei-deploys-first-ibm-quantum-system-one-in-the-republic-of-korea — 127-qubit Eagle, 19 Nov 2024)"
+   },
    "layers": {
     "1": [
      {
@@ -7701,6 +7866,11 @@
    "status_date": "launched 2022",
    "physical_qubits_num": 33,
    "access": "lab/cloud (historical)",
+   "units": {
+    "built": "1",
+    "in_service": "0",
+    "evidence": "the register's row: one machine — ibm_prague (33 q, exploratory)"
+   },
    "layers": {
     "1": [
      {
@@ -7910,6 +8080,11 @@
    "status_date": "in service 2019-2023",
    "physical_qubits_num": 27,
    "access": "cloud (historical)",
+   "units": {
+    "built": "≥15",
+    "in_service": "0 cloud; the Ehningen System One unconfirmed",
+    "evidence": "https://quantum.cloud.ibm.com/docs/en/guides/retired-qpus — the retired list names thirteen 27-qubit backends: ibmq_paris, ibmq_berlin, ibmq_dublin, ibmq_sydney, ibmq_toronto, ibmq_montreal, ibmq_mumbai, ibmq_kolkata, ibmq_geneva, ibm_auckland, ibm_hanoi, ibm_cairo, ibm_algiers (retired 2020-12-31 … 2024-04-30); on-premises System One: Fraunhofer Ehningen (2021, the register) and Kawasaki (installed July 2021 — https://www.u-tokyo.ac.jp/focus/en/features/z1304_00193.html — the Eagle replaced it in 2023)"
+   },
    "layers": {
     "1": [
      {
@@ -8167,6 +8342,11 @@
    "status_date": "Nov 2024",
    "physical_qubits_num": null,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "",
+    "evidence": "the register's row: one machine — IBM lab proof of concept (two Heron r2 chips + l-couplers)"
+   },
    "layers": {
     "1": [
      {
@@ -8377,6 +8557,11 @@
    "status_date": "Dec 2023",
    "physical_qubits_num": 133,
    "access": "cloud service",
+   "units": {
+    "built": "1",
+    "in_service": "0",
+    "evidence": "https://quantum.cloud.ibm.com/docs/en/guides/retired-qpus — «ibm_torino | 133 | 2026-04-01»"
+   },
    "layers": {
     "1": [
      {
@@ -8599,6 +8784,11 @@
    "status_date": "Jul 2024",
    "physical_qubits_num": 156,
    "access": "cloud + on-prem (System Two)",
+   "units": {
+    "built": "≥5",
+    "in_service": "≥5",
+    "evidence": "https://quantum.cloud.ibm.com/computers — ibm_fez, ibm_marrakesh (Online), ibm_kingston (Paused) — Heron r2, 156 qubits; on-premises System Two: RIKEN Kobe (the register, Jun 2025), BasQ Donostia (the register row basq-system-two)"
+   },
    "layers": {
     "1": [
      {
@@ -8893,6 +9083,11 @@
    "status_date": "Jul 2025",
    "physical_qubits_num": 156,
    "access": "cloud + on-prem",
+   "units": {
+    "built": "3",
+    "in_service": "3",
+    "evidence": "https://quantum.cloud.ibm.com/computers — ibm_pittsburgh, ibm_boston (us-east), ibm_aachen (eu-de) — Heron r3, 156 qubits, Online"
+   },
    "layers": {
     "1": [
      {
@@ -9205,6 +9400,11 @@
    "status_date": "2026 target",
    "physical_qubits_num": null,
    "access": "n/a",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -9416,6 +9616,11 @@
    "status_date": "Nov 2025",
    "physical_qubits_num": 112,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine — IBM lab testbed"
+   },
    "layers": {
     "1": [
      {
@@ -9676,6 +9881,11 @@
    "status_date": "Dec 2025",
    "physical_qubits_num": 120,
    "access": "cloud service",
+   "units": {
+    "built": "≥3",
+    "in_service": "≥3",
+    "evidence": "https://quantum.cloud.ibm.com/computers — ibm_miami (us-east, Offline: maintenance), ibm_berlin (eu-de, Online) — Nighthawk r1, 120 qubits; RPI's System One upgraded to Nighthawk r1, reopened 15 Aug 2026 (https://poly.rpi.edu/news/2026/09/rpis-ibm-quantum-system-one-gets-nighthawk-r1)"
+   },
    "layers": {
     "1": [
      {
@@ -9907,6 +10117,11 @@
    "status_date": "31 Aug 2026",
    "physical_qubits_num": 120,
    "access": "cloud service; Yonsei (Korea) Nov 2026",
+   "units": {
+    "built": "≥2",
+    "in_service": "≥2",
+    "evidence": "https://quantum.cloud.ibm.com/computers — ibm_chicago, ibm_phoenix (us-east) — Nighthawk r2, 120 qubits, Online"
+   },
    "layers": {
     "1": [
      {
@@ -10194,6 +10409,11 @@
    "status_date": "announced Nov 2022",
    "physical_qubits_num": 433,
    "access": "was cloud service",
+   "units": {
+    "built": "1",
+    "in_service": "0",
+    "evidence": "https://quantum.cloud.ibm.com/docs/en/guides/retired-qpus — «ibm_seattle | 433 | 2023-09-07»"
+   },
    "layers": {
     "1": [
      {
@@ -10410,6 +10630,11 @@
    "status_date": "2029",
    "physical_qubits_num": 22000,
    "access": "n/a",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -10662,6 +10887,11 @@
    "status_date": "Sep 2026",
    "physical_qubits_num": 120,
    "access": "hub access coordinated by ETH Zurich (not yet operational)",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -10884,6 +11114,11 @@
    "status_date": "Jun 2024",
    "physical_qubits_num": 25,
    "access": "cloud + on-site",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -11109,6 +11344,11 @@
    "status_date": "21 Jul 2025 (LRZ 11 Feb 2026)",
    "physical_qubits_num": 54,
    "access": "cloud (Amazon Braket, IQM Resonance) + on-prem sold",
+   "units": {
+    "built": "≥1",
+    "in_service": "≥1",
+    "evidence": "https://www.businesswire.com/news/home/20260212928399/en/Europe-Launches-Euro-Q-Exa-Quantum-Computer-in-Germany-Strengthening-Sovereign-Digital-Infrastructure; https://www.businesswire.com/news/home/20250317715500/en/Cineca-to-House-Italys-Most-Powerful-Quantum-Computer-IQM-Radiance-54 — Emerald (Amazon Braket + IQM Resonance)"
+   },
    "layers": {
     "1": [
      {
@@ -11384,6 +11624,11 @@
    "status_date": "2024",
    "physical_qubits_num": 20,
    "access": "cloud (Amazon Braket, IQM Resonance)",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "Garnet (Amazon Braket + IQM Resonance)"
+   },
    "layers": {
     "1": [
      {
@@ -11593,6 +11838,11 @@
    "status_date": "13 Nov 2025; LUMI H4 in 2027",
    "physical_qubits_num": 150,
    "access": "on-prem sold",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -11877,6 +12127,11 @@
    "status_date": "Sep 2026",
    "physical_qubits_num": 5,
    "access": "on-prem sold (Eldorado HQ, Campinas); users also get remote access to an IQM 54-qubit cloud system in Europe",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -12086,6 +12341,11 @@
    "status_date": "Sep 2025 (first 24-qubit Star delivered as VLQ at IT4I; on IQM Resonance as IQM Star 24 by Sep 2026)",
    "physical_qubits_num": 24,
    "access": "cloud (IQM Resonance)",
+   "units": {
+    "built": "≥1",
+    "in_service": "≥1",
+    "evidence": "https://eurohpc-ju.europa.eu/vlq-europes-next-leap-towards-quantum-powered-research-and-innovation-2025-09-23_en — VLQ at IT4I Ostrava (24 qubits, star topology with central resonator, inaugurated 23 Sep 2025)"
+   },
    "layers": {
     "1": [
      {
@@ -12293,6 +12553,11 @@
    "status_date": "17 Mar 2025 (arXiv)",
    "physical_qubits_num": 6,
    "access": "not stated in the paper (IQM Resonance has offered a Deneb backend)",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -12514,6 +12779,11 @@
    "status_date": "Sep 2025",
    "physical_qubits_num": 24,
    "access": "national allocation (EuroHPC JU access; integrated with the KAROLINA supercomputer); open to users since 14 Jul 2026 after testing and validation (16 projects awarded; IT4I Open Access Grant Competitions)",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -12723,6 +12993,11 @@
    "status_date": "Jul 2026",
    "physical_qubits_num": 20,
    "access": "cloud (pilot)",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -12951,6 +13226,11 @@
    "status_date": "Mar 2026",
    "physical_qubits_num": 50,
    "access": "n/a",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -13161,6 +13441,11 @@
    "status_date": "2018-2026",
    "physical_qubits_num": 8,
    "access": "open user testbed (no cost for non-proprietary work that will be published; DOE ASCR); User Program being restructured, with no open call for user proposals on the usual annual cycle; collaborations by contact (aqt@lbl.gov)",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -13362,6 +13647,11 @@
    "status_date": "Jul 2026",
    "physical_qubits_num": 1,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -13638,6 +13928,11 @@
    "status_date": "May / Oct 2025",
    "physical_qubits_num": 2,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -13887,6 +14182,11 @@
    "status_date": "2031",
    "physical_qubits_num": 75000,
    "access": "n/a",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -14109,6 +14409,11 @@
    "status_date": "2034",
    "physical_qubits_num": 1000000,
    "access": "n/a",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -14331,6 +14636,11 @@
    "status_date": "17 Sep 2025 (Digital Realty JFK10, New York City)",
    "physical_qubits_num": 16,
    "access": "cloud / data-centre",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "https://washingtonexec.com/2025/09/digital-realty-oqc-open-first-quantum-ai-data-center-in-new-york — Digital Realty JFK10, New York (Sep 2025)"
+   },
    "layers": {
     "1": [
      {
@@ -14615,6 +14925,11 @@
    "status_date": "2028",
    "physical_qubits_num": 2000,
    "access": "n/a",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -14837,6 +15152,11 @@
    "status_date": "2024",
    "physical_qubits_num": 32,
    "access": "cloud service in colocation data centres (UK, Spain, Japan)",
+   "units": {
+    "built": "≥1",
+    "in_service": "≥1",
+    "evidence": "https://oqc.tech/news/ — «OQC Releases 32-Qubit Quantum Chip – OQC Toshiko» (27 Nov 2023); «OQC Installing Quantum Computer in Equinix IBX® Data Center» (14 Mar 2023, model not named); «OQC selected by Spanish supercomputing centre, CESGA» (21 Apr 2023, a selection)"
+   },
    "layers": {
     "1": [
      {
@@ -15060,6 +15380,11 @@
    "status_date": "2025",
    "physical_qubits_num": 102,
    "access": "cloud service",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine — Origin Quantum cloud"
+   },
    "layers": {
     "1": [
      {
@@ -15264,6 +15589,11 @@
    "status_date": "May 2026",
    "physical_qubits_num": 180,
    "access": "cloud service + export sales",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "https://www.szzg.gov.cn/2026/english/dn/202605/t20260511_5320857.htm — Origin Quantum cloud, Hefei (online May 2026)"
+   },
    "layers": {
     "1": [
      {
@@ -15474,6 +15804,11 @@
    "status_date": "Jan 2024",
    "physical_qubits_num": 72,
    "access": "cloud service + export sales",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "https://www.szzg.gov.cn/2026/english/dn/202605/t20260511_5320857.htm — Origin Quantum Hefei cloud (online 6 Jan 2024)"
+   },
    "layers": {
     "1": [
      {
@@ -15705,6 +16040,11 @@
    "status_date": "Nov 2024 (acquired 19 Jan 2026)",
    "physical_qubits_num": 8,
    "access": "cloud service",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -15970,6 +16310,11 @@
    "status_date": "Dec 2025",
    "physical_qubits_num": null,
    "access": "cloud via the IQCC",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine — IQCC, Tel Aviv"
+   },
    "layers": {
     "1": [
      {
@@ -16187,6 +16532,11 @@
    "status_date": "14 Apr 2025",
    "physical_qubits_num": 25,
    "access": "research use",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -16397,6 +16747,11 @@
    "status_date": "3 Nov 2025",
    "physical_qubits_num": 64,
    "access": "research use",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -16616,6 +16971,11 @@
    "status_date": "2026 (GA; early access Feb 2025)",
    "physical_qubits_num": 17,
    "access": "sold as components",
+   "units": {
+    "built": "≥1",
+    "in_service": "",
+    "evidence": "unnamed customers (sold as QPU component)"
+   },
    "layers": {
     "1": [
      {
@@ -16841,6 +17201,11 @@
    "status_date": "2026",
    "physical_qubits_num": 64,
    "access": "sold as components",
+   "units": {
+    "built": "unknown",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -17051,6 +17416,11 @@
    "status_date": "8 Dec 2025",
    "physical_qubits_num": 10000,
    "access": "reservations open",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -17284,6 +17654,11 @@
    "status_date": "late 2023",
    "physical_qubits_num": 84,
    "access": "cloud service (Rigetti QCS + Amazon Braket)",
+   "units": {
+    "built": "1",
+    "in_service": "0",
+    "evidence": "the register's row: one machine — Ankaa-2 (Rigetti QCS + Amazon Braket)"
+   },
    "layers": {
     "1": [
      {
@@ -17517,6 +17892,11 @@
    "status_date": "end-2024",
    "physical_qubits_num": 84,
    "access": "cloud service",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine — Ankaa-3 (QCS, Braket)"
+   },
    "layers": {
     "1": [
      {
@@ -17734,6 +18114,11 @@
    "status_date": "7 Apr 2026",
    "physical_qubits_num": 108,
    "access": "cloud service (QCS + Braket), 20 h/day window",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "https://www.jaredwatkins.com/research/quantum-computing/rigetti/ — Cepheus-1-108Q (QCS + Braket)"
+   },
    "layers": {
     "1": [
      {
@@ -17984,6 +18369,11 @@
    "status_date": "12 Aug 2025",
    "physical_qubits_num": 36,
    "access": "cloud service",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine — Cepheus-1-36Q (QCS, Azure Quantum, Braket)"
+   },
    "layers": {
     "1": [
      {
@@ -18209,6 +18599,11 @@
    "status_date": "Dec 2023 (launched)",
    "physical_qubits_num": 9,
    "access": "on-prem sold (Horizon Quantum, Singapore; Montana State University QCORE; Pittsburgh Supercomputing Center TangleLab, announced Aug 2026)",
+   "units": {
+    "built": "≥2",
+    "in_service": "≥2",
+    "evidence": "https://www.datacenterdynamics.com/en/news/rigetti-sells-two-novera-quantum-computers-to-customers-in-asia-and-the-us/; https://www.jaredwatkins.com/research/quantum-computing/rigetti/ — Horizon Quantum (Singapore); Montana State University QCORE"
+   },
    "layers": {
     "1": [
      {
@@ -18423,6 +18818,11 @@
    "status_date": "27 Mar 2023",
    "physical_qubits_num": 64,
    "access": "cloud service (non-commercial)",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine — RIKEN Wako (cloud, non-commercial)"
+   },
    "layers": {
     "1": [
      {
@@ -18664,6 +19064,11 @@
    "status_date": "Apr 2025",
    "physical_qubits_num": 256,
    "access": "offered to companies and research institutions",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -18905,6 +19310,11 @@
    "status_date": "Oct 2023",
    "physical_qubits_num": 64,
    "access": "",
+   "units": {
+    "built": "1",
+    "in_service": "0",
+    "evidence": "the register's row: one machine — RIKEN RQC-Fujitsu Collaboration Center, Wako"
+   },
    "layers": {
     "1": [
      {
@@ -19115,6 +19525,11 @@
    "status_date": "Mar 2026",
    "physical_qubits_num": 5,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -19339,6 +19754,11 @@
    "status_date": "2025-2026",
    "physical_qubits_num": 25,
    "access": "on-prem sold + cloud",
+   "units": {
+    "built": "≥1 named-less (owner: 'multiple')",
+    "in_service": "unknown",
+    "evidence": "https://www.spinq.com/en/news-detail/chinese-quantum-unicorn-spinq-raises-rmb-1-billion-in-series-d-financing-to-advance-fault-tolerant-quantum-computing20260630; https://thequantuminsider.com/2026/04/03/spinq-technology-secures-nearly-1-billion-chinese-yuan-in-series-c-funding-to-scale-industrial-superconducting-quantum-computing/ — No named site. SpinQ: 2024 'China's first overseas delivery of a complete superconducting quantum computer' (recipient unnamed); 2025 'began batch deliveries of its Ursa Major superconducting quantum computing systems'; 'already delivered multiple Ursa Major systems'"
+   },
    "layers": {
     "1": [
      {
@@ -19572,6 +19992,11 @@
    "status_date": "29 Jan 2026",
    "physical_qubits_num": 1,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -19809,6 +20234,11 @@
    "status_date": "6 Mar 2026 (Nature Physics; arXiv 16 Apr 2025)",
    "physical_qubits_num": 8,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -20025,6 +20455,11 @@
    "status_date": "Nov 2024",
    "physical_qubits_num": 2,
    "access": "lab-only, two-qubit test devices",
+   "units": {
+    "built": "1",
+    "in_service": "",
+    "evidence": "the register's row: one machine — lab test devices"
+   },
    "layers": {
     "1": [
      {
@@ -20276,6 +20711,11 @@
    "status_date": "May 2025 (arXiv; Nature Physics, Jan 2026)",
    "physical_qubits_num": 32,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "",
+    "evidence": "the register's row: one machine — Tsinghua/ZJU lab"
+   },
    "layers": {
     "1": [
      {
@@ -20501,6 +20941,11 @@
    "status_date": "demonstrated Oct 2021",
    "physical_qubits_num": 66,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "0",
+    "evidence": "the register's row: one machine — USTC Hefei lab"
+   },
    "layers": {
     "1": [
      {
@@ -20714,6 +21159,11 @@
    "status_date": "Dec 2024 / Mar 2025",
    "physical_qubits_num": 105,
    "access": "lab + Tianyan cloud sibling",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine — USTC Hefei lab (Tianyan-287 is a separate sibling type)"
+   },
    "layers": {
     "1": [
      {
@@ -20988,6 +21438,11 @@
    "status_date": "22 Dec 2025",
    "physical_qubits_num": 107,
    "access": "research cloud by application with expert review (QuantumCTek cloud: 107 readable qubits + 187 couplers)",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine — USTC Hefei / QuantumCTek research cloud"
+   },
    "layers": {
     "1": [
      {
@@ -21258,6 +21713,11 @@
    "status_date": "Mar 2025",
    "physical_qubits_num": 50,
    "access": "cloud service (VTT QX) for companies and research institutions; connected to the LUMI supercomputer",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -21467,6 +21927,11 @@
    "status_date": "28 Jan 2026 (arXiv Mar 2025)",
    "physical_qubits_num": 78,
    "access": "not cloud-accessible",
+   "units": {
+    "built": "1",
+    "in_service": "",
+    "evidence": "the register's row: one machine — CAS/PKU lab"
+   },
    "layers": {
     "1": [
      {
@@ -21691,6 +22156,11 @@
    "status_date": "4 Jun 2026",
    "physical_qubits_num": 125,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "",
+    "evidence": "the register's row: one machine — Zhejiang University lab"
+   },
    "layers": {
     "1": [
      {
@@ -21965,6 +22435,11 @@
    "status_date": "2024-2026",
    "physical_qubits_num": 12,
    "access": "cloud (ARNICA, Scaleway, Amazon Braket eu-north-1) + on-prem",
+   "units": {
+    "built": "≥1",
+    "in_service": "≥1",
+    "evidence": "https://www.aqt.eu/news/ — «AQT's trapped-ion quantum computer now available on Amazon Braket» (18 Nov 2025: IBEX Q1); «AQT quantum computer go live on Scaleway cloud» (18 Feb 2026)"
+   },
    "layers": {
     "1": [
      {
@@ -22206,6 +22681,11 @@
    "status_date": "5 May 2026",
    "physical_qubits_num": 15,
    "access": "select strategic partners from Q4 2026",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -22420,6 +22900,11 @@
    "status_date": "3 Sep 2026",
    "physical_qubits_num": 30,
    "access": "JUNIQ user infrastructure, coupled to JUPITER",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -22629,6 +23114,11 @@
    "status_date": "30 May 2024 (revealed); Jul 2024 (commissioned)",
    "physical_qubits_num": 10,
    "access": "DLR QCI partners from industry and research",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -22848,6 +23338,11 @@
    "status_date": "2022",
    "physical_qubits_num": 32,
    "access": "was cloud (Braket, Azure, Google Cloud)",
+   "units": {
+    "built": "≥1",
+    "in_service": "0",
+    "evidence": "https://ionq.com/quantum-systems/aria — «IonQ Aria … Retired in 2026»; 25 qubits, #AQ 25; the systems page (https://ionq.com/quantum-systems/compare) no longer lists Aria"
+   },
    "layers": {
     "1": [
      {
@@ -23060,6 +23555,11 @@
    "status_date": "Jun 2026",
    "physical_qubits_num": 40,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -23301,6 +23801,11 @@
    "status_date": "available since 2022 (Enterprise 2024-25)",
    "physical_qubits_num": 30,
    "access": "cloud + on-prem (QuantumBasel, AIST G-QuAT); EPB Quantum Center, Chattanooga — Forte Enterprise (#AQ 36) launched 18 Sep 2026",
+   "units": {
+    "built": "≥4",
+    "in_service": "≥3",
+    "evidence": "https://www.kapitalmarktexperten.de/ionq-aktie-epb-nimmt-forte-enterprise-in-betrieb/ ; https://thequantuminsider.com/2025/12/18/ionq-expands-quantumbasel-partnership/ — Forte-1 (cloud); Forte Enterprise-1 (cloud); QuantumBasel Forte Enterprise (Arlesheim); EPB Chattanooga Forte Enterprise (in operation 18 Sep 2026)"
+   },
    "layers": {
     "1": [
      {
@@ -23563,6 +24068,11 @@
    "status_date": "13 Aug 2025 (NQCC Harwell)",
    "physical_qubits_num": 32,
    "access": "on-prem at a national testbed",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -23796,6 +24306,11 @@
    "status_date": "Sep 2026",
    "physical_qubits_num": 10000,
    "access": "n/a (not yet built)",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -24021,6 +24536,11 @@
    "status_date": "8 Sep 2026",
    "physical_qubits_num": 256,
    "access": "orders open; a Superion 256 planned for deployment with an SDT customer in South Korea (announced 21 Sep 2026, no date)",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -24258,6 +24778,11 @@
    "status_date": "25 Sep 2025",
    "physical_qubits_num": 64,
    "access": "lab (development system); the 100-qubit product sold to KISTI, delivery not dated",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -24487,6 +25012,11 @@
    "status_date": "Jun 2025",
    "physical_qubits_num": 20,
    "access": "national allocation (EuroHPC JU access for European users)",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -24690,6 +25220,11 @@
    "status_date": "2029",
    "physical_qubits_num": null,
    "access": "n/a",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -24927,6 +25462,11 @@
    "status_date": "2020",
    "physical_qubits_num": 20,
    "access": "cloud (Nexus, Azure)",
+   "units": {
+    "built": "≥2",
+    "in_service": "≥1",
+    "evidence": "https://quantinuum.com/press-releases/riken-scales-quantum-supercomputing-in-japan-with-quantinuum-system-upgrade — «Since its installation in February 2025, Reimei H1 has been widely used» (RIKEN); H1-1 = the register's own row"
+   },
    "layers": {
     "1": [
      {
@@ -25225,6 +25765,11 @@
    "status_date": "Jun 2023 (56 q from Jun 2024)",
    "physical_qubits_num": 56,
    "access": "cloud (Nexus, Azure, AWS Braket)",
+   "units": {
+    "built": "2",
+    "in_service": "≥2",
+    "evidence": "the register's row names H2-1 and H2-2 (Quantinuum cloud); the third unit: https://quantinuum.com/press-releases/riken-scales-quantum-supercomputing-in-japan-with-quantinuum-system-upgrade — «Earlier this month, Quantinuum delivered its H2 system to RIKEN's research facility near Tokyo, where assembly is already underway» (14 Apr 2026); the Q3 release of 5 Nov 2026: «a Reimei system upgrade at RIKEN in Japan scheduled for completion this month»"
+   },
    "layers": {
     "1": [
      {
@@ -25525,6 +26070,11 @@
    "status_date": "Nov 2025 (peer-reviewed Jun 2026)",
    "physical_qubits_num": 98,
    "access": "cloud + on-premise + NVIDIA GB200 integration",
+   "units": {
+    "built": "≥1",
+    "in_service": "≥1",
+    "evidence": "https://quantumcomputingreport.com/quantinuum-expands-to-singapore-with-new-rd-centre-and-helios-deployment/amp/ — Helios, Broomfield CO (cloud, launched Nov 2025)"
+   },
    "layers": {
     "1": [
      {
@@ -25911,6 +26461,11 @@
    "status_date": "Sep 2026",
    "physical_qubits_num": 20,
    "access": "runs on Helios",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -26145,6 +26700,11 @@
    "status_date": "2027",
    "physical_qubits_num": null,
    "access": "n/a",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -26369,6 +26929,11 @@
    "status_date": "2025",
    "physical_qubits_num": 50,
    "access": "QaaS (announced; no cloud listing found 8 Oct 2026)",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -26592,6 +27157,11 @@
    "status_date": "2026",
    "physical_qubits_num": null,
    "access": "not disclosed (the QaaS launch belongs to the Montage row)",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -26814,6 +27384,11 @@
    "status_date": "2023-",
    "physical_qubits_num": null,
    "access": "sold into government, finance, telecom, power",
+   "units": {
+    "built": "≥1",
+    "in_service": "?",
+    "evidence": "sold into government, finance, telecom, power (sites not named)"
+   },
    "layers": {
     "1": [
      {
@@ -27029,6 +27604,11 @@
    "status_date": "Jun 2025 (first ion); Jan 2027 (project end)",
    "physical_qubits_num": null,
    "access": "cloud emulator",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -27234,6 +27814,11 @@
    "status_date": "Sep 2026",
    "physical_qubits_num": 1000,
    "access": "n/a (not yet built)",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -27456,6 +28041,11 @@
    "status_date": "Dec 2025",
    "physical_qubits_num": 70,
    "access": "not disclosed",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -27661,6 +28251,11 @@
    "status_date": "2021-2026",
    "physical_qubits_num": 6,
    "access": "open user testbed (DOE-funded; calls for proposals); after the DOE funding redirection only a few short user projects until the end of FY2026",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -27878,6 +28473,11 @@
    "status_date": "May 2024",
    "physical_qubits_num": 512,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -28115,6 +28715,11 @@
    "status_date": "2021-2026",
    "physical_qubits_num": 20,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -28392,6 +28997,11 @@
    "status_date": "Aug 2026 (PRX 16, 031037; arXiv Nov 2025)",
    "physical_qubits_num": 51,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -28606,6 +29216,11 @@
    "status_date": "Oct 2021-2026",
    "physical_qubits_num": 13,
    "access": "lab / user facility",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -28843,6 +29458,11 @@
    "status_date": "2023-2026",
    "physical_qubits_num": 64,
    "access": "lab; DLR contract milestones due end-2026",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -29085,6 +29705,11 @@
    "status_date": "Sep 2026",
    "physical_qubits_num": 1225,
    "access": "on-premise, Danish-owned",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -29339,6 +29964,11 @@
    "status_date": "Oct 2023 (Gen-2)",
    "physical_qubits_num": 1180,
    "access": "on-prem and via Azure",
+   "units": {
+    "built": "≥2",
+    "in_service": "?",
+    "evidence": "https://qni.pages.dev/companies/atom-computing ; https://thequantuminsider.com/2025/07/17/microsoft-and-atom-computing-partner-on-level-2-quantum-system-for-nordic-users/ — Phoenix Gen-1 (100-qubit Sr-87, Berkeley, 2021); Gen-2 1,180-qubit Yb-171 system (Boulder, 2023)"
+   },
    "layers": {
     "1": [
      {
@@ -29626,6 +30256,11 @@
    "status_date": "Sep 2025",
    "physical_qubits_num": 6100,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -29855,6 +30490,11 @@
    "status_date": "Oct 2025",
    "physical_qubits_num": 100,
    "access": "commercial delivery (China Mobile subsidiary; export to Pakistan)",
+   "units": {
+    "built": "≥1",
+    "in_service": "≥1",
+    "evidence": "https://quantumcomputingreport.com/chinas-first-atomic-quantum-computer-hanyuan-1-achieves-commercialization-and-secures-export-order-to-pakistan/amp/ — Zhongke Kuyuan, Wuhan (own)"
+   },
    "layers": {
     "1": [
      {
@@ -30069,6 +30709,11 @@
    "status_date": "May 2026",
    "physical_qubits_num": 200,
    "access": "not disclosed",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -30284,6 +30929,11 @@
    "status_date": "10 Nov 2025",
    "physical_qubits_num": 448,
    "access": "lab (QuEra is the commercialisation path)",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -30597,6 +31247,11 @@
    "status_date": "Sep 2025 (Nature 646, 1075; arXiv Jun 2025)",
    "physical_qubits_num": 3000,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -30856,6 +31511,11 @@
    "status_date": "Apr 2024",
    "physical_qubits_num": null,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -31066,6 +31726,11 @@
    "status_date": "2027 (contract; announced 12 Aug 2026)",
    "physical_qubits_num": null,
    "access": "on-prem at the Illinois Quantum & Microelectronics Park (Chicago)",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -31276,6 +31941,11 @@
    "status_date": "Dec 2025 (announced Mar 2026)",
    "physical_qubits_num": 100,
    "access": "on-prem at the NQCC",
+   "units": {
+    "built": "≥1",
+    "in_service": "≥1",
+    "evidence": "https://www.nqcc.ac.uk/?p=19118 — NQCC Harwell (100-qubit, operational)"
+   },
    "layers": {
     "1": [
      {
@@ -31511,6 +32181,11 @@
    "status_date": "Dec 2025",
    "physical_qubits_num": 72,
    "access": "not disclosed",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -31716,6 +32391,11 @@
    "status_date": "2028",
    "physical_qubits_num": 500,
    "access": "n/a",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -31943,6 +32623,11 @@
    "status_date": "2023-2024",
    "physical_qubits_num": 100,
    "access": "GENCI/CEA, EuroHPC",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -32186,6 +32871,11 @@
    "status_date": "2029",
    "physical_qubits_num": null,
    "access": "n/a",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -32409,6 +33099,11 @@
    "status_date": "2024-2026",
    "physical_qubits_num": 140,
    "access": "on-prem sold",
+   "units": {
+    "built": "≥2",
+    "in_service": "≥2",
+    "evidence": "https://www.datacenterdynamics.com/en/news/pasqal-delivers-two-neutral-atom-quantum-computers-to-jsc-and-cea/ — Ruby at GENCI/CEA TGCC, Jade at JSC Jülich (inaugurated Nov 2025)"
+   },
    "layers": {
     "1": [
      {
@@ -32655,6 +33350,11 @@
    "status_date": "2027 (deliveries)",
    "physical_qubits_num": 256,
    "access": "n/a",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -32865,6 +33565,11 @@
    "status_date": "Nov 2025 (register milestone); Mar 2027 (project end)",
    "physical_qubits_num": 100,
    "access": "on-prem (DLR)",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -33084,6 +33789,11 @@
    "status_date": "Sep 2026 (hardware delivered); end-2027 (operation)",
    "physical_qubits_num": 1000,
    "access": "on-prem (LRZ, DLR Ulm)",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -33303,6 +34013,11 @@
    "status_date": "Jun 2026",
    "physical_qubits_num": 20,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -33555,6 +34270,11 @@
    "status_date": "Jul 2026",
    "physical_qubits_num": null,
    "access": "not disclosed",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -33770,6 +34490,11 @@
    "status_date": "Nov 2022",
    "physical_qubits_num": 256,
    "access": "cloud (Amazon Braket)",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -33984,6 +34709,11 @@
    "status_date": "2025",
    "physical_qubits_num": 260,
    "access": "cloud and on-premise",
+   "units": {
+    "built": "≥2",
+    "in_service": "≥2",
+    "evidence": "https://quantumcomputingreport.com/quera-deploys-first-on-premises-quantum-computer-at-aist-advancing-japans-hybrid-quantum-infrastructure/ ; https://www.nqcc.ac.uk/?p=19118 — QuEra Boston (own); AIST Tsukuba on-prem (May 2025)"
+   },
    "layers": {
     "1": [
      {
@@ -34277,6 +35007,11 @@
    "status_date": "2028 (Amazon Braket)",
    "physical_qubits_num": 10000,
    "access": "cloud",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -34512,6 +35247,11 @@
    "status_date": "28 May 2026",
    "physical_qubits_num": 50,
    "access": "lab-only (no access programme; consulting offered Jul 2026)",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -34730,6 +35470,11 @@
    "status_date": "Aug 2026",
    "physical_qubits_num": null,
    "access": "lab",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -34946,6 +35691,11 @@
    "status_date": "Nov 2024",
    "physical_qubits_num": 8,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -35155,6 +35905,11 @@
    "status_date": "2023 (PSNC, two systems); Montana State University order Jun 2024",
    "physical_qubits_num": null,
    "access": "on-prem sold (PSNC Poznań x2, 2023; Montana State University x2, ordered Jun 2024)",
+   "units": {
+    "built": "≥7",
+    "in_service": "≥4",
+    "evidence": "https://orcacomputing.com/orca-computing-unveils-the-pt-2-delivering-quantum-enhanced-generative-ai-capabilities/ — the PT-1 «has deployed seven on-premises systems» (ORCA); named: PSNC Poznań ×2 (https://orcacomputing.com/orca-computing-to-provide-poznan-supercomputing-and-networking-center-psnc-with-first-quantum-computers/, 2023), Montana State University ×2 (https://orcacomputing.com/orca-powers-up-photonic-quantum-systems-at-montana-state-university/)"
+   },
    "layers": {
     "1": [
      {
@@ -35369,6 +36124,11 @@
    "status_date": "2024-2026",
    "physical_qubits_num": null,
    "access": "on-prem sold (NQCC photonic testbed, delivered from Q1 2025)",
+   "units": {
+    "built": "≥1",
+    "in_service": "≥1",
+    "evidence": "https://orcacomputing.com/installation-marks-key-milestone-in-the-uks-121m-quantum-initiative-advancing-practical-quantum-research/ — the photonic testbed installed at the NQCC; https://orcacomputing.com/https-orcacomputing-com-knowledge-hub-news/ — the PT-2 shipped to the NQCC («40 qumodes», a 19-inch rack)"
+   },
    "layers": {
     "1": [
      {
@@ -35584,6 +36344,11 @@
    "status_date": "Feb 2025",
    "physical_qubits_num": null,
    "access": "lab-only, no cloud, no external users",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -35862,6 +36627,11 @@
    "status_date": "22 May 2025",
    "physical_qubits_num": 12,
    "access": "cloud (1,200+ users in 30 countries)",
+   "units": {
+    "built": "≥1",
+    "in_service": "≥1",
+    "evidence": "https://quantumcomputingreport.com/ovhcloud-expands-sovereign-qaas-platform-via-quandelas-belenos-photonic-system/ — Quandela cloud (Massy); possibly an OVHcloud-hosted unit (Jun 2026)"
+   },
    "layers": {
     "1": [
      {
@@ -36152,6 +36922,11 @@
    "status_date": "2026 (target)",
    "physical_qubits_num": 24,
    "access": "planned: Quandela cloud (Premium customers and partners) and OVHcloud",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -36372,6 +37147,11 @@
    "status_date": "Oct 2025 (launched on Joliot-Curie 14 Apr 2026)",
    "physical_qubits_num": 12,
    "access": "on-prem at CEA TGCC / EuroHPC",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "https://next.ink/brief-article/informatique-quantique-lucy-et-ses-12-qubits-sinstallent-au-tres-grand-centre-de-calcul/ ; https://qni.pages.dev/companies/quandela — CEA TGCC, Bruyères-le-Châtel (delivered Oct 2025, inaugurated Apr 2026)"
+   },
    "layers": {
     "1": [
      {
@@ -36634,6 +37414,11 @@
    "status_date": "14 Jul 2026",
    "physical_qubits_num": 8,
    "access": "on-prem sold; rack-based data-centre integration",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -36851,6 +37636,11 @@
    "status_date": "demonstrated 3 Dec 2020 (Science 370, 1460)",
    "physical_qubits_num": null,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -37060,6 +37850,11 @@
    "status_date": "demonstrated Oct 2021 (PRL 127, 180502; arXiv 29 Jun 2021)",
    "physical_qubits_num": null,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -37274,6 +38069,11 @@
    "status_date": "demonstrated 2023 (PRL; arXiv 24 Apr 2023)",
    "physical_qubits_num": null,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -37488,6 +38288,11 @@
    "status_date": "13 May 2026",
    "physical_qubits_num": null,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -37734,6 +38539,11 @@
    "status_date": "Jan 2025",
    "physical_qubits_num": 12,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -38012,6 +38822,11 @@
    "status_date": "Jun 2022",
    "physical_qubits_num": null,
    "access": "cloud (AWS Braket)",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -38239,6 +39054,11 @@
    "status_date": "Sep 2026",
    "physical_qubits_num": 8,
    "access": "n/a (not yet installed; access model not published)",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -38444,6 +39264,11 @@
    "status_date": "Jul 2026",
    "physical_qubits_num": 8,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -38725,6 +39550,11 @@
    "status_date": "Jul 2026 (ESA installation: ESA 15 Jul, Equal1 31 Jul); launched as Bell-1 16 Mar 2025, unveiled as RacQ 14 May 2026",
    "physical_qubits_num": 6,
    "access": "on-prem sold (ESA Centre for Earth Observation, Frascati)",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -38996,6 +39826,11 @@
    "status_date": "30 Apr 2026",
    "physical_qubits_num": 18,
    "access": "n/a",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -39205,6 +40040,11 @@
    "status_date": "Jul 2026",
    "physical_qubits_num": 100,
    "access": "planned AIST G-QuAT cloud by FY2027",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -39419,6 +40259,11 @@
    "status_date": "Jul 2026",
    "physical_qubits_num": 18,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -39660,6 +40505,11 @@
    "status_date": "Jun 2023 (Argonne Jan 2026)",
    "physical_qubits_num": 12,
    "access": "lab-only; research chips distributed to universities",
+   "units": {
+    "built": "n/a",
+    "in_service": "n/a",
+    "evidence": "the register's row: one machine — Research chips distributed to university/national labs (e.g. via LPS Qubit Collaboratory)"
+   },
    "layers": {
     "1": [
      {
@@ -39918,6 +40768,11 @@
    "status_date": "15 Sep 2025",
    "physical_qubits_num": null,
    "access": "on-prem (NQCC testbed programme)",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -40146,6 +41001,11 @@
    "status_date": "end-2026 target (cloud access for early users)",
    "physical_qubits_num": 15,
    "access": "n/a",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -40368,6 +41228,11 @@
    "status_date": "Dec 2025 (Nature 648, 569; SQC release 18 Dec 2025)",
    "physical_qubits_num": 11,
    "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -40592,6 +41457,11 @@
    "status_date": "Sep 2026",
    "physical_qubits_num": null,
    "access": "test environment via the Fujitsu Hybrid Quantum Computing Platform",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -40814,6 +41684,11 @@
    "status_date": "13 Feb 2026",
    "physical_qubits_num": null,
    "access": "cloud via Microsoft Azure",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -41054,6 +41929,11 @@
    "status_date": "2 Sep 2025 announcement; the cited page dates the ORNL QDK 2.0 procurement to 2024",
    "physical_qubits_num": 6,
    "access": "on-prem sold",
+   "units": {
+    "built": "3",
+    "in_service": "?",
+    "evidence": "https://quantumcomputingreport.com/quantum-brilliance-and-ornl-pioneer-quantum-classical-hybrid-computing-with-on-site-qpu-cluster/ — Pawsey Supercomputing Centre (QDK 1.0, 2022); Fraunhofer IAF Freiburg; ORNL Quoll cluster (3 QPUs, 6 qubits, 2025)"
+   },
    "layers": {
     "1": [
      {
@@ -41276,6 +42156,11 @@
    "status_date": "Apr 2026",
    "physical_qubits_num": 10,
    "access": "",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {
@@ -41486,6 +42371,11 @@
    "status_date": "2023–2025 (deliveries)",
    "physical_qubits_num": 4,
    "access": "on-prem sold (DLR, Fraunhofer; Bechtle certified partner)",
+   "units": {
+    "built": "≥1",
+    "in_service": "≥1",
+    "evidence": "https://saxonq.com/news/ — «Fraunhofer IWU puts Saxony's first mobile quantum computer into operation» (June 2025); the DLR unit of the register is not on SaxonQ's page"
+   },
    "layers": {
     "1": [
      {
@@ -41696,6 +42586,11 @@
    "status_date": "19 Feb 2025 (Nature parity paper; disputed in Nature Matters Arising, 24 Jun 2026)",
    "physical_qubits_num": null,
    "access": "lab-only",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -41923,6 +42818,11 @@
    "status_date": "2 Jun 2026",
    "physical_qubits_num": null,
    "access": "lab-only; qubits on Majorana 2 provided to DARPA for independent testing, with on-site access at Microsoft's Maryland research centre (22 Sep 2026)",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -42143,6 +43043,11 @@
    "status_date": "Sep 2020",
    "physical_qubits_num": 5000,
    "access": "cloud (Leap) + on-prem sold",
+   "units": {
+    "built": "≥2",
+    "in_service": "≥1",
+    "evidence": "https://docs.dwavequantum.com/en/latest/quantum_research/solver_properties_specific.html — Advantage_system6 (5612 qubits; first release 6.1 on 2022-05-12); the Jülich JUNIQ unit (the register)"
+   },
    "layers": {
     "1": [
      {
@@ -42377,6 +43282,11 @@
    "status_date": "20 May 2025",
    "physical_qubits_num": 4500,
    "access": "cloud (Leap) + on-prem sold",
+   "units": {
+    "built": "≥4",
+    "in_service": "≥4",
+    "evidence": "https://docs.dwavequantum.com/en/latest/quantum_research/solver_properties_specific.html — Advantage2_system1 (4566 qubits), Advantage2_system2 (4506), Advantage2_system4 (1202), Advantage2_research2 (the properties of system4)"
+   },
    "layers": {
     "1": [
      {
@@ -42642,6 +43552,11 @@
    "status_date": "2029",
    "physical_qubits_num": 20000,
    "access": "n/a",
+   "units": {
+    "built": "",
+    "in_service": "",
+    "evidence": ""
+   },
    "layers": {
     "1": [
      {
@@ -42856,6 +43771,11 @@
    "status_date": "28 May 2026",
    "physical_qubits_num": 10,
    "access": "national/EuroHPC allocation (EuroHPC JU and Spanish Supercomputing Network access calls)",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
    "layers": {
     "1": [
      {

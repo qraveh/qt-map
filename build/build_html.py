@@ -59,7 +59,8 @@ def _oslug(m):
         import orgs; return orgs.slug_for_machine(m) or ''
     except Exception: return ''
 def mach_slim():
-    """Per machine: id, name, org, family, path, status, status_date, q, layers {L:[[node,role,summary,ev_type,ev_url,ev_locator,verified],…]}
+    """Per machine: id, name, org, family, path, status, status_date, q, u [units built, units in service] (the register's count of the
+    type's physical instances, data/register/units.md; empty strings for a type without a count), layers {L:[[node,role,summary,ev_type,ev_url,ev_locator,verified],…]}
     (gap cells — node ids starting with ∅, not graph nodes — are left out of `layers`, listed by id in `gaps` {L:[id,…]}; the register's
     cell values `none` / `undisclosed` (schema of 26 Sep 2026) likewise in `na` {L:[value,…]}; both counted in `ev`),
     ev [verified,total], prof (the register's variant attributes: qubit type, gate mechanism, connectivity, control, control placement,
@@ -79,7 +80,7 @@ def mach_slim():
             if cells: layers[L]=cells
         ec=m.get('evidence_counts') or {}
         out.append({'id':m['id'],'name':m['name'],'org':m['org'],'oslug':_oslug(m),'family':m['family'],'path':m['map_path'],'status':m['status'],'status_date':m['status_date'],
-                    'q':m.get('physical_qubits_num'),'layers':layers,'gaps':gaps,'na':na,'ev':[ec.get('verified',0),ec.get('total',0)],
+                    'q':m.get('physical_qubits_num'),'u':[(m.get('units') or {}).get('built',''),(m.get('units') or {}).get('in_service','')],'layers':layers,'gaps':gaps,'na':na,'ev':[ec.get('verified',0),ec.get('total',0)],
                     'prof':[str((m.get('profile') or {}).get(k) or '') for k in ('qubit_type','gate_mechanism','connectivity','control','control_placement','readout')],
                     'refs':[[r['kind'],r['url'],r['title']] for r in (m.get('refs') or [])[:3]]})   # up to three attribution-verified links per machine
     by_node={k:{'primary':list(v.get('primary',[])),'alternate':list(v.get('alternate',[]))} for k,v in M['by_node'].items() if not str(k).startswith('∅')}
