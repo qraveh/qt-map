@@ -5925,5 +5925,38 @@
    "hint": "Equal1 — RacQ installed at ESA's Centre for Earth Observation, Frascati, for integration with ESA's high-performance computing; no qubit count or metrics given (31 Jul 2026)",
    "verified": true
   }
+ ],
+ "P46": [
+  {
+   "org": "ORCA Computing",
+   "title": "ORCA Computing launches PT-3, the first quantum computer built for commercial quantum advantage",
+   "date": "2026-10-15",
+   "kind": "web",
+   "site": "orcacomputing.com",
+   "publisher": "ORCA Computing",
+   "url": "https://orcacomputing.com/orca-computing-launches-pt-3-the-first-quantum-computer-built-for-commercial-quantum-advantage/",
+   "hint": "PT-3 launch: 64 photons in 128 qumodes; the first system at Digital Realty's Innovation Lab, London; 6 kW across two racks",
+   "verified": true
+  }
+ ],
+ "I59": [
+  {
+   "authors": [
+    "Alexander Erhard",
+    "Georg Jacob",
+    "Max Hettrich",
+    "Philip C. Holz",
+    "Juris Ulmanis",
+    "Thomas Feldker"
+   ],
+   "n_authors": 6,
+   "title": "LYNX - A trapped-ion quantum information processor",
+   "date": "2026-10-23",
+   "arxiv": "2610.32518",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2610.32518",
+   "hint": "AQT LYNX preprint: up to 31 Ca-40 ions with all-to-all connectivity; average 2Q error 2.84(8)e-3 in a 24-qubit register (interleaved RB)",
+   "verified": true
+  }
  ]
 }

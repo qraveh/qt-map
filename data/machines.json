@@ -228,7 +228,7 @@
     "best_logical": "none",
     "decoder": "none",
     "realtime": "none",
-    "roadmap": "domestic fab capability is the programme's point",
+    "roadmap": "domestic fab capability is the programme's point; to serve later as a test platform for industrial users, with chip-stacking work to cut crosstalk (29 Jan 2026)",
     "role": "",
     "gate_evidence": "none",
     "decoder_mode": "none",
@@ -3139,7 +3139,7 @@
    "status": "DEPLOYED",
    "status_date": "Oct 2025",
    "physical_qubits_num": 156,
-   "access": "members of the IBM-Euskadi Quantum Computational Center; since Jul 2026 also open to industry and public-sector entities (requests to access@basquequantum.eus; access agreement with Ikerbasque, which manages the infrastructure)",
+   "access": "members of the IBM-Euskadi Quantum Computational Center; since Jul 2026 also open to industry and public-sector entities (requests to access@basquequantum.eus; access agreement with Ikerbasque, which manages the infrastructure); first company projects approved 14 Oct 2026 (8 of 11 applications), call open on a rolling basis",
    "units": {
     "built": "",
     "in_service": "",
@@ -8520,7 +8520,7 @@
     "control": "room-temperature RF",
     "control_placement": "room-temp",
     "readout": "dispersive",
-    "err_2q_median": "not published for Flamingo; best l-coupler CNOT 3.5e-2 at 235 ns on test devices (Nov 2024); IBM reported 99.3% for an l-coupler two-qubit operation in Aug 2026, hardware not named",
+    "err_2q_median": "not published for Flamingo; best l-coupler CNOT 3.5e-2 at 235 ns on test devices (Nov 2024); IBM reported 99.3% for an l-coupler two-qubit operation in Aug 2026, hardware not named; four L-couplers between two 120-qubit Nighthawk R1 modules: relay-based state transfer 99.00% mean, distant CZ 94.75% mean, six-qubit GHZ across modules (arXiv:2610.29986, Oct 2026)",
     "err_2q_best": "3.5e-2 (l-coupler CNOT, 235 ns, test devices)",
     "readout_error": "",
     "t1": "",
@@ -10352,7 +10352,8 @@
     }
    ],
    "codes": [
-    "rotated_surface"
+    "rotated_surface",
+    "triangular_color"
    ],
    "evidence_counts": {
     "verified": 7,
@@ -10380,7 +10381,7 @@
     "t2": "2.7e-5 median effective as delivered; 1.6e-4 with crosstalk suppression",
     "t_2q": "",
     "t_meas": "",
-    "best_logical": "none",
+    "best_logical": "d=3 and d=5 surface codes below 1% logical error per round and a lattice-surgery logical Bell state above 93% on ibm_phoenix (University of Sydney + IBM, arXiv:2610.32347, Oct 2026); surface-code memory from distance 3 to 6: Z memory 0.53% to 0.24% per round, X memory 0.52% to 0.22% (arXiv:2610.23840, Oct 2026); colour-code STAR-type injection and magic-state cultivation, post-selected (PNNL + University of Washington, arXiv:2611.00404, Nov 2026) - all preprints",
     "decoder": "none",
     "realtime": "none",
     "roadmap": "2027: 10,000 gates and at least 1,000 programmable qubits; 2028: 15,000 gates (IBM publishes no 2028 qubit count; the ~1,080 figure is not in the cited sources)",
@@ -12340,7 +12341,7 @@
    "status": "DEPLOYED",
    "status_date": "Sep 2025 (first 24-qubit Star delivered as VLQ at IT4I; on IQM Resonance as IQM Star 24 by Sep 2026)",
    "physical_qubits_num": 24,
-   "access": "cloud (IQM Resonance)",
+   "access": "cloud (IQM Resonance, in beta; full deployment 'in the coming months', read 6 Nov 2026)",
    "units": {
     "built": "≥1",
     "in_service": "≥1",
@@ -12765,6 +12766,222 @@
     "gate_evidence_derived": true,
     "decoder_mode_derived": true,
     "benchmarked": false
+   }
+  },
+  {
+   "id": "iqsc-fluxonium-22",
+   "name": "22-qubit fluxonium processor (Quantum Science Center, Shenzhen)",
+   "org": "Quantum Science Center of Guangdong-Hong Kong-Macao Greater Bay Area (Shenzhen)",
+   "org_id": "ab-cn-qsc-gba",
+   "country": "China",
+   "family": "SC",
+   "map_path": "sc",
+   "status": "DEMONSTRATED",
+   "status_date": "Apr 2026 (preprint arXiv:2604.13363, 15 Apr 2026)",
+   "physical_qubits_num": 22,
+   "access": "none (lab); data from the corresponding author on request",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one laboratory device (arXiv:2604.13363, Apr 2026)"
+   },
+   "layers": {
+    "1": [
+     {
+      "node": "fluxonium",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "22 fluxonium qubits (Q1–Q22) with 21 transmon couplers",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2604.13363",
+       "locator": "Device layout; Table 3",
+       "verified": true
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_bare",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "bare fluxonium qubit, no encoding layer",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://arxiv.org/abs/2604.13363",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "g_tc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "CZ gates through flux-tunable transmon couplers with asymmetric junctions; best 99.9 % at 32 ns",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2604.13363",
+       "locator": "abstract; the CZ calibration section",
+       "verified": true
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "cx_nn",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "one-dimensional chain; each coupler the only interaction channel between its two neighbouring qubits",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2604.13363",
+       "locator": "device description",
+       "verified": true
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_rt",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "home-made single-port AWGs for baseband XY and flux; microwaves by IQ upconversion; placement not stated",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2604.13363",
+       "locator": "experimental setup",
+       "verified": false
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_disp",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "readout resonators at 5.0–5.6 GHz; QND pre-selection and confusion-matrix correction; the scheme is not named",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2604.13363",
+       "locator": "Table 3; readout correction",
+       "verified": false
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no QEC code; a GHZ-state and gate-benchmarking paper",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://arxiv.org/abs/2604.13363",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://arxiv.org/abs/2604.13363",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "single chip",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://arxiv.org/abs/2604.13363",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_sc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "180 nm tantalum film on 2-inch c-cut sapphire, Al/AlOx/Al Manhattan junctions, Al airbridges; Westlake and QizhenTek facilities acknowledged",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2604.13363",
+       "locator": "fabrication section; acknowledgments",
+       "verified": true
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 4,
+    "total": 10
+   },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2604.13363",
+     "title": "Scalable Fluxonium Quantum Processors via Tunable-Coupler Architecture",
+     "kind": "paper"
+    }
+   ],
+   "profile": {
+    "qubit_type": "fluxonium (180 nm tantalum on c-cut sapphire; Al/AlOx/Al Manhattan junctions; Al airbridges)",
+    "gate_mechanism": "CZ through a flux-tunable transmon coupler with asymmetric junctions (tuning band above 8 GHz); parallel single-qubit gates by microwave drive",
+    "connectivity": "linear chain, nearest-neighbour only (each coupler the only interaction channel between its two qubits)",
+    "degree": "2",
+    "control": "home-made single-port AWGs for the baseband XY and flux signals, microwaves by IQ upconversion; fridge base about 15 mK",
+    "control_placement": "room-temp (inferred; the paper names no in-fridge electronics)",
+    "readout": "readout resonators at 5.0–5.6 GHz with QND pre-selection and confusion-matrix correction; the readout scheme and fidelity are not stated",
+    "err_2q_median": "not reported as a median: average CZ fidelity 95.65 % across the 22-qubit chain (maximum 99.26 %); the best pair 99.9 % at 32 ns (99.78 % over repeated runs); parallel CZ on the 4-qubit chip 98.27 %, 99.22 %, 99.26 % (RB)",
+    "err_2q_best": "1e-3 (99.9 % CZ on one pair at 32 ns; 99.78 % averaged over repeated runs)",
+    "readout_error": "",
+    "t1": "median about 104 µs over the 22 qubits (9–203 µs; the text says \"averaging above 100 µs\")",
+    "t2": "T2echo median about 23.5 µs; T2* (Ramsey) about 17 µs",
+    "t_2q": "32 ns (the best CZ); parallel CZ: a 60 ns drive within an 80 ns flux pulse (the 4-qubit chip)",
+    "t_meas": "",
+    "best_logical": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "not published",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "none",
+    "err_2q_median_num": 0.0435,
+    "flags": [
+     "lab-device",
+     "mean-not-median",
+     "preprint-only"
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
    }
   },
   {
@@ -14383,7 +14600,7 @@
     "best_logical": "target 5,000 logical qubits at 1e-9 logical error, 3 MHz clock",
     "decoder": "",
     "realtime": "",
-    "roadmap": "after TITAN (2028); then ATLAS 2034",
+    "roadmap": "after TITAN (2028); then ATLAS 2034; roadmap page (read 6 Nov 2026): ATHENA 2031-2034, ATLAS 2035 onwards",
     "role": "",
     "gate_evidence": "none",
     "decoder_mode": "none",
@@ -14610,7 +14827,7 @@
     "best_logical": "target 50,000 logical qubits at 1e-12 logical error, 10 MHz clock",
     "decoder": "",
     "realtime": "",
-    "roadmap": "final named OQC roadmap system",
+    "roadmap": "final named OQC roadmap system; roadmap page (read 6 Nov 2026) dates ATLAS «2035 onwards» (was 2034)",
     "role": "",
     "gate_evidence": "none",
     "decoder_mode": "none",
@@ -14898,7 +15115,7 @@
     "best_logical": "error detection at the single-qubit level (post-selection) - no code, no distance scaling",
     "decoder": "none published",
     "realtime": "none",
-    "roadmap": "GENESIS 2026 16 logical at 1e-3 (15 mm); TITAN 2028 200 logical at 1e-6, 1 MHz, 100 mm (the \"2,000 sites\" figure is not on the roadmap page); ATHENA 2031 5,000 logical at 1e-9, 3 MHz, 200 mm; ATLAS 2034 50,000 logical at 1e-12, 10 MHz, 300 mm",
+    "roadmap": "GENESIS 2026 16 logical at 1e-3 (15 mm); TITAN 2028 200 logical at 1e-6, 1 MHz, 100 mm (the \"2,000 sites\" figure is not on the roadmap page); ATHENA 2031 5,000 logical at 1e-9, 3 MHz, 200 mm; ATLAS 2034 50,000 logical at 1e-12, 10 MHz, 300 mm; roadmap page re-dated (read 6 Nov 2026, image path 2026/10): GENESIS 2026-2028, TITAN 2028-2030 with 2,000 lattice sites now printed, ATHENA 2031-2034, ATLAS 2035 onwards",
     "role": "",
     "gate_evidence": "none",
     "decoder_mode": "none",
@@ -15126,7 +15343,7 @@
     "best_logical": "target 200 logical qubits at 1e-6 logical error, 1 MHz clock",
     "decoder": "",
     "realtime": "",
-    "roadmap": "after GENESIS (16 logical, 2026); then ATHENA 2031, ATLAS 2034",
+    "roadmap": "after GENESIS (16 logical, 2026); then ATHENA 2031, ATLAS 2034; roadmap page (read 6 Nov 2026): TITAN 2028-2030, ATHENA 2031-2034, ATLAS 2035 onwards",
     "role": "",
     "gate_evidence": "none",
     "decoder_mode": "none",
@@ -17182,6 +17399,436 @@
     "flags": [
      "no-published-error-rates",
      "source-not-confirmed"
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
+   }
+  },
+  {
+   "id": "quantware-contralto-d21",
+   "name": "QuantWare Contralto-D21",
+   "org": "QuantWare",
+   "org_id": "QuantWare",
+   "country": "Netherlands",
+   "family": "SC",
+   "map_path": "sc",
+   "status": "shipping (D-line page: «Shipping now», read 6 Nov 2026)",
+   "status_date": "2026",
+   "physical_qubits_num": 21,
+   "access": "sold as components",
+   "units": {
+    "built": "≥1",
+    "in_service": "?",
+    "evidence": "«Shipping now» on the D-line page (read 6 Nov 2026); no customer named"
+   },
+   "layers": {
+    "1": [
+     {
+      "node": "transmon",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "«tunable transmon qubits with fixed couplers in a streamlined architecture» (the D-line page)",
+      "evidence": {
+       "type": "vendor-architecture-page",
+       "url": "https://quantware.com/product/processors/d-line",
+       "locator": "FAQ",
+       "verified": true
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_bare",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "bare transmon, no encoding layer",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://quantware.com/product/processors/d-line",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "g_tc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "fixed couplers per the D-line page; the cell follows the register's quantware-tenor-d64 row",
+      "evidence": {
+       "type": "vendor-architecture-page",
+       "url": "https://quantware.com/product/processors/d-line",
+       "locator": "FAQ",
+       "verified": false
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "cx_nn",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "«Planar» architecture per the product card",
+      "evidence": {
+       "type": "vendor-architecture-page",
+       "url": "https://quantware.com/product/processors/d-line",
+       "locator": "product card",
+       "verified": true
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_rt",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "room-temperature RF presumed (sold as a QPU component)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://quantware.com/product/processors/d-line",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_disp",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "dispersive readout presumed",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://quantware.com/product/processors/d-line",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no code; the customers run the codes",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://quantware.com/product/processors/d-line",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://quantware.com/product/processors/d-line",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "single chip",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://quantware.com/product/processors/d-line",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_sc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "QuantWare's own foundry (the page: Foundry Services)",
+      "evidence": {
+       "type": "vendor-architecture-page",
+       "url": "https://quantware.com/product/processors/d-line",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 2,
+    "total": 10
+   },
+   "refs": [
+    {
+     "url": "https://quantware.com/product/processors/d-line",
+     "title": "D-line QPUs | Build bigger, scale faster",
+     "kind": "product"
+    }
+   ],
+   "profile": {
+    "qubit_type": "tunable transmon with fixed couplers (D-line)",
+    "gate_mechanism": "fixed couplers (the D-line page: «tunable transmon qubits with fixed couplers in a streamlined architecture»)",
+    "connectivity": "planar (the D-line page)",
+    "degree": "",
+    "control": "room-temperature RF",
+    "control_placement": "room-temp",
+    "readout": "dispersive",
+    "err_2q_median": "no fidelity metrics published (the D-line page; the product sheet not opened)",
+    "err_2q_best": "",
+    "readout_error": "",
+    "t1": "",
+    "t2": "",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "none - QuantWare's customers run the codes",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "D-line: Tenor-D64 (64 q) shipping 2026; Baritone-D450 (450 q) 2027; Bass-D18K (18,000 q) 2028",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
+    "err_2q_median_num": null,
+    "flags": [
+     "datasheet-not-opened",
+     "no-published-error-rates"
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
+   }
+  },
+  {
+   "id": "quantware-soprano-d5",
+   "name": "QuantWare Soprano-D5",
+   "org": "QuantWare",
+   "org_id": "QuantWare",
+   "country": "Netherlands",
+   "family": "SC",
+   "map_path": "sc",
+   "status": "shipping (D-line page: «Shipping now», read 6 Nov 2026)",
+   "status_date": "2026",
+   "physical_qubits_num": 5,
+   "access": "sold as components",
+   "units": {
+    "built": "≥1",
+    "in_service": "?",
+    "evidence": "«Shipping now» on the D-line page (read 6 Nov 2026); no customer named"
+   },
+   "layers": {
+    "1": [
+     {
+      "node": "transmon",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "«tunable transmon qubits with fixed couplers in a streamlined architecture» (the D-line page)",
+      "evidence": {
+       "type": "vendor-architecture-page",
+       "url": "https://quantware.com/product/processors/d-line",
+       "locator": "FAQ",
+       "verified": true
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_bare",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "bare transmon, no encoding layer",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://quantware.com/product/processors/d-line",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "g_tc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "fixed couplers per the D-line page; the cell follows the register's quantware-tenor-d64 row",
+      "evidence": {
+       "type": "vendor-architecture-page",
+       "url": "https://quantware.com/product/processors/d-line",
+       "locator": "FAQ",
+       "verified": false
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "cx_nn",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "«Planar» architecture per the product card",
+      "evidence": {
+       "type": "vendor-architecture-page",
+       "url": "https://quantware.com/product/processors/d-line",
+       "locator": "product card",
+       "verified": true
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_rt",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "room-temperature RF presumed (sold as a QPU component)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://quantware.com/product/processors/d-line",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_disp",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "dispersive readout presumed",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://quantware.com/product/processors/d-line",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no code; the customers run the codes",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://quantware.com/product/processors/d-line",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://quantware.com/product/processors/d-line",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "single chip",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://quantware.com/product/processors/d-line",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_sc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "QuantWare's own foundry (the page: Foundry Services)",
+      "evidence": {
+       "type": "vendor-architecture-page",
+       "url": "https://quantware.com/product/processors/d-line",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 2,
+    "total": 10
+   },
+   "refs": [
+    {
+     "url": "https://quantware.com/product/processors/d-line",
+     "title": "D-line QPUs | Build bigger, scale faster",
+     "kind": "product"
+    }
+   ],
+   "profile": {
+    "qubit_type": "tunable transmon with fixed couplers (D-line)",
+    "gate_mechanism": "fixed couplers (the D-line page: «tunable transmon qubits with fixed couplers in a streamlined architecture»)",
+    "connectivity": "planar (the D-line page)",
+    "degree": "",
+    "control": "room-temperature RF",
+    "control_placement": "room-temp",
+    "readout": "dispersive",
+    "err_2q_median": "no fidelity metrics published (the D-line page; the product sheet not opened)",
+    "err_2q_best": "",
+    "readout_error": "",
+    "t1": "",
+    "t2": "",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "none - QuantWare's customers run the codes",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "D-line: Tenor-D64 (64 q) shipping 2026; Baritone-D450 (450 q) 2027; Bass-D18K (18,000 q) 2028",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
+    "err_2q_median_num": null,
+    "flags": [
+     "datasheet-not-opened",
+     "no-published-error-rates"
     ],
     "qubits_accessible": null,
     "gate_evidence_derived": true,
@@ -19965,7 +20612,7 @@
     "best_logical": "none demonstrated (d=3 surface-code validation stated for 2026)",
     "decoder": "\"cascaded quantum Hamming code decoding\" claimed",
     "realtime": "none",
-    "roadmap": "103-qubit chip taped out, packaged and validated (mid-2026), delivery not stated; d=3 surface code in 2026",
+    "roadmap": "103-qubit chip taped out, packaged and validated (mid-2026), delivery not stated; d=3 surface code in 2026; the 103-qubit chip named 'Shaowei' (少微) and shown publicly at the Hong Kong autumn electronics fair (18 Oct 2026), delivery still not stated",
     "role": "",
     "gate_evidence": "none",
     "decoder_mode": "none",
@@ -22679,7 +23326,7 @@
    "map_path": "ion_chain",
    "status": "DEMONSTRATED (QV 32,768 = 2^15 measured on a 15-qubit register, 5 May 2026; first units to select strategic partners Q4 2026)",
    "status_date": "5 May 2026",
-   "physical_qubits_num": 15,
+   "physical_qubits_num": 31,
    "access": "select strategic partners from Q4 2026",
    "units": {
     "built": "1",
@@ -22864,7 +23511,7 @@
     "control": "19-inch rack-mounted; free-space laser addressing (AQT lineage)",
     "control_placement": "room-temp + free-space optics",
     "readout": "fluorescence (AQT lineage)",
-    "err_2q_median": "not published (QV mean heavy-output probability 0.678, 2-sigma lower bound 0.670)",
+    "err_2q_median": "2.7e-3 median over all 276 pairs of a 24-qubit register by interleaved RB (mean 2.84(8)e-3); 1.0(1)e-2 in the 31-qubit register (10 pairs) - preprint arXiv:2610.32518; QV mean heavy-output probability 0.678, 2-sigma lower bound 0.670",
     "err_2q_best": "",
     "readout_error": "",
     "t1": "",
@@ -22876,16 +23523,16 @@
     "realtime": "none",
     "roadmap": "LYNX series; AQT Germany is a partner in NFQC-1k",
     "role": "",
-    "gate_evidence": "none",
+    "gate_evidence": "figure",
     "decoder_mode": "none",
-    "err_2q_median_num": null,
+    "err_2q_median_num": 0.0027,
     "flags": [
      "no-published-error-rates"
     ],
     "qubits_accessible": null,
     "gate_evidence_derived": true,
     "decoder_mode_derived": true,
-    "benchmarked": false
+    "benchmarked": true
    }
   },
   {
@@ -25975,6 +26622,7 @@
    "codes": [
     "4d_surface",
     "carbon",
+    "generalized_bicycle",
     "generalized_shor",
     "iceberg",
     "lr_enhanced_surface",
@@ -26041,7 +26689,7 @@
     "t2": "",
     "t_2q": "",
     "t_meas": "",
-    "best_logical": "the widest QEC portfolio on any platform: [[7,1,3]] logical teleportation head-to-head (transversal 0.975(2) vs lattice surgery 0.851(9)); [[15,1,3]] QRM to [[7,1,3]] code switching with magic-state infidelity <=5.1(2.7)e-4 at 82.58% acceptance; [[12,2,4]] and [[16,4,2,4]] tesseract with Microsoft showing 11x-800x logical-over-physical improvement",
+    "best_logical": "the widest QEC portfolio on any platform: [[7,1,3]] logical teleportation head-to-head (transversal 0.975(2) vs lattice surgery 0.851(9)); [[15,1,3]] QRM to [[7,1,3]] code switching with magic-state infidelity <=5.1(2.7)e-4 at 82.58% acceptance; [[12,2,4]] and [[16,4,2,4]] tesseract with Microsoft showing 11x-800x logical-over-physical improvement; non-Abelian S3 quantum double on 54 qubits with logical qutrits in the anyon fusion space, an entangling braiding gate and a topologically prepared magic state, per-qudit ground-state fidelity 0.970(5)-0.988(3) on an 18-site lattice (Lo et al., arXiv:2601.20956; Nature 655, 591, 2026); QLDPC surgery on a [[10,2,3]] generalised bicycle code on H2-2, logical-operator measurement error 0.72%, below 0.26% after three rounds of decoding (UCL + NQCC, arXiv:2610.39067, Oct 2026)",
     "decoder": "matching; real-time lookup table",
     "realtime": "in-loop for Steane",
     "roadmap": "superseded by Helios",
@@ -26069,7 +26717,7 @@
    "status": "DEPLOYED",
    "status_date": "Nov 2025 (peer-reviewed Jun 2026)",
    "physical_qubits_num": 98,
-   "access": "cloud + on-premise + NVIDIA GB200 integration",
+   "access": "cloud + on-premise + NVIDIA GB200 integration; Oracle OCI (on-prem Helios integrated into OCI's cloud services; joint beta, Q3 2026)",
    "units": {
     "built": "≥1",
     "in_service": "≥1",
@@ -26430,10 +27078,10 @@
     "t2": "",
     "t_2q": "7.0e-5",
     "t_meas": "",
-    "best_logical": "iceberg [[2m,2m-2,2]] concatenated to effective d=4: 94 logical qubits entangled in a GHZ state, 50 error-detected logical qubits at break-even and 48 error-corrected logical qubits (2:1) out of 98 physical; the 94.9% GHZ figure is not in the cited sources; logical gates cycle-benchmarked at ~1e-4; logical fidelity 99.9995% (five errors per million operations) on Helios, 21 Oct 2026 — the owner's claim of a 100× reduction vs the best published result in any other modality",
+    "best_logical": "iceberg [[2m,2m-2,2]] concatenated to effective d=4: 94 logical qubits entangled in a GHZ state, 50 error-detected logical qubits at break-even and 48 error-corrected logical qubits (2:1) out of 98 physical; the 94.9% GHZ figure is not in the cited sources; logical gates cycle-benchmarked at ~1e-4; logical fidelity 99.9995% (five errors per million operations) on Helios, 21 Oct 2026 — the owner's claim of a 100× reduction vs the best published result in any other modality; the release of 19 Oct 2026 ties the 99.9995% to «a well-known “color code”» (the paper not located)",
     "decoder": "Frontier (offline); GPU-accelerated BP-OSD over NVQLink at median 67 us round trip, 5.4x LER gain",
     "realtime": "offline for the record; GPU real-time demonstrated",
-    "roadmap": "Sol, then Apollo",
+    "roadmap": "Sol, then Apollo; a Helios unit assembling in Singapore for spring-2027 commissioning (release of 19 Oct 2026)",
     "role": "",
     "gate_evidence": "vendor-figure",
     "decoder_mode": "offline",
@@ -26696,7 +27344,7 @@
    "country": "USA/UK",
    "family": "ION",
    "map_path": "ion_qccd",
-   "status": "PLANNED",
+   "status": "PLANNED (2H 2027 per the release of 19 Oct 2026)",
    "status_date": "2027",
    "physical_qubits_num": null,
    "access": "n/a",
@@ -26903,7 +27551,7 @@
     "best_logical": "none (targets)",
     "decoder": "Frontier generalised",
     "realtime": "planned",
-    "roadmap": "Apollo",
+    "roadmap": "Apollo; Sol «on track for 2H 2027», integration and assembly targeted Q1 2027, validation toward 100 logical qubits at a target logical error rate of 1e-5 (Q3 release, 5 Nov 2026)",
     "role": "",
     "gate_evidence": "figure",
     "decoder_mode": "planned",
@@ -27358,7 +28006,7 @@
     "best_logical": "none",
     "decoder": "none",
     "realtime": "none",
-    "roadmap": "Perspective: 1,000-qubit multi-core system; then the Landscape series (thousands of logical qubits), undated",
+    "roadmap": "Perspective: 1,000-qubit multi-core system; then the Landscape series (thousands of logical qubits), undated; the owner's roadmap page dates Perspective (1,000 physical, 100 logical, 20 cores) to 2027 and the Landscape Series (Landscape I 12,000 / Landscape II 40,000 physical) to 2029; Mosaic >1,000,000 undated (page undated, fetched 6 Nov 2026)",
     "role": "",
     "gate_evidence": "none",
     "decoder_mode": "none",
@@ -31940,7 +32588,7 @@
    "status": "DEPLOYED",
    "status_date": "Dec 2025 (announced Mar 2026)",
    "physical_qubits_num": 100,
-   "access": "on-prem at the NQCC",
+   "access": "on-prem at the NQCC; private-cloud access (Eaton, Aug 2026)",
    "units": {
     "built": "≥1",
     "in_service": "≥1",
@@ -32622,7 +33270,7 @@
    "status": "DEPLOYED",
    "status_date": "2023-2024",
    "physical_qubits_num": 100,
-   "access": "GENCI/CEA, EuroHPC",
+   "access": "GENCI/CEA, EuroHPC; cloud via Azure Quantum (targets FRESNEL and FRESNEL_CAN1, 100 qubits)",
    "units": {
     "built": "1",
     "in_service": "1",
@@ -33072,7 +33720,7 @@
     "best_logical": "none published for Lyra (Pasqal roadmap: 100 high-fidelity logical qubits by 2029, 200 in 2030, not tied to Lyra by name)",
     "decoder": "",
     "realtime": "",
-    "roadmap": "Pasqal roadmap: 100 high-fidelity logical qubits by 2029, 200 logical qubits in 2030 (not tied to Lyra by name)",
+    "roadmap": "Pasqal roadmap: 100 high-fidelity logical qubits by 2029, 200 logical qubits in 2030 (not tied to Lyra by name); Pasqal roadmap page (as of Nov 2026): 200+ logical qubits by 2029",
     "role": "",
     "gate_evidence": "none",
     "decoder_mode": "none",
@@ -35459,6 +36107,231 @@
    }
   },
   {
+   "id": "ustc-2024-atom-array",
+   "name": "2,024-atom defect-free tweezer array (AI-assembled)",
+   "org": "USTC (Pan Jianwei group)",
+   "org_id": "University of Science and Technology of China",
+   "country": "China",
+   "family": "ATOM",
+   "map_path": "atom_rb",
+   "status": "DEMONSTRATED",
+   "status_date": "Aug 2025 (Phys. Rev. Lett. 135, 060602, published 8 Aug 2025; arXiv:2412.14647, Dec 2024)",
+   "physical_qubits_num": 2024,
+   "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one laboratory apparatus (PRL 135, 060602)"
+   },
+   "layers": {
+    "1": [
+     {
+      "node": "alkali",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "neutral atoms in optical tweezers; «2,024 rubidium atoms» per the press, the abstract names no species",
+      "evidence": {
+       "type": "press",
+       "url": "https://thequantuminsider.com/2025/08/14/chinas-pan-jianwei-team-uses-ai-to-build-record-breaking-atom-array/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "undisclosed",
+      "role": "primary",
+      "gap": false,
+      "state": "undisclosed",
+      "summary": "the qubit encoding is not in the sources read (an assembly paper)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://journals.aps.org/prl/abstract/10.1103/2ym8-vs82",
+       "locator": "abstract",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no entangling gate in the abstract; the press quotes 2Q 99.5 % — unverified",
+      "evidence": {
+       "type": "press",
+       "url": "https://thequantuminsider.com/2025/08/14/chinas-pan-jianwei-team-uses-ai-to-build-record-breaking-atom-array/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "cx_aod",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "AI-enabled constant-time rearrangement, 60 ms, by holograms on a spatial light modulator",
+      "evidence": {
+       "type": "paper",
+       "url": "https://journals.aps.org/prl/abstract/10.1103/2ym8-vs82",
+       "locator": "abstract",
+       "verified": true
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_laser",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "an AI model computes the holograms; laser/SLM control",
+      "evidence": {
+       "type": "paper",
+       "url": "https://journals.aps.org/prl/abstract/10.1103/2ym8-vs82",
+       "locator": "abstract",
+       "verified": true
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_img",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "fluorescence imaging of the assembled array",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://journals.aps.org/prl/abstract/10.1103/2ym8-vs82",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no QEC code",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://journals.aps.org/prl/abstract/10.1103/2ym8-vs82",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://journals.aps.org/prl/abstract/10.1103/2ym8-vs82",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "single apparatus",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://journals.aps.org/prl/abstract/10.1103/2ym8-vs82",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_optics",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "room-temperature optics and vacuum apparatus",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://journals.aps.org/prl/abstract/10.1103/2ym8-vs82",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 2,
+    "total": 10
+   },
+   "refs": [
+    {
+     "url": "https://journals.aps.org/prl/abstract/10.1103/2ym8-vs82",
+     "title": "AI-Enabled Parallel Assembly of Thousands of Defect-Free Neutral Atom Arrays",
+     "kind": "paper"
+    },
+    {
+     "url": "https://arxiv.org/abs/2412.14647",
+     "title": "AI-Enabled Rapid Assembly of Thousands of Defect-Free Neutral Atom Arrays with Constant-time-overhead",
+     "kind": "paper"
+    },
+    {
+     "url": "https://thequantuminsider.com/2025/08/14/chinas-pan-jianwei-team-uses-ai-to-build-record-breaking-atom-array/",
+     "title": "The Quantum Insider — Pan Jianwei team uses AI to build a record-breaking atom array (14 Aug 2025)",
+     "kind": "press"
+    }
+   ],
+   "profile": {
+    "qubit_type": "neutral atoms in optical tweezers (rubidium per the press; the species is not in the abstract)",
+    "gate_mechanism": "none shown in the sources verified: an array-assembly result (AI-computed holograms, constant-time rearrangement); the press quotes 1Q 99.97 % and 2Q 99.5 % — not verified against the paper (full text paywalled)",
+    "connectivity": "tweezer array rearranged by AI-generated holograms on a spatial light modulator; 60 ms constant-time overhead independent of the atom count",
+    "degree": "",
+    "control": "an AI model computes the rearrangement holograms; SLM and laser control",
+    "control_placement": "optics (room temperature)",
+    "readout": "fluorescence imaging (the assembled array verified by imaging)",
+    "err_2q_median": "n/a — no entangling-gate figure in the sources verified; the press's 99.5 % two-qubit figure is unverified",
+    "err_2q_best": "",
+    "readout_error": "",
+    "t1": "",
+    "t2": "",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "academic",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
+    "err_2q_median_num": null,
+    "flags": [
+     "no-entangling-gate",
+     "press-figures-unverified"
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
+   }
+  },
+  {
    "id": "yaqumo-yb",
    "name": "neutral-ytterbium QPU",
    "org": "Yaqumo (+ Fujitsu)",
@@ -35894,6 +36767,226 @@
    }
   },
   {
+   "id": "optqc-moquren",
+   "name": "MoQuren",
+   "org": "OptQC",
+   "org_id": "OptQC",
+   "country": "Japan",
+   "family": "PHOTON",
+   "map_path": "ph_cv",
+   "status": "DEPLOYED (OptQC's first machine, installed and operating at AIST G-QuAT, Tsukuba, as part of ABCI-Q)",
+   "status_date": "21 Jul 2026",
+   "physical_qubits_num": null,
+   "access": "on-premises at AIST G-QuAT, Tsukuba (ABCI-Q, «System O»); computing services for companies and research institutions in preparation, cloud access planned within 2026 (JST Science Portal, 3 Aug 2026); a free SDK with a simulator to follow",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "OptQC's release of 21 Jul 2026 (PR TIMES): the first unit at AIST G-QuAT, operating"
+   },
+   "layers": {
+    "1": [
+     {
+      "node": "squeezed",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "an «optical approach» (光方式) at room temperature; squeezed light presumed from the Furusawa laboratory lineage (OptQC was launched from it, JST Science Portal)",
+      "evidence": {
+       "type": "owner page",
+       "url": "https://prtimes.jp/main/html/rd/p/000000027.000148901.html",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "presumed: no qubit encoding (continuous-variable lineage)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://scienceportal.jst.go.jp/newsflash/20260803_n01/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "g_cv",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "presumed: measurement-based CV operations (the Furusawa lineage); the release gives no technical description",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://scienceportal.jst.go.jp/newsflash/20260803_n01/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "not published",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://prtimes.jp/main/html/rd/p/000000027.000148901.html",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "not published",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://prtimes.jp/main/html/rd/p/000000027.000148901.html",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_homodyne",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "presumed: homodyne detection (the Furusawa lineage)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://scienceportal.jst.go.jp/newsflash/20260803_n01/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no QEC code published",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://prtimes.jp/main/html/rd/p/000000027.000148901.html",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder published",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://prtimes.jp/main/html/rd/p/000000027.000148901.html",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "one machine at G-QuAT, integrated into ABCI-Q as «System O»",
+      "evidence": {
+       "type": "owner page",
+       "url": "https://prtimes.jp/main/html/rd/p/000000027.000148901.html",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_bulk",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "presumed bulk optics; «compatible with existing optical communication technology» (the release)",
+      "evidence": {
+       "type": "owner page",
+       "url": "https://prtimes.jp/main/html/rd/p/000000027.000148901.html",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 0,
+    "total": 10
+   },
+   "refs": [
+    {
+     "url": "https://scienceportal.jst.go.jp/newsflash/20260803_n01/",
+     "title": "JST Science Portal — AIST and OptQC start operating the optical quantum computer MoQuren (3 Aug 2026)",
+     "kind": "press"
+    },
+    {
+     "url": "https://prtimes.jp/main/html/rd/p/000000027.000148901.html",
+     "title": "PR TIMES — OptQC: the optical quantum computer MoQuren installed and operating at AIST G-QuAT (21 Jul 2026)",
+     "kind": "press"
+    }
+   ],
+   "profile": {
+    "qubit_type": "not published (continuous-variable, time-domain-multiplexed cluster state presumed from the Furusawa lineage)",
+    "gate_mechanism": "not published",
+    "connectivity": "",
+    "degree": "",
+    "control": "",
+    "control_placement": "",
+    "readout": "",
+    "err_2q_median": "",
+    "err_2q_best": "",
+    "readout_error": "",
+    "t1": "",
+    "t2": "",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "ABCI-Q integration as «System O»; SDK general availability (no dates); Cabinet Office BRIDGE funding via QST for a commercial optical quantum computer",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
+    "err_2q_median_num": null,
+    "flags": [
+     "cells-presumed",
+     "no-published-figures"
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
+   }
+  },
+  {
    "id": "orca-pt1",
    "name": "PT-1",
    "org": "ORCA Computing",
@@ -36098,7 +37191,7 @@
     "best_logical": "none, not applicable",
     "decoder": "none",
     "realtime": "none",
-    "roadmap": "PT-2 (the advanced PT-Series system); PT-3 planned for 2026",
+    "roadmap": "PT-2 (the advanced PT-Series system); PT-3 planned for 2026; PT-3 launched 15 Oct 2026 at Digital Realty's Innovation Lab, London (fulfilled)",
     "role": "",
     "gate_evidence": "none",
     "decoder_mode": "none",
@@ -36317,7 +37410,7 @@
     "best_logical": "none",
     "decoder": "none",
     "realtime": "none",
-    "roadmap": "PT-3 in 2026",
+    "roadmap": "PT-3 in 2026; PT-3 launched 15 Oct 2026 at Digital Realty's Innovation Lab, London (fulfilled)",
     "role": "",
     "gate_evidence": "none",
     "decoder_mode": "none",
@@ -36325,6 +37418,226 @@
     "flags": [
      "source-not-confirmed",
      "spec-absent"
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
+   }
+  },
+  {
+   "id": "orca-pt3",
+   "name": "PT-3",
+   "org": "ORCA Computing",
+   "org_id": "ORCA Computing",
+   "country": "United Kingdom",
+   "family": "PHOTON",
+   "map_path": "ph_sampler",
+   "status": "DEPLOYED (launched 15 Oct 2026; the first system at Digital Realty's Innovation Lab, London)",
+   "status_date": "15 Oct 2026",
+   "physical_qubits_num": null,
+   "access": "on-premises at Digital Realty's Innovation Lab, London («Through Digital Realty, enterprise users can now put it to work»)",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the launch release of 15 Oct 2026: the first PT-3 at Digital Realty's Innovation Lab, London"
+   },
+   "layers": {
+    "1": [
+     {
+      "node": "squeezed",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "«64 photons in 128 qumodes»; the state family presumed as PT-2 (the release names no technical paper)",
+      "evidence": {
+       "type": "owner page",
+       "url": "https://orcacomputing.com/orca-computing-launches-pt-3-the-first-quantum-computer-built-for-commercial-quantum-advantage/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no qubit encoding (a sampler)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://orcacomputing.com/orca-computing-launches-pt-3-the-first-quantum-computer-built-for-commercial-quantum-advantage/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "g_lointer",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "linear-optical interferometer presumed as PT-2",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://orcacomputing.com/orca-computing-launches-pt-3-the-first-quantum-computer-built-for-commercial-quantum-advantage/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "cx_switch",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "fibre-loop time-bin interferometer presumed as PT-2",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://orcacomputing.com/orca-computing-launches-pt-3-the-first-quantum-computer-built-for-commercial-quantum-advantage/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_eo",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "«PT-3 runs alongside NVIDIA accelerated computing»; «operates at room temperature»; «uses 6 kW across two standard racks»",
+      "evidence": {
+       "type": "owner page",
+       "url": "https://orcacomputing.com/orca-computing-launches-pt-3-the-first-quantum-computer-built-for-commercial-quantum-advantage/",
+       "locator": "",
+       "verified": true
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_spd",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "photon-number-resolving detection presumed as PT-2",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://orcacomputing.com/orca-computing-launches-pt-3-the-first-quantum-computer-built-for-commercial-quantum-advantage/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no QEC code; a sampling / ML machine",
+      "evidence": {
+       "type": "owner page",
+       "url": "https://orcacomputing.com/orca-computing-launches-pt-3-the-first-quantum-computer-built-for-commercial-quantum-advantage/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://orcacomputing.com/orca-computing-launches-pt-3-the-first-quantum-computer-built-for-commercial-quantum-advantage/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "two standard racks, one system",
+      "evidence": {
+       "type": "owner page",
+       "url": "https://orcacomputing.com/orca-computing-launches-pt-3-the-first-quantum-computer-built-for-commercial-quantum-advantage/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_bulk",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "bulk-optics and fibre assembly presumed as PT-2",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://orcacomputing.com/orca-computing-launches-pt-3-the-first-quantum-computer-built-for-commercial-quantum-advantage/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 1,
+    "total": 10
+   },
+   "refs": [
+    {
+     "url": "https://orcacomputing.com/orca-computing-launches-pt-3-the-first-quantum-computer-built-for-commercial-quantum-advantage/",
+     "title": "ORCA Computing — launches PT-3, the first quantum computer built for commercial quantum advantage (15 Oct 2026)",
+     "kind": "press"
+    },
+    {
+     "url": "https://orcacomputing.com/news/",
+     "title": "ORCA Computing — news",
+     "kind": "press"
+    }
+   ],
+   "profile": {
+    "qubit_type": "not published for PT-3 (PT-2: non-Gaussian photon-subtracted squeezed states in time bins)",
+    "gate_mechanism": "not published for PT-3 (PT-2: programmable time-bin interferometer; linear-optical interference only)",
+    "connectivity": "",
+    "degree": "",
+    "control": "room-temperature electronics; «PT-3 runs alongside NVIDIA accelerated computing»",
+    "control_placement": "room-temp",
+    "readout": "not published for PT-3",
+    "err_2q_median": "",
+    "err_2q_best": "",
+    "readout_error": "",
+    "t1": "",
+    "t2": "",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "not published",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
+    "err_2q_median_num": null,
+    "flags": [
+     "cells-as-pt2",
+     "no-published-error-rates"
     ],
     "qubits_accessible": null,
     "gate_evidence_derived": true,
@@ -37617,6 +38930,226 @@
     "flags": [
      "source-not-confirmed",
      "spec-absent"
+    ],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": false
+   }
+  },
+  {
+   "id": "riken-optical-qc",
+   "name": "RIKEN general-purpose optical quantum computer (with NTT and Fixstars Amplify)",
+   "org": "RIKEN (Furusawa) with NTT and Fixstars Amplify",
+   "org_id": "RIKEN",
+   "country": "Japan",
+   "family": "PHOTON",
+   "map_path": "ph_cv",
+   "status": "DEPLOYED (cloud under joint research agreements since 8 Nov 2024; current availability unverified)",
+   "status_date": "8 Nov 2024",
+   "physical_qubits_num": null,
+   "access": "cloud over the internet, limited to joint research agreements (the joint release of 8 Nov 2024, JST copy); the cloud system by Fixstars Amplify",
+   "units": {
+    "built": "1",
+    "in_service": "?",
+    "evidence": "the joint release of 8 Nov 2024: one machine on the cloud under joint research agreements; current operation unverified"
+   },
+   "layers": {
+    "1": [
+     {
+      "node": "squeezed",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "«an analog-type quantum computer of the measurement-induced type that uses a time-division multiplexing technique»; NTT's broadband OPA (6 THz) as the light source",
+      "evidence": {
+       "type": "press",
+       "url": "https://thequantuminsider.com/2024/11/11/riken-ntt-and-amplify-inc-introduce-general-purpose-quantum-computer/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "«光波の振幅値が情報のキャリア» — optical wave amplitudes carry the information: no qubit encoding",
+      "evidence": {
+       "type": "press",
+       "url": "https://www.jst.go.jp/pr/announce/20241108-3/index.html",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "g_cv",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "measurement-based CV operations; «approximately 100 continuous quantity inputs», linear calculations with an arbitrary number of steps",
+      "evidence": {
+       "type": "press",
+       "url": "https://thequantuminsider.com/2024/11/11/riken-ntt-and-amplify-inc-introduce-general-purpose-quantum-computer/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "not published",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.jst.go.jp/pr/announce/20241108-3/index.html",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_eo",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "electro-optic; «an operating frequency of 100 MHz» (trade press)",
+      "evidence": {
+       "type": "press",
+       "url": "https://thequantuminsider.com/2024/11/11/riken-ntt-and-amplify-inc-introduce-general-purpose-quantum-computer/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_homodyne",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "presumed homodyne detection (measurement-based CV)",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.jst.go.jp/pr/announce/20241108-3/index.html",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no QEC code",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.jst.go.jp/pr/announce/20241108-3/index.html",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "no decoder",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://www.jst.go.jp/pr/announce/20241108-3/index.html",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "one machine, on the cloud under joint research agreements",
+      "evidence": {
+       "type": "press",
+       "url": "https://www.jst.go.jp/pr/announce/20241108-3/index.html",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_bulk",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "presumed fibre / bulk optics from optical-communication components",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://thequantuminsider.com/2024/11/11/riken-ntt-and-amplify-inc-introduce-general-purpose-quantum-computer/",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [],
+   "evidence_counts": {
+    "verified": 0,
+    "total": 10
+   },
+   "refs": [
+    {
+     "url": "https://www.jst.go.jp/pr/announce/20241108-3/index.html",
+     "title": "JST — joint release of RIKEN, NTT and Fixstars Amplify: a new-method quantum computer, the general-purpose optical quantum computing platfor",
+     "kind": "press"
+    },
+    {
+     "url": "https://thequantuminsider.com/2024/11/11/riken-ntt-and-amplify-inc-introduce-general-purpose-quantum-computer/",
+     "title": "The Quantum Insider — RIKEN, NTT and Fixstars Amplify introduce a general-purpose optical quantum computer (11 Nov 2024)",
+     "kind": "press"
+    }
+   ],
+   "profile": {
+    "qubit_type": "squeezed-light continuous-variable modes, time-division multiplexed (optical pulse width 10 ns)",
+    "gate_mechanism": "measurement-induced (measurement-based) operations on a time-multiplexed cluster state; «linear calculations are possible at a speed equivalent to a clock speed of 100 MHz»",
+    "connectivity": "",
+    "degree": "",
+    "control": "electro-optic; NTT's broadband optical parametric amplifier (6 THz bandwidth) as the squeezed-light source; 100 MHz operation (trade press)",
+    "control_placement": "",
+    "readout": "homodyne detection (presumed from the measurement-induced design)",
+    "err_2q_median": "",
+    "err_2q_best": "",
+    "readout_error": "",
+    "t1": "",
+    "t2": "",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "none",
+    "decoder": "none",
+    "realtime": "none",
+    "roadmap": "not published",
+    "role": "",
+    "gate_evidence": "none",
+    "decoder_mode": "none",
+    "err_2q_median_num": null,
+    "flags": [
+     "figures-from-trade-press",
+     "press-and-jst-only"
     ],
     "qubits_accessible": null,
     "gate_evidence_derived": true,
@@ -39822,7 +41355,7 @@
    "country": "Netherlands",
    "family": "SPIN",
    "map_path": "spin_qd",
-   "status": "DEMONSTRATED (lab demonstration announced 30 Apr 2026; no fidelities or paper)",
+   "status": "DEMONSTRATED (lab demonstration announced 30 Apr 2026; preprint arXiv:2604.01063: 18-qubit array in germanium, no two-qubit fidelity measured)",
    "status_date": "30 Apr 2026",
    "physical_qubits_num": 18,
    "access": "n/a",
@@ -40001,14 +41534,14 @@
     "gate_mechanism": "all-electrical, faster 1Q gates without micromagnets thanks to stronger spin-orbit coupling; exchange 2Q",
     "connectivity": "nearest neighbour",
     "degree": "2",
-    "control": "baseband",
+    "control": "baseband; Qblox QCM/QRM modules at room temperature (preprint)",
     "control_placement": "room-temp baseband",
     "readout": "spin-to-charge conversion",
-    "err_2q_median": "no fidelity numbers published",
+    "err_2q_median": "no fidelity numbers published; CZ gates calibrated on two pairs and used for a three-qubit GHZ state, not benchmarked (preprint arXiv:2604.01063)",
     "err_2q_best": "",
     "readout_error": "",
     "t1": "",
-    "t2": "",
+    "t2": "T2* 6.2 us average; T2 (CPMG) 0.47 ms average (preprint, Apr 2026)",
     "t_2q": "",
     "t_meas": "",
     "best_logical": "none",
@@ -41202,7 +42735,7 @@
     "best_logical": "none published",
     "decoder": "none",
     "realtime": "none",
-    "roadmap": "Alloy Pioneer cloud access for early users by end-2026, then progressively larger Alloy systems toward one million qubits by 2032 (16 Sep 2026); isotopically enriched Si-28 entered STMicroelectronics 28 nm FD-SOI production Dec 2025 - the supply-chain milestone that matters more than the qubit count",
+    "roadmap": "Alloy Pioneer cloud access for early users by end-2026, then progressively larger Alloy systems toward one million qubits by 2032 (16 Sep 2026); isotopically enriched Si-28 entered STMicroelectronics 28 nm FD-SOI production Dec 2025 - the supply-chain milestone that matters more than the qubit count; single-qubit gates, two-qubit gates and readout shown on one QSOI chip from STMicroelectronics' 300 mm Crolles line, no figures published (release of 16 Sep 2026)",
     "role": "",
     "gate_evidence": "none",
     "decoder_mode": "none",
@@ -42374,7 +43907,7 @@
    "units": {
     "built": "≥1",
     "in_service": "≥1",
-    "evidence": "https://saxonq.com/news/ — «Fraunhofer IWU puts Saxony's first mobile quantum computer into operation» (June 2025); the DLR unit of the register is not on SaxonQ's page"
+    "evidence": "https://saxonq.com/news/ — «Fraunhofer IWU puts Saxony's first mobile quantum computer into operation» (June 2025); the DLR unit of the register is not on SaxonQ's page; https://saxonq.com/ (read 6 Nov 2026) — the SXQ4 card: «Delivered 2023–2025», «Live with first customers», «Delivered to DLR & Fraunhofer»; the release of Aug 2026: «Two previous generation SAXON Q systems are currently deployed and in active use at the» DLR (not named SXQ4)"
    },
    "layers": {
     "1": [
@@ -42559,7 +44092,7 @@
     "best_logical": "none",
     "decoder": "none",
     "realtime": "none",
-    "roadmap": "QC2026 Dual Core (2 x 5 qubits, Apr 2026); SXQ128 orderable with 3-month delivery; SXQ512 from Q2 2027; SXQ10k 2030+",
+    "roadmap": "QC2026 Dual Core (2 x 5 qubits, Apr 2026); SXQ128 orderable with 3-month delivery; SXQ512 from Q2 2027; SXQ10k 2030+; SXQ128 orders opened Aug 2026 («Available Late Summer»)",
     "role": "",
     "gate_evidence": "none",
     "decoder_mode": "none",
@@ -43285,7 +44818,7 @@
    "units": {
     "built": "≥4",
     "in_service": "≥4",
-    "evidence": "https://docs.dwavequantum.com/en/latest/quantum_research/solver_properties_specific.html — Advantage2_system1 (4566 qubits), Advantage2_system2 (4506), Advantage2_system4 (1202), Advantage2_research2 (the properties of system4)"
+    "evidence": "https://docs.dwavequantum.com/en/latest/quantum_research/solver_properties_specific.html — Advantage2_system1 (4566 qubits), Advantage2_system2 (4506), Advantage2_system4 (1202), Advantage2_research2 (the properties of system4); on-premises Advantage2 at Davidson Technologies, Huntsville AL — «completion of physical assembly» and «entering final calibration and testing ahead of operational deployment» (release of 28 Apr 2025): named, not counted until reported operating"
    },
    "layers": {
     "1": [
@@ -44006,7 +45539,8 @@
     "quera-aquila",
     "quera-gemini",
     "quera-libra",
-    "qxl-neutral-atom-50"
+    "qxl-neutral-atom-50",
+    "ustc-2024-atom-array"
    ],
    "alternate": []
   },
@@ -44226,11 +45760,13 @@
     "etri-8photon",
     "orca-pt1",
     "orca-pt2",
+    "orca-pt3",
     "psiquantum-omega",
     "quandela-belenos",
     "quandela-canopus-24",
     "quandela-lucy",
     "quix-carina",
+    "riken-optical-qc",
     "ustc-jiuzhang1",
     "ustc-jiuzhang2",
     "ustc-jiuzhang3",
@@ -44320,6 +45856,7 @@
     "quera-gemini",
     "quera-libra",
     "qxl-neutral-atom-50",
+    "ustc-2024-atom-array",
     "yaqumo-yb"
    ],
    "alternate": []
@@ -44385,6 +45922,7 @@
     "iqm-spark-eldorado",
     "iqm-star-24",
     "iqm-star-6",
+    "iqsc-fluxonium-22",
     "it4i-vlq",
     "kriss-20q",
     "kriss-50q",
@@ -44399,6 +45937,8 @@
     "qpiai-indus-25",
     "qpiai-kaveri-64",
     "quantware-contralto-a17",
+    "quantware-contralto-d21",
+    "quantware-soprano-d5",
     "quantware-tenor-d64",
     "rigetti-ankaa-2",
     "rigetti-ankaa-3",
@@ -44471,6 +46011,7 @@
     "quera-gemini",
     "quera-libra",
     "qxl-neutral-atom-50",
+    "ustc-2024-atom-array",
     "yaqumo-yb"
    ],
    "alternate": [
@@ -44567,6 +46108,7 @@
     "iqm-garnet-20",
     "iqm-halocene-150",
     "iqm-spark-eldorado",
+    "iqsc-fluxonium-22",
     "kriss-20q",
     "kriss-50q",
     "lbnl-aqt",
@@ -44586,6 +46128,8 @@
     "quantum-brilliance-quoll",
     "quantum-motion-qm-one",
     "quantware-contralto-a17",
+    "quantware-contralto-d21",
+    "quantware-soprano-d5",
     "quantware-tenor-d64",
     "quantware-vio-40k",
     "quobly",
@@ -44650,6 +46194,7 @@
     "etri-8photon",
     "orca-pt1",
     "orca-pt2",
+    "orca-pt3",
     "psiquantum-omega",
     "quandela-belenos",
     "quandela-canopus-24",
@@ -44813,6 +46358,7 @@
     "iqm-spark-eldorado",
     "iqm-star-24",
     "iqm-star-6",
+    "iqsc-fluxonium-22",
     "it4i-vlq",
     "kriss-20q",
     "kriss-50q",
@@ -44825,6 +46371,8 @@
     "qpiai-indus-25",
     "qpiai-kaveri-64",
     "quantware-contralto-a17",
+    "quantware-contralto-d21",
+    "quantware-soprano-d5",
     "quantware-tenor-d64",
     "quantware-vio-40k",
     "rigetti-ankaa-2",
@@ -45017,8 +46565,11 @@
   },
   "fab_bulk": {
    "primary": [
+    "optqc-moquren",
     "orca-pt1",
     "orca-pt2",
+    "orca-pt3",
+    "riken-optical-qc",
     "ustc-jiuzhang1",
     "ustc-jiuzhang2",
     "ustc-jiuzhang3",
@@ -45098,6 +46649,7 @@
     "quera-gemini",
     "quera-libra",
     "qxl-neutral-atom-50",
+    "ustc-2024-atom-array",
     "yaqumo-yb"
    ],
    "alternate": [
@@ -45179,6 +46731,7 @@
     "iqm-spark-eldorado",
     "iqm-star-24",
     "iqm-star-6",
+    "iqsc-fluxonium-22",
     "it4i-vlq",
     "kriss-20q",
     "kriss-50q",
@@ -45196,6 +46749,8 @@
     "qpiai-indus-25",
     "qpiai-kaveri-64",
     "quantware-contralto-a17",
+    "quantware-contralto-d21",
+    "quantware-soprano-d5",
     "quantware-tenor-d64",
     "quantware-vio-40k",
     "rigetti-ankaa-2",
@@ -45267,6 +46822,12 @@
     "qudora-nfqc-1k"
    ]
   },
+  "fluxonium": {
+   "primary": [
+    "iqsc-fluxonium-22"
+   ],
+   "alternate": []
+  },
   "fluxq": {
    "primary": [
     "dwave-advantage",
@@ -45322,6 +46883,8 @@
   },
   "g_cv": {
    "primary": [
+    "optqc-moquren",
+    "riken-optical-qc",
     "xanadu-aurora"
    ],
    "alternate": [
@@ -45372,6 +46935,7 @@
    "primary": [
     "orca-pt1",
     "orca-pt2",
+    "orca-pt3",
     "ustc-jiuzhang1",
     "ustc-jiuzhang2",
     "ustc-jiuzhang3",
@@ -45497,6 +47061,7 @@
     "iqm-spark-eldorado",
     "iqm-star-24",
     "iqm-star-6",
+    "iqsc-fluxonium-22",
     "kriss-20q",
     "originq-wukong-102",
     "originq-wukong-180",
@@ -45505,6 +47070,8 @@
     "qpiai-indus-25",
     "qpiai-kaveri-64",
     "quantware-contralto-a17",
+    "quantware-contralto-d21",
+    "quantware-soprano-d5",
     "quantware-tenor-d64",
     "quantware-vio-40k",
     "rigetti-ankaa-2",
@@ -45716,6 +47283,7 @@
     "iqm-spark-eldorado",
     "iqm-star-24",
     "iqm-star-6",
+    "iqsc-fluxonium-22",
     "it4i-vlq",
     "kriss-20q",
     "kriss-50q",
@@ -45730,6 +47298,8 @@
     "qpiai-indus-25",
     "qpiai-kaveri-64",
     "quantware-contralto-a17",
+    "quantware-contralto-d21",
+    "quantware-soprano-d5",
     "quantware-tenor-d64",
     "quantware-vio-40k",
     "rigetti-ankaa-2",
@@ -45829,6 +47399,8 @@
   },
   "ro_homodyne": {
    "primary": [
+    "optqc-moquren",
+    "riken-optical-qc",
     "xanadu-aurora"
    ],
    "alternate": []
@@ -45858,6 +47430,7 @@
     "quera-gemini",
     "quera-libra",
     "qxl-neutral-atom-50",
+    "ustc-2024-atom-array",
     "yaqumo-yb"
    ],
    "alternate": [
@@ -45903,6 +47476,7 @@
     "etri-8photon",
     "orca-pt1",
     "orca-pt2",
+    "orca-pt3",
     "psiquantum-omega",
     "quandela-belenos",
     "quandela-canopus-24",
@@ -45920,7 +47494,10 @@
   },
   "squeezed": {
    "primary": [
+    "optqc-moquren",
     "orca-pt2",
+    "orca-pt3",
+    "riken-optical-qc",
     "ustc-jiuzhang1",
     "ustc-jiuzhang2",
     "ustc-jiuzhang3",
@@ -46002,6 +47579,8 @@
     "qpiai-indus-25",
     "qpiai-kaveri-64",
     "quantware-contralto-a17",
+    "quantware-contralto-d21",
+    "quantware-soprano-d5",
     "quantware-tenor-d64",
     "quantware-vio-40k",
     "rigetti-ankaa-2",

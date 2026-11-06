@@ -2005,3 +2005,73 @@ qudora-nfqc-1k,decoder,undisclosed,primary,fault-tolerant target; no decoder des
 qudora-nfqc-1k,interconnect,undisclosed,primary,"module and link architecture of the 1,000-qubit machine not described",press-technical,https://quantumcomputingreport.com/german-government-selects-qudora-led-consortium-for-e122-million-138-8-usd-nfqc-1k-trapped-ion-quantum-computer-project/,,🔎
 qudora-nfqc-1k,fab,fab_cmos,primary,semiconductor pilot line for QPUs; NXP provides microfabrication and pilot-line production (wafer size not stated),press-technical,https://quantumcomputingreport.com/german-government-selects-qudora-led-consortium-for-e122-million-138-8-usd-nfqc-1k-trapped-ion-quantum-computer-project/,pilot-line paragraph; partner list (NXP),✅
 qudora-nfqc-1k,fab,fab_trap,alternate,surface-electrode ion-trap microfabrication (family-determined),inferred,https://quantumcomputingreport.com/german-government-selects-qudora-led-consortium-for-e122-million-138-8-usd-nfqc-1k-trapped-ion-quantum-computer-project/,,🔎
+iqsc-fluxonium-22,carrier,fluxonium,primary,22 fluxonium qubits (Q1–Q22) with 21 transmon couplers,architecture-paper,https://arxiv.org/abs/2604.13363,Device layout; Table 3,✅
+iqsc-fluxonium-22,encoding,enc_bare,primary,"bare fluxonium qubit, no encoding layer",inferred,https://arxiv.org/abs/2604.13363,,🔎
+iqsc-fluxonium-22,gate,g_tc,primary,CZ gates through flux-tunable transmon couplers with asymmetric junctions; best 99.9 % at 32 ns,architecture-paper,https://arxiv.org/abs/2604.13363,abstract; the CZ calibration section,✅
+iqsc-fluxonium-22,connect,cx_nn,primary,one-dimensional chain; each coupler the only interaction channel between its two neighbouring qubits,architecture-paper,https://arxiv.org/abs/2604.13363,device description,✅
+iqsc-fluxonium-22,control,ct_rt,primary,home-made single-port AWGs for baseband XY and flux; microwaves by IQ upconversion; placement not stated,architecture-paper,https://arxiv.org/abs/2604.13363,experimental setup,🔎
+iqsc-fluxonium-22,readout,ro_disp,primary,readout resonators at 5.0–5.6 GHz; QND pre-selection and confusion-matrix correction; the scheme is not named,architecture-paper,https://arxiv.org/abs/2604.13363,Table 3; readout correction,🔎
+iqsc-fluxonium-22,code,none,primary,no QEC code; a GHZ-state and gate-benchmarking paper,inferred,https://arxiv.org/abs/2604.13363,,🔎
+iqsc-fluxonium-22,decoder,none,primary,no decoder,inferred,https://arxiv.org/abs/2604.13363,,🔎
+iqsc-fluxonium-22,interconnect,none,primary,single chip,inferred,https://arxiv.org/abs/2604.13363,,🔎
+iqsc-fluxonium-22,fab,fab_sc,primary,"180 nm tantalum film on 2-inch c-cut sapphire, Al/AlOx/Al Manhattan junctions, Al airbridges; Westlake and QizhenTek facilities acknowledged",architecture-paper,https://arxiv.org/abs/2604.13363,fabrication section; acknowledgments,✅
+ustc-2024-atom-array,carrier,alkali,primary,"neutral atoms in optical tweezers; «2,024 rubidium atoms» per the press, the abstract names no species",press,https://thequantuminsider.com/2025/08/14/chinas-pan-jianwei-team-uses-ai-to-build-record-breaking-atom-array/,,🔎
+ustc-2024-atom-array,encoding,undisclosed,primary,the qubit encoding is not in the sources read (an assembly paper),inferred,https://journals.aps.org/prl/abstract/10.1103/2ym8-vs82,abstract,🔎
+ustc-2024-atom-array,gate,none,primary,no entangling gate in the abstract; the press quotes 2Q 99.5 % — unverified,press,https://thequantuminsider.com/2025/08/14/chinas-pan-jianwei-team-uses-ai-to-build-record-breaking-atom-array/,,🔎
+ustc-2024-atom-array,connect,cx_aod,primary,"AI-enabled constant-time rearrangement, 60 ms, by holograms on a spatial light modulator",paper,https://journals.aps.org/prl/abstract/10.1103/2ym8-vs82,abstract,✅
+ustc-2024-atom-array,control,ct_laser,primary,an AI model computes the holograms; laser/SLM control,paper,https://journals.aps.org/prl/abstract/10.1103/2ym8-vs82,abstract,✅
+ustc-2024-atom-array,readout,ro_img,primary,fluorescence imaging of the assembled array,inferred,https://journals.aps.org/prl/abstract/10.1103/2ym8-vs82,,🔎
+ustc-2024-atom-array,code,none,primary,no QEC code,inferred,https://journals.aps.org/prl/abstract/10.1103/2ym8-vs82,,🔎
+ustc-2024-atom-array,decoder,none,primary,no decoder,inferred,https://journals.aps.org/prl/abstract/10.1103/2ym8-vs82,,🔎
+ustc-2024-atom-array,interconnect,none,primary,single apparatus,inferred,https://journals.aps.org/prl/abstract/10.1103/2ym8-vs82,,🔎
+ustc-2024-atom-array,fab,fab_optics,primary,room-temperature optics and vacuum apparatus,inferred,https://journals.aps.org/prl/abstract/10.1103/2ym8-vs82,,🔎
+orca-pt3,carrier,squeezed,primary,«64 photons in 128 qumodes»; the state family presumed as PT-2 (the release names no technical paper),owner page,https://orcacomputing.com/orca-computing-launches-pt-3-the-first-quantum-computer-built-for-commercial-quantum-advantage/,,🔎
+orca-pt3,encoding,none,primary,no qubit encoding (a sampler),inferred,https://orcacomputing.com/orca-computing-launches-pt-3-the-first-quantum-computer-built-for-commercial-quantum-advantage/,,🔎
+orca-pt3,gate,g_lointer,primary,linear-optical interferometer presumed as PT-2,inferred,https://orcacomputing.com/orca-computing-launches-pt-3-the-first-quantum-computer-built-for-commercial-quantum-advantage/,,🔎
+orca-pt3,connect,cx_switch,primary,fibre-loop time-bin interferometer presumed as PT-2,inferred,https://orcacomputing.com/orca-computing-launches-pt-3-the-first-quantum-computer-built-for-commercial-quantum-advantage/,,🔎
+orca-pt3,control,ct_eo,primary,«PT-3 runs alongside NVIDIA accelerated computing»; «operates at room temperature»; «uses 6 kW across two standard racks»,owner page,https://orcacomputing.com/orca-computing-launches-pt-3-the-first-quantum-computer-built-for-commercial-quantum-advantage/,,✅
+orca-pt3,readout,ro_spd,primary,photon-number-resolving detection presumed as PT-2,inferred,https://orcacomputing.com/orca-computing-launches-pt-3-the-first-quantum-computer-built-for-commercial-quantum-advantage/,,🔎
+orca-pt3,code,none,primary,no QEC code; a sampling / ML machine,owner page,https://orcacomputing.com/orca-computing-launches-pt-3-the-first-quantum-computer-built-for-commercial-quantum-advantage/,,🔎
+orca-pt3,decoder,none,primary,no decoder,inferred,https://orcacomputing.com/orca-computing-launches-pt-3-the-first-quantum-computer-built-for-commercial-quantum-advantage/,,🔎
+orca-pt3,interconnect,none,primary,"two standard racks, one system",owner page,https://orcacomputing.com/orca-computing-launches-pt-3-the-first-quantum-computer-built-for-commercial-quantum-advantage/,,🔎
+orca-pt3,fab,fab_bulk,primary,bulk-optics and fibre assembly presumed as PT-2,inferred,https://orcacomputing.com/orca-computing-launches-pt-3-the-first-quantum-computer-built-for-commercial-quantum-advantage/,,🔎
+optqc-moquren,carrier,squeezed,primary,"an «optical approach» (光方式) at room temperature; squeezed light presumed from the Furusawa laboratory lineage (OptQC was launched from it, JST Science Portal)",owner page,https://prtimes.jp/main/html/rd/p/000000027.000148901.html,,🔎
+optqc-moquren,encoding,none,primary,presumed: no qubit encoding (continuous-variable lineage),inferred,https://scienceportal.jst.go.jp/newsflash/20260803_n01/,,🔎
+optqc-moquren,gate,g_cv,primary,presumed: measurement-based CV operations (the Furusawa lineage); the release gives no technical description,inferred,https://scienceportal.jst.go.jp/newsflash/20260803_n01/,,🔎
+optqc-moquren,connect,none,primary,not published,inferred,https://prtimes.jp/main/html/rd/p/000000027.000148901.html,,🔎
+optqc-moquren,control,none,primary,not published,inferred,https://prtimes.jp/main/html/rd/p/000000027.000148901.html,,🔎
+optqc-moquren,readout,ro_homodyne,primary,presumed: homodyne detection (the Furusawa lineage),inferred,https://scienceportal.jst.go.jp/newsflash/20260803_n01/,,🔎
+optqc-moquren,code,none,primary,no QEC code published,inferred,https://prtimes.jp/main/html/rd/p/000000027.000148901.html,,🔎
+optqc-moquren,decoder,none,primary,no decoder published,inferred,https://prtimes.jp/main/html/rd/p/000000027.000148901.html,,🔎
+optqc-moquren,interconnect,none,primary,"one machine at G-QuAT, integrated into ABCI-Q as «System O»",owner page,https://prtimes.jp/main/html/rd/p/000000027.000148901.html,,🔎
+optqc-moquren,fab,fab_bulk,primary,presumed bulk optics; «compatible with existing optical communication technology» (the release),owner page,https://prtimes.jp/main/html/rd/p/000000027.000148901.html,,🔎
+riken-optical-qc,carrier,squeezed,primary,«an analog-type quantum computer of the measurement-induced type that uses a time-division multiplexing technique»; NTT's broadband OPA (6 THz) as the light source,press,https://thequantuminsider.com/2024/11/11/riken-ntt-and-amplify-inc-introduce-general-purpose-quantum-computer/,,🔎
+riken-optical-qc,encoding,none,primary,«光波の振幅値が情報のキャリア» — optical wave amplitudes carry the information: no qubit encoding,press,https://www.jst.go.jp/pr/announce/20241108-3/index.html,,🔎
+riken-optical-qc,gate,g_cv,primary,"measurement-based CV operations; «approximately 100 continuous quantity inputs», linear calculations with an arbitrary number of steps",press,https://thequantuminsider.com/2024/11/11/riken-ntt-and-amplify-inc-introduce-general-purpose-quantum-computer/,,🔎
+riken-optical-qc,connect,none,primary,not published,inferred,https://www.jst.go.jp/pr/announce/20241108-3/index.html,,🔎
+riken-optical-qc,control,ct_eo,primary,electro-optic; «an operating frequency of 100 MHz» (trade press),press,https://thequantuminsider.com/2024/11/11/riken-ntt-and-amplify-inc-introduce-general-purpose-quantum-computer/,,🔎
+riken-optical-qc,readout,ro_homodyne,primary,presumed homodyne detection (measurement-based CV),inferred,https://www.jst.go.jp/pr/announce/20241108-3/index.html,,🔎
+riken-optical-qc,code,none,primary,no QEC code,inferred,https://www.jst.go.jp/pr/announce/20241108-3/index.html,,🔎
+riken-optical-qc,decoder,none,primary,no decoder,inferred,https://www.jst.go.jp/pr/announce/20241108-3/index.html,,🔎
+riken-optical-qc,interconnect,none,primary,"one machine, on the cloud under joint research agreements",press,https://www.jst.go.jp/pr/announce/20241108-3/index.html,,🔎
+riken-optical-qc,fab,fab_bulk,primary,presumed fibre / bulk optics from optical-communication components,inferred,https://thequantuminsider.com/2024/11/11/riken-ntt-and-amplify-inc-introduce-general-purpose-quantum-computer/,,🔎
+quantware-soprano-d5,carrier,transmon,primary,«tunable transmon qubits with fixed couplers in a streamlined architecture» (the D-line page),vendor-architecture-page,https://quantware.com/product/processors/d-line,FAQ,✅
+quantware-soprano-d5,encoding,enc_bare,primary,"bare transmon, no encoding layer",inferred,https://quantware.com/product/processors/d-line,,🔎
+quantware-soprano-d5,gate,g_tc,primary,fixed couplers per the D-line page; the cell follows the register's quantware-tenor-d64 row,vendor-architecture-page,https://quantware.com/product/processors/d-line,FAQ,🔎
+quantware-soprano-d5,connect,cx_nn,primary,«Planar» architecture per the product card,vendor-architecture-page,https://quantware.com/product/processors/d-line,product card,✅
+quantware-soprano-d5,control,ct_rt,primary,room-temperature RF presumed (sold as a QPU component),inferred,https://quantware.com/product/processors/d-line,,🔎
+quantware-soprano-d5,readout,ro_disp,primary,dispersive readout presumed,inferred,https://quantware.com/product/processors/d-line,,🔎
+quantware-soprano-d5,code,none,primary,no code; the customers run the codes,inferred,https://quantware.com/product/processors/d-line,,🔎
+quantware-soprano-d5,decoder,none,primary,no decoder,inferred,https://quantware.com/product/processors/d-line,,🔎
+quantware-soprano-d5,interconnect,none,primary,single chip,inferred,https://quantware.com/product/processors/d-line,,🔎
+quantware-soprano-d5,fab,fab_sc,primary,QuantWare's own foundry (the page: Foundry Services),vendor-architecture-page,https://quantware.com/product/processors/d-line,,🔎
+quantware-contralto-d21,carrier,transmon,primary,«tunable transmon qubits with fixed couplers in a streamlined architecture» (the D-line page),vendor-architecture-page,https://quantware.com/product/processors/d-line,FAQ,✅
+quantware-contralto-d21,encoding,enc_bare,primary,"bare transmon, no encoding layer",inferred,https://quantware.com/product/processors/d-line,,🔎
+quantware-contralto-d21,gate,g_tc,primary,fixed couplers per the D-line page; the cell follows the register's quantware-tenor-d64 row,vendor-architecture-page,https://quantware.com/product/processors/d-line,FAQ,🔎
+quantware-contralto-d21,connect,cx_nn,primary,«Planar» architecture per the product card,vendor-architecture-page,https://quantware.com/product/processors/d-line,product card,✅
+quantware-contralto-d21,control,ct_rt,primary,room-temperature RF presumed (sold as a QPU component),inferred,https://quantware.com/product/processors/d-line,,🔎
+quantware-contralto-d21,readout,ro_disp,primary,dispersive readout presumed,inferred,https://quantware.com/product/processors/d-line,,🔎
+quantware-contralto-d21,code,none,primary,no code; the customers run the codes,inferred,https://quantware.com/product/processors/d-line,,🔎
+quantware-contralto-d21,decoder,none,primary,no decoder,inferred,https://quantware.com/product/processors/d-line,,🔎
+quantware-contralto-d21,interconnect,none,primary,single chip,inferred,https://quantware.com/product/processors/d-line,,🔎
+quantware-contralto-d21,fab,fab_sc,primary,QuantWare's own foundry (the page: Foundry Services),vendor-architecture-page,https://quantware.com/product/processors/d-line,,🔎

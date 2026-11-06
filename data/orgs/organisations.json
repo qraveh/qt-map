@@ -1,8 +1,8 @@
 {
  "source": {
   "register": "quantum-register (SP04)",
-  "imported": "2026-09-27",
-  "organisations": 89
+  "imported": "2026-09-26",
+  "organisations": 90
  },
  "organisations": [
   {
@@ -100,6 +100,10 @@
      "machines": 4
     },
     {
+     "id": "g_bos",
+     "machines": 4
+    },
+    {
      "id": "cx_nn",
      "machines": 4
     },
@@ -112,15 +116,11 @@
      "machines": 4
     },
     {
-     "id": "fab_sc",
+     "id": "code_bosonic",
      "machines": 4
     },
     {
-     "id": "code_bosonic",
-     "machines": 3
-    },
-    {
-     "id": "g_bos",
+     "id": "fab_sc",
      "machines": 4
     },
     {
@@ -148,7 +148,7 @@
      "ro_disp",
      "fab_3d"
     ],
-    "count": 59
+    "count": 62
    }
   },
   {
@@ -226,7 +226,7 @@
      "code_magic",
      "ic_ionphoton"
     ],
-    "count": 93
+    "count": 92
    }
   },
   {
@@ -234,7 +234,8 @@
    "name": "Amazon Web Services",
    "aliases": [
     "AWS",
-    "AWS Center for Quantum Computing"
+    "AWS Center for Quantum Computing",
+    "AWS Center for Quantum Computing (named Amazon Center for Quantum Computing in the Apr 2026 paper)"
    ],
    "tier": "quantum-vendor",
    "segment": "computing-software",
@@ -316,8 +317,8 @@
      "enc_dualrail",
      "code_erasure",
      "g_bos",
-     "g_rydanalog",
      "code_bosonic",
+     "g_rydanalog",
      "alkali",
      "enc_cat",
      "g_catcnot",
@@ -335,7 +336,7 @@
      "code_aft",
      "fab_optics"
     ],
-    "count": 78
+    "count": 79
    }
   },
   {
@@ -486,23 +487,23 @@
      "g_ryd",
      "ic_atomcavity",
      "ae_atom",
-     "cx_reload",
      "dec_corr",
      "enc_omg",
+     "cx_reload",
      "ro_erasure",
      "code_aft",
      "cx_aod",
      "ct_laser",
+     "ro_img",
      "code_erasure",
      "fab_optics",
      "alkali",
-     "ro_img",
      "enc_hf",
      "code_highrate",
      "majorana",
      "dec_rl"
     ],
-    "count": 141
+    "count": 135
    }
   },
   {
@@ -575,7 +576,8 @@
     "baqis-baihua-156",
     "baqis-dongling-130",
     "baqis-haituo-117",
-    "baqis-scq136"
+    "baqis-scq136",
+    "baqis-shenglian-84"
    ],
    "co_machines": [],
    "families": [
@@ -587,31 +589,31 @@
    "stations": [
     {
      "id": "transmon",
-     "machines": 4
+     "machines": 5
     },
     {
      "id": "enc_bare",
-     "machines": 4
+     "machines": 5
     },
     {
      "id": "g_tc",
-     "machines": 4
+     "machines": 5
     },
     {
      "id": "cx_nn",
-     "machines": 4
+     "machines": 5
     },
     {
      "id": "ct_rt",
-     "machines": 4
+     "machines": 5
     },
     {
      "id": "ro_disp",
-     "machines": 4
+     "machines": 5
     },
     {
      "id": "fab_sc",
-     "machines": 4
+     "machines": 5
     }
    ],
    "hosts": [],
@@ -673,9 +675,9 @@
    "hosts": [],
    "mentions": {
     "briefs": [
+     "ae_atom",
      "g_ryd",
      "alkali",
-     "ae_atom",
      "cx_reload",
      "ro_erasure",
      "enc_opt",
@@ -692,7 +694,7 @@
      "ct_laser",
      "fab_optics"
     ],
-    "count": 51
+    "count": 48
    }
   },
   {
@@ -854,8 +856,8 @@
    "mentions": {
     "briefs": [
      "ct_fluxdac",
-     "ro_fluxro",
      "fluxq",
+     "ro_fluxro",
      "ro_erasure",
      "code_erasure",
      "cx_lr",
@@ -957,10 +959,10 @@
      "qd_spin",
      "g_exch",
      "fab_cmos",
-     "ct_base",
-     "ic_fanout",
      "cx_shuttle",
+     "ct_base",
      "ro_s2c",
+     "ic_fanout",
      "ct_cryocmos",
      "enc_spin_ld",
      "cx_nn",
@@ -970,7 +972,7 @@
      "code_highrate",
      "dec_corr"
     ],
-    "count": 91
+    "count": 86
    }
   },
   {
@@ -1254,7 +1256,7 @@
      "ct_base",
      "ro_s2c"
     ],
-    "count": 39
+    "count": 38
    }
   },
   {
@@ -1321,12 +1323,8 @@
    ],
    "hosts": [],
    "mentions": {
-    "briefs": [
-     "code_detect",
-     "fab_trap",
-     "ion"
-    ],
-    "count": 5
+    "briefs": [],
+    "count": 0
    }
   },
   {
@@ -1461,6 +1459,7 @@
    "url": "",
    "note": "",
    "machines": [
+    "riken-fujitsu-64q",
     "riken-fujitsu-256q",
     "fujitsu-snv-prototype",
     "fujitsu-10000q",
@@ -1481,35 +1480,35 @@
    "stations": [
     {
      "id": "transmon",
-     "machines": 2
+     "machines": 4
     },
     {
      "id": "enc_bare",
-     "machines": 2
-    },
-    {
-     "id": "g_tc",
-     "machines": 2
+     "machines": 4
     },
     {
      "id": "cx_nn",
-     "machines": 2
+     "machines": 4
     },
     {
      "id": "ro_disp",
-     "machines": 2
+     "machines": 4
     },
     {
      "id": "fab_sc",
-     "machines": 2
+     "machines": 4
     },
     {
-     "id": "ct_rt",
-     "machines": 1
+     "id": "g_tc",
+     "machines": 3
     },
     {
      "id": "ct_vio",
-     "machines": 1
+     "machines": 3
+    },
+    {
+     "id": "ct_rt",
+     "machines": 2
     },
     {
      "id": "defect",
@@ -1538,8 +1537,8 @@
     "briefs": [
      "ct_vio",
      "g_mwspin",
-     "transmon",
      "defect",
+     "transmon",
      "ic_spinphoton",
      "enc_bare",
      "g_tc",
@@ -1639,8 +1638,8 @@
      "transmon",
      "code_surface",
      "dec_rl",
-     "code_color",
      "code_magic",
+     "code_color",
      "cx_nn",
      "g_tc",
      "dec_mwpm",
@@ -1681,7 +1680,7 @@
      "ic_transducer",
      "fab_optics"
     ],
-    "count": 250
+    "count": 247
    }
   },
   {
@@ -1828,21 +1827,21 @@
      "fab_optics",
      "defect",
      "enc_omg",
-     "code_qldpc",
      "dec_nn",
      "fab_pic",
      "fab_diamond",
      "ct_laser",
+     "code_qldpc",
      "ic_ionphoton"
     ],
-    "count": 113
+    "count": 109
    }
   },
   {
    "slug": "hitachi",
    "name": "Hitachi",
    "aliases": [
-    "Hitachi + Intel"
+    "Hitachi + Intel K.K. + AIST (G-QuAT)"
    ],
    "tier": "quantum-vendor",
    "segment": "computing-hardware",
@@ -1906,8 +1905,7 @@
    "slug": "hrl-laboratories-ibm",
    "name": "HRL Laboratories (IBM)",
    "aliases": [
-    "HRL",
-    "HRL Laboratories (IBM since 26 Aug 2026)"
+    "HRL"
    ],
    "tier": "quantum-vendor",
    "segment": "computing-hardware",
@@ -1915,61 +1913,24 @@
    "city": "Malibu, CA",
    "url": "hrl.com",
    "note": "",
-   "machines": [
+   "machines": [],
+   "co_machines": [
     "hrl-eo-18q"
    ],
-   "co_machines": [],
    "families": [
     "SPIN"
    ],
    "architectures": [
     "spin_qd"
    ],
-   "stations": [
-    {
-     "id": "qd_spin",
-     "machines": 1
-    },
-    {
-     "id": "enc_eo",
-     "machines": 1
-    },
-    {
-     "id": "g_exch",
-     "machines": 1
-    },
-    {
-     "id": "cx_nn",
-     "machines": 1
-    },
-    {
-     "id": "ct_cryocmos",
-     "machines": 1
-    },
-    {
-     "id": "ct_base",
-     "machines": 1
-    },
-    {
-     "id": "ro_s2c",
-     "machines": 1
-    },
-    {
-     "id": "code_detect",
-     "machines": 1
-    },
-    {
-     "id": "fab_cmos",
-     "machines": 1
-    }
-   ],
+   "stations": [],
    "hosts": [],
    "mentions": {
     "briefs": [
      "g_exch",
      "ct_cryocmos",
-     "qd_spin",
      "enc_eo",
+     "qd_spin",
      "ct_base",
      "fab_cmos",
      "cx_shuttle",
@@ -1984,13 +1945,14 @@
      "ct_fluxdac",
      "code_detect"
     ],
-    "count": 119
+    "count": 122
    }
   },
   {
    "slug": "ibm",
    "name": "IBM",
    "aliases": [
+    "HRL Laboratories (IBM since 26 Aug 2026)",
     "IBM",
     "IBM with ETH Zurich (CSCS) and Lockheed Martin",
     "IBM with TCS and the Government of Andhra Pradesh"
@@ -2002,80 +1964,83 @@
    "url": "ibm.com",
    "note": "",
    "machines": [
-    "ibm-heron-r1",
     "ibm-heron-r2",
     "ibm-heron-r3",
     "ibm-nighthawk-r1",
     "ibm-nighthawk-r2",
+    "hrl-eo-18q",
     "ibm-condor",
     "ibm-flamingo",
     "ibm-loon",
     "amaravati-ibm-tcs",
     "ibm-system-two-cscs",
     "ibm-bluejay",
+    "ibm-cockatoo",
     "ibm-kookaburra",
     "ibm-starling",
     "ibm-eagle",
     "ibm-egret",
     "ibm-falcon",
-    "ibm-osprey",
-    "ibm-cockatoo"
+    "ibm-heron-r1",
+    "ibm-osprey"
    ],
    "co_machines": [],
    "families": [
-    "SC"
+    "SC",
+    "SPIN"
    ],
    "architectures": [
-    "sc"
+    "sc",
+    "spin_qd"
    ],
    "stations": [
     {
      "id": "transmon",
-     "machines": 17
+     "machines": 18
     },
     {
      "id": "enc_bare",
-     "machines": 17
+     "machines": 18
     },
     {
      "id": "ct_rt",
-     "machines": 17
+     "machines": 18
     },
     {
      "id": "ro_disp",
-     "machines": 17
+     "machines": 18
     },
     {
      "id": "fab_sc",
-     "machines": 17
+     "machines": 18
     },
     {
      "id": "g_tc",
-     "machines": 13
+     "machines": 14
     },
     {
      "id": "cx_nn",
-     "machines": 13
+     "machines": 14
+    },
+    {
+     "id": "code_surface",
+     "machines": 7
     },
     {
      "id": "ic_mcm",
-     "machines": 5
+     "machines": 6
     },
     {
      "id": "cx_lr",
-     "machines": 4
+     "machines": 5
     },
     {
      "id": "code_qldpc",
-     "machines": 4
+     "machines": 5
     },
     {
      "id": "dec_relaybp",
-     "machines": 4
-    },
-    {
-     "id": "g_cr",
-     "machines": 4
+     "machines": 5
     }
    ],
    "hosts": [
@@ -2086,6 +2051,10 @@
     {
      "machine": "ibm-nighthawk-r2",
      "host_org": "IBM (vendor DC); first unit outside IBM at Yonsei University, Songdo, Incheon, South Korea (Nov 2026)"
+    },
+    {
+     "machine": "amaravati-ibm-tcs",
+     "host_org": "TCS"
     },
     {
      "machine": "ibm-system-two-cscs",
@@ -2104,10 +2073,10 @@
     "briefs": [
      "transmon",
      "cx_lr",
-     "ct_cryocmos",
      "code_qldpc",
-     "ic_mcm",
+     "ct_cryocmos",
      "fab_sc",
+     "ic_mcm",
      "code_mitig",
      "cx_nn",
      "ic_transducer",
@@ -2115,20 +2084,20 @@
      "g_cr",
      "g_tc",
      "ro_reset",
-     "code_detect",
      "code_magic",
-     "fab_cmos",
-     "enc_bare",
+     "code_detect",
      "g_exch",
+     "enc_bare",
+     "fab_cmos",
      "qd_spin",
      "ic_cryolink",
      "enc_eo",
      "ct_rt",
      "code_surface",
      "cx_shuttle",
-     "ct_vio",
      "ct_sfq",
      "ro_disp",
+     "ct_vio",
      "ct_base",
      "code_highrate",
      "dec_nn",
@@ -2145,7 +2114,7 @@
      "dec_gpu",
      "dec_corr"
     ],
-    "count": 502
+    "count": 493
    }
   },
   {
@@ -2211,7 +2180,8 @@
    "url": "infleqtion.com",
    "note": "",
    "machines": [
-    "infleqtion-sqale"
+    "infleqtion-sqale",
+    "infleqtion-illinois"
    ],
    "co_machines": [],
    "families": [
@@ -2223,42 +2193,42 @@
    "stations": [
     {
      "id": "alkali",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "enc_hf",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "g_ryd",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "cx_aod",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "ct_laser",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "ro_img",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "code_highrate",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "dec_nn",
-     "machines": 1
-    },
-    {
-     "id": "dec_gpu",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "fab_optics",
+     "machines": 2
+    },
+    {
+     "id": "dec_gpu",
      "machines": 1
     }
    ],
@@ -2302,9 +2272,7 @@
    "machines": [
     "intel-tunnel-falls"
    ],
-   "co_machines": [
-    "hitachi-intel18a"
-   ],
+   "co_machines": [],
    "families": [
     "SPIN"
    ],
@@ -2389,13 +2357,13 @@
    "url": "ionq.com",
    "note": "",
    "machines": [
-    "ionq-aria",
     "ionq-forte",
     "ionq-oxford-quartet",
-    "ionq-tempo",
     "ionq-ba133-qldpc-testbed",
+    "ionq-tempo",
     "ionq-superion-256",
-    "ionq-superion-10k"
+    "ionq-superion-10k",
+    "ionq-aria"
    ],
    "co_machines": [],
    "families": [
@@ -2408,19 +2376,19 @@
    "stations": [
     {
      "id": "ion",
-     "machines": 6
+     "machines": 7
     },
     {
      "id": "enc_hf",
-     "machines": 6
+     "machines": 7
     },
     {
      "id": "ro_fluor",
-     "machines": 6
+     "machines": 7
     },
     {
      "id": "fab_trap",
-     "machines": 6
+     "machines": 7
     },
     {
      "id": "cx_bus",
@@ -2436,23 +2404,23 @@
     },
     {
      "id": "g_elec",
-     "machines": 2
+     "machines": 3
     },
     {
      "id": "ct_ionmw",
-     "machines": 2
+     "machines": 3
     },
     {
      "id": "code_qldpc",
      "machines": 2
     },
     {
-     "id": "fab_cmos",
-     "machines": 1
+     "id": "code_detect",
+     "machines": 2
     },
     {
-     "id": "cx_qccd",
-     "machines": 1
+     "id": "fab_cmos",
+     "machines": 2
     }
    ],
    "hosts": [
@@ -2484,8 +2452,8 @@
      "enc_omg",
      "fab_cmos",
      "cx_lr",
-     "ro_spd",
      "donor",
+     "ro_spd",
      "fab_stm",
      "fab_bulk",
      "ct_sfq",
@@ -2497,7 +2465,7 @@
      "dec_rl",
      "fab_optics"
     ],
-    "count": 431
+    "count": 426
    }
   },
   {
@@ -2562,6 +2530,10 @@
      "machines": 2
     },
     {
+     "id": "code_detect",
+     "machines": 2
+    },
+    {
      "id": "dec_gpu",
      "machines": 2
     },
@@ -2570,7 +2542,7 @@
      "machines": 1
     },
     {
-     "id": "code_detect",
+     "id": "code_color",
      "machines": 1
     }
    ],
@@ -2609,7 +2581,7 @@
      "ic_cryolink",
      "ic_transducer"
     ],
-    "count": 82
+    "count": 80
    }
   },
   {
@@ -2751,27 +2723,27 @@
    "stations": [
     {
      "id": "transmon",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "enc_bare",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "cx_nn",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "ct_rt",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "ro_disp",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "fab_sc",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "g_tc",
@@ -2876,9 +2848,9 @@
    "mentions": {
     "briefs": [
      "fluxonium",
+     "ct_sfq",
      "ic_multidie",
      "ct_vio",
-     "ct_sfq",
      "ct_ionlaser",
      "ro_fluor",
      "code_magic",
@@ -2891,7 +2863,7 @@
      "dec_corr",
      "fab_trap"
     ],
-    "count": 32
+    "count": 34
    }
   },
   {
@@ -2969,9 +2941,9 @@
      "code_highrate",
      "g_ryd",
      "ct_laser",
+     "ro_img",
      "ae_atom",
      "ct_base",
-     "ro_img",
      "ro_erasure",
      "ic_spinphoton",
      "alkali",
@@ -2982,6 +2954,7 @@
      "transmon",
      "photon",
      "defect",
+     "enc_eo",
      "g_mwspin",
      "code_color",
      "code_qldpc",
@@ -2991,7 +2964,7 @@
      "ic_atomcavity",
      "ic_transducer"
     ],
-    "count": 167
+    "count": 169
    }
   },
   {
@@ -3053,76 +3026,6 @@
    }
   },
   {
-   "slug": "nict",
-   "name": "NICT",
-   "aliases": [
-    "RIKEN with AIST, NICT, Osaka University, Fujitsu, NTT"
-   ],
-   "tier": "research",
-   "segment": "research-org",
-   "country": "Japan",
-   "city": "Tokyo",
-   "url": "",
-   "note": "",
-   "machines": [
-    "riken-64q"
-   ],
-   "co_machines": [],
-   "families": [
-    "SC"
-   ],
-   "architectures": [
-    "sc"
-   ],
-   "stations": [
-    {
-     "id": "transmon",
-     "machines": 1
-    },
-    {
-     "id": "enc_bare",
-     "machines": 1
-    },
-    {
-     "id": "g_tc",
-     "machines": 1
-    },
-    {
-     "id": "cx_nn",
-     "machines": 1
-    },
-    {
-     "id": "ct_rt",
-     "machines": 1
-    },
-    {
-     "id": "ct_vio",
-     "machines": 1
-    },
-    {
-     "id": "ro_disp",
-     "machines": 1
-    },
-    {
-     "id": "fab_sc",
-     "machines": 1
-    }
-   ],
-   "hosts": [
-    {
-     "machine": "riken-64q",
-     "host_org": "RIKEN Center for Quantum Computing (RQC)"
-    }
-   ],
-   "mentions": {
-    "briefs": [
-     "ic_atomcavity",
-     "ct_vio"
-    ],
-    "count": 3
-   }
-  },
-  {
    "slug": "nord-quantique",
    "name": "Nord Quantique",
    "aliases": [
@@ -3171,6 +3074,10 @@
      "machines": 2
     },
     {
+     "id": "code_bosonic",
+     "machines": 2
+    },
+    {
      "id": "fab_sc",
      "machines": 2
     },
@@ -3193,12 +3100,63 @@
      "code_bosonic",
      "fab_3d",
      "transmon",
-     "g_catcnot",
      "enc_cat",
+     "g_catcnot",
      "dec_corr",
      "dec_rl"
     ],
     "count": 42
+   }
+  },
+  {
+   "slug": "optqc",
+   "name": "OptQC",
+   "aliases": [
+    "OptQC"
+   ],
+   "tier": "quantum-vendor",
+   "segment": "computing-hardware",
+   "country": "Japan",
+   "city": "Tokyo",
+   "url": "optqc.com",
+   "note": "",
+   "machines": [
+    "optqc-moquren"
+   ],
+   "co_machines": [],
+   "families": [
+    "PHOTON"
+   ],
+   "architectures": [
+    "ph_cv"
+   ],
+   "stations": [
+    {
+     "id": "squeezed",
+     "machines": 1
+    },
+    {
+     "id": "g_cv",
+     "machines": 1
+    },
+    {
+     "id": "ro_homodyne",
+     "machines": 1
+    },
+    {
+     "id": "fab_bulk",
+     "machines": 1
+    }
+   ],
+   "hosts": [
+    {
+     "machine": "optqc-moquren",
+     "host_org": "AIST G-QuAT, Tsukuba (ABCI-Q) - vendor HQ Tokyo"
+    }
+   ],
+   "mentions": {
+    "briefs": [],
+    "count": 0
    }
   },
   {
@@ -3216,7 +3174,8 @@
    "note": "",
    "machines": [
     "orca-pt1",
-    "orca-pt2"
+    "orca-pt2",
+    "orca-pt3"
    ],
    "co_machines": [
     "iqcc-facility"
@@ -3230,30 +3189,30 @@
    "stations": [
     {
      "id": "g_lointer",
-     "machines": 2
+     "machines": 3
     },
     {
      "id": "cx_switch",
-     "machines": 2
+     "machines": 3
     },
     {
      "id": "ct_eo",
-     "machines": 2
+     "machines": 3
     },
     {
      "id": "ro_spd",
-     "machines": 2
+     "machines": 3
     },
     {
      "id": "fab_bulk",
+     "machines": 3
+    },
+    {
+     "id": "squeezed",
      "machines": 2
     },
     {
      "id": "photon",
-     "machines": 1
-    },
-    {
-     "id": "squeezed",
      "machines": 1
     }
    ],
@@ -3261,6 +3220,10 @@
     {
      "machine": "orca-pt2",
      "host_org": "NQCC, Harwell UK; PSNC, Poznan PL; UK MoD / Digital Catapult, London - vendor HQ London"
+    },
+    {
+     "machine": "orca-pt3",
+     "host_org": "Digital Realty's Innovation Lab, London - vendor HQ London"
     }
    ],
    "mentions": {
@@ -3280,7 +3243,7 @@
      "ro_img",
      "dec_corr"
     ],
-    "count": 71
+    "count": 72
    }
   },
   {
@@ -3338,7 +3301,7 @@
     },
     {
      "id": "code_detect",
-     "machines": 2
+     "machines": 1
     }
    ],
    "hosts": [],
@@ -3545,13 +3508,12 @@
      "code_aft",
      "ae_atom",
      "enc_omg",
-     "cx_reload",
      "code_highrate",
      "code_magic",
      "dec_nn",
      "dec_corr"
     ],
-    "count": 118
+    "count": 116
    }
   },
   {
@@ -3673,8 +3635,8 @@
    "mentions": {
     "briefs": [
      "ic_spinphoton",
-     "code_qldpc",
      "defect",
+     "code_qldpc",
      "photon",
      "g_mwspin",
      "ic_transducer",
@@ -3892,7 +3854,7 @@
      "transmon",
      "code_qldpc"
     ],
-    "count": 55
+    "count": 53
    }
   },
   {
@@ -3990,7 +3952,7 @@
      "majorana",
      "ic_transducer"
     ],
-    "count": 143
+    "count": 141
    }
   },
   {
@@ -4348,8 +4310,8 @@
      "ion",
      "code_highrate",
      "g_ms",
-     "cx_qccd",
      "ct_ionlaser",
+     "cx_qccd",
      "code_magic",
      "ic_ionphoton",
      "ro_fluor",
@@ -4374,7 +4336,7 @@
      "dec_rl",
      "fab_pic"
     ],
-    "count": 191
+    "count": 188
    }
   },
   {
@@ -4390,6 +4352,7 @@
    "url": "quantum-art.tech",
    "note": "",
    "machines": [
+    "quantum-art-montage",
     "quantum-art-multicore"
    ],
    "co_machines": [],
@@ -4402,27 +4365,27 @@
    "stations": [
     {
      "id": "ion",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "enc_hf",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "g_ms",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "cx_bus",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "ro_fluor",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "fab_trap",
-     "machines": 1
+     "machines": 2
     }
    ],
    "hosts": [],
@@ -4588,6 +4551,64 @@
    }
   },
   {
+   "slug": "quantum-science-center-of-guangdong-hong-kong-macao-greater-bay-area",
+   "name": "Quantum Science Center of Guangdong-Hong Kong-Macao Greater Bay Area",
+   "aliases": [
+    "Quantum Science Center of Guangdong-Hong Kong-Macao Greater Bay Area (Shenzhen)"
+   ],
+   "tier": "academic",
+   "segment": "",
+   "country": "China",
+   "city": "Shenzhen",
+   "url": "",
+   "note": "",
+   "machines": [
+    "iqsc-fluxonium-22"
+   ],
+   "co_machines": [],
+   "families": [
+    "SC"
+   ],
+   "architectures": [
+    "sc"
+   ],
+   "stations": [
+    {
+     "id": "fluxonium",
+     "machines": 1
+    },
+    {
+     "id": "enc_bare",
+     "machines": 1
+    },
+    {
+     "id": "g_tc",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_rt",
+     "machines": 1
+    },
+    {
+     "id": "ro_disp",
+     "machines": 1
+    },
+    {
+     "id": "fab_sc",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [],
+    "count": 0
+   }
+  },
+  {
    "slug": "quantum-x-labs",
    "name": "Quantum X Labs",
    "aliases": [
@@ -4745,6 +4766,8 @@
    "machines": [
     "quantware-contralto-a17",
     "quantware-vio-40k",
+    "quantware-contralto-d21",
+    "quantware-soprano-d5",
     "quantware-tenor-d64"
    ],
    "co_machines": [
@@ -4759,31 +4782,31 @@
    "stations": [
     {
      "id": "transmon",
-     "machines": 3
+     "machines": 5
     },
     {
      "id": "enc_bare",
-     "machines": 3
+     "machines": 5
     },
     {
      "id": "g_tc",
-     "machines": 3
+     "machines": 5
     },
     {
      "id": "cx_nn",
-     "machines": 3
+     "machines": 5
     },
     {
      "id": "ct_rt",
-     "machines": 3
+     "machines": 5
     },
     {
      "id": "ro_disp",
-     "machines": 3
+     "machines": 5
     },
     {
      "id": "fab_sc",
-     "machines": 3
+     "machines": 5
     },
     {
      "id": "ct_vio",
@@ -4808,12 +4831,12 @@
     "briefs": [
      "ct_vio",
      "ic_mcm",
-     "g_tc",
      "cx_lr",
+     "g_tc",
      "ro_disp",
      "transmon"
     ],
-    "count": 53
+    "count": 54
    }
   },
   {
@@ -4903,26 +4926,30 @@
    "stations": [
     {
      "id": "ion",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "enc_hf",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "g_elec",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "ct_ionmw",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "ro_fluor",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "fab_trap",
+     "machines": 2
+    },
+    {
+     "id": "fab_cmos",
      "machines": 1
     }
    ],
@@ -5028,6 +5055,7 @@
      "alkali",
      "code_aft",
      "g_ryd",
+     "ro_img",
      "dec_corr",
      "enc_gr",
      "g_anneal",
@@ -5036,21 +5064,20 @@
      "ct_laser",
      "code_color",
      "code_erasure",
-     "ro_img",
      "code_highrate",
      "fab_optics",
      "cx_reload",
      "ae_atom",
      "enc_omg",
      "code_surface",
-     "code_qldpc",
      "dec_nn",
      "ct_pic_trap",
+     "code_qldpc",
      "dec_gpu",
      "dec_rl",
      "ic_atomcavity"
     ],
-    "count": 188
+    "count": 183
    }
   },
   {
@@ -5233,13 +5260,13 @@
     "briefs": [
      "defect",
      "cx_shuttle",
-     "ic_spinphoton",
      "g_mwspin",
+     "ic_spinphoton",
      "fab_diamond",
-     "ct_cryocmos",
-     "majorana",
      "cx_crossbar",
+     "ct_cryocmos",
      "qd_spin",
+     "majorana",
      "ct_base",
      "ro_qcap",
      "enc_spin_ld",
@@ -5253,7 +5280,7 @@
      "code_detect",
      "fab_mbe"
     ],
-    "count": 89
+    "count": 92
    }
   },
   {
@@ -5329,8 +5356,8 @@
    "mentions": {
     "briefs": [
      "ic_mcm",
-     "transmon",
      "ic_transducer",
+     "transmon",
      "cx_nn",
      "fab_sc",
      "enc_bare",
@@ -5346,14 +5373,16 @@
      "dec_rl",
      "ic_cryolink"
     ],
-    "count": 94
+    "count": 91
    }
   },
   {
    "slug": "riken-center-for-quantum-computing",
    "name": "RIKEN Center for Quantum Computing",
    "aliases": [
-    "RIKEN"
+    "RIKEN",
+    "RIKEN (Furusawa) with NTT and Fixstars Amplify",
+    "RIKEN with AIST, NICT, Osaka University, Fujitsu, NTT"
    ],
    "tier": "research",
    "segment": "research-org",
@@ -5361,18 +5390,72 @@
    "city": "Wako",
    "url": "",
    "note": "",
-   "machines": [],
-   "co_machines": [
+   "machines": [
     "riken-64q",
-    "fujitsu-10000q"
+    "riken-optical-qc"
+   ],
+   "co_machines": [
+    "fujitsu-10000q",
+    "fujitsu-1000q"
    ],
    "families": [
-    "SC"
+    "SC",
+    "PHOTON"
    ],
    "architectures": [
-    "sc"
+    "sc",
+    "ph_cv"
    ],
-   "stations": [],
+   "stations": [
+    {
+     "id": "transmon",
+     "machines": 1
+    },
+    {
+     "id": "squeezed",
+     "machines": 1
+    },
+    {
+     "id": "enc_bare",
+     "machines": 1
+    },
+    {
+     "id": "g_tc",
+     "machines": 1
+    },
+    {
+     "id": "g_cv",
+     "machines": 1
+    },
+    {
+     "id": "cx_nn",
+     "machines": 1
+    },
+    {
+     "id": "ct_rt",
+     "machines": 1
+    },
+    {
+     "id": "ct_vio",
+     "machines": 1
+    },
+    {
+     "id": "ct_eo",
+     "machines": 1
+    },
+    {
+     "id": "ro_disp",
+     "machines": 1
+    },
+    {
+     "id": "ro_homodyne",
+     "machines": 1
+    },
+    {
+     "id": "fab_sc",
+     "machines": 1
+    }
+   ],
    "hosts": [],
    "mentions": {
     "briefs": [
@@ -5381,7 +5464,7 @@
      "ct_rt",
      "code_mitig"
     ],
-    "count": 19
+    "count": 18
    }
   },
   {
@@ -5618,8 +5701,8 @@
     "briefs": [
      "ct_sfq",
      "dec_cryo",
-     "ct_fluxdac",
      "ct_cryocmos",
+     "ct_fluxdac",
      "ic_multidie",
      "transmon",
      "cx_lr",
@@ -5627,7 +5710,7 @@
      "cx_nn",
      "ic_mcm"
     ],
-    "count": 85
+    "count": 87
    }
   },
   {
@@ -5701,7 +5784,7 @@
      "ro_s2c",
      "ic_fanout"
     ],
-    "count": 58
+    "count": 55
    }
   },
   {
@@ -5786,11 +5869,10 @@
      "ro_erasure",
      "ic_mcm",
      "ic_multidie",
-     "cavity",
      "code_erasure",
      "g_bos"
     ],
-    "count": 23
+    "count": 21
    }
   },
   {
@@ -5961,19 +6043,18 @@
    "mentions": {
     "briefs": [
      "enc_timebin",
-     "g_tc",
      "transmon",
-     "fluxonium"
+     "fluxonium",
+     "g_tc"
     ],
-    "count": 8
+    "count": 7
    }
   },
   {
    "slug": "tsinghua-university",
    "name": "Tsinghua University",
    "aliases": [
-    "Tsinghua University (Duan group)",
-    "Zhejiang University (H. Wang group) with Tsinghua University IIIS (D.-L. Deng)"
+    "Tsinghua University (Duan group)"
    ],
    "tier": "research",
    "segment": "research-org",
@@ -5982,29 +6063,18 @@
    "url": "cqi.tsinghua.edu.cn",
    "note": "",
    "machines": [
-    "tsinghua-512-ion",
-    "tsinghua-kunlun-32"
+    "tsinghua-512-ion"
    ],
    "co_machines": [],
    "families": [
-    "SC",
     "ION"
    ],
    "architectures": [
-    "sc",
     "ion_chain"
    ],
    "stations": [
     {
-     "id": "transmon",
-     "machines": 1
-    },
-    {
      "id": "ion",
-     "machines": 1
-    },
-    {
-     "id": "enc_bare",
      "machines": 1
     },
     {
@@ -6012,23 +6082,7 @@
      "machines": 1
     },
     {
-     "id": "g_tc",
-     "machines": 1
-    },
-    {
-     "id": "cx_lr",
-     "machines": 1
-    },
-    {
-     "id": "ct_rt",
-     "machines": 1
-    },
-    {
      "id": "ct_ionaod",
-     "machines": 1
-    },
-    {
-     "id": "ro_disp",
      "machines": 1
     },
     {
@@ -6036,11 +6090,11 @@
      "machines": 1
     },
     {
-     "id": "code_qldpc",
+     "id": "fab_trap",
      "machines": 1
     },
     {
-     "id": "fab_sc",
+     "id": "fab_optics",
      "machines": 1
     }
    ],
@@ -6129,6 +6183,7 @@
    "name": "University of Innsbruck",
    "aliases": [
     "Innsbruck",
+    "IQOQI Innsbruck (Austrian Academy of Sciences) with the University of Innsbruck (M. Joshi, C. Roos)",
     "University of Innsbruck"
    ],
    "tier": "research",
@@ -6138,6 +6193,7 @@
    "url": "uibk.ac.at",
    "note": "",
    "machines": [
+    "uibk-iqoqi-sim-51",
     "uibk-innsbruck-ion"
    ],
    "co_machines": [],
@@ -6150,11 +6206,23 @@
    "stations": [
     {
      "id": "ion",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "enc_opt",
-     "machines": 1
+     "machines": 2
+    },
+    {
+     "id": "ct_ionaod",
+     "machines": 2
+    },
+    {
+     "id": "ro_fluor",
+     "machines": 2
+    },
+    {
+     "id": "fab_trap",
+     "machines": 2
     },
     {
      "id": "g_ms",
@@ -6169,14 +6237,6 @@
      "machines": 1
     },
     {
-     "id": "ct_ionaod",
-     "machines": 1
-    },
-    {
-     "id": "ro_fluor",
-     "machines": 1
-    },
-    {
      "id": "code_color",
      "machines": 1
     },
@@ -6186,10 +6246,6 @@
     },
     {
      "id": "code_magic",
-     "machines": 1
-    },
-    {
-     "id": "fab_trap",
      "machines": 1
     },
     {
@@ -6208,7 +6264,7 @@
      "cx_qccd",
      "fab_trap"
     ],
-    "count": 17
+    "count": 16
    }
   },
   {
@@ -6260,6 +6316,7 @@
    "url": "quantum.ustc.edu.cn",
    "note": "",
    "machines": [
+    "ustc-2024-atom-array",
     "ustc-jiuzhang4",
     "ustc-zuchongzhi-3.0",
     "ustc-zuchongzhi-3.2",
@@ -6271,10 +6328,12 @@
    "co_machines": [],
    "families": [
     "SC",
+    "ATOM",
     "PHOTON"
    ],
    "architectures": [
     "sc",
+    "atom_rb",
     "ph_sampler"
    ],
    "stations": [
@@ -6339,27 +6398,26 @@
    ],
    "mentions": {
     "briefs": [
+     "ro_img",
      "fab_bulk",
      "g_lointer",
      "enc_bare",
      "ro_reset",
      "code_surface",
      "transmon",
-     "ct_pic_trap",
      "photon",
-     "ro_img",
+     "ct_pic_trap",
      "ic_multidie",
      "alkali",
-     "g_ryd",
      "g_tc",
+     "g_ryd",
      "src_resource",
-     "ct_ionaod",
      "code_magic",
      "dec_nn",
      "ic_cryolink",
      "ic_transducer"
     ],
-    "count": 72
+    "count": 65
    }
   },
   {
@@ -6503,8 +6561,8 @@
      "enc_gkp",
      "ro_spd",
      "fab_pic",
-     "photon",
      "ic_fibre",
+     "photon",
      "ct_eo",
      "ro_homodyne",
      "fab_bulk",
@@ -6513,7 +6571,7 @@
      "g_fusion",
      "code_erasure"
     ],
-    "count": 129
+    "count": 128
    }
   },
   {
@@ -6579,20 +6637,20 @@
    "hosts": [],
    "mentions": {
     "briefs": [
-     "ae_atom",
-     "ct_laser",
      "ro_img",
-     "ro_fluor"
+     "ae_atom",
+     "ct_laser"
     ],
-    "count": 11
+    "count": 10
    }
   },
   {
    "slug": "zhejiang-university",
    "name": "Zhejiang University",
    "aliases": [
+    "Tsinghua University IIIS (D.-L. Deng) with Zhejiang University (H. Wang, C. Song groups)",
     "Zhejiang",
-    "Zhejiang University + CAEP"
+    "Zhejiang University + Graduate School of China Academy of Engineering Physics (Beijing)"
    ],
    "tier": "research",
    "segment": "research-org",
@@ -6601,11 +6659,10 @@
    "url": "zju.edu.cn",
    "note": "",
    "machines": [
+    "tsinghua-kunlun-32",
     "zju-125q"
    ],
-   "co_machines": [
-    "tsinghua-kunlun-32"
-   ],
+   "co_machines": [],
    "families": [
     "SC"
    ],
@@ -6615,30 +6672,42 @@
    "stations": [
     {
      "id": "transmon",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "enc_bare",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "g_tc",
-     "machines": 1
+     "machines": 2
+    },
+    {
+     "id": "ct_rt",
+     "machines": 2
+    },
+    {
+     "id": "ro_disp",
+     "machines": 2
+    },
+    {
+     "id": "fab_sc",
+     "machines": 2
     },
     {
      "id": "cx_nn",
      "machines": 1
     },
     {
-     "id": "ct_rt",
-     "machines": 1
-    },
-    {
-     "id": "ro_disp",
+     "id": "cx_lr",
      "machines": 1
     },
     {
      "id": "code_surface",
+     "machines": 1
+    },
+    {
+     "id": "code_qldpc",
      "machines": 1
     },
     {
@@ -6648,24 +6717,25 @@
     {
      "id": "dec_mwpm",
      "machines": 1
-    },
-    {
-     "id": "fab_sc",
-     "machines": 1
     }
    ],
-   "hosts": [],
+   "hosts": [
+    {
+     "machine": "tsinghua-kunlun-32",
+     "host_org": "Tsinghua University (Deng group)"
+    }
+   ],
    "mentions": {
     "briefs": [
      "code_qldpc",
-     "code_surface",
      "code_magic",
      "enc_bare",
+     "code_surface",
      "dec_nn",
      "ic_cryolink",
      "ic_transducer"
     ],
-    "count": 13
+    "count": 12
    }
   },
   {

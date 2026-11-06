@@ -57,7 +57,7 @@ def sha(p):
 
 
 def git(*a, cwd=ROOT):
-    r = subprocess.run(['git'] + list(a), cwd=cwd, capture_output=True, text=True)
+    r = subprocess.run(['git'] + list(a), cwd=cwd, capture_output=True, text=True, encoding='utf-8', errors='replace')
     if r.returncode: raise SystemExit('git %s failed: %s' % (' '.join(a), r.stderr.strip()))
     return r.stdout.strip()
 
@@ -70,7 +70,7 @@ def classify(paths):
         if re.match(r'report/report_[A-Z]+\.md$', p):   # §7–§8 are regenerated into the reports; the hand-written sections make it text — the class is given when any of them moved
             classes.append('text') if 'text' not in classes else None; continue
         if p == 'build/editions.py':   # an edition only when the editions list or the status moved; the changelog writer and the errata are generator work
-            d = subprocess.run(['git', 'diff', 'main...HEAD', '--', p], cwd=ROOT, capture_output=True, text=True).stdout
+            d = subprocess.run(['git', 'diff', 'main...HEAD', '--', p], cwd=ROOT, capture_output=True, text=True, encoding='utf-8', errors='replace').stdout
             c = 'edition' if re.search(r'^[+-](?!\+\+|--).*\b(EDITIONS\s*=|STATUS\s*=|\'edition\':|\'doi\':)', d, re.M) else 'generator'
         else:
             c = ('text' if p.startswith(('briefs/', 'data/i18n/', 'report/paths/')) else 'data' if p.startswith('data/')
@@ -106,7 +106,7 @@ def main():
     new_tags = [t for t in git('tag', '--merged', branch).split() if t not in git('tag', '--merged', 'main').split()]
     if full: git('bundle', 'create', bundle, branch, 'main', '--tags'); brefs = [branch, 'main'] + sorted(tags); prereq = []
     else: git('bundle', 'create', bundle, 'main..' + branch, *new_tags); brefs = [branch] + new_tags; prereq = [main_sha]
-    v = subprocess.run(['git', 'bundle', 'verify', bundle], cwd=ROOT, capture_output=True, text=True)   # here main is present: the prerequisite resolves
+    v = subprocess.run(['git', 'bundle', 'verify', bundle], cwd=ROOT, capture_output=True, text=True, encoding='utf-8', errors='replace')   # here main is present: the prerequisite resolves
     if v.returncode: raise SystemExit('bundle verify failed: ' + v.stderr)
     bsha = sha(bundle); bsize = os.path.getsize(bundle); parts = []
     if bsize > PART:
@@ -121,11 +121,11 @@ def main():
     if '--no-cleanroom' not in a:
         tmp = tempfile.mkdtemp(prefix='cleanroom-')
         git('clone', '-q', '--no-local', ROOT, tmp, '-b', 'main', cwd=ROOT)      # the local side's situation: a clone that holds main
-        vv = subprocess.run(['git', 'bundle', 'verify', bundle], cwd=tmp, capture_output=True, text=True)
+        vv = subprocess.run(['git', 'bundle', 'verify', bundle], cwd=tmp, capture_output=True, text=True, encoding='utf-8', errors='replace')
         if vv.returncode: raise SystemExit('clean room: bundle verify against a clone at main failed: ' + vv.stderr)
         git('fetch', '-q', bundle, '%s:%s' % (branch, branch), cwd=tmp); git('checkout', '-q', branch, cwd=tmp)
         if git('rev-parse', 'HEAD', cwd=tmp) != head: raise SystemExit('clean room: the bundle delivered %s, not HEAD %s' % (git('rev-parse', 'HEAD', cwd=tmp), head))
-        b = subprocess.run([sys.executable, 'build/build.py'], cwd=tmp, capture_output=True, text=True, timeout=900)
+        b = subprocess.run([sys.executable, 'build/build.py'], cwd=tmp, capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=900)
         if b.returncode: raise SystemExit('clean-room build failed: ' + b.stderr[-800:])
         says = [l for l in b.stdout.splitlines() if l.startswith(('built ', 'zenodo cites:', 'CHANGELOG.md written'))]
         if git('status', '--porcelain', cwd=tmp): raise SystemExit('clean-room tree not clean after the build:\n' + git('status', '--porcelain', cwd=tmp))
@@ -133,7 +133,7 @@ def main():
         diff = sorted(p for p in set(here) | set(there) if here.get(p) != there.get(p))
         if diff: raise SystemExit('clean-room dist differs from the working tree in %d file(s): %s' % (len(diff), ', '.join(diff[:8])))
         if '--no-zip' not in a and shutil.which('zip'):
-            z = subprocess.run([sys.executable, 'build/site_zip.py'], cwd=tmp, capture_output=True, text=True, timeout=600)
+            z = subprocess.run([sys.executable, 'build/site_zip.py'], cwd=tmp, capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=600)
             if z.returncode == 0:
                 zp = os.path.join(tmp, 'quantum-technology-atlas-site.zip'); zsha = sha(zp); nzip = os.path.getsize(zp)
         shutil.rmtree(tmp, ignore_errors=True)

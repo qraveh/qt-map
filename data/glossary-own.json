@@ -1816,5 +1816,27 @@
   "he": "יחידות של סוג מכונה: מכונותיו הנפרדות פיזית, כל אחת עם backend ענן או אתר בשם. נבנו מונה כל יחידה שהמקורות מונים, כולל שהוצאו משירות (≥N = לפחות N); בשירות מונה את אלה שבפעולה בתאריך הספירה, 6 בנובמבר 2026 (? = המקורות שותקים). כרטיסי המכונות נושאים את שני המספרים; דפי המכונות מוסיפים את הראיות",
   "src": "the machine cards (6 Nov 2026)",
   "why": "the cards show the count before any text defines it"
+ },
+ {
+  "id": "mot",
+  "match": [
+   "magneto-optical trap"
+  ],
+  "match_ru": [
+   "магнитооптическая ловушка",
+   "магнитооптической ловушки",
+   "магнитооптической ловушке",
+   "магнитооптическую ловушку"
+  ],
+  "match_he": [
+   "מלכודת מגנטו-אופטית"
+  ],
+  "scope": "first",
+  "re": null,
+  "en": "Magneto-optical trap (MOT): a cloud of atoms cooled and held by six laser beams and a magnetic-field gradient — the first stage of every neutral-atom machine's loading chain (atom source → Zeeman slower or 2D MOT → 3D MOT → optical molasses → tweezer or lattice load). Infrastructure rather than a technology of the map: every atom machine has one, and its parameters set the reload rate that the atom-reload technology measures",
+  "ru": "Магнитооптическая ловушка (МОЛ): облако атомов, охлаждаемое и удерживаемое шестью лазерными пучками и градиентом магнитного поля — первая ступень цепочки загрузки каждой машины на нейтральных атомах (источник атомов → зеемановский замедлитель или 2D-МОЛ → 3D-МОЛ → оптическая патока → загрузка в пинцеты или решётку). Инфраструктура, а не технология карты: она есть у каждой атомной машины, и её параметры задают скорость дозагрузки, которую измеряет технология дозагрузки атомов",
+  "he": "מלכודת מגנטו-אופטית (MOT): ענן אטומים שמקורר ומוחזק בשש אלומות לייזר ובגרדיאנט של שדה מגנטי — השלב הראשון בשרשרת הטעינה של כל מכונת אטומים ניטרליים (מקור אטומים → מאט זימן או MOT דו-ממדי → MOT תלת-ממדי → דבש אופטי → טעינה לפינצטות או לסריג). תשתית ולא טכנולוגיה של המפה: לכל מכונת אטומים יש אחת, והפרמטרים שלה קובעים את קצב הטעינה מחדש שטכנולוגיית טעינת האטומים מודדת",
+  "src": "the T2 review of 6 Nov 2026 (the proposal of 24 Sep 2026 settled: vocabulary, not a technology of the map; the discriminating stage became the atom-reload technology on 26 Sep 2026)",
+  "why": "the atom paths and the reload technology name the trap without defining it"
  }
 ]

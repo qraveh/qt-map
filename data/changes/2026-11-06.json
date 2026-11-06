@@ -1,6 +1,6 @@
 {
  "date": "2026-11-06",
- "source": "digest intake of the issues of 16 Oct – 5 Nov 2026 (T1 research, the local session); the units count of 6 Nov 2026 re-verified at the owners' pages; a status found on the way",
+ "source": "digest intake of the issues of 16 Oct – 5 Nov 2026 (T1 research, the local session); the units count of 6 Nov 2026 re-verified at the owners' pages; a status found on the way | T2 discovery and status sweep (local session, 6 Nov 2026; ticket 20261106-3) — applied 7 Nov 2026 by the local writer job 20261106-3 (the 24-row status patch, the 92 items, the seven proposed rows as add items; the six proposed stations wait for their briefs)",
  "items": [
   {
    "kind": "update",
@@ -553,6 +553,1541 @@
     "https://quantum.cloud.ibm.com/computers",
     "https://newsroom.ibm.com/2024-11-19-yonsei-deploys-first-ibm-quantum-system-one-in-the-republic-of-korea"
    ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "basq-system-two"
+   },
+   "fields": {
+    "access": "members of the IBM-Euskadi Quantum Computational Center; since Jul 2026 also open to industry and public-sector entities (requests to access@basquequantum.eus; access agreement with Ikerbasque, which manages the infrastructure); first company projects approved 14 Oct 2026 (8 of 11 applications), call open on a rolling basis",
+    "old_access": "members of the IBM-Euskadi Quantum Computational Center; since Jul 2026 also open to industry and public-sector entities (requests to access@basquequantum.eus; access agreement with Ikerbasque, which manages the infrastructure)"
+   },
+   "note": "«el comité evaluador ha aprobado ocho de las once solicitudes de proyectos empresariales presentadas» (the owner's page, read 2026-11-06; T2 status sweep)",
+   "sources": [
+    "https://www.basquequantum.eus/es/noticias/ordenador-cuantico-euskadi-cumple-su-primer-ano-con-64-proyectos-investigacion-y-abre"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "academia-sinica-20q"
+   },
+   "fields": {
+    "roadmap": "domestic fab capability is the programme's point; to serve later as a test platform for industrial users, with chip-stacking work to cut crosstalk (29 Jan 2026)",
+    "old_roadmap": "domestic fab capability is the programme's point"
+   },
+   "note": "«will eventually serve as a test platform for industrial users in hardware-software integration and algorithm development» (the owner's page, read 2026-11-06; T2 status sweep)",
+   "sources": [
+    "https://www.sinica.edu.tw/en/news_content/55/3655"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "spinq-ursa-major"
+   },
+   "fields": {
+    "roadmap": "103-qubit chip taped out, packaged and validated (mid-2026), delivery not stated; d=3 surface code in 2026; the 103-qubit chip named 'Shaowei' (少微) and shown publicly at the Hong Kong autumn electronics fair (18 Oct 2026), delivery still not stated",
+    "old_roadmap": "103-qubit chip taped out, packaged and validated (mid-2026), delivery not stated; d=3 surface code in 2026"
+   },
+   "note": "«发布 103 比特 “少微” 超导量子芯片» (the owner's page, read 2026-11-06; T2 status sweep)",
+   "sources": [
+    "https://www.spinq.com/"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-nighthawk-r1"
+   },
+   "fields": {
+    "event": "milestone",
+    "figure": "two Nighthawk R1 processors in one dilution refrigerator linked by four l-couplers (80 cm cables); state-transfer fidelity 99% average (99.3% peak); distant CZ 94.75% average",
+    "date": "2026-10-27"
+   },
+   "note": "«connected using multiple meter-scale quantum channels with an average quantum state transfer fidelity of 99%» — no register column for it: a statement, not a cell (T2 status sweep)",
+   "sources": [
+    "https://www.ibm.com/quantum/blog/connecting-quantum-processors-with-l-couplers"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-nighthawk-r1"
+   },
+   "fields": {
+    "event": "milestone",
+    "figure": "ORNL/IBM/AMD QEC co-design platform on the 120-qubit Nighthawk, co-located with ORNL's Umbra HPC system; IBM experiments 'up to 70 logical qubits and 438 hard operations' (hardware not named)",
+    "date": "2026-11-05"
+   },
+   "note": "«120-qubit IBM Quantum Nighthawk» — no register column for it: a statement, not a cell (T2 status sweep)",
+   "sources": [
+    "https://newsroom.ibm.com/2026-11-05-oak-ridge-national-lab,-ibm,-and-amd-launch-new-co-design-platform-for-quantum-error-correction"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "basq-system-two"
+   },
+   "fields": {
+    "event": "milestone",
+    "figure": "64 research projects supported in the first year (in operation since 14 Oct 2025); 8 company projects approved (Global Data Quantum, LKS Next, Multiverse Computing, Akshar Innovation, Iberdrola, Amadeus, Moeve, Gertek)",
+    "date": "2026-10-14"
+   },
+   "note": "«el ordenador IBM Quantum System Two ha dado soporte a 64 proyectos de investigación» — no register column for it: a statement, not a cell (T2 status sweep)",
+   "sources": [
+    "https://www.basquequantum.eus/es/noticias/ordenador-cuantico-euskadi-cumple-su-primer-ano-con-64-proyectos-investigacion-y-abre"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-heron-r2"
+   },
+   "fields": {
+    "field": "physical_qubits"
+   },
+   "note": "IBM's computers page now carries a 'Physical qubits' column: Heron r2/r3 332 (= 156 qubits + 176 couplers), Nighthawk r1 338 (= 120 + 218), r2 458. The register counts 156 / 120 programmable. A convention question for the editor (applies to ibm-heron-r2, ibm-heron-r3, ibm-nighthawk-r1, ibm-nighthawk-r2); not changed here. Not edited: the editor's.",
+   "sources": [
+    "https://quantum.cloud.ibm.com/computers"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-nighthawk-r1"
+   },
+   "fields": {
+    "field": "units_in_service"
+   },
+   "note": "ibm_miami still Offline (row: 'Offline: maintenance'); not in the retired list - watch. Not edited: the editor's.",
+   "sources": [
+    "https://quantum.cloud.ibm.com/computers"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "originq-wukong-72"
+   },
+   "fields": {
+    "field": "status"
+   },
+   "note": "Origin's cloud front page and originqc.com.cn show only Wukong-180; whether Wukong-72 / Wukong-102 remain online cannot be told (no retirement statement) - status left DEPLOYED for both. Not edited: the editor's.",
+   "sources": [
+    "https://qcloud.originqc.com.cn/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "spinq-ursa-major"
+   },
+   "fields": {
+    "field": "physical_qubits"
+   },
+   "note": "the 103-q 'Shaowei' chip is 'released' (发布) per the home-page news line, but no system delivery or cloud backend is named; count left at 25 (the delivered systems). The news item itself (HK fair) was not opened. Not edited: the editor's.",
+   "sources": [
+    "https://www.spinq.com/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "fraunhofer-ehningen"
+   },
+   "fields": {
+    "field": "status"
+   },
+   "note": "no owner page reached; the 27-q Ehningen System One has no current IBM backend in the live or retired lists, which neither confirms nor settles its status - row left as is. Not edited: the editor's.",
+   "sources": [
+    "https://quantum.cloud.ibm.com/docs/en/guides/retired-qpus"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "iqm-star-24"
+   },
+   "fields": {
+    "access": "cloud (IQM Resonance, in beta; full deployment 'in the coming months', read 6 Nov 2026)",
+    "old_access": "cloud (IQM Resonance)"
+   },
+   "note": "«IQM Star 24 is now available in beta, with full deployment in the coming months.» (the owner's page, read 2026-11-06; T2 status sweep)",
+   "sources": [
+    "https://www.iqm.tech/products/iqm-resonance"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "oqc-genesis-16"
+   },
+   "fields": {
+    "roadmap": "GENESIS 2026 16 logical at 1e-3 (15 mm); TITAN 2028 200 logical at 1e-6, 1 MHz, 100 mm (the \"2,000 sites\" figure is not on the roadmap page); ATHENA 2031 5,000 logical at 1e-9, 3 MHz, 200 mm; ATLAS 2034 50,000 logical at 1e-12, 10 MHz, 300 mm; roadmap page re-dated (read 6 Nov 2026, image path 2026/10): GENESIS 2026-2028, TITAN 2028-2030 with 2,000 lattice sites now printed, ATHENA 2031-2034, ATLAS 2035 onwards",
+    "old_roadmap": "GENESIS 2026 16 logical at 1e-3 (15 mm); TITAN 2028 200 logical at 1e-6, 1 MHz, 100 mm (the \"2,000 sites\" figure is not on the roadmap page); ATHENA 2031 5,000 logical at 1e-9, 3 MHz, 200 mm; ATLAS 2034 50,000 logical at 1e-12, 10 MHz, 300 mm"
+   },
+   "note": "«GENESIS (2026-2028)» … «TITAN (2028-2030)» … «Lattice sites: 2,000» … «ATHENA (2031-2034)» … «ATLAS (2035 onwards)» (the owner's page, read 2026-11-06; T2 status sweep)",
+   "sources": [
+    "https://oqc.tech/tech/technical-roadmap"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "oqc-titan-2000"
+   },
+   "fields": {
+    "roadmap": "after GENESIS (16 logical, 2026); then ATHENA 2031, ATLAS 2034; roadmap page (read 6 Nov 2026): TITAN 2028-2030, ATHENA 2031-2034, ATLAS 2035 onwards",
+    "old_roadmap": "after GENESIS (16 logical, 2026); then ATHENA 2031, ATLAS 2034"
+   },
+   "note": "«TITAN (2028-2030)» … «ATLAS (2035 onwards)» (the owner's page, read 2026-11-06; T2 status sweep)",
+   "sources": [
+    "https://oqc.tech/tech/technical-roadmap"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "oqc-athena-75000"
+   },
+   "fields": {
+    "roadmap": "after TITAN (2028); then ATLAS 2034; roadmap page (read 6 Nov 2026): ATHENA 2031-2034, ATLAS 2035 onwards",
+    "old_roadmap": "after TITAN (2028); then ATLAS 2034"
+   },
+   "note": "«ATHENA (2031-2034)» … «ATLAS (2035 onwards)» (the owner's page, read 2026-11-06; T2 status sweep)",
+   "sources": [
+    "https://oqc.tech/tech/technical-roadmap"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "oqc-atlas-1000000"
+   },
+   "fields": {
+    "roadmap": "final named OQC roadmap system; roadmap page (read 6 Nov 2026) dates ATLAS «2035 onwards» (was 2034)",
+    "old_roadmap": "final named OQC roadmap system"
+   },
+   "note": "«ATLAS (2035 onwards)» … «Lattice sites: 1,000,000» (the owner's page, read 2026-11-06; T2 status sweep)",
+   "sources": [
+    "https://oqc.tech/tech/technical-roadmap"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "rigetti-cepheus-1-108q"
+   },
+   "fields": {
+    "event": "benchmark",
+    "figure": "median 1Q 99.86%, 2Q (CZ) 98.74%, T1 26 us, T2 11 us; 107 qubits listed",
+    "date": "page read 2026-11-06 (card: Deployed 04.07.26)"
+   },
+   "note": "«Deployed» 04.07.26; 107 qubits; 99.86% / 98.74% — no register column for it: a statement, not a cell (T2 status sweep)",
+   "sources": [
+    "https://www.rigetti.com/"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "iqm-emerald-54"
+   },
+   "fields": {
+    "event": "milestone",
+    "figure": "entanglement across a complete 54-qubit processor, offered to cloud users",
+    "date": "2026-10-29"
+   },
+   "note": "«IQM Demonstrates Entanglement Across a Complete 54-Qubit Processor, Bringing Full-Chip Performance to Cloud Users» — no register column for it: a statement, not a cell (T2 status sweep)",
+   "sources": [
+    "https://www.iqm.tech/newsroom"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "toshiba-dtc"
+   },
+   "fields": {
+    "event": "benchmark",
+    "figure": "2Q gate fidelity 99.90% averaged over 12 h, 48 ns gate",
+    "date": "2024-11-22"
+   },
+   "note": "«achieved a world-class fidelity of 99.90%» — no register column for it: a statement, not a cell (T2 status sweep)",
+   "sources": [
+    "https://www.global.toshiba/ww/technology/corporate/rdc/rd/topics/24/2411-03.html"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "ethz-surface17"
+   },
+   "fields": {
+    "event": "milestone",
+    "figure": "lattice-surgery operation between superconducting logical qubits (Nature Physics)",
+    "date": "2026-02-02"
+   },
+   "note": "«demonstrated a technique that makes it possible to perform a quantum operation between superconducting logical qubits» — no register column for it: a statement, not a cell (T2 status sweep)",
+   "sources": [
+    "https://qudev.phys.ethz.ch/"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "qolab-iqcc"
+   },
+   "fields": {
+    "event": "funding",
+    "figure": "Series B $54.2 M led by UC Investments",
+    "date": "undated on page"
+   },
+   "note": "«Qolab announces $54.2 million Series B financing and commitments led by UC Investments» — no register column for it: a statement, not a cell (T2 status sweep)",
+   "sources": [
+    "https://qolab.ai/product"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "rigetti-cepheus-1-108q"
+   },
+   "fields": {
+    "field": "physical_qubits"
+   },
+   "note": "rigetti.com lists 107 qubits for Cepheus-1-108Q (row: 108 = twelve 9-qubit chiplets; Braket still says twelve 9-qubit chiplets). Likely one qubit disabled in the operating calibration, not a design change - not recorded as a change. Not edited: the editor's.",
+   "sources": [
+    "https://www.rigetti.com/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "rigetti-ankaa-3"
+   },
+   "fields": {
+    "field": "status"
+   },
+   "note": "Ankaa-2, Ankaa-3 and Cepheus-1-36Q are no longer named on rigetti.com or Braket's Rigetti page (only Cepheus-1-108Q); possible quiet retirement, but no owner's words - needs a QCS device list / Braket console check. Applies also to rigetti-ankaa-2 and rigetti-cepheus-1-36q. Not edited: the editor's.",
+   "sources": [
+    "https://www.rigetti.com/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "iqm-emerald-54"
+   },
+   "fields": {
+    "field": "access"
+   },
+   "note": "Braket's IQM page names only IQM Garnet (20 q); Emerald not mentioned (row: cloud via Braket). Stale marketing page or withdrawal from Braket - unsettled. Not edited: the editor's.",
+   "sources": [
+    "https://aws.amazon.com/braket/quantum-computers/iqm/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "quantware-contralto-a17"
+   },
+   "fields": {
+    "field": "roadmap"
+   },
+   "note": "A-line page reads 'Shipping now' and 'Shipping in 2026' near Contralto, then 2027, 2028, and no date on the Bass-A10K card. If each date labels the following card: Tenor-A41 2026, Baritone-A250 2027, Bass-A10K 2028 (matches home 'delivers 10,000 qubit QPUs in 2028'); if the preceding: Tenor-A41 2027, Baritone-A250 2028. Row reads Tenor 2026 / Baritone 2028 / Bass 2027. Layout ambiguity - not recorded; needs a browser look. Not edited: the editor's.",
+   "sources": [
+    "https://quantware.com/product/processors/a-line"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "quantware-vio-40k"
+   },
+   "fields": {
+    "field": "status"
+   },
+   "note": "row quotes the A-line page 'Shipping in 2027' for Bass-A10K; today no date sits on the Bass-A10K card and the home page says 10,000-qubit QPUs in 2028 - the 2027 label may be gone. Not recorded. Not edited: the editor's.",
+   "sources": [
+    "https://quantware.com/product/processors/a-line"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "oqc-atlas-1000000"
+   },
+   "fields": {
+    "field": "status_date"
+   },
+   "note": "status_date '2034' is the planned year; OQC's roadmap now says 'ATLAS (2035 onwards)' (also ATHENA 2031-2034, TITAN 2028-2030). Rule keeps status_date; the editor may want the PLANNED target year updated. Not edited: the editor's.",
+   "sources": [
+    "https://oqc.tech/tech/technical-roadmap"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "aliceandbob-helium"
+   },
+   "fields": {
+    "field": "status"
+   },
+   "note": "Alice & Bob's roadmap page (Dec 2024) still says Helium 'Currently under development'; the row's DEPLOYED rests on the 18 Jun 2026 release - stale page, no action. Not edited: the editor's.",
+   "sources": [
+    "https://alice-bob.com/newsroom/alice-bob-quantum-computing-roadmap/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "ethz-surface17"
+   },
+   "fields": {
+    "field": "status_date"
+   },
+   "note": "2 Feb 2026 lattice-surgery result: the page does not say it ran on Surface-17 (the 17-qubit chip is shown on the same page). If it did, status_date '2022-2025' may want '2022-2026' - for the editor. Not edited: the editor's.",
+   "sources": [
+    "https://qudev.phys.ethz.ch/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "iqcc-facility"
+   },
+   "fields": {
+    "field": "physical_qubits"
+   },
+   "note": "the IQCC home page no longer names any installed QPU (QuantWare 25-qubit, Qolab); the row's inventory cannot be re-confirmed from the owner's front page - docs.i-qcc.com not fetched. Not edited: the editor's.",
+   "sources": [
+    "https://www.i-qcc.com/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-helios"
+   },
+   "fields": {
+    "roadmap": "Sol, then Apollo; a Helios unit under assembly in Singapore, commissioning spring 2027 (Quantinuum Q3 release, 5 Nov 2026)",
+    "old_roadmap": "Sol, then Apollo"
+   },
+   "note": "«Helios assembly underway in Singapore ahead of spring 2027 commissioning» (the owner's page, read 2026-11-06; T2 status sweep)",
+   "sources": [
+    "https://www.quantinuum.com/press-releases/quantinuum-reports-third-quarter-2026-results-and-raises-full-year-revenue-outlook"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-helios"
+   },
+   "fields": {
+    "access": "cloud + on-premise + NVIDIA GB200 integration; Oracle OCI (on-prem Helios integrated into OCI's cloud services; joint beta, Q3 2026)",
+    "old_access": "cloud + on-premise + NVIDIA GB200 integration"
+   },
+   "note": "«the on-prem deployment and integration of Quantinuum's Helios computer into OCI's cloud services offering» (the owner's page, read 2026-11-06; T2 status sweep)",
+   "sources": [
+    "https://www.quantinuum.com/press-releases/quantinuum-reports-third-quarter-2026-results-and-raises-full-year-revenue-outlook"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-sol"
+   },
+   "fields": {
+    "roadmap": "Apollo; Sol «on track for 2H 2027», integration and assembly targeted Q1 2027, validation toward 100 logical qubits at a target logical error rate of 1e-5 (Q3 release, 5 Nov 2026)",
+    "old_roadmap": "Apollo"
+   },
+   "note": "«Sol remains on track for 2H 2027» ... «validation and tuning toward 100 logical qubits at a target logical error rate of 10⁻⁵» (the owner's page, read 2026-11-06; T2 status sweep)",
+   "sources": [
+    "https://www.quantinuum.com/press-releases/quantinuum-reports-third-quarter-2026-results-and-raises-full-year-revenue-outlook"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantum-art-multicore"
+   },
+   "fields": {
+    "roadmap": "Perspective: 1,000-qubit multi-core system; then the Landscape series (thousands of logical qubits), undated; the owner's roadmap page dates Perspective (1,000 physical, 100 logical, 20 cores) to 2027 and the Landscape Series (Landscape I 12,000 / Landscape II 40,000 physical) to 2029; Mosaic >1,000,000 undated (page undated, fetched 6 Nov 2026)",
+    "old_roadmap": "Perspective: 1,000-qubit multi-core system; then the Landscape series (thousands of logical qubits), undated"
+   },
+   "note": "«Reach Commercial Quantum Advantage with the launch of our Perspective Series.» (2027); «Lead the industry in scalability, with the launch of our dense 2D QPUs of the Landscape Series.» (2029) (the owner's page, read 2026-11-06; T2 status sweep)",
+   "sources": [
+    "https://quantum-art.tech/roadmap"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-helios"
+   },
+   "fields": {
+    "event": "benchmark",
+    "figure": "99.9995% logical fidelity (colour code, up to 37 physical per logical); Helix 10 physical per logical",
+    "date": "2026-10-19"
+   },
+   "note": "«Quantinuum's Helios computer achieves a world-record 99.9995% logical fidelity» — no register column for it: a statement, not a cell (T2 status sweep)",
+   "sources": [
+    "https://www.quantinuum.com/press-releases/quantinuum-breaks-error-correction-world-record-by-10x-validating-its-leading-path-to-fault-tolerant-quantum-computing-by-2029"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "eleqtron-jion"
+   },
+   "fields": {
+    "event": "funding",
+    "figure": "eleQtron Series A EUR 57 M (2026, undated on the page)",
+    "date": "2026"
+   },
+   "note": "«eleQtron raises €57 million in Series A funding» — no register column for it: a statement, not a cell (T2 status sweep)",
+   "sources": [
+    "https://eleqtron.com/en/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-h1"
+   },
+   "fields": {
+    "field": "status/units"
+   },
+   "note": "Q3 release (5 Nov 2026): «a Reimei system upgrade at RIKEN in Japan scheduled for completion this month»; the RIKEN release (14/16 Apr 2026) says H2 will «replace its predecessor, System Model H1». When complete, the Reimei H1 unit leaves service - not yet a retirement on the owner's words; re-check after Nov 2026. Not edited: the editor's.",
+   "sources": [
+    "https://www.quantinuum.com/press-releases/quantinuum-reports-third-quarter-2026-results-and-raises-full-year-revenue-outlook"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-h2"
+   },
+   "fields": {
+    "field": "access"
+   },
+   "note": "The row's access names «AWS Braket»; neither the Braket providers page (aws.amazon.com/braket/quantum-computers/ lists AQT, IonQ, IQM, QuEra, Rigetti - no Quantinuum) nor Quantinuum's H2 page names Braket. The Braket route is unsupported by the owners' pages fetched today. Not edited: the editor's.",
+   "sources": [
+    "https://aws.amazon.com/braket/quantum-computers/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-helios"
+   },
+   "fields": {
+    "field": "units_built"
+   },
+   "note": "The Oracle OCI sentence reads as an on-prem Helios unit, but the release does not say whether it is installed or where; units_* not changed. The release also names «a new agreement with a leading hyperscaler» (unnamed) for cloud distribution. Not edited: the editor's.",
+   "sources": [
+    "https://www.quantinuum.com/press-releases/quantinuum-reports-third-quarter-2026-results-and-raises-full-year-revenue-outlook"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-forte"
+   },
+   "fields": {
+    "field": "access"
+   },
+   "note": "Azure target list (updated_at 2026-04-23) still lists «IonQ Aria 1» (stale vs the register's Aria retirement). Braket's IonQ page names only Aria and no Forte device; no Braket device list was reachable to confirm Forte-1 / Forte-Enterprise-1 there. Not edited: the editor's.",
+   "sources": [
+    "https://aws.amazon.com/braket/quantum-computers/ionq/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-superion-256"
+   },
+   "fields": {
+    "field": "access"
+   },
+   "note": "The row's SDT / South Korea ref returned HTTP 404 on 2026-11-06 and the item is not in ionq.com/news's 22 Sep-5 Nov list; the Korea deployment rests on that ref alone. Not edited: the editor's.",
+   "sources": [
+    "https://www.ionq.com/news/ionq-and-sdt-announce-the-first-strategic-partnership-to-bring-ionqs-superion-256-system-to-south-korea"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "qudora-nfqc"
+   },
+   "fields": {
+    "field": "access"
+   },
+   "note": "QUDORA-wide item «QUDORA Quantum Computers Become Available on Fixstars Amplify Cloud» (29 May 2026): access begins with the Qamelion emulator, direct hardware later. Not named for XAPHIRO - an org-level access note, not applied to this row. Not edited: the editor's.",
+   "sources": [
+    "https://qudora.com/news"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "universal-quantum-iqpu"
+   },
+   "fields": {
+    "field": "status"
+   },
+   "note": "Homepage headlines (undated) announce an iQPU «launch» and a >$100m Series A; no dates shown, so not recorded as changes - needs the owner's dated release. Not edited: the editor's.",
+   "sources": [
+    "https://universalquantum.com/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "qudoor-abaq"
+   },
+   "fields": {
+    "field": "access"
+   },
+   "note": "The owner's page (2024) says users reach Tiansuan-1 through the <Qu|Cloud> platform; the row's access names only sales into sectors. Old page, so not recorded as a change. Not edited: the editor's.",
+   "sources": [
+    "https://www.qudoor.com/index.php?c=show&id=172"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "rqc-ion-50q"
+   },
+   "fields": {
+    "field": "refs"
+   },
+   "note": "The row has no ref_urls/verified_refs; the 70-qubit claim (Oct/Dec 2025) has no owner page on file; RQC homepage silent. Needs an FIAN or Rosatom source. Not edited: the editor's.",
+   "sources": [
+    "https://rqc.ru/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "pasqal-lyra"
+   },
+   "fields": {
+    "roadmap": "Pasqal roadmap: 100 high-fidelity logical qubits by 2029, 200 logical qubits in 2030 (not tied to Lyra by name); Pasqal roadmap page (as of Nov 2026): 200+ logical qubits by 2029",
+    "old_roadmap": "Pasqal roadmap: 100 high-fidelity logical qubits by 2029, 200 logical qubits in 2030 (not tied to Lyra by name)"
+   },
+   "note": "«reaching 200+ logical qubits by 2029» (the owner's page, read 2026-11-06; T2 status sweep)",
+   "sources": [
+    "https://www.pasqal.com/technology/roadmap/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "pasqal-fresnel"
+   },
+   "fields": {
+    "access": "GENCI/CEA, EuroHPC; cloud via Azure Quantum (targets FRESNEL and FRESNEL_CAN1, 100 qubits)",
+    "old_access": "GENCI/CEA, EuroHPC"
+   },
+   "note": "«Pasqal FRESNEL | 100 qubits» ; «Pasqal FRESNEL_CAN1 | 100 qubits» (the owner's page, read 2026-11-06; T2 status sweep)",
+   "sources": [
+    "https://learn.microsoft.com/en-us/azure/quantum/qc-target-list"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "infleqtion-sqale"
+   },
+   "fields": {
+    "access": "on-prem at the NQCC; private-cloud access (Eaton, Aug 2026)",
+    "old_access": "on-prem at the NQCC"
+   },
+   "note": "«Eaton is using private-cloud access to Sqale for energy applications» (the owner's page, read 2026-11-06; T2 status sweep)",
+   "sources": [
+    "https://ir.infleqtion.com/news-events/press-releases/detail/201/infleqtion-reports-record-q2-revenue-raises-2026-outlook-as-quantum-commercialization-accelerates"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "orca-pt2"
+   },
+   "fields": {
+    "roadmap": "PT-3 in 2026; PT-3 launched 15 Oct 2026 at Digital Realty's Innovation Lab, London (fulfilled)",
+    "old_roadmap": "PT-3 in 2026"
+   },
+   "note": "«ORCA Computing launches PT-3, the first quantum computer built for commercial quantum advantage» ; «PT-3 runs alongside NVIDIA accelerated computing at Digital Realty's Innovation Lab in London» (the owner's page, read 2026-11-06; T2 status sweep)",
+   "sources": [
+    "https://orcacomputing.com/news/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "orca-pt1"
+   },
+   "fields": {
+    "roadmap": "PT-2 (the advanced PT-Series system); PT-3 planned for 2026; PT-3 launched 15 Oct 2026 at Digital Realty's Innovation Lab, London (fulfilled)",
+    "old_roadmap": "PT-2 (the advanced PT-Series system); PT-3 planned for 2026"
+   },
+   "note": "«ORCA Computing launches PT-3, the first quantum computer built for commercial quantum advantage» ; «PT-3 runs alongside NVIDIA accelerated computing at Digital Realty's Innovation Lab in London» (the owner's page, read 2026-11-06; T2 status sweep)",
+   "sources": [
+    "https://orcacomputing.com/news/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "saxonq-sxq4-4"
+   },
+   "fields": {
+    "roadmap": "QC2026 Dual Core (2 x 5 qubits, Apr 2026); SXQ128 orderable with 3-month delivery; SXQ512 from Q2 2027; SXQ10k 2030+; SXQ128 orders opened Aug 2026 («Available Late Summer»)",
+    "old_roadmap": "QC2026 Dual Core (2 x 5 qubits, Apr 2026); SXQ128 orderable with 3-month delivery; SXQ512 from Q2 2027; SXQ10k 2030+"
+   },
+   "note": "«SAXON Q Opens Orders for Room-Temperature Quantum Computers Built for the Real World» ; «SXQ128 Available Late Summer» (the owner's page, read 2026-11-06; T2 status sweep)",
+   "sources": [
+    "https://www.saxonq.com/"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "atom-computing-phoenix"
+   },
+   "fields": {
+    "event": "milestone",
+    "figure": "selected for the final stage of DARPA QBI",
+    "date": "2026-10-07"
+   },
+   "note": "«Atom Computing Selected by DARPA for Final Stage of Quantum Benchmarking Initiative» — no register column for it: a statement, not a cell (T2 status sweep)",
+   "sources": [
+    "https://atom-computing.com/news/"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "psiquantum-omega"
+   },
+   "fields": {
+    "event": "milestone",
+    "figure": "construction start at Moreton Bay Central (Brisbane)",
+    "date": "2026-06-17"
+   },
+   "note": "«PsiQuantum Breaks Ground in Australia on Site of World's First Utility-Scale Quantum Computer» — no register column for it: a statement, not a cell (T2 status sweep)",
+   "sources": [
+    "https://www.psiquantum.com/news-import"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "psiquantum-omega"
+   },
+   "fields": {
+    "event": "funding",
+    "figure": "DARPA agreement USD 125M",
+    "date": "2026-07-22"
+   },
+   "note": "«PsiQuantum Signs $125 Million Agreement with DARPA» — no register column for it: a statement, not a cell (T2 status sweep)",
+   "sources": [
+    "https://www.psiquantum.com/news-import"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "quandela-belenos"
+   },
+   "fields": {
+    "event": "delivery",
+    "figure": "Quanova (Vietnam) selected MosaiQ for Quang Trung University - model and qubit count not named",
+    "date": "2026-10-22"
+   },
+   "note": "«Quandela and Quanova partner to deploy Vietnam's first quantum computer» — no register column for it: a statement, not a cell (T2 status sweep)",
+   "sources": [
+    "https://www.quandela.com/newsroom/"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "quix-carina"
+   },
+   "fields": {
+    "event": "funding",
+    "figure": "EUR 50M P4Q initiative (Dedalo FT roadmap)",
+    "date": "2026-11-04"
+   },
+   "note": "«QuiX Quantum Advances Europe's Industrial Quantum Computing Ambitions Through €50M P4Q Initiative» — no register column for it: a statement, not a cell (T2 status sweep)",
+   "sources": [
+    "https://www.quixquantum.com/news"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "diraq-imec-8q"
+   },
+   "fields": {
+    "event": "milestone",
+    "figure": "Diraq advanced to the final stage of DARPA QBI",
+    "date": "2026-10-08"
+   },
+   "note": "«Diraq advances to final stage of DARPA's quantum benchmarking initiative» — no register column for it: a statement, not a cell (T2 status sweep)",
+   "sources": [
+    "https://www.diraq.com/newsdesk"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "saxonq-sxq4-4"
+   },
+   "fields": {
+    "event": "benchmark",
+    "figure": "first three-qubit Grover search on a commercial room-temperature QC (with Fraunhofer IWU; machine not named)",
+    "date": "Sep 2026"
+   },
+   "note": "«SAXON Q and Fraunhofer IWU publish first three-qubit Grover search on a commercial room-temperature quantum computer» — no register column for it: a statement, not a cell (T2 status sweep)",
+   "sources": [
+    "https://www.saxonq.com/"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "dwave-advantage2"
+   },
+   "fields": {
+    "event": "delivery",
+    "figure": "USD 20M system sale in H1-2026 bookings (buyer not named)",
+    "date": "2026-08-06"
+   },
+   "note": "«$20 million system sale» — no register column for it: a statement, not a cell (T2 status sweep)",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1907982/000190798226000127/qbts-20260806xexx991.htm"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "pasqal-fresnel"
+   },
+   "fields": {
+    "field": "units_built"
+   },
+   "note": "Azure lists a second Fresnel target FRESNEL_CAN1 (suffix suggests a Canadian unit); the page does not name a site - units not re-counted Not edited: the editor's.",
+   "sources": [
+    "https://learn.microsoft.com/en-us/azure/quantum/qc-target-list"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "pasqal-vela"
+   },
+   "fields": {
+    "field": "status"
+   },
+   "note": "the row cites pasqal.com/technology/roadmap/ for «200+»; that page now names only «Pasqal Orion generation» and «200+ logical qubits by 2029» - Vela is not named there any more Not edited: the editor's.",
+   "sources": [
+    "https://www.pasqal.com/technology/roadmap/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "pasqal-orion"
+   },
+   "fields": {
+    "field": "roadmap"
+   },
+   "note": "row: «Lyra ~100 logical 2029; ~200 logical 2030»; Pasqal roadmap page now: «200+ logical qubits by 2029» - one year earlier Not edited: the editor's.",
+   "sources": [
+    "https://www.pasqal.com/technology/roadmap/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "xanadu-borealis"
+   },
+   "fields": {
+    "field": "access"
+   },
+   "note": "Amazon Braket devices page (6 Nov 2026) lists AQT, IonQ, IQM, QuEra, Rigetti only - no photonic device; Borealis absent. Xanadu own page gave no text (absence only, not a retirement) Not edited: the editor's.",
+   "sources": [
+    "https://aws.amazon.com/braket/quantum-computers/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "atom-computing-phoenix"
+   },
+   "fields": {
+    "field": "access"
+   },
+   "note": "row access «on-prem and via Azure»: the Azure Quantum target list (updated 2026-04-23) names no Atom Computing target or provider Not edited: the editor's.",
+   "sources": [
+    "https://learn.microsoft.com/en-us/azure/quantum/qc-target-list"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "orca-pt2"
+   },
+   "fields": {
+    "field": "units_built"
+   },
+   "note": "16 Jun 2026 «ORCA Computing and Toyota Tsusho Deploy First Quantum System to Enterprise Customer in Japan» - the news page does not name the model (PT-1 or PT-2); units not re-counted Not edited: the editor's.",
+   "sources": [
+    "https://orcacomputing.com/news/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "diraq-equinix-sydney"
+   },
+   "fields": {
+    "field": "status"
+   },
+   "note": "row says installation due Oct 2026; Diraq newsdesk to 4 Nov 2026 has no installation item - not confirmed installed Not edited: the editor's.",
+   "sources": [
+    "https://www.diraq.com/newsdesk"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "dwave-advantage2"
+   },
+   "fields": {
+    "field": "units_evidence"
+   },
+   "note": "units_evidence quotes Advantage2_system1 at 4566 qubits; the solver page now gives 4560 (working-graph removals, latest 2026-11-06) - working-graph drift, not a new count Not edited: the editor's.",
+   "sources": [
+    "https://docs.dwavequantum.com/en/latest/quantum_research/solver_properties_specific.html"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "groove-quantum"
+   },
+   "fields": {
+    "field": "status"
+   },
+   "note": "the owner's home page does not name the 18-qubit processor; the row rests on a secondary source (quantumzeitgeist) plus arXiv:2604.01063 (known from discovery pass, not re-fetched) Not edited: the editor's.",
+   "sources": [
+    "https://groovequantum.com/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-nighthawk-r2"
+   },
+   "fields": {
+    "best_logical": "d=3 and d=5 surface codes below 1% logical error per round and a lattice-surgery logical Bell state above 93% on ibm_phoenix (University of Sydney + IBM, arXiv:2610.32347, Oct 2026); surface-code memory from distance 3 to 6: Z memory 0.53% to 0.24% per round, X memory 0.52% to 0.22% (arXiv:2610.23840, Oct 2026); colour-code STAR-type injection and magic-state cultivation, post-selected (PNNL + University of Washington, arXiv:2611.00404, Nov 2026) - all preprints",
+    "old_best_logical": "none"
+   },
+   "note": "«We demonstrate high-fidelity logical qubit operations using ibm phoenix, a square-lattice array of 120 coupled superconducting qubits that are capable of fast reset.» … «we routinely produce surface codes at distance-3 …»; arXiv:2610.23840: «increasing the protected distance from 3 to 6 while holding the other distance fixed» — Z memory «from 0.53% to 0.24%», X memory «from 0.52% to 0.22%»; arXiv:2611.00404: «We present a STAR-type injection protocol on the color code» on «a Nighthawk R2 superconducting processor» (T2 discovery; T2 discovery, slice 1 (the orchestrator opened arXiv:2610.23840); the code ids color / magic_cultivation are placeholders for the stage-1 code register's ids — the apply job maps them; the decoder / realtime cells stay «none» until a paper names an in-loop decoder)",
+   "sources": [
+    "https://arxiv.org/abs/2610.32347"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-nighthawk-r2"
+   },
+   "fields": {
+    "codes": "rotated_surface;color;magic_cultivation",
+    "old_codes": "rotated_surface"
+   },
+   "note": "«We demonstrate high-fidelity logical qubit operations using ibm phoenix, a square-lattice array of 120 coupled superconducting qubits that are capable of fast reset.» … «we routinely produce surface codes at distance-3 …»; arXiv:2610.23840: «increasing the protected distance from 3 to 6 while holding the other distance fixed» — Z memory «from 0.53% to 0.24%», X memory «from 0.52% to 0.22%»; arXiv:2611.00404: «We present a STAR-type injection protocol on the color code» on «a Nighthawk R2 superconducting processor» (T2 discovery; T2 discovery, slice 1 (the orchestrator opened arXiv:2610.23840); the code ids color / magic_cultivation are placeholders for the stage-1 code register's ids — the apply job maps them; the decoder / realtime cells stay «none» until a paper names an in-loop decoder)",
+   "sources": [
+    "https://arxiv.org/abs/2610.32347"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-flamingo"
+   },
+   "fields": {
+    "err_2q_median": "not published for Flamingo; best l-coupler CNOT 3.5e-2 at 235 ns on test devices (Nov 2024); IBM reported 99.3% for an l-coupler two-qubit operation in Aug 2026, hardware not named; four L-couplers between two 120-qubit Nighthawk R1 modules: relay-based state transfer 99.00% mean, distant CZ 94.75% mean, six-qubit GHZ across modules (arXiv:2610.29986, Oct 2026)",
+    "old_err_2q_median": "not published for Flamingo; best l-coupler CNOT 3.5e-2 at 235 ns on test devices (Nov 2024); IBM reported 99.3% for an l-coupler two-qubit operation in Aug 2026, hardware not named"
+   },
+   "note": "«Here we demonstrate four L-couplers operating between two 120-qubit IBM Nighthawk R1 superconducting qubit processors.» … «carry relay-based state transfer [1] at a mean network benchmarking [6] fidelity of 99.00%»; distant CZ 94.75% mean (abstract) (T2 discovery; T2 discovery, slice 1; the same result is the sweep's Nighthawk R1 statement (IBM blog, 27 Oct 2026); the map's ic_mcm record for the l-coupler half moves from R to P)",
+   "sources": [
+    "https://arxiv.org/abs/2610.29986"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "aqt-lynx"
+   },
+   "fields": {
+    "physical_qubits": "up to 31 Ca-40 ions in one linear chain (preprint arXiv:2610.32518, Oct 2026); the QV run used a 15-qubit register",
+    "old_physical_qubits": ">=15 (QV run used a 15-qubit register; total not published)"
+   },
+   "note": "«We introduce LYNX, a quantum information processor based on trapped 40Ca+ ions. It utilizes up to 31 qubits with all-to-all connectivity.» … «An average 2-qubit gate error in a 24-qubit register of 2.84(8) × 10−3 is demonstrated using interleaved RB.» … «The qubits are encoded in the two Zeeman states of the 4 2S1/2 ground state» (T2 discovery; T2 discovery, slice 2; preprint (P); the encoding doubt is a separate item; the apply job should also fill the row's empty refs cell with the preprint)",
+   "sources": [
+    "https://arxiv.org/abs/2610.32518"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "aqt-lynx"
+   },
+   "fields": {
+    "physical_qubits_num": "31",
+    "old_physical_qubits_num": "15"
+   },
+   "note": "«We introduce LYNX, a quantum information processor based on trapped 40Ca+ ions. It utilizes up to 31 qubits with all-to-all connectivity.» … «An average 2-qubit gate error in a 24-qubit register of 2.84(8) × 10−3 is demonstrated using interleaved RB.» … «The qubits are encoded in the two Zeeman states of the 4 2S1/2 ground state» (T2 discovery; T2 discovery, slice 2; preprint (P); the encoding doubt is a separate item; the apply job should also fill the row's empty refs cell with the preprint)",
+   "sources": [
+    "https://arxiv.org/abs/2610.32518"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "aqt-lynx"
+   },
+   "fields": {
+    "err_2q_median": "2.7e-3 median over all 276 pairs of a 24-qubit register by interleaved RB (mean 2.84(8)e-3); 1.0(1)e-2 in the 31-qubit register (10 pairs) - preprint arXiv:2610.32518; QV mean heavy-output probability 0.678, 2-sigma lower bound 0.670",
+    "old_err_2q_median": "not published (QV mean heavy-output probability 0.678, 2-sigma lower bound 0.670)"
+   },
+   "note": "«We introduce LYNX, a quantum information processor based on trapped 40Ca+ ions. It utilizes up to 31 qubits with all-to-all connectivity.» … «An average 2-qubit gate error in a 24-qubit register of 2.84(8) × 10−3 is demonstrated using interleaved RB.» … «The qubits are encoded in the two Zeeman states of the 4 2S1/2 ground state» (T2 discovery; T2 discovery, slice 2; preprint (P); the encoding doubt is a separate item; the apply job should also fill the row's empty refs cell with the preprint)",
+   "sources": [
+    "https://arxiv.org/abs/2610.32518"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "aqt-lynx"
+   },
+   "fields": {
+    "err_2q_median_num": "0.0027",
+    "old_err_2q_median_num": ""
+   },
+   "note": "«We introduce LYNX, a quantum information processor based on trapped 40Ca+ ions. It utilizes up to 31 qubits with all-to-all connectivity.» … «An average 2-qubit gate error in a 24-qubit register of 2.84(8) × 10−3 is demonstrated using interleaved RB.» … «The qubits are encoded in the two Zeeman states of the 4 2S1/2 ground state» (T2 discovery; T2 discovery, slice 2; preprint (P); the encoding doubt is a separate item; the apply job should also fill the row's empty refs cell with the preprint)",
+   "sources": [
+    "https://arxiv.org/abs/2610.32518"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "aqt-lynx"
+   },
+   "fields": {
+    "demonstrated_algorithms": "quantum volume 2^15 = 32,768 on 15 qubits: 305 random circuits x 100 shots, mean heavy-output probability 0.678 (a benchmark, not an algorithm); 31-qubit GHZ state fidelity 0.65(2) (preprint, Oct 2026)",
+    "old_demonstrated_algorithms": "quantum volume 2^15 = 32,768 on 15 qubits: 305 random circuits x 100 shots, mean heavy-output probability 0.678 (a benchmark, not an algorithm)"
+   },
+   "note": "«We introduce LYNX, a quantum information processor based on trapped 40Ca+ ions. It utilizes up to 31 qubits with all-to-all connectivity.» … «An average 2-qubit gate error in a 24-qubit register of 2.84(8) × 10−3 is demonstrated using interleaved RB.» … «The qubits are encoded in the two Zeeman states of the 4 2S1/2 ground state» (T2 discovery; T2 discovery, slice 2; preprint (P); the encoding doubt is a separate item; the apply job should also fill the row's empty refs cell with the preprint)",
+   "sources": [
+    "https://arxiv.org/abs/2610.32518"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-helios"
+   },
+   "fields": {
+    "roadmap": "Sol, then Apollo; a Helios unit assembling in Singapore for spring-2027 commissioning (release of 19 Oct 2026)",
+    "old_roadmap": "Sol, then Apollo"
+   },
+   "note": "«Quantinuum’s Helios computer achieves a world-record 99.9995% logical fidelity.» … «Quantinuum used a well-known “color code” within this architecture.» … «Helios assembly underway in Singapore ahead of spring 2027 commissioning.» … «Sol remains on track for 2H 2027.» (T2 discovery; T2 discovery, slice 2 (C for the figure, R for the units); the Singapore unit is named, not counted, in units_evidence until it operates)",
+   "sources": [
+    "https://www.quantinuum.com/press-releases/quantinuum-breaks-error-correction-world-record-by-10x-validating-its-leading-path-to-fault-tolerant-quantum-computing-by-2029"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-helios"
+   },
+   "fields": {
+    "best_logical": "iceberg [[2m,2m-2,2]] concatenated to effective d=4: 94 logical qubits entangled in a GHZ state, 50 error-detected logical qubits at break-even and 48 error-corrected logical qubits (2:1) out of 98 physical; the 94.9% GHZ figure is not in the cited sources - not re-fetched; logical gates cycle-benchmarked at ~1e-4; logical fidelity 99.9995% (five errors per million operations) on Helios, 21 Oct 2026 — the owner's claim of a 100× reduction vs the best published result in any other modality; the release of 19 Oct 2026 ties the 99.9995% to «a well-known “color code”» (the paper not located)",
+    "old_best_logical": "iceberg [[2m,2m-2,2]] concatenated to effective d=4: 94 logical qubits entangled in a GHZ state, 50 error-detected logical qubits at break-even and 48 error-corrected logical qubits (2:1) out of 98 physical; the 94.9% GHZ figure is not in the cited sources - not re-fetched; logical gates cycle-benchmarked at ~1e-4; logical fidelity 99.9995% (five errors per million operations) on Helios, 21 Oct 2026 — the owner's claim of a 100× reduction vs the best published result in any other modality"
+   },
+   "note": "«Quantinuum’s Helios computer achieves a world-record 99.9995% logical fidelity.» … «Quantinuum used a well-known “color code” within this architecture.» … «Helios assembly underway in Singapore ahead of spring 2027 commissioning.» … «Sol remains on track for 2H 2027.» (T2 discovery; T2 discovery, slice 2 (C for the figure, R for the units); the Singapore unit is named, not counted, in units_evidence until it operates)",
+   "sources": [
+    "https://www.quantinuum.com/press-releases/quantinuum-breaks-error-correction-world-record-by-10x-validating-its-leading-path-to-fault-tolerant-quantum-computing-by-2029"
+   ]
+  },
+  {
+   "kind": "status",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-sol"
+   },
+   "fields": {
+    "status": "PLANNED (2H 2027 per the release of 19 Oct 2026)",
+    "old_status": "PLANNED"
+   },
+   "note": "«Sol remains on track for 2H 2027.» (T2 discovery; T2 discovery, slice 2; status_date stays 2027 (the cohort year); grade R)",
+   "sources": [
+    "https://www.quantinuum.com/press-releases/quantinuum-breaks-error-correction-world-record-by-10x-validating-its-leading-path-to-fault-tolerant-quantum-computing-by-2029"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-h2"
+   },
+   "fields": {
+    "best_logical": "the widest QEC portfolio on any platform: [[7,1,3]] logical teleportation head-to-head (transversal 0.975(2) vs lattice surgery 0.851(9)); [[15,1,3]] QRM to [[7,1,3]] code switching with magic-state infidelity <=5.1(2.7)e-4 at 82.58% acceptance; [[12,2,4]] and [[16,4,2,4]] tesseract with Microsoft showing 11x-800x logical-over-physical improvement; non-Abelian S3 quantum double on 54 qubits with logical qutrits in the anyon fusion space, an entangling braiding gate and a topologically prepared magic state, per-qudit ground-state fidelity 0.970(5)-0.988(3) on an 18-site lattice (Lo et al., arXiv:2601.20956; Nature 655, 591, 2026); QLDPC surgery on a [[10,2,3]] generalised bicycle code on H2-2, logical-operator measurement error 0.72%, below 0.26% after three rounds of decoding (UCL + NQCC, arXiv:2610.39067, Oct 2026)",
+    "old_best_logical": "the widest QEC portfolio on any platform: [[7,1,3]] logical teleportation head-to-head (transversal 0.975(2) vs lattice surgery 0.851(9)); [[15,1,3]] QRM to [[7,1,3]] code switching with magic-state infidelity <=5.1(2.7)e-4 at 82.58% acceptance; [[12,2,4]] and [[16,4,2,4]] tesseract with Microsoft showing 11x-800x logical-over-physical improvement"
+   },
+   "note": "«We prepare a 54-qubit TO wavefunction associated with the smallest non-Abelian group, S3, on Quantinuum’s H2 quantum processor.» … «we bound the per-qudit fidelity of the prepared state ρ on the 3 × 3 lattice with 18 sites as (see Section S8) 0.970(5) ≤ ⟨gs| ρ |gs⟩^1/18 ≤ 0.988(3).»; arXiv:2610.39067: «Here we implement QLDPC surgery on a [[10,2,3]] generalised bicycle code using Quantinuum’s H2-2 trapped ion processor.» … «Decoding across three rounds of syndrome extraction suppresses the gadget measurement error, reducing the error rate to below 0.26%.» (T2 discovery; T2 discovery, slice 2; generalized_bicycle is a placeholder for the stage-1 code id (G-codeid: codes with no stage-1 id) — the apply job maps it; the station change (code_qldpc on ion_qccd slot 7; the code_nonabelian station) waits for the editor's word)",
+   "sources": [
+    "https://arxiv.org/abs/2601.20956"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-h2"
+   },
+   "fields": {
+    "codes": "4d_surface;carbon;generalized_shor;iceberg;lr_enhanced_surface;quantum_double;qubit_golay;stab_15_1_3;stab_16_6_4;steane;surface;generalized_bicycle",
+    "old_codes": "4d_surface;carbon;generalized_shor;iceberg;lr_enhanced_surface;quantum_double;qubit_golay;stab_15_1_3;stab_16_6_4;steane;surface"
+   },
+   "note": "«We prepare a 54-qubit TO wavefunction associated with the smallest non-Abelian group, S3, on Quantinuum’s H2 quantum processor.» … «we bound the per-qudit fidelity of the prepared state ρ on the 3 × 3 lattice with 18 sites as (see Section S8) 0.970(5) ≤ ⟨gs| ρ |gs⟩^1/18 ≤ 0.988(3).»; arXiv:2610.39067: «Here we implement QLDPC surgery on a [[10,2,3]] generalised bicycle code using Quantinuum’s H2-2 trapped ion processor.» … «Decoding across three rounds of syndrome extraction suppresses the gadget measurement error, reducing the error rate to below 0.26%.» (T2 discovery; T2 discovery, slice 2; generalized_bicycle is a placeholder for the stage-1 code id (G-codeid: codes with no stage-1 id) — the apply job maps it; the station change (code_qldpc on ion_qccd slot 7; the code_nonabelian station) waits for the editor's word)",
+   "sources": [
+    "https://arxiv.org/abs/2601.20956"
+   ]
+  },
+  {
+   "kind": "status",
+   "subject": {
+    "type": "machine",
+    "id": "groove-quantum"
+   },
+   "fields": {
+    "status": "DEMONSTRATED (lab demonstration announced 30 Apr 2026; preprint arXiv:2604.01063: 18-qubit array in germanium, no two-qubit fidelity measured)",
+    "old_status": "DEMONSTRATED (lab demonstration announced 30 Apr 2026; no fidelities or paper)"
+   },
+   "note": "«Here, we demonstrate the operation of an 18-qubit array in germanium based on an extendable 2× N architecture.» … «Across the array, we achieve average and median single-qubit gate fidelities of 99.8% …» (T2 discovery; T2 discovery, slice 5 (P); st_control doubt: ct_base vs ct_rt (room-temperature Qblox electronics) — a station doubt for the editor; the apply job adds the preprint to refs)",
+   "sources": [
+    "https://arxiv.org/abs/2604.01063"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "groove-quantum"
+   },
+   "fields": {
+    "t2": "T2* 6.2 us average; T2 (CPMG) 0.47 ms average (preprint, Apr 2026)",
+    "old_t2": ""
+   },
+   "note": "«Here, we demonstrate the operation of an 18-qubit array in germanium based on an extendable 2× N architecture.» … «Across the array, we achieve average and median single-qubit gate fidelities of 99.8% …» (T2 discovery; T2 discovery, slice 5 (P); st_control doubt: ct_base vs ct_rt (room-temperature Qblox electronics) — a station doubt for the editor; the apply job adds the preprint to refs)",
+   "sources": [
+    "https://arxiv.org/abs/2604.01063"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "groove-quantum"
+   },
+   "fields": {
+    "err_2q_median": "no fidelity numbers published; CZ gates calibrated on two pairs and used for a three-qubit GHZ state, not benchmarked (preprint arXiv:2604.01063)",
+    "old_err_2q_median": "no fidelity numbers published"
+   },
+   "note": "«Here, we demonstrate the operation of an 18-qubit array in germanium based on an extendable 2× N architecture.» … «Across the array, we achieve average and median single-qubit gate fidelities of 99.8% …» (T2 discovery; T2 discovery, slice 5 (P); st_control doubt: ct_base vs ct_rt (room-temperature Qblox electronics) — a station doubt for the editor; the apply job adds the preprint to refs)",
+   "sources": [
+    "https://arxiv.org/abs/2604.01063"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "groove-quantum"
+   },
+   "fields": {
+    "demonstrated_algorithms": "three-qubit GHZ state across a unit cell (preprint, Apr 2026); 1Q randomised-benchmarking fidelity 99.78(2)% average, 99.87(1)% median",
+    "old_demonstrated_algorithms": "none"
+   },
+   "note": "«Here, we demonstrate the operation of an 18-qubit array in germanium based on an extendable 2× N architecture.» … «Across the array, we achieve average and median single-qubit gate fidelities of 99.8% …» (T2 discovery; T2 discovery, slice 5 (P); st_control doubt: ct_base vs ct_rt (room-temperature Qblox electronics) — a station doubt for the editor; the apply job adds the preprint to refs)",
+   "sources": [
+    "https://arxiv.org/abs/2604.01063"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "groove-quantum"
+   },
+   "fields": {
+    "control": "baseband; Qblox QCM/QRM modules at room temperature (preprint)",
+    "old_control": "baseband"
+   },
+   "note": "«Here, we demonstrate the operation of an 18-qubit array in germanium based on an extendable 2× N architecture.» … «Across the array, we achieve average and median single-qubit gate fidelities of 99.8% …» (T2 discovery; T2 discovery, slice 5 (P); st_control doubt: ct_base vs ct_rt (room-temperature Qblox electronics) — a station doubt for the editor; the apply job adds the preprint to refs)",
+   "sources": [
+    "https://arxiv.org/abs/2604.01063"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "saxonq-sxq4-4"
+   },
+   "fields": {
+    "demonstrated_algorithms": "three-qubit Grover search on three nuclear spins of the commercial NV-diamond processor at Fraunhofer IWU: 77.3% success for one marked state, 87.0% for two (SaxonQ release, Sep 2026; arXiv:2609.13022)",
+    "old_demonstrated_algorithms": "none published"
+   },
+   "note": "«operated a commercial NV-center diamond processor»; «three long-lived nuclear spins»; «77.3% success probability for one marked state»; home page: «Delivered to DLR & Fraunhofer.»; SXQ4 card: «Delivered 2023–2025» (T2 discovery; T2 discovery, slice 5 (C); closes the T1 doubt on the name SXQ4 and the DLR delivery at the owner's word — the editor decides whether an owner's card suffices)",
+   "sources": [
+    "https://www.saxonq.com/news/saxon-q-and-fraunhofer-iwu-publish-first-three-qubit-grover-search-on-a-commercial-room-temperature-quantum-computer/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "saxonq-sxq4-4"
+   },
+   "fields": {
+    "units_evidence": "https://saxonq.com/news/ — «Fraunhofer IWU puts Saxony's first mobile quantum computer into operation» (June 2025); the DLR unit of the register is not on SaxonQ's page; https://saxonq.com/ (read 6 Nov 2026) — the SXQ4 card: «Delivered 2023–2025», «Live with first customers», «Delivered to DLR & Fraunhofer»; the release of Aug 2026: «Two previous generation SAXON Q systems are currently deployed and in active use at the» DLR (not named SXQ4)",
+    "old_units_evidence": "https://saxonq.com/news/ — «Fraunhofer IWU puts Saxony's first mobile quantum computer into operation» (June 2025); the DLR unit of the register is not on SaxonQ's page"
+   },
+   "note": "«operated a commercial NV-center diamond processor»; «three long-lived nuclear spins»; «77.3% success probability for one marked state»; home page: «Delivered to DLR & Fraunhofer.»; SXQ4 card: «Delivered 2023–2025» (T2 discovery; T2 discovery, slice 5 (C); closes the T1 doubt on the name SXQ4 and the DLR delivery at the owner's word — the editor decides whether an owner's card suffices)",
+   "sources": [
+    "https://www.saxonq.com/news/saxon-q-and-fraunhofer-iwu-publish-first-three-qubit-grover-search-on-a-commercial-room-temperature-quantum-computer/"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quobly"
+   },
+   "fields": {
+    "roadmap": "Alloy Pioneer cloud access for early users by end-2026, then progressively larger Alloy systems toward one million qubits by 2032 (16 Sep 2026); isotopically enriched Si-28 entered STMicroelectronics 28 nm FD-SOI production Dec 2025 - the supply-chain milestone that matters more than the qubit count; single-qubit gates, two-qubit gates and readout shown on one QSOI chip from STMicroelectronics' 300 mm Crolles line, no figures published (release of 16 Sep 2026)",
+    "old_roadmap": "Alloy Pioneer cloud access for early users by end-2026, then progressively larger Alloy systems toward one million qubits by 2032 (16 Sep 2026); isotopically enriched Si-28 entered STMicroelectronics 28 nm FD-SOI production Dec 2025 - the supply-chain milestone that matters more than the qubit count"
+   },
+   "note": "«New results demonstrate two-qubit gates, single-qubit gates and qubit readout on a single QSOI® quantum chip»; «STMicroelectronics’ commercial 300 mm manufacturing facilities in Crolles» (T2 discovery; T2 discovery, slice 5 (C); status PLANNED stands)",
+   "sources": [
+    "https://quobly.io/press-releases/quobly-demonstrates-key-quantum-operations-on-single-industrial-silicon-chip-advancing-toward-large-scale-quantum-computing"
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "dwave-advantage2"
+   },
+   "fields": {
+    "units_evidence": "https://docs.dwavequantum.com/en/latest/quantum_research/solver_properties_specific.html — Advantage2_system1 (4566 qubits), Advantage2_system2 (4506), Advantage2_system4 (1202), Advantage2_research2 (the properties of system4); on-premises Advantage2 at Davidson Technologies, Huntsville AL — «completion of physical assembly» and «entering final calibration and testing ahead of operational deployment» (release of 28 Apr 2025): named, not counted until reported operating",
+    "old_units_evidence": "https://docs.dwavequantum.com/en/latest/quantum_research/solver_properties_specific.html — Advantage2_system1 (4566 qubits), Advantage2_system2 (4506), Advantage2_system4 (1202), Advantage2_research2 (the properties of system4)"
+   },
+   "note": "«completion of physical assembly for its Advantage2TM annealing quantum system» … «is entering final calibration and testing ahead of operational deployment.» (T2 discovery; T2 discovery, slice 6 (C, syndicated release text — D-Wave's own newsroom copy to be opened by the apply job); units_built unchanged (≥4) until the Davidson unit is reported operating)",
+   "sources": [
+    "https://www.tipranks.com/news/newswire/d-wave-quantum-nyse-qbts-advances-u-s-quantum-infrastructure-with-davidson-installation-milestone"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "aqt-lynx"
+   },
+   "fields": {
+    "field": "st_encoding"
+   },
+   "note": "the preprint arXiv:2610.32518 says «The qubits are encoded in the two Zeeman states of the 4 2S1/2 ground state» — the row's encoding station enc_opt (the optical S-D qubit of AQT's IBEX lineage) may be wrong for LYNX; the map has no Zeeman-ground-state encoding (enc_hf's text names hyperfine or nuclear-spin levels; Ca-40 has no nuclear spin). A station doubt and a possible gap-register item. Not edited: the editor's.",
+   "sources": [
+    "https://arxiv.org/abs/2610.32518"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "groove-quantum"
+   },
+   "fields": {
+    "field": "st_control"
+   },
+   "note": "the preprint names Qblox QCM/QRM room-temperature modules — ct_rt beside or instead of the row's ct_base (baseband); the editor's tier. Not edited: the editor's.",
+   "sources": [
+    "https://arxiv.org/abs/2604.01063"
+   ]
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "machine",
+    "id": "iqsc-fluxonium-22"
+   },
+   "fields": {
+    "what": "22-qubit fluxonium processor (Quantum Science Center, Shenzhen) — DEMONSTRATED Apr 2026, path sc, the first fluxonium machine in the register",
+    "grade": "P"
+   },
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2604.13363"
+    }
+   ],
+   "note": "T2 apply (local writer job 20261106-3, 7 Nov 2026): a proposed row of the T2 review admitted on the editor's instruction of 6 Nov 2026 — a reversible assumption, his word pending; the cells per layer in the register with their evidence rows"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "machine",
+    "id": "ustc-2024-atom-array"
+   },
+   "fields": {
+    "what": "2,024-atom defect-free tweezer array (AI-assembled; USTC) — DEMONSTRATED Aug 2025, path atom_rb, no entangling gate in the sources verified",
+    "grade": "D"
+   },
+   "sources": [
+    {
+     "url": "https://journals.aps.org/prl/abstract/10.1103/2ym8-vs82"
+    }
+   ],
+   "note": "T2 apply (local writer job 20261106-3, 7 Nov 2026): a proposed row of the T2 review admitted on the editor's instruction of 6 Nov 2026 — a reversible assumption, his word pending; the cells per layer in the register with their evidence rows"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "machine",
+    "id": "orca-pt3"
+   },
+   "fields": {
+    "what": "PT-3 (ORCA Computing) — DEPLOYED 15 Oct 2026 at Digital Realty's Innovation Lab, London; stations as PT-2",
+    "grade": "C"
+   },
+   "sources": [
+    {
+     "url": "https://orcacomputing.com/orca-computing-launches-pt-3-the-first-quantum-computer-built-for-commercial-quantum-advantage/"
+    }
+   ],
+   "note": "T2 apply (local writer job 20261106-3, 7 Nov 2026): a proposed row of the T2 review admitted on the editor's instruction of 6 Nov 2026 — a reversible assumption, his word pending; the cells per layer in the register with their evidence rows"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "machine",
+    "id": "optqc-moquren"
+   },
+   "fields": {
+    "what": "MoQuren (OptQC) — DEPLOYED 21 Jul 2026 at AIST G-QuAT (ABCI-Q); stations presumed from the Furusawa lineage",
+    "grade": "C"
+   },
+   "sources": [
+    {
+     "url": "https://prtimes.jp/main/html/rd/p/000000027.000148901.html"
+    }
+   ],
+   "note": "T2 apply (local writer job 20261106-3, 7 Nov 2026): a proposed row of the T2 review admitted on the editor's instruction of 6 Nov 2026 — a reversible assumption, his word pending; the cells per layer in the register with their evidence rows"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "machine",
+    "id": "riken-optical-qc"
+   },
+   "fields": {
+    "what": "RIKEN general-purpose optical quantum computer (with NTT and Fixstars Amplify) — DEPLOYED Nov 2024 on the cloud under joint research agreements",
+    "grade": "C"
+   },
+   "sources": [
+    {
+     "url": "https://www.jst.go.jp/pr/announce/20241108-3/index.html"
+    }
+   ],
+   "note": "T2 apply (local writer job 20261106-3, 7 Nov 2026): a proposed row of the T2 review admitted on the editor's instruction of 6 Nov 2026 — a reversible assumption, his word pending; the cells per layer in the register with their evidence rows"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "machine",
+    "id": "quantware-soprano-d5"
+   },
+   "fields": {
+    "what": "QuantWare Soprano-D5 — shipping («Shipping now» on the D-line page, 6 Nov 2026), 5 qubits, no figures published",
+    "grade": "C"
+   },
+   "sources": [
+    {
+     "url": "https://quantware.com/product/processors/d-line"
+    }
+   ],
+   "note": "T2 apply (local writer job 20261106-3, 7 Nov 2026): a proposed row of the T2 review admitted on the editor's instruction of 6 Nov 2026 — a reversible assumption, his word pending; the cells per layer in the register with their evidence rows"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "machine",
+    "id": "quantware-contralto-d21"
+   },
+   "fields": {
+    "what": "QuantWare Contralto-D21 — shipping («Shipping now» on the D-line page, 6 Nov 2026), 21 qubits, no figures published",
+    "grade": "C"
+   },
+   "sources": [
+    {
+     "url": "https://quantware.com/product/processors/d-line"
+    }
+   ],
+   "note": "T2 apply (local writer job 20261106-3, 7 Nov 2026): a proposed row of the T2 review admitted on the editor's instruction of 6 Nov 2026 — a reversible assumption, his word pending; the cells per layer in the register with their evidence rows"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "map",
+    "id": "ion_qccd"
+   },
+   "fields": {
+    "event": "slot",
+    "figure": "code_qldpc joins slot 7 of ion_qccd (UCL + NQCC on H2-2: [[10,2,3]] generalised bicycle code with QLDPC surgery, arXiv:2610.39067)",
+    "date": "2026-11-07"
+   },
+   "note": "T2 apply: the T2 review's slot change"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "map",
+    "id": "spin_qd"
+   },
+   "fields": {
+    "event": "slot",
+    "figure": "code_detect joins slot 7 of spin_qd (hrl-eo-18q runs [[4,2,2]] error detection — the register row already names the station; QuTech's weight-four parity checks and the SUSTech/IQA donor error detection as further evidence)",
+    "date": "2026-11-07"
+   },
+   "note": "T2 apply: the T2 review's slot change"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "map",
+    "id": "enc_omg;cx_shuttle;cx_crossbar;spin_donor"
+   },
+   "fields": {
+    "event": "text",
+    "figure": "the descriptions of enc_omg (the ion leg shown, U. Oregon 2026), cx_shuttle (gates by the conveyor motion, 99.84%/99.79%; shuttling-mediated CZ 88.6%) and cx_crossbar (the 6×6 Ge shared-barrier array) in EN/RU/HE; spin_donor's actors gain SUSTech / IQA (Shenzhen); cx_shuttle's status stays E (the editor's call)",
+    "date": "2026-11-07"
+   },
+   "note": "T2 apply: the T2 review's description updates"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "glossary",
+    "id": "mot"
+   },
+   "fields": {
+    "event": "vocabulary",
+    "figure": "the magneto-optical trap defined in the glossary (the proposal of 24 Sep 2026 settled as vocabulary, not a station; the handoff of 24 Sep closes)",
+    "date": "2026-11-07"
+   },
+   "note": "T2 apply"
   }
  ]
 }
