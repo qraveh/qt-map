@@ -323,6 +323,39 @@ def hebrew(pw, shots):
         b.close()
 
 
+def tableview_phone(pw, shots):
+    """The Table view on a phone (ticket 20261106-1, S6): one card per technology with the attributes defined for its layer; the lens
+    legend wraps above; the default scope is the layer of the focused technology with a "show all layers" button; no horizontal scroll."""
+    b = pw.chromium.launch(); ctx = b.new_context(viewport={'width': 390, 'height': 844}, device_scale_factor=2, has_touch=True, is_mobile=True)
+    p = ctx.new_page(); errors = []
+    p.on('pageerror', lambda e: errors.append(str(e)))
+    p.goto('file://' + PAGE, wait_until='load', timeout=120000)
+    p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0 && document.querySelectorAll('#maptable [data-id]').length>0", timeout=60000); time.sleep(0.6)
+    print('phone 390×844, the Table view')
+    NN = p.evaluate("()=>window.__GRAPH.nodes.length")
+    R = """()=>{ const t=document.getElementById('maptable'); const cards=[...t.querySelectorAll('.tcard')]; const leg=t.querySelector('#lenslegend');
+      return {hidden:t.hidden, cards:cards.length, shownCards:cards.filter(c=>!c.classList.contains('out')).length, table:!!t.querySelector('table.ttab'), legend:!!leg&&leg.getBoundingClientRect().height>0,
+        legendWraps:!!leg&&leg.getBoundingClientRect().height>40, scope:((t.querySelector('.tscope')||{}).textContent||'').trim(), scopeBtn:!!t.querySelector('[data-tscope]'),
+        glyphs:t.querySelectorAll('.ttrack,.tbar').length, sel:[...t.querySelectorAll('.tcard.sel')].map(c=>c.dataset.id), sw:document.documentElement.scrollWidth, vw:document.documentElement.clientWidth,
+        dl:(t.querySelector('.tcard dl')||{}).children?t.querySelector('.tcard dl').children.length:0}; }"""
+    p.evaluate("()=>window.__setView('table')"); time.sleep(0.5); r = p.evaluate(R)
+    check('phone: the Table view is a card list — one card per technology, no table, no glyphs', not r['hidden'] and r['cards'] == NN and not r['table'] and r['glyphs'] == 0, (r['cards'], r['table'], r['glyphs']))
+    check('phone: a card lists only the attributes defined for its layer (label: value)', r['dl'] >= 4, r['dl'])
+    check('phone: the lens legend sits above the cards and wraps', r['legend'] and r['legendWraps'], (r['legend'], r['legendWraps']))
+    check('phone: no horizontal scroll at 390 px', r['sw'] <= r['vw'] + 1, (r['sw'], r['vw']))
+    if shots: p.screenshot(path=os.path.join(shots, 'phone_table_all.png'))
+    p.evaluate("()=>window.__selectNode('transmon')"); time.sleep(0.5); r = p.evaluate(R)
+    L1 = p.evaluate("()=>window.__GRAPH.nodes.filter(n=>n.layer===1).length")
+    check('phone: a focused technology scopes the list to its layer, with a "show all layers" button; the card is marked', r['cards'] == L1 and r['scopeBtn'] and 'show all layers' in r['scope'] and r['sel'] == ['transmon'], (r['cards'], L1, r['scope'], r['sel']))
+    if shots: p.screenshot(path=os.path.join(shots, 'phone_table_layer.png'))
+    p.locator('#maptable [data-tscope="all"]').click(); time.sleep(0.4); r = p.evaluate(R)
+    check('phone: "show all layers" lists every technology again', r['cards'] == NN and r['sw'] <= r['vw'] + 1, (r['cards'], r['sw'], r['vw']))
+    p.evaluate("()=>window.__setView('map')"); time.sleep(0.3)
+    check('phone: back to the map', p.evaluate("()=>!document.getElementById('mapwrap').hidden && document.getElementById('maptable').hidden"))
+    check('phone (table): no page errors', not errors, errors[:3])
+    b.close()
+
+
 OVER = """()=>{const vw=innerWidth; const out=[]; const bad=[]; const inScroller=el=>{ for(let p=el.parentElement;p;p=p.parentElement){ const o=getComputedStyle(p).overflowX; if(o==='auto'||o==='scroll'||o==='hidden')return true; } return false; };
       document.querySelectorAll('body *').forEach(el=>{ if(bad.length>12)return; const cs=getComputedStyle(el); if(cs.display==='none'||cs.visibility==='hidden'||cs.position==='fixed')return; const r=el.getBoundingClientRect(); if(!r.width)return; if((r.right>vw+2||r.left<-2)&&!inScroller(el)) bad.push(el.tagName+'.'+String(el.className).slice(0,40)+' left='+Math.round(r.left)+' right='+Math.round(r.right)); });
       return {sw:document.documentElement.scrollWidth, vw:vw, bad:bad};}"""   # both edges: a right-to-left page overflows on the left
@@ -332,7 +365,7 @@ def main():
     a = argparse.ArgumentParser(); a.add_argument('--shots', default=None); o = a.parse_args()
     if o.shots: os.makedirs(o.shots, exist_ok=True)
     with sync_playwright() as pw:
-        phone(pw, o.shots); tablet(pw, o.shots); desktop(pw, o.shots); hebrew(pw, o.shots)
+        phone(pw, o.shots); tablet(pw, o.shots); desktop(pw, o.shots); hebrew(pw, o.shots); tableview_phone(pw, o.shots)
     print('RESULT: ' + ('PASS' if not FAILS else 'FAIL ' + str(FAILS)))
     return 0 if not FAILS else 1
 

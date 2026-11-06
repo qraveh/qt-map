@@ -41,7 +41,7 @@ CHECKS = {   # the matrix of SKILL §4, as commands the code side runs from the 
     'data': ['build/audit/edges_check.py', 'build/audit/records_check.py', 'build/audit/machines_json_check.py', 'build/audit/propagate.py --check',
              'build/brief_refs.py --check', 'build/zenodo_meta.py --check'],
     'text': ['build/audit/text_lint.py', 'build/brief_refs.py --check', 'build/audit/propagate.py --check', 'build/audit/links_check.py'],
-    'generator': ['build/audit/links_check.py --records', 'build/audit/text_lint.py', 'build/manifest.py --check'],
+    'generator': ['build/audit/links_check.py --records', 'build/audit/text_lint.py', 'build/manifest.py --check', 'build/audit/table_check.py'],   # table_check: §7.2 = the Table view (20261106-1)
     'ui': ['build/audit/c2_smoke.py', 'build/audit/mobile_check.py'],
     'infra': ['build/manifest.py --check'],
     'edition': ['build/audit/release_check.py --smoke'],

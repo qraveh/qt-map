@@ -356,6 +356,34 @@ def _fam(nid):
     return PATH[ps[0]]['family'] if ps else None
 
 
+# after each attribute value: how many technologies share it, of the N for which the attribute is defined (decision 7 of 6 Nov 2026) —
+# the same counting as the map's card (build/map_js.py attrCount) and the lens legend (lensItems)
+_ADEF = {'aff': lambda n: True, 'det': lambda n: (n.get('b') or {}).get('det') != 'na', 'mech': lambda n: bool(n.get('c')), 'd': lambda n: n.get('d') != 'none',
+         'mod': lambda n: (n.get('e') or {}).get('mod') != 'none', 'place': lambda n: (n.get('e') or {}).get('mod') != 'none', 'f': lambda n: bool(n.get('f')), 'g': lambda n: n.get('g') != 'none'}
+_AVAL = {'aff': lambda n: ['%g' % n['aff']], 'det': lambda n: [(n.get('b') or {}).get('det')], 'mech': lambda n: [n['c']['mech'] if n.get('c') else 'none'], 'd': lambda n: [n.get('d')],
+         'mod': lambda n: [(n.get('e') or {}).get('mod')], 'place': lambda n: list((n.get('e') or {}).get('place') or ['none']), 'f': lambda n: list(n.get('f') or []), 'g': lambda n: [n.get('g')]}
+_ACNT = {}
+def _attr_count(k, v):
+    key = (k, v)
+    if key not in _ACNT:
+        n = N = 0
+        for x in G['nodes']:
+            if not _ADEF[k](x): continue
+            N += 1
+            if v in _AVAL[k](x): n += 1
+        _ACNT[key] = (n, N)
+    return _ACNT[key]
+def _cnt(L, k, v):
+    n, N = _attr_count(k, v)
+    return ' <span class="cnt" title="%s">· %s</span>' % (ea(T(L, 'technologies sharing this value, of those for which the attribute is defined', 'технологий с этим значением из тех, у кого атрибут определён', 'טכנולוגיות החולקות ערך זה, מתוך אלה שהתכונה מוגדרת להן')),
+                                                        esc(T(L, '%d of %d' % (n, N), '%d из %d' % (n, N), '%d מתוך %d' % (n, N))))
+def _place_html(L, n):
+    e = n.get('e') or {}; ps = e.get('place') or ['none']; ps = ps if isinstance(ps, list) else [ps]
+    order = [p for p in CATS_PLACE if p in ps] + [p for p in ps if p not in CATS_PLACE]
+    return ' / '.join(esc(vt(L, 'PLACE', p)) + ('' if p == 'none' else _cnt(L, 'place', p)) for p in order)
+CATS_PLACE = ['RT', '4K', 'mK', 'none']
+
+
 def _place_text(L, n):
     ps = (n['e'].get('place') or []) or ['none']
     return ' / '.join(vt(L, 'PLACE', p) for p in [p for p in PLACES if p in ps] + [p for p in ps if p not in PLACES])
@@ -383,15 +411,15 @@ def _wrap(kind, parts): return '<section class="card card-%s">%s</section>' % (k
 # ---------- the technology card (inspect)
 def station_card_html(nid, lang, base=''):
     L, n = lang, NODE[nid]; t = lambda *x: esc(T(L, *x)); c = n.get('c'); b = n.get('b') or {}; e = n.get('e') or {}
-    rows = [(T(L, '(a) carrier affinity', '(a) сродство носителя', '(a) זיקת הנושא'), vt(L, 'AFF', n['aff'])),
-            (T(L, '(b) time · entangling', '(b) время · запутывание', '(b) זמן · שזירה'), fmt_t(b.get('t')) + ((' · ' + vt(L, 'DET', b.get('det'))) if b.get('det') != 'na' else '')),
-            (T(L, '(c) readout', '(c) считывание', '(c) קריאה'), '%s · %s · %s · %s' % (vt(L, 'MECH', c.get('mech')), fmt_t_range(L, c),
-                                                                         T(L, 'destructive', 'разрушающее', 'הרסנית') if c.get('destr') else T(L, 'non-destructive', 'неразрушающее', 'לא הרסנית'),
-                                                                         T(L, 'mid-circuit', 'внутрисхемное', 'mid-circuit') if c.get('mid') else T(L, 'no mid-circuit', 'не внутрисхемное', 'ללא mid-circuit')) if c is not None else '—'),
-            (T(L, '(d) mobility', '(d) подвижность', '(d) ניידות'), vt(L, 'MOB', n['d'])),
-            (T(L, '(e) control', '(e) управление', '(e) בקרה'), '—' if e.get('mod') == 'none' else '%s @ %s' % (vt(L, 'MOD', e.get('mod')), _place_text(L, n))),
-            (T(L, '(f) error structure', '(f) структура ошибки', '(f) מבנה השגיאה'), ', '.join(vt(L, 'ERR', x) for x in n['f'])),
-            (T(L, '(g) manufacturing', '(g) производство', '(g) ייצור'), vt(L, 'FAB', n['g']))]
+    rows = [(T(L, '(a) carrier affinity', '(a) сродство носителя', '(a) זיקת הנושא'), esc(vt(L, 'AFF', n['aff'])) + _cnt(L, 'aff', '%g' % n['aff'])),   # the values as HTML: value · n of N (decision 7 of 6 Nov 2026)
+            (T(L, '(b) time · entangling', '(b) время · запутывание', '(b) זמן · שזירה'), esc(fmt_t(b.get('t'))) + ((' · ' + esc(vt(L, 'DET', b.get('det'))) + _cnt(L, 'det', b.get('det'))) if b.get('det') != 'na' else '')),
+            (T(L, '(c) readout', '(c) считывание', '(c) קריאה'), '%s%s · %s · %s · %s' % (esc(vt(L, 'MECH', c.get('mech'))), _cnt(L, 'mech', c.get('mech')), esc(fmt_t_range(L, c)),
+                                                                         t('destructive', 'разрушающее', 'הרסנית') if c.get('destr') else t('non-destructive', 'неразрушающее', 'לא הרסנית'),
+                                                                         t('mid-circuit', 'внутрисхемное', 'mid-circuit') if c.get('mid') else t('no mid-circuit', 'не внутрисхемное', 'ללא mid-circuit')) if c is not None else '—'),
+            (T(L, '(d) mobility', '(d) подвижность', '(d) ניידות'), esc(vt(L, 'MOB', n['d'])) + ('' if n['d'] == 'none' else _cnt(L, 'd', n['d']))),
+            (T(L, '(e) control', '(e) управление', '(e) בקרה'), '—' if e.get('mod') == 'none' else '%s%s @ %s' % (esc(vt(L, 'MOD', e.get('mod'))), _cnt(L, 'mod', e.get('mod')), _place_html(L, n))),
+            (T(L, '(f) error structure', '(f) структура ошибки', '(f) מבנה השגיאה'), ', '.join(esc(vt(L, 'ERR', x)) + _cnt(L, 'f', x) for x in n['f'])),
+            (T(L, '(g) manufacturing', '(g) производство', '(g) ייצור'), esc(vt(L, 'FAB', n['g'])) + ('' if n['g'] == 'none' else _cnt(L, 'g', n['g'])))]
     marks = []
     if n.get('offdiag'):
         marks.append('<div><span class="flag off" title="%s">%s</span> — %s</div>' % (ea(T(L, *OFFDEF)), t('crossing technology', 'сквозная технология', 'טכנולוגיה חוצה'),
@@ -441,8 +469,9 @@ def station_card_html(nid, lang, base=''):
         '<p>%s</p><div>%s</div>' % (lk(pick(L, n['desc'])), flags),
         '<a class="briefbtn" href="#brief">%s</a>' % t('Brief →', 'Обзор →', 'תקציר ←'),
         keys,
-        '<div class="space"><h4>%s</h4><dl>%s</dl></div>' % (t('Design space — attributes', 'Пространство проектирования — атрибуты', 'מרחב התכן — תכונות'),
-                                                            ''.join('<dt>%s</dt><dd>%s</dd>' % (esc(k), esc(v)) for k, v in rows)),
+        '<div class="space"><h4>%s</h4><dl>%s</dl><div class="empty cntdef">%s</div></div>' % (t('Design space — attributes', 'Пространство проектирования — атрибуты', 'מרחב התכן — תכונות'),
+                                                            ''.join('<dt>%s</dt><dd>%s</dd>' % (esc(k), v) for k, v in rows),
+                                                            t('· n of N — n technologies share the value, of the N for which the attribute is defined (an attribute does not apply to every layer)', '· n из N — n технологий с этим значением из N, у которых атрибут определён (атрибут применим не к каждому слою)', '· n מתוך N — n טכנולוגיות חולקות את הערך, מתוך N שהתכונה מוגדרת להן (תכונה אינה חלה על כל שכבה)')),
         '<div class="space"><h4>%s</h4>%s%s</div>' % (t('Evaluation space — dated attributes', 'Пространство оценки — датированные атрибуты', 'מרחב ההערכה — תכונות מתוארכות'), defs, attrs),
         _records(L, n['records']) if n.get('records') else '',
         '<div class="space"><h4>%s</h4>%s</div>' % (t('Actors & goals — annotations', 'Участники и цели — аннотации', 'שחקנים ויעדים — ביאורים'), tags),

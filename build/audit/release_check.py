@@ -137,6 +137,10 @@ def main():
     #     rename, no removed row still named as a machine
     pr = run([sys.executable, 'build/audit/propagate.py', '--check'])
     item('change ledgers propagated to the hand-written corners (propagate.py --check)', pr.returncode == 0, (pr.stdout + pr.stderr)[-400:])
+    # 7c. §7.2 and the map's Table view read one row builder (build/node_table.py; ticket 20261106-1, 6 Nov 2026): the printed cells, the
+    #     embedded rows and the data agree in every language
+    tc = run([sys.executable, 'build/audit/table_check.py'])
+    item('§7.2 = the Table view\'s rows = node_table (table_check.py)', tc.returncode == 0, (tc.stdout + tc.stderr)[-400:])
     # 8. sizes
     item('dist under 12 MB', os.path.getsize(DIST) < 12 * 1024 * 1024, os.path.getsize(DIST))
     # optional: smoke, V&V single

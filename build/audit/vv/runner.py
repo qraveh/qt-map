@@ -66,11 +66,20 @@ def diff(exp, act):
         if e != a:
             out[k] = {'missing': sorted(map(list, e - a) if k == 'edges' else e - a),
                       'extra': sorted(map(list, a - e) if k == 'edges' else a - e)}
+    # the Table view's mirror (20261106-1): visible rows = the lens term (+ the focus), dimmed = visible minus lit; only on a page that has the table
+    if act.get('table') and exp.get('table'):
+        for k in ('visible', 'dimmed'):
+            e, a = set(exp['table'][k]), set(act['table'][k])
+            if e != a:
+                out['table_' + k] = {'missing': sorted(e - a), 'extra': sorted(a - e)}
     return out
 
 
 def sizes(r):
-    return {k: len(r[k]) for k in ('stations', 'lines', 'edges')}
+    d = {k: len(r[k]) for k in ('stations', 'lines', 'edges')}
+    if r.get('table'):
+        d['table_visible'] = len(r['table']['visible']); d['table_dimmed'] = len(r['table']['dimmed'])
+    return d
 
 
 class Out:

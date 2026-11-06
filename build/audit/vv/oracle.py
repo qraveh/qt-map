@@ -240,7 +240,13 @@ def expected(model, state):
         if selection and not (u in lit and v in lit):
             continue
         edges.add((u, v, t))
-    return {"stations": lit, "lines": lines, "edges": edges}   # the strip and its pc_* mirror went on 9 Oct 2026 (D6-2)
+    # the Table view (ticket 20261106-1, 6 Nov 2026) mirrors the same state: the lens term HIDES rows (the map dims them), every other
+    # term DIMS the rows it leaves out, and the focused station never disappears (pinned first when the filter excludes it)
+    visible = set(lens_set)
+    if foc:
+        visible.add(foc)
+    table = {"visible": visible, "dimmed": visible - lit}
+    return {"stations": lit, "lines": lines, "edges": edges, "table": table}   # the strip and its pc_* mirror went on 9 Oct 2026 (D6-2)
 
 
 def all_single_states(model):

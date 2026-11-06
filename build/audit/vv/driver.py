@@ -26,7 +26,10 @@ _READ_JS = r"""() => {
     if(r.width===0&&r.height===0)return; if(getComputedStyle(e).display==='none')return;
     for(let a=e.parentElement;a&&a!==document.body;a=a.parentElement){ const ox=getComputedStyle(a).overflowX; if(ox!=='visible'&&ox!=='clip'){ const ar=a.getBoundingClientRect(); if(ar.left>=-1&&ar.right<=vw+1)return; } }
     if(r.left<-1||r.right>vw+1) over.push((e.id||e.className&&e.className.baseVal===undefined&&e.className||e.tagName)+''); });
-  return {stations, lines, edges, legend, altuse, machine_card,
+  // the Table view's rows (20261106-1): hidden = .out, dimmed = .dim — read from the DOM in either view (the rows are kept in step with the map)
+  const tt=document.getElementById('maptable'); const trows=tt?[...tt.querySelectorAll('[data-id]')]:[];
+  const table=trows.length?{visible:trows.filter(r=>!r.classList.contains('out')).map(r=>r.dataset.id), dimmed:trows.filter(r=>r.classList.contains('dim')&&!r.classList.contains('out')).map(r=>r.dataset.id)}:null;
+  return {stations, lines, edges, legend, altuse, machine_card, table,
     machine_select: (document.getElementById('machine')||{value:null}).value||null,
     path_card: insp.hidden?'':insp.innerText.trim(),
     selection_summary: document.getElementById('barsum').hidden?'':(document.getElementById('barsum').innerText||'').trim(),
@@ -255,6 +258,8 @@ class MapPage:
         r['lines'] = set(r['lines'])
         r['edges'] = {tuple(e) for e in r['edges']}
         r['edges_toggle_names'] = {(u, v, EDGE_TYPE.get(t, t)) for u, v, t in r['edges']}
+        if r.get('table'):   # the Table view (20261106-1); None on a page without it (the frozen baseline)
+            r['table'] = {'visible': set(r['table']['visible']), 'dimmed': set(r['table']['dimmed'])}
         r['bbox_overflow'] = bool(r['overflow_elems']) or r['doc_hscroll']
         return r
 

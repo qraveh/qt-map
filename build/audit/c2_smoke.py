@@ -3,7 +3,7 @@
 default 96 technologies lit → select google-willow (lit = its non-gap nodes, only path `sc` lit) → requires on (edges only among lit)
 → click transmon (lit ⊆ machine ∪ {transmon}; technology card has "Used by" with ≥ 10 machines) → reset (96 lit, select empty,
 no altuse) → organisation links (§2, the sc and transmon cards) → RU labels. Exit 0 iff every check passes and there are 0 console errors (Google Fonts ERR_TUNNEL ignored)."""
-import json, pathlib, sys
+import json, pathlib, re as _re, sys
 from playwright.sync_api import sync_playwright
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
@@ -146,9 +146,10 @@ def run(pw, w, h):
     p.locator('#lenslegend [data-lv="mK"]').dispatch_event('click'); r = read()
     check(f'place = millikelvin stage lights ct_sfq (and ct_cryocmos), {place_count("mK")} technologies', 'ct_sfq' in r['lit'] and 'ct_cryocmos' in r['lit'] and len(r['lit']) == place_count('mK'), sorted(r['lit']))
     click_station('ct_sfq'); r = read()
-    check('ct_sfq card: (e) control shows every stage — "microwave @ 4 K stage / millikelvin stage"', 'microwave @ 4 K stage / millikelvin stage' in r['card'], r['card'][:300])
+    STAGES = r'microwave(?: · \d+ of \d+)? @ 4 K stage(?: · \d+ of \d+)? / millikelvin stage'   # since 6 Nov 2026 each value carries its count (decision 7 of ticket 20261106-1)
+    check('ct_sfq card: (e) control shows every stage — "microwave @ 4 K stage / millikelvin stage" (each value with its count)', bool(_re.search(STAGES, r['card'])), r['card'][:300])
     click_station('ct_cryocmos'); r = read()
-    check('ct_cryocmos card: "microwave @ 4 K stage / millikelvin stage"', 'microwave @ 4 K stage / millikelvin stage' in r['card'], r['card'][:300])
+    check('ct_cryocmos card: "microwave @ 4 K stage / millikelvin stage" (each value with its count)', bool(_re.search(STAGES, r['card'])), r['card'][:300])
     p.keyboard.press('Escape')
     p.select_option('#lens', 'family'); r = read()   # a lens change clears the value filter
     check(f'back to the family lens: {NN} lit', len(r['lit']) == NN, len(r['lit']))
@@ -467,6 +468,7 @@ def laptop(pw):
     check('400 px: bottom sheet, page has room above it', not t0['hidden'] and t0['sheet'] and t0['hasSheet'] and t0['h'] <= t0['vh'] * 0.5, t0)
     drag(p, '#insp [data-grip]', 0, -150); t1 = p.evaluate(STATE)
     check('sheet grip drag makes the sheet taller', t1['h'] >= t0['h'] + 100, (t0['h'], t1['h']))
+    p.evaluate("()=>history.replaceState(null,'',location.pathname)")   # the address carries the selection since 6 Nov 2026 (20261106-1): a reload with it would reopen the card and the click below would close it
     p.reload(wait_until='load'); p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0", timeout=60000)
     p.evaluate(CLICK, 'ae_atom'); p.wait_for_timeout(500); t2 = p.evaluate(STATE)
     check('sheet height is remembered after a reload', abs(t2['h'] - t1['h']) <= 12, (t1['h'], t2['h']))
@@ -871,8 +873,125 @@ def hebrew(pw):
     return fails
 
 
+TREAD = r"""()=>{ const t=document.getElementById('maptable'); const rows=[...t.querySelectorAll('tr.trow[data-id]')]; const idOf=g=>g.querySelector('text.id').textContent;
+  const y=document.getElementById('cmptray');
+  return {hidden:t.hidden, mapHidden:document.getElementById('mapwrap').hidden, rows:rows.length, groups:t.querySelectorAll('tr.tgrp').length,
+   visible:rows.filter(r=>!r.classList.contains('out')).map(r=>r.dataset.id), dimmed:rows.filter(r=>r.classList.contains('dim')&&!r.classList.contains('out')).map(r=>r.dataset.id),
+   order:rows.map(r=>r.dataset.id), first:rows[0]?rows[0].dataset.id:null, pinfirst:rows.filter(r=>r.classList.contains('pinfirst')).map(r=>r.dataset.id),
+   pinned:rows.filter(r=>r.querySelector('[data-pin]').checked).map(r=>r.dataset.id), shown:((document.getElementById('tshown')||{}).textContent||'').trim(),
+   status:((document.getElementById('tstatus')||{}).textContent||'').trim(), sort:[...t.querySelectorAll('th[aria-sort]')].filter(h=>h.getAttribute('aria-sort')!=='none').map(h=>[h.className,h.getAttribute('aria-sort')]),
+   legendInTable:!!t.querySelector('#lenslegend'), legendChips:t.querySelectorAll('#lenslegend [data-lv]').length, lens:document.getElementById('lens').value,
+   lit:[...document.querySelectorAll('#mapwrap g.station:not(.dim)')].map(idOf), cmpsel:[...document.querySelectorAll('#mapwrap g.station.cmpsel')].map(idOf),
+   lines:[...document.querySelectorAll('#mapwrap path.pathline:not(.dim)')].map(p=>p.dataset.path), sel:[...document.querySelectorAll('#mapwrap g.station.sel')].map(idOf),
+   tray:y.hidden?null:{cols:y.querySelectorAll('thead th').length-1, same:y.querySelectorAll('td.same').length, rows:y.querySelectorAll('tbody tr').length, text:y.innerText.replace(/\s+/g,' ').slice(0,160)},
+   sw:[...document.querySelectorAll('#viewsw [data-view]')].map(b=>[b.dataset.view,b.getAttribute('aria-checked')]), zoomVisible:document.getElementById('zoomlvl').offsetParent!==null,
+   hash:location.hash, y:window.pageYOffset, card:document.getElementById('insp').hidden?'':document.getElementById('insp').innerText.slice(0,400),
+   cardDl:((document.querySelector('#insp dl')||{}).innerText||'')+' | '+((document.querySelector('#insp .cntdef')||{}).textContent||''),
+   cmpBtn:(()=>{const b=document.querySelector('#insp [data-cmp]'); return b?b.getAttribute('aria-pressed'):null;})(),
+   dir:(()=>{const tb=t.querySelector('table.ttab'); return tb?[tb.getAttribute('dir'),getComputedStyle(tb).direction]:null;})(),
+   barX:(()=>{const r=t.querySelector('tr.trow .tbar'); if(!r)return null; const i=[...r.querySelectorAll('i')]; return i.length>1?[Math.round(i[0].getBoundingClientRect().left),Math.round(i[1].getBoundingClientRect().left)]:null;})()}; }"""
+
+
+def tableview(pw):
+    """6 Nov 2026 (ticket 20261106-1, the editor's decisions 1–7 on the map's companion view): a "Map | Table" switch on the map bar; the
+    table is the map's list view — every technology, §7.2's strings, grouped by layer; one state with the map (lens filter hides, an
+    architecture or a machine dims, the focused technology never disappears); a sort by an attribute column sets the lens; a compare
+    tray of ≤ 4 pinned technologies with equal values tinted and "show on the map"; the whole view state in a #map: fragment; a section
+    anchor still jumps; the Hebrew page's table is right-to-left with the barcode mirrored; the technology card counts each value."""
+    fails, errors = [], []
+    b = pw.chromium.launch(); ctx = b.new_context(viewport={'width': 1600, 'height': 1000}); p = ctx.new_page()
+    def check(label, cond, detail=''):
+        print(f"  [{'ok' if cond else 'FAIL'}] {label}{(' — ' + str(detail)) if (detail and not cond) else ''}")
+        if not cond: fails.append(label)
+    print('the Table view (20261106-1) — 1600×1000')
+    p.on('console', lambda m: m.type == 'error' and not ('ERR_FILE_NOT_FOUND' in m.text and '/media/' in (m.location or {}).get('url', '')) and errors.append(m.text))
+    p.on('pageerror', lambda e: errors.append('pageerror: ' + str(e)))
+    p.goto(PAGE.as_uri(), wait_until='load', timeout=120000); wait_langs(p); expand_bar(p)
+    p.wait_for_function("document.querySelectorAll('#mapwrap g.station').length>0 && document.querySelectorAll('#maptable tr.trow').length>0", timeout=60000)
+    LOSS = sorted(n['id'] for n in GRAPH['nodes'] if 'loss' in n['f']); LEAK = sorted(n['id'] for n in GRAPH['nodes'] if 'leak' in n['f'])
+    r = p.evaluate(TREAD)
+    check(f'default: the Map view, the table rendered with {NN} rows in 10 layer groups, hidden', r['sw'] == [['map', 'true'], ['table', 'false']] and r['hidden'] and not r['mapHidden'] and r['rows'] == NN and r['groups'] == 10, (r['sw'], r['rows'], r['groups']))
+    default_order = r['order']
+    p.click('#viewsw [data-view="table"]'); p.wait_for_timeout(200); r = p.evaluate(TREAD)
+    check('the switch: Table shows the table in the map\'s place, hides the map and the zoom controls, the lens legend above the table', r['sw'] == [['map', 'false'], ['table', 'true']] and not r['hidden'] and r['mapHidden'] and not r['zoomVisible'] and r['legendInTable'] and r['legendChips'] >= 8, (r['sw'], r['zoomVisible'], r['legendInTable'], r['legendChips']))
+    check(f'"{NN} of {NN} shown", no "show all" button without a filter', r['shown'].startswith(f'{NN} of {NN} shown') and 'show all' not in r['shown'], r['shown'])
+    p.focus('#viewsw [data-view="table"]'); p.keyboard.press('ArrowLeft'); p.wait_for_timeout(150); r1 = p.evaluate(TREAD)
+    p.keyboard.press('ArrowRight'); p.wait_for_timeout(150); r2 = p.evaluate(TREAD)
+    check('arrow keys move the switch both ways', r1['sw'][0][1] == 'true' and r1['hidden'] and r2['sw'][1][1] == 'true' and not r2['hidden'], (r1['sw'], r2['sw']))
+    # sort: (f) sets the lens; asc → desc → the layer order
+    p.click('#maptable th.tc-f .tsort'); p.wait_for_timeout(200); r = p.evaluate(TREAD)
+    check('sort by (f): the lens becomes "Dominant error structure", aria-sort ascending, the groups go (one flat order)', r['lens'] == 'f' and r['sort'] == [['tc-f', 'ascending']] and r['groups'] == 0 and r['order'] != default_order, (r['lens'], r['sort'], r['groups']))
+    asc = r['order']
+    p.click('#maptable th.tc-f .tsort'); p.wait_for_timeout(200); r = p.evaluate(TREAD)
+    check('second click: descending (the order reversed, "—" rows last in both)', r['sort'] == [['tc-f', 'descending']] and r['order'] != asc, r['sort'])
+    p.click('#maptable th.tc-f .tsort'); p.wait_for_timeout(200); r = p.evaluate(TREAD)
+    check('third click: back to the layer order with its groups; the lens stays', r['sort'] == [] and r['groups'] == 10 and r['order'] == default_order and r['lens'] == 'f', (r['sort'], r['groups'], r['lens']))
+    # the legend filters both views; "n of N shown · show all"
+    p.locator('#maptable #lenslegend [data-lv="loss"]').dispatch_event('click'); p.wait_for_timeout(200); r = p.evaluate(TREAD)
+    check(f'a legend chip (loss) filters both views: {len(LOSS)} rows visible = the technologies lit on the map', sorted(r['visible']) == LOSS and sorted(r['lit']) == LOSS, (len(r['visible']), len(r['lit'])))
+    check(f'"{len(LOSS)} of {NN} shown · show all"', r['shown'].startswith(f'{len(LOSS)} of {NN} shown') and 'show all' in r['shown'], r['shown'])
+    # the focused technology never disappears: pinned first, marked
+    p.evaluate("()=>window.__selectNode('transmon')"); p.wait_for_timeout(200); r = p.evaluate(TREAD)
+    check('a focused technology outside the filter (transmon under loss) stays: the first row, marked "selected — outside the filter"', r['first'] == 'transmon' and r['pinfirst'] == ['transmon'] and 'transmon' in r['visible'] and len(r['visible']) == len(LOSS) + 1 and r['sel'] == ['transmon'], (r['first'], r['pinfirst'], len(r['visible'])))
+    check('the technology card shows a count after each value and the definition line', '· 44 of 110' in r['cardDl'] and '· 21 of 25' in r['cardDl'] and 'n technologies share the value' in r['cardDl'], r['cardDl'][:200])
+    p.keyboard.press('Escape'); p.wait_for_timeout(200); r = p.evaluate(TREAD)
+    check('focus cleared: the row returns to its place, nothing marked', r['pinfirst'] == [] and r['first'] == default_order[0] and sorted(r['visible']) == LOSS, (r['pinfirst'], r['first']))
+    p.locator('#tshown [data-tshowall]').click(); p.wait_for_timeout(200); r = p.evaluate(TREAD)
+    check(f'"show all" clears the filter: {NN} rows, {NN} lit', len(r['visible']) == NN and len(r['lit']) == NN, (len(r['visible']), len(r['lit'])))
+    # the compare tray
+    for nid in ('transmon', 'fluxonium', 'ion', 'alkali'):
+        p.locator(f'#maptable [data-pin="{nid}"]').click(); p.wait_for_timeout(80)
+    r = p.evaluate(TREAD)
+    check('four pins: the tray under the stage with four columns and seven attribute rows; equal values tinted', r['tray'] is not None and r['tray']['cols'] == 4 and r['tray']['rows'] == 7 and r['tray']['same'] >= 4 and sorted(r['pinned']) == ['alkali', 'fluxonium', 'ion', 'transmon'], (r['tray'], r['pinned']))
+    p.locator('#maptable [data-pin="cavity"]').click(); p.wait_for_timeout(150); r = p.evaluate(TREAD)
+    check('the fifth pin is refused with a one-line message; the box stays unchecked', 'cavity' not in r['pinned'] and len(r['pinned']) == 4 and 'four technologies at most' in r['status'], (r['pinned'], r['status']))
+    p.locator('#cmptray [data-cmpshow]').click(); p.wait_for_timeout(300); r = p.evaluate(TREAD)
+    pin_paths = sorted({pth['id'] for pth in GRAPH['paths'] if any(nid in {x for s in pth['slots'].values() for x in s} for nid in ('transmon', 'fluxonium', 'ion', 'alkali'))})
+    check('"show on the map": the Map view, the four pins outlined, exactly the architectures through them lit', r['sw'][0][1] == 'true' and sorted(r['cmpsel']) == ['alkali', 'fluxonium', 'ion', 'transmon'] and sorted(r['lines']) == pin_paths, (r['sw'], r['cmpsel'], len(r['lines']), len(pin_paths)))
+    p.locator('#cmptray [data-unpin="alkali"]').click(); p.wait_for_timeout(150); r = p.evaluate(TREAD)
+    check('unpin from the tray: three columns left; the outline ends with the next change', r['tray'] is not None and r['tray']['cols'] == 3 and r['cmpsel'] == [], (r['tray'], r['cmpsel']))
+    # the card's "add to compare" button pins too
+    p.evaluate("()=>window.__selectNode('cavity')"); p.wait_for_timeout(150); p.locator('#insp [data-cmp="cavity"]').click(); p.wait_for_timeout(150); r = p.evaluate(TREAD)
+    check('"add to compare" on the technology card pins it (four again)', sorted(r['pinned']) == ['cavity', 'fluxonium', 'ion', 'transmon'] and r['cmpBtn'] == 'true', (r['pinned'], r['cmpBtn']))
+    # the address: written on every change, read at load
+    check('the fragment carries the state: lens, tech, cmp', r['hash'].startswith('#map:') and 'lens=f' in r['hash'] and 'tech=cavity' in r['hash'] and 'cmp=transmon,fluxonium,ion,cavity' in r['hash'], r['hash'])
+    # a same-document hash change (the §7.2 link, a pasted address in the same tab) reveals the stage on purpose
+    p.evaluate("()=>{ window.scrollTo(0,0); location.hash='#map:view=map&tech=transmon'; }"); p.wait_for_timeout(600); r = p.evaluate(TREAD)
+    bar = p.evaluate("()=>document.getElementById('mapbar').getBoundingClientRect().top")
+    check('an in-page #map: address applies its state and brings the stage into view (the Map view, transmon focused, the map bar near the top)', r['hidden'] and r['sel'] == ['transmon'] and r['pinned'] == [] and -2 <= bar <= 140, (r['hidden'], r['sel'], r['pinned'], bar))
+    # a fresh load at a #map: address: the page opens at its top with that state (the first-view rule treats #map: as no jump)
+    url = PAGE.as_uri() + '#map:view=table&lens=f&lv=loss,leak&tech=ion&cmp=transmon,ion&sort=f:desc'
+    p.goto('about:blank'); p.goto(url, wait_until='load', timeout=120000); wait_langs(p)
+    p.wait_for_function("document.querySelectorAll('#maptable tr.trow').length>0", timeout=60000); p.wait_for_timeout(500); r = p.evaluate(TREAD)
+    both = sorted(set(LOSS) | set(LEAK))
+    check('a #map: address opens that state: the Table view, lens f with loss + leak kept, ion focused, two pins, sorted by (f) descending, the page at its top', not r['hidden'] and r['lens'] == 'f' and sorted(r['visible']) == both and r['sel'] == ['ion'] and sorted(r['pinned']) == ['ion', 'transmon'] and r['sort'] == [['tc-f', 'descending']] and r['y'] < 1 and r['hash'].startswith('#map:'), (r['lens'], len(r['visible']), len(both), r['sel'], r['pinned'], r['sort'], r['y']))
+    chips = p.evaluate("()=>[...document.querySelectorAll('#lenslegend [data-lv][aria-pressed=\"true\"]')].map(b=>b.dataset.lv)")
+    check('the legend shows the two kept values pressed', sorted(chips) == ['leak', 'loss'], chips)
+    p.evaluate("()=>{location.hash='#en-s3-1';}"); p.wait_for_timeout(500); r = p.evaluate(TREAD)
+    check('a section anchor still jumps (the page scrolls to §3.1) and the view state stays', r['y'] > 200 and not r['hidden'] and sorted(r['pinned']) == ['ion', 'transmon'] and r['hash'] == '#en-s3-1', (r['y'], r['hidden'], r['pinned'], r['hash']))
+    errs = [e for e in errors if not ('fonts.g' in e and ('ERR_TUNNEL' in e or 'net::' in e)) and 'ERR_TUNNEL' not in e]
+    check('0 console errors', not errs, errs[:3])
+    ctx.close()
+    # the Hebrew page: a right-to-left table, the barcode mirrored, the strings in Hebrew
+    ctx = b.new_context(viewport={'width': 1600, 'height': 1000}); p = ctx.new_page(); errors2 = []
+    p.on('pageerror', lambda e: errors2.append('pageerror: ' + str(e)))
+    he = ROOT / 'dist' / 'he' / 'index.html'
+    if he.exists():
+        p.goto(he.as_uri(), wait_until='load', timeout=120000)
+        p.wait_for_function("document.querySelectorAll('#maptable tr.trow').length>0", timeout=60000); expand_bar(p)
+        p.evaluate("()=>window.__setView('table')"); p.wait_for_timeout(300); r = p.evaluate(TREAD)
+        check('Hebrew: <table dir="rtl">, the barcode\'s first slot on the right, the count line in Hebrew', r['dir'] == ['rtl', 'rtl'] and r['barX'] and r['barX'][0] > r['barX'][1] and r['shown'].startswith(f'מוצגות {NN} מתוך {NN}'), (r['dir'], r['barX'], r['shown']))
+        sw = p.evaluate("()=>[...document.querySelectorAll('#viewsw [data-view] span')].filter(s=>getComputedStyle(s).display!=='none').map(s=>s.textContent)")
+        check('Hebrew: the switch reads מפה | טבלה', sw == ['מפה', 'טבלה'], sw)
+        check('Hebrew: 0 page errors', not errors2, errors2[:3])
+    else:
+        check('dist/he/index.html exists (prepare_dist.sh / the build writes it)', False, str(he))
+    ctx.close(); b.close()
+    return fails
+
+
 if __name__ == '__main__':
     with sync_playwright() as pw:
-        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800) + sorting(pw, 1280, 900) + sorting(pw, 400, 800) + chapter8(pw, 1280, 900) + chapter8(pw, 400, 800) + laptop(pw) + selections(pw) + hints(pw) + fullscreen(pw) + review23b(pw) + review23c(pw) + folds(pw) + scrollescape(pw) + feedback(pw) + hebrew(pw)
+        f = run(pw, 1600, 1000) + run(pw, 400, 800) + tables(pw, 1280, 900) + tables(pw, 400, 800) + sorting(pw, 1280, 900) + sorting(pw, 400, 800) + chapter8(pw, 1280, 900) + chapter8(pw, 400, 800) + laptop(pw) + selections(pw) + hints(pw) + fullscreen(pw) + review23b(pw) + review23c(pw) + folds(pw) + scrollescape(pw) + feedback(pw) + hebrew(pw) + tableview(pw)
     print('RESULT:', 'PASS' if not f else f'FAIL {f}')
     sys.exit(1 if f else 0)

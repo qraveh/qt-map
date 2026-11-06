@@ -810,4 +810,99 @@ details.tblfold:not([open])>summary:dir(rtl)::before{content:"◂"}
 .maplead details:not([open])>summary:dir(rtl)::after,.mapbar details.glyphs:not([open])>summary:dir(rtl)::after{content:"◂"}
 @media (max-width:1024px){ .mapbar .chipsrow::after{background:linear-gradient(to left,var(--surface),var(--surface-t0))} .mapbar .chipsrow:dir(rtl)::after{background:linear-gradient(to right,var(--surface),var(--surface-t0))} }
 """
-CSS = CSS.replace('@@LANG_RULES@@', _LANG_RULES) + RTL_CSS
+TABLE_CSS = r'''
+/* ---------- the Table view (ticket 20261106-1, 6 Nov 2026): "Map | Table" on the map bar; the table takes the map's place ---------- */
+.mapwrap[hidden],.maptable[hidden],.cmptray[hidden]{display:none}
+.viewsw{display:inline-flex;border:1px solid var(--ink2);border-radius:8px;overflow:hidden;margin-inline-end:8px;vertical-align:middle;flex:0 0 auto}
+.viewsw .vsb{appearance:none;border:0;background:var(--surface);color:var(--ink);font:600 13px/1 "Inter",system-ui,sans-serif;height:30px;padding:0 11px;cursor:pointer}
+.viewsw .vsb+.vsb{border-inline-start:1px solid var(--ink2)}
+.viewsw .vsb[aria-checked="true"]{background:var(--ink);color:var(--bg)}
+.viewsw .vsb:focus-visible{outline:2px solid var(--focus);outline-offset:-3px}
+.mapbar.tableview .zoomwin{display:none}
+.maptable{position:relative;max-height:82vh;display:flex;flex-direction:column;min-width:0;min-height:240px}
+.maptable{max-height:82dvh}
+.maptable .thead{flex:0 0 auto;padding:6px 10px 4px;border-bottom:1px solid var(--rule);background:var(--surface)}
+.maptable .lenslegend{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;padding:2px 0 6px}
+.maptable .lenslegend:empty{display:none}
+.maptable .lenslegend .lbl{color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-inline-end:6px}
+.maptable .tmeta{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center;font-size:12.5px;color:var(--ink2)}
+.maptable .tmeta .lk{padding:1px 9px;padding-inline-start:9px}
+.maptable .tstatus:empty{display:none}
+.maptable .tstatus{color:var(--crit)}
+.maptable .tscroll{flex:1 1 auto;overflow:auto;min-height:0}
+.ttab{border-collapse:separate;border-spacing:0;width:100%;font-size:12.5px}
+.ttab caption{caption-side:bottom;text-align:start;padding:6px 10px;font-size:12px;color:var(--ink2)}
+.ttab th,.ttab td{padding:4px 8px;border-bottom:1px solid var(--rule2);vertical-align:top;text-align:start;background:var(--surface)}
+.ttab thead th{position:sticky;top:0;z-index:2;background:var(--surface2);font-weight:600;white-space:nowrap;font-size:12px;height:30px;box-sizing:border-box}
+.ttab thead th .tsort{appearance:none;background:none;border:0;padding:0;margin:0;font:inherit;color:inherit;cursor:pointer;text-align:inherit}
+.ttab thead th .tsort:hover{color:var(--accent)}
+.ttab thead th .tsort:focus-visible{outline:2px solid var(--focus);outline-offset:1px;border-radius:3px}
+.ttab th[aria-sort="ascending"] .tsort,.ttab th[aria-sort="descending"] .tsort{color:var(--accent)}
+.ttab .sortind{color:var(--muted);font-size:.8em}
+.ttab tr.tgrp th{position:sticky;top:30px;z-index:1;background:var(--surface);font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:9px 8px 4px;border-bottom:1px solid var(--rule);white-space:normal}
+.ttab th.tn{font-weight:600;min-width:140px}
+.ttab th.tc-layer{width:7%}.ttab th.tc-name{width:17%}.ttab th.tc-c{width:12%}.ttab th.tc-aff{width:8%}.ttab th.tc-f{width:11%}   /* width hints: the name column no longer takes half the stage; the attributes stay in view at 1536 px */
+.ttab .tl{white-space:normal}
+.tgo{appearance:none;background:none;border:0;padding:0;margin:0;font:inherit;font-weight:600;color:var(--accent);cursor:pointer;text-align:inherit}
+.tgo:hover{text-decoration:underline}
+.tgo:focus-visible{outline:2px solid var(--focus);outline-offset:1px;border-radius:3px}
+.tid{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted)}
+.ttab td.na{color:var(--muted)}
+.ttab .tl{color:var(--ink2)}
+.tln{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted)}
+.ttab td.tpin,.ttab th.tpin{width:22px;padding-inline-end:0}
+.ttab tr.trow.dim td,.ttab tr.trow.dim th{opacity:.38}
+.ttab tr.trow.out,.ttab tr.tgrp.out,.tcard.out{display:none}
+.ttab tr.trow.sel td,.ttab tr.trow.sel th{background:color-mix(in srgb,var(--focus) 12%,var(--surface))}
+.ttab tr.trow.sel th.tn{box-shadow:inset 3px 0 0 var(--accent)}
+.ttab tr.trow.sel th.tn:dir(rtl){box-shadow:inset -3px 0 0 var(--accent)}
+.ttab tr.trow.pinned td.tpin{background:color-mix(in srgb,var(--accent) 14%,var(--surface))}
+.tfirst{display:none;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);margin-inline-start:6px}
+.pinfirst .tfirst{display:inline}
+/* the glyphs beside the text: a dot on the log time track (hollow = probabilistic / heralded), nine slots for the error types */
+.ttrack{display:inline-block;position:relative;width:56px;height:8px;margin-inline-end:8px;vertical-align:middle;border-radius:4px;background:linear-gradient(to right,var(--lens4),var(--lens1));opacity:.9}
+.ttrack:dir(rtl){background:linear-gradient(to left,var(--lens4),var(--lens1))}
+.ttrack i{position:absolute;top:-2px;width:12px;height:12px;margin-inline-start:-6px;border-radius:50%;background:var(--c,var(--ink));border:2px solid var(--surface);box-shadow:0 0 0 1px var(--ink2)}
+.ttrack i.her{background:var(--surface);border:2px solid var(--c,var(--ink));box-shadow:none}
+.tbar{display:inline-flex;gap:1px;margin-inline-end:6px;vertical-align:middle}
+.tbar i{display:block;width:5px;height:12px;border-radius:1px;background:var(--surface2);border:1px solid var(--rule)}
+.tbar i.on{background:var(--c,var(--ink));border-color:var(--c,var(--ink))}
+/* the compare tray under the stage */
+.cmptray{border:1px solid var(--rule);border-top:0;background:var(--surface);padding:8px 12px;font-size:12.5px}
+.cmptray .ctop{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin-bottom:6px}
+.cmptray .ctop .lbl{color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.cmptray .cstatus{color:var(--crit)}
+.cmptray .cwrap{overflow-x:auto}
+.cmptray .ctab{border-collapse:collapse;width:100%;table-layout:fixed;min-width:420px}
+.cmptray .ctab th,.cmptray .ctab td{padding:4px 8px;border-bottom:1px solid var(--rule2);vertical-align:top;text-align:start;overflow-wrap:anywhere}
+.cmptray .ctab thead th{background:var(--surface2);font-weight:600;position:static;white-space:normal}
+.cmptray .ctab tbody th{color:var(--muted);font-weight:500;width:22%}
+.cmptray .ctab td.same{background:color-mix(in srgb,var(--atom) 18%,var(--surface))}
+.cmptray .cx{appearance:none;border:1px solid var(--rule);background:var(--surface);color:var(--ink2);border-radius:999px;font:inherit;font-size:11px;line-height:1;padding:2px 6px;margin-inline-start:6px;cursor:pointer;vertical-align:middle}
+.cmptray .cx:hover{border-color:var(--crit);color:var(--crit)}
+.station.cmpsel rect.box{stroke-width:3;stroke:var(--ink)}
+/* the phone: one card per technology, the attributes defined for its layer */
+.tcards{padding:0 10px 6px}
+.tcard{padding:8px 0;border-bottom:1px solid var(--rule2)}
+.tcard .tch{display:block;line-height:1.35}
+.tcard .tch input{vertical-align:middle;margin:0 6px 0 0;margin-inline-end:6px}
+.tcard .tch .tgo{display:inline;text-align:start}
+.tcard .tl{color:var(--ink2);font-size:12px}
+.tcard dl{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;margin:4px 0 0;font-size:12.5px}
+.tcard dt{color:var(--muted);white-space:nowrap}.tcard dd{margin:0;overflow-wrap:anywhere}
+.tcard.dim{opacity:.45}
+.tcard.sel{box-shadow:inset 3px 0 0 var(--accent);padding-inline-start:8px}
+.tcard.sel:dir(rtl){box-shadow:inset -3px 0 0 var(--accent)}
+.tscope{padding:6px 10px;font-size:12.5px;color:var(--ink2);display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;border-bottom:1px solid var(--rule2)}
+.tcap{margin:0;padding:8px 10px;font-size:12px;color:var(--ink2)}
+/* the technology card: the count after each attribute value, and its definition */
+.insp .cnt{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted);white-space:nowrap}
+.insp .cntdef{margin-top:4px;font-size:11.5px}
+.insp .cmpbtn{font-size:12px;padding:2px 9px;vertical-align:middle}
+.insp .cmpbtn[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+@media (max-width:1024px){.maptable{max-height:70vh}.maptable{max-height:70dvh}}
+@media (max-width:600px){.viewsw .vsb{height:32px;padding:0 9px}.mapbar .chipsrow > .lbl{display:none}}   /* a phone: the chips speak for themselves — the row held "Управление", the switch and «архитектуры» 22 px past the screen */
+#mapbody.fs .maptable{max-height:none}
+@media print{.viewsw,.cmptray .ctop button{display:none}}
+'''
+CSS = CSS.replace('@@LANG_RULES@@', _LANG_RULES) + RTL_CSS + TABLE_CSS

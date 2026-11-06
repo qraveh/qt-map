@@ -81,7 +81,7 @@ def main():
     # a few fragments are handled by scripts, not by ids
     script_frags = {'map', 'briefs', 'top'}
     for f in list(missing):
-        if f in script_frags or f in idset: del missing[f]
+        if f in script_frags or f in idset or f.startswith('map:'): del missing[f]   # #map:view=table… is the map's view state (ticket 20261106-1)
     if missing: fails.append('href="#…" without a target (%d distinct): %s' % (len(missing), list(missing.items())[:25]))
     # 2. data-* targets
     for attr, ok in (('data-goto', lambda v: v in nodes), ('data-brief', lambda v: v in nodes and ('brief-%s' % v) in idset),
