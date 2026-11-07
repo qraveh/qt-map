@@ -1992,6 +1992,14 @@
     {
       "identifier": "10.1103/xw1s-dt16",
       "relation": "cites"
+    },
+    {
+      "identifier": "10.48550/arXiv.2502.15034",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.48550/arXiv.2610.29986",
+      "relation": "cites"
     }
   ],
   "publication_date": "2026-09-30"

@@ -5,8 +5,8 @@ layer: "9 Interconnect"
 status: emerging
 since: 2025
 one_line: Splitting a superconducting processor across several dies inside one cryostat, joined by bump-bonded chiplet links or metre-scale superconducting l-couplers.
-verdict: Chiplet tiling ships and costs fidelity — 99.5% at four chiplets, 99.1% at twelve; l-couplers have no published fidelity. Demote if no two-module entangling figure by end-2027.
-updated: 2026-09-30
+verdict: Chiplet tiling ships and costs fidelity — 99.5% at four chiplets, 99.1% at twelve; l-couplers reach a 94.75% mean distant CZ between two 120-qubit processors (best link 96.42%, Oct 2026 preprint). Demote if no two-module entangling figure by end-2027.
+updated: 2026-11-07
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -39,10 +39,13 @@ Best demonstrated as of 2026-09-03: inter-module SWAP at the 99% level in under 
 | 2023-02 | five modules on Al coax, Q 8.1 × 10⁵, transfer and Bell 99%, 12-qubit GHZ 55.8 ± 1.8% | SUSTech | [D][748] |
 | 2023-08 | CZ 99.13 ± 0.15% in 56 ns through a coupler bridging four chips | Rigetti | [D][749] |
 | 2024-09 | indium cable-to-chip join, Q 1.24 × 10⁶, contact resistance 8.5 × 10⁻⁴ Ω | IBM | [D][750] |
+| 2024-11 | distant CNOT through an l-coupler at 96.5% on a test device in loopback — IBM's statement at QDC24 | IBM | [P][930] |
+| 2025-02 | remote CNOT 93.3% by randomised benchmarking and state transfer 98.8% over a 60 cm coplanar-waveguide interconnect | IBM | [D][931] |
 | 2025-06 | inter-module SWAP 99% in < 100 ns, remote entanglement error ≈ 1% | Illinois | [D][752] |
 | 2025-07-16 | 36 qubits, four chiplets, median 2Q 99.5%, 2× error cut vs Ankaa-3 | Rigetti | [C][751] |
 | 2026-04-07 | 108 qubits, twelve chiplets, median 2Q 99.1% | Rigetti | [C][36] |
 | 2026-08-19 | two cryogenic cells coupled; 0.53 m² wiring, 2.75 m³ vacuum per cell | IBM | [C][50] |
+| 2026-10-21 | four l-couplers between two 120-qubit Nighthawk R1 processors over 80 cm of aluminium coax: state transfer 99.00% mean (best 99.29 ± 0.07%), distant CZ 94.75% mean (best 96.42 ± 0.28%) | IBM | [D][932] |
 
 The dominant term is not the interconnect. Rigetti's own comparison isolates it: same chiplet, same join, three times as many, 40 basis points of two-qubit fidelity lost [C][36], [751]. Nothing published attributes that loss, which makes frequency targeting across a tiled set the leading suspect and the leading unknown.
 
@@ -68,7 +71,7 @@ A fabricated carrier acquires far-range connectivity through packaging, where at
 
 Rigetti's 99.1% and 99.5% are company medians without error bars or a stated protocol [C][36], [751]; the 2021 die-to-die numbers carry explicit uncertainties [D][747]. SUSTech's 99% is a state-transfer and Bell-state fidelity, not a gate fidelity, and its 12-qubit GHZ at 55.8 ± 1.8% shows what five linked modules do at depth [D][748]. The Illinois figure is a SWAP *efficiency* with a separately stated ~1% error called threshold-level; the two should not be conflated [D][752]. IBM's coupled-cell result contains no qubits and no fidelity claim [C][50]. No value conflicts were found; the gap is that nothing explains the 99.5% → 99.1% step.
 
-Neither arXiv:2308.09240 (Rigetti; cross-chip CZ 99.13 ± 0.15% in 56 ns) nor arXiv:2409.04634 (IBM Quantum, T. J. Watson Research Center; cable joins, no qubit measured) has a journal version as of 2026-09-30. The 40,000 I/O lines of QuantWare's Bass-A10K (VIO-40K) rest only on QuantWare's own release of 2025-12-08 [G:QUANTWARE-VIO], which the trade-press page of 2025-12-10 [P][495] omits, and no delivered device confirms them. Not published: a gate fidelity or latency through IBM's l-coupler, "first demonstrated in 2024" on Flamingo [C][50], [481], whose cable joins were tested on 1 m of aluminium coax at internal Q ≈ 10⁶ [D][750], as of 2026-09-30; and a dated assignee record for Rigetti's chiplet-packaging and QuantWare's vertical-I/O patent families.
+Neither arXiv:2308.09240 (Rigetti; cross-chip CZ 99.13 ± 0.15% in 56 ns) nor arXiv:2409.04634 (IBM Quantum, T. J. Watson Research Center; cable joins, no qubit measured) has a journal version as of 2026-09-30. The 40,000 I/O lines of QuantWare's Bass-A10K (VIO-40K) rest only on QuantWare's own release of 2025-12-08 [G:QUANTWARE-VIO], which the trade-press page of 2025-12-10 [P][495] omits, and no delivered device confirms them. IBM's l-coupler fidelities came in steps: a 96.5% distant CNOT on a test device in loopback, the company's own statement at QDC24 [P][930]; a 93.3% remote CNOT by randomised benchmarking over a 60 cm coplanar-waveguide interconnect, with a 98.8% state transfer (Feb 2025, preprint) [D][931]; distant CZ gates at 94.75% mean (best link 96.42 ± 0.28%) between two Nighthawk R1 processors over 80 cm of aluminium coax (Oct 2026, preprint) [D][932] — the l-coupler "first demonstrated in 2024" on Flamingo [C][50], [481], whose cable joins were tested on 1 m of aluminium coax at internal Q ≈ 10⁶ [D][750]. Not published: a latency through an l-coupler, a journal version of either preprint, and a dated assignee record for Rigetti's chiplet-packaging and QuantWare's vertical-I/O patent families.
 
 ## Actors & economics
 
@@ -97,7 +100,7 @@ Neither arXiv:2308.09240 (Rigetti; cross-chip CZ 99.13 ± 0.15% in 56 ns) nor ar
 **IP & standards.** IBM holds US 12,517,856, "Modular quantum system with discrete levels of connectivity" (filed 2022-09-28, granted 2026-01-06), and US 12,587,192 on chains of resonators with tunable inductive couplers (granted 2026-03-24) [G:LRCOUPLER-PATENTS] — the l-coupler's cable joins are published [D][750], a gate fidelity through one is not. For Rigetti's chiplet packaging and QuantWare's vertical I/O, no dated patent fact was found within budget. There is no inter-module interface standard and no open-source packaging stack.
 
 **Roadmaps & track record.**
-- IBM: promised 2025-06-10 · l-couplers demonstrated on Flamingo in 2024 · claimed delivered, no link fidelity published as of 2026-09-30 [C][481].
+- IBM: promised 2025-06-10 · l-couplers demonstrated on Flamingo in 2024 · claimed delivered; a vendor-stated 96.5% loopback CNOT (Nov 2024), then measured link fidelities in preprints of Feb 2025 and Oct 2026 [C][481] [P][930] [D][931], [932].
 - IBM: promised 2025-06-10 · Cockatoo 2027, entanglement between modules via the universal adapter; Nighthawk on nine l-coupled modules for 1,080 qubits by 2028 · pending [R][481] [G:IBM-ROADMAP].
 - IBM: promised 2022-05-10 · Kookaburra, a 1,386-qubit multi-chip processor, for 2025 [C][313]; re-promised 2025-06-10 for 2026 as the first module with a qLDPC memory [R][481] · not delivered as of 2026-09-30 [G:IBM-ROADMAP].
 - Rigetti: promised 2025-07-16 · 100+ qubit chiplet system at median 99.5% before end-2025 · delivered 2026-04-07 at 99.1%, target moved to "later in 2026" [C][36], [751].
@@ -111,7 +114,7 @@ Credibility: IBM meets its single-chip processor dates but not its multi-chip on
 
 Confirm within 12–24 months if: IBM's Cockatoo demonstrates entanglement between two l-coupled modules with a published fidelity by end-2027 [R][481]; Rigetti's 108-qubit system reaches median 99.5% [C][36]; anyone runs a stabiliser round whose checks cross a module boundary. Demote if no l-coupler fidelity is published by end-2027. Best case by 2029: a few thousand qubits in coupled cells with cross-module error correction at Λ comparable to monolithic. Worst case: tiling saturates near 10² qubits because frequency targeting across dies does not scale.
 
-Open questions: what causes the 40-basis-point tiling tax, per-join or per-calibration? Can a metre-scale cable's mode comb be pushed out of band without shortening it? What is an l-coupler's fidelity, two years after the claim? Does a qLDPC check spanning modules survive the extra transport error? Watch Rigetti's roadmap update, IBM's first Cockatoo measurement, QuantWare's Kilofab yield, and any paper benchmarking a chiplet boundary as such.
+Open questions: what causes the 40-basis-point tiling tax, per-join or per-calibration? Can a metre-scale cable's mode comb be pushed out of band without shortening it? Will the l-coupler's distant CZ (94.75% mean, Oct 2026) close the gap to on-chip gates? Does a qLDPC check spanning modules survive the extra transport error? Watch Rigetti's roadmap update, IBM's first Cockatoo measurement, QuantWare's Kilofab yield, and any paper benchmarking a chiplet boundary as such.
 
 ## References
 [36] Rigetti Computing, Inc., “Rigetti Announces General Availability of 108-Qubit System,” Apr. 7, 2026. [Online]. Available: https://investors.rigetti.com/news-releases/news-release-details/rigetti-announces-general-availability-108-qubit-system [C]
@@ -127,3 +130,6 @@ Open questions: what causes the 40-basis-point tiling tax, per-join or per-calib
 [751] Rigetti Computing, “Rigetti Demonstrates Industry's Largest Multi-Chip Quantum Computer; Halves Two-Qubit Gate Error Rate,” Rigetti Investor Relations, Jul. 16, 2025. [Online]. Available: https://investors.rigetti.com/news-releases/news-release-details/rigetti-demonstrates-industrys-largest-multi-chip-quantum [C]
 [752] M. Mollenhauer, A. Irfan, X. Cao, S. Mandal, and W. Pfaff, “A high-efficiency elementary network of interchangeable superconducting qubit devices,” *Nat. Electron.*, vol. 8, no. 7, pp. 610–619, Jul. 2025, doi: [10.1038/s41928-025-01404-3](https://doi.org/10.1038/s41928-025-01404-3). [D]
 [753] Z. Du *et al.*, “Hardware-aware Compilation for Chip-to-Chip Coupler-Connected Modular Quantum Systems,” [arXiv:2505.09036](https://arxiv.org/abs/2505.09036), May 2025. [S]
+[930] J. Russell, “QDC24 Quick Hit: IBM Plows Ahead with Quantum Hardware Development,” HPCwire, Nov. 26, 2024. [Online]. Available: https://www.hpcwire.com/2024/11/26/qdc24-quick-hit-ibm-plows-ahead-with-quantum-hardware-development/ [P]
+[931] K. Heya *et al.*, “Randomized benchmarking of a high-fidelity remote CNOT gate over a meter-scale microwave interconnect,” [arXiv:2502.15034](https://arxiv.org/abs/2502.15034), Feb. 2025. [D]
+[932] N. M. Sundaresan *et al.*, “Meter-scale quantum interconnects between large quantum processors,” [arXiv:2610.29986](https://arxiv.org/abs/2610.29986), Oct. 2026. [D]

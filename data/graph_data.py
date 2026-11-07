@@ -143,7 +143,7 @@ N("enc_cat",2,"Cat-code encoding (biased noise)","Кошачье кодиров�
   "Alice & Bob (DARPA QBI Stage A only), AWS. The '27–33' figures quoted elsewhere are phase-flip *times* in µs, not bias values.","Alice & Bob (DARPA QBI только Stage A), AWS. Числа «27–33», встречающиеся в других местах, — это *времена* переворота фазы в µs, а не значения смещения."),
 N("enc_gkp",2,"GKP grid encoding","GKP-кодирование (решётка)",0.75,["fab","pho"],None,"na",None,"none","none",["none"],["gauss"],"none","E",
   "Grid states in a bosonic (microwave cavity) or optical mode; corrects small shifts; needs ~10 dB squeezing.","Решёточные состояния в бозонной (СВЧ-резонатор) или оптической моде; исправляет малые сдвиги; нужно ~10 dB сжатия.",
-  [("channel","single-mode GKP logical error","8.1×10⁻³/round (survival 0.24×0.39)","2026-07","https://arxiv.org/abs/2607.06718"),
+  [("channel","single-mode GKP logical error","8.5×10⁻³/round autonomous; 8.1×10⁻³ with post-selected SPAM (survival 0.24×0.39)","2026-07","https://arxiv.org/abs/2607.06718"),
    ("channel","GKP qudit gain beyond break-even (UCSB + Google)","1.82–1.87","2025-05","https://www.nature.com/articles/s41586-025-08899-y"),
    ("channel","best bosonic memory gain (GKP, Yale)","2.27(7)","2023-03","https://www.nature.com/articles/s41586-023-05782-6")],
   "Nord Quantique (microwave), Xanadu (optical). The GKP-qudit work is Brock et al. (UC Santa Barbara + Google, Nature 641, 612), not Yale; Nord Quantique's magic-state SPAM is 8(5)×10⁻³ (7(7)×10⁻⁴ on cardinal states).","Nord Quantique (СВЧ), Xanadu (оптика). Работа по GKP-кудитам — Brock et al. (UC Santa Barbara + Google, Nature 641, 612), а не Yale; SPAM магических состояний у Nord Quantique — 8(5)×10⁻³ (7(7)×10⁻⁴ на кардинальных состояниях)."),
@@ -508,7 +508,7 @@ N("ic_cryolink",9,"Cryogenic microwave link between refrigerators","Криоге
 N("ic_ionphoton",9,"Ion–photon link","Ион-фотонный интерфейс",0.0,["nat"],None,"na",None,"flying","opt",["RT"],["loss"],"optics","D",
   "Remote Bell pairs at 9.7–250 s⁻¹ with 94–97% fidelity; teleported CZ 86%; needs ≥ 10⁴ s⁻¹.","Удалённые пары Белла при 9.7–250 s⁻¹ с точностью 94–97%; телепортированный CZ 86%; нужно ≥ 10⁴ s⁻¹.",
   [("channel","distributed CZ (Oxford)","remote Bell 96.9% at 9.7 s⁻¹; teleported CZ 86.2%","2025-02","https://www.nature.com/articles/s41586-024-08404-x"),
-   ("clock","entanglement rate record","250 s⁻¹ at F > 94%","2024","https://arxiv.org/abs/2404.16167")],
+   ("clock","entanglement rate record","250 s⁻¹ with sympathetic cooling; the fidelity bound F ≥ 93.7(1.3)% (abstract: > 94%) was measured at 79 s⁻¹ without it","2024","https://arxiv.org/abs/2404.16167")],
   "The 2007 first remote ion–ion entanglement is Monroe's group (Michigan, later Maryland/Duke) — the lineage holding today's rate record — not the Wineland/NIST line. IonQ's 2026-04 interconnect milestone discloses no rate, fidelity or distance and asserts no measured Bell state.","Первая удалённая запутанность ион–ион 2007 года — группа Monroe (Michigan, позже Maryland/Duke), та же линия, что держит нынешний рекорд скорости, а не линия Wineland/NIST. В сообщении IonQ от 2026-04 не раскрыты ни скорость, ни точность, ни расстояние и не заявлено измеренное состояние Белла."),
 N("ic_atomcavity",9,"Atom–photon cavity interface","Атом-фотонный интерфейс через резонатор",0.0,["nat"],None,"na",None,"flying","opt",["RT"],["loss"],"optics","E",
   "Tweezer atoms coupled to cavities: ~90% generation-to-detection atom–photon efficiency (MPQ); no inter-module rates yet.","Атомы в пинцетах, связанные с резонаторами: ~90% эффективность атом–фотон от генерации до детектирования (MPQ); межмодульных скоростей пока нет.",
@@ -623,7 +623,7 @@ def P(id,en,ru,family,cls,slots,actors,cycle_measured,goals):
 PATHS=[
 P("sc","Transmon lattice with tunable couplers","Решётка трансмонов с перестраиваемыми элементами связи","SC","fab",
   {1:["transmon","fluxonium"],2:["enc_bare"],3:["g_tc","g_cr","g_rip"],4:["cx_nn","cx_lr"],5:["ct_rt","ct_vio","ct_cryocmos","ct_sfq","ct_fdm"],6:["ro_disp","ro_reset"],7:["code_surface","code_color","code_qldpc","code_magic","code_detect","code_mitig","code_nonabelian"],8:["dec_nn","dec_mwpm","dec_fpga","dec_relaybp","dec_rl","dec_gpu","dec_cryo"],9:["ic_mcm","ic_multidie","ic_cryolink","ic_transducer"],10:["fab_sc","fab_cmos"]},
-  "IBM (Heron, Nighthawk), Google (Willow), Rigetti, IQM, OQC, USTC/Zhejiang, Fujitsu/RIKEN, QuantWare","1.1 µs (Willow QEC cycle)","G2 G3 G4"),
+  "IBM (Heron, Nighthawk), Google (Willow), Rigetti, IQM, OQC, USTC/Zhejiang, Fujitsu/RIKEN, QuantWare","1.1 µs (Google surface-code cycle; stated for the d=5 real-time run on the 72-qubit processor)","G2 G3 G4"),
 P("cat","Bosonic cavity qubits — cat and GKP","Бозонные кубиты в резонаторах — кошачьи кубиты и GKP","SC","fab",
   {1:["cavity"],2:["enc_cat","enc_gkp"],3:["g_bos","g_catcnot"],4:["cx_nn"],5:["ct_rt"],6:["ro_disp"],7:["code_bosonic"],8:["dec_mwpm"],9:["ic_mcm","ic_multidie"],10:["fab_sc","fab_3d"]},
   "Alice & Bob, AWS, Nord Quantique","2.8 µs (Ocelot cycle)","G3 G4"),
@@ -632,10 +632,10 @@ P("dualrail","Dual-rail erasure qubits","Двухрельсовые кубиты
   "D-Wave/QCI, AWS, SUSTech","~2 µs (CZ 500 ns + 384 ns check)","G3 G4"),
 P("ion_qccd","Trapped ions — QCCD (transport between zones)","Ионы в ловушках — QCCD (перемещение между зонами)","ION","nat",
   {1:["ion"],2:["enc_hf"],3:["g_ms","g_elec"],4:["cx_qccd"],5:["ct_ionaod","ct_ionlaser","ct_ionmw"],6:["ro_fluor"],7:["code_highrate","code_color","code_magic","code_detect","code_qldpc","code_nonabelian"],8:["dec_gpu","dec_mwpm"],9:["ic_ionphoton"],10:["fab_trap","fab_optics","fab_cmos","fab_pic"]},
-  "Quantinuum (H1, H2, Helios, Sol), Universal Quantum","~1–5 ms syndrome cycle; 55 ms per full layer (Helios)","G2 G3 G6 G7"),
+  "Quantinuum (H1, H2, Helios, Sol), Universal Quantum","~1–5 ms syndrome cycle assumed (IonQ decoder paper); 55 ms per full layer measured (Helios)","G2 G3 G6 G7"),
 P("ion_chain","Trapped ions — linear Paul trap with individual laser addressing","Ионы в ловушках — линейная ловушка Пауля с индивидуальной лазерной адресацией","ION","nat",
   {1:["ion"],2:["enc_hf","enc_opt","enc_omg"],3:["g_ms"],4:["cx_bus"],5:["ct_ionaod","ct_ionlaser"],6:["ro_fluor"],7:["code_qldpc","code_highrate","code_color","code_detect","code_magic"],8:["dec_mwpm","dec_relaybp"],9:["ic_ionphoton"],10:["fab_trap","fab_optics","fab_pic"]},
-  "IonQ (Aria, Forte, Tempo), AQT, Qudoor, Maryland/Duke (EURIQA), Innsbruck","~ms (IonQ decoder assumption); 1–5 ms cycles in QCCD-class experiments","G2 G3 G6 G7"),
+  "IonQ (Aria, Forte, Tempo), AQT, Qudoor, Maryland/Duke (EURIQA), Innsbruck","~1–5 ms (IonQ decoder assumption); no measured repeated-QEC round published","G2 G3 G6 G7"),
 P("ion_elec","Trapped ions — electronic qubit control (laser-free, microwave-driven gates)","Ионы в ловушках — электронное управление кубитами (СВЧ / РЧ вентили)","ION","nat",
   {1:["ion"],2:["enc_hf","enc_omg"],3:["g_elec"],4:["cx_bus","cx_qccd"],5:["ct_ionmw"],6:["ro_fluor"],7:["code_qldpc","code_highrate"],8:["dec_relaybp","dec_mwpm"],9:["ic_ionphoton"],10:["fab_trap","fab_cmos","fab_optics"]},
   "Oxford Ionics (IonQ), eleQtron, QUDORA, Universal Quantum","~1–5 ms (IonQ decoder assumption)","G2 G3 G6 G7"),
@@ -964,7 +964,7 @@ CONX={
   status="open",date="2025-11",url="https://developer.nvidia.com/blog/nvidia-nvqlink-architecture-integrates-accelerated-computing-with-quantum-processors/"),
 ("ct_sfq","transmon"):dict(
   price=("photons emitted by switching junctions lie above the aluminium gap (2Δ ≈ 90 GHz) and break Cooper pairs in the qubit film: T1 decay plus correlated, non-Pauli bursts; 0.96(2)% of the 1.2(1)% error per Clifford in the 2023 multi-chip module","фотоны переключающихся переходов лежат выше щели алюминия (2Δ ≈ 90 GHz) и разрывают куперовские пары в плёнке кубита: распад T1 плюс коррелированные не-паулиевские всплески; 0.96(2)% из 1.2(1)% ошибки на Клиффорд в многочиповом модуле 2023 г."),
-  mitig=("driver on a separate die, pulse-bandwidth limiting (projected 0.1%), quasiparticle traps / gap engineering, mm-wave shielding; SEEQC 2026 reports no detectable poisoning at 5 qubits (press, not independently measured)","драйвер на отдельном кристалле, ограничение полосы импульсов (прогноз 0.1%), ловушки квазичастиц / инженерия щели, mm-волновое экранирование; SEEQC 2026 сообщает об отсутствии детектируемого отравления на 5 кубитах"),
+  mitig=("driver on a separate die, pulse-bandwidth limiting (projected 0.1%), quasiparticle traps / gap engineering, mm-wave shielding; SEEQC 2026 reports T1 unchanged after up to 50 µs of clocking on its 5-qubit module (the paper's own test, not independently measured)","драйвер на отдельном кристалле, ограничение полосы импульсов (прогноз 0.1%), ловушки квазичастиц / инженерия щели, mm-волновое экранирование; SEEQC 2026 сообщает, что T1 не меняется после 50 µs тактирования на её 5-кубитном модуле (собственный тест статьи, независимо не измерен)"),
   status="open",date="2023-09",url="https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.4.030310"),
 }
 CONSTAT={"open":("open — no mitigation shown at scale","открыт — смягчение в масштабе не показано"),"mitigated":("mitigated at small scale","смягчён в малом масштабе"),"bypass":("bypassed by choosing another technology in place of one of the two","обходится выбором другой технологии вместо одной из двух")}

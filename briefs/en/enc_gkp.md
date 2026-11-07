@@ -6,7 +6,7 @@ status: emerging
 since: 2020
 one_line: A qubit encoded in periodic grid states of one bosonic mode — microwave cavity or optical — correcting small quadrature shifts and handing the decoder an analogue syndrome.
 verdict: The only encoding whose syndrome is continuous, and the only one whose every headline number is still post-selected. Unconditional logical error remains unpublished on both branches.
-updated: 2026-09-30
+updated: 2026-11-07
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -26,7 +26,7 @@ Best demonstrated is a memory, not a computation. The largest coherence gain fro
 | 2023-03 | Real-time GKP correction beyond break-even, gain 2.27(7) | Yale | [D][415] |
 | 2025-05 | GKP qudits beyond break-even: qutrit 1.82(3), ququart 1.87(3) | UCSB/Google Quantum AI | [D][83] |
 | 2025-06 | GKP state on an integrated SiN chip at room temperature, 0.62 dB effective squeezing | Xanadu | [D][174] |
-| 2026-07 | Single-mode grid qubit: 0.0081(2)/round, survival 0.24×0.39 | Nord Quantique | [D][82] |
+| 2026-07 | Single-mode grid qubit: 0.0085(2)/round autonomous, 0.0081(2) after post-selected SPAM (survival 0.24×0.39) | Nord Quantique | [D][82] |
 
 ## Manufacturing, materials & supply chain
 The two branches share no supply chain. Microwave GKP is machined, not lithographed: aluminium or niobium 3D cavities — Nord Quantique's is a double-post design — plus an ancilla transmon and readout chain per mode, and a refrigerator whose volume, not wafer area, sets the qubit count [D][82]. Optical GKP is a 300 mm silicon-nitride process at room temperature, with squeezed-light generation, photon-number-resolving detection and packaging as cost drivers; Xanadu reports 0.085 dB edge-coupling loss per facet, with Corning and DISCO [C][G:XANADU-PACKAGING-2026-06]. No GKP-specific export control exists; the microwave branch inherits ECCN 3A904 [G][301].

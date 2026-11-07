@@ -1,5 +1,5 @@
 {
- "next": 930,
+ "next": 933,
  "works": [
   {
    "n": 1,
@@ -2528,7 +2528,8 @@
    "ids": [
     "doi:10.1038/s41928-026-01576-6",
     "u:nature:s41928-026-01576-6",
-    "t:a quantum computer controlled by superconducting digital ele"
+    "t:a quantum computer controlled by superconducting digital ele",
+    "arxiv:2503.09879"
    ],
    "label": "J+26"
   },
@@ -7813,6 +7814,32 @@
     "t:selective excitation of superconducting qubits with a shared"
    ],
    "label": "MOS+26"
+  },
+  {
+   "n": 930,
+   "ids": [
+    "u:https://www.hpcwire.com/2024/11/26/qdc24-quick-hit-ibm-plows-ahead-with-quantum-hardware-development",
+    "t:qdc24 quick hit ibm plows ahead with quantum hardware develo"
+   ],
+   "label": "Rus24a"
+  },
+  {
+   "n": 931,
+   "ids": [
+    "arxiv:2502.15034",
+    "u:arxiv:2502.15034",
+    "t:randomized benchmarking of a high fidelity remote cnot gate "
+   ],
+   "label": "H+25a"
+  },
+  {
+   "n": 932,
+   "ids": [
+    "arxiv:2610.29986",
+    "u:arxiv:2610.29986",
+    "t:meter scale quantum interconnects between large quantum proc"
+   ],
+   "label": "S+26a"
   }
  ]
 }

@@ -183,6 +183,27 @@
    "url": "https://arxiv.org/abs/1112.5419",
    "verified": true
   },
+  "arxiv:1205.6375": {
+   "authors": [
+    "Markus Jerger",
+    "Stefano Poletto",
+    "Pascal Macha",
+    "Uwe Hübner",
+    "Evgeni Il'ichev",
+    "Alexey V. Ustinov"
+   ],
+   "title": "Frequency division multiplexing readout and simultaneous manipulation of an array of flux qubits",
+   "journal": "Appl. Phys. Lett.",
+   "volume": "101",
+   "issue": "4",
+   "article": "042604",
+   "date": "2012-07-23",
+   "doi": "10.1063/1.4739454",
+   "arxiv": "1205.6375",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/1205.6375",
+   "verified": true
+  },
   "arxiv:1206.0780": {
    "authors": [
     "R. Bowler"
@@ -3070,6 +3091,29 @@
    "url": "https://arxiv.org/abs/2412.09780",
    "verified": true
   },
+  "arxiv:2501.10710": {
+   "authors": [
+    "Ryo Matsuda",
+    "Ryutaro Ohira",
+    "Toshi Sumida",
+    "Hidehisa Shiomi",
+    "Akinori Machino",
+    "Shinichi Morisaka"
+   ],
+   "etal": true,
+   "n_authors": 19,
+   "title": "Selective excitation of superconducting qubits with a shared control line through pulse shaping",
+   "journal": "Phys. Rev. Res.",
+   "volume": "8",
+   "issue": "1",
+   "article": "L012003",
+   "date": "2026-01-06",
+   "doi": "10.1103/xw1s-dt16",
+   "arxiv": "2501.10710",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2501.10710",
+   "verified": true
+  },
   "arxiv:2502.14787": {
    "authors": [
     "Yue Wu",
@@ -3088,6 +3132,18 @@
    "also": [
     "https://github.com/yuewuo/micro-blossom"
    ],
+   "verified": true
+  },
+  "arxiv:2502.15034": {
+   "authors": [
+    "Kentaro Heya"
+   ],
+   "etal": true,
+   "title": "Randomized benchmarking of a high-fidelity remote CNOT gate over a meter-scale microwave interconnect",
+   "date": "2025-02-20",
+   "arxiv": "2502.15034",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2502.15034",
    "verified": true
   },
   "arxiv:2502.20558": {
@@ -4280,6 +4336,18 @@
    "arxiv": "2610.20889",
    "kind": "preprint",
    "url": "https://arxiv.org/abs/2610.20889",
+   "verified": true
+  },
+  "arxiv:2610.29986": {
+   "authors": [
+    "Neereja M. Sundaresan"
+   ],
+   "etal": true,
+   "title": "Meter-scale quantum interconnects between large quantum processors",
+   "date": "2026-10-21",
+   "arxiv": "2610.29986",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2610.29986",
    "verified": true
   },
   "arxiv:2610.35227": {
@@ -7942,6 +8010,18 @@
    "url": "https://www.hamamatsu.com/us/en/news/events/2026/APS-DAMOP-2026.html",
    "verified": true
   },
+  "https://www.hpcwire.com/2024/11/26/qdc24-quick-hit-ibm-plows-ahead-with-quantum-hardware-development": {
+   "authors": [
+    "John Russell"
+   ],
+   "org": "HPCwire",
+   "title": "QDC24 Quick Hit: IBM Plows Ahead with Quantum Hardware Development",
+   "date": "2024-11-26",
+   "kind": "web",
+   "site": "HPCwire",
+   "url": "https://www.hpcwire.com/2024/11/26/qdc24-quick-hit-ibm-plows-ahead-with-quantum-hardware-development/",
+   "verified": true
+  },
   "https://www.hpcwire.com/2025/10/28/ibm-touts-affordable-quantum-error-correction-on-amd-fpgas": {
    "authors": [
     "Alex Woodie"
@@ -8898,50 +8978,6 @@
    "publisher": "Qodeh",
    "date": "2026-09",
    "section": "3.2",
-   "verified": true
-  },
-  "arxiv:1205.6375": {
-   "authors": [
-    "Markus Jerger",
-    "Stefano Poletto",
-    "Pascal Macha",
-    "Uwe Hübner",
-    "Evgeni Il'ichev",
-    "Alexey V. Ustinov"
-   ],
-   "title": "Frequency division multiplexing readout and simultaneous manipulation of an array of flux qubits",
-   "journal": "Appl. Phys. Lett.",
-   "volume": "101",
-   "issue": "4",
-   "article": "042604",
-   "date": "2012-07-23",
-   "doi": "10.1063/1.4739454",
-   "arxiv": "1205.6375",
-   "kind": "journal",
-   "url": "https://arxiv.org/abs/1205.6375",
-   "verified": true
-  },
-  "arxiv:2501.10710": {
-   "authors": [
-    "Ryo Matsuda",
-    "Ryutaro Ohira",
-    "Toshi Sumida",
-    "Hidehisa Shiomi",
-    "Akinori Machino",
-    "Shinichi Morisaka"
-   ],
-   "etal": true,
-   "n_authors": 19,
-   "title": "Selective excitation of superconducting qubits with a shared control line through pulse shaping",
-   "journal": "Phys. Rev. Res.",
-   "volume": "8",
-   "issue": "1",
-   "article": "L012003",
-   "date": "2026-01-06",
-   "doi": "10.1103/xw1s-dt16",
-   "arxiv": "2501.10710",
-   "kind": "journal",
-   "url": "https://arxiv.org/abs/2501.10710",
    "verified": true
   }
  },
@@ -14419,6 +14455,18 @@
    },
    {
     "work": "report:S7#1",
+    "grade": "D"
+   },
+   {
+    "work": "https://www.hpcwire.com/2024/11/26/qdc24-quick-hit-ibm-plows-ahead-with-quantum-hardware-development",
+    "grade": "P"
+   },
+   {
+    "work": "arxiv:2502.15034",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2610.29986",
     "grade": "D"
    }
   ],

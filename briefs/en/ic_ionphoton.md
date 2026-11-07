@@ -6,7 +6,7 @@ status: demonstrated
 since: 2007
 one_line: "Heralded ion–photon entanglement over fibre links separate ion traps into one machine; best published rate 250 s⁻¹ against a ~10⁴ s⁻¹ need."
 verdict: "Real: remote Bell pairs at 9.7–250 s⁻¹, 94–97% fidelity, teleported CZ 86%. Unverified: IonQ's networked-systems claim carries no rate or fidelity. Demote if nothing exceeds 10³ s⁻¹ by end-2028."
-updated: 2026-09-30
+updated: 2026-11-07
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -29,7 +29,7 @@ Best demonstrated is a distributed computation, not just a Bell pair: Oxford ran
 
 | Year | Figure | Who | Tag+key |
 |---|---|---|---|
-| 2024 | Remote entanglement rate record, 250 s⁻¹ at fidelity >94% | Duke/Maryland | [D][116] |
+| 2024 | Remote entanglement rate record, 250 s⁻¹ with sympathetic cooling; the fidelity bound ≥ 93.7(1.3)% was measured at 79 s⁻¹ | Duke/Maryland | [D][116] |
 | 2025-02 | 2-m link: remote Bell 96.89(8)% at 9.7 s⁻¹, teleported CZ 86.2(9)% | Oxford | [D][115] |
 | 2025-06 | Lightsynq (photonic interconnect + quantum memory, >20 patents and applications) acquired | IonQ | [C][776] |
 | 2026-04 | Two commercial ion systems linked; no rate, fidelity or distance disclosed | IonQ | [C][589] |
@@ -50,7 +50,7 @@ It requires the trapped atomic ion and single-photon detection (SNSPD/TES) and p
 
 ## Evidence — how the numbers were measured
 
-Heralded fidelity is tomography or parity oscillation conditioned on a successful click, so 94–97% describes the links that happened, not the channel including loss; the honest figure of merit is rate × fidelity, which nobody reports. Published rates come from different species, distances and collection geometries and are not directly comparable. The weakest evidence is commercial: IonQ's release states it "validated the generation, transmission, and detection of photons used to enable quantum entanglement" — wording that stops short of reporting a measured Bell state, with no rate, fidelity or distance and no replication [C][589]. Among peer-reviewed results there is no conflict.
+Heralded fidelity is tomography or parity oscillation conditioned on a successful click, so 94–97% describes the links that happened, not the channel including loss; the honest figure of merit is rate × fidelity, which nobody reports. Published rates come from different species, distances and collection geometries and are not directly comparable. The weakest evidence is commercial: IonQ's release states it "validated the generation, transmission, and detection of photons used to enable quantum entanglement" — wording that stops short of reporting a measured Bell state, with no rate, fidelity or distance and no replication [C][589]. Among peer-reviewed results there is no conflict. Version note: the arXiv preprint of the Oxford link (v1, June 2024) gives 97.15(9)% for the remote Bell state and 86.1(9)% for the teleported CZ; the Nature version of February 2025, which the figures here follow, gives 96.89(8)% and 86.2(9)% at 9.7 s⁻¹ [D][115]. The Duke record's abstract says F > 94%; its body bounds the fidelity at ≥ 93.7(1.3)%, measured at 79 s⁻¹ before the sympathetic cooling that gave 250 s⁻¹ [D][116].
 
 The ">20 patents and patent applications" Lightsynq brought is IonQ's own count, with no family names, assignees or filing years. Not published: the Lightsynq deal terms, and a link count or switch-fabric topology for a 10⁴-module ion machine.
 

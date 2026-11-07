@@ -280,7 +280,7 @@
   "key": "idle_err_round",
   "num": null,
   "unit": "fraction",
-  "text": "Not separately quantified: the 448-atom paper reports only combined logical error 0.62(3)% per round (d=5) and a 4 ms cycle",
+  "text": "Not separately quantified: the 448-atom paper reports only combined logical error 0.62(3)% per round (d=5); each QEC round took 4.45 ms (0.47 ms between gates, 2.57 ms moving the ancillas to the storage zone) and a logical teleportation layer with mid-circuit readout 41.9 ms; the 4 ms cycle is the repeated Rabi calibration of Fig. 5b",
   "scope": "typical",
   "date": "2025-06",
   "url": "https://arxiv.org/html/2506.20661v1",
@@ -1564,12 +1564,12 @@
   "key": "t_ff",
   "num": 6.3e-05,
   "unit": "s",
-  "text": "Google Willow d=5: 'average decoder latency of 63 us ... with a cycle time of 1.1 us'; Fig. 4c gives 63 +/- 17 us",
+  "text": "Google d=5 real-time run on the 72-qubit processor: 'average decoder latency of 63 us ... with a cycle time of 1.1 us' — a decoder latency; the paper: the measurement 'does not yet include feedback into the logical circuit'; Fig. 4c gives 63 +/- 17 us",
   "scope": "typical",
   "date": "2024-08",
   "url": "https://arxiv.org/pdf/2408.13687v1",
   "tag": "D",
-  "note": "Final-syndrome-received to correction-returned; 57x the QEC cycle."
+  "note": "Decoder latency, final syndrome received to correction returned, without feedback into the qubits (Section V); 57x the QEC cycle. Kept under t_ff so the derived reaction time does not move; the loop label over-reads it (ledger 2026-11-07)."
  },
  {
   "node": "ct_rt",
@@ -1653,7 +1653,7 @@
   "date": "2026-03",
   "url": "https://www.nature.com/articles/s41928-026-01576-6",
   "tag": "D",
-  "note": "Honest null: the demux factor is asserted qualitatively; the quantitative claim is 1Q >99%, up to 99.9%."
+  "note": "Honest null: the paper's 1:4 demultiplexer puts four qubits on one clock line plus two fast bias lines and a DC bias (Table 1) — a line count of one module, not a published lines-per-qubit figure; the abstract claims 1Q >99%, up to 99.9%."
  },
  {
   "node": "ct_fluxdac",

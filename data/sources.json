@@ -445,6 +445,24 @@
    "url": "https://quantumcomputingreport.com/seeqc-reports-integrated-qubit-control-logic-operating-at-millikelvin-temperatures/",
    "hint": "SEEQC mK SFQ control (Nature Electronics, Mar 2026)",
    "verified": true
+  },
+  {
+   "authors": [
+    "Caleb Jordan"
+   ],
+   "etal": true,
+   "title": "A quantum computer controlled by superconducting digital electronics at millikelvin temperature",
+   "journal": "Nat. Electron.",
+   "volume": "9",
+   "issue": "3",
+   "pages": "287–294",
+   "date": "2026-03-10",
+   "doi": "10.1038/s41928-026-01576-6",
+   "arxiv": "2503.09879",
+   "kind": "journal",
+   "url": "https://www.nature.com/articles/s41928-026-01576-6",
+   "hint": "Jordan et al., Nat. Electron. 9, 287 (Mar 2026)",
+   "verified": true
   }
  ],
  "S21": [

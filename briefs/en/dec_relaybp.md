@@ -6,7 +6,7 @@ status: demonstrated
 since: 2025
 one_line: "Belief propagation with disordered, partly negative memory strengths, chained in relay legs, decoding bivariate bicycle qLDPC syndromes at 24 ns per iteration on an FPGA."
 verdict: "Removes the OSD post-processor that made qLDPC decoding non-real-time: 24 ns/iteration and under 1 µs average per cycle on FPGA. Never run on live syndromes — no gross-code memory exists on any QPU as of 2026-09-04."
-updated: 2026-09-30
+updated: 2026-11-07
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -29,7 +29,7 @@ That buys latency: 24 ns per BP iteration and an *average* per-cycle decoding ti
 Both FPGA results are simulation-driven: no gross-code memory has run on any QPU, so Relay-BP has never consumed a hardware syndrome [R][72][G:IBM-ROADMAP]. The target code is IBM's [[144,12,12]], 288 physical qubits at a 0.8% threshold on a degree-6 Tanner graph [D][248][G:IBM-BBCODE-2024]; the only qLDPC break-even claim anywhere is IonQ's trapped-ion result — within error bars, in one code the paper does not identify, leakage post-selected [D][109][G:IONQ-QLDPC-BREAKEVEN-2026-06].
 
 ## Manufacturing, materials & supply chain
-No fabrication process: the deliverable is a bitstream and the supply chain is merchant FPGA silicon, a duopoly restructured in 2025, when Intel's sale of 51% of Altera to Silver Lake at an $8.75 B valuation — ~$4.46 B to Intel, which keeps 49% — closed on 2025-09-15 [G][735][G:ALTERA-SILVERLAKE-2025]. Every named real-time decoder here runs on AMD parts (Riverlane's LCD on a VU19P [D][238]), and IBM's is reported as AMD by trade press whose page could not be retrieved [P][736][G:IBM-AMD-RELAYBP-FPGA-2025]. No decoder-specific export-control category exists as of 2026-09-04.
+No fabrication process: the deliverable is a bitstream and the supply chain is merchant FPGA silicon, a duopoly restructured in 2025, when Intel's sale of 51% of Altera to Silver Lake at an $8.75 B valuation — ~$4.46 B to Intel, which keeps 49% — closed on 2025-09-15 [G][735][G:ALTERA-SILVERLAKE-2025]. Every named real-time decoder here runs on AMD parts: Riverlane's LCD on a VU19P [D][238], IBM's Relay-BP on an XCVU19P, over half of whose LUTs one X decoder takes [D][48], as trade press had reported [P][736][G:IBM-AMD-RELAYBP-FPGA-2025]. No decoder-specific export-control category exists as of 2026-09-04.
 
 ## Control, readout & I/O burden
 The decoder drives nothing; its burden is syndrome bandwidth and fan-in. One gross module is 144 data plus 144 check qubits, so a cycle yields 144 bits — ~0.14 Gbit/s per module at a 1 µs cycle [S][248]. Scaled naively, 10⁴ physical qubits is ~5 Gbit/s and 10⁶ ~0.5 Tbit/s at fixed rate: the wall is not BP arithmetic but getting bits out of the cryostat into enough parallel instances.
@@ -40,14 +40,14 @@ It requires the bivariate bicycle/gross qLDPC family and replaces minimum-weight
 ## Evidence — how the numbers were measured
 Every headline is from simulated syndromes under a uniform circuit-noise model of strength p, with neither leakage nor correlated bursts — the dominant real-device terms [D][48], [734]. No independent group has reproduced either number, and Riverlane's LCD uses a different code and FPGA, so the two are not commensurable [D][238].
 
-Not published: the FPGA part, its lookup-table (LUT) and memory use and the arithmetic precision — the AMD attribution rests on trade press [736] — and any latency distribution or tail percentile; only the average is given.
+The FPGA part and its use are in the paper: an AMD XCVU19P, 2,106,738 lookup tables (LUTs, 51.56%) and 1.37% of the block RAM for the X decoder of one [[144,12,12]] block after synthesis and place-and-route, 58.0 W total power from the tool report, messages at 4-bit integer plus sign [D][48]. Not published: any latency distribution or tail percentile — only averages are given (24 ns per iteration, 480 ns per 12-cycle window).
 
 ## Actors & economics
 **Who.**
 | Organisation | Role | Country | What exactly they do with this technology | Evidence |
 |---|---|---|---|---|
 | IBM | Developer | USA | Invented Relay-BP and built the FPGA implementation for its gross code | [D][48], [734] |
-| AMD | Supplier | USA | Xilinx FPGA silicon under IBM's demonstration and most rival decoders | [P][736][G:IBM-AMD-RELAYBP-FPGA-2025] |
+| AMD | Supplier | USA | Xilinx FPGA silicon under IBM's demonstration and most rival decoders | [D][48] [P][736][G:IBM-AMD-RELAYBP-FPGA-2025] |
 | Altera | Supplier | USA | The only other merchant high-end FPGA source; 51% Silver Lake-owned since 2025 | [G][735] |
 | Riverlane | Developer | UK | Competing FPGA decoder for the surface code, sold as a product | [D][238][G:RIVERLANE-LCD-2025-12] |
 | DARPA | Funder | USA | QBI Stage B funds IBM's fault-tolerance programme this serves | [G][65][G:QBI-STAGEB-2025-11] |

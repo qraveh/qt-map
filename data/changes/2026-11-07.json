@@ -1,6 +1,6 @@
 {
  "date": "2026-11-07",
- "source": "the six technologies the T2 discovery of 6 Nov 2026 proposed (handoffs/20261106-3_T2-discovery/REVIEW_2026-11-06.md §technology, candidates-2026-11-06.json), added with their briefs by the local writer job 20261107-1 on the editor's standing instruction of 6 Nov 2026; every source opened before the entry | the editor's decision of 7 Nov 2026 on the review sheet of the T2 apply (00_admin/30_working/REVIEW_2026-11-07_t2-apply-for-the-editor.md: «accept recommendations» — A5 changes, every other row of ce995cc kept); applied by the local writer job 20261107-2 | the stations decisions (local writer job 20261107-3, the editor's word of 7 Nov 2026 that the writer decides S2, S4 and S5 with confidence): the since years, the ranking rule, the two brief alignments | E2 company diligence applied (local writer job 20261107-4: handoffs/20261106-4_E2-companies/orgs-patch-2026-11-07.json and the Israel pass 3 of 7 Nov 2026; the editor's word «Примени новые и обновлённые»)",
+ "source": "the six technologies the T2 discovery of 6 Nov 2026 proposed (handoffs/20261106-3_T2-discovery/REVIEW_2026-11-06.md §technology, candidates-2026-11-06.json), added with their briefs by the local writer job 20261107-1 on the editor's standing instruction of 6 Nov 2026; every source opened before the entry | the editor's decision of 7 Nov 2026 on the review sheet of the T2 apply (00_admin/30_working/REVIEW_2026-11-07_t2-apply-for-the-editor.md: «accept recommendations» — A5 changes, every other row of ce995cc kept); applied by the local writer job 20261107-2 | the stations decisions (local writer job 20261107-3, the editor's word of 7 Nov 2026 that the writer decides S2, S4 and S5 with confidence): the since years, the ranking rule, the two brief alignments | E2 company diligence applied (local writer job 20261107-4: handoffs/20261106-4_E2-companies/orgs-patch-2026-11-07.json and the Israel pass 3 of 7 Nov 2026; the editor's word «Примени новые и обновлённые») | the text job of the reconstructed findings of 21 Oct 2026 (30_working/FINDINGS_20261021_reconstructed_2026-11-07.md, decision DECISION_2026-11-07_findings-of-21-Oct.md): the eight proposed corrections and the three version differences, each read at the cited paper's own text before the edit; local writer job 20261107-5",
  "items": [
   {
    "kind": "add",
@@ -2186,6 +2186,433 @@
     "date": "2026-11-07"
    },
    "note": "E2 company diligence applied to quantum-organisation-register.csv: 23 rows updated, 15 added, 2 removed (two duplicates merged); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»; the diligence notes stay in quantum-register/diligence-2026.11/"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "map",
+    "id": "ct_rt"
+   },
+   "fields": {
+    "field": "records: t_ff 63 µs (text, note)",
+    "old": "Google Willow d=5: 'average decoder latency of 63 us ... with a cycle time of 1.1 us'; Fig. 4c gives 63 +/- 17 us | Final-syndrome-received to correction-returned; 57x the QEC cycle.",
+    "new": "Google d=5 real-time run on the 72-qubit processor: ... a decoder latency; the paper: the measurement 'does not yet include feedback into the logical circuit' | Decoder latency ... without feedback into the qubits (Section V); kept under t_ff so the derived reaction time does not move",
+    "num": "6.3e-05 s unchanged",
+    "date": "2026-11-07"
+   },
+   "note": "Correction 1 of the findings of 21 Oct 2026 (D37): the Atlas's 'feed-forward latency' and §7.4's 'reaction time (loop)' read Google's 63 µs as a measurement-to-operation loop; the paper calls it a decoder latency and says the real-time decoding 'does not yet include feedback into the logical circuit' (Section V), run on the 72-qubit processor. The record's text and note say so now; the key t_ff and the number are kept, so the derived reaction time of the three superconducting architectures (63 µs / 406 ns) does not move — a relabel of the derived clock is the generator owner's question (the doubt item below). §7.4's reading paragraph names the figure as a decoding floor, not a closed loop. Report §2.1 and §3.2 already said 'latency' and are unchanged.",
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2408.13687",
+     "quote": "achieving an average decoder latency of 63 µs at distance-5 up to a million cycles, with a cycle time of 1.1 µs"
+    },
+    {
+     "url": "https://arxiv.org/abs/2408.13687",
+     "quote": "does not yet include feedback into the logical circuit"
+    },
+    {
+     "url": "https://arxiv.org/abs/2408.13687",
+     "quote": "Using a 72-qubit processor, we implement a distance-5 surface code operating with an integrated real-time decoder"
+    }
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "map",
+    "id": "ion_qccd"
+   },
+   "fields": {
+    "field": "measured cycle (§7.4, the architecture strings of ion_qccd and ion_chain); report §3.2 QEC-cycle row and §4 G4; §7.4 reading",
+    "old": "~1–5 ms syndrome cycle; 55 ms per full layer (Helios) | ~ms (IonQ decoder assumption); 1–5 ms cycles in QCCD-class experiments | 9.7 ms derived against the 1–5 ms cycles reported for H2-class experiments",
+    "new": "~1–5 ms syndrome cycle assumed (IonQ decoder paper); 55 ms per full layer measured (Helios) | ~1–5 ms (IonQ decoder assumption); no measured repeated-QEC round published | 9.7 ms derived against the 1–5 ms cycles IonQ's decoder paper assumes and the 55 ms per layer Helios measured",
+    "date": "2026-11-07"
+   },
+   "note": "Correction 2 (D14/D15): the Atlas's own §2.3 sources the 1–5 ms to IonQ's decoder paper [I13] as an assumption, while §3.2, §4 and the generated §7.4 presented it as a measured QCCD cycle; the paper: 'We assume a SEC time varying between 1 ms and 5 ms', '1 ms/SEC as a representative long-term trapped-ion hardware timescale', '5 ms/SEC as a representative near-term timescale'. No measured repeated-QEC round time for an ion device was found by the note or here; Helios's 55 ms per layer is the measured figure. Relabelled 'assumed' / 'measured' in three languages; no number moved.",
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2608.25027",
+     "quote": "We assume a SEC time varying between 1 ms and 5 ms"
+    },
+    {
+     "url": "https://arxiv.org/abs/2608.25027",
+     "quote": "Assuming a trapped-ion architecture with 1 to 5 ms cycle time"
+    }
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "map",
+    "id": "dec_relaybp"
+   },
+   "fields": {
+    "field": "brief: manufacturing paragraph, evidence paragraph, AMD actor row (three languages)",
+    "old": "Not published: the FPGA part, its lookup-table (LUT) and memory use and the arithmetic precision — the AMD attribution rests on trade press [736] — and any latency distribution or tail percentile; only the average is given.",
+    "new": "The FPGA part and its use are in the paper: an AMD XCVU19P, 2,106,738 lookup tables (LUTs, 51.56%) and 1.37% of the block RAM for the X decoder of one [[144,12,12]] block after synthesis and place-and-route, 58.0 W total power from the tool report, messages at 4-bit integer plus sign [D][48]. Not published: any latency distribution or tail percentile — only averages are given (24 ns per iteration, 480 ns per 12-cycle window).",
+    "date": "2026-11-07"
+   },
+   "note": "Correction 3 (K5): the brief's [48] (Maurer et al., arXiv:2510.21600) itself names the part and the utilisation; the trade-press attribution [736] stays as the echo. The figures are post-place-and-route tool values; the paper does not label the 24 ns iteration or the 58.025 W as measured on the running device. The 288-qubit figure of the note is its own (144 data + 144 check).",
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2510.21600",
+     "quote": "we used AMD's XCVU19P FPGA"
+    },
+    {
+     "url": "https://arxiv.org/abs/2510.21600",
+     "quote": "LUTs 2,106,738 (51.56 %)"
+    },
+    {
+     "url": "https://arxiv.org/abs/2510.21600",
+     "quote": "Total Power 58.025 Watts"
+    },
+    {
+     "url": "https://arxiv.org/abs/2510.21600",
+     "quote": "4-bit integer + sign"
+    },
+    {
+     "url": "https://arxiv.org/abs/2510.21600",
+     "quote": "a full 12-cycle window may be decoded in 480ns, giving an average per cycle decoding time of 40ns"
+    },
+    {
+     "url": "https://arxiv.org/abs/2510.21600",
+     "quote": "Resource utilization table after synthesis and place and route"
+    }
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "map",
+    "id": "ct_sfq"
+   },
+   "fields": {
+    "field": "report §2.1 (scale/modularity, SEEQC sentence: [C] → [D]); brief: best demonstrated, the 2026-03 record row, role in the stack, evidence (two paragraphs); the ct_sfq–transmon conflict edge's mitigation text; the ct_sfq lines_per_qubit record note; report §9 [S20] gains the paper beside the press record (three languages each)",
+    "old": "1Q fidelities >99% and up to 99.9% (Nature Electronics, Mar 2026); the 5-qubit / nW-per-qubit / no-quasiparticle-poisoning details are from SEEQC's press coverage [C] | Conflicts: 'exceeding 99%' in the abstract against 'exceeding 99.5%' in press | SEEQC's 'absence of detectable quasiparticle poisoning' is reported only in press | the demux factor is asserted qualitatively",
+    "new": "five transmons, one driven directly and four through a 1:4 demultiplexer, Clifford fidelity >99.5% (mean of 24 runs) and X/2 99.69–99.75% through the demultiplexer, CZ 97.4–99.5% on conventional flux lines, 13 nW for four qubits (3.25 nW per qubit, calculated, not measured), T1 unchanged after 50 µs of clocking [D] | one paper: its body gives Clifford above 99.5% over 24 runs | T1 unchanged after up to 50 µs of off-resonant clocking (~10⁵ pulses), \"not increased above background levels\" | the 1:4 demultiplexer puts four qubits on one clock line plus two fast bias lines and a DC bias (Table 1)",
+    "date": "2026-11-07"
+   },
+   "note": "Correction 4 (C3, C4, C6, C35): the paper's body (read in the arXiv PDF of 2503.09879; the brief cites the Nature Electronics version [304]) gives every figure the Atlas had credited to press. The 10 mK operating point stays with press [53]. The nanowatt figures are calculated from bias current and clock frequency (P = Φ₀ I_b f_clk), not calorimetric; the 1:8 figure of 2.375 nW per qubit is a design extension. The register row seeqc-sfq-5q's '~1 nW per qubit' is the register owner's (doubt item).",
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2503.09879",
+     "quote": "The quantum chip consists of five transmon qubits, with a central fixed-frequency qubit connected to 4 outer tunable qubits via fixed capacitive coupling"
+    },
+    {
+     "url": "https://arxiv.org/abs/2503.09879",
+     "quote": "we add digital logic between the clock signal and the qubits in the form of a 1:4 demultiplexer (DMX)"
+    },
+    {
+     "url": "https://arxiv.org/abs/2503.09879",
+     "quote": "Averaged across 24 runs, we find F_Cliff above 99.5%, and F_X/2 above 99.8%"
+    },
+    {
+     "url": "https://arxiv.org/abs/2503.09879",
+     "quote": "We find X/2 fidelities between 99.69-99.75%"
+    },
+    {
+     "url": "https://arxiv.org/abs/2503.09879",
+     "quote": "We find fidelities between 97.4-99.5% using 2Q RB with all single-qubit gates performed via SFQ"
+    },
+    {
+     "url": "https://arxiv.org/abs/2503.09879",
+     "quote": "we find an active power dissipation of 9 nW for the 1:4 DMX, and 3 nW for the SD"
+    },
+    {
+     "url": "https://arxiv.org/abs/2503.09879",
+     "quote": "Total Heat Load [nW] ... 13 ... Total Heat Load per qubit [nW] ... 3.25 (Table 1, SFQ 4 (DMX))"
+    },
+    {
+     "url": "https://arxiv.org/abs/2503.09879",
+     "quote": "For poisoning times (t_p) up to 50 µs (~100,000 SFQ pulses at 1.8 GHz), there is no noticeable impact on T1"
+    }
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "map",
+    "id": "enc_gkp"
+   },
+   "fields": {
+    "field": "record: single-mode GKP logical error; cat narrative §8.3; brief record row (three languages)",
+    "old": "8.1×10⁻³/round (survival 0.24×0.39)",
+    "new": "8.5×10⁻³/round autonomous; 8.1×10⁻³ with post-selected SPAM (survival 0.24×0.39)",
+    "date": "2026-11-07"
+   },
+   "note": "Correction 5 (S7): the same preprint gives both figures — 0.0085(2) per round 'in a fully autonomous regime without mid-circuit measurements or postselection', 0.0081(2) when 'the SPAM-improvement protocols are incorporated prior to autonomous error correction'; the survival probabilities 0.24 and 0.39 belong to the post-selected preparation and the all-agree measurement.",
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2607.06718",
+     "quote": "This yields a logical error per round of ϵQEC=0.0085(2)"
+    },
+    {
+     "url": "https://arxiv.org/abs/2607.06718",
+     "quote": "yielding values of 0.0081(2) (green) and 0.0085(2) (pink) for QEC with and without SPAM improvement protocols"
+    },
+    {
+     "url": "https://arxiv.org/abs/2607.06718",
+     "quote": "with a survival probability of 0.24 and 0.39 for state preparation and measurement respectively"
+    }
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "map",
+    "id": "alkali"
+   },
+   "fields": {
+    "field": "record: idle_err_round (text); report §2.4 speed line (three languages)",
+    "old": "the 448-atom paper reports only combined logical error 0.62(3)% per round (d=5) and a 4 ms cycle | QEC rounds of ~1–4.5 ms",
+    "new": "each QEC round took 4.45 ms (0.47 ms between gates, 2.57 ms moving the ancillas to the storage zone) and a logical teleportation layer with mid-circuit readout 41.9 ms; the 4 ms cycle is the repeated Rabi calibration of Fig. 5b | QEC rounds of ~1–4.5 ms (4.45 ms measured on the 448-atom processor; 41.9 ms per logical layer with mid-circuit readout)",
+    "date": "2026-11-07"
+   },
+   "note": "Correction 6 (D13): the paper's Methods give 4.45 ms per repeated surface-code round and 41.9 ms per logical teleportation layer; the 4 ms the Atlas quoted is the cycle time of the repeated Rabi calibration (Fig. 5b), not a QEC round. The §2.4 range ~1–4.5 ms stands; the 41.9 ms is the comparator behind the note's '4,000–40,000×' atom clock gap (A12 — a definition, not a fact, in dispute).",
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2506.20661",
+     "quote": "In the repeated surface code experiments in Figure 2, each QEC round was 4.45 ms."
+    },
+    {
+     "url": "https://arxiv.org/abs/2506.20661",
+     "quote": "For this reason each logical teleportation layer was 41.9 ms."
+    },
+    {
+     "url": "https://arxiv.org/abs/2506.20661",
+     "quote": "In the repeated Rabi calibration in Fig. 5b, we did optimize for speed and achieved a cycle time of 4 ms."
+    }
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "map",
+    "id": "ic_mcm"
+   },
+   "fields": {
+    "field": "brief: verdict, three record rows (2024-11, 2025-02, 2026-10-21), the not-published paragraph, the IBM roadmap row, one open question; three new works (930–932)",
+    "old": "l-couplers have no published fidelity | Not published: a gate fidelity or latency through IBM's l-coupler",
+    "new": "l-couplers reach a 94.75% mean distant CZ between two 120-qubit processors (best link 96.42%, Oct 2026 preprint) | IBM's l-coupler fidelities came in steps: a 96.5% distant CNOT on a test device in loopback, the company's own statement at QDC24 [P][930]; a 93.3% remote CNOT by randomised benchmarking over a 60 cm coplanar-waveguide interconnect (Feb 2025, preprint) [D][931]; distant CZ gates at 94.75% mean (best link 96.42 ± 0.28%) between two Nighthawk R1 processors over 80 cm of aluminium coax (Oct 2026, preprint) [D][932]",
+    "date": "2026-11-07"
+   },
+   "note": "Correction 7 (C22), wider than the note: the note's vendor figure (HPCwire quoting IBM's Jerry Chow at QDC24, 26 Nov 2024; the 235 ns of the note is not on that page) is registered as [P]; the body read also found two IBM preprints with measured link fidelities — Heya et al. (arXiv:2502.15034, Feb 2025; v2 Oct 2025) and Sundaresan et al. (arXiv:2610.29986, 21 Oct 2026, four l-couplers between two Nighthawk R1 processors) — the second not in the intake ledger. The brief's verdict test ('demote if no two-module entangling figure by end-2027') is left as written; whether the Oct 2026 result meets it is the editor's reading. The note's '99.3%' (PostQuantum, Aug 2026) has no IBM primary and is not adopted (C23). The register's Nighthawk r1 rows and an interconnect cell for the two-processor demonstration are intake items for the register's owner.",
+   "sources": [
+    {
+     "url": "https://www.hpcwire.com/2024/11/26/qdc24-quick-hit-ibm-plows-ahead-with-quantum-hardware-development/",
+     "quote": "We’ve benchmarked a distant CNOT gate between data qubits connected by an L-coupler with 96.5% fidelity on a test device in a loopback configuration."
+    },
+    {
+     "url": "https://arxiv.org/abs/2502.15034",
+     "quote": "a remote state transfer fidelity of 0.988 across a 60cm-long coplanar waveguide (CPW)"
+    },
+    {
+     "url": "https://arxiv.org/abs/2502.15034",
+     "quote": "we report a gate fidelity of 0.933 using the randomized benchmarking method"
+    },
+    {
+     "url": "https://arxiv.org/abs/2610.29986",
+     "quote": "Here we demonstrate four L-couplers operating between two 120-qubit IBM Nighthawk R1 superconducting qubit processors"
+    },
+    {
+     "url": "https://arxiv.org/abs/2610.29986",
+     "quote": "carry relay-based state transfer at a mean network benchmarking fidelity of 99.00%, with a best link of 99.29 +/- 0.07%"
+    },
+    {
+     "url": "https://arxiv.org/abs/2610.29986",
+     "quote": "We then realize distant CZ gates between lattice qubits in separate modules at a mean fidelity of 94.75%, with a best link of 96.42 +/- 0.28%"
+    }
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "map",
+    "id": "transmon"
+   },
+   "fields": {
+    "field": "report §2.1 channel-at-scale sentence (three languages); the sc architecture's measured-cycle label in §7.4",
+    "old": "the distance-7 memory experiment on a 101-qubit patch of the same chip ran a 1.1 µs QEC cycle | 1.1 µs (Willow QEC cycle)",
+    "new": "the distance-7 memory experiment ran on a 101-qubit patch of the same chip; the 1.1 µs QEC cycle is stated for the distance-5 real-time-decoding run on the 72-qubit processor | 1.1 µs (Google surface-code cycle; stated for the d=5 real-time run on the 72-qubit processor)",
+    "date": "2026-11-07"
+   },
+   "note": "Correction 8 (D2): the paper states the 1.1 µs cycle in the abstract, the introduction and Section V for the 72-qubit processor's real-time run; its Supplementary Information gives gate durations for both processors (CZ 42 ns on the 105-qubit, 37 ns on the 72-qubit) and no cycle duration for the distance-7 experiment. The number is kept, the attribution moved; the register row google-willow's 'QEC cycle 1.1 µs' cell is the register owner's (doubt item).",
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2408.13687",
+     "quote": "meeting the strict timing requirements imposed by the processor's fast 1.1 µs cycle duration"
+    },
+    {
+     "url": "https://arxiv.org/abs/2408.13687",
+     "quote": "Our CZ gates are performed in 42 ns on the 105-qubit processor, and 37 ns on the 72-qubit processor"
+    }
+   ]
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "map",
+    "id": "ic_ionphoton"
+   },
+   "fields": {
+    "field": "record: entanglement rate record (text); brief: the 2024 record row and the evidence paragraph (three languages)",
+    "old": "250 s⁻¹ at F > 94% | Remote entanglement rate record, 250 s⁻¹ at fidelity >94%",
+    "new": "250 s⁻¹ with sympathetic cooling; the fidelity bound F ≥ 93.7(1.3)% (abstract: > 94%) was measured at 79 s⁻¹ without it | Remote entanglement rate record, 250 s⁻¹ with sympathetic cooling; the fidelity bound ≥ 93.7(1.3)% was measured at 79 s⁻¹",
+    "date": "2026-11-07"
+   },
+   "note": "Version difference (c) of the findings (C28), resolved at the body: the 250(8) s⁻¹ rate is the sympathetically cooled configuration (Fig. 4) and reports no Bell-state fidelity; the SPAM-corrected bound F ≥ 93.7(1.3)% is the Fig. 3 analysis at 79(3) s⁻¹ without cooling; the abstract rounds the bound to F > 94%. Recorded so that nobody corrects the rate back to 'at F > 94%'.",
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2404.16167",
+     "quote": "the ion-ion entanglement rate is 79(3) s-1"
+    },
+    {
+     "url": "https://arxiv.org/abs/2404.16167",
+     "quote": "Bounding the other possible coherence terms results in a SPAM-corrected fidelity with respect to Eq. 3 of F≥93.7(1.3)%"
+    },
+    {
+     "url": "https://arxiv.org/abs/2404.16167",
+     "quote": "corresponding to an entanglement rate of 250(8) s-1"
+    },
+    {
+     "url": "https://arxiv.org/abs/2404.16167",
+     "quote": "This projects the qubits into an entangled Bell state with an observed fidelity lower bound of F>94%"
+    }
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "map",
+    "id": "ic_ionphoton"
+   },
+   "fields": {
+    "event": "version difference recorded",
+    "figure": "Oxford link: arXiv v1 (June 2024) 97.15(9)% remote Bell, 86.1(9)% teleported CZ; Nature (Feb 2025) 96.89(8)%, 86.2(9)%, 9.7 s⁻¹ — the Atlas quotes the Nature version",
+    "date": "2026-11-07"
+   },
+   "note": "Version difference (a) of the findings (C27): both texts read today; the Nature version [115] is the one the brief and the report cite, so its figures stand; the brief's evidence section now says so, in three languages, so that nobody corrects them back to the preprint's.",
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2407.00835",
+     "quote": "The state indicates a fidelity of 97.15(9) % to the |Ψ+⟩ Bell state"
+    },
+    {
+     "url": "https://arxiv.org/abs/2407.00835",
+     "quote": "has an average gate fidelity of 86.1(9) %"
+    },
+    {
+     "url": "https://www.nature.com/articles/s41586-024-08404-x",
+     "quote": "with a fidelity of 96.89(8)%"
+    },
+    {
+     "url": "https://www.nature.com/articles/s41586-024-08404-x",
+     "quote": "has an average gate fidelity of 86.2(9)%"
+    },
+    {
+     "url": "https://www.nature.com/articles/s41586-024-08404-x",
+     "quote": "an average entanglement generation rate of 9.7 s−1"
+    }
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "map",
+    "id": "ion_qccd"
+   },
+   "fields": {
+    "event": "version difference recorded",
+    "figure": "IonQ's secp256k1 estimate: 6.7 ms per syndrome-extraction cycle, as §2.3 and §4 state; the note's '5.4 ms by design' does not occur in the paper",
+    "date": "2026-11-07"
+   },
+   "note": "Version difference (b) of the findings (D14): the whole text of arXiv:2609.05625 was read in three parts; '6.7ms per SEC' is in Part I §II.1 (Architecture) as the assumption behind 29.5 ms per Toffoli / per measurement layer; no '5.4 ms' occurs — Table 4 lists an 'SEC depth (POCs) 5.4', a depth in physical-operation cycles, the likely source of the note's figure. Nothing to change in the Atlas.",
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2609.05625",
+     "quote": "5 SECs per logical measurement and 6.7ms per SEC"
+    },
+    {
+     "url": "https://arxiv.org/abs/2609.05625",
+     "quote": "a Toffoli gate time of 29.5ms"
+    },
+    {
+     "url": "https://arxiv.org/abs/2609.05625",
+     "quote": "in approximately 25.7 days using 19,397 physical qubits"
+    }
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "map",
+    "id": "ct_rt"
+   },
+   "fields": {
+    "field": "generator: the t_ff key and the reaction-time (loop) column of §7.4"
+   },
+   "note": "For the generator's owner: the records dictionary labels t_ff 'feed-forward latency' and graph_data.py derives react.loop from it with the note 'published measurement→conditioned-operation loop'; the one typical record on ct_rt (Google's 63 µs) is a decoder latency without feedback, so the loop column of the three superconducting architectures prints a decoding figure as a closed loop (the atom and photonic loops were not re-read here). Options: a decoder-latency key beside t_ff with its own column; or the loop from the best-scope record (Rigetti/Riverlane 9.6 µs end-to-end) with the 63 µs as the floor. Not changed in this job: the number and the key stay; the record's text and the reading paragraph say what it is.",
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2408.13687",
+     "quote": "does not yet include feedback into the logical circuit"
+    }
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "google-willow"
+   },
+   "fields": {
+    "field": "realtime ('in-loop (real-time, 63 us mean latency at d=5 for 1e6 cycles)'), the decoding summary ('sparse-blossom MWPM in loop'), QEC cycle 1.1 µs"
+   },
+   "note": "For the register's owner: the row's decoding cells read the 63 µs as 'in loop'; the paper's real-time decoding ran on the 72-qubit processor without feedback into the logical circuit, and the 1.1 µs cycle is stated for that run, not for the 105-qubit distance-7 experiment. The course-sc findings of 7 Nov (F-xx) noted the same row's hourly burst rate as the 72-qubit processor's. Row-level calls: which figures the Willow row should carry and which belong to the 72-qubit row.",
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2408.13687",
+     "quote": "We run a dedicated experiment on our 72-qubit processor to compare real-time decoding"
+    }
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "seeqc-sfq-5q"
+   },
+   "fields": {
+    "field": "control cell '~1 nW per qubit'"
+   },
+   "note": "For the register's owner: the paper's Table 1 gives 13 nW for the four demultiplexed qubits (3.25 nW per qubit, calculated from bias current and clock frequency, not measured) and 7 nW for the directly driven qubit; the '~1 nW per qubit' of the row has no source in the paper. The L3 summary ('1Q >99.5%, peaks >99.9%') matches the body.",
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2503.09879",
+     "quote": "the load per qubit decreases ~30% from 3.25 nW/qubit to 2.375 nW/qubit"
+    }
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "map",
+    "id": "dec_fpga"
+   },
+   "fields": {
+    "field": "brief evidence: 'the abstract's 24 ns / <1 µs conflicts with the 480 ns per 12-cycle window reported elsewhere' [G:RELAYBP-LATENCY-CONFLICT]"
+   },
+   "note": "Found on the way, not changed: the three figures are one paper's and consistent — 24 ns per belief-propagation iteration, about 20 iterations per 12-cycle window, so 480 ns per window and 40 ns per cycle on average, under the abstract's '<1 µs per cycle'. The 'conflict' sentence of dec_fpga and the facts chip behind it are a text job's item.",
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2510.21600",
+     "quote": "the average number of iterations required for BP to converge is roughly 20"
+    },
+    {
+     "url": "https://arxiv.org/abs/2510.21600",
+     "quote": "allows an entire Relay-BP iteration to execute in 24ns"
+    }
+   ]
   }
  ]
 }

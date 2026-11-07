@@ -6,7 +6,7 @@ status: emerging
 since: 2026
 one_line: "Quantised flux pulses from a niobium digital chip flip-chipped onto the qubit die drive gates at millikelvin, replacing per-qubit microwave coax."
 verdict: "Real: one five-qubit module at 1Q > 99%. Unproven: two-qubit gates, readout, flux bias, robustness to quasiparticle poisoning beyond five qubits. Demote if no >20-qubit SFQ module by 2028."
-updated: 2026-09-30
+updated: 2026-11-07
 ---
 
 Λ = error-suppression factor per code-distance step; QBI = DARPA Quantum Benchmarking Initiative (Stage A concept → B R&D plan → C government V&V); G1–G7 = the report's goal classes (see Actors & economics).
@@ -49,7 +49,7 @@ Room-temperature control needs about one drive coax and one flux line per transm
 
 ## Role in the stack
 
-Architecture: the superconducting transmon lattice. It requires superconducting-qubit lithography and flip-chip modules; it provides cold digital logic for a cryogenic decoder and D-Wave's flux DACs [D][430]. The cold routes for control are cryo-CMOS or SFQ: cryo-CMOS reuses commercial foundries and design tools; SFQ needs a niobium ecosystem whose commercial tools stop at physical verification. The conflict with the transmon — switching photons poisoning the qubit — is open: its mitigation is projected [D][249], and SEEQC's 2026 report of no detectable poisoning is press coverage [C][53]. Contribution to the derived clock: neutral — the syndrome round stays at **0.65 µs** against the measured **1.1 µs** QEC cycle [D][1]. Neighbouring empty slots: SFQ flux bias, SFQ readout.
+Architecture: the superconducting transmon lattice. It requires superconducting-qubit lithography and flip-chip modules; it provides cold digital logic for a cryogenic decoder and D-Wave's flux DACs [D][430]. The cold routes for control are cryo-CMOS or SFQ: cryo-CMOS reuses commercial foundries and design tools; SFQ needs a niobium ecosystem whose commercial tools stop at physical verification. The conflict with the transmon — switching photons poisoning the qubit — is open: its mitigation is projected [D][249], and SEEQC's 2026 test — T1 unchanged after up to 50 µs of clocking — is the authors' own, not independently measured [D][304]. Contribution to the derived clock: neutral — the syndrome round stays at **0.65 µs** against the measured **1.1 µs** QEC cycle [D][1]. Neighbouring empty slots: SFQ flux bias, SFQ readout.
 
 ## Evidence — how the numbers were measured
 
