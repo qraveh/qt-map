@@ -35,7 +35,7 @@
   {
    "id": "F2",
    "indicator": "best two-qubit error per family (devices; hero pairs excluded) and the family median",
-   "now": "superconducting circuits 1.0×10⁻³ / median 4.7×10⁻³; trapped ions 7.9×10⁻⁴ / median 2.7×10⁻³; neutral atoms 5.0×10⁻³ / median 8.0×10⁻³",
+   "now": "superconducting circuits 1.0×10⁻³ / median 4.4×10⁻³; trapped ions 7.9×10⁻⁴ / median 2.7×10⁻³; neutral atoms 5.0×10⁻³ / median 8.0×10⁻³",
    "e2027": "superconducting circuits ≈ 7.7×10⁻⁴; trapped ions ≈ 7.6×10⁻⁴; medians ≈ 2–3×10⁻³ for the three large families",
    "e2028": "superconducting circuits ≈ 6.0×10⁻⁴; trapped ions ≈ 7.3×10⁻⁴; the first family median below 2×10⁻³",
    "basis": "frontier series superconducting circuits: 2019 6.0×10⁻³, 2021 5.2×10⁻³, 2022 5.2×10⁻³, 2023 2.5×10⁻³, 2024 1.5×10⁻³, 2025 1.5×10⁻³, 2026 1.0×10⁻³ (×1.29/yr); trapped ions: 2020 1.0×10⁻³, 2022 1.0×10⁻³, 2023 1.0×10⁻³, 2024 1.0×10⁻³, 2025 7.9×10⁻⁴, 2026 7.9×10⁻⁴ (×1.04/yr); the median trails the frontier by superconducting circuits 3 yr, trapped ions 6 yr, neutral atoms 1 yr (the year the frontier first reached today's median)",

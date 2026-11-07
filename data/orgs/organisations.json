@@ -499,11 +499,14 @@
      "fab_optics",
      "alkali",
      "enc_hf",
+     "ro_dualspecies",
      "code_highrate",
      "majorana",
-     "dec_rl"
+     "ro_cavity",
+     "dec_rl",
+     "fab_cryo_atom"
     ],
-    "count": 135
+    "count": 139
    }
   },
   {
@@ -618,8 +621,11 @@
    ],
    "hosts": [],
    "mentions": {
-    "briefs": [],
-    "count": 0
+    "briefs": [
+     "ct_fdm",
+     "ro_cavity"
+    ],
+    "count": 3
    }
   },
   {
@@ -876,10 +882,11 @@
      "enc_bare",
      "cx_switch",
      "ct_ionmw",
+     "ct_fdm",
      "ro_disp",
      "fab_pic"
     ],
-    "count": 247
+    "count": 248
    }
   },
   {
@@ -1642,6 +1649,7 @@
      "code_color",
      "cx_nn",
      "g_tc",
+     "code_nonabelian",
      "dec_mwpm",
      "ro_reset",
      "code_erasure",
@@ -1654,12 +1662,14 @@
      "ae_atom",
      "enc_gkp",
      "g_anneal",
+     "g_rip",
      "fab_sc",
      "fluxonium",
      "cx_aod",
      "ct_laser",
      "code_aft",
      "ic_multidie",
+     "fab_cryo_atom",
      "g_rydanalog",
      "g_lointer",
      "g_bos",
@@ -1671,6 +1681,7 @@
      "ct_cryocmos",
      "ct_sfq",
      "ro_img",
+     "ro_dualspecies",
      "code_qldpc",
      "code_highrate",
      "code_bosonic",
@@ -1680,7 +1691,7 @@
      "ic_transducer",
      "fab_optics"
     ],
-    "count": 247
+    "count": 264
    }
   },
   {
@@ -1814,6 +1825,7 @@
      "cx_reload",
      "code_erasure",
      "alkali",
+     "ro_dualspecies",
      "dec_corr",
      "enc_gr",
      "g_rydanalog",
@@ -1823,6 +1835,7 @@
      "ic_spinphoton",
      "code_magic",
      "ro_img",
+     "code_nonabelian",
      "code_surface",
      "fab_optics",
      "defect",
@@ -1834,7 +1847,7 @@
      "code_qldpc",
      "ic_ionphoton"
     ],
-    "count": 109
+    "count": 120
    }
   },
   {
@@ -2092,6 +2105,8 @@
      "qd_spin",
      "ic_cryolink",
      "enc_eo",
+     "code_nonabelian",
+     "g_rip",
      "ct_rt",
      "code_surface",
      "cx_shuttle",
@@ -2114,7 +2129,7 @@
      "dec_gpu",
      "dec_corr"
     ],
-    "count": 493
+    "count": 509
    }
   },
   {
@@ -2249,12 +2264,13 @@
      "ct_laser",
      "code_highrate",
      "ct_pic_trap",
+     "ro_dualspecies",
      "code_magic",
      "dec_nn",
      "dec_corr",
      "fab_optics"
     ],
-    "count": 48
+    "count": 49
    }
   },
   {
@@ -2815,9 +2831,10 @@
    "hosts": [],
    "mentions": {
     "briefs": [
-     "g_cr"
+     "g_cr",
+     "ro_cavity"
     ],
-    "count": 1
+    "count": 2
    }
   },
   {
@@ -3501,6 +3518,7 @@
      "alkali",
      "fab_optics",
      "enc_gr",
+     "fab_cryo_atom",
      "g_anneal",
      "g_ryd",
      "cx_aod",
@@ -3508,12 +3526,13 @@
      "code_aft",
      "ae_atom",
      "enc_omg",
+     "ro_dualspecies",
      "code_highrate",
      "code_magic",
      "dec_nn",
      "dec_corr"
     ],
-    "count": 116
+    "count": 130
    }
   },
   {
@@ -3713,9 +3732,10 @@
      "enc_opt",
      "alkali",
      "ae_atom",
-     "code_erasure"
+     "code_erasure",
+     "fab_cryo_atom"
     ],
-    "count": 23
+    "count": 24
    }
   },
   {
@@ -3845,6 +3865,7 @@
    "mentions": {
     "briefs": [
      "code_erasure",
+     "fab_cryo_atom",
      "enc_omg",
      "ae_atom",
      "ro_erasure",
@@ -3854,7 +3875,7 @@
      "transmon",
      "code_qldpc"
     ],
-    "count": 53
+    "count": 66
    }
   },
   {
@@ -4317,6 +4338,7 @@
      "ro_fluor",
      "fab_trap",
      "enc_hf",
+     "code_nonabelian",
      "code_color",
      "dec_gpu",
      "code_detect",
@@ -4336,7 +4358,7 @@
      "dec_rl",
      "fab_pic"
     ],
-    "count": 188
+    "count": 197
    }
   },
   {
@@ -4747,8 +4769,10 @@
     }
    ],
    "mentions": {
-    "briefs": [],
-    "count": 0
+    "briefs": [
+     "ct_fdm"
+    ],
+    "count": 6
    }
   },
   {
@@ -5070,14 +5094,16 @@
      "ae_atom",
      "enc_omg",
      "code_surface",
+     "ro_dualspecies",
      "dec_nn",
      "ct_pic_trap",
      "code_qldpc",
      "dec_gpu",
      "dec_rl",
-     "ic_atomcavity"
+     "ic_atomcavity",
+     "fab_cryo_atom"
     ],
-    "count": 183
+    "count": 186
    }
   },
   {
@@ -5807,10 +5833,12 @@
    ],
    "co_machines": [],
    "families": [
-    "SC"
+    "SC",
+    "SPIN"
    ],
    "architectures": [
-    "dualrail"
+    "dualrail",
+    "spin_donor"
    ],
    "stations": [
     {
@@ -6102,9 +6130,11 @@
    "mentions": {
     "briefs": [
      "ion",
-     "ct_ionaod"
+     "ct_ionaod",
+     "ro_cavity",
+     "code_nonabelian"
     ],
-    "count": 2
+    "count": 4
    }
   },
   {
@@ -6294,11 +6324,12 @@
    "mentions": {
     "briefs": [
      "ct_ionaod",
+     "ro_dualspecies",
      "ic_ionphoton",
      "fluxonium",
      "code_detect"
     ],
-    "count": 11
+    "count": 15
    }
   },
   {
@@ -6405,6 +6436,7 @@
      "ro_reset",
      "code_surface",
      "transmon",
+     "ct_fdm",
      "photon",
      "ct_pic_trap",
      "ic_multidie",
@@ -6412,12 +6444,14 @@
      "g_tc",
      "g_ryd",
      "src_resource",
+     "ro_dualspecies",
+     "ro_cavity",
      "code_magic",
      "dec_nn",
      "ic_cryolink",
      "ic_transducer"
     ],
-    "count": 65
+    "count": 71
    }
   },
   {
@@ -6728,6 +6762,7 @@
    "mentions": {
     "briefs": [
      "code_qldpc",
+     "code_nonabelian",
      "code_magic",
      "enc_bare",
      "code_surface",
@@ -6735,7 +6770,7 @@
      "ic_cryolink",
      "ic_transducer"
     ],
-    "count": 12
+    "count": 17
    }
   },
   {

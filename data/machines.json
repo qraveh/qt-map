@@ -12970,16 +12970,15 @@
     "realtime": "none",
     "roadmap": "not published",
     "role": "",
-    "gate_evidence": "figure",
+    "gate_evidence": "device-benchmark",
     "decoder_mode": "none",
-    "err_2q_median_num": 0.0435,
+    "err_2q_median_num": null,
     "flags": [
      "lab-device",
-     "mean-not-median",
      "preprint-only"
     ],
     "qubits_accessible": null,
-    "gate_evidence_derived": true,
+    "gate_evidence_derived": false,
     "decoder_mode_derived": true,
     "benchmarked": true
    }

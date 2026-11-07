@@ -1,23 +1,402 @@
 {
  "date": "2026-11-07",
- "source": "the six technologies the T2 discovery of 6 Nov 2026 proposed (handoffs/20261106-3_T2-discovery/REVIEW_2026-11-06.md §technology, candidates-2026-11-06.json), added with their briefs by the local writer job 20261107-1 on the editor's standing instruction of 6 Nov 2026; every source opened before the entry",
+ "source": "the six technologies the T2 discovery of 6 Nov 2026 proposed (handoffs/20261106-3_T2-discovery/REVIEW_2026-11-06.md §technology, candidates-2026-11-06.json), added with their briefs by the local writer job 20261107-1 on the editor's standing instruction of 6 Nov 2026; every source opened before the entry | the editor's decision of 7 Nov 2026 on the review sheet of the T2 apply (00_admin/30_working/REVIEW_2026-11-07_t2-apply-for-the-editor.md: «accept recommendations» — A5 changes, every other row of ce995cc kept); applied by the local writer job 20261107-2",
  "items": [
-  {"kind": "add", "subject": {"type": "map", "id": "code_nonabelian"}, "fields": {"what": "Non-Abelian topological order (quantum double models): anyon braiding and fusion — layer 7, alternate on ion_qccd and sc, status E, since 2023", "grade": "D", "layer": 7, "paths": ["sc", "ion_qccd"], "status": "E", "since": 2023}, "sources": [{"url": "https://arxiv.org/abs/2601.20956"}, {"url": "https://arxiv.org/abs/2305.03766"}, {"url": "https://arxiv.org/abs/2210.10255"}, {"url": "https://arxiv.org/abs/2404.00091"}, {"url": "https://arxiv.org/abs/2406.12820"}, {"url": "https://arxiv.org/abs/2411.04185"}], "note": "four independent groups with hardware (Quantinuum/Harvard on H2: D4 2024, Z3 2025, S3 with a universal gate set 2026 — Nature 655, 591; Google 2023; Zhejiang/Tsinghua 2024; IBM 2025); no demonstration is error-corrected, so status E; since = Google's Ising anyons (Nature 618, 264, May 2023). The brief; four dated records; requires cx_qccd | cx_nn | cx_lr (one of); alternative to code_surface."},
-  {"kind": "add", "subject": {"type": "map", "id": "g_rip"}, "fields": {"what": "Resonator-induced phase gate on fluxonium (all-microwave) — layer 3, alternate on sc, status E, since 2026", "grade": "P", "layer": 3, "paths": ["sc"], "status": "E", "since": 2026}, "sources": [{"url": "https://arxiv.org/abs/2608.25503"}, {"url": "https://arxiv.org/abs/1606.00685"}, {"url": "https://arxiv.org/abs/1411.5436"}], "note": "one group on fluxonium (WMI/TUM, a preprint of 26 Aug 2026: five fluxoniums, connectivity four, 128 ns, refocused IRB 99.20(5)/98.4(1)/96.2(2)/99.44(3) %, median 98.8(12) %, ZZ < 1 kHz, GHZ5 90.0(2) %) — the editor's tier by the T2 review's own caveat; admitted as E on the standing instruction of 6 Nov 2026, his word pending; the undo is the N() entry, the slot, the edges and the brief. The gate's origin on IBM's 3D transmons (PRL 117, 250502, 2016) is cited as lineage. Closes the map gap G-rip in substance; the register row map-gaps.csv (resolved, resolution) is the register's and is not edited here."},
-  {"kind": "add", "subject": {"type": "map", "id": "ct_fdm"}, "fields": {"what": "Frequency-division-multiplexed gate drive (several qubits per line) — layer 5, alternate on sc, status E, since 2026", "grade": "P", "layer": 5, "paths": ["sc"], "status": "E", "since": 2026}, "sources": [{"url": "https://arxiv.org/abs/2610.35227"}, {"url": "https://arxiv.org/abs/2312.06911"}], "note": "one group (USTC/HNL/QuantumCTek, a preprint of 26 Oct 2026: a 1:4 demonstration — parallel FDM CZ (6.4 ± 0.2)e-3 vs (6.53 ± 0.24)e-3 dedicated, XY(π/2) (10.6 ± 0.2)e-4 vs (10.38 ± 0.35)e-4; filters at room temperature; 1/12 projected at the measured parameters, 1/48 idealised; 381,000 qubits on 23,814 lines) — the editor's tier by the T2 review's caveat; admitted as E on the standing instruction, his word pending. The BAQIS proposal of Dec 2023 (arXiv:2312.06911) is the lineage, grade S. The Tsinghua cryogenic multiplexing chip (arXiv:2610.19599) is a simulation whose arXiv record carries an inconsistent 2022 journal line; not cited."},
-  {"kind": "add", "subject": {"type": "map", "id": "ro_dualspecies"}, "fields": {"what": "Dual-species ancilla readout (a second atomic species measured mid-circuit) — layer 6, alternate on atom_rb and atom_ae, status E, since 2023", "grade": "D", "layer": 6, "paths": ["atom_rb", "atom_ae"], "status": "E", "since": 2023}, "sources": [{"url": "https://arxiv.org/abs/2605.10924"}, {"url": "https://arxiv.org/abs/2401.10325"}, {"url": "https://arxiv.org/abs/2208.11716"}, {"url": "https://arxiv.org/abs/2110.05515"}, {"url": "https://arxiv.org/abs/2608.13646"}, {"url": "https://arxiv.org/abs/2609.11730"}], "note": "two independent groups with hardware: U. Chicago (Bernien) — Rb–Cs platform PRX 12, 011040 (2022), Cs spectators read mid-circuit with feed-forward Science 380, 1265 (2023), interspecies CZ and QND readout of a Rb qubit through a Cs ancilla Nat. Phys. 20, 1744 (2024); Harvard (Ni) — Na ancilla reads the Z stabiliser of four-Cs plaquettes, 0.82(3) per data qubit (preprint, May 2026). The T2 candidate's second group, QudeLeap/HKUST(GZ) Rb–Yb CZ 99.91 % (arXiv:2609.11730), is a simulation (PairInteraction, quantum trajectories) — grade S, not hardware; the technology meets D3 on Chicago and Harvard. since = 2023 (the Science paper: the first mid-circuit readout of a second species as the ancilla); the T2 review said 2026."},
-  {"kind": "add", "subject": {"type": "map", "id": "ro_cavity"}, "fields": {"what": "Cavity-based mid-circuit readout of tweezer atoms — layer 6, alternate on atom_rb and atom_ae, status E, since 2022", "grade": "P", "layer": 6, "paths": ["atom_rb", "atom_ae"], "status": "E", "since": 2022}, "sources": [{"url": "https://arxiv.org/abs/2606.24869"}, {"url": "https://arxiv.org/abs/2607.04090"}, {"url": "https://arxiv.org/abs/2610.20889"}, {"url": "https://arxiv.org/abs/2205.14138"}], "note": "two independent groups: UC Berkeley (Stamper-Kurn) — one atom read in a cavity PRL 129, 203602 (2022); five Rb atoms, four measured mid-circuit at 0.9/0.2 % infidelity in 40 µs windows, 45 µs measurement-and-feed-forward cycle (preprint, Jun 2026); a Rydberg array in a cavity, 7.5 µs ground–Rydberg readout at 3/5 % (Oct 2026); Tsinghua/BAQIS (Chen) — 21 Rb atoms in a cooperativity-125 cavity, one-atom hyperfine readout 99.925 % in 4 µs, survival 99.996 % (Jul 2026). since = 2022 (the PRL: mid-circuit cavity measurement in a tweezer array, one atom); the T2 review said 2026. The readout's typical time -4.4 (40 µs) with the fast end -5.4 (4 µs, one atom) as the card's range."},
-  {"kind": "add", "subject": {"type": "map", "id": "fab_cryo_atom"}, "fields": {"what": "Cryogenic tweezer-array apparatus (blackbody suppression) — layer 10, alternate on atom_rb and atom_ae, status E, since 2021", "grade": "D", "layer": 10, "paths": ["atom_rb", "atom_ae"], "status": "E", "since": 2021}, "sources": [{"url": "https://arxiv.org/abs/2610.40329"}, {"url": "https://arxiv.org/abs/2611.06613"}, {"url": "https://arxiv.org/abs/2607.12988"}, {"url": "https://arxiv.org/abs/2604.07205"}, {"url": "https://arxiv.org/abs/2412.09780"}, {"url": "https://arxiv.org/abs/2405.19503"}, {"url": "https://arxiv.org/abs/2106.07414"}], "note": "four groups and one company: IOGS/Pasqal 6,000 s lifetimes (Phys. Rev. Appl. 16, 034013, 2021), 2,088 sites at 6 K (Phys. Rev. Appl. 22, 024073, 2024), 1,024 atoms defect-free at 4 K (PRX Quantum 7, 033032, 2026 — the record the report's bibliography already holds); JILA 3,000 s (PRX Quantum 6, 020337, 2025) and blackbody/avalanche suppression behind a 45 K shield (preprint, Nov 2026); MPQ 16 × 16 Sr with full optical access, > 7,000 s (preprint, Jul 2026; by its own account not a blackbody shield); Princeton's universal gate set in a cryogenic Cs array, CZ 99.76(8) % raw, 1Q 99.970(2) % (preprint, Oct 2026). since = 2021 (the first cryogenic tweezer array); the T2 review said 2026. Error structure loss + correlated bursts (the two it suppresses); place none — the shields are not control placement."},
-  {"kind": "statement", "subject": {"type": "map", "id": "sc"}, "fields": {"event": "slot", "figure": "g_rip joins slot 3 (beside g_tc, g_cr), ct_fdm slot 5 (beside ct_rt, ct_vio, ct_cryocmos, ct_sfq), code_nonabelian slot 7 (beside code_surface, code_color, code_qldpc, code_magic, code_detect, code_mitig) of sc, all as alternates", "date": "2026-11-07"}, "note": "writer job 20261107-1"},
-  {"kind": "statement", "subject": {"type": "map", "id": "ion_qccd"}, "fields": {"event": "slot", "figure": "code_nonabelian joins slot 7 of ion_qccd as an alternate (Quantinuum H2: D4 2024, Z3 2025, S3 2026)", "date": "2026-11-07"}, "note": "writer job 20261107-1"},
-  {"kind": "statement", "subject": {"type": "map", "id": "atom_rb"}, "fields": {"event": "slot", "figure": "ro_dualspecies and ro_cavity join slot 6 of atom_rb (beside ro_img); fab_cryo_atom joins slot 10 (beside fab_optics, fab_pic), all as alternates", "date": "2026-11-07"}, "note": "writer job 20261107-1"},
-  {"kind": "statement", "subject": {"type": "map", "id": "atom_ae"}, "fields": {"event": "slot", "figure": "ro_dualspecies and ro_cavity join slot 6 of atom_ae (beside ro_img, ro_erasure); fab_cryo_atom joins slot 10 (beside fab_optics), all as alternates", "date": "2026-11-07"}, "note": "writer job 20261107-1"},
-  {"kind": "statement", "subject": {"type": "map", "id": "edges"}, "fields": {"event": "edges", "figure": "17 requires edges (g_rip → fluxonium, ct_rt | ct_cryocmos, fab_sc; ct_fdm → ct_rt; ro_dualspecies → alkali | ae_atom, ro_img, fab_optics; ro_cavity → alkali | ae_atom, fab_optics, ic_atomcavity (soft); fab_cryo_atom → fab_optics; code_nonabelian → cx_qccd | cx_nn | cx_lr) and 7 alternatives edges (g_tc/g_rip, g_cr/g_rip, ct_rt/ct_fdm, ro_img/ro_dualspecies, ro_img/ro_cavity, fab_optics/fab_cryo_atom, code_surface/code_nonabelian), each in English, Russian and Hebrew", "date": "2026-11-07"}, "note": "writer job 20261107-1; edges_check passes on every path that holds the new technologies"},
-  {"kind": "statement", "subject": {"type": "map", "id": "ranking"}, "fields": {"event": "ranking", "figure": "six entries in data/ranking.json by analogy with comparable technologies (one or two architectures, one family, 2026 evidence): code_nonabelian 7.8 (rank 66), ro_cavity 6.2 (81), ro_dualspecies 5.7 (86), fab_cryo_atom 5.5 (89), ct_fdm 4.4 (98), g_rip 4.2 (111), all tier 3; the 110 existing ranks renumbered where an entry was inserted, no score changed", "date": "2026-11-07"}, "note": "the file has no generator in build/ (README: graph centrality — families and architectures that depend on it, recency); the scores are the writer's reading of that rule, the editor's to move"},
-  {"kind": "statement", "subject": {"type": "gap", "id": "G-rip"}, "fields": {"event": "gap", "figure": "the map gap G-rip (an all-microwave parametric two-qubit gate on fluxonium, named by the register's google-fluxonium row) has a technology: g_rip. The register rows are the register's — map-gaps.csv (resolved, resolution) and google-fluxonium's gate cell — and wait for a register job", "date": "2026-11-07"}, "note": "writer job 20261107-1 changes the map and the briefs, not the Drive registers (the job's brief)"},
-  {"kind": "doubt", "subject": {"type": "map", "id": "code_nonabelian"}, "fields": {"field": "register follow-up"}, "note": "quantinuum-h2's code cell could carry code_nonabelian as an alternate (D4 2024, Z3 2025, S3 2026 all on H2) — a machine-stations.csv row with its evidence; the register's, not this job's. The code_magic brief could name the heralded topological magic state of the S3 work as a fourth, non-fault-tolerant route (the T2 review's suggestion) — a brief edit left for a text job.", "sources": ["https://arxiv.org/abs/2601.20956"]},
-  {"kind": "doubt", "subject": {"type": "map", "id": "ro_dualspecies"}, "fields": {"field": "evidence grade"}, "note": "the T2 review graded the technology on two 2026 preprints (Harvard; QudeLeap/HKUST-GZ); the QudeLeap paper is a simulation, so the second hardware group is U. Chicago (2022–2024, peer-reviewed). The register's dual-isotope machine hanyuan-2 (Rb-85 + Rb-87) is a related instance, not an occurrence of this technology (two isotopes, not two elements); its station cells are not changed.", "sources": ["https://arxiv.org/abs/2609.11730", "https://arxiv.org/abs/2401.10325"]},
-  {"kind": "doubt", "subject": {"type": "map", "id": "since"}, "fields": {"field": "since"}, "note": "the since years of three technologies differ from the T2 review's 2026: ro_dualspecies 2023 (Science 380, 1265), ro_cavity 2022 (PRL 129, 203602), fab_cryo_atom 2021 (Phys. Rev. Appl. 16, 034013) — the year of the first peer-reviewed hardware of the technology class, as the map's other technologies are dated; the 2026 results are what move each to the engineering stage. The editor's to move back.", "sources": []},
-  {"kind": "statement", "subject": {"type": "briefs", "id": "six"}, "fields": {"event": "briefs", "figure": "six English briefs (code_nonabelian, g_rip, ct_fdm, ro_dualspecies, ro_cavity, fab_cryo_atom) with 27 new bibliography records in data/brief-sources.json and permanent numbers appended in data/work-numbers.json; three existing records reused (PRX Quantum 7, 033032; Phys. Rev. Appl. 16, 034013; Phys. Rev. A 79, 052504)", "date": "2026-11-07"}, "note": "writer job 20261107-1; every source opened by WebFetch (arXiv abs or HTML; Crossref for the journal metadata of the Nature, Nature Physics and Science papers, nature.com answering with a sign-in page)"}
+  {
+   "kind": "add",
+   "subject": {
+    "type": "map",
+    "id": "code_nonabelian"
+   },
+   "fields": {
+    "what": "Non-Abelian topological order (quantum double models): anyon braiding and fusion — layer 7, alternate on ion_qccd and sc, status E, since 2023",
+    "grade": "D",
+    "layer": 7,
+    "paths": [
+     "sc",
+     "ion_qccd"
+    ],
+    "status": "E",
+    "since": 2023
+   },
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2601.20956"
+    },
+    {
+     "url": "https://arxiv.org/abs/2305.03766"
+    },
+    {
+     "url": "https://arxiv.org/abs/2210.10255"
+    },
+    {
+     "url": "https://arxiv.org/abs/2404.00091"
+    },
+    {
+     "url": "https://arxiv.org/abs/2406.12820"
+    },
+    {
+     "url": "https://arxiv.org/abs/2411.04185"
+    }
+   ],
+   "note": "four independent groups with hardware (Quantinuum/Harvard on H2: D4 2024, Z3 2025, S3 with a universal gate set 2026 — Nature 655, 591; Google 2023; Zhejiang/Tsinghua 2024; IBM 2025); no demonstration is error-corrected, so status E; since = Google's Ising anyons (Nature 618, 264, May 2023). The brief; four dated records; requires cx_qccd | cx_nn | cx_lr (one of); alternative to code_surface."
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "map",
+    "id": "g_rip"
+   },
+   "fields": {
+    "what": "Resonator-induced phase gate on fluxonium (all-microwave) — layer 3, alternate on sc, status E, since 2026",
+    "grade": "P",
+    "layer": 3,
+    "paths": [
+     "sc"
+    ],
+    "status": "E",
+    "since": 2026
+   },
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2608.25503"
+    },
+    {
+     "url": "https://arxiv.org/abs/1606.00685"
+    },
+    {
+     "url": "https://arxiv.org/abs/1411.5436"
+    }
+   ],
+   "note": "one group on fluxonium (WMI/TUM, a preprint of 26 Aug 2026: five fluxoniums, connectivity four, 128 ns, refocused IRB 99.20(5)/98.4(1)/96.2(2)/99.44(3) %, median 98.8(12) %, ZZ < 1 kHz, GHZ5 90.0(2) %) — the editor's tier by the T2 review's own caveat; admitted as E on the standing instruction of 6 Nov 2026, his word pending; the undo is the N() entry, the slot, the edges and the brief. The gate's origin on IBM's 3D transmons (PRL 117, 250502, 2016) is cited as lineage. Closes the map gap G-rip in substance; the register row map-gaps.csv (resolved, resolution) is the register's and is not edited here."
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "map",
+    "id": "ct_fdm"
+   },
+   "fields": {
+    "what": "Frequency-division-multiplexed gate drive (several qubits per line) — layer 5, alternate on sc, status E, since 2026",
+    "grade": "P",
+    "layer": 5,
+    "paths": [
+     "sc"
+    ],
+    "status": "E",
+    "since": 2026
+   },
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2610.35227"
+    },
+    {
+     "url": "https://arxiv.org/abs/2312.06911"
+    }
+   ],
+   "note": "one group (USTC/HNL/QuantumCTek, a preprint of 26 Oct 2026: a 1:4 demonstration — parallel FDM CZ (6.4 ± 0.2)e-3 vs (6.53 ± 0.24)e-3 dedicated, XY(π/2) (10.6 ± 0.2)e-4 vs (10.38 ± 0.35)e-4; filters at room temperature; 1/12 projected at the measured parameters, 1/48 idealised; 381,000 qubits on 23,814 lines) — the editor's tier by the T2 review's caveat; admitted as E on the standing instruction, his word pending. The BAQIS proposal of Dec 2023 (arXiv:2312.06911) is the lineage, grade S. The Tsinghua cryogenic multiplexing chip (arXiv:2610.19599) is a simulation whose arXiv record carries an inconsistent 2022 journal line; not cited."
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "map",
+    "id": "ro_dualspecies"
+   },
+   "fields": {
+    "what": "Dual-species ancilla readout (a second atomic species measured mid-circuit) — layer 6, alternate on atom_rb and atom_ae, status E, since 2023",
+    "grade": "D",
+    "layer": 6,
+    "paths": [
+     "atom_rb",
+     "atom_ae"
+    ],
+    "status": "E",
+    "since": 2023
+   },
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2605.10924"
+    },
+    {
+     "url": "https://arxiv.org/abs/2401.10325"
+    },
+    {
+     "url": "https://arxiv.org/abs/2208.11716"
+    },
+    {
+     "url": "https://arxiv.org/abs/2110.05515"
+    },
+    {
+     "url": "https://arxiv.org/abs/2608.13646"
+    },
+    {
+     "url": "https://arxiv.org/abs/2609.11730"
+    }
+   ],
+   "note": "two independent groups with hardware: U. Chicago (Bernien) — Rb–Cs platform PRX 12, 011040 (2022), Cs spectators read mid-circuit with feed-forward Science 380, 1265 (2023), interspecies CZ and QND readout of a Rb qubit through a Cs ancilla Nat. Phys. 20, 1744 (2024); Harvard (Ni) — Na ancilla reads the Z stabiliser of four-Cs plaquettes, 0.82(3) per data qubit (preprint, May 2026). The T2 candidate's second group, QudeLeap/HKUST(GZ) Rb–Yb CZ 99.91 % (arXiv:2609.11730), is a simulation (PairInteraction, quantum trajectories) — grade S, not hardware; the technology meets D3 on Chicago and Harvard. since = 2023 (the Science paper: the first mid-circuit readout of a second species as the ancilla); the T2 review said 2026."
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "map",
+    "id": "ro_cavity"
+   },
+   "fields": {
+    "what": "Cavity-based mid-circuit readout of tweezer atoms — layer 6, alternate on atom_rb and atom_ae, status E, since 2022",
+    "grade": "P",
+    "layer": 6,
+    "paths": [
+     "atom_rb",
+     "atom_ae"
+    ],
+    "status": "E",
+    "since": 2022
+   },
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2606.24869"
+    },
+    {
+     "url": "https://arxiv.org/abs/2607.04090"
+    },
+    {
+     "url": "https://arxiv.org/abs/2610.20889"
+    },
+    {
+     "url": "https://arxiv.org/abs/2205.14138"
+    }
+   ],
+   "note": "two independent groups: UC Berkeley (Stamper-Kurn) — one atom read in a cavity PRL 129, 203602 (2022); five Rb atoms, four measured mid-circuit at 0.9/0.2 % infidelity in 40 µs windows, 45 µs measurement-and-feed-forward cycle (preprint, Jun 2026); a Rydberg array in a cavity, 7.5 µs ground–Rydberg readout at 3/5 % (Oct 2026); Tsinghua/BAQIS (Chen) — 21 Rb atoms in a cooperativity-125 cavity, one-atom hyperfine readout 99.925 % in 4 µs, survival 99.996 % (Jul 2026). since = 2022 (the PRL: mid-circuit cavity measurement in a tweezer array, one atom); the T2 review said 2026. The readout's typical time -4.4 (40 µs) with the fast end -5.4 (4 µs, one atom) as the card's range."
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "map",
+    "id": "fab_cryo_atom"
+   },
+   "fields": {
+    "what": "Cryogenic tweezer-array apparatus (blackbody suppression) — layer 10, alternate on atom_rb and atom_ae, status E, since 2021",
+    "grade": "D",
+    "layer": 10,
+    "paths": [
+     "atom_rb",
+     "atom_ae"
+    ],
+    "status": "E",
+    "since": 2021
+   },
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2610.40329"
+    },
+    {
+     "url": "https://arxiv.org/abs/2611.06613"
+    },
+    {
+     "url": "https://arxiv.org/abs/2607.12988"
+    },
+    {
+     "url": "https://arxiv.org/abs/2604.07205"
+    },
+    {
+     "url": "https://arxiv.org/abs/2412.09780"
+    },
+    {
+     "url": "https://arxiv.org/abs/2405.19503"
+    },
+    {
+     "url": "https://arxiv.org/abs/2106.07414"
+    }
+   ],
+   "note": "four groups and one company: IOGS/Pasqal 6,000 s lifetimes (Phys. Rev. Appl. 16, 034013, 2021), 2,088 sites at 6 K (Phys. Rev. Appl. 22, 024073, 2024), 1,024 atoms defect-free at 4 K (PRX Quantum 7, 033032, 2026 — the record the report's bibliography already holds); JILA 3,000 s (PRX Quantum 6, 020337, 2025) and blackbody/avalanche suppression behind a 45 K shield (preprint, Nov 2026); MPQ 16 × 16 Sr with full optical access, > 7,000 s (preprint, Jul 2026; by its own account not a blackbody shield); Princeton's universal gate set in a cryogenic Cs array, CZ 99.76(8) % raw, 1Q 99.970(2) % (preprint, Oct 2026). since = 2021 (the first cryogenic tweezer array); the T2 review said 2026. Error structure loss + correlated bursts (the two it suppresses); place none — the shields are not control placement."
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "map",
+    "id": "sc"
+   },
+   "fields": {
+    "event": "slot",
+    "figure": "g_rip joins slot 3 (beside g_tc, g_cr), ct_fdm slot 5 (beside ct_rt, ct_vio, ct_cryocmos, ct_sfq), code_nonabelian slot 7 (beside code_surface, code_color, code_qldpc, code_magic, code_detect, code_mitig) of sc, all as alternates",
+    "date": "2026-11-07"
+   },
+   "note": "writer job 20261107-1"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "map",
+    "id": "ion_qccd"
+   },
+   "fields": {
+    "event": "slot",
+    "figure": "code_nonabelian joins slot 7 of ion_qccd as an alternate (Quantinuum H2: D4 2024, Z3 2025, S3 2026)",
+    "date": "2026-11-07"
+   },
+   "note": "writer job 20261107-1"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "map",
+    "id": "atom_rb"
+   },
+   "fields": {
+    "event": "slot",
+    "figure": "ro_dualspecies and ro_cavity join slot 6 of atom_rb (beside ro_img); fab_cryo_atom joins slot 10 (beside fab_optics, fab_pic), all as alternates",
+    "date": "2026-11-07"
+   },
+   "note": "writer job 20261107-1"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "map",
+    "id": "atom_ae"
+   },
+   "fields": {
+    "event": "slot",
+    "figure": "ro_dualspecies and ro_cavity join slot 6 of atom_ae (beside ro_img, ro_erasure); fab_cryo_atom joins slot 10 (beside fab_optics), all as alternates",
+    "date": "2026-11-07"
+   },
+   "note": "writer job 20261107-1"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "map",
+    "id": "edges"
+   },
+   "fields": {
+    "event": "edges",
+    "figure": "17 requires edges (g_rip → fluxonium, ct_rt | ct_cryocmos, fab_sc; ct_fdm → ct_rt; ro_dualspecies → alkali | ae_atom, ro_img, fab_optics; ro_cavity → alkali | ae_atom, fab_optics, ic_atomcavity (soft); fab_cryo_atom → fab_optics; code_nonabelian → cx_qccd | cx_nn | cx_lr) and 7 alternatives edges (g_tc/g_rip, g_cr/g_rip, ct_rt/ct_fdm, ro_img/ro_dualspecies, ro_img/ro_cavity, fab_optics/fab_cryo_atom, code_surface/code_nonabelian), each in English, Russian and Hebrew",
+    "date": "2026-11-07"
+   },
+   "note": "writer job 20261107-1; edges_check passes on every path that holds the new technologies"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "map",
+    "id": "ranking"
+   },
+   "fields": {
+    "event": "ranking",
+    "figure": "six entries in data/ranking.json by analogy with comparable technologies (one or two architectures, one family, 2026 evidence): code_nonabelian 7.8 (rank 66), ro_cavity 6.2 (81), ro_dualspecies 5.7 (86), fab_cryo_atom 5.5 (89), ct_fdm 4.4 (98), g_rip 4.2 (111), all tier 3; the 110 existing ranks renumbered where an entry was inserted, no score changed",
+    "date": "2026-11-07"
+   },
+   "note": "the file has no generator in build/ (README: graph centrality — families and architectures that depend on it, recency); the scores are the writer's reading of that rule, the editor's to move"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "gap",
+    "id": "G-rip"
+   },
+   "fields": {
+    "event": "gap",
+    "figure": "the map gap G-rip (an all-microwave parametric two-qubit gate on fluxonium, named by the register's google-fluxonium row) has a technology: g_rip. The register rows are the register's — map-gaps.csv (resolved, resolution) and google-fluxonium's gate cell — and wait for a register job",
+    "date": "2026-11-07"
+   },
+   "note": "writer job 20261107-1 changes the map and the briefs, not the Drive registers (the job's brief)"
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "map",
+    "id": "code_nonabelian"
+   },
+   "fields": {
+    "field": "register follow-up"
+   },
+   "note": "quantinuum-h2's code cell could carry code_nonabelian as an alternate (D4 2024, Z3 2025, S3 2026 all on H2) — a machine-stations.csv row with its evidence; the register's, not this job's. The code_magic brief could name the heralded topological magic state of the S3 work as a fourth, non-fault-tolerant route (the T2 review's suggestion) — a brief edit left for a text job.",
+   "sources": [
+    "https://arxiv.org/abs/2601.20956"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "map",
+    "id": "ro_dualspecies"
+   },
+   "fields": {
+    "field": "evidence grade"
+   },
+   "note": "the T2 review graded the technology on two 2026 preprints (Harvard; QudeLeap/HKUST-GZ); the QudeLeap paper is a simulation, so the second hardware group is U. Chicago (2022–2024, peer-reviewed). The register's dual-isotope machine hanyuan-2 (Rb-85 + Rb-87) is a related instance, not an occurrence of this technology (two isotopes, not two elements); its station cells are not changed.",
+   "sources": [
+    "https://arxiv.org/abs/2609.11730",
+    "https://arxiv.org/abs/2401.10325"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "map",
+    "id": "since"
+   },
+   "fields": {
+    "field": "since"
+   },
+   "note": "the since years of three technologies differ from the T2 review's 2026: ro_dualspecies 2023 (Science 380, 1265), ro_cavity 2022 (PRL 129, 203602), fab_cryo_atom 2021 (Phys. Rev. Appl. 16, 034013) — the year of the first peer-reviewed hardware of the technology class, as the map's other technologies are dated; the 2026 results are what move each to the engineering stage. The editor's to move back.",
+   "sources": []
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "briefs",
+    "id": "six"
+   },
+   "fields": {
+    "event": "briefs",
+    "figure": "six English briefs (code_nonabelian, g_rip, ct_fdm, ro_dualspecies, ro_cavity, fab_cryo_atom) with 27 new bibliography records in data/brief-sources.json and permanent numbers appended in data/work-numbers.json; three existing records reused (PRX Quantum 7, 033032; Phys. Rev. Appl. 16, 034013; Phys. Rev. A 79, 052504)",
+    "date": "2026-11-07"
+   },
+   "note": "writer job 20261107-1; every source opened by WebFetch (arXiv abs or HTML; Crossref for the journal metadata of the Nature, Nature Physics and Science papers, nature.com answering with a sign-in page)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "iqsc-fluxonium-22"
+   },
+   "fields": {
+    "err_2q_median_num": "",
+    "old_err_2q_median_num": "0.0435",
+    "flags": "preprint-only;lab-device",
+    "old_flags": "preprint-only;lab-device;mean-not-median",
+    "gate_evidence": "device-benchmark",
+    "old_gate_evidence": ""
+   },
+   "note": "A5 of the review sheet, accepted by the editor on 7 Nov 2026: the median field holds medians, and the 22-qubit chain's average CZ error (4.35e-2, dominated by its worst pairs; best pair 1e-3) is not one. The text cell err_2q_median keeps the mean, the best pair and the parallel-CZ figures; the flag that qualified the number goes with it. Effect: the superconducting family's two-qubit-error median (§8.5, F2) returns from 4.7e-3 to 4.4e-3; the trapped-ion median 2.7e-3 (LYNX, a median over 276 pairs) stays. The row now states gate_evidence device-benchmark (the preprint's randomised benchmarking of the chain's pairs): a blank cell is derived from the numeric, and with the numeric blank the derivation would have read none and dropped the device from the benchmarked set of §8 — the figures are published, only the median is not.",
+   "sources": [
+    "https://arxiv.org/abs/2604.13363"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "iqsc-fluxonium-22"
+   },
+   "fields": {
+    "event": "decision",
+    "figure": "the editor's word on the seven rows admitted by the T2 apply (iqsc-fluxonium-22, ustc-2024-atom-array, orca-pt3, optqc-moquren, riken-optical-qc, quantware-soprano-d5, quantware-contralto-d21): kept as built in ce995cc, with their cells (A1–A4 of the review sheet)",
+    "date": "2026-11-07"
+   },
+   "note": "the acceptance of the review sheet, 7 Nov 2026; recorded in 30_working/DECISIONS_2026-11-06_t2-apply.md §3"
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "generator",
+    "id": "machines_chapter"
+   },
+   "fields": {
+    "field": "forecast F1c / F2 frontier series"
+   },
+   "note": "for the cloud (A11 of the review sheet, accepted as the generator's arithmetic): (1) a flat year enters a family's frontier series when a device of that year gains its first benchmark figure (LYNX's 2.7e-3 of Oct 2026 added «2026 98» to the ion count series and «2026 7.9e-4» to the ion error series, lowering the yearly rates from ×1.37 to ×1.30 and ×1.05 to ×1.04); (2) the «now» cell prints the series' last year («98 (2026)») rather than the year of the device that set it (Helios, 2025). Whether a flat year should count, and which year «now» should print, is the generator owner's call."
+  }
  ]
 }
