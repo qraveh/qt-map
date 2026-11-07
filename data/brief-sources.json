@@ -352,6 +352,24 @@
    "url": "https://arxiv.org/abs/1409.6572",
    "verified": true
   },
+  "arxiv:1411.5436": {
+   "authors": [
+    "Andrew W. Cross",
+    "Jay M. Gambetta"
+   ],
+   "n_authors": 2,
+   "title": "Optimized pulse shapes for a resonator-induced phase gate",
+   "journal": "Phys. Rev. A",
+   "volume": "91",
+   "issue": "3",
+   "article": "032325",
+   "date": "2015-03",
+   "doi": "10.1103/PhysRevA.91.032325",
+   "arxiv": "1411.5436",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/1411.5436",
+   "verified": true
+  },
   "arxiv:1412.2772": {
    "authors": [
     "X. Y. Jin"
@@ -484,6 +502,29 @@
    "arxiv": "1606.00063",
    "kind": "journal",
    "url": "https://arxiv.org/abs/1606.00063",
+   "verified": true
+  },
+  "arxiv:1606.00685": {
+   "authors": [
+    "Hanhee Paik",
+    "A. Mezzacapo",
+    "Martin Sandberg",
+    "D. T. McClure",
+    "B. Abdo",
+    "A. D. Córcoles"
+   ],
+   "etal": true,
+   "n_authors": 13,
+   "title": "Experimental demonstration of a resonator-induced phase gate in a multiqubit circuit-QED system",
+   "journal": "Phys. Rev. Lett.",
+   "volume": "117",
+   "issue": "25",
+   "article": "250502",
+   "date": "2016-12-13",
+   "doi": "10.1103/PhysRevLett.117.250502",
+   "arxiv": "1606.00685",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/1606.00685",
    "verified": true
   },
   "arxiv:1606.08409": {
@@ -1707,6 +1748,27 @@
    "url": "https://arxiv.org/abs/2109.11525",
    "verified": true
   },
+  "arxiv:2110.05515": {
+   "authors": [
+    "Kevin Singh",
+    "Shraddha Anand",
+    "Andrew Pocklington",
+    "Jordan T. Kemp",
+    "Hannes Bernien"
+   ],
+   "n_authors": 5,
+   "title": "A dual-element, two-dimensional atom array with continuous-mode operation",
+   "journal": "Phys. Rev. X",
+   "volume": "12",
+   "issue": "1",
+   "article": "011040",
+   "date": "2022-02",
+   "doi": "10.1103/PhysRevX.12.011040",
+   "arxiv": "2110.05515",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2110.05515",
+   "verified": true
+  },
   "arxiv:2111.03011": {
    "authors": [
     "Feng Pan",
@@ -1852,6 +1914,29 @@
    "url": "https://arxiv.org/abs/2205.14061",
    "verified": true
   },
+  "arxiv:2205.14138": {
+   "authors": [
+    "Emma Deist",
+    "Yue-Hui Lu",
+    "Jacquelyn Ho",
+    "Mary Kate Pasha",
+    "Johannes Zeiher",
+    "Zhenjie Yan"
+   ],
+   "etal": true,
+   "n_authors": 7,
+   "title": "Mid-circuit cavity measurement in a neutral atom array",
+   "journal": "Phys. Rev. Lett.",
+   "volume": "129",
+   "issue": "20",
+   "article": "203602",
+   "date": "2022-11-09",
+   "doi": "10.1103/PhysRevLett.129.203602",
+   "arxiv": "2205.14138",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2205.14138",
+   "verified": true
+  },
   "arxiv:2206.12803": {
    "authors": [
     "Xueyue Zhang",
@@ -1925,6 +2010,47 @@
    "arxiv": "2208.09460",
    "kind": "journal",
    "url": "https://arxiv.org/abs/2208.09460",
+   "verified": true
+  },
+  "arxiv:2208.11716": {
+   "authors": [
+    "Kevin Singh",
+    "Conor E. Bradley",
+    "Shraddha Anand",
+    "Vikram Ramesh",
+    "Ryan White",
+    "Hannes Bernien"
+   ],
+   "n_authors": 6,
+   "title": "Mid-circuit correction of correlated phase errors using an array of spectator qubits",
+   "journal": "Science",
+   "volume": "380",
+   "issue": "6651",
+   "pages": "1265-1269",
+   "date": "2023-06-23",
+   "doi": "10.1126/science.ade5337",
+   "arxiv": "2208.11716",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2208.11716",
+   "verified": true
+  },
+  "arxiv:2210.10255": {
+   "authors": [
+    "T. I. Andersen"
+   ],
+   "etal": true,
+   "n_authors": 169,
+   "org": "Google Quantum AI and Collaborators",
+   "title": "Non-Abelian braiding of graph vertices in a superconducting processor",
+   "journal": "Nature",
+   "volume": "618",
+   "issue": "7964",
+   "pages": "264-269",
+   "date": "2023-05-11",
+   "doi": "10.1038/s41586-023-05954-4",
+   "arxiv": "2210.10255",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2210.10255",
    "verified": true
   },
   "arxiv:2210.11505": {
@@ -2134,6 +2260,24 @@
    "arxiv": "2304.12240",
    "kind": "journal",
    "url": "https://arxiv.org/abs/2304.12240",
+   "verified": true
+  },
+  "arxiv:2305.03766": {
+   "authors": [
+    "Mohsin Iqbal"
+   ],
+   "etal": true,
+   "n_authors": 18,
+   "title": "Non-Abelian topological order and anyons on a trapped-ion processor",
+   "journal": "Nature",
+   "volume": "626",
+   "issue": "7999",
+   "pages": "505-511",
+   "date": "2024-02-14",
+   "doi": "10.1038/s41586-023-06934-4",
+   "arxiv": "2305.03766",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2305.03766",
    "verified": true
   },
   "arxiv:2305.12773": {
@@ -2428,6 +2572,21 @@
    "url": "https://arxiv.org/abs/2312.04522",
    "verified": true
   },
+  "arxiv:2312.06911": {
+   "authors": [
+    "Pan Shi",
+    "Jiahao Yuan",
+    "Fei Yan",
+    "Haifeng Yu"
+   ],
+   "n_authors": 4,
+   "title": "Multiplexed control scheme for scalable quantum information processing with superconducting qubits",
+   "date": "2023-12-12",
+   "arxiv": "2312.06911",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2312.06911",
+   "verified": true
+  },
   "arxiv:2312.08813": {
    "authors": [
     "Craig Gidney",
@@ -2456,6 +2615,28 @@
    "arxiv": "2312.14060",
    "kind": "journal",
    "url": "https://arxiv.org/abs/2312.14060",
+   "verified": true
+  },
+  "arxiv:2401.10325": {
+   "authors": [
+    "Shraddha Anand",
+    "Conor E. Bradley",
+    "Ryan White",
+    "Vikram Ramesh",
+    "Kevin Singh",
+    "Hannes Bernien"
+   ],
+   "n_authors": 6,
+   "title": "A dual-species Rydberg array",
+   "journal": "Nat. Phys.",
+   "volume": "20",
+   "issue": "11",
+   "pages": "1744-1750",
+   "date": "2024-09-20",
+   "doi": "10.1038/s41567-024-02638-2",
+   "arxiv": "2401.10325",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2401.10325",
    "verified": true
   },
   "arxiv:2401.16177": {
@@ -2551,6 +2732,24 @@
    "url": "https://arxiv.org/abs/2403.16054",
    "verified": true
   },
+  "arxiv:2404.00091": {
+   "authors": [
+    "Shibo Xu"
+   ],
+   "etal": true,
+   "n_authors": 32,
+   "title": "Non-Abelian braiding of Fibonacci anyons with a superconducting processor",
+   "journal": "Nat. Phys.",
+   "volume": "20",
+   "issue": "9",
+   "pages": "1469-1475",
+   "date": "2024-07-01",
+   "doi": "10.1038/s41567-024-02529-6",
+   "arxiv": "2404.00091",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2404.00091",
+   "verified": true
+  },
   "arxiv:2404.03723": {
    "authors": [
     "Arian J. Stolk"
@@ -2568,6 +2767,29 @@
    "url": "https://arxiv.org/abs/2404.03723",
    "verified": true
   },
+  "arxiv:2405.19503": {
+   "authors": [
+    "Grégoire Pichard",
+    "Desiree Lim",
+    "Etienne Bloch",
+    "Julien Vaneecloo",
+    "Lilian Bourachot",
+    "Gert-Jan Both"
+   ],
+   "etal": true,
+   "n_authors": 15,
+   "title": "Rearrangement of single atoms in a 2000-site optical tweezers array at cryogenic temperatures",
+   "journal": "Phys. Rev. Appl.",
+   "volume": "22",
+   "issue": "2",
+   "article": "024073",
+   "date": "2024-08",
+   "doi": "10.1103/PhysRevApplied.22.024073",
+   "arxiv": "2405.19503",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2405.19503",
+   "verified": true
+  },
   "arxiv:2406.01704": {
    "authors": [
     "Francis Afzal"
@@ -2578,6 +2800,28 @@
    "arxiv": "2406.01704",
    "kind": "preprint",
    "url": "https://arxiv.org/html/2406.01704v1",
+   "verified": true
+  },
+  "arxiv:2406.12820": {
+   "authors": [
+    "Zlatko K. Minev",
+    "Khadijeh Najafi",
+    "Swarnadeep Majumder",
+    "Juven Wang",
+    "Ady Stern",
+    "Eun-Ah Kim"
+   ],
+   "etal": true,
+   "n_authors": 8,
+   "title": "Realizing string-net condensation: Fibonacci anyon braiding for universal gates and sampling chromatic polynomials",
+   "journal": "Nat. Commun.",
+   "volume": "16",
+   "article": "6225",
+   "date": "2025",
+   "doi": "10.1038/s41467-025-61493-8",
+   "arxiv": "2406.12820",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2406.12820",
    "verified": true
   },
   "arxiv:2407.07694": {
@@ -2752,6 +2996,22 @@
    "url": "https://arxiv.org/abs/2411.02950",
    "verified": true
   },
+  "arxiv:2411.04185": {
+   "authors": [
+    "Mohsin Iqbal"
+   ],
+   "etal": true,
+   "title": "Qutrit toric code and parafermions in trapped ions",
+   "journal": "Nat. Commun.",
+   "volume": "16",
+   "article": "6301",
+   "date": "2025",
+   "doi": "10.1038/s41467-025-61391-z",
+   "arxiv": "2411.04185",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2411.04185",
+   "verified": true
+  },
   "arxiv:2411.12727": {
    "authors": [
     "A. Quinn"
@@ -2785,6 +3045,29 @@
    "arxiv": "2412.01446",
    "kind": "journal",
    "url": "https://www.nature.com/articles/s41598-026-40381-1",
+   "verified": true
+  },
+  "arxiv:2412.09780": {
+   "authors": [
+    "Zhenpu Zhang",
+    "Ting-Wei Hsu",
+    "Ting You Tan",
+    "Daniel H. Slichter",
+    "Adam M. Kaufman",
+    "Matteo Marinelli"
+   ],
+   "etal": true,
+   "n_authors": 7,
+   "title": "A high optical access cryogenic system for Rydberg atom arrays with a 3000-second trap lifetime",
+   "journal": "PRX Quantum",
+   "volume": "6",
+   "issue": "2",
+   "article": "020337",
+   "date": "2025-05",
+   "doi": "10.1103/PRXQuantum.6.020337",
+   "arxiv": "2412.09780",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2412.09780",
    "verified": true
   },
   "arxiv:2502.14787": {
@@ -3203,6 +3486,29 @@
    "url": "https://arxiv.org/abs/2601.03922",
    "verified": true
   },
+  "arxiv:2601.20956": {
+   "authors": [
+    "Chiu Fan Bowen Lo",
+    "Anasuya Lyons",
+    "Dan Gresh",
+    "Michael Mills",
+    "Peter E. Siegfried",
+    "Maxwell D. Urmey"
+   ],
+   "etal": true,
+   "n_authors": 11,
+   "title": "Universal gates from braiding and fusing anyons on quantum hardware",
+   "journal": "Nature",
+   "volume": "655",
+   "issue": "8123",
+   "pages": "591-597",
+   "date": "2026-07-15",
+   "doi": "10.1038/s41586-026-10709-y",
+   "arxiv": "2601.20956",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2601.20956",
+   "verified": true
+  },
   "arxiv:2602.12773": {
    "authors": [
     "Oscar W. Kennedy"
@@ -3305,6 +3611,24 @@
    "url": "https://arxiv.org/abs/2604.12261",
    "verified": true
   },
+  "arxiv:2604.13363": {
+   "authors": [
+    "Ze Zhan",
+    "Zishuo Li",
+    "Fei Wang",
+    "Wangwei Lan",
+    "Xianchuang Pan",
+    "Liang Xiang"
+   ],
+   "etal": true,
+   "n_authors": 27,
+   "title": "Scalable fluxonium quantum processors via tunable-coupler architecture",
+   "date": "2026-04-15",
+   "arxiv": "2604.13363",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2604.13363",
+   "verified": true
+  },
   "arxiv:2604.15971": {
    "authors": [
     "Josua D. Schär"
@@ -3343,6 +3667,24 @@
    "also": [
     "https://arxiv.org/html/2605.04892"
    ],
+   "verified": true
+  },
+  "arxiv:2605.10924": {
+   "authors": [
+    "Yu Wang",
+    "Ryan Cimmino",
+    "Kenneth Wang",
+    "Santiago Lopez",
+    "Jeffrey Li",
+    "Jin Ming Koh"
+   ],
+   "etal": true,
+   "n_authors": 10,
+   "title": "Multi-qubit stabilizer readout on a dual-species Rydberg array",
+   "date": "2026-05-11",
+   "arxiv": "2605.10924",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2605.10924",
    "verified": true
   },
   "arxiv:2605.24175": {
@@ -3429,6 +3771,24 @@
    "url": "https://arxiv.org/abs/2606.23951",
    "verified": true
   },
+  "arxiv:2606.24869": {
+   "authors": [
+    "Tsai-Chen Lee",
+    "Jacquelyn Ho",
+    "Yue-Hui Lu",
+    "Tai Xiang",
+    "Nathaniel B. Vilas",
+    "Zhenjie Yan"
+   ],
+   "etal": true,
+   "n_authors": 7,
+   "title": "Rapid cavity-based mid-circuit measurement and feedforward in a neutral atom array",
+   "date": "2026-06-23",
+   "arxiv": "2606.24869",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2606.24869",
+   "verified": true
+  },
   "arxiv:2606.27017": {
    "authors": [
     "Chanpyo Kim",
@@ -3479,6 +3839,42 @@
    "arxiv": "2607.00786",
    "kind": "preprint",
    "url": "https://arxiv.org/abs/2607.00786",
+   "verified": true
+  },
+  "arxiv:2607.04090": {
+   "authors": [
+    "Jilai Ye",
+    "Zhihao Chi",
+    "Ye Tian",
+    "Shuyao Mei",
+    "Xiaoyu Li",
+    "Wanlin Wang"
+   ],
+   "etal": true,
+   "n_authors": 10,
+   "title": "Controlling atom array in an ultra-high-cooperativity optical cavity",
+   "date": "2026-07-05",
+   "arxiv": "2607.04090",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2607.04090",
+   "verified": true
+  },
+  "arxiv:2607.12988": {
+   "authors": [
+    "Akhil Kumar",
+    "Lorenzo Festa",
+    "Avishay Grinberg",
+    "Eran Reches",
+    "Dimitrios Tsevas",
+    "Kevin P. Mours"
+   ],
+   "etal": true,
+   "n_authors": 13,
+   "title": "A cryogenic neutral-atom platform with full optical access and 2-hour trap lifetime",
+   "date": "2026-07-14",
+   "arxiv": "2607.12988",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2607.12988",
    "verified": true
   },
   "arxiv:2607.25998": {
@@ -3573,6 +3969,24 @@
    "url": "https://arxiv.org/abs/2608.13218",
    "verified": true
   },
+  "arxiv:2608.13646": {
+   "authors": [
+    "K. Weber",
+    "M. McMaster",
+    "M. Anderson",
+    "J. Tu",
+    "S. E. Eustice",
+    "N. A. Schine"
+   ],
+   "etal": true,
+   "n_authors": 10,
+   "title": "Dual-species alkali and alkaline-earth-like optical tweezer arrays via interferometrically aligned high-NA objectives",
+   "date": "2026-08-13",
+   "arxiv": "2608.13646",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2608.13646",
+   "verified": true
+  },
   "arxiv:2608.15637": {
    "authors": [
     "Ya-Dong Hu"
@@ -3595,6 +4009,41 @@
    "arxiv": "2608.17189",
    "kind": "preprint",
    "url": "https://arxiv.org/abs/2608.17189",
+   "verified": true
+  },
+  "arxiv:2608.25503": {
+   "authors": [
+    "J. Schirk",
+    "N. Bruckmoser",
+    "S. M. Taubenberger",
+    "F. Wallner",
+    "N. J. Glaser",
+    "M. Zetzl"
+   ],
+   "etal": true,
+   "n_authors": 13,
+   "title": "High-fidelity entangled states in a connectivity-four fluxonium quantum processor",
+   "date": "2026-08-26",
+   "arxiv": "2608.25503",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2608.25503",
+   "verified": true
+  },
+  "arxiv:2609.11730": {
+   "authors": [
+    "Han Wang",
+    "Erdong Huang",
+    "Mingrui Jing",
+    "Hongshun Yao",
+    "Xin Wang",
+    "Jinguo Liu"
+   ],
+   "n_authors": 6,
+   "title": "An exchange-assisted entangling gate between 87Rb and 171Yb Rydberg atoms",
+   "date": "2026-09-10",
+   "arxiv": "2609.11730",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2609.11730",
    "verified": true
   },
   "arxiv:2609.28294": {
@@ -3813,6 +4262,77 @@
    "arxiv": "2610.07683",
    "kind": "preprint",
    "url": "https://arxiv.org/abs/2610.07683",
+   "verified": true
+  },
+  "arxiv:2610.20889": {
+   "authors": [
+    "Tai Xiang",
+    "Yue-Hui Lu",
+    "Tsai-Chen Lee",
+    "Jacquelyn Ho",
+    "Michael Lan",
+    "Zhenjie Yan"
+   ],
+   "etal": true,
+   "n_authors": 9,
+   "title": "A Rydberg atom array coupled to a high-cooperativity optical cavity",
+   "date": "2026-10-14",
+   "arxiv": "2610.20889",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2610.20889",
+   "verified": true
+  },
+  "arxiv:2610.35227": {
+   "authors": [
+    "Dayu Li",
+    "Naibin Zhou",
+    "Zhiyuan Chen",
+    "Zihua Chen",
+    "Yu Xu",
+    "Yuan Li"
+   ],
+   "etal": true,
+   "n_authors": 42,
+   "title": "A control line multiplexing framework for scalable quantum computing",
+   "date": "2026-10-26",
+   "arxiv": "2610.35227",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2610.35227",
+   "verified": true
+  },
+  "arxiv:2610.40329": {
+   "authors": [
+    "Junlan Jin",
+    "Donghyuk Seo",
+    "Yue Shi",
+    "Yukai Lu",
+    "Jeff D. Thompson",
+    "Waseem S. Bakr"
+   ],
+   "n_authors": 6,
+   "title": "High-fidelity universal quantum gates in a cryogenic atom array",
+   "date": "2026-10-29",
+   "arxiv": "2610.40329",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2610.40329",
+   "verified": true
+  },
+  "arxiv:2611.06613": {
+   "authors": [
+    "Zhenpu Zhang",
+    "Brendan P. Marsh",
+    "Ting You Tan",
+    "Quinn Manning",
+    "Daniel H. Slichter",
+    "Adam M. Kaufman"
+   ],
+   "etal": true,
+   "n_authors": 7,
+   "title": "Cryogenic suppression of correlated loss in Rydberg atom arrays",
+   "date": "2026-11-04",
+   "arxiv": "2611.06613",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2611.06613",
    "verified": true
   },
   "arxiv:quant-ph/0007058": {
@@ -15339,6 +15859,138 @@
    },
    {
     "work": "arxiv:2609.31280",
+    "grade": "P"
+   }
+  ],
+  "code_nonabelian": [
+   {
+    "work": "arxiv:2210.10255",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2305.03766",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2404.00091",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2406.12820",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2411.04185",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2601.20956",
+    "grade": "D"
+   }
+  ],
+  "g_rip": [
+   {
+    "work": "arxiv:1411.5436",
+    "grade": "S"
+   },
+   {
+    "work": "arxiv:1606.00685",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2604.13363",
+    "grade": "P"
+   },
+   {
+    "work": "arxiv:2608.25503",
+    "grade": "P"
+   }
+  ],
+  "ct_fdm": [
+   {
+    "work": "arxiv:2312.06911",
+    "grade": "S"
+   },
+   {
+    "work": "arxiv:2610.35227",
+    "grade": "P"
+   }
+  ],
+  "ro_dualspecies": [
+   {
+    "work": "arxiv:2110.05515",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2208.11716",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2401.10325",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2605.10924",
+    "grade": "P"
+   },
+   {
+    "work": "arxiv:2608.13646",
+    "grade": "P"
+   },
+   {
+    "work": "arxiv:2609.11730",
+    "grade": "S"
+   }
+  ],
+  "ro_cavity": [
+   {
+    "work": "arxiv:2205.14138",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2606.24869",
+    "grade": "P"
+   },
+   {
+    "work": "arxiv:2607.04090",
+    "grade": "P"
+   },
+   {
+    "work": "arxiv:2610.20889",
+    "grade": "P"
+   }
+  ],
+  "fab_cryo_atom": [
+   {
+    "work": "arxiv:0810.0339",
+    "grade": "S"
+   },
+   {
+    "work": "arxiv:2106.07414",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2405.19503",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2604.07205",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2412.09780",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2610.40329",
+    "grade": "P"
+   },
+   {
+    "work": "arxiv:2611.06613",
+    "grade": "P"
+   },
+   {
+    "work": "arxiv:2607.12988",
     "grade": "P"
    }
   ]

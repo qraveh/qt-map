@@ -24,3 +24,9 @@ SHORT.update({
 'code_mitig':('Error mitigation','Смягчение ошибок','הפחתת שגיאות'),'code_detect':('Detection codes','Коды обнаружения','קודי גילוי'),
 'ic_multidie':('Multi-die module','Многокрист. модуль','מודול מרובה-פיסות'),'ic_fanout':('Cryo fan-out','Крио-разводка','פיצול קריוגני'),'fab_bulk':('Bulk optics + fibre','Объёмная оптика','אופטיקה נפחית + סיב'),
 })
+# the six technologies of the T2 discovery of 6 Nov 2026 (local writer job 20261107-1)
+SHORT.update({
+'code_nonabelian':('Non-Abelian anyons','Неабелевы энионы','אניונים לא-אבליים'),'g_rip':('RIP gate (fluxonium)','RIP-вентиль (флаксониум)','שער RIP (פלוקסוניום)'),
+'ct_fdm':('FDM gate drive','Частотное мультиплекс.','הנעת שערים FDM'),'ro_dualspecies':('Dual-species ancilla','Анцилла другого сорта','קיוביט עזר מסוג שני'),
+'ro_cavity':('Cavity readout','Считывание через резонатор','קריאה במהוד'),'fab_cryo_atom':('Cryogenic atom array','Криогенный массив','מערך אטומים קריוגני'),
+})

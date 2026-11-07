@@ -1,5 +1,5 @@
 {
- "next": 901,
+ "next": 928,
  "works": [
   {
    "n": 1,
@@ -7536,6 +7536,263 @@
     "u:arxiv:2610.07393",
     "t:benchmarking exchange only control of a 48 spin singlet mani"
    ]
+  },
+  {
+   "n": 901,
+   "ids": [
+    "doi:10.1038/s41586-023-05954-4",
+    "arxiv:2210.10255",
+    "u:arxiv:2210.10255",
+    "t:non abelian braiding of graph vertices in a superconducting "
+   ],
+   "label": "A+23b"
+  },
+  {
+   "n": 902,
+   "ids": [
+    "doi:10.1038/s41586-023-06934-4",
+    "arxiv:2305.03766",
+    "u:arxiv:2305.03766",
+    "t:non abelian topological order and anyons on a trapped ion pr"
+   ],
+   "label": "I+24"
+  },
+  {
+   "n": 903,
+   "ids": [
+    "doi:10.1038/s41567-024-02529-6",
+    "arxiv:2404.00091",
+    "u:arxiv:2404.00091",
+    "t:non abelian braiding of fibonacci anyons with a superconduct"
+   ],
+   "label": "X+24"
+  },
+  {
+   "n": 904,
+   "ids": [
+    "doi:10.1038/s41467-025-61493-8",
+    "arxiv:2406.12820",
+    "u:arxiv:2406.12820",
+    "t:realizing string net condensation fibonacci anyon braiding f"
+   ],
+   "label": "MNM+25"
+  },
+  {
+   "n": 905,
+   "ids": [
+    "doi:10.1038/s41467-025-61391-z",
+    "arxiv:2411.04185",
+    "u:arxiv:2411.04185",
+    "t:qutrit toric code and parafermions in trapped ions"
+   ],
+   "label": "I+25"
+  },
+  {
+   "n": 906,
+   "ids": [
+    "doi:10.1038/s41586-026-10709-y",
+    "arxiv:2601.20956",
+    "u:arxiv:2601.20956",
+    "t:universal gates from braiding and fusing anyons on quantum h"
+   ],
+   "label": "LLG+26"
+  },
+  {
+   "n": 907,
+   "ids": [
+    "doi:10.1103/physreva.91.032325",
+    "arxiv:1411.5436",
+    "u:arxiv:1411.5436",
+    "t:optimized pulse shapes for a resonator induced phase gate"
+   ],
+   "label": "CG15"
+  },
+  {
+   "n": 908,
+   "ids": [
+    "doi:10.1103/physrevlett.117.250502",
+    "arxiv:1606.00685",
+    "u:arxiv:1606.00685",
+    "t:experimental demonstration of a resonator induced phase gate"
+   ],
+   "label": "PMS+16"
+  },
+  {
+   "n": 909,
+   "ids": [
+    "arxiv:2604.13363",
+    "u:arxiv:2604.13363",
+    "t:scalable fluxonium quantum processors via tunable coupler ar"
+   ],
+   "label": "ZLW+26"
+  },
+  {
+   "n": 910,
+   "ids": [
+    "arxiv:2608.25503",
+    "u:arxiv:2608.25503",
+    "t:high fidelity entangled states in a connectivity four fluxon"
+   ],
+   "label": "SBT+26"
+  },
+  {
+   "n": 911,
+   "ids": [
+    "arxiv:2312.06911",
+    "u:arxiv:2312.06911",
+    "t:multiplexed control scheme for scalable quantum information "
+   ],
+   "label": "SYYY23"
+  },
+  {
+   "n": 912,
+   "ids": [
+    "arxiv:2610.35227",
+    "u:arxiv:2610.35227",
+    "t:a control line multiplexing framework for scalable quantum c"
+   ],
+   "label": "LZC+26"
+  },
+  {
+   "n": 913,
+   "ids": [
+    "doi:10.1103/physrevx.12.011040",
+    "arxiv:2110.05515",
+    "u:arxiv:2110.05515",
+    "t:a dual element two dimensional atom array with continuous mo"
+   ],
+   "label": "SAP+22"
+  },
+  {
+   "n": 914,
+   "ids": [
+    "doi:10.1126/science.ade5337",
+    "arxiv:2208.11716",
+    "u:arxiv:2208.11716",
+    "t:mid circuit correction of correlated phase errors using an a"
+   ],
+   "label": "SBA+23"
+  },
+  {
+   "n": 915,
+   "ids": [
+    "doi:10.1038/s41567-024-02638-2",
+    "arxiv:2401.10325",
+    "u:arxiv:2401.10325",
+    "t:a dual species rydberg array"
+   ],
+   "label": "ABW+24"
+  },
+  {
+   "n": 916,
+   "ids": [
+    "arxiv:2605.10924",
+    "u:arxiv:2605.10924",
+    "t:multi qubit stabilizer readout on a dual species rydberg arr"
+   ],
+   "label": "WCW+26"
+  },
+  {
+   "n": 917,
+   "ids": [
+    "arxiv:2608.13646",
+    "u:arxiv:2608.13646",
+    "t:dual species alkali and alkaline earth like optical tweezer "
+   ],
+   "label": "WMA+26"
+  },
+  {
+   "n": 918,
+   "ids": [
+    "arxiv:2609.11730",
+    "u:arxiv:2609.11730",
+    "t:an exchange assisted entangling gate between 87rb and 171yb "
+   ],
+   "label": "WHJ+26"
+  },
+  {
+   "n": 919,
+   "ids": [
+    "doi:10.1103/physrevlett.129.203602",
+    "arxiv:2205.14138",
+    "u:arxiv:2205.14138",
+    "t:mid circuit cavity measurement in a neutral atom array"
+   ],
+   "label": "DLH+22"
+  },
+  {
+   "n": 920,
+   "ids": [
+    "arxiv:2606.24869",
+    "u:arxiv:2606.24869",
+    "t:rapid cavity based mid circuit measurement and feedforward i"
+   ],
+   "label": "LHL+26"
+  },
+  {
+   "n": 921,
+   "ids": [
+    "arxiv:2607.04090",
+    "u:arxiv:2607.04090",
+    "t:controlling atom array in an ultra high cooperativity optica"
+   ],
+   "label": "YCT+26"
+  },
+  {
+   "n": 922,
+   "ids": [
+    "arxiv:2610.20889",
+    "u:arxiv:2610.20889",
+    "t:a rydberg atom array coupled to a high cooperativity optical"
+   ],
+   "label": "XLL+26"
+  },
+  {
+   "n": 923,
+   "ids": [
+    "doi:10.1103/physrevapplied.22.024073",
+    "arxiv:2405.19503",
+    "u:arxiv:2405.19503",
+    "t:rearrangement of single atoms in a 2000 site optical tweezer"
+   ],
+   "label": "PLB+24"
+  },
+  {
+   "n": 924,
+   "ids": [
+    "doi:10.1103/prxquantum.6.020337",
+    "arxiv:2412.09780",
+    "u:arxiv:2412.09780",
+    "t:a high optical access cryogenic system for rydberg atom arra"
+   ],
+   "label": "ZHT+25"
+  },
+  {
+   "n": 925,
+   "ids": [
+    "arxiv:2610.40329",
+    "u:arxiv:2610.40329",
+    "t:high fidelity universal quantum gates in a cryogenic atom ar"
+   ],
+   "label": "JSS+26"
+  },
+  {
+   "n": 926,
+   "ids": [
+    "arxiv:2611.06613",
+    "u:arxiv:2611.06613",
+    "t:cryogenic suppression of correlated loss in rydberg atom arr"
+   ],
+   "label": "ZMT+26"
+  },
+  {
+   "n": 927,
+   "ids": [
+    "arxiv:2607.12988",
+    "u:arxiv:2607.12988",
+    "t:a cryogenic neutral atom platform with full optical access a"
+   ],
+   "label": "KFG+26"
   }
  ]
 }

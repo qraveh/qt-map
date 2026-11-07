@@ -935,7 +935,9 @@ def tableview(pw):
     # the focused technology never disappears: pinned first, marked
     p.evaluate("()=>window.__selectNode('transmon')"); p.wait_for_timeout(200); r = p.evaluate(TREAD)
     check('a focused technology outside the filter (transmon under loss) stays: the first row, marked "selected — outside the filter"', r['first'] == 'transmon' and r['pinfirst'] == ['transmon'] and 'transmon' in r['visible'] and len(r['visible']) == len(LOSS) + 1 and r['sel'] == ['transmon'], (r['first'], r['pinfirst'], len(r['visible'])))
-    check('the technology card shows a count after each value and the definition line', '· 44 of 110' in r['cardDl'] and '· 21 of 25' in r['cardDl'] and 'n technologies share the value' in r['cardDl'], r['cardDl'][:200])
+    # the two counts come from the data, as map_js.attrCount computes them (7 Nov 2026: the six technologies of the T2 discovery made the typed "44 of 110" and "21 of 25" stale)
+    aff_fab = (sum(1 for n in GRAPH['nodes'] if n['aff'] == 1.0), NN); det_det = (sum(1 for n in GRAPH['nodes'] if n['b']['det'] == 'det'), sum(1 for n in GRAPH['nodes'] if n['b']['det'] != 'na'))
+    check('the technology card shows a count after each value and the definition line', f'· {aff_fab[0]} of {aff_fab[1]}' in r['cardDl'] and f'· {det_det[0]} of {det_det[1]}' in r['cardDl'] and 'n technologies share the value' in r['cardDl'], r['cardDl'][:200])
     p.keyboard.press('Escape'); p.wait_for_timeout(200); r = p.evaluate(TREAD)
     check('focus cleared: the row returns to its place, nothing marked', r['pinfirst'] == [] and r['first'] == default_order[0] and sorted(r['visible']) == LOSS, (r['pinfirst'], r['first']))
     p.locator('#tshown [data-tshowall]').click(); p.wait_for_timeout(200); r = p.evaluate(TREAD)
