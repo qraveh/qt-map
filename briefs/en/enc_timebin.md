@@ -3,7 +3,7 @@ id: enc_timebin
 name: Time-bin / path photonic encoding
 layer: "2 Encoding"
 status: demonstrated
-since: 2001
+since: 1999
 one_line: "Photonic dual-rail qubit in arrival-time bins or waveguide path; loss is the dominant error, and it is heralded — an erasure at a known location — rather than a silent error."
 verdict: "The two halves have diverged: path encoding won on chip (PsiQuantum Omega), time-bin survives in fibre, because an on-chip delay costs 0.27 dB per ns. No fusion logical qubit by 2028 leaves it a communication encoding."
 updated: 2026-09-03

@@ -1984,6 +1984,14 @@
     {
       "identifier": "10.48550/arXiv.2607.12988",
       "relation": "cites"
+    },
+    {
+      "identifier": "10.1063/1.4739454",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1103/xw1s-dt16",
+      "relation": "cites"
     }
   ],
   "publication_date": "2026-09-30"

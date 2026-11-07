@@ -1,5 +1,5 @@
 {
- "next": 928,
+ "next": 930,
  "works": [
   {
    "n": 1,
@@ -7793,6 +7793,26 @@
     "t:a cryogenic neutral atom platform with full optical access a"
    ],
    "label": "KFG+26"
+  },
+  {
+   "n": 928,
+   "ids": [
+    "doi:10.1063/1.4739454",
+    "arxiv:1205.6375",
+    "u:arxiv:1205.6375",
+    "t:frequency division multiplexing readout and simultaneous man"
+   ],
+   "label": "JPM+12"
+  },
+  {
+   "n": 929,
+   "ids": [
+    "doi:10.1103/xw1s-dt16",
+    "arxiv:2501.10710",
+    "u:arxiv:2501.10710",
+    "t:selective excitation of superconducting qubits with a shared"
+   ],
+   "label": "MOS+26"
   }
  ]
 }

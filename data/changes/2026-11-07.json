@@ -1,6 +1,6 @@
 {
  "date": "2026-11-07",
- "source": "the six technologies the T2 discovery of 6 Nov 2026 proposed (handoffs/20261106-3_T2-discovery/REVIEW_2026-11-06.md §technology, candidates-2026-11-06.json), added with their briefs by the local writer job 20261107-1 on the editor's standing instruction of 6 Nov 2026; every source opened before the entry | the editor's decision of 7 Nov 2026 on the review sheet of the T2 apply (00_admin/30_working/REVIEW_2026-11-07_t2-apply-for-the-editor.md: «accept recommendations» — A5 changes, every other row of ce995cc kept); applied by the local writer job 20261107-2",
+ "source": "the six technologies the T2 discovery of 6 Nov 2026 proposed (handoffs/20261106-3_T2-discovery/REVIEW_2026-11-06.md §technology, candidates-2026-11-06.json), added with their briefs by the local writer job 20261107-1 on the editor's standing instruction of 6 Nov 2026; every source opened before the entry | the editor's decision of 7 Nov 2026 on the review sheet of the T2 apply (00_admin/30_working/REVIEW_2026-11-07_t2-apply-for-the-editor.md: «accept recommendations» — A5 changes, every other row of ce995cc kept); applied by the local writer job 20261107-2 | the stations decisions (local writer job 20261107-3, the editor's word of 7 Nov 2026 that the writer decides S2, S4 and S5 with confidence): the since years, the ranking rule, the two brief alignments",
  "items": [
   {
    "kind": "add",
@@ -397,6 +397,163 @@
     "field": "forecast F1c / F2 frontier series"
    },
    "note": "for the cloud (A11 of the review sheet, accepted as the generator's arithmetic): (1) a flat year enters a family's frontier series when a device of that year gains its first benchmark figure (LYNX's 2.7e-3 of Oct 2026 added «2026 98» to the ion count series and «2026 7.9e-4» to the ion error series, lowering the yearly rates from ×1.37 to ×1.30 and ×1.05 to ×1.04); (2) the «now» cell prints the series' last year («98 (2026)») rather than the year of the device that set it (Helios, 2025). Whether a flat year should count, and which year «now» should print, is the generator owner's call."
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "map",
+    "id": "enc_timebin"
+   },
+   "fields": {
+    "since (brief front matter, en/ru/he)": 1999
+   },
+   "old": {
+    "since (brief front matter)": 2001
+   },
+   "sources": [
+    {
+     "url": "https://doi.org/10.1103/PhysRevLett.82.2594",
+     "quote": "Pulsed Energy-Time Entangled Twin-Photon Source for Quantum Communication",
+     "date": "1999-03"
+    }
+   ],
+   "note": "the brief's front matter disagreed with the graph (SINCE 1999); the brief's own text dates time-bin entanglement to Brendel, Gisin, Tittel and Zbinden, Geneva, 1999 — the front matter follows the graph (briefs_meta_check: since differ 4 → 0 with cx_crossbar)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "map",
+    "id": "cx_crossbar"
+   },
+   "fields": {
+    "since (brief front matter, en/ru/he)": 2023,
+    "record": "2023-08 — 16 dots on 23 shared lines (published online 28 Aug 2023; the January 2024 issue)"
+   },
+   "old": {
+    "since (brief front matter)": 2024,
+    "record": "2024-01"
+   },
+   "sources": [
+    {
+     "url": "https://api.crossref.org/works/10.1038/s41565-023-01491-3",
+     "quote": "published-online 2023-08-28; published-print 2024-01; vol. 19, no. 1, pp. 21–27",
+     "date": "2023-08-28"
+    }
+   ],
+   "note": "the map dates a technology by its first peer-reviewed hardware: Borsoi et al. appeared online on 28 Aug 2023 (Crossref), in the January 2024 issue; the graph said 2023, the brief 2024 — aligned to 2023 in the front matter, the text and the records row, three languages"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "generator",
+    "id": "briefs"
+   },
+   "fields": {
+    "preface tier counts": "from data/ranking.json at build time (EN and RU strings; Hebrew shows the English preface)"
+   },
+   "old": {
+    "preface tier counts": "hand-written 27 / 33 / 50 (the file held 27 / 32 / 57 before this job)"
+   },
+   "note": "build/briefs.py: the briefs preface counted the tiers in prose; the six technologies of 7 Nov and this job's re-scoring moved the counts, so the three numbers (and the Russian plural) are filled from the briefs' ranking records at render time — the README's rule that every count in hand-written text is a placeholder"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "map",
+    "id": "ct_fdm"
+   },
+   "fields": {
+    "groups": "three independent hardware groups: KIT / IPHT Jena (APL 101, 042604, 2012 — three flux qubits driven at once by three tones summed into the common feedline, Rabi-level); Osaka U. / QuEL / e-trees / NTT / RIKEN RQC / U. Tokyo (Phys. Rev. Res. 8, L012003, online 6 Jan 2026 — three fixed-frequency transmons on one line into the cryostat, split at the cold stage; single-qubit Clifford fidelities 99.87(1), 99.80(2), 99.82(2)%); USTC / QuantumCTek (arXiv:2610.35227, Oct 2026 — the first FDM two-qubit gates, 1:4)",
+    "the demonstration's wiring": "one room-temperature channel split by a power splitter and band-pass filters into the qubits' and couplers' own lines into the cryostat; the cryogenic line count was not reduced («the shared resource is a frequency-resolved control bus rather than a single physical line»; «coaxial» does not occur in the paper)",
+    "records": "two added (2012-07 KIT/IPHT Jena; 2026-01 Osaka/RIKEN) with bibliography numbers 928 and 929; the brief's front matter, identity, manufacturing, I/O, evidence, actors, market and roadmap sentences in three languages; the graph's description and attributes note in three languages"
+   },
+   "old": {
+    "groups": "one group (USTC/QuantumCTek, a preprint)",
+    "the demonstration's wiring": "«polychromatic microwave pulses share one coaxial line … the cryogenic wiring and the chip are unchanged»; «the multiplexed line enters the fridge as a coaxial cable like any other»"
+   },
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/1205.6375",
+     "quote": "All three qubits were simultaneously driven by individual excitation tones … added together via a power combiner",
+     "date": "2012-05-29"
+    },
+    {
+     "url": "https://arxiv.org/abs/2501.10710",
+     "quote": "we controlled the selected three qubits using a shared microwave line … average single-qubit Clifford gate fidelities were determined to be 99.87(1)%, 99.80(2)%, and 99.82(2)%",
+     "date": "2025-01-18"
+    },
+    {
+     "url": "https://api.crossref.org/works/10.1103/xw1s-dt16",
+     "quote": "Phys. Rev. Research 8, L012003, published online January 6, 2026",
+     "date": "2026-01-06"
+    },
+    {
+     "url": "https://arxiv.org/abs/2610.35227",
+     "quote": "the shared resource is a frequency-resolved control bus rather than a single physical line; the BPFs are placed at room temperature … keeping the cryogenic wiring and quantum processor unchanged",
+     "date": "2026-10-26"
+    }
+   ],
+   "note": "S2 of the stations job decided on the editor's word of 7 Nov 2026 (the writer brings its recommendations to confidence): the literature check (30_working/LIT_2026-11-07_stations-verification.md) found the shared-line gate drive multi-group and the Atlas's one-line claim an over-reading of the USTC paper; the technology stays, status E (the two-qubit multiplexing is one preprint), since 2026 (the first peer-reviewed benchmarked gates on a shared line, Jan 2026; the 2012 drive had no gate benchmark); the one-group flag goes"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "map",
+    "id": "g_rip"
+   },
+   "fields": {
+    "event": "S2 decided",
+    "date": "2026-11-07"
+   },
+   "note": "kept as emerging (status E, since 2026) on the editor's word of 7 Nov 2026 that the writer decides: as named (a resonator-induced phase gate on fluxonium) the hardware is one group's preprint (WMI/TUM, arXiv:2608.25503, 26 Aug 2026), and no other fluxonium–resonator hardware exists (Rosenfeld et al. 2024 is theory); but the RIP class is peer-reviewed since 2016 (IBM, PRL 117, 250502) with a second IBM hardware preprint in 2024 (arXiv:2406.11770, LBI couplers, 99.4 %), the mechanism is distinct from every other fluxonium microwave-activated gate (Simakov 2023 — a fluxonium coupler; Ding 2023 and QuTech 2025 — transmon couplers; Dogan 2023 and Xiong 2022 — direct), and the map admits an emerging node where an architecture needs the slot — the fluxonium carrier on the transmon-lattice path had no all-microwave gate (the gap register's G-rip). The brief's records already carry the IBM 2016 lineage; a second group on fluxonium or a journal version moves it toward demonstrated",
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2608.25503"
+    },
+    {
+     "url": "https://arxiv.org/abs/2406.11770"
+    },
+    {
+     "url": "https://arxiv.org/abs/2403.07242"
+    }
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "map",
+    "id": "since"
+   },
+   "fields": {
+    "event": "S4 decided",
+    "date": "2026-11-07"
+   },
+   "note": "the since years of the six stand as the stations job set them, each verified at its source on 7 Nov 2026: code_nonabelian 2023 (Google, Nature 618, 264, online 11 May 2023; three groups), ro_dualspecies 2023 (Singh et al., Science 380, 1265, online 25 May 2023 — mid-circuit readout of one species beside another; the PRX 2022 paper is the array without it; the T2 review's 2026 was wrong), ro_cavity 2022 (Deist et al., PRL 129, 203602, online 9 Nov 2022; one verified group — a caveat), fab_cryo_atom 2021 (Schymik et al., Phys. Rev. Applied 16, 034013, online 7 Sep 2021; four groups since), g_rip 2026 (a preprint; the RIP class 2016), ct_fdm 2026 (the first peer-reviewed benchmarked gates on a shared line; the 2012 drive is lineage). The doubt item of the stations job on the since years is closed by this decision"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "map",
+    "id": "ranking"
+   },
+   "fields": {
+    "event": "ranking",
+    "figure": "code_nonabelian 7.8 → 10.7 (rank 66 → 40, tier 3 → 2); g_rip 4.2 → 6.4 (rank 111 → 84, tier 3 → 3); ct_fdm 4.4 → 8.9 (rank 98 → 60, tier 3 → 2); ro_dualspecies 5.7 → 10.7 (rank 86 → 42, tier 3 → 2); ro_cavity 6.2 → 10.7 (rank 81 → 41, tier 3 → 2); fab_cryo_atom 5.5 → 10.7 (rank 89 → 43, tier 3 → 2)",
+    "date": "2026-11-07"
+   },
+   "note": "the six entries re-scored by a printed rule in place of the writer's analogy (the editor's word of 7 Nov 2026 — the stations job's recommendations brought to confidence): a new technology's score is the median of the existing technologies with the same centrality signature — the architectures that carry it, the technologies that require it, its status — or, where no technology shares the signature, the mean of the two nearest pools; a one-group technology (g_rip, ct_fdm) takes the lower quartile of its pool, since the rule's recency term cannot reward an unreplicated preprint; its tier is the tier most common among the existing technologies whose score lies within ±0.75 of it (a tie takes the lower importance). code_nonabelian: no technology of the signature (paths 2, dependants 0, status E): the mean of the two nearest pools — same paths and dependants, any status (n=10, [4.4, 5.2, 6.4, 7.9, 8.4, 8.4, 9.1, 12.9, 13.9, 13.9]) and same status and paths, dependants ±1 (n=3, [9.2, 12.9, 12.9]) | g_rip: the 4 technologies of the same signature (paths 1, dependants 0, status E): [5.7, 6.6, 11.2, 11.9] | ct_fdm: the 4 technologies of the same signature (paths 1, dependants 0, status E): [5.7, 6.6, 11.2, 11.9] | ro_dualspecies: no technology of the signature (paths 2, dependants 0, status E): the mean of the two nearest pools — same paths and dependants, any status (n=10, [4.4, 5.2, 6.4, 7.9, 8.4, 8.4, 9.1, 12.9, 13.9, 13.9]) and same status and paths, dependants ±1 (n=3, [9.2, 12.9, 12.9]) | ro_cavity: no technology of the signature (paths 2, dependants 0, status E): the mean of the two nearest pools — same paths and dependants, any status (n=10, [4.4, 5.2, 6.4, 7.9, 8.4, 8.4, 9.1, 12.9, 13.9, 13.9]) and same status and paths, dependants ±1 (n=3, [9.2, 12.9, 12.9]) | fab_cryo_atom: no technology of the signature (paths 2, dependants 0, status E): the mean of the two nearest pools — same paths and dependants, any status (n=10, [4.4, 5.2, 6.4, 7.9, 8.4, 8.4, 9.1, 12.9, 13.9, 13.9]) and same status and paths, dependants ±1 (n=3, [9.2, 12.9, 12.9]). The other 110 scores and tiers are unchanged; ranks renumbered. The file still has no generator in build/ (README: graph centrality); the rule is this item's."
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "map",
+    "id": "stations-decisions"
+   },
+   "fields": {
+    "event": "the editor's word",
+    "date": "2026-11-07"
+   },
+   "note": "the editor's word of 7 Nov 2026 (~08:20 UTC): «тебе придётся довести свои рекомендации по работе станций до уверенности и самом принять решения» — the writer decides S2, S4 and S5 of the stations job (30_working/DECISIONS_2026-11-07_t2-stations.md) on a literature check of the same day (30_working/LIT_2026-11-07_stations-verification.md): S2 — both one-group technologies stay as emerging, ct_fdm because the shared-line gate drive turns out to be three groups' hardware (its texts corrected; the one-line claim withdrawn), g_rip because the RIP class is peer-reviewed since 2016 and the fluxonium carrier's slot had no all-microwave gate; S4 — the six since years stand, each verified at its source (the T2 review's 2026 for the three atom technologies was wrong); S5 — the six ranking scores by a printed rule (the median of the same centrality signature; the lower quartile for the one remaining one-group technology) in place of the writer's analogy; also the two pre-existing since differences of the briefs (enc_timebin 1999, cx_crossbar 2023) aligned to the graph and the briefs preface's tier counts derived from the ranking file"
   }
  ]
 }

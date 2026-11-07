@@ -1046,6 +1046,8 @@ A–D נקבעים לפי העוגנים של §1.2 — A, B ו-C לפי נתו�
 | `ct_ionmw` | ערוץ השגיאה | chip-integrated microwave 1Q | 1.5×10⁻⁷ error per Clifford | 2024-12 | https://arxiv.org/abs/2412.04421 |
 | `ct_ionmw` | מסלול הגדלה | WISE architecture | 1,000 ions with ~200 signal sources (design) | 2023 | https://arxiv.org/abs/2305.12773 |
 | `ct_base` | ערוץ השגיאה | extrinsic control share of CNOT error | ~80% (HRL) | 2026-07 | https://arxiv.org/abs/2604.16216 |
+| `ct_fdm` | ערוץ השגיאה | shared-line drive of three flux qubits | three tones summed into the common feedline; Rabi oscillations, no gate benchmark | 2012-07 | https://arxiv.org/abs/1205.6375 |
+| `ct_fdm` | ערוץ השגיאה | single-qubit gates on one shared line (1:3) | Clifford fidelities 99.87(1), 99.80(2), 99.82(2)%, one target at a time, the line split at the cold stage | 2026-01 | https://arxiv.org/abs/2501.10710 |
 | `ct_fdm` | ערוץ השגיאה | parallel FDM CZ (1:4) | (6.4 ± 0.2)×10⁻³ vs (6.53 ± 0.24)×10⁻³ with dedicated lines | 2026-10 | https://arxiv.org/abs/2610.35227 |
 | `ct_fdm` | ערוץ השגיאה | parallel FDM XY(π/2) (1:4) | (10.6 ± 0.2)×10⁻⁴ vs (10.38 ± 0.35)×10⁻⁴ without filters | 2026-10 | https://arxiv.org/abs/2610.35227 |
 | `ct_fdm` | מסלול הגדלה | projected line count | 381,000 physical qubits: 23,814 multiplexed lines against 1,143,000 dedicated (1:48); 1:12 at the measured gate parameters | 2026-10 | https://arxiv.org/abs/2610.35227 |

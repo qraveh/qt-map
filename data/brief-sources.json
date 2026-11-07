@@ -8899,6 +8899,50 @@
    "date": "2026-09",
    "section": "3.2",
    "verified": true
+  },
+  "arxiv:1205.6375": {
+   "authors": [
+    "Markus Jerger",
+    "Stefano Poletto",
+    "Pascal Macha",
+    "Uwe Hübner",
+    "Evgeni Il'ichev",
+    "Alexey V. Ustinov"
+   ],
+   "title": "Frequency division multiplexing readout and simultaneous manipulation of an array of flux qubits",
+   "journal": "Appl. Phys. Lett.",
+   "volume": "101",
+   "issue": "4",
+   "article": "042604",
+   "date": "2012-07-23",
+   "doi": "10.1063/1.4739454",
+   "arxiv": "1205.6375",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/1205.6375",
+   "verified": true
+  },
+  "arxiv:2501.10710": {
+   "authors": [
+    "Ryo Matsuda",
+    "Ryutaro Ohira",
+    "Toshi Sumida",
+    "Hidehisa Shiomi",
+    "Akinori Machino",
+    "Shinichi Morisaka"
+   ],
+   "etal": true,
+   "n_authors": 19,
+   "title": "Selective excitation of superconducting qubits with a shared control line through pulse shaping",
+   "journal": "Phys. Rev. Res.",
+   "volume": "8",
+   "issue": "1",
+   "article": "L012003",
+   "date": "2026-01-06",
+   "doi": "10.1103/xw1s-dt16",
+   "arxiv": "2501.10710",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2501.10710",
+   "verified": true
   }
  },
  "briefs": {
@@ -15907,6 +15951,14 @@
    }
   ],
   "ct_fdm": [
+   {
+    "work": "arxiv:1205.6375",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2501.10710",
+    "grade": "D"
+   },
    {
     "work": "arxiv:2312.06911",
     "grade": "S"

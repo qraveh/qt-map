@@ -106,9 +106,9 @@ PREFACE = {
     'en': [
         'Every technology on the map has a brief, and the depth of each one follows an importance score '
         'derived from the graph itself — how far a node reaches across platform families, how '
-        'many architectures run through it, and how recent it is. Tier 1 is the 27 most important '
-        'technologies at roughly 1,600–2,400 words; Tier 2 is 33 technologies at roughly 1,300 words; '
-        'Tier 3 is 50 technologies at roughly 800–1,100 words. The tier is a statement about the graph, not a '
+        'many architectures run through it, and how recent it is. Tier 1 is the {t1} most important '
+        'technologies at roughly 1,600–2,400 words; Tier 2 is {t2} technologies at roughly 1,300 words; '
+        'Tier 3 is {t3} technologies at roughly 800–1,100 words. The tier is a statement about the graph, not a '
         'judgement of the technology.',
         'Every brief carries the same section skeleton — identity and lineage, physics and limits, '
         'engineering state of the art, manufacturing and supply chain, role in the stack, actors and '
@@ -122,8 +122,8 @@ PREFACE = {
     'ru': [
         'У каждой технологии на карте есть обзор, а его глубина определяется оценкой важности, выведенной '
         'из самого графа: насколько узел дотягивается до разных семейств платформ, сколько '
-        'архитектур через него проходит и насколько он свеж. Tier 1 — 27 самых важных технологий, '
-        'примерно 1 600–2 400 слов; Tier 2 — 33 технологии, примерно 1 300 слов; Tier 3 — 50 технологий, '
+        'архитектур через него проходит и насколько он свеж. Tier 1 — {t1} самых важных технологий, '
+        'примерно 1 600–2 400 слов; Tier 2 — {t2} {t2w}, примерно 1 300 слов; Tier 3 — {t3} {t3w}, '
         'примерно 800 слов. Tier — утверждение о графе, а не оценка технологии.',
         'Все обзоры построены по одному скелету разделов — сущность и происхождение, физика и пределы, '
         'достигнутый инженерный уровень, производство и цепочка поставок, роль в стеке, участники и экономика, перспективы '
@@ -566,12 +566,25 @@ def index_table(briefs, lang, md2html):
         th, ''.join(rows))
 
 
+def tier_counts_fill(p, briefs):
+    """The preface's tier counts ({t1} {t2} {t3}, and the Russian plural {t2w} {t3w}) come from the briefs' ranking records, not from the prose (7 Nov 2026)."""
+    if '{t1}' not in p and '{t2}' not in p and '{t3}' not in p: return p
+    from collections import Counter
+    c = Counter(b.get('tier') for b in briefs)
+    def ru(n):
+        n2, n1 = n % 100, n % 10
+        return 'технологий' if 11 <= n2 <= 19 or n1 == 0 or n1 >= 5 else ('технология' if n1 == 1 else 'технологии')
+    return (p.replace('{t1}', str(c.get(1, 0))).replace('{t2}', str(c.get(2, 0))).replace('{t3}', str(c.get(3, 0)))
+             .replace('{t2w}', ru(c.get(2, 0))).replace('{t3w}', ru(c.get(3, 0))))
+
+
 def briefs_section_html(briefs, md2html, colours):
     """The whole '§ Technology briefs' block: heading, preface, index, and one hidden section per brief."""
     langs = []
     for lang in LANGS:   # a language without its own preface shows the English one, marked
         paras = (pick(lang, PREFACE_PUBLIC) + pick(lang, PREFACE)[1:]) if MODE == 'public' else pick(lang, PREFACE)
         fa, fr = fb_attrs(lang, not has(lang, PREFACE_PUBLIC if MODE == 'public' else PREFACE)), fb_attrs(lang, not has(lang, REFNOTE))
+        paras = [tier_counts_fill(p, briefs) for p in paras]
         pref = ''.join('<p%s>%s</p>' % (fa, chip_tags(html.escape(p, quote=False), lang)) for p in paras) + '<p class="refnote"%s>%s</p>' % (fr, pick(lang, REFNOTE))
         langs.append('<div class="lang-%s"><h2><span class="num">%s</span>%s</h2>'
                      '<div class="blede">%s</div>%s</div>' % (
