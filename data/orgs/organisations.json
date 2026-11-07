@@ -1,7 +1,7 @@
 {
  "source": {
   "register": "quantum-register (SP04)",
-  "imported": "2026-09-26",
+  "imported": "2026-11-07",
   "organisations": 90
  },
  "organisations": [
@@ -4639,9 +4639,9 @@
    "tier": "quantum-vendor",
    "segment": "computing-software",
    "country": "Israel",
-   "city": "Tel Aviv",
-   "url": "quantumxlabs.xyz",
-   "note": "",
+   "city": "Ramat Gan",
+   "url": "https://quantumxlabs.xyz/",
+   "note": "listed (Nasdaq: QXL), the former Viewbix Inc.; acquired Quantum X Labs Ltd (closed 4 Mar 2026); a neutral-atom platform of «50+ physical qubits» announced 28 May 2026, claim-only (machine row qxl-neutral-atom-50 ANNOUNCED); the segment stays software until a device is shown (the company names cold-atom computing and algorithms)",
    "machines": [
     "qxl-neutral-atom-50"
    ],
@@ -5486,11 +5486,12 @@
    "mentions": {
     "briefs": [
      "ct_vio",
+     "ct_fdm",
      "transmon",
      "ct_rt",
      "code_mitig"
     ],
-    "count": 18
+    "count": 21
    }
   },
   {

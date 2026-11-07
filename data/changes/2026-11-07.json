@@ -1,6 +1,6 @@
 {
  "date": "2026-11-07",
- "source": "the six technologies the T2 discovery of 6 Nov 2026 proposed (handoffs/20261106-3_T2-discovery/REVIEW_2026-11-06.md §technology, candidates-2026-11-06.json), added with their briefs by the local writer job 20261107-1 on the editor's standing instruction of 6 Nov 2026; every source opened before the entry | the editor's decision of 7 Nov 2026 on the review sheet of the T2 apply (00_admin/30_working/REVIEW_2026-11-07_t2-apply-for-the-editor.md: «accept recommendations» — A5 changes, every other row of ce995cc kept); applied by the local writer job 20261107-2 | the stations decisions (local writer job 20261107-3, the editor's word of 7 Nov 2026 that the writer decides S2, S4 and S5 with confidence): the since years, the ranking rule, the two brief alignments",
+ "source": "the six technologies the T2 discovery of 6 Nov 2026 proposed (handoffs/20261106-3_T2-discovery/REVIEW_2026-11-06.md §technology, candidates-2026-11-06.json), added with their briefs by the local writer job 20261107-1 on the editor's standing instruction of 6 Nov 2026; every source opened before the entry | the editor's decision of 7 Nov 2026 on the review sheet of the T2 apply (00_admin/30_working/REVIEW_2026-11-07_t2-apply-for-the-editor.md: «accept recommendations» — A5 changes, every other row of ce995cc kept); applied by the local writer job 20261107-2 | the stations decisions (local writer job 20261107-3, the editor's word of 7 Nov 2026 that the writer decides S2, S4 and S5 with confidence): the since years, the ranking rule, the two brief alignments | E2 company diligence applied (local writer job 20261107-4: handoffs/20261106-4_E2-companies/orgs-patch-2026-11-07.json and the Israel pass 3 of 7 Nov 2026; the editor's word «Примени новые и обновлённые»)",
  "items": [
   {
    "kind": "add",
@@ -554,6 +554,1638 @@
     "date": "2026-11-07"
    },
    "note": "the editor's word of 7 Nov 2026 (~08:20 UTC): «тебе придётся довести свои рекомендации по работе станций до уверенности и самом принять решения» — the writer decides S2, S4 and S5 of the stations job (30_working/DECISIONS_2026-11-07_t2-stations.md) on a literature check of the same day (30_working/LIT_2026-11-07_stations-verification.md): S2 — both one-group technologies stay as emerging, ct_fdm because the shared-line gate drive turns out to be three groups' hardware (its texts corrected; the one-line claim withdrawn), g_rip because the RIP class is peer-reviewed since 2016 and the fluxonium carrier's slot had no all-microwave gate; S4 — the six since years stand, each verified at its source (the T2 review's 2026 for the three atom technologies was wrong); S5 — the six ranking scores by a printed rule (the median of the same centrality signature; the lower quartile for the one remaining one-group technology) in place of the writer's analogy; also the two pre-existing since differences of the briefs (enc_timebin 1999, cx_crossbar 2023) aligned to the graph and the briefs preface's tier counts derived from the ranking file"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "organisation",
+    "id": "quantum-source"
+   },
+   "fields": {
+    "segment": "computing-hardware",
+    "url": "https://qs-labs.com",
+    "note": "Photonic quantum computer with single atoms on a photonic chip as photon sources and atom-photon gates for cluster states; products QS-ORBIT (computer) and QS-LINK (photonic interconnect).",
+    "listed_by": "QT-Map E2 diligence 2026-11; QT-Map metro census; Quantum Zeitgeist; qresearch.xlsx (own file)",
+    "source_count": "4"
+   },
+   "old": {
+    "segment": "components-supply-chain",
+    "url": "qs-labs.com",
+    "note": "",
+    "listed_by": "QT-Map metro census; Quantum Zeitgeist; qresearch.xlsx (own file)",
+    "source_count": "3"
+   },
+   "sources": [
+    {
+     "url": "https://qs-labs.com",
+     "quote": "«is on a clear path to the most powerful, cost-effective, practical photonic quantum computer»",
+     "date": "2026"
+    },
+    {
+     "url": "https://qs-labs.com/products",
+     "quote": "«A fault-tolerant quantum computer at a fraction of the footprint and cost of competing approaches»",
+     "date": "2026"
+    },
+    {
+     "url": "https://qs-labs.com/products",
+     "quote": "«A highly efficient photonic interconnect for distributed quantum computing»",
+     "date": "2026"
+    }
+   ],
+   "note": "E2 company diligence (ticket 20261106-4; diligence note none); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "organisation",
+    "id": "quamcore"
+   },
+   "fields": {
+    "city": "Herzliya",
+    "url": "https://www.quamcore.com/",
+    "note": "Superconducting quantum computer architecture with an integrated digital superconducting control chipset inside the cryostat; target over one million qubits per cryostat.",
+    "listed_by": "QT-Map E2 diligence 2026-11; Quantum Zeitgeist; qresearch.xlsx (own file)",
+    "source_count": "3"
+   },
+   "old": {
+    "city": "Haifa",
+    "url": "quamcore.com",
+    "note": "",
+    "listed_by": "Quantum Zeitgeist; qresearch.xlsx (own file)",
+    "source_count": "2"
+   },
+   "sources": [
+    {
+     "url": "https://www.quamcore.com/",
+     "quote": "«Allows for over 1 million qubits in a single cryostat»",
+     "date": "2026-11-07"
+    },
+    {
+     "url": "https://www.quamcore.com/",
+     "quote": "«fault-tolerant, scalable systems capable of managing millions of qubits»",
+     "date": "2026-11-07"
+    },
+    {
+     "url": "https://arxiv.org/abs/2611.04868",
+     "quote": "«Autonomous cooling of Kerr-cat qubits to minutes-long bit-flip times»",
+     "date": "2026-11-03"
+    }
+   ],
+   "note": "E2 company diligence (ticket 20261106-4; diligence note none); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "organisation",
+    "id": "quantum-transistors"
+   },
+   "fields": {
+    "segment": "computing-hardware",
+    "url": "https://www.quantumtransistors.com/",
+    "note": "Single-chip diamond solid-state quantum processor with photonic interconnects; own diamond fabrication facility.",
+    "listed_by": "QT-Map E2 diligence 2026-11; QT-Map metro census; Quantum Business Network; Quantum Zeitgeist; qresearch.xlsx (own file)",
+    "source_count": "5"
+   },
+   "old": {
+    "segment": "components-supply-chain",
+    "url": "quantumtransistors.com",
+    "note": "",
+    "listed_by": "QT-Map metro census; Quantum Business Network; Quantum Zeitgeist; qresearch.xlsx (own file)",
+    "source_count": "4"
+   },
+   "sources": [
+    {
+     "url": "https://www.quantumtransistors.com/",
+     "quote": "«Quantum Transistors is building the solution the world needs— a scalable, accessible, and affordable quantum processor»",
+     "date": "2026-11-07"
+    },
+    {
+     "url": "https://www.quantumtransistors.com/",
+     "quote": "«we've built our own diamond fabrication facility, enabling advanced R&D and small-scale production»",
+     "date": "2026-11-07"
+    },
+    {
+     "url": "https://www.quantumtransistors.com/news",
+     "quote": "«Israel's Quantum Transistors receives €17.5M from the European Innovation Council for its quantum computing solution»",
+     "date": "undated"
+    }
+   ],
+   "note": "E2 company diligence (ticket 20261106-4; diligence note none); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "organisation",
+    "id": "q-factor"
+   },
+   "fields": {
+    "url": "https://q-factor.tech/",
+    "note": "Neutral-atom quantum computing hardware; target over one million qubits.",
+    "listed_by": "QT-Map E2 diligence 2026-11; QT-Map metro census; Quantum Zeitgeist; qresearch.xlsx (own file)",
+    "source_count": "4"
+   },
+   "old": {
+    "url": "q-factor.tech",
+    "note": "",
+    "listed_by": "QT-Map metro census; Quantum Zeitgeist; qresearch.xlsx (own file)",
+    "source_count": "3"
+   },
+   "sources": [
+    {
+     "url": "https://prnewswire.com/il/news-releases/q-factor-emerges-from-stealth-with-24m-and-backing-from-intel-capital-to-build-million-qubit-quantum-computer-302736176.html",
+     "quote": "«$24 million in seed funding»",
+     "date": "2026-04-08"
+    },
+    {
+     "url": "https://prnewswire.com/il/news-releases/q-factor-emerges-from-stealth-with-24m-and-backing-from-intel-capital-to-build-million-qubit-quantum-computer-302736176.html",
+     "quote": "«Q-Factor has developed an approach to overcome them and scale to over one million»",
+     "date": "2026-04-08"
+    },
+    {
+     "url": "https://prnewswire.com/il/news-releases/q-factor-emerges-from-stealth-with-24m-and-backing-from-intel-capital-to-build-million-qubit-quantum-computer-302736176.html",
+     "quote": "«The Technion – Israel Institute of Technology and Weizmann Institute of Science»",
+     "date": "2026-04-08"
+    }
+   ],
+   "note": "E2 company diligence (ticket 20261106-4; diligence note none); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "organisation",
+    "id": "quantum-x-labs"
+   },
+   "fields": {
+    "city": "Ramat Gan",
+    "url": "https://quantumxlabs.xyz/",
+    "rolled_up_units": "Quantum X Labs Ltd (acquired, closed 4 Mar 2026); Viewbix Inc. (former name)",
+    "note": "listed (Nasdaq: QXL), the former Viewbix Inc.; acquired Quantum X Labs Ltd (closed 4 Mar 2026); a neutral-atom platform of «50+ physical qubits» announced 28 May 2026, claim-only (machine row qxl-neutral-atom-50 ANNOUNCED); the segment stays software until a device is shown (the company names cold-atom computing and algorithms)",
+    "listed_by": "QT-Map E2 diligence 2026-11; Quantum Computing Report",
+    "source_count": "2"
+   },
+   "old": {
+    "city": "Tel Aviv",
+    "url": "quantumxlabs.xyz",
+    "rolled_up_units": "",
+    "note": "",
+    "listed_by": "Quantum Computing Report",
+    "source_count": "1"
+   },
+   "sources": [
+    {
+     "url": "https://quantumxlabs.xyz/",
+     "quote": "«We develop quantum computing with cold atoms, AI-assisted quantum error correction,»",
+     "date": "2026-11-07"
+    },
+    {
+     "url": "https://www.sec.gov/Archives/edgar/data/797542/000149315226037811/form10-q.htm",
+     "quote": "«Quantum Israel is focused on developing and promoting quantum algorithms for the transportation, drug discovery»",
+     "date": "2026-08-13"
+    },
+    {
+     "url": "https://www.sec.gov/Archives/edgar/data/797542/000149315226037811/form10-q.htm",
+     "quote": "«Such conditions raise substantial doubts about the Company’s ability to continue as a going concern for at least a year after the issuance date of the accompanying financial statements.»",
+     "date": "2026-08-13"
+    }
+   ],
+   "note": "E2 company diligence (ticket 20261106-4; diligence note none); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "organisation",
+    "id": "quantum-machines"
+   },
+   "fields": {
+    "url": "https://www.quantum-machines.co/",
+    "rolled_up_units": "QDevil (acquired 2022); QHarbor (acquired 2026-05, Delft office); PCB Engineering (acquired 2026-06, Budapest R&D hub); Quantum Machines US hub (site)",
+    "note": "Hybrid quantum-classical control electronics (OPX1000), cryogenic electronics (QDevil), DGX Quantum with NVIDIA; measurement-data software (QHarbor).",
+    "listed_by": "Chicago Quantum Exchange; Danish Quantum Community; Elevate Quantum (Colorado); European Quantum Industry Consortium; Q-STAR (Japan); QT-Map E2 diligence 2026-11; QT-Map metro census; Quantum Denmark; Quantum Zeitgeist; qresearch.xlsx (own file)",
+    "source_count": "10"
+   },
+   "old": {
+    "url": "quantum-machines.co",
+    "rolled_up_units": "QDevil (acquired 2022); Quantum Machines US hub (site)",
+    "note": "",
+    "listed_by": "Chicago Quantum Exchange; Danish Quantum Community; Elevate Quantum (Colorado); European Quantum Industry Consortium; Q-STAR (Japan); QT-Map metro census; Quantum Denmark; Quantum Zeitgeist; qresearch.xlsx (own file)",
+    "source_count": "9"
+   },
+   "sources": [
+    {
+     "url": "https://thequantuminsider.com/2026/06/17/quantum-machines-acquires-pcb-engineering-and-opens-budapest-rd-hub/",
+     "quote": "«Quantum Machines (QM), whose control systems are used by more than half of the world's quantum computing companies, today announces the acquisition of Hungarian company PCB Engineering»",
+     "date": "2026-06-17"
+    },
+    {
+     "url": "https://thequantuminsider.com/2026/05/05/quantum-machines-acquires-qharbor/",
+     "quote": "«Quantum Machines (QM), the leading provider of hybrid quantum-classical control solutions, today announced»",
+     "date": "2026-05-05"
+    },
+    {
+     "url": "https://www.timesofisrael.com/amid-war-israel-opens-rd-center-to-put-the-country-on-the-map-of-quantum-computing/",
+     "quote": "«We are not building quantum computers, but we want to make them accessible to the Israeli ecosystem»",
+     "date": "2024-06"
+    }
+   ],
+   "note": "E2 company diligence (ticket 20261106-4; diligence note none); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "organisation",
+    "id": "classiq"
+   },
+   "fields": {
+    "note": "Quantum software engineering platform: circuit synthesis and compilation from high-level models, hardware-agnostic; fault tolerance engine (2026-10).",
+    "listed_by": "European Quantum Industry Consortium; Le Lab Quantique (France); Q-STAR (Japan); QT-Map E2 diligence 2026-11; QT-Map metro census; Quantum Business Network; Quantum Computing Report; Quantum Zeitgeist; The Quantum Insider; qresearch.xlsx (own file)",
+    "source_count": "10"
+   },
+   "old": {
+    "note": "",
+    "listed_by": "European Quantum Industry Consortium; Le Lab Quantique (France); Q-STAR (Japan); QT-Map metro census; Quantum Business Network; Quantum Computing Report; Quantum Zeitgeist; The Quantum Insider; qresearch.xlsx (own file)",
+    "source_count": "9"
+   },
+   "sources": [
+    {
+     "url": "https://www.intel.com/content/www/us/en/newsroom/news/corporate/intel-classiq-accelerate-scalable-quantum-computing.html",
+     "quote": "«Intel Corporation today announced that it has entered into a definitive agreement to acquire Classiq»",
+     "date": "2026-10-26"
+    },
+    {
+     "url": "https://www.intel.com/content/www/us/en/newsroom/news/corporate/intel-classiq-accelerate-scalable-quantum-computing.html",
+     "quote": "«Until closing, Intel and Classiq will continue to operate as separate, independent companies»",
+     "date": "2026-10-26"
+    },
+    {
+     "url": "https://www.classiq.io/",
+     "quote": "«a leading enterprise-grade Quantum Software Engineering Platform»",
+     "date": "2026-11-07"
+    }
+   ],
+   "note": "E2 company diligence (ticket 20261106-4; diligence note none); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "organisation",
+    "id": "qedma"
+   },
+   "fields": {
+    "url": "https://qedma.com",
+    "note": "Error-mitigation and error-suppression software (QESEM, Quantum Signal Extraction Platform), hardware-agnostic; integrations with IBM Qiskit Functions, Quantinuum, NVIDIA CUDA-Q.",
+    "listed_by": "QT-Map E2 diligence 2026-11; QT-Map metro census; Quantum Zeitgeist; qresearch.xlsx (own file)",
+    "source_count": "4"
+   },
+   "old": {
+    "url": "qedma.com",
+    "note": "",
+    "listed_by": "QT-Map metro census; Quantum Zeitgeist; qresearch.xlsx (own file)",
+    "source_count": "3"
+   },
+   "sources": [
+    {
+     "url": "https://qedma.com/",
+     "quote": "«Qedma's Quantum Signal Extraction Platform is a software layer that extracts usable quantum signal hidden inside noisy quantum outputs»",
+     "date": "2026-11-07"
+    },
+    {
+     "url": "https://www.qedma.com/news/",
+     "quote": "«Qedma Signs Agreement with IBM to Provide Error Mitigation Software»",
+     "date": "2024-09-25"
+    },
+    {
+     "url": "https://www.qedma.com/news/",
+     "quote": "«Qedma Integrates its Advanced Error Mitigation Software with Quantinuum's Quantum Computing Platform»",
+     "date": "2026-07-23"
+    }
+   ],
+   "note": "E2 company diligence (ticket 20261106-4; diligence note none); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "organisation",
+    "id": "qarakal"
+   },
+   "fields": {
+    "segment": "computing-hardware",
+    "url": "https://qarakal.com",
+    "rolled_up_units": "Qarakal Quantum Ltd (legal name); Qhipu Quantum (former name? source-not-confirmed)",
+    "note": "End-to-end superconducting quantum-computing hardware architecture.",
+    "listed_by": "QT-Map E2 diligence 2026-11; Quantum Zeitgeist; qresearch.xlsx (own file)",
+    "source_count": "3"
+   },
+   "old": {
+    "segment": "computing-software",
+    "url": "qarakal.com",
+    "rolled_up_units": "Qarakal Quantum (also listed as)",
+    "note": "",
+    "listed_by": "Quantum Zeitgeist; qresearch.xlsx (own file)",
+    "source_count": "2"
+   },
+   "sources": [
+    {
+     "url": "https://www.haaretz.com/haaretz-labels/2026-01-18/ty-article-labels/from-theory-to-the-lab-realizing-the-quantum-advantage/0000019b-d0db-d2f8-af9b-f3dbf3920000",
+     "quote": "«Israeli startup Qarakal Quantum is developing an end-to-end quantum hardware architecture based on superconductor technology»",
+     "date": "2026-01-18"
+    },
+    {
+     "url": "https://www.calcalistech.com/ctechnews/article/hjysac22gg",
+     "quote": "«Qarakal and QuamCore are working on superconducting circuits»",
+     "date": "2026-10-26"
+    }
+   ],
+   "note": "E2 company diligence (ticket 20261106-4; diligence note none); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "organisation",
+    "id": "quantymize"
+   },
+   "fields": {
+    "url": "https://quantymize.com",
+    "note": "Hardware-agnostic quantum optimisation algorithms (ECO), presented as an alternative to QUBO formulations; backends IBM, QuEra, IonQ, D-Wave, Azure Quantum, Rigetti.",
+    "listed_by": "QT-Map E2 diligence 2026-11; Quantum Zeitgeist; qresearch.xlsx (own file)",
+    "source_count": "3"
+   },
+   "old": {
+    "url": "quantymize.com",
+    "note": "",
+    "listed_by": "Quantum Zeitgeist; qresearch.xlsx (own file)",
+    "source_count": "2"
+   },
+   "sources": [
+    {
+     "url": "https://quantymize.com",
+     "quote": "«QuantyMize is a hardware-agnostic quantum software company»",
+     "date": "2026-11-07"
+    },
+    {
+     "url": "https://quantymize.com",
+     "quote": "«Solves with just 5k qubits what standard QUBO requires 800k qubits to compute»",
+     "date": "2026-11-07"
+    }
+   ],
+   "note": "E2 company diligence (ticket 20261106-4; diligence note none); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "organisation",
+    "id": "qtrex"
+   },
+   "fields": {
+    "url": "https://www.q-trex.com/",
+    "rolled_up_units": "Inspira Technologies Oxy B.H.N. Ltd (former name; Nasdaq IINN until 2026-05-20)",
+    "note": "Cryogenic interconnects for dilution refrigerators: monolithic structures integrating conductors, RF dielectrics and shielding, made by additively manufactured electronics (AME).",
+    "listed_by": "QT-Map E2 diligence 2026-11; Quantum Computing Report",
+    "source_count": "2"
+   },
+   "old": {
+    "url": "q-trex.com",
+    "rolled_up_units": "",
+    "note": "",
+    "listed_by": "Quantum Computing Report",
+    "source_count": "1"
+   },
+   "sources": [
+    {
+     "url": "https://www.q-trex.com/",
+     "quote": "«QTREX designs and manufactures the cryogenic interconnect systems that quantum computers depend on to operate.»",
+     "date": "2026-11-07"
+    },
+    {
+     "url": "https://q-trex.com/about/",
+     "quote": "«Formerly Inspira Technologies Oxy B.H.N. Ltd. (NASDAQ: IINN)»",
+     "date": "2026-11-07"
+    },
+    {
+     "url": "https://thequantuminsider.com/2026/05/20/inspira-technologies-qtrex-quantum-qtex-nasdaq/",
+     "quote": "«the Company's ordinary shares will begin trading under the new ticker symbol \"QTEX\"»",
+     "date": "2026-05-20"
+    }
+   ],
+   "note": "E2 company diligence (ticket 20261106-4; diligence note none); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "organisation",
+    "id": "comda"
+   },
+   "fields": {
+    "url": "https://www.comsigntrust.com/",
+    "note": "en.comda.co.il redirects (301) to comsigntrust.com — digital-signature software; a product «Signer PQ» in the menus without explanation; no quantum product found on the site (7 Nov 2026)",
+    "listed_by": "European Quantum Industry Consortium; QT-Map E2 diligence 2026-11",
+    "source_count": "2"
+   },
+   "old": {
+    "url": "https://en.comda.co.il/",
+    "note": "",
+    "listed_by": "European Quantum Industry Consortium",
+    "source_count": "1"
+   },
+   "sources": [
+    {
+     "url": "https://www.comsigntrust.com/",
+     "quote": "«Comda Group develops and provides advanced information security and secure access solutions»",
+     "date": "2026-11-07"
+    }
+   ],
+   "note": "E2 company diligence (ticket 20261106-4; diligence note none); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "organisation",
+    "id": "tower-semiconductor"
+   },
+   "fields": {
+    "url": "https://towersemi.com/",
+    "note": "Specialty foundry; silicon photonics (SiPho) production flow co-engineered for Xanadu's photonic quantum chips.",
+    "listed_by": "QT-Map E2 diligence 2026-11; Quantum Zeitgeist",
+    "source_count": "2"
+   },
+   "old": {
+    "url": "",
+    "note": "",
+    "listed_by": "Quantum Zeitgeist",
+    "source_count": "1"
+   },
+   "sources": [
+    {
+     "url": "https://towersemi.com/2026/02/19/02192026/",
+     "quote": "«Xanadu and Tower have co-engineered a unique production flow for Xanadu's custom material stack»",
+     "date": "2026-02-19"
+    },
+    {
+     "url": "https://quantumcomputingreport.com/tower-semiconductor-and-xanadu-industrialize-silicon-photonic-quantum-stack/",
+     "quote": "«utilizes Tower’s high-volume foundry infrastructure to industrialize Xanadu’s photonic circuit designs»",
+     "date": "2026-02-19"
+    }
+   ],
+   "note": "E2 company diligence (ticket 20261106-4; diligence note none); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "organisation",
+    "id": "heqa-security"
+   },
+   "fields": {
+    "city": "Modi'in",
+    "rolled_up_units": "QuantLR (former name)",
+    "note": "QKD appliances (Sceptre Hub & Spoke, Duo, Link) with a PQC overlay.",
+    "listed_by": "European Quantum Industry Consortium; QED-C; QT-Map E2 diligence 2026-11; Quantum Business Network; Quantum Zeitgeist; qresearch.xlsx (own file)",
+    "source_count": "6"
+   },
+   "old": {
+    "city": "Tel Aviv",
+    "rolled_up_units": "",
+    "note": "",
+    "listed_by": "European Quantum Industry Consortium; QED-C; Quantum Business Network; Quantum Zeitgeist; qresearch.xlsx (own file)",
+    "source_count": "5"
+   },
+   "sources": [
+    {
+     "url": "https://heqa-sec.com/",
+     "quote": "«delivers production-grade quantum-safe appliances integrating Quantum Key Distribution (QKD)»",
+     "date": "2026-11-07"
+    },
+    {
+     "url": "https://heqa-sec.com/contact/",
+     "quote": "«Modi’in, Israel»",
+     "date": "2026-11-07"
+    }
+   ],
+   "note": "E2 company diligence (ticket 20261106-4; diligence note none); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "organisation",
+    "id": "lightsolver"
+   },
+   "fields": {
+    "city": "Tel Aviv",
+    "note": "A laser-based computer (Laser Processing Unit, LPU) of coupled lasers; quantum-inspired in its own words.",
+    "listed_by": "QT-Map E2 diligence 2026-11; qresearch.xlsx (own file)",
+    "source_count": "2"
+   },
+   "old": {
+    "city": "",
+    "note": "",
+    "listed_by": "qresearch.xlsx (own file)",
+    "source_count": "1"
+   },
+   "sources": [
+    {
+     "url": "https://www.lightsolver.com/about/",
+     "quote": "«LightSolver has developed pioneering quantum-inspired technology that utilizes coupled lasers»",
+     "date": "2026-11-07"
+    },
+    {
+     "url": "https://www.lightsolver.com/",
+     "quote": "«The Laser Processing Unit™ (LPU) introduces physics-based computing»",
+     "date": "2026-11-07"
+    }
+   ],
+   "note": "E2 company diligence (ticket 20261106-4; diligence note none); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "organisation",
+    "id": "nvision"
+   },
+   "fields": {
+    "segment": "computing-hardware",
+    "url": "https://www.nvision-quantum.com",
+    "rolled_up_units": "NVISION Imaging Technologies (former/sister name, same company; merged 7 Nov 2026)",
+    "note": "molecular qubits native to photonic chips (PIQC) beside the hyperpolarised-MRI line (POLARIS); the former row «NVISION Imaging Technologies» (same company, Ulm) merged here on 7 Nov 2026 under the roll-up rule",
+    "listed_by": "European Quantum Industry Consortium; QT-Map E2 diligence 2026-11; Quantum Business Network; Quantum Zeitgeist",
+    "source_count": "4"
+   },
+   "old": {
+    "segment": "sensing",
+    "url": "",
+    "rolled_up_units": "",
+    "note": "",
+    "listed_by": "Quantum Zeitgeist",
+    "source_count": "1"
+   },
+   "sources": [
+    {
+     "url": "https://www.nvision-quantum.com",
+     "quote": "«The first quantum computing platform based on molecular quantum nodes native to photonic chips»",
+     "date": "2026-11-07"
+    },
+    {
+     "url": "https://www.nvision-quantum.com",
+     "quote": "«Headquartered in Ulm, Germany»",
+     "date": "2026-11-07"
+    },
+    {
+     "url": "https://www.nvision-quantum.com",
+     "quote": "«the world's first molecular quantum computer»",
+     "date": "2026-11-07"
+    }
+   ],
+   "note": "E2 company diligence (ticket 20261106-4; diligence note none); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "organisation",
+    "id": "oratomic"
+   },
+   "fields": {
+    "tier": "quantum-vendor",
+    "segment": "computing-hardware",
+    "city": "Pasadena, CA",
+    "note": "Neutral-atom quantum computers.",
+    "listed_by": "QT-Map E2 diligence 2026-11; QT-Map metro census",
+    "source_count": "2"
+   },
+   "old": {
+    "tier": "unclassified",
+    "segment": "unknown",
+    "city": "Pasadena CA",
+    "note": "",
+    "listed_by": "QT-Map metro census",
+    "source_count": "1"
+   },
+   "sources": [
+    {
+     "url": "https://oratomic.com/",
+     "quote": "«At Oratomic, we are building the world's first utility-scale quantum computers.»",
+     "date": "2026-11-07"
+    },
+    {
+     "url": "https://oratomic.com/",
+     "quote": "«only light and atoms»",
+     "date": "2026-11-07"
+    }
+   ],
+   "note": "E2 company diligence (ticket 20261106-4; diligence note none); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "organisation",
+    "id": "google-quantum-ai-ex-atlantic-quantum"
+   },
+   "fields": {
+    "rolled_up_units": "Atlantic Quantum (joined Google Quantum AI, Oct 2025; terms not disclosed; the form of the deal contested per press)"
+   },
+   "old": {
+    "rolled_up_units": ""
+   },
+   "sources": [],
+   "note": "the register's duplicate row «Atlantic Quantum» rolled into this row under the roll-up rule (one organisation, one record; the Chalmers WACQT spin-offs URL it carried is not the company's); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "organisation",
+    "id": "accubeat"
+   },
+   "fields": {
+    "city": "Jerusalem"
+   },
+   "old": {
+    "city": ""
+   },
+   "sources": [
+    {
+     "url": "https://www.accubeat.com/",
+     "quote": "«Rubidium Atomic clocks for over 25 years»",
+     "date": "2026-11-07"
+    }
+   ],
+   "note": "E2 company diligence (ticket 20261106-4; pass 3, diligence note none); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "organisation",
+    "id": "anyon-systems"
+   },
+   "fields": {
+    "rolled_up_units": "Anyon Systems Israel (R&D centre, Tel Aviv-Yafo; site — the owner page's office listing, 7 Nov 2026)",
+    "listed_by": "Canadian Quantum Directory; QT-Map E2 diligence 2026-11; QT-Map metro census; Quantum Computing Report; Quantum Industry Canada; Quantum Zeitgeist; The Quantum Insider; qresearch.xlsx (own file)",
+    "source_count": "8"
+   },
+   "old": {
+    "rolled_up_units": "",
+    "listed_by": "Canadian Quantum Directory; QT-Map metro census; Quantum Computing Report; Quantum Industry Canada; Quantum Zeitgeist; The Quantum Insider; qresearch.xlsx (own file)",
+    "source_count": "7"
+   },
+   "sources": [],
+   "note": "E2 apply: the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "organisation",
+    "id": "qtrex"
+   },
+   "fields": {
+    "rolled_up_units": "Inspira Technologies Oxy B.H.N. Ltd (former name; Nasdaq IINN until 2026-05-20); QTREX Quantum Ltd. (legal name; Nasdaq: QTEX — the owner page's footer «Formerly Inspira Technologies Oxy B.H.N. Ltd. (NASDAQ: IINN)», 7 Nov 2026)"
+   },
+   "old": {
+    "rolled_up_units": "Inspira Technologies Oxy B.H.N. Ltd (former name; Nasdaq IINN until 2026-05-20)"
+   },
+   "sources": [
+    {
+     "url": "https://www.q-trex.com/",
+     "quote": "«QTREX designs and manufactures the cryogenic interconnect systems that quantum computers depend on to operate.»",
+     "date": "2026-11-07"
+    },
+    {
+     "url": "https://q-trex.com/about/",
+     "quote": "«Formerly Inspira Technologies Oxy B.H.N. Ltd. (NASDAQ: IINN)»",
+     "date": "2026-11-07"
+    },
+    {
+     "url": "https://thequantuminsider.com/2026/05/20/inspira-technologies-qtrex-quantum-qtex-nasdaq/",
+     "quote": "«the Company's ordinary shares will begin trading under the new ticker symbol \"QTEX\"»",
+     "date": "2026-05-20"
+    }
+   ],
+   "note": "E2 company diligence (ticket 20261106-4; pass 3, diligence note none); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "organisation",
+    "id": "qarakal"
+   },
+   "fields": {
+    "note": "End-to-end superconducting quantum-computing hardware architecture.; qarakal.com did not resolve on 7 Nov 2026; the Israel Innovation Authority's map of April 2026 lists Qarakal under quantum processors (superconducting), and the QTREX joint-development release of 30 Apr 2026 calls it «a quantum computing company building modular, deployable superconducting quantum systems»"
+   },
+   "old": {
+    "note": "End-to-end superconducting quantum-computing hardware architecture."
+   },
+   "sources": [
+    {
+     "url": "https://www.haaretz.com/haaretz-labels/2026-01-18/ty-article-labels/from-theory-to-the-lab-realizing-the-quantum-advantage/0000019b-d0db-d2f8-af9b-f3dbf3920000",
+     "quote": "«Israeli startup Qarakal Quantum is developing an end-to-end quantum hardware architecture based on superconductor technology»",
+     "date": "2026-01-18"
+    },
+    {
+     "url": "https://www.calcalistech.com/ctechnews/article/hjysac22gg",
+     "quote": "«Qarakal and QuamCore are working on superconducting circuits»",
+     "date": "2026-10-26"
+    }
+   ],
+   "note": "E2 company diligence (ticket 20261106-4; pass 3, diligence note none); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "organisation",
+    "id": "tabor-electronics"
+   },
+   "fields": {
+    "rolled_up_units": "Tabor Quantum Solutions (TQS; a quantum division by the logo in the Israel Innovation Authority's report of Oct 2026 — no TQS page on taborelec.com as of 7 Nov 2026; quantum is served by the Quantum & Physics market segment and the Proteus AWG/AWT line)",
+    "listed_by": "QT-Map E2 diligence 2026-11; Quantum Zeitgeist; qresearch.xlsx (own file)",
+    "source_count": "3"
+   },
+   "old": {
+    "rolled_up_units": "Tabor Quantum Solutions (directory name — no such entity on taborelec.com; quantum is Tabor's Quantum & Physics market segment, served by the general-purpose Proteus AWG/AWT line)",
+    "listed_by": "Quantum Zeitgeist; qresearch.xlsx (own file)",
+    "source_count": "2"
+   },
+   "sources": [],
+   "note": "E2 apply: the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "organisation",
+    "id": "accubeat"
+   },
+   "fields": {
+    "name": "AccuBeat",
+    "tier": "supplier-general",
+    "segment": "sensing",
+    "country": "Israel",
+    "city": "Jerusalem",
+    "url": "https://www.accubeat.com/",
+    "rolled_up_units": "",
+    "note": "rubidium atomic clocks («Rubidium Atomic clocks for over 25 years»); the page does not use the word quantum; outside the D6 computing scope — the row is the editor's word (tier supplier-general or quantum-vendor)",
+    "listed_by": "QT-Map E2 diligence 2026-11",
+    "source_count": "1"
+   },
+   "sources": [
+    {
+     "url": "https://www.accubeat.com/",
+     "quote": "«Rubidium Atomic clocks for over 25 years»",
+     "date": "2026-11-07"
+    }
+   ],
+   "note": "what it builds: Rubidium atomic clocks (frequency standards), GPS-disciplined time and frequency products, time servers, space oscillators.; hardware status: component shipping; grade C; flags: outside D6 computing scope; the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "organisation",
+    "id": "quint-computing"
+   },
+   "fields": {
+    "name": "Quint Computing",
+    "tier": "quantum-vendor",
+    "segment": "computing-hardware",
+    "country": "Germany",
+    "city": "Erlangen",
+    "url": "https://quint-computing.com/",
+    "rolled_up_units": "",
+    "note": "Superconducting qubit processors with on-chip circuit elements for error suppression (continuous electrical stabilisation), aimed at lower error-correction overhead.",
+    "listed_by": "QT-Map E2 diligence 2026-11",
+    "source_count": "1"
+   },
+   "sources": [
+    {
+     "url": "https://quint-computing.com/",
+     "quote": "«We build fault-tolerant quantum computers with efficiency and speed to unlock industrial impact.»",
+     "date": "2026-11-07"
+    },
+    {
+     "url": "https://quint-computing.com/",
+     "quote": "«We design circuit elements that suppress most errors directly on the chip.»",
+     "date": "2026-11-07"
+    },
+    {
+     "url": "https://quint-computing.com/",
+     "quote": "«Quint Computing Secures €9.1 Million in Record First Funding Round»",
+     "date": "2026-11-03"
+    }
+   ],
+   "note": "what it builds: Superconducting qubit processors with on-chip circuit elements for error suppression (continuous electrical stabilisation), aimed at lower error-correction overhead.; hardware status: claimed; grade C; flags: pre-cut-off, missing from the register, founding date and spin-out origin press-only; the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "organisation",
+    "id": "flipflop-tuoyuan"
+   },
+   "fields": {
+    "name": "FlipFlop Tuoyuan",
+    "tier": "quantum-vendor",
+    "segment": "computing-hardware",
+    "country": "China",
+    "city": "Beijing",
+    "url": "",
+    "rolled_up_units": "",
+    "note": "Neutral-atom (Rydberg, optical-tweezer array) fault-tolerant quantum computing architecture; stated target 100 logical qubits.",
+    "listed_by": "QT-Map E2 diligence 2026-11",
+    "source_count": "1"
+   },
+   "sources": [
+    {
+     "url": "https://quantumcomputingreport.com/chinese-startup-flipflop-tuoyuan-emerges-with-major-vc-backing-for-100-logical-qubit-neutral-atom-systems/",
+     "quote": "«Beijing-based quantum hardware startup»",
+     "date": "2026-10-19"
+    },
+    {
+     "url": "https://quantumcomputingreport.com/chinese-startup-flipflop-tuoyuan-emerges-with-major-vc-backing-for-100-logical-qubit-neutral-atom-systems/",
+     "quote": "«Full-stack fault-tolerant quantum computing (FTQC) architecture»",
+     "date": "2026-10-19"
+    },
+    {
+     "url": "https://thequantuminsider.com/2026/10/19/chinas-tuoyuan-targets-neutral-atom-quantum-computing/",
+     "quote": "«hundreds of millions of yuan»",
+     "date": "2026-10-19"
+    }
+   ],
+   "note": "what it builds: Neutral-atom (Rydberg, optical-tweezer array) fault-tolerant quantum computing architecture; stated target 100 logical qubits.; hardware status: claimed; grade P; flags: source-not-confirmed, claim-only; the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "organisation",
+    "id": "bingchen-quantum"
+   },
+   "fields": {
+    "name": "Bingchen Quantum",
+    "tier": "quantum-vendor",
+    "segment": "components-supply-chain",
+    "country": "China",
+    "city": "Shenzhen",
+    "url": "",
+    "rolled_up_units": "",
+    "note": "Upstream equipment for neutral-atom quantum computers; first product a high-throughput cold-atom source (dual-beam Zeeman slower combined with a two-dimensional magneto-optical trap).",
+    "listed_by": "QT-Map E2 diligence 2026-11",
+    "source_count": "1"
+   },
+   "sources": [
+    {
+     "url": "https://eu.36kr.com/en/p/3993888512801792",
+     "quote": "«Shenzhen Bingchen Quantum Technology Co., Ltd.»",
+     "date": "2026-09-22"
+    },
+    {
+     "url": "https://eu.36kr.com/en/p/3993888512801792",
+     "quote": "«high-throughput cold atom source system»",
+     "date": "2026-09-22"
+    }
+   ],
+   "note": "what it builds: Upstream equipment for neutral-atom quantum computers; first product a high-throughput cold-atom source (dual-beam Zeeman slower combined with a two-dimensional magneto-optical trap).; hardware status: announced; grade P; flags: source-not-confirmed, pre-cut-off founding, first visible after cut-off; the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "organisation",
+    "id": "coherence-quantum"
+   },
+   "fields": {
+    "name": "Coherence Quantum",
+    "tier": "quantum-vendor",
+    "segment": "components-supply-chain",
+    "country": "Finland",
+    "city": "Espoo",
+    "url": "https://www.coherencequantum.tech/",
+    "rolled_up_units": "",
+    "note": "Integrated cryogenic signalling and control platform for solid-state quantum processors.",
+    "listed_by": "QT-Map E2 diligence 2026-11",
+    "source_count": "1"
+   },
+   "sources": [
+    {
+     "url": "https://www.coherencequantum.tech/",
+     "quote": "«an integrated cryogenic signalling and control platform for solid-state quantum computers»",
+     "date": "2026-11-07"
+    },
+    {
+     "url": "https://www.coherencequantum.tech/",
+     "quote": "«builds on research originating from Aalto University’s Quantum Computing and Devices (QCD) group.»",
+     "date": "2026-11-07"
+    },
+    {
+     "url": "https://quantumcomputingreport.com/coherence-quantum-launches-with-e2-78-million-3-1-million-usd-seed-round-to-scale-cryogenic-quantum-control/",
+     "quote": "«€2.78 million (~$3.122 million USD) in seed financing»",
+     "date": "2026-10-21"
+    }
+   ],
+   "note": "what it builds: Integrated cryogenic signalling and control platform for solid-state quantum processors.; hardware status: claimed; grade C; flags: claim-only; the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "organisation",
+    "id": "anderon"
+   },
+   "fields": {
+    "name": "Anderon",
+    "tier": "quantum-vendor",
+    "segment": "components-supply-chain",
+    "country": "United States",
+    "city": "Albany, NY",
+    "url": "https://www.anderon.com/",
+    "rolled_up_units": "",
+    "note": "Pure-play quantum foundry: 300 mm superconducting quantum wafers (qubits, quantum I/O, amplifiers and filters) at the Albany NanoTech Complex; a superconducting quantum PDK based on a licensed IBM qubit process.",
+    "listed_by": "QT-Map E2 diligence 2026-11",
+    "source_count": "1"
+   },
+   "sources": [
+    {
+     "url": "https://www.anderon.com/",
+     "quote": "«The world’s most advanced pure-play quantum foundry.»",
+     "date": "2026-11-07"
+    },
+    {
+     "url": "https://www.anderon.com/",
+     "quote": "«backed by $2B in new cash investment»",
+     "date": "2026-11-07"
+    },
+    {
+     "url": "https://quantumcomputingreport.com/anderon-releases-first-superconducting-quantum-pdk-for-300mm-wafer-fabrication/",
+     "quote": "«a standalone for profit quantum manufacturing enterprise»",
+     "date": "2026-10-15"
+    }
+   ],
+   "note": "what it builds: Pure-play quantum foundry: 300 mm superconducting quantum wafers (qubits, quantum I/O, amplifiers and filters) at the Albany NanoTech Complex; a superconducting quantum PDK based on a licensed IBM qubit process.; hardware status: announced; grade C; flags: founding date not verified, possible IBM roll-up question (editor's word); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "organisation",
+    "id": "skywater-technology"
+   },
+   "fields": {
+    "name": "SkyWater Technology",
+    "tier": "supplier-general",
+    "segment": "components-supply-chain",
+    "country": "United States",
+    "city": "",
+    "url": "https://www.skywatertechnology.com/",
+    "rolled_up_units": "",
+    "note": "General semiconductor foundry with a quantum line: superconducting qubit and processor manufacturing support, SP90 200 mm silicon-nitride photonics platform with waveguide-coupled SNSPDs, and the OnRamp foundry programme for quantum hardware start-ups.",
+    "listed_by": "QT-Map E2 diligence 2026-11",
+    "source_count": "1"
+   },
+   "sources": [
+    {
+     "url": "https://www.skywatertechnology.com/",
+     "quote": "«We enable the quantum industry to develop, integrate, and scale their technology.»",
+     "date": "2026-11-07"
+    },
+    {
+     "url": "https://www.skywatertechnology.com/",
+     "quote": "«SP90: Low-loss SiN foundation with advanced optical capabilities»",
+     "date": "2026-11-07"
+    },
+    {
+     "url": "https://quantumcomputingreport.com/skywater-technology-introduces-onramp-foundry-program-and-details-sp90-200-mm-silicon-nitride-quantum-photonics-platform/",
+     "quote": "«an open-access foundry commercialization initiative aimed at transitioning early-stage quantum hardware startups»",
+     "date": "2026-10-28"
+    }
+   ],
+   "note": "what it builds: General semiconductor foundry with a quantum line: superconducting qubit and processor manufacturing support, SP90 200 mm silicon-nitride photonics platform with waveguide-coupled SNSPDs, and the OnRamp foundry programme for quantum hardware start-ups.; hardware status: component shipping; grade C; flags: pre-cut-off, missing from the register; the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "organisation",
+    "id": "quoherent"
+   },
+   "fields": {
+    "name": "Quoherent",
+    "tier": "quantum-vendor",
+    "segment": "computing-hardware",
+    "country": "United States",
+    "city": "Huntsville, AL",
+    "url": "https://www.quoherent.com/",
+    "rolled_up_units": "",
+    "note": "Qubits based on topological materials, stated to operate at room temperature.",
+    "listed_by": "QT-Map E2 diligence 2026-11",
+    "source_count": "1"
+   },
+   "sources": [
+    {
+     "url": "https://www.quoherent.com/",
+     "quote": "«developing qubits utilizing topological materials that operate at room temperature»",
+     "date": "2026-11-07"
+    }
+   ],
+   "note": "what it builds: Qubits based on topological materials, stated to operate at room temperature.; hardware status: claimed; grade C; flags: claim-only, pre-cut-off?, missing from the register, city and funding source-not-confirmed; the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "organisation",
+    "id": "quantum-pulse-ventures"
+   },
+   "fields": {
+    "name": "Quantum Pulse Ventures",
+    "tier": "quantum-vendor",
+    "segment": "components-supply-chain",
+    "country": "Israel",
+    "city": "Tel Aviv",
+    "url": "https://quantumpulse.ventures/",
+    "rolled_up_units": "",
+    "note": "Integrated-photonics building blocks for photonic quantum computers and quantum routers (a universal directional coupler; the composite-pulse platform «Quantum Pulse 2.0»), licensed from Tel Aviv University patents; founded 2021; the qubit-reduction figures are the company's claims (claim-only)",
+    "listed_by": "QT-Map E2 diligence 2026-11",
+    "source_count": "1"
+   },
+   "sources": [],
+   "note": "Israel pass 3 (7 Nov 2026); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "organisation",
+    "id": "qiz-security"
+   },
+   "fields": {
+    "name": "QIZ Security",
+    "tier": "pqc",
+    "segment": "PQC-crypto",
+    "country": "Israel",
+    "city": "Ra'anana",
+    "url": "https://qizsecurity.com/",
+    "rolled_up_units": "",
+    "note": "Cryptography-management platform for the migration to quantum-safe cryptography (discovery, prioritisation, remediation, governance); founded 2025; named under post-quantum cryptography in the Israel Innovation Authority's report of Oct 2026",
+    "listed_by": "QT-Map E2 diligence 2026-11",
+    "source_count": "1"
+   },
+   "sources": [],
+   "note": "Israel pass 3 (7 Nov 2026); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "organisation",
+    "id": "cyqu"
+   },
+   "fields": {
+    "name": "CYQU",
+    "tier": "pqc",
+    "segment": "PQC-crypto",
+    "country": "Israel",
+    "city": "Binyamina-Giv'at Ada",
+    "url": "https://cyqu.org/",
+    "rolled_up_units": "",
+    "note": "Post-quantum cryptography tools and digital-trust infrastructure; founded 2025; an Israel Innovation Authority grantee record names «Cyqu Post-Quantum Information Security Ltd» (directory and grant-record title only — the owner page was not opened, source-not-confirmed)",
+    "listed_by": "QT-Map E2 diligence 2026-11",
+    "source_count": "1"
+   },
+   "sources": [],
+   "note": "Israel pass 3 (7 Nov 2026); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "organisation",
+    "id": "cyberridge"
+   },
+   "fields": {
+    "name": "CyberRidge",
+    "tier": "unclassified",
+    "segment": "communications-QKD",
+    "country": "Israel",
+    "city": "Tel Aviv",
+    "url": "https://cyberridge.suite.accessnewswire.com/",
+    "rolled_up_units": "",
+    "note": "A photonic encryption layer for optical-fibre transmission (data turned into encrypted optical noise that cannot be recorded), positioned as quantum-safe; not QKD and not PQC by its own description; funded by the Israel Innovation Authority under quantum communication (about €2.5 M, report of Oct 2026); no corporate site found — the media room is the owner's page; the tier is left unclassified",
+    "listed_by": "QT-Map E2 diligence 2026-11",
+    "source_count": "1"
+   },
+   "sources": [],
+   "note": "Israel pass 3 (7 Nov 2026); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "organisation",
+    "id": "quantum-gyro"
+   },
+   "fields": {
+    "name": "Quantum Gyro",
+    "tier": "quantum-vendor",
+    "segment": "sensing",
+    "country": "Israel",
+    "city": "Tel Aviv-Yafo",
+    "url": "https://www.quantumgyro.xyz/",
+    "rolled_up_units": "",
+    "note": "Nuclear-magnetic-resonance gyroscopes for satellite-independent navigation, a chip-scale NMR gyroscope as the stated goal; founded 2025; a controlling interest by Maris-Tech is reported in press not opened (source-not-confirmed — if confirmed, the row rolls up under Maris-Tech)",
+    "listed_by": "QT-Map E2 diligence 2026-11",
+    "source_count": "1"
+   },
+   "sources": [],
+   "note": "Israel pass 3 (7 Nov 2026); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "organisation",
+    "id": "israel-aerospace-industries"
+   },
+   "fields": {
+    "name": "Israel Aerospace Industries",
+    "tier": "quantum-vendor",
+    "segment": "sensing",
+    "country": "Israel",
+    "city": "Lod",
+    "url": "https://www.iai.co.il/",
+    "rolled_up_units": "Elta Systems (division; a member of the national quantum-computing consortium of 2023); RAMTA (division; quantum magnetometry)",
+    "note": "Quantum magnetometers (alkali-vapour, all-optical) in the RAMTA division per its own deck; with the Hebrew University of Jerusalem and Yissum, under the Israel Innovation Authority, a 20-qubit superconducting quantum computer announced operational on 16 Dec 2024 (press only: no name, no figures, no owner page; the IIA's report of Oct 2026 lists IAI under sensing only — the machine is a candidate, not a register row); state-owned",
+    "listed_by": "QT-Map E2 diligence 2026-11",
+    "source_count": "1"
+   },
+   "sources": [],
+   "note": "Israel pass 3 (7 Nov 2026); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "organisation",
+    "id": "rafael-advanced-defense-systems"
+   },
+   "fields": {
+    "name": "Rafael Advanced Defense Systems",
+    "tier": "quantum-vendor",
+    "segment": "sensing",
+    "country": "Israel",
+    "city": "Haifa",
+    "url": "https://www.rafael.co.il/",
+    "rolled_up_units": "",
+    "note": "Quantum gravimetry per the Israel Innovation Authority's company map (Oct 2026 report) and press of Oct 2026; a member of the national quantum-computing consortium of 2023; no owner page names a quantum product or unit (source-not-confirmed on the owner side); state-owned",
+    "listed_by": "QT-Map E2 diligence 2026-11",
+    "source_count": "1"
+   },
+   "sources": [],
+   "note": "Israel pass 3 (7 Nov 2026); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "remove",
+   "subject": {
+    "type": "organisation",
+    "id": "nvision-imaging-technologies"
+   },
+   "old": {
+    "name": "NVISION Imaging Technologies",
+    "tier": "quantum-vendor",
+    "segment": "sensing",
+    "country": "Germany",
+    "city": "Ulm",
+    "url": "https://www.nvision-imaging.com/",
+    "rolled_up_units": "",
+    "note": "",
+    "listed_by": "European Quantum Industry Consortium; Quantum Business Network",
+    "source_count": "2"
+   },
+   "note": "duplicate merged into NVision — the roll-up rule of the corporate-families memo (14 Sep 2026): one organisation, one record; reversible from this item; the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "remove",
+   "subject": {
+    "type": "organisation",
+    "id": "atlantic-quantum"
+   },
+   "old": {
+    "name": "Atlantic Quantum",
+    "tier": "quantum-vendor",
+    "segment": "computing-hardware",
+    "country": "United States",
+    "city": "Cambridge, MA",
+    "url": "https://www.chalmers.se/en/centres/wacqt/industry-and-utilisation/spin-offs/",
+    "rolled_up_units": "",
+    "note": "",
+    "listed_by": "Chalmers WACQT; QT-Map metro census; Quantum Computing Report; Quantum Zeitgeist; The Quantum Insider",
+    "source_count": "5"
+   },
+   "note": "duplicate rolled into Google Quantum AI (ex-Atlantic Quantum) — the roll-up rule of the corporate-families memo (14 Sep 2026): one organisation, one record; reversible from this item; the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»"
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "quantum-art"
+   },
+   "note": "The 200-ion and 2026-06-16 fault-tolerance items were read as headlines only; no paper checked. SPAC not on the owner's newsroom.",
+   "sources": [
+    "https://quantum-art.tech/resources/quantum-art-extends-series-a-funding-to-140-millions-with-participation-from-global-financial-leaders",
+    "https://quantum-art.tech/resources/quantum-art-extends-series-a-funding-to-140-millions-with-participation-from-global-financial-leaders",
+    "https://quantum-art.tech"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "quantum-source"
+   },
+   "note": "City not on the pages fetched (register Rehovot kept). Linked arXiv blueprint not opened. Path ph_fusion is a proposal.",
+   "sources": [
+    "https://qs-labs.com",
+    "https://qs-labs.com/products",
+    "https://qs-labs.com/products"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "quamcore"
+   },
+   "note": "hardware_status 'none' means no QuamCore-owned device published (not software-only); the Kerr-cat device of arXiv:2611.04868 is a Weizmann-lab device co-authored and part-funded by QuamCore. The machine id quamcore is in machines.json but absent from machines.csv by grep.",
+   "sources": [
+    "https://www.quamcore.com/",
+    "https://www.quamcore.com/",
+    "https://arxiv.org/abs/2611.04868"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "quantum-transistors"
+   },
+   "note": "The page does not name NV centres; 'diamond solid-state' confirmed. City unresolved.",
+   "sources": [
+    "https://www.quantumtransistors.com/",
+    "https://www.quantumtransistors.com/",
+    "https://www.quantumtransistors.com/news"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "q-factor"
+   },
+   "note": "hardware_status 'none' = no device or testbed published (a hardware company, not software-only). The phrase «quantum atom accuracy» also appears in the QXL 10-Q (Note 1.C) — a name coincidence to check, no link asserted.",
+   "sources": [
+    "https://prnewswire.com/il/news-releases/q-factor-emerges-from-stealth-with-24m-and-backing-from-intel-capital-to-build-million-qubit-quantum-computer-302736176.html",
+    "https://prnewswire.com/il/news-releases/q-factor-emerges-from-stealth-with-24m-and-backing-from-intel-capital-to-build-million-qubit-quantum-computer-302736176.html",
+    "https://prnewswire.com/il/news-releases/q-factor-emerges-from-stealth-with-24m-and-backing-from-intel-capital-to-build-million-qubit-quantum-computer-302736176.html"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "quantum-x-labs"
+   },
+   "note": "No Q3 2026 10-Q yet; the last 15 k characters of the Q2 10-Q not read. EDGAR full-text hits after 16 Sep for other registrants (Gix Internet, Nexentis, Polyrizon) not opened.",
+   "sources": [
+    "https://quantumxlabs.xyz/",
+    "https://www.sec.gov/Archives/edgar/data/797542/000149315226037811/form10-q.htm",
+    "https://www.sec.gov/Archives/edgar/data/797542/000149315226037811/form10-q.htm"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "quantum-machines"
+   },
+   "note": "the IQCC's own page (iqcc.ai DNS failure, iqcc.org parked) and the QXL release of 2026-06-09 were not read; the IQCC hosted-systems quotes come from search summaries",
+   "sources": [
+    "https://thequantuminsider.com/2026/06/17/quantum-machines-acquires-pcb-engineering-and-opens-budapest-rd-hub/",
+    "https://thequantuminsider.com/2026/05/05/quantum-machines-acquires-qharbor/",
+    "https://www.timesofisrael.com/amid-war-israel-opens-rd-center-to-put-the-country-on-the-map-of-quantum-computing/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "classiq"
+   },
+   "note": "Intel SEC filing not checked; price not in Intel's release",
+   "sources": [
+    "https://www.intel.com/content/www/us/en/newsroom/news/corporate/intel-classiq-accelerate-scalable-quantum-computing.html",
+    "https://www.intel.com/content/www/us/en/newsroom/news/corporate/intel-classiq-accelerate-scalable-quantum-computing.html",
+    "https://www.classiq.io/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "qedma"
+   },
+   "note": "city and founding year not on the about page",
+   "sources": [
+    "https://qedma.com/",
+    "https://www.qedma.com/news/",
+    "https://www.qedma.com/news/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "qarakal"
+   },
+   "note": "scope settled as superconducting hardware, not PQC/security; `transmon` station assumed from «superconducting»",
+   "sources": [
+    "https://www.haaretz.com/haaretz-labels/2026-01-18/ty-article-labels/from-theory-to-the-lab-realizing-the-quantum-advantage/0000019b-d0db-d2f8-af9b-f3dbf3920000",
+    "https://www.calcalistech.com/ctechnews/article/hjysac22gg"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "quantymize"
+   },
+   "note": "city, founding and funding not found",
+   "sources": [
+    "https://quantymize.com",
+    "https://quantymize.com"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "qtrex"
+   },
+   "note": "SEC 6-K/20-F not read; Nasdaq release on the AME acquisition timed out",
+   "sources": [
+    "https://www.q-trex.com/",
+    "https://q-trex.com/about/",
+    "https://thequantuminsider.com/2026/05/20/inspira-technologies-qtrex-quantum-qtex-nasdaq/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "raicol-crystals"
+   },
+   "note": "legal relation (subsidiary vs division) not stated beyond «part of»",
+   "sources": [
+    "https://raicol-quantum.com/",
+    "https://raicol.com/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "israel-aerospace-industries"
+   },
+   "note": "No IAI page or release found; the Israel Innovation Authority page not fetched; whether QHIPU is IAI's lab is implied, not stated verbatim; en.huji.ac.il 403.",
+   "sources": [
+    "https://europeanfriends.huji.ac.il/node/3189646",
+    "https://europeanfriends.huji.ac.il/node/3189646",
+    "https://en.globes.co.il/en/article-1001496950"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "lead:israel-aerospace-industries"
+   },
+   "note": "machine lead for the machine register (the editor's tier): {\"name\": \"Israeli 20-qubit superconducting quantum computer (IIA / IAI / Hebrew University / Yissum)\", \"status_word\": \"announced\", \"qubits\": \"20\", \"date\": \"2024-12-16\", \"url\": \"https://europeanfriends.huji.ac.il/node/3189646\", \"quote\": \"«20-qubit quantum computer» … «developed under the leadership of the Israel Innovation Authority» … «is now operational»\"}",
+   "sources": [
+    "https://europeanfriends.huji.ac.il/node/3189646"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "rafael-advanced-defense-systems"
+   },
+   "note": "rafael.co.il empty to the fetcher; press quotes from search-result text; whether a group in a division is a named quantum business is the editor's word.",
+   "sources": [
+    "https://www.insidequantumtechnology.com/news-archive/rapael-advanced-defense-systems-investing-in-quantum-technology-for-accelerometers-gyroscopes"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "elbit-systems"
+   },
+   "note": "Only the home page and one site-restricted search checked.",
+   "sources": [
+    "https://www.elbitsystems.com/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "comda"
+   },
+   "note": "No quantum product found; what the EQIC listing was based on is unknown.",
+   "sources": [
+    "https://www.comsigntrust.com/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "tabor-electronics"
+   },
+   "note": "The site does not state the headquarters city; Nesher kept from the register.",
+   "sources": [
+    "https://www.taborelec.com/Quantum-Computing",
+    "https://www.taborelec.com/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "tower-semiconductor"
+   },
+   "note": "No superconducting foundry service found; the exact fab station id is the editor's.",
+   "sources": [
+    "https://towersemi.com/2026/02/19/02192026/",
+    "https://quantumcomputingreport.com/tower-semiconductor-and-xanadu-industrialize-silicon-photonic-quantum-stack/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "heqa-security"
+   },
+   "note": "The owner's pages do not state the QuantLR name history in words.",
+   "sources": [
+    "https://heqa-sec.com/",
+    "https://heqa-sec.com/contact/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "enquantum"
+   },
+   "note": "Owner site script-rendered; /about 404; Altera document 404.",
+   "sources": [
+    "https://enquantum.io/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "accubeat"
+   },
+   "note": "City not on the home page; the page does not use the word quantum.",
+   "sources": [
+    "https://www.accubeat.com/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "nvidia-israel-quantum-work"
+   },
+   "note": "nvidia.com/en-us/solutions/quantum-computing/dgx-quantum/ returned 404; the data-center/dgx-quantum page carries no DGX Quantum text.",
+   "sources": [
+    "https://www.nvidia.com/en-us/data-center/dgx-quantum/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "quint-computing"
+   },
+   "note": "Founding date (Oct 2025), city and FAU origin only from trade press; the owner page gives no HQ, founding date or named device. Quotes are as returned by the WebFetch summariser.",
+   "sources": [
+    "https://quint-computing.com/",
+    "https://quint-computing.com/",
+    "https://quint-computing.com/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "nvision"
+   },
+   "note": "Whether the sensing/MRI business and the quantum-computing line are one legal entity was not verified; 'Pixie' qubit name is press-only (not on the owner page). Out of the strict 'new since 16 Sep' scope but a hardware segment change.",
+   "sources": [
+    "https://www.nvision-quantum.com",
+    "https://www.nvision-quantum.com",
+    "https://www.nvision-quantum.com"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "oratomic"
+   },
+   "note": "City (Pasadena) in the register vs the T2 lead's Berkeley/LBNL origin — not reconciled; arXiv:2606.24869 not opened.",
+   "sources": [
+    "https://oratomic.com/",
+    "https://oratomic.com/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "flipflop-tuoyuan"
+   },
+   "note": "No owner website found; the TQI article says the funding details could not be independently verified. Grade stays P until an owner page or filing is opened.",
+   "sources": [
+    "https://quantumcomputingreport.com/chinese-startup-flipflop-tuoyuan-emerges-with-major-vc-backing-for-100-logical-qubit-neutral-atom-systems/",
+    "https://quantumcomputingreport.com/chinese-startup-flipflop-tuoyuan-emerges-with-major-vc-backing-for-100-logical-qubit-neutral-atom-systems/",
+    "https://thequantuminsider.com/2026/10/19/chinas-tuoyuan-targets-neutral-atom-quantum-computing/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "bingchen-quantum"
+   },
+   "note": "No owner page found; whether the cold-atom source is shipping is not verified. Possible link to the T2 lead 'QudeLeap' (HKUST(Guangzhou), Rb+Yb atoms) not established — the 36Kr page does not name QudeLeap.",
+   "sources": [
+    "https://eu.36kr.com/en/p/3993888512801792",
+    "https://eu.36kr.com/en/p/3993888512801792"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "coherence-quantum"
+   },
+   "note": "No founding date on the owner page; funding press-only. Station/path touchpoints are a guess (solid-state).",
+   "sources": [
+    "https://www.coherencequantum.tech/",
+    "https://www.coherencequantum.tech/",
+    "https://quantumcomputingreport.com/coherence-quantum-launches-with-e2-78-million-3-1-million-usd-seed-round-to-scale-cryogenic-quantum-control/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "anderon"
+   },
+   "note": "Whether Anderon was first visible before or after 16 Sep 2026 is not established; 'component shipping' rests on PDK licensing offered — no named customer wafer seen; could be 'announced'.",
+   "sources": [
+    "https://www.anderon.com/",
+    "https://www.anderon.com/",
+    "https://quantumcomputingreport.com/anderon-releases-first-superconducting-quantum-pdk-for-300mm-wafer-fabrication/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "skywater-technology"
+   },
+   "note": "Tier supplier-general vs quantum-vendor is the editor's word (no named quantum subsidiary seen); HQ city and exchange/ticker not on the fetched page.",
+   "sources": [
+    "https://www.skywatertechnology.com/",
+    "https://www.skywatertechnology.com/",
+    "https://quantumcomputingreport.com/skywater-technology-introduces-onramp-foundry-program-and-details-sp90-200-mm-silicon-nitride-quantum-photonics-platform/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "quoherent"
+   },
+   "note": "City (Huntsville) and seed figure only from a WebSearch summary; no dated page found, so the cut-off position is unknown.",
+   "sources": [
+    "https://www.quoherent.com/"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "organisation",
+    "id": "atlantic-quantum"
+   },
+   "note": "Google's own announcement page not fetched (guessed blog URL 404); quote is the HPCwire headline as returned by search, not opened. Hardware status 'demonstrated' rests on the company's pre-acquisition papers, not re-checked here.",
+   "sources": [
+    "https://www.hpcwire.com/2025/10/03/google-quantum-ai-brings-atlantic-quantum-into-its-team/"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "register",
+    "id": "quantum-organisation-register"
+   },
+   "fields": {
+    "event": "E2 apply",
+    "date": "2026-11-07"
+   },
+   "note": "E2 company diligence applied to quantum-organisation-register.csv: 23 rows updated, 15 added, 2 removed (two duplicates merged); the editor's words of 7 Nov 2026 (~08:15 UTC): «Список Израиля доведи до полного (реши проблемы). Примени новые и обновлённые.»; the diligence notes stay in quantum-register/diligence-2026.11/"
   }
  ]
 }
