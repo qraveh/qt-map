@@ -166,6 +166,7 @@ document.addEventListener('keydown',ev=>{if(ev.key==='Escape')select(null);});
 const state={focus:null,isolate:null,machine:null,lens:'family',lensFilter:null,showConf:false,showRep:false,showReq:false,zoom:1,view:'map',cmp:[],sort:null,sortDir:1,tscopeAll:false};   // view, cmp (pinned technologies, ≤ 4), sort: the Table view (ticket 20261106-1)
 var mapBooted=false;   // set after the first render: a #map: address reveals the stage only when it arrives later (at load the page opens at its top)
 var cmpShow=false;   // "show on the map": the pinned technologies and their architectures lit until the next selection
+var cmpOn=null;   // the compare tick boxes of the table: null = shown while pins exist, true / false = the reader's choice by the "compare technologies" control (9 Nov 2026, remark 3 of the editor's audit)
 // zoom scales the *rendered* SVG only; the viewBox and every node attribute stay in map units,
 // so anything that scrolls the wrapper to a node must multiply that node's attributes by state.zoom.
 function scrollToNode(m){ const z=state.zoom||1; wrap.scrollTo({left:Math.max(0,m.x*z-200),top:Math.max(0,m.y*z-200),behavior:'smooth'}); }
@@ -253,6 +254,7 @@ function relabel(){ st.attr('aria-label',d=>N(d)+' · '+T('layer','слой','ש
   document.querySelectorAll('#lens option').forEach(o=>{o.textContent=N(LENSES[o.value]);});
   glyphKeys();
   document.querySelectorAll('#machine optgroup').forEach(o=>{ if(FAMN[o.dataset.fam])o.label=T(...FAMN[o.dataset.fam]); });
+  const mo=document.querySelector('#machine option[value=""]'); if(mo)mo.textContent=T('choose a machine…','выберите машину…','בחרו מכונה…');   // the entry point names its action; the group stays in view with the bar folded (9 Nov 2026, remark 6 of the editor's audit)
   // the card on screen is re-rendered in the new language as it is — the same card, open or closed (a closed machine card no longer reopens,
   // an architecture card opened from a machine card is no longer replaced by it: 29 Sep 2026)
   renderTable(); applyLens(); if(!insp.hidden&&cardOf){ const k=cardOf[0], id=cardOf[1]; if(k==='node'&&NODE[id])inspect(NODE[id]); else if(k==='machine'&&MBY[id])inspectMachine(MBY[id]); else if(k==='path'&&PATH[id])inspectPath(PATH[id]); }
@@ -265,7 +267,7 @@ function releaseIsolate(){ state.isolate=null; chipsWrap.querySelectorAll('.chip
 function releaseFocus(){ state.focus=null; st.classed('sel',false); }
 function releaseMachine(){ state.machine=null; const ms=document.getElementById('machine'); if(ms)ms.value=''; st.classed('altuse',false); }
 function select(id){ cmpShow=false; if(id&&id!==state.focus)pushHist(); if(id){ const ps=pathsOf(id); if(state.isolate&&!ps.has(state.isolate))releaseIsolate(); if(state.machine&&MBY[state.machine]&&!ps.has(MBY[state.machine].path))releaseMachine(); }
-  state.focus=id; st.classed('sel',d=>d.id===id); drawEdges(); dimming(); if(id){insp.hidden=false; inspect(NODE[id]);} else if(state.machine&&MBY[state.machine]){ inspectMachine(MBY[state.machine]); } else {insp.hidden=true; insp.innerHTML='';} sheetRoom(); }
+  state.focus=id; st.classed('sel',d=>d.id===id); drawEdges(); dimming(); if(id){insp.hidden=false; inspect(NODE[id]);} else if(state.machine&&MBY[state.machine]){ inspectMachine(MBY[state.machine]); } else if(state.isolate&&PATH[state.isolate]){ inspectPath(PATH[state.isolate]); } else {insp.hidden=true; insp.innerHTML=''; cardOf=null;} sheetRoom(); }   // the card follows the selection that remains — the machine's, else the isolated architecture's (9 Nov 2026, remark 2 of the editor's audit: Escape and the background click left the isolate without its card)
 function sheetRoom(){ try{ document.body.classList.toggle('has-sheet', !insp.hidden && sheetMode()); }catch(e){} }
 window.__sheetRoom=sheetRoom;   // room to scroll the map above the bottom sheet (≤ 1024 px)
 function edgeOn(e){ return (e.type==='conflicts'&&state.showConf)||(e.type==='replaces'&&state.showRep)||(e.type==='requires'&&state.showReq); }
@@ -366,6 +368,7 @@ function pageLink(kind,id){ return `<a class="pagelink" href="${kind}/${id}.html
 function gripHTML(){ const sheet=insp.classList.contains('sheet-max');
   return '<div class="grip" data-grip="1">⠿ <span class="sp"></span>'+
     '<button type="button" data-back="1" title="'+T('back to the previous card','к предыдущей карточке','חזרה לכרטיס הקודם')+'" aria-label="back"'+(HIST.length?'':' disabled')+'>←</button>'+
+    '<button type="button" data-dock="side" title="'+T('beside the map','рядом с картой','לצד המפה')+'">▣</button>'+
     '<button type="button" data-dock="left" title="dock left">⇤</button>'+
     '<button type="button" data-dock="right" title="dock right">⇥</button>'+
     '<button type="button" data-sheet="1" aria-pressed="'+String(sheet)+'" aria-label="expand card">'+(sheet?'⌄':'⌃')+'</button>'+
@@ -393,7 +396,7 @@ function inspectPathHTML(p){ const L=lang();
    <dt>${T('idle exposure per round','экспозиция простоя за раунд','חשיפת סרק לסבב')}</dt><dd>t_round/T2 = ${fE(CO.idle_exposure)} · ${T('measured idle error','измеренная ошибка простоя','שגיאת סרק נמדדת')} ${fE(CO.idle_measured)}</dd>
    ${(R.notes||[]).length?`<dt>${T('notes','примечания','הערות')}</dt><dd class="empty">${esc((R.notes||[]).join('; '))}</dd>`:''}
   </dl><div class="empty" style="margin-top:4px">${T('t_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — a sum of the round\'s phases, from the code node, the attributes and the standard records; the measured cycle is the check.','t_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — сумма фаз раунда из узла кода, атрибутов и стандартных рекордов; измеренный цикл — проверка.','t_round = d₂·(t_2Q + t_move) + d₁·t_1Q + t_meas + t_reset — סכום שלבי הסבב, מצומת הקוד, מהתכונות ומהרשומות הסטנדרטיות; המחזור הנמדד הוא הבדיקה.')}</div></div>
-  <div class="space"><h4>${T('Technologies by layer — primary, then alternates','Технологии по слоям — основная, затем альтернативы','טכנולוגיות לפי שכבה — הראשית, ואחריה החלופיות')}</h4><table class="ptab">${rows}</table></div>
+  <div class="space"><h4>${T('Technologies by layer — primary, then alternates','Технологии по слоям — основная, затем альтернативы','טכנולוגיות לפי שכבה — הראשית, ואחריה החלופיות')}</h4><table class="ptab">${rows}</table><div class="empty" style="margin-top:4px">${T('a technology name selects it on the map — its card opens here; ← returns to this card','имя технологии выбирает её на карте — её карточка откроется здесь; ← возвращает к этой карточке','שם טכנולוגיה בוחר אותה במפה — הכרטיס שלה ייפתח כאן; ← מחזיר לכרטיס הזה')}</div></div>
   <div class="space"><h4>${T('Relations within the architecture','Связи внутри архитектуры','קשרים בתוך הארכיטקטורה')}</h4>${relHTML}<div class="empty" style="margin-top:3px">${T('the edge toggles draw each type on the map, among these technologies only','переключатели рёбер рисуют каждый тип на карте — только между этими технологиями','מתגי הקשתות מציירים במפה כל סוג, בין הטכנולוגיות האלה בלבד')}</div></div>
   <div class="space"><h4>${T('Reading','Чтение','סימוני המפה')}</h4><div>${T('hatched (crossing)','штрихованные (сквозные)','מקווקוות (חוצות)')}: ${offs.length?offs.map(id=>`<a href="#" data-goto="${id}">${esc(N(NODE[id]))}</a>`).join(', '):'—'}</div><div>∅ ${T('empty slots','пустые слоты','משבצות ריקות')}: ${empties.length?empties.map(id=>`<a href="#" data-goto="${id}">${esc(N(NODE[id]))}</a>`).join(', '):'—'}</div></div>
   ${pathMachinesHTML(p)}`;
@@ -668,15 +671,19 @@ function torder(){ const base=TORDER.slice(); if(!state.sort)return base; const 
     const r=(typeof ka==='number'&&typeof kb==='number')?ka-kb:(ka<kb?-1:(ka>kb?1:0)); return r?r*dir:idx[a]-idx[b]; }); }
 function setSort(col){ if(!TCOL.includes(col)||col==='layer')return;
   if(state.sort!==col){ state.sort=col; state.sortDir=1; } else if(state.sortDir>0){ state.sortDir=-1; } else { state.sort=null; state.sortDir=1; }
-  const lk=TLENS[col]; if(state.sort&&lk&&LENSES[lk]&&state.lens!==lk){ cmpShow=false; state.lens=lk; state.lensFilter=null; lensSel.value=lk; applyLens(); drawEdges(); dimming(); }   // one gesture = "look at this attribute"
-  renderTable(); }
+  const lk=TLENS[col]; let kept=null;
+  if(state.sort&&lk&&LENSES[lk]&&state.lens!==lk){ if(state.lensFilter==null){ cmpShow=false; state.lens=lk; lensSel.value=lk; applyLens(); drawEdges(); dimming(); } else kept=state.lens; }   // one gesture = "look at this attribute" — unless a filter is kept: the reader's filter is never discarded by a sort (9 Nov 2026, remark 2.1 of the editor's audit)
+  renderTable();
+  if(kept){ const cn=tcols()[TCOL.indexOf(col)], ln=N(LENSES[kept]); setStatus(T(`sorted by ${cn}; the lens stays on ${ln} with its filter — choose the lens to change it`,`отсортировано по столбцу «${cn}»; линза остаётся «${ln}» с её фильтром — смените линзу, чтобы изменить`,`מוין לפי ${cn}; העדשה נשארת ${ln} עם המסנן שלה — בחרו עדשה כדי לשנות`)); } }
 // ---- glyphs
+// (b) time: a ruler from 1 ns to 10 ms (TMIN … TMAX, log scale; the CSS draws the baseline and a tick per decade, the header names the scale) with a vertical
+// mark at the value — not a dot on a gradient track, which read as a slider's handle and as "further right = more" (the editor, 9 Nov 2026, remark 5); hollow = heralded
 function trackHTML(n){ const t=n.b.t; if(t==null)return ''; const x=Math.max(0,Math.min(1,(t-TMIN)/(TMAX-TMIN))); let c='var(--ink)'; try{ c=timeScale(t); }catch(e){}
   return `<span class="ttrack" aria-hidden="true"><i class="${n.b.det==='her'?'her':''}" style="inset-inline-start:${(x*100).toFixed(1)}%;--c:${c}"></i></span>`; }
 function barHTML(n){ return `<span class="tbar" aria-hidden="true">${FORD.map(x=>`<i class="${(n.f||[]).includes(x)?'on':''}" style="--c:${LENSPAL[CATS.f.indexOf(x)%LENSPAL.length]}" title="${esc(catLabel('f',x))}"></i>`).join('')}</span>`; }
 // ---- rendering
 function pinBox(id){ return `<input type="checkbox" data-pin="${id}" ${state.cmp.includes(id)?'checked':''} aria-label="${esc(T('compare','сравнить','השוואה'))}: ${esc(tname(id))}">`; }
-function firstMark(){ return `<span class="tfirst">${T('selected — outside the filter','выбрана — вне фильтра','נבחרה — מחוץ למסנן')}</span>`; }
+function firstMark(){ return `<span class="tfirst">${T('selected — outside the shown rows','выбрана — вне показанных строк','נבחרה — מחוץ לשורות המוצגות')}</span>`; }
 function rowHTML(id){ const n=NODE[id], c=tcells(id); if(!n||!c)return '';
   const td=(i,cls,glyph)=>`<td class="${cls||''}${c[i]==='—'?' na':''}">${glyph||''}${esc(c[i])}</td>`;
   return `<tr data-id="${id}" class="trow"><td class="tpin">${pinBox(id)}</td><td class="tl"><span class="tln">${n.layer}</span> ${esc(tlayer(n.layer))}</td><th scope="row" class="tn"><button type="button" class="tgo" data-goto="${id}" title="${esc(T('open the card; the map shows the technology when you switch back','открыть карточку; карта покажет технологию при возврате','פתיחת הכרטיס; המפה תציג את הטכנולוגיה בחזרה'))}">${esc(tname(id))}</button> <span class="tid">${id}</span>${firstMark()}</th>${td(0)}${td(1,'tt',trackHTML(n))}${td(2)}${td(3)}${td(4)}${td(5)}${td(6)}${td(7,'tf',barHTML(n))}${td(8)}${td(9)}${td(10)}</tr>`; }
@@ -688,19 +695,20 @@ function parkLegend(){ const leg=document.getElementById('lenslegend'), bar=docu
 function placeLegend(){ const leg=document.getElementById('lenslegend'); if(!leg)return; if(state.view==='table'&&mtab){ const head=mtab.querySelector('.thead'); if(head&&leg.parentElement!==head)head.insertBefore(leg,head.firstChild); } else parkLegend(); }   // one legend, one implementation: above the table in Table view, in the bar in Map view
 let lastFocus=null, lastFirst=null, lastScope=null;
 function focusKey(){ const ae=document.activeElement; if(!ae||!mtab||!mtab.contains(ae)||!ae.dataset)return null; const d=ae.dataset;   // a keyboard user's place across a re-render (the accessibility walk of 6 Nov 2026)
-  if(d.goto)return `[data-goto="${d.goto}"]`; if(d.pin)return `[data-pin="${d.pin}"]`; if(d.col)return `th.tc-${d.col} .tsort`; if(d.tshowall)return '[data-tshowall]'; if(d.tscope)return '[data-tscope]'; if(d.lv!=null)return `#lenslegend [data-lv="${d.lv}"]`; return null; }
+  if(d.goto)return `[data-goto="${d.goto}"]`; if(d.pin)return `[data-pin="${d.pin}"]`; if(d.col)return `th.tc-${d.col} .tsort`; if(d.tshowall)return '[data-tshowall]'; if(d.tscope)return '[data-tscope]'; if(d.cmptoggle)return '[data-cmptoggle]'; if(d.tunscope)return `[data-tunscope="${d.tunscope}"]`; if(d.lv!=null)return `#lenslegend [data-lv="${d.lv}"]`; return null; }
 function renderTable(){ if(!mtab)return; const fk=focusKey(); parkLegend(); const L=lang(), cols=tcols(), phone=phoneTable(), order=torder(), grouped=!state.sort;
   const cap=(TBL.cap[L]||TBL.cap.en||'').replace('{s71}',`<a class="xref" href="#${L}-s7-1">§7.1</a>`);
   if(vsw)vsw.setAttribute('aria-label',T('view: map or table','вид: карта или таблица','תצוגה: מפה או טבלה'));
-  let h=`<div class="thead"><div class="tmeta"><span class="tshown" id="tshown" aria-live="polite"></span><span class="tstatus" id="tstatus" aria-live="polite"></span></div></div>`;
+  const cmpOnNow=(cmpOn==null)?state.cmp.length>0:cmpOn; mtab.classList.toggle('cmpon',cmpOnNow);   // the pin column shows behind "compare technologies", or while pins exist (9 Nov 2026, remark 3)
+  let h=`<div class="thead"><div class="tmeta"><span class="tshown" id="tshown" aria-live="polite"></span><button type="button" class="chip cmptog" data-cmptoggle="1" aria-pressed="${String(cmpOnNow)}" title="${esc(T('show a tick box on every row: tick up to four technologies to see their attributes side by side under the table','показать флажок в каждой строке: отметьте до четырёх технологий, чтобы увидеть их атрибуты рядом под таблицей','הצגת תיבת סימון בכל שורה: סמנו עד ארבע טכנולוגיות כדי לראות את התכונות שלהן זו לצד זו מתחת לטבלה'))}">${T('compare technologies','сравнить технологии','השוואת טכנולוגיות')}</button>${cmpOnNow?`<span class="cmphint">${T('tick up to four technologies — they appear side by side under the table','отметьте до четырёх технологий — они встанут рядом под таблицей','סמנו עד ארבע טכנולוגיות — הן יוצגו זו לצד זו מתחת לטבלה')}</span>`:''}<span class="tstatus" id="tstatus" aria-live="polite"></span></div></div>`;
   if(phone){ const f=state.focus, scope=(f&&!state.tscopeAll)?NODE[f].layer:null; lastScope=scope;
     const ids=order.filter(id=>scope==null||NODE[id].layer===scope);
     h+=`<div class="tscope">${scope!=null?`${T('layer','слой','שכבה')} ${scope} · ${esc(tlayer(scope))} · <button type="button" class="k lk" data-tscope="all">${T('show all layers','показать все слои','הצג את כל השכבות')}</button>`:(f?`${T('all layers','все слои','כל השכבות')} · <button type="button" class="k lk" data-tscope="layer">${T('only the layer of the selected technology','только слой выбранной технологии','רק השכבה של הטכנולוגיה שנבחרה')}</button>`:T('all layers','все слои','כל השכבות'))}</div>`;
     h+=`<div class="tscroll"><div class="tcards">${ids.map(cardHTML).join('')}</div><p class="tcap">${cap}</p></div>`; }
   else { lastScope=null;
-    h+=`<div class="tscroll"><table class="ttab" dir="${document.documentElement.dir||'ltr'}"><caption>${cap}</caption><thead><tr><th scope="col" class="tpin"><span class="sr-only">${T('compare','сравнить','השוואה')}</span></th>`
-      +cols.map((c,i)=>{ const k=TCOL[i], on=state.sort===k, sortable=k!=='layer'; const ttl=T('sort by this column — a second click reverses, a third restores the layer order','сортировать по этому столбцу — второй клик в обратном порядке, третий возвращает порядок по слоям','מיון לפי העמודה — לחיצה שנייה הופכת את הסדר, שלישית מחזירה את סדר השכבות')+(TLENS[k]?' · '+T('also sets the lens','и задаёт линзу','וגם קובעת את העדשה'):'');
-        return `<th scope="col" class="tc-${k}"${sortable?` aria-sort="${on?(state.sortDir>0?'ascending':'descending'):'none'}"`:''}>${sortable?`<button type="button" class="tsort" data-col="${k}" title="${esc(ttl)}">${esc(c)}<span class="sortind" aria-hidden="true">${on?(state.sortDir>0?' ▲':' ▼'):''}</span></button>`:esc(c)}</th>`; }).join('')+`</tr></thead><tbody>`;
+    h+=`<div class="tscroll"><table class="ttab" dir="${document.documentElement.dir||'ltr'}"><caption>${cap}</caption><thead><tr><th scope="col" class="tpin" title="${esc(T('compare: tick up to four technologies','сравнить: отметьте до четырёх технологий','השוואה: סמנו עד ארבע טכנולוגיות'))}"><span aria-hidden="true">☑</span><span class="sr-only">${T('compare','сравнить','השוואה')}</span></th>`
+      +cols.map((c,i)=>{ const k=TCOL[i], on=state.sort===k, sortable=k!=='layer'; const ttl=T('sort by this column — a second click reverses, a third restores the layer order','сортировать по этому столбцу — второй клик в обратном порядке, третий возвращает порядок по слоям','מיון לפי העמודה — לחיצה שנייה הופכת את הסדר, שלישית מחזירה את סדר השכבות')+(TLENS[k]?' · '+T('also sets the lens — unless a filter is kept','и задаёт линзу — если не задан фильтр','וגם קובעת את העדשה — אלא אם נשמר מסנן'):'')+(k==='time'?' · '+T('the ruler: 1 ns … 10 ms, shorter = faster','линейка: 1 ns … 10 ms, короче = быстрее','הסרגל: 1 ns … 10 ms, קצר יותר = מהיר יותר'):'');
+        return `<th scope="col" class="tc-${k}"${sortable?` aria-sort="${on?(state.sortDir>0?'ascending':'descending'):'none'}"`:''}>${sortable?`<button type="button" class="tsort" data-col="${k}" title="${esc(ttl)}">${esc(c)}<span class="sortind" aria-hidden="true">${on?(state.sortDir>0?' ▲':' ▼'):''}</span></button>`:esc(c)}${k==='time'?`<span class="tscale" aria-hidden="true" title="${esc(T('the ruler runs from 1 ns to 10 ms (log scale); a shorter time is a faster operation','линейка от 1 ns до 10 ms (логарифмическая шкала); чем короче время, тем быстрее операция','הסרגל נמשך מ-1 ns עד 10 ms (סולם לוגריתמי); זמן קצר יותר הוא פעולה מהירה יותר'))}"><span>ns</span><span class="sep"></span><span>ms</span></span>`:''}</th>`; }).join('')+`</tr></thead><tbody>`;
     let last=null; order.forEach(id=>{ const n=NODE[id]; if(grouped&&n.layer!==last){ last=n.layer; h+=`<tr class="tgrp" data-layer="${n.layer}"><th scope="colgroup" colspan="${cols.length+1}">${n.layer} · ${esc(tlayer(n.layer))} — ${techsT((byLayer[n.layer]||[]).length)}</th></tr>`; } h+=rowHTML(id); });
     h+=`</tbody></table></div>`; }
   mtab.innerHTML=h; placeLegend(); wireTable(); lastFirst=null; tableSync(); if(fk){ const nb=mtab.querySelector(fk); if(nb)try{ nb.focus({preventScroll:true}); }catch(e){} } }
@@ -708,21 +716,29 @@ function wireTable(){ if(!mtab)return;
   mtab.querySelectorAll('[data-pin]').forEach(cb=>cb.addEventListener('change',()=>{ if(!togglePin(cb.dataset.pin,cb.checked))cb.checked=false; }));
   mtab.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',ev=>{ ev.preventDefault(); const id=b.dataset.goto; select(id===state.focus?null:id); }));   // the same as clicking the technology on the map
   mtab.querySelectorAll('.tsort').forEach(b=>b.addEventListener('click',()=>setSort(b.dataset.col)));
-  mtab.querySelectorAll('[data-tscope]').forEach(b=>b.addEventListener('click',()=>{ state.tscopeAll=b.dataset.tscope==='all'; renderTable(); })); }
+  mtab.querySelectorAll('[data-tscope]').forEach(b=>b.addEventListener('click',()=>{ state.tscopeAll=b.dataset.tscope==='all'; renderTable(); }));
+  mtab.querySelectorAll('[data-cmptoggle]').forEach(b=>b.addEventListener('click',()=>{ cmpOn=!((cmpOn==null)?state.cmp.length>0:cmpOn); renderTable(); })); }
 function setStatus(msg){ const el=document.getElementById('tstatus'); if(el)el.textContent=msg||''; const tl=tray&&tray.querySelector('.cstatus'); if(tl)tl.textContent=msg||''; }
-function tableSync(){ if(!mtab||!mtab.firstChild||typeof litSets!=='function')return; const f=state.focus;
+function scopeSet(){ let s=null; if(state.isolate&&PATH[state.isolate])s=pathMembers(state.isolate); const mm=state.machine&&MBY[state.machine]; if(mm){ const ms=machNodes(mm).all; s=s?new Set([...s].filter(x=>ms.has(x))):new Set(ms); } return s; }   // the rows an isolated architecture or a chosen machine keeps in the table (9 Nov 2026, remark 4 of the editor's audit: the two define a subset, so the rows outside are hidden, not dimmed; a focused technology only dims)
+function inShown(n,scope){ return nodeMatchesFilter(n)&&(!scope||scope.has(n.id)); }
+function pathNameT(p){ const s=p.short?(p.short[lang()]??p.short.en):null; return s||(p[lang()]??p.en); }
+function tableSync(){ if(!mtab||!mtab.firstChild||typeof litSets!=='function')return; const f=state.focus; const scope=scopeSet();
   if(phoneTable()!==!!mtab.querySelector('.tcards')){ renderTable(); return; }   // the window crossed the phone width: the other renderer
-  if(phoneTable()){ const scope=(f&&!state.tscopeAll)?NODE[f].layer:null; if(scope!==lastScope){ renderTable(); return; } }
-  const first=(f&&!nodeMatchesFilter(NODE[f]))?f:null; if(first!==lastFirst){ lastFirst=first; if(!first){ renderTable(); return; } }   // back to the order when the pinned-first row returns to the filter
+  if(phoneTable()){ const lsc=(f&&!state.tscopeAll)?NODE[f].layer:null; if(lsc!==lastScope){ renderTable(); return; } }
+  const first=(f&&!inShown(NODE[f],scope))?f:null; if(first!==lastFirst){ lastFirst=first; if(!first){ renderTable(); return; } }   // back to the order when the pinned-first row returns to the shown set
   const Lt=litSets(); let keepN=Lt.keepN; if(cmpShow&&state.cmp.length)keepN=cmpLit().keepN;
   const N=G.nodes.length; let shown=0;
-  mtab.querySelectorAll('[data-id]').forEach(el=>{ const id=el.dataset.id, n=NODE[id]; if(!n)return; const inF=nodeMatchesFilter(n), out=!inF&&id!==f;
+  mtab.querySelectorAll('[data-id]').forEach(el=>{ const id=el.dataset.id, n=NODE[id]; if(!n)return; const inF=inShown(n,scope), out=!inF&&id!==f;
     el.classList.toggle('out',out); el.classList.toggle('dim',!out&&!!keepN&&!keepN.has(id)); el.classList.toggle('sel',id===f); el.classList.toggle('pinfirst',id===f&&!inF); el.classList.toggle('pinned',state.cmp.includes(id));
     const cb=el.querySelector('[data-pin]'); if(cb)cb.checked=state.cmp.includes(id); if(!out)shown++; });
   if(first){ const row=mtab.querySelector(`[data-id="${first}"]`); const body=row&&row.parentElement; if(body&&body.firstElementChild!==row)body.insertBefore(row,body.firstElementChild); }
   mtab.querySelectorAll('tr.tgrp').forEach(g=>{ const l=+g.dataset.layer; const any=[...mtab.querySelectorAll('tr.trow[data-id]')].some(r=>NODE[r.dataset.id]&&NODE[r.dataset.id].layer===l&&!r.classList.contains('out')); g.classList.toggle('out',!any); });
-  const tsh=document.getElementById('tshown'); if(tsh){ tsh.innerHTML=T(`${shown} of ${N} shown`,`показано ${shown} из ${N}`,`מוצגות ${shown} מתוך ${N}`)+(state.lensFilter!=null?` · <button type="button" class="k lk clear" data-tshowall="1">${T('show all','показать все','הצג הכול')} ✕</button>`:'');
-    tsh.querySelectorAll('[data-tshowall]').forEach(b=>b.addEventListener('click',()=>{ toggleFilter('',false); applyLens(); drawEdges(); dimming(); })); }
+  const tsh=document.getElementById('tshown'); if(tsh){ let sc=''; const ip=state.isolate&&PATH[state.isolate], mm2=state.machine&&MBY[state.machine];   // the scope that hides rows is named, with ✕ to release it (9 Nov 2026, remark 4)
+    if(ip)sc+=` · <button type="button" class="k lk clear" data-tunscope="arch" title="${esc(T('show every architecture again','снова показать все архитектуры','הצגת כל הארכיטקטורות שוב'))}">${T('architecture','архитектура','ארכיטקטורה')}: ${esc(pathNameT(ip))} ✕</button>`;
+    if(mm2)sc+=` · <button type="button" class="k lk clear" data-tunscope="mach" title="${esc(T('clear the machine','снять машину','ביטול בחירת המכונה'))}">${T('machine','машина','מכונה')}: ${esc(mm2.name)} ✕</button>`;
+    tsh.innerHTML=T(`${shown} of ${N} shown`,`показано ${shown} из ${N}`,`מוצגות ${shown} מתוך ${N}`)+(state.lensFilter!=null?` · <button type="button" class="k lk clear" data-tshowall="1">${T('show all','показать все','הצג הכול')} ✕</button>`:'')+sc;
+    tsh.querySelectorAll('[data-tshowall]').forEach(b=>b.addEventListener('click',()=>{ toggleFilter('',false); applyLens(); drawEdges(); dimming(); }));
+    tsh.querySelectorAll('[data-tunscope]').forEach(b=>b.addEventListener('click',()=>{ if(b.dataset.tunscope==='arch'){ if(state.isolate)isolatePath(state.isolate); } else setMachine(null); })); }
   if(f&&f!==lastFocus&&state.view==='table')scrollRow(f); lastFocus=f;
   renderTray(); writeFragment(); }
 // ---- the compare tray (≤ 4 pinned technologies, under the stage, in both views)
@@ -895,11 +911,21 @@ function sheetMode(){ try{ return window.matchMedia(SHEET_MQ).matches; }catch(e)
 const SHEETKEY='qmap.sheet';
 function sheetHeight(){ try{ const v=parseFloat(localStorage.getItem(SHEETKEY)); return (v>=0.2&&v<=0.9)?v:null; }catch(e){ return null; } }
 function applySheetHeight(){ const v=sheetHeight(); if(sheetMode()&&v&&!insp.classList.contains('sheet-max')){ insp.style.maxHeight=Math.round(v*100)+'vh'; document.body.style.paddingBottom=Math.round(v*100+2)+'vh'; } else { insp.style.maxHeight=''; document.body.style.paddingBottom=''; } }
+// beside the stage (9 Nov 2026, remark 1 of the editor's audit): on a desktop of 1200 px or more the open card is the second column of the map
+// frame (.mapgrid.sidecard) — it never covers the map, the table or the contents list; ⇤ ⇥ float it as before, ▣ brings it back, a grip drag floats it
+function sideMode(){ try{ return window.matchMedia('(min-width:1200px)').matches; }catch(e){ return false; } }
+function sideOn(){ return !sheetMode()&&sideMode()&&(cardState().mode||'side')==='side'; }
+function syncSide(){ const grid=document.querySelector('.mapgrid'); if(!grid)return; const on=sideOn()&&!insp.hidden; if(grid.classList.contains('sidecard')===on)return; grid.classList.toggle('sidecard',on);
+  if(window.__refit)window.__refit(); if(window.__refitTall)window.__refitTall(); if(window.__placeZoom)window.__placeZoom(); }   // the stage changed width: a fitted map refits
+window.__sideCard=()=>document.querySelector('.mapgrid').classList.contains('sidecard');
 function placeCard(){ const o=cardState(); const w=insp.offsetWidth||336; const vw=window.innerWidth, vh=window.innerHeight;
-  if(sheetMode()){ insp.style.left=''; insp.style.right=''; insp.style.top=''; insp.style.width=''; insp.style.height='';
+  if(sheetMode()){ syncSide(); insp.style.left=''; insp.style.right=''; insp.style.top=''; insp.style.width=''; insp.style.height='';
     insp.querySelectorAll('[data-dock]').forEach(b=>b.setAttribute('aria-pressed','false')); applySheetHeight(); return; }
   insp.classList.remove('sheet-max'); applySheetHeight();
-  const mode=o.mode||(document.documentElement.dir==='rtl'?'right':'left');   // undocked by the reader, the card sits at the page's start side (right in a right-to-left language, 29 Sep 2026)
+  if(sideOn()){ insp.style.left=''; insp.style.right=''; insp.style.top=''; insp.style.width=''; insp.style.height=''; syncSide();
+    insp.querySelectorAll('[data-dock]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.dock==='side'))); return; }
+  syncSide();
+  const saved=o.mode||'side'; const mode=saved==='side'?(document.documentElement.dir==='rtl'?'right':'left'):saved;   // below the side threshold the default card floats at the page's start side (right in a right-to-left language, 29 Sep 2026)
   if(mode==='free'&&o.x!=null){ insp.style.left=Math.max(0,Math.min(vw-w,o.x))+'px'; insp.style.top=Math.max(0,Math.min(vh-80,o.y))+'px'; insp.style.right='auto'; }
   else if(mode==='right'){ insp.style.left='auto'; insp.style.right='16px'; insp.style.top=(o.y!=null?Math.max(0,Math.min(vh-80,o.y)):84)+'px'; }
   else { insp.style.left='16px'; insp.style.right='auto'; insp.style.top=(o.y!=null?Math.max(0,Math.min(vh-80,o.y)):84)+'px'; }
@@ -921,13 +947,15 @@ function wireCard(){ placeCard();
     return; }
   insp.querySelectorAll('[data-dock]').forEach(b=>b.addEventListener('click',ev=>{ev.stopPropagation(); const o=cardState(); o.mode=b.dataset.dock; saveCard(o); placeCard();}));
   const g=insp.querySelector('[data-grip]'); if(!g)return;
-  g.addEventListener('pointerdown',ev=>{ if(ev.target.closest('button'))return; ev.preventDefault(); const r=insp.getBoundingClientRect(); const dx=ev.clientX-r.left, dy=ev.clientY-r.top; insp.classList.add('dragging'); g.setPointerCapture(ev.pointerId);
+  g.addEventListener('pointerdown',ev=>{ if(ev.target.closest('button'))return; ev.preventDefault(); if(sideOn()){ const r0=insp.getBoundingClientRect(); saveCard(Object.assign(cardState(),{mode:'free',x:r0.left,y:r0.top})); placeCard(); }   // a drag takes the card out of the frame: it floats from where it was
+    const r=insp.getBoundingClientRect(); const dx=ev.clientX-r.left, dy=ev.clientY-r.top; insp.classList.add('dragging'); g.setPointerCapture(ev.pointerId);
     const mv=e=>{ insp.style.left=(e.clientX-dx)+'px'; insp.style.top=(e.clientY-dy)+'px'; insp.style.right='auto'; };
     const up=e=>{ g.removeEventListener('pointermove',mv); g.removeEventListener('pointerup',up); insp.classList.remove('dragging'); const rr=insp.getBoundingClientRect(); saveCard(Object.assign(cardState(),{mode:'free',x:rr.left,y:rr.top})); };
     g.addEventListener('pointermove',mv); g.addEventListener('pointerup',up); });
 }
 // the sheet is viewport-wide by design — never record that width as the desktop card width
-new ResizeObserver(()=>{ if(insp.hidden||sheetMode())return; const o=cardState(); const w=insp.offsetWidth; if(w&&Math.abs((o.w||336)-w)>2){o.w=w; saveCard(o);} }).observe(insp);
+new MutationObserver(()=>{ try{ syncSide(); }catch(e){} }).observe(insp,{attributes:true,attributeFilter:['hidden']});   // the card opened or closed: the frame's second column follows
+new ResizeObserver(()=>{ if(insp.hidden||sheetMode()||sideOn())return; const o=cardState(); const w=insp.offsetWidth; if(w&&Math.abs((o.w||336)-w)>2){o.w=w; saveCard(o);} }).observe(insp);
 window.addEventListener('resize',()=>{ if(!insp.hidden){ placeCard(); wireCard(); } if(window.__sheetRoom)window.__sheetRoom(); });   // the sheet/card mode can flip on a resize (window, rotation, zoom): re-place, re-wire the grip, keep the page room
 try{ var __th=function(){ if(window.__mapTheme)window.__mapTheme(); };
   var __mq=matchMedia('(prefers-color-scheme: dark)');

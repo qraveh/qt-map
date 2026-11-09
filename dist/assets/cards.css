@@ -27,6 +27,7 @@
 .card .grip button[data-back]{font-weight:700}
 .card .grip button[data-back][disabled]{opacity:.35;cursor:default}
 .card .pagelink{font-size:12px;font-weight:600;text-decoration:none;border:1px solid var(--rule);border-radius:999px;padding:1px 8px;margin-inline-start:4px;white-space:nowrap}
+.mapgrid.sidecard .card .grip{cursor:grab}
 .card .iclose{display:none}
 .card .conf{margin:6px 0 8px;padding:6px 8px;border-inline-start:2px solid var(--crit);background:var(--surface)}
 .card .conf .cm{color:var(--ink2);margin-top:2px}

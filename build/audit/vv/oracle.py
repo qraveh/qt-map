@@ -240,9 +240,10 @@ def expected(model, state):
         if selection and not (u in lit and v in lit):
             continue
         edges.add((u, v, t))
-    # the Table view (ticket 20261106-1, 6 Nov 2026) mirrors the same state: the lens term HIDES rows (the map dims them), every other
-    # term DIMS the rows it leaves out, and the focused station never disappears (pinned first when the filter excludes it)
-    visible = set(lens_set)
+    # the Table view (ticket 20261106-1, 6 Nov 2026) mirrors the same state: the lens term HIDES rows (the map dims them); since 9 Nov 2026
+    # (local writer job 20261109-1, the editor's remark 4) an isolated architecture and a chosen machine HIDE the rows outside them too — the two
+    # selections define a subset; a focused station only DIMS (its meaning is its context) and never disappears (pinned first when excluded)
+    visible = set(lens_set) & iso_set & mach_set
     if foc:
         visible.add(foc)
     table = {"visible": visible, "dimmed": visible - lit}

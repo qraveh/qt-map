@@ -1,0 +1,61 @@
+{
+ "date": "2026-11-09",
+ "source": "the editor's six remarks of 9 Nov 2026 on the controls of the map and its Table view, audited with Playwright scenarios (a 180-state matrix against the V&V oracle, 31 named transitions, probes at four viewports) and answered by the local writer job 20261109-1 under his standing instruction of 6 Nov 2026 («делай всё, что не требует моего участия, или требует, но ты можешь сделать логичное, откатываемое назад предположение»); the audit: 00_admin/30_working/AUDIT_2026-11-09_map-table-controls.md; the decisions: 00_admin/30_working/DECISIONS_2026-11-09_map-table-controls.md",
+ "items": [
+  {
+   "kind": "update",
+   "subject": {"type": "generator", "id": "map_js"},
+   "fields": {"card placement": "on a desktop of 1200 px or more the open card (architecture, machine, technology) is the second column of the map frame (.mapgrid.sidecard), full stage height, scrolling inside; ⇤ ⇥ float it, ▣ returns it, a grip drag floats it; the choice is remembered in qmap.card.mode (default: side)"},
+   "old": {"card placement": "a floating card at left 16 px / top 84 px (right in Hebrew), 336 px wide, over the contents column and 56 px of the stage's start edge (328 px when docked right); the bottom sheet on phones and touch tablets, unchanged"},
+   "note": "remark 1 of 9 Nov 2026: the architecture card covered the result of the selection. The card is an inspector whose names are links that select (a technology → its focus and card; a machine → the machine selection); a hint line under the architecture card's layer table now says so. Below 1200 px and in sheet mode nothing changes. Revert: the sidecard CSS block in page_css.py and the sideMode/sideOn/syncSide branches of placeCard()/wireCard()"
+  },
+  {
+   "kind": "update",
+   "subject": {"type": "generator", "id": "map_js"},
+   "fields": {"select(null)": "with no focus left, the card falls back to the machine's card, else to the isolated architecture's card, else closes"},
+   "old": {"select(null)": "with no focus left, the card fell back to the machine's card, else closed — an isolated architecture kept its chip pressed and the map isolated with no card (Escape, a click on the map's background)"},
+   "note": "remark 2.2–2.3: an inconsistency with applySnapshot(), setMachine(null) and the ← button, which did return to the architecture card; found by the transition scenarios t04–t05 of the audit"
+  },
+  {
+   "kind": "update",
+   "subject": {"type": "generator", "id": "map_js"},
+   "fields": {"setSort()": "a sort by an attribute column sets the map's lens only when no lens filter is kept; with a filter kept the column sorts, the lens and its filter stay, and the table's status line says 'sorted by (c); the lens stays on (f) with its filter — choose the lens to change it' (EN/RU/HE); the header tooltip reads 'also sets the lens — unless a filter is kept'"},
+   "old": {"setSort()": "a sort by an attribute column always set the lens and cleared the filter: under (f) = loss (34 rows) a click on (c) readout returned all 116 rows with nothing said"},
+   "note": "remark 2.1: the one transition in the audit where the result of a selection vanished on an unrelated gesture (t14)"
+  },
+  {
+   "kind": "update",
+   "subject": {"type": "generator", "id": "map_js"},
+   "fields": {"table rows under a selection": "an isolated architecture or a chosen machine hides the rows outside it (class out), the count line names the scope with ✕ to release it ('35 of 116 shown · architecture: Transmon lattice ✕'; 'machine: Willow ✕'); a focused technology still dims; the focused technology never disappears (first row, marked 'selected — outside the shown rows'); the lens filter hides as before"},
+   "old": {"table rows under a selection": "every selection but the lens filter dimmed the rows outside it (opacity .38): 116 rows with 81 dimmed under the Transmon lattice, 102 under Willow"},
+   "note": "remark 4, the writer's decision: an architecture and a machine define a subset, so the subset is the result; a focus is a point whose meaning is its context. The V&V oracle's table contract (build/audit/vv/oracle.py expected().table) follows: visible = lens ∩ isolate ∩ machine (+ the focus); the single suite re-run into build/audit/vv/results_20261109/"
+  },
+  {
+   "kind": "update",
+   "subject": {"type": "generator", "id": "map_js"},
+   "fields": {"compare tick boxes": "hidden until the reader presses 'compare technologies' in the table's header line (a pressed chip, with the instruction 'tick up to four technologies — they appear side by side under the table' beside it), or until pins exist (from the card's 'add to compare' or an address with cmp=); the column header carries ☑ with 'compare' in its tooltip; the variable cmpOn (null = follow the pins, true/false = the reader's choice)"},
+   "old": {"compare tick boxes": "a checkbox at the start of every row, always shown, its header text screen-reader-only, no tooltip — the convention of row selection, which it is not"},
+   "note": "remark 3: 'I confuse them with the selectors'. The tray, the four-pin limit, the card's button and the cmp= fragment are unchanged"
+  },
+  {
+   "kind": "update",
+   "subject": {"type": "generator", "id": "map_js"},
+   "fields": {"(b) time glyph": "a ruler from 1 ns to 10 ms (TMIN −9 … TMAX −2, log scale): a baseline with a tick per decade (CSS .ttrack) and a 3 px vertical mark at the value, coloured by the time lens's ramp, hollow for heralded; the header names the scale ('ns — ms', .tscale, its tooltip 'the ruler runs from 1 ns to 10 ms (log scale); a shorter time is a faster operation') and the sort button's tooltip adds 'the ruler: 1 ns … 10 ms, shorter = faster'; the table caption (build/node_table.py CAPTION, EN/RU/HE) adds '(b) time is marked on a ruler from 1 ns to 10 ms (log scale): a shorter time is a faster operation'"},
+   "old": {"(b) time glyph": "a 12 px round dot with a white rim on a 56 × 8 px gradient track (strong blue = fast at the start, pale = slow at the end), hollow for heralded"},
+   "note": "remark 5: the dot on a gradient track is the anatomy of a range slider, and a mark further along a bar reads as 'more'. The sort order (ascending = fastest first) and the map's time lens are unchanged"
+  },
+  {
+   "kind": "update",
+   "subject": {"type": "generator", "id": "map_js"},
+   "fields": {"machine selector": "the machine group (label, select, 'card' chip) stays in view when the map bar is folded (its own line under the architecture chips; CSS .mapbar.collapsed > .grp:not(.chipsrow):not(.machgrp)); the select's empty option says 'choose a machine…' / «выберите машину…» / «בחרו מכונה…»; the Controls button's tooltip no longer lists the machine among the folded controls"},
+   "old": {"machine selector": "folded away with the lens, the edges and the legend when the bar is collapsed — the default since 23 Sep 2026 — so the named entry point to a machine was invisible until 'Controls' was opened; the empty option read '—'"},
+   "note": "remark 6: five routes to a machine exist (the select, the architecture card's list, the technology card's 'Used by', Find, the deep links); the first is the named one and it was behind a fold. Not done: a search-as-you-type machine box (a ticket of its own if the editor wants it)"
+  },
+  {
+   "kind": "statement",
+   "subject": {"type": "generator", "id": "map_js"},
+   "fields": {"event": "audit", "date": "2026-11-09", "figure": "180 states of the selector matrix (isolate × machine × focus × lens filter, the driver's gesture order) agree with the V&V oracle on the lit technologies, the lit lines, the release bookkeeping of adjudication 12, the card shown and the table mirror — 0 differences before and after this job; 31 named transitions recorded before and after"},
+   "note": "remark 2: the selector logic is correct as adjudicated; the behaviours left as adjudicated and named in the audit for the editor: a chip of the chosen machine's own architecture replaces the machine card by the architecture card (the 'card' chip reopens it); a family lens value narrows the isolated line away (ADJ-1, 27 Sep 2026); the reset keeps the pins and the view (6 Nov 2026); in a fragment with an architecture and a machine on another path the machine wins (gesture order)"
+  }
+ ]
+}

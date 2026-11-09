@@ -27,9 +27,9 @@ COLS = {
 }
 # the caption under the live table (S2 of the ticket): one line, the terms defined in place; {s71} is the link to §7.1 in the page's language
 CAPTION = {
-    'en': 'Technologies × the seven design attributes of {s71}. — = the attribute does not apply to this layer.',
-    'ru': 'Технологии × семь атрибутов проектирования {s71}. — = атрибут к этому слою не применим.',
-    'he': 'טכנולוגיות × שבע תכונות התכן של {s71}. — = התכונה אינה חלה על השכבה הזו.',
+    'en': 'Technologies × the seven design attributes of {s71}. — = the attribute does not apply to this layer. (b) time is marked on a ruler from 1 ns to 10 ms (log scale): a shorter time is a faster operation.',
+    'ru': 'Технологии × семь атрибутов проектирования {s71}. — = атрибут к этому слою не применим. (b) время отмечено на линейке от 1 ns до 10 ms (логарифмическая шкала): чем короче время, тем быстрее операция.',
+    'he': 'טכנולוגיות × שבע תכונות התכן של {s71}. — = התכונה אינה חלה על השכבה הזו. (b) הזמן מסומן על סרגל מ-1 ns עד 10 ms (סולם לוגריתמי): זמן קצר יותר הוא פעולה מהירה יותר.',
 }
 # the one line under §7.2's heading (S7): the printed table is linked to its live twin on the map
 LINKED = {

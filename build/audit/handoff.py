@@ -82,6 +82,7 @@ def classify(paths):
 def dist_tree(root):
     out = {}
     for d, _, fs in os.walk(os.path.join(root, 'dist')):
+        if os.path.relpath(d, root).replace(os.sep, '/').startswith('dist/media'): continue   # the thumbs: gitignored, copied from the media register for the local suites, served by the deploy from that register — not a build output (9 Nov 2026)
         for f in fs:
             p = os.path.join(d, f); out[os.path.relpath(p, root).replace(os.sep, '/')] = sha(p)
     return out

@@ -66,7 +66,7 @@ def diff(exp, act):
         if e != a:
             out[k] = {'missing': sorted(map(list, e - a) if k == 'edges' else e - a),
                       'extra': sorted(map(list, a - e) if k == 'edges' else a - e)}
-    # the Table view's mirror (20261106-1): visible rows = the lens term (+ the focus), dimmed = visible minus lit; only on a page that has the table
+    # the Table view's mirror (20261106-1; the scope rule of 9 Nov 2026): visible rows = the lens term ∩ the isolate ∩ the machine (+ the focus), dimmed = visible minus lit; only on a page that has the table
     if act.get('table') and exp.get('table'):
         for k in ('visible', 'dimmed'):
             e, a = set(exp['table'][k]), set(act['table'][k])

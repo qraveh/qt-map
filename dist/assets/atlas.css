@@ -338,6 +338,14 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .insp .pagelink{font-size:12px;font-weight:600;text-decoration:none;border:1px solid var(--rule);border-radius:999px;padding:1px 8px;margin-inline-start:4px;white-space:nowrap}
 .insp.dragging{opacity:.92}
 .insp[hidden]{display:none}
+/* the card beside the stage (9 Nov 2026, remark 1 of the editor's audit): on a desktop of 1200 px or more the open card is the second column of the map
+   frame, full height, scrolling inside — it never covers the map, the table or the contents list; the floating modes stay a click away (⇤ ⇥, ▣ back) */
+@media (min-width:1200px){
+ .mapgrid.sidecard{grid-template-columns:minmax(0,1fr) clamp(280px,22vw,340px)}
+ .mapgrid.sidecard .insp{position:absolute;top:0;bottom:0;left:auto;right:auto;inset-inline-end:0;width:clamp(280px,22vw,340px);max-height:none;min-height:0;height:auto;border:0;border-inline-start:1px solid var(--rule);border-radius:0;box-shadow:none;resize:none;z-index:5}
+ .mapgrid.sidecard .insp .grip{cursor:grab}
+ .mapgrid.sidecard .ttab{min-width:1040px}   /* the table keeps its columns readable beside the card and scrolls sideways inside the stage */
+}
 .insp .iclose{display:none}
 .insp .conf{margin:6px 0 8px;padding:6px 8px;border-inline-start:2px solid var(--crit);background:var(--surface)}
 .insp .conf .cm{color:var(--ink2);margin-top:2px}
@@ -665,7 +673,7 @@ main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}
 .barsum{color:var(--ink2);font-size:12.5px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .barsum b{color:var(--ink);font-weight:600}
 .barsum .sw{display:inline-block;width:9px;height:9px;border-radius:2px;vertical-align:-1px;margin-inline-end:4px}
-.mapbar.collapsed > .grp:not(.chipsrow),.mapbar.collapsed > details,.mapbar.collapsed > #lenslegend{display:none}
+.mapbar.collapsed > .grp:not(.chipsrow):not(.machgrp),.mapbar.collapsed > details,.mapbar.collapsed > #lenslegend{display:none}   /* the machine group stays in view when the bar is folded (9 Nov 2026, remark 6 of the editor's audit) */
 .mapbar.collapsed .chipsrow #pathchips .chip{display:none}
 .mapbar.collapsed .chipsrow{flex:1 1 100%;flex-wrap:nowrap;align-items:center}
 .mapbar.collapsed .chipsrow #pathchips{flex:1 1 auto;justify-content:flex-end}
@@ -820,7 +828,7 @@ details.tblfold:not([open])>summary:dir(rtl)::before{content:"◂"}
 .maptable .tmeta{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center;font-size:12.5px;color:var(--ink2)}
 .maptable .tmeta .lk{padding:1px 9px;padding-inline-start:9px}
 .maptable .tstatus:empty{display:none}
-.maptable .tstatus{color:var(--crit)}
+.maptable .tstatus{color:var(--ink2)}   /* a notice (the four-pin limit, the kept lens under a sort), not an alarm (9 Nov 2026) */
 .maptable .tscroll{flex:1 1 auto;overflow:auto;min-height:0}
 .ttab{border-collapse:separate;border-spacing:0;width:100%;font-size:12.5px}
 .ttab caption{caption-side:bottom;text-align:start;padding:6px 10px;font-size:12px;color:var(--ink2)}
@@ -851,11 +859,20 @@ details.tblfold:not([open])>summary:dir(rtl)::before{content:"◂"}
 .ttab tr.trow.pinned td.tpin{background:color-mix(in srgb,var(--accent) 14%,var(--surface))}
 .tfirst{display:none;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);margin-inline-start:6px}
 .pinfirst .tfirst{display:inline}
-/* the glyphs beside the text: a dot on the log time track (hollow = probabilistic / heralded), nine slots for the error types */
-.ttrack{display:inline-block;position:relative;width:56px;height:8px;margin-inline-end:8px;vertical-align:middle;border-radius:4px;background:linear-gradient(to right,var(--lens4),var(--lens1));opacity:.9}
-.ttrack:dir(rtl){background:linear-gradient(to left,var(--lens4),var(--lens1))}
-.ttrack i{position:absolute;top:-2px;width:12px;height:12px;margin-inline-start:-6px;border-radius:50%;background:var(--c,var(--ink));border:2px solid var(--surface);box-shadow:0 0 0 1px var(--ink2)}
-.ttrack i.her{background:var(--surface);border:2px solid var(--c,var(--ink));box-shadow:none}
+/* the glyphs beside the text: (b) time on a ruler, nine slots for the error types.
+   The ruler (9 Nov 2026, remark 5 of the editor's audit): a baseline with a tick per decade from 1 ns to 10 ms (TMIN … TMAX of map_js) and a vertical
+   mark at the value, hollow for heralded; the header names the scale (.tscale). It replaced a dot on a gradient track, which read as a slider's handle */
+.ttrack{display:inline-block;position:relative;width:57px;height:11px;margin-inline-end:8px;vertical-align:middle;box-sizing:border-box;border-bottom:1px solid var(--muted);background-image:repeating-linear-gradient(to right,var(--muted) 0 1px,transparent 1px 8px);background-size:57px 4px;background-position:0 100%;background-repeat:no-repeat;opacity:.85}
+.ttrack:dir(rtl){background-image:repeating-linear-gradient(to left,var(--muted) 0 1px,transparent 1px 8px);background-position:100% 100%}
+.ttrack i{position:absolute;top:0;bottom:0;width:3px;margin-inline-start:-1px;border-radius:1px;background:var(--c,var(--ink))}
+.ttrack i.her{background:var(--surface);border:1px solid var(--c,var(--ink));width:5px;margin-inline-start:-2px;box-sizing:border-box}
+.tscale{display:inline-flex;align-items:center;gap:3px;margin-inline-start:6px;font-size:9.5px;font-weight:400;color:var(--muted);font-family:"JetBrains Mono",monospace;letter-spacing:0;vertical-align:baseline}
+.tscale .sep{display:inline-block;width:14px;border-bottom:1px solid var(--muted)}
+/* the compare tick boxes show behind "compare technologies" in the table's header line, or while pins exist (9 Nov 2026, remark 3 of the editor's audit) */
+.maptable:not(.cmpon) .ttab .tpin,.maptable:not(.cmpon) .tcard .tch input[data-pin]{display:none}
+.maptable .tmeta .cmptog{font-size:12px;padding:2px 9px}
+.maptable .tmeta .cmphint{color:var(--muted);font-size:12px}
+.ttab th.tpin{font-size:12px;color:var(--muted);text-align:center;padding-inline:4px}
 .tbar{display:inline-flex;gap:1px;margin-inline-end:6px;vertical-align:middle}
 .tbar i{display:block;width:5px;height:12px;border-radius:1px;background:var(--surface2);border:1px solid var(--rule)}
 .tbar i.on{background:var(--c,var(--ink));border-color:var(--c,var(--ink))}

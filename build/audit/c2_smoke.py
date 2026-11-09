@@ -887,6 +887,10 @@ TREAD = r"""()=>{ const t=document.getElementById('maptable'); const rows=[...t.
    lines:[...document.querySelectorAll('#mapwrap path.pathline:not(.dim)')].map(p=>p.dataset.path), sel:[...document.querySelectorAll('#mapwrap g.station.sel')].map(idOf),
    tray:y.hidden?null:{cols:y.querySelectorAll('thead th').length-1, same:y.querySelectorAll('td.same').length, rows:y.querySelectorAll('tbody tr').length, text:y.innerText.replace(/\s+/g,' ').slice(0,160)},
    sw:[...document.querySelectorAll('#viewsw [data-view]')].map(b=>[b.dataset.view,b.getAttribute('aria-checked')]), zoomVisible:document.getElementById('zoomlvl').offsetParent!==null,
+   cmpon:t.classList.contains('cmpon'), pinCol:(()=>{const c=t.querySelector('td.tpin'); return !!(c&&c.offsetParent!==null);})(), cardPos:getComputedStyle(document.getElementById('insp')).position, side:document.querySelector('.mapgrid').classList.contains('sidecard'),
+   cardBox:(()=>{const i=document.getElementById('insp'); if(i.hidden)return null; const r=i.getBoundingClientRect(); return [Math.round(r.left),Math.round(r.top),Math.round(r.right),Math.round(r.bottom)];})(), tabBox:(()=>{const r=t.getBoundingClientRect(); return [Math.round(r.left),Math.round(r.top),Math.round(r.right),Math.round(r.bottom)];})(),
+   cardKind:(()=>{const i=document.getElementById('insp'); if(i.hidden)return ''; return i.querySelector('[data-mclose]')?'machine':(i.querySelector('.ptab:not(.mtab)')?'path':(i.querySelector('.briefbtn')?'node':'other'));})(),
+   rulerDot:(()=>{const i=t.querySelector('tr.trow[data-id="transmon"] .ttrack i'); return i?getComputedStyle(i).borderRadius:null;})(), tscale:((t.querySelector('th.tc-time .tscale')||{}).textContent||'').replace(/\s+/g,' ').trim(), caption:((t.querySelector('caption')||{}).textContent||''),
    hash:location.hash, y:window.pageYOffset, card:document.getElementById('insp').hidden?'':document.getElementById('insp').innerText.slice(0,400),
    cardDl:((document.querySelector('#insp dl')||{}).innerText||'')+' | '+((document.querySelector('#insp .cntdef')||{}).textContent||''),
    cmpBtn:(()=>{const b=document.querySelector('#insp [data-cmp]'); return b?b.getAttribute('aria-pressed'):null;})(),
@@ -899,7 +903,11 @@ def tableview(pw):
     table is the map's list view — every technology, §7.2's strings, grouped by layer; one state with the map (lens filter hides, an
     architecture or a machine dims, the focused technology never disappears); a sort by an attribute column sets the lens; a compare
     tray of ≤ 4 pinned technologies with equal values tinted and "show on the map"; the whole view state in a #map: fragment; a section
-    anchor still jumps; the Hebrew page's table is right-to-left with the barcode mirrored; the technology card counts each value."""
+    anchor still jumps; the Hebrew page's table is right-to-left with the barcode mirrored; the technology card counts each value.
+    9 Nov 2026 (local writer job 20261109-1, the editor's six remarks): a kept filter survives a sort by another column; an isolated architecture
+    or a chosen machine hides the rows outside it and the count line names the scope with ✕; Escape with an isolate returns to the architecture
+    card; the card sits beside the stage at ≥ 1200 px (⇤ floats it, ▣ returns it); the (b) time glyph is a ruler with its scale in the header;
+    the compare tick boxes appear behind "compare technologies"; the machine select stays in view with the bar folded."""
     fails, errors = [], []
     b = pw.chromium.launch(); ctx = b.new_context(viewport={'width': 1600, 'height': 1000}); p = ctx.new_page()
     def check(label, cond, detail=''):
@@ -934,7 +942,7 @@ def tableview(pw):
     check(f'"{len(LOSS)} of {NN} shown · show all"', r['shown'].startswith(f'{len(LOSS)} of {NN} shown') and 'show all' in r['shown'], r['shown'])
     # the focused technology never disappears: pinned first, marked
     p.evaluate("()=>window.__selectNode('transmon')"); p.wait_for_timeout(200); r = p.evaluate(TREAD)
-    check('a focused technology outside the filter (transmon under loss) stays: the first row, marked "selected — outside the filter"', r['first'] == 'transmon' and r['pinfirst'] == ['transmon'] and 'transmon' in r['visible'] and len(r['visible']) == len(LOSS) + 1 and r['sel'] == ['transmon'], (r['first'], r['pinfirst'], len(r['visible'])))
+    check('a focused technology outside the filter (transmon under loss) stays: the first row, marked "selected — outside the shown rows"', r['first'] == 'transmon' and r['pinfirst'] == ['transmon'] and 'transmon' in r['visible'] and len(r['visible']) == len(LOSS) + 1 and r['sel'] == ['transmon'], (r['first'], r['pinfirst'], len(r['visible'])))
     # the two counts come from the data, as map_js.attrCount computes them (7 Nov 2026: the six technologies of the T2 discovery made the typed "44 of 110" and "21 of 25" stale)
     aff_fab = (sum(1 for n in GRAPH['nodes'] if n['aff'] == 1.0), NN); det_det = (sum(1 for n in GRAPH['nodes'] if n['b']['det'] == 'det'), sum(1 for n in GRAPH['nodes'] if n['b']['det'] != 'na'))
     check('the technology card shows a count after each value and the definition line', f'· {aff_fab[0]} of {aff_fab[1]}' in r['cardDl'] and f'· {det_det[0]} of {det_det[1]}' in r['cardDl'] and 'n technologies share the value' in r['cardDl'], r['cardDl'][:200])
@@ -942,7 +950,41 @@ def tableview(pw):
     check('focus cleared: the row returns to its place, nothing marked', r['pinfirst'] == [] and r['first'] == default_order[0] and sorted(r['visible']) == LOSS, (r['pinfirst'], r['first']))
     p.locator('#tshown [data-tshowall]').click(); p.wait_for_timeout(200); r = p.evaluate(TREAD)
     check(f'"show all" clears the filter: {NN} rows, {NN} lit', len(r['visible']) == NN and len(r['lit']) == NN, (len(r['visible']), len(r['lit'])))
-    # the compare tray
+    # 9 Nov 2026 (20261109-1, remark 2.1): a kept filter survives a sort by another attribute's column; the status line says so
+    p.locator('#maptable #lenslegend [data-lv="loss"]').dispatch_event('click'); p.wait_for_timeout(200)
+    p.click('#maptable th.tc-c .tsort'); p.wait_for_timeout(200); r = p.evaluate(TREAD)
+    check(f'a sort by (c) under the loss filter keeps the filter and the lens (f): {len(LOSS)} rows, sorted by (c), the status line names the kept lens', sorted(r['visible']) == LOSS and r['lens'] == 'f' and r['sort'] == [['tc-c', 'ascending']] and 'the lens stays on' in r['status'], (len(r['visible']), r['lens'], r['sort'], r['status'][:80]))
+    p.click('#maptable th.tc-c .tsort'); p.wait_for_timeout(150); p.click('#maptable th.tc-c .tsort'); p.wait_for_timeout(200)   # descending, then the layer order
+    p.locator('#tshown [data-tshowall]').click(); p.wait_for_timeout(200); r = p.evaluate(TREAD)
+    check('the layer order and the full table are back', r['sort'] == [] and len(r['visible']) == NN, (r['sort'], len(r['visible'])))
+    # 9 Nov 2026 (remark 4): an isolated architecture or a chosen machine hides the rows outside it; the count line names the scope with ✕
+    p.evaluate("id=>{document.querySelector('#pathchips .chip[data-chip-path=\"'+id+'\"]').click();}", 'sc'); p.wait_for_timeout(300); r = p.evaluate(TREAD)
+    SC = sorted({x for s in next(q for q in GRAPH['paths'] if q['id'] == 'sc')['slots'].values() for x in s})
+    check(f'the Transmon lattice isolated: the table shows its {len(SC)} technologies only, none dimmed, the count line names the architecture', sorted(r['visible']) == SC and r['dimmed'] == [] and r['shown'].startswith(f'{len(SC)} of {NN} shown') and 'architecture:' in r['shown'], (len(r['visible']), len(r['dimmed']), r['shown']))
+    # 9 Nov 2026 (remark 1): the card sits beside the stage at 1600 px — the frame's second column, never over the table
+    check('… and the architecture card sits beside the table, not over it', r['cardKind'] == 'path' and r['side'] and r['cardPos'] == 'absolute' and r['cardBox'] is not None and r['cardBox'][0] >= r['tabBox'][2] - 1, (r['cardKind'], r['side'], r['cardPos'], r['cardBox'], r['tabBox']))
+    p.locator('#insp [data-dock="left"]').click(); p.wait_for_timeout(200); r = p.evaluate(TREAD)
+    check('⇤ floats the card (fixed; the frame back to one column)', r['cardPos'] == 'fixed' and not r['side'], (r['cardPos'], r['side']))
+    p.locator('#insp [data-dock="side"]').click(); p.wait_for_timeout(200); r = p.evaluate(TREAD)
+    check('▣ brings it back beside the stage', r['cardPos'] == 'absolute' and r['side'], (r['cardPos'], r['side']))
+    # 9 Nov 2026 (remark 2.2): Escape with a technology focused on the isolated architecture returns to the architecture card
+    p.evaluate("()=>window.__selectNode('transmon')"); p.wait_for_timeout(200); p.keyboard.press('Escape'); p.wait_for_timeout(200); r = p.evaluate(TREAD)
+    check('a technology focused on the isolated architecture, then Escape: the architecture card returns, the isolate stays', r['cardKind'] == 'path' and r['sel'] == [] and sorted(r['visible']) == SC, (r['cardKind'], r['sel'], len(r['visible'])))
+    p.locator('#tshown [data-tunscope="arch"]').click(); p.wait_for_timeout(250); r = p.evaluate(TREAD)
+    check(f'✕ on the scope releases the architecture: {NN} rows, no card', len(r['visible']) == NN and r['cardKind'] == '', (len(r['visible']), r['cardKind']))
+    p.select_option('#machine', 'google-willow'); p.wait_for_timeout(300); r = p.evaluate(TREAD)
+    check(f'Willow chosen: the table shows its {len(WILLOW_NODES)} technologies only; the count line names the machine', sorted(r['visible']) == sorted(WILLOW_NODES) and 'machine:' in r['shown'] and r['cardKind'] == 'machine', (len(r['visible']), r['shown'][:80], r['cardKind']))
+    p.evaluate("()=>window.__selectNode('fluxonium')"); p.wait_for_timeout(250); r = p.evaluate(TREAD)
+    check('a technology of the machine\'s architecture but not of its cells (fluxonium) stays as the first row, marked; the machine stays', r['first'] == 'fluxonium' and r['pinfirst'] == ['fluxonium'] and len(r['visible']) == len(WILLOW_NODES) + 1, (r['first'], r['pinfirst'], len(r['visible'])))
+    p.locator('#tshown [data-tunscope="mach"]').click(); p.wait_for_timeout(250); p.keyboard.press('Escape'); p.wait_for_timeout(200); r = p.evaluate(TREAD)
+    check(f'✕ on the machine and Escape: {NN} rows, nothing marked or dimmed', len(r['visible']) == NN and r['pinfirst'] == [] and r['dimmed'] == [], (len(r['visible']), r['pinfirst'], len(r['dimmed'])))
+    # 9 Nov 2026 (remark 5): the (b) time glyph is a ruler with a mark, its scale named in the header and the caption
+    check('(b) time: a mark on a ruler (no round dot), the header scale "ns — ms", the caption says a shorter time is faster', r['rulerDot'] not in (None, '50%') and r['tscale'].startswith('ns') and r['tscale'].endswith('ms') and 'ruler' in r['caption'] and 'shorter time' in r['caption'], (r['rulerDot'], r['tscale'], r['caption'][-90:]))
+    # the compare tray — behind the "compare technologies" control (9 Nov 2026, remark 3)
+    check('the compare column is hidden until asked for', not r['cmpon'] and not r['pinCol'] and r['pinned'] == [], (r['cmpon'], r['pinCol'], r['pinned']))
+    p.locator('#maptable [data-cmptoggle]').click(); p.wait_for_timeout(200); r = p.evaluate(TREAD)
+    hint = p.evaluate("()=>((document.querySelector('#maptable .cmphint')||{}).textContent||'')")
+    check('"compare technologies" shows the tick boxes and the instruction', r['cmpon'] and r['pinCol'] and 'tick up to four' in hint, (r['cmpon'], r['pinCol'], hint[:60]))
     for nid in ('transmon', 'fluxonium', 'ion', 'alkali'):
         p.locator(f'#maptable [data-pin="{nid}"]').click(); p.wait_for_timeout(80)
     r = p.evaluate(TREAD)
@@ -982,7 +1024,10 @@ def tableview(pw):
     he = ROOT / 'dist' / 'he' / 'index.html'
     if he.exists():
         p.goto(he.as_uri(), wait_until='load', timeout=120000)
-        p.wait_for_function("document.querySelectorAll('#maptable tr.trow').length>0", timeout=60000); expand_bar(p)
+        p.wait_for_function("document.querySelectorAll('#maptable tr.trow').length>0", timeout=60000)
+        mv = p.evaluate("()=>{const m=document.getElementById('machine'); return {collapsed:document.getElementById('mapbar').classList.contains('collapsed'), visible:m.offsetParent!==null, ph:(m.querySelector('option[value=\"\"]')||{}).textContent};}")
+        check('the bar folded (the default): the machine select stays in view, its prompt in Hebrew (9 Nov 2026, remark 6)', mv['collapsed'] and mv['visible'] and mv['ph'] == 'בחרו מכונה…', mv)
+        expand_bar(p)
         p.evaluate("()=>window.__setView('table')"); p.wait_for_timeout(300); r = p.evaluate(TREAD)
         check('Hebrew: <table dir="rtl">, the barcode\'s first slot on the right, the count line in Hebrew', r['dir'] == ['rtl', 'rtl'] and r['barX'] and r['barX'][0] > r['barX'][1] and r['shown'].startswith(f'מוצגות {NN} מתוך {NN}'), (r['dir'], r['barX'], r['shown']))
         sw = p.evaluate("()=>[...document.querySelectorAll('#viewsw [data-view] span')].filter(s=>getComputedStyle(s).display!=='none').map(s=>s.textContent)")
