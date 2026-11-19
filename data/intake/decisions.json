@@ -21,6 +21,14 @@
    },
    "reason": "an organisation event, recorded as a change-ledger statement"
   },
+  "019eb633b6d2f5c6": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "question Q6 of the packet «Atlas intake 2026-11-19 — decisions»",
+   "until": "editor"
+  },
   "022728281a07fe2b": {
    "file": "records-candidates.csv",
    "date": "2026-11-06",
@@ -66,6 +74,21 @@
    },
    "reason": "a register figure with the owner's own words"
   },
+  "09dbbd1e3cf93672": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "rejected",
+   "reason": "a single demonstration on one defect; not a carrier in a device of two or more qubits"
+  },
+  "0a7e4e74b735c9b2": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "question Q4 of the packet «Atlas intake 2026-11-19 — decisions»",
+   "until": "editor"
+  },
   "0b126e1ae236dbb4": {
    "file": "amendment-candidates.csv",
    "date": "2026-10-12",
@@ -74,6 +97,14 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "0b2b9727d255a1ef": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "question Q1 of the packet «Atlas intake 2026-11-19 — decisions»",
+   "until": "editor"
+  },
   "0bdb35cbec48071a": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-19",
@@ -81,6 +112,22 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "0bdcdabbdbdb413c": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "the intake run's decision on the editor's delegation of 19 Nov 2026: apply as a descriptor/brief change in the weekly pass, after the paper is read at its own text (the ledger keeps «approved» for the editor's own word)",
+   "until": "weekly brief pass"
+  },
+  "0c9ece41f50b51b2": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "question Q7 of the packet «Atlas intake 2026-11-19 — decisions»",
+   "until": "editor"
   },
   "0f2c7332de96109b": {
    "file": "amendment-candidates.csv",
@@ -98,6 +145,13 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "1043dc4a845c6ed9": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "rejected",
+   "reason": "theory only (no hardware)"
+  },
   "109f694ae0511955": {
    "file": "org-event-candidates.csv",
    "date": "2026-11-19",
@@ -111,6 +165,13 @@
    },
    "reason": "an organisation event, recorded as a change-ledger statement"
   },
+  "10c28acf2197ffec": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "rejected",
+   "reason": "a proposal with numerical simulation only (arXiv:2611.12576, read 19 Nov 2026)"
+  },
   "10e6f0cd692548c0": {
    "file": "register-amendment-candidates.csv",
    "date": "2026-11-19",
@@ -123,6 +184,13 @@
     "checked": "2026-11-19"
    },
    "reason": "a register figure with the owner's own words"
+  },
+  "1167e7b3afe38eff": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "rejected",
+   "reason": "proposal only (no experiment)"
   },
   "12af8c0bcae6bc04": {
    "file": "register-amendment-candidates.csv",
@@ -148,6 +216,14 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "15a156bed89ca85f  ": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "the intake run's decision on the editor's delegation of 19 Nov 2026: apply as a descriptor/brief change in the weekly pass, after the paper is read at its own text (the ledger keeps «approved» for the editor's own word)",
+   "until": "weekly brief pass"
+  },
   "160f39c12a402d46": {
    "file": "amendment-candidates.csv",
    "date": "2026-10-12",
@@ -164,6 +240,21 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "1c8174b536523588": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "applied",
+   "reason": "access merged"
+  },
+  "1d5a5f4359ce8ffb": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "question Q8 of the packet «Atlas intake 2026-11-19 — decisions»",
+   "until": "editor"
+  },
   "1e98fddaa06b907a": {
    "file": "amendment-candidates.csv",
    "date": "2026-10-12",
@@ -172,6 +263,13 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "202ddfb34a105c24": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "rejected",
+   "reason": "a theory proposal (Rydberg-mediated gates between molecules); no device"
+  },
   "22074be7a2d962d9": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-19",
@@ -179,6 +277,13 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "2256b11fa5bd7404": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "rejected",
+   "reason": "thermal vapour at a microring is not a qubit interface (no trapped single atoms)"
   },
   "238ef4942f35434a": {
    "file": "amendment-candidates.csv",
@@ -196,6 +301,14 @@
    "until": "WP2",
    "reason": "two-qubit error waits for WP2 (protocol, scope and conditioning per figure; review R1-1)"
   },
+  "253429d42d9df940": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "question Q1 of the packet «Atlas intake 2026-11-19 — decisions»",
+   "until": "editor"
+  },
   "25ed70494f0203d5": {
    "file": "amendment-candidates.csv",
    "date": "2026-10-12",
@@ -211,6 +324,13 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "264cbc7f72d210e4": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "rejected",
+   "reason": "a proposal (same paper as 2a6b3f2e), no experiment"
   },
   "26f211e02f30c028": {
    "file": "org-event-candidates.csv",
@@ -253,6 +373,14 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "2894c82fd92b81fc": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "question Q8 of the packet «Atlas intake 2026-11-19 — decisions»",
+   "until": "editor"
   },
   "296d75cf7f753175": {
    "file": "org-event-candidates.csv",
@@ -301,6 +429,13 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "2a6b3f2e7d54d43e": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "rejected",
+   "reason": "a proposal (derived Hamiltonian, no experiment)"
+  },
   "2bbd803b23532cb3": {
    "file": "amendment-candidates.csv",
    "date": "2026-10-12",
@@ -317,6 +452,13 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "2e84b6afdb202876": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "rejected",
+   "reason": "theory only: locally testable codes have no hardware demonstration"
+  },
   "2e8d308eb24b1f84": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-06",
@@ -324,6 +466,22 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "2f6908218993f4ea": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "the intake run's decision on the editor's delegation of 19 Nov 2026: apply as a descriptor/brief change in the weekly pass, after the paper is read at its own text (the ledger keeps «approved» for the editor's own word)",
+   "until": "weekly brief pass"
+  },
+  "2ffd69e8b5ac206e": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "question Q3 of the packet «Atlas intake 2026-11-19 — decisions»",
+   "until": "editor"
   },
   "30bb01d52545cd02": {
    "file": "amendment-candidates.csv",
@@ -356,6 +514,14 @@
    "decision": "deferred",
    "until": "WP1",
    "reason": "the quote does not name T1/T2 (e.g. a cat qubit's bit-flip time): one key, one meaning — waits for WP1's field dictionary (review R1-4)"
+  },
+  "36666bf59489e7cf": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "the intake run's decision on the editor's delegation of 19 Nov 2026: apply as a descriptor/brief change in the weekly pass, after the paper is read at its own text (the ledger keeps «approved» for the editor's own word)",
+   "until": "weekly brief pass"
   },
   "380553a493d7307b": {
    "file": "amendment-candidates.csv",
@@ -399,6 +565,35 @@
    },
    "reason": "status DEMONSTRATED → DEPLOYED stays inside the device set"
   },
+  "3d239d32d0f79543": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "applied",
+   "reason": "roadmap merged"
+  },
+  "3d96bc266db94a39": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "applied",
+   "reason": "access merged"
+  },
+  "3f340f05e80073ee": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "the intake run's decision on the editor's delegation of 19 Nov 2026: apply as a descriptor/brief change in the weekly pass, after the paper is read at its own text (the ledger keeps «approved» for the editor's own word)",
+   "until": "weekly brief pass"
+  },
+  "3f404af2407cf6b0": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "rejected",
+   "reason": "the station exists: fab_cryo_atom (and its change 433eb07f is approved)"
+  },
   "41c040c9065cc43c": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-19",
@@ -414,6 +609,22 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "433eb07f69fc2ea7": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "the intake run's decision on the editor's delegation of 19 Nov 2026: apply as a descriptor/brief change in the weekly pass, after the paper is read at its own text (the ledger keeps «approved» for the editor's own word)",
+   "until": "weekly brief pass"
+  },
+  "436392356df1591d": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "the intake run's decision on the editor's delegation of 19 Nov 2026: apply as a descriptor/brief change in the weekly pass, after the paper is read at its own text (the ledger keeps «approved» for the editor's own word)",
+   "until": "weekly brief pass"
   },
   "44f9e3843c1540dc": {
    "file": "amendment-candidates.csv",
@@ -506,6 +717,14 @@
    "until": "weekly brief pass",
    "reason": "a technology record: the weekly pass checks that the paper's device is this technology and how the number stands against the standing records"
   },
+  "4efa5642f2547e54": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "question Q2 of the packet «Atlas intake 2026-11-19 — decisions»",
+   "until": "editor"
+  },
   "4f933c1d1f65eac6": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-06",
@@ -543,6 +762,14 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "53ec912f2cd68bc2": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "the intake run's decision on the editor's delegation of 19 Nov 2026: apply as a descriptor/brief change in the weekly pass, after the paper is read at its own text (the ledger keeps «approved» for the editor's own word)",
+   "until": "weekly brief pass"
+  },
   "54c571801383d82a": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-06",
@@ -550,6 +777,14 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "55a5d4018b52ad4a": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "a measured two-qubit figure filed as a roadmap: waits for WP2",
+   "until": "WP2"
   },
   "561d24262411fbdc": {
    "file": "org-event-candidates.csv",
@@ -563,6 +798,13 @@
     "checked": "2026-11-06"
    },
    "reason": "an organisation event, recorded as a change-ledger statement"
+  },
+  "57f1a2570fe893b6": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "rejected",
+   "reason": "an optics-bench result; covered by fab_optics"
   },
   "5b3a7d19c6bb162e": {
    "file": "amendment-candidates.csv",
@@ -609,6 +851,13 @@
    },
    "reason": "a register figure with the owner's own words"
   },
+  "5d81d8a1645ae412": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "rejected",
+   "reason": "theory only (no hardware); at most a note in the brief"
+  },
   "5f69ce2f6f47c3e6": {
    "file": "register-amendment-candidates.csv",
    "date": "2026-10-12",
@@ -632,6 +881,13 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "6271069e4b2f9ce2": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "landed",
+   "reason": "the register already says 100 logical by 2028"
+  },
   "6444330dda955f23": {
    "file": "amendment-candidates.csv",
    "date": "2026-10-12",
@@ -639,6 +895,14 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "6445f4a53e907d3d": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "the intake run's decision on the editor's delegation of 19 Nov 2026: apply as a descriptor/brief change in the weekly pass, after the paper is read at its own text (the ledger keeps «approved» for the editor's own word)",
+   "until": "weekly brief pass"
   },
   "657557fd7676f067": {
    "file": "amendment-candidates.csv",
@@ -655,6 +919,21 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "65ce45958f023201": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "rejected",
+   "reason": "a frequency-reference component shown in a clock/atom setup, not in a device of two or more qubits"
+  },
+  "69b7fd62c06dc54f": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "the intake run's decision on the editor's delegation of 19 Nov 2026: apply as a descriptor/brief change in the weekly pass, after the paper is read at its own text (the ledger keeps «approved» for the editor's own word)",
+   "until": "weekly brief pass"
   },
   "69ea284fdc11ceea": {
    "file": "amendment-candidates.csv",
@@ -749,6 +1028,20 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "73609bf0bcaafb44": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "landed",
+   "reason": "the register already carries LUMI-IQ and its 2027–2029 stages"
+  },
+  "73ede6ef7e869aa6": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "applied",
+   "reason": "status DEPLOYED and the target flag dropped (devices 136 → 137); data/changes/2026-11-19.json"
+  },
   "73fc59b57e5dd247": {
    "file": "amendment-candidates.csv",
    "date": "2026-10-12",
@@ -785,6 +1078,37 @@
    },
    "reason": "an organisation event, recorded as a change-ledger statement"
   },
+  "7a96dfb8312067c8": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "the intake run's decision on the editor's delegation of 19 Nov 2026: apply as a descriptor/brief change in the weekly pass, after the paper is read at its own text (the ledger keeps «approved» for the editor's own word)",
+   "until": "weekly brief pass"
+  },
+  "7ba8e0cd1a2f7e39": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "question Q5 of the packet «Atlas intake 2026-11-19 — decisions»",
+   "until": "editor"
+  },
+  "7c056cdd9667171c": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "applied",
+   "reason": "roadmap merged (data/changes/2026-11-19.json)"
+  },
+  "7f350752228bddb6": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "question Q1 of the packet «Atlas intake 2026-11-19 — decisions»",
+   "until": "editor"
+  },
   "803ae8c11a9b346a": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-19",
@@ -800,6 +1124,14 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "81b6cca6d5986122": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "the intake run's decision on the editor's delegation of 19 Nov 2026: apply as a descriptor/brief change in the weekly pass, after the paper is read at its own text (the ledger keeps «approved» for the editor's own word)",
+   "until": "weekly brief pass"
   },
   "8254d5bd76e906b0": {
    "file": "amendment-candidates.csv",
@@ -832,6 +1164,21 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a technology record: the weekly pass checks that the paper's device is this technology and how the number stands against the standing records"
+  },
+  "85926cf85028ddcb": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "the intake run's decision on the editor's delegation of 19 Nov 2026: apply as a descriptor/brief change in the weekly pass, after the paper is read at its own text (the ledger keeps «approved» for the editor's own word)",
+   "until": "weekly brief pass"
+  },
+  "8741e6e84de165da": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "rejected",
+   "reason": "duplicate of 969d5d69 (same paper), which is approved in the wider wording"
   },
   "87f45d7740ae5838": {
    "file": "records-candidates.csv",
@@ -908,6 +1255,20 @@
    },
    "reason": "an organisation event, recorded as a change-ledger statement"
   },
+  "8af4264ce4b8fe66": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "rejected",
+   "reason": "one particle; covered by the approved enc_omg change c86c3030"
+  },
+  "8bee8558f01cd6c2": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "rejected",
+   "reason": "covered by the approved ct_cryocmos change 43639235 (same paper)"
+  },
   "920325872fbc2bce": {
    "file": "amendment-candidates.csv",
    "date": "2026-10-12",
@@ -946,6 +1307,14 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "969d5d69346394de": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "the intake run's decision on the editor's delegation of 19 Nov 2026: apply as a descriptor/brief change in the weekly pass, after the paper is read at its own text (the ledger keeps «approved» for the editor's own word)",
+   "until": "weekly brief pass"
   },
   "98fe649f3350e3b2": {
    "file": "amendment-candidates.csv",
@@ -999,6 +1368,13 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "9fa190b5608ce45c": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "rejected",
+   "reason": "not a decoder: a calibration/drift trigger — belongs to the characterisation question Q8 of the packet"
+  },
   "9fd9ac454ef8a0b3": {
    "file": "records-candidates.csv",
    "date": "2026-11-06",
@@ -1007,6 +1383,14 @@
    "until": "weekly brief pass",
    "reason": "a technology record: the weekly pass checks that the paper's device is this technology and how the number stands against the standing records"
   },
+  "a0c03cd98969ad04": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "question Q1 of the packet «Atlas intake 2026-11-19 — decisions»",
+   "until": "editor"
+  },
   "a23f22b0d578237e": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-19",
@@ -1014,6 +1398,13 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "a29033ab3327f74d": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "rejected",
+   "reason": "covered by the code_fusion row 5d81d8a1; theory only"
   },
   "a36e2ef5a6dcfc6c": {
    "file": "amendment-candidates.csv",
@@ -1055,6 +1446,13 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "afb913a0f938a867": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "rejected",
+   "reason": "covered by the approved cx_crossbar change 969d5d69 (same paper)"
+  },
   "b0e7c60afe2b0d18": {
    "file": "amendment-candidates.csv",
    "date": "2026-10-12",
@@ -1062,6 +1460,13 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "b2e6a8a54afe57b6": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "rejected",
+   "reason": "as f4784959: microwave photons do not fill the optical resource-state slot"
   },
   "b315ed40943f1ed3": {
    "file": "amendment-candidates.csv",
@@ -1085,6 +1490,14 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "b6e050f8199f1d41": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "the intake run's decision on the editor's delegation of 19 Nov 2026: apply as a descriptor/brief change in the weekly pass, after the paper is read at its own text (the ledger keeps «approved» for the editor's own word)",
+   "until": "weekly brief pass"
   },
   "b780cf6cbc010765": {
    "file": "amendment-candidates.csv",
@@ -1152,6 +1565,14 @@
    "by": "editor",
    "decision": "landed",
    "reason": "stale against the register: the register already carries the proposal (written by an earlier run); nothing to change"
+  },
+  "be5590f9fb6223c9": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "the intake run's decision on the editor's delegation of 19 Nov 2026: apply as a descriptor/brief change in the weekly pass, after the paper is read at its own text (the ledger keeps «approved» for the editor's own word)",
+   "until": "weekly brief pass"
   },
   "bf890d9b8327ece6": {
    "file": "records-candidates.csv",
@@ -1250,6 +1671,14 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "c86c30309f554fbc": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "the intake run's decision on the editor's delegation of 19 Nov 2026: apply as a descriptor/brief change in the weekly pass, after the paper is read at its own text (the ledger keeps «approved» for the editor's own word)",
+   "until": "weekly brief pass"
+  },
   "ca189b5d90f1ed06": {
    "file": "amendment-candidates.csv",
    "date": "2026-10-12",
@@ -1295,6 +1724,14 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "d039d36b83d8c220": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "question Q8 of the packet «Atlas intake 2026-11-19 — decisions»",
+   "until": "editor"
+  },
   "d055bb7730b35572": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-19",
@@ -1332,6 +1769,14 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "d4aff00f907edc7d": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "question Q3 of the packet «Atlas intake 2026-11-19 — decisions»",
+   "until": "editor"
+  },
   "d756eafd5cb6c9bf": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-19",
@@ -1339,6 +1784,22 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "d760551531365df7": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "question Q8 of the packet «Atlas intake 2026-11-19 — decisions»",
+   "until": "editor"
+  },
+  "d8136b5a0e4761ee": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "the intake run's decision on the editor's delegation of 19 Nov 2026: apply as a descriptor/brief change in the weekly pass, after the paper is read at its own text (the ledger keeps «approved» for the editor's own word)",
+   "until": "weekly brief pass"
   },
   "da32845c7f7af98b": {
    "file": "org-event-candidates.csv",
@@ -1371,6 +1832,13 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a technology record: the weekly pass checks that the paper's device is this technology and how the number stands against the standing records"
+  },
+  "ddf0db978a77352f": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "rejected",
+   "reason": "proposal only"
   },
   "de514faa09408b9c": {
    "file": "register-amendment-candidates.csv",
@@ -1420,6 +1888,21 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "eedc603454013a58": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "rejected",
+   "reason": "a component of the ion-photon and spin-photon links; covered by the approved ic_spinphoton change 81b6cca6"
+  },
+  "efd707d869d83714": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "question Q2 of the packet «Atlas intake 2026-11-19 — decisions»",
+   "until": "editor"
+  },
   "f12744481a319163": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-06",
@@ -1427,6 +1910,13 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "f1e5049c7842e1eb": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "rejected",
+   "reason": "single-emitter fabrication; fails the engineering-stage rule of 6 Nov 2026 (no device of two or more qubits)"
   },
   "f35af4b9bb5ed5bb": {
    "file": "amendment-candidates.csv",
@@ -1443,6 +1933,13 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a technology record: the weekly pass checks that the paper's device is this technology and how the number stands against the standing records"
+  },
+  "f4784959a9e54dbe": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "rejected",
+   "reason": "the slot is for optical multi-photon resource states; a microwave-photon demonstration does not fill it (a note for the brief at most)"
   },
   "f5b98a8982e00943": {
    "file": "amendment-candidates.csv",
@@ -1496,6 +1993,14 @@
    },
    "reason": "an organisation event, recorded as a change-ledger statement"
   },
+  "f7d1e066a5c06cc6": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "the intake run's decision on the editor's delegation of 19 Nov 2026: apply as a descriptor/brief change in the weekly pass, after the paper is read at its own text (the ledger keeps «approved» for the editor's own word)",
+   "until": "weekly brief pass"
+  },
   "f95978dce4a07689": {
    "file": "org-event-candidates.csv",
    "date": "2026-10-12",
@@ -1508,6 +2013,14 @@
     "checked": "2026-10-12"
    },
    "reason": "an organisation event, recorded as a change-ledger statement"
+  },
+  "fa8970f44ccf3d42": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
+   "decision": "deferred",
+   "reason": "question Q8 of the packet «Atlas intake 2026-11-19 — decisions»",
+   "until": "editor"
   },
   "fa962f2ac9be51a5": {
    "file": "amendment-candidates.csv",
@@ -1604,10 +2117,10 @@
    "manifest_updated": "2026-11-18T08:27:40Z",
    "ticket": "20261119-1",
    "decided": {
-    "applied": 11,
-    "deferred": 29,
-    "landed": 1,
-    "rejected": 1
+    "applied": 16,
+    "deferred": 66,
+    "landed": 3,
+    "rejected": 25
    }
   }
  ],

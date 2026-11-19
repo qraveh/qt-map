@@ -191,6 +191,84 @@
     "https://thequantuminsider.com/2026/10/29/iqm-full-chip-entanglement-54-qubit-processor/"
    ],
    "intake": "f5e57dc7b712904c"
+  },
+  {
+   "kind": "status",
+   "subject": {
+    "type": "machine",
+    "id": "diraq-equinix-sydney"
+   },
+   "fields": {
+    "status": "DEPLOYED (installed and live at Equinix, Sydney — Diraq, 9 Nov 2026; 8 qubits; no performance figures and no access model published)",
+    "status_date": "Nov 2026",
+    "access": "on-prem in an Equinix data centre, Sydney; access model not published",
+    "flags": "no-published-error-rates;press-only"
+   },
+   "note": "«Diraq has installed the world's first silicon spin quantum computer inside a commercial data center, now live at Equinix (Nasdaq: EQIX) in Sydney, Australia.» — checked 19 Nov 2026 at The Quantum Insider copy of the release (9 Nov 2026): installed and operating with eight qubits; no fidelity, no access model. Decided by the intake run on the editor's delegation of 19 Nov 2026: the target-not-device flag is dropped, so the machine joins the devices of §8",
+   "sources": [
+    "https://www.diraq.com/newsdesk/diraq-deploys-worlds-first-silicon-spin-quantum-computer-inside-a-commercial-data-center"
+   ],
+   "intake": "73ede6ef7e869aa6"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "pasqal-orion"
+   },
+   "fields": {
+    "roadmap": "Vela 2026-27; Centaurus ~10,000 physical 2028; Lyra ~100 logical 2029; ~200 logical 2030 (Pasqal's roadmap page, read 19 Nov 2026, states «200+ logical qubits by 2029» and still carries a quantum-advantage demonstration «by the end of Q1 2026»)"
+   },
+   "note": "«culminating in a targeted demonstration of Quantum Advantage by the end of Q1 2026 and the goal of reaching 200+ logical qubits by 2029» — checked 19 Nov 2026 at pasqal.com/roadmap: both phrases are on the page; merged beside the register's dated milestones, not replacing them (the page gives 2029 for 200+ logical, the register's 2030 came from the 2025 roadmap)",
+   "sources": [
+    "https://www.pasqal.com/roadmap"
+   ],
+   "intake": "7c056cdd9667171c"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quera-aquila"
+   },
+   "fields": {
+    "roadmap": "Gemini, then Libra (first fault-tolerant machine: over 256 logical qubits at a 1e-6 logical error rate, on Amazon Braket from 2028 — QuEra, 15 Jun 2026)"
+   },
+   "note": "«QuEra Announces 2028 Fault-Tolerant Quantum Computer and Expanded Multi-Year Strategic Collaboration with AWS» — checked 19 Nov 2026 at QuEra's release of 15 Jun 2026: Libra, over 256 logical qubits, 1e-6, on Braket from 2028",
+   "sources": [
+    "https://www.quera.com/press-releases/quera-announces-2028-fault-tolerant-quantum-computer-and-expanded-multi-year-strategic-collaboration-with-aws"
+   ],
+   "intake": "3d239d32d0f79543"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-superion-256"
+   },
+   "fields": {
+    "access": "orders open; planned deployments: an SDT customer in South Korea (announced 21 Sep 2026, no date) and FIU, Florida's first on-premises Superion 256 (announced 24 Sep 2026, late 2027)"
+   },
+   "note": "«IonQ partners with FIU to install Florida's first on-premises Superion 256-qubit quantum computer to advance research and workforce development.» — the FIU contract confirmed by The Quantum Insider (24 Sep 2026); the register's status already carried «FIU late 2027»",
+   "sources": [
+    "https://ionq.com/news/ionqs-superion-256-platform-selected-by-florida-international-university-for-flagship-deployment"
+   ],
+   "intake": "1c8174b536523588"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-helios"
+   },
+   "fields": {
+    "access": "cloud (Nexus Console, Microsoft Azure; ORNL Quantum Computing User Program for US researchers) + on-premise + NVIDIA GB200 integration; Oracle OCI (on-prem Helios integrated into OCI's cloud services; joint beta, Q3 2026)"
+   },
+   "note": "«Start directly with Quantinuum through Nexus Console, or reach our systems through Microsoft Azure or, for US researchers, by applying to the Oak Ridge National Laboratory Quantum Computing User Program.» — checked 19 Nov 2026 at the systems page: the sentence speaks of «our systems» and the page lists Helios; merged with the register's access, nothing removed",
+   "sources": [
+    "https://www.quantinuum.com/products-solutions/quantinuum-systems"
+   ],
+   "intake": "3d96bc266db94a39"
   }
  ]
 }

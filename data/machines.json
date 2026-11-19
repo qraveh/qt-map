@@ -25181,7 +25181,7 @@
    "status": "ANNOUNCED (orderable; first ions trapped in prototypes; deliveries 2027 — NVAQC 2027, FIU late 2027)",
    "status_date": "8 Sep 2026",
    "physical_qubits_num": 256,
-   "access": "orders open; a Superion 256 planned for deployment with an SDT customer in South Korea (announced 21 Sep 2026, no date)",
+   "access": "orders open; planned deployments: an SDT customer in South Korea (announced 21 Sep 2026, no date) and FIU, Florida's first on-premises Superion 256 (announced 24 Sep 2026, late 2027)",
    "units": {
     "built": "",
     "in_service": "",
@@ -26716,7 +26716,7 @@
    "status": "DEPLOYED",
    "status_date": "Nov 2025 (peer-reviewed Jun 2026)",
    "physical_qubits_num": 98,
-   "access": "cloud + on-premise + NVIDIA GB200 integration; Oracle OCI (on-prem Helios integrated into OCI's cloud services; joint beta, Q3 2026)",
+   "access": "cloud (Nexus Console, Microsoft Azure; ORNL Quantum Computing User Program for US researchers) + on-premise + NVIDIA GB200 integration; Oracle OCI (on-prem Helios integrated into OCI's cloud services; joint beta, Q3 2026)",
    "units": {
     "built": "≥1",
     "in_service": "≥1",
@@ -33970,7 +33970,7 @@
     "best_logical": "none demonstrated; no code named anywhere public, against a roadmap of 200+ logical by 2029",
     "decoder": "none",
     "realtime": "none",
-    "roadmap": "Vela 2026-27; Centaurus ~10,000 physical 2028; Lyra ~100 logical 2029; ~200 logical 2030",
+    "roadmap": "Vela 2026-27; Centaurus ~10,000 physical 2028; Lyra ~100 logical 2029; ~200 logical 2030 (Pasqal's roadmap page, read 19 Nov 2026, states «200+ logical qubits by 2029» and still carries a quantum-advantage demonstration «by the end of Q1 2026»)",
     "role": "",
     "gate_evidence": "none",
     "decoder_mode": "none",
@@ -35330,7 +35330,7 @@
     "best_logical": "none (not applicable)",
     "decoder": "none",
     "realtime": "none",
-    "roadmap": "Gemini, then Libra",
+    "roadmap": "Gemini, then Libra (first fault-tolerant machine: over 256 logical qubits at a 1e-6 logical error rate, on Amazon Braket from 2028 — QuEra, 15 Jun 2026)",
     "role": "",
     "gate_evidence": "none",
     "decoder_mode": "none",
@@ -40582,10 +40582,10 @@
    "country": "Australia",
    "family": "SPIN",
    "map_path": "spin_qd",
-   "status": "ANNOUNCED (installation due Oct 2026)",
-   "status_date": "Sep 2026",
+   "status": "DEPLOYED (installed and live at Equinix, Sydney — Diraq, 9 Nov 2026; 8 qubits; no performance figures and no access model published)",
+   "status_date": "Nov 2026",
    "physical_qubits_num": 8,
-   "access": "n/a (not yet installed; access model not published)",
+   "access": "on-prem in an Equinix data centre, Sydney; access model not published",
    "units": {
     "built": "",
     "in_service": "",
@@ -40775,8 +40775,7 @@
     "err_2q_median_num": null,
     "flags": [
      "no-published-error-rates",
-     "press-only",
-     "target-not-device"
+     "press-only"
     ],
     "qubits_accessible": null,
     "gate_evidence_derived": true,
