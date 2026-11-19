@@ -1,0 +1,196 @@
+{
+ "date": "2026-11-19",
+ "source": "digest intake of the issues of 7–18 Nov 2026 (cloud intake run, ticket 20261119-1; read through the Drive copy of qnews-intake: the device bridge brought no folders)",
+ "items": [
+  {
+   "kind": "status",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-tempo"
+   },
+   "fields": {
+    "status": "DEPLOYED (IonQ 3Q26 results, 5 Nov 2026: «global deployments of our IonQ Tempo quantum computers»; no customer named)"
+   },
+   "note": "«IonQ Platform Segment Revenue Up 127% to $90.3 Million on Global Tempo Quantum Computer Deployments» (source class B; digest intake 2026-11-07)",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1824920/000119312526449779/ionq-ex99_1.htm"
+   ],
+   "intake": "3b6edf98c0a2080b"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "dwave-advantage2"
+   },
+   "fields": {
+    "access": "cloud (Leap) + on-prem sold (incl. 4,400+ qubit Advantage2 delivered to Villa Saporiti, Como, Italy)"
+   },
+   "note": "«Delivered Italy's first annealing quantum computer, a 4,400+ qubit Advantage2™ system, for installation at Villa Saporiti in Como, Italy.» (source class B; digest intake 2026-11-11)",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1907982/000190798226000180/qbts-20261110xexx991.htm"
+   ],
+   "intake": "c44e448e9c303dea"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-h2"
+   },
+   "fields": {
+    "access": "cloud (Nexus, Azure, AWS Braket) + RIKEN Reimei (hybrid platform with Fugaku and ROQUO)"
+   },
+   "note": "«RIKEN and Quantinuum have upgraded the Reimei quantum computer to Quantinuum's System Model H2» (source class A; digest intake 2026-11-11)",
+   "sources": [
+    "https://www.quantinuum.com/blog/quantinuum-and-riken-announcement"
+   ],
+   "intake": "10e6f0cd692548c0"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quera-aquila"
+   },
+   "fields": {
+    "demonstrated_algorithms": "maximum independent set on unit-disk graphs, quantum phase transitions, Z2/Z3 ordered phases, QAOA-style optimisation; a prethermal first-order dynamical phase transition not inherited from the equilibrium phase diagram, mapped with NERSC (AWS blog, 17 Nov 2026)"
+   },
+   "note": "«dynamical phase transition that is not inherited from the system's known equilibrium phase diagram … The NERSC-QuEra collaboration combined experiments on QuEra's Aquila, accessed through Amazon Braket, with theoretical analysis and classical calculations on NERSC's Perlmutter supercomputer.» (source class A; digest intake 2026-11-18)",
+   "sources": [
+    "https://aws.amazon.com/blogs/quantum-computing/observing-prethermal-dynamical-phase-transitions-on-quera-aquila-with-amazon-braket/"
+   ],
+   "intake": "bc168e0c8165522d"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "organisation",
+    "id": "universal-quantum"
+   },
+   "fields": {
+    "event": "funding",
+    "date": "2026-10-08"
+   },
+   "note": "raised over $100m Series A from sovereign, institutional, deep tech and quantum-specialist investors — «Universal Quantum raises over $100m Series A to scale quantum computing globally»",
+   "sources": [
+    "https://universalquantum.com/knowledge-hub/news-blog"
+   ],
+   "intake": "26f211e02f30c028"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "organisation",
+    "id": "rigetti-computing"
+   },
+   "fields": {
+    "event": "funding",
+    "date": "2026-11-10"
+   },
+   "note": "signed a definitive $100 million agreement with the U.S. Department of Commerce — «We also signed a definitive $100 million agreement with the U.S. Department of Commerce»",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1838359/000110465926125152/rgti-ex99d1.htm"
+   ],
+   "intake": "2a659b178c9c31ba"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "organisation",
+    "id": "atom-computing"
+   },
+   "fields": {
+    "event": "funding",
+    "date": "2026-11-13"
+   },
+   "note": "Finalized a $100 million U.S. Department of Commerce R&D award for fault-tolerant, utility-scale quantum computing — «Atom Computing Finalizes $100 Million U.S. Department of Commerce R&D Award to Accelerate Fault-Tolerant, Utility-Scale Quantum Computing»",
+   "sources": [
+    "https://atom-computing.com/news-resources"
+   ],
+   "intake": "109f694ae0511955"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "organisation",
+    "id": "psiquantum"
+   },
+   "fields": {
+    "event": "funding",
+    "date": "2026-11-12"
+   },
+   "note": "AMD plans an equity investment in PsiQuantum as part of an expanded strategic partnership — «To reinforce its commitment to the partnership, AMD also plans to make an equity investment into PsiQuantum.»",
+   "sources": [
+    "https://www.psiquantum.com/news-import/psiquantum-amd-partnership-future-of-computing"
+   ],
+   "intake": "27efc8add566721d"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "organisation",
+    "id": "qudora-technologies"
+   },
+   "fields": {
+    "event": "funding",
+    "date": "2026-10-06"
+   },
+   "note": "QUDORA Japan K.K. selected for a Japanese NEDO national R&D project on cryogenic quantum packaging — «QUDORA Japan K.K., the Japanese subsidiary of deep-tech trapped-ion quantum computing hardware developer QUDORA Technologies, today announced its selection for a national research and development project under Japan's New Energy and Industrial Technology Development Organization (NEDO)»",
+   "sources": [
+    "https://qudora.com/news"
+   ],
+   "intake": "6a9545ef55a7d57c"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "organisation",
+    "id": "quix-quantum"
+   },
+   "fields": {
+    "event": "funding",
+    "date": "2026-11-10"
+   },
+   "note": "awarded PhotonDelta National Growth Fund Phase II mission, with seven partners, toward a 100+ qubit photonic computer — «QuiX Quantum and Seven Partners Awarded National Mission to Build the Technology Foundations for a 100+ Qubit Photonic Quantum Computer … The Photonic Quantum Computing Mission, funded under Phase II of the PhotonDelta National Growth Fund programme»",
+   "sources": [
+    "https://quixquantum.com/news"
+   ],
+   "intake": "6a62ce1efa79d2d6"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "organisation",
+    "id": "pasqal"
+   },
+   "fields": {
+    "event": "policy",
+    "date": "2026-11-16"
+   },
+   "note": "Pasqal QPUs can be requested and scheduled as Slurm resources via QRMI (Slurm 26.11 HRES) — «Slurm 26.11 adds a plugin interface for hierarchical resources (HRES), and together with IBM we have connected it to the Quantum Resource Management Interface (QRMI), so that Slurm manages access to Pasqal QPUs around each job.»",
+   "sources": [
+    "https://www.pasqal.com/blog/enabling-hybrid-gpu-qpu-workflows-with-slurm-hres-and-pasqal-qpus/"
+   ],
+   "intake": "9b13671df43b94ab"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine",
+    "id": "iqm-emerald-54"
+   },
+   "fields": {
+    "event": "benchmark",
+    "benchmark": "all 54 qubits entangled (full-chip GHZ-type entanglement)",
+    "date": "2026-10-29"
+   },
+   "note": "«We also entangled all 54 qubits on our IQM Emerald processor» (IQM Form 6-K, 5 Nov 2026; source class B; digest intake 2026-11-07; first announced 29 Oct 2026, reported by The Quantum Insider and HPCwire) — the register has no benchmark column: a statement, not a cell; the intake row deferred until it has one",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/2113060/000119312526448359/iqmx-ex99_2.htm",
+    "https://thequantuminsider.com/2026/10/29/iqm-full-chip-entanglement-54-qubit-processor/"
+   ],
+   "intake": "f5e57dc7b712904c"
+  }
+ ]
+}

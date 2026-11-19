@@ -25420,10 +25420,10 @@
    "country": "USA",
    "family": "ION",
    "map_path": "ion_chain",
-   "status": "DEMONSTRATED",
+   "status": "DEPLOYED (IonQ 3Q26 results, 5 Nov 2026: «global deployments of our IonQ Tempo quantum computers»; no customer named)",
    "status_date": "25 Sep 2025",
    "physical_qubits_num": 64,
-   "access": "lab (development system); the 100-qubit product sold to KISTI, delivery not dated",
+   "access": "lab (development system); the 100-qubit product sold to KISTI, delivery not dated; IonQ reports global Tempo deployments (3Q26 results, 5 Nov 2026), sites not named",
    "units": {
     "built": "1",
     "in_service": "1",
@@ -26410,7 +26410,7 @@
    "status": "DEPLOYED",
    "status_date": "Jun 2023 (56 q from Jun 2024)",
    "physical_qubits_num": 56,
-   "access": "cloud (Nexus, Azure, AWS Braket)",
+   "access": "cloud (Nexus, Azure, AWS Braket) + RIKEN Reimei (hybrid platform with Fugaku and ROQUO)",
    "units": {
     "built": "2",
     "in_service": "≥2",
@@ -44813,7 +44813,7 @@
    "status": "DEPLOYED",
    "status_date": "20 May 2025",
    "physical_qubits_num": 4500,
-   "access": "cloud (Leap) + on-prem sold",
+   "access": "cloud (Leap) + on-prem sold (incl. 4,400+ qubit Advantage2 delivered to Villa Saporiti, Como, Italy)",
    "units": {
     "built": "≥4",
     "in_service": "≥4",

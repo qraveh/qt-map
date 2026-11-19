@@ -5,7 +5,7 @@
  "edition": "2026.09",
  "languages": {
   "en": {
-   "bytes": 7224892,
+   "bytes": 7225002,
    "dir": "ltr",
    "folder": "",
    "fragment": "lang/en.js",
@@ -17,10 +17,10 @@
     "organisation": 90,
     "technology": 116
    },
-   "sha256": "d1a295eb01765f144d834e85944a00d7228fc417d394e5c1bbcbfec4e36f0591"
+   "sha256": "eecdef3c2c46e81e7422a8582b87c704c5908f5a1dbb578a21e90e7f90b6c724"
   },
   "he": {
-   "bytes": 7948896,
+   "bytes": 7949012,
    "dir": "rtl",
    "folder": "he/",
    "fragment": "lang/he.js",
@@ -32,10 +32,10 @@
     "organisation": 90,
     "technology": 116
    },
-   "sha256": "0530125c6a4727d184a1a23f5e3c057466ec8c540a1f3145455599d9dc100a7c"
+   "sha256": "e14acaa26c0ff4539255f7e8f730ed4699ae2ac023e6b0572dee8326002aa0f2"
   },
   "ru": {
-   "bytes": 8800984,
+   "bytes": 8801089,
    "dir": "ltr",
    "folder": "ru/",
    "fragment": "lang/ru.js",
@@ -47,7 +47,7 @@
     "organisation": 90,
     "technology": 116
    },
-   "sha256": "b1b2362c6c7c1543e47625714968d61030d12d453882546e997697db7848beee"
+   "sha256": "b7905b3feddf6fbf6544f98da7f12003764acaf2d157729fc5577aecc84db95c"
   }
  },
  "main": "Quantum-Technology-Atlas-2026.09.html",

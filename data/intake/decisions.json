@@ -37,6 +37,14 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "05e9fd814dab3657": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "WP2",
+   "reason": "two-qubit error waits for WP2 (protocol, scope and conditioning per figure; review R1-1)"
+  },
   "06ee8be22d13ad57": {
    "file": "amendment-candidates.csv",
    "date": "2026-10-15",
@@ -66,6 +74,14 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "0bdb35cbec48071a": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
   "0f2c7332de96109b": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-06",
@@ -81,6 +97,32 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "109f694ae0511955": {
+   "file": "org-event-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "applied",
+   "change": "data/changes/2026-11-19.json#6",
+   "verified": {
+    "url": "https://www.nist.gov/document/atom-computing-chips-press-release",
+    "quote_found": true,
+    "checked": "2026-11-19"
+   },
+   "reason": "an organisation event, recorded as a change-ledger statement"
+  },
+  "10e6f0cd692548c0": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "applied",
+   "change": "data/changes/2026-11-19.json#2",
+   "verified": {
+    "url": "https://www.quantinuum.com/press-releases/riken-scales-quantum-supercomputing-in-japan-with-quantinuum-system-upgrade",
+    "quote_found": true,
+    "checked": "2026-11-19"
+   },
+   "reason": "a register figure with the owner's own words"
   },
   "12af8c0bcae6bc04": {
    "file": "register-amendment-candidates.csv",
@@ -98,6 +140,14 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "1524614ad4e81830": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
   "160f39c12a402d46": {
    "file": "amendment-candidates.csv",
    "date": "2026-10-12",
@@ -106,9 +156,33 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "1737db0a2c59fabb": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
   "1e98fddaa06b907a": {
    "file": "amendment-candidates.csv",
    "date": "2026-10-12",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "22074be7a2d962d9": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "238ef4942f35434a": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
    "by": "intake-run",
    "decision": "deferred",
    "until": "weekly brief pass",
@@ -138,6 +212,19 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "26f211e02f30c028": {
+   "file": "org-event-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "applied",
+   "change": "data/changes/2026-11-19.json#4",
+   "verified": {
+    "url": "https://thequantuminsider.com/2026/10/08/universal-quantum-raises-over-100-million-series-a/",
+    "quote_found": true,
+    "checked": "2026-11-19"
+   },
+   "reason": "an organisation event, recorded as a change-ledger statement"
+  },
   "27b670bfb520cbf4": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-06",
@@ -145,6 +232,19 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "27efc8add566721d": {
+   "file": "org-event-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "applied",
+   "change": "data/changes/2026-11-19.json#7",
+   "verified": {
+    "url": "https://thequantuminsider.com/2026/11/12/psiquantum-amd-expand-quantum-computing-infrastructure-partnership/",
+    "quote_found": true,
+    "checked": "2026-11-19"
+   },
+   "reason": "an organisation event, recorded as a change-ledger statement"
   },
   "2846936b2be834a9": {
    "file": "amendment-candidates.csv",
@@ -180,9 +280,38 @@
    },
    "reason": "a register figure with the owner's own words"
   },
+  "2a659b178c9c31ba": {
+   "file": "org-event-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "applied",
+   "change": "data/changes/2026-11-19.json#5",
+   "verified": {
+    "url": "https://www.sec.gov/Archives/edgar/data/0001838359/000110465926125152/rgti-ex99d1.htm",
+    "quote_found": true,
+    "checked": "2026-11-19"
+   },
+   "reason": "an organisation event, recorded as a change-ledger statement"
+  },
+  "2a6806ea5b9c589a": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
   "2bbd803b23532cb3": {
    "file": "amendment-candidates.csv",
    "date": "2026-10-12",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "2de8f25b337459b3": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
    "by": "intake-run",
    "decision": "deferred",
    "until": "weekly brief pass",
@@ -257,6 +386,35 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "3b6edf98c0a2080b": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "applied",
+   "change": "data/changes/2026-11-19.json#0",
+   "verified": {
+    "url": "https://www.sec.gov/Archives/edgar/data/0001824920/000119312526449779/ionq-ex99_1.htm",
+    "quote_found": true,
+    "checked": "2026-11-19"
+   },
+   "reason": "status DEMONSTRATED → DEPLOYED stays inside the device set"
+  },
+  "41c040c9065cc43c": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "42f87dbc82560056": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
   "44f9e3843c1540dc": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-06",
@@ -310,6 +468,14 @@
     "checked": "2026-10-12"
    },
    "reason": "an organisation event, recorded as a change-ledger statement"
+  },
+  "48e0ea8bd1e3b3a8": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
   "4968b64f67ff0241": {
    "file": "amendment-candidates.csv",
@@ -422,6 +588,14 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "5d509890b37ef53e": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
   "5d69f276296b7d9b": {
    "file": "register-amendment-candidates.csv",
    "date": "2026-10-06",
@@ -441,6 +615,14 @@
    "by": "intake-run",
    "decision": "rejected",
    "reason": "the register's note already weighs this value and keeps another: «100-200 per site (largest deployed register quoted at 324, which conflicts with the per-site figures); up to 256 atoms used on Orion Beta QP»"
+  },
+  "60290c84668e1ef8": {
+   "file": "org-event-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "a source that shows it",
+   "reason": "the quote was not found at the source on 2026-11-19: the mission article does not mention a EUR 50M P4Q initiative; quixquantum.com/news not reachable from the run"
   },
   "6152d14c68030cc4": {
    "file": "amendment-candidates.csv",
@@ -480,6 +662,32 @@
    "by": "intake-run",
    "decision": "rejected",
    "reason": "the evidence is the reviewer's inference, not the paper's"
+  },
+  "6a62ce1efa79d2d6": {
+   "file": "org-event-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "applied",
+   "change": "data/changes/2026-11-19.json#9",
+   "verified": {
+    "url": "https://thequantuminsider.com/2026/11/10/quix-quantum-leads-national-mission-100-qubit-photonic-quantum-computer/",
+    "quote_found": true,
+    "checked": "2026-11-19"
+   },
+   "reason": "an organisation event, recorded as a change-ledger statement"
+  },
+  "6a9545ef55a7d57c": {
+   "file": "org-event-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "applied",
+   "change": "data/changes/2026-11-19.json#8",
+   "verified": {
+    "url": "https://quantumzeitgeist.com/nedo-quantum-chip-cooling-industrial-science/",
+    "quote_found": true,
+    "checked": "2026-11-19"
+   },
+   "reason": "an organisation event, recorded as a change-ledger statement"
   },
   "6b3ad499fb3dcab5": {
    "file": "register-amendment-candidates.csv",
@@ -577,6 +785,14 @@
    },
    "reason": "an organisation event, recorded as a change-ledger statement"
   },
+  "803ae8c11a9b346a": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
   "80f2923487f7d067": {
    "file": "amendment-candidates.csv",
    "date": "2026-10-12",
@@ -671,6 +887,14 @@
    },
    "reason": "an organisation event, recorded as a change-ledger statement"
   },
+  "8ab24e23f00cfeff": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
   "8ac9cd4b184c8b17": {
    "file": "org-event-candidates.csv",
    "date": "2026-11-06",
@@ -687,6 +911,21 @@
   "920325872fbc2bce": {
    "file": "amendment-candidates.csv",
    "date": "2026-10-12",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "9307ee0f29b8bb52": {
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "file": "register-amendment-candidates.csv",
+   "decision": "landed",
+   "reason": "the register's best_logical already records 30 entangled logical qubits from 80 physical qubits (Infleqtion, 24 Sep 2026); the 8-K of 16 Nov restates it"
+  },
+  "946b1e2a47faada1": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
    "by": "intake-run",
    "decision": "deferred",
    "until": "weekly brief pass",
@@ -724,6 +963,19 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "9b13671df43b94ab": {
+   "file": "org-event-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "applied",
+   "change": "data/changes/2026-11-19.json#10",
+   "verified": {
+    "url": "https://quantumcomputingreport.com/pasqal-demonstrates-hybrid-gpu-to-qpu-workflows-using-slurm-26-11-hierarchical-resources-qrmi-and-cuda-q/",
+    "quote_found": true,
+    "checked": "2026-11-19"
+   },
+   "reason": "an organisation event, recorded as a change-ledger statement"
+  },
   "9c5e4e62dbb57c05": {
    "file": "amendment-candidates.csv",
    "date": "2026-10-12",
@@ -731,6 +983,13 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "9f01d4a3ed1e7dd3": {
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "file": "org-event-candidates.csv",
+   "decision": "rejected",
+   "reason": "the same two QuiX news items as 6a62ce1e… and 60290c84…, read again on 18 Nov"
   },
   "9f662f4164da9155": {
    "file": "amendment-candidates.csv",
@@ -747,6 +1006,14 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a technology record: the weekly pass checks that the paper's device is this technology and how the number stands against the standing records"
+  },
+  "a23f22b0d578237e": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
   "a36e2ef5a6dcfc6c": {
    "file": "amendment-candidates.csv",
@@ -791,6 +1058,14 @@
   "b0e7c60afe2b0d18": {
    "file": "amendment-candidates.csv",
    "date": "2026-10-12",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "b315ed40943f1ed3": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
    "by": "intake-run",
    "decision": "deferred",
    "until": "weekly brief pass",
@@ -850,6 +1125,27 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "bc168e0c8165522d": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "applied",
+   "change": "data/changes/2026-11-19.json#3",
+   "verified": {
+    "url": "https://aws.amazon.com/blogs/quantum-computing/observing-prethermal-dynamical-phase-transitions-on-quera-aquila-with-amazon-braket/",
+    "quote_found": true,
+    "checked": "2026-11-19"
+   },
+   "reason": "a register figure with the owner's own words"
+  },
+  "bc27c568803e726b": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
   "bdfbf7217571d859": {
    "file": "register-amendment-candidates.csv",
    "date": "2026-10-15",
@@ -885,6 +1181,22 @@
    "decision": "landed",
    "reason": "stale against the register: the register already carries the proposal (written by an earlier run); nothing to change"
   },
+  "c1b9193e17925c6f": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "c25eac85a3cabd06": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
   "c2a7436f3f6b78ff": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-06",
@@ -900,6 +1212,19 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "c44e448e9c303dea": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "applied",
+   "change": "data/changes/2026-11-19.json#1",
+   "verified": {
+    "url": "https://finviz.com/news/419893/d-wave-reports-third-quarter-2026-results",
+    "quote_found": true,
+    "checked": "2026-11-19"
+   },
+   "reason": "a register figure with the owner's own words"
   },
   "c4bdc8214be938e3": {
    "file": "amendment-candidates.csv",
@@ -928,6 +1253,14 @@
   "ca189b5d90f1ed06": {
    "file": "amendment-candidates.csv",
    "date": "2026-10-12",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "cbfe49ce76b64440": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
    "by": "intake-run",
    "decision": "deferred",
    "until": "weekly brief pass",
@@ -962,6 +1295,14 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "d055bb7730b35572": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
   "d07f428dbb431010": {
    "file": "register-amendment-candidates.csv",
    "date": "2026-11-06",
@@ -991,6 +1332,22 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "d756eafd5cb6c9bf": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "da32845c7f7af98b": {
+   "file": "org-event-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "a source that shows it",
+   "reason": "the quote was not found at the source on 2026-11-19: the sentence is on the page but undated; the TGFS investment appears to date from Nov 2025 (mergerlinks 2025-11-05), so the digest's date 16 Nov 2026 is the day the page was read, not the event"
+  },
   "da9c134def1fda67": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-06",
@@ -1014,6 +1371,14 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a technology record: the weekly pass checks that the paper's device is this technology and how the number stands against the standing records"
+  },
+  "de514faa09408b9c": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "WP2",
+   "reason": "two-qubit error waits for WP2 (protocol, scope and conditioning per figure; review R1-1)"
   },
   "e08a2fca1a577481": {
    "file": "amendment-candidates.csv",
@@ -1087,12 +1452,28 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "f5e57dc7b712904c": {
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "file": "register-amendment-candidates.csv",
+   "decision": "deferred",
+   "until": "a register column for benchmarks",
+   "reason": "the register has no benchmark column (as for 5249f0fb… on 6 Nov); the figure is a ledger statement in data/changes/2026-11-19.json"
+  },
   "f6e9197ba5c19f99": {
    "file": "register-amendment-candidates.csv",
    "date": "2026-10-06",
    "by": "intake-run",
    "decision": "rejected",
    "reason": "status_date is the cohort date — when the machine first existed (build/machines_chapter.py) — and 2023 → 2026 would move its cohort; a retirement date belongs in the status text"
+  },
+  "f72d5e66a2f6eb58": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
   "f771eb36f9d2afaa": {
    "file": "amendment-candidates.csv",
@@ -1143,6 +1524,14 @@
    "decision": "deferred",
    "until": "WP2",
    "reason": "two-qubit error waits for WP2 (protocol, scope and conditioning per figure; review R1-1)"
+  },
+  "fd16cba6514f2d7c": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
   "fe54351ab31b0023": {
    "file": "amendment-candidates.csv",
@@ -1206,6 +1595,17 @@
    "decided": {
     "applied": 7,
     "deferred": 53,
+    "landed": 1,
+    "rejected": 1
+   }
+  },
+  {
+   "date": "2026-11-19",
+   "manifest_updated": "2026-11-18T08:27:40Z",
+   "ticket": "20261119-1",
+   "decided": {
+    "applied": 11,
+    "deferred": 29,
     "landed": 1,
     "rejected": 1
    }
