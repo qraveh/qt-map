@@ -133,15 +133,15 @@ with tempfile.TemporaryDirectory() as d:
           'a cat qubit\'s bit-flip time is not T1: held for WP1\'s field dictionary (R1-4)')
     check(T['k-jump']['tier'] == 'reject', 'Nighthawk r2 «458 physical»: the register\'s note already explains 458 = qubits + couplers + resets')
     check(T['k-jump2']['tier'] == 'editor', 'a qubit count that jumps by more than 25 %% (156 → 400) is checked by the editor')
-    check(T['k-roadmap']['tier'] == 'editor', 'a roadmap is merged by the editor, not replaced')
-    check(T['k-access']['tier'] == 'editor', 'an access change that leaves the cloud / on-premises class is the editor\'s')
-    check(T['k-planned']['tier'] == 'editor' and 'into' in T['k-planned']['why_tier'],
-          'a planned machine reported demonstrated enters the device counts: the editor\'s')
+    check(T['k-roadmap']['tier'] == 'run', 'a roadmap is merged by the run, not replaced (the editor\'s standing word of 19 Nov 2026)')
+    check(T['k-access']['tier'] == 'run', 'an access change that leaves the cloud / on-premises class is merged by the run')
+    check(T['k-planned']['tier'] == 'run' and 'into' in T['k-planned']['why_tier'],
+          'a planned machine reported demonstrated enters the device counts: the run decides on the owner\'s own words')
     check(T['k-new']['tier'] == 'editor' and T['k-new']['org_slug'] == 'ionq', 'a new machine is the editor\'s; its owner resolves')
     check(T['k-org']['tier'] == 'auto' and T['k-org-d']['tier'] == 'reject', 'an SEC-filed acquisition is recorded; a rumour is not')
     check(T['k-note']['tier'] == 'session', 'a deep review\'s note goes to the weekly brief pass')
     check(T['k-infer']['tier'] == 'reject', 'the reviewer\'s own inference is rejected')
-    check(T['k-desc']['tier'] == 'editor', 'a technology\'s descriptor is the editor\'s')
+    check(T['k-desc']['tier'] == 'run', 'a technology\'s descriptor is accepted or rejected by the run')
     check(T['k-ghostnode']['tier'] == 'reject', 'an unknown technology is rejected')
     check(T['k-gap']['tier'] == 'editor', 'a new technology is the editor\'s')
     check(T['k-rec']['tier'] == 'session' and T['k-work']['tier'] == 'attach',
@@ -160,6 +160,7 @@ with tempfile.TemporaryDirectory() as d:
     check(D['k-aria']['decision'] == 'deferred' and 'not found' in D['k-aria']['reason'],
           'an auto row whose quote is not at the source is deferred, not applied')
     check('k-tempo' not in D and 'k-new' not in D and 'k-gap' not in D, 'the editor\'s rows stay undecided until he decides')
+    check('k-roadmap' not in D and 'k-desc' not in D and 'k-roadmap' in vk, 'the run\'s rows are source-checked and stay undecided until the run records its decision')
     check(D['k-press']['decision'] == 'rejected' and D['k-same']['decision'] == 'landed'
           and D['k-forte-err']['until'] == 'WP2' and D['k-note']['until'] == 'weekly brief pass',
           'rejections, landings and holds are decided with their reason')

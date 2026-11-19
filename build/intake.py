@@ -27,6 +27,9 @@ TIERS — the rule table TIER_RULES below is the whole policy, printed by `statu
            comparability classes (review R1-1)
   session  a written change a session makes in a weekly batch: the deep reviews' notes into the briefs (three languages),
            technology records (does the paper's device fit the technology; does the number beat the standing record)
+  run      the run decides and records its reason (the editor's standing word of 19 Nov 2026, rules (a)–(d)): a roadmap or
+           an access text merged with the register's, a status the owner states in so many words that crosses the device
+           boundary, a technology's status or descriptor; the conclusions guard of INTAKE_RUN.md §4 still applies
   editor   the editor decides: a status that moves a machine into or out of the device counts of §8, any future-dated
            status (the Tempo case), a new machine, a new technology, a technology's status or descriptor
   attach   a work proposed for the references: numbered only when a change that cites it is applied
@@ -76,24 +79,24 @@ TIER_RULES = [
     ('register-amendment', 'the register already holds the proposed value', 'landed'),
     ('register-amendment', 'the register value differs from `current` (the register moved since)', 'stale'),
     ('register-amendment', 'field status, event roadmap (stated for the future: the Tempo case)', 'editor'),
-    ('register-amendment', 'field status, the change crosses the device boundary of §8 (DEPLOYED/DEMONSTRATED/RETIRED)', 'editor'),
+    ('register-amendment', 'field status, the change crosses the device boundary of §8 (DEPLOYED/DEMONSTRATED/RETIRED): the run decides when the owner says installed / live / retired in so many words', 'run'),
     ('register-amendment', 'field status within the device or non-device set (e.g. DEPLOYED → RETIRED)', 'auto'),
     ('register-amendment', 'two-qubit error fields', 'hold (WP2)'),
     ('register-amendment', 'status_date whose year differs (it is the cohort date; a retirement date goes in the status text)', 'reject'),
     ('register-amendment', 'T1/T2 whose quote names another quantity (a bit-flip time)', 'hold (WP1)'),
     ('register-amendment', 'the register\'s prose beside the number already names the proposed value (a curated choice)', 'reject'),
     ('register-amendment', 'a qubit count that moves by more than 25 %', 'editor'),
-    ('register-amendment', 'roadmap (merged, not replaced: the forecast ledger)', 'editor'),
-    ('register-amendment', 'access that changes the cloud / on-premises / laboratory class', 'editor'),
+    ('register-amendment', 'roadmap (merged with the register\'s text, never replaced; the conclusions guard watches the forecast ledger)', 'run'),
+    ('register-amendment', 'access that changes the cloud / on-premises / laboratory class (merged, nothing removed)', 'run'),
     ('register-amendment', 'counts, times, readout error, access, status date, milestones', 'auto'),
     ('register-amendment', 'any other field', 'editor'),
     ('machine-candidate', 'a system the register does not hold', 'editor'),
     ('org-event', 'source class D', 'reject'),
     ('org-event', 'funding, acquisition, merger, listing, rename, closure, policy', 'auto (ledger statement)'),
     ('station amendment', 'the evidence is the reviewer\'s own inference', 'reject'),
-    ('station amendment', 'change_kind status (an empty slot demonstrated) or descriptor', 'editor'),
+    ('station amendment', 'change_kind status (an empty slot demonstrated) or descriptor: the run accepts or rejects; the text is written in the weekly pass', 'run'),
     ('station amendment', 'change_kind note', 'session (weekly brief pass)'),
-    ('map gap', 'a technology the Atlas lacks', 'editor'),
+    ('map gap', 'a technology the Atlas lacks: the run rejects theory, a proposal without an experiment, a duplicate, an existing station, a failure of the engineering-stage rule; a real candidate is a numbered question to the editor', 'editor'),
     ('record', 'station unknown', 'reject'),
     ('record', 'a dated record with its quote (does the device fit the technology? better than the standing record?)',
      'session (weekly pass)'),
@@ -210,10 +213,10 @@ def tier_register(r, A):
             return 'editor', 'a status stated for the future (%s → %s): how a target is recorded is the editor\'s call' % (a, b)
         was, will = A.is_device(m), A.is_device(m, new)
         if was != will:
-            return 'editor', 'moves the machine %s the device counts of §8 (%d → %d devices)' % (
+            return 'run', 'moves the machine %s the device counts of §8 (%d → %d devices)' % (
                 'into' if will else 'out of', A.devices, A.devices + (1 if will else -1))
         if (a in DEVICE) != (b in DEVICE):
-            return 'editor', 'status %s → %s crosses the device boundary (the device count stays %d: a flag excludes it)' % (
+            return 'run', 'status %s → %s crosses the device boundary (the device count stays %d: a flag excludes it — drop the flag only on the owner\'s own «installed» / «live»)' % (
                 a, b, A.devices)
         return 'auto', 'status %s → %s stays %s the device set' % (a, b, 'inside' if b in DEVICE else 'outside')
     if f in HOLD_FIELDS:
@@ -238,9 +241,9 @@ def tier_register(r, A):
         except ValueError:
             pass
     if f == 'roadmap':
-        return 'editor', 'a roadmap is merged, not replaced: it feeds the forecast ledger and the roadmap checks of §8.5'
+        return 'run', 'a roadmap is merged, not replaced: it feeds the forecast ledger and the roadmap checks of §8.5'
     if f == 'access' and access_class(now) != access_class(new):
-        return 'editor', 'the access class changes (cloud / on-premises / laboratory), which §8.1 counts'
+        return 'run', 'the access class changes (cloud / on-premises / laboratory), which §8.1 counts: merge, remove nothing'
     if f in AUTO_FIELDS:
         return 'auto', 'a register figure with the owner\'s own words'
     return 'editor', 'field %s has no rule' % f
@@ -291,7 +294,7 @@ def triage(intake_dir, A, led):
                 elif re.search(r"reviewer'?s (own )?inference|not the paper'?s", r.get('why', ''), re.I):
                     tier, why = 'reject', 'the evidence is the reviewer\'s inference, not the paper\'s'
                 elif kind in ('status', 'descriptor'):
-                    tier, why = 'editor', 'a technology\'s %s changes what the Atlas says it is' % kind
+                    tier, why = 'run', 'a technology\'s %s changes what the Atlas says it is: the run accepts or rejects, the weekly pass writes it' % kind
                 else:
                     tier, why = 'session', 'a note for the technology\'s brief (three languages), in the weekly pass'
                 t.update(subject=('technology', nid), link=atlas_link('technology', nid) if nid in A.nodes else '',
@@ -324,7 +327,7 @@ def verify_list(rows):
     """The checks the session makes before an auto row is applied: open the source, find the quote verbatim."""
     v = []
     for t in rows:
-        if t['tier'] in ('auto', 'editor', 'stale') and t.get('source_url') and t['file'] != 'works-candidates.csv':
+        if t['tier'] in ('auto', 'run', 'editor', 'stale') and t.get('source_url') and t['file'] != 'works-candidates.csv':
             v.append({'row_key': t['row_key'], 'url': t['source_url'], 'quote': t.get('quote', '')[:400],
                       'tier': t['tier'], 'subject': '%s:%s' % tuple(t['subject'])})
     return v
@@ -379,6 +382,15 @@ def packet(rows, A, date):
         L.append('')
     if not ed:
         L += ['Nothing for the editor in this intake.', '']
+    run = [t for t in rows if t['tier'] == 'run']
+    if run:
+        L += ['## For the run to decide (rules (a)–(d) of 19 Nov 2026) — draft list, not for the editor', '',
+              '| Subject | Change | Evidence | Source | Rule |', '| --- | --- | --- | --- | --- |']
+        for t in run:
+            subj = '[%s](%s)' % (t['subject'][1], t['link']) if t.get('link') else md_cell(t['subject'][1], 40)
+            L.append('| %s | %s | %s | [source](%s) | %s |' % (subj, md_cell(t.get('proposed') or t.get('change'), 160),
+                     md_cell(t.get('quote'), 160), t['source_url'], md_cell(t['why_tier'], 120)))
+        L.append('')
     L += ['Policy: build/intake.py TIER_RULES (the rule that sent each row here is in the last column).', '']
     return '\n'.join(L)
 

@@ -91,6 +91,19 @@ same commit, or revert that row and record it `deferred` with `until: core sessi
 
 Nothing applied → skip to §6.
 
+### What the run decides itself (the editor's standing word of 19 Nov 2026)
+
+Tier `run` rows are the run's: check the source, decide, record with `intake.py decide` and a reason.
+(a) A roadmap or an access text is merged into the register's wording — both dates kept side by side when they differ,
+nothing removed. (b) A status that crosses the device boundary is applied when the owner says «installed», «live»,
+«retired» in so many words; the target flag is dropped with it, the counts move, the errata line says so (Diraq at
+Equinix, 19 Nov). (c) A technology's status or descriptor: accept or reject; an accepted one is recorded `deferred`,
+`until: weekly brief pass`, and written there after the paper is read at its own text. (d) A map gap is rejected by the
+run when it is theory, a proposal without an experiment, a duplicate of another row, a station the Atlas already has, or
+fails the engineering-stage rule of 6 Nov 2026 (hardware in a device of two or more qubits) — read the abstract when the
+digest's line does not settle it. Only a real candidate for a new station goes to the editor. Future-dated statuses, new
+machines and count jumps over 25 % remain his. The conclusions guard applies to everything the run decides.
+
 ## 5. Hand over
 
 Commit as the editor (`git -c user.name="Raveh Neeman" -c user.email="raveh@qodeh.com" commit`, the subject «intake
@@ -102,11 +115,24 @@ generator or UI change, so the local side's checks are the data row of the matri
 
 ## 6. Report
 
-The editor's packet: `packet.md` of the triage, with the plan's outcome on top (applied rows with their Atlas links, the
-deferred ones with the reason). Create it as a Google Doc «Atlas intake <date>» in `QT-Map/00_admin/intake/` (Drive
-connector, `text/markdown`, converted), and write the same markdown to `00_admin/intake/PACKET_<date>.md` through the
-bridge. The run's final message — what reaches the editor's phone — in plain words: what changed in the Atlas (one line
-per machine or organisation), what is his to decide (count, and the doc's name), what waits (holds for WP2, the weekly
-brief notes), the ticket for the local side. Answers he gives in any session are written by that session as
-`00_admin/intake/decisions/<date>-<n>.json` (`[{row_key, decision: approved|rejected|deferred, reason, until}]`) and
-taken by the next run.
+The editor's packet is a decision sheet, not a dump (his word of 19 Nov 2026: «я решить самостоятельно не могу»). In
+Russian, a Google Doc «Atlas intake <date> — решения» in `QT-Map/00_admin/intake/`:
+1. **Numbered questions** — only what is truly his (a new station, a new machine, a future-dated status). Each: one
+   sentence of what is asked, «Рекомендую: да/нет» with the reason in two lines, clickable links to the paper and to the
+   Atlas pages it touches. Rows about one subject are one question. He answers in one line («1 да, 2 нет…»).
+2. **What the run decided** — a table of applied register changes (flag the ones that move counts, so he can overturn
+   them), a table of accepted technology changes, a table of rejections with the reason.
+`packet.md` of the triage is the raw material, never the deliverable. The run's final message — what reaches the
+editor's phone — in plain words: what changed in the Atlas (one line per machine or organisation), how many questions
+are his and the doc's name, what waits (WP2, the weekly brief pass), the ticket. Answers he gives in any session are
+written by that session as `00_admin/intake/decisions/<date>-<n>.json` (`[{row_key, decision:
+approved|rejected|deferred, reason, until}]`) and taken by the next run.
+
+## 7. When the bridge brings no folders (18–19 Nov 2026)
+
+The Drive connector is the transport that always works, both ways: `C:\MyDrive\QT-Map` is Drive-synced. Read the intake
+from the Drive copy of `qnews-intake/data/` (`download_file_content` for files over ~100 kB). Deliver the bundle, its
+manifest `<ticket>.json` and the note as new files into `QT-Map/00_admin/intake/` (they reach the laptop by sync; the
+watcher `00_admin/hub/hub-watch.ps1`, when installed, accepts them). A superseded file is renamed `superseded-…`,
+never deleted. `HANDOFF.md` and the baton are edited only on the live file through the bridge: without it, say in the
+note that the ticket row is missing and why.
