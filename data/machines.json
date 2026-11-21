@@ -12102,7 +12102,7 @@
     "best_logical": "target: up to 9 logical qubits at distance 3 (2029), with headroom for d=11 surface or d=9 colour on one logical qubit; directional tile codes need only nearest-neighbour iSWAP and reach ~30 circuit qubits per logical qubit in the best layouts",
     "decoder": "GPU decoding over NVQLink (planned)",
     "realtime": "planned real-time from 2028",
-    "roadmap": "150-qubit system commercially available by end of 2026 (launch release, 13 Nov 2025); LUMI-IQ: 2027 H4 150 q; 2028 real-time correction; 2029 H5 lattice surgery and T-gate teleportation, up to 9 logical qubits (restated 10 Sep 2026)",
+    "roadmap": "150-qubit system commercially available by end of 2026 (launch release, 13 Nov 2025); LUMI-IQ: 2027 H4 150 q; 2028 real-time correction; 2029 H5 lattice surgery and T-gate teleportation, up to 9 logical qubits (restated 10 Sep 2026); Halocene upgrade programme (SC26, IQM release 17 Nov 2026): an in-place path «from the 150-qubit system of today to the over 1,000-qubit system of the future», the new system installed while the current one runs — no dates given",
     "role": "",
     "gate_evidence": "figure",
     "decoder_mode": "planned",

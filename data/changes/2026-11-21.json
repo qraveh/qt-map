@@ -1,0 +1,21 @@
+{
+ "date": "2026-11-21",
+ "source": "digest intake of the issue of 20 Nov 2026 (cloud intake run C15, ticket 20261121-1; read through the Drive copy of qnews-intake: the device bridge brought no folders; it redoes the undelivered run of 20 Nov, ticket 20261120-1)",
+ "items": [
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "iqm-halocene-150"
+   },
+   "fields": {
+    "roadmap": "150-qubit system commercially available by end of 2026 (launch release, 13 Nov 2025); LUMI-IQ: 2027 H4 150 q; 2028 real-time correction; 2029 H5 lattice surgery and T-gate teleportation, up to 9 logical qubits (restated 10 Sep 2026); Halocene upgrade programme (SC26, IQM release 17 Nov 2026): an in-place path «from the 150-qubit system of today to the over 1,000-qubit system of the future», the new system installed while the current one runs — no dates given"
+   },
+   "note": "«IQM unveils Halocene upgrade program at SC26, creating a path to over 1,000 qubits while accelerating integration with AI-based applications» — checked 21 Nov 2026 in the release's Business Wire copy (via.tt.se/pressmeddelande/4645998; iqm.tech refused the fetch): the release gives no dated upgrade steps, so the register's dated milestones stay and the forecast ledger is untouched; merged beside them, nothing replaced. The release calls the 150-qubit system «of today»; the status ANNOUNCED (not delivered) is left as it is (no delivery stated in so many words)",
+   "sources": [
+    "https://iqm.tech/press-releases/iqm-unveils-halocene-upgrade-program-at-sc26-creating-a-path-to-over-1000-qubits-while-accelerating-integration-with-ai-based-applications"
+   ],
+   "intake": "27cbdd6ce7b4fcf9"
+  }
+ ]
+}

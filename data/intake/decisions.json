@@ -196,6 +196,19 @@
    "until": "WP2",
    "reason": "two-qubit error waits for WP2 (protocol, scope and conditioning per figure; review R1-1)"
   },
+  "13e30fc52fcf6b84": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-11-21",
+   "by": "intake-run",
+   "decision": "deferred",
+   "reason": "a two-qubit error figure (EPLG); the page now shows 2.52E-3, not 2.54E-3",
+   "until": "WP2",
+   "verified": {
+    "url": "https://www.ibm.com/quantum/roadmap",
+    "quote_found": false,
+    "checked": "2026-11-21"
+   }
+  },
   "14967cd6fd4cc365": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-06",
@@ -211,6 +224,18 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "15a156bed89ca85f": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-21",
+   "by": "intake-run",
+   "decision": "rejected",
+   "reason": "the device is an SP4T cryo-CMOS RF multiplexer, not a flux DAC: it belongs to the existing station ct_cryocmos",
+   "verified": {
+    "url": "https://www.nature.com/articles/s41534-026-01424-7",
+    "quote_found": true,
+    "checked": "2026-11-21"
+   }
   },
   "15a156bed89ca85f  ": {
    "file": "amendment-candidates.csv",
@@ -231,6 +256,26 @@
   "1737db0a2c59fabb": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-19",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "18da39bf5e4808d5": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-11-21",
+   "by": "intake-run",
+   "decision": "landed",
+   "reason": "the register already names the prethermal first-order dynamical phase transition in demonstrated_algorithms",
+   "verified": {
+    "url": "https://www.quera.com/news/observing-prethermal-dynamical-phase-transitions-on-quera-aquila-with-amazon-braket",
+    "quote_found": true,
+    "checked": "2026-11-21"
+   }
+  },
+  "1bc478d89591ec99": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-21",
    "by": "intake-run",
    "decision": "deferred",
    "until": "weekly brief pass",
@@ -347,6 +392,19 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "27cbdd6ce7b4fcf9": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-11-21",
+   "by": "intake-run",
+   "decision": "applied",
+   "reason": "roadmap merged (the run tier, the editor's standing word of 19 Nov 2026); no dates, so no forecast moves",
+   "change": "data/changes/2026-11-21.json#0",
+   "verified": {
+    "url": "https://iqm.tech/press-releases/iqm-unveils-halocene-upgrade-program-at-sc26-creating-a-path-to-over-1000-qubits-while-accelerating-integration-with-ai-based-applications/",
+    "quote_found": true,
+    "checked": "2026-11-21"
+   }
+  },
   "27efc8add566721d": {
    "file": "org-event-candidates.csv",
    "date": "2026-11-19",
@@ -374,6 +432,13 @@
    "by": "editor",
    "decision": "rejected",
    "reason": "the editor's word of 19 Nov 2026: «согласен с твоими предложениями по всем пунктам 1-9» — question 8: no layer or station for characterisation, calibration and classical tooling; the Atlas describes the layers of the machine"
+  },
+  "28dbb3669272be5a": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-21",
+   "by": "intake-run",
+   "decision": "rejected",
+   "reason": "a GRAPE recovery pulse is a step of the code's correction, not a gate mechanism of g_bos"
   },
   "296d75cf7f753175": {
    "file": "org-event-candidates.csv",
@@ -432,6 +497,14 @@
   "2bbd803b23532cb3": {
    "file": "amendment-candidates.csv",
    "date": "2026-10-12",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "2ca8951b71b515b8": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-21",
    "by": "intake-run",
    "decision": "deferred",
    "until": "weekly brief pass",
@@ -518,6 +591,14 @@
   "380553a493d7307b": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-06",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "39590b0e0fefb45c": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-21",
    "by": "intake-run",
    "decision": "deferred",
    "until": "weekly brief pass",
@@ -797,6 +878,18 @@
    "decision": "rejected",
    "reason": "an optics-bench result; covered by fab_optics"
   },
+  "5b3a4333dc711cb3": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-11-21",
+   "by": "intake-run",
+   "decision": "rejected",
+   "reason": "not a target: 156 programmable qubits is the current Heron spec",
+   "verified": {
+    "url": "https://www.ibm.com/quantum/roadmap",
+    "quote_found": true,
+    "checked": "2026-11-21"
+   }
+  },
   "5b3a7d19c6bb162e": {
    "file": "amendment-candidates.csv",
    "date": "2026-10-12",
@@ -804,6 +897,18 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "5c2544704ac66935": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-11-21",
+   "by": "intake-run",
+   "decision": "landed",
+   "reason": "the register already says «7,500+ 2Q gates with accurate observable estimation» in demonstrated_algorithms",
+   "verified": {
+    "url": "https://www.ibm.com/quantum/roadmap",
+    "quote_found": true,
+    "checked": "2026-11-21"
+   }
   },
   "5c8a28861dd91b54": {
    "file": "records-candidates.csv",
@@ -1077,6 +1182,19 @@
    "reason": "the intake run's decision on the editor's delegation of 19 Nov 2026: apply as a descriptor/brief change in the weekly pass, after the paper is read at its own text (the ledger keeps «approved» for the editor's own word)",
    "until": "weekly brief pass"
   },
+  "7b9dad58cf3093aa": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-21",
+   "by": "intake-run",
+   "decision": "deferred",
+   "reason": "a binomial bosonic code station: question 3 of the decision sheet",
+   "until": "editor",
+   "verified": {
+    "url": "https://www.nature.com/articles/s41567-026-03493-z",
+    "quote_found": true,
+    "checked": "2026-11-21"
+   }
+  },
   "7ba8e0cd1a2f7e39": {
    "file": "map-gaps-candidates.csv",
    "date": "2026-11-19",
@@ -1168,6 +1286,19 @@
    "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
    "decision": "rejected",
    "reason": "duplicate of 969d5d69 (same paper), which is approved in the wider wording"
+  },
+  "87c5816c4b14bc8d": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-21",
+   "by": "intake-run",
+   "decision": "deferred",
+   "reason": "autonomous QEC past break-even: question 2 of the decision sheet",
+   "until": "editor",
+   "verified": {
+    "url": "https://www.nature.com/articles/s41567-026-03528-5",
+    "quote_found": true,
+    "checked": "2026-11-21"
+   }
   },
   "87f45d7740ae5838": {
    "file": "records-candidates.csv",
@@ -1334,6 +1465,19 @@
    },
    "reason": "an organisation event, recorded as a change-ledger statement"
   },
+  "9b2ecd0d65294686": {
+   "file": "machine-candidates.csv",
+   "date": "2026-11-21",
+   "by": "intake-run",
+   "decision": "deferred",
+   "reason": "a new machine (Nighthawk r3): question 1 of the decision sheet",
+   "until": "editor",
+   "verified": {
+    "url": "https://www.ibm.com/quantum/roadmap",
+    "quote_found": true,
+    "checked": "2026-11-21"
+   }
+  },
   "9c5e4e62dbb57c05": {
    "file": "amendment-candidates.csv",
    "date": "2026-10-12",
@@ -1374,10 +1518,15 @@
   },
   "a0c03cd98969ad04": {
    "file": "amendment-candidates.csv",
-   "date": "2026-11-19",
-   "by": "editor",
-   "decision": "approved",
-   "reason": "the editor's word of 19 Nov 2026: «согласен с твоими предложениями по всем пунктам 1-9» — question 1: one L1 station: the ion motional mode (phonon) as a bosonic carrier, status E; the g_bos widening goes into its brief"
+   "date": "2026-11-21",
+   "by": "intake-run",
+   "decision": "rejected",
+   "reason": "the spin-dependent-force gates on ion modes were settled by the editor on 19 Nov 2026 (question 1, the new ion-mode station); they go into that station's brief, not into g_bos",
+   "verified": {
+    "url": "https://www.nature.com/articles/s41567-026-03402-4",
+    "quote_found": true,
+    "checked": "2026-11-21"
+   }
   },
   "a23f22b0d578237e": {
    "file": "amendment-candidates.csv",
@@ -1590,6 +1739,14 @@
    "decision": "landed",
    "reason": "stale against the register: the register already carries the proposal (written by an earlier run); nothing to change"
   },
+  "c19dc219541f29a6": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-21",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
   "c1b9193e17925c6f": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-19",
@@ -1675,6 +1832,14 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "caec0bcd86947999": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-21",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
   "cbfe49ce76b64440": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-19",
@@ -1739,6 +1904,13 @@
     "checked": "2026-11-06"
    },
    "reason": "a register figure with the owner's own words"
+  },
+  "d1eac39ae9670a31": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-21",
+   "by": "intake-run",
+   "decision": "rejected",
+   "reason": "theory (a complexity phase diagram of approximate codes), no experiment: fails the engineering-stage rule"
   },
   "d24bed02105f735e": {
    "file": "amendment-candidates.csv",
@@ -1840,6 +2012,18 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "e2a9868f9cf38138": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-11-21",
+   "by": "intake-run",
+   "decision": "rejected",
+   "reason": "not a target: 332 = 156 qubits + 176 couplers, the current Heron card; the register holds it",
+   "verified": {
+    "url": "https://www.ibm.com/quantum/roadmap",
+    "quote_found": true,
+    "checked": "2026-11-21"
+   }
   },
   "e5be3e317b0cbe95": {
    "file": "amendment-candidates.csv",
@@ -1985,6 +2169,14 @@
    "reason": "the intake run's decision on the editor's delegation of 19 Nov 2026: apply as a descriptor/brief change in the weekly pass, after the paper is read at its own text (the ledger keeps «approved» for the editor's own word)",
    "until": "weekly brief pass"
   },
+  "f937c5351fd5e971": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-21",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
   "f95978dce4a07689": {
    "file": "org-event-candidates.csv",
    "date": "2026-10-12",
@@ -2105,6 +2297,17 @@
     "deferred": 49,
     "landed": 3,
     "rejected": 30
+   }
+  },
+  {
+   "date": "2026-11-21",
+   "manifest_updated": "2026-11-20T02:28:58Z",
+   "ticket": "20261121-1",
+   "decided": {
+    "applied": 1,
+    "deferred": 10,
+    "landed": 2,
+    "rejected": 6
    }
   }
  ],
