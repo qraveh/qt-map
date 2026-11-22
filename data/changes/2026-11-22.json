@@ -1,0 +1,676 @@
+{
+ "date": "2026-11-22",
+ "source": "the seven technologies the editor approved on 19 Nov 2026 from the digest's map-gaps candidates («Atlas intake 2026-11-19 — решения», questions 1–7; data/intake/decisions.json), each written with its brief in three languages by the local writer job 20261122-1; every source opened before the entry, every English brief re-checked at its sources by an independent checker",
+ "items": [
+  {
+   "kind": "add",
+   "subject": {
+    "type": "map",
+    "id": "phonon"
+   },
+   "fields": {
+    "what": "Bosonic motional mode of trapped ions (phonons) — layer 1, alternate on ion_chain, status E, since 1995",
+    "grade": "D",
+    "layer": 1,
+    "paths": [
+     "ion_chain"
+    ],
+    "status": "E",
+    "since": 1995
+   },
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2409.05455"
+    },
+    {
+     "url": "https://arxiv.org/abs/2207.06115"
+    },
+    {
+     "url": "https://arxiv.org/abs/2509.11477"
+    },
+    {
+     "url": "https://arxiv.org/abs/2610.23208"
+    },
+    {
+     "url": "https://www.nature.com/articles/s41567-026-03402-4"
+    },
+    {
+     "url": "https://arxiv.org/abs/2610.13843"
+    },
+    {
+     "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.75.4714"
+    },
+    {
+     "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.76.1796"
+    },
+    {
+     "url": "https://arxiv.org/abs/1807.01033"
+    },
+    {
+     "url": "https://arxiv.org/abs/2010.09681"
+    },
+    {
+     "url": "https://arxiv.org/abs/1908.10117"
+    },
+    {
+     "url": "https://arxiv.org/abs/2407.10381"
+    }
+   ],
+   "note": "the editor's question 1: one L1 station for the ion motional mode as a bosonic carrier, status E, the g_bos widening in its brief (the brief's Role section: spin-dependent-force conditional displacements, the spin-dependent beam splitter, eSWAP; g_bos itself not edited). since 1995 by the map's rule — Monroe et al. 1995, the motional mode one of the two qubits of the controlled-NOT, the experiment that also dates `ion`; the engineering stage is Tsinghua 2023 (four modes, five ions), Sydney 2025 (two GKP qubits in two modes) and Maryland/Duke 2026 (Yukawa register). Intake rows: (a) Nature Physics 2026 — the occupations to eight phonons are fits over many shots in one mode of a two-mode run, not a single-shot Fock-resolved readout; (b) arXiv:2610.23208 an experiment (NUS, overlaps 63 ± 4% / 78 ± 3%, not gate fidelities); (c) arXiv:2610.13843 a proposal, graded [S]. Two conflict edges with their sources: g_ms (the shared modes; mitigated by partitioning the transverse mode families) and ro_fluor (bright-detection recoil destroys the register; open) (writer job 20261122-1)",
+   "intake": "0b2b9727d255a1ef"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "map",
+    "id": "enc_zeeman"
+   },
+   "fields": {
+    "what": "Zeeman ground-state qubit (nuclear-spin-free ion) — layer 2, alternate on ion_chain and ion_qccd, status D, since 2005",
+    "grade": "D",
+    "layer": 2,
+    "paths": [
+     "ion_chain",
+     "ion_qccd"
+    ],
+    "status": "D",
+    "since": 2005
+   },
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2610.32518"
+    },
+    {
+     "url": "https://arxiv.org/abs/1606.07220"
+    },
+    {
+     "url": "https://arxiv.org/abs/2107.06368"
+    },
+    {
+     "url": "https://arxiv.org/abs/2101.11390"
+    },
+    {
+     "url": "https://arxiv.org/abs/quant-ph/0508021"
+    },
+    {
+     "url": "https://arxiv.org/abs/quant-ph/0603273"
+    },
+    {
+     "url": "https://arxiv.org/abs/0902.2826"
+    },
+    {
+     "url": "https://arxiv.org/abs/1103.5253"
+    },
+    {
+     "url": "https://arxiv.org/abs/1505.04014"
+    },
+    {
+     "url": "https://arxiv.org/abs/2603.07548"
+    }
+   ],
+   "note": "the editor's question 5: an L2 station for the Zeeman ground-state qubit of a nuclear-spin-free isotope. Status D — peer-reviewed multi-qubit hardware from Innsbruck (2005, 2026), Oxford (2006, 2015) and Mainz (2022) and AQT's 31-qubit LYNX register (company preprint, arXiv:2610.32518, §II: «The qubits are encoded in the two Zeeman states of the 4²S1/2 ground state»). since 2005: the Innsbruck pair stored and measured in the Zeeman sublevels (Häffner et al., Appl. Phys. B 81, 151); the first native gate found is 2006 (Oxford). LYNX's 2.84(8)×10⁻³ is the mean over the 276 pairs of its 24-qubit register; the 31-qubit register gives 1.0(1)×10⁻² over 10 pairs (writer job 20261122-1)",
+   "intake": "7ba8e0cd1a2f7e39"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "map",
+    "id": "g_ddhf"
+   },
+   "fields": {
+    "what": "Decoherence-protected electron–nuclear gate (DD / DDRF; colour centres) — layer 3, alternate on defect, status D, since 2012",
+    "grade": "D",
+    "layer": 3,
+    "paths": [
+     "defect"
+    ],
+    "status": "D",
+    "since": 2012
+   },
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2403.10633"
+    },
+    {
+     "url": "https://arxiv.org/html/2606.14847"
+    },
+    {
+     "url": "https://arxiv.org/abs/2108.01646"
+    },
+    {
+     "url": "https://arxiv.org/html/2610.26413"
+    },
+    {
+     "url": "https://arxiv.org/abs/1202.4379"
+    },
+    {
+     "url": "https://arxiv.org/abs/1205.4128"
+    },
+    {
+     "url": "https://arxiv.org/abs/1309.5452"
+    },
+    {
+     "url": "https://arxiv.org/abs/1905.02094"
+    },
+    {
+     "url": "https://arxiv.org/abs/2005.07602"
+    },
+    {
+     "url": "https://arxiv.org/abs/2207.13128"
+    },
+    {
+     "url": "https://arxiv.org/abs/2409.08977"
+    }
+   ],
+   "note": "the editor's question 4: an L3 station for the two-qubit gate of colour-centre registers — the electron's decoupling pulses timed to a nuclear spin's hyperfine precession (DD) or interleaved with phase-tracked RF pulses (DDRF). Status D (TU Delft/QuTech since 2012, Chicago on SiC 2020, Harvard/AWS on SiV 2022); since 2012 (van der Sar et al., Nature 484, 82). The «< 0.1%» GST figure the Atlas carries in g_mwspin and defect from the Fujitsu/QuTech trade press is Bartling et al., Phys. Rev. Applied 23, 034052 (2025, arXiv:2403.10633): its two-qubit 99.93(5)% is this gate. The intake paper (arXiv:2610.26413) drives the gate from a cryo-CMOS controller at 6 K: Bell 88.6(8)%, gate ≥ 95(2)% (a lower bound) (writer job 20261122-1)",
+   "intake": "0a7e4e74b735c9b2"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "map",
+    "id": "ct_optical"
+   },
+   "fields": {
+    "what": "Optical delivery of qubit control (fibre link + cryogenic photodiode) — layer 5, alternate on sc, status E, since 2024",
+    "grade": "D",
+    "layer": 5,
+    "paths": [
+     "sc"
+    ],
+    "status": "E",
+    "since": 2024
+   },
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2608.19602"
+    },
+    {
+     "url": "https://arxiv.org/abs/2611.12481"
+    },
+    {
+     "url": "https://arxiv.org/abs/2009.01167"
+    },
+    {
+     "url": "https://doi.org/10.1364/oe.514909"
+    },
+    {
+     "url": "https://doi.org/10.1038/s41467-025-57820-8"
+    },
+    {
+     "url": "https://arxiv.org/abs/2310.16155"
+    },
+    {
+     "url": "https://arxiv.org/abs/2512.21199"
+    },
+    {
+     "url": "https://doi.org/10.1364/oe.616363"
+    },
+    {
+     "url": "https://arxiv.org/abs/2512.10706"
+    }
+   ],
+   "note": "the editor's question 7: an L5 station for optical delivery of control to superconducting qubits, status E; the name says «qubit control» because the USTC link carries the flux pulses too. since 2024 under the benchmarked-gate reading applied to ct_fdm on 7 Nov 2026 (the earliest benchmarked gate found: USTC, Optics Express 32, 3989, Jan 2024, single-qubit XEB error 0.139%); NIST's 2021 drive (Lecocq et al., Nature 591, 575) benchmarked no gate. The «> 99.9%» of the intake is the XEB Pauli fidelity 99.915 ± 0.005% of PRA 114, 032427 (arXiv:2608.19602, photodiodes at 4 K); the 10-km link (arXiv:2611.12481) is a preprint: RB (95.36 ± 0.13)%, Bell 80.6 ± 13.1%. Conflict edge with transmon (shot noise and dissipated light; mitigated by the 4 K placement) (writer job 20261122-1)",
+   "intake": "0c9ece41f50b51b2"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "map",
+    "id": "dec_tn"
+   },
+   "fields": {
+    "what": "Tensor-network maximum-likelihood decoders (offline) — layer 8, alternate on sc, status E, since 2023",
+    "grade": "D",
+    "layer": 8,
+    "paths": [
+     "sc"
+    ],
+    "status": "E",
+    "since": 2023
+   },
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2207.06431"
+    },
+    {
+     "url": "https://arxiv.org/abs/2602.21293"
+    },
+    {
+     "url": "https://arxiv.org/abs/2310.10722"
+    },
+    {
+     "url": "https://arxiv.org/abs/1405.4883"
+    },
+    {
+     "url": "https://arxiv.org/abs/2101.04125"
+    },
+    {
+     "url": "https://arxiv.org/abs/2203.07205"
+    },
+    {
+     "url": "https://www.nature.com/articles/s41586-022-05434-1"
+    },
+    {
+     "url": "https://www.nature.com/articles/s41586-024-08148-8"
+    },
+    {
+     "url": "https://arxiv.org/abs/2601.09921"
+    },
+    {
+     "url": "https://arxiv.org/abs/2605.17230"
+    }
+   ],
+   "note": "the editor's question 6: an L8 station for tensor-network maximum-likelihood decoders, status E, offline — said in the name, the one_line, the verdict and the Role and Control sections. since 2023: Google Quantum AI's Sycamore memory decoded by MPS contraction at χ = 30 (Nature 614, 676), the earliest tensor-network decode of hardware data found. The intake paper, unverified by the cloud's run, was read at its own text in its arXiv version (arXiv:2602.21293 = Nature Physics, online 22 Oct 2026): Zhejiang University's 125-qubit processor, two interlaced d = 7 codes of 49 qubits each, single-shot bitstrings decoded offline by a TN-ML decoder (0.014(1) / 0.025(3)); the TN-Bayesian and matching decoders ran on the transition data of distances 2, 4 and 6 (writer job 20261122-1)",
+   "intake": "019eb633b6d2f5c6"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "map",
+    "id": "fab_scd"
+   },
+   "fields": {
+    "what": "Superconductor-digital fabrication (multilayer niobium processes, SFQ/AQFP logic) — layer 10, alternate on sc and anneal, status D, since 2010",
+    "grade": "D",
+    "layer": 10,
+    "paths": [
+     "sc",
+     "anneal"
+    ],
+    "status": "D",
+    "since": 2010
+   },
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/1509.05081"
+    },
+    {
+     "url": "https://arxiv.org/abs/1401.5504"
+    },
+    {
+     "url": "https://arxiv.org/abs/2301.05696"
+    },
+    {
+     "url": "https://www.nature.com/articles/s41598-025-20666-7"
+    },
+    {
+     "url": "https://www.dwavequantum.com/media/41upubz2/14-1090a-a_fluxonium-dac-control.pdf"
+    },
+    {
+     "url": "https://iopscience.iop.org/article/10.1088/1361-6668/aa6ef4"
+    },
+    {
+     "url": "https://iopscience.iop.org/article/10.1088/1361-6668/aeaeb2"
+    },
+    {
+     "url": "https://seeqc.com/resources/seeqc-secures-22.4-million-in-series-a-round-strategic-investment-led-by-eqt-ventures"
+    },
+    {
+     "url": "https://www.imec-int.com/en/press/imec-demonstrates-core-building-blocks-scalable-cmos-fab-compatible-superconducting-digital"
+    },
+    {
+     "url": "https://arxiv.org/abs/0907.3757"
+    },
+    {
+     "url": "https://arxiv.org/abs/0905.0891"
+    },
+    {
+     "url": "https://arxiv.org/abs/1806.07930"
+    },
+    {
+     "url": "https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.4.030310"
+    },
+    {
+     "url": "https://quantumcomputingreport.com/seeqc-reports-integrated-qubit-control-logic-operating-at-millikelvin-temperatures/"
+    },
+    {
+     "url": "https://arxiv.org/abs/2202.01407"
+    },
+    {
+     "url": "https://arxiv.org/abs/2103.14209"
+    },
+    {
+     "url": "https://arxiv.org/abs/2610.02333"
+    },
+    {
+     "url": "https://arxiv.org/abs/2303.16792"
+    },
+    {
+     "url": "https://www.ll.mit.edu/r-d/projects/squill-foundry"
+    },
+    {
+     "url": "https://www.sec.gov/Archives/edgar/data/1907982/000190798226000026/exhibit1023-amendment15tod.htm"
+    },
+    {
+     "url": "https://arxiv.org/abs/2004.04794"
+    },
+    {
+     "url": "https://arxiv.org/abs/2503.09879"
+    }
+   ],
+   "note": "the editor's question 2: one L10 station for superconductor-digital fabrication; the name says «multilayer niobium processes» (imec's 300 mm route is NbTiN; no NbN process was researched). Status D and slots sc and anneal: D-Wave's own papers describe its annealer stack — qubits, on-chip SFQ flux DACs and QFP readout — as one multilayer niobium process (four Nb layers, 2010; six superconducting metal layers with a 250 A/cm² trilayer, 2014); for gate-model machines the SFQ dies that drove qubits came from three-layer research processes (Wisconsin 2019, NIST 2023) and SEEQC's foundry (its 1 kA/cm² niobium process, arXiv:2503.09879 Suppl. A). since 2010 (D-Wave, Supercond. Sci. Technol. 23, 065004). The intake paper unverified by the cloud's run (Supercond. Sci. Technol. 39, 105024, SIMIT-Nb08) was read at its abstract only — iopscience refused the fetch and no arXiv copy exists — and the brief takes from it only what the abstract states (writer job 20261122-1)",
+   "intake": "4efa5642f2547e54"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "map",
+    "id": "fab_qphard"
+   },
+   "fields": {
+    "what": "Quasiparticle and radiation hardening of superconducting circuits (gap engineering, phonon traps, event detectors) — layer 10, alternate on sc, status D, since 2022",
+    "grade": "D",
+    "layer": 10,
+    "paths": [
+     "sc"
+    ],
+    "status": "D",
+    "since": 2022
+   },
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2402.15644"
+    },
+    {
+     "url": "https://arxiv.org/abs/2203.06586"
+    },
+    {
+     "url": "https://arxiv.org/abs/2610.12227"
+    },
+    {
+     "url": "https://arxiv.org/abs/2512.18171"
+    },
+    {
+     "url": "https://arxiv.org/abs/2104.05219"
+    },
+    {
+     "url": "https://arxiv.org/abs/2408.13687"
+    },
+    {
+     "url": "https://arxiv.org/abs/1112.2621"
+    },
+    {
+     "url": "https://arxiv.org/abs/2402.03208"
+    },
+    {
+     "url": "https://arxiv.org/abs/2503.09879"
+    }
+   ],
+   "note": "the editor's question 3: one station for quasiparticle and radiation hardening of superconducting circuits, placed on L10 (manufacturing): gap engineering, low-gap traps and bandages, back-side phonon downconversion, high-gap base layers, and the event detectors. Status D — gap-engineered junctions in Google's 12-qubit test array and 72-qubit processor (Phys. Rev. Lett. 133, 240601; Nature 638, 920), back-side copper at Syracuse/UW–Madison (Nat. Commun. 13, 6425), the junction gap landscape at MIT (Nat. Commun. 16, 6428), gap-engineered qubit junctions in SEEQC's SFQ-controlled module (arXiv:2503.09879); the MKID detector half alone would read E (LLNL, Phys. Rev. Applied 26, 044052: one of six qubits measured, no decoder use). since 2022: the earliest multi-qubit hardening hardware found (Iaia et al.); single-device gap engineering dates from 2004/2012 (writer job 20261122-1)",
+   "intake": "2ffd69e8b5ac206e"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "map",
+    "id": "ion_chain"
+   },
+   "fields": {
+    "event": "slot",
+    "figure": "phonon joins slot 1 of ion_chain as an alternate; enc_zeeman joins slot 2 of ion_chain as an alternate",
+    "date": "2026-11-22"
+   },
+   "note": "writer job 20261122-1"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "map",
+    "id": "ion_qccd"
+   },
+   "fields": {
+    "event": "slot",
+    "figure": "enc_zeeman joins slot 2 of ion_qccd as an alternate",
+    "date": "2026-11-22"
+   },
+   "note": "writer job 20261122-1"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "map",
+    "id": "defect"
+   },
+   "fields": {
+    "event": "slot",
+    "figure": "g_ddhf joins slot 3 of defect as an alternate",
+    "date": "2026-11-22"
+   },
+   "note": "writer job 20261122-1"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "map",
+    "id": "sc"
+   },
+   "fields": {
+    "event": "slot",
+    "figure": "ct_optical joins slot 5 of sc as an alternate; dec_tn joins slot 8 of sc as an alternate; fab_scd joins slot 10 of sc as an alternate; fab_qphard joins slot 10 of sc as an alternate",
+    "date": "2026-11-22"
+   },
+   "note": "writer job 20261122-1"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "map",
+    "id": "anneal"
+   },
+   "fields": {
+    "event": "slot",
+    "figure": "fab_scd joins slot 10 of anneal as an alternate",
+    "date": "2026-11-22"
+   },
+   "note": "writer job 20261122-1"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "map",
+    "id": "edges"
+   },
+   "fields": {
+    "event": "edges",
+    "figure": "16 requires edges (phonon → ion; phonon → ct_ionaod (group control); phonon → ct_ionlaser (group control); phonon → ro_fluor; enc_zeeman → ion; enc_zeeman → ro_fluor (soft); g_ddhf → defect; g_ddhf → g_mwspin; g_ddhf → ct_rt (group control); g_ddhf → ct_cryocmos (group control); ct_optical → ct_rt; dec_tn → code_surface (soft); ct_sfq → fab_scd; dec_cryo → fab_scd (group fab); dec_cryo → fab_cmos (group fab); fab_qphard → fab_sc), 10 alternatives edges (cavity/phonon; ion/phonon; enc_hf/enc_zeeman; enc_opt/enc_zeeman; enc_omg/enc_zeeman; ct_rt/ct_optical; ct_cryocmos/ct_optical; dec_mwpm/dec_tn; dec_nn/dec_tn; fab_cmos/fab_scd) and 3 conflict edges with their price, mitigation, status and source (phonon–g_ms (mitigated); phonon–ro_fluor (open); ct_optical–transmon (mitigated)), each in English, Russian and Hebrew; the edge check passes with no error and no warning",
+    "date": "2026-11-22"
+   },
+   "note": "the edges into the new manufacturing node: ct_sfq → fab_scd (the SFQ control die is made in a multilayer niobium process; ct_sfq → fab_sc, the qubit die of the flip-chip module, is kept) and dec_cryo → fab_scd | fab_cmos (a cold decoder chip needs an SFQ or a CMOS process); every other new edge leaves a new node (writer job 20261122-1)"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "map",
+    "id": "ranking"
+   },
+   "fields": {
+    "event": "ranking",
+    "figure": "seven entries in data/ranking.json by the printed comparables rule of 7 Nov 2026 (data/changes/2026-11-07.json): phonon rank 72 score 7.8 tier 3; enc_zeeman rank 67 score 8.4 tier 3; g_ddhf rank 105 score 4.4 tier 3; ct_optical rank 73 score 7.8 tier 3; dec_tn rank 74 score 7.8 tier 3; fab_scd rank 78 score 7.7 tier 3; fab_qphard rank 106 score 4.4 tier 3; the existing ranks renumbered, no existing score or tier changed",
+    "date": "2026-11-22"
+   },
+   "note": "phonon: the 6 technologies of the same signature (paths 1, dependants 0, status E): [5.7, 6.4, 6.6, 8.9, 11.2, 11.9] → 7.8, tier 3 (the tiers within ±0.75: {2: 3, 3: 12}) | enc_zeeman: the 10 technologies of the same signature (paths 2, dependants 0, status D): [4.4, 5.2, 6.4, 7.9, 8.4, 8.4, 9.1, 12.9, 13.9, 13.9] → 8.4, tier 3 (the tiers within ±0.75: {2: 7, 3: 9}) | g_ddhf: the 15 technologies of the same signature (paths 1, dependants 0, status D): [1.0, 3.0, 4.2, 4.2, 4.2, 4.2, 4.2, 4.4, 4.5, 4.6, 5.0, 5.6, 6.7, 7.4, 10.6] → 4.4, tier 3 (the tiers within ±0.75: {3: 17}) | ct_optical: the 6 technologies of the same signature (paths 1, dependants 0, status E): [5.7, 6.4, 6.6, 8.9, 11.2, 11.9] → 7.8, tier 3 (the tiers within ±0.75: {2: 3, 3: 12}) | dec_tn: the 6 technologies of the same signature (paths 1, dependants 0, status E): [5.7, 6.4, 6.6, 8.9, 11.2, 11.9] → 7.8, tier 3 (the tiers within ±0.75: {2: 3, 3: 12}) | fab_scd: the 7 technologies of the same signature (paths 2, dependants 2, status D): [4.2, 6.2, 7.7, 7.7, 9.7, 9.7, 20.6] → 7.7, tier 3 (the tiers within ±0.75: {2: 3, 3: 12}) | fab_qphard: the 15 technologies of the same signature (paths 1, dependants 0, status D): [1.0, 3.0, 4.2, 4.2, 4.2, 4.2, 4.2, 4.4, 4.5, 4.6, 5.0, 5.6, 6.7, 7.4, 10.6] → 4.4, tier 3 (the tiers within ±0.75: {3: 17}) — no technology of the seven is a one-group technology (writer job 20261122-1)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "aqt-lynx"
+   },
+   "fields": {
+    "st_encoding": "enc_zeeman",
+    "qubit_type": "trapped ion: Zeeman ground-state qubit of Ca-40 (4²S1/2, m = ±1/2; preprint arXiv:2610.32518, Oct 2026)"
+   },
+   "old": {
+    "st_encoding": "enc_opt",
+    "qubit_type": "trapped ion (AQT's Ca-40 optical-qubit lineage; species not restated for LYNX)"
+   },
+   "note": "the register's encoding cell was inferred from AQT's earlier machines («not restated for LYNX»); the LYNX preprint states it: «The qubits are encoded in the two Zeeman states of the 4²S1/2 ground state» (§II), |0⟩ = |S1/2,−1/2⟩, |1⟩ = |S1/2,+1/2⟩ — machine-stations.csv and its evidence row (architecture-paper, ✅) and machines.csv's st_encoding and qubit_type, one row each (writer job 20261122-1)",
+   "sources": [
+    "https://arxiv.org/abs/2610.32518"
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "register",
+    "id": "mirror"
+   },
+   "fields": {
+    "event": "mirror",
+    "figure": "the Drive's machines.csv (last written 7 Nov 2026) brought to the repository snapshot of main 1550860 before this job's edit: the cloud's intakes of 19 and 21 Nov 2026 had changed data/register/machines.csv only (IonQ Tempo, Diraq at Equinix, Quantinuum H2 and Helios access, Superion 256, Aquila, IQM Halocene); the other register files were already equal",
+    "date": "2026-11-22"
+   },
+   "note": "the editor's D9b of 6 Oct 2026: the repository is the source of truth and the Drive copy is mirrored; without the mirror a writer build (QT_MACHINES_DIR) would have reverted those rows. Backup of the Drive file before the mirror in the job's scratch folder (writer job 20261122-1)"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "intake",
+    "id": "map-gaps-2026-11-19"
+   },
+   "fields": {
+    "event": "applied",
+    "figure": "the eleven map-gaps rows the editor approved on 19 Nov 2026 («согласен с твоими предложениями по всем пунктам 1-9», questions 1–7) written as seven technologies; data/intake/decisions.json records each row applied with its add item",
+    "date": "2026-11-22"
+   },
+   "note": "row keys: 0b2b9727d255a1ef, 253429d42d9df940, 7f350752228bddb6, 7ba8e0cd1a2f7e39, 0a7e4e74b735c9b2, 0c9ece41f50b51b2, 019eb633b6d2f5c6, 4efa5642f2547e54, efd707d869d83714, 2ffd69e8b5ac206e, d4aff00f907edc7d (writer job 20261122-1)"
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "briefs",
+    "id": "seven"
+   },
+   "fields": {
+    "event": "briefs",
+    "figure": "seven English briefs (phonon, enc_zeeman, g_ddhf, ct_optical, dec_tn, fab_scd, fab_qphard) with their Russian and Hebrew twins; 57 new bibliography records in data/brief-sources.json with permanent numbers 933–989 appended in data/work-numbers.json; existing records and §9 works reused under their numbers",
+    "date": "2026-11-22"
+   },
+   "note": "every source opened at its own text by the writer agents (arXiv abstract, HTML or PDF; alphaXiv page text; Crossref and Europe PMC for journal metadata and two full texts), each English brief re-checked claim by claim at the sources by an independent checker (7 checkers, 595 claims, 431 re-opened) and corrected; Scite answered «requires a paid plan» this week, so journal-only texts were read in their arXiv versions; abstract-only sources: SIMIT-Nb08 (iopscience refused), the two USTC Optics Express papers, five works of the phonon lineage — the briefs take from them only what the abstracts state (writer job 20261122-1)"
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "map",
+    "id": "since"
+   },
+   "fields": {
+    "field": "follow-up"
+   },
+   "note": "since years the editor may move, each one edit: phonon 1995 (alternative 2020, the first gate between two motional modes found — Gan et al., PRL 124, 170502); enc_zeeman 2005 (alternative 2006, the first native gate found); ct_optical 2024 (2021 if an unbenchmarked drive counts — NIST, Nature 591, 575); fab_qphard 2022 (2024 if the class is gap engineering only); fab_scd 2010 (Castellano et al. 2007, SFQ control of a flux qubit, not reached — it could pull the year earlier)"
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "aqt-lynx"
+   },
+   "fields": {
+    "field": "follow-up"
+   },
+   "note": "register follow-ups the LYNX preprint fills (arXiv:2610.32518): T1 10(3) s, T2 0.35(10) s Ramsey and 3.3(5) s with a π pulse every 300 µs (the paper calls the echoed value T2*), two-qubit gate about 210 µs, measurement about 2 ms, SPAM 11(1)×10⁻⁴; the briefs/{en,ru,he}/enc_opt.md files still list LYNX under the optical qubit (records table, Who table, Role) — a text job",
+   "sources": [
+    "https://arxiv.org/abs/2610.32518"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "map",
+    "id": "g_mwspin"
+   },
+   "fields": {
+    "field": "follow-up"
+   },
+   "note": "the «< 0.1%» GST figure in g_mwspin (records, brief) and defect (records) rests on trade press with «no primary paper»; the paper is Bartling et al., Phys. Rev. Applied 23, 034052 (2025, arXiv:2403.10633): its two-qubit 99.93(5)% is the DDRF gate of g_ddhf, its single-qubit 99.991(4)% (electron) and 99.999(1)% (¹⁴N) stay with g_mwspin; the g_mwspin texts that say «hyperfine-conditional gates» and «1Q spins» could name g_ddhf for the entangling gate — a text job in three languages",
+   "sources": [
+    "https://arxiv.org/abs/2403.10633"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "map",
+    "id": "defect"
+   },
+   "fields": {
+    "field": "follow-up"
+   },
+   "note": "the colour-centre architecture holds no cryo-CMOS control: arXiv:2610.26413 drives an NV register's two-qubit gate from a cryo-CMOS controller at 6 K (one group, a preprint) — a candidate alternate for slot 5. g_ddhf entered slot 3 as an alternate beside g_mwspin; as the architecture's only entangling gate it could be primary, which would make its ~0.5 ms set the derived local clock — the editor's call",
+   "sources": [
+    "https://arxiv.org/abs/2610.26413"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "map",
+    "id": "enc_gkp"
+   },
+   "fields": {
+    "field": "follow-up"
+   },
+   "note": "GKP in ion motion is older than enc_gkp's since 2020 (Flühmann et al., Nature 566, 513, Feb 2019) and has a two-qubit GKP gate (Matsos et al., Nat. Phys. 21, 1664, 2025): adding phonon to enc_gkp's carrier group would move its since to 2019 and needs enc_gkp in ion_chain slot 2 — the editor's call",
+   "sources": [
+    "https://arxiv.org/abs/1807.01033",
+    "https://arxiv.org/abs/2409.05455"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "map",
+    "id": "cx_bus"
+   },
+   "fields": {
+    "field": "follow-up"
+   },
+   "note": "the cx_bus brief says a fourth bosonic mode «had to run in a separate circuit»; the Maryland/Duke paper's reason is that the mode decouples in the model, not a hardware limit — a text job",
+   "sources": [
+    "https://arxiv.org/abs/2509.11477"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "map",
+    "id": "transmon"
+   },
+   "fields": {
+    "field": "follow-up"
+   },
+   "note": "the transmon record «correlated burst rate ~1 per hour on the 72-qubit processor … 10⁻¹⁰ logical floor» is the residual of a gap-engineered processor, bursts Google calls «different from previously observed high-energy impact events»; the conflict edges ct_sfq–transmon (gap engineering already among its mitigations; SEEQC 2026 drove gap-engineered qubits by SFQ with no T1 loss on one qubit) and ic_transducer–transmon (a Nb/Au-island transmon stood >10× more 1550 nm light, Chalmers preprint) could cite the new evidence; their status stays open",
+   "sources": [
+    "https://arxiv.org/abs/2408.13687",
+    "https://arxiv.org/abs/2503.09879",
+    "https://arxiv.org/abs/2610.12227"
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "map",
+    "id": "statuses"
+   },
+   "fields": {
+    "field": "follow-up"
+   },
+   "note": "status choices the editor may move: ct_optical kept E as the editor decided, though peer-reviewed hardware exists from four groups; dec_tn kept E as the editor decided (two groups, both peer-reviewed); fab_scd D only with the annealer slot (gate-model use alone would read E); fab_qphard D for the station, its detector half alone E"
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "map",
+    "id": "ct_sfq"
+   },
+   "fields": {
+    "field": "follow-up"
+   },
+   "note": "the ct_sfq brief's 2014 records row gives D-Wave 4,544 flux DACs, citing the same work [430] whose §III.E gives 4,608 DACs for 512 qubits on 56 lines (read for fab_scd and re-checked at the source by its checker) — a text check for ct_sfq in three languages (writer job 20261122-1)",
+   "sources": [
+    "https://arxiv.org/abs/1401.5504"
+   ]
+  }
+ ]
+}

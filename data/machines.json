@@ -23350,16 +23350,16 @@
     ],
     "2": [
      {
-      "node": "enc_opt",
+      "node": "enc_zeeman",
       "role": "primary",
       "gap": false,
       "state": "station",
-      "summary": "Ca-40 optical qubit (AQT lineage); not restated for LYNX",
+      "summary": "Zeeman qubit in the 4²S1/2 ground level of Ca-40 (m = ±1/2); RF rotations near 18 MHz; one state shelved to D5/2 for readout",
       "evidence": {
-       "type": "inferred",
-       "url": "https://www.aqt.eu/lynx-quantum-volume-record/",
-       "locator": "",
-       "verified": false
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2610.32518",
+       "locator": "'The qubits are encoded in the two Zeeman states of the 4²S1/2 ground state' (§II)",
+       "verified": true
       }
      }
     ],
@@ -23487,7 +23487,7 @@
    "records": [],
    "codes": [],
    "evidence_counts": {
-    "verified": 3,
+    "verified": 4,
     "total": 10
    },
    "refs": [
@@ -23503,7 +23503,7 @@
     }
    ],
    "profile": {
-    "qubit_type": "trapped ion (AQT's Ca-40 optical-qubit lineage; species not restated for LYNX)",
+    "qubit_type": "trapped ion: Zeeman ground-state qubit of Ca-40 (4²S1/2, m = ±1/2; preprint arXiv:2610.32518, Oct 2026)",
     "gate_mechanism": "laser gates with AQT's proprietary gate developments, reduced sensitivity to laser frequency and phase noise",
     "connectivity": "all-to-all, 'no need for time-consuming reconfiguration or SWAP operations'",
     "degree": "14",
@@ -46506,7 +46506,6 @@
   "enc_opt": {
    "primary": [
     "aqt-ibex-q1",
-    "aqt-lynx",
     "planqc-dinaqc-100",
     "planqc-maqcs",
     "psnc-piast-q",
@@ -46550,6 +46549,12 @@
    "alternate": [
     "psiquantum-omega"
    ]
+  },
+  "enc_zeeman": {
+   "primary": [
+    "aqt-lynx"
+   ],
+   "alternate": []
   },
   "fab_3d": {
    "primary": [

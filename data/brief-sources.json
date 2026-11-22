@@ -59,6 +59,29 @@
    "url": "https://arxiv.org/abs/0810.0339",
    "verified": true
   },
+  "arxiv:0902.2826": {
+   "authors": [
+    "U. G. Poschinger",
+    "G. Huber",
+    "F. Ziesel",
+    "M. Deiß",
+    "M. Hettrich",
+    "S. A. Schulz"
+   ],
+   "etal": true,
+   "n_authors": 11,
+   "title": "Coherent manipulation of a ⁴⁰Ca⁺ spin qubit in a micro ion trap",
+   "journal": "Journal of Physics B: Atomic, Molecular and Optical Physics",
+   "volume": "42",
+   "issue": "15",
+   "article": "154013",
+   "date": "2009-07-15",
+   "doi": "10.1088/0953-4075/42/15/154013",
+   "arxiv": "0902.2826",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/0902.2826",
+   "verified": true
+  },
   "arxiv:0904.3556": {
    "authors": [
     "Thomas M. Stace",
@@ -98,6 +121,29 @@
    "url": "https://arxiv.org/abs/0905.0891",
    "verified": true
   },
+  "arxiv:0907.3757": {
+   "authors": [
+    "M. W. Johnson",
+    "P. Bunyk",
+    "F. Maibaum",
+    "E. Tolkacheva",
+    "A. J. Berkley",
+    "E. M. Chapple"
+   ],
+   "etal": true,
+   "n_authors": 13,
+   "title": "A scalable control system for a superconducting adiabatic quantum optimization processor",
+   "journal": "Supercond. Sci. Technol.",
+   "volume": "23",
+   "issue": "6",
+   "article": "065004",
+   "date": "2010-04-21",
+   "doi": "10.1088/0953-2048/23/6/065004",
+   "arxiv": "0907.3757",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/0907.3757",
+   "verified": true
+  },
   "arxiv:1011.3245": {
    "authors": [
     "Scott Aaronson",
@@ -112,6 +158,28 @@
    "arxiv": "1011.3245",
    "kind": "journal",
    "url": "https://arxiv.org/abs/1011.3245",
+   "verified": true
+  },
+  "arxiv:1103.5253": {
+   "authors": [
+    "A. Keselman",
+    "Y. Glickman",
+    "N. Akerman",
+    "S. Kotler",
+    "R. Ozeri"
+   ],
+   "etal": false,
+   "n_authors": 5,
+   "title": "High-fidelity state detection and tomography of a single-ion Zeeman qubit",
+   "journal": "New Journal of Physics",
+   "volume": "13",
+   "issue": "7",
+   "article": "073027",
+   "date": "2011-07-21",
+   "doi": "10.1088/1367-2630/13/7/073027",
+   "arxiv": "1103.5253",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/1103.5253",
    "verified": true
   },
   "arxiv:1104.3573": {
@@ -166,6 +234,28 @@
    "url": "https://arxiv.org/abs/1111.4022",
    "verified": true
   },
+  "arxiv:1112.2621": {
+   "authors": [
+    "L. Sun",
+    "L. DiCarlo",
+    "M. D. Reed",
+    "G. Catelani",
+    "Lev S. Bishop",
+    "D. I. Schuster"
+   ],
+   "etal": true,
+   "n_authors": 12,
+   "title": "Measurements of Quasiparticle Tunneling Dynamics in a Bandgap-Engineered Transmon Qubit",
+   "journal": "Phys. Rev. Lett.",
+   "volume": "108",
+   "article": "230509",
+   "date": "2012",
+   "doi": "10.1103/PhysRevLett.108.230509",
+   "arxiv": "1112.2621",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/1112.2621",
+   "verified": true
+  },
   "arxiv:1112.5419": {
    "authors": [
     "D. A. Hite"
@@ -181,6 +271,51 @@
    "arxiv": "1112.5419",
    "kind": "journal",
    "url": "https://arxiv.org/abs/1112.5419",
+   "verified": true
+  },
+  "arxiv:1202.4379": {
+   "authors": [
+    "T. van der Sar",
+    "Z. H. Wang",
+    "M. S. Blok",
+    "H. Bernien",
+    "T. H. Taminiau",
+    "D. M. Toyli"
+   ],
+   "etal": true,
+   "n_authors": 10,
+   "title": "Decoherence-protected quantum gates for a hybrid solid-state spin register",
+   "journal": "Nature",
+   "volume": "484",
+   "issue": "7392",
+   "pages": "82–86",
+   "date": "2012-04-04",
+   "doi": "10.1038/nature10900",
+   "arxiv": "1202.4379",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/1202.4379",
+   "verified": true
+  },
+  "arxiv:1205.4128": {
+   "authors": [
+    "T. H. Taminiau",
+    "J. J. T. Wagenaar",
+    "T. van der Sar",
+    "F. Jelezko",
+    "V. V. Dobrovitski",
+    "R. Hanson"
+   ],
+   "n_authors": 6,
+   "title": "Detection and control of individual nuclear spins using a weakly coupled electron spin",
+   "journal": "Phys. Rev. Lett.",
+   "volume": "109",
+   "issue": "13",
+   "article": "137602",
+   "date": "2012-09-25",
+   "doi": "10.1103/PhysRevLett.109.137602",
+   "arxiv": "1205.4128",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/1205.4128",
    "verified": true
   },
   "arxiv:1205.6375": {
@@ -269,6 +404,27 @@
    "url": "https://arxiv.org/abs/1307.1740",
    "verified": true
   },
+  "arxiv:1309.5452": {
+   "authors": [
+    "T. H. Taminiau",
+    "J. Cramer",
+    "T. van der Sar",
+    "V. V. Dobrovitski",
+    "R. Hanson"
+   ],
+   "n_authors": 5,
+   "title": "Universal control and error correction in multi-qubit spin registers in diamond",
+   "journal": "Nat. Nanotechnol.",
+   "volume": "9",
+   "issue": "3",
+   "pages": "171–176",
+   "date": "2014-02-02",
+   "doi": "10.1038/nnano.2014.2",
+   "arxiv": "1309.5452",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/1309.5452",
+   "verified": true
+  },
   "arxiv:1401.5504": {
    "authors": [
     "P. I. Bunyk"
@@ -354,6 +510,24 @@
    "url": "https://arxiv.org/abs/1403.4841",
    "verified": true
   },
+  "arxiv:1405.4883": {
+   "authors": [
+    "Sergey Bravyi",
+    "Martin Suchara",
+    "Alexander Vargo"
+   ],
+   "n_authors": 3,
+   "title": "Efficient Algorithms for Maximum Likelihood Decoding in the Surface Code",
+   "journal": "Physical Review A",
+   "volume": "90",
+   "article": "032326",
+   "date": "2014",
+   "doi": "10.1103/PhysRevA.90.032326",
+   "arxiv": "1405.4883",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/1405.4883",
+   "verified": true
+  },
   "arxiv:1409.6572": {
    "authors": [
     "M. Brownnutt",
@@ -430,6 +604,49 @@
    "arxiv": "1505.01182",
    "kind": "preprint",
    "url": "https://arxiv.org/abs/1505.01182",
+   "verified": true
+  },
+  "arxiv:1505.04014": {
+   "authors": [
+    "C. J. Ballance",
+    "V. M. Schäfer",
+    "J. P. Home",
+    "D. J. Szwer",
+    "S. C. Webster",
+    "D. T. C. Allcock"
+   ],
+   "etal": true,
+   "n_authors": 12,
+   "title": "Hybrid quantum logic and a test of Bell's inequality using two different atomic isotopes",
+   "journal": "Nature",
+   "volume": "528",
+   "issue": "7582",
+   "pages": "384-386",
+   "date": "2015-12-16",
+   "doi": "10.1038/nature16184",
+   "arxiv": "1505.04014",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/1505.04014",
+   "verified": true
+  },
+  "arxiv:1509.05081": {
+   "authors": [
+    "Sergey K. Tolpygo",
+    "Vladimir Bolkhovsky",
+    "T. J. Weir",
+    "Alex Wynn",
+    "D. E. Oates",
+    "L. M. Johnson"
+   ],
+   "etal": true,
+   "n_authors": 7,
+   "title": "Advanced Fabrication Processes for Superconducting Very Large Scale Integrated Circuits",
+   "journal": "IEEE Trans. Appl. Supercond.",
+   "date": "2016",
+   "doi": "10.1109/TASC.2016.2519388",
+   "arxiv": "1509.05081",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/1509.05081",
    "verified": true
   },
   "arxiv:1509.05811": {
@@ -546,6 +763,29 @@
    "arxiv": "1606.00685",
    "kind": "journal",
    "url": "https://arxiv.org/abs/1606.00685",
+   "verified": true
+  },
+  "arxiv:1606.07220": {
+   "authors": [
+    "T. Ruster",
+    "C. T. Schmiegelow",
+    "H. Kaufmann",
+    "C. Warschburger",
+    "F. Schmidt-Kaler",
+    "U. G. Poschinger"
+   ],
+   "etal": false,
+   "n_authors": 6,
+   "title": "A long-lived Zeeman trapped-ion qubit",
+   "journal": "Applied Physics B",
+   "volume": "122",
+   "issue": "10",
+   "article": "254",
+   "date": "2016-09-23",
+   "doi": "10.1007/s00340-016-6527-4",
+   "arxiv": "1606.07220",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/1606.07220",
    "verified": true
   },
   "arxiv:1606.08409": {
@@ -1064,6 +1304,29 @@
    "url": "https://arxiv.org/abs/1806.07930",
    "verified": true
   },
+  "arxiv:1807.01033": {
+   "authors": [
+    "C. Flühmann",
+    "T. L. Nguyen",
+    "M. Marinelli",
+    "V. Negnevitsky",
+    "K. Mehta",
+    "J. P. Home"
+   ],
+   "etal": false,
+   "n_authors": 6,
+   "title": "Encoding a qubit in a trapped-ion mechanical oscillator",
+   "journal": "Nature",
+   "volume": "566",
+   "issue": "7745",
+   "pages": "513–517",
+   "date": "2019-02-27",
+   "doi": "10.1038/s41586-019-0960-6",
+   "arxiv": "1807.01033",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/1807.01033",
+   "verified": true
+  },
   "arxiv:1809.03894": {
    "authors": [
     "S. Schaal",
@@ -1149,6 +1412,29 @@
    "url": "https://arxiv.org/abs/1904.10934",
    "verified": false
   },
+  "arxiv:1905.02094": {
+   "authors": [
+    "C. E. Bradley",
+    "J. Randall",
+    "M. H. Abobeih",
+    "R. C. Berrevoets",
+    "M. J. Degen",
+    "M. A. Bakker"
+   ],
+   "etal": true,
+   "n_authors": 9,
+   "title": "A Ten-Qubit Solid-State Spin Register with Quantum Memory up to One Minute",
+   "journal": "Phys. Rev. X",
+   "volume": "9",
+   "issue": "3",
+   "article": "031045",
+   "date": "2019-09-11",
+   "doi": "10.1103/PhysRevX.9.031045",
+   "arxiv": "1905.02094",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/1905.02094",
+   "verified": true
+  },
   "arxiv:1905.12075": {
    "authors": [
     "Haoyu Qi",
@@ -1218,6 +1504,28 @@
    "arxiv": "1908.06101",
    "kind": "journal",
    "url": "https://arxiv.org/abs/1908.06101",
+   "verified": true
+  },
+  "arxiv:1908.10117": {
+   "authors": [
+    "H. C. J. Gan",
+    "Gleb Maslennikov",
+    "Ko-Wei Tseng",
+    "Chihuan Nguyen",
+    "Dzmitry Matsukevich"
+   ],
+   "etal": false,
+   "n_authors": 5,
+   "title": "Hybrid Quantum Computing with Conditional Beam Splitter Gate in Trapped Ion System",
+   "journal": "Phys. Rev. Lett.",
+   "volume": "124",
+   "issue": "17",
+   "article": "170502",
+   "date": "2020-04-27",
+   "doi": "10.1103/PhysRevLett.124.170502",
+   "arxiv": "1908.10117",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/1908.10117",
    "verified": true
   },
   "arxiv:1912.09410": {
@@ -1303,6 +1611,29 @@
    "url": "https://arxiv.org/abs/2004.04794",
    "verified": true
   },
+  "arxiv:2005.07602": {
+   "authors": [
+    "Alexandre Bourassa",
+    "Christopher P. Anderson",
+    "Kevin C. Miao",
+    "Mykyta Onizhuk",
+    "He Ma",
+    "Alexander L. Crook"
+   ],
+   "etal": true,
+   "n_authors": 12,
+   "title": "Entanglement and control of single nuclear spins in isotopically engineered silicon carbide",
+   "journal": "Nat. Mater.",
+   "volume": "19",
+   "issue": "12",
+   "pages": "1319–1325",
+   "date": "2020-12",
+   "doi": "10.1038/s41563-020-00802-6",
+   "arxiv": "2005.07602",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2005.07602",
+   "verified": true
+  },
   "arxiv:2006.10817": {
    "authors": [
     "Jeffrey A. Grover",
@@ -1365,6 +1696,28 @@
    "url": "https://arxiv.org/abs/2008.01642",
    "verified": true
   },
+  "arxiv:2009.01167": {
+   "authors": [
+    "F. Lecocq",
+    "F. Quinlan",
+    "K. Cicak",
+    "J. Aumentado",
+    "S. A. Diddams",
+    "J. D. Teufel"
+   ],
+   "n_authors": 6,
+   "title": "Control and readout of a superconducting qubit using a photonic link",
+   "journal": "Nature",
+   "volume": "591",
+   "issue": "7851",
+   "pages": "575–579",
+   "date": "2021-03-24",
+   "doi": "10.1038/s41586-021-03268-x",
+   "arxiv": "2009.01167",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2009.01167",
+   "verified": true
+  },
   "arxiv:2009.11482": {
    "authors": [
     "Laird Egan",
@@ -1408,6 +1761,27 @@
    "arxiv": "2009.14318",
    "kind": "journal",
    "url": "https://arxiv.org/abs/2009.14318",
+   "verified": true
+  },
+  "arxiv:2010.09681": {
+   "authors": [
+    "Brennan de Neeve",
+    "Thanh-Long Nguyen",
+    "Tanja Behrle",
+    "Jonathan P. Home"
+   ],
+   "etal": false,
+   "n_authors": 4,
+   "title": "Error correction of a logical grid state qubit by dissipative pumping",
+   "journal": "Nat. Phys.",
+   "volume": "18",
+   "issue": "3",
+   "pages": "296–300",
+   "date": "2022-02-07",
+   "doi": "10.1038/s41567-021-01487-7",
+   "arxiv": "2010.09681",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2010.09681",
    "verified": true
   },
   "arxiv:2012.01625": {
@@ -1475,6 +1849,18 @@
    "arxiv": "2012.12281",
    "kind": "journal",
    "url": "https://arxiv.org/abs/2012.12281",
+   "verified": true
+  },
+  "arxiv:2101.04125": {
+   "authors": [
+    "Christopher T. Chubb"
+   ],
+   "n_authors": 1,
+   "title": "General tensor network decoding of 2D Pauli codes",
+   "date": "2021-01-11",
+   "arxiv": "2101.04125",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2101.04125",
    "verified": true
   },
   "arxiv:2101.11390": {
@@ -1663,6 +2049,29 @@
    "url": "https://arxiv.org/abs/2107.00628",
    "verified": true
   },
+  "arxiv:2107.06368": {
+   "authors": [
+    "J. Hilder",
+    "D. Pijn",
+    "O. Onishchenko",
+    "A. Stahl",
+    "M. Orth",
+    "B. Lekitsch"
+   ],
+   "etal": true,
+   "n_authors": 10,
+   "title": "Fault-Tolerant Parity Readout on a Shuttling-Based Trapped-Ion Quantum Computer",
+   "journal": "Physical Review X",
+   "volume": "12",
+   "issue": "1",
+   "article": "011032",
+   "date": "2022-02-17",
+   "doi": "10.1103/PhysRevX.12.011032",
+   "arxiv": "2107.06368",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2107.06368",
+   "verified": true
+  },
   "arxiv:2107.11140": {
    "authors": [
     "Peter A. Spring",
@@ -1696,6 +2105,29 @@
    "arxiv": "2108.00879",
    "kind": "preprint",
    "url": "https://arxiv.org/abs/2108.00879",
+   "verified": true
+  },
+  "arxiv:2108.01646": {
+   "authors": [
+    "M. H. Abobeih",
+    "Y. Wang",
+    "J. Randall",
+    "S. J. H. Loenen",
+    "C. E. Bradley",
+    "M. Markham"
+   ],
+   "etal": true,
+   "n_authors": 9,
+   "title": "Fault-tolerant operation of a logical qubit in a diamond quantum processor",
+   "journal": "Nature",
+   "volume": "606",
+   "issue": "7916",
+   "pages": "884–889",
+   "date": "2022-06-30",
+   "doi": "10.1038/s41586-022-04819-6",
+   "arxiv": "2108.01646",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2108.01646",
    "verified": true
   },
   "arxiv:2108.02322": {
@@ -1891,6 +2323,27 @@
    "url": "https://arxiv.org/abs/2201.09866",
    "verified": true
   },
+  "arxiv:2202.01407": {
+   "authors": [
+    "Mohammad Reza Jokar",
+    "Richard Rines",
+    "Ghasem Pasandi",
+    "Haolin Cong",
+    "Adam Holmes",
+    "Yunong Shi"
+   ],
+   "etal": true,
+   "n_authors": 8,
+   "title": "DigiQ: A Scalable Digital Controller for Quantum Computers Using SFQ Logic",
+   "journal": "2022 IEEE International Symposium on High-Performance Computer Architecture (HPCA)",
+   "pages": "400–414",
+   "date": "2022-04",
+   "doi": "10.1109/HPCA53966.2022.00037",
+   "arxiv": "2202.01407",
+   "kind": "conference",
+   "url": "https://arxiv.org/abs/2202.01407",
+   "verified": true
+  },
   "arxiv:2202.09372": {
    "authors": [
     "Sepehr Ebadi",
@@ -1911,6 +2364,28 @@
    "arxiv": "2202.09372",
    "kind": "journal",
    "url": "https://arxiv.org/abs/2202.09372",
+   "verified": true
+  },
+  "arxiv:2203.06586": {
+   "authors": [
+    "V. Iaia",
+    "J. Ku",
+    "A. Ballard",
+    "C. P. Larson",
+    "E. Yelton",
+    "C. H. Liu"
+   ],
+   "etal": true,
+   "n_authors": 9,
+   "title": "Phonon downconversion to suppress correlated errors in superconducting qubits",
+   "journal": "Nat. Commun.",
+   "volume": "13",
+   "article": "6425",
+   "date": "2022-10-28",
+   "doi": "10.1038/s41467-022-33997-0",
+   "arxiv": "2203.06586",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2203.06586",
    "verified": true
   },
   "arxiv:2205.14061": {
@@ -1975,6 +2450,52 @@
    "arxiv": "2206.12803",
    "kind": "preprint",
    "url": "https://arxiv.org/abs/2206.12803",
+   "verified": true
+  },
+  "arxiv:2207.06115": {
+   "authors": [
+    "Wentao Chen",
+    "Yao Lu",
+    "Shuaining Zhang",
+    "Kuan Zhang",
+    "Guanhao Huang",
+    "Mu Qiao"
+   ],
+   "etal": true,
+   "n_authors": 12,
+   "title": "Scalable and programmable phononic network with trapped ions",
+   "journal": "Nat. Phys.",
+   "volume": "19",
+   "issue": "6",
+   "pages": "877–883",
+   "date": "2023-02-27",
+   "doi": "10.1038/s41567-023-01952-5",
+   "arxiv": "2207.06115",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2207.06115",
+   "verified": true
+  },
+  "arxiv:2207.13128": {
+   "authors": [
+    "P.-J. Stas",
+    "Y. Q. Huan",
+    "B. Machielse",
+    "E. N. Knall",
+    "A. Suleymanzade",
+    "B. Pingault"
+   ],
+   "etal": true,
+   "n_authors": 18,
+   "title": "Robust multi-qubit quantum network node with integrated error detection",
+   "journal": "Science",
+   "volume": "378",
+   "issue": "6619",
+   "pages": "557–560",
+   "date": "2022-11-04",
+   "doi": "10.1126/science.add9771",
+   "arxiv": "2207.13128",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2207.13128",
    "verified": true
   },
   "arxiv:2208.05461": {
@@ -2228,6 +2749,24 @@
    "also": [
     "https://arxiv.org/abs/2303.15933"
    ],
+   "verified": true
+  },
+  "arxiv:2303.16792": {
+   "authors": [
+    "Anna Herr",
+    "Quentin Herr",
+    "Steve Brebels",
+    "Min-Soo Kim",
+    "Ankit Pokhrel",
+    "Blake Hodges"
+   ],
+   "etal": true,
+   "n_authors": 13,
+   "title": "Scaling NbTiN-based ac-powered Josephson digital to 400M devices/cm²",
+   "date": "2023-03-29",
+   "arxiv": "2303.16792",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2303.16792",
    "verified": true
   },
   "arxiv:2304.05420": {
@@ -2562,6 +3101,46 @@
    "url": "https://arxiv.org/abs/2308.09240",
    "verified": true
   },
+  "arxiv:2310.10722": {
+   "authors": [
+    "Christophe Piveteau",
+    "Christopher T. Chubb",
+    "Joseph M. Renes"
+   ],
+   "n_authors": 3,
+   "title": "Tensor Network Decoding Beyond 2D",
+   "journal": "PRX Quantum",
+   "volume": "5",
+   "article": "040303",
+   "date": "2024",
+   "doi": "10.1103/PRXQuantum.5.040303",
+   "arxiv": "2310.10722",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2310.10722",
+   "verified": true
+  },
+  "arxiv:2310.16155": {
+   "authors": [
+    "Hana K. Warner",
+    "Jeffrey Holzgrafe",
+    "Beatriz Yankelevich",
+    "David Barton",
+    "Stefano Poletto",
+    "C. J. Xin"
+   ],
+   "etal": true,
+   "n_authors": 18,
+   "title": "Coherent control of a superconducting qubit using light",
+   "journal": "Nat. Phys.",
+   "volume": "21",
+   "pages": "831–838",
+   "date": "2025-04-02",
+   "doi": "10.1038/s41567-025-02812-0",
+   "arxiv": "2310.16155",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2310.16155",
+   "verified": true
+  },
   "arxiv:2311.04423": {
    "authors": [
     "Akshay Koottandavida"
@@ -2683,6 +3262,28 @@
    "url": "https://arxiv.org/abs/2401.16177",
    "verified": true
   },
+  "arxiv:2402.03208": {
+   "authors": [
+    "Patrick M. Harrington",
+    "Mingyu Li",
+    "Max Hays",
+    "Wouter Van De Pontseele",
+    "Daniel Mayer",
+    "H. Douglas Pinckney"
+   ],
+   "etal": true,
+   "n_authors": 16,
+   "title": "Synchronous detection of cosmic rays and correlated errors in superconducting qubit arrays",
+   "journal": "Nat. Commun.",
+   "volume": "16",
+   "article": "6428",
+   "date": "2025-07-11",
+   "doi": "10.1038/s41467-025-61385-x",
+   "arxiv": "2402.03208",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2402.03208",
+   "verified": true
+  },
   "arxiv:2402.04994": {
    "authors": [
     "Flavien Gyger",
@@ -2735,6 +3336,29 @@
    "arxiv": "2403.03272",
    "kind": "preprint",
    "url": "https://arxiv.org/abs/2403.03272",
+   "verified": true
+  },
+  "arxiv:2403.10633": {
+   "authors": [
+    "H. P. Bartling",
+    "J. Yun",
+    "K. N. Schymik",
+    "M. van Riggelen",
+    "L. A. Enthoven",
+    "H. B. van Ommen"
+   ],
+   "etal": true,
+   "n_authors": 11,
+   "title": "Universal high-fidelity quantum gates for spin qubits in diamond",
+   "journal": "Phys. Rev. Appl.",
+   "volume": "23",
+   "issue": "3",
+   "article": "034052",
+   "date": "2025-03-21",
+   "doi": "10.1103/PhysRevApplied.23.034052",
+   "arxiv": "2403.10633",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2403.10633",
    "verified": true
   },
   "arxiv:2403.16054": {
@@ -2882,6 +3506,29 @@
    "url": "https://arxiv.org/abs/2407.09109",
    "verified": true
   },
+  "arxiv:2407.10381": {
+   "authors": [
+    "Yuan Liu",
+    "Shraddha Singh",
+    "Kevin C. Smith",
+    "Eleanor Crane",
+    "John M. Martyn",
+    "Alec Eickbusch"
+   ],
+   "etal": true,
+   "n_authors": 14,
+   "title": "Hybrid Oscillator-Qubit Quantum Processors: Instruction Set Architectures, Abstract Machine Models, and Applications",
+   "journal": "PRX Quantum",
+   "volume": "7",
+   "issue": "1",
+   "article": "010201",
+   "date": "2026-01-07",
+   "doi": "10.1103/4rf7-9tfx",
+   "arxiv": "2407.10381",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2407.10381",
+   "verified": true
+  },
   "arxiv:2408.16617": {
    "authors": [
     "Xiang Deng"
@@ -2909,6 +3556,51 @@
    "arxiv": "2409.04634",
    "kind": "preprint",
    "url": "https://arxiv.org/abs/2409.04634",
+   "verified": true
+  },
+  "arxiv:2409.05455": {
+   "authors": [
+    "V. G. Matsos",
+    "C. H. Valahu",
+    "M. J. Millican",
+    "T. Navickas",
+    "X. C. Kolesnikow",
+    "M. J. Biercuk"
+   ],
+   "etal": true,
+   "n_authors": 7,
+   "title": "Universal quantum gate set for Gottesman–Kitaev–Preskill logical qubits",
+   "journal": "Nat. Phys.",
+   "volume": "21",
+   "issue": "10",
+   "pages": "1664–1669",
+   "date": "2025-08-21",
+   "doi": "10.1038/s41567-025-03002-8",
+   "arxiv": "2409.05455",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2409.05455",
+   "verified": true
+  },
+  "arxiv:2409.08977": {
+   "authors": [
+    "Hans K. C. Beukers",
+    "Christopher Waas",
+    "Matteo Pasini",
+    "Hendrik B. van Ommen",
+    "Zarije Ademi",
+    "Mariagrazia Iuliano"
+   ],
+   "etal": true,
+   "n_authors": 11,
+   "title": "Control of solid-state nuclear spin qubits using an electron spin-1/2",
+   "journal": "Phys. Rev. X",
+   "volume": "15",
+   "article": "021011",
+   "date": "2025-04-11",
+   "doi": "10.1103/PhysRevX.15.021011",
+   "arxiv": "2409.08977",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2409.08977",
    "verified": true
   },
   "arxiv:2409.12104": {
@@ -3497,6 +4189,66 @@
    "url": "https://arxiv.org/abs/2512.10504",
    "verified": true
   },
+  "arxiv:2512.10706": {
+   "authors": [
+    "Chuanlong Ma",
+    "Jia-Qi Wang",
+    "Linze Li",
+    "Jiajun Chen",
+    "Xiaoxuan Pan",
+    "Zheng-Hui Tian"
+   ],
+   "etal": true,
+   "n_authors": 16,
+   "title": "Scalable Optical Links for Controlling Bosonic Quantum Processors",
+   "date": "2025-12-11",
+   "arxiv": "2512.10706",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2512.10706",
+   "verified": true
+  },
+  "arxiv:2512.18171": {
+   "authors": [
+    "Alessandro R. Castelli",
+    "Kristin M. Beck",
+    "Loren D. H. Alegria",
+    "Luis A. Martinez",
+    "Kevin R. Chaves",
+    "Sean R. O'Kelley"
+   ],
+   "etal": true,
+   "n_authors": 9,
+   "title": "Superconducting-qubit decoherence correlated with detected radiation events",
+   "journal": "Phys. Rev. Appl.",
+   "volume": "26",
+   "issue": "4",
+   "article": "044052",
+   "date": "2026-10-19",
+   "doi": "10.1103/ddyy-t37l",
+   "arxiv": "2512.18171",
+   "kind": "journal",
+   "publisher": "American Physical Society",
+   "url": "https://arxiv.org/abs/2512.18171",
+   "verified": true
+  },
+  "arxiv:2512.21199": {
+   "authors": [
+    "Xiaoxuan Pan",
+    "Chuanlong Ma",
+    "Jia-Qi Wang",
+    "Zheng-Xu Zhu",
+    "Linze Li",
+    "Jiajun Chen"
+   ],
+   "etal": true,
+   "n_authors": 15,
+   "title": "All-optical control and multiplexed readout of multiple superconducting qubits",
+   "date": "2025-12-24",
+   "arxiv": "2512.21199",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2512.21199",
+   "verified": true
+  },
   "arxiv:2601.01647": {
    "authors": [
     "Jiyong Yu",
@@ -3542,6 +4294,24 @@
    "url": "https://arxiv.org/abs/2601.03922",
    "verified": true
   },
+  "arxiv:2601.09921": {
+   "authors": [
+    "Kai Zhang",
+    "Zhengzhong Yi",
+    "Shaojun Guo",
+    "Linghang Kong",
+    "Situ Wang",
+    "Xiaoyu Zhan"
+   ],
+   "etal": true,
+   "n_authors": 16,
+   "title": "Learning to Decode in Parallel: Self-Coordinating Neural Network for Real-Time Quantum Error Correction",
+   "date": "2026-01-14",
+   "arxiv": "2601.09921",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2601.09921",
+   "verified": true
+  },
   "arxiv:2601.20956": {
    "authors": [
     "Chiu Fan Bowen Lo",
@@ -3575,6 +4345,49 @@
    "arxiv": "2602.12773",
    "kind": "preprint",
    "url": "https://arxiv.org/abs/2602.12773",
+   "verified": true
+  },
+  "arxiv:2602.21293": {
+   "authors": [
+    "Yiren Zou",
+    "Hong-Kuan Xia",
+    "Aosai Zhang",
+    "Xuhao Zhu",
+    "Feitong Jin",
+    "Qingyuan Wang"
+   ],
+   "etal": true,
+   "n_authors": 35,
+   "title": "Teleportation transition of surface codes on a superconducting quantum processor",
+   "journal": "Nature Physics",
+   "date": "2026-10-22",
+   "doi": "10.1038/s41567-026-03484-0",
+   "arxiv": "2602.21293",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2602.21293",
+   "verified": true
+  },
+  "arxiv:2603.07548": {
+   "authors": [
+    "Tommaso Faorlin",
+    "Lorenz Panzl",
+    "Phoebe Grosser",
+    "Pablo Viñas",
+    "Alan Kahan",
+    "Walter Joseph Hörmann"
+   ],
+   "etal": true,
+   "n_authors": 15,
+   "title": "Entangling Ions with Engineered Light Gradients",
+   "journal": "Physical Review Letters",
+   "volume": "137",
+   "issue": "17",
+   "article": "170601",
+   "date": "2026-10-23",
+   "doi": "10.1103/4smy-6w2n",
+   "arxiv": "2603.07548",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2603.07548",
    "verified": true
   },
   "arxiv:2603.13175": {
@@ -3743,6 +4556,21 @@
    "url": "https://arxiv.org/abs/2605.10924",
    "verified": true
   },
+  "arxiv:2605.17230": {
+   "authors": [
+    "Hanyan Cao",
+    "Ge Yan",
+    "Yuxuan Du",
+    "Feng Pan"
+   ],
+   "n_authors": 4,
+   "title": "Maximum Likelihood Decoding of Quantum Error Correction Codes",
+   "date": "2026-05-17",
+   "arxiv": "2605.17230",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2605.17230",
+   "verified": true
+  },
   "arxiv:2605.24175": {
    "authors": [
     "Rei Yokoyama"
@@ -3811,6 +4639,21 @@
    "arxiv": "2606.03500",
    "kind": "preprint",
    "url": "https://arxiv.org/abs/2606.03500",
+   "verified": true
+  },
+  "arxiv:2606.14847": {
+   "authors": [
+    "Margriet van Riggelen",
+    "Jiwon Yun",
+    "H. Benjamin van Ommen",
+    "Tim H. Taminiau"
+   ],
+   "n_authors": 4,
+   "title": "High-fidelity two-qubit gates in a 7-qubit register for quantum networks",
+   "date": "2026-06-12",
+   "arxiv": "2606.14847",
+   "kind": "preprint",
+   "url": "https://arxiv.org/html/2606.14847",
    "verified": true
   },
   "arxiv:2606.23951": {
@@ -4067,6 +4910,29 @@
    "url": "https://arxiv.org/abs/2608.17189",
    "verified": true
   },
+  "arxiv:2608.19602": {
+   "authors": [
+    "Yu-Huai Li",
+    "Daojin Fan",
+    "Na Li",
+    "Fusheng Chen",
+    "Shaowei Li",
+    "Dong-Dong Li"
+   ],
+   "etal": true,
+   "n_authors": 18,
+   "title": "High-fidelity control of superconducting qubits with an optically transmitted signal",
+   "journal": "Phys. Rev. A",
+   "volume": "114",
+   "issue": "3",
+   "article": "032427",
+   "date": "2026-09-10",
+   "doi": "10.1103/m1wg-synr",
+   "arxiv": "2608.19602",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/2608.19602",
+   "verified": true
+  },
   "arxiv:2608.25503": {
    "authors": [
     "J. Schirk",
@@ -4320,6 +5186,39 @@
    "url": "https://arxiv.org/abs/2610.07683",
    "verified": true
   },
+  "arxiv:2610.12227": {
+   "authors": [
+    "Trond Hjerpekjøn Haug",
+    "Johan Kolvik",
+    "Joey Frey",
+    "Paul Burger",
+    "Fabian Resare",
+    "Witlef Wieczorek"
+   ],
+   "etal": true,
+   "n_authors": 9,
+   "title": "A quasiparticle-protected superconducting qubit",
+   "date": "2026-10-08",
+   "arxiv": "2610.12227",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2610.12227",
+   "verified": true
+  },
+  "arxiv:2610.13843": {
+   "authors": [
+    "Masoud Hakimi Heris",
+    "Yuan Liu",
+    "Frank Mueller"
+   ],
+   "etal": false,
+   "n_authors": 3,
+   "title": "A Hardware-Native Trapped-Ion Hybrid Qudit-Oscillator Instruction Set",
+   "date": "2026-10-09",
+   "arxiv": "2610.13843",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2610.13843",
+   "verified": true
+  },
   "arxiv:2610.20889": {
    "authors": [
     "Tai Xiang",
@@ -4336,6 +5235,39 @@
    "arxiv": "2610.20889",
    "kind": "preprint",
    "url": "https://arxiv.org/abs/2610.20889",
+   "verified": true
+  },
+  "arxiv:2610.23208": {
+   "authors": [
+    "E. J. W. Koh",
+    "Rongjie Zhang",
+    "Dzmitry Matsukevich"
+   ],
+   "etal": false,
+   "n_authors": 3,
+   "title": "Exponential-SWAP gate between bosonic motional modes of trapped ions",
+   "date": "2026-10-16",
+   "arxiv": "2610.23208",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2610.23208",
+   "verified": true
+  },
+  "arxiv:2610.26413": {
+   "authors": [
+    "H. B. van Ommen",
+    "N. E. Fakkel",
+    "M. van Riggelen",
+    "J. Yun",
+    "L. A. Enthoven",
+    "M. A. B. ElBadry"
+   ],
+   "etal": true,
+   "n_authors": 9,
+   "title": "Two-qubit cryo-CMOS control of a spin register in diamond",
+   "date": "2026-10-19",
+   "arxiv": "2610.26413",
+   "kind": "preprint",
+   "url": "https://arxiv.org/html/2610.26413",
    "verified": true
   },
   "arxiv:2610.29986": {
@@ -4403,6 +5335,24 @@
    "url": "https://arxiv.org/abs/2611.06613",
    "verified": true
   },
+  "arxiv:2611.12481": {
+   "authors": [
+    "Chuanlong Ma",
+    "Jiajun Chen",
+    "Jia-Qi Wang",
+    "Zheng-Xu Zhu",
+    "Jia-Hua Zou",
+    "Linze Li"
+   ],
+   "etal": true,
+   "n_authors": 16,
+   "title": "Universal two-qubit control across dilution refrigerators via a 10-km coherent optical link",
+   "date": "2026-11-09",
+   "arxiv": "2611.12481",
+   "kind": "preprint",
+   "url": "https://arxiv.org/abs/2611.12481",
+   "verified": true
+  },
   "arxiv:quant-ph/0007058": {
    "authors": [
     "J. Calsamiglia",
@@ -4434,6 +5384,52 @@
    "arxiv": "quant-ph/0410199",
    "kind": "journal",
    "url": "https://arxiv.org/abs/quant-ph/0410199",
+   "verified": true
+  },
+  "arxiv:quant-ph/0508021": {
+   "authors": [
+    "H. Häffner",
+    "F. Schmidt-Kaler",
+    "W. Hänsel",
+    "C. F. Roos",
+    "T. Körber",
+    "M. Chwalla"
+   ],
+   "etal": true,
+   "n_authors": 11,
+   "title": "Robust entanglement",
+   "journal": "Applied Physics B",
+   "volume": "81",
+   "issue": "2-3",
+   "pages": "151-153",
+   "date": "2005-07-15",
+   "doi": "10.1007/s00340-005-1917-z",
+   "arxiv": "quant-ph/0508021",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/quant-ph/0508021",
+   "verified": true
+  },
+  "arxiv:quant-ph/0603273": {
+   "authors": [
+    "J. P. Home",
+    "M. J. McDonnell",
+    "D. M. Lucas",
+    "G. Imreh",
+    "B. C. Keitch",
+    "D. J. Szwer"
+   ],
+   "etal": true,
+   "n_authors": 10,
+   "title": "Deterministic entanglement and tomography of ion–spin qubits",
+   "journal": "New Journal of Physics",
+   "volume": "8",
+   "issue": "9",
+   "article": "188",
+   "date": "2006-09-12",
+   "doi": "10.1088/1367-2630/8/9/188",
+   "arxiv": "quant-ph/0603273",
+   "kind": "journal",
+   "url": "https://arxiv.org/abs/quant-ph/0603273",
    "verified": true
   },
   "doi:10.1016/j.micpro.2019.02.006": {
@@ -4717,6 +5713,27 @@
    "kind": "journal",
    "publisher": "Nature Portfolio",
    "url": "https://www.nature.com/articles/s41467-024-50355-4",
+   "verified": true
+  },
+  "doi:10.1038/s41467-025-57820-8": {
+   "authors": [
+    "Wenqu Xu",
+    "Tingting Guo",
+    "Kaixuan Zhang",
+    "Zishuo Li",
+    "Tianshi Zhou",
+    "Quan Zuo"
+   ],
+   "etal": true,
+   "n_authors": 20,
+   "title": "Manipulations of a transmon qubit with a null-biased electro-optic fiber link",
+   "journal": "Nat. Commun.",
+   "volume": "16",
+   "article": "2629",
+   "date": "2025-03-17",
+   "doi": "10.1038/s41467-025-57820-8",
+   "kind": "journal",
+   "url": "https://doi.org/10.1038/s41467-025-57820-8",
    "verified": true
   },
   "doi:10.1038/s41467-025-59693-3": {
@@ -5712,6 +6729,50 @@
    "url": "https://arxiv.org/abs/2201.03184",
    "verified": true
   },
+  "doi:10.1088/1361-6668/aa6ef4": {
+   "authors": [
+    "Takumi Ando",
+    "Shuichi Nagasawa",
+    "Naoki Takeuchi",
+    "Naoki Tsuji",
+    "Fumihiro China",
+    "Mutsuo Hidaka"
+   ],
+   "etal": true,
+   "n_authors": 8,
+   "title": "Three-dimensional adiabatic quantum-flux-parametron fabricated using a double-active-layered niobium process",
+   "journal": "Supercond. Sci. Technol.",
+   "volume": "30",
+   "issue": "7",
+   "article": "075003",
+   "date": "2017-06-09",
+   "doi": "10.1088/1361-6668/aa6ef4",
+   "kind": "journal",
+   "url": "https://iopscience.iop.org/article/10.1088/1361-6668/aa6ef4",
+   "verified": true
+  },
+  "doi:10.1088/1361-6668/aeaeb2": {
+   "authors": [
+    "Mingfan Chen",
+    "Shucheng Yang",
+    "Liliang Ying",
+    "Maoxiang Chen",
+    "Lijuan Li",
+    "Linxian Ma"
+   ],
+   "etal": true,
+   "n_authors": 10,
+   "title": "A double-active-layer Nb-based fabrication process for superconducting digital integrated circuits",
+   "journal": "Supercond. Sci. Technol.",
+   "volume": "39",
+   "issue": "10",
+   "article": "105024",
+   "date": "2026-10-14",
+   "doi": "10.1088/1361-6668/aeaeb2",
+   "kind": "journal",
+   "url": "https://iopscience.iop.org/article/10.1088/1361-6668/aeaeb2",
+   "verified": true
+  },
   "doi:10.1103/985g-58gd": {
    "authors": [
     "Shouzhen Gu",
@@ -5945,6 +7006,27 @@
    "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.75.4714",
    "verified": true
   },
+  "doi:10.1103/physrevlett.76.1796": {
+   "authors": [
+    "D. M. Meekhof",
+    "C. Monroe",
+    "B. E. King",
+    "W. M. Itano",
+    "D. J. Wineland"
+   ],
+   "etal": false,
+   "n_authors": 5,
+   "title": "Generation of Nonclassical Motional States of a Trapped Atom",
+   "journal": "Phys. Rev. Lett.",
+   "volume": "76",
+   "issue": "11",
+   "pages": "1796–1799",
+   "date": "1996-03-11",
+   "doi": "10.1103/PhysRevLett.76.1796",
+   "kind": "journal",
+   "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.76.1796",
+   "verified": true
+  },
   "doi:10.1103/physrevlett.95.010501": {
    "authors": [
     "Daniel E. Browne",
@@ -6090,6 +7172,48 @@
    "doi": "10.1364/OE.16.003032",
    "kind": "journal",
    "url": "https://doi.org/10.1364/OE.16.003032",
+   "verified": true
+  },
+  "doi:10.1364/oe.514909": {
+   "authors": [
+    "Na Li",
+    "Yu-Huai Li",
+    "Dao-Jin Fan",
+    "Lian-Chen Han",
+    "Yu Xu",
+    "Jin Lin"
+   ],
+   "etal": true,
+   "n_authors": 12,
+   "title": "Optical transmission of microwave control signal towards large-scale superconducting quantum computing",
+   "journal": "Optics Express",
+   "volume": "32",
+   "pages": "3989",
+   "date": "2024-01-22",
+   "doi": "10.1364/oe.514909",
+   "kind": "journal",
+   "url": "https://doi.org/10.1364/oe.514909",
+   "verified": true
+  },
+  "doi:10.1364/oe.616363": {
+   "authors": [
+    "Na Li",
+    "Yu-Huai Li",
+    "Daojin Fan",
+    "Lian-Chen Han",
+    "Yu Xu",
+    "Jin Lin"
+   ],
+   "etal": true,
+   "n_authors": 10,
+   "title": "Towards fault-tolerant quantum computing with optically controlled superconducting qubits",
+   "journal": "Optics Express",
+   "volume": "34",
+   "pages": "43602",
+   "date": "2026-11-03",
+   "doi": "10.1364/oe.616363",
+   "kind": "journal",
+   "url": "https://doi.org/10.1364/oe.616363",
    "verified": true
   },
   "doi:10.1364/optica.400751": {
@@ -8176,6 +9300,15 @@
    "url": "https://www.imec-int.com/en/press/european-commission-and-chips-ju-select-pixeurope-consortium-lead-european-pilot-line",
    "verified": true
   },
+  "https://www.imec-int.com/en/press/imec-demonstrates-core-building-blocks-scalable-cmos-fab-compatible-superconducting-digital": {
+   "org": "imec",
+   "title": "Imec demonstrates core building blocks of a scalable, CMOS-fab compatible superconducting digital technology",
+   "date": "2024-12-10",
+   "kind": "web",
+   "site": "imec",
+   "url": "https://www.imec-int.com/en/press/imec-demonstrates-core-building-blocks-scalable-cmos-fab-compatible-superconducting-digital",
+   "verified": true
+  },
   "https://www.imec-int.com/en/press/semiconductor-based-quantum-pilot-line-spins-launched-eu-support": {
    "org": "imec",
    "title": "Quantum pilot line 'SPINS' launched with EU support",
@@ -8800,6 +9933,15 @@
    "also": [
     "https://www.sec.gov/Archives/edgar/data/1907982/000190798225000060/0001907982-25-000060-index.htm"
    ],
+   "verified": true
+  },
+  "https://www.sec.gov/archives/edgar/data/1907982/000190798226000026/exhibit1023-amendment15tod.htm": {
+   "org": "SkyWater Technology Foundry, Inc.; D-Wave Systems Inc.",
+   "title": "Fifteenth Amendment to the Semiconductor Line Operation Agreement (Exhibit 10.23 to D-Wave Quantum Inc. Form 10-K for FY2025; agreement dated 2012-12-23, amendment effective 2025-01-14)",
+   "date": "2026-02-26",
+   "kind": "web",
+   "site": "SEC EDGAR",
+   "url": "https://www.sec.gov/Archives/edgar/data/1907982/000190798226000026/exhibit1023-amendment15tod.htm",
    "verified": true
   },
   "https://www.sec.gov/archives/edgar/data/1907982/000190798226000026/qbts-20251231.htm": {
@@ -16091,6 +17233,344 @@
    },
    {
     "work": "arxiv:2607.12988",
+    "grade": "P"
+   }
+  ],
+  "dec_tn": [
+   {
+    "work": "arxiv:1405.4883",
+    "grade": "S"
+   },
+   {
+    "work": "arxiv:2101.04125",
+    "grade": "S"
+   },
+   {
+    "work": "arxiv:2310.10722",
+    "grade": "S"
+   },
+   {
+    "work": "doi:10.1038/s41467-023-38247-5",
+    "grade": "D"
+   },
+   {
+    "work": "doi:10.1038/s41586-022-05434-1",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2602.21293",
+    "grade": "D"
+   },
+   {
+    "work": "doi:10.1038/s41586-024-08148-8",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2601.09921",
+    "grade": "P"
+   },
+   {
+    "work": "arxiv:2605.17230",
+    "grade": "P"
+   }
+  ],
+  "fab_qphard": [
+   {
+    "work": "arxiv:2402.15644",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2104.05219",
+    "grade": "D"
+   },
+   {
+    "work": "report:S2#0",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2610.12227",
+    "grade": "P"
+   },
+   {
+    "work": "arxiv:1112.2621",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2203.06586",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2402.03208",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2512.18171",
+    "grade": "D"
+   },
+   {
+    "work": "report:S20#1",
+    "grade": "D"
+   }
+  ],
+  "phonon": [
+   {
+    "work": "doi:10.1103/physrevlett.75.4714",
+    "grade": "D"
+   },
+   {
+    "work": "doi:10.1103/physrevlett.76.1796",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:1807.01033",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2010.09681",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:1908.10117",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2207.06115",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2409.05455",
+    "grade": "D"
+   },
+   {
+    "work": "doi:10.1038/s41567-026-03402-4",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2610.23208",
+    "grade": "P"
+   },
+   {
+    "work": "arxiv:2407.10381",
+    "grade": "S"
+   },
+   {
+    "work": "arxiv:2610.13843",
+    "grade": "S"
+   }
+  ],
+  "fab_scd": [
+   {
+    "work": "https://www.dwavequantum.com/media/41upubz2/14-1090a-a_fluxonium-dac-control.pdf",
+    "grade": "C"
+   },
+   {
+    "work": "arxiv:1509.05081",
+    "grade": "D"
+   },
+   {
+    "work": "doi:10.1038/s41598-025-20666-7",
+    "grade": "D"
+   },
+   {
+    "work": "doi:10.1088/1361-6668/aa6ef4",
+    "grade": "D"
+   },
+   {
+    "work": "doi:10.1088/1361-6668/aeaeb2",
+    "grade": "D"
+   },
+   {
+    "work": "https://seeqc.com/resources/seeqc-secures-22.4-million-in-series-a-round-strategic-investment-led-by-eqt-ventures",
+    "grade": "C"
+   },
+   {
+    "work": "https://www.imec-int.com/en/press/imec-demonstrates-core-building-blocks-scalable-cmos-fab-compatible-superconducting-digital",
+    "grade": "C"
+   },
+   {
+    "work": "arxiv:0907.3757",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:0905.0891",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:1806.07930",
+    "grade": "D"
+   },
+   {
+    "work": "doi:10.1103/prxquantum.4.030310",
+    "grade": "D"
+   },
+   {
+    "work": "report:S20#1",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2202.01407",
+    "grade": "S"
+   },
+   {
+    "work": "arxiv:2103.14209",
+    "grade": "S"
+   },
+   {
+    "work": "arxiv:2610.02333",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:1401.5504",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2303.16792",
+    "grade": "P"
+   },
+   {
+    "work": "https://www.ll.mit.edu/r-d/projects/squill-foundry",
+    "grade": "C"
+   },
+   {
+    "work": "https://www.sec.gov/archives/edgar/data/1907982/000190798226000026/exhibit1023-amendment15tod.htm",
+    "grade": "G"
+   },
+   {
+    "work": "arxiv:2004.04794",
+    "grade": "S"
+   },
+   {
+    "work": "report:S20#0",
+    "grade": "C"
+   }
+  ],
+  "g_ddhf": [
+   {
+    "work": "arxiv:1205.4128",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:1309.5452",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:1905.02094",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2108.01646",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:1202.4379",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2005.07602",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2207.13128",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2610.26413",
+    "grade": "P"
+   },
+   {
+    "work": "arxiv:2403.10633",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2409.08977",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2606.14847",
+    "grade": "P"
+   },
+   {
+    "work": "report:Q13#0",
+    "grade": "P"
+   }
+  ],
+  "enc_zeeman": [
+   {
+    "work": "arxiv:quant-ph/0603273",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:1606.07220",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:1103.5253",
+    "grade": "D"
+   },
+   {
+    "work": "report:I59#0",
+    "grade": "P"
+   },
+   {
+    "work": "arxiv:quant-ph/0508021",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:0902.2826",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:1505.04014",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2107.06368",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2603.07548",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2101.11390",
+    "grade": "D"
+   }
+  ],
+  "ct_optical": [
+   {
+    "work": "arxiv:2009.01167",
+    "grade": "D"
+   },
+   {
+    "work": "doi:10.1364/oe.514909",
+    "grade": "D"
+   },
+   {
+    "work": "doi:10.1038/s41467-025-57820-8",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2310.16155",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2608.19602",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2611.12481",
+    "grade": "P"
+   },
+   {
+    "work": "arxiv:2512.21199",
+    "grade": "P"
+   },
+   {
+    "work": "doi:10.1364/oe.616363",
+    "grade": "D"
+   },
+   {
+    "work": "arxiv:2512.10706",
     "grade": "P"
    }
   ]

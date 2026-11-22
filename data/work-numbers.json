@@ -1,5 +1,5 @@
 {
- "next": 933,
+ "next": 990,
  "works": [
   {
    "n": 1,
@@ -7840,6 +7840,551 @@
     "t:meter scale quantum interconnects between large quantum proc"
    ],
    "label": "S+26a"
+  },
+  {
+   "n": 933,
+   "ids": [
+    "doi:10.1103/physreva.90.032326",
+    "arxiv:1405.4883",
+    "u:arxiv:1405.4883",
+    "t:efficient algorithms for maximum likelihood decoding in the "
+   ],
+   "label": "BSV14"
+  },
+  {
+   "n": 934,
+   "ids": [
+    "arxiv:2101.04125",
+    "u:arxiv:2101.04125",
+    "t:general tensor network decoding of 2d pauli codes"
+   ],
+   "label": "Chu21"
+  },
+  {
+   "n": 935,
+   "ids": [
+    "doi:10.1103/prxquantum.5.040303",
+    "arxiv:2310.10722",
+    "u:arxiv:2310.10722",
+    "t:tensor network decoding beyond 2d"
+   ],
+   "label": "PCR24"
+  },
+  {
+   "n": 936,
+   "ids": [
+    "doi:10.1038/s41567-026-03484-0",
+    "arxiv:2602.21293",
+    "u:arxiv:2602.21293",
+    "t:teleportation transition of surface codes on a superconducti"
+   ],
+   "label": "ZXZ+26a"
+  },
+  {
+   "n": 937,
+   "ids": [
+    "arxiv:2601.09921",
+    "u:arxiv:2601.09921",
+    "t:learning to decode in parallel self coordinating neural netw"
+   ],
+   "label": "ZYG+26"
+  },
+  {
+   "n": 938,
+   "ids": [
+    "arxiv:2605.17230",
+    "u:arxiv:2605.17230",
+    "t:maximum likelihood decoding of quantum error correction code"
+   ],
+   "label": "CYDP26"
+  },
+  {
+   "n": 939,
+   "ids": [
+    "arxiv:2610.12227",
+    "u:arxiv:2610.12227",
+    "t:a quasiparticle protected superconducting qubit"
+   ],
+   "label": "HKF+26"
+  },
+  {
+   "n": 940,
+   "ids": [
+    "doi:10.1103/physrevlett.108.230509",
+    "arxiv:1112.2621",
+    "u:arxiv:1112.2621",
+    "t:measurements of quasiparticle tunneling dynamics in a bandga"
+   ],
+   "label": "SDR+12"
+  },
+  {
+   "n": 941,
+   "ids": [
+    "doi:10.1038/s41467-022-33997-0",
+    "arxiv:2203.06586",
+    "u:arxiv:2203.06586",
+    "t:phonon downconversion to suppress correlated errors in super"
+   ],
+   "label": "IKB+22"
+  },
+  {
+   "n": 942,
+   "ids": [
+    "doi:10.1038/s41467-025-61385-x",
+    "arxiv:2402.03208",
+    "u:arxiv:2402.03208",
+    "t:synchronous detection of cosmic rays and correlated errors i"
+   ],
+   "label": "HLH+25"
+  },
+  {
+   "n": 943,
+   "ids": [
+    "doi:10.1103/ddyy-t37l",
+    "arxiv:2512.18171",
+    "u:arxiv:2512.18171",
+    "t:superconducting qubit decoherence correlated with detected r"
+   ],
+   "label": "CBA+26"
+  },
+  {
+   "n": 944,
+   "ids": [
+    "doi:10.1103/physrevlett.76.1796",
+    "u:https://journals.aps.org/prl/abstract/10.1103/physrevlett.76.1796",
+    "t:generation of nonclassical motional states of a trapped atom"
+   ],
+   "label": "MMK+96"
+  },
+  {
+   "n": 945,
+   "ids": [
+    "doi:10.1038/s41586-019-0960-6",
+    "arxiv:1807.01033",
+    "u:arxiv:1807.01033",
+    "t:encoding a qubit in a trapped ion mechanical oscillator"
+   ],
+   "label": "FNM+19"
+  },
+  {
+   "n": 946,
+   "ids": [
+    "doi:10.1038/s41567-021-01487-7",
+    "arxiv:2010.09681",
+    "u:arxiv:2010.09681",
+    "t:error correction of a logical grid state qubit by dissipativ"
+   ],
+   "label": "NNBH22"
+  },
+  {
+   "n": 947,
+   "ids": [
+    "doi:10.1103/physrevlett.124.170502",
+    "arxiv:1908.10117",
+    "u:arxiv:1908.10117",
+    "t:hybrid quantum computing with conditional beam splitter gate"
+   ],
+   "label": "GMT+20"
+  },
+  {
+   "n": 948,
+   "ids": [
+    "doi:10.1038/s41567-023-01952-5",
+    "arxiv:2207.06115",
+    "u:arxiv:2207.06115",
+    "t:scalable and programmable phononic network with trapped ions"
+   ],
+   "label": "CLZ+23"
+  },
+  {
+   "n": 949,
+   "ids": [
+    "doi:10.1038/s41567-025-03002-8",
+    "arxiv:2409.05455",
+    "u:arxiv:2409.05455",
+    "t:universal quantum gate set for gottesman kitaev preskill log"
+   ],
+   "label": "MVM+25"
+  },
+  {
+   "n": 950,
+   "ids": [
+    "arxiv:2610.23208",
+    "u:arxiv:2610.23208",
+    "t:exponential swap gate between bosonic motional modes of trap"
+   ],
+   "label": "KZM26"
+  },
+  {
+   "n": 951,
+   "ids": [
+    "doi:10.1103/4rf7-9tfx",
+    "arxiv:2407.10381",
+    "u:arxiv:2407.10381",
+    "t:hybrid oscillator qubit quantum processors instruction set a"
+   ],
+   "label": "LSS+26"
+  },
+  {
+   "n": 952,
+   "ids": [
+    "arxiv:2610.13843",
+    "u:arxiv:2610.13843",
+    "t:a hardware native trapped ion hybrid qudit oscillator instru"
+   ],
+   "label": "HLM26"
+  },
+  {
+   "n": 953,
+   "ids": [
+    "doi:10.1109/tasc.2016.2519388",
+    "arxiv:1509.05081",
+    "u:arxiv:1509.05081",
+    "t:advanced fabrication processes for superconducting very larg"
+   ],
+   "label": "TBW+16"
+  },
+  {
+   "n": 954,
+   "ids": [
+    "doi:10.1088/1361-6668/aa6ef4",
+    "u:https://iopscience.iop.org/article/10.1088/1361-6668/aa6ef4",
+    "t:three dimensional adiabatic quantum flux parametron fabricat"
+   ],
+   "label": "ANT+17"
+  },
+  {
+   "n": 955,
+   "ids": [
+    "doi:10.1088/1361-6668/aeaeb2",
+    "u:https://iopscience.iop.org/article/10.1088/1361-6668/aeaeb2",
+    "t:a double active layer nb based fabrication process for super"
+   ],
+   "label": "CYY+26"
+  },
+  {
+   "n": 956,
+   "ids": [
+    "u:https://www.imec-int.com/en/press/imec-demonstrates-core-building-blocks-scalable-cmos-fab-compatible-superconducting-digital",
+    "t:imec demonstrates core building blocks of a scalable cmos fa"
+   ]
+  },
+  {
+   "n": 957,
+   "ids": [
+    "doi:10.1088/0953-2048/23/6/065004",
+    "arxiv:0907.3757",
+    "u:arxiv:0907.3757",
+    "t:a scalable control system for a superconducting adiabatic qu"
+   ],
+   "label": "JBM+10"
+  },
+  {
+   "n": 958,
+   "ids": [
+    "doi:10.1109/hpca53966.2022.00037",
+    "arxiv:2202.01407",
+    "u:arxiv:2202.01407",
+    "t:digiq a scalable digital controller for quantum computers us"
+   ],
+   "label": "JRP+22"
+  },
+  {
+   "n": 959,
+   "ids": [
+    "arxiv:2303.16792",
+    "u:arxiv:2303.16792",
+    "t:scaling nbtin based ac powered josephson digital to 400m dev"
+   ],
+   "label": "HHB+23"
+  },
+  {
+   "n": 960,
+   "ids": [
+    "u:https://www.sec.gov/archives/edgar/data/1907982/000190798226000026/exhibit1023-amendment15tod.htm",
+    "t:fifteenth amendment to the semiconductor line operation agre"
+   ]
+  },
+  {
+   "n": 961,
+   "ids": [
+    "doi:10.1103/physrevlett.109.137602",
+    "arxiv:1205.4128",
+    "u:arxiv:1205.4128",
+    "t:detection and control of individual nuclear spins using a we"
+   ],
+   "label": "TWS+12"
+  },
+  {
+   "n": 962,
+   "ids": [
+    "doi:10.1038/nnano.2014.2",
+    "arxiv:1309.5452",
+    "u:arxiv:1309.5452",
+    "t:universal control and error correction in multi qubit spin r"
+   ],
+   "label": "TCS+14"
+  },
+  {
+   "n": 963,
+   "ids": [
+    "doi:10.1103/physrevx.9.031045",
+    "arxiv:1905.02094",
+    "u:arxiv:1905.02094",
+    "t:a ten qubit solid state spin register with quantum memory up"
+   ],
+   "label": "BRA+19"
+  },
+  {
+   "n": 964,
+   "ids": [
+    "doi:10.1038/s41586-022-04819-6",
+    "arxiv:2108.01646",
+    "u:arxiv:2108.01646",
+    "t:fault tolerant operation of a logical qubit in a diamond qua"
+   ],
+   "label": "AWR+22"
+  },
+  {
+   "n": 965,
+   "ids": [
+    "doi:10.1038/nature10900",
+    "arxiv:1202.4379",
+    "u:arxiv:1202.4379",
+    "t:decoherence protected quantum gates for a hybrid solid state"
+   ],
+   "label": "SWB+12"
+  },
+  {
+   "n": 966,
+   "ids": [
+    "doi:10.1038/s41563-020-00802-6",
+    "arxiv:2005.07602",
+    "u:arxiv:2005.07602",
+    "t:entanglement and control of single nuclear spins in isotopic"
+   ],
+   "label": "BAM+20"
+  },
+  {
+   "n": 967,
+   "ids": [
+    "doi:10.1126/science.add9771",
+    "arxiv:2207.13128",
+    "u:arxiv:2207.13128",
+    "t:robust multi qubit quantum network node with integrated erro"
+   ],
+   "label": "SHM+22"
+  },
+  {
+   "n": 968,
+   "ids": [
+    "arxiv:2610.26413",
+    "u:arxiv:2610.26413",
+    "t:two qubit cryo cmos control of a spin register in diamond"
+   ],
+   "label": "OFR+26"
+  },
+  {
+   "n": 969,
+   "ids": [
+    "doi:10.1103/physrevapplied.23.034052",
+    "arxiv:2403.10633",
+    "u:arxiv:2403.10633",
+    "t:universal high fidelity quantum gates for spin qubits in dia"
+   ],
+   "label": "BYS+25"
+  },
+  {
+   "n": 970,
+   "ids": [
+    "doi:10.1103/physrevx.15.021011",
+    "arxiv:2409.08977",
+    "u:arxiv:2409.08977",
+    "t:control of solid state nuclear spin qubits using an electron"
+   ],
+   "label": "BWP+25"
+  },
+  {
+   "n": 971,
+   "ids": [
+    "arxiv:2606.14847",
+    "u:arxiv:2606.14847",
+    "t:high fidelity two qubit gates in a 7 qubit register for quan"
+   ],
+   "label": "RYOT26"
+  },
+  {
+   "n": 972,
+   "ids": [
+    "doi:10.1088/1367-2630/8/9/188",
+    "arxiv:quant-ph/0603273",
+    "u:https://arxiv.org/abs/quant-ph/0603273",
+    "t:deterministic entanglement and tomography of ion spin qubits"
+   ],
+   "label": "HML+06"
+  },
+  {
+   "n": 973,
+   "ids": [
+    "doi:10.1007/s00340-016-6527-4",
+    "arxiv:1606.07220",
+    "u:arxiv:1606.07220",
+    "t:a long lived zeeman trapped ion qubit"
+   ],
+   "label": "RSK+16"
+  },
+  {
+   "n": 974,
+   "ids": [
+    "doi:10.1088/1367-2630/13/7/073027",
+    "arxiv:1103.5253",
+    "u:arxiv:1103.5253",
+    "t:high fidelity state detection and tomography of a single ion"
+   ],
+   "label": "KGA+11"
+  },
+  {
+   "n": 975,
+   "ids": [
+    "arxiv:2610.32518",
+    "u:arxiv:2610.32518",
+    "t:lynx a trapped ion quantum information processor"
+   ],
+   "label": "EJH+26"
+  },
+  {
+   "n": 976,
+   "ids": [
+    "doi:10.1007/s00340-005-1917-z",
+    "arxiv:quant-ph/0508021",
+    "u:https://arxiv.org/abs/quant-ph/0508021",
+    "t:robust entanglement"
+   ],
+   "label": "HSH+05"
+  },
+  {
+   "n": 977,
+   "ids": [
+    "doi:10.1088/0953-4075/42/15/154013",
+    "arxiv:0902.2826",
+    "u:arxiv:0902.2826",
+    "t:coherent manipulation of a ⁴⁰ca spin qubit in a micro ion tr"
+   ],
+   "label": "PHZ+09"
+  },
+  {
+   "n": 978,
+   "ids": [
+    "doi:10.1038/nature16184",
+    "arxiv:1505.04014",
+    "u:arxiv:1505.04014",
+    "t:hybrid quantum logic and a test of bell s inequality using t"
+   ],
+   "label": "BSH+15"
+  },
+  {
+   "n": 979,
+   "ids": [
+    "doi:10.1103/physrevx.12.011032",
+    "arxiv:2107.06368",
+    "u:arxiv:2107.06368",
+    "t:fault tolerant parity readout on a shuttling based trapped i"
+   ],
+   "label": "HPO+22"
+  },
+  {
+   "n": 980,
+   "ids": [
+    "doi:10.1103/4smy-6w2n",
+    "arxiv:2603.07548",
+    "u:arxiv:2603.07548",
+    "t:entangling ions with engineered light gradients"
+   ],
+   "label": "FPG+26"
+  },
+  {
+   "n": 981,
+   "ids": [
+    "doi:10.1038/s41586-021-03268-x",
+    "arxiv:2009.01167",
+    "u:arxiv:2009.01167",
+    "t:control and readout of a superconducting qubit using a photo"
+   ],
+   "label": "LQC+21"
+  },
+  {
+   "n": 982,
+   "ids": [
+    "doi:10.1364/oe.514909",
+    "u:https://doi.org/10.1364/oe.514909",
+    "t:optical transmission of microwave control signal towards lar"
+   ],
+   "label": "LLF+24"
+  },
+  {
+   "n": 983,
+   "ids": [
+    "doi:10.1038/s41467-025-57820-8",
+    "u:https://doi.org/10.1038/s41467-025-57820-8",
+    "t:manipulations of a transmon qubit with a null biased electro"
+   ],
+   "label": "XGZ+25"
+  },
+  {
+   "n": 984,
+   "ids": [
+    "doi:10.1038/s41567-025-02812-0",
+    "arxiv:2310.16155",
+    "u:arxiv:2310.16155",
+    "t:coherent control of a superconducting qubit using light"
+   ],
+   "label": "WHY+25"
+  },
+  {
+   "n": 985,
+   "ids": [
+    "doi:10.1103/m1wg-synr",
+    "arxiv:2608.19602",
+    "u:arxiv:2608.19602",
+    "t:high fidelity control of superconducting qubits with an opti"
+   ],
+   "label": "LFL+26"
+  },
+  {
+   "n": 986,
+   "ids": [
+    "arxiv:2611.12481",
+    "u:arxiv:2611.12481",
+    "t:universal two qubit control across dilution refrigerators vi"
+   ],
+   "label": "MCW+26"
+  },
+  {
+   "n": 987,
+   "ids": [
+    "arxiv:2512.21199",
+    "u:arxiv:2512.21199",
+    "t:all optical control and multiplexed readout of multiple supe"
+   ],
+   "label": "PMW+25"
+  },
+  {
+   "n": 988,
+   "ids": [
+    "doi:10.1364/oe.616363",
+    "u:https://doi.org/10.1364/oe.616363",
+    "t:towards fault tolerant quantum computing with optically cont"
+   ],
+   "label": "LLF+26"
+  },
+  {
+   "n": 989,
+   "ids": [
+    "arxiv:2512.10706",
+    "u:arxiv:2512.10706",
+    "t:scalable optical links for controlling bosonic quantum proce"
+   ],
+   "label": "MWL+25"
   }
  ]
 }

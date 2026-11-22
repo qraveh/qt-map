@@ -12,7 +12,7 @@
       "orcid": "0000-0001-7362-9529"
     }
   ],
-  "description": "Every quantum-computing technology (116) and every quantum machine built, announced or planned (191): analysed and summarised, partitioned by seven stable design attributes, compared and combined in dozens of ways — with a brief on every technology and a card on every machine.",
+  "description": "Every quantum-computing technology (123) and every quantum machine built, announced or planned (191): analysed and summarised, partitioned by seven stable design attributes, compared and combined in dozens of ways — with a brief on every technology and a card on every machine.",
   "access_right": "open",
   "license": "cc-by-4.0",
   "keywords": [
@@ -1999,6 +1999,226 @@
     },
     {
       "identifier": "10.48550/arXiv.2610.29986",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1103/physreva.90.032326",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.48550/arXiv.2101.04125",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1103/prxquantum.5.040303",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1038/s41567-026-03484-0",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.48550/arXiv.2601.09921",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.48550/arXiv.2605.17230",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.48550/arXiv.2610.12227",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1103/physrevlett.108.230509",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1038/s41467-022-33997-0",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1038/s41467-025-61385-x",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1103/ddyy-t37l",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1103/physrevlett.76.1796",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1038/s41586-019-0960-6",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1038/s41567-021-01487-7",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1103/physrevlett.124.170502",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1038/s41567-023-01952-5",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1038/s41567-025-03002-8",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.48550/arXiv.2610.23208",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1103/4rf7-9tfx",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.48550/arXiv.2610.13843",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1109/tasc.2016.2519388",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1088/1361-6668/aa6ef4",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1088/1361-6668/aeaeb2",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1088/0953-2048/23/6/065004",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1109/hpca53966.2022.00037",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.48550/arXiv.2303.16792",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1103/physrevlett.109.137602",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1038/nnano.2014.2",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1103/physrevx.9.031045",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1038/s41586-022-04819-6",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1038/nature10900",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1038/s41563-020-00802-6",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1126/science.add9771",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.48550/arXiv.2610.26413",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1103/physrevapplied.23.034052",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1103/physrevx.15.021011",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.48550/arXiv.2606.14847",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1088/1367-2630/8/9/188",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1007/s00340-016-6527-4",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1088/1367-2630/13/7/073027",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.48550/arXiv.2610.32518",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1007/s00340-005-1917-z",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1088/0953-4075/42/15/154013",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1038/nature16184",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1103/physrevx.12.011032",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1103/4smy-6w2n",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1038/s41586-021-03268-x",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1364/oe.514909",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1038/s41467-025-57820-8",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1038/s41567-025-02812-0",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1103/m1wg-synr",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.48550/arXiv.2611.12481",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.48550/arXiv.2512.21199",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.1364/oe.616363",
+      "relation": "cites"
+    },
+    {
+      "identifier": "10.48550/arXiv.2512.10706",
       "relation": "cites"
     }
   ],

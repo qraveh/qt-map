@@ -30,3 +30,7 @@ SHORT.update({
 'ct_fdm':('FDM gate drive','Частотное мультиплекс.','הנעת שערים FDM'),'ro_dualspecies':('Dual-species ancilla','Анцилла другого сорта','קיוביט עזר מסוג שני'),
 'ro_cavity':('Cavity readout','Считывание через резонатор','קריאה במהוד'),'fab_cryo_atom':('Cryogenic atom array','Криогенный массив','מערך אטומים קריוגני'),
 })
+# the seven technologies approved by the editor on 19 Nov 2026 (local writer job 20261122-1)
+SHORT.update({
+"phonon":("Ion motional mode","Колебательная мода ионов","אופן תנועה של יונים"),"enc_zeeman":("Zeeman qubit (ion)","Зеемановский кубит (ион)","קיוביט זימן (יון)"),"g_ddhf":("DD/DDRF e–n gate","Вентиль DD/DDRF","שער גרעיני DD/DDRF"),"ct_optical":("Optical control link","Оптич. линия управления","קישור בקרה אופטי"),"dec_tn":("TN decoder (offline)","TN-декодер (офлайн)","מפענח TN (לא מקוון)"),"fab_scd":("Nb multilayer SFQ fab","Многосл. Nb-процесс БОК","ייצור SFQ רב-שכבתי ב-Nb"),"fab_qphard":("QP/radiation hardening","Защита от QP и радиации","הקשחה מפני QP וקרינה"),
+})

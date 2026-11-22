@@ -23,10 +23,11 @@
   },
   "019eb633b6d2f5c6": {
    "file": "map-gaps-candidates.csv",
-   "date": "2026-11-19",
-   "by": "editor",
-   "decision": "approved",
-   "reason": "the editor's word of 19 Nov 2026: «согласен с твоими предложениями по всем пунктам 1-9» — question 6: an L8 station: tensor-network maximum-likelihood decoders, status E, said to be offline"
+   "date": "2026-11-22",
+   "by": "session",
+   "decision": "applied",
+   "reason": "the editor's word of 19 Nov 2026 («согласен с твоими предложениями по всем пунктам 1-9», question 6): written as the technology `dec_tn` with its brief in three languages by the local writer job 20261122-1",
+   "change": "data/changes/2026-11-22.json#4"
   },
   "022728281a07fe2b": {
    "file": "records-candidates.csv",
@@ -82,10 +83,11 @@
   },
   "0a7e4e74b735c9b2": {
    "file": "map-gaps-candidates.csv",
-   "date": "2026-11-19",
-   "by": "editor",
-   "decision": "approved",
-   "reason": "the editor's word of 19 Nov 2026: «согласен с твоими предложениями по всем пунктам 1-9» — question 4: an L3 station: the DD-timed hyperfine conditional-rotation gate of defect-centre registers"
+   "date": "2026-11-22",
+   "by": "session",
+   "decision": "applied",
+   "reason": "the editor's word of 19 Nov 2026 («согласен с твоими предложениями по всем пунктам 1-9», question 4): written as the technology `g_ddhf` with its brief in three languages by the local writer job 20261122-1",
+   "change": "data/changes/2026-11-22.json#2"
   },
   "0b126e1ae236dbb4": {
    "file": "amendment-candidates.csv",
@@ -97,10 +99,11 @@
   },
   "0b2b9727d255a1ef": {
    "file": "map-gaps-candidates.csv",
-   "date": "2026-11-19",
-   "by": "editor",
-   "decision": "approved",
-   "reason": "the editor's word of 19 Nov 2026: «согласен с твоими предложениями по всем пунктам 1-9» — question 1: one L1 station: the ion motional mode (phonon) as a bosonic carrier, status E; the g_bos widening goes into its brief"
+   "date": "2026-11-22",
+   "by": "session",
+   "decision": "applied",
+   "reason": "the editor's word of 19 Nov 2026 («согласен с твоими предложениями по всем пунктам 1-9», question 1): written as the technology `phonon` with its brief in three languages by the local writer job 20261122-1",
+   "change": "data/changes/2026-11-22.json#0"
   },
   "0bdb35cbec48071a": {
    "file": "amendment-candidates.csv",
@@ -120,10 +123,11 @@
   },
   "0c9ece41f50b51b2": {
    "file": "map-gaps-candidates.csv",
-   "date": "2026-11-19",
-   "by": "editor",
-   "decision": "approved",
-   "reason": "the editor's word of 19 Nov 2026: «согласен с твоими предложениями по всем пунктам 1-9» — question 7: an L5 station: optical delivery of microwave control to superconducting qubits, status E"
+   "date": "2026-11-22",
+   "by": "session",
+   "decision": "applied",
+   "reason": "the editor's word of 19 Nov 2026 («согласен с твоими предложениями по всем пунктам 1-9», question 7): written as the technology `ct_optical` with its brief in three languages by the local writer job 20261122-1",
+   "change": "data/changes/2026-11-22.json#3"
   },
   "0f2c7332de96109b": {
    "file": "amendment-candidates.csv",
@@ -343,10 +347,11 @@
   },
   "253429d42d9df940": {
    "file": "map-gaps-candidates.csv",
-   "date": "2026-11-19",
-   "by": "editor",
-   "decision": "approved",
-   "reason": "the editor's word of 19 Nov 2026: «согласен с твоими предложениями по всем пунктам 1-9» — question 1: one L1 station: the ion motional mode (phonon) as a bosonic carrier, status E; the g_bos widening goes into its brief"
+   "date": "2026-11-22",
+   "by": "session",
+   "decision": "applied",
+   "reason": "the editor's word of 19 Nov 2026 («согласен с твоими предложениями по всем пунктам 1-9», question 1): written as the technology `phonon` with its brief in three languages by the local writer job 20261122-1",
+   "change": "data/changes/2026-11-22.json#0"
   },
   "25ed70494f0203d5": {
    "file": "amendment-candidates.csv",
@@ -543,10 +548,11 @@
   },
   "2ffd69e8b5ac206e": {
    "file": "map-gaps-candidates.csv",
-   "date": "2026-11-19",
-   "by": "editor",
-   "decision": "approved",
-   "reason": "the editor's word of 19 Nov 2026: «согласен с твоими предложениями по всем пунктам 1-9» — question 3: one station for quasiparticle and radiation hardening of superconducting circuits (gap engineering and the co-packaged MKID event detector together)"
+   "date": "2026-11-22",
+   "by": "session",
+   "decision": "applied",
+   "reason": "the editor's word of 19 Nov 2026 («согласен с твоими предложениями по всем пунктам 1-9», question 3): written as the technology `fab_qphard` with its brief in three languages by the local writer job 20261122-1",
+   "change": "data/changes/2026-11-22.json#6"
   },
   "30bb01d52545cd02": {
    "file": "amendment-candidates.csv",
@@ -792,10 +798,11 @@
   },
   "4efa5642f2547e54": {
    "file": "map-gaps-candidates.csv",
-   "date": "2026-11-19",
-   "by": "editor",
-   "decision": "approved",
-   "reason": "the editor's word of 19 Nov 2026: «согласен с твоими предложениями по всем пунктам 1-9» — question 2: one L10 station: superconductor-digital (Nb/NbN, SFQ/AQFP) fabrication"
+   "date": "2026-11-22",
+   "by": "session",
+   "decision": "applied",
+   "reason": "the editor's word of 19 Nov 2026 («согласен с твоими предложениями по всем пунктам 1-9», question 2): written as the technology `fab_scd` with its brief in three languages by the local writer job 20261122-1",
+   "change": "data/changes/2026-11-22.json#5"
   },
   "4f933c1d1f65eac6": {
    "file": "amendment-candidates.csv",
@@ -1197,10 +1204,11 @@
   },
   "7ba8e0cd1a2f7e39": {
    "file": "map-gaps-candidates.csv",
-   "date": "2026-11-19",
-   "by": "editor",
-   "decision": "approved",
-   "reason": "the editor's word of 19 Nov 2026: «согласен с твоими предложениями по всем пунктам 1-9» — question 5: an L2 station: the Zeeman ground-state qubit of a nuclear-spin-free isotope (AQT LYNX)"
+   "date": "2026-11-22",
+   "by": "session",
+   "decision": "applied",
+   "reason": "the editor's word of 19 Nov 2026 («согласен с твоими предложениями по всем пунктам 1-9», question 5): written as the technology `enc_zeeman` with its brief in three languages by the local writer job 20261122-1",
+   "change": "data/changes/2026-11-22.json#1"
   },
   "7c056cdd9667171c": {
    "file": "register-amendment-candidates.csv",
@@ -1211,10 +1219,11 @@
   },
   "7f350752228bddb6": {
    "file": "map-gaps-candidates.csv",
-   "date": "2026-11-19",
-   "by": "editor",
-   "decision": "approved",
-   "reason": "the editor's word of 19 Nov 2026: «согласен с твоими предложениями по всем пунктам 1-9» — question 1: one L1 station: the ion motional mode (phonon) as a bosonic carrier, status E; the g_bos widening goes into its brief"
+   "date": "2026-11-22",
+   "by": "session",
+   "decision": "applied",
+   "reason": "the editor's word of 19 Nov 2026 («согласен с твоими предложениями по всем пунктам 1-9», question 1): written as the technology `phonon` with its brief in three languages by the local writer job 20261122-1",
+   "change": "data/changes/2026-11-22.json#0"
   },
   "803ae8c11a9b346a": {
    "file": "amendment-candidates.csv",
@@ -1930,10 +1939,11 @@
   },
   "d4aff00f907edc7d": {
    "file": "map-gaps-candidates.csv",
-   "date": "2026-11-19",
-   "by": "editor",
-   "decision": "approved",
-   "reason": "the editor's word of 19 Nov 2026: «согласен с твоими предложениями по всем пунктам 1-9» — question 3: one station for quasiparticle and radiation hardening of superconducting circuits (gap engineering and the co-packaged MKID event detector together)"
+   "date": "2026-11-22",
+   "by": "session",
+   "decision": "applied",
+   "reason": "the editor's word of 19 Nov 2026 («согласен с твоими предложениями по всем пунктам 1-9», question 3): written as the technology `fab_qphard` with its brief in three languages by the local writer job 20261122-1",
+   "change": "data/changes/2026-11-22.json#6"
   },
   "d756eafd5cb6c9bf": {
    "file": "amendment-candidates.csv",
@@ -2066,10 +2076,11 @@
   },
   "efd707d869d83714": {
    "file": "map-gaps-candidates.csv",
-   "date": "2026-11-19",
-   "by": "editor",
-   "decision": "approved",
-   "reason": "the editor's word of 19 Nov 2026: «согласен с твоими предложениями по всем пунктам 1-9» — question 2: one L10 station: superconductor-digital (Nb/NbN, SFQ/AQFP) fabrication"
+   "date": "2026-11-22",
+   "by": "session",
+   "decision": "applied",
+   "reason": "the editor's word of 19 Nov 2026 («согласен с твоими предложениями по всем пунктам 1-9», question 2): written as the technology `fab_scd` with its brief in three languages by the local writer job 20261122-1",
+   "change": "data/changes/2026-11-22.json#5"
   },
   "f12744481a319163": {
    "file": "amendment-candidates.csv",

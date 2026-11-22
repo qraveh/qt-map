@@ -1942,7 +1942,7 @@ quandela-canopus-24,decoder,none,primary,"no decoder, and no deployment-mode axi
 quandela-canopus-24,interconnect,none,primary,"monolithic, single module"
 quandela-canopus-24,fab,∅G-twofab,primary,one machine needs two L10 nodes
 aqt-lynx,carrier,ion,primary,
-aqt-lynx,encoding,enc_opt,primary,
+aqt-lynx,encoding,enc_zeeman,primary,
 aqt-lynx,gate,g_ms,primary,
 aqt-lynx,connect,cx_bus,primary,
 aqt-lynx,control,ct_ionaod,primary,

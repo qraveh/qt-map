@@ -181,10 +181,6 @@
      "machines": 2
     },
     {
-     "id": "enc_opt",
-     "machines": 2
-    },
-    {
      "id": "g_ms",
      "machines": 2
     },
@@ -205,6 +201,14 @@
      "machines": 2
     },
     {
+     "id": "enc_opt",
+     "machines": 1
+    },
+    {
+     "id": "enc_zeeman",
+     "machines": 1
+    },
+    {
      "id": "fab_optics",
      "machines": 1
     }
@@ -213,6 +217,7 @@
    "mentions": {
     "briefs": [
      "enc_opt",
+     "enc_zeeman",
      "ct_ionaod",
      "g_ms",
      "ion",
@@ -226,7 +231,7 @@
      "code_magic",
      "ic_ionphoton"
     ],
-    "count": 92
+    "count": 110
    }
   },
   {
@@ -319,6 +324,7 @@
      "g_bos",
      "code_bosonic",
      "g_rydanalog",
+     "g_ddhf",
      "alkali",
      "enc_cat",
      "g_catcnot",
@@ -336,7 +342,7 @@
      "code_aft",
      "fab_optics"
     ],
-    "count": 79
+    "count": 84
    }
   },
   {
@@ -623,9 +629,10 @@
    "mentions": {
     "briefs": [
      "ct_fdm",
+     "ct_optical",
      "ro_cavity"
     ],
-    "count": 3
+    "count": 4
    }
   },
   {
@@ -762,9 +769,10 @@
    "hosts": [],
    "mentions": {
     "briefs": [
-     "ic_multidie"
+     "ic_multidie",
+     "fab_qphard"
     ],
-    "count": 1
+    "count": 2
    }
   },
   {
@@ -865,6 +873,7 @@
      "fluxq",
      "ro_fluxro",
      "ro_erasure",
+     "fab_scd",
      "code_erasure",
      "cx_lr",
      "g_bos",
@@ -886,7 +895,7 @@
      "ro_disp",
      "fab_pic"
     ],
-    "count": 248
+    "count": 270
    }
   },
   {
@@ -903,8 +912,8 @@
    "url": "diraq.com",
    "note": "",
    "machines": [
-    "diraq-imec-8q",
-    "diraq-equinix-sydney"
+    "diraq-equinix-sydney",
+    "diraq-imec-8q"
    ],
    "co_machines": [],
    "families": [
@@ -1106,11 +1115,12 @@
     "briefs": [
      "ct_ionaod",
      "ic_ionphoton",
+     "phonon",
      "enc_omg",
      "ro_fluor",
      "code_erasure"
     ],
-    "count": 14
+    "count": 18
    }
   },
   {
@@ -1543,6 +1553,7 @@
    "mentions": {
     "briefs": [
      "ct_vio",
+     "g_ddhf",
      "g_mwspin",
      "defect",
      "transmon",
@@ -1557,7 +1568,7 @@
      "ic_cryolink",
      "ic_transducer"
     ],
-    "count": 43
+    "count": 49
    }
   },
   {
@@ -1643,9 +1654,11 @@
     "briefs": [
      "dec_nn",
      "transmon",
+     "fab_qphard",
      "code_surface",
      "dec_rl",
      "code_magic",
+     "dec_tn",
      "code_color",
      "cx_nn",
      "g_tc",
@@ -1691,7 +1704,7 @@
      "ic_transducer",
      "fab_optics"
     ],
-    "count": 264
+    "count": 300
    }
   },
   {
@@ -1836,6 +1849,8 @@
      "code_magic",
      "ro_img",
      "code_nonabelian",
+     "g_ddhf",
+     "ct_optical",
      "code_surface",
      "fab_optics",
      "defect",
@@ -1847,7 +1862,7 @@
      "code_qldpc",
      "ic_ionphoton"
     ],
-    "count": 120
+    "count": 126
    }
   },
   {
@@ -2085,11 +2100,11 @@
    "mentions": {
     "briefs": [
      "transmon",
+     "ic_mcm",
      "cx_lr",
      "code_qldpc",
      "ct_cryocmos",
      "fab_sc",
-     "ic_mcm",
      "code_mitig",
      "cx_nn",
      "ic_transducer",
@@ -2117,6 +2132,7 @@
      "code_highrate",
      "dec_nn",
      "dec_cryo",
+     "dec_tn",
      "ct_fluxdac",
      "dec_fpga",
      "ic_multidie",
@@ -2129,7 +2145,7 @@
      "dec_gpu",
      "dec_corr"
     ],
-    "count": 509
+    "count": 519
    }
   },
   {
@@ -2375,8 +2391,8 @@
    "machines": [
     "ionq-forte",
     "ionq-oxford-quartet",
-    "ionq-ba133-qldpc-testbed",
     "ionq-tempo",
+    "ionq-ba133-qldpc-testbed",
     "ionq-superion-256",
     "ionq-superion-10k",
     "ionq-aria"
@@ -2475,13 +2491,15 @@
      "ct_sfq",
      "ic_mcm",
      "ic_spinphoton",
+     "fab_scd",
      "fluxq",
+     "phonon",
      "dec_relaybp",
      "dec_corr",
      "dec_rl",
      "fab_optics"
     ],
-    "count": 426
+    "count": 429
    }
   },
   {
@@ -2864,7 +2882,9 @@
    "hosts": [],
    "mentions": {
     "briefs": [
+     "fab_scd",
      "fluxonium",
+     "fab_qphard",
      "ct_sfq",
      "ic_multidie",
      "ct_vio",
@@ -2880,7 +2900,7 @@
      "dec_corr",
      "fab_trap"
     ],
-    "count": 34
+    "count": 51
    }
   },
   {
@@ -4770,9 +4790,10 @@
    ],
    "mentions": {
     "briefs": [
-     "ct_fdm"
+     "ct_fdm",
+     "ct_optical"
     ],
-    "count": 6
+    "count": 8
    }
   },
   {
@@ -5286,6 +5307,7 @@
     "briefs": [
      "defect",
      "cx_shuttle",
+     "g_ddhf",
      "g_mwspin",
      "ic_spinphoton",
      "fab_diamond",
@@ -5306,7 +5328,7 @@
      "code_detect",
      "fab_mbe"
     ],
-    "count": 92
+    "count": 101
    }
   },
   {
@@ -5388,6 +5410,7 @@
      "fab_sc",
      "enc_bare",
      "ct_vio",
+     "ct_optical",
      "g_tc",
      "dec_nn",
      "g_cr",
@@ -5399,7 +5422,7 @@
      "dec_rl",
      "ic_cryolink"
     ],
-    "count": 91
+    "count": 95
    }
   },
   {
@@ -5727,17 +5750,19 @@
    "mentions": {
     "briefs": [
      "ct_sfq",
+     "fab_scd",
      "dec_cryo",
      "ct_cryocmos",
      "ct_fluxdac",
      "ic_multidie",
      "transmon",
+     "fab_qphard",
      "cx_lr",
      "ct_rt",
      "cx_nn",
      "ic_mcm"
     ],
-    "count": 87
+    "count": 111
    }
   },
   {
@@ -6131,11 +6156,12 @@
    "mentions": {
     "briefs": [
      "ion",
+     "phonon",
      "ct_ionaod",
      "ro_cavity",
      "code_nonabelian"
     ],
-    "count": 4
+    "count": 5
    }
   },
   {
@@ -6287,6 +6313,7 @@
    "hosts": [],
    "mentions": {
     "briefs": [
+     "enc_zeeman",
      "enc_opt",
      "ct_ionaod",
      "code_highrate",
@@ -6295,7 +6322,7 @@
      "cx_qccd",
      "fab_trap"
     ],
-    "count": 16
+    "count": 34
    }
   },
   {
@@ -6324,13 +6351,14 @@
    "hosts": [],
    "mentions": {
     "briefs": [
+     "phonon",
      "ct_ionaod",
      "ro_dualspecies",
      "ic_ionphoton",
      "fluxonium",
      "code_detect"
     ],
-    "count": 15
+    "count": 26
    }
   },
   {
@@ -6430,6 +6458,7 @@
    ],
    "mentions": {
     "briefs": [
+     "ct_optical",
      "ro_img",
      "fab_bulk",
      "g_lointer",
@@ -6452,7 +6481,7 @@
      "ic_cryolink",
      "ic_transducer"
     ],
-    "count": 71
+    "count": 89
    }
   },
   {
@@ -6762,6 +6791,7 @@
    ],
    "mentions": {
     "briefs": [
+     "dec_tn",
      "code_qldpc",
      "code_nonabelian",
      "code_magic",
@@ -6771,7 +6801,7 @@
      "ic_cryolink",
      "ic_transducer"
     ],
-    "count": 17
+    "count": 27
    }
   },
   {

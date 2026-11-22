@@ -79,7 +79,7 @@ class OracleTests(unittest.TestCase):
             self.assertTrue(n["e"]["place"], n["id"])
         s = oracle.default_state()
         s["lens"], s["values"] = "place", {"4K"}
-        self.assertEqual(oracle.expected(self.m, s)["stations"], {"ct_cryocmos", "ct_sfq", "ro_spd", "ic_fanout"})   # ic_fanout (26 Sep 2026) sits at mK and 4 K
+        self.assertEqual(oracle.expected(self.m, s)["stations"], {"ct_cryocmos", "ct_sfq", "ro_spd", "ic_fanout", "ct_optical"})   # ic_fanout (26 Sep 2026) sits at mK and 4 K; ct_optical (22 Nov 2026) has its photodiodes at 4 K
         s["values"] = {"mK"}
         r = oracle.expected(self.m, s)["stations"]
         self.assertIn("ct_sfq", r)
