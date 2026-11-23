@@ -193,6 +193,7 @@ def map_text(h,fn):
     return ''.join(out)
 # paragraphs that themselves define terms carry no hints (the definition is the text); the "Why" paragraph of About is narrative
 NOHINT_OPENERS=['Terms used in this chapter','Термины этой главы','Two scores are given where they differ','Там, где оценки расходятся',
+                'Each column is a score','Каждый столбец — оценка','כל עמודה היא ציון',   # §1.2's paragraph after the table opens so since QM-029 (24 Nov 2026)
                 'Legend:','Легенда:','Nodes are technologies, not platforms','Узлы — технологии, а не платформы','Seven attributes per node','Семь атрибутов узла','Four edge types','Четыре типа рёбер',
                 'Clock is not an attribute','Такт — не атрибут','Crossing test','Тест на пересечение','An evidence cell','Ячейка свидетельств',
                 'מונחים בפרק זה','היכן שהציונים נבדלים, ניתנים שניים','מקרא:','הצמתים הם טכנולוגיות, לא פלטפורמות','שבע תכונות לכל צומת','ארבעה סוגי קשתות',

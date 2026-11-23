@@ -1,0 +1,26 @@
+{
+ "date": "2026-11-23",
+ "source": "the editor's words of 23 Nov 2026 in the local session (ticket 20261123-1): «Год начала у каждой технологии - хорошая идея, одобряю», «статус D у четырёх технологий из семи - ок»; the sort fix of QM-028 and the §1.2 column names of QM-029 change no fact",
+ "items": [
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "map",
+    "id": "since"
+   },
+   "fields": {
+    "what": "the since years of the seven technologies of 20261122-1 approved by the editor as written — phonon 1995, enc_zeeman 2005, g_ddhf 2012, ct_optical 2024, dec_tn 2023, fab_scd 2010, fab_qphard 2022; the follow-up doubt «since» of 2026-11-22 is settled, its alternatives dropped"
+   }
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "map",
+    "id": "statuses"
+   },
+   "fields": {
+    "what": "the statuses of the seven approved by the editor as written — D for enc_zeeman, g_ddhf, fab_scd and fab_qphard; E for phonon, ct_optical and dec_tn as the questions of 19 Nov said; the follow-up doubt «statuses» of 2026-11-22 is settled"
+   }
+  }
+ ]
+}

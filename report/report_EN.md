@@ -74,7 +74,7 @@ A two-qubit fidelity is an average-case, context-dependent, gate-set-dependent n
 
 ### 1.2 The six axes (each scored 1–5 with fixed anchors)
 
-| Axis | What it measures | 5 | 4 | 3 | 2 | 1 |
+| Axis | What it measures | Score 5 (highest) | Score 4 | Score 3 | Score 2 | Score 1 (lowest) |
 |---|---|---|---|---|---|---|
 | **A. Channel quality at scale** | 2Q error and SPAM error *under full-width parallel operation*, plus error-class structure | $\le10^{-4}$ at $\ge50$ qubits | $10^{-4}$–$10^{-3}$ at $\ge50$ qubits, or $\le5\times10^{-3}$ with a demonstrated erasure or bias structure | $10^{-3}$–$5\times10^{-3}$ | $5\times10^{-3}$–$10^{-2}$ at $\ge10$ qubits, or better only in registers of $\le10$ qubits | not shown beyond a few qubits |
 | **B. Logical clock** | QEC-cycle time including measurement, reset, transport | $\le1\ \mu$s | $1$–$10\ \mu$s | $\sim100\ \mu$s | 1–10 ms | $\ge10$ ms or undefined |
@@ -83,7 +83,7 @@ A two-qubit fidelity is an average-case, context-dependent, gate-set-dependent n
 | **E. Scaling path** | fab, I/O, cryogenics, modularity — credibility of a route to $10^5$–$10^6$ physical qubits | foundry-proven + modularity demonstrated | foundry-proven, modularity demonstrated at two modules | foundry-compatible, modularity on paper | bespoke process with one replication | bespoke materials, no replication |
 | **F. Roadmap credibility** | track record (hits vs. slips), external validation (DARPA QBI stage), funding runway | consistent delivery, Stage B/C, multi-year runway | delivery mostly on time, Stage B | mixed record | one major slip, no external stage | repeated slips / no validation |
 
-Two scores are given where they differ: **[D]** = demonstrated as of Sep 2026, **[R]** = what the roadmap would deliver by ~2029 *if* held. The *maturity index* is two sums: A–D, the four scores the anchors fix from measured figures and demonstrations, and E–F, the two judgement scores; neither is a ranking of usefulness — usefulness is decided in §4 by goal.
+Each column is a score, from 5 (highest) to 1 (lowest), and each cell is its anchor: what a platform must show on that axis to earn the score. Two scores are given where they differ: **[D]** = demonstrated as of Sep 2026, **[R]** = what the roadmap would deliver by ~2029 *if* held. The *maturity index* is two sums: A–D, the four scores the anchors fix from measured figures and demonstrations, and E–F, the two judgement scores; neither is a ranking of usefulness — usefulness is decided in §4 by goal.
 
 ### 1.3 The goals
 

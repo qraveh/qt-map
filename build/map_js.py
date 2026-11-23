@@ -668,7 +668,7 @@ function tkey(id,col){ const n=NODE[id], c=tcells(id); if(!c)return null; const 
   return null; }
 function torder(){ const base=TORDER.slice(); if(!state.sort)return base; const col=state.sort, dir=state.sortDir; const idx=Object.fromEntries(base.map((id,i)=>[id,i]));
   return base.sort((a,b)=>{ const ka=tkey(a,col), kb=tkey(b,col); if(ka==null&&kb==null)return idx[a]-idx[b]; if(ka==null)return 1; if(kb==null)return -1;   // "—" last in both directions; ties keep the layer order (stable)
-    const r=(typeof ka==='number'&&typeof kb==='number')?ka-kb:(ka<kb?-1:(ka>kb?1:0)); return r?r*dir:idx[a]-idx[b]; }); }
+    const r=(typeof ka==='number'&&typeof kb==='number')?ka-kb:String(ka).localeCompare(String(kb),lang(),{numeric:true}); return r?r*dir:idx[a]-idx[b]; }); }   // words by the shown language's collation (24 Nov 2026, QM-028)
 function setSort(col){ if(!TCOL.includes(col)||col==='layer')return;
   if(state.sort!==col){ state.sort=col; state.sortDir=1; } else if(state.sortDir>0){ state.sortDir=-1; } else { state.sort=null; state.sortDir=1; }
   const lk=TLENS[col]; let kept=null;
@@ -1030,20 +1030,40 @@ try{ var __th=function(){ if(window.__mapTheme)window.__mapTheme(); };
 // nothing; `—`, `n/a`, `not published`, empty → null, last in both directions); `date` — the column headed date/дата/תאריך or
 // whose cells look like 2024-12 (also `Dec 2024`); `centrality` — the column headed centrality/центральность/מרכזיות;
 // `platform-default` — the first column's header restores the build order, the other columns are numeric.
+// Every table is set up once, on the page at load and again on every block a language fragment brings in (window.__hydrate):
+// until 24 Nov 2026 the block ran once at load, so the tables of a language that arrived later — a switch, the browser's
+// language, the idle preload — had no sort buttons, and sorting worked only in the page's own language (QM-028).
 // The ↺ button lives in the zoom bar (div.tblzoom) when the table has one showing, otherwise in a minimal bar of its own.
 (function(){
-  var wraps=[].slice.call(document.querySelectorAll('div.tbl[data-sort]')); if(!wraps.length)return;
-  var NUM=/[-−+]?\d[\d,]*(\.\d+)?([eE][-+]?\d+)?/g, LET=/[A-Za-zА-Яа-яЁёא-ת]/;
+  // a number's digits may be grouped by a comma, a no-break, thin or narrow no-break space, or a plain space before exactly
+  // three digits: the Russian tables write 11 902 and 1 000, the English 1,000 (QM-028: 11 902 read 11 until 24 Nov 2026)
+  var NUM=/[-−+]?\d(?:\d|,(?=\d)|[\u00a0\u2009\u202f ](?=\d{3}(?!\d)))*(\.\d+)?([eE][-+]?\d+)?/g, GRP=/[,\u00a0\u2009\u202f ]/g, LET=/[A-Za-zА-Яа-яЁёא-ת]/;
   var MON={jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12,'янв':1,'фев':2,'мар':3,'апр':4,'май':5,'мая':5,'июн':6,'июл':7,'авг':8,'сен':9,'окт':10,'ноя':11,'дек':12,'ינו':1,'פבר':2,'מרץ':3,'אפר':4,'מאי':5,'יונ':6,'יול':7,'אוג':8,'ספט':9,'אוק':10,'נוב':11,'דצמ':12};
   function txt(el){ return (el.textContent||'').replace(/\s+/g,' ').trim(); }
   function isNull(s){ return s===''||/^(?:—|–|-|∅|n\/a|na|not published|не опубликовано|לא פורסם)(?:$|[\s—–:;,.(])/i.test(s); }
-  function num(s){
+  // a cell's value: its first number not glued to a letter, times the power of ten written after it (2.2×10³; a bare 10⁻⁴),
+  // in the unit written after that when it is a time or a frequency (ps … h, Hz … GHz; a range 1–5 ms reads its low end) —
+  // {v, dim: 't' seconds | 'f' hertz | '' a plain number} or null. Until 24 Nov 2026 the bare first number was the key, so
+  // 7.3×10⁻³ sorted as 7.3 and 100 ms above 10 s in seven columns of §7.4, §7.10 and §8.3 (QM-028)
+  var SUP='⁰¹²³⁴⁵⁶⁷⁸⁹', POW=/^\s*[×x]\s*10([⁻⁺]?)([⁰¹²³⁴⁵⁶⁷⁸⁹]+)/, BAREPOW=/^([⁻⁺]?)([⁰¹²³⁴⁵⁶⁷⁸⁹]+)/;
+  var UNIT=/^(?:\s*[–-]\s*\d[\d.]*)?\s*(ps|ns|µs|μs|us|ms|s|min|h|Hz|kHz|MHz|GHz)(?![A-Za-zА-Яа-яЁёא-ת])/;
+  var TIME={ps:1e-12,ns:1e-9,'µs':1e-6,'μs':1e-6,us:1e-6,ms:1e-3,s:1,min:60,h:3600}, FREQ={Hz:1,kHz:1e3,MHz:1e6,GHz:1e9};
+  function sup(sign,d){ var k=0; for(var i=0;i<d.length;i++) k=k*10+SUP.indexOf(d.charAt(i)); return sign==='⁻'?-k:k; }
+  function val(s){
     if(isNull(s))return null; NUM.lastIndex=0; var m;
     while((m=NUM.exec(s))){ var a=m.index, b=a+m[0].length;
       if((a>0&&LET.test(s.charAt(a-1)))||(b<s.length&&LET.test(s.charAt(b))))continue;
-      var v=parseFloat(m[0].replace(/,/g,'').replace('−','-')); return isNaN(v)?null:v; }
+      var v=parseFloat(m[0].replace(GRP,'').replace('−','-')); if(isNaN(v))return null;
+      var rest=s.slice(b), p=POW.exec(rest), dim='';
+      if(p){ v*=Math.pow(10,sup(p[1],p[2])); rest=rest.slice(p[0].length); }
+      else if(m[0]==='10'&&(p=BAREPOW.exec(rest))){ v=Math.pow(10,sup(p[1],p[2])); rest=rest.slice(p[0].length); }
+      var u=UNIT.exec(rest);
+      if(u){ if(u[1] in TIME){ v*=TIME[u[1]]; dim='t'; } else { v*=FREQ[u[1]]; dim='f'; } }
+      return {v:v,dim:dim};
+    }
     return null;
   }
+  function num(s){ var x=val(s); return x?x.v:null; }
   function date(s){
     if(isNull(s))return null; var m=/(\d{4})(?:-(\d{1,2}))?(?:-(\d{1,2}))?/.exec(s);
     if(m) return +m[1]*10000+(+(m[2]||0))*100+(+(m[3]||0));
@@ -1051,8 +1071,13 @@ try{ var __th=function(){ if(window.__mapTheme)window.__mapTheme(); };
     return null;
   }
   function T(){ return window.__LS.apply(null,arguments); }   // one span per language, T(English, Russian[, Hebrew]) (window.__LS, 29 Sep 2026)
-  var ORIG=new WeakMap();
-  wraps.forEach(function(w){
+  var ORIG=new WeakMap(), DONE=new WeakSet();
+  function init(root){
+    var wraps=root&&root.querySelectorAll?[].slice.call(root.querySelectorAll('div.tbl[data-sort]')):[];
+    if(root&&root.matches&&root.matches('div.tbl[data-sort]'))wraps.unshift(root);
+    wraps.forEach(function(w){ if(!DONE.has(w)){ DONE.add(w); setup(w); } });
+  }
+  function setup(w){
     var t=w.querySelector('table'); if(!t)return;
     var head=t.tHead&&t.tHead.rows[0]; if(!head)return;
     var bodies=[].slice.call(t.tBodies); if(!bodies.length)return;
@@ -1071,6 +1096,11 @@ try{ var __th=function(){ if(window.__mapTheme)window.__mapTheme(); };
       cols.push(c);
     }
     if(!cols.some(function(c){return c;}))return;
+    // per numeric column, the dimension most of its cells carry: a frequency in a time column sorts by its period (the
+    // measured cycle «1 MHz clock» of §7.4 reads 1 µs), a time in a frequency column by its rate
+    var dom=cols.map(function(c,i){ if(c!=='num')return ''; var nt=0,nf=0;
+      colCells(i).forEach(function(x){ var y=val(txt(x)); if(y&&y.dim==='t')nt++; else if(y&&y.dim==='f')nf++; });
+      return nt>nf?'t':(nf>nt?'f':''); });
     var state={col:-1,dir:0}, btns=[];
     ths.forEach(function(th,i){
       if(!cols[i]){ btns.push(null); return; }
@@ -1087,7 +1117,8 @@ try{ var __th=function(){ if(window.__mapTheme)window.__mapTheme(); };
         if(dir===0) restore(); else sortBy(i,dir);
       });
     });
-    function keyOf(cell,i){ var s=txt(cell); return cols[i]==='date'?date(s):num(s); }
+    function keyOf(cell,i){ var s=txt(cell); if(cols[i]==='date')return date(s); var y=val(s); if(!y)return null;
+      return (dom[i]&&y.dim&&y.dim!==dom[i]&&y.v)?1/y.v:y.v; }
     function sortBy(i,dir){
       bodies.forEach(function(b){
         var orig=ORIG.get(b), rows=orig.map(function(r,k){ return {r:r,k:k,v:r.cells[i]?keyOf(r.cells[i],i):null}; });
@@ -1116,7 +1147,8 @@ try{ var __th=function(){ if(window.__mapTheme)window.__mapTheme(); };
     }
     place();
     if(typeof MutationObserver==='function') new MutationObserver(place).observe(w,{childList:true,attributes:true,attributeFilter:['hidden'],subtree:true});
-  });
+  }
+  init(document); (window.__hydrators=window.__hydrators||[]).push(init);
 })();
 
 """

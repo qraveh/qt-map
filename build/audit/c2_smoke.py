@@ -315,8 +315,11 @@ def sorting(pw, w, h):
     col = 'T2'
     click(hdr(s74, col)); click(hdr(s74, col)); d = state(s74)
     i = next(k for k, c in enumerate(d['cols']) if c.startswith(col))
-    vals = [num(r[i]) for r in d['rows']]; nn = [v for v in vals if v is not None]
-    check('§7.4: T2 twice → descending, nulls last', nn == sorted(nn, reverse=True) and vals[:len(nn)] == nn and d['aria'][i] == 'descending', vals)
+    # the time each cell states, its unit and power of ten read (4.24×10³ s above 12.6 s above 600 ms) — sort_check.py's reader;
+    # the bare first number this check read until 24 Nov 2026 encoded the order QM-028 fixed
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent)); from sort_check import reading
+    vals = [(lambda x: x[0] if x else None)(reading(r[i])) for r in d['rows']]; nn = [v for v in vals if v is not None]
+    check('§7.4: T2 twice → descending by the time each cell states, nulls last', nn == sorted(nn, reverse=True) and vals[:len(nn)] == nn and d['aria'][i] == 'descending', vals)
     click(p.locator(s74).locator('.tsreset').first); r = state(s74)
     check('§7.4: ↺ restores the build order', r['rows'] == o['rows'] and all(x in (None, 'none') for x in r['aria']), [x[0] for x in r['rows']][:3])
     check('§7.4: ↺ sits in the zoom bar iff the table shows one', r['reset']['vis'] and (r['reset']['inZoom'] == bool(p.locator(s74).locator('.tblzoom:not([hidden])').count())), r['reset'])

@@ -101,10 +101,10 @@ def _complete(h):
     while True:
         m = _OPEN.search(h, i)
         if not m: break
-        group = []; cur = m   # the sibling elements of one group: (lang, start, end of start tag, start of end tag, end)
+        group = []; cur = m; broken = False   # the sibling elements of one group: (lang, start, end of start tag, start of end tag, end)
         while cur and cur.group(2) not in [g[0] for g in group]:   # a language met again starts the next group
             e = _end(h, cur.group(1), cur.end())
-            if e < 0: break
+            if e < 0: broken = True; break   # a member whose end is not found: the group is unknown, never completed (QM-031)
             group.append((cur.group(2), cur.start(), cur.end(), h.rfind('<', 0, e), e))
             s = e
             while s < len(h) and h[s] in ' \t\r\n': s += 1
@@ -113,8 +113,8 @@ def _complete(h):
         els = {}
         for L, a, b, cs, e in group:   # each member with its own inner groups completed
             out.append(h[pos:a]); el = h[a:b] + _complete(h[b:cs]) + h[cs:e]; out.append(el); els.setdefault(L, (el, b - a)); pos = e
-        if len(group) >= 2 and LANGS[0] in els and set(els) != set(LANGS):
-            src, tag_end = els[LANGS[0]]
+        if not broken and len(group) >= 2 and LANGS[0] in els and set(els) != set(LANGS) and _MASK not in els[LANGS[0]][0]:
+            src, tag_end = els[LANGS[0]]   # (an English element holding a script or a style is never copied)
             if ' id="' in src: raise SystemExit('langs.fill_twins: an English element with an id cannot be copied: %s' % src[:120])
             tag_end -= 1   # the start tag without its '>'
             for L in LANGS:
@@ -127,7 +127,18 @@ def _complete(h):
     return ''.join(out)
 
 
+_MASK = '\x00'
+_SKIP = re.compile(r'<script\b.*?</script>|<style\b.*?</style>', re.S | re.I)
+
+
 def fill_twins(h):
-    """complete every language group of the markup h (scripts and styles left as they are)"""
-    parts = re.split(r'(<script\b.*?</script>|<style\b.*?</style>)', h, flags=re.S | re.I)
-    return ''.join(p if p[:7].lower() in ('<script', '<style>', '<style ') else _complete(p) for p in parts)
+    """complete every language group of the markup h; scripts and styles are left as they are — masked for the walk, not cut
+    out of it: until 24 Nov 2026 the markup was split at each of them, an inline <style> inside a language's block (§8's charts)
+    hid the block's end, and the Hebrew page gained a Hebrew-classed copy of the English b1 slot (QM-031)"""
+    kept = []
+
+    def mask(m):
+        kept.append(m.group(0))
+        return '%s%d%s' % (_MASK, len(kept) - 1, _MASK)
+    done = _complete(_SKIP.sub(mask, h))
+    return re.sub(_MASK + r'(\d+)' + _MASK, lambda m: kept[int(m.group(1))], done)
