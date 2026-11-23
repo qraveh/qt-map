@@ -192,6 +192,14 @@
    "decision": "rejected",
    "reason": "proposal only (no experiment)"
   },
+  "126b0162697f77c5": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-23",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
   "12af8c0bcae6bc04": {
    "file": "register-amendment-candidates.csv",
    "date": "2026-10-12",
@@ -328,6 +336,13 @@
    "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
    "decision": "rejected",
    "reason": "thermal vapour at a microring is not a qubit interface (no trapped single atoms)"
+  },
+  "2363ff86c5f4b9a1": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-23",
+   "by": "intake-run",
+   "decision": "rejected",
+   "reason": "rule (d), engineering-stage rule of 6 Nov 2026: the QDrive memory (arXiv 2609.26889) stores weak coherent pulses of ~1 photon at one node; no qubit register, no device of two or more qubits; the paper is attached to L9 as a work when a change cites it; revisit when such a memory links two qubit nodes"
   },
   "238ef4942f35434a": {
    "file": "amendment-candidates.csv",
@@ -1525,6 +1540,13 @@
    "until": "weekly brief pass",
    "reason": "a technology record: the weekly pass checks that the paper's device is this technology and how the number stands against the standing records"
   },
+  "9fd9e2cc636b3fe3": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-11-23",
+   "by": "intake-run",
+   "decision": "landed",
+   "reason": "the register's roadmap of infleqtion-sqale already reads '100 logical by 2028'; the quote found verbatim in Infleqtion's blog of 20 Nov 2026 (checked 22 Nov)"
+  },
   "a0c03cd98969ad04": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-21",
@@ -1945,6 +1967,14 @@
    "reason": "the editor's word of 19 Nov 2026 («согласен с твоими предложениями по всем пунктам 1-9», question 3): written as the technology `fab_qphard` with its brief in three languages by the local writer job 20261122-1",
    "change": "data/changes/2026-11-22.json#6"
   },
+  "d5eaf6e4c8de844f": {
+   "file": "machine-candidates.csv",
+   "date": "2026-11-23",
+   "by": "intake-run",
+   "decision": "deferred",
+   "reason": "a new machine (Shunkai, Infleqtion, Japan, DEPLOYED per the owner): the editor's tier; question 1 of the decision sheets of 22 and 23 Nov 2026; the register holds no such machine under another id",
+   "until": "editor"
+  },
   "d756eafd5cb6c9bf": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-19",
@@ -2023,6 +2053,13 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "e136a38ab881c6a1": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-23",
+   "by": "intake-run",
+   "decision": "rejected",
+   "reason": "rule (c): ic_atomcavity is cavity QED at a single emitter; Welinq's QDrive (arXiv 2609.26889) is a free-space cold-atom ensemble memory driven by EIT with no cavity — a different device, not a widening; proposed on 22 Nov with no objection from the editor"
+  },
   "e2a9868f9cf38138": {
    "file": "register-amendment-candidates.csv",
    "date": "2026-11-21",
@@ -2062,6 +2099,14 @@
   "eccf8ca04566a660": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-06",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "eeaa36ddd1b0bbcf": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-23",
    "by": "intake-run",
    "decision": "deferred",
    "until": "weekly brief pass",
@@ -2319,6 +2364,16 @@
     "deferred": 10,
     "landed": 2,
     "rejected": 6
+   }
+  },
+  {
+   "date": "2026-11-23",
+   "manifest_updated": "2026-11-22T02:13:01Z",
+   "ticket": "20261123-1",
+   "decided": {
+    "deferred": 3,
+    "landed": 1,
+    "rejected": 2
    }
   }
  ],
