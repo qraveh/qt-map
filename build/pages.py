@@ -56,6 +56,7 @@ T = {
 }
 KIND_T = {'technology': 'tech', 'machine': 'mach', 'architecture': 'arch', 'organisation': 'org'}
 ORG_LINKS = None   # build_html.link_org_blocks, injected at build time: organisation names link to their pages, block by block (29 Sep 2026)
+TABLES = None      # build_html's table numbering, injected at build time: a page's tables numbered from 1, the report's {{TBL:key}} resolved (20261123-2)
 def AG(L): return '<h4>%s</h4><div>' % cards.esc(cards.T(L, *cards.ACTORS_GOALS))   # the architecture card's actors line (a block for ORG_LINKS), in the card's own words
 
 
@@ -319,6 +320,10 @@ class Site:
 
     # ---------- write
     def write(self, kind, ident, lang, title, desc, body, image=None, twin=True):
+        if TABLES:
+            body = TABLES(body, lang)
+            if desc and '{{TBL:' in desc:
+                desc = TABLES(desc, lang, plain=True)
         if ORG_LINKS:   # to the organisation pages of the page's own language; an organisation's page does not link itself
             n0 = body.count('<a class="org" href="')
             body = ORG_LINKS(body, self.base(lang), own=(ident,) if kind == 'organisation' else ())

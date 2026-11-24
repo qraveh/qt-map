@@ -16,8 +16,8 @@ with the line — and flags what contradicts the new fact:
     STATUS      a machine whose register status is now DEPLOYED/DEMONSTRATED/RETIRED is called planned/announced/expected/
                 "not yet"/"never delivered" in the same sentence (or the reverse: a planned one called deployed/delivered)
     QUBITS      a number followed by "qubits"/"кубит…" in the same sentence disagrees with the register's physical_qubits_num
-    LARGEST     a narrative's sentence about the largest gate-capable device does not name Table 8.3's (report/paths, three languages)
-    BESTERR     a narrative's sentence about the best two-qubit error does not carry Table 8.3's figure, or claims one where the table has none
+    LARGEST     a narrative's sentence about the largest gate-capable device does not name Table 8-3's (report/paths, three languages)
+    BESTERR     a narrative's sentence about the best two-qubit error does not carry Table 8-3's figure, or claims one where the table has none
 
 The narratives' counts (machines, devices, cells, status breakdown) are placeholders filled from the data (machines_chapter.arch_figures),
 so they cannot drift; text_lint refuses a typed count in that paragraph. What remains hand-written there — which device is the largest,
@@ -128,7 +128,7 @@ NO_BEST_RX = {'en': r'no best error|no two-qubit error|no best two-qubit', 'ru':
 
 
 def narratives():
-    """Table 8.3 against the narratives (report/paths/<pid>.<L>.md): the largest gate-capable device and the best 2Q error."""
+    """Table 8-3 against the narratives (report/paths/<pid>.<L>.md): the largest gate-capable device and the best 2Q error."""
     sys.path.insert(0, os.path.join(ROOT, 'build'))
     import machines_chapter as mc
     A = mc.arch_figures('en'); out = []

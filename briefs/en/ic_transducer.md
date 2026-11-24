@@ -36,6 +36,8 @@ Each record belongs to a different device; no two can be had at once.
 | 2025-02 | Optical readout of a superconducting qubit through a transducer | QphoX, Rigetti, Qblox | [C][787] |
 | 2025 | Added noise 0.12 photons at 30 MHz bandwidth (thin-film LiNbO₃) | Warner et al. | [P][775] |
 
+**Best demonstrated against needed**
+
 | Quantity | Best demonstrated | Needed | Shortfall |
 |---|---|---|---|
 | Total efficiency | 15% pulsed [P][775]; 3×10⁻⁶ against a real qubit [D][786] | > 50% [S][775] | ~3× at 15%; ~5 orders at 3×10⁻⁶ |

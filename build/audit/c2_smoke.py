@@ -400,7 +400,7 @@ def chapter8(pw, w, h):
     check('tables 8.1–8.3 tagged numeric, sortable columns present, ↺ present', len(r['tbls']) == 3 and all(x and x['sort'] == 'numeric' and x['btns'] >= 2 and x['reset'] for x in r['tbls']), r['tbls'])
     sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1])); import machines_chapter as _mc8   # the hypotheses in force (H7 and H8 retired to §8.1, 9 Oct 2026)
     check('one verdict line per hypothesis in each language', r['verdicts'] == len(_mc8.HYPOTHESES) and r['verdictsRu'] == len(_mc8.HYPOTHESES), (r['verdicts'], r['verdictsRu']))
-    check('forecast ledger (Table 8.5) has 8 rows', r['ledger'] == 8, r['ledger'])
+    check('forecast ledger (Table 8-6) has 8 rows', r['ledger'] == 8, r['ledger'])
     # sort table 8.1 by "Machines" twice → descending; ↺ restores
     t = p.evaluate("""()=>{ const h=[...document.querySelectorAll('#app .prose.lang-en h3')].find(x=>x.textContent.startsWith('8.1 ')); for(const e of ((h&&h.nextElementSibling&&h.nextElementSibling.classList.contains('secbody'))?[...h.nextElementSibling.querySelectorAll('.tbl, h3')]:[])){ if(e.matches('.tbl')) { e.id=e.id||'smoke-t81'; return e.id; } } return ''; }""")
     sb = '#' + t
@@ -584,7 +584,7 @@ def review23b(pw):
     whole map fitted to the height above the legend), 1:1 is the native width and shows its true percentage, a typed
     value is relative to the fit; the ORCID icon is the link and no separator precedes it; the map's caption sits below the map
     (linked §-references) and no lead paragraph precedes the map; §9 is one IEEE list and every in-text citation is a number;
-    Table 8.5's first column never breaks a code."""
+    Table 8-6's first column (the forecast ledger) never breaks a code."""
     fails, errors = [], []
     b = pw.chromium.launch(); ctx = b.new_context(viewport={'width': 1280, 'height': 800}); p = ctx.new_page()
     def check(label, cond, detail=''):
@@ -628,7 +628,7 @@ def review23b(pw):
     rf = p.evaluate("()=>{const ol=document.querySelector('.secbody[data-sec=\"en-s9\"] ol.refs'); const li=ol?[...ol.querySelectorAll('li')]:[]; const cites=[...document.querySelectorAll('.prose.lang-en a.cite')]; return {n:li.length, first:li[0]?li[0].textContent.slice(0,40):'', numeric:cites.length>100&&cites.every(a=>/^\\[\\d+\\]$/.test(a.textContent)), resolve:cites.every(a=>document.getElementById(a.getAttribute('href').slice(1))), codes:/\\[[A-Z]{1,2}\\d{1,3}\\]/.test(document.querySelector('.prose.lang-en').textContent)};}")
     check('§9 is one numbered IEEE list; every citation is a number that resolves; no code left in the text', rf['n'] > 190 and rf['first'].startswith('[1]') and rf['numeric'] and rf['resolve'] and not rf['codes'], rf)
     t85 = p.evaluate("()=>{const a=document.getElementById('en-f1a'); const td=a.closest('td'); const r=a.getBoundingClientRect(); return {h:r.height, one:r.height<30, w:td.getBoundingClientRect().width};}")
-    check('Table 8.5: the row code stays on one line', t85['one'] and t85['w'] >= 40, t85)
+    check('Table 8-6: the row code stays on one line', t85['one'] and t85['w'] >= 40, t85)
     errs = [e for e in errors if 'ERR_TUNNEL' not in e and 'net::' not in e]
     check('0 console errors', not errs, errs[:3])
     ctx.close(); b.close()

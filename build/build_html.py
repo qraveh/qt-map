@@ -29,6 +29,7 @@ window.addEventListener('scroll',function(){if(cur&&!tip.hidden)place(cur);},{pa
 from editions import data_cutoff_text as _dct
 from editions import EDITIONS, editions_html, CONCEPT_DOI, REPO, SITE, STATUS
 import briefs as BR
+import tables as TB   # the numbering of every table and the {{TBL:key}} references (the editor's order of 23 Nov 2026)
 G=json.load(open(os.path.join(ROOT,'data','graph.json'),encoding='utf-8'))
 _nolabel=[n['id'] for n in G['nodes'] if n['id'] not in SHORT or not SHORT[n['id']][0]]
 if _nolabel: raise SystemExit('build/labels.py: every technology needs a short map label, in English at least — a missing language reads the English one (the map printed raw ids for 15 technologies until 27 Sep 2026) — missing: %s' % ', '.join(_nolabel))
@@ -158,7 +159,7 @@ def convert(md,lang):
         start=m.end(); t=h.find('<div class="tbl">',start); e=h.find('</div>',t)+6
         return h[:t]+f'<details class="fold big-table"><summary>{label}</summary>'+h[t:e]+'</details>'+h[e:]
     # target the headings by their printed number: the h3 ids carry a running counter, so id-based matching folded §1.2 and §3.1 instead of §7.2 and §7.9 (found 17 Sep 2026)
-    h=fold(h,r'<h3 id="[^"]+">7\.2 [^<]*</h3>',pick(lang,('Show table','Показать таблицу','הצג את הטבלה')))     # one language per label since 27 Sep 2026 (the page is monolingual)
+    h=fold(h,r'<h3 id="[^"]+">7\.2 [^<]*</h3>',pick(lang,('The technologies and their seven attributes','Технологии и их семь атрибутов','הטכנולוגיות ושבע התכונות שלהן')))     # one language per label since 27 Sep 2026; the table's title since its number (20261123-2): the fold's summary is its caption
     h=fold(h,r'<h3 id="[^"]+">7\.11 [^<]*</h3>',pick(lang,('Show records','Показать рекорды','הצג את הרשומות')))
     # the §7 edge lists fold under their bold caption, whichever language the markdown is in (a page may carry another language's text
     # until its own report exists — the Hebrew page reads report_EN.md, 29 Sep 2026)
@@ -1223,6 +1224,15 @@ def build(cfg=PUBLIC):
         # table caption moved into its fold's summary stays plain)
         bodies[L]=link_org_blocks(h)
     briefs_block=link_org_blocks(briefs_block)
+    # every table numbered (the editor's order of 23 Nov 2026, build/tables.py): the report per chapter («Table 8-3»), each
+    # brief's half per document («Table 1»); then every {{TBL:key}} of the text replaced by its number, linked to the table
+    TBLKEYS={}
+    for L in LANGS:
+        bodies[L],TBLKEYS[L]=TB.number_report(bodies[L],L)
+    briefs_block=TB.number_briefs(briefs_block)
+    for L in LANGS:
+        bodies[L]=TB.resolve(bodies[L],L,TBLKEYS[L],'the report')
+    briefs_block=TB.resolve_halves(briefs_block,TBLKEYS)
     halves=[x for x in _BL_SPLIT.split(briefs_block)]
     norg={L:(_no(bodies[L]),sum(_no(x) for x in halves if x.startswith('<div class="bl lang-%s"'%L))) for L in LANGS}
     mapsecs={L:map_block(L,cfg['graph_sec']) for L in LANGS}
@@ -1255,6 +1265,8 @@ def build(cfg=PUBLIC):
     # every record at its own address (build/pages.py): the cards, the briefs, the narratives, the organisations, the pictures
     import pages
     pages.ORG_LINKS=link_org_blocks   # the record pages link organisations block by block too (29 Sep 2026)
+    pages.TABLES=lambda body,lang,plain=False: (TB.resolve_plain(body,lang,TBLKEYS[lang],'a record page') if plain else
+                                                TB.resolve(TB.number_doc(body,lang),lang,TBLKEYS[lang],'a record page'))   # their tables numbered per page, the report's keys resolved (20261123-2)
     site=pages.Site(dict(cfg,og_image=OG_IMAGE_URL),G,json.load(open(MACH_PATH,encoding='utf-8')),B,BR,brief_md2html,colours,page_html,CSS,
                     json.dumps(tips_dict(),ensure_ascii=False,separators=(',',':')),GTIP_JS,TAG_JS,BR.key_refs_all(B))
     npages=site.build(PAGE_LANGS)

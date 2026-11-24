@@ -30,8 +30,7 @@ def configure(mode='internal', en_dir=None, ru_dir=None, regmap=None, table_num=
     if id_sections: ID_SECTIONS = tuple(id_sections)
     if mode == 'public':
         TAGS['G'] = ('established / general fact — a linked chip opens the dated primary source', 'установленный / общий факт — чип-ссылка открывает датированный первоисточник')
-        for k, v in NAV.items():
-            v['row'] = v['row'].replace('8.2', TABLE_NUM)
+        # (the row button's table number is a {{TBL:s7-2}} key since 20261123-2, filled by build/tables.py; it was TABLE_NUM)
 
 RANKING = json.load(open(os.path.join(ROOT, 'data', 'ranking.json'), encoding='utf-8'))
 
@@ -475,13 +474,19 @@ def inline_html(s, md2html):
 
 
 # ---------- one brief section
+# the row button names the node table by its number, {{TBL:s7-2}} — the first table under §7.2, «Table 7-1» since the numbering
+# of 20261123-2 (before it, «Table 7.2» was §7.2's section number); the Hebrew entry since QM-033 (24 Nov 2026), its arrows mirrored
+# as the page's other Hebrew links have them («תקציר ←»)
 NAV = {
-    'en': {'map': '← Technology on the map', 'row': '↑ Table 8.2 row', 'prev': '← Previous brief',
+    'en': {'map': '← Technology on the map', 'row': '↑ Table {{TBL:s7-2}} row', 'prev': '← Previous brief',
            'next': 'Next brief →', 'close': 'Close ✕', 'verdict': 'Verdict',
            'layer': 'layer', 'tier': 'Tier', 'rank': 'rank', 'centrality': 'centrality', 'since': 'since', 'updated': 'updated'},
-    'ru': {'map': '← Технология на карте', 'row': '↑ Строка таблицы 8.2', 'prev': '← Предыдущий обзор',
+    'ru': {'map': '← Технология на карте', 'row': '↑ Строка таблицы {{TBL:s7-2}}', 'prev': '← Предыдущий обзор',
            'next': 'Следующий обзор →', 'close': 'Закрыть ✕', 'verdict': 'Вердикт',
            'layer': 'слой', 'tier': 'Tier', 'rank': 'ранг', 'centrality': 'центральность', 'since': 'с', 'updated': 'обновлено'},
+    'he': {'map': '→ הטכנולוגיה במפה', 'row': '↑ השורה בטבלה {{TBL:s7-2}}', 'prev': '→ התקציר הקודם',
+           'next': 'התקציר הבא ←', 'close': 'סגירה ✕', 'verdict': 'פסק',
+           'layer': 'שכבה', 'tier': 'Tier', 'rank': 'דירוג', 'centrality': 'מרכזיות', 'since': 'מאז', 'updated': 'עודכן'},
 }
 
 

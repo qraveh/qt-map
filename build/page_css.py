@@ -131,6 +131,7 @@ details.tblfold>summary::before{content:"▾";color:var(--muted);font-size:11px;
 details.tblfold:not([open])>summary::before{content:"▸"}
 details.tblfold>summary .tlbl{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 details.tblfold>summary:hover{color:var(--accent)}
+.tno{white-space:nowrap}   /* «Table 8-3» never breaks between the word and its number (the table numbering of 20261123-2) */
 details.tblfold>summary:hover .tlbl{color:var(--accent)}
 /* tooltips on terms: a faint dotted underline marks a term the page explains in place; the text is shown by #gtip (script) */
 .tt{text-decoration:underline dotted;text-decoration-color:var(--muted);text-underline-offset:3px;cursor:help;outline:none}
@@ -465,7 +466,7 @@ body{font-size:clamp(14px,0.35vw + 13px,16px)}
 .bone,.bverdict,.blede,.bbody p,.bbody ul,.bbody ol{max-width:min(78ch,100%)}
 /* [all widths] long URLs / identifiers wrap instead of pushing the page wide */
 .prose a,.bbody a,.colophon a,.pubmeta a,.bidx a,.insp a{word-break:break-word;overflow-wrap:anywhere}
-.prose td>a.src,.prose td>a.cite,.prose td>a.xref{word-break:normal;overflow-wrap:normal;white-space:nowrap}   /* a code such as F1a in a narrow first column never breaks inside (Table 8.5, 23 Sep 2026) */
+.prose td>a.src,.prose td>a.cite,.prose td>a.xref{word-break:normal;overflow-wrap:normal;white-space:nowrap}   /* a code such as F1a in a narrow first column never breaks inside (the forecast ledger, Table 8-6 since 24 Nov 2026; 23 Sep 2026) */
 h1.title,.prose h2,.prose h3,.mapsec h2,.briefs h2,.btitle,.bbody h3.bh3,.insp h3{overflow-wrap:break-word}
 /* [all widths] nothing in the grid may establish a min-content floor wider than the viewport */
 main,.prose,.brief,.mapgrid,.mapbar,.bbody{min-width:0}

@@ -4,7 +4,7 @@ Inline SVG generated deterministically from data/machines.json (no library, no r
 figure's own validated palette (light: the page's family hues; dark: steps re-validated against the dark surface);
 gate-capable devices are filled marks, announcements/targets hollow; a few marks carry direct labels (the largest
 gate-capable device and the best two-qubit error of each large family); every mark has a native tooltip (<title>);
-Table 8.3 and the H1/H2 tables are the table view. Text uses the page's ink tokens, never the series colour."""
+Table 8-3 and the H1/H2 tables are the table view. Text uses the page's ink tokens, never the series colour."""
 import json, math, os, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

@@ -94,7 +94,9 @@ def main():
     ticket = opt('--ticket')
     if not ticket: raise SystemExit('--ticket YYYYMMDD-N is required')
     out = os.path.abspath(opt('--out', os.path.join(ROOT, 'handoff_out'))); note = opt('--note'); rev = int(opt('--rev', '1'))
-    if git('status', '--porcelain'): raise SystemExit('working tree not clean — commit first')
+    # the one untracked folder writer mode allows (other projects' material in the local clone) does not make the tree dirty (QM-032)
+    dirty = [l for l in git('status', '--porcelain').splitlines() if l.strip() and l.strip() != '?? artifacts/']
+    if dirty: raise SystemExit('working tree not clean — commit first: %s' % '; '.join(dirty[:5]))
     head = git('rev-parse', 'HEAD'); short = head[:7]; subj = git('log', '-1', '--format=%s'); branch = git('rev-parse', '--abbrev-ref', 'HEAD')
     if branch == 'main': raise SystemExit('HEAD is on main — the cloud hands over a branch that is a child of main')
     main_sha = git('rev-parse', 'main')
@@ -185,7 +187,7 @@ def main():
             '  dist changed    %s' % ('yes (%d file%s; the pages %s)' % (m['dist']['changed_files'], '' if m['dist']['changed_files'] == 1 else 's', 'changed' if pages_changed else 'unchanged') if dist_changed else 'no'),
             '  removed ids     ' + (', '.join(removed) or '—'),
             '  change class    ' + (', '.join(classes) or '—'),
-            '  tree after      git status --porcelain -> empty (working tree and clean room)',
+            '  tree after      git status --porcelain -> empty (working tree, but the untracked artifacts/, and clean room)',
             '  site zip        ' + ('sha256 %s (%s bytes, clean room, Info-ZIP)' % (zsha, '{:,}'.format(nzip)) if zsha else 'not made here'),
             '  origin/main at handout   %s' % main_sha[:7], '```']
     print('\n'.join(acc)); print('manifest', mp)
