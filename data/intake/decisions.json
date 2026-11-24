@@ -360,6 +360,13 @@
    "until": "WP2",
    "reason": "two-qubit error waits for WP2 (protocol, scope and conditioning per figure; review R1-1)"
   },
+  "24e85c5c1d3b5ecf": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-24",
+   "by": "intake-run",
+   "decision": "rejected",
+   "reason": "rule (d) of 19 Nov 2026, a station the Atlas already has: the pump-referenced PLL and fibre stretcher that hold the inter-core phase over 80 km (arXiv 2604.26791 = PRApplied 10.1103/594z-74r2, Sec. II.A, Fig. 2d) are part of the fibre link itself, ic_fibre (L9); the servo goes into ic_fibre's brief with row 3769a1ae50d77d09 in the weekly brief pass"
+  },
   "253429d42d9df940": {
    "file": "map-gaps-candidates.csv",
    "date": "2026-11-22",
@@ -390,6 +397,13 @@
    "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
    "decision": "rejected",
    "reason": "a proposal (same paper as 2a6b3f2e), no experiment"
+  },
+  "26d39f8cd3914fb1": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-24",
+   "by": "intake-run",
+   "decision": "rejected",
+   "reason": "rule (d) of 19 Nov 2026, the engineering-stage rule of 6 Nov: Nb atomic-layer etching is shown on bare films only (10x10 mm chips, DC transport, Tc 9.24 -> 9.01 K, 5-7 A/cycle; arXiv 2611.26735) - no resonator, qubit or circuit, no device of two or more qubits; a process step of fab_sc / fab_scd, whose briefs take it as a note (rows 75f5aa9a08fd238c, 360a252c5bb42ef5)"
   },
   "26f211e02f30c028": {
    "file": "org-event-candidates.csv",
@@ -601,6 +615,14 @@
    "until": "WP1",
    "reason": "the quote does not name T1/T2 (e.g. a cat qubit's bit-flip time): one key, one meaning — waits for WP1's field dictionary (review R1-4)"
   },
+  "360a252c5bb42ef5": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-24",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
   "36666bf59489e7cf": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-19",
@@ -608,6 +630,14 @@
    "decision": "deferred",
    "reason": "the intake run's decision on the editor's delegation of 19 Nov 2026: apply as a descriptor/brief change in the weekly pass, after the paper is read at its own text (the ledger keeps «approved» for the editor's own word)",
    "until": "weekly brief pass"
+  },
+  "3769a1ae50d77d09": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-24",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
   "380553a493d7307b": {
    "file": "amendment-candidates.csv",
@@ -1130,6 +1160,14 @@
    "reason": "the source does not name Orion: 1,024 defect-free atoms and the 40-fold lifetime come from a \"redesigned cryogenic platform\", while Orion is cryogenics-free — which machine carries the figure is the editor's call",
    "until": "editor"
   },
+  "709b2283fafb008a": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-24",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
   "727b95b05d21251a": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-06",
@@ -1174,6 +1212,14 @@
    "by": "editor",
    "decision": "landed",
    "reason": "the register holds this machine as quantum-art-montage (added 8 Oct, the editor's D-set); the candidate matcher missed the id; owner's roadmap re-read 15 Oct"
+  },
+  "75f5aa9a08fd238c": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-24",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
   "761888632c0061f4": {
    "file": "amendment-candidates.csv",
@@ -1547,6 +1593,14 @@
    "decision": "landed",
    "reason": "the register's roadmap of infleqtion-sqale already reads '100 logical by 2028'; the quote found verbatim in Infleqtion's blog of 20 Nov 2026 (checked 22 Nov)"
   },
+  "a05beb1d8cf17b5a": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-24",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
   "a0c03cd98969ad04": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-21",
@@ -1727,6 +1781,14 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "bd2368257b3146ca": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-24",
+   "by": "intake-run",
+   "decision": "deferred",
+   "reason": "rule (c) of 19 Nov 2026: the split of enc_timebin is rejected (a split would make a new station, the editor's; the paper contrasts the two encodings in a paragraph, Sec. I and III of arXiv 2604.26791, and gives no device-level separation); the descriptor change is accepted as wording: path encoding over multicore fibre needs active inter-core phase stabilisation, time-bin rides one core - written in the weekly brief pass after the paper is read at its own text",
+   "until": "weekly brief pass"
+  },
   "bdfbf7217571d859": {
    "file": "register-amendment-candidates.csv",
    "date": "2026-10-15",
@@ -1762,6 +1824,14 @@
     "checked": "2026-10-06"
    },
    "reason": "an organisation event, recorded as a change-ledger statement"
+  },
+  "c069ec1cc94b6f57": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-24",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
   "c14df6a694fc24f9": {
    "file": "register-amendment-candidates.csv",
@@ -2373,6 +2443,15 @@
    "decided": {
     "deferred": 3,
     "landed": 1,
+    "rejected": 2
+   }
+  },
+  {
+   "date": "2026-11-24",
+   "manifest_updated": "2026-11-24T02:29:23Z",
+   "ticket": "20261124-1",
+   "decided": {
+    "deferred": 7,
     "rejected": 2
    }
   }
