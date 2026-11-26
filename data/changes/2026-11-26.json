@@ -1,0 +1,24 @@
+{
+ "date": "2026-11-26",
+ "source": "digest intake of the issues of 20–26 Nov 2026 (cloud intake run C19, ticket 20261126-1; read through the Drive copy of qnews-intake: the device bridge brought no folders)",
+ "items": [
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "organisation",
+    "id": "amazon-web-services"
+   },
+   "fields": {
+    "event": "policy",
+    "date": "2026-11-18"
+   },
+   "note": "Amazon Braket's device status gains PAUSED (a device accepting tasks and jobs but not processing them: outside its availability window, in maintenance, or reserved), beside ONLINE / OFFLINE / RETIRED — «Amazon Braket now offers a new device status, PAUSED, to give customers clear and actionable information on when they can submit quantum tasks and hybrid jobs and when those tasks and jobs will run.» Checked 26 Nov 2026 in AWS's own documentation (the announcement page refuses automated fetches): the Braket developer guide's document history, 18 Nov 2026, «Added the PAUSED device status»; the API reference's DeviceSummary now lists ONLINE | OFFLINE | RETIRED | PAUSED. Recorded as an access-policy statement; no register field changes (the register's access texts name no device states).",
+   "sources": [
+    "https://aws.amazon.com/about-aws/whats-new/2026/11/braket-new-device-state/",
+    "https://docs.aws.amazon.com/braket/latest/developerguide/doc-history.html",
+    "https://docs.aws.amazon.com/braket/latest/APIReference/API_DeviceSummary.html"
+   ],
+   "intake": "68df224a75f66f2b"
+  }
+ ]
+}

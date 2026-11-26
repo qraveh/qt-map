@@ -129,6 +129,14 @@
    "reason": "the editor's word of 19 Nov 2026 («согласен с твоими предложениями по всем пунктам 1-9», question 7): written as the technology `ct_optical` with its brief in three languages by the local writer job 20261122-1",
    "change": "data/changes/2026-11-22.json#3"
   },
+  "0cb4adf0b4feb7db": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-26",
+   "by": "editor",
+   "decision": "deferred",
+   "reason": "rule (c), descriptor accepted: arXiv:2510.07240v3 App. A (Belenos, read 26 Nov 2026) — a 24-mode laser-written silica-glass interferometer, 552 directional couplers, 676 thermo-optic phase shifters, ML-calibrated with self-recalibration, run as a cloud QPU: femtosecond-laser-written glass joins fab_pic's listed routes; written in three languages in the weekly brief pass.",
+   "until": "weekly brief pass"
+  },
   "0f2c7332de96109b": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-06",
@@ -1075,6 +1083,19 @@
    "decision": "rejected",
    "reason": "a frequency-reference component shown in a clock/atom setup, not in a device of two or more qubits"
   },
+  "68df224a75f66f2b": {
+   "file": "org-event-candidates.csv",
+   "date": "2026-11-26",
+   "by": "intake-run",
+   "decision": "applied",
+   "change": "data/changes/2026-11-26.json#0",
+   "verified": {
+    "url": "https://docs.aws.amazon.com/braket/latest/APIReference/API_DeviceSummary.html",
+    "quote_found": true,
+    "checked": "2026-11-26"
+   },
+   "reason": "an organisation event, recorded as a change-ledger statement"
+  },
   "69b7fd62c06dc54f": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-19",
@@ -1660,6 +1681,14 @@
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
+  "adfd8ffd48f285f1": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-26",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
   "aec4bab3ce99327b": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-06",
@@ -1704,6 +1733,14 @@
    "by": "session",
    "decision": "landed",
    "reason": "the event (IonQ to acquire Elisity, Form 8-K of 13 Oct 2026) is already a statement in data/changes/2026-10-15.json; the row's source (the systems page) does not carry it"
+  },
+  "b43352e0c35fbcde": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-26",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
   "b47c574763a9f90a": {
    "file": "amendment-candidates.csv",
@@ -1759,6 +1796,13 @@
    "decision": "deferred",
    "until": "weekly brief pass",
    "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "ba330659a7ebbaa4": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-26",
+   "by": "editor",
+   "decision": "rejected",
+   "reason": "rule (c), descriptor rejected: arXiv:2611.14358 (preprint of APS 10.1103/3fwq-zn71, read 26 Nov 2026) confirms the figures (145/600 ns one fluxon per period; 68 ns packets; 16.9-27 ns quadrature pair at 40.85-65.41 GHz clocks) but every result is a multilevel simulation — no device was measured; the Atlas's descriptor of ct_sfq states demonstrated control, so a simulated regime split does not change what the station is. A theory pointer may go into the brief in the weekly pass."
   },
   "bc168e0c8165522d": {
    "file": "register-amendment-candidates.csv",
@@ -2166,6 +2210,13 @@
    "until": "WP2",
    "reason": "two-qubit error waits for WP2 (protocol, scope and conditioning per figure; review R1-1)"
   },
+  "eb7aff4da64d362c": {
+   "file": "register-amendment-candidates.csv",
+   "date": "2026-11-26",
+   "by": "editor",
+   "decision": "rejected",
+   "reason": "quote not found for this machine: on ibm.com/quantum/hardware (read 26 Nov 2026) 120/338 is the Nighthawk r1 block; the r2 block shows 120/458, and IBM's r2 blog (31 Aug 2026) counts 458 = 120 programmable qubits + 218 couplers + 120 reset elements. Neither figure is a qubit count; the register's 120 qubits stands. Not an editor question: nothing to approve."
+  },
   "eccf8ca04566a660": {
    "file": "amendment-candidates.csv",
    "date": "2026-11-06",
@@ -2453,6 +2504,15 @@
    "decided": {
     "deferred": 7,
     "rejected": 2
+   }
+  },
+  {
+   "date": "2026-11-26",
+   "manifest_updated": "2026-11-26T02:17:17Z",
+   "ticket": "20261126-1",
+   "decided": {
+    "applied": 1,
+    "deferred": 2
    }
   }
  ],
