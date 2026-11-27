@@ -104,8 +104,87 @@ def data_cutoff_text(lang, iso=None):
     y, m, d = (iso or data_cutoff()).split('-'); m = _MONTHS[lang][int(m) - 1]; d = str(int(d))
     return {'en': f'{d} {m} {y}', 'ru': f'{d} {m} {y} года', 'he': f'{d} {m} {y}'}[lang]
 
+# ---------- the page's Changelog (the editor's word of 27 Nov 2026: «В конце страницы Атласа я хочу секцию Changelog. Он пишется
+# для людей, и предпочитает ясность и лаконичность точности и полноте.») — the last block of the colophon, newest first: one line per
+# change ledger dated after the first edition (a ledger on or before that date is part of the edition) and one per edition. A ledger's
+# line is its own `changelog` key, {en, ru, he}: a sentence or two for people — what changed, in plain words, no process — written with
+# the ledger in the same commit; CHANGELOG.md keeps the full record. A ledger without the key shows a generic line and text_lint fails
+# on it (the gate asks for the line); a language without its text shows the English one, marked lang="en".
+CHANGELOG_HEADS = {'en': 'Changelog', 'ru': 'Журнал изменений', 'he': 'יומן השינויים'}
+CHANGELOG_LEAD = {'en': 'Newest first; the details are in %s.', 'ru': 'Новые записи сверху; подробности — в %s.', 'he': 'החדש ביותר ראשון; הפרטים ב-%s.'}
+_CL_EDITION = {'en': ('Edition %s, the first, published and archived on Zenodo (DOI %s).', 'Edition %s published and archived on Zenodo (DOI %s).'),
+               'ru': ('Издание %s, первое, опубликовано и сохранено в Zenodo (DOI %s).', 'Издание %s опубликовано и сохранено в Zenodo (DOI %s).'),
+               'he': ('מהדורה %s, הראשונה, פורסמה ונשמרה ב-Zenodo; ה-DOI שלה: %s.', 'מהדורה %s פורסמה ונשמרה ב-Zenodo; ה-DOI שלה: %s.')}   # no brackets around Latin in Hebrew (bidi), no control characters (he-brief-rules)
+_CL_GENERIC = {'page': {'en': 'Improvements to the page.', 'ru': 'Улучшения страницы.', 'he': 'שיפורים בדף.'},
+               'data': {'en': 'Updates to the register and the map.', 'ru': 'Обновления реестра и карты.', 'he': 'עדכונים במרשם ובמפה.'}}
+_CL_PAGE_SUBJECTS = {'generator', 'text', 'glossary'}   # a ledger whose subjects are all of these changed the page, not the data
+
+
+def date_text(lang, iso):
+    """an ISO date as the page's language writes it in a list: 27 November 2026 · 27 ноября 2026 · 27 בנובמבר 2026"""
+    y, m, d = iso.split('-')
+    return '%d %s %s' % (int(d), _MONTHS.get(lang, _MONTHS['en'])[int(m) - 1], y)
+
+
+def changelog_ledgers():
+    """[(date, ledger dict)] of data/changes/YYYY-MM-DD.json dated after the first edition, oldest first"""
+    import json
+    d = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..', 'data', 'changes')
+    first = EDITIONS[-1]['date']
+    out = []
+    for f in sorted(_os.listdir(d)):
+        m = _re.match(r'^(\d{4}-\d{2}-\d{2})\.json$', f)
+        if m and m.group(1) > first:
+            out.append((m.group(1), json.load(open(_os.path.join(d, f), encoding='utf-8'))))
+    return out
+
+
+def changelog_entries():
+    """[(date, {lang: html})] newest first — the ledgers' lines (escaped text) and the editions' (with the DOI linked); an edition
+    precedes a ledger of the same date"""
+    import html
+    rows = []
+    for iso, led in changelog_ledgers():
+        cl = led.get('changelog') or {}
+        if not any(v for v in cl.values() if isinstance(v, str)):
+            kinds = {(it.get('subject') or {}).get('type') for it in led.get('items', []) if isinstance(it.get('subject'), dict)}
+            cl = _CL_GENERIC['page' if kinds and kinds <= _CL_PAGE_SUBJECTS else 'data']
+        rows.append((iso, 0, {L: html.escape(v, quote=False) for L, v in cl.items() if isinstance(v, str) and v.strip()}))
+    for i, e in enumerate(EDITIONS):
+        link = '<a href="https://doi.org/%s">%s</a>' % (e['doi'], e['doi'])
+        rows.append((e['date'], 1, {L: t[0 if i == len(EDITIONS) - 1 else 1] % (e['edition'], link) for L, t in _CL_EDITION.items()}))
+    rows.sort(key=lambda r: (r[0], r[1]), reverse=True)
+    return [(iso, texts) for iso, _, texts in rows]
+
+
+def changelog_html(lang):
+    """the Changelog in the page's language: its heading (id changelog-<lang>), one lead line, then one dated line per entry"""
+    from langs import pick, has, fb_attrs
+    url = REPO + '/blob/main/CHANGELOG.md'
+    lead = pick(lang, CHANGELOG_LEAD) % ('<a href="%s">CHANGELOG.md</a>' % url)
+    items = ''.join('<li><b><time datetime="%s">%s</time></b> — <span%s>%s</span></li>' % (
+        iso, date_text(lang, iso), fb_attrs(lang, not has(lang, texts)), pick(lang, texts)) for iso, texts in changelog_entries())
+    return '<h3 id="changelog-%s"%s>%s</h3><p%s>%s</p><ul class="chlog">%s</ul>' % (
+        lang, fb_attrs(lang, lang not in CHANGELOG_HEADS), pick(lang, CHANGELOG_HEADS), fb_attrs(lang, lang not in CHANGELOG_LEAD), lead, items)
+
+
+def changelog_missing():
+    """the ledgers after the first edition whose changelog line lacks a language of build/langs.py — text_lint's gate"""
+    from langs import LANGS
+    out = []
+    for iso, led in changelog_ledgers():
+        cl = led.get('changelog') or {}
+        miss = [L for L in LANGS if not (isinstance(cl.get(L), str) and cl[L].strip())]
+        if miss: out.append((iso, miss))
+    return out
+
 ERRATA = {
  '2026.09': [
+  ('2026-11-27', "the editor's word of 27 Nov 2026 on a changelog for people (cloud thread, ticket 20261127-2; data/changes/2026-11-27.json)",
+   'The page ends with a Changelog in each language, the last entry of its contents: one dated line per update since the first edition, newest first, '
+   'and one per edition with its DOI — what changed, in plain words, while this file keeps the full record. Each change ledger carries its line in '
+   'English, Russian and Hebrew (the key "changelog"), and text_lint fails on a ledger without it. §6 Method and the colophon\'s Provenance '
+   'paragraph link the Changelog.'),
   ('2026-11-26', "the digest's intake of the issues of 20–26 Nov 2026 (cloud intake run C19, ticket 20261126-1; data/changes/2026-11-26.json)",
    "Amazon Web Services' page records that Amazon Braket added a fourth device status, PAUSED, on 18 November 2026 — a device that accepts tasks and jobs but does not run them while outside its availability window, in maintenance or reserved — beside online, offline and retired; checked in AWS's own Braket documentation. IBM Nighthawk r2 keeps its 120 qubits: the 338 and 458 «physical» figures on IBM's hardware page count couplers and reset elements with the qubits. No count, hypothesis, forecast or frontier changes."),
   ('2026-11-22', "the seven technologies the editor approved on 19 Nov 2026 from the digest's map-gaps proposals, written with their briefs by the local writer job 20261122-1 (data/changes/2026-11-22.json)",

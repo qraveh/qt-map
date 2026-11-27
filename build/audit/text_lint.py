@@ -13,7 +13,9 @@ technologies, 1,533 cells). This lint reads the built pages (scripts and styles 
   4. article slips left by a rename ("a Atlas", "a architecture");
   5. a register count typed into the "Where it stands" paragraph of an architecture narrative (report/paths) instead of a placeholder
      (LITERAL_COUNT — 29 Sep 2026: the 24 added rows left twelve openings saying "Thirteen machines" in front of fifteen; the counts
-     now come from build/machines_chapter.arch_figures through {{N_A_<PID>_…}}).
+     now come from build/machines_chapter.arch_figures through {{N_A_<PID>_…}});
+  6. a change ledger dated after the first edition without its Changelog line in every language (data/changes/<date>.json, the key
+     "changelog": {en, ru, he} — the page's Changelog shows a generic line in its place; the editor's word of 27 Nov 2026).
 
     python3 build/audit/text_lint.py            # exit 1 on any hit; prints file, rule and a snippet
 """
@@ -105,6 +107,10 @@ def main():
         if m:   # the register paragraph of a narrative names its counts through placeholders, never by a typed number
             L = m.group(1); para = re.search(r'\*\*' + re.escape(STANDS[L]) + r'\.\*\*(.*)', t)
             if para: hits(para.group(1), [LITERAL_COUNT[L]], 'literal-count', p, out)
+    from editions import changelog_missing   # the Changelog's line of each ledger, in every language (27 Nov 2026)
+    for iso, miss in changelog_missing():
+        out.append('data/changes/%s.json: changelog-line — no line for the page\'s Changelog in %s (the key "changelog": {%s}; build/editions.py)'
+                   % (iso, ', '.join(miss), ', '.join(LANGS)))
     print('text_lint: %d page(s) and %d source file(s) read; %d finding(s)' % (len(pages), len(HAND_WRITTEN), len(out)))
     for x in out: print('  ' + x[:300])
     return 1 if out else 0

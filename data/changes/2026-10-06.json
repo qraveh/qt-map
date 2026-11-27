@@ -1,6 +1,11 @@
 {
  "date": "2026-10-06",
  "source": "the digest intake of the 2026-10-06 issue (qnews industry stream, contract rev 3), triaged by build/intake.py and each quote checked at its source on 6 Oct 2026",
+ "changelog": {
+  "en": "From the news: IBM Heron r1 retired; AQT IBEX-Q1 and IQM Emerald now available on Amazon Braket.",
+  "ru": "Из новостей: IBM Heron r1 выведен из эксплуатации; AQT IBEX-Q1 и IQM Emerald теперь доступны в Amazon Braket.",
+  "he": "מהחדשות: IBM Heron r1 הוצא משימוש; AQT IBEX-Q1 ו-IQM Emerald זמינים עכשיו ב-Amazon Braket."
+ },
  "items": [
   {
    "kind": "update",

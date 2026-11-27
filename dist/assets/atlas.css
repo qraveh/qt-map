@@ -313,6 +313,9 @@ select.sel{font:inherit;font-size:13px;padding:4px 8px;border:1px solid var(--ru
 .colophon{margin:48px 0 0;padding:20px 0 0;border-top:1px solid var(--rule);font-size:13.5px;color:var(--ink2);max-width:90ch}
 .colophon p{margin:.6em 0;text-wrap:pretty}
 .colophon b{color:var(--ink)}
+.colophon ul.chlog{padding-inline-start:1.4em;margin:.4em 0 0}   /* the Changelog: one dated line per update, newest first (27 Nov 2026) */
+.colophon ul.chlog li{margin:.3em 0;text-wrap:pretty}
+.colophon ul.chlog time{white-space:nowrap}
 /* inspector */
 /* Send feedback — a fixed button (bug icon) with a tooltip, opening a small sheet with the page context and two channels (26 Sep 2026) */
 .fbk{position:fixed;inset-inline-end:18px;bottom:18px;z-index:75;display:flex;flex-direction:column;align-items:center;gap:8px}

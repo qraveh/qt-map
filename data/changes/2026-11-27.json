@@ -1,0 +1,46 @@
+{
+ "date": "2026-11-27",
+ "source": "the editor's word of 27 Nov 2026 in the project thread (13:27 UTC): «В конце страницы Атласа я хочу секцию Changelog. Он пишется для людей, и предпочитает ясность и лаконичность точности и полноте.» — cloud thread, ticket 20261127-2; a generator change and the ledgers' lines for people",
+ "changelog": {
+  "en": "The page ends with this changelog.",
+  "ru": "Страница завершается этим журналом изменений.",
+  "he": "הדף מסתיים ביומן השינויים הזה."
+ },
+ "items": [
+  {
+   "kind": "update",
+   "subject": {
+    "type": "generator",
+    "id": "editions"
+   },
+   "fields": {
+    "changelog": "the colophon ends with a Changelog in each language (heading id changelog-<lang>, listed last in the contents): one dated line per change ledger after the first edition, newest first, from the ledger's `changelog` key {en, ru, he}, and one line per edition with its DOI; the lead line links CHANGELOG.md for the details"
+   },
+   "old": {
+    "changelog": "the page had no changelog: the Editions table gave each edition one sentence, and the site's updates since an edition were listed only in CHANGELOG.md in the repository"
+   },
+   "note": "the editor's word: written for people, clarity and brevity before precision and completeness — a sentence or two per ledger, no process words (ledger, intake, ticket, decision ids); the full record stays CHANGELOG.md (ERRATA) and the ledgers themselves"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "text",
+    "id": "changelog"
+   },
+   "fields": {
+    "changelog lines": "the `changelog` key added to the seventeen ledgers of 2 Oct – 26 Nov 2026, in English, Russian and Hebrew, each from the ledger's items and its CHANGELOG.md entry; the 20261123-2 table numbering, which has no ledger of its own, is named in the line of 23 Nov",
+    "§6 Method / Provenance": "the report's §6 Method line and the colophon's Provenance paragraph link the Changelog (changelog-<lang>) instead of naming «the changelog» / «the newest change ledger» without a place"
+   }
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "generator",
+    "id": "text_lint"
+   },
+   "fields": {
+    "changelog-line": "text_lint fails when a ledger dated after the first edition lacks its changelog line in a language of build/langs.py"
+   }
+  }
+ ]
+}

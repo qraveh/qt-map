@@ -1,6 +1,11 @@
 {
  "date": "2026-11-07",
  "source": "the six technologies the T2 discovery of 6 Nov 2026 proposed (handoffs/20261106-3_T2-discovery/REVIEW_2026-11-06.md §technology, candidates-2026-11-06.json), added with their briefs by the local writer job 20261107-1 on the editor's standing instruction of 6 Nov 2026; every source opened before the entry | the editor's decision of 7 Nov 2026 on the review sheet of the T2 apply (00_admin/30_working/REVIEW_2026-11-07_t2-apply-for-the-editor.md: «accept recommendations» — A5 changes, every other row of ce995cc kept); applied by the local writer job 20261107-2 | the stations decisions (local writer job 20261107-3, the editor's word of 7 Nov 2026 that the writer decides S2, S4 and S5 with confidence): the since years, the ranking rule, the two brief alignments | E2 company diligence applied (local writer job 20261107-4: handoffs/20261106-4_E2-companies/orgs-patch-2026-11-07.json and the Israel pass 3 of 7 Nov 2026; the editor's word «Примени новые и обновлённые») | the text job of the reconstructed findings of 21 Oct 2026 (30_working/FINDINGS_20261021_reconstructed_2026-11-07.md, decision DECISION_2026-11-07_findings-of-21-Oct.md): the eight proposed corrections and the three version differences, each read at the cited paper's own text before the edit; local writer job 20261107-5",
+ "changelog": {
+  "en": "Six new technologies on the map, each with its brief. Eight corrections confirmed against the cited papers.",
+  "ru": "Шесть новых технологий на карте, у каждой свой обзор. Восемь исправлений подтверждены по цитируемым статьям.",
+  "he": "שש טכנולוגיות חדשות במפה, לכל אחת תקציר משלה. שמונה תיקונים אומתו מול המאמרים המצוטטים."
+ },
  "items": [
   {
    "kind": "add",

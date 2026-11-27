@@ -1,6 +1,11 @@
 {
  "date": "2026-11-09",
  "source": "the editor's six remarks of 9 Nov 2026 on the controls of the map and its Table view, audited with Playwright scenarios (a 180-state matrix against the V&V oracle, 31 named transitions, probes at four viewports) and answered by the local writer job 20261109-1 under his standing instruction of 6 Nov 2026 («делай всё, что не требует моего участия, или требует, но ты можешь сделать логичное, откатываемое назад предположение»); the audit: 00_admin/30_working/AUDIT_2026-11-09_map-table-controls.md; the decisions: 00_admin/30_working/DECISIONS_2026-11-09_map-table-controls.md",
+ "changelog": {
+  "en": "Map controls: on wide screens the cards open beside the map instead of covering it; sorting the table keeps the lens filter.",
+  "ru": "Управление картой: на широких экранах карточки открываются рядом с картой, а не поверх неё; сортировка таблицы сохраняет фильтр линзы.",
+  "he": "פקדי המפה: במסכים רחבים הכרטיסים נפתחים לצד המפה במקום לכסות אותה; מיון הטבלה שומר על מסנן העדשה."
+ },
  "items": [
   {
    "kind": "update",

@@ -1,6 +1,11 @@
 {
  "date": "2026-11-26",
  "source": "digest intake of the issues of 20–26 Nov 2026 (cloud intake run C19, ticket 20261126-1; read through the Drive copy of qnews-intake: the device bridge brought no folders)",
+ "changelog": {
+  "en": "From the news: Amazon Braket adds a device status, PAUSED; IBM Nighthawk r2 stays at 120 qubits, since the larger figures on IBM's page count couplers too.",
+  "ru": "Из новостей: в Amazon Braket появился статус устройства PAUSED; у IBM Nighthawk r2 остаётся 120 кубитов: числа на странице IBM больше, потому что включают и элементы связи.",
+  "he": "מהחדשות: ב-Amazon Braket נוסף סטטוס התקן חדש, PAUSED; ל-IBM Nighthawk r2 נשארים 120 קיוביטים, כי המספרים הגדולים יותר בדף של IBM כוללים גם את המצמדים."
+ },
  "items": [
   {
    "kind": "statement",

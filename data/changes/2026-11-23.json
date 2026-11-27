@@ -1,6 +1,11 @@
 {
  "date": "2026-11-23",
  "source": "the editor's words of 23 Nov 2026 in the local session (ticket 20261123-1): «Год начала у каждой технологии - хорошая идея, одобряю», «статус D у четырёх технологий из семи - ок»; the sort fix of QM-028 and the §1.2 column names of QM-029 change no fact",
+ "changelog": {
+  "en": "Tables sort correctly in every language, and every table has a number and a title.",
+  "ru": "Таблицы правильно сортируются на всех языках, и у каждой таблицы есть номер и название.",
+  "he": "הטבלאות ממוינות כראוי בכל השפות, ולכל טבלה יש מספר וכותרת."
+ },
  "items": [
   {
    "kind": "statement",

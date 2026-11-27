@@ -3,7 +3,9 @@
 propagation of the newly acquired information to all corners of the Atlas … design this process for effectiveness").
 
 The process. A research pass ends in a change ledger, data/changes/<date>.json — one item per fact: a machine renamed, its
-status changed, a row added or removed, a cell corrected, a builder's statement recorded, a doubt resolved. The facts land
+status changed, a row added or removed, a cell corrected, a builder's statement recorded, a doubt resolved. Beside its items a
+ledger carries `changelog` — {en, ru, he}, a sentence or two for people: the line of the page's Changelog for that date (the
+editor's word of 27 Nov 2026; build/editions.py renders it, text_lint asks for it); this tool reads the items only. The facts land
 first in the data (the register, the graph); the build then carries them into every GENERATED corner by itself (machines.json,
 §8's tables, hypotheses and forecasts, the cards, the record and organisation pages, the Find index). What the build cannot
 carry are the HAND-WRITTEN corners: the report's own sections (§0–§6, §9's notes), the architecture narratives of §8.3

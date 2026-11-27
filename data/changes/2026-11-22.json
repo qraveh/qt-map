@@ -1,6 +1,11 @@
 {
  "date": "2026-11-22",
  "source": "the seven technologies the editor approved on 19 Nov 2026 from the digest's map-gaps candidates («Atlas intake 2026-11-19 — решения», questions 1–7; data/intake/decisions.json), each written with its brief in three languages by the local writer job 20261122-1; every source opened before the entry, every English brief re-checked at its sources by an independent checker",
+ "changelog": {
+  "en": "Seven more technologies on the map, each with its brief.",
+  "ru": "Ещё семь технологий на карте, у каждой свой обзор.",
+  "he": "עוד שבע טכנולוגיות במפה, לכל אחת תקציר משלה."
+ },
  "items": [
   {
    "kind": "add",

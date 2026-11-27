@@ -1,6 +1,11 @@
 {
  "date": "2026-10-02",
  "source": "review R1 (an external audit of 1 Oct 2026) confirmed against main 8b124b8, and the editor's decisions of 2 Oct 2026 (the gate-evidence criterion; Osprey's 413 usable qubits; PsiQuantum demoted; Sol's builder bar; the Maryland link)",
+ "changelog": {
+  "en": "External review applied: IBM Osprey, not Condor, is the largest superconducting device with measured gates; photonics is rated lower, since no date is given for a working machine. Hebrew terms checked against the Academy of the Hebrew Language.",
+  "ru": "Учтена внешняя рецензия: крупнейшее сверхпроводниковое устройство с измеренными вентилями — IBM Osprey, а не Condor; фотоника оценена ниже, поскольку дата работающей машины не названа. Термины на иврите сверены с Академией языка иврит.",
+  "he": "יושמה סקירה חיצונית: ההתקן הגדול ביותר במעגלים מוליכי-על ששעריו נמדדו הוא IBM Osprey, ולא Condor; הפוטוניקה מדורגת נמוך יותר, כי לא נמסר מועד למכונה פועלת. המונחים בעברית נבדקו מול האקדמיה ללשון העברית."
+ },
  "items": [
   {
    "kind": "status",

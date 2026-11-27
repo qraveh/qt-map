@@ -1,6 +1,11 @@
 {
  "date": "2026-10-15",
  "source": "digest intake of the issue of 14 Oct 2026 (QT-Map/qnews-intake, landed-manifest updated 2026-10-14T02:16:49Z); 5 rows re-fetched at their sources on 15 Oct; local writer job 20261015-2 — the Tianyan owner's review of 10 Oct 2026 (outreach org QuantumCTek) and the owner sources read on 15 Oct (00_admin/30_working/intake-2026-10-15/tianyan-findings.json: the kept rows and the verified ones of the unverified set), the editor's D6 of 15 Oct",
+ "changelog": {
+  "en": "China Telecom reviewed the three Tianyan machine cards and found them accurate; the cards gained the owner's sources. The page now gives two dates: the edition's data cut-off and how far the site's data run.",
+  "ru": "China Telecom проверила три карточки машин Tianyan и нашла их точными; карточки получили источники владельца. Страница теперь называет две даты: срез данных издания и дату, до которой доведены данные сайта.",
+  "he": "China Telecom בדקה את שלושת כרטיסי המכונות של Tianyan ומצאה שהם מדויקים; הכרטיסים קיבלו את המקורות של הבעלים. הדף מציין עכשיו שני תאריכים: הקפאת הנתונים של המהדורה ועד מתי מעודכנים נתוני האתר."
+ },
  "items": [
   {
    "kind": "statement",

@@ -1,6 +1,11 @@
 {
  "date": "2026-11-19",
  "source": "digest intake of the issues of 7–18 Nov 2026 (cloud intake run, ticket 20261119-1; read through the Drive copy of qnews-intake: the device bridge brought no folders)",
+ "changelog": {
+  "en": "IonQ Tempo and Diraq's machine at Equinix in Sydney now count as in service; funding news of Universal Quantum, Rigetti, Atom Computing and PsiQuantum.",
+  "ru": "IonQ Tempo и машина Diraq в Equinix в Сиднее теперь считаются в эксплуатации; новости о финансировании Universal Quantum, Rigetti, Atom Computing и PsiQuantum.",
+  "he": "IonQ Tempo והמכונה של Diraq ב-Equinix בסידני נחשבות עכשיו בהפעלה; חדשות מימון של Universal Quantum, Rigetti, Atom Computing ו-PsiQuantum."
+ },
  "items": [
   {
    "kind": "status",

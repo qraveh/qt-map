@@ -1,6 +1,11 @@
 {
  "date": "2026-11-06",
  "source": "digest intake of the issues of 16 Oct – 5 Nov 2026 (T1 research, the local session); the units count of 6 Nov 2026 re-verified at the owners' pages; a status found on the way | T2 discovery and status sweep (local session, 6 Nov 2026; ticket 20261106-3) — applied 7 Nov 2026 by the local writer job 20261106-3 (the 24-row status patch, the 92 items, the seven proposed rows as add items; the six proposed stations wait for their briefs)",
+ "changelog": {
+  "en": "The map gains a Table view, with up to four technologies compared side by side. Seven machines added, the register's first fluxonium machine among them; IonQ Aria retired.",
+  "ru": "У карты появился табличный вид: до четырёх технологий можно сравнить рядом. Добавлены семь машин, среди них первая в реестре машина на флаксониумах; IonQ Aria выведена из эксплуатации.",
+  "he": "למפה נוספה תצוגת טבלה, ובה אפשר להשוות עד ארבע טכנולוגיות זו לצד זו. נוספו שבע מכונות, וביניהן מכונת הפלוקסוניום הראשונה במרשם; IonQ Aria הוצאה משימוש."
+ },
  "items": [
   {
    "kind": "update",

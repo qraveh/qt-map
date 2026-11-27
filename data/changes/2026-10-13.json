@@ -1,6 +1,11 @@
 {
  "date": "2026-10-13",
  "source": "the editor's word of 7 Oct 2026 (08:27: update the code-layer cells; finish the search) and of 13 Oct 2026 (14:07: make sure the work is on disk) — 20261007-1's second commit carried onto main",
+ "changelog": {
+  "en": "The page opens with the whole map on the first screen. Error-correction codes filled in on 22 machine cards.",
+  "ru": "Страница открывается картой целиком на первом экране. Коды коррекции ошибок внесены в карточки 22 машин.",
+  "he": "הדף נפתח כשהמפה כולה במסך הראשון. קודים לתיקון שגיאות נוספו ל-22 כרטיסי מכונות."
+ },
  "items": [
   {
    "kind": "update",

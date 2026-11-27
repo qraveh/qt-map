@@ -1,6 +1,11 @@
 {
  "date": "2026-11-21",
  "source": "digest intake of the issue of 20 Nov 2026 (cloud intake run C15, ticket 20261121-1; read through the Drive copy of qnews-intake: the device bridge brought no folders; it redoes the undelivered run of 20 Nov, ticket 20261120-1)",
+ "changelog": {
+  "en": "IQM Halocene: the upgrade path to over 1,000 qubits, announced at SC26, joins its roadmap.",
+  "ru": "IQM Halocene: в дорожную карту добавлен путь модернизации до более чем 1000 кубитов, объявленный на SC26.",
+  "he": "IQM Halocene: מסלול השדרוג ליותר מ-1,000 קיוביטים, שהוכרז ב-SC26, נוסף למפת הדרכים שלה."
+ },
  "items": [
   {
    "kind": "update",

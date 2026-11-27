@@ -1,6 +1,11 @@
 {
  "date": "2026-10-04",
  "source": "the editor's order of 4 Oct 2026 (10:51): every Russian term of the Atlas checked for its correct use in the context of quantum mechanics — the most literate academic usage, preferably in the context of the very device described; seven research passes over 653 entries (device literature first, then the Russian QI texts, then living usage), the rule table RULES_RU.md and the binding list data/i18n/ru-terms.md; the editor's second order of the day (15:01): the same procedure for the English edition — seven research passes over 617 items against the device literature, the rule table RULES_EN.md, the binding list data/i18n/en-terms.md",
+ "changelog": {
+  "en": "Terminology: every English and Russian term checked against the literature on the device it names.",
+  "ru": "Терминология: каждый английский и русский термин сверен с литературой об устройстве, которое он называет.",
+  "he": "מינוח: כל מונח באנגלית וברוסית נבדק מול הספרות על ההתקן שהוא מתאר."
+ },
  "items": [
   {
    "kind": "statement",

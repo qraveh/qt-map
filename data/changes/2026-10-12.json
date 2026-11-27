@@ -1,6 +1,11 @@
 {
  "date": "2026-10-12",
  "source": "digest intake of the issues of 26 Sep–12 Oct 2026 (QT-Map/qnews-intake, landed-manifest updated 2026-10-12T02:17:31Z); 13 rows re-fetched at their sources on 12 Oct",
+ "changelog": {
+  "en": "From the news: new results on Quantinuum Helios, and 30 logical qubits on Infleqtion Sqale; funding and an acquisition at D-Wave, Quantinuum and IonQ.",
+  "ru": "Из новостей: новые результаты Quantinuum Helios и 30 логических кубитов на Infleqtion Sqale; финансирование и поглощение у D-Wave, Quantinuum и IonQ.",
+  "he": "מהחדשות: תוצאות חדשות ב-Quantinuum Helios ו-30 קיוביטים לוגיים ב-Infleqtion Sqale; מימון ורכישה אצל D-Wave, Quantinuum ו-IonQ."
+ },
  "items": [
   {
    "kind": "update",

@@ -1,6 +1,11 @@
 {
  "date": "2026-10-07",
  "source": "the editor's order of 7 Oct 2026 (00:23): for every machine of the register, the complete list of the QEC codes used on it — eleven research passes by machine family and two gap sweeps against the primary sources",
+ "changelog": {
+  "en": "Error-correction codes: for every machine, the codes run on it or chosen by its maker, checked against the original papers.",
+  "ru": "Коды коррекции ошибок: для каждой машины — коды, выполненные на ней или выбранные её производителем, сверенные с первоисточниками.",
+  "he": "קודים לתיקון שגיאות: לכל מכונה — הקודים שהורצו עליה או שהיצרן שלה בחר, כפי שנבדקו מול המאמרים המקוריים."
+ },
  "items": [
   {
    "kind": "update",

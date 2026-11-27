@@ -1,6 +1,11 @@
 {
  "date": "2026-10-09",
  "source": "the outreach round's review rows of 5 Oct (quantum-register/outreach/patch-2026-10-05.json), each re-fetched at its source on 9 Oct 2026; Scite's carried items of 6 Oct; the editor's approval of 9 Oct 15:16 of the 23 editor-tier rows and of D6-1…D6-9 as recommended (QT-Atlas_plan-vs-site_2026-10-09.xlsx)",
+ "changelog": {
+  "en": "Fifty-seven machine cards corrected from the makers' own pages; four machines added and three removed. The map has nine lenses instead of thirteen, and §8 six hypotheses instead of eight.",
+  "ru": "Пятьдесят семь карточек машин исправлены по страницам самих производителей; четыре машины добавлены, три удалены. На карте девять линз вместо тринадцати, в §8 — шесть гипотез вместо восьми.",
+  "he": "חמישים ושבעה כרטיסי מכונות תוקנו לפי הדפים של היצרנים עצמם; נוספו ארבע מכונות והוסרו שלוש. במפה תשע עדשות במקום שלוש-עשרה, וב-§8 שש השערות במקום שמונה."
+ },
  "items": [
   {
    "kind": "update",

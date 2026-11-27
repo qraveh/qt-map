@@ -1,6 +1,11 @@
 {
  "date": "2026-10-08",
  "source": "the editor's session of 8 Oct 2026: decisions D1–D9 of the review packet of 5 Oct, the digest intake of the 2026-10-08 issue (industry stream and paper channel), the WP2 pilot tagging of every two-qubit error figure (data/register/machine-2q-classes.csv) and the corrections it found",
+ "changelog": {
+  "en": "IonQ Tempo corrected: a 64-qubit demonstration, not a 100-qubit machine in service. Two-qubit gate errors are now compared only when measured the same way; new results in 28 technology briefs.",
+  "ru": "Исправлено: IonQ Tempo — демонстрация на 64 кубитах, а не 100-кубитная машина в эксплуатации. Ошибки двухкубитных вентилей теперь сравниваются, только если измерены одинаково; новые результаты в 28 обзорах технологий.",
+  "he": "תיקון: IonQ Tempo היא הדגמה של 64 קיוביטים, ולא מכונה של 100 קיוביטים בהפעלה. שגיאות שער דו-קיוביטי מושוות עכשיו רק כשנמדדו באותו אופן; תוצאות חדשות ב-28 תקצירי טכנולוגיות."
+ },
  "items": [
   {
    "kind": "status",

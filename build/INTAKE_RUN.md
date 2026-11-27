@@ -81,7 +81,11 @@ deferred --until "editor"`); a moved frontier, a new largest device of an archit
 is applied and named in the errata line and the report — 6 Oct: Aria counted by its 25 usable qubits made Forte the
 largest device of the laser-addressed ion chain. Then add one line to `build/editions.py` ERRATA (newest first: the date,
 «the digest's intake of the <issue> issue (data/changes/<date>.json …)», what changed for the reader, including what the
-guard found) and rebuild: CHANGELOG.md is generated from it.
+guard found) and rebuild: CHANGELOG.md is generated from it. The ledger itself carries the page's Changelog line, the key
+`"changelog": {"en": …, "ru": …, "he": …}` between `"source"` and `"items"`: a sentence or two for people — what changed for a
+reader, in plain words, naming the machines and organisations, no process words (ledger, intake, ticket, row keys, decision
+ids) — «From the news: Amazon Braket adds a device status, PAUSED; …» (the editor's word of 27 Nov 2026: clarity and brevity
+before precision and completeness). `text_lint` fails on a ledger without it in every language.
 
 `manual` rows (approved new machines, technologies, technology descriptors) are written only when the run has the budget
 for the full job (a new machine: cells per layer with evidence, references, the organisation — cloud manual §5.2);
