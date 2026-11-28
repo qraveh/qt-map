@@ -676,6 +676,14 @@
    },
    "reason": "a register figure with the owner's own words"
   },
+  "39ced4a3c9b32145": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-28",
+   "by": "editor",
+   "decision": "deferred",
+   "reason": "a real candidate for a new station; question to the editor in «Atlas intake 2026-11-28 — решения»",
+   "until": "editor"
+  },
   "3a1b12c658160b85": {
    "file": "amendment-candidates.csv",
    "date": "2026-10-12",
@@ -696,6 +704,13 @@
     "checked": "2026-11-19"
    },
    "reason": "status DEMONSTRATED → DEPLOYED stays inside the device set"
+  },
+  "3b790a7b6d101936": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-28",
+   "by": "intake-run (the editor's standing word of 19 Nov 2026, rule d)",
+   "decision": "rejected",
+   "reason": "fails the engineering-stage rule of 6 Nov 2026: the paper isolates a single Er3+ emitter (g2(0)=0.09, 694 kHz Rabi, per the digest's own line from the full text); no device of two or more qubits. The Atlas keeps it as a work; a rare-earth-ion station waits for a multi-qubit rare-earth device. doi.org/Research Square not fetched (provenance refusal); the digest's line settles the rule."
   },
   "3d239d32d0f79543": {
    "file": "register-amendment-candidates.csv",
@@ -725,6 +740,14 @@
    "by": "intake-run (the editor's delegation of 19 Nov 2026: decide more yourself)",
    "decision": "rejected",
    "reason": "the station exists: fab_cryo_atom (and its change 433eb07f is approved)"
+  },
+  "40d9be05c1012f76": {
+   "file": "map-gaps-candidates.csv",
+   "date": "2026-11-28",
+   "by": "editor",
+   "decision": "deferred",
+   "reason": "a real candidate for a new station; question to the editor in «Atlas intake 2026-11-28 — решения»",
+   "until": "editor"
   },
   "41c040c9065cc43c": {
    "file": "amendment-candidates.csv",
@@ -840,6 +863,14 @@
     "checked": "2026-10-06"
    },
    "reason": "status DEPLOYED → RETIRED stays inside the device set"
+  },
+  "4b7819d7dd1e1997": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-28",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
   },
   "4e084fc4afb3ee99": {
    "file": "records-candidates.csv",
@@ -1538,6 +1569,14 @@
   "9a04b2fa3fe2e553": {
    "file": "amendment-candidates.csv",
    "date": "2026-10-12",
+   "by": "intake-run",
+   "decision": "deferred",
+   "until": "weekly brief pass",
+   "reason": "a note for the technology's brief (three languages), in the weekly pass"
+  },
+  "9a37592c2b782dec": {
+   "file": "amendment-candidates.csv",
+   "date": "2026-11-28",
    "by": "intake-run",
    "decision": "deferred",
    "until": "weekly brief pass",
@@ -2513,6 +2552,15 @@
    "decided": {
     "applied": 1,
     "deferred": 2
+   }
+  },
+  {
+   "date": "2026-11-28",
+   "manifest_updated": "2026-11-28T02:37:38Z",
+   "ticket": "20261128-1",
+   "decided": {
+    "deferred": 4,
+    "rejected": 1
    }
   }
  ],
