@@ -1,0 +1,320 @@
+{
+ "id": "R2",
+ "date": "2026-11-28",
+ "reviewer": "the QEC-resources work of the editor's project (a database of error-correction schemes cross-checked against the Atlas register at commit 47b1a9f): ATLAS_PROPOSAL_20261128, Part A (27 findings), independently re-checked by a second pass the same day",
+ "edition_reviewed": "the live register at 47b1a9f (edition 2026.09 and its updates)",
+ "verdict_quoted": "Предложение, а не правка: 27 расхождений между реестрами Атласа и работами (Part A) and 13 proposed record keys (Part B)",
+ "editor_verdict": "«Поправь в Атласе и задеплой.» and «принимаю твои предложения» (28 Nov 2026): Part A applied, every finding re-read at its source by the cloud session; the two new machines added; the [[10,2,3]] rows linked without a new id; Part B a separate ticket",
+ "findings": [
+  {
+   "id": "R2-A.1",
+   "claim": "quantinuum-helix: «the ancilla overhead is not published» — the paper uses 32 ancillas for parallel syndrome extraction (arXiv:2609.03194, App. A 2).",
+   "verdict": "confirmed",
+   "class": "B",
+   "disposition": "fixed — physical_qubits names the 32 ancillas; the toric codes row takes the figures with their 95% intervals and the 4.52× as printed",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: quantinuum-helix"
+   ]
+  },
+  {
+   "id": "R2-A.2",
+   "claim": "sustech-dualrail-8: the codes row gives the three-logical-qubit GHZ fidelity as 93.5% where the machine row has 93.9%; one number with the version.",
+   "verdict": "confirmed (the body of arXiv v1 prints 93.9(2)%; the abstract's 93.5% is the Bell fidelity after a 20 µs delay)",
+   "class": "B",
+   "disposition": "fixed — the codes row takes 93.9(2)% with uncertainties; the machine row's «98.1% at a 13% erasure rate (Nature Physics)» is in no arXiv version and the journal text was not reachable: a doubt item for the register's owner; the dual-rail brief's records row now gives v1's GHZ as 93.9(2)% in the body and 93.5% in the abstract (three languages)",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: sustech-dualrail-8",
+    "brief enc_dualrail"
+   ]
+  },
+  {
+   "id": "R2-A.3",
+   "claim": "ibm-heron-r3 / dynamic_compass: 2604.14296 gives only the relative improvement; absolute values only as the bars of Fig. 2b (a limit of the source, not a register error).",
+   "verdict": "confirmed (a limit of the source)",
+   "class": "C",
+   "disposition": "note added — the row says the absolute values are figure bars; the 7×7 compass memory and the compass lattice surgery on ibm_boston (arXiv:2610.11658, A.22) join the row as a further instance",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: ibm-heron-r3"
+   ]
+  },
+  {
+   "id": "R2-A.4",
+   "claim": "ibm-heron-r3 / spacetime_circuit: the machine row names the v1 instance (70 qubits, F ≥ 0.284), the codes row the v3 instance (64 qubits, F ≥ 0.349).",
+   "verdict": "confirmed",
+   "class": "B",
+   "disposition": "fixed — both rows name v3 as the result and v1 as the earlier version; ibm_aachen, in the codes row's device cell, is named in neither version, and the register gives ibm_aachen two Heron revisions: two doubt items",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: ibm-heron-r3"
+   ]
+  },
+  {
+   "id": "R2-A.5",
+   "claim": "quantinuum-helios: the caveat «the 94.9% GHZ figure is not in the cited sources» is stale — arXiv:2602.22211 SI Table VI prints it.",
+   "verdict": "confirmed (0.949(+7/−9) with leakage-heralded readout at 25% acceptance; 0.87(1) without)",
+   "class": "B",
+   "disposition": "fixed — the caveat replaced by the figure with its conditions and source",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: quantinuum-helios"
+   ]
+  },
+  {
+   "id": "R2-A.6",
+   "claim": "quantinuum-helios: the 4.8e-4 SPAM is called «secondary»; its source is the Helios system paper (arXiv:2511.05465), and the 3.3(5)e-4 differs.",
+   "verdict": "confirmed (4.8(6)e-4, abstract and Table II of v1; 3.3(5)e-4 is not in v1)",
+   "class": "B",
+   "disposition": "fixed — the cell names the source, the per-state values and the ternary measurement; the Nature figure 3.3(5)e-4 was not re-read: a doubt item",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: quantinuum-helios"
+   ]
+  },
+  {
+   "id": "R2-A.7",
+   "claim": "quantinuum-h1 / dfs_qec_10_1_4: the «per-cycle logical error ~5e-2» is not the paper's per-cycle figure (about 2.9e-2 per period); the decoder is described as a lookup table.",
+   "verdict": "confirmed (the 5e-2 was the post-selected SPAM column; the decoder is 1-D matching on a cyclic graph, a lookup table only for hook errors)",
+   "class": "B",
+   "disposition": "fixed — the rate as printed (2.0(7)e-2 per second), the derived per-period figure said to be derived, and the decoder as the paper describes it",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: quantinuum-h1"
+   ]
+  },
+  {
+   "id": "R2-A.8",
+   "claim": "umd-duke-ion: err_2q_median, readout_error and decoder hold logical or wrong figures; the physical 98.5–99.3% and 0.22(2)% / 0.71(4)% are published.",
+   "verdict": "confirmed (the paper's «logic table», no matching)",
+   "class": "B",
+   "disposition": "fixed — physical figures with their measurement; decoder and its station moved from dec_mwpm to the lookup-table gap ∅G-lut; t_2q 225 µs; a 2Q class row (P-sur, one typical pair, a bound); err_2q_median_num stays empty; the ion-chain narrative's exceptions paragraph follows (three languages)",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: umd-duke-ion",
+    "station page dec_mwpm",
+    "narrative ion_chain (§8.3)"
+   ]
+  },
+  {
+   "id": "R2-A.9",
+   "claim": "ionq-ba133-qldpc-testbed: t1 holds a T2* and t2 a logical lifetime — two meanings in the fields.",
+   "verdict": "confirmed",
+   "class": "B",
+   "disposition": "fixed — t1 «not measurable», t2 the physical T2* of v2 (1.28 ± 0.16 s) and 3T2*; the logical lifetime stays in the code row with v2's interval",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: ionq-ba133-qldpc-testbed"
+   ]
+  },
+  {
+   "id": "R2-A.10",
+   "claim": "uibk-innsbruck-ion: the 2.5e-2 is a noise-model parameter; write 2.7e-2 from its source or the value of ref. [33].",
+   "verdict": "partly (ref. [33] = arXiv:2312.09745 read: the 0.027 ± 0.005 is inferred from a 16-qubit GHZ fidelity by simulation, not a benchmark of a gate)",
+   "class": "B",
+   "disposition": "fixed — the cell says no direct benchmark is published and names both inferred values; t2 and t_2q filled; the 2Q class row cites the primary source; err_2q_median_num stays empty",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: uibk-innsbruck-ion"
+   ]
+  },
+  {
+   "id": "R2-A.11",
+   "claim": "uibk-innsbruck-ion / stab_5_1_3: the 85(8)% is an average gate fidelity, not a process fidelity; the 96% needs its interval.",
+   "verdict": "confirmed (Sec. IV B; (2·0.780 + 1)/3 = 0.85)",
+   "class": "B",
+   "disposition": "fixed — 96(+3/−16)% at 0.023% acceptance and 85(8)% average gate fidelity with the process value",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: uibk-innsbruck-ion"
+   ]
+  },
+  {
+   "id": "R2-A.12",
+   "claim": "The [[10,2,3]] code is recorded under two ids (toric, generalized_bicycle); record all three runs under one id.",
+   "verdict": "confirmed (one code; the papers' own equivalence quoted)",
+   "class": "C",
+   "disposition": "linked, not moved — the three rows name each other in their notes and keep their ids (the editor's word of 28 Nov 2026)",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: quantinuum-h1",
+    "record: quantinuum-h2",
+    "record: quantinuum-helix"
+   ]
+  },
+  {
+   "id": "R2-A.13",
+   "claim": "quantinuum-h1 and stab_6_2_2: the 2.9× has no source (the bounds give at least 4.3×); one magic state per block in the experiment, 7.5% discard per state.",
+   "verdict": "confirmed",
+   "class": "B",
+   "disposition": "fixed — at least 4.3× from the two bounds; the codes row states one state per block and both discard figures",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: quantinuum-h1"
+   ]
+  },
+  {
+   "id": "R2-A.14",
+   "claim": "quera-gemini: the two caveats of best_logical are answered by the codes rows' own numbers.",
+   "verdict": "confirmed (the «5 d=5 + two d=3» layout is not in the paper: separate experiments on one grid)",
+   "class": "B",
+   "disposition": "fixed — the fidelities with intervals and the factory sizes in the machine row; caveats removed",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: quera-gemini"
+   ]
+  },
+  {
+   "id": "R2-A.15",
+   "claim": "atom-computing-phoenix / quantum_repetition (2506.09936): Table III numbers missing; the flag no-numbers-published; realtime (atom replacement in real time); t2 (~34 s for 171Yb).",
+   "verdict": "confirmed",
+   "class": "B",
+   "disposition": "fixed — Table III failure counts in the row's further instance; the flag removed (two-qubit, memory and Λ figures are published); realtime says what ran in real time while decoding stays offline; t2 ~34 s",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: atom-computing-phoenix"
+   ]
+  },
+  {
+   "id": "R2-A.16",
+   "claim": "atom-computing-phoenix / stab_4_2_2 / css_4_1_2 (2411.11822): the [[4,2,2]] caveat is stale; add the Bacon–Shor run after checking v3; date the two-qubit figures; the BV metrics side by side.",
+   "verdict": "partly (v3 no longer reports the [[9,1,3]] Bacon–Shor run, so it is not added)",
+   "class": "B",
+   "disposition": "fixed — caveat removed, two-qubit figures dated by version, each BV metric with its own conditioning; the toric clause rewritten with the published Λ and per-cycle errors; the Bacon–Shor run recorded as not added (a ledger statement)",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: atom-computing-phoenix"
+   ]
+  },
+  {
+   "id": "R2-A.17",
+   "claim": "princeton-yb-erasure (2506.13724 v2): the CZ error is published; realtime; 20 atoms in the experiment vs 88 traps.",
+   "verdict": "confirmed (randomized circuit benchmarking, ε = 0.016(1), 0.010(1) erasure-conditioned)",
+   "class": "B",
+   "disposition": "fixed — err_2q_median with the protocol; realtime names the real-time erasure-adaptive step while decoding stays offline; the 20 data atoms said to be inferred beside the 88 traps; a 2Q class row (P-avg, medium); err_2q_median_num stays empty (one figure at one laser power)",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: princeton-yb-erasure"
+   ]
+  },
+  {
+   "id": "R2-A.18",
+   "claim": "quantinuum-helios: «the paper not located» for the 99.9995% — the colour-code paper of Oct 2026 is its source.",
+   "verdict": "confirmed (arXiv:2610.24077: d = 7 memory at 5(+4/−2)e-6 per round; the release links the same paper)",
+   "class": "B",
+   "disposition": "fixed — the source named in best_logical; a triangular_color codes row added with d = 3, 5, 7 and Λ",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: quantinuum-helios"
+   ]
+  },
+  {
+   "id": "R2-A.19",
+   "claim": "aliceandbob-graphene: the «~1e4× lower logical error for ~3× more qubits» is not the paper's.",
+   "verdict": "confirmed (the company's projection; the paper finds lower overhead than XZZX and surface codes for η ≥ 7e4 at p_Z = 1e-3)",
+   "class": "B",
+   "disposition": "fixed — the cell says whose claim it is and what the paper shows",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: aliceandbob-graphene"
+   ]
+  },
+  {
+   "id": "R2-A.20",
+   "claim": "Oxford's distributed trapped-ion experiment has no machine in the register.",
+   "verdict": "confirmed",
+   "class": "A",
+   "disposition": "added on the editor's word of 28 Nov 2026 — oxford-ion-network with cells per layer and evidence rows; its real-time feed-forward makes it the fifth machine whose decoding acts in the loop (H4); the umd-duke-ion roadmap cell that credits Oxford's 9.7 s⁻¹ and 86% to the Monroe lineage: a doubt item; the ion-chain narrative names the new machine and its cells (three languages)",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: oxford-ion-network",
+    "§8.4 H4",
+    "narrative ion_chain (§8.3)"
+   ]
+  },
+  {
+   "id": "R2-A.21",
+   "claim": "ionq-superion-256 / -10k: the ECDLP-256 estimate sits on a machine other than the one with the codes; check the success fraction.",
+   "verdict": "confirmed (the estimate assumes 19,397 ions; 63.3% with Ekerå's post-processing, 40.7% by Mosca's bound)",
+   "class": "B",
+   "disposition": "fixed — recorded under the 10K generation with both success figures and the caveat that the paper names no IonQ product; superion-256 keeps «none»",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: ionq-superion-256",
+    "record: ionq-superion-10k"
+   ]
+  },
+  {
+   "id": "R2-A.22",
+   "claim": "ibm_boston has no machine in the register; its results (2610.11658) are missing.",
+   "verdict": "partly (the register already holds ibm_boston as an instance of ibm-heron-r3)",
+   "class": "B",
+   "disposition": "fixed without a new machine — the compass and heavy-hex results on ibm_boston join the two ibm-heron-r3 codes rows as further instances, device ibm_boston added",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: ibm-heron-r3"
+   ]
+  },
+  {
+   "id": "R2-A.23",
+   "claim": "ETH Zurich's 41-qubit chip has no machine in the register.",
+   "verdict": "confirmed",
+   "class": "B",
+   "disposition": "added on the editor's word of 28 Nov 2026 — ethz-surface41 with cells per layer and evidence rows (arXiv:2611.23165)",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: ethz-surface41"
+   ]
+  },
+  {
+   "id": "R2-A.24",
+   "claim": "ibm-nighthawk-r2: magic-state cultivation in [[7,1,3]] missing; the 2.0e-5 is the error before escape; check the revision.",
+   "verdict": "confirmed (a Q-CTRL paper; the paper names Nighthawk without a revision)",
+   "class": "B",
+   "disposition": "fixed — a further instance in the triangular_color and rotated_surface rows with the error's meaning and retainment",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: ibm-nighthawk-r2"
+   ]
+  },
+  {
+   "id": "R2-A.25",
+   "claim": "quantinuum-helios: the [[8,3,2]] adders are not in the register.",
+   "verdict": "confirmed (authors from the University of New Mexico and Sandia)",
+   "class": "B",
+   "disposition": "fixed — a stab_8_3_2 codes row with the failure rates and acceptance",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: quantinuum-helios"
+   ]
+  },
+  {
+   "id": "R2-A.26",
+   "claim": "atom-computing-phoenix / quantum_repetition: the 2026 result is cited with the 2025 paper; two lifetimes with the idling condition; the «>3 min».",
+   "verdict": "confirmed (225(33) s is a fit beyond about one minute of data)",
+   "class": "B",
+   "disposition": "fixed — the 2026 instance with its own source as best instance, the 2025 one as a further instance; the «over 3 minutes» explained in the note",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: atom-computing-phoenix"
+   ]
+  },
+  {
+   "id": "R2-A.27",
+   "claim": "aliceandbob-helium-2: t_2q holds the single-qubit Z-gate duration.",
+   "verdict": "confirmed",
+   "class": "C",
+   "disposition": "fixed — t_2q emptied; gate_mechanism already names the 26.5 ns Z gate",
+   "fix_commit": "20261128-2 (28 Nov 2026)",
+   "pages": [
+    "record: aliceandbob-helium-2"
+   ]
+  }
+ ],
+ "what_checks_out": [
+  "most of the proposal's figures match the papers as printed; where they did not, the source's own figure was taken (A.2, A.10, A.16, A.17)",
+  "the finding that the register already holds ibm_boston as an ibm-heron-r3 instance (A.22)",
+  "the diagnosis of two meanings in the ion testbed's t1 and t2 (A.9)"
+ ]
+}

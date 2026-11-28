@@ -180,6 +180,12 @@ def changelog_missing():
 
 ERRATA = {
  '2026.09': [
+  ('2026-11-28', "the QEC project's cross-check of the machine register against the papers, ATLAS_PROPOSAL_20261128 Part A, filed as review R2, and the editor's words of 28 Nov 2026 (cloud thread, ticket 20261128-2; data/changes/2026-11-28.json; data/reviews/R2-2026-11-28.json)",
+   'Two machines join the register on the editor\'s word: the University of Oxford\'s two-node trapped-ion network, where a [[2,1,1]] repetition code ran across an optical link and the remote parity was acted on in real time, and ETH Zurich\'s 41-qubit transmon chip, which merged two distance-3 surface codes by lattice surgery and teleported a logical qubit. '
+   'Twenty-five corrections from the review, each read at the cited paper: figures as printed, with their uncertainty and how they were measured — among them Helix\'s 32 ancillas, Helios\'s 94-qubit GHZ fidelity and its SPAM figure with its source, and the 99.9995% traced to the colour-code memory behind it; '
+   'the physical gate and SPAM figures of the Maryland–Duke Bacon–Shor machine, whose decoder is a logic table, not matching; Princeton\'s CZ error by randomized circuit benchmarking. Results move to the machine they ran on (IonQ\'s ECDLP-256 estimate to the 10K generation; ibm_boston\'s compass and heavy-hex results under Heron r3), '
+   'Helios gains its colour-code and [[8,3,2]] adder rows, and the three records of one [[10,2,3]] code name each other. Five open questions go to the register\'s owner as doubts. '
+   'With Oxford\'s real-time feed-forward, five machines now act on decoded syndromes in the loop, so H4 reads partly supported instead of not supported; no forecast or frontier changes.'),
   ('2026-11-27', "the editor's word of 27 Nov 2026 on a changelog for people (cloud thread, ticket 20261127-2; data/changes/2026-11-27.json)",
    'The page ends with a Changelog in each language, the last entry of its contents: one dated line per update since the first edition, newest first, '
    'and one per edition with its DOI — what changed, in plain words, while this file keeps the full record. Each change ledger carries its line in '

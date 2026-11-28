@@ -44,7 +44,7 @@ Best demonstrated as of 3 Sep 2026: a cavity dual-rail CZ in ~500 ns at ≈0.5% 
 | Year | Figure | Who | Evidence |
 |---|---|---|---|
 | 2023-07 | Erasure 2.19(2)×10⁻³ per 1Q gate, residual ~40× lower | AWS | [D][400] |
-| 2025-04 / 2026-03 | Four dual-rail transmons: logical CNOT 98.1% process fidelity at a 13% erasure rate, three-qubit GHZ 93.9% (Nature Physics, 2026-03; arXiv v1 of 2025-04: Bell 98.8%, CNOT 96.2%, GHZ 93.5%) | SUSTech | [D][406] |
+| 2025-04 / 2026-03 | Four dual-rail transmons: logical CNOT 98.1% process fidelity at a 13% erasure rate, three-qubit GHZ 93.9% (Nature Physics, 2026-03; arXiv v1 of 2025-04: Bell 98.8%, CNOT 96.2%, GHZ 93.9(2)% in the body, 93.5% in the abstract) | SUSTech | [D][406] |
 | 2026-04 | 384 ns check; erasure 2.54(1)×10⁻², residual 6.0(2)×10⁻⁴, bias 42(1) | AWS | [D][85] |
 | 2026-08 | CZ ~500 ns; erasure ≈0.5%/gate, Pauli 0.029(6)%, bit-flip 2.8(4)×10⁻⁶ | Quantum Circuits | [D][84] |
 | 2025 | Photonic dual-rail: fusion Bell 99.22(12)%, SPAM 99.98(1)% | PsiQuantum | [D][169] |

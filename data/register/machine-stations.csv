@@ -1014,7 +1014,7 @@ umd-duke-ion,connect,cx_bus,primary,
 umd-duke-ion,control,ct_ionaod,primary,free-space AOM/AOD laser addressing for ions
 umd-duke-ion,readout,ro_fluor,primary,
 umd-duke-ion,code,∅G-subsystem,primary,subsystem codes have no fitting station
-umd-duke-ion,decoder,dec_mwpm,primary,
+umd-duke-ion,decoder,∅G-lut,primary,"logic table on the two Z stabilisers, applied in post-processing — no Atlas station (gap G-lut)"
 umd-duke-ion,interconnect,ic_ionphoton,primary,
 umd-duke-ion,fab,fab_trap,primary,
 tsinghua-512-ion,carrier,ion,primary,
@@ -2075,3 +2075,28 @@ quantware-contralto-d21,code,none,primary,no code (NISQ)
 quantware-contralto-d21,decoder,none,primary,"no decoder, and no deployment-mode axis"
 quantware-contralto-d21,interconnect,none,primary,"monolithic, single module"
 quantware-contralto-d21,fab,fab_sc,primary,
+oxford-ion-network,carrier,ion,primary,
+oxford-ion-network,encoding,enc_hf,primary,43Ca+ hyperfine clock qubit holds the data
+oxford-ion-network,encoding,enc_opt,alternate,88Sr+ optical (S1/2-D5/2) network qubit
+oxford-ion-network,gate,g_ms,primary,laser-driven mixed-species light-shift (geometric phase) CZ
+oxford-ion-network,connect,cx_bus,primary,two-ion Sr-Ca crystal per node
+oxford-ion-network,control,ct_ionaod,primary,free-space AOM/AOD laser addressing for ions
+oxford-ion-network,readout,ro_fluor,primary,
+oxford-ion-network,readout,ro_dualspecies,alternate,mid-circuit Sr+ network-qubit (ancilla) measurement; Ca+ data qubits untouched
+oxford-ion-network,code,∅G-repetition,primary,"distributed [[2,1,1]] phase-flip repetition code — no Atlas station (gap G-repetition)"
+oxford-ion-network,code,code_detect,alternate,run as error detection (detect and abort)
+oxford-ion-network,decoder,∅G-lut,primary,real-time syndrome-to-action map (1-bit parity) — no Atlas station (gap G-lut)
+oxford-ion-network,interconnect,ic_ionphoton,primary,
+oxford-ion-network,fab,fab_trap,primary,Sandia micro-fabricated surface traps (HOA2; Phoenix)
+oxford-ion-network,fab,fab_optics,alternate,
+ethz-surface41,carrier,transmon,primary,
+ethz-surface41,encoding,enc_bare,primary,
+ethz-surface41,gate,g_tc,primary,flux-pulsed CZ on directly coupled tunable transmons; no tunable coupler (closest station)
+ethz-surface41,connect,cx_nn,primary,
+ethz-surface41,control,ct_rt,primary,
+ethz-surface41,readout,ro_disp,primary,
+ethz-surface41,readout,ro_reset,alternate,48 ns parametric-flux unconditional reset of the auxiliary qubits
+ethz-surface41,code,code_surface,primary,
+ethz-surface41,decoder,dec_mwpm,primary,"offline, post-processing"
+ethz-surface41,interconnect,none,primary,"monolithic, single module"
+ethz-surface41,fab,fab_sc,primary,

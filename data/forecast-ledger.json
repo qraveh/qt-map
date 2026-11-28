@@ -35,7 +35,7 @@
   {
    "id": "F2",
    "indicator": "best two-qubit error per family (devices; hero pairs excluded) and the family median",
-   "now": "superconducting circuits 1.0×10⁻³ / median 4.4×10⁻³; trapped ions 7.9×10⁻⁴ / median 2.7×10⁻³; neutral atoms 5.0×10⁻³ / median 8.0×10⁻³",
+   "now": "superconducting circuits 1.0×10⁻³ / median 4.7×10⁻³; trapped ions 7.9×10⁻⁴ / median 2.7×10⁻³; neutral atoms 5.0×10⁻³ / median 8.0×10⁻³",
    "e2027": "superconducting circuits ≈ 7.7×10⁻⁴; trapped ions ≈ 7.6×10⁻⁴; medians ≈ 2–3×10⁻³ for the three large families",
    "e2028": "superconducting circuits ≈ 6.0×10⁻⁴; trapped ions ≈ 7.3×10⁻⁴; the first family median below 2×10⁻³",
    "basis": "frontier series superconducting circuits: 2019 6.0×10⁻³, 2021 5.2×10⁻³, 2022 5.2×10⁻³, 2023 2.5×10⁻³, 2024 1.5×10⁻³, 2025 1.5×10⁻³, 2026 1.0×10⁻³ (×1.29/yr); trapped ions: 2020 1.0×10⁻³, 2022 1.0×10⁻³, 2023 1.0×10⁻³, 2024 1.0×10⁻³, 2025 7.9×10⁻⁴, 2026 7.9×10⁻⁴ (×1.04/yr); the median trails the frontier by superconducting circuits 3 yr, trapped ions 6 yr, neutral atoms 1 yr (the year the frontier first reached today's median)",
@@ -45,17 +45,17 @@
   {
    "id": "F3",
    "indicator": "machines that list a code (run, or named in the roadmap); decoders in the loop",
-   "now": "68 / 4",
-   "e2027": "≥ 55 machines with a code (cumulative series by cohort year 2022 13, 2023 18, 2024 25, 2025 46, 2026 62; 6 planned machines dated after 2026 lie outside it); 6–8 in the loop",
+   "now": "70 / 5",
+   "e2027": "≥ 55 machines with a code (cumulative series by cohort year 2022 13, 2023 18, 2024 26, 2025 47, 2026 64; 6 planned machines dated after 2026 lie outside it); 6–8 in the loop",
    "e2028": "≥ 65 with a code; 8–12 in the loop (11 machines list real-time decoding as planned or intended: Apollo, IBM Quantum Blue Jay, IBM Quantum Cockatoo, IBM Quantum Kookaburra, IBM Quantum Starling, IQM Halocene, Libra, Magne, Sol, Superion 256, neutral-ytterbium QPU; half on time is the working assumption)",
-   "basis": "cumulative count of code-running machines by cohort (×3.4 from 2023 to 2026) and the register's planned-decoding rows",
+   "basis": "cumulative count of code-running machines by cohort (×3.6 from 2023 to 2026) and the register's planned-decoding rows",
    "confidence": "medium",
    "falsified_if": "fewer than 52 machines with a code, or fewer than 6 closed loops, in 2027.09"
   },
   {
    "id": "F4",
    "indicator": "devices with a demonstrated link technology (interconnect layer)",
-   "now": "6 (superconducting circuits 3, trapped ions 1, photonics 1, defect spins 1)",
+   "now": "7 (superconducting circuits 3, trapped ions 2, photonics 1, defect spins 1)",
    "e2027": "9–12: of the 10 announced machines that name a link (Fujitsu >10,000 physical / ~250 logical (STAR) (2025), QuantWare Bass-A10K (VIO-40K) (2025), D-Wave gate-model dual-rail system (2026), IBM Quantum Kookaburra (2026), Superion 256 (2026), IBM Quantum Cockatoo (2027), Advantage3 (2029), Apollo (2029), IBM Quantum Starling (2029), IBM Quantum Blue Jay (2033)), the ones dated 2025–2026 are the candidates",
    "e2028": "12–18; the interconnect gap share falls below 85 % only if the multi-module superconducting lattices arrive",
    "basis": "the register's announced-link rows discounted by the delivery record; the historical series is too short to extrapolate",

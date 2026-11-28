@@ -5,49 +5,49 @@
  "edition": "2026.09",
  "languages": {
   "en": {
-   "bytes": 7655735,
+   "bytes": 7670155,
    "dir": "ltr",
    "folder": "",
    "fragment": "lang/en.js",
    "path": "Quantum-Technology-Atlas-2026.09.html",
-   "record_pages": 425,
+   "record_pages": 428,
    "records": {
     "architecture": 17,
-    "machine": 191,
-    "organisation": 90,
+    "machine": 193,
+    "organisation": 91,
     "technology": 123
    },
-   "sha256": "8afbd8a1c6bf726e53b7a8ffdb70ae112e65ea5e9adad1961b404a92a2b43f5f"
+   "sha256": "e7659ef98673cca40cb96d42702dae8b171ce31d2f0f7eec9c3550001cd3635c"
   },
   "he": {
-   "bytes": 8441619,
+   "bytes": 8456199,
    "dir": "rtl",
    "folder": "he/",
    "fragment": "lang/he.js",
    "path": "he/Quantum-Technology-Atlas-2026.09.html",
-   "record_pages": 425,
+   "record_pages": 428,
    "records": {
     "architecture": 17,
-    "machine": 191,
-    "organisation": 90,
+    "machine": 193,
+    "organisation": 91,
     "technology": 123
    },
-   "sha256": "e0ab482c806e9d2d2b851f285a0c33b0c3e8ba498b49da170da1532fde3d5aae"
+   "sha256": "4f4ef3d0bcdb0312a466935440c34c1e05e1304efdb36cd545a706dd4fac5a0d"
   },
   "ru": {
-   "bytes": 9358065,
+   "bytes": 9373252,
    "dir": "ltr",
    "folder": "ru/",
    "fragment": "lang/ru.js",
    "path": "ru/Quantum-Technology-Atlas-2026.09.html",
-   "record_pages": 425,
+   "record_pages": 428,
    "records": {
     "architecture": 17,
-    "machine": 191,
-    "organisation": 90,
+    "machine": 193,
+    "organisation": 91,
     "technology": 123
    },
-   "sha256": "fbda03d9f0dae6d379c449cb97b09e66e100c403d01ae9f4529018180b5249c5"
+   "sha256": "2d18a73a2791fda4f99c9ad80757869b6faaec3cb3bd8f0482f43c2c27be5e60"
   }
  },
  "main": "Quantum-Technology-Atlas-2026.09.html",

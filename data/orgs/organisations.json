@@ -1,8 +1,8 @@
 {
  "source": {
   "register": "quantum-register (SP04)",
-  "imported": "2026-11-07",
-  "organisations": 90
+  "imported": "2026-11-28",
+  "organisations": 91
  },
  "organisations": [
   {
@@ -1098,10 +1098,6 @@
      "machines": 1
     },
     {
-     "id": "dec_mwpm",
-     "machines": 1
-    },
-    {
      "id": "ic_ionphoton",
      "machines": 1
     },
@@ -1289,6 +1285,7 @@
    "url": "comp.phys.ethz.ch",
    "note": "",
    "machines": [
+    "ethz-surface41",
     "ethz-surface17"
    ],
    "co_machines": [
@@ -1303,38 +1300,42 @@
    "stations": [
     {
      "id": "transmon",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "enc_bare",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "g_tc",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "cx_nn",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "ct_rt",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "ro_disp",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "code_surface",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "dec_mwpm",
-     "machines": 1
+     "machines": 2
     },
     {
      "id": "fab_sc",
+     "machines": 2
+    },
+    {
+     "id": "ro_reset",
      "machines": 1
     }
    ],
@@ -6359,6 +6360,89 @@
      "code_detect"
     ],
     "count": 26
+   }
+  },
+  {
+   "slug": "university-of-oxford",
+   "name": "University of Oxford",
+   "aliases": [
+    "University of Oxford (Department of Physics, Clarendon Laboratory)"
+   ],
+   "tier": "research",
+   "segment": "research-org",
+   "country": "United Kingdom",
+   "city": "Oxford",
+   "url": "oxfordquantum.org",
+   "note": "",
+   "machines": [
+    "oxford-ion-network"
+   ],
+   "co_machines": [],
+   "families": [
+    "ION"
+   ],
+   "architectures": [
+    "ion_chain"
+   ],
+   "stations": [
+    {
+     "id": "ion",
+     "machines": 1
+    },
+    {
+     "id": "enc_hf",
+     "machines": 1
+    },
+    {
+     "id": "enc_opt",
+     "machines": 1
+    },
+    {
+     "id": "g_ms",
+     "machines": 1
+    },
+    {
+     "id": "cx_bus",
+     "machines": 1
+    },
+    {
+     "id": "ct_ionaod",
+     "machines": 1
+    },
+    {
+     "id": "ro_fluor",
+     "machines": 1
+    },
+    {
+     "id": "ro_dualspecies",
+     "machines": 1
+    },
+    {
+     "id": "code_detect",
+     "machines": 1
+    },
+    {
+     "id": "ic_ionphoton",
+     "machines": 1
+    },
+    {
+     "id": "fab_trap",
+     "machines": 1
+    },
+    {
+     "id": "fab_optics",
+     "machines": 1
+    }
+   ],
+   "hosts": [],
+   "mentions": {
+    "briefs": [
+     "enc_hf",
+     "enc_zeeman",
+     "g_elec",
+     "ic_ionphoton"
+    ],
+    "count": 4
    }
   },
   {

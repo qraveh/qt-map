@@ -1,0 +1,971 @@
+{
+ "date": "2026-11-28",
+ "source": "the editor's words of 28 Nov 2026 in the project: «Поправь в Атласе и задеплой.» (19:36 UTC, on the QEC project's ATLAS_PROPOSAL_20261128) and «принимаю твои предложения» (19:48 UTC: the two new machines in this update, the three [[10,2,3]] rows linked by notes without a new id, Part B as a separate ticket) — cloud thread, ticket 20261128-2; review R2 (data/reviews/R2-2026-11-28.json)",
+ "changelog": {
+  "en": "Two machines join the register: Oxford's two-node trapped-ion network, which acts on its error checks across an optical link while it runs — the fifth machine to do so, which moves hypothesis H4 from not supported to partly supported — and ETH Zurich's 41-qubit chip, which teleported a logical qubit by lattice surgery. Many existing machine records were checked against their papers and corrected: figures as printed, with how they were measured.",
+  "ru": "В реестр добавлены две машины: двухузловая сеть на ионах в ловушках из Оксфорда, которая во время прогона действует по результатам проверки ошибок через оптическую связь, — пятая такая машина, и с ней гипотеза H4 из «не подтверждена» становится «подтверждена частично», — и 41-кубитный чип ETH Zurich, где логический кубит телепортирован решёточной хирургией. Многие записи о машинах сверены с их статьями и исправлены: числа такие, как напечатаны, и сказано, как они измерены.",
+  "he": "שתי מכונות נוספו למרשם: רשת היונים הלכודים בת שני הצמתים של אוקספורד, שפועלת לפי בדיקות השגיאה שלה דרך קישור אופטי תוך כדי הריצה — המכונה החמישית שעושה זאת, ובזכותה השערה H4 עוברת מ\"אינה נתמכת\" ל\"נתמכת חלקית\" — והשבב בן 41 הקיוביטים של ETH ציריך, שבו קיוביט לוגי הועבר בטלפורטציה בניתוח סריג. רשומות רבות של מכונות נבדקו מול המאמרים שלהן ותוקנו: המספרים כפי שפורסמו, ואיך נמדדו."
+ },
+ "items": [
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-helix"
+   },
+   "fields": {
+    "physical_qubits": "20 physical data qubits to 2 logical ([[20,2,6]], 10:1) within Helios's 98, plus 32 ancillas for parallel syndrome extraction (arXiv:2609.03194, App. A 2)"
+   },
+   "old": {
+    "physical_qubits": "20 physical data qubits to 2 logical ([[20,2,6]], 10:1) within Helios's 98; the ancilla overhead is not published"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2609.03194",
+     "date": "2026-09-02",
+     "quote": "«We use 32 ancillas to parallelize the syndrome extraction as much as possible, resulting in a depth-10 circuit for measuring a complete set of 18 stabilizers.» (App. A 2, p. 11)"
+    }
+   ],
+   "note": "A.1 of review R2 (ATLAS_PROPOSAL_20261128). the ancilla overhead is published: 32 ancillas beside the 20 data qubits; physical_qubits_num stays the data-qubit count"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine-code",
+    "id": "quantinuum-helix/toric"
+   },
+   "fields": {
+    "best_instance": "[[10,2,3]] twisted toric code (outer code of C4-Helix) memory: 2.1(+1.0/−0.7)e-4 per logical qubit per round (95% Wilson), 4.52x worse than the 4.6(+6.2/−2.6)e-5 after C4 concatenation",
+    "note": "Twisted/cyclic toric code (a,b)=(1,3) = symplectic double of [[5,1,3]]; the paper calls it «twisted Toric» and «Helix code»; mapped to 'toric' (register's toric is the [[2L^2,2,L]] untwisted family). The same [[10,2,3]] code is recorded under quantinuum-h1/toric (arXiv:2406.09951) and quantinuum-h2/generalized_bicycle (arXiv:2610.39067: «can be equivalently constructed as a rotated toric code»); the three rows keep their ids by the editor's word of 28 Nov 2026"
+   },
+   "old": {
+    "best_instance": "[[10,2,3]] twisted toric code (outer code of C4-Helix) memory: 2.1e-4 per logical qubit per cycle, 4.5x worse than after C4 concatenation",
+    "note": "Twisted/cyclic toric code (a,b)=(1,3) = symplectic double of [[5,1,3]]; mapped to 'toric' (register's toric is the [[2L^2,2,L]] untwisted family) - consider a twisted_toric id"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2609.03194",
+     "date": "2026-09-02",
+     "quote": "«For the [[10, 2, 3]] code, we obtain a per LQ, per round error of ε3 = 2.1(+1.0/−0.7) × 10^−4. For the [[20, 2, 6]] C4-Helix code, we obtain ε6 = 4.6(+6.2/−2.6) × 10^−5. All uncertainties are reported as 95% Wilson confidence intervals.» (Sec. II A, p. 2); «This 4.52× reduction in logical error rate per round» (Sec. II A)"
+    }
+   ],
+   "note": "A.1 and A.12 of review R2 (ATLAS_PROPOSAL_20261128). the figures with their intervals as printed; the [[10,2,3]] code cross-referenced to the two other rows that record it (the editor's word of 28 Nov 2026: link the three records, no new id)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine-code",
+    "id": "quantinuum-h1/toric"
+   },
+   "fields": {
+    "note": "Genus-one (a,b)=(2,2) and (1,3) cyclic/twisted toric codes - symplectic doubles of genon codes; the [[10,2,3]] is the same code later used as the Helix outer code (quantinuum-helix/toric, arXiv:2609.03194: «twisted Toric», «Helix code») and, as a generalised bicycle code, in QLDPC surgery on H2-2 (quantinuum-h2/generalized_bicycle, arXiv:2610.39067); the three rows keep their ids by the editor's word of 28 Nov 2026 | also 2023: rotated toric code on a 4x4 torus ([[16,2,4]]) prepared in constant depth by measurement + real-time feed-forward; stabilizers ~0.93; logical strings measured (https://arxiv.org/abs/2302.01917)"
+   },
+   "old": {
+    "note": "Genus-one (a,b)=(2,2) and (1,3) cyclic/twisted toric codes - symplectic doubles of genon codes; the [[10,2,3]] is the same code later used as the Helix outer code | also 2023: rotated toric code on a 4x4 torus ([[16,2,4]]) prepared in constant depth by measurement + real-time feed-forward; stabilizers ~0.93; logical strings measured (https://arxiv.org/abs/2302.01917)"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2610.39067",
+     "date": "2026-10-28",
+     "quote": "«The [[10,2,3]] code can be equivalently constructed as a rotated toric code» (Sec. II A)"
+    },
+    {
+     "url": "https://arxiv.org/abs/2609.03194",
+     "date": "2026-09-02",
+     "quote": "«a [[10,2,3]] twisted Toric code» (Sec. I, p. 1)"
+    }
+   ],
+   "note": "A.12 of review R2 (ATLAS_PROPOSAL_20261128). one code, three rows: the notes name each other; no row moves to a new id (the editor's word of 28 Nov 2026)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine-code",
+    "id": "quantinuum-h2/generalized_bicycle"
+   },
+   "fields": {
+    "note": "preprint arXiv:2610.39067 (28 Oct 2026; Luthra and Owens, UCL / National Quantum Computing Centre); a second independent group for qLDPC on ions beside IonQ. The paper: «The [[10,2,3]] code can be equivalently constructed as a rotated toric code» (Sec. II A) - the code of quantinuum-h1/toric and quantinuum-helix/toric; the three rows keep their ids by the editor's word of 28 Nov 2026"
+   },
+   "old": {
+    "note": "preprint arXiv:2610.39067 (28 Oct 2026); a second independent group for qLDPC on ions beside IonQ"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2610.39067",
+     "date": "2026-10-28",
+     "quote": "«The [[10,2,3]] code can be equivalently constructed as a rotated toric code» (Sec. II A); device H2-2"
+    }
+   ],
+   "note": "A.12 of review R2 (ATLAS_PROPOSAL_20261128). the paper's own equivalence quoted; authors from UCL and the National Quantum Computing Centre"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine-code",
+    "id": "sustech-dualrail-8/dual_rail"
+   },
+   "fields": {
+    "best_instance": "dual-rail transmon pairs: logical Bell 98.8(1)%, 3-logical GHZ 93.9(2)%, logical CNOT process fidelity 96.2(3)%, 1Q gate 99.997%, logical T1 0.98(1) ms; all with erasure-check post-selection",
+    "note": "Codes column already says dual_rail but no row existed. arXiv v1 (the only version; Nature Physics, DOI 10.1038/s41567-026-03211-9) gives the GHZ fidelity as 93.9(2)% in the Fig. 4 caption and Secs. V-VI; its abstract's 93.5% matches the Bell fidelity after a 20 us delay, 93.5(4)%. The journal text was not reachable. Dual-rail TRANSMONS, not cavities."
+   },
+   "old": {
+    "best_instance": "dual-rail transmon pairs: logical Bell 98.8%, 3-logical GHZ 93.5%, logical CNOT process fidelity 96.2%, 1Q gate 99.997%, logical T1 ~1 ms; all with erasure-check post-selection",
+    "note": "Codes column already says dual_rail but no row existed. Register best_logical says GHZ 93.9%; arXiv v1 abstract says 93.5% (check Nature Physics version). Dual-rail TRANSMONS, not cavities."
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2504.12099",
+     "date": "2025-04-16",
+     "quote": "v1 (the only arXiv version) gives the three-logical-qubit GHZ fidelity as 93.9(2)% in the Fig. 4 caption and Secs. V and VI; its abstract prints 93.5%, the value of the Bell state after a 20 µs delay, 93.5(4)%"
+    }
+   ],
+   "note": "A.2 of review R2 (ATLAS_PROPOSAL_20261128). the codes row takes the body's 93.9(2)%, as the machine row already does; the Nature Physics text (DOI 10.1038/s41567-026-03211-9) was not reachable"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine-code",
+    "id": "ibm-heron-r3/dynamic_compass"
+   },
+   "fields": {
+    "note": "new code introduced in the paper; same footprint and circuits as heavy_hex but dynamic measurement schedule (Bacon-Shor-style dynamic schedules, refs [1-3]); distinct from heavy_hex and bacon_shor; arXiv:2604.14296 gives the absolute per-round errors only as the bars of its Fig. 2b | also 2026: 7x7 dynamic compass code memory on ibm_boston (156-qubit Heron class): logical error per round 6.07e-2 (Z) and 3.95e-2 (X) decoded with IBM's reported noise, 5.37e-2 and 3.72e-2 with ACES noise, 4.11e-2 and 2.56e-2 with two qubits taken out and post-selection (Fig. 2a); 4x3 compass-code lattice surgery, logical Bell fidelity 95.8-97.5% at 9.64% yield (Sec. II D) (https://arxiv.org/abs/2610.11658)",
+    "device": "ibm_pittsburgh;ibm_boston",
+    "scope": "memory;logic"
+   },
+   "old": {
+    "note": "new code introduced in the paper; same footprint and circuits as heavy_hex but dynamic measurement schedule (Bacon-Shor-style dynamic schedules, refs [1-3]); distinct from heavy_hex and bacon_shor",
+    "device": "ibm_pittsburgh",
+    "scope": "memory"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2610.11658",
+     "date": "2026-10-08",
+     "quote": "«across the entirety of a 156-qubit superconducting quantum computing device with a heavy-hex connectivity, ibm_boston» (Sec. I); Fig. 2a bars 0.0607 / 0.0537 / 0.0466 / 0.0411 (Z) and 0.0395 / 0.0372 / 0.0324 / 0.0256 (X) for reported noise / ACES noise / ACES with q46 and q85 out / + post-selection; «a logical Bell fidelity range of 95.8% − 97.5% with a yield of 9.64%» (Sec. II D)"
+    }
+   ],
+   "note": "A.3 and A.22 of review R2 (ATLAS_PROPOSAL_20261128). ibm_boston is already an instance of ibm-heron-r3 in the register (no machine of its own); the paper names the Heron class, not the revision (arXiv:2607.25941 v3 calls IBM Boston «a Heron R3 processor»). The work is led by the University of Sydney with IBM Quantum co-authors, as the row's by says. A.3: 2604.14296 prints its absolute values only as figure bars - a limit of the source, now said in the note"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine-code",
+    "id": "ibm-heron-r3/heavy_hex"
+   },
+   "fields": {
+    "note": "paper: 'IBM Quantum 156-qubit Heron revision-3 quantum processor ibm_pittsburgh', runs 24 Feb 2026; heavy-hex data in App. A as the comparison code | also 2026: d=3 heavy-hex lattice surgery on ibm_boston (standard heavy-hex schedule): logical Bell fidelity 77.3-84.5% after pre-selection, 95.8-97.8% after logical-gap post-selection (gap >= 8; total yield 4.55%) (Sec. II D, Table I) (https://arxiv.org/abs/2610.11658)",
+    "device": "ibm_pittsburgh;ibm_boston",
+    "scope": "memory;logic"
+   },
+   "old": {
+    "note": "paper: 'IBM Quantum 156-qubit Heron revision-3 quantum processor ibm_pittsburgh', runs 24 Feb 2026; heavy-hex data in App. A as the comparison code",
+    "device": "ibm_pittsburgh",
+    "scope": "memory"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2610.11658",
+     "date": "2026-10-08",
+     "quote": "«rejecting shots with a logical gap of less than 8 provides improvement of the logical Bell fidelity lower/upper bound to 95.8% − 97.8% with a relative yield of 34.3% (the total yield after all filters is 4.55%).» (Sec. II D); pre-selection alone 77.3%–84.5% (Table I)"
+    }
+   ],
+   "note": "A.22 of review R2 (ATLAS_PROPOSAL_20261128). the heavy-hex lattice surgery of the same paper, on ibm_boston, as a further instance of the row"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-heron-r3"
+   },
+   "fields": {
+    "best_logical": "spacetime_circuit (the IBM/UChicago spacetime detection code, stage-1 id added Sep 2026): a 64-qubit depth-73 Clifford circuit doped with 314 T gates on 76 physical (64 data + 12 ancilla), 2,644 CZ, ~10x effective error suppression, certified fidelity lower bound 0.349 (95%) at a post-selection rate of 0.040(1)% on IBM Boston (arXiv:2607.25941 v3, 2 Sep 2026); v1 (28 Jul 2026) ran a 70-qubit depth-70 open-boundary circuit with 468 T on 97 physical (70 + 27), 2,869 CZ, F >= 0.284 at 0.059%"
+   },
+   "old": {
+    "best_logical": "spacetime_circuit (the IBM/UChicago spacetime detection code, stage-1 id added Sep 2026): 97 physical (70 data + 27 ancilla), depth 70, 468 virtual T, ~10x effective error suppression, certified fidelity lower bound 0.284 (95% c.l.); the 2,869 CZ count and the 0.059% acceptance are not in the cited release or abstract - not re-fetched"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2607.25941",
+     "date": "2026-09-02",
+     "quote": "v3 abstract and main text: 64 qubits, depth 73, 314 T gates, 76 physical (64 + 12), ~10×, fidelity lower bound 0.349; 2,644 CZ; post-selection rate 0.040(1)%; «IBM Boston, a Heron R3 processor» (S6.1). v1 (28 Jul 2026): 70 qubits, depth 70, 468 T, 97 = 70 + 27, F ≥ 0.284, 2,869 CZ, 0.059%"
+    }
+   ],
+   "note": "A.4 of review R2 (ATLAS_PROPOSAL_20261128). the machine row named v1's instance and the codes row v3's; both now name v3 as the result and v1 as the earlier version. ibm_aachen, in the codes row's device cell, is not named in v1 or v3 (a doubt below)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine-code",
+    "id": "ibm-heron-r3/spacetime_circuit"
+   },
+   "fields": {
+    "best_instance": "spacetime-code error detection on a 64-qubit depth-73 Clifford circuit doped with 314 T gates, 76 physical (64 data + 12 ancilla), 2,644 CZ; ~10x gate-error suppression; fidelity lower bound 0.349 (95%), PSR 0.040(1)% (v3)",
+    "note": "v3 (2 Sep 2026) states «IBM Boston, a Heron R3 processor»; the 70-qubit open-boundary instance (depth 70, 468 T, 97 physical, 2,869 CZ, F>=0.284 at 0.059%) is v1's (28 Jul 2026; restated in v3 SI S2.6); ibm_aachen is not named in v1 or v3; ref id 'ibm-heron-r3' should point to arXiv:2607.25941 | also 2026: spacetime checks + first-order PEC on Trotterized TFIM, 22 data + 27 check qubits, up to 648 CZ (6 Trotter steps); syndrome PSR 0.197 at d=6; sampling overhead  (https://arxiv.org/abs/2609.13108)"
+   },
+   "old": {
+    "best_instance": "spacetime-code error detection on a 64-qubit depth-73 Clifford circuit doped with 314 T gates, 76 physical (64 data + 12 ancilla), 2,644 CZ; ~10x gate-error suppression; fidelity lower bound 0.349 (95%), PSR ~0.04%",
+    "note": "v3 (2 Sep 2026) states ibm_boston = Heron R3; register numbers (70 q, depth 70, 468 T, 97 physical, F>=0.284) are from the earlier open-boundary version (SI S2.6) - update best_instance; ref id 'ibm-heron-r3' should point to arXiv:2607.25941 | also 2026: spacetime checks + first-order PEC on Trotterized TFIM, 22 data + 27 check qubits, up to 648 CZ (6 Trotter steps); syndrome PSR 0.197 at d=6; sampling overhead  (https://arxiv.org/abs/2609.13108)"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2607.25941",
+     "date": "2026-09-02",
+     "quote": "post-selection rate 0.040(1)% (v3); the v1 set restated in v3 SI S2.6"
+    }
+   ],
+   "note": "A.4 of review R2 (ATLAS_PROPOSAL_20261128). the open «update best_instance» remark closed: the row already names v3's instance"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-helios"
+   },
+   "fields": {
+    "best_logical": "iceberg [[2m,2m-2,2]] concatenated to effective d=4: 94 logical qubits entangled in a GHZ state with fidelity 0.949(+7/−9) using leakage-heralded readout at 25% acceptance (0.87(1) without; «∼95%» in the main text; arXiv:2602.22211 SI Table VI), 50 error-detected logical qubits at break-even and 48 error-corrected logical qubits (2:1) out of 98 physical; logical gates cycle-benchmarked at ~1e-4; logical fidelity 99.9995% (five errors per million operations) on Helios, 21 Oct 2026 — the owner's claim of a 100× reduction vs the best published result in any other modality; the release of 19 Oct 2026 ties the 99.9995% to «a well-known “color code”»: the d=7 triangular colour-code memory of arXiv:2610.24077, 5(+4/−2)e-6 per round (3 failures in 29,000 shots, Table I)",
+    "readout_error": "SPAM 4.8(6)e-4 averaged over the zones with the standard measurement (|0> 8(1)e-4, |1> 1.6(5)e-4; Helios system paper arXiv:2511.05465 v1, abstract and Table II; 17(1)e-4 with the leakage-detecting ternary measurement); the 3.3(5)e-4 credited to the Nature version (17 Jun 2026) is not in arXiv v1 and was not re-read",
+    "codes": "iceberg;many_hypercube;stab_16_4_4;stab_4_2_2;stab_8_3_2;steane;stellated_dodecahedron_css;triangular_color"
+   },
+   "old": {
+    "best_logical": "iceberg [[2m,2m-2,2]] concatenated to effective d=4: 94 logical qubits entangled in a GHZ state, 50 error-detected logical qubits at break-even and 48 error-corrected logical qubits (2:1) out of 98 physical; the 94.9% GHZ figure is not in the cited sources - not re-fetched; logical gates cycle-benchmarked at ~1e-4; logical fidelity 99.9995% (five errors per million operations) on Helios, 21 Oct 2026 — the owner's claim of a 100× reduction vs the best published result in any other modality; the release of 19 Oct 2026 ties the 99.9995% to «a well-known “color code”» (the paper not located)",
+    "readout_error": "SPAM 3.3(5)e-4 (Nature) vs 4.8e-4 (secondary)",
+    "codes": "iceberg;many_hypercube;stab_16_4_4;stab_4_2_2;steane;stellated_dodecahedron_css"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2602.22211",
+     "date": "2026-02",
+     "quote": "SI Table VI: «I94, LH .949(+7/−9)» (Wilson 68%), leakage-heralded readout at 25% acceptance, .87(1) without; main text p. 4: «∼ 95% fidelity in the I94 code»"
+    },
+    {
+     "url": "https://arxiv.org/abs/2511.05465",
+     "date": "2025-11-07",
+     "quote": "«… and 4.8(6) × 10^−4 for state preparation and measurement» (abstract); Table II «SPAM (standard) 4.8(6)», «SPAM (ternary) 17(1)» (×1e-4); «errors of 8(1)×10^−4 and 1.6(5)×10^−4 when preparing |0⟩ and |1⟩» (Sec. III B 1). No 3.3(5)e-4 SPAM figure in v1"
+    },
+    {
+     "url": "https://arxiv.org/abs/2610.24077",
+     "date": "2026-10-16",
+     "quote": "Table I, d = 7, Tesseract: 3 failures in 29,000 shots (r = 20), 5(+4/−2) × 10^−6 per round; the release of 19 Oct 2026 («Quantinuum used a well-known ‘color code’») links the same paper as a Quantinuum-hosted PDF"
+    },
+    {
+     "url": "https://arxiv.org/abs/2610.14202",
+     "date": "2026-10-09",
+     "quote": "«we observed only a single logical failure in one-bit addition after burst-error filtering, yielding an estimated logical failure rate of (6.0 ± 5.9) × 10^−5» (abstract); «on Quantinuum's Helios-1 trapped-ion quantum computer»"
+    }
+   ],
+   "note": "A.5, A.6, A.18 and A.25 of review R2 (ATLAS_PROPOSAL_20261128). two caveats closed with the sources' own figures; the readout cell names its source and the version difference; two codes demonstrated on Helios join the codes column with their rows (triangular_color: the colour-code memory behind the 99.9995%; stab_8_3_2: the [[8,3,2]] adders of a third party)"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "machine-code",
+    "id": "quantinuum-helios/triangular_color"
+   },
+   "fields": {
+    "best_instance": "triangular colour codes d=3, 5 and 7 memory (13, 37 and 73 qubits per experiment, 20 rounds): logical error per round 5.5(4)e-4, 3.8(+1.0/−0.8)e-5 and 5(+4/−2)e-6 (d=7: 3 failures in 29,000 shots, Tesseract decoder), suppression factor Λ = 12(+3/−2)",
+    "decoder": "Tesseract (also Frontier, CNN and RTT decoders); offline",
+    "use": "demonstrated",
+    "scope": "memory",
+    "device": "Helios-1",
+    "by": "builder",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2610.24077",
+    "checked": "yes"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2610.24077",
+     "date": "2026-10-16",
+     "quote": "«We achieve logical error rates of 5.5(+0.4/−0.4) × 10^−4, 3.8(+1/−1) × 10^−5 and 5(+4/−2) × 10^−6 per syndrome extraction cycle for color codes of distances 3, 5 and 7 respectively, which corresponds to the suppression factor of Λ_Mem. = 12(+3/−2)» (p. 1)"
+    }
+   ],
+   "note": "A.18 of review R2 (ATLAS_PROPOSAL_20261128). the paper behind the 99.9995% of the release of 19 Oct 2026, located"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "machine-code",
+    "id": "quantinuum-helios/stab_8_3_2"
+   },
+   "fields": {
+    "best_instance": "[[8,3,2]] colour code with teleportation code switching to [[4,2,2]] for the transversal Hadamard: fault-tolerant ripple-carry addition; one-bit adder failure (6.0 ± 5.9)e-5 after burst-error filtering with an algorithmic check vs (3.5 ± 1.3)e-3 unencoded on the same machine; acceptance slightly above 60% at m=1 falling to ~1% at m=5; logical below physical through m=3",
+    "decoder": "post-selection (error detection) with an algorithmic check; offline",
+    "use": "demonstrated",
+    "scope": "prep;detect;logic;algo",
+    "device": "Helios-1",
+    "by": "third party: U. New Mexico / Sandia (Nelson; Landahl; Baczewski)",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2610.14202",
+    "checked": "yes"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2610.14202",
+     "date": "2026-10-09",
+     "quote": "«In both cases, the post-selection rate starts slightly above 60% for m = 1 and decays exponentially to approximately 1% at m = 5.» and «With the algorithmic check, however, the logical failure rates remain below the physical failure rates through m = 3.» (Sec. IV C)"
+    }
+   ],
+   "note": "A.25 of review R2 (ATLAS_PROPOSAL_20261128). the authors are from the University of New Mexico and Sandia, not Quantinuum"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine-code",
+    "id": "quantinuum-h1/dfs_qec_10_1_4"
+   },
+   "fields": {
+    "best_instance": "[[10,1,4]] memory to ~23 s with a QEC cycle every 2.89 s: ~10x process-fidelity lifetime over a physical qubit (~20x with post-selection); logical error rate 2ε/τ = 2.0(7)e-2 per second (about 2.9e-2 per idle-plus-QEC period, derived), logical SPAM 4(1)e-2; with post-selection 9(4)e-3 per second at ~95% retention per cycle (Table 1)",
+    "decoder": "real-time algorithmic decoder (Rust compiled to Wasm, 75 us per call): 1-D minimum-weight matching on the cyclic graph of the five stabiliser nodes, Z errors weighted as more likely; a lookup table only for hook errors after a flag; active correction each cycle"
+   },
+   "old": {
+    "best_instance": "[[10,1,4]] memory to ~23 s with a QEC cycle every 2.89 s: ~10x process-fidelity lifetime over a physical qubit (~20x with post-selection); per-cycle logical error ~5e-2",
+    "decoder": "real-time lookup table (Rust/Wasm, 75 us per call) with active correction"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2503.22107",
+     "date": "2025-03-28",
+     "quote": "Table 1 mean row: ε_q,s 4(1)e-2, 2ε_q,m τ^−1 2.0(7)e-2 s^−1; post-selected 5(1)e-2 and 9(4)e-3 s^−1; «τ = 2.89 s»; «each QEC cycle has a retention rate of ∼ 95%»; «we use an algorithmic decoder which is run in real-time during each round of QEC» … «via 1-D minimum weight perfect matching on a cyclic graph»; «implemented in Rust compiled to Wasm» … «each call to the decoder took 75 μs»"
+    }
+   ],
+   "note": "A.7 of review R2 (ATLAS_PROPOSAL_20261128). the «~5e-2 per cycle» was the post-selected SPAM column; the per-period error is derived (2.0e-2 × 2.89 s / 2), the paper prints only the rate; the decoder is an algorithm, the table covers only hook errors after a flag"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "umd-duke-ion"
+   },
+   "fields": {
+    "err_2q_median": "98.5-99.3% fidelity on a typical XX gate (ions 2-3), bounded by echoed vs non-echoed repeated-gate parity fringes (arXiv:2009.11482 v2, Methods; SI); the 3e-3 is the logical Clifford error after correction (Bacon–Shor run)",
+    "readout_error": "physical SPAM 0.22(2)% (|0>) and 0.71(4)% (|1>), average 0.46(2)% (Methods; SI); the 0.6% (6e-3) is the logical SPAM after error correction",
+    "decoder": "logic table on the two Z stabilisers, applied in post-processing (no mid-circuit measurement)",
+    "t_2q": "225 us (XX gate)",
+    "st_decoder": "∅G-lut",
+    "station decoder (stations and evidence rows)": "∅G-lut",
+    "2q class": "new row: P-sur, single, n 1, confidence high (repeated-gate parity fringes)"
+   },
+   "old": {
+    "err_2q_median": "not published as a physical two-qubit error (the 3e-3 is the logical Clifford error after correction, Bacon–Shor run)",
+    "readout_error": "6e-3 SPAM",
+    "decoder": "matching",
+    "t_2q": "",
+    "st_decoder": "dec_mwpm",
+    "station decoder (stations and evidence rows)": "dec_mwpm"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2009.11482",
+     "date": "2021-01-07",
+     "quote": "«We achieve between 98.5 and 99.3% fidelity on a typical gate, measured by parity fringes after a varying odd number of successive non-echoed or echoed XX gates» (Methods); «State preparation and detection errors are 0.22(2)% and 0.71(4)% for |0〉 and |1〉» (Methods); «a Clifford gate error of 0.3% after error correction» and «an average state preparation and measurement error of 0.6%» (abstract); «the following logic table» on the two Z stabilisers (Methods, Error Correction Protocol); «Gate durations are 225 μs.»"
+    }
+   ],
+   "note": "A.8 of review R2 (ATLAS_PROPOSAL_20261128). arXiv v2 title «Fault-Tolerant Operation of a Quantum Error-Correction Code» (Nature 598, 281 as «Fault-tolerant control of an error-corrected qubit»). The physical figures replace the logical ones; the decoder station moves from dec_mwpm to the lookup-table gap ∅G-lut (no matching anywhere in the paper); err_2q_median_num stays empty (a bound on one typical pair, not a median); its 2Q class row is new (P-sur)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-ba133-qldpc-testbed"
+   },
+   "fields": {
+    "t1": "not measurable (taken as infinite, 1/T1 = 0; arXiv:2606.06455 v2, App. I)",
+    "t2": "T2* 1.28 ± 0.16 s (Ramsey; v2 Table II, App. J; v1: 1.1 ± 0.3 s); physical lifetime 3T2* = 3.84 ± 0.48 s"
+   },
+   "old": {
+    "t1": "1.1 s physical coherence",
+    "t2": "3.95 s logical (one code, abstract; physical 3.84 ± 0.48 s)"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2606.06455",
+     "date": "2026-09-14",
+     "quote": "v2 Table II «Physical 1.28 ± 0.16 ∞ 3.84 ± 0.48» («For physical qubits, values shown are T∗2 and T1 respectively»); «For our 133Ba+ qubits, T1 is immeasurably long, so we take 1/T1 = 0, which implies a physical qubit lifetime of L_phys = 3T∗2» (App. I); v1: «T_2^* ≈ 1.1 ± 0.3 s»; GB[[26,2,5]] 3.95 ± 0.71 s (v2 Table II; ±0.68 in the v1 text and the v2 introduction)"
+    }
+   ],
+   "note": "A.9 of review R2 (ATLAS_PROPOSAL_20261128). the 1.1 s in t1 was v1's T2*; the logical 3.95 s belongs to the code row, the machine's t2 now holds the physical coherence like every other row"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine-code",
+    "id": "ionq-ba133-qldpc-testbed/generalized_bicycle"
+   },
+   "fields": {
+    "best_instance": "GB4 [[26,2,5]] 0.91(17)% per cycle per logical (Z basis), lifetime 3.95(71) s (v2 Table II; 3.95(68) s in the v1 text and the v2 introduction) vs physical 3.84(48) s (break-even); GB4 [[16,2,4]] 1.05% (Z); 1-6 SE cycles"
+   },
+   "old": {
+    "best_instance": "GB4 [[26,2,5]] 0.91(17)% per cycle per logical (Z basis), lifetime 3.95(68) s vs physical 3.84(48) s (break-even); GB4 [[16,2,4]] 1.05% (Z); 1-6 SE cycles"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2606.06455",
+     "date": "2026-09-14",
+     "quote": "v2 Table II «GB[[26, 2, 5]] 1.63 ± 0.30 3.47 ± 0.56 3.95 ± 0.71»"
+    }
+   ],
+   "note": "A.9 of review R2 (ATLAS_PROPOSAL_20261128). the lifetime's interval as v2's table prints it"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "uibk-innsbruck-ion"
+   },
+   "fields": {
+    "err_2q_median": "no direct two-qubit benchmark published: p2q = 0.027 ± 0.005 is inferred by matching a 16-qubit GHZ fidelity (0.54 ± 0.04) to simulation (arXiv:2312.09745, App. C), and enters the code-switching paper's noise model (arXiv:2403.13732, Table II, 322.5 us); the measurement-free paper's model uses 2.5e-2 at 350 us (arXiv:2506.22600, Table I); single-qubit RB 3.6(4)e-3 per gate",
+    "t2": "~50 ms (optical qubit, limited by magnetic-field dephasing; arXiv:2312.09745 App. B; 50 ms in arXiv:2506.22600)",
+    "t_2q": "312.5 us MS gate (arXiv:2312.09745 App. C; 350 us in arXiv:2506.22600)",
+    "2q class (source, quote, note)": "err_2q_source https://arxiv.org/abs/2312.09745; protocol P-sur kept"
+   },
+   "old": {
+    "err_2q_median": "not published in the cited refs; the 2.5e-2 is the two-qubit depolarizing probability of a simulation noise model (measurement-free paper, Table I)",
+    "t2": "",
+    "t_2q": "",
+    "2q class (source, quote, note)": "err_2q_source https://arxiv.org/abs/2506.22600 (the 2.5e-2 noise-model parameter)"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2312.09745",
+     "date": "2023-12-15",
+     "quote": "«Averaging over multiple instances of the prepared GHZ state over the course of around 13 hours gives a mean fidelity of 0.54 with a standard deviation of 0.04, corresponding to an estimated two-qubit error rate p2q = 0.027 with a standard deviation of 0.005.» (App. C); «t_gate = 1/δ = 312.5 μs»; «the decoherence time T2 ≈ 50 ms» (App. B); «Typical values for qubit initialization and measurement fault rates are p_init = p_meas = 0.003 in the device under consideration [27]»"
+    },
+    {
+     "url": "https://arxiv.org/abs/2403.13732",
+     "date": "2024-03-20",
+     "quote": "Table II «Two-qubit gate p2 = 0.027 322.5 μs» — «Depolarizing error rates and duration of operations on a trapped-ion quantum processor [33]» ([33] = arXiv:2312.09745; 10 µs of settling added)"
+    },
+    {
+     "url": "https://arxiv.org/abs/2506.22600",
+     "date": "2025-06-27",
+     "quote": "Table I «Two-qubit gate p2q = 0.025 350 μs»; «the coherence time is determined to be T2 = 50 ms in our experimental setup»"
+    }
+   ],
+   "note": "A.10 of review R2 (ATLAS_PROPOSAL_20261128). the device has no direct two-qubit benchmark in these papers: the 0.027 is inferred from a GHZ fidelity, the 2.5e-2 a noise-model parameter; the cell says so and names both; t2 and t_2q filled from the papers' statements of the device; readout left empty (only a typical value cited from a 2013 paper); the 2Q class row now cites the primary source"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine-code",
+    "id": "uibk-innsbruck-ion/stab_5_1_3"
+   },
+   "fields": {
+    "best_instance": "[[5,1,3]] full FT toolbox: flagged prep, real-time QEC on two logical qubits, FT logical measurement, teleportation, pieceable CZ/CY, magic-state injection: T_L|+>_L state fidelity 96(+3/−16)% at 0.023% acceptance (16-31 accepted shots per basis; Sec. III C, Fig. 6(d)); logical T gate average gate fidelity 85(8)% (Sec. IV B; process fidelity 0.780 from the Fig. 6(d) panel)"
+   },
+   "old": {
+    "best_instance": "[[5,1,3]] full FT toolbox: flagged prep, real-time QEC on two logical qubits, FT logical measurement, teleportation, pieceable CZ/CY, magic-state injection (T_L state fidelity 96%, process 85(8)%)"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2609.22572",
+     "date": "2026-09-18",
+     "quote": "«reaching a state fidelity of 96+3−16 %» (Fig. 6(d) caption); «an acceptance rate of 0.023 %» (Sec. III C); Table VI «16-31» accepted shots; «The resulting process matrix for the logical T gate is shown in Fig. 6(d) achieving an 85±8 % average gate fidelity.» (Sec. IV B); Fig. 6(d) panel 0.780 (identity element)"
+    }
+   ],
+   "note": "A.11 of review R2 (ATLAS_PROPOSAL_20261128). the Fig. 6 caption calls the 85(8)% a process fidelity; Sec. IV B and (2·0.780 + 1)/3 = 0.85 make it the average gate fidelity"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-h1"
+   },
+   "fields": {
+    "best_logical": "[[6,2,2]] logical non-Clifford controlled-H past break-even: <=2.3(9)e-4 vs >=1.0(1)e-3 physical (at least 4.3x), Jun 2025; [[7,1,3]] Steane with real-time lookup-table decoding since 2021"
+   },
+   "old": {
+    "best_logical": "[[6,2,2]] logical non-Clifford controlled-H past break-even: 2.3e-4 vs 1.0e-3 physical (2.9x), Jun 2025; [[7,1,3]] Steane with real-time lookup-table decoding since 2021"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2506.14688",
+     "date": "2025-06",
+     "quote": "«at most 2.3(+9/−9) × 10^−4» vs physical «at least 1.0(+1/−1) × 10^−3»; «only 1 magic state per code block»; 14.8% discard of the benchmarking circuit, s = .075 per state (App. A); magic-state infidelity ≤ 7(+3/−1) × 10^−5"
+    }
+   ],
+   "note": "A.13 of review R2 (ATLAS_PROPOSAL_20261128). the paper prints no ratio; its two bounds give at least 4.3x (2.9x appears nowhere)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine-code",
+    "id": "quantinuum-h1/stab_6_2_2"
+   },
+   "fields": {
+    "best_instance": "[[6,2,2]] H6/C6 code, 8 qubits: one magic state per code block in the experiment (|H+,Y-> variant; the protocol can make two), infidelity <=7(+3/−1)e-5; discard 14.8% for the two-block benchmarking circuit, ~7.5% per state (App. A); fault-tolerant logical controlled-H <=2.3(9)e-4 vs physical >=1.0(1)e-3 (break-even non-Clifford)"
+   },
+   "old": {
+    "best_instance": "[[6,2,2]] H6/C6 code, 8 qubits: two |H+> magic states, infidelity 7e-5 at 14.8% discard; fault-tolerant logical controlled-H <=2.3(9)e-4 vs physical >=1.0e-3 (break-even non-Clifford)"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2506.14688",
+     "date": "2025-06",
+     "quote": "«only 1 magic state per code block», prepared as |H+,Y−⟩; magic-state infidelity ≤ 7(+3/−1) × 10^−5; 14.8% discard; s = .075 (App. A)"
+    }
+   ],
+   "note": "A.13 of review R2 (ATLAS_PROPOSAL_20261128). one magic state per block was measured (the protocol can make two); 14.8% is the discard of the two-block benchmarking circuit, ~7.5% per state"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "quera-gemini"
+   },
+   "fields": {
+    "best_logical": "with Harvard/MIT: d=3 and d=5 colour codes running logical-level 5-to-1 magic-state distillation on a Gemini-class processor - magic-state fidelity 95.1% -> 99.4(+0.3/−0.4)% at d=3 and 92.5% -> 98.6(+0.9/−1.3)% at d=5 (arXiv:2412.15165, introduction); factories of 35 atoms (d=3, two in parallel on 70) and 85 atoms (d=5), run as separate experiments on one 17x5 grid (Methods)"
+   },
+   "old": {
+    "best_logical": "with Harvard/MIT: d=3 and d=5 colour codes running logical-level 5-to-1 magic-state distillation - output fidelity better than every input (absolute value not published); the \"5 d=5 logical qubits plus two d=3 factories\" layout is not in the cited abstract - not re-fetched"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2412.15165",
+     "date": "2024-12-19",
+     "quote": "introduction (p. 2): fidelity 95.1% → 99.4(+0.3/−0.4)% at d = 3 and 92.5% → 98.6(+0.9/−1.3)% at d = 5; Methods (p. 9): 35 atoms per d = 3 factory (two in parallel, 70) and 85 atoms at d = 5; «Gemini-class»"
+    }
+   ],
+   "note": "A.14 of review R2 (ATLAS_PROPOSAL_20261128). the numbers the codes rows already held, now in the machine row; the «5 d=5 + two d=3» layout is not in the paper: the d=3 and d=5 runs are separate experiments on one 17x5 grid"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "atom-computing-phoenix"
+   },
+   "fields": {
+    "best_logical": "with Microsoft: 24 logical qubits ([[4,2,2]] code, 48 atoms) entangled in a GHZ state and 28 logical qubits from 112 physical running Bernstein-Vazirani; error and loss detection gave 10.2% logical error, 4.1x better than the 42% physical baseline, and error detection plus loss correction gave 26.6%, 1.6x better (Nov 2024; arXiv:2411.11822 v3, Jun 2025); twisted toric subsystem codes [[16,1,(4,3)]] and [[32,1,(6,4)]] (Jun 2026): Z error per cycle 0.74(1)% and 0.56(1)% from fits without reloading, Λ_Z = 1.9(1) from the 4-cycle point (average Λ 1.30(3)); with reservoir reloading up to 90 cycles (smaller code) and 70 (larger), 0.63(3)% and 0.64(4)% per cycle, no gain with distance",
+    "realtime": "offline decoding of the memory runs; lost atoms replaced in real time by conditional moves, and the heralding check of the [[4,2,2]] Bell-pair preparation decoded in real time (arXiv:2506.09936)",
+    "t2": "~34 s for the 171Yb nuclear-spin qubit (echo-Ramsey contrast decay 0.029(3)/s without the MOT; arXiv:2506.09936 App. D); 40 s for the Gen-1 87Sr qubit (2021)",
+    "flags": "code-node-mismatch",
+    "err_2q_median": "4.3(1.9)e-3 per CZ by interleaved RB, post-selected on survival of both atoms; CZ loss 9.6(2.0)e-3 per gate not included (toric-code paper, Jun 2026, Suppl. Sec. SV); earlier 0.39(10)% per CZ with moves and 0.75(10)% loss + leakage (arXiv:2411.11822 v3 Table II, Jun 2025; v2: 0.4(1)% and 0.5(1)%); system not named in the papers; vendor claim for Phoenix 99.6% (no protocol)"
+   },
+   "old": {
+    "best_logical": "with Microsoft: 24 logical qubits entangled in a GHZ state and 28 logical qubits from 112 physical running Bernstein-Vazirani; error detection alone gave 10.2% logical error, 4.1x better than the 42% physical baseline, and detection plus loss correction gave 26.6%, 1.6x better (Nov 2024); the [[4,2,2]] code is not named in the cited post; toric code at d=4 and d=6 with up to 90 successive syndrome rounds and mid-circuit reloading of a qubit reservoir (Jun 2026) - but no Lambda, no logical error per round and no acceptance fraction published",
+    "realtime": "offline",
+    "t2": "40 s (Gen-1 87Sr nuclear-spin qubit, 2021; the Gen-2 171Yb figure is not published)",
+    "flags": "no-numbers-published;code-node-mismatch",
+    "err_2q_median": "4.3(1.9)e-3 per CZ by interleaved RB, post-selected on survival of both atoms; CZ loss 9.6(2.0)e-3 per gate not included (toric-code paper, Jun 2026); system not named in the paper; vendor claim for Phoenix 99.6% (no protocol)"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2506.09936",
+     "date": "2025-06-11",
+     "quote": "«the second MCM image is analyzed in real-time by a software service that … programs the movement tweezers to fill detected vacancies» (Sec. II); «we observe a contrast decay rate of 0.029(3)/s and 0.035(4)/s without the MOT and with the MOT» (App. D); the heralding check «decodes the ancilla measurement» in real time (App. F)"
+    },
+    {
+     "url": "https://arxiv.org/abs/2411.11822",
+     "date": "2025-06-09",
+     "quote": "v3 (retitled «Fault-tolerant quantum computation with a neutral atom processor»): «The logical qubits are encoded with the [4, 2, 2] code into 48 physical qubits»; Table I «26.6 % error detection and loss correction | 10.2 % error and loss detection»; v2 abstract «[9, 1, 3] Bacon-Shor», absent from v3"
+    },
+    {
+     "url": "https://arxiv.org/abs/2606.04079",
+     "date": "2026-06-02",
+     "quote": "«ϵZ_cycle,det8 = 0.74 ± .01% and ϵZ_cycle,det16 = 0.56 ± .01%»; «directly converting the 4-cycle point … yields … an error suppression factor ΛZ_no reload = 1.9±.1»; with reloading «70 cycles for the det 16 code and 90 cycles for the det 8 code», 0.63 ± .03% and 0.64 ± .04% (Sec. V)"
+    }
+   ],
+   "note": "A.15 and A.16 of review R2 (ATLAS_PROPOSAL_20261128). the [[4,2,2]] caveat is stale (the paper names the code); the toric clause said no Λ and no logical error per round were published, but the paper gives both; the 10.2% is error and loss detection, not detection alone; realtime names what ran in real time (decoding of the memory runs stays offline, so decoder_mode stays offline); t2 takes the 171Yb figure of App. D; the flag no-numbers-published goes (two-qubit, memory and Λ figures are published). The [[9,1,3]] Bacon–Shor run of v2 is not added: v3 drops it"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine-code",
+    "id": "atom-computing-phoenix/css_4_1_2"
+   },
+   "fields": {
+    "best_instance": "Bernstein-Vazirani on up to 28 logical qubits in 112 atoms: encoded error at least 1.4x below the unencoded baseline, at a lower acceptance (v3); n=27 success 91.4(3)% conditioned on acceptance (Fig. 4) - not comparable with the unencoded 28.2(7)% of Table III, which conditions on nothing (encoded 18.5(5)% there)"
+   },
+   "old": {
+    "best_instance": "Bernstein-Vazirani on up to 28 logical qubits in 112 atoms; n=27 success 91.4(3)% on accepted shots vs 28.2(7)% unencoded"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2411.11822",
+     "date": "2025-06-09",
+     "quote": "«On s = 1^27, the 91.4(3)% success probability for the encoded circuit beats the unencoded algorithm.» (v3 p. 3; Fig. 4 conditions on acceptance); Table III «27 | 28.2(7)% 4.12 | 18.5(5)% 4.05» (unencoded / encoded Pr[guess], no conditioning); «at least a 1.4× lower error rate than the unencoded baseline, albeit with a lower acceptance rate»"
+    }
+   ],
+   "note": "A.16 of review R2 (ATLAS_PROPOSAL_20261128). the row set two different metrics side by side; each now with its own conditioning"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine-code",
+    "id": "atom-computing-phoenix/quantum_repetition"
+   },
+   "fields": {
+    "best_instance": "phase-sensitive repetition-code memory at d=3 and d=7 up to 95 cycles, atom replacement every cycle and 0.5 s of added idling per cycle: fitted logical lifetimes 44(1) s and 225(33) s against atom lifetimes of 10.5(4) and 15.6(5) s (arXiv:2606.04079 Sec. VI; the data span about a minute)",
+    "url": "https://arxiv.org/abs/2606.04079",
+    "note": "Classical-memory use of a quantum repetition code (bit-flip and phase-sensitive variants). The 2026 introduction's «over 3 minutes» at d=7 is the fitted 225(33) s, about four times the measured span (Sec. VII: «up to one minute»). | also 2025: walking (role-swapping) ring repetition code with atom replacement, d=3-9 with rounds equal to the distance - failures per shot (Table III) phase-sensitive 30/11,700, 11/11,250, 6/11,250 (d=3, 5, 7) and phase-insensitive 25/17,820, 3/17,640, 4/17,460, 3/16,920 (d=3-9), no fall beyond d=5 within the statistics; 41 rounds at d=5-9 (detector statistics only); atom loss 1.06(7)% and contrast loss 0.49(7)% per cycle (https://arxiv.org/abs/2506.09936)"
+   },
+   "old": {
+    "best_instance": "walking (role-swapping) ring repetition code with atom replacement: d=3-9, up to 41 rounds (2025); 2026: phase-sensitive d=3 and d=7 up to 95 cycles, logical memory outliving the ~10-15 s atom lifetime (>3 min decay at d=7)",
+    "url": "https://arxiv.org/abs/2506.09936",
+    "note": "Classical-memory use of a quantum repetition code (bit-flip and phase-sensitive variants)."
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2606.04079",
+     "date": "2026-06-02",
+     "quote": "«we extract logical lifetimes of τL = 44(1) s for the d = 3 and τL = 225(33) s for d = 7 repetition codes respectively, for the specific idle times chosen» (Sec. VI); «We intentionally introduce extra wall-clock idling time (τ = 0.5s) into each individual cycle»; «up to 95 QEC cycles»; atom lifetimes «10.5(4) s and 15.6(5) s»; introduction «over 3 minutes», Sec. VII «up to one minute»"
+    },
+    {
+     "url": "https://arxiv.org/abs/2506.09936",
+     "date": "2025-06-11",
+     "quote": "Table III: phase-sensitive 30/11700, 11/11250, 6/11250 (d = 3, 5, 7); phase-insensitive 25/17820, 3/17640, 4/17460, 3/16920 (d = 3–9); «atom loss of 0.0106(7) per cycle, and an site-averaged contrast loss of 0.0049(7)»"
+    }
+   ],
+   "note": "A.15 and A.26 of review R2 (ATLAS_PROPOSAL_20261128). the 2026 result gets its own source and numbers as the best instance; the 2025 walking ring code becomes the row's further instance with its failure counts; year stays 2025 (the first publication of the code on this machine, as the field defines)"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "princeton-yb-erasure"
+   },
+   "fields": {
+    "err_2q_median": "CZ error by randomized circuit benchmarking 0.016(1) with the amplitude-robust pulse and 0.011(1) time-optimal at the typical laser power; 0.010(1) and 0.006(1) conditioned on no erasure detected before the end of the circuit (Fig. 2e); fidelities 0.984(1) and 0.989(1) (Sec. II; 1.7% in Extended Data Table I); 38(6)% of the amplitude-robust gate error detected mid-circuit as erasures",
+    "realtime": "offline decoding; erasure-adaptive choice of ancilla blocks in real time (FPGA sequencer fed by a PC that processes the camera images, 25 ms from the end of the exposure to the next waveform step)",
+    "physical_qubits": "up to five [[4,2,2]] blocks (20 data atoms, inferred) plus flag atoms, in an array of 88 static traps (3 rows of 26 for storage and loading, 10 in the gate zone)",
+    "2q class": "new row: P-avg (randomized circuit benchmarking), C-none;+leak, confidence medium; err_2q_median_num stays empty"
+   },
+   "old": {
+    "err_2q_median": "not published for this array",
+    "realtime": "offline",
+    "physical_qubits": "small array"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2506.13724",
+     "date": "2026-06-23",
+     "quote": "«The AR gate fidelity at the typical laser power is F_AR = 0.984(1), which is 1.45 times more error than the time-optimal (TO) gate fidelity of F_TO = 0.989(1) under the same conditions (Fig. 2e).» (Sec. II); «The total error rate of the two-qubit entangling gate is measured to be ϵ_CZ = 0.016(1)» (Methods); ED Table I «AR CZ gate error ϵ_CZ 1.7%»; «We currently operate with a 25 ms latency between the end of the image exposure time and the beginning of the next step of waveform generation»; «88 traps: 3 × 26 traps for storage and loading, and 10 in the gate zone»"
+    },
+    {
+     "url": "https://arxiv.org/abs/2506.13724",
+     "date": "2026-06-23",
+     "quote": "«Randomized circuit benchmarking of AR gates with mid-circuit erasure detection. The extracted error rate of the AR CZ gate is ϵ_AR = 0.016(1) (solid blue), which is reduced to ϵ_c,AR = 0.010(1) (solid green) after conditioning on not detecting an atom in the ground state before the end of the circuit. Under the same conditions, the TO gate errors (light curves) are ϵ_TO = 0.011(1) and ϵ_c,TO = 0.006(1).» (Fig. 2e caption)"
+    }
+   ],
+   "note": "A.17 of review R2 (ATLAS_PROPOSAL_20261128). v2 (23 Jun 2026; Nature Physics, DOI 10.1038/s41567-026-03309-0). The 20 of physical_qubits_num is the largest experiment's data atoms (five [[4,2,2]] blocks, inferred from Fig. 1a; the paper never writes 20), now said beside the 88 traps; err_2q_median_num stays empty (one typical-power figure, not a device median); its 2Q class row is new"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "aliceandbob-graphene"
+   },
+   "fields": {
+    "best_logical": "target 100 logical qubits (cited roadmap); the <=1e-8 per cycle and 758-cat-qubit figures come from the LDPC-cat paper, not the cited page - not re-fetched; for its elevator codes Alice & Bob projects a logical error about 10,000 times lower for about 3 times more qubits than its current error correction (release of 21 Jan 2026, as reproduced by The Quantum Insider); the paper (arXiv:2601.10786 v2) finds in simulation lower overhead than thin XZZX and surface codes for noise bias η >= 7e4 at p_Z = 1e-3"
+   },
+   "old": {
+    "best_logical": "target 100 logical qubits (cited roadmap); the <=1e-8 per cycle and 758-cat-qubit figures come from the LDPC-cat paper, not the cited page - not re-fetched; elevator codes claim ~1e4x lower logical error for ~3x more qubits"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2601.10786",
+     "date": "2026-09-21",
+     "quote": "v2: lower overhead than thin surface and XZZX codes for η ≥ 7 × 10^4 at p_Z = 10^−3; no 10^4× / 3× claim in the paper"
+    },
+    {
+     "url": "https://thequantuminsider.com/2026/01/21/alice-bob-develops-elevator-codes-to-slash-error-rates-on-cat-qubit-quantum-computers/",
+     "date": "2026-01-21",
+     "quote": "Alice & Bob's release as reproduced: a logical error rate 10,000 times lower for about 3 times more qubits than its current error correction"
+    }
+   ],
+   "note": "A.19 of review R2 (ATLAS_PROPOSAL_20261128). the claim is the company's projection, not the paper's finding: the cell now says whose claim it is and what the paper shows"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-superion-256"
+   },
+   "fields": {
+    "best_logical": "none (IonQ's ECDLP-256 resource estimate assumes a 19,397-ion device and is recorded under the 10K generation)"
+   },
+   "old": {
+    "best_logical": "none - the Walking-Cat blueprint (generalized bicycle + cyclic hypergraph-product qLDPC, one decoder spanning memory blocks, cat factories and magic-state factories) compiles ECDLP-256 at ~1,450 logical, 4.0e7 Toffoli, 19,397 physical ions, 25.7 days, 63% success"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2609.05625",
+     "date": "2026-09-04",
+     "quote": "title «… on a fault-tolerant trapped-ion quantum computer with 20,000 qubits»; 19,397 ions (E22, Table III); IonQ's Walking-Cat QCCD model; no product name"
+    }
+   ],
+   "note": "A.21 of review R2 (ATLAS_PROPOSAL_20261128). the estimate assumes a device about 76 times this machine; it moves to the 10K generation, where the register keeps the Walking-Cat codes"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "ionq-superion-10k"
+   },
+   "fields": {
+    "targeted_algorithms": "ECDLP-256 (Shor) resource estimate on a 19,397-ion Walking-Cat QCCD device, about twice this machine: ~1,450 logical qubits, 4.0e7 Toffoli, 25.7 days, success 63.3% with Ekerå's post-processing (40.7% by Mosca's bound) (arXiv:2609.05625; the paper names no IonQ product)",
+    "targeted_algorithm_ids": "shor-ecdlp256"
+   },
+   "old": {
+    "targeted_algorithms": "n/a",
+    "targeted_algorithm_ids": ""
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2609.05625",
+     "date": "2026-09-04",
+     "quote": "~1,450 logical qubits and 4.0e7 Toffoli; 25.690 days; success 63.3% with Ekerå's post-processing, 40.7% by Mosca's bound; whole-run logical failure 0.2646 (E29)"
+    }
+   ],
+   "note": "A.21 of review R2 (ATLAS_PROPOSAL_20261128). the 63% is the paper's own (Ekerå's heuristic); the rigorous bound is added. The paper names no IonQ product; IonQ's release of 8 Sep 2026 calls 10K «the first hardware generation built to run Walking Cat», and the estimate needs about twice its qubits"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine-code",
+    "id": "ibm-nighthawk-r2/triangular_color"
+   },
+   "fields": {
+    "note": "preprint arXiv:2611.00404v1 (30 Oct 2026); the paper writes \"honeycomb color code\", never 6.6.6; all figures post-selected | also 2026: Q-CTRL (Liao; Schutzman; Munizzi; Mundada; Hartnett; Baum): magic-state cultivation in the [[7,1,3]] Steane code on ibm_phoenix, kickback-tomography T-state error 2.0e-5 (68% interval 1.2-3.2e-5; 6 errors in 300,462 retained shots) at 25.0(8)% retainment - the error before escape from the cultivation code; then lattice-surgery escape into a [[25,1,5]] rotated surface code, fidelity 0.994(3) after ten rounds at 3.8% retainment (Secs. III A, III B 2; the paper names Nighthawk, no revision) (https://arxiv.org/abs/2611.22035)"
+   },
+   "old": {
+    "note": "preprint arXiv:2611.00404v1 (30 Oct 2026); the paper writes \"honeycomb color code\", never 6.6.6; all figures post-selected"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2611.22035",
+     "date": "2026-11-17",
+     "quote": "«At the T-state injection angle θ = π/4, the KT logical error is 2.0 [1.2, 3.2] × 10^−5 (6 errors in 300,462 retained shots) at a retainment of 25.0(8)%» (Sec. III A); «LS reaches its highest fidelity of 0.994(3) at 3.8% retainment» (Sec. III B 2); «Using a publicly available IBM Nighthawk processor»; ibm_phoenix"
+    }
+   ],
+   "note": "A.24 of review R2 (ATLAS_PROPOSAL_20261128). a Q-CTRL paper (all six authors), not IBM's; the paper names Nighthawk without a revision - r2 for ibm_phoenix comes from arXiv:2610.05928, as the rotated_surface row says"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine-code",
+    "id": "ibm-nighthawk-r2/rotated_surface"
+   },
+   "fields": {
+    "note": "paper keywords 'IBM Nighthawk-r2' and Fig. 2c 'IBM Nighthawk chip' for ibm_phoenix - revision inferred from that keyword (not stated per backend in the text); code layout on square lattice with d^2-1 checks (Table I: N_mcm = p(d^2-1)) = rotated | also 2026: a [[25,1,5]] patch receiving a cultivated T state by lattice-surgery escape (Q-CTRL), fidelity 0.994(3) after ten rounds at 3.8% retainment (https://arxiv.org/abs/2611.22035)",
+    "scope": "memory;logic"
+   },
+   "old": {
+    "note": "paper keywords 'IBM Nighthawk-r2' and Fig. 2c 'IBM Nighthawk chip' for ibm_phoenix - revision inferred from that keyword (not stated per backend in the text); code layout on square lattice with d^2-1 checks (Table I: N_mcm = p(d^2-1)) = rotated",
+    "scope": "memory"
+   },
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2611.22035",
+     "date": "2026-11-17",
+     "quote": "«[[25, 1, 5]] rotated surface code patch» (Fig. 2); 0.994(3) at 3.8% retainment ten rounds after escape (Sec. III B 2)"
+    }
+   ],
+   "note": "A.24 of review R2 (ATLAS_PROPOSAL_20261128). the escape target of the same experiment, as a further instance"
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "machine",
+    "id": "aliceandbob-helium-2"
+   },
+   "fields": {
+    "t_2q": ""
+   },
+   "old": {
+    "t_2q": "2.65e-8"
+   },
+   "evidence": [],
+   "note": "A.27 of review R2 (ATLAS_PROPOSAL_20261128). the 26.5 ns is the single-qubit Z gate (gate_mechanism says so in the same row); the two-qubit gate time column is emptied - no entangling gate is reported"
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "machine",
+    "id": "oxford-ion-network"
+   },
+   "fields": {
+    "what": "Oxford trapped-ion quantum network: two nodes ~2 m apart, each one 88Sr+ network qubit and one 43Ca+ circuit qubit — DEMONSTRATED Jun 2024 (distributed quantum computing by gate teleportation) and Sep 2026 (a [[2,1,1]] repetition code and Bell-state correction across the two nodes), path ion_chain, lab-only, 4 ions",
+    "grade": "P"
+   },
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2407.00835"
+    },
+    {
+     "url": "https://arxiv.org/abs/2609.13065"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2407.00835",
+     "date": "2024-06-30",
+     "quote": "«Compared to the ideal CZ gate, we observe average gate fidelities of 97.5(2) % and 98.0(2) % for Alice and Bob, respectively.»; teleported CZ 86.1(9)% (QPT); distributed Grover search 71(1)%"
+    },
+    {
+     "url": "https://arxiv.org/abs/2609.13065",
+     "date": "2026-09-11",
+     "quote": "remote X1X2 stabiliser of a distributed [[2,1,1]] phase-flip repetition code: P++ = 96.4(6)% at zero applied error; detect-and-abort and real-time feedforward correction over a classical TTL link"
+    }
+   ],
+   "note": "A.20 of review R2 (ATLAS_PROPOSAL_20261128): a new machine, added on the editor's word of 28 Nov 2026 («принимаю твои предложения»). Cells per layer with their evidence rows; decoder: no decoder named, the 1-bit remote parity sets the abort or the correction in real time (decoder_mode feed-forward); code station the repetition gap ∅G-repetition with code_detect as alternate; decoder the lookup gap ∅G-lut. status_date spans the two results (cohort 2024). Organisation: University of Oxford. Its 9.7 s⁻¹ remote-entanglement rate and 86% teleported CZ were credited to the Monroe lineage in the umd-duke-ion roadmap cell (a doubt below)."
+  },
+  {
+   "kind": "add",
+   "subject": {
+    "type": "machine",
+    "id": "ethz-surface41"
+   },
+   "fields": {
+    "what": "ETH Zurich 41-qubit surface-code chip (21 data + 20 auxiliary transmons) — DEMONSTRATED 17 Nov 2026: two distance-3 logical qubits merged by lattice surgery into a 3x7 surface code, and logical teleportation between them; path sc, lab-only",
+    "grade": "P"
+   },
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2611.23165"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "https://arxiv.org/abs/2611.23165",
+     "date": "2026-11-17",
+     "quote": "«We perform two-qubit operations based on flux-activated CZ gates [49–51], with a mean gate error of 1.6(8)×10−2 determined by interleaved RB.» (Sec. II); «We have designed and fabricated a 41-qubit device»; teleportation success 0.57 (Z) / 0.65 (X) modular, 0.65 / 0.73 optimized, after leakage post-selection"
+    }
+   ],
+   "note": "A.23 of review R2 (ATLAS_PROPOSAL_20261128): a new machine, added on the editor's word of 28 Nov 2026 («принимаю твои предложения»). Cells per layer with their evidence rows, copied in style from ethz-surface17 (same lab); err_2q_median_num 0.016 is the interleaved-RB mean (the 17-qubit row likewise holds a mean); decoding offline (MWPM with weights from the measured syndrome statistics). Organisation: ETH Zurich."
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "text",
+    "id": "report/paths/ion_chain.{en,ru,he}.md"
+   },
+   "fields": {
+    "paragraphs": "Where it stands; Exceptions and borrowings"
+   },
+   "note": "Review R2, A.8 and A.20, in three languages: the Oxford two-node network joins the architecture's list of machines; Maryland/Duke's exceptions no longer include the logical figure (its err_2q_median now holds the physical bound) and gain the logic-table decoder (∅G-lut); Oxford's own cells (∅G-repetition, ∅G-lut, the dual-species readout as an alternate) are named. No citation added (both use [I15])."
+  },
+  {
+   "kind": "update",
+   "subject": {
+    "type": "text",
+    "id": "briefs/{en,ru,he}/enc_dualrail.md"
+   },
+   "fields": {
+    "row": "records table, 2025-04 / 2026-03 (SUSTech)"
+   },
+   "note": "Review R2, A.2, in three languages: arXiv v1's three-qubit GHZ fidelity is 93.9(2)% in the body (Fig. 4 caption, Secs. V-VI) and 93.5% in the abstract; the brief gave only the abstract's figure for v1. The Nature Physics figures (CNOT 98.1% at a 13% erasure rate) stay as they are, unverified (a doubt below)."
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine-code",
+    "id": "ibm-heron-r3/spacetime_circuit"
+   },
+   "fields": {
+    "field": "device 'ibm_boston;ibm_aachen'"
+   },
+   "note": "For the register's owner (review R2, A.4): arXiv:2607.25941 v1 and v3 name only IBM Boston (v3 Table S2 «layout on IBM Boston»); ibm_aachen appears in neither. The device cell keeps ibm_aachen until its source is found.",
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2607.25941"
+    }
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "ibm-heron-r3"
+   },
+   "fields": {
+    "field": "units_evidence 'ibm_aachen (eu-de) — Heron r3' vs the codes row ibm-heron-r3/rotated_surface ('ibm_aachen (Heron r2)') and the ibm-heron-r2 row's best_logical ('spacetime mitigation of logical errors on ibm_aachen')"
+   },
+   "note": "For the register's owner (review R2, A.4 and A.22): the register gives ibm_aachen two revisions. IBM's computers page, as the units_evidence cell records it, lists ibm_aachen as Heron r3; one codes-row note calls it Heron r2, and the r2 machine row holds an ibm_aachen result. Which revision, and which machine row its results belong to, is open.",
+   "sources": [
+    {
+     "url": "https://quantum.cloud.ibm.com/computers"
+    }
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "quantinuum-helios"
+   },
+   "fields": {
+    "field": "readout_error: SPAM 3.3(5)e-4 credited to the Nature version"
+   },
+   "note": "For the register's owner (review R2, A.6): arXiv:2511.05465 v1 prints SPAM 4.8(6)e-4 (abstract, Table II); the 3.3(5)e-4 credited to the Nature version (17 Jun 2026) is not in v1 and was not re-read (nature.com refused automated fetches). The cell now names the arXiv figure and says so.",
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2511.05465"
+    }
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "sustech-dualrail-8"
+   },
+   "fields": {
+    "field": "err_2q_median: logical CNOT '98.1% at a 13% erasure rate, Nature Physics'"
+   },
+   "note": "For the register's owner (review R2, A.2): arXiv:2504.12099 v1, the only arXiv version, has no 98.1% and no 13% erasure rate (main text, Fig. 4, SI Tables S2-S4 and Sec. VII read); it gives the logical CNOT process fidelity as 96.2(3)%. The Nature Physics text (DOI 10.1038/s41567-026-03211-9) was not reachable; the cell is left as it is until it is read.",
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2504.12099"
+    }
+   ]
+  },
+  {
+   "kind": "doubt",
+   "subject": {
+    "type": "machine",
+    "id": "umd-duke-ion"
+   },
+   "fields": {
+    "field": "roadmap: 'the Monroe lineage holds the remote ion-ion entanglement rate record (9.7-250 per second at 94-97% fidelity, teleported CZ 86%)'"
+   },
+   "note": "For the register's owner (review R2, A.20): the 9.7 s⁻¹ rate and the 86% teleported CZ are Oxford's (arXiv:2407.00835; now the register row oxford-ion-network), as the same row's interconnect evidence already says («the 9.7 s⁻¹ / teleported-CZ 86% figures are Oxford's»); the 250 s⁻¹ is Duke's (O'Reilly et al., 2024). The roadmap sentence credits both to one lineage — a text fix for the row's owner.",
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2407.00835"
+    },
+    {
+     "url": "https://arxiv.org/abs/2404.16167"
+    }
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "machine-code",
+    "id": "atom-computing-phoenix/bacon_shor"
+   },
+   "fields": {
+    "event": "not added"
+   },
+   "note": "Review R2, A.15: the [[9,1,3]] Bacon–Shor run named in the abstract of arXiv:2411.11822 v2 is not added as a codes row: v3 (9 Jun 2025, retitled «Fault-tolerant quantum computation with a neutral atom processor») no longer reports it.",
+   "sources": [
+    {
+     "url": "https://arxiv.org/abs/2411.11822"
+    }
+   ]
+  },
+  {
+   "kind": "statement",
+   "subject": {
+    "type": "register",
+    "id": "review-R2"
+   },
+   "fields": {
+    "event": "review filed",
+    "file": "data/reviews/R2-2026-11-28.json"
+   },
+   "note": "The external review ATLAS_PROPOSAL_20261128 (the QEC project's cross-check of the register against its own database, Part A: 27 findings) is filed as review R2: every finding with its verdict, class and disposition. Part B (13 proposed record keys for the rules of the QEC slice that have no Atlas key) is a separate ticket. Applied on the editor's words of 28 Nov 2026: «Поправь в Атласе и задеплой.» and «принимаю твои предложения».",
+   "sources": []
+  }
+ ]
+}

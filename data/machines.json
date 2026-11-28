@@ -681,7 +681,7 @@
     "t2": "",
     "t_2q": "",
     "t_meas": "",
-    "best_logical": "target 100 logical qubits (cited roadmap); the <=1e-8 per cycle and 758-cat-qubit figures come from the LDPC-cat paper, not the cited page; elevator codes claim ~1e4x lower logical error for ~3x more qubits",
+    "best_logical": "target 100 logical qubits (cited roadmap); the <=1e-8 per cycle and 758-cat-qubit figures come from the LDPC-cat paper, not the cited page; for its elevator codes Alice & Bob projects a logical error about 10,000 times lower for about 3 times more qubits than its current error correction (release of 21 Jan 2026, as reproduced by The Quantum Insider); the paper (arXiv:2601.10786 v2) finds in simulation lower overhead than thin XZZX and surface codes for noise bias η >= 7e4 at p_Z = 1e-3",
     "decoder": "none",
     "realtime": "none",
     "roadmap": "Graphene: 100 high-fidelity logical qubits by 2030",
@@ -1137,7 +1137,7 @@
     "readout_error": "",
     "t1": "2.0e3 to 3.6e3 s bit-flip (33-60 min, 95% CI)",
     "t2": "not measured in that run",
-    "t_2q": "2.65e-8",
+    "t_2q": "",
     "t_meas": "",
     "best_logical": "bit-flip 33-60 min at 95% confidence at n-bar = 11 - the best bias in the world, any modality; phase-flip time at the same operating point is not published",
     "decoder": "none published",
@@ -5197,6 +5197,233 @@
     "gate_evidence": "figure",
     "decoder_mode": "offline",
     "err_2q_median_num": 0.015,
+    "flags": [],
+    "qubits_accessible": null,
+    "gate_evidence_derived": true,
+    "decoder_mode_derived": true,
+    "benchmarked": true
+   }
+  },
+  {
+   "id": "ethz-surface41",
+   "name": "ETH Zurich 41-qubit surface-code chip",
+   "org": "ETH Zurich (Quantum Device Lab)",
+   "org_id": "ETH Zurich",
+   "country": "Switzerland",
+   "family": "SC",
+   "map_path": "sc",
+   "status": "DEMONSTRATED",
+   "status_date": "17 Nov 2026",
+   "physical_qubits_num": 41,
+   "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine"
+   },
+   "layers": {
+    "1": [
+     {
+      "node": "transmon",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "41 frequency-tunable transmons in three rows: 21 data + 12 X-type + 8 Z-type auxiliary, each with a dedicated drive and flux line",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2611.23165",
+       "locator": "Sec. II; Fig. 1(b),(f); App. A (Figs. 5-6)",
+       "verified": true
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_bare",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "bare transmon two-level subspace; three-level readout only flags leakage for post-selection",
+      "evidence": {
+       "type": "inferred",
+       "url": "https://arxiv.org/abs/2611.23165",
+       "locator": "",
+       "verified": false
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "g_tc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "flux-activated CZ by net-zero flux pulses bringing |11> and |20> of neighbours into resonance over static CPW couplers; 128-160 ns incl. buffers; mean interleaved-RB error 1.6(8)e-2",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2611.23165",
+       "locator": "Sec. II; App. B",
+       "verified": false
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "cx_nn",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "static planar lattice of three rows alternating data and auxiliary qubits, nearest-neighbour CPW couplers, mapped onto a 3x7 surface-code lattice",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2611.23165",
+       "locator": "Sec. II; Fig. 1(b); Fig. 7",
+       "verified": true
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_rt",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "dedicated drive and flux line per qubit; readout through common feed lines; electronics not described beyond the acquisition electronics (room temperature inferred)",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2611.23165",
+       "locator": "Sec. II; Fig. 1(f); App. B",
+       "verified": false
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_disp",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "frequency-multiplexed dispersive readout, dedicated readout resonator + Purcell filter per qubit, up to six qubits per feed line; three-level readout; mean assignment error 1.3(12)e-2 two-state, 2.2(10)e-2 three-state",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2611.23165",
+       "locator": "Sec. II; Fig. 1(f); Fig. 2(a); App. B",
+       "verified": true
+      }
+     },
+     {
+      "node": "ro_reset",
+      "role": "alternate",
+      "gap": false,
+      "state": "station",
+      "summary": "unconditional reset of auxiliary qubits by 48 ns parametric flux pulses that swap the excitation into the readout resonator; mean residual population 6(5)e-3",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2611.23165",
+       "locator": "Sec. II; App. B",
+       "verified": true
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "code_surface",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "two d=3 rotated surface-code patches merged by lattice surgery into a 3x7 surface code: logical error per cycle 4.9-8.3% (d=3), 15.2% Z / 2.5% X (3x7); logical teleportation success 0.57 / 0.65 (modular) up to 0.65 / 0.73 (optimized), after leakage post-selection (arXiv Nov 2026)",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2611.23165",
+       "locator": "Fig. 1; Fig. 2(b,c); Secs. II-V; Fig. 4; Table I",
+       "verified": true
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "dec_mwpm",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "minimum-weight perfect matching with weights extracted from measured syndrome statistics; syndrome data decoded globally; Pauli frame updates in post-processing",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2611.23165",
+       "locator": "Sec. II; Fig. 3 caption; App. E",
+       "verified": true
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "none",
+      "role": "primary",
+      "gap": false,
+      "state": "none",
+      "summary": "single 41-qubit planar chip; no inter-module link",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2611.23165",
+       "locator": "Sec. II; App. A (Figs. 5-6)",
+       "verified": true
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_sc",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "planar 41-qubit device designed and fabricated by the authors; materials and junction process not described in the paper",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2611.23165",
+       "locator": "Sec. II",
+       "verified": false
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [
+    "rotated_surface"
+   ],
+   "evidence_counts": {
+    "verified": 7,
+    "total": 11
+   },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2611.23165",
+     "title": "Teleportation of Logical Qubits using Lattice Surgery with Superconducting Circuits",
+     "kind": "paper"
+    }
+   ],
+   "profile": {
+    "qubit_type": "frequency-tunable transmon (dedicated flux line per qubit)",
+    "gate_mechanism": "flux-activated CZ (net-zero flux pulses, |11>-|20> resonance) between neighbours on static coplanar-waveguide couplers (no tunable coupler)",
+    "connectivity": "planar, three rows alternating data and auxiliary qubits, nearest-neighbour (3x7 surface-code lattice)",
+    "degree": "4",
+    "control": "dedicated drive and flux line per qubit; readout multiplexed up to six qubits per common feed line (control electronics not described in the paper)",
+    "control_placement": "room-temp",
+    "readout": "frequency-multiplexed dispersive; readout resonator + Purcell filter per qubit; three-level readout flags leakage; data qubits flux-tuned toward their resonators during readout; 48 ns parametric-flux unconditional reset of auxiliaries",
+    "err_2q_median": "1.6(8)e-2 mean CZ error, interleaved RB (mean, not median); isolated vs simultaneous and pair count not stated",
+    "err_2q_best": "",
+    "readout_error": "1.3(12)e-2 mean two-state (2.2(10)e-2 three-state)",
+    "t1": "not printed (per-qubit T1 measured and used in the App. D simulations)",
+    "t2": "not printed (per-qubit spin-echo T2 measured and used in the App. D simulations)",
+    "t_2q": "128-160 ns including buffers",
+    "t_meas": "120-240 ns readout pulses (auxiliary), 240-480 ns (data); QEC cycle 1664 ns",
+    "best_logical": "two d=3 rotated surface-code patches (9 data + 8 auxiliary each) merged by lattice surgery into a 3x7 surface code on all 41 qubits: logical error per cycle 6.3% Z / 8.3% X (L1), 4.9% / 4.9% (L2), 15.2% Z / 2.5% X (3x7); logical teleportation L1 to L2 by XX merge-and-split with success probability 0.57 (Z) / 0.65 (X) fully modular, up to 0.65 / 0.73 with an optimized expand-and-shrink circuit; all after leakage post-selection (per-cycle retention 0.955 / 0.945 / 0.879; 0.484-0.719 of teleportation runs kept) (Nov 2026)",
+    "decoder": "MWPM with weights extracted from measured syndrome statistics; syndrome decoded globally; Pauli frame updates in post-processing",
+    "realtime": "offline",
+    "roadmap": "academic",
+    "role": "",
+    "gate_evidence": "figure",
+    "decoder_mode": "offline",
+    "err_2q_median_num": 0.016,
     "flags": [],
     "qubits_accessible": null,
     "gate_evidence_derived": true,
@@ -9371,7 +9598,7 @@
     "t2": "3.5e-4 (T2)",
     "t_2q": "",
     "t_meas": "",
-    "best_logical": "spacetime_circuit (the IBM/UChicago spacetime detection code, stage-1 id added Sep 2026): 97 physical (70 data + 27 ancilla), depth 70, 468 virtual T, ~10x effective error suppression, certified fidelity lower bound 0.284 (95% c.l.); the 2,869 CZ count and the 0.059% acceptance are not in the cited release or abstract",
+    "best_logical": "spacetime_circuit (the IBM/UChicago spacetime detection code, stage-1 id added Sep 2026): a 64-qubit depth-73 Clifford circuit doped with 314 T gates on 76 physical (64 data + 12 ancilla), 2,644 CZ, ~10x effective error suppression, certified fidelity lower bound 0.349 (95%) at a post-selection rate of 0.040(1)% on IBM Boston (arXiv:2607.25941 v3, 2 Sep 2026); v1 (28 Jul 2026) ran a 70-qubit depth-70 open-boundary circuit with 468 T on 97 physical (70 + 27), 2,869 CZ, F >= 0.284 at 0.059%",
     "decoder": "none in loop",
     "realtime": "none (replay only)",
     "roadmap": "stable platform; no r4 announced",
@@ -24413,8 +24640,8 @@
     "err_2q_median": "not published for this run",
     "err_2q_best": "",
     "readout_error": "",
-    "t1": "1.1 s physical coherence",
-    "t2": "3.95 s logical (one code, abstract; physical 3.84 ± 0.48 s)",
+    "t1": "not measurable (taken as infinite, 1/T1 = 0; arXiv:2606.06455 v2, App. I)",
+    "t2": "T2* 1.28 ± 0.16 s (Ramsey; v2 Table II, App. J; v1: 1.1 ± 0.3 s); physical lifetime 3T2* = 3.84 ± 0.48 s",
     "t_2q": "",
     "t_meas": "",
     "best_logical": "eight distinct codes across three families on one device (nine in the June version) with no hardware reconfiguration: BB5 [[18,4,3]] gives 4 logical from 18 physical with logical error 4x lower (X) / 9x lower (Z) than the prior superconducting BB demonstration; GB4 [[26,2,5]] reaches 0.91+-0.17% logical error per cycle (Z eigenstate; 0.96% in the June version) with T_Z 3.47+-0.56 s; the abstract reports break-even within error bars in one code (logical lifetime 3.95+-0.68 s vs physical 3.84+-0.48 s = 3 T2*, arXiv version of 14 Sep 2026; the June version gave 3.3+-0.9 s from T2* 1.1+-0.3 s), ; the 74.8% shot rejection reported in the secondary source is for BB5 [[30,4,5]] at 6 syndrome rounds, not for GB4",
@@ -25395,7 +25622,7 @@
     "t2": "",
     "t_2q": "",
     "t_meas": "",
-    "best_logical": "none - the Walking-Cat blueprint (generalized bicycle + cyclic hypergraph-product qLDPC, one decoder spanning memory blocks, cat factories and magic-state factories) compiles ECDLP-256 at ~1,450 logical, 4.0e7 Toffoli, 19,397 physical ions, 25.7 days, 63% success",
+    "best_logical": "none (IonQ's ECDLP-256 resource estimate assumes a 19,397-ion device and is recorded under the 10K generation)",
     "decoder": "one unified decoder, algorithm not named",
     "realtime": "planned",
     "roadmap": "Superion 10K (CMOS on chip, Walking Cat): 'full fault tolerance' in a 2027 lab setting, commercial 2028; >2,000,000 physical giving 40,000-80,000 logical at <1e-12 by 2030",
@@ -25644,6 +25871,277 @@
     "gate_evidence_derived": true,
     "decoder_mode_derived": true,
     "benchmarked": false
+   }
+  },
+  {
+   "id": "oxford-ion-network",
+   "name": "Oxford trapped-ion quantum network (2 nodes)",
+   "org": "University of Oxford (Department of Physics, Clarendon Laboratory)",
+   "org_id": "University of Oxford",
+   "country": "UK",
+   "family": "ION",
+   "map_path": "ion_chain",
+   "status": "DEMONSTRATED",
+   "status_date": "Jun 2024-2026",
+   "physical_qubits_num": 4,
+   "access": "lab-only",
+   "units": {
+    "built": "1",
+    "in_service": "1",
+    "evidence": "the register's row: one machine (two nodes, Alice and Bob, operated as one distributed computer)"
+   },
+   "layers": {
+    "1": [
+     {
+      "node": "ion",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "4 ions in two nodes ~2 m apart: each node (Alice, Bob) co-traps one 88Sr+ and one 43Ca+ ion",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2407.00835",
+       "locator": "Fig. 2a; Methods: Dual-species ion-trap modules; Ext. Fig. 1a",
+       "verified": true
+      }
+     }
+    ],
+    "2": [
+     {
+      "node": "enc_hf",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "43Ca+ ground hyperfine clock qubit Q_C = {F=4,mF=0; F=3,mF=0}, field sensitivity 122 kHz/mT at ~0.5 mT, used as memory; called the data qubit Q_D in 2026",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2407.00835",
+       "locator": "§Teleportation of a controlled-Z gate; Methods: Dual-species ion-trap modules",
+       "verified": true
+      }
+     },
+     {
+      "node": "enc_opt",
+      "role": "alternate",
+      "gap": false,
+      "state": "station",
+      "summary": "88Sr+ network qubit Q_N = {S1/2 mJ=-1/2; D5/2 mJ=-3/2} driven by a 674 nm laser; remote entanglement mapped onto it from the ground Zeeman qubit by a 674 nm pi-pulse",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2407.00835",
+       "locator": "§Teleportation of a controlled-Z gate; Methods: Remote entanglement generation",
+       "verified": true
+      }
+     }
+    ],
+    "3": [
+     {
+      "node": "g_ms",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "mixed-species Sr+-Ca+ geometric phase CZ by spin-dependent light shifts from one 402 nm Raman beam pair near the axial out-of-phase mode, between Q_N and the Ca+ auxiliary qubit Q_X; QPT average gate fidelity 97.5(2)% / 98.0(2)% (Alice / Bob)",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2407.00835",
+       "locator": "Methods: Local mixed-species entangling gates; Ext. Fig. 4b-d",
+       "verified": true
+      }
+     }
+    ],
+    "4": [
+     {
+      "node": "cx_bus",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "per node a two-ion 88Sr+-43Ca+ crystal; the gate drives the axial out-of-phase motional mode of the two-ion chain; nodes linked only photonically",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2609.13065",
+       "locator": "Methods: Cooling and rates (v1 p. 8)",
+       "verified": true
+      }
+     }
+    ],
+    "5": [
+     {
+      "node": "ct_ionaod",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "free-space lasers delivered parallel to the trap surface: 402 nm Raman pair for the Ca+ qubits and the gate, 674 nm for Sr+; each operation's phase set on the DDS driving the beam's AOM (arXiv:2609.13065 Methods: Phase-flip error channel)",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2407.00835",
+       "locator": "Ext. Fig. 1a; Methods: Dual-species ion-trap modules",
+       "verified": true
+      }
+     }
+    ],
+    "6": [
+     {
+      "node": "ro_fluor",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "fluorescence detection of both species through the rear-side imaging system; the Ca+ circuit qubit read by transfer to Q_X and shelving to D5/2; average SPAM error 5.0(2)e-3",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2407.00835",
+       "locator": "Ext. Fig. 1b-c; Ext. Fig. 2",
+       "verified": true
+      }
+     },
+     {
+      "node": "ro_dualspecies",
+      "role": "alternate",
+      "gap": false,
+      "state": "station",
+      "summary": "spectral isolation between the species lets the Sr+ network qubit be measured mid-circuit (teleportation outcomes, syndromes) without decohering the Ca+ circuit/data qubit",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2407.00835",
+       "locator": "Methods: Dual-species ion-trap modules; Methods: Conditional Operations",
+       "verified": true
+      }
+     }
+    ],
+    "7": [
+     {
+      "node": "∅G-repetition",
+      "role": "primary",
+      "gap": true,
+      "state": "gap",
+      "summary": "distributed [[2,1,1]] repetition code in the X basis (|0L>=|++>, |1L>=|-->), one data qubit per node; remote X1X2 stabiliser through a heralded Sr+ Bell pair; P++ = 96.4(6)% at zero applied error (2026)",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2609.13065",
+       "locator": "Abstract; §Distributed error detection; Fig. 2; Table I",
+       "verified": true
+      }
+     },
+     {
+      "node": "code_detect",
+      "role": "alternate",
+      "gap": false,
+      "state": "station",
+      "summary": "error detection with real-time abort: an odd-parity outcome aborts and re-prepares the logical qubit; repeated rounds at p = 0.3 raise <X1X2> at about constant logical error",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2609.13065",
+       "locator": "§Distributed error detection; Fig. 2a-c",
+       "verified": true
+      }
+     }
+    ],
+    "8": [
+     {
+      "node": "∅G-lut",
+      "role": "primary",
+      "gap": true,
+      "state": "gap",
+      "summary": "no decoder named: the 1-bit remote parity sets abort/restart, or an X rotation / virtual Z on Bob's data qubit, in real time (\"The measured syndrome uniquely determines the required recovery operation\"); mapped to the lookup-table gap by inference",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2609.13065",
+       "locator": "§Error correction of a Bell state; Fig. 3a",
+       "verified": false
+      }
+     }
+    ],
+    "9": [
+     {
+      "node": "ic_ionphoton",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "heralded 88Sr+ ion-photon (polarisation) entanglement; photons via 0.6 NA lenses and single-mode fibres to a central Bell-state analyser; Bell-state fidelity 97.15(9)%, 9.7 s^-1 with interleaved re-cooling (1.41e-4 success per 1168 ns attempt); ~10 s^-1 in 2026 (raw error 2.38(17)%)",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2407.00835",
+       "locator": "Methods: Remote entanglement generation; Ext. Fig. 3",
+       "verified": true
+      }
+     }
+    ],
+    "10": [
+     {
+      "node": "fab_trap",
+      "role": "primary",
+      "gap": false,
+      "state": "station",
+      "summary": "room-temperature micro-fabricated surface Paul traps by Sandia National Laboratories: HOA2 in Alice, Phoenix in Bob",
+      "evidence": {
+       "type": "architecture-paper",
+       "url": "https://arxiv.org/abs/2407.00835",
+       "locator": "Methods: Dual-species ion-trap modules",
+       "verified": true
+      }
+     },
+     {
+      "node": "fab_optics",
+      "role": "alternate",
+      "gap": false,
+      "state": "station",
+      "summary": "free-space optics outside the vacuum chamber: rear-side imaging for readout, front-side 0.6 NA lens coupling single photons into single-mode fibre to the optical network",
+      "evidence": {
+       "type": "architecture-paper-figure",
+       "url": "https://arxiv.org/abs/2407.00835",
+       "locator": "Ext. Fig. 1b",
+       "verified": true
+      }
+     }
+    ]
+   },
+   "records": [],
+   "codes": [
+    "quantum_repetition"
+   ],
+   "evidence_counts": {
+    "verified": 13,
+    "total": 14
+   },
+   "refs": [
+    {
+     "url": "https://arxiv.org/abs/2407.00835",
+     "title": "Distributed Quantum Computing across an Optical Network Link",
+     "kind": "paper"
+    },
+    {
+     "url": "https://arxiv.org/abs/2609.13065",
+     "title": "Error Correction in a Distributed Quantum Computer",
+     "kind": "paper"
+    }
+   ],
+   "profile": {
+    "qubit_type": "43Ca+ hyperfine clock qubit (F=4,mF=0 / F=3,mF=0) as data/circuit qubit; 88Sr+ optical qubit (S1/2 mJ=-1/2 / D5/2 mJ=-3/2, 674 nm) as network qubit",
+    "gate_mechanism": "laser-driven mixed-species Sr+-Ca+ geometric phase (light-shift) CZ with one 402 nm Raman beam pair, between the network qubit and the Ca+ auxiliary qubit; non-local CZ between the nodes by gate teleportation over heralded photonic entanglement",
+    "connectivity": "two 2-ion 88Sr+-43Ca+ crystals (one per node), local gate on the shared axial out-of-phase mode; the nodes joined by one heralded photonic link plus a real-time classical (TTL) link, non-local CZ by teleportation",
+    "degree": "1",
+    "control": "free-space laser control: 402 nm Raman beam pair (Ca+ hyperfine qubits and the mixed-species gate), 674 nm laser (Sr+ optical qubit); AOMs driven by DDS; the species addressed spectrally",
+    "control_placement": "room-temp + free-space optics",
+    "readout": "fluorescence, both species (rear-side imaging); Ca+ read by transfer to the auxiliary qubit and shelving to D5/2; mid-circuit Sr+ network-qubit measurement leaves the Ca+ data qubit intact (spectral isolation)",
+    "err_2q_median": "not reported as a median: local Sr+-Ca+ mixed-species CZ (one pair per node) by quantum process tomography, average gate fidelity 97.5(2)% / 98.0(2)% (Alice / Bob, 2024) and raw error 3.43(9)% / 3.04(9)% (2026 error budget); teleported inter-node CZ 86.1(9)% average gate fidelity (QPT, 2024)",
+    "err_2q_best": "",
+    "readout_error": "5.0(2)e-3 average SPAM over all qubit states of both nodes (2024, Ext. Fig. 2)",
+    "t1": "",
+    "t2": "~100 ms 43Ca+ circuit-qubit coherence (2024); ~10 s data-qubit coherence (2026, citing arXiv:2506.14334); storage during entanglement generation with Knill DD 98.1(4)% / 98.2(5)% process fidelity (Alice / Bob)",
+    "t_2q": "",
+    "t_meas": "",
+    "best_logical": "distributed [[2,1,1]] phase-flip repetition code across the two nodes: after one remote X1X2 stabiliser at zero applied error P++ = 96.4(6)% (error 3.6(6)%, budget 3.5(2)%); detect-and-abort suppresses logical errors over the whole applied phase-flip range; repeated remote rounds at p = 0.3 raise <X1X2> at about constant logical error; remote X1X2 + Z1Z2 syndromes with real-time feedforward keep a distributed Bell state's fidelity about constant under injected depolarising noise (2026)",
+    "decoder": "no decoder named: the remote parity bit from the network-qubit mid-circuit measurement sets, in real time, abort-and-restart (detection) or an X rotation / virtual Z on Bob's data qubit (Bell-state correction)",
+    "realtime": "in-loop (real-time abort on odd parity and real-time feedforward correction; outcomes exchanged over a classical TTL link)",
+    "roadmap": "academic",
+    "role": "",
+    "gate_evidence": "device-benchmark",
+    "decoder_mode": "feed-forward",
+    "err_2q_median_num": null,
+    "flags": [],
+    "qubits_accessible": null,
+    "gate_evidence_derived": false,
+    "decoder_mode_derived": false,
+    "benchmarked": true
    }
   },
   {
@@ -26380,7 +26878,7 @@
     "t2": "",
     "t_2q": "",
     "t_meas": "",
-    "best_logical": "[[6,2,2]] logical non-Clifford controlled-H past break-even: 2.3e-4 vs 1.0e-3 physical (2.9x), Jun 2025; [[7,1,3]] Steane with real-time lookup-table decoding since 2021",
+    "best_logical": "[[6,2,2]] logical non-Clifford controlled-H past break-even: <=2.3(9)e-4 vs >=1.0(1)e-3 physical (at least 4.3x), Jun 2025; [[7,1,3]] Steane with real-time lookup-table decoding since 2021",
     "decoder": "real-time lookup table",
     "realtime": "in-loop (the longest-running in-loop decoder on any platform)",
     "roadmap": "superseded by Helios",
@@ -27013,8 +27511,10 @@
     "many_hypercube",
     "stab_16_4_4",
     "stab_4_2_2",
+    "stab_8_3_2",
     "steane",
-    "stellated_dodecahedron_css"
+    "stellated_dodecahedron_css",
+    "triangular_color"
    ],
    "evidence_counts": {
     "verified": 8,
@@ -27072,12 +27572,12 @@
     "readout": "fluorescence, destructive per ion; mid-circuit measurement and reset with microsecond-latency conditional branching",
     "err_2q_median": "7.9(2)e-4 average 2Q RB infidelity over all 8 operation zones (gates in parallel; leakage counted)",
     "err_2q_best": "",
-    "readout_error": "SPAM 3.3(5)e-4 (Nature) vs 4.8e-4 (secondary)",
+    "readout_error": "SPAM 4.8(6)e-4 averaged over the zones with the standard measurement (|0> 8(1)e-4, |1> 1.6(5)e-4; Helios system paper arXiv:2511.05465 v1, abstract and Table II; 17(1)e-4 with the leakage-detecting ternary measurement); the 3.3(5)e-4 credited to the Nature version (17 Jun 2026) is not in arXiv v1 and was not re-read",
     "t1": "",
     "t2": "",
     "t_2q": "7.0e-5",
     "t_meas": "",
-    "best_logical": "iceberg [[2m,2m-2,2]] concatenated to effective d=4: 94 logical qubits entangled in a GHZ state, 50 error-detected logical qubits at break-even and 48 error-corrected logical qubits (2:1) out of 98 physical; the 94.9% GHZ figure is not in the cited sources; logical gates cycle-benchmarked at ~1e-4; logical fidelity 99.9995% (five errors per million operations) on Helios, 21 Oct 2026 — the owner's claim of a 100× reduction vs the best published result in any other modality; the release of 19 Oct 2026 ties the 99.9995% to «a well-known “color code”» (the paper not located)",
+    "best_logical": "iceberg [[2m,2m-2,2]] concatenated to effective d=4: 94 logical qubits entangled in a GHZ state with fidelity 0.949(+7/−9) using leakage-heralded readout at 25% acceptance (0.87(1) without; «∼95%» in the main text; arXiv:2602.22211 SI Table VI), 50 error-detected logical qubits at break-even and 48 error-corrected logical qubits (2:1) out of 98 physical; logical gates cycle-benchmarked at ~1e-4; logical fidelity 99.9995% (five errors per million operations) on Helios, 21 Oct 2026 — the owner's claim of a 100× reduction vs the best published result in any other modality; the release of 19 Oct 2026 ties the 99.9995% to «a well-known “color code”»: the d=7 triangular colour-code memory of arXiv:2610.24077, 5(+4/−2)e-6 per round (3 failures in 29,000 shots, Table I)",
     "decoder": "Frontier (offline); GPU-accelerated BP-OSD over NVQLink at median 67 us round trip, 5.4x LER gain",
     "realtime": "offline for the record; GPU real-time demonstrated",
     "roadmap": "Sol, then Apollo; a Helios unit assembling in Singapore for spring-2027 commissioning (release of 19 Oct 2026)",
@@ -29610,12 +30110,12 @@
     "control": "free-space addressed laser control",
     "control_placement": "room-temp + free-space optics",
     "readout": "fluorescence",
-    "err_2q_median": "not published in the cited refs; the 2.5e-2 is the two-qubit depolarizing probability of a simulation noise model (measurement-free paper, Table I)",
+    "err_2q_median": "no direct two-qubit benchmark published: p2q = 0.027 ± 0.005 is inferred by matching a 16-qubit GHZ fidelity (0.54 ± 0.04) to simulation (arXiv:2312.09745, App. C), and enters the code-switching paper's noise model (arXiv:2403.13732, Table II, 322.5 us); the measurement-free paper's model uses 2.5e-2 at 350 us (arXiv:2506.22600, Table I); single-qubit RB 3.6(4)e-3 per gate",
     "err_2q_best": "",
     "readout_error": "",
     "t1": "",
-    "t2": "",
-    "t_2q": "",
+    "t2": "~50 ms (optical qubit, limited by magnetic-field dephasing; arXiv:2312.09745 App. B; 50 ms in arXiv:2506.22600)",
+    "t_2q": "312.5 us MS gate (arXiv:2312.09745 App. C; 350 us in arXiv:2506.22600)",
     "t_meas": "",
     "best_logical": "three results unavailable anywhere else: [[7,1,3]] fault-tolerant universal 2-qubit set with T injection (2021); [[7,1,3]] to [[10,1,2]] code switching for a universal FT set including T (Jan 2025); [[8,3,2]] measurement-free universal fault tolerance with logical H, CNOT, transversal CCZ and teleportation by coherent feedback instead of mid-circuit measurement, H_L fidelity 81(3)% at p2 = 0.025",
     "decoder": "coherent / measurement-free: the correction is a unitary conditioned on an ancilla register",
@@ -29976,15 +30476,15 @@
     ],
     "8": [
      {
-      "node": "dec_mwpm",
+      "node": "∅G-lut",
       "role": "primary",
-      "gap": false,
-      "state": "station",
-      "summary": "matching; offline correction of Bacon–Shor syndromes (Oct 2021)",
+      "gap": true,
+      "state": "gap",
+      "summary": "logic table on the two Z stabilisers S1 and S2, applied in post-processing to the final measurements of the Bacon–Shor run (no mid-circuit measurement; Oct 2021); no matching decoder in the paper",
       "evidence": {
        "type": "architecture-paper",
        "url": "https://arxiv.org/abs/2009.11482",
-       "locator": "Methods: Error Correction Protocol",
+       "locator": "Methods: Error Correction Protocol (pp. 7-8)",
        "verified": true
       }
      }
@@ -30069,15 +30569,15 @@
     "control": "free-space addressed laser control",
     "control_placement": "room-temp + free-space optics",
     "readout": "fluorescence",
-    "err_2q_median": "not published as a physical two-qubit error (the 3e-3 is the logical Clifford error after correction, Bacon–Shor run)",
+    "err_2q_median": "98.5-99.3% fidelity on a typical XX gate (ions 2-3), bounded by echoed vs non-echoed repeated-gate parity fringes (arXiv:2009.11482 v2, Methods; SI); the 3e-3 is the logical Clifford error after correction (Bacon–Shor run)",
     "err_2q_best": "",
-    "readout_error": "6e-3 SPAM",
+    "readout_error": "physical SPAM 0.22(2)% (|0>) and 0.71(4)% (|1>), average 0.46(2)% (Methods; SI); the 0.6% (6e-3) is the logical SPAM after error correction",
     "t1": "",
     "t2": "",
-    "t_2q": "",
+    "t_2q": "225 us (XX gate)",
     "t_meas": "",
     "best_logical": "[[9,1,3]] Bacon-Shor on 13 ions: fault-tolerant preparation and measurement, logical rotation, stabilizer measurement, and a magic state above the distillation threshold",
-    "decoder": "matching",
+    "decoder": "logic table on the two Z stabilisers, applied in post-processing (no mid-circuit measurement)",
     "realtime": "offline",
     "roadmap": "academic; the Monroe lineage holds the remote ion-ion entanglement rate record (9.7-250 per second at 94-97% fidelity, teleported CZ 86%)",
     "role": "",
@@ -30866,24 +31366,23 @@
     "control": "SLM tweezers + AOD moves + Rydberg lasers",
     "control_placement": "optics (room temperature)",
     "readout": "non-destructive, state-selective imaging that also flags loss ('delayed erasure conversion'): ancillas at each mid-circuit measurement, data qubits when measured; missing atoms replaced from a storage zone; loss-aware decoding offline (Jun 2026). Nov 2024 logical runs: loss from a separate end-of-circuit survival image",
-    "err_2q_median": "4.3(1.9)e-3 per CZ by interleaved RB, post-selected on survival of both atoms; CZ loss 9.6(2.0)e-3 per gate not included (toric-code paper, Jun 2026); system not named in the paper; vendor claim for Phoenix 99.6% (no protocol)",
+    "err_2q_median": "4.3(1.9)e-3 per CZ by interleaved RB, post-selected on survival of both atoms; CZ loss 9.6(2.0)e-3 per gate not included (toric-code paper, Jun 2026, Suppl. Sec. SV); earlier 0.39(10)% per CZ with moves and 0.75(10)% loss + leakage (arXiv:2411.11822 v3 Table II, Jun 2025; v2: 0.4(1)% and 0.5(1)%); system not named in the papers; vendor claim for Phoenix 99.6% (no protocol)",
     "err_2q_best": "",
     "readout_error": "",
     "t1": "",
-    "t2": "40 s (Gen-1 87Sr nuclear-spin qubit, 2021; the Gen-2 171Yb figure is not published)",
+    "t2": "~34 s for the 171Yb nuclear-spin qubit (echo-Ramsey contrast decay 0.029(3)/s without the MOT; arXiv:2506.09936 App. D); 40 s for the Gen-1 87Sr qubit (2021)",
     "t_2q": "",
     "t_meas": "",
-    "best_logical": "with Microsoft: 24 logical qubits entangled in a GHZ state and 28 logical qubits from 112 physical running Bernstein-Vazirani; error detection alone gave 10.2% logical error, 4.1x better than the 42% physical baseline, and detection plus loss correction gave 26.6%, 1.6x better (Nov 2024); the [[4,2,2]] code is not named in the cited post; toric code at d=4 and d=6 with up to 90 successive syndrome rounds and mid-circuit reloading of a qubit reservoir (Jun 2026) - but no Lambda, no logical error per round and no acceptance fraction published",
+    "best_logical": "with Microsoft: 24 logical qubits ([[4,2,2]] code, 48 atoms) entangled in a GHZ state and 28 logical qubits from 112 physical running Bernstein-Vazirani; error and loss detection gave 10.2% logical error, 4.1x better than the 42% physical baseline, and error detection plus loss correction gave 26.6%, 1.6x better (Nov 2024; arXiv:2411.11822 v3, Jun 2025); twisted toric subsystem codes [[16,1,(4,3)]] and [[32,1,(6,4)]] (Jun 2026): Z error per cycle 0.74(1)% and 0.56(1)% from fits without reloading, Λ_Z = 1.9(1) from the 4-cycle point (average Λ 1.30(3)); with reservoir reloading up to 90 cycles (smaller code) and 70 (larger), 0.63(3)% and 0.64(4)% per cycle, no gain with distance",
     "decoder": "matching",
-    "realtime": "offline",
+    "realtime": "offline decoding of the memory runs; lost atoms replaced in real time by conditional moves, and the heralding check of the [[4,2,2]] Bell-pair preparation decoded in real time (arXiv:2506.09936)",
     "roadmap": "Magne (50 logical target)",
     "role": "",
     "gate_evidence": "vendor-figure",
     "decoder_mode": "offline",
     "err_2q_median_num": null,
     "flags": [
-     "code-node-mismatch",
-     "no-numbers-published"
+     "code-node-mismatch"
     ],
     "qubits_accessible": null,
     "gate_evidence_derived": false,
@@ -34883,7 +35382,7 @@
     "control": "SLM/AOD laser control",
     "control_placement": "optics (room temperature)",
     "readout": "mid-circuit erasure check (20 us for Yb atoms)",
-    "err_2q_median": "not published for this array",
+    "err_2q_median": "CZ error by randomized circuit benchmarking 0.016(1) with the amplitude-robust pulse and 0.011(1) time-optimal at the typical laser power; 0.010(1) and 0.006(1) conditioned on no erasure detected before the end of the circuit (Fig. 2e); fidelities 0.984(1) and 0.989(1) (Sec. II; 1.7% in Extended Data Table I); 38(6)% of the amplitude-robust gate error detected mid-circuit as erasures",
     "err_2q_best": "",
     "readout_error": "",
     "t1": "",
@@ -34892,7 +35391,7 @@
     "t_meas": "",
     "best_logical": "[[4,2,2]] preparation fidelity 0.874(4) rising to 0.902(3) when erasure information is used; teleportation 0.802(8); erasure conversion raises the surface-code threshold from 0.94% to 1.45%; the architecturally relevant gain is the unconditional 1.9(4)x, not the post-selected 3.6(1)x",
     "decoder": "correlated / loss-aware",
-    "realtime": "offline",
+    "realtime": "offline decoding; erasure-adaptive choice of ancilla blocks in real time (FPGA sequencer fed by a PC that processes the camera images, 25 ms from the end of the exposure to the next waveform step)",
     "roadmap": "academic",
     "role": "",
     "gate_evidence": "none",
@@ -35627,7 +36126,7 @@
     "t2": "",
     "t_2q": "",
     "t_meas": "",
-    "best_logical": "with Harvard/MIT: d=3 and d=5 colour codes running logical-level 5-to-1 magic-state distillation - output fidelity better than every input (absolute value not published); the \"5 d=5 logical qubits plus two d=3 factories\" layout is not in the cited abstract",
+    "best_logical": "with Harvard/MIT: d=3 and d=5 colour codes running logical-level 5-to-1 magic-state distillation on a Gemini-class processor - magic-state fidelity 95.1% -> 99.4(+0.3/−0.4)% at d=3 and 92.5% -> 98.6(+0.9/−1.3)% at d=5 (arXiv:2412.15165, introduction); factories of 35 atoms (d=3, two in parallel on 70) and 85 atoms (d=5), run as separate experiments on one 17x5 grid (Methods)",
     "decoder": "correlated / loss-aware decoding",
     "realtime": "offline",
     "roadmap": "Libra 2028",
@@ -45607,6 +46106,7 @@
     "ibm-heron-r2",
     "ibm-heron-r3",
     "ionq-forte",
+    "oxford-ion-network",
     "quantinuum-h1",
     "quantinuum-helios"
    ]
@@ -45697,6 +46197,7 @@
   "code_surface": {
    "primary": [
     "ethz-surface17",
+    "ethz-surface41",
     "google-sycamore-72",
     "google-willow",
     "ibm-eagle",
@@ -45792,6 +46293,7 @@
     "ionq-ba133-qldpc-testbed",
     "ionq-forte",
     "ionq-tempo",
+    "oxford-ion-network",
     "psnc-piast-q",
     "quantinuum-h1",
     "quantinuum-h2",
@@ -45892,6 +46394,7 @@
     "drdo-tifr-tcs-6q",
     "dwave-dualrail-17",
     "ethz-surface17",
+    "ethz-surface41",
     "fraunhofer-ehningen",
     "google-sycamore-54",
     "google-sycamore-72",
@@ -46028,6 +46531,7 @@
     "ionq-oxford-quartet",
     "ionq-superion-256",
     "ionq-tempo",
+    "oxford-ion-network",
     "psnc-piast-q",
     "quantum-art-montage",
     "quantum-art-multicore",
@@ -46079,6 +46583,7 @@
     "dwave-dualrail-17",
     "equal1-racq",
     "ethz-surface17",
+    "ethz-surface41",
     "fraunhofer-ehningen",
     "fujitsu-10000q",
     "fujitsu-1000q",
@@ -46244,12 +46749,12 @@
    "primary": [
     "aws-ocelot",
     "ethz-surface17",
+    "ethz-surface41",
     "fujitsu-10000q",
     "google-sycamore-72",
     "google-willow",
     "ibm-falcon",
     "psiquantum-omega",
-    "umd-duke-ion",
     "xanadu-aurora",
     "yaqumo-yb",
     "zju-125q"
@@ -46326,6 +46831,7 @@
     "ctqg-tianyan-504",
     "drdo-tifr-tcs-6q",
     "ethz-surface17",
+    "ethz-surface41",
     "fraunhofer-ehningen",
     "fujitsu-10000q",
     "fujitsu-1000q",
@@ -46467,6 +46973,7 @@
     "ionq-superion-256",
     "ionq-tempo",
     "msu-rb-50q",
+    "oxford-ion-network",
     "pasqal-centaurus-500",
     "pasqal-lyra",
     "pasqal-orion",
@@ -46512,7 +47019,9 @@
     "uibk-innsbruck-ion",
     "uibk-iqoqi-sim-51"
    ],
-   "alternate": []
+   "alternate": [
+    "oxford-ion-network"
+   ]
   },
   "enc_parity": {
    "primary": [
@@ -46657,6 +47166,7 @@
    ],
    "alternate": [
     "aqt-ibex-q1",
+    "oxford-ion-network",
     "quantinuum-h1",
     "quantinuum-h2",
     "quantinuum-helios",
@@ -46704,6 +47214,7 @@
     "dwave-advantage2",
     "dwave-advantage3-20000",
     "ethz-surface17",
+    "ethz-surface41",
     "fraunhofer-ehningen",
     "fujitsu-10000q",
     "fujitsu-1000q",
@@ -46800,6 +47311,7 @@
     "ionq-forte",
     "ionq-oxford-quartet",
     "ionq-tempo",
+    "oxford-ion-network",
     "psnc-piast-q",
     "quantinuum-h1",
     "quantinuum-h2",
@@ -46962,6 +47474,7 @@
     "ionq-ba133-qldpc-testbed",
     "ionq-forte",
     "ionq-tempo",
+    "oxford-ion-network",
     "psnc-piast-q",
     "quantinuum-apollo",
     "quantinuum-h1",
@@ -47040,6 +47553,7 @@
     "ctqg-tianyan-176",
     "ctqg-tianyan-287",
     "ethz-surface17",
+    "ethz-surface41",
     "fujitsu-10000q",
     "google-sycamore-54",
     "google-sycamore-72",
@@ -47122,6 +47636,7 @@
   "ic_ionphoton": {
    "primary": [
     "ionq-superion-256",
+    "oxford-ion-network",
     "quantinuum-apollo",
     "umd-duke-ion"
    ],
@@ -47182,6 +47697,7 @@
     "ionq-superion-10k",
     "ionq-superion-256",
     "ionq-tempo",
+    "oxford-ion-network",
     "psnc-piast-q",
     "quantinuum-apollo",
     "quantinuum-h1",
@@ -47260,6 +47776,7 @@
     "ctqg-tianyan-504",
     "drdo-tifr-tcs-6q",
     "ethz-surface17",
+    "ethz-surface41",
     "fraunhofer-ehningen",
     "fujitsu-10000q",
     "fujitsu-1000q",
@@ -47335,6 +47852,12 @@
     "ustc-zuchongzhi-3.2"
    ]
   },
+  "ro_dualspecies": {
+   "primary": [],
+   "alternate": [
+    "oxford-ion-network"
+   ]
+  },
   "ro_erasure": {
    "primary": [
     "aws-dualrail",
@@ -47366,6 +47889,7 @@
     "ionq-superion-10k",
     "ionq-superion-256",
     "ionq-tempo",
+    "oxford-ion-network",
     "photonic-inc",
     "psnc-piast-q",
     "quantinuum-apollo",
@@ -47454,6 +47978,7 @@
     "ibm-nighthawk-r2"
    ],
    "alternate": [
+    "ethz-surface41",
     "google-willow",
     "ibm-system-two-cscs",
     "ustc-zuchongzhi-3.2"
@@ -47536,6 +48061,7 @@
     "ctqg-tianyan-504",
     "drdo-tifr-tcs-6q",
     "ethz-surface17",
+    "ethz-surface41",
     "fraunhofer-ehningen",
     "fujitsu-10000q",
     "fujitsu-1000q",
